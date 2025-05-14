@@ -1084,9 +1084,22 @@ end
 
 --Sneaky Bastard Aced healing stuff.
 function PlayerManager:_dodge_healing_no_armor()
+	local t = Application:time()
 	local damage_ext = self:player_unit():character_damage()
-	if not (damage_ext:get_real_armor() > 0) and damage_ext:can_dodge_heal() then
+
+	if self._dodge_heal_no_armor_t and self._dodge_heal_no_armor_t > t then
+		if not (damage_ext:get_real_armor() > 0) then
+			managers.hud:change_cooldown("sneaky_bastard", -tweak_data.upgrades.dodge_heal_no_armor_cooldown_rd)
+			self._dodge_heal_no_armor_t = self._dodge_heal_no_armor_t - tweak_data.upgrades.dodge_heal_no_armor_cooldown_rd
+		end
+		return
+	end
+
+	if not (damage_ext:get_real_armor() > 0) --[[and damage_ext:can_dodge_heal()]] then
+		damage_ext:restore_armor(damage_ext:get_dodge_points() * 10)
 		damage_ext:restore_health(self:upgrade_value("player", "dodge_heal_no_armor"), false)
+		self._dodge_heal_no_armor_t = t + (tweak_data.upgrades.dodge_heal_no_armor_cooldown or 0)
+		managers.hud:start_buff("sneaky_bastard", (tweak_data.upgrades.dodge_heal_no_armor_cooldown or 0))
 	end
 end
 

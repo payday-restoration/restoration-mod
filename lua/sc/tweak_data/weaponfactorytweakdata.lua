@@ -4463,8 +4463,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_m1911_sl_hardballer.supported = true
-					self.parts.wpn_fps_pis_m1911_sl_hardballer.stats = deep_clone(barrels.long_b3_stats)
-					self.parts.wpn_fps_pis_m1911_sl_hardballer.custom_stats = deep_clone(barrels.long_b3_stats)		
+					self.parts.wpn_fps_pis_m1911_sl_hardballer.stats = deep_clone(barrels.long_b2_stats)
+					self.parts.wpn_fps_pis_m1911_sl_hardballer.custom_stats = deep_clone(barrels.long_b2_stats)
 					
 					self.wpn_fps_pis_m1911.override.wpn_fps_pis_1911_co_1 = {
 						a_obj = "a_ns",
@@ -36672,6 +36672,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_pis_vp70_stp_standard.custom_stats = nil
 
+			self.parts.wpn_fps_pis_vp70_lc_stormtrooper.supported = true
+			self.parts.wpn_fps_pis_vp70_lc_stormtrooper.stats = { value = 0 }
+
+			self.parts.wpn_fps_pis_vp70_s_scifi.supported = true
+			self.parts.wpn_fps_pis_vp70_s_scifi.stats = { 
+				value = 2,
+				spread = -1,
+				concealment = 1
+			 }
+
 			self.parts.wpn_fps_pis_vp70_m_speed_std.supported = true
 			self.parts.wpn_fps_pis_vp70_m_speed_std.stats = { 
 				value = 4, 
@@ -36687,6 +36697,34 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				reload = -4
 			}
 			self.parts.wpn_fps_pis_vp70_m_ext.custom_stats = { ads_speed_mult = 1.05 }
+
+			self.wpn_fps_pis_x_vp70.override.wpn_fps_pis_vp70_m_ext = {
+				stats = {
+					value = 6, 
+					extra_ammo = 24,
+					concealment = -2,
+					reload = -4
+				}
+			}
+			self.wpn_fps_pis_x_vp70.override.wpn_fps_pis_vp70_stock_standard = {
+				custom_stats = deep_clone(stocks.add_fixed_stats)
+			}
+			self.wpn_fps_pis_x_vp70.override.wpn_fps_pis_vp70_stock_standard.custom_stats.burst_fire = {}
+			self.wpn_fps_pis_x_vp70.override.wpn_fps_pis_vp70_stock_standard.custom_stats.info_add_burst = false
+			self.wpn_fps_pis_x_vp70.override.wpn_fps_pis_vp70_stock_standard.desc_id = "bm_sc_blank"
+			for i, part_id in pairs(self.wpn_fps_pis_x_vp70.uses_parts) do
+				attachment_list = {
+					"wpn_fps_upg_o_rmr"
+				}
+				if self.parts.wpn_fps_upg_o_romeo3_pis then
+					table.insert(attachment_list, "wpn_fps_upg_o_romeo3_pis")
+				end
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_pis_x_vp70.uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end	
 		end
 
 		if self.parts.wpn_fps_shot_fpsix_shellrack then
@@ -36987,6 +37025,74 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_pinkie_b_fh.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 		end
 
+		if self.parts.wpn_fps_pdw_fckmyfingers_b_medium then
+			self.parts.wpn_fps_pdw_fckmyfingers_b_medium.supported = true
+			self.parts.wpn_fps_pdw_fckmyfingers_b_medium.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_pdw_fckmyfingers_b_medium.custom_stats = deep_clone(barrels.long_b2_stats)
+			
+			self.parts.wpn_fps_pdw_fckmyfingers_o_susat.pcs = nil	-- just use the standalone 
+
+			self.parts.wpn_fps_pdw_fckmyfingers_m_short.supported = true
+			self.parts.wpn_fps_pdw_fckmyfingers_m_short.stats = {
+				value = 1,
+				concealment = 1,
+				extra_ammo = -5,
+				reload = 3
+			}
+			self.parts.wpn_fps_pdw_fckmyfingers_m_short.custom_stats = { 
+				ads_speed_mult = 0.975
+			}
+			
+			self.wpn_fps_crb_enfieldl22.override = self.wpn_fps_crb_enfieldl22.overrides or {}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
+				stats = {
+					value = 0
+				}
+			}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_upg_vg_ass_smg_stubby = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_smg_schakal_vg_surefire = {
+				stats = {
+					value = 0
+				}
+			}
+
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_vg_vmp_vert = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_vg_vmp_medium = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_vg_vmp_cheems = {
+				stats = {
+					value = 0
+				}
+			}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_vg_vmp_pod = {
+				stats = {
+					value = 0
+				}
+			}
+			
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_vg_vmp_vert")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_vg_vmp_medium")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_vg_vmp_cheems")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_vg_vmp_pod")
+		end
+
 		if self.parts.wpn_fps_ass_kurisumasu_b_std then
 			self.parts.wpn_fps_ass_kurisumasu_s_m4ss.supported = true
 			self.parts.wpn_fps_ass_kurisumasu_s_m4ss.stats = { value = 0 }
@@ -37233,17 +37339,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_l1a1_mag_big.custom_stats = {
 				ads_speed_mult = 1.025
 			}
-
-			self.parts.wpn_fps_ass_l1a1_mag_big.supported = true
-			self.parts.wpn_fps_ass_l1a1_mag_big.stats = {
-				value = 5,
-				extra_ammo = 10,
-				concealment = -1,
-				reload = -3
-			}
-			self.parts.wpn_fps_ass_l1a1_mag_big.custom_stats = {
-				ads_speed_mult = 1.025
-			}
 			self.parts.wpn_fps_ass_l1a1_mag_short.supported = true
 			self.parts.wpn_fps_ass_l1a1_mag_short.stats = {
 				value = 2,
@@ -37254,6 +37349,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_l1a1_mag_short.custom_stats = { 
 				ads_speed_mult = 0.95
 			}
+			
+			self.parts.wpn_fps_ass_l1a1_ns_fal.supported = true
+			self.parts.wpn_fps_ass_l1a1_ns_fal.stats = deep_clone(muzzle_device.muzz_rec2_c)
 		end
 
 		if self.parts.wpn_fps_upg_limafive_m_extended then
@@ -37848,6 +37946,79 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_snp_sierra458.adds.wpn_fps_snp_sierra458_m_d60 = nil
 		end
 
+		if self.parts.wpn_fps_pis_polar9_sl_short then --Tangerine's 1911's
+			self.parts.wpn_fps_pis_polar9_sl_short.supported = true
+			self.parts.wpn_fps_pis_polar9_sl_short.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_pis_polar9_sl_short.custom_stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_pis_polar9_sl_long.supported = true
+			self.parts.wpn_fps_pis_polar9_sl_long.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_pis_polar9_sl_long.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			self.parts.wpn_fps_pis_polar9_g_ergo.supported = true
+			self.parts.wpn_fps_pis_polar9_g_ergo.stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_pis_polar9_g_ergo.custom_stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_pis_polar9_g_sport.supported = true
+			self.parts.wpn_fps_pis_polar9_g_sport.stats = { 
+				value = 4, 
+				spread = -1,
+				concealment = -1,
+				reload = 2
+			}
+
+			self.parts.wpn_fps_pis_polar9_m_extended.supported = true
+			self.parts.wpn_fps_pis_polar9_m_extended.stats = {
+				value = 1, 
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -3
+			}
+			self.parts.wpn_fps_pis_polar9_m_extended.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+			self.wpn_fps_pis_x_polar9.override.wpn_fps_pis_polar9_m_extended.stats = {
+				value = 1, 
+				extra_ammo = 20,
+				concealment = -1,
+				reload = -3
+			}
+
+			self.parts.wpn_fps_pis_baller_b_average.supported = true
+			self.parts.wpn_fps_pis_baller_b_average.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_pis_baller_b_average.custom_stats = deep_clone(barrels.short_b2_stats)
+
+			self.wpn_fps_pis_baller.override.wpn_fps_pis_polar9_sl_short = {
+				stats = deep_clone(barrels.short_b3_stats),
+				custom_stats = deep_clone(barrels.short_b3_stats)
+			}
+
+			self.parts.wpn_fps_pis_baller_m_classic.supported = true
+			self.parts.wpn_fps_pis_baller_m_classic.stats = {
+				value = 2,
+				spread = -1,
+				concealment = 1,
+			}
+			self.parts.wpn_fps_pis_baller_m_extended.supported = true
+			self.parts.wpn_fps_pis_baller_m_extended.stats = {
+				extra_ammo = 4,
+				reload = -3,
+				concealment = -1,
+				value = 1
+			}
+			self.parts.wpn_fps_pis_baller_m_classic_extended.supported = true
+			self.parts.wpn_fps_pis_baller_m_classic_extended.stats = {
+				extra_ammo = 2,
+				reload = -3,
+				value = 1
+			}
+			self.wpn_fps_x_1911.override.wpn_fps_pis_baller_m_classic_extended = {
+				stats = {
+				extra_ammo = 4,
+				reload = -3,
+				value = 1
+				}
+			}
+		end
+
 		if self.parts.wpn_fps_upg_m4_hera_lower then --Tangerine's AK/AR Mod Pack
 			
 			--Hera parts
@@ -38104,7 +38275,34 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_upg_ak_m_nato.custom_stats = {
 				falloff_end_mult = 1.2,
-				damage_min_mult = 0.833333
+				damage_min_mult = 0.8
+			}
+
+			self.parts.wpn_fps_upg_ak_m_ak101.supported = true
+			self.parts.wpn_fps_upg_ak_m_ak101.has_description = false
+			self.parts.wpn_fps_upg_ak_m_ak101.desc_id = ""
+			self.parts.wpn_fps_upg_ak_m_ak101.stats = { 
+				value = 2,
+				spread = -1,
+				recoil = 2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_upg_ak_m_ak101.custom_stats = {
+				falloff_end_mult = 1.2,
+				damage_min_mult = 0.8
+			}
+			
+			self.parts.wpn_fps_ass_flint_m_ak19.supported = true
+			self.parts.wpn_fps_ass_flint_m_ak19.has_description = false
+			self.parts.wpn_fps_ass_flint_m_ak19.desc_id = ""
+			self.parts.wpn_fps_ass_flint_m_ak19.stats = { 
+				value = 2,
+				spread = -1,
+				recoil = 4
+			}
+			self.parts.wpn_fps_ass_flint_m_ak19.custom_stats = {
+				falloff_end_mult = 1.2,
+				damage_min_mult = 0.8
 			}
 	
 			self.parts.wpn_fps_upg_ak_m_double.supported = true

@@ -1,3 +1,4 @@
+--TODO: MAKE FBI READY TEAMS LESS SPAMMY
 --[[local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"

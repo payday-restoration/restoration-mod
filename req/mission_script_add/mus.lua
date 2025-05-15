@@ -85,31 +85,9 @@ local opts_toggle_on_ponr = {
 
 return {
 	elements = {
-		restoration:gen_pointofnoreturn(
-			400001,
-			"pro_job_ponr_on_picked_up_diamond",
-			Vector3(0, 0, 0),
-			Rotation(0, 0, 0),
-			opts_pro_job_ponr_on_picked_up_diamond
-		),
-		restoration:gen_pointofnoreturn(
-			400002,
-			"pro_job_ponr_on_flare_placeable",
-			Vector3(0, 0, 0),
-			Rotation(0, 0, 0),
-			opts_pro_job_ponr_on_flare_placeable
-		),
-		restoration:gen_pointofnoreturn(
-			400003,
-			"pro_job_ponr_on_heli_full",
-			Vector3(0, 0, 0),
-			Rotation(0, 0, 0),
-			opts_pro_job_ponr_on_heli_full
-		),
-		restoration:gen_toggleelement(
-			400004,
-			"toggle_on_ponr",
-			opts_toggle_on_ponr
-		),
+		restoration:gen_pointofnoreturn(400001, "pro_job_ponr_on_picked_up_diamond", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_on_picked_up_diamond),
+		restoration:gen_pointofnoreturn(400002, "pro_job_ponr_on_flare_placeable", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_on_flare_placeable),
+		restoration:gen_pointofnoreturn(400003, "pro_job_ponr_on_heli_full", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_on_heli_full),
+		restoration:gen_toggleelement(400004, "toggle_on_ponr", opts_toggle_on_ponr),
 	},
 }

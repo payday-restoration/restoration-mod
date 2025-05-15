@@ -12,17 +12,7 @@ local optsBulldozer_SO = {
 
 return {
 	elements = {
-		restoration:gen_dialogue(
-			400001,
-			"they_sending_dozers",
-			Bain_senddozers
-		),
-		restoration:gen_so(
-			400002,
-			"dozer_hunt_so",
-			Vector3(-2657, -3569, -90),
-			Rotation(90, -0, -0),
-			optsBulldozer_SO
-		),
+		restoration:gen_dialogue(400001, "they_sending_dozers", Bain_senddozers),
+		restoration:gen_so(400002,"dozer_hunt_so", Vector3(0, 0, 0), Rotation(0, 0, 0),optsBulldozer_SO),
 	},
 }

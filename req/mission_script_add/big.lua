@@ -311,437 +311,74 @@ local Bain_senddozers = {
 return {
     elements = {
         -- Bulldozers that spawn after cops arrive (20 seconds after)
-        restoration:gen_dummy(
-            400001,
-            "fwb_dozer_1",
-            Vector3(3960, 2480, -1200),
-            Rotation(-90, -0, -0),
-            optsBulldozer
-        ),
-        restoration:gen_dummy(
-            400002,
-            "fwb_dozer_2",
-            Vector3(3911, -4422, -1021),
-            Rotation(-90, 0, -0),
-            optsBulldozer
-        ),
-        restoration:gen_so(
-            400003,
-            "hunt_so",
-            Vector3(3600, 2473, -1200),
-            Rotation(0, 0, 0),
-            optsHunt_SO
-        ),
+        restoration:gen_dummy(400001, "fwb_dozer_1", Vector3(3960, 2480, -1200), Rotation(-90, -0, -0), optsBulldozer),
+        restoration:gen_dummy(400002, "fwb_dozer_2", Vector3(3911, -4422, -1021), Rotation(-90, 0, -0), optsBulldozer),
+        restoration:gen_so(400003, "hunt_so", Vector3(3600, 2473, -1200), Rotation(0, 0, 0), optsHunt_SO),
 		--Cloakers, spawn as ambush in vault hallway (similiar to First World Bank)
-		restoration:gen_dummy(
-            400004,
-            "cloaker_1",
-            Vector3(-2864, 746, -1000),
-            Rotation(-180, 0, -0),
-            optsCloaker_1
-        ),
-		restoration:gen_dummy(
-            400005,
-            "cloaker_2",
-            Vector3(-2864, -1449, -599),
-            Rotation(0, 0, -0),
-            optsCloaker_2
-        ),
-		restoration:gen_dummy(
-            400006,
-            "cloaker_3",
-            Vector3(-2098, 416, -998),
-            Rotation(-177, 0, -0),
-            optsCloaker_3
-        ),
-		restoration:gen_dummy(
-            400007,
-            "cloaker_4",
-            Vector3(-2135.105, 1124.028, -998),
-            Rotation(90, -0, -0),
-            optsCloaker_4
-        ),
-		restoration:gen_dummy(
-            400008,
-            "cloaker_5",
-            Vector3(-2690, 1478, -599),
-            Rotation(-180, -0, -0),
-            optsCloaker_5
-        ),
-		restoration:gen_so(
-            400009,
-            "cloaker_hide_so_1",
-            Vector3(-2830, 375, -1000),
-            Rotation(-180, 0, -0),
-            optsCloaker_Hide_SO_1
-        ),
-		restoration:gen_so(
-            400010,
-            "cloaker_hide_so_2",
-            Vector3(-2854, -1158, -597),
-            Rotation(0, 0, -0),
-            optsCloaker_Hide_SO_1
-        ),
-		restoration:gen_so(
-            400011,
-            "cloaker_hide_so_3",
-            Vector3(-2104.004, 52.529, -1000),
-            Rotation(89, -0, -0),
-            optsCloaker_Hide_SO_2
-        ),
-		restoration:gen_so(
-            400012,
-            "cloaker_hide_so_4",
-            Vector3(-2858.536, 1231.877, -1000),
-            Rotation(89, -0, -0),
-            optsCloaker_Hide_SO_2
-        ),
-		restoration:gen_so(
-            400013,
-            "cloaker_hide_so_5",
-            Vector3(-2475, 1258, -599),
-            Rotation(-180, 0, 0),
-            optsCloaker_Hide_SO_1
-        ),
+		restoration:gen_dummy(400004, "cloaker_1", Vector3(-2864, 746, -1000), Rotation(-180, 0, -0), optsCloaker_1),
+		restoration:gen_dummy(400005, "cloaker_2", Vector3(-2864, -1449, -599), Rotation(0, 0, -0), optsCloaker_2),
+		restoration:gen_dummy(400006, "cloaker_3", Vector3(-2098, 416, -998), Rotation(-177, 0, -0), optsCloaker_3),
+		restoration:gen_dummy(400007, "cloaker_4", Vector3(-2135.105, 1124.028, -998), Rotation(90, -0, -0), optsCloaker_4),
+		restoration:gen_dummy(400008, "cloaker_5", Vector3(-2690, 1478, -599), Rotation(-180, -0, -0), optsCloaker_5),
+		restoration:gen_so(400009, "cloaker_hide_so_1", Vector3(-2830, 375, -1000), Rotation(-180, 0, -0), optsCloaker_Hide_SO_1),
+		restoration:gen_so(400010, "cloaker_hide_so_2", Vector3(-2854, -1158, -597), Rotation(0, 0, -0), optsCloaker_Hide_SO_1),
+		restoration:gen_so(400011, "cloaker_hide_so_3", Vector3(-2104.004, 52.529, -1000), Rotation(89, -0, -0), optsCloaker_Hide_SO_2),
+		restoration:gen_so(400012, "cloaker_hide_so_4", Vector3(-2858.536, 1231.877, -1000), Rotation(89, -0, -0), optsCloaker_Hide_SO_2),
+		restoration:gen_so(400013, "cloaker_hide_so_5", Vector3(-2475, 1258, -599), Rotation(-180, 0, 0), optsCloaker_Hide_SO_1),
 		--C4 spawns (Pro Job only)
-		restoration:gen_dummy(
-            400014,
-            "rouge_c4_1",
-            Vector3(-4649, 1877, -599),
-            Rotation(-90, -0, -0),
-            optsTitanCloaker_1
-        ),
-		restoration:gen_dummy(
-            400015,
-            "rouge_c4_2",
-            Vector3(-6634, 1349, -599),
-            Rotation(-0, 0, -0),
-            optsTitanCloaker_2
-        ),
-		restoration:gen_so(
-            400016,
-            "rouge_hide_so_1",
-            Vector3(-4253.838, 1914.332, -598),
-            Rotation(90, -0, -0),
-            optsCloaker_Hide_SO_2
-        ),
-		restoration:gen_so(
-            400017,
-            "rouge_hide_so_2",
-            Vector3(-6642, 1505, -599),
-            Rotation(0, 0, -0),
-            optsCloaker_Hide_SO_1
-        ),
-		--Bravo waiting for you in Elevator/Bus Escape
-		restoration:gen_missionscript(
-            400018,
-            "spawn_bravo_elevator",
-            spawn_bravo_eleavtor_escape
-        ),
-		restoration:gen_missionscript(
-            400019,
-            "spawn_bravo_bus",
-            spawn_bravo_bus_escape
-        ),
-		restoration:gen_toggleelement(
-            400020,
-            "enable_bravos",
-            enable_bravos
-        ),
-		restoration:gen_dummy(
-            400021,
-            "bravo_elevator_1",
-            Vector3(-1547, -434, -1479.426),
-            Rotation(-90, 0, -0),
-            optsBravo_1
-        ),
-		restoration:gen_dummy(
-            400022,
-            "bravo_elevator_2",
-            Vector3(-1547, -312, -1479.426),
-            Rotation(-90, 0, -0),
-            optsBravo_2
-        ),
-		restoration:gen_dummy(
-            400023,
-            "bravo_elevator_3",
-            Vector3(-1208, -499, -1479.426),
-            Rotation(180, 0, -0),
-            optsBravo_dozer
-        ),
-		restoration:gen_so(
-            400024,
-            "bravo_defend_so_1",
-            Vector3(-1450, -458, -1479.426),
-            Rotation(-131, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400025,
-            "bravo_defend_so_2",
-            Vector3(-1369.305, -365.171, -1479.426),
-            Rotation(-131, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400026,
-            "bravo_defend_so_3",
-            Vector3(-1189, -485, -1479.426),
-            Rotation(180, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_dummy(
-            400027,
-            "bravo_bus_1",
-            Vector3(-2264, -3668.836, -475),
-            Rotation(-27, 0, -0),
-            optsBravo_Bus_Escape_1
-        ),
-		restoration:gen_dummy(
-            400028,
-            "bravo_bus_2",
-            Vector3(-2469.351, -3852.690, -475),
-            Rotation(-10, 0, -0),
-            optsBravo_Bus_Escape_2
-        ),
-		restoration:gen_dummy(
-            400029,
-            "bravo_bus_3",
-            Vector3(-2635.076, -3674.971, -475),
-            Rotation(-47, 0, -0),
-            optsBravo_Bus_Escape_3
-        ),
-		restoration:gen_dummy(
-            400030,
-            "bravo_bus_4",
-            Vector3(-2828.566, -3609.568, -475),
-            Rotation(-96, 0, -0),
-            optsBravo_Bus_Escape_2
-        ),
-		restoration:gen_dummy(
-            400031,
-            "bravo_bus_5",
-            Vector3(-2623, -3900, -475),
-            Rotation(-180, 0, -0),
-            optsBravo_3
-        ),
-		restoration:gen_dummy(
-            400032,
-            "bravo_bus_6",
-            Vector3(-2560.908, -3794.890, -475),
-            Rotation(-12, 0, -0),
-            optsBravo_dozer_bus_escape
-        ),
-		restoration:gen_dummy(
-            400033,
-            "bravo_bus_7",
-            Vector3(-2766, -3829, -475),
-            Rotation(0, 0, -0),
-            optsBravo_Bus_Escape_1
-        ),
-		restoration:gen_toggleelement(
-            400034,
-            "disable_bravos",
-            disable_bravos
-        ),
+		restoration:gen_dummy(400014, "rouge_c4_1", Vector3(-4649, 1877, -599), Rotation(-90, -0, -0), optsTitanCloaker_1),
+		restoration:gen_dummy(400015, "rouge_c4_2", Vector3(-6634, 1349, -599), Rotation(-0, 0, -0), optsTitanCloaker_2),
+		restoration:gen_so(400016, "rouge_hide_so_1", Vector3(-4253.838, 1914.332, -598), Rotation(90, -0, -0), optsCloaker_Hide_SO_2),
+		restoration:gen_so(400017, "rouge_hide_so_2", Vector3(-6642, 1505, -599), Rotation(0, 0, -0), optsCloaker_Hide_SO_1),
+		--Bravos that are waiting for you in the Elevator/Bus Escape
+		restoration:gen_missionscript(400018, "spawn_bravo_elevator", spawn_bravo_eleavtor_escape),
+		restoration:gen_missionscript(400019, "spawn_bravo_bus", spawn_bravo_bus_escape),
+		restoration:gen_toggleelement(400020, "enable_bravos", enable_bravos),
+		restoration:gen_dummy(400021, "bravo_elevator_1", Vector3(-1547, -434, -1479.426), Rotation(-90, 0, -0), optsBravo_1),
+		restoration:gen_dummy(400022, "bravo_elevator_2", Vector3(-1547, -312, -1479.426), Rotation(-90, 0, -0), optsBravo_2),
+		restoration:gen_dummy(400023, "bravo_elevator_3", Vector3(-1208, -499, -1479.426), Rotation(180, 0, -0), optsBravo_dozer),
+		restoration:gen_so(400024, "bravo_defend_so_1", Vector3(-1450, -458, -1479.426), Rotation(-131, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400025, "bravo_defend_so_2", Vector3(-1369.305, -365.171, -1479.426), Rotation(-131, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400026, "bravo_defend_so_3", Vector3(-1189, -485, -1479.426), Rotation(180, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_dummy(400027, "bravo_bus_1", Vector3(-2264, -3668.836, -475), Rotation(-27, 0, -0), optsBravo_Bus_Escape_1),
+		restoration:gen_dummy(400028, "bravo_bus_2", Vector3(-2469.351, -3852.690, -475), Rotation(-10, 0, -0), optsBravo_Bus_Escape_2),
+		restoration:gen_dummy(400029, "bravo_bus_3", Vector3(-2635.076, -3674.971, -475), Rotation(-47, 0, -0), optsBravo_Bus_Escape_3),
+		restoration:gen_dummy(400030, "bravo_bus_4", Vector3(-2828.566, -3609.568, -475), Rotation(-96, 0, -0), optsBravo_Bus_Escape_2),
+		restoration:gen_dummy(400031, "bravo_bus_5", Vector3(-2623, -3900, -475), Rotation(-180, 0, -0), optsBravo_3),
+		restoration:gen_dummy(400032, "bravo_bus_6", Vector3(-2560.908, -3794.890, -475), Rotation(-12, 0, -0), optsBravo_dozer_bus_escape),
+		restoration:gen_dummy(400033, "bravo_bus_7", Vector3(-2766, -3829, -475), Rotation(0, 0, -0), optsBravo_Bus_Escape_1),
+		restoration:gen_toggleelement(400034, "disable_bravos", disable_bravos),
 		--Defend Shields
-		restoration:gen_dummy(
-            400035,
-            "shield_heli_1",
-            Vector3(3934, 2371, 225.990),
-            Rotation(-180, 0, -0),
-            optsShield_Defend_1
-        ),
-		restoration:gen_dummy(
-            400036,
-            "shield_heli_2",
-            Vector3(3876, 2371, 225.990),
-            Rotation(180, 0, -0),
-            optsShield_Defend_2
-        ),
-		restoration:gen_dummy(
-            400037,
-            "shield_heli_3",
-            Vector3(3813, 2371, 225.990),
-            Rotation(180, 0, -0),
-            optsShield_Defend_3
-        ),
-		restoration:gen_so(
-            400038,
-            "shield_defend_so_1",
-            Vector3(3349, -819.660, 224.989),
-            Rotation(120, -0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400039,
-            "shield_defend_so_2",
-            Vector3(3388.500, -888.076, 224.989),
-            Rotation(120, -0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400040,
-            "shield_defend_so_3",
-            Vector3(3426, -953.028, 224.989),
-            Rotation(120, -0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_missionscript(
-            400042,
-            "spawn_cloakers",
-            spawn_cloakers
-        ),
-		restoration:gen_dummytrigger(
-            400043,
-            "manager_death",
-            Vector3(-2400, -3677, 375),
-            Rotation(90, -0, -0),
-            optsmanager_has_been_killed
-        ),
-		restoration:gen_toggleelement(
-            400044,
-            "enable_dozers",
-            enable_bo_dozers_the_sequel
-        ),
-		restoration:gen_toggleelement(
-            400045,
-            "disable_dozers",
-            disable_bo_dozers
-        ),
-		restoration:gen_dummy(
-            400046,
-            "fwb_dozer_3",
-            Vector3(7498, -207, -1590.010),
-            Rotation(180, 0, -0),
-            optsBulldozer_2
-        ),
-        restoration:gen_dummy(
-            400047,
-            "fwb_dozer_4",
-            Vector3(3874, 2469, -1200.010),
-            Rotation(-90, 0, -0),
-            optsBulldozer_2
-        ),
-		restoration:gen_dialogue(
-            400048,
-            "they_sending_dozers",
-            Bain_senddozers
-        ),
-		restoration:gen_missionscript(
-            400049,
-            "spawn_the_cops",
-            spawn_beat_cops
-        ),
-		restoration:gen_dummy(
-            400050,
-            "cop_1",
-            Vector3(3897, 2546, -1197.510),
-            Rotation(-90, 0, -0),
-            optsCop
-        ),
-        restoration:gen_dummy(
-            400051,
-            "cop_2",
-            Vector3(3853, 2546, -1197.510),
-            Rotation(-90, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400052,
-            "cop_3",
-            Vector3(3816, 2546, -1197.510),
-            Rotation(-90, 0, -0),
-            optsCop
-        ),
-        restoration:gen_dummy(
-            400053,
-            "cop_4",
-            Vector3(3771, 2469, -1200.010),
-            Rotation(-90, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400054,
-            "cop_5",
-            Vector3(3732, 2546, -1197.510),
-            Rotation(-90, 0, -0),
-            optsCop
-        ),
-        restoration:gen_dummy(
-            400055,
-            "cop_6",
-            Vector3(7456, -426, -1590.010),
-            Rotation(-180, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400056,
-            "cop_7",
-            Vector3(7456, -376, -1590.010),
-            Rotation(-180, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400057,
-            "cop_8",
-            Vector3(7456, -323, -1590.010),
-            Rotation(-180, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400058,
-            "cop_9",
-            Vector3(7456, -277, -1590.010),
-            Rotation(-180, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400059,
-            "cop_10",
-            Vector3(7456, -211, -1590.010),
-            Rotation(-180, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400060,
-            "cop_11",
-            Vector3(4270, -4360, -1187.244),
-            Rotation(-90, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400061,
-            "cop_12",
-            Vector3(4319, -4360, -1187.244),
-            Rotation(-90, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400062,
-            "cop_13",
-            Vector3(4272, -4427, -1187.244),
-            Rotation(-90, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400063,
-            "cop_14",
-            Vector3(4319, -4427, -1187.244),
-            Rotation(-90, 0, -0),
-            optsCop
-        ),
-		restoration:gen_dummy(
-            400064,
-            "cop_15",
-            Vector3(4272, -4491, -1187.244),
-            Rotation(-90, 0, -0),
-            optsCop
-        ),
-		restoration:gen_toggleelement(
-            400065,
-            "enable_dozers_ds",
-            enable_bo_dozers_ds
-        )
+		restoration:gen_dummy(400035, "shield_heli_1", Vector3(3934, 2371, 225.990), Rotation(-180, 0, -0), optsShield_Defend_1),
+		restoration:gen_dummy(400036, "shield_heli_2", Vector3(3876, 2371, 225.990), Rotation(180, 0, -0), optsShield_Defend_2),
+		restoration:gen_dummy(400037, "shield_heli_3", Vector3(3813, 2371, 225.990), Rotation(180, 0, -0), optsShield_Defend_3),
+		restoration:gen_so(400038, "shield_defend_so_1", Vector3(3349, -819.660, 224.989), Rotation(120, -0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400039, "shield_defend_so_2", Vector3(3388.500, -888.076, 224.989), Rotation(120, -0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400040, "shield_defend_so_3", Vector3(3426, -953.028, 224.989), Rotation(120, -0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_missionscript(400042, "spawn_cloakers", spawn_cloakers),
+		restoration:gen_dummytrigger(400043, "manager_death", Vector3(-2400, -3677, 375), Rotation(90, -0, -0), optsmanager_has_been_killed),
+		restoration:gen_toggleelement(400044, "enable_dozers", enable_bo_dozers_the_sequel),
+		restoration:gen_toggleelement(400045, "disable_dozers", disable_bo_dozers),
+		restoration:gen_dummy(400046, "fwb_dozer_3", Vector3(7498, -207, -1590.010), Rotation(180, 0, -0), optsBulldozer_2),
+        restoration:gen_dummy(400047, "fwb_dozer_4", Vector3(3874, 2469, -1200.010), Rotation(-90, 0, -0), optsBulldozer_2),
+		restoration:gen_dialogue(400048, "they_sending_dozers", Bain_senddozers),
+		restoration:gen_missionscript(400049, "spawn_the_cops", spawn_beat_cops),
+		--TODO: USE ELEMENTRANDOM TO SPAWN THEM IN GROUPS SO THEY WON'T COME ALL AT ONCE
+		restoration:gen_dummy(400050, "cop_1", Vector3(3897, 2546, -1197.510), Rotation(-90, 0, -0), optsCop),
+        restoration:gen_dummy(400051, "cop_2", Vector3(3853, 2546, -1197.510), Rotation(-90, 0, -0), optsCop),
+		restoration:gen_dummy(400052, "cop_3", Vector3(3816, 2546, -1197.510), Rotation(-90, 0, -0), optsCop),
+        restoration:gen_dummy(400053, "cop_4", Vector3(3771, 2469, -1200.010), Rotation(-90, 0, -0), optsCop),
+		restoration:gen_dummy(400054, "cop_5", Vector3(3732, 2546, -1197.510), Rotation(-90, 0, -0), optsCop),
+        restoration:gen_dummy(400055, "cop_6", Vector3(7456, -426, -1590.010), Rotation(-180, 0, -0), optsCop),
+		restoration:gen_dummy(400056, "cop_7", Vector3(7456, -376, -1590.010), Rotation(-180, 0, -0), optsCop),
+		restoration:gen_dummy(400057, "cop_8", Vector3(7456, -323, -1590.010), Rotation(-180, 0, -0), optsCop),
+		restoration:gen_dummy(400058, "cop_9", Vector3(7456, -277, -1590.010), Rotation(-180, 0, -0), optsCop),
+		restoration:gen_dummy(400059, "cop_10", Vector3(7456, -211, -1590.010), Rotation(-180, 0, -0), optsCop),
+		restoration:gen_dummy(400060, "cop_11", Vector3(4270, -4360, -1187.244), Rotation(-90, 0, -0), optsCop),
+		restoration:gen_dummy(400061, "cop_12", Vector3(4319, -4360, -1187.244), Rotation(-90, 0, -0), optsCop),
+		restoration:gen_dummy(400062, "cop_13", Vector3(4272, -4427, -1187.244), Rotation(-90, 0, -0), optsCop),
+		restoration:gen_dummy(400063, "cop_14", Vector3(4319, -4427, -1187.244), Rotation(-90, 0, -0), optsCop),
+		restoration:gen_dummy(400064, "cop_15", Vector3(4272, -4491, -1187.244), Rotation(-90, 0, -0), optsCop),
+		restoration:gen_toggleelement(400065, "enable_dozers_ds", enable_bo_dozers_ds)
     }
 }

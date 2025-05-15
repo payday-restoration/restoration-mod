@@ -11,19 +11,7 @@ local optsBulldozer_vault = {
 
 return {
     elements = {
-		restoration:gen_dummy(
-            400001,
-            "bulldozer_vault_1",
-            Vector3(47, -5298, -400),
-            Rotation(0, 0, -0),
-            optsBulldozer_vault
-        ),
-		restoration:gen_dummy(
-            400002,
-            "bulldozer_vault_2",
-            Vector3(-78, -5298, -400),
-            Rotation(0, 0, -0),
-            optsBulldozer_vault
-        )
+		restoration:gen_dummy(400001, "bulldozer_vault_1", Vector3(47, -5298, -400), Rotation(0, 0, -0), optsBulldozer_vault),
+		restoration:gen_dummy(400002, "bulldozer_vault_2", Vector3(-78, -5298, -400), Rotation(0, 0, -0), optsBulldozer_vault)
     }
 }

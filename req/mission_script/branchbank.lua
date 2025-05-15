@@ -44,6 +44,25 @@ return {
 			player_1 = true,
 		},
 	},
+	-- DW Trailer Skulldozer spawn event
+	-- disable the dozer during startup
+	[100004] = {
+		on_executed = {
+			{ id = 400003, delay = 3 },
+		},
+	},
+	-- Enable the dozer when things go loud
+	[100568] = {
+		on_executed = {
+			{ id = 400004, delay = 0 },
+		},
+	},
+	-- Spawn him when the far van escape gets triggered on DW/DS (DW Trailer throwback)
+	[104452] = {
+		on_executed = {
+			{ id = 400001, delay = 0 },
+		},
+	},
 	-- Enable max diff after 2 instead of 3 assault waves
 	[101307] = {
 		values = {

@@ -239,6 +239,10 @@ function CopBase:disable_asu_laser(state)
 	end
 end
 
+Hooks:PreHook(CopBase, "post_init", "run_fucking_heads_post_init", function(self)
+	self:_run_unit_sequences()
+end)
+
 Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	self:random_mat_seq_initialization()
 
@@ -654,7 +658,7 @@ for name, sequence in pairs(enemy_variations) do
 	enemy_mapping[Idstring(name .. "_husk"):key()] = sequence
 end
 
-Hooks:PreHook(CopBase, "post_init", "hits_post_init", function(self)
+function CopBase:_run_unit_sequences()
 	local name = self._unit:name():key()
 	
 	local character_sequence = all_cop_variants[name]
@@ -680,7 +684,7 @@ Hooks:PreHook(CopBase, "post_init", "hits_post_init", function(self)
 			self._head_unit:damage():run_sequence_simple(character_sequence)
 		end
 	end
-end)
+end
 
 
 function CopBase:random_mat_seq_initialization()

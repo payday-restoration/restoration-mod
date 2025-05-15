@@ -241,6 +241,7 @@ end
 
 Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	self:random_mat_seq_initialization()
+	self:_run_unit_sequences()
 
 	if self._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("turn_on_spook_lights")
@@ -655,6 +656,9 @@ for name, sequence in pairs(enemy_variations) do
 end
 
 Hooks:PreHook(CopBase, "post_init", "hits_post_init", function(self)
+end)
+
+function CopBase:_run_unit_sequences()
 	local name = self._unit:name():key()
 	
 	local character_sequence = all_cop_variants[name]
@@ -680,7 +684,7 @@ Hooks:PreHook(CopBase, "post_init", "hits_post_init", function(self)
 			self._head_unit:damage():run_sequence_simple(character_sequence)
 		end
 	end
-end)
+end
 
 
 function CopBase:random_mat_seq_initialization()

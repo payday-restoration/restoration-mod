@@ -24415,7 +24415,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.baller.recategorize = { "heavy_pis" }
 				self.baller.damage_type = "heavy_pistol"
 				self.baller.fire_mode_data.fire_rate = 0.1263157894
-				self.baller.CLIP_AMMO_MAX = 10
+				self.baller.CLIP_AMMO_MAX = 8
 				self.baller.AMMO_MAX = 40
 				self.baller.kick = self.stat_info.kick_tables.right_recoil
 				self.baller.kick_pattern = {
@@ -24424,6 +24424,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{6, self.stat_info.kick_tables.right_recoil}
 				}
 				self.baller.supported = true
+				self.baller.can_shoot_through_enemy = false
+				self.baller.can_shoot_through_shield = false
+				self.baller.can_shoot_through_wall = false
+				self.baller.armor_piercing_chance = 0
 				self.baller.ads_speed = 0.200
 				self.baller.damage_falloff = {
 					start_dist = 1400,
@@ -24445,6 +24449,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.baller.stats_modifiers = nil
+				self.baller.reload_speed_multiplier = 1.05
 				self.baller.panic_suppression_chance = 0.05
 				self.baller.timers.reload_exit_empty = 0.5
 				self.baller.timers.reload_exit_not_empty = 0.65

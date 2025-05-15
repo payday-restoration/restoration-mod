@@ -126,12 +126,6 @@
 	<unit				path="units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3_husk" load="true" />
 	<!-- city tier end -->	
 	
-	<!--tempdogshit assets-->
-	<unit_mat			path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
-	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore"/>
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/opscore_df" />	<!--fucking remove these-->
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/opscore_nm" />	
-	
 	<!-- specials-->
 	<!-- greendozer -->
     <unit				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" load="true"/>

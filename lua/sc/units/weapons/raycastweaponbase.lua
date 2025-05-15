@@ -207,7 +207,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data, weapon_unit)
 			elseif hit.unit:in_slot(shield_mask) and (not can_shoot_through_shield or (is_semi_snp and distance > near_falloff_distance)) then
 				break
 			elseif hit.unit:in_slot(shield_mask) and (hit.unit:name():key() == 'af254947f0288a6c' or hit.unit:name():key() == '15cbabccf0841ff8'  --Titan shields
-			or hit.unit:name():key() == '5deefee472c1903d' or hit.unit:name():key() == 'e26c602b7a43d7bb') and not can_shoot_through_titan_shield then --Marshall shields
+			or hit.unit:name():key() == 'bd383b20175461fe') and not can_shoot_through_titan_shield then --Marshall shields
 				break
 			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == '4a4a5e0034dd5340' then --Winters being a shit.
 				break						

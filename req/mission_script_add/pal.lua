@@ -1,8 +1,8 @@
 --TODO: Make scripted Bulldozers spawns that turn off either water or power like in PDTH (with taser as his backup in some power box spots)
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
-local grenadier = "units/payday2/characters/ene_grenadier_1/ene_grenadier_1"
+local sniper = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3"
+local grenadier = "units/pd2_mod_lapd/characters/ene_grenadier_1/ene_grenadier_1"
 local taser = "units/payday2/characters/ene_tazer_1/ene_tazer_1"
 local ponr_value = (difficulty <= 6 and 120) or 90
 local death_sentence = difficulty == 8

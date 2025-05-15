@@ -65,31 +65,4 @@ Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)
 	self._unit:character_damage():add_listener("lpf_buff_state" .. tostring(self._unit:key()), {
 		"death"
 	}, callback(self, self, "disable_lpf_buff"))	
-	
-
-	local name = self._unit:name():key()
-	
-	local character_sequence = all_cop_variants[name]
-	
-	local spawn_manager_ext = self._unit:spawn_manager()
-	local damage_ext = self._unit:character_damage()
-	local head = damage_ext._head
-	
-	if spawn_manager_ext then	
-		if head then	
-			managers.dyn_resource:load(Idstring("unit"), Idstring(head), managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
-			
-			spawn_manager_ext:spawn_and_link_unit("_char_joint_names", "cop_head", head)
-
-			self._head_unit = spawn_manager_ext:get_unit("cop_head")
-		end
-	end
-	
-	if alive(self._head_unit) then		
-		self._head_unit:set_enabled(self._unit:enabled())
-		
-		if self._head_unit:damage() and self._head_unit:damage():has_sequence(character_sequence) then
-			self._head_unit:damage():run_sequence_simple(character_sequence)
-		end
-	end	
 end)

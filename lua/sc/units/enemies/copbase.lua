@@ -244,8 +244,6 @@ Hooks:PreHook(CopBase, "post_init", "run_fucking_heads_post_init", function(self
 end)
 
 Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
-	self:random_mat_seq_initialization()
-
 	if self._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("turn_on_spook_lights")
 	elseif self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "headless_hatman" or self._tweak_table == "autumn" then
@@ -322,7 +320,7 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	
 end)
 
-local enemy_variations = {
+local enemy_variations_clean = {
 	["units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"] = "swat_ar",
 	["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "swat_sniper",
 	["units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"] = "swat_sniper_scripted",
@@ -544,8 +542,7 @@ local enemy_variations = {
 	
 }
 
-local all_head_variants = {
-
+local head_variations_clean = {
 	--LAPD
 	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"] = "vetcop",
 	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"] = "vetcop",
@@ -639,34 +636,48 @@ local all_head_variants = {
 	["units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"] = "gs_swat",
 	["units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1"] = "sec_cop",	
 	["units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"] = "sec_cop",
-	["units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"] = "fbi_hrt"
-	
+	["units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"] = "fbi_hrt"	
 }
 
 
 -- do not touch this.
-local enemy_mapping = {}
-local all_cop_variants = {}
+local enemy_variations = {}
+local head_variations = {}
 
-for name, sequence in pairs(all_head_variants) do
-	all_cop_variants[Idstring(name):key()] = sequence
-	all_cop_variants[Idstring(name .. "_husk"):key()] = sequence
+for name, sequence in pairs(enemy_variations_clean) do
+	enemy_variations[Idstring(name):key()] = sequence
+	enemy_variations[Idstring(name .. "_husk"):key()] = sequence
 end
 
-for name, sequence in pairs(enemy_variations) do
-	enemy_mapping[Idstring(name):key()] = sequence
-	enemy_mapping[Idstring(name .. "_husk"):key()] = sequence
+for name, sequence in pairs(head_variations_clean) do
+	head_variations[Idstring(name):key()] = sequence
+	head_variations[Idstring(name .. "_husk"):key()] = sequence
 end
+
+CopBase.enemy_variations = deep_clone(enemy_variations) 
+CopBase.head_variations = deep_clone(head_variations)  
 
 function CopBase:_run_unit_sequences()
 	local name = self._unit:name():key()
 	
-	local character_sequence = all_cop_variants[name]
+	local enemy_sequence = self.enemy_variations[name]
+	local head_sequence = self.head_variations[name]
+
+--[[	-- NOT NEEDED UNLESS  YOU WANT TO MAKE BODY FLASHLIGHTS (ON MURKIES AND STUFF) MAP DEPENDENT
+    local lvl_tweak_data = tweak_data.levels[job] 
+    local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
+]]
+
+	-- Run the enemy sequence to enable pouches and such
+	if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence) then
+		self._unit:damage():run_sequence_simple(enemy_sequence)
+	end
 	
 	local spawn_manager_ext = self._unit:spawn_manager()
 	local damage_ext = self._unit:character_damage()
 	local head = damage_ext._head
 	
+	-- Run the head sequence to enable the head and arms
 	if spawn_manager_ext then	
 		if head then	
 			managers.dyn_resource:load(Idstring("unit"), Idstring(head), managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
@@ -680,20 +691,9 @@ function CopBase:_run_unit_sequences()
 	if alive(self._head_unit) then		
 		self._head_unit:set_enabled(self._unit:enabled())
 		
-		if self._head_unit:damage() and self._head_unit:damage():has_sequence(character_sequence) then
-			self._head_unit:damage():run_sequence_simple(character_sequence)
+		if self._head_unit:damage() and self._head_unit:damage():has_sequence(head_sequence) then
+			self._head_unit:damage():run_sequence_simple(head_sequence)
 		end
-	end
-end
-
-
-function CopBase:random_mat_seq_initialization()
-	local sequence = enemy_mapping[self._unit:name():key()]
-    local lvl_tweak_data = tweak_data.levels[job]
-    local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
-
-	if self._unit:damage() and self._unit:damage():has_sequence(sequence) then
-		self._unit:damage():run_sequence_simple(sequence)
 	end
 end
 

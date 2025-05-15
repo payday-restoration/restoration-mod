@@ -10,6 +10,10 @@
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="CopBase" >
+			<var name="_tweak_table" value="security" />
+			<var name="_default_weapon_id" value="mp5" />
+		</extension>
 		<extension name="spawn_manager" class="ManageSpawnedUnits" >
 			<var name="_char_joint_names" type="table" >	
 				<var value="root_point" />
@@ -85,11 +89,7 @@
 			
 			<var name="allow_client_spawn" value="true" />
 			<var name="local_only" value="true" />
-		</extension>						
-		<extension name="base" class="CopBase" >
-			<var name="_tweak_table" value="security" />
-			<var name="_default_weapon_id" value="mp5" />
-		</extension>
+		</extension>				
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />

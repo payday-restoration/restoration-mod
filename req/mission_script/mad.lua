@@ -3,13 +3,13 @@ local eseries_table_mayhem_dw = {
 	"units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
 	"units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle",
 	"units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser",
-	"units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"
+	"units/pd2_mod_reapers/characters/ene_vip_2_assault/ene_vip_2_assault"
 }
 local eseries_table_ds = {
 	"units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
 	"units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle",
 	"units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser",
-	"units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2",
+	"units/pd2_mod_reapers/characters/ene_vip_2_assault/ene_vip_2_assault",
 	"units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 }
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")

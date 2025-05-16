@@ -28,10 +28,11 @@ local choose_murky_spawnpoint = {
 	amount = 2,
 	amount_random = 3,
 	on_executed = {
-		{ id = 400036, delay = 0 },
-		{ id = 400037, delay = 0 },
-		{ id = 400038, delay = 0 },
-		{ id = 400039, delay = 0 },
+		{ id = 400004, delay = 0 },
+		{ id = 400005, delay = 0 },
+		{ id = 400006, delay = 0 },
+		{ id = 400007, delay = 0 },
+		{ id = 400008, delay = 0 },
 	},
 }
 local murky_spawnpoint_1 = {

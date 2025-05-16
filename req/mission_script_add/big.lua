@@ -30,13 +30,6 @@ local optsBulldozer = {
 		{ id = 400048, delay = 0 },
 	}
 }
-local optsBulldozer_2 = {
-    enemy = tank,
-    on_executed = { 
-		{ id = 400003, delay = 3 },
-		{ id = 400048, delay = 0 }
-	}
-}
 local optsCloaker_1 = {
 	enemy = cloaker,
 	participate_to_group_ai = true,
@@ -302,10 +295,6 @@ local enable_bo_dozers_ds = {
 		400047
 	}
 }
-local Bain_senddozers = {
-	dialogue = "Play_ban_s02_b",
-	can_not_be_muted = true
-}
 
 
 return {
@@ -313,6 +302,8 @@ return {
         -- Bulldozers that spawn after cops arrive (20 seconds after)
         restoration:gen_dummy(400001, "fwb_dozer_1", Vector3(3960, 2480, -1200), Rotation(-90, -0, -0), optsBulldozer),
         restoration:gen_dummy(400002, "fwb_dozer_2", Vector3(3911, -4422, -1021), Rotation(-90, 0, -0), optsBulldozer),
+		restoration:gen_dummy(400046, "fwb_dozer_3", Vector3(7498, -207, -1590.010), Rotation(180, 0, -0), optsBulldozer),
+        restoration:gen_dummy(400047, "fwb_dozer_4", Vector3(3874, 2469, -1200.010), Rotation(-90, 0, -0), optsBulldozer),
         restoration:gen_so(400003, "hunt_so", Vector3(3600, 2473, -1200), Rotation(0, 0, 0), optsHunt_SO),
 		--Cloakers, spawn as ambush in vault hallway (similiar to First World Bank)
 		restoration:gen_dummy(400004, "cloaker_1", Vector3(-2864, 746, -1000), Rotation(-180, 0, -0), optsCloaker_1),
@@ -359,9 +350,6 @@ return {
 		restoration:gen_dummytrigger(400043, "manager_death", Vector3(-2400, -3677, 375), Rotation(90, -0, -0), optsmanager_has_been_killed),
 		restoration:gen_toggleelement(400044, "enable_dozers", enable_bo_dozers_the_sequel),
 		restoration:gen_toggleelement(400045, "disable_dozers", disable_bo_dozers),
-		restoration:gen_dummy(400046, "fwb_dozer_3", Vector3(7498, -207, -1590.010), Rotation(180, 0, -0), optsBulldozer_2),
-        restoration:gen_dummy(400047, "fwb_dozer_4", Vector3(3874, 2469, -1200.010), Rotation(-90, 0, -0), optsBulldozer_2),
-		restoration:gen_dialogue(400048, "they_sending_dozers", Bain_senddozers),
 		restoration:gen_missionscript(400049, "spawn_the_cops", spawn_beat_cops),
 		--TODO: USE ELEMENTRANDOM TO SPAWN THEM IN GROUPS SO THEY WON'T COME ALL AT ONCE
 		restoration:gen_dummy(400050, "cop_1", Vector3(3897, 2546, -1197.510), Rotation(-90, 0, -0), optsCop),

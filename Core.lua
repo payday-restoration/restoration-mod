@@ -1336,6 +1336,26 @@ function restoration:gen_counter(id, name, pos, rot, opts)
 	}
 end
 
+function restoration:gen_element_random(id, name, opts)
+	opts = opts or {}
+	return {
+		id = id,
+		editor_name = name,
+		module = "CoreElementRandom",
+		class = "ElementRandom",
+		values = {
+			execute_on_startup = false,
+			ignore_disabled = opts.ignore_disabled or false,
+			trigger_times = opts.trigger_times or 0,
+			amount = opts.amount or 0,
+			amount_random = opts.amount_random or 0,
+			on_executed = opts.on_executed or {},
+			base_delay = opts.base_delay or 0,
+			enabled = true,
+		},
+	}
+end	
+
 function restoration:log(...)
 	if self.logging then
 		log("[StreamlinedHeistingAI] " .. table.concat({...}, " "))

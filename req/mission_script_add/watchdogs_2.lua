@@ -332,10 +332,6 @@ local optsrespawn_tank = {
 	},
 	event = "death"
 }
-local Bain_senddozers = {
-	dialogue = "Play_ban_s02_a",
-	can_not_be_muted = true
-}
 
 return {
     elements = {
@@ -742,11 +738,6 @@ return {
             Rotation(90, -0, -0),
             optsrespawn_tank
         ),
-		restoration:gen_dialogue(
-            400060,
-            "they_sending_dozers",
-            Bain_senddozers
-        )
     }
 }
 ]]--

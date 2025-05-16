@@ -208,14 +208,14 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	}
 	
 	--Midland Ranch
-	self.ranc.ai_group_type = fbi
+	self.ranc.ai_group_type = fbi --lapd + marshals pls
 	self.ranc.player_style = "fighterpilot"	
 	
 	--Lost in Transit
-	self.trai.ai_group_type = fbi
+	self.trai.ai_group_type = fbi --make "lapd"
 	self.trai.player_style = "railroad"
 	
-	--Hostile Takeover
+	--Hostile Takeover (probably will make this a weird amalgamation of lapd + nypd blue gensecs & bellmead titans)
 	self.corp.ai_group_type = fbi	
 	
 	--///NYPD LEVELS\\\--

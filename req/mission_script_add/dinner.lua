@@ -184,8 +184,7 @@ local spawn_dozer_2 = {
 local optsBulldozer = {
 	enemy = tank,
 	on_executed = {
-		{ id = 400021, delay = 0.5, },
-		{ id = 400048, delay = 0, },
+		{ id = 400021, delay = 0, },
 	},
 	enabled = true,
 }
@@ -304,10 +303,6 @@ local optsrespawn_dozer_2 = {
 		400020,
 	},
 	event = "death"
-}
-local Bain_senddozers = {
-	dialogue = "Play_ban_s02_a",
-	can_not_be_muted = true,
 }
 local van_spawngroup = {
 	spawn_groups = {
@@ -653,11 +648,6 @@ return {
 			400046,
 			"spawn_murkies",
 			spawn_murkies
-		),
-		restoration:gen_dialogue(
-			400048,
-			"they_sending_dozers",
-			Bain_senddozers
 		),
 		restoration:gen_missionscript(
 			400050,

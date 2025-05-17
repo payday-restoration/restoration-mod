@@ -30,26 +30,10 @@
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_city_df" />
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_city_df" />	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_city_nm" />	
-
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/opscore_df" />	
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/opscore_nm" />	
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_df" />	
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_nm" />		
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" />	
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm" />	
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_helms_df" />	
 	
-		
-	
-	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_df" force="true"/>
-	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_nm" force="true"/>	
 	<texture			path="units/payday2/characters/shared_textures/police_df" force="true"/>
 	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>		
-	
-	<!--opscore-->
-	<unit_mat			path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
-	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore"/>
-	
+		
 	<!-- city tier -->	
 	<!--City swat 1-->
     <unit				path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1" load="true"/>
@@ -152,7 +136,6 @@
 	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_contour" force="false"/>
 	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk" force="false" load="true"/> 
 	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/taser_body"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
 	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
 
 	<!-- medic -->

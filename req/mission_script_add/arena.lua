@@ -25,27 +25,9 @@ local opts_toggle_off_ponr_input_event = {
 
 return {
 	elements = {
-		restoration:gen_instance_input_event(
-			400001,
-			"pro_job_ponr_input_event",
-			Vector3(0, 0, 0),
-			Rotation(0, 0, 0),
-			opts_pro_job_ponr_input_event
-		),
-		restoration:gen_missionscript(
-			400002,
-			"try_start_ponr",
-			opts_try_start_ponr
-		),
-		restoration:gen_toggleelement(
-			400003,
-			"toggle_on_ponr",
-			opts_toggle_on_ponr
-		),
-		restoration:gen_toggleelement(
-			400004,
-			"toggle_off_ponr_input_event",
-			opts_toggle_off_ponr_input_event
-		),
+		restoration:gen_instance_input_event(400001, "pro_job_ponr_input_event", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_input_event),
+		restoration:gen_missionscript(400002, "try_start_ponr", opts_try_start_ponr),
+		restoration:gen_toggleelement(400003, "toggle_on_ponr", opts_toggle_on_ponr),
+		restoration:gen_toggleelement(400004,"toggle_off_ponr_input_event", opts_toggle_off_ponr_input_event),
 	},
 }

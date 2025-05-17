@@ -50,39 +50,11 @@ local opts_toggle_off_ponr_its_payday_style = {
 
 return {
 	elements = {
-		restoration:gen_pointofnoreturn(
-			400001,
-			"pro_job_ponr_panic_room_style",
-			Vector3(0, 0, 0),
-			Rotation(0, 0, 0),
-			opts_pro_job_ponr_panic_room_style
-		),
-		restoration:gen_instance_input_event(
-			400002,
-			"pro_job_ponr_its_payday_style_input_event",
-			Vector3(0, 0, 0),
-			Rotation(0, 0, 0),
-			opts_pro_job_ponr_its_payday_style_input_event
-		),
-		restoration:gen_missionscript(
-			400003,
-			"try_start_ponr_its_payday_style",
-			opts_try_start_ponr_its_payday_style
-		),
-		restoration:gen_toggleelement(
-			400004,
-			"toggle_on_ponr_its_payday_style",
-			opts_toggle_on_ponr_its_payday_style
-		),
-		restoration:gen_toggleelement(
-			400005,
-			"toggle_off_ponr_its_payday_style",
-			opts_toggle_off_ponr_its_payday_style
-		),
-		restoration:gen_toggleelement(
-			400006,
-			"toggle_off_ponr_panic_room_style",
-			opts_toggle_off_ponr_panic_room_style
-		),
+		restoration:gen_pointofnoreturn(400001, "pro_job_ponr_panic_room_style", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_panic_room_style),
+		restoration:gen_instance_input_event(400002, "pro_job_ponr_its_payday_style_input_event", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_its_payday_style_input_event),
+		restoration:gen_missionscript(400003, "try_start_ponr_its_payday_style", opts_try_start_ponr_its_payday_style),
+		restoration:gen_toggleelement(400004, "toggle_on_ponr_its_payday_style", opts_toggle_on_ponr_its_payday_style),
+		restoration:gen_toggleelement(400005, "toggle_off_ponr_its_payday_style", opts_toggle_off_ponr_its_payday_style),
+		restoration:gen_toggleelement(400006, "toggle_off_ponr_panic_room_style", opts_toggle_off_ponr_panic_room_style),
 	},
 }

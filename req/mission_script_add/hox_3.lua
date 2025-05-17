@@ -35,22 +35,8 @@ local opts_try_start_ponr = {
 }
 return {
 	elements = {
-		restoration:gen_pointofnoreturn(
-			100039,
-			"pro_job_ponr",
-			Vector3(0, 0, 0),
-			Rotation(0, 0, 0),
-			opts_pro_job_ponr
-		),
-		restoration:gen_missionscript(
-			100038,
-			"try_start_ponr",
-			opts_try_start_ponr
-		),
-		restoration:gen_toggleelement(
-		100031,
-		"toggle_on_ponr",
-		opts_toggle_on_ponr
-		),
+		restoration:gen_pointofnoreturn(100039, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
+		restoration:gen_missionscript(100038, "try_start_ponr", opts_try_start_ponr),
+		restoration:gen_toggleelement(100031, "toggle_on_ponr", opts_toggle_on_ponr),
 	},
 }

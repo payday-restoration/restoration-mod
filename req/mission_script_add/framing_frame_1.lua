@@ -15,19 +15,7 @@ local optscloakerspawned = {
 return {
     elements = {
         --Vent Fix
-		restoration:objecteditor(
-            400001,
-            "break_le_vent",
-            Vector3(-803, -1370, 3449.999),
-            Rotation(-90, 0, -0),
-            optsVentBreaker
-        ),
-		restoration:gen_dummytrigger(
-            400002,
-            "cloaker_spawned",
-            Vector3(-2400, -3677, 375),
-            Rotation(90, -0, -0),
-            optscloakerspawned
-        )
+		restoration:objecteditor(400001, "break_le_vent", Vector3(-803, -1370, 3449.999), Rotation(-90, 0, -0), optsVentBreaker),
+		restoration:gen_dummytrigger(400002, "cloaker_spawned", Vector3(-2400, -3677, 375), Rotation(90, -0, -0), optscloakerspawned)
     }
 }

@@ -16,7 +16,7 @@ function GroupAITweakData:_init_chatter_data()
 	interval is cooldown
 	group_min how many cops need to be in a group for the line to play
 	queue what call is used in chatter
-	]]--
+	--]]
 	--[[
 		notes:
 		radius seems to do nothing no discernable difference between 10 and 90000000000000000000000000000000, game theory how many cops in a radius can say a certain chatter
@@ -25,7 +25,7 @@ function GroupAITweakData:_init_chatter_data()
 		inerval is cooldown
 		group_min seems to be how many cops need to be in a group for the line to play
 		queue what call is used in chatter
-	]]--
+	--]]
 	self.enemy_chatter.aggressive = {
 		radius = 2000,
 		max_nr = 40,
@@ -346,7 +346,7 @@ function GroupAITweakData:_init_chatter_data()
 		group_min = 0,
 		queue = "a05"
 	}	
-	--Placeholder, replace with new voice set
+	-- Placeholder, replace with new voice set
 	self.enemy_chatter.asu_command = {
 		radius = 700,
 		max_nr = 10,
@@ -591,7 +591,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end
 	
-	--Titancloaker (Fixed spawn)
+	-- Titancloaker (Fixed spawn)
 	self.unit_categories.spooc_titan = {
 		unit_types = {
 			america = {
@@ -623,7 +623,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "spooc"
 	}	
 	
-	--Assorted Beat Cops
+	-- Assorted Beat Cops
 	self.unit_categories.CS_cop_C45_R870 = {
 		unit_types = {
 			america = {
@@ -780,7 +780,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 			},
 			federales = {
-				Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf")
+				Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
 			},				
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
@@ -1066,7 +1066,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}
-	--Used only for CS_Tazer group on Very Hard above
+	-- Used only for CS_Tazer group on Very Hard above
 	self.unit_categories.CS_swat_M4 = {
 		unit_types = {
 			america = {
@@ -3836,7 +3836,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end		
 	
-	--FBI SWATs (Rifle)
+	-- FBI SWATs (Rifle)
 	if difficulty_index <= 4 then
 		self.unit_categories.FBI_swat_M4 = {
 			unit_types = {
@@ -4305,7 +4305,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end
 	
-	--GenSec SWATs (rifle)
+	-- GenSec SWATs (rifle)
 	if difficulty_index <= 7 then
 		self.unit_categories.GS_swat_M4 = {
 			unit_types = {
@@ -4552,7 +4552,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end	
 	
-	--FBI Shotgunners/SMG Units
+	-- FBI Shotgunners/SMG Units
 	if difficulty_index <= 4 then
 		self.unit_categories.FBI_swat_R870 = {
 			unit_types = {
@@ -5183,7 +5183,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end		
 	
-	--GenSec Shotgunners/SMG units
+	-- GenSec Shotgunners/SMG units
 	if difficulty_index <= 7 then
 		self.unit_categories.GS_swat_R870 = {
 			unit_types = {
@@ -5374,7 +5374,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end	
 	
-	--FBI Heavies (Rifle)
+	-- FBI Heavies (Rifle)
 	self.unit_categories.FBI_heavy_G36 = {
 		unit_types = {
 			america = {
@@ -5405,7 +5405,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}			
 
-	--Shotgun FBI Heavies
+	-- Shotgun FBI Heavies
 	self.unit_categories.FBI_heavy_R870 = {
 		unit_types = {
 			america = {
@@ -5436,7 +5436,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}
 		
-	--FBI Heavy (Rifle, Walk only)
+	-- FBI Heavy (Rifle, Walk only)
 	self.unit_categories.FBI_heavy_G36_w = {
 		unit_types = {
 			america = {
@@ -5467,7 +5467,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}			
 		
-	--GenSec/Zeal Heavy SWAT rifles
+	-- GenSec/Zeal Heavy SWAT rifles
 	if difficulty_index <= 7 then
 		self.unit_categories.GS_heavy_G36 = {
 			unit_types = {
@@ -5529,7 +5529,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			access = access_type_all
 		}
 	end		
-	--GenSec/Zeal Heavy SWAT shotgunners
+	-- GenSec/Zeal Heavy SWAT shotgunners
 	if difficulty_index <= 7 then
 		self.unit_categories.GS_heavy_R870 = {
 			unit_types = {
@@ -5591,7 +5591,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			access = access_type_all
 		}
 	end			
-	--GenSec/Zeal Heavy SWAT rifles (walk only)
+	-- GenSec/Zeal Heavy SWAT rifles (walk only)
 	if difficulty_index <= 7 then
 		self.unit_categories.GS_heavy_G36_w = {
 			unit_types = {
@@ -5654,7 +5654,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end	
 	
-	--FBI Shield
+	-- FBI Shield
 	if difficulty_index <= 4 then
 		self.unit_categories.FBI_shield = {
 			unit_types = {
@@ -5977,7 +5977,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}		
 	end
 		
-	--GenSec/Zeal Shield
+	-- GenSec/Zeal Shield
 	if difficulty_index <= 7 then
 		self.unit_categories.GS_shield = {
 			unit_types = {
@@ -6266,7 +6266,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end
 	
-	--Reinforce shields, no special cap
+	-- Reinforce shields, no special cap
 	self.unit_categories.GS_shield_defend = deep_clone(self.unit_categories.GS_shield)
 	self.unit_categories.GS_shield_defend.special_type = nil
 	
@@ -6764,7 +6764,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5"),
 					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5"),
 					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5"),	
-					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf")						
+					Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")					
 				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
@@ -7079,7 +7079,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5"),
 					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5"),
 					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5"),	
-					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf")						
+					Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")					
 				},					
 				nypd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic"),
@@ -7123,7 +7123,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end
 		
-	--Titan Snipers, generic
+	-- Titan Snipers, generic
 	self.unit_categories.titan_sniper = {
 		unit_types = {
 			america = {
@@ -7154,7 +7154,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}		
 
-	--US Marshals, used on Texas heists
+	-- US Marshals, used on Texas heists
 	if difficulty_index <= 7 then
 		self.unit_categories.marshal_marksman = {
 			unit_types = {
@@ -7187,29 +7187,29 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}	
 	end
 	
-	--Beat Cop overrides
-	--Texas heists, replace NYPD beat cops with Texas state troopers and certain Titans with US Marshals
+	-- Beat Cop overrides
+	-- Texas heists, replace NYPD beat cops with Texas state troopers and certain Titans with US Marshals
 	if table.contains(restoration.yee_and_I_cannot_stress_this_enough_haw, job) then
-		--Assorted Beat Cops
+		-- Assorted Beat Cops
 		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"
 		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"
 		self.unit_categories.CS_cop_C45_R870.unit_types.nypd[3] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
 		self.unit_categories.CS_cop_C45_R870.unit_types.fbi[1] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"
 		self.unit_categories.CS_cop_C45_R870.unit_types.fbi[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"
 		self.unit_categories.CS_cop_C45_R870.unit_types.fbi[3] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
-		--Pistol + MP5 only
+		-- Pistol + MP5 only
 		self.unit_categories.CS_cop_C45_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"
 		self.unit_categories.CS_cop_C45_MP5.unit_types.nypd[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"	
 		self.unit_categories.CS_cop_C45_MP5.unit_types.fbi[1] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"
 		self.unit_categories.CS_cop_C45_MP5.unit_types.fbi[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"	
-		--Shotgun 
+		-- Shotgun 
 		self.unit_categories.CS_cop_R870.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
 		self.unit_categories.CS_cop_R870.unit_types.fbi[1] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
-		--Bronco (Heh)
+		-- Bronco (Heh)
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.fbi[1] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"
 
-		--Marshal Shields replace regular Titan Shields on Texas heists
+		-- Marshal Shields replace regular Titan Shields on Texas heists
 		if difficulty_index == 5 then
 			self.unit_categories.FBI_shield.unit_types.nypd[20] = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			self.unit_categories.FBI_shield.unit_types.fbi[20] = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
@@ -7221,7 +7221,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			self.unit_categories.GS_shield.unit_types.fbi[10] = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		end
 
-		--just in case
+		-- just in case
 		self.unit_categories.GS_shield_defend.unit_types.nypd = {
 			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
 			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
@@ -7240,21 +7240,21 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")		
 		}
 
-		--Have US Marshals on Texas heists instead of regular Titan Snipers
+		-- Have US Marshals on Texas heists instead of regular Titan Snipers
 		self.unit_categories.titan_sniper = deep_clone(self.unit_categories.marshal_marksman)
 	end
-	--SF heists, replace LAPD beat cops with SFPD ones
+	-- SF heists, replace LAPD beat cops with SFPD ones
 	if table.contains(restoration.needle, job) then
-		--Assorted Beat Cops
+		-- Assorted Beat Cops
 		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1"
 		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[2] = "units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3"
 		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[3] = "units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"
-		--Pistol + MP5 only
+		-- Pistol + MP5 only
 		self.unit_categories.CS_cop_C45_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1"
 		self.unit_categories.CS_cop_C45_MP5.unit_types.lapd[2] = "units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3"	
-		--Shotgun 
+		-- Shotgun 
 		self.unit_categories.CS_cop_R870.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"
-		--Bronco (Heh)
+		-- Bronco (Heh)
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"
 	end
 	
@@ -8617,7 +8617,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}		
 	end
 	
-	--New Winters
+	-- New Winters
 	self.unit_categories.Phalanx_vip_new = {
 		unit_types = {
 			america = {
@@ -8649,7 +8649,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "phalanx_vip"
 	}	
-	--New Winters Minions
+	-- New Winters Minions
 	self.unit_categories.Phalanx_minion_new = {
 		unit_types = {
 			america = {
@@ -8681,10 +8681,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "shield",
 		ignore_spawn_cap = true
 	}	
-	--Titan Snipers that spawn with Winters on DS, clone the real one but set the captain flag
+	-- Titan Snipers that spawn with Winters on DS, clone the real one but set the captain flag
 	self.unit_categories.Phalanx_sniper = deep_clone(self.unit_categories.titan_sniper)
 	self.unit_categories.Phalanx_sniper.ignore_spawn_cap = true
-	--LMG Titandozers that spawn with Winters on DS (Pro Job only)
+	-- LMG Titandozers that spawn with Winters on DS (Pro Job only)
 	self.unit_categories.Phalanx_dozer = {
 		unit_types = {
 			america = {
@@ -8715,7 +8715,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
         ignore_spawn_cap = true
     }
-	--Captain Autumn
+	-- Captain Autumn
 	self.unit_categories.Cap_Autumn = {
 		unit_types = {
 			america = {
@@ -8747,7 +8747,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "autumn"
 	}
-	--Cloakers that spawn with Autumn on Death Wish, ignores spawncaps
+	-- Cloakers that spawn with Autumn on Death Wish, ignores spawncaps
 	self.unit_categories.Autumn_Spooc = {
 		unit_types = {
 			america = {
@@ -8779,7 +8779,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "spooc",
 		ignore_spawn_cap = true
 	}
-	--Titan Cloakers that spawn with Autumn on Death Sentence, ignores spawncaps 
+	-- Titan Cloakers that spawn with Autumn on Death Sentence, ignores spawncaps 
 	self.unit_categories.Titan_Spooc = {
 		unit_types = {
 			america = {
@@ -8811,7 +8811,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "spooc",
 		ignore_spawn_cap = true
 	}		
-	--Captain Summers
+	-- Captain Summers
 	self.unit_categories.Cap_Summers = {
 		unit_types = {
 			america = {
@@ -8843,7 +8843,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "summers"
 	}
-	--Molly
+	-- Molly
 	self.unit_categories.boom_summers = {
 		unit_types = {
 			america = {
@@ -8873,7 +8873,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}
-	--Doc
+	-- Doc
 	self.unit_categories.medic_summers = {
 		unit_types = {
 			america = {
@@ -8903,7 +8903,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}
-	--Elektra
+	-- Elektra
 	self.unit_categories.taser_summers = {
 		unit_types = {
 			america = {
@@ -8934,7 +8934,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}
 	
-	--Captain Spring 
+	-- Captain Spring 
 	self.unit_categories.Cap_Spring = {
 		unit_types = {
 			america = {
@@ -8966,7 +8966,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "spring"
 	}	
-	--OMNIA Benelli Dozers that spawn with Spring (Ignores spawncaps)
+	-- OMNIA Benelli Dozers that spawn with Spring (Ignores spawncaps)
 		self.unit_categories.Tank_Ben = {
 			unit_types = {
 				america = {
@@ -8998,7 +8998,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			special_type = "tank",
 			ignore_spawn_cap = true
 		}
-	--OMNIA Saiga Dozers that spawn with Spring (Ignores spawncaps)
+	-- OMNIA Saiga Dozers that spawn with Spring (Ignores spawncaps)
 		self.unit_categories.OMNIA_Tank = {
 			unit_types = {
 				america = {
@@ -9030,7 +9030,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			special_type = "tank",
 			ignore_spawn_cap = true
 		}	
-	--OMNIA Tasers that spawn with Spring on Death Wish	(Also ignores spawncaps)
+	-- OMNIA Tasers that spawn with Spring on Death Wish	(Also ignores spawncaps)
 	self.unit_categories.OMNIA_Taser = {
 		unit_types = {
 			america = {
@@ -9062,7 +9062,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "taser",
 		ignore_spawn_cap = true
 	}
-	--Titan Tasers that specifically spawn with Spring replacing OMNIA Tasers on Death Sentence (Also ignores spawncaps)
+	-- Titan Tasers that specifically spawn with Spring replacing OMNIA Tasers on Death Sentence (Also ignores spawncaps)
 	self.unit_categories.Taser_Titan = {
 		unit_types = {
 			america = {
@@ -9095,7 +9095,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		ignore_spawn_cap = true
 	}
 	
-	--Headless Titandozer Boss
+	-- Headless Titandozer Boss
 	self.unit_categories.HVH_Boss = {
 		unit_types = {
 			america = {
@@ -9127,7 +9127,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "headless_hatman"
 	}	
-	--Headless Titandozers that spawn with boss on Death Wish
+	-- Headless Titandozers that spawn with boss on Death Wish
 	self.unit_categories.HVH_Boss_Headless = {
 		unit_types = {
 			america = {
@@ -9160,7 +9160,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		ignore_spawn_cap = true
 	}
 	
-	--Cloakers that spawn with boss on Death Wish
+	-- Cloakers that spawn with boss on Death Wish
 	self.unit_categories.HVH_Boss_Spooc_Normal = {
 		unit_types = {
 			america = {
@@ -9192,7 +9192,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "spooc",
 		ignore_spawn_cap = true
 	}
-	--Ghost Titancloakers that spawn with boss on Death Sentence
+	-- Ghost Titancloakers that spawn with boss on Death Sentence
 	self.unit_categories.HVH_Boss_Spooc = {
 		unit_types = {
 			america = {
@@ -9225,8 +9225,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		ignore_spawn_cap = true
 	}
 
-	--mutator unit categories
-	--BBF
+	-- mutator unit categories
+	-- BBF
 	if difficulty_index <= 4 then
 			self.unit_categories.All_Tanks = {
 				unit_types = {
@@ -9486,9 +9486,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			}
 		end
 	
-	--Skirmish only unit categories
+	-- Skirmish only unit categories
 	
-	--FBI Light SWATs, for earlier waves
+	-- FBI Light SWATs, for earlier waves
 	self.unit_categories.SKM_Light_SWAT_Rifle_W1 = {
 		unit_types = {
 			america = {
@@ -9670,7 +9670,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--FBI Light SWAT Shotgunners, for earlier waves
+	-- FBI Light SWAT Shotgunners, for earlier waves
 	self.unit_categories.SKM_Light_SWAT_Shotgun_W1 = {
 		unit_types = {
 			america = {
@@ -9773,7 +9773,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--FBI Heavy SWAT, early wave
+	-- FBI Heavy SWAT, early wave
 	self.unit_categories.SKM_Heavy_SWAT_Rifle_W1 = {
 		unit_types = {
 			america = {
@@ -9804,7 +9804,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 		
-	--FBI Shotgunner with Sharpshooters
+	-- FBI Shotgunner with Sharpshooters
 	self.unit_categories.SKM_Heavy_SWAT_Shotgun_W1 = {
 		unit_types = {
 			america = {
@@ -9835,7 +9835,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}		
 	
-	--FBI Shields for early waves
+	-- FBI Shields for early waves
 	self.unit_categories.SKM_FBI_shield_W1 = {
 		unit_types = {
 			america = {
@@ -9940,7 +9940,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "shield"
 	}		
 
-	--HRTs for Waves 1+2
+	-- HRTs for Waves 1+2
 	self.unit_categories.SKM_FBI_suit_M4_MP5_W2 = {
 		unit_types = {
 			america = {
@@ -10043,7 +10043,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--Medics, early waves (FBI tier)
+	-- Medics, early waves (FBI tier)
 	self.unit_categories.SKM_medic_W2 = {
 		unit_types = {
 			america = {
@@ -10227,7 +10227,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "medic"
 	}			
 
-	--FBI/GenSec tier tazers
+	-- FBI/GenSec tier tazers
 	self.unit_categories.SKM_Tazer_W2 = {
 		unit_types = {
 			america = {
@@ -10292,7 +10292,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "taser"
 	}			
 	
-	--Zeal Taser for W5+
+	-- Zeal Taser for W5+
 	self.unit_categories.SKM_Tazer_W5 = {
 		unit_types = {
 			america = {
@@ -10348,7 +10348,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "taser"
 	}	
 
-	--For Omnia Tasers
+	-- For Omnia Tasers
 	self.unit_categories.SKM_Tazer_W7 = {
 		unit_types = {
 			america = {
@@ -10404,7 +10404,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "taser"
 	}
 
-	--FBI/GenSec tier Grenadiers
+	-- FBI/GenSec tier Grenadiers
 	self.unit_categories.SKM_Boom_W2 = {
 		unit_types = {
 			america = {
@@ -10436,7 +10436,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "boom"
 	}	
 	
-	--Zeal Grenadier for W5+
+	-- Zeal Grenadier for W5+
 	self.unit_categories.SKM_Boom_W5 = {
 		unit_types = {
 			america = {
@@ -10469,7 +10469,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	}
 	
 	
-	--That's just for OMNIA Grenadiers
+	-- That's just for OMNIA Grenadiers
 	self.unit_categories.SKM_Boom_W7 = {
 		unit_types = {
 			america = {
@@ -10501,7 +10501,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "boom"
 	}
 	
-	--GenSec SWATs with rifles, W3 and W4
+	-- GenSec SWATs with rifles, W3 and W4
 	self.unit_categories.SKM_Light_SWAT_Rifle_W3 = {
 		unit_types = {
 			america = {
@@ -10684,7 +10684,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--Zeal SWATs with rifles, W5 and W6
+	-- Zeal SWATs with rifles, W5 and W6
 	self.unit_categories.SKM_Light_SWAT_Rifle_W5 = {
 		unit_types = {
 			america = {
@@ -10747,7 +10747,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--GenSec shotgunners, W3 and W4
+	-- GenSec shotgunners, W3 and W4
 	self.unit_categories.SKM_Light_SWAT_Shotgun_W3 = {
 		unit_types = {
 			america = {
@@ -10850,7 +10850,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}
 
-	--Zeal shotgunners, W5+
+	-- Zeal shotgunners, W5+
 	self.unit_categories.SKM_Light_SWAT_Shotgun_W5 = {
 		unit_types = {
 			america = {
@@ -10937,7 +10937,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 
-	--GenSec heavy, W3+W4
+	-- GenSec heavy, W3+W4
 	self.unit_categories.SKM_Heavy_SWAT_Rifle_W3 = {
 		unit_types = {
 			america = {
@@ -10968,7 +10968,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 
-	--Zeal heavy, W5
+	-- Zeal heavy, W5
 	self.unit_categories.SKM_Heavy_SWAT_Rifle_W5 = {
 		unit_types = {
 			america = {
@@ -10999,7 +10999,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--GenSec heavy w/ Shotgun, W3+W4
+	-- GenSec heavy w/ Shotgun, W3+W4
 	self.unit_categories.SKM_Heavy_SWAT_Shotgun_W3 = {
 		unit_types = {
 			america = {
@@ -11030,7 +11030,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--Zeal Heavy w/ Shotgun W5+
+	-- Zeal Heavy w/ Shotgun W5+
 	self.unit_categories.SKM_Heavy_SWAT_Shotgun_W5 = {
 		unit_types = {
 			america = {
@@ -11061,7 +11061,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 
-	--GenSec tier medic, W3+W4
+	-- GenSec tier medic, W3+W4
 	self.unit_categories.SKM_medic_W3 = {
 		unit_types = {
 			america = {
@@ -11245,7 +11245,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "medic"
 	}	
 	
-	--Zeal tier medic W5+
+	-- Zeal tier medic W5+
 	self.unit_categories.SKM_medic_W5 = {
 		unit_types = {
 			america = {
@@ -11349,7 +11349,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "medic"
 	}	
 	
-	--For OMNIA Medics
+	-- For OMNIA Medics
 	self.unit_categories.SKM_medic_W7 = {
 		unit_types = {
 			america = {
@@ -11453,7 +11453,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "medic"
 	}
 
-	--GenSec tier shield
+	-- GenSec tier shield
 	self.unit_categories.SKM_FBI_shield_W3 = {
 		unit_types = {
 			america = {
@@ -11557,7 +11557,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "shield"
 	}	
 	
-	--Zeal tier shield for Wave 5+
+	-- Zeal tier shield for Wave 5+
 	self.unit_categories.SKM_FBI_shield_W5 = {
 		unit_types = {
 			america = {
@@ -11741,7 +11741,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "shield"
 	}
 
-	--OMNIA Shields
+	-- OMNIA Shields
 	self.unit_categories.SKM_FBI_shield_W7 = {
 		unit_types = {
 			america = {
@@ -11925,7 +11925,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "shield"
 	}
 	
-	--GenSec tier M4/MP5 HRTs, + Bloody Vet Cop. W3+W4
+	-- GenSec tier M4/MP5 HRTs, + Bloody Vet Cop. W3+W4
 	self.unit_categories.SKM_FBI_suit_M4_MP5_W3 = {
 		unit_types = {
 			america = {
@@ -12028,7 +12028,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}						
 	
-	--GenSec HRT (mp5) tier, W3+W4
+	-- GenSec HRT (mp5) tier, W3+W4
 	self.unit_categories.SKM_FBI_suit_stealth_MP5_W3 = {
 		unit_types = {
 			america = {
@@ -12091,7 +12091,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--Zeal HRT (mp5) tier, W3+W4
+	-- Zeal HRT (mp5) tier, W3+W4
 	self.unit_categories.SKM_FBI_suit_stealth_MP5_W5 = {
 		unit_types = {
 			america = {
@@ -12146,7 +12146,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--Zeal tier M4/MP5 HRTs, + Bloody Vet Cop. W5+
+	-- Zeal tier M4/MP5 HRTs, + Bloody Vet Cop. W5+
 	self.unit_categories.SKM_FBI_suit_M4_MP5_W5 = {
 		unit_types = {
 			america = {
@@ -12233,7 +12233,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--For OMNIA SRT
+	-- For OMNIA SRT
 	self.unit_categories.SKM_FBI_suit_stealth_MP5_W7 = {
 		unit_types = {
 			america = {
@@ -12374,7 +12374,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}
 
-	--GenSec tier Blackdozer, W4 only
+	-- GenSec tier Blackdozer, W4 only
 	self.unit_categories.SKM_BLACK_tank_W4 = {
 		unit_types = {
 			america = {
@@ -12406,7 +12406,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "tank"
 	}	
 	
-	--Zeal Greendozer for W5+
+	-- Zeal Greendozer for W5+
 	self.unit_categories.SKM_GREEN_tank_W5 = {
 		unit_types = {
 			america = {
@@ -12438,7 +12438,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "tank"
 	}	
 	
-	--Zeal Black Dozer for W5+
+	-- Zeal Black Dozer for W5+
 	self.unit_categories.SKM_BLACK_tank_W5 = {
 		unit_types = {
 			america = {
@@ -12470,7 +12470,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "tank"
 	}	
 
-	--Zeal Skulldozer for W5+
+	-- Zeal Skulldozer for W5+
 	self.unit_categories.SKM_SKULL_tank_W5 = {
 		unit_types = {
 			america = {
@@ -12502,7 +12502,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "tank"
 	}	
 
-	--Zeal Light SWATs w/ Bravo Support
+	-- Zeal Light SWATs w/ Bravo Support
 	self.unit_categories.SKM_Light_SWAT_Rifle_W7 = {
 		unit_types = {
 			america = {
@@ -12605,7 +12605,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--Zeal Light Shotgunner with Bravo support
+	-- Zeal Light Shotgunner with Bravo support
 	self.unit_categories.SKM_Light_SWAT_Shotgun_W7 = {
 		unit_types = {
 			america = {
@@ -12756,7 +12756,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--Zeal Heavies
+	-- Zeal Heavies
 	self.unit_categories.SKM_Heavy_SWAT_Shotgun_W7 = {
 		unit_types = {
 			america = {
@@ -12821,7 +12821,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}
 
-	--Bravo Support Lights
+	-- Bravo Support Lights
 	self.unit_categories.SKM_Light_SWAT_Rifle_W8 = {
 		unit_types = {
 			america = {
@@ -12885,7 +12885,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--Bravo Shotgunners
+	-- Bravo Shotgunners
 	self.unit_categories.SKM_Light_SWAT_Shotgun_W8 = {
 		unit_types = {
 			america = {
@@ -12972,7 +12972,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}	
 	
-	--Zeal Heavies
+	-- Zeal Heavies
 	self.unit_categories.SKM_Heavy_SWAT_Shotgun_W8 = {
 		unit_types = {
 			america = {
@@ -13033,7 +13033,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all
 	}
 	
-	--Benelli Dozers on Skirmish, 50% chance to replace Greendozers
+	-- Benelli Dozers on Skirmish, 50% chance to replace Greendozers
 	self.unit_categories.SKM_GREEN_TANK_W7 = {
 		unit_types = {
 			america = {
@@ -13072,7 +13072,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "tank"
 	}		
-	--Only Benelli Dozers after W8
+	-- Only Benelli Dozers after W8
 	self.unit_categories.SKM_GREEN_TANK_W8 = {
 		unit_types = {
 			america = {
@@ -13104,7 +13104,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "tank"
 	}
 
-	--Murky Dozers gets slowly replaced with OMNIA
+	-- Murky Dozers gets slowly replaced with OMNIA
 	self.unit_categories.SKM_BLACK_tank_W7 = {
 		unit_types = {
 			america = {
@@ -13230,7 +13230,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "tank"
 	}
 
-	--Fixed DS tier Cloaker spawns for Skirmish W5+
+	-- Fixed DS tier Cloaker spawns for Skirmish W5+
 	self.unit_categories.SKM_spooc_w5 = {
 		unit_types = {
 			america = {
@@ -13414,7 +13414,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "spooc"
 	}	
 	
-	--OMNIA Cloaker
+	-- OMNIA Cloaker
 	self.unit_categories.SKM_spooc_w7 = {
 		unit_types = {
 			america = {
@@ -13598,8 +13598,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "spooc"
 	}
 	
-	--Holiday effects
-	--April Fools
+	-- Holiday effects
+	-- April Fools
 	if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday") then
 		if difficulty_index <= 3 then
 			self.unit_categories.FBI_suit_M4_MP5.unit_types.america[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
@@ -13672,7 +13672,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
 			self.unit_categories.FBI_suit_M4_MP5.unit_types.fbi[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
 		end
-	--Halloween (October)
+	-- Halloween (October)
 	elseif Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
 		self.unit_categories.BLACK_tank.unit_types.america[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		self.unit_categories.BLACK_tank.unit_types.russia[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
@@ -13701,7 +13701,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.Phalanx_dozer.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
 		self.unit_categories.Phalanx_dozer.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
 
-	--Snowmen (December and January)
+	-- Snowmen (December and January)
 	elseif Month == "12" and restoration.Options:GetValue("OTHER/Holiday") or Month == "1" and restoration.Options:GetValue("OTHER/Holiday") then
 		self.unit_categories.SKULL_tank.unit_types.america[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
 		self.unit_categories.SKULL_tank.unit_types.russia[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
@@ -13713,7 +13713,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.SKULL_tank.unit_types.fbi[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"	
 	end
 	
-	--Snowman Boss
+	-- Snowman Boss
 	self.unit_categories.snowman_boss = {
 		unit_types = {
 			america = {
@@ -13779,35 +13779,35 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 end
 	
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
-	--The below summarizes the functions of new or revised tactics in Restoration.
+	-- The below summarizes the functions of new or revised tactics in Restoration.
 	
-	--charge
-	--unit moves to player position and engages per conventional rules. Primary driver for most units.
-	--enemies will go into the room and get into sight of you.
+	-- charge
+	-- unit moves to player position and engages per conventional rules. Primary driver for most units.
+	-- enemies will go into the room and get into sight of you.
 	
-	--ranged_fire 
-	--unit engages from longer range location with line of sight. Will eventually close with player.
+	-- ranged_fire 
+	-- unit engages from longer range location with line of sight. Will eventually close with player.
 	
-	--deathguard
-	--Camps downed player.
+	-- deathguard
+	-- Camps downed player.
 	
-	--shield_cover
-	--Unit attempts to place leader between self and player, stays close to leader. Can be employed for non-shield units.
+	-- shield_cover
+	-- Unit attempts to place leader between self and player, stays close to leader. Can be employed for non-shield units.
 	
-	--rescue_hostages
-	--Unit will make attempts to rescue hostages, even if their tweak_data isn't flagged for it. Use only for recon units!
+	-- rescue_hostages
+	-- Unit will make attempts to rescue hostages, even if their tweak_data isn't flagged for it. Use only for recon units!
 	
 	self._tactics = {
-		--Cloaker tactics, static. Tries to avoid confrontation
+		-- Cloaker tactics, static. Tries to avoid confrontation
 		spooc = {
 			"flank",
 			"smoke_grenade",
 			"flash_grenade"
 		},	
 	
-		--Normal/Hard Tactics below
+		-- Normal/Hard Tactics below
 		
-		--Standard Beat Cop, prefers to stay at range unless they spawn with a shotgunner
+		-- Standard Beat Cop, prefers to stay at range unless they spawn with a shotgunner
 		CS_cop = {
 			"provide_coverfire",
 			"provide_support",
@@ -13815,7 +13815,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover",
 			"groupcsr"
 		},
-		--Shotgunner variant of Beat Cops, only real difference is they'll charge in
+		-- Shotgunner variant of Beat Cops, only real difference is they'll charge in
 		CS_cop_shotgun = {
 			"provide_coverfire",
 			"provide_support",
@@ -13823,7 +13823,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover",			
 			"groupcsr"
 		},		
-		--Beat Cop, flank variant. Will take control of the squad if they spawn and lead them to flank
+		-- Beat Cop, flank variant. Will take control of the squad if they spawn and lead them to flank
 		CS_cop_flank = {
 			"flank",
 			"provide_coverfire",
@@ -13832,7 +13832,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover",			
 			"groupcsr"
 		},		
-		--Beat Cop, stealth variant. Prefers hit n run tactics and avoiding the front to prioritize hostages
+		-- Beat Cop, stealth variant. Prefers hit n run tactics and avoiding the front to prioritize hostages
 		CS_cop_stealth = {
 			"flank",
 			"provide_coverfire",
@@ -13840,7 +13840,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"grouphrtr",
 			"rescue_hostages"
 		},
-		--Standard Blue SWAT, upgraded from Beat Cops and will now use smoke grenades. 
+		-- Standard Blue SWAT, upgraded from Beat Cops and will now use smoke grenades. 
 		CS_swat_rifle = {
 			"smoke_grenade",
 			"provide_coverfire",
@@ -13850,7 +13850,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--SWAT shotgunner, will lead charges with his squad
+		-- SWAT shotgunner, will lead charges with his squad
 		CS_swat_shotgun = {
 			"smoke_grenade",
 			"charge",
@@ -13860,7 +13860,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",			
 			"groupcsr"
 		},
-		--Blue SWAT, flank variant. Will take control and flank with his squad
+		-- Blue SWAT, flank variant. Will take control and flank with his squad
 		CS_swat_rifle_flank = {
 			"flank",
 			"smoke_grenade",
@@ -13871,7 +13871,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},			
-		--Heavy SWAT, act similar to Blue SWATs.
+		-- Heavy SWAT, act similar to Blue SWATs.
 		CS_swat_heavy = {
 			"smoke_grenade",
 			"provide_coverfire",
@@ -13880,7 +13880,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--Heavy SWAT Shotgunner. Leads charges
+		-- Heavy SWAT Shotgunner. Leads charges
 		CS_swat_heavy_shotgun = {
 			"smoke_grenade",
 			"charge",
@@ -13890,7 +13890,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover",			
 			"groupcsr"
 		},
-		--Heavy SWAT flanker, leads flank maneuvers. 
+		-- Heavy SWAT flanker, leads flank maneuvers. 
 		CS_swat_heavy_flank = {
 			"flank",
 			"smoke_grenade",
@@ -13900,7 +13900,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},		
-		--Standard SWAT Shield, will charge forward against player positions
+		-- Standard SWAT Shield, will charge forward against player positions
 		CS_shield = {
 			"charge",
 			"provide_coverfire",
@@ -13908,7 +13908,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield",
 			"deathguard"
 		},	
-		--Tazer, flank around and charge to take down players one at a time. 
+		-- Tazer, flank around and charge to take down players one at a time. 
 		CS_tazer = {
 			"flank",
 			"charge",
@@ -13916,7 +13916,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover",
 			"murder"
 		},		
-		--Greendozers on Normal/Hard, will try to flank the player
+		-- Greendozers on Normal/Hard, will try to flank the player
 		CS_tank = {
 			"flank",
 			"murder",
@@ -13924,29 +13924,29 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield"
 		},		
-		--Beat Cop/Blue SWAT/Heavy SWAT defend. Used for reinforce groups
+		-- Beat Cop/Blue SWAT/Heavy SWAT defend. Used for reinforce groups
 		CS_defend = {
 			"flank",
 			"provide_coverfire",
 			"provide_support"
 		},			
-		--Sniper tactics. (Unused?)
+		-- Sniper tactics. (Unused?)
 		CS_sniper = {
 			"ranged_fire",
 			"provide_coverfire",
 			"provide_support"
 		},		
 		
-		--FBI tier stuff below. Very Hard/Overkill mainly
+		-- FBI tier stuff below. Very Hard/Overkill mainly
 		
-		--FBI HRT tactics, for when participating in assaults
+		-- FBI HRT tactics, for when participating in assaults
 		FBI_suit = {
 			"flank",
 			"ranged_fire",
 			"flash_grenade",
 			"grouphrtr"
 		},		
-		--FBI HRT, stealth and avoiding combat
+		-- FBI HRT, stealth and avoiding combat
 		FBI_suit_stealth = { 
 			"flank",
 			"provide_coverfire",
@@ -13956,7 +13956,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"grouphrtr",
 			"rescue_hostages"
 		},
-		--FBI Rifle SWATs, can now use flash grenades
+		-- FBI Rifle SWATs, can now use flash grenades
 		FBI_swat_rifle = { 
 			"smoke_grenade",
 			"flash_grenade",
@@ -13967,7 +13967,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--FBI Shotgun SWATs, leads charges
+		-- FBI Shotgun SWATs, leads charges
 		FBI_swat_shotgun = {
 			"smoke_grenade",
 			"flash_grenade",
@@ -13978,7 +13978,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},		
-		--FBI Rifle SWATs, flank the player
+		-- FBI Rifle SWATs, flank the player
 		FBI_swat_rifle_flank = {
 			"flank",
 			"smoke_grenade",
@@ -13990,7 +13990,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},		
-		--FBI Heavy, now with flash grenades
+		-- FBI Heavy, now with flash grenades
 		FBI_heavy = {
 			"smoke_grenade",
 			"flash_grenade",
@@ -14000,7 +14000,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--FBI Heavy Shotgun, leads charges
+		-- FBI Heavy Shotgun, leads charges
 		FBI_heavy_shotgun = {
 			"smoke_grenade",
 			"flash_grenade",
@@ -14011,7 +14011,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},			
-		--FBI Heavy, flanker
+		-- FBI Heavy, flanker
 		FBI_heavy_flank = {
 			"flank",
 			"smoke_grenade",
@@ -14022,7 +14022,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},		
-		--FBI Shield, basically the same as the CS shield.
+		-- FBI Shield, basically the same as the CS shield.
 		FBI_shield = {
 			"charge",
 			"ranged_fire",
@@ -14031,7 +14031,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield",
 			"deathguard"
 		},	
-		--Passive FBI shield
+		-- Passive FBI shield
 		FBI_shield_flank = {
 			"ranged_fire",
 			"provide_coverfire",
@@ -14039,7 +14039,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield",
 			"deathguard"
 		},			
-		--Grenadier, passive. Tries to hide behind shields/other units when possible
+		-- Grenadier, passive. Tries to hide behind shields/other units when possible
 		FBI_Boom = {	
 			"ranged_fire",
 			"provide_coverfire",		
@@ -14047,26 +14047,26 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"shield_cover"
 		},				
-		--Medics, passive. Avoids confrontations.
+		-- Medics, passive. Avoids confrontations.
 		FBI_medic = { 
 			"provide_coverfire",
 			"ranged_fire",
 			"shield_cover"
 		},	
-		--Flank Medic tactics, avoid confrontations and flanks. Hugs squad leader
+		-- Flank Medic tactics, avoid confrontations and flanks. Hugs squad leader
 		FBI_medic_flank = {
 			"flank",
 			"provide_coverfire",
 			"ranged_fire",
 			"shield_cover"
 		},	
-		--Reinforce groups
+		-- Reinforce groups
 		FBI_defend = {
 			"flank",
 			"provide_coverfire",
 			"provide_support"
 		},		
-		--Greendozer on FBI tier and above, hitnrun tactics and flank a lot
+		-- Greendozer on FBI tier and above, hitnrun tactics and flank a lot
 		GREEN_tank = {
 			"flank",
 			"murder",
@@ -14074,16 +14074,16 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield"
 		},
-		--Blackdozers, hyper aggressive and unload on the player. 
+		-- Blackdozers, hyper aggressive and unload on the player. 
 		BLACK_tank = {
 			"murder",
 			"charge",
 			"shield"
 		},
 		
-		--Mayhem tactics below
+		-- Mayhem tactics below
 		
-		--Mayhem rifle SWAT
+		-- Mayhem rifle SWAT
 		MH_swat_rifle = {
 			"ranged_fire",
 			"smoke_grenade",
@@ -14094,7 +14094,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--Mayhem SWAT Shotgunners, leads charges
+		-- Mayhem SWAT Shotgunners, leads charges
 		MH_swat_shotgun = { 
 			"smoke_grenade",
 			"flash_grenade",
@@ -14105,7 +14105,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--Mayhem SWAT Flankers, will disengage when targeted
+		-- Mayhem SWAT Flankers, will disengage when targeted
 		MH_swat_rifle_flank = { 
 			"flank",
 			"smoke_grenade",
@@ -14117,7 +14117,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},		
-		--Mayhem Heavy
+		-- Mayhem Heavy
 		MH_heavy = { 
 			"smoke_grenade",
 			"flash_grenade",
@@ -14127,7 +14127,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--Mayhem Heavy Flank, disengage when targeted
+		-- Mayhem Heavy Flank, disengage when targeted
 		MH_heavy_flank = {
 			"flank",
 			"smoke_grenade",
@@ -14138,7 +14138,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--Mayhem Shield, now moves much faster into position
+		-- Mayhem Shield, now moves much faster into position
 		MH_shield = { 
 			"charge",
 			"ranged_fire",
@@ -14147,7 +14147,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield",
 			"deathguard"
 		},		
-		--Passive MH shield
+		-- Passive MH shield
 		MH_shield_flank = { 
 			"ranged_fire",
 			"provide_coverfire",
@@ -14156,10 +14156,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard"
 		},					
 		
-		--Deathwish Tactics below
+		-- Deathwish Tactics below
 		
-		--hunter hrt tactics
-		HRT_attack = { --sneaks up and targets players in bad positions
+		-- hunter hrt tactics
+		HRT_attack = { -- sneaks up and targets players in bad positions
 			"flank",
 			"provide_coverfire",
 			"provide_support",
@@ -14167,7 +14167,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"grouphrtr"
 		},	
-		--DW Taser, tries extremely hard to get up close and personal
+		-- DW Taser, tries extremely hard to get up close and personal
 		DW_tazer = {
 			"charge",
 			"flash_grenade",
@@ -14175,7 +14175,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover",
 			"murder"
 		},
-		--DW Grenadier
+		-- DW Grenadier
 		ELITE_boom = {
 			"flash_grenade",
 			"smoke_grenade",	
@@ -14183,7 +14183,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"shield_cover"
 		},			
-		--death wish tactics
+		-- death wish tactics
 		DW_swat_rifle = {
 			"ranged_fire",
 			"smoke_grenade",
@@ -14225,7 +14225,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--Greendozers, basically the same tactics but they can use smoke/flash grenades now :>>>>>>
+		-- Greendozers, basically the same tactics but they can use smoke/flash grenades now :>>>>>>
 		GREEN_tank_DW = {
 			"flank",
 			"murder",
@@ -14235,7 +14235,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"shield"
 		},
-		--Blackdozers, ditto
+		-- Blackdozers, ditto
 		BLACK_tank_DW = {
 			"murder",
 			"charge",
@@ -14243,7 +14243,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"shield"
 		},
-		--Skulldozers, slightly more passive than the other dozers will stand his ground if charged
+		-- Skulldozers, slightly more passive than the other dozers will stand his ground if charged
 		SKULL_tank = { 
 			"ranged_fire",
 			"murder",
@@ -14251,14 +14251,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"shield"
 		},
-		--funny railgun dozer
+		-- funny railgun dozer
 		TIT_tank = {
 			"murder",
 			"ranged_fire"
 		},
 			
-		--mean DS tactics below
-		ELITE_suit_stealth = { --sneaky as fuck
+		-- mean DS tactics below
+		ELITE_suit_stealth = { -- sneaky as fuck
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
@@ -14331,7 +14331,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover"
 		},				
 		
-		--Captains
+		-- Captains
 		Cap_spring = {
 			"shield",
 			"charge"
@@ -14357,7 +14357,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade"
 		},
 		Cap_winters = {
-			"ranged_fire", --fuck you
+			"ranged_fire", -- fuck you
 			"shield",
 			"provide_coverfire",
 			"provide_support"
@@ -14373,7 +14373,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support"
 		},		
-		--Old Winters
+		-- Old Winters
 		Phalanx_minion = {
 			"charge",
 			"provide_coverfire",
@@ -15329,7 +15329,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end
-	--For lower difficulties only
+	-- For lower difficulties only
 	if difficulty_index <= 5 then 
 		self.enemy_spawn_groups.FBI_stealth_c = {
 			amount = {2, 3},
@@ -16007,7 +16007,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end
-	--Unused on Overkill/Mayhem
+	-- Unused on Overkill/Mayhem
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.SKULL_tanks = { 
 			amount = {2, 3},
@@ -16121,7 +16121,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end
-	--Unused on Overkill
+	-- Unused on Overkill
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.TIT_tanks = {
 			amount = {2, 3},
@@ -16222,7 +16222,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	end	
 	
-	--GS/Zeal Light SWATs
+	-- GS/Zeal Light SWATs
 	if difficulty_index <= 6 then	
 		self.enemy_spawn_groups.GS_swats = {
 			amount = {3, 4},
@@ -16354,7 +16354,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	end		
 	
-	--GS/Zeal Heavys
+	-- GS/Zeal Heavys
 	if difficulty_index <= 6 then	
 		self.enemy_spawn_groups.GS_Heavys = {
 			amount = {3, 4},
@@ -16467,7 +16467,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end	
-	--GS Heavies with Grenadier spawns, Mayhem only
+	-- GS Heavies with Grenadier spawns, Mayhem only
 	self.enemy_spawn_groups.GS_heavys_boom = {
 		amount = {3, 4},
 		spawn = {
@@ -16509,7 +16509,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}			
 	
-	--GS/Zeal Shields
+	-- GS/Zeal Shields
 	if difficulty_index <= 6 then
 		self.enemy_spawn_groups.GS_shields = {
 			amount = {3, 4},
@@ -16633,7 +16633,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end	
-	--GS/Zeal Shields, can spawn with Grenadier 
+	-- GS/Zeal Shields, can spawn with Grenadier 
 	if difficulty_index <= 6 then	
 		self.enemy_spawn_groups.GS_shields_boom = {
 			amount = {3, 4},
@@ -16758,7 +16758,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	end		
 	
-	--GenSec/Zeal Tier Grenadier Squads
+	-- GenSec/Zeal Tier Grenadier Squads
 	if difficulty_index <= 7 then
 		self.enemy_spawn_groups.GS_Booms = {
 			amount = {3, 4},
@@ -16819,12 +16819,12 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}			
 	end
 	
-	--Reserved for mutator
+	-- Reserved for mutator
 	self.enemy_spawn_groups.Fake_Captain = {}
 	
-	--Captains are more mean on Pro Jobs
+	-- Captains are more mean on Pro Jobs
 	if pro_job then
-	--New Winters
+	-- New Winters
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Winters = {
 			amount = 6,
@@ -16932,7 +16932,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				},
 				{
-					unit = "Phalanx_dozer", --they're scary
+					unit = "Phalanx_dozer", -- they're scary
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
@@ -16951,7 +16951,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}				
 	end		
 	
-	--Captain Spring
+	-- Captain Spring
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Spring = {
 			amount = 3,
@@ -17070,7 +17070,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}			
 	end
 	
-	--HVH boss
+	-- HVH boss
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.HVH_Boss = {
 			amount = 3,
@@ -17189,7 +17189,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}			
 	end	
 	
-	--Captain Autumn
+	-- Captain Autumn
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = 3,
@@ -17284,7 +17284,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	end	
 else
-	--New Winters
+	-- New Winters
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Winters = {
 			amount = 5,
@@ -17395,7 +17395,7 @@ else
 		}				
 	end		
 	
-	--Captain Spring
+	-- Captain Spring
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Spring = {
 			amount = 1,
@@ -17498,7 +17498,7 @@ else
 		}			
 	end
 	
-	--HVH boss
+	-- HVH boss
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.HVH_Boss = {
 			amount = 1,
@@ -17601,7 +17601,7 @@ else
 		}			
 	end	
 	
-	--Captain Autumn
+	-- Captain Autumn
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = 1,
@@ -17689,7 +17689,7 @@ else
 	end
 end
 	
-	--Captain Summers
+	-- Captain Summers
 	self.enemy_spawn_groups.Cap_Summers = {
 		amount = 4,
 		force = true,
@@ -17729,7 +17729,7 @@ end
 		}
 	}
 	
-	--Single Cloaker groups
+	-- Single Cloaker groups
 	self.enemy_spawn_groups.single_spooc = {
 		amount = {1, 1},
 		spawn = {
@@ -17756,8 +17756,8 @@ end
 		}
 	}
 	
-	--Titan Snipers/US Marshal squads
-	--These guys shouldn't exist on lower difficulties
+	-- Titan Snipers/US Marshal squads
+	-- These guys shouldn't exist on lower difficulties
 	if difficulty_index == 5 then
 		self.enemy_spawn_groups.titan_snipers = {
 			spawn_cooldown = 75,
@@ -18027,9 +18027,9 @@ end
 		})
 	}
 
-	--Skirmish Spawngroups Below
+	-- Skirmish Spawngroups Below
 	
-	--Wave 1
+	-- Wave 1
 	self.enemy_spawn_groups.SKM_Light_Swat_W1 = {
 		amount = {3, 4},
 		spawn = {
@@ -18103,7 +18103,7 @@ end
 		}
 	}	
 		
-	--Wave 2
+	-- Wave 2
 	self.enemy_spawn_groups.SKM_Light_Swat_W2 = {
 		amount = {3, 4},
 		spawn = {
@@ -18241,7 +18241,7 @@ end
 		}
 	}		
 	
-	--Wave 3
+	-- Wave 3
 	self.enemy_spawn_groups.SKM_Light_Swat_W3 = {
 		amount = {3, 4},
 		spawn = {
@@ -18397,7 +18397,7 @@ end
 		}
 	}	
 	
-	--Wave 4
+	-- Wave 4
 	self.enemy_spawn_groups.SKM_Light_Swat_W4 = {
 		amount = {3, 4},
 		spawn = {
@@ -18586,7 +18586,7 @@ end
 		}
 	}	
 	
-	--Wave 5
+	-- Wave 5
 	self.enemy_spawn_groups.SKM_Light_Swat_W5 = {
 		amount = {3, 4},
 		spawn = {
@@ -18855,7 +18855,7 @@ end
 		}
 	}	
 	
-	--Wave 6, more or less just normal DS now
+	-- Wave 6, more or less just normal DS now
 	self.enemy_spawn_groups.SKM_Light_Swat_W6 = {
 		amount = {3, 4},
 		spawn = {
@@ -19234,7 +19234,7 @@ end
 		}
 	}	
 
-	--Wave 7, more or less just normal DS now WITH Bravo support
+	-- Wave 7, more or less just normal DS now WITH Bravo support
 	self.enemy_spawn_groups.SKM_Light_Swat_W7 = {
 		amount = {3, 4},
 		spawn = {
@@ -19613,7 +19613,7 @@ end
 		}
 	}	
 	
-	--Wave 8, DS but only Bravos
+	-- Wave 8, DS but only Bravos
 	self.enemy_spawn_groups.SKM_Light_Swat_W8 = {
 		amount = {3, 4},
 		spawn = {
@@ -19992,7 +19992,7 @@ end
 		}
 	}
 
-	--Wave 9
+	-- Wave 9
 	self.enemy_spawn_groups.SKM_Light_Swat_W9 = {
 		amount = {3, 4},
 		spawn = {
@@ -20371,7 +20371,7 @@ end
 		}
 	}	
 
-	--Skirmish Captains, uses the DS spawngroups
+	-- Skirmish Captains, uses the DS spawngroups
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
 			amount = 9,
 			force = true,
@@ -20497,18 +20497,18 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	self.max_nr_simultaneous_boss_types = 0
 	self.difficulty_curve_points = {0.5}
 	self.skirmish_difficulty_curve_points = {
-		--0 unused
-		0.05, --wave 1
-		0.1, --wave 2
-		0.15, --wave 3
-		0.2, --wave 4
-		0.25, --wave 5
-		0.3, --wave 6
-		0.35, --wave 7
-		0.4, --wave 8
-		0.45, --wave 9
-		0.5, --wave 10
-		--1 eventually
+		-- 0 unused
+		0.05, -- wave 1
+		0.1, -- wave 2
+		0.15, -- wave 3
+		0.2, -- wave 4
+		0.25, -- wave 5
+		0.3, -- wave 6
+		0.35, -- wave 7
+		0.4, -- wave 8
+		0.45, -- wave 9
+		0.5, -- wave 10
+		-- 1 eventually
 	}
 	
 	self.spawn_cooldown_mul = math.lerp(2.5, 1, f)
@@ -20837,13 +20837,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		end
 	end
 	
-	--Fuck this heist
-	--Yes, it needs drastically reduced spawns. It's a tiny heist with little/no cover, a lot of scripted spawns, harrassers, and a damn helicopter. Leave it be
+	-- Fuck this heist
+	-- Yes, it needs drastically reduced spawns. It's a tiny heist with little/no cover, a lot of scripted spawns, harrassers, and a damn helicopter. Leave it be
 	if job == "chew" then
 		map_scale_factor = 0.25
 	end
 	
-	--Reduced spawns if playing in Solo offline
+	-- Reduced spawns if playing in Solo offline
 	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
 		if Global and Global.game_settings and Global.game_settings.single_player then
 			map_scale_factor = map_scale_factor * 0.75
@@ -21068,7 +21068,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	end
 	
-	--Assault groups
+	-- Assault groups
 	if difficulty_index <= 2 then
 		self.besiege.assault.groups = {
 			CS_cops = {
@@ -21089,7 +21089,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.groups = {
-			--Will participate in first assault, then pull out
+			-- Will participate in first assault, then pull out
 			CS_cops = {
 				0.4,
 				0,
@@ -21128,7 +21128,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.groups = {
-			--Assist FBI SWATs for a short while, pull out by the last diff increase
+			-- Assist FBI SWATs for a short while, pull out by the last diff increase
 			CS_swats = {
 				0.44,
 				0.22,
@@ -21149,7 +21149,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.13,
 				0.25
 			},		
-			--Ditto
+			-- Ditto
 			CS_shields = {
 				0.14,
 				0.07,
@@ -21183,7 +21183,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.36,
 				0.35
 			},
-			--Only here just for the first few assaults, pull out ASAP
+			-- Only here just for the first few assaults, pull out ASAP
 			CS_swats = {
 				0.2,
 				0,
@@ -21194,7 +21194,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0,
 				0
 			},		
-			--Ditto
+			-- Ditto
 			CS_shields = {
 				0.07,
 				0,
@@ -21221,13 +21221,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.05
 			},	
 			--[[
-			--Base array to consider working with
+			-- Base array to consider working with
 			GREEN_tanks = {
 				0,
 				0.02,
 				0.04
 			},			
-			]]--
+			--]]
 			GREEN_tanks = {
 				0,
 				0.01,
@@ -21261,7 +21261,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.18,
 				0
 			},
-			--Slowly get replaced by GenSec boys
+			-- Slowly get replaced by GenSec boys
 			GS_swats = {
 				0,
 				0.18,
@@ -21272,7 +21272,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.125,
 				0
 			},
-			--Slowly get replaced by GenSec boys
+			-- Slowly get replaced by GenSec boys
 			GS_Heavys = {
 				0,
 				0.125,
@@ -21283,7 +21283,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.015,
 				0
 			},	
-			--Slowly get replaced by GenSec boys
+			-- Slowly get replaced by GenSec boys
 			GS_heavys_boom = {
 				0,
 				0.015,
@@ -21294,7 +21294,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.07,
 				0
 			},
-			--Slowly get replaced by GenSec boys
+			-- Slowly get replaced by GenSec boys
 			GS_shields = {
 				0,
 				0.07,
@@ -21305,20 +21305,20 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.015,
 				0
 			},	
-			--Slowly get replaced by GenSec boys
+			-- Slowly get replaced by GenSec boys
 			GS_shields_boom = {
 				0,
 				0.015,
 				0.05
 			},				
 			--[[
-			--Base array to consider working with
+			-- Base array to consider working with
 			GREEN_tanks = {
 				0,
 				0.02,
 				0.04
 			},			
-			]]--
+			--]]
 			GREEN_tanks = {
 				0,
 				0.0095,
@@ -21373,13 +21373,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.06
 			},	
 			--[[
-			--Baseline numbers to think about, work from this as an array for determining dozer types
+			-- Baseline numbers to think about, work from this as an array for determining dozer types
 			GREEN_tanks = {
 				0.0285,
 				0.038,
 				0.0475
 			},			
-			]]--			
+			--]]			
 			GREEN_tanks = {
 				0.009,
 				0.012,
@@ -21486,13 +21486,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
-	--just in case since titan snipers might sometimes retreat
+	-- just in case since titan snipers might sometimes retreat
 	self.besiege.assault.groups.titan_snipers = {
 		0,
 		0,
 		0
 	}
-	--prevent from spawning snowman outside of the event
+	-- prevent from spawning snowman outside of the event
 	self.besiege.assault.groups.snowman_boss = {
 		0,
 		0,
@@ -21503,13 +21503,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
-	--catch all the scripted spawns so they can actually participate in assaults instead of fucking away from the action
+	-- catch all the scripted spawns so they can actually participate in assaults instead of fucking away from the action
     self.besiege.assault.groups.custom_assault = {
 		0,
 		0,
 		0
 	}
-	--Add the relevant captain to the assault groups, if able to.
+	-- Add the relevant captain to the assault groups, if able to.
 	local captain_type = restoration.captain_spawns[job]
 	if captain_type and not table.contains(restoration.disable_natural_captain, job) then
 		self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.1, 0.2}
@@ -21678,7 +21678,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			}		
 		}	
 	end
-	--ditto but for reenforce units
+	-- ditto but for reenforce units
 	self.besiege.reenforce.groups.snowman_boss = {
 		0,
 		0,
@@ -21762,7 +21762,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0,
 				0.5
 			},
-			--Show up for first few recons, slowly replaced
+			-- Show up for first few recons, slowly replaced
 			FBI_stealth_c = {
 				0.5,
 				0.5,
@@ -21786,7 +21786,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.2,
 				0.5
 			},
-			--Show up for first few recons, slowly replaced
+			-- Show up for first few recons, slowly replaced
 			FBI_stealth_c = {
 				0.133,
 				0.133,
@@ -21810,7 +21810,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.2,
 				0.5
 			},
-			--Show up for first few recons, slowly replaced
+			-- Show up for first few recons, slowly replaced
 			FBI_stealth_c = {
 				0.133,
 				0.133,
@@ -21846,13 +21846,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
-	--ditto but for recon units
+	-- ditto but for recon units
 	self.besiege.recon.groups.titan_snipers = {
 		0,
 		0,
 		0
 	}
-	--ditto but for recon units
+	-- ditto but for recon units
 	self.besiege.recon.groups.snowman_boss = {
 		0,
 		0,
@@ -21863,7 +21863,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
-	--ditto but for recon phase
+	-- ditto but for recon phase
 	self.besiege.recon.groups.custom_recon = {
 		0,
 		0,
@@ -21885,7 +21885,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		captain_cooldown = 1800
 	end
 
-	--Table to define various restrictions for how different spawn groups can appear.
+	-- Table to define various restrictions for how different spawn groups can appear.
 	self.besiege.group_constraints = {
 		Cap_Winters = {
 			cooldown = captain_cooldown,

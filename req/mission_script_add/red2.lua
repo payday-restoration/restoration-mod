@@ -111,24 +111,17 @@ local optsBulldozer_193 = {
 	enemy = tank,
 	on_executed = {
 		{ id = 400023, delay = 3, },
-		{ id = 400052, delay = 0, },
 	},
 	enabled = death_sentence,
 }
 local optsBulldozer_special = {
 	enemy = tank,
-	on_executed = {
-		{ id = 400052, delay = 0, },
-	},
 	enabled = (death_wish_above and pro_job and enabled_chance_dozers_exitvault),
 }
 local optsCloaker_rush_1 = {
 	enemy = cloaker,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_clk_jump_dwn_5m_heli_l",
-	on_executed = { 
-		{ id = 400051, delay = 0, },
-	},
 	enabled = hard_above,
 }
 local optsCloaker_rush_2 = {
@@ -141,7 +134,6 @@ local optsBulldozer_BO = {
 	enemy = tank,
 	on_executed = {
 		{ id = 400023, delay = 3, },
-		{ id = 400052, delay = 0, },
 	},
 	enabled = true,
 }
@@ -153,9 +145,6 @@ local optsTaser_special = {
 	enemy = taser,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_down_12m",
-	on_executed = {
-		{ id = 400050, delay = 0, },
-	},
 	enabled = true,
 }
 local optsDozerAmbush = {
@@ -287,18 +276,6 @@ local optsOverdrillPONR = {
 	time_overkill_290 = overdrill_ponr_value,
 	time_sm_wish = overdrill_ponr_value,
 	enabled = pro_job,
-}
-local Bain_sendtasers = {
-	dialogue = "Play_ban_s05",
-	can_not_be_muted = true,
-}
-local Bain_senddozers = {
-	dialogue = "Play_ban_s02_b",
-	can_not_be_muted = true,
-}
-local Bain_sendcloakers = {
-	dialogue = "Play_ban_s04",
-	can_not_be_muted = true,
 }
 local optsBlackTankAmbushFilter = {
 	difficulty_sm_wish = true,
@@ -658,21 +635,6 @@ return {
 			400049,
 			"disable_OverdrillPONR",
 			disable_OverdrillPONR
-		),
-		restoration:gen_dialogue(
-			400050,
-			"they_sending_tasers",
-			Bain_sendtasers
-		),
-		restoration:gen_dialogue(
-			400051,
-			"they_sending_cloakers",
-			Bain_sendcloakers
-		),
-		restoration:gen_dialogue(
-			400052,
-			"they_sending_dozers",
-			Bain_senddozers
 		),
 		restoration:gen_dynamicfilter(
 			400053,

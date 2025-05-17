@@ -81,15 +81,15 @@ local murky_and_federales_no_gear = { -- Majority of murky units (and some feder
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2_husk"),
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"),
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),
-	--Idstring("units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3"),
-	--Idstring("units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),
+	-- Idstring("units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3"),
+	-- Idstring("units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),
 	Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex"),
 	Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex_husk"),
 	Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex"),
 	Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex_husk")
 }
 
---Reset Summers effect stuff
+-- Reset Summers effect stuff
 function CopBase:reset_summers_dr_effect()
 	summers_dr_effect_table_host = {"red","", "orange","","yellow"} -- CopDamage:die executing twice on host for some reason so this is temp solution
 	summers_dr_effect_table_client = {"red", "orange","yellow"} 
@@ -99,7 +99,7 @@ function CopBase:reset_summers_dr_effect()
 			parent = self._unit:get_object(Idstring("Head"))
 	})
 end
---When someone kill Doc/Molly/Elektra -> find Summers and update his effect
+-- When someone kill Doc/Molly/Elektra -> find Summers and update his effect
 function CopBase:find_summers(is_client)					
 	local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), 160000000, managers.slot:get_mask("enemies"))
 	if enemies then
@@ -110,7 +110,7 @@ function CopBase:find_summers(is_client)
 		end
 	end
 end
---Update Summers DR effect if someone from captain's crew is dead (or when Summers killed when he still has alive crew members)
+-- Update Summers DR effect if someone from captain's crew is dead (or when Summers killed when he still has alive crew members)
 function CopBase:update_summers_dr_effect(summers_death, is_client)
 	if self._unit:base()._tweak_table == "summers" and summers_death then
 		World:effect_manager():fade_kill(self._summers_dr_effect)
@@ -239,9 +239,11 @@ function CopBase:disable_asu_laser(state)
 	end
 end
 
-Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
-	self:random_mat_seq_initialization()
+Hooks:PreHook(CopBase, "post_init", "run_fucking_heads_post_init", function(self)
+	self:_run_unit_sequences()
+end)
 
+Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	if self._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("turn_on_spook_lights")
 	elseif self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "headless_hatman" or self._tweak_table == "autumn" then
@@ -254,7 +256,7 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 		
 	end
 	
-	--Just in case Summers decides to spawn again, his DR is back
+	-- Just in case Summers decides to spawn again, his DR is back
 	if self._tweak_table == "summers" then
 		managers.groupai:state():_reset_summers_dr()
 		self._unit:base():reset_summers_dr_effect()
@@ -268,7 +270,7 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 		"death"
 	}, callback(self, self, "disable_lpf_buff"))	
 
-	--Yufu Wang Hitbox fix
+	-- Yufu Wang Hitbox fix
 	if self._tweak_table == "triad_boss" then
 		self._unit:body("head"--[[self._unit:character_damage()._head_body_name--]]):set_sphere_radius(16)
 		self._unit:body("body"):set_sphere_radius(22)	
@@ -297,7 +299,7 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 		end
 	end	
 	
-	--Faction appropriate colors for Cloaker NVGs
+	-- Faction appropriate colors for Cloaker NVGs
 	local faction = tweak_data.levels:get_ai_group_type()
     local lights = self._unit:get_objects_by_type(Idstring("light"))
 	if faction == "russia" then
@@ -318,7 +320,7 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	
 end)
 
-local enemy_variations = {
+local enemy_variations_clean = {
 	["units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"] = "swat_ar",
 	["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "swat_sniper",
 	["units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"] = "swat_sniper_scripted",
@@ -465,7 +467,7 @@ local enemy_variations = {
 	["units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"] = "swat_shield",
 	["units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3"] = "swat_sniper",
 
-	-- MARSHALS
+	--  MARSHALS
 	["units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle"] = "swat_ar_titan",
 	["units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper"] = "swat_sniper",
 	["units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"] = "swat_sniper",
@@ -477,7 +479,7 @@ local enemy_variations = {
 	["units/pd2_dlc_usm1/characters/ene_titan_shotgun/ene_titan_shotgun"] = "swat_sg_titan",
 	["units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser"] = "taser_titan",	
 	
-	-- NYPD
+	--  NYPD
 	["units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"] = "sec_pistol",
 	["units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"] = "sec_smg",
 	["units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"] = "sec_sg",
@@ -540,9 +542,8 @@ local enemy_variations = {
 	
 }
 
-local all_head_variants = {
-
-	--LAPD
+local head_variations_clean = {
+	-- LAPD
 	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"] = "vetcop",
 	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"] = "vetcop",
 	
@@ -577,7 +578,7 @@ local all_head_variants = {
 	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "swat_heavy_fbi_la",	
 	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "swat_heavy_fbi_la",
 	
-	-- marshals
+	--  marshals
 	["units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper"] = "mean_swat_marshals",	
 	["units/pd2_dlc_usm1/characters/ene_titan_sniper_bell/ene_titan_sniper_bell"] = "mean_swat_marshal_specials",	
 	["units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"] = "mean_swat_marshal_specials",	
@@ -587,7 +588,7 @@ local all_head_variants = {
 	["units/pd2_dlc_deep/characters/ene_deep_security_1/ene_deep_security_1"] = "mean_swat_marshals",	
 	["units/pd2_dlc_deep/characters/ene_deep_security_2/ene_deep_security_2"] = "swat_ar_la",	
 	
-	-- NYPD
+	--  NYPD
 	["units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"] = "sec_cop",
 	["units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"] = "sec_cop",
 	["units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"] = "sec_cop",
@@ -635,34 +636,49 @@ local all_head_variants = {
 	["units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"] = "gs_swat",
 	["units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1"] = "sec_cop",	
 	["units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"] = "sec_cop",
-	["units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"] = "fbi_hrt"
-	
+	["units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"] = "fbi_hrt"	
 }
 
 
--- do not touch this.
-local enemy_mapping = {}
-local all_cop_variants = {}
+--  do not touch this.
+local enemy_variations = {}
+local head_variations = {}
 
-for name, sequence in pairs(all_head_variants) do
-	all_cop_variants[Idstring(name):key()] = sequence
-	all_cop_variants[Idstring(name .. "_husk"):key()] = sequence
+for name, sequence in pairs(enemy_variations_clean) do
+	enemy_variations[Idstring(name):key()] = sequence
+	enemy_variations[Idstring(name .. "_husk"):key()] = sequence
 end
 
-for name, sequence in pairs(enemy_variations) do
-	enemy_mapping[Idstring(name):key()] = sequence
-	enemy_mapping[Idstring(name .. "_husk"):key()] = sequence
+for name, sequence in pairs(head_variations_clean) do
+	head_variations[Idstring(name):key()] = sequence
+	head_variations[Idstring(name .. "_husk"):key()] = sequence
 end
 
-Hooks:PreHook(CopBase, "post_init", "hits_post_init", function(self)
+CopBase.enemy_variations = deep_clone(enemy_variations) 
+CopBase.head_variations = deep_clone(head_variations)  
+
+function CopBase:_run_unit_sequences()
 	local name = self._unit:name():key()
 	
-	local character_sequence = all_cop_variants[name]
+	local enemy_sequence = self.enemy_variations[name]
+	local head_sequence = self.head_variations[name]
+
+	--[[
+	NOT NEEDED UNLESS  YOU WANT TO MAKE BODY FLASHLIGHTS (ON MURKIES AND STUFF) MAP DEPENDENT
+    local lvl_tweak_data = tweak_data.levels[job] 
+    local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
+	--]]
+
+	-- Run the enemy sequence to enable pouches and such
+	if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence) then
+		self._unit:damage():run_sequence_simple(enemy_sequence)
+	end
 	
 	local spawn_manager_ext = self._unit:spawn_manager()
 	local damage_ext = self._unit:character_damage()
 	local head = damage_ext._head
 	
+	-- Run the head sequence to enable the head and arms
 	if spawn_manager_ext then	
 		if head then	
 			managers.dyn_resource:load(Idstring("unit"), Idstring(head), managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
@@ -676,20 +692,9 @@ Hooks:PreHook(CopBase, "post_init", "hits_post_init", function(self)
 	if alive(self._head_unit) then		
 		self._head_unit:set_enabled(self._unit:enabled())
 		
-		if self._head_unit:damage() and self._head_unit:damage():has_sequence(character_sequence) then
-			self._head_unit:damage():run_sequence_simple(character_sequence)
+		if self._head_unit:damage() and self._head_unit:damage():has_sequence(head_sequence) then
+			self._head_unit:damage():run_sequence_simple(head_sequence)
 		end
-	end
-end)
-
-
-function CopBase:random_mat_seq_initialization()
-	local sequence = enemy_mapping[self._unit:name():key()]
-    local lvl_tweak_data = tweak_data.levels[job]
-    local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
-
-	if self._unit:damage() and self._unit:damage():has_sequence(sequence) then
-		self._unit:damage():run_sequence_simple(sequence)
 	end
 end
 
@@ -716,12 +721,12 @@ function ContourSwapBase:init(unit)
     self._is_in_original_material = true
 end
 
---Deleting dozer hats cause it blows people up, pls gib standalone that's always loaded
+-- Deleting dozer hats cause it blows people up, pls gib standalone that's always loaded
 function CopBase:_chk_spawn_gear()
 	local region = tweak_data.levels:get_ai_group_type()
 	local difficulty_index = tweak_data:difficulty_to_index(Global and Global.game_settings and Global.game_settings.difficulty or "overkill")
 
-	--Using this only so we can slap this on custom heists
+	-- Using this only so we can slap this on custom heists
 	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
 		for _,x in pairs(restoration.christmas_heists) do
 			if job == x or Month == "12" then
@@ -740,14 +745,14 @@ function CopBase:_chk_spawn_gear()
 	end
 end
 
---Random Weapons For Enemies
+-- Random Weapons For Enemies
 local weapons_map = {
-	--Secret Service Bois--
+	-- Secret Service Bois-- 
 	[Idstring("units/payday2/characters/ene_secret_service_1/ene_secret_service_1"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/payday2/characters/ene_secret_service_2/ene_secret_service_2"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"):key()] = {"m1911_npc", "mp5", "m4"},
 
-	--Biker Weapon Changes--
+	-- Biker Weapon Changes-- 
 	[Idstring("units/payday2/characters/ene_biker_1/ene_biker_1"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/payday2/characters/ene_biker_2/ene_biker_2"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/payday2/characters/ene_biker_3/ene_biker_3"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
@@ -755,18 +760,18 @@ local weapons_map = {
 	
 	[Idstring("units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"):key()] = {"c45", "m4", "r870"},
 	
-	--Female Bikers
+	-- Female Bikers
 	[Idstring("units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 
-	--Mendoza Weapon Changes
+	-- Mendoza Weapon Changes
 	[Idstring("units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 
-	--Cobras Weapon Changes
+	-- Cobras Weapon Changes
 	["man"] = {
 		[Idstring("units/payday2/characters/ene_gang_black_1/ene_gang_black_1"):key()] = "c45",
 		[Idstring("units/payday2/characters/ene_gang_black_2/ene_gang_black_2"):key()] = "raging_bull",
@@ -780,7 +785,7 @@ local weapons_map = {
 	
 	[Idstring("units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer"):key()] = {"ak47", "rpk_lmg", "saiga"},
 
-	--Russian Gangster Weapon Changes
+	-- Russian Gangster Weapon Changes
 	[Idstring("units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
@@ -789,14 +794,14 @@ local weapons_map = {
 
 	[Idstring("units/payday2/characters/ene_gang_mobster_enforcer/ene_gang_mobster_enforcer"):key()] = {"m32", "rpk_lmg", "saiga"},
 
-	-- colombians
+	--  colombians
 	[Idstring("units/pd2_dlc_flat/characters/ene_gang_colombian_1/ene_gang_colombian_1"):key()] = {"m1911_npc", "ak47", "r870", "raging_bull"},
 	[Idstring("units/pd2_dlc_flat/characters/ene_gang_colombian_2/ene_gang_colombian_2"):key()] = {"m1911_npc", "ak47", "r870", "raging_bull"},
 	[Idstring("units/pd2_dlc_flat/characters/ene_gang_colombian_3/ene_gang_colombian_3"):key()] = {"m1911_npc", "ak47", "r870", "raging_bull"},
 	
 	[Idstring("units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"):key()] = {"ak47", "rpk_lmg", "saiga"},
 	
-	--Bolivian Weapons
+	-- Bolivian Weapons
 	[Idstring("units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01"):key()] = {"c45", "mac11", "mossberg", "raging_bull"},
 	[Idstring("units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02"):key()] = {"c45", "mac11", "mossberg", "raging_bull"},
 	[Idstring("units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager"):key()] = {"raging_bull", "mac11", "ak47"},
@@ -806,11 +811,11 @@ local weapons_map = {
 	[Idstring("units/pd2_dlc_friend/characters/ene_thug_indoor_03/ene_thug_indoor_03"):key()] = {"c45", "mac11", "mp5", "r870", "ak47", "raging_bull"},
 	[Idstring("units/pd2_dlc_friend/characters/ene_thug_indoor_04/ene_thug_indoor_04"):key()] = {"c45", "mac11", "mp5", "r870", "ak47", "raging_bull"},
 	
-	--Border Crossing Guards
+	-- Border Crossing Guards
 	[Idstring("units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
 	[Idstring("units/pd2_dlc_mex/characters/ene_mex_thug_outdoor_02/ene_mex_thug_outdoor_02"):key()] = {"m1911_npc", "mac11", "mossberg", "ak47", "raging_bull"},
 	
-	--Triads (Because why the fuck they carry only pistols)
+	-- Triads (Because why the fuck they carry only pistols)
 	[Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_1/ene_male_triad_gang_1"):key()] = {"deagle_guard", "ak47", "mossberg", "c45"},
 	[Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_2/ene_male_triad_gang_2"):key()] = {"deagle_guard", "ak47", "mossberg", "c45"},
 	[Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_3/ene_male_triad_gang_3"):key()] = {"deagle_guard", "ak47", "mossberg", "c45"},
@@ -828,13 +833,13 @@ local weapons_map = {
 	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_3/ene_male_triad_penthouse_3"):key()] = {"m1911_npc", "mac11", "ak47", "raging_bull", "r870"},
 	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_4/ene_male_triad_penthouse_4"):key()] = {"m1911_npc", "mac11", "ak47", "raging_bull", "r870"},
 	
-	--Midland Ranch Guards
+	-- Midland Ranch Guards
 	[Idstring("units/pd2_dlc_ranc/characters/ene_male_ranc_security_1/ene_male_ranc_security_1"):key()] = {"c45", "raging_bull", "mac11", "m4", "r870"},
 	[Idstring("units/pd2_dlc_ranc/characters/ene_male_ranc_security_2/ene_male_ranc_security_2"):key()] = {"c45", "raging_bull", "mac11", "m4", "r870"},
 	
 	[Idstring("units/pd2_dlc_ranc/characters/ene_male_ranchmanager_1/ene_male_ranchmanager_1"):key()] = {"c45", "raging_bull", "mac11"},
 
-	--Security Guards
+	-- Security Guards
 	["trai"] = {
 		[Idstring("units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"):key()] = {"c45", "mp5", "m4"},
 		[Idstring("units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"):key()] = {"c45", "mp5", "m4"},
@@ -924,43 +929,43 @@ local weapons_map = {
 	[Idstring("units/pd2_mod_friday/characters/ene_security_fri_2/ene_security_fri_2"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/pd2_mod_friday/characters/ene_security_fri_3/ene_security_fri_3"):key()] = {"m1911_npc", "mp5"},
 	
-	--Vanilla Murkies with variety weapons
+	-- Vanilla Murkies with variety weapons
 	[Idstring("units/payday2/characters/ene_murkywater_1/ene_murkywater_1"):key()] = {"ump", "r870", "scar_murky"},
 	[Idstring("units/payday2/characters/ene_murkywater_2/ene_murkywater_2"):key()] = {"ump", "r870", "scar_murky"},
 	[Idstring("units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"):key()] = {"r870", "ump", "scar_murky"},
 	
-	--Commissar gets his precious RPK back from Russia
+	-- Commissar gets his precious RPK back from Russia
 	[Idstring("units/payday2/characters/ene_gang_mobster_boss/ene_gang_mobster_boss"):key()] = "rpk_lmg",
 	
-	--Overkill MC Boss has Benelli auto-shotty instead of LMG
+	-- Overkill MC Boss has Benelli auto-shotty instead of LMG
 	[Idstring("units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss"):key()] = "benelli",
 	
-	--FSB gets proper Russian Weapons
-	--Security bois
+	-- FSB gets proper Russian Weapons
+	-- Security bois
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1"):key()] = {"streak", "akmsu_smg"},
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2"):key()] = {"streak", "akmsu_smg"},
-	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3"):key()] = {"fort_500"}, --keeping the tradition of shotgun guards :)
-	--Beat Cops
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3"):key()] = {"fort_500"}, -- keeping the tradition of shotgun guards :)
+	--  Beat Cops
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1"):key()] = {"streak"},
-	[Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_2/ene_rus_cop_2"):key()] = {"raging_bull"}, --keeping the tradition of bronco cops :)
-	--why there are 2 cop shotgunners?
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_2/ene_rus_cop_2"):key()] = {"raging_bull"}, -- keeping the tradition of bronco cops :)
+	-- why there are 2 cop shotgunners?
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_3_r870/ene_rus_cop_3_r870"):key()] = {"fort_500"},
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_4_r870/ene_rus_cop_4_r870"):key()] = {"fort_500"},
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_4_m4/ene_rus_cop_4_m4"):key()] = {"akmsu_smg"},
-	--FSB
+	-- FSB
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4"):key()] = {"ak47_ass"},
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870"):key()] = {"fort_500"},
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4"):key()] = {"ak47_ass"},
-	--FSB City but they are not City
+	-- FSB City but they are not City
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36"):key()] = {"ak47_ass"},
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870"):key()] = {"fort_500"},
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36"):key()] = {"ak47_ass"},
-	--FSB Shields
+	-- FSB Shields
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"):key()] = {"streak"},
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"):key()] = {"sr2_smg"},
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"):key()] = {"sr2_smg"},
 
-	--Giving Friendly AI silenced pistols
+	-- Giving Friendly AI silenced pistols
 	[Idstring("units/pd2_dlc_spa/characters/npc_spa/npc_spa"):key()] = "beretta92",
 	[Idstring("units/payday2/characters/npc_old_hoxton_prisonsuit_2/npc_old_hoxton_prisonsuit_2"):key()] = "beretta92",
 	[Idstring("units/pd2_dlc_berry/characters/npc_locke/npc_locke"):key()] = "beretta92",
@@ -973,42 +978,23 @@ function CopBase:default_weapon_name(...)
 	local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 	local weapon_override = weapons_map[job] and weapons_map[job][self._unit:name():key()] or weapons_map[self._unit:name():key()]
 	
-	--For Jungle Inferno Mutator
+	-- For Jungle Inferno Mutator
 	if not self._weapon_set and restoration and restoration.disco_inferno and not self._char_tweak.no_mutator_weapon_override then
 		self._default_weapon_id = "flamethrower"
 		self._weapon_set = true		
 	end
 	
-	--For High Noon mutator
+	-- For High Noon mutator
 	if not self._weapon_set and restoration and restoration.high_noon and not self._char_tweak.no_mutator_weapon_override then
 		if self._tweak_table == "autumn" then
 			self._default_weapon_id = "x_peacemaker"
 			self._weapon_set = true		
-		end
-		
-		if self._default_weapon_id == "r870" then
-			self._default_weapon_id = "mossberg"
-			self._weapon_set = true	
-		end
-		
-		if self._default_weapon_id == "ump" then
-			self._default_weapon_id = "peacemaker"
-			self._weapon_set = true	
-		end		
-		
-		if self._default_weapon_id == "m4" or self._default_weapon_id == "mp5" or self._default_weapon_id == "amcar" then
-			self._default_weapon_id = "raging_bull"
-			self._weapon_set = true	
-		end				
+		end			
 	end	
 	
-	--Have White Titandozers use Grenade Launchers/AA-12s like their Reaper counterparts in Russia/Mexico heists (mostly for Holiday Effects and consistency with factions)
-	if self._tweak_table == "tank_hw" and faction == "russia" then
+	-- Have White Titandozers use Grenade Launchers/AA-12s like their Reaper counterparts in Russia/Mexico heists (mostly for Holiday Effects and consistency with factions)
+	if self._tweak_table == "tank_hw" and faction == "russia" or faction == "federales" then
 		self._default_weapon_id = "m32_large"
-		self._weapon_set = true
-	end
-	if self._tweak_table == "tank_hw" and faction == "federales" or self._tweak_table == "tank_titan_assault" and faction == "federales" then
-		self._default_weapon_id = "aa12_dozer"
 		self._weapon_set = true
 	end
 
@@ -1043,7 +1029,7 @@ function CopBase:change_char_tweak(new_tweak_name)
 		managers.groupai:state():on_unit_tags_updated(self._unit, old_tags, self._tags)
 	end
 	
-	--Drops CS gas
+	-- Drops CS gas
 	if Network:is_server() and self._tweak_table == "phalanx_vip_break" then
 		managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 	end

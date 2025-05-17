@@ -141,7 +141,7 @@ return {
 			{ id = 400002, delay = 20 },
 			{ id = 400046, delay = 200 },
 			{ id = 400047, delay = 200 },
-			{ id = 400049, delay = 5 },
+			{ id = 400066, delay = 5 },
 			{ id = 100129, delay = 20 },
 			{ id = 100115, delay = 18 }
 		}

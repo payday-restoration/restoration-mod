@@ -12,7 +12,6 @@ local death_sentence = difficulty == 8
 local overkill_above = difficulty >= 5
 local hard_above = difficulty >= 3
 local enabled_chance_shields = math.random() < diff_scaling
-local bain_specials_warning = (difficulty >= 7 and "Play_ban_s05") or "Play_ban_s01_b"
 
 local optsSWAT_Heavy145 = {
 	enemy = swat_shotgunner,
@@ -43,7 +42,6 @@ local optsBulldozer = {
 	enemy = tank,
 	on_executed = {
 		{ id = 400014, delay = 1.5 },
-		{ id = 400016, delay = 0, },
 	},
 	enabled = hard_above,
 }
@@ -51,7 +49,6 @@ local optsBulldozerscripted = {
 	enemy = tank,
 	on_executed = {
 		{ id = 400041, delay = 1.5, },
-		{ id = 400016, delay = 0, },
 	},
 	enabled = hard_above,
 }
@@ -191,22 +188,6 @@ local optsShield_Defend_SO = {
 	interval = 2,
 	so_action = "AI_sniper",
 }
-local Bain_senddozers = {
-	dialogue = "Play_ban_s02_a",
-	can_not_be_muted = true,
-}
-local Bain_sendshields = {
-	dialogue = "Play_ban_s03_b",
-	can_not_be_muted = true,
-}
-local Bain_sendcloakers = {
-	dialogue = "Play_ban_s04",
-	can_not_be_muted = true,
-}
-local Bain_sendtasers = {
-	dialogue = bain_specials_warning,
-	can_not_be_muted = true,
-}
 local spawn_heavy_swat_145 = {
 	enabled = overkill_above,
 	on_executed = {
@@ -229,7 +210,6 @@ local spawn_tasers = {
 	on_executed = {
 		{ id = 400017, delay = 0, },
 		{ id = 400018, delay = 0, },
-		{ id = 400019, delay = 0, },
 	},
 }
 local spawn_cloakers = {
@@ -238,7 +218,6 @@ local spawn_cloakers = {
 		{ id = 400033, delay = 0, },
 		{ id = 400034, delay = 0, },
 		{ id = 400035, delay = 0, },
-		{ id = 400036, delay = 0, },
 	},
 }
 local spawn_rooftopSWAT = {
@@ -421,11 +400,6 @@ return {
 			Rotation(90, -0, -0),
 			optsBulldozer
 		),
-		restoration:gen_dialogue(
-			400016,
-			"they_sending_dozers",
-			Bain_senddozers
-		),
 		restoration:gen_dummy(
 			400017,
 			"taser_1",
@@ -439,11 +413,6 @@ return {
 			Vector3(372, 163, 1674.944),
 			Rotation(90, -0, -0),
 			optsTaser
-		),
-		restoration:gen_dialogue(
-			400019,
-			"they_sending_tasers",
-			Bain_sendtasers
 		),
 		restoration:gen_missionscript(
 			400020,
@@ -551,11 +520,6 @@ return {
 			Rotation(90, -0, -0),
 			optsCloaker
 		),
-		restoration:gen_dialogue(
-			400036,
-			"they_sending_cloakers",
-			Bain_sendcloakers
-		),
 		restoration:gen_missionscript(
 			400037,
 			"spawn_cloakers",
@@ -584,11 +548,6 @@ return {
 			Vector3(11, 1132, 53.185),
 			Rotation(180, 0, -0),
 			optsAI_Defend
-		),
-		restoration:gen_dialogue(
-			400042,
-			"they_sending_shields",
-			Bain_sendshields
 		),
 		restoration:gen_missionscript(
 			400043,

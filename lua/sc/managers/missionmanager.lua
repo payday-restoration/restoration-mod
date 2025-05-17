@@ -273,6 +273,13 @@ function MissionManager.mission_script_patch_funcs.so_access_filter(self, elemen
 	restoration:log("Replaced SO access filter of element %s", element:editor_name())
 end
 
+function MissionManager.mission_script_patch_funcs.enemy(self, element, data)
+	element:replace_enemy_name(data)
+	element:chk_used_mapped_names(true)
+
+	restoration:log(string.format("Modified enemy spawn in element %s", element:editor_name()))
+end
+
 -- From ASS
 -- Referenced from ElementAiGlobalEvent, lib\managers\mission\elementaiglobalevent
 function MissionManager.mission_script_patch_funcs.hunt(self, element, data)

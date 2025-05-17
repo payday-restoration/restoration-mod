@@ -61,44 +61,12 @@ local opts_disable_dozers = {
 
 return {
 	elements = {
-		restoration:gen_pointofnoreturn(
-			400020,
-			"pro_job_ponr",
-			Vector3(0, 0, 0),
-			Rotation(0, 0, 0),
-			opts_pro_job_ponr
-		),
-		restoration:gen_counter(
-			400021,
-			"pro_job_ponr_counter",
-			Vector3(0, 0, 0),
-			Rotation(0, 0, 0),
-			opts_pro_job_ponr_counter
-		),
+		restoration:gen_pointofnoreturn(400020, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
+		restoration:gen_counter(400021, "pro_job_ponr_counter", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_counter),
 		-- Skulldozer nearby the van (based on DW Trailer)
-		restoration:gen_dummy(
-			400001,
-			"van_dozer_1",
-			Vector3(-8305, -3511, 0),
-			Rotation(-90, 0, -0),
-			optsBulldozer
-		),
-		restoration:gen_so(
-			400002,
-			"dozer_defend_so_1",
-			Vector3(-7273, -2895, -19.999),
-			Rotation(0, 0, -0),
-			optsDefend_SO
-		),
-		restoration:gen_toggleelement(
-			400003,
-			"disable_dozers",
-			opts_disable_dozers
-		),
-		restoration:gen_toggleelement(
-			400004,
-			"enabled_dozers",
-			opts_enable_dozers
-		),
+		restoration:gen_dummy(400001, "van_dozer_1", Vector3(-8305, -3511, 0), Rotation(-90, 0, -0), optsBulldozer),
+		restoration:gen_so(400002, "dozer_defend_so_1", Vector3(-7273, -2895, -19.999), Rotation(0, 0, -0), optsDefend_SO),
+		restoration:gen_toggleelement(400003, "disable_dozers", opts_disable_dozers),
+		restoration:gen_toggleelement(400004, "enabled_dozers", opts_enable_dozers),
 	},
 }

@@ -14,19 +14,7 @@ local optsLieutenant = {
 return {
     elements = {
         --Sosa's lieutenants
-		restoration:gen_dummy(
-            400001,
-            "sosa_lieutenant_1",
-            Vector3(889, -1006, 452.759),
-            Rotation(90, 0, -0),
-            optsLieutenant
-        ),
-		restoration:gen_dummy(
-            400002,
-            "sosa_lieutenant_2",
-            Vector3(889, -1151, 452.759),
-            Rotation(90, -0, -0),
-            optsLieutenant
-        )
+		restoration:gen_dummy(400001, "sosa_lieutenant_1", Vector3(889, -1006, 452.759), Rotation(90, 0, -0), optsLieutenant),
+		restoration:gen_dummy(400002, "sosa_lieutenant_2", Vector3(889, -1151, 452.759), Rotation(90, -0, -0), optsLieutenant)
     }
 }

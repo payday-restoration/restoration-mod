@@ -1,3 +1,4 @@
+--TODO: MAKE FBI READY TEAMS LESS SPAMMY
 --[[local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
@@ -330,10 +331,6 @@ local optsrespawn_tank = {
 		400058
 	},
 	event = "death"
-}
-local Bain_senddozers = {
-	dialogue = "Play_ban_s02_a",
-	can_not_be_muted = true
 }
 
 return {
@@ -741,11 +738,6 @@ return {
             Rotation(90, -0, -0),
             optsrespawn_tank
         ),
-		restoration:gen_dialogue(
-            400060,
-            "they_sending_dozers",
-            Bain_senddozers
-        )
     }
 }
 ]]--

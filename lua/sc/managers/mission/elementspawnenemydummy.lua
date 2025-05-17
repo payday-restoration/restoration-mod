@@ -5,13 +5,13 @@ if Global.editor_mode or level_id == "modders_devmap" or level_id == "Enemy_Spaw
 	StreamHeist:log("Editor/Spawner mode is active, spawn group fixes disabled")
 	return
 end
-]]--
+--]]
 -- Map to correct incorrect faction spawns
 ElementSpawnEnemyDummy.faction_mapping = {
-	--Hard and Normal uses Very Hard replacement values for every faction
-	--America
+	-- Hard and Normal uses Very Hard replacement values for every faction
+	-- America
 	america = {
-		--SWAT
+		-- SWAT
 		overkill = {
 			security_1 = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
@@ -33,7 +33,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			tsniper = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
 			dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 		},
-		--Mix of SWAT+FBI
+		-- Mix of SWAT+FBI
 		overkill_145 = {
 			security_1 = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
@@ -74,7 +74,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
 			}
 		},
-		--Mix of FBI+GenSec
+		-- Mix of FBI+GenSec
 		easy_wish = {
 			security_1 = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
@@ -116,7 +116,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 			}
 		},
-		--GenSec
+		-- GenSec
 		overkill_290 = {
 			security_1 = {
 				"units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1",
@@ -150,7 +150,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 			}
 		},
-		--ZEAL
+		-- ZEAL
 		sm_wish = {
 			security_1 = {
 				"units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
@@ -253,15 +253,15 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+				-- "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
-	--Russia
+	-- Russia
 	russia = {
-		--Akan's Reaper Security Teams
+		-- Akan's Reaper Security Teams
 		overkill = {
 			security_1 = {
 				"units/pd2_mod_reapers/characters/ene_security_1/ene_security_1",
@@ -299,7 +299,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			grenadier = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 			dozer = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1"
 		},
-		--Mix of Akan's Reaper Security Teams+Soldiers
+		-- Mix of Akan's Reaper Security Teams+Soldiers
 		overkill_145 = {
 			security_1 = {
 				"units/pd2_mod_reapers/characters/ene_security_1/ene_security_1",
@@ -358,7 +358,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_sniper_2/ene_sniper_2"
 			}
 		},
-		--Mix of Akan's Reaper Soldiers+Elites
+		-- Mix of Akan's Reaper Soldiers+Elites
 		easy_wish = {
 			security_1 = {
 				"units/pd2_mod_reapers/characters/ene_security_1/ene_security_1",
@@ -440,7 +440,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
 		},
-		--Akan's Elite Soldiers
+		-- Akan's Elite Soldiers
 		overkill_290 = {
 			security_1 = {
 				"units/pd2_mod_reapers/characters/ene_security_1/ene_security_1",
@@ -497,7 +497,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
 		},
-		--DRAK (The Better Eggman Empire)
+		-- DRAK (The Better Eggman Empire)
 		sm_wish = {
 			security_1 = {
 				"units/pd2_mod_reapers/characters/ene_security_1/ene_security_1",
@@ -642,7 +642,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+				-- "units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			fsb_sniper = {
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
@@ -650,15 +650,15 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+				-- "units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
-	--Zombie
+	-- Zombie
 	zombie = {
-		--Zombie SWAT
+		-- Zombie SWAT
 		overkill = {
 			cop_1 = "units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1",
 			cop_2 = "units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2",
@@ -682,7 +682,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			dozer = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 			dozer_headless = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		},
-		--Mix of Zombie SWAT+FBI
+		-- Mix of Zombie SWAT+FBI
 		overkill_145 = {
 			cop_1 = "units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1",
 			cop_2 = "units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2",
@@ -728,7 +728,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_halloween/characters/ene_sniper_2/ene_sniper_2"
 			}
 		},
-		--Mix of Zombie FBI+GenSec
+		-- Mix of Zombie FBI+GenSec
 		easy_wish = {
 			cop_1 = "units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1",
 			cop_2 = "units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2",
@@ -775,7 +775,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			dozer_headless = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		},
-		--Zombie GenSec
+		-- Zombie GenSec
 		overkill_290 = {
 			cop_1 = "units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1",
 			cop_2 = "units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2",
@@ -811,7 +811,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			dozer_headless = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		},
-		--Zombie ZEAL
+		-- Zombie ZEAL
 		sm_wish = {
 			cop_1 = "units/pd2_dlc_hvh/characters/ene_cop_hvh_1/ene_cop_hvh_1",
 			cop_2 = "units/pd2_dlc_hvh/characters/ene_cop_hvh_2/ene_cop_hvh_2",
@@ -908,16 +908,16 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_mod_halloween/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+				-- "units/pd2_mod_halloween/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			dozer_headless = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4",
 			grenadier = "units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
-	--Murkywater (le Sharks)
+	-- Murkywater (le Sharks)
 	murkywater = {
-		--Murkywater Tactical Security
+		-- Murkywater Tactical Security
 		overkill = {
 			security_1 = {
 				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
@@ -961,7 +961,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			tshield = "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
 			dozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 		},
-		--Mix of Murkywater Tactical Security+Marines
+		-- Mix of Murkywater Tactical Security+Marines
 		overkill_145 = {
 			security_1 = {
 				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
@@ -1022,7 +1022,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			tshield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault",
 			sniper = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper"
 		},
-		--Mix of Murkywater Marines+Elites
+		-- Mix of Murkywater Marines+Elites
 		easy_wish = {
 			security_1 = {
 				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
@@ -1081,7 +1081,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
 			}
 		},
-		--Murkywater Elites
+		-- Murkywater Elites
 		overkill_290 = {
 			security_1 = {
 				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
@@ -1132,8 +1132,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
 			}
 		},
-		--HECU (aka ZEAL)
-		--You probably gonna like Black Ridge (the custom stealth heist)
+		-- HECU (aka ZEAL)
+		-- You probably gonna like Black Ridge (the custom stealth heist)
 		sm_wish = {
 			security_1 = {
 				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
@@ -1245,16 +1245,16 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
 				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
 				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
-				"units/pd2_mod_sharks/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+				-- "units/pd2_mod_sharks/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
 			tshield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		}
 	},
-	--Federales (the most fucked up faction in vanilla visually)
+	-- Federales (the most fucked up faction in vanilla visually)
 	federales = {
-		--Mexican SWAT
+		-- Mexican SWAT
 		overkill = {
 			security_1 = {
 				"units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
@@ -1286,7 +1286,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			grenadier = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
 			dozer = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1"
 		},
-		--Mix of Mexican SWAT+FBI
+		-- Mix of Mexican SWAT+FBI
 		overkill_145 = {
 			security_1 = {
 				"units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
@@ -1337,7 +1337,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			sniper = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1"
 		},
-		--Mix of Mexican FBI+Elites
+		-- Mix of Mexican FBI+Elites
 		easy_wish = {
 			security_1 = {
 				"units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01",
@@ -1389,7 +1389,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 			}
 		},
-		--Mexican Elites
+		-- Mexican Elites
 		overkill_290 = {
 			security_1 = {
 				"units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01",
@@ -1433,7 +1433,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 			}
 		},
-		--Gendarmería Grupo de la Muerte
+		-- Gendarmería Grupo de la Muerte
 		sm_wish = {
 			security_1 = {
 				"units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01",
@@ -1539,15 +1539,15 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+				-- "units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
-	--NYPD (The OG PDTH Faction)
+	-- NYPD (The OG PDTH Faction)
 	nypd = {
-		--NYPD SWAT
+		-- NYPD SWAT
 		overkill = {
 			security_1 = {
 				"units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
@@ -1596,7 +1596,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			grenadier = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
 			dozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 		},
-		--Mix of NYPD SWAT+FBI
+		-- Mix of NYPD SWAT+FBI
 		overkill_145 = {
 			security_1 = {
 				"units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
@@ -1667,7 +1667,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2"
 			}
 		},
-		--Mix of NYPD FBI+GenSec
+		-- Mix of NYPD FBI+GenSec
 		easy_wish = {
 			security_1 = {
 				"units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
@@ -1739,7 +1739,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
 		},
-		--NYPD GenSec
+		-- NYPD GenSec
 		overkill_290 = {
 			security_1 = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
@@ -1800,7 +1800,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
 		},
-		--ZEAL
+		-- ZEAL
 		sm_wish = {
 			security_1 = {
 				"units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
@@ -1923,15 +1923,15 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+				-- "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
-	--LAPD
+	-- LAPD
 	lapd = {
-		--LAPD SWAT
+		-- LAPD SWAT
 		overkill = {
 			security_1 = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
@@ -1972,7 +1972,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			grenadier = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 			dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 		},
-		--Mix of LAPD SWAT+FBI
+		-- Mix of LAPD SWAT+FBI
 		overkill_145 = {
 			security_1 = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
@@ -2035,7 +2035,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_lapd/characters/ene_sniper_2/ene_sniper_2"
 			}
 		},
-		--Mix of LAPD FBI+Elites
+		-- Mix of LAPD FBI+Elites
 		easy_wish = {
 			security_1 = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
@@ -2099,7 +2099,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
 		},
-		--LAPD FBI Elites
+		-- LAPD FBI Elites
 		overkill_290 = {
 			security_1 = {
 				"units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1",
@@ -2139,7 +2139,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 				"units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 				"units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
-				"units/payday2/characters/ene_grenadier_1/ene_grenadier_1"
+				"units/pd2_mod_lapd/characters/ene_grenadier_1/ene_grenadier_1"
 			},
 			shield = "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield",
 			grenadier = "units/pd2_mod_lapd/characters/ene_grenadier_1/ene_grenadier_1",			
@@ -2152,7 +2152,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
 		},
-		--ZEAL
+		-- ZEAL
 		sm_wish = {
 			security_1 = {
 				"units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
@@ -2269,15 +2269,15 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+				-- "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
-	--FBI
+	-- FBI
 	fbi = {
-		--SWAT
+		-- SWAT
 		overkill = {
 			security_1 = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
@@ -2303,7 +2303,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			tsniper = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
 			dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 		},
-		--Mix of SWAT+FBI
+		-- Mix of SWAT+FBI
 		overkill_145 = {
 			security_1 = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
@@ -2348,7 +2348,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
 			}
 		},
-		--Mix of FBI+Elites
+		-- Mix of FBI+Elites
 		easy_wish = {
 			security_1 = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
@@ -2394,7 +2394,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
 		},
-		--FBI Elites
+		-- FBI Elites
 		overkill_290 = {
 			security_1 = {
 				"units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1",
@@ -2432,7 +2432,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
 		},
-		--ZEAL
+		-- ZEAL
 		sm_wish = {
 			security_1 = {
 				"units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
@@ -2537,7 +2537,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+				-- "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper"
@@ -2545,7 +2545,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 	}
 }
 
---Temp fix for now, Stealing Xmas doesn't have security 2 loaded and I didn't want to load every generic guard (yet)
+-- Temp fix for now, Stealing Xmas doesn't have security 2 loaded and I didn't want to load every generic guard (yet)
 if level_id == "moon" then
 	ElementSpawnEnemyDummy.faction_mapping.america.overkill.security_1 = {
 		"units/payday2/characters/ene_security_1/ene_security_1",
@@ -2563,17 +2563,17 @@ if level_id == "moon" then
 		"units/payday2/characters/ene_security_4/ene_security_4"
 	}
 end
---Marshal Sharpshooters/Shields replacing OMNIA Titan Snipers/Shields on Texas heists
---Snipers in Lost in Transit are affected by lua edit
+-- Marshal Sharpshooters/Shields replacing OMNIA Titan Snipers/Shields on Texas heists
+-- Snipers in Lost in Transit are affected by lua edit
 if level_id == "dinner" or level_id == "ranc" or level_id == "trai" or level_id == "corp" then
-	--Snipers
+	-- Snipers
 	ElementSpawnEnemyDummy.faction_mapping.nypd.sm_wish.sniper = {
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-		"units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+		-- "units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 	}
 	ElementSpawnEnemyDummy.faction_mapping.lapd.sm_wish.sniper = {
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
@@ -2581,9 +2581,9 @@ if level_id == "dinner" or level_id == "ranc" or level_id == "trai" or level_id 
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-		"units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+		-- "units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 	}
-	--Shields
+	-- Shields
 	ElementSpawnEnemyDummy.faction_mapping.nypd.easy_wish.tshield = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	ElementSpawnEnemyDummy.faction_mapping.nypd.overkill_290.tshield = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	ElementSpawnEnemyDummy.faction_mapping.nypd.sm_wish.tshield = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
@@ -2609,7 +2609,7 @@ if level_id == "dinner" or level_id == "ranc" or level_id == "trai" or level_id 
 		"units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	}
 end
---Bravo Sharpshooters replacing OMNIA Titan Snipers
+-- Bravo Sharpshooters replacing OMNIA Titan Snipers
 if level_id == "jolly" then
 	ElementSpawnEnemyDummy.faction_mapping.lapd.sm_wish.sniper = {
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
@@ -2634,7 +2634,7 @@ if level_id == "wetwork_burn" then
 		"units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2",
 		"units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",
 		"units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2",
-		"units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+		-- "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 	}
 end	
 
@@ -2656,9 +2656,9 @@ ElementSpawnEnemyDummy.faction_mapping.fbi.normal = ElementSpawnEnemyDummy.facti
 ElementSpawnEnemyDummy.faction_mapping.fbi.hard = ElementSpawnEnemyDummy.faction_mapping.fbi.overkill
 
 ElementSpawnEnemyDummy.enemy_mapping = {
-	--Vanilla Factions
-	--America
-	--Security
+	-- Vanilla Factions
+	-- America
+	-- Security
 	[Idstring("units/payday2/characters/ene_security_1/ene_security_1"):key()] = "security_1",
 	[Idstring("units/payday2/characters/ene_security_2/ene_security_2"):key()] = "security_1",
 	[Idstring("units/payday2/characters/ene_security_3/ene_security_3"):key()] = "security_3",
@@ -2671,7 +2671,7 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"):key()] = "gensec_security",
 	[Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"):key()] = "fbi_guard",
 	[Idstring("units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"):key()] = "fbi_guard",
-	--Beat Cops
+	-- Beat Cops
 	[Idstring("units/payday2/characters/ene_cop_1/ene_cop_1"):key()] = "cop_1",
 	[Idstring("units/payday2/characters/ene_cop_2/ene_cop_2"):key()] = "cop_2",
 	[Idstring("units/payday2/characters/ene_cop_3/ene_cop_3"):key()] = "cop_3",
@@ -2684,31 +2684,31 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_chas/characters/ene_male_chas_police_02/ene_male_chas_police_02"):key()] = "sfpd_cop",
 	[Idstring("units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_01/ene_male_ranc_ranger_01"):key()] = "texas_cop",
 	[Idstring("units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02"):key()] = "texas_cop",
-	--FBI/HRT
+	-- FBI/HRT
 	[Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1"):key()] = "fbi_1",
 	[Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"):key()] = "fbi_2",
 	[Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"):key()] = "fbi_3",
-	--Blue SWAT
+	-- Blue SWAT
 	[Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"):key()] = "swat_1",
 	[Idstring("units/payday2/characters/ene_swat_2/ene_swat_2"):key()] = "swat_2",
 	[Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"):key()] = "heavy_1",
 	[Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"):key()] = "heavy_2",
-	--FBI SWAT
+	-- FBI SWAT
 	[Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"):key()] = "heavy_1",
 	[Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"):key()] = "heavy_2",
 	[Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"):key()] = "swat_1",
 	[Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"):key()] = "swat_2",
-	--City SWAT
+	-- City SWAT
 	[Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"):key()] = "heavy_1",
 	[Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"):key()] = "heavy_2",
 	[Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"):key()] = "swat_1",
 	[Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"):key()] = "swat_2",
 	[Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"):key()] = "swat_1",
 	[Idstring("units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"):key()] = "swat_2",
-	--ZEALs
+	-- ZEALs
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"):key()] = "swat_1",
-	--Specials
+	-- Specials
 	[Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"):key()] = "dozer",
 	[Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"):key()] = "dozer",
 	[Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"):key()] = "dozer",
@@ -2738,26 +2738,26 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"):key()] = "tsniper",
 	[Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"):key()] = "tshield",
 	[Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2"):key()] = "tshield",
-	--Russia
-	--Beat Cops (unused, were also a part of HRT before One Down Update)
+	-- Russia
+	-- Beat Cops (unused, were also a part of HRT before One Down Update)
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass"):key()] = "cop_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg"):key()] = "cop_2",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg"):key()] = "cop_3",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870"):key()] = "cop_4",
-	--Blue SWAT
+	-- Blue SWAT
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870"):key()] = "swat_2",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870"):key()] = "heavy_2",
-	--FBI SWAT
+	-- FBI SWAT
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"):key()] = "heavy_2",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"):key()] = "swat_2",
-	--City SWAT
+	-- City SWAT
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870"):key()] = "swat_2",
-	--Specials
+	-- Specials
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"):key()] = "dozer",
@@ -2769,18 +2769,18 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870"):key()] = "medic",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"):key()] = "taser",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"):key()] = "cloaker",
-	--Zombie
-	--Blue SWAT
+	-- Zombie
+	-- Blue SWAT
 	[Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2"):key()] = "swat_2",
 	[Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870"):key()] = "heavy_2",
-	--FBI SWAT
+	-- FBI SWAT
 	[Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"):key()] = "heavy_2",
 	[Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"):key()] = "swat_2",
-	--Specials
+	-- Specials
 	[Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"):key()] = "dozer",
@@ -2791,27 +2791,27 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_r870"):key()] = "medic",
 	[Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"):key()] = "taser",
 	[Idstring("units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1"):key()] = "cloaker",
-	--Murkywater
-	--Security
+	-- Murkywater
+	-- Security
 	[Idstring("units/payday2/characters/ene_murkywater_1/ene_murkywater_1"):key()] = "murky_guard",
 	[Idstring("units/payday2/characters/ene_murkywater_2/ene_murkywater_2"):key()] = "murky_guard",
 	[Idstring("units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"):key()] = "murky_guard",
 	[Idstring("units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security"):key()] = "murky_guard",
 	[Idstring("units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1"):key()] = "murky_guard",
 	[Idstring("units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2"):key()] = "murky_guard",
-	--Blue SWAT
+	-- Blue SWAT
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"):key()] = "swat_2",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"):key()] = "heavy_1",
-	--FBI SWAT
+	-- FBI SWAT
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"):key()] = "heavy_2",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_light_fbi_r870/ene_murkywater_light_fbi_r870"):key()] = "swat_2",
-	--City SWAT
+	-- City SWAT
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"):key()] = "swat_2",
-	--Specials
+	-- Specials
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"):key()] = "dozer",
@@ -2823,8 +2823,8 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"):key()] = "medic",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"):key()] = "taser",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"):key()] = "cloaker",
-	--Federales
-	--Security
+	-- Federales
+	-- Security
 	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01"):key()] = "security_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02"):key()] = "security_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03"):key()] = "security_3",
@@ -2832,22 +2832,22 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"):key()] = "security_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"):key()] = "security_3",
 	[Idstring("units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"):key()] = "thug_guard",
-	--Blue SWAT
+	-- Blue SWAT
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_r870/ene_swat_policia_federale_r870"):key()] = "swat_2",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_g36/ene_swat_heavy_policia_federale_g36"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"):key()] = "heavy_2",
-	--FBI SWAT
+	-- FBI SWAT
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"):key()] = "swat_2",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi/ene_swat_heavy_policia_federale_fbi"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"):key()] = "heavy_2",
-	--City SWAT
+	-- City SWAT
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"):key()] = "swat_2",
-	--Specials
+	-- Specials
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249"):key()] = "dozer",
@@ -2860,29 +2860,29 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_r870/ene_swat_medic_policia_federale_r870"):key()] = "medic",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"):key()] = "taser",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"):key()] = "cloaker",
-	--Custom Factions
-	--Constantine
-	--Specials
+	-- Custom Factions
+	-- Constantine
+	-- Specials
 	[Idstring("units/payday2/characters/ene_sniper_dw/ene_sniper_dw"):key()] = "sniper",
-	--FSB
-	--Security
+	-- FSB
+	-- Security
 	[Idstring("units/payday2/characters/ene_security_winter_1/ene_security_winter_1"):key()] = "security_1",
 	[Idstring("units/payday2/characters/ene_security_winter_2/ene_security_winter_2"):key()] = "security_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1"):key()] = "fsb_security",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2"):key()] = "fsb_security",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3"):key()] = "fsb_security",
-	--Blue/FBI SWAT
+	-- Blue/FBI SWAT
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4"):key()] = "fsb_swat_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870"):key()] = "fsb_swat_2",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4"):key()] = "fsb_heavy",
-	--City SWAT
+	-- City SWAT
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36"):key()] = "fsb_swat_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870"):key()] = "fsb_swat_2",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36"):key()] = "fsb_heavy",
-	--ZEALs
+	-- ZEALs
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu"):key()] = "fsb_swat_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"):key()] = "fsb_heavy",
-	--Specials
+	-- Specials
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"):key()] = "taser",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper"):key()] = "fsb_sniper",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"):key()] = "fsb_shield",
@@ -2893,7 +2893,7 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 
 local difficulty
 if tweak_data.levels[level_id] and tweak_data.levels[level_id].group_ai_state == "skirmish" then
-	difficulty = "overkill_290" --just in case
+	difficulty = "overkill_290" -- just in case
 else
 	difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 end
@@ -2912,7 +2912,7 @@ Hooks:PostHook(ElementSpawnEnemyDummy, "init", "sh_init", function (self)
 		self._enemy_name = Idstring(mapped_unit)
 	end
 
-	-- possible enemy tables for gen_dummy
+	--  possible enemy tables for gen_dummy
 	if self._values.enemy_table then
 		if faction_mapping then
 			self._enemy_table = {}

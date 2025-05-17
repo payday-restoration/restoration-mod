@@ -226,26 +226,6 @@ local spawn_cloakers = {
 		{ id = 400008, delay = 0 }
 	}
 }
-local spawn_beat_cops = {
-	enabled = true,
-	on_executed = { 
-		{ id = 400050, delay = 0 },
-		{ id = 400051, delay = 0 },
-		{ id = 400052, delay = 0 },
-		{ id = 400053, delay = 0 },
-		{ id = 400054, delay = 0 },
-		{ id = 400055, delay = 0 },
-		{ id = 400056, delay = 0 },
-		{ id = 400057, delay = 0 },
-		{ id = 400058, delay = 0 },
-		{ id = 400059, delay = 0 },
-		{ id = 400060, delay = 0 },
-		{ id = 400061, delay = 0 },
-		{ id = 400062, delay = 0 },
-		{ id = 400063, delay = 0 },
-		{ id = 400064, delay = 0 }
-	}
-}
 local enable_bravos = {
 	enabled = true,
 	elements = { 
@@ -296,16 +276,73 @@ local enable_bo_dozers_ds = {
 	}
 }
 
+local global_cop_spawn_mission_script = {
+	enabled = true,
+	on_executed = { 
+		{ id = 400067, delay = 0 },
+		{ id = 400068, delay = 0 },
+	}
+}
+local loop = {
+	enabled = true,
+	trigger_times = 4,
+	on_executed = { 
+		{ id = 400001, delay = 20, delay_rand = 10 },
+	}
+}
+local choose_cop_spawnpoint = {
+	amount = 1,
+	amount_random = 2,
+	on_executed = {
+		{ id = 400069, delay = 0 },
+		{ id = 400070, delay = 0 },
+		{ id = 400071, delay = 0 },
+	},
+}
+local cops_spawnpoint_1 = {
+	enabled = true,
+	on_executed = { 
+		{ id = 400050, delay = 0 },
+		{ id = 400051, delay = 0 },
+		{ id = 400052, delay = 0 },
+		{ id = 400053, delay = 0 },
+		{ id = 400054, delay = 0 },
+	}
+}
+local cops_spawnpoint_2 = {
+	enabled = true,
+	on_executed = { 
+		{ id = 400055, delay = 0 },
+		{ id = 400056, delay = 0 },
+		{ id = 400057, delay = 0 },
+		{ id = 400058, delay = 0 },
+		{ id = 400059, delay = 0 },
+	}
+}
+local cops_spawnpoint_3 = {
+	enabled = true,
+	on_executed = { 
+		{ id = 400060, delay = 0 },
+		{ id = 400061, delay = 0 },
+		{ id = 400062, delay = 0 },
+		{ id = 400063, delay = 0 },
+		{ id = 400064, delay = 0 },
+	}
+}
+
 
 return {
     elements = {
-        -- Bulldozers that spawn after cops arrive (20 seconds after)
+        -- bulldozers that spawn after cops arrive (20 seconds after)
         restoration:gen_dummy(400001, "fwb_dozer_1", Vector3(3960, 2480, -1200), Rotation(-90, -0, -0), optsBulldozer),
         restoration:gen_dummy(400002, "fwb_dozer_2", Vector3(3911, -4422, -1021), Rotation(-90, 0, -0), optsBulldozer),
 		restoration:gen_dummy(400046, "fwb_dozer_3", Vector3(7498, -207, -1590.010), Rotation(180, 0, -0), optsBulldozer),
         restoration:gen_dummy(400047, "fwb_dozer_4", Vector3(3874, 2469, -1200.010), Rotation(-90, 0, -0), optsBulldozer),
+		restoration:gen_toggleelement(400065, "enable_dozers_ds", enable_bo_dozers_ds),
+		restoration:gen_toggleelement(400044, "enable_dozers", enable_bo_dozers_the_sequel),
+		restoration:gen_toggleelement(400045, "disable_dozers", disable_bo_dozers),
         restoration:gen_so(400003, "hunt_so", Vector3(3600, 2473, -1200), Rotation(0, 0, 0), optsHunt_SO),
-		--Cloakers, spawn as ambush in vault hallway (similiar to First World Bank)
+		-- cloakers, spawn as ambush in vault hallway (similiar to First World Bank)
 		restoration:gen_dummy(400004, "cloaker_1", Vector3(-2864, 746, -1000), Rotation(-180, 0, -0), optsCloaker_1),
 		restoration:gen_dummy(400005, "cloaker_2", Vector3(-2864, -1449, -599), Rotation(0, 0, -0), optsCloaker_2),
 		restoration:gen_dummy(400006, "cloaker_3", Vector3(-2098, 416, -998), Rotation(-177, 0, -0), optsCloaker_3),
@@ -316,12 +353,12 @@ return {
 		restoration:gen_so(400011, "cloaker_hide_so_3", Vector3(-2104.004, 52.529, -1000), Rotation(89, -0, -0), optsCloaker_Hide_SO_2),
 		restoration:gen_so(400012, "cloaker_hide_so_4", Vector3(-2858.536, 1231.877, -1000), Rotation(89, -0, -0), optsCloaker_Hide_SO_2),
 		restoration:gen_so(400013, "cloaker_hide_so_5", Vector3(-2475, 1258, -599), Rotation(-180, 0, 0), optsCloaker_Hide_SO_1),
-		--C4 spawns (Pro Job only)
+		-- c4 spawns (Pro Job only)
 		restoration:gen_dummy(400014, "rouge_c4_1", Vector3(-4649, 1877, -599), Rotation(-90, -0, -0), optsTitanCloaker_1),
 		restoration:gen_dummy(400015, "rouge_c4_2", Vector3(-6634, 1349, -599), Rotation(-0, 0, -0), optsTitanCloaker_2),
 		restoration:gen_so(400016, "rouge_hide_so_1", Vector3(-4253.838, 1914.332, -598), Rotation(90, -0, -0), optsCloaker_Hide_SO_2),
 		restoration:gen_so(400017, "rouge_hide_so_2", Vector3(-6642, 1505, -599), Rotation(0, 0, -0), optsCloaker_Hide_SO_1),
-		--Bravos that are waiting for you in the Elevator/Bus Escape
+		-- bravos that are waiting for you in the Elevator/Bus Escape
 		restoration:gen_missionscript(400018, "spawn_bravo_elevator", spawn_bravo_eleavtor_escape),
 		restoration:gen_missionscript(400019, "spawn_bravo_bus", spawn_bravo_bus_escape),
 		restoration:gen_toggleelement(400020, "enable_bravos", enable_bravos),
@@ -339,7 +376,7 @@ return {
 		restoration:gen_dummy(400032, "bravo_bus_6", Vector3(-2560.908, -3794.890, -475), Rotation(-12, 0, -0), optsBravo_dozer_bus_escape),
 		restoration:gen_dummy(400033, "bravo_bus_7", Vector3(-2766, -3829, -475), Rotation(0, 0, -0), optsBravo_Bus_Escape_1),
 		restoration:gen_toggleelement(400034, "disable_bravos", disable_bravos),
-		--Defend Shields
+		-- defend Shields
 		restoration:gen_dummy(400035, "shield_heli_1", Vector3(3934, 2371, 225.990), Rotation(-180, 0, -0), optsShield_Defend_1),
 		restoration:gen_dummy(400036, "shield_heli_2", Vector3(3876, 2371, 225.990), Rotation(180, 0, -0), optsShield_Defend_2),
 		restoration:gen_dummy(400037, "shield_heli_3", Vector3(3813, 2371, 225.990), Rotation(180, 0, -0), optsShield_Defend_3),
@@ -348,10 +385,7 @@ return {
 		restoration:gen_so(400040, "shield_defend_so_3", Vector3(3426, -953.028, 224.989), Rotation(120, -0, -0), optsDefend_and_Sniper_SO),
 		restoration:gen_missionscript(400042, "spawn_cloakers", spawn_cloakers),
 		restoration:gen_dummytrigger(400043, "manager_death", Vector3(-2400, -3677, 375), Rotation(90, -0, -0), optsmanager_has_been_killed),
-		restoration:gen_toggleelement(400044, "enable_dozers", enable_bo_dozers_the_sequel),
-		restoration:gen_toggleelement(400045, "disable_dozers", disable_bo_dozers),
-		restoration:gen_missionscript(400049, "spawn_the_cops", spawn_beat_cops),
-		--TODO: USE ELEMENTRANDOM TO SPAWN THEM IN GROUPS SO THEY WON'T COME ALL AT ONCE
+		-- beat cops
 		restoration:gen_dummy(400050, "cop_1", Vector3(3897, 2546, -1197.510), Rotation(-90, 0, -0), optsCop),
         restoration:gen_dummy(400051, "cop_2", Vector3(3853, 2546, -1197.510), Rotation(-90, 0, -0), optsCop),
 		restoration:gen_dummy(400052, "cop_3", Vector3(3816, 2546, -1197.510), Rotation(-90, 0, -0), optsCop),
@@ -367,6 +401,11 @@ return {
 		restoration:gen_dummy(400062, "cop_13", Vector3(4272, -4427, -1187.244), Rotation(-90, 0, -0), optsCop),
 		restoration:gen_dummy(400063, "cop_14", Vector3(4319, -4427, -1187.244), Rotation(-90, 0, -0), optsCop),
 		restoration:gen_dummy(400064, "cop_15", Vector3(4272, -4491, -1187.244), Rotation(-90, 0, -0), optsCop),
-		restoration:gen_toggleelement(400065, "enable_dozers_ds", enable_bo_dozers_ds)
+		restoration:gen_missionscript(400066, "spawn_cops", global_cop_spawn_mission_script),
+		restoration:gen_missionscript(400067, "loop", loop),
+		restoration:gen_element_random(400068, "cops_spawnpoint_select", choose_cop_spawnpoint),
+		restoration:gen_element_random(400069, "spawnpoint_1", cops_spawnpoint_1),
+		restoration:gen_element_random(400070, "spawnpoint_2", cops_spawnpoint_2),
+		restoration:gen_element_random(400071, "spawnpoint_3", cops_spawnpoint_3),
     }
 }

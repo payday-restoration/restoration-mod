@@ -207,19 +207,25 @@
 			<effect_spawner enabled="true" name="'es_flashlight'"/>
 		</sequence>
 		
+		<!-- AGP HEAVY SHOTGUNNER VS HSTS LIGHT UMP -->
 		<sequence editable_state="true" name="'spawn_helmet'" once="true" triggable="true">																		
 			<body filter="'check_fbi_swat_sg'" enabled="false" name="'glass_sg'" />	
 			<decal_mesh filter="'check_fbi_swat_sg'" enabled="false" name="'c_sg_glass'" />	
 
 			<body filter="'check_fbi_swat_sg'" enabled="false" name="'facemask_sg'" />	
-			<decal_mesh filter="'check_fbi_swat_sg'" enabled="false" name="'c_sg_visor'" />													
+			<decal_mesh filter="'check_fbi_swat_sg'" enabled="false" name="'c_sg_visor'" />	
+			
+			<sound 	filter="'check_fbi_swat_sg'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>			
+			<sound  filter="'check_fbi_swat_sg'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>													
 									
 			<body filter="'check_fbi_swat_ar'" enabled="false" name="'facemask'" />	
 			<decal_mesh filter="'check_fbi_swat_ar'" enabled="false" name="'c_visor'" />													
 									
 			<body filter="'check_fbi_swat_ar'" enabled="false" name="'glass_visor'" />	
 			<decal_mesh filter="'check_fbi_swat_ar'" enabled="false" name="'c_glass'" />	
-
+			
+			<sound 	filter="'check_fbi_swat_ar'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>			
+			<sound  filter="'check_fbi_swat_ar'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>	
 
 			<run_sequence filter="'check_fbi_swat_ar'" name="'destroy_altyn'"/>			
 

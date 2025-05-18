@@ -9087,7 +9087,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
 			},
 			fbi = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+				Idstring("units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser")
 			}			
 		},
 		access = access_type_all,

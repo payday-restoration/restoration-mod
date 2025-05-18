@@ -1,5 +1,5 @@
 if not ModCore then
-	restoration.log_shit("[ERROR] Unable to find ModCore from BeardLib! Is BeardLib installed correctly?")
+	log("[RestorationMod][Error] Unable to find ModCore from BeardLib! Is BeardLib installed correctly?")
 	return
 end
 
@@ -846,13 +846,14 @@ function restoration:disable_mission_script_patches()
 	end
 end
 
---Stealing this from SH cause it's way better
+-- Load and execute a file from the req/ folder
 function restoration:require(file)
 	local path = self:GetPath() .. "req/" .. file .. ".lua"
 	return io.file_is_readable(path) and blt.vm.dofile(path)
 end
 
---Mission Script
+-- Get mission script patches used to tweak values of existing mission script elements
+-- Tweaks elements post-init
 function restoration:mission_script_patches()
 	if self._mission_script_patches == nil then
 		local level_id = Global.game_settings and Global.game_settings.level_id
@@ -863,7 +864,9 @@ function restoration:mission_script_patches()
 	return self._mission_script_patches
 end
 
---Mission script but it can touch instances
+-- Get instance script patches used to tweak mission script element definitions in instance
+-- Instances used multiple times on the same level will all have the same changes applied
+-- Tweaks element definitions pre-init
 function restoration:instance_script_patches()
 	if self._instance_script_patches == nil then
 		local level_id = Global.game_settings and Global.game_settings.level_id
@@ -875,7 +878,8 @@ function restoration:instance_script_patches()
 end
 
 
---Mission script but it can add new functions to heists
+-- Get new mission script elements to add to the default mission script
+-- Adds elements pre-init
 function restoration:mission_script_add()
 	restoration.loaded_elements = false
 	if self._mission_script_add == nil then
@@ -1354,19 +1358,20 @@ function restoration:gen_element_random(id, name, opts)
 			enabled = true,
 		},
 	}
-end	
+end
 
-function restoration:log(...)
+restoration.logging = io.file_is_readable("mods/developer.txt")
+function restoration:log(str, ...)
 	if self.logging then
-		log("[StreamlinedHeistingAI] " .. table.concat({...}, " "))
+		log("[RestorationMod] " .. str:format(...))
 	end
 end
 
-function restoration:warn(...)
-	log("[StreamlinedHeistingAI][Warning] " .. table.concat({...}, " "))
+function restoration:warn(str, ...)
+	log("[RestorationMod][Warning] " .. str:format(...))
 end
 
-function restoration:error(...)
-	log("[StreamlinedHeistingAI][Error] " .. table.concat({...}, " "))
+function restoration:error(str, ...)
+	log("[RestorationMod][Error] " .. str:format(...))
 end
 

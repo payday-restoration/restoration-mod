@@ -1100,6 +1100,7 @@ function restoration:gen_pointofnoreturn(id, name, pos, rot, opts)
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
 			tweak_id = "noreturn",
+			time_balance_mul_include_team_ai = opts.time_balance_mul_include_team_ai,
 			time_balance_mul = opts.time_balance_mul or nil,
 			time_easy = opts.time_easy or 0,
 			time_normal = opts.time_normal or 0,

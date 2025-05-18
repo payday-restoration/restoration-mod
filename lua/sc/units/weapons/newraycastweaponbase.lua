@@ -1154,7 +1154,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.burst_fire then
 				local burst_data = stats.burst_fire
 				self._has_burst_fire = true
-				self._burst_size = burst_data.count or self._burst_size
+				self._burst_size = burst_data.count or self._burst_size or 3
 				self._burst_delay_alt_calc = burst_data.rof_mult_alt or self._burst_delay_alt_calc
 				self._burst_fire_rate_multiplier = burst_data.rof_mult or self._burst_fire_rate_multiplier
 				if burst_data.desired_burst_rof then
@@ -1168,7 +1168,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._burst_fire_range_multiplier = burst_data.range_mult or self._burst_fire_range_multiplier
 				self._burst_fire_no_ads = burst_data.no_ads or self._burst_fire_no_ads
 				self._burst_no_anim = burst_data.no_anim or self._burst_no_anim --only play anims for the last shot in a burst
-				self._burst_delay = burst_data.delay or self._burst_delay
+				self._burst_delay = burst_data.delay or self._burst_delay or 0.25
 				self._auto_burst = (burst_data.auto_burst ~= nil and burst_data.auto_burst) or self._auto_burst
 				self._block_toggle = (burst_data.block_toggle ~= nil and burst_data.block_toggle) or self._block_toggle --blocks toggling between semi-auto and full-auto; does not stop toggling off burst
 				self._lock_burst = (burst_data.lock ~= nil and burst_data.lock) or self._lock_burst --blocks toggling off burst altogether

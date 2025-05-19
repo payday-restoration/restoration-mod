@@ -3067,7 +3067,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_w_china_sc_desc"] = "\"This really is a most horrid neighborhood!\"\n\nPress #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
 				--COMMANDO 101/M202 FLASH
 				["bm_ray_sc_desc"] = "Become the \"#{risk}#Grim Reaper##\" with this 4-shot #{heat_warm_color}#incendiary## rocket launcher.\n\nRockets leave behind a #{heat_warm_color}#pool of fire## and explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets## and deals an extra #{skill_color}#500%## damage against non-titan Bulldozers.",
-
+				-- Toy weapons
+				["bm_w_toym16_sc_desc"] = "\"No full-auto in buildings.\"",
+				["bm_w_toy1911_sc_desc"] = "Airsoft pistol modified with a turbo electric motor, allowing you to #{skill_color}#switch to fully automatic fire##.\nRemember, not full-auto in buildings.",
 
 	})
 

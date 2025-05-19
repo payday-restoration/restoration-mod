@@ -612,7 +612,7 @@ local head_variations_clean = {
 	["units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "fbi_swat_sg",
 	["units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "fbi_swat_sg",
 	["units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "fbi_swat_ar",
-	["units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "fbi_swat_sg",	
+	["units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = "fbi_swat_sg",	
 	["units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"] = "fbi_swat_ar",
 	
 	["units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1"] = "gs_swat",

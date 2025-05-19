@@ -24148,6 +24148,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = {
 			burst_fire = {
 				count = 3,
+				delay = 0.5,
 				rof_mult = 3,
 				spread_mult = 1.5
 			},

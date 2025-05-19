@@ -36557,6 +36557,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		if self.parts.wpn_fps_ass_toym16_b_standard then --Gambyt's Toy M16
 			self.parts.wpn_fps_ass_toym16_b_standard.pcs = nil
+			self.parts.wpn_fps_ass_toym16_body_standard.perks = {"silencer"}
+			self.parts.wpn_fps_ass_toym16_body_standard.sound_switch = { suppressed = "suppressed_c" }
 		end
 
 		if self.wpn_fps_smg_czevo then --Gambyt's Scorpion EVO

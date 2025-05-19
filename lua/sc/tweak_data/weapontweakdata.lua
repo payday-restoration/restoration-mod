@@ -15502,7 +15502,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.toym16 then --Gambyt's Toy M16
 				self.toym16.CLIP_AMMO_MAX = 150
 				self.toym16.AMMO_MAX = 900
+				self.toym16.fire_mode_data.fire_rate = 0.03
 				self.toym16.supported = true
+				self.toym16.has_description = true
+				self.toym16.desc_id = "bm_w_toym16_desc"
 				self.toym16.ads_speed = 0.120
 				self.toym16.damage_falloff = {
 					start_dist = 500,
@@ -15516,7 +15519,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					zoom = 1,
 					concealment = 32,
 					suppression = 1,
-					alert_size = 2,
+					alert_size = 1,
 					extra_ammo = 101,
 					total_ammo_mod = 400,
 					value = 1,
@@ -15530,16 +15533,23 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					bypass_global_shake = true
 				}
 				self.toym16.timers.reload_not_empty = 2.10
-				self.toym16.timers.reload_empty = 2.9 		
 				self.toym16.timers.reload_exit_empty = 0.4
-				self.toym16.timers.reload_exit_not_empty = 0.5
+				self.toym16.timers.reload_exit_not_empty = 0.4
+				self.toym16.animations.ignore_fullreload = true
 			end
 
 			if self.toy1911 then --Gambyt's Toy M1911
 				self.toy1911.CLIP_AMMO_MAX = 90
 				self.toy1911.AMMO_MAX = 450
 				self.toy1911.supported = true
+				self.toy1911.has_description = true
+				self.toy1911.desc_id = "bm_w_toy1911_desc"
 				self.toy1911.ads_speed = 0.100
+				self.toy1911.fire_mode_data.fire_rate = 0.04
+				self.toy1911.BURST_FIRE = 1
+				self.toy1911.BURST_TYPE = "rapid"
+				self.toy1911.BURST_DELAY = 0.04
+				self.toy1911.AUTO_BURST = true
 				self.toy1911.damage_falloff = {
 					start_dist = 250,
 					end_dist = 1500,
@@ -15552,7 +15562,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					zoom = 1,
 					concealment = 32,
 					suppression = 1,
-					alert_size = 2,
+					alert_size = 1,
 					extra_ammo = 101,
 					total_ammo_mod = 400,
 					value = 1,
@@ -15566,7 +15576,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					bypass_global_shake = true
 				}
 				self.toy1911.timers.reload_exit_empty = 0.5
-				self.toy1911.timers.reload_exit_not_empty = 0.65	
+				self.toy1911.timers.reload_exit_not_empty = 0.65
 			end
 
 			if self.hpb then --Gambyt's Browning HP	

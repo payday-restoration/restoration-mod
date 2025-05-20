@@ -1,7 +1,7 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 570) or 540
-local tank_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+local tank_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 local death_wish_above = difficulty >= 7
 local ponr_timer_player_mul = {
 	1,
@@ -48,15 +48,15 @@ local optsDefend_SO = {
 	interval = 2,
 	so_action = "AI_sniper",
 }
-local opts_enaable_dozers = {
+local opts_enable_dozers = {
 	enabled = death_wish_above,
-	elements = {400001,},
-	toggle = "on",
+	elements = {400001},
 }
 
 local opts_disable_dozers = {
 	enabled = true,
-	elements = {400001,},
+	elements = {400001},
+	toggle = "off",
 }
 
 return {

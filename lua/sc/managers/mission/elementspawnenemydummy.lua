@@ -2301,6 +2301,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			grenadier = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			tsniper = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
+			ttaser = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
 			dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 		},
 		-- Mix of SWAT+FBI
@@ -2333,6 +2334,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
 			},
 			taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+			ttaser = "units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper",
 			dozer = {
@@ -2388,6 +2390,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper",
+			ttaser = "units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser",			
 			dozer = {
 				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
@@ -2425,6 +2428,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			shield = "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield",
 			sniper = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
+			ttaser = "units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser",			
 			tsniper = "units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper",
 			dozer = {
 				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
@@ -2531,6 +2535,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc",
 				"units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 			},
+			ttaser = "units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser",			
 			sniper = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
@@ -2725,6 +2730,7 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/payday2/characters/ene_medic_m4/ene_medic_m4"):key()] = "medic",
 	[Idstring("units/payday2/characters/ene_medic_r870/ene_medic_r870"):key()] = "medic",
 	[Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"):key()] = "taser",
+	[Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"):key()] = "ttaser",
 	[Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"):key()] = "grenadier",
 	[Idstring("units/payday2/characters/ene_spook_1/ene_spook_1"):key()] = "cloaker",
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"):key()] = "taser",

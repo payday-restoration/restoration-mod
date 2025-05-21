@@ -1,1 +1,0 @@
-return restoration:require("mission_script_add/brb")

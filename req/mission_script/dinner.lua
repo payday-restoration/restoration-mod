@@ -199,12 +199,12 @@ return {
 	-- Murky Grunts
 	[101375] = {
 		values = {
-			enemy = "units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+			enemy = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
 		},
 	},
 	[101376] = {
 		values = {
-			enemy = "units/payday2/characters/ene_murkywater_1/ene_murkywater_2",
+			enemy = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		},
 	},
 	-- Murky Elite Soldiers replace heli rappeling Murkies on PJ Mayhem and above

@@ -297,373 +297,68 @@ local spawn_the_surprise_tank = {
 return {
 	elements = {
 		-- Lobby Shields
-		restoration:gen_dummy(
-			400001,
-			"shield_lobby_wall_1",
-			Vector3(-3123, -3103, -24.998),
-			Rotation(0, 0, -0),
-			optsShield_1
-		),
-		restoration:gen_dummy(
-			400002,
-			"shield_lobby_wall_2",
-			Vector3(-3190, -3098, -24.998),
-			Rotation(0, 0, -0),
-			optsShield_2
-		),
+		restoration:gen_dummy(400001, "shield_lobby_wall_1", Vector3(-3123, -3103, -24.998), Rotation(0, 0, -0), optsShield_1),
+		restoration:gen_dummy(400002, "shield_lobby_wall_2", Vector3(-3190, -3098, -24.998), Rotation(0, 0, -0), optsShield_2),
 		-- Lobby Snipers
-		restoration:gen_dummy(
-			400003,
-			"sniper_lobby_1",
-			Vector3(677, 57, 475.020),
-			Rotation(90, -0, -0),
-			optsSniper_1
-		),
-		restoration:gen_dummy(
-			400004,
-			"sniper_lobby_2",
-			Vector3(677, 12, 475.020),
-			Rotation(90, -0, -0),
-			optsSniper_2
-		),
-		restoration:gen_dummy(
-			400005,
-			"sniper_lobby_3",
-			Vector3(677, 57, 475.020),
-			Rotation(90, -0, -0),
-			optsSniper_3
-		),
-		restoration:gen_dummy(
-			400006,
-			"sniper_lobby_4",
-			Vector3(677, 12, 475.020),
-			Rotation(90, -0, -0),
-			optsSniper_4
-		),
-		restoration:gen_dummy(
-			400007,
-			"sniper_lobby_5",
-			Vector3(677, 57, 475.020),
-			Rotation(90, -0, -0),
-			optsSniper_5
-		),
-		restoration:gen_dummy(
-			400008,
-			"sniper_lobby_6",
-			Vector3(677, 12, 475.020),
-			Rotation(90, -0, -0),
-			optsSniper_6
-		),
-		restoration:gen_so(
-			400009,
-			"special_sniper_so_1",
-			Vector3(90, -1882, 475),
-			Rotation(90, -0, -0),
-			optsSniper_SO
-		),
+		restoration:gen_dummy(400003, "sniper_lobby_1",  Vector3(677, 57, 475.020), Rotation(90, -0, -0), optsSniper_1),
+		restoration:gen_dummy(400004, "sniper_lobby_2",  Vector3(677, 12, 475.020), Rotation(90, -0, -0), optsSniper_2),
+		restoration:gen_dummy(400005, "sniper_lobby_3",  Vector3(677, 57, 475.020), Rotation(90, -0, -0), optsSniper_3),
+		restoration:gen_dummy(400006, "sniper_lobby_4",  Vector3(677, 12, 475.020), Rotation(90, -0, -0), optsSniper_4),
+		restoration:gen_dummy(400007, "sniper_lobby_5",  Vector3(677, 57, 475.020), Rotation(90, -0, -0), optsSniper_5),
+		restoration:gen_dummy(400008, "sniper_lobby_6",  Vector3(677, 12, 475.020), Rotation(90, -0, -0), optsSniper_6),
+		restoration:gen_so(400009, "special_sniper_so_1", Vector3(90, -1882, 475), Rotation(90, -0, -0), optsSniper_SO),
 		-- Damn bank guards! Are we done with them, yet?
-		restoration:gen_dummy(
-			400010,
-			"guard_blockade_1",
-			Vector3(1887, 1002, -24.895),
-			Rotation(90, -0, -0),
-			optsSecurity
+		restoration:gen_dummy(400010, "guard_blockade_1", Vector3(1887, 1002, -24.895), Rotation(90, -0, -0), optsSecurity),
+		restoration:gen_dummy(400011, "guard_blockade_2", Vector3(1887, 1493, -24.895), Rotation(90, 0, -0),  optsSecurity),
+		restoration:gen_dummy(400012,"guard_blockade_3",  Vector3(2276, 1493, -24.895), Rotation(90, -0, -0), optsSecurity),
+		restoration:gen_dummy(400013, "guard_blockade_4", Vector3(2276, 998, -24.895),  Rotation(90, -0, -0), optsSecurity
 		),
-		restoration:gen_dummy(
-			400011,
-			"guard_blockade_2",
-			Vector3(1887, 1493, -24.895),
-			Rotation(90, 0, -0),
-			optsSecurity
-		),
-		restoration:gen_dummy(
-			400012,
-			"guard_blockade_3",
-			Vector3(2276, 1493, -24.895),
-			Rotation(90, -0, -0),
-			optsSecurity
-		),
-		restoration:gen_dummy(
-			400013,
-			"guard_blockade_4",
-			Vector3(2276, 998, -24.895),
-			Rotation(90, -0, -0),
-			optsSecurity
-		),
-		restoration:gen_dummy(
-			400014,
-			"guard_blockade_5",
-			Vector3(2797, 1243, -24.895),
-			Rotation(90, -0, -0),
-			optsSecurity
-		),
-		restoration:gen_dummy(
-			400015,
-			"guard_blockade_6",
-			Vector3(3447, 1794, -14.895),
-			Rotation(90, -0, -0),
-			optsSecurity
-		),
-		restoration:gen_dummy(
-			400016,
-			"guard_blockade_7",
-			Vector3(3447, 704, -14.895),
-			Rotation(90, -0, -0),
-			optsSecurity
-		),
-		restoration:gen_dummy(
-			400017,
-			"guard_blockade_8",
-			Vector3(5959, 704, -21.895),
-			Rotation(90, -0, -0),
-			optsSecurity
-		),
-		restoration:gen_dummy(
-			400018,
-			"guard_blockade_9",
-			Vector3(5959, 1810, -21.895),
-			Rotation(90, -0, -0),
-			optsSecurity
-		),
-		restoration:gen_dummy(
-			400019,
-			"guard_blockade_10",
-			Vector3(6650, 1249, -21.895),
-			Rotation(90, -0, -0),
-			optsSecurity
-		),
+		restoration:gen_dummy(400014, "guard_blockade_5", Vector3(2797, 1243, -24.895), Rotation(90, -0, -0), optsSecurity),
+		restoration:gen_dummy(400015, "guard_blockade_6", Vector3(3447, 1794, -14.895), Rotation(90, -0, -0), optsSecurity),
+		restoration:gen_dummy(400016, "guard_blockade_7", Vector3(3447, 704, -14.895),  Rotation(90, -0, -0), optsSecurity),
+		restoration:gen_dummy(400017, "guard_blockade_8", Vector3(5959, 704, -21.895),  Rotation(90, -0, -0), optsSecurity),
+		restoration:gen_dummy(400018, "guard_blockade_9", Vector3(5959, 1810, -21.895), Rotation(90, -0, -0), optsSecurity),
+		restoration:gen_dummy(400019, "guard_blockade_10", Vector3(6650, 1249, -21.895), Rotation(90, -0, -0), optsSecurity),
 		-- 2 dozers spawn after killing Bo The Manager+2 extra dozers on DS (even if you did not kill Bo)
-		restoration:gen_dummy(
-			400020,
-			"ai_spawn_enemy_Bo's_bulldozer_2",
-			Vector3(-2682, -3588, -125),
-			Rotation(90, -0, -0),
-			optsBulldozer_BO
-		),
-		restoration:gen_dummy(
-			400021,
-			"extra_tank_1",
-			Vector3(-3176, 3750, -125),
-			Rotation(90, -0, -0),
-			optsBulldozer_193
-		),
-		restoration:gen_dummy(
-			400022,
-			"extra_tank_2",
-			Vector3(-2657, -3569, -125),
-			Rotation(90, -0, -0),
-			optsBulldozer_193
-		),
-		restoration:gen_so(
-			400023,
-			"dozer_hunt_so",
-			Vector3(-2657, -3569, -90),
-			Rotation(90, -0, -0),
-			optsBulldozer_SO
-		),
+		restoration:gen_dummy(400020, "ai_spawn_enemy_Bo's_bulldozer_2", Vector3(-2682, -3588, -125), Rotation(90, -0, -0), optsBulldozer_BO),
+		restoration:gen_dummy(400021, "extra_tank_1", Vector3(-3176, 3750, -125),  Rotation(90, -0, -0), optsBulldozer_193),
+		restoration:gen_dummy(400022, "extra_tank_2", Vector3(-2657, -3569, -125), Rotation(90, -0, -0), optsBulldozer_193),
+		restoration:gen_so(400023, "dozer_hunt_so", Vector3(-2657, -3569, -90), Rotation(90, -0, -0), optsBulldozer_SO),
 		-- Two PJ dozers when leaving the vault
-		restoration:gen_dummy(
-			400024,
-			"projob_tank_exit_vault_1",
-			Vector3(3359, 1790, -15),
-			Rotation(-90, 0, -0),
-			optsBulldozer_special
-		),
-		restoration:gen_dummy(
-			400025,
-			"projob_tank_exit_vault_2",
-			Vector3(3359, 713, -15),
-			Rotation(-90, 0, -0),
-			optsBulldozer_special
-		),
+		restoration:gen_dummy(400024, "projob_tank_exit_vault_1", Vector3(3359, 1790, -15), Rotation(-90, 0, -0), optsBulldozer_special),
+		restoration:gen_dummy(400025, "projob_tank_exit_vault_2", Vector3(3359, 713, -15), Rotation(-90, 0, -0),  optsBulldozer_special),
 		-- 145+ throwback, 3 tasers+1 heavy swat in staircase escape
-		restoration:gen_dummy(
-			400026,
-			"taser_escape_1",
-			Vector3(6050, -2351, -135.691),
-			Rotation(0, 0, -0),
-			optsTaser
-		),
-		restoration:gen_dummy(
-			400027,
-			"taser_escape_2",
-			Vector3(5887, -2347, -135.691),
-			Rotation(0, 0, -0),
-			optsTaser
-		),
-		restoration:gen_dummy(
-			400028,
-			"taser_escape_3",
-			Vector3(5553, -2367, -135.691),
-			Rotation(-90, 0, -0),
-			optsTaser
-		),
-		restoration:gen_dummy(
-			400029,
-			"swat_escape_1",
-			Vector3(5553, -2502, -135.691),
-			Rotation(-90, 0, -0),
-			optsSWAT_Heavy
-		),
+		restoration:gen_dummy(400026, "taser_escape_1", Vector3(6050, -2351, -135.691), Rotation(0, 0, -0), optsTaser),
+		restoration:gen_dummy(400027, "taser_escape_2", Vector3(5887, -2347, -135.691), Rotation(0, 0, -0), optsTaser),
+		restoration:gen_dummy(400028, "taser_escape_3", Vector3(5553, -2367, -135.691), Rotation(-90, 0, -0), optsTaser),
+		restoration:gen_dummy(400029, "swat_escape_1", Vector3(5553, -2502, -135.691), Rotation(-90, 0, -0), optsSWAT_Heavy),
 		-- 3 cloakers coming down the vent+elevator
-		restoration:gen_dummy(
-			400030,
-			"cloaker_rush_1",
-			Vector3(483, 352, 475.020),
-			Rotation(0, 0, -0),
-			optsCloaker_rush_1
-		),
-		restoration:gen_dummy(
-			400031,
-			"cloaker_rush_2",
-			Vector3(677, 57, 475.020),
-			Rotation(90, -0, -0),
-			optsCloaker_rush_2
-		),
-		restoration:gen_dummy(
-			400032,
-			"cloaker_rush_3",
-			Vector3(677, 12, 475.020),
-			Rotation(90, -0, -0),
-			optsCloaker_rush_2
-		),
-		restoration:gen_so(
-			400033,
-			"special_sniper_so_2",
-			Vector3(-1175, -1375, 475),
-			Rotation(0, 0, 0),
-			optsSniper_SO
-		),
-		restoration:gen_so(
-			400034,
-			"special_sniper_so_3",
-			Vector3(-1000, -1375, 475),
-			Rotation(0, 0, 0),
-			optsSniper_SO
-		),
-		restoration:gen_dummy(
-			400035,
-			"dozer_ambush_elevator_1",
-			Vector3(5879, -3035, 464.309),
-			Rotation(90, -0, -0),
-			optsDozerAmbush
-		),
-		restoration:gen_dummy(
-			400036,
-			"dozer_ambush_elevator_2",
-			Vector3(5879, -3252, 464.309),
-			Rotation(90, -0, -0),
-			optsDozerAmbush
-		),
-		restoration:gen_dummy(
-			400037,
-			"taser_special_1",
-			Vector3(-777, -1616, 475),
-			Rotation(0, 0, -0),
-			optsTaser_special
-		),
-		restoration:gen_dummy(
-			400038,
-			"taser_special_2",
-			Vector3(-861, -1616, 475),
-			Rotation(0, 0, -0),
-			optsTaser_special
-		),
-		restoration:gen_so(
-			400039,
-			"shield_defend_so_1",
-			Vector3(3307, 700, -15),
-			Rotation(90, -0, -0),
-			optsShieldDefend_SO
-		),
-		restoration:gen_so(
-			400040,
-			"shield_defend_so_2",
-			Vector3(3307, 1800, -15),
-			Rotation(90, -0, -0),
-			optsShieldDefend_SO
-		),
-		restoration:gen_dummy(
-			400041,
-			"shield_defend_1",
-			Vector3(3963, 1836, -42.895),
-			Rotation(90, -0, -0),
-			optsShield_Defend_1
-		),
-		restoration:gen_dummy(
-			400042,
-			"shield_defend_2",
-			Vector3(3959, 721, -43.895),
-			Rotation(90, -0, -0),
-			optsShield_Defend_2
-		),
-		restoration:gen_toggleelement(
-			400043,
-			"enable_lobby_shields",
-			enable_shields
-		),
-		restoration:gen_toggleelement(
-			400044,
-			"disable_lobby_shields",
-			disable_shields
-		),
-		restoration:gen_toggleelement(
-			400045,
-			"enable_OverdrillPONR",
-			enable_OverdrillPONR
-		),
-		restoration:gen_toggleelement(
-			400046,
-			"disable_RegularPONR",
-			disable_RegularPONR
-		),
-		restoration:gen_pointofnoreturn(
-			400047,
-			"Regular_PONR",
-			Vector3(-2657, -3569, -90),
-			Rotation(90, -0, -0),
-			optsRegularPONR
-		),
-		restoration:gen_pointofnoreturn(
-			400048,
-			"Overdrill_PONR",
-			Vector3(-2657, -3569, -90),
-			Rotation(90, -0, -0),
-			optsOverdrillPONR
-		),
-		restoration:gen_toggleelement(
-			400049,
-			"disable_OverdrillPONR",
-			disable_OverdrillPONR
-		),
-		restoration:gen_dynamicfilter(
-			400053,
-			"black_tank_elevator_ambush_for_3_and_above_players",
-			Vector3(-2657, -3569, -90),
-			Rotation(90, -0, -0),
-			optsBlackTankAmbushFilter
-		),
-		restoration:gen_dummy(
-			400054,
-			"surprise_tank",
-			Vector3(4657, -1100, -735.693),
-			Rotation(-180, 0, -0),
-			optsDozerAmbush_2
-		),
-		restoration:gen_missionscript(
-			400055,
-			"spawn_the_surprise_tank",
-			spawn_the_surprise_tank
-		),
-		restoration:gen_toggleelement(
-			400056,
-			"enable_the_surpise_tank",
-			enable_thetank
-		),
-		restoration:gen_toggleelement(
-			400057,
-			"disable_the_surpise_tank",
-			disable_thetank
-		),
+		restoration:gen_dummy(400030, "cloaker_rush_1", Vector3(483, 352, 475.020), Rotation(0, 0, -0),  optsCloaker_rush_1),
+		restoration:gen_dummy(400031, "cloaker_rush_2", Vector3(677, 57, 475.020), Rotation(90, -0, -0), optsCloaker_rush_2),
+		restoration:gen_dummy(400032, "cloaker_rush_3", Vector3(677, 12, 475.020), Rotation(90, -0, -0), optsCloaker_rush_2),
+		restoration:gen_so(400033, "special_sniper_so_2", Vector3(-1175, -1375, 475), Rotation(0, 0, 0), optsSniper_SO),
+		restoration:gen_so(400034, "special_sniper_so_3", Vector3(-1000, -1375, 475), Rotation(0, 0, 0), optsSniper_SO),
+		restoration:gen_dummy(400035, "dozer_ambush_elevator_1", Vector3(5879, -3035, 464.309), Rotation(90, -0, -0), optsDozerAmbush),
+		restoration:gen_dummy(400036, "dozer_ambush_elevator_2", Vector3(5879, -3252, 464.309), Rotation(90, -0, -0), optsDozerAmbush),
+		restoration:gen_dummy(400037, "taser_special_1", Vector3(-777, -1616, 475), Rotation(0, 0, -0), optsTaser_special),
+		restoration:gen_dummy(400038, "taser_special_2", Vector3(-861, -1616, 475), Rotation(0, 0, -0), optsTaser_special),
+		restoration:gen_so(400039, "shield_defend_so_1", Vector3(3307, 700, -15), Rotation(90, -0, -0), optsShieldDefend_SO),
+		restoration:gen_so(400040, "shield_defend_so_2", Vector3(3307, 1800, -15), Rotation(90, -0, -0), optsShieldDefend_SO),
+		restoration:gen_dummy(400041, "shield_defend_1", Vector3(3963, 1836, -42.895), Rotation(90, -0, -0), optsShield_Defend_1),
+		restoration:gen_dummy(400042, "shield_defend_2", Vector3(3959, 721, -43.895), Rotation(90, -0, -0), optsShield_Defend_2),
+		restoration:gen_toggleelement(400043, "enable_lobby_shields", enable_shields),
+		restoration:gen_toggleelement(400044, "disable_lobby_shields", disable_shields),
+		-- PONR
+		restoration:gen_toggleelement(400045, "enable_OverdrillPONR", enable_OverdrillPONR),
+		restoration:gen_toggleelement(400046, "disable_RegularPONR", disable_RegularPONR),
+		restoration:gen_pointofnoreturn(400047, "Regular_PONR",  Vector3(-2657, -3569, -90),  Rotation(90, -0, -0), optsRegularPONR),
+		restoration:gen_pointofnoreturn(400048, "Overdrill_PONR", Vector3(-2657, -3569, -90), Rotation(90, -0, -0), optsOverdrillPONR),
+		restoration:gen_toggleelement(400049, "disable_OverdrillPONR", disable_OverdrillPONR),
+		-- Bulldozer everywhere system (https://www.youtube.com/watch?v=WnLliTaH4R8)
+		restoration:gen_dynamicfilter(400053, "black_tank_elevator_ambush_for_3_and_above_players", Vector3(-2657, -3569, -90), Rotation(90, -0, -0), optsBlackTankAmbushFilter),
+		restoration:gen_dummy(400054, "surprise_tank", Vector3(4657, -1100, -735.693), Rotation(-180, 0, -0), optsDozerAmbush_2),
+		restoration:gen_missionscript(400055, "spawn_the_surprise_tank", spawn_the_surprise_tank),
+		restoration:gen_toggleelement(400056, "enable_the_surpise_tank", enable_thetank),
+		restoration:gen_toggleelement(400057, "disable_the_surpise_tank", disable_thetank),
 	},
 }

@@ -297,412 +297,72 @@ local disable_open_roof_access = {
 return {
 	elements = {
 		-- Heavy Shotgunners
-		restoration:gen_missionscript(
-			400001,
-			"spawn_heavy_shotgunners",
-			spawn_heavy_swat_145
-		),
-		restoration:gen_dummy(
-			400002,
-			"swat_heavy_1",
-			Vector3(-2782, 2936, -25.190),
-			Rotation(-90, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400003,
-			"swat_heavy_2",
-			Vector3(-2782, 2977, -25.190),
-			Rotation(-90, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400004,
-			"swat_heavy_3",
-			Vector3(-2782, 3033, -25.190),
-			Rotation(-90, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400005,
-			"swat_heavy_4",
-			Vector3(-2840, 3025, -25.190),
-			Rotation(-90, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400006,
-			"swat_heavy_5",
-			Vector3(-2840, 2983, -25.190),
-			Rotation(-90, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400007,
-			"swat_heavy_6",
-			Vector3(-2837, 2945, -25.190),
-			Rotation(-90, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400008,
-			"swat_heavy_7",
-			Vector3(1908, 2685, -24.825),
-			Rotation(-180, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400009,
-			"swat_heavy_8",
-			Vector3(1964, 2685, -24.825),
-			Rotation(-180, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400010,
-			"swat_heavy_9",
-			Vector3(2017, 2685, -24.825),
-			Rotation(-180, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400011,
-			"swat_heavy_10",
-			Vector3(1916, 2734, -24.825),
-			Rotation(-180, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400012,
-			"swat_heavy_11",
-			Vector3(1964, 2734, -24.825),
-			Rotation(-180, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_dummy(
-			400013,
-			"swat_heavy_12",
-			Vector3(2017, 2734, -24.825),
-			Rotation(-180, 0, -0),
-			optsSWAT_Heavy145
-		),
-		restoration:gen_so(
-			400014,
-			"global_hunt_so",
-			Vector3(3600, 2473, -1200),
-			Rotation(0, 0, 0),
-			optsShare_AIHunt
-		),
-		restoration:gen_dummy(
-			400015,
-			"bulldozer",
-			Vector3(-2228, -3266, -25),
-			Rotation(90, -0, -0),
-			optsBulldozer
-		),
-		restoration:gen_dummy(
-			400017,
-			"taser_1",
-			Vector3(372, 1302, 1674.944),
-			Rotation(90, -0, -0),
-			optsTaser
-		),
-		restoration:gen_dummy(
-			400018,
-			"taser_2",
-			Vector3(372, 163, 1674.944),
-			Rotation(90, -0, -0),
-			optsTaser
-		),
-		restoration:gen_missionscript(
-			400020,
-			"go_hard_with_tasers",
-			spawn_tasers
-		),
-		restoration:gen_dummy(
-			400021,
-			"swat_rooftop_1",
-			Vector3(-1855, 3449, 1931.656),
-			Rotation(90, -0, -0),
-			optsSWAT_Rooftop_1
-		),
-		restoration:gen_dummy(
-			400022,
-			"swat_rooftop_2",
-			Vector3(-4081, 1580, 1937.656),
-			Rotation(180, 0, -0),
-			optsSWAT_Rooftop_2
-		),
-		restoration:gen_so(
-			400023,
-			"swat_spot_so_1",
-			Vector3(-1522.207, 2149.161, 1936.735),
-			Rotation(180, 0, 0),
-			optsSniper_SO
-		),
-		restoration:gen_so(
-			400024,
-			"swat_spot_so_2",
-			Vector3(-2673, 675, 1936.735),
-			Rotation(-76, 0, 0),
-			optsSniper_SO
-		),
-		restoration:gen_missionscript(
-			400025,
-			"annoying_Heavy_SWAT",
-			spawn_rooftopSWAT
-		),
-		restoration:gen_dummytrigger(
-			400026,
-			"respawn_swat_1",
-			Vector3(-2400, -3677, 375),
-			Rotation(90, -0, -0),
-			optsrespawn_swat_1
-		),
-		restoration:gen_dummytrigger(
-			400027,
-			"respawn_swat_2",
-			Vector3(-2400, -3577, 375),
-			Rotation(90, -0, -0),
-			optsrespawn_swat_2
-		),
-		restoration:gen_dummy(
-			400028,
-			"swat_1",
-			Vector3(-1339.660, 875.868, 1675),
-			Rotation(73, -0, -0),
-			optsSWAT_HeavyChopper_2
-		),
-		restoration:gen_dummy(
-			400029,
-			"swat_2",
-			Vector3(-920.705, 850.572, 1675),
-			Rotation(-80, -0, -0),
-			optsSWAT_HeavyChopper_1
-		),
-		restoration:gen_dummy(
-			400030,
-			"taser",
-			Vector3(-1377.150, 807.061, 1675),
-			Rotation(97, -0, -0),
-			optsTaserChopper
-		),
-		restoration:gen_dummy(
-			400031,
-			"bulldozer",
-			Vector3(-936.857, 821.147, 1675),
-			Rotation(-80, 0, -0),
-			optsBulldozerchopper
-		),
-		restoration:gen_missionscript(
-			400032,
-			"spawn_the_squad",
-			spawn_SWATsquad
-		),
-		restoration:gen_dummy(
-			400033,
-			"cloaker_1",
-			Vector3(188.860, 3694.086, 1931.656),
-			Rotation(90, -0, -0),
-			optsCloaker
-		),
-		restoration:gen_dummy(
-			400034,
-			"cloaker_2",
-			Vector3(124.860, 3694.086, 1931.656),
-			Rotation(90, -0, -0),
-			optsCloaker
-		),
-		restoration:gen_dummy(
-			400035,
-			"cloaker_3",
-			Vector3(61.860, 3694.086, 1931.656),
-			Rotation(90, -0, -0),
-			optsCloaker
-		),
-		restoration:gen_missionscript(
-			400037,
-			"spawn_cloakers",
-			spawn_cloakers
-		),
-		restoration:gen_toggleelement(
-			400038,
-			"enable_cloakers",
-			enable_cloakers
-		),
-		restoration:gen_toggleelement(
-			400039,
-			"disable_cloakers",
-			disable_cloakers
-		),
-		restoration:gen_dummy(
-			400040,
-			"bulldozer",
-			Vector3(1916, 2375, -24.825),
-			Rotation(180, 0, -0),
-			optsBulldozerscripted
-		),
-		restoration:gen_so(
-			400041,
-			"dozer_defend_so",
-			Vector3(11, 1132, 53.185),
-			Rotation(180, 0, -0),
-			optsAI_Defend
-		),
-		restoration:gen_missionscript(
-			400043,
-			"spawn_defend_shields",
-			spawn_Shields
-		),
-		restoration:gen_dummy(
-			400044,
-			"shield_1",
-			Vector3(-889.027, 18.536, 700.001),
-			Rotation(-90, 0, -0),
-			optsShield_1
-		),
-		restoration:gen_dummy(
-			400045,
-			"shield_2",
-			Vector3(-956.985, 16.162, 700.001),
-			Rotation(-90, -0, -0),
-			optsShield_2
-		),
-		restoration:gen_dummy(
-			400046,
-			"shield_3",
-			Vector3(-1012.951, 14.208, 700.001),
-			Rotation(-90, 0, -0),
-			optsShield_3
-		),
-		restoration:gen_dummy(
-			400047,
-			"shield_4",
-			Vector3(-57, 1640, 697.988),
-			Rotation(90, -0, -0),
-			optsShield_4
-		),
-		restoration:gen_dummy(
-			400048,
-			"shield_5",
-			Vector3(-1704, 1478, 375.600),
-			Rotation(-90, -0, -0),
-			optsShield_5
-		),
-		restoration:gen_dummy(
-			400049,
-			"shield_6",
-			Vector3(22, 1430, 375.600),
-			Rotation(90, -0, -0),
-			optsShield_6
-		),
-		restoration:gen_so(
-			400050,
-			"shield_defend_so_1",
-			Vector3(-1057, 497, 700.001),
-			Rotation(78, -0, -0),
-			optsShield_Defend_SO
-		),
-		restoration:gen_so(
-			400051,
-			"shield_defend_so_2",
-			Vector3(-1037.821, 698.270, 700.001),
-			Rotation(109, -0, -0),
-			optsShield_Defend_SO
-		),
-		restoration:gen_so(
-			400052,
-			"shield_defend_so_3",
-			Vector3(-962.004, 583.511, 700.001),
-			Rotation(89, -0, -0),
-			optsShield_Defend_SO
-		),
-		restoration:gen_so(
-			400053,
-			"shield_defend_so_4",
-			Vector3(-684, 1663, 746.988),
-			Rotation(90, -0, -0),
-			optsShield_Defend_SO
-		),
-		restoration:gen_so(
-			400054,
-			"shield_defend_so_5",
-			Vector3(-1470, 1486, 375.600),
-			Rotation(0, 0, -0),
-			optsShield_Defend_SO
-		),
-		restoration:gen_so(
-			400055,
-			"shield_defend_so_6",
-			Vector3(-289, 1521, 375.600),
-			Rotation(0, 0, -0),
-			optsShield_Defend_SO
-		),
-		restoration:gen_dummy(
-			400056,
-			"enforcer_1",
-			Vector3(245, 361, 1349.998),
-			Rotation(65, 0, -0),
-			optsEnforcer
-		),
-		restoration:gen_dummy(
-			400057,
-			"enforcer_2",
-			Vector3(134.792, 232.511, 1349.998),
-			Rotation(33, -0, -0),
-			optsEnforcerPJ
-		),
-		restoration:gen_dummy(
-			400058,
-			"enforcer_3",
-			Vector3(-1741.349, 268.777, 1351.463),
-			Rotation(-63, 0, -0),
-			optsEnforcer
-		),
-		restoration:gen_dummy(
-			400059,
-			"enforcer_4",
-			Vector3(-1643, 115, 1351.463),
-			Rotation(-53, 0, -0),
-			optsEnforcerPJ
-		),
-		restoration:gen_dummy(
-			400060,
-			"enforcer_5",
-			Vector3(299, -181, 700.001),
-			Rotation(0, 0, -0),
-			optsEnforcer
-		),
-		restoration:gen_dummy(
-			400061,
-			"enforcer_6",
-			Vector3(106, -181, 700.001),
-			Rotation(0, 0, -0),
-			optsEnforcerPJ
-		),
-		restoration:gen_dummy(
-			400062,
-			"chavez_lieutenant",
-			Vector3(-1549.617, 1427.445, 702.700),
-			Rotation(172, 0, -0),
-			optsLieutenant
-		),
-		restoration:gen_dummy(
-			400063,
-			"enforcer_7",
-			Vector3(-295, 465, -322.531),
-			Rotation(0, 0, -0),
-			optsEnforcer
-		),
-		restoration:gen_missionscript(
-			400064,
-			"roof_access_blockade_random",
-			Roof_access_block
-		),
-		restoration:gen_toggleelement(
-			400065,
-			"disable_open_roof_access",
-			disable_open_roof_access
-		),
+		restoration:gen_missionscript(400001, "spawn_heavy_shotgunners", spawn_heavy_swat_145),
+		restoration:gen_dummy(400002, "swat_heavy_1", Vector3(-2782, 2936, -25.190), Rotation(-90, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400003, "swat_heavy_2", Vector3(-2782, 2977, -25.190), Rotation(-90, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400004, "swat_heavy_3", Vector3(-2782, 3033, -25.190), Rotation(-90, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400005, "swat_heavy_4", Vector3(-2840, 3025, -25.190), Rotation(-90, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400006, "swat_heavy_5", Vector3(-2840, 2983, -25.190), Rotation(-90, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400007, "swat_heavy_6", Vector3(-2837, 2945, -25.190), Rotation(-90, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400008, "swat_heavy_7", Vector3(1908, 2685, -24.825), Rotation(-180, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400009, "swat_heavy_8", Vector3(1964, 2685, -24.825), Rotation(-180, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400010, "swat_heavy_9", Vector3(2017, 2685, -24.825), Rotation(-180, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400011, "swat_heavy_10", Vector3(1916, 2734, -24.825), Rotation(-180, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400012, "swat_heavy_11", Vector3(1964, 2734, -24.825), Rotation(-180, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_dummy(400013, "swat_heavy_12", Vector3(2017, 2734, -24.825), Rotation(-180, 0, -0), optsSWAT_Heavy145),
+		restoration:gen_so(400014, "global_hunt_so", Vector3(3600, 2473, -1200), Rotation(0, 0, 0), optsShare_AIHunt),
+		restoration:gen_dummy(400015, "bulldozer", Vector3(-2228, -3266, -25), Rotation(90, -0, -0), optsBulldozer),
+		restoration:gen_dummy(400017, "taser_1", Vector3(372, 1302, 1674.944), Rotation(90, -0, -0), optsTaser),
+		restoration:gen_dummy(400018, "taser_2", Vector3(372, 163, 1674.944), Rotation(90, -0, -0), optsTaser),
+		restoration:gen_missionscript(400020, "go_hard_with_tasers", spawn_tasers),
+		-- I'M A SITTING DUCK UP HERE!
+		restoration:gen_dummy(400021, "swat_rooftop_1", Vector3(-1855, 3449, 1931.656), Rotation(90, -0, -0), optsSWAT_Rooftop_1),
+		restoration:gen_dummy(400022, "swat_rooftop_2", Vector3(-4081, 1580, 1937.656), Rotation(180, 0, -0), optsSWAT_Rooftop_2),
+		restoration:gen_so(400023, "swat_spot_so_1", Vector3(-1522.207, 2149.161, 1936.735), Rotation(180, 0, 0), optsSniper_SO),
+		restoration:gen_so(400024,"swat_spot_so_2", Vector3(-2673, 675, 1936.735), Rotation(-76, 0, 0), optsSniper_SO),
+		restoration:gen_missionscript(400025, "annoying_Heavy_SWAT", spawn_rooftopSWAT),
+		restoration:gen_dummytrigger(400026, "respawn_swat_1", Vector3(-2400, -3677, 375), Rotation(90, -0, -0), optsrespawn_swat_1),
+		restoration:gen_dummytrigger(400027, "respawn_swat_2", Vector3(-2400, -3577, 375), Rotation(90, -0, -0), optsrespawn_swat_2),
+		restoration:gen_dummy(400028, "swat_1", Vector3(-1339.660, 875.868, 1675), Rotation(73, -0, -0), optsSWAT_HeavyChopper_2),
+		restoration:gen_dummy(400029, "swat_2", Vector3(-920.705, 850.572, 1675), Rotation(-80, -0, -0), optsSWAT_HeavyChopper_1),
+		restoration:gen_dummy(400030, "taser", Vector3(-1377.150, 807.061, 1675), Rotation(97, -0, -0), optsTaserChopper),
+		restoration:gen_dummy(400031, "bulldozer", Vector3(-936.857, 821.147, 1675), Rotation(-80, 0, -0), optsBulldozerchopper),
+		restoration:gen_missionscript(400032, "spawn_the_squad", spawn_SWATsquad),
+		-- Clomkers...
+		restoration:gen_dummy(400033, "cloaker_1", Vector3(188.860, 3694.086, 1931.656), Rotation(90, -0, -0), optsCloaker),
+		restoration:gen_dummy(400034, "cloaker_2", Vector3(124.860, 3694.086, 1931.656), Rotation(90, -0, -0), optsCloaker),
+		restoration:gen_dummy(400035, "cloaker_3", Vector3(61.860, 3694.086, 1931.656), Rotation(90, -0, -0), optsCloaker),
+		restoration:gen_missionscript(400037, "spawn_cloakers", spawn_cloakers),
+		restoration:gen_toggleelement(400038, "enable_cloakers", enable_cloakers),
+		restoration:gen_toggleelement(400039, "disable_cloakers", disable_cloakers),
+		-- Dozer
+		restoration:gen_dummy(400040, "bulldozer", Vector3(1916, 2375, -24.825), Rotation(180, 0, -0), optsBulldozerscripted),
+		restoration:gen_so(400041, "dozer_defend_so", Vector3(11, 1132, 53.185), Rotation(180, 0, -0), optsAI_Defend),
+		-- Shield blockade (like in TH)
+		restoration:gen_missionscript(400043, "spawn_defend_shields", spawn_Shields),
+		restoration:gen_dummy(400044, "shield_1", Vector3(-889.027, 18.536, 700.001), Rotation(-90, 0, -0), optsShield_1),
+		restoration:gen_dummy(400045, "shield_2", Vector3(-956.985, 16.162, 700.001), Rotation(-90, -0, -0), optsShield_2),
+		restoration:gen_dummy(400046, "shield_3", Vector3(-1012.951, 14.208, 700.001), Rotation(-90, 0, -0), optsShield_3),
+		restoration:gen_dummy(400047, "shield_4", Vector3(-57, 1640, 697.988), Rotation(90, -0, -0), optsShield_4),
+		restoration:gen_dummy(400048, "shield_5", Vector3(-1704, 1478, 375.600), Rotation(-90, -0, -0), optsShield_5),
+		restoration:gen_dummy(400049, "shield_6", Vector3(22, 1430, 375.600), Rotation(90, -0, -0), optsShield_6),
+		restoration:gen_so(400050, "shield_defend_so_1", Vector3(-1057, 497, 700.001), Rotation(78, -0, -0), optsShield_Defend_SO),
+		restoration:gen_so(400051, "shield_defend_so_2", Vector3(-1037.821, 698.270, 700.001), Rotation(109, -0, -0), optsShield_Defend_SO),
+		restoration:gen_so(400052, "shield_defend_so_3", Vector3(-962.004, 583.511, 700.001), Rotation(89, -0, -0),optsShield_Defend_SO),
+		restoration:gen_so(400053, "shield_defend_so_4", Vector3(-684, 1663, 746.988), Rotation(90, -0, -0), optsShield_Defend_SO),
+		restoration:gen_so(400054, "shield_defend_so_5", Vector3(-1470, 1486, 375.600), Rotation(0, 0, -0), optsShield_Defend_SO),
+		restoration:gen_so(400055, "shield_defend_so_6", Vector3(-289, 1521, 375.600), Rotation(0, 0, -0), optsShield_Defend_SO),
+		-- Gangster Enforcers
+		restoration:gen_dummy(400056, "enforcer_1", Vector3(245, 361, 1349.998), Rotation(65, 0, -0), optsEnforcer),
+		restoration:gen_dummy(400057, "enforcer_2", Vector3(134.792, 232.511, 1349.998), Rotation(33, -0, -0), optsEnforcerPJ),
+		restoration:gen_dummy(400058,"enforcer_3", Vector3(-1741.349, 268.777, 1351.463), Rotation(-63, 0, -0), optsEnforcer),
+		restoration:gen_dummy(400059, "enforcer_4", Vector3(-1643, 115, 1351.463), Rotation(-53, 0, -0), optsEnforcerPJ),
+		restoration:gen_dummy(400060, "enforcer_5", Vector3(299, -181, 700.001), Rotation(0, 0, -0), optsEnforcer),
+		restoration:gen_dummy(400061, "enforcer_6", Vector3(106, -181, 700.001), Rotation(0, 0, -0), optsEnforcerPJ),
+		restoration:gen_dummy(400062, "chavez_lieutenant", Vector3(-1549.617, 1427.445, 702.700), Rotation(172, 0, -0), optsLieutenant),
+		restoration:gen_dummy(400063, "enforcer_7", Vector3(-295, 465, -322.531), Rotation(0, 0, -0), optsEnforcer),
+		-- https://www.youtube.com/watch?v=2dZy3cd9KFY
+		restoration:gen_missionscript(400064, "roof_access_blockade_random", Roof_access_block),
+		restoration:gen_toggleelement(400065, "disable_open_roof_access", disable_open_roof_access),
 	},
 }

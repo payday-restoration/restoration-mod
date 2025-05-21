@@ -280,607 +280,101 @@ local Smoke_bomb = {
 return {
     elements = {
         --Cloakers
-        restoration:gen_dummy(
-            400001,
-            "cloaker_1",
-            Vector3(-100, -1834, 1175),
-            Rotation(90, 0, -0),
-            optsCloaker
-        ),
-        restoration:gen_dummy(
-            400002,
-            "cloaker_2",
-            Vector3(-100, -1967, 1175),
-            Rotation(90, -0, -0),
-            optsCloaker
-        ),
-		restoration:gen_dummy(
-            400003,
-            "cloaker_3",
-            Vector3(-100, -1903, 1175),
-            Rotation(90, -0, -0),
-            optsCloaker
-        ),
-		restoration:gen_dummy(
-            400004,
-            "cloaker_4",
-            Vector3(-6175, -5325, 1175),
-            Rotation(0, -0, -0),
-            optsCloaker
-        ),
-        restoration:gen_dummy(
-            400005,
-            "cloaker_5",
-            Vector3(-6275, -5325, 1175),
-            Rotation(0, -0, -0),
-            optsCloaker
-        ),
-		restoration:gen_dummy(
-            400006,
-            "cloaker_6",
-            Vector3(-6375, -5325, 1175),
-            Rotation(0, -0, -0),
-            optsCloaker
-        ),
-		restoration:gen_dummy(
-            400007,
-            "cloaker_7",
-            Vector3(-6531, -291, 1175.010),
-            Rotation(-90, 0, -0),
-            optsCloaker
-        ),
-        restoration:gen_dummy(
-            400008,
-            "cloaker_8",
-			Vector3(-6531, -196, 1175.010),
-            Rotation(-90, 0, -0),
-            optsCloaker
-        ),
-		restoration:gen_dummy(
-            400009,
-            "cloaker_9",
-            Vector3(-6531, -116, 1175.010),
-            Rotation(-90, 0, -0),
-            optsCloaker
-        ),
+        restoration:gen_dummy(400001, "cloaker_1", Vector3(-100, -1834, 1175), Rotation(90, 0, -0), optsCloaker),
+        restoration:gen_dummy(400002, "cloaker_2", Vector3(-100, -1967, 1175), Rotation(90, -0, -0), optsCloaker),
+		restoration:gen_dummy(400003, "cloaker_3", Vector3(-100, -1903, 1175), Rotation(90, -0, -0), optsCloaker),
+		restoration:gen_dummy(400004, "cloaker_4", Vector3(-6175, -5325, 1175), Rotation(0, -0, -0),  optsCloaker),
+        restoration:gen_dummy(400005, "cloaker_5", Vector3(-6275, -5325, 1175), Rotation(0, -0, -0), optsCloaker),
+		restoration:gen_dummy(400006, "cloaker_6", Vector3(-6375, -5325, 1175), Rotation(0, -0, -0), optsCloaker),
+		restoration:gen_dummy(400007, "cloaker_7", Vector3(-6531, -291, 1175.010), Rotation(-90, 0, -0), optsCloaker),
+        restoration:gen_dummy(400008, "cloaker_8", Vector3(-6531, -196, 1175.010), Rotation(-90, 0, -0), optsCloaker),
+		restoration:gen_dummy(400009, "cloaker_9", Vector3(-6531, -116, 1175.010), Rotation(-90, 0, -0), optsCloaker),
 		--Ambush Units
 		--Snipers
-		restoration:gen_dummy(
-            400010,
-            "sniper_ambush_1",
-            Vector3(-5217, -4047, 50),
-            Rotation(0, 0, -0),
-            optsSniperAmbush_1
-        ),
-		restoration:gen_dummy(
-            400011,
-            "sniper_ambush_2",
-            Vector3(-5217, -5138, 50),
-            Rotation(-180, 0, -0),
-            optsSniperAmbush_2
-        ),
-		restoration:gen_dummy(
-            400012,
-            "sniper_ambush_3",
-            Vector3(-1377, -5145, 50),
-            Rotation(180, 0, -0),
-            optsSniperAmbush_3
-        ),
-		restoration:gen_dummy(
-            400013,
-            "sniper_ambush_4",
-            Vector3(-1383, -4046, 50),
-            Rotation(0, 0, -0),
-            optsSniperAmbush_4
-        ),
-		restoration:gen_so(
-            400014,
-            "sniper_ambush_so_1",
-            Vector3(-4545, -4146, 50),
-            Rotation(-135, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400015,
-            "sniper_ambush_so_2",
-            Vector3(-2837, -4052, 50),
-            Rotation(90, -0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400016,
-            "sniper_ambush_so_3",
-            Vector3(-2633.425, -5111.369, 51),
-            Rotation(35, -0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400017,
-            "sniper_ambush_so_4",
-            Vector3(-3976, -5087, 50),
-            Rotation(-25, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
+		restoration:gen_dummy(400010, "sniper_ambush_1", Vector3(-5217, -4047, 50), Rotation(0, 0, -0), optsSniperAmbush_1),
+		restoration:gen_dummy(400011, "sniper_ambush_2", Vector3(-5217, -5138, 50), Rotation(-180, 0, -0), optsSniperAmbush_2),
+		restoration:gen_dummy(400012, "sniper_ambush_3", Vector3(-1377, -5145, 50), Rotation(180, 0, -0), optsSniperAmbush_3),
+		restoration:gen_dummy(400013, "sniper_ambush_4", Vector3(-1383, -4046, 50), Rotation(0, 0, -0), optsSniperAmbush_4 ),
+		restoration:gen_so(400014,  "sniper_ambush_so_1", Vector3(-4545, -4146, 50), Rotation(-135, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400015, "sniper_ambush_so_2", Vector3(-2837, -4052, 50), Rotation(90, -0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400016, "sniper_ambush_so_3", Vector3(-2633.425, -5111.369, 51), Rotation(35, -0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400017, "sniper_ambush_so_4", Vector3(-3976, -5087, 50), Rotation(-25, 0, -0), optsDefend_and_Sniper_SO),
 		--Cloakers
-		restoration:gen_dummy(
-            400018,
-            "kiryu_kazuma",
-            Vector3(-1424, -4215, 50),
-            Rotation(0, 0, -0),
-            optsCloaker_Ambush
-        ),
-		restoration:gen_dummy(
-            400019,
-            "majima_goro",
-            Vector3(-1424, -4988, 50),
-            Rotation(-180, 0, -0),
-            optsCloaker_Ambush
-        ),
+		restoration:gen_dummy(400018, "kiryu_kazuma", Vector3(-1424, -4215, 50), Rotation(0, 0, -0), optsCloaker_Ambush),
+		restoration:gen_dummy(400019, "majima_goro", Vector3(-1424, -4988, 50), Rotation(-180, 0, -0), optsCloaker_Ambush),
 		--Tasers
-		restoration:gen_dummy(
-            400020,
-            "taser_ambush_1",
-            Vector3(-5175, -4990, 50),
-            Rotation(180, 0, -0),
-            optsTaser_Ambush
-        ),
-		restoration:gen_dummy(
-            400021,
-            "taser_ambush_2",
-            Vector3(-5171, -4210, 50),
-            Rotation(0, 0, -0),
-            optsTaser_Ambush
-        ),
+		restoration:gen_dummy(400020, "taser_ambush_1", Vector3(-5175, -4990, 50), Rotation(180, 0, -0), optsTaser_Ambush),
+		restoration:gen_dummy(400021, "taser_ambush_2", Vector3(-5171, -4210, 50), Rotation(0, 0, -0), optsTaser_Ambush),
 		--Dozer
-		restoration:gen_dummy(
-            400022,
-            "dozer_ambush_1",
-            Vector3(-1425, -5148, 50),
-            Rotation(180, 0, -0),
-            optsBulldozer_Ambush
-        ),
+		restoration:gen_dummy(400022,"dozer_ambush_1", Vector3(-1425, -5148, 50), Rotation(180, 0, -0), optsBulldozer_Ambush),
 		--SWAT
-		restoration:gen_dummy(
-            400023,
-            "swat_ambush_1",
-            Vector3(-1368, -4156, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400024,
-            "swat_ambush_2",
-            Vector3(-1428, -4156, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400025,
-            "swat_ambush_3",
-            Vector3(-1499, -4156, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400026,
-            "swat_ambush_4",
-            Vector3(-1368, -4082, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400027,
-            "swat_ambush_5",
-            Vector3(-1428, -4082, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400028,
-            "swat_ambush_6",
-            Vector3(-1499, -4082, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400029,
-            "swat_ambush_7",
-            Vector3(-1481, -5029, 50),
-            Rotation(-180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400030,
-            "swat_ambush_8",
-            Vector3(-1428, -5029, 50),
-            Rotation(-180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400031,
-            "swat_ambush_9",
-            Vector3(-1369, -5029, 50),
-            Rotation(-180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400032,
-            "swat_ambush_10",
-            Vector3(-1477, -5102, 50),
-            Rotation(-180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400033,
-            "swat_ambush_11",
-            Vector3(-1425, -5102, 50),
-            Rotation(-180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400034,
-            "swat_ambush_12",
-            Vector3(-1370, -5102, 50),
-            Rotation(-180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400035,
-            "swat_ambush_13",
-            Vector3(-5119, -5102, 50),
-            Rotation(180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400036,
-            "swat_ambush_14",
-            Vector3(-5170, -5102, 50),
-            Rotation(180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400037,
-            "swat_ambush_15",
-            Vector3(-5229, -5102, 50),
-            Rotation(180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400038,
-            "swat_ambush_16",
-            Vector3(-5229, -5027, 50),
-            Rotation(180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400039,
-            "swat_ambush_17",
-            Vector3(-5170, -5027, 50),
-            Rotation(180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400040,
-            "swat_ambush_18",
-            Vector3(-5117, -5027, 50),
-            Rotation(180, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400041,
-            "swat_ambush_19",
-            Vector3(-5117, -4157, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400042,
-            "swat_ambush_20",
-            Vector3(-5173, -4157, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400043,
-            "swat_ambush_21",
-            Vector3(-5230, -4157, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400044,
-            "swat_ambush_22",
-            Vector3(-5230, -4083, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400045,
-            "swat_ambush_23",
-            Vector3(-5175, -4083, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
-		restoration:gen_dummy(
-            400046,
-            "swat_ambush_24",
-            Vector3(-5118, -4083, 50),
-            Rotation(0, 0, -0),
-            optsSWAT_Ambush
-        ),
+		restoration:gen_dummy(400023, "swat_ambush_1", Vector3(-1368, -4156, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400024, "swat_ambush_2", Vector3(-1428, -4156, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400025, "swat_ambush_3", Vector3(-1499, -4156, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400026, "swat_ambush_4", Vector3(-1368, -4082, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400027, "swat_ambush_5", Vector3(-1428, -4082, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400028, "swat_ambush_6", Vector3(-1499, -4082, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400029, "swat_ambush_7", Vector3(-1481, -5029, 50), Rotation(-180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400030, "swat_ambush_8", Vector3(-1428, -5029, 50), Rotation(-180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400031, "swat_ambush_9", Vector3(-1369, -5029, 50), Rotation(-180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400032, "swat_ambush_10", Vector3(-1477, -5102, 50), Rotation(-180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400033, "swat_ambush_11", Vector3(-1425, -5102, 50), Rotation(-180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400034, "swat_ambush_12", Vector3(-1370, -5102, 50), Rotation(-180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400035, "swat_ambush_13", Vector3(-5119, -5102, 50), Rotation(180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400036, "swat_ambush_14", Vector3(-5170, -5102, 50), Rotation(180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400037, "swat_ambush_15", Vector3(-5229, -5102, 50), Rotation(180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400038, "swat_ambush_16", Vector3(-5229, -5027, 50), Rotation(180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400039, "swat_ambush_17", Vector3(-5170, -5027, 50), Rotation(180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400040, "swat_ambush_18", Vector3(-5117, -5027, 50), Rotation(180, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400041, "swat_ambush_19", Vector3(-5117, -4157, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400042, "swat_ambush_20", Vector3(-5173, -4157, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400043, "swat_ambush_21", Vector3(-5230, -4157, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400044, "swat_ambush_22", Vector3(-5230, -4083, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400045, "swat_ambush_23", Vector3(-5175, -4083, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
+		restoration:gen_dummy(400046, "swat_ambush_24", Vector3(-5118, -4083, 50), Rotation(0, 0, -0), optsSWAT_Ambush),
 		--Roof Acesss blockades
-		restoration:gen_dummy(
-            400047,
-            "taser_roof_access_blockade_1",
-            Vector3(-1205, -3532, 1175),
-            Rotation(87, -0, -0),
-            optsTaser_roofblockade_1
-        ),
-		restoration:gen_dummy(
-            400048,
-            "shield_roof_access_blockade_1",
-            Vector3(-1205, -3532, 1175),
-            Rotation(87, -0, -0),
-            optsShield_roofblockade_1
-        ),
-		restoration:gen_dummy(
-            400049,
-            "shield_roof_access_blockade_2",
-            Vector3(-1205, -3532, 1175),
-            Rotation(87, -0, -0),
-            optsShield_roofblockade_2
-        ),
-		restoration:gen_so(
-            400050,
-            "taser_blockade_so_1",
-            Vector3(-1306, -3507, 1175),
-            Rotation(-180, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400051,
-            "shield_blockade_so_1",
-            Vector3(-1340, -3998, 975),
-            Rotation(0, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400052,
-            "shield_blockade_so_2",
-            Vector3(-1457, -4001, 975),
-            Rotation(0, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_dummy(
-            400053,
-            "taser_roof_access_blockade_2",
-            Vector3(-6505, -3849, 1175),
-            Rotation(-90, -0, -0),
-            optsTaser_roofblockade_2
-        ),
-		restoration:gen_dummy(
-            400054,
-            "shield_roof_access_blockade_3",
-            Vector3(-6505, -3849, 1175),
-            Rotation(-90, -0, -0),
-            optsShield_roofblockade_3
-        ),
-		restoration:gen_dummy(
-            400055,
-            "shield_roof_access_blockade_4",
-            Vector3(-6505, -3849, 1175),
-            Rotation(-90, -0, -0),
-            optsShield_roofblockade_4
-        ),
-		restoration:gen_so(
-            400056,
-            "taser_blockade_so_2",
-            Vector3(-5886, -4567, 954.429),
-            Rotation(180, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400057,
-            "shield_blockade_so_3",
-            Vector3(-5913, -4815, 828.259),
-            Rotation(180, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400058,
-            "shield_blockade_so_4",
-            Vector3(-5828, -4812, 829.808),
-            Rotation(180, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
+		restoration:gen_dummy(400047, "taser_roof_access_blockade_1", Vector3(-1205, -3532, 1175), Rotation(87, -0, -0), optsTaser_roofblockade_1),
+		restoration:gen_dummy(400048, "shield_roof_access_blockade_1", Vector3(-1205, -3532, 1175), Rotation(87, -0, -0), optsShield_roofblockade_1),
+		restoration:gen_dummy(400049, "shield_roof_access_blockade_2", Vector3(-1205, -3532, 1175), Rotation(87, -0, -0), optsShield_roofblockade_2),
+		restoration:gen_so(400050, "taser_blockade_so_1", Vector3(-1306, -3507, 1175), Rotation(-180, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400051, "shield_blockade_so_1", Vector3(-1340, -3998, 975), Rotation(0, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400052, "shield_blockade_so_2", Vector3(-1457, -4001, 975), Rotation(0, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_dummy(400053,"taser_roof_access_blockade_2", Vector3(-6505, -3849, 1175), Rotation(-90, -0, -0), optsTaser_roofblockade_2),
+		restoration:gen_dummy(400054,"shield_roof_access_blockade_3", Vector3(-6505, -3849, 1175), Rotation(-90, -0, -0), optsShield_roofblockade_3),
+		restoration:gen_dummy(400055, "shield_roof_access_blockade_4", Vector3(-6505, -3849, 1175), Rotation(-90, -0, -0), optsShield_roofblockade_4),
+		restoration:gen_so(400056, "taser_blockade_so_2", Vector3(-5886, -4567, 954.429), Rotation(180, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400057, "shield_blockade_so_3", Vector3(-5913, -4815, 828.259), Rotation(180, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so( 400058, "shield_blockade_so_4", Vector3(-5828, -4812, 829.808), Rotation(180, 0, -0), optsDefend_and_Sniper_SO),
 		--Escape Sniper
-		restoration:gen_dummy(
-            400059,
-            "sniper_escape",
-            Vector3(-6505, -3991, 1175),
-            Rotation(-90, 0, -0),
-            optsSniper_escape
-        ),
-		restoration:gen_so(
-            400060,
-            "sniper_escape_so",
-            Vector3(-5656, -2866, 1384.381),
-            Rotation(-90, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
+		restoration:gen_dummy(400059, "sniper_escape", Vector3(-6505, -3991, 1175), Rotation(-90, 0, -0), optsSniper_escape),
+		restoration:gen_so(400060, "sniper_escape_so", Vector3(-5656, -2866, 1384.381), Rotation(-90, 0, -0), optsDefend_and_Sniper_SO),
 		--Elevator spawns
-		restoration:gen_dummy(
-            400061,
-            "dozer_elevator_1",
-            Vector3(-2350, -3627, 375),
-            Rotation(90, -0, -0),
-            optsBulldozer
-        ),
-		restoration:gen_dummy(
-            400062,
-            "taser_elevator_1",
-            Vector3(-2400, -3577, 375),
-            Rotation(90, -0, -0),
-            optsTaser
-        ),
-		restoration:gen_dummy(
-            400063,
-            "taser_elevator_2",
-            Vector3(-2400, -3677, 375),
-            Rotation(90, -0, -0),
-            optsTaser
-        ),
+		restoration:gen_dummy(400061, "dozer_elevator_1", Vector3(-2350, -3627, 375), Rotation(90, -0, -0), optsBulldozer),
+		restoration:gen_dummy(400062, "taser_elevator_1", Vector3(-2400, -3577, 375), Rotation(90, -0, -0), optsTaser),
+		restoration:gen_dummy(400063, "taser_elevator_2", Vector3(-2400, -3677, 375), Rotation(90, -0, -0), optsTaser),
 		--Respawns
-		restoration:gen_dummytrigger(
-            400064,
-            "respawn_taser_1",
-            Vector3(-2400, -3677, 375),
-            Rotation(90, -0, -0),
-            optsrespawn_taser_1
-        ),
-		restoration:gen_dummytrigger(
-            400065,
-            "respawn_taser_2",
-            Vector3(-2400, -3577, 375),
-            Rotation(90, -0, -0),
-            optsrespawn_taser_2
-        ),
-        restoration:gen_dummytrigger(
-            400082,
-            "respawn_shield_1",
-            Vector3(-2400, -3677, 375),
-            Rotation(90, -0, -0),
-            optsrespawn_shield_1
-        ),
-		restoration:gen_dummytrigger(
-            400083,
-            "respawn_shield_2",
-            Vector3(-2400, -3577, 375),
-            Rotation(90, -0, -0),
-            optsrespawn_shield_2
-        ),
-        restoration:gen_dummytrigger(
-            400084,
-            "respawn_shield_3",
-            Vector3(-2400, -3677, 375),
-            Rotation(90, -0, -0),
-            optsrespawn_shield_3
-        ),
-		restoration:gen_dummytrigger(
-            400085,
-            "respawn_shield_4",
-            Vector3(-2400, -3577, 375),
-            Rotation(90, -0, -0),
-            optsrespawn_shield_4
-        ),
+		restoration:gen_dummytrigger(400064, "respawn_taser_1", Vector3(-2400, -3677, 375), Rotation(90, -0, -0), optsrespawn_taser_1),
+		restoration:gen_dummytrigger(400065, "respawn_taser_2", Vector3(-2400, -3577, 375), Rotation(90, -0, -0), optsrespawn_taser_2),
+        restoration:gen_dummytrigger(400082, "respawn_shield_1", Vector3(-2400, -3677, 375), Rotation(90, -0, -0), optsrespawn_shield_1),
+		restoration:gen_dummytrigger(400083, "respawn_shield_2", Vector3(-2400, -3577, 375), Rotation(90, -0, -0), optsrespawn_shield_2),
+        restoration:gen_dummytrigger(400084, "respawn_shield_3", Vector3(-2400, -3677, 375), Rotation(90, -0, -0), optsrespawn_shield_3),
+		restoration:gen_dummytrigger(400085, "respawn_shield_4", Vector3(-2400, -3577, 375), Rotation(90, -0, -0), optsrespawn_shield_4),
 		--Helipad blockade
-		restoration:gen_dummy(
-            400066,
-            "dozer_helipad_1",
-            Vector3(-6327, -1493, 1175),
-            Rotation(0, 0, -0),
-            optsBulldozer_helipad
-        ),
-		restoration:gen_dummy(
-            400067,
-            "shield_helipad_1",
-            Vector3(-6333, -1457, 1175),
-            Rotation(0, 0, -0),
-            optsShield_helipad_1
-        ),
-		restoration:gen_dummy(
-            400068,
-            "shield_helipad_2",
-            Vector3(-6333, -1521, 1175),
-            Rotation(0, 0, -0),
-            optsShield_helipad_2
-        ),
-		restoration:gen_so(
-            400069,
-            "dozer_helipad_so",
-            Vector3(-5122, -1505, 1174.972),
-            Rotation(-90, 0, -0),
-            optsDefendDozer_SO
-        ),
-		restoration:gen_so(
-            400070,
-            "shield_helipad_so_1",
-            Vector3(-6095, -1565, 1382.926),
-            Rotation(-90, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400071,
-            "shield_helipad_so_2",
-            Vector3(-6095, -1484, 1380.926),
-            Rotation(-90, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_dummy(
-            400072,
-            "sniper_atrium_1",
-            Vector3(-4164, -3636, 376.151),
-            Rotation(-90, 0, -0),
-            optsSniper_1
-        ),
-        restoration:gen_dummy(
-            400073,
-            "sniper_atrium_2",
-            Vector3(-4164, -3636, 376.151),
-            Rotation(-90, 0, -0),
-            optsSniper_2
-        ),
-		restoration:gen_so(
-            400074,
-            "sniper_atrium_so_1",
-            Vector3(-3478, -2413, 379.754),
-            Rotation(0, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_so(
-            400075,
-            "sniper_atrium_so_2",
-            Vector3(-2964, -2366, 379.754),
-            Rotation(0, 0, -0),
-            optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_toggleelement(
-            400076,
-            "enable_snipers",
-            enable_snipers
-        ),
-		restoration:gen_toggleelement(
-            400077,
-            "disable_snipers",
-            disable_snipers
-        ),
-		restoration:gen_so(
-            400078,
-            "cloaker_hunt_so",
-            Vector3(-100, -1903, 1175),
-            Rotation(90, -0, -0),
-            optsCloaker_SO
-        ),
-		restoration:gen_smokeandnades(
-            400079,
-            "smoke_grenade_1",
-            Vector3(-2358, -4657, 21.226),
-            Rotation(0, 0, -0),
-            Smoke_bomb
-        ),
-		restoration:gen_smokeandnades(
-            400080,
-            "smoke_grenade_2",
-            Vector3(-3291, -4657, 21.226),
-            Rotation(0, 0, -0),
-            Smoke_bomb
-        ),
-		restoration:gen_smokeandnades(
-            400081,
-            "smoke_grenade_3",
-            Vector3(-4283, -4657, 21.226),
-            Rotation(0, 0, -0),
-            Smoke_bomb
-        )
-    }
+		restoration:gen_dummy(400066, "dozer_helipad_1", Vector3(-6327, -1493, 1175), Rotation(0, 0, -0), optsBulldozer_helipad),
+		restoration:gen_dummy(400067, "shield_helipad_1", Vector3(-6333, -1457, 1175), Rotation(0, 0, -0), optsShield_helipad_1),
+		restoration:gen_dummy(400068, "shield_helipad_2", Vector3(-6333, -1521, 1175), Rotation(0, 0, -0), optsShield_helipad_2),
+		restoration:gen_so(400069, "dozer_helipad_so", Vector3(-5122, -1505, 1174.972), Rotation(-90, 0, -0), optsDefendDozer_SO),
+		restoration:gen_so(400070, "shield_helipad_so_1", Vector3(-6095, -1565, 1382.926), Rotation(-90, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400071, "shield_helipad_so_2", Vector3(-6095, -1484, 1380.926), Rotation(-90, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_dummy(400072, "sniper_atrium_1", Vector3(-4164, -3636, 376.151), Rotation(-90, 0, -0), optsSniper_1),
+        restoration:gen_dummy(400073, "sniper_atrium_2", Vector3(-4164, -3636, 376.151), Rotation(-90, 0, -0), optsSniper_2),
+		restoration:gen_so(400074, "sniper_atrium_so_1", Vector3(-3478, -2413, 379.754), Rotation(0, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400075, "sniper_atrium_so_2", Vector3(-2964, -2366, 379.754), Rotation(0, 0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_toggleelement(400076, "enable_snipers", enable_snipers),
+		restoration:gen_toggleelement(400077, "disable_snipers", disable_snipers),
+		restoration:gen_so(400078, "cloaker_hunt_so", Vector3(-100, -1903, 1175), Rotation(90, -0, -0), optsCloaker_SO),
+		restoration:gen_smokeandnades(400079, "smoke_grenade_1", Vector3(-2358, -4657, 21.226), Rotation(0, 0, -0), Smoke_bomb),
+		restoration:gen_smokeandnades(400080, "smoke_grenade_2", Vector3(-3291, -4657, 21.226), Rotation(0, 0, -0), Smoke_bomb),
+		restoration:gen_smokeandnades(400081, "smoke_grenade_3", Vector3(-4283, -4657, 21.226), Rotation(0, 0, -0), Smoke_bomb),
+    },
 }

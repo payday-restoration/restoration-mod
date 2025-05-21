@@ -61,291 +61,49 @@ local nightmare_spawngroups = {
 
 return {
     elements = {
-		restoration:gen_missionscript(
-            400001,
-            "hit_it",
-            begin_the_nightmare
-        ),
+		restoration:gen_missionscript(400001, "hit_it", begin_the_nightmare),
 		--Spawngroups
-		restoration:gen_dummy(
-            400002,
-            "enemy_dummy_1",
-            Vector3(-285, 4518, -398.480),
-            Rotation(-180, 0, -0),
-            optsBesiegeDummy_1
-        ),
-		restoration:gen_dummy(
-            400003,
-            "enemy_dummy_2",
-            Vector3(-235, 4518, -398.480),
-            Rotation(-180, 0, -0),
-            optsBesiegeDummy_1
-        ),
-		restoration:gen_dummy(
-            400004,
-            "enemy_dummy_3",
-            Vector3(-184, 4518, -398.480),
-            Rotation(-180, 0, -0),
-            optsBesiegeDummy_1
-        ),
-		restoration:gen_dummy(
-            400005,
-            "enemy_dummy_4",
-            Vector3(-128, 4518, -398.480),
-            Rotation(-180, 0, -0),
-            optsBesiegeDummy_1
-        ),
-		restoration:gen_dummy(
-            400006,
-            "enemy_dummy_5",
-            Vector3(-73, 4518, -398.480),
-            Rotation(-180, 0, -0),
-            optsBesiegeDummy_1
-        ),
-		restoration:gen_dummy(
-            400007,
-            "enemy_dummy_6",
-            Vector3(-1655, 3283, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400008,
-            "enemy_dummy_7",
-            Vector3(-1710, 3283, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400009,
-            "enemy_dummy_8",
-            Vector3(-1773, 3283, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400010,
-            "enemy_dummy_9",
-            Vector3(-1827, 3283, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400011,
-            "enemy_dummy_10",
-            Vector3(-1884, 3283, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400012,
-            "enemy_dummy_11",
-            Vector3(68, 3283, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400013,
-            "enemy_dummy_12",
-            Vector3(18, 3283, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400014,
-            "enemy_dummy_13",
-            Vector3(-33, 3283, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400015,
-            "enemy_dummy_14",
-            Vector3(-84, 3283, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400016,
-            "enemy_dummy_15",
-            Vector3(-133, 3283, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400017,
-            "enemy_dummy_16",
-            Vector3(247, 4032, -398.479),
-            Rotation(90, -0, -0),
-            optsBesiegeDummy_3
-        ),
-		restoration:gen_dummy(
-            400018,
-            "enemy_dummy_17",
-            Vector3(247, 3981, -398.479),
-            Rotation(90, -0, -0),
-            optsBesiegeDummy_3
-        ),
-		restoration:gen_dummy(
-            400019,
-            "enemy_dummy_18",
-            Vector3(247, 3928, -398.479),
-            Rotation(90, -0, -0),
-            optsBesiegeDummy_3
-        ),
-		restoration:gen_dummy(
-            400020,
-            "enemy_dummy_19",
-            Vector3(247, 3871, -398.479),
-            Rotation(90, -0, -0),
-            optsBesiegeDummy_3
-        ),
-		restoration:gen_dummy(
-            400021,
-            "enemy_dummy_20",
-            Vector3(247, 3811, -398.479),
-            Rotation(90, -0, -0),
-            optsBesiegeDummy_3
-        ),
-		restoration:gen_dummy(
-            400022,
-            "enemy_dummy_21",
-            Vector3(-567, 2756, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400023,
-            "enemy_dummy_22",
-            Vector3(-620, 2756, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400024,
-            "enemy_dummy_23",
-            Vector3(-674, 2756, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400025,
-            "enemy_dummy_24",
-            Vector3(-734, 2756, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400026,
-            "enemy_dummy_25",
-            Vector3(-800, 2756, -398.479),
-            Rotation(0, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400027,
-            "enemy_dummy_26",
-            Vector3(-2184, 4791, -398.479),
-            Rotation(-180, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400028,
-            "enemy_dummy_27",
-            Vector3(-2259, 4791, -398.479),
-            Rotation(-180, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400029,
-            "enemy_dummy_28",
-            Vector3(-2330, 4791, -398.479),
-            Rotation(-180, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400030,
-            "enemy_dummy_29",
-            Vector3(-2401, 4791, -398.479),
-            Rotation(-180, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_dummy(
-            400031,
-            "enemy_dummy_30",
-            Vector3(-2467, 4791, -398.479),
-            Rotation(-180, 0, -0),
-            optsBesiegeDummy_2
-        ),
-		restoration:gen_spawngroup(
-			400032,
-			"nightmare_besiege_01",
-			{400002, 400003, 400004, 400005, 400006},
-			5
-		),
-		restoration:gen_spawngroup(
-			400033,
-			"nightmare_besiege_02",
-			{400007, 400008, 400009, 4000010, 400011},
-			5
-		),
-		restoration:gen_spawngroup(
-			400034,
-			"nightmare_besiege_03",
-			{400012, 400013, 400014, 400015, 400016},
-			5
-		),
-		restoration:gen_spawngroup(
-			400035,
-			"nightmare_besiege_04",
-			{400017, 400018, 400019, 400020, 400021},
-			5
-		),
-		restoration:gen_spawngroup(
-			400036,
-			"nightmare_besiege_05",
-			{400022, 400023, 400024, 400025, 400026},
-			5
-		),
-		restoration:gen_spawngroup(
-			400037,
-			"nightmare_besiege_06",
-			{400027, 400028, 400029, 400030, 400031},
-			30
-		),
-		restoration:gen_preferedadd(
-            400038,
-            "start_spawn_the_undead",
-            nightmare_spawngroups
-        ),
+		restoration:gen_dummy(400002, "enemy_dummy_1", Vector3(-285, 4518, -398.480), Rotation(-180, 0, -0), optsBesiegeDummy_1),
+		restoration:gen_dummy(400003, "enemy_dummy_2", Vector3(-235, 4518, -398.480), Rotation(-180, 0, -0), optsBesiegeDummy_1),
+		restoration:gen_dummy(400004, "enemy_dummy_3", Vector3(-184, 4518, -398.480), Rotation(-180, 0, -0), optsBesiegeDummy_1),
+		restoration:gen_dummy(400005, "enemy_dummy_4", Vector3(-128, 4518, -398.480), Rotation(-180, 0, -0), optsBesiegeDummy_1),
+		restoration:gen_dummy(400006, "enemy_dummy_5", Vector3(-73, 4518, -398.480), Rotation(-180, 0, -0), optsBesiegeDummy_1),
+		restoration:gen_dummy(400007, "enemy_dummy_6", Vector3(-1655, 3283, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400008, "enemy_dummy_7", Vector3(-1710, 3283, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy( 400009, "enemy_dummy_8", Vector3(-1773, 3283, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400010, "enemy_dummy_9", Vector3(-1827, 3283, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400011, "enemy_dummy_10", Vector3(-1884, 3283, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400012, "enemy_dummy_11", Vector3(68, 3283, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400013, "enemy_dummy_12", Vector3(18, 3283, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400014, "enemy_dummy_13", Vector3(-33, 3283, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400015, "enemy_dummy_14", Vector3(-84, 3283, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400016, "enemy_dummy_15", Vector3(-133, 3283, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400017, "enemy_dummy_16", Vector3(247, 4032, -398.479), Rotation(90, -0, -0), optsBesiegeDummy_3),
+		restoration:gen_dummy(400018, "enemy_dummy_17", Vector3(247, 3981, -398.479), Rotation(90, -0, -0), optsBesiegeDummy_3),
+		restoration:gen_dummy(400019, "enemy_dummy_18", Vector3(247, 3928, -398.479), Rotation(90, -0, -0), optsBesiegeDummy_3),
+		restoration:gen_dummy(400020, "enemy_dummy_19", Vector3(247, 3871, -398.479),  Rotation(90, -0, -0), optsBesiegeDummy_3),
+		restoration:gen_dummy(400021, "enemy_dummy_20", Vector3(247, 3811, -398.479), Rotation(90, -0, -0), optsBesiegeDummy_3),
+		restoration:gen_dummy(400022, "enemy_dummy_21", Vector3(-567, 2756, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400023, "enemy_dummy_22", Vector3(-620, 2756, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400024, "enemy_dummy_23", Vector3(-674, 2756, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400025, "enemy_dummy_24", Vector3(-734, 2756, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400026, "enemy_dummy_25", Vector3(-800, 2756, -398.479), Rotation(0, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400027, "enemy_dummy_26", Vector3(-2184, 4791, -398.479), Rotation(-180, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400028, "enemy_dummy_27", Vector3(-2259, 4791, -398.479), Rotation(-180, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400029, "enemy_dummy_28", Vector3(-2330, 4791, -398.479), Rotation(-180, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400030, "enemy_dummy_29", Vector3(-2401, 4791, -398.479), Rotation(-180, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_dummy(400031, "enemy_dummy_30", Vector3(-2467, 4791, -398.479), Rotation(-180, 0, -0), optsBesiegeDummy_2),
+		restoration:gen_spawngroup(400032, "nightmare_besiege_01", {400002, 400003, 400004, 400005, 400006}, 5),
+		restoration:gen_spawngroup(400033, "nightmare_besiege_02", {400007, 400008, 400009, 4000010, 400011}, 5),
+		restoration:gen_spawngroup(400034, "nightmare_besiege_03", {400012, 400013, 400014, 400015, 400016},  5),
+		restoration:gen_spawngroup(400035, "nightmare_besiege_04", {400017, 400018, 400019, 400020, 400021}, 5),
+		restoration:gen_spawngroup(400036, "nightmare_besiege_05", {400022, 400023, 400024, 400025, 400026}, 5),
+		restoration:gen_spawngroup(400037, "nightmare_besiege_06", {400027, 400028, 400029, 400030, 400031}, 30),
+		restoration:gen_preferedadd(400038, "start_spawn_the_undead", nightmare_spawngroups),
 		--Cloakers
-		restoration:gen_dummy(
-            400039,
-            "cloaker_1",
-            Vector3(-3148, 3007, 11.173),
-            Rotation(180, 0, -0),
-            optsCloaker_1
-        ),
-		restoration:gen_dummy(
-            400040,
-            "cloaker_2",
-            Vector3(-2532, 2288, 0),
-            Rotation(90, 0, -0),
-            optsCloaker_2
-        ),
-		restoration:gen_so(
-            400041,
-            "cloaker_hide_so_1",
-            Vector3(-2926, 2824, 0),
-            Rotation(-180, 0, -0),
-            optsCloaker_Hide_SO
-        ),
-		restoration:gen_so(
-            400042,
-            "cloaker_hide_so_2",
-            Vector3(-2861, 2358, 0),
-            Rotation(90, -0, -0),
-            optsCloaker_Hide_SO
-        )
-    }
+		restoration:gen_dummy(400039, "cloaker_1", Vector3(-3148, 3007, 11.173),Rotation(180, 0, -0), optsCloaker_1),
+		restoration:gen_dummy(400040, "cloaker_2", Vector3(-2532, 2288, 0),  Rotation(90, 0, -0), optsCloaker_2),
+		restoration:gen_so(400041,  "cloaker_hide_so_1", Vector3(-2926, 2824, 0), Rotation(-180, 0, -0), optsCloaker_Hide_SO),
+		restoration:gen_so(400042, "cloaker_hide_so_2", Vector3(-2861, 2358, 0), Rotation(90, -0, -0), optsCloaker_Hide_SO),
+    },
 }

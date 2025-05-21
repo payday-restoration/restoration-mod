@@ -49,16 +49,6 @@ local murky_dozer_skull = {
 		enemy = murky_skulldozer,
 	},
 }
-local elite_murky_1 = {
-	values = {
-		enemy = murkyman_1,
-	},
-}
-local elite_murky_2 = {
-	values = {
-		enemy = murkyman_2,
-	},
-}
 
 return {
 	-- Pro Job PONR
@@ -207,15 +197,6 @@ return {
 			enemy = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
 		},
 	},
-	-- Murky Elite Soldiers replace heli rappeling Murkies on PJ Mayhem and above
-	[103083] = elite_murky_1,
-	[103084] = elite_murky_1,
-	[103085] = elite_murky_2,
-	[103086] = elite_murky_2,
-	[103098] = elite_murky_1,
-	[103100] = elite_murky_1,
-	[103101] = elite_murky_2,
-	[103102] = elite_murky_2,
 	-- Disables the Swat Turret, it's not really needed here, eh?
 	[102484] = {
 		values = {

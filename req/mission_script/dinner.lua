@@ -186,7 +186,7 @@ return {
 	[101241] = murky_dozer_green,
 	[101242] = murky_dozer_black,
 	[101243] = murky_dozer_skull,
-	-- Murky Grunts
+	-- genseggs security guards
 	[101375] = {
 		values = {
 			enemy = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",

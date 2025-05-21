@@ -29,9 +29,6 @@ local murky_amount = (difficulty >= 6 and 5)
 local murky_greendozer = low_murkydozers
 local murky_blackdozer = medium_murkydozers
 local murky_skulldozer = (difficulty == 8 and ds_murkydozers) or hard_murkydozers
-local murkyman_1 = ((pro_job and difficulty >= 6) and "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")
-local murkyman_2 = ((pro_job and difficulty >= 6) and "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun")
-
 local disabled = {
 	values = {
 		enabled = false,
@@ -199,15 +196,15 @@ return {
 	[101241] = murky_dozer_green,
 	[101242] = murky_dozer_black,
 	[101243] = murky_dozer_skull,
-	-- Security guards
+	-- Murky Grunts
 	[101375] = {
 		values = {
-			enemy = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
+			enemy = "units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 		},
 	},
 	[101376] = {
 		values = {
-			enemy = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2",
+			enemy = "units/payday2/characters/ene_murkywater_1/ene_murkywater_2",
 		},
 	},
 	-- Murky Elite Soldiers replace heli rappeling Murkies on PJ Mayhem and above

@@ -8,13 +8,13 @@ return {
 	--Pro Job PONR
 	--Hunt (Endless Assault)
 	--Spawn Murkies after 90 seconds on mayhem above and 120 seconds on lower
-	[101121] = {
+	--[[[101121] = {
 	on_executed = {
 			{id = 400001, delay = murky_response_timer }
 	},
 		ponr = ponr_value,
 		hunt = true
-	},
+	},--]]
 	--De-Julesfiy this mission script (they really made spawn enemies early if cut the tarp)
 	[101288] = {
 		values = {

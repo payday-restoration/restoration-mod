@@ -4,7 +4,7 @@ local murky_responder_2 = "units/payday2/characters/ene_murkywater_2/ene_murkywa
 local murky_table = {murky_responder_1, murky_responder_2}
 
 local optsMurkywater = {
-    enemy_table = murkies_table,
+    enemy_table = murky_table,
 	participate_to_group_ai = true,
     enabled = true
 }

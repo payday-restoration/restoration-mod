@@ -1,1 +1,1 @@
-return restoration:require("mission_script/brb")
+return restoration:require("mission_script_add/brb")

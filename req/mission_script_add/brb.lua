@@ -5,7 +5,7 @@ local murkies_responders = {
 }
 
 local optsMurkywater = {
-    enemy_table = murky_table,
+    enemy_table = murky_responders,
 	participate_to_group_ai = true,
     enabled = true
 }

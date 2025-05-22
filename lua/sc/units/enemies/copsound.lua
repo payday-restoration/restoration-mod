@@ -509,20 +509,23 @@ function CopSound:init(unit)
 	else
 		self._prefix = (char_tweak.speech_prefix_p1 or "") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. (char_tweak.speech_prefix_p2 or "") .. "_"
 	end
-					
- 	if not restoration.Voicelines:say(self._unit, "spawn") then
-		self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event, nil, nil)
-	end
 	
-	--Mostly just here in the event we have a unit to have both an 'entrance' line *and* a global spawn in noise
-	if self._unit:base():char_tweak().spawn_sound_event_2 then
-		self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event_2, nil, nil)
-	end	
+	local spawn_sounds = restoration.Options:GetValue("OTHER/EnemySpawnSounds")			
+	if spawn_sounds then
+		if not restoration.Voicelines:say(self._unit, "spawn") then
+			self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event, nil, nil)
+		end
+		
+		--Mostly just here in the event we have a unit to have both an 'entrance' line *and* a global spawn in noise
+		if self._unit:base():char_tweak().spawn_sound_event_2 then
+			self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event_2, nil, nil)
+		end	
 
-	--Use this only if an enemy has custom voice and is already using 2nd spawn sound
-	if self._unit:base():char_tweak().spawn_sound_event_3 then
-		self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event_3, nil, nil)
-	end	
+		--Use this only if an enemy has custom voice and is already using 2nd spawn sound
+		if self._unit:base():char_tweak().spawn_sound_event_3 then
+			self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event_3, nil, nil)
+		end	
+	end
 
 	unit:base():post_init()
 end

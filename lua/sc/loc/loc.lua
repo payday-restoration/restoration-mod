@@ -372,6 +372,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModDisableMutatorColorsDescID"] = "Disable the color change to the Assault Banner when using mutators (Vanilla HUD only).",
 		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
 		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",		
+		["RestorationModEnemySpawnSoundsTitleID"] = "Enemy Spawn Sounds",
+		["RestorationModEnemySpawnSoundsDescID"] = "Enable the playback of spawn-in sounds of enemies. Enabled by default.",		
 		["RestorationModRestoreHitFlashTitleID"] = "Restore Hit Flash",
 		["RestorationModRestoreHitFlashDescID"] = "Enable or disable the restored hit flash when taking damage.",
 		["RestorationModBotsNoDropTitleID"] = "Disable Bot Loot Bag Dropping",

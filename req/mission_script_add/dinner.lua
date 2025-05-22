@@ -187,7 +187,7 @@ local optsSniper_3 = {
 	enabled = (overkill_above and enabled_chance_snipers),
 }
 local optsMurky = {
-	enemy_table = murkies,
+	enemy_table = murkies_responders,
 	participate_to_group_ai = true,
 	enabled = true,
 }

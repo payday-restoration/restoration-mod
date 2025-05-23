@@ -10,9 +10,6 @@
 	<material_config	path="units/vehicles/animated_cars/police_ny_noinstance" force="true" />
 	<material_config	path="units/vehicles/animated_cars/police_ny_suburbia" force="true" />
 	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm" />
-	
 	<!--Texas Cops-->
 	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" load="true" force="false" />
 	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1_husk" load="true" force="false" />	
@@ -62,7 +59,20 @@
 	
 	<!--NYPD cop 4-->
 	<unit				path="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4" load="true"/>
-	<unit				path="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4_husk" load="true"/>	
+	<unit				path="units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4_husk" load="true"/>
+		
+	<!--nypd textures-->	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_nm" />				
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_gear_body_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_gear_body_nm" />				
+		
 	
 	<!--Diamond Heist Guards-->
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1" load="true"/>
@@ -463,9 +473,6 @@
 	<model				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1" force="false"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1" force="false" load="true"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1_husk" force="false" load="true"/>
-	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />
 	
 	<!--Titan HRT-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>

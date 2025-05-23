@@ -172,9 +172,8 @@
 			
 			<effect filter="'check_fbi_swat_ar'" damp_time="4" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>			
 			<effect filter="'check_fbi_swat_ar'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
-			
-			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
-			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
+				
+			<sound action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>		
 		</sequence>				
 
 		<sequence editable_state="true" name="'destroy_facemask'" once="true" triggable="true">			

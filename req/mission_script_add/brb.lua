@@ -34,9 +34,6 @@ local choose_murky_spawnpoint = {
 }
 local murky_spawnpoint_1 = {
 	enabled = true,
-	base_delay = 1,
-	amount = 1,
-	amount_random = 2,
 	on_executed = { 
 		{ id = 400009, delay = 0 },
 		{ id = 400010, delay = 0 },
@@ -47,9 +44,6 @@ local murky_spawnpoint_1 = {
 }
 local murky_spawnpoint_2 = {
 	enabled = true,
-	base_delay = 1,
-	amount = 1,
-	amount_random = 2,
 	on_executed = { 
 		{ id = 400014, delay = 0 },
 		{ id = 400015, delay = 0 },
@@ -58,9 +52,6 @@ local murky_spawnpoint_2 = {
 }
 local murky_spawnpoint_3 = {
 	enabled = true,
-	base_delay = 1,
-	amount = 1,
-	amount_random = 2,
 	on_executed = { 
 		{ id = 400017, delay = 0 },
 		{ id = 400018, delay = 0 },
@@ -68,9 +59,6 @@ local murky_spawnpoint_3 = {
 }
 local murky_spawnpoint_4 = {
 	enabled = true,
-	base_delay = 1,
-	amount = 1,
-	amount_random = 2,
 	on_executed = { 
 		{ id = 400019, delay = 0 },
 		{ id = 400020, delay = 0 },
@@ -79,9 +67,6 @@ local murky_spawnpoint_4 = {
 }
 local murky_spawnpoint_5 = {
 	enabled = true,
-	base_delay = 1,
-	amount = 1,
-	amount_random = 2,
 	on_executed = { 
 		{ id = 400022, delay = 0 },
 		{ id = 400023, delay = 0 },

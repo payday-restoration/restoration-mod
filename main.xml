@@ -634,6 +634,8 @@
 				<option type="bool" default_value="false" name="GOTTAGETAGRIP"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
 				<divider name="tod_divider" size="14"/>
+				<option type="bool" default_value="true" name="GCGPYPMMSACCrew"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="multichoice" default_value="1" name="WepNames" values_tbl="restoration.wepnames"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSACText"/>
 				<option_group name="ForceEggs">

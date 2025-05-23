@@ -295,7 +295,7 @@ function BlackMarketManager:get_real_mask_id(mask_id, peer_id, char)
 		return table.random(yippiekiyay)
 	end
 
-	local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSACText")
+	local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSACCrew")
 	if not easterless then
 		local i_just_drank_my_toilet_water = not peer_id and math.rand(1) or 10
 		if char and char == "wild" and i_just_drank_my_toilet_water <= 0.01 then

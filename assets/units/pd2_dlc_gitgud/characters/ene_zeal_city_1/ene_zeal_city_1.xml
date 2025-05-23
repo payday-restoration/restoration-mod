@@ -201,7 +201,7 @@
 			<effect filter="'check_city_shield'" damp_time="4" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>			
 			<effect filter="'check_city_shield'" damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
 			
-			<sound action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>					
+			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>					
 		</sequence>
 
 		<sequence editable_state="true" name="'hat_a'" once="true" triggable="true">

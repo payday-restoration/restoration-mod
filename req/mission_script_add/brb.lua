@@ -25,15 +25,18 @@ local choose_murky_spawnpoint = {
 	amount = 2,
 	amount_random = 3,
 	on_executed = {
-		{ id = 400004, delay = 0 },
-		{ id = 400005, delay = 0 },
-		{ id = 400006, delay = 0 },
-		{ id = 400007, delay = 0 },
-		{ id = 400008, delay = 0 }
+		{ id = 400004, delay = 1 },
+		{ id = 400005, delay = 1 },
+		{ id = 400006, delay = 1 },
+		{ id = 400007, delay = 1 },
+		{ id = 400008, delay = 1 }
 	},
 }
 local murky_spawnpoint_1 = {
 	enabled = true,
+	base_delay = 1,
+	amount = 1,
+	amount_random = 2,
 	on_executed = { 
 		{ id = 400009, delay = 0 },
 		{ id = 400010, delay = 0 },
@@ -44,6 +47,9 @@ local murky_spawnpoint_1 = {
 }
 local murky_spawnpoint_2 = {
 	enabled = true,
+	base_delay = 1,
+	amount = 1,
+	amount_random = 2,
 	on_executed = { 
 		{ id = 400014, delay = 0 },
 		{ id = 400015, delay = 0 },
@@ -52,6 +58,9 @@ local murky_spawnpoint_2 = {
 }
 local murky_spawnpoint_3 = {
 	enabled = true,
+	base_delay = 1,
+	amount = 1,
+	amount_random = 2,
 	on_executed = { 
 		{ id = 400017, delay = 0 },
 		{ id = 400018, delay = 0 },
@@ -59,6 +68,9 @@ local murky_spawnpoint_3 = {
 }
 local murky_spawnpoint_4 = {
 	enabled = true,
+	base_delay = 1,
+	amount = 1,
+	amount_random = 2,
 	on_executed = { 
 		{ id = 400019, delay = 0 },
 		{ id = 400020, delay = 0 },
@@ -67,6 +79,9 @@ local murky_spawnpoint_4 = {
 }
 local murky_spawnpoint_5 = {
 	enabled = true,
+	base_delay = 1,
+	amount = 1,
+	amount_random = 2,
 	on_executed = { 
 		{ id = 400022, delay = 0 },
 		{ id = 400023, delay = 0 },
@@ -79,11 +94,11 @@ return {
         restoration:gen_missionscript(400001, "spawn_murkies", global_murky_spawn_mission_script),
 		restoration:gen_missionscript(400002, "loop", loop),
 		restoration:gen_element_random(400003, "murkywater_spawnpoint_select", choose_murky_spawnpoint),
-		restoration:gen_element_random(400004, "spawnpoint_1", murky_spawnpoint_1),
-		restoration:gen_element_random(400005, "spawnpoint_2", murky_spawnpoint_2),
-		restoration:gen_element_random(400006, "spawnpoint_3", murky_spawnpoint_3),
-		restoration:gen_element_random(400007, "spawnpoint_4", murky_spawnpoint_4),
-		restoration:gen_element_random(400008, "spawnpoint_5", murky_spawnpoint_5),
+		restoration:gen_missionscript(400004, "spawnpoint_1", murky_spawnpoint_1),
+		restoration:gen_missionscript(400005, "spawnpoint_2", murky_spawnpoint_2),
+		restoration:gen_missionscript(400006, "spawnpoint_3", murky_spawnpoint_3),
+		restoration:gen_missionscript(400007, "spawnpoint_4", murky_spawnpoint_4),
+		restoration:gen_missionscript(400008, "spawnpoint_5", murky_spawnpoint_5),
 		--Murky Grunts
         restoration:gen_dummy(400009, "murkywater_1", Vector3(789, 785, 676.187), Rotation(-180, 0, -0), optsMurkywater),
         restoration:gen_dummy(400010, "murkywater_2", Vector3(874, 785, 676.187), Rotation(-180, 0, -0), optsMurkywater),

@@ -201,6 +201,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["resmod_no_nicknames"] = "Resmod Names (No Nicknames)",
 				["dmcwo_reelnames"] = "Real Weapon Names (DMCWO Port - WIP)",
 				["resmod_no_renames"] = "Vanilla Names (or use your own rename mods)",
+			["RestorationModGCGPYPMMSACCrewTitleID"] = "Super Cereal Crew AI Masks",
+			["RestorationModGCGPYPMMSACCrewDescID"] = "Disables mask based easter eggs on Crew AI from being rolled. Requires restart if changed mid-heist.",
 			["RestorationModGCGPYPMMSACTextTitleID"] = "Super Cereal Text",
 			["RestorationModGCGPYPMMSACTextDescID"] = "Disables text based easter eggs from being rolled. Requires restart.",
 			["RestorationModForceEggsOptionsButtonTitleID"] = "Force Easter Egg Text",

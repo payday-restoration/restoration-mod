@@ -1565,10 +1565,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
 				"units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
 			},
-			murky_guard = {
-				"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-				"units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
-			},
 			cop_1 = "units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
@@ -1613,10 +1609,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			gensec_security = {
 				"units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
 				"units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
-			},
-			murky_guard = {
-				"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-				"units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
 			},
 			cop_1 = "units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
@@ -1685,10 +1677,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
 				"units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
 			},
-			murky_guard = {
-				"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-				"units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
-			},
 			cop_1 = "units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
@@ -1756,10 +1744,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			gensec_security = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 				"units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"
-			},
-			murky_guard = {
-				"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-				"units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
 			},
 			cop_1 = "units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",

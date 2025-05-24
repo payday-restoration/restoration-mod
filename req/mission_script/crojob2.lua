@@ -1,6 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local murky_guard_elite_1 = (difficulty >= 7 and "units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1")
-local murky_guard_elite_2 = (difficulty >= 7 and "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2")
+local murky_guard_elite_1 = (difficulty >= 7 and "units/payday2/characters/ene_murkywater_1/ene_murkywater_1")
+local murky_guard_elite_2 = (difficulty >= 7 and "units/payday2/characters/ene_murkywater_2/ene_murkywater_2")
 local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 570) or 540
 
 	

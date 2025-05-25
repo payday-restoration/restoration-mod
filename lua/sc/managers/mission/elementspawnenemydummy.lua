@@ -927,8 +927,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
 			murky_guard = {
-				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
-				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
 				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
@@ -971,8 +971,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
 			murky_guard = {
-				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
-				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
 				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
@@ -1032,8 +1032,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
 			murky_guard = {
-				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
-				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
 				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
@@ -1801,10 +1801,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			gensec_security = {
 				"units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
 				"units/payday2/characters/ene_city_guard_2/ene_city_guard_2"
-			},
-			murky_guard = {
-				"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-				"units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
 			},
 			cop_1 = "units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",

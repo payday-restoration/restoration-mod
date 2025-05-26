@@ -311,6 +311,8 @@
 			<object enabled="false" name="'g_helmet_lod11'"/>
 			<object enabled="false" name="'g_helmet_lod15'"/>			
 			<object enabled="false" name="'g_helmet_lod16'"/>
+			<object enabled="false" name="'g_glass_l'" />
+            <object enabled="false" name="'g_glass_r'" />
 			
 			<decal_mesh enabled="false" name="'c_glass_shield'" />					
 			<decal_mesh enabled="false" name="'c_visor'" />				
@@ -322,10 +324,8 @@
 			
 			<effect filter="'check_blue_heavy_sg'" damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
 			<effect filter="'check_blue_heavy_sg'" damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
-			<sound 	filter="'check_blue_heavy_ar'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>			
-			<sound  filter="'check_blue_heavy_ar'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>			
+			<sound 	filter="'check_blue_heavy_ar'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>				
 			<sound 	filter="'check_blue_heavy_sg'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>			
-			<sound  filter="'check_blue_heavy_sg'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>			
 			<sound 	filter="'check_blue_heavy_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
 			<sound  filter="'check_blue_heavy_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
 		</sequence>				

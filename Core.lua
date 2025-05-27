@@ -858,7 +858,7 @@ function restoration:mission_script_patches()
 	if self._mission_script_patches == nil then
 		local level_id = Global.game_settings and Global.game_settings.level_id
 		if level_id then
-			self._mission_script_patches = self:require("mission_script/" .. level_id:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub("_night$", ""):gsub("_day$", "")) or false
+			self._mission_script_patches = self:require("mission_script/" .. level_id:gsub("_skip1$", ""):gsub("_skip2$", ""):gsub("_night$", ""):gsub("_day$", "")) or false
 		end
 	end
 	return self._mission_script_patches
@@ -871,7 +871,7 @@ function restoration:instance_script_patches()
 	if self._instance_script_patches == nil then
 		local level_id = Global.game_settings and Global.game_settings.level_id
 		if level_id then
-			self._instance_script_patches = self:require("instance_script/" .. level_id:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub("_night$", ""):gsub("_day$", "")) or false
+			self._instance_script_patches = self:require("instance_script/" .. level_id:gsub("_skip1$", ""):gsub("_skip2$", ""):gsub("_night$", ""):gsub("_day$", "")) or false
 		end
 	end
 	return self._instance_script_patches
@@ -885,7 +885,7 @@ function restoration:mission_script_add()
 	if self._mission_script_add == nil then
 		local level_id = Global.game_settings and Global.game_settings.level_id
 		if level_id then
-			self._mission_script_add = self:require("mission_script_add/" .. level_id:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub("_night$", ""):gsub("_day$", "")) or false
+			self._mission_script_add = self:require("mission_script_add/" .. level_id:gsub("_skip1$", ""):gsub("_skip2$", ""):gsub("_night$", ""):gsub("_day$", "")) or false
 		end
 	end
 	return self._mission_script_add
@@ -919,33 +919,45 @@ function restoration:gen_dummy(id, name, pos, rot, opts)
 	}
 end
 
-function restoration:gen_spawngroup(id, name, elements, interval)
+function restoration:gen_spawngroup(id, name, elements, interval, opts)
+	opts = opts or {}
+	-- preferred_spawn_groups = false means this element isn't for GroupAI group spawns
+	local ignore_replace_preferred
+	local preferred_spawn_groups = opts.preferred_spawn_groups
+	if preferred_spawn_groups then
+		ignore_replace_preferred = true
+	elseif preferred_spawn_groups == false then
+		preferred_spawn_groups = nil
+	elseif not preferred_spawn_groups then
+		preferred_spawn_groups = {
+			"tac_shield_wall_charge",
+			"FBI_spoocs",
+			"tac_tazer_charge",
+			"tac_tazer_flanking",
+			"tac_shield_wall",
+			"tac_swat_rifle_flank",
+			"tac_shield_wall_ranged",
+			"tac_bull_rush",
+		}
+	end
 	return {
 		id = id,
 		editor_name = name,
 		class = "ElementSpawnEnemyGroup",
 		values = {
-			on_executed = {},
-			trigger_times = 0,
-			base_delay = 0,
-			ignore_disabled = false,
-			amount = 0,
-			spawn_type = "ordered",
-			team = "default",
-			execute_on_startup = false,
-			enabled = true,
-			preferred_spawn_groups = {
-				"tac_shield_wall_charge",
-				"FBI_spoocs",
-				"tac_tazer_charge",
-				"tac_tazer_flanking",
-				"tac_shield_wall",
-				"tac_swat_rifle_flank",
-				"tac_shield_wall_ranged",
-				"tac_bull_rush",
-			},
-			elements = elements,
-			interval = interval or 0,
+			on_executed = opts.on_executed or {},
+			trigger_times = opts.trigger_times or 0,
+			base_delay = opts.base_delay or 0,
+			ignore_disabled = opts.ignore_disabled or false,
+			amount = opts.amount or 0,
+			spawn_type = opts.spawn_type or "ordered",
+			team = opts.team or "default",
+			execute_on_startup = opts.execute_on_startup or false,
+			enabled = opts.enabled or false,
+			preferred_spawn_groups = preferred_spawn_groups,
+			ignore_replace_preferred = ignore_replace_preferred,
+			elements = elements or opts.elements or {},
+			interval = interval or opts.interval or 0,
 		},
 	}
 end
@@ -959,40 +971,40 @@ function restoration:gen_so(id, name, pos, rot, opts)
 		values = {
 			path_style = opts.path_style or "destination",
 			align_position = opts.align_position or false,
-			ai_group = "enemies",
-			is_navigation_link = false,
+			ai_group = opts.ai_group or "enemies",
+			is_navigation_link = opts.is_navigation_link or false,
 			position = pos,
 			scan = opts.scan or false,
 			needs_pos_rsrv = opts.needs_pos_rsrv or false,
-			enabled = true,
-			execute_on_startup = false,
+			enabled = opts.enabled ~= false,
+			execute_on_startup = opts.execute_on_startup or false,
 			rotation = rot,
-			base_delay = 0,
-			action_duration_min = 0,
+			base_delay = opts.base_delay or 0,
+			action_duration_min = opts.action_duration_min or 0,
 			search_position = pos,
-			use_instigator = true,
-			trigger_times = 0,
-			trigger_on = "none",
-			search_distance = 0,
+			use_instigator = opts.use_instigator ~= false,
+			trigger_times = opts.trigger_times or 0,
+			trigger_on = opts.trigger_on or "none",
+			search_distance = opts.search_distance or 0,
 			so_action = opts.so_action or "none",
 			path_stance = opts.path_stance or "hos",
-			path_haste = "run",
-			repeatable = false,
-			attitude = "engage",
+			path_haste = opts.path_haste or "run",
+			repeatable = opts.repeatable or false,
+			attitude = opts.attitude or "engage",
 			interval = opts.interval or -1,
-			action_duration_max = 0,
+			action_duration_max = opts.action_duration_max or 0,
 			align_rotation = opts.align_rotation or false,
 			pose = opts.pose or "none",
 			forced = opts.forced or false,
-			base_chance = 1,
-			interaction_voice = "none",
-			SO_access = opts.SO_access or "512", -- default to sniper
-			chance_inc = 0,
+			base_chance = opts.base_chance or 1,
+			interaction_voice = opts.interaction_voice or "none",
+			SO_access = opts.SO_access or "512",  -- Default to sniper
+			chance_inc = opts.chance_inc or 0,
 			interrupt_dmg = opts.interrupt_dmg or 1,
-			interrupt_objective = false,
+			interrupt_objective = opts.interrupt_objective or false,
 			on_executed = opts.on_executed or {},
 			interrupt_dis = opts.interrupt_dis or 1,
-			patrol_path = "none",
+			patrol_path = opts.patrol_path or "none",
 		},
 	}
 end
@@ -1005,26 +1017,26 @@ function restoration:gen_areatrigger(id, name, pos, rot, opts)
 		class = "ElementAreaTrigger",
 		module = "CoreElementArea",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 1,
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
 			position = pos,
 			rotation = rot,
-			enabled = true,
-			interval = 0.1,
-			trigger_on = "on_enter",
-			instigator = "player",
+			enabled = opts.enabled ~= false,
+			interval = opts.interval or 0.1,
+			trigger_on = opts.trigger_on or "on_enter",
+			instigator = opts.instigator or "player",
 			shape_type = opts.shape_type or "box",
 			width = opts.width or 500,
 			depth = opts.depth or 500,
 			height = opts.height or 500,
 			radius = opts.radius or 250,
-			spawn_unit_elements = {},
+			spawn_unit_elements = opts.spawn_unit_elements or {},
 			amount = opts.amount or "1",
-			instigator_name = "",
-			use_disabled_shapes = false,
-			substitute_object = "",
+			instigator_name = opts.instigator_name or "",
+			use_disabled_shapes = opts.use_disabled_shapes or false,
+			substitute_object = opts.substitute_objects or "",
 		},
 	}
 end
@@ -1036,15 +1048,15 @@ function restoration:gen_dummytrigger(id, name, pos, rot, opts)
 		editor_name = name,
 		class = "ElementEnemyDummyTrigger",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			elements = opts.elements or {},
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
 			position = pos,
 			rotation = rot,
-			enabled = true,
-			event = opts.event or "spawn"
+			enabled = opts.enabled ~= false,
+			event = opts.event or "spawn",
 		},
 	}
 end
@@ -1057,11 +1069,11 @@ function restoration:gen_missionscript(id, name, opts)
 		class = "MissionScriptElement",
 		module = "CoreMissionScriptElement",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
-			enabled = opts.enabled or false
+			enabled = opts.enabled or false,
 		},
 	}
 end
@@ -1074,14 +1086,14 @@ function restoration:gen_toggleelement(id, name, opts)
 		class = "ElementToggle",
 		module = "CoreElementToggle",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			set_trigger_times = opts.set_trigger_times or -1,
 			elements = opts.elements or {},
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
 			enabled = opts.enabled or false,
-			toggle = opts.toggle or "on"
+			toggle = opts.toggle or "on",
 		},
 	}
 end
@@ -1093,7 +1105,7 @@ function restoration:gen_pointofnoreturn(id, name, pos, rot, opts)
 		editor_name = name,
 		class = "ElementPointOfNoReturn",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 1,
 			elements = opts.elements or {},
 			elements_in_instances = opts.elements_in_instances or nil,
@@ -1112,7 +1124,7 @@ function restoration:gen_pointofnoreturn(id, name, pos, rot, opts)
 			time_sm_wish = opts.time_sm_wish or 0,
 			position = pos,
 			rotation = rot,
-			enabled = opts.enabled or false
+			enabled = opts.enabled or false,
 		},
 	}
 end
@@ -1124,17 +1136,17 @@ function restoration:gen_dialogue(id, name, opts)
 		editor_name = name,
 		class = "ElementDialogue",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
 			dialogue = opts.dialogue or "none",
-			enabled = true,
+			enabled = opts.enabled ~= false,
 			can_not_be_muted = opts.can_not_be_muted or false,
 			execute_on_executed_when_done = opts.execute_on_executed_when_done or false,
 			play_on_player_instigator_only = opts.play_on_player_instigator_only or false,
 			use_instigator = opts.use_instigator or false,
-			use_position = opts.use_position or false
+			use_position = opts.use_position or false,
 		},
 	}
 end
@@ -1146,12 +1158,12 @@ function restoration:gen_preferedadd(id, name, opts)
 		editor_name = name,
 		class = "ElementEnemyPreferedAdd",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			base_delay = opts.base_delay or 0,
 			trigger_times = opts.trigger_times or 0,
 			spawn_groups = opts.spawn_groups or {},
 			on_executed = opts.on_executed or {},
-			enabled = true
+			enabled = opts.enabled ~= false,
 		},
 	}
 end
@@ -1163,17 +1175,17 @@ function restoration:gen_smokeandnades(id, name, pos, rot, opts)
 		editor_name = name,
 		class = "ElementSmokeGrenade",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			position = pos,
 			rotation = rot,
-			enabled = true,
+			enabled = opts.enabled ~= false,
 			base_delay = opts.base_delay or 0,
 			duration = opts.duration or 0,
 			effect_type = opts.effect_type or "smoke",
-			ignore_control = true,
-			immediate = true,
+			ignore_control = opts.ignore_control ~= false,
+			immediate = opts.immediate ~= false,
 			on_executed = opts.on_executed or {},
-			trigger_times = opts.trigger_times or 0
+			trigger_times = opts.trigger_times or 0,
 		},
 	}
 end
@@ -1185,12 +1197,12 @@ function restoration:gen_dynamicfilter(id, name, pos, rot, opts)
 		editor_name = name,
 		class = "ElementFilter",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
-			mode_assault = true,
-			mode_control = true,
+			mode_assault = opts.mode_assault ~= false,
+			mode_control = opts.mode_control ~= false,
 			difficulty_easy = opts.difficulty_easy or false,
 			difficulty_normal = opts.difficulty_normal or false,
 			difficulty_hard = opts.difficulty_hard or false,
@@ -1211,7 +1223,7 @@ function restoration:gen_dynamicfilter(id, name, pos, rot, opts)
 			platform_xb1_only = false,
 			position = pos,
 			rotation = rot,
-			enabled = opts.enabled or false
+			enabled = opts.enabled or false,
 		},
 	}
 end
@@ -1223,15 +1235,15 @@ function restoration:gen_sotrigger(id, name, pos, rot, opts)
 		editor_name = name,
 		class = "ElementSpecialObjectiveTrigger",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			elements = opts.elements or {},
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
 			position = pos,
 			rotation = rot,
-			enabled = true,
-			event = opts.event or "complete"
+			enabled = opts.enabled ~= false,
+			event = opts.event or "complete",
 		},
 	}
 end
@@ -1244,14 +1256,14 @@ function restoration:objecteditor(id, name, pos, rot, opts)
 		class = "ElementUnitSequence",
 		module = "CoreElementUnitSequence",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			trigger_list = opts.trigger_list or {},
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
 			position = pos,
 			rotation = rot,
-			enabled = true
+			enabled = opts.enabled ~= false,
 		},
 	}
 end
@@ -1264,7 +1276,7 @@ function restoration:gen_operator(id, name, pos, rot, opts)
 		class = "ElementOperator",
 		module = "CoreElementOperator",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
@@ -1285,7 +1297,7 @@ function restoration:gen_instance_input_event(id, name, pos, rot, opts)
 		class = "ElementInstanceInputEvent",
 		module = "CoreElementInstance",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
@@ -1307,7 +1319,7 @@ function restoration:gen_instance_input(id, name, pos, rot, opts)
 		class = "ElementInstanceInput",
 		module = "CoreElementInstance",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
@@ -1328,7 +1340,7 @@ function restoration:gen_counter(id, name, pos, rot, opts)
 		class = "ElementCounter",
 		module = "CoreElementCounter",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			trigger_times = opts.trigger_times or 0,
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
@@ -1349,14 +1361,14 @@ function restoration:gen_element_random(id, name, opts)
 		module = "CoreElementRandom",
 		class = "ElementRandom",
 		values = {
-			execute_on_startup = false,
+			execute_on_startup = opts.execute_on_startup or false,
 			ignore_disabled = opts.ignore_disabled or false,
 			trigger_times = opts.trigger_times or 0,
 			amount = opts.amount or 0,
 			amount_random = opts.amount_random or 0,
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
-			enabled = true,
+			enabled = opts.enabled ~= false,
 		},
 	}
 end

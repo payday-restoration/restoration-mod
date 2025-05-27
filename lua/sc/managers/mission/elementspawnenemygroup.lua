@@ -4601,15 +4601,15 @@ local exclude_spawngroups = {
 }
 
 Hooks:PostHook(ElementSpawnEnemyGroup, "_finalize_values", "revert_spawnpoint_delays_finalize_values", function(self)
-	local level = Global.level_data and Global.level_data.level_id or ''
-	level = level:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub('_night$', ''):gsub('_day$', '') -- bugger off please
+	local level = Global.level_data and Global.level_data.level_id or ""
+	level = level:gsub("_skip1$", ""):gsub("_skip2$", ""):gsub("_night$", ""):gsub("_day$", "") -- bugger off please
 
-	if level == 'branchbank' or level == 'branchbank_cash' or level == 'branchbank_deposit' or level == 'branchbank_gold' or level == 'branchbank_gold_prof' or level == 'branchbank_prof' then
+	if level == "branchbank" or level == "branchbank_cash" or level == "branchbank_deposit" or level == "branchbank_gold" or level == "branchbank_gold_prof" or level == "branchbank_prof" then
 		level = "firestarter_3"
 	elseif level == "gallery" then
 		level = "framing_frame_1"
 	elseif level == "rat" then
-		level = "alex_1"	
+		level = "alex_1"
 	end
 
 	local groups = self._values.preferred_spawn_groups
@@ -4617,7 +4617,7 @@ Hooks:PostHook(ElementSpawnEnemyGroup, "_finalize_values", "revert_spawnpoint_de
 	if element then
 		self._values.interval = element.interval
 		self._values.preferred_spawn_groups = element.preferred_spawn_groups
-	elseif groups and #groups > 0 and not table.contains_all(exclude_spawngroups, groups) then
+	elseif not self._values.ignore_replace_preferred and groups and #groups > 0 and not table.contains_all(exclude_spawngroups, groups) then
 		self._values.preferred_spawn_groups = {}
 
 		for name in pairs(tweak_data.group_ai.enemy_spawn_groups) do

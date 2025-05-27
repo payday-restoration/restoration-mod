@@ -252,7 +252,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
 				-- "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
@@ -641,7 +641,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper"
 				-- "units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			fsb_sniper = {
@@ -649,7 +649,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper"
 				-- "units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1",
@@ -907,7 +907,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper"
 				-- "units/pd2_mod_halloween/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			dozer_headless = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4",
@@ -1244,7 +1244,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
 				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
 				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
-				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
+				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2"
 				-- "units/pd2_mod_sharks/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
@@ -1538,7 +1538,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper"
 				-- "units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
@@ -1902,7 +1902,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
 				-- "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
@@ -2248,7 +2248,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
 				-- "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
@@ -2521,7 +2521,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
 				-- "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
@@ -2557,7 +2557,7 @@ if level_id == "dinner" or level_id == "ranc" or level_id == "trai" or level_id 
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
 		-- "units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 	}
 	ElementSpawnEnemyDummy.faction_mapping.lapd.sm_wish.sniper = {
@@ -2565,7 +2565,7 @@ if level_id == "dinner" or level_id == "ranc" or level_id == "trai" or level_id 
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
 		-- "units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 	}
 	-- Shields
@@ -2618,7 +2618,7 @@ if level_id == "wetwork_burn" then
 		"units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",
 		"units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2",
 		"units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",
-		"units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2",
+		"units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2"
 		-- "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 	}
 end	

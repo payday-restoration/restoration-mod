@@ -461,6 +461,7 @@
 			<constraint enabled="true" name="'LeftArm'"/>
 			<constraint enabled="true" name="'RightArm'"/>
 			<constraint enabled="true" name="'Head'"/>
+			<material_config name="'units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_lightsout'"/>
 		</sequence>
 		<sequence editable_state="true" name="'freeze_ragdoll'" triggable="true">
 			<body motion="'fixed'" name="'rag_Hips'"/>

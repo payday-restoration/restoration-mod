@@ -2898,10 +2898,9 @@ else
 	difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 end
 
-Hooks:PostHook(ElementSpawnEnemyDummy, "init", "sh_init", function (self)
+Hooks:PostHook(ElementSpawnEnemyDummy, "init", "res_init", function (self)
 	local enemy_mapping = self.enemy_mapping
-	local faction_mapping = self.faction_mapping[tweak_data.levels:get_ai_group_type()]
-	faction_mapping = faction_mapping and faction_mapping[difficulty]
+	local faction_mapping = self:get_faction_mapping()
 
 	local mapped_name = enemy_mapping[self._enemy_name:key()]
 	local mapped_unit = faction_mapping and faction_mapping[mapped_name]
@@ -2941,3 +2940,10 @@ Hooks:PreHook(ElementSpawnEnemyDummy, "produce", "sh_produce", function (self, p
 		self._enemy_name = Idstring(table.random(self._enemy_table))
 	end
 end)
+
+-- Primarily for mission script patches to pull units from without needing to be updated if the used faction is changed
+function ElementSpawnEnemyDummy:get_faction_mapping(ai_group_type, diff)
+	ai_group_type = ai_group_type or tweak_data.levels:get_ai_group_type()
+	diff = diff or difficulty
+	return self.faction_mapping[ai_group_type] and self.faction_mapping[ai_group_type][diff]
+end

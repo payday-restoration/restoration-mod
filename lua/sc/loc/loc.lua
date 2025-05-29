@@ -99,17 +99,19 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_bloodthirst_reload_speedDescID"] = "Enables or disables tracking of this specific skill.",
 
 				["RestorationModperk_buffsTitleID"] = "===Perks===",
-				["RestorationModperk_buffsDescID"] = "Buff trackers for perk deck skills.",
+				["RestorationModperk_buffsDescID"] = "Buff trackers for perk deck perks.",
 				["RestorationModInfo_rogueTitleID"] = "Killer Instinct (Rogue)",
-				["RestorationModInfo_rogueDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_rogueDescID"] = "Enables or disables tracking of this specific perk.",
+				["RestorationModInfo_crookTitleID"] = "Composure and Release (Crook)",
+				["RestorationModInfo_crookDescID"] = "Enables or disables tracking of these specific perks.",
 				["RestorationModInfo_grinderTitleID"] = "Histamine (Grinder)",
-				["RestorationModInfo_grinderDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_grinderDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_infiltratorTitleID"] = "Life Drain (Infiltrator)",
-				["RestorationModInfo_infiltratorDescID"] = "Enables or disables tracking of this specific skill.",
-				["RestorationModInfo_sociopathTitleID"] = "Tension and Co. (Sociopath)",
-				["RestorationModInfo_sociopathDescID"] = "Enables or disables tracking the cooldowns these specific skills.",
+				["RestorationModInfo_infiltratorDescID"] = "Enables or disables tracking of this specific perk.",
+				["RestorationModInfo_sociopathTitleID"] = "Combo Meter (Sociopath)",
+				["RestorationModInfo_sociopathDescID"] = "Enables or disables tracking of this perk deck.",
 				["RestorationModInfo_survive_one_hitTitleID"] = "Oni Irezumi (Yakuza)",
-				["RestorationModInfo_survive_one_hitDescID"] = "Enables or disables tracking the active state this specific skill.",
+				["RestorationModInfo_survive_one_hitDescID"] = "Enables or disables tracking the active state this specific perk.",
 
 				["RestorationModother_buffsTitleID"] = "===Other===",
 				["RestorationModother_buffsDescID"] = "Buff trackers for aspects that don't have skills or perks directly linked to them.",
@@ -1415,8 +1417,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
-		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "Doubles the burn duration on ignited enemies, but halves damage over time.",
-		["bm_wp_fla_mk2_mag_well_desc_sc"] = "Halves the burn duration on ignited enemies, but doubles damage over time.",
+		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "Doubles the burn duration on ignited enemies, but halves damage-over-time.",
+		["bm_wp_fla_mk2_mag_well_desc_sc"] = "Halves the burn duration on ignited enemies, but doubles damage-over-time.",
 		["bm_ap_flamethrower_sc_desc"] = "Thousands of degrees of pure pain. How did it come to this?\n#{heat_warm_color}#Burns through body armor.##",
 		["bm_ap_money_sc_desc"] = "Thousands of dollars of pure bliss. Turn the valve, and unleash the cash.\n#{competitive_color}#Bribes through body armor.##", --used by both flamethrowers, decouple later?--
 
@@ -2979,7 +2981,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_sierra458_sc_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 					["bm_w_sierra458_beo_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Can pierce body armor, enemies, shields within max damage range and thin walls.##",
 					["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Switches .458 SOCOM rounds for #{stats_positive}#poison-laced .450 Bushmaster## rounds that #{stats_positive}#deal 30 damage/sec over 4 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce multiple enemies.##",
-					["bm_w_sierra458_ivy_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 50% of its damage through body armor, can pierce thin walls## and #{stats_positive}#deals damage over time with poison rounds.##",
+					["bm_w_sierra458_ivy_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 50% of its damage through body armor, can pierce thin walls## and #{stats_positive}#deals damage-over-time with poison rounds.##",
 					["bm_w_bulldog_desc"] = "Some kind of happiness is measured out in taking down enemies with the Bulldog.\n\n#{risk}#This weapon shoots in full-auto when fired from the hip and shoots in bursts when fired while aiming down the sights.##",
 					--RMC2
 					["bm_w_rmary2"] = "Goblin Mk2",
@@ -3023,7 +3025,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can pierce body armor, multiple enemies, shields and thin walls.##",
 				["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
 				["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 30 damage/sec over 6 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce through enemies.##",
-				["bm_mosin_tranq_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time,\n\n#{stats_positive}#deals damage over time with tranquilizer rounds## and #{skill_color}#can pierce body armor, shields and thin walls.##",
+				["bm_mosin_tranq_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time,\n\n#{stats_positive}#deals damage-over-time with tranquilizer rounds## and #{skill_color}#can pierce body armor, shields and thin walls.##",
 				--Desert Fox
 				["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 				--R93
@@ -5537,7 +5539,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
-				["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#All weapon## magazine sizes are increased by #{skill_color}#$skill_value_b1.##\n\n#{risk}#NOTE: Does not apply to## #{important_1}#bows or launchers.##\n\nACE: #{owned}#$pro##\nThe magazine size increase is raised by an additional #{skill_color}#$skill_value_p1.##\n\n#{skill_color}#All weapons## can be hipfired while sprinting and their sprint-to-fire delay is removed.",
+				["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWeapon magazine sizes are increased by #{skill_color}#$skill_value_b1.##\n\n#{risk}#NOTE: Does not apply to## #{important_1}#bows or launchers.##\n\nACE: #{owned}#$pro##\nThe magazine size increase is raised by an additional #{skill_color}#$skill_value_p1.##\n\n#{skill_color}#All weapons## can be hipfired while sprinting and their sprint-to-fire delay is removed.",
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Heavy Impact",
@@ -5580,7 +5582,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "Stun Resistance",
-				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemy melee attacks push you back #{skill_color}#$skill_value_b1## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the visual effect duration of flashbangs by #{skill_color}#$skill_value_p1.##",
+				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemy melee attacks push you back #{skill_color}#$skill_value_b1## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the visual effect duration of flashbangs by #{skill_color}#$skill_value_p1.##\n\nKnockback from enemy gunfire is reduced by #{skill_color}#$skill_value_p2## for every point of armor you have.",
 
 				--Die Hard
 				["menu_show_of_force_sc"] = "Die Hard",
@@ -5927,9 +5929,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 
 		--Crew Chief
 		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by #{skill_color}#$perk_value_1.##\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nIncreases your shout distance by #{skill_color}#$perk_value_2.##\n\nYour dodge is increased by #{skill_color}#5## points.",
-		["menu_deck1_5_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYour crew gain ##$perk_value_2## more health.\n\nNOTE: Crew perks do not stack.\n\nYou answer pagers ##$perk_value_3## faster.",
+		["menu_deck1_5_desc_sc"] = "You gain an additional #{skill_color}#$perk_value_1## more health.\n\nYour crew gain #{skill_color}#$perk_value_2## more health.\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nYou answer pagers #{skill_color}#$perk_value_3## faster.",
 		["menu_deck1_7_desc_sc"] = "You gain ##$perk_value_1## more armor.\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
-		["menu_deck1_9_desc_sc"] = "You and your crew gains ##$perk_value_1## max health and ##$perk_value_2## stamina for each hostage up to ##$perk_value_3## times.\n\nNOTE: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck1_9_desc_sc"] = "You and your crew gains #{skill_color}#$perk_value_1## max health and #{skill_color}#$perk_value_2## stamina for each hostage up to #{skill_color}#$perk_value_3## times.\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
 		["menu_deck3_1_desc_sc"] = "You gain ##$perk_value_1## more armor.",
@@ -5997,7 +5999,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck15_5_desc_sc"] = "#{risk}#$perk_value_1 of your health## is converted into #{skill_color}#$perk_value_2 armor.##\n\nCivilians intimidated by you and your crew remain intimidated ##$perk_value_3## longer.",
 		["menu_deck15_7_desc_sc"] = "#{risk}#$perk_value_1 of your health## is converted into #{skill_color}#$perk_value_2 armor.##",
 		["menu_deck15_9_desc_sc"] = "#{skill_color}#Dealing damage will grant you armor,## with heavier armor being granted more armor.\nThis can only occur once every #{important_1}#$perk_value_1## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
-		["menu_anarc_disable"] = "#{important_1}#(Disabled by Anarchist)##",
+		["menu_anarc_disable"] = "#{important_1}#(This effect is disabled by Anarchist)##",
 
 		--Scarface--
 		["menu_deck17_1_desc_sc"] = "Unlocks the #{skill_color}#Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for #{skill_color}#$perk_value_1## of all damage taken for #{skill_color}#$perk_value_2## seconds; you can still take damage during the effect.\n\nThe Injector can only be used once every #{important_1}#$perk_value_3## seconds; each kill you perform will shorten the cooldown timer by #{skill_color}#$perk_value_4## seconds.",

@@ -1010,6 +1010,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.resist_melee_push = {0.025}
 				--Ace
 					self.values.player.flashbang_multiplier = {1, 0.5}
+					self.values.player.resist_knockback_push = {0.025}
 					
 					self.skill_descs.oppressor = {
 						skill_value_b1 = tostring(self.values.player.resist_melee_push[1] * 100).."%", -- Melee push resistance (depends of armor)
@@ -1564,8 +1565,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Shockproof
 				--Basic
 					self.values.player.taser_malfunction = {{
-							interval = 1,
-							chance_to_trigger = 0.15
+							interval = 0.5,
+							chance_to_trigger = 0.3
 					}}
 					self.values.player.knockback_resistance = {0.7}
 				--Ace
@@ -5459,6 +5460,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "resist_melee_push",
+			category = "player"
+		}
+	}
+	self.definitions.player_resist_knockback_push = {
+		name_id = "menu_player_resist_knockback_push",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "resist_knockback_push",
 			category = "player"
 		}
 	}

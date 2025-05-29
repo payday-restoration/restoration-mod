@@ -4038,6 +4038,7 @@ end)
 					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_i_iw_hailstorm = {
 						desc_id = "bm_wp_upg_i_iw_hailstorm_no_pen_desc",
 						custom_stats = {
+							info_lock_burst = true,
 							burst_fire = {
 								count = 3,
 								recoil_mult = 0.33,
@@ -24849,6 +24850,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		supported = true,
 		keep_damage = true,
 		custom_stats = {
+			info_lock_burst = true,
 			burst_fire = {
 				count = 3,
 				recoil_mult = 0.33,

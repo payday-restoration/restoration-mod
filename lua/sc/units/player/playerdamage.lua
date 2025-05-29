@@ -607,6 +607,7 @@ function PlayerDamage:damage_bullet(attack_data)
 		end
 
 		local knockback_resistance = pm:upgrade_value("player", "knockback_resistance", 1) or 1
+		knockback_resistance = knockback_resistance * (1 - math.min(math.max(pm:upgrade_value("player", "resist_knockback_push", 0.0) * self:_max_armor(), 0.0), 0.95))
 		--Pain and suffering
 		if distance then
 			local effect_alpha = (restoration.Options:GetValue("HUD/Extra/ScreenEffectAlpha") or 1)

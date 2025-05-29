@@ -611,7 +611,8 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
-							"player_flashbang_multiplier_2"
+							"player_flashbang_multiplier_2",
+							"player_resist_knockback_push"
 						},
 						cost = self.costs.pro
 					}

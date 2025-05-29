@@ -213,8 +213,7 @@
 									
 			<body filter="'check_swat_ar'" enabled="false" name="'glass_visor'" />	
 			<run_sequence filter="'check_swat_ar'" name="'destroy_visor'"/>						
-			<run_sequence filter="'check_swat_sg'" name="'destroy_visor'"/>						
-			<run_sequence filter="'check_swat_shield'" name="'destroy_visor'"/>						
+			<run_sequence filter="'check_swat_sg'" name="'destroy_visor'"/>							
 			<body filter="'check_swat_sg'" enabled="false" name="'glass_shield'" />										
 			<body filter="'check_swat_shield'" enabled="false" name="'glass_shield'" />										
 		</sequence>
@@ -310,8 +309,8 @@
 			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
 			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod4'"/>
 
-			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
-			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
+			<sound action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>			
+			<sound action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>			
 		</sequence>				
 		
 		<sequence editable_state="true" name="'goggles_a'" once="true" triggable="true">

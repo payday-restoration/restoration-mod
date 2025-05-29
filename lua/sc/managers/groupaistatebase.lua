@@ -522,21 +522,25 @@ function GroupAIStateBase:_radio_chatter_clbk()
 	managers.enemy:add_delayed_clbk("_radio_chatter_clbk", self._radio_clbk, Application:time() + 30 + math.random(0, 20))
 end	
 
-function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
+function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers, include_team_ai)
+	-- If stealth - count only amount of players
+	if include_team_ai == nil then
+		include_team_ai = not self:whisper_mode()
+	end
+
 	local nr_players = 0
-	--If stealth - count only amount of players
-	if self:whisper_mode() then
-		nr_players = managers.network:session():amount_of_alive_players() 
+	if not include_team_ai then
+		nr_players = managers.network:session():amount_of_alive_players()
 	else
-	--If loud - count players + bots
-	for u_key, u_data in pairs(self:all_criminals()) do
-		if not u_data.status then
-			nr_players = nr_players + 1
+		-- If loud - count players + bots
+		for u_key, u_data in pairs(self:all_criminals()) do
+			if not u_data.status then
+				nr_players = nr_players + 1
+			end
 		end
+		nr_players = math.clamp(nr_players, 1, 22)
 	end
-		nr_players = math.clamp(nr_players, 1, 22)	
-	end
-	--log("SC: Balance set for player count of = " .. tostring(nr_players))
+	-- log("SC: Balance set for player count of = " .. tostring(nr_players))
 	return balance_multipliers[nr_players]
 end
 

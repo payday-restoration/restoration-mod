@@ -5,8 +5,8 @@ Hooks:PreHook(ElementPointOfNoReturn, "operation_add", "res_operation_add", func
 	self._values.original_time = self._values[to_replace_key] or self._values.time_hard
 	self._values.time_balance_mul = self._values.time_balance_mul or { 1, 1, 1, 1, }
 	if self._values.original_time then
-		local balance_mul = self._values.time_balance_mul
-		local final_mul = managers.groupai:state():_get_balancing_multiplier(balance_mul) or balance_mul[#balance_mul] or 1
+		local balance_mul, include_team_ai = self._values.time_balance_mul, self._values.time_balance_mul_include_team_ai
+		local final_mul = managers.groupai:state():_get_balancing_multiplier(balance_mul, include_team_ai) or balance_mul[#balance_mul] or 1
 		self._values[to_replace_key] = self._values.original_time * final_mul
 	end
 end)

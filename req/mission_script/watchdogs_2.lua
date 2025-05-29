@@ -1,80 +1,139 @@
-local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")	
-local ponr_value = (difficulty <= 5 and 1080 or (difficulty == 6 or difficulty == 7) and 1050) or 1020	
-	
-	local ponr_timer_player_mul = {
-		1,
-		0.85,
-		0.7,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local pro_job = Global.game_settings and Global.game_settings.one_down
+local chance_close_warehouse = (difficulty < 3 and 0.05 or difficulty < 5 and 0.1 or difficulty < 7 and 0.15 or 0.2) + (pro_job and 0.05 or 0)
+local close_warehouse = math.random() < chance_close_warehouse
+local warehouse_filter = {
+	values = {
+		difficulty_easy = close_warehouse,
+		difficulty_normal = close_warehouse,
+		difficulty_hard = close_warehouse,
+		difficulty_overkill = close_warehouse,
+		difficulty_overkill_145 = close_warehouse,
+		difficulty_easy_wish = close_warehouse,
+		difficulty_overkill_290 = close_warehouse,
+		difficulty_sm_wish = close_warehouse,
+	},
+}
+local warehouse_filter_2 = {
+	values = {
+		difficulty_easy = not close_warehouse,
+		difficulty_normal = not close_warehouse,
+		difficulty_hard = not close_warehouse,
+		difficulty_overkill = not close_warehouse,
+		difficulty_overkill_145 = not close_warehouse,
+		difficulty_easy_wish = not close_warehouse,
+		difficulty_overkill_290 = not close_warehouse,
+		difficulty_sm_wish = not close_warehouse,
+	},
+}
+local enable = {
+	values = {
+		enabled = true,
+	},
+}
+local disable = {
+	values = {
+		enabled = false,
+	},
+}
+local disable_cheat_spawns_fix = {
+	values = {
+		amount = "all",
+		width = 7000,
+	},
+}
+local enable_cheat_spawns_fix = {
+	values = {
+		width = 7000,
+	},
 }
 
-local enabled = {
-	values = {
-        enabled = true
-	}
-}
 return {
-	--Pro Job PONR 
+	-- Pro Job PONR when the escape heli arrives
 	[100324] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value
-	},
-	--Enable unused Reinforce spots
-	--didn't knew that day 2 had reinforce spots to begin with
-	[101954] = enabled,
-	[101955] = enabled,
-	[101984] = enabled,
-	[101987] = enabled,
-	[102123] = enabled,
-	[102125] = enabled,
-	[102126] = enabled,
-	[100210] = {
-		values = {
-			enabled = false
-		}
-	},
-	--Spawn FBI Ready Teams
-	--Spawn Ground Snipers after 3 minutes
-	--Spawn a scripted dozer after 150 seconds
-	--[[[100486] = {
 		on_executed = {
-			{ id = 400054, delay = 25 },
-			{ id = 400058, delay = 150 },
-			{ id = 400056, delay = 180 }
-		}
+			{ id = 400061, delay = 0, },
+		},
 	},
-	--Spawn Snipers on the ships
+	-- Rework closing the warehouse to be chance-based
+	-- Warehouse starts with some doors closed but inside logic enabled
+	-- 104001 handles fully closing the warehouse
+	-- 104013 handles the outside power switch
+	-- 104003 handles fully opening the warehouse
+	-- 104012 handles the inside power switch
+	[104001] = warehouse_filter,
+	[104013] = warehouse_filter,
+	[104003] = warehouse_filter_2,
+	[104012] = warehouse_filter_2,
+	-- Enable unused reinforce points
+	[101954] = enable,
+	[101955] = enable,
+	[101984] = enable,
+	[101987] = enable,
+	[102123] = enable,
+	[102125] = enable,
+	[102126] = enable,
+	-- Prevent removal of reinforce when the boat arrives
+	[100210] = disable,
+	-- Add new Cloaker group and enable random spawn points on first assault starting
+	[103999] = {
+		on_executed = {
+			{ id = 400076, delay = 0, },
+			{ id = 400067, delay = 0, },
+		},
+	},
+	-- Keep enabling random Cloaker spawn points at the end of each assault
+	[103636] = {
+		on_executed = {
+			{ id = 400067, delay = 0, },
+		},
+	},
+	-- Delay the initial assault (vanilla delay on this is 15s)
+	[101115] = {
+		on_executed = {
+			{ id = 100511, delay = 90, },
+		},
+	},
+	-- Spawn FBI Ready Teams
+	-- Spawn a scripted dozer
+	-- Spawn Ground Snipers
+	[100486] = {
+		on_executed = {
+			{ id = 400055, delay = 15, delay_rand = 5, },
+			{ id = 400058, delay = 150, delay_rand = 60, },
+			{ id = 400062, delay = 180, delay_rand = 90, },
+		},
+	},
+	-- Spawn Snipers on the ships
 	[102182] = {
 		on_executed = {
-			{ id = 400013, delay = 20 }
-		}
+			{ id = 400013, delay = 20, },
+		},
 	},
 	[102388] = {
 		on_executed = {
-			{ id = 400014, delay = 20 }
-		}
+			{ id = 400014, delay = 20, },
+		},
 	},
 	[102335] = {
 		on_executed = {
-			{ id = 400015, delay = 20 }
-		}
-	} ]]--
+			{ id = 400015, delay = 20, },
+		},
+	},
+	-- Fix cheat spawn area triggers not being wide enough and reenabling spawns too soon
+	[101013] = disable_cheat_spawns_fix,
+	[101235] = disable_cheat_spawns_fix,
+	[101010] = enable_cheat_spawns_fix,
+	[101220] = enable_cheat_spawns_fix,
+	-- Dock Cloakers start disabled
+	[103961] = disable,
+	[103963] = disable,
+	[103965] = disable,
+	[103967] = disable,
+	[103969] = disable,
+	[103971] = disable,
+	[103973] = disable,
+	[103975] = disable,
+	[103977] = disable,
+	[103979] = disable,
 }

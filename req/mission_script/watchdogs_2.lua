@@ -1,6 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_close_warehouse = (difficulty < 3 and 0.01 or difficulty < 5 and 0.02 or difficulty < 7 and 0.04 or 0.08) + (pro_job and 0.04 or 0)
+local chance_close_warehouse = (difficulty < 3 and 0.05 or difficulty < 5 and 0.1 or difficulty < 7 and 0.15 or 0.2) + (pro_job and 0.05 or 0)
 local close_warehouse = math.random() < chance_close_warehouse
 local warehouse_filter = {
 	values = {
@@ -58,9 +58,13 @@ return {
 	-- Rework closing the warehouse to be chance-based
 	-- Warehouse starts with some doors closed but inside logic enabled
 	-- 104001 handles fully closing the warehouse
+	-- 104013 handles the outside power switch
 	-- 104003 handles fully opening the warehouse
-	[104001] = warehouse_filter_2,
-	[104003] = warehouse_filter,
+	-- 104012 handles the inside power switch
+	[104001] = warehouse_filter,
+	[104013] = warehouse_filter,
+	[104003] = warehouse_filter_2,
+	[104012] = warehouse_filter_2,
 	-- Enable unused reinforce points
 	[101954] = enable,
 	[101955] = enable,
@@ -72,7 +76,7 @@ return {
 	-- Prevent removal of reinforce when the boat arrives
 	[100210] = disable,
 	-- Add new Cloaker group and enable random spawn points on first assault starting
-	[103399] = {
+	[103999] = {
 		on_executed = {
 			{ id = 400076, delay = 0, },
 			{ id = 400067, delay = 0, },
@@ -90,14 +94,14 @@ return {
 			{ id = 100511, delay = 90, },
 		},
 	},
-	-- Spawn FBI Ready Teams after 15-20s
-	-- Spawn a scripted dozer after 150-210s
-	-- Spawn Ground Snipers after 180-270s
+	-- Spawn FBI Ready Teams
+	-- Spawn a scripted dozer
+	-- Spawn Ground Snipers
 	[100486] = {
 		on_executed = {
 			{ id = 400055, delay = 15, delay_rand = 5, },
 			{ id = 400058, delay = 150, delay_rand = 60, },
-			{ id = 400056, delay = 180, delay_rand = 90, },
+			{ id = 400062, delay = 180, delay_rand = 90, },
 		},
 	},
 	-- Spawn Snipers on the ships

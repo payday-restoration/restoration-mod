@@ -130,7 +130,7 @@ local opts_ship_sniper_so = {
 local opts_hunt_so = {
 	scan = true,
 	SO_access = tostring(128 + 4096),
-	interval = 2,
+	use_instigator = true,
 	so_action = "AI_hunt",
 }
 local opts_ground_sniper_so_1_1 = {
@@ -250,7 +250,9 @@ local opts_spawn_ship_snipers_3 = {
 }
 local opts_spawn_ground_snipers = {
 	enabled = true,
+	trigger_times = 1,
 	on_executed = {
+		{ id = 400022, delay = 0, },
 		{ id = 400023, delay = 0, },
 		{ id = 400024, delay = 0, },
 	},

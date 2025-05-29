@@ -3710,7 +3710,7 @@ function CopDamage:taser_bag_explode()
 	local damage = 300
 	local ply_damage = 0
 	local normal = math.UP
-	local slot_mask = managers.slot:get_mask("explosion_targets")
+	local slot_mask = managers.slot:get_mask("explosion_targets") - managers.slot:get_mask("all_criminals")
 	local curve_pow = 4
 	local custom_params = {
 		camera_shake_max_mul = 4,
@@ -3759,7 +3759,7 @@ function CopDamage:grenadier_bag_explode()
 	local damage = 0
 	local ply_damage = 0
 	local normal = math.UP
-	local slot_mask = managers.slot:get_mask("explosion_targets")
+	local slot_mask = managers.slot:get_mask("explosion_targets") - managers.slot:get_mask("all_criminals")
 	local curve_pow = 0.8
 	local custom_params = {
 		camera_shake_max_mul = 4,

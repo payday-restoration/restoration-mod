@@ -137,7 +137,7 @@ end
 -- Set flashlights on or off when this element is executed
 function MissionManager.mission_script_patch_funcs.flashlight(self, element, data)
 	local function set_flashlights()
-		managers.game_play_central:set_flashlights_on(data.flashlight)
+		managers.game_play_central:set_flashlights_on(data)
 	end
 	Hooks:PostHook(element, "on_executed", "res_on_executed_flashlight_" .. element:id(), set_flashlights)
 	Hooks:PostHook(element, "client_on_executed", "res_client_on_executed_flashlight_" .. element:id(), set_flashlights)

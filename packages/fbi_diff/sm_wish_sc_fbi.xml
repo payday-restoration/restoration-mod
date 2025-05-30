@@ -23,24 +23,6 @@
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2" load="true"/>	
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2_husk" load="true"/>
 
-	<!--Texas Cops-->
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" load="true" force="false" />
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1_husk" load="true" force="false" />	
-	<object				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="false" />	
-	<model				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="false" />	
-
-	<unit_mat			path="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" load="true" />
-	<cooked_physics		path="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" />
-	
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2" load="true" force="false" />
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2_husk" load="true" force="false" /> 	
-	
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3" load="true"/>
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3_husk" load="true"/>	
-	
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4" load="true"/>
-	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4_husk" load="true"/>	
-
 	<!-- head -->
 	<unit_mat			path="units/payday2/characters/ene_head_atlas/ene_head_atlas" />	
 	<material_config	path="units/payday2/characters/ene_head_atlas/ene_head_atlas_contour" />	

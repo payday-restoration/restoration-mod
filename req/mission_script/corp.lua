@@ -48,7 +48,11 @@ local enemy_filter_dozers = {
 			enemy_names = {
 				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"	
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
+
 			}
 		}
 	}

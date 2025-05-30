@@ -1013,8 +1013,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.resist_knockback_push = {0.025}
 					
 					self.skill_descs.oppressor = {
-						skill_value_b1 = tostring(self.values.player.resist_melee_push[1] * 100).."%", -- Melee push resistance (depends of armor)
-						skill_value_p1 = tostring(self.values.player.flashbang_multiplier[2] * 100).."%" -- Reduce duration of flashbang effect
+						skill_value_b1 = tostring(self.values.player.resist_melee_push[1] * 10).."%", -- Melee push resistance (depends of armor)
+						skill_value_p1 = tostring(self.values.player.flashbang_multiplier[2] * 100).."%", -- Reduce duration of flashbang effect
+						skill_value_p2 = tostring(self.values.player.resist_knockback_push[1] * 10).."%", -- Knockback resistance (depends of armor)
 					}
 				
 			--Die Hard

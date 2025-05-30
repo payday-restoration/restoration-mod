@@ -436,7 +436,7 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 					local area = id and get_mission_script_element(id)
 
 					if area then
-						area:execute_on_executed(nil)
+						area:execute_on_executed({})
 					end
 				end
 			end

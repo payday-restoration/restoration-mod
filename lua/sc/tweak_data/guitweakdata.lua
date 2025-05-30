@@ -132,6 +132,13 @@ function GuiTweakData:init()
 		wpn_fps_upg_o_atibal = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 3),
 		--Mod Sights
 		wpn_fps_shot_tti_dracarys_eotech = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 7),
-		wpn_fps_upg_o_mw2022_holotherm01 = "4 " .. tostring(#self.weapon_texture_switches.types.sight_swap)
+		wpn_fps_upg_o_mw2022_holotherm01 = "4 " .. tostring(#self.weapon_texture_switches.types.sight_swap),
+		wpn_fps_upg_o_kobra = "1 6",
+		wpn_fps_upg_o_coyote = "1 4",
+		wpn_fps_ass_fakedefy_o_mh1 = "1 4",
+		wpn_fps_upg_o_horzine = "1 5"
 	}
+	if SystemFS:exists("assets/mod_overrides/Kitsune Jimmy's Improved Reticle Pack") then
+		self.part_texture_switches.wpn_fps_upg_o_okp7 = "4 15"
+	end
 end

@@ -7155,7 +7155,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	}		
 
 	-- US Marshals, used on Texas heists
-	if difficulty_index <= 7 then
+	-- if difficulty_index <= 7 then
 		self.unit_categories.marshal_marksman = {
 			unit_types = {
 				america = {
@@ -7166,13 +7166,13 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper")
-				},					
+				},
 				murkywater = {
 					Idstring("units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper")
-				},				
+				},
 				nypd = {
 					Idstring("units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper")
 				},	
@@ -7181,11 +7181,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper")
-				}	
+				}
 			},
 			access = access_type_all
-		}	
-	end
+		}
+	-- end
 	
 	-- Beat Cop overrides
 	-- Texas heists, replace NYPD beat cops with Texas state troopers and certain Titans with US Marshals

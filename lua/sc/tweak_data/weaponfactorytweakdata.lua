@@ -38448,7 +38448,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
-		 self.parts.wpn_fps_pis_mr96_g_wood then
+		if self.parts.wpn_fps_pis_mr96_g_wood then
 			self.parts.wpn_fps_pis_mr96_g_wood.supported = true
 			self.parts.wpn_fps_pis_mr96_g_wood.stats = deep_clone(grips.recoil_acc)
 			self.parts.wpn_fps_pis_mr96_g_wood.custom_stats = nil

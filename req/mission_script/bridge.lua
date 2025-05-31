@@ -1,6 +1,6 @@
 local greendozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 local blackdozer = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"
-local skulldozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+local skulldozer = "units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3"
 local zealdozer_green = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
 local zealdozer_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
 local zealdozer_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"

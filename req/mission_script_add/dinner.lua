@@ -6,11 +6,11 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local enabled_chance_snipers = math.random() < 0.45
 local diff_scaling = 0.085 * difficulty
-local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_usm1/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1" or "units/payday2/characters/ene_shield_2/ene_shield_2")
-local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
-local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
-local taser = "units/payday2/characters/ene_tazer_1/ene_tazer_1"
-local cloaker = "units/payday2/characters/ene_spook_1/ene_spook_1"
+local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/payday2/characters/ene_shield_2/ene_shield_2")
+local sniper = "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"
+local tank = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
+local taser = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
+local cloaker = "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
 local enabled_chance_cloakers = math.random() < diff_scaling

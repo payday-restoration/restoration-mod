@@ -96,6 +96,7 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
+			<var name="_head" value="units/payday2/characters/ene_head_atlas/ene_head_atlas" />															
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="hardsole" />

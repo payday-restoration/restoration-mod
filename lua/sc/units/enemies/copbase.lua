@@ -699,14 +699,19 @@ function CopBase:_run_unit_sequences()
 end
 
 ContourSwapBase = class()
-
 ContourSwapBase._material_translation_map = {}
-local mat_configs = {
-  "units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas"
-}
-for _, v in pairs(mat_configs) do
-  ContourSwapBase._material_translation_map[tostring(Idstring(v):key())] = Idstring(v .. "_contour")
-  ContourSwapBase._material_translation_map[tostring(Idstring(v .. "_contour"):key())] = Idstring(v)
+
+local paths = table.list_to_set({
+  "units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas",
+  "units/payday2/characters/ene_head_atlas/ene_head_atlas"
+})
+
+for path in pairs(paths) do
+	local normal_id = Idstring(path)
+	local contour_id = Idstring(path .. "_contour")
+
+	ContourSwapBase._material_translation_map[tostring(normal_id:key())] = contour_id
+	ContourSwapBase._material_translation_map[tostring(contour_id:key())] = normal_id
 end
 
 ContourSwapBase.swap_material_config = CopBase.swap_material_config
@@ -715,12 +720,22 @@ ContourSwapBase.is_in_original_material = CopBase.is_in_original_material
 ContourSwapBase.set_material_state = CopBase.set_material_state
 
 function ContourSwapBase:init(unit)
-    UnitBase.init(self, unit, false)
+	UnitBase.init(self, unit, false)
 
-    self._unit = unit
-    self._is_in_original_material = true
+	self._unit = unit
+	self._is_in_original_material = true
 end
 
+-- Handle material swaps
+for path in pairs(paths) do
+	local normal_id = Idstring(path)
+	local contour_id = Idstring(path .. "_contour")
+
+	CopBase._material_translation_map[tostring(normal_id:key())] = contour_id
+	CopBase._material_translation_map[tostring(contour_id:key())] = normal_id
+end
+
+local unit_ids = Idstring("unit")
 -- Deleting dozer hats cause it blows people up, pls gib standalone that's always loaded
 function CopBase:_chk_spawn_gear()
 	local region = tweak_data.levels:get_ai_group_type()

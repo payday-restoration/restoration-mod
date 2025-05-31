@@ -1,4 +1,4 @@
-local greendozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+--[[local greendozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 local blackdozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
 local skulldozer = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 local zeal_bendozer = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
@@ -8,26 +8,28 @@ local titandozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_ass
 local dozertable_vh_ovk = { greendozer, greendozer, greendozer, blackdozer, blackdozer, blackdozer, }
 local dozertable_mayhem_dw = { skulldozer, skulldozer, greendozer, greendozer, blackdozer, blackdozer, }
 local dozertable_ds = { zeal_skulldozer, zeal_skulldozer, zeal_skulldozer, zeal_blackdozer, zeal_blackdozer, zeal_blackdozer, zeal_bendozer, zeal_bendozer, zeal_bendozer, titandozer, }
+local gas_dozer = (difficulty == 8 and dozertable_ds or (difficulty == 7 or difficulty == 6) and dozertable_mayhem_dw or (difficulty == 5 or difficulty == 4) and dozertable_vh_ovk)
+--]]
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local titan_shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 local woman_spooc = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
-local gas_dozer = (difficulty == 8 and dozertable_ds or (difficulty == 7 or difficulty == 6) and dozertable_mayhem_dw or (difficulty == 5 or difficulty == 4) and dozertable_vh_ovk)
+
 local overkill_above = difficulty >= 5
 local disabled = {
 	values = {
 		enabled = false,
 	},
 }
-local dozer_heli = {
+--[[local dozer_heli = {
 	values = {
 		enemy = gas_dozer,
 		participate_to_group_ai = false,
 	},
 	on_executed = {
 		{ id = 400002, delay = 0, },
-	},
-}
+	}, 
+}--]]
 local tshield = {
 	values = {
 		enemy = titan_shield,
@@ -82,7 +84,7 @@ return {
 			amount = 20,
 		},
 	},
-	-- Have the gas chopper be a dozer chopper that has loopable spawn
+	--[[-- Have the gas chopper be a dozer chopper that has loopable spawn
 	-- Trigger the heli spawn in police_called instead of triggering during hacking
 	[100131] = {
 		on_executed = {
@@ -134,6 +136,7 @@ return {
 	[104048] = dozer_heli,
 	[104049] = dozer_heli,
 	[104050] = dozer_heli,
+	--]]
 	-- Disable the Gas SO (it's useless anyway)
 	[103302] = disabled,
 	[103303] = disabled,
@@ -154,7 +157,7 @@ return {
 			enemy = woman_spooc,
 		},
 	},
-	-- Titan Shields replace regular ones during escape part on higher diff
+	-- Marshal Shields replace regular ones during escape part on higher diff
 	[102410] = tshield,
 	[102411] = tshield,
 	[102416] = tshield,

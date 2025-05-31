@@ -8,7 +8,7 @@ local enabled_chance_snipers = math.random() < 0.45
 local diff_scaling = 0.085 * difficulty
 local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
-local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
+local tank = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 local taser = "units/payday2/characters/ene_tazer_1/ene_tazer_1"
 local cloaker = "units/payday2/characters/ene_spook_1/ene_spook_1"
 local hard_above = difficulty >= 3

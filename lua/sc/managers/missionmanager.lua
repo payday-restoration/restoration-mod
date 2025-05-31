@@ -43,7 +43,7 @@ function MissionManager.mission_script_patch_funcs.values(self, element, data)
 
 	-- Handle enemy tables (Idstring'ing a table is not ideal)
 	if type(data.enemy) == "table" then
-		element._enemy_table = v
+		element._enemy_table = data.enemy
 		element._values.enemy = nil
 	end
 

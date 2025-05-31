@@ -1,8 +1,8 @@
-
+local murkies_responders = {
+"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+"units/payday2/characters/ene_murkywater_2/ene_murkywater_2"
+}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local murky_responder_1 = "units/payday2/characters/ene_murkywater_1/ene_murkywater_1"
-local murky_responder_2 = "units/payday2/characters/ene_murkywater_2/ene_murkywater_2"
-local murky_table = {murky_responder_1, murky_responder_2}
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local enabled_chance_snipers = math.random() < 0.45
 local diff_scaling = 0.085 * difficulty

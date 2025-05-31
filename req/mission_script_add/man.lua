@@ -1,5 +1,4 @@
--- tempt disable the looped dozer thing
---[[local optsBulldozer_SO = {
+local optsBulldozer_SO = {
 	SO_access = "4096",
 	path_style = "none",
 	scan = true,
@@ -11,4 +10,4 @@ return {
 	elements = {
 		restoration:gen_so(400002, "dozer_hunt_so", Vector3(0, 0, 0), Rotation(0, 0, 0), optsBulldozer_SO),
 	},
-}--]]
+}

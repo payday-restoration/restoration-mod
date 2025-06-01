@@ -496,8 +496,6 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			+ self:upgrade_value("player", "killshot_spooky_panic_chance", 0) * self:player_unit():character_damage():get_missing_revives()
 		panic_chance = managers.modifiers:modify_value("PlayerManager:GetKillshotPanicChance", panic_chance)
 
-	managers.hud:show_hint( { text = "panic_chance  " .. tostring( panic_chance ) } )
-
 		if panic_chance > 0 or panic_chance == -1 then
 			local slotmask = managers.slot:get_mask("enemies")
 			local units = World:find_units_quick("sphere", player_unit:movement():m_pos(), tweak_data.upgrades.killshot_close_panic_range, slotmask)

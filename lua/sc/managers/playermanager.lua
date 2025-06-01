@@ -56,8 +56,10 @@ Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self,
 			local combo_decay = self:upgrade_value("player", "buildup_meter", 0).combo_decay + combo_decay_mod
 			self._buildup_meter_t = combo_t
 			self._buildup_meter = math.max(0, (self._buildup_meter or 0) - combo_decay)
-			managers.hud:start_buff("sociopath", self._buildup_meter_t)
-			managers.hud:set_stacks("sociopath", self._buildup_meter)
+			if managers.hud then
+				managers.hud:start_buff("sociopath", self._buildup_meter_t)
+				managers.hud:set_stacks("sociopath", self._buildup_meter)
+			end
 		end
 	end
 end)

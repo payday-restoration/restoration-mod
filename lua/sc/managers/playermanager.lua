@@ -430,8 +430,10 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 					self._buildup_meter = math.clamp((self._buildup_meter or 0) + self:upgrade_value("player", "buildup_meter_aubrey", 0).combo_add * enemy_unit_mult(), 0, self._buildup_meter_max)
 					managers.hud:set_stacks("sociopath", self._buildup_meter)
 				else	
-					self._buildup_meter_t = (self._buildup_meter > 0 and time) or self._buildup_meter_t
-					managers.hud:start_buff("sociopath", self._buildup_meter_t)
+					if self._buildup_meter > 0 then
+						self._buildup_meter_t = time
+						managers.hud:start_buff("sociopath", self._buildup_meter_t)
+					end
 				end
 			end
 		end

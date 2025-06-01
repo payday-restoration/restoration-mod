@@ -1607,7 +1607,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--Fists
 		["bm_melee_fists_info"] = "You're no boxer, but you can still throw a pretty good punch.\nAll it takes is some strength, speed and timing and you'll land a striking blow in no time.",
 		--& Knuckles
-		["bm_melee_brass_knuckles_info"] = "Knuckle style weapons have been used all over the world for hundreds of years.\nBrass knuckles concentrate the punch's force by directing it towards a harder and smaller area, increasing the chanecs of tissue disruption. Hit hard enough and you'll even fracture some bones.",
+		["bm_melee_brass_knuckles_info"] = "Knuckle style weapons have been used all over the world for hundreds of years.\nBrass knuckles concentrate the punch's force by directing it towards a harder and smaller area, increasing the chances of tissue disruption. Hit hard enough and you'll even fracture some bones.",
 
 		--Lucille
 		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
@@ -5782,7 +5782,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Unseen Strike",
-				["menu_backstab_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIf you do not take damage for #{skill_color}#$skill_value_b1## seconds, you gain a #{skill_color}#$skill_value_b2## critical hit chance for . The critical hit chance persists for #{skill_color}#$skill_value_b3## seconds after taking damage.\n\nCritical hits deal #{skill_color}#100%## additional damage.\n\n#{risk}#NOTE: Explosives and damage-over-time effects## #{important_1}#cannot deal critical hits.##\n\nACE: #{owned}#$pro##\nUnseen Strike's critical hit chance persists for #{skill_color}#$skill_value_p1## seconds after taking damage.",
+				["menu_backstab_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIf you do not take damage for #{skill_color}#$skill_value_b1## seconds, you gain a #{skill_color}#$skill_value_b2## critical hit chance. The critical hit chance persists for #{skill_color}#$skill_value_b3## seconds after taking damage.\n\nCritical hits deal #{skill_color}#100%## additional damage.\n\n#{risk}#NOTE: Explosives and damage-over-time effects## #{important_1}#cannot deal critical hits.##\n\nACE: #{owned}#$pro##\nUnseen Strike's critical hit chance persists for #{skill_color}#$skill_value_p1## seconds after taking damage.",
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "Cleaner",
@@ -6169,7 +6169,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Muscle
 			["menu_deck2_mrwi_desc"] = "Every shot you fire with your guns has a ##$perk_value_1## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nYou bag corpses and interact with hostages ##$perk_value_2## faster.",
 			--Armorer
-			["menu_deck3_mrwi_desc"] = "Your armor recovery rate is increased by ##$perk_value_1.##\n\nYou gain the ability to place ##$perk_value_2## body bag cases.",
+			["menu_deck3_mrwi_desc"] = "Your armor recovery rate is increased by ##$perk_value_1.##\n\nBallistic vests gain an additional ##$perk_value_3## more armor.\n\nYou gain the ability to place ##$perk_value_2## body bag cases.",
 			--Rogue
 			["menu_deck4_mrwi_desc"] = "Your dodge is increased by an additonal ##$perk_value_1## points.\n\nYou swap between your weapons an additional ##$perk_value_2## faster.\n\nYour camera loop duration is increased by ##$perk_value_3## seconds.",
 			--Hitman

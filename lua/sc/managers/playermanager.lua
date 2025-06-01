@@ -46,7 +46,7 @@ Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 end)
 
 Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self, t, dt)
-	if self._buildup_meter_t then
+	if self:has_category_upgrade("player", "buildup_meter") and self._buildup_meter_t then
 		if self._buildup_meter_t > 0 then
 			self._buildup_meter_t = math.max(0, self._buildup_meter_t - dt)
 		else

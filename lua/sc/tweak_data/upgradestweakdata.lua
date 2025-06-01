@@ -2111,17 +2111,17 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.level_2_armor_multiplier = {
 		1.10,
 		1.20,
-		1.30
+		1.05
 	}
 	self.values.player.level_3_armor_multiplier = {
 		1.10,
 		1.20,
-		1.30
+		1.05
 	}
 	self.values.player.level_4_armor_multiplier = {
 		1.10,
 		1.20,
-		1.30
+		1.05
 	}
 
 	self.values.player.tier_armor_multiplier = {
@@ -2395,21 +2395,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		},
 		{	--Rufus
 			combo_steps = 5,
-			effect = 0.03,
-			effect_max = 0.3,
+			effect = 0.025,
+			effect_max = 0.25,
 		}
 	}
 	self.values.player.buildup_meter_refresh = { true }
 	self.values.player.buildup_meter_redline = { --speed
 		{
 			combo_steps = 2,
-			effect = 0.015,
-			effect_max = 0.15,
+			effect = 0.01,
+			effect_max = 0.1,
 		},
 		{	--Brandon
 			combo_steps = 5,
-			effect = 0.03,
-			effect_max = 0.3,
+			effect = 0.02,
+			effect_max = 0.2,
 		}
 	}
 	self.values.player.buildup_meter_hysteria = {{ --healing
@@ -3506,7 +3506,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.multi_choice_specialization_descs[23][9][3] = { --Armorer
 		perk_value_1 = tostring((1 - self.values.player.perk_armor_regen_timer_multiplier[3]) * 100).."%", -- Armor regen buff
-		perk_value_2 = "2" -- Body bag cases quantity. Not defined here so beware
+		perk_value_2 = "2", -- Body bag cases quantity. Not defined here so beware
+		perk_value_3 = tostring(self.values.player.level_2_armor_multiplier[3] % 1 * 100).."%" -- Armor bonus for vests
 	}
 	self.multi_choice_specialization_descs[23][9][4] = { --Rogue
 		perk_value_1 = tostring(self.values.player.passive_dodge_chance[1] * 100), -- Passive dodge increase
@@ -3551,11 +3552,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_5 = tostring(self.values.player.buildup_meter[3].hurt_decay),
 		perk_value_6 = tostring(self.values.player.buildup_meter[3].hurt_t),
 		perk_value_7 = tostring(self.values.player.buildup_meter[3].incap_decay),
-		perk_value_8 = tostring(self.values.player.buildup_meter_redline[1].combo_steps),
-		perk_value_9 = tostring(self.values.player.buildup_meter_redline[1].effect * 100) .. "%",
-		perk_value_10 = tostring(self.values.player.buildup_meter_redline[1].effect_max * 100) .. "%",
+		perk_value_8 = tostring(self.values.player.buildup_meter_pacify[1].combo_steps),
+		perk_value_9 = tostring(self.values.player.buildup_meter_pacify[1].effect * 100) .. "%",
+		perk_value_10 = tostring(self.values.player.buildup_meter_pacify[1].effect_max * 100) .. "%",
 		perk_value_11 = tostring(self.values.player.melee_kill_stamina[1] * 100).."%",
-		perk_value_12 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
+		perk_value_12 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]), -- Additional body bag
+		perk_value_13 = tostring(self.values.player.buildup_meter_redline[1].combo_steps),
+		perk_value_14 = tostring(self.values.player.buildup_meter_redline[1].effect * 100) .. "%",
+		perk_value_15 = tostring(self.values.player.buildup_meter_redline[1].effect_max * 100) .. "%",
 		--perk_value_1 = tostring(self.values.player.killshot_regen_armor_bonus[1] * 10), -- Armor regen on kill
 		--perk_value_2 = "18", -- Required range to activate additional armor regen on kill (Same range as "Underdog" skill)
 		--perk_value_3 = tostring(self.values.player.killshot_close_regen_armor_bonus[1][1] * 10), -- Additional armor regen when player killed enemy in specified range
@@ -3719,7 +3723,16 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"player_perk_armor_regen_timer_multiplier_2",
 				"player_perk_armor_regen_timer_multiplier_3",
 				"bodybags_bag_quantity",
-				"player_passive_loot_drop_multiplier_1"	
+				"player_passive_loot_drop_multiplier_1"	,
+				"player_level_2_armor_multiplier_1",
+				"player_level_3_armor_multiplier_1",
+				"player_level_4_armor_multiplier_1",
+				"player_level_2_armor_multiplier_2",
+				"player_level_3_armor_multiplier_2",
+				"player_level_4_armor_multiplier_2",
+				"player_level_2_armor_multiplier_3",
+				"player_level_3_armor_multiplier_3",
+				"player_level_4_armor_multiplier_3",
 			}
 		},
 		{ --Rogue

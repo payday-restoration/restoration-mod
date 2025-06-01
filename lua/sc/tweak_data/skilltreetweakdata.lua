@@ -2595,7 +2595,10 @@ function SkillTreeTweakData:init(tweak_data)
 				
 				"player_melee_fists_damage_multiplier",
 				"buildup_meter_tony_extra_ammo_multiplier_1",
-				"buildup_meter_tony_pick_up_multiplier_1"
+				"buildup_meter_tony_pick_up_multiplier_1",
+				"player_buildup_meter_rick",
+				"player_buildup_meter_rick_2",
+				"buildup_meter_hurt_decay_mod_1",
 			},
 			texture_bundle_folder = "sc",
 			icon_xy = {0, 1}
@@ -2708,7 +2711,12 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_tony_extra_ammo_multiplier_1",
 				"buildup_meter_tony_extra_ammo_multiplier_2",
 				"buildup_meter_tony_pick_up_multiplier_1",
-				"buildup_meter_tony_pick_up_multiplier_2"
+				"buildup_meter_tony_pick_up_multiplier_2",
+				"player_buildup_meter_rick",
+				"player_buildup_meter_rick_2",
+				"player_buildup_meter_rick_3",
+				"buildup_meter_hurt_decay_mod_1",
+				"buildup_meter_hurt_decay_mod_2"
 			},
 			texture_bundle_folder = "sc",
 			icon_xy = {1, 0}

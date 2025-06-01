@@ -2460,10 +2460,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				0.05
 			}
 		}
-		self.values.player.buildup_meter_rick = {{
-			combo_add_mod = 2,
-			combo_max_mod = -50
-		}}
+		self.values.player.buildup_meter_rick = {
+			{ combo_add_mod = 2, combo_max_mod = -50 },
+			{ combo_add_mod = -1, combo_max_mod = 0 }, --Tony
+			{ combo_add_mod = -2, combo_max_mod = 0 }
+		}
 		self.values.player.buildup_meter_swan = {{
 			combo_add = 6
 		}}
@@ -3102,7 +3103,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.multi_choice_specialization_descs[9][9][2] = { --Tony
 		perk_value_1 = tostring(self.values.player.melee_fists_damage_multiplier[1] * 100) .. "%",
 		perk_value_2 = tostring((1 - self.values.tony.extra_ammo_multiplier[1]) * 100) .. "%",
-		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[1]) * 100) .. "%"
+		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[1]) * 100) .. "%",
+		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[2].combo_add_mod),
+		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[1]),
 	}
 	self.multi_choice_specialization_descs[9][9][3] = { --Aubrey
 		perk_value_1 = tostring(self.values.player.buildup_meter_aubrey[1].combo_add),
@@ -3134,7 +3137,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.multi_choice_specialization_descs[9][9][9] = { --Tony's Revenge
 		perk_value_1 = tostring(self.values.player.melee_fists_damage_multiplier[1] * 100) .. "%",
 		perk_value_2 = tostring((1 - self.values.tony.extra_ammo_multiplier[2]) * 100) .. "%",
-		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[2]) * 100) .. "%"
+		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[2]) * 100) .. "%",
+		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[3].combo_add_mod),
+		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
 	}
 	self.multi_choice_specialization_descs[9][9][10] = { --Mark
 		perk_value_1 = tostring(self.values.player.buildup_meter_mark[1].combo_steps),
@@ -5521,6 +5526,24 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 1,
+			upgrade = "buildup_meter_rick",
+			category = "player"
+		}
+	}
+	self.definitions.player_buildup_meter_rick_2 = {
+		name_id = "menu_player_buildup_rick",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "buildup_meter_rick",
+			category = "player"
+		}
+	}
+	self.definitions.player_buildup_meter_rick_3 = {
+		name_id = "menu_player_buildup_rick",
+		category = "feature",
+		upgrade = {
+			value = 3,
 			upgrade = "buildup_meter_rick",
 			category = "player"
 		}

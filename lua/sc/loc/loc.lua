@@ -5904,11 +5904,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deckall_8_desc_sc"] = "Increases your Doctor Bag interaction speed by #{skill_color}#$perk_value_1.##\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 
 		--Crook--
-		["menu_deck6_1_desc_sc"] = "Your dodge is increased by ##$perk_value_1## points.\n\nYour armor is increased by ##$perk_value_2## for ballistic vests.",
-		["menu_deck6_3_desc_sc"] = "Your dodge is increased by an additional ##$perk_value_1## points for ballistic vests.",
-		["menu_deck6_5_desc_sc"] = "Your armor is increased by an additional ##$perk_value_1## for ballistic vests.\n\nYou pick locks ##$perk_value_2## faster.",
-		["menu_deck6_7_desc_sc"] = "Your dodge is increased by an additional ##$perk_value_1## points for ballistic vests.",
-		["menu_deck6_9_desc_sc"] = "Your armor is increased by an additional ##$perk_value_1## for ballistic vests.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		--["menu_deck6_1_desc_sc"] = "Your dodge is increased by ##$perk_value_1## points.\n\nYour armor is increased by ##$perk_value_2## for ballistic vests.",
+		--["menu_deck6_3_desc_sc"] = "Your dodge is increased by an additional ##$perk_value_1## points for ballistic vests.",
+		--["menu_deck6_5_desc_sc"] = "Your armor is increased by an additional ##$perk_value_1## for ballistic vests.\n\nYou pick locks ##$perk_value_2## faster.",
+		--["menu_deck6_7_desc_sc"] = "Your dodge is increased by an additional ##$perk_value_1## points for ballistic vests.",
+		--["menu_deck6_9_desc_sc"] = "Your armor is increased by an additional ##$perk_value_1## for ballistic vests.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+
+		["menu_deck6_1"] = "Caught",
+		["menu_deck6_1_desc_sc"] = "When you are within ##$perk_value_1## meters of an enemy, you receive ##$perk_value_2## less damage from enemies.\n\nYour dodge is increased by ##$perk_value_3## points.",
+
+		["menu_deck6_3_desc_sc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nThis cannot occur more than once every #{important_1}#$perk_value_2## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_3## seconds; melee kills reduce it by #{skill_color}#$perk_value_4## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.",
+		
+		["menu_deck6_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##$perk_value_1## health and ##$perk_value_2## of your stamina.\n\nThis perk shares its cooldown with Basic Composure (Card 3) even if this perk was not triggered.\n\nYou pick locks ##$perk_value_3## faster.",
+		["menu_deck6_5_short_sc"] = "Killing an enemy with a melee weapon regenerates ##$perk_value_1## health and ##$perk_value_2## of your stamina.\n\nYou pick locks ##$perk_value_3## faster.",
+		
+		["menu_deck6_7_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters regenerates ##$perk_value_2## armor; melee kills double the amount.\n\nThis perk shares its cooldown with Basic Composure (Card 3) even if this perk was not triggered.\n\nYour dodge is increased by an additional #{skill_color}#$perk_value_3## points.",
+		["menu_deck6_7_short_sc"] = "Killing an enemy within ##$perk_value_1## meters regenerates ##$perk_value_2## armor; melee kills double the amount.\n\nYour dodge is increased by an additional #{skill_color}#$perk_value_3## points.",
+		
+		["menu_deck6_9"] = "Release",
+		["menu_deck6_9_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters has a ##$perk_value_2## chance to spread panic among your enemies in a ##$perk_value_3## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis perk shares its cooldown with Basic Composure (Card 3) even if this perk was not triggered.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck6_9_short_sc"] = "Killing an enemy within ##$perk_value_1## meters has a ##$perk_value_2## chance to spread panic among your enemies in a ##$perk_value_3## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Rogue
 		["menu_deck4_1_desc_sc"] = "Your dodge is increased by ##$perk_value_1## points.\n\nYou swap between your weapons ##$perk_value_2## faster.",
@@ -5943,11 +5958,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck1_9_desc_sc"] = "You and your crew gains #{skill_color}#$perk_value_1## max health and #{skill_color}#$perk_value_2## stamina for each hostage up to #{skill_color}#$perk_value_3## times.\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
-		["menu_deck3_1_desc_sc"] = "You gain ##$perk_value_1## more armor.",
-		["menu_deck3_3_desc_sc"] = "You gain an additional ##$perk_value_1## more armor.",
-		["menu_deck3_5_desc_sc"] = "You gain an additional ##$perk_value_1## more armor.\n\nYou gain the ability to place ##$perk_value_2## body bag cases.",
-		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##$perk_value_1.##",
-		["menu_deck3_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##$perk_value_1.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck3_1_desc_sc"] = "You gain ##$perk_value_1## more armor.\n\nBallistic vests gain an additional ##$perk_value_2## more armor.",
+		["menu_deck3_3_desc_sc"] = "You gain an additional ##$perk_value_1## more armor.\n\nYour dodge is increased by ##$perk_value_2## points.",
+		["menu_deck3_5_desc_sc"] = "You gain an additional ##$perk_value_1## more armor.\n\nYour dodge is increased by ##$perk_value_3## points for ballistic vests.\n\nYou gain the ability to place ##$perk_value_2## body bag cases.",
+		["menu_deck3_7_desc_sc"] = "Your armor recovery rate is increased by ##$perk_value_1.##\n\nYour dodge is increased by ##$perk_value_2## points for ballistic vests.",
+		["menu_deck3_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##$perk_value_1.##\n\nBallistic vests gain an additional ##$perk_value_2## more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Burglar--
 		["menu_deck7_1_desc_sc"] = "Your dodge is increased by ##$perk_value_1## points.\n\nYour dodge meter fills up by ##$perk_value_2## of your dodge every second while crouching.",
@@ -5974,14 +5989,50 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 
 		--Sociopath--
 		["menu_deck9_1_sc"] = "No Talk",
-		["menu_deck9_1_desc_sc"] = "When you are surrounded by three or more enemies within ##$perk_value_1## meters, you take ##$perk_value_2## less damage from enemies.",
-		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nThis cannot occur more than once every #{important_1}#$perk_value_2## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_3## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_4## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou gain #{skill_color}#$perk_value_5## dodge points.",
-		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##$perk_value_1## health and ##$perk_value_3## of your stamina.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYou carry ##$perk_value_2## additional body bag in your inventory.",
-		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters regenerates ##$perk_value_2## armor; melee kills double the amount.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYour dodge is increased by an additional ##$perk_value_3## points.",
-		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters has a ##$perk_value_2## chance to spread panic among your enemies in a ##$perk_value_3## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		--["menu_deck9_1_desc_sc"] = "When you are surrounded by three or more enemies within ##$perk_value_1## meters, you take ##$perk_value_2## less damage from enemies.",
+		--["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nThis cannot occur more than once every #{important_1}#$perk_value_2## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_3## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_4## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou gain #{skill_color}#$perk_value_5## dodge points.",
+		--["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##$perk_value_1## health and ##$perk_value_3## of your stamina.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYou carry ##$perk_value_2## additional body bag in your inventory.",
+		--["menu_deck9_7_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters regenerates ##$perk_value_2## armor; melee kills double the amount.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYour dodge is increased by an additional ##$perk_value_3## points.",
+		--["menu_deck9_9_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters has a ##$perk_value_2## chance to spread panic among your enemies in a ##$perk_value_3## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.## ",
+
+
+		["menu_deck9_1_desc_sc"] = "You gain a combo meter.\n\nKilling enemies with melee weapons builds up your combo meter by a base value of #{skill_color}#$perk_value_1## points; you can have a maximum combo of #{skill_color}#$perk_value_2## points. Killing elite and special enemies will multiply the amount of combo points you get, with Bulldozers and Captains providing even more points.\n\nYour combo meter decays at a rate of #{important_1}#$perk_value_3## points every #{risk}#$perk_value_4## seconds.\n\nYou lose #{important_1}#$perk_value_5## points of combo when taking health damage; this cannot occur more than once every #{skill_color}#$perk_value_6## seconds.\nYou lose #{important_1}#$perk_value_7## points of combo when going into bleedout.\n\nEvery #{risk}#$perk_value_8## points of combo you have grants you #{skill_color}#$perk_value_9## damage resistance, to a maximum of #{skill_color}#$perk_value_10.##",
+
+		["menu_deck9_3_desc_sc"] = "Non-lethal melee strikes and non-melee kills will refresh your combo decay timer.\n\nEvery #{risk}#$perk_value_1## points of combo you have grants you #{skill_color}#$perk_value_2## faster movement speed, to a maximum of #{skill_color}#$perk_value_3.##\n\nYou gain #{skill_color}#$perk_value_4## dodge points.",
+
+		["menu_deck9_5_desc_sc"] = "Killing enemies with melee weapons regenerates #{skill_color}#$perk_value_1## of your stamina.\n\nFor every #{risk}#$perk_value_2## points of combo you have, killing enemies with melee weapons regenerates #{skill_color}#$perk_value_3## health, to a maximum of #{skill_color}#$perk_value_4.##\n\nYou carry #{skill_color}#$perk_value_5## additional body bag in your inventory.",
+
+		["menu_deck9_7_desc_sc"] = "Your combo instead now decays at a rate of #{skill_color}#$perk_value_1## points per tick.\n\nFor every #{risk}#$perk_value_2## points of combo you have, killing enemies fills your dodge meter by #{skill_color}#$perk_value_3## of your dodge rating, to a maximum of #{skill_color}#$perk_value_4.##\nMelee kills double the amount.\n\nYour dodge is increased by an additional #{skill_color}#$perk_value_5## points.",
+
+		["menu_deck9_9_desc_sc"] = "For every #{risk}#$perk_value_1## points of combo you have, killing enemies using direct damage has a #{skill_color}#$perk_value_2## chance to spread panic among your enemies in a #{skill_color}#$perk_value_3## meter radius around you, to a maximum of #{skill_color}#$perk_value_4.##\nMelee kills triple the amount.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.## ",
+
+		["menu_deck9_richard"] = "Richard",
+		["menu_deck9_richard_desc_sc"] = "No additional effects.",
+		["menu_deck9_tony"] = "Tony",
+		["menu_deck9_tony_desc_sc"] = "Your #{skill_color}#Fists## deal #{skill_color}#$perk_value_1## more damage.\n\nYour total ammo is reduced by #{important_1}#$perk_value_2## and your ammo pickup rates are reduced by #{important_1}#$perk_value_3.##",		
+		["menu_deck9_aubrey"] = "Aubrey",
+		["menu_deck9_aubrey_desc_sc"] = "Non-melee kills using direct damage will build up your combo by a base value of #{skill_color}#$perk_value_1## point.\n\n#{risk}#Non-melee kills using direct damage will only add## #{skill_color}#$perk_value_2## #{risk}#seconds to the decay timer of an active combo;## #{important_1}#Kills using explosives or damage-over-time effects will no longer refresh your combo decay timer.##",
+		["menu_deck9_rufus"] = "Rufus",
+		["menu_deck9_rufus_desc_sc"] = "Instead gain #{skill_color}#$perk_value_1## damage resistance for every #{risk}#$perk_value_2## points of combo you have, to a maximum of #{skill_color}#$perk_value_3.##\n\nYou lose an additional #{important_1}#$perk_value_4## points of combo when taking health damage.",
+		["menu_deck9_zack"] = "Zack",
+		["menu_deck9_zack_desc_sc"] = "Your combo decay timer is extended by #{skill_color}#$perk_value_1## seconds; your combo decay rate is increased by #{important_1}#$perk_value_2## points.",
+		["menu_deck9_rick"] = "Rick",
+		["menu_deck9_rick_desc_sc"] = "Melee kills now instead build up your combo by a base value of #{skill_color}#$perk_value_1## points; your maximum combo is reduced by #{important_1}#$perk_value_2.##",
+		["menu_deck9_brandon"] = "Brandon",
+		["menu_deck9_brandon_desc_sc"] = "Instead gain #{skill_color}#$perk_value_1## speed for every #{risk}#$perk_value_2## points of combo you have, to a maximum of #{skill_color}#$perk_value_3.##\n\nYour combo decay timer is reduced by #{important_1}#$perk_value_4## second.",
+		["menu_deck9_earl"] = "Earl",
+		["menu_deck9_earl_desc_sc"] = "#{skill_color}#You no longer lose combo points when taking health damage;## #{important_1}#going into bleedout will fully drop your combo.##",
+		["menu_deck9_tonyr"] = "Tony's Revenge",
+		["menu_deck9_tonyr_desc_sc"] = "Your #{skill_color}#Brass Knuckles## deal #{skill_color}#$perk_value_1## more damage.\n\nYour total ammo is reduced by #{important_1}#$perk_value_2## and your ammo pickup rates are reduced by #{important_1}#$perk_value_3.##",
+		["menu_deck9_mark"] = "Mark",
+		["menu_deck9_mark_desc_sc"] = "#{risk}#Instead of dodge-on-kill, gain armor recovery speed.##\n\nFor every #{risk}#$perk_value_1## points of combo you have, speed up armor recovery by #{skill_color}#$perk_value_2,## to a maximum of #{skill_color}#$perk_value_3.##",
+		["menu_deck9_swan"] = "Alex & Ash",
+		["menu_deck9_swan_desc_sc"] = "Instead build your combo by a base value of #{skill_color}#$perk_value_1## points when alternating between melee and non-melee kills; #{risk}#Kills through repetitive means will only refresh your combo decay timer.##",
+		["menu_deck9_corey"] = "Corey",
+		["menu_deck9_corey_desc_sc"] = "Your kills will instead fill your dodge meter by #{skill_color}#$perk_value_1## of your dodge rating for every #{risk}#$perk_value_2## points of combo you have, to a maximum of #{skill_color}#$perk_value_3.##\n\nYou lose an additional #{important_1}#$perk_value_4## points of combo when taking health damage.",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals #{skill_color}#$perk_value_1## health every second for #{skill_color}#$perk_value_2## seconds; stacks up to #{skill_color}#$perk_value_3## times.\nYou can only gain a stack every #{important_1}#$perk_value_4## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#$perk_value_5## armor but gains #{skill_color}#$perk_value_6## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals #{skill_color}#$perk_value_1## health every second for #{skill_color}#$perk_value_2## seconds; stacks up to #{skill_color}#$perk_value_3## times.\nYou can only gain a stack every #{important_1}#$perk_value_4## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#$perk_value_5## armor but gains #{skill_color}#$perk_value_6## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage-over-time effects will not grant stacks.##",
 		["menu_deck11_3_desc_sc"] = "Stacks heal an additional ##$perk_value_1## health every second.",
 		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##$perk_value_1## seconds.\n\nYou gain the ability to place ##$perk_value_2## body bag cases.",
 		["menu_deck11_7_desc_sc"] = "Stacks heal an additional ##$perk_value_1## health every second.",
@@ -6124,17 +6175,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Hitman
 			["menu_deck5_mrwi_desc"] = "Killing an enemy outside of melee stores #{skill_color}#$perk_value_1## health. You can store up to #{risk}#$perk_value_2## health.\n\nKilling an enemy in melee turns that stored health into temporary health that decays at a rate of #{important_1}#$perk_value_3## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to #{risk}#$perk_value_4## temporary health at once.\n\nYou carry #{skill_color}#$perk_value_5## additional body bag in your inventory.",
 			--Crook
-			["menu_deck6_mrwi_desc"] = "Your dodge is increased by an additonal ##$perk_value_1## points for ballistic vests.\n\nYour armor is increased by an additional ##$perk_value_2## for ballistic vests.\n\nYou pick locks ##$perk_value_3## faster.",
+			--["menu_deck6_mrwi_desc"] = "Your dodge is increased by an additonal ##$perk_value_1## points for ballistic vests.\n\nYour armor is increased by an additional ##$perk_value_2## for ballistic vests.\n\nYou pick locks ##$perk_value_3## faster.",
+			["menu_deck6_mrwi_desc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nThis cannot occur more than once every #{important_1}#$perk_value_2## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_3## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_4## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou pick locks ##$perk_value_5## faster.",
 			--Burglar
 			["menu_deck7_mrwi_desc"] = "Your dodge is increased by an additonal ##$perk_value_1## points.\n\nYour dodge meter fills up by ##$perk_value_2## of your dodge every second while crouching.\n\nYou gain a ##$perk_value_3## boost in your movement speed when crouching.",
 			--Infiltrator
 			["menu_deck8_mrwi_desc"] = "When you are within ##$perk_value_1## meters of an enemy, you recieve ##$perk_value_2## less damage from enemies.\n\nEach successful melee hit grants an additional ##$perk_value_3## melee damage boost for ##$perk_value_4## seconds or until you miss; stacks up to ##$perk_value_5## times.\n\nYour camera loop duration is increased by ##$perk_value_6## seconds.",
 			--Sociopath
-			["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nKilling an enemy within #{skill_color}#$perk_value_2## meters regenerates an additional #{skill_color}#$perk_value_3## armor; melee kills double the amount.\n\nThis cannot occur more than once every #{important_1}#$perk_value_4## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_5## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_6## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou carry #{skill_color}#$perk_value_7## additional body bag in your inventory.",
+			--["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nKilling an enemy within #{skill_color}#$perk_value_2## meters regenerates an additional #{skill_color}#$perk_value_3## armor; melee kills double the amount.\n\nThis cannot occur more than once every #{important_1}#$perk_value_4## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_5## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_6## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou carry #{skill_color}#$perk_value_7## additional body bag in your inventory.",
+			["menu_deck9_mrwi_desc"] = "You gain a combo meter.\nKilling enemies with melee weapons builds up your combo meter by a base value of #{skill_color}#$perk_value_1## point, to a maximum of #{skill_color}#$perk_value_2## points.\n#{risk}#NOTE: Kills using## #{important_1}#explosives and damage-over-time effects## #{risk}#will not contribute to your combo in any way.##\n\nYour combo meter decays at a rate of #{important_1}#$perk_value_3## points every #{risk}#$perk_value_4## seconds.\nYou lose #{important_1}#$perk_value_5## points of combo when taking health damage; this cannot occur more than once every #{skill_color}#$perk_value_6## seconds.\nYou lose #{important_1}#$perk_value_7## points of combo when going into bleedout.\n\nEvery #{risk}#$perk_value_8## points of combo you have grants you #{skill_color}#$perk_value_9## damage resistance and movement speed, to a maximum of #{skill_color}#$perk_value_10.##\nKilling enemies with melee weapons regenerates #{skill_color}#$perk_value_11## of your stamina.\n\nYou carry #{skill_color}#$perk_value_12## additional body bag in your inventory.",
 			--Gambler
 			["menu_deck10_mrwi_desc"] = "Ammo boxes you pick up also yield medical supplies that heal you for ##$perk_value_1 to $perk_value_2## health.\n\nHealing has a ##$perk_value_3## second cooldown, but every ammo box you pick up reduces it by ##$perk_value_4 to $perk_value_5## seconds.\n\nWhen you pick up ammo, you trigger an ammo pickup for ##$perk_value_6## of normal rate to other crew members.\n\nYou answer pagers ##$perk_value_7## faster.",
 			--Grinder
-			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals #{skill_color}#$perk_value_1## health every second for #{skill_color}#$perk_value_2## seconds; stacks up to #{skill_color}#$perk_value_3## times.\nYou can only gain a stack every #{important_1}#$perk_value_4## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#$perk_value_5## armor but gains #{skill_color}#$perk_value_6## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##\n\nYou gain the ability to place #{skill_color}#$perk_value_7## body bag cases.",
+			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals #{skill_color}#$perk_value_1## health every second for #{skill_color}#$perk_value_2## seconds; stacks up to #{skill_color}#$perk_value_3## times.\nYou can only gain a stack every #{important_1}#$perk_value_4## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#$perk_value_5## armor but gains #{skill_color}#$perk_value_6## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage-over-time effects will not grant stacks.##\n\nYou gain the ability to place #{skill_color}#$perk_value_7## body bag cases.",
 			--Yakuza
 			["menu_deck12_mrwi_desc"] = "The lower your health, the more your dodge meter is filled when you kill an enemy.\n\nWhen your health is below ##100%##, your meter fills by up to ##$perk_value_1## of your dodge.\n\nYou bag corpses and interact with hostages ##$perk_value_2## faster.",
 			--Ex-Pres

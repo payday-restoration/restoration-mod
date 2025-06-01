@@ -595,7 +595,7 @@ if tweak_data.projectiles.xmas_snowball then
 	tweak_data.projectiles.xmas_snowball.player_dmg_mul = 0
 	tweak_data.projectiles.xmas_snowball.camera_shake_max_mul = 0
 	tweak_data.projectiles.xmas_snowball.feedback_range = -100
-	tweak_data.projectiles.xmas_snowball.curve_pow = 0.05
+	tweak_data.projectiles.xmas_snowball.curve_pow = 0.5
 	tweak_data.projectiles.xmas_snowball.range = 100
 	tweak_data.projectiles.xmas_snowball.adjust_z = 0
 end

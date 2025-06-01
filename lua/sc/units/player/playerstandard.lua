@@ -2162,6 +2162,15 @@ function PlayerStandard:_do_chainsaw_damage(t)
 				end
 			end
 
+			if character_unit:character_damage().dead and not character_unit:character_damage():dead() then
+				if managers.player:has_category_upgrade("player", "buildup_meter") and managers.player:has_category_upgrade("player", "buildup_meter_refresh") and managers.player._buildup_meter and managers.player._buildup_meter > 0 then
+					local combo_t_mod = (managers.player:has_category_upgrade("player", "buildup_meter_zack") and managers.player:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
+					local combo_t = managers.player:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
+					managers.player._buildup_meter_t = combo_t
+					managers.hud:start_buff("sociopath", managers.player._buildup_meter_t)
+				end
+			end
+
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
 
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage)
@@ -3926,6 +3935,16 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 					stack[2] = 0
 				end
 			end
+
+			if character_unit:character_damage().dead and not character_unit:character_damage():dead() then
+				if managers.player:has_category_upgrade("player", "buildup_meter") and managers.player:has_category_upgrade("player", "buildup_meter_refresh") and managers.player._buildup_meter and managers.player._buildup_meter > 0 then
+					local combo_t_mod = (managers.player:has_category_upgrade("player", "buildup_meter_zack") and managers.player:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
+					local combo_t = managers.player:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
+					managers.player._buildup_meter_t = combo_t
+					managers.hud:start_buff("sociopath", managers.player._buildup_meter_t)
+				end
+			end
+
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
 			self:_check_melee_special_damage(col_ray, character_unit, defense_data, melee_entry)
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage, action_data.damage_effect)

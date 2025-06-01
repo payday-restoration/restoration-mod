@@ -33,7 +33,7 @@ function ArrowBase:update(unit, t, dt)
 	if not self._is_pickup then
 		local autohit_dir = self:_calculate_autohit_direction()
 
-		if autohit_dir and self._damage_class_string ~= "InstantExplosiveBulletBase" then
+		if autohit_dir and self._damage_class_string ~= "InstantExplosiveBulletBase" and self._damage_class_string ~= "InstantSnowballBase"  then
 			local body = self._unit:body(0)
 
 			mvector3.set(tmp_vel, body:velocity())

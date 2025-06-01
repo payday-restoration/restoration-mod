@@ -5637,10 +5637,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	self.c96.uses_clip = true
 	self.mosin.uses_clip = true
-	self.ching.uses_clip = true
 	self.c96.clip_capacity = 10
 	self.mosin.clip_capacity = 5
-	self.ching.clip_capacity = 8
 	self.x_c96.uses_clip = true
 	self.x_c96.clip_capacity = 20
 	--End of Tac reloading shit--

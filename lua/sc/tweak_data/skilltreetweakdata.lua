@@ -2164,7 +2164,10 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_tier_armor_multiplier_1",
-					"player_tier_armor_multiplier_2"
+					"player_tier_armor_multiplier_2",
+					"player_level_2_armor_multiplier_1",
+					"player_level_3_armor_multiplier_1",
+					"player_level_4_armor_multiplier_1"
 				},
 				cost = 200,
 				icon_xy = {6, 0},
@@ -2175,7 +2178,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_tier_armor_multiplier_3",
-					"player_tier_armor_multiplier_4"
+					"player_tier_armor_multiplier_4",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {5, 1},
@@ -2186,7 +2190,10 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_tier_armor_multiplier_5",
-					"bodybags_bag_quantity"
+					"bodybags_bag_quantity",
+					"player_level_2_dodge_addend_1",
+					"player_level_3_dodge_addend_1",
+					"player_level_4_dodge_addend_1"
 				},
 				cost = 1000,
 				icon_xy = {0, 2},
@@ -2196,7 +2203,10 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_1"
+					"player_perk_armor_regen_timer_multiplier_1",
+					"player_level_2_dodge_addend_2",
+					"player_level_3_dodge_addend_2",
+					"player_level_4_dodge_addend_2"
 				},
 				cost = 2400,
 				icon_xy = {6, 1},
@@ -2207,7 +2217,10 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_2",
-					"player_passive_loot_drop_multiplier_1"
+					"player_passive_loot_drop_multiplier_1",
+					"player_level_2_armor_multiplier_2",
+					"player_level_3_armor_multiplier_2",
+					"player_level_4_armor_multiplier_2"
 				},
 				cost = 4000,
 				icon_xy = {6, 1},
@@ -2344,68 +2357,88 @@ function SkillTreeTweakData:init(tweak_data)
 			name_id = "menu_st_spec_6",
 			desc_id = "menu_st_spec_6_desc",
 			category = "defensive",
+			force_icon = 7,
 			{
 				upgrades = {
+					"player_damage_dampener_close_contact_1",
+					"player_damage_dampener_close_contact_2",
 					"player_passive_dodge_chance_1",
-					"player_level_2_armor_multiplier_1",
-					"player_level_3_armor_multiplier_1",
-					"player_level_4_armor_multiplier_1"	
+					--"player_passive_dodge_chance_1",
+					--"player_level_2_armor_multiplier_1",
+					--"player_level_3_armor_multiplier_1",
+					--"player_level_4_armor_multiplier_1"	
 				},
 				cost = 200,
-				icon_xy = {4, 3},
+				icon_xy = {4, 4},
+				--icon_xy = {4, 3},
 				name_id = "menu_deck6_1",
 				desc_id = "menu_deck6_1_desc_sc"
 			},
 			deck2,
 			{
 				upgrades = {
-					"player_level_2_dodge_addend_1",
-					"player_level_3_dodge_addend_1",
-					"player_level_4_dodge_addend_1"
-				
+					"player_killshot_regen_armor_bonus",
+					--"player_level_2_dodge_addend_1",
+					--"player_level_3_dodge_addend_1",
+					--"player_level_4_dodge_addend_1"
+
 				},
 				cost = 400,
-				icon_xy = {1, 2},
+				icon_xy = {4, 3},
+				--icon_xy = {1, 2},
 				name_id = "menu_deck6_3",
 				desc_id = "menu_deck6_3_desc_sc"
 			},
 			deck4,
 			{
 				upgrades = {
-					"player_level_2_armor_multiplier_2",
-					"player_level_3_armor_multiplier_2",
-					"player_level_4_armor_multiplier_2",
-					"player_pick_lock_speed_multiplier"				
+					"player_melee_kill_life_leech",
+					"player_melee_kill_stamina_1",
+					"player_melee_kill_stamina_2",
+					"player_pick_lock_speed_multiplier"	
+					--"player_level_2_armor_multiplier_2",
+					--"player_level_3_armor_multiplier_2",
+					--"player_level_4_armor_multiplier_2",
+					--"player_pick_lock_speed_multiplier"				
 				},
 				cost = 1000,
 				icon_xy = {5, 3},
 				name_id = "menu_deck6_5",
-				desc_id = "menu_deck6_5_desc_sc"
+				desc_id = "menu_deck6_5_desc_sc",
+				short_id = "menu_deck6_5_short_sc"
 			},
 			deck6,
 			{
 				upgrades = {
-					"player_level_2_dodge_addend_2",
-					"player_level_3_dodge_addend_2",
-					"player_level_4_dodge_addend_2"						
+					"player_killshot_close_regen_armor_bonus",
+					"player_passive_dodge_chance_2",
+					--"player_level_2_dodge_addend_2",
+					--"player_level_3_dodge_addend_2",
+					--"player_level_4_dodge_addend_2"						
 				},
 				cost = 2400,
-				icon_xy = {2, 2},
+				icon_xy = {6, 3},
+				--icon_xy = {2, 2},
 				name_id = "menu_deck6_7",
-				desc_id = "menu_deck6_7_desc_sc"
+				desc_id = "menu_deck6_7_desc_sc",
+				short_id = "menu_deck6_7_short_sc"
 			},
 			deck8,
 			{
 				upgrades = {
-					"player_passive_loot_drop_multiplier_1",
-					"player_level_2_armor_multiplier_3",
-					"player_level_3_armor_multiplier_3",
-					"player_level_4_armor_multiplier_3"	
+					"player_killshot_close_panic_chance",
+					"player_passive_loot_drop_multiplier_1"
+					--"player_passive_loot_drop_multiplier_1",
+					--"player_level_2_armor_multiplier_3",
+					--"player_level_3_armor_multiplier_3",
+					--"player_level_4_armor_multiplier_3"	
 				},
 				cost = 4000,
-				icon_xy = {6, 3},
+				icon_xy = {2, 5},
+				--icon_xy = {6, 3},
 				name_id = "menu_deck6_9",
-				desc_id = "menu_deck6_9_desc_sc"
+				desc_id = "menu_deck6_9_desc_sc",
+				short_id = "menu_deck6_9_short_sc"
 			}
 		}
 
@@ -2536,37 +2569,242 @@ function SkillTreeTweakData:init(tweak_data)
 		}
 
 	--Sociopath--
+	local socio_multi_choice = {
+		{
+			name_id = "menu_deck9_richard",
+			desc_id = "menu_deck9_richard_desc_sc",
+			short_id = "menu_deck9_richard_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {0, 0}
+		},
+		{
+			name_id = "menu_deck9_tony",
+			desc_id = "menu_deck9_tony_desc_sc",
+			short_id = "menu_deck9_tony_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+				
+				"player_melee_fists_damage_multiplier",
+				"buildup_meter_tony_extra_ammo_multiplier_1",
+				"buildup_meter_tony_pick_up_multiplier_1"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {0, 1}
+		},
+		{
+			name_id = "menu_deck9_aubrey",
+			desc_id = "menu_deck9_aubrey_desc_sc",
+			short_id = "menu_deck9_aubrey_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+				
+				"player_buildup_meter_aubrey"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {0, 2}
+		},
+		{
+			name_id = "menu_deck9_rufus",
+			desc_id = "menu_deck9_rufus_desc_sc",
+			short_id = "menu_deck9_rufus_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+				
+				"buildup_meter_pacify_2",
+				"buildup_meter_hurt_decay_mod_1",
+				"buildup_meter_hurt_decay_mod_2"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {0, 3}
+		},
+		{
+			name_id = "menu_deck9_zack",
+			desc_id = "menu_deck9_zack_desc_sc",
+			short_id = "menu_deck9_zack_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+				
+				"player_buildup_meter_zack_1"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {0, 4}
+		},
+		{
+			name_id = "menu_deck9_rick",
+			desc_id = "menu_deck9_rick_desc_sc",
+			short_id = "menu_deck9_rick_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+
+				"player_buildup_meter_rick"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {0, 5}
+		},
+		{
+			name_id = "menu_deck9_brandon",
+			desc_id = "menu_deck9_brandon_desc_sc",
+			short_id = "menu_deck9_brandon_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+
+				"buildup_meter_redline_2",
+				"player_buildup_meter_zack_1",
+				"player_buildup_meter_zack_2"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {0, 6}
+		},
+		{
+			name_id = "menu_deck9_earl",
+			desc_id = "menu_deck9_earl_desc_sc",
+			short_id = "menu_deck9_earl_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+				
+				"player_buildup_meter_earl"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {0, 7}
+		},
+		{
+			name_id = "menu_deck9_tonyr",
+			desc_id = "menu_deck9_tonyr_desc_sc",
+			short_id = "menu_deck9_tonyr_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+				
+				"player_melee_brass_damage_multiplier",
+				"buildup_meter_tony_extra_ammo_multiplier_1",
+				"buildup_meter_tony_extra_ammo_multiplier_2",
+				"buildup_meter_tony_pick_up_multiplier_1",
+				"buildup_meter_tony_pick_up_multiplier_2"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {1, 0}
+		},
+		{
+			name_id = "menu_deck9_mark",
+			desc_id = "menu_deck9_mark_desc_sc",
+			short_id = "menu_deck9_mark_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+				
+				"player_buildup_meter_mark"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {1, 1}
+		},
+		{
+			name_id = "menu_deck9_swan",
+			desc_id = "menu_deck9_swan_desc_sc",
+			short_id = "menu_deck9_swan_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+				
+				"player_buildup_meter_swan"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {1, 2}
+		},
+		{
+			name_id = "menu_deck9_corey",
+			desc_id = "menu_deck9_corey_desc_sc",
+			short_id = "menu_deck9_corey_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"buildup_meter_pacify_1",
+				"buildup_meter_redline_1",
+				"buildup_meter_elude_1",
+				
+				"buildup_meter_elude_2",
+				"buildup_meter_hurt_decay_mod_1"
+			},
+			texture_bundle_folder = "sc",
+			icon_xy = {1, 3}
+		},
+	}
+
 	local sc_sociopath = {
 			name_id = "menu_st_spec_9",
 			desc_id = "menu_st_spec_9_desc",
 			dlc = "hlm2_deluxe",
-			category = "offensive",
+			category = {
+				"offensive",
+				"challenge",
+			},
 			{
 				upgrades = {
-					"player_damage_dampener_outnumbered_strong",
+					"player_buildup_meter_1",
+					"buildup_meter_pacify_1",
+					--"player_damage_dampener_outnumbered_strong",
 				},
 				cost = 200,
-				icon_xy = {3, 4},
+				icon_xy = {4, 4},
+				--icon_xy = {3, 4},
 				name_id = "menu_deck9_1_sc",
-				desc_id = "menu_deck9_1_desc_sc"
+				desc_id = "menu_deck9_1_desc_sc",
 			},
 			deck2,
 			{
 				upgrades = {
-					"player_killshot_regen_armor_bonus",
-					"player_passive_dodge_chance_1"
+					"buildup_meter_refresh_1",
+					"buildup_meter_redline_1",
+					--"player_killshot_regen_armor_bonus",
+					--"player_passive_dodge_chance_1"
 				},
 				cost = 400,
-				icon_xy = {0, 5},
+				texture_bundle_folder = "max",
+				icon_xy = {2, 0},
+				--icon_xy = {0, 5},
 				name_id = "menu_deck9_3",
 				desc_id = "menu_deck9_3_desc_sc"
 			},
 			deck4,
 			{
 				upgrades = {
-					"player_melee_kill_life_leech",
-					"player_melee_kill_stamina",
+					"buildup_meter_hysteria_1",
+					"player_melee_kill_stamina_1",
 					"player_corpse_dispose_amount_2"
+					--"player_melee_kill_life_leech",
+					--"player_melee_kill_stamina_1",
+					--"player_corpse_dispose_amount_2"
 				},
 				cost = 1000,
 				icon_xy = {1, 5},
@@ -2576,24 +2814,31 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_killshot_close_regen_armor_bonus",
+					"player_buildup_meter_2",
+					"buildup_meter_elude_1",
 					"player_passive_dodge_chance_2"
+					--"player_killshot_close_regen_armor_bonus",
+					--"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
-				icon_xy = {2, 5},
+				icon_xy = {1, 2},
+				--icon_xy = {2, 5},
 				name_id = "menu_deck9_7",
 				desc_id = "menu_deck9_7_desc_sc"
 			},
 			deck8,
 			{
 				upgrades = {
-					"player_killshot_close_panic_chance",
+					"buildup_meter_terrify_1",
 					"player_passive_loot_drop_multiplier_1"
+					--"player_killshot_close_panic_chance",
+					--"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
 				icon_xy = {3, 5},
 				name_id = "menu_deck9_9",
-				desc_id = "menu_deck9_9_desc_sc"
+				desc_id = "menu_deck9_9_desc_sc",
+				multi_choice = socio_multi_choice
 			}
 		}
 

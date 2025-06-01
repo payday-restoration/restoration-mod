@@ -5367,7 +5367,7 @@ function BlackMarketGui:update_info_text()
 		local is_pro = Global.game_settings and Global.game_settings.one_down
 		local difficulty_id = math.max(0, (tweak_data:difficulty_to_index(current_diff) or 0) - 2)
 		local grace_cap = nil
-		dodge_rating = math.clamp((dodge_rating + mod_dodge + skill_dodge) * 1000, 0, 450)
+		dodge_rating = math.round(math.clamp((dodge_rating + mod_dodge + skill_dodge) * 1000, 0, 450))
 		if dodge_rating and dodge_rating > 0 then
 			local description = managers.localization:text("bm_menu_dodge_grace", { grace_bonus = dodge_rating .. managers.localization:text("bm_menu_append_milliseconds") } )
 			local diff_desc = ""

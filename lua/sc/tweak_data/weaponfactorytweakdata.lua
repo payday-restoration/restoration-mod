@@ -4054,6 +4054,7 @@ end)
 							ammo_pickup_min_mul = 2,
 							alt_ammo_pickup_max_mul = 2,
 							alt_ammo_pickup_min_mul = 2,
+							damage_min_mult = 2,
 							rof_mult = 4.443333
 						},
 						stats = {
@@ -11975,8 +11976,14 @@ end)
 						stats = deep_clone(stocks.fixed_to_thumbhole_stats),
 						custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
 					}
+					self.wpn_fps_ass_m16.override.wpn_fps_upg_o_eotech = {
+						stats = {
+							zoom = 5,
+							recoil = 4
+						}
+					}
 
-					self.wpn_fps_ass_m16.ad = self.wpn_fps_ass_m16.adds or {}
+					self.wpn_fps_ass_m16.adds = self.wpn_fps_ass_m16.adds or {}
 					self.wpn_fps_ass_m16.adds.wpn_fps_upg_m16_fg_edge = { "wpn_fps_m4_uupg_fg_rail_ext_dummy" }
 
 					table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_cola_legend")
@@ -13509,6 +13516,12 @@ end)
 				self.wpn_fps_ass_fal.override.wpn_fps_snp_tti_s_vltor = {
 					stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
 					custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
+				}
+				self.wpn_fps_ass_fal.override.wpn_fps_upg_o_eotech = {
+					custom_stats = {
+						ads_speed_mult = 1.015,
+						damage_min_mult = 1.25
+					}
 				}
 
 				table.insert(self.wpn_fps_ass_fal.uses_parts, "wpn_fps_upg_m4_s_standard")
@@ -24866,6 +24879,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ammo_pickup_min_mul = 2,
 			alt_ammo_pickup_max_mul = 2,
 			alt_ammo_pickup_min_mul = 2,
+			damage_min_mult = 2,
 			rof_mult = 3.3325,
 		},
 		stats = {

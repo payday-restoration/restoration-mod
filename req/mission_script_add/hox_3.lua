@@ -8,7 +8,7 @@ local ponr_timer_player_mul = {
 	0.65,
 }
 local opts_pro_job_ponr = {
-	elements =  { 100836 , 100245 ,100834, 100832, 100833, },
+	elements =  { 100836, 100245, 100834, 100832, 100833, },
 	trigger_times = 0,
 	time_balance_mul = ponr_timer_player_mul,
 	time_easy = ponr_value,
@@ -21,22 +21,16 @@ local opts_pro_job_ponr = {
 	time_sm_wish = ponr_value,
 	enabled = pro_job,
 }
-local opts_toggle_on_ponr = {
+local opts_pro_job_ponr_counter = {
 	enabled = true,
-	elements = {100038,},
-	toggle = "on",
-}
-local opts_try_start_ponr = {
-	enabled = false,
+	counter_target = 2,
 	on_executed = {
-    { id = 100039, delay = 0, },
- 	
+		{ id = 400001, delay = 0, },
 	},
 }
 return {
 	elements = {
-		restoration:gen_pointofnoreturn(100039, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
-		restoration:gen_missionscript(100038, "try_start_ponr", opts_try_start_ponr),
-		restoration:gen_toggleelement(100031, "toggle_on_ponr", opts_toggle_on_ponr),
+		restoration:gen_pointofnoreturn(400001, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
+		restoration:gen_counter(400002, "pro_job_ponr_counter", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_counter),
 	},
 }

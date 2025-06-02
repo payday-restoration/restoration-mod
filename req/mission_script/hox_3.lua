@@ -6,36 +6,26 @@ local responders_table = {
 }
 local fbi_ready_team_dozer = {
 	values = {
-		enemy = responder_dozer
-	}
+		enemy = responder_dozer,
+	},
 }
 local fbi_ready_team = {
 	values = {
-		enemy = responders_table
-	}
+		enemy = responders_table,
+	},
 }
 return {
-	-- Pro Job PONR 
+	-- Pro Job PONR
+	-- Triggers once both A) the rat dies, and B) whisper state is off (on alarm)
 	[101735] = {
-		on_executed = { 
-			{id = 100038, delay = 0,},
-			{id = 100031, delay = 0,},
+		on_executed = {
+			{ id = 400002, delay = 0, },
 		},
 	},
-	-- stfu whisper mode 
 	[100824] = {
 		on_executed = {
-			{id = 100038, delay = 0,},
-			{id = 100031, delay = 0,},
+			{ id = 400002, delay = 0, },
 		},
-	},
-	-- Boss spawn
-	[102107] = {
-		difficulty = 0.1,
-	},
-	-- Boss dead
-	[100788] = {
-		difficulty = 1,
 	},
 	-- Disable garage escape
 	[100206] = {
@@ -43,7 +33,7 @@ return {
 			enabled = false,
 		}
 	},
-		-- Add new reinforce around the house (from Eclipse)
+	-- Add new reinforce around the house (from Eclipse)
 	[100109] = {
 		reinforce = {
 			{

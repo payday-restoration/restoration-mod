@@ -274,6 +274,10 @@ function MissionManager.mission_script_patch_funcs.so_access_filter(self, elemen
 end
 
 function MissionManager.mission_script_patch_funcs.enemy(self, element, data)
+	restoration:warn("Attempt to use \"enemy\" patch function, it is not set up yet - converting to values patch")
+	self.mission_script_patch_funcs.values(self, element, { enemy = data, })
+	do return end
+
 	element:replace_enemy_name(data)
 	element:chk_used_mapped_names(true)
 

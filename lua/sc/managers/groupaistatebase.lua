@@ -327,27 +327,24 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 	if not self._point_of_no_return_areas then
 		self._point_of_no_return_areas = {}
 
-		if not self._point_of_no_return_id or not get_mission_script_element(self._point_of_no_return_id) then
-			--Nothing
-		else
-			local element = get_mission_script_element(self._point_of_no_return_id)
-			local element_elements = element._values.elements
-
-			for i = 1, #element_elements do
-				local id = element_elements[i]
-				local area = id and get_mission_script_element(id)
-
-				if area then
-					self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = area
+		local element = get_mission_script_element(self._point_of_no_return_id)
+		if element then
+			local element_elements = element:value("elements")
+			if element_elements then
+				for i = 1, #element_elements do
+					local id = element_elements[i]
+					local area = id and get_mission_script_element(id)
+					if area then
+						self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = area
+					end
 				end
 			end
 
-			local element_elements_in_instances = element._values.elements_in_instances
+			local element_elements_in_instances = element:value("elements_in_instances")
 			if element_elements_in_instances then
 				for instance_name, data in pairs_g(element_elements_in_instances) do
-					for _, id in pairs(data) do
+					for _, id in pairs_g(data) do
 						local area_in_instance = get_element_in_instance(instance_name, id)
-
 						if area_in_instance then
 							self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = area_in_instance
 						end
@@ -361,23 +358,19 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 		end
 	end
 
+	local ponr_areas = self._point_of_no_return_areas
 	local is_inside = false
 	local plr_unit = managers.player:player_unit()
 
 	if plr_unit then
-		local ponr_areas = self._point_of_no_return_areas
-
 		for i = 1, #ponr_areas do
 			local area = ponr_areas[i]
-
 			if area:enabled() or area:value("was_enabled") then
 				-- _is_inside also checks shape elements tied to the area trigger if not inside the area trigger
 				-- Fall back on is_inside if the element doesn't have _is_inside for whatever reason
 				local is_inside_func = area._is_inside or area.is_inside
-
 				if is_inside_func and is_inside_func(area, plr_unit:movement():m_pos()) then
 					is_inside = true
-
 					break
 				end
 			end
@@ -425,19 +418,10 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 				end
 			end
 
-			if not self._point_of_no_return_id or not get_mission_script_element(self._point_of_no_return_id) then
-				--Nothing
-			else
-				local element = get_mission_script_element(self._point_of_no_return_id)
-				local element_elements = element._values.elements
-
-				for i = 1, #element_elements do
-					local id = element_elements[i]
-					local area = id and get_mission_script_element(id)
-
-					if area then
-						area:execute_on_executed({})
-					end
+			for i = 1, #ponr_areas do
+				local area = ponr_areas[i]
+				if area then
+					area:execute_on_executed({})
 				end
 			end
 		end

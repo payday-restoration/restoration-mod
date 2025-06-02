@@ -293,27 +293,34 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 	end
 
 	local function get_element_in_instance(instance_name, id)
+		restoration:log("Attempt to get element %u in instance %s", id, instance_name)
+
 		local instance_mgr = managers.world_instance
 		local instance_data = instance_mgr:get_instance_data_by_name(instance_name)
-
 		if not instance_data or not instance_data.start_index then
+			restoration:warn("Missing instance data for instance %s", instance_name)
 			return
 		end
 
 		local continent_data = managers.worlddefinition._continents[instance_data.continent]
 		if not continent_data or not continent_data.base_id then
+			restoration:warn("Missing continent data for instance %s", instance_name)
 			return
 		end
 
 		local new_id = continent_data.base_id + instance_mgr:_get_mod_id(id) + instance_mgr:start_offset_index() + instance_data.start_index
 		local area = get_mission_script_element(new_id)
-		if area then
-			-- log("found area in instance", area:id(), instance_name)
-			if getmetatable(area) == ElementAreaTrigger then
-				-- log("found area is an area trigger")
-				return area
-			end
+		if not area then
+			restoration:warn("Could not find PONR anti-grief area %u in instance %s", id, instance_name)
+			return
 		end
+
+		if getmetatable(area) ~= ElementAreaTrigger then
+			restoration:warn("PONR anti-grief area %u in instance %s is not an area trigger", id, instance_name)
+			return
+		end
+
+		return area
 	end
 
 	local prev_time = self._point_of_no_return_timer

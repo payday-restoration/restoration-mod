@@ -7197,19 +7197,25 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.CS_cop_C45_R870.unit_types.fbi[1] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"
 		self.unit_categories.CS_cop_C45_R870.unit_types.fbi[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"
 		self.unit_categories.CS_cop_C45_R870.unit_types.fbi[3] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
+		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[1] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"
+		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"
+		self.unit_categories.CS_cop_C45_R870.unit_types.lapd[3] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
 		-- Pistol + MP5 only
 		self.unit_categories.CS_cop_C45_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"
 		self.unit_categories.CS_cop_C45_MP5.unit_types.nypd[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"	
 		self.unit_categories.CS_cop_C45_MP5.unit_types.fbi[1] = "units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"
 		self.unit_categories.CS_cop_C45_MP5.unit_types.fbi[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"	
+		self.unit_categories.CS_cop_C45_MP5.unit_types.lapd[2] = "units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"	
 		-- Shotgun 
 		self.unit_categories.CS_cop_R870.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
 		self.unit_categories.CS_cop_R870.unit_types.fbi[1] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
+		self.unit_categories.CS_cop_R870.unit_types.lapd[1] = "units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"
 		-- Bronco (Heh)
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.fbi[1] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"
+		self.unit_categories.CS_cop_stealth_MP5.unit_types.lapd[1] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"
 
-		-- Marshal Shields replace regular Titan Shields on Texas heists
+		--[[
 		if difficulty_index == 5 then
 			self.unit_categories.FBI_shield.unit_types.nypd[20] = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			self.unit_categories.FBI_shield.unit_types.fbi[20] = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
@@ -7220,16 +7226,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			self.unit_categories.GS_shield.unit_types.nypd[10] = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			self.unit_categories.GS_shield.unit_types.fbi[10] = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		end
-
+		--]]
+		
 		-- just in case
-		self.unit_categories.GS_shield_defend.unit_types.nypd = {
-			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-			Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")	
-		}
 
 		self.unit_categories.GS_shield_defend.unit_types.fbi = {
 			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
@@ -7240,8 +7239,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")		
 		}
 
-		-- Have US Marshals on Texas heists instead of regular Titan Snipers
-		self.unit_categories.titan_sniper = deep_clone(self.unit_categories.marshal_marksman)
 	end
 	-- SF heists, replace LAPD beat cops with SFPD ones
 	if table.contains(restoration.needle, job) then

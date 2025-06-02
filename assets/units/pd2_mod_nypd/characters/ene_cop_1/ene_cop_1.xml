@@ -22,6 +22,16 @@
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
 
+		<sequence editable_state="true" name="'cop_revolver_ranc'" triggable="true" once="true">						
+			<set_variables var_gadgets_cop="5"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
+
+		<sequence editable_state="true" name="'cop_sg_ranc'" triggable="true" once="true">						
+			<set_variables var_gadgets_cop="6"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
+
 		<sequence editable_state="true" name="'cop_smg'" triggable="true" once="true">						
 			<set_variables var_gadgets_cop="3"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
@@ -94,6 +104,14 @@
 
 		<filter name="'check_cop_rev'">
 			<check value="vars.var_gadgets_cop == 2"/>
+		</filter>
+
+		<filter name="'check_cop_rev_ranc'">
+			<check value="vars.var_gadgets_cop == 5"/>
+		</filter>
+
+		<filter name="'check_cop_sg_ranc'">
+			<check value="vars.var_gadgets_cop == 6"/>
 		</filter>
 
 		<filter name="'check_cop_smg'">
@@ -173,13 +191,20 @@
 			
 			<!-- revolver -->
 			<run_sequence filter="'check_cop_rev'" name="'body_cop_rev'"/>
-	
+			
+			<!-- revolver -->
+			<run_sequence filter="'check_cop_rev_ranc'" name="'body_cop_rev_ranc'"/>
+			<run_sequence filter="'check_cop_rev_ranc'" name="'body_cop'..pick('_longsleeve','_longsleeve','_longsleeve', '_longsleeve', '_longsleeve', '_longsleeve', '_shortsleeve', '_longsleeve')"/>
+
 			<!-- smg -->
 			<run_sequence filter="'check_cop_smg'" name="'body_cop_smg'"/>
 			<run_sequence filter="'check_cop_smg'" name="'body_cop'..pick('_shortsleeve','_shortsleeve','_shortsleeve', '_shortsleeve', '_shortsleeve', '_longsleeve', '_shortsleeve', '_shortsleeve')"/>
 			
 			<!-- sg -->
 			<run_sequence filter="'check_cop_sg'" name="'body_cop_sg'"/>
+			
+			<run_sequence filter="'check_cop_sg_ranc'" name="'body_cop_sg'"/>
+			<run_sequence filter="'check_cop_sg_ranc'" name="'body_cop'..pick('_longsleeve','_longsleeve','_longsleeve', '_longsleeve', '_longsleeve', '_longsleeve', '_shortsleeve', '_longsleeve')"/>
 				
 			<!-- sec pistol -->
 			<run_sequence filter="'check_sec_pistol'" name="'body_sec_pis'"/>
@@ -322,6 +347,11 @@
 				<object enabled="true" name="'g_body_cop_sg_lod1'"/>				
 				<object enabled="true" name="'g_body_cop_shortsleeve_beefcake'"/>
 				<object enabled="true" name="'g_body_cop_shortsleeve_lod1'"/>				
+			</sequence>				
+			
+			<sequence editable_state="true" name="'body_cop_sg_ranc'" once="true" triggable="true">				
+				<object enabled="true" name="'g_body_cop_sg'"/>
+				<object enabled="true" name="'g_body_cop_sg_lod1'"/>				
 			</sequence>					
 		
 			<!-- revolver -->
@@ -336,7 +366,16 @@
 				<object enabled="true" name="'g_hat_lod1'"/>
 				<object enabled="true" name="'g_hat_lod2'"/>								
 			</sequence>					
+
 		
+			<!-- revolver -->
+			<sequence editable_state="true" name="'body_cop_rev_ranc'" once="true" triggable="true">				
+				<object enabled="true" name="'g_body_cop_revolver'"/>
+				<object enabled="true" name="'g_body_cop_revolver_lod1'"/>	
+				<object enabled="true" name="'g_hat_lod1'"/>
+				<object enabled="true" name="'g_hat_lod2'"/>								
+			</sequence>					
+			
 			<!-- smg -->
 			<sequence editable_state="true" name="'body_cop_smg'" once="true" triggable="true">				
 				<object enabled="true" name="'g_body_cop_smg'"/>

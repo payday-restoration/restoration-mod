@@ -34,7 +34,7 @@
 		</body>	
 	
 		<body name="'glass_visor'">
-			<endurance bullet="2" explosion="4">
+			<endurance bullet="1" explosion="4">
 				<run_sequence name="'crk_visor'"/>
 			</endurance>
 			<endurance explosion="6">
@@ -43,7 +43,7 @@
 		</body>	
 
 		<body name="'glass_shield'">
-			<endurance bullet="2" explosion="4">
+			<endurance bullet="1" explosion="4">
 				<run_sequence name="'crk_visor'"/>
 			</endurance>
 			<endurance explosion="6">
@@ -198,6 +198,14 @@
 			<set_variables var_gadgets_blue_heavy="5"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 			<body enabled="true" name="'bag_gren'" />	
+		</sequence>
+		
+		<sequence editable_state="true" name="'awesomesfpd'" triggable="true" once="true">						
+			<material_config name="'units/pd2_mod_lapd/characters/ene_swat_1/badasssf'"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'awesometexpd'" triggable="true" once="true">						
+			<material_config name="'units/pd2_mod_lapd/characters/ene_swat_1/badasstex'"/>
 		</sequence>
 		
 		<sequence name="'detonate'" once="true">		
@@ -418,6 +426,8 @@
 			<object enabled="false" name="'g_helmet_lod7'"/>						
 			<object enabled="false" name="'g_helmet_lod8'"/>						
 			<object enabled="false" name="'g_helmet_lod9'"/>						
+			<object enabled="false" name="'g_helmet_lod10'"/>						
+			<object enabled="false" name="'g_helmet_lod11'"/>						
 
 			<body 		    enabled="true" name="'acc_helmet'" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>			
 			<graphic_group  enabled="true" name="'acc_helmet'"/>
@@ -583,7 +593,9 @@
 			<sound filter="'check_blue_heavy_ar'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>		
 			
 			<sound filter="'check_fbi_heavy_ar'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
-			<sound filter="'check_fbi_heavy_ar'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
+			<sound filter="'check_fbi_heavy_ar'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>	
+			
+			<sound filter="'check_fbi_heavy_sg'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>			
 			
 			<sound filter="'check_blue_heavy_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
 			<sound filter="'check_blue_heavy_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
@@ -674,6 +686,8 @@
 			<body enabled="true" name="'body'"/>
 			<body enabled="true" name="'Head'"/>
 			<body enabled="false" motion="'keyframed'" name="'rag_Hips'"/>
+			<body enabled="false" name="'bag'"/>
+			<body enabled="false" name="'bag_gren'"/>
 			<body enabled="true" motion="'keyframed'" name="'rag_LeftUpLeg'"/>
 			<body enabled="true" motion="'keyframed'" name="'rag_RightUpLeg'"/>
 			<body enabled="true" motion="'keyframed'" name="'rag_LeftLeg'"/>

@@ -86,6 +86,8 @@
 	<!--lapd textures-->	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_body_nm"/>	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_body_df" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/badasssfsoldiers_df" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/badasstexsoldiers_df" />	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/special_body_df" />	
 	
 	<!-- blue swats here -->
@@ -110,6 +112,12 @@
 	<material_config	path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
 	<material_config	path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1_contour"/>
 	
+	<material_config	path="units/pd2_mod_lapd/characters/ene_swat_1/badasstex"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_swat_1/badasstex_contour"/>
+
+	<material_config	path="units/pd2_mod_lapd/characters/ene_swat_1/badasssf"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_swat_1/badasssf_contour"/>
+	
 	<!--LAPD swat r870-->
 	<unit				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2" load="true"/>
 	<unit				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2_husk" load="true"/>		
@@ -126,6 +134,33 @@
 	<unit				path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1" load="true" />
 	<unit				path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1_husk" load="true" />
 	<!-- blue swat tier end -->
+	
+	<unit_mat_seq		path="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas" load="true"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas_contour"/>
+	
+	<!--Texas Cops-->
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" load="true" force="false" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1_husk" load="true" force="false" />	
+	<object				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="false" />	
+	<material_config	path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1_contour" force="false" />	
+	<material_config	path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1" force="false" />	
+	<model				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="false" />	
+	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1" force="false" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" />
+
+	<unit_mat			path="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" load="true" />
+	<cooked_physics		path="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" />
+	
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2" load="true" force="false" />
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2_husk" load="true" force="false" /> 	
+	
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3" load="true"/>
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3_husk" load="true"/>	
+	
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4" load="true"/>
+	<unit				path="units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4_husk" load="true"/>	
 	
 	<!--FBI Tier-->
 	<!--fbi swat 1-->

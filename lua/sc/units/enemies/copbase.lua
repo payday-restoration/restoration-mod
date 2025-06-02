@@ -320,6 +320,40 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	
 end)
 
+local enemy_variations_texas_pd_table = {
+	["units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "awesometexpd",
+	["units/pd2_mod_lapd/characters/ene_sniper_2/ene_sniper_2"] = "awesometexpd"
+}
+
+local enemy_variations_sfpd_table = {
+	["units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "awesomesfpd",
+	["units/pd2_mod_lapd/characters/ene_sniper_2/ene_sniper_2"] = "awesomesfpd"
+}
+
 local enemy_variations_clean = {
 	["units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"] = "swat_ar",
 	["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "swat_sniper",
@@ -496,9 +530,9 @@ local enemy_variations_clean = {
 	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"] = "la_veteran_COP",
 	
 	["units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"] = "cop_pistol",
-	["units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"] = "cop_revolver",
+	["units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"] = "cop_revolver_ranc",
 	["units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"] = "cop_smg",
-	["units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"] = "cop_sg",
+	["units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"] = "cop_sg_ranc",
 	
 	["units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"] = "sec_red_pistol",
 	["units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"] = "sec_red_smg",
@@ -575,7 +609,7 @@ local head_variations_clean = {
 	["units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"] = "swat_heavy_la",
 	["units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "swat_heavy_la",	
 	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "swat_heavy_fbi_la",
-	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "swat_heavy_fbi_la",	
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = "swat_heavy_fbi_la",	
 	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "swat_heavy_fbi_la",
 	
 	--  marshals
@@ -644,9 +678,23 @@ local head_variations_clean = {
 local enemy_variations = {}
 local head_variations = {}
 
+local enemy_variations_texas_pd = {}
+local enemy_variations_sfpd = {}
+
+
 for name, sequence in pairs(enemy_variations_clean) do
 	enemy_variations[Idstring(name):key()] = sequence
 	enemy_variations[Idstring(name .. "_husk"):key()] = sequence
+end
+
+for name, sequence in pairs(enemy_variations_texas_pd_table) do
+	enemy_variations_texas_pd[Idstring(name):key()] = sequence
+	enemy_variations_texas_pd[Idstring(name .. "_husk"):key()] = sequence
+end
+
+for name, sequence in pairs(enemy_variations_sfpd_table) do
+	enemy_variations_sfpd[Idstring(name):key()] = sequence
+	enemy_variations_sfpd[Idstring(name .. "_husk"):key()] = sequence
 end
 
 for name, sequence in pairs(head_variations_clean) do
@@ -656,12 +704,17 @@ end
 
 CopBase.enemy_variations = deep_clone(enemy_variations) 
 CopBase.head_variations = deep_clone(head_variations)  
+CopBase.enemy_variations_texas_pd = deep_clone(enemy_variations_texas_pd) 
+CopBase.enemy_variations_sfpd = deep_clone(enemy_variations_sfpd) 
 
 function CopBase:_run_unit_sequences()
 	local name = self._unit:name():key()
 	
 	local enemy_sequence = self.enemy_variations[name]
+	local enemy_sequence_fart = self.enemy_variations_texas_pd[name]
+	local enemy_sequence_shart = self.enemy_variations_sfpd[name]
 	local head_sequence = self.head_variations[name]
+
 
 	--[[
 	NOT NEEDED UNLESS  YOU WANT TO MAKE BODY FLASHLIGHTS (ON MURKIES AND STUFF) MAP DEPENDENT
@@ -672,6 +725,19 @@ function CopBase:_run_unit_sequences()
 	-- Run the enemy sequence to enable pouches and such
 	if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence) then
 		self._unit:damage():run_sequence_simple(enemy_sequence)
+	end
+
+
+	if table.contains(restoration.yee_and_I_cannot_stress_this_enough_haw, job) then
+		if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence_fart) then
+			self._unit:damage():run_sequence_simple(enemy_sequence_fart)
+		end	
+	end
+	
+	if table.contains(restoration.needle, job) then
+		if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence_shart) then
+			self._unit:damage():run_sequence_simple(enemy_sequence_shart)
+		end	
 	end
 	
 	local spawn_manager_ext = self._unit:spawn_manager()
@@ -703,6 +769,8 @@ ContourSwapBase._material_translation_map = {}
 
 local paths = table.list_to_set({
   "units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas",
+  "units/pd2_mod_lapd/characters/ene_swat_1/badasssf",
+  "units/pd2_mod_lapd/characters/ene_swat_1/badasstex",
   "units/payday2/characters/ene_head_atlas/ene_head_atlas"
 })
 

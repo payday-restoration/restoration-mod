@@ -1,0 +1,76 @@
+<table directory="assets">
+	<!-- city tier here -->
+	<!--city swat 1-->
+    <unit				path="units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1" load="true"/>
+    <unit				path="units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1_husk" load="true"/>	
+	<model				path="units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1" />	
+	<object				path="units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1" />	
+	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1" />	
+	
+	<!--Gensec Shield Acc-->
+	<model				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
+	<material_config	path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
+	<object				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
+	<unit				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false" load="false"/>
+	<cooked_physics		path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
+	<sequence_manager	path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
+	
+	<texture			path="units/payday2/characters/ene_acc_shield_city/shield_df" force="false"/>
+	<texture			path="units/payday2/characters/ene_acc_shield_city/shield_nm" force="false"/>	
+	
+	<!--city swat 2-->
+    <unit				path="units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2" load="true"/>
+    <unit				path="units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2_husk" load="true"/>	
+
+	<!--city swat 3-->
+    <unit				path="units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3" load="true"/>
+    <unit				path="units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3_husk" load="true"/>	
+
+	<!--city heavy 1-->
+	<unit				path="units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk" load="true"/>
+
+	<!--city heavy r870-->
+    <unit				path="units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870" load="true"/>
+    <unit				path="units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk" load="true"/>
+
+	<!--shield-->
+	<unit				path="units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec_husk" load="true"/>
+
+	<!--sniper-->
+	<unit				path="units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3_husk" load="true"/>
+
+	<!-- city tier end -->
+
+	<!-- specials-->
+	<!-- greendozer -->
+    <unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" load="true"/>
+    <unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1_husk" load="true"/>	
+	<model				path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />	
+	<object				path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />	
+
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
+
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_nm" />				
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_gear_body_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_gear_body_nm" />				
+
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_shoulderpad_l/ene_acc_shoulderpad_l" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_thigh_l/ene_acc_thigh_l" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	
+	<!-- skull -->
+	<unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3" load="true"/>
+    <unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3_husk" load="true"/>	
+
+</table>

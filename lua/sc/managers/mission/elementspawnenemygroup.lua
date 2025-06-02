@@ -4625,5 +4625,15 @@ Hooks:PostHook(ElementSpawnEnemyGroup, "_finalize_values", "revert_spawnpoint_de
 				table.insert(self._values.preferred_spawn_groups, name)
 			end
 		end
+
+		if self._values.interval == 0 then
+			for _, id in pairs(self._values.elements) do
+				local spawn_point = self:get_mission_element(id)
+				if spawn_point and spawn_point._values.spawn_action then
+					self._values.interval = 5
+					break
+				end
+			end
+		end
 	end
 end)

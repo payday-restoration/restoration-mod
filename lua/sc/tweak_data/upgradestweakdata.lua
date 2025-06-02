@@ -2347,44 +2347,44 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{
 			combo_max = 100, --Max combo
 			combo_add = 3, --points per kill
-			combo_ene_mult = { --Point multiplier based on enemy killed
+			combo_ene_mult = { --Point multiplier based on enemy killed; top-down priority
 				{captain = 10},
-				{tank = 6},
-				{special = 3},
+				{tank = 5},
+				{special = 2},
 			},
 			combo_t = 5, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
-			hurt_t = 2, --Hurt decay cooldown
-			incap_decay = 30 --Points lost when entering bleedout (heath is 0)
+			hurt_t = 1.5, --Hurt decay cooldown
+			incap_decay = 40 --Points lost when entering bleedout (heath is 0)
 		},
 		{
 			combo_max = 100,
 			combo_add = 3,
 			combo_ene_mult = {
 				{captain = 10},
-				{tank = 6},
-				{special = 3},
+				{tank = 5},
+				{special = 2},
 			},
 			combo_t = 5,
 			combo_decay = 5,
 			hurt_decay = 5,
-			hurt_t = 2,
-			incap_decay = 30
+			hurt_t = 1.5,
+			incap_decay = 40
 		},
 		{ --Copycat
 			combo_max = 50, --Max combo
 			combo_add = 3, --points per kill
 			combo_ene_mult = { --Point multiplier based on enemy killed
 				{captain = 10},
-				{tank = 6},
-				{special = 3},
+				{tank = 5},
+				{special = 2},
 			},
 			combo_t = 5, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
-			hurt_t = 2, --Hurt decay cooldown
-			incap_decay = 30 --Points lost when entering bleedout (heath is 0)
+			hurt_t = 1.5, --Hurt decay cooldown
+			incap_decay = 40 --Points lost when entering bleedout (heath is 0)
 		},
 	}
 	self.values.player.buildup_meter_pacify = { --damage resistance
@@ -2414,8 +2414,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.values.player.buildup_meter_hysteria = {{ --healing
 		combo_steps = 5,
-		effect = 0.1,
-		effect_max = 1,
+		effect = 0.05,
+		effect_max = 0.5,
 	}}
 	self.values.player.buildup_meter_elude = { --dodge on kill
 		{
@@ -2437,7 +2437,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Additonal mask effects
 		self.values.player.buildup_meter_hurt_decay_mod = {
 			5,
-			10
+			10,
+			15,
+			20,
 		}
 		self.values.player.buildup_meter_aubrey = {{
 			combo_add = 1,
@@ -3105,7 +3107,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring((1 - self.values.tony.extra_ammo_multiplier[1]) * 100) .. "%",
 		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[1]) * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[2].combo_add_mod),
-		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[1]),
+		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
 	}
 	self.multi_choice_specialization_descs[9][9][3] = { --Aubrey
 		perk_value_1 = tostring(self.values.player.buildup_meter_aubrey[1].combo_add),
@@ -3139,7 +3141,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring((1 - self.values.tony.extra_ammo_multiplier[2]) * 100) .. "%",
 		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[2]) * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[3].combo_add_mod),
-		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
+		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[3]),
 	}
 	self.multi_choice_specialization_descs[9][9][10] = { --Mark
 		perk_value_1 = tostring(self.values.player.buildup_meter_mark[1].combo_steps),
@@ -5440,6 +5442,24 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 2,
+			upgrade = "buildup_meter_hurt_decay_mod",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_hurt_decay_mod_3 = {
+		name_id = "menu_player_buildup_madurai",
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "buildup_meter_hurt_decay_mod",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_hurt_decay_mod_4 = {
+		name_id = "menu_player_buildup_madurai",
+		category = "feature",
+		upgrade = {
+			value = 4,
 			upgrade = "buildup_meter_hurt_decay_mod",
 			category = "player"
 		}

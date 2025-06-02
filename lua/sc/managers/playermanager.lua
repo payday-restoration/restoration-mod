@@ -442,7 +442,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			if buildup_meter_variant == "melee" or buildup_meter_variant == "bullet" then
 				if not self._buildup_meter_last_kill or self._buildup_meter_last_kill ~= buildup_meter_variant then
 					self._buildup_meter = math.clamp((self._buildup_meter or 0) + self:upgrade_value("player", "buildup_meter_swan", 0).combo_add * enemy_unit_mult(), 0, self._buildup_meter_max)
-					self._buildup_meter_t = (self._buildup_meter > 0 and combo_t) or 0
+					self._buildup_meter_t = combo_t
 					managers.hud:start_buff("sociopath", self._buildup_meter_t)
 					managers.hud:set_stacks("sociopath", self._buildup_meter)
 				end

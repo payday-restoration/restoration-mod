@@ -2286,7 +2286,8 @@ function PlayerStandard:_update_melee_timers(t, input)
 		(melee_weapon.stats.raycasts)
 
 		if num_casts and num_casts > 1 then
-			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call this by DMC
+			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call mess this by DMC
+			--TODO: Make hit prioritization a thing, similar to how vanilla shotguns do it (head > breakable head protection > everything else)
 			local from = self._unit:movement():m_head_pos()
 			local rotation = self._unit:movement():m_head_rot()
 			local base_direction = rotation:y()
@@ -2305,7 +2306,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 				local direction = new_rotation:y()
 				local to = from + direction --* range
 
-				local col_ray = self:_calc_melee_hit_ray(t, 10, from, direction)
+				local col_ray = self:_calc_melee_hit_ray(t, 12, from, direction)
 				local ignore_hit = nil
 				if col_ray then
 					local hit_unit = col_ray.unit
@@ -2321,8 +2322,8 @@ function PlayerStandard:_update_melee_timers(t, input)
 								self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, num_casts, true, true, true)
 							end
 						else
-							unique_hits[u_key] = hit_unit
 							use_cleave = is_enemy and unit_damage and true
+							unique_hits[u_key] = hit_unit
 							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, nil, true, true)
 						end
 					end
@@ -3828,13 +3829,21 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 
 			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
 
-			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[melee_entry].stats.weapon_type) .. "_damage_multiplier", 1)
+			local type_multiplier = managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[melee_entry].stats.weapon_type) .. "_damage_multiplier", 1)
 			
-			damage_effect = damage_effect * managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[melee_entry].stats.weapon_type) .. "_damage_multiplier", 1)
-			
-			if character_unit:base() and character_unit:base().char_tweak and character_unit:base():char_tweak().priority_shout then
-				dmg_multiplier = dmg_multiplier * (tweak_data.blackmarket.melee_weapons[melee_entry].stats.special_damage_multiplier or 1)
+			if character_unit:base() then
+				if character_unit:base().char_tweak then
+					if character_unit:base():char_tweak().player_health_scaling_mul then
+						type_multiplier = math.max(1, type_multiplier * 0.25)
+					end
+					if character_unit:base():char_tweak().priority_shout then
+						dmg_multiplier = dmg_multiplier * (tweak_data.blackmarket.melee_weapons[melee_entry].stats.special_damage_multiplier or 1)
+					end
+				end
 			end
+
+			dmg_multiplier = dmg_multiplier * type_multiplier
+			damage_effect = damage_effect * type_multiplier
 
 			if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 				self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}

@@ -66,6 +66,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 	self._assault_color = restoration.Options:GetValue("HUD/Colors/AssaultBG")
 	self._vip_assault_color = restoration.Options:GetValue("HUD/Colors/AssaultEndlessBG")
 	self._assault_survived_color = restoration.Options:GetValue("HUD/Colors/AssaultSurvivedBG")
+	self._hostage_counter_ponr_active = restoration.Options:GetValue("HUD/HostagePONRActive")
 	self._current_assault_color = self._assault_color
 	local icon_assaultbox = assault_panel:bitmap({
 		halign = "right",
@@ -968,7 +969,12 @@ function HUDAssaultCorner:show_point_of_no_return_timer(id)
 	local point_of_no_return_panel = self._hud_panel:child("point_of_no_return_panel")
 	point_of_no_return_panel:stop()
 	point_of_no_return_panel:animate(callback(self, self, "_animate_show_noreturn"), delay_time)
-	self:_hide_hostages()
+	if self._hostage_counter_ponr_active then
+		self:_set_hostage_offseted(true)
+	end
+	if not self._hostage_counter_ponr_active then
+		self:_hide_hostages()
+	end
 	self._hud_panel:child("point_of_no_return_panel"):set_visible(true)
 	-- self:_set_feedback_color(self._noreturn_color)
 	self._point_of_no_return = true
@@ -977,6 +983,9 @@ function HUDAssaultCorner:hide_point_of_no_return_timer()
 	self._hud_panel:child("point_of_no_return_panel"):set_visible(false)
 	self._point_of_no_return = false
 	self:_show_hostages()
+	if self._hostage_counter_ponr_active then
+		self:_set_hostage_offseted(false)
+	end
 	self:_set_feedback_color(nil)
 end
 function HUDAssaultCorner:flash_point_of_no_return_timer(beep)

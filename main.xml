@@ -584,6 +584,7 @@
 				<option type="bool" default_value="false" name="Hostage"/>
 				<option type="bool" default_value="false" name="Custody"/>
 				<option type="bool" default_value="true" name="UppercaseNames"/>
+				<option type="bool" default_value="false" name="HostagePONRActive"/>
 			</option_group>
 			<!--<option_group name="SC">>-->
 				<!--<option type="bool" default_value="false" name="SC" value_changed="RestorationCoreCallbacks:Restart"/>-->

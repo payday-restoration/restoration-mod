@@ -375,9 +375,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModDisableMutatorColorsTitleID"] = "Disable Mutator Assault Banner Colors",
 		["RestorationModDisableMutatorColorsDescID"] = "Disable the color change to the Assault Banner when using mutators (Vanilla HUD only).",
 		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
-		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",		
+		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",
 		["RestorationModEnemySpawnSoundsTitleID"] = "Enemy Spawn Sounds",
-		["RestorationModEnemySpawnSoundsDescID"] = "Enable the playback of spawn-in sounds of enemies. Enabled by default.",		
+		["RestorationModEnemySpawnSoundsDescID"] = "Enable the playback of spawn-in sounds of enemies. Enabled by default.",
 		["RestorationModRestoreHitFlashTitleID"] = "Restore Hit Flash",
 		["RestorationModRestoreHitFlashDescID"] = "Enable or disable the restored hit flash when taking damage.",
 		["RestorationModBotsNoDropTitleID"] = "Disable Bot Loot Bag Dropping",
@@ -854,6 +854,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModVoiceIconDescID"] = "Displays when a player is using voice chat in-game.",
 		["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",
 		["RestorationModNewsFeedStyleDescID"] = "Allows you to choose to show both newsfeed and newheists box or just the newsfeed.",
+		["RestorationModHostagePONRActiveTitleID"] = "Hostage Counter And The Point Of No Return",
+		["RestorationModHostagePONRActiveDescID"] = "Shows both the hostage counter and the point of no return at the same time",
 		["alpha_assault"] = "Early Alpha Corner",
 		["beta_assault"] = "Alpha Tape",
 		["show_both"] = "Default",
@@ -2677,7 +2679,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 				--T3K Urban
 				["bm_tec9_sc_desc"] = "A classic, cheap high-firerate SMG thats reliability has been demonstrated by various gangbangers and cartels all across the southeastern United States.",
-				
+
 				--Heather
 				["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the Heather SMG is the Russian answer to the Project-90 and SpecOps-7 SMGs.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 				--Compact-5/MP5
@@ -5914,13 +5916,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck6_1_desc_sc"] = "When you are within ##$perk_value_1## meters of an enemy, you receive ##$perk_value_2## less damage from enemies.\n\nYour dodge is increased by ##$perk_value_3## points.",
 
 		["menu_deck6_3_desc_sc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nThis cannot occur more than once every #{important_1}#$perk_value_2## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_3## seconds; melee kills reduce it by #{skill_color}#$perk_value_4## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.",
-		
+
 		["menu_deck6_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##$perk_value_1## health and ##$perk_value_2## of your stamina.\n\nThis perk shares its cooldown with Basic Composure (Card 3) even if this perk was not triggered.\n\nYou pick locks ##$perk_value_3## faster.",
 		["menu_deck6_5_short_sc"] = "Killing an enemy with a melee weapon regenerates ##$perk_value_1## health and ##$perk_value_2## of your stamina.\n\nYou pick locks ##$perk_value_3## faster.",
-		
+
 		["menu_deck6_7_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters regenerates ##$perk_value_2## armor; melee kills double the amount.\n\nThis perk shares its cooldown with Basic Composure (Card 3) even if this perk was not triggered.\n\nYour dodge is increased by an additional #{skill_color}#$perk_value_3## points.",
 		["menu_deck6_7_short_sc"] = "Killing an enemy within ##$perk_value_1## meters regenerates ##$perk_value_2## armor; melee kills double the amount.\n\nYour dodge is increased by an additional #{skill_color}#$perk_value_3## points.",
-		
+
 		["menu_deck6_9"] = "Release",
 		["menu_deck6_9_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters has a ##$perk_value_2## chance to spread panic among your enemies in a ##$perk_value_3## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis perk shares its cooldown with Basic Composure (Card 3) even if this perk was not triggered.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 		["menu_deck6_9_short_sc"] = "Killing an enemy within ##$perk_value_1## meters has a ##$perk_value_2## chance to spread panic among your enemies in a ##$perk_value_3## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
@@ -6009,7 +6011,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck9_richard"] = "Richard",
 		["menu_deck9_richard_desc_sc"] = "No additional effects.",
 		["menu_deck9_tony"] = "Tony",
-		["menu_deck9_tony_desc_sc"] = "Your #{skill_color}#Fists## deal #{skill_color}#$perk_value_1## more damage.\n\nYour base point value is reduced to #{important_1}#$perk_value_4,## you lose an additional #{important_1}#$perk_value_5## points of combo when taking health damage, your total ammo is reduced by #{important_1}#$perk_value_2## and your ammo pickup rates are reduced by #{important_1}#$perk_value_3.##",		
+		["menu_deck9_tony_desc_sc"] = "Your #{skill_color}#Fists## deal #{skill_color}#$perk_value_1## more damage.\n\nYour base point value is reduced to #{important_1}#$perk_value_4,## you lose an additional #{important_1}#$perk_value_5## points of combo when taking health damage, your total ammo is reduced by #{important_1}#$perk_value_2## and your ammo pickup rates are reduced by #{important_1}#$perk_value_3.##",
 		["menu_deck9_aubrey"] = "Aubrey",
 		["menu_deck9_aubrey_desc_sc"] = "Non-melee kills using direct damage will build up your combo by a base value of #{skill_color}#$perk_value_1## point.\n\n#{risk}#Non-melee kills using direct damage will only add## #{skill_color}#$perk_value_2## #{risk}#seconds to the decay timer of an active combo;## #{important_1}#Kills using explosives or damage-over-time effects will no longer refresh your combo decay timer.##",
 		["menu_deck9_rufus"] = "Rufus",

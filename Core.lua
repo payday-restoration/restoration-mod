@@ -1373,7 +1373,8 @@ function restoration:gen_element_random(id, name, opts)
 	}
 end
 
-restoration.logging = io.file_is_readable("mods/developer.txt")
+-- restoration.logging = io.file_is_readable("mods/developer.txt")
+restoration.logging = true
 function restoration:log(str, ...)
 	if self.logging then
 		log("[RestorationMod] " .. str:format(...))

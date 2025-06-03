@@ -10,7 +10,7 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = pro_job
 local gensec_guards = ((pro_job and difficulty <= 6) and gensec_agents or difficulty >= 7 and gensec_swat)
-local gensec_dozer = (difficulty >= 6 and "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")
+local gensec_dozer = (difficulty >= 6 and "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")
 local ponr_value = (difficulty <= 5 and 300 or (difficulty == 6 or difficulty == 7) and 420) or 540
 		
 local gensec = {
@@ -30,7 +30,7 @@ return {
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},
-	--GenSec Scripted Spawns
+	--[[GenSec Scripted Spawns
 	--Drivers
 	[100279] = gensec,
 	[100281] = gensec,
@@ -74,7 +74,7 @@ return {
 	[100543] = gensec,
 	[100544] = gensec,
 	[100524] = gensec,
-	[100525] = gensec,
+	[100525] = gensec,--]]
 	--Van Bulldozers
 	[101747] = gensec_tank,
 	[101748] = gensec_tank,

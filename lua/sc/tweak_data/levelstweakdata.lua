@@ -287,13 +287,13 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pent.player_style = "enforcer"
 	self.pent.max_bags = 17
 	
-	--//GENSEC STUFF\\--
+	--[[GENSEC STUFF\\-- i don't care i'm disabling these stupid jeffy tier changes
 	self.arm_cro.package = {"packages/narr_arm_cro", "packages/gensecmisc"}
 	self.arm_fac.package = {"packages/narr_arm_fac", "packages/gensecmisc"}
 	self.arm_hcm.package = {"packages/narr_arm_hcm", "packages/gensecmisc"}
 	self.arm_par.package = {"packages/narr_arm_par", "packages/gensecmisc"}
 	self.arm_und.package = {"packages/narr_arm_und", "packages/gensecmisc"}
-	
+	--]]
 	--///NEW OUTFITS\\\--
 	
 	self.nightclub.flashlights_on = true

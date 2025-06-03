@@ -14,7 +14,7 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = pro_job
 local gensec_guards = ((pro_job and difficulty <= 6) and gensec_agents or difficulty >= 7 and gensec_swat)
-local gensec_dozer = (difficulty >= 6 and "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")
+local gensec_dozer = (difficulty >= 6 and "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")
 local fbi_agents = (difficulty >= 7 and fbi_ready_team)
 local ponr_value = (difficulty <= 5 and 300 or (difficulty == 6 or difficulty == 7) and 420) or 540
 --[[

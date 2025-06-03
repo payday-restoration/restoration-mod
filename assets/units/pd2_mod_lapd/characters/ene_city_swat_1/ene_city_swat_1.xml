@@ -233,10 +233,15 @@
 		<sequence editable_state="true" name="'destroy_visor'" once="true" triggable="true">
 			<body filter="'check_city_shield'" enabled="false" name="'glass_visor'"/>
 			<object filter="'check_city_shield'" enabled="false" name="'g_helmet_lod10'"/>
-			<object filter="'check_city_shield'" enabled="false" name="'g_helmet_lod11'"/>
-
-			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
-			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
+			<object filter="'check_city_shield'" enabled="false" name="'g_helmet_lod11'"/>	
+			<sound 	filter="'check_city_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>				
+			
+			<effect filter="'check_city_heavy_ar'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
+			<sound 	filter="'check_city_heavy_ar'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>				
+			
+			<effect filter="'check_city_heavy_sg'" damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
+			<effect filter="'check_city_heavy_sg'" damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
+			<sound 	filter="'check_city_heavy_sg'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>		
 		</sequence>				
 
 
@@ -405,10 +410,10 @@
 			<object filter="'check_city_heavy_sg'" enabled="false" name="'g_glass_2_crk'" />	
 									
 			<body filter="'check_city_shield'" enabled="false" name="'glass_visor'" />	
-			<decal_mesh filter="'check_city_shield'" enabled="false" name="'c_visor'" />													
-			<run_sequence filter="'check_city_shield'" name="'destroy_visor'"/>
+			<decal_mesh filter="'check_city_shield'" enabled="false" name="'c_visor'" />	
 
-			<effect_spawner enabled="false" name="'es_flashlight'"/>			
+			<effect_spawner enabled="false" name="'es_flashlight'"/>
+			<run_sequence name="'destroy_visor'"/>					
 		</sequence>		
 
 		<!-- BALACLAVA W/ "INSIDE" FACE SEQUENCES -->

@@ -513,6 +513,8 @@
 	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2_contour" force="false"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2_husk" force="false" load="true"/>
 	
+	<texture			path="units/payday2/characters/shared_textures/veteran_cop_df" force="false"/>
+	<texture			path="units/payday2/characters/shared_textures/veteran_cop_nm" force="false"/>
 	
 	<!--Titan HRT-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>

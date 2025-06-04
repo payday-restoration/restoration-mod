@@ -2471,7 +2471,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			{ combo_t_mod = 3, combo_decay_mod = 5 },
 			{ combo_t_mod = -1, combo_decay_mod = 0 }, --Brandon
 			{ combo_t_mod = -2, combo_decay_mod = 0 }, --Tony
-			{ combo_t_mod = -2, combo_decay_mod = -5 }, --Tony R
+			{ combo_t_mod = -2, combo_decay_mod = 5 }, --Tony R
 		}
 		self.values.player.buildup_meter_earl = { true } --boolean check for no combo loss when taking HP damage + full combo loss on bleedout
 		self.values.player.melee_fists_damage_multiplier = {10}
@@ -2488,8 +2488,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 		self.values.player.buildup_meter_rick = {
 			{ combo_add_mod = 2, combo_max_mod = -50 },
-			{ combo_add_mod = -1, combo_max_mod = -20 }, --Tony
-			{ combo_add_mod = -2, combo_max_mod = -40 } --Tony R
+			{ combo_add_mod = 0, combo_max_mod = -20 }, --Tony
+			{ combo_add_mod = 0, combo_max_mod = -40 } --Tony R
 		}
 		self.values.player.buildup_meter_swan = {{
 			combo_add = 4

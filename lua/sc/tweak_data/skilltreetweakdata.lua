@@ -2579,6 +2579,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 			},
 			texture_bundle_folder = "sc",
 			icon_xy = {0, 0}
@@ -2592,6 +2593,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 				
 				"player_melee_fists_damage_multiplier",
 				"buildup_meter_tony_extra_ammo_multiplier_1",
@@ -2599,6 +2601,12 @@ function SkillTreeTweakData:init(tweak_data)
 				"player_buildup_meter_rick",
 				"player_buildup_meter_rick_2",
 				"buildup_meter_hurt_decay_mod_1",
+				"buildup_meter_hurt_decay_mod_2",
+				"buildup_meter_elude_2",
+				"buildup_meter_elude_3",
+				"buildup_meter_terrify_2",
+				"player_buildup_meter_zack_1",
+				"player_buildup_meter_zack_2",
 			},
 			texture_bundle_folder = "sc",
 			icon_xy = {0, 1}
@@ -2612,6 +2620,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 				
 				"player_buildup_meter_aubrey"
 			},
@@ -2627,6 +2636,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 				
 				"buildup_meter_pacify_2",
 				"buildup_meter_hurt_decay_mod_1",
@@ -2644,6 +2654,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 				
 				"player_buildup_meter_zack_1"
 			},
@@ -2659,6 +2670,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 
 				"player_buildup_meter_rick"
 			},
@@ -2674,6 +2686,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 
 				"buildup_meter_redline_2",
 				"player_buildup_meter_zack_1",
@@ -2691,6 +2704,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 				
 				"player_buildup_meter_earl"
 			},
@@ -2706,6 +2720,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 				
 				"player_melee_brass_damage_multiplier",
 				"buildup_meter_tony_extra_ammo_multiplier_1",
@@ -2716,7 +2731,16 @@ function SkillTreeTweakData:init(tweak_data)
 				"player_buildup_meter_rick_2",
 				"player_buildup_meter_rick_3",
 				"buildup_meter_hurt_decay_mod_1",
-				"buildup_meter_hurt_decay_mod_2"
+				"buildup_meter_hurt_decay_mod_2",
+				"buildup_meter_hurt_decay_mod_3",
+				"buildup_meter_elude_2",
+				"buildup_meter_elude_3",
+				"buildup_meter_elude_4",
+				"buildup_meter_terrify_2",
+				"buildup_meter_terrify_3",
+				"player_buildup_meter_zack_1",
+				"player_buildup_meter_zack_2",
+				"player_buildup_meter_zack_3",
 			},
 			texture_bundle_folder = "sc",
 			icon_xy = {1, 0}
@@ -2730,6 +2754,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 				
 				"player_buildup_meter_mark"
 			},
@@ -2745,6 +2770,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 				
 				"player_buildup_meter_swan"
 			},
@@ -2760,6 +2786,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_1",
 				"buildup_meter_redline_1",
 				"buildup_meter_elude_1",
+				"buildup_meter_terrify_1",
 				
 				"buildup_meter_elude_2",
 				"buildup_meter_hurt_decay_mod_1"

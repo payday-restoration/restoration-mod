@@ -2428,12 +2428,34 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			effect = 0.06,
 			effect_max = 0.6,
 		},
+		{	--Tony
+			combo_steps = 5,
+			effect = 0.02,
+			effect_max = 0.2,
+		},
+		{	--Tony R
+			combo_steps = 5,
+			effect = 0.01,
+			effect_max = 0.1,
+		},
 	}
-	self.values.player.buildup_meter_terrify = {{ --panic
-		combo_steps = 5,
-		effect = 0.02,
-		effect_max = 0.20
-	}}
+	self.values.player.buildup_meter_terrify = { --panic
+		{
+			combo_steps = 5,
+			effect = 0.015,
+			effect_max = 0.15
+		},
+		{	--Tony
+			combo_steps = 5,
+			effect = 0.01,
+			effect_max = 0.1
+		},
+		{	--Tony R
+			combo_steps = 5,
+			effect = 0.005,
+			effect_max = 0.05
+		},
+	}
 	--Additonal mask effects
 		self.values.player.buildup_meter_hurt_decay_mod = {
 			5,
@@ -2447,7 +2469,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}}
 		self.values.player.buildup_meter_zack = {
 			{ combo_t_mod = 3, combo_decay_mod = 5 },
-			{ combo_t_mod = -1, combo_decay_mod = 0 },
+			{ combo_t_mod = -1, combo_decay_mod = 0 }, --Tony
+			{ combo_t_mod = -2, combo_decay_mod = 0 }, --Tony R
 		}
 		self.values.player.buildup_meter_earl = { true } --boolean check for no combo loss when taking HP damage + full combo loss on bleedout
 		self.values.player.melee_fists_damage_multiplier = {10}
@@ -2464,11 +2487,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 		self.values.player.buildup_meter_rick = {
 			{ combo_add_mod = 2, combo_max_mod = -50 },
-			{ combo_add_mod = -1, combo_max_mod = 0 }, --Tony
-			{ combo_add_mod = -2, combo_max_mod = 0 }
+			{ combo_add_mod = -1, combo_max_mod = -20 }, --Tony
+			{ combo_add_mod = -2, combo_max_mod = -40 } --Tony R
 		}
 		self.values.player.buildup_meter_swan = {{
-			combo_add = 6
+			combo_add = 4
 		}}
 		self.values.player.buildup_meter_mark = {{ --armor regen speed
 			combo_steps = 5,
@@ -3108,6 +3131,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[1]) * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[2].combo_add_mod),
 		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
+		perk_value_6 = tostring(math.abs(self.values.player.buildup_meter_rick[2].combo_max_mod)),
+		perk_value_7 = tostring(math.abs(self.values.player.buildup_meter_zack[2].combo_t_mod)),
 	}
 	self.multi_choice_specialization_descs[9][9][3] = { --Aubrey
 		perk_value_1 = tostring(self.values.player.buildup_meter_aubrey[1].combo_add),
@@ -3141,7 +3166,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring((1 - self.values.tony.extra_ammo_multiplier[2]) * 100) .. "%",
 		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[2]) * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[3].combo_add_mod),
-		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[3]),
+		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[4]),
+		perk_value_6 = tostring(math.abs(self.values.player.buildup_meter_rick[3].combo_max_mod)),
+		perk_value_7 = tostring(math.abs(self.values.player.buildup_meter_zack[3].combo_t_mod)),
 	}
 	self.multi_choice_specialization_descs[9][9][10] = { --Mark
 		perk_value_1 = tostring(self.values.player.buildup_meter_mark[1].combo_steps),
@@ -5414,7 +5441,25 @@ function UpgradesTweakData:_player_definitions()
 		name_id = "menu_player_buildup_zenurik",
 		category = "feature",
 		upgrade = {
-			value = 1,
+			value = 2,
+			upgrade = "buildup_meter_elude",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_elude_3 = {
+		name_id = "menu_player_buildup_zenurik",
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "buildup_meter_elude",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_elude_4 = {
+		name_id = "menu_player_buildup_zenurik",
+		category = "feature",
+		upgrade = {
+			value = 4,
 			upgrade = "buildup_meter_elude",
 			category = "player"
 		}
@@ -5424,6 +5469,24 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 1,
+			upgrade = "buildup_meter_terrify",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_terrify_2 = {
+		name_id = "menu_player_buildup_madurai",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "buildup_meter_terrify",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_terrify_3 = {
+		name_id = "menu_player_buildup_madurai",
+		category = "feature",
+		upgrade = {
+			value = 3,
 			upgrade = "buildup_meter_terrify",
 			category = "player"
 		}
@@ -5541,6 +5604,15 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 2,
+			upgrade = "buildup_meter_zack",
+			category = "player"
+		}
+	}
+	self.definitions.player_buildup_meter_zack_3 = {
+		name_id = "menu_player_buildup_zack",
+		category = "feature",
+		upgrade = {
+			value = 3,
 			upgrade = "buildup_meter_zack",
 			category = "player"
 		}

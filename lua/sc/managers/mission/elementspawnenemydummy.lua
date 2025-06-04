@@ -2558,16 +2558,8 @@ if level_id == "moon" then
 end
 -- Marshal Sharpshooters/Shields replacing OMNIA Titan Snipers/Shields on Texas heists
 -- Snipers in Lost in Transit are affected by lua edit
-if level_id == "dinner" or level_id == "ranc" or level_id == "trai" or level_id == "corp" then
+if or level_id == "ranc" or level_id == "trai" or level_id == "corp" then
 	-- Snipers
-	ElementSpawnEnemyDummy.faction_mapping.nypd.sm_wish.sniper = {
-		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
-		-- "units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
-	}
 	ElementSpawnEnemyDummy.faction_mapping.lapd.sm_wish.sniper = {
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
@@ -2577,22 +2569,11 @@ if level_id == "dinner" or level_id == "ranc" or level_id == "trai" or level_id 
 		-- "units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 	}
 	-- Shields
-	ElementSpawnEnemyDummy.faction_mapping.nypd.easy_wish.tshield = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	ElementSpawnEnemyDummy.faction_mapping.nypd.overkill_290.tshield = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	ElementSpawnEnemyDummy.faction_mapping.nypd.sm_wish.tshield = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 
 	ElementSpawnEnemyDummy.faction_mapping.lapd.easy_wish.tshield = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	ElementSpawnEnemyDummy.faction_mapping.lapd.overkill_290.tshield = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	ElementSpawnEnemyDummy.faction_mapping.lapd.sm_wish.tshield = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 
-	ElementSpawnEnemyDummy.faction_mapping.nypd.sm_wish.shield = {
-		"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
-		"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
-		"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
-		"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
-		"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
-		"units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	}
 	ElementSpawnEnemyDummy.faction_mapping.lapd.sm_wish.shield = {
 		"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
 		"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",

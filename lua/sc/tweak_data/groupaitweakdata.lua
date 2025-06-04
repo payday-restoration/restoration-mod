@@ -7229,16 +7229,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		--]]
 		
 		-- just in case
-
-		self.unit_categories.GS_shield_defend.unit_types.fbi = {
-			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-			Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")		
-		}
-
 	end
 	-- SF heists, replace LAPD beat cops with SFPD ones
 	if table.contains(restoration.needle, job) then

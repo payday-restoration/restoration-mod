@@ -10337,7 +10337,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mg42.spin_up_shoot = true
 						self.mg42.spin_up_t = 0.09
 						self.mg42.spin_down_t = 0.00000001
-						self.mg42.reload_speed_multiplier = 1
+						self.mg42.reload_speed_multiplier = 1.1
 						self.mg42.timers.reload_exit_empty = 1.65
 						self.mg42.timers.reload_exit_not_empty = 1.65
 
@@ -23270,7 +23270,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.stango44.stats_modifiers = nil
 				self.stango44.panic_suppression_chance = 0.05
-				self.stango44.reload_speed_multiplier = 0.9
+				self.stango44.reload_speed_multiplier = 0.95
 				self.stango44.timers.reload_empty = 2.1
 				self.stango44.timers.reload_exit_empty = 1.02
 				self.stango44.timers.reload_not_empty = 1.44

@@ -1224,8 +1224,12 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						local shots_fired = srm and math.max(weap_base._shot_recoil_magnitude_count - 1 - (srm[3] or 0), 0)  or 0
 						local shots_fired_mult = srm and math.round(100000 * math.clamp( 1 - (shots_fired * srm[1]) , srm[2][1], srm[2][2])) / 100000
 						local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier() * (shots_fired_mult or 1)
+						local recoil_index = tweak_data.weapon.stats.recoil
+						local recoil_multiplier_h = (recoil_index and ((recoil_index[weap_base._current_stats_indices.spread] + weap_base:recoil_addend()) * weap_base:recoil_multiplier() * (shots_fired_mult or 1))) or recoil_multiplier
 						local stance_mults = weap_tweak_data.stance_multipliers or nil
 						recoil_multiplier = recoil_multiplier * ((stance_mults and (self._state_data.in_steelsight and stance_mults.steelsight or self._state_data.ducking and stance_mults.crouching or stance_mults.standing)) or 1)
+						recoil_multiplier_h = recoil_multiplier_h * ((stance_mults and (self._state_data.in_steelsight and stance_mults.steelsight or self._state_data.ducking and stance_mults.crouching or stance_mults.standing)) or 1)
+						recoil_multiplier_h = (recoil_multiplier_h + (recoil_multiplier * 3)) / 4
 						local recoil_count = weap_base._shot_recoil_pattern_count or 0
 						local recoil_stage = nil
 						if weap_tweak_data.kick_pattern then
@@ -1251,7 +1255,12 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						local always_standing = weap_tweak_data.always_use_standing
 						local up, down, left, right = unpack(kick_tweak_data[always_standing and "standing" or self._state_data.in_steelsight and "steelsight" or self._state_data.ducking and "crouching" or "standing"])
 						local min_h_recoil = kick_tweak_data.min_h_recoil
-						local recoil_v, recoil_h = self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier, min_h_recoil)
+						local recoil_v, recoil_h = self._camera_unit:base():recoil_kick(
+							up * recoil_multiplier, 
+							down * recoil_multiplier, 
+							left * recoil_multiplier_h, 
+							right * recoil_multiplier_h,
+						min_h_recoil)
 
 						if not params or not params.no_shake then
 							local shake_tweak_data = weap_tweak_data.shake[fire_mode] or weap_tweak_data.shake
@@ -3286,8 +3295,11 @@ end
 --Recoil used at the end of burst fire.
 function PlayerStandard:force_recoil_kick(weap_base, shots_fired)
 	local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier() * (shots_fired or 1)
+	local recoil_index = tweak_data.weapon.stats.recoil
+	local recoil_multiplier_h = (recoil_index and ((recoil_index[weap_base._current_stats_indices.spread] + weap_base:recoil_addend()) * weap_base:recoil_multiplier() * (shots_fired or 1))) or recoil_multiplier
+	recoil_multiplier_h = (recoil_multiplier_h + (recoil_multiplier * 3)) / 4
 	local up, down, left, right = unpack(weap_base:weapon_tweak_data().kick[self._state_data.in_steelsight and "steelsight" or self._state_data.ducking and "crouching" or "standing"])
-	self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier)
+	self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * ((recoil_multiplier + recoil_multiplier_h) / 2), right * ((recoil_multiplier + recoil_multiplier_h) / 2))
 end
 
 function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)

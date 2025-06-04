@@ -325,8 +325,8 @@
 			<effect filter="'check_swat_ar_titan'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 			<effect filter="'check_swat_ar_titan'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 
-			<sound filter="'check_swat_ar_titan'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
-			<sound filter="'check_swat_ar_titan'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>
+			<sound filter="'check_swat_ar_titan'" action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>			
+			<sound filter="'check_swat_ar_titan'" action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>
 			
 			<body filter="'check_swat_shield'" enabled="false" name="'glass_visor'"/>
 			<object filter="'check_swat_shield'" enabled="false" name="'g_helmet_lod5'"/>
@@ -334,8 +334,8 @@
 			<effect filter="'check_swat_shield'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 			<effect filter="'check_swat_shield'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 
-			<sound filter="'check_swat_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
-			<sound filter="'check_swat_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
+			<sound filter="'check_swat_shield'" action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>			
+			<sound filter="'check_swat_shield'" action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>			
 			
 		</sequence>				
 		

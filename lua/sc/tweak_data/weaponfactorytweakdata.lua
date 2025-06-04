@@ -9377,6 +9377,7 @@ end)
 
 				--Unless you rebuy, changing/reverting the "type" of an attachment for a blueprint attached item leads to a freeze, so this is staying as such
 				self.parts.wpn_fps_lmg_mg42_reciever.type = "magazine_extra"
+				self.parts.wpn_fps_lmg_mg42_reciever.bullet_objects = nil
 				self.parts.wpn_fps_lmg_mg42_reciever.visibility = {
 					{
 						objects = {

@@ -134,8 +134,13 @@ local armour = {
 	[Idstring("body_plate"):key()] = true,
 	-- Dozer
 	[Idstring("body_helmet"):key()] = true,
+	[Idstring("body_helmet_ben"):key()] = true,
+	[Idstring("body_helmet_black"):key()] = true,
 	[Idstring("body_helmet_plate"):key()] = true,
+	[Idstring("body_helmet_plate_black"):key()] = true,
 	[Idstring("body_helmet_glass"):key()] = true,
+	[Idstring("body_helmet_glass_ben"):key()] = true,
+	[Idstring("body_helmet_glass_black"):key()] = true,
 	[Idstring("body_armor_chest"):key()] = true,
 	[Idstring("body_armor_stomache"):key()] = true,
 	[Idstring("body_armor_back"):key()] = true,

@@ -1,6 +1,8 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 
+-- Without serious crowd control like multiple ECM feedback loops, it's suicidal to try and get all loot
+-- Team AI are excluded from PONR duration calculation
 local ponr_value = (difficulty <= 5 and 750 or (difficulty == 6 or difficulty == 7) and 750) or 750
 local ponr_timer_player_mul = {
 	1,
@@ -14,6 +16,7 @@ local opts_pro_job_ponr = {
 		["mus_helicopter_001"] = { 100016, },
 	},
 	trigger_times = 1,
+	time_balance_mul_include_team_ai = false,
 	time_balance_mul = ponr_timer_player_mul,
 	time_easy = ponr_value,
 	time_normal = ponr_value,

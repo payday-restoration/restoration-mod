@@ -95,13 +95,13 @@ return {
 			{ id = 400002, delay = 0 }
 		}
 	},
-	--Change Sosa's line to more apporiate one (having chance to say the famous Scarface quote) (from Eclipse)
+	--Change Sosa's line to more apporiate one (having chance to say the famous Scarface quote)
 	[101485] = {
 		values = {
             sound_event = "Play_bos_fri_04"
 		}
 	},
-	-- Add some reinforce around the house
+	-- Add some reinforce around the house (from Eclipse)
 	[100109] = {
 		reinforce = {
 			{

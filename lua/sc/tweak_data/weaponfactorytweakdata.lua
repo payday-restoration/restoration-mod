@@ -38553,6 +38553,38 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		if self.parts.wpn_fps_ass_dd5_fg_standard then --DDR5
 
+			self.parts.wpn_fps_ass_dd5_b_short.supported = true
+			self.parts.wpn_fps_ass_dd5_b_short.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_dd5_b_short.custom_stats = deep_clone(barrels.short_b2_stats)
+			
+			self.parts.wpn_fps_ass_dd5_fg_msr.supported = true
+			self.parts.wpn_fps_ass_dd5_fg_msr.stats = {
+				recoil = -4,
+				spread = 1,
+				concealment = 1
+			}
+
+			self.parts.wpn_fps_ass_dd5_fg_tti.supported = true
+			self.parts.wpn_fps_ass_dd5_fg_tti.stats = {
+				recoil = 2,
+				spread = -1
+			}
+
+			self.parts.wpn_fps_ass_dd5_ns_flash.supported = true
+			self.parts.wpn_fps_ass_dd5_ns_flash.desc_id = "bm_wp_upg_flash_hider"
+			self.parts.wpn_fps_ass_dd5_ns_flash.has_description = true
+			self.parts.wpn_fps_ass_dd5_ns_flash.stats = deep_clone(muzzle_device.muzz_con_a)
+			self.parts.wpn_fps_ass_dd5_ns_flash.custom_stats = deep_clone(muzzle_device.muzz_con_a)
+			self.parts.wpn_fps_ass_dd5_ns_flash.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
+
+			self.parts.wpn_fps_ass_dd5_m_quick.supported = true
+			self.parts.wpn_fps_ass_dd5_m_quick.stats = {
+				value = 6,
+				spread = -1,
+				reload = 3,
+				concealment = -1
+			}
+			self.parts.wpn_fps_ass_dd5_m_quick.custom_stats = nil
 
 			self.wpn_fps_ass_dd5.override.wpn_fps_upg_o_dd_rear.stance_mod = {
 				wpn_fps_ass_dd5 = {
@@ -49077,11 +49109,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "dd5paintf", function(self)
 		}
 
 		if self.parts.wpn_fps_upg_o_cqb then --Vanilla Mod Pack
-
-			self.parts.wpn_fps_upg_o_cqb.stance_mod.wpn_fps_ass_dd5 = {
-				translation = Vector3(0, -3.5, -0.12),
-				rotation = Rotation(0, 0, 0)			
-			}
 
 			table.insert(self.wpn_fps_ass_dd5.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot")			
 			table.insert(self.wpn_fps_ass_dd5.uses_parts, "wpn_fps_ass_m4_s_russian")		

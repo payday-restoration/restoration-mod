@@ -1339,7 +1339,7 @@ function PlayerManager:fixed_health_regen()
 	local health_regen = 0
 	health_regen = health_regen + self:get_hostage_bonus_addend("health_regen")
 	local groupai = managers.groupai and managers.groupai:state()
-	if self:has_category_upgrade("player", "hostage_health_regen_max_mult") and ((groupai and groupai:hostage_count() + (groupai._num_converted_police or self:num_local_minions()) or self:num_local_minions() or 0) >= tweak_data:get_raw_value("upgrades", "hostage_max_num", "health_regen")) then
+	if self:has_category_upgrade("player", "hostage_health_regen_max_mult") and ((groupai and groupai:hostage_count() + (groupai:num_converted_police() or self:num_local_minions()) or self:num_local_minions() or 0) >= tweak_data:get_raw_value("upgrades", "hostage_max_num", "health_regen")) then
 		health_regen = health_regen * self:upgrade_value("player", "hostage_health_regen_max_mult", 0)
 	end
 	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
@@ -1523,7 +1523,7 @@ end
 function PlayerManager:get_hostage_bonus_multiplier(category)
 	local groupai = managers.groupai and managers.groupai:state()
 	local hostages = groupai and groupai:hostage_count() or 0
-	hostages = hostages + (groupai and groupai._num_converted_police or self:num_local_minions() or 0)
+	hostages = hostages + (groupai and groupai:num_converted_police() or self:num_local_minions() or 0)
 	local multiplier = 0
 	local hostage_max_num = tweak_data:get_raw_value("upgrades", "hostage_max_num", category)
 
@@ -1546,7 +1546,7 @@ end
 function PlayerManager:get_hostage_bonus_addend(category)
 	local groupai = managers.groupai and managers.groupai:state()
 	local hostages = groupai and groupai:hostage_count() or 0
-	hostages = hostages + (groupai and groupai._num_converted_police or self:num_local_minions() or 0)
+	hostages = hostages + (groupai and groupai:num_converted_police() or self:num_local_minions() or 0)
 	local addend = 0
 	local hostage_max_num = tweak_data:get_raw_value("upgrades", "hostage_max_num", category)
 

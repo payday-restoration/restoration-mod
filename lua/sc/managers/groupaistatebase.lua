@@ -644,6 +644,10 @@ function GroupAIStateBase:has_room_for_police_hostage()
 	return nr_hostages_allowed > self._police_hostage_headcount
 end
 
+function GroupAIStateBase:num_converted_police()
+	return self._converted_police and table.size(self._converted_police) or 0
+end
+
 function GroupAIStateBase:sync_hostage_headcount(nr_hostages)
 	if nr_hostages and self._hostage_headcount < nr_hostages then
 		managers.player:captured_hostage()
@@ -656,7 +660,7 @@ function GroupAIStateBase:sync_hostage_headcount(nr_hostages)
 	end
 
 	if managers.player:has_team_category_upgrade("damage", "hostage_absorption") then
-		local hostage_count = math.min(self._hostage_headcount + (self._num_converted_police or managers.player:num_local_minions() or 0), tweak_data.upgrades.values.team.damage.hostage_absorption_limit)
+		local hostage_count = math.min(self._hostage_headcount + (self:num_converted_police() or managers.player:num_local_minions() or 0), tweak_data.upgrades.values.team.damage.hostage_absorption_limit)
 		local absorption = managers.player:team_upgrade_value("damage", "hostage_absorption", 0) * hostage_count
 
 		managers.player:set_damage_absorption("hostage_absorption", absorption)

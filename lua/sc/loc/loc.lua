@@ -2669,6 +2669,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_sr1_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor.##",
 					--Nagant Revolver
 					["bm_m1895_sc_desc"] = "A late 19th century 7-shooter and one of the only revolvers that can make use of a suppressor. #{risk}#Strangely##, this one comes with a 6-shot cylinder instead.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
+					--AF2011
+					["bm_af2011_sc_desc"] = "Handgun made to celebrate a hundred years of an all-time classic. Now featuring #{risk}#double the barrels##!",
+					["bm_wp_upg_af2011_a_uno_desc"] = "Internal modification that makes the barrels fire separately rather than simultaneously.",
+					--Triad
+					["bm_triad_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##\n\nAlt-fire fires #{skill_color}#3## rounds with enough force to #{skill_color}#pierce body armor, shields and thin walls##.",
 
 			--[[ SMGs ]]
 				--Kobus 90

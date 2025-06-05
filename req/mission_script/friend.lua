@@ -47,6 +47,26 @@ return {
 			{ id = 102692, delay = 0 }
 		}
 	},
+	-- Add some reinforce around the house
+	[100109] = {
+		reinforce = {
+			{
+				name = "garden_front1",
+				force = 3,
+				position = Vector3(3150, -4250, -150),
+			},
+			{
+				name = "garden_front2",
+				force = 3,
+				position = Vector3(3150, -2000, -150),
+			},
+			{
+				name = "garden_right",
+				force = 3,
+				position = Vector3(750, 2075, -100),
+			},
+		},
+	},
 	 --forcing boat escape
 	[100213] = disabled,
 	[100214] = disabled,
@@ -75,11 +95,31 @@ return {
 			{ id = 400002, delay = 0 }
 		}
 	},
-	--Change Sosa's line to more apporiate one (having chance to say the famous Scarface quote)
+	--Change Sosa's line to more apporiate one (having chance to say the famous Scarface quote) (from Eclipse)
 	[101485] = {
 		values = {
             sound_event = "Play_bos_fri_04"
 		}
+	},
+	-- Add some reinforce around the house
+	[100109] = {
+		reinforce = {
+			{
+				name = "garden_front1",
+				force = 3,
+				position = Vector3(3150, -4250, -150),
+			},
+			{
+				name = "garden_front2",
+				force = 3,
+				position = Vector3(3150, -2000, -150),
+			},
+			{
+				name = "garden_right",
+				force = 3,
+				position = Vector3(750, 2075, -100),
+			},
+		},
 	},
 	--You're Sosa's men, not undercover cops
 	[100852] = mobster_team,

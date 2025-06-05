@@ -13010,10 +13010,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.model70.stats_modifiers = nil
 						self.model70.reload_speed_multiplier = 1.125
 						self.model70.panic_suppression_chance = 0.05
-						self.model70.timers.reload_empty = 3.25
-						self.model70.timers.reload_not_empty = 4.3
-						self.model70.timers.reload_exit_empty = 1.5
-						self.model70.timers.reload_exit_not_empty = 1.05
+						self.model70.timers.reload_empty = 3.4
+						self.model70.timers.reload_exit_empty = 1.6
+						self.model70.timers.reload_not_empty = 3.25
+						self.model70.timers.reload_exit_not_empty = 0.95
 
 					--R93 (Blaser R93)
 						self.r93.has_description = true
@@ -26621,6 +26621,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.dd5.damage_type = "assault_rifle"
 				self.dd5.desc_id = "bm_ap_armor_25_weapon_sc_desc"
 				self.dd5.has_description = true
+				self.dd5.nato = true
 				self.dd5.lock_slide = true
 				self.dd5.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.dd5.CLIP_AMMO_MAX = 20
@@ -26630,6 +26631,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.dd5.CAN_TOGGLE_FIREMODE = true
 				self.dd5.FIRE_MODE = "auto"
 				self.dd5.fire_mode_data.fire_rate = 0.07692307
+				self.dd5.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.dd5.kick = self.stat_info.kick_tables.even_recoil
 				self.dd5.kick_pattern = {
 					{0, self.stat_info.kick_tables.even_recoil},

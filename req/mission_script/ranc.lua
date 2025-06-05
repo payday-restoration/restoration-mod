@@ -53,10 +53,59 @@ return {
 	[100369] = sniper_trigger_times,
 	[100370] = sniper_trigger_times,
 	[100371] = sniper_trigger_times,
+
 	--fixes some spawn typos
 	[100683] = spawn_anim_fix,
 	[100684] = spawn_anim_fix,
 	[100789] = spawn_anim_fix,
 	[100790] = spawn_anim_fix,
 	[100791] = spawn_anim_fix
+
+	reinforce = { -- add all at once so they get populated quickly (from Eclipse)
+			{
+				name = "fork",
+				force = 4, -- fuck huge navseg
+				position = Vector3(-2015, -145, 200),
+			},
+			{
+				name = "main_gate1",
+				force = 4, -- fuck huge navseg
+				position = Vector3(5670, 1125, 400),
+			},
+			{
+				name = "main_gate2",
+				force = 4,
+				position = Vector3(5310, -1090, 400),
+			},
+			{
+				name = "outside_garage",
+				force = 2,
+				position = Vector3(7875, -9315, 400),
+			},
+			{
+				name = "such_a_nice_car",
+				force = 2,
+				position = Vector3(2985, -7040, 400), -- go bank car near some un-enterable sheds
+			},
+			{
+				name = "barn1",
+				force = 2,
+				position = Vector3(6755, 5320, 400), -- exit by shooting range
+			},
+			{
+				name = "barn2",
+				force = 2,
+				position = Vector3(4285, 5215, 400), -- exit by stealth secure point
+			},
+			{
+				name = "workshop_a", -- labelled in editor
+				force = 3,
+				position = Vector3(3070, 2890, 400),
+			},
+			{
+				name = "workshop_c", -- labelled in editor
+				force = 3,
+				position = Vector3(9215, 1625, 450),
+			},
+		},
 }

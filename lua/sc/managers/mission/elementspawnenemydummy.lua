@@ -2558,7 +2558,7 @@ if level_id == "moon" then
 end
 -- Marshal Sharpshooters/Shields replacing OMNIA Titan Snipers/Shields on Texas heists
 -- Snipers in Lost in Transit are affected by lua edit
-if or level_id == "ranc" or level_id == "trai" or level_id == "corp" then
+if level_id == "ranc" or level_id == "trai" or level_id == "corp" then
 	-- Snipers
 	ElementSpawnEnemyDummy.faction_mapping.lapd.sm_wish.sniper = {
 		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",

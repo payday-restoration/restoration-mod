@@ -12058,11 +12058,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fal.has_description = true
 						self.fal.desc_id = "bm_fal_sc_desc"
 						self.fal.CLIP_AMMO_MAX = 20
-						self.fal.fire_mode_data.fire_rate = 0.0923076923
+						self.fal.fire_mode_data.fire_rate = 0.085714285
 						self.fal.CAN_TOGGLE_FIREMODE = true
 						self.fal.FIRE_MODE = "auto"
 						self.fal.auto = {}
-						self.fal.auto.fire_rate = 0.0923076923
+						self.fal.auto.fire_rate = 0.085714285
 						self.fal.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.fal.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
@@ -26116,7 +26116,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.dd5.recategorize = { "dmr_ar" }
 				self.dd5.damage_type = "assault_rifle"
-				self.dd5.upgrade_blocks = nil
 				self.dd5.desc_id = "bm_ap_armor_25_weapon_sc_desc"
 				self.dd5.has_description = true
 				self.dd5.lock_slide = true
@@ -26127,13 +26126,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.dd5.BURST_FIRE = false
 				self.dd5.CAN_TOGGLE_FIREMODE = true
 				self.dd5.FIRE_MODE = "auto"
-				self.dd5.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.dd5.fire_mode_data.fire_rate = 0.07692307
+				self.dd5.kick = self.stat_info.kick_tables.even_recoil
 				self.dd5.kick_pattern = {
-					{0, self.stat_info.kick_tables.horizontal_recoil},
+					{0, self.stat_info.kick_tables.even_recoil},
 					{4, self.stat_info.kick_tables.left_recoil},
 					{7, self.stat_info.kick_tables.even_recoil},
-					{11, self.stat_info.kick_tables.right_recoil},
-					{17, self.stat_info.kick_tables.left_recoil}
+					{10, self.stat_info.kick_tables.right_recoil},
+					{16, self.stat_info.kick_tables.left_recoil}
 				}
 				self.dd5.supported = true
 				self.dd5.ads_speed = 0.380
@@ -26157,7 +26157,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.dd5.stats_modifiers = nil
 				self.dd5.can_shoot_through_enemy = false
-				self.dd5.timers.reload_exit_empty = 0.7
+				self.dd5.timers.reload_empty = 2.26
+				self.dd5.timers.reload_exit_empty = 0.8
 				self.dd5.timers.reload_exit_not_empty = 0.8
 				self.dd5.armor_piercing_chance = 0.25
 				self.dd5.panic_suppression_chance = 0.05

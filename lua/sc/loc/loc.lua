@@ -6028,7 +6028,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck9_brandon"] = "Brandon",
 		["menu_deck9_brandon_desc_sc"] = "Instead gain #{skill_color}#$perk_value_1## speed for every #{risk}#$perk_value_2## points of combo you have, to a maximum of #{skill_color}#$perk_value_3.##\n\nYour combo decay timer is reduced by #{important_1}#$perk_value_4## second.",
 		["menu_deck9_earl"] = "Earl",
-		["menu_deck9_earl_desc_sc"] = "#{skill_color}#You no longer lose combo points when taking health damage;## #{important_1}#going into bleedout will fully drop your combo.##",
+		["menu_deck9_earl_desc_sc"] = "You lose #{skill_color}#0## points of combo when taking health damage.\n\n#{risk}#Clean Hit's healing## is reduced by #{important_1}#50%.##\nGoing into bleedout will reduce your combo to #{important_1}#0## points.",
 		["menu_deck9_tonyr"] = "Tony's Revenge",
 		["menu_deck9_tonyr_desc_sc"] = "Your #{skill_color}#Brass Knuckles## deal #{skill_color}#$perk_value_1## more damage.\n\n#{risk}#Captains and VIP targets## take #{important_1}#75%## less damage from your #{risk}#Brass Knuckles.##\n#{risk}#Overdose's dodge-on-kill and Showdown's panic-on-kill## have their effects reduced by #{important_1}#66%.##\nYour maximum combo is reduced by #{important_1}#$perk_value_6.##\nYour combo decay timer is reduced by #{important_1}#$perk_value_7## seconds and its decay rate increased by #{important_1}#$perk_value_8## points.\nYou lose an additional #{important_1}#$perk_value_5## points of combo when taking health damage.\nYour total ammo is reduced by #{important_1}#$perk_value_2## and your ammo pickup rates are reduced by #{important_1}#$perk_value_3.##",
 		["menu_deck9_mark"] = "Mark",

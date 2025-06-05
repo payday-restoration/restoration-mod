@@ -2412,11 +2412,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			effect_max = 0.2,
 		}
 	}
-	self.values.player.buildup_meter_hysteria = {{ --healing
-		combo_steps = 5,
-		effect = 0.05,
-		effect_max = 0.5,
-	}}
+	self.values.player.buildup_meter_hysteria = { --healing
+		{
+			combo_steps = 5,
+			effect = 0.05,
+			effect_max = 0.5,
+		},
+		{
+			combo_steps = 5,
+			effect = 0.025,
+			effect_max = 0.25,
+		}
+	}
 	self.values.player.buildup_meter_elude = { --dodge on kill
 		{
 			combo_steps = 2,
@@ -5426,6 +5433,15 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 1,
+			upgrade = "buildup_meter_hysteria",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_hysteria_2 = {
+		name_id = "menu_player_buildup_vazarin",
+		category = "feature",
+		upgrade = {
+			value = 2,
 			upgrade = "buildup_meter_hysteria",
 			category = "player"
 		}

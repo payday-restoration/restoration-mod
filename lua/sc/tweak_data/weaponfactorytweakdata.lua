@@ -39105,6 +39105,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					rotation = Rotation(0.015,0,0)
 				}
 			}
+
+			self.wpn_fps_ass_dd5.override.wpn_fps_upg_o_mbus_front = {
+				a_obj = "a_o_front"
+			}
+			self.wpn_fps_ass_dd5.override.wpn_fps_upg_o_mbus_rear = {
+				a_obj = "a_o_rear",
+				stance_mod = {
+					wpn_fps_ass_dd5 = {
+						translation = Vector3(0.065,-9.3,-0.03),
+						rotation = Rotation(0.035,0,0)
+					}
+				},
+				forbids = {
+					"wpn_fps_ass_dd5_o_dd_extra"
+				}
+			}
+
+			table.insert(self.wpn_fps_ass_dd5.uses_parts, "wpn_fps_upg_o_mbus_rear")
+
+			self.wpn_fps_ass_dd5_npc.uses_parts = deep_clone(self.wpn_fps_ass_dd5.uses_parts)
+
 		end
 
 		if self.parts.wpn_fps_shot_omni_m_standard then --Tangerine's .410 AR

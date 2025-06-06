@@ -26,6 +26,26 @@ return {
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},
+	-- New reinforce (from Eclipse)
+	[104306] = {
+		reinforce = {
+			{
+				name = "atrium_left",
+				force = 2,
+				position = Vector3(-450, 150, 0),
+			},
+			{
+				name = "atrium_middle",
+				force = 2,
+				position = Vector3(-1300, -1600, 0),
+			},
+			{
+				name = "atrium_right",
+				force = 2,
+				position = Vector3(-450, -3350, 0),
+			},
+		},
+	},
 	-- Shotgun Man in Sec Room
 	[104279] = {
 		values = {

@@ -72,6 +72,7 @@ local sc_group_misc_data = GroupAIStateBase._init_misc_data
 function GroupAIStateBase:_init_misc_data()
 	sc_group_misc_data(self)
 	self._ponr_is_on = nil
+	self._alternate_ponr_behavior = table.contains(restoration.alternate_ponr_behavior, job)
 	self._decay_target = 1
 	self._min_detection_threshold = 1
 	self._old_guard_detection_mul = 1
@@ -145,6 +146,7 @@ function GroupAIStateBase:on_simulation_started()
 	sc_group_base(self)
 	self._loud_diff_set = false --i really just dont want to take any chances
 	self._ponr_is_on = nil
+	self._alternate_ponr_behavior = table.contains(restoration.alternate_ponr_behavior, job)
 	self._min_detection_threshold = 1
 	self._old_guard_detection_mul = 1
 	self._guard_detection_mul = 1
@@ -238,13 +240,68 @@ function GroupAIStateBase:chk_guard_delay_deduction()
 	else
 		return self._guard_delay_deduction * 1
 	end
-end	
+end
+
+local function get_mission_script_element(id)
+	for name, script in pairs_g(managers.mission:scripts()) do
+		if script:element(id) then
+			return script:element(id)
+		end
+	end
+end
+
+function GroupAIStateBase:get_active_ponr_element()
+	local id = self._point_of_no_return_id
+	return id and id ~= 0 and get_mission_script_element(id)
+end
+
+function GroupAIStateBase:should_spawn_bravos()
+	-- Ignore all other checks if mutators or mission scripting say Bravos should spawn
+	if restoration.always_bravos then
+		return true
+	end
+
+	-- Not outside of standard PONRs
+	if self._alternate_ponr_behavior or not self._ponr_is_on then
+		return
+	end
+
+	-- Not outside of Pro Jobs
+	if not Global.game_settings or not Global.game_settings.one_down then
+		return
+	end
+
+	-- Not if the difficulty threshold hasn't been reached yet
+	if self._bravos_difficulty_threshold and self._bravos_difficulty_threshold > self._difficulty_value then
+		return
+	end
+
+	-- Not if the timer hasn't expired and been cleared
+	if self._bravos_timer then
+		return
+	end
+
+	return true
+end
+
+Hooks:PreHook(GroupAIStateBase, "remove_point_of_no_return_timer", "res_remove_point_of_no_return_timer", function(self, point_of_no_return_id)
+	if setup:has_queued_exec() or self._point_of_no_return_id ~= point_of_no_return_id then
+		return
+	end
+
+	local element = self:get_active_ponr_element()
+	if element and element:value("stop_bravos_on_end") then
+		-- self._ponr_is_on = nil
+		self._bravos_difficulty_threshold = 2
+		self._bravos_timer = nil
+	end
+end)
 
 function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_id, point_of_no_return_tweak_id)
 	if time == nil or setup:has_queued_exec() then
 		return
 	end
-	
+
 	--No PONRs during stealth, unless the map really needs it
 	--[[
 	if not table.contains(restoration.stealth_ponr_behavior, job) then
@@ -256,7 +313,7 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 
 	self._forbid_drop_in = true
 	self._ponr_is_on = true
-	
+
 	managers.network.matchmake:set_server_joinable(false)
 
 	if not self._peers_inside_point_of_no_return then
@@ -270,9 +327,16 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 
 	managers.hud:show_point_of_no_return_timer(self._point_of_no_return_tweak_id)
 	managers.hud:add_updator("point_of_no_return", callback(self, self, "_update_point_of_no_return"))
-	--log("setting diff to 1!!")
-	if not table.contains(restoration.alternate_ponr_behavior, job) then 
-		self:set_difficulty(nil, 1)
+	if not self._alternate_ponr_behavior then
+		local element = self:get_active_ponr_element()
+		local min_difficulty = element and element:value("min_difficulty") or 1
+		local difficulty_add = min_difficulty - self._difficulty_value
+		if difficulty_add > 0 then
+			self:set_difficulty(nil, difficulty_add)
+			restoration:log("PONR triggered difficulty increase of %s to %s", tostring(difficulty_add), tostring(self._difficulty_value))
+		end
+		self._bravos_difficulty_threshold = element and element:value("bravos_difficulty_threshold") or nil
+		self._bravos_timer = element and element:value("bravos_timer") or nil
 	end
 end
 
@@ -282,14 +346,6 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 		managers.hud:remove_updator("point_of_no_return")
 
 		return
-	end
-
-	local function get_mission_script_element(id)
-		for name, script in pairs_g(managers.mission:scripts()) do
-			if script:element(id) then
-				return script:element(id)
-			end
-		end
 	end
 
 	local function get_element_in_instance(instance_name, id)
@@ -334,7 +390,7 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 	if not self._point_of_no_return_areas then
 		self._point_of_no_return_areas = {}
 
-		local element = get_mission_script_element(self._point_of_no_return_id)
+		local element = self:get_active_ponr_element()
 		if element then
 			local element_elements = element:value("elements")
 			if element_elements then
@@ -850,6 +906,12 @@ function GroupAIStateBase:update(t, dt)
 	self:_upd_criminal_suspicion_progress()
 	
 	local is_whisper_mode = managers.groupai:state():whisper_mode()
+	if not is_whisper_mode and self._bravos_timer then
+		self._bravos_timer = self._bravos_timer - dt
+		if self._bravos_timer <= 0 then
+			self._bravos_timer = nil
+		end
+	end
 	
 	local level_suspicion,alarm_threshold
 	if Network:is_server() then 

@@ -407,15 +407,8 @@ local orig_modify = ModifiersManager.modify_value
 function ModifiersManager:modify_value(id, value, ...)
 	local result = orig_modify(self,id,value,...)
 	value = tostring(value)
-	if id == "GroupAIStateBesiege:SpawningUnit" and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and not table.contains(restoration.alternate_ponr_behavior, job) then 
---			if unit_table[value] then 
---				log("ModifiersManagers: Replacing spawn " .. tostring(value) .. " ==> " .. tostring(unit_table[tostring(value)]))
---			else
---				log("Did not find " .. value,{color = Color(1,0.6,0.6)})
---			end
-		return self._unit_table[value] or result 
-	elseif id == "GroupAIStateBesiege:SpawningUnit" and restoration and restoration.always_bravos then 
-		return self._unit_table[value] or result 
+	if id == "GroupAIStateBesiege:SpawningUnit" and managers.groupai:state():should_spawn_bravos() then
+		return self._unit_table[value] or result
 	end
 	return result
 end

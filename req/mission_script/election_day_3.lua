@@ -17,7 +17,7 @@ local swat_ovk_pj = {
 }
 
 return {
-	--Pro Job PONR+Endless assault
+	-- Pro Job PONR+Endless assault
 	[104701] = {
 		ponr = ponr_value,
 		hunt = hunt_projob
@@ -26,13 +26,13 @@ return {
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},
-	--Shotgun Man in Sec Room
+	-- Shotgun Man in Sec Room
 	[104279] = {
 		values = {
 			enemy = jerome_dude	
 		}
 	},
-	--Titan SWATs replacing some harrasers on OVK PJ (with occasional Titan Sniper)
+	-- Titan SWATs replacing some harrasers on OVK PJ (with occasional Titan Sniper)
 	[100208] = swat_ovk_pj,
 	[100209] = swat_ovk_pj,
 	[100212] = swat_ovk_pj,

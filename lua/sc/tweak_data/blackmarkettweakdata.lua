@@ -5944,7 +5944,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.sandsteel.stats.cleave = 3
 		self.melee_weapons.sandsteel.stats.raycasts = 20
 		self.melee_weapons.sandsteel.stats.raycasts_h = 25
-		self.melee_weapons.sandsteel.stats.min_damage = 6
+		self.melee_weapons.sandsteel.stats.min_damage = 9
 		self.melee_weapons.sandsteel.stats.max_damage = 12.001
 		self.melee_weapons.sandsteel.stats.min_damage_effect = 1.5
 		self.melee_weapons.sandsteel.stats.max_damage_effect = 4.5

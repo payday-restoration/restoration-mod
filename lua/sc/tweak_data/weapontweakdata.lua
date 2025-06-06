@@ -10625,7 +10625,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.shuno.kick_pattern = {
 						{0, self.stat_info.kick_tables.right_recoil},
 						{16, self.stat_info.kick_tables.even_recoil},
-						{19, self.stat_info.kick_tables.left_recoil},
+						{19, self.stat_info.kick_tables.right_recoil},
 						{26, self.stat_info.kick_tables.moderate_kick},
 						{40, self.stat_info.kick_tables.moderate_right_kick}
 					}
@@ -10655,6 +10655,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.shuno.stats_modifiers = nil
 					self.shuno.ads_spool = true
 					self.shuno.spin_up_anims = true
+					self.shuno.spin_up_t = 0.35
+					self.shuno.spin_down_t = 0.35
 					self.shuno.timers.equip = 2.35
 					self.shuno.timers.reload_exit_empty = 5
 					self.shuno.timers.reload_exit_not_empty = 5
@@ -10715,6 +10717,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m134.jab_range = 50
 					self.m134.ads_spool = true
 					self.m134.spin_up_anims = true
+					self.m134.spin_up_t = 0.65
+					self.m134.spin_down_t = 0.65
 					self.m134.timers.reload_empty = 7
 					self.m134.timers.reload_not_empty = 7
 					self.m134.timers.reload_exit_empty = 2
@@ -30930,8 +30934,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				if weap.weapon_movement_penalty then
 					weap.muzzleflash = "_dmc/effects/heavy_muzzle"
 					weap.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
-					weap.rms = (1 + weap.weapon_movement_penalty) / 1.5
-					if not table.contains(weap.categories, "lmg_moving") and not table.contains(weap.categories, "mmg_moving") and not table.contains(weap.categories, "finn_the_lmg") and not table.contains(weap.categories, "wolf_brigade") and not table.contains(weap.categories, "minigun") then
+					weap.rms = weap.weapon_movement_penalty + ((1 - weap.weapon_movement_penalty) * 0.5)
+					if not table.contains(weap.categories, "lmg_moving") and not table.contains(weap.categories, "mmg_moving") and not table.contains(weap.categories, "finn_the_lmg") and not table.contains(weap.categories, "wolf_brigade") then
 						weap.sms = weap.sms / 1.2
 						weap.rms = weap.weapon_movement_penalty
 						weap.zoom_recoil_reduction = 0.025

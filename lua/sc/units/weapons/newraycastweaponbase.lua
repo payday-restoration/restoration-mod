@@ -1704,6 +1704,10 @@ function NewRaycastWeaponBase:precalculate_ammo_pickup()
 			pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
 		end
 
+		if managers.player:has_category_upgrade("player", "armor_pickup_mul") then
+			pickup_multiplier = pickup_multiplier * managers.player:body_armor_value("skill_ammo_mul", nil, 1)
+		end
+
 		--Sharpeyed Team AI bonus, since now Enduring is a base thing
 		--Moved to RaycastWeaponBase:add_ammo; precalculate_ammo_pickup is first called on spawn *before* the crew bonus becomes active and renders it useless unless you leave custody or do something else to call this function after crew AI is active
 		--pickup_multiplier = pickup_multiplier + managers.player:crew_ability_upgrade_value("crew_scavenge", 1) - 1

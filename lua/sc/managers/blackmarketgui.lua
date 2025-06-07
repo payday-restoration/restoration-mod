@@ -5304,6 +5304,8 @@ function BlackMarketGui:update_info_text()
 		local armor_name_text = self._armor_info_panel:child("armor_name_text")
 		local armor_image = self._armor_info_panel:child("armor_image")
 		local armor_equipped = self._armor_info_panel:child("armor_equipped")
+		local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
+		local upgrade_level = bm_armor_tweak.upgrade_level
 
 		armor_name_text:set_text(self._slot_data.name_localized)
 		armor_name_text:set_w(self._armor_info_panel:w() - armor_image:right() - 20)
@@ -5324,9 +5326,19 @@ function BlackMarketGui:update_info_text()
 		elseif managers.player:has_category_upgrade("player", "damage_to_hot") and not table.contains(tweak_data:get_raw_value("upgrades", "damage_to_hot_data", "armors_allowed") or {}, self._slot_data.name) then
 			updated_texts[3].text = managers.localization:to_upper_text("bm_menu_disables_damage_to_hot")
 			updated_texts[3].below_stats = true
-		elseif managers.player:has_category_upgrade("player", "armor_health_store_amount") then --Add Ex-Pres per-kill armor regen bonus.
-			local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
-			local upgrade_level = bm_armor_tweak.upgrade_level
+		end
+
+		if managers.player:has_category_upgrade("player", "armor_pickup_mul") then
+			local armor_pickup = managers.player:body_armor_value("skill_ammo_mul", upgrade_level, 1)
+			local description = managers.localization:text("bm_menu_armor_pickup_1", { armor_pickup = (armor_pickup * 100) .. "%" } )
+			for color_id in string.gmatch(description, "#%{(.-)%}#") do
+				table.insert(updated_texts[4].resource_color,  tweak_data.screen_colors[(armor_pickup < 1 and "stats_negative") or (armor_pickup > 1 and "stats_positive") or color_id])
+			end
+			description = description:gsub("#%{(.-)%}#", "##")
+			updated_texts[4].text = description .. "\n" .. updated_texts[4].text
+		end
+
+		if managers.player:has_category_upgrade("player", "armor_health_store_amount") then --Add Ex-Pres per-kill armor regen bonus.
 			local amount = managers.player:body_armor_value("skill_max_health_store", upgrade_level, 1)
 			local multiplier = managers.player:upgrade_value("player", "armor_max_health_store_multiplier", 1)
 			local regen_speed = format_round((managers.player:body_armor_value("skill_kill_change_regenerate_speed", upgrade_level, 1) - 1) * 100)
@@ -5336,10 +5348,10 @@ function BlackMarketGui:update_info_text()
 								managers.localization:to_upper_text("bm_menu_armor_max_health_store_1", {health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier)}))
 
 			for color_id in string.gmatch(description, "#%{(.-)%}#") do
-				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors["skill_color"]) --dunno why this breaks when the difficuly cap is in play but doing this is fine
 			end
 			description = description:gsub("#%{(.-)%}#", "##")
-			updated_texts[4].text = description .. "\n\n"
+			updated_texts[4].text = updated_texts[4].text .. description .. "\n\n"
 			updated_texts[4].below_stats = true
 		elseif managers.player:has_category_upgrade("player", "armor_grinding") then --Add Anarchist per-armor skill information.
 			local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
@@ -5353,7 +5365,7 @@ function BlackMarketGui:update_info_text()
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 			end
 			description = description:gsub("#%{(.-)%}#", "##")
-			updated_texts[4].text = description .. "\n\n"
+			updated_texts[4].text = updated_texts[4].text .. description .. "\n\n"
 			updated_texts[4].below_stats = true
 		end
 		local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]

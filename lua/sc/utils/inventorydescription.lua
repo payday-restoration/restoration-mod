@@ -752,6 +752,10 @@ function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stat
 		pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
 	end
 
+	if managers.player:has_category_upgrade("player", "armor_pickup_mul") then
+		pickup_multiplier = pickup_multiplier * managers.player:body_armor_value("skill_ammo_mul", nil, 1)
+	end
+
 	if pickup_multiplier then
 		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 		local min_pickup = weapon_tweak.AMMO_PICKUP[1] * (ammo_data.ammo_pickup_min_mul or 1) * pickup_multiplier

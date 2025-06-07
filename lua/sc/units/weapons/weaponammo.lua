@@ -28,6 +28,16 @@ function WeaponAmmo:replenish()
 			pickup_multiplier = pickup_multiplier * ( ((managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1) - 1) * is_solo) + 1 )
 		end
 
+		for _, category in ipairs(self:categories()) do
+			pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
+		end
+
+		if managers.player:has_category_upgrade("player", "armor_pickup_mul") then
+			pickup_multiplier = pickup_multiplier * managers.player:body_armor_value("skill_ammo_mul", nil, 1)
+		end
+
+		pickup_multiplier = pickup_multiplier * ((self._is_controller and 1.15) or 1)
+		
 		--Apply multiplier from skills and ammo.
 		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier
 		self._ammo_pickup[2] = self._ammo_pickup[2] * pickup_multiplier

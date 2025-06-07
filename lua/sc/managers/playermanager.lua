@@ -413,6 +413,10 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 		end
 
 		local buildup_add_mod = (self:has_category_upgrade("player", "buildup_meter_rick") and self:upgrade_value("player", "buildup_meter_rick", 0).combo_add_mod) or 0
+		if self:has_category_upgrade("player", "buildup_meter_quickening") then
+			local armor = tweak_data.player.damage.ARMOR_INIT + managers.player:body_armor_value("armor")
+			buildup_add_mod = buildup_add_mod + ( math.floor( armor / self:upgrade_value("player", "buildup_meter_quickening", 0).armor_steps ) * self:upgrade_value("player", "buildup_meter_quickening", 0).combo_add_mod )
+		end
 		local buildup_add = (self:upgrade_value("player", "buildup_meter", 0).combo_add + buildup_add_mod) * enemy_unit_mult()
 
 		local function check_refresh(refresh, aubrey, time)
@@ -427,7 +431,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 						self._buildup_meter_t = self._buildup_meter_t + add_t
 						managers.hud:change_cooldown("sociopath", add_t)
 					end
-					self._buildup_meter = math.clamp((self._buildup_meter or 0) + self:upgrade_value("player", "buildup_meter_aubrey", 0).combo_add * enemy_unit_mult(), 0, self._buildup_meter_max)
+					self._buildup_meter = math.clamp((self._buildup_meter or 0) + (self:upgrade_value("player", "buildup_meter_aubrey", 0).combo_add + buildup_add_mod) * enemy_unit_mult(), 0, self._buildup_meter_max)
 					managers.hud:set_stacks("sociopath", self._buildup_meter)
 				else	
 					if self._buildup_meter > 0 then
@@ -441,7 +445,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 		if has_swan then
 			if buildup_meter_variant == "melee" or buildup_meter_variant == "bullet" then
 				if not self._buildup_meter_last_kill or self._buildup_meter_last_kill ~= buildup_meter_variant then
-					self._buildup_meter = math.clamp((self._buildup_meter or 0) + self:upgrade_value("player", "buildup_meter_swan", 0).combo_add * enemy_unit_mult(), 0, self._buildup_meter_max)
+					self._buildup_meter = math.clamp((self._buildup_meter or 0) + (self:upgrade_value("player", "buildup_meter_swan", 0).combo_add + buildup_add_mod) * enemy_unit_mult(), 0, self._buildup_meter_max)
 					self._buildup_meter_t = combo_t
 					managers.hud:start_buff("sociopath", self._buildup_meter_t)
 					managers.hud:set_stacks("sociopath", self._buildup_meter)

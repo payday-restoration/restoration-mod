@@ -24,7 +24,7 @@ local opts_pro_job_ponr = {
 	enabled = pro_job,
 }
 local opts_pro_job_ponr_end = {
-	elements = { 400039 },
+	elements = { 400051 },
 	operation = "remove",
 	enabled = pro_job,
 }
@@ -239,10 +239,92 @@ local Bain_sendgrenadiers = {
 	dialogue = "Play_ban_s05",
 	can_not_be_muted = true,
 }
+local Bain_swats_from_keel_street = {
+	dialogue = "Play_pln_pal_45",
+}
+local Bain_swats_from_beach = {
+	dialogue = "Play_pln_pal_46",
+}
+local Bain_swats_from_hills = {
+	dialogue = "Play_pln_pal_47",
+}
+local Bain_swats_from_pacific_drive = {
+	dialogue = "Play_pln_pal_48",
+}
+local optsChopperMitchell_fix = {
+	enabled = true,
+	trigger_times = 1,
+	trigger_list = {
+		{ id = 1, name = "run_sequence", notify_unit_id = 100000, notify_unit_sequence = "swat", time = 0 },
+		{ id = 2, name = "run_sequence", notify_unit_id = 100000, notify_unit_sequence = "heli_street_seventh_flyin", time = 0 },
+		{ id = 3, name = "run_sequence", notify_unit_id = 100000, notify_unit_sequence = "open_door_left", time = 13 },
+		{ id = 4, name = "run_sequence", notify_unit_id = 100000, notify_unit_sequence = "open_door_right", time = 13 },
+		{ id = 5, name = "run_sequence", notify_unit_id = 100000, notify_unit_sequence = "close_door_left", time = 22 },
+		{ id = 6, name = "run_sequence", notify_unit_id = 100000, notify_unit_sequence = "close_door_right", time = 22 },
+		{ id = 7, name = "run_sequence", notify_unit_id = 100000, notify_unit_sequence = "heli_street_seventh_flyout", time = 26 },
+		{ id = 8, name = "run_sequence", notify_unit_id = 100000, notify_unit_sequence = "hidden", time = 40 },
+	},
+	on_executed = {
+		{ id = 101713, delay = 13 },
+	},
+}
+local optsChopperWilson_fix = {
+	enabled = true,
+	trigger_times = 1,
+	trigger_list = {
+		{ id = 1, name = "run_sequence", notify_unit_id = 102724, notify_unit_sequence = "swat", time = 0 },
+		{ id = 2, name = "run_sequence", notify_unit_id = 102724, notify_unit_sequence = "heli_suburbia_flyin", time = 0 },
+	},
+	on_executed = {
+		{ id = 101712, delay = 11.5 },
+		{ id = 101758, delay = 0 },
+		{ id = 102363, delay = 8 },
+		{ id = 101715, delay = 0 },
+	},
+}
+local optsChopperWilson_stop_sound_fix = {
+	enabled = true,
+	trigger_list = {
+		{ id = 1, name = "run_sequence", notify_unit_id = 102724, notify_unit_sequence = "hidden", time = 0 },
+	},
+}
+local optsChopperPool_fix = {
+	enabled = true,
+	trigger_times = 1,
+	trigger_list = {
+		{ id = 1, name = "run_sequence", notify_unit_id = 100719, notify_unit_sequence = "swat", time = 0 },
+		{ id = 2, name = "run_sequence", notify_unit_id = 100719, notify_unit_sequence = "heli_street_fourth_flyin", time = 0 },
+	},
+	on_executed = {
+		{ id = 101714, delay = 13 },
+		{ id = 101760, delay = 0 },
+		{ id = 100792, delay = 8 },
+		{ id = 101715, delay = 0 },
+	},
+}
+local optsChopperPool_stop_sound_fix = {
+	enabled = true,
+	trigger_list = {
+		{ id = 1, name = "run_sequence", notify_unit_id = 100719, notify_unit_sequence = "hidden", time = 0 },
+	},
+}
+local disable_the_pool_chopper = {
+	enabled = true,
+	toggle = "off",
+	elements = {
+		400041,
+	},
+}
+local enable_the_pool_chopper = {
+	enabled = true,
+	elements = {
+		400041,
+	},
+}
 
 return {
 	elements = {
-		--Snipers
+		-- Snipers
 		restoration:gen_dummy(400001, "sniper_1", Vector3(4082, 2186, 120.142), Rotation(-180, 0, -0), optsSniper_1),
 		restoration:gen_dummy(400002, "sniper_2", Vector3(2978, -744, 126.059), Rotation(180, 0, -0), optsSniper_2),
 		restoration:gen_dummy(400003, "sniper_3", Vector3(-3153, 8429, 26.021), Rotation(90, -0, -0), optsSniper_3),
@@ -281,8 +363,19 @@ return {
 		restoration:gen_so(400036, "grenadier_spot_so_2", Vector3(-5995, -455, 26.200), Rotation(-90, 0, -0), optsSniper_Grenadier_SO),
 		restoration:gen_so(400037, "grenadier_spot_so_3", Vector3(-796.150, 12.669, 31.663), Rotation(50, -0, -0), optsSniper_Grenadier_SO),
 		restoration:gen_so(400038, "grenadier_spot_so_4", Vector3(-863, -67, 31.663), Rotation(50, 0, -0), optsSniper_Grenadier_SO),
+		-- misc
+		restoration:objecteditor(400039, "mitchell_chopper_fix", Vector3(-803, -1370, 3449.999), Rotation(-90, 0, -0), optsChopperMitchell_fix),
+		restoration:objecteditor(400040, "wilson_chopper_fix", Vector3(-803, -1370, 3449.999), Rotation(-90, 0, -0), optsChopperWilson_fix),
+		restoration:objecteditor(400041, "pool_chopper_fix", Vector3(-803, -1370, 3449.999), Rotation(-90, 0, -0), optsChopperPool_fix),
+		restoration:objecteditor(400042, "wilson_chopper_sound_fix", Vector3(-803, -1370, 3449.999), Rotation(-90, 0, -0), optsChopperWilson_stop_sound_fix),
+		restoration:objecteditor(400043, "pool_chopper_sound_fix", Vector3(-803, -1370, 3449.999), Rotation(-90, 0, -0), optsChopperPool_stop_sound_fix),
+		restoration:gen_toggleelement(400044, "disable_the_pool_chopper", disable_the_pool_chopper),
+		restoration:gen_toggleelement(400045, "enable_the_pool_chopper", enable_the_pool_chopper),
+		restoration:gen_dialogue(400047, "swats_beach", Bain_swats_from_beach),
+		restoration:gen_dialogue(400048, "swats_hills", Bain_swats_from_hills),
+		restoration:gen_dialogue(400049, "swats_pacific_drive", Bain_swats_from_pacific_drive),
 		-- PONR
-		restoration:gen_pointofnoreturn(400039, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
-		restoration:gen_operator(400040, "pro_job_ponr_end", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_end),
+		restoration:gen_pointofnoreturn(400050, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
+		restoration:gen_operator(400051, "pro_job_ponr_end", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_end),
 	},
 }

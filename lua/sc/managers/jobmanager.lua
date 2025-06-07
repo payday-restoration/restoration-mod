@@ -11,6 +11,8 @@ function JobManager:is_current_job_professional()
 	return Global.game_settings.one_down
 end
 
+-- Is this used?
+-- No matches within Res but unsure if other mods would be using this for any reason
 function JobManager:check_ponr_active()
 	if not restoration.Options:GetValue("OTHER/MusicShuffle") and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and restoration.Options:GetValue("OTHER/PONRTrack") then
 		return true

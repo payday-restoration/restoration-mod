@@ -284,6 +284,35 @@ function GroupAIStateBase:should_spawn_bravos()
 	return true
 end
 
+function GroupAIStateBase:use_ponr_music()
+	-- Not during stealth
+	if self:whisper_mode() then
+		return
+	end
+
+	-- Not outside of standard PONRs
+	if self._alternate_ponr_behavior or not self._ponr_is_on then
+		return
+	end
+
+	-- Not outside of Pro Jobs
+	if not Global.game_settings or not Global.game_settings.one_down then
+		return
+	end
+
+	-- Not if PONR music is disabled
+	if not restoration.Options:GetValue("OTHER/PONRTrack") then
+		return
+	end
+
+	-- Not if music shuffle is enabled
+	if restoration.Options:GetValue("OTHER/MusicShuffle") then
+		return
+	end
+
+	return true
+end
+
 Hooks:PreHook(GroupAIStateBase, "remove_point_of_no_return_timer", "res_remove_point_of_no_return_timer", function(self, point_of_no_return_id)
 	if setup:has_queued_exec() or self._point_of_no_return_id ~= point_of_no_return_id then
 		return

@@ -953,7 +953,7 @@ function restoration:gen_spawngroup(id, name, elements, interval, opts)
 			spawn_type = opts.spawn_type or "ordered",
 			team = opts.team or "default",
 			execute_on_startup = opts.execute_on_startup or false,
-			enabled = opts.enabled or false,
+			enabled = opts.enabled ~= false,
 			preferred_spawn_groups = preferred_spawn_groups,
 			ignore_replace_preferred = ignore_replace_preferred,
 			elements = elements or opts.elements or {},

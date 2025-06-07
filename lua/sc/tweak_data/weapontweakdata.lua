@@ -16989,6 +16989,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.acwr.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.acwr.use_underbarrel_anim = "contraband"
 				self.acwr.timers = deep_clone(self.contraband.timers)
+
+				self.acwr2.recategorize = { "light_ar" }
+				self.acwr2.damage_type = "assault_rifle"
+				self.acwr2.tactical_reload = 1
+				self.acwr2.nato = true
+				self.acwr2.BURST_FIRE = false
+				self.acwr2.ADAPTIVE_BURST_SIZE = false
+				self.acwr2.FIRE_MODE = "auto"
+				self.acwr2.CLIP_AMMO_MAX = 30
+				self.acwr2.AMMO_MAX = 150
+				self.acwr2.fire_mode_data.fire_rate = 0.0833333333
+				self.acwr2.kick = self.stat_info.kick_tables.moderate_kick
+				self.acwr2.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{9, self.stat_info.kick_tables.vertical_kick},
+					{11, self.stat_info.kick_tables.left_kick},
+					{15, self.stat_info.kick_tables.vertical_kick},
+					{20, self.stat_info.kick_tables.right_kick}
+				}
+				self.acwr2.supported = true
+				self.acwr2.ads_speed = 0.280
+				self.acwr2.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 5800,
+					min_mult = 0.5
+				}
+				self.acwr2.stats = {
+					damage = 24,
+					spread = 77,
+					recoil = 83,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 26,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.acwr2.stats_modifiers = nil
+				self.acwr2.panic_suppression_chance = 0.05
+				self.acwr2.lock_slide = true
+				self.acwr2.reload_speed_multiplier = 1.05
+				self.acwr2.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.acwr2.timers = deep_clone(self.new_m4.timers)
 			end
 
 			if self.mr96 then 

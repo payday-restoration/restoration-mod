@@ -2673,7 +2673,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_af2011_sc_desc"] = "Handgun made to celebrate a hundred years of an all-time classic. Now featuring #{risk}#double the barrels##!",
 					["bm_wp_upg_af2011_a_uno_desc"] = "Internal modification that makes the barrels fire separately rather than simultaneously.",
 					--Triad
-					["bm_triad_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##\n\nAlt-fire fires #{skill_color}#3## rounds with enough force to #{skill_color}#pierce body armor, shields and thin walls##.",
+					["bm_triad_sc_desc"] = "#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##\n\nAlt-fire fires #{skill_color}#all 3 barrels at once## at the cost of #{important_1}#more recoil and spread.##",
 
 			--[[ SMGs ]]
 				--Kobus 90
@@ -3091,7 +3091,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_ray_sc_desc"] = "Become the \"#{risk}#Grim Reaper##\" with this 4-shot #{heat_warm_color}#incendiary## rocket launcher.\n\nRockets leave behind a #{heat_warm_color}#pool of fire## and explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets## and deals an extra #{skill_color}#500%## damage against non-titan Bulldozers.",
 				-- Toy weapons
 				["bm_w_toym16_sc_desc"] = "\"No full-auto in buildings.\"",
-				["bm_w_toy1911_sc_desc"] = "Airsoft pistol modified with a turbo electric motor, allowing you to #{skill_color}#switch to fully automatic fire##.\nRemember, no full-auto in buildings.",
+				["bm_w_toy1911_sc_desc"] = "\"No full-auto in buildings.\"",
 
 	})
 

@@ -12747,7 +12747,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.victor.damage_falloff = {
 							start_dist = 2000,
 							end_dist = 6000,
-							min_mult = 0.33333
+							min_mult = 0.4
 						}
 						self.victor.stats = {
 							damage = 30,
@@ -13803,7 +13803,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							concealment = 21
 						}
 						self.x_basset.stats_modifiers = nil
-						self.x_basset.reload_speed_multiplier = 0.6
+						self.x_basset.reload_speed_multiplier = 0.7
 						self.x_basset.always_hipfire = true
 						self.x_basset.timers.reload_not_empty = 2.1
 						self.x_basset.timers.reload_exit_not_empty = 1.6

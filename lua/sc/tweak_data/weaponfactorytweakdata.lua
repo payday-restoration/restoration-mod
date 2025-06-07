@@ -36974,7 +36974,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					alt_desc = "bm_m203_vmp_sc_desc",
 					falloff_start_mult = 1.052631578947,
 					falloff_end_mult = 1.24,
-					damage_min_mult = 0.624414,
+					damage_min_mult = 0.75,
 					ammo_pickup_max_mul = 1.607142857,
 					ammo_pickup_min_mul = 1.607142857,
 					alt_ammo_pickup_max_mul = 1.607142857,

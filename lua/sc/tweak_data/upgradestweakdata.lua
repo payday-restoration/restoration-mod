@@ -3122,20 +3122,22 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--perk_value_1 = "18", -- Required range to activate additional armor regen on kill (Same range as "Underdog" skill)
 		--perk_value_2 = tostring(self.values.player.killshot_close_regen_armor_bonus[1][1] * 10), -- Additional armor regen when player killed enemy in specified range
 		--perk_value_3 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
-		perk_value_1 = tostring(self.values.player.buildup_meter[2].combo_decay),
-		perk_value_2 = tostring(self.values.player.buildup_meter_elude[1].combo_steps),
-		perk_value_3 = tostring(self.values.player.buildup_meter_elude[1].effect * 100) .. "%",
-		perk_value_4 = tostring(self.values.player.buildup_meter_elude[1].effect_max * 100) .. "%",
-		perk_value_5 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Passive dodge increase
+		perk_value_1 = tostring(self.values.player.buildup_meter_quickening[1].combo_add_mod),
+		perk_value_2 = tostring(self.values.player.buildup_meter_quickening[1].armor_steps * 10),
+		perk_value_3 = tostring(self.values.player.buildup_meter_elude[1].combo_steps),
+		perk_value_4 = tostring(self.values.player.buildup_meter_elude[1].effect * 100) .. "%",
+		perk_value_5 = tostring(self.values.player.buildup_meter_elude[1].effect_max * 100) .. "%",
+		perk_value_6 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100), -- Passive dodge increase
 	}
 	self.specialization_descs[9][9] = {
 		--perk_value_1 = "18", -- Required range to activate panic (Same range as "Underdog" skill)
 		--perk_value_2 = tostring(self.values.player.killshot_close_panic_chance[1] * 100).."%", -- Panic chance
 		--perk_value_3 = tostring(self.killshot_close_panic_range / 100) -- Panic spread range
-		perk_value_1 = tostring(self.values.player.buildup_meter_terrify[1].combo_steps),
-		perk_value_2 = tostring(self.values.player.buildup_meter_terrify[1].effect * 100) .. "%",
-		perk_value_3 = tostring(self.killshot_close_panic_range / 100), -- Panic spread range
-		perk_value_4 = tostring(self.values.player.buildup_meter_terrify[1].effect_max * 100) .. "%"
+		perk_value_1 = tostring(self.values.player.buildup_meter[2].combo_decay),
+		perk_value_2 = tostring(self.values.player.buildup_meter_terrify[1].combo_steps),
+		perk_value_3 = tostring(self.values.player.buildup_meter_terrify[1].effect * 100) .. "%",
+		perk_value_4 = tostring(self.killshot_close_panic_range / 100), -- Panic spread range
+		perk_value_5 = tostring(self.values.player.buildup_meter_terrify[1].effect_max * 100) .. "%",
 	}
 
 	self.multi_choice_specialization_descs[9] = { [9] = {} } --table setup for last card multichoice

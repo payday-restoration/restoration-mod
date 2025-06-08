@@ -28,7 +28,7 @@ function WeaponAmmo:replenish()
 			pickup_multiplier = pickup_multiplier * ( ((managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1) - 1) * is_solo) + 1 )
 		end
 
-		for _, category in ipairs(self:categories()) do
+		for _, category in ipairs(self:weapon_tweak_data().categories) do
 			pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
 		end
 

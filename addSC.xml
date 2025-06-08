@@ -278,7 +278,7 @@
 	<!--PANIC ROOM-->
 	<mission			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
-	<nav_data			path="levels/narratives/classics/flat/nav_manager_data" force="true" unload="true"/>	
+	<nav_data			path="levels/narratives/classics/flat/nav_manager_data" force="true" unload="true"/>
 	<cover_data			path="levels/narratives/classics/flat/cover_data" force="true" unload="true"/>
 	<continent			path="levels/narratives/classics/flat/art_dhruva/art_dhruva" force="true" unload="true"/>
 	<continent			path="levels/narratives/classics/flat/lights/lights" force="true" unload="true"/>
@@ -287,21 +287,21 @@
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	<!-- Gensec Security: Beret Poppin' -->
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" load="true" force="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_husk" load="true" force="true" />	
-	<object				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" force="true" />	
-	<sequence_manager	path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"  />	
-	<model				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" force="true" />	
-	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" force="true" />	
-	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_contour" force="true" />	
+	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_husk" load="true" force="true" />
+	<object				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" force="true" />
+	<sequence_manager	path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"  />
+	<model				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" force="true" />
+	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" force="true" />
+	<material_config	path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_contour" force="true" />
 
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2" load="true" force="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true" force="true" />	
+	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true" force="true" />
 
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true" />	
+	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true" />
 	
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1" load="true" />
-	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1_husk" load="true" />	
+	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1_husk" load="true" />
 	
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2" load="true" />
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2_husk" load="true" />
@@ -325,15 +325,15 @@
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_degle/wpn_npc_degle" />
 	
 	<!--Improved Flashlight-->	
-	<texture			path="effects/particles/weapons/flashlight/e_gradient_radial2" force="true"/>	
-	<texture			path="units/lights/spot_light_projection_textures/spotprojection_11_flashlight_df" force="true"/>	
+	<texture			path="effects/particles/weapons/flashlight/e_gradient_radial2" force="true"/>
+	<texture			path="units/lights/spot_light_projection_textures/spotprojection_11_flashlight_df" force="true"/>
 
 	<!--Reduced Sicario Smoke-->	
 	<effect				path="effects/particles/explosions/smoke_screen" force="true"/>
 	<!--concussion grenade depth scaling vanilla bug-->	
 	<material_config	path="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/wpn_fps_gre_pressure_husk" force="true" />
 	<!--Dynamite no rolly polly-->
-	<object				path="units/pd2_dlc_west/weapons/wpn_gre_dynamite/wpn_gre_dynamite" force="true" />		
+	<object				path="units/pd2_dlc_west/weapons/wpn_gre_dynamite/wpn_gre_dynamite" force="true" />
 
 	<!--REMOVED CAP REQUIREMENT FOR LMG SIGHTS FOLLOWING LID-->
 	<model				path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever" force="true"/>
@@ -370,7 +370,7 @@
 		<object path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>
 		<material_config path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>
 		<sequence_manager path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>
-		<unit path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>	
+		<unit path="units/pd2_dlc_cg22/weapons/wpn_npc_snowthrower/wpn_npc_snowthrower"/>
 	</add>
 
 	<!--NPC Railgun-->

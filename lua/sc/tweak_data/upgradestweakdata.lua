@@ -1762,7 +1762,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
 				--Ace
 					self.values.pistol.swap_speed_multiplier = {2}
-					self.values.akimbo.swap_speed_multiplier = {1.5}
+					self.values.akimbo.swap_speed_multiplier = {1.25}
 					
 					self.skill_descs.equilibrium = {
 					skill_value_b1 = tostring(self.values.team.pistol.recoil_index_addend[1]), -- +Stability
@@ -1777,7 +1777,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.pistol.fire_rate_multiplier = {1.15}
 					self.values.pistol.ap_bullets = {1.0}
-					self.values.akimbo.ap_bullets = {0.5}
+					self.values.akimbo.ap_bullets = {0.25}
 					
 					self.skill_descs.dance_instructor = {
 						skill_value_b1 = tostring((1 - self.values.pistol.hip_fire_spread_multiplier[1]) * 100).."%", -- Reduce hipfire spread

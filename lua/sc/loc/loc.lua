@@ -5565,7 +5565,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Spray n' Pray",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#$skill_value_b1## of their damage through body armor; effect is increased to #{skill_color}#$skill_value_b2## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on #{risk}#full-auto## without releasing the trigger for more than #{risk}#$skill_value_p1## seconds will grant them an additional #{skill_color}#$skill_value_p2## more damage; stacks up to #{skill_color}#$skill_value_p3## times.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#$skill_value_b1## of their damage through body armor; effect is increased to #{skill_color}#$skill_value_b2## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on #{risk}#full-auto## will grant them a stack of #{skill_color}#$skill_value_p2## more damage; stacks up to #{skill_color}#$skill_value_p3## times. Stacks decay one at a time every #{risk}#$skill_value_p1## seconds.",
 
 
 		--[[   ENFORCER   ]]--
@@ -5859,7 +5859,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Counter-Strike--
 				["menu_drop_soap_beta_sc"] = "Counter Strike",
-				["menu_drop_soap_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now parry Cloaker jump kicks while you have your melee weapon drawn, knocking them down.\n\nYou take #{skill_color}#20%## less damage from Cloaker kicks and Taser shocks.\n\nACE: #{owned}#$pro##\nYou can now parry Cloaker sprint kicks and the melee strikes of Shields while you have your melee weapon drawn, knocking them down.\n\n#{risk}#NOTE: Titan Shields and Captain Winters cannot be parried.##\n\nRanged damage against you is reduced by #{skill_color}#10%## while charging your melee weapon.\n\nYou take an additional #{skill_color}#30%## less damage from Cloaker kicks and Taser shocks.\n\n ", --the extra newlines and space is to trigger the auto scaling text to make some room
+				["menu_drop_soap_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now parry Cloaker jump kicks while you have your melee weapon drawn, knocking them down.\n\nYou take #{skill_color}#20%## less damage from Cloaker kicks and Taser shocks.\n\nACE: #{owned}#$pro##\nYou can now parry Cloaker sprint kicks and the melee strikes of Shields while you have your melee weapon drawn, knocking them down.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields and Captain Winters## #{risk}#cannot be parried.##\n\nRanged damage against you is reduced by #{skill_color}#10%## while charging your melee weapon.\n\nYou take an additional #{skill_color}#30%## less damage from Cloaker kicks and Taser shocks.\n\n ", --the extra newlines and space is to trigger the auto scaling text to make some room
 
 				--Pumping Iron--
 				["menu_steroids_beta_sc"] = "Pumping Iron",

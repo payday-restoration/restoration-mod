@@ -1118,6 +1118,12 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							dmg_mul = dmg_mul * (1 + upgrade * damage_health_ratio)
 						end
 
+						if weap_base:is_category("smg") and managers.player:has_category_upgrade("smg", "automatic_kills_to_damage") then
+							local merciless_dmg = 1 + (managers.player:upgrade_value("smg", "automatic_kills_to_damage", 1)[2] * (managers.player._merciless_stacks or 0))
+							dmg_mul = dmg_mul * merciless_dmg
+						end
+						
+
 						dmg_mul = dmg_mul * managers.player:temporary_upgrade_value("temporary", "berserker_damage_multiplier", 1)
 						dmg_mul = dmg_mul * managers.player:get_property("trigger_happy", 1)
 					end
@@ -2710,7 +2716,6 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		self:_update_burst_fire(t)
 		self:_update_slide_locks()
 		self:_shooting_move_speed_timer(t, dt)
-		self:_last_shot_t(t, dt)
 		self:_last_shot_recoil_t(t, dt)
 	end
 	self:_update_js_t(t, dt)
@@ -2858,29 +2863,6 @@ function PlayerStandard:_update_drain_stamina(t, dt)
 	if self._state_data._drain_stamina then
 		self._unit:movement()._regenerate_timer = 1
 		self._unit:movement():subtract_stamina((self._unit:movement():_max_stamina() * 0.0181818) * dt)
-	end
-end
-
-function PlayerStandard:_last_shot_t(t, dt)
-	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
-	local fire_mode = weapon and weapon:fire_mode()
-	local reset_delay_t = tweak_data.upgrades.automatic_kills_to_damage_reset_t or 1
-	if weapon and weapon._no_cheevo_kills_without_releasing_trigger then
-		if self._shooting and fire_mode == "auto" then
-			self._last_shooting_t = reset_delay_t
-		else
-			if self._last_shooting_t then
-				self._last_shooting_t = self._last_shooting_t - dt
-				if self._last_shooting_t < 0 then
-					self._last_shooting_t = reset_delay_t
-					if weapon._no_cheevo_kills_without_releasing_trigger > 0 then
-						weapon._no_cheevo_kills_without_releasing_trigger = weapon._no_cheevo_kills_without_releasing_trigger - 1
-					end
-					managers.hud:start_buff("body_expertise", reset_delay_t)
-					managers.hud:set_stacks("body_expertise", weapon._no_cheevo_kills_without_releasing_trigger)
-				end
-			end
-		end
 	end
 end
 

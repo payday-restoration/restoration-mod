@@ -31280,6 +31280,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				table.insert(weap.categories, "handcannon")
 			end
 
+			if table.contains(weap.categories, "akimbo") then
+				if table.contains(weap.categories, "smg") then
+					table.insert(weap.categories, "akb_smg") --Weird category names to avoid issues with ACH
+				elseif table.contains(weap.categories, "shotgun") then
+					table.insert(weap.categories, "akb_shot")
+				elseif table.contains(weap.categories, "assault_rifle") then
+					table.insert(weap.categories, "akb_rifle")
+				end
+			end
 			table.insert(weap.categories, "tony")
 
 			if weap.recategorize and not weap.recoil_values then

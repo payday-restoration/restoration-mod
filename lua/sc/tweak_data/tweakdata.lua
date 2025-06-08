@@ -257,12 +257,33 @@ tweak_data.assault_rifle = {
 	}
 
 tweak_data.akimbo = {
-	swap_bonus = 0.9,
-	ads_move_speed_mult = 0.75,
-	ads_moving_spread_mult = 3,
-	hipfire_spread_mult = 3,
-	moving_spread_mult = 3
+	swap_bonus = 1,
+	ads_move_speed_mult = 0.9,
+	ads_moving_spread_mult = 2.5,
+	hipfire_spread_mult = 2.5,
+	moving_spread_mult = 2.5
 }
+	tweak_data.akb_smg = {
+		swap_bonus = 0.9,
+		ads_move_speed_mult = 0.75 / tweak_data.akimbo.ads_move_speed_mult,
+		ads_moving_spread_mult = 4 / tweak_data.akimbo.ads_moving_spread_mult,
+		hipfire_spread_mult = 4 / tweak_data.akimbo.hipfire_spread_mult,
+		moving_spread_mult = 4 / tweak_data.akimbo.moving_spread_mult
+	}
+	tweak_data.akb_shot = {
+		swap_bonus = 0.9,
+		ads_move_speed_mult = 0.75 / tweak_data.akimbo.ads_move_speed_mult,
+		ads_moving_spread_mult = 3 / tweak_data.akimbo.ads_moving_spread_mult,
+		hipfire_spread_mult = 3 / tweak_data.akimbo.hipfire_spread_mult,
+		moving_spread_mult = 3 / tweak_data.akimbo.moving_spread_mult
+	}
+	tweak_data.akb_rifle = {
+		swap_bonus = 0.9,
+		ads_move_speed_mult = 0.75 / tweak_data.akimbo.ads_move_speed_mult,
+		ads_moving_spread_mult = 3.5 / tweak_data.akimbo.ads_moving_spread_mult,
+		hipfire_spread_mult = 3.5 / tweak_data.akimbo.hipfire_spread_mult,
+		moving_spread_mult = 3.5 / tweak_data.akimbo.moving_spread_mult
+	}
 
 tweak_data.cs_spread = {
 	hipfire_spread_mult = 0.1,

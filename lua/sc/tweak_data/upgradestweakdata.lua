@@ -794,8 +794,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Stockholm Syndrome
 					--Basic
 						self.values.player.civilian_reviver = {true}
-						self.values.player.civilian_gives_ammo = {true}						
-					--Ace						
+						self.values.player.civilian_gives_ammo = {true}
+					--Ace
 						self.values.team.damage = {
 							hostage_absorption = {0.1},
 							hostage_absorption_limit = 4
@@ -821,20 +821,20 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.hostage_health_regen_addend = {
 							0.1, --Basic
 							0.2 --Unused
-						}		
+						}
 
 					--Ace
 						self.values.player.civilians_dont_flee = {true}
 						self.values.player.super_syndrome = {
 							1
-						}						
+						}
 						self.values.player.hostage_health_regen_max_mult = { 1.5 }
 						
 						self.skill_descs.black_marketeer = {
 							skill_value_b1 = tostring(self.values.player.hostage_health_regen_addend[1]*10), -- HP regen
 							skill_value_p1 = tostring(self.values.player.hostage_health_regen_max_mult[1] % 1 * 100).."%" -- HP regen increase when 4+ hostages
 						}
-			
+
 		--Assault--
 			--Leadership--
 				--Basic
@@ -851,7 +851,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.smg.hip_fire_spread_multiplier = {0.8, 0.5}
 				--Ace
-					self.values.smg.reload_speed_multiplier = {1.25}
+					self.values.smg.reload_speed_multiplier = {1.20}
 					
 					self.skill_descs.rifleman = {
 						skill_value_b1 = tostring((1 - self.values.smg.hip_fire_spread_multiplier[1]) % 1 * 100).."%", -- Hipfire +accuracy
@@ -869,8 +869,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					skill_value_b1 = tostring(self.values.weapon.clip_ammo_increase[1] % 1 * 100).."%", -- Mag size increase
 					skill_value_p1 = tostring((self.values.weapon.clip_ammo_increase[2] - self.values.weapon.clip_ammo_increase[1]) % 1 * 100).."%" -- Additional mag size increase
 				}
-				
-				
 
 			--MG Specialist
 				--Basic
@@ -884,7 +882,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						skill_value_p1 = tostring(self.values.smg.fire_rate_multiplier[1] % 1 * 100).."%", -- RoF increase
 						skill_value_p2 = tostring(self.values.smg.full_auto_free_ammo[1]) -- Every X bullet fired without releasing the trigger consumes no ammo					
 					}
-				
+
 			--Heavy Impact
 				--Basic
 					self.values.weapon.knock_down = {
@@ -902,17 +900,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						skill_value_p2 = tostring((1 - self.values.player.bipod_damage_reduction[1]) % 1 * 100).."%" -- DR when MG is mounted
 					}
 	
-			--Body Expertise aka Spray N' Pray
+			--Body Expertise a.k.a. Spray N' Pray
 				self.values.player.ap_bullets = {0.5}
 				self.values.smg.ap_bullets = {1.0}
-				self.automatic_kills_to_damage_reset_t = 1.2 --delay to reset time (seconds)
 				self.values.smg.automatic_kills_to_damage = {
 					{
-						4, --stack limit
-						0.125 --dmg mult add
+						10, --stack limit
+						0.05, --dmg mult add
+						4 --time
 					}
 				}
 				--Unused
+					self.automatic_kills_to_damage_reset_t = 1.2 --delay to reset time (seconds)
 					self.values.weapon.automatic_head_shot_add = {0.03, 0.06}
 					self.values.player.universal_body_expertise = {false}
 					self.values.smg.automatic_can_shoot_through_enemy = {
@@ -921,15 +920,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 							1.1 --dmg mult
 						}
 					}
-					
+
 				self.skill_descs.single_shot_ammo_return = {
 					skill_value_b1 = tostring(self.values.player.ap_bullets[1] * 100).."%", -- AP for non-MG
 					skill_value_b2 = tostring(self.values.smg.ap_bullets[1] * 100).."%", -- AP for MG
-					skill_value_p1 = tostring(self.automatic_kills_to_damage_reset_t), -- delay to reset time for keeping buff active
+					skill_value_p1 = tostring(self.values.smg.automatic_kills_to_damage[1][3]), -- delay to reset time for keeping buff active
 					skill_value_p2 = tostring(self.values.smg.automatic_kills_to_damage[1][2] * 100).."%", -- Damage increase per stack
 					skill_value_p3 = tostring(self.values.smg.automatic_kills_to_damage[1][1]) -- Amount of stacks
 				}
-						
+
 	--ENFORCER--
 		--Shotgunner--
 			--Shotgun Impact

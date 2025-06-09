@@ -98,28 +98,25 @@ tweak_data.grenade_launcher = {
 
 tweak_data.shotgun = {
 	ads_move_speed_mult = 0.5,
-	ads_moving_spread_mult = 1.15,
+	ads_moving_spread_mult = 1.1,
 	shake_mul = 2
 }
 	tweak_data.shotgun_auto = {
 		hipfire_spread_mult = 0.25,
 	}
 	tweak_data.shotgun_light = {
-		hipfire_spread_mult = 1.3,
-		--ads_multishot_spread_mult = 4,
+		hipfire_spread_mult = 1.25,
 		moving_spread_mult = 1.5
 	}
 		tweak_data.shotgun_light_semi = {
-			hipfire_spread_mult = 0.61538,
-			moving_spread_mult = 0.66667
+			hipfire_spread_mult = 0.8 / tweak_data.shotgun_light.hipfire_spread_mult,
+			moving_spread_mult = 1 / tweak_data.shotgun_light.moving_spread_mult
 		}
 	tweak_data.shotgun_heavy = {
-		hipfire_spread_mult = 0.55,
-		--ads_multishot_spread_mult = 0.9
+		hipfire_spread_mult = 0.65,
 	}
 	tweak_data.shotgun_break = {
-		hipfire_spread_mult = 1.15,
-		--ads_multishot_spread_mult = 1
+		hipfire_spread_mult = 1.25,
 	}
 		tweak_data.shotgun_smasher = {
 			shake_mul = 3

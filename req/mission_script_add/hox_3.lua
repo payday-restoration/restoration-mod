@@ -10,6 +10,7 @@ local ponr_timer_player_mul = {
 local opts_pro_job_ponr = {
 	elements =  { 100836, 100245, 100834, 100832, 100833, },
 	trigger_times = 0,
+	time_balance_mul_include_team_ai = false,
 	time_balance_mul = ponr_timer_player_mul,
 	time_easy = ponr_value,
 	time_normal = ponr_value,

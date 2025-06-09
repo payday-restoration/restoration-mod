@@ -15,10 +15,6 @@ local optsBulldozer = {
 	enemy = dozer,
 	enabled = (overkill_above and enabled_chance_dozer),
 }
-local optsBulldozer_scaffold = {
-	enemy = dozer,
-	enabled = (mayhem_above and enabled_chance_dozer_scaffold),
-}
 local optsShield_1 = {
 	enemy = shield,
 	on_executed = {
@@ -76,104 +72,18 @@ local optsrespawn_dozer = {
 return {
 	elements = {
 		-- Spawns near the escape (Similiar to PDTH)
-		restoration:gen_dummy(
-			400001,
-			"dozer_stairs",
-			Vector3(-3129, -48029, 5030.316),
-			Rotation(90, -0, -0),
-			optsBulldozer
-		),
-		restoration:gen_dummy(
-			400002,
-			"shield_stairs_1",
-			Vector3(-2520.983, -47546.961, 5370.570),
-			Rotation(-87, -0, -0),
-			optsShield_1
-		),
-		restoration:gen_dummy(
-			400003,
-			"shield_stairs_2",
-			Vector3(-2524.437, -47481.051, 5372.570),
-			Rotation(-87, -0, -0),
-			optsShield_2
-		),
-		restoration:gen_dummy(
-			400004,
-			"taser_stairs",
-			Vector3(-2994, -47502, 5225.499),
-			Rotation(-90, -0, -0),
-			optsTaser
-		),
+		restoration:gen_dummy(400001, "dozer_stairs", Vector3(-3129, -48029, 5030.316), Rotation(90, -0, -0), optsBulldozer),
+		restoration:gen_dummy(400002, "shield_stairs_1", Vector3(-2520.983, -47546.961, 5370.570), Rotation(-87, -0, -0), optsShield_1),
+		restoration:gen_dummy(400003, "shield_stairs_2", Vector3(-2524.437, -47481.051, 5372.570), Rotation(-87, -0, -0), optsShield_2),
+		restoration:gen_dummy(400004, "taser_stairs", Vector3(-2994, -47502, 5225.499), Rotation(-90, -0, -0), optsTaser),
 		-- Scaffolding spawns
-		 restoration:gen_dummy(
-			400005,
-			"shield_scaffolding_1",
-			Vector3(-4100, -22849, 7115.008),
-			Rotation(0, -0, -0),
-			optsShield_scaff_1
-		),
-		 restoration:gen_dummy(
-			400006,
-			"shield_scaffolding_2",
-			Vector3(-2781.016, -23341.270, 7115.008),
-			Rotation(90, -0, -0),
-			optsShield_scaff_2
-		),
-		restoration:gen_dummy(
-			400007,
-			"dozer_scaffolding_1",
-			Vector3(-3102, -23325, 6519.008),
-			Rotation(90, -0, -0),
-			optsBulldozer_scaffold
-		),
-		restoration:gen_dummy(
-			400008,
-			"dozer_scaffolding_2",
-			Vector3(-3580, -22030, 6519.008),
-			Rotation(90, -0, -0),
-			optsBulldozer_scaffold
-		),
-		restoration:gen_so(
-			400009,
-			"shield_blockade_so_1",
-			Vector3(-2520.983, -47546.961, 5370.570),
-			Rotation(-87, -0, -0),
-			optsDefend_and_Sniper_SO
-		),
-		restoration:gen_so(
-			400010,
-			"shield_blockade_so_2",
-			Vector3(-2524.437, -47481.051, 5372.570),
-			Rotation(-87, -0, -0),
-			optsDefend_and_Sniper_SO
-		),
-		restoration:gen_so(
-			400011,
-			"taser_blockade_so_1",
-			Vector3(-2994, -47502, 5225.499),
-			Rotation(-90, -0, -0),
-			optsDefend_and_Sniper_SO
-		),
-		restoration:gen_so(
-			400012,
-			"shield_scaffold_blockade_so_1",
-			Vector3(-4100, -22849, 7115.008),
-			Rotation(0, -0, -0),
-			optsDefend_and_Sniper_SO
-		),
-		restoration:gen_so(
-			400013,
-			"shield_scaffold_blockade_so_2",
-			Vector3(-2781.016, -23341.270, 7115.008),
-			Rotation(90, -0, -0),
-			optsDefend_and_Sniper_SO
-		),
-		restoration:gen_dummytrigger(
-			400014,
-			"respawn_bulldozer",
-			Vector3(-2400, -3677, 375),
-			Rotation(90, -0, -0),
-			optsrespawn_dozer
-		),
+		restoration:gen_dummy(400005, "shield_scaffolding_1", Vector3(-4100, -22849, 7115.008), Rotation(0, -0, -0), optsShield_scaff_1),
+		restoration:gen_dummy(400006,"shield_scaffolding_2", Vector3(-2781.016, -23341.270, 7115.008), Rotation(90, -0, -0), optsShield_scaff_2),
+		restoration:gen_so(400009,	"shield_blockade_so_1", Vector3(-2520.983, -47546.961, 5370.570), Rotation(-87, -0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400010, "shield_blockade_so_2", Vector3(-2524.437, -47481.051, 5372.570), Rotation(-87, -0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400011, "taser_blockade_so_1", Vector3(-2994, -47502, 5225.499), Rotation(-90, -0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400012, "shield_scaffold_blockade_so_1", Vector3(-4100, -22849, 7115.008), Rotation(0, -0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_so(400013, "shield_scaffold_blockade_so_2", Vector3(-2781.016, -23341.270, 7115.008), Rotation(90, -0, -0), optsDefend_and_Sniper_SO),
+		restoration:gen_dummytrigger(400014, "respawn_bulldozer", Vector3(-2400, -3677, 375), Rotation(90, -0, -0), optsrespawn_dozer),
 	},
 }

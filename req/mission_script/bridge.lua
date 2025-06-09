@@ -75,8 +75,6 @@ return {
 		on_executed = {
 			{ id = 400005, delay = 0 },
 			{ id = 400006, delay = 0 },
-			{ id = 400007, delay = 0 },
-			{ id = 400008, delay = 0 },
 		},
 	},
 	-- Disable this spawn once George the pilot gets Kauzo out

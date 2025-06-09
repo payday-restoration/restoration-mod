@@ -208,11 +208,12 @@ function restoration:Init()
 	restoration.civ_death_diff_increase = true
 	restoration.high_noon = false
 
-	--Disable Bravos spawning on PONRs for these heists, usually for heists that have PONRs that go on/off. Also kills forced 1 diff and music changes on Pro Job
+	-- Disable Bravos spawning on PONRs for these heists, usually for heists that have PONRs that go on/off. Also kills forced 1 diff and music changes on Pro Job
+	-- TODO: make use of new PONR element functionality instead of this table
 	restoration.alternate_ponr_behavior = {
-		"sand", --The Ukrainian Prisoner
-		"trai",--Lost in Transit
-		"fuel" -- Fueled Feuds
+		"sand",  -- The Ukrainian Prisoner
+		"trai",  -- Lost in Transit
+		"fuel",  -- Fueled Feuds
 	}
 
 	--[[
@@ -1115,6 +1116,7 @@ function restoration:gen_pointofnoreturn(id, name, pos, rot, opts)
 			min_difficulty = opts.min_difficulty or nil,
 			bravos_difficulty_threshold = opts.bravos_difficulty_threshold or nil,
 			bravos_timer = opts.bravos_timer or nil,
+			bravos_forbidden = opts.bravos_forbidden or nil,
 			stop_bravos_on_end = opts.stop_bravos_on_end or nil,
 			time_balance_mul_include_team_ai = opts.time_balance_mul_include_team_ai,
 			time_balance_mul = opts.time_balance_mul or nil,

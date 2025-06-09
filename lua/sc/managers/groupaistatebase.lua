@@ -261,6 +261,11 @@ function GroupAIStateBase:should_spawn_bravos()
 		return true
 	end
 
+	-- Not if Bravos are forbidden
+	if self._bravos_forbidden then
+		return
+	end
+
 	-- Not outside of standard PONRs
 	if self._alternate_ponr_behavior or not self._ponr_is_on then
 		return
@@ -287,6 +292,11 @@ end
 function GroupAIStateBase:use_ponr_music()
 	-- Not during stealth
 	if self:whisper_mode() then
+		return
+	end
+
+	-- Not if Bravos are forbidden
+	if self._bravos_forbidden then
 		return
 	end
 
@@ -320,8 +330,8 @@ Hooks:PreHook(GroupAIStateBase, "remove_point_of_no_return_timer", "res_remove_p
 
 	local element = self:get_active_ponr_element()
 	if element and element:value("stop_bravos_on_end") then
-		-- self._ponr_is_on = nil
-		self._bravos_difficulty_threshold = 2
+		self._bravos_forbidden = true
+		self._bravos_difficulty_threshold = nil
 		self._bravos_timer = nil
 	end
 end)
@@ -364,6 +374,7 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 			self:set_difficulty(nil, difficulty_add)
 			restoration:log("PONR triggered difficulty increase of %s to %s", tostring(difficulty_add), tostring(self._difficulty_value))
 		end
+		self._bravos_forbidden = element and element:value("bravos_forbidden") or nil
 		self._bravos_difficulty_threshold = element and element:value("bravos_difficulty_threshold") or nil
 		self._bravos_timer = element and element:value("bravos_timer") or nil
 	end

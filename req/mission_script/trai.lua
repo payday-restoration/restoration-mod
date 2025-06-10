@@ -7,8 +7,8 @@ local bravo_guard_table = {
 	"units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2",
 	"units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"
 }
-local swat_sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
-local fbi_sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
+local lapd_sniper = "units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"
+local lapd_sniper = "units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"
 local gensec_sniper = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3"
 local zeal_sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")

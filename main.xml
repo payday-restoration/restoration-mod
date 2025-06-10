@@ -722,7 +722,6 @@
 	<Package id="packages/omniamisc" file="packages/omnia_diff/omnia_misc.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/gensecmisc" file="packages/america_diff/gensec_misc.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/americamisc" file="packages/america_diff/america_misc.xml" use_clbk="self:DebugLoadAssets"/>
-	<Package id="packages/mcshay_misc"	file="packages/lapd_diff/mcshay_misc.xml"	use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/miscassetsmutators" file="addMISCMutators.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/outfitassets" file="addoutfit.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/addbdu" file="addbdu.xml" use_clbk="self:DebugLoadAssets"/>

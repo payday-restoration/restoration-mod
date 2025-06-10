@@ -214,7 +214,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	--Lost in Transit
 	self.trai.ai_group_type = lapd --make "lapd"
 	self.trai.player_style = "railroad"
-	self.trai.package = {"pacakges_mcshay_misc"}
 	
 	--Hostile Takeover (probably will make this a weird amalgamation of lapd + nypd blue gensecs & bellmead titans)
 	self.corp.ai_group_type = lapd

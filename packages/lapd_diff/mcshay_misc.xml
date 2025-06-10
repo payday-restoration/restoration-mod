@@ -72,20 +72,4 @@
 	<!-- skull -->
 	<unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3" load="true"/>
     <unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3_husk" load="true"/>	
-
-	<!--bravo guards stuff for lost in transit-->	
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
-	<sequence_manager	path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle_contour" />
-	
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_1/ene_bravo_guard_1"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_1/ene_bravo_guard_1_husk"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2_husk"  load="true"/>
-    <unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3_husk"  load="true"/>	
-    <!--bravo guards end-->
 </table>

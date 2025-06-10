@@ -7,16 +7,10 @@ local bravo_guard_table = {
 	"units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2",
 	"units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"
 }
-local bravo_sniper = "units/pd2_mod_bravo/characters/ene_bravo_dmr_scripted/ene_bravo_dmr_scripted"
 local swat_sniper = "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
 local fbi_sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
 local gensec_sniper = "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"
 local zeal_sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
-local bravo_snipers_swat = {swat_sniper, swat_sniper, swat_sniper, swat_sniper, bravo_sniper}
-local bravo_snipers_swat_and_fbi = {swat_sniper, fbi_sniper, swat_sniper, fbi_sniper, bravo_sniper}
-local bravo_snipers_fbi_and_gensec = {fbi_sniper, gensec_sniper, fbi_sniper, gensec_sniper, bravo_sniper}
-local bravo_snipers_gensec = {gensec_sniper, gensec_sniper, gensec_sniper, gensec_sniper, bravo_sniper}
-local bravo_snipers_zeal = {zeal_sniper, zeal_sniper, zeal_sniper, zeal_sniper, bravo_sniper}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local sniper = (difficulty == 8 and bravo_snipers_zeal or difficulty == 7 and bravo_snipers_gensec or difficulty == 6 and bravo_snipers_fbi_and_gensec or difficulty == 5 and bravo_snipers_swat_and_fbi or difficulty == 4 and bravo_snipers_swat) 
 local sniper_trigger_times = {

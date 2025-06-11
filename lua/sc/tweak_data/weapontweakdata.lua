@@ -31165,15 +31165,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				--RIFLES
 				elseif table.contains(weap.categories, "assault_rifle") then
 					if weap.damage_type == "sniper" then
-						weap.object_damage_mult = 1.25
+						weap.object_damage_mult = 1.5
 					end
 				elseif table.contains(weap.categories, "snp") then
 					if weap.damage_type == "anti_materiel" then
 						weap.object_damage_mult = 4
 					elseif weap.damage_type == "sniper" then
-						weap.object_damage_mult = 1.75
+						weap.object_damage_mult = 2
 						if table.contains(weap.categories, "semi_snp") then
-							weap.object_damage_mult = 1.25
+							weap.object_damage_mult = 1.5
 						end
 					end
 				--MGs
@@ -31184,15 +31184,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						weap.object_damage_mult = 0.75
 					end
 					if table.contains(weap.categories, "pdw") then
-						weap.object_damage_mult = 1.25
+						weap.object_damage_mult = 1.5
 					end
 				--PISTOLS
 				elseif table.contains(weap.categories, "pistol") then
 					if weap.damage_type == "handcannon" then
-						weap.object_damage_mult = 1.25
+						weap.object_damage_mult = 1.5
 					end
 					if table.contains(weap.categories, "pdw") then
-						weap.object_damage_mult = 1.25
+						weap.object_damage_mult = 1.5
 					end
 				--SHOTGUNS
 				elseif table.contains(weap.categories, "shotgun") then
@@ -31206,9 +31206,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 
 				if weap.damage_type_single_ray == "sniper" then
-					weap.object_damage_mult_single_ray = 1.75
+					weap.object_damage_mult_single_ray = 2
 					if table.contains(weap.recategorize, "light_shot") then
-						weap.object_damage_mult_single_ray = 1.25
+						weap.object_damage_mult_single_ray = 1.5
 					end
 				elseif weap.damage_type_single_ray == "anti_materiel" then
 					weap.object_damage_mult_single_ray = 4

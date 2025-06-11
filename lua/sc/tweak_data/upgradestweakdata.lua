@@ -598,7 +598,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.doctor_bag_base = 2 --Starting Number
 	self.values.doctor_bag.heal_amount = 0.2 --Heals 20% of max health on use.
 	self.values.temporary.doctor_bag_health_regen = {{0.04, 180.1}} --Heals 4% of max health every 4 seconds for the next 3 minutes.
-	
+	self.values.temporary.doctor_bag_health_regen_deflection_addend = 0.1
+
 	--ECMs: They're ECMs
 	self.ecm_jammer_base_battery_life = 10
 	self.ecm_jammer_base_low_battery_life = 4

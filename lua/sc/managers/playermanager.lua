@@ -1114,7 +1114,15 @@ end
 --Get health damage reduction gained via skills.
 --Crashes mentioning this function mean that there is a syntax error in the file.
 function PlayerManager:get_deflection_from_skills()
-	return self:upgrade_value("player", "deflection_addend", 0)
+	local addend = 0
+
+	addend = addend + self:upgrade_value("player", "deflection_addend", 0)
+
+	if self:has_activate_temporary_upgrade("temporary", "doctor_bag_health_regen") then	
+		addend = addend + tweak_data.upgrade.values.temporary.doctor_bag_health_regen_deflection_addend
+	end
+
+	return addend
 end
 
 function PlayerManager:get_max_grenades(grenade_id)

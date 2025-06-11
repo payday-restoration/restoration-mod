@@ -11422,9 +11422,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hajk.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
 							{6, self.stat_info.kick_tables.moderate_right_kick},
-							{7, self.stat_info.kick_tables.moderate_kick},
-							{13, self.stat_info.kick_tables.right_recoil},
-							{20, self.stat_info.kick_tables.moderate_kick}
+							{9, self.stat_info.kick_tables.moderate_kick},
+							{14, self.stat_info.kick_tables.right_recoil},
+							{22, self.stat_info.kick_tables.moderate_kick}
 						}
 						self.hajk.categories = {
 							"assault_rifle"
@@ -12341,12 +12341,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"dmr_h"
 						}
 						self.ching.FIRE_MODE = "single"
-						self.ching.fire_mode_data.fire_rate = 0.12
+						self.ching.fire_mode_data.fire_rate = 0.15
 						self.ching.CAN_TOGGLE_FIREMODE = false
 						self.ching.has_description = true
 						self.ching.desc_id = "bm_galant_sc_desc"
 						self.ching.CLIP_AMMO_MAX = 8
-						self.ching.AMMO_MAX = 60
+						self.ching.AMMO_MAX = 40
 						self.ching.CAN_TOGGLE_FIREMODE = false
 						self.ching.kick = self.stat_info.kick_tables.vertical_kick
 						self.ching.kick_pattern = {
@@ -12359,12 +12359,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ching.supported = true
 						self.ching.ads_speed = 0.300
 						self.ching.damage_falloff = {
-							start_dist = 3800,
+							start_dist = 2800,
 							end_dist = 8800,
-							min_mult = 0.5
+							min_mult = 0.3333
 						}
 						self.ching.stats = {
-							damage = 60,
+							damage = 90,
 							spread = 86,
 							recoil = 61,
 							spread_moving = 6,

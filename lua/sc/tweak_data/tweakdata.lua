@@ -231,7 +231,7 @@ tweak_data.assault_rifle = {
 	ads_moving_recoil = 1.05,
 	ads_stationary_spread_mult = 0.9,
 	ads_move_speed_mult = 0.45,
-	hipfire_spread_mult = 1.15,
+	hipfire_spread_mult = 1.5,
 	shake_mul = 1.05
 }
 	tweak_data.crb = {

@@ -4829,7 +4829,7 @@ function PlayerStandard:_check_step(t)
 end
 
 
-if AdvMov then --Everything here was originally from Solo Queue Pixy and none of this will function without the "Advanced Movement Standalone" mod
+if AdvMov and AdvMov.settings then --Everything here was originally from Solo Queue Pixy and none of this will function without the "Advanced Movement Standalone" mod
 --Sorry for butchering your code :> -DMC
 
 	local AdvMovWallKick = PlayerStandard._check_wallkick

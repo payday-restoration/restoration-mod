@@ -12341,7 +12341,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"dmr_h"
 						}
 						self.ching.FIRE_MODE = "single"
-						self.ching.fire_mode_data.fire_rate = 0.15
+						self.ching.fire_mode_data.fire_rate = 0.125
 						self.ching.CAN_TOGGLE_FIREMODE = false
 						self.ching.has_description = true
 						self.ching.desc_id = "bm_galant_sc_desc"
@@ -31610,11 +31610,11 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 			shotgun_heavy = 1.00, --Light
 			shotgun_break = 1.08, --Heavy
 			shotgun_super = 1.11,
-		assault_rifle = 1.025,
+		assault_rifle = 1,
 			dmr_l = 0.98,
 			dmr_h = 0.98,
-			snp = 1,
-				semi_snp = 0.75,
+			snp = 0.965,
+				semi_snp = 0.8,
 				amr = 0.96,
 		saw = 1.25, --Compensate for jankiness.
 		bow = 0.6, --Compensate for picking arrows back up.

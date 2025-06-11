@@ -343,6 +343,11 @@ end
 --Simpler spread function. Determines area bullets can hit then converts that to the max degrees by which the rays can fire.
 function NewRaycastWeaponBase:_get_spread(user_unit)
 	local current_state = user_unit:movement()._current_state
+	local is_steelsight = current_state and current_state:full_steelsight()
+	local is_hipfire = current_state and not current_state:full_steelsight()
+	local is_tacstance = self:second_sight_spread_mult()
+	local is_moving = current_state and (current_state._moving or current_state:in_air())
+	local is_bipod = current_state and current_state:_is_using_bipod()
 	
 	if not current_state then
 		return 0, 0
@@ -353,7 +358,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) * tweak_data.weapon.stat_info.spread_per_accuracy, 0.05)
 	
 	--Moving penalty to spread, based on stability stat- added to total area.
-	if current_state._moving or current_state:in_air() then
+	if is_moving then
 		--Get spread area from stability stat.
 		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * tweak_data.weapon.stat_info.spread_per_stability, 0)
 		local moving_spread_mult = 1
@@ -362,7 +367,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 			moving_spread_mult = moving_spread_mult * ms_mult
 		end
 		moving_spread = moving_spread * moving_spread_mult
-		if current_state:full_steelsight() and not self:weapon_tweak_data().always_hipfire and not self:second_sight_spread_mult() then
+		if is_steelsight and not self:weapon_tweak_data().always_hipfire and not is_tacstance then
 			local ads_moving_spread_mult = 1
 			if self._ads_moving_mult then
 				ads_moving_spread_mult = ads_moving_spread_mult * self._ads_moving_mult
@@ -385,14 +390,14 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		spread_area = spread_area + moving_spread
 	end
 
-	if current_state:_is_using_bipod() then
+	if is_bipod then
 		spread_area = spread_area / 2
 	end
 
 	--Apply skill and stance multipliers to overall spread area.
 	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
 
-	if not current_state:full_steelsight() or (current_state:full_steelsight() and ( self:weapon_tweak_data().always_hipfire or self:second_sight_spread_mult() ) ) then
+	if not is_steelsight or (is_steelsight and ( self:weapon_tweak_data().always_hipfire or is_tacstance ) ) then
 		local hipfire_spread_mult = 1
 		for _, category in ipairs(self:categories()) do
 			local hip_mult = tweak_data[category] and tweak_data[category].hipfire_spread_mult or 1
@@ -405,7 +410,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	end
 
 	if self:in_burst_mode() then
-		if self._burst_fire_ads_spread_multiplier and current_state:full_steelsight() then
+		if self._burst_fire_ads_spread_multiplier and is_steelsight then
 			multiplier = multiplier * self._burst_fire_ads_spread_multiplier
 		else
 			multiplier = multiplier * (self._burst_fire_spread_multiplier or 1)
@@ -434,6 +439,13 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		spread_y = spread_y * self._spread_multiplier[2]
 	end
 
+	local min_spread = is_hipfire and 1 or 0
+	for _, category in ipairs(self:categories()) do
+		local min_spread_mult = tweak_data[category] and tweak_data[category].min_spread_mult or 1
+		min_spread = min_spread * min_spread_mult
+	end
+	spread_x = math.max(min_spread, spread_x)
+	spread_y = math.max(min_spread, spread_y)
 
 	return spread_x, spread_y
 end

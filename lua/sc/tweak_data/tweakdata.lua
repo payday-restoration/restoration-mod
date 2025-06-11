@@ -80,7 +80,7 @@ tweak_data.crossbow = {
 	shake_mul = 0
 }
 	tweak_data.crossbow_pistol = {
-		ads_move_speed_mult = 1.6,
+		ads_move_speed_mult = 0.8 / tweak_data.crossbow.ads_move_speed_mult,
 		swap_bonus = 3.2
 	}
 
@@ -88,11 +88,11 @@ tweak_data.grenade_launcher = {
 	ads_move_speed_mult = 0.5,
 }
 	tweak_data.gl_pistol = {
-		ads_move_speed_mult = 1.6,
+		ads_move_speed_mult = 0.8 / tweak_data.grenade_launcher.ads_move_speed_mult,
 		swap_bonus = 3.2
 	}
 	tweak_data.rocket_launcher = {
-		ads_move_speed_mult = 0.4, --lowered to 0.2
+		ads_move_speed_mult = 0.25 / tweak_data.grenade_launcher.ads_move_speed_mult,
 		shake_mul = 0
 	}
 
@@ -216,9 +216,10 @@ tweak_data.snp = {
 		shake_mul = 1.1
 	}
 		tweak_data.s7 = {
-			hipfire_spread_mult = 0.05,
-			hipfire_moving_spread_mult = 0.05,
-			ads_moving_spread_mult = 0.05
+			min_spread_mult = 0.025,
+			hipfire_spread_mult = 0.025,
+			hipfire_moving_spread_mult = 0.025,
+			ads_moving_spread_mult = 0.025
 		}
 	tweak_data.amr = {
 		hipfire_spread_mult = 2,
@@ -231,7 +232,7 @@ tweak_data.assault_rifle = {
 	ads_moving_recoil = 1.05,
 	ads_stationary_spread_mult = 0.9,
 	ads_move_speed_mult = 0.45,
-	hipfire_spread_mult = 1.5,
+	hipfire_spread_mult = 1.25,
 	shake_mul = 1.05
 }
 	tweak_data.crb = {

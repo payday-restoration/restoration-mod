@@ -31610,10 +31610,10 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 			shotgun_heavy = 1.00, --Light
 			shotgun_break = 1.08, --Heavy
 			shotgun_super = 1.11,
-		--assault_rifle = 1,
-			dmr_l = 0.9,
-			dmr_h = 0.9,
-			--snp = 1,
+		assault_rifle = 1.025,
+			dmr_l = 0.98,
+			dmr_h = 0.98,
+			snp = 1,
 				semi_snp = 0.75,
 				amr = 0.96,
 		saw = 1.25, --Compensate for jankiness.

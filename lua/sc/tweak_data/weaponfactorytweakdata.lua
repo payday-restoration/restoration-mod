@@ -34831,7 +34831,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_upg_o_mw2022_minireddot04_tall.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_o_mw2022_minireddot04_tall.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + (Vector3(0, 0, 0) * (weap.scale or 1) )
+					weap.translation = weap.translation + (Vector3(0, -9, 1.66) * (weap.scale or 1) )
 				end
 			end
 		end

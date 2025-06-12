@@ -136,7 +136,8 @@ function GuiTweakData:init()
 		wpn_fps_upg_o_kobra = "1 6",
 		wpn_fps_upg_o_coyote = "1 4",
 		wpn_fps_ass_fakedefy_o_mh1 = "1 4",
-		wpn_fps_upg_o_horzine = "1 5"
+		wpn_fps_upg_o_horzine = "1 5",
+		wpn_fps_upg_o_mw2022_minireddot04_tall = "2 3",
 	}
 	if SystemFS:exists("assets/mod_overrides/Kitsune Jimmy's Improved Reticle Pack") then
 		self.part_texture_switches.wpn_fps_upg_o_okp7 = "4 15"

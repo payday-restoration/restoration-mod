@@ -34821,6 +34821,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		end
 
+		if self.parts.wpn_fps_upg_o_mw2022_minireddot04_tall then
+			self.parts.wpn_fps_upg_o_mw2022_minireddot04_tall.supported = true
+			self.parts.wpn_fps_upg_o_mw2022_minireddot04_tall.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_upg_o_mw2022_minireddot04_tall.stats = {
+				value = 3,
+				zoom = 1
+			}
+			self.parts.wpn_fps_upg_o_mw2022_minireddot04_tall.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_o_mw2022_minireddot04_tall.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + (Vector3(0, 0, 0) * (weap.scale or 1) )
+				end
+			end
+		end
+
 	--[[ GAMBYT'S MODS ]]
 
 		--Gambyt's Vanilla Mod Pack
@@ -50320,6 +50335,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "sig_sauer_xm250_mod_init", funct
 		}
 	end
 end)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "mw2022_minireddot_04_modInit", function(self)
+end)
 
 Hooks:PostHook(WeaponFactoryTweakData, "init", "mg34ModInit", function(self)
 end)
@@ -50472,7 +50489,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "amtInit", function(self)
 			a_obj = "a_quite"
 		}
 	end
-end )
+end)
 
 Hooks:PostHook(WeaponFactoryTweakData, "init", "STF12ModInit", function(self)
 	if self.parts.wpn_fps_shot_stf12_sights then

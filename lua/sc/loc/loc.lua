@@ -2676,6 +2676,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_upg_af2011_a_uno_desc"] = "Internal modification that makes the barrels fire separately rather than simultaneously.",
 					--Triad
 					["bm_triad_sc_desc"] = "#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##\n\nAlt-fire fires #{skill_color}#all 3 barrels at once## at the cost of #{important_1}#more recoil and spread.##",
+					--Taurus Cruve
+					["bm_curve_sc_desc"] = "Subcompact .380 pistol, maximizing concealability by adopting a shape that blends in with the human body's natural curves. Features an #{skill_color}#integrated flashlight and laser module##.\n\n#{stats_positive}#Deals 120 damage over 4 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 
 			--[[ SMGs ]]
 				--Kobus 90
@@ -2837,6 +2839,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
 					["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
 					["bm_wp_wpn_fps_upg_wmtx_gastube_burst_desc"] = "Adds a ##{skill_color}#2 round burst-fire## toggle.",
+					--DP12
+					["bm_dp12_sc_desc"] = "Shotgun taking the compact yet high capacity design of the Raven and adding a second barrel on top of it. This particular model has been modified to fire #{skill_color}#both barrels at the same time.##",
 
 			--[[ ARs ]]
 				--S552
@@ -3005,6 +3009,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_rmary2"] = "Goblin Mk2",
 					["bm_wp_chf_50_desc"] = "#{skill_color}#Headshots ignore damage falloff.##",
 					["bm_w_rmary2_desc"] = "Proof of concept prototype designed by a Royal Military College Duntroon cadet.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies.##",
+					--Madsen LAR
+					["bm_w_madsen_lar"] = "Post WW2 Danish battle rifle chambered in 7.62x51mm to seek a market in NATO militaries.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 
 			--[[ SNIPERS ]]
 				--MSR
@@ -3069,6 +3075,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_hmcar_sc_desc"] = "Before being phased out by law-enforcement, you managed to swipe a case full of these conversion kits.\n\nShoots #{stat_maxed}#titan-sniper rounds## capable of #{skill_color}#piercing multiple enemies, their body armor, shields within max damage range and thin walls;## Alt-fire shoots a #{event_color}#full power sniper round## for #{skill_color}#twice the ammo and power## that also adds the abilty to #{skill_color}#pierce titan-shields.##",
 					["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",
 					["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
+					--De Lisle
+					["bm_wp_upg_a_dl_a_cyanide"] = "Cyanide Rounds",
+					["bm_wp_upg_a_dl_a_cyanide_desc"] = "Cyanide-laced bullets inspired by an alleged WW2-era German suppressed bolt-action rifle.\n\nRounds #{skill_color}#deal 350 damage, 5 seconds after impact.##\n\n#{important_1}#No longer deal extra headshot damage and can no longer pierce through enemies.##",
+					["bm_dl_cyanide_desc"] = "#{stats_positive}#Fires cyanide-laced rounds that deal heavy damage after a few seconds## and #{skill_color}#can pierce body armor, shields and thin walls.##",
+					--SVT-40
+					["bm_wp_upg_i_avt40_desc"] = "Modified internals capable of #{risk}#fully automatic fire##.\nAnd you thought the M308 was hard to control.",
 
 			--[[ SPECIALS ]]
 				--Saw

@@ -14,17 +14,6 @@ local disabled = {
 	values = {
         enabled = false
 	}
-}
-local garden_spawn = {
-	values = {
-		interval = 10,
-	},
-	
-}
-local roof_spawn = {
-	values = {
-		interval = 30,
-	},
 }	
 return {
 	--Pro Job PONR + Players now can steal paintings when boat escape triggered (if we do it on stealth tho)
@@ -59,27 +48,22 @@ return {
 		}
 	},
 	-- Add some reinforce around the house
-	[100791] = { -- players entered the mansion
+	[100109] = {
 		reinforce = {
 			{
-				name = "garden_left",
-				force = 2,
-				position = Vector3(1425, -5950, -150),
+				name = "garden_front1",
+				force = 3,
+				position = Vector3(3150, -4250, -150),
 			},
 			{
-				name = "garden_back",
-				force = 2,
-				position = Vector3(-3400, -2100, -50),
-			},
-			{
-				name = "garden_front",
-				force = 2,
-				position = Vector3(-3150, -3125, -150),
+				name = "garden_front2",
+				force = 3,
+				position = Vector3(3150, -2000, -150),
 			},
 			{
 				name = "garden_right",
-				force = 2,
-				position = Vector3(1375, 2650, -150),
+				force = 3,
+				position = Vector3(750, 2075, -100),
 			},
 		},
 	},
@@ -180,13 +164,5 @@ return {
 	[102576] = mobster_team,
 	[102578] = mobster_team,
 	[102581] = mobster_team,
-	[102583] = mobster_team,
-	-- Spawn group delays
-	[100132] = garden_spawn,
-	[102381] = garden_spawn,
-	[100206] = roof_spawn,
-	[100719] = roof_spawn,
-	[100810] = roof_spawn,
-	[100921] = roof_spawn,
-	[101920] = roof_spawn,
+	[102583] = mobster_team
 }

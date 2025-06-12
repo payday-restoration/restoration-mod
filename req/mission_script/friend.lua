@@ -14,7 +14,17 @@ local disabled = {
 	values = {
         enabled = false
 	}
-}	
+}
+local garden_spawn = {
+	values = {
+		interval = 10,
+	},
+}
+local roof_spawn = {
+	values = {
+		interval = 30,
+	},
+}
 return {
 	--Pro Job PONR + Players now can steal paintings when boat escape triggered (if we do it on stealth tho)
 	[100216] = {
@@ -38,6 +48,13 @@ return {
 	-- Boss dead, safe objective
 	[101169] = {
 		difficulty = 1
+		reinforce = {
+			{
+				name = "main_hall",
+				force = 3,
+				position = Vector3(-1700, -1075, 50),
+			},
+		},
 	},
 	-- Disable Sosa retreat on low health during boss fight
 	[101596] = disabled,
@@ -48,36 +65,41 @@ return {
 		}
 	},
 	-- Add some reinforce around the house
-	[100109] = {
+	[100791] = { -- players entered the mansion
 		reinforce = {
 			{
-				name = "garden_front1",
-				force = 3,
-				position = Vector3(3150, -4250, -150),
+				name = "garden_left",
+				force = 2,
+				position = Vector3(1425, -5950, -150),
 			},
 			{
-				name = "garden_front2",
-				force = 3,
-				position = Vector3(3150, -2000, -150),
+				name = "garden_back",
+				force = 2,
+				position = Vector3(-3400, -2100, -50),
+			},
+			{
+				name = "garden_front",
+				force = 2,
+				position = Vector3(-3150, -3125, -150),
 			},
 			{
 				name = "garden_right",
-				force = 3,
-				position = Vector3(750, 2075, -100),
+				force = 2,
+				position = Vector3(1375, 2650, -150),
 			},
 		},
 	},
-	 --forcing boat escape
+	 -- Forcing boat escape
 	[100213] = disabled,
 	[100214] = disabled,
 	[103446] = disabled, --don't even try.....
-	--Force spawn all possible guards during Sosa fight (DS only)
+	-- Force spawn all possible guards during Sosa fight (DS only)
 	[101725] = {
 		values = {
 			amount = amount_guards
 		}
 	},
-	--Spawn enforcers during Sosa fight on PJ
+	-- Spawn enforcers during Sosa fight on PJ
 	[101845] = {
 		values = {
             enemy = enforcer_guard
@@ -88,40 +110,20 @@ return {
             enemy = enforcer_guard
 		}
 	},
-	--Sosa gets two additional ninja like gangsters on DSPJ
+	-- Sosa gets two additional ninja like gangsters on DSPJ
 	[101101] = {
 		on_executed = {
 			{ id = 400001, delay = 0 },
 			{ id = 400002, delay = 0 }
 		}
 	},
-	--Change Sosa's line to more apporiate one (having chance to say the famous Scarface quote)
+	-- Change Sosa's line to more apporiate one (having chance to say the famous Scarface quote)
 	[101485] = {
 		values = {
             sound_event = "Play_bos_fri_04"
 		}
 	},
-	-- Add some reinforce around the house (from Eclipse)
-	[100109] = {
-		reinforce = {
-			{
-				name = "garden_front1",
-				force = 3,
-				position = Vector3(3150, -4250, -150),
-			},
-			{
-				name = "garden_front2",
-				force = 3,
-				position = Vector3(3150, -2000, -150),
-			},
-			{
-				name = "garden_right",
-				force = 3,
-				position = Vector3(750, 2075, -100),
-			},
-		},
-	},
-	--You're Sosa's men, not undercover cops
+	-- You're Sosa's men, not undercover cops
 	[100852] = mobster_team,
 	[100854] = mobster_team,
 	[100855] = mobster_team,
@@ -164,5 +166,13 @@ return {
 	[102576] = mobster_team,
 	[102578] = mobster_team,
 	[102581] = mobster_team,
-	[102583] = mobster_team
+	[102583] = mobster_team,
+	-- Spawn group delays
+	[100132] = garden_spawn,
+	[102381] = garden_spawn,
+	[100206] = roof_spawn,
+	[100719] = roof_spawn,
+	[100810] = roof_spawn,
+	[100921] = roof_spawn,
+	[101920] = roof_spawn,
 }

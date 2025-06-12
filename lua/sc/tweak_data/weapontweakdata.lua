@@ -12974,7 +12974,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mosin.descope_on_fire = true
 						self.mosin.panic_suppression_chance = 0.05
 						self.mosin.ignore_reload_objects = true
-						self.mosin.timers.reload_speed_multiplier = 1.05
+						self.mosin.reload_speed_multiplier = 1.05
 						self.mosin.timers.reload_empty = 2.6
 						self.mosin.timers.reload_not_empty = 2.6
 						self.mosin.timers.reload_exit_empty = 1.6
@@ -23573,6 +23573,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pinkie.lock_slide = true
 				self.pinkie.AMMO_MAX = 75
 				self.pinkie.CLIP_AMMO_MAX = 6
+				self.pinkie.tactical_reload = 1
 				self.pinkie.fire_mode_data.fire_rate = 0.0821917
 				self.pinkie.kick = self.stat_info.kick_tables.right_recoil
 				self.pinkie.kick_pattern = {

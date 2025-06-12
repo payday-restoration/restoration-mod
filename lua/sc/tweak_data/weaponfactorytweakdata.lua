@@ -25802,6 +25802,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 
 				table.insert(self.wpn_fps_shot_wmtx.uses_parts, "wpn_fps_shot_wmtx_mag_ext")
+				table.insert(self.wpn_fps_shot_wmtx.uses_parts, "wpn_fps_upg_a_dragons_breath")
+				table.insert(self.wpn_fps_shot_wmtx.uses_parts, "wpn_fps_upg_a_rip")
 			end
 
 			if self.parts.wpn_fps_upg_zenith_mag_ext then
@@ -39211,6 +39213,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_m16_fg_lsw.supported = true
 				self.parts.wpn_fps_ass_m16_fg_lsw.stats = { spread = -2, recoil = 6, concealment = -1 }
 			end
+
+			if self.parts.wpn_fps_pis_upg_o_viper then
+				self.parts.wpn_fps_pis_upg_o_viper.supported = true
+				self.parts.wpn_fps_pis_upg_o_viper.desc_id = "bm_wp_upg_o_1_1"
+				self.parts.wpn_fps_pis_upg_o_viper.stats = {
+					value = 3,
+					zoom = 1
+				}
+			end
+
 
 	--[[ CARL'S MODS ]]
 

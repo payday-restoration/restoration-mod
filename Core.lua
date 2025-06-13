@@ -756,6 +756,12 @@ restoration.queued_impact_effects_type = {
 	"impactfx_type_queued"
 	--All weapons have their impact FX all put into a queue for sequential playback at the cost of having impact playback potentially lagging behind if too many get queued too quickly
 }
+
+restoration.nvgcolor = {
+	"resmod_nvg_default",
+	"resmod_nvg_blue"
+}
+
 -- Detect if ResMod is active to disable PDTH Challenges Standalone
 DisablePDTHChallengeStandalone = DisablePDTHChallengeStandalone or {}
 

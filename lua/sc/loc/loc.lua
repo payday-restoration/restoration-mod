@@ -804,6 +804,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModMusicShuffleDescID"] = "Changes the music track after assault ends.",
 		["RestorationModOldEconomyTitleID"] = "Old Economy (Beta)",
 		["RestorationModOldEconomyDescID"] = "Enables the old economy from pre update 11.",
+		["RestorationModNVGColorTitleID"] = "Night Vision Mask Color",
+		["RestorationModNVGColorDescID"] = "Select between the two night vision mask colors",
 		["RestorationModScaleTitleID"] = "HUD scaling",
 		["RestorationModScaleDescID"] = "Changes HUD scaling. May require a restart.",
 		["RestorationModSizeOnScreenTitleID"] = "HUD size on screen",
@@ -860,6 +862,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["beta_assault"] = "Alpha Tape",
 		["show_both"] = "Default",
 		["show_classic_newsfeed"] = "Classic",
+		["resmod_nvg_default"] = "Default",
+		["resmod_nvg_blue"] = "Blue",
 
 		["RestorationModDodgeDisplayTitleID"] = "Dodge Meter Readout",
 		["RestorationModDodgeDisplayDescID"] = "Change what the dodge meter's maximum value *displays*. Requires restart.",

@@ -256,7 +256,7 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 		if multi_ray then
 			mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase_ads or 1
 			
-			for _, category in ipairs(self:categories()) do
+			for _, category in ipairs(self._tweak_categories) do
 				local multishot_spread = tweak_data[category] and tweak_data[category].ads_multishot_spread_mult or 1
 				mul = mul * multishot_spread
 			end
@@ -271,7 +271,7 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 		end
 
 		if not is_moving then
-			for _, category in ipairs(self:categories()) do
+			for _, category in ipairs(self._tweak_categories) do
 				local stationary_spread = tweak_data[category] and tweak_data[category].ads_stationary_spread_mult or 1
 				mul = mul * stationary_spread
 			end
@@ -362,7 +362,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		--Get spread area from stability stat.
 		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * tweak_data.weapon.stat_info.spread_per_stability, 0)
 		local moving_spread_mult = 1
-		for _, category in ipairs(self:categories()) do
+		for _, category in ipairs(self._tweak_categories) do
 			local ms_mult = tweak_data[category] and tweak_data[category].moving_spread_mult or 1
 			moving_spread_mult = moving_spread_mult * ms_mult
 		end
@@ -372,14 +372,14 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 			if self._ads_moving_mult then
 				ads_moving_spread_mult = ads_moving_spread_mult * self._ads_moving_mult
 			end
-			for _, category in ipairs(self:categories()) do
+			for _, category in ipairs(self._tweak_categories) do
 				local adsms_mult = tweak_data[category] and tweak_data[category].ads_moving_spread_mult or 1
 				ads_moving_spread_mult = ads_moving_spread_mult * adsms_mult
 			end
 			moving_spread = moving_spread * ads_moving_spread_mult
 		else
 			local hipfire_moving_spread_mult = 1
-			for _, category in ipairs(self:categories()) do
+			for _, category in ipairs(self._tweak_categories) do
 				local hms_mult = tweak_data[category] and tweak_data[category].hipfire_moving_spread_mult or 1
 				hipfire_moving_spread_mult = hipfire_moving_spread_mult * hms_mult
 			end
@@ -399,7 +399,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 
 	if not is_steelsight or (is_steelsight and ( self:weapon_tweak_data().always_hipfire or is_tacstance ) ) then
 		local hipfire_spread_mult = 1
-		for _, category in ipairs(self:categories()) do
+		for _, category in ipairs(self._tweak_categories) do
 			local hip_mult = tweak_data[category] and tweak_data[category].hipfire_spread_mult or 1
 			hipfire_spread_mult = hipfire_spread_mult * hip_mult
 		end
@@ -422,7 +422,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	end
 	
 	local spread_multiplier = 1
-	for _, category in ipairs(self:categories()) do
+	for _, category in ipairs(self._tweak_categories) do
 		local spread_mult = tweak_data[category] and tweak_data[category].spread_mult or 1
 		spread_multiplier = spread_multiplier * spread_mult
 	end
@@ -440,7 +440,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	end
 
 	local min_spread = is_hipfire and 1 or 0
-	for _, category in ipairs(self:categories()) do
+	for _, category in ipairs(self._tweak_categories) do
 		local min_spread_mult = tweak_data[category] and tweak_data[category].min_spread_mult or 1
 		min_spread = min_spread * min_spread_mult
 	end
@@ -570,7 +570,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 				mult = mult / zoom_mult
 			end
 			if is_moving then
-				for _, category in ipairs(self:categories()) do
+				for _, category in ipairs(self._tweak_categories) do
 					local ads_moving_recoil = tweak_data[category] and tweak_data[category].ads_moving_recoil or 1
 					mult = mult * ads_moving_recoil
 				end
@@ -1047,6 +1047,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._fire_rate_init_ramp_up_add = 0
 
 		self._tactical_reload = self._tactical_reload or self:weapon_tweak_data().tactical_reload
+
+		self._tweak_categories = self._tweak_categories or self:weapon_tweak_data().categories --exclusively for the use of category based movement, spread and recoil modifiers set in "tweakdata.lua"; zero plans of expanding this to change weapon categories for skill purposes so don't fucking ask
 	else	
 		self._has_burst_fire = false
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
@@ -1186,6 +1188,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.block_burst then
 				self._block_burst = true
+			end
+			
+			if stats.tweak_categories then
+				self._tweak_categories = stats.tweak_categories
 			end
 
 			if stats.init_rof then	

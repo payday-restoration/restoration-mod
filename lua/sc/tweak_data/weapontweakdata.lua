@@ -19575,7 +19575,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m2.damage_falloff = {
 					start_dist = 1500,
 					end_dist = 4200,
-					min_mult = 0.6
+					min_mult = 0.3
 				}
 				self.m2.stats = {
 					damage = 30,
@@ -19628,7 +19628,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1a1.damage_falloff = {
 					start_dist = 1800,
 					end_dist = 4900,
-					min_mult = 0.4
+					min_mult = 0.2
 				}
 				self.m1a1.stats = {
 					damage = 45,

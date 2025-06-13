@@ -2073,6 +2073,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_pickup"] = "Ammo Pickup",
 		["bm_menu_ads_speed"] = "Aim Time",
 		["bm_menu_reload"] = "Reload Time",
+		["bm_menu_reserve"] = "Spare Mags",
+		["bm_menu_reserve_rounds"] = "Spare Rounds",
 		["bm_menu_damage"] = "Damage", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Damage Max",
 		["bm_menu_standing_range"] = "Falloff Start",
 		["bm_menu_damage_min"] = "Damage Min",

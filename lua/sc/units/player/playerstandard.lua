@@ -1791,7 +1791,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 			local base_speed = ( (self:on_ladder() and speed_tweak.CLIMBING_MAX ) or (self._state_data.ducking and speed_tweak.CROUCHING_MAX) or (self._state_data.in_air and speed_tweak.INAIR_MAX) or speed_tweak.STANDARD_MAX )
 			local speed_mult = 1
 			local has_ads_move_speed_mult = nil
-			for _, category in ipairs(weapon_tweak.categories) do
+			for _, category in ipairs(weapon._tweak_categories) do
 				if tweak_data[category] and tweak_data[category].ads_move_speed_mult then
 					speed_mult = speed_mult * tweak_data[category].ads_move_speed_mult
 					has_ads_move_speed_mult = true

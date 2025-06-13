@@ -47,7 +47,7 @@ return {
 	},
 	-- Boss dead, safe objective
 	[101169] = {
-		difficulty = 1
+		difficulty = 1,
 		reinforce = {
 			{
 				name = "main_hall",

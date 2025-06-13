@@ -112,7 +112,7 @@ return {
 		reinforce = {
 			{
 				name = "street",
-				force = 3,
+				force = 5,
 				position = Vector3(-1350, -15000, 5800),
 			},
 		},

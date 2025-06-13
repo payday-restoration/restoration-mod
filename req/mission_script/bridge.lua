@@ -34,21 +34,7 @@ local low_interval = {
 		interval = 30,
 	},
 }
-local construct_spawn1 = {
-	values = {
-		interval = 30,
-	},
-}
-local construct_spawn2 = {
-	values = {
-		interval = 45,
-	},
-}
-local flank_spawn = {
-	values = {
-		interval = 60,
-	},
-}
+
 return {
 	-- Point of no return shortly after George takes Kazuo
 	-- Normally always enabled, no time balance mul
@@ -107,37 +93,6 @@ return {
 			spawn_groups = { 100867, 101153, 101157, 101154, 101160, 101156, 101159, },
 		},
 	},
-	-- Add new reinforce
-		[100529] = {
-		reinforce = {
-			{
-				name = "street",
-				force = 5,
-				position = Vector3(-1350, -15000, 5800),
-			},
-		},
-	},
-	[103543] = {
-		reinforce = {
-			{ name = "street" },
-			{
-				name = "construct1",
-				force = 3,
-				position = Vector3(-1350, -21500, 5800),
-			},
-			{
-				name = "construct2",
-				force = 3,
-				position = Vector3(-1350, -24650, 5800),
-			},
-		},
-	},
-	[102323] = {
-		reinforce = {
-			{ name = "construct1" },
-			{ name = "construct2" },
-		},
-	},
 	-- Increase spawn group intervals next to prison vans, closest to furthest
 	[100867] = high_interval,
 	[101153] = high_interval,
@@ -146,12 +101,4 @@ return {
 	[101160] = medium_interval,
 	[101156] = low_interval,
 	[101159] = low_interval,
-	[101244] = construct_spawn1,
-	[101246] = construct_spawn1,
-	[101242] = construct_spawn2,
-	[101243] = construct_spawn2,
-	[101245] = construct_spawn2,
-	[101153] = flank_spawn,
-	[100867] = flank_spawn,
-	[400016] = flank_spawn,
 }

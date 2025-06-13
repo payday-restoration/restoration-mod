@@ -21,7 +21,7 @@
             <var name="_stats_name" value="marshal_shield"/>
 		</extension>
 		<extension name="inventory" class="HuskCopInventory">
-			<var name="_shield_unit_name" value="units/pd2_dlc_usm1/characters/ene_acc_marshal_shield_1/ene_acc_marshal_shield_1_dummy"/> <!-- local dummy unit to hold until the network-synced shield is linked by the server -->
+			<var name="_shield_unit_name" value="units/pd2_dlc_usm1/characters/ene_acc_marshal_shield_1/ene_acc_marshal_shield_1"/> <!-- local dummy unit to hold until the network-synced shield is linked by the server -->
 			<var name="_shield_break_data" type="table">
 				<var name="anim_global_switch" value="cop"/>
 				<var name="stats_name_switch" value="marshal_shield_break"/>

@@ -28573,7 +28573,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_upg_x_hk45c_mag_ext.custom_stats = { ads_speed_mult = 1.05 }
 
-				table.insert(self.wpn_fps_pis_x_hk45c.uses_parts, "wpn_fps_upg_fl_pis_perst")
+				table.insert(self.wpn_fps_x_hk45c.uses_parts, "wpn_fps_upg_fl_pis_perst")
 			end
 
 			if self.parts.wpn_fps_lmg_rpd_mag then

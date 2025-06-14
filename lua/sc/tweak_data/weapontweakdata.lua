@@ -31373,7 +31373,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.af2011.desc_id = "bm_af2011_sc_desc"
 			self.af2011.AMMO_MAX = 40
 			self.af2011.CLIP_AMMO_MAX = 16
-			self.af2011.has_description = false
 			self.af2011.tactical_reload = 2
 			self.af2011.CAN_TOGGLE_FIREMODE = false
 			self.af2011.rays = 1

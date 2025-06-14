@@ -4,6 +4,7 @@
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData"/>
+		<extension name="damage" class="UnitDamage"/>
 		<!--
 		<extension name="base" class="ShieldFlashBase">
 			<var name="_shield_tweak_name" value="marshal_shield"/>

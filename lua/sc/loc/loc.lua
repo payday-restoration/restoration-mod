@@ -1493,6 +1493,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor.##",
 		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_integral_suppressor_desc"] = "Comes #{skill_color}#integrally suppressed##.",
 
 		["bm_bow_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.\n#{skill_color}#Can pierce body armor.##",
 		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\n#{risk}#Arrows explode on impact;## #{risk}#damage is split between the arrow and explosion.##",
@@ -2684,6 +2685,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_triad_sc_desc"] = "#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##\n\nAlt-fire fires #{skill_color}#all 3 barrels at once## at the cost of #{important_1}#more recoil and spread.##",
 					--Taurus Cruve
 					["bm_curve_sc_desc"] = "Subcompact .380 pistol, maximizing concealability by adopting a shape that blends in with the human body's natural curves. Features an #{skill_color}#integrated flashlight and laser module##.\n\n#{stats_positive}#Deals 120 damage over 4 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
+					--MP443
+					["bm_wp_upg_i_aw443"] = "Atlas PBW Kit",
+					["bm_wp_upg_i_aw443_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#800 RPM 2-round burst## setting.",
 
 			--[[ SMGs ]]
 				--Kobus 90
@@ -3082,6 +3086,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",
 					["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
 					--De Lisle
+					["bm_dl_sc_desc"] = "Comes #{skill_color}#integrally suppressed## and #{skill_color}#can pierce body armor, multiple enemies, shields and thin walls.##",
 					["bm_wp_upg_a_dl_a_cyanide"] = "Cyanide Rounds",
 					["bm_wp_upg_a_dl_a_cyanide_desc"] = "Cyanide-laced bullets inspired by an alleged WW2-era German suppressed bolt-action rifle.\n\nRounds #{skill_color}#deal 350 damage, 5 seconds after impact.##\n\n#{important_1}#No longer deal extra headshot damage and can no longer pierce through enemies.##",
 					["bm_dl_cyanide_desc"] = "#{stats_positive}#Fires cyanide-laced rounds that deal heavy damage after a few seconds## and #{skill_color}#can pierce body armor, shields and thin walls.##",

@@ -53,3 +53,9 @@ end
 		end
 	end
 end]]--
+
+local set_default_color_grading_original = CoreEnvironmentControllerManager.set_default_color_grading
+function CoreEnvironmentControllerManager:set_default_color_grading(color_grading, ...)
+	color_grading = color_grading == "color_off" and "color_payday" or color_grading
+	return set_default_color_grading_original(self, color_grading, ...)
+end

@@ -368,13 +368,13 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 	managers.hud:add_updator("point_of_no_return", callback(self, self, "_update_point_of_no_return"))
 	if not self._alternate_ponr_behavior then
 		local element = self:get_active_ponr_element()
-		local min_difficulty = element and element:value("min_difficulty") or 1
+		self._bravos_forbidden = element and element:value("bravos_forbidden") or nil
+		local min_difficulty = element and element:value("min_difficulty") or self._bravos_forbidden and 0 or 1
 		local difficulty_add = min_difficulty - self._difficulty_value
 		if difficulty_add > 0 then
 			self:set_difficulty(nil, difficulty_add)
 			restoration:log("PONR triggered difficulty increase of %s to %s", tostring(difficulty_add), tostring(self._difficulty_value))
 		end
-		self._bravos_forbidden = element and element:value("bravos_forbidden") or nil
 		self._bravos_difficulty_threshold = element and element:value("bravos_difficulty_threshold") or nil
 		self._bravos_timer = element and element:value("bravos_timer") or nil
 	end

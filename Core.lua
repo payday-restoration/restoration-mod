@@ -1385,6 +1385,28 @@ function restoration:gen_element_random(id, name, opts)
 	}
 end
 
+function restoration:gen_ai_global_event(id, name, pos, rot, opts)
+	opts = opts or {}
+	return {
+		id = id,
+		editor_name = name,
+		class = "ElementAiGlobalEvent",
+		values = {
+			execute_on_startup = opts.execute_on_startup or false,
+			ignore_disabled = opts.ignore_disabled or false,
+			trigger_times = opts.trigger_times or 0,
+			position = pos,
+			rotation = rot,
+			on_executed = opts.on_executed or {},
+			base_delay = opts.base_delay or 0,
+			enabled = opts.enabled or false,
+			wave_mode = opts.wave_mode or "none",
+			blame = opts.blame or "none",
+			AI_event = opts.AI_event or "none",
+		},
+	}
+end
+
 -- restoration.logging = io.file_is_readable("mods/developer.txt")
 restoration.logging = true
 function restoration:log(str, ...)

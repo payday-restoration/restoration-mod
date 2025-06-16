@@ -30,7 +30,7 @@ local opts_loop_fbi_ready_teams = {
 	enabled = true,
 	trigger_times = 6,
 	on_executed = {
-		{ id = 400054, delay = 20, delay_rand = 10, }
+		{ id = 400054, delay = 15, delay_rand = 10, }
 	},
 }
 local opts_fbi_ready_team_agent_spawn_group_1 = {

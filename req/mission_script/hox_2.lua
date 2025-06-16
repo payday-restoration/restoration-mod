@@ -15,7 +15,7 @@ return {
 	-- FBI Ready Teams
 	[100107] = {
 		on_executed = {
-			{id = 400055, delay = 30, delay_rand = 10,},
+			{id = 400055, delay = 15, delay_rand = 10,},
 		},
 	},
 	[100109] = { -- Atrium, always active

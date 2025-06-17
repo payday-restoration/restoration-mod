@@ -29013,7 +29013,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.FIRE_MODE = "auto"
 				self.ar23.kick = self.stat_info.kick_tables.even_recoil
 				self.ar23.supported = true
-				self.ar23.ads_speed = 0.240
+				self.ar23.ads_speed = 0.260
 				self.ar23.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 5500,
@@ -29025,7 +29025,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 81,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 25,
+					concealment = 23,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -29090,6 +29090,56 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta52.timers = deep_clone(self.rota.timers)
 			end
 
+			if self.r2 then --R2 PLACEHOLDER
+				self.r2.categories = {
+					"assault_rifle",
+					"dmr_h",
+					"sweet_liberty"
+				}
+				self.r2.recategorize = {"dmr_ar"}
+				self.r2.damage_type = "sniper"
+				self.r2.CLIP_AMMO_MAX = 20
+				self.r2.AMMO_MAX = self.br14.CLIP_AMMO_MAX * 9
+				self.r2.ammo_ratio = 2
+				self.r2.fire_mode_data.fire_rate = 0.125
+				self.r2.sms = 0.5
+				self.r2.tactical_reload = 1
+				self.r2.keep_ammo = 0
+				self.r2.BURST_FIRE = {
+					count = 3,
+					delay = 0.18,
+					recoil_mult = 0.9
+				}
+				self.r2.CAN_TOGGLE_FIREMODE = false
+				self.r2.FIRE_MODE = "single"
+				self.r2.kick = self.stat_info.kick_tables.even_recoil
+				self.r2.supported = true
+				self.r2.ads_speed = 0.300
+				self.r2.damage_falloff = {
+					start_dist = 2200,
+					end_dist = 8200,
+					min_mult = 0.2666
+				}
+				self.r2.stats = {
+					damage = 90,
+					spread = 93,
+					recoil = 45,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 20,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.r2.stats_modifiers = nil
+				self.r2.panic_suppression_chance = 0.05
+				self.r2.sounds.use_fix = nil
+				self.r2.armor_piercing_chance = nil
+			end
+
 			if self.br14 then
 				self.br14.categories = {
 					"assault_rifle",
@@ -29110,7 +29160,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br14.FIRE_MODE = "single"
 				self.br14.kick = self.stat_info.kick_tables.even_recoil
 				self.br14.supported = true
-				self.br14.ads_speed = 0.300
+				self.br14.ads_speed = 0.320
 				self.br14.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 7500,
@@ -29122,7 +29172,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 55,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 23,
+					concealment = 22,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -29176,7 +29226,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 51,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 24,
+					concealment = 23,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -29215,7 +29265,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta11.FIRE_MODE = "auto"
 				self.sta11.kick = self.stat_info.kick_tables.even_recoil
 				self.sta11.supported = true
-				self.sta11.ads_speed = 0.180
+				self.sta11.ads_speed = 0.200
 				self.sta11.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 3600,
@@ -29227,7 +29277,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 87,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 26,
+					concealment = 25,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -29273,7 +29323,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 93,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 23,
+					concealment = 21,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -32492,6 +32542,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					fire_multiplier = 0.75,
 					fire_steelsight_multiplier = -0.5
 				}
+			end
+
+			if weap.damage_falloff then
+				if table.contains(weap.recategorize, "light_smg") or table.contains(weap.recategorize, "heavy_smg") then
+					weap.damage_falloff.start_dist = math.floor(((weap.damage_falloff.start_dist / 100) * 0.8)) * 100
+					weap.damage_falloff.end_dist = math.floor(((weap.damage_falloff.end_dist / 100) * 0.9)) * 100
+					if table.contains(weap.categories, "akimbo") then
+						weap.damage_falloff.start_dist = math.floor(((weap.damage_falloff.start_dist / 100) * 0.8)) * 100
+					end
+				end
 			end
 
 			if weap.damage_type and not weap.object_damage_mult then

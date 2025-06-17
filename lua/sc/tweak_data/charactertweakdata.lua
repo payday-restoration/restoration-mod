@@ -2838,7 +2838,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.ecm_hurts = {
 		ears = 1
 	}	
-	self.spooc_titan.tags = {"law", "custom", "special", "spooc"}
+	self.spooc_titan.tags = {"law", "custom", "special", "spooc", "spooc_titan"}
 	self.spooc_titan.special_deaths = nil
 	self.spooc_titan.HEALTH_INIT = 90
 	self.spooc_titan.headshot_dmg_mul = 5.85	

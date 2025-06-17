@@ -911,7 +911,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	
 	--Titan Sniper
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
-	self.heavy_swat_sniper.tags = {"law", "sniper", "special", "customvo"}
+	self.heavy_swat_sniper.tags = {"law", "sniper", "special", "customvo", "sniper_titan"}
 	self.heavy_swat_sniper.priority_shout = "f34"
 	self.heavy_swat_sniper.bot_priority_shout = "f34x_any"
 	self.heavy_swat_sniper.priority_shout_max_dis = 3000

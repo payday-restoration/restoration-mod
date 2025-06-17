@@ -2353,7 +2353,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_ene_mult = { --Point multiplier based on enemy killed; top-down priority
 				{captain = 10},
 				{tank = 5},
-				{special = 2},
+				{spooc = 2.75},
+				{medic = 2.25},
+				{taser = 2.25},
+				{shield_titan = 2},
+				{sniper_titan = 2},
+				{sniper = 1.75},
+				{shield = 1.75},
+				{special = 1.75},
 			},
 			combo_t = 5, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
@@ -2367,7 +2374,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_ene_mult = {
 				{captain = 10},
 				{tank = 5},
-				{special = 2},
+				{spooc = 2.75},
+				{medic = 2.25},
+				{taser = 2.25},
+				{shield_titan = 2},
+				{sniper_titan = 2},
+				{sniper = 1.75},
+				{shield = 1.75},
+				{special = 1.75},
 			},
 			combo_t = 5,
 			combo_decay = 5,
@@ -2381,7 +2395,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_ene_mult = { --Point multiplier based on enemy killed
 				{captain = 10},
 				{tank = 5},
-				{special = 2},
+				{spooc = 2.75},
+				{medic = 2.25},
+				{taser = 2.25},
+				{shield_titan = 2},
+				{sniper_titan = 2},
+				{sniper = 1.75},
+				{shield = 1.75},
+				{special = 1.75},
 			},
 			combo_t = 5, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires

@@ -1,5 +1,3 @@
-local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local ponr_value = (difficulty <= 5 and 640 or (difficulty == 6 or difficulty == 7) and 520) or 480
 local side_spawn = {
 	values = {
 		interval = 15,
@@ -27,15 +25,21 @@ local rappel_spawn = {
 }
 local law_team = {
 	values = {
-		team = "law1"
-	}
+		team = "law1",
+	},
+}
+local pro_job_ponr = {
+	on_executed = {
+		{ id = 400002, delay = 0, },
+	},
 }
 
 return {
-	-- Pro Job PONR 
-	[101174] = {
-		ponr = ponr_value
-	},
+	-- Pro Job PONR
+	-- Triggers once both A) any cash bag has been picked up, and B) whisper state is off (on alarm)
+	[101174] = pro_job_ponr,
+	[101411] = pro_job_ponr,
+	-- New reenforce points
 	[101169] = {
 		reinforce = {
 			{

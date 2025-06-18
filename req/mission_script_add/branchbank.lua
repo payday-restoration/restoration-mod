@@ -14,6 +14,7 @@ local opts_pro_job_ponr = {
 	elements = { 104722, 104723, 100512, },
 	trigger_times = 1,
 	min_difficulty = 0.4,
+	difficulty_add = 0.3,
 	bravos_difficulty_threshold = 0.5,
 	bravos_timer = 20,
 	time_balance_mul = ponr_timer_player_mul,

@@ -1119,6 +1119,7 @@ function restoration:gen_pointofnoreturn(id, name, pos, rot, opts)
 			base_delay = opts.base_delay or 0,
 			tweak_id = opts.tweak_id or "noreturn",
 			min_difficulty = opts.min_difficulty or nil,
+			difficulty_add = opts.difficulty_add or nil,
 			bravos_difficulty_threshold = opts.bravos_difficulty_threshold or nil,
 			bravos_timer = opts.bravos_timer or nil,
 			bravos_forbidden = opts.bravos_forbidden or nil,

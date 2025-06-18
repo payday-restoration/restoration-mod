@@ -29099,7 +29099,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r2.recategorize = {"dmr_ar"}
 				self.r2.damage_type = "sniper"
 				self.r2.CLIP_AMMO_MAX = 20
-				self.r2.AMMO_MAX = self.br14.CLIP_AMMO_MAX * 9
+				self.r2.AMMO_MAX = self.r2.CLIP_AMMO_MAX * 9
 				self.r2.ammo_ratio = 2
 				self.r2.fire_mode_data.fire_rate = 0.125
 				self.r2.sms = 0.5

@@ -1,13 +1,21 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 
-local ponr_value = (difficulty <= 5 and 640 or (difficulty == 6 or difficulty == 7) and 520) or 480
+-- 570s on Normal, down to 480s on DS
+local ponr_value = 600 - (difficulty * 15)
+local ponr_timer_player_mul = {
+	1.2,
+	1.1,
+	1,  -- 3+ players
+}
 local opts_pro_job_ponr = {
 	elements = { 100866, 103868, 103841, },
 	trigger_times = 1,
 	min_difficulty = 0.4,
+	difficulty_add = 0.3,
 	bravos_difficulty_threshold = 0.5,
 	bravos_timer = 20,
+	time_balance_mul = ponr_timer_player_mul,
 	time_easy = ponr_value,
 	time_normal = ponr_value,
 	time_hard = ponr_value,

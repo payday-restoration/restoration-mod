@@ -29889,6 +29889,58 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta52.timers = deep_clone(self.rota.timers)
 			end
 
+			if self.ar32 then
+				self.ar32.categories = {
+					"assault_rifle",
+					"sweet_liberty"
+				}
+				self.ar32.recategorize = {"light_ar"}
+				self.ar32.damage_type = "assault_rifle"
+				self.ar32.CLIP_AMMO_MAX = 40
+				self.ar32.AMMO_MAX = self.ar32.CLIP_AMMO_MAX * 8
+				self.ar32.ammo_ratio = 2
+				self.ar32.fire_mode_data.fire_rate = 0.0857
+				self.ar32.fire_mode_data.toggable = nil
+				self.ar32.sms = 0.5
+				self.ar32.tactical_reload = 1
+				self.ar32.keep_ammo = 0
+				self.ar32.BURST_FIRE = {
+					count = 3,
+					delay = 0.12,
+					recoil_mult = 0.9
+				}
+				self.ar32.CAN_TOGGLE_FIREMODE = true
+				self.ar32.FIRE_MODE = "auto"
+				self.ar32.kick = self.stat_info.kick_tables.even_recoil
+				self.ar32.trail_effect = "_dmc/effects/concussion_trail"
+				self.ar32.supported = true
+				self.ar32.ads_speed = 0.260
+				self.ar32.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 5500,
+					min_mult = 0.25
+				}
+				self.ar32.stats = {
+					damage = 24,
+					spread = 81,
+					recoil = 81,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 23,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.ar32.stats_modifiers = nil
+				self.ar32.panic_suppression_chance = 0.05
+				self.ar32.sounds.use_fix = nil
+				self.ar32.armor_piercing_chance = 0.5
+				self.ar32.timers = deep_clone(self.ak5.timers)
+			end
+
 			if self.r2 then --R2 PLACEHOLDER
 				self.r2.categories = {
 					"assault_rifle",

@@ -19466,6 +19466,10 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ak12 = {
 						translation = Vector3(-0.02, 4.3, -3.48)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar32 = {
+						translation = Vector3(1.825, -8.5, -4.63),
+						rotation = Rotation(-0.02, -0.02, 0)
+					}
 
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_s556 = {
@@ -40591,8 +40595,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ TANGERINE'S MODS ]]
 
-		if self.parts then
-
+		if self.parts.wpn_fps_ass_s556_b_short then
 			self.parts.wpn_fps_ass_s556_b_short.supported = true
 			self.parts.wpn_fps_ass_s556_b_short.stats = deep_clone(barrels.short_b3_stats)
 			self.parts.wpn_fps_ass_s556_b_short.custom_stats = deep_clone(barrels.short_b3_stats)
@@ -40661,7 +40664,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					}
 				}
 			}
-
 		end
 
 		if self.parts.wpn_fps_ass_dd5_fg_standard then --DDR5
@@ -43529,6 +43531,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
+		if self.parts.wpn_fps_ass_ar32_ammo_concussion then
+			self.parts.wpn_fps_ass_ar32_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_ass_ar32_optic.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0, -2, -0.8)
+				end
+			end
+
+			self.parts.wpn_fps_ass_ar32_optic.stats = {
+				value = 1,
+				zoom = 1,
+				base_zoom_off = 1
+			}
+			
+			self.parts.wpn_fps_ass_ar32_ammo_concussion.supported = true
+			self.parts.wpn_fps_ass_ar32_ammo_concussion.no_cull = true
+			self.parts.wpn_fps_ass_ar32_ammo_concussion.stats = { value = 0 }
+			self.parts.wpn_fps_ass_ar32_ammo_concussion.custom_stats = {
+				natascha = 3000
+			}
+		end
 		--Helldivers 2 AR-23 (v4)
 		if self.parts.wpn_fps_ass_ar23_body then
 			--AR-23 Optic
@@ -43653,7 +43676,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				info_burst_to_auto = true,
 				natascha = 2000,
 				falloff_start_mult = 0.5,
-				falloff_end_mult = 0.5
+				falloff_end_mult = 0.5,
+				damage_min_mult = 0.5
 			}
 			self.parts.wpn_fps_ass_ar23_ck_concussive.stance_mod = nil
 			self.parts.wpn_fps_ass_ar23_ck_concussive.override.wpn_fps_ass_ar23_optic_2.stance_mod = {}

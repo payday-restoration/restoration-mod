@@ -374,7 +374,9 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 
 		-- Difficulty to add to the current diff value
 		local difficulty_add = element and element:value("difficulty_add") or 0
+		difficulty_add = self:_mutate_diff_value(difficulty_add)
 		if difficulty_add > 0 then
+			self._loud_diff_set = true
 			self:set_difficulty(nil, difficulty_add)
 			restoration:log("PONR triggered difficulty increase of %s to %s", tostring(difficulty_add), tostring(self._difficulty_value))
 		end
@@ -383,12 +385,21 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 		-- Both exist so loud-from-start and hybrid stealth players can have
 		-- Differing but appropriate immediate difficulty spikes
 		local min_difficulty = element and element:value("min_difficulty") or self._bravos_forbidden and 0 or 1
+		min_difficulty = self:_mutate_diff_value(min_difficulty)
 		local min_difficulty_add = min_difficulty - self._difficulty_value
 		if min_difficulty_add > 0 then
+			self._loud_diff_set = true
 			self:set_difficulty(nil, min_difficulty_add)
 			restoration:log("PONR triggered minimum difficulty increase to %s", tostring(self._difficulty_value))
 		end
 	end
+end
+
+function GroupAIStateBase:_mutate_diff_value(value)
+	value = value or self._difficulty_value
+	value = managers.mutators:modify_value("GroupAIStateBase:CheckingDiff", value)
+	value = managers.modifiers:modify_value("GroupAIStateBase:CheckingDiff", value)
+	return value
 end
 
 function GroupAIStateBase:_update_point_of_no_return(t, dt)
@@ -1718,55 +1729,54 @@ if Network:is_server() then
 end
 
 --this function has been repurposed. instead of overriding any previous value, this ADDS diff
---this is set to 0.5 on loud, while other events increase it
---+0.05 on civilian kill (watch your fire!), +0.3 on assault end
+--this is set to 0.1 on loud, while other events increase it
+--+0.1 on civilian kill (watch your fire!), +0.3 on assault end
 --script value is used by the base game, we usually ignore it after the beginning of a level
 --thanks (again) to hoxi for helping out with this
 --perhaps modify these values at one point in crime spree? who knows
+local set_difficulty_original = GroupAIStateBase.set_difficulty
 function GroupAIStateBase:set_difficulty(script_value, manual_value)
 	if managers.skirmish:is_skirmish() then
 		self:set_skirmish_difficulty()
 		return
 	end
 
-    if self._difficulty_value == 1 then
-        return
-    end
+	--if diff is set to 0 in the middle of a mission, heists cannot start assaults. this ensures that we can set diff to default 0.1 again if a script sets it to 0
+	--i dont think any heists do this but there's no harm in having this check here
+	if script_value == 0 then
+		self._difficulty_value = 0
+		self._loud_diff_set = false
+		self:_calculate_difficulty_ratio()
+
+		return
+	end
+
+	if self._difficulty_value == 1 then
+		return
+	end
 
 	if script_value then
-		if script_value == 0 then
-			self._difficulty_value = 0
-			--if diff is set to 0 in the middle of a mission, heists cannot start assaults. this ensures that we can set diff to default 0.5 again if a script sets it to 0
-			--i dont think any heists do this but there's no harm in having this check here
-			self._loud_diff_set = false 
-            self:_calculate_difficulty_ratio()
-
-			return
-		elseif not self._loud_diff_set and script_value > 0  then
-			local starting_diff = 0.1
-			starting_diff = managers.modifiers:modify_value("GroupAIStateBase:CheckingDiff", starting_diff)
-			starting_diff = managers.mutators:modify_value("GroupAIStateBase:CheckingDiff", starting_diff)
+		if not self._loud_diff_set and script_value > 0 then
 			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.1
 			--only do this once (or when value is set to false as said below). otherwise we'll set diff to 1 super fast and that's mean
-			--should fix armored transport and its jank mission scripts	(ovk why)
+			--should fix armored transport and its jank mission scripts (ovk why)
 			--also, add 0.1 here instead of setting so you cant bypass civ penalty on some heists
-			self._difficulty_value = self._difficulty_value + starting_diff
+			self._difficulty_value = self._difficulty_value + self:_mutate_diff_value(0.1)
 			self:_calculate_difficulty_ratio()
 			--please kill me
 			self._loud_diff_set = true
 
 			return
-        end
-    end
+		end
+	end
 
-    if not manual_value then
-        return
-    end
+	if not manual_value then
+		return
+	end
 
 	--note that this ADDS, not replaces. only way to replace is with a script_value of 0
-    self._difficulty_value = math.min(self._difficulty_value + manual_value, 1)
-
-    self:_calculate_difficulty_ratio()
+	self._difficulty_value = math.min(self._difficulty_value + manual_value, 1)
+	self:_calculate_difficulty_ratio()
 end
 
 --Skirmish's custom diff scaling.

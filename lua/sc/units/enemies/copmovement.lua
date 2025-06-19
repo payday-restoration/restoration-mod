@@ -668,15 +668,15 @@ function CopMovement:anim_clbk_police_called(unit)
 
 			group_state:on_criminal_suspicion_progress(nil, self._unit, "called")
 
-			--Pager call done
-			--self._unit:unit_data().has_alarm_pager = false
-			--self._unit:unit_data().has_called_police = true
+			-- Pager call done
+			-- self._unit:unit_data().has_alarm_pager = false
+			-- self._unit:unit_data().has_called_police = true
 
-			--Instant failure on the relevant tutorial heists
-			if job == "short1_stage1" or job == "short1_stage2" then 
+			-- Instant failure on the relevant tutorial heists/No Mercy
+			if job == "short1_stage1" or job == "short1_stage2" or job == "nmh" or job == "nmh_res" then 
 				group_state:on_police_called(self:coolness_giveaway())
 			else
-				--If it's actually in stealth, have it make people uber suspicious! 
+				-- If it's actually in stealth, have it make people uber suspicious! 
 				if group_state:whisper_mode() and not vanilla_behaviour then
 					group_state._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 1
 					group_state._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
@@ -684,11 +684,11 @@ function CopMovement:anim_clbk_police_called(unit)
 					group_state._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 1
 					group_state:_delay_whisper_suspicion_mul_decay()		
 										
-					--Maybe one day
-					--self._unit:brain():terminate_all_suspicion()
-					--self:set_cool(true, nil, false)			
+					-- Maybe one day
+					-- self._unit:brain():terminate_all_suspicion()
+					-- self:set_cool(true, nil, false)			
 				else
-				--Otherwise, have it sound the alarm immediately. Mostly for maps that do the 'fake alarm trigger' that doesn't actually call the cops for whatever reason (or if mutator is enabled)
+				-- Otherwise, have it sound the alarm immediately. Mostly for maps that do the 'fake alarm trigger' that doesn't actually call the cops for whatever reason (or if mutator is enabled)
 					group_state:on_police_called(self:coolness_giveaway())
 				end
 			end

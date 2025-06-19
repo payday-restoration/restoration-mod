@@ -40591,7 +40591,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ TANGERINE'S MODS ]]
 
-		if self.parts then
+		if self.parts.wpn_fps_ass_s556_b_short then
 
 			self.parts.wpn_fps_ass_s556_b_short.supported = true
 			self.parts.wpn_fps_ass_s556_b_short.stats = deep_clone(barrels.short_b3_stats)
@@ -40997,6 +40997,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 					end
 
+					self.parts.wpn_fps_ass_ar47_body_ck.supported = true
+					self.parts.wpn_fps_ass_ar47_body_ck.custom_stats = nil
+					self.parts.wpn_fps_ass_ar47_body_ck.stats = {
+						value = 0
+					}
 					self.parts.wpn_fps_ass_ar47_body_ck_switch.supported = true
 					self.parts.wpn_fps_ass_ar47_body_ck_switch.no_cull = true
 				end

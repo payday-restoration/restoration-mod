@@ -5692,7 +5692,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.czech.has_description = true
 						self.czech.desc_id = "bm_czech_sc_desc"
 						self.czech.CLIP_AMMO_MAX = 18
-						self.czech.AMMO_MAX = 90
+						self.czech.AMMO_MAX = 180
 						self.czech.fire_mode_data.fire_rate = 0.06
 						self.czech.kick = self.stat_info.kick_tables.even_recoil
 						self.czech.kick_pattern = {
@@ -16754,17 +16754,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.gsh18 then
 				self.gsh18.recategorize = { "light_pis" }
 				self.gsh18.categories = {
-					"pistol",
-					"pistol_pdw"
+					"pistol"
 				}
 				self.gsh18.fire_mode_data.fire_rate =  0.1
-				self.gsh18.AMMO_MAX = 90
+				self.gsh18.AMMO_MAX = 75
 				self.gsh18.CLIP_AMMO_MAX = 18
-				self.gsh18.armor_piercing_chance = 0.75
-				self.gsh18.hs_mult = 1.2
+				self.gsh18.armor_piercing_chance = 0.5
 				self.gsh18.tactical_reload = 1
 				self.gsh18.has_description = true
-				self.gsh18.desc_id = "bm_sr1_sc_desc"
+				self.gsh18.desc_id = "bm_gsh18_sc_desc"
 				self.gsh18.lock_slide = true
 				self.gsh18.kick = self.stat_info.kick_tables.even_recoil
 				self.gsh18.kick_pattern = {
@@ -16778,10 +16776,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.gsh18.damage_falloff = {
 					start_dist = 1100,
 					end_dist = 3000,
-					min_mult = 0.3
+					min_mult = 0.25
 				}
 				self.gsh18.stats = {
-					damage = 20,
+					damage = 24,
 					spread = 58,
 					recoil = 83,
 					spread_moving = 9,
@@ -16801,8 +16799,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.x_gsh18.recategorize = {"light_pis"}
 					self.x_gsh18.categories = {
 						"akimbo",
-						"pistol",
-						"pistol_pdw"
+						"pistol"
 					}
 					self.x_gsh18.fire_mode_data.fire_rate =  0.1
 					self.x_gsh18.BURST_FIRE = {
@@ -16812,13 +16809,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						recoil_mult = 0.25,
 						last_recoil_mult = 1.05,
 					}
-					self.x_gsh18.AMMO_MAX = 180
+					self.x_gsh18.AMMO_MAX = 150
 					self.x_gsh18.CLIP_AMMO_MAX = 36
-					self.x_gsh18.armor_piercing_chance = 0.75
-					self.x_gsh18.hs_mult = 1.2
+					self.x_gsh18.armor_piercing_chance = 0.5
 					self.x_gsh18.tactical_reload = 2
 					self.x_gsh18.has_description = true
-					self.x_gsh18.desc_id = "bm_sr1_sc_desc"
+					self.x_gsh18.desc_id = "bm_gsh18_sc_desc"
 					self.x_gsh18.lock_slide = true
 					self.x_gsh18.kick = self.stat_info.kick_tables.even_recoil
 					self.x_gsh18.kick_pattern = {
@@ -16832,10 +16828,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.x_gsh18.damage_falloff = {
 						start_dist = 1100,
 						end_dist = 3000,
-						min_mult = 0.3
+						min_mult = 0.25
 					}
 					self.x_gsh18.stats = {
-						damage = 20,
+						damage = 24,
 						spread = 48,
 						recoil = 73,
 						spread_moving = 9,
@@ -17121,40 +17117,40 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.virtus then
 				self.virtus.nato = true
-				self.virtus.recategorize = { "light_ar" }
+				self.virtus.recategorize = { "heavy_ar" }
 				self.virtus.damage_type = "assault_rifle"
 				self.virtus.has_description = false
 				self.virtus.tactical_reload = 1
-				self.virtus.AMMO_MAX = 150
+				self.virtus.AMMO_MAX = 120
 				self.virtus.fire_mode_data.fire_rate = 0.075
-				self.virtus.kick = self.stat_info.kick_tables.moderate_kick
+				self.virtus.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.virtus.kick_pattern = {
-					{0, self.stat_info.kick_tables.moderate_kick},
-					{5, self.stat_info.kick_tables.pattern_r1},
-					{6, self.stat_info.kick_tables.moderate_left_kick},
-					{10, self.stat_info.kick_tables.right_kick},
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{3, self.stat_info.kick_tables.right_kick},
+					{4, self.stat_info.kick_tables.pattern_r1},
+					{6, self.stat_info.kick_tables.moderate_right_kick},
 					{12, self.stat_info.kick_tables.moderate_kick},
-					{19, self.stat_info.kick_tables.moderate_right_kick}
+					{17, self.stat_info.kick_tables.moderate_right_kick}
 				}
 				self.virtus.supported = true
-				self.virtus.ads_speed = 0.280
+				self.virtus.ads_speed = 0.320
 				self.virtus.damage_falloff = {
 					start_dist = 1800,
 					end_dist = 5500,
-					min_mult = 0.5
+					min_mult = 0.4
 				}
 				self.virtus.stats = {
-					damage = 24,
-					spread = 75,
-					recoil = 85,
+					damage = 30,
+					spread = 70,
+					recoil = 83,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 27,
+					concealment = 23,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
 					total_ammo_mod = 400,
-					value = 1,
+					value = 9,
 					reload = 20
 				}
 				self.virtus.stats_modifiers = nil
@@ -23799,7 +23795,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.lvoac then
-				self.lvoac.recategorize = { "heavy_ar" }
+				self.lvoac.recategorize = { "light_ar" }
 				self.lvoac.damage_type = "assault_rifle"
 				self.lvoac.tactical_reload = 1
 				self.lvoac.nato = true
@@ -23812,34 +23808,34 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lvoac.fire_mode_data.fire_rate = 0.075
 				self.lvoac.CAN_TOGGLE_FIREMODE = true
 				self.lvoac.kick = {}
-				self.lvoac.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.lvoac.kick = self.stat_info.kick_tables.moderate_kick
 				self.lvoac.kick_pattern = {
-					{0, self.stat_info.kick_tables.vertical_kick},
-					{3, self.stat_info.kick_tables.right_kick},
-					{4, self.stat_info.kick_tables.pattern_r1},
-					{6, self.stat_info.kick_tables.moderate_right_kick},
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{5, self.stat_info.kick_tables.pattern_r1},
+					{6, self.stat_info.kick_tables.moderate_left_kick},
+					{10, self.stat_info.kick_tables.right_kick},
 					{12, self.stat_info.kick_tables.moderate_kick},
-					{17, self.stat_info.kick_tables.moderate_right_kick}
+					{19, self.stat_info.kick_tables.moderate_right_kick}
 				}
 				self.lvoac.supported = true
-				self.lvoac.ads_speed = 0.320
+				self.lvoac.ads_speed = 0.280
 				self.lvoac.damage_falloff = {
 					start_dist = 1800,
 					end_dist = 5500,
-					min_mult = 0.4
+					min_mult = 0.5
 				}
 				self.lvoac.stats = {
-					damage = 30,
-					spread = 72,
-					recoil = 83,
+					damage = 24,
+					spread = 76,
+					recoil = 87,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 23,
+					concealment = 27,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
 					total_ammo_mod = 400,
-					value = 9,
+					value = 1,
 					reload = 20
 				}
 				self.lvoac.stats_modifiers = nil

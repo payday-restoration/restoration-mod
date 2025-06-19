@@ -43732,8 +43732,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_br14_optic.supported = true
 			self.parts.wpn_fps_ass_br14_optic.stats = {
 				value = 0,
-				zoom = 5,
-				base_zoom_off = 2
+				zoom = 10,
+				base_zoom_off = 1
 			}
 			self.parts.wpn_fps_ass_br14_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_ass_br14_optic.stance_mod) do

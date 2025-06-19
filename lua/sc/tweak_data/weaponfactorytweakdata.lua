@@ -40583,6 +40583,63 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ TANGERINE'S MODS ]]
 
+		if self.parts then
+
+			self.parts.wpn_fps_ass_s556_b_short.supported = true
+			self.parts.wpn_fps_ass_s556_b_short.stats = deep_clone(barrels.short_b3_stats)
+			self.parts.wpn_fps_ass_s556_b_short.custom_stats = deep_clone(barrels.short_b3_stats)
+
+			--STOCKS
+			self.parts.wpn_fps_ass_s556_s_solid.supported = true
+			self.parts.wpn_fps_ass_s556_s_solid.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+			self.parts.wpn_fps_ass_s556_s_solid.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+
+			self.parts.wpn_fps_ass_s556_s_folded.supported = true
+			self.parts.wpn_fps_ass_s556_s_folded.stats = deep_clone(stocks.fold_folder_stats)
+			self.parts.wpn_fps_ass_s556_s_folded.custom_stats = deep_clone(stocks.fold_folder_stats)
+			self.parts.wpn_fps_ass_s556_s_folded.supported = true
+
+			self.parts.wpn_fps_ass_s556_s_folded_green.stats = deep_clone(stocks.fold_folder_stats)
+			self.parts.wpn_fps_ass_s556_s_folded_green.stats.recoil = -6
+			self.parts.wpn_fps_ass_s556_s_folded_green.stats.spread = 1
+			self.parts.wpn_fps_ass_s556_s_folded_green.custom_stats = deep_clone(stocks.fold_folder_stats)
+
+			self.wpn_fps_ass_s556.override = self.wpn_fps_ass_s556.override or {}
+			self.wpn_fps_ass_s556.override.wpn_fps_upg_m4_s_standard = {
+				stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+				custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
+			}
+			self.wpn_fps_ass_s556.override.wpn_fps_upg_m4_s_pts = {
+				stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+				custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
+			}
+			self.wpn_fps_ass_s556.override.wpn_fps_sho_sko12_stock = {
+				stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+				custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
+			}
+			self.wpn_fps_ass_s556.override.wpn_fps_upg_m4_s_crane = {
+				stats = deep_clone(stocks.folder_to_adj_rec_stats),
+				custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+			}
+			self.wpn_fps_ass_s556.override.wpn_fps_upg_m4_s_mk46 = {
+				stats = deep_clone(stocks.folder_to_adj_rec_stats),
+				custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+			}
+			self.wpn_fps_ass_s556.override.wpn_fps_snp_victor_s_mod0 = {
+				stats = deep_clone(stocks.folder_to_adj_rec_stats),
+				custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+			}
+			self.wpn_fps_ass_s556.override.wpn_fps_upg_m4_s_ubr = {
+				stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+				custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
+			}
+			self.wpn_fps_ass_s556.override.wpn_fps_snp_tti_s_vltor = {
+				stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+				custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
+			}
+
+		end
+
 		if self.parts.wpn_fps_ass_dd5_fg_standard then --DDR5
 
 			self.parts.wpn_fps_ass_dd5_b_short.supported = true

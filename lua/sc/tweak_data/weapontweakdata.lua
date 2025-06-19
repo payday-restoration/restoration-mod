@@ -28459,6 +28459,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.s556.panic_suppression_chance = 0.05
 				self.s556.stats_modifiers = nil
+				self.s556.reload_speed_multiplier = 0.95
 				self.s556.timers = deep_clone(self.ak5.timers)
 			end
 

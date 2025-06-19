@@ -28418,6 +28418,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     TANGERINE'S MODS     ]]--
+			if self.s556 then
+				self.s556.recategorize = { "heavy_ar" }
+				self.s556.damage_type = "assault_rifle"
+				self.s556.lock_slide = true
+				self.s556.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.s556.AMMO_MAX = 120
+				self.s556.tactical_reload = 1
+				self.s556.CLIP_AMMO_MAX = 30
+				self.s556.fire_mode_data.fire_rate = 0.125
+				self.s556.FIRE_MODE = "single"
+				self.s556.CAN_TOGGLE_FIREMODE = false
+				self.s556.BURST_FIRE = {
+					count = 3,
+					delay = 0.18,
+					recoil_mult = 0.8,
+					last_recoil_mult = 1.05,
+					rof_mult = 1.9375,
+					burst_default = true
+				}
+				self.s556.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.s556.supported = true
+				self.s556.ads_speed = 0.280
+				self.s556.damage_falloff = {
+					start_dist = 2600,
+					end_dist = 6500,
+					min_mult = 0.4
+				}
+				self.s556.stats = {
+					damage = 30,
+					spread = 86,
+					recoil = 75,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 23,
+					suppression = 10,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.s556.panic_suppression_chance = 0.05
+				self.s556.stats_modifiers = nil
+				self.s556.timers = deep_clone(self.ak5.timers)
+			end
+
 			if self.ar47 then --Tangerine's AR-47
 				self.ar47.recategorize = { "heavy_ar" }
 				self.ar47.damage_type = "assault_rifle"
@@ -29840,6 +29886,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r2.AMMO_MAX = self.r2.CLIP_AMMO_MAX * 9
 				self.r2.ammo_ratio = 2
 				self.r2.fire_mode_data.fire_rate = 0.125
+				self.r2.fire_mode_data.toggable = nil
 				self.r2.sms = 0.5
 				self.r2.tactical_reload = 1
 				self.r2.keep_ammo = 0
@@ -29876,6 +29923,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r2.panic_suppression_chance = 0.05
 				self.r2.sounds.use_fix = nil
 				self.r2.armor_piercing_chance = nil
+				self.r2.timers.reload_empty = 2.8
+				self.r2.timers.reload_exit_empty = 0.92
+				self.r2.timers.reload_not_empty = 1.93
+				self.r2.timers.reload_exit_not_empty = 0.85
 			end
 
 			if self.br14 then

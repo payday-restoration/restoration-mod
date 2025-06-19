@@ -10138,9 +10138,24 @@ end)
 						stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
 						custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 					}
+					self.wpn_fps_ass_s552.override.wpn_fps_upg_i_krieg = {
+						custom_stats = {
+							falloff_start_mult = 0.846153,
+							falloff_end_mult = 0.85714,
+							block_burst = true,
+							rof_mult = 1.03857,
+							info_burst_to_auto = true
+						},
+						stats = {
+							value = 8,
+							spread = -2,
+						}
+					}
+			
 
 					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_northtac")
 					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_i_krieg")
 
 					self.wpn_fps_ass_s552_npc.uses_parts = deep_clone(self.wpn_fps_ass_s552.uses_parts)
 
@@ -24183,6 +24198,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		dlc = "sc"
 	}
 
+	self.parts.wpn_fps_upg_i_krieg = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_krieg",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/dlcs/infamous/textures/pd2/blackmarket/icons/masks/balaclava",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = { value = 8 },
+		custom_stats = {},
+		internal_part = true,
+		dlc = "sc"
+	}
 
 	self.parts.wpn_fps_upg_i_csglock = {
 		pcs = {},
@@ -24202,7 +24233,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			rof_mult = 0.5882352,
 			ignore_rof_mult_anims = true
 		},
-		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		alt_icon = "guis/dlcs/infamous/textures/pd2/blackmarket/icons/masks/balaclava",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
@@ -40664,6 +40695,29 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					}
 				}
 			}
+
+			self.wpn_fps_ass_s556.override.wpn_fps_upg_i_krieg = {
+				custom_stats = {
+					falloff_start_mult = 0.92307,
+					falloff_end_mult = 0.92307,
+					can_toggle_firemode = true,
+					orig_toggle_firemode = false,
+					default_firemode = "auto",
+					orig_firemode = "single",
+					block_burst = true,
+					rof_mult = 1.135416,
+					info_burst_to_auto = true
+				},
+				stats = {
+					value = 8,
+					spread = -2
+				}
+			}
+
+			table.insert(self.wpn_fps_ass_s556.uses_parts, "wpn_fps_upg_i_krieg")
+
+			self.wpn_fps_ass_s556_npc.uses_parts = deep_clone(self.wpn_fps_ass_s556.uses_parts)
+
 		end
 
 		if self.parts.wpn_fps_ass_dd5_fg_standard then --DDR5

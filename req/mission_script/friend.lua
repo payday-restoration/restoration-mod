@@ -45,6 +45,18 @@ return {
 	[101101] = {
 		difficulty = 0.1
 	},
+	-- Delay assault
+	[102106] = {
+		on_executed = {
+			{ id = 100102, delay = 90 },
+		},
+	},
+	-- Early Sosa Cartel assault wave (on alarm)
+	[100022] = {
+		on_executed = {
+			{id = 400004, delay = 15, delay_rand = 5 },
+		},
+	},
 	-- Boss dead, safe objective
 	[101169] = {
 		difficulty = 1,

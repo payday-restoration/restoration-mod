@@ -28421,6 +28421,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.s556 then
 				self.s556.recategorize = { "heavy_ar" }
 				self.s556.damage_type = "assault_rifle"
+				self.s556.nato = true
 				self.s556.AMMO_MAX = 120
 				self.s556.tactical_reload = 1
 				self.s556.CLIP_AMMO_MAX = 30
@@ -28436,6 +28437,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					burst_default = true
 				}
 				self.s556.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.s556.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{3, self.stat_info.kick_tables.even_recoil},
+					{9, self.stat_info.kick_tables.moderate_right_kick},
+					{15, self.stat_info.kick_tables.moderate_left_kick},
+					{24, self.stat_info.kick_tables.vertical_kick},
+					{27, self.stat_info.kick_tables.left_recoil},
+				}
 				self.s556.supported = true
 				self.s556.ads_speed = 0.280
 				self.s556.damage_falloff = {
@@ -28476,6 +28485,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar47.CAN_TOGGLE_FIREMODE = true
 				self.ar47.BURST_FIRE = false
 				self.ar47.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.ar47.kick_pattern = {
+					{0, self.stat_info.kick_tables.left_recoil},
+					{6, self.stat_info.kick_tables.moderate_kick},
+					{14, self.stat_info.kick_tables.moderate_left_kick},
+					{20, self.stat_info.kick_tables.moderate_kick},
+					{24, self.stat_info.kick_tables.moderate_right_kick}
+				}
 				self.ar47.supported = true
 				self.ar47.ads_speed = 0.300
 				self.ar47.damage_falloff = {
@@ -33695,7 +33711,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.force_shake = true
 			end
 
-			if table.contains(weap.categories, "dmr_l") or table.contains(weap.categories, "dmr_h") then
+			if table.contains(weap.categories, "dmr_l") or table.contains(weap.categories, "dmr_h") and weap.CAN_TOGGLE_FIREMODE then
 				weap.SINGLE_FIRE_AP_ADD = 0.25
 			end
 

@@ -852,7 +852,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.smg.hip_fire_spread_multiplier = {0.8, 0.5}
 				--Ace
-					self.values.smg.reload_speed_multiplier = {1.20}
+					self.values.smg.reload_speed_multiplier = {1.15}
 					
 					self.skill_descs.rifleman = {
 						skill_value_b1 = tostring((1 - self.values.smg.hip_fire_spread_multiplier[1]) % 1 * 100).."%", -- Hipfire +accuracy
@@ -873,7 +873,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Specialist
 				--Basic
-					self.values.smg.move_spread_multiplier = {0.4}
+					self.values.smg.move_spread_multiplier = {0.6}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
 					self.values.smg.full_auto_free_ammo = {4}

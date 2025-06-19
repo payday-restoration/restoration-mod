@@ -40999,6 +40999,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 					end
 
+					self.parts.wpn_fps_ass_ar47_body_ck.supported = true
+					self.parts.wpn_fps_ass_ar47_body_ck.custom_stats = nil
+					self.parts.wpn_fps_ass_ar47_body_ck.stats = {
+						value = 0
+					}
 					self.parts.wpn_fps_ass_ar47_body_ck_switch.supported = true
 					self.parts.wpn_fps_ass_ar47_body_ck_switch.no_cull = true
 				end

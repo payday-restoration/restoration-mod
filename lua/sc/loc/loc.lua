@@ -3027,7 +3027,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_chf_50_desc"] = "#{skill_color}#Headshots ignore damage falloff.##",
 					["bm_w_rmary2_desc"] = "Proof of concept prototype designed by a Royal Military College Duntroon cadet.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies.##",
 					--Madsen LAR
-					["bm_w_madsen_lar"] = "Post WW2 Danish battle rifle chambered in 7.62x51mm to seek a market in NATO militaries.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+					["bm_w_madsen_lar_desc"] = "Post WW2 Danish battle rifle chambered in 7.62x51mm to seek a market in NATO militaries.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 
 			--[[ SNIPERS ]]
 				--MSR

@@ -28421,8 +28421,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.s556 then
 				self.s556.recategorize = { "heavy_ar" }
 				self.s556.damage_type = "assault_rifle"
-				self.s556.lock_slide = true
-				self.s556.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.s556.AMMO_MAX = 120
 				self.s556.tactical_reload = 1
 				self.s556.CLIP_AMMO_MAX = 30

@@ -43515,6 +43515,18 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				zoom = 30,
 				base_zoom_off = 1
 			}
+
+			self.parts.wpn_fps_ass_r2_bayonet.stats = {
+				value = 5,
+				max_damage = 6,
+				min_damage = 6,
+				max_damage_effect = 1,
+				min_damage_effect = 1,
+				bayonet_range = 50
+			}
+			self.parts.wpn_fps_ass_r2_bayonet.custom_stats = {
+				melee_speed_mult = 0.8
+			}
 		end
 
 		--Helldivers 2 AR-23 (v4)

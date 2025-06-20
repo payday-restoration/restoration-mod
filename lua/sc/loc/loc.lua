@@ -5745,7 +5745,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Kilmer--
 				["menu_heavy_impact_beta_sc"] = "Kilmer",
-				["menu_heavy_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#rifles.##\n\nThe movement penalty to accuracy is influenced by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## reload #{skill_color}#$skill_value_p1## faster.\n\n#{skill_color}#Rifles## will deal at least #{skill_color}#$skill_value_p2## of their damage through armor.\n\n#{risk}#NOTE: This does not stack with any armor piercing capabilites your## #{skill_color}#rifle(s)## #{risk}#may already have.##",
+				["menu_heavy_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## reload #{skill_color}#$skill_value_b2## faster.\n\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#rifles.##\n\nThe movement penalty to accuracy is influenced by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## reload an additonal #{skill_color}#$skill_value_p1## faster.\n\n#{skill_color}#Rifles## will deal at least #{skill_color}#$skill_value_p2## of their damage through armor.\n\n#{risk}#NOTE: This does not stack with any armor piercing capabilites your## #{skill_color}#rifle(s)## #{risk}#may already have.##",
 
 				--Ammo Efficiency--
 				["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",

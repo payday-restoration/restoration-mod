@@ -27479,6 +27479,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.bromeo805.stats_modifiers = nil
 				self.bromeo805.panic_suppression_chance = 0.05
+				self.bromeo805.nato = true
+				self.bromeo805.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.bromeo805.lock_slide = true
+				self.bromeo805.animations.magazine_empty = nil
+				self.bromeo805.reload_speed_multiplier = 0.85
+				self.bromeo805.reload_not_empty_speed_multiplier = 1.1
+				self.bromeo805.timers.reload_not_empty = 1.18
+				self.bromeo805.timers.reload_exit_not_empty = 0.45
+				self.bromeo805.timers.reload_empty = 1.52
+				self.bromeo805.timers.reload_exit_empty = 0.55
 			end
 			if self.bromeo2m then --MTZ-762 JAK
 				self.bromeo2m.categories = {
@@ -27526,6 +27536,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.bromeo2m.stats_modifiers = nil
 				self.bromeo2m.panic_suppression_chance = 0.05
+				self.bromeo2m.warsaw = true
+				self.bromeo2m.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.bromeo2m.lock_slide = true
+				self.bromeo2m.animations.magazine_empty = nil
+				self.bromeo2m.reload_speed_multiplier = 0.75
+				self.bromeo2m.reload_not_empty_speed_multiplier = 1.15
+				self.bromeo2m.timers.reload_not_empty = 1.18
+				self.bromeo2m.timers.reload_exit_not_empty = 0.45
+				self.bromeo2m.timers.reload_empty = 1.42
+				self.bromeo2m.timers.reload_exit_empty = 0.44
 			end
 			if self.bromeo2 then --MTZ-762
 				self.bromeo2.categories = {
@@ -27571,6 +27591,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.bromeo2.stats_modifiers = nil
 				self.bromeo2.panic_suppression_chance = 0.05
+				self.bromeo2.nato = true
+				self.bromeo2.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.bromeo2.lock_slide = true
+				self.bromeo2.animations.magazine_empty = nil
+				self.bromeo2.reload_speed_multiplier = 0.75
+				self.bromeo2.reload_not_empty_speed_multiplier = 1.15
+				self.bromeo2.timers.reload_not_empty = 1.18
+				self.bromeo2.timers.reload_exit_not_empty = 0.45
+				self.bromeo2.timers.reload_empty = 1.42
+				self.bromeo2.timers.reload_exit_empty = 0.44
 			end
 			if self.bromeop then --MTZ Interceptor
 				self.bromeop.categories = {
@@ -27616,6 +27646,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.bromeop.stats_modifiers = nil
 				self.bromeop.panic_suppression_chance = 0.05
+				self.bromeop.nato = true
+				self.bromeop.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.bromeop.lock_slide = true
+				self.bromeop.animations.magazine_empty = nil
+				self.bromeop.reload_speed_multiplier = 0.75
+				self.bromeop.reload_not_empty_speed_multiplier = 1.15
+				self.bromeop.timers.reload_not_empty = 1.18
+				self.bromeop.timers.reload_exit_not_empty = 0.45
+				self.bromeop.timers.reload_empty = 1.42
+				self.bromeop.timers.reload_exit_empty = 0.44
 			end
 
 

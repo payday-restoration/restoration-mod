@@ -1,3 +1,4 @@
+local TRAIL_EFFECT_AUTO = Idstring("effects/particles/weapons/vapor_trail_sc")
 local TRAIL_EFFECT = Idstring("effects/particles/weapons/sniper_trail")
 local idstr_trail = Idstring("trail")
 local idstr_simulator_length = Idstring("simulator_length")
@@ -54,11 +55,11 @@ function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
 			damage_range_mult = damage_range_mult + upgrade_value.damage_factor_range
 			end
 		end
-		self:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_range_mult)
+		self:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_range_mult, is_semi_or_burst)
 	end
 end
 
-function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_mult)
+function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_mult, is_semi_or_burst)
 	local t = Application:time()
 	if managers.player then
 		managers.player._last_graze_t = t
@@ -96,12 +97,12 @@ function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value,
 		mvector3.set(hit_pos, closest:movement():m_head_pos())
 
 		if not trail_length then
-		trail_length = World:effect_manager():get_initial_simulator_var_vector2(TRAIL_EFFECT, idstr_trail, idstr_simulator_length, idstr_size)
+			trail_length = World:effect_manager():get_initial_simulator_var_vector2(Idstring("effects/particles/weapons/sniper_trail"), idstr_trail, idstr_simulator_length, idstr_size)
 		end
 		local trail = World:effect_manager():spawn({
-		effect = Idstring("effects/particles/weapons/sniper_trail"),
-		position = hit.position,
-		normal = hit_pos - hit.position
+			effect = is_semi_or_burst == false and TRAIL_EFFECT_AUTO or TRAIL_EFFECT,
+			position = hit.position,
+			normal = hit_pos - hit.position
 		})
 		mvector3.set_y(trail_length, math.sqrt(closest_d_sq))
 		World:effect_manager():set_simulator_var_vector2(trail, idstr_trail, idstr_simulator_length, idstr_size, trail_length)

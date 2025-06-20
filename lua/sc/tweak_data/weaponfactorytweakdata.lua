@@ -19484,8 +19484,8 @@ end)
 						translation = Vector3(-0.02, 4.3, -3.48)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar32 = {
-						translation = Vector3(1.825, -8.5, -4.63),
-						rotation = Rotation(-0.02, -0.02, 0)
+						translation = Vector3(0.01, -8.5, -1.96),
+						rotation = Rotation(-0.04, 0.02, 0)
 					}
 
 
@@ -43592,11 +43592,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
-		if self.parts.wpn_fps_ass_ar32_ammo_concussion then
+		if self.parts.wpn_fps_ass_ar32_ammo_concussion then --AR-32 (v2)
 			self.parts.wpn_fps_ass_ar32_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_ass_ar32_optic.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0, -2, -0.8)
+					weap.translation = weap.translation + Vector3(-0.09, -2, -0.8)
 				end
 			end
 

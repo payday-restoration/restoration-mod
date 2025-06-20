@@ -21,8 +21,6 @@
 			<var name="_collision_sfx_quite_time" value="0.1"/>
 		</extension>
 	</extensions>
-
-	<network sync="spawn" remote_unit="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx_dummy"/>
 	
 	<sounds>
 		<default_soundsource source="rp_ene_acc_shield_phalanx"/>

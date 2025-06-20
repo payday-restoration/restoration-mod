@@ -1,5 +1,4 @@
 <unit type="items" slot="8" >
-	<network sync="spawn" remote_unit="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc_dummy"/>
     <object file="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" />
 	
 	<dependencies>

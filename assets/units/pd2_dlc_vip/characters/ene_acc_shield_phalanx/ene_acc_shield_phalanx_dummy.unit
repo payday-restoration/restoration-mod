@@ -1,4 +1,5 @@
 <unit type="items" slot="8" >
+	<network sync="husk" remote_unit=""/>
     <object file="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx" />
     <extensions>
 		<extension name="unit_data" class="ScriptUnitData"/>

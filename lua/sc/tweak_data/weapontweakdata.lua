@@ -29796,6 +29796,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.AMMO_MAX = self.ar23.CLIP_AMMO_MAX * 9
 				self.ar23.ammo_ratio = 2
 				self.ar23.fire_mode_data.fire_rate = 0.09375
+				self.ar23.fire_mode_data.toggable = nil
 				self.ar23.sms = 0.5
 				self.ar23.tactical_reload = 1
 				self.ar23.keep_ammo = 0

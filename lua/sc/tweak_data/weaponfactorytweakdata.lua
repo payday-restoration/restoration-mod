@@ -19432,7 +19432,9 @@ end)
 					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar23 = {
-						translation = Vector3(0.015, -3, -3.655)
+						--translation = Vector3(0.015, -3, -3.655)
+						translation = Vector3(-0.042, -6.7, -3.59),
+						rotation = Rotation(-0.054, -0.036, 0.02)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar18 = {
 						translation = Vector3(0.012, 5, -3.525)
@@ -43610,14 +43612,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar32_ammo_concussion.custom_stats = {
 				natascha = 3000
 			}
+
+			for i, part_id in pairs(self.wpn_fps_ass_ar32.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type then
+					if self.parts[part_id].pcs then
+						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "forceoflaw_mod") or not self.parts[part_id].global_value) and
+							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom" or self.parts[part_id].type == "second_sight") then
+							self.wpn_fps_ass_ar32.uses_parts[i] = "resmod_dummy"
+						end
+					end
+				end
+			end
+			self.wpn_fps_ass_ar32_npc.uses_parts = deep_clone(self.wpn_fps_ass_ar32.uses_parts)
 		end
-		--Helldivers 2 AR-23 (v4)
+
+		--Helldivers 2 AR-23 (v5)
 		if self.parts.wpn_fps_ass_ar23_body then
 			--AR-23 Optic
 			self.parts.wpn_fps_ass_ar23_optic_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_ass_ar23_optic_2.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0, -5, 0.95)
+					weap.translation = weap.translation + Vector3(0.015, 0, 0.965)
 				end
 			end
 
@@ -43631,7 +43646,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_optic_3.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_ass_ar23_optic_3.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0.04, -18, 1.45)
+					weap.translation = weap.translation + Vector3(0.04, -5, 1.45)
 				end
 			end
 			self.parts.wpn_fps_ass_ar23_optic_3.stats = {
@@ -43645,7 +43660,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_o_carbine.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_ass_ar23_o_carbine.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(-0.01, -24, 0.75)
+					weap.translation = weap.translation + Vector3(0, -1, 0.75)
 				end
 			end
 			self.parts.wpn_fps_ass_ar23_o_carbine.stats = {
@@ -43699,7 +43714,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.stats = {
 				value = 10,
 				recoil = -4,
-				total_ammo_mod = -47,
+				--total_ammo_mod = -47,
 				zoom = 20,
 				concealment = -3
 			}
@@ -43707,7 +43722,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				alt_desc = "bm_wp_ck_penetrator_desc",
 				hs_mult = 2,
 				hs_mult_desc = true,
-				armor_piercing_override = 1,
+				armor_piercing_override = 05,
 				falloff_start_mult = 0.70,
 				falloff_end_mult = 0.70
 			}
@@ -43721,7 +43736,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_concussive.keep_damage = true
 			self.parts.wpn_fps_ass_ar23_ck_concussive.stats = {
 				value = 10,
-				extra_ammo = 15,
+				extra_ammo = 0,
 				total_ammo_mod = 12,
 				recoil = -14,
 				zoom = -5,
@@ -43729,7 +43744,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_ass_ar23_ck_concussive.custom_stats = {
 				alt_desc = "bm_wp_ck_concussive_desc",
-				rof_mult = 0.5,
+				rof_mult = 0.625,
 				ignore_rof_mult_anims = true,
 				block_burst = true,
 				info_burst_to_auto = true,
@@ -43752,16 +43767,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_3_ck = { custom_stats = {} }
 			self.wpn_fps_ass_ar23.override.wpn_fps_upg_ar23_o_promo = { custom_stats = {} }
 
+
 			for i, part_id in pairs(self.wpn_fps_ass_ar23.uses_parts) do
 				if self.parts[part_id] and self.parts[part_id].type then
 					if self.parts[part_id].pcs then
-						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and
+						if ((self.parts[part_id].global_value and (self.parts[part_id].global_value ~= "helldivers2_mod"
+							and self.parts[part_id].global_value ~= "helldivers2sv_mod"
+							and self.parts[part_id].global_value ~= "helldivers2vc_mod")
+							) or not self.parts[part_id].global_value) and
 							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom" or self.parts[part_id].type == "second_sight") then
 							self.wpn_fps_ass_ar23.uses_parts[i] = "resmod_dummy"
 						end
 					end
 				end
 			end
+			table.insert(self.wpn_fps_ass_ar23.uses_parts, "wpn_fps_upg_o_specter")
+			table.insert(self.wpn_fps_ass_ar23.uses_parts, "wpn_fps_upg_o_eotech")
 			self.wpn_fps_ass_ar23_npc.uses_parts = deep_clone(self.wpn_fps_ass_ar23.uses_parts)
 		end
 

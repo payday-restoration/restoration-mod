@@ -4,12 +4,13 @@ local idstr_simulator_length = Idstring("simulator_length")
 local idstr_size = Idstring("size")
 local trail_length
 
-
 function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
-	--local t = Application:time()
-	if not alive(weapon_unit) or weapon_unit:base():fire_mode() ~= "single" or not weapon_unit:base():is_category("assault_rifle", "snp") or weapon_unit ~= managers.player:equipped_weapon_unit() or not result.hit_enemy --[[or (((managers.player._last_graze_t or 0) + tweak_data.upgrades.headshot_graze_proc_cd ) > t)]] then
+	local t = Application:time()
+	if not alive(weapon_unit) --[[or weapon_unit:base():fire_mode() ~= "single"]] or not weapon_unit:base():is_category("assault_rifle", "snp") or weapon_unit ~= managers.player:equipped_weapon_unit() or not result.hit_enemy or (((managers.player._last_graze_t or 0) + tweak_data.upgrades.headshot_graze_proc_cd ) > t) then
 		return
 	end
+
+	local is_semi_or_burst = weapon_unit:base():fire_mode() == "single"
 
 	local player_unit = managers.player:player_unit()
 	if not player_unit then
@@ -46,7 +47,8 @@ function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
 		local distance_sq = mvector3.distance_sq(hit.position, player_unit:movement():m_head_pos())
 		local times = 1
 		local damage_range_mult = upgrade_value.damage_factor
-		for i=1, upgrade_value.max_chain do
+		local max_chain = (is_semi_or_burst and upgrade_value.max_chain) or 0
+		for i=1, max_chain do
 			if distance_sq > i * i * upgrade_value.range_increment * upgrade_value.range_increment then
 			times = times + 1
 			damage_range_mult = damage_range_mult + upgrade_value.damage_factor_range
@@ -57,8 +59,11 @@ function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
 end
 
 function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_mult)
-	--local t = Application:time()
-	--managers.player._last_graze_t = t
+	local t = Application:time()
+	if managers.player then
+		managers.player._last_graze_t = t
+	end
+	
 	if times <= 0 then
 		return
 	end

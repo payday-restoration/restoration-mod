@@ -5588,7 +5588,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--MG Specialist
 				["menu_sharpshooter_sc"] = "MG Specialist",
-				["menu_sharpshooter_desc_sc"] = "BASIC: #{owned}#$basic##\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#machine guns.##\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## fire #{skill_color}#$skill_value_p1## faster.\n\nEvery #{skill_color}#5th## bullet fired by a #{skill_color}#machine gun## without releasing the trigger consumes no ammo.",
+				["menu_sharpshooter_desc_sc"] = "BASIC: #{owned}#$basic##\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#machine guns.##\n\nThe movement penalty to accuracy is influenced by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## fire #{skill_color}#$skill_value_p1## faster.\n\nEvery #{skill_color}#5th## bullet fired by a #{skill_color}#machine gun## without releasing the trigger consumes no ammo.",
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
@@ -5741,11 +5741,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Rifleman--
 				["menu_rifleman_sc"] = "Rifleman",
-				["menu_rifleman_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## more accuracy and range while aiming down sights.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## gain an additional #{skill_color}#$skill_value_p1## more accuracy and range while aiming down sights.\n\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#rifles## are #{skill_color}#$skill_value_p2## faster.",
+				["menu_rifleman_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## more accuracy and range while aiming down sights.\n\n#{skill_color}#Rifles## gain an additonal #{skill_color}#$skill_value_b2## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## gain an additional #{skill_color}#$skill_value_p1## more accuracy and range while aiming down sights.\n\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#rifles## are #{skill_color}#$skill_value_p2## faster.",
 
 				--Kilmer--
 				["menu_heavy_impact_beta_sc"] = "Kilmer",
-				["menu_heavy_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#rifles.##\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## reload #{skill_color}#$skill_value_p1## faster.\n\n#{skill_color}#Rifles## will deal at least #{skill_color}#$skill_value_p2## of their damage through armor.\n\n#{risk}#NOTE: This does not stack with any armor piercing capabilites your## #{skill_color}#rifle(s)## #{risk}#may already have.##",
+				["menu_heavy_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#rifles.##\n\nThe movement penalty to accuracy is influenced by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## reload #{skill_color}#$skill_value_p1## faster.\n\n#{skill_color}#Rifles## will deal at least #{skill_color}#$skill_value_p2## of their damage through armor.\n\n#{risk}#NOTE: This does not stack with any armor piercing capabilites your## #{skill_color}#rifle(s)## #{risk}#may already have.##",
 
 				--Ammo Efficiency--
 				["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
@@ -5757,7 +5757,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Mind Blown",
-				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## can chain to deal #{skill_color}#$skill_value_b1## of the damage dealt to the closest enemy in a #{skill_color}#$skill_value_b2## meter radius; has a cooldown of #{important_1}#$skill_value_b5## seconds.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#$skill_value_b4## times.\n\nACE: #{owned}#$pro##\nHeadshots with #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## have #{skill_color}#no damage falloff.##\n\nThe radius of the chaining effect is increased by #{skill_color}#$skill_value_p1## meter.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#$skill_value_p2## damage; up to a total of #{skill_color}#$skill_value_p3## of the damage dealt.\n ",
+				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## can chain to deal #{skill_color}#$skill_value_b1## of the damage dealt to the closest enemy in a #{skill_color}#$skill_value_b2## meter radius; has a cooldown of #{important_1}#$skill_value_b5## seconds.\n\nWith your #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst,## for every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#$skill_value_b4## times.\n\nACE: #{owned}#$pro##\nThe radius of the chaining effect is increased by #{skill_color}#$skill_value_p1## meter.\n\nWith your #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst,## headshots have #{skill_color}#no damage falloff## and for every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#$skill_value_p2## damage; up to #{skill_color}#$skill_value_p3##.\n ",
 
 		--[[   GHOST   ]]--
 
@@ -5849,7 +5849,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Over Pressurized/Gunfighter--
 				["menu_gun_fighter_sc"] = "Gunfighter",
-				["menu_gun_fighter_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Pistols## reload #{skill_color}#$skill_value_b1## faster.\n\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b2## for #{skill_color}#pistols.##\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Pistols## reload an additional #{skill_color}#$skill_value_p1## faster.",
+				["menu_gun_fighter_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Pistols## reload #{skill_color}#$skill_value_b1## faster.\n\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b2## for #{skill_color}#pistols.##\n\nThe movement penalty to accuracy is influenced by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Pistols## reload an additional #{skill_color}#$skill_value_p1## faster.",
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "Akimbo",

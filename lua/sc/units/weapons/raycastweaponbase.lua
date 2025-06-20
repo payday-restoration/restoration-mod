@@ -1184,6 +1184,22 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 
 			result = self:give_impact_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing, false, knock_down, stagger, variant)
 
+			--[[
+			if (weap_base._natascha and col_ray.distance and col_ray.distance <= weap_base._natascha) and 
+				result and result.attack_data and result.attack_data.damage and result.attack_data.damage > 0 then
+				hit_dmg_ext:stun_hit({
+					variant = "stun",
+					damage = 0,
+					attacker_unit = user_unit,
+					weapon_unit = weapon_unit,
+					col_ray = col_ray or {
+						position = hit_unit:position(),
+						ray = Vector3(0, 0, 1)
+					}
+				})
+			end
+			--]]
+			
 			if result ~= "friendly_fire" then
 				local has_died = hit_dmg_ext:dead()
 				do_push = true

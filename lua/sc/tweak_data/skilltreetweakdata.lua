@@ -1140,7 +1140,9 @@ function SkillTreeTweakData:init(tweak_data)
 							"assault_rifle_steelsight_accuracy_inc_1",
 							"snp_steelsight_accuracy_inc_1",
 							"assault_rifle_steelsight_range_inc_1",
-							"snp_steelsight_range_inc_1"
+							"snp_steelsight_range_inc_1",
+							"assault_rifle_recoil_index_addend_2",
+							"snp_recoil_index_addend_2"
 						},
 						cost = self.costs.hightier
 					},

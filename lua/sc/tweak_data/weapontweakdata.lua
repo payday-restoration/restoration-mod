@@ -10011,14 +10011,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m249.fire_mode_data.fire_rate = 0.0731707
 					self.m249.kick = self.stat_info.kick_tables.random_left_recoil
 					self.m249.kick_pattern = {
-						{0, self.stat_info.kick_tables.random_left_recoil},
-						{13, self.stat_info.kick_tables.horizontal_recoil},
-						{21, self.stat_info.kick_tables.left_recoil},
-						{25, self.stat_info.kick_tables.even_recoil},
-						{28, self.stat_info.kick_tables.moderate_right_kick},
-						{29, self.stat_info.kick_tables.right_recoil},
-						{34, self.stat_info.kick_tables.horizontal_right_recoil},
-						{48, self.stat_info.kick_tables.horizontal_left_recoil}
+						{0, tww.stat_info.kick_tables.random_left_recoil},
+						{8, tww.stat_info.kick_tables.random_right_recoil},
+						{13, tww.stat_info.kick_tables.left_recoil},
+						{21, tww.stat_info.kick_tables.horizontal_recoil},
+						{25, tww.stat_info.kick_tables.right_recoil},
+						{28, tww.stat_info.kick_tables.moderate_right_kick},
+						{29, tww.stat_info.kick_tables.even_recoil},
+						{34, tww.stat_info.kick_tables.horizontal_right_recoil},
+						{48, tww.stat_info.kick_tables.left_recoil}
 					}
 					self.m249.always_use_standing = true
 					self.m249.muzzleflash = "_dmc/effects/heavy_muzzle"
@@ -10033,7 +10034,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m249.stats = {
 						damage = 24,
 						spread = 56,
-						recoil = 79,
+						recoil = 77,
 						spread_moving = 5,
 						zoom = 1,
 						concealment = 18,
@@ -10092,7 +10093,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.kacchainsaw.stats = {
 						damage = 24,
 						spread = 51,
-						recoil = 79,
+						recoil = 73,
 						spread_moving = 5,
 						zoom = 1,
 						concealment = 21,
@@ -10182,8 +10183,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.rpk.kick_pattern = {
 						{0, self.stat_info.kick_tables.right_kick},
 						{3, self.stat_info.kick_tables.random_recoil},
-						{11, self.stat_info.kick_tables.right_kick},
-						{17, self.stat_info.kick_tables.random_recoil},
+						{11, self.stat_info.kick_tables.left_recoil},
+						{17, self.stat_info.kick_tables.horizontal_recoil},
 						{28, self.stat_info.kick_tables.right_recoil}
 					}
 					self.rpk.always_use_standing = true
@@ -27453,6 +27454,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeo805.kick_pattern = {
 					{0, self.stat_info.kick_tables.moderate_kick},
 					{2, self.stat_info.kick_tables.left_recoil},
+					{5, self.stat_info.kick_tables.moderate_left_kick},
 					{9, self.stat_info.kick_tables.even_recoil},
 					{12, self.stat_info.kick_tables.right_recoil},
 					{16, self.stat_info.kick_tables.moderate_right_kick}
@@ -27470,7 +27472,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 77,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 22,
+					concealment = 23,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -27613,7 +27615,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.bromeop.recategorize = { "light_snp" }
 				self.bromeop.has_description = true
-				self.bromeop.damage_type = "assault_rifle"
+				self.bromeop.damage_type = "sniper"
 				self.bromeop.tactical_reload = 1
 				self.bromeop.CLIP_AMMO_MAX = 10
 				self.bromeop.AMMO_MAX = 60

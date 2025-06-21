@@ -22698,6 +22698,9 @@ end)
 				value = 8,
 				zoom = 30
 			}
+			self.parts.wpn_fps_upg_o_northtac.custom_stats = {
+				big_scope = true
+			}
 			self.parts.wpn_fps_upg_o_northtac.adds = {
 				"wpn_fps_upg_o_northtac_reddot", --reddot is now the 2x stand-in
 				"wpn_fps_upg_o_northtac_alt" --This is the reddot; only doing this as "wpn_fps_upg_o_northtac_reddot" is always chosen as the 1st sight to get switched to, dunno what determines order

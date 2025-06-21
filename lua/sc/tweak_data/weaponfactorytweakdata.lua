@@ -29685,7 +29685,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						stats = deep_clone(stocks.adj_acc_stats),
 						custom_stats = deep_clone(stocks.adj_acc_stats)
 					}
-
 				--BARRELS
 					self.parts.wpn_fps_snp_bromeop_barrel_xlong.supported = true
 					self.parts.wpn_fps_snp_bromeop_barrel_xlong.stats = deep_clone(barrels.short_b1_stats)
@@ -29694,7 +29693,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_snp_bromeop_barrel_long.supported = true
 					self.parts.wpn_fps_snp_bromeop_barrel_long.stats = deep_clone(barrels.short_b2_stats)
 					self.parts.wpn_fps_snp_bromeop_barrel_long.custom_stats = deep_clone(barrels.short_b2_stats)
-
 				--MAGAZINES
 					--20 Rounds
 					self.parts.wpn_fps_ass_bromeo2_magazine.supported = true
@@ -29720,6 +29718,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 				self.wpn_fps_snp_bromeop.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { stats = { recoil = 2, concealment = -1 } }
 				self.wpn_fps_snp_bromeop.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 2, concealment = -1 } }
+
+				for i, part_id in pairs(self.wpn_fps_snp_bromeop.default_blueprint) do
+					attachment_list = {
+						"wpn_fps_ass_bromeo805_angled_sight_tacstance",
+					}
+					for _, remove_id in ipairs(attachment_list) do
+						if part_id == remove_id then
+							self.wpn_fps_snp_bromeop.default_blueprint[i] = "resmod_dummy"
+						end
+					end
+				end
 
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_snp_bromeop.default_blueprint) do

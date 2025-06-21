@@ -10011,15 +10011,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m249.fire_mode_data.fire_rate = 0.0731707
 					self.m249.kick = self.stat_info.kick_tables.random_left_recoil
 					self.m249.kick_pattern = {
-						{0, tww.stat_info.kick_tables.random_left_recoil},
-						{8, tww.stat_info.kick_tables.random_right_recoil},
-						{13, tww.stat_info.kick_tables.left_recoil},
-						{21, tww.stat_info.kick_tables.horizontal_recoil},
-						{25, tww.stat_info.kick_tables.right_recoil},
-						{28, tww.stat_info.kick_tables.moderate_right_kick},
-						{29, tww.stat_info.kick_tables.even_recoil},
-						{34, tww.stat_info.kick_tables.horizontal_right_recoil},
-						{48, tww.stat_info.kick_tables.left_recoil}
+						{0, self.stat_info.kick_tables.random_left_recoil},
+						{8, self.stat_info.kick_tables.random_right_recoil},
+						{13, self.stat_info.kick_tables.left_recoil},
+						{21, self.stat_info.kick_tables.horizontal_recoil},
+						{25, self.stat_info.kick_tables.right_recoil},
+						{28, self.stat_info.kick_tables.moderate_right_kick},
+						{29, self.stat_info.kick_tables.even_recoil},
+						{34, self.stat_info.kick_tables.horizontal_right_recoil},
+						{48, self.stat_info.kick_tables.left_recoil}
 					}
 					self.m249.always_use_standing = true
 					self.m249.muzzleflash = "_dmc/effects/heavy_muzzle"
@@ -10182,8 +10182,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.rpk.kick = self.stat_info.kick_tables.random_recoil
 					self.rpk.kick_pattern = {
 						{0, self.stat_info.kick_tables.right_kick},
-						{3, self.stat_info.kick_tables.random_recoil},
-						{11, self.stat_info.kick_tables.left_recoil},
+						{4, self.stat_info.kick_tables.random_recoil},
+						{10, self.stat_info.kick_tables.left_recoil},
 						{17, self.stat_info.kick_tables.horizontal_recoil},
 						{28, self.stat_info.kick_tables.right_recoil}
 					}
@@ -25678,8 +25678,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.acr_2012.lock_slide = true
 				self.acr_2012.lock_slide_alt = true
 				self.acr_2012.sounds.magazine_empty = "wp_rifle_slide_lock"
-				self.acr_2012.timers.reload_empty = 2.58
-				self.acr_2012.timers.reload_exit_empty = 0.7
+				self.acr_2012.timers.reload_empty = 2.51
+				self.acr_2012.timers.reload_exit_empty = 0.75
 				self.acr_2012.timers.reload_not_empty = 1.65
 				self.acr_2012.timers.reload_exit_not_empty = 0.85
 			end

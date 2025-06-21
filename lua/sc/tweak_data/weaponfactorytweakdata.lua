@@ -29348,8 +29348,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_snp_bromeop_stock.supported = true
 					self.parts.wpn_fps_snp_bromeop_stock.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 					self.parts.wpn_fps_snp_bromeop_stock.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+					--BRUEN Push
+					self.parts.wpn_fps_ass_bromeo805_stock.supported = true
+					self.parts.wpn_fps_ass_bromeo805_stock.stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+					self.parts.wpn_fps_ass_bromeo805_stock.custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
 
 			--MTZ-556
+				self.wpn_fps_ass_bromeo805.override = self.wpn_fps_ass_bromeo805.override or {}
 				--MAGAZINES
 					--20 Rounds
 					self.parts.wpn_fps_ass_bromeo805_magazine_small.supported = true
@@ -29369,6 +29374,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						reload = -6
 					}
 					self.parts.wpn_fps_ass_bromeo805_magazine_casket.custom_stats = { ads_speed_mult = 0.95 }
+
+				self.wpn_fps_ass_bromeo805.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { stats = { recoil = 2, concealment = -1 } }
+				self.wpn_fps_ass_bromeo805.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 2, concealment = -1 } }
 
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_ass_bromeo805.default_blueprint) do
@@ -29485,6 +29493,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					}
 					self.parts.wpn_fps_ass_bromeo2m_magazine_20.custom_stats = { ads_speed_mult = 0.95 }
 
+				self.wpn_fps_ass_bromeo2m.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { stats = { recoil = 2, concealment = -1 } }
+				self.wpn_fps_ass_bromeo2m.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 2, concealment = -1 } }
+
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_ass_bromeo2m.default_blueprint) do
 					if self.parts[part_id].pcs then
@@ -29588,6 +29599,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						reload = 5
 					}
 					self.parts.wpn_fps_snp_bromeop_magazine.custom_stats = { ads_speed_mult = 0.95 }
+
+				self.wpn_fps_ass_bromeo2.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { stats = { recoil = 2, concealment = -1 } }
+				self.wpn_fps_ass_bromeo2.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 2, concealment = -1 } }
 
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_ass_bromeo2.default_blueprint) do
@@ -29703,6 +29717,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							ads_speed_mult = 1.1
 						}
 					}
+
+				self.wpn_fps_snp_bromeop.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { stats = { recoil = 2, concealment = -1 } }
+				self.wpn_fps_snp_bromeop.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 2, concealment = -1 } }
 
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_snp_bromeop.default_blueprint) do

@@ -29202,6 +29202,133 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 
 	--[[ RJC9000'S MODS ]]
+		if self.parts.wpn_fps_ass_bromeo2_magazine then
+			--MTZ-556
+				attachment_list = {}
+				for i, part_id in pairs(self.wpn_fps_ass_bromeo805.default_blueprint) do
+					if self.parts[part_id].pcs then
+						self.parts[part_id .. "_vanilla"] = deep_clone(self.parts[part_id])
+						self.parts[part_id .. "_vanilla"].pcs = nil
+						self.parts[part_id .. "_vanilla"].stats = { value = 1 }
+						self.parts[part_id .. "_vanilla"].custom_stats = {}
+						table.insert(attachment_list, part_id)
+					end
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_ass_bromeo805.default_blueprint[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+				for i, part_id in pairs(self.wpn_fps_ass_bromeo805.uses_parts) do
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_ass_bromeo805.uses_parts[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+					if self.parts[part_id] and self.parts[part_id].type then
+						if self.parts[part_id].pcs then
+							if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "bromeo805mod" 
+								and self.parts[part_id].global_value ~= "bromeo805mememod") 
+								or not self.parts[part_id].global_value) and
+								(self.parts[part_id].type == "magazine") then
+
+								self.wpn_fps_ass_bromeo805.uses_parts[i] = "resmod_dummy"
+							end
+						end
+					end
+				end
+
+				self.wpn_fps_ass_bromeo805_npc.default_blueprint = deep_clone(self.wpn_fps_ass_bromeo805.default_blueprint)
+				self.wpn_fps_ass_bromeo805_npc.uses_parts = deep_clone(self.wpn_fps_ass_bromeo805.uses_parts)
+
+			--MTZ JAK
+				attachment_list = {}
+				for i, part_id in pairs(self.wpn_fps_ass_bromeo2m.default_blueprint) do
+					if self.parts[part_id].pcs then
+						self.parts[part_id .. "_vanilla"] = deep_clone(self.parts[part_id])
+						self.parts[part_id .. "_vanilla"].pcs = nil
+						self.parts[part_id .. "_vanilla"].stats = { value = 1 }
+						self.parts[part_id .. "_vanilla"].custom_stats = {}
+						table.insert(attachment_list, part_id)
+					end
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_ass_bromeo2m.default_blueprint[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+				for i, part_id in pairs(self.wpn_fps_ass_bromeo2m.uses_parts) do
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_ass_bromeo2m.uses_parts[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+				self.wpn_fps_ass_bromeo2m_npc.default_blueprint = deep_clone(self.wpn_fps_ass_bromeo2m.default_blueprint)
+				self.wpn_fps_ass_bromeo2m_npc.uses_parts = deep_clone(self.wpn_fps_ass_bromeo2m.uses_parts)
+
+			--MTZ-762
+				attachment_list = {}
+				for i, part_id in pairs(self.wpn_fps_ass_bromeo2.default_blueprint) do
+					if self.parts[part_id].pcs then
+						self.parts[part_id .. "_vanilla"] = deep_clone(self.parts[part_id])
+						self.parts[part_id .. "_vanilla"].pcs = nil
+						self.parts[part_id .. "_vanilla"].stats = { value = 1 }
+						self.parts[part_id .. "_vanilla"].custom_stats = {}
+						table.insert(attachment_list, part_id)
+					end
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_ass_bromeo2.default_blueprint[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+				for i, part_id in pairs(self.wpn_fps_ass_bromeo2.uses_parts) do
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_ass_bromeo2.uses_parts[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+				self.wpn_fps_ass_bromeo2_npc.default_blueprint = deep_clone(self.wpn_fps_ass_bromeo2.default_blueprint)
+				self.wpn_fps_ass_bromeo2_npc.uses_parts = deep_clone(self.wpn_fps_ass_bromeo2.uses_parts)
+
+			--MTZ Interceptor
+				--BARRELS
+				self.parts.wpn_fps_snp_bromeop_barrel_xlong.supported = true
+				self.parts.wpn_fps_snp_bromeop_barrel_xlong.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_snp_bromeop_barrel_xlong.custom_stats = deep_clone(barrels.short_b1_stats)
+
+				self.parts.wpn_fps_snp_bromeop_barrel_long.supported = true
+				self.parts.wpn_fps_snp_bromeop_barrel_long.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_snp_bromeop_barrel_long.custom_stats = deep_clone(barrels.short_b2_stats)
+
+				attachment_list = {}
+				for i, part_id in pairs(self.wpn_fps_snp_bromeop.default_blueprint) do
+					if self.parts[part_id].pcs then
+						self.parts[part_id .. "_vanilla"] = deep_clone(self.parts[part_id])
+						self.parts[part_id .. "_vanilla"].pcs = nil
+						self.parts[part_id .. "_vanilla"].stats = { value = 1 }
+						self.parts[part_id .. "_vanilla"].custom_stats = {}
+						table.insert(attachment_list, part_id)
+					end
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_snp_bromeop.default_blueprint[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+				for i, part_id in pairs(self.wpn_fps_snp_bromeop.uses_parts) do
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_snp_bromeop.uses_parts[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+				self.wpn_fps_snp_bromeop_npc.default_blueprint = deep_clone(self.wpn_fps_snp_bromeop.default_blueprint)
+				self.wpn_fps_snp_bromeop_npc.uses_parts = deep_clone(self.wpn_fps_snp_bromeop.uses_parts)
+
+		end
 
 		if self.parts.wpn_fps_bow_stampede_ecs_bolt then
 			self.parts.wpn_fps_bow_stampede_ecs_ammo_poison.no_cull = true

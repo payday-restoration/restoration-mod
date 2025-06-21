@@ -27389,16 +27389,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_upg_m60e4_stock_e6.custom_stats = nil
 
-				for i, part_id in pairs(self.wpn_fps_lmg_m60e4.uses_parts) do
-					attachment_list = {
-						"wpn_fps_upg_fl_dbal_laser"
-					}
-					for _, remove_id in ipairs(attachment_list) do
-						if part_id == remove_id then
-							self.wpn_fps_lmg_m60e4.uses_parts[i] = "resmod_dummy"
-						end
-					end
-				end
+				self.wpn_fps_lmg_m60e4.override.wpn_fps_upg_fl_dbal_laser = {
+					parent="foregrip"
+				}
 			end
 
 			if self.parts.wpn_fps_lmg_m1919a6_mag then

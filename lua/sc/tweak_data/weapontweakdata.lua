@@ -27520,7 +27520,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeo2m.damage_falloff = {
 					start_dist = 3100,
 					end_dist = 4300,
-					min_mult = 0.53333
+					min_mult = 0.6
 				}
 				self.bromeo2m.stats = {
 					damage = 30,
@@ -27542,8 +27542,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeo2m.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.bromeo2m.lock_slide = true
 				self.bromeo2m.animations.magazine_empty = nil
-				self.bromeo2m.reload_speed_multiplier = 0.55
-				self.bromeo2m.reload_not_empty_speed_multiplier = 1.16
+				self.bromeo2m.reload_speed_multiplier = 0.53
+				self.bromeo2m.reload_not_empty_speed_multiplier = 1.2
 				self.bromeo2m.timers.reload_not_empty = 1.18
 				self.bromeo2m.timers.reload_exit_not_empty = 0.45
 				self.bromeo2m.timers.reload_empty = 1.42
@@ -27594,12 +27594,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.bromeo2.stats_modifiers = nil
 				self.bromeo2.panic_suppression_chance = 0.05
+				self.bromeo2.armor_piercing_chance = 0.25
 				self.bromeo2.nato = true
 				self.bromeo2.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.bromeo2.lock_slide = true
 				self.bromeo2.animations.magazine_empty = nil
-				self.bromeo2.reload_speed_multiplier = 0.55
-				self.bromeo2.reload_not_empty_speed_multiplier = 1.16
+				self.bromeo2.reload_speed_multiplier = 0.53
+				self.bromeo2.reload_not_empty_speed_multiplier = 1.2
 				self.bromeo2.timers.reload_not_empty = 1.18
 				self.bromeo2.timers.reload_exit_not_empty = 0.45
 				self.bromeo2.timers.reload_empty = 1.42
@@ -27632,7 +27633,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeop.damage_falloff = {
 					start_dist = 2200,
 					end_dist = 5300,
-					min_mult = 0.53333
+					min_mult = 0.5
 				}
 				self.bromeop.stats = {
 					damage = 60,
@@ -27651,6 +27652,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeop.stats_modifiers = nil
 				self.bromeop.panic_suppression_chance = 0.05
 				self.bromeop.sms = sms_preset.semi_snp_light
+				self.bromeop.armor_piercing_chance = 1
 				self.bromeop.nato = true
 				self.bromeop.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.bromeop.lock_slide = true

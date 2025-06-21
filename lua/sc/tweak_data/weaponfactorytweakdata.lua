@@ -19487,6 +19487,22 @@ end)
 						translation = Vector3(0.01, -8.5, -1.96),
 						rotation = Rotation(-0.04, 0.02, 0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_bromeo805 = {
+						translation = Vector3(0, 9.6, -0.562),
+						rotation = Rotation(0, 0.02, 0)
+					}
+						self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_bromeo2m = {
+							translation = Vector3(-0.005, 9.6, -0.55),
+							rotation = Rotation(0, 0.02, 0)
+						}
+						self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_bromeo2 = {
+							translation = Vector3(-0.005, 9.6, -0.55),
+							rotation = Rotation(0, 0.02, 0)
+						}
+						self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_bromeop = {
+							translation = Vector3(-0.005, 9.6, -4.06),
+							rotation = Rotation(0, 0.02, 0)
+						}
 
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_s556 = {
@@ -29271,13 +29287,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_ass_bromeo805_grip_smg.stats = deep_clone(grips.quickdraw_1)
 					self.parts.wpn_fps_ass_bromeo805_grip_smg.custom_stats = deep_clone(grips.quickdraw_1)
 					--Aggressor
-					self.parts.wpn_fps_ass_bromeo805_grip_smg.supported = true
-					self.parts.wpn_fps_ass_bromeo805_grip_smg.stats = deep_clone(grips.recoil_1)
-					self.parts.wpn_fps_ass_bromeo805_grip_smg.custom_stats = deep_clone(grips.recoil_1)
+					self.parts.wpn_fps_ass_bromeo2m_grip.supported = true
+					self.parts.wpn_fps_ass_bromeo2m_grip.stats = deep_clone(grips.recoil_1)
+					self.parts.wpn_fps_ass_bromeo2m_grip.custom_stats = deep_clone(grips.recoil_1)
 					--TR-24
-					self.parts.wpn_fps_ass_bromeo805_grip_smg.supported = true
-					self.parts.wpn_fps_ass_bromeo805_grip_smg.stats = deep_clone(grips.recoil_2_dual)
-					self.parts.wpn_fps_ass_bromeo805_grip_smg.custom_stats = deep_clone(grips.recoil_2_dual)
+					self.parts.wpn_fps_ass_bromeo2_grip.supported = true
+					self.parts.wpn_fps_ass_bromeo2_grip.stats = deep_clone(grips.recoil_2_dual)
+					self.parts.wpn_fps_ass_bromeo2_grip.custom_stats = deep_clone(grips.recoil_2_dual)
 					--Palmrest
 					self.parts.wpn_fps_snp_bromeop_grip.supported = true
 					self.parts.wpn_fps_snp_bromeop_grip.stats = deep_clone(grips.dual_stat_1)
@@ -29330,6 +29346,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_snp_bromeop_stock.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 
 			--MTZ-556
+				--MAGAZINES
+					--20 Rounds
+					self.parts.wpn_fps_ass_bromeo805_magazine_small.supported = true
+					self.parts.wpn_fps_ass_bromeo805_magazine_small.stats = {
+						value = 3,
+						extra_ammo = -10,
+						concealment = 2,
+						reload = 5
+					}
+					self.parts.wpn_fps_ass_bromeo805_magazine_small.custom_stats = { ads_speed_mult = 0.95 }
+					--60 Rounds
+					self.parts.wpn_fps_ass_bromeo805_magazine_casket.supported = true
+					self.parts.wpn_fps_ass_bromeo805_magazine_casket.stats = {
+						value = 8,
+						concealment = -4,
+						extra_ammo = 30,
+						reload = -6
+					}
+					self.parts.wpn_fps_ass_bromeo805_magazine_casket.custom_stats = { ads_speed_mult = 0.95 }
+
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_ass_bromeo805.default_blueprint) do
 					if self.parts[part_id].pcs then
@@ -29363,6 +29399,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
+
+				table.insert(self.wpn_fps_ass_bromeo805.uses_parts, "wpn_fps_upg_o_northtac")
 
 				self.wpn_fps_ass_bromeo805_npc.default_blueprint = deep_clone(self.wpn_fps_ass_bromeo805.default_blueprint)
 				self.wpn_fps_ass_bromeo805_npc.uses_parts = deep_clone(self.wpn_fps_ass_bromeo805.uses_parts)
@@ -29423,6 +29461,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						custom_stats = deep_clone(stocks.adj_acc_stats)
 					}
 
+				--MAGAZINES
+					--40 Rounds
+					self.parts.wpn_fps_ass_bromeo2m_magazine_40.supported = true
+					self.parts.wpn_fps_ass_bromeo2m_magazine_40.stats = {
+						value = 6,
+						extra_ammo = 10,
+						concealment = -1,
+						reload = -3
+					}
+					self.parts.wpn_fps_ass_bromeo2m_magazine_40.custom_stats = { ads_speed_mult = 1.025 }
+					--20 Rounds
+					self.parts.wpn_fps_ass_bromeo2m_magazine_20.supported = true
+					self.parts.wpn_fps_ass_bromeo2m_magazine_20.stats = {
+						value = 3,
+						extra_ammo = -10,
+						concealment = 2,
+						reload = 5
+					}
+					self.parts.wpn_fps_ass_bromeo2m_magazine_20.custom_stats = { ads_speed_mult = 0.95 }
+
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_ass_bromeo2m.default_blueprint) do
 					if self.parts[part_id].pcs then
@@ -29445,6 +29503,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
+
+				table.insert(self.wpn_fps_ass_bromeo2m.uses_parts, "wpn_fps_upg_o_northtac")
+
 				self.wpn_fps_ass_bromeo2m_npc.default_blueprint = deep_clone(self.wpn_fps_ass_bromeo2m.default_blueprint)
 				self.wpn_fps_ass_bromeo2m_npc.uses_parts = deep_clone(self.wpn_fps_ass_bromeo2m.uses_parts)
 
@@ -29505,14 +29566,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					}
 
 				--MAGAZINES
-				self.parts.wpn_fps_ass_bromeo2_xmag.supported = true
-				self.parts.wpn_fps_ass_bromeo2_xmag.stats = {
-					value = 6,
-					extra_ammo = 10,
-					concealment = -1,
-					reload = -3
-				}
-				self.parts.wpn_fps_ass_bromeo2_xmag.custom_stats = { ads_speed_mult = 1.05 }
+					--30 Rounds
+					self.parts.wpn_fps_ass_bromeo2_xmag.supported = true
+					self.parts.wpn_fps_ass_bromeo2_xmag.stats = {
+						value = 6,
+						extra_ammo = 10,
+						concealment = -1,
+						reload = -3
+					}
+					self.parts.wpn_fps_ass_bromeo2_xmag.custom_stats = { ads_speed_mult = 1.025 }
+					--10 Rounds
+					self.parts.wpn_fps_snp_bromeop_magazine.supported = true
+					self.parts.wpn_fps_snp_bromeop_magazine.stats = {
+						value = 2,
+						extra_ammo = -10,
+						concealment = 2,
+						reload = 5
+					}
+					self.parts.wpn_fps_snp_bromeop_magazine.custom_stats = { ads_speed_mult = 0.95 }
 
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_ass_bromeo2.default_blueprint) do
@@ -29536,6 +29607,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
+
+				table.insert(self.wpn_fps_ass_bromeo2.uses_parts, "wpn_fps_upg_o_northtac")
+
 				self.wpn_fps_ass_bromeo2_npc.default_blueprint = deep_clone(self.wpn_fps_ass_bromeo2.default_blueprint)
 				self.wpn_fps_ass_bromeo2_npc.uses_parts = deep_clone(self.wpn_fps_ass_bromeo2.uses_parts)
 
@@ -29613,7 +29687,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						reload = -4
 					}
 					self.parts.wpn_fps_ass_bromeo2_magazine.custom_stats = { ads_speed_mult = 1.05 }
-
 					--30 Rounds
 					self.wpn_fps_snp_bromeop.override.wpn_fps_ass_bromeo2_xmag = {
 						stats = {
@@ -29649,6 +29722,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
+
+				for i, part_id in pairs(self.wpn_fps_snp_bromeop.uses_parts) do
+					attachment_list = {
+						"wpn_fps_upg_i_autofire",
+						"wpn_fps_upg_i_singlefire"
+					}
+					for _, remove_id in ipairs(attachment_list) do
+						if part_id == remove_id then
+							self.wpn_fps_snp_bromeop.uses_parts[i] = "resmod_dummy"
+						end
+					end
+				end
+
+				table.insert(self.wpn_fps_snp_bromeop.uses_parts, "wpn_fps_upg_o_shortdot_dmc")
+				table.insert(self.wpn_fps_snp_bromeop.uses_parts, "wpn_fps_upg_o_leupold")
+				--table.insert(self.wpn_fps_snp_bromeop.uses_parts, "wpn_fps_upg_o_box")
+				table.insert(self.wpn_fps_snp_bromeop.uses_parts, "wpn_fps_upg_o_northtac")
+
 				self.wpn_fps_snp_bromeop_npc.default_blueprint = deep_clone(self.wpn_fps_snp_bromeop.default_blueprint)
 				self.wpn_fps_snp_bromeop_npc.uses_parts = deep_clone(self.wpn_fps_snp_bromeop.uses_parts)
 

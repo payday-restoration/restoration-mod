@@ -425,19 +425,21 @@ function restoration:Init()
 		"santas_hardware_store", --Hardware Store but Xmas
 		"santa_pain"
 	}
-	--heists to remove infinite assaults from
+
+	-- Heists to remove endless assaults from
+	-- TODO: move to mission script patches instead of using this table
 	restoration.fuck_hunt = {
-		"kenaz", --ggc
-		"pines", --white xmas
-		"jolly", --aftershock
-		"born", --biker heist D1
-		"chca", --black cat
-		"pent", --Mountain Master
-		"lvl_friday", --Mallbank / Crashing Capitol
-		--"hox_1", --Hoxout D1
-		--"xmn_hox_1" --Xmas edition
-		--Custom Heists--
-		"the_factory" --eclipse research facility
+		"kenaz",  -- Golden Grin Casino
+		"pines",  -- White Xmas
+		"jolly",  -- Aftershock
+		"born",  -- Biker Heist day 1
+		"chca",  -- Black Cat
+		"pent",  -- Mountain Master
+		"lvl_friday",  -- Crashing Capitol (Mallbank)
+		-- "hox_1",  -- Hoxton Breakout day 1
+		-- "xmn_hox_1"  -- Hoxton Breakout day 1 (Christmas)
+		-- Custom Heists --
+		"the_factory",  -- Eclipse Research Facility
 	}
 
 	--Sub Faction overrides

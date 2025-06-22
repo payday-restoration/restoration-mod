@@ -1553,6 +1553,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--["bm_w_papa320"] = "M19",
 			["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "Магазин на 32",
 
+			--Triad
+			["bm_triad_sc_desc"] = "#{skill_color}#Может пробивать броню, врагов, щитов (на растоянии макс.дальности) и тонкие стены.##\n\nРежим очередью стреляет #{skill_color}#тремя стволами разом ## за счёт пониженной #{important_1}#точности и стабильности.##",
 
 		--CUSTOM WEAPON ATTACHMENTS
 					--M6D
@@ -1580,8 +1582,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 					["bm_wp_wpn_fps_ass_ar23_laser"] = "Лезерный прицел с фонариком",
 					["bm_wp_laser_sight_desc"] = "Крупногабаритное устройство, совмещающее в себе функции лазерного прицела и фонарика.",
 					--StA-52 Assault Rifle
-					["bm_wp_wpn_fps_ass_sta52_carry_handle_flipped"] = "Стандартаня мушка"
-
+					["bm_wp_wpn_fps_ass_sta52_carry_handle_flipped"] = "Стандартаня мушка",
 
 
 		--Kobus 90--
@@ -1842,35 +1843,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--AR-18
 			--["bm_w_ar18"] = "КАР-18",
 			--ПРЕСВЯТАЯ ДЕМОКРАТИЯ !!! HD2 AR-23 
-			        ["bm_w_ar23"] ="АР-23 Освободитель",
+			        ["bm_w_ar23"] ="Освободитель",
 					["bm_w_ar23_desc"] = "Винтовка ВССЗ подойдёт для отстрела жуков, кальмаров и автоматонов, но не вздумай применять против граждан супер земли.",
-					["bm_wp_wpn_fps_ass_ar23_ck_carbine"] = "АР-23A Карабин 'Освободитель'",
-					["bm_wp_ck_carbine_desc"] = "Имеет увеличенную скорость стрельбы взамен на увеличенный разброс.#",
-					["bm_wp_wpn_fps_ass_ar23_ck_penetrator"] = "АР-23P Пробойный Освободидель",
-					["bm_wp_ck_penetrator_desc"] = "Вариция, которая эффективнее #{skill_color}#пробивает броню.##",
-					["bm_wp_wpn_fps_ass_ar23_ck_concussive"] = "АР-23C Сотрясающий освободитель",
-					["bm_wp_ck_concussive_desc"] = "Вариация АР-23, у которой имеются #{skill_color}#оглушающие пули## и модифицированный лазерный прицел.\n#{skill_color}#Оглушающие пули сбивают врагов с ног на расстоянии до 20 метров.##\n#{risk}#Эффект сбивания с ног нельзя модифицировать и огонь очередями удален.##",
+					["bm_wp_wpn_fps_ass_ar23_ck_carbine"] = "Комплект 'Карабин 'Освободитель'",
+					["bm_wp_ck_carbine_desc"] = "Вариация AR-23 с увеличенной скоростью стрельбы взамен на увеличенный разброс.#",
+					["bm_wp_wpn_fps_ass_ar23_ck_penetrator"] = "Комплект 'Пробойный Освободитель'",
+					["bm_wp_ck_penetrator_desc"] = "Вариция AR-23, которая эффективнее #{skill_color}#пробивает броню.##",
+					["bm_wp_wpn_fps_ass_ar23_ck_concussive"] = "Комплект 'Сотрясающий Освободитель'",
+					["bm_wp_ck_concussive_desc"] = "Вариация АR-23, у которой имеются #{skill_color}#оглушающие пули## и модифицированный лазерный прицел.\n#{skill_color}#Оглушающие пули сбивают врагов с ног на расстоянии до 20 метров.##\n#{risk}#Эффект сбивания с ног нельзя модифицировать и огонь очередями удален.##",
 					["menu_l_global_value_helldivers2_mod"] = "Это предмет из Helldivers 2 - Адские десантники в бой!",
 					["menu_l_global_value_helldivers2sv_mod"] = "Это предмет из Helldivers 2 - Закаленные ветераны",
 					["menu_l_global_value_helldivers2vc_mod"] = "Это предмет из Helldivers 2 - Змеи-коммандос",
 			--LAS 16 Sickle
-			    ["bm_w_sickle"] = "ЛАС-16 Серп",
+			    ["bm_w_sickle"] = "Серп",
 	            ["bm_w_sickle_desc"] = "Лазерная винтовка которая не требует патрон, но в замен нужно следить за перегревом, советую брать её только планеты где бушует ужасный холод.\n",
 			--StA-52 Assault Rifle
 			["bm_w_sta52"] = "СТА-52",
 	        ["bm_w_sta52_desc"] = "Во время первой вонйы 2055 году, именно эта винтовка была в руках хелгастов, она проявила себя и прошла через огонь и воду. \nСоздатель 'ОРУЖИЯ ШТАЛЬ'\n",
-			
-			["bm_w_ar32"] = "АР-32 Усмиритель",
-			["bm_w_ar32_desc"] = "Гуманная винтовка для задержания врагов демократии... Но кто-то зарядил в неё боевые.",
+			--AR-32 Pacifier
+            ["bm_w_ar32"] = "Усмиритель",
+            ["bm_w_ar32_desc"] = "Гуманная винтовка для задержания врагов демократии.\n#{skill_color}#Пробивает броню## и сбивает врагов с ног.\n#{skill_color}#Оглушение сбивает врагов с ног на расстоянии до 30 метров.##\n#{risk}#Эффект сбивания с ног нельзя модифицировать.##",
 
 			--["bm_wp_wpn_fps_ass_ar32_ammo_lethal"] = "Летальные патроны",
 			--["bm_wp_lethalammo_desc"] = "When the perp just does not want to comply, and keeps resisting... Cops are always advised to use lethal force. Even if said force comes from a glorified stun gun...\nIncreases damage by 25%, enables critical hits, but cuts ammo pickup rate and max ammo capacity. Bullets are expensive, y'know.",
 
-			["menu_l_global_value_forceoflaw_mod"] = "Это Helldivers 2 - Сила закона",
-
-
-
-
+			["menu_l_global_value_forceoflaw_mod"] = "Это предмет из Helldivers 2 - Сила закона",
 
 		--Galant--
 		["bm_galant_sc_desc"] = "Классическая винтовка времен Второй мировой. Надежная, точная и  #{skill_color}#быстро перезаряжается при опустошении.##\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.##",
@@ -1920,7 +1917,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--G3 HK79
 			["bm_g3hk79_sc_desc_pc"] = "Вариация Гевер 3 с #{skill_color}#подствольным гранатометом.## #{skill_color}##{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.####\n\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на гранатомет.",
 			--BO3 XR2
-			["bm_xr2_sc_desc"] = "XR-2 - инструмент, подходящий для самых напряженных боев, который оснащен особым спусковым крючком, который  #{skill_color}#скорострельность при стрельбе очередями.##\n\n#{skill_color}#Наносит 25% урона через броню и может пробивать врагов.##",
+			["bm_xr2_sc_desc"] = "XR-2 - инструмент, подходящий для самых напряженных боев, который оснащен особым спусковым крючком, #{skill_color}#скорострельность при стрельбе очередями.##\n\n#{skill_color}#Наносит 25% урона через броню и может пробивать врагов.##",
 			["bm_wp_xr2_handle_01_sc"] = "Полная автоматика",
 			["bm_xr2_handle_01_sc_desc"] = "Позволяет  #{skill_color}#полностью автоматический огонь##, но #{important_1}#убирает бонус за стрельбу очередями.##",
 			["bm_wp_xr2_handle_02_sc"] = "Быстрые очереди",
@@ -1939,7 +1936,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 	        ["menu_l_global_value_ceremony_mod"] = "Это предмет из Helldivers 2 - церемониймейстер!",
 
-			--MSR
+        --MSR
 		["bm_msr_sc_desc"] = "Стандартная винтовка армии США. Хорошие точность, удобность и скрытность делают ее винтовкой на любой случай.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
 		--R700
 		["bm_r700_sc_desc"] = "Предок винтовки Раттлснейк. Хорошие точность и удобность, а еще превосходящая дальнобойность по сравнению с младшим братом. В чем подвох? Устаревшие магазины на пять патронов.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
@@ -1996,12 +1993,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["flexfire_desc"] = "#{important_1}#Увеличение прицела будет равняться 3х\nНе может пробивать титановые щиты.##",
 			["oracle_scope"] = "Прицел Oracle TechLink",
 			["oracle_scope_desc"] = "Меняет точку прицела на #{skill_color}#Smart-Link##.\n#{risk}#Увеличение 5-10x.##",
-			--R6 Deadyey
+			--R6 Deadeye
 			["bm_w_r6"] = "Р-6 Меткий Стрелок",
 	        ["bm_w_r6_desc"] = "Помогает нести демократию на диком западе отсреливая караван автоматонов для взыскания супер кредитов.",
-
-
-
 		--Marlin 1894
 		--["bm_w_m1894"] = "Mare's Leg",
 		--SPX Centerfire
@@ -2365,7 +2359,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_revenant_heirloom"] = "Dead Man's Curve",
 		["bm_melee_revenant_heirloom_info"] = "\"Это последнее, что ты увидишь, кожаный мешок\"",
 		-- это пиздец
-		["bm_melee_megumins_staff_info"] = "Кастует мощный взрыв, когда полностью заряжен!\nКаст заклинания производится на любую поверхность или существо на расстояние не более #{skill_color}#30## метров; #{risk}#нельзя кастовать в воздухе.##\n\n#{important_1}#Скорость зарядки не зависит от навыков.\nВо время зарядки у Вас затуманивается экран, тратится стамина и постепенно уменьшается скорость передвижения.\nВы мгновенно падаете после каста взрыва; навыки и перки, позволяющие спасти или отложить падение - не работают.##",
+		["bm_melee_megumins_staff_info"] = "Кастует мощный взрыв, когда полностью заряжен!\nКаст заклинания производится на любую поверхность или существо на расстояние не более #{skill_color}#30## метров; #{risk}#нельзя кастовать в воздухе.##\n\n#{important_1}#Скорость зарядки не зависит от навыков.\nВо время зарядки у Вас затуманивается экран, тратится выносливость и постепенно уменьшается скорость передвижения.\nВы мгновенно падаете после каста взрыва; навыки и перки, позволяющие спасти или отложить падение - не работают.##",
 
 		["bm_menu_weapon_bayonet_header"] = "ХАР-КИ ОТ ОСНОВНОГО:",
 		["bm_menu_weapon_bayonet_secondary_header"] = "ХАР-КИ ОТ ВТОРИЧНОГО:",
@@ -2576,9 +2570,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_ads_speed"] = "Прицеливание",
 		["bm_menu_reload"] = "Перезарядка",
 		["bm_menu_damage"] = "Урон", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Макс. урон",
-		["bm_menu_standing_range"] = "Мин. падение",
+		["bm_menu_standing_range"] = "Мин. дальность",
 		["bm_menu_damage_min"] = "Мин. урон",
-		["bm_menu_moving_range"] = "Макс. падение",
+		["bm_menu_moving_range"] = "Макс. дальность",
 
 		["bm_menu_attack_speed"] = "Ск-сть атаки",
 		["bm_menu_impact_delay"] = "Задержка",
@@ -2719,12 +2713,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 
 		--Blackmarket gui per-armor skill descriptions.
+		["bm_menu_armor_pickup_1"] = "Подбор патронов: #{skill_color}#$armor_pickup## от нормального значения.",
+
 		["bm_menu_append_milliseconds"] = " мс",
 		["bm_menu_dodge_grace"] = "Увеличение длительности периода бессмертия при увороте: #{skill_color}#$grace_bonus##\n\nПериод бессмертия - время, во время которого вы не можете получить урон или потерять уворот.",
 		["bm_menu_dodge_grace_cap"] = "Максимальное увеличение длительности периода бессмертия равно #{important_1}#$grace_bonus_cap##, потому что стоит ",
 		["bm_menu_dodge_grace_jp_cap"] = "модификатор #{important_1}#Pro-Job##",
 		["bm_menu_dodge_grace_both"] = " и ",
 		["bm_menu_dodge_grace_diff_cap"] = "сложность #{risk}#$risk_level##",
+
+		["bm_menu_dash_grace"] = "ПЕРИОД БЕССМЕРТИЯ ВО ВРЕМЯ РЫВКА: #{skill_color}#$dash_grace##",
+		["bm_menu_dash_grace_dodge"] = "\n - ВМЕСТЕ С УВОРОТОМ: #{skill_color}#$dash_grace_dodge##",
+
 		["bm_menu_armor_grinding_1"] = "Восстановление брони за раз: #{skill_color}#$passive_armor_regen##",
 		["bm_menu_armor_grinding_2"] = "Восстановление брони за раз: #{skill_color}#$passive_armor_regen## \nВосстановление брони за нанесение урона: #{skill_color}#$active_armor_regen##",
 
@@ -2791,7 +2791,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Itachi [Custom]--
 		["bm_wp_wpn_fps_upg_bajur_m_pants"] = "NO",
 		["bm_wp_wpn_fps_upg_bajur_fg_dmr_desc"] = "Replaces the upper receiver of the Itachi with a .50 Beowulf variant, making the weapon kick a hell of a lot harder, but increasing the size of bulletholes made on law enforcers ten-fold.\n Reduces all stats, except for accuracy and power.",
-
+		
+		--Duke Nukem' 1911
+		["bm_w_duke1911_desc"] = "Хороший, плохой... #{important_1}#Главное, у кого пушка!##",
 
 		--Bipod--
 		["bm_sc_bipod_desc_pc"] = "Расставляются при нажатии #{skill_color}#$BTN_BIPOD##, если позволяет место. Нажмите клавишу снова, чтобы убрать.\n\nУменьшают отдачу на #{skill_color}#60%## и увеличивают расстоянии #{skill_color}#30%## во время использования.\n\n#{item_stage_2}#Дополнительные настройки для сошек можно найти в настройках Restoration Mod.##",
@@ -3011,7 +3013,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_scorpion"] = "Парные Cobra",
 		["bm_w_coal"] = "Tatonka",
 		["bm_w_vityaz"] = "AK Gen 21 Tactical",
-		["bm_w_shepheard"] = "FIK PC9",
+		["bm_w_shepheard"] = "Signature PC9",
 		["bm_w_mp5"] = "Compact-5",
 		["bm_w_mp5sd"] = "Compact-5SD",
 		["bm_w_mp5k"] = "Compact-5K",
@@ -3147,7 +3149,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",
 		["bm_w_hcar"] = "Akron HC",
 		["bm_w_hcar_bar"] = "Akron HC",
-		["bm_w_mcx_spear"] = "FIK M7",
+		["bm_w_mcx_spear"] = "Signature M7",
 		["bm_w_vss"] = "Viktoriya",
 		["bm_w_g3hk79"] = "Gewehr-A3 w/ GL79",
 		["bm_w_xr2"] = "XR-2",
@@ -3188,7 +3190,29 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_arbiter"] = "Arbiter",
 		["bm_w_rpg7"] = "HRL-7",
 		["bm_w_ray"] = "Commando 101 FLASH",
-
+	--Кастомные оружия
+		--Пистолеты
+			--PK PSD9
+			["bm_w_pkpsd9"] = "PK-PSD9",
+			--K5 Pistol (Korean Arms Pack)
+			["bm_w_k5"] = "K5",
+			--AYY LMAO
+			["bm_w_bf2042_ayylmao"] = "Laugo Alien",
+			-- Piercer 9mm
+			["bm_w_rusglock"] = "Piercer 9mm",
+			--Pinkie.380
+			["bm_w_pinkie"] = "Pinkie .380",
+			--CR 75 Czechmate
+			["bm_w_axewscope"] = "CR 75 Czechmate",
+			--High Standard HDM
+			["bm_w_hshdm"] = "High Standard HDM",
+			--Deagle K4
+			["bm_w_limafive"] = "Deagle-K4",
+			--S&W Model 500
+			["bm_w_swhiskey"] = "S&W Model 500",
+			--Bullkick 500
+			["bm_w_bk500"] = "Bullkick 500",
+			
 				})
 		elseif weapon_names == 1 then -- Кириллица
 			LocalizationManager:add_localized_strings({
@@ -3259,7 +3283,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
         ["bm_w_x_chinchilla"] = "Парные Кастиго .44",
 		["bm_w_rsh12"] = "РШУ-12",
 		["bm_w_peacemaker"] = "Миротворец .45",
---CUSTOM HANDGUNS
+		--Кастомные пистолеты
 			--ZiP 22
 			["bm_w_zip22"] = "Зиппи 3000",
 			--Px4
@@ -3276,6 +3300,94 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_coltds"] = "Кросскилл Детектив",
 			--SIG P320
 			["bm_w_papa320"] = "М19",
+			--PK PSD9
+			["bm_w_pkpsd9"] = "ПК-ПСД9",
+			--Auto-9
+			["bm_w_rc_auto9"] = "Авто-9",
+			--The Triad
+			["bm_w_triad"] = "Триада",
+			--K5 Pistol (Korean Arms Pack)
+			["bm_w_k5"] = "К5",
+			--TTI STI 2011 Combat Master
+			["bm_w_tti_2011"] = "ТТИ СТИ 2011 Комбат Мастер",
+			--AYY LMAO
+			["bm_w_bf2042_ayylmao"] = "Лауго Элиен",
+			--Polar 9mm
+			["bm_w_polar9"] = "Полар 9мм",
+			-- CZ 75B
+			["bm_w_cz75b"] = "ЦЗ 75 Б",
+			--TTI Pit Viper
+			["bm_w_tti_viper"] = "ТТИ Пит Вайпер",
+			-- Piercer 9mm
+			["bm_w_rusglock"] = "Пирсер 9мм",
+			--Magpul FMG-9
+			["bm_w_fmgnine"] = "Магпул ФМГ-9",
+			--Glock 19
+			["bm_w_g19"] = "Глок 19",
+			--Pinkie.380
+			["bm_w_pinkie"] = "Пинки .380",
+			--CR 75 Czechmate
+			["bm_w_axewscope"] = "ЦР 75 Чехмейт",
+			--MP-443 Grach
+			["bm_w_mp443"] = "МП-443 Грач",
+			--CR Phantom II
+			["bm_w_czshadow_sc"] = "ЦР Фантом II",
+			--обитель зла на смертном приговоре
+			["bm_w_vp70"] = "ХК ВП70М",
+			--High Standard HDM
+			["bm_w_hshdm"] = "Хай Стандард ХДМ",
+			--ЗИ (НЕ ТО ЗИ!!!)
+			["bm_w_pb"] = "ПБ",
+			--SR1M
+			["bm_w_sr1"] = "СР1М",
+			--AP Pistol (пушка из GTA V, тут придётся ставить переведённое название из игры)
+			["bm_w_appistol"] = "Бронебойный пистолет",
+			--Predator Plasma Pistol (то же самое, AvP, все дела)
+			["bm_w_hhpc"] = "Плазменный пистолет Хищника",
+			--MR-96
+			["bm_w_mr96"] = "МР-96",
+			--M712 Schnellfeuer
+			["bm_w_m712"] = "Маузер M712 Шнельфайер",
+			--Javelin 10mm
+			["bm_w_baller"] = "Джавелин 10мм",
+			--AF2011
+			["bm_w_af2011"] = "АФ2011",
+			--HK45C
+			["bm_w_hk45c"] = "ХК45Ц",
+			--Korth PRS
+			["bm_w_korth_prs"] = "Корф ПРС",
+			--S&W Model 642
+			["bm_w_sw642"] = "Смит и Вессон Модель 642",
+			--Duke Nukem's M1911
+			["bm_w_duke1911"] = "Позолоченный М1911 Дюка Нюкема",
+			--Zenith
+			["bm_w_zenith"] = "Зенит 10мм",
+			--Chiappa Rhino - я 60 DS проходить не собираюсь
+			["bm_w_rhino"] = "Чиаппа Рино 60ДС",
+			--Deagle K4
+			["bm_w_limafive"] = "Дигл-К4",
+			--Mateba Model 6 Unica
+			["bm_w_unica6"] = "Матэба Модель 6 Уника",
+			--Deck-ARD
+			["bm_w_deckard"] = "Дэк-АРД",
+			--S&W Model 27
+			["bm_w_sw27"] = "Смит и Вессон Модель 27",
+			--M2019 Blaster
+			["bm_w_lapd"] = "Бластер М2019",
+			--Malorian Arms 3516
+			["bm_w_malorian_3516"] = "Малориан армс 3516 'Сильверхенд'",
+			--Nagant M1895
+			["bm_w_m1895"] = "Нагант М1895",
+			--Mars Automatic
+			["bm_w_mars"] = "Марс Автоматик",
+			--Night Hawk .50C
+			["bm_w_cssdeagle"] = "Найт Хавк Кал.50",
+			--S&W Model 500
+			["bm_w_swhiskey"] = "Смит и Вессон Модель 500",
+			--Bullkick 500
+			["bm_w_bk500"] = "Булкик 500",
+			--.50 Cal Deagle
+			["bm_w_degfifty"] = "Дигл, но есть 50-калиберный нюанс",
 		["bm_w_p90"] = "Проджект-90",
 		["bm_w_x_p90"] = "Парные Проджект-90",
 		["bm_w_mp7"] = "СпекОпс-7",
@@ -3291,7 +3403,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_scorpion"] = "Парные Кобры",
 		["bm_w_coal"] = "Татонка",
 		["bm_w_vityaz"] = "АК 21 Тактический",
-		["bm_w_shepheard"] = "ФИК ПС9",
+		["bm_w_shepheard"] = "Сигнатур ПС9",
 		["bm_w_mp5"] = "Компакт-5",
 		["bm_w_mp5sd"] = "Компакт-5СД",
 		["bm_w_mp5k"] = "Компакт-5К",
@@ -3330,10 +3442,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_sta11"] = "СМГ СТА-11",
 	        ["bm_w_sta11_desc"] = "Пистолет пулемёт с большим магазином который позволяет подавлять врагов демократии, всё таки 'Шталь' знали цену своему оружию. \nСоздатель 'ОРУЖИЕ ШТАЛЯ'.",
 
-
-
-
-			["bm_w_sig_xm250"] = "ФИК МГ277",
+			["bm_w_sig_xm250"] = "Сигнатур МГ277",
 		["bm_w_tecci"] = "Контрабандист",
 		["bm_w_m249"] = "КСП 90",
 		["bm_w_kacchainsaw"] = "Кэмпбелл 74",
@@ -3445,7 +3554,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_shak12"] = "КС 12",
 --Custom DMRs
 			--MCX Spear
-			["bm_w_mcx_spear"] = "ФИК M7",
+			["bm_w_mcx_spear"] = "Сигнатур M7",
 			["bm_w_ngsierra"] = "Амикус 277",
 			["bm_w_vss"] = "Виктория",
 			["bm_w_g3hk79"] = "Гевер А3 с гранатометом",
@@ -5490,8 +5599,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Рикошет",
-				["menu_kilmer_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову из #{skill_color}#винтовок## в режиме одиночной стрельбы или очередями наносят #{skill_color}#$skill_value_b1## урона ближайшему врагу в радиусе #{skill_color}#$skill_value_b2## метров.\n\nЗа каждые #{skill_color}#$skill_value_b3## метров, в которых вы находитесь от врага, эффект перебрасывается на еще одного врага, до #{skill_color}#$skill_value_b4## раз.\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову из #{skill_color}#винтовок## в режиме одиночной стрельбы или очередями #{skill_color}#не теряют урон с расстоянием.## Радиус навыка увеличен на #{skill_color}#$skill_value_p1## метр.\n\nЗа каждые #{skill_color}#$skill_value_b3## метров от врага, эффект наносит дополнительные #{skill_color}#$skill_value_p2## урона; вплоть до #{skill_color}#$skill_value_p3## урона.",
-
+				["menu_kilmer_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову из #{skill_color}#винтовок## наносят #{skill_color}#$skill_value_b1## урона ближайшему врагу в радиусе #{skill_color}#$skill_value_b2## метров; срабатывает раз в #{important_1}#$skill_value_b5## секунды.\n\nЕсли ваша #{skill_color}#винтовка## находится в режиме #{risk}#одиночной стрельбы## или #{risk}#очередями##, за каждые #{skill_color}#$skill_value_b3## метров от цели эффект перебрасывается ещё до #{skill_color}#$skill_value_b4## раз.\n\nПИКОВЫЙ: #{owned}#$pro##\nРадиус навыка увеличен на #{skill_color}#$skill_value_p1## метр.\nПопадания в голову из #{skill_color}#винтовок## в режиме #{risk}#одиночной стрельбы## или #{risk}#очередями## #{skill_color}#не теряют урон с расстоянием##, и за каждые #{skill_color}#$skill_value_b3## метров от врага эффект наносит дополнительные #{skill_color}#$skill_value_p2## урона; вплоть до #{skill_color}#$skill_value_p3## урона.",
 		--[[   GHOST   ]]--
 
 			--[[   SHINOBI SUBTREE   ]]--
@@ -5541,7 +5649,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				["menu_insulation_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nШоковая атака Тазера больше не заставляет вас стрелять и имеет #{skill_color}#15%## шанс отскочить от вас, оглушая Тазера.\n\n#{risk}#Не отменяет штрафов на точность и урон во время шоковой атаки.##\n\nОтталкивание от попаданий по вам уменьшено на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВзаимодействие с вражеским Тазером в течение #{skill_color}#$skill_value_p1## секунд после шоковой атаки контр-атакует его, нанося #{skill_color}#$skill_value_p2## урона его здоровью.\n\nЗамедление от атак Титановых Тазеров уменьшено на #{skill_color}#50%.##",
 
 				--Sneaky Bastard--
-				["menu_jail_diet_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#$skill_value_b1## очко уворота за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3## до максимальных #{skill_color}#$skill_value_b4## уворота.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете #{skill_color}#$skill_value_b1## очко уворота за каждое #{skill_color}#$skill_value_p1## очко нагрузки ниже #{skill_color}#$skill_value_b3## до максимальных #{skill_color}#$skill_value_b4## уворота.\n\nКогда ваша броня ломается, уворот от атаки восстанавливает #{skill_color}#$skill_value_p2## вашего здоровья. Это может произойти только один раз, пока ваша броня снова не сломается.",
+				["menu_jail_diet_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#$skill_value_b1## очко уворота за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3## до максимальных #{skill_color}#$skill_value_b4## уворота.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете #{skill_color}#$skill_value_b1## очко уворота за каждое #{skill_color}#$skill_value_p1## очко нагрузки ниже #{skill_color}#$skill_value_b3## до максимальных #{skill_color}#$skill_value_b4## уворота.\n\nКогда ваша броня ломается, следующий уворот #{skill_color}#восстанавливает вашу броню в количестве, равное вашему увороту##, и #{skill_color}#$skill_value_p2## вашего здоровья. Это может произойти только раз в #{important_1}#$skill_value_p3## секунд; пока ваша броня сломана, каждый уворот сокращает время на #{skill_color}#$skill_value_p4## секунды.",
 
 			--[[   SILENT KILLER SUBTREE   ]]--
 				--Second Wind
@@ -5679,73 +5787,73 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_st_category_challenge"] = "Пустые",
 		["menu_st_category_mod"] = "Моды",
 
-		--Shared Perks--
+		--Общие перки
 		["menu_deckall_2_desc_sc"] = "Увеличивает урон в голову на ##25%.##\n\nВы наносите на ##25%## больше урона. Не относится к метательному оружию, гранатометам и ракетометам.",
 		["menu_deckall_4_desc_sc"] = "Вы получаете ##+1## к компактности.\n\nПри ношении брони ваша скорость штрафуется на ##15%## меньше.\n\nВы получаете на ##45%## больше опыта при выполнении ограблений.\n\nВы наносите на ##25%## больше урона. Не относится к метательному оружию, гранатометам и ракетометам.",
 		["menu_deckall_6_desc_sc"] = "Открывает Кейс с метательным оружием в качестве оборудования. Кейс с метательным оружием используется, чтобы восполнить запас метательного оружия во время ограбления.\n\nВы наносите на ##25%## больше урона. Не относится к метательному оружию, гранатометам и ракетометам.",
 		["menu_deckall_8_desc_sc"] = "Увеличивает скорость взаимодействия с сумкой с медикаментами на ##20%.##\n\nВы наносите на ##25%## больше урона. Не относится к метательному оружию, гранатометам и ракетометам.",
 
-		--Crook--
+		--Аферист
 		["menu_deck6_1"] = "Пойманный",
-		["menu_deck6_3"] = "Уловка",
-		["menu_deck6_5"] = "План Б",
-		["menu_deck6_7"] = "Поднять ставки",
+		["menu_deck6_3"] = "Стрелок",
+		["menu_deck6_5"] = "Буян",	
+		["menu_deck6_7"] = "Выживший",		
 		["menu_deck6_9"] = "Беглец",
-
+		
 		["menu_deck6_1_desc_sc"] = "Когда вы находитесь в ##$perk_value_1## метрах от 3-х и более врагов, вы получаете на ##$perk_value_2## меньше урона.",
-		["menu_deck6_3_desc_sc"] = "Убийство врага восстанавливает ##$perk_value_1## брони.\n\nЭто может происходить только раз в ##$perk_value_2## секунд, но каждое убийство сокращает время на ##$perk_value_3## секунд, а убийство холодным оружием - еще на ##$perk_value_4## секунды.\n\nЕсли убийство сокращает время полностью, бонусы активируются и задержка начнется сначала.",
-		["menu_deck6_5_desc_sc"] = "Убийство врага оружием ближнего боя восстанавливает ##$perk_value_1## здоровья и ##$perk_value_3## выносливости.\n\nЭффект активируется вместе с Уловка (3-я карта).\n\nВы носите на ##$perk_value_2## мешок для тел больше.",
-		["menu_deck6_7_desc_sc"] = "Убийство врага, находящегося в менее чем ##$perk_value_1## метров от вас, восстанавливает ##$perk_value_2## брони, а убийство холодным оружием - в два раза больше брони.\n\nЭффект активируется вместе с Уловка (3-я карта).\n\nВы получаете еще ##$perk_value_3## уворота",
+		["menu_deck6_3_desc_sc"] = "Убийство врага восстанавливает #{skill_color}#$perk_value_1## брони.\n\nЭто может происходить только раз в #{important_1}#$perk_value_2## секунд, но каждое убийство сокращает время на #{skill_color}#$perk_value_3## секунд, а убийство холодным оружием - еще на #{skill_color}#$perk_value_4## секунды.\n\nЕсли убийство сокращает время полностью, бонусы активируются и задержка начнется сначала.",
+		["menu_deck6_5_desc_sc"] = "Убийство врага оружием ближнего боя восстанавливает ##$perk_value_1## здоровья и ##$perk_value_3## выносливости.\n\nЭффект активируется вместе с Хладнокровие:Специалист: (3-я карта).\n\nВы носите на ##$perk_value_2## мешок для тел больше.",
+		["menu_deck6_7_desc_sc"] = "Убийство врага, находящегося в менее чем ##$perk_value_1## метров от вас, восстанавливает ##$perk_value_2## брони, а убийство холодным оружием - в два раза больше брони.\n\nЭффект активируется вместе с Хладнокровие: Специалист (3-я карта).\n\nВы получаете еще ##$perk_value_3## уворота.",
 		["menu_deck6_9_desc_sc"] = "Убийство врага, находящегося в менее чем ##$perk_value_1## метров от вас, имеет ##$perk_value_2## шанс посеять панику среди врагов в радиусе ##$perk_value_3## метров от Вас, а убийство холодным оружием повышает этот шанс в два раза.\n\nПаника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.\n\nЭффект активируется вместе с Хладнокровие: Специалист: (3-я карта).\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Rogue
-		["menu_deck4_1_desc_sc"] = "Ваш уворот увеличен на ##$perk_value_1## очков.\n\nВы переключаете оружие на ##$perk_value_2## быстрее.",
+		--Точно не Шпион!
+		["menu_deck4_1_desc_sc"] = "Ваш уворот увеличен на ##$perk_value_1## очков.\n\nВы меняете оружие на ##$perk_value_2## быстрее.",
 		["menu_deck4_3_desc_sc"] = "Ваш уворот увеличен еще на ##$perk_value_1## очков.",
 		["menu_deck4_5_desc_sc"] = "Ваша полоска уворота будет заполнена на ##$perk_value_1## после поднятия.\n\nВы зацикливаете камеры на ##$perk_value_2## секунд дольше.",
 		["menu_deck4_7_desc_sc"] = "Ваш уворот увеличен еще на ##$perk_value_1## очков.",
 		["menu_deck4_9_desc_sc"] = "Уворот от атаки восстанавливает ##$perk_value_1## очко здоровья каждую секунду в течение ##$perk_value_2## секунд. Этот эффект может складываться, но бонус потеряется, если вы получите урон по здоровью.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Hitman--
+		--Киллер
 		["menu_deck5_1_sc"] = "Ган-фу",
 		["menu_deck5_3_sc"] = "Тренированный убийца",
 		["menu_deck5_5_sc"] = "Убийство карандашом",
 		["menu_deck5_7_sc"] = "Эксперт",
 
 
-		["menu_deck5_1_desc_sc"] = "Убийство врагов огнестрельным оружием добавляет ##$perk_value_1## ##запасного здоровья##. Вы можете получить до ##$perk_value_2## запасного здоровья.\n\nУбийство врага оружием ближнего боя превращает запасное здоровье во ##временное здоровье##, которое утекает со скоростью ##$perk_value_3## единиц в секунду.\n\nВременное здоровье может превышать ваше максимальное здоровье, но вы не можете иметь больше ##$perk_value_4## временного здоровья за раз.",
+		["menu_deck5_1_desc_sc"] = "Убийство врагов огнестрельным оружием добавляет ##$perk_value_1## ##запасного здоровья##. Вы можете получить до ##$perk_value_2## запасного здоровья.\n\nУбийство врагов оружием ближнего боя превращает запасное здоровье во ##временное здоровье##, которое утекает со скоростью ##$perk_value_3## единиц в секунду.\n\nВременное здоровье может превышать ваше максимальное здоровье, но вы не можете иметь больше ##$perk_value_4## временного здоровья за раз.",
 		["menu_deck5_3_desc_sc"] = "Ваша полоска уворота заполняется на ##$perk_value_1## при восстановлении брони.\n\nВы получаете ##5## уворота.",
 		["menu_deck5_5_desc_sc"] = "Вы можете получить на ##$perk_value_1## больше запасного здоровья.\n\nВы носите на ##$perk_value_2## мешок для тел больше.",
-		["menu_deck5_7_desc_sc"] = "Вы получаете ##$perk_value_1## временного здоровья при поднятии.\n\nВы получаете дополнительные ##$perk_value_2## очков уворота.",
+		["menu_deck5_7_desc_sc"] = "Вы получаете ##$perk_value_1## временного здоровья при поднятии.\n\nВы получаете ещё ##$perk_value_2## очков уворота.",
 		["menu_deck5_9_desc_sc"] = "Пока у вас есть временное здоровье, вы получаете ##$perk_value_1## устойчивости и ##$perk_value_2## бонус к скорости передвижения.\n\nУстойчивость уменьшает урон по вашему здоровью, до максимальных ##$perk_value_3## и накладывается после всех остальных бонусов.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Muscle
+		--Силовик
 		["menu_deck2_1_desc_sc"] = "Ваше здоровье увеличено на ##$perk_value_1##.",
 		["menu_deck2_3_desc_sc"] = "Ваше здоровье увеличено еще на ##$perk_value_1##.\n\nВаш уворот увеличен на ##$perk_value_2## очков.",
 		["menu_deck2_5_desc_sc"] = "Ваше здоровье увеличено еще на ##$perk_value_1##.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_2## быстрее.",
 		["menu_deck2_7_desc_sc"] = "Каждый выстрел из вашего оружия имеет ##$perk_value_1## шанс посеять панику среди врагов.\n\nПаника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.\n\nВаш уворот увеличен еще на ##$perk_value_2## очков.",
 		["menu_deck2_9_desc_sc"] = "Ваше здоровье увеличено еще на ##$perk_value_1##.\n\nВы получаете на ##$perk_value_2## больше здоровья после поднятия.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Crew Chief
-		["menu_deck1_3_desc_sc"] = "Выносливость вас и вашей команды увеличена на ##$perk_value_1##.\n\nРасстояние ваших криков увеличено на ##$perk_value_2##.\n\nКомандные бонусы не складываются.\n\nВаш уворот увеличен на ##$perk_value_3## очков.",
+		--Капо
+		["menu_deck1_3_desc_sc"] = "Выносливость для вас и вашей команды увеличена на ##$perk_value_1##.\n\nРасстояние ваших криков увеличено на ##$perk_value_2##.\n\nКомандные бонусы не складываются.\n\nВаш уворот увеличен на ##$perk_value_3## очков.",
 		["menu_deck1_5_desc_sc"] = "Ваше здоровье увеличено на ##$perk_value_1##.\n\nЗдоровье вашей команды увеличено на ##$perk_value_2##.\n\nКомандные бонусы не складываются.\n\nВы отвечаете на пейджеры на ##$perk_value_3## быстрее.",
 		["menu_deck1_7_desc_sc"] = "Ваша броня увеличена на ##$perk_value_1##.\n\nВаш уворот увеличен еще на ##$perk_value_2## очков.",
 		["menu_deck1_9_desc_sc"] = "Каждый заложник увеличивает здоровье на ##$perk_value_1## и выносливость на ##$perk_value_2## для вас и вашей команды, до ##$perk_value_3## заложников.\n\nКомандные бонусы не складываются.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
-		--I only had to put these in to fix Overkill's shitty rebalance attempt--
-		--Armorer--
+
+		--Оружейник
 		["menu_deck3_1_desc_sc"] = "Ваша броня увеличена на ##$perk_value_1##.\n\nБаллистические бронежилеты получают на ##$perk_value_2## больше брони.",
 		["menu_deck3_3_desc_sc"] = "Ваша броня увеличена ещё на ##$perk_value_1##.\n\nВаше уклонение увеличено на ##$perk_value_2## очков.",
-		["menu_deck3_5_desc_sc"] = "Ваша броня увеличена ещё на ##$perk_value_1## .\n\nВаше уклонение увеличено на ##$perk_value_3## очков для баллистических бронежилетов.\n\nВы получаете возможность ставить ##$perk_value_2## сумки с мешками для трупов.",
-		["menu_deck3_7_desc_sc"] = "Ваше восстановление брони увеличено на ##$perk_value_1.##\n\nВаше уклонение увеличено на ##$perk_value_2## очков для баллистических бронежилетов.",
+		["menu_deck3_5_desc_sc"] = "Ваша броня увеличена ещё на ##$perk_value_1##.\n\nВаше уклонение увеличено на ##$perk_value_3## очков для баллистических бронежилетов.\n\nВы получаете возможность ставить ##$perk_value_2## сумки с мешками для трупов.",
+		["menu_deck3_7_desc_sc"] = "Ваше восстановление брони увеличено на ##$perk_value_1.##\n\nВаше уклонение увеличено ещё на ##$perk_value_2## очков для баллистических бронежилетов.",
 		["menu_deck3_9_desc_sc"] = "Ваше восстановление брони увеличено ещё на ##$perk_value_1.##\n\nБаллистические бронежилеты получают на ##$perk_value_2## больше брони.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Burglar--
+		--Взломщик
 		["menu_deck7_1_desc_sc"] = "Ваш уворот увеличен на ##$perk_value_1## очков.\n\nВаша полоска уворота заполняется на ##$perk_value_2## за каждую секунду в приседе.",
 		["menu_deck7_3_desc_sc"] = "Ваш уворот увеличен еще на ##$perk_value_1## очков.",
 		["menu_deck7_5_desc_sc"] = "Ваша полоска уворота заполняется еще на ##$perk_value_1## за каждую секунду в приседе.\n\nВы двигаетесь на ##$perk_value_2## быстрее в приседе.",
 		["menu_deck7_7_desc_sc"] = "Ваш уворот увеличен еще на ##$perk_value_1## очков.",
 		["menu_deck7_9_desc_sc"] = "Ваша броня восстанавливается быстрее на ##$perk_value_1##.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Gambler--
+		--Джекпот!
 		["menu_deck10_1_desc_sc"] = "Коробки с патронами также дают медикаменты, которые восстанавливают от ##$perk_value_1## до ##$perk_value_2## здоровья.\n\nЭффект происходит раз в ##$perk_value_3## секунд, но каждая подобранная коробка патронов уменьшает эту задержку на ##$perk_value_4##-##$perk_value_5## секунды.",
 		["menu_deck10_3_desc_sc"] = "Когда вы подбираете патроны, ваша команда дополнительно получает ##$perk_value_1## патронов.\n\nВы получаете ##$perk_value_2## уворота.",
 		["menu_deck10_5_desc_sc"] = "Коробки с патронами теперь восстанавливают от ##$perk_value_1## до ##$perk_value_2## очков здоровья.\n\nКаждый раз, когда вы лечитесь от подбора, ваша полоска уворота получает до ##$perk_value_3## от вашего Уворота.\n\nВы отвечаете на пейджеры на ##$perk_value_4## быстрее",
@@ -5755,75 +5863,75 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck10_7"] = "Сомнительная медицина",
 		["menu_deck10_9"] = "Народная медицина",
 
-		--Infiltrator--
+		--Интервент
 		["menu_deck8_1_desc_sc"] = "Когда вы находитесь в ##$perk_value_1## метрах от врага, вы получаете на ##$perk_value_2## меньше урона.",
 		["menu_deck8_3_desc_sc"] = "Когда вы находитесь в ##$perk_value_1## метрах от врага, вы получаете еще на ##$perk_value_2## меньше урона.\n\nВы получаете ##$perk_value_3## уворота.",
 		["menu_deck8_5_desc_sc"] = "Когда вы находитесь в ##$perk_value_1## метрах от врага, вы получаете еще на ##$perk_value_2## меньше урона.\n\nКаждый успешный удар оружием ближнего боя дает ##$perk_value_3## бонус к урону оружия ближнего боя на ##$perk_value_4## секунд, который может складываться до ##$perk_value_5## раз. Эффект обнуляется при промахе.\n\nВы зацикливаете камеры на ##$perk_value_6## секунд дольше.",
 		["menu_deck8_7_desc_sc"] = "Каждый успешный удар оружием ближнего боя дает еще ##$perk_value_1## урона оружию ближнего боя на ##$perk_value_2## секунд.\n\nВы получаете еще ##$perk_value_3## уворота.",
 		["menu_deck8_9_desc_sc"] = "Каждый успешный удар оружием ближнего боя восстанавливает ##$perk_value_1## очко здоровья каждую секунду в течение ##$perk_value_2## секунд, этот эффект может складываться до ##$perk_value_3## раз.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Sociopath--
-		["menu_deck9_1_sc"] = "No Talk",
-		["menu_deck9_1_desc_sc"] = "Вы получаете #{skill_color}#Комбометр##.\n\nУбийства в ближнем бою заполняют Комбо на #{skill_color}#$perk_value_1## очка; максимальное возможное Комбо - #{skill_color}#$perk_value_2## очков. За убийство элитных и специальных юнитов вы получаете в #{skill_color}#3## раза больше очков, а за бульдозеров и капитанов - в #{skill_color}#6## раз.\n\nВаш Комбометр истощается на #{important_1}#$perk_value_3## очков каждые #{risk}#$perk_value_4## секунд.\n\nВы теряете #{important_1}#$perk_value_5## очков Комбо когда получаете урон по здоровью; это не может происходить чаще чем в #{skill_color}#$perk_value_6## секунды.\nВы теряете #{important_1}#$perk_value_7## очков Комбо когда падаете.\n\nЗа каждые #{risk}#$perk_value_8## очка Комбо получаемый урон уменьшается на #{skill_color}#$perk_value_9## очков, максимум до #{skill_color}#$perk_value_10##",
-
-		["menu_deck9_3_desc_sc"] = "Нелетальные удары оружием ближнего боя и убийства из огнестрельного оружия обновляют Комбометр.\n\nКаждые #{risk}#$perk_value_1## очка Комбо увеличивают вашу скорость передвижения на #{skill_color}#$perk_value_2##, максимум до #{skill_color}#$perk_value_3.##\n\nВы получаете #{skill_color}#$perk_value_4## уворота.",
-
-		["menu_deck9_5_desc_sc"] = "Убийства оружием ближнего боя восстанавливают #{skill_color}#$perk_value_1## вашей выносливости.\n\nЗа каждые #{risk}#$perk_value_2## очков вашего Комбо, убийства оружием ближнего боя восстанавливают #{skill_color}#$perk_value_3## здоровья, максимум до #{skill_color}#$perk_value_4.##\n\nВы носите #{skill_color}#$perk_value_5## дополнительный мешок для трупов.",
-
-		["menu_deck9_7_desc_sc"] = "Вы получаете за убийство на #{skill_color}#$perk_value_1## очко Комбо больше за каждые #{risk}#$perk_value_2## единиц брони.\n\nЗа каждые #{risk}#$perk_value_3## очка вашего Комбо, убийства заполняют вашу полоску уворота на #{skill_color}#$perk_value_4## в зависимости от его общего количества, максимум до #{skill_color}#$perk_value_5.##\nУбийства в ближнем бою #{skill_color}#удваивают## этот эффект.\n\nВы получаете #{skill_color}#$perk_value_6## уворота.",
-
-		["menu_deck9_9_desc_sc"] = "Ваше Комбо теперь истощается на #{skill_color}#$perk_value_1## очков за раз.\n\nЗа каждые #{risk}#$perk_value_2## очков вашего Комбо, убийства прямым уроном имеют #{skill_color}#$perk_value_3## шанс посеять панику среди врагов в #{skill_color}#$perk_value_4## метрах, максимум до #{skill_color}#$perk_value_5.##\nУбийства оружием ближнего боя #{skill_color}#утраивают## этот эффект.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на #{skill_color}#10%.##",
+		--Джон Хотлайн Майями
+		["menu_deck9_1_sc"] = "Без разговоров",
+		["menu_deck9_1_desc_sc"] = "Вы получаете #{skill_color}#Комбометр##.\nУбийства в ближнем бою заполняют Комбометр на #{important_1}#$perk_value_1## Комбо; максимальное значение Комбометра - #{important_1}#$perk_value_2##. За убийство элитных и специальных юнитов вы получаете в #{skill_color}#3## раза больше Комбо, а за бульдозеров и капитанов - в #{skill_color}#6## раз.\n\nВаш Комбометр истощается на #{important_1}#$perk_value_3## Комбо каждые #{risk}#$perk_value_4## секунд.\nВы теряете #{important_1}#$perk_value_5## Комбо когда получаете урон по здоровью; это не может происходить чаще чем в #{risk}#$perk_value_6## секунды.\nВы теряете #{important_1}#$perk_value_7## Комбо когда падаете.\n\nВы получаете на #{skill_color}#$perk_value_9## очков урона меньше за каждые #{important_1}#$perk_value_8## Комбо до максимальных #{skill_color}#$perk_value_10## очков.",
+		["menu_deck9_3_sc"] = "Напряженность",		
+		["menu_deck9_3_desc_sc"] = "Нелетальные удары оружием ближнего боя и убийства из огнестрельного оружия обновляют Комбометр.\n\nВы двигаетесь на #{skill_color}#$perk_value_2## быстрее за каждые #{risk}#$perk_value_1## Комбо до максимальных #{skill_color}#$perk_value_3## скорости.\n\nВы получаете #{skill_color}#$perk_value_4## уворота.",
+		["menu_deck9_5_sc"] = "Прямое Попадание",				
+		["menu_deck9_5_desc_sc"] = "Убийства оружием ближнего боя восстанавливают #{skill_color}#$perk_value_1## вашей выносливости.\n\nУбийства оружием ближнего боя восстанавливают #{skill_color}#$perk_value_3## здоровья за каждые #{risk}#$perk_value_2## очков вашего Комбо до максимальных #{skill_color}#$perk_value_4## здоровья.\n\nВы носите #{skill_color}#$perk_value_5## дополнительный мешок для трупов.",
+		["menu_deck9_7_sc"] = "Передозировка",			
+		["menu_deck9_7_desc_sc"] = "Вы получаете на #{skill_color}#$perk_value_1## Комбо больше за убийство за каждые #{risk}#$perk_value_2## брони.\n\nУбийства заполняют вашу полоску уворота на #{skill_color}#$perk_value_4## в зависимости от его общего количества за каждые #{risk}#$perk_value_3## Комбо до максимальных#{skill_color}#$perk_value_5## уворота.\nУбийства в ближнем бою #{skill_color}#удваивают## этот эффект.\n\nВы получаете ещё #{skill_color}#$perk_value_6## уворота.",
+		["menu_deck9_7_sc"] = "В Открытую",			
+		["menu_deck9_9_desc_sc"] = "Теперь ваш Комбометр истощается на #{skill_color}#$perk_value_1## Комбо за раз.\n\nУбийства прямым уроном имеют #{skill_color}#$perk_value_3## шанс посеять панику среди врагов в #{skill_color}#$perk_value_4## метрах за каждые #{risk}#$perk_value_2## Комбо до максимальных#{skill_color}#$perk_value_5##.\nУбийства оружием ближнего боя #{skill_color}#утраивают## этот эффект.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на #{skill_color}#10%.##",
 
 		["menu_deck9_richard"] = "Ричард",
 		["menu_deck9_richard_desc_sc"] = "#{important_1}#Ты любишь причинять боль людям?## \n\nНикакого эффекта.",
 		["menu_deck9_tony"] = "Тони",
-		["menu_deck9_tony_desc_sc"] = "#{risk}#Кулаки ярости## \n\nВаши #{skill_color}#Кулаки## наносят на #{skill_color}#$perk_value_1## больше урона. \n#{risk}#Капитаны и боссы## получают на #{important_1}#75%## меньше урона от ваших #{skill_color}#Кулаки.## \n#{risk}#Эффекты карт Overdose и Showdown за убийство## уменьшены на #{important_1}#33%.## \nМаксимальное Комбо уменьшено на #{important_1}#$perk_value_6.## \nВаше Комбо теперь истощается на #{important_1}#$perk_value_7## секунды быстрее.\nВы дополнительно теряете #{important_1}#$perk_value_5## очков Комбо когда получаете урон по здоровью. \nВаш общий боезапас урезан на #{important_1}#$perk_value_2##, а подбор - на #{important_1}#$perk_value_3##.",		
+		["menu_deck9_tony_desc_sc"] = "#{risk}#Кулаки ярости## \n\nВаши #{skill_color}#Кулаки## наносят на #{skill_color}#$perk_value_1## больше урона, но #{risk}#капитаны и боссы## получают на #{important_1}#75%## меньше урона от них.\nЭффекты карт #{risk}#Overdose## и #{risk}#Showdown## за убийство уменьшены на #{important_1}#33%.## \nМаксимальное значение Комбометра уменьшено на #{important_1}#$perk_value_6## Комбо. \nВаш Комбометр теперь истощается на #{important_1}#$perk_value_7## секунды быстрее.\nВы дополнительно теряете #{important_1}#$perk_value_5## Комбо когда получаете урон по здоровью. \nВаш общий боезапас урезан на #{important_1}#$perk_value_2##, а подбор - на #{important_1}#$perk_value_3##.",		
 		["menu_deck9_aubrey"] = "Обри",
-		["menu_deck9_aubrey_desc_sc"] = "#{risk}#Весь мир - театр, а люди в нем - актеры.## \n\nУбийства не оружием ближнего боя теперь заполняют ваше Комбо на #{skill_color}#$perk_value_1## очко.\n\n#{risk}#Убийства не из ближнего боя прямого урона теперь добавляют только ## #{skill_color}#$perk_value_2## #{risk}#секунды к истощению Комбо,## #{important_1}#убийства взрывчаткой и периодическим уроном больше не обновляет Комбо.##",
+		["menu_deck9_aubrey_desc_sc"] = "#{risk}#Весь мир - театр, а люди в нем - актеры.## \n\nУбийства любым оружием, кроме ближнего боя, теперь заполняют Комбометр на #{skill_color}#$perk_value_1## Комбо.\n\n#{risk}#Убийства любым оружием прямым уроном, кроме ближнего боя, теперь добавляют только## #{skill_color}#$perk_value_2## #{risk}#секунды к истощению Комбометра,## #{important_1}#убийства взрывчаткой и периодическим уроном больше не обновляют Комбометр.##",
 		["menu_deck9_rufus"] = "Руфус",
-		["menu_deck9_rufus_desc_sc"] = "#{risk}#Выдержи одну пулю## \n\nТеперь получаемый урон уменьшается на #{skill_color}#$perk_value_1## за каждые #{risk}#$perk_value_2## очков Комбо, максимум до #{skill_color}#$perk_value_3.##\n\nВы теряете дополнительное #{important_1}#$perk_value_4## очков Комбо когда получаете урон по здоровью.",
+		["menu_deck9_rufus_desc_sc"] = "#{risk}#Выдержи одну пулю## \n\nТеперь за каждые #{risk}#$perk_value_2## Комбо получаемый урон уменьшается на #{skill_color}#$perk_value_1## до максимальных #{skill_color}#$perk_value_3## очков.\n\nВы теряете дополнительные #{important_1}#$perk_value_4## Комбо когда получаете урон по здоровью.",
 		["menu_deck9_zack"] = "Зак",
-		["menu_deck9_zack_desc_sc"] = "#{risk}#Продолжительное Комбо## \n\nВаш Комбометр теперь истощается на #{skill_color}#$perk_value_1## секунды дольше, но на #{important_1}#$perk_value_2## очков больше за раз.",
+		["menu_deck9_zack_desc_sc"] = "#{risk}#Продолжительное Комбо## \n\nВаш Комбометр теперь истощается на #{skill_color}#$perk_value_1## секунды дольше, но на #{important_1}#$perk_value_2## Комбо больше за раз.",
 		["menu_deck9_rick"] = "Рик",
-		["menu_deck9_rick_desc_sc"] = "#{risk}#Точные... удары?!## \n\nУбийства в ближнем бою теперь дают на #{skill_color}#$perk_value_1## очков Комбо больше, но максимально возможное Комбо уменьшено на #{important_1}#$perk_value_2## очков.",
+		["menu_deck9_rick_desc_sc"] = "#{risk}#Точные... удары?!## \n\nУбийства в ближнем бою теперь дают на #{skill_color}#$perk_value_1## Комбо больше, но максимальное значение Комбометра уменьшено на #{important_1}#$perk_value_2## Комбо.",
 		["menu_deck9_brandon"] = "Брэндон",
-		["menu_deck9_brandon_desc_sc"] = "#{risk}#Ходи быстрее## \n\nТеперь скорость передвижения увеличена на #{skill_color}#$perk_value_1## за каждые #{risk}#$perk_value_2## очков Комбо, максимум до #{skill_color}#$perk_value_3.##\n\nВаше Комбо теперь истощается на #{important_1}#$perk_value_4## секунду быстрее.",
+		["menu_deck9_brandon_desc_sc"] = "#{risk}#Ходи быстрее## \n\nТеперь вы двигаетесь на #{skill_color}#$perk_value_1## быстрее за каждые #{risk}#$perk_value_2## Комбо до максимальных #{skill_color}#$perk_value_3## скорости.\n\nВаш Комбометр теперь истощается на #{important_1}#$perk_value_4## секунду быстрее.",
 		["menu_deck9_earl"] = "Эрл",
-		["menu_deck9_earl_desc_sc"] = "#{risk}#Выдержи две пули## \n\n#{skill_color}#Теперь вы не теряете очки Комбо когда получаете урон по здоровью.##  \n\n#{risk}#Лечение от карты Clean Hit было уменьшено на 50%##. \n#{important_1}#Когда вас валят на землю вы теряете всё Комбо.##",
+		["menu_deck9_earl_desc_sc"] = "#{risk}#Выдержи две пули## \n\n#{skill_color}#Теперь вы не теряете Комбо когда получаете урон по здоровью.##  \n\n#{risk}#Лечение от карты #{risk}#Clean Hit## было уменьшено на 50%##. \n#{important_1}#При падении вы теряете все накопленные Комбо.##",
 		["menu_deck9_tonyr"] = "Месть Тони",
-		["menu_deck9_tonyr_desc_sc"] = "#{risk}#чувак ванильный пейдей 2 отстой, я бля ненавижу эту игру## \n\nВаши #{skill_color}#Кастеты 350к## наносят #{skill_color}#$perk_value_1## больше урона. \n#{risk}#Капитаны и боссы## получают на #{important_1}#75%## меньше урона от ваших #{skill_color}#Кастеты 350К.## \n#{risk}#Эффекты карт Overdose и Showdown за убийство## уменьшены на #{important_1}#33%.## \nМаксимальное Комбо было уменьшено на #{important_1}#$perk_value_6.## \nВаше Комбо теперь истощается на #{important_1}#$perk_value_7## секунд быстрее.\nВы дополнительно теряете #{important_1}#$perk_value_5## очков Комбо когда получаете урон по здоровью. \nВаш общий боезапас урезан на #{important_1}#$perk_value_2##, а подбор - на #{important_1}#$perk_value_3##", 
+		["menu_deck9_tonyr_desc_sc"] = "#{risk}#чувак ванильный пейдей 2 отстой, я бля ненавижу эту игру## \n\nВаши #{skill_color}#Кастеты 350к## наносят #{skill_color}#$perk_value_1## больше урона, но#{risk}#капитаны и боссы## получают на #{important_1}#75%## меньше урона от них.\nЭффекты карт #{risk}#Overdose## и #{risk}#Showdown## за убийство уменьшены на #{important_1}#33%.## \nМаксимальное значение Комбометра уменьшено на #{important_1}#$perk_value_6.## \nВаш Комбометр теперь истощается на #{important_1}#$perk_value_7## секунд быстрее.\nВы дополнительно теряете #{important_1}#$perk_value_5## Комбо когда получаете урон по здоровью. \nВаш общий боезапас урезан на #{important_1}#$perk_value_2##, а подбор - на #{important_1}#$perk_value_3##", 
 		["menu_deck9_mark"] = "Марк",
-		["menu_deck9_mark_desc_sc"] = "#{risk}#акимбо узи## \n\n#{risk}#Эффект карты Overdose за убийства заменен на скорость восстановления брони.##\n\nТеперь за каждые #{risk}#$perk_value_1## очков Комбо скорость восстановления брони увеличивается на #{skill_color}#$perk_value_2,## максимум до #{skill_color}#$perk_value_3.##",
+		["menu_deck9_mark_desc_sc"] = "#{risk}#акимбо узи## \n\n#{risk}#Эффект карты #{risk}#Overdose## за убийства заменен на новый:##\n\nВаша броня восстанавливается на #{skill_color}#$perk_value_2## быстрее за каждые #{risk}#$perk_value_1## Комбо до максимальных #{skill_color}#$perk_value_3.##",
 		["menu_deck9_swan"] = "Алекс и Эш",
-		["menu_deck9_swan_desc_sc"] = "#{risk}#Бензопила и пушки.## \n\nУбийство любым оружием (ближнего боя и стрелковое) даёт #{skill_color}#$perk_value_1## очка Комбо. \n#{risk}#Последующее убийство тем же способом только обновляет Комбометр.##",
+		["menu_deck9_swan_desc_sc"] = "#{risk}#Бензопила и пушки.## \n\nУбийство любым оружием (ближнего боя и стрелковое) даёт #{skill_color}#$perk_value_1## Комбо. \n\n#{risk}#Последующее убийство тем же способом только обновляет Комбометр.##",
 		["menu_deck9_corey"] = "Кори",
-		["menu_deck9_corey_desc_sc"] = "#{risk}#кувырки## \n\nВаши убийства оружием ближнего боя теперь заполняют полоску уворота на #{skill_color}#$perk_value_1## от вашего максимального уворота за каждые #{risk}#$perk_value_2## очков Комбо, максимум до #{skill_color}#$perk_value_3.##\n\nВы дополнительное теряете #{important_1}#$perk_value_4## очков Комбо когда получаете урон по здоровью.",
+		["menu_deck9_corey_desc_sc"] = "#{risk}#кувырки## \n\nВаши убийства оружием ближнего боя теперь заполняют полоску уворота на #{skill_color}#$perk_value_1## от вашего максимального уворота за каждые #{risk}#$perk_value_2## очков Комбо до максимальных #{skill_color}#$perk_value_3.##\n\nВы дополнительное теряете #{important_1}#$perk_value_4## Комбо когда получаете урон по здоровью.",
 
 
-		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Нанесение урона врагу восстанавливает ##$perk_value_1## очка здоровья каждую секунду в течение ##$perk_value_2## секунд.\n\nЭтот эффект складывается до ##$perk_value_3## раз, но не чаще чем раз в ##$perk_value_4## секунд и только при ношении ##Противоосколочного жилета##. Нанесение урона при помощи турелей и урона через время (огня или яда) не вызывает эффект.\n\nВы теряете ##$perk_value_5## брони при ношении Противоосколочного жилета.\n\nКомпактность Противоосколочного жилета увеличена на ##$perk_value_6##.",
-		["menu_deck11_3_desc_sc"] = "Эффект теперь восстанавливает на ##$perk_value_1## очко здоровья больше каждую секунду.",
+		--Нападающий
+		["menu_deck11_1_desc_sc"] = "Нанесение урона врагу восстанавливает ##$perk_value_1## здоровья каждую секунду в течение ##$perk_value_2## секунд.\n\nЭтот эффект складывается до ##$perk_value_3## раз, но не чаще чем раз в ##$perk_value_4## секунд и только при ношении ##Противоосколочного жилета##. Ваши турели и периодический урон (огонь или яд) не вызывают этот эффект.\n\nВы теряете ##$perk_value_5## брони при ношении Противоосколочного жилета.\n\nКомпактность Противоосколочного жилета увеличена на ##$perk_value_6##.",
+		["menu_deck11_3_desc_sc"] = "Эффект теперь восстанавливает на ##$perk_value_1## здоровье больше каждую секунду.",
 		["menu_deck11_5_desc_sc"] = "Эффект теперь длится еще ##$perk_value_1## секунды.\n\nВы получаете возможность ставить ##$perk_value_2## кейса с мешками для трупов.",
-		["menu_deck11_7_desc_sc"] = "Эффект теперь восстанавливает на ##$perk_value_1## очка здоровья больше каждую секунду.",
+		["menu_deck11_7_desc_sc"] = "Эффект теперь восстанавливает на ##$perk_value_1## здоровье больше каждую секунду.",
 		["menu_deck11_9_desc_sc"] = "Каждое срабатывание эффекта теперь увеличивает скорость передвижения на ##$perk_value_1##.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Open your mind--
+		--Экс-президент
 		["menu_deck13_1_desc_sc"] = "Когда у вас полная броня, вы получаете ##$perk_value_1## очка ##запасного здоровья## за каждого убитого врага.\n\nКогда ваша броня восстанавливается после полной потери, ваше запасное здоровье превращается в настоящее.\n\nМаксимальное количество запасного здоровья зависит от вашей брони - тяжелая броня накапливает меньше запасного здоровья, чем легкая.",
-		["menu_deck13_3_desc_sc"] = "Увеличивает количество накапливаемого здоровья на убийства ##$perk_value_1##.\n\nВаш уворот увеличен на ##$perk_value_2## очков.",
+		["menu_deck13_3_desc_sc"] = "Увеличивает количество накапливаемого здоровья за убийства на ##$perk_value_1##.\n\nВаш уворот увеличен на ##$perk_value_2## очков.",
 		["menu_deck13_5_desc_sc"] = "Вы можете накапливать на ##$perk_value_1## больше здоровья.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##$perk_value_2## дольше.",
 		["menu_deck13_7_desc_sc"] = "Увеличивает количество накапливаемого здоровья за убийства на ##$perk_value_1##.\n\nВаш уворот увеличен еще на ##$perk_value_2## очков.",
 		["menu_deck13_9_desc_sc"] = "Убийство врага ускоряет восстановление брони, в зависимости от надетой брони. Тяжелая броня получает меньший бонус, чем легкая. Этот бонус обнуляется при каждом восстановлении брони.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--THIS IS WAR BABY--
-		["menu_deck14_1_desc_sc"] = "Наносимый вами урон переводится в ##Истерию##. Максимальное количество Истерии - ##$perk_value_1##.\n\nИстерия:\nПолучаемый урон для вас и вашей команды уменьшается на ##$perk_value_2## очко за каждые ##$perk_value_3## очков Истерии. Истерия уменьшается на ##$perk_value_4## каждые ##$perk_value_5## секунд.",
-		["menu_deck14_3_desc_sc"] = "Члены вашей команды получают бонус за Истерию.\n\nИстерия от разных членов команды не складывается - эффект имеет только истерия с самой большой защитой.\n\nВы получаете ##$perk_value_1## уворота.",
+		--THIS IS WAR BABY
+		["menu_deck14_1_desc_sc"] = "Наносимый вами урон переводится в ##Истерию##. Максимальное количество Истерии - ##$perk_value_1##.\n\n##Истерия##\nПолучаемый урон уменьшается на ##$perk_value_2## очко за каждые ##$perk_value_3## Истерии. Количество Истерии уменьшается на ##$perk_value_4## каждые ##$perk_value_5## секунд.",
+		["menu_deck14_3_desc_sc"] = "Члены вашей команды получают бонус за Истерию.\n\nИстерия от разных членов команды не складывается - только Истерия с наивысшим значением уменьшения урона имеет эффект.\n\nВы получаете ##$perk_value_1## уворота.",
 		["menu_deck14_5_desc_sc"] = "Истерия теперь уменьшается на ##$perk_value_1## каждые ##$perk_value_2## секунд.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##$perk_value_3## дольше.",
-		["menu_deck14_7_desc_sc"] = "Получаемый урон теперь уменьшается еще на ##$perk_value_1## очко за каждые ##$perk_value_2## очков Истерии.\n\nВы получаете еще ##$perk_value_3## уворота.",
-		["menu_deck14_9_desc_sc"] = "Очки истерии теперь на ##$perk_value_1## эффективнее для вас.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
+		["menu_deck14_7_desc_sc"] = "Получаемый урон теперь уменьшается еще на ##$perk_value_1## очко за каждые ##$perk_value_2## Истерии.\n\nВы получаете еще ##$perk_value_3## уворота.",
+		["menu_deck14_9_desc_sc"] = "Истерия теперь на ##$perk_value_1## эффективнее для вас.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Anarchist--
+		--ДСПД НОУ АИ НОУ ДАУНС НОУ ДЖОКЕРС НОУ УИЛЛ ТУ ЛИВ
 		["menu_st_spec_15"] = "Анархист",
-		["menu_deck15_1_desc_sc"] = "Вместо полного восстановления брони вне боя, Анархист периодически восстанавливает часть брони. Тяжелые бронежилеты восстанавливают больше брони за раз, но делают это реже.\n\nНавыки, увеличивающие скорость восстановления брони, отключены при использовании этого набора.",
+		["menu_deck15_1_desc_sc"] = "Вместо полного восстановления брони вне боя, Анархист периодически восстанавливает часть брони. Чем тяжелее ваш бронежилет, тем больше брони восстанавливается за раз, но тем реже это происходит.\n\nНавыки, увеличивающие скорость восстановления брони, отключены при использовании этого набора.",
 		["menu_deck15_3_desc_sc"] = "##$perk_value_1## вашего здоровья переводится в ##$perk_value_2## брони.",
 		["menu_deck15_5_desc_sc"] = "##$perk_value_1## вашего здоровья переводится в ##$perk_value_2## брони.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##$perk_value_3## дольше.",
 		["menu_deck15_7_desc_sc"] = "##$perk_value_1## вашего здоровья переводится в ##$perk_value_2## брони.",
@@ -5831,44 +5939,44 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		["menu_anarc_disable"] = "#{important_1}#(Этот эффект не работает для набора перков Анархист)##",
 
-		--Scarface--
-		["menu_deck17_1_desc_sc"] = "Теперь вы можете использовать ##Инъектор.## Переключение на другой набор перков сделает Инъектор недоступным. Инъектор заменяет ваше метательное оружие.\n\nВо время ограбления нажмите кнопку метательного оружия, чтобы использовать его. Во время использование Инъектора, вы будете вылечены на ##$perk_value_1## от любого полученного урона в течение ##$perk_value_2## секунд.\n\nИнъектор можно использовать раз в ##$perk_value_3## секунд, но каждое убийство уменьшит задержку на ##$perk_value_4## секунду. ",
+		--Лицо со Шрамом
+		["menu_deck17_1_desc_sc"] = "Теперь вы можете использовать ##Инъектор##. Переключение на другой набор перков сделает Инъектор недоступным. Инъектор занимает слот метательного оружия.\n\nВо время ограбления нажмите кнопку метательного оружия, чтобы использовать его. Во время использования Инъектора, вы будете вылечены на ##$perk_value_1## от любого полученного урона в течение ##$perk_value_2## секунд.\n\nИнъектор можно использовать раз в ##$perk_value_3## секунд, но каждое убийство уменьшит задержку на ##$perk_value_4## секунду.",
 		["menu_deck17_3_desc_sc"] = "Ваша скорость увеличена на ##$perk_value_1## пока действует Инъектор.",
 		["menu_deck17_5_desc_sc"] = "Теперь вы будете вылечены на ##$perk_value_1## от любого полученного урона в течение ##$perk_value_2## секунд после использования Инъектора.\n\nПока действует Инъектор, враги будут держать вас в приоритете.",
 		["menu_deck17_7_desc_sc"] = "Количество восстанавливаемого Инъектором здоровья увеличено на ##$perk_value_1## если у вас меньше ##$perk_value_2## здоровья.",
-		["menu_deck17_9_desc_sc"] = "Пока у вас полное здоровье, за каждые ##$perk_value_1## очков здоровья, полученные во время действия Инъектора, Инъектор восстановится на ##$perk_value_2## секунды быстрее.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
+		["menu_deck17_9_desc_sc"] = "Пока у вас полное здоровье, Инъектор восстановится на ##$perk_value_2## секунды быстрее за каждые ##$perk_value_1## здоровья, полученные во время действия Инъектора.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--10 feet higher--
+		--Дымовуха из бичпакета
 		["menu_st_spec_18"] = "Сикарио",
-		["menu_deck18_1_desc_sc"] = "Теперь вы можете использовать ##Дымовую шашку.##\n\nПри броске, дымовая шашка создает дымовую завесу на ##$perk_value_1## секунд. Внутри завесы вы и ваша команда восстанавливают броню на ##$perk_value_2## быстрее. Любые противники, стоящие в дымовой завесе, получает штраф ##$perk_value_3## к точности.\n\nДымовую завесу можно использовать раз в ##$perk_value_4## секунд, но убийство врага сокращает эту задержку на ##$perk_value_5## секунды.\n\nВаш уворот увеличен на ##$perk_value_6## очков.",
+		["menu_deck18_1_desc_sc"] = "Теперь вы можете использовать ##Дымовую шашку##. Переключение на другой набор перков сделает Дымовую шашку недоступным. Дымовая шашка занимает слот метательного оружия.\n\nПри броске, Дымовая шашка создает завесу на ##$perk_value_1## секунд. Внутри завесы вы и ваша команда восстанавливаете броню на ##$perk_value_2## быстрее. Любые противники, стоящие в дымовой завесе, получает штраф ##$perk_value_3## к точности.\n\nДымовую завесу можно использовать раз в ##$perk_value_4## секунд, но убийство врага сокращает эту задержку на ##$perk_value_5## секунды.\n\nВаш уворот увеличен на ##$perk_value_6## очков.",
 		["menu_deck18_3_desc_sc"] = "Ваш уворот увеличен еще на ##$perk_value_1## очков.",
 		["menu_deck18_5_desc_sc"] = "Уворот от атаки сократит задержку дымовой завесы на ##$perk_value_1## секунду.\n\nВы носите на ##$perk_value_2## мешок для тел больше.",
 		["menu_deck18_7_desc_sc"] = "Ваш уворот увеличен еще на ##$perk_value_1## очков.",
-		["menu_deck18_9_desc_sc"] = "Полоска уворота будет заполняться на ##$perk_value_1## каждую секунду, в течение которой вы находитесь внутри дымовой завесы.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
+		["menu_deck18_9_desc_sc"] = "Полоска уворота будет заполняться на ##$perk_value_1## каждую секунду, пока вы находитесь внутри дымовой завесы.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Теперь вы можете использовать ##Фляжку##.\n\n##$perk_value_1## получаемого урона по здоровью будет задержано на ##$perk_value_2## секунд.\n\nВы можете нажать на кнопку метательного оружия, чтобы использовать Фляжку и мгновенно отвергнуть задержанный урон.\n\nКогда вы отвергаете задержанный урон, ##$perk_value_3## этого урона возвращается вам в качестве здоровья. Фляжку можно использовать раз в ##$perk_value_4## секунд.\n\n##$perk_value_5 вашей брони превращается в $perk_value_6 здоровья.##",
+		--Стоик не про алкоголизм, но что нам стоит взять механику Монаха из Варкрафта и добавить в наш шутер
+		["menu_deck19_1_desc_sc"] = "Теперь вы можете использовать ##Фляжку##. Переключение на другой набор перков сделает Фляжку недоступным. Фляжка занимает слот метательного оружия.\n\n##$perk_value_1## полученного урона по здоровью превращается во ##временное здоровье##, которые убывает в течении ##$perk_value_2## секунд.\n\nВы можете нажать на кнопку метательного оружия, чтобы использовать Фляжку и обнулить временное здоровье, ##$perk_value_3## от которого превращается в настоящее здоровье. Фляжку можно использовать раз в ##$perk_value_4## секунд.\n\n##$perk_value_5 вашей брони переводятся в $perk_value_6 здоровья.##",
 		["menu_deck19_3_desc_sc"] = "Задержка Фляжки сокращается на ##$perk_value_1## секунды за каждого убитого врага.",
-		["menu_deck19_5_desc_sc"] = "Если вы не получаете урон в течение ##$perk_value_1## секунд, любой задержанный урон будет отвергнут.\n\nВы отвечаете на пейджеры на ##$perk_value_2## быстрее.",
+		["menu_deck19_5_desc_sc"] = "Если вы не получаете урон в течение ##$perk_value_1## секунд, всё текущее временное здоровье становится настоящим.\n\nВы отвечаете на пейджеры на ##$perk_value_2## быстрее.",
 		["menu_deck19_7_desc_sc"] = "Когда у вас меньше ##$perk_value_1## здоровья, задержка Фляжки сокращается на ##$perk_value_2## секунды за каждого убитого врага.",
 		["menu_deck19_9_desc_sc"] = "Вы получаете на ##$perk_value_1## больше здоровья после поднятия.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--it's not a war crime if they're not people--
+		--Минздрав предупреждает: всё убивает без предупреждения
 		["menu_st_spec_20"] = "Тандем",
-		["menu_deck20_1_desc_sc"] = "Теперь вы можете использовать ##Парилку.##\n\nЧтобы активировать Парилку, вам нужно смотреть на союзника на расстоянии не более ##$perk_value_1## метров и нажать на кнопку метательного оружия, чтобы отметить его. Между вами и союзником не должно быть препятствий или стен.\n\nКаждый противник, убитый вами или выбранным союзником, восстановит ##$perk_value_2## здоровья вам и ##$perk_value_3## здоровья союзнику.\n\nПарилка длится ##$perk_value_4## секунд и восстанавливается ##$perk_value_5## секунд.",
+		["menu_deck20_1_desc_sc"] = "Теперь вы можете использовать ##Парилку.## Переключение на другой набор перков сделает Парилку недоступным. Парилка занимает слот метательного оружия.\n\nЧтобы активировать Парилку, вам нужно смотреть на союзника на расстоянии не более ##$perk_value_1## метров и нажать на кнопку метательного оружия, чтобы отметить его. Между вами и союзником не должно быть препятствий или стен.\n\nКаждый противник, убитый вами или выбранным союзником, восстановит ##$perk_value_2## здоровья вам и ##$perk_value_3## здоровья союзнику.\n\nПарилка длится ##$perk_value_4## секунд и восстанавливается ##$perk_value_5## секунд.",
 		["menu_deck20_3_desc_sc"] = "Каждый убитый вами или выбранным союзником враг продлевает действие Парилки на ##$perk_value_1## секунды.\n\nЭтот эффект уменьшается на ##$perk_value_2## секунды с каждым убийством.",
 		["menu_deck20_5_desc_sc"] = "Каждый убитый вами или выбранным союзником враг уменьшает получаемый урон на ##$perk_value_1## очков, до максимальных ##$perk_value_2##, пока Парилка не станет снова доступна для использования.\n\nВы зацикливаете камеры на ##$perk_value_3## секунд дольше.",
 		["menu_deck20_7_desc_sc"] = "Лечение от Парилки увеличено на ##$perk_value_1##.",
 		["menu_deck20_9_desc_sc"] = "Каждый враг, убитый вами, сокращает задержку Парилки на ##$perk_value_1## секунды.\n\nКаждый враг, убитый выбранным союзником, сокращает задержку Парилки на ##$perk_value_2## секунды, пока она действует.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Biker--
-		["menu_deck16_1_desc_sc"] = "Каждый раз, когда вы или ваша команда убивают врага, вы восстанавливаете ##$perk_value_1## очка здоровья. Это может произойти только раз в ##$perk_value_2## секунд.",
+		--Байкер
+		["menu_deck16_1_desc_sc"] = "Каждый раз, когда вы или ваша команда убивают врага, вы восстанавливаете ##$perk_value_1## здоровья. Это может произойти только раз в ##$perk_value_2## секунд.",
 		["menu_deck16_3_desc_sc"] = "Вы восстанавливаете ##$perk_value_1## брони каждые ##$perk_value_2## секунд.",
 		["menu_deck16_5_desc_sc"] = "Каждые потерянные ##$perk_value_1## брони сокращают задержку на восстановление здоровья на ##$perk_value_2## секунд.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_3## быстрее.",
 		["menu_deck16_7_desc_sc"] = "Вы восстанавливаете ##$perk_value_1## брони каждые ##$perk_value_2## секунд.\n\nУбийство врага оружием ближнего боя мгновенно вызывает этот эффект и активирует следующее восстановление брони на ##$perk_value_3## секунду раньше.",
 		["menu_deck16_9_desc_sc"] = "Каждые потерянные ##$perk_value_1## брони увеличивают количество получаемого здоровья за убийства на ##$perk_value_2## очка.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Yakuza--
+		--Джон Якудза
 		["menu_deck12_1_desc_sc"] = "Чем меньше у вас здоровья, тем быстрее будет восстанавливаться полоска уворота. Когда у вас меньше ##100%## здоровья, полоска уворота будет восстанавливать до ##$perk_value_1## уворота каждую секунду.\n\nВаш уворот увеличен на ##$perk_value_2## очков.",
 		["menu_deck12_3_desc_sc"] = "Чем меньше у вас здоровья, тем больше вы будете получать уворота при убийстве врага. Когда у вас меньше ##100%## здоровья, вы получите до ##$perk_value_1## уворота при убийстве врага.",
 		["menu_deck12_5_desc_sc"] = "Чем меньше у вас здоровья, тем меньше урона вы получаете. Когда у вас меньше ##100%## здоровья, вы получаете до ##$perk_value_1## меньше урона.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_2## быстрее.",
@@ -5877,23 +5985,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		["menu_yakuza_deflection_add"] = "(Бонус Якудзы)",
 
-		--Hacker--
-		["menu_deck21_1_desc_sc"] = "Теперь вы можете использовать ##Карманный генератор помех##.\n\nВо время ограбления нажмите кнопку метательного оружия, чтобы активировать его.\n\nАктивация Карманного генератора помех до тревоги отключит всю электронику и пейджеры на ##$perk_value_1## секунд.\n\nАктивация Карманного генератора помех после тревоги будет оглушать врагов в радиусе ##$perk_value_2## метров. Первые помехи имеют ##$perk_value_3## шанс оглушить врага, затем каждые ##$perk_value_4## секунды помех имеют ##$perk_value_5## шанс на оглушение.\n\nКарманный генератор помех восстанавливается ##$perk_value_6## секунд, но каждое убийство сократит задержку на ##$perk_value_7## секунды.",
+		--Хакер
+		["menu_deck21_1_desc_sc"] = "Теперь вы можете использовать ##Карманный генератор помех## (сокр. ##КГП##). Переключение на другой набор перков сделает КГП недоступным. КГП занимает слот метательного оружия.\n\nВо время ограбления нажмите кнопку метательного оружия, чтобы активировать его.\n\nАктивация КГП до тревоги отключит всю электронику и пейджеры на ##$perk_value_1## секунд.\n\nАктивация КГП после тревоги будет оглушать врагов в радиусе ##$perk_value_2## метров. Первые помехи имеют ##$perk_value_3## шанс оглушить врага, затем каждые ##$perk_value_4## секунды помех имеют ##$perk_value_5## шанс на оглушение.\n\nКГП восстанавливается ##$perk_value_6## секунд, но каждое убийство сократит задержку на ##$perk_value_7## секунды.",
 		["menu_deck21_3_desc_sc"] = "Ваш уворот увеличен на ##$perk_value_1## очков.",
-		["menu_deck21_5_desc_sc"] = "Убийство врага пока работает Карманный генератор помех восстановит ##$perk_value_1## здоровья.",
+		["menu_deck21_5_desc_sc"] = "Пока работает КГП, убийство врага  восстановит ##$perk_value_1## здоровья.",
 		["menu_deck21_7_desc_sc"] = "Ваша броня восстанавливается быстрее на ##$perk_value_1##.\n\nВаш уворот увеличен еще на ##$perk_value_2## очков.",
-		["menu_deck21_9_desc_sc"] = "Союзники восстановят ##$perk_value_1## здоровья, если убьют врага пока работает Карманный генератор помех.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
+		["menu_deck21_9_desc_sc"] = "Союзники восстановят ##$perk_value_1## здоровья, если убьют врага пока работает КГП.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
 
 
-		--Leech
-		["menu_deck22_1_desc_sc"] = "Теперь вы можете использовать ##Ампулу##.\n\nНажмите кнопку метательного оружия, чтобы активировать Ампулу. Она восстановит ##$perk_value_1## вашего здоровья и отключит броню на время своего действия.\n\nПока Ампула действует, ваше здоровье разделено на сегменты по ##$perk_value_3##, и любой полученный урон снимет один сегмент. Убийство ##$perk_value_4## врагов восстановит один сегмент и заблокирует получаемый урон на ##$perk_value_5## секунду.\n\nАмпула действует ##$perk_value_2## секунд и восстанавливается ##$perk_value_6## секунд.",
+		--Кровосися
+		["menu_deck22_1_desc_sc"] = "Теперь вы можете использовать ##Ампулу##. Переключение на другой набор перков сделает Ампулу недоступным. Ампула занимает слот метательного оружия.\n\nНажмите кнопку метательного оружия, чтобы активировать Ампулу. Она восстановит ##$perk_value_1## вашего здоровья и лишит вас брони на время своего действия.\n\nПока Ампула действует, ваше здоровье разделено на сегменты по ##$perk_value_3##, и любой полученный урон снимет один сегмент. Убийство ##$perk_value_4## врагов восстановит один сегмент и заблокирует получаемый урон на ##$perk_value_5## секунду.\n\nАмпула действует ##$perk_value_2## секунд и восстанавливается ##$perk_value_6## секунд.",
 		["menu_deck22_3_desc_sc"] = "Пока действует Ампула, любое получение урона восстановит ##$perk_value_1## здоровья вашим союзникам.",
 		["menu_deck22_5_desc_sc"] = "Длительность Ампулы увеличена до ##$perk_value_1## секунд.\n\nУбийство врага уменьшает задержку Ампулы на ##$perk_value_2## секунду.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_3## быстрее.",
-		["menu_deck22_7_desc_sc"] = "Во время действия ампулы, ваше здоровье разделено на сегменты по ##$perk_value_1##.",
-		["menu_deck22_9_desc_sc"] = "Теперь можно активировать Ампулу во время падения. Это поднимет вас до конца действия Ампулы.\n\nЭто добавит ##$perk_value_1## секунд к времени восстановления Ампулы.\n\nПолучение урона вылечит товарищей на ##$perk_value_2##.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
+		["menu_deck22_7_desc_sc"] = "Теперь ваше здоровье разделено на сегменты по ##$perk_value_1## во время действия Ампулы.",
+		["menu_deck22_9_desc_sc"] = "Теперь можно активировать Ампулу когда вы лежите. Это временно поднимет вас до конца действия Ампулы и добавит ##$perk_value_1## секунд к времени восстановления Ампулы.\n\nТеперь получение урона вылечит товарищей на ##$perk_value_2##.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--CopyCat--
+		--Подражатель
 		["menu_st_spec_23"] = "Подражатель",
 		["menu_st_spec_23_desc"] = "Подражатель - уникальный человек, обладающий фотографической памятью и молниеносными рефлексами. Вечное ожидание опасности сделало вас настолько ловким, что вы можете уворачиваться и даже отражать пули противника. Вы изучали своих товарищей и теперь можете имитировать их способности и формировать свой собственный уникальный стиль из них. И если кто-то скажет, что вы просто воришка, ответьте, что подражание - высшая форма похвалы.",
 		["menu_deck23_1"] = "Тактическая перезарядка",
@@ -5903,14 +6011,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_9"] = "Мимикрия",
 		["menu_deck23_9_desc"] = "Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		["menu_deck23_1_desc"] = "Убийство ##$perk_value_1## врагов перезарядит ваше спрятанное оружие.\n\nУбийства считаются отдельно для каждого оружия, счетчик обнуляется только при срабатывании эффекта.\n\nВы переключаете оружие на ##$perk_value_2## быстрее.",
+		["menu_deck23_1_desc"] = "Убийство ##$perk_value_1## врагов перезарядит ваше спрятанное оружие.\n\nУбийства считаются отдельно для каждого оружия, счетчик обнуляется только при срабатывании эффекта.\n\nВы меняете оружие на ##$perk_value_2## быстрее.",
 		["menu_deck23_1_short"] = "Убийство ##$perk_value_1## врагов перезарядит ваше спрятанное оружие.\n\nВы переключаете оружие на ##$perk_value_2## быстрее.",
 		["menu_deck23_1_1_desc"] = "Ваше здоровье увеличено на ##$perk_value_1##.",
 		["menu_deck23_1_1_short"] = "Ваше здоровье увеличено на ##$perk_value_1##.",
 		["menu_deck23_1_2_desc"] = "Ваша броня увеличена на ##$perk_value_1##.",
 		["menu_deck23_1_2_short"] = "Ваша броня увеличена на ##$perk_value_1##.",
-		["menu_deck23_1_3_desc"] = "Ваш уворот увеличен на ##$perk_value_1## очка.",
-		["menu_deck23_1_3_short"] = "Ваш уворот увеличен на ##$perk_value_1## очка.",
+		["menu_deck23_1_3_desc"] = "Вы получаете ##$perk_value_1## уворота.",
+		["menu_deck23_1_3_short"] = "Вы получаете ##$perk_value_1## уворота.",
 		["menu_deck23_1_4_desc"] = "Скорость в приседе и с сумкой увеличена на ##$perk_value_1##.",
 		["menu_deck23_1_4_short"] = "Скорость в приседе и с сумкой увеличена на ##$perk_value_1##.",
 		["menu_deck23_1_1"] = "Живчик",
@@ -5918,14 +6026,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_1_3"] = "Ловкач",
 		["menu_deck23_bonus_speed"] = "Проныра",
 
-		["menu_deck23_3_desc"] = "Каждый выстрел в голову восстанавливает ##$perk_value_1## здоровья.\n\nЭто может произойти не чаще чем раз в ##$perk_value_2## секунд или при срабатывании навыка ##\"В яблочко\"##",
+		["menu_deck23_3_desc"] = "Каждый выстрел в голову восстанавливает ##$perk_value_1## здоровья.\n\nЭто может произойти не чаще чем раз в ##$perk_value_2## секунд или при срабатывании навыка ##\"В яблочко\"##.",
 		["menu_deck23_3_short"] = "Каждый выстрел в голову восстанавливает ##$perk_value_1## здоровья.\n\nЭто может произойти не чаще чем раз в ##$perk_value_2## секунд или при срабатывании навыка ##\"В яблочко\"##.",
 		["menu_deck23_3_1_desc"] = "Ваше здоровье увеличено на ##$perk_value_1##.",
 		["menu_deck23_3_1_short"] = "Ваше здоровье увеличено на ##$perk_value_1##.",
 		["menu_deck23_3_2_desc"] = "Ваша броня увеличена на ##$perk_value_1##.",
 		["menu_deck23_3_2_short"] = "Ваша броня увеличена на ##$perk_value_1##.",
-		["menu_deck23_3_3_desc"] = "Ваш уворот увеличен на ##$perk_value_1## очка.",
-		["menu_deck23_3_3_short"] = "Ваш уворот увеличен на ##$perk_value_1## очка.",
+		["menu_deck23_3_3_desc"] = "Вы получаете ##$perk_value_1## уворота.",
+		["menu_deck23_3_3_short"] = "Вы получаете ##$perk_value_1## уворота.",
 		["menu_deck23_3_4_desc"] = "Скорость в приседе и с сумкой увеличена на ##$perk_value_1##.",
 		["menu_deck23_3_4_short"] = "Скорость в приседе и с сумкой увеличена на ##$perk_value_1##.",
 		["menu_deck23_3_1"] = "Живчик",
@@ -5938,8 +6046,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_5_1_short"] = "Ваше здоровье увеличено на ##$perk_value_1##.",
 		["menu_deck23_5_2_desc"] = "Ваша броня увеличена на ##$perk_value_1##.",
 		["menu_deck23_5_2_short"] = "Ваша броня увеличена на ##$perk_value_1##.",
-		["menu_deck23_5_3_desc"] = "Ваш уворот увеличен на ##$perk_value_1## очка.",
-		["menu_deck23_5_3_short"] = "Ваш уворот увеличен на ##$perk_value_1## очка.",
+		["menu_deck23_5_3_desc"] = "Вы получаете ##$perk_value_1## уворота.",
+		["menu_deck23_5_3_short"] = "Вы получаете ##$perk_value_1## уворота.",
 		["menu_deck23_5_4_desc"] = "Скорость в приседе и с сумкой увеличена на ##$perk_value_1##.",
 		["menu_deck23_5_4_short"] = "Скорость в приседе и с сумкой увеличена на ##$perk_value_1##.",
 		["menu_deck23_5_1"] = "Живчик",
@@ -5952,60 +6060,62 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_7_1_short"] = "Ваше здоровье увеличено на ##$perk_value_1##.",
 		["menu_deck23_7_2_desc"] = "Ваша броня увеличена на ##$perk_value_1##.",
 		["menu_deck23_7_2_short"] = "Ваша броня увеличена на ##$perk_value_1##.",
-		["menu_deck23_7_3_desc"] = "Ваш уворот увеличен на ##$perk_value_1## очка.",
-		["menu_deck23_7_3_short"] = "Ваш уворот увеличен на ##$perk_value_1## очка.",
+		["menu_deck23_7_3_desc"] = "Вы получаете ##$perk_value_1## уворота.",
+		["menu_deck23_7_3_short"] = "Вы получаете ##$perk_value_1## уворота.",
 		["menu_deck23_7_4_desc"] = "Скорость в приседе и с сумкой увеличена на ##$perk_value_1##.",
 		["menu_deck23_7_4_short"] = "Скорость в приседе и с сумкой увеличена на ##$perk_value_1##.",
 		["menu_deck23_7_1"] = "Живчик",
 		["menu_deck23_7_2"] = "Крепыш",
 		["menu_deck23_7_3"] = "Ловкач",
-		--Final Card
+		--Последняя карта
 			--Crew Chief
-			["menu_deck1_mrwi_desc"] = "Выносливость вас и вашей команды увеличена на ##$perk_value_1##.\n\nРасстояние ваших криков увеличено на ##$perk_value_2##.\n\nКомандные бонусы не складываются.\n\nВы отвечаете на пейджеры на ##$perk_value_3## быстрее.",
+			["menu_deck1_mrwi_desc"] = "Выносливость для вас и вашей команды увеличена на ##$perk_value_1##.\n\nРасстояние ваших криков увеличено на ##$perk_value_2##.\n\nКомандные бонусы не складываются.\n\nВы отвечаете на пейджеры на ##$perk_value_3## быстрее.",
 			--Muscle
 			["menu_deck2_mrwi_desc"] = "Каждый выстрел из вашего оружия имеет ##$perk_value_1## шанс посеять панику среди врагов.\n\nПаника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_2## быстрее.",
 			--Armorer
 			["menu_deck3_mrwi_desc"] = "Ваша броня восстанавливается на ##$perk_value_1## быстрее.\n\nВы можете ставить ##$perk_value_2## кейса с мешками для тел.",
 			--Rogue
-			["menu_deck4_mrwi_desc"] = "Ваш уворот увеличен на ##$perk_value_1## очков.\n\nВы переключаете оружие на ##$perk_value_2## быстрее.\n\nВы зацикливаете камеры на ##$perk_value_3## секунд дольше.",
+			["menu_deck4_mrwi_desc"] = "Вы получаете ##$perk_value_1## уворота.\n\nВы меняете оружие на ##$perk_value_2## быстрее.\n\nВы зацикливаете камеры на ##$perk_value_3## секунд дольше.",
 			--Hitman
-			["menu_deck5_mrwi_desc"] = "Убийство врагов огнестрельным оружием добавляет ##$perk_value_1## запасного здоровья. Вы можете получить до ##$perk_value_2## запасного здоровья.\n\nУбийство врага оружием ближнего боя превращает запасное здоровье во временное здоровье, которое утекает со скоростью ##$perk_value_3## единиц в секунду.\n\nВременное здоровье может превышать ваше максимальное здоровье, но вы не можете иметь больше ##$perk_value_4## временного здоровья за раз.\n\nВы носите на ##$perk_value_5## мешок для тел больше.",
+			["menu_deck5_mrwi_desc"] = "Убийство врагов огнестрельным оружием добавляет ##$perk_value_1## ##запасного здоровья##. Вы можете получить до ##$perk_value_2## запасного здоровья.\n\nУбийство врага оружием ближнего боя превращает запасное здоровье во ##временное здоровье##, которое утекает со скоростью ##$perk_value_3## единиц в секунду.\n\nВременное здоровье может превышать ваше максимальное здоровье, но вы не можете иметь больше ##$perk_value_4## временного здоровья за раз.\n\nВы носите на ##$perk_value_5## мешок для тел больше.",
 			--Crook
-			["menu_deck6_mrwi_desc"] = "При ношении баллистических жилетов, ваша броня увеличена еще на ##$perk_value_2##, а уворот - на ##$perk_value_1## очков.\n\nYВы взламываете замки на ##$perk_value_3## быстрее.",
+			--["menu_deck6_mrwi_desc"] = "При ношении баллистических жилетов, ваша броня увеличена еще на ##$perk_value_2##, а уворот - на ##$perk_value_1## очков.\n\nYВы взламываете замки на ##$perk_value_3## быстрее.",
+			["menu_deck6_mrwi_desc"] = "Убийство врага восстанавливает #{skill_color}#$perk_value_1## брони.\n\nЭто может происходить только раз в #{important_1}#$perk_value_2## секунд, но каждое убийство сокращает время на #{skill_color}#$perk_value_3## секунд, а убийство холодным оружием - еще на #{skill_color}#$perk_value_4## секунды.\n\nЕсли убийство сокращает время полностью, бонусы активируются и задержка начнется сначала.\n\nВы взламываете замки на ##$perk_value_5## секунды быстрее.",
 			--Burglar
 			["menu_deck7_mrwi_desc"] = "Ваш уворот увеличен на ##$perk_value_1## очков.\n\nВаша полоска уворота заполняется еще на ##$perk_value_2## за каждую секунду в приседе.\n\nВы двигаетесь на ##$perk_value_3## быстрее в приседе.",
 			--Infiltrator
 			["menu_deck8_mrwi_desc"] = "Когда вы находитесь в ##$perk_value_1## метрах от врага, вы получаете на ##$perk_value_2## меньше урона.\n\nКаждый удар в ближнем бою увеличивает урон холодного оружия на ##$perk_value_3##, этот эффект действует ##$perk_value_4## секунд и складывается до ##$perk_value_5## раз. Эффект обнуляется при промахе.\n\nВы зацикливаете камеры на ##$perk_value_6## секунд дольше.",
 			--Sociopath
-			["menu_deck9_mrwi_desc"] = "Убийство врага восстанавливает ##$perk_value_1## брони; убийство на расстоянии ближе ##$perk_value_2## метров восстанавливает дополнительно ##$perk_value_3## брони, убийство холодным оружием - в два раза больше.\n\nЭффект активируется раз в ##$perk_value_4## секунд, но каждое убийство сокращает время на ##$perk_value_5## секунд, а убийство холодным оружием - еще на ##$perk_value_6## секунды.\n\nЕсли убийство сокращает время полностью, бонусы активируются и задержка начнется сначала.\n\nВы носите на ##$perk_value_7## мешок для тел больше.",
+			--["menu_deck9_mrwi_desc"] = "Убийство врага восстанавливает ##$perk_value_1## брони; убийство на расстоянии ближе ##$perk_value_2## метров восстанавливает дополнительно ##$perk_value_3## брони, убийство холодным оружием - в два раза больше.\n\nЭффект активируется раз в ##$perk_value_4## секунд, но каждое убийство сокращает время на ##$perk_value_5## секунд, а убийство холодным оружием - еще на ##$perk_value_6## секунды.\n\nЕсли убийство сокращает время полностью, бонусы активируются и задержка начнется сначала.\n\nВы носите на ##$perk_value_7## мешок для тел больше.",
+			["menu_deck9_mrwi_desc"] = "Вы получаете ##Комбометр##.\nУбийства в ближнем бою заполняют Комбометр на #{skill_color}#$perk_value_1## Комбо; максимальное значение Комбометра - #{skill_color}#$perk_value_2## .\n\nВаш Комбометр истощается на #{important_1}#$perk_value_3## Комбо каждые #{risk}#$perk_value_4## секунд.\nВы теряете #{important_1}#$perk_value_5## Комбо когда получаете урон по здоровью; это не может происходить чаще чем в #{skill_color}#$perk_value_6## секунды.\nВы теряете #{important_1}#$perk_value_7## Комбо когда падаете.\n\nВы получаете на #{skill_color}#$perk_value_9## очков урона меньше за каждые #{risk}#$perk_value_8## Комбо до максимальных #{skill_color}#$perk_value_10## очков.\n\nВы двигаетесь на #{skill_color}#$perk_value_14## быстрее за каждые #{risk}#$perk_value_13## Комбо до максимальных #{skill_color}#$perk_value_15## скорости.\nУбийства оружием ближнего боя восстанавливают #{skill_color}#$perk_value_11## вашей выносливости.\n\nВы носите #{skill_color}#$perk_value_12## дополнительный мешок для трупов.",
 			--Gambler
-			["menu_deck10_mrwi_desc"] = "Патроны, которые вы подбираете, лечат членов команды от ##$perk_value_1 до $perk_value_2## очков здоровья.\n\nЛечение имеет задержку в ##$perk_value_3## секунд, но каждая подобранная коробочка патронов сокращает эту задержку на ##$perk_value_4 - $perk_value_5## секунды.\n\nКогда вы подбираете патроны, ваша команда дополнительно получает ##$perk_value_6## патронов.\n\nВы отвечаете на пейджеры на ##$perk_value_7## быстрее.",
+			["menu_deck10_mrwi_desc"] = "Патроны, которые вы подбираете, лечат членов команды от ##$perk_value_1 до $perk_value_2## здоровья.\n\nЛечение имеет задержку в ##$perk_value_3## секунд, но каждая подобранная коробочка патронов сокращает эту задержку на ##$perk_value_4 - $perk_value_5## секунды.\n\nКогда вы подбираете патроны, ваша команда дополнительно получает ##$perk_value_6## патронов.\n\nВы отвечаете на пейджеры на ##$perk_value_7## быстрее.",
 			--Grinder
-			["menu_deck11_mrwi_desc"] = "Нанесение урона врагу восстанавливает ##$perk_value_1## очка здоровья каждую секунду в течение ##$perk_value_2## секунд.\n\nЭтот эффект складывается до ##$perk_value_3## раз, но не чаще чем раз в ##$perk_value_4## секунд и только при ношении ##Противоосколочного жилета##. Нанесение урона при помощи турелей и урона через время (огня или яда) не вызывает эффект.\n\nВы теряете ##$perk_value_5## брони при ношении Противоосколочного жилета.\n\nКомпактность Противоосколочного жилета увеличена на ##$perk_value_6##.\n\nВы получаете возможность ставить ##$perk_value_7## кейса с мешками для трупов.",
+			["menu_deck11_mrwi_desc"] = "Нанесение урона врагу восстанавливает ##$perk_value_1## очка здоровья каждую секунду в течение ##$perk_value_2## секунд.\n\nЭтот эффект складывается до ##$perk_value_3## раз, но не чаще чем раз в ##$perk_value_4## секунд и только при ношении ##Противоосколочного жилета##. Турели и периодический урон (огонь или яд) не вызывают этот эффект.\n\nВы теряете ##$perk_value_5## брони при ношении Противоосколочного жилета.\n\nКомпактность Противоосколочного жилета увеличена на ##$perk_value_6##.\n\nВы получаете возможность ставить ##$perk_value_7## кейса с мешками для трупов.",
 			--Yakuza
 			["menu_deck12_mrwi_desc"] = "Чем меньше у вас здоровья, тем больше вы будете получать уворота при убийстве врага. Когда у вас меньше ##100%## здоровья, вы получите до ##$perk_value_1## уворота при убийстве врага.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_2## быстрее.",
 			--Ex-Pres
-			["menu_deck13_mrwi_desc"] = "Когда у вас полная броня, вы получаете ##$perk_value_1## очка запасного здоровья за каждого убитого врага.\n\nКогда ваша броня восстанавливается после полной потери, ваше запасное здоровье превращается в настоящее.\n\nМаксимальное количество запасного здоровья зависит от вашей брони - тяжелая броня накапливает меньше запасного здоровья, чем легкая.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##$perk_value_2## дольше.",
+			["menu_deck13_mrwi_desc"] = "Когда у вас полная броня, вы получаете ##$perk_value_1## очка ##запасного здоровья## за каждого убитого врага.\n\nКогда ваша броня восстанавливается после полной потери, ваше запасное здоровье превращается в настоящее.\n\nМаксимальное количество запасного здоровья зависит от вашей брони - тяжелая броня накапливает меньше запасного здоровья, чем легкая.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##$perk_value_2## дольше.",
 			--Maniac
-			["menu_deck14_mrwi_desc"] = "Наносимый вами урон переводится в Истерию. Максимальное количество Истерии - ##$perk_value_1##.\n\nИстерия:\nПолучаемый урон для вас и вашей команды уменьшается на ##$perk_value_2## очко за каждые ##$perk_value_3## очков Истерии. Истерия уменьшается на ##$perk_value_4## каждые ##$perk_value_5## секунд.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##$perk_value_6## дольше.",
+			["menu_deck14_mrwi_desc"] = "Наносимый вами урон переводится в ##Истерию##. Максимальное количество Истерии - ##$perk_value_1##.\n\n##Истерия##\nПолучаемый урон для вас и вашей команды уменьшается на ##$perk_value_2## очко за каждые ##$perk_value_3## очков Истерии. Истерия уменьшается на ##$perk_value_4## каждые ##$perk_value_5## секунд.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##$perk_value_6## дольше.",
 			--Anarchist
-			["menu_deck15_mrwi_desc"] = "Вместо восстановления брони вне боя, Анархист периодически восстанавливает броню с частотой ##8## очков брони в секунду. Тяжелые бронежилеты восстанавливают больше брони за раз, но делают это реже.\n\nНавыки, увеличивающие скорость восстановления брони, отключены при использовании этого набора.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##$perk_value_1## дольше.",
+			["menu_deck15_mrwi_desc"] = "Вместо восстановления брони вне боя, вы периодически восстанавливаете броню с частотой ##8## очков брони в секунду. Чем тяжелее бронежилет, тем больше восстанавливется брони за раз, но тем реже это происходит.\n\nНавыки, увеличивающие скорость восстановления брони, отключены при использовании этого набора.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##$perk_value_1## дольше.",
 			--Biker
-			["menu_deck16_mrwi_desc"] = "Каждый раз, когда вы или ваша команда убивают врага, вы восстанавливаете ##$perk_value_1## очка здоровья. Это может произойти только раз в ##$perk_value_2## секунд.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_3## быстрее.",
+			["menu_deck16_mrwi_desc"] = "Каждый раз, когда вы или ваша команда убивают врага, вы восстанавливаете ##$perk_value_1## здоровья. Это может произойти только раз в ##$perk_value_2## секунд.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_3## быстрее.",
 			--Kingpin
-			["menu_deck17_mrwi_desc"] = "Теперь вы можете использовать Инъектор. Инъектор заменяет ваше метательное оружие.\n\nВо время использования Инъектора, вы будете вылечены на ##$perk_value_1## от любого полученного урона в течение ##$perk_value_2## секунд.\n\nВаша скорость увеличена на ##$perk_value_3## пока действует Инъектор.\n\nИнъектор можно использовать раз в ##$perk_value_4## секунд, но каждое убийство уменьшит задержку на ##$perk_value_5## секунду.",
+			["menu_deck17_mrwi_desc"] = "Теперь вы можете использовать ##Инъектор##.\n\nВо время использования Инъектора, вы будете вылечены на ##$perk_value_1## от любого полученного урона в течение ##$perk_value_2## секунд.\n\nВаша скорость увеличена на ##$perk_value_3## пока действует Инъектор.\n\nИнъектор можно использовать раз в ##$perk_value_4## секунд, но каждое убийство уменьшит задержку на ##$perk_value_5## секунду.",
 			--Sicario
-			["menu_deck18_mrwi_desc"] = "Теперь вы можете использовать ##Дымовую шашку.##\n\nПри броске, дымовая шашка создает дымовую завесу на ##$perk_value_1## секунд. Внутри завесы вы и ваша команда восстанавливают броню на ##$perk_value_2## быстрее. Любые противники, стоящие в дымовой завесе, получает штраф ##$perk_value_3## к точности.\n\nДымовую завесу можно использовать раз в ##$perk_value_4## секунд, но убийство врага сокращает эту задержку на ##$perk_value_5## секунды.\n\nВаш уворот увеличен на ##$perk_value_6## очков.\n\nВы носите на ##$perk_value_7## мешок для тел больше.",
+			["menu_deck18_mrwi_desc"] = "Теперь вы можете использовать ##Дымовую шашку##.\n\nПри броске, дымовая шашка создает завесу на ##$perk_value_1## секунд. Внутри завесы вы и ваша команда восстанавливаете броню на ##$perk_value_2## быстрее. Любые противники, стоящие в завесе, получат штраф ##$perk_value_3## к точности.\n\nДымовую шашку можно использовать раз в ##$perk_value_4## секунд, но убийство врага сокращает эту задержку на ##$perk_value_5## секунды.\n\nВаш уворот увеличен на ##$perk_value_6## очков.\n\nВы носите на ##$perk_value_7## мешок для тел больше.",
 			--Stoic
-			["menu_deck19_mrwi_desc"] = "Теперь вы можете использовать Фляжку.\n\n##$perk_value_1## получаемого урона по здоровью будет задержано на ##$perk_value_2## секунд.\n\nВы можете нажать на кнопку метательного оружия, чтобы использовать Фляжку и мгновенно отвергнуть задержанный урон.\n\nКогда вы отвергаете задержанный урон, ##$perk_value_3## этого урона возвращается вам в качестве здоровья. Фляжку можно использовать раз в ##$perk_value_4## секунд.\n\n##$perk_value_5 вашей брони превращается в $perk_value_6 здоровья.##\n\nВы отвечаете на пейджеры на ##$perk_value_7## быстрее.",
+			["menu_deck19_mrwi_desc"] = "Теперь вы можете использовать ##Фляжку##.\n\n##$perk_value_1## получаемого урона по здоровью станет ##временным здоровьем##, которая будет убывать в течение ##$perk_value_2## секунд.\n\nВы можете нажать на кнопку метательного оружия, чтобы использовать Фляжку и обнулить временное здоровье, ##$perk_value_3## от которого превращается в настоящее здоровье. Фляжку можно использовать раз в ##$perk_value_4## секунд.\n\n##$perk_value_5 вашей брони переводится в $perk_value_6 здоровья.##\n\nВы отвечаете на пейджеры на ##$perk_value_7## быстрее.",
 			--Tag Team
-			["menu_deck20_mrwi_desc"] = "Теперь вы можете использовать ##Парилку.##\n\nЧтобы активировать Парилку, вам нужно смотреть на союзника на расстоянии не более ##$perk_value_1## метров и нажать на кнопку метательного оружия, чтобы отметить его. Между вами и союзником не должно быть препятствий или стен.\n\nКаждый противник, убитый вами или выбранным союзником, восстановит ##$perk_value_2## здоровья вам и ##$perk_value_3## здоровья союзнику.\n\nПарилка длится ##$perk_value_4## секунд и восстанавливается ##$perk_value_5## секунд.\n\nВы зацикливаете камеры на ##$perk_value_6## секунд дольше.",
+			["menu_deck20_mrwi_desc"] = "Теперь вы можете использовать ##Парилку##.\n\nЧтобы активировать Парилку, вам нужно смотреть на союзника на расстоянии не более ##$perk_value_1## метров и нажать на кнопку метательного оружия, чтобы отметить его. Между вами и союзником не должно быть препятствий или стен.\n\nКаждый противник, убитый вами или выбранным союзником, восстановит ##$perk_value_2## здоровья вам и ##$perk_value_3## здоровья союзнику.\n\nПарилка длится ##$perk_value_4## секунд и восстанавливается ##$perk_value_5## секунд.\n\nВы зацикливаете камеры на ##$perk_value_6## секунд дольше.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "Теперь вы можете использовать ##Карманный генератор помех##.\n\nВо время ограбления нажмите кнопку метательного оружия, чтобы активировать его.\n\nАктивация Карманного генератора помех до тревоги отключит всю электронику и пейджеры на ##$perk_value_1## секунд.\n\nАктивация Карманного генератора помех после тревоги будет оглушать врагов в радиусе ##$perk_value_2## метров. Первые помехи имеют ##$perk_value_3## шанс оглушить врага, затем каждые ##$perk_value_4## секунды помех имеют ##$perk_value_5## шанс на оглушение.\n\nКарманный генератор помех восстанавливается ##$perk_value_6## секунд, но каждое убийство сократит задержку на ##$perk_value_7## секунды.",
+			["menu_deck21_mrwi_desc"] = "Теперь вы можете использовать ##Карманный генератор помех##(Сокр. ##КГП##).\n\nВо время ограбления нажмите кнопку метательного оружия, чтобы активировать его.\n\nАктивация КГП до тревоги отключит всю электронику и пейджеры на ##$perk_value_1## секунд.\n\nАктивация КГП после тревоги будет оглушать врагов в радиусе ##$perk_value_2## метров. Первые помехи имеют ##$perk_value_3## шанс оглушить врага, затем каждые ##$perk_value_4## секунды помех имеют ##$perk_value_5## шанс на оглушение.\n\nКГП восстанавливается ##$perk_value_6## секунд, но каждое убийство сократит задержку на ##$perk_value_7## секунды.",
 			--Leech
-			["menu_deck22_mrwi_desc"] = "Теперь вы можете использовать ##Ампулу##.\n\nНажмите кнопку метательного оружия, чтобы активировать Ампулу. Она восстановит ##$perk_value_1## вашего здоровья и отключит броню на время своего действия.\n\nПока Ампула действует, ваше здоровье разделено на сегменты по ##$perk_value_3##, и любой полученный урон снимет один сегмент. Убийство ##$perk_value_4## врагов восстановит один сегмент и заблокирует получаемый урон на ##$perk_value_5## секунду.\n\nАмпула действует ##$perk_value_2## секунд и восстанавливается ##$perk_value_6## секунд.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_7## быстрее.",
+			["menu_deck22_mrwi_desc"] = "Теперь вы можете использовать ##Ампулу##.\n\nНажмите кнопку метательного оружия, чтобы активировать Ампулу. Она восстановит ##$perk_value_1## вашего здоровья и лишит вас брони на время своего действия.\n\nПока Ампула действует, ваше здоровье разделено на сегменты по ##$perk_value_3##, и любой полученный урон снимет один сегмент. Убийство ##$perk_value_4## врагов восстановит один сегмент и заблокирует получаемый урон на ##$perk_value_5## секунду.\n\nАмпула действует ##$perk_value_2## секунд и восстанавливается ##$perk_value_6## секунд.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_7## быстрее.",
 
-		--Blank Perk Deck--
+		--Мета наборы--
 		["menu_st_spec_0"] = "Перерожденный",
 		["menu_st_spec_0_desc"] = "Говорят, люди рождаются без каких-либо заложенных идей, мыслей и убеждений - они приобретаются исключительно из опыта. Для кого-то это усложняет жизнь, кто-то видит в этом возможности. Перерожденный - это грабитель, удача которого раскрывается не сразу. Его судьба полна как больших рисков, так и больших наград.",
 		["menu_st_spec_0_desc_short"] = "Говорят, люди рождаются без каких-либо заложенных идей, мыслей и убеждений - они приобретаются исключительно из опыта. Для кого-то это усложняет жизнь, кто-то видит в этом возможности. Перерожденный - это грабитель, удача которого раскрывается не сразу. Его судьба полна как больших рисков, так и больших наград.",
@@ -6037,10 +6147,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["rpd_menu_dialog_title"] = "Вы уверены?",
 		["rpd_menu_dialog_text"] = "Если вы обнулите перк '$perk_deck_name', вы получите $points_to_refund очков.",
 
-		--Strings for Lobby Player Info
+		--для Lobby Player Info
 		["menu_st_spec_24"] = "Перерожденный",
 		["menu_st_spec_25"] = "Прирожденный",
-		--MOD PERK DECKS
+		--МОДОВЫЕ ПЕРКИ
 			--OFFYERROCKER'S MERCENARY PERK DECK
 	["menu_deck_kmerc_title"] = "Наемник",
 	["menu_deck_kmerc_desc"] = "Профессиональный Наемник прошел сотни тренировок, чтобы убивать и не быть убитым. Даже в самых жарких перестрелках, Наемник найдет дух, настойчивость и силу прорываться вперед. Выживание - правило номер один; ведь когда все кончится, оплату заберут лишь живые.",
@@ -6049,23 +6159,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 	["menu_deck_kmerc_3"] = "Чрезмерная сила",
 	["menu_deck_kmerc_3_desc_sc"] = "Вы получаете ##1%## бонус к скорости перезарядки и ##2%## бонус к скорости смены оружия за каждые ##4## единицы брони.\n\nВы получаете на ##5%## больше брони.",
 	["menu_deck_kmerc_5"] = "Отстранись",
-	["menu_deck_kmerc_5_desc_sc"] = "Когда ваше здоровья становится ##0##, оно становится ##1##, а вы получаете ##2## секунды неуязвимости.\nВо время неуязвимости нельзя бежать.\nЭтот эффект не может повториться, пока вы не вылечитесь до 100% здоровья.\n\nВы получаете на ##5%## больше здоровья.",
+	["menu_deck_kmerc_5_desc_sc"] = "Если у вас закончится здоровье, вы выживите с ##1## здоровьем и получите ##2## секунды неуязвимости.\nВо время неуязвимости нельзя бежать.\nЭтот эффект не может повториться, пока вы не вылечитесь до 100% здоровья.\n\nВы получаете на ##5%## больше здоровья.",
 	["menu_deck_kmerc_7"] = "Лечебный слой",
-	["menu_deck_kmerc_7_desc_sc"] = "Если ваша броня держится ##2 секунды##, вы лечитесь на число равное ##1%## вашей максимальной брони ##каждые 5 секунд##, пока у вас есть броня.",
+	["menu_deck_kmerc_7_desc_sc"] = "Если ваша броня держится ##2## секунды, вы лечитесь на число равное ##1%## вашей максимальной брони каждые ##5## секунд, пока у вас есть броня.",
 	["menu_deck_kmerc_9"] = "Сильная сторона",
-	["menu_deck_kmerc_9_desc_sc"] = "Когда вы получаете урон, который оставит вас с меньше чем ##30%## здоровья, вы ##восстанавливаете броню## на ##50%## от полученного урона.\nЭффект имеет задержку в ##1## секунду и не может сработать одновременно с неуязвимостью от перка 'Отстранись'.",
+	["menu_deck_kmerc_9_desc_sc"] = "Когда вы получаете урон, который оставит вас с меньше чем ##30%## здоровья, вы восстанавливаете броню на ##50%## от полученного урона.\nЭффект имеет задержку в ##1## секунду и не может сработать одновременно с неуязвимостью от карты ##Отстранись##.",
 
-	--OFFYERROCKER'S LIBERATOR PERK DECK
+			--OFFYERROCKER'S LIBERATOR PERK DECK
 	["bm_tachi"] = "Инъектор жизни Таки-2Б",
 	["bm_tachi_desc"] = "В этих инъекторах содержатся сильные лекасртва и микроскопические роботы. При инъекции, эти роботы попадают в организм и быстро восстанавливают поврежденные ткани. Данный вариант инъектора так же содержит адреналин для ускорения действия роботов.",
 	["menu_deck_liberator_title"] = "Либератор",
 	["menu_deck_liberator_desc"] = "Либератор уже долгое время занимается восстановлением государственного и корпоративного имущества - в основном, цифровых документов. Отсутствие боевого опыта означает, что Либератору иногда приходится останавливаться и брать передышку, прежде чем возвращаться к борьбе со всякими тиранами, захватившими власть.",
 	["menu_deck_liberator_1"] = "Любой ценой",
-	["menu_deck_liberator_1_desc_sc"] = "Открывает Инъектор жизни. Использование Инъектора сразу восстановит ##15## стамины, а также будет восстанавливать ##0.5## здоровья каждую секунду в течение ##4## секунд, или пока игрок не получит урон.\nИнъектор жизни обладает ##1## использованием с задержкой в ##30## секунд. Каждое убийство уменьшит задержку на ##1## секунду.",
+	["menu_deck_liberator_1_desc_sc"] = "Открывает ##Инъектор жизни##. Использование Инъектора сразу восстановит ##15## выносливости, а также будет восстанавливать ##0.5## здоровья каждую секунду в течение ##4## секунд, или пока игрок не получит урон.\nИнъектор жизни обладает ##1## использованием с задержкой в ##30## секунд. Каждое убийство уменьшит задержку на ##1## секунду.",
 	["menu_deck_liberator_3"] = "На опережение",
 	["menu_deck_liberator_3_desc_sc"] = "Регенерация здоровья от Инъектора теперь длится на ##2## секунды дольше.\n\nЕсли регенерация здоровья отменилась, вы получите ##10%## сопротивления урону на остаток времени.",
 	["menu_deck_liberator_5"] = "Теоретические знания",
-	["menu_deck_liberator_5_desc_sc"] = "Использование Инъектора теперь восстанавливает на ##15## стамины больше, а регенерация увеличена на ##0.5##.\n\nВаш уворот увеличен на ##5## очков.",
+	["menu_deck_liberator_5_desc_sc"] = "Использование Инъектора теперь восстанавливает на ##15## выносливости больше, а его регенерация увеличена на ##0.5##.\n\nВаш уворот увеличен на ##5## очков.",
 	["menu_deck_liberator_7"] = "Проблемная личность",
 	["menu_deck_liberator_7_desc_sc"] = "Ваше здоровье увеличено на ##10%##.\n\nРегенерация здоровья от Инъектора теперь длится на ##2## секунды дольше.",
 	["menu_deck_liberator_9"] = "Внезапная сила",

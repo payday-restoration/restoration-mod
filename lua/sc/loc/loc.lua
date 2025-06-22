@@ -2935,6 +2935,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--MW2023 STG-44 (FUCK YOU, SLEDGEHAMMER)
 					["bm_w_stango44"] = "\"STG-44\"",
 					["bm_wp_wpn_fps_ass_stango44_magazine_40"] = "30 Round Magazine",
+					--HD2 AR-32
+					["bm_w_ar32_desc"] = "A large-capacity assault rifle firing humane #{skill_color}#stun rounds.## Reports of lethal incidents have been thoroughly debunked.\n\n#{skill_color}#Penetrates armor## to apply its stunning effects.\n#{skill_color}#Stun rounds stagger enemies up to 30 meters away.##\n#{risk}#Stagger range cannot be modified.##",
 					--HD2 AR-23
 					["bm_w_ar23_carbine"] = "AR-23A Liberator Carbine",
 					["bm_wp_ck_carbine_desc"] = "A compact version of the Liberator designed for increased viability in close quarters. Has an #{skill_color}#increased fire rate## at the cost of #{important_1}#higher spread.##",

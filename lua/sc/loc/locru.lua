@@ -1568,6 +1568,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 					--Raygun
 					["bm_wp_raygun_o_waw"] = "Старое прицеливание",
 					["bm_wp_raygun_o_waw_desc"] = "Меняет выравнивание прицела так, как это было до Call of Duty: Black Ops II",
+					--AR 23 LIBERATOR
+					["bm_wp_wpn_fps_ass_ar23_o_carbine"] = "Колиматорный прицел МК2",
+					["bm_wp_carbine_optic_desc"] = "Разновидность коллиматорного прицела.",
+					["bm_wp_wpn_fps_upg_ar23_o_promo"] = "Механический прицел",
+	                ["bm_wp_promo_irons_desc"] = "Простой механический прицел. Для адский десантников мечтающих преодолевать в битвах те же трудности что и их предки.",
+					["bm_wp_wpn_fps_ass_ar23_optic_3"] = "Трубчатый коллиматорный (1.5х)",
+					["bm_wp_concussive_optic_desc"] = "Стандартный прицел большинства видов оружия. Обеспечивает хорошее и точное прицеливание.",
+					["bm_wp_wpn_fps_ass_ar23_optic"] = "Боевой прицел 4х",
+					["bm_wp_penetrator_optic_desc"] = "Хорошо подходит для средней и большой дальности, даёт максимальное приближение, которое используется на обычном оружии.",
+					["bm_wp_wpn_fps_ass_ar23_laser"] = "Лезерный прицел с фонариком",
+					["bm_wp_laser_sight_desc"] = "Крупногабаритное устройство, совмещающее в себе функции лазерного прицела и фонарика.",
+					--StA-52 Assault Rifle
+					["bm_wp_wpn_fps_ass_sta52_carry_handle_flipped"] = "Стандартаня мушка"
+
+
 
 		--Kobus 90--
 		["bm_p90_sc_desc"] = "ПП по схеме буллпап. Конкурент ПП 'SpecOps-7'. Ее часто называют футуристической космической пушкой.\n\n#{skill_color}#Наносит 75% урона через броню.##",
@@ -1826,6 +1841,35 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_wp_upg_i_g11_desc"] = "Увеличивает скорострельность стрельбы очередью до #{skill_color}#2100## и #{skill_color}#дает возможность менять режим стрельбы.##",
 			--AR-18
 			--["bm_w_ar18"] = "КАР-18",
+			--ПРЕСВЯТАЯ ДЕМОКРАТИЯ !!! HD2 AR-23 
+			        ["bm_w_ar23"] ="АР-23 Освободитель",
+					["bm_w_ar23_desc"] = "Винтовка ВССЗ подойдёт для отстрела жуков, кальмаров и автоматонов, но не вздумай применять против граждан супер земли.",
+					["bm_wp_wpn_fps_ass_ar23_ck_carbine"] = "АР-23A Карабин 'Освободитель'",
+					["bm_wp_ck_carbine_desc"] = "Имеет увеличенную скорость стрельбы взамен на увеличенный разброс.#",
+					["bm_wp_wpn_fps_ass_ar23_ck_penetrator"] = "АР-23P Пробойный Освободидель",
+					["bm_wp_ck_penetrator_desc"] = "Вариция, которая эффективнее #{skill_color}#пробивает броню.##",
+					["bm_wp_wpn_fps_ass_ar23_ck_concussive"] = "АР-23C Сотрясающий освободитель",
+					["bm_wp_ck_concussive_desc"] = "Вариация АР-23, у которой имеются #{skill_color}#оглушающие пули## и модифицированный лазерный прицел.\n#{skill_color}#Оглушающие пули сбивают врагов с ног на расстоянии до 20 метров.##\n#{risk}#Эффект сбивания с ног нельзя модифицировать и огонь очередями удален.##",
+					["menu_l_global_value_helldivers2_mod"] = "Это предмет из Helldivers 2 - Адские десантники в бой!",
+					["menu_l_global_value_helldivers2sv_mod"] = "Это предмет из Helldivers 2 - Закаленные ветераны",
+					["menu_l_global_value_helldivers2vc_mod"] = "Это предмет из Helldivers 2 - Змеи-коммандос",
+			--LAS 16 Sickle
+			    ["bm_w_sickle"] = "ЛАС-16 Серп",
+	            ["bm_w_sickle_desc"] = "Лазерная винтовка которая не требует патрон, но в замен нужно следить за перегревом, советую брать её только планеты где бушует ужасный холод.\n",
+			--StA-52 Assault Rifle
+			["bm_w_sta52"] = "СТА-52",
+	        ["bm_w_sta52_desc"] = "Во время первой вонйы 2055 году, именно эта винтовка была в руках хелгастов, она проявила себя и прошла через огонь и воду. \nСоздатель 'ОРУЖИЯ ШТАЛЬ'\n",
+			
+			["bm_w_ar32"] = "АР-32 Усмиритель",
+			["bm_w_ar32_desc"] = "Гуманная винтовка для задержания врагов демократии... Но кто-то зарядил в неё боевые.",
+
+			--["bm_wp_wpn_fps_ass_ar32_ammo_lethal"] = "Летальные патроны",
+			--["bm_wp_lethalammo_desc"] = "When the perp just does not want to comply, and keeps resisting... Cops are always advised to use lethal force. Even if said force comes from a glorified stun gun...\nIncreases damage by 25%, enables critical hits, but cuts ammo pickup rate and max ammo capacity. Bullets are expensive, y'know.",
+
+			["menu_l_global_value_forceoflaw_mod"] = "Это Helldivers 2 - Сила закона",
+
+
+
 
 
 		--Galant--
@@ -1886,7 +1930,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_w_sierra458_beo_desc"] = "Собственная разработка Чейнса - мощная и скорострельная альтернатива винтовке 'Текки'.\n\n#{skill_color}#Может пробивать броню, врагов, щиты (до начала падения урона) и тонкие стены.##",
 			["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Заменяет патроны .458 SOCOM на #{stats_positive}#ядовитые .450 Bushmaster## которые #{stats_positive}#наносят 30 урона в секунду и могут прерывать врагов.##\n\n#{important_1}#Теперь не может пробивать нескольких врагов.##",
 			["bm_w_sierra458_ivy_desc"] = "Собственная разработка Чейнса - мощная и скорострельная альтернатива винтовке 'Текки'.\n\n#{skill_color}#Наносит 50% урона через броню, может пробивать тонкие стены## и #{stats_positive}#наносит урон через время ядом.##",
-        --MSR
+			--BR 14 Adjudicator
+			["bm_w_br14"] = "БР-14 Эксперт",
+			["bm_w_br14_desc"] = "Данная винтовка не зря несёт такое имя, не каждый справится с её отдачей, но тот, кто с ней с умееет совладать, станет экспертом в области продвижения демократии.\n",
+			--R-2 Amendment
+	        ["bm_w_r2"] = "R-2 Поправка",
+ 	        ["bm_w_r2_desc"] = "Шикарная винтовка со штык ножом и с возможностью стрельбы очередями, идеально подходит для того чтобы отдать честь павшим адским десантникам которые умерли защищая супер-землю.",
+
+	        ["menu_l_global_value_ceremony_mod"] = "Это предмет из Helldivers 2 - церемониймейстер!",
+
+			--MSR
 		["bm_msr_sc_desc"] = "Стандартная винтовка армии США. Хорошие точность, удобность и скрытность делают ее винтовкой на любой случай.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
 		--R700
 		["bm_r700_sc_desc"] = "Предок винтовки Раттлснейк. Хорошие точность и удобность, а еще превосходящая дальнобойность по сравнению с младшим братом. В чем подвох? Устаревшие магазины на пять патронов.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
@@ -1943,6 +1996,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["flexfire_desc"] = "#{important_1}#Увеличение прицела будет равняться 3х\nНе может пробивать титановые щиты.##",
 			["oracle_scope"] = "Прицел Oracle TechLink",
 			["oracle_scope_desc"] = "Меняет точку прицела на #{skill_color}#Smart-Link##.\n#{risk}#Увеличение 5-10x.##",
+			--R6 Deadyey
+			["bm_w_r6"] = "Р-6 Меткий Стрелок",
+	        ["bm_w_r6_desc"] = "Помогает нести демократию на диком западе отсреливая караван автоматонов для взыскания супер кредитов.",
+
+
+
 		--Marlin 1894
 		--["bm_w_m1894"] = "Mare's Leg",
 		--SPX Centerfire
@@ -3264,6 +3323,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_m7caseless_supp"] = "Мисрих М7С",
 			["bm_w_x_m7caseless"] = "Парные M7",
 			["bm_w_x_m7caseless_supp"] = "Парные M7С",
+			--SMG 32 Repmirand
+		    ["bm_w_reprimand"] = "СМГ-32 Взыскание",
+            ["bm_w_reprimand_desc"] = "Точный и мощный, ни один хаосдайвер и любой другой враг демократии не скроется от праведного гнева блюстателей правды.",
+			--StA-11 Submachine Gun
+			["bm_w_sta11"] = "СМГ СТА-11",
+	        ["bm_w_sta11_desc"] = "Пистолет пулемёт с большим магазином который позволяет подавлять врагов демократии, всё таки 'Шталь' знали цену своему оружию. \nСоздатель 'ОРУЖИЕ ШТАЛЯ'.",
+
+
+
 
 			["bm_w_sig_xm250"] = "ФИК МГ277",
 		["bm_w_tecci"] = "Контрабандист",
@@ -3301,7 +3369,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_coach"] = "Клэр 12",
 		["bm_w_huntsman"] = "Москони 12",
 		["bm_w_judge"] = "Судья",
-		["bm_w_x_judge"] = "Жока и Бока", --вините клейтона.
+		["bm_w_x_judge"] = "Жока и Бока", --вините Клейтона.
 		["bm_w_b682"] = "Джоселина 12",
 		["bm_w_quadbarrel"] = "Думстик",
 		["bm_w_mp153"] = "Аргос 1",
@@ -5003,14 +5071,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_CG22_desc"] = "На некоторых ограблениях появится елка, которая дает подарки.",
 		["mutator_CG22_longdesc"] = "Рождество 2022:\n\nНа некоторых ограблениях появляются елки, которые дают подарки. Подарки можно уничтожить и получить временные бонусы, или отдать Хайрудину для бонусного опыта, денег и монет Континеталь. При использовании подарков может появиться Бульдозер-Снеговик.",
 
-		["mutator_thecandlesburnoutforyou"] = "Reload Marathon",
-		["mutator_thecandlesburnoutforyou_desc"] = "Disables the auto-reload that occurs when emptying your magazine; Reloads require a manual input",
-		["mutator_thecandlesburnoutforyou_longdesc"] = "Disables the auto-reload that occurs when emptying your magazine; Reloads require a manual input",
+		["mutator_thecandlesburnoutforyou"] = "Марафон перезарядок",
+		["mutator_thecandlesburnoutforyou_desc"] = "Отключает автоперезарядку, когда в вашем оружии закончатся патроны в обойме.",
+		["mutator_thecandlesburnoutforyou_longdesc"] = "Отключает автоперезарядку когда в вашем оружие закончатся патроны в обойме, требуется ручной ввод, как раньше больше не позажимать....",
 
-		["mutator_letthesleepinggoddie"] = "Magazine Martyr",
-		["mutator_letthesleepinggoddie_desc"] = "Upon a non-empty reload, ammo from the previous magazine is lost.",
-		["mutator_letthesleepinggoddie_longdesc"] = "Upon a non-empty reload, ammo from the previous magazine is lost.\n\nNote: Weapons that retain their ammo during their reload (per-round loading, retention reloads, etc.) as well as reloads triggered by skills are exempt from the effects of this mutator.",
-		["mutator_letthesleepinggoddie_no_effect"] = "Unaffected by the \"Magazine Martyr\" mutator.",
+		["mutator_letthesleepinggoddie"] = "Криворукий",
+		["mutator_letthesleepinggoddie_desc"] = "Неполная перезарядка приводит к сбросу магазина.",
+		["mutator_letthesleepinggoddie_longdesc"] = "Неполная перезарядка приводит к сбросу магазина.\n\nNote: Оружия, в котором сохраняются патроны во время перезарядки (перезарядка по одному патрону, перезарядки с удержанием магазина, и так далее.) а также перезарядка, вызванная навыками, не провоцируют дейсвтия мутатора.",
+		["mutator_letthesleepinggoddie_no_effect"] = "Не провоцирует действие мутатора \"Криворукий\".",
 
 		["menu_cg22_post_objective_1_desc"] = "Убить 200 врагов из любой снайперской винтовки.",
 		["menu_cg22_post_objective_2_desc"] = "Убить 15 Клокеров из винтовки 'Полярная Звезда' на сложности 'Очень Сложно' или выше.",
@@ -5619,11 +5687,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Crook--
 		["menu_deck6_1"] = "Пойманный",
+		["menu_deck6_3"] = "Уловка",
+		["menu_deck6_5"] = "План Б",
+		["menu_deck6_7"] = "Поднять ставки",
+		["menu_deck6_9"] = "Беглец",
+
 		["menu_deck6_1_desc_sc"] = "Когда вы находитесь в ##$perk_value_1## метрах от 3-х и более врагов, вы получаете на ##$perk_value_2## меньше урона.",
 		["menu_deck6_3_desc_sc"] = "Убийство врага восстанавливает ##$perk_value_1## брони.\n\nЭто может происходить только раз в ##$perk_value_2## секунд, но каждое убийство сокращает время на ##$perk_value_3## секунд, а убийство холодным оружием - еще на ##$perk_value_4## секунды.\n\nЕсли убийство сокращает время полностью, бонусы активируются и задержка начнется сначала.",
-		["menu_deck6_5_desc_sc"] = "Убийство врага оружием ближнего боя восстанавливает ##$perk_value_1## здоровья и ##$perk_value_3## выносливости.\n\nЭффект активируется вместе с Хладнокровие:Специалист: (3-я карта).\n\nВы носите на ##$perk_value_2## мешок для тел больше.",
-		["menu_deck6_7_desc_sc"] = "Убийство врага, находящегося в менее чем ##$perk_value_1## метров от вас, восстанавливает ##$perk_value_2## брони, а убийство холодным оружием - в два раза больше брони.\n\nЭффект активируется вместе с Хладнокровие: Специалист (3-я карта).\n\nВы получаете еще ##$perk_value_3## уворота",
-		["menu_deck6_9"] = "Беглец",
+		["menu_deck6_5_desc_sc"] = "Убийство врага оружием ближнего боя восстанавливает ##$perk_value_1## здоровья и ##$perk_value_3## выносливости.\n\nЭффект активируется вместе с Уловка (3-я карта).\n\nВы носите на ##$perk_value_2## мешок для тел больше.",
+		["menu_deck6_7_desc_sc"] = "Убийство врага, находящегося в менее чем ##$perk_value_1## метров от вас, восстанавливает ##$perk_value_2## брони, а убийство холодным оружием - в два раза больше брони.\n\nЭффект активируется вместе с Уловка (3-я карта).\n\nВы получаете еще ##$perk_value_3## уворота",
 		["menu_deck6_9_desc_sc"] = "Убийство врага, находящегося в менее чем ##$perk_value_1## метров от вас, имеет ##$perk_value_2## шанс посеять панику среди врагов в радиусе ##$perk_value_3## метров от Вас, а убийство холодным оружием повышает этот шанс в два раза.\n\nПаника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.\n\nЭффект активируется вместе с Хладнокровие: Специалист: (3-я карта).\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
 		--Rogue
@@ -5692,7 +5764,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Sociopath--
 		["menu_deck9_1_sc"] = "No Talk",
-		["menu_deck9_1_desc_sc"] = "Вы получаете ##Комбометр##.\n\nУбийства в ближнем бою заполняют Комбо на #{skill_color}#$perk_value_1## очка; максимальное возможное Комбо - #{skill_color}#$perk_value_2## очков. За убийство элитных и специальных юнитов вы получаете в #{skill_color}#3## раза больше очков, а за бульдозеров и капитанов - в #{skill_color}#6## раз.\n\nВаш Комбометр истощается на #{important_1}#$perk_value_3## очков каждые #{risk}#$perk_value_4## секунд.\n\nВы теряете #{important_1}#$perk_value_5## очков Комбо когда получаете урон по здоровью; это не может происходить чаще чем в #{skill_color}#$perk_value_6## секунды.\nВы теряете #{important_1}#$perk_value_7## очков Комбо когда падаете.\n\nЗа каждые #{risk}#$perk_value_8## очка Комбо получаемый урон уменьшается на #{skill_color}#$perk_value_9## очков, максимум до #{skill_color}#$perk_value_10##",
+		["menu_deck9_1_desc_sc"] = "Вы получаете #{skill_color}#Комбометр##.\n\nУбийства в ближнем бою заполняют Комбо на #{skill_color}#$perk_value_1## очка; максимальное возможное Комбо - #{skill_color}#$perk_value_2## очков. За убийство элитных и специальных юнитов вы получаете в #{skill_color}#3## раза больше очков, а за бульдозеров и капитанов - в #{skill_color}#6## раз.\n\nВаш Комбометр истощается на #{important_1}#$perk_value_3## очков каждые #{risk}#$perk_value_4## секунд.\n\nВы теряете #{important_1}#$perk_value_5## очков Комбо когда получаете урон по здоровью; это не может происходить чаще чем в #{skill_color}#$perk_value_6## секунды.\nВы теряете #{important_1}#$perk_value_7## очков Комбо когда падаете.\n\nЗа каждые #{risk}#$perk_value_8## очка Комбо получаемый урон уменьшается на #{skill_color}#$perk_value_9## очков, максимум до #{skill_color}#$perk_value_10##",
 
 		["menu_deck9_3_desc_sc"] = "Нелетальные удары оружием ближнего боя и убийства из огнестрельного оружия обновляют Комбометр.\n\nКаждые #{risk}#$perk_value_1## очка Комбо увеличивают вашу скорость передвижения на #{skill_color}#$perk_value_2##, максимум до #{skill_color}#$perk_value_3.##\n\nВы получаете #{skill_color}#$perk_value_4## уворота.",
 

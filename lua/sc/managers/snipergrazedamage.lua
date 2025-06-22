@@ -1,15 +1,17 @@
+local TRAIL_EFFECT_AUTO = Idstring("effects/particles/weapons/vapor_trail_sc")
 local TRAIL_EFFECT = Idstring("effects/particles/weapons/sniper_trail")
 local idstr_trail = Idstring("trail")
 local idstr_simulator_length = Idstring("simulator_length")
 local idstr_size = Idstring("size")
 local trail_length
 
-
 function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
-	--local t = Application:time()
-	if not alive(weapon_unit) or weapon_unit:base():fire_mode() ~= "single" or not weapon_unit:base():is_category("assault_rifle", "snp") or weapon_unit ~= managers.player:equipped_weapon_unit() or not result.hit_enemy --[[or (((managers.player._last_graze_t or 0) + tweak_data.upgrades.headshot_graze_proc_cd ) > t)]] then
+	local t = Application:time()
+	if not alive(weapon_unit) --[[or weapon_unit:base():fire_mode() ~= "single"]] or not weapon_unit:base():is_category("assault_rifle", "snp") or weapon_unit ~= managers.player:equipped_weapon_unit() or not result.hit_enemy or (((managers.player._last_graze_t or 0) + tweak_data.upgrades.headshot_graze_proc_cd ) > t) then
 		return
 	end
+
+	local is_semi_or_burst = weapon_unit:base():fire_mode() == "single"
 
 	local player_unit = managers.player:player_unit()
 	if not player_unit then
@@ -46,19 +48,23 @@ function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
 		local distance_sq = mvector3.distance_sq(hit.position, player_unit:movement():m_head_pos())
 		local times = 1
 		local damage_range_mult = upgrade_value.damage_factor
-		for i=1, upgrade_value.max_chain do
+		local max_chain = (is_semi_or_burst and upgrade_value.max_chain) or 0
+		for i=1, max_chain do
 			if distance_sq > i * i * upgrade_value.range_increment * upgrade_value.range_increment then
 			times = times + 1
 			damage_range_mult = damage_range_mult + upgrade_value.damage_factor_range
 			end
 		end
-		self:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_range_mult)
+		self:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_range_mult, is_semi_or_burst)
 	end
 end
 
-function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_mult)
-	--local t = Application:time()
-	--managers.player._last_graze_t = t
+function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_mult, is_semi_or_burst)
+	local t = Application:time()
+	if managers.player then
+		managers.player._last_graze_t = t
+	end
+	
 	if times <= 0 then
 		return
 	end
@@ -91,12 +97,12 @@ function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value,
 		mvector3.set(hit_pos, closest:movement():m_head_pos())
 
 		if not trail_length then
-		trail_length = World:effect_manager():get_initial_simulator_var_vector2(TRAIL_EFFECT, idstr_trail, idstr_simulator_length, idstr_size)
+			trail_length = World:effect_manager():get_initial_simulator_var_vector2(Idstring("effects/particles/weapons/sniper_trail"), idstr_trail, idstr_simulator_length, idstr_size)
 		end
 		local trail = World:effect_manager():spawn({
-		effect = Idstring("effects/particles/weapons/sniper_trail"),
-		position = hit.position,
-		normal = hit_pos - hit.position
+			effect = is_semi_or_burst == false and TRAIL_EFFECT_AUTO or TRAIL_EFFECT,
+			position = hit.position,
+			normal = hit_pos - hit.position
 		})
 		mvector3.set_y(trail_length, math.sqrt(closest_d_sq))
 		World:effect_manager():set_simulator_var_vector2(trail, idstr_trail, idstr_simulator_length, idstr_size, trail_length)

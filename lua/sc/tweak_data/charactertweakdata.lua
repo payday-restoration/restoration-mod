@@ -911,7 +911,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	
 	--Titan Sniper
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
-	self.heavy_swat_sniper.tags = {"law", "sniper", "special", "customvo"}
+	self.heavy_swat_sniper.tags = {"law", "sniper", "special", "customvo", "sniper_titan"}
 	self.heavy_swat_sniper.priority_shout = "f34"
 	self.heavy_swat_sniper.bot_priority_shout = "f34x_any"
 	self.heavy_swat_sniper.priority_shout_max_dis = 3000
@@ -2838,7 +2838,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.ecm_hurts = {
 		ears = 1
 	}	
-	self.spooc_titan.tags = {"law", "custom", "special", "spooc"}
+	self.spooc_titan.tags = {"law", "custom", "special", "spooc", "spooc_titan"}
 	self.spooc_titan.special_deaths = nil
 	self.spooc_titan.HEALTH_INIT = 90
 	self.spooc_titan.headshot_dmg_mul = 5.85	
@@ -15813,9 +15813,9 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.is_dmr.FALLOFF = {
 		{
 			r = 100,
-			acc = {0.9, 1},
+			acc = {0.7, 1},
 			dmg_mul = 1.25,
-			recoil = {0.4, 0.8},
+			recoil = {0.7, 1.2},
 			mode = {
 				1,
 				0,
@@ -15825,9 +15825,9 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 500,
-			acc = {0.8, 0.9},
+			acc = {0.7, 0.9},
 			dmg_mul = 1.25,
-			recoil = {0.45, 0.8},
+			recoil = {0.7, 1.2},
 			mode = {
 				1,
 				0,
@@ -15839,7 +15839,7 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 1000,
 			acc = {0.7, 0.8},
 			dmg_mul = 1.25,
-			recoil = {0.35, 0.75},
+			recoil = {0.7, 1.2},
 			mode = {
 				1,
 				0,
@@ -15851,7 +15851,7 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 1800,
 			acc = {0.6, 0.7},
 			dmg_mul = 1.25,
-			recoil = {0.35, 0.75},
+			recoil = {0.9, 1.8},
 			mode = {
 				1,
 				0,
@@ -15863,7 +15863,7 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 2000,
 			acc = {0.5, 0.6},
 			dmg_mul = 1.25,
-			recoil = {0.4, 1.2},
+			recoil = {0.9, 1.8},
 			mode = {
 				1,
 				0,
@@ -16112,7 +16112,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}			
 	}
-	presets.weapon.gang_member.is_dmr.spread = 8
+	presets.weapon.gang_member.is_dmr.spread = 12
 	presets.weapon.gang_member.is_dmr.RELOAD_SPEED = 0.9
 	presets.weapon.gang_member.is_sniper = deep_clone(presets.weapon.gang_member.rifle)
 	presets.weapon.gang_member.is_sniper.RELOAD_SPEED = 0.9	

@@ -73,13 +73,4 @@ return {
 			{id = 101692, delay = 0}
 		}
 	},
-	-- Disable instant difficulty increase
-	[101980] = {
-		values = {
-			enabled = false
-		}
-	},
-	[101596] = {
-		difficulty = 0.5
-	}
 }

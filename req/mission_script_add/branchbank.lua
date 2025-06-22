@@ -14,8 +14,9 @@ local opts_pro_job_ponr = {
 	elements = { 104722, 104723, 100512, },
 	trigger_times = 1,
 	min_difficulty = 0.4,
-	bravos_difficulty_threshold = 0.7,
-	bravos_timer = 45,
+	difficulty_add = 0.3,
+	bravos_difficulty_threshold = 0.5,
+	bravos_timer = 20,
 	time_balance_mul = ponr_timer_player_mul,
 	time_easy = ponr_value,
 	time_normal = ponr_value,
@@ -37,6 +38,7 @@ local opts_pro_job_ponr_counter = {
 }
 
 local optsBulldozer = {
+	enabled = false,
 	enemy = tank_skull,
 	on_executed = {
 		{ id = 400002, delay = 0, },
@@ -53,13 +55,12 @@ local optsDefend_SO = {
 }
 local opts_enable_dozers = {
 	enabled = death_wish_above,
-	elements = {400001},
+	elements = { 400001, },
+	toggle = "on",
 }
 
-local opts_disable_dozers = {
-	enabled = true,
-	elements = {400001},
-	toggle = "off",
+local opts_heli_group = {
+	spawn_type = "group_guaranteed",
 }
 
 return {
@@ -69,7 +70,8 @@ return {
 		-- Skulldozer nearby the van (based on DW Trailer)
 		restoration:gen_dummy(400001, "van_dozer_1", Vector3(-8305, -3511, 0), Rotation(-90, 0, -0), optsBulldozer),
 		restoration:gen_so(400002, "dozer_defend_so_1", Vector3(-7273, -2895, -19.999), Rotation(0, 0, -0), optsDefend_SO),
-		restoration:gen_toggleelement(400003, "disable_dozers", opts_disable_dozers),
-		restoration:gen_toggleelement(400004, "enabled_dozers", opts_enable_dozers),
+		restoration:gen_toggleelement(400003, "enable_dozers", opts_enable_dozers),
+		restoration:gen_spawngroup(400004, "heli_group_1", { 101432, 101433, }, 0, opts_heli_group),
+		restoration:gen_spawngroup(400005, "heli_group_2", { 105620, 105621, }, 0, opts_heli_group),
 	},
 }

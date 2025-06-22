@@ -52,6 +52,11 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_tick_period = 0.5,
 		hurt_animation_chance = 1
 	}
+	poison_entries.weapon_cyanide = {
+		dot_damage = 35,
+		dot_length = 5.1,
+		dot_tick_period = 5
+	}
 	poison_entries.ammo_rip_auto = {
 		dot_damage = 1.5,
 		dot_length = 2.1,

@@ -211,7 +211,6 @@ function restoration:Init()
 	-- Disable Bravos spawning on PONRs for these heists, usually for heists that have PONRs that go on/off. Also kills forced 1 diff and music changes on Pro Job
 	-- TODO: make use of new PONR element functionality instead of this table
 	restoration.alternate_ponr_behavior = {
-		"sand",  -- The Ukrainian Prisoner
 		"trai",  -- Lost in Transit
 		"fuel",  -- Fueled Feuds
 	}
@@ -426,19 +425,21 @@ function restoration:Init()
 		"santas_hardware_store", --Hardware Store but Xmas
 		"santa_pain"
 	}
-	--heists to remove infinite assaults from
+
+	-- Heists to remove endless assaults from
+	-- TODO: move to mission script patches instead of using this table
 	restoration.fuck_hunt = {
-		"kenaz", --ggc
-		"pines", --white xmas
-		"jolly", --aftershock
-		"born", --biker heist D1
-		"chca", --black cat
-		"pent", --Mountain Master
-		"lvl_friday", --Mallbank / Crashing Capitol
-		--"hox_1", --Hoxout D1
-		--"xmn_hox_1" --Xmas edition
-		--Custom Heists--
-		"the_factory" --eclipse research facility
+		"kenaz",  -- Golden Grin Casino
+		"pines",  -- White Xmas
+		"jolly",  -- Aftershock
+		"born",  -- Biker Heist day 1
+		"chca",  -- Black Cat
+		"pent",  -- Mountain Master
+		"lvl_friday",  -- Crashing Capitol (Mallbank)
+		-- "hox_1",  -- Hoxton Breakout day 1
+		-- "xmn_hox_1"  -- Hoxton Breakout day 1 (Christmas)
+		-- Custom Heists --
+		"the_factory",  -- Eclipse Research Facility
 	}
 
 	--Sub Faction overrides
@@ -756,6 +757,12 @@ restoration.queued_impact_effects_type = {
 	"impactfx_type_queued"
 	--All weapons have their impact FX all put into a queue for sequential playback at the cost of having impact playback potentially lagging behind if too many get queued too quickly
 }
+
+restoration.nvgcolor = {
+	"resmod_nvg_default",
+	"resmod_nvg_blue"
+}
+
 -- Detect if ResMod is active to disable PDTH Challenges Standalone
 DisablePDTHChallengeStandalone = DisablePDTHChallengeStandalone or {}
 
@@ -1114,6 +1121,7 @@ function restoration:gen_pointofnoreturn(id, name, pos, rot, opts)
 			base_delay = opts.base_delay or 0,
 			tweak_id = opts.tweak_id or "noreturn",
 			min_difficulty = opts.min_difficulty or nil,
+			difficulty_add = opts.difficulty_add or nil,
 			bravos_difficulty_threshold = opts.bravos_difficulty_threshold or nil,
 			bravos_timer = opts.bravos_timer or nil,
 			bravos_forbidden = opts.bravos_forbidden or nil,
@@ -1375,6 +1383,28 @@ function restoration:gen_element_random(id, name, opts)
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
 			enabled = opts.enabled ~= false,
+		},
+	}
+end
+
+function restoration:gen_ai_global_event(id, name, pos, rot, opts)
+	opts = opts or {}
+	return {
+		id = id,
+		editor_name = name,
+		class = "ElementAiGlobalEvent",
+		values = {
+			execute_on_startup = opts.execute_on_startup or false,
+			ignore_disabled = opts.ignore_disabled or false,
+			trigger_times = opts.trigger_times or 0,
+			position = pos,
+			rotation = rot,
+			on_executed = opts.on_executed or {},
+			base_delay = opts.base_delay or 0,
+			enabled = opts.enabled or false,
+			wave_mode = opts.wave_mode or "none",
+			blame = opts.blame or "none",
+			AI_event = opts.AI_event or "none",
 		},
 	}
 end

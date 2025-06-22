@@ -15,8 +15,8 @@ local guard_biker = {
 	}
 }
 return {
-	--Pro Job PONR 
-	--kill the loop
+	-- Pro Job PONR 
+	-- kill the loop
 	[100720] = {
 		func = function(self)
 			local turn_this_shit_off = self:get_mission_element(102530)
@@ -27,13 +27,17 @@ return {
 		end,
 		ponr = ponr_value
 	},
-	--Disable the turret
+	-- Disable the turret
 	[101175] = {
 		values = {
 			enabled = false
 		}
 	},
-	--Allow only enemies with fbi access to interrupt Mike
+	-- Disable reinforce inside the garage
+	[101596] = disabled,
+	-- Disable forced spawns inside the garage THEY SUCK
+	[101589] = disabled,
+	-- Allow only enemies with fbi access to interrupt Mike
 	[101451] = fbi_access,
 	[101536] = fbi_access,
 	[103072] = {
@@ -44,26 +48,26 @@ return {
 			{id = 103020, delay = 4.85}
 		}
 	},
-	--Loopable heli 
-	--trigger in alarm rather than in the second assault
+	-- Loopable heli 
+	-- Trigger in alarm rather than in the second assault
 	[100022] = {
 		on_executed = {
 			{id = 102530, delay = 360} --6 mins delay to trigger
 		}
 	},
-	--not need to have that anymore
+	-- Not need to have that anymore
 	[101908] = {
 		values = {
 			enabled = false
 		}
 	},
-	--and you too
+	-- And you too
 	[102538] = {
 		values = {
 			enabled = false
 		}
 	},
-	--loop the choppa
+	-- Loop the choppa
 	[102530] = {
 		values = {
 			trigger_times = 0
@@ -72,7 +76,7 @@ return {
 			{ id = 102530, delay = 180}
 		}
 	},
-	--Spawn Bikerdozer after opening the door
+	-- Spawn Bikerdozer after opening the door
 	[102786] = {
 		on_executed = {
 			{ id = 400001, delay = 0}
@@ -89,9 +93,9 @@ return {
 			interval = 15
 		}
 	},
-	--Have Vest Biker beat up Mike
+	-- Have Vest Biker beat up Mike
 	[100920] = guard_biker,
-	--Biker replacements
+	-- Biker replacements
 	[100254] = guard_biker,
 	[100295] = guard_biker,
 	[100301] = guard_biker,

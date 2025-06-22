@@ -1115,7 +1115,9 @@ function SkillTreeTweakData:init(tweak_data)
 					[1] = {
 						upgrades = {
 							"assault_rifle_move_spread_multiplier",
-							"snp_move_spread_multiplier"
+							"snp_move_spread_multiplier",
+							"assault_rifle_reload_speed_multiplier",
+							"snp_reload_speed_multiplier"
 						},
 						cost = self.costs.default
 					},
@@ -1123,8 +1125,8 @@ function SkillTreeTweakData:init(tweak_data)
 						upgrades = {
 							"assault_rifle_ap_bullets_min_1",
 							"snp_ap_bullets_min_1",
-							"assault_rifle_reload_speed_multiplier",
-							"snp_reload_speed_multiplier"
+							"assault_rifle_reload_speed_multiplier_2",
+							"snp_reload_speed_multiplier_2"
 						},
 						cost = self.costs.pro
 					}
@@ -1140,7 +1142,9 @@ function SkillTreeTweakData:init(tweak_data)
 							"assault_rifle_steelsight_accuracy_inc_1",
 							"snp_steelsight_accuracy_inc_1",
 							"assault_rifle_steelsight_range_inc_1",
-							"snp_steelsight_range_inc_1"
+							"snp_steelsight_range_inc_1",
+							"assault_rifle_recoil_index_addend_2",
+							"snp_recoil_index_addend_2"
 						},
 						cost = self.costs.hightier
 					},

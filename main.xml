@@ -670,6 +670,7 @@
 				<!-- <option type="multichoice" default_value="1" name="PONRTracks" values_tbl="restoration.ponrtracks"/> -->
 				<option type="bool" default_value="true" name="PONRTrack"/>
 				<option type="bool" default_value="false" name="MusicShuffle"/>
+				<option type="multichoice" default_value="1" name="NVGColor" values_tbl="restoration.nvgcolor"/>
 				<divider name="tod_divider" size="14"/>
 				<option type="bool" hidden="true" default_value="false" name="OldEconomy"/>
 				<divider name="tod_divider" size="14"/>

@@ -44,9 +44,9 @@ local setup_original = RaycastWeaponBase.setup
 function RaycastWeaponBase:setup(setup_data, damage_multiplier)
 	setup_original(self, setup_data, damage_multiplier)
 
-	local panic_mult = (managers.player:has_category_upgrade("player", "panic_suppression_mult") and managers.player:upgrade_value("player", "panic_suppression_mult")) or 0
+	local panic_mult = (managers.player:has_category_upgrade("player", "panic_suppression_mult") and managers.player:upgrade_value("player", "panic_suppression_mult", 0)) or 0
 
-	self._panic_suppression_chance = managers.player:has_category_upgrade("player", "panic_suppression") and panic_mult
+	self._panic_suppression_chance = ((managers.player:has_category_upgrade("player", "panic_suppression") and panic_mult) or 0) + (self:weapon_tweak_data().innate_panic or 0)
 	if self._panic_suppression_chance == 0 then
 		self._panic_suppression_chance = false
 	end
@@ -238,13 +238,11 @@ end
 local ids_volley = Idstring("volley")
 function RaycastWeaponBase:get_object_damage_mult()
 	if self._fire_mode and self._fire_mode == ids_volley then
-		local fire_mode_data = self:weapon_tweak_data().fire_mode_data
-		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
-		return volley_fire_mode and volley_fire_mode.object_damage_mult or 0.75
-	elseif self._rays and self._rays == 1 and self:weapon_tweak_data().object_damage_mult_single_ray then
-		return self:weapon_tweak_data().object_damage_mult_single_ray
+		return self._object_damage_mult_volley
+	elseif self._rays and self._rays == 1 and self._object_damage_mult_single_ray then
+		return self._object_damage_mult_single_ray
 	else
-		return self:weapon_tweak_data().object_damage_mult or 1
+		return self._object_damage_mult
 	end
 end
 
@@ -1130,6 +1128,12 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 
 		if body_dmg_ext then
 			local object_damage_mult = weapon_unit and weapon_unit.base and weapon_unit:base().get_object_damage_mult and weapon_unit:base():get_object_damage_mult() or 1
+
+			local unit_base = body_dmg_ext._unit and body_dmg_ext._unit.base and body_dmg_ext._unit:base()
+			if unit_base and unit_base.has_tag and (unit_base:has_tag("taser") or unit_base:has_tag("boom")) then 
+				object_damage_mult = object_damage_mult * 3 --cheese method to negate the extra endurance that taser/grenadier bags have
+			end
+
 			local sync_damage = not blank and hit_unit:id() ~= -1
 			local network_damage = math.ceil(damage * 163.84)
 			local body_damage = network_damage / 163.84
@@ -1185,6 +1189,22 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 			end
 
 			result = self:give_impact_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing, false, knock_down, stagger, variant)
+
+			--[[
+			if (weap_base._natascha and col_ray.distance and col_ray.distance <= weap_base._natascha) and 
+				result and result.attack_data and result.attack_data.damage and result.attack_data.damage > 0 then
+				hit_dmg_ext:stun_hit({
+					variant = "stun",
+					damage = 0,
+					attacker_unit = user_unit,
+					weapon_unit = weapon_unit,
+					col_ray = col_ray or {
+						position = hit_unit:position(),
+						ray = Vector3(0, 0, 1)
+					}
+				})
+			end
+			--]]
 
 			if result ~= "friendly_fire" then
 				local has_died = hit_dmg_ext:dead()
@@ -1329,6 +1349,12 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 		if body_dmg_ext then
 			local rays = weapon_unit and weapon_unit.base and ((not weapon_unit:base():weapon_tweak_data().alt_shotgunraycast and weapon_unit:base()._rays) or 1)
 			local object_damage_mult = (weapon_unit and weapon_unit.base and weapon_unit:base().get_object_damage_mult and weapon_unit:base():get_object_damage_mult() or 1) / rays
+			
+			local unit_base = body_dmg_ext._unit and body_dmg_ext._unit.base and body_dmg_ext._unit:base()
+			if unit_base and unit_base.has_tag and (unit_base:has_tag("taser") or unit_base:has_tag("boom")) then
+				object_damage_mult = object_damage_mult * 3 --cheese method to negate the extra endurance that taser/grenadier bags have
+			end
+
 			local sync_damage = not blank and hit_unit:id() ~= -1
 			local network_damage = math.ceil(damage * 163.84)
 			local body_damage = network_damage / 163.84

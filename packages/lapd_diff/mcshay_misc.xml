@@ -72,5 +72,4 @@
 	<!-- skull -->
 	<unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3" load="true"/>
     <unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3_husk" load="true"/>	
-
 </table>

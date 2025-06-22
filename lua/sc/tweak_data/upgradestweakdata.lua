@@ -598,7 +598,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.doctor_bag_base = 2 --Starting Number
 	self.values.doctor_bag.heal_amount = 0.2 --Heals 20% of max health on use.
 	self.values.temporary.doctor_bag_health_regen = {{0.04, 180.1}} --Heals 4% of max health every 4 seconds for the next 3 minutes.
-	
+	self.values.temporary.doctor_bag_health_regen_deflection_addend = 0.1
+
 	--ECMs: They're ECMs
 	self.ecm_jammer_base_battery_life = 10
 	self.ecm_jammer_base_low_battery_life = 4
@@ -851,7 +852,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.smg.hip_fire_spread_multiplier = {0.8, 0.5}
 				--Ace
-					self.values.smg.reload_speed_multiplier = {1.20}
+					self.values.smg.reload_speed_multiplier = {1.15}
 					
 					self.skill_descs.rifleman = {
 						skill_value_b1 = tostring((1 - self.values.smg.hip_fire_spread_multiplier[1]) % 1 * 100).."%", -- Hipfire +accuracy
@@ -872,7 +873,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Specialist
 				--Basic
-					self.values.smg.move_spread_multiplier = {0.4}
+					self.values.smg.move_spread_multiplier = {0.6}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
 					self.values.smg.full_auto_free_ammo = {4}
@@ -1304,8 +1305,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Combat Engineer--
 			--Sharpshooter
 				--Basic
-					self.values.snp.recoil_index_addend = {2}
-					self.values.assault_rifle.recoil_index_addend = {2}
+					self.values.snp.recoil_index_addend = {2, 4} --2nd tier is in Rifleman Basic; you can't get Rifleman before this skill, so it's alright
+					self.values.assault_rifle.recoil_index_addend = {2, 4} --I'm reminded of Miku saying "I got that green onion for 90 yen, so it's alright" when I read that
 				--Ace
 					self.values.temporary.headshot_fire_rate_mult = {{1.2, 10}}
 					
@@ -1314,39 +1315,41 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						skill_value_p1 = tostring(self.values.temporary.headshot_fire_rate_mult[1][1] % 1 * 100).."%", -- RoF buff
 						skill_value_p2 = tostring(self.values.temporary.headshot_fire_rate_mult [1][2]) -- Duration of buff
 					}
-				
+
 			--Kilmer
 				--Basic
 					self.values.snp.move_spread_multiplier = {0.4}
 					self.values.assault_rifle.move_spread_multiplier = {0.4}
 				--Ace
-					self.values.snp.reload_speed_multiplier = {1.15}					
-					self.values.assault_rifle.reload_speed_multiplier = {1.15}
+					self.values.snp.reload_speed_multiplier = {1.05, 1.15}
+					self.values.assault_rifle.reload_speed_multiplier = {1.05, 1.15}
 					self.values.snp.ap_bullets_min = {0.25}
 					self.values.assault_rifle.ap_bullets_min = {0.25}
-					
+
 					self.skill_descs.heavy_impact = {
 						skill_value_b1 = tostring((1 - self.values.snp.move_spread_multiplier[1]) * 100).."%", -- Movespeed during ADS
-						skill_value_p1 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed
+						skill_value_b2 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed
+						skill_value_p1 = tostring((self.values.assault_rifle.reload_speed_multiplier[2] - self.values.assault_rifle.reload_speed_multiplier[1]) % 1 * 100).."%", -- Reload speed
 						skill_value_p2 = tostring(self.values.assault_rifle.ap_bullets_min[1] % 1 * 100).."%" -- AP
 					}
 
 			--Rifleman
 				--Basic/Aced
-					self.values.assault_rifle.steelsight_accuracy_inc = {0.875, 0.75}
-					self.values.snp.steelsight_accuracy_inc = {0.875, 0.75}
-					self.values.assault_rifle.steelsight_range_inc = {1.125, 1.25}
-					self.values.snp.steelsight_range_inc = {1.125, 1.25}
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.90, 0.75}
+					self.values.snp.steelsight_accuracy_inc = {0.90, 0.75}
+					self.values.assault_rifle.steelsight_range_inc = {1.10, 1.25}
+					self.values.snp.steelsight_range_inc = {1.10, 1.25}
 
-					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.075}
-					self.values.snp.enter_steelsight_speed_multiplier = {1.075}
-					
+					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.1}
+					self.values.snp.enter_steelsight_speed_multiplier = {1.1}
+
 					self.skill_descs.fire_control = {
 						skill_value_b1 = tostring(self.values.snp.steelsight_range_inc[1] % 1 * 100).."%", -- Accuracy and range buff
+						skill_value_b2 = tostring(self.values.snp.recoil_index_addend[1]), --++Stabilty
 						skill_value_p1 = tostring((self.values.snp.steelsight_range_inc[2] - self.values.snp.steelsight_range_inc[1]) * 100).."%",
 						skill_value_p2 = tostring(self.values.snp.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
 					}
-					
+
 			--Aggressive Reload
 				self.values.temporary.single_shot_fast_reload = {
 					{ --Basic
@@ -1398,7 +1401,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						range_increment = 800
 					}
 				}
-				self.headshot_graze_proc_cd = 0.5
+				self.headshot_graze_proc_cd = 0.4
 				self.values.player.headshot_no_falloff = {true}
 				self.headshot_no_falloff_cd = 0.0
 				
@@ -2352,7 +2355,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_ene_mult = { --Point multiplier based on enemy killed; top-down priority
 				{captain = 10},
 				{tank = 5},
-				{special = 2},
+				{spooc_titan = 3},
+				{spooc = 2.75},
+				{taser_titan = 2.25},
+				{taser = 2.75},
+				{medic = 2.25},
+				{shield_titan = 2.25},
+				{sniper_titan = 2},
+				{sniper = 1.75},
+				{shield = 1.75},
+				{special = 1.75},
 			},
 			combo_t = 5, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
@@ -2366,7 +2378,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_ene_mult = {
 				{captain = 10},
 				{tank = 5},
-				{special = 2},
+				{spooc_titan = 3},
+				{spooc = 2.75},
+				{taser_titan = 2.25},
+				{taser = 2.75},
+				{medic = 2.25},
+				{shield_titan = 2.25},
+				{sniper_titan = 2},
+				{sniper = 1.75},
+				{shield = 1.75},
+				{special = 1.75},
 			},
 			combo_t = 5,
 			combo_decay = 5,
@@ -2380,7 +2401,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_ene_mult = { --Point multiplier based on enemy killed
 				{captain = 10},
 				{tank = 5},
-				{special = 2},
+				{spooc_titan = 3},
+				{spooc = 2.75},
+				{taser_titan = 2.25},
+				{taser = 2.75},
+				{medic = 2.25},
+				{shield_titan = 2.25},
+				{sniper_titan = 2},
+				{sniper = 1.75},
+				{shield = 1.75},
+				{special = 1.75},
 			},
 			combo_t = 5, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
@@ -2504,7 +2534,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			{ combo_add_mod = 0, combo_max_mod = -40 } --Tony R
 		}
 		self.values.player.buildup_meter_swan = {{
-			combo_add = 4
+			combo_add = 2
 		}}
 		self.values.player.buildup_meter_mark = {{ --armor regen speed
 			combo_steps = 5,
@@ -4055,6 +4085,42 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+	self.definitions.assault_rifle_recoil_index_addend_2 = {
+		name_id = "menu_assault_rifle_recoil_index_addend",
+		category = "feature",
+		upgrade = {
+			category = "assault_rifle",
+			upgrade = "recoil_index_addend",
+			value = 2
+		}
+	}
+	self.definitions.snp_recoil_index_addend_2 = {
+		name_id = "menu_snp_recoil_index_addend",
+		category = "feature",
+		upgrade = {
+			category = "snp",
+			upgrade = "recoil_index_addend",
+			value = 2
+		}
+	}
+	self.definitions.assault_rifle_reload_speed_multiplier_2 = {
+		name_id = "menu_assault_rifle_reload_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			category = "assault_rifle",
+			upgrade = "reload_speed_multiplier",
+			value = 2
+		}
+	}
+	self.definitions.snp_reload_speed_multiplier_2 = {
+		name_id = "menu_snp_reload_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			category = "snp",
+			upgrade = "reload_speed_multiplier",
+			value = 2
+		}
+	}
 	self.definitions.player_armor_pickup_mul = {
 		name_id = "menu_player_armor_pickup_mul",
 		category = "feature",

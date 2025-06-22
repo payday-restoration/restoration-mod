@@ -804,6 +804,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModMusicShuffleDescID"] = "Changes the music track after assault ends.",
 		["RestorationModOldEconomyTitleID"] = "Old Economy (Beta)",
 		["RestorationModOldEconomyDescID"] = "Enables the old economy from pre update 11.",
+		["RestorationModNVGColorTitleID"] = "Night Vision Mask Color",
+		["RestorationModNVGColorDescID"] = "Select between the two night vision mask colors",
 		["RestorationModScaleTitleID"] = "HUD scaling",
 		["RestorationModScaleDescID"] = "Changes HUD scaling. May require a restart.",
 		["RestorationModSizeOnScreenTitleID"] = "HUD size on screen",
@@ -860,6 +862,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["beta_assault"] = "Alpha Tape",
 		["show_both"] = "Default",
 		["show_classic_newsfeed"] = "Classic",
+		["resmod_nvg_default"] = "Default",
+		["resmod_nvg_blue"] = "Blue",
 
 		["RestorationModDodgeDisplayTitleID"] = "Dodge Meter Readout",
 		["RestorationModDodgeDisplayDescID"] = "Change what the dodge meter's maximum value *displays*. Requires restart.",
@@ -1363,14 +1367,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_upg_o_2_szholot"] = "Thermal holographic sight.\n#{risk}#2x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 		["bm_wp_upg_o_2_5"] = "Low-powered scope.\n#{risk}#2.5x magnification.##",
 		["bm_wp_upg_o_3"] = "Mid-range scope.\n#{risk}#3x magnification.##",
-		["bm_wp_upg_o_3_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#3x magnification.##",
+		["bm_wp_upg_o_3_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#3x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 		["bm_wp_upg_o_3_rds"] = "Mid-range scope with a top-mounted red-dot sight.\n#{risk}#1.1-3x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_3_4"] = "Mid-range scope.\n#{risk}#3.4x magnification.##",
 		["bm_wp_upg_o_3_5"] = "Mid-range scope.\n#{risk}#3.5x magnification.##",
 		["bm_wp_upg_o_3_7"] = "Mid-range scope.\n#{risk}#3.7x magnification.##",
 		["bm_wp_upg_o_4"] = "Mid-range scope.\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_cod"] = "Mid-range scope.\nWhere's #{skill_color}#Stopping Power## when you need it?\n#{risk}#4x magnification.##",
-		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#4x magnification.##",
+		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#4x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up iron sights.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_4_rds"] = "Mid-range scope with an integral red-dot sight.\n#{risk}#1.1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_4_rds_mount"] = "Mid-range LPVO with a top-mounted red-dot sight.\n#{risk}#1.1-2-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels and sights.",
@@ -1384,7 +1388,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_upg_o_6_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#6x magnification.##",
 		["bm_wp_upg_o_6_rds_mount"] = "Long-range scope with a top-mounted red-dot sight.\n#{risk}#1.1-6x magnification.##",
 		["bm_wp_upg_o_8"] = "Long-range scope.\n#{risk}#8x magnification.##",
-		["bm_wp_upg_o_8_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#8x magnification.##",
+		["bm_wp_upg_o_8_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#8x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 
 		["bm_wp_upg_fl_flashlight"] = "Toggle the flashlight on/off by pressing #{skill_color}#$BTN_GADGET.##",
 		["bm_wp_upg_fl_laser"] = "Toggle the laser on/off by pressing #{skill_color}#$BTN_GADGET.##",
@@ -1489,6 +1493,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor.##",
 		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_integral_suppressor_desc"] = "Comes #{skill_color}#integrally suppressed##.",
 
 		["bm_bow_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.\n#{skill_color}#Can pierce body armor.##",
 		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\n#{risk}#Arrows explode on impact;## #{risk}#damage is split between the arrow and explosion.##",
@@ -2073,6 +2078,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_pickup"] = "Ammo Pickup",
 		["bm_menu_ads_speed"] = "Aim Time",
 		["bm_menu_reload"] = "Reload Time",
+		["bm_menu_reserve"] = "Spare Mags",
+		["bm_menu_reserve_rounds"] = "Spare Rounds",
 		["bm_menu_damage"] = "Damage", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Damage Max",
 		["bm_menu_standing_range"] = "Falloff Start",
 		["bm_menu_damage_min"] = "Damage Min",
@@ -2473,6 +2480,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Glock
 				["bm_wp_upg_i_csglock"] = "T-Side Burst Kit",
 				["bm_wp_upg_i_csglock_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#1200 RPM 3-round burst## setting, at the cost of a lower semi-auto fire rate.",
+				--SG552
+				["bm_wp_upg_i_krieg"] = "Krieg Commando Kit",
+				["bm_wp_upg_i_krieg_desc"] = "#{important_1}#Removes burst-fire## in exchange for an #{risk}#altered full-auto fire rate.##",
 				--AK12
 				["bm_wp_upg_i_abakan"] = "Abakan Kit",
 				["bm_wp_upg_i_abakan_desc"] = "Allows this weapon to fire a #{risk}#hyperburst## with each trigger pull at the cost of a slower base fire rate.",
@@ -2513,6 +2523,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_wp_upg_suppressor"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##",
 				["bm_wp_upg_suppressor_boss"] = "\"What a thrill...\"\n\n#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##",
 				["bm_wp_upg_suppressor_warn"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##\n\n#{important_1}#May block sights.##",
+				["bm_wp_upg_unsuppressor"] = "#{skill_color}#Unsilences## your weapon and #{risk}#increases the chance of enemies evading your aim.##",
 				["bm_wp_upg_o_shortdot_dmc"] = "Shortdot Scope",
 				["bm_wp_upg_o_5_default"] = "Long-range scope.\nAttach to be able to modify the default sniper scope reticle.\n#{risk}#5x magnification.##",
 				["bm_wp_upg_mil_desc"] = "", --These didn't do anything when edited, maybe they aren't actually called?--
@@ -2669,6 +2680,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 					--SR1M
 					["bm_sr1_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor.##",
+					--GSh18
+					["bm_gsh18_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor.##",
 					--Nagant Revolver
 					["bm_m1895_sc_desc"] = "A late 19th century 7-shooter and one of the only revolvers that can make use of a suppressor. #{risk}#Strangely##, this one comes with a 6-shot cylinder instead.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 					--AF2011
@@ -2676,6 +2689,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_upg_af2011_a_uno_desc"] = "Internal modification that makes the barrels fire separately rather than simultaneously.",
 					--Triad
 					["bm_triad_sc_desc"] = "#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##\n\nAlt-fire fires #{skill_color}#all 3 barrels at once## at the cost of #{important_1}#more recoil and spread.##",
+					--Taurus Cruve
+					["bm_curve_sc_desc"] = "Subcompact .380 pistol, maximizing concealability by adopting a shape that blends in with the human body's natural curves. Features an #{skill_color}#integrated flashlight and laser module##.\n\n#{stats_positive}#Deals 120 damage over 4 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
+					--MP443
+					["bm_wp_upg_i_aw443"] = "Atlas PBW Kit",
+					["bm_wp_upg_i_aw443_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#800 RPM 2-round burst## setting.",
 
 			--[[ SMGs ]]
 				--Kobus 90
@@ -2788,6 +2806,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_mg3_sc_desc"] = "#{skill_color}#Has improved spread and recoil while hipfired.##",
 					--M1919
 					["bm_wp_wpn_fps_upg_m1919a6_mag_ext"] = "125rnd Box Magazine",
+					--KE7
+					["bm_wp_wpn_fps_upg_sigke7_mag50"] = "50rnd Magazine",
 
 
 			--[[ SHOTGUNS ]]
@@ -2837,6 +2857,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
 					["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
 					["bm_wp_wpn_fps_upg_wmtx_gastube_burst_desc"] = "Adds a ##{skill_color}#2 round burst-fire## toggle.",
+					--DP12
+					["bm_dp12_sc_desc"] = "Shotgun taking the compact yet high capacity design of the Raven and adding a second barrel on top of it. This particular model has been modified to fire #{skill_color}#both barrels at the same time.##",
 
 			--[[ ARs ]]
 				--S552
@@ -2913,15 +2935,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--MW2023 STG-44 (FUCK YOU, SLEDGEHAMMER)
 					["bm_w_stango44"] = "\"STG-44\"",
 					["bm_wp_wpn_fps_ass_stango44_magazine_40"] = "30 Round Magazine",
+					--HD2 AR-32
+					["bm_w_ar32_desc"] = "A large-capacity assault rifle firing humane #{skill_color}#stun rounds.## Reports of lethal incidents have been thoroughly debunked.\n\n#{skill_color}#Penetrates armor## to apply its stunning effects.\n#{skill_color}#Stun rounds stagger enemies up to 30 meters away.##\n#{risk}#Stagger range cannot be modified.##",
 					--HD2 AR-23
 					["bm_w_ar23_carbine"] = "AR-23A Liberator Carbine",
-					["bm_wp_ck_penetrator_desc"] = "A compact version of the Liberator designed for increased viability in close quarters. Has an #{skill_color}#increased fire rate## at the cost of #{important_1}#higher spread.##",
+					["bm_wp_ck_carbine_desc"] = "A compact version of the Liberator designed for increased viability in close quarters. Has an #{skill_color}#increased fire rate## at the cost of #{important_1}#higher spread.##",
 					["bm_w_ar23_penetrator"] = "AR-23P Liberator Penetrator",
 					["bm_wp_ck_penetrator_desc"] = "A variant of the AR-23 designed to #{skill_color}#penetrate armor.##",
 					["bm_w_ar23_concussive"] = "AR-23C Liberator Concussive",
 					["bm_wp_ck_concussive_desc"] = "A variant of the AR-23 featuring #{skill_color}#concussive rounds## and a modified red-dot sight.\n#{skill_color}#Concussive rounds stagger enemies up to 20 meters away.##\n#{risk}#Stagger range cannot be modified and burst-fire is removed.##",
 					--Bo6 XM4
 					["bm_wp_wpn_fps_ass_coslo723_mode_burst_desc"] = "#{risk}#Exchange full-auto for a 3-round auto-burst.##\n\nBursts will #{skill_color}#auto-cycle## so long as the trigger is held.",
+					-- Val mod 3
+					["bm_mod3_sc_desc"] = "Special modification of the Valkyria with improved ergonomics and shortened dimensions, seeing notable use in armed conflicts between PMCs in areas near the Russian coast of the Gulf of Finland.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#deals 25% of its damage through body armor.##",
+					-- Malyuk
+					["bm_wp_wpn_fps_ass_malima_xmag"] = "45 Round Mag",
 
 			--[[ DMRs ]]
 				--Little Friend
@@ -2980,7 +3008,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_wpn_fps_ass_t9british_xmag_02"] = "STANAG 40 Rnd Mag",
 					["bm_wp_wpn_fps_ass_t9british_magazine_mix_02"] = "Salvo 30 Rnd Fast Mag",
 					--MCX Spear
-					["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor.##",
+					["bm_mcx_spear_sc_desc"] = "Comes with a #{skill_color}#pre-attached suppressor##.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 					["bm_ngsierra_sc_desc"] = "Uses a unique recoil mitigation system to control its 6.8x51mm TCVM plastic cartridge.\n\n#{skill_color}#Deals 75% of its damage through body armor, can pierce enemies.##",
 					--["bm_w_xeno"] = "MA14 Surge Rifle",
 					["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
@@ -3005,6 +3033,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_rmary2"] = "Goblin Mk2",
 					["bm_wp_chf_50_desc"] = "#{skill_color}#Headshots ignore damage falloff.##",
 					["bm_w_rmary2_desc"] = "Proof of concept prototype designed by a Royal Military College Duntroon cadet.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies.##",
+					--Madsen LAR
+					["bm_w_madsen_lar_desc"] = "Post WW2 Danish battle rifle chambered in 7.62x51mm to seek a market in NATO militaries.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 
 			--[[ SNIPERS ]]
 				--MSR
@@ -3053,6 +3083,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Thanatos--
 				["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 				--Custom Snipers
+					--HD2 R-6 Deadeye
+					["bm_w_r6_desc"] = "A mighty rifle with a signature lever-action enabling single round reload. Powerful precision suited to mid- and long-range combat.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 					--M107
 					["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 					--M200
@@ -3069,6 +3101,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_hmcar_sc_desc"] = "Before being phased out by law-enforcement, you managed to swipe a case full of these conversion kits.\n\nShoots #{stat_maxed}#titan-sniper rounds## capable of #{skill_color}#piercing multiple enemies, their body armor, shields within max damage range and thin walls;## Alt-fire shoots a #{event_color}#full power sniper round## for #{skill_color}#twice the ammo and power## that also adds the abilty to #{skill_color}#pierce titan-shields.##",
 					["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",
 					["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
+					--De Lisle
+					["bm_dl_sc_desc"] = "Comes #{skill_color}#integrally suppressed## and #{skill_color}#can pierce body armor, multiple enemies, shields and thin walls.##",
+					["bm_wp_upg_a_dl_a_cyanide"] = "Cyanide Rounds",
+					["bm_wp_upg_a_dl_a_cyanide_desc"] = "Cyanide-laced bullets inspired by an alleged WW2-era German suppressed bolt-action rifle.\n\nRounds #{skill_color}#deal 350 damage, 5 seconds after impact.##\n\n#{important_1}#No longer deal extra headshot damage and can no longer pierce through enemies.##",
+					["bm_dl_cyanide_desc"] = "#{stats_positive}#Fires cyanide-laced rounds that deal heavy damage after a few seconds## and #{skill_color}#can pierce body armor, shields and thin walls.##",
+					--SVT-40
+					["bm_wp_upg_i_avt40_desc"] = "Modified internals capable of #{risk}#fully automatic fire##.\nAnd you thought the M308 was hard to control.",
 
 			--[[ SPECIALS ]]
 				--Saw
@@ -4959,8 +4998,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["bm_equipment_first_aid_kit_desc"] = "To use a First Aid Kit, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to regain #{skill_color}#150## health.\n\nFirst Aid Kits can only be used #{skill_color}#1## time.\n\nThe First Aid Kit is a collection of supplies and equipment for use in rapidly giving first aid in emergency situations.",
 		["bm_equipment_first_aid_kit_desc_short"] = "To use a First Aid Kit, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to regain #{skill_color}#150## health.\n\nFirst Aid Kits can only be used #{skill_color}#1## time.",
 		--AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-		["bm_equipment_doctor_bag_desc"] = "To use the Doctor Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to regain #{skill_color}#20%## of their maximum health and #{skill_color}#4%## maximum health every #{skill_color}#5## seconds for #{skill_color}#3## minutes.\n\nDoctor bags can be used #{skill_color}#$deployable_uses## times; you can see how many uses are left by looking in the bag.\n\nThe Doctor Bag is a portable bag, usually used by a physician or other medical professional to transport medical supplies and medicine.",
-		["bm_equipment_doctor_bag_desc_short"] = "To use the Doctor Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to regain #{skill_color}#20%## of their maximum health and #{skill_color}#4%## maximum health every #{skill_color}#5## seconds for #{skill_color}#3## minutes.\n\nDoctor bags can be used #{skill_color}#$deployable_uses## times; you can see how many uses are left by looking in the bag.",
+		["bm_equipment_doctor_bag_desc"] = "To use the Doctor Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to regain for #{skill_color}#20%## of their maximum health and, for #{skill_color}#3## minutes, heal #{skill_color}#4%## of their maximum health every #{skill_color}#5## seconds and gain #{skill_color}#10## points of deflection.\n\nDoctor bags can be used #{skill_color}#$deployable_uses## times; you can see how many uses are left by looking in the bag.\n\nThe Doctor Bag is a portable bag, usually used by a physician or other medical professional to transport medical supplies and medicine.",
+		["bm_equipment_doctor_bag_desc_short"] = "To use the Doctor Bag, you need to place it by holding #{skill_color}#$BTN_USE_ITEM##. Once placed it cannot be moved, but it can be used by you and your crew by holding #{skill_color}#$BTN_INTERACT## to r regain for #{skill_color}#20%## of their maximum health and, for #{skill_color}#3## minutes, heal #{skill_color}#4%## of their maximum health every #{skill_color}#5## seconds and gain #{skill_color}#10## points of deflection.\n\nDoctor bags can be used #{skill_color}#$deployable_uses## times; you can see how many uses are left by looking in the bag.",
 		--Sentry
 		["bm_equipment_sentry_gun_desc"] = "To use the Sentry Gun, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Upon deployment it will use #{skill_color}#$deployable_uses## of your maximum ammo.\n\nYou can pick up your Sentry Gun by holding #{skill_color}#$BTN_INTERACT## while near it; picking it up will refund you for the remaining ammo in it and repair it.\n\nUpon taking too much damage, it will shut off. While in this state, interacting with it will place it into an automatic repair mode.\n\nSentry Guns terrify civilians, forcing them to the ground.\n\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention away from you and your team.",
 		["bm_equipment_sentry_gun_desc_short"] = "To use the Sentry Gun, you need to place it by holding #{skill_color}#$BTN_USE_ITEM.## Upon deployment it will use #{skill_color}#$deployable_uses## of your maximum ammo.\n\nYou can pick up your Sentry Gun by holding #{skill_color}#$BTN_INTERACT## while near it; picking it up will refund you for the remaining ammo in it and repair it.\n\nUpon taking too much damage, it will shut off. While in this state, interacting with it will place it into an automatic repair mode.",
@@ -5553,7 +5592,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--MG Specialist
 				["menu_sharpshooter_sc"] = "MG Specialist",
-				["menu_sharpshooter_desc_sc"] = "BASIC: #{owned}#$basic##\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#machine guns.##\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## fire #{skill_color}#$skill_value_p1## faster.\n\nEvery #{skill_color}#5th## bullet fired by a #{skill_color}#machine gun## without releasing the trigger consumes no ammo.",
+				["menu_sharpshooter_desc_sc"] = "BASIC: #{owned}#$basic##\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#machine guns.##\n\nThe movement penalty to accuracy is influenced by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## fire #{skill_color}#$skill_value_p1## faster.\n\nEvery #{skill_color}#5th## bullet fired by a #{skill_color}#machine gun## without releasing the trigger consumes no ammo.",
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
@@ -5706,11 +5745,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Rifleman--
 				["menu_rifleman_sc"] = "Rifleman",
-				["menu_rifleman_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## more accuracy and range while aiming down sights.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## gain an additional #{skill_color}#$skill_value_p1## more accuracy and range while aiming down sights.\n\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#rifles## are #{skill_color}#$skill_value_p2## faster.",
+				["menu_rifleman_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## more accuracy and range while aiming down sights.\n\n#{skill_color}#Rifles## gain an additonal #{skill_color}#$skill_value_b2## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## gain an additional #{skill_color}#$skill_value_p1## more accuracy and range while aiming down sights.\n\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#rifles## are #{skill_color}#$skill_value_p2## faster.",
 
 				--Kilmer--
 				["menu_heavy_impact_beta_sc"] = "Kilmer",
-				["menu_heavy_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#rifles.##\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## reload #{skill_color}#$skill_value_p1## faster.\n\n#{skill_color}#Rifles## will deal at least #{skill_color}#$skill_value_p2## of their damage through armor.\n\n#{risk}#NOTE: This does not stack with any armor piercing capabilites your## #{skill_color}#rifle(s)## #{risk}#may already have.##",
+				["menu_heavy_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## reload #{skill_color}#$skill_value_b2## faster.\n\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#rifles.##\n\nThe movement penalty to accuracy is influenced by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## reload an additonal #{skill_color}#$skill_value_p1## faster.\n\n#{skill_color}#Rifles## will deal at least #{skill_color}#$skill_value_p2## of their damage through armor.\n\n#{risk}#NOTE: This does not stack with any armor piercing capabilites your## #{skill_color}#rifle(s)## #{risk}#may already have.##",
 
 				--Ammo Efficiency--
 				["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
@@ -5722,7 +5761,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Mind Blown",
-				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## can chain to deal #{skill_color}#$skill_value_b1## of the damage dealt to the closest enemy in a #{skill_color}#$skill_value_b2## meter radius; has a cooldown of #{important_1}#$skill_value_b5## seconds.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#$skill_value_b4## times.\n\nACE: #{owned}#$pro##\nHeadshots with #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## have #{skill_color}#no damage falloff.##\n\nThe radius of the chaining effect is increased by #{skill_color}#$skill_value_p1## meter.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#$skill_value_p2## damage; up to a total of #{skill_color}#$skill_value_p3## of the damage dealt.\n ",
+				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## can chain to deal #{skill_color}#$skill_value_b1## of the damage dealt to the closest enemy in a #{skill_color}#$skill_value_b2## meter radius; has a cooldown of #{important_1}#$skill_value_b5## seconds.\n\nWith your #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst,## for every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#$skill_value_b4## times.\n\nACE: #{owned}#$pro##\nThe radius of the chaining effect is increased by #{skill_color}#$skill_value_p1## meter.\n\nWith your #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst,## headshots have #{skill_color}#no damage falloff## and for every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#$skill_value_p2## damage; up to #{skill_color}#$skill_value_p3##.\n ",
 
 		--[[   GHOST   ]]--
 
@@ -5814,7 +5853,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Over Pressurized/Gunfighter--
 				["menu_gun_fighter_sc"] = "Gunfighter",
-				["menu_gun_fighter_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Pistols## reload #{skill_color}#$skill_value_b1## faster.\n\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b2## for #{skill_color}#pistols.##\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Pistols## reload an additional #{skill_color}#$skill_value_p1## faster.",
+				["menu_gun_fighter_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Pistols## reload #{skill_color}#$skill_value_b1## faster.\n\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b2## for #{skill_color}#pistols.##\n\nThe movement penalty to accuracy is influenced by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Pistols## reload an additional #{skill_color}#$skill_value_p1## faster.",
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "Akimbo",

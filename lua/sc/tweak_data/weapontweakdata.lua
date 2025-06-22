@@ -26491,7 +26491,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.sbeta then
-				self.sbeta.recategorize = {"light_snp"}
+				self.sbeta.recategorize = {"heavy_snp"}
 				self.sbeta.damage_type = "sniper"
 				self.sbeta.always_play_anims = true
 				self.sbeta.tactical_reload = 1
@@ -30270,7 +30270,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"snp",
 					"sweet_liberty"
 				}
-				self.r6.recategorize = {"light_snp"}
+				self.r6.recategorize = {"heavy_snp"}
 				self.r6.damage_type = "sniper"
 				self.r6.always_play_anims = true
 				self.r6.BURST_FIRE = false
@@ -30278,7 +30278,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r6.sms = 0.5
 				self.r6.tactical_reload = 1
 				self.r6.has_description = true
-				self.r6.desc_id = "bm_ap_weapon_sc_desc"
 				self.r6.CLIP_AMMO_MAX = 6
 				self.r6.AMMO_MAX = self.r6.CLIP_AMMO_MAX * 11
 				self.r6.ammo_ratio = 2

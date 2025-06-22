@@ -19725,6 +19725,9 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_sbeta = {
 						translation = Vector3(-0.015, 1, -3.79)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_r6 = {
+						translation = Vector3(-0.02, 2.7, -3.78)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_stampede_ecs = {
 						translation = Vector3(0.048, 11.5, -3.435)
@@ -44528,11 +44531,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				zoom = 30,
 				base_zoom_off = 1
 			}
-			self.parts.wpn_fps_upg_hd2_pen_optic.stance_mod = {
-				wpn_fps_snp_r6 = {
-					translation = Vector3(-0.018, 15, -2.84)
-				}
-			}
+			self.parts.wpn_fps_upg_hd2_pen_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_pen_optic.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.003, 3, 0.94)
+				end
+			end
 		end
 
 		if self.parts.wpn_fps_ass_bulldog_burst then

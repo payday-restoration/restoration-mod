@@ -3083,6 +3083,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Thanatos--
 				["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 				--Custom Snipers
+					--HD2 R-6 Deadeye
+					["bm_w_r6_desc"] = "A mighty rifle with a signature lever-action enabling single round reload. Powerful precision suited to mid- and long-range combat.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 					--M107
 					["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 					--M200

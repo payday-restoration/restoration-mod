@@ -8,5 +8,83 @@ return {
 		[100727] = {
 			ponr = ponr_value,
 			hunt = hunt_projob
-		}
-}	
+		},
+			[100115] = {
+		ponr = {
+			length = 900,
+			player_mul = { 2, 1.25, 1, 1 },
+		},
+	},
+	-- Add new reinforce
+	[100109] = {
+		reinforce = {
+			{
+				name = "street",
+				force = 3,
+				position = Vector3(-3150, -500, 0),
+			},
+			{
+				name = "parking_lot",
+				force = 3,
+				position = Vector3(200, -1150, 0),
+			},
+		},
+	},
+	-- Place the reinforce point near the car crash site
+	[101096] = {
+		reinforce = {
+			{
+				name = "pink_car1",
+				force = 2,
+				position = Vector3(-3100, 1400, 0),
+			},
+		},
+	},
+	[101130] = {
+		reinforce = {
+			{ name = "pink_car1" },
+		},
+	},
+	[101095] = {
+		reinforce = {
+			{
+				name = "pink_car2",
+				force = 2,
+				position = Vector3(-2100, -1200, 0),
+			},
+		},
+	},
+	[101200] = {
+		reinforce = {
+			{ name = "pink_car2" },
+		},
+	},
+	[101101] = {
+		reinforce = {
+			{
+				name = "pink_car3",
+				force = 2,
+				position = Vector3(-400, 0, 0),
+			},
+		},
+	},
+	[101195] = {
+		reinforce = {
+			{ name = "pink_car3" },
+		},
+	},
+	[100545] = {
+		reinforce = {
+			{
+				name = "pink_car4",
+				force = 2,
+				position = Vector3(-4700, -2000, 0),
+			},
+		},
+	},
+	[101543] = {
+		reinforce = {
+			{ name = "pink_car4" },
+		},
+	},
+}

@@ -154,6 +154,44 @@ return {
 			enemy = woman_spooc,
 		},
 	},
+		-- Add new reinforce
+	[101825] = { -- Interrogation started
+		reinforce = {
+			{
+				name = "staircase_main1",
+				force = 2,
+				position = Vector3(-1250, -2750, 300),
+			},
+			{
+				name = "staircase_main2",
+				force = 2,
+				position = Vector3(-1250, -2750, 1000),
+			},
+			{
+				name = "staircase_side1",
+				force = 2,
+				position = Vector3(-1250, 975, 475),
+			},
+			{
+				name = "staircase_side2",
+				force = 2,
+				position = Vector3(-1850, 1000, 1375),
+			},
+		},
+	},
+	-- Fix Taxman's getting into the limo event
+	[101581] = {
+		on_executed = {
+			{ id = 101599, delay = 2.5 },
+			{ id = 101582, delay = 2.5 },
+		},
+	},
+	[101578] = {
+		on_executed = {
+			{ id = 101582, remove = true },
+			{ id = 101599, remove = true },
+		},
+	},
 	-- Titan Shields replace regular ones during escape part on higher diff
 	[102410] = tshield,
 	[102411] = tshield,

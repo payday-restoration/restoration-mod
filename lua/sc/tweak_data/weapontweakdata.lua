@@ -30037,6 +30037,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.r2.stats_modifiers = nil
 				self.r2.panic_suppression_chance = 0.05
+				self.r2.object_damage_mult = 0.5
 				self.r2.sounds.use_fix = nil
 				self.r2.armor_piercing_chance = nil
 				self.r2.timers.reload_empty = 2.8
@@ -30248,6 +30249,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.timers.reload_exit_empty = 0.85
 				--self.sickle.weapon_hold = "ching"
 				--self.sickle.no_auto_anims = true
+				self.sickle.object_damage_mult = 0.5
 				self.sickle.spin_up_t = 0.5
 				self.sickle.spin_down_t = 0.0001
 				self.sickle.sounds.magazine_empty = "wp_sentrygun_swap_ammo"

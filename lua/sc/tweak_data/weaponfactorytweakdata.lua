@@ -29264,6 +29264,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_bromeo2m_magazine.custom_stats = nil
 
 			--SHARED PARTS (Base stats are for the MTZ-556)
+				self.parts.wpn_fps_ass_bromeo805_angled_sight_tacstance.supported = true
+				self.parts.wpn_fps_ass_bromeo805_angled_sight_tacstance.stats = { value = 0, gadget_zoom = 1 }
+				self.parts.wpn_fps_ass_bromeo805_angled_sight_tacstance.custom_stats = {
+					pointshoot_ads = 0.75,
+					pointshoot_spread = 10,
+					pointshoot_strafe = 0.5,
+				}
 				--BARRELS
 					--Clinch Pro
 					self.parts.wpn_fps_ass_bromeo805_barrel_heavy_long.supported = true
@@ -29408,7 +29415,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_ass_bromeo805.default_blueprint) do
-					if self.parts[part_id].pcs then
+					if part_id ~= "wpn_fps_ass_bromeo805_angled_sight_tacstance" and self.parts[part_id].pcs then
 						self.parts[part_id .. "_vanilla"] = deep_clone(self.parts[part_id])
 						self.parts[part_id .. "_vanilla"].pcs = nil
 						self.parts[part_id .. "_vanilla"].stats = { value = 1 }
@@ -29526,7 +29533,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_ass_bromeo2m.default_blueprint) do
-					if self.parts[part_id].pcs then
+					if part_id ~= "wpn_fps_ass_bromeo805_angled_sight_tacstance" and self.parts[part_id].pcs then
 						self.parts[part_id .. "_vanilla"] = deep_clone(self.parts[part_id])
 						self.parts[part_id .. "_vanilla"].pcs = nil
 						self.parts[part_id .. "_vanilla"].stats = { value = 1 }
@@ -29633,7 +29640,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_ass_bromeo2.default_blueprint) do
-					if self.parts[part_id].pcs then
+					if part_id ~= "wpn_fps_ass_bromeo805_angled_sight_tacstance" and self.parts[part_id].pcs then
 						self.parts[part_id .. "_vanilla"] = deep_clone(self.parts[part_id])
 						self.parts[part_id .. "_vanilla"].pcs = nil
 						self.parts[part_id .. "_vanilla"].stats = { value = 1 }
@@ -29750,7 +29757,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 				for i, part_id in pairs(self.wpn_fps_snp_bromeop.default_blueprint) do
 					attachment_list = {
-						"wpn_fps_ass_bromeo805_angled_sight_tacstance",
+						"dummy",
+						--"wpn_fps_ass_bromeo805_angled_sight_tacstance",
 					}
 					for _, remove_id in ipairs(attachment_list) do
 						if part_id == remove_id then
@@ -29761,7 +29769,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 				attachment_list = {}
 				for i, part_id in pairs(self.wpn_fps_snp_bromeop.default_blueprint) do
-					if self.parts[part_id].pcs then
+					if part_id ~= "wpn_fps_ass_bromeo805_angled_sight_tacstance" and self.parts[part_id].pcs then
 						self.parts[part_id .. "_vanilla"] = deep_clone(self.parts[part_id])
 						self.parts[part_id .. "_vanilla"].pcs = nil
 						self.parts[part_id .. "_vanilla"].stats = { value = 1 }

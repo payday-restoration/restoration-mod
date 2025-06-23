@@ -1385,7 +1385,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_upg_o_5_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#5x magnification.##",
 		["bm_wp_upg_o_5_vari"] = "Variable zoom scope.\n#{risk}#5-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels.",
 		["bm_wp_upg_o_6"] = "Long-range scope.\n#{risk}#6x magnification.##",
-		["bm_wp_upg_o_6_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#6x magnification.##",
+		["bm_wp_upg_o_6_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#6x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 		["bm_wp_upg_o_6_rds_mount"] = "Long-range scope with a top-mounted red-dot sight.\n#{risk}#1.1-6x magnification.##",
 		["bm_wp_upg_o_8"] = "Long-range scope.\n#{risk}#8x magnification.##",
 		["bm_wp_upg_o_8_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#8x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
@@ -5596,7 +5596,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
-				["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWeapon magazine sizes are increased by #{skill_color}#$skill_value_b1.##\n\n#{risk}#NOTE: Does not apply to## #{important_1}#bows or launchers.##\n\nACE: #{owned}#$pro##\nThe magazine size increase is raised by an additional #{skill_color}#$skill_value_p1.##\n\n#{skill_color}#All weapons## can be hipfired while sprinting and their sprint-to-fire delay is removed.",
+				["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWeapon magazine sizes are increased by #{skill_color}#$skill_value_b1.##\n\n#{risk}#NOTE: Does not apply to## #{important_1}#bows, launchers or weapons that regenerate ammo.##\n\nACE: #{owned}#$pro##\nThe magazine size increase is raised by an additional #{skill_color}#$skill_value_p1.##\n\n#{skill_color}#All weapons## can be hipfired while sprinting and their sprint-to-fire delay is removed.",
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Heavy Impact",

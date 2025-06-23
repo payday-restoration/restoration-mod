@@ -1127,7 +1127,8 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 		local body_dmg_ext = col_ray.body:extension() and col_ray.body:extension().damage
 
 		if body_dmg_ext then
-			local object_damage_mult = weapon_unit and weapon_unit.base and weapon_unit:base().get_object_damage_mult and weapon_unit:base():get_object_damage_mult() or 1
+			local tweak_data = weap_base and ((weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()) or (weap_base._tweak_projectile_entry and tweak_data.projectiles[weap_base._tweak_projectile_entry]))
+			local object_damage_mult = (weapon_unit and weapon_unit.base and weapon_unit:base().get_object_damage_mult and weapon_unit:base():get_object_damage_mult()) or (tweak_data and tweak_data.object_damage_mult) or 1
 
 			local unit_base = body_dmg_ext._unit and body_dmg_ext._unit.base and body_dmg_ext._unit:base()
 			if unit_base and unit_base.has_tag and (unit_base:has_tag("taser") or unit_base:has_tag("boom")) then 
@@ -1852,7 +1853,6 @@ function InstantSnowballBase:on_collision(col_ray, weapon_unit, user_unit, damag
 		local weap_base = weapon_unit:base()
 		local tweak_data = weap_base and ((weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()) or (weap_base._tweak_projectile_entry and tweak_data.projectiles[weap_base._tweak_projectile_entry]))
 		local di_percent = (tweak_data and tweak_data.direct_damage_percent) or 0.5
-		log(tostring( weap_base._tweak_projectile_entry ))
 		self.super.super:on_collision(col_ray, weapon_unit, user_unit, (damage * di_percent) * overkill, blank, no_sound)
 		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 1, user_unit, weapon_unit, managers.network:session():local_peer():id())
 

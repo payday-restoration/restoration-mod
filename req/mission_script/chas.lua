@@ -16,19 +16,19 @@ local sniper_trigger_times = {
 }
 
 return {
-	--Pro Job PONR
+	-- Pro Job PONR
 	[100818] = {
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},
-	--Should fix enemies getting stuck
+	-- Should fix enemies getting stuck
 	[101088] = enable,
 	[101238] = enable,
 	[100999] = enable,
 	[101265] = enable,
 	[101262] = enable,
 	[101264] = enable,
-	--Fixed snipers being able to spawn only once
+	-- Fixed snipers being able to spawn only once
 	[100368] = sniper_trigger_times,
 	[100369] = sniper_trigger_times,
 	[100370] = sniper_trigger_times,
@@ -39,13 +39,13 @@ return {
 	[100375] = sniper_trigger_times,
 	[100376] = sniper_trigger_times,
 	[100377] = sniper_trigger_times,
-	--Technically should fix softlock when blowtorch interactions are unavailable. Also player can't abuse keys in loud
+	-- Technically should fix softlock when blowtorch interactions are unavailable. Also player can't abuse keys in loud
 	[102704] = {
 		on_executed = {
 			{id = 101278, delay = 0}
 		}
 	},
-	--Allow plant c4 when escape sequence is started (At least this works when player picked up c4 before escape trigger)
+	-- Allow plant c4 when escape sequence is started (At least this works when player picked up c4 before escape trigger)
 	[102146] = {
 		values = {
 			enabled = false
@@ -61,7 +61,7 @@ return {
 			trigger_times = 1
 		}
 	},
-	--Always comment that all c4 are placed (why it's chance based to begin with, Overkill...)
+	-- Always comment that all c4 are placed (why it's chance based to begin with, Overkill...)
 	[103810] = {
 		values = {
             chance = 100
@@ -79,38 +79,51 @@ return {
             chance = chance_dozer
 		}
 	},
-	--Dozer gets repositioned to the boat loot drop point
+	-- Dozer gets repositioned to the boat loot drop point
 	[102870] = {
 		values = {
 			position = Vector3(-4627, 5521, -400),
 			rotation = Rotation(140, 0, -0)
 		}
 	},
-	--Reinforce spots
-	[101190] = {
-		reinforce = {
+	-- Reinforce spots
+		[100109] = {
+		reinforce = { -- Police arrived
 			{
-				name = "store_front1",
+				name = "shop_front1",
 				force = 3,
-				position = Vector3(-2000, 300, -10)
+				position = Vector3(-2000, 300, -10),
 			},
 			{
-				name = "store_front2",
+				name = "shop_front2",
 				force = 3,
-				position = Vector3(-1000, 300, -10)
-			}
-		}
+				position = Vector3(-1000, 300, -10),
+			},
+		},
 	},
-	[101647] = {
+	[101198] = { -- warehouse door open
 		reinforce = {
 			{
-				name = "store_front2"
+				name = "tea_shop",
+				force = 2,
+				position = Vector3(-2900, -1400, 0),
 			},
+		},
+	},
+	[101647] = { -- Dragon found, change reinfroce
+		reinforce = {
+			{ name = "shop_front1" },
+			{ name = "shop_front2" },
 			{
 				name = "back_alley",
 				force = 3,
-				position = Vector3(-1400, 4900, 540)
-			}
-		}
-	}
+				position = Vector3(-1400, 4900, 540),
+			},
+			{
+				name = "tram_street",
+				force = 3,
+				position = Vector3(2650, 4300, 575),
+			},
+		},
+	},
 }

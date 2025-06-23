@@ -165,6 +165,32 @@ function ExplosionManager:give_local_player_dmg(pos, range, damage, user_unit)
 	end
 end
 
+--for the snowball
+function ExplosionManager:_damage_bodies(detect_results, params)
+	local user_unit = params.user
+	local hit_pos = params.hit_pos
+	local damage = params.damage
+	local obj_damage_mult = params.obj_damage_mult or 1 --hi there
+	local range = params.range
+	local curve_pow = params.curve_pow
+
+	for _, bodies in pairs(detect_results.bodies_hit) do
+		for _, hit_body in ipairs(bodies) do
+			local apply_dmg = alive(hit_body) and hit_body:extension() and hit_body:extension().damage
+
+			if apply_dmg then
+				local dir = hit_body:center_of_mass()
+				local len = mvector3.direction(dir, hit_pos, dir)
+				local prop_damage = damage * math.pow(math.clamp(1 - len / range, 0, 1), curve_pow)
+				prop_damage = prop_damage * obj_damage_mult --just dropping in
+				prop_damage = math.max(prop_damage, math.min(damage, 1))
+
+				self:_apply_body_damage(true, hit_body, user_unit, dir, prop_damage)
+			end
+		end
+	end
+end
+
 --Old ExplosionManager stuff; keeping as a means of reference in case anything resmod needs is missing from updated code to support U240.3
 --[[
 --Alt version of vanilla _detect_hits. Kept as is to avoid crashing if Overkill adds in a new grenade type.

@@ -1704,7 +1704,7 @@ function InstantExplosiveBulletBase:on_collision(col_ray, weapon_unit, user_unit
 	return nil
 end
 
-function InstantExplosiveBulletBase:on_collision_server(position, normal, damage, user_unit, weapon_unit, owner_peer_id, owner_selection_index)
+function InstantExplosiveBulletBase:on_collision_server(position, normal, damage, user_unit, weapon_unit, owner_peer_id, owner_selection_index, object_damage_mult)
 	local slot_mask = managers.slot:get_mask("explosion_targets")
 
 	managers.explosion:play_sound_and_effects(position, normal, self.RANGE, self.EFFECT_PARAMS)
@@ -1716,6 +1716,7 @@ function InstantExplosiveBulletBase:on_collision_server(position, normal, damage
 		collision_slotmask = slot_mask,
 		curve_pow = self.CURVE_POW,
 		damage = damage,
+		obj_damage_mult = object_damage_mult or 1,
 		player_damage = 0,
 		alert_radius = self.ALERT_RADIUS,
 		ignore_unit = weapon_unit,
@@ -1853,8 +1854,9 @@ function InstantSnowballBase:on_collision(col_ray, weapon_unit, user_unit, damag
 		local weap_base = weapon_unit:base()
 		local tweak_data = weap_base and ((weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()) or (weap_base._tweak_projectile_entry and tweak_data.projectiles[weap_base._tweak_projectile_entry]))
 		local di_percent = (tweak_data and tweak_data.direct_damage_percent) or 0.5
+		local object_damage_mult = (tweak_data and tweak_data.explosion_object_damage_mult) or 1
 		self.super.super:on_collision(col_ray, weapon_unit, user_unit, (damage * di_percent) * overkill, blank, no_sound)
-		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 1, user_unit, weapon_unit, managers.network:session():local_peer():id())
+		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 1, user_unit, weapon_unit, managers.network:session():local_peer():id(), nil, object_damage_mult)
 
 		return {
 			variant = "explosion",

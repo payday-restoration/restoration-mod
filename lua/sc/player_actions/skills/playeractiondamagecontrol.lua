@@ -37,6 +37,9 @@ PlayerAction.DamageControl = {
 				if is_downed or swan_song_active then
 					return
 				end
+				
+				local original_dmange_grace = player_damage._dmg_interval / managers.player:upgrade_value("player", "damage_grace_mult", 1)
+				player_damage._next_allowed_dmg_t = Application:digest_value(timer:time() + original_dmange_grace, true)
 
 				if shrug_healing then
 					player_damage:restore_health(remaining_damage * shrug_healing, true)

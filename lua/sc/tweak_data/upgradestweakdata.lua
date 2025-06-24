@@ -2655,17 +2655,17 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--alcoholism is no joke
 	--stoic
-	self.values.player.damage_grace_mult = {0.6}
+	self.values.player.damage_grace_mult = {0.5}
 	self.values.player.armor_to_health_conversion = {
 		50
 	}
 	local damage_control_passive_ticks = { 
-		8, --Max number of DoT ticks from an instance of damage
+		8, --Max duration of DoT; damage per tick scales with duration and is calculated as "100/Duration"
 		5 --Copycat
 	}
 	self.values.player.damage_control_passive = {
 		{
-			30, --% of damage converted into DoT 
+			40, --% of damage converted into DoT 
 			100 / damage_control_passive_ticks[1]
 		},
 		{--Copycat
@@ -3714,7 +3714,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_4 = "30", -- CD of alchohol flask. Not defined here
 		perk_value_5 = tostring(self.values.player.armor_to_health_conversion[1]).."%", -- Armor convert rate
 		perk_value_6 = tostring(100 - self.values.player.armor_to_health_conversion[1]).."%", -- HP convert rate
-		perk_value_7 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
+		perk_value_7 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%", -- Faster pager interaction
+		perk_value_8 = tostring((1 - self.values.player.damage_grace_mult[1]) * 100).."%" -- grace period multiplier
 	}
 	self.multi_choice_specialization_descs[23][9][20] = { --Tag Team
 		perk_value_1 = tostring(self.values.player.tag_team_base[1].distance), -- Distance required to activate vape
@@ -4029,6 +4030,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_19",
 			desc_id = "menu_deck19_mrwi_desc",
 			upgrades = {
+				"damage_grace_mult",
 				"damage_control",
 				"player_damage_control_passive_1",
 				"player_damage_control_passive_2",

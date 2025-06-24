@@ -28089,15 +28089,18 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				table.insert(self.wpn_fps_shot_toz66.uses_parts, "wpn_fps_upg_a_rip")
 			end
 
-			if self.wpn_fps_sho_x_toz66 then
-				self.wpn_fps_sho_x_toz66.override.wpn_fps_upg_a_custom = {custom_stats = deep_clone(shot_ammo.a_custom_heavy_override.custom_stats)}
-				self.wpn_fps_sho_x_toz66.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
-				self.wpn_fps_sho_x_toz66.override.wpn_fps_upg_a_custom_free = {custom_stats = deep_clone(shot_ammo.a_custom_heavy_override.custom_stats)}
-				self.wpn_fps_sho_x_toz66.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
-				self.wpn_fps_sho_x_toz66.override.wpn_fps_upg_a_piercing = {custom_stats = deep_clone(shot_ammo.a_piercing_heavy_override.custom_stats)}
-				self.wpn_fps_sho_x_toz66.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
+			if self.wpn_fps_shot_x_toz66 then
+				self.wpn_fps_shot_x_toz66.override.wpn_fps_upg_a_custom = {custom_stats = deep_clone(shot_ammo.a_custom_heavy_override.custom_stats)}
+				self.wpn_fps_shot_x_toz66.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
+				self.wpn_fps_shot_x_toz66.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
+				self.wpn_fps_shot_x_toz66.override.wpn_fps_upg_a_custom_free = {custom_stats = deep_clone(shot_ammo.a_custom_heavy_override.custom_stats)}
+				self.wpn_fps_shot_x_toz66.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
+				self.wpn_fps_shot_x_toz66.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
+				self.wpn_fps_shot_x_toz66.override.wpn_fps_upg_a_piercing = {custom_stats = deep_clone(shot_ammo.a_piercing_heavy_override.custom_stats)}
+				self.wpn_fps_shot_x_toz66.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
+				self.wpn_fps_shot_x_toz66.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
 
-				table.insert(self.wpn_fps_sho_x_toz66.uses_parts, "wpn_fps_upg_a_rip")
+				table.insert(self.wpn_fps_shot_x_toz66.uses_parts, "wpn_fps_upg_a_rip")
 			end
 
 			if self.parts.wpn_fps_shot_toz34_body then
@@ -45307,10 +45310,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.wpn_fps_shot_x_huntsman.override.wpn_fps_upg_a_custom = {custom_stats = deep_clone(shot_ammo.a_custom_heavy_override.custom_stats)}
 		self.wpn_fps_shot_x_huntsman.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
+		self.wpn_fps_shot_x_huntsman.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
 		self.wpn_fps_shot_x_huntsman.override.wpn_fps_upg_a_custom_free = {custom_stats = deep_clone(shot_ammo.a_custom_heavy_override.custom_stats)}
 		self.wpn_fps_shot_x_huntsman.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
+		self.wpn_fps_shot_x_huntsman.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
 		self.wpn_fps_shot_x_huntsman.override.wpn_fps_upg_a_piercing = {custom_stats = deep_clone(shot_ammo.a_piercing_heavy_override.custom_stats)}
 		self.wpn_fps_shot_x_huntsman.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
+		self.wpn_fps_shot_x_huntsman.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
 		self.wpn_fps_shot_x_huntsman.override.wpn_fps_shot_huntsman_b_long = {}
 		self.wpn_fps_shot_x_huntsman.override.wpn_fps_shot_huntsman_s_long = {
 			unit = "units/payday2/weapons/wpn_fps_shot_huntsman_pts/wpn_fps_shot_huntsman_s_short",
@@ -45318,6 +45324,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			adds = {"wpn_fps_shot_x_rota_sound_switch"}
 		}
 
+		table.insert(self.wpn_fps_shot_x_huntsman.uses_parts, "wpn_fps_upg_a_rip")
 		table.insert(self.wpn_fps_shot_x_huntsman.uses_parts, "wpn_fps_shot_huntsman_b_short" )
 		self.wpn_fps_shot_x_huntsman_npc.uses_parts = deep_clone(self.wpn_fps_shot_x_huntsman.uses_parts)
 	end
@@ -45334,11 +45341,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_custom = {custom_stats = deep_clone(shot_ammo.a_custom_heavy_override.custom_stats)}
 		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
+		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
 		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_custom_free = {custom_stats = deep_clone(shot_ammo.a_custom_heavy_override.custom_stats)}
 		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
+		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
 		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_piercing = {custom_stats = deep_clone(shot_ammo.a_piercing_heavy_override.custom_stats)}
 		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
+		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
 
+		table.insert(self.wpn_fps_sho_x_coach.uses_parts, "wpn_fps_upg_a_rip")
 		table.insert(self.wpn_fps_sho_x_coach.uses_parts, "wpn_fps_sho_coach_b_short" )
 		table.insert(self.wpn_fps_sho_x_coach.uses_parts, "wpn_fps_sho_coach_b_long" )
 		self.wpn_fps_sho_x_coach_npc.uses_parts = deep_clone(self.wpn_fps_sho_x_coach.uses_parts)
@@ -48228,6 +48239,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.parts.wpn_fps_upg_fazertron_rec_laserkit.supported = true
 		self.parts.wpn_fps_upg_fazertron_rec_laserkit.keep_damage = true
+		self.parts.wpn_fps_upg_fazertron_rec_laserkit.has_description = false
 		self.parts.wpn_fps_upg_fazertron_rec_laserkit.stats = {
 			damage = 10,
 			recoil = -4,

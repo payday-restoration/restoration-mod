@@ -73,7 +73,6 @@
 	<material_config	path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1" force="false" />	
 	<model				path="units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1" force="false" />	
 	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1" force="false" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df"/>
 
 	<unit_mat			path="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" load="true" />
 	<cooked_physics		path="units/pd2_dlc_ranc/characters/ene_acc_hat_ranger/ene_acc_hat_ranger" />
@@ -114,8 +113,8 @@
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/badasstexsoldiers_df" />	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/special_body_df" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm" />
-	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm"/>
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df"/>
 	<!-- blue swats here -->
 	<!--AMCAR-->	
 	<unit				path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>		

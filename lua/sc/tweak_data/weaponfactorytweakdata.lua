@@ -29271,6 +29271,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					pointshoot_spread = 10,
 					pointshoot_strafe = 0.5,
 				}
+				for i, weap in pairs(self.parts.wpn_fps_ass_bromeo805_angled_sight_tacstance.stance_mod) do
+					if weap and i ~= wep_id and weap.translation then
+						weap.translation = weap.translation + Vector3(0, 0, -0.4)
+					end
+				end
 				--BARRELS
 					--Clinch Pro
 					self.parts.wpn_fps_ass_bromeo805_barrel_heavy_long.supported = true

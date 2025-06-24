@@ -29,6 +29,10 @@ function PlayerDamage:init(unit)
 	self._focus_delay_mul = 1
 	self._dmg_interval = tweak_data.player.damage.MIN_DAMAGE_INTERVAL
 	
+	if player_manager:has_category_upgrade("player", "damage_grace_mult") then
+		self._dmg_interval = self._dmg_interval * managers.player:upgrade_value("player", "damage_grace_mult", 1)
+	end
+	
 	if managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR then
 		self._dmg_interval = self._dmg_interval * tweak_data.player.controller_damage_grace_multiplier or 2
 	end

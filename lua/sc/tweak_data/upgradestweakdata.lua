@@ -2655,17 +2655,22 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--alcoholism is no joke
 	--stoic
+	self.values.player.damage_grace_mult = {0.6}
 	self.values.player.armor_to_health_conversion = {
 		50
+	}
+	local damage_control_passive_ticks = { 
+		8, --Max number of DoT ticks from an instance of damage
+		5 --Copycat
 	}
 	self.values.player.damage_control_passive = {
 		{
 			30, --% of damage converted into DoT 
-			12.5 --% of converted DoT damage applied per second
+			100 / damage_control_passive_ticks[1]
 		},
 		{--Copycat
 			20,
-			20
+			100 / damage_control_passive_ticks[2]
 		}
 	}
 	self.values.player.damage_control_auto_shrug = {
@@ -2676,8 +2681,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.damage_control_cooldown_drain = {
-		{ 0, 4},
-		{50, 6}
+		{ 0, 5},
+		{50, 7.5}
 	}
 	
 	--Yakuza--
@@ -3440,9 +3445,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_1 = tostring(self.values.player.damage_control_passive[1][1]).."%", -- % of damage converted into DoT 
 		perk_value_2 = tostring(100 / self.values.player.damage_control_passive[1][2]), -- Standard DoT duration
 		perk_value_3 = tostring(self.values.player.damage_control_healing[1]).."%", -- HP regen defined by remaining DoT damage
-		perk_value_4 = "30", -- CD of alchohol flask. Not defined here
+		perk_value_4 = tostring(restoration.damage_control_cd), -- CD of alchohol flask. Defined in Core.lua (found in root)
 		perk_value_5 = tostring(self.values.player.armor_to_health_conversion[1]).."%", -- Armor convert rate
-		perk_value_6 = tostring(100 - self.values.player.armor_to_health_conversion[1]).."%" -- HP convert rate
+		perk_value_6 = tostring(100 - self.values.player.armor_to_health_conversion[1]).."%", -- HP convert rate
+		perk_value_7 = tostring((1 - self.values.player.damage_grace_mult[1]) * 100).."%" -- grace period multiplier
 	}
 	self.specialization_descs[19][3] = {
 		perk_value_1 = tostring(self.values.player.damage_control_cooldown_drain[1][2]) -- CD reduction on kill
@@ -5137,6 +5143,14 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 2,
 			upgrade = "damage_control_passive",
+			category = "player"
+		}
+	}
+	self.definitions.player_damage_grace_mult = { --Copycat
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "damage_grace_mult",
 			category = "player"
 		}
 	}

@@ -3506,7 +3506,8 @@ function SkillTreeTweakData:init(tweak_data)
 					"damage_control",
 					"player_damage_control_passive_1",
 					"player_damage_control_healing",
-					"player_armor_to_health_conversion"
+					"player_armor_to_health_conversion",
+					"player_damage_grace_mult"
 				},
 				icon_xy = {
 					0,

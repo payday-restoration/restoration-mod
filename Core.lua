@@ -573,6 +573,9 @@ function restoration:LoadFonts()
 	end
 end
 
+--Incredibly disgusting way to handle this but I can't call blackmarkettweakdata in upgradestweakdata
+restoration.damage_control_cd = 25
+
 restoration.assault_style = {
 	"beta_assault",
 	"alpha_assault"

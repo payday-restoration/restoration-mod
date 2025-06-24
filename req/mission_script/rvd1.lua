@@ -9,12 +9,6 @@ return {
 			ponr = ponr_value,
 			hunt = hunt_projob
 		},
-			[100115] = {
-		ponr = {
-			length = 900,
-			player_mul = { 2, 1.25, 1, 1 },
-		},
-	},
 	-- Add new reinforce
 	[100109] = {
 		reinforce = {

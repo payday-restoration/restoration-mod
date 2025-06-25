@@ -7744,17 +7744,7 @@ end)
 
 					self.wpn_fps_smg_sterling.override = self.wpn_fps_smg_sterling.override or {}
 
-					for i, part_id in pairs(self.wpn_fps_smg_sterling.uses_parts) do
-						if self.parts[part_id] and self.parts[part_id].type then
-							if self.parts[part_id].type == "sight" and self.parts[part_id].stats and self.parts[part_id].stats.zoom then
-								self.wpn_fps_smg_sterling.override[part_id] = { forbids = {"wpn_fps_gre_arbiter_o_standard"} }
-							end
-						end
-					end
-					--"wpn_fps_upg_o_health" is initialized way later so that for loop won't work >:C
-					self.wpn_fps_smg_sterling.override.wpn_fps_upg_o_health = { forbids = {"wpn_fps_gre_arbiter_o_standard"} } 
-					-- VMP sight(s)
-					self.wpn_fps_smg_sterling.override.wpn_fps_upg_o_cqb = { forbids = {"wpn_fps_gre_arbiter_o_standard"} }
+					--Sight forbid override are in the "universal" section (text search "universal-ly" without the "-")
 
 					self.wpn_fps_smg_sterling.override.wpn_fps_upg_m4_s_standard = {
 						stats = deep_clone(stocks.folder_to_adj_acc1_stats),
@@ -50733,6 +50723,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 	self.wpn_fps_ass_vhs_npc.override = deep_clone(self.wpn_fps_ass_vhs.override)
 	self.wpn_fps_ass_vhs_npc.uses_parts = deep_clone(self.wpn_fps_ass_vhs.uses_parts)
+
+	--Sterling optic forbids
+	for i, part_id in pairs(self.wpn_fps_smg_sterling.uses_parts) do
+		if self.parts[part_id] and self.parts[part_id].type then
+			if self.parts[part_id].type == "sight" and self.parts[part_id].stats and self.parts[part_id].stats.zoom then
+				self.wpn_fps_smg_sterling.override[part_id] = { forbids = {"wpn_fps_gre_arbiter_o_standard"} }
+			end
+		end
+	end
+	self.wpn_fps_smg_sterling_npc.override = deep_clone(self.wpn_fps_smg_sterling.override)
 
 --GEN 1 LEGENDARY STUFF--
 	--Vlad's Rodina--

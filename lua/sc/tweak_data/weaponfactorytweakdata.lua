@@ -11364,7 +11364,7 @@ end)
 							unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_uupg_fg_amcar",
 							third_unit = "units/payday2/weapons/wpn_third_ass_amcar_pts/wpn_third_amcar_uupg_fg_amcar",
 							adds = {"wpn_fps_m4_uupg_fg_rail_m4a1"},
-							forbids = {"wpn_fps_ass_m16_os_frontsight"},
+							forbids = {"wpn_fps_ass_m16_os_frontsight", "wpn_fps_ass_m4_os_frontsight"},
 							override = {
 								wpn_fps_ass_m4_ns_frontsight = {
 									parent = "exclusive_set",
@@ -11376,7 +11376,7 @@ end)
 							unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_rail",
 							third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_rail",
 							adds = {"wpn_fps_m4_uupg_fg_rail_m4a1"},
-							forbids = {"wpn_fps_ass_m16_os_frontsight"},
+							forbids = {"wpn_fps_ass_m16_os_frontsight", "wpn_fps_ass_m4_os_frontsight"},
 							override = {
 								wpn_fps_ass_m4_ns_frontsight = {
 									parent = "exclusive_set",
@@ -11387,7 +11387,7 @@ end)
 						wpn_fps_upg_smg_olympic_fg_lr300 = {
 							unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_lr300",
 							third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_lr300",
-							forbids = {"wpn_fps_ass_m16_os_frontsight"},
+							forbids = {"wpn_fps_ass_m16_os_frontsight", "wpn_fps_ass_m4_os_frontsight"},
 							override = {
 								wpn_fps_ass_m16_o_handle_sight = {
 									unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_o_flipup",
@@ -24410,6 +24410,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				last_recoil_mult = 1.1,
 				lock = true
 			},
+			hey_kiddo = true,
 			rof_mult = 2.0408163,
 			alt_desc = "bm_wally_desc",
 		},

@@ -4665,7 +4665,13 @@ function BlackMarketGui:update_info_text()
 
 			local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 			local custom_stats = crafted and managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
+			local maralohk = nil
 			if custom_stats then --GROSS and UGLY garbage
+				for part_id, stats in pairs(custom_stats) do
+					if stats.hey_kiddo then
+						maralohk = true
+					end
+				end
 				for part_id, stats in pairs(custom_stats) do
 					if stats.info_lock_burst then
 						lock_burst = true
@@ -5096,6 +5102,12 @@ function BlackMarketGui:update_info_text()
 				})
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.risk)
+			end
+			
+			if maralohk then 
+				local rand = math.random(1, 8)
+				local sound_buffer = XAudio and blt.xaudio.setup() and XAudio.Buffer:new( BeardLib.Utils:FindMod("RestorationMod").ModPath .. "assets/oggs/voiceover/mitw/" .. tostring(rand) .. ".ogg")
+				XAudio.Source:new(sound_buffer)
 			end
 
 			updated_texts[4].below_stats = true

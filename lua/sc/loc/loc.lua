@@ -5932,6 +5932,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 				["menu_st_spec_23"] = "Helminth",
 				["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
 				["menu_difficulty_sm_wish"] = "The Steel Path",
+				["bm_wally_desc"] = "#{important_1}#VOULL NE XATA VOK, MARA LOHK?##",
 				["menu_risk_sm_wish"] = "The Steel Path. For those who have mastered THE CONCLAVE and wish to seek a challenge."
 			})
 		end

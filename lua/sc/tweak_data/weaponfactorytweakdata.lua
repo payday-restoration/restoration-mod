@@ -7751,6 +7751,8 @@ end)
 							end
 						end
 					end
+					--"wpn_fps_upg_o_health" is initialized way later so that for loop won't work >:C
+					self.wpn_fps_smg_sterling.override.wpn_fps_upg_o_health = { forbids = {"wpn_fps_gre_arbiter_o_standard"} } 
 					-- VMP sight(s)
 					self.wpn_fps_smg_sterling.override.wpn_fps_upg_o_cqb = { forbids = {"wpn_fps_gre_arbiter_o_standard"} }
 

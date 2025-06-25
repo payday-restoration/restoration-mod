@@ -208,7 +208,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	}
 	
 	--Midland Ranch
-	self.ranc.ai_group_type = fbi --lapd + marshals pls
+	self.ranc.ai_group_type = lapd --lapd + marshals pls
 	self.ranc.player_style = "fighterpilot"	
 	
 	--Lost in Transit

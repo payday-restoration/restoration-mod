@@ -5103,8 +5103,8 @@ function BlackMarketGui:update_info_text()
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.risk)
 			end
-			
-			if maralohk then 
+
+			if maralohk and math.rand(1) <= 0.05 then 
 				local rand = math.random(1, 8)
 				local sound_buffer = XAudio and blt.xaudio.setup() and XAudio.Buffer:new( BeardLib.Utils:FindMod("RestorationMod").ModPath .. "assets/oggs/voiceover/mitw/" .. tostring(rand) .. ".ogg")
 				XAudio.Source:new(sound_buffer)

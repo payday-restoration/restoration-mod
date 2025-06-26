@@ -1,13 +1,34 @@
 local pro_job_ponr = {
 	on_executed = {
-		{ id = 400002, delay = 0, },
+		{ id = 400006, delay = 0, },
+	},
+}
+local disable = {
+	values = {
+		enabled = false,
 	},
 }
 
 return {
+	-- Disable endless assault
+	[102786] = disable,
 	-- Pro Job PONR
-	[100185] = pro_job_ponr,
+	-- Triggers once both A) whisper state is off (on alarm), and B) a player has entered the vault
 	[100281] = pro_job_ponr,
+	[100524] = pro_job_ponr,
+	-- Toggle PONR durations based on escape plan
+	-- BFD/blimp escape
+	[101915] = {
+		on_executed = {
+			{ id = 400004, delay = 0, },
+		},
+	},
+	-- Van escape
+	[100708] = {
+		on_executed = {
+			{ id = 400005, delay = 0, },
+		},
+	},
 	-- Reinforce points
 	[101620] = {
 		reinforce = {

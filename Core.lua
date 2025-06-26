@@ -429,7 +429,6 @@ function restoration:Init()
 	-- Heists to remove endless assaults from
 	-- TODO: move to mission script patches instead of using this table
 	restoration.fuck_hunt = {
-		"kenaz",  -- Golden Grin Casino
 		"pines",  -- White Xmas
 		"jolly",  -- Aftershock
 		"born",  -- Biker Heist day 1

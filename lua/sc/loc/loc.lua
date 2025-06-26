@@ -2491,6 +2491,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_wp_upg_i_tekna"] = "Tekna Burst Kit",
 				["bm_wp_upg_i_tekna_desc"] = "Locks this weapon to fire in #{risk}#3-round bursts##; pair it with a #{skill_color}#glaive## maybe?",
 				["bm_wally_desc"] = "#{important_2}#Hey kiddo...##",
+				["bm_maralohk_desc"] = "#{important_1}#VOULL NE XATA VOK, MARA LOHK?##",
 				--AMR16--
 				["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
 				["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst## fire rate is #{skill_color}#increased to 950 RPM.## ",
@@ -5934,7 +5935,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 				["menu_st_spec_23"] = "Helminth",
 				["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
 				["menu_difficulty_sm_wish"] = "The Steel Path",
-				["bm_wally_desc"] = "#{important_1}#VOULL NE XATA VOK, MARA LOHK?##",
 				["menu_risk_sm_wish"] = "The Steel Path. For those who have mastered THE CONCLAVE and wish to seek a challenge."
 			})
 		end

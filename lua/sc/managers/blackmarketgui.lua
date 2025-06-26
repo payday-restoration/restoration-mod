@@ -4878,6 +4878,8 @@ function BlackMarketGui:update_info_text()
 
 			local selection_index = tweak_data:get_raw_value("weapon", self._slot_data.name, "use_data", "selection_index") or 1
 			local category = (selection_index == 1 and "secondaries") or (selection_index == 2 and "primaries") or "disabled"
+			local roll_desc = nil
+
 			if category == slot_data.category then
 
 				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
@@ -4894,6 +4896,7 @@ function BlackMarketGui:update_info_text()
 				local stat_sms = nil
 				local stat_move = nil
 				local stat_attachment_desc = nil
+				local stat_attachment_desc_2 = nil
 				local rays = (weapon_tweak and weapon_tweak.rays) or 1
 				local starwars = nil
 				local martyr = weapon_tweak and weapon_tweak.dispose_mag_desc
@@ -4911,6 +4914,9 @@ function BlackMarketGui:update_info_text()
 						end
 						if stats.alt_desc then
 							stat_attachment_desc = stats.alt_desc
+						end
+						if stats.alt_desc_2 then
+							stat_attachment_desc_2 = stats.alt_desc_2
 						end
 						if stats.ene_hs_mult_add then
 							ene_hs_mult = ene_hs_mult + stats.ene_hs_mult_add
@@ -4943,7 +4949,8 @@ function BlackMarketGui:update_info_text()
 
 					if weapon_tweak.has_description then
 						local has_pc_desc = managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc")
-						local desc_id = stat_attachment_desc or tweak_data.weapon[slot_data.name].desc_id
+						roll_desc = (stat_attachment_desc_2 and math.rand(1) <= stat_attachment_desc_2[2] and stat_attachment_desc_2[1]) or nil
+						local desc_id = roll_desc or stat_attachment_desc or tweak_data.weapon[slot_data.name].desc_id
 						description = has_pc_desc and managers.localization:text(desc_id .. "_pc", desc_macros) or managers.localization:text(desc_id, desc_macros)
 						for color_id in string.gmatch(description, "#%{(.-)%}#") do
 							table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
@@ -5104,8 +5111,19 @@ function BlackMarketGui:update_info_text()
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.risk)
 			end
 
-			if maralohk and math.rand(1) <= 0.05 then 
-				local rand = math.random(1, 8)
+			if maralohk and (roll_desc or (math.rand(1) <= 0.05)) then 
+				local rand = (roll_desc and 10) or math.random(1, 8)
+				if roll_desc then
+					updated_texts[1].text = "##" .. updated_texts[1].text:gsub("##", "") .. "##"
+					updated_texts[2].text = "##" .. updated_texts[2].text:gsub("##", "") .. "##"
+					updated_texts[3].text = "##" .. updated_texts[3].text:gsub("##", "") .. "##"
+					updated_texts[4].text = "##" .. updated_texts[4].text:gsub("##", "") .. "##"
+					updated_texts[1].resource_color = tweak_data.screen_colors.important_1
+					updated_texts[2].resource_color = updated_texts[1].resource_color
+					updated_texts[3].resource_color = updated_texts[1].resource_color
+					updated_texts[4].resource_color = updated_texts[1].resource_color
+					updated_texts[5].resource_color = updated_texts[1].resource_color
+				end
 				local sound_buffer = XAudio and blt.xaudio.setup() and XAudio.Buffer:new( BeardLib.Utils:FindMod("RestorationMod").ModPath .. "assets/oggs/voiceover/mitw/" .. tostring(rand) .. ".ogg")
 				XAudio.Source:new(sound_buffer)
 			end

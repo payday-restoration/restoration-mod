@@ -24413,6 +24413,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			hey_kiddo = true,
 			rof_mult = 2.0408163,
 			alt_desc = "bm_wally_desc",
+			alt_desc_2 = {"bm_maralohk_desc", 0.01},
 		},
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",

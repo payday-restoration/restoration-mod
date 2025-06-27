@@ -2461,21 +2461,25 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_steps = 2,
 			effect = 0.03,
 			effect_max = 0.3,
+			melee_mult = 2,
 		},
 		{	--Corey
 			combo_steps = 5,
 			effect = 0.06,
 			effect_max = 0.6,
+			melee_mult = 1.25,
 		},
 		{	--Tony
 			combo_steps = 5,
 			effect = 0.02,
 			effect_max = 0.2,
+			melee_mult = 1.66667,
 		},
 		{	--Tony R
 			combo_steps = 5,
 			effect = 0.01,
 			effect_max = 0.1,
+			melee_mult = 1.33334,
 		},
 	}
 	self.values.player.buildup_meter_quickening = { --armor to base combo
@@ -2485,17 +2489,20 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{
 			combo_steps = 5,
 			effect = 0.015,
-			effect_max = 0.15
+			effect_max = 0.15,
+			melee_mult = 3
 		},
 		{	--Tony
 			combo_steps = 5,
 			effect = 0.01,
-			effect_max = 0.1
+			effect_max = 0.1,
+			melee_mult = 2.33334
 		},
 		{	--Tony R
 			combo_steps = 5,
 			effect = 0.005,
-			effect_max = 0.05
+			effect_max = 0.05,
+			melee_mult = 1.66667
 		},
 	}
 	--Additonal mask effects
@@ -3162,6 +3169,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_4 = tostring(self.values.player.buildup_meter_elude[1].effect * 100) .. "%",
 		perk_value_5 = tostring(self.values.player.buildup_meter_elude[1].effect_max * 100) .. "%",
 		perk_value_6 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100), -- Passive dodge increase
+		perk_value_7 = tostring((self.values.player.buildup_meter_elude[1].melee_mult - 1) * 100) .. "%", -- Melee mult
 	}
 	self.specialization_descs[9][9] = {
 		--perk_value_1 = "18", -- Required range to activate panic (Same range as "Underdog" skill)
@@ -3172,6 +3180,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring(self.values.player.buildup_meter_terrify[1].effect * 100) .. "%",
 		perk_value_4 = tostring(self.killshot_close_panic_range / 100), -- Panic spread range
 		perk_value_5 = tostring(self.values.player.buildup_meter_terrify[1].effect_max * 100) .. "%",
+		perk_value_6 = tostring((self.values.player.buildup_meter_terrify[1].melee_mult - 1) * 100) .. "%", -- Melee mult
 	}
 
 	self.multi_choice_specialization_descs[9] = { [9] = {} } --table setup for last card multichoice
@@ -3234,6 +3243,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring(self.values.player.buildup_meter_elude[2].combo_steps),
 		perk_value_3 = tostring(self.values.player.buildup_meter_elude[2].effect_max * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter_hurt_decay_mod[1]),
+		perk_value_5 = tostring((self.values.player.buildup_meter_elude[2].melee_mult - 1) * 100) .. "%", -- Melee mult
 	}
 
 	--Gambler

@@ -338,11 +338,11 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 		end
 		if self:has_category_upgrade("player", "buildup_meter_terrify") then
 			local panic_stats = self:upgrade_value("player", "buildup_meter_terrify", 0)
-			new_socio_panic = (math.min(panic_stats.effect_max, math.floor(self._buildup_meter / panic_stats.combo_steps) * panic_stats.effect )) * ((variant == "melee" and 3) or 1)
+			new_socio_panic = (math.min(panic_stats.effect_max, math.floor(self._buildup_meter / panic_stats.combo_steps) * panic_stats.effect )) * ((variant == "melee" and panic_stats.melee_mult) or 1)
 		end
 		if self:has_category_upgrade("player", "buildup_meter_elude") and not self:has_category_upgrade("player", "buildup_meter_mark") then
 			local dodge_stats = self:upgrade_value("player", "buildup_meter_elude", 0)
-			local dodge_on_kill = (damage_ext:get_dodge_points() * math.min(dodge_stats.effect_max, math.floor(self._buildup_meter / dodge_stats.combo_steps) * dodge_stats.effect)) * ((variant == "melee" and 2) or 1)
+			local dodge_on_kill = (damage_ext:get_dodge_points() * math.min(dodge_stats.effect_max, math.floor(self._buildup_meter / dodge_stats.combo_steps) * dodge_stats.effect)) * ((variant == "melee" and dodge_stats.melee_mult) or 1)
 			damage_ext:fill_dodge_meter(dodge_on_kill)
 		end
 	end

@@ -75,19 +75,26 @@ local opts_pro_job_ponr_counter = {
 	},
 }
 
-local opts_toggle_ponrs_bfd = {
+local opts_enable_ponr_bfd = {
 	enabled = pro_job,
-	toggle = "toggle",
+	toggle = "on",
 	elements = {
-		400001,
 		400002,
 	},
 }
-local opts_toggle_ponrs_van = {
+local opts_enable_ponr_van = {
 	enabled = pro_job,
-	toggle = "toggle",
+	toggle = "on",
+	elements = {
+		400003,
+	},
+}
+local opts_disable_ponrs = {
+	enabled = true,
+	toggle = "off",
 	elements = {
 		400001,
+		400002,
 		400003,
 	},
 }
@@ -95,10 +102,11 @@ local opts_toggle_ponrs_van = {
 return {
 	elements = {
 		restoration:gen_pointofnoreturn(400001, "pro_job_ponr_limo", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_limo),
-		restoration:gen_pointofnoreturn(400002, "pro_job_ponr_bfd", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_limo),
-		restoration:gen_pointofnoreturn(400003, "pro_job_ponr_van", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_limo),
-		restoration:gen_toggleelement(400004, "toggle_ponrs_bfd", opts_toggle_ponrs_bfd),
-		restoration:gen_toggleelement(400005, "toggle_ponrs_van", opts_toggle_ponrs_van),
+		restoration:gen_pointofnoreturn(400002, "pro_job_ponr_bfd", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_bfd),
+		restoration:gen_pointofnoreturn(400003, "pro_job_ponr_van", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_van),
+		restoration:gen_toggleelement(400004, "enable_ponr_bfd", opts_enable_ponr_bfd),
+		restoration:gen_toggleelement(400005, "enable_ponr_van", opts_enable_ponr_van),
 		restoration:gen_counter(400006, "pro_job_ponr_counter", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_counter),
+		restoration:gen_toggleelement(400007, "disable_ponrs", opts_disable_ponrs),
 	},
 }

@@ -20,12 +20,14 @@ return {
 	-- BFD/blimp escape
 	[101915] = {
 		on_executed = {
+			{ id = 400007, delay = 0, },
 			{ id = 400004, delay = 0, },
 		},
 	},
 	-- Van escape
 	[100708] = {
 		on_executed = {
+			{ id = 400007, delay = 0, },
 			{ id = 400005, delay = 0, },
 		},
 	},

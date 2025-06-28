@@ -462,7 +462,7 @@ function CharacterTweakData:_init_fbi(presets)
 	
 	--Veteran Cop
 	self.fbi_vet = deep_clone(self.fbi)
-	self.fbi_vet.tags = {"law", "custom", "special"}
+	self.fbi_vet.tags = {"law", "custom", "special", "vet"}
 	self.fbi_vet.priority_shout = "g29"
 	self.fbi_vet.bot_priority_shout = "g29"
 	self.fbi_vet.priority_shout_max_dis = 3000

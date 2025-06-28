@@ -1,5 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local ponr_value = (difficulty <= 5 and 660 or (difficulty == 6 or difficulty == 7) and 630) or 600
 local sosa_lieutenant = "units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss"
 local sosa_backup_1 =  "units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01"
 local sosa_backup_2 =  "units/pd2_dlc_friend/characters/ene_thug_indoor_02/ene_thug_indoor_02"
@@ -57,6 +58,29 @@ local opts_spawn_cartel_group_1 = {
 	},
 }
 
+local opts_pro_job_ponr = {
+	elements =  { 101297, },
+	trigger_times = 0,
+	time_balance_mul_include_team_ai = false,
+	time_balance_mul = ponr_timer_player_mul,
+	time_easy = ponr_value,
+	time_normal = ponr_value,
+	time_hard = ponr_value,
+	time_overkill = ponr_value,
+	time_overkill_145 = ponr_value,
+	time_easy_wish = ponr_value,
+	time_overkill_290 = ponr_value,
+	time_sm_wish = ponr_value,
+	enabled = pro_job,
+}
+local opts_pro_job_ponr_counter = {
+	enabled = true,
+	counter_target = 2,
+	on_executed = {
+		{ id = 400012, delay = 0, },
+	},
+}
+
 return {
     elements = {
         -- Sosa's lieutenants
@@ -72,5 +96,8 @@ return {
         restoration:gen_dummy(400009, "sosa_backup_2", Vector3(3783.125, 6485.587, -150), Rotation(171, 0, -0), optsSosa_Assault_Wave),
         restoration:gen_dummy(400010, "sosa_backup_3", Vector3(3814.412, 6683.125, -150), Rotation(171, 0, -0), optsSosa_Assault_Wave),
         restoration:gen_dummy(400011, "sosa_backup_4", Vector3(3715.412, 6698.769, -150), Rotation(171, 0, -0), optsSosa_Assault_Wave),
+        -- PONR
+        restoration:gen_counter(400012, "pro_job_ponr_counter", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_counter),
+        restoration:gen_pointofnoreturn(400013, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
     },
 }

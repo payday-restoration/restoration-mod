@@ -28,12 +28,12 @@ local opts_pro_job_ponr_counter = {
     enabled = true,
     counter_target = 2, 
     on_executed = {
-        {id = 100044, delay = 0, }
+        {id = 400001, delay = 0, }
     },
 }
 return {
     elements = {
-        restoration:gen_pointofnoreturn(100044, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
-        restoration:gen_counter(100057, "pro_job_ponr_counter",Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_counter),
+        restoration:gen_pointofnoreturn(400001, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
+        restoration:gen_counter(400002, "pro_job_ponr_counter",Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_counter),
     },
 }

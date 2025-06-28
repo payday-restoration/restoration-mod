@@ -9,12 +9,12 @@ return {
 	--Pro Job PONR, whisper state is off 
 	[101226] = {
 		on_executed = {
-			{id = 100057, delay = 0,},
+			{id = 400002, delay = 0,},
 		}
 	},
 	[100680] = {
 		on_executed = {
-			{id = 100057, delay = 0,},
+			{id = 400002, delay = 0,},
 		}
 	},
 	--Fixed snipers being able to spawn only once

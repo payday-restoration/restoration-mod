@@ -2823,7 +2823,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				{
 					inverted = true,
 					name = "reload",
-					append = "s"
+					append = managers.localization:text("menu_seconds_suffix_short")
 				},
 				{
 					round_value = true,
@@ -2842,7 +2842,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				},
 				{
 					round = true,
-					append = "m",
+					append = managers.localization:text("menu_meters_suffix_short"),
 					name = "standing_range" --falloff start
 				},
 				{
@@ -2850,7 +2850,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				},
 				{
 					round = true,
-					append = "m",
+					append = managers.localization:text("menu_meters_suffix_short"),
 					name = "moving_range" --falloff end
 				},
 				{
@@ -2872,13 +2872,13 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				{
 					inverted = true,
 					name = "swap_speed",
-					append = "s"
+					append = managers.localization:text("menu_seconds_suffix_short")
 				},
 				{
 					round_value = true,
 					inverted = true,
 					name = "ads_speed",
-					append = "ms"
+					append = managers.localization:text("menu_milliseconds_suffix_short")
 				}
 			}
 
@@ -3198,7 +3198,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				{
 					name = "range",
 					num_decimals = 2,
-					suffix = "m"
+					suffix = managers.localization:text("menu_meters_suffix_short")
 				},
 				{
 					index = true,

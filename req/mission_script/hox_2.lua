@@ -25,6 +25,11 @@ return {
 				force = 4,
 				position = Vector3(-200, 4200, -500),
 			},
+			{
+				name = "archive_counter",
+				force = 2,
+				position = Vector3 (1300, 4300,-500),
+			},
 		},
 	},
 }

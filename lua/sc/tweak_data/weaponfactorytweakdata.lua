@@ -41938,6 +41938,29 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
+		if self.parts.wpn_fps_pis_sg45_m_extended then
+			self.parts.wpn_fps_pis_sg45_m_extended.supported = true
+			self.parts.wpn_fps_pis_sg45_m_extended.stats = {
+				extra_ammo = 2,
+				reload = -3,
+				concealment = -1,
+				value = 1
+			}
+			self.wpn_fps_pis_x_sg45.override.wpn_fps_pis_sg45_m_extended = {
+				stats = {
+				extra_ammo = 4,
+				reload = -3,
+				concealment = -1,
+				value = 1
+				}
+			}
+
+			self.parts.wpn_fps_pis_sg45_sl_chrome.supported = true
+			self.parts.wpn_fps_pis_sg45_sl_chrome.stats = {
+				value = 1
+			}
+		end
+
 		if self.parts.wpn_fps_upg_m4_hera_lower then --Tangerine's AK/AR Mod Pack
 
 			--Hera parts

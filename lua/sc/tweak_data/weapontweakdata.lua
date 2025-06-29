@@ -7340,17 +7340,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rsh12.supported = true
 						self.rsh12.ads_speed = 0.220
 						self.rsh12.damage_falloff = {
-							start_dist = 1200,
+							start_dist = 2400,
 							end_dist = 4800,
-							min_mult = 0.26666
+							min_mult = 0.333333
 						}
 						self.rsh12.stats = {
 							damage = 90,
-							spread = 76,
-							recoil = 39,
+							spread = 78,
+							recoil = 43,
 							spread_moving = 9,
 							zoom = 1,
-							concealment = 23,
+							concealment = 24,
 							suppression = 7,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -22074,7 +22074,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk45c.recategorize = { "heavy_pis" }
 				self.hk45c.damage_type = "heavy_pistol"
 				self.hk45c.fire_mode_data.fire_rate = 0.1176470588
-				self.hk45c.CLIP_AMMO_MAX = 10
+				self.hk45c.CLIP_AMMO_MAX = 8
 				self.hk45c.AMMO_MAX = 40
 				self.hk45c.kick = self.stat_info.kick_tables.right_recoil
 				self.hk45c.kick_pattern = {
@@ -22083,7 +22083,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{6, self.stat_info.kick_tables.right_recoil}
 				}
 				self.hk45c.supported = true
-				self.hk45c.ads_speed = 0.180
+				self.hk45c.ads_speed = 0.160
 				self.hk45c.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3200,
@@ -22091,11 +22091,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.hk45c.stats = {
 					damage = 45,
-					spread = 53,
+					spread = 51,
 					recoil = 75,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 29,
+					concealment = 30,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -22121,17 +22121,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					last_recoil_mult = 1.05,
 				}
 				self.x_hk45c.AMMO_MAX = 80
-				self.x_hk45c.CLIP_AMMO_MAX = 20
+				self.x_hk45c.CLIP_AMMO_MAX = 16
 				self.x_hk45c.tactical_reload = 2
 				self.x_hk45c.lock_slide = true
 				self.x_hk45c.kick = self.stat_info.kick_tables.right_recoil
-				self.hk45c.kick_pattern = {
+				self.x_hk45c.kick_pattern = {
 					{0, self.stat_info.kick_tables.vertical_kick},
 					{3, self.stat_info.kick_tables.right_kick},
 					{6, self.stat_info.kick_tables.right_recoil}
 				}
 				self.x_hk45c.supported = true
-				self.x_hk45c.ads_speed = 0.180
+				self.x_hk45c.ads_speed = 0.160
 				self.x_hk45c.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3200,
@@ -22139,11 +22139,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_hk45c.stats = {
 					damage = 45,
-					spread = 53,
-					recoil = 75,
+					spread = 41,
+					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 29,
+					concealment = 30,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -28967,6 +28967,90 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.baller.timers.reload_exit_not_empty = 0.65
 			end
 
+			if self.sg45 then
+				self.sg45.recategorize = { "heavy_pis" }
+				self.sg45.damage_type = "heavy_pistol"
+				self.sg45.fire_mode_data.fire_rate = 0.1176470588
+				self.sg45.CLIP_AMMO_MAX = 10
+				self.sg45.AMMO_MAX = 40
+				self.sg45.kick = self.stat_info.kick_tables.right_recoil
+				self.sg45.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{3, self.stat_info.kick_tables.right_kick},
+					{6, self.stat_info.kick_tables.right_recoil}
+				}
+				self.sg45.supported = true
+				self.sg45.ads_speed = 0.180
+				self.sg45.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 3200,
+					min_mult = 0.2
+				}
+				self.sg45.stats = {
+					damage = 45,
+					spread = 53,
+					recoil = 75,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 29,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.sg45.stats_modifiers = nil
+				self.sg45.reload_speed_multiplier = 1.05
+				self.sg45.panic_suppression_chance = 0.05
+				self.sg45.timers = deep_clone(self.lemming.timers)
+
+					self.x_sg45.recategorize = { "heavy_pis" }
+					self.x_sg45.damage_type = "heavy_pistol"
+					self.x_sg45.fire_mode_data.fire_rate =  0.1176470588
+					self.x_sg45.BURST_FIRE = {
+						count = 2,
+						delay = 0.15,
+						rof_mult = 4,
+						recoil_mult = 0.25,
+						last_recoil_mult = 1.05,
+					}
+					self.x_sg45.AMMO_MAX = 80
+					self.x_sg45.CLIP_AMMO_MAX = 20
+					self.x_sg45.tactical_reload = 2
+					self.x_sg45.lock_slide = true
+					self.x_sg45.kick = self.stat_info.kick_tables.right_recoil
+					self.x_sg45.kick_pattern = {
+						{0, self.stat_info.kick_tables.vertical_kick},
+						{3, self.stat_info.kick_tables.right_kick},
+						{6, self.stat_info.kick_tables.right_recoil}
+					}
+					self.x_sg45.supported = true
+					self.x_sg45.ads_speed = 0.180
+					self.x_sg45.damage_falloff = {
+						start_dist = 1000,
+						end_dist = 3200,
+						min_mult = 0.2
+					}
+					self.x_sg45.stats = {
+						damage = 45,
+						spread = 43,
+						recoil = 65,
+						spread_moving = 5,
+						zoom = 1,
+						concealment = 29,
+						suppression = 9,
+						alert_size = 2,
+						extra_ammo = 101,
+						total_ammo_mod = 400,
+						value = 1,
+						reload = 20
+					}
+					self.x_sg45.stats_modifiers = nil
+					self.x_sg45.panic_suppression_chance = 0.05
+					self.x_sg45.timers = deep_clone(self.x_b92fs.timers)
+			end
+
 		--[[     HYLIE'S MODS     ]]--
 
 			if self.m1918 then --RAID WW2 BAR
@@ -31590,33 +31674,32 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.fyjs.categories = {
 				"snp"
 			}
-			self.fyjs.recategorize = { "heavy_snp" }
+			self.fyjs.recategorize = { "light_snp" }
 			self.fyjs.damage_type = "sniper"
 			self.fyjs.always_play_anims = true
 			self.fyjs.has_description = true
 			self.fyjs.desc_id = "bm_ap_weapon_sc_desc"
 			self.fyjs.upgrade_blocks = nil
 			self.fyjs.CLIP_AMMO_MAX = 10
-			self.fyjs.AMMO_MAX = 30
+			self.fyjs.AMMO_MAX = 48
 			self.fyjs.tactical_reload = 1
 			self.fyjs.fire_mode_data.fire_rate = 1.09090909
-			self.fyjs.fire_rate_multiplier = 0.95
 			self.fyjs.kick = self.stat_info.kick_tables.vertical_kick
 			self.fyjs.muzzleflash = "effects/payday2/particles/weapons/awp_muzzle"
 			self.fyjs.supported = true
 			self.fyjs.ads_speed = 0.360
 			self.fyjs.damage_falloff = {
-				start_dist = 3500,
-				end_dist = 8000,
-				min_mult = 0.5
+				start_dist = 2800,
+				end_dist = 7000,
+				min_mult = 0.33333333
 			}
 			self.fyjs.stats = {
-				damage = 120,
-				spread = 92,
-				recoil = 47,
+				damage = 45,
+				spread = 93,
+				recoil = 61,
 				spread_moving = 9,
 				zoom = 1,
-				concealment = 22,
+				concealment = 24,
 				suppression = 5,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -31627,7 +31710,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.fyjs.stats_modifiers = nil
 			self.fyjs.panic_suppression_chance = 0.05
 			self.fyjs.armor_piercing_chance = 1
-			self.fyjs.reload_speed_multiplier = 0.9
+			self.fyjs.reload_speed_multiplier = 1.1
+			self.fyjs.hs_mult = 2
 			self.fyjs.timers = deep_clone(self.msr.timers)
 		end
 

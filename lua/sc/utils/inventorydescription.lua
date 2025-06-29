@@ -231,6 +231,7 @@ end
 
 function WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonus_stats)
 	local mods_stats = {}
+	local has_starwars = false
 	local modifier_stats = tweak_data.weapon[name].stats_modifiers
 	for _, stat in pairs(WeaponDescription._stats_shown) do
 		mods_stats[stat.name] = {}
@@ -286,6 +287,11 @@ function WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonu
 							end
 						else
 							mods_stats[stat.name].index = mods_stats[stat.name].index + (part_data.stats[stat.name] or 0)
+						end
+					end
+					if part_data.custom_stats then
+						if part_data.custom_stats.starwars then
+							has_starwars = true
 						end
 					end
 				end
@@ -350,7 +356,7 @@ function WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonu
 			end
 		end
 	end
-	return mods_stats
+	return mods_stats, has_starwars
 end
 
 function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_stats, mods_stats, equipped_mods)
@@ -981,13 +987,17 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	end
 
 	local base_stats = WeaponDescription._get_base_stats(name)
-	local mods_stats = WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonus_stats)
+	local mods_stats, has_starwars = WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonus_stats)
 	local skill_stats = WeaponDescription._get_skill_stats(name, category, slot, base_stats, mods_stats, silencer, single_mod, auto_mod, blueprint)
 	local clip_ammo, max_ammo, ammo_data = WeaponDescription.get_weapon_ammo_info(name, tweak_data.weapon[name].stats.extra_ammo, base_stats.totalammo.index + mods_stats.totalammo.index)
 	base_stats.totalammo.value = ammo_data.base
 	mods_stats.totalammo.value = ammo_data.mod
 	skill_stats.totalammo.value = ammo_data.skill
 	skill_stats.totalammo.skill_in_effect = ammo_data.skill_in_effect
+	if has_starwars then
+		skill_stats.magazine.skill_in_effect = nil
+		skill_stats.magazine.value = 0
+	end
 	local my_clip = base_stats.magazine.value + mods_stats.magazine.value + skill_stats.magazine.value
 
 	if max_ammo < my_clip then

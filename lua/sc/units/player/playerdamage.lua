@@ -29,6 +29,10 @@ function PlayerDamage:init(unit)
 	self._focus_delay_mul = 1
 	self._dmg_interval = tweak_data.player.damage.MIN_DAMAGE_INTERVAL
 	
+	if player_manager:has_category_upgrade("player", "damage_grace_mult") then
+		self._dmg_interval = self._dmg_interval * managers.player:upgrade_value("player", "damage_grace_mult", 1)
+	end
+
 	if managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR then
 		self._dmg_interval = self._dmg_interval * tweak_data.player.controller_damage_grace_multiplier or 2
 	end
@@ -1322,6 +1326,7 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 		if not self._ally_attack and socio_hurt_t and t > (self._buildup_meter_hurt_t or 0) and pm._buildup_meter then
 			local hurt_decay_mod = (pm:has_category_upgrade("player", "buildup_meter_hurt_decay_mod") and pm:upgrade_value("player", "buildup_meter_hurt_decay_mod", 0)) or 0
 			local hurt_decay = pm:upgrade_value("player", "buildup_meter", 0).hurt_decay + hurt_decay_mod
+			local hurt_t_mod = (pm:has_category_upgrade("player", "buildup_meter_quickening") and (math.floor(self:_raw_max_armor()/pm:upgrade_value("player", "buildup_meter_quickening",0).armor_steps) * pm:upgrade_value("player", "buildup_meter_quickening", 0).hurt_t_mod)) or 0
 			local hurt_t = pm:upgrade_value("player", "buildup_meter", 0).hurt_t
 			local combo_t_mod = (pm:has_category_upgrade("player", "buildup_meter_zack") and pm:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
 			local combo_t = pm:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
@@ -1399,7 +1404,9 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 		self:_chk_cheat_death(ignore_reduce_revive)
 	end
 	
-	self:_damage_screen()
+	if attack_data.variant ~= "delayed_tick" then
+		self:_damage_screen()
+	end
 	self:_check_bleed_out(trigger_skills, nil, ignore_reduce_revive)
 	managers.hud:set_player_health({
 		current = self:get_real_health(),

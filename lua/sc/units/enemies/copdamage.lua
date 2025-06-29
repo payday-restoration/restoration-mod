@@ -154,6 +154,8 @@ local armour = {
 local impenetrable_armour = {
 	[Idstring("acc_helmet"):key()] = true,
 	[Idstring("acc_hat"):key()] = true,
+	[Idstring("bag"):key()] = true,
+	[Idstring("bag_gren"):key()] = true,
 }
 
 local limbs = {
@@ -167,10 +169,10 @@ local limbs = {
 
 local damage_type_mult = {
 	machine_gun = 0.6,
-	heavy_pistol = 0.6,
 	pistol = 0.7,
-	assault_rifle = 0.7,
+	heavy_pistol = 0.6,
 	handcannon = 0.8,
+	assault_rifle = 0.6,
 	sniper = 0.8
 }
 

@@ -2,18 +2,17 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local amount_guards = (difficulty == 8 and 12) or 8
 local enforcer_guard = (pro_job and "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer")
-local ponr_value = (difficulty <= 5 and 660 or (difficulty == 6 or difficulty == 7) and 630) or 600
 local hunt_projob = pro_job
 
 local mobster_team = {
 	values = {
 		team = "mobster1"
-	}
+	},
 }	
 local disabled = {
 	values = {
         enabled = false
-	}
+	},
 }
 local garden_spawn = {
 	values = {
@@ -26,12 +25,21 @@ local roof_spawn = {
 	},
 }
 return {
-	--Pro Job PONR + Players now can steal paintings when boat escape triggered (if we do it on stealth tho)
+	-- Pro Job PONR + Players now can steal paintings when boat escape triggered, whisper state off  (if we do it on stealth tho)
 	[100216] = {
-		ponr = ponr_value,
 		on_executed = {
-			{ id = 101070, delay = 0 }
-		}
+			{id =  400012, delay = 0, },
+		},
+		-- Stealing paintings VVV
+		on_executed = {
+			{ id = 101070, delay = 0 },
+		},
+	},
+	-- Whisper state off
+	[100680] = {
+		on_executed = {
+			{id =  400012, delay = 0, },
+		},
 	},
 	--Pro Job Endless Assault
 	[101726] = {

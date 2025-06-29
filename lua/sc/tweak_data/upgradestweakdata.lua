@@ -2357,6 +2357,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				{tank = 5},
 				{spooc_titan = 3},
 				{spooc = 2.75},
+				{vet = 2.75},
 				{taser_titan = 2.25},
 				{taser = 2.75},
 				{medic = 2.25},
@@ -2369,7 +2370,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_t = 5, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
-			hurt_t = 1.5, --Hurt decay cooldown
+			hurt_t = 1, --Hurt decay cooldown
 			incap_decay = 40 --Points lost when entering bleedout (heath is 0)
 		},
 		{
@@ -2380,6 +2381,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				{tank = 5},
 				{spooc_titan = 3},
 				{spooc = 2.75},
+				{vet = 2.75},
 				{taser_titan = 2.25},
 				{taser = 2.75},
 				{medic = 2.25},
@@ -2392,17 +2394,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_t = 5,
 			combo_decay = 5,
 			hurt_decay = 5,
-			hurt_t = 1.5,
+			hurt_t = 1,
 			incap_decay = 40
 		},
 		{ --Copycat
 			combo_max = 50, --Max combo
-			combo_add = 3, --points per kill
+			combo_add = 2, --points per kill
 			combo_ene_mult = { --Point multiplier based on enemy killed
 				{captain = 10},
 				{tank = 5},
 				{spooc_titan = 3},
 				{spooc = 2.75},
+				{vet = 2.75},
 				{taser_titan = 2.25},
 				{taser = 2.75},
 				{medic = 2.25},
@@ -2415,7 +2418,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_t = 5, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
-			hurt_t = 1.5, --Hurt decay cooldown
+			hurt_t = 1, --Hurt decay cooldown
 			incap_decay = 40 --Points lost when entering bleedout (heath is 0)
 		},
 	}
@@ -2447,13 +2450,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.buildup_meter_hysteria = { --healing
 		{
 			combo_steps = 5,
-			effect = 0.05,
-			effect_max = 0.5,
+			effect = 0.03,
+			effect_max = 0.3,
 		},
 		{
 			combo_steps = 5,
-			effect = 0.025,
-			effect_max = 0.25,
+			effect = 0.015,
+			effect_max = 0.15,
 		}
 	}
 	self.values.player.buildup_meter_elude = { --dodge on kill
@@ -2461,41 +2464,52 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_steps = 2,
 			effect = 0.03,
 			effect_max = 0.3,
+			melee_mult = 2,
 		},
 		{	--Corey
 			combo_steps = 5,
 			effect = 0.06,
 			effect_max = 0.6,
+			melee_mult = 1.25,
 		},
 		{	--Tony
 			combo_steps = 5,
 			effect = 0.02,
 			effect_max = 0.2,
+			melee_mult = 1.66667,
 		},
 		{	--Tony R
 			combo_steps = 5,
 			effect = 0.01,
 			effect_max = 0.1,
+			melee_mult = 1.33334,
 		},
 	}
 	self.values.player.buildup_meter_quickening = { --armor to base combo
-		{combo_add_mod = 1, armor_steps = 10}
+		{
+			combo_add_mod = 1, --base combo added per step
+			hurt_t_mod = 0.5, --hurt decay cooldown added per step
+			armor_steps = 10 --armor steps
+		}
 	}
 	self.values.player.buildup_meter_terrify = { --panic
 		{
 			combo_steps = 5,
-			effect = 0.015,
-			effect_max = 0.15
+			effect = 0.01,
+			effect_max = 0.1,
+			melee_mult = 3
 		},
 		{	--Tony
 			combo_steps = 5,
-			effect = 0.01,
-			effect_max = 0.1
+			effect = 0.006,
+			effect_max = 0.06,
+			melee_mult = 2.33334
 		},
 		{	--Tony R
 			combo_steps = 5,
-			effect = 0.005,
-			effect_max = 0.05
+			effect = 0.003,
+			effect_max = 0.03,
+			melee_mult = 1.66667
 		},
 	}
 	--Additonal mask effects
@@ -2655,17 +2669,22 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--alcoholism is no joke
 	--stoic
+	self.values.player.damage_grace_mult = {0.5}
 	self.values.player.armor_to_health_conversion = {
 		50
 	}
+	local damage_control_passive_ticks = { 
+		8, --Max duration of DoT; damage per tick scales with duration and is calculated as "100/Duration"
+		5 --Copycat
+	}
 	self.values.player.damage_control_passive = {
 		{
-			30, --% of damage converted into DoT 
-			12.5 --% of converted DoT damage applied per second
+			40, --% of damage converted into DoT 
+			100 / damage_control_passive_ticks[1]
 		},
 		{--Copycat
 			20,
-			20
+			100 / damage_control_passive_ticks[2]
 		}
 	}
 	self.values.player.damage_control_auto_shrug = {
@@ -2676,8 +2695,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.damage_control_cooldown_drain = {
-		{ 0, 4},
-		{50, 6}
+		{ 0, 5},
+		{50, 7.5}
 	}
 	
 	--Yakuza--
@@ -3157,6 +3176,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_4 = tostring(self.values.player.buildup_meter_elude[1].effect * 100) .. "%",
 		perk_value_5 = tostring(self.values.player.buildup_meter_elude[1].effect_max * 100) .. "%",
 		perk_value_6 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100), -- Passive dodge increase
+		perk_value_7 = tostring((self.values.player.buildup_meter_elude[1].melee_mult - 1) * 100) .. "%", -- Melee mult
+		perk_value_8 = tostring(self.values.player.buildup_meter_quickening[1].hurt_t_mod), -- Armor to hurst decay mod
 	}
 	self.specialization_descs[9][9] = {
 		--perk_value_1 = "18", -- Required range to activate panic (Same range as "Underdog" skill)
@@ -3167,6 +3188,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring(self.values.player.buildup_meter_terrify[1].effect * 100) .. "%",
 		perk_value_4 = tostring(self.killshot_close_panic_range / 100), -- Panic spread range
 		perk_value_5 = tostring(self.values.player.buildup_meter_terrify[1].effect_max * 100) .. "%",
+		perk_value_6 = tostring((self.values.player.buildup_meter_terrify[1].melee_mult - 1) * 100) .. "%", -- Melee mult
 	}
 
 	self.multi_choice_specialization_descs[9] = { [9] = {} } --table setup for last card multichoice
@@ -3229,6 +3251,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring(self.values.player.buildup_meter_elude[2].combo_steps),
 		perk_value_3 = tostring(self.values.player.buildup_meter_elude[2].effect_max * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter_hurt_decay_mod[1]),
+		perk_value_5 = tostring((self.values.player.buildup_meter_elude[2].melee_mult - 1) * 100) .. "%", -- Melee mult
 	}
 
 	--Gambler
@@ -3440,9 +3463,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_1 = tostring(self.values.player.damage_control_passive[1][1]).."%", -- % of damage converted into DoT 
 		perk_value_2 = tostring(100 / self.values.player.damage_control_passive[1][2]), -- Standard DoT duration
 		perk_value_3 = tostring(self.values.player.damage_control_healing[1]).."%", -- HP regen defined by remaining DoT damage
-		perk_value_4 = "30", -- CD of alchohol flask. Not defined here
+		perk_value_4 = tostring(restoration.damage_control_cd), -- CD of alchohol flask. Defined in Core.lua (found in root)
 		perk_value_5 = tostring(self.values.player.armor_to_health_conversion[1]).."%", -- Armor convert rate
-		perk_value_6 = tostring(100 - self.values.player.armor_to_health_conversion[1]).."%" -- HP convert rate
+		perk_value_6 = tostring(100 - self.values.player.armor_to_health_conversion[1]).."%", -- HP convert rate
+		perk_value_7 = tostring((1 - self.values.player.damage_grace_mult[1]) * 100).."%" -- grace period multiplier
 	}
 	self.specialization_descs[19][3] = {
 		perk_value_1 = tostring(self.values.player.damage_control_cooldown_drain[1][2]) -- CD reduction on kill
@@ -3708,7 +3732,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_4 = "30", -- CD of alchohol flask. Not defined here
 		perk_value_5 = tostring(self.values.player.armor_to_health_conversion[1]).."%", -- Armor convert rate
 		perk_value_6 = tostring(100 - self.values.player.armor_to_health_conversion[1]).."%", -- HP convert rate
-		perk_value_7 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
+		perk_value_7 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%", -- Faster pager interaction
+		perk_value_8 = tostring((1 - self.values.player.damage_grace_mult[1]) * 100).."%" -- grace period multiplier
 	}
 	self.multi_choice_specialization_descs[23][9][20] = { --Tag Team
 		perk_value_1 = tostring(self.values.player.tag_team_base[1].distance), -- Distance required to activate vape
@@ -4023,6 +4048,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_19",
 			desc_id = "menu_deck19_mrwi_desc",
 			upgrades = {
+				"damage_grace_mult",
 				"damage_control",
 				"player_damage_control_passive_1",
 				"player_damage_control_passive_2",
@@ -5137,6 +5163,14 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 2,
 			upgrade = "damage_control_passive",
+			category = "player"
+		}
+	}
+	self.definitions.player_damage_grace_mult = { --Copycat
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "damage_grace_mult",
 			category = "player"
 		}
 	}

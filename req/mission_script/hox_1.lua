@@ -24,6 +24,16 @@ local swat_harasser = {
 	}
 }
 return {
+    -- Add new reinforce
+	[102850] = { -- in garage
+		reinforce = {
+			{
+				name = "car",
+				force = 3,
+				position = Vector3(10600, 5500, -2400),
+			},
+		},
+	},
     --Diff scaling SWAT harrasers next to cop cars that replace beat cops on higher diffs
     [102029] = swat_harasser,
     [102031] = swat_harasser,
@@ -32,5 +42,5 @@ return {
     [102037] = swat_harasser,
     [102039] = swat_harasser,
     [102041] = swat_harasser,
-    [102043] = swat_harasser
+    [102043] = swat_harasser,
 }

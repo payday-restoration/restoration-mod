@@ -135,7 +135,7 @@ tweak_data.shotgun = {
 		}
 
 tweak_data.smg = {
-	swap_bonus = 1.6,
+	swap_bonus = 1.65,
 	ads_move_speed_mult = 0.7,
 	moving_spread_mult = 0.6,
 	hipfire_spread_mult = 0.9
@@ -200,14 +200,16 @@ tweak_data.smg = {
 	}
 
 tweak_data.snp = {
-	swap_bonus = 1,
+	swap_bonus = 0.95,
 	hipfire_spread_mult = 2.5,
 	hipfire_moving_spread_mult = 1.5,
-	ads_move_speed_mult = 0.45,
+	ads_move_speed_mult = 0.4,
 	ads_stationary_spread_mult = 0.1,
-	shake_mul = 1.1
+	shake_mul = 1.1,
+	min_spread_mult = 1.5
 }
 	tweak_data.semi_snp = {
+		min_spread_mult = 3 / tweak_data.snp.min_spread_mult,
 		hipfire_spread_mult = 3.5,
 		hipfire_moving_spread_mult = 1.5,
 		ads_moving_recoil = 1.1,
@@ -216,45 +218,45 @@ tweak_data.snp = {
 		shake_mul = 1.1
 	}
 		tweak_data.s7 = {
-			min_spread_mult = 0.025,
+			min_spread_mult = 0.025 / (tweak_data.semi_snp.min_spread_mult * tweak_data.snp.min_spread_mult),
 			hipfire_spread_mult = 0.025 / (tweak_data.semi_snp.hipfire_spread_mult * tweak_data.snp.hipfire_spread_mult),
 			hipfire_moving_spread_mult = 0.025 / (tweak_data.semi_snp.hipfire_moving_spread_mult * tweak_data.snp.hipfire_moving_spread_mult),
 			ads_moving_spread_mult = 0.025 / tweak_data.semi_snp.ads_moving_spread_mult
 		}
 	tweak_data.amr = {
 		hipfire_spread_mult = 2,
-		ads_move_speed_mult = 0.5,
 		shake_mul = 1.1
 	}
 
 tweak_data.assault_rifle = {
-	swap_bonus = 1,
+	swap_bonus = 0.95,
 	ads_moving_recoil = 1.1,
 	ads_stationary_spread_mult = 0.75,
 	ads_moving_spread_mult = 1.22,
-	ads_move_speed_mult = 0.45,
-	hipfire_spread_mult = 1.2,
-	hipfire_moving_spread_mult = 1.2,
-	shake_mul = 1.1
+	ads_move_speed_mult = 0.4,
+	hipfire_spread_mult = 1.5,
+	hipfire_moving_spread_mult = 1.5,
+	shake_mul = 1.1,
+	min_spread_mult = 3
 }
 	tweak_data.crb = {
-		swap_bonus = 1.12 / tweak_data.assault_rifle.swap_bonus,
-		hipfire_spread_mult = 1.1 / tweak_data.assault_rifle.hipfire_spread_mult,
-		hipfire_moving_spread_mult = 1.1 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
+		swap_bonus = 1.05 / tweak_data.assault_rifle.swap_bonus,
+		hipfire_spread_mult = 1.2 / tweak_data.assault_rifle.hipfire_spread_mult,
+		hipfire_moving_spread_mult = 1.2 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
 		ads_moving_recoil = 1.05 / tweak_data.assault_rifle.ads_moving_recoil,
 		ads_moving_spread_mult = 1.11 / tweak_data.assault_rifle.ads_moving_spread_mult,
-		ads_move_speed_mult = 0.5 / tweak_data.assault_rifle.ads_move_speed_mult,
+		ads_move_speed_mult = 0.45 / tweak_data.assault_rifle.ads_move_speed_mult,
 	}
 	tweak_data.dmr_l = {
 		hipfire_spread_mult = 1.8 / tweak_data.assault_rifle.hipfire_spread_mult,
-		hipfire_moving_spread_mult = 1.5 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
+		hipfire_moving_spread_mult = 1.8 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
 		ads_stationary_spread_mult = 0.5,
 		ads_moving_spread_mult = 1.33 / tweak_data.assault_rifle.ads_moving_spread_mult,
 		shake_mul = 1.1
 	}
 	tweak_data.dmr_h = {
 		hipfire_spread_mult = 2 / tweak_data.assault_rifle.hipfire_spread_mult,
-		hipfire_moving_spread_mult = 1.8 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
+		hipfire_moving_spread_mult = 2 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
 		ads_stationary_spread_mult = 0.25,
 		ads_moving_spread_mult = 1.33 / tweak_data.assault_rifle.ads_moving_spread_mult,
 		shake_mul = 1.1
@@ -623,6 +625,9 @@ if tweak_data.projectiles.xmas_snowball then
 	tweak_data.projectiles.xmas_snowball.curve_pow = 0.5
 	tweak_data.projectiles.xmas_snowball.range = 100
 	tweak_data.projectiles.xmas_snowball.adjust_z = 0
+	tweak_data.projectiles.xmas_snowball.direct_damage_percent = 0
+	tweak_data.projectiles.xmas_snowball.object_damage_mult = 2
+	tweak_data.projectiles.xmas_snowball.explosion_object_damage_mult = 3
 end
 
 --ZAPper grenade
@@ -1385,7 +1390,7 @@ if BeardLib then
 				"player_non_special_melee_multiplier_1", --This bonus doesn't actually do anything, but it is what's displayed in menus.
 				"player_melee_damage_multiplier_1"
 			},
-			cost = 0,
+			cost = 300,
 			icon_xy = {1, 0},
 			name_id = "menu_deckall_2",
 			desc_id = "menu_deckall_2_desc_sc"
@@ -1395,11 +1400,12 @@ if BeardLib then
 				"passive_player_xp_multiplier_1",
 				"player_passive_suspicion_bonus",
 				"player_passive_armor_movement_penalty_multiplier",
+				"weapon_passive_reload_speed_multiplier",
 				"weapon_passive_damage_multiplier_2",
 				"player_non_special_melee_multiplier_2",
 				"player_melee_damage_multiplier_2"			
 			},
-			cost = 0,
+			cost = 600,
 			icon_xy = {3, 0},
 			name_id = "menu_deckall_4",
 			desc_id = "menu_deckall_4_desc_sc"
@@ -1407,11 +1413,12 @@ if BeardLib then
 		local deck6 = {
 			upgrades = {
 				"armor_kit",
+				"weapon_passive_pick_up_multiplier",
 				"weapon_passive_damage_multiplier_3",
 				"player_non_special_melee_multiplier_3",
 				"player_melee_damage_multiplier_3"			
 			},
-			cost = 0,
+			cost = 1600,
 			icon_xy = {5, 0},
 			name_id = "menu_deckall_6",
 			desc_id = "menu_deckall_6_desc_sc"
@@ -1423,7 +1430,7 @@ if BeardLib then
 				"player_non_special_melee_multiplier_4",
 				"player_melee_damage_multiplier_4"
 			},
-			cost = 0,
+			cost = 3200,
 			icon_xy = {7, 0},
 			name_id = "menu_deckall_8",
 			desc_id = "menu_deckall_8_desc_sc"

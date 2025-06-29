@@ -10749,7 +10749,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{4, self.stat_info.kick_tables.moderate_right_kick},
 							{7, self.stat_info.kick_tables.right_recoil},
 							{12, self.stat_info.kick_tables.moderate_kick},
-							{19, self.stat_info.kick_tables.right_recoil}
+							{19, self.stat_info.kick_tables.left_recoil}
 						}
 						self.amcar.supported = true
 						self.amcar.ads_speed = 0.280
@@ -10761,7 +10761,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.amcar.stats = {
 							damage = 20,
 							spread = 76,
-							recoil = 81,
+							recoil = 79,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -10802,7 +10802,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{4, self.stat_info.kick_tables.right_kick},
 							{9, self.stat_info.kick_tables.vertical_kick},
 							{13, self.stat_info.kick_tables.moderate_right_kick},
-							{19, self.stat_info.kick_tables.vertical_kick}
+							{19, self.stat_info.kick_tables.moderate_kick}
 						}
 						self.s552.AMMO_MAX = 180
 						self.s552.supported = true
@@ -10815,7 +10815,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.s552.stats = {
 							damage = 20,
 							spread = 83,
-							recoil = 77,
+							recoil = 73,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -10859,8 +10859,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g36.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
 							{6, self.stat_info.kick_tables.moderate_left_kick},
-							{10, self.stat_info.kick_tables.moderate_right_kick},
-							{13, self.stat_info.kick_tables.moderate_kick},
+							{11, self.stat_info.kick_tables.moderate_right_kick},
+							{15, self.stat_info.kick_tables.moderate_kick},
 							{21, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.g36.supported = true
@@ -10873,7 +10873,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g36.stats = {
 							damage = 20,
 							spread = 79,
-							recoil = 85,
+							recoil = 81,
 							spread_moving = 8,
 							zoom = 1,
 							concealment = 27,
@@ -10905,7 +10905,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{0, self.stat_info.kick_tables.moderate_kick},
 							{3, self.stat_info.kick_tables.left_recoil},
 							{9, self.stat_info.kick_tables.moderate_kick},
-							{14, self.stat_info.kick_tables.moderate_left_kick},
+							{13, self.stat_info.kick_tables.moderate_left_kick},
 							{18, self.stat_info.kick_tables.moderate_right_kick},
 							{22, self.stat_info.kick_tables.moderate_kick}
 						}
@@ -10919,7 +10919,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.vhs.stats = {
 							damage = 20,
 							spread = 89,
-							recoil = 81,
+							recoil = 79,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 28,
@@ -10945,10 +10945,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_m4.fire_mode_data.fire_rate = 0.08
 						self.new_m4.kick = self.stat_info.kick_tables.moderate_left_kick
 						self.new_m4.kick_pattern = {
-							{0, self.stat_info.kick_tables.right_kick},
+							{0, self.stat_info.kick_tables.moderate_right_kick},
 							{5, self.stat_info.kick_tables.moderate_kick},
-							{9, self.stat_info.kick_tables.moderate_left_kick},
-							{15, self.stat_info.kick_tables.left_recoil}
+							{7, self.stat_info.kick_tables.moderate_right_kick},
+							{10, self.stat_info.kick_tables.moderate_kick},
+							{12, self.stat_info.kick_tables.moderate_left_kick},
+							{18, self.stat_info.kick_tables.left_recoil}
 						}
 						self.new_m4.supported = true
 						self.new_m4.ads_speed = 0.300
@@ -10960,7 +10962,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_m4.stats = {
 							damage = 24,
 							spread = 81,
-							recoil = 81,
+							recoil = 79,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -11015,7 +11017,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ak5.stats = {
 							damage = 24,
 							spread = 81,
-							recoil = 79,
+							recoil = 77,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -11042,7 +11044,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.corgi.CAN_TOGGLE_FIREMODE = true
 						self.corgi.kick = self.stat_info.kick_tables.right_recoil
 						self.corgi.kick_pattern = {
-							{0, self.stat_info.kick_tables.right_kick},
+							{0, self.stat_info.kick_tables.right_recoil},
 							{3, self.stat_info.kick_tables.moderate_right_kick},
 							{6, self.stat_info.kick_tables.right_recoil},
 							{11, self.stat_info.kick_tables.even_recoil},
@@ -11059,7 +11061,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.corgi.stats = {
 							damage = 24,
 							spread = 84,
-							recoil = 73,
+							recoil = 71,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -11087,7 +11089,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.aug.kick = self.stat_info.kick_tables.moderate_kick
 						self.aug.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
-							{3, self.stat_info.kick_tables.pattern_r2},
+							{3, self.stat_info.kick_tables.right_recoil},
 							{5, self.stat_info.kick_tables.moderate_left_kick},
 							{10, self.stat_info.kick_tables.moderate_kick},
 							{14, self.stat_info.kick_tables.moderate_right_kick},
@@ -11103,7 +11105,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.aug.stats = {
 							damage = 24,
 							spread = 88,
-							recoil = 79,
+							recoil = 77,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -11138,11 +11140,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.flint.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.flint.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_right_kick},
-							{5, self.stat_info.kick_tables.pattern_l2},
+							{5, self.stat_info.kick_tables.left_recoil},
 							{6, self.stat_info.kick_tables.moderate_left_kick},
-							{8, self.stat_info.kick_tables.moderate_right_kick},
-							{10, self.stat_info.kick_tables.moderate_kick},
-							{17, self.stat_info.kick_tables.moderate_right_kick}
+							{9, self.stat_info.kick_tables.moderate_right_kick},
+							{12, self.stat_info.kick_tables.moderate_kick},
+							{19, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.flint.supported = true
 						self.flint.ads_speed = 0.300
@@ -11154,7 +11156,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.flint.stats = {
 							damage = 24,
 							spread = 81,
-							recoil = 77,
+							recoil = 75,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 25,
@@ -11180,8 +11182,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ak74.kick = self.stat_info.kick_tables.right_recoil
 						self.ak74.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
-							{4, self.stat_info.kick_tables.pattern_r1},
-							{6, self.stat_info.kick_tables.moderate_right_kick},
+							{3, self.stat_info.kick_tables.moderate_left_kick},
+							{7, self.stat_info.kick_tables.moderate_right_kick},
 							{12, self.stat_info.kick_tables.moderate_kick},
 							{16, self.stat_info.kick_tables.right_recoil}
 						}
@@ -11231,7 +11233,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{0, self.stat_info.kick_tables.right_kick},
 							{5, self.stat_info.kick_tables.even_recoil},
 							{10, self.stat_info.kick_tables.left_kick},
-							{18, self.stat_info.kick_tables.pattern_l1},
+							{18, self.stat_info.kick_tables.left_recoil},
 							{19, self.stat_info.kick_tables.even_recoil}
 						}
 						self.olympic.supported = true
@@ -11244,7 +11246,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.olympic.stats = {
 							damage = 20,
 							spread = 73,
-							recoil = 81,
+							recoil = 75,
 							spread_moving = 8,
 							zoom = 1,
 							concealment = 28,
@@ -11276,7 +11278,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{0, self.stat_info.kick_tables.right_kick},
 							{5, self.stat_info.kick_tables.even_recoil},
 							{10, self.stat_info.kick_tables.left_kick},
-							{18, self.stat_info.kick_tables.pattern_l1},
+							{18, self.stat_info.kick_tables.left_recoil},
 							{19, self.stat_info.kick_tables.even_recoil}
 						}
 						self.x_olympic.supported = true
@@ -11289,7 +11291,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_olympic.stats = {
 							damage = 20,
 							spread = 63,
-							recoil = 71,
+							recoil = 65,
 							spread_moving = 8,
 							zoom = 1,
 							concealment = 28,
@@ -11339,7 +11341,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.famas.stats = {
 							damage = 20,
 							spread = 85,
-							recoil = 79,
+							recoil = 73,
 							spread_moving = 4,
 							zoom = 1,
 							concealment = 28,
@@ -11378,10 +11380,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.komodo.kick = self.stat_info.kick_tables.moderate_kick
 						self.komodo.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
-							{4, self.stat_info.kick_tables.pattern_l1},
-							{6, self.stat_info.kick_tables.moderate_kick},
-							{8, self.stat_info.kick_tables.moderate_right_kick},
-							{14, self.stat_info.kick_tables.moderate_kick}
+							{4, self.stat_info.kick_tables.moderate_left_kick},
+							{7, self.stat_info.kick_tables.even_recoil},
+							{12, self.stat_info.kick_tables.moderate_right_kick},
+							{19, self.stat_info.kick_tables.moderate_kick}
 						}
 						self.komodo.supported = true
 						self.komodo.ads_speed = 0.260
@@ -11426,7 +11428,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hajk.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
 							{6, self.stat_info.kick_tables.moderate_right_kick},
-							{9, self.stat_info.kick_tables.moderate_kick},
+							{9, self.stat_info.kick_tables.even_recoil},
 							{14, self.stat_info.kick_tables.right_recoil},
 							{22, self.stat_info.kick_tables.moderate_kick}
 						}
@@ -11444,7 +11446,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hajk.stats = {
 							damage = 24,
 							spread = 81,
-							recoil = 83,
+							recoil = 77,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -11477,10 +11479,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m16.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
 							{3, self.stat_info.kick_tables.right_kick},
-							{4, self.stat_info.kick_tables.pattern_r1},
+							{4, self.stat_info.kick_tables.moderate_kick},
 							{6, self.stat_info.kick_tables.moderate_right_kick},
 							{12, self.stat_info.kick_tables.moderate_kick},
-							{17, self.stat_info.kick_tables.moderate_right_kick}
+							{17, self.stat_info.kick_tables.left_recoil},
+							{22, self.stat_info.kick_tables.moderate_left_kick}
 						}
 						self.m16.supported = true
 						self.m16.ads_speed = 0.340
@@ -11492,7 +11495,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m16.stats = {
 							damage = 30,
 							spread = 83,
-							recoil = 83,
+							recoil = 81,
 							spread_moving = 5,
 							zoom = 1,
 							concealment = 24,
@@ -11526,14 +11529,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.l85a2.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
 							{5, self.stat_info.kick_tables.moderate_right_kick},
-							{9, self.stat_info.kick_tables.pattern_r1},
+							{9, self.stat_info.kick_tables.right_kick},
 							{10, self.stat_info.kick_tables.moderate_kick},
 							{12, self.stat_info.kick_tables.moderate_left_kick},
 							{15, self.stat_info.kick_tables.moderate_right_kick},
 							{21, self.stat_info.kick_tables.moderate_kick}
 						}
 						self.l85a2.supported = true
-						self.l85a2.ads_speed = 0.400
+						self.l85a2.ads_speed = 0.420
 						self.l85a2.damage_falloff = {
 							start_dist = 2500,
 							end_dist = 7800,
@@ -11569,9 +11572,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.akm.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.akm.kick_pattern = {
 							{0, self.stat_info.kick_tables.right_kick},
-							{6, self.stat_info.kick_tables.moderate_left_kick},
+							{5, self.stat_info.kick_tables.left_recoil},
 							{10, self.stat_info.kick_tables.moderate_kick},
-							{12, self.stat_info.kick_tables.moderate_right_kick},
+							{12, self.stat_info.kick_tables.right_recoil},
 							{18, self.stat_info.kick_tables.moderate_kick},
 							{22, self.stat_info.kick_tables.moderate_right_kick}
 						}
@@ -11610,9 +11613,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.akm_gold.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.akm_gold.kick_pattern = {
 							{0, self.stat_info.kick_tables.right_kick},
-							{6, self.stat_info.kick_tables.moderate_left_kick},
+							{5, self.stat_info.kick_tables.left_recoil},
 							{10, self.stat_info.kick_tables.moderate_kick},
-							{12, self.stat_info.kick_tables.moderate_right_kick},
+							{12, self.stat_info.kick_tables.right_recoil},
 							{18, self.stat_info.kick_tables.moderate_kick},
 							{22, self.stat_info.kick_tables.moderate_right_kick}
 						}
@@ -11661,7 +11664,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.groza.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.groza.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_left_kick},
-							{8, self.stat_info.kick_tables.moderate_right_kick},
+							{8, self.stat_info.kick_tables.right_recoil},
 							{13, self.stat_info.kick_tables.moderate_kick},
 							{18, self.stat_info.kick_tables.moderate_left_kick},
 							{22, self.stat_info.kick_tables.moderate_right_kick}
@@ -11826,8 +11829,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.akmsu.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
 							{7, self.stat_info.kick_tables.moderate_right_kick},
-							{16, self.stat_info.kick_tables.moderate_kick},
-							{20, self.stat_info.kick_tables.moderate_left_kick},
+							{13, self.stat_info.kick_tables.moderate_kick},
+							{19, self.stat_info.kick_tables.left_recoil},
 							{25, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.akmsu.supported = true
@@ -11878,8 +11881,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_akmsu.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
 							{7, self.stat_info.kick_tables.moderate_right_kick},
-							{16, self.stat_info.kick_tables.moderate_kick},
-							{20, self.stat_info.kick_tables.moderate_left_kick},
+							{13, self.stat_info.kick_tables.moderate_kick},
+							{19, self.stat_info.kick_tables.left_recoil},
 							{25, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.x_akmsu.supported = true
@@ -11892,7 +11895,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_akmsu.stats = {
 							damage = 30,
 							spread = 63,
-							recoil = 61,
+							recoil = 59,
 							spread_moving = 9,
 							zoom = 1,
 							concealment = 28,
@@ -11930,8 +11933,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{4, self.stat_info.kick_tables.right_kick},
 							{6, self.stat_info.kick_tables.right_recoil},
 							{7, self.stat_info.kick_tables.right_kick},
-							{11, self.stat_info.kick_tables.vertical_kick},
-							{12, self.stat_info.kick_tables.right_kick}
+							{11, self.stat_info.kick_tables.moderate_kick},
+							{16, self.stat_info.kick_tables.right_recoil}
 						}
 						self.asval.supported = true
 						self.asval.ads_speed = 0.320
@@ -11943,7 +11946,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.asval.stats = {
 							damage = 45,
 							spread = 80,
-							recoil = 63,
+							recoil = 61,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -12027,8 +12030,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{0, self.stat_info.kick_tables.right_recoil},
 							{6, self.stat_info.kick_tables.moderate_right_kick},
 							{8, self.stat_info.kick_tables.moderate_kick},
-							{11, self.stat_info.kick_tables.left_kick},
-							{15, self.stat_info.kick_tables.moderate_left_kick}
+							{11, self.stat_info.kick_tables.moderate_left_kick},
+							{15, self.stat_info.kick_tables.left_recoil}
 						}
 						self.galil.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 						self.galil.supported = true
@@ -12041,7 +12044,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.galil.stats = {
 							damage = 45,
 							spread = 81,
-							recoil = 59,
+							recoil = 55,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 24,
@@ -12201,10 +12204,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.shak12.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
 							{4, self.stat_info.kick_tables.moderate_right_kick},
-							{5, self.stat_info.kick_tables.right_kick},
-							{7, self.stat_info.kick_tables.even_recoil},
-							{10, self.stat_info.kick_tables.vertical_kick},
-							{13, self.stat_info.kick_tables.moderate_right_kick}
+							{6, self.stat_info.kick_tables.right_recoil},
+							{9, self.stat_info.kick_tables.even_recoil},
+							{12, self.stat_info.kick_tables.vertical_kick},
+							{16, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						--if restoration.Options:GetValue("OTHER/ComboSounds") then
 							self.shak12.sounds.fire2 = "mp5_fire_single"
@@ -12246,10 +12249,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_m14.kick = self.stat_info.kick_tables.vertical_kick
 						self.new_m14.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
-							{3, self.stat_info.kick_tables.moderate_right_kick},
+							{2, self.stat_info.kick_tables.moderate_right_kick},
 							{4, self.stat_info.kick_tables.right_kick},
-							{10, self.stat_info.kick_tables.moderate_left_kick},
-							{12, self.stat_info.kick_tables.moderate_kick}
+							{8, self.stat_info.kick_tables.moderate_right_kick},
+							{11, self.stat_info.kick_tables.moderate_left_kick},
+							{15, self.stat_info.kick_tables.moderate_kick}
 						}
 						self.new_m14.AMMO_MAX = 60
 						self.new_m14.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
@@ -12303,7 +12307,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{4, self.stat_info.kick_tables.right_kick},
 							{7, self.stat_info.kick_tables.moderate_kick},
 							{9, self.stat_info.kick_tables.moderate_right_kick},
-							{11, self.stat_info.kick_tables.even_recoil},
+							{11, self.stat_info.kick_tables.right_recoil},
 							{13, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.g3.desc_id = "bm_g3_sc_desc"
@@ -12463,10 +12467,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.tti.kick = self.stat_info.kick_tables.even_recoil
 						self.tti.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
-							{3, self.stat_info.kick_tables.moderate_right_kick},
-							{3, self.stat_info.kick_tables.right_kick},
-							{6, self.stat_info.kick_tables.moderate_left_kick},
-							{7, self.stat_info.kick_tables.even_recoil}
+							{2, self.stat_info.kick_tables.left_recoil},
+							{4, self.stat_info.kick_tables.moderate_right_kick},
+							{8, self.stat_info.kick_tables.moderate_left_kick},
+							{10, self.stat_info.kick_tables.even_recoil}
 						}
 						self.tti.can_shoot_through_enemy = true
 						self.tti.can_shoot_through_shield = true
@@ -12517,6 +12521,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							count = 1,
 							rof_mult = 1.5,
 							auto_burst = true,
+							no_ads = true,
 							slamfire = true,
 							spread_mult = 1.5,
 							ads_spread_mult = 18,
@@ -12898,6 +12903,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							count = 1,
 							rof_mult = 1.5,
 							auto_burst = true,
+							no_ads = true,
 							slamfire = true,
 							spread_mult = 1.5,
 							ads_spread_mult = 18,
@@ -15338,7 +15344,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.osipr.stats = {
 				damage = 24,
 				spread = 81,
-				recoil = 83,
+				recoil = 79,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 22,
@@ -15984,8 +15990,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 					self.sg416.stats = {
 						damage = 24,
-						spread = 81,
-						recoil = 83,
+						spread = 82,
+						recoil = 81,
 						spread_moving = 6,
 						zoom = 1,
 						concealment = 25,
@@ -16034,7 +16040,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.aknato.stats = {
 						damage = 24,
 						spread = 81,
-						recoil = 87,
+						recoil = 83,
 						spread_moving = 6,
 						zoom = 1,
 						concealment = 26,
@@ -16078,7 +16084,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.smolak.stats = {
 						damage = 24,
 						spread = 73,
-						recoil = 79,
+						recoil = 75,
 						spread_moving = 5,
 						zoom = 1,
 						concealment = 28,
@@ -16122,7 +16128,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.spike.stats = {
 						damage = 30,
 						spread = 80,
-						recoil = 73,
+						recoil = 67,
 						zoom = 1,
 						concealment = 26,
 						suppression = 8,
@@ -16500,7 +16506,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tilt.stats = {
 					damage = 24,
 					spread = 78,
-					recoil = 85,
+					recoil = 81,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 27,
@@ -17146,7 +17152,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.virtus.stats = {
 					damage = 30,
 					spread = 70,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 23,
@@ -17171,6 +17177,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sonny.recategorize = { "heavy_pis" }
 				self.sonny.damage_type = "heavy_pistol"
 				self.sonny.fire_mode_data.fire_rate = 0.1263157894
+				self.sonny.tactical_reload = 1
 				self.sonny.CLIP_AMMO_MAX = 10
 				self.sonny.AMMO_MAX = 40
 				self.sonny.kick = self.stat_info.kick_tables.right_recoil
@@ -24589,7 +24596,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bootl1911.panic_suppression_chance = 0.05
 				self.bootl1911.timers = deep_clone(self.pl14.timers)
 
-					self.x_bootl1911.recategorize = {"light_pis"}
+					self.x_bootl1911.recategorize = {"heavy_pis"}
 					self.x_bootl1911.categories = {
 						"akimbo",
 						"pistol"
@@ -27665,8 +27672,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeop.animations.magazine_empty = nil
 				self.bromeop.reload_speed_multiplier = 0.57
 				self.bromeop.reload_not_empty_speed_multiplier = 1.16
-				self.bromeop.timers.reload_not_empty = 1.18
-				self.bromeop.timers.reload_exit_not_empty = 0.45
+				self.bromeop.timers.reload_not_empty = 1.16
+				self.bromeop.timers.reload_exit_not_empty = 0.48
 				self.bromeop.timers.reload_empty = 1.42
 				self.bromeop.timers.reload_exit_empty = 0.44
 			end
@@ -30037,6 +30044,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.r2.stats_modifiers = nil
 				self.r2.panic_suppression_chance = 0.05
+				self.r2.object_damage_mult = 0.5
 				self.r2.sounds.use_fix = nil
 				self.r2.armor_piercing_chance = nil
 				self.r2.timers.reload_empty = 2.8
@@ -30248,6 +30256,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.timers.reload_exit_empty = 0.85
 				--self.sickle.weapon_hold = "ching"
 				--self.sickle.no_auto_anims = true
+				self.sickle.object_damage_mult = 0.5
 				self.sickle.spin_up_t = 0.5
 				self.sickle.spin_down_t = 0.0001
 				self.sickle.sounds.magazine_empty = "wp_sentrygun_swap_ammo"
@@ -33719,6 +33728,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 			end
 
+			--temp until I get around to doing these per weapon
 			if weap.damage_falloff then
 				if table.contains(weap.recategorize, "light_smg") or table.contains(weap.recategorize, "heavy_smg") then
 					weap.damage_falloff.start_dist = math.floor(((weap.damage_falloff.start_dist / 100) * 0.8)) * 100
@@ -33732,6 +33742,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.damage_falloff.end_dist = math.floor(((weap.damage_falloff.end_dist / 100) * 0.9)) * 100
 				end
 			end
+			if (table.contains(weap.recategorize, "light_ar") or table.contains(weap.recategorize, "heavy_ar") or table.contains(weap.recategorize, "dmr_ar")) and weap.ads_speed < 0.340 then
+				weap.ads_speed = weap.ads_speed + 0.02
+			end
+
 
 			if table.contains(weap.categories, "assault_rifle") or table.contains(weap.categories, "snp") then
 				weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 0.95
@@ -33990,9 +34004,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						7.5,
 						0.6,
 						srm = {
-							-0.005,
-							{1, 1.05},
-							6
+							-0.007,
+							{1, 1.08},
+							4
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_ar" then
@@ -34003,7 +34017,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.4,
 						srm = {
 							-0.01,
-							{1, 1.05},
+							{1, 1.08},
 							3
 						}
 					}
@@ -34015,7 +34029,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.2,
 						srm = {
 							-0.025,
-							{1, 1.1},
+							{1, 1.12},
 							2
 						}
 					}

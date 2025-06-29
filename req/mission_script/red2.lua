@@ -60,6 +60,30 @@ return {
 			amount = ambush_amount,
 		},
 	},
+	-- Add new reinforce
+	[100901] = { -- SWAT incoming
+		reinforce = {
+			{
+				name = "lobby",
+				force = 4,
+				position = Vector3(-1800, 25, 0),
+			},
+		},
+	},
+	[103336] = { -- choose security footage location
+		reinforce = {
+			{
+				name = "cafeteria",
+				force = 3,
+				position = Vector3(-2350, -2050, -20),
+			},
+			{
+				name = "offices",
+				force = 3,
+				position = Vector3(-2750, 2050, -20),
+			},
+		},
+	},
 	-- Tweak the basement ambush chance (35% on Overkill below, 50% on Mayhem+)
 	[100528] = {
 		values = {

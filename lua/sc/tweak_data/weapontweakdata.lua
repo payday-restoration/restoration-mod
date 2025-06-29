@@ -33746,11 +33746,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.ads_speed = weap.ads_speed + 0.02
 			end
 
-
-			if table.contains(weap.categories, "assault_rifle") or table.contains(weap.categories, "snp") then
-				weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 0.95
-			end
-
 			if table.contains(weap.categories, "lmg") or table.contains(weap.categories, "minigun") then
 				weap.innate_panic = 0.025
 			end

@@ -18473,6 +18473,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.duke1911 then --Pawcio's Duke Nukem 1911
 				self.duke1911.recategorize = {"heavy_pis"}
+				self.duke1911.has_description = true
 				self.duke1911.damage_type = "handcannon"
 				self.duke1911.lock_slide = true
 				self.duke1911.fire_mode_data.fire_rate = 0.15

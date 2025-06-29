@@ -2568,6 +2568,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "ПРОДАТЬ ОРУЖИЕ ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "КУПИТЬ ОРУЖИЕ ($price)",
+		
+		--Для меню с характеристиками оружий
+		["menu_seconds_suffix_short"] = "с",
+		["menu_milliseconds_suffix_short"] = "мс",
+		["menu_meters_suffix_short"] = "м",
 
 		--New menu stats--
 		["bm_menu_crit"] = "Шанс крита",
@@ -2700,8 +2705,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["st_menu_firemode"] = "РЕЖИМ ОГНЯ:",
 		["st_menu_firemode_semi"] = "ПОЛУ",
-		["st_menu_firemode_auto"] = "АВТО",
-		["st_menu_firemode_burst"] = "ОЧЕРЕДЬ",
+		["st_menu_firemode_auto"] = "АВТ",
+		["st_menu_firemode_burst"] = "ОЧР",
 		["st_menu_firemode_volley"] = "ЗАЛП",
 		["st_menu_firemode_burst_slamfire"] = "ТЕМПОВЫЙ",
 		["st_menu_firemode_burst_fanning"] = "ФАННИНГ",
@@ -5618,11 +5623,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Rifleman
 				["menu_rifleman_sc"] = "Пехотинец",
-				["menu_rifleman_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## получают на #{skill_color}#$skill_value_b1## больше точности и урона на расстоянии во время прицеливания.\n\n#{skill_color}#Винтовки## получают ещё#{skill_color}#$skill_value_b2## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Винтовки## получают еще на #{skill_color}#$skill_value_p1## больше точности и урона на расстоянии во время прицеливания.\n\nСкорость прицеливания и задержка после бега быстрее и меньше соответственно на #{skill_color}#$skill_value_p2##.",
+				["menu_rifleman_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## получают на #{skill_color}#$skill_value_b1## больше точности и урона на расстоянии во время прицеливания.\n\n#{skill_color}#Винтовки## получают ещё #{skill_color}#$skill_value_b2## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Винтовки## получают еще на #{skill_color}#$skill_value_p1## больше точности и урона на расстоянии во время прицеливания.\n\nСкорость прицеливания и задержка после бега быстрее и меньше соответственно на #{skill_color}#$skill_value_p2##.",
 
 				--Kilmer--
 				["menu_heavy_impact_beta_sc"] = "Килмер",
-				["menu_heavy_impact_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## перезаряжаются на #{skill_color}#$skill_value_b2## быстрее.\nШтраф на точность во время передвижения для #{skill_color}#винтовок## уменьшен на #{skill_color}#$skill_value_b1##.\n\nШтраф на точность во время передвижения зависит от стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Винтовки## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.\n\n#{skill_color}#Винтовки## наносят #{skill_color}#$skill_value_p2## урона через броню.\n\n#{risk}##{skill_color}#Винтовки##, которые уже имеют такой эффект, не получают дополнительный урон.##",
+				["menu_heavy_impact_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## перезаряжаются на #{skill_color}#$skill_value_b2## быстрее.\nШтраф на точность во время передвижения для #{skill_color}#винтовок## уменьшен на #{skill_color}#$skill_value_b1##.\n\nШтраф на точность во время передвижения зависит от стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Винтовки## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.\n\n#{skill_color}#Винтовки## наносят #{skill_color}#$skill_value_p2## урона через броню.\n#{important_1}#Винтовки, которые уже имеют такой эффект, не получают дополнительный урон.##",
 
 				--Ammo Efficiency--
 				["menu_single_shot_ammo_return_sc"] = "Эффективный расход",
@@ -5677,7 +5682,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Подвижная мишень",
-				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3##, до максимальных #{skill_color}#$skill_value_b4## скорости.\n\nВы передвигаетесь на #{skill_color}#$skill_value_b5## быстрее при прицеливании.\n#{risk}#Скорость передвижения в прицеливании не может превышать вашу максимальную.##\n\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#$skill_value_p1## быстрее за каждое #{skill_color}#$skill_value_p2## очко нагрузки ниже #{skill_color}#$skill_value_p3##, до максимальных #{skill_color}#$skill_value_p4## скорости.\n\nВаш уворот заполняется на #{skill_color}#$skill_value_p5## за каждую секунду бега и на #{skill_color}#$skill_value_p6## за каждую секунду на зиплайне.",
+				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3##, до максимальных #{skill_color}#$skill_value_b4## скорости.\n\nВы передвигаетесь на #{skill_color}#$skill_value_b5## быстрее при прицеливании.\n#{risk}#Скорость передвижения в прицеливании не может превышать вашу максимальную.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#$skill_value_p1## быстрее за каждое #{skill_color}#$skill_value_p2## очко нагрузки ниже #{skill_color}#$skill_value_p3##, до максимальных #{skill_color}#$skill_value_p4## скорости.\n\nВаш уворот заполняется на #{skill_color}#$skill_value_p5## за каждую секунду бега и на #{skill_color}#$skill_value_p6## за каждую секунду на зиплайне.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Заземленный",

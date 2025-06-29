@@ -17090,6 +17090,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_mr96.CLIP_AMMO_MAX = 12
 				self.x_mr96.AMMO_MAX = 60
 				self.x_mr96.fire_mode_data.fire_rate = 0.16666667
+				self.x_mr96.BURST_FIRE = {
+					count = 2,
+					delay = 0.15,
+					rof_mult = 4,
+					recoil_mult = 0.25,
+					last_recoil_mult = 1.05,
+				}
 				self.x_mr96.kick = self.stat_info.kick_tables.moderate_kick
 				self.x_mr96.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},

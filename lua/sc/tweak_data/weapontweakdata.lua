@@ -12400,7 +12400,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--[[     LIGHT SNIPERS     ]]
 
 				--PRIMARIES
-""
+
 					--Kang Arms X1 (QBU-88)
 						self.qbu88.desc_id = "bm_qbu88_sc_desc"
 						self.qbu88.has_description = true

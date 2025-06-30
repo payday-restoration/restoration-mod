@@ -19559,6 +19559,10 @@ end)
 						translation = Vector3(-4.9, 2.5, -2.631),
 						rotation = Rotation(-0.13, -0.01, -10.6)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_morita = {
+						translation = Vector3(0, -2.7, -0.068),
+						rotation = Rotation(-0.008, -0.066, 0)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_dd5 = {
 						translation = Vector3(0.04, 4, -0.17)
@@ -23531,7 +23535,7 @@ end)
 						local tww = tweak_data.weapon[ weapon_id ]
 						if tww.categories then
 							if table.contains( tww.categories , "snp") or
-							table.contains( tww.categories , "dmr_h") or
+							table.contains( tww.categories , "assault_rifle") or
 							table.contains( tww.categories , "shotgun") or
 							table.contains( tww.categories , "grenade_launcher") or
 							table.contains( tww.categories , "handcannon") then
@@ -29236,6 +29240,96 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 
 	--[[ RJC9000'S MODS ]]
+		if self.parts.wpn_fps_ass_morita_barrel_shotgun then
+			self.parts.wpn_fps_ass_morita_barrel_shotgun.supported = true
+			self.parts.wpn_fps_ass_morita_barrel_shotgun.stats = {value = 0}
+			self.parts.wpn_fps_ass_morita_barrel_shotgun.custom_stats = {}
+
+			--BARRELS
+				self.parts.wpn_fps_ass_morita_barrel.supported = true
+				self.parts.wpn_fps_ass_morita_barrel.stats = {value = 0, concealment = 1, recoil = -2}
+				self.parts.wpn_fps_ass_morita_barrel.custom_stats = { ads_speed_mult = 0.975 }
+
+				self.parts.wpn_fps_ass_morita_barrel_carbine.supported = true
+				self.parts.wpn_fps_ass_morita_barrel_carbine.keep_damage = true
+				self.parts.wpn_fps_ass_morita_barrel_carbine.stats = { value = 0, concealment = 3, recoil = -6, spread = -4, damage = -6, total_ammo_mod = 98 }
+				self.parts.wpn_fps_ass_morita_barrel_carbine.custom_stats = { 
+					falloff_start_mult = 0.72727,
+					falloff_end_mult = 0.57142,
+					ads_speed_mult = 0.842105,
+					rof_mult = 1.213881
+				}
+				
+				self.parts.wpn_fps_ass_morita_barrel_hawkeye.supported = true
+				self.parts.wpn_fps_ass_morita_barrel_hawkeye.keep_damage = true
+				self.parts.wpn_fps_ass_morita_barrel_hawkeye.perks = { "fire_mode_single" }
+				self.parts.wpn_fps_ass_morita_barrel_hawkeye.forbids = { "wpn_fps_upg_i_singlefire", "wpn_fps_upg_i_autofire" }
+				self.parts.wpn_fps_ass_morita_barrel_hawkeye.stats = { value = 0, concealment = -3, recoil = -24, spread = 10, damage = 60, total_ammo_mod = -268, extra_ammo = -44, reload = -5 }
+				self.parts.wpn_fps_ass_morita_barrel_hawkeye.custom_stats = { 
+					falloff_start_mult = 1.2727272,
+					falloff_end_mult = 2.1428571,
+					ads_speed_mult = 1.31578,
+					rof_mult = 0.283286,
+					info_lock_semi = true,
+					ignore_rof_mult_anims = true,
+					can_shoot_through_enemy = true,
+					can_shoot_through_enemy_unlim = true,
+					can_shoot_through_wall = true,
+					can_shoot_through_shield = true,
+					armor_piercing_override = 1,
+					tweak_categories = {"snp", "semi_snp"},
+					sms = 0.6,
+					alt_ammo_pickup_min_mul = 0.209302,
+					alt_ammo_pickup_max_mul = 0.209302,
+					ammo_pickup_min_mul = 0.209302,
+					ammo_pickup_max_mul = 0.209302
+				}
+			--OPTICS
+				self.parts.wpn_fps_ass_morita_optic_reflex.supported = true
+				self.parts.wpn_fps_ass_morita_optic_reflex.has_description = true
+				self.parts.wpn_fps_ass_morita_optic_reflex.desc_id = "bm_wp_upg_o_1_1"
+				self.parts.wpn_fps_ass_morita_optic_reflex.stats = { value = 0, zoom = 1}
+				self.parts.wpn_fps_ass_morita_optic_reflex.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+				for i, weap in pairs(self.parts.wpn_fps_ass_morita_optic_reflex.stance_mod) do
+					if weap and i ~= wep_id and weap.translation then
+						weap.translation = weap.translation + Vector3(0, -7, 2.6)
+					end
+				end
+
+				self.parts.wpn_fps_ass_morita_optic_2x.supported = true
+				self.parts.wpn_fps_ass_morita_optic_2x.has_description = true
+				self.parts.wpn_fps_ass_morita_optic_2x.desc_id = "bm_wp_upg_o_2"
+				self.parts.wpn_fps_ass_morita_optic_2x.stats = { value = 0, zoom = 10}
+				self.parts.wpn_fps_ass_morita_optic_2x.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+				for i, weap in pairs(self.parts.wpn_fps_ass_morita_optic_2x.stance_mod) do
+					if weap and i ~= wep_id and weap.translation then
+						weap.translation = weap.translation + Vector3(0, 2, 0.6)
+					end
+				end
+
+				self.parts.wpn_fps_ass_morita_optic_4x.supported = true
+				self.parts.wpn_fps_ass_morita_optic_4x.has_description = true
+				self.parts.wpn_fps_ass_morita_optic_4x.desc_id = "bm_wp_upg_o_4"
+				self.parts.wpn_fps_ass_morita_optic_4x.stats = { value = 0, zoom = 30}
+				self.parts.wpn_fps_ass_morita_optic_4x.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+				for i, weap in pairs(self.parts.wpn_fps_ass_morita_optic_4x.stance_mod) do
+					if weap and i ~= wep_id and weap.translation then
+						weap.translation = weap.translation + Vector3(-0.04, 19, -1.7)
+					end
+				end
+				
+				self.parts.wpn_fps_ass_morita_optic_hawkeye.supported = true
+				self.parts.wpn_fps_ass_morita_optic_hawkeye.has_description = true
+				self.parts.wpn_fps_ass_morita_optic_hawkeye.desc_id = "bm_wp_upg_o_6"
+				self.parts.wpn_fps_ass_morita_optic_hawkeye.stats = { value = 0, zoom = 50}
+				self.parts.wpn_fps_ass_morita_optic_hawkeye.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+				for i, weap in pairs(self.parts.wpn_fps_ass_morita_optic_hawkeye.stance_mod) do
+					if weap and i ~= wep_id and weap.translation then
+						weap.translation = weap.translation + Vector3(-0.03, 15, 1.43)
+					end
+				end
+		end
+
 		if self.parts.wpn_fps_ass_bromeo2_magazine then
 			--no soup for you
 				self.parts.wpn_fps_ass_bromeo805_flash_hider.stats = { value = 0 }
@@ -53186,6 +53280,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "sig_sauer_xm250_mod_init", funct
 	end
 end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "mw2022_minireddot_04_modInit", function(self)
+end)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "morita_rifle_series_factorytweakdata_init", function(self)
 end)
 
 Hooks:PostHook(WeaponFactoryTweakData, "init", "mg34ModInit", function(self)

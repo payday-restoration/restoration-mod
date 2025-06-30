@@ -137,8 +137,8 @@ tweak_data.shotgun = {
 tweak_data.smg = {
 	swap_bonus = 1.65,
 	ads_move_speed_mult = 0.7,
-	moving_spread_mult = 0.6,
-	hipfire_spread_mult = 0.9
+	moving_spread_mult = 0.75,
+	hipfire_spread_mult = 0.75
 }
 	tweak_data.pdw = {
 		ads_move_speed_mult = 0.5 / tweak_data.smg.ads_move_speed_mult
@@ -147,7 +147,7 @@ tweak_data.smg = {
 		ads_moving_recoil = 1.15,
 		swap_bonus = 1 / tweak_data.smg.swap_bonus,
 		ads_move_speed_mult = 0.35 / tweak_data.smg.ads_move_speed_mult,
-		moving_spread_mult = 5 / tweak_data.smg.moving_spread_mult,
+		moving_spread_mult = 4.5 / tweak_data.smg.moving_spread_mult,
 		ads_moving_spread_mult = 1.75,
 		hipfire_spread_mult = 3 / tweak_data.smg.hipfire_spread_mult,
 		shake_mul = 1.4
@@ -165,7 +165,7 @@ tweak_data.smg = {
 			shake_mul = 1 / tweak_data.lmg.shake_mul
 		}
 		tweak_data.mmg = {
-			moving_spread_mult = 6 / (tweak_data.smg.moving_spread_mult * tweak_data.lmg.moving_spread_mult),
+			moving_spread_mult = 5.2 / (tweak_data.smg.moving_spread_mult * tweak_data.lmg.moving_spread_mult),
 			ads_moving_spread_mult = 2.2 / tweak_data.lmg.ads_moving_spread_mult,
 			hipfire_spread_mult = 4 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult)
 		}

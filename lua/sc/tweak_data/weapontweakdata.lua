@@ -24741,6 +24741,48 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.morita then
+				self.morita.recategorize = { "light_ar" }
+				self.morita.damage_type = "assault_rifle"
+				self.morita.CLIP_AMMO_MAX = 60
+				self.morita.AMMO_MAX = 120
+				self.morita.CAN_TOGGLE_FIREMODE = true
+				self.morita.BURST_FIRE = false
+				self.morita.fire_mode_data.fire_rate = 0.084985
+				self.morita.tactical_reload = 1
+				self.morita.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.morita.supported = true
+				self.morita.ads_speed = 0.380
+				self.morita.damage_falloff = {
+					start_dist = 2200,
+					end_dist = 7000,
+					min_mult = 0.5
+				}
+				self.morita.stats = {
+					damage = 30,
+					spread = 71,
+					recoil = 75,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.morita.stats_modifiers = nil
+				self.morita.panic_suppression_chance = 0.05
+				self.morita.use_hipfire_stance = "m95"
+				self.morita.reload_speed_multiplier = 0.87
+				self.morita.timers.equip = 0.9
+				self.morita.timers.reload_empty = 2.78
+				self.morita.timers.reload_exit_empty = 0.82
+				self.morita.timers.reload_not_empty = 2.22
+				self.morita.timers.reload_exit_not_empty = 0.63
+			end
+
 			if self.tribune32 then
 				self.tribune32.categories = { "smg" }
 				self.tribune32.recategorize = { "light_smg" }

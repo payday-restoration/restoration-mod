@@ -1,30 +1,12 @@
+--- Ебаный рот этого рулока
+
 Month = os.date("%m")
 Day = os.date("%d")
 local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC")
 
--- ResMod english.json
-Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
+-- Настройки
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Settings", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_es_boost"] = "Лучшая",
-		["menu_es_crew"] = "Командная",
-		["menu_es_personal"] = "Личная",
-		["menu_es_bad"] = "Плохая",
-		["menu_es_other"] = "Прочая",
-		["RestorationPDTHHudNeeded"] = "PD:TH HUD REBORN IS REQUIRED!",
-		["menu_paygrade"] = "Степень оплаты: ",
-		["menu_diffgrade"] = "Сложность: ",
-		["menu_utility_radial_menu_name"] = "Utility Radial Menu",
-		["menu_utility_radial_menu_desc"] = "Open the Utility Menu",
-
-		["res_credits"] = "Титры Restoration Mod",
-		["res_credits_help"] = "Посмотреть титры RESTORATION MOD.",
-
-		["Warning_overhaul_title"] = "WARNING: Game closing to prevent save corruption.",
-		["dialog_show_overhaul_dialog"] = "You are DISABLING the Complete Overhaul. It is typically NOT RECOMMENDED to do this, and you should instead REMOVE the mod from your mods folder if you intend not to use the Overhaul actively.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
-		["dialog_enable_overhaul_dialog"] = "You are ENABLING the Complete Overhaul. The Overhaul should typically remain ON at all times, and only be disabled by removing the mod from your mods folder.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
-
-		["res_saveboost"] = "УДЕРЖИВАЙТЕ $BTN_INTERACT ЧТОБЫ ПРОКАЧАТЬСЯ ДО 100 УРОВНЯ",
-
 		["RestorationModOptionsButtonTitleID"] = "Настройки Restoration Mod",
 		["RestorationModOptionsButtonDescID"] = "Настройки для Restoration Mod.",
 		["RestorationModHUDOptionsButtonTitleID"] = "Настройки интерфейса Restoration Mod",
@@ -48,103 +30,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			["resmod_advmov_melee_on"] = "По умолчанию",
 			["resmod_advmov_melee_loud_only"] = "Во время громкого подхода",
 			["resmod_advmov_melee_off"] = "Выключено",
-
-
-		["restoration_level_data_unknown"] = "НЕИЗВЕСТНОЕ ВРЕМЯ, НЕИЗВЕСТНОЕ МЕСТО",
-		["RestorationModEnv_BanksTitleID"] = "Ограбление банка",
-		["RestorationModEnv_BanksDescID"] = "Выбрать погоду для ограбления банка.",
-		["RestorationModEnv_RVD1TitleID"] = "Бешеные псы - день 1",
-		["RestorationModEnv_RVD1DescID"] = "Выбрать погоду для ограбления Бешеные псы (день 1).",
-		["RestorationModEnv_RVD2TitleID"] = "Бешеные псы - день 2",
-		["RestorationModEnv_RVD2DescID"] = "Выбрать погоду для ограбления Бешеные псы (день 2).",
-		["RestorationModEnv_FSD1TitleID"] = "Поджигатель - день 1",
-		["RestorationModEnv_FSD1DescID"] = "Выбрать погоду для ограбления Поджигатель (день 1).",
-		["RestorationModEnv_PBR2TitleID"] = "Рождение небес",
-		["RestorationModEnv_PBR2DescID"] = "Выбрать погоду для ограбления Рождение небес.",
-		["RestorationModEnv_CJ2TitleID"] = "Бомба: Доки",
-		["RestorationModEnv_CJ2DescID"] = "Выбрать погоду для ограбления Бомба: Доки.",
-		["RestorationModEnv_UnderPassTitleID"] = "Транспорт: Проезд",
-		["RestorationModEnv_UnderPassDescID"] = "Выбрать погоду для ограбления Транспорт: Проезд.",
-		["RestorationModEnv_MallCrasherTitleID"] = "Крушитель",
-		["RestorationModEnv_MallCrasherDescID"] = "Выбрать погоду для ограбления Крушитель.",
-		["RestorationModEnv_Mia_1TitleID"] = "Г.Л.Майами - день 1",
-		["RestorationModEnv_Mia_1DescID"] = "Выбрать погоду для ограбления Горячая линия Майами (день 1).",
-		["RestorationModEnv_FSD3TitleID"] = "Поджигатель - день 3",
-		["RestorationModEnv_FSD3DescID"] = "Выбрать погоду для ограбления Поджигатель (день 3).",
-		["RestorationModEnv_WDD1NTitleID"] = "Сторож. псы 1 (Ночь)",
-		["RestorationModEnv_WDD1NDescID"] = "Выбрать погоду для ограбления Сторожевые псы (день 1 - ночной).",
-		["RestorationModEnv_WDD1DTitleID"] = "Сторож. псы 1 (День)",
-		["RestorationModEnv_WDD1DDescID"] = "Выбрать погоду для ограбления Сторожевые псы (день 1 - дневной).",
-		["RestorationModEnv_WDD2DTitleID"] = "Сторож. псы 1 (День))",
-		["RestorationModEnv_WDD2DDescID"] = "Выбрать погоду для ограбления Сторожевые псы (день  - дневной).",
-		["RestorationModEnv_Alex3TitleID"] = "Крысы - день 3",
-		["RestorationModEnv_Alex3DescID"] = "Выбрать погоду для ограбления Крысы (день 3).",
-		["RestorationModEnv_BigTitleID"] = "Большой банк",
-		["RestorationModEnv_BigDescID"] = "Выбрать погоду для ограбления Большой банк.",
-		["RestorationModEnv_FSTitleID"] = "Четыре магазина",
-		["RestorationModEnv_FSDescID"] = "Выбрать погоду для ограбления Четыре магазина.",
-		["RestorationModEnv_UkraTitleID"] = "Украинское дело",
-		["RestorationModEnv_UkraDescID"] = "Выбрать погоду для ограбления Украинское дело.",
-		["RestorationModEnv_KosugiTitleID"] = "Теневой рейд",
-		["RestorationModEnv_KosugiDescID"] = "Выбрать погоду для ограбления Теневой рейд.",
-		["RestorationModEnv_PetaTitleID"] = "Симулятор козы - день 1",
-		["RestorationModEnv_PetaDescID"] = "Выбрать погоду для ограбления Симулятор козы (день 1).",
-		["RestorationModEnv_FRIENDTitleID"] = "Особняк",
-		["RestorationModEnv_FRIENDDescID"] = "Выбрать погоду для ограбления Особняк Лица со шрамом.",
-		["RestorationModINFOHUDOptionsButtonTitleID"] = "Отображение иконок навыков (Buff Tracker)",
-		["RestorationModINFOHUDOptionsButtonDescID"] = "Отображает иконки навыков, которые активны в данный момент, в левом верхнем углу экрана. Не требует включенного Alpha UI.",
-		["RestorationModInfo_HudTitleID"] = "Включить иконки навыков",
-		["RestorationModInfo_HudDescID"] = "Включает или выключает отображение иконок навыков.",
-		["RestorationModInfo_SizeTitleID"] = "Размер иконок",
-		["RestorationModInfo_SizeDescID"] = "Регулирует размер отображаемых иконок навыков.",
-		["RestorationModInfo_CountTitleID"] = "Число рядов",
-		["RestorationModInfo_CountDescID"] = "Регулирует количество рядов иконок навыков, которые будут отображаться, прежде чем добавится новый столбик.",
-		["RestorationModInfo_single_shot_fast_reloadTitleID"] = "Агрессивная перезарядка",
-		["RestorationModInfo_single_shot_fast_reloadDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_ammo_efficiencyTitleID"] = "Эффективный расход",
-		["RestorationModInfo_ammo_efficiencyDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_bloodthirst_reload_speedTitleID"] = "Кровожадность",
-		["RestorationModInfo_bloodthirst_reload_speedDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_bullet_stormTitleID"] = "Свинцовый ливень",
-		["RestorationModInfo_bullet_stormDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_revive_damage_reductionTitleID"] = "Анальгин",
-		["RestorationModInfo_revive_damage_reductionDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_desperadoTitleID"] = "Меткий стрелок",
-		["RestorationModInfo_desperadoDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_grinderTitleID"] = "Гистамин (Нападающий)",
-		["RestorationModInfo_grinderDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_infiltratorTitleID"] = "Похититель жизней (Интервент)",
-		["RestorationModInfo_infiltratorDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_sociopathTitleID"] = "Tension и прочее. (Социопат)",
-		["RestorationModInfo_sociopathDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_body_expertiseTitleID"] = "Свинцовый ад",
-		["RestorationModInfo_body_expertiseDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_long_dis_reviveTitleID"] = "Вдохновление",
-		["RestorationModInfo_long_dis_reviveDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_messiahTitleID"] = "Мессия",
-		["RestorationModInfo_messiahDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_overkill_damage_multiplierTitleID"] = "Overkill",
-		["RestorationModInfo_overkill_damage_multiplierDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_revived_damage_reductionTitleID"] = "Колеса",
-		["RestorationModInfo_revived_damage_reductionDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_first_aid_damage_reductionTitleID"] = "Скорая помощь",
-		["RestorationModInfo_first_aid_damage_reductionDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_rogueTitleID"] = "Смертельный инстинкт (Шпион)",
-		["RestorationModInfo_rogueDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_increased_movement_speedTitleID"] = "Бегущий от смерти",
-		["RestorationModInfo_increased_movement_speedDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_headshot_fire_rate_multTitleID"] = "Крепкий хват",
-		["RestorationModInfo_headshot_fire_rate_multDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_trigger_happyTitleID"] = "Неудержимый стрелок",
-		["RestorationModInfo_trigger_happyDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_dmg_multiplier_outnumberedTitleID"] = "Давление",
-		["RestorationModInfo_dmg_multiplier_outnumberedDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_unseen_strikeTitleID"] = "Удар исподтишка",
-		["RestorationModInfo_unseen_strikeDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_survive_one_hitTitleID"] = "Татуировка Они (Якудза)",
-		["RestorationModInfo_survive_one_hitDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_doctor_bag_health_regenTitleID"] = "Лечение от Медицинских сумок",
-		["RestorationModInfo_doctor_bag_health_regenDescID"] = "Включает или выключает отображение лечения от Медицинских сумок.",
+		
 		["RestorationModAltLastDownColorTitleID"] = "Другой фильтр для последнего падения",
 		["RestorationModAltLastDownColorDescID"] = "Переключает цветовой фильтр при последнем падении на color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Отключить наклон камеры при падении",
@@ -222,53 +108,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModMoveCancelBipodDescID"] = "Клавиши движения развернут сошки.",
 		["RestorationModSeparateBowADSTitleID"] = "Прицеливание луков",
 		["RestorationModSeparateBowADSDescID"] = "Отключает автоматическое прицеливание при стрельбе из лука. Клавиша перезарядки опускает заряженную стрелу.",
-		["RestorationModPerPelletShotgunsTitleID"] = "Урон от дробовика за каждую дробинку (WIP)",
-		["RestorationModPerPelletShotgunsDescID"] = "Урон от дробовика рассчитывается за каждую дробинку в отличие от стандартного \"1 дробинка = полный урон, приоритет отдается выстрелам в голову\". Урон от дробовика, наносимый обычной дробью, увеличен, чтобы компенсировать потерю урона при промахе дробинками. Требуется перезагрузка.",
 		["RestorationModClassicMoviesTitleID"] = "Классический фон подготовки",
 		["RestorationModClassicMoviesDescID"] = "Включить или выключить фон экрана подготовки из PD:TH при игре на Классических ограблениях.",
-
-		["vanilla_on_rails"] = "Стандартный/рельсовый",
-		["kf_mw_style"] = "Стиль KF1/CoD",
-		["tilt_in"] = "Наклон",
-
-		["base_wpn_cat"] = "Основной навык",
-		["sub_wpn_cat"] = "Саб-категория и урон",
-
-		["RestorationModWepNamesTitleID"] = "Названия оружия",
-		["RestorationModWepNamesDescID"] = "Стиль названия оружия и модулей. Требуется перезапуск.",
-		["resmod_res_names"] = "Кириллица",
-		["resmod_no_nicknames"] = "Латиница",
-		["dmcwo_reelnames"] = "Реальные (DMCWO)",
-		["resmod_no_renames"] = "Ванильные",
-
-		["default"] = "Стандартная",
-		["random"] = "Случайная",
-		["mellowday"] = "Умеренный день",
-		["xbox_bank"] = "E3 2013",
-		["bank_day"] = "Улучшенная стандартная",
-		["env_trailer_bank"] = "Банк - как в трейлере",
-		["rvd1_alt1"] = "Ночная жизнь",
-		["rvd1_alt2"] = "Розоватый туман",
-		["rvd2_alt"] = "Пасмурная",
-		["fsd1_eve"] = "Вечерняя",
-		["bos_alt"] = "Розовое небо",
-		["dockyard_alt"] = "Ночная смена",
-		["underpass_foggyday"] = "Туманный день",
-		["mall_alt"] = "Послеобеденный шоппинг",
-		["hlm_morn"] = "Утренний звонок",
-		["funny_and_epic_synthwave_very_eighties"] = "Ретро",
-		["brightnight"] = "Белая ночь",
-		["docks"] = "Порт",
-		["bank_green"] = "Зеленоватый из беты",
-		["cloudy_day"] = "Облачный день",
-		["shadowraid_day"] = "Дневной рейд",
-		["shadowraiud_darker"] = "Мрачный рейд",
-		["friend_pink"] = "Розовый закат",
-		["friend_night"] = "Ночь в Майами",
-		["off"] = "Выключить",
-		["windowofoppurtunity"] = "Window Of Opportunity",
-		["wheresthevan"] = "Where's The Van",
-		["menu_jukebox_heist_ponr"] = "Точка невозврата",
+		
 		["RestorationModPaintingsTitleID"] = "Вырезанные картины в Картинной галерее",
 		["RestorationModPaintingsDescID"] = "Включает или выключает отображение вырезанных картин на ограблении “Картинная галерея”. Работает только для хоста.",
 		["RestorationModMainHUDTitleID"] = "Alpha HUD - ВКЛ/ВЫКЛ",
@@ -323,6 +165,624 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNotifyDescID"] = "Включить или выключить уведомления мода.",
 		["RestorationModPauseTitleID"] = "Меню паузы из Альфы",
 		["RestorationModPauseDescID"] = "Включить или выключить меню паузы из альфа-версии игры.",
+		
+		["vanilla_on_rails"] = "Стандартный/рельсовый",
+		["kf_mw_style"] = "Стиль KF1/CoD",
+		["tilt_in"] = "Наклон",
+
+		["base_wpn_cat"] = "Основной навык",
+		["sub_wpn_cat"] = "Саб-категория и урон",
+
+		["RestorationModWepNamesTitleID"] = "Названия оружия",
+		["RestorationModWepNamesDescID"] = "Стиль названия оружия и модулей. Требуется перезапуск.",
+		["resmod_res_names"] = "Кириллица",
+		["resmod_no_nicknames"] = "Латиница",
+		["dmcwo_reelnames"] = "Реальные (DMCWO)",
+		["resmod_no_renames"] = "Ванильные",
+		
+		["RestorationModColorOption"] = "Изменить цвет элемента интерфейса",
+		["RestorationModColorsOptionsButtonTitleID"] = "Настройки цветов",
+		["RestorationModColorsOptionsButtonDescID"] = "Изменить цвет различных элементов интерфейса.",
+		["RestorationModObjectivesBGTitleID"] = "Задачи - задний план",
+		["RestorationModObjectivesFGTitleID"] = "Задачи - передний план",
+		["RestorationModAssaultBGTitleID"] = "Штурм - задний план",
+		["RestorationModAssaultFGTitleID"] = "Штурм - передний план",
+		["RestorationModNoReturnTitleID"] = "Текст Точки невозврата",
+		["RestorationModTimerTextTitleID"] = "Таймер (время) ограбления",
+		["RestorationModAssaultEndlessBGTitleID"] = "Штурм капитана",
+		["RestorationModAssaultSurvivedBGTitleID"] = "Пережитый штурм",
+		["RestorationModStaminaTitleID"] = "Выносливость",
+		["RestorationModStaminaThresholdTitleID"] = "Порог выносливости",
+		["RestorationModBagBitmapTitleID"] = "Сумка",
+		["RestorationModBagTextTitleID"] = "Текст сумок",
+		["RestorationModNoReturnTextTitleID"] = "Текст Точки невозврата",
+		["RestorationModHostagesTextTitleID"] = "Текст заложников",
+		["RestorationModHintTextTitleID"] = "Текст подсказок",
+		["RestorationModMaskOnTextTitleID"] = "Текст надевания маски",
+		["RestorationModDownsThreePlusTitleID"] = "Счетчик падений (при 3+ падений)",
+		["RestorationModDownsTwoTitleID"] = "Счетчик падений (при 2 падениях)",
+		["RestorationModDownsOneTitleID"] = "Счетчик падений (при 1 падении)",
+		["RestorationModDownsZeroTitleID"] = "Счетчик падений (при 0 падений)",
+		["RestorationModStopAllBotsTitleID"] = "Останавливать всех ботов",
+		["RestorationModStopAllBotsDescID"] = "Останавливать всех ботов, если удержана кнопка остановки бота.",
+		["RestorationModPONRTrackTitleID"] = "Музыка во время Точки невозврата",
+		["RestorationModPONRTrackDescID"] = "Изменяет музыку во время Точки невозврата в режиме Pro-Job.",
+		["RestorationModPONRTracksTitleID"] = "Музыка во время Точки невозврата",
+		["RestorationModPONRTracksDescID"] = "Выберите музыку, которая начнется во время Точки невозврата в режиме Pro-Job.",
+		["RestorationModMusicShuffleTitleID"] = "Перемешка музыки",
+		["RestorationModMusicShuffleDescID"] = "Музыка будет меняться после конца каждого штурма.",
+		["RestorationModOldEconomyTitleID"] = "Old Economy (Beta)",
+		["RestorationModOldEconomyDescID"] = "Enables the old economy from pre update 11.",
+		["RestorationModScaleTitleID"] = "Размер интерфейса",
+		["RestorationModScaleDescID"] = "Изменяет размер интерфейса. Может потребоваться перезапуск игры.",
+		["RestorationModSizeOnScreenTitleID"] = "Размер интерфейса на экране",
+		["RestorationModSizeOnScreenDescID"] = "Изменяет размер интерфейса на экране. Может потребоваться перезапуск игры.",
+		["RestorationModTeammateTitleID"] = "Панель команды из Альфы",
+		["RestorationModTeammateDescID"] = "Включает или выключает панель команды из альфа-версии игры, которая отображает статистику вас и вашей команды.",
+		["RestorationModHeistTimerTitleID"] = "Время ограбления из Альфы",
+		["RestorationModHeistTimerDescID"] = "Включает или выключает время (таймер) ограбления из альфа-версии игры.",
+		["RestorationModMaskOnTitleID"] = "Текст надевания маски из Альфы",
+		["RestorationModMaskOnDescID"] = "Включает или выключает текст надевания маски из альфа-версии игры.",
+		["RestorationModNameLabelsTitleID"] = "Ники игроков из Альфы",
+		["RestorationModNameLabelsDescID"] = "Включить или выключить ники игроков из альфа-версии игры.",
+		["RestorationModHintTitleID"] = "Панель подсказок из Альфы",
+		["RestorationModHintDescID"] = "Включить или выключит панель подсказок из альфа-версии игры.",
+		["RestorationModExtraOptionsButtonTitleID"] = "Дополнительные опции интерфейса",
+		["RestorationModExtraOptionsButtonDescID"] = "Еще больше опций!",
+		["RestorationModRealAmmoTitleID"] = "Действительный счетчик патронов",
+		["RestorationModRealAmmoDescID"] = "Счетчик патронов в запасе будет игнорировать патроны, которые уже заряжены.",
+		["RestorationModStealthOrigPosTitleID"] = "Стандартное расположение обнаружения",
+		["RestorationModStealthOrigPosDescID"] = "Полоска обнаружения будет в том же месте, что и в ванильной игре.",
+		["RestorationModLowerBagTitleID"] = "Понизить текст о подобранной сумке",
+		["RestorationModLowerBagDescID"] = "Текст, который появляется, если подобрать сумку, будет расположен ниже.",
+		["RestorationModAssaultStyleTitleID"] = "Стиль панели штурма",
+		["RestorationModAssaultStyleDescID"] = "Позволяет выбрать стиль панели штурма.",
+		["RestorationModCasingTickerTitleID"] = "Лента исследования из Альфы",
+		["RestorationModCasingTickerDescID"] = "Включить или выключить ленту режима исследования из альфа-версии игры (Требует включенную ленту из Альфы).",
+		["RestorationModCustodyTitleID"] = "Панель заключения под стражу из Альфы",
+		["RestorationModCustodyDescID"] = "Включить или выключить панель заключения под стражу из альфа-версии игры.",
+		["RestorationModCrimenetTitleID"] = "CRIMENET из Альфы",
+		["RestorationModCrimenetDescID"] = "Включает или выключает CRIMENET из альфа-версии игры.",
+		["RestorationModProfileTitleID"] = "Окно с профилями из Альфы",
+		["RestorationModProfileDescID"] = "Включить или выключить окно с профилями из альфа-версии игры.",
+		["RestorationModNewsfeedTitleID"] = "Лента новостей из Альфы",
+		["RestorationModNewsfeedDescID"] = "Включить или выключить ленту новостей из альфа-версии игры.",
+		["RestorationModUppercaseNamesTitleID"] = "Ники заглавными буквами",
+		["RestorationModUppercaseNamesDescID"] = "Включить или выключить отображение ников игроков заглавными буквами.",
+		["RestorationModPeerColorsTitleID"] = "Цвета товарищей из Альфы",
+		["RestorationModPeerColorsDescID"] = "Включить или выключить цвета товарищей из альфа-версии игры.",
+		["RestorationModPocoCrimenetAlignSortTitleID"] = "Подгонка и сортировка CRIMENET",
+		["RestorationModPocoCrimenetAlignSortDescID"] = "Подгоняет и сортирует CRIMENET по сложности.",
+		["RestorationModPocoCrimenetScaleTitleID"] = "Масштаб CRIMENET",
+		["RestorationModPocoCrimenetScaleDescID"] = "Позволяет менять масштаб CRIMENET.",
+		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
+		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",
+		["RestorationModVoiceIconTitleID"] = "Голосовой чат",
+		["RestorationModVoiceIconDescID"] = "Отображает иконку, когда игрок использует голосовой чат.",
+		["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",
+		["RestorationModNewsFeedStyleDescID"] = "Allows you to choose to show both newsfeed and newheists box or just the newsfeed.",
+		["alpha_assault"] = "Уголок",
+		["beta_assault"] = "Лента",
+		["show_both"] = "Default",
+		["show_classic_newsfeed"] = "Classic",
+
+		["RestorationModDodgeDisplayTitleID"] = "Цифра шкалы уворота",
+		["RestorationModDodgeDisplayDescID"] = "Максимальное число, которое *отображает* шкала уворота. Требует перезапуска.",
+		["dd_scale"] = "150 -Текущий уворот",
+		["dd_150"] = "150",
+		["dd_100"] = "100",
+		
+		--Бафф трекер
+		["RestorationModINFOHUDOptionsButtonTitleID"] = "Отображение иконок навыков (Buff Tracker)",
+		["RestorationModINFOHUDOptionsButtonDescID"] = "Отображает иконки навыков, которые активны в данный момент, в левом верхнем углу экрана. Не требует включенного Alpha UI.",
+		["RestorationModInfo_HudTitleID"] = "Включить иконки навыков",
+		["RestorationModInfo_HudDescID"] = "Включает или выключает отображение иконок навыков.",
+		["RestorationModInfo_SizeTitleID"] = "Размер иконок",
+		["RestorationModInfo_SizeDescID"] = "Регулирует размер отображаемых иконок навыков.",
+		["RestorationModInfo_CountTitleID"] = "Число рядов",
+		["RestorationModInfo_CountDescID"] = "Регулирует количество рядов иконок навыков, которые будут отображаться, прежде чем добавится новый столбик.",
+		["RestorationModInfo_single_shot_fast_reloadTitleID"] = "Агрессивная перезарядка",
+		["RestorationModInfo_single_shot_fast_reloadDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_ammo_efficiencyTitleID"] = "Эффективный расход",
+		["RestorationModInfo_ammo_efficiencyDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_bloodthirst_reload_speedTitleID"] = "Кровожадность",
+		["RestorationModInfo_bloodthirst_reload_speedDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_bullet_stormTitleID"] = "Свинцовый ливень",
+		["RestorationModInfo_bullet_stormDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_revive_damage_reductionTitleID"] = "Анальгин",
+		["RestorationModInfo_revive_damage_reductionDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_desperadoTitleID"] = "Меткий стрелок",
+		["RestorationModInfo_desperadoDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_grinderTitleID"] = "Гистамин (Нападающий)",
+		["RestorationModInfo_grinderDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_infiltratorTitleID"] = "Похититель жизней (Интервент)",
+		["RestorationModInfo_infiltratorDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_sociopathTitleID"] = "Tension и прочее. (Социопат)",
+		["RestorationModInfo_sociopathDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_body_expertiseTitleID"] = "Свинцовый ад",
+		["RestorationModInfo_body_expertiseDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_long_dis_reviveTitleID"] = "Вдохновление",
+		["RestorationModInfo_long_dis_reviveDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_messiahTitleID"] = "Мессия",
+		["RestorationModInfo_messiahDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_overkill_damage_multiplierTitleID"] = "Overkill",
+		["RestorationModInfo_overkill_damage_multiplierDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_revived_damage_reductionTitleID"] = "Колеса",
+		["RestorationModInfo_revived_damage_reductionDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_first_aid_damage_reductionTitleID"] = "Скорая помощь",
+		["RestorationModInfo_first_aid_damage_reductionDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_rogueTitleID"] = "Смертельный инстинкт (Шпион)",
+		["RestorationModInfo_rogueDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_increased_movement_speedTitleID"] = "Бегущий от смерти",
+		["RestorationModInfo_increased_movement_speedDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_headshot_fire_rate_multTitleID"] = "Крепкий хват",
+		["RestorationModInfo_headshot_fire_rate_multDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_trigger_happyTitleID"] = "Неудержимый стрелок",
+		["RestorationModInfo_trigger_happyDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_dmg_multiplier_outnumberedTitleID"] = "Давление",
+		["RestorationModInfo_dmg_multiplier_outnumberedDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_unseen_strikeTitleID"] = "Удар исподтишка",
+		["RestorationModInfo_unseen_strikeDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_survive_one_hitTitleID"] = "Татуировка Они (Якудза)",
+		["RestorationModInfo_survive_one_hitDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_doctor_bag_health_regenTitleID"] = "Лечение от Медицинских сумок",
+		["RestorationModInfo_doctor_bag_health_regenDescID"] = "Включает или выключает отображение лечения от Медицинских сумок.",
+			
+		-- Время суток
+		["RestorationModEnv_BanksTitleID"] = "Ограбление банка",
+		["RestorationModEnv_BanksDescID"] = "Выбрать погоду для ограбления банка.",
+		["RestorationModEnv_RVD1TitleID"] = "Бешеные псы - день 1",
+		["RestorationModEnv_RVD1DescID"] = "Выбрать погоду для ограбления Бешеные псы (день 1).",
+		["RestorationModEnv_RVD2TitleID"] = "Бешеные псы - день 2",
+		["RestorationModEnv_RVD2DescID"] = "Выбрать погоду для ограбления Бешеные псы (день 2).",
+		["RestorationModEnv_FSD1TitleID"] = "Поджигатель - день 1",
+		["RestorationModEnv_FSD1DescID"] = "Выбрать погоду для ограбления Поджигатель (день 1).",
+		["RestorationModEnv_PBR2TitleID"] = "Рождение небес",
+		["RestorationModEnv_PBR2DescID"] = "Выбрать погоду для ограбления Рождение небес.",
+		["RestorationModEnv_CJ2TitleID"] = "Бомба: Доки",
+		["RestorationModEnv_CJ2DescID"] = "Выбрать погоду для ограбления Бомба: Доки.",
+		["RestorationModEnv_UnderPassTitleID"] = "Транспорт: Проезд",
+		["RestorationModEnv_UnderPassDescID"] = "Выбрать погоду для ограбления Транспорт: Проезд.",
+		["RestorationModEnv_MallCrasherTitleID"] = "Крушитель",
+		["RestorationModEnv_MallCrasherDescID"] = "Выбрать погоду для ограбления Крушитель.",
+		["RestorationModEnv_Mia_1TitleID"] = "Г.Л.Майами - день 1",
+		["RestorationModEnv_Mia_1DescID"] = "Выбрать погоду для ограбления Горячая линия Майами (день 1).",
+		["RestorationModEnv_FSD3TitleID"] = "Поджигатель - день 3",
+		["RestorationModEnv_FSD3DescID"] = "Выбрать погоду для ограбления Поджигатель (день 3).",
+		["RestorationModEnv_WDD1NTitleID"] = "Сторож. псы 1 (Ночь)",
+		["RestorationModEnv_WDD1NDescID"] = "Выбрать погоду для ограбления Сторожевые псы (день 1 - ночной).",
+		["RestorationModEnv_WDD1DTitleID"] = "Сторож. псы 1 (День)",
+		["RestorationModEnv_WDD1DDescID"] = "Выбрать погоду для ограбления Сторожевые псы (день 1 - дневной).",
+		["RestorationModEnv_WDD2DTitleID"] = "Сторож. псы 1 (День))",
+		["RestorationModEnv_WDD2DDescID"] = "Выбрать погоду для ограбления Сторожевые псы (день  - дневной).",
+		["RestorationModEnv_Alex3TitleID"] = "Крысы - день 3",
+		["RestorationModEnv_Alex3DescID"] = "Выбрать погоду для ограбления Крысы (день 3).",
+		["RestorationModEnv_BigTitleID"] = "Большой банк",
+		["RestorationModEnv_BigDescID"] = "Выбрать погоду для ограбления Большой банк.",
+		["RestorationModEnv_FSTitleID"] = "Четыре магазина",
+		["RestorationModEnv_FSDescID"] = "Выбрать погоду для ограбления Четыре магазина.",
+		["RestorationModEnv_UkraTitleID"] = "Украинское дело",
+		["RestorationModEnv_UkraDescID"] = "Выбрать погоду для ограбления Украинское дело.",
+		["RestorationModEnv_KosugiTitleID"] = "Теневой рейд",
+		["RestorationModEnv_KosugiDescID"] = "Выбрать погоду для ограбления Теневой рейд.",
+		["RestorationModEnv_PetaTitleID"] = "Симулятор козы - день 1",
+		["RestorationModEnv_PetaDescID"] = "Выбрать погоду для ограбления Симулятор козы (день 1).",
+		["RestorationModEnv_FRIENDTitleID"] = "Особняк",
+		["RestorationModEnv_FRIENDDescID"] = "Выбрать погоду для ограбления Особняк Лица со шрамом.",
+		
+		["default"] = "Стандартная",
+		["random"] = "Случайная",
+		["mellowday"] = "Умеренный день",
+		["xbox_bank"] = "E3 2013",
+		["bank_day"] = "Улучшенная стандартная",
+		["env_trailer_bank"] = "Банк - как в трейлере",
+		["rvd1_alt1"] = "Ночная жизнь",
+		["rvd1_alt2"] = "Розоватый туман",
+		["rvd2_alt"] = "Пасмурная",
+		["fsd1_eve"] = "Вечерняя",
+		["bos_alt"] = "Розовое небо",
+		["dockyard_alt"] = "Ночная смена",
+		["underpass_foggyday"] = "Туманный день",
+		["mall_alt"] = "Послеобеденный шоппинг",
+		["hlm_morn"] = "Утренний звонок",
+		["funny_and_epic_synthwave_very_eighties"] = "Ретро",
+		["brightnight"] = "Белая ночь",
+		["docks"] = "Порт",
+		["bank_green"] = "Зеленоватый из беты",
+		["cloudy_day"] = "Облачный день",
+		["shadowraid_day"] = "Дневной рейд",
+		["shadowraiud_darker"] = "Мрачный рейд",
+		["friend_pink"] = "Розовый закат",
+		["friend_night"] = "Ночь в Майами",
+		["off"] = "Выключить",
+	})
+end)
+
+-- Маски, костюмы и прочие косметики
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Blackmarket", function(loc)
+	
+	LocalizationManager:add_localized_strings({
+	
+	["bm_msk_shatter_true"] = "Шаттер",
+	["bm_msk_shatter_true_desc"] = "Легендарная маска, о которой говорят вполголоса.\n\nРазумеется, это просто дубликат.\n\nВ настоящей маске есть кое-что особенное, но думаю, вас устроит и копия.\n\nФеникс символизирует перерождение того, кто не может быть убит. Попробуй его уничтожить, и он лишь нанесет огненный контр-удар.",
+	["menu_l_global_value_veritas"] = "Restoration Mod",
+	["menu_l_global_value_veritas_desc"] = "Это предмет из Restoration Mod!",
+	
+	["bm_msk_canada"] = "Адский хоккей",
+		["bm_msk_canada_desc"] = "Ничего не оставляйте позади - даже когда становится жарко, вы сражаетесь за что хотите, когда хотите (даже если это термобарическая бомба).",
+		["bm_msk_jsr"] = "Миссис Граффити",
+		["bm_msk_jsr_desc"] = "Создана настоящим художником. Стирать граффити - все равно, что сжигать книги, не так ли?\n\nИскусство это искусство - его нужно уважать.",
+		["bm_msk_jsrf"] = "Mистер Граффити",
+		["bm_msk_jsrf_desc"] = "За каждым граффити стоит история. Быть художником в безликом городе может быть болезненно.\n\nГраффити - словно книга. Их нужно уметь читать.",
+		["bm_msk_courier_stash"] = "Сумка для добычи",
+		["bm_msk_courier_stash_desc"] = "Если нужно взять несколько лишних сотенных купюр, а в карманах уже не осталось места, эта маска вполне сойдет.",
+
+		["bm_msk_female_mask"] = "Стандартная маска (женская)",
+		["bm_msk_female_mask_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.",
+		["bm_msk_female_mask_blood"] = "Восстановленная маска (женская)",
+		["bm_msk_female_mask_blood_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.\n\nЭта маска была обнаружена после неудачного ограбления склада OMNIA, среди кровавого побоища.\n\nПоследним посланием банды, прежде чем они пропали навсегда, было ''ERIT PREMIUM SANGUINE SANCTUM''.",
+		["bm_msk_female_mask_clown"] = "Рози",
+		["bm_msk_female_mask_clown_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.\n\nЭту маску носила грабитель, известная как Рози, хотя теперь у нее новая маска.\n\nНа видеозаписи с ограбления было видно, как она обезвреживает целый отряд спецназа совершенно без оружия.",
+		["bm_msk_male_mask"] = "Стандартная маска (мужская)",
+		["bm_msk_male_mask_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.",
+		["bm_msk_male_mask_blood"] = "Восстановленная маска (мужская)",
+		["bm_msk_male_mask_blood_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.\n\nЭта маска была обнаружена после неудачного ограбления склада OMNIA, среди кровавого побоища.\n\nПоследним посланием банды, прежде чем они пропали навсегда, было ''ERIT PREMIUM SANGUINE SANCTUM''.",
+		["bm_msk_male_mask_clown"] = "Кросс",
+		["bm_msk_male_mask_clown_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.\n\nЭту маску носил грабитель, известный как Кросс, хотя теперь у него новая маска.\n\nКросс - талантливый стрелок, и однажды вывел из строя четыре бронегрузовика за пять секунд.",
+
+		["bm_msk_twister_mask"] = "Человек-загадка",
+		["bm_msk_twister_mask_desc"] = "Кто скрывается за этой маской - загадка.\n\nМожет, это какой-нибудь незнакомец, а может - кто-нибудь, кого вы знали все это время.",
+		["bm_msk_voodoo_mask"] = "Темная магия",
+		["bm_msk_voodoo_mask_desc"] = "Эта маска была найдена в джунглях после бомбардировки - она смогла вынести последствия разрушений, и теперь считается предвестником беды.\n\nОна найдет вас, когда вы будете нуждаться в ней больше всего и поможет пережить беду.\n\nВопрос лишь в том, какой ценой.",
+
+		["bm_msk_f1"] = "Шлем X1",
+		["bm_msk_f1_desc"] = "Не забывайте о защите, когда будете нестись по шоссе или проскальзывать через пробки.\n\nЭтот шлем защитит от жесткого падения, но явно не от пуль.",
+		["bm_msk_f1_b"] = "Шлем X1 (Чистый)",
+		["bm_msk_f1_b_desc"] = "Не забывайте о защите, когда будете нестись по шоссе или проскальзывать через пробки.\n\nЭтот шлем защитит от жесткого падения, но явно не от пуль.\n\nЭто дубликат шлема, без брендовых стикеров, который был найден в гараже с дорогими машинами.\n\nДержите этот шлем под рукой, и может быть однажды, вы поедете на одной из таких.",
+		["bm_msk_sweettooth"] = "Сладкоежка",
+		["bm_msk_sweettooth_desc"] = "Сладкоежка (настоящее имя - Маркус 'Нидлс' Кейн) - персонаж из серии игр Twisted Metal. Сладкоежка известен как клоун-убийца, который водит боевой фургончик с мороженым.\n\nГоворят, однажды он сбежал из психиатрической лечебницы. Теперь он ведет криминальную жизнь.",
+
+		["bm_msk_wolf_stone"] = "Вульф из Stonecold",
+		["bm_msk_wolf_stone_desc"] = "Оригинальная маска Вульфа, которую он носил, когда впервые сошел с ума и начал воплощать преступления из своих любимых игр. Считалось, что эта маска была утеряна во время ограбления, вдохновленного игрой ‘Hyper Heisting’.\n\nВо время ранних ограблений банды, маска нашлась и была доставлена в убежище одним из сообщников Бейна.\n\nОригинальный узор маски со временем потускнел, совсем как психическая стабильность Вульфа.",
+
+		["bm_msk_thespian"] = "Thespian",
+		["bm_msk_thespian_desc"] = "Thespian is a superhuman solider of fortune. In the future, space marines like Thespian protect the world of mankind and its space colonies from forces of evil\n\nHis helmet is a popular gift in the criminal underworld and is given to thieves, thugs and career criminals who show their loyalty and patience to the syndicate.",
+
+		["bm_msk_dallas_aged"] = "Древний Даллас",
+		["bm_msk_dallas_aged_desc"] = "Вы с бандой обнаружили эти маски в странной египетской шкатулке, найденной в Скале Генри. Сама шкатулка оказалась утеряна при перевозке, но ее содержимое было передано вам.\n\nВ этих масках есть что-то необычное. Нет информации, откуда они могли появиться.\n\nДжекел считает, что они могли быть сделаны в качестве практичной шутки, чтобы напугать банду.\n\nОднако вы замечаете, что эти маски выглядят очень, очень старыми.",
+		["bm_msk_chains_aged"] = "Древний Чейнс",
+		["bm_msk_chains_aged_desc"] = "Вы с бандой обнаружили эти маски в странной египетской шкатулке, найденной в Скале Генри. Сама шкатулка оказалась утеряна при перевозке, но ее содержимое было передано вам.\n\nВ этих масках есть что-то необычное. Нет информации, откуда они могли появиться.\n\nДжекел считает, что они могли быть сделаны в качестве практичной шутки, чтобы напугать банду.\n\nОднако вы замечаете, что эти маски выглядят очень, очень старыми.",
+		["bm_msk_hoxton_aged"] = "Древний Хокстон",
+		["bm_msk_hoxton_aged_desc"] = "Вы с бандой обнаружили эти маски в странной египетской шкатулке, найденной в Скале Генри. Сама шкатулка оказалась утеряна при перевозке, но ее содержимое было передано вам.\n\nВ этих масках есть что-то необычное. Нет информации, откуда они могли появиться.\n\nДжекел считает, что они могли быть сделаны в качестве практичной шутки, чтобы напугать банду.\n\nОднако вы замечаете, что эти маски выглядят очень, очень старыми.",
+		["bm_msk_wolf_aged"] = "Древний Вульф",
+		["bm_msk_wolf_aged_desc"] = "Вы с бандой обнаружили эти маски в странной египетской шкатулке, найденной в Скале Генри. Сама шкатулка оказалась утеряна при перевозке, но ее содержимое было передано вам.\n\nВ этих масках есть что-то необычное. Нет информации, откуда они могли появиться.\n\nДжекел считает, что они могли быть сделаны в качестве практичной шутки, чтобы напугать банду.\n\nОднако вы замечаете, что эти маски выглядят очень, очень старыми.",
+
+		["bm_msk_beef_dallas"] = "Мясной Даллас",
+		["bm_msk_beef_dallas_desc"] = "Банда использовала эти маски во время ограбления 'Скотобойня'.\n\nДаллас решил оставить дизайн своей полюбившейся маски.",
+		["bm_msk_beef_chains"] = "Мясной Чейнс",
+		["bm_msk_beef_chains_desc"] = "Банда использовала эти маски во время ограбления 'Скотобойня'.\n\nЧейнс, будучи силовиком, захотел в качестве дизайна устрашающее животное. Что может быть страшнее, чем чертов динозавр?!",
+		["bm_msk_beef_hoxton"] = "Мясной Хокстон",
+		["bm_msk_beef_hoxton_desc"] = "Банда использовала эти маски во время ограбления 'Скотобойня'.\n\nХокстон оставил простой список пожеланий для своей маски:\n- Защищающая!\n- Эффективная!\n- Стильная!\n\nТак и получилась эта маска.",
+		["bm_msk_beef_wolf"] = "Мясной Вульф",
+		["bm_msk_beef_wolf_desc"] = "Банда использовала эти маски во время ограбления 'Скотобойня'.\n\nДизайн Вульфа был вдохновлен его любимым персонажем, которого он придумал, когда еще разрабатывал игры.",
+
+		["bm_msk_vyse_dallas"] = "Источник",
+		["bm_msk_vyse_dallas_desc"] = "Vyse сразился лицом-к-лицу с самым дьявольским из дьяволов. Vyse выжил, а из костей дьявола сделали эту маску.",
+		["bm_msk_vyse_chains"] = "Детская игра",
+		["bm_msk_vyse_chains_desc"] = "Хоть Vyse и украл больше денег и золота, чем поместится в Форт-Нокс, у него хватает сердца, что бы поделиться частью добычи с больными детьми.\n\nОднажды, Бейн посетил этих детей - эта маска была их благодарностью для Vyse.",
+		["bm_msk_vyse_hoxton"] = "Три балбеса",
+		["bm_msk_vyse_hoxton_desc"] = "Говорят, если провалишься - нужно перетерпеть боль и попытаться снова. Vyse не был согласен. Каждый раз, когда он проигрывал, он шел вперед, не смотря ни на что. Даже Ларри, Керли и Мо не выдержали бы такого.",
+		["bm_msk_vyse_wolf"] = "Беар Гриллс",
+		["bm_msk_vyse_wolf_desc"] = "Vyse однажды вызвал Беара Гриллса на поединок по распитию урины... Vyse победил, и Мистер Гриллс использовал свои навыки выживания при создании этой маски.",
+
+		["bm_msk_secret_old_hoxton"] = "Секретный Хокстон",
+		["bm_msk_secret_old_hoxton_desc"] = "Хокстон покинул родной край ради больших денег. Когда Бейн рассказал ему о Секрете, ему понравилась идея искать древние артефакты - ведь они стоят дорого. Хокстону было совсем неважно, существует ли некая древняя сила или нет.",
+
+		["bm_msk_secret_clover"] = "Секретная Кловер",
+		["bm_msk_secret_clover_desc"] = "Когда Бейн рассказал Кловер о Секрете, она отнеслась скептически - ей всегда казалось, что легенды Бейна о древних артефактах с мифической силой были сильно преувеличены. Но когда она лично увидела сбор трех шкатулок, ни о каких сомнениях больше не было и речи.",
+
+		["bm_msk_secret_dragan"] = "Секретный Драган",
+		["bm_msk_secret_dragan_desc"] = "Как бывший полицейский, Драган всегда хорошо умел искать улики, и когда Бейн показал ему свое расследование Секрета, он был готов к охоте за древними артефактами.",
+
+		["bm_msk_secret_bonnie"] = "Секретная Бонни",
+		["bm_msk_secret_bonnie_desc"] = "Бонни, услышав от Бейна о секрете, сделала большой глоток своего любимого виски и закричала о том, что готова 'набить рожу Катару'.",
+
+		["bm_msk_secret_sydney"] = "Секретная Сидни",
+		["bm_msk_secret_sydney_desc"] = "Когда Сидни услышала о секрете от Бейна, она не поверила в легенды о древней силе. Тем не менее, возможность сразиться с неизвестной, но крайне опасной организацией достаточно заинтересовала ее.",
+
+		["bm_msk_secret_richard"] = "Секретный Ричард",
+		["bm_msk_secret_richard_desc"] = "По криминальному миру ходили слухи о киллере, которым вдохновлялся Джекет; киллер, который был ликвидирован неизвестной организацией. Когда Джекет услышал о секрете от Бейна, он вернулся с маской, похожей на ту, что носил его прародитель.",
+
+		["bm_all_seeing"] = "Всевидящий якорь",
+		["bm_all_seeing_desc"] = "Ужасающее видение, кошмарное зрелище.\n\nВысшие силы увидели вас и решили наградить.",
+
+		["bm_msk_classic_helmet"] = "Классический силовик",
+		["bm_msk_classic_helmet_desc"] = "Подарок от бывшего спецназовца. Прежде чем уйти на пенсию, он вычислил Джекела... И подарил ему единственную экипировку, которая у него осталась, чтобы помочь работе Джекела.\n\nЭто странное событие было не без причины: Он увидел своими глазами то, что OMNIA держала в тайне. Но он не стал копать эти тайны и вскоре покинул спецназ навсегда.\n\nДжекел прислал эти шлемы вам, в качестве награды за вашу помощь.",
+
+		["bm_cube"] = "devmask.model",
+		["bm_cube_desc"] = "Push the placeholder, we'll get around to it.",
+
+		["bm_j4"] = "J-4",
+		["bm_j4_desc"] = "Маска Джекела. Точнее, ее копия.\n\nНастоящая маска слишком важна для Джекела, по слухам, в ней полно чувствительной электронники.\n\nВ этой копии система дисплея очень простая и служит просто чтобы быть похожей на оригинал.\n\nПодарок за ваши старания.",
+
+
+		["bm_msk_finger"] = "Наглец",
+		["bm_msk_finger_desc"] = "Наглец - мифическое существо, которое существовало в мире давным-давно. Существо гонялось и вредило обычным деревенским и городским жителям, охотясь на них различными способами. Наглецу нравилось это делать, и он был угрозой покою, пока он не был обнаружен и уничтожен людьми Короля.",
+
+		["bm_msk_instinct"] = "Интуиция",
+		["bm_msk_instinct_desc"] = "Эта маска принадлежала мифическому войну из далеких земель. Он путешествовал по всему миру, полагаясь на интуицию, и охотился на злые силы. Он прошел через многие подземелья и победил тысячи злых существ на своем пути. В конце концов, он ушел на покой, зная, что его дело продолжат будущие поколения.",
+
+		["bm_msk_unforsaken"] = "Неупокоенный",
+		["bm_msk_unforsaken_desc"] = "Эта легендарная маска - знак благодарности нашему сообществу за упорство и поддержку. От нас, команды OVERKILL - мы благодарны вам.\n\nЧерез огонь и медные трубы, пусть шлемы продолжают лететь.",
+
+		["bm_msk_chains_halloween"] = "Разбитый щит",
+		["bm_msk_chains_halloween_desc"] = "Будучи наемником, приходится видеть большое количество боли и смерти. Даже если вам кажется что вы бессмертны и бесстрашны... Иногда, плохие воспоминания добираются до вас.\n\nВ светлый, снежный и прекрасный октябрьский день 2008-го года, Чейнс отсыпался. Недавно выполнив контракт на убийство от Murkywater, он получил деньги и неплохую комнату в отеле, где и спал.\n\nВпервые за много лет, ему приснился кошмар. Он не помнит его во всех подробностях, но он проснулся от паралича, и образ, напоминающий скелет, стоял над ним, пока он не мог пошевелиться.\n\nКаждый раз, когда он выполнял грязную работу, его последующие ночи были бессонными и ужасными.\n\nВ конце концов, ему пришлось сказать 'Хватит.', покинуть свою работу наемником и обратиться к психотерапевту. Ему прописали лекарства. На год жизнь стала хорошей...\n\nРовно через год, 31 октября 2009-го, компания Murkywater решила, что уволившийся человек собирается раскрыть секреты организации. Для них это непозволительно.\n\nЧейнс бросился в криминальную жизнь, чтобы спасти себя, и снова стал солдатом.\n\nНо в этот раз все было по-другому. Кошмары и паралич не вернулись. Он не собирался приносить страдания другим людям.\n\nВ этот раз, ему нужно было защитить себя.",
+
+		["bm_msk_dallas_halloween"] = "Отражение монстра",
+		["bm_msk_dallas_halloween_desc"] = "Тратя годы на выдумывание несуществующих личностей и историй, легко потерять настоящего себя.\n\nТы начинаешь перепрыгивать от личности к личности, подбирать черты своих друзей, любовниц и приятелей. Иногда они сливаются вместе, и ты начинаешь чувствовать себя невнятной смесью.\n\nДаллас проснулся октябрьским утром и взглянул в зеркало - его волосы были окрашены в дурацкий блондинистый цвет, а борода неровно побрита. На нем был безвкусный костюм, покрытый потом после жутких кошмаров. Его голова болела после выходных, проведенных на дне бутылки.\n\nВзглянул на себя, он подумал, что больше похож на монстра Франкенштейна, чем на человека: Просто сборные части, которые достаточно убедительны, чтобы презентовать себя в криминальной карьере.\n\nЭто утро было переломным моментом, но Далласу до сих пор иногда кажется, что не все его черты характера действительно принадлежат ему.",
+
+		["bm_msk_hoxton_halloween"] = "Хеллоуинский сон",
+		["bm_msk_hoxton_halloween_desc"] = "Одним из хеллоуинских воспоминаний Хокстона было посещение Нью-Йорка с дальними родственниками.\n\nЕму никогда не нравились конфеты, но он обожал тыквенный пирог, который подавали на вечеринке его родственника.\n\nКогда он вышел прогуляться с вечеринки, он увидел большую дверь хранилища, в которое завозили различные богатства.\n\nС тех пор он загорелся идеей ограблений во время праздников.",
+
+		["bm_msk_wolf_halloween"] = "Плач дьявола",
+		["bm_msk_wolf_halloween_desc"] = "Холодным октябрьским вечером 2010-го, Вульф до сих пор пытался выбраться из финансового кризиса после того, как его компания закрылась.\n\nОн лежал в гостинице, в полном одиночествеЮ и думал о своей семье, о том, что он их подвел и может их больше не увидеть - отрезанный от них целым океаном.\n\nОн потратил последние сбережения на поездку в США, в попытке накопить достаточно денег, чтобы начать сначала в новом доме, но он провалился.\n\nНесколько недель спустя, бродя по домам друзей, гостиницам и убежищам, ему позвонила его любимая, впервые за долгое время.\n\nОтношениям конец. 'Не вижу, как это может хорошо закончиться.'\n\nМожет, это и был повод начать сначала.\n\nМожет, настало время попробовать новую карьеру.",
+--Player Outfits--
+		--Default Suit String
+		["bm_suit_none_desc"] = "Это стандартный костюм грабителя с выбранной броней. Может измениться с костюма-двойки в зависимости от ограбления!",
+		
+		["bm_suit_two_piece_sc"] = "Костюм-двойка",
+		["bm_suit_two_piece_desc_sc"] = "Классический подход к ограблениям. Когда кричишь 'Упали вниз!', почему бы не выглядеть стильно?\n\nС этой опцией персонаж будет носить свой стандартный костюм вне зависимости от ограбления.",
+
+		["bm_suit_loud_suit"] = "Боевой жилет",
+		["bm_suit_loud_suit_desc"] = "Костюм для тех, кто не прочь вступить в схватку. Он создан для удобства и в нем легко передвигаться. Отличный выбор для резких набегов на местные ювелирные магазины или секретные базы наемников.",
+
+		["bm_suit_jackal_track"] = "Особый атрибут",
+		["bm_suit_jackal_track_desc"] = "Костюм, сделанный по заказу, с логотипом Джекела и вариацией логотипа ВЕРИТАС.\n\nБадна получила их в немаркированных коробках. Джекел утверждает, что не посылал их, и никогда не видел их раньше.\nНеизвестно, откуда они взялись.\n\n\n\n...Внутри коробок была лишь записка:\n\n''##В ЗНАК БЛАГОДАРНОСТИ, ДЛЯ ТЕХ, КТО ВЕРЕН ДЕЛУ.\nXOXO\n--S.N.##''\n\n",
+
+		["bm_suit_sunny"] = "Утренний грабитель",
+		["bm_suit_sunny_desc"] = "Иногда хочется просто закатать рукава и немножко пограбить.",
+
+		["bm_suit_pool"] = "Bodhi's Pool Repair Uniform",
+		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",
+
+		["bm_suit_prison"] = "Тюремный костюм",
+		["bm_suit_prison_desc"] = "Вас забрали под стражу!",
+
+		["bm_suit_var_jumpsuit_flecktarn"] = "Флектарн",
+		["bm_suit_var_jumpsuit_flecktarn_desc"] = "Классический камуфляж, использующийся в двух европейских странах. Известен тем, что позволяет легко слиться с лесным окружением. Точно не будет работать в городе, но в сельской местности может неплохо обмануть зрение.",
+
+		["bm_suit_var_jumpsuit_flatgreen"] = "Вязко-зеленый",
+		["bm_suit_var_jumpsuit_flatgreen_desc"] = "Этот костюм, по слухам, принадлежал одному из трех членов банды психопатов и был найден в уничтоженном мусоровозе, который использовался в кровавом ограблении бронетранспорта GenSec, в ходе которого несколько членов SWAT были убиты и многие ранены. Личности этих бандитов до сих пор остаются в тайне, так как большинство улик было уничтожено вместе с мусоровозом - остался только этот костюм.",
+
+		-- Color variations - Combat Harness
+			["bm_suit_var_loud_suit_default"] = "Профессиональный черный",
+			["bm_suit_var_loud_suit_default_desc"] = "Костюм-двойка стал частью бренда банды PAYDAY. Модный, стильный, позволяет легко затеряться в толпе - настоящая икона. 'Подождите ка! В какой, блядь, толпе?', спросил Чейнс, пока банда направлялась в очередной раз грабить склад Murkywater. И почему он не додумался раньше...",
+
+			["bm_suit_var_loud_suit_white"] = "Морозный белый",
+			["bm_suit_var_loud_suit_white_desc"] = "Этот костюм предоставил Джимми для 'Точки кипения'. Быстро выяснилось, что они не подходят для жестких морозов. А сам Джимми вообще предпочел остаться в своем рванном костюме-двойке.",
+
+			["bm_suit_var_loud_suit_red"] = "Неясный красный",
+			["bm_suit_var_loud_suit_red_desc"] = "Красный - интересный цвет на поле боя. Либо это медик, который пришел спасать товарищей, либо самый опасный ублюдок из всех. Тебе решать, кем ты будешь.",
+
+			["bm_suit_var_loud_suit_green"] = "Ядовитый зеленый",
+			["bm_suit_var_loud_suit_green_desc"] = "Хватит унижений от Гренадера. Джемма МакШай предоставила вам целый арсенал ядовитого оружия - теперь время показать, кто здесь на самом деле травит насекомых.",
+
+			["bm_suit_var_loud_suit_blue"] = "Полицейский синий",
+			["bm_suit_var_loud_suit_blue_desc"] = "А почему копы не используют УКТЖ?",
+
+			["bm_suit_var_loud_suit_purple"] = "Модный фиолетовый",
+			["bm_suit_var_loud_suit_purple_desc"] = "Спрячьте этот костюм под свой УКТЖ, чтобы добавить нотку моды в вашу тактическую чушь.",
+
+			["bm_suit_var_loud_suit_brown"] = "Загородный коричневый",
+			["bm_suit_var_loud_suit_brown_desc"] = "Хьюстон бы хотел остаться в городских джунглях, где ему комфортнее всего. Но увы, за городом слишком много прибыльных для банды дел.",
+
+			["bm_suit_var_loud_suit_gorkagreen"] = "Тактический лесной",
+			["bm_suit_var_loud_suit_gorkagreen_desc"] = "Хорошо маскирует в лесу, или среди всех украденных денег.",
+
+			["bm_suit_var_loud_suit_gorkaearth"] = "Тактический наемник",
+			["bm_suit_var_loud_suit_gorkaearth_desc"] = "Да сколько униформ производит Murkywater? Можно уже открывать собственную линию одежды.",
+
+			["bm_suit_var_loud_suit_gorkagrey"] = "Тактический городской",
+			["bm_suit_var_loud_suit_gorkagrey_desc"] = "Какой смысл надевать костюм-двойку, если все уже знают ваше лицо?",
+
+			["bm_suit_var_loud_suit_gorkapurple"] = "Тактический фиолетовый",
+			["bm_suit_var_loud_suit_gorkapurple_desc"] = "Никогда не знаешь, когда придется грабить в фиолетовых джунглях.",
+
+			["bm_suit_var_loud_suit_gorkasea"] = "Тактический морской",
+			["bm_suit_var_loud_suit_gorkasea_desc"] = "Вульф раздобыл их в 2011-ом, когда Бейн планировал ограбление яхты. Кто же знал, что этим костюмам придется собирать пыль почти шесть лет.",
+			-- Color variations - Sunny Side
+			["bm_suit_var_suit_sunny_default"] = "Повседневные дела",
+			["bm_suit_var_suit_sunny_default_desc"] = "Будь героем боевиков 90-х, которым ты всегда хотел стать.",
+
+			["bm_suit_var_suit_sunny_skull"] = "Смертоносные дела",
+			["bm_suit_var_suit_sunny_skull_desc"] = "Этот символ подарил Скуллдозеру его страшное имя. Покажи, что для тебя он ничего не значит, сделав его просто украшением для одежды.",
+
+			["bm_suit_var_suit_sunny_red"] = "Кровавые дела",
+			["bm_suit_var_suit_sunny_red_desc"] = "Привязанный к стулу Клокер, Алабамская бритва, 'Troubles Always Inbound' по радио... Эта рубашка не останется чистой надолго.",
+
+			["bm_suit_var_suit_sunny_blue"] = "Цифровые дела",
+			["bm_suit_var_suit_sunny_blue_desc"] = "Хакеры - волшебники 21-го века, которые могут вытворять практически все что угодно... Но не останавливать пули. Для этого есть броня. Так что не будь слишком самоуверенным и носи защиту.",
+
+			["bm_suit_var_suit_sunny_green"] = "Жадные дела",
+			["bm_suit_var_suit_sunny_green_desc"] = "Вне зависимости от риска, ты уносишь всю добычу с любого ограбления. Дело даже не в деньгах: вычищенное хранилище - это твоя визитная карточка.",
+
+			["bm_suit_var_suit_sunny_yellow"] = "Солнечные дела",
+			["bm_suit_var_suit_sunny_yellow_desc"] = "Отличный костюм для романтичных поездок под солнцем.\nПод аккомпанемент полицейских сирен, разумеется.",
+
+			["bm_suit_var_suit_sunny_pink"] = "Гладкие дела",
+			["bm_suit_var_suit_sunny_pink_desc"] = "Мистеру Розовому повезло, что в банде Кабота нет цветного дресс-кода.",
+
+			["bm_suit_var_suit_sunny_hawaii_black"] = "Отпуск в Майами",
+			["bm_suit_var_suit_sunny_hawaii_black_desc"] = "Вульф купил эту стильную рубашку, когда узнал, что Дантист готовит работу под кодовым названием 'Горячая линия Майами'. Кто же знал, что они не поедут в Майами?",
+
+			["bm_suit_var_suit_sunny_hawaii_blue"] = "Отпуск в видеоиграх",
+			["bm_suit_var_suit_sunny_hawaii_blue_desc"] = "Джой относится к типу людей, которые уезжают в отпуск далеко-далеко чтобы просто играть там в видеоигры. 'Ну что за поколение', подумал Даллас, когда ему не удалось увлечь ее более консервативными развлечениями, такими как игрой в бильярд, наслаждением видами моря и распитием огромного количества скотча.",
+
+			["bm_suit_var_suit_sunny_hawaii_cyan"] = "Отпуск в бассейне",
+			["bm_suit_var_suit_sunny_hawaii_cyan_desc"] = "Сидни отличный пловец, и всегда хотела бассейн в убежище. Однако, Альдстоуну и так хватает хлопот, да и плавание - не самое любимое развлечение банды после дела на Мосте Грин.",
+
+			["bm_suit_var_suit_sunny_hawaii_green"] = "Отпуск в притоне",
+			["bm_suit_var_suit_sunny_hawaii_green_desc"] = "Влад отлично проводил время в Мексике. Новые земли - это новые возможности, и он расширял свой бизнес, пока однажды одну из его точек не атаковали. Федеральной полиции настучал Булук, который вскоре станет врагом Влада номер один. К счастью, банда PAYDAY всегда под рукой.",
+
+			["bm_suit_var_suit_sunny_hawaii_orange"] = "Отпуск в оффшорах",
+			["bm_suit_var_suit_sunny_hawaii_orange_desc"] = "Вот и все, вы справились. Белый дом ограблен, все злодеи побеждены, а ваш оффшор потрачен на крупную вечеринку. И куда двигаться теперь?\nЛадно, еще парочка ограблений банка не повредит.",
+
+			["bm_suit_var_suit_sunny_hawaii_pink"] = "Отпуск на танцполе",
+			["bm_suit_var_suit_sunny_hawaii_pink_desc"] = "Чейнс нечасто уходит в отпуск, но делает это с размахом. В 2016-ом, видео с его зажигательным танцем утекло в сеть. Ему пришлось просить Бейна стереть его оттуда.",
+
+			["bm_suit_var_suit_sunny_hawaii_red"] = "Отпуск в архипелаге",
+			["bm_suit_var_suit_sunny_hawaii_red_desc"] = "Джимми любит рассказывать, как его далекий отпуск прервала армия генно-модифицированных супер-солдат. Звучит как очередной кокаиновый бред, но после ограбления АКАНа... Кто знает?",
+
+			["bm_suit_var_suit_sunny_payne"] = "Отпуск в нуаре",
+			["bm_suit_var_suit_sunny_payne_desc"] = "Во время отпуска в Сан-Пауле, Вульф захотел купить эту рубашку, но получил ее бесплатно в знак благодарности за то что оказал отличную службу городу. \nВульф удивился, ведь он никогда не был там раньше.",
+
+			["bm_suit_var_suit_sunny_vice"] = "Отпуск в пороках",
+			["bm_suit_var_suit_sunny_vice_desc"] = "Сангреса нельзя заставить носить ничего, кроме ярких рубашек. Пока остальные гении преступного мира собираются в деловых костюмах, Сангрес врывается в потрепанной рубашке, которую он нашел на гаражной распродаже в городе порока. Выглядит так, будто ей уже больше сорока лет.",
+
+			["bm_suit_var_suit_sunny_security_red"] = "Красный телохранитель",
+			["bm_suit_var_suit_sunny_security_red_desc"] = "Элитный телохранитель Эрнеста Сосы. У Эрнеста Сосы было все. Большой особняк, надеждный бизнес и непробиваемая охрана. Мир принадлежит ему... Но как известно, история движется по спирали.",
+
+			["bm_suit_var_suit_sunny_security_purple"] = "Фиолетовый телохранитель",
+			["bm_suit_var_suit_sunny_security_purple_desc"] = "Элитный телохранитель Эрнеста Сосы. Постоянное наблюдение через дронов и организованная охрана. В особняк Сосы не пробраться. Вот бы еще кто-нибудь проверил последнюю партию кокаина...",
+
+			["bm_suit_var_suit_sunny_soprano"] = "Мафиозные дела",
+			["bm_suit_var_suit_sunny_soprano_desc"] = "Мафия не очень близка банде PAYDAY, но их стиль заслуживает уважения.",
+		    -- Color variations - Prison Suit
+			["bm_suit_var_suit_prison_default"] = "Беглец",
+			["bm_suit_var_suit_prison_default_desc"] = "Роба, которая изменила Хокстона навсегда. Он был уверен, что сжег это напоминание о жутком прошлом вместе со старым убежищем, но каким-то мистическим образом оно оказалось в новом.",
+
+			["bm_suit_var_suit_prison_repairman"] = "31-ый",
+			["bm_suit_var_suit_prison_repairman_desc"] = "Знаете, кто расставляет шпионские камеры?\n\nЛичности вы никогда не узнаете, но хотя бы можно оценить его одежду.",
+
+			["bm_suit_var_suit_prison_comedy"] = "Воришка",
+			["bm_suit_var_suit_prison_comedy_desc"] = "Роба Ченса из банды PAYCHECK. Ему почти удалось сбежать с 225 долларами из кассы магазина Pear, но его взяли под стражу. К счастью, его соратники взяли в заложники ноутбук Pear и сумели обменять его на Чинса.",
+
+			["bm_suit_var_suit_prison_vaultboy"] = "Выживший",
+			["bm_suit_var_suit_prison_vaultboy_desc"] = "К удивлению, Бейн никогда не верил в теории о скором конце света. Но после того, как Влад попросил украсть ядерные боеголовки, он построил себе подземное убежище. Ну вы знаете. Война.",
+
+			["bm_suit_var_suit_prison_janitor"] = "Уборщик",
+			["bm_suit_var_suit_prison_janitor_desc"] = "Ходят слухи, что OMNIA проводит сверхсекретные испытания, да такие, что даже бы ученые с Утеса Генри позавидовали. Всем в OMNIA заставляют подписать контракт. Даже уборщиков держат под... контролем.",
+
+			["bm_suit_var_suit_prison_subject"] = "Подопытный",
+			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборатории АКАНа. Вдруг секрет их сверхъестественных способностей таится в этой робе?",
+
+
+		--Weapon Colors
+		["bm_wskn_resmod_blackgold"] = "Черное золото",
+		["bm_wskn_resmod_cleangold"] = "Чистое золото",
+		["bm_wskn_resmod_imissfauna"] = "Обработанное золото",
+		["bm_wskn_resmod_imissfauna_desc"] = "",
+		["bm_wskn_resmod_uuuuu"] = "Готическая Церера",
+		["bm_wskn_resmod_uuuuu_desc"] = "",
+		["bm_wskn_resmod_ownthiscity"] = "Царское золото",
+		["bm_wskn_resmod_kindoffeel"] = "Абстрактно-темное золото",
+		["bm_wskn_resmod_kindoffeel2"] = "Абстрактно-яркое золото",
+		["bm_wskn_resmod_insubstantial"] = "Треснутое золото",
+		["bm_wskn_resmod_palmtop"] = "Тигриное золото",
+		["bm_wskn_resmod_palmtop_desc"] = "",
+		["bm_wskn_resmod_blacktiger"] = "Золото черного тигра",
+		["bm_wskn_resmod_joe"] = "Экзотическое золото",
+		["bm_wskn_resmod_blackexotic"] = "Экзотическое золото (темное)",
+		["bm_wskn_resmod_lildonnie"] = "Жемчужное золото",
+		["bm_wskn_resmod_quacko"] = "Потемневшее золото",
+		["bm_wskn_resmod_snake"] = "Расплавленное золото",
+		["bm_wskn_resmod_camo"] = "Камуфляжное золото",
+		["bm_wskn_resmod_camo2"] = "Затуманенное золото",
+		["bm_wskn_resmod_digital"] = "Цифровое золото",
+		["bm_wskn_resmod_splinter"] = "Составное золото",
+		["bm_wskn_resmod_urban"] = "Поддельное золото",
+		["bm_wskn_resmod_dioxide"] = "Углеродное золото",
+		["bm_wskn_resmod_rat"] = "Воровское золото",
+		["bm_wskn_resmod_ratdark"] = "Воровское золото (темное)",
+		["bm_wskn_resmod_rocker"] = "Статичное золото",
+		["bm_wskn_resmod_shocker"] = "Статичное золото (темное)",
+		["bm_wskn_resmod_whitefire"] = "Пламенное золото",
+		["bm_wskn_resmod_blackfire"] = "Пламенное золото (темное)",
+		["bm_wskn_resmod_topography"] = "Топографическое золото",
+		["bm_wskn_resmod_2019"] = "Закаленное золото",
+		["bm_wskn_resmod_llenn"] = "Мистер Пинк",
+		["bm_wskn_resmod_llenn_desc"] = "",
+		["bm_wskn_resmod_sugarhoneyicetea"] = "Золото зебры",
+		["bm_wskn_resmod_blackzebra"] = "Золото черной зебры",
+		["bm_wskn_resmod_charlotte"] = "Паучье золото",
+		["bm_wskn_resmod_joker"] = "Насмешка над золотом",
+		["bm_wskn_resmod_jokerw"] = "Насмешка над обществом",
+
+		["menu_weapon_color_index_11"] = "Металл + Прицел",
+		["menu_weapon_color_index_12"] = "Металл + Магазин",
+		["menu_weapon_color_index_13"] = "Металл + Прицел + Магазин",
+
+	})
+end)
+
+-- Просто различные стринги, для которых не имееет смысла (или в падлу) выделять хуки
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mix", function(loc)
+	LocalizationManager:add_localized_strings({
+		["menu_es_boost"] = "Лучшая",
+		["menu_es_crew"] = "Командная",
+		["menu_es_personal"] = "Личная",
+		["menu_es_bad"] = "Плохая",
+		["menu_es_other"] = "Прочая",
+		["RestorationPDTHHudNeeded"] = "PD:TH HUD REBORN IS REQUIRED!",
+		["menu_paygrade"] = "Степень оплаты: ",
+		["menu_diffgrade"] = "Сложность: ",
+		["menu_utility_radial_menu_name"] = "Utility Radial Menu",
+		["menu_utility_radial_menu_desc"] = "Open the Utility Menu",
+
+		["res_credits"] = "Титры Restoration Mod",
+		["res_credits_help"] = "Посмотреть титры RESTORATION MOD.",
+
+		["Warning_overhaul_title"] = "WARNING: Game closing to prevent save corruption.",
+		["dialog_show_overhaul_dialog"] = "You are DISABLING the Complete Overhaul. It is typically NOT RECOMMENDED to do this, and you should instead REMOVE the mod from your mods folder if you intend not to use the Overhaul actively.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
+		["dialog_enable_overhaul_dialog"] = "You are ENABLING the Complete Overhaul. The Overhaul should typically remain ON at all times, and only be disabled by removing the mod from your mods folder.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
+
+		["res_saveboost"] = "УДЕРЖИВАЙТЕ $BTN_INTERACT ЧТОБЫ ПРОКАЧАТЬСЯ ДО 100 УРОВНЯ",
+		
+		["bm_sc_blank"] = "", --assumedly this is a debug thing, but I'm not going to touch it--
+
+		--Menu Stuff--
+		["menu_hud_cheater"] = "",
+		["menu_inspect_player"] = "Осмотреть игрока",
+		["menu_inspect_player_desc"] = "Осмотреть статистику игрока",
+		["menu_toggle_one_down_lobbies"] = "Разрешить режим Pro-Job",
+
+		["heist_safehouse"] = "Старое Убежище",
+
+		--Events
+
+		--Anniversary Event
+		["menu_pda8_1_prog_obj_desc"] = "Найти 2 праздничные статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
+		["menu_pda8_2_prog_obj_desc"] = "Всем сообществом грабители должны потратить $5,000,000,000 на пенсию копов при помощи Бабломета, также вам нужно найти 3 разных праздничных статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
+		["menu_pda8_3_prog_obj_desc"] = "Всем сообществом грабители должны потратить $10,000,000,000 на пенсию копов при помощи Бабломета, также вам нужно найти 4 разных праздничных статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
+		["menu_pda8_item_1_desc"] = "Всем сообществом грабители должны потратить $15,000,000,000 на пенсию копов при помощи Бабломета, также вам нужно найти 3 разных праздничных статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
+
+		["menu_pda8_2_prog_obj"] = "Найти 3 праздничные статуэтки.",
+		["menu_pda8_3_prog_obj"] = "Найти 4 праздничные статуэтки.",
+
+		--Holdout--
+		["menu_cn_skirmish"] = "Столкновение",
+		["menu_skirmish"] = "Столкновение - оборона заложника",
+		["menu_skirmish_random"] = "Случайная локация",
+		["menu_random_skirmish_subtitle"] = "Случайная стартовая локация.\n\nОтсутствую еженедельные награды и стартовые модификаторы.",
+		["menu_weekly_skirmish"] = "Точная локация",
+		["menu_weekly_skirmish_progress"] = "Пройденные волны, награды при полном прохождении",
+		["menu_skirmish_random_briefing"] = "В этом режиме вы окажетесь в случайном СТОЛКНОВЕНИИ.\n\nСлучайное СТОЛКНОВЕНИЕ состоит из 9 волн. Каждая волна увеличивается в сложности.\n\nВы будете получать больше денег и опыта с каждой волной, но поражение заберет все накопленные награды.\n\nВы проиграете, если вы или любой ваш соратник попадете под стражу, или если заложник будет освобожден.",
+		["menu_weekly_skirmish_desc"] = "В этом режиме вы окажетесь в подготовленном СТОЛКНОВЕНИИ.\n\nЕженедельное СТОЛКНОВЕНИЕ состоит из 9 волн. Каждая волна увеличивается в сложности.\n\nВы получите еженедельные награды, а также большое количество денег, опыта и карточек за каждую волну, но поражение заберет все накопленные награды.\n\n##Вы проиграете, если вы или любой ваш соратник попадете под стражу, или если заложник будет освобожден.##",
+		["menu_weekly_skirmish_tab_description"] = "Обзор операции",
+		["menu_weekly_skirmish_rewards"] = "Количество пройденных волн и награды",
+		["hud_skirmish"] = "Столкновение",
+		["hud_weekly_skirmish"] = "Еженедельное столкновение",
+		["heist_contact_skirmish"] = "Столкновение",
+		["menu_skirmish_pick_heist"] = "Компания Джекела доверяет вам эту работу",
+		["menu_skirmish_map_selection"] = "Локации",
+		["menu_skirmish_selected_briefing"] = "В этом режиме вы можете выбрать любое СТОЛКНОВЕНИЕ.\n\nСТОЛКНОВЕНИЕ состоит из 9 волн. Каждая волна увеличивается в сложности.\n\nВы будете получать больше денег и опыта с каждой волной, но поражение заберет все накопленные награды.\n\nВы проиграете, если заложник будет освобожден.",
+		["menu_skirmish_selected"] = "Столкновение",
+
+		
+		["windowofoppurtunity"] = "Window Of Opportunity",
+		["wheresthevan"] = "Where's The Van",
+		["menu_jukebox_heist_ponr"] = "Точка невозврата",
+		
 
 		["menu_support"] = "Гайд/помощь по ребалансу",
 		["menu_support_help"] = "Просмотреть гайд по ребалансу в Restoration Mod, получить помощь, найти других игроков.",
@@ -331,6 +791,539 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["hud_loot_secured_title"] = "ДОБЫЧА ЗАХВАЧЕНА!",
 		["debug_none"] = "ЗАДАЧА",
 
+		["heist_platinum_brief"] = "stir the boat",
+		["heist_jackal_surface_tension_name"] = "OMNIA Research Vessel SN-XR-LETHE",
+		["heist_jackal_surface_tension_brief"] = "PLACEHOLDER",
+
+		["heist_vivinite_name"] = "Zero Day",
+
+		["heist_contact_shatter"] = "Джекел",
+		["heist_contact_akashic"] = "Нико",
+
+		["menu_contacts_shatter"] = "Союзники CRIMENET",
+		["heist_contact_jackal_description"] = "Джекел начал свою карьеру в GenSec, но уволился после инцидента, связанного с торговлей людьми, в котором были замешаны GenSec и OMNIA.\n\nТеперь он работает на CRIMENET, поставляя проблемы им прямо на дом.",
+		["heist_contact_akashic_description"] = "В прошлом - высокопоставленный агент Гектора Моралеса, Николас 'Нико' Рене теперь командует остатками Синалоанского картеля в США. \nИх численность мала, и более крупный Колумбийский картель не собирается ни предоставлять помощь, ни восстанавливать союз с CRIMENET. Нико объединяется с различными мелкими бандами на Восточном побережье, а также с CRIMENET - он предоставит свои ресурсы в обмен на услуги.",
+
+
+		
+
+		["menu_alex_1_zipline"] = "Зиплайн для сумок",
+
+		["menu_asset_wet_intel"] = "Разведданные",
+		["menu_asset_risk_murky"] = "Наемники Murkywater",
+		["menu_asset_risk_bexico"] = "Мексиканская федеральная полиция",
+		["menu_asset_risk_zombie"] = "зОмбИ пОлиЦиЯ",
+		["menu_asset_wet_boat"] = "Лодка",
+		["menu_asset_wet_boat_desc"] = "Купить дополнительную точку сброса и побега",
+
+		
+		["pattern_jkl_patt01_title"] = "Шакалы",
+		["pattern_jkl_patt02_title"] = "Компания",
+		["material_jkl_matt01_title"] = "Грозные перья",
+		["material_jkl_matt02_title"] = "Золото Веритас",
+
+		["menu_scores"] = "SCORES",
+		
+		--Safe House--
+		["dialog_safehouse_text"] = "Вы еще не посещали убежище.\n\nСоветуем это сделать, ведь там ждет кое-что новое.\n\nПерейти туда сейчас?",
+		
+
+		["menu_ingame_manual"] = "Гайд по Restoration",
+		["menu_ingame_manual_help"] = "Просмотреть гайд по Restoration.",
+
+		["menu_asset_wet_add_saw"] = "Дополнительная пила",
+		["menu_asset_wet_add_saw_desc"] = "Закупить дополнительную пилу",
+		["menu_rush_asset_sentrygun"] = "Турель",
+		["menu_rush_asset_sentrygun_desc"] = "Закупить дополнительную турель",
+
+		
+
+		["wwburn_serverpku"] = "Secure",
+		["wwburn_gaspku"] = "Collect",
+		["wwburn_defend"] = "Defend",
+		["wwburn_container"] = "Shipping Container",
+
+		["menu_jukebox_resmusic_wetwork"] = "Spectre Shark",
+		["menu_jukebox_screen_resmusic_wetwork"] = "Spectre Shark",
+		["menu_jukebox_resmusic_bluewave"] = "Spectre Shark 2020",
+		["menu_jukebox_screen_resmusic_bluewave"] = "Spectre Shark 2020",
+		["menu_jukebox_resmusic_burnout"] = "Brute Force",
+		["menu_jukebox_screen_resmusic_burnout"] = "Brute Force",
+		["menu_jukebox_resmusic_doghouse"] = "Bleeding Edge",
+		["menu_jukebox_screen_resmusic_doghouse"] = "Bleeding Edge",
+		["menu_jukebox_resmusic_lethalforce"] = "Lethal Force",
+		["menu_jukebox_screen_resmusic_lethalforce"] = "Lethal Force",
+		["menu_jukebox_resmusic_redmarks"] = "Red Marks",
+		["menu_jukebox_screen_resmusic_redmarks"] = "Red Marks",
+		["menu_jukebox_resmusic_ticktockalpha"] = "Tick Tock (Альфа)",
+		["menu_jukebox_screen_resmusic_ticktockalpha"] = "Tick Tock (Альфа)",
+		["menu_jukebox_resmusic_doublecrossbeta"] = "Double Cross (Бета)",
+		["menu_jukebox_screen_resmusic_doublecrossbeta"] = "Double Cross (Бета)",
+		["menu_jukebox_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (Бета)",
+		["menu_jukebox_screen_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (Бета)",
+		["menu_jukebox_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Старый)",
+		["menu_jukebox_screen_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Старый)",
+		["menu_jukebox_resmusic_razormindbeta"] = "Razormind (Бета)",
+		["menu_jukebox_screen_resmusic_razormindbeta"] = "Razormind (Бета)",
+		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
+		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
+		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",
+		["menu_jukebox_screen_resmusic_speciesnova"] = "Species Nova",
+		["menu_jukebox_resmusic_madvlad"] = "Mad Vlad",
+		["menu_jukebox_screen_resmusic_madvlad"] = "Mad Vlad",
+		["menu_jukebox_resmusic_proto"] = "Jackknife",
+		["menu_jukebox_screen_resmusic_proto"] = "Jackknife",
+		["menu_jukebox_screen_m1"] = "Criminal Intent (Старый)",
+		["menu_jukebox_screen_m2"] = "Preparations (Старый)",
+		["menu_jukebox_screen_m3"] = "Blueprints (Прототип)",
+		["menu_jukebox_screen_m4"] = "Resistance",
+		["menu_jukebox_screen_m5"] = "Fortress",
+		["menu_jukebox_screen_m6"] = "Payday Royale Theme",
+		["menu_jukebox_screen_m7"] = "Pre-Planning",
+		["menu_jukebox_screen_m_holiday"] = "The Headless Bulldozer",
+
+		["menu_color_plus"] = "E3 PAYDAY+",
+		["menu_color_rvd1"] = "Inverted",
+		["menu_color_e3nice"] = "E3 Nice",
+		["menu_color_force"] = "E3 BHD",
+		["menu_color_halloween"] = "Change",
+		["menu_color_halloween2"] = "Pumpkin Spice",
+
+		["color_plus"] = "E3 PAYDAY+",
+		["color_rvd1"] = "Inverted",
+		["color_e3nice"] = "E3 Nice",
+		["color_force"] = "E3 BHD",
+		["color_halloween"] = "Change",
+		["color_halloween2"] = "Pumpkin Spice",
+
+		["gm_gms_purchase"] = "Купить монетами Континенталь",
+		["gm_gms_purchase_window_title"] = "Вы уверены?",
+		["gm_gms_purchase_window_message"] = "Вы действительно хотите купить '{1}'?\n\nЭто будет стоить вам {2} {3}.",
+		["gm_gms_purchase_failed"] = "Невозможно купить",
+		["gm_gms_free_of_charge_message"] = "{1} бесплатен и может быть использован сколько угодно раз.",
+		["gm_gms_cannot_afford_message"] = "Вы не можете купить {1}, так как у вас недостаточно {3}. Чтобы купить {1}, нужно {2} {3}",
+
+		["bm_menu_amount_locked"] = "НЕТ В НАЛИЧИИ",
+
+		["resmod_challenges"] = "Испытания",
+		["resmod_challenges_hint"] = "Посмотреть выполненные и активные испытания.",
+		["resmod_active_challenges"] = "Активные испытания",
+		["resmod_active_challenges_hint"] = "Текущие и активные испытания.",
+		["resmod_completed_challenges"] = "Выполненные испытания",
+		["resmod_completed_challenges_hint"] = "Завершенные испытания.",
+
+		["ch_vs_desc"] = "Используя $weapon, устраните $count $eneType. Убийства в ближнем бою не засчитываются для выполнения этого испытания.",
+		["ch_vs_head_shots_desc"] = "Используя $weapon, устраните $count $eneType выстрелами в голову.",
+		["ch_vs"] = "$weapon против $eneType $no",
+		["ch_vs_head_shots"] = "$weapon против $eneType В ГОЛОВУ $no",
+
+		["ene_law"] = "всех",
+		["ene_law_desc"] = "врагов",
+
+		["menu_me"] = "Грабитель",
+
+		["RestorationModPDTHChallengesTitleID"] = "Отображать испытания из PDTH",
+		["RestorationModPDTHChallengesDescID"] = "Включает отображение испытаний из PDTH в меню и на HUD.",
+
+		["RestorationModRaidLockPickingTitleID"] = "Modify Lockpicks",
+		["RestorationModRaidLockPickingDescID"] = "Should the mod modify lockpicks? This changes the gameplay revolving lockpicks",
+		["RestorationModRaidLockPickingVOTitleID"] = "Play Voice Lines",
+		["RestorationModRaidLockPickingVODescID"] = "Should the mod play voice lines when picking a lock?",
+		["hud_legend_lockpicking_interact"] = "$BTN_INTERACT Взломать",
+		["hud_legend_persuade_interact"] = "$BTN_INTERACT Убедить",
+		["hud_legend_exit"] = "$BTN_CANCEL Выйти",
+		["RestorationModArmorFixTitleID"] = "Фикс подсвечивания брони",
+		["RestorationModArmorFixDescID"] = "Включить или выключить фикс подсвечивания брони.",
+		
+				["menu_toggle_one_down"] = "Pro-Job",
+		["menu_one_down"] = "Pro-Job",
+		["menu_es_pro_job_bonus"] = "Pro-Job",
+
+		["menu_pro_warning"] = "Режим PRO JOB: При провале, контракт будет отменен.\nПод конец ограбления может начаться Точка Невозврата, во время которой появятся более опасные противники.\nПрохождение в режиме Pro Job дает 25% бонус к деньгам и опыту.",
+
+		["menu_asset_lock_additional_assets_pro"] = "НЕДОСТУПНО В РЕЖИМЕ PRO-JOB!",
+		["menu_asset_buy_all_req_skill"] = "##NOT AVAILABLE!##",
+
+		["cn_menu_contract_daypay_header"] = "Дневная плата:",
+		["cn_menu_contract_jobpay_header"] = "Плата за контракт:",
+
+		["debug_interact_grenade_crate_take_grenades"] = "УДЕРЖИВАЙТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ МЕТАТЕЛЬНОЕ ОРУЖИЕ",
+		["debug_interact_bodybags_bag_take_bodybag"] = "УДЕРЖИВАЙТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ МЕШКИ ДЛЯ ТРУПОВ И СТЯЖКИ",
+
+	    ["menu_equipment_armor_kit"] = "Кейс с метательным оружием",
+		["bm_equipment_armor_kit"] = "Кейс с метательным оружием",
+		["debug_equipment_armor_kit"] = "Кейс с метательным оружием",
+		["bm_equipment_armor_kit_desc"] = "Чтобы использовать кейс с метательным оружием, вам нужно установить его, зажав #{skill_color}#$BTN_USE_ITEM.##. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием #{skill_color}#$BTN_INTERACT##, чтобы восполнить запас метательного оружия. Он может быть использован #{skill_color}#3## раза.\n\nВы можете увидеть, сколько еще раз можно использовать кейс, посмотрев на него.\n\nКейс с метательным оружием это скрытная вещь, используемая солдатами и наемниками для переноски особого оружия на тяжелый случай.",
+		["bm_equipment_armor_kit_desc_short"] = "Чтобы использовать кейс с метательным оружием, вам нужно установить его, зажав #{skill_color}#$BTN_USE_ITEM.##. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием #{skill_color}#$BTN_INTERACT##, чтобы восполнить запас метательного оружия. Он может быть использован #{skill_color}#3## раза.\n\nВы можете увидеть, сколько еще раз можно использовать кейс, посмотрев на него.",
+		--Ordanance Bag
+		["bm_equipment_grenade_crate"] = "Сумка с гранатами",
+		["bm_equipment_grenade_crate_desc"] = "Чтобы использовать сумку с гранатами, вам нужно установить ее, зажав $BTN_USE_ITEM. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием $BTN_INTERACT, чтобы восполнить #{skill_color}#25%## запаса патронов и #{skill_color}#1## метательное оружие. Она может быть использована #{skill_color}#4## раза.\n\nВы можете увидеть, сколько еще раз можно использовать сумку, посмотрев на нее.\n\nСумка с гранатами используется оперативниками для транспортировки взрывчатки на место боевых действий.",
+		["bm_equipment_grenade_crate_desc_short"] = "Чтобы использовать сумку с гранатами, вам нужно установить ее, зажав $BTN_USE_ITEM. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием $BTN_INTERACT, чтобы восполнить #{skill_color}#25%## запаса патронов и #{skill_color}#1## метательное оружие. Она может быть использована #{skill_color}#4## раза.\n\nВы можете увидеть, сколько еще раз можно использовать сумку, посмотрев на нее.",
+		--Trip Mine
+		["bm_equipment_trip_mine_desc"] = "Чтобы использовать мину, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.## Лазер можно переключать между режимами детонации и сенсора, нажав #{skill_color}#$BTN_INTERACT.##\n\nЧтобы использовать кумулятивные заряды, их нужно установить, используя #{skill_color}#$BTN_INTERACT.## Когда нужное количество зарядов установлено, они детонируют через несколько секунд.\n\nМины - это растяжки, которые уничтожат или нанесут существенный вред врагам, которые пересекут луч. Кумулятивные заряды используются для вскрытия дверей и сейфов. Оба - отличное дополнение при любой боевой ситуации.",
+		["bm_equipment_trip_mine_desc_short"] = "Чтобы использовать мину, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.## Лазер можно переключать между режимами детонации и сенсора, нажав #{skill_color}#$BTN_INTERACT.##\n\nЧтобы использовать кумулятивные заряды, их нужно установить, используя #{skill_color}#$BTN_INTERACT.## Когда нужное количество зарядов установлено, они детонируют через несколько секунд.",
+		--Ammo Bag
+		["bm_equipment_ammo_bag_desc"] = "Чтобы использовать сумку с патронами, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.## После установки ее нельзя переместить, но можно использовать, удерживая $BTN_INTERACT, чтобы восполнить запас патронов.\n\nОна восстанавливает полный запас патронов #{skill_color}#$deployable_uses## раз(а); остаток запаса можно определить по виду сумки.\n\nСумка с патронами - портативная часть экипировки, позволяющая бойцам легко переносить большие запасы амуниции.",
+		["bm_equipment_ammo_bag_desc_short"] = "Чтобы использовать сумку с патронами, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.## После установки ее нельзя переместить, но можно использовать, удерживая $BTN_INTERACT, чтобы восполнить запас патронов.\n\nОна восстанавливает полный запас патронов #{skill_color}#$deployable_uses## раз(а); остаток запаса можно определить по виду сумки.",
+		--ECM Jammer
+		["bm_equipment_ecm_jammer_desc"] = "Чтобы использовать генератор помех, вам нужно установить его, удерживая #{skill_color}#$BTN_USE_ITEM##. После установки его нельзя переместить. Он активируется на #{skill_color}#$deployable_uses## секунд.\n\nВы можете переключить режим работы генератора помех при взаимодействии с ним. В этом случае, генератор помех будет оглушать врагов в радиусе #{skill_color}#25## метров. Первые помехи имеют #{skill_color}#100%## шанс оглушить врага, затем каждые #{skill_color}#1.2## секунды помех имеют #{skill_color}#60%## шанс на оглушение. Помехи длятся #{skill_color}#$deployable_uses## секунд, и перезаряжаются через #{skill_color}#4## минуты.\n\nГенераторы помех могут взламывать банкоматы и ненадолго отключать электронные устройства - телефоны, камеры и прочие системы безопасности.",
+		["bm_equipment_ecm_jammer_desc_short"] = "Чтобы использовать генератор помех, вам нужно установить его, удерживая #{skill_color}#$BTN_USE_ITEM##. После установки его нельзя переместить. Он активируется на #{skill_color}#$deployable_uses## секунд.\n\nВы можете переключить режим работы генератора помех при взаимодействии с ним. В этом случае, генератор помех будет оглушать врагов в радиусе #{skill_color}#25## метров. Первые помехи имеют #{skill_color}#100%## шанс оглушить врага, затем каждые #{skill_color}#1.2## секунды помех имеют #{skill_color}#60%## шанс на оглушение. Помехи длятся #{skill_color}#$deployable_uses## секунд, и перезаряжаются через #{skill_color}#4## минуты.",
+		--FAQ U
+		["bm_equipment_first_aid_kit_desc"] = "Удерживайте кнопку #{skill_color}#$BTN_USE_ITEM##, чтобы установить аптечку. Ее нельзя переместить после установки, но можно использовать, зажав кнопку #{skill_color}#$BTN_INTERACT##, чтобы восстановить #{skill_color}#150## здоровья. Аптечку первой помощи можно использовать только #{skill_color}#1## раз.\n\nАптечка первой помощи - небольшой ассортимент лечебных средств, используемый в экстренных ситуациях.",
+        ["bm_equipment_first_aid_kit_desc_short"] = "Удерживайте кнопку #{skill_color}#$BTN_USE_ITEM##, чтобы установить аптечку. Ее нельзя переместить после установки, но можно использовать, зажав кнопку #{skill_color}#$BTN_INTERACT##, чтобы восстановить #{skill_color}#150## здоровья. Аптечку первой помощи можно использовать только #{skill_color}#1## раз.",
+		--AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		["bm_equipment_doctor_bag_desc"] = "Чтобы использовать медицинскую сумку, вам нужно установить ее, используя #{skill_color}#$BTN_USE_ITEM##. После установки ее нельзя переместить, но можно использовать, удерживая #{skill_color}#$BTN_INTERACT##, чтобы восстановить #{skill_color}#20%## максимального здоровья сразу и #{skill_color}#4%## максимального здоровья каждые #{skill_color}#5## секунд в течение #{skill_color}#3## минут и получить #{skill_color}#10%## Устойчивости. Медицинскую сумку можно использовать #{skill_color}#$deployable_uses## раз(а).\n\nМедицинская сумка - портативный кейс, который используется профессиональными врачами для переноса медикаментов и лекарств.",
+		["bm_equipment_doctor_bag_desc_short"] = "Чтобы использовать медицинскую сумку, вам нужно установить ее, используя #{skill_color}#$BTN_USE_ITEM##. После установки ее нельзя переместить, но можно использовать, удерживая #{skill_color}#$BTN_INTERACT##, чтобы восстановить #{skill_color}#20%## максимального здоровья сразу и #{skill_color}#4%## максимального здоровья каждые #{skill_color}#5## секунд в течение #{skill_color}#3## минут и получить #{skill_color}#10%## Устойчивости. Медицинскую сумку можно использовать #{skill_color}#$deployable_uses## раз(а).",
+        --Sentry
+		["bm_equipment_sentry_gun_desc"] = "Чтобы использовать турель, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.##. Вы используете #{skill_color}#$deployable_uses## вашего запаса патронов на установку. \n\nТурель можно забрать обратно, зажав #{skill_color}#$BTN_INTERACT## возле нее; это вернет вам остаток патронов и починит ее. \n\nПри получении большого количества урона, турель отключится. Если это произошло, вы можете запустить режим починки, удерживая #{skill_color}#$BTN_INTERACT##. \n\nТурели пугают гражданских, заставляя их оставаться на месте.\n\nТурель автоматически наводится и стреляет по целям, которые попадают под ее сенсор. Она используется для отвлечения противников от вас и вашей команды.",
+		["bm_equipment_sentry_gun_desc_short"] = "Чтобы использовать турель, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.##. Вы используете #{skill_color}#$deployable_uses## вашего запаса патронов на установку. \n\nТурель можно забрать обратно, зажав #{skill_color}#$BTN_INTERACT## возле нее; это вернет вам остаток патронов и починит ее. \n\nПри получении большого количества урона, турель отключится. Если это произошло, вы можете запустить режим починки, удерживая #{skill_color}#$BTN_INTERACT##. \n\nТурели пугают гражданских, заставляя их оставаться на месте.",
+		--Supp. Sentry
+		["bm_equipment_sentry_gun_silent_desc"] = "Чтобы использовать приглушенную турель, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.##. Вы используете #{skill_color}#$deployable_uses## вашего запаса патронов на установку. \n\nТурель можно забрать обратно, зажав #{skill_color}#$BTN_INTERACT## возле нее; это вернет вам остаток патронов и починит ее. \n\nПри получении большого количества урона, турель отключится. Если это произошло, вы можете запустить режим починки, удерживая #{skill_color}#$BTN_INTERACT##. \n\nТурели пугают гражданских, заставляя их оставаться на месте.\n\nПриглушенная турель, в отличие от громкой обычной, используется для убийства врагов, а не отвлечения.",
+		["bm_equipment_sentry_gun_silent_desc_short"] = "Чтобы использовать приглушенную турель, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.##. Вы используете #{skill_color}#$deployable_uses## вашего запаса патронов на установку. \n\nТурель можно забрать обратно, зажав #{skill_color}#$BTN_INTERACT## возле нее; это вернет вам остаток патронов и починит ее. \n\nПри получении большого количества урона, турель отключится. Если это произошло, вы можете запустить режим починки, удерживая #{skill_color}#$BTN_INTERACT##. \n\nТурели пугают гражданских, заставляя их оставаться на месте.",
+		--Body Bags
+		["bm_equipment_bodybags_bag_desc"] = "Чтобы использовать кейс, вам нужно установить его, зажав #{skill_color}#$BTN_USE_ITEM##. После установки его нельзя переместить, но можно использовать, удерживая #{skill_color}#$BTN_INTERACT##, чтобы восстановить мешки для тел и стяжки.\n\nУ кейса ограниченный запас. По его виду можно понять, сколько сумок осталось. \n\nКейс позволяет восполнить мешки для тел и стяжки, использующиеся для транспортировки тел при скрытных операциях и контроле толп гражданских.",
+		["bm_equipment_bodybags_bag_desc_short"] = "Чтобы использовать кейс, вам нужно установить его, зажав #{skill_color}#$BTN_USE_ITEM##. После установки его нельзя переместить, но можно использовать, удерживая #{skill_color}#$BTN_INTERACT##, чтобы восстановить мешки для тел и стяжки.\n\nУ кейса ограниченный запас. По его виду можно понять, сколько сумок осталось.",
+
+
+		["hud_int_hold_take_pardons"] = "НАЖМИТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ ПОМИЛОВАНИЕ",
+		["debug_interact_gage_assignment_take"] = "НАЖМИТЕ $BTN_INTERACT ЧТОБЫ ЗАБРАТЬ ПОСЫЛКУ ГЕЙДЖА",
+
+		["hint_ability_no_grenade_pickup"] = "У ВАС НЕТ МЕТАТЕЛЬНОГО ОРУЖИЯ",
+		["hint_full_grenades"] = "У ВАС УЖЕ ПОЛНЫЙ ЗАПАС.",
+		["debug_interact_ordnance_bag_take_grenades"] = "НАЖМИТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ МЕТАТЕЛЬНОЕ ОРУЖИЕ И НЕМНОГО ПАТРОНОВ",
+
+		["far_repair_sentry_macro"] = "Турель критически повреждена - требуется ремонт.",
+		["fixing_sentry_macro"] = "Прогресс ремонта: $AMMO_LEFT",
+		--Are concatenated to the related button prompts. Using Macros results in controller prompts at the wrong times.
+		["repair_sentry_macro"] = " чтобы начать авто-починку турели",
+		["pickup_sentry_macro"] = " чтобы забрать турель.\n$AMMO_LEFT патронов осталось. ", --Gets % health remaining appended to the end.
+		["firemode_sentry_macro"] = " чтобы сменить режим стрельбы.\n$AMMO_LEFT патронов осталось.",
+		["hud_interact_pickup_sentry_gun"] = "$AMMO_LEFT", --$AMMO_LEFT macro is a dummy macro to be replaced with desired string, since changing interaction objects is slightly cursed.
+		["hud_interact_sentry_gun_switch_fire_mode"] = "$AMMO_LEFT",
+		["hud_repair_sentry"] = "$AMMO_LEFT",
+		["hud_action_repair_sentry"] = "Турель чинится...",
+		
+		["menu_button_deploy_bipod"] = "СОШКИ/АЛЬТЕРНАТИВНЫЙ ОГОНЬ",
+		["hint_short_max_pagers"] = "Игнорирование пейджеров сильно увеличит полоску подозрения.",
+		["hud_instruct_mask_on"] = "Нажмите $BTN_USE_ITEM чтобы надеть маску",
+		["hud_instruct_mask_on_alpha"] = "Нажмите $BTN_USE_ITEM чтобы надеть маску",
+		-- Ad Banner Change
+		["menu_changelog"] = "Последний чейнджлог",
+		["menu_discord"] = "Сервер в Discord",
+		["menu_guide"] = "Гайд по моду",
+		["menu_captains"] = "Информация о Капитанах",
+		["menu_content_updates"] = "Гайд/Поддержка",
+		["menu_content_updates_previous"] = "",
+
+		--More fitting descriptions of difficulties--
+		["menu_risk_elite"] = "ЖАЖДА СМЕРТИ. ДЛЯ ВАС ГЛАВНОЕ - ЭТО ЭФФЕКТНОСТЬ.",
+		["menu_risk_sm_wish"] = "СМЕРТНЫЙ ПРИГОВОР. ПОКАЖИТЕ ИМ, ЧТО ВЫ НЕПОБЕДИМЫ.",
+		
+		["hud_interact_autumn_disable"] = "Отключено Капитаном Отемом!",
+
+		["hud_assault_restored_down"] = "Штурм пережит - восстановлено 1 падение",
+		["hud_assault_remaining_single"] = "1 штурм до восстановления падения",
+		["hud_assault_remaining_plural"] = " штурма до восстановления падения",
+		
+		["test_net"] = "Fast.Net",
+		["menu_test"] = "",
+		["state_filter"] = "Статус",
+		["menu_state_filter"] = "Фильтр по статусу",
+		["menu_state_filter_help"] = "Показывает статус лобби",
+		["menu_state_lobby"] = "В лобби",
+		["menu_state_loading"] = "Загружается",
+		["menu_state_ingame"] = "В игре",
+
+
+		["menu_description"] = "План",
+		-- ///Stuff ripped from the various locale files we had ///
+		--And now we're doing it again--
+		["menu_infamy_desc_root_new"] = "Вы новый член криминальной элиты, и первое, что вам нужно сделать - обзавестись вещами, которые подтверждают ваш статус.\n\nБОНУСЫ:\nШанс получить предмет с дурной репутацией увеличен с ##0.3%## до ##0.6%##\nПолучаемый опыт увеличен на ##5%##.",
+
+		-- Бусты ботов
+		["bm_menu_skill"] = "Бонусы для команды",
+
+		["menu_crew_interact"] = "Ловкий",
+		["menu_crew_interact_desc"] = "Игроки взаимодействуют на 15% быстрее за каждого бота в команде.",
+
+	    ["menu_crew_inspire"] = "Вдохновление",
+        ["menu_crew_inspire_desc"] = "Боты с этим перком могут использовать на вас Вдохновление.\n\nОни не могут его использовать чаще чем в 90 секунд. Перезарядка уменьшается на 15 секунд за каждого бота в команде.",
+
+        ["menu_crew_scavenge"] = "Острый глаз",
+		["menu_crew_scavenge_desc"] = "Подбор патронов для игроков увеличен на 10% за каждого бота в команде.",
+
+        ["menu_crew_ai_ap_ammo"] = "Пробитие",
+        ["menu_crew_ai_ap_ammo_desc"] = "Ваши боты теперь могут пробивать броню и так же они наносят на 25% больше урона.\n\nЭто позволяет им простреливать через броню и щитов.",
+
+        ["menu_crew_healthy"] = "Подготовка",
+        ["menu_crew_healthy_desc"] = "Здоровье игроков увеличено на 30.",
+
+        ["menu_crew_sturdy"] = "Защитник",
+        ["menu_crew_sturdy_desc"] = "Броня игроков увеличена на 10%.",
+
+        ["menu_crew_evasive"] = "Отвлекающий маневр",
+        ["menu_crew_evasive_desc"] = "Полоска уворота игроков заполняется на 3% от их максимального уворота.",
+
+        ["menu_crew_motivated"] = "Тренер",
+        ["menu_crew_motivated_desc"] = "Игроки получают на 15 больше выносливости.",
+
+        ["menu_crew_regen"] = "Лекарь",
+        ["menu_crew_regen_desc"] = "Игроки лечат 1 очко здоровья каждые 4 секунды.",
+
+        ["menu_crew_quiet"] = "Компактный",
+        ["menu_crew_quiet_desc"] = "Игроки получают на 2 единицы компактности больше.",
+
+        ["menu_crew_generous"] = "Подарочек",
+        ["menu_crew_generous_desc"] = "Игроки получают дополнительное мететальное за каждые 70 убийств.",
+
+        ["menu_crew_eager"] = "Адреналин",
+        ["menu_crew_eager_desc"] = "Игроки перезаряжают оружие на 10% быстрее.",
+		
+		--Side Jobs
+		["menu_challenge_menu_challenge_moon_6_obj"] = "Завершите контракт Скотобойня на уровне сложности OVERKILL или выше, не убивая капитана Спринга.",
+
+		--Generic Captain Text
+		["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
+	
+	})
+
+	
+
+
+	-- maybe need change banner descriptions
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+	local job = Global.level_data and Global.level_data.level_id
+	local captain_type = job and restoration.captain_spawns[job]
+	if captain_type == restoration.captain_types.winter and job == "crojob3" or job == "crojob3_night" then
+		LocalizationManager:add_localized_strings({
+			["hud_assault_vip"] = "ГОСПОДА ГРАБИТЕЛИ, ВЫ ОКРУЖЕНЫ",
+		})
+	elseif captain_type == restoration.captain_types.winter then
+		LocalizationManager:add_localized_strings({
+			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ВИНТЕРСА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
+		})
+	elseif captain_type == restoration.captain_types.summer then
+		LocalizationManager:add_localized_strings({
+			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА САММЕРСА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
+		})
+	elseif captain_type == restoration.captain_types.spring then
+		LocalizationManager:add_localized_strings({
+			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА СПРИНГА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
+		})
+	elseif captain_type == restoration.captain_types.autumn then
+		LocalizationManager:add_localized_strings({
+			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ОТЕМА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
+		})
+	elseif captain_type == restoration.captain_types.hvh then
+		LocalizationManager:add_localized_strings({
+			["hud_assault_vip"] = "ПОБЕДИТЕ СТРАХ И ПРОСНИТЕСЬ",
+		})
+	end
+	
+local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
+local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
+local f = tweak_data.levels.ai_groups.federales
+local o = tweak_data.levels.ai_groups.omnia
+local ai_type = tweak_data.levels:get_ai_group_type()
+
+if ai_type == r then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "ИДЕТ ШТУРМ НАЕМНИКОВ",
+			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
+			["hud_assault_alpha"] = "ШTУPM HAЕMHИKOB"
+		})
+	end)
+elseif ai_type == z then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "Итде Плоиецский Шрутм",
+			["hud_assault_cover"] = "ОСТВЙТСЬ В УРКЫТИИ...МОЗГИИ",
+			["hud_assault_alpha"] = "ПЛОИЕЦСКИЙ ШРУТМ"
+		})
+	end)
+elseif ai_type == f then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "Asalto En Marcha",
+			["hud_assault_cover"] = "MANTENTE A CUBIERTO",
+			["hud_assault_alpha"] = "ASALTO"
+		})
+	end)
+elseif ai_type == m then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+		LocalizationManager:add_localized_strings({
+			["hud_assault_assault"] = "Идет операция Murkywater",
+			["hud_assault_alpha"] = "ОПЕРАЦИЯ MURKYWATER"
+		})
+	end)
+end
+
+ if _G.HopLib then
+	local ai_type = tweak_data.levels:get_ai_group_type()
+	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
+	local lapd = tweak_data.levels.ai_groups.lapd
+	local mex = tweak_data.levels.ai_groups.federales
+	local akan = tweak_data.levels.ai_groups.russia
+	local nypd = tweak_data.levels.ai_groups.nypd
+	local fbi = tweak_data.levels.ai_groups.fbi
+	local breins = tweak_data.levels.ai_groups.zombie
+
+	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
+		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
+	end)
+
+	if ai_type == murkywetew then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
+		end)
+	elseif ai_type == lapd then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
+		end)
+	elseif ai_type == mex then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")
+		end)
+	elseif ai_type == akan then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")
+		end)
+	elseif ai_type == nypd then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")
+		end)
+	elseif ai_type == fbi then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")
+		end)
+	elseif ai_type == breins then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")
+		end)
+	end
+end
+
+end)
+-- Челенджи
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Challenges", function(loc)
+	LocalizationManager:add_localized_strings({
+		["ch_deploy_ammobag_hl"] = "Last Bullet!",
+		["ch_deploy_ammobag"] = "Разложить $count сумок с патронами.",
+		["ch_plant_tripmine_hl"] = "Лазерное шоу",
+		["ch_plant_tripmine"] = "Разложить $count мин.",
+		["ch_deploy_medicbag_hl"] = "Медицинская страховка",
+		["ch_deploy_medicbag"] = "Разложить $count сумок с медикаментами.",
+		["ch_deploy_ecm_hl"] = "Враг системы",
+		["ch_deploy_ecm"] = "Разложить $count генераторов помех.",
+		["ch_deploy_fak_hl"] = "Линия жизни",
+		["ch_deploy_fak"] = "Разложить $count аптечек первой помощи.",
+		["ch_deploy_sentry_hl"] = "Любитель Уайт Месы",
+		["ch_deploy_sentry"] = "Разложить $count турелей.",
+
+		["ch_bridge_no_bleedouts_hl"] = "Зеленый Мост: непробиваемый",
+		["ch_bridge_no_bleedouts"] = "Завершите контракт \"Зеленый мост\" на уровне сложности \"Сложно\", \"Очень Сложно\" или \"OVERKILL\", ни разу не упав",
+		["ch_duck_hunting_hl"] = "Мост слишком далеко!",
+		["ch_duck_hunting"] = "Завершите контракт \"Зеленый мост\" на уровне сложности \"Сложно\", \"Очень Сложно\" или \"OVERKILL\". Для выполнения необходимо играть контракт с самого начала",
+
+
+		["ch_watchdogs_d1_heavy_wpn1_hl"] = "ТОЛСТАЯ БРОНЯ, БОЛЬШИЕ ПУШКИ",
+		["ch_watchdogs_d1_heavy_wpn1"] = "Пройти первый день ограбления 'Сторожевые псы', используя только УКТЖ, миниганы, ракетометы или снайперскую винтовку Thanatos, на уровни сложности OVERKILL или выше. Для выполнения этого испытания, ограбление нужно играть с самого начала.",
+
+		-- New challanges
+		["ch_melee_test"] = "Босс качалки",
+		["ch_melee_test_desc"] = "Убейте капитана Отема кулаками",
+		["ch_pro_job_test"] = "Даже армия не остановит нас",
+		["ch_pro_job_test_desc"] = "Завершите контракт \"Поджигатель\" с модификатором Pro Job на уровне сложности \"Хаос\" и выше            ",
+		["ch_summers_test"] = "Да не горит у меня!!!",
+		["ch_summers_test_desc"] = "Убейте капитана Саммерса огнеметом Mk.1",
+		["ch_winters_test"] = "Торжество несправедливости",
+		["ch_winters_test_desc"] = "Убейте капитана Винтерса ножом-бабочкой или выкидным ножом, пока он держит щит",
+		["ch_spring_test"] = "У меня волына больше",
+		["ch_spring_test_desc"] = "Убейте капитана Спринга миниганом Вулкан или микроганом XL 5.56",
+
+		["ch_pdth_style_fwb"] = "Старая школа: Первый Всемирный Банк",
+		["ch_pdth_style_fwb_desc"] = "Завершите контракт \"Первый Всемирный Банк\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
+		["ch_pdth_style_heat"] = "Старая школа: Схватка на улице",
+		["ch_pdth_style_heat_desc"] = "Завершите контракт \"Схватка на улице\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
+		["ch_pdth_style_panic"] = "Старая школа: Комната паники",
+		["ch_pdth_style_panic_desc"] = "Завершите контракт \"Комната паники\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
+		["ch_pdth_style_bridge"] = "Старая школа: Зеленый мост",
+		["ch_pdth_style_bridge_desc"] = "Завершите контракт \"Зеленый мост\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
+		["ch_pdth_style_diamond"] = "Старая школа: Кража бриллиантов",
+		["ch_pdth_style_diamond_desc"] = "Завершите контракт \"Кража бриллиантов\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
+		["ch_pdth_style_slaughterhouse"] = "Старая школа: Скотобойня",
+		["ch_pdth_style_slaughterhouse_desc"] = "Завершите контракт \"Скотобойня\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
+		["ch_pdth_style_counterfeit"] = "Старая школа: Подделка",
+		["ch_pdth_style_counterfeit_desc"] = "Завершите контракт \"Подделка\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
+		["ch_pdth_style_undercover"] = "Старая школа: Под прикрытием",
+		["ch_pdth_style_undercover_desc"] = "Завершите контракт \"Под прикрытием\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
+		["ch_pdth_style_nomercy"] = "Старая школа: Нет милосердию",
+		["ch_pdth_style_nomercy_desc"] = "Завершите контракт \"Нет милосердию\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
+
+	})
+end)
+
+-- Стринги для хаистов
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Heists", function(loc)
+	LocalizationManager:add_localized_strings({
+		
+		["heist_junker_name"] = "Наркопритон",
+		["heist_junker_brief"] = "Это работа на Влада. После неудачной сделки его люди и товар оказались в тяжелом положении - федералы уже близко. Мы подготовили транспорт, чтобы доставить вас к месту сделки, где вы будете обеспечивать прикрытие. Мы пришлем вертолет и эвакуируем оттуда вас вместе с товаром.\n\nРабота не очень долгая, но не стоит недооценивать полицию. Экипируйтесь для боя.",
+		["heist_junk_name"] = "Сторожи",
+		["heist_junk_brief"] = "Стройплощадка уже близко. Копы еще не прибыли, но будут на месте очень скоро. Ребята Влада обеспечат вам прикрытие, но скорее всего не смогут держаться долго.\n\nГоворят, на месте есть мет-лаборатория, поэтому можете попробовать сварить себе премию, если сможете одновременно уследить за товаром Влада.",
+		["junk_01"] = "ЗАЩИЩАТЬ ДЕНЬГИ И НАРКОТИКИ",
+		["junk_01_desc"] = "Держите копов подальше от товара! И кокаин, и деньги должны быть в безопасности.",
+		["junk_02"] = "ПОСТАВИТЬ КАНИСТРЫ И ВЫСТРЕЛИТЬ В КАЖДУЮ ИЗ НИХ",
+		["junk_02_desc"] = "Зажгите костер, который оповестит пилота о вашей позиции.",
+		["junk_03"] = "ЗАЩИЩАТЬ ДЕНЬГИ И НАРКОТИКИ",
+		["junk_03_desc"] = "Не позволяйте копам уносить товар Влада! Если вы потеряете слишком много мешков, дело будет провалено!",
+		["junk_04"] = "ЗАБРАТЬ ТОВАР ВЛАДА",
+		["junk_04_desc"] = "Забрать кокаин Влада. Его собственные люди проследят, чтобы деньги были в безопасности.",
+		["junk_05"] = "ДОСТУПНА ЭВАКУАЦИЯ",
+		["junk_05_desc"] = "Эвакуируйтесь, как только будете довольны наградой.",
+
+		["heist_int_dock_name"] = "Мокрое дело",
+		["heist_int_dock_brief"] = "Этот склад принадлежит Murkywater Logistics, по крайней мере, на данный момент. Они использовали его для хранения добычи, но недавно мы заметили,  что туда было доставлено несколько серверов с засекреченной информацией. По нашим данным, там содержатся материалы о союзе между ними и OMNIA.\n\nТихо или громко, ваша единственная задача - захватить сервера и завладеть информацией. Ожидайте сопротивления, вне зависимости от метода.",
+		["heist_wetwork_name"] = "Мокрое дело",
+		["heist_wetwork_brief"] = "Этот склад принадлежит Murkywater Logistics, по крайней мере, на данный момент. Они использовали его для хранения добычи, но недавно мы заметили,  что туда было доставлено несколько серверов с засекреченной информацией. По нашим данным, там содержатся материалы о союзе между ними и OMNIA.\n\nТихо или громко, ваша единственная задача - захватить сервера и завладеть информацией. Ожидайте сопротивления, вне зависимости от метода.",
+		["obj1_enterwarehouse"] = "ПРОНИКНУТЬ НА СКЛАД",
+		["obj1_enterwarehouse_desc"] = "Проникните на склад.",
+		["obj2_findsecuritydoor"] = "НАЙТИ СЕРВЕРНУЮ",
+		["obj2_findsecuritydoor_desc"] = "Найдите серверную комнату. Она должна быть где-то на складе, вероятнее всего за закрытой дверью.",
+		["obj3_getsecuritydooropen"] = "ОТКРЫТЬ ДВЕРЬ",
+		["obj3_getsecuritydooropen_desc"] = "Найти способ открыть дверь.",
+		["obj4_openseconddoor"] = "ВСКРЫТЬ СЕРВЕРНУЮ КОМНАТУ",
+		["obj4_openseconddoor_desc"] = "Проникнуть в серверную комнату. Ключ-карта или дрель помогут в этом.",
+		["obj5_hack"] = "ВЗЛОМАТЬ НОУТБУК",
+		["obj5_hack_desc"] = "Взломать ноутбук, используя софт, предоставленный Джекелом.",
+		["obj5b_explode"] = "ОБЕЗВРЕДИТЬ C4!",
+		["obj5b_explode_desc"] = "Здесь C4! Обезвредьте его или убегайте!",
+		["obj6_wait"] = "ОТПРАВИТЬ ДАННЫЕ",
+		["obj6_wait_desc"] = "Взлом завершен. Отправьте данные Джекелу.",
+		["obj7_escapeorloot"] = "ДОСТУПНА ЭВАКУАЦИЯ",
+		["obj7_escapeorloot_desc"] = "Эвакуируйтесь, как только будете довольны наградой.",
+
+		["heist_int_dock_burn_name"] = "Выгорание",
+		["heist_int_dock_burn_brief"] = "Нет времени продумывать план, они собираются перевозить мастер-серверы.\nВодитель подвезет грузовик с вооруженными клоунами прямо к воротам.",
+		["heist_wetwork_burn_name"] = "Выгорание",
+		["heist_wetwork_burn_brief"] = "Итак, мы почти у места. Вы уже были здесь, но в этот раз мы вторгаемся с шумом.\nВозможно, тут еще осталась добыча, но это не главное.\n\nИщите все, что поможет вам узнать, что внутри закрытых контейнеров. Камеры, вещи вокруг контейнеров, надписи на досках и тому подобное.",
+		["wwburn_01"] = "ПОДГОТОВИТЬСЯ",
+		["wwburn_01_desc"] = "Мы у главных ворот, наемники будут повсюду, поэтому готовьтесь к перестрелке.",
+		["wwburn_02"] = "НАЙТИ СЕРВЕРЫ",
+		["wwburn_02_desc"] = "Найдите три контейнера, в которых содержатся мастер-серверы.",
+		["wwburn_03"] = "СЖЕЧЬ РЕЗЕРВНЫЕ КОПИИ",
+		["wwburn_03_desc"] = "Сожгите резервные копии мастер-серверов, они будут в тех же контейнерах.",
+		["wwburn_04"] = "ДОСТУПНА ЭВАКУАЦИЯ",
+		["wwburn_04_desc"] = "Покиньте локацию, или найдите дополнительную добычу.",
+	
+	
+	
+	["restoration_level_data_unknown"] = "НЕИЗВЕСТНОЕ ВРЕМЯ, НЕИЗВЕСТНОЕ МЕСТО",
 		["restoration_level_data_welcome_to_the_jungle_1"] = "18:24, база байкерской банды 'Overkill'",
 		["restoration_level_data_welcome_to_the_jungle_1_night"] = "01:32, база байкерской банды 'Overkill'",
 		["restoration_level_data_welcome_to_the_jungle_2"] = "18:00, Вилла Вивальди",
@@ -502,509 +1495,63 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_platinum_name"] = "Surface Tension",
 		["heist_cursed_name"] = "Green Harvest",
 		["heist_holly_name"] = "Blockbuster Night",
-
-		["heist_platinum_brief"] = "stir the boat",
-		["heist_jackal_surface_tension_name"] = "OMNIA Research Vessel SN-XR-LETHE",
-		["heist_jackal_surface_tension_brief"] = "PLACEHOLDER",
-
-		["heist_vivinite_name"] = "Zero Day",
-
-		["heist_contact_shatter"] = "Джекел",
-		["heist_contact_akashic"] = "Нико",
-
-		["menu_contacts_shatter"] = "Союзники CRIMENET",
-		["heist_contact_jackal_description"] = "Джекел начал свою карьеру в GenSec, но уволился после инцидента, связанного с торговлей людьми, в котором были замешаны GenSec и OMNIA.\n\nТеперь он работает на CRIMENET, поставляя проблемы им прямо на дом.",
-		["heist_contact_akashic_description"] = "В прошлом - высокопоставленный агент Гектора Моралеса, Николас 'Нико' Рене теперь командует остатками Синалоанского картеля в США. \nИх численность мала, и более крупный Колумбийский картель не собирается ни предоставлять помощь, ни восстанавливать союз с CRIMENET. Нико объединяется с различными мелкими бандами на Восточном побережье, а также с CRIMENET - он предоставит свои ресурсы в обмен на услуги.",
-
-
-		["bm_msk_shatter_true"] = "Шаттер",
-		["bm_msk_shatter_true_desc"] = "Легендарная маска, о которой говорят вполголоса.\n\nРазумеется, это просто дубликат.\n\nВ настоящей маске есть кое-что особенное, но думаю, вас устроит и копия.\n\nФеникс символизирует перерождение того, кто не может быть убит. Попробуй его уничтожить, и он лишь нанесет огненный контр-удар.",
-		["menu_l_global_value_veritas"] = "Restoration Mod",
-		["menu_l_global_value_veritas_desc"] = "Это предмет из Restoration Mod!",
-
-		["menu_alex_1_zipline"] = "Зиплайн для сумок",
-
-		["menu_asset_wet_intel"] = "Разведданные",
-		["menu_asset_risk_murky"] = "Наемники Murkywater",
-		["menu_asset_risk_bexico"] = "Мексиканская федеральная полиция",
-		["menu_asset_risk_zombie"] = "зОмбИ пОлиЦиЯ",
-		["menu_asset_wet_boat"] = "Лодка",
-		["menu_asset_wet_boat_desc"] = "Купить дополнительную точку сброса и побега",
-
-		["bm_msk_canada"] = "Адский хоккей",
-		["bm_msk_canada_desc"] = "Ничего не оставляйте позади - даже когда становится жарко, вы сражаетесь за что хотите, когда хотите (даже если это термобарическая бомба).",
-		["bm_msk_jsr"] = "Миссис Граффити",
-		["bm_msk_jsr_desc"] = "Создана настоящим художником. Стирать граффити - все равно, что сжигать книги, не так ли?\n\nИскусство это искусство - его нужно уважать.",
-		["bm_msk_jsrf"] = "Mистер Граффити",
-		["bm_msk_jsrf_desc"] = "За каждым граффити стоит история. Быть художником в безликом городе может быть болезненно.\n\nГраффити - словно книга. Их нужно уметь читать.",
-		["bm_msk_courier_stash"] = "Сумка для добычи",
-		["bm_msk_courier_stash_desc"] = "Если нужно взять несколько лишних сотенных купюр, а в карманах уже не осталось места, эта маска вполне сойдет.",
-
-		["bm_msk_female_mask"] = "Стандартная маска (женская)",
-		["bm_msk_female_mask_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.",
-		["bm_msk_female_mask_blood"] = "Восстановленная маска (женская)",
-		["bm_msk_female_mask_blood_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.\n\nЭта маска была обнаружена после неудачного ограбления склада OMNIA, среди кровавого побоища.\n\nПоследним посланием банды, прежде чем они пропали навсегда, было ''ERIT PREMIUM SANGUINE SANCTUM''.",
-		["bm_msk_female_mask_clown"] = "Рози",
-		["bm_msk_female_mask_clown_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.\n\nЭту маску носила грабитель, известная как Рози, хотя теперь у нее новая маска.\n\nНа видеозаписи с ограбления было видно, как она обезвреживает целый отряд спецназа совершенно без оружия.",
-		["bm_msk_male_mask"] = "Стандартная маска (мужская)",
-		["bm_msk_male_mask_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.",
-		["bm_msk_male_mask_blood"] = "Восстановленная маска (мужская)",
-		["bm_msk_male_mask_blood_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.\n\nЭта маска была обнаружена после неудачного ограбления склада OMNIA, среди кровавого побоища.\n\nПоследним посланием банды, прежде чем они пропали навсегда, было ''ERIT PREMIUM SANGUINE SANCTUM''.",
-		["bm_msk_male_mask_clown"] = "Кросс",
-		["bm_msk_male_mask_clown_desc"] = "Стандартная маска, предоставляемая организацией CRIMENET.\n\nСделана из плотного материала, носить ее не так просто, зато она прочная.\n\nЭту маску носил грабитель, известный как Кросс, хотя теперь у него новая маска.\n\nКросс - талантливый стрелок, и однажды вывел из строя четыре бронегрузовика за пять секунд.",
-
-		["bm_msk_twister_mask"] = "Человек-загадка",
-		["bm_msk_twister_mask_desc"] = "Кто скрывается за этой маской - загадка.\n\nМожет, это какой-нибудь незнакомец, а может - кто-нибудь, кого вы знали все это время.",
-		["bm_msk_voodoo_mask"] = "Темная магия",
-		["bm_msk_voodoo_mask_desc"] = "Эта маска была найдена в джунглях после бомбардировки - она смогла вынести последствия разрушений, и теперь считается предвестником беды.\n\nОна найдет вас, когда вы будете нуждаться в ней больше всего и поможет пережить беду.\n\nВопрос лишь в том, какой ценой.",
-
-		["bm_msk_f1"] = "Шлем X1",
-		["bm_msk_f1_desc"] = "Не забывайте о защите, когда будете нестись по шоссе или проскальзывать через пробки.\n\nЭтот шлем защитит от жесткого падения, но явно не от пуль.",
-		["bm_msk_f1_b"] = "Шлем X1 (Чистый)",
-		["bm_msk_f1_b_desc"] = "Не забывайте о защите, когда будете нестись по шоссе или проскальзывать через пробки.\n\nЭтот шлем защитит от жесткого падения, но явно не от пуль.\n\nЭто дубликат шлема, без брендовых стикеров, который был найден в гараже с дорогими машинами.\n\nДержите этот шлем под рукой, и может быть однажды, вы поедете на одной из таких.",
-		["bm_msk_sweettooth"] = "Сладкоежка",
-		["bm_msk_sweettooth_desc"] = "Сладкоежка (настоящее имя - Маркус 'Нидлс' Кейн) - персонаж из серии игр Twisted Metal. Сладкоежка известен как клоун-убийца, который водит боевой фургончик с мороженым.\n\nГоворят, однажды он сбежал из психиатрической лечебницы. Теперь он ведет криминальную жизнь.",
-
-		["bm_msk_wolf_stone"] = "Вульф из Stonecold",
-		["bm_msk_wolf_stone_desc"] = "Оригинальная маска Вульфа, которую он носил, когда впервые сошел с ума и начал воплощать преступления из своих любимых игр. Считалось, что эта маска была утеряна во время ограбления, вдохновленного игрой ‘Hyper Heisting’.\n\nВо время ранних ограблений банды, маска нашлась и была доставлена в убежище одним из сообщников Бейна.\n\nОригинальный узор маски со временем потускнел, совсем как психическая стабильность Вульфа.",
-
-		["bm_msk_thespian"] = "Thespian",
-		["bm_msk_thespian_desc"] = "Thespian is a superhuman solider of fortune. In the future, space marines like Thespian protect the world of mankind and its space colonies from forces of evil\n\nHis helmet is a popular gift in the criminal underworld and is given to thieves, thugs and career criminals who show their loyalty and patience to the syndicate.",
-
-		["bm_msk_dallas_aged"] = "Древний Даллас",
-		["bm_msk_dallas_aged_desc"] = "Вы с бандой обнаружили эти маски в странной египетской шкатулке, найденной в Скале Генри. Сама шкатулка оказалась утеряна при перевозке, но ее содержимое было передано вам.\n\nВ этих масках есть что-то необычное. Нет информации, откуда они могли появиться.\n\nДжекел считает, что они могли быть сделаны в качестве практичной шутки, чтобы напугать банду.\n\nОднако вы замечаете, что эти маски выглядят очень, очень старыми.",
-		["bm_msk_chains_aged"] = "Древний Чейнс",
-		["bm_msk_chains_aged_desc"] = "Вы с бандой обнаружили эти маски в странной египетской шкатулке, найденной в Скале Генри. Сама шкатулка оказалась утеряна при перевозке, но ее содержимое было передано вам.\n\nВ этих масках есть что-то необычное. Нет информации, откуда они могли появиться.\n\nДжекел считает, что они могли быть сделаны в качестве практичной шутки, чтобы напугать банду.\n\nОднако вы замечаете, что эти маски выглядят очень, очень старыми.",
-		["bm_msk_hoxton_aged"] = "Древний Хокстон",
-		["bm_msk_hoxton_aged_desc"] = "Вы с бандой обнаружили эти маски в странной египетской шкатулке, найденной в Скале Генри. Сама шкатулка оказалась утеряна при перевозке, но ее содержимое было передано вам.\n\nВ этих масках есть что-то необычное. Нет информации, откуда они могли появиться.\n\nДжекел считает, что они могли быть сделаны в качестве практичной шутки, чтобы напугать банду.\n\nОднако вы замечаете, что эти маски выглядят очень, очень старыми.",
-		["bm_msk_wolf_aged"] = "Древний Вульф",
-		["bm_msk_wolf_aged_desc"] = "Вы с бандой обнаружили эти маски в странной египетской шкатулке, найденной в Скале Генри. Сама шкатулка оказалась утеряна при перевозке, но ее содержимое было передано вам.\n\nВ этих масках есть что-то необычное. Нет информации, откуда они могли появиться.\n\nДжекел считает, что они могли быть сделаны в качестве практичной шутки, чтобы напугать банду.\n\nОднако вы замечаете, что эти маски выглядят очень, очень старыми.",
-
-		["bm_msk_beef_dallas"] = "Мясной Даллас",
-		["bm_msk_beef_dallas_desc"] = "Банда использовала эти маски во время ограбления 'Скотобойня'.\n\nДаллас решил оставить дизайн своей полюбившейся маски.",
-		["bm_msk_beef_chains"] = "Мясной Чейнс",
-		["bm_msk_beef_chains_desc"] = "Банда использовала эти маски во время ограбления 'Скотобойня'.\n\nЧейнс, будучи силовиком, захотел в качестве дизайна устрашающее животное. Что может быть страшнее, чем чертов динозавр?!",
-		["bm_msk_beef_hoxton"] = "Мясной Хокстон",
-		["bm_msk_beef_hoxton_desc"] = "Банда использовала эти маски во время ограбления 'Скотобойня'.\n\nХокстон оставил простой список пожеланий для своей маски:\n- Защищающая!\n- Эффективная!\n- Стильная!\n\nТак и получилась эта маска.",
-		["bm_msk_beef_wolf"] = "Мясной Вульф",
-		["bm_msk_beef_wolf_desc"] = "Банда использовала эти маски во время ограбления 'Скотобойня'.\n\nДизайн Вульфа был вдохновлен его любимым персонажем, которого он придумал, когда еще разрабатывал игры.",
-
-		["bm_msk_vyse_dallas"] = "Источник",
-		["bm_msk_vyse_dallas_desc"] = "Vyse сразился лицом-к-лицу с самым дьявольским из дьяволов. Vyse выжил, а из костей дьявола сделали эту маску.",
-		["bm_msk_vyse_chains"] = "Детская игра",
-		["bm_msk_vyse_chains_desc"] = "Хоть Vyse и украл больше денег и золота, чем поместится в Форт-Нокс, у него хватает сердца, что бы поделиться частью добычи с больными детьми.\n\nОднажды, Бейн посетил этих детей - эта маска была их благодарностью для Vyse.",
-		["bm_msk_vyse_hoxton"] = "Три балбеса",
-		["bm_msk_vyse_hoxton_desc"] = "Говорят, если провалишься - нужно перетерпеть боль и попытаться снова. Vyse не был согласен. Каждый раз, когда он проигрывал, он шел вперед, не смотря ни на что. Даже Ларри, Керли и Мо не выдержали бы такого.",
-		["bm_msk_vyse_wolf"] = "Беар Гриллс",
-		["bm_msk_vyse_wolf_desc"] = "Vyse однажды вызвал Беара Гриллса на поединок по распитию урины... Vyse победил, и Мистер Гриллс использовал свои навыки выживания при создании этой маски.",
-
-		["bm_msk_secret_old_hoxton"] = "Секретный Хокстон",
-		["bm_msk_secret_old_hoxton_desc"] = "Хокстон покинул родной край ради больших денег. Когда Бейн рассказал ему о Секрете, ему понравилась идея искать древние артефакты - ведь они стоят дорого. Хокстону было совсем неважно, существует ли некая древняя сила или нет.",
-
-		["bm_msk_secret_clover"] = "Секретная Кловер",
-		["bm_msk_secret_clover_desc"] = "Когда Бейн рассказал Кловер о Секрете, она отнеслась скептически - ей всегда казалось, что легенды Бейна о древних артефактах с мифической силой были сильно преувеличены. Но когда она лично увидела сбор трех шкатулок, ни о каких сомнениях больше не было и речи.",
-
-		["bm_msk_secret_dragan"] = "Секретный Драган",
-		["bm_msk_secret_dragan_desc"] = "Как бывший полицейский, Драган всегда хорошо умел искать улики, и когда Бейн показал ему свое расследование Секрета, он был готов к охоте за древними артефактами.",
-
-		["bm_msk_secret_bonnie"] = "Секретная Бонни",
-		["bm_msk_secret_bonnie_desc"] = "Бонни, услышав от Бейна о секрете, сделала большой глоток своего любимого виски и закричала о том, что готова 'набить рожу Катару'.",
-
-		["bm_msk_secret_sydney"] = "Секретная Сидни",
-		["bm_msk_secret_sydney_desc"] = "Когда Сидни услышала о секрете от Бейна, она не поверила в легенды о древней силе. Тем не менее, возможность сразиться с неизвестной, но крайне опасной организацией достаточно заинтересовала ее.",
-
-		["bm_msk_secret_richard"] = "Секретный Ричард",
-		["bm_msk_secret_richard_desc"] = "По криминальному миру ходили слухи о киллере, которым вдохновлялся Джекет; киллер, который был ликвидирован неизвестной организацией. Когда Джекет услышал о секрете от Бейна, он вернулся с маской, похожей на ту, что носил его прародитель.",
-
-		["bm_all_seeing"] = "Всевидящий якорь",
-		["bm_all_seeing_desc"] = "Ужасающее видение, кошмарное зрелище.\n\nВысшие силы увидели вас и решили наградить.",
-
-		["bm_msk_classic_helmet"] = "Классический силовик",
-		["bm_msk_classic_helmet_desc"] = "Подарок от бывшего спецназовца. Прежде чем уйти на пенсию, он вычислил Джекела... И подарил ему единственную экипировку, которая у него осталась, чтобы помочь работе Джекела.\n\nЭто странное событие было не без причины: Он увидел своими глазами то, что OMNIA держала в тайне. Но он не стал копать эти тайны и вскоре покинул спецназ навсегда.\n\nДжекел прислал эти шлемы вам, в качестве награды за вашу помощь.",
-
-		["bm_cube"] = "devmask.model",
-		["bm_cube_desc"] = "Push the placeholder, we'll get around to it.",
-
-		["bm_j4"] = "J-4",
-		["bm_j4_desc"] = "Маска Джекела. Точнее, ее копия.\n\nНастоящая маска слишком важна для Джекела, по слухам, в ней полно чувствительной электронники.\n\nВ этой копии система дисплея очень простая и служит просто чтобы быть похожей на оригинал.\n\nПодарок за ваши старания.",
-
-
-		["bm_msk_finger"] = "Наглец",
-		["bm_msk_finger_desc"] = "Наглец - мифическое существо, которое существовало в мире давным-давно. Существо гонялось и вредило обычным деревенским и городским жителям, охотясь на них различными способами. Наглецу нравилось это делать, и он был угрозой покою, пока он не был обнаружен и уничтожен людьми Короля.",
-
-		["bm_msk_instinct"] = "Интуиция",
-		["bm_msk_instinct_desc"] = "Эта маска принадлежала мифическому войну из далеких земель. Он путешествовал по всему миру, полагаясь на интуицию, и охотился на злые силы. Он прошел через многие подземелья и победил тысячи злых существ на своем пути. В конце концов, он ушел на покой, зная, что его дело продолжат будущие поколения.",
-
-		["bm_msk_unforsaken"] = "Неупокоенный",
-		["bm_msk_unforsaken_desc"] = "Эта легендарная маска - знак благодарности нашему сообществу за упорство и поддержку. От нас, команды OVERKILL - мы благодарны вам.\n\nЧерез огонь и медные трубы, пусть шлемы продолжают лететь.",
-
-		["bm_msk_chains_halloween"] = "Разбитый щит",
-		["bm_msk_chains_halloween_desc"] = "Будучи наемником, приходится видеть большое количество боли и смерти. Даже если вам кажется что вы бессмертны и бесстрашны... Иногда, плохие воспоминания добираются до вас.\n\nВ светлый, снежный и прекрасный октябрьский день 2008-го года, Чейнс отсыпался. Недавно выполнив контракт на убийство от Murkywater, он получил деньги и неплохую комнату в отеле, где и спал.\n\nВпервые за много лет, ему приснился кошмар. Он не помнит его во всех подробностях, но он проснулся от паралича, и образ, напоминающий скелет, стоял над ним, пока он не мог пошевелиться.\n\nКаждый раз, когда он выполнял грязную работу, его последующие ночи были бессонными и ужасными.\n\nВ конце концов, ему пришлось сказать 'Хватит.', покинуть свою работу наемником и обратиться к психотерапевту. Ему прописали лекарства. На год жизнь стала хорошей...\n\nРовно через год, 31 октября 2009-го, компания Murkywater решила, что уволившийся человек собирается раскрыть секреты организации. Для них это непозволительно.\n\nЧейнс бросился в криминальную жизнь, чтобы спасти себя, и снова стал солдатом.\n\nНо в этот раз все было по-другому. Кошмары и паралич не вернулись. Он не собирался приносить страдания другим людям.\n\nВ этот раз, ему нужно было защитить себя.",
-
-		["bm_msk_dallas_halloween"] = "Отражение монстра",
-		["bm_msk_dallas_halloween_desc"] = "Тратя годы на выдумывание несуществующих личностей и историй, легко потерять настоящего себя.\n\nТы начинаешь перепрыгивать от личности к личности, подбирать черты своих друзей, любовниц и приятелей. Иногда они сливаются вместе, и ты начинаешь чувствовать себя невнятной смесью.\n\nДаллас проснулся октябрьским утром и взглянул в зеркало - его волосы были окрашены в дурацкий блондинистый цвет, а борода неровно побрита. На нем был безвкусный костюм, покрытый потом после жутких кошмаров. Его голова болела после выходных, проведенных на дне бутылки.\n\nВзглянул на себя, он подумал, что больше похож на монстра Франкенштейна, чем на человека: Просто сборные части, которые достаточно убедительны, чтобы презентовать себя в криминальной карьере.\n\nЭто утро было переломным моментом, но Далласу до сих пор иногда кажется, что не все его черты характера действительно принадлежат ему.",
-
-		["bm_msk_hoxton_halloween"] = "Хеллоуинский сон",
-		["bm_msk_hoxton_halloween_desc"] = "Одним из хеллоуинских воспоминаний Хокстона было посещение Нью-Йорка с дальними родственниками.\n\nЕму никогда не нравились конфеты, но он обожал тыквенный пирог, который подавали на вечеринке его родственника.\n\nКогда он вышел прогуляться с вечеринки, он увидел большую дверь хранилища, в которое завозили различные богатства.\n\nС тех пор он загорелся идеей ограблений во время праздников.",
-
-		["bm_msk_wolf_halloween"] = "Плач дьявола",
-		["bm_msk_wolf_halloween_desc"] = "Холодным октябрьским вечером 2010-го, Вульф до сих пор пытался выбраться из финансового кризиса после того, как его компания закрылась.\n\nОн лежал в гостинице, в полном одиночествеЮ и думал о своей семье, о том, что он их подвел и может их больше не увидеть - отрезанный от них целым океаном.\n\nОн потратил последние сбережения на поездку в США, в попытке накопить достаточно денег, чтобы начать сначала в новом доме, но он провалился.\n\nНесколько недель спустя, бродя по домам друзей, гостиницам и убежищам, ему позвонила его любимая, впервые за долгое время.\n\nОтношениям конец. 'Не вижу, как это может хорошо закончиться.'\n\nМожет, это и был повод начать сначала.\n\nМожет, настало время попробовать новую карьеру.",
-
-
-		["pattern_jkl_patt01_title"] = "Шакалы",
-		["pattern_jkl_patt02_title"] = "Компания",
-		["material_jkl_matt01_title"] = "Грозные перья",
-		["material_jkl_matt02_title"] = "Золото Веритас",
-
-		["menu_scores"] = "SCORES",
-
-		["RestorationModColorOption"] = "Изменить цвет элемента интерфейса",
-		["RestorationModColorsOptionsButtonTitleID"] = "Настройки цветов",
-		["RestorationModColorsOptionsButtonDescID"] = "Изменить цвет различных элементов интерфейса.",
-		["RestorationModObjectivesBGTitleID"] = "Задачи - задний план",
-		["RestorationModObjectivesFGTitleID"] = "Задачи - передний план",
-		["RestorationModAssaultBGTitleID"] = "Штурм - задний план",
-		["RestorationModAssaultFGTitleID"] = "Штурм - передний план",
-		["RestorationModNoReturnTitleID"] = "Текст Точки невозврата",
-		["RestorationModTimerTextTitleID"] = "Таймер (время) ограбления",
-		["RestorationModAssaultEndlessBGTitleID"] = "Штурм капитана",
-		["RestorationModAssaultSurvivedBGTitleID"] = "Пережитый штурм",
-		["RestorationModStaminaTitleID"] = "Выносливость",
-		["RestorationModStaminaThresholdTitleID"] = "Порог выносливости",
-		["RestorationModBagBitmapTitleID"] = "Сумка",
-		["RestorationModBagTextTitleID"] = "Текст сумок",
-		["RestorationModNoReturnTextTitleID"] = "Текст Точки невозврата",
-		["RestorationModHostagesTextTitleID"] = "Текст заложников",
-		["RestorationModHintTextTitleID"] = "Текст подсказок",
-		["RestorationModMaskOnTextTitleID"] = "Текст надевания маски",
-		["RestorationModDownsThreePlusTitleID"] = "Счетчик падений (при 3+ падений)",
-		["RestorationModDownsTwoTitleID"] = "Счетчик падений (при 2 падениях)",
-		["RestorationModDownsOneTitleID"] = "Счетчик падений (при 1 падении)",
-		["RestorationModDownsZeroTitleID"] = "Счетчик падений (при 0 падений)",
-		["RestorationModStopAllBotsTitleID"] = "Останавливать всех ботов",
-		["RestorationModStopAllBotsDescID"] = "Останавливать всех ботов, если удержана кнопка остановки бота.",
-		["RestorationModPONRTrackTitleID"] = "Музыка во время Точки невозврата",
-		["RestorationModPONRTrackDescID"] = "Изменяет музыку во время Точки невозврата в режиме Pro-Job.",
-		["RestorationModPONRTracksTitleID"] = "Музыка во время Точки невозврата",
-		["RestorationModPONRTracksDescID"] = "Выберите музыку, которая начнется во время Точки невозврата в режиме Pro-Job.",
-		["RestorationModMusicShuffleTitleID"] = "Перемешка музыки",
-		["RestorationModMusicShuffleDescID"] = "Музыка будет меняться после конца каждого штурма.",
-		["RestorationModOldEconomyTitleID"] = "Old Economy (Beta)",
-		["RestorationModOldEconomyDescID"] = "Enables the old economy from pre update 11.",
-		["RestorationModScaleTitleID"] = "Размер интерфейса",
-		["RestorationModScaleDescID"] = "Изменяет размер интерфейса. Может потребоваться перезапуск игры.",
-		["RestorationModSizeOnScreenTitleID"] = "Размер интерфейса на экране",
-		["RestorationModSizeOnScreenDescID"] = "Изменяет размер интерфейса на экране. Может потребоваться перезапуск игры.",
-		["RestorationModTeammateTitleID"] = "Панель команды из Альфы",
-		["RestorationModTeammateDescID"] = "Включает или выключает панель команды из альфа-версии игры, которая отображает статистику вас и вашей команды.",
-		["RestorationModHeistTimerTitleID"] = "Время ограбления из Альфы",
-		["RestorationModHeistTimerDescID"] = "Включает или выключает время (таймер) ограбления из альфа-версии игры.",
-		["RestorationModMaskOnTitleID"] = "Текст надевания маски из Альфы",
-		["RestorationModMaskOnDescID"] = "Включает или выключает текст надевания маски из альфа-версии игры.",
-		["RestorationModNameLabelsTitleID"] = "Ники игроков из Альфы",
-		["RestorationModNameLabelsDescID"] = "Включить или выключить ники игроков из альфа-версии игры.",
-		["RestorationModHintTitleID"] = "Панель подсказок из Альфы",
-		["RestorationModHintDescID"] = "Включить или выключит панель подсказок из альфа-версии игры.",
-		["RestorationModExtraOptionsButtonTitleID"] = "Дополнительные опции интерфейса",
-		["RestorationModExtraOptionsButtonDescID"] = "Еще больше опций!",
-		["RestorationModRealAmmoTitleID"] = "Действительный счетчик патронов",
-		["RestorationModRealAmmoDescID"] = "Счетчик патронов в запасе будет игнорировать патроны, которые уже заряжены.",
-		["RestorationModStealthOrigPosTitleID"] = "Стандартное расположение обнаружения",
-		["RestorationModStealthOrigPosDescID"] = "Полоска обнаружения будет в том же месте, что и в ванильной игре.",
-		["RestorationModLowerBagTitleID"] = "Понизить текст о подобранной сумке",
-		["RestorationModLowerBagDescID"] = "Текст, который появляется, если подобрать сумку, будет расположен ниже.",
-		["RestorationModAssaultStyleTitleID"] = "Стиль панели штурма",
-		["RestorationModAssaultStyleDescID"] = "Позволяет выбрать стиль панели штурма.",
-		["RestorationModCasingTickerTitleID"] = "Лента исследования из Альфы",
-		["RestorationModCasingTickerDescID"] = "Включить или выключить ленту режима исследования из альфа-версии игры (Требует включенную ленту из Альфы).",
-		["RestorationModCustodyTitleID"] = "Панель заключения под стражу из Альфы",
-		["RestorationModCustodyDescID"] = "Включить или выключить панель заключения под стражу из альфа-версии игры.",
-		["RestorationModCrimenetTitleID"] = "CRIMENET из Альфы",
-		["RestorationModCrimenetDescID"] = "Включает или выключает CRIMENET из альфа-версии игры.",
-		["RestorationModProfileTitleID"] = "Окно с профилями из Альфы",
-		["RestorationModProfileDescID"] = "Включить или выключить окно с профилями из альфа-версии игры.",
-		["RestorationModNewsfeedTitleID"] = "Лента новостей из Альфы",
-		["RestorationModNewsfeedDescID"] = "Включить или выключить ленту новостей из альфа-версии игры.",
-		["RestorationModUppercaseNamesTitleID"] = "Ники заглавными буквами",
-		["RestorationModUppercaseNamesDescID"] = "Включить или выключить отображение ников игроков заглавными буквами.",
-		["RestorationModPeerColorsTitleID"] = "Цвета товарищей из Альфы",
-		["RestorationModPeerColorsDescID"] = "Включить или выключить цвета товарищей из альфа-версии игры.",
-		["RestorationModPocoCrimenetAlignSortTitleID"] = "Подгонка и сортировка CRIMENET",
-		["RestorationModPocoCrimenetAlignSortDescID"] = "Подгоняет и сортирует CRIMENET по сложности.",
-		["RestorationModPocoCrimenetScaleTitleID"] = "Масштаб CRIMENET",
-		["RestorationModPocoCrimenetScaleDescID"] = "Позволяет менять масштаб CRIMENET.",
-		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
-		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",
-		["RestorationModVoiceIconTitleID"] = "Голосовой чат",
-		["RestorationModVoiceIconDescID"] = "Отображает иконку, когда игрок использует голосовой чат.",
-		["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",
-		["RestorationModNewsFeedStyleDescID"] = "Allows you to choose to show both newsfeed and newheists box or just the newsfeed.",
-		["alpha_assault"] = "Уголок",
-		["beta_assault"] = "Лента",
-		["show_both"] = "Default",
-		["show_classic_newsfeed"] = "Classic",
-
-		["RestorationModDodgeDisplayTitleID"] = "Цифра шкалы уворота",
-		["RestorationModDodgeDisplayDescID"] = "Максимальное число, которое *отображает* шкала уворота. Требует перезапуска.",
-		["dd_scale"] = "150 -Текущий уворот",
-		["dd_150"] = "150",
-		["dd_100"] = "100",
-
-		["menu_ingame_manual"] = "Гайд по Restoration",
-		["menu_ingame_manual_help"] = "Просмотреть гайд по Restoration.",
-
-		["menu_asset_wet_add_saw"] = "Дополнительная пила",
-		["menu_asset_wet_add_saw_desc"] = "Закупить дополнительную пилу",
-		["menu_rush_asset_sentrygun"] = "Турель",
-		["menu_rush_asset_sentrygun_desc"] = "Закупить дополнительную турель",
-
-		["heist_junker_name"] = "Наркопритон",
-		["heist_junker_brief"] = "Это работа на Влада. После неудачной сделки его люди и товар оказались в тяжелом положении - федералы уже близко. Мы подготовили транспорт, чтобы доставить вас к месту сделки, где вы будете обеспечивать прикрытие. Мы пришлем вертолет и эвакуируем оттуда вас вместе с товаром.\n\nРабота не очень долгая, но не стоит недооценивать полицию. Экипируйтесь для боя.",
-		["heist_junk_name"] = "Сторожи",
-		["heist_junk_brief"] = "Стройплощадка уже близко. Копы еще не прибыли, но будут на месте очень скоро. Ребята Влада обеспечат вам прикрытие, но скорее всего не смогут держаться долго.\n\nГоворят, на месте есть мет-лаборатория, поэтому можете попробовать сварить себе премию, если сможете одновременно уследить за товаром Влада.",
-		["junk_01"] = "ЗАЩИЩАТЬ ДЕНЬГИ И НАРКОТИКИ",
-		["junk_01_desc"] = "Держите копов подальше от товара! И кокаин, и деньги должны быть в безопасности.",
-		["junk_02"] = "ПОСТАВИТЬ КАНИСТРЫ И ВЫСТРЕЛИТЬ В КАЖДУЮ ИЗ НИХ",
-		["junk_02_desc"] = "Зажгите костер, который оповестит пилота о вашей позиции.",
-		["junk_03"] = "ЗАЩИЩАТЬ ДЕНЬГИ И НАРКОТИКИ",
-		["junk_03_desc"] = "Не позволяйте копам уносить товар Влада! Если вы потеряете слишком много мешков, дело будет провалено!",
-		["junk_04"] = "ЗАБРАТЬ ТОВАР ВЛАДА",
-		["junk_04_desc"] = "Забрать кокаин Влада. Его собственные люди проследят, чтобы деньги были в безопасности.",
-		["junk_05"] = "ДОСТУПНА ЭВАКУАЦИЯ",
-		["junk_05_desc"] = "Эвакуируйтесь, как только будете довольны наградой.",
-
-		["heist_int_dock_name"] = "Мокрое дело",
-		["heist_int_dock_brief"] = "Этот склад принадлежит Murkywater Logistics, по крайней мере, на данный момент. Они использовали его для хранения добычи, но недавно мы заметили,  что туда было доставлено несколько серверов с засекреченной информацией. По нашим данным, там содержатся материалы о союзе между ними и OMNIA.\n\nТихо или громко, ваша единственная задача - захватить сервера и завладеть информацией. Ожидайте сопротивления, вне зависимости от метода.",
-		["heist_wetwork_name"] = "Мокрое дело",
-		["heist_wetwork_brief"] = "Этот склад принадлежит Murkywater Logistics, по крайней мере, на данный момент. Они использовали его для хранения добычи, но недавно мы заметили,  что туда было доставлено несколько серверов с засекреченной информацией. По нашим данным, там содержатся материалы о союзе между ними и OMNIA.\n\nТихо или громко, ваша единственная задача - захватить сервера и завладеть информацией. Ожидайте сопротивления, вне зависимости от метода.",
-		["obj1_enterwarehouse"] = "ПРОНИКНУТЬ НА СКЛАД",
-		["obj1_enterwarehouse_desc"] = "Проникните на склад.",
-		["obj2_findsecuritydoor"] = "НАЙТИ СЕРВЕРНУЮ",
-		["obj2_findsecuritydoor_desc"] = "Найдите серверную комнату. Она должна быть где-то на складе, вероятнее всего за закрытой дверью.",
-		["obj3_getsecuritydooropen"] = "ОТКРЫТЬ ДВЕРЬ",
-		["obj3_getsecuritydooropen_desc"] = "Найти способ открыть дверь.",
-		["obj4_openseconddoor"] = "ВСКРЫТЬ СЕРВЕРНУЮ КОМНАТУ",
-		["obj4_openseconddoor_desc"] = "Проникнуть в серверную комнату. Ключ-карта или дрель помогут в этом.",
-		["obj5_hack"] = "ВЗЛОМАТЬ НОУТБУК",
-		["obj5_hack_desc"] = "Взломать ноутбук, используя софт, предоставленный Джекелом.",
-		["obj5b_explode"] = "ОБЕЗВРЕДИТЬ C4!",
-		["obj5b_explode_desc"] = "Здесь C4! Обезвредьте его или убегайте!",
-		["obj6_wait"] = "ОТПРАВИТЬ ДАННЫЕ",
-		["obj6_wait_desc"] = "Взлом завершен. Отправьте данные Джекелу.",
-		["obj7_escapeorloot"] = "ДОСТУПНА ЭВАКУАЦИЯ",
-		["obj7_escapeorloot_desc"] = "Эвакуируйтесь, как только будете довольны наградой.",
-
-		["heist_int_dock_burn_name"] = "Выгорание",
-		["heist_int_dock_burn_brief"] = "Нет времени продумывать план, они собираются перевозить мастер-серверы.\nВодитель подвезет грузовик с вооруженными клоунами прямо к воротам.",
-		["heist_wetwork_burn_name"] = "Выгорание",
-		["heist_wetwork_burn_brief"] = "Итак, мы почти у места. Вы уже были здесь, но в этот раз мы вторгаемся с шумом.\nВозможно, тут еще осталась добыча, но это не главное.\n\nИщите все, что поможет вам узнать, что внутри закрытых контейнеров. Камеры, вещи вокруг контейнеров, надписи на досках и тому подобное.",
-		["wwburn_01"] = "ПОДГОТОВИТЬСЯ",
-		["wwburn_01_desc"] = "Мы у главных ворот, наемники будут повсюду, поэтому готовьтесь к перестрелке.",
-		["wwburn_02"] = "НАЙТИ СЕРВЕРЫ",
-		["wwburn_02_desc"] = "Найдите три контейнера, в которых содержатся мастер-серверы.",
-		["wwburn_03"] = "СЖЕЧЬ РЕЗЕРВНЫЕ КОПИИ",
-		["wwburn_03_desc"] = "Сожгите резервные копии мастер-серверов, они будут в тех же контейнерах.",
-		["wwburn_04"] = "ДОСТУПНА ЭВАКУАЦИЯ",
-		["wwburn_04_desc"] = "Покиньте локацию, или найдите дополнительную добычу.",
-
-		["wwburn_serverpku"] = "Secure",
-		["wwburn_gaspku"] = "Collect",
-		["wwburn_defend"] = "Defend",
-		["wwburn_container"] = "Shipping Container",
-
-		["menu_jukebox_resmusic_wetwork"] = "Spectre Shark",
-		["menu_jukebox_screen_resmusic_wetwork"] = "Spectre Shark",
-		["menu_jukebox_resmusic_bluewave"] = "Spectre Shark 2020",
-		["menu_jukebox_screen_resmusic_bluewave"] = "Spectre Shark 2020",
-		["menu_jukebox_resmusic_burnout"] = "Brute Force",
-		["menu_jukebox_screen_resmusic_burnout"] = "Brute Force",
-		["menu_jukebox_resmusic_doghouse"] = "Bleeding Edge",
-		["menu_jukebox_screen_resmusic_doghouse"] = "Bleeding Edge",
-		["menu_jukebox_resmusic_lethalforce"] = "Lethal Force",
-		["menu_jukebox_screen_resmusic_lethalforce"] = "Lethal Force",
-		["menu_jukebox_resmusic_redmarks"] = "Red Marks",
-		["menu_jukebox_screen_resmusic_redmarks"] = "Red Marks",
-		["menu_jukebox_resmusic_ticktockalpha"] = "Tick Tock (Альфа)",
-		["menu_jukebox_screen_resmusic_ticktockalpha"] = "Tick Tock (Альфа)",
-		["menu_jukebox_resmusic_doublecrossbeta"] = "Double Cross (Бета)",
-		["menu_jukebox_screen_resmusic_doublecrossbeta"] = "Double Cross (Бета)",
-		["menu_jukebox_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (Бета)",
-		["menu_jukebox_screen_resmusic_gunmetalgreybeta"] = "Gun Metal Grey (Бета)",
-		["menu_jukebox_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Старый)",
-		["menu_jukebox_screen_resmusic_thetakeoriginal"] = "Phoney Money / The Take (Старый)",
-		["menu_jukebox_resmusic_razormindbeta"] = "Razormind (Бета)",
-		["menu_jukebox_screen_resmusic_razormindbeta"] = "Razormind (Бета)",
-		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
-		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
-		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",
-		["menu_jukebox_screen_resmusic_speciesnova"] = "Species Nova",
-		["menu_jukebox_resmusic_madvlad"] = "Mad Vlad",
-		["menu_jukebox_screen_resmusic_madvlad"] = "Mad Vlad",
-		["menu_jukebox_resmusic_proto"] = "Jackknife",
-		["menu_jukebox_screen_resmusic_proto"] = "Jackknife",
-		["menu_jukebox_screen_m1"] = "Criminal Intent (Старый)",
-		["menu_jukebox_screen_m2"] = "Preparations (Старый)",
-		["menu_jukebox_screen_m3"] = "Blueprints (Прототип)",
-		["menu_jukebox_screen_m4"] = "Resistance",
-		["menu_jukebox_screen_m5"] = "Fortress",
-		["menu_jukebox_screen_m6"] = "Payday Royale Theme",
-		["menu_jukebox_screen_m7"] = "Pre-Planning",
-		["menu_jukebox_screen_m_holiday"] = "The Headless Bulldozer",
-
-		["menu_color_plus"] = "E3 PAYDAY+",
-		["menu_color_rvd1"] = "Inverted",
-		["menu_color_e3nice"] = "E3 Nice",
-		["menu_color_force"] = "E3 BHD",
-		["menu_color_halloween"] = "Change",
-		["menu_color_halloween2"] = "Pumpkin Spice",
-
-		["color_plus"] = "E3 PAYDAY+",
-		["color_rvd1"] = "Inverted",
-		["color_e3nice"] = "E3 Nice",
-		["color_force"] = "E3 BHD",
-		["color_halloween"] = "Change",
-		["color_halloween2"] = "Pumpkin Spice",
-
-		["gm_gms_purchase"] = "Купить монетами Континенталь",
-		["gm_gms_purchase_window_title"] = "Вы уверены?",
-		["gm_gms_purchase_window_message"] = "Вы действительно хотите купить '{1}'?\n\nЭто будет стоить вам {2} {3}.",
-		["gm_gms_purchase_failed"] = "Невозможно купить",
-		["gm_gms_free_of_charge_message"] = "{1} бесплатен и может быть использован сколько угодно раз.",
-		["gm_gms_cannot_afford_message"] = "Вы не можете купить {1}, так как у вас недостаточно {3}. Чтобы купить {1}, нужно {2} {3}",
-
-		["bm_menu_amount_locked"] = "НЕТ В НАЛИЧИИ",
-
-		["resmod_challenges"] = "Испытания",
-		["resmod_challenges_hint"] = "Посмотреть выполненные и активные испытания.",
-		["resmod_active_challenges"] = "Активные испытания",
-		["resmod_active_challenges_hint"] = "Текущие и активные испытания.",
-		["resmod_completed_challenges"] = "Выполненные испытания",
-		["resmod_completed_challenges_hint"] = "Завершенные испытания.",
-
-		["ch_vs_desc"] = "Используя $weapon, устраните $count $eneType. Убийства в ближнем бою не засчитываются для выполнения этого испытания.",
-		["ch_vs_head_shots_desc"] = "Используя $weapon, устраните $count $eneType выстрелами в голову.",
-		["ch_vs"] = "$weapon против $eneType $no",
-		["ch_vs_head_shots"] = "$weapon против $eneType В ГОЛОВУ $no",
-
-		["ene_law"] = "всех",
-		["ene_law_desc"] = "врагов",
-
-		["menu_me"] = "Грабитель",
-
-		["RestorationModPDTHChallengesTitleID"] = "Отображать испытания из PDTH",
-		["RestorationModPDTHChallengesDescID"] = "Включает отображение испытаний из PDTH в меню и на HUD.",
-
-		["RestorationModRaidLockPickingTitleID"] = "Modify Lockpicks",
-		["RestorationModRaidLockPickingDescID"] = "Should the mod modify lockpicks? This changes the gameplay revolving lockpicks",
-		["RestorationModRaidLockPickingVOTitleID"] = "Play Voice Lines",
-		["RestorationModRaidLockPickingVODescID"] = "Should the mod play voice lines when picking a lock?",
-		["hud_legend_lockpicking_interact"] = "$BTN_INTERACT Взломать",
-		["hud_legend_persuade_interact"] = "$BTN_INTERACT Убедить",
-		["hud_legend_exit"] = "$BTN_CANCEL Выйти",
-		["RestorationModArmorFixTitleID"] = "Фикс подсвечивания брони",
-		["RestorationModArmorFixDescID"] = "Включить или выключить фикс подсвечивания брони.",
-
-		-- /// Challenges Below ///
-
-		["ch_deploy_ammobag_hl"] = "Last Bullet!",
-		["ch_deploy_ammobag"] = "Разложить $count сумок с патронами.",
-		["ch_plant_tripmine_hl"] = "Лазерное шоу",
-		["ch_plant_tripmine"] = "Разложить $count мин.",
-		["ch_deploy_medicbag_hl"] = "Медицинская страховка",
-		["ch_deploy_medicbag"] = "Разложить $count сумок с медикаментами.",
-		["ch_deploy_ecm_hl"] = "Враг системы",
-		["ch_deploy_ecm"] = "Разложить $count генераторов помех.",
-		["ch_deploy_fak_hl"] = "Линия жизни",
-		["ch_deploy_fak"] = "Разложить $count аптечек первой помощи.",
-		["ch_deploy_sentry_hl"] = "Любитель Уайт Месы",
-		["ch_deploy_sentry"] = "Разложить $count турелей.",
-
-		["ch_bridge_no_bleedouts_hl"] = "Зеленый Мост: непробиваемый",
-		["ch_bridge_no_bleedouts"] = "Завершите контракт \"Зеленый мост\" на уровне сложности \"Сложно\", \"Очень Сложно\" или \"OVERKILL\", ни разу не упав",
-		["ch_duck_hunting_hl"] = "Мост слишком далеко!",
-		["ch_duck_hunting"] = "Завершите контракт \"Зеленый мост\" на уровне сложности \"Сложно\", \"Очень Сложно\" или \"OVERKILL\". Для выполнения необходимо играть контракт с самого начала",
-
-
-		["ch_watchdogs_d1_heavy_wpn1_hl"] = "ТОЛСТАЯ БРОНЯ, БОЛЬШИЕ ПУШКИ",
-		["ch_watchdogs_d1_heavy_wpn1"] = "Пройти первый день ограбления 'Сторожевые псы', используя только УКТЖ, миниганы, ракетометы или снайперскую винтовку Thanatos, на уровни сложности OVERKILL или выше. Для выполнения этого испытания, ограбление нужно играть с самого начала.",
-
-		-- New challanges
-		["ch_melee_test"] = "Босс качалки",
-		["ch_melee_test_desc"] = "Убейте капитана Отема кулаками",
-		["ch_pro_job_test"] = "Даже армия не остановит нас",
-		["ch_pro_job_test_desc"] = "Завершите контракт \"Поджигатель\" с модификатором Pro Job на уровне сложности \"Хаос\" и выше            ",
-		["ch_summers_test"] = "Да не горит у меня!!!",
-		["ch_summers_test_desc"] = "Убейте капитана Саммерса огнеметом Mk.1",
-		["ch_winters_test"] = "Торжество несправедливости",
-		["ch_winters_test_desc"] = "Убейте капитана Винтерса ножом-бабочкой или выкидным ножом, пока он держит щит",
-		["ch_spring_test"] = "У меня волына больше",
-		["ch_spring_test_desc"] = "Убейте капитана Спринга миниганом Вулкан или микроганом XL 5.56",
-
-		["ch_pdth_style_fwb"] = "Старая школа: Первый Всемирный Банк",
-		["ch_pdth_style_fwb_desc"] = "Завершите контракт \"Первый Всемирный Банк\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
-		["ch_pdth_style_heat"] = "Старая школа: Схватка на улице",
-		["ch_pdth_style_heat_desc"] = "Завершите контракт \"Схватка на улице\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
-		["ch_pdth_style_panic"] = "Старая школа: Комната паники",
-		["ch_pdth_style_panic_desc"] = "Завершите контракт \"Комната паники\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
-		["ch_pdth_style_bridge"] = "Старая школа: Зеленый мост",
-		["ch_pdth_style_bridge_desc"] = "Завершите контракт \"Зеленый мост\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
-		["ch_pdth_style_diamond"] = "Старая школа: Кража бриллиантов",
-		["ch_pdth_style_diamond_desc"] = "Завершите контракт \"Кража бриллиантов\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
-		["ch_pdth_style_slaughterhouse"] = "Старая школа: Скотобойня",
-		["ch_pdth_style_slaughterhouse_desc"] = "Завершите контракт \"Скотобойня\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
-		["ch_pdth_style_counterfeit"] = "Старая школа: Подделка",
-		["ch_pdth_style_counterfeit_desc"] = "Завершите контракт \"Подделка\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
-		["ch_pdth_style_undercover"] = "Старая школа: Под прикрытием",
-		["ch_pdth_style_undercover_desc"] = "Завершите контракт \"Под прикрытием\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
-		["ch_pdth_style_nomercy"] = "Старая школа: Нет милосердию",
-		["ch_pdth_style_nomercy_desc"] = "Завершите контракт \"Нет милосердию\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
-
-		["test_net"] = "Fast.Net",
-		["menu_test"] = "",
-		["state_filter"] = "Статус",
-		["menu_state_filter"] = "Фильтр по статусу",
-		["menu_state_filter_help"] = "Показывает статус лобби",
-		["menu_state_lobby"] = "В лобби",
-		["menu_state_loading"] = "Загружается",
-		["menu_state_ingame"] = "В игре",
-
-
-		["menu_description"] = "План",
-		-- ///Stuff ripped from the various locale files we had ///
-
-		--Halloween Dozer Sword
-		["bm_melee_halloween_sword"] = "Меч Безголового Бульдозера",
-		["bm_melee_titham"] = "Молот Безголового Бульдозера",
-		["menu_l_global_value_halloween_sword"] = "Это предмет из Хеллоуина 2013!",
-		--Zweihander
-		["bm_melee_zweihander"] = "Двуручник",
-		["bm_melee_zweihander_info"] = "Огромный двуручный меч, который больше похож на алебарду, нежели чем меч.\n\nПарирование противника наносит ему #{skill_color}#180## урона в ближнем бою. Навыки позволяют увеличить этот урон.",
-		["bm_melee_broad"] = "Длинный меч",
-		["bm_melee_broad_info"] = "Самое знаковое оружие большинства рыцарей.",
-		--Toasty
-		["bm_melee_toast"] = "Тост Алмира",
-		["bm_melee_toast_info"] = "Ты - не ты, когда голоден.\n\nУменьшает получаемый урон на #{skill_color}#10%## во время замаха.",
-
-		--S&W .500
-        ["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Ствол 'Горус'",
-		["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Ствол 'Шаттер'",
-		["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "Ствол 'Хатхор'",
-		["bm_wp_wpn_fps_pis_shatters_fury_b_short"] = "Ствол 'Фаерберд'",
-
-		["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "Эргономичная рукоять",
-
-		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Гладкий барабан",
-
-		["menu_l_global_value_shatters_fury"] = "Это предмет ВЕРИТАС!",
-
-		--MK-23
-		--Semi-automatic pistol. Hold down ■ to aim. Release to fire.
-		["bm_w_socom"] = "Пистолет Anubis .45",
-		["bm_w_x_socom"] = "Парные Anubis .45",
-		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Комбинированный модуль 'Ра'",
-		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Включается на кнопку $BTN_GADGET.",
-
-		--Ranted NMH
+	
+	--Holdout Heists--
+		["heist_skm_mallcrasher"] = "Торговый центр 'Щит'",
+		["heist_skm_mallcrasher_h1"] = "Торговый центр 'Щит'",
+		["heist_skm_arena"] = "Стадион 'Монарх'",
+		["heist_skm_arena_h1"] = "Стадион 'Монарх'",
+		["heist_skm_big2"] = "Банк 'Беневолент'",
+		["heist_skm_big2_h1"] = "Банк 'Беневолент'",
+		["heist_skm_watchdogs_stage2"] = "Склад 'Альмендия'",
+		["heist_skm_watchdogs_stage2_h1"] = "Склад 'Альмендия'",
+		["heist_skm_mus"] = "Музей 'Андерсониан'",
+		["heist_skm_mus_h1"] = "Музей 'Андерсониан'",
+		["heist_skm_run"] = "Жилой район - здание 'Инквелл'",
+		["heist_skm_run_h1"] = "Жилой район - здание 'Инквелл'",
+		["heist_skmc_fish_name"] = "Яхта 'Лета'",
+		["heist_skmc_ovengrill_name"] = "Магазин Ovengrill",
+		["heist_skmc_mad_name"] = "Лаборатория DRAK",
+		["heist_skm_friend_name"] = "Особняк Эль-Фурейдис",
+		["heist_skm_nightmare_name"] = "Старое убежище",
+		["heist_skm_nightmare_lvl_name"] = "Убежище?",
+
+		--Heist Breifings--
+		["heist_pines_briefing"] = "Место нахождения в такой дальней глуши, что вам надо поторопиться и бежать сломя голову. Найдите пилота. Он должен быть рядом с местом крушения. Мы отправим вертолет, чтобы эвакуировать его. Пилот должен быть в полной безопасности до тех пор, пока не отправится к нам. И еще кое-что: Влад говорит, что в самолете был неплохой товар. Прочешите лес и утащите столько кокаина, сколько сможете. На Рождество деньги лишними не будут.\n\nСООБЩЕНИЕ ОТ ДЖЕКЕЛА:\nШум от падения самолета привлек внимание находившихся неподалеку наемников организации REAPER. Сражаться будете не с полицией.",
+
+		----Custom Achievements----
+
+		--Scarface Mansion--
+		["skm_friend_name"] = "Столкновение: Особняк Эль-Фурейдис",
+		["friend_3"] = "Вор в окопе",
+		["friend_3_desc"] = "Начиная с первой волны, продержитесь три волны в Особняке Эль-Фурейдис.",
+		["friend_3_obj"] = "Начиная с первой волны, продержитесь три волны в Особняке Эль-Фурейдис.",
+		["friend_5"] = "Заложник у твоих ног",
+		["friend_5_desc"] = "Начиная с первой волны, продержитесь пять волн в Особняке Эль-Фурейдис.",
+		["friend_5_obj"] = "Начиная с первой волны, продержитесь пять волн в Особняке Эль-Фурейдис.",
+		["friend_7"] = "Оборона Монтана",
+		["friend_7_desc"] = "Начиная с первой волны, продержитесь семь волн в Особняке Эль-Фурейдис.",
+		["friend_7_obj"] = "Начиная с первой волны, продержитесь семь волн в Особняке Эль-Фурейдис.",
+		["friend_9"] = "Столкновение со шрамом",
+		["friend_9_desc"] = "Начиная с первой волны, продержитесь девять волн в Особняке Эль-Фурейдис.",
+		["friend_9_obj"] = "Начиная с первой волны, продержитесь девять волн в Особняке Эль-Фурейдис.",
+
+		--Safehouse Nightmare--
+		["skm_nightmare_name"] = "Столкновение: Старое убежище",
+		["nightmare_3"] = "Неужели снова настало это самое время?", --translation note: quote from HL2 ending gman speech
+		["nightmare_3_desc"] = "Начиная с первой волны, продержитесь три волны в Старом Убежище.",
+		["nightmare_3_obj"] = "Начиная с первой волны, продержитесь три волны в Старом Убежище.",
+		["nightmare_5"] = "Главное, что бы не произошло ничего неординарного", --translation note: quote from TF2 spy (Helltower event)
+		["nightmare_5_desc"] = "Начиная с первой волны, продержитесь пять волн в Старом Убежище.",
+		["nightmare_5_obj"] = "Начиная с первой волны, продержитесь пять волн в Старом Убежище.",
+		["nightmare_7"] = "Ночь темна, но всегда настает утро", --translation note: quote from Lulu (Final Fantasy X)
+		["nightmare_7_desc"] = "Начиная с первой волны, продержитесь семь волн в Старом Убежище.",
+		["nightmare_7_obj"] = "Начиная с первой волны, продержитесь семь волн в Старом Убежище.",
+		["nightmare_9"] = "Так проснитесь же, Мистер Стил", --translation note: quote from HL2 intro gman speech + Dallas' alias
+		["nightmare_9_desc"] = "Начиная с первой волны, продержитесь девять волн в Старом Убежище.",
+		["nightmare_9_obj"] = "Начиная с первой волны, продержитесь девять волн в Старом Убежище.",
+	
+	--Ranted NMH
         ["heist_no_mercy_ranted_name"] = "Нет милосердию",
 		["heist_no_mercy_ranted_brief"] = "Мы отправляется в госпиталь 'Милосердие' за кровью. У местного пациента обнаружили какой-то редкий вирус, образец которого нам нужно заполучить. Пусть вас ничего не останавливает, ибо платят очень хорошо. Конец света не наступит, если мы прольем немного крови за большие деньги, не так ли?",
 
@@ -1075,148 +1622,53 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Watchdogs Holdout
 		["heist_skm_watchdogs_stage2_briefing"] = "Миа Калиенте — хорошая добыча, друзья. В течение многих лет она была мозгом операций Murkywater в Вашингтоне. Не так давно Murkywater заняли портовый склад, который они используют как дополнительную точку распределения. Наша цель находится там, проверяет какую-то добычу, недавно награбленную из-за границы. Мы проникнем туда и возьмем девку в заложники. Мурки не могут позволить себе потерять ее и они заплатят за ее освобождение, может быть даже вышеупомянутой и весьма ценной добычей. Что скажете, банда?",
 
-		--Side Jobs
-		["menu_challenge_menu_challenge_moon_6_obj"] = "Завершите контракт Скотобойня на уровне сложности OVERKILL или выше, не убивая капитана Спринга.",
-
-		--Generic Captain Text
-		["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
-
-		--Boiling Point RU text tweaks
+	
+	--Boiling Point RU text tweaks
 		["mad_txt_005"] = "КОМНАТА МЕДОСМОТРА",
-		["mad_txt_006"] = "ОПЕРАЦИОННАЯ"
-
+		["mad_txt_006"] = "ОПЕРАЦИОННАЯ",
+		
+		--We assets now--
+		["menu_asset_dinner_safe"] = "Сейф",
+		["menu_asset_bomb_inside_info"] = "Информация от инсайдера",
+		["menu_asset_mad_cyborg_test_subject"] = "Подопытный",
+		
 	})
-
-	-- maybe need change banner descriptions
-	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-	local job = Global.level_data and Global.level_data.level_id
-	local captain_type = job and restoration.captain_spawns[job]
-	if captain_type == restoration.captain_types.winter and job == "crojob3" or job == "crojob3_night" then
-		LocalizationManager:add_localized_strings({
-			["hud_assault_vip"] = "ГОСПОДА ГРАБИТЕЛИ, ВЫ ОКРУЖЕНЫ",
-		})
-	elseif captain_type == restoration.captain_types.winter then
-		LocalizationManager:add_localized_strings({
-			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ВИНТЕРСА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
-		})
-	elseif captain_type == restoration.captain_types.summer then
-		LocalizationManager:add_localized_strings({
-			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА САММЕРСА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
-		})
-	elseif captain_type == restoration.captain_types.spring then
-		LocalizationManager:add_localized_strings({
-			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА СПРИНГА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
-		})
-	elseif captain_type == restoration.captain_types.autumn then
-		LocalizationManager:add_localized_strings({
-			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ОТЕМА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
-		})
-	elseif captain_type == restoration.captain_types.hvh then
-		LocalizationManager:add_localized_strings({
-			["hud_assault_vip"] = "ПОБЕДИТЕ СТРАХ И ПРОСНИТЕСЬ",
-		})
-	end
-
 end)
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
+--Оружия и все, что с ними связано (и по мелочи всякие статы)
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
 	LocalizationManager:add_localized_strings({
-		["bm_sc_blank"] = "", --assumedly this is a debug thing, but I'm not going to touch it--
+		--Halloween Dozer Sword
+		["bm_melee_halloween_sword"] = "Меч Безголового Бульдозера",
+		["bm_melee_titham"] = "Молот Безголового Бульдозера",
+		["menu_l_global_value_halloween_sword"] = "Это предмет из Хеллоуина 2013!",
+		--Zweihander
+		["bm_melee_zweihander"] = "Двуручник",
+		["bm_melee_zweihander_info"] = "Огромный двуручный меч, который больше похож на алебарду, нежели чем меч.\n\nПарирование противника наносит ему #{skill_color}#180## урона в ближнем бою. Навыки позволяют увеличить этот урон.",
+		["bm_melee_broad"] = "Длинный меч",
+		["bm_melee_broad_info"] = "Самое знаковое оружие большинства рыцарей.",
+		--Toasty
+		["bm_melee_toast"] = "Тост Алмира",
+		["bm_melee_toast_info"] = "Ты - не ты, когда голоден.\n\nУменьшает получаемый урон на #{skill_color}#10%## во время замаха.",
 
-		--Menu Stuff--
-		["menu_hud_cheater"] = "",
-		["menu_inspect_player"] = "Осмотреть игрока",
-		["menu_inspect_player_desc"] = "Осмотреть статистику игрока",
-		["menu_toggle_one_down_lobbies"] = "Разрешить режим Pro-Job",
+		--S&W .500
+        ["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Ствол 'Горус'",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Ствол 'Шаттер'",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "Ствол 'Хатхор'",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_short"] = "Ствол 'Фаерберд'",
 
-		["heist_safehouse"] = "Старое Убежище",
+		["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "Эргономичная рукоять",
 
-		--Events
+		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Гладкий барабан",
 
-		--Anniversary Event
-		["menu_pda8_1_prog_obj_desc"] = "Найти 2 праздничные статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
-		["menu_pda8_2_prog_obj_desc"] = "Всем сообществом грабители должны потратить $5,000,000,000 на пенсию копов при помощи Бабломета, также вам нужно найти 3 разных праздничных статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
-		["menu_pda8_3_prog_obj_desc"] = "Всем сообществом грабители должны потратить $10,000,000,000 на пенсию копов при помощи Бабломета, также вам нужно найти 4 разных праздничных статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
-		["menu_pda8_item_1_desc"] = "Всем сообществом грабители должны потратить $15,000,000,000 на пенсию копов при помощи Бабломета, также вам нужно найти 3 разных праздничных статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
+		["menu_l_global_value_shatters_fury"] = "Это предмет ВЕРИТАС!",
 
-		["menu_pda8_2_prog_obj"] = "Найти 3 праздничные статуэтки.",
-		["menu_pda8_3_prog_obj"] = "Найти 4 праздничные статуэтки.",
-
-		--Holdout--
-		["menu_cn_skirmish"] = "Столкновение",
-		["menu_skirmish"] = "Столкновение - оборона заложника",
-		["menu_skirmish_random"] = "Случайная локация",
-		["menu_random_skirmish_subtitle"] = "Случайная стартовая локация.\n\nОтсутствую еженедельные награды и стартовые модификаторы.",
-		["menu_weekly_skirmish"] = "Точная локация",
-		["menu_weekly_skirmish_progress"] = "Пройденные волны, награды при полном прохождении",
-		["menu_skirmish_random_briefing"] = "В этом режиме вы окажетесь в случайном СТОЛКНОВЕНИИ.\n\nСлучайное СТОЛКНОВЕНИЕ состоит из 9 волн. Каждая волна увеличивается в сложности.\n\nВы будете получать больше денег и опыта с каждой волной, но поражение заберет все накопленные награды.\n\nВы проиграете, если вы или любой ваш соратник попадете под стражу, или если заложник будет освобожден.",
-		["menu_weekly_skirmish_desc"] = "В этом режиме вы окажетесь в подготовленном СТОЛКНОВЕНИИ.\n\nЕженедельное СТОЛКНОВЕНИЕ состоит из 9 волн. Каждая волна увеличивается в сложности.\n\nВы получите еженедельные награды, а также большое количество денег, опыта и карточек за каждую волну, но поражение заберет все накопленные награды.\n\n##Вы проиграете, если вы или любой ваш соратник попадете под стражу, или если заложник будет освобожден.##",
-		["menu_weekly_skirmish_tab_description"] = "Обзор операции",
-		["menu_weekly_skirmish_rewards"] = "Количество пройденных волн и награды",
-		["hud_skirmish"] = "Столкновение",
-		["hud_weekly_skirmish"] = "Еженедельное столкновение",
-		["heist_contact_skirmish"] = "Столкновение",
-		["menu_skirmish_pick_heist"] = "Компания Джекела доверяет вам эту работу",
-		["menu_skirmish_map_selection"] = "Локации",
-		["menu_skirmish_selected_briefing"] = "В этом режиме вы можете выбрать любое СТОЛКНОВЕНИЕ.\n\nСТОЛКНОВЕНИЕ состоит из 9 волн. Каждая волна увеличивается в сложности.\n\nВы будете получать больше денег и опыта с каждой волной, но поражение заберет все накопленные награды.\n\nВы проиграете, если заложник будет освобожден.",
-		["menu_skirmish_selected"] = "Столкновение",
-
-		--Holdout Heists--
-		["heist_skm_mallcrasher"] = "Торговый центр 'Щит'",
-		["heist_skm_mallcrasher_h1"] = "Торговый центр 'Щит'",
-		["heist_skm_arena"] = "Стадион 'Монарх'",
-		["heist_skm_arena_h1"] = "Стадион 'Монарх'",
-		["heist_skm_big2"] = "Банк 'Беневолент'",
-		["heist_skm_big2_h1"] = "Банк 'Беневолент'",
-		["heist_skm_watchdogs_stage2"] = "Склад 'Альмендия'",
-		["heist_skm_watchdogs_stage2_h1"] = "Склад 'Альмендия'",
-		["heist_skm_mus"] = "Музей 'Андерсониан'",
-		["heist_skm_mus_h1"] = "Музей 'Андерсониан'",
-		["heist_skm_run"] = "Жилой район - здание 'Инквелл'",
-		["heist_skm_run_h1"] = "Жилой район - здание 'Инквелл'",
-		["heist_skmc_fish_name"] = "Яхта 'Лета'",
-		["heist_skmc_ovengrill_name"] = "Магазин Ovengrill",
-		["heist_skmc_mad_name"] = "Лаборатория DRAK",
-		["heist_skm_friend_name"] = "Особняк Эль-Фурейдис",
-		["heist_skm_nightmare_name"] = "Старое убежище",
-		["heist_skm_nightmare_lvl_name"] = "Убежище?",
-
-		--Heist Breifings--
-		["heist_pines_briefing"] = "Место нахождения в такой дальней глуши, что вам надо поторопиться и бежать сломя голову. Найдите пилота. Он должен быть рядом с местом крушения. Мы отправим вертолет, чтобы эвакуировать его. Пилот должен быть в полной безопасности до тех пор, пока не отправится к нам. И еще кое-что: Влад говорит, что в самолете был неплохой товар. Прочешите лес и утащите столько кокаина, сколько сможете. На Рождество деньги лишними не будут.\n\nСООБЩЕНИЕ ОТ ДЖЕКЕЛА:\nШум от падения самолета привлек внимание находившихся неподалеку наемников организации REAPER. Сражаться будете не с полицией.",
-
-		----Custom Achievements----
-
-		--Scarface Mansion--
-		["skm_friend_name"] = "Столкновение: Особняк Эль-Фурейдис",
-		["friend_3"] = "Вор в окопе",
-		["friend_3_desc"] = "Начиная с первой волны, продержитесь три волны в Особняке Эль-Фурейдис.",
-		["friend_3_obj"] = "Начиная с первой волны, продержитесь три волны в Особняке Эль-Фурейдис.",
-		["friend_5"] = "Заложник у твоих ног",
-		["friend_5_desc"] = "Начиная с первой волны, продержитесь пять волн в Особняке Эль-Фурейдис.",
-		["friend_5_obj"] = "Начиная с первой волны, продержитесь пять волн в Особняке Эль-Фурейдис.",
-		["friend_7"] = "Оборона Монтана",
-		["friend_7_desc"] = "Начиная с первой волны, продержитесь семь волн в Особняке Эль-Фурейдис.",
-		["friend_7_obj"] = "Начиная с первой волны, продержитесь семь волн в Особняке Эль-Фурейдис.",
-		["friend_9"] = "Столкновение со шрамом",
-		["friend_9_desc"] = "Начиная с первой волны, продержитесь девять волн в Особняке Эль-Фурейдис.",
-		["friend_9_obj"] = "Начиная с первой волны, продержитесь девять волн в Особняке Эль-Фурейдис.",
-
-		--Safehouse Nightmare--
-		["skm_nightmare_name"] = "Столкновение: Старое убежище",
-		["nightmare_3"] = "Неужели снова настало это самое время?", --translation note: quote from HL2 ending gman speech
-		["nightmare_3_desc"] = "Начиная с первой волны, продержитесь три волны в Старом Убежище.",
-		["nightmare_3_obj"] = "Начиная с первой волны, продержитесь три волны в Старом Убежище.",
-		["nightmare_5"] = "Главное, что бы не произошло ничего неординарного", --translation note: quote from TF2 spy (Helltower event)
-		["nightmare_5_desc"] = "Начиная с первой волны, продержитесь пять волн в Старом Убежище.",
-		["nightmare_5_obj"] = "Начиная с первой волны, продержитесь пять волн в Старом Убежище.",
-		["nightmare_7"] = "Ночь темна, но всегда настает утро", --translation note: quote from Lulu (Final Fantasy X)
-		["nightmare_7_desc"] = "Начиная с первой волны, продержитесь семь волн в Старом Убежище.",
-		["nightmare_7_obj"] = "Начиная с первой волны, продержитесь семь волн в Старом Убежище.",
-		["nightmare_9"] = "Так проснитесь же, Мистер Стил", --translation note: quote from HL2 intro gman speech + Dallas' alias
-		["nightmare_9_desc"] = "Начиная с первой волны, продержитесь девять волн в Старом Убежище.",
-		["nightmare_9_obj"] = "Начиная с первой волны, продержитесь девять волн в Старом Убежище.",
-
+		--MK-23
+		--Semi-automatic pistol. Hold down ■ to aim. Release to fire.
+		["bm_w_socom"] = "Пистолет Anubis .45",
+		["bm_w_x_socom"] = "Парные Anubis .45",
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Комбинированный модуль 'Ра'",
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Включается на кнопку $BTN_GADGET.",
 		----Weapons + Mods Descriptions/names----
 
 		--Reinfield--
@@ -2377,193 +2829,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_bayonet_damage_skill"] = "\n-НАВЫКИ: ##+",
 		["bm_menu_weapon_bayonet_range"] = "\nДОП. РАССТОЯНИЕ: ##+",
 
-		--We assets now--
-		["menu_asset_dinner_safe"] = "Сейф",
-		["menu_asset_bomb_inside_info"] = "Информация от инсайдера",
-		["menu_asset_mad_cyborg_test_subject"] = "Подопытный",
+		
 
-		--Player Outfits--
-		["bm_suit_two_piece_sc"] = "Костюм-двойка",
-		["bm_suit_two_piece_desc_sc"] = "Классический подход к ограблениям. Когда кричишь 'Упали вниз!', почему бы не выглядеть стильно?\n\nС этой опцией персонаж будет носить свой стандартный костюм вне зависимости от ограбления.",
-
-		["bm_suit_loud_suit"] = "Боевой жилет",
-		["bm_suit_loud_suit_desc"] = "Костюм для тех, кто не прочь вступить в схватку. Он создан для удобства и в нем легко передвигаться. Отличный выбор для резких набегов на местные ювелирные магазины или секретные базы наемников.",
-
-		["bm_suit_jackal_track"] = "Особый атрибут",
-		["bm_suit_jackal_track_desc"] = "Костюм, сделанный по заказу, с логотипом Джекела и вариацией логотипа ВЕРИТАС.\n\nБадна получила их в немаркированных коробках. Джекел утверждает, что не посылал их, и никогда не видел их раньше.\nНеизвестно, откуда они взялись.\n\n\n\n...Внутри коробок была лишь записка:\n\n''##В ЗНАК БЛАГОДАРНОСТИ, ДЛЯ ТЕХ, КТО ВЕРЕН ДЕЛУ.\nXOXO\n--S.N.##''\n\n",
-
-		["bm_suit_sunny"] = "Утренний грабитель",
-		["bm_suit_sunny_desc"] = "Иногда хочется просто закатать рукава и немножко пограбить.",
-
-		["bm_suit_pool"] = "Bodhi's Pool Repair Uniform",
-		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",
-
-		["bm_suit_prison"] = "Тюремный костюм",
-		["bm_suit_prison_desc"] = "Вас забрали под стражу!",
-
-		["bm_suit_var_jumpsuit_flecktarn"] = "Флектарн",
-		["bm_suit_var_jumpsuit_flecktarn_desc"] = "Классический камуфляж, использующийся в двух европейских странах. Известен тем, что позволяет легко слиться с лесным окружением. Точно не будет работать в городе, но в сельской местности может неплохо обмануть зрение.",
-
-		["bm_suit_var_jumpsuit_flatgreen"] = "Вязко-зеленый",
-		["bm_suit_var_jumpsuit_flatgreen_desc"] = "Этот костюм, по слухам, принадлежал одному из трех членов банды психопатов и был найден в уничтоженном мусоровозе, который использовался в кровавом ограблении бронетранспорта GenSec, в ходе которого несколько членов SWAT были убиты и многие ранены. Личности этих бандитов до сих пор остаются в тайне, так как большинство улик было уничтожено вместе с мусоровозом - остался только этот костюм.",
-
-		-- Color variations - Combat Harness
-			["bm_suit_var_loud_suit_default"] = "Профессиональный черный",
-			["bm_suit_var_loud_suit_default_desc"] = "Костюм-двойка стал частью бренда банды PAYDAY. Модный, стильный, позволяет легко затеряться в толпе - настоящая икона. 'Подождите ка! В какой, блядь, толпе?', спросил Чейнс, пока банда направлялась в очередной раз грабить склад Murkywater. И почему он не додумался раньше...",
-
-			["bm_suit_var_loud_suit_white"] = "Морозный белый",
-			["bm_suit_var_loud_suit_white_desc"] = "Этот костюм предоставил Джимми для 'Точки кипения'. Быстро выяснилось, что они не подходят для жестких морозов. А сам Джимми вообще предпочел остаться в своем рванном костюме-двойке.",
-
-			["bm_suit_var_loud_suit_red"] = "Неясный красный",
-			["bm_suit_var_loud_suit_red_desc"] = "Красный - интересный цвет на поле боя. Либо это медик, который пришел спасать товарищей, либо самый опасный ублюдок из всех. Тебе решать, кем ты будешь.",
-
-			["bm_suit_var_loud_suit_green"] = "Ядовитый зеленый",
-			["bm_suit_var_loud_suit_green_desc"] = "Хватит унижений от Гренадера. Джемма МакШай предоставила вам целый арсенал ядовитого оружия - теперь время показать, кто здесь на самом деле травит насекомых.",
-
-			["bm_suit_var_loud_suit_blue"] = "Полицейский синий",
-			["bm_suit_var_loud_suit_blue_desc"] = "А почему копы не используют УКТЖ?",
-
-			["bm_suit_var_loud_suit_purple"] = "Модный фиолетовый",
-			["bm_suit_var_loud_suit_purple_desc"] = "Спрячьте этот костюм под свой УКТЖ, чтобы добавить нотку моды в вашу тактическую чушь.",
-
-			["bm_suit_var_loud_suit_brown"] = "Загородный коричневый",
-			["bm_suit_var_loud_suit_brown_desc"] = "Хьюстон бы хотел остаться в городских джунглях, где ему комфортнее всего. Но увы, за городом слишком много прибыльных для банды дел.",
-
-			["bm_suit_var_loud_suit_gorkagreen"] = "Тактический лесной",
-			["bm_suit_var_loud_suit_gorkagreen_desc"] = "Хорошо маскирует в лесу, или среди всех украденных денег.",
-
-			["bm_suit_var_loud_suit_gorkaearth"] = "Тактический наемник",
-			["bm_suit_var_loud_suit_gorkaearth_desc"] = "Да сколько униформ производит Murkywater? Можно уже открывать собственную линию одежды.",
-
-			["bm_suit_var_loud_suit_gorkagrey"] = "Тактический городской",
-			["bm_suit_var_loud_suit_gorkagrey_desc"] = "Какой смысл надевать костюм-двойку, если все уже знают ваше лицо?",
-
-			["bm_suit_var_loud_suit_gorkapurple"] = "Тактический фиолетовый",
-			["bm_suit_var_loud_suit_gorkapurple_desc"] = "Никогда не знаешь, когда придется грабить в фиолетовых джунглях.",
-
-			["bm_suit_var_loud_suit_gorkasea"] = "Тактический морской",
-			["bm_suit_var_loud_suit_gorkasea_desc"] = "Вульф раздобыл их в 2011-ом, когда Бейн планировал ограбление яхты. Кто же знал, что этим костюмам придется собирать пыль почти шесть лет.",
-			-- Color variations - Sunny Side
-			["bm_suit_var_suit_sunny_default"] = "Повседневные дела",
-			["bm_suit_var_suit_sunny_default_desc"] = "Будь героем боевиков 90-х, которым ты всегда хотел стать.",
-
-			["bm_suit_var_suit_sunny_skull"] = "Смертоносные дела",
-			["bm_suit_var_suit_sunny_skull_desc"] = "Этот символ подарил Скуллдозеру его страшное имя. Покажи, что для тебя он ничего не значит, сделав его просто украшением для одежды.",
-
-			["bm_suit_var_suit_sunny_red"] = "Кровавые дела",
-			["bm_suit_var_suit_sunny_red_desc"] = "Привязанный к стулу Клокер, Алабамская бритва, 'Troubles Always Inbound' по радио... Эта рубашка не останется чистой надолго.",
-
-			["bm_suit_var_suit_sunny_blue"] = "Цифровые дела",
-			["bm_suit_var_suit_sunny_blue_desc"] = "Хакеры - волшебники 21-го века, которые могут вытворять практически все что угодно... Но не останавливать пули. Для этого есть броня. Так что не будь слишком самоуверенным и носи защиту.",
-
-			["bm_suit_var_suit_sunny_green"] = "Жадные дела",
-			["bm_suit_var_suit_sunny_green_desc"] = "Вне зависимости от риска, ты уносишь всю добычу с любого ограбления. Дело даже не в деньгах: вычищенное хранилище - это твоя визитная карточка.",
-
-			["bm_suit_var_suit_sunny_yellow"] = "Солнечные дела",
-			["bm_suit_var_suit_sunny_yellow_desc"] = "Отличный костюм для романтичных поездок под солнцем.\nПод аккомпанемент полицейских сирен, разумеется.",
-
-			["bm_suit_var_suit_sunny_pink"] = "Гладкие дела",
-			["bm_suit_var_suit_sunny_pink_desc"] = "Мистеру Розовому повезло, что в банде Кабота нет цветного дресс-кода.",
-
-			["bm_suit_var_suit_sunny_hawaii_black"] = "Отпуск в Майами",
-			["bm_suit_var_suit_sunny_hawaii_black_desc"] = "Вульф купил эту стильную рубашку, когда узнал, что Дантист готовит работу под кодовым названием 'Горячая линия Майами'. Кто же знал, что они не поедут в Майами?",
-
-			["bm_suit_var_suit_sunny_hawaii_blue"] = "Отпуск в видеоиграх",
-			["bm_suit_var_suit_sunny_hawaii_blue_desc"] = "Джой относится к типу людей, которые уезжают в отпуск далеко-далеко чтобы просто играть там в видеоигры. 'Ну что за поколение', подумал Даллас, когда ему не удалось увлечь ее более консервативными развлечениями, такими как игрой в бильярд, наслаждением видами моря и распитием огромного количества скотча.",
-
-			["bm_suit_var_suit_sunny_hawaii_cyan"] = "Отпуск в бассейне",
-			["bm_suit_var_suit_sunny_hawaii_cyan_desc"] = "Сидни отличный пловец, и всегда хотела бассейн в убежище. Однако, Альдстоуну и так хватает хлопот, да и плавание - не самое любимое развлечение банды после дела на Мосте Грин.",
-
-			["bm_suit_var_suit_sunny_hawaii_green"] = "Отпуск в притоне",
-			["bm_suit_var_suit_sunny_hawaii_green_desc"] = "Влад отлично проводил время в Мексике. Новые земли - это новые возможности, и он расширял свой бизнес, пока однажды одну из его точек не атаковали. Федеральной полиции настучал Булук, который вскоре станет врагом Влада номер один. К счастью, банда PAYDAY всегда под рукой.",
-
-			["bm_suit_var_suit_sunny_hawaii_orange"] = "Отпуск в оффшорах",
-			["bm_suit_var_suit_sunny_hawaii_orange_desc"] = "Вот и все, вы справились. Белый дом ограблен, все злодеи побеждены, а ваш оффшор потрачен на крупную вечеринку. И куда двигаться теперь?\nЛадно, еще парочка ограблений банка не повредит.",
-
-			["bm_suit_var_suit_sunny_hawaii_pink"] = "Отпуск на танцполе",
-			["bm_suit_var_suit_sunny_hawaii_pink_desc"] = "Чейнс нечасто уходит в отпуск, но делает это с размахом. В 2016-ом, видео с его зажигательным танцем утекло в сеть. Ему пришлось просить Бейна стереть его оттуда.",
-
-			["bm_suit_var_suit_sunny_hawaii_red"] = "Отпуск в архипелаге",
-			["bm_suit_var_suit_sunny_hawaii_red_desc"] = "Джимми любит рассказывать, как его далекий отпуск прервала армия генно-модифицированных супер-солдат. Звучит как очередной кокаиновый бред, но после ограбления АКАНа... Кто знает?",
-
-			["bm_suit_var_suit_sunny_payne"] = "Отпуск в нуаре",
-			["bm_suit_var_suit_sunny_payne_desc"] = "Во время отпуска в Сан-Пауле, Вульф захотел купить эту рубашку, но получил ее бесплатно в знак благодарности за то что оказал отличную службу городу. \nВульф удивился, ведь он никогда не был там раньше.",
-
-			["bm_suit_var_suit_sunny_vice"] = "Отпуск в пороках",
-			["bm_suit_var_suit_sunny_vice_desc"] = "Сангреса нельзя заставить носить ничего, кроме ярких рубашек. Пока остальные гении преступного мира собираются в деловых костюмах, Сангрес врывается в потрепанной рубашке, которую он нашел на гаражной распродаже в городе порока. Выглядит так, будто ей уже больше сорока лет.",
-
-			["bm_suit_var_suit_sunny_security_red"] = "Красный телохранитель",
-			["bm_suit_var_suit_sunny_security_red_desc"] = "Элитный телохранитель Эрнеста Сосы. У Эрнеста Сосы было все. Большой особняк, надеждный бизнес и непробиваемая охрана. Мир принадлежит ему... Но как известно, история движется по спирали.",
-
-			["bm_suit_var_suit_sunny_security_purple"] = "Фиолетовый телохранитель",
-			["bm_suit_var_suit_sunny_security_purple_desc"] = "Элитный телохранитель Эрнеста Сосы. Постоянное наблюдение через дронов и организованная охрана. В особняк Сосы не пробраться. Вот бы еще кто-нибудь проверил последнюю партию кокаина...",
-
-			["bm_suit_var_suit_sunny_soprano"] = "Мафиозные дела",
-			["bm_suit_var_suit_sunny_soprano_desc"] = "Мафия не очень близка банде PAYDAY, но их стиль заслуживает уважения.",
-		    -- Color variations - Prison Suit
-			["bm_suit_var_suit_prison_default"] = "Беглец",
-			["bm_suit_var_suit_prison_default_desc"] = "Роба, которая изменила Хокстона навсегда. Он был уверен, что сжег это напоминание о жутком прошлом вместе со старым убежищем, но каким-то мистическим образом оно оказалось в новом.",
-
-			["bm_suit_var_suit_prison_repairman"] = "31-ый",
-			["bm_suit_var_suit_prison_repairman_desc"] = "Знаете, кто расставляет шпионские камеры?\n\nЛичности вы никогда не узнаете, но хотя бы можно оценить его одежду.",
-
-			["bm_suit_var_suit_prison_comedy"] = "Воришка",
-			["bm_suit_var_suit_prison_comedy_desc"] = "Роба Ченса из банды PAYCHECK. Ему почти удалось сбежать с 225 долларами из кассы магазина Pear, но его взяли под стражу. К счастью, его соратники взяли в заложники ноутбук Pear и сумели обменять его на Чинса.",
-
-			["bm_suit_var_suit_prison_vaultboy"] = "Выживший",
-			["bm_suit_var_suit_prison_vaultboy_desc"] = "К удивлению, Бейн никогда не верил в теории о скором конце света. Но после того, как Влад попросил украсть ядерные боеголовки, он построил себе подземное убежище. Ну вы знаете. Война.",
-
-			["bm_suit_var_suit_prison_janitor"] = "Уборщик",
-			["bm_suit_var_suit_prison_janitor_desc"] = "Ходят слухи, что OMNIA проводит сверхсекретные испытания, да такие, что даже бы ученые с Утеса Генри позавидовали. Всем в OMNIA заставляют подписать контракт. Даже уборщиков держат под... контролем.",
-
-			["bm_suit_var_suit_prison_subject"] = "Подопытный",
-			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборатории АКАНа. Вдруг секрет их сверхъестественных способностей таится в этой робе?",
-
-
-		--Weapon Colors
-		["bm_wskn_resmod_blackgold"] = "Черное золото",
-		["bm_wskn_resmod_cleangold"] = "Чистое золото",
-		["bm_wskn_resmod_imissfauna"] = "Обработанное золото",
-		["bm_wskn_resmod_imissfauna_desc"] = "",
-		["bm_wskn_resmod_uuuuu"] = "Готическая Церера",
-		["bm_wskn_resmod_uuuuu_desc"] = "",
-		["bm_wskn_resmod_ownthiscity"] = "Царское золото",
-		["bm_wskn_resmod_kindoffeel"] = "Абстрактно-темное золото",
-		["bm_wskn_resmod_kindoffeel2"] = "Абстрактно-яркое золото",
-		["bm_wskn_resmod_insubstantial"] = "Треснутое золото",
-		["bm_wskn_resmod_palmtop"] = "Тигриное золото",
-		["bm_wskn_resmod_palmtop_desc"] = "",
-		["bm_wskn_resmod_blacktiger"] = "Золото черного тигра",
-		["bm_wskn_resmod_joe"] = "Экзотическое золото",
-		["bm_wskn_resmod_blackexotic"] = "Экзотическое золото (темное)",
-		["bm_wskn_resmod_lildonnie"] = "Жемчужное золото",
-		["bm_wskn_resmod_quacko"] = "Потемневшее золото",
-		["bm_wskn_resmod_snake"] = "Расплавленное золото",
-		["bm_wskn_resmod_camo"] = "Камуфляжное золото",
-		["bm_wskn_resmod_camo2"] = "Затуманенное золото",
-		["bm_wskn_resmod_digital"] = "Цифровое золото",
-		["bm_wskn_resmod_splinter"] = "Составное золото",
-		["bm_wskn_resmod_urban"] = "Поддельное золото",
-		["bm_wskn_resmod_dioxide"] = "Углеродное золото",
-		["bm_wskn_resmod_rat"] = "Воровское золото",
-		["bm_wskn_resmod_ratdark"] = "Воровское золото (темное)",
-		["bm_wskn_resmod_rocker"] = "Статичное золото",
-		["bm_wskn_resmod_shocker"] = "Статичное золото (темное)",
-		["bm_wskn_resmod_whitefire"] = "Пламенное золото",
-		["bm_wskn_resmod_blackfire"] = "Пламенное золото (темное)",
-		["bm_wskn_resmod_topography"] = "Топографическое золото",
-		["bm_wskn_resmod_2019"] = "Закаленное золото",
-		["bm_wskn_resmod_llenn"] = "Мистер Пинк",
-		["bm_wskn_resmod_llenn_desc"] = "",
-		["bm_wskn_resmod_sugarhoneyicetea"] = "Золото зебры",
-		["bm_wskn_resmod_blackzebra"] = "Золото черной зебры",
-		["bm_wskn_resmod_charlotte"] = "Паучье золото",
-		["bm_wskn_resmod_joker"] = "Насмешка над золотом",
-		["bm_wskn_resmod_jokerw"] = "Насмешка над обществом",
-
-		["menu_weapon_color_index_11"] = "Металл + Прицел",
-		["menu_weapon_color_index_12"] = "Металл + Магазин",
-		["menu_weapon_color_index_13"] = "Металл + Прицел + Магазин",
+		
 
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "ПРОДАТЬ ОРУЖИЕ ($price)",
@@ -2586,7 +2854,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_damage"] = "Урон", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Макс. урон",
 		["bm_menu_standing_range"] = "Эффк. расстояние",
 		["bm_menu_damage_min"] = "Мин. урон",
-		["bm_menu_moving_range"] = "Макс. расстояние",
+		["bm_menu_moving_range"] = "Макс. расстояние",		
+		["bm_menu_dodge"] = "Уворот",
+		
 
 		["bm_menu_attack_speed"] = "Ск-сть атаки",
 		["bm_menu_impact_delay"] = "Задержка",
@@ -2745,17 +3015,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_menu_armor_max_health_store_1"] = "Максимальное количество запасного здоровья: #{skill_color}#$health_stored##",
 		["bm_menu_armor_max_health_store_2"] = "Максимальное количество запасного здоровья: #{skill_color}#$health_stored## \nВосстановление брони за убийство: #{skill_color}#$regen_bonus%##",
-	})
-end)
-
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
-	LocalizationManager:add_localized_strings({
-	    ["bm_menu_bonus"] = "Модификаторы",
+		
+		["bm_menu_bonus"] = "Модификаторы",
 		["steam_inventory_stat_boost"] = "Модификатор атрибутов",
-
-		--Safe House--
-		["dialog_safehouse_text"] = "Вы еще не посещали убежище.\n\nСоветуем это сделать, ведь там ждет кое-что новое.\n\nПерейти туда сейчас?",
-
+		
+		
+		
+		
+		
 		["bm_menu_custom_plural"] = "WEAPON ATTACHMENTS IN THE CUSTOM CATEGORY", --unused?--
 
 		----Custom Weapon Mod Descriptions----
@@ -2832,17 +3099,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["hud_hint_bipod_air"] = "Нельзя развернуть в воздухе",
 		["hud_hint_bipod_lean"] = "Нельзя развернуть при наклоне",
 		["hud_hint_bipod_midstance"] = "Нельзя развернуть, пока вы приседаете/встаете",
-
-		["hud_interact_autumn_disable"] = "Отключено Капитаном Отемом!",
-
-		["hud_assault_restored_down"] = "Штурм пережит - восстановлено 1 падение",
-		["hud_assault_remaining_single"] = "1 штурм до восстановления падения",
-		["hud_assault_remaining_plural"] = " штурма до восстановления падения",
-
+		
 		--String override for the stungun--
 		["bm_melee_zeus_info"] = "Электрические кастеты, которые бьют током и оглушают цель при полном заряде",
 		["bm_melee_taser_info"] = "Устройство, которое бьет током и оглушает цель при полном заряде.",
-
+		
 		-- Renamed default weapons and mods + descriptions-- --move all these to their respective weapons--
 
 	    ["bm_wp_pis_usp_b_match"] = "Затвор Фримена",
@@ -2905,7 +3166,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_i_autofire_desc"] = "ОСТАВЛЯЕТ ТОЛЬКО #{risk}#АВТОМАТИЧЕСКУЮ СТРЕЛЬБУ##.",
 
 		["menu_akimbo_assault_rifle"] = "Парные винтовки",
-
+		
 		--Throwables--
 		["bm_grenade_copr_ability"] = "Ампула",
 		["bm_grenade_damage_control"] = "Фляжка",
@@ -2940,9 +3201,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette"] = "Снаряды 40MM Flechette",
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Снаряд заряжен 12 маленькими дальнобойными дротиками.\n\nБоезапас: 20\nУрон: 240\nТочность: 50\nЭффективная дистанция: 11м\nМаксимальная дистанция: 22м",
 	})
-
-
-		local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
+end)
+-- Названия оружий в зависимости от настройки
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(loc)
+	local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
 		--[[
 		WepNames Options
 		1 = Имена оружия на кириллице
@@ -4565,7 +4827,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			})
 		end
 	end
-  if not easterless then
+end)
+
+-- ПасхалОчки
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_EasterEggs", function(loc)
+
+if not easterless then
 	local twirl = math.rand(1)
 	local shalashaska = 0.06
 	if Month == "4" and Day == "1" then
@@ -4658,262 +4925,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_saw"] = "Болгарка",
 			  ["bm_ap_saw_sc_desc"] = "Легендарный инструмент в узких кругах Crime.Net, благодаря которому было распилено не один десяток голов цивилов.\n\n#{skill_color}#Прорезает броню.##",
 			["bm_w_x_basset"] = "Акимбо Грибы",
-			-- Я НЕ СМОТРЮ АНИМЕ, У МЕНЯ ДЕД - МУСУЛЬМАНИН
-			-- --SEISHOU ACADEMY
-				-- --MIDDLE SCHOOLERS
-					-- ["bm_w_m16"] = "Ichiroku",
-						-- ["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nThe energetic and foul-mouthed figurehead of the school.",
-					-- ["bm_w_m4"] = "Em-Four",
-						-- ["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nVice-president of the middleschool student council.",
-					-- ["bm_w_aug"] = "AUG",
-						-- ["bm_aug_sc_desc"] = "\"RUN AWAY! PLEAD FOR YOUR LIFE!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nPresident of the middleschool student council.",
-					-- ["bm_wp_ak5_fg_fnc"] = "Funco Kit",
-						-- ["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nGives off a heavy \"main protagonist\" aura.",
-					-- ["bm_w_s552"] = "Shigu",
-						-- ["bm_s552_sc_desc"] = "\"Next shot, I'll take your ear off, bitch.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nAn honor student from a wealthy family who excels in both sports and studies.",
-					-- ["bm_w_l85a2"] = "Eru",
-						-- ["bm_l85a2_sc_desc"] = "\"...\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nShy and clumsy, she has an unreliable nature and the habit of breaking a lot.",
-					-- ["bm_w_rk62"] = "Sako",
-						-- ["bm_rk62_sc_desc"] = "\"#{stat_maxed}#What wonderful squeals!## You sound like you're about to #{stats_positive}#die!##\"\n\nA transfer student attending #{stats_positive}#Seishou Academy.##\nAn elf-eared sadist with a drive to be the \"alpha\" of any school she attends. Desires Funco.",
-
-				-- --HIGH SCHOOLERS
-					-- ["bm_w_fal"] = "Faru",
-						-- ["bm_fal_sc_desc"] = "\"Your big sis arrived-!\"\n\nFunco's older sister.\nNot to be confused with Funco's other sister, L1A1.",
-					-- ["bm_w_m14"] = "Ichiyon",
-						-- ["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
-					-- ["bm_w_g3"] = "Jiisuri",
-						-- ["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's raifu.",
-
-				-- --ELEMENTARY
-					-- ["bm_w_mp5"] = "Empi",
-						-- ["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nOne of Jiisuri's many younger siblings and the student council president of the elementary division.",
-					-- ["bm_w_uzi"] = "Uzi",
-						-- ["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nThe former self-declared leader of the elementary division, pushed out of the position by Empi when she arrived.",
-					-- ["bm_w_mac10"] = "Ram",
-						-- ["bm_mac10_sc_desc"] = "\"INGRAM!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nA machinegun with words. Also rather top-heavy.",
-
-				-- --FACULTY
-					-- ["bm_w_erma"] = "Erma-sensei",
-						-- ["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at #{stats_positive}#Seishou Academy.##\nThe SMGs love her.",
-					-- ["bm_w_m1928"] = "Thompson-sensei",
-						-- ["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at #{stats_positive}#Seishou Academy.##\nSpeaks with accented Japanese. A former member of the FBI.",
-					-- ["bm_w_ching"] = "Garand",
-						-- ["bm_galant_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at #{stats_positive}#Seishou Academy.##\nLooks over the middleschoolers.",
-
-			-- --RED STEEL ACADEMY
-				-- --THREE STRIPES
-					-- ["bm_w_siltstone"] = "Drako",
-						-- ["bm_siltstone_sc_desc"] = "\"Не поймите неправильно...\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nCalm, collected and speaks exclusively in Russian.", --sorry about the Google/MS translate
-					-- ["bm_w_akm"] = "AKM",
-						-- ["bm_akm_sc_desc"] = "\"DON'T FUCK WITH ME!\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nA tall, menacing girl with the ears and tail of a fox. One of the few students capable of decieving AK47.",
-					-- --["bm_w_rpk"] = "RPK",
-						-- ["bm_rpk_sc_desc"] = "\"This is why men are such pigs!\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nA tall, blonde girl with the ears and tail of a Siberian Tiger. Gets sniped frequently.",
-				-- --TWO STRIPES
-					-- ["bm_w_ak74"] = "Nanayon",
-						-- ["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes-\"\n\nA two-stripe student attending #{stats_negative}#Red Steel Academy.##\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
-					-- ["bm_w_saiga"] = "Saiga-chan",
-						-- ["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nA two-stripe student attending #{stats_negative}#Red Steel Academy.##\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
-				-- --ONE STRIPE
-					-- ["bm_w_coal"] = "Bizon",
-						-- ["bm_coal_sc_desc"] = "\"You can count on me-!\"\n\nA one-stripe student attending #{stats_negative}#Red Steel Academy.##\nReally looks up to her seniors, quite literally, but takes special care when addressing SVD.",
-				-- --FACULTY
-					-- ["bm_w_mosin"] = "Mosin Nagant",
-						-- ["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nA faculty member of #{stats_negative}#Red Steel Academy.##\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
-
-			-- --ENOSHIMA
-				-- --MIDDLE SCHOOLERS
-					-- ["bm_w_spas12"] = "Supasu",
-						-- ["bm_spas12_sc_desc"] = "\"Idiot! You're completely exposed!\"\n\nA middleschooler attending a public school in Enoshima.",
-					-- ["bm_w_benelli"] = "Beneri M4",
-						-- ["bm_spas12_sc_desc"] = "\"There's a limit to not being able to read the mood!\"\n\nA middleschooler attending a public school in Enoshima.",
-
+		})
+	 end
+	 
+	
+	 local butt = math.rand(1)
+	 local sex = 0.01
+	 if Month == "4" and Day == "1" then
+		sex = 1
+	 end
+	 if butt <= sex then
+		 LocalizationManager:add_localized_strings({
+			["menu_st_spec_23"] = "Полурак-полухуй",
+			--["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
+			["menu_difficulty_sm_wish"] = "Ванильный ДС",
+			["menu_risk_sm_wish"] = "Чувак. Ты думал что-то здесь будет? О, нет. От тебя ваниллой воняет, даже отсюда чувствую. Выходи, выходи с хаиста и иди нахуй. Друг крутой, а ты лоханулся."
 		 })
 	 end
 
-	-- local big = math.rand(1)
-	-- local pistol = 0.02
-	-- if big <= pistol then
-		-- LocalizationManager:add_localized_strings({
-			-- ["bm_w_deagle"] = "Big Pistol",
-			-- ["bm_w_m16"] = "is that a clarion",
-			-- ["bm_m16_sc_desc"] = "I'll give you a clip so you can do some damage",
-			-- ["bm_w_x_type54"] = "The twin crosskills",
-		-- })
-	--end
-	end
+end
 
 end)
 
-
-local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
-local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
-local f = tweak_data.levels.ai_groups.federales
-local o = tweak_data.levels.ai_groups.omnia
-local ai_type = tweak_data.levels:get_ai_group_type()
-
-if ai_type == r then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "ИДЕТ ШТУРМ НАЕМНИКОВ",
-			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
-			["hud_assault_alpha"] = "ШTУPM HAЕMHИKOB"
-		})
-	end)
-elseif ai_type == z then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Итде Плоиецский Шрутм",
-			["hud_assault_cover"] = "ОСТВЙТСЬ В УРКЫТИИ...МОЗГИИ",
-			["hud_assault_alpha"] = "ПЛОИЕЦСКИЙ ШРУТМ"
-		})
-	end)
-elseif ai_type == f then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Asalto En Marcha",
-			["hud_assault_cover"] = "MANTENTE A CUBIERTO",
-			["hud_assault_alpha"] = "ASALTO"
-		})
-	end)
-elseif ai_type == m then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
-		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "Идет операция Murkywater",
-			["hud_assault_alpha"] = "ОПЕРАЦИЯ MURKYWATER"
-		})
-	end)
-end
-
- if _G.HopLib then
-	local ai_type = tweak_data.levels:get_ai_group_type()
-	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
-	local lapd = tweak_data.levels.ai_groups.lapd
-	local mex = tweak_data.levels.ai_groups.federales
-	local akan = tweak_data.levels.ai_groups.russia
-	local nypd = tweak_data.levels.ai_groups.nypd
-	local fbi = tweak_data.levels.ai_groups.fbi
-	local breins = tweak_data.levels.ai_groups.zombie
-
-	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
-		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
-	end)
-
-	if ai_type == murkywetew then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
-		end)
-	elseif ai_type == lapd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
-		end)
-	elseif ai_type == mex then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")
-		end)
-	elseif ai_type == akan then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")
-		end)
-	elseif ai_type == nypd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")
-		end)
-	elseif ai_type == fbi then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")
-		end)
-	elseif ai_type == breins then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")
-		end)
-	end
-end
-
-if restoration and restoration.Options:GetValue("OTHER/OldEconomy") then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_PayPerDay", function(loc)
-		LocalizationManager:add_localized_strings({
-			["victory_stage_cash_summary_name_job"] = "Вы получили $stage_cash за прохождение дня, а также дополнительные $job_cash за прохождение контракта."
-		})
-	end)
-end
-
+-- Советы при загрузке
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_toggle_one_down"] = "Pro-Job",
-		["menu_one_down"] = "Pro-Job",
-		["menu_es_pro_job_bonus"] = "Pro-Job",
-
-		["menu_pro_warning"] = "Режим PRO JOB: При провале, контракт будет отменен.\nПод конец ограбления может начаться Точка Невозврата, во время которой появятся более опасные противники.\nПрохождение в режиме Pro Job дает 25% бонус к деньгам и опыту.",
-
-		["menu_asset_lock_additional_assets_pro"] = "НЕДОСТУПНО В РЕЖИМЕ PRO-JOB!",
-		["menu_asset_buy_all_req_skill"] = "##NOT AVAILABLE!##",
-
-		["cn_menu_contract_daypay_header"] = "Дневная плата:",
-		["cn_menu_contract_jobpay_header"] = "Плата за контракт:",
-
-		["debug_interact_grenade_crate_take_grenades"] = "УДЕРЖИВАЙТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ МЕТАТЕЛЬНОЕ ОРУЖИЕ",
-		["debug_interact_bodybags_bag_take_bodybag"] = "УДЕРЖИВАЙТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ МЕШКИ ДЛЯ ТРУПОВ И СТЯЖКИ",
-
-	    ["menu_equipment_armor_kit"] = "Кейс с метательным оружием",
-		["bm_equipment_armor_kit"] = "Кейс с метательным оружием",
-		["debug_equipment_armor_kit"] = "Кейс с метательным оружием",
-		["bm_equipment_armor_kit_desc"] = "Чтобы использовать кейс с метательным оружием, вам нужно установить его, зажав #{skill_color}#$BTN_USE_ITEM.##. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием #{skill_color}#$BTN_INTERACT##, чтобы восполнить запас метательного оружия. Он может быть использован #{skill_color}#3## раза.\n\nВы можете увидеть, сколько еще раз можно использовать кейс, посмотрев на него.\n\nКейс с метательным оружием это скрытная вещь, используемая солдатами и наемниками для переноски особого оружия на тяжелый случай.",
-		["bm_equipment_armor_kit_desc_short"] = "Чтобы использовать кейс с метательным оружием, вам нужно установить его, зажав #{skill_color}#$BTN_USE_ITEM.##. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием #{skill_color}#$BTN_INTERACT##, чтобы восполнить запас метательного оружия. Он может быть использован #{skill_color}#3## раза.\n\nВы можете увидеть, сколько еще раз можно использовать кейс, посмотрев на него.",
-		--Ordanance Bag
-		["bm_equipment_grenade_crate"] = "Сумка с гранатами",
-		["bm_equipment_grenade_crate_desc"] = "Чтобы использовать сумку с гранатами, вам нужно установить ее, зажав $BTN_USE_ITEM. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием $BTN_INTERACT, чтобы восполнить #{skill_color}#25%## запаса патронов и #{skill_color}#1## метательное оружие. Она может быть использована #{skill_color}#4## раза.\n\nВы можете увидеть, сколько еще раз можно использовать сумку, посмотрев на нее.\n\nСумка с гранатами используется оперативниками для транспортировки взрывчатки на место боевых действий.",
-		["bm_equipment_grenade_crate_desc_short"] = "Чтобы использовать сумку с гранатами, вам нужно установить ее, зажав $BTN_USE_ITEM. После установки его нельзя переместить, но можно использовать вам или вашим напарникам, нажатием $BTN_INTERACT, чтобы восполнить #{skill_color}#25%## запаса патронов и #{skill_color}#1## метательное оружие. Она может быть использована #{skill_color}#4## раза.\n\nВы можете увидеть, сколько еще раз можно использовать сумку, посмотрев на нее.",
-		--Trip Mine
-		["bm_equipment_trip_mine_desc"] = "Чтобы использовать мину, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.## Лазер можно переключать между режимами детонации и сенсора, нажав #{skill_color}#$BTN_INTERACT.##\n\nЧтобы использовать кумулятивные заряды, их нужно установить, используя #{skill_color}#$BTN_INTERACT.## Когда нужное количество зарядов установлено, они детонируют через несколько секунд.\n\nМины - это растяжки, которые уничтожат или нанесут существенный вред врагам, которые пересекут луч. Кумулятивные заряды используются для вскрытия дверей и сейфов. Оба - отличное дополнение при любой боевой ситуации.",
-		["bm_equipment_trip_mine_desc_short"] = "Чтобы использовать мину, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.## Лазер можно переключать между режимами детонации и сенсора, нажав #{skill_color}#$BTN_INTERACT.##\n\nЧтобы использовать кумулятивные заряды, их нужно установить, используя #{skill_color}#$BTN_INTERACT.## Когда нужное количество зарядов установлено, они детонируют через несколько секунд.",
-		--Ammo Bag
-		["bm_equipment_ammo_bag_desc"] = "Чтобы использовать сумку с патронами, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.## После установки ее нельзя переместить, но можно использовать, удерживая $BTN_INTERACT, чтобы восполнить запас патронов.\n\nОна восстанавливает полный запас патронов #{skill_color}#$deployable_uses## раз(а); остаток запаса можно определить по виду сумки.\n\nСумка с патронами - портативная часть экипировки, позволяющая бойцам легко переносить большие запасы амуниции.",
-		["bm_equipment_ammo_bag_desc_short"] = "Чтобы использовать сумку с патронами, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.## После установки ее нельзя переместить, но можно использовать, удерживая $BTN_INTERACT, чтобы восполнить запас патронов.\n\nОна восстанавливает полный запас патронов #{skill_color}#$deployable_uses## раз(а); остаток запаса можно определить по виду сумки.",
-		--ECM Jammer
-		["bm_equipment_ecm_jammer_desc"] = "Чтобы использовать генератор помех, вам нужно установить его, удерживая #{skill_color}#$BTN_USE_ITEM##. После установки его нельзя переместить. Он активируется на #{skill_color}#$deployable_uses## секунд.\n\nВы можете переключить режим работы генератора помех при взаимодействии с ним. В этом случае, генератор помех будет оглушать врагов в радиусе #{skill_color}#25## метров. Первые помехи имеют #{skill_color}#100%## шанс оглушить врага, затем каждые #{skill_color}#1.2## секунды помех имеют #{skill_color}#60%## шанс на оглушение. Помехи длятся #{skill_color}#$deployable_uses## секунд, и перезаряжаются через #{skill_color}#4## минуты.\n\nГенераторы помех могут взламывать банкоматы и ненадолго отключать электронные устройства - телефоны, камеры и прочие системы безопасности.",
-		["bm_equipment_ecm_jammer_desc_short"] = "Чтобы использовать генератор помех, вам нужно установить его, удерживая #{skill_color}#$BTN_USE_ITEM##. После установки его нельзя переместить. Он активируется на #{skill_color}#$deployable_uses## секунд.\n\nВы можете переключить режим работы генератора помех при взаимодействии с ним. В этом случае, генератор помех будет оглушать врагов в радиусе #{skill_color}#25## метров. Первые помехи имеют #{skill_color}#100%## шанс оглушить врага, затем каждые #{skill_color}#1.2## секунды помех имеют #{skill_color}#60%## шанс на оглушение. Помехи длятся #{skill_color}#$deployable_uses## секунд, и перезаряжаются через #{skill_color}#4## минуты.",
-		--FAQ U
-		["bm_equipment_first_aid_kit_desc"] = "Удерживайте кнопку #{skill_color}#$BTN_USE_ITEM##, чтобы установить аптечку. Ее нельзя переместить после установки, но можно использовать, зажав кнопку #{skill_color}#$BTN_INTERACT##, чтобы восстановить #{skill_color}#150## здоровья. Аптечку первой помощи можно использовать только #{skill_color}#1## раз.\n\nАптечка первой помощи - небольшой ассортимент лечебных средств, используемый в экстренных ситуациях.",
-        ["bm_equipment_first_aid_kit_desc_short"] = "Удерживайте кнопку #{skill_color}#$BTN_USE_ITEM##, чтобы установить аптечку. Ее нельзя переместить после установки, но можно использовать, зажав кнопку #{skill_color}#$BTN_INTERACT##, чтобы восстановить #{skill_color}#150## здоровья. Аптечку первой помощи можно использовать только #{skill_color}#1## раз.",
-		--AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-		["bm_equipment_doctor_bag_desc"] = "Чтобы использовать медицинскую сумку, вам нужно установить ее, используя #{skill_color}#$BTN_USE_ITEM##. После установки ее нельзя переместить, но можно использовать, удерживая #{skill_color}#$BTN_INTERACT##, чтобы восстановить #{skill_color}#20%## максимального здоровья сразу и #{skill_color}#4%## максимального здоровья каждые #{skill_color}#5## секунд в течение #{skill_color}#3## минут и получить #{skill_color}#10%## Устойчивости. Медицинскую сумку можно использовать #{skill_color}#$deployable_uses## раз(а).\n\nМедицинская сумка - портативный кейс, который используется профессиональными врачами для переноса медикаментов и лекарств.",
-		["bm_equipment_doctor_bag_desc_short"] = "Чтобы использовать медицинскую сумку, вам нужно установить ее, используя #{skill_color}#$BTN_USE_ITEM##. После установки ее нельзя переместить, но можно использовать, удерживая #{skill_color}#$BTN_INTERACT##, чтобы восстановить #{skill_color}#20%## максимального здоровья сразу и #{skill_color}#4%## максимального здоровья каждые #{skill_color}#5## секунд в течение #{skill_color}#3## минут и получить #{skill_color}#10%## Устойчивости. Медицинскую сумку можно использовать #{skill_color}#$deployable_uses## раз(а).",
-        --Sentry
-		["bm_equipment_sentry_gun_desc"] = "Чтобы использовать турель, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.##. Вы используете #{skill_color}#$deployable_uses## вашего запаса патронов на установку. \n\nТурель можно забрать обратно, зажав #{skill_color}#$BTN_INTERACT## возле нее; это вернет вам остаток патронов и починит ее. \n\nПри получении большого количества урона, турель отключится. Если это произошло, вы можете запустить режим починки, удерживая #{skill_color}#$BTN_INTERACT##. \n\nТурели пугают гражданских, заставляя их оставаться на месте.\n\nТурель автоматически наводится и стреляет по целям, которые попадают под ее сенсор. Она используется для отвлечения противников от вас и вашей команды.",
-		["bm_equipment_sentry_gun_desc_short"] = "Чтобы использовать турель, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.##. Вы используете #{skill_color}#$deployable_uses## вашего запаса патронов на установку. \n\nТурель можно забрать обратно, зажав #{skill_color}#$BTN_INTERACT## возле нее; это вернет вам остаток патронов и починит ее. \n\nПри получении большого количества урона, турель отключится. Если это произошло, вы можете запустить режим починки, удерживая #{skill_color}#$BTN_INTERACT##. \n\nТурели пугают гражданских, заставляя их оставаться на месте.",
-		--Supp. Sentry
-		["bm_equipment_sentry_gun_silent_desc"] = "Чтобы использовать приглушенную турель, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.##. Вы используете #{skill_color}#$deployable_uses## вашего запаса патронов на установку. \n\nТурель можно забрать обратно, зажав #{skill_color}#$BTN_INTERACT## возле нее; это вернет вам остаток патронов и починит ее. \n\nПри получении большого количества урона, турель отключится. Если это произошло, вы можете запустить режим починки, удерживая #{skill_color}#$BTN_INTERACT##. \n\nТурели пугают гражданских, заставляя их оставаться на месте.\n\nПриглушенная турель, в отличие от громкой обычной, используется для убийства врагов, а не отвлечения.",
-		["bm_equipment_sentry_gun_silent_desc_short"] = "Чтобы использовать приглушенную турель, вам нужно установить ее, зажав #{skill_color}#$BTN_USE_ITEM.##. Вы используете #{skill_color}#$deployable_uses## вашего запаса патронов на установку. \n\nТурель можно забрать обратно, зажав #{skill_color}#$BTN_INTERACT## возле нее; это вернет вам остаток патронов и починит ее. \n\nПри получении большого количества урона, турель отключится. Если это произошло, вы можете запустить режим починки, удерживая #{skill_color}#$BTN_INTERACT##. \n\nТурели пугают гражданских, заставляя их оставаться на месте.",
-		--Body Bags
-		["bm_equipment_bodybags_bag_desc"] = "Чтобы использовать кейс, вам нужно установить его, зажав #{skill_color}#$BTN_USE_ITEM##. После установки его нельзя переместить, но можно использовать, удерживая #{skill_color}#$BTN_INTERACT##, чтобы восстановить мешки для тел и стяжки.\n\nУ кейса ограниченный запас. По его виду можно понять, сколько сумок осталось. \n\nКейс позволяет восполнить мешки для тел и стяжки, использующиеся для транспортировки тел при скрытных операциях и контроле толп гражданских.",
-		["bm_equipment_bodybags_bag_desc_short"] = "Чтобы использовать кейс, вам нужно установить его, зажав #{skill_color}#$BTN_USE_ITEM##. После установки его нельзя переместить, но можно использовать, удерживая #{skill_color}#$BTN_INTERACT##, чтобы восстановить мешки для тел и стяжки.\n\nУ кейса ограниченный запас. По его виду можно понять, сколько сумок осталось.",
-
-		["hud_int_hold_take_pardons"] = "НАЖМИТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ ПОМИЛОВАНИЕ",
-		["debug_interact_gage_assignment_take"] = "НАЖМИТЕ $BTN_INTERACT ЧТОБЫ ЗАБРАТЬ ПОСЫЛКУ ГЕЙДЖА",
-
-		["hint_ability_no_grenade_pickup"] = "У ВАС НЕТ МЕТАТЕЛЬНОГО ОРУЖИЯ",
-		["hint_full_grenades"] = "У ВАС УЖЕ ПОЛНЫЙ ЗАПАС.",
-		["debug_interact_ordnance_bag_take_grenades"] = "НАЖМИТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ МЕТАТЕЛЬНОЕ ОРУЖИЕ И НЕМНОГО ПАТРОНОВ",
-
-		["far_repair_sentry_macro"] = "Турель критически повреждена - требуется ремонт.",
-		["fixing_sentry_macro"] = "Прогресс ремонта: $AMMO_LEFT",
-		--Are concatenated to the related button prompts. Using Macros results in controller prompts at the wrong times.
-		["repair_sentry_macro"] = " чтобы начать авто-починку турели",
-		["pickup_sentry_macro"] = " чтобы забрать турель.\n$AMMO_LEFT патронов осталось. ", --Gets % health remaining appended to the end.
-		["firemode_sentry_macro"] = " чтобы сменить режим стрельбы.\n$AMMO_LEFT патронов осталось.",
-		["hud_interact_pickup_sentry_gun"] = "$AMMO_LEFT", --$AMMO_LEFT macro is a dummy macro to be replaced with desired string, since changing interaction objects is slightly cursed.
-		["hud_interact_sentry_gun_switch_fire_mode"] = "$AMMO_LEFT",
-		["hud_repair_sentry"] = "$AMMO_LEFT",
-		["hud_action_repair_sentry"] = "Турель чинится...",
-
-		--More fitting descriptions of difficulties--
-		["menu_risk_elite"] = "ЖАЖДА СМЕРТИ. ДЛЯ ВАС ГЛАВНОЕ - ЭТО ЭФФЕКТНОСТЬ.",
-		["menu_risk_sm_wish"] = "СМЕРТНЫЙ ПРИГОВОР. ПОКАЖИТЕ ИМ, ЧТО ВЫ НЕПОБЕДИМЫ.",
-
-		--Loading Hints--
+	--Loading Hints--
 		--Restoration Gameplay Hints--
 		["loading_gameplay_res_title"] = "Restoration - советы об игровом процессе",
 		["loading_gameplay_res_1"] = "Клокеры издают сверчащий звук, когда готовятся атаковать. Используйте это для их обнаружения.",
@@ -5076,35 +5113,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_24"] = "Капитаны не умирают, а отправляются под стражу.",
 		["loading_fluff_res_25"] = "АКАН предложил 'быструю и жестокую расправу над картелями' по цене дешевле, чем OMNIA - поэтому мексиканская федеральная полиция пополнила состав D-серией DRAK. На самом деле это уловка, чтобы подобраться ближе к операциям OMNIA в Мексике и США.",
 
-		["menu_button_deploy_bipod"] = "СОШКИ/АЛЬТЕРНАТИВНЫЙ ОГОНЬ",
-		["hint_short_max_pagers"] = "Игнорирование пейджеров сильно увеличит полоску подозрения.",
+	})
+end)
 
-		--And now we're doing it again--
-		["menu_infamy_desc_root_new"] = "Вы новый член криминальной элиты, и первое, что вам нужно сделать - обзавестись вещами, которые подтверждают ваш статус.\n\nБОНУСЫ:\nШанс получить предмет с дурной репутацией увеличен с ##0.3%## до ##0.6%##\nПолучаемый опыт увеличен на ##5%##.",
-
-		--Renaming some of the skill subtrees--
-		["st_menu_mastermind_single_shot"] = "Штурмовик",
-		["st_menu_enforcer_armor"] = "Джаггернаут",
-		["st_menu_enforcer_ammo"] = "Поддержка",
-		["st_menu_technician_auto"] = "Боевой инженер",
-		["st_menu_technician_breaching"] = "Перфоратор",
-		["st_menu_technician_sentry"] = "Крепость",
-		["st_menu_ghost_silencer"] = "Наемный убийца",
-		["hud_instruct_mask_on"] = "Нажмите $BTN_USE_ITEM чтобы надеть маску",
-		["hud_instruct_mask_on_alpha"] = "Нажмите $BTN_USE_ITEM чтобы надеть маску",
-
-		--Default Suit String
-		["bm_suit_none_desc"] = "Это стандартный костюм грабителя с выбранной броней. Может измениться с костюма-двойки в зависимости от ограбления!",
-
-		-- Ad Banner Change
-		["menu_changelog"] = "Последний чейнджлог",
-		["menu_discord"] = "Сервер в Discord",
-		["menu_guide"] = "Гайд по моду",
-		["menu_captains"] = "Информация о Капитанах",
-		["menu_content_updates"] = "Гайд/Поддержка",
-		["menu_content_updates_previous"] = "",
-
-		--Mutators
+-- Мутаторы
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mutators", function(loc)
+	LocalizationManager:add_localized_strings({
+--Mutators
 		["menu_mutators_achievement_disabled"] = "",
 		["menu_mutators_category_holiday"] = "ПРАЗДНИКИ",
 		["menu_mutators_category_old_event"] = "ИВЕНТЫ",
@@ -5335,7 +5350,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_vanilla_police_call"] = "Посторонние на объекте",
 		["mutator_vanilla_police_call_desc"] = "Возвращает обратно механики работы пейджеров, камер и звонков в полицию.",
 		["mutator_vanilla_police_call_longdesc"] = "Возвращает обратно механики работы пейджеров, камер и звонков в полицию.",
-		--Crime spree modifier changes
+	})
+end)
+
+-- Крайм (Кам) сприи ака Серия Ограблений
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Crime_Spree", function(loc)
+	LocalizationManager:add_localized_strings({
+	--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "Серия преступлений - режим, в котором вас предстоит сыграть бесконечную серию ограблений, идущих подряд. С каждым пройденным ограблением, ваши Ранг и Награда буду повышаться! Каждый 20-й и 26-й ранг вам предстоит выбрать модификатор, а каждые 100 рангов повысится уровень риска, что сделает последующие ограбления сложнее. После 600 ранга, задержка на получение урона будет уменьшаться, и среди обычных врагов начнут появляться отряды Браво.\n\n##При игре с друзьями, не забудьте убедиться, что они начали свою Серию преступлений, или они не смогут получать Ранги и Награды.##",
 		["menu_cs_next_modifier_forced"] = "",
 		["menu_cs_modifier_dozers"] = "Теперь появляется на одного Бульдозера больше.",
@@ -5365,45 +5386,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_10secondsresponsetime"] = "Полицейские штурмы сразу имеют максимальную интенсивность.",
 		["menu_cs_modifier_dozerpairs"] = "Все бульдозеры теперь появляются парами.",
 		["menu_cs_modifier_spoocsquad"] = "Клокеры стараются появляться группами.",
+		
+	})
+end)
 
-		["bm_menu_skill"] = "Бонусы для команды",
+-- Навыки
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
+	LocalizationManager:add_localized_strings({
 
-		["menu_crew_interact"] = "Ловкий",
-		["menu_crew_interact_desc"] = "Игроки взаимодействуют на 15% быстрее за каждого бота в команде.",
-
-	    ["menu_crew_inspire"] = "Вдохновление",
-        ["menu_crew_inspire_desc"] = "Боты с этим перком могут использовать на вас Вдохновление.\n\nОни не могут его использовать чаще чем в 90 секунд. Перезарядка уменьшается на 15 секунд за каждого бота в команде.",
-
-        ["menu_crew_scavenge"] = "Острый глаз",
-		["menu_crew_scavenge_desc"] = "Подбор патронов для игроков увеличен на 10% за каждого бота в команде.",
-
-        ["menu_crew_ai_ap_ammo"] = "Пробитие",
-        ["menu_crew_ai_ap_ammo_desc"] = "Ваши боты теперь могут пробивать броню и так же они наносят на 25% больше урона.\n\nЭто позволяет им простреливать через броню и щитов.",
-
-        ["menu_crew_healthy"] = "Подготовка",
-        ["menu_crew_healthy_desc"] = "Здоровье игроков увеличено на 30.",
-
-        ["menu_crew_sturdy"] = "Защитник",
-        ["menu_crew_sturdy_desc"] = "Броня игроков увеличена на 10%.",
-
-        ["menu_crew_evasive"] = "Отвлекающий маневр",
-        ["menu_crew_evasive_desc"] = "Полоска уворота игроков заполняется на 3% от их максимального уворота.",
-
-        ["menu_crew_motivated"] = "Тренер",
-        ["menu_crew_motivated_desc"] = "Игроки получают на 15 больше выносливости.",
-
-        ["menu_crew_regen"] = "Лекарь",
-        ["menu_crew_regen_desc"] = "Игроки лечат 1 очко здоровья каждые 4 секунды.",
-
-        ["menu_crew_quiet"] = "Компактный",
-        ["menu_crew_quiet_desc"] = "Игроки получают на 2 единицы компактности больше.",
-
-        ["menu_crew_generous"] = "Подарочек",
-        ["menu_crew_generous_desc"] = "Игроки получают дополнительное мететальное за каждые 70 убийств.",
-
-        ["menu_crew_eager"] = "Адреналин",
-        ["menu_crew_eager_desc"] = "Игроки перезаряжают оружие на 10% быстрее.",
-
+		--Renaming some of the skill subtrees--
+		["st_menu_mastermind_single_shot"] = "Штурмовик",
+		["st_menu_enforcer_armor"] = "Джаггернаут",
+		["st_menu_enforcer_ammo"] = "Поддержка",
+		["st_menu_technician_auto"] = "Боевой инженер",
+		["st_menu_technician_breaching"] = "Перфоратор",
+		["st_menu_technician_sentry"] = "Крепость",
+		["st_menu_ghost_silencer"] = "Наемный убийца",
+	
 	--[[   SKILLTREES   ]]--
 
 		--[[   MASTERMIND   ]]--
@@ -5481,7 +5480,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Свинцовый ад",
-				["menu_body_expertise_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Все оружие## наносит #{skill_color}#$skill_value_b1## урона через броню.\n\nЭтот эффект увеличивается до #{skill_color}#$skill_value_b2## для #{skill_color}#пулеметов.##\n\n#{risk}#Эффект складывается с бронебойностью вашего оружия, до максимальных 100%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства из #{skill_color}#пулеметов## в течение одной очереди дольше #{skill_color}#$skill_value_p1## секунд увеличат урон на #{skill_color}#$skill_value_p2##; складывается до #{skill_color}#$skill_value_p3## раз.",
+				["menu_body_expertise_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Все оружие## наносит #{skill_color}#$skill_value_b1## урона через броню.\n\nЭтот эффект увеличивается до #{skill_color}#$skill_value_b2## для #{skill_color}#пулеметов.##\n\n#{risk}#Эффект складывается с бронебойностью вашего оружия, до максимальных 100%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства из #{skill_color}#пулеметов## в #{risk}#автоматическом режиме## увеличат урон на #{skill_color}#$skill_value_p2##; складывается до #{skill_color}#$skill_value_p3## раз, а бонус к урону спадает раз в #{risk}#$skill_value_p1## секунд.",
 
 
 		--[[   ENFORCER   ]]--
@@ -5793,28 +5792,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				["menu_frenzy_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nЧем меньше у вас здоровья, тем больше урона вы наносите.\n\nКогда ваше здоровье ниже #{skill_color}#100%##, вы будете наносить до #{skill_color}#$skill_value_b1## дополнительного урона пилой и оружием ближнего боя.\n\nПИКОВЫЙ: #{owned}#$pro##\nЧем меньше у вас здоровья, тем больше урона вы наносите.\n\nКогда ваше здоровье ниже #{skill_color}#100%##, вы будете наносить до #{skill_color}#$skill_value_p1## дополнительного урона огнестрельным оружием.\n\n#{risk}#Не работает на гранатометы и ракетометы.##"
 
 	})
-
-	if not easterless then
-	 local butt = math.rand(1)
-	 local frame = 0.01
-	 if Month == "4" and Day == "1" then
-		frame = 1
-	 end
-	 if butt <= frame then
-		 LocalizationManager:add_localized_strings({
-			["menu_st_spec_23"] = "Полурак-полухуй",
-			--["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
-			["menu_difficulty_sm_wish"] = "Залупа Иваныча", -- хз че придумать. Может ЗИ?
-			["menu_risk_sm_wish"] = "Чувак. Ты думал что-то здесь будет? О, нет. От тебя ваниллой воняет, даже отсюда чувствую. Выходи, выходи с хаиста и иди нахуй. Друг крутой, а ты лоханулся."
-		 })
-	 end
-	end
-
 end)
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
+-- Перки
+Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Perk_Decks", function(loc)
 	LocalizationManager:add_localized_strings({
-		["bm_menu_dodge"] = "Уворот",
 		["menu_st_category_all"] = "Все перки",
 		["menu_st_category_offensive"] = "Нападение",
 		["menu_st_category_defensive"] = "Защита",

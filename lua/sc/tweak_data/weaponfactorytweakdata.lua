@@ -29284,6 +29284,28 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ammo_pickup_min_mul = 0.209302,
 					ammo_pickup_max_mul = 0.209302
 				}
+				self.parts.wpn_fps_ass_morita_barrel_hawkeye.adds = {"wpn_fps_ass_morita_hawkeye_sounds"}
+
+				self.parts.wpn_fps_ass_morita_hawkeye_sounds = {
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					a_obj = "a_body",
+					type = "ammo",
+					name_id = "bm_wp_morita_hawkeye_sounds",
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					internal_part = true,
+					no_cull = true,
+					stats = {
+						value = 5
+					},
+					custom_stats = {
+						sounds = {
+							fire = "morita_hawkeye_fire",
+							fire_single = "morita_hawkeye_fire",
+							fire_auto = "morita_hawkeye_fire"
+						}
+					}
+				}
+				
 			--OPTICS
 				self.parts.wpn_fps_ass_morita_optic_reflex.supported = true
 				self.parts.wpn_fps_ass_morita_optic_reflex.has_description = true

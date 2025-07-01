@@ -4,11 +4,9 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local ponr_value_limo = 1500 - (difficulty * 10)
 local ponr_timer_player_mul_limo = {
 	1.2,
-	1.1,
 	1,
-	0.9,
 	0.8,
-	0.7,  -- 6+ players
+	0.6,  -- 4+ players
 }
 local opts_pro_job_ponr_limo = {
 	elements_in_instances = {

@@ -50,7 +50,7 @@ local opts_pro_job_ponr_bfd = table.map_append({}, opts_pro_job_ponr_limo, {
 	enabled = false,
 })
 
-local ponr_value_van = 900 - (difficulty * 15)
+local ponr_value_van = 900 - (difficulty * 10)
 local ponr_timer_player_mul_van = ponr_timer_player_mul_limo
 local opts_pro_job_ponr_van = table.map_append({}, opts_pro_job_ponr_limo, {
 	time_balance_mul = ponr_timer_player_mul_van,

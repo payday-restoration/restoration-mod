@@ -250,7 +250,7 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	end
 
 	local is_moving = current_state._moving or current_state:in_air()
-	local full_steelsight = current_state:full_steelsight()
+	local full_steelsight = current_state:is_full_steelsight()
 
 	if full_steelsight then
 		if multi_ray then
@@ -343,8 +343,8 @@ end
 --Simpler spread function. Determines area bullets can hit then converts that to the max degrees by which the rays can fire.
 function NewRaycastWeaponBase:_get_spread(user_unit)
 	local current_state = user_unit:movement()._current_state
-	local is_steelsight = current_state and current_state:full_steelsight()
-	local is_hipfire = current_state and not current_state:full_steelsight()
+	local is_steelsight = current_state and current_state:is_full_steelsight()
+	local is_hipfire = current_state and not current_state:is_full_steelsight()
 	local is_tacstance = self:second_sight_spread_mult()
 	local is_moving = current_state and (current_state._moving or current_state:in_air())
 	local is_bipod = current_state and current_state:_is_using_bipod()
@@ -559,7 +559,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
 	if current_state then
 		local is_moving = current_state._moving or current_state:in_air()
-		local full_steelsight = current_state:full_steelsight()
+		local full_steelsight = current_state:is_full_steelsight()
 		if full_steelsight then
 			local weapon_stats = tweak_data.weapon.stats
 			local base_zoom = weapon_stats.zoom and weapon_stats.zoom[1]

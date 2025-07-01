@@ -3521,6 +3521,10 @@ function PlayerStandard:full_steelsight()
 	return self._state_data.in_steelsight and self._camera_unit:base():is_stance_done()
 end
 
+function PlayerStandard:is_full_steelsight()
+	return self._state_data.in_full_steelsight
+end
+
 
 --Ends minigun spinup.
 Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsight", function(self, t, gadget_state)

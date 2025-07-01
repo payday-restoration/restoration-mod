@@ -957,6 +957,16 @@ function RaycastWeaponBase:add_ammo_from_bag(available)
 	return can_have
 end
 
+function RaycastWeaponBase:_get_anim_start_offset(anim)
+	if self:weapon_tweak_data().reload_offset and (anim == "reload" or anim == "reload_not_empty") then
+		return self:weapon_tweak_data().reload_offset
+	elseif anim == "reload" and self:ammo_base():get_ammo_remaining_in_clip() <= (self.AKIMBO and 1 or 0) and self:weapon_tweak_data().animations.magazine_empty then
+		return 0.033
+	end
+
+	return false
+end
+
 function RaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_offset, set_offset2)
 	local animation = self:_get_tweak_data_weapon_animation(anim)
 	if animation then

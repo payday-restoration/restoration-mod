@@ -27661,6 +27661,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeo2.nato = true
 				self.bromeo2.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.bromeo2.lock_slide = true
+				self.bromeo2.lock_slide_offset = 0.066
+				self.bromeo2.reload_offset = 0.033
 				self.bromeo2.animations.magazine_empty = nil
 				self.bromeo2.reload_speed_multiplier = 0.53
 				self.bromeo2.reload_not_empty_speed_multiplier = 1.2
@@ -27719,6 +27721,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeop.nato = true
 				self.bromeop.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.bromeop.lock_slide = true
+				self.bromeop.lock_slide_offset = 0.066
+				self.bromeop.reload_offset = 0.033
 				self.bromeop.animations.magazine_empty = nil
 				self.bromeop.reload_speed_multiplier = 0.57
 				self.bromeop.reload_not_empty_speed_multiplier = 1.16

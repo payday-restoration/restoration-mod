@@ -441,6 +441,11 @@ function restoration:Init()
 		"the_factory",  -- Eclipse Research Facility
 	}
 
+	-- Heists to disable enemy smoke/flash grenades on
+	restoration.no_smokes_or_flashes = table.list_to_set({
+		"haunted",  -- Safehouse Nightmare
+	})
+
 	--Sub Faction overrides
 	--Texas
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {

@@ -654,16 +654,15 @@ function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers, include
 end
 
 function GroupAIStateBase:detonate_world_smoke_grenade(id, sync)
-	self._smoke_grenades = self._smoke_grenades or {}
-
-	if not self._smoke_grenades[id] then
-		--Application:error("Could not detonate smoke grenade as it was not queued!", id)
+	if restoration.no_smokes_or_flashes[job] then
+		self._smoke_grenades = nil
 		return
 	end
 
-	if job == "haunted" then
-		self._smoke_grenades = nil --delete queue
+	self._smoke_grenades = self._smoke_grenades or {}
 
+	if not self._smoke_grenades[id] then
+		restoration:warn("Could not detonate smoke/flash grenade %s as it was not queued!", tostring(id))
 		return
 	end
 

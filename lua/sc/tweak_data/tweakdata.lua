@@ -201,17 +201,22 @@ tweak_data.smg = {
 
 tweak_data.snp = {
 	swap_bonus = 0.95,
-	hipfire_spread_mult = 2.5,
+	hipfire_spread_mult = 3,
 	hipfire_moving_spread_mult = 1.5,
 	ads_move_speed_mult = 0.4,
 	ads_stationary_spread_mult = 0.1,
 	shake_mul = 1.1,
-	min_spread_mult = 3.5
+	min_spread_mult = 2
 }
+	tweak_data.snp_hip = {
+		min_spread_mult = 1 / tweak_data.snp.min_spread_mult
+		hipfire_spread_mult = 2 / tweak_data.snp.hipfire_spread_mult,
+		hipfire_moving_spread_mult = 1.25 / tweak_data.snp.hipfire_moving_spread_mult,
+	}
 	tweak_data.semi_snp = {
 		min_spread_mult = 5 / tweak_data.snp.min_spread_mult,
-		hipfire_spread_mult = 3.5,
-		hipfire_moving_spread_mult = 1.5,
+		hipfire_spread_mult = 5 / tweak_data.snp.hipfire_spread_mult,
+		hipfire_moving_spread_mult = 2.5 / tweak_data.snp.hipfire_moving_spread_mult,
 		ads_moving_recoil = 1.1,
 		ads_moving_spread_mult = 1.35,
 		ads_move_speed_mult = 0.3 / tweak_data.snp.ads_move_speed_mult,

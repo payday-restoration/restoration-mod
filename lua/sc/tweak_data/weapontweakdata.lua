@@ -12508,6 +12508,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.tti.panic_suppression_chance = 0.05
 
 					--Repeater 1874
+						self.winchester1874.categories = {
+							"snp",
+							"snp_hip"
+						}
 						self.winchester1874.has_description = true
 						self.winchester1874.desc_id = "bm_winchester1874_sc_desc"
 						self.winchester1874.upgrade_blocks = nil
@@ -12890,6 +12894,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.siltstone.timers.reload_exit_not_empty = 0.8
 
 					--Bernetti Rangehitter (Marlin SBL)
+						self.sbl.categories = {
+							"snp",
+							"snp_hip"
+						}
 						self.sbl.upgrade_blocks = nil
 						self.sbl.has_description = true
 						self.sbl.desc_id = "bm_sbl_sc_desc"
@@ -12949,6 +12957,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sbl.timers.shotgun_reload_exit_empty = 1
 
 					--Nagant
+						self.mosin.categories = {
+							"snp",
+							"snp_hip"
+						}
 						self.mosin.bmp = 1
 						self.mosin.has_description = true
 						self.mosin.desc_id = "bm_mosin_sc_desc"
@@ -13107,6 +13119,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 					--Flintlock
 					if self.bessy then --in the event (shut up) its not a permanent addition
+						self.bessy.categories = {
+							"snp",
+							"snp_hip"
+						}
 						self.bessy.upgrade_blocks = nil
 						self.bessy.has_description = true
 						self.bessy.desc_id = "bm_bessy_sc_desc"
@@ -13164,6 +13180,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--G2 Contender
 						self.contender.categories = {
 							"snp",
+							"snp_hip",
 							"gl_pistol"
 						}
 						self.contender.upgrade_blocks = nil
@@ -17877,6 +17894,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     PAWCIO'S MODS     ]]--
 			if self.holygrail then
+				self.holygrail.categories = {
+					"snp",
+					"snp_hip"
+				}
 				self.holygrail.recategorize = { "heavy_snp" }
 				self.holygrail.damage_type = "sniper"
 				self.holygrail.desc_id = "bm_heavy_ap_weapon_sc_desc"
@@ -17931,6 +17952,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.martinihenry then
+				self.martinihenry.categories = {
+					"snp",
+					"snp_hip"
+				}
 				self.martinihenry.recategorize = { "heavy_snp" }
 				self.martinihenry.damage_type = "sniper"
 				self.martinihenry.desc_id = "bm_heavy_ap_weapon_sc_desc"
@@ -17986,6 +18011,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.obrez then
 				self.obrez.categories = {
 					"snp",
+					"snp_hip",
 					"gl_pistol"
 				}
 				self.obrez.recategorize = { "heavy_snp" }
@@ -19825,6 +19851,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.moss464spx then --Pawcio's SPX Centerfire
+				self.moss464spx.categories = {
+					"snp",
+					"snp_hip"
+				}
 				self.moss464spx.recategorize = {"light_snp"}
 				self.moss464spx.damage_type = "sniper"
 				self.moss464spx.always_play_anims = true
@@ -19872,6 +19902,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.winchester1894 then --Pawcio's Winchester 1894
+				self.winchester1894.categories = {
+					"snp",
+					"snp_hip"
+				}
 				self.winchester1894.recategorize = {"light_snp"}
 				self.winchester1894.damage_type = "sniper"
 				self.winchester1894.always_play_anims = true
@@ -19918,6 +19952,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.m1894 then --Pawcio's Marlin 1894
+				self.m1894.categories = {
+					"snp",
+					"snp_hip"
+				}
 				self.m1894.recategorize = {"light_snp"}
 				self.m1894.damage_type = "sniper"
 				self.m1894.always_play_anims = true
@@ -19963,6 +20001,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.k31 then --Pawcio's K31
+				self.k31.categories = {
+					"snp",
+					"snp_hip"
+				}
 				self.k31.recategorize = {"heavy_snp"}
 				self.k31.damage_type = "sniper"
 				self.k31.desc_id = "bm_ap_weapon_sc_desc"
@@ -20103,7 +20145,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.musket then --Pawcio's Musket
 				self.musket.categories = {
-					"snp"
+					"snp",
+					"snp_hip"
 				}
 				self.musket.use_data.selection_index = 1
 				self.musket.recategorize = { "heavy_snp" }
@@ -20416,7 +20459,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.arisaka38 then
 				self.arisaka38.categories = {
-					"snp"
+					"snp",
+					"snp_hip"
 				}
 				self.arisaka38.recategorize = { "heavy_snp" }
 				self.arisaka38.damage_type = "sniper"
@@ -22988,7 +23032,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Pawcio's GTAV Pack
 				if self.duskrifle then
 					self.duskrifle.categories = {
-						"snp"
+						"snp",
+						"snp_hip"
 					}
 					self.duskrifle.recategorize = {"heavy_snp"}
 					self.duskrifle.damage_type = "sniper"
@@ -26548,6 +26593,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.sbeta then
+				self.sbeta.categories = {
+					"snp",
+					"snp_hip"
+				}
 				self.sbeta.recategorize = {"heavy_snp"}
 				self.sbeta.damage_type = "sniper"
 				self.sbeta.always_play_anims = true
@@ -32473,7 +32522,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		if self.kar98k then
 			self.kar98k.categories = {
-				"snp"
+				"snp",
+				"snp_hip"
 			}
 			self.kar98k.recategorize = { "heavy_snp" }
 			self.kar98k.damage_type = "sniper"
@@ -32560,7 +32610,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		if self.enfield_no5i then
 			self.enfield_no5i.categories = {
-				"snp"
+				"snp",
+				"snp_hip"
 			}
 			self.enfield_no5i.recategorize = { "heavy_snp" }
 			self.enfield_no5i.damage_type = "sniper"

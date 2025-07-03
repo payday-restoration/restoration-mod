@@ -209,9 +209,9 @@ tweak_data.snp = {
 	min_spread_mult = 2
 }
 	tweak_data.snp_hip = {
-		min_spread_mult = 1 / tweak_data.snp.min_spread_mult
+		min_spread_mult = 1 / tweak_data.snp.min_spread_mult,
 		hipfire_spread_mult = 2 / tweak_data.snp.hipfire_spread_mult,
-		hipfire_moving_spread_mult = 1.25 / tweak_data.snp.hipfire_moving_spread_mult,
+		hipfire_moving_spread_mult = 1.25 / tweak_data.snp.hipfire_moving_spread_mult
 	}
 	tweak_data.semi_snp = {
 		min_spread_mult = 5 / tweak_data.snp.min_spread_mult,

@@ -1573,6 +1573,11 @@ function CopActionShoot:anim_clbk_melee_strike()
 
 					dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
 
+					if managers.player:has_category_upgrade("player", "melee_" .. tostring(melee_tweak.stats.weapon_type) .. "_damage_multiplier") then
+						local type_multiplier = managers.player:upgrade_value("player", "melee_" .. tostring(melee_tweak.stats.weapon_type) .. "_damage_multiplier", 1)
+						dmg_multiplier = dmg_multiplier * type_multiplier
+					end
+
 					if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 						player_state._state_data.stacking_dmg_mul = player_state._state_data.stacking_dmg_mul or {}
 						player_state._state_data.stacking_dmg_mul.melee = player_state._state_data.stacking_dmg_mul.melee or {nil, 0}

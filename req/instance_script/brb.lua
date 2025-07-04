@@ -3,7 +3,7 @@ local patches = {
 		disable_the_turret = table.set(100005),
 	},
 }
-
+return {
 ["levels/instances/unique/brb/police_intro/world/world"] = function(result)
 	local brb_turret = patches.brb
 
@@ -14,4 +14,5 @@ local patches = {
 			element.values.enabled = false
 		end
 	end
-end
+	end
+}

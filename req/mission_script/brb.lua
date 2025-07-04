@@ -5,17 +5,34 @@ local mayhem_above = difficulty >= 6
 local murky_response_timer = (mayhem_above and 90) or 120
 
 return {
-	--Pro Job PONR
-	--Hunt (Endless Assault)
-	--Spawn Murkies after 90 seconds on mayhem above and 120 seconds on lower
+	-- Pro Job PONR
+	-- Hunt (Endless Assault)
+	-- Spawn Murkies after 90 seconds on mayhem above and 120 seconds on lower
 	[101121] = {
 	on_executed = {
 			{id = 400001, delay = murky_response_timer, },
 	},
 		ponr = ponr_value,
 		hunt = true
-	},--]]
-	--De-Julesfiy this mission script (they really made spawn enemies early if cut the tarp)
+	},
+	-- DIsable Turret 
+	[100057] = disabled, 
+	-- Add early reinforce around the bank
+	[100001] = {
+		reinforce = {
+			{
+				name = "parking_lot",
+				force = 3,
+				position = Vector3(-1950, -2750, 0),
+			},
+			{
+				name = "construction",
+				force = 3,
+				position = Vector3(3100, -3750, 0),
+			},
+		},
+	},
+	-- De-Julesfiy this mission script (they really made spawn enemies early if cut the tarp)
 	[101288] = {
 		values = {
 			enabled = false

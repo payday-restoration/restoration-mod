@@ -41415,8 +41415,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_ass_s556.override.wpn_fps_ass_s552_o_custom = {
 				stance_mod = {
 					wpn_fps_ass_s556 = {
-						translation = Vector3(0.0, 0, -0.6),
-						rotation = Rotation(0.02, 0.5, 0)
+						translation = Vector3(0.05, 0, -0.65),
+						rotation = Rotation(0.12, 0.5, 0)
 					}
 				}
 			}

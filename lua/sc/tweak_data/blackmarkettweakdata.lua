@@ -4723,6 +4723,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.brass_knuckles.stats.speed_mult = 0.98
 		--Thanks Boss--	
 		self.melee_weapons.fight.info_id = "bm_melee_fight_info"
+		self.melee_weapons.fight.stats.weapon_type = "fists"
 		self.melee_weapons.fight.stats.cleave = 2
 		self.melee_weapons.fight.stats.raycasts = 8
 		self.melee_weapons.fight.stats.raycasts_charge = 20

@@ -3,6 +3,11 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 570) or 540
 local mayhem_above = difficulty >= 6
 local murky_response_timer = (mayhem_above and 90) or 120
+local disabled = {
+	values = {
+		enabled = false,
+	},
+}
 
 return {
 	-- Pro Job PONR

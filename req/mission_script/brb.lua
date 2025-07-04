@@ -16,8 +16,7 @@ return {
 		hunt = true
 	},
 	-- DIsable Turret 
-	[102821] = disabled,
-	[101965] = disabled, 
+	[100057] = disabled, 
 	-- Add early reinforce around the bank
 	[100001] = {
 		reinforce = {

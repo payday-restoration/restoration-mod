@@ -21924,16 +21924,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			cooldown = captain_cooldown,
 			sustain_only = true
 		},
+		CS_tanks = {
+			cooldown = dozer_cooldown
+		},
 		GREEN_tanks = {
 			cooldown = dozer_cooldown
 		},
 		BLACK_tanks = {
 			cooldown = dozer_cooldown
 		},
-		SKULL_tank = {
+		SKULL_tanks = {
 			cooldown = dozer_cooldown
 		},
-		TIT_tank = {
+		TIT_tanks = {
 			cooldown = dozer_cooldown
 		},
 		SKM_BLACK_Tank_W4 = {

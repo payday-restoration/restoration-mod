@@ -33,6 +33,7 @@ function CopActionHurt:init(action_desc, common_data)
 	local redir_res = nil
 	local play_fire_death = nil
 	local action_type = action_desc.hurt_type
+    local is_stealth = managers.groupai:state():whisper_mode()
 
 	if action_type == "knock_down" then
 		action_type = "heavy_hurt"
@@ -628,6 +629,8 @@ function CopActionHurt:init(action_desc, common_data)
 					self._unit:sound():say(sound_data.sound_name, nil, sound_data.skip_prefix)
 				end
 			end
+		elseif action_type == "death" and is_stealth then
+			self._unit:sound():say("x01a_any_3p") --quiet kills in stealth	
 		elseif action_type == "death" then
 			self._unit:sound():say("x02a_any_3p")
 		elseif action_type == "counter_tased" or action_type == "taser_tased" then

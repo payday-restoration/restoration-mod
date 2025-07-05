@@ -1276,7 +1276,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								1
 							}
 							local random = vars[math.random(#vars)]
-							local var_lr = (recoil_h and (recoil_h > 0 and -1) or (recoil_h < 0 and 1)) or 0
+							local var_lr = (recoil_h and ((recoil_h > 0 and -1) or (recoil_h < 0 and 1))) or 0
 							local fire_rate = weap_base:weapon_tweak_data().fire_mode_data.fire_rate --[[* weap_base:fire_rate_multiplier()]] * 15
 							local category_mul = 1
 							for _, category in ipairs(weap_base:categories()) do

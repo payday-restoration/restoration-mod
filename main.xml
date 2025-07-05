@@ -1,11 +1,4 @@
 <mod name="RestorationMod" global_key="restoration" core_class="Core.lua">
-	<!--Localization stuff-->
-	<Localization directory="lua/sc/loc" default="loc.lua">
-		<loc file="locru.lua" language="russian"/>
-		<loc file="loczh.lua" language="schinese"/>
-		<loc file="locko.lua" language="korean"/>
-		<loc file="loces.lua" language="spanish"/>
-	</Localization>	
 	<!--///MOD CONFIG FILE\\\-->
     <Classes directory="classes">
 		<class file="callbacks.lua"/>
@@ -152,7 +145,7 @@
 					<hook file="sc/managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
 					<hook file="sc/managers/hud/hudteammate.lua" source_file="lib/managers/hud/hudteammate"/>
 					<hook file="sc/managers/hud/hudhitconfirm.lua" source_file="lib/managers/hud/hudhitconfirm"/>
-					
+				<hook file="sc/loc/coreloc.lua" source_file="lib/managers/localizationmanager"/>
 				<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
 				<hook file="sc/managers/blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
 				<hook file="sc/managers/skilltreemanager.lua" source_file="lib/managers/skilltreemanager"/>

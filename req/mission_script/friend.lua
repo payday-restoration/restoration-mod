@@ -28,7 +28,7 @@ return {
 	-- Pro Job PONR + Players now can steal paintings when boat escape triggered, whisper state off  (if we do it on stealth tho)
 	[100216] = {
 		on_executed = {
-			{id =  400012, delay = 0, },
+			{id =  400013, delay = 0, },
 		},
 		-- Stealing paintings VVV
 		on_executed = {

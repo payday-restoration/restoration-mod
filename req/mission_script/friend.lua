@@ -6,12 +6,12 @@ local hunt_projob = pro_job
 
 local mobster_team = {
 	values = {
-		team = "mobster1"
+		team = "mobster1",
 	},
-}	
+}
 local disabled = {
 	values = {
-        enabled = false
+		enabled = false,
 	},
 }
 local garden_spawn = {
@@ -25,49 +25,38 @@ local roof_spawn = {
 	},
 }
 return {
-	-- Pro Job PONR + Players now can steal paintings when boat escape triggered, whisper state off  (if we do it on stealth tho)
+	-- Pro Job PONR, activates once both A) whisper state is off (on alarm) and B) Sosa's safe is opened
+	-- Also enable stealing paintings once the escape triggers (since they're not burnt up in stealth)
 	[100216] = {
 		on_executed = {
-			{id =  400013, delay = 0, },
-		},
-		-- Stealing paintings VVV
-		on_executed = {
-			{ id = 101070, delay = 0 },
+			{ id = 400012, delay = 0, },
+			{ id = 101070, delay = 0, },
 		},
 	},
 	-- Whisper state off
-	[100680] = {
+	[100824] = {
 		on_executed = {
-			{id =  400013, delay = 0, },
+			{ id = 400012, delay = 0, },
 		},
 	},
 	--Pro Job Endless Assault
 	[101726] = {
-		hunt = hunt_projob
-	},
-	-- Enter main hall
-	[103594] = {
-		difficulty = 0.5
-	},
-	-- Boss spawn
-	[101101] = {
-		difficulty = 0.1
+		hunt = hunt_projob,
 	},
 	-- Delay assault
 	[102106] = {
 		on_executed = {
-			{ id = 100102, delay = 90 },
+			{ id = 100102, delay = 90, },
 		},
 	},
 	-- Early Sosa Cartel assault wave (on alarm)
 	[100022] = {
 		on_executed = {
-			{id = 400004, delay = 15, delay_rand = 5 },
+			{ id = 400004, delay = 15, delay_rand = 5, },
 		},
 	},
 	-- Boss dead, safe objective
 	[101169] = {
-		difficulty = 1,
 		reinforce = {
 			{
 				name = "main_hall",
@@ -81,11 +70,12 @@ return {
 	-- Fallback to make Sosa retreat when house is accessible
 	[102653] = {
 		on_executed = {
-			{ id = 102692, delay = 0 }
-		}
+			{ id = 102692, delay = 0, },
+		},
 	},
 	-- Add some reinforce around the house
-	[100791] = { -- players entered the mansion
+	-- Players entered the mansion
+	[100791] = {
 		reinforce = {
 			{
 				name = "garden_left",
@@ -109,39 +99,39 @@ return {
 			},
 		},
 	},
-	 -- Forcing boat escape
+	-- Forcing boat escape
 	[100213] = disabled,
 	[100214] = disabled,
-	[103446] = disabled, --don't even try.....
+	[103446] = disabled,  -- Don't even try.....
 	-- Force spawn all possible guards during Sosa fight (DS only)
 	[101725] = {
 		values = {
-			amount = amount_guards
+			amount = amount_guards,
 		}
 	},
 	-- Spawn enforcers during Sosa fight on PJ
 	[101845] = {
 		values = {
-            enemy = enforcer_guard
-		}
+			enemy = enforcer_guard,
+		},
 	},
 	[101868] = {
 		values = {
-            enemy = enforcer_guard
-		}
+			enemy = enforcer_guard,
+		},
 	},
 	-- Sosa gets two additional ninja like gangsters on DSPJ
 	[101101] = {
 		on_executed = {
-			{ id = 400001, delay = 0 },
-			{ id = 400002, delay = 0 }
-		}
+			{ id = 400001, delay = 0, },
+			{ id = 400002, delay = 0, },
+		},
 	},
 	-- Change Sosa's line to more apporiate one (having chance to say the famous Scarface quote)
 	[101485] = {
 		values = {
-            sound_event = "Play_bos_fri_04"
-		}
+			sound_event = "Play_bos_fri_04",
+		},
 	},
 	-- You're Sosa's men, not undercover cops
 	[100852] = mobster_team,

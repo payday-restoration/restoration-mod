@@ -38,7 +38,7 @@ return {
 	-- Whisper state off
 	[100680] = {
 		on_executed = {
-			{id =  400012, delay = 0, },
+			{id =  400013, delay = 0, },
 		},
 	},
 	--Pro Job Endless Assault

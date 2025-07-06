@@ -25395,6 +25395,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			end
 
+			if self.parts.wpn_fps_upg_o_jgbg_m7 then --Pawcio's JGBG M7 Scope
+				self.parts.wpn_fps_upg_o_jgbg_m7.supported = true
+				self.parts.wpn_fps_upg_o_jgbg_m7.desc_id = "bm_wp_upg_o_4_laser"
+				self.parts.wpn_fps_upg_o_jgbg_m7.perks = {"scope", "gadget"}
+				self.parts.wpn_fps_upg_o_jgbg_m7.stats = {
+					value = 8,
+					zoom = 30
+				}
+			end
+
 			if self.parts.wpn_fps_upg_fl_anpeq2 then --Pawcio's Lost Gadgets
 				self.parts.wpn_fps_upg_fl_anpeq2.stats.recoil = 0
 				self.parts.wpn_fps_upg_fl_pis_unimax_inforce.stats.concealment = 0

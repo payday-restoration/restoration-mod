@@ -2484,6 +2484,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			effect_max = 0.1,
 			melee_mult = 1.33334,
 		},
+		{	--Alex & Ash
+			combo_steps = 5,
+			effect = 0.03,
+			effect_max = 0.3,
+			melee_mult = 1,
+		},
 	}
 	self.values.player.buildup_meter_quickening = { --armor to base combo
 		{
@@ -2510,6 +2516,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			effect = 0.003,
 			effect_max = 0.03,
 			melee_mult = 1.66667
+		},
+		{	--Corey
+			combo_steps = 5,
+			effect = 0.01,
+			effect_max = 0.1,
+			melee_mult = 1
 		},
 	}
 	--Additonal mask effects
@@ -2548,7 +2560,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			{ combo_add_mod = 0, combo_max_mod = -40 } --Tony R
 		}
 		self.values.player.buildup_meter_swan = {{
-			combo_add = 2
+			combo_add = 3
 		}}
 		self.values.player.buildup_meter_mark = {{ --armor regen speed
 			combo_steps = 5,
@@ -5598,6 +5610,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.buildup_meter_elude_5 = {
+		name_id = "menu_player_buildup_zenurik",
+		category = "feature",
+		upgrade = {
+			value = 5,
+			upgrade = "buildup_meter_elude",
+			category = "player"
+		}
+	}
 	self.definitions.player_buildup_meter_quickening = {
 		name_id = "menu_player_buildup_quickening",
 		category = "feature",
@@ -5630,6 +5651,15 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 3,
+			upgrade = "buildup_meter_terrify",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_terrify_4 = {
+		name_id = "menu_player_buildup_madurai",
+		category = "feature",
+		upgrade = {
+			value = 4,
 			upgrade = "buildup_meter_terrify",
 			category = "player"
 		}

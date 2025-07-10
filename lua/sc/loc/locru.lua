@@ -155,8 +155,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Settings", function(loc)
 		["RestorationModCloakerTurnDescID"] = "Камера будет поворачиваться на Клокера, когда он вас пинает, как в ванилле.",
 		["RestorationModDisableMutatorColorsTitleID"] = "Выключить смену цвета баннера штурма",
 		["RestorationModDisableMutatorColorsDescID"] = "Выключает смену цвета баннера штурма, вызванное использованием мутаторов (работает только с обычным баннером).",
-		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
-		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",	
+		["RestorationModDisableSoloBoonsTitleID"] = "Отключить преимущества Crime.Net Оффлайн",
+		["RestorationModDisableSoloBoonsDescID"] = "Отключает дополнительные бонусы в одиночной игре.",	
 		["RestorationModHolidayTitleID"] = "Праздничные эффекты",
 		["RestorationModHolidayDescID"] = "Включает или выключает праздничные эффекты в моде.",
 		["RestorationModRestoreHitFlashTitleID"] = "Вспышка при уроне",
@@ -619,7 +619,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Blackmarket", function(lo
 			["bm_suit_var_suit_sunny_hawaii_blue_desc"] = "Джой относится к типу людей, которые уезжают в отпуск далеко-далеко чтобы просто играть там в видеоигры. 'Ну что за поколение', подумал Даллас, когда ему не удалось увлечь ее более консервативными развлечениями, такими как игрой в бильярд, наслаждением видами моря и распитием огромного количества скотча.",
 
 			["bm_suit_var_suit_sunny_hawaii_cyan"] = "Отпуск в бассейне",
-			["bm_suit_var_suit_sunny_hawaii_cyan_desc"] = "Сидни отличный пловец, и всегда хотела бассейн в убежище. Однако, Альдстоуну и так хватает хлопот, да и плавание - не самое любимое развлечение банды после дела на Мосте Грин.",
+			["bm_suit_var_suit_sunny_hawaii_cyan_desc"] = "Сидни отличный пловец, и всегда хотела бассейн в убежище. Однако, Альдстоуну и так хватает хлопот, да и плавание - не самое любимое развлечение банды после дела на Мосту Грин.",
 
 			["bm_suit_var_suit_sunny_hawaii_green"] = "Отпуск в притоне",
 			["bm_suit_var_suit_sunny_hawaii_green_desc"] = "Влад отлично проводил время в Мексике. Новые земли - это новые возможности, и он расширял свой бизнес, пока однажды одну из его точек не атаковали. Федеральной полиции настучал Булук, который вскоре станет врагом Влада номер один. К счастью, банда PAYDAY всегда под рукой.",
@@ -655,13 +655,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Blackmarket", function(lo
 			["bm_suit_var_suit_prison_repairman_desc"] = "Знаете, кто расставляет шпионские камеры?\n\nЛичности вы никогда не узнаете, но хотя бы можно оценить его одежду.",
 
 			["bm_suit_var_suit_prison_comedy"] = "Воришка",
-			["bm_suit_var_suit_prison_comedy_desc"] = "Роба Ченса из банды PAYCHECK. Ему почти удалось сбежать с 225 долларами из кассы магазина Pear, но его взяли под стражу. К счастью, его соратники взяли в заложники ноутбук Pear и сумели обменять его на Чинса.",
+			["bm_suit_var_suit_prison_comedy_desc"] = "Роба Чинса из банды PAYCHECK. Ему почти удалось сбежать с 225 долларами из кассы магазина Pear, но его взяли под стражу. К счастью, его соратники взяли в заложники ноутбук Pear и сумели обменять его на Чинса.",
 
 			["bm_suit_var_suit_prison_vaultboy"] = "Выживший",
 			["bm_suit_var_suit_prison_vaultboy_desc"] = "К удивлению, Бейн никогда не верил в теории о скором конце света. Но после того, как Влад попросил украсть ядерные боеголовки, он построил себе подземное убежище. Ну вы знаете. Война.",
 
 			["bm_suit_var_suit_prison_janitor"] = "Уборщик",
-			["bm_suit_var_suit_prison_janitor_desc"] = "Ходят слухи, что OMNIA проводит сверхсекретные испытания, да такие, что даже бы ученые с Утеса Генри позавидовали. Всем в OMNIA заставляют подписать контракт. Даже уборщиков держат под... контролем.",
+			["bm_suit_var_suit_prison_janitor_desc"] = "Ходят слухи, что OMNIA проводит сверхсекретные испытания, да такие, что даже бы ученые с Утеса Генри позавидовали. Всех в OMNIA заставляют подписать контракт. Даже уборщиков держат под... контролем.",
 
 			["bm_suit_var_suit_prison_subject"] = "Подопытный",
 			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборатории АКАНа. Вдруг секрет их сверхъестественных способностей таится в этой робе?",
@@ -1056,7 +1056,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mix", function(loc)
         ["menu_crew_ai_ap_ammo_desc"] = "Ваши боты теперь могут пробивать броню и так же они наносят на 25% больше урона.\n\nЭто позволяет им простреливать через броню и щитов.",
 
         ["menu_crew_healthy"] = "Подготовка",
-        ["menu_crew_healthy_desc"] = "Здоровье игроков увеличено на 30.",
+        ["menu_crew_healthy_desc"] = "Максимальное здоровье игроков увеличено на 30.",
 
         ["menu_crew_sturdy"] = "Защитник",
         ["menu_crew_sturdy_desc"] = "Броня игроков увеличена на 10%.",
@@ -1068,7 +1068,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mix", function(loc)
         ["menu_crew_motivated_desc"] = "Игроки получают на 15 больше выносливости.",
 
         ["menu_crew_regen"] = "Лекарь",
-        ["menu_crew_regen_desc"] = "Игроки лечат 1 очко здоровья каждые 4 секунды.",
+        ["menu_crew_regen_desc"] = "Игроки получают 1 здоровье каждые 4 секунды.",
 
         ["menu_crew_quiet"] = "Компактный",
         ["menu_crew_quiet_desc"] = "Игроки получают на 2 единицы компактности больше.",
@@ -2127,7 +2127,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
 		--Ksp 58
 		["bm_par_sc_desc"] = "Более тяжелый родственник КСП-90, который обычно ставят на технику. Меньше мобильность, больше пуля.",
 		--Buzzsaw/Mg42
-		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Лучше стрелять от бедра.##",
+	 --я рестор тут перевожу или аниме? - MrVavlo
+		["bm_wolf_brigade_sc_desc"] = "\"Мы не люди, замаскированные под собак.\nМы - #{important_1}#волки,## замаскированные под людей.\"\n\n#{skill_color}#Лучше стрелять от бедра.##",
 		["bm_wp_mg42_b_vg38"] = "Насадка Бластер-19",
 		["bm_wp_mg42_b_vg38_desc_sc"] = "#{skill_color}#Технология из далекой галактики.## Оружие будет стрелять #{risk}#плазменными болтами## и #{skill_color}#автоматически заряжаться.##\n\nВремя зарядки: #{skill_color}#2 сек.##\nСкорость зарядки: #{skill_color}#9/сек## #{important_1}#(На 50% медленнее при перегреве)##\nПерегрев: #{important_1}#4 сек.##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
@@ -2336,8 +2337,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
                         -- PAYDAY 3 FIK-22 TLR
 		          ["bm_w_fik22_desc"] = "По силе эта винтовка конечно не ахти, но калашматит она быстро, да и много.",
 
-                        -- VALORANT Bulldog
-		          ["bm_w_bulldog_desc"] = "Эта винтовка может стрелять очередями по 3 выстрела, и имеет встроенный прицел. По эффективности похожа на TAR-21/Tempest-21. ХЗ, не играла в Valorant.",
+                        -- VALORANT Bulldog (todo: перенести и вспомнить название темпеста в рулоке)
+		          ["bm_w_bulldog_desc"] = "Эта винтовка может стрелять очередями по 3 выстрела, и имеет встроенный прицел. По эффективности похожа на TAR-21/Tempest-21. Наверное.",
 
 			["bm_nova4_sc_desc"] = "Полностью автоматическая баллистическая винтовка. Восхитительная точность за счет уменьшенной скорострельности. Идеальна для перестрелок на средних и дальних дистанциях.",
 			["bm_wp_wpn_fps_ass_nova4_flatline_desc"] = "#{skill_color}#Отсутствие штрафа на расстояние##, но #{important_1}#уменьшена скорострельность##.\n#{skill_color}#Увеличена точность##.",

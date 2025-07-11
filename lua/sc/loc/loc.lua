@@ -1376,6 +1376,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_upg_o_4_cod"] = "Mid-range scope.\nWhere's #{skill_color}#Stopping Power## when you need it?\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#4x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up iron sights.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_4_laser"] = "Mid-range scope with a built-in laser sight.\n#{risk}#4x magnification.##\n\nToggle the laser on/off by pressing #{skill_color}#$BTN_GADGET.##",
 		["bm_wp_upg_o_4_rds"] = "Mid-range scope with an integral red-dot sight.\n#{risk}#1.1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_4_rds_mount"] = "Mid-range LPVO with a top-mounted red-dot sight.\n#{risk}#1.1-2-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels and sights.",
 		["bm_wp_upg_o_4_vari"] = "Variable zoom scope.\n#{risk}#4-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels.",

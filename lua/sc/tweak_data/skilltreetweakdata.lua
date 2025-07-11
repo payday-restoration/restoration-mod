@@ -2791,7 +2791,11 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_elude_1",
 				"buildup_meter_terrify_1",
 				
-				"player_buildup_meter_swan"
+				"player_buildup_meter_swan",
+				"buildup_meter_elude_2",
+				"buildup_meter_elude_3",
+				"buildup_meter_elude_4",
+				"buildup_meter_elude_5",
 			},
 			texture_bundle_folder = "sc",
 			icon_xy = {1, 2}
@@ -2809,7 +2813,10 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_terrify_1",
 				
 				"buildup_meter_elude_2",
-				"buildup_meter_hurt_decay_mod_1"
+				"buildup_meter_hurt_decay_mod_1",
+				"buildup_meter_terrify_2",
+				"buildup_meter_terrify_3",
+				"buildup_meter_terrify_4",
 			},
 			texture_bundle_folder = "sc",
 			icon_xy = {1, 3}

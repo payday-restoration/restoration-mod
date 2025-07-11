@@ -1836,12 +1836,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 4}, --Basic
 					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 8} --Ace
 				}
+				--Ace
+				self.values.pistol.steelsight_accuracy_inc = {0.85}
+				self.values.pistol.steelsight_range_inc = {1.15}
 				
 				self.skill_descs.expert_handling = {
 					skill_value_b1 = tostring((1 - self.values.pistol.stacked_accuracy_bonus[1].accuracy_bonus) * 100).."%", -- Accuracy bonus per stack
 					skill_value_b2 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_time), -- Duration of buff (basic)
 					skill_value_b3 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_stacks), -- Max amount of stacks
-					skill_value_p1 = tostring(self.values.pistol.stacked_accuracy_bonus[2].max_time) -- Duration of buff (ace)
+					skill_value_p1 = tostring(self.values.pistol.stacked_accuracy_bonus[2].max_time), -- Duration of buff (ace)
+					skill_value_p2 = tostring(self.values.pistol.steelsight_range_inc[1] % 1 * 100).."%", -- Accuracy and range buff
 				}
 				
 			--Trigger Happy
@@ -2484,6 +2488,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			effect_max = 0.1,
 			melee_mult = 1.33334,
 		},
+		{	--Alex & Ash
+			combo_steps = 5,
+			effect = 0.03,
+			effect_max = 0.3,
+			melee_mult = 1,
+		},
 	}
 	self.values.player.buildup_meter_quickening = { --armor to base combo
 		{
@@ -2510,6 +2520,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			effect = 0.003,
 			effect_max = 0.03,
 			melee_mult = 1.66667
+		},
+		{	--Corey
+			combo_steps = 5,
+			effect = 0.01,
+			effect_max = 0.1,
+			melee_mult = 1
 		},
 	}
 	--Additonal mask effects
@@ -2548,7 +2564,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			{ combo_add_mod = 0, combo_max_mod = -40 } --Tony R
 		}
 		self.values.player.buildup_meter_swan = {{
-			combo_add = 2
+			combo_add = 3
 		}}
 		self.values.player.buildup_meter_mark = {{ --armor regen speed
 			combo_steps = 5,
@@ -5598,6 +5614,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.buildup_meter_elude_5 = {
+		name_id = "menu_player_buildup_zenurik",
+		category = "feature",
+		upgrade = {
+			value = 5,
+			upgrade = "buildup_meter_elude",
+			category = "player"
+		}
+	}
 	self.definitions.player_buildup_meter_quickening = {
 		name_id = "menu_player_buildup_quickening",
 		category = "feature",
@@ -5630,6 +5655,15 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 3,
+			upgrade = "buildup_meter_terrify",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_terrify_4 = {
+		name_id = "menu_player_buildup_madurai",
+		category = "feature",
+		upgrade = {
+			value = 4,
 			upgrade = "buildup_meter_terrify",
 			category = "player"
 		}
@@ -6714,6 +6748,24 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			value = 2,
 			upgrade = "enter_steelsight_speed_multiplier",
 			category = "weapon"
+		}
+	}
+	self.definitions.pistol_steelsight_accuracy_inc_1 = {
+		name_id = "menu_pistol_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_accuracy_inc",
+			category = "pistol"
+		}
+	}
+	self.definitions.pistol_steelsight_range_inc_1 = {
+		name_id = "menu_pistol_steelsight_range_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_range_inc",
+			category = "pistol"
 		}
 	}
 end)

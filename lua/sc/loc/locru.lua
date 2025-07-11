@@ -5798,7 +5798,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "Меткий стрелок",
-				["menu_expert_handling_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКаждое убийство в голову из #{skill_color}#пистолета## дает #{skill_color}#$skill_value_b1## бонус к точности и урону на растоянии на #{skill_color}#$skill_value_b2## секунды. Этот эффект накладывается до #{skill_color}#$skill_value_b3## раз, а длительность обновляется при каждом выстреле в голову.\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает длительность бонуса к точности и урона на растоянии до #{skill_color}#$skill_value_p1## секунд.",
+				["menu_expert_handling_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКаждое убийство в голову из #{skill_color}#пистолета## дает #{skill_color}#$skill_value_b1## бонус к точности и урону на растоянии на #{skill_color}#$skill_value_b2## секунды. Этот эффект накладывается до #{skill_color}#$skill_value_b3## раз, а длительность обновляется при каждом выстреле в голову.\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает длительность бонуса к точности и урона на растоянии до #{skill_color}#$skill_value_p1## секунд.\n\n#{skill_color}#Пистолеты## получают дополнительный бонус к точности и урона на расстоянии на #{skill_color}#$skill_value_p2## во время прицеливания.",
 
 				--Trigger Happy--
 				["menu_trigger_happy_beta_sc"] = "Неудержимый стрелок",

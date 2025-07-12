@@ -21507,6 +21507,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.zweihander.stats_modifiers = nil
+				self.zweihander.spin_up_shoot = nil
+				self.zweihander.spin_up_t = 0.08
+				self.zweihander.spin_down_t = 0.00000001
 				self.zweihander.panic_suppression_chance = 0.05
 				self.zweihander.timers = deep_clone(self.m249.timers)
 			end

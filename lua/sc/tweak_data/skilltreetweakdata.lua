@@ -2228,7 +2228,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_level_4_armor_multiplier_2"
 				},
 				cost = 4000,
-				icon_xy = {6, 1},
+				icon_xy = {0, 8},
 				name_id = "menu_deck3_9",
 				desc_id = "menu_deck3_9_desc_sc"
 			}
@@ -2362,7 +2362,7 @@ function SkillTreeTweakData:init(tweak_data)
 			name_id = "menu_st_spec_6",
 			desc_id = "menu_st_spec_6_desc",
 			category = "defensive",
-			force_icon = 7,
+			force_icon = 9,
 			{
 				upgrades = {
 					"player_damage_dampener_close_contact_1",
@@ -2374,7 +2374,7 @@ function SkillTreeTweakData:init(tweak_data)
 					--"player_level_4_armor_multiplier_1"	
 				},
 				cost = 200,
-				icon_xy = {4, 4},
+				icon_xy = {1, 8},
 				--icon_xy = {4, 3},
 				name_id = "menu_deck6_1",
 				desc_id = "menu_deck6_1_desc_sc"
@@ -2389,7 +2389,7 @@ function SkillTreeTweakData:init(tweak_data)
 
 				},
 				cost = 400,
-				icon_xy = {4, 3},
+				icon_xy = {2, 5},
 				--icon_xy = {1, 2},
 				name_id = "menu_deck6_3",
 				desc_id = "menu_deck6_3_desc_sc"
@@ -2407,7 +2407,7 @@ function SkillTreeTweakData:init(tweak_data)
 					--"player_pick_lock_speed_multiplier"				
 				},
 				cost = 1000,
-				icon_xy = {5, 3},
+				icon_xy = {4, 8},
 				name_id = "menu_deck6_5",
 				desc_id = "menu_deck6_5_desc_sc",
 				short_id = "menu_deck6_5_short_sc"
@@ -2422,7 +2422,7 @@ function SkillTreeTweakData:init(tweak_data)
 					--"player_level_4_dodge_addend_2"						
 				},
 				cost = 2400,
-				icon_xy = {6, 3},
+				icon_xy = {2, 8},
 				--icon_xy = {2, 2},
 				name_id = "menu_deck6_7",
 				desc_id = "menu_deck6_7_desc_sc",
@@ -2439,7 +2439,7 @@ function SkillTreeTweakData:init(tweak_data)
 					--"player_level_4_armor_multiplier_3"	
 				},
 				cost = 4000,
-				icon_xy = {2, 5},
+				icon_xy = {5, 8},
 				--icon_xy = {6, 3},
 				name_id = "menu_deck6_9",
 				desc_id = "menu_deck6_9_desc_sc",
@@ -2838,7 +2838,7 @@ function SkillTreeTweakData:init(tweak_data)
 					--"player_damage_dampener_outnumbered_strong",
 				},
 				cost = 200,
-				icon_xy = {4, 4},
+				icon_xy = {7, 8},
 				--icon_xy = {3, 4},
 				name_id = "menu_deck9_1_sc",
 				desc_id = "menu_deck9_1_desc_sc",
@@ -2852,8 +2852,8 @@ function SkillTreeTweakData:init(tweak_data)
 					--"player_passive_dodge_chance_1"
 				},
 				cost = 400,
-				texture_bundle_folder = "max",
-				icon_xy = {2, 0},
+				--texture_bundle_folder = "max",
+				icon_xy = {3, 8},
 				--icon_xy = {0, 5},
 				name_id = "menu_deck9_3",
 				desc_id = "menu_deck9_3_desc_sc"
@@ -2883,7 +2883,7 @@ function SkillTreeTweakData:init(tweak_data)
 					--"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
-				icon_xy = {1, 2},
+				icon_xy = {6, 8},
 				--icon_xy = {2, 5},
 				name_id = "menu_deck9_7",
 				desc_id = "menu_deck9_7_desc_sc"

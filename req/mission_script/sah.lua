@@ -65,6 +65,21 @@ return {
 			{ id = 103913, delay = 0 }
 		}
 	},
+	-- Diff increased, enable additional reinforce
+	[100124] = {
+		reinforce = {
+			{
+				name = "upper_right",
+				force = 2,
+				position = Vector3(800, 2000, 500),
+			},
+			{
+				name = "upper_left",
+				force = 2,
+				position = Vector3(-800, 2000, 500),
+			},
+		},
+	},
 	-- Disable area report triggers
 	[100140] = disabled,
 	[106783] = disabled,

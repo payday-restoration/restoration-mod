@@ -33,7 +33,7 @@ function HUDDodgeMeter:init(hud)
 	local dodge_threshold = self._dodge_panel:rect({
 		name = "dodge_threshold",
 		color = restoration.Options:GetValue("HUD/Colors/DodgeBarThreshold"),
-		layer = 4,
+		layer = 2,
 		h = 2
 	})
 	self._dodge_panel:rect({

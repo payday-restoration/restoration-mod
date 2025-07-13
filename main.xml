@@ -467,6 +467,7 @@
 					<option type="color" default_value="Color.black" name="AssaultFG" desc_id="RestorationModColorOption"/>
 
 					<option type="color" default_value="Color(0.6, 0.6, 0.6)" name="Stamina" desc_id="RestorationModColorOption"/>
+					<option type="color" default_value="Color(0.6, 0.6, 0.6)" name="StaminaBG" desc_id="RestorationModColorOption"/>
 					<option type="color" default_value="Color.white" name="StaminaThreshold" desc_id="RestorationModColorOption"/>
 
 					<option type="color" default_value="Color.white" name="BagBitmap" desc_id="RestorationModColorOption"/>

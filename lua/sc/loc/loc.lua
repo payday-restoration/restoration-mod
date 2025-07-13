@@ -783,6 +783,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModAssaultEndlessBGTitleID"] = "Captain assault background",
 		["RestorationModAssaultSurvivedBGTitleID"] = "Survived Assault background",
 		["RestorationModStaminaTitleID"] = "Stamina",
+		["RestorationModStaminaBGTitleID"] = "Stamina background",
 		["RestorationModStaminaThresholdTitleID"] = "Stamina threshold",
 		["RestorationModBagBitmapTitleID"] = "Bag",
 		["RestorationModBagTextTitleID"] = "Bag text",

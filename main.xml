@@ -482,6 +482,10 @@
 					<option type="color" default_value="Color.yellow" name="DownsTwo" desc_id="RestorationModColorOption"/>
 					<option type="color" default_value="Color(1, 0.37, 0)" name="DownsOne" desc_id="RestorationModColorOption"/>
 					<option type="color" default_value="Color.red" name="DownsZero" desc_id="RestorationModColorOption"/>
+
+					<option type="color" default_value="Color(0.5, 0.5, 0.8)" name="DodgeBar" desc_id="RestorationModColorOption"/>
+					<option type="color" default_value="Color(0.6, 0.6, 0.6)" name="DodgeBarBG" desc_id="RestorationModColorOption"/>
+					<option type="color" default_value="Color.white" name="DodgeBarThreshold" desc_id="RestorationModColorOption"/>
 				</option_group>
 				<option_group name="Extra">
 					<merge_data area_bg="half"/>

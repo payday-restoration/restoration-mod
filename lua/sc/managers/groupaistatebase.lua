@@ -1727,12 +1727,12 @@ if Network:is_server() then
 	end)
 end
 
---this function has been repurposed. instead of overriding any previous value, this ADDS diff
---this is set to 0.1 on loud, while other events increase it
---+0.1 on civilian kill (watch your fire!), +0.3 on assault end
---script value is used by the base game, we usually ignore it after the beginning of a level
---thanks (again) to hoxi for helping out with this
---perhaps modify these values at one point in crime spree? who knows
+-- This function has been repurposed - instead of overriding any previous value, this ADDS diff
+-- This is set to 0.1 on loud, while other events increase it
+-- +0.1 on civilian kill (watch your fire!), +0.3 on assault end
+-- Script value is used by the base game, we usually ignore it after the beginning of a level
+-- Thanks (again) to hoxi for helping out with this
+-- Perhaps modify these values at one point in Crime Spree? who knows
 local set_difficulty_original = GroupAIStateBase.set_difficulty
 function GroupAIStateBase:set_difficulty(script_value, manual_value)
 	if managers.skirmish:is_skirmish() then
@@ -1740,40 +1740,32 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 		return
 	end
 
-	--if diff is set to 0 in the middle of a mission, heists cannot start assaults. this ensures that we can set diff to default 0.1 again if a script sets it to 0
-	--i dont think any heists do this but there's no harm in having this check here
+	-- If diff is set to 0 in the middle of a mission, heists cannot start assaults
+	-- This ensures that we can set diff to default 0.1 again if a script sets it to 0
+	-- Don't think any heists do this but there's no harm in having this check here
 	if script_value == 0 then
+		managers.mutators:_run_func("OnDifficultyValueChanged", self._difficulty_value, -(self._difficulty_value or 0))
 		self._difficulty_value = 0
 		self._loud_diff_set = false
 		self:_calculate_difficulty_ratio()
-
 		return
 	end
 
-	if self._difficulty_value == 1 then
-		return
-	end
-
-	if script_value then
-		if not self._loud_diff_set and script_value > 0 then
-			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.1
-			--only do this once (or when value is set to false as said below). otherwise we'll set diff to 1 super fast and that's mean
-			--should fix armored transport and its jank mission scripts (ovk why)
-			--also, add 0.1 here instead of setting so you cant bypass civ penalty on some heists
-			self._difficulty_value = self._difficulty_value + self:_mutate_diff_value(0.1)
-			self:_calculate_difficulty_ratio()
-			--please kill me
-			self._loud_diff_set = true
-
-			return
-		end
+	-- When game tries to set diff to anything that isn't 0, we add 0.1
+	-- Only do this once (or when loud diff set value is set to false), otherwise we'll set diff to 1 super fast and that's mean
+	-- Should fix Armored Transport and its jank mission scripts (OVK why)
+	-- Also, add 0.1 here instead of setting so you can't bypass civ penalty on some heists
+	if script_value and script_value > 0 and not self._loud_diff_set then
+		self._loud_diff_set = true
+		manual_value = self:_mutate_diff_value(0.1)
 	end
 
 	if not manual_value then
 		return
 	end
 
-	--note that this ADDS, not replaces. only way to replace is with a script_value of 0
+	-- Note that this ADDS, not replaces, only way to replace is with a script_value of 0
+	managers.mutators:_run_func("OnDifficultyValueChanged", self._difficulty_value, manual_value)
 	self._difficulty_value = math.min(self._difficulty_value + manual_value, 1)
 	self:_calculate_difficulty_ratio()
 end

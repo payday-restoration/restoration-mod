@@ -528,6 +528,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 			end
 
 			managers.mission:call_global_event("end_assault")
+			managers.mutators:_run_func("OnAssaultRegrouping", self._assault_number)
 			self:_begin_regroup_task(force_regroup)
 			self:set_difficulty(nil, 0.3)
 			return

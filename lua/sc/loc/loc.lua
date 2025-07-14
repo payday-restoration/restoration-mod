@@ -5397,11 +5397,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 		["mutator_bravos_only"] = "Hardline",
 		["mutator_bravos_only_desc"] = "Enemies are replaced by their PONR equivalents.",
-		["mutator_bravos_only_longdesc"] = "Non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
+		["mutator_bravos_only_longdesc"] = "Assault-spawned enemies are replaced by their Pro Job Point of No Return equivalents. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.\n\nWhen Replacement Method is Random Chance, the replacement chance will increase after each assault (if minimum assaults requirement is satisfied), up to the specified maximum.\n\nWhen Replacement Method is Mode 13, spawn replacements are triggered after the assault's intensity surpasses the specified threshold. Don't take too long and watch your fire!",
 		["menu_bravo_replacement_choice"] = "Replacement Method",
 		["menu_mutator_bravo_replacement_all"] = "All Units",
 		["menu_mutator_bravo_replacement_random"] = "Random Chance",
-		["menu_mutator_bravo_replacement_slider"] = "Replacement Chance (in %)",
+		["menu_mutator_bravo_replacement_mode_13"] = "Mode 13",
+		["menu_mutator_bravo_replacement_slider"] = "Replacement Chance %",
+		["menu_mutator_bravo_replacement_increase_slider"] = "Replacement Chance Increase %",
+		["menu_mutator_bravo_replacement_max_slider"] = "Replacement Chance Maximum %",
+		["menu_mutator_bravo_replacement_increase_min_assaults_slider"] = "Minimum Assaults to Increase Chance %",
+		["menu_mutator_bravo_replacement_mode_13_slider"] = "Mode 13 Threshold %",
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",

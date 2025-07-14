@@ -183,8 +183,8 @@ function MissionManager.mission_script_patch_funcs.spawn_bravos(self, element, d
 	Hooks:PostHook(element, "on_executed", "res_on_executed_spawn_bravos_" .. element:id(), function()
 		if not data then
 			local bravos_mutator = managers.mutators:get_active_mutator(MutatorBravosOnly)
-			local bravo_replacement = bravos_mutator and bravos_mutator.get_bravo_replacement and bravos_mutator:get_bravo_replacement()
-			if bravo_replacement == "all" then
+			local bravo_replacement = bravos_mutator and bravos_mutator:value("bravo_replacement")
+			if bravo_replacement == "all" or bravo_replacement == "mode_13" then
 				return
 			end
 		end

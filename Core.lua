@@ -446,6 +446,19 @@ function restoration:Init()
 		"haunted",  -- Safehouse Nightmare
 	})
 
+	-- When playing Pro Jobs, heists in this table enable Bravos when the specified diff threshold would be exceeded
+	-- This should be reserved only for infinite loot heists or other special cases where Bravos should spawn but PONRs won't work
+	-- Threshold = 0 will activate on the first diff increase, threshold = 1 will activate after the fourth assault if no civs killed
+	restoration.natural_mode_13 = {
+		pines = 1,  -- White Xmas
+		rat = 1,  -- Cook Off
+		nail = 1,  -- Lab Rats
+		cane = 1,  -- Santa's Workshop
+		pal = 1,  -- Counterfeit
+		help = 1,  -- Prison Nightmare
+		mex_cooking = 1,  -- Border Crystals
+	}
+
 	--Sub Faction overrides
 	--Texas
 	restoration.yee_and_I_cannot_stress_this_enough_haw = {

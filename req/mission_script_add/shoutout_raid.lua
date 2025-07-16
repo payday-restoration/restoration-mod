@@ -115,11 +115,9 @@ local optsrespawn_sniper_6 = {
 }
 local Bain_RPGWarning1 = {
 	dialogue = "Play_pln_indif_01",
-	can_not_be_muted = true
 }
 local Bain_RPGWarning2 = {
 	dialogue = "play_pln_gen_pol_03",
-	can_not_be_muted = true
 }
 
 return {

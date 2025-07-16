@@ -233,11 +233,9 @@ local spawn_grenadiers = {
 }
 local Bain_sendsnipers = {
 	dialogue = "play_pln_gen_snip_01",
-	can_not_be_muted = true,
 }
 local Bain_sendgrenadiers = {
 	dialogue = "Play_ban_s05",
-	can_not_be_muted = true,
 }
 local Bain_swats_from_keel_street = {
 	dialogue = "Play_pln_pal_45",

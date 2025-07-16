@@ -95,7 +95,6 @@ local optsSniper_SO = {
 }
 local Bain_sendsnipers = {
 	dialogue = "play_pln_gen_snip_01",
-	can_not_be_muted = true
 }
 local spawn_snipers = {
 	enabled = true,

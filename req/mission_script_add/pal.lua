@@ -10,9 +10,11 @@ local mayhem_above = difficulty >= 6
 local overkill_above = difficulty >= 5
 local deathwish_above = difficulty >= 7
 
+-- 100s on Normal, down to 70s on DS
+local ponr_value = 110 - (difficulty * 5)
 local opts_pro_job_ponr = {
 	elements = { 101987 },
-	trigger_times = 0,
+	trigger_times = 1,
 	time_easy = ponr_value,
 	time_normal = ponr_value,
 	time_hard = ponr_value,
@@ -21,11 +23,6 @@ local opts_pro_job_ponr = {
 	time_easy_wish = ponr_value,
 	time_overkill_290 = ponr_value,
 	time_sm_wish = ponr_value,
-	enabled = pro_job,
-}
-local opts_pro_job_ponr_end = {
-	elements = { 400051 },
-	operation = "remove",
 	enabled = pro_job,
 }
 local optsSniper_1 = {

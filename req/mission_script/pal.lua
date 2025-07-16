@@ -20,7 +20,7 @@ local mayhem_above_filter = {
 		difficulty_sm_wish = true,
 	},
 }
-local ponr_start = {
+local pro_job_ponr = {
 	on_executed = {
 		{ id = 400050, delay = 0, },
 	},
@@ -28,15 +28,11 @@ local ponr_start = {
 
 return {
 	-- Pro Job PONR
-	[102644] = ponr_start,
-	[102654] = ponr_start,
-	-- Disable PONR if you somehow want to print money, re-trigger again if you done with it
-	[102551] = {
-		on_executed = {
-			{ id = 400051, delay = 0, },
-		},
-	},
-	-- Reinforce Spots
+	-- Triggers upon opening the manhole
+	-- Bravos can spawn independently of this PONR (see restoration.natural_mode_13 table in Core.lua)
+	-- PD2 Counterfeit is an infinite loot heist, this means any actually good PONR trigger is out of the question
+	[102047] = pro_job_ponr,
+	-- Initial reinforce points, added on alarm
 	[100031] = {
 		reinforce = {
 			{
@@ -66,7 +62,7 @@ return {
 			},
 		},
 	},
-	-- Additional Reinforce Spots
+	-- Additional reinforce points, added to whichever valve can be sabotaged
 	[101219] = {
 		reinforce = {
 			{
@@ -170,17 +166,13 @@ return {
 			enemy = cop_sg,
 		},
 	},
-	-- Disable vanilla's reinforce points
-	[100218] = disabled,
-	[101635] = disabled,
-	[101636] = disabled,
-	-- SWAT Van that crashes through Wilson's wall no longer deploys turret on higher diffs
+	-- SWAT van that crashes through Wilson's wall no longer deploys turret
 	-- Disables the turret
 	[102821] = disabled,
 	[101965] = disabled,
 	-- Forces the reinforcments to spawn instead
 	[102819] = mayhem_above_filter,
-	-- Delay the next anim by few more seconds to let the previous anim end
+	-- Delay the next anim by a few more seconds to let the previous anim end
 	[101647] = {
 		on_executed = {
 			{ id = 101648, delay = 10.5, },
@@ -189,21 +181,21 @@ return {
 	-- Same as 2nd van near Mitchell's house
 	[102506] = disabled,
 	[102382] = disabled,
-	--Forces the reinforcments to spawn instead
+	-- Forces the reinforcments to spawn instead
 	[102383] = mayhem_above_filter,
-	--Disable this van (it's redunant)
+	-- Disable this van (it's redundant)
 	[102197] = disabled,
-	--disable vanilla snipers
+	-- Disable vanilla snipers
 	[102941] = disabled,
-	--Spawn Grenadiers at the start of 1st assault if Mitchell has been killed
-	--Bain warns about them
+	-- Spawn Grenadiers at the start of 1st assault if Mitchell has been killed
+	-- Bain warns about them
 	[102081] = {
 		on_executed = {
 			{ id = 400019, delay = 5, },
 		},
 	},
 	-- Spawn custom PDTH styled snipers at the start of 2nd assault
-	--Bain warns about them
+	-- Bain warns about them
 	[102082] = {
 		on_executed = {
 			{ id = 400001, delay = 5, },
@@ -282,7 +274,7 @@ return {
 			{ id = 400043, delay = 20 },
 		},
 	},
-	-- restore Bain's SWAT warnings from PDTH (why they were removed is beyond me)
+	-- Restore Bain's SWAT warnings from PDTH (why they were removed is beyond me)
 	[100714] = {
 		on_executed = {
 			{ id = 400046, delay = 0 },
@@ -321,7 +313,7 @@ return {
 			end
 		end,
 	},
-	-- Replace shields that cover the manhole with titan counterparts on Overkill-DS PJ
+	-- Replace shields that cover the manhole with Titan counterparts on Overkill-DS PJ
 	[100036] = tshield,
 	[100039] = tshield,
 	[100044] = tshield,

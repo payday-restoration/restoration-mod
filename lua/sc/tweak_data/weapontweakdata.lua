@@ -25861,11 +25861,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m4_usasoc.kick = {}
 				self.m4_usasoc.kick = self.stat_info.kick_tables.moderate_kick
 				self.m4_usasoc.kick_pattern = {
-					{0, self.stat_info.kick_tables.left_kick},
+					{0, self.stat_info.kick_tables.moderate_left_kick},
 					{3, self.stat_info.kick_tables.vertical_kick},
-					{6, self.stat_info.kick_tables.moderate_left_kick},
-					{12, self.stat_info.kick_tables.moderate_kick},
-					{17, self.stat_info.kick_tables.moderate_right_kick}
+					{6, self.stat_info.kick_tables.left_recoil},
+					{11, self.stat_info.kick_tables.moderate_kick},
+					{15, self.stat_info.kick_tables.moderate_right_kick},
+					{19, self.stat_info.kick_tables.left_recoil}
 				}
 				self.m4_usasoc.supported = true
 				self.m4_usasoc.ads_speed = 0.340

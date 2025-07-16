@@ -26437,78 +26437,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -1
 				}
 
-
 				self.parts.wpn_fps_upg_scarl_stock_cheek.supported = true
-				self.parts.wpn_fps_upg_scarl_stock_cheek.stats = {
-					value = 0,
-					spread = 1,
-					concealment = -1
-				}
-				self.parts.wpn_fps_upg_scarl_stock_cheek.custom_stats = {
-					ads_speed_mult = 1.025
-				}
+				self.parts.wpn_fps_upg_scarl_stock_cheek.stats = deep_clone(stocks.adj_hvy_acc_stats)
+				self.parts.wpn_fps_upg_scarl_stock_cheek.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
 
 				self.parts.wpn_fps_upg_scarl_stock_collapsed.supported = true
-				self.parts.wpn_fps_upg_scarl_stock_collapsed.stats = {
-					value = 0,
-					recoil = -2,
-					concealment = 1
-				}
-				self.parts.wpn_fps_upg_scarl_stock_collapsed.custom_stats = {
-					ads_speed_mult = 0.975
-				}
+				self.parts.wpn_fps_upg_scarl_stock_collapsed.stats = deep_clone(stocks.adj_to_fold_stats)
+				self.parts.wpn_fps_upg_scarl_stock_collapsed.custom_stats = deep_clone(stocks.adj_to_fold_stats)
 
 				self.parts.wpn_fps_upg_scarl_stock_pdw.supported = true
-				self.parts.wpn_fps_upg_scarl_stock_pdw.stats = deep_clone(stocks.fixed_to_folder_stats)
-				self.parts.wpn_fps_upg_scarl_stock_pdw.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+				self.parts.wpn_fps_upg_scarl_stock_pdw.stats = deep_clone(stocks.adj_to_nocheeks_stats)
+				self.parts.wpn_fps_upg_scarl_stock_pdw.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
 
 				self.parts.wpn_fps_upg_scarl_stock_pdw_collapsed.supported = true
-				self.parts.wpn_fps_upg_scarl_stock_pdw_collapsed.stats = deep_clone(stocks.fixed_to_folded_stats)
-				self.parts.wpn_fps_upg_scarl_stock_pdw_collapsed.custom_stats = deep_clone(stocks.fixed_to_folded_stats)
-
-				self.wpn_fps_ass_scarl.override.wpn_fps_upg_m4_s_standard = {
-					stats = deep_clone(stocks.fixed_to_adj_dual_stats),
-					custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
-				}
-				self.wpn_fps_ass_scarl.override.wpn_fps_upg_m4_s_pts = {
-					stats = deep_clone(stocks.fixed_to_adj_acc_stats),
-					custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
-				}
-				self.wpn_fps_ass_scarl.override.wpn_fps_sho_sko12_stock = {
-					stats = deep_clone(stocks.fixed_to_adj_acc_stats),
-					custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
-				}
-				self.wpn_fps_ass_scarl.override.wpn_fps_upg_m4_s_crane = {
-					stats = deep_clone(stocks.fixed_to_adj_rec_stats),
-					custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
-				}
-				self.wpn_fps_ass_scarl.override.wpn_fps_upg_m4_s_mk46 = {
-					stats = deep_clone(stocks.fixed_to_adj_rec_stats),
-					custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
-				}
-				self.wpn_fps_ass_scarl.override.wpn_fps_upg_m4_s_ubr = {
-					stats = deep_clone(stocks.fixed_to_hvy_acc_stats),
-					custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
-				}
-				self.wpn_fps_ass_scarl.override.wpn_fps_snp_tti_s_vltor = {
-					stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
-					custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
-				}
+				self.parts.wpn_fps_upg_scarl_stock_pdw_collapsed.stats = deep_clone(stocks.adj_to_folded_stats)
+				self.parts.wpn_fps_upg_scarl_stock_pdw_collapsed.custom_stats = deep_clone(stocks.adj_to_folded_stats)
 
 				table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_upg_m4_m_straight")
-				table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_straight")
 				table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_upg_m4_m_pmag")
-				table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_pmag")
 				table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_ass_l85a2_m_emag")
-				table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_ass_l85a2_m_emag")
 				table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_upg_m4_m_l5")
-				table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_l5")
 				table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_upg_m4_m_quad")
-				table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_quad")
 				table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_upg_m4_m_drum")
-				table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_upg_m4_m_drum")
 				table.insert(self.wpn_fps_ass_scarl.uses_parts, "wpn_fps_m4_upg_m_quick")
-				table.insert(self.wpn_fps_ass_scarl_npc.uses_parts, "wpn_fps_m4_upg_m_quick")
+
+				self.wpn_fps_ass_scarl_npc.uses_parts = deep_clone(self.wpn_fps_ass_scarl.uses_parts)
 			end
 
 			if self.parts.wpn_fps_snp_l115_stock then --Pawcio's L115

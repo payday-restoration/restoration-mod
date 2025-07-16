@@ -371,6 +371,5 @@ return {
 		restoration:gen_dialogue(400049, "swats_pacific_drive", Bain_swats_from_pacific_drive),
 		-- PONR
 		restoration:gen_pointofnoreturn(400050, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
-		restoration:gen_operator(400051, "pro_job_ponr_end", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_end),
 	},
 }

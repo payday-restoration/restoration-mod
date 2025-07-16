@@ -35405,7 +35405,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_swhiskey_grip_steady.custom_stats = {}
 		end
 
-		if self.parts.wpn_fps_ass_m4_usasoc_grip then --RJC9000 and PlayBONK's M4 URG-I
+		if self.parts.wpn_fps_ass_m4_usasoc_grip then --RJC9000 and PlayBONK's M4 URG-I (v1.04)
 
 			self.parts.wpn_fps_ass_m4_usasoc_grip.stats = { value = 0 }
 			self.parts.wpn_fps_ass_m4_usasoc_grip.custom_stats = nil

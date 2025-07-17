@@ -41260,6 +41260,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_s556_b_short.stats = deep_clone(barrels.short_b3_stats)
 			self.parts.wpn_fps_ass_s556_b_short.custom_stats = deep_clone(barrels.short_b3_stats)
 
+			self.parts.wpn_fps_ass_s556_fg_bipod.perks = nil
+			self.parts.wpn_fps_ass_s556_fg_bipod_green.perks = nil
+
 			--STOCKS
 			self.parts.wpn_fps_ass_s556_s_solid.supported = true
 			self.parts.wpn_fps_ass_s556_s_solid.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
@@ -41342,6 +41345,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					spread = -2
 				}
 			}
+			self.wpn_fps_ass_s556.override.wpn_fps_upg_i_autofire = {
+				custom_stats = {
+					rof_mult = 1.9375,
+					falloff_start_mult = 0.30769,
+					falloff_end_mult = 0.738461,
+					default_firemode = "auto",
+					orig_firemode = "single",
+					block_burst = true,
+					info_burst_to_auto = true
+				},
+				stats = {
+					spread = -2,
+					recoil = -4
+				}
+			}
+
 
 			table.insert(self.wpn_fps_ass_s556.uses_parts, "wpn_fps_upg_i_krieg")
 

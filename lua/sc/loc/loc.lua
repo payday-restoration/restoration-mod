@@ -2208,9 +2208,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 			["st_menu_firemode_burst_autoburst"] = "AUTOBURST",
 		["st_menu_firemode_volley"] = "VOLLEY",
 
-		["menu_reticle_dmc_eotech"] = "TECopt Full",
-		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA Dot",
-		["menu_reticle_dmc_eotech_seggs"] = "TECopt Segmented",
+		["menu_reticle_dmc_eotech"] = "TECopt 0-Reticle",
+		["menu_reticle_dmc_eotech_moa"] = "TECopt 2-Reticle",
+		["menu_reticle_dmc_eotech_seggs"] = "TECopt 0-Reticle (Segmented)",
 		["menu_reticle_dmc_ebr_cqb"] = "Maelstrom EBR-CQB",
 		["menu_reticle_dmc_trijicon_chevron"] = "Trigonom Chevron",
 		["menu_reticle_dmc_ncstar"] = "Reconnaissance Cross",
@@ -4597,6 +4597,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						["bm_wpn_fps_upg_o_sig"] = "SIG Juliet3 Magnifier",
 
 						["bm_wp_upg_o_mbus_rear"] = "Magpul MBUS Back-up Sights",
+
+						["menu_reticle_dmc_eotech"] = "EOTech 0-Reticle",
+						["menu_reticle_dmc_eotech_moa"] = "EOTech 2-Reticle",
+						["menu_reticle_dmc_eotech_seggs"] = "EOTech 0-Reticle (Segmented)",
+						["menu_reticle_dmc_ebr_cqb"] = "Vortex EBR-CQB",
+						["menu_reticle_dmc_trijicon_chevron"] = "Trijicon Chevron",
+						["menu_reticle_dmc_ncstar"] = "NcStar Cross",
+						["menu_reticle_dmc_cross_holotherm"] = "Steiner CQT Cross",
 
 					--Vertical Grips
 						["bm_wp_upg_vg_tac"] = "Knights Armament Co. VFG",

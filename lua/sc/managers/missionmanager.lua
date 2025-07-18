@@ -184,17 +184,13 @@ function MissionManager.mission_script_patch_funcs.ai_area(self, element, data)
 end
 
 -- Turn Bravos on or off outside of point of no returns
--- Includes handling for Bravos mutator if active
+-- Disabled if "always Bravos" flag is activated elsewhere (like from the Bravos mutator)
 function MissionManager.mission_script_patch_funcs.spawn_bravos(self, element, data)
 	Hooks:PostHook(element, "on_executed", "res_on_executed_spawn_bravos_" .. element:id(), function()
-		if not data then
-			local bravos_mutator = managers.mutators:get_active_mutator(MutatorBravosOnly)
-			local bravo_replacement = bravos_mutator and bravos_mutator:value("bravo_replacement")
-			if bravo_replacement == "all" or bravo_replacement == "mode_13" then
-				return
-			end
+		if restoration.always_bravos and restoration.always_bravos ~= "mission_script_patch" then
+			return
 		end
-		restoration.always_bravos = data
+		restoration.always_bravos = data and "mission_script_patch" or false
 	end)
 	restoration:log("%s hooked as spawn Bravos trigger", element:editor_name())
 end

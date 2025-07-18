@@ -1768,7 +1768,7 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 	local pro_job = Global.game_settings and Global.game_settings.one_down
 	local bravos_threshold = pro_job and restoration.natural_mode_13[job]
 	if bravos_threshold and bravos_threshold < self._difficulty_value + manual_value then
-		restoration.always_bravos = true
+		restoration.always_bravos = "natural_mode_13"
 	end
 
 	-- Note that this ADDS, not replaces, only way to replace is with a script_value of 0

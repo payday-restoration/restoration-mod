@@ -99,14 +99,14 @@ function MutatorBravosOnly:OnDifficultyValueChanged(current_value, manual_value)
 	local new_value = (current_value or 0) + (manual_value or 0.1)
 	local mode_13_threshold = (self:value("bravo_replacement_mode_13_threshold") or 100) * 0.01
 	if new_value > mode_13_threshold then
-		restoration.always_bravos = true
+		restoration.always_bravos = "mutator_mode_13"
 	end
 end
 
 function MutatorBravosOnly:setup(data)
 	local bravo_replacement = self:value("bravo_replacement")
 	if bravo_replacement == "all" then
-		restoration.always_bravos = true
+		restoration.always_bravos = "mutator_all"
 	end
 
 	self._bravo_replacement_chance = self:value("bravo_replacement_chance") or 0

@@ -30558,7 +30558,39 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				dlc = "sc"
 			}
 
+			self.parts.wpn_fps_shot_uncle12_tt4 = {
+				pcs = {},
+				type = "custom",
+				sub_type = "autofire",
+				name_id = "bm_wp_upg_i_burstusas",
+				a_obj = "a_body",
+				has_description = true,
+				alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				stats = {
+					value = 10,
+					spread = -15
+				},
+				custom_stats = {
+					burst_fire = {
+						count = 3,
+						recoil_mult = 0.9,
+						desired_burst_rof = 0.08,
+						last_recoil_mult = 1.2,
+						delay = 0.3,
+						desired_burst_rof = 0.075,
+						lock = true
+					},
+					info_lock_burst = true,
+				},
+				internal_part = true,
+				dlc = "sc"
+			}
+
 			table.insert(self.wpn_fps_shot_uncle12.uses_parts, "wpn_fps_shot_uncle12_bf3ptsd")
+			table.insert(self.wpn_fps_shot_uncle12.uses_parts, "wpn_fps_shot_uncle12_tt4")
 
 			self.wpn_fps_shot_uncle12.override = self.wpn_fps_shot_uncle12.override or {}
 			self.wpn_fps_shot_uncle12.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
@@ -37005,7 +37037,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_shot_shorty_fg_rail.supported = true
 				self.parts.wpn_fps_shot_shorty_fg_rail.stats = {
 					value = 1,
-					recoil = -1,
+					recoil = -2,
 					concealment = 1
 				}
 
@@ -41286,6 +41318,178 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_upg_mikon_s_viper.custom_stats = deep_clone(stocks.adj_to_fold_stats)
 		end
 
+		if self.parts.wpn_fps_upg_s_devgru then
+			self.parts.wpn_fps_upg_s_devgru.supported = true
+			self.parts.wpn_fps_upg_s_devgru.stats = deep_clone(stocks.adj_hvy_rec_stats)
+			self.parts.wpn_fps_upg_s_devgru.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+
+			self.parts.wpn_fps_upg_ak_s_pt1.pcs = nil
+			self.parts.wpn_fps_upg_ak_ur_b33.pcs = nil
+			self.parts.wpn_fps_upg_mp9_s_no.pcs = nil
+
+			self.parts.wpn_fps_upg_ak_fg_b10.supported = true
+			self.parts.wpn_fps_upg_ak_fg_b10.stats = {
+				value = 0,
+				concealment = 1,
+				spread = -1
+			}
+			self.parts.wpn_fps_upg_fg_ropup.supported = true
+			self.parts.wpn_fps_upg_fg_ropup.stats = {
+				value = 0,
+				concealment = -2,
+				spread = 1,
+				recoil = 2
+			}
+			self.parts.wpn_fps_upg_fg_split.supported = true
+			self.parts.wpn_fps_upg_fg_split.stats = {
+				value = 0,
+				concealment = -2,
+				recoil = 4
+			}
+			self.wpn_fps_ass_m16.override.wpn_fps_upg_fg_split = { stats = {}, custom_stats = {} }
+			self.parts.wpn_fps_upg_fg_patrick.supported = true
+			self.parts.wpn_fps_upg_fg_patrick.stats = {
+				value = 0,
+				spread = 1,
+				recoil = -2
+			}
+
+			self.parts.wpn_fps_upg_fg_deadline.supported = true
+			self.parts.wpn_fps_upg_fg_deadline.stats = {
+				value = 0,
+				spread = 1,
+				recoil = -2
+			}
+
+			self.parts.wpn_fps_upg_o_amine.supported = true
+			self.parts.wpn_fps_upg_o_amine.stats = {
+				value = 69
+			}
+
+			self.parts.wpn_fps_upg_ns_dragon.supported = true
+			self.parts.wpn_fps_upg_ns_dragon.stats = deep_clone(muzzle_device.muzz_acc3_r)
+			self.parts.wpn_fps_upg_ns_dragon.custom_stats = deep_clone(muzzle_device.muzz_acc3_r)
+			self.parts.wpn_fps_upg_ns_hock.supported = true
+			self.parts.wpn_fps_upg_ns_hock.stats = deep_clone(muzzle_device.supp_con_r)
+			self.parts.wpn_fps_upg_ns_hock.custom_stats = deep_clone(muzzle_device.supp_con_r)
+			self.parts.wpn_fps_upg_ns_osprey.supported = true
+			self.parts.wpn_fps_upg_ns_osprey.stats = deep_clone(muzzle_device.supp_rec2_c)
+			self.parts.wpn_fps_upg_ns_osprey.custom_stats = deep_clone(muzzle_device.supp_rec2_c)
+
+			self.parts.wpn_fps_upg_wellgrip.supported = true
+			self.parts.wpn_fps_upg_wellgrip.stats = {
+				value = 0,
+				concealment = -1,
+				recoil = 2
+			}
+			self.parts.wpn_fps_upg_vg_jowi.supported = true
+			self.parts.wpn_fps_upg_vg_jowi.stats = {
+				value = 0,
+				spread = 1,
+				recoil = -2
+			}
+			self.parts.wpn_fps_upg_vg_angle.supported = true
+			self.parts.wpn_fps_upg_vg_angle.stats = {
+				value = 0,
+				spread = -1,
+				recoil = 2
+			}
+
+			self.parts.wpn_fps_upg_vg_bcmthree.supported = true
+			self.parts.wpn_fps_upg_vg_bcmthree.stats = {
+				value = 1,
+			}
+			self.parts.wpn_fps_upg_vg_cadex.supported = true
+			self.parts.wpn_fps_upg_vg_cadex.stats = {
+				value = 1,
+			}
+			self.wpn_fps_smg_schakal.override.wpn_fps_upg_vg_bcmthree = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_smg_schakal.override.wpn_fps_upg_vg_cadex = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_ass_aug.override.wpn_fps_upg_vg_bcmthree = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_ass_aug.override.wpn_fps_upg_vg_cadex = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_ass_tecci.override.wpn_fps_upg_vg_bcmthree = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_ass_tecci.override.wpn_fps_upg_vg_cadex = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+
+
+			for i, part_id in pairs(self.wpn_fps_ass_amcar.uses_parts) do	-- cba to add the front sight back
+				attachment_list = {
+					"wpn_fps_upg_fg_ropup"
+				}
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_ass_amcar.uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end
+			for i, part_id in pairs(self.wpn_fps_ass_m16.uses_parts) do
+				attachment_list = {
+					"wpn_fps_upg_fg_ropup"
+				}
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_ass_m16.uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end
+
+			for factory_id, i in pairs(self) do
+				if self[factory_id] and self[factory_id .. "_npc"] then
+					if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_ubr") then
+						attachment_list = {
+							"wpn_fps_upg_s_devgru"
+						}
+						for _, part_id in ipairs(attachment_list) do
+							if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
+								table.insert(self[factory_id].uses_parts, part_id)
+								self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+							end
+							if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_ubr then
+								self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_ubr)
+								self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+							end
+							for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+								if self.parts[used_part_id] and self.parts[used_part_id].type and self.parts[used_part_id].type ~= "stock" and self.parts[used_part_id].forbids and table.contains(self.	parts[used_part_id].forbids, "wpn_fps_upg_m4_g_sniper") then
+									if not table.insert(self.parts[used_part_id].forbids, part_id) then
+										table.insert(self.parts[used_part_id].forbids, part_id)
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+
 	--[[ ZDANN'S MODS ]]
 
 		if self.parts.wpn_fps_ass_tingledingle_b_standard then --Zdann's TPB
@@ -41720,10 +41924,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar47_vg_ergo.stats = {
 				value = 5,
 				recoil = 2,
-				spread = 1,
-				concealment = -2
+				concealment = -1
 			}
 			self.parts.wpn_fps_ass_ar47_vg_ergo.custom_stats = nil
+
+			self.wpn_fps_ass_aug.override.wpn_fps_ass_ar47_vg_ergo = {
+				stats = {
+					value = 1
+				}
+			}
+			self.wpn_fps_smg_schakal.override.wpn_fps_ass_ar47_vg_ergo = {
+				stats = {
+					value = 1
+				}
+			}
 
 			if self.parts.wpn_fps_ass_ar47_b_ck then --Update
 				self.parts.wpn_fps_ass_ar47_b_ck.custom_stats = nil

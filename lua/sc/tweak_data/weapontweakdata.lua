@@ -25867,16 +25867,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m4_usasoc.kick = {}
 				self.m4_usasoc.kick = self.stat_info.kick_tables.moderate_kick
 				self.m4_usasoc.kick_pattern = {
-					{0, self.stat_info.kick_tables.left_kick},
+					{0, self.stat_info.kick_tables.moderate_left_kick},
 					{3, self.stat_info.kick_tables.vertical_kick},
-					{6, self.stat_info.kick_tables.moderate_left_kick},
-					{12, self.stat_info.kick_tables.moderate_kick},
-					{17, self.stat_info.kick_tables.moderate_right_kick}
+					{6, self.stat_info.kick_tables.left_recoil},
+					{11, self.stat_info.kick_tables.moderate_kick},
+					{15, self.stat_info.kick_tables.moderate_right_kick},
+					{19, self.stat_info.kick_tables.left_recoil}
 				}
 				self.m4_usasoc.supported = true
 				self.m4_usasoc.ads_speed = 0.340
 				self.m4_usasoc.damage_falloff = {
-					start_dist = 1700,
+					start_dist = 1500,
 					end_dist = 6000,
 					min_mult = 0.4
 				}
@@ -28585,6 +28586,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     TANGERINE'S MODS     ]]--
+			if self.scar16 then
+				self.scar16.timers.reload_empty = 3.1
+				self.scar16.timers.reload_exit_empty = 0.8
+				self.scar16.timers.reload_not_empty = 2.23
+				self.scar16.timers.reload_exit_not_empty = 0.8
+			end
+
 			if self.s556 then
 				self.s556.recategorize = { "heavy_ar" }
 				self.s556.damage_type = "assault_rifle"
@@ -28622,7 +28630,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s556.stats = {
 					damage = 30,
 					spread = 86,
-					recoil = 75,
+					recoil = 77,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 23,
@@ -28813,7 +28821,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.BURST_FIRE = false
 				self.sierra458.CAN_TOGGLE_FIREMODE = true
 				self.sierra458.FIRE_MODE = "single"
-				self.sierra458.fire_mode_data.fire_rate = 0.15
+				self.sierra458.fire_mode_data.fire_rate = 0.12
 				self.sierra458.kick = self.stat_info.kick_tables.even_recoil
 				self.sierra458.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_recoil},

@@ -4,10 +4,10 @@ local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty ==
 local tank_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 local death_wish_above = difficulty >= 7
 local ponr_timer_player_mul = {
+	1.4,
+	1.2,
 	1,
-	0.85,
-	0.7,
-	0.65,
+	0.8,  -- 4+ players
 }
 
 local opts_pro_job_ponr = {
@@ -17,6 +17,7 @@ local opts_pro_job_ponr = {
 	difficulty_add = 0.3,
 	bravos_difficulty_threshold = 0.5,
 	bravos_timer = 20,
+	time_balance_mul_include_team_ai = false,
 	time_balance_mul = ponr_timer_player_mul,
 	time_easy = ponr_value,
 	time_normal = ponr_value,

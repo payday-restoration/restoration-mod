@@ -289,6 +289,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["resmod_advmov_melee_loud_only"] = "Loud Only",
 					["resmod_advmov_melee_off"] = "Disabled",
 		["bm_melee_advmov"] = "Kick",
+		["bm_melee_advmov_slidekick"] = "Slide Kick",
+		["bm_melee_advmov_wallkick"] = "Wall Kick",
 
 		--EXTRA OPTIONS
 		["RestorationModAltLastDownColorTitleID"] = "Alternative Last Down Color Grading",
@@ -783,6 +785,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModAssaultEndlessBGTitleID"] = "Captain assault background",
 		["RestorationModAssaultSurvivedBGTitleID"] = "Survived Assault background",
 		["RestorationModStaminaTitleID"] = "Stamina",
+		["RestorationModStaminaBGTitleID"] = "Stamina background",
 		["RestorationModStaminaThresholdTitleID"] = "Stamina threshold",
 		["RestorationModBagBitmapTitleID"] = "Bag",
 		["RestorationModBagTextTitleID"] = "Bag text",
@@ -794,6 +797,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModDownsTwoTitleID"] = "Down counter (2 downs left)",
 		["RestorationModDownsOneTitleID"] = "Down counter (1 downs left)",
 		["RestorationModDownsZeroTitleID"] = "Down counter (0 downs left)",
+		["RestorationModDodgeBarTitleID"] = "Dodge Bar",
+		["RestorationModDodgeBarBGTitleID"] = "Dodge Bar background",
+		["RestorationModDodgeBarThresholdTitleID"] = "Dodge Bar threshold",
 		["RestorationModStopAllBotsTitleID"] = "Stop All Bots",
 		["RestorationModStopAllBotsDescID"] = "Stops all bots by holding the stop bot key.",
 		["RestorationModPONRTrackTitleID"] = "Point Of No Return Music",
@@ -2202,9 +2208,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 			["st_menu_firemode_burst_autoburst"] = "AUTOBURST",
 		["st_menu_firemode_volley"] = "VOLLEY",
 
-		["menu_reticle_dmc_eotech"] = "TECopt Full",
-		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA Dot",
-		["menu_reticle_dmc_eotech_seggs"] = "TECopt Segmented",
+		["menu_reticle_dmc_eotech"] = "TECopt 0-Reticle",
+		["menu_reticle_dmc_eotech_moa"] = "TECopt 2-Reticle",
+		["menu_reticle_dmc_eotech_seggs"] = "TECopt 0-Reticle (Segmented)",
 		["menu_reticle_dmc_ebr_cqb"] = "Maelstrom EBR-CQB",
 		["menu_reticle_dmc_trijicon_chevron"] = "Trigonom Chevron",
 		["menu_reticle_dmc_ncstar"] = "Reconnaissance Cross",
@@ -2781,6 +2787,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_wp_hk51b_magazine_belt_80"] = "80 Round Belt",
 				--Buzzsaw/Mg42
 				["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has improved spread and recoil while hipfired.##",
+				["bm_wp_mg42_m_75"] = "75rnd Drum",
+				["bm_wp_mg42_m_75_desc"] = "Holds more rounds than physically possible by using the same technology to fit legs into jet engines.",
+				["bm_wp_mg42_m_100"] = "100rnd Drum",
+				["bm_wp_mg42_m_100_desc"] = "Holds even more rounds than physically possible by using the same technology to fit legs into jet engines.",
 				["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
 				["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#3s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
 				--M134
@@ -4592,6 +4602,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 
 						["bm_wp_upg_o_mbus_rear"] = "Magpul MBUS Back-up Sights",
 
+						["menu_reticle_dmc_eotech"] = "EOTech 0-Reticle",
+						["menu_reticle_dmc_eotech_moa"] = "EOTech 2-Reticle",
+						["menu_reticle_dmc_eotech_seggs"] = "EOTech 0-Reticle (Segmented)",
+						["menu_reticle_dmc_ebr_cqb"] = "Vortex EBR-CQB",
+						["menu_reticle_dmc_trijicon_chevron"] = "Trijicon Chevron",
+						["menu_reticle_dmc_ncstar"] = "NcStar Cross",
+						["menu_reticle_dmc_cross_holotherm"] = "Steiner CQT Cross",
+
 					--Vertical Grips
 						["bm_wp_upg_vg_tac"] = "Knights Armament Co. VFG",
 						["bm_wp_upg_vg_stubby"] = "Tango Down QD Stubby VFG",
@@ -5393,11 +5411,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 		["mutator_bravos_only"] = "Hardline",
 		["mutator_bravos_only_desc"] = "Enemies are replaced by their PONR equivalents.",
-		["mutator_bravos_only_longdesc"] = "Non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
+		["mutator_bravos_only_longdesc"] = "Assault-spawned enemies are replaced by their Pro Job Point of No Return equivalents. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.\n\nWhen Replacement Method is Random Chance, the replacement chance will increase after each assault (if minimum assaults requirement is satisfied), up to the specified maximum.\n\nWhen Replacement Method is Mode 13, spawn replacements are triggered after the assault's intensity surpasses the specified threshold. Don't take too long and watch your fire!",
 		["menu_bravo_replacement_choice"] = "Replacement Method",
 		["menu_mutator_bravo_replacement_all"] = "All Units",
 		["menu_mutator_bravo_replacement_random"] = "Random Chance",
-		["menu_mutator_bravo_replacement_slider"] = "Replacement Chance (in %)",
+		["menu_mutator_bravo_replacement_mode_13"] = "Mode 13",
+		["menu_mutator_bravo_replacement_slider"] = "Replacement Chance %",
+		["menu_mutator_bravo_replacement_increase_slider"] = "Replacement Chance Increase %",
+		["menu_mutator_bravo_replacement_max_slider"] = "Replacement Chance Maximum %",
+		["menu_mutator_bravo_replacement_increase_min_assaults_slider"] = "Minimum Assaults to Increase Chance %",
+		["menu_mutator_bravo_replacement_mode_13_slider"] = "Mode 13 Threshold %",
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",

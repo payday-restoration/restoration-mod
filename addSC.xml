@@ -1408,6 +1408,17 @@
 	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_dd_irons_dmc"/>
 	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_ecp_irons_dmc"/>
 
+	<!--MG42 Drums-->
+	<unit_obj			path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan"/>
+	<model				path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan"/>
+	<texture			path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan_df" load="true"/>
+
+	<unit_obj			path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green"/>
+	<model				path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green"/>
+	<texture			path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green_df" load="true"/>
+	
 	<!--
 		Weapon Reticles
 		001 - EOTech

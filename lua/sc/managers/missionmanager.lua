@@ -124,6 +124,9 @@ end
 -- Set GroupAI difficulty when this element is executed
 -- Likely not needed since Res uses its own GroupAI difficulty progression that mostly ignores mission scripting (including this patch function)
 function MissionManager.mission_script_patch_funcs.difficulty(self, element, data)
+	restoration:warn("Difficulty patch function is not supported currently!")
+	do return end
+
 	if Network:is_client() then
 		return
 	end
@@ -158,6 +161,9 @@ function MissionManager.mission_script_patch_funcs.groups(self, element, data)
 end
 
 function MissionManager.mission_script_patch_funcs.ai_area(self, element, data)
+	restoration:warn("AI area patch function is not supported currently, missing GroupAI state handling!")
+	do return end
+
 	Hooks:PostHook(element, "on_executed", "res_on_executed_ai_area_" .. element:id(), function()
 		restoration:log("%s executed, creating %d AI area(s)", element:editor_name(), #data)
 		for _, nav_segs in ipairs(data) do
@@ -178,17 +184,13 @@ function MissionManager.mission_script_patch_funcs.ai_area(self, element, data)
 end
 
 -- Turn Bravos on or off outside of point of no returns
--- Includes handling for Bravos mutator if active
+-- Disabled if "always Bravos" flag is activated elsewhere (like from the Bravos mutator)
 function MissionManager.mission_script_patch_funcs.spawn_bravos(self, element, data)
 	Hooks:PostHook(element, "on_executed", "res_on_executed_spawn_bravos_" .. element:id(), function()
-		if not data then
-			local bravos_mutator = managers.mutators:get_active_mutator(MutatorBravosOnly)
-			local bravo_replacement = bravos_mutator and bravos_mutator.get_bravo_replacement and bravos_mutator:get_bravo_replacement()
-			if bravo_replacement == "all" then
-				return
-			end
+		if restoration.always_bravos and restoration.always_bravos ~= "mission_script_patch" then
+			return
 		end
-		restoration.always_bravos = data
+		restoration.always_bravos = data and "mission_script_patch" or false
 	end)
 	restoration:log("%s hooked as spawn Bravos trigger", element:editor_name())
 end
@@ -273,15 +275,17 @@ function MissionManager.mission_script_patch_funcs.so_access_filter(self, elemen
 	restoration:log("Replaced SO access filter of element %s", element:editor_name())
 end
 
+-- From Eclipse
+-- Needed functions made for Eclipse are missing in Res - should probably just remove for now but unsure
 function MissionManager.mission_script_patch_funcs.enemy(self, element, data)
-	restoration:warn("Attempt to use \"enemy\" patch function, it is not set up yet - converting to values patch")
+	restoration:warn("Enemy patch function is not supported currently, converting to values patch!")
 	self.mission_script_patch_funcs.values(self, element, { enemy = data, })
 	do return end
 
 	element:replace_enemy_name(data)
 	element:chk_used_mapped_names(true)
 
-	restoration:log(string.format("Modified enemy spawn in element %s", element:editor_name()))
+	restoration:log("Modified enemy spawn in element %s", element:editor_name())
 end
 
 -- From ASS

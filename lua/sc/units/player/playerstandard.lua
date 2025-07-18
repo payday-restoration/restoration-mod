@@ -4991,7 +4991,7 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 				col_ray = target_ray_data.raydata,
 				charge_lerp_value = 0,
 				shield_knock = (self._is_sliding or strongkick) and can_shield_knock,
-				name_id = managers.localization:text("bm_melee_advmov"),
+				name_id = managers.localization:text(strongkick and "bm_melee_advmov_wallkick" or self._is_sliding and "bm_melee_advmov_slidekick" or "bm_melee_advmov"),
 				variant = "melee"
 			}
 			if targetunit:in_slot(8) and alive(targetunit:parent()) and not targetunit:parent():character_damage():is_immune_to_shield_knockback() then

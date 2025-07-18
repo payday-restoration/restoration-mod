@@ -10,9 +10,11 @@ local mayhem_above = difficulty >= 6
 local overkill_above = difficulty >= 5
 local deathwish_above = difficulty >= 7
 
+-- 100s on Normal, down to 70s on DS
+local ponr_value = 110 - (difficulty * 5)
 local opts_pro_job_ponr = {
 	elements = { 101987 },
-	trigger_times = 0,
+	trigger_times = 1,
 	time_easy = ponr_value,
 	time_normal = ponr_value,
 	time_hard = ponr_value,
@@ -21,11 +23,6 @@ local opts_pro_job_ponr = {
 	time_easy_wish = ponr_value,
 	time_overkill_290 = ponr_value,
 	time_sm_wish = ponr_value,
-	enabled = pro_job,
-}
-local opts_pro_job_ponr_end = {
-	elements = { 400051 },
-	operation = "remove",
 	enabled = pro_job,
 }
 local optsSniper_1 = {
@@ -233,11 +230,9 @@ local spawn_grenadiers = {
 }
 local Bain_sendsnipers = {
 	dialogue = "play_pln_gen_snip_01",
-	can_not_be_muted = true,
 }
 local Bain_sendgrenadiers = {
 	dialogue = "Play_ban_s05",
-	can_not_be_muted = true,
 }
 local Bain_swats_from_keel_street = {
 	dialogue = "Play_pln_pal_45",
@@ -376,6 +371,5 @@ return {
 		restoration:gen_dialogue(400049, "swats_pacific_drive", Bain_swats_from_pacific_drive),
 		-- PONR
 		restoration:gen_pointofnoreturn(400050, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
-		restoration:gen_operator(400051, "pro_job_ponr_end", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_end),
 	},
 }

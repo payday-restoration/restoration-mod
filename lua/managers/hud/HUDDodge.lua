@@ -1,7 +1,7 @@
 HUDDodgeMeter = HUDDodgeMeter or class()
 function HUDDodgeMeter:init(hud)
 	self._hud_panel = hud.panel
-	
+
 	self._dodge_meter_panel = managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel:panel({
 		name = "dodge_meter_init",
 		layer = 0,
@@ -21,19 +21,19 @@ function HUDDodgeMeter:init(hud)
 	})
 	local dodge_bar_bg = self._dodge_panel:rect({
 		name = "dodge_bar_bg",
-		color = Color(0.6, 0.6, 0.6),
+		color = restoration.Options:GetValue("HUD/Colors/DodgeBarBG"),
 		alpha = 0.25
 	})
 	local dodge_bar = self._dodge_panel:rect({
 		name = "dodge_bar",
-		color = Color(0.5, 0.5, 0.8),
+		color = restoration.Options:GetValue("HUD/Colors/DodgeBar"),
 		layer = 1,
 		h = 0
 	})
 	local dodge_threshold = self._dodge_panel:rect({
 		name = "dodge_threshold",
-		color = Color(0.0, 0.0, 0.0),
-		layer = 4,
+		color = restoration.Options:GetValue("HUD/Colors/DodgeBarThreshold"),
+		layer = 2,
 		h = 2
 	})
 	self._dodge_panel:rect({
@@ -102,7 +102,7 @@ function HUDDodgeMeter:set_dodge_value(value)
 		self._dodge_panel:animate(callback(self, self, "_animate_high_dodge"))
 	else
 		self._dodge_panel:stop()
-		self._dodge_panel:child("dodge_bar"):set_color(Color(0.5, 0.5, 0.8))
+		self._dodge_panel:child("dodge_bar"):set_color(restoration.Options:GetValue("HUD/Colors/DodgeBar"))
 	end
 end
 

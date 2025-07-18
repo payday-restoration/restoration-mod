@@ -9331,6 +9331,8 @@ end)
 					ads_speed_mult = 0.9
 				}
 				table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_lmg_mg42_dummy_mag")
+				table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_lmg_mg42_m_75")
+				table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_lmg_mg42_m_100")
 				table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_upg_ns_ass_filter")
 				table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_ass_shak12_ns_muzzle")
 				table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_ass_shak12_ns_suppressor")
@@ -9343,6 +9345,48 @@ end)
 				table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_snp_victor_ns_omega")
 				self.parts.wpn_fps_lmg_mg42_b_vg38.sub_type = nil
 				self.parts.wpn_fps_lmg_mg42_b_vg38.perks = nil--{"silencer"}
+
+				self.parts.wpn_fps_lmg_mg42_m_75 = deep_clone(self.parts.wpn_fps_lmg_mg42_reciever)
+				self.parts.wpn_fps_lmg_mg42_m_75.pcs = {}
+				self.parts.wpn_fps_lmg_mg42_m_75.supported = true
+				self.parts.wpn_fps_lmg_mg42_m_75.global_value = "sc"
+				self.parts.wpn_fps_lmg_mg42_m_75.alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag"
+				self.parts.wpn_fps_lmg_mg42_m_75.name_id = "bm_wp_mg42_m_75"
+				self.parts.wpn_fps_lmg_mg42_m_75.type = "magazine"
+				self.parts.wpn_fps_lmg_mg42_m_75.bullet_objects = {
+					prefix = "g_bullet_",
+					amount = 6
+				}
+				self.parts.wpn_fps_lmg_mg42_m_75.forbids = {"wpn_fps_lmg_mg42_dummy_mag"}
+				self.parts.wpn_fps_lmg_mg42_m_75.unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green"
+				self.parts.wpn_fps_lmg_mg42_m_75.stats = {
+					value = 4,
+					extra_ammo = 25,
+					concealment = -2,
+					reload = -4
+				}
+				self.parts.wpn_fps_lmg_mg42_m_75.custom_stats = { ads_speed_mult = 1.075 }
+
+				self.parts.wpn_fps_lmg_mg42_m_100 = deep_clone(self.parts.wpn_fps_lmg_mg42_reciever)
+				self.parts.wpn_fps_lmg_mg42_m_100.pcs = {}
+				self.parts.wpn_fps_lmg_mg42_m_100.supported = true
+				self.parts.wpn_fps_lmg_mg42_m_100.global_value = "sc"
+				self.parts.wpn_fps_lmg_mg42_m_100.alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag"
+				self.parts.wpn_fps_lmg_mg42_m_100.name_id = "bm_wp_mg42_m_100"
+				self.parts.wpn_fps_lmg_mg42_m_100.type = "magazine"
+				self.parts.wpn_fps_lmg_mg42_m_100.bullet_objects = {
+					prefix = "g_bullet_",
+					amount = 6
+				}
+				self.parts.wpn_fps_lmg_mg42_m_100.forbids = {"wpn_fps_lmg_mg42_dummy_mag"}
+				self.parts.wpn_fps_lmg_mg42_m_100.unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan"
+				self.parts.wpn_fps_lmg_mg42_m_100.stats = {
+					value = 8,
+					extra_ammo = 50,
+					concealment = -4,
+					reload = -6
+				}
+				self.parts.wpn_fps_lmg_mg42_m_100.custom_stats = { ads_speed_mult = 1.125 }
 
 				--Bringing back my old MG42 mag/belt fix method for more accurate looking DLT-19
 				self.parts.wpn_fps_lmg_mg42_dummy_mag = deep_clone(self.parts.wpn_fps_lmg_mg42_reciever)
@@ -9413,6 +9457,8 @@ end)
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_lmg_mg42_hina_cnuy")
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_sig")
+				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_lmg_mg42_m_75")
+				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_lmg_mg42_m_100")
 
 				self.wpn_fps_lmg_mg42.adds = {}
 				self.wpn_fps_lmg_mg42.override = self.wpn_fps_lmg_mg42.override or {}
@@ -39196,7 +39242,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					alt_desc = "bm_scarl_sc_desc",
 					falloff_start_mult = 1.166666,
 					falloff_end_mult = 1.103448,
-					damage_min_mult = 0.625,
+					damage_min_mult = 0.75,
 					ammo_pickup_max_mul = 1.79,
 					ammo_pickup_min_mul = 1.79,
 					alt_ammo_pickup_max_mul = 1.79,
@@ -42926,7 +42972,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					alt_desc = "bm_scarhamr_sc_desc",
 					falloff_start_mult = 1.33333,
 					falloff_end_mult = 1.20689,
-					damage_min_mult = 0.625,
+					damage_min_mult = 0.75,
 					ammo_pickup_max_mul = 1.79,
 					ammo_pickup_min_mul = 1.79,
 					alt_ammo_pickup_max_mul = 1.79,

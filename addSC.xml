@@ -336,6 +336,16 @@
 	<object				path="units/pd2_dlc_west/weapons/wpn_gre_dynamite/wpn_gre_dynamite" force="true" />
 
 	<!--REMOVED CAP REQUIREMENT FOR LMG SIGHTS FOLLOWING LID-->
+	<unit_obj			path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan"/>
+	<model				path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan"/>
+	<texture			path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan_df" load="true"/>
+
+	<unit_obj			path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green"/>
+	<model				path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green"/>
+	<texture			path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green_df" load="true"/>
+
 	<model				path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever" force="true"/>
 	<model				path="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_m249_pts/wpn_fps_lmg_m249_upper_reciever" force="true"/>
 	<model				path="units/pd2_dlc_par/weapons/wpn_fps_lmg_par_pts/wpn_fps_lmg_par_upper_reciever" force="true"/>

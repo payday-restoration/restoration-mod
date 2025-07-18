@@ -153,6 +153,16 @@ if GGWEPNENAME then
 					return managers.localization:text("bm_w_mp5sd")
 				end
 
+			elseif factory_id == "wpn_fps_smg_shepheard" then
+				if table.contains(blueprint, "wpn_fps_smg_shepheard_cnuy_yuuka") then
+					return managers.localization:text("bm_w_mpx_yuuka")
+				end
+			elseif factory_id == "wpn_fps_smg_x_shepheard" then
+				if table.contains(blueprint, "wpn_fps_smg_shepheard_cnuy_yuuka") then
+					return managers.localization:text("bm_w_x_mpx_yuuka")
+				end
+
+
 			elseif factory_id == "wpn_fps_smg_sterling" then
 				if table.contains(blueprint, "wpn_fps_smg_sterling_b_e11") then
 					return managers.localization:text("bm_w_sterling_e11")

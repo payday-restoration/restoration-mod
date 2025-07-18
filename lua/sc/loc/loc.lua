@@ -3166,6 +3166,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_m4_azusa_desc"] = "#{risk}#Vanity of vanities: All is in vain.##",
 					["bm_w_m4_saori"] = "Arius Assault Rifle",
 					["bm_w_c96_satsuki"] = "NK Delta",
+					["bm_w_mpx_yuuka"] = "Logic",
+					["bm_w_x_mpx_yuuka"] = "Logic & Reason",
 	})
 
 	--[[

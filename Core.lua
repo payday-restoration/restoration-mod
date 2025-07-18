@@ -454,7 +454,7 @@ function restoration:Init()
 		rat = 1,  -- Cook Off
 		nail = 1,  -- Lab Rats
 		cane = 1,  -- Santa's Workshop
-		pal = 1,  -- Counterfeit
+		-- pal = 1,  -- Counterfeit
 		help = 1,  -- Prison Nightmare
 		mex_cooking = 1,  -- Border Crystals
 	}

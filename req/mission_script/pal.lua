@@ -29,10 +29,10 @@ local pro_job_ponr = {
 return {
 	-- Pro Job PONR
 	-- Triggers upon opening the manhole
-	-- Bravos can spawn independently of this PONR (see restoration.natural_mode_13 table in Core.lua)
 	-- PD2 Counterfeit is an infinite loot heist, this means any actually good PONR trigger is out of the question
 	[102047] = pro_job_ponr,
-	-- Initial reinforce points, added on alarm
+	-- Reinforce points
+	-- Initial, added on alarm
 	[100031] = {
 		reinforce = {
 			{
@@ -62,11 +62,11 @@ return {
 			},
 		},
 	},
-	-- Additional reinforce points, added to whichever valve can be sabotaged
+	-- Added to whichever valve can be sabotaged
 	[101219] = {
 		reinforce = {
 			{
-				name = "protect_the_valveHQ_1",
+				name = "protect_the_valveHQ",
 				force = 3,
 				position = Vector3(-6624, 1545, 21.141),
 			},
@@ -75,7 +75,7 @@ return {
 	[101218] = {
 		reinforce = {
 			{
-				name = "protect_the_valveHQ_2",
+				name = "protect_the_valveHQ",
 				force = 3,
 				position = Vector3(-2402, -1326, 17.788),
 			},
@@ -84,8 +84,27 @@ return {
 	[101220] = {
 		reinforce = {
 			{
-				name = "protect_the_valveHQ_3",
+				name = "protect_the_valveHQ",
 				force = 3,
+				position = Vector3(-340, 2438, 26.700),
+			},
+		},
+	},
+	-- Added to whichever manhole is selected for the escape
+	[101475] = {
+		reinforce = {
+			{
+				name = "manhole",
+				force = 4,
+				position = Vector3(-5955, -331, 46),
+			},
+		},
+	},
+	[101476] = {
+		reinforce = {
+			{
+				name = "manhole",
+				force = 4,
 				position = Vector3(-340, 2438, 26.700),
 			},
 		},
@@ -107,6 +126,7 @@ return {
 		},
 	},
 	[101235] = {
+		spawn_bravos = pro_job,
 		values = {
 			time = 60,
 		},
@@ -116,17 +136,13 @@ return {
 			time = 30,
 		},
 	},
-	-- Trigger Hunt (Endless Assault)
-	-- Disable valve's Reinforce points
+	-- Disable valve's reinforce points
 	[102642] = {
-		hunt = true,
 		reinforce = {
-			{ name = "protect_the_valveHQ_1", },
-			{ name = "protect_the_valveHQ_2", },
-			{ name = "protect_the_valveHQ_3", },
+			{ name = "protect_the_valveHQ", },
 		},
 	},
-	-- Bain no longer will remind to find Mitchell when players masked up
+	-- Bain no longer reminds to find Mitchell when players masked up
 	[102410] = {
 		on_executed = {
 			{ id = 100096, delay = 0, },

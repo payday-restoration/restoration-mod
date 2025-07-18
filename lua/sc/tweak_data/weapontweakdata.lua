@@ -6001,6 +6001,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							self.x_lemming.CLIP_AMMO_MAX = 40
 							self.x_lemming.AMMO_MAX = 180
 							self.x_lemming.fire_mode_data.fire_rate = 0.1
+							self.x_lemming.lock_slide_alt = true
 							self.x_lemming.kick = self.stat_info.kick_tables.moderate_kick
 							self.x_lemming.kick_pattern = {
 								{0, self.stat_info.kick_tables.even_recoil},
@@ -18170,6 +18171,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m712.damage_type = "heavy_pistol"
 				self.m712.tactical_reload = 1
 				self.m712.fire_mode_data.fire_rate = 0.06
+				self.m712.lock_slide = true
+				self.m712.lock_slide_alt = true
 				self.m712.CAN_TOGGLE_FIREMODE = true
 				self.m712.CLIP_AMMO_MAX = 20
 				self.m712.AMMO_MAX = 40
@@ -21080,6 +21083,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ultimax.muzzleflash = "_dmc/effects/heavy_muzzle"
 				self.ultimax.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
+				self.ultimax.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 				self.ultimax.supported = true
 				self.ultimax.ads_speed = 0.380
 				self.ultimax.damage_falloff = {
@@ -22079,11 +22083,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.triad.fire_mode_data.fire_rate = 0.2
 				self.triad.BURST_FIRE = {
 					count = 3,
-					delay = 1,
+					delay = 0.5,
 					rof_mult = 20,
 					recoil_mult = 0,
 					spread_mult = 1.5,
-					last_recoil_mult = 3
+					last_recoil_mult = 1.8
 				}
 				self.triad.kick = self.stat_info.kick_tables.moderate_kick
 				self.triad.kick_pattern = {
@@ -23826,6 +23830,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fakedefy.AMMO_MAX = 120
 				self.fakedefy.fire_mode_data.fire_rate = 0.1
 				self.fakedefy.auto.fire_rate = 0.1
+				self.fakedefy.lock_slide = true
+				self.fakedefy.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.fakedefy.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.fakedefy.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},

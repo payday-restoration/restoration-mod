@@ -25871,7 +25871,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m4_usasoc.supported = true
 				self.m4_usasoc.ads_speed = 0.340
 				self.m4_usasoc.damage_falloff = {
-					start_dist = 1700,
+					start_dist = 1500,
 					end_dist = 6000,
 					min_mult = 0.4
 				}

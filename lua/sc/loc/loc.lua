@@ -2788,7 +2788,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Buzzsaw/Mg42
 				["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has improved spread and recoil while hipfired.##",
 				["bm_wp_mg42_m_75"] = "75rnd Drum",
+				["bm_wp_mg42_m_75_desc"] = "Holds more rounds than physically possible by using the same technology to fit legs into jet engines.",
 				["bm_wp_mg42_m_100"] = "100rnd Drum",
+				["bm_wp_mg42_m_100_desc"] = "Holds even more rounds than physically possible by using the same technology to fit legs into jet engines.",
 				["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
 				["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#3s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
 				--M134

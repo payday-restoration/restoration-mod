@@ -8285,9 +8285,7 @@ end)
 				self.parts.wpn_fps_lmg_m249_s_solid.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
 				self.parts.wpn_fps_lmg_m249_s_solid.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
 
-				if not self.wpn_fps_lmg_m249.override then
-					self.wpn_fps_lmg_m249.override = {}
-				end
+				self.wpn_fps_lmg_m249.override = self.wpn_fps_lmg_m249.override or {}
 
 				self.wpn_fps_lmg_m249.override.wpn_fps_upg_m4_s_standard = {
 					stats = deep_clone(stocks.folder_to_adj_acc1_stats),
@@ -8383,7 +8381,13 @@ end)
 				self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_hamr = {
 					parent = "upper_reciever"
 				}
+				self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_hamr_reddot = {
+					parent = "upper_reciever"
+				}
 				self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_atibal = {
+					parent = "upper_reciever"
+				}
+				self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_atibal_reddot = {
 					parent = "upper_reciever"
 				}
 
@@ -8408,7 +8412,9 @@ end)
 				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_poe")
 				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_health")
 				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_hamr")
+				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_hamr_reddot")
 				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_atibal")
+				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_atibal_reddot")
 				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_sig")
 
@@ -9352,6 +9358,7 @@ end)
 				self.parts.wpn_fps_lmg_mg42_m_75.global_value = "sc"
 				self.parts.wpn_fps_lmg_mg42_m_75.alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag"
 				self.parts.wpn_fps_lmg_mg42_m_75.name_id = "bm_wp_mg42_m_75"
+				self.parts.wpn_fps_lmg_mg42_m_75.has_description = true
 				self.parts.wpn_fps_lmg_mg42_m_75.type = "magazine"
 				self.parts.wpn_fps_lmg_mg42_m_75.bullet_objects = {
 					prefix = "g_bullet_",
@@ -9373,6 +9380,7 @@ end)
 				self.parts.wpn_fps_lmg_mg42_m_100.global_value = "sc"
 				self.parts.wpn_fps_lmg_mg42_m_100.alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag"
 				self.parts.wpn_fps_lmg_mg42_m_100.name_id = "bm_wp_mg42_m_100"
+				self.parts.wpn_fps_lmg_mg42_m_100.has_description = true
 				self.parts.wpn_fps_lmg_mg42_m_100.type = "magazine"
 				self.parts.wpn_fps_lmg_mg42_m_100.bullet_objects = {
 					prefix = "g_bullet_",
@@ -9452,7 +9460,9 @@ end)
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_poe")
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_health")
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_hamr")
+				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_hamr_reddot")
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_atibal")
+				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_atibal_reddot")
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_ns_ass_filter")
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_lmg_mg42_hina_cnuy")
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
@@ -9461,11 +9471,11 @@ end)
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_lmg_mg42_m_100")
 
 				self.wpn_fps_lmg_mg42.adds = {}
-				self.wpn_fps_lmg_mg42.adds.wpn_fps_upg_o_health = { "wpn_fps_snp_mosin_rail" }
 				self.wpn_fps_lmg_mg42.override = self.wpn_fps_lmg_mg42.override or {}
 
 				for i, part_id in pairs(self.wpn_fps_lmg_mg42.uses_parts) do
-					if part_id ~= "wpn_fps_ass_sub2000_o_back" and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "sight" then
+					if self.parts[part_id] and ((self.parts[part_id].type and self.parts[part_id].type == "sight") or 
+						(self.parts[part_id].sub_type and self.parts[part_id].sub_type == "second_sight")) then
 						self.wpn_fps_lmg_mg42.adds[part_id] = { "wpn_fps_snp_mosin_rail" }
 						self.wpn_fps_lmg_mg42.override[part_id] = {
 							parent = "magazine_extra",
@@ -9544,7 +9554,9 @@ end)
 				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_poe")
 				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_health")
 				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_hamr")
+				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_hamr_reddot")
 				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_atibal")
+				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_atibal_reddot")
 				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_sig")
 
@@ -9555,7 +9567,8 @@ end)
 				self.wpn_fps_lmg_par.override = self.wpn_fps_lmg_par.override or {}
 
 				for i, part_id in pairs(self.wpn_fps_lmg_par.uses_parts) do
-					if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "sight" then
+					if self.parts[part_id] and ((self.parts[part_id].type and self.parts[part_id].type == "sight") or 
+						(self.parts[part_id].sub_type and self.parts[part_id].sub_type == "second_sight")) then
 						self.wpn_fps_lmg_par.override[part_id] = { parent = "upper_reciever" }
 					end
 				end
@@ -9664,14 +9677,15 @@ end)
 				table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_tf90")
 				table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_poe")
 				table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_hamr")
+				table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_hamr_reddot")
 				table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_atibal")
+				table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_atibal_reddot")
 				table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_health")
 				table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 				table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_sig")
 				--]]
 
 				self.wpn_fps_lmg_m60.adds = {}
-				self.wpn_fps_lmg_m60.adds.wpn_fps_upg_o_health = { "wpn_fps_ass_groza_o_adapter" }
 				self.wpn_fps_lmg_m60.override = {
 					wpn_fps_lmg_m60_body_standard = {
 						adds = {"wpn_fps_lmg_m60_sight_standard"}
@@ -9679,7 +9693,8 @@ end)
 				}
 
 				for i, part_id in pairs(self.wpn_fps_lmg_m60.uses_parts) do
-					if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "sight" then
+					if self.parts[part_id] and ((self.parts[part_id].type and self.parts[part_id].type == "sight") or 
+						(self.parts[part_id].sub_type and self.parts[part_id].sub_type == "second_sight")) then
 						self.wpn_fps_lmg_m60.override[part_id] = {
 							parent = "upper_reciever",
 							forbids = { "wpn_fps_lmg_m60_sight_standard" }
@@ -20085,6 +20100,111 @@ end)
 					weap.translation = weap.translation + Vector3(0, -22.5, -0.867)
 				end
 			end
+
+			--putting these fuckasses here so they stop being ignored by auto-assignments
+			self.parts.wpn_fps_upg_o_bmg = {
+				type = "sight",
+				dlc = "mwm",
+				a_obj = "a_o",
+				texture_bundle_folder = "mwm",
+				reticle_obj = "g_reddot",
+				name_id = "bm_wp_upg_o_bmg",
+				unit = "units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_bmg/wpn_fps_upg_o_bmg",
+				pcs = {
+					10,
+					20,
+					30,
+					40
+				},
+				stats = {
+					value = 0 --properly handled in the "_init_mwm" posthook
+				},
+				perks = {
+					"scope"
+				},
+				stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod), --ditto
+				forbids = {
+					"wpn_fps_amcar_uupg_body_upperreciever",
+					"wpn_fps_ass_m16_os_frontsight",
+					"wpn_fps_ass_scar_o_flipups_up",
+					"wpn_fps_upg_o_xpsg33_magnifier",
+					"wpn_fps_upg_o_sig",
+					"wpn_fps_ass_shak12_o_carry_dummy"
+				},
+				override = {
+					wpn_fps_ass_m14_body_ruger = {
+						third_unit = "units/pd2_dlc_atw/weapons/wpn_fps_ass_m14_body_ruger/wpn_third_ass_m14_body_ruger_rail",
+						unit = "units/pd2_dlc_atw/weapons/wpn_fps_ass_m14_body_ruger/wpn_fps_ass_m14_body_ruger_rail"
+					}
+				},
+				texture_switch = {
+					channel = "diffuse_texture",
+					material = {
+						"gfx_reddot",
+						"screen"
+					}
+				},
+				visibility = {
+					{
+						condition = function (self, part, npc)
+							return _G.IS_VR and not npc
+						end,
+						objects = {
+							g_vr_lens = true,
+							g_gfx_lens_2 = false,
+							g_gfx_lens = false,
+							g_gfx_lens_3 = false,
+							g_screen = true,
+							g_vr_bmg = true,
+							g_vr_phong = true,
+							g_reddot = false
+						}
+					}
+				},
+				camera = {
+					a_camera = "a_camera",
+					material = "screen",
+					fov = 13,
+					a_screen = "g_screen",
+					channel = "macrodetail_diffuse_texture"
+				}
+			}
+
+			self.parts.wpn_fps_upg_o_health = {
+				type = "sight",
+				texture_bundle_folder = "mxm",
+				dlc = "mxm",
+				a_obj = "a_o",
+				name_id = "bm_wp_upg_o_health",
+				unit = "units/pd2_dlc_mxm/weapons/wpn_fps_upg_o_health/wpn_fps_upg_o_health",
+				has_description = true,
+				pcs = {
+					10,
+					20,
+					30,
+					40
+				},
+				stats = {
+					value = 0 --properly handled in the "_init_mxm" posthook
+				},
+				perks = {
+					"scope",
+					"display_unit_health"
+				},
+				forbids = {},
+				texture_switch = {
+					material = "gfx_reddot",
+					channel = "diffuse_texture"
+				},
+				material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters),
+				stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod), --ditto
+				override = {
+					wpn_fps_ass_m14_body_ruger = {
+						third_unit = "units/pd2_dlc_atw/weapons/wpn_fps_ass_m14_body_ruger/wpn_third_ass_m14_body_ruger_rail",
+						unit = "units/pd2_dlc_atw/weapons/wpn_fps_ass_m14_body_ruger/wpn_fps_ass_m14_body_ruger_rail"
+					}
+				}
+			}
 		end)
 
 	--DLC1 Mods

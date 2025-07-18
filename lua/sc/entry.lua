@@ -127,6 +127,9 @@ if GGWEPNENAME then
 				if table.contains(blueprint, "wpn_fps_pis_c96_nozzle") then
 					return managers.localization:text("bm_w_c96_dl44")
 				end
+				if table.contains(blueprint, "wpn_fps_pis_c96_cnuy_satsuki") then
+					return managers.localization:text("bm_w_c96_satsuki")
+				end
 
 			elseif factory_id == "wpn_fps_pis_2006m" then
 				if table.contains(blueprint, "wpn_fps_upg_i_iw_hailstorm") then
@@ -175,11 +178,25 @@ if GGWEPNENAME then
 				if table.contains(blueprint, "wpn_fps_lmg_mg42_b_vg38") then
 					return managers.localization:text("bm_w_mg42_dlt19")
 				end
+				if table.contains(blueprint, "wpn_fps_lmg_mg42_hina_cnuy") then
+					return managers.localization:text("bm_w_mg42_hinature")
+				end
 
-		--[[     ARs     ]]--
+			elseif factory_id == "wpn_fps_ass_tecci" then
+				if table.contains(blueprint, "wpn_fps_ass_tecci_cnuy_ibuki") then
+					return managers.localization:text("bm_w_tecci_ibuki")
+				end
+
+		--[[     SHOTGUNS     ]]--
 			elseif factory_id == "wpn_fps_ass_amcar" then
 				if table.contains(blueprint, "wpn_fps_upg_i_patriot") then
 					return managers.localization:text("bm_wp_upg_i_patriot")
+				end
+
+		--[[     ARs     ]]--
+			elseif factory_id == "wpn_fps_sho_ben" then
+				if table.contains(blueprint, "wpn_fps_sho_ben_cnuy_hoshino") then
+					return managers.localization:text("bm_w_ben_hoshino")
 				end
 
 			elseif factory_id == "wpn_fps_ass_m4" then
@@ -189,7 +206,11 @@ if GGWEPNENAME then
 				elseif table.contains(blueprint, "wpn_fps_m4_upg_fg_mk12") then
 					return managers.localization:text("bm_w_m4_mk12")
 				end
-
+				if table.contains(blueprint, "wpn_fps_ass_m4_azusa_cnuy") then
+					return managers.localization:text("bm_w_m4_azusa")
+				elseif table.contains(blueprint, "wpn_fps_ass_m4_cnuy_saori") then
+					return managers.localization:text("bm_w_m4_saori")
+				end
 			elseif factory_id == "wpn_fps_ass_ak5" then
 				if table.contains(blueprint, "wpn_fps_ass_ak5_fg_ak5c") and
 				table.contains(blueprint, "wpn_fps_ass_ak5_s_ak5c") then

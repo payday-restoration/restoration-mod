@@ -9383,8 +9383,8 @@ end)
 				self.parts.wpn_fps_lmg_mg42_m_100.stats = {
 					value = 8,
 					extra_ammo = 50,
-					concealment = -4,
-					reload = -6
+					concealment = -5,
+					reload = -7
 				}
 				self.parts.wpn_fps_lmg_mg42_m_100.custom_stats = { ads_speed_mult = 1.125 }
 
@@ -9461,6 +9461,7 @@ end)
 				table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_lmg_mg42_m_100")
 
 				self.wpn_fps_lmg_mg42.adds = {}
+				self.wpn_fps_lmg_mg42.adds.wpn_fps_upg_o_health = { "wpn_fps_snp_mosin_rail" }
 				self.wpn_fps_lmg_mg42.override = self.wpn_fps_lmg_mg42.override or {}
 
 				for i, part_id in pairs(self.wpn_fps_lmg_mg42.uses_parts) do
@@ -9670,6 +9671,7 @@ end)
 				--]]
 
 				self.wpn_fps_lmg_m60.adds = {}
+				self.wpn_fps_lmg_m60.adds.wpn_fps_upg_o_health = { "wpn_fps_ass_groza_o_adapter" }
 				self.wpn_fps_lmg_m60.override = {
 					wpn_fps_lmg_m60_body_standard = {
 						adds = {"wpn_fps_lmg_m60_sight_standard"}

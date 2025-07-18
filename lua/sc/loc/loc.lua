@@ -2864,6 +2864,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Custom Shotguns
 					--BO6 ASG-89
 					["bm_wp_upg_i_autousas"] = "Battlefield-Tested Internals",
+					["bm_wp_upg_i_burstusas"] = "Systems Corp Internals",
+					["bm_wp_upg_i_burstusas_desc"] = "Locks firemode to a #{risk}#3-round burst## at #{skill_color}#800 RPM##.",
 					--Reinbeck M1
 					["bm_w_beck_desc"] = "The criminal underworld's most popular shotgun has returned from its grave to reclaim its rightful place in the shotgun hierarchy. Originally used in the 2011 Crimewave, this shotgun has been proven extremely reliable in just about any close range situation.",
 					--Doomstic

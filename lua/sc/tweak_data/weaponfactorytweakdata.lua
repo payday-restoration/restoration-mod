@@ -44352,8 +44352,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
 			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 
-			table.insert(self.wpn_fps_pis_toz81.uses_parts, "wpn_fps_upg_a_piercing")
-			table.insert(self.wpn_fps_pis_x_toz81.uses_parts, "wpn_fps_upg_a_piercing")
+			table.insert(self.wpn_fps_pis_toz81.uses_parts, "wpn_fps_upg_a_slug")
+			table.insert(self.wpn_fps_pis_x_toz81.uses_parts, "wpn_fps_upg_a_slug")
 		end
 
 		if self.parts.wpn_fps_shot_or12_vg then

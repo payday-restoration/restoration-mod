@@ -446,6 +446,16 @@ function restoration:Init()
 		"haunted",  -- Safehouse Nightmare
 	})
 
+	-- Heists to disable automatic drill reinforcements on
+	restoration.no_automatic_drill_reinforce = table.list_to_set({
+		"arm_fac",  -- Transport: Harbor
+		"arm_par",  -- Transport: Park
+		"arm_hcm",  -- Transport: Downtown
+		"arm_und",  -- Transport: Underpass
+		"arm_cro",  -- Transport: Crossroads
+		"arm_for",  -- Transport: Train
+	})
+
 	-- When playing Pro Jobs, heists in this table enable Bravos when the specified diff threshold would be exceeded
 	-- This should be reserved only for infinite loot heists or other special cases where Bravos should spawn but PONRs won't work
 	-- Threshold = 0 will activate on the first diff increase, threshold = 1 will activate after the fourth assault if no civs killed

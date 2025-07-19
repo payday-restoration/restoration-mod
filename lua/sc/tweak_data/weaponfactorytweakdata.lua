@@ -6716,6 +6716,7 @@ end)
 					end
 
 					table.insert(self.wpn_fps_smg_x_scorpion.uses_parts, "wpn_fps_smg_mac10_s_no")
+					table.insert(self.wpn_fps_smg_x_scorpion.uses_parts, "wpn_fps_smg_scorpion_s_unfolded")
 
 					self.wpn_fps_smg_x_scorpion_npc.override = deep_clone(self.wpn_fps_smg_x_scorpion.override)
 					self.wpn_fps_smg_x_scorpion_npc.uses_parts = deep_clone(self.wpn_fps_smg_x_scorpion.uses_parts)
@@ -6970,6 +6971,17 @@ end)
 							value = 0
 						}
 					}
+
+					self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_s_adjust = {
+						stats = deep_clone(stocks.add_nocheeks_stats),
+						custom_stats = deep_clone(stocks.add_nocheeks_stats)
+					}
+
+					table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_smg_mp5_s_adjust")
+					table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_vg_vmp_pod")
+					table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_vg_vmp_vert")
+					table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_vg_vmp_cheems")
+					table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_vg_vmp_medium")
 				end)
 
 	--[[     HEAVY SMGs     ]]
@@ -38159,6 +38171,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				table.insert(self.wpn_fps_ass_g3_npc.uses_parts, "wpn_fps_smg_mp5_s_adjusted")
 				table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_smg_mp5_s_adjusted")
 				table.insert(self.wpn_fps_lmg_hk21_npc.uses_parts, "wpn_fps_smg_mp5_s_adjusted")
+				self.wpn_fps_smg_x_mp5.override.wpn_fps_smg_mp5_s_adjusted = {
+					stats = deep_clone(stocks.add_folded_stats),
+					custom_stats = deep_clone(stocks.add_folded_stats)
+				}
+				table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_smg_mp5_s_adjusted")
 
 				--(Compact 5) Marksman Foregrip
 				self.parts.wpn_fps_smg_mp5_fg_long.supported = true
@@ -44335,8 +44352,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
 			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 
-			table.insert(self.wpn_fps_pis_toz81.uses_parts, "wpn_fps_upg_a_piercing")
-			table.insert(self.wpn_fps_pis_x_toz81.uses_parts, "wpn_fps_upg_a_piercing")
+			table.insert(self.wpn_fps_pis_toz81.uses_parts, "wpn_fps_upg_a_slug")
+			table.insert(self.wpn_fps_pis_x_toz81.uses_parts, "wpn_fps_upg_a_slug")
 		end
 
 		if self.parts.wpn_fps_shot_or12_vg then
@@ -45626,8 +45643,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_m3_s_ext.stats = deep_clone(stocks.unfold_nocheeks_stats)
 			self.parts.wpn_fps_smg_m3_s_ext.custom_stats = deep_clone(stocks.unfold_nocheeks_stats)
 			self.parts.wpn_fps_smg_m3_s_no.supported = true
-			self.parts.wpn_fps_smg_m3_s_no.stats = deep_clone(stocks.remove_nocheeks_stats)
-			self.parts.wpn_fps_smg_m3_s_no.custom_stats = deep_clone(stocks.remove_nocheeks_stats)
+			self.parts.wpn_fps_smg_m3_s_no.stats = deep_clone(stocks.fold_nocheeks_stats) -- -3 mob for a stock that small??
+			self.parts.wpn_fps_smg_m3_s_no.custom_stats = deep_clone(stocks.fold_nocheeks_stats)
 
 			self.wpn_fps_smg_x_m3.override.wpn_fps_smg_m3_m_short.stats = {
 				value = 2,

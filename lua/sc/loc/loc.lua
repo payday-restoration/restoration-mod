@@ -2828,7 +2828,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--KE7
 					["bm_wp_wpn_fps_upg_sigke7_mag50"] = "50rnd Magazine",
 
-
 			--[[ SHOTGUNS ]]
 				--Saiga
 				["bm_saiga_sc_desc"] = "This fully automatic shotgun is perfect for those days you just don't feel like aiming.",
@@ -3157,6 +3156,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_w_toym16_sc_desc"] = "\"No full-auto in buildings.\"",
 				["bm_w_toy1911_sc_desc"] = "\"No full-auto in buildings.\"",
 
+			--[[ OTHER ]]
+				--soosh's Blue Archive skins 😭💢
+					["bm_w_tecci_ibuki"] = "Yay, Bang Bang!",
+					["bm_w_ben_hoshino"] = "Eye of Horus",
+					["bm_w_mg42_hinature"] = "Destroyer of Denouement",
+					["bm_w_mg42_hinature_desc"] = "#{stat_maxed}#Blows away school rule violators and degenerates with its ruthlessly destructive power.##",
+					["bm_w_m4_azusa"] = "Et Omnia Vanitas",
+					["bm_w_m4_azusa_desc"] = "#{risk}#Vanity of vanities: All is in vain.##",
+					["bm_w_m4_saori"] = "Arius Assault Rifle",
+					["bm_w_c96_satsuki"] = "NK Delta",
+					["bm_w_mpx_yuuka"] = "Logic",
+					["bm_w_x_mpx_yuuka"] = "Logic & Reason",
 	})
 
 	--[[

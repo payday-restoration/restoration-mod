@@ -18563,6 +18563,15 @@ end)
 						}
 					}
 
+					for i, part_id in pairs(self.wpn_fps_bow_ecp.uses_parts) do
+						if self.parts[part_id] and ((self.parts[part_id].type and self.parts[part_id].type == "sight") or 
+							(self.parts[part_id].sub_type and self.parts[part_id].sub_type == "second_sight")) then
+							self.wpn_fps_bow_ecp.override[part_id] = {
+								custom_stats = { big_scope = true }
+							}
+						end
+					end
+
 					table.insert(self.wpn_fps_bow_ecp.uses_parts, "wpn_fps_upg_m4_g_ergo")
 					table.insert(self.wpn_fps_bow_ecp.uses_parts, "wpn_fps_upg_m4_g_sniper")
 					table.insert(self.wpn_fps_bow_ecp.uses_parts, "wpn_fps_upg_m4_g_hgrip")
@@ -20101,7 +20110,8 @@ end)
 			self.parts.wpn_fps_upg_o_leupold.supported = true
 			self.parts.wpn_fps_upg_o_leupold.stats = {
 				value = 8,
-				zoom = 50
+				zoom = 50,
+				base_zoom_off = 60
 			}
 			self.parts.wpn_fps_upg_o_leupold.custom_stats = { big_scope = true }
 			self.parts.wpn_fps_upg_o_leupold.perks = {"scope", "highlight"}
@@ -20114,108 +20124,20 @@ end)
 			end
 
 			--putting these fuckasses here so they stop being ignored by auto-assignments
-			self.parts.wpn_fps_upg_o_bmg = {
-				type = "sight",
-				dlc = "mwm",
-				a_obj = "a_o",
-				texture_bundle_folder = "mwm",
-				reticle_obj = "g_reddot",
-				name_id = "bm_wp_upg_o_bmg",
-				unit = "units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_bmg/wpn_fps_upg_o_bmg",
-				pcs = {
-					10,
-					20,
-					30,
-					40
-				},
-				stats = {
-					value = 0 --properly handled in the "_init_mwm" posthook
-				},
-				perks = {
-					"scope"
-				},
-				stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod), --ditto
-				forbids = {
-					"wpn_fps_amcar_uupg_body_upperreciever",
-					"wpn_fps_ass_m16_os_frontsight",
-					"wpn_fps_ass_scar_o_flipups_up",
-					"wpn_fps_upg_o_xpsg33_magnifier",
-					"wpn_fps_upg_o_sig",
-					"wpn_fps_ass_shak12_o_carry_dummy"
-				},
-				override = {
-					wpn_fps_ass_m14_body_ruger = {
-						third_unit = "units/pd2_dlc_atw/weapons/wpn_fps_ass_m14_body_ruger/wpn_third_ass_m14_body_ruger_rail",
-						unit = "units/pd2_dlc_atw/weapons/wpn_fps_ass_m14_body_ruger/wpn_fps_ass_m14_body_ruger_rail"
-					}
-				},
-				texture_switch = {
-					channel = "diffuse_texture",
-					material = {
-						"gfx_reddot",
-						"screen"
-					}
-				},
-				visibility = {
-					{
-						condition = function (self, part, npc)
-							return _G.IS_VR and not npc
-						end,
-						objects = {
-							g_vr_lens = true,
-							g_gfx_lens_2 = false,
-							g_gfx_lens = false,
-							g_gfx_lens_3 = false,
-							g_screen = true,
-							g_vr_bmg = true,
-							g_vr_phong = true,
-							g_reddot = false
-						}
-					}
-				},
-				camera = {
-					a_camera = "a_camera",
-					material = "screen",
-					fov = 13,
-					a_screen = "g_screen",
-					channel = "macrodetail_diffuse_texture"
-				}
+			self.parts.wpn_fps_upg_o_bmg = { --properly handled in the "_init_mwm" posthook; I only need them to be defined here for type
+				type = "sight"
 			}
 
-			self.parts.wpn_fps_upg_o_health = {
-				type = "sight",
-				texture_bundle_folder = "mxm",
-				dlc = "mxm",
-				a_obj = "a_o",
-				name_id = "bm_wp_upg_o_health",
-				unit = "units/pd2_dlc_mxm/weapons/wpn_fps_upg_o_health/wpn_fps_upg_o_health",
-				has_description = true,
-				pcs = {
-					10,
-					20,
-					30,
-					40
-				},
-				stats = {
-					value = 0 --properly handled in the "_init_mxm" posthook
-				},
-				perks = {
-					"scope",
-					"display_unit_health"
-				},
-				forbids = {},
-				texture_switch = {
-					material = "gfx_reddot",
-					channel = "diffuse_texture"
-				},
-				material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters),
-				stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod), --ditto
-				override = {
-					wpn_fps_ass_m14_body_ruger = {
-						third_unit = "units/pd2_dlc_atw/weapons/wpn_fps_ass_m14_body_ruger/wpn_third_ass_m14_body_ruger_rail",
-						unit = "units/pd2_dlc_atw/weapons/wpn_fps_ass_m14_body_ruger/wpn_fps_ass_m14_body_ruger_rail"
-					}
-				}
+			self.parts.wpn_fps_upg_o_uh = { --ditto
+				type = "sight"
+			}
+
+			self.parts.wpn_fps_upg_o_fc1 = { --ditto
+				type = "sight"
+			}
+
+			self.parts.wpn_fps_upg_o_health = { --ditto but for the "_init_mxm" posthook
+				type = "sight"
 			}
 		end)
 
@@ -37040,8 +36962,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_marker.supported = true
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_marker.desc_id = "bm_wp_upg_fl_vmp_marker"
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_marker.stats = {
-					value = 3,
-					concealment = -2
+					value = 8,
+					concealment = -1
 				}
 
 				--(Castigo) Smooth Cylinder
@@ -41608,7 +41530,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_tingledingle_detector.supported = true
 			self.parts.wpn_fps_ass_tingledingle_detector.stats = {
 				value = 99,
-				concealment = -2
+				concealment = -1
 			}
 			self.parts.wpn_fps_ass_tingledingle_detector.perks = { "highlight" }
 		end
@@ -49568,6 +49490,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				supported = true,
 				stats = { value = 0 },
+				custom_stats = {
+					alt_desc = "bm_w_m4_azusa_desc"
+				},
 				internal_part = false,
 				texture_bundle_folder = "boost_in_lootdrop",
 				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
@@ -49615,7 +49540,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				supported = true,
-				stats = { value = 0 },
+				stats = { 
+					value = 0
+				},
+				custom_stats = { 
+					alt_desc = "bm_w_mg42_hinature_desc",
+					trail_effect = "_dmc/effects/sterwers_trail_t",
+					trail_effect_npc = true,
+					trail_effect_ignore = true
+				},
 				internal_part = false,
 				texture_bundle_folder = "boost_in_lootdrop",
 				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
@@ -50916,6 +50849,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 		end
 	end
+	for factory_id, i in pairs(self) do
+		if self[factory_id] and self[factory_id .. "_npc"] and not self[factory_id].real_factory_id then
+			if self[factory_id].uses_parts and self[factory_id].override then
+				for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+					if self.parts[used_part_id] and self[factory_id].override[used_part_id] 
+						and (self.parts[used_part_id].type and (self.parts[used_part_id].type == "sight" or self.parts[used_part_id].type == "second_sight"))
+						and (self.parts[used_part_id].custom_stats and self.parts[used_part_id].custom_stats.ads_speed_mult) then
+						self[factory_id].override[used_part_id].custom_stats = self[factory_id].override[used_part_id].custom_stats or {}
+						self[factory_id].override[used_part_id].custom_stats.ads_speed_mult = self.parts[used_part_id].custom_stats.ads_speed_mult
+					end
+				end
+			end
+		end
+	end
 
 	if self.wpn_fps_pis_amt then
 		for i, part_id in pairs(self.wpn_fps_pis_amt.uses_parts) do
@@ -51200,6 +51147,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 	end
 	self.wpn_fps_smg_sterling_npc.override = deep_clone(self.wpn_fps_smg_sterling.override)
+
+	self.parts.wpn_fps_lmg_mg42_reciever.bullet_objects = nil --Override Visual Fixes
 
 --GEN 1 LEGENDARY STUFF--
 	--Vlad's Rodina--

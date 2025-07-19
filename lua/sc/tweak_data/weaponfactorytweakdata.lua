@@ -38176,10 +38176,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					custom_stats = deep_clone(stocks.add_folded_stats)
 				}
 				table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_smg_mp5_s_adjusted")
-				table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_vg_vmp_pod")
-				table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_vg_vmp_vert")
-				table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_vg_vmp_cheems")
-				table.insert(self.wpn_fps_smg_x_mp5.uses_parts, "wpn_fps_vg_vmp_medium")
 
 				--(Compact 5) Marksman Foregrip
 				self.parts.wpn_fps_smg_mp5_fg_long.supported = true

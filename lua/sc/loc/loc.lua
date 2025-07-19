@@ -5497,8 +5497,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_quickscope360_longdesc"] = "Snipers now aim their rifles 100% faster.",
 
 		["mutator_goldfarbdozers"] = "Double Trouble",
-		["mutator_goldfarbdozers_desc"] = "All Bulldozers that spawn will always deploy in pairs.",
-		["mutator_goldfarbdozers_longdesc"] = "All Bulldozers that spawn will always deploy in pairs.",
+		["mutator_goldfarbdozers_desc"] = "Bulldozers can deploy in pairs.",
+		["mutator_goldfarbdozers_longdesc"] = "Bulldozers can deploy in pairs.\n\nIf the Always Pairs toggle is turned off, it's up to luck if 1 or 2 spawn.",
+		["menu_mutator_goldfarbdozers_always_pairs_toggle"] = "Always Pairs",
+		["menu_mutator_goldfarbdozers_always_pairs"] = "Always",
+		["menu_mutator_goldfarbdozers_sometimes_pairs"] = "Sometimes",
 
 		["mutator_spoocsquad"] = "Sneaky Squad",
 		["mutator_spoocsquad_desc"] = "Cloakers tend to spawn in groups.",

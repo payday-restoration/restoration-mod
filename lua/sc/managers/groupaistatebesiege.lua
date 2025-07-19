@@ -309,7 +309,7 @@ function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, grp_
 	local req_entry = valid_unit_types[i]
 	while req_entry do --Array size changes, so iteration finishes when the current entry is nil.
 		if wanted_nr_units > nr_units and req_entry.amount_min and req_entry.amount_min > 0 then
-			if _add_unit_type_to_spawn_task(i, req_entry) then --Don't increment to next value if a unit was invalidated.
+			if not _add_unit_type_to_spawn_task(i, req_entry) then --Don't increment to next value if a unit was invalidated.
 				i = i + 1
 			end
 		else

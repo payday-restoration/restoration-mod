@@ -454,6 +454,7 @@ function restoration:Init()
 		"arm_und",  -- Transport: Underpass
 		"arm_cro",  -- Transport: Crossroads
 		"arm_for",  -- Transport: Train
+		"arm_for_restoration",  -- Transport: Train (Res edit)
 	})
 
 	-- When playing Pro Jobs, heists in this table enable Bravos when the specified diff threshold would be exceeded

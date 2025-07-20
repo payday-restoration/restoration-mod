@@ -357,6 +357,7 @@ function restoration:Init()
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
+		"arm_cro",  -- Transport: Crossroads
 		"pbr2", --Birth of Sky
 		"chca", --Black Cat Heist
 		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.

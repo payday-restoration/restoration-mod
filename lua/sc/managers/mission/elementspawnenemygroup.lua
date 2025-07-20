@@ -26,6 +26,7 @@ Hooks:OverrideFunction(ElementSpawnEnemyGroup, "on_executed", function (self, in
 	ElementSpawnEnemyGroup.super.on_executed(self, instigator)
 end)
 
+-- TODO: move fully to mission script patches
 local standard_spawngroups = {
 	["standard"] = {
 		--All Blue units

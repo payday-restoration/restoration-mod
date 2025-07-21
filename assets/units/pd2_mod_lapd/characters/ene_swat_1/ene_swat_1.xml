@@ -686,8 +686,6 @@
 			<body enabled="true" name="'body'"/>
 			<body enabled="true" name="'Head'"/>
 			<body enabled="false" motion="'keyframed'" name="'rag_Hips'"/>
-			<body enabled="false" name="'bag'"/>
-			<body enabled="false" name="'bag_gren'"/>
 			<body enabled="true" motion="'keyframed'" name="'rag_LeftUpLeg'"/>
 			<body enabled="true" motion="'keyframed'" name="'rag_RightUpLeg'"/>
 			<body enabled="true" motion="'keyframed'" name="'rag_LeftLeg'"/>

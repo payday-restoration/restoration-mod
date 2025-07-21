@@ -235,8 +235,10 @@
 			<object filter="'check_city_shield'" enabled="false" name="'g_helmet_lod10'"/>
 			<object filter="'check_city_shield'" enabled="false" name="'g_helmet_lod11'"/>	
 			<sound 	filter="'check_city_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>				
+			<sound 	filter="'check_city_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>				
 			
 			<effect filter="'check_city_heavy_ar'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
+			<sound 	filter="'check_city_heavy_ar'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>				
 			<sound 	filter="'check_city_heavy_ar'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>				
 			
 			<effect filter="'check_city_heavy_sg'" damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>

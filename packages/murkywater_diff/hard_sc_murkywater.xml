@@ -356,6 +356,24 @@
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/helmets_atlas_murky_df" />
 	
 	<!-- titans	 -->	
+			
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>		
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_nm" force="false"/>		
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_il" force="false"/>		
+
+			
+	
+	<!--Titan Rifle-->	
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>		
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_lightsout" force="false"/>		
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>	
+	
 	<!--Titan Shotgunner-->	
 	<unit				path="units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>

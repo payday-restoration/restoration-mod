@@ -17,7 +17,7 @@ local disable = {
 }
 local interval_short = {
 	values = {
-		interval = 10,
+		interval = 25,
 	},
 }
 

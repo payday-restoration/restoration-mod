@@ -2101,7 +2101,20 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	local is_single = self:is_single_shot() and not self:in_burst_mode()
 	local main_category = self.AKIMBO and self:categories()[2] or self:categories()[1]
 	local damage_min_bonus = 1
-	local check_col_ray_head = col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name
+	local head_hitboxes = {
+		[Idstring("glass_shield"):key()] = true,
+		[Idstring("glass_swat"):key()] = true,
+		[Idstring("glass_c"):key()] = true,
+		[Idstring("glass_d"):key()] = true,
+		[Idstring("glass_l"):key()] = true,
+		[Idstring("glass_r"):key()] = true,
+		[Idstring("visor"):key()] = true,
+		[Idstring("sg_mask"):key()] = true,
+		[Idstring("glass_altyn"):key()] = true,
+		[Idstring("altyn_visor"):key()] = true,
+		[Idstring("glass_visor"):key()] = true
+	}
+	local check_col_ray_head = col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name or head_hitboxes[col_ray.body:name():key()]
 	--Initialize base info.
 
 	local has_mindblown_ace = managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head and (managers.player._last_no_falloff_headshot_t or 0) < self._unit:timer():time()

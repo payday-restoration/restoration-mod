@@ -17,6 +17,7 @@ function WeaponFactoryTweakData:_clone_part_type_for_weapon(part_type, factory_i
 end
 
 local IsCAPInstalled = BeardLib.Utils:FindMod("Custom Attachment Points") and true or nil
+local g3_niphen = restoration.Options:GetValue("WEAPONANIMS/g3_niphen")
 
 --ATTACHMENT PRESETS
 local sight_1x_offset = {
@@ -9973,6 +9974,7 @@ end)
 						30,
 						40
 					}
+
 					self.parts.wpn_fps_ass_g36_fg_c.supported = true
 					self.parts.wpn_fps_ass_g36_fg_c.stats = {
 						value = 3,
@@ -14094,6 +14096,16 @@ end)
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_lmg_hk21_g_ergo")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_i_g3_burst")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_box")
+
+				if g3_niphen then
+					self.parts.wpn_fps_ass_g3_fg_bipod.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_bipod"
+					self.parts.wpn_fps_ass_g3_fg_psg.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_psg"
+					self.parts.wpn_fps_ass_g3_fg_railed.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_railed"
+					self.parts.wpn_fps_ass_g3_fg_retro.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_retro"
+					self.parts.wpn_fps_ass_g3_fg_retro_plastic.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_retro_plastic"
+					self.parts.wpn_fps_ass_g3_m_mag.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag"
+					self.parts.wpn_fps_ass_g3_m_psg.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag_psg"
+				end
 
 				self.wpn_fps_ass_g3_npc.adds = deep_clone(self.wpn_fps_ass_g3.adds)
 				self.wpn_fps_ass_g3_npc.uses_parts = deep_clone(self.wpn_fps_ass_g3.uses_parts)
@@ -42850,11 +42862,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_body_lower_hk33"
 					},
 					wpn_fps_ass_g3_m_mag = {
-						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_m_hk33_old",
+						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_m_hk33" .. ((g3_niphen and "_old") or ""),
 						third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_m_hk33"
 					},
 					wpn_fps_ass_g3_fg_bipod = {
-						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_fg_hk33_old",
+						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_fg_hk33" .. ((g3_niphen and "_old") or ""),
 						third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_fg_hk33",
 						parent = "exclusive_set",
 						a_obj = "a_fg_hk33"

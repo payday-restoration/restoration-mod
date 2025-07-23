@@ -7823,6 +7823,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m1911.reload_speed_multiplier = 1.15
 						self.m1911.timers.reload_exit_empty = 0.5
 						self.m1911.timers.reload_exit_not_empty = 0.65
+						if restoration.Options:GetValue("WEAPONANIMS/m1911_foley") then
+							self.m1911.animations.reload_name_id = "sparrow"
+						end
 					--Akimbo
 						self.x_m1911.has_description = true
 						self.x_m1911.desc_id = "bm_m1911_sc_desc"
@@ -12338,11 +12341,33 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g3.panic_suppression_chance = 0.05
 						self.g3.can_shoot_through_enemy = true
 						self.g3.can_shoot_through_wall = false
-						self.g3.timers.reload_empty = 3.3
-						self.g3.timers.reload_exit_empty = 1.45
-						self.g3.timers.reload_not_empty = 2.5
-						self.g3.timers.reload_exit_not_empty = 1.05
-						self.g3.reload_speed_multiplier = 1.425
+						if restoration.Options:GetValue("WEAPONANIMS/g3_niphen") then
+							self.g3.animations.reload_name_id = "g3_niphen"
+							self.g3.timers.reload_empty = 3.3
+							self.g3.timers.reload_exit_empty = 1.45
+							self.g3.timers.reload_not_empty = 2.5
+							self.g3.timers.reload_exit_not_empty = 1.05
+							self.g3.reload_speed_multiplier = 1.425
+						elseif cwakey and cwakey.Options:GetValue("g3_cwa_toggle") then
+							--TODO
+						else
+							if BeardLib.Utils:FindMod("g3 animation") then
+								self.g3.reload_speed_multiplier = 0.7254
+								self.g3.timers.reload_empty = 1.68
+								self.g3.timers.reload_exit_empty = 0.8
+								self.g3.timers.reload_not_empty = 1.22
+								self.g3.timers.reload_exit_not_empty = 0.6
+								self.g3.reload_offset = {
+									reload_slap = -0.266
+								}
+							else
+								self.g3.reload_speed_multiplier = 0.865
+								self.g3.timers.reload_empty = 1.95
+								self.g3.timers.reload_exit_empty = 1.25
+								self.g3.timers.reload_not_empty = 1.47
+								self.g3.timers.reload_exit_not_empty = 0.6
+							end
+						end
 
 					--Galant (M1 Garand)
 						self.ching.categories = {
@@ -27721,7 +27746,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeo2.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.bromeo2.lock_slide = true
 				self.bromeo2.lock_slide_offset = 0.066
-				self.bromeo2.reload_offset = 0.033
+				self.bromeo2.reload_offset = {
+					reload = 0.033,
+					reload_not_empty = 0.033
+				}
 				self.bromeo2.animations.magazine_empty = nil
 				self.bromeo2.reload_speed_multiplier = 0.53
 				self.bromeo2.reload_not_empty_speed_multiplier = 1.2
@@ -27781,7 +27809,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeop.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.bromeop.lock_slide = true
 				self.bromeop.lock_slide_offset = 0.066
-				self.bromeop.reload_offset = 0.033
+				self.bromeop.reload_offset = {
+					reload = 0.033,
+					reload_not_empty = 0.033
+				}
 				self.bromeop.animations.magazine_empty = nil
 				self.bromeop.reload_speed_multiplier = 0.57
 				self.bromeop.reload_not_empty_speed_multiplier = 1.16
@@ -29275,7 +29306,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.modl.stats_modifiers = nil
-				self.modl.timers = deep_clone(self.g3.timers)
+				self.modl.timers.reload_not_empty = 2.5
+				self.modl.timers.reload_exit_not_empty = 1.05
 				self.modl.timers.reload_empty = self.modl.timers.reload_not_empty
 				self.modl.timers.reload_exit_empty = self.modl.timers.reload_exit_not_empty
 				self.modl.reload_not_empty_speed_multiplier = 1.4285

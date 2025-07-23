@@ -969,8 +969,11 @@ function RaycastWeaponBase:add_ammo_from_bag(available)
 end
 
 function RaycastWeaponBase:_get_anim_start_offset(anim)
-	if self:weapon_tweak_data().reload_offset and (anim == "reload" or anim == "reload_not_empty") then
-		return self:weapon_tweak_data().reload_offset
+	local offset = self:weapon_tweak_data().reload_offset
+	if offset then
+		if offset[anim] then
+			return offset[anim]
+		end
 	elseif anim == "reload" and self:ammo_base():get_ammo_remaining_in_clip() <= (self.AKIMBO and 1 or 0) and self:weapon_tweak_data().animations.magazine_empty then
 		return 0.033
 	end

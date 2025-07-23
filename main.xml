@@ -595,6 +595,11 @@
 				<!--<option type="bool" default_value="false" name="SC" value_changed="RestorationCoreCallbacks:Restart"/>-->
 				<!--<option type="bool" default_value="false" name="Save"/>-->
 			<!--</option_group>-->
+			<option_group name="WEAPONANIMS">
+				<option type="bool" default_value="true" name="m1911_foley"/>
+				<divider name="tod_divider" size="14"/>
+				<option type="bool" default_value="true" name="g3_niphen"/>
+			</option_group>
 			<option_group name="OTHER">
 				<option_group name="WeaponHandling">
 					<option type="bool" default_value="true" name="WpnFireDescope"/>

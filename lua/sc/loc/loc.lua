@@ -118,8 +118,19 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_doctor_bag_health_regenTitleID"] = "Doctor Bag Health Regen",
 				["RestorationModInfo_doctor_bag_health_regenDescID"] = "Enables or disables tracking of doctor bag health regen.",
 
+		["RestorationModWEAPONANIMSOptionsButtonTitleID"] = "Weapon Animation Options",
+		["RestorationModWEAPONANIMSOptionsButtonDescID"] = "Restoration Mod options for weapon animations. Changes will apply after a restart.",
+				--Pistols
+				["RestorationModm1911_foleyTitleID"] = "Alt. M1911 (Crosskill Chunky) Reload Foley",
+				["RestorationModm1911_foleyDescID"] = "Changes the reload foley on the M1911 to use the Jericho 941's. Disable to use vanilla foley or a custom animation.",
+				--Rifles
+				["RestorationModg3_niphenTitleID"] = "U65 G3 (Gewehr 3) Reload Animations",
+				["RestorationModg3_niphenDescID"] = "Enables the Update 65 reload anims for the G3. Disable to use vanilla or custom animations.",
+
+		--[[
 		["RestorationModWEAPONSOptionsButtonTitleID"] = "Weapon Options",
 		["RestorationModWEAPONSOptionsButtonDescID"] = "Restoration Mod options for weapons, both for UI and in-game.",
+		--]]
 			["RestorationModWeaponHandlingOptionsButtonTitleID"] = "++ Weapon Handling Options ++",
 			["RestorationModWeaponHandlingOptionsButtonDescID"] = "Extra options regarding weapon handling.",
 				["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",

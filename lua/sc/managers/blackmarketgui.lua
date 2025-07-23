@@ -4939,7 +4939,7 @@ function BlackMarketGui:update_info_text()
 						if stats.starwars and not stats.starwars.can_reload then
 							starwars = true
 						end
-						if stats.bullet_class == "InstantExplosiveBulletBase" then
+						if stats.bullet_class == "InstantExplosiveBulletBase" and not stats.ignore_bullet_class then
 							exp_ammo = true
 						end
 					end

@@ -1,4 +1,91 @@
+local disabled = {
+	values = {
+		enabled = false,
+	},
+}
+local enabled = {
+	values = {
+		enabled = true,
+	},
+}
 return {
+	-- Delay police response
+	[100022] = {
+		on_executed = {
+			{ id = 100109, delay = 40 },
+		},
+	},
+	-- Reenforce points
+	[103167] = disabled,
+	[103168] = disabled,
+	[103169] = disabled,
+	[103170] = disabled,
+	[103172] = disabled,
+	[100109] = {
+		reinforce = {
+			{
+				name = "elevator",
+				force = 2,
+				position = Vector3(-9300, 9800, 0),
+			},
+			{
+				name = "corridor_right",
+				force = 2,
+				position = Vector3(-7500, 6800, 20),
+			},
+			{
+				name = "corridor_left",
+				force = 2,
+				position = Vector3(-11100, 6800, 20),
+			},
+			{
+				name = "casino",
+				force = 3,
+				position = Vector3(-9300, 2500, 100),
+			},
+			{
+				name = "courtyard",
+				force = 3,
+				position = Vector3(-9300, 8500, 0),
+			},
+		},
+	},
+	-- Escape reenforce/harasser stuff
+	[100918] = {
+		on_executed = {
+			{ id = 100890, remove = true },
+		},
+	},
+	[101449] = { --Escape signalled
+		on_executed = {
+			{ id = 100890 },
+		},
+		reinforce = {
+			{ name = "elevator" },
+			{ name = "corridor_right" },
+			{ name = "corridor_left" },
+			{ name = "casino" },
+			{ name = "courtyard" },
+			{
+				name = "helipad",
+				force = 4,
+				position = Vector3(-9300, 17000, 100),
+			},
+			{
+				name = "spa_outside1",
+				force = 2,
+				position = Vector3(-7500, 15500, 0),
+			},
+			{
+				name = "spa_outside2",
+				force = 2,
+				position = Vector3(-11000, 15500, 0),
+			},
+		},
+	},
+	-- Enable unused snipers
+	[100371] = enabled,
+	[100372] = enabled,
 	-- Pro Job PONR, loud boat escape (vault stolen Panic Room style)
 	-- Wall blown, start Panic Room style PONR and disable it's PAYDAY style PONR
 	[102615] = {

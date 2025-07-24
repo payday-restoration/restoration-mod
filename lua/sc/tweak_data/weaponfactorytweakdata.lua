@@ -17,7 +17,7 @@ function WeaponFactoryTweakData:_clone_part_type_for_weapon(part_type, factory_i
 end
 
 local IsCAPInstalled = BeardLib.Utils:FindMod("Custom Attachment Points") and true or nil
-local g3_niphen = restoration.Options:GetValue("WEAPONANIMS/g3_niphen")
+local g3_niphen = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen")
 
 --ATTACHMENT PRESETS
 local sight_1x_offset = {

@@ -4619,7 +4619,7 @@ function BlackMarketGui:update_info_text()
 	local ignore_lock = false
 	local desc_macros = {
         BTN_FIRE = managers.localization:btn_macro("primary_attack", true),
-        BTN_AIM = restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and managers.localization:btn_macro("reload", true) or managers.localization:btn_macro("secondary_attack", true),
+        BTN_AIM = restoration.Options:GetValue("WEAPONS/WeaponHandling/SeparateBowADS") and managers.localization:btn_macro("reload", true) or managers.localization:btn_macro("secondary_attack", true),
         BTN_GADGET = managers.localization:btn_macro("weapon_gadget", true),
         BTN_BIPOD = managers.localization:btn_macro("deploy_bipod", true)
     }
@@ -5894,7 +5894,7 @@ function BlackMarketGui:update_info_text()
 			for _, id in ipairs(managers.weapon_factory:get_assembled_blueprint(crafted.factory_id, crafted.blueprint)) do
 				local part = managers.weapon_factory:_part_data(id, crafted.factory_id)
 				if part and ( part.has_second_sight or part.sub_type == "second_sight" or ( part.perks and table.contains(part.perks, "second_sight") ) ) then
-					has_second_sight = not restoration.Options:GetValue("OTHER/WeaponHandling/SecondSightSprint") and true
+					has_second_sight = not restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/SecondSightSprint") and true
 					break -- don't need to keep looking if one is present
 				end
 			end

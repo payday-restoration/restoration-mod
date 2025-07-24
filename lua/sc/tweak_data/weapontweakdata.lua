@@ -7823,7 +7823,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m1911.reload_speed_multiplier = 1.15
 						self.m1911.timers.reload_exit_empty = 0.5
 						self.m1911.timers.reload_exit_not_empty = 0.65
-						if restoration.Options:GetValue("WEAPONANIMS/m1911_foley") then
+						if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/m1911_foley") then
 							self.m1911.animations.reload_name_id = "sparrow"
 						end
 					--Akimbo
@@ -12341,7 +12341,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g3.panic_suppression_chance = 0.05
 						self.g3.can_shoot_through_enemy = true
 						self.g3.can_shoot_through_wall = false
-						if restoration.Options:GetValue("WEAPONANIMS/g3_niphen") then
+						if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen") then
 							self.g3.animations.reload_name_id = "g3_niphen"
 							self.g3.timers.reload_empty = 3.3
 							self.g3.timers.reload_exit_empty = 1.45
@@ -34340,7 +34340,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 			end
 
-			if restoration.Options:GetValue("OTHER/WeaponHandling/AutoDMRs") then
+			if restoration.Options:GetValue("WEAPONS/WeaponHandling/AutoDMRs") then
 				if weap.recategorize[1] == "dmr_ar" and weap.CAN_TOGGLE_FIREMODE and weap.CAN_TOGGLE_FIREMODE == true and weap.FIRE_MODE == "single" then
 					weap.FIRE_MODE = "auto"
 				end

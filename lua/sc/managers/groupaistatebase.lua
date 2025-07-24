@@ -21,6 +21,10 @@ GroupAIStateBase.MEGAPHONE_EVENTS = {
 }
 table.list_append(GroupAIStateBase.EVENT_SYNC, GroupAIStateBase.MEGAPHONE_EVENTS)
 
+GroupAIStateBase.DIFF_INC_INITIAL = 0.1
+GroupAIStateBase.DIFF_INC_CIVILIAN_KILLED = 0.1
+GroupAIStateBase.DIFF_INC_POLICE_REGROUPING = 0.3
+
 function GroupAIStateBase:_calculate_difficulty_ratio()
 	local ramp = tweak_data.group_ai.difficulty_curve_points
 
@@ -1726,7 +1730,7 @@ if Network:is_server() then
 		end
 
 		if restoration.civ_death_diff_increase then
-			self:set_difficulty(nil, 0.1) --Diff increase when killing a civ
+			self:set_difficulty(nil, self.DIFF_INC_CIVILIAN_KILLED or 0.1) --Diff increase when killing a civ
 		end
 
 		if not self._hunt_mode and self._assault_number and self._assault_number >= 1 then
@@ -1771,7 +1775,7 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 	-- Also, add 0.1 here instead of setting so you can't bypass civ penalty on some heists
 	if script_value and script_value > 0 and not self._loud_diff_set then
 		self._loud_diff_set = true
-		manual_value = self:_mutate_diff_value(0.1)
+		manual_value = self:_mutate_diff_value(self.DIFF_INC_INITIAL or 0.1)
 	end
 
 	if not manual_value then

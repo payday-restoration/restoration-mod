@@ -1556,6 +1556,9 @@ function GroupAIStateBase:on_criminal_suspicion_progress(u_suspect, u_observer, 
 	end
 end
 
+-- Modified function in Res
+-- Not needed in modern game versions?
+--[[
 function GroupAIStateBase:set_whisper_mode(state)
 	state = state and true or false
 
@@ -1588,6 +1591,7 @@ function GroupAIStateBase:set_whisper_mode(state)
 		self:_clear_criminal_suspicion_data()
 	end
 end
+]]
 
 function GroupAIStateBase:chk_say_teamAI_combat_chatter(unit)
 	if not self:is_detection_persistent() then
@@ -1617,6 +1621,9 @@ function GroupAIStateBase:chk_say_teamAI_combat_chatter(unit)
 	unit:sound():say("g90", true, true)
 end
 
+-- Modified function in Res
+-- Not needed in modern game versions?
+--[[
 function GroupAIStateBase:register_AI_attention_object(unit, handler, nav_tracker, team, SO_access)
 	local store_instead = nil
 
@@ -1650,7 +1657,10 @@ function GroupAIStateBase:register_AI_attention_object(unit, handler, nav_tracke
 
 	self:on_AI_attention_changed(unit:key())
 end
+]]
 
+-- New function to Res
+-- Not needed in modern game versions?
 function GroupAIStateBase:chk_register_removed_attention_objects()
 	if not self._removed_attention_objects then
 		return
@@ -1670,12 +1680,16 @@ function GroupAIStateBase:chk_register_removed_attention_objects()
 	self._removed_attention_objects = nil
 end
 
+-- New function to Res
+-- Not needed in modern game versions?
 function GroupAIStateBase:store_removed_attention_object(u_key, attention_info)
 	self._removed_attention_objects = self._removed_attention_objects or {}
 
 	self._removed_attention_objects[u_key] = attention_info
 end
 
+-- New function to Res
+-- Not needed in modern game versions?
 function GroupAIStateBase:chk_unregister_irrelevant_attention_objects()
 	local all_attention_objects = self:get_all_AI_attention_objects()
 

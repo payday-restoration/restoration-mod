@@ -12353,13 +12353,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						else
 							if BeardLib.Utils:FindMod("g3 animation") then
 								self.g3.reload_speed_multiplier = 0.7254
-								self.g3.timers.reload_empty = 1.68
-								self.g3.timers.reload_exit_empty = 0.8
+								self.g3.timers.reload_empty = 1.65
+								self.g3.timers.reload_exit_empty = 0.82
 								self.g3.timers.reload_not_empty = 1.22
 								self.g3.timers.reload_exit_not_empty = 0.6
-								self.g3.reload_offset = {
-									reload_slap = -0.266
-								}
 							else
 								self.g3.reload_speed_multiplier = 0.865
 								self.g3.timers.reload_empty = 1.95
@@ -28660,11 +28657,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.s556.stats = {
 					damage = 30,
-					spread = 86,
-					recoil = 77,
+					spread = 84,
+					recoil = 79,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 23,
+					concealment = 24,
 					suppression = 10,
 					alert_size = 2,
 					extra_ammo = 101,

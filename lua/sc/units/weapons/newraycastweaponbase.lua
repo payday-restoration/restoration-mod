@@ -2126,7 +2126,6 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 		--if has_mindblown_ace then
 			--managers.player._last_no_falloff_headshot_t = self._unit:timer():time() + (tweak_data.upgrades.headshot_no_falloff_cd or 0)
 		--end
-		log("asddddddadadas")
 		return damage
 	end
 

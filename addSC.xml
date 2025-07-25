@@ -1976,6 +1976,7 @@
 	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_retro_plastic" force="true"/>
 	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag" force="true"/>
 	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag_psg" force="true"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_body_upper" force="true"/>
 	
 	<!-- Fixed anim lengths for some melee sets -->
 	<animation			path="anims/fps/melee/agave/melee_attack_var1" force="true"/>

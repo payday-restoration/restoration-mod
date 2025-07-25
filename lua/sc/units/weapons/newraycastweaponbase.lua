@@ -2122,7 +2122,6 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	--Initialize base info.
 
 	local has_mindblown_ace = managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head --and (managers.player._last_no_falloff_headshot_t or 0) < self._unit:timer():time()
-	log(tostring(has_mindblown_ace))
 	if (self._chf and check_col_ray_head) or --[[not self:in_burst_mode() and not is_rapidfire and]] (self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase")) or has_mindblown_ace then
 		--if has_mindblown_ace then
 			--managers.player._last_no_falloff_headshot_t = self._unit:timer():time() + (tweak_data.upgrades.headshot_no_falloff_cd or 0)

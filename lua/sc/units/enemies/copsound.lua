@@ -552,6 +552,66 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	
 	local full_sound = nil
 	
+	if self._prefix == "l5n_" then
+        if sound_name == "c01" or sound_name == "att" then
+            full_sound = "Play_l5n_c01a"
+        elseif sound_name == "rdy" then
+            full_sound = "Play_l5n_rdy"
+        elseif sound_name == "g90" then
+            full_sound = "Play_l5n_g90"
+        elseif sound_name == "d01" then
+            full_sound = "Play_l5n_d01_con"
+        elseif sound_name == "d02" then
+            full_sound = "Play_l5n_d02_con"
+        elseif sound_name == "ch1" then
+            full_sound = "Play_l5n_ch1_con"
+        elseif sound_name == "ch2" then
+            full_sound = "Play_l5n_ch2_con"
+        elseif sound_name == "ch3" then
+            full_sound = "Play_l5n_ch3_con"
+        elseif sound_name == "ch4" then
+            full_sound = "Play_l5n_ch4_con"
+        elseif sound_name == "m01" then
+            full_sound = "Play_l5n_m01_any"
+        elseif sound_name == "mov" then
+            full_sound = "Play_l5n_mov_ass"
+        elseif sound_name == "p01" then
+            full_sound = "Play_l5n_p01_ass"
+        elseif sound_name == "p02" then
+            full_sound = "Play_l5n_p02_ass"
+        elseif sound_name == "p03" then
+            full_sound = "Play_l5n_p03_ass"
+        elseif sound_name == "pos" then
+            full_sound = "Play_l5n_pos_con"
+        elseif sound_name == "prm" then
+            full_sound = "Play_l5n_prm_con"
+        elseif sound_name == "pus" then
+            full_sound = "Play_l5n_pus_con"
+        elseif sound_name == "r01" then
+            full_sound = "Play_l5n_r01_con"
+        elseif sound_name == "s01x" then
+            full_sound = "Play_l5n_s01x_con"
+        elseif sound_name == "i01" then
+            full_sound = "Play_l5n_i01_con"
+        elseif sound_name == "i02" then
+            full_sound = "Play_l5n_i02_con"
+        elseif sound_name == "i03" then
+            full_sound = "Play_l5n_i03_con__________________MISSING_i03c"
+        elseif sound_name == "l01" then
+            full_sound = "Play_l5n_l01_con__________________MISSING_l01b"
+        elseif sound_name == "lk3a" then
+            full_sound = "Play_l5n_lk3_ass"
+        elseif sound_name == "lk3b" then
+            full_sound = "Play_l5n_lk3_con"
+        elseif sound_name == "hlp" then
+            full_sound = "Play_l5n_hlp_con"
+        elseif sound_name == "x02a_any_3p" then
+            full_sound = "l1n_x01a_any_3p"
+        elseif sound_name == "x01a_any_3p" then
+            full_sound = "l1n_x02a_any_3p"
+        end
+    end
+	
 	if self._prefix == "l5d_" then
 		if sound_name == "c01" or sound_name == "att" then
 			sound_name = "g90"

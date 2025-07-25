@@ -19093,7 +19093,10 @@ end)
 						translation = Vector3(0, -8, -2.77)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g3 = {
-						translation = Vector3(0.01, 2.5, -3.395)
+						translation = (
+							(cwakey and cwakey.Options:GetValue("g3_cwa_toggle") and Vector3(-0.0, -1.3, -3.38))
+							or Vector3(0.01, 2.5, -3.395)
+						)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_shak12 = {
 						translation = Vector3(0, -10, 1.585),

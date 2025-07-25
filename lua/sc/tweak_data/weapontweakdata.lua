@@ -12341,22 +12341,34 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g3.panic_suppression_chance = 0.05
 						self.g3.can_shoot_through_enemy = true
 						self.g3.can_shoot_through_wall = false
-						if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen") then
+						if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen") then --Update 65 Animations
 							self.g3.animations.reload_name_id = "g3_niphen"
 							self.g3.timers.reload_empty = 3.3
 							self.g3.timers.reload_exit_empty = 1.45
 							self.g3.timers.reload_not_empty = 2.5
 							self.g3.timers.reload_exit_not_empty = 1.05
 							self.g3.reload_speed_multiplier = 1.425
-						elseif cwakey and cwakey.Options:GetValue("g3_cwa_toggle") then
-							--TODO
+						elseif cwakey and cwakey.Options:GetValue("g3_cwa_toggle") then --Classic Weapon Animations
+							self.g3.animations.reload_name_id = "g3_cwa"
+							self.g3.weapon_hold = "g3_cwa"
+							self.g3.timers.reload_empty = 4.03
+							self.g3.timers.reload_exit_empty = 1
+							self.g3.timers.reload_not_empty = 2.15
+							self.g3.timers.reload_exit_not_empty = 1.1
 						else
-							if BeardLib.Utils:FindMod("g3 animation") then
+							--vanilla replacers
+							if BeardLib.Utils:FindMod("g3 animation") then --PlayBONK's Gewehr 3 Reload Animations (v3)
 								self.g3.reload_speed_multiplier = 0.7254
 								self.g3.timers.reload_empty = 1.65
 								self.g3.timers.reload_exit_empty = 0.82
 								self.g3.timers.reload_not_empty = 1.22
 								self.g3.timers.reload_exit_not_empty = 0.6
+							elseif BeardLib.Utils:FindMod("JustAnotherG3 Reload") then  --Masavik's G3 Reload Animations (The original version; NOT the vanilla timer version)
+								self.g3.timers.reload_empty = 2.67
+								self.g3.timers.reload_exit_empty = 0.9
+								self.g3.timers.reload_not_empty = 1.67
+								self.g3.timers.reload_exit_not_empty = 0.9
+								self.g3.reload_speed_multiplier = 1.15295
 							else
 								self.g3.reload_speed_multiplier = 0.865
 								self.g3.timers.reload_empty = 1.95

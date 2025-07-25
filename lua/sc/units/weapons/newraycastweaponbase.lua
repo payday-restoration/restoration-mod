@@ -2591,6 +2591,26 @@ function NewRaycastWeaponBase:_set_parts_visible(visible)
 	self:_chk_charm_upd_state()
 end
 
+
+local g3_niphen = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen")
+function NewRaycastWeaponBase:weapon_tweak_data()
+	local wtd = NewRaycastWeaponBase.super.weapon_tweak_data(self)
+
+    if not self._parts then
+        return wtd
+    end
+
+    if not g3_niphen and BeardLib.Utils:FindMod("JustAnotherG3 Reload") and self._name_id == "g3" then
+		if self._parts.wpn_fps_ass_g3_b_sniper then 
+			wtd.animations.reload_name_id = "g3_psg"
+		elseif self._parts.wpn_fps_ass_g3_b_long or self._parts.wpn_fps_ass_g3_b_short then
+			wtd.animations.reload_name_id = "g3_long"
+		end
+	end
+
+    return wtd
+end
+
 if OWLFBullpupWeaponBase then
 	function OWLFBullpupWeaponBase:clbk_assembly_complete(...)
 		OWLFBullpupWeaponBase.super.clbk_assembly_complete(self, ...)

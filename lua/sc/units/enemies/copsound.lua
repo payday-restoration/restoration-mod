@@ -238,9 +238,8 @@ function CopSound:init(unit)
 		ids_func("units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk")		
 	}
 	local russian_medic_list = {
-		--Doesn't work
-		--ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
-		--ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_husk")
+		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_husk"),
 	}
 	local russian_merc_list = {
 		ids_func("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1"),
@@ -463,7 +462,7 @@ function CopSound:init(unit)
 	local female_enemy = table_contains(female_enemy_list, self._unit:name())
 	local russian_taser = table_contains(russian_taser_list, self._unit:name())
 	local russian_cloaker = table_contains(russian_cloaker_list, self._unit:name())
-	local russian_medic = table_contains(russian_medic_list, self._unit:nane())
+	local russian_medic = table_contains(russian_medic_list, self._unit:name())
 	local russian_merc = table_contains(russian_merc_list, self._unit:name())
 	local russian_mobster = table_contains(russian_mobster_list, self._unit:name())
 	local cobra_gangster = table_contains(cobras_list, self._unit:name())

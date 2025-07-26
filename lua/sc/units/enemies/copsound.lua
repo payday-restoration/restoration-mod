@@ -554,7 +554,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	
 	if self._prefix == "l5n_" then
         if sound_name == "c01" or sound_name == "att" then
-            full_sound = "Play_l5n_c01a"
+            full_sound = "Play_l5n_i01_con"
         elseif sound_name == "rdy" then
             full_sound = "Play_l5n_rdy"
         elseif sound_name == "g90" then

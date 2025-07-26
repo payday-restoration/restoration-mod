@@ -44,6 +44,13 @@ return {
 			},
 		},
 	},
+	-- Replace the turret with a spawngroup
+	[106548] = {
+		on_executed = {
+			{ id = 106539, remove = true },
+			{ id = 400005, delay = 0, delay_rand = 5 },
+		},
+	},
 	-- Spawngroup delays
 	[100128] = street_spawn,
 	[100132] = street_spawn,

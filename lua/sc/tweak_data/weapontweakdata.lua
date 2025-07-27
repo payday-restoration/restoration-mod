@@ -24829,6 +24829,75 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.peppermill then --Bioshocock Infimate Crank Gun
+				self.peppermill.categories = {
+					"minigun",
+					"smg"
+				}
+				self.peppermill.recategorize = { "miniguns" }
+				self.peppermill.damage_type = "machine_gun"
+				self.peppermill.has_description = false
+				self.peppermill.CLIP_AMMO_MAX = 100
+				self.peppermill.AMMO_MAX = 200
+				self.peppermill.FIRE_MODE = "auto"
+				self.peppermill.fire_mode_data = {}
+				self.peppermill.fire_rate_init_count = 5
+				self.peppermill.fire_rate_init_mult = 0.7
+				self.peppermill.fire_rate_init_ramp_up = true
+				self.peppermill.fire_mode_data.fire_rate = 0.10909090
+				self.peppermill.CAN_TOGGLE_FIREMODE = false
+				self.peppermill.kick = self.stat_info.kick_tables.random_recoil
+				self.peppermill.kick_pattern = {
+					{0, self.stat_info.kick_tables.random_recoil},
+					{7, self.stat_info.kick_tables.even_recoil},
+					{21, self.stat_info.kick_tables.right_recoil},
+					{34, self.stat_info.kick_tables.horizontal_right_recoil},
+					{52, self.stat_info.kick_tables.even_recoil},
+					{68, self.stat_info.kick_tables.left_recoil}
+				}
+				self.peppermill.muzzleflash = "_dmc/effects/heavy_muzzle"
+				self.peppermill.panic_suppression_chance = 0.05
+				self.peppermill.supported = true
+				self.peppermill.ads_speed = 0.600
+				self.peppermill.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 6000,
+					min_mult = 0.3334
+				}
+				self.peppermill.stats = {
+					damage = 60,
+					spread = 61,
+					recoil = 67,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 17,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.peppermill.stats_modifiers = nil
+				self.peppermill.spin_up_anims = true
+				self.peppermill.spin_up_t = 0.05
+				self.peppermill.spin_down_t = 0.1
+				self.peppermill.always_hipfire = true
+				self.peppermill.always_play_anims = true
+				self.peppermill.ign_ts = true
+				self.peppermill.sounds.use_fix = nil
+				self.peppermill.sounds.no_fix = nil
+				self.peppermill.timers.equip = 0.4
+				self.peppermill.timers.unequip = 0.4
+				self.peppermill.timers.reload_empty = 3
+				self.peppermill.timers.reload_exit_empty = 0.66
+				self.peppermill.timers.reload_not_empty = self.peppermill.timers.reload_empty
+				self.peppermill.timers.reload_exit_not_empty = self.peppermill.timers.reload_exit_empty
+				self.peppermill.reload_speed_multiplier = 0.61
+				self.peppermill.sms = sms_preset.lmg_90
+				self.peppermill.weapon_movement_penalty = sms_preset.lmg_90
+			end
+
 			if self.morita then
 				self.morita.recategorize = { "light_ar" }
 				self.morita.damage_type = "assault_rifle"

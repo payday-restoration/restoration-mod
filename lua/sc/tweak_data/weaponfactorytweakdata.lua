@@ -9573,7 +9573,6 @@ end)
 				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_sig")
 
-				self.wpn_fps_lmg_par_npc.uses_parts = deep_clone(self.wpn_fps_lmg_par.uses_parts)
 
 				--sorry for the pasghetti! Fix my fucking coding mess!!!!
 				--Hey, can't be any worse than mine :^)
@@ -9589,6 +9588,7 @@ end)
 				self.wpn_fps_lmg_par.override.wpn_fps_upg_o_atibal_reddot = { parent = "upper_reciever" }
 
 				self.wpn_fps_lmg_par_npc.override = deep_clone(self.wpn_fps_lmg_par.override)
+				self.wpn_fps_lmg_par_npc.uses_parts = deep_clone(self.wpn_fps_lmg_par.uses_parts)
 			end)
 
 		--M60
@@ -9710,8 +9710,9 @@ end)
 						(self.parts[part_id].sub_type and self.parts[part_id].sub_type == "second_sight")) then
 						self.wpn_fps_lmg_m60.override[part_id] = {
 							parent = "upper_reciever",
-							forbids = { "wpn_fps_lmg_m60_sight_standard" }
+							forbids = self.parts[part_id].forbids or {}
 						}
+						table.insert(self.wpn_fps_lmg_m60.override[part_id].forbids ,"wpn_fps_lmg_m60_sight_standard")
 						self.wpn_fps_lmg_m60.adds[part_id] = {"wpn_fps_ass_groza_o_adapter"}
 					end
 				end
@@ -51849,7 +51850,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_fps_lmg_svinet_s_legend",
 					third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_third_lmg_svinet_s_legend",
 				}
-			elseif self.parts[used_part_id].type == "extra" then
+			elseif self.parts[used_part_id].type == "extra" and not self.parts[used_part_id].sub_type == "second_sight" then
 				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
 					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",

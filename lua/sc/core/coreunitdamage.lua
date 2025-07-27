@@ -14,3 +14,13 @@ Hooks:PostHook(CoreBodyDamage, "init", "sh_init", function (self)
 		self._body_element._damage_multiplier = 0.4
 	end
 end)
+
+Hooks:PostHook(CoreDamageExtension, "run_sequence_simple", "DebugMissingSequenceRun", function(self, name, ...)
+	if not self._sequences then
+		log("[SEQUENCE DEBUG] Unit has no _sequences table: " .. tostring(self._unit:name()))
+	elseif not name then
+		log("[SEQUENCE DEBUG] Attempted to run a NIL sequence on unit: " .. tostring(self._unit:name()))
+	elseif not self._sequences[name] then
+		log("[SEQUENCE DEBUG] Missing sequence: '" .. tostring(name) .. "' on unit: " .. tostring(self._unit:name()))
+	end
+end)

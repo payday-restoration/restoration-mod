@@ -3,7 +3,6 @@ Hooks:PostHook(CoreBodyDamage, "init", "sh_init", function (self)
 	if not self._body_element then
 		return
 	end
-
 	if self._unit:character_damage() and self._unit:character_damage().IS_TANK then
 		if self._body_element._name:find("glass") then
 			self._body_element._damage_multiplier = tweak_data.character.tank_glass_damage_mul or self._body_element._damage_multiplier
@@ -15,7 +14,8 @@ Hooks:PostHook(CoreBodyDamage, "init", "sh_init", function (self)
 	end
 end)
 
-Hooks:PostHook(CoreDamageExtension, "run_sequence_simple", "DebugMissingSequenceRun", function(self, name, ...)
+-- Hook the correct class - CoreUnitDamage instead of CoreDamageExtension
+Hooks:PostHook(CoreUnitDamage, "run_sequence_simple", "DebugMissingSequenceRun", function(self, name, ...)
 	if not self._sequences then
 		log("[SEQUENCE DEBUG] Unit has no _sequences table: " .. tostring(self._unit:name()))
 	elseif not name then

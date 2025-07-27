@@ -1489,6 +1489,8 @@
 
 	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_scope_cc" load="false"/>
 	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_scope_cc_thq" load="false"/>
+	<!--for w/e reason the reticle is severely misaligned when using a parallax enabled reticle-->
+	<!--material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_reddot" load="false"/-->
 
 	<!--Weapon Unit Overrides-->
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>

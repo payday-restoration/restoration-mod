@@ -2593,7 +2593,8 @@ end
 
 
 local g3_niphen = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen")
-function NewRaycastWeaponBase:weapon_tweak_data()
+
+Hooks:PostHook(NewRaycastWeaponBase, "weapon_tweak_data", "res_weapon_tweak_data", function(self)
 	local wtd = NewRaycastWeaponBase.super.weapon_tweak_data(self)
 
     if not self._parts then
@@ -2605,11 +2606,13 @@ function NewRaycastWeaponBase:weapon_tweak_data()
 			wtd.animations.reload_name_id = "g3_psg"
 		elseif self._parts.wpn_fps_ass_g3_b_long or self._parts.wpn_fps_ass_g3_b_short then
 			wtd.animations.reload_name_id = "g3_long"
+		else
+			wtd.animations.reload_name_id = "g3"
 		end
 	end
 
     return wtd
-end
+end)
 
 if OWLFBullpupWeaponBase then
 	function OWLFBullpupWeaponBase:clbk_assembly_complete(...)

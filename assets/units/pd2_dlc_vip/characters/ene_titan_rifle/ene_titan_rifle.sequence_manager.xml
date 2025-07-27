@@ -4,6 +4,156 @@
 			<var_gadgets_swat value="0"/>
 		</variables>
 		
+		<body name="'glass_visor'">
+			<endurance bullet="2" explosion="4">
+				<run_sequence name="'crk_visor'"/>
+			</endurance>
+			<endurance explosion="6">
+				<run_sequence name="'destroy_visor'"/>
+			</endurance>
+		</body>
+		
+		<sequence editable_state="true" name="'crk_visor'" once="true" triggable="true">
+			<body enabled="false" name="'glass_visor'"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'destroy_visor'" once="true" triggable="true">
+			<body enabled="false" name="'glass_visor'"/>
+		</sequence>
+		
+		<!-- FILTERS -->
+		<filter name="'check_swat_ar'">
+			<check value="vars.var_gadgets_swat == 1"/>
+		</filter>
+		<filter name="'check_swat_sg'">
+			<check value="vars.var_gadgets_swat == 2"/>
+		</filter>
+		<filter name="'check_swat_shield'">
+			<check value="vars.var_gadgets_swat == 3"/>
+		</filter>
+		<filter name="'check_swat_sniper'">
+			<check value="vars.var_gadgets_swat == 4"/>
+		</filter>
+		<filter name="'check_swat_sniper_scripted'">
+			<check value="vars.var_gadgets_swat == 7"/>
+		</filter>
+		<filter name="'check_swat_shield_winters'">
+			<check value="vars.var_gadgets_swat == 5"/>
+		</filter>
+		<filter name="'check_taser'">
+			<check value="vars.var_gadgets_swat == 6"/>
+		</filter>
+		
+		<!-- MAIN SEQUENCES WITHOUT RANDOMIZATION -->
+		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
+			<!-- rifleman -->			
+			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar'"/>						
+			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
+						
+			<!-- heavy sg -->			
+			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg'"/>						
+			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg_lod1'"/>
+			<run_sequence filter="'check_swat_sg'" name="'heavy_helmet_b'"/>
+
+			<!-- shield -->			
+			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield'"/>						
+			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield_lod1'"/>
+			<run_sequence filter="'check_swat_shield'" name="'heavy_helmet_c'"/>
+
+			<!-- winters shield -->			
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_balaclava'"/>						
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_balaclava_lod1'"/>	
+			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_balaclava_b'"/>						
+			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_balaclava_b_lod1'"/>	
+			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_body_shield'"/>									
+			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_body_shield_lod1'"/>
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body'"/>									
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_lod1'"/>
+			<run_sequence filter="'check_swat_shield_winters'" name="'heavy_helmet_d'"/>
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_armor'"/>						
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_armor_lod1'"/>	
+		
+			<!-- sniper -->
+			<run_sequence filter="'check_swat_sniper'" name="'setup_sniper_basic'"/>		
+			<run_sequence filter="'check_swat_sniper_scripted'" name="'setup_sniper_basic'"/>		
+			<object filter="'check_swat_sniper_scripted'" enabled="false" name="'g_body_armor'"/>						
+			<object filter="'check_swat_sniper_scripted'" enabled="false" name="'g_body_armor_lod1'"/>	
+
+			<!-- taser -->			
+			<object filter="'check_taser'" enabled="false" name="'g_balaclava'"/>						
+			<object filter="'check_taser'" enabled="false" name="'g_balaclava_lod1'"/>	
+			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b'"/>						
+			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b_lod1'"/>	
+			<object filter="'check_taser'" enabled="true" name="'g_body_tazer'"/>									
+			<object filter="'check_taser'" enabled="true" name="'g_body_tazer_lod1'"/>
+			<object filter="'check_taser'" enabled="false" name="'g_body'"/>									
+			<object filter="'check_taser'" enabled="false" name="'g_body_lod1'"/>
+			<run_sequence filter="'check_taser'" name="'heavy_helmet_e'"/>			
+		</sequence>
+		
+		<sequence editable_state="true" name="'setup_sniper_basic'" once="true" triggable="true">
+			<!-- No randomization - just basic sniper setup -->
+			<object enabled="true" name="'g_goggles_a'"/>
+			<object enabled="true" name="'g_goggles_a_lod1'"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'heavy_helmet_b'" once="true" triggable="true">
+			<object enabled="true" name="'g_helmet_sg_lod1'"/>
+			<object enabled="true" name="'g_helmet_sg_lod2'"/>
+			<object enabled="true" name="'g_helmet_sg_lod3'"/>
+			<object enabled="true" name="'g_mask_lod1'"/>
+			<object enabled="true" name="'g_mask_lod2'"/>
+			<body enabled="true" name="'sg_mask'"/>
+			<object enabled="false" name="'g_helmet_lod1'"/>
+			<object enabled="false" name="'g_helmet_lod2'"/>
+			<object enabled="false" name="'g_helmet_lod3'"/>
+			<decal_mesh enabled="false" name="'c_glass'"/>		
+			<decal_mesh enabled="true" name="'c_mask_taser'"/>						
+			<decal_mesh enabled="true" name="'c_glass_shield'"/>	
+			<body enabled="true" name="'glass_shield'"/>								
+			<body enabled="false" name="'glass_swat'"/>		
+		</sequence>
+		
+		<sequence editable_state="true" name="'heavy_helmet_c'" once="true" triggable="true">
+			<object enabled="true" name="'g_helmet_shield_lod1'"/>
+			<object enabled="true" name="'g_helmet_shield_lod2'"/>
+			<object enabled="true" name="'g_mask_lod1'"/>
+			<object enabled="true" name="'g_mask_lod2'"/>
+			<object enabled="true" name="'g_mask_lod3'"/>
+			<body enabled="true" name="'sg_mask'"/>		
+			<object enabled="false" name="'g_helmet_lod1'"/>
+			<object enabled="false" name="'g_helmet_lod2'"/>
+			<object enabled="false" name="'g_helmet_lod3'"/>
+			<decal_mesh enabled="false" name="'c_glass'"/>			
+			<decal_mesh enabled="true" name="'c_mask_taser'"/>			
+			<decal_mesh enabled="false" name="'c_glass_shield'"/>				
+			<body enabled="false" name="'glass_swat'"/>		
+		</sequence>
+		
+		<sequence editable_state="true" name="'heavy_helmet_d'" once="true" triggable="true">
+			<object enabled="true" name="'g_helmet_lod5'"/>
+			<object enabled="true" name="'g_helmet_lod6'"/>
+			<object enabled="true" name="'g_helmet_lod7'"/>
+			<decal_mesh enabled="true" name="'dm_helmet_shield'"/>				
+			<decal_mesh enabled="false" name="'dm_helmet'"/>				
+			<object enabled="false" name="'g_helmet_lod1'"/>
+			<object enabled="false" name="'g_helmet_lod2'"/>
+			<object enabled="false" name="'g_helmet_lod3'"/>						
+		</sequence>
+		
+		<sequence editable_state="true" name="'heavy_helmet_e'" once="true" triggable="true">
+			<object enabled="true" name="'g_helmet_taser_lod1'"/>
+			<object enabled="true" name="'g_helmet_taser_lod2'"/>
+			<object enabled="true" name="'g_helmet_taser_lod3'"/>
+			<decal_mesh enabled="true" name="'dm_helmet_taser'"/>	
+			<body enabled="true" name="'sg_mask'"/>		
+			<decal_mesh enabled="true" name="'c_mask_taser'"/>		
+			<decal_mesh enabled="false" name="'dm_helmet'"/>				
+			<object enabled="false" name="'g_helmet_lod1'"/>
+			<object enabled="false" name="'g_helmet_lod2'"/>
+			<object enabled="false" name="'g_helmet_lod3'"/>						
+		</sequence>
+		
 		<!-- BASIC SEQUENCES ONLY -->
 		<sequence editable_state="true" name="'swat_sg'" triggable="true" once="true">
 			<set_variables var_gadgets_swat="2"/>

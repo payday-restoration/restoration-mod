@@ -2775,6 +2775,58 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		end
 	end
 
+	--Gross and ugly but I don't want to mess with _update_foley to check the airborn state
+	if not self._check_fire_land and self._state_data.in_air == true then
+		self._check_fire_land = true
+	elseif self._check_fire_land == true and self._state_data.in_air ~= true then
+		self._check_fire_land = nil
+		local player_unit = managers.player:player_unit()
+		if primary and not primary:clip_empty() and primary:weapon_tweak_data().it_eNDs_today then
+			if math.random() < primary:weapon_tweak_data().it_eNDs_today then
+				if self._unit:inventory():equipped_selection() == 2 then
+					self:_check_action_primary_attack(t, { btn_primary_attack_state = true, btn_primary_attack_press = true}) --fake the input
+				else
+					primary:_fire_sound()
+					primary:set_ammo_remaining_in_clip( primary:get_ammo_remaining_in_clip() - 1)
+					primary:set_ammo_total( primary:get_ammo_total() - 1)
+					managers.hud:set_ammo_amount(primary:selection_index(), primary:ammo_info())
+					if player_unit and player_unit.character_damage and player_unit:character_damage() then
+						if not player_unit:character_damage():is_downed() then
+							player_unit:character_damage()._unit:sound():play("player_hit_permadamage")
+							player_unit:character_damage():_calc_health_damage_no_deflection({
+								attacker_unit = player_unit,
+								damage = primary:_get_current_damage(),
+								variant = "explosion"
+							})
+						end
+					end
+				end
+			end
+		end
+		if secondary and not secondary:clip_empty() and secondary:weapon_tweak_data().it_eNDs_today then
+			if math.random() < secondary:weapon_tweak_data().it_eNDs_today then
+				if self._unit:inventory():equipped_selection() == 1 then
+					self:_check_action_primary_attack(t, { btn_primary_attack_state = true, btn_primary_attack_press = true})
+				else
+					secondary:_fire_sound()
+					secondary:set_ammo_remaining_in_clip( secondary:get_ammo_remaining_in_clip() - 1)
+					secondary:set_ammo_total( secondary:get_ammo_total() - 1)
+					managers.hud:set_ammo_amount(secondary:selection_index(), secondary:ammo_info())
+					if player_unit and player_unit.character_damage and player_unit:character_damage() then
+						if not player_unit:character_damage():is_downed() then
+							player_unit:character_damage()._unit:sound():play("player_hit_permadamage")
+							player_unit:character_damage():_calc_health_damage_no_deflection({
+								attacker_unit = player_unit,
+								damage = secondary:_get_current_damage(),
+								variant = "explosion"
+							})
+						end
+					end
+				end
+			end
+		end
+	end
+
 	--Better snap aiming stuff when using a controller
 	if managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR then
 		local current_weapon = self:get_equipped_weapon()

@@ -25540,6 +25540,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.papa320.timers.reload_exit_not_empty = 1
 				self.papa320.stats_modifiers = nil
 				self.papa320.panic_suppression_chance = 0.05
+				self.papa320.it_eNDs_today = 0.1
 			end
 			if self.x_papa320 then
 				self.x_papa320.recategorize = { "light_pis" }
@@ -25587,6 +25588,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_papa320.stats_modifiers = nil
 				self.x_papa320.panic_suppression_chance = 0.05
+				self.x_papa320.it_eNDs_today = 0.1
 			end
 
 			if self.m6d then --RJC9000 and Offyerrocker's M6D

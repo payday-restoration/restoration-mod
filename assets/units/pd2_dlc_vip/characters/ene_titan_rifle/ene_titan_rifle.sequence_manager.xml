@@ -1,9 +1,7 @@
 <sequence_manager>
 	<unit>
 		<variables>
-			
 			<var_gadgets_swat value="0"/>					
-						
 			<var_goggles value="0"/>					
 		</variables>
 		
@@ -37,6 +35,18 @@
 			</endurance>
 		</body>	
 
+		<!-- ATOMIC FILTERS - Combined for better performance -->
+		<filter name="'check_swat_combat'">
+			<check value="vars.var_gadgets_swat >= 1 and vars.var_gadgets_swat <= 4"/>
+		</filter>
+		<filter name="'check_swat_special'">
+			<check value="vars.var_gadgets_swat >= 5"/>
+		</filter>
+		<filter name="'check_has_goggles'">
+			<check value="vars.var_goggles > 0"/>
+		</filter>
+
+		<!-- INDIVIDUAL FILTERS (kept for compatibility) -->
 		<filter name="'check_swat_ar'">
 			<check value="vars.var_gadgets_swat == 1"/>
 		</filter>
@@ -49,307 +59,228 @@
 		<filter name="'check_swat_sniper'">
 			<check value="vars.var_gadgets_swat == 4"/>
 		</filter>
-		<filter name="'check_swat_sniper_scripted'">
-			<check value="vars.var_gadgets_swat == 7"/>
-		</filter>
 		<filter name="'check_swat_shield_winters'">
 			<check value="vars.var_gadgets_swat == 5"/>
 		</filter>
 		<filter name="'check_taser'">
 			<check value="vars.var_gadgets_swat == 6"/>
 		</filter>
-
-		<filter name="'check_goggle_a'">
-			<check value="vars.var_goggles == 1"/>
+		<filter name="'check_swat_sniper_scripted'">
+			<check value="vars.var_gadgets_swat == 7"/>
 		</filter>
-
-		<filter name="'check_goggle_b'">
-			<check value="vars.var_goggles == 2"/>
-		</filter>
-				
-		<sequence editable_state="true" name="'swat_sg'" triggable="true" once="true">						
+		
+		<!-- SETUP SEQUENCES - ATOMIC OPERATIONS -->
+		<sequence editable_state="true" name="'swat_sg'" triggable="true" once="true">
 			<set_variables var_gadgets_swat="2"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
+			<run_sequence name="'setup_loadout'"/>
 		</sequence>
 
-		<sequence editable_state="true" name="'swat_ar'" triggable="true" once="true">						
+		<sequence editable_state="true" name="'swat_ar'" triggable="true" once="true">
 			<set_variables var_gadgets_swat="1"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
+			<run_sequence name="'setup_loadout'"/>
 		</sequence>
 		
-		<sequence editable_state="true" name="'swat_shield'" triggable="true" once="true">						
+		<sequence editable_state="true" name="'swat_shield'" triggable="true" once="true">
 			<set_variables var_gadgets_swat="3"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
+			<run_sequence name="'setup_loadout'"/>
 		</sequence>
 
-		<sequence editable_state="true" name="'swat_sniper'" triggable="true" once="true">						
+		<sequence editable_state="true" name="'swat_sniper'" triggable="true" once="true">
 			<set_variables var_gadgets_swat="4"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
+			<run_sequence name="'setup_loadout'"/>
 		</sequence>
 		
-		<sequence editable_state="true" name="'swat_sniper_scripted'" triggable="true" once="true">						
+		<sequence editable_state="true" name="'swat_sniper_scripted'" triggable="true" once="true">
 			<set_variables var_gadgets_swat="7"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
+			<run_sequence name="'setup_loadout'"/>
 		</sequence>
 		
-		<sequence editable_state="true" name="'winters_shield'" triggable="true" once="true">						
+		<sequence editable_state="true" name="'winters_shield'" triggable="true" once="true">
 			<set_variables var_gadgets_swat="5"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
+			<run_sequence name="'setup_loadout'"/>
 		</sequence>
 		
-		<sequence editable_state="true" name="'taser_titan'" triggable="true" once="true">						
+		<sequence editable_state="true" name="'taser_titan'" triggable="true" once="true">
 			<set_variables var_gadgets_swat="6"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
+			<run_sequence name="'setup_loadout'"/>
 		</sequence>
 		
 		<sequence editable_state="true" name="'remove_healing'" triggable="true" once="true">	
-			<function   extension="'character_damage'" function="'lpf_disable'" start_time="0"/> 	
-			<effect 	damp_time="3" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
-			<effect 	damp_time="4" name="'effects/particles/dest/security_camera_dest'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
-			<effect 	damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
+			<!-- ATOMIC: Disable antenna in single operation -->
+			<function extension="'character_damage'" function="'lpf_disable'" start_time="0"/> 	
+			<object enabled="false" name="'g_body_antenna'"/>
+			<object enabled="false" name="'g_body_antenna_lod1'"/>
+			<body enabled="false" name="'antenna'"/>
+			<decal_mesh enabled="false" name="'c_hitbox_antenna'"/>
 			
-			<object enabled="false" name="'g_body_antenna'"/>						
-			<body enabled="false" name="'antenna'"/>						
-			<decal_mesh enabled="false" name="'c_hitbox_antenna'"/>						
-			<object enabled="false" name="'g_body_antenna_lod1'"/>			
+			<!-- Effects after state change -->
+			<effect damp_time="3" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
+			<effect damp_time="4" name="'effects/particles/dest/security_camera_dest'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
+			<effect damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
 		</sequence>
 
+		<!-- ATOMIC SETUP SEQUENCE - All equipment setup in one place -->
+		<sequence editable_state="true" name="'setup_loadout'" triggable="true" once="true">	
+			<!-- ATOMIC: All random picks happen first, then all changes applied atomically -->
+			<set_variables var_goggles="0"/>
+			
+			<!-- WEAPONS - All at once -->
+			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar'"/>
+			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
+			
+			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg'"/>
+			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg_lod1'"/>
+			
+			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield'"/>
+			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield_lod1'"/>
 
-		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
-			<!-- GENERIC -->
+			<!-- BODY SWAPS - Atomic -->
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_balaclava'"/>
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_balaclava_lod1'"/>
+			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_balaclava_b'"/>
+			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_balaclava_b_lod1'"/>
+			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_body_shield'"/>
+			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_body_shield_lod1'"/>
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body'"/>
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_lod1'"/>
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_armor'"/>
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_armor_lod1'"/>
+
+			<object filter="'check_taser'" enabled="false" name="'g_balaclava'"/>
+			<object filter="'check_taser'" enabled="false" name="'g_balaclava_lod1'"/>
+			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b'"/>
+			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b_lod1'"/>
+			<object filter="'check_taser'" enabled="true" name="'g_body_tazer'"/>
+			<object filter="'check_taser'" enabled="true" name="'g_body_tazer_lod1'"/>
+			<object filter="'check_taser'" enabled="false" name="'g_body'"/>
+			<object filter="'check_taser'" enabled="false" name="'g_body_lod1'"/>
+
+			<object filter="'check_swat_sniper_scripted'" enabled="false" name="'g_body_armor'"/>
+			<object filter="'check_swat_sniper_scripted'" enabled="false" name="'g_body_armor_lod1'"/>
+
+			<!-- HELMETS - Run specific helmet setup -->
+			<run_sequence filter="'check_swat_sg'" name="'setup_sg_helmet'"/>
+			<run_sequence filter="'check_swat_shield'" name="'setup_shield_helmet'"/>
+			<run_sequence filter="'check_swat_shield_winters'" name="'setup_winters_helmet'"/>
+			<run_sequence filter="'check_taser'" name="'setup_taser_helmet'"/>
+			<run_sequence filter="'check_swat_sniper'" name="'setup_sniper_gear'"/>
+			<run_sequence filter="'check_swat_sniper_scripted'" name="'setup_sniper_gear'"/>
+			
+			<!-- RANDOMIZED GEAR - ATOMIC: All random selections happen in single sequence calls -->
 			<run_sequence name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
 			<run_sequence name="'face_'..pick('a','b','c')"/>
-
-			<!-- rifleman -->			
-			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar'"/>						
-			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
-						
-			<!-- heavy sg -->			
-			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg'"/>						
-			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg_lod1'"/>
-			<run_sequence filter="'check_swat_sg'" name="'heavy_helmet_b'"/>
-
-			<!-- shield -->			
-			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield'"/>						
-			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield_lod1'"/>
-			<run_sequence filter="'check_swat_shield'" name="'heavy_helmet_c'"/>
-
-			<!-- shield -->			
-			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_balaclava'"/>						
-			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_balaclava_lod1'"/>	
-			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_balaclava_b'"/>						
-			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_balaclava_b_lod1'"/>	
-			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_body_shield'"/>									
-			<object filter="'check_swat_shield_winters'" enabled="true" name="'g_body_shield_lod1'"/>
-			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body'"/>									
-			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_lod1'"/>
-			<run_sequence filter="'check_swat_shield_winters'" name="'heavy_helmet_d'"/>
-			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_armor'"/>						
-			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_armor_lod1'"/>	
-		
-						
-			<!-- sniper -->
-			<run_sequence filter="'check_swat_sniper'" name="'helmet'..pick('_nun','_headset','_nun','_nun')"/>		
-			<run_sequence filter="'check_swat_sniper'" name="'goggles_'..pick('a', 'a', 'a', 'a', 'a', 'b', 'c')"/>		
-			
-			<run_sequence filter="'check_swat_sniper_scripted'" name="'helmet'..pick('_nun','_headset','_nun','_nun')"/>		
-			<run_sequence filter="'check_swat_sniper_scripted'" name="'goggles_'..pick('a', 'a', 'a', 'a', 'a', 'b', 'c')"/>		
-			<object filter="'check_swat_sniper_scripted'" enabled="false" name="'g_body_armor'"/>						
-			<object filter="'check_swat_sniper_scripted'" enabled="false" name="'g_body_armor_lod1'"/>	
-
-
-			<!-- taser -->			
-			<object filter="'check_taser'" enabled="false" name="'g_balaclava'"/>						
-			<object filter="'check_taser'" enabled="false" name="'g_balaclava_lod1'"/>	
-			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b'"/>						
-			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b_lod1'"/>	
-			<object filter="'check_taser'" enabled="true" name="'g_body_tazer'"/>									
-			<object filter="'check_taser'" enabled="true" name="'g_body_tazer_lod1'"/>
-			<object filter="'check_taser'" enabled="false" name="'g_body'"/>									
-			<object filter="'check_taser'" enabled="false" name="'g_body_lod1'"/>
-			<run_sequence filter="'check_taser'" name="'heavy_helmet_e'"/>			
 		</sequence>
 		
+		<!-- ATOMIC HELMET SETUPS -->
+		<sequence editable_state="true" name="'setup_sg_helmet'" once="true" triggable="true">
+			<!-- ATOMIC: All SG helmet changes at once -->
+			<object enabled="false" name="'g_helmet_lod1'"/>
+			<object enabled="false" name="'g_helmet_lod2'"/>
+			<object enabled="false" name="'g_helmet_lod3'"/>
+			<object enabled="true" name="'g_helmet_sg_lod1'"/>
+			<object enabled="true" name="'g_helmet_sg_lod2'"/>
+			<object enabled="true" name="'g_helmet_sg_lod3'"/>
+			<object enabled="true" name="'g_mask_lod1'"/>
+			<object enabled="true" name="'g_mask_lod2'"/>
+			<body enabled="true" name="'sg_mask'"/>
+			<decal_mesh enabled="false" name="'c_glass'"/>
+			<decal_mesh enabled="true" name="'c_mask_taser'"/>
+			<decal_mesh enabled="true" name="'c_glass_shield'"/>
+			<body enabled="true" name="'glass_shield'"/>
+			<body enabled="false" name="'glass_swat'"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'setup_shield_helmet'" once="true" triggable="true">
+			<!-- ATOMIC: All shield helmet changes at once -->
+			<object enabled="false" name="'g_helmet_lod1'"/>
+			<object enabled="false" name="'g_helmet_lod2'"/>
+			<object enabled="false" name="'g_helmet_lod3'"/>
+			<object enabled="true" name="'g_helmet_shield_lod1'"/>
+			<object enabled="true" name="'g_helmet_shield_lod2'"/>
+			<object enabled="true" name="'g_mask_lod1'"/>
+			<object enabled="true" name="'g_mask_lod2'"/>
+			<object enabled="true" name="'g_mask_lod3'"/>
+			<body enabled="true" name="'sg_mask'"/>
+			<decal_mesh enabled="false" name="'c_glass'"/>
+			<decal_mesh enabled="true" name="'c_mask_taser'"/>
+			<decal_mesh enabled="false" name="'c_glass_shield'"/>
+			<body enabled="false" name="'glass_swat'"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'setup_winters_helmet'" once="true" triggable="true">
+			<!-- ATOMIC: All winters helmet changes at once -->
+			<object enabled="false" name="'g_helmet_lod1'"/>
+			<object enabled="false" name="'g_helmet_lod2'"/>
+			<object enabled="false" name="'g_helmet_lod3'"/>
+			<object enabled="true" name="'g_helmet_lod5'"/>
+			<object enabled="true" name="'g_helmet_lod6'"/>
+			<object enabled="true" name="'g_helmet_lod7'"/>
+			<decal_mesh enabled="true" name="'dm_helmet_shield'"/>
+			<decal_mesh enabled="false" name="'dm_helmet'"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'setup_taser_helmet'" once="true" triggable="true">
+			<!-- ATOMIC: All taser helmet changes at once -->
+			<object enabled="false" name="'g_helmet_lod1'"/>
+			<object enabled="false" name="'g_helmet_lod2'"/>
+			<object enabled="false" name="'g_helmet_lod3'"/>
+			<object enabled="true" name="'g_helmet_taser_lod1'"/>
+			<object enabled="true" name="'g_helmet_taser_lod2'"/>
+			<object enabled="true" name="'g_helmet_taser_lod3'"/>
+			<decal_mesh enabled="true" name="'dm_helmet_taser'"/>
+			<body enabled="true" name="'sg_mask'"/>
+			<decal_mesh enabled="true" name="'c_mask_taser'"/>
+			<decal_mesh enabled="false" name="'dm_helmet'"/>
+		</sequence>
+
+		<sequence editable_state="true" name="'setup_sniper_gear'" once="true" triggable="true">
+			<!-- ATOMIC: Sniper setup with RANDOMIZED goggle choice -->
+			<run_sequence name="'helmet'..pick('_nun','_headset','_nun','_nun')"/>
+			<run_sequence name="'goggles_'..pick('a', 'a', 'a', 'a', 'a', 'b', 'c')"/>
+		</sequence>
+
+		<!-- RANDOMIZED HELMET SEQUENCES - ATOMIC -->
 		<sequence editable_state="true" name="'helmet_headset'" once="true" triggable="true">
+			<!-- ATOMIC: Enable headset objects together -->
 			<object enabled="true" name="'g_headset'"/>
 			<object enabled="true" name="'g_headset_lod1'"/>
 		</sequence>
 		
 		<sequence editable_state="true" name="'helmet_nun'" once="true" triggable="true">
+			<!-- Empty - no additional helmet gear -->
 		</sequence>
 
-		<sequence editable_state="true" name="'spawn_helmet'" once="true" triggable="true">
-			<decal_mesh filter="'check_goggle_b'" enabled="false" name="'c_glass'" />										
-			<object filter="'check_goggle_b'" 	  enabled="false" name="'g_glass'"/>						
-			<object filter="'check_goggle_b'" 	  enabled="false" name="'g_glass_crk'"/>						
-									
-			<decal_mesh filter="'check_swat_ar'" enabled="false" name="'c_glass'" />										
-			<decal_mesh filter="'check_swat_sg'" enabled="false" name="'c_glass_shield'" />										
-
-			<spawn_unit filter="'check_swat_sg'" name="'units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker'" position="object_pos('Head')" rotation="object_rot('root_point')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>
-			<effect filter="'check_swat_sg'" damp_time="4" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>			
-			<effect filter="'check_swat_sg'" damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
-
-			<spawn_unit filter="'check_swat_shield'" name="'units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker'" position="object_pos('Head')" rotation="object_rot('root_point')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>
-			<effect filter="'check_swat_shield'" damp_time="4" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>			
-			<effect filter="'check_swat_shield'" damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
-									
-			<object enabled="false" name="'g_mask_lod1'"/>						
-			<object enabled="false" name="'g_mask_lod2'"/>
-			<object enabled="false" name="'g_mask_lod3'"/>
-	
-			<decal_mesh enabled="false" name="'c_glass'" />					
-			<decal_mesh enabled="false" name="'c_glass_shield'" />	
-			
-			<body enabled="false" name="'glass_shield'" />										
-			<body enabled="false" name="'glass_swat'" />		
-			<body enabled="false" name="'glass_visor'" />		
-	
-			<decal_mesh enabled="false" name="'c_mask_taser'" />			
-			<decal_mesh enabled="false" name="'dm_helmet'" />			
-			<decal_mesh enabled="false" name="'dm_helmet_shield'" />	
-			
-			<object enabled="false" name="'g_helmet_shield_lod1'"/>
-			<object enabled="false" name="'g_helmet_shield_lod2'"/>
-			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
-			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod4'"/>
-									
-			<body filter="'check_swat_ar'" enabled="false" name="'glass_visor'" />	
-			<run_sequence filter="'check_swat_ar'" name="'destroy_visor'"/>						
-			<run_sequence filter="'check_swat_sg'" name="'destroy_visor'"/>							
-			<body filter="'check_swat_sg'" enabled="false" name="'glass_shield'" />										
-			<body filter="'check_swat_shield'" enabled="false" name="'glass_shield'" />										
-		</sequence>
-
-		<!-- RANDOM HELMETS/GOGGLES -->
-		<!-- HEAVY HELMET 'B' DEFAULT WITH DIFFERENT VISOR -->
-		<sequence editable_state="true" name="'heavy_helmet_b'" once="true" triggable="true">
-			<object enabled="true" name="'g_helmet_sg_lod1'"/>
-			<object enabled="true" name="'g_helmet_sg_lod2'"/>
-			<object enabled="true" name="'g_helmet_sg_lod3'"/>
-			
-			<object enabled="true" name="'g_mask_lod1'"/>
-			<object enabled="true" name="'g_mask_lod2'"/>
-			<body 	enabled="true" name="'sg_mask'" />		
-			
-			<object enabled="false" name="'g_helmet_lod1'"/>
-			<object enabled="false" name="'g_helmet_lod2'"/>
-			<object enabled="false" name="'g_helmet_lod3'"/>
-						
-			<decal_mesh enabled="false" name="'c_glass'" />		
-			
-			<decal_mesh enabled="true" name="'c_mask_taser'" />						
-			<decal_mesh enabled="true" name="'c_glass_shield'" />	
-			<body enabled="true" name="'glass_shield'" />								
-			
-			<body enabled="false" name="'glass_swat'" />		
-		</sequence>
-		
-		<sequence editable_state="true" name="'heavy_helmet_c'" once="true" triggable="true">
-			<object enabled="true" name="'g_helmet_shield_lod1'"/>
-			<object enabled="true" name="'g_helmet_shield_lod2'"/>
-			
-			<object enabled="true" name="'g_mask_lod1'"/>
-			<object enabled="true" name="'g_mask_lod2'"/>
-			<object enabled="true" name="'g_mask_lod3'"/>
-			<body  	enabled="true" name="'sg_mask'" />		
-			
-			<object enabled="false" name="'g_helmet_lod1'"/>
-			<object enabled="false" name="'g_helmet_lod2'"/>
-			<object enabled="false" name="'g_helmet_lod3'"/>
-						
-			<decal_mesh enabled="false" name="'c_glass'" />			
-			<decal_mesh enabled="true" name="'c_mask_taser'" />			
-			<decal_mesh enabled="false" name="'c_glass_shield'" />				
-			<body enabled="false" name="'glass_swat'" />		
-		</sequence>
-		
-		<sequence editable_state="true" name="'heavy_helmet_d'" once="true" triggable="true">
-			<object enabled="true" name="'g_helmet_lod5'"/>
-			<object enabled="true" name="'g_helmet_lod6'"/>
-			<object enabled="true" name="'g_helmet_lod7'"/>
-			<decal_mesh enabled="true" name="'dm_helmet_shield'" />				
-			<decal_mesh enabled="false" name="'dm_helmet'" />				
-			
-			<object enabled="false" name="'g_helmet_lod1'"/>
-			<object enabled="false" name="'g_helmet_lod2'"/>
-			<object enabled="false" name="'g_helmet_lod3'"/>						
-		</sequence>
-		
-		<sequence editable_state="true" name="'heavy_helmet_e'" once="true" triggable="true">
-			<object enabled="true" name="'g_helmet_taser_lod1'"/>
-			<object enabled="true" name="'g_helmet_taser_lod2'"/>
-			<object enabled="true" name="'g_helmet_taser_lod3'"/>
-			<decal_mesh enabled="true" name="'dm_helmet_taser'" />	
-			<body  	enabled="true" name="'sg_mask'" />		
-			<decal_mesh  	enabled="true" name="'c_mask_taser'" />		
-			<decal_mesh enabled="false" name="'dm_helmet'" />				
-			
-			<object enabled="false" name="'g_helmet_lod1'"/>
-			<object enabled="false" name="'g_helmet_lod2'"/>
-			<object enabled="false" name="'g_helmet_lod3'"/>						
-		</sequence>
-		
-
-		<sequence editable_state="true" name="'crk_visor'" once="true" triggable="true">			
-			<object filter="'check_swat_sg'" enabled="false" name="'g_helmet_sg_lod3'"/>
-			<object filter="'check_swat_sg'" enabled="true" name="'g_helmet_sg_lod4'"/>
-			<body filter="'check_swat_sg'" enabled="false" name="'glass_shield'"/>
-			<effect filter="'check_swat_sg'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
-			
-			<body filter="'check_swat_ar'" enabled="false" name="'glass_visor'"/>
-			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
-			<object filter="'check_swat_ar'" enabled="true" name="'g_helmet_lod4'"/>
-		</sequence>				
-
-		<sequence editable_state="true" name="'destroy_visor'" once="true" triggable="true">			
-			<object filter="'check_swat_sg'" enabled="false" name="'g_helmet_sg_lod3'"/>
-			<object filter="'check_swat_sg'" enabled="false" name="'g_helmet_sg_lod4'"/>
-			<body filter="'check_swat_sg'" enabled="false" name="'glass_shield'"/>
-			<effect filter="'check_swat_sg'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
-			
-			<body filter="'check_swat_ar'" enabled="false" name="'glass_visor'"/>
-			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
-			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod4'"/>
-
-			<sound action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>			
-			<sound action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>			
-		</sequence>				
-		
+		<!-- RANDOMIZED GOGGLE SEQUENCES - ATOMIC -->
 		<sequence editable_state="true" name="'goggles_a'" once="true" triggable="true">
+			<!-- ATOMIC: All goggle A setup at once -->
+			<set_variables var_goggles="1"/>
 			<object enabled="true" name="'g_goggles_a'"/>
 			<object enabled="true" name="'g_goggles_a_lod1'"/>
 			<object enabled="true" name="'g_glass'"/>
-			<set_variables var_goggles="1"/>					
-			<decal_mesh enabled="true" name="'c_glass'" />					
-			<body enabled="true" name="'glass_swat'" />										
+			<decal_mesh enabled="true" name="'c_glass'"/>
+			<body enabled="true" name="'glass_swat'"/>
 		</sequence>
 		
 		<sequence editable_state="true" name="'goggles_b'" once="true" triggable="true">
+			<!-- ATOMIC: All goggle B setup at once -->
+			<set_variables var_goggles="2"/>
 			<object enabled="true" name="'g_helmet_lod3'"/>
 			<object enabled="true" name="'g_helmet_lod4'"/>
 			<object enabled="true" name="'g_glass'"/>
-			
-			<set_variables var_goggles="2"/>										
-			<decal_mesh enabled="true" name="'c_glass'" />					
-			<body enabled="true" name="'glass_swat'" />										
+			<decal_mesh enabled="true" name="'c_glass'"/>
+			<body enabled="true" name="'glass_swat'"/>
 		</sequence>
 
 		<sequence editable_state="true" name="'goggles_c'" once="true" triggable="true">
+			<!-- ATOMIC: All glasses setup at once -->
+			<set_variables var_goggles="3"/>
 			<object enabled="true" name="'g_glasses'"/>
 			<object enabled="true" name="'g_glasses_glass'"/>
-			<set_variables var_goggles="3"/>										
 		</sequence>
 
-		<sequence editable_state="true" name="'crk_goggles'" once="true" triggable="true">
-			<object enabled="true" name="'g_glass_crk'"/>
-			<object enabled="false" name="'g_glass'"/>
-		</sequence>				
-		
-		<!-- RANDOM HELMETS end -->
-						
-		<!-- RANDOM HOLSTERS -->
+		<!-- RANDOMIZED HOLSTER SEQUENCES - ATOMIC -->
 		<sequence editable_state="true" name="'holster_l'" once="true" triggable="true">
+			<!-- ATOMIC: Left holster only -->
 			<object enabled="true" name="'g_holster_l'"/>
 			<object enabled="true" name="'g_holster_l_lod1'"/>
 			<object enabled="false" name="'g_holster_r'"/>
@@ -357,88 +288,119 @@
 		</sequence>
 
 		<sequence editable_state="true" name="'holster_r'" once="true" triggable="true">
-			<object enabled="true" name="'g_holster_l'"/>
-			<object enabled="true" name="'g_holster_l_lod1'"/>
-		</sequence>																
-
-		<sequence editable_state="true" name="'holster_twinnem'" once="true" triggable="true">
+			<!-- ATOMIC: Right holster setup -->
 			<object enabled="true" name="'g_holster_l'"/>
 			<object enabled="true" name="'g_holster_l_lod1'"/>
 			<object enabled="true" name="'g_holster_r'"/>
 			<object enabled="true" name="'g_holster_r_lod1'"/>
-		</sequence>								
-		<!-- RANDOM HOLSTERS end -->
-		
+		</sequence>
+
+		<sequence editable_state="true" name="'holster_twinnem'" once="true" triggable="true">
+			<!-- ATOMIC: Both holsters -->
+			<object enabled="true" name="'g_holster_l'"/>
+			<object enabled="true" name="'g_holster_l_lod1'"/>
+			<object enabled="true" name="'g_holster_r'"/>
+			<object enabled="true" name="'g_holster_r_lod1'"/>
+		</sequence>
+
+		<!-- RANDOMIZED FACE SEQUENCES - ATOMIC -->
 		<sequence editable_state="true" name="'face_a'" once="true" triggable="true">
+			<!-- ATOMIC: Face A setup -->
 			<object enabled="true" name="'g_face_a'"/>
-			<object enabled="true" name="'g_face_a_lod1'"/>
-		</sequence>								
+		</sequence>
+		
 		<sequence editable_state="true" name="'face_b'" once="true" triggable="true">
+			<!-- ATOMIC: Face B setup -->
 			<object enabled="true" name="'g_face_b'"/>
-			<object enabled="true" name="'g_face_b_lod1'"/>
-		</sequence>								
+		</sequence>
+		
 		<sequence editable_state="true" name="'face_c'" once="true" triggable="true">
+			<!-- ATOMIC: Face C setup -->
 			<object enabled="true" name="'g_face_c'"/>
-			<object enabled="true" name="'g_face_c_lod1'"/>
-		</sequence>								
-		<!-- END BALACALVA FACES -->
-	
+		</sequence>
+
+		<!-- DAMAGE SEQUENCES - ATOMIC -->
+		<sequence editable_state="true" name="'crk_visor'" once="true" triggable="true">
+			<!-- ATOMIC: Visor crack - all changes at once -->
+			<object filter="'check_swat_sg'" enabled="false" name="'g_helmet_sg_lod3'"/>
+			<object filter="'check_swat_sg'" enabled="true" name="'g_helmet_sg_lod4'"/>
+			<body filter="'check_swat_sg'" enabled="false" name="'glass_shield'"/>
+			
+			<body filter="'check_swat_ar'" enabled="false" name="'glass_visor'"/>
+			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
+			<object filter="'check_swat_ar'" enabled="true" name="'g_helmet_lod4'"/>
+			
+			<!-- Effect after state change -->
+			<effect filter="'check_swat_sg'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
+		</sequence>
+
+		<sequence editable_state="true" name="'destroy_visor'" once="true" triggable="true">
+			<!-- ATOMIC: Visor destruction - all changes at once -->
+			<object filter="'check_swat_sg'" enabled="false" name="'g_helmet_sg_lod3'"/>
+			<object filter="'check_swat_sg'" enabled="false" name="'g_helmet_sg_lod4'"/>
+			<body filter="'check_swat_sg'" enabled="false" name="'glass_shield'"/>
+			
+			<body filter="'check_swat_ar'" enabled="false" name="'glass_visor'"/>
+			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
+			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod4'"/>
+			
+			<!-- Effects and sound after state change -->
+			<effect filter="'check_swat_sg'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
+			<sound action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>
+		</sequence>
+
+		<sequence editable_state="true" name="'crk_goggles'" once="true" triggable="true">
+			<!-- ATOMIC: Goggle crack -->
+			<object enabled="true" name="'g_glass_crk'"/>
+			<object enabled="false" name="'g_glass'"/>
+		</sequence>
+
+		<!-- HELMET DROP SEQUENCE - ATOMIC -->
+		<sequence editable_state="true" name="'spawn_helmet'" once="true" triggable="true">
+			<!-- ATOMIC: Disable all glass and helmet elements at once -->
+			<decal_mesh enabled="false" name="'c_glass'"/>
+			<decal_mesh enabled="false" name="'c_glass_shield'"/>
+			<decal_mesh enabled="false" name="'c_mask_taser'"/>
+			<decal_mesh enabled="false" name="'dm_helmet'"/>
+			<decal_mesh enabled="false" name="'dm_helmet_shield'"/>
+			
+			<object enabled="false" name="'g_mask_lod1'"/>
+			<object enabled="false" name="'g_mask_lod2'"/>
+			<object enabled="false" name="'g_mask_lod3'"/>
+			<object enabled="false" name="'g_helmet_shield_lod1'"/>
+			<object enabled="false" name="'g_helmet_shield_lod2'"/>
+			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
+			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod4'"/>
+			
+			<body enabled="false" name="'glass_shield'"/>
+			<body enabled="false" name="'glass_swat'"/>
+			<body enabled="false" name="'glass_visor'"/>
+			
+			<!-- Spawn effects -->
+			<spawn_unit filter="'check_swat_sg'" name="'units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker'" position="object_pos('Head')" rotation="object_rot('root_point')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>
+			<spawn_unit filter="'check_swat_shield'" name="'units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker'" position="object_pos('Head')" rotation="object_rot('root_point')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>
+			
+			<effect filter="'check_swat_sg'" damp_time="4" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
+			<effect filter="'check_swat_shield'" damp_time="4" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
+		</sequence>
+
+		<!-- RAGDOLL SEQUENCES - ATOMIC -->
 		<sequence editable_state="true" name="'disable_hitbox'" triggable="true">
+			<!-- ATOMIC: Disable all hitboxes at once -->
 			<body enabled="false" name="'body'"/>
-			<body enabled="false" name="'Head'"/>
+			<body enabled="false" name="'head'"/>
 			<body enabled="false" name="'rag_LeftLeg'"/>
 			<body enabled="false" name="'rag_RightLeg'"/>
 			<body enabled="false" name="'rag_RightUpLeg'"/>
 			<body enabled="false" name="'rag_LeftUpLeg'"/>
 		</sequence>
-		<sequence editable_state="true" name="'leg_arm_hitbox'" triggable="true">
-			<body enabled="true" name="'body'"/>
-			<body enabled="true" name="'Head'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_Hips'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_LeftUpLeg'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_RightUpLeg'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_LeftLeg'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_RightLeg'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_Spine'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_Spine1'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_Spine2'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_LeftForeArm'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_RightForeArm'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_LeftArm'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_RightArm'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_Head'"/>
-			<constraint enabled="false" name="'LeftUpLeg'"/>
-			<constraint enabled="false" name="'RightUpLeg'"/>
-			<constraint enabled="false" name="'LeftLeg'"/>
-			<constraint enabled="false" name="'RightLeg'"/>
-			<constraint enabled="false" name="'Spine'"/>
-			<constraint enabled="false" name="'Spine1'"/>
-			<constraint enabled="false" name="'Spine2'"/>
-			<constraint enabled="false" name="'LeftForeArm'"/>
-			<constraint enabled="false" name="'RightForeArm'"/>
-			<constraint enabled="false" name="'LeftArm'"/>
-			<constraint enabled="false" name="'RightArm'"/>
-			<constraint enabled="false" name="'Head'"/>
-		</sequence>
-		<sequence editable_state="true" name="'prepare_ragdoll'" triggable="true">
-			<body enabled="false" motion="'dynamic'" name="'rag_Hips'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_LeftUpLeg'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_RightUpLeg'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_LeftLeg'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_RightLeg'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_Spine'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_Spine1'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_Spine2'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_LeftForeArm'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_RightForeArm'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_LeftArm'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_RightArm'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_Head'"/>
-			<material_config name="'units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_lightsout'"/>
-		</sequence>
+
 		<sequence editable_state="true" name="'switch_to_ragdoll'" triggable="true">
+			<!-- ATOMIC: Switch to ragdoll in single operation -->
 			<body enabled="false" name="'body'"/>
-			<body enabled="false" name="'Head'"/>
+			<body enabled="false" name="'head'"/>
+			
+			<!-- Enable all ragdoll bodies -->
 			<body enabled="true" motion="'dynamic'" name="'rag_Hips'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg'"/>
@@ -452,6 +414,8 @@
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftArm'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_RightArm'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_Head'"/>
+			
+			<!-- Enable all constraints -->
 			<constraint enabled="true" name="'LeftUpLeg'"/>
 			<constraint enabled="true" name="'RightUpLeg'"/>
 			<constraint enabled="true" name="'LeftLeg'"/>
@@ -464,9 +428,12 @@
 			<constraint enabled="true" name="'LeftArm'"/>
 			<constraint enabled="true" name="'RightArm'"/>
 			<constraint enabled="true" name="'Head'"/>
+			
 			<material_config name="'units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_lightsout'"/>
 		</sequence>
+
 		<sequence editable_state="true" name="'freeze_ragdoll'" triggable="true">
+			<!-- ATOMIC: Freeze everything at once -->
 			<body motion="'fixed'" name="'rag_Hips'"/>
 			<body motion="'fixed'" name="'rag_LeftUpLeg'"/>
 			<body motion="'fixed'" name="'rag_RightUpLeg'"/>
@@ -483,7 +450,9 @@
 			<body motion="'fixed'" name="'jig_holster_right'"/>
 			<body motion="'fixed'" name="'jig_holster_left'"/>
 			<body motion="'fixed'" name="'body_holster_right'"/>
-			<body motion="'fixed'" name="'body_holster_left'"/>						
+			<body motion="'fixed'" name="'body_holster_left'"/>
+			
+			<!-- Disable all constraints -->
 			<constraint enabled="false" name="'LeftUpLeg'"/>
 			<constraint enabled="false" name="'RightUpLeg'"/>
 			<constraint enabled="false" name="'LeftLeg'"/>
@@ -497,86 +466,7 @@
 			<constraint enabled="false" name="'RightArm'"/>
 			<constraint enabled="false" name="'Head'"/>
 			<constraint enabled="false" name="'h_holster_left'"/>
-			<constraint enabled="false" name="'h_holster_right'"/>			
-		</sequence>
-		<sequence editable_state="false" name="'swich_for_test'" triggable="false">
-			<body enabled="false" name="'body'"/>
-			<body enabled="false" name="'Head'"/>
-			<body enabled="false" name="'mover_blocker'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_Hips'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_LeftUpLeg'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_RightUpLeg'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_LeftLeg'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_RightLeg'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_Spine'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_Spine1'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_Spine2'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_LeftForeArm'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_RightForeArm'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_LeftArm'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_RightArm'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_Head'"/>
-			<constraint enabled="true" name="'LeftUpLeg'"/>
-			<constraint enabled="true" name="'RightUpLeg'"/>
-			<constraint enabled="true" name="'LeftLeg'"/>
-			<constraint enabled="true" name="'RightLeg'"/>
-			<constraint enabled="true" name="'Spine'"/>
-			<constraint enabled="true" name="'Spine1'"/>
-			<constraint enabled="true" name="'Spine2'"/>
-			<constraint enabled="true" name="'LeftForeArm'"/>
-			<constraint enabled="true" name="'RightForeArm'"/>
-			<constraint enabled="true" name="'LeftArm'"/>
-			<constraint enabled="true" name="'RightArm'"/>
-			<constraint enabled="true" name="'Head'"/>
-		</sequence>
-		<sequence editable_state="true" name="'activate_ragdoll_left_arm'" triggable="true">
-			<run_sequence name="'swich_for_test'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftForeArm'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftArm'"/>
-		</sequence>
-		<sequence editable_state="true" name="'activate_ragdoll_right_arm'" triggable="true">
-			<run_sequence name="'swich_for_test'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightForeArm'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightArm'"/>
-		</sequence>
-		<sequence editable_state="true" name="'activate_ragdoll_arms'" triggable="true">
-			<run_sequence name="'swich_for_test'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightForeArm'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightArm'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftForeArm'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftArm'"/>
-		</sequence>
-		<sequence editable_state="true" name="'activate_ragdoll_head'" triggable="true">
-			<run_sequence name="'swich_for_test'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_Head'"/>
-		</sequence>
-		<sequence editable_state="true" name="'activate_ragdoll_spine'" triggable="true">
-			<run_sequence name="'swich_for_test'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_Head'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightForeArm'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightArm'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftForeArm'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftArm'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_Spine'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_Spine1'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_Spine2'"/>
-		</sequence>
-		<sequence editable_state="true" name="'activate_ragdoll_left_leg'" triggable="true">
-			<run_sequence name="'swich_for_test'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftLeg'"/>
-		</sequence>
-		<sequence editable_state="true" name="'activate_ragdoll_right_leg'" triggable="true">
-			<run_sequence name="'swich_for_test'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightLeg'"/>
-		</sequence>
-		<sequence editable_state="true" name="'activate_ragdoll_legs'" triggable="true">
-			<run_sequence name="'swich_for_test'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightLeg'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftLeg'"/>
+			<constraint enabled="false" name="'h_holster_right'"/>
 		</sequence>
 	</unit>
 </sequence_manager>

@@ -666,6 +666,29 @@
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftForeArm'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftArm'"/>
 		</sequence>
+
+		<!-- Missing helmet sequences -->
+		<sequence editable_state="true" name="'helmet_flashlight'" once="true" triggable="true">
+			<!-- Empty - flashlight helmet variant -->
+		</sequence>
+
+		<sequence editable_state="true" name="'helmet_nun_actually'" once="true" triggable="true">
+			<!-- Empty - nun actually helmet variant -->
+		</sequence>
+
+		<sequence editable_state="true" name="'helmet_nun'" once="true" triggable="true">
+			<!-- Empty - nun helmet variant -->
+		</sequence>
+
+		<sequence editable_state="true" name="'helmet_actnun'" once="true" triggable="true">
+			<!-- Empty - actnun helmet variant -->
+		</sequence>
+
+		<!-- Missing totally sequence -->
+		<sequence editable_state="true" name="'totally_nothing'" once="true" triggable="true">
+			<!-- Empty - totally nothing variant -->
+		</sequence>
+		
 		<sequence editable_state="true" name="'activate_ragdoll_right_arm'" triggable="true">
 			<run_sequence name="'swich_for_test'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_RightForeArm'"/>

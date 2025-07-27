@@ -70,6 +70,9 @@
 			<decal_mesh filter="'check_city_swat_sg'" enabled="true" name="'dm_helmet'"/>
 		</sequence>
 		
+		<sequence editable_state="true" name="'holster_nothing'" once="true" triggable="true">
+			<!-- Empty sequence - does nothing, no holster displayed -->
+		</sequence>
 
 		<sequence editable_state="true" name="'goggles_a'" once="true" triggable="true">
 			<object enabled="true" name="'g_goggles_a'"/>

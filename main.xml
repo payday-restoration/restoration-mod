@@ -78,6 +78,7 @@
 		<!--///OVERHAUL\\\-->
 			<!--CORE-->
 				<hook file="sc/core/coreunitdamage.lua" source_file="core/lib/units/coreunitdamage"/>
+				<hook file="sc/core/coresetup.lua" source_file="core/lib/setups/coresetup"/>
 				<hook file="sc/core/coreworldinstancemanager.lua" source_file="core/lib/managers/coreworldinstancemanager"/>
 				<hook file="sc/core/coreenvironmentcontrollermanager.lua" source_file="core/lib/managers/coreenvironmentcontrollermanager"/>
 			<!--TWEAKDATA-->

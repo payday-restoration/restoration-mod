@@ -174,6 +174,9 @@
 			<object enabled="true" name="'g_headset'"/>
 			<object enabled="true" name="'g_headset_lod1'"/>
 		</sequence>
+		
+		<sequence editable_state="true" name="'helmet_nun'" once="true" triggable="true">
+		</sequence>
 
 		<sequence editable_state="true" name="'spawn_helmet'" once="true" triggable="true">
 			<decal_mesh filter="'check_goggle_b'" enabled="false" name="'c_glass'" />										

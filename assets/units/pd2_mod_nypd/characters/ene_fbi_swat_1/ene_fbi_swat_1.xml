@@ -240,6 +240,16 @@
 			<decal_mesh enabled="true" name="'c_visor'" />										
 			<body enabled="true" name="'altyn_visor'" />										
 		</sequence>
+
+		<!-- Missing helmet sequences -->
+		<sequence editable_state="true" name="'helmet_nun_actually'" once="true" triggable="true">
+			<!-- Empty - nun actually helmet variant -->
+		</sequence>
+
+		<!-- Missing totally sequence -->
+		<sequence editable_state="true" name="'totally_nothing'" once="true" triggable="true">
+			<!-- Empty - totally nothing variant -->
+		</sequence>
 		
 		<sequence editable_state="true" name="'totally_random'" once="true" triggable="true">
 			<object enabled="true" name="'g_body_shitbag'"/>

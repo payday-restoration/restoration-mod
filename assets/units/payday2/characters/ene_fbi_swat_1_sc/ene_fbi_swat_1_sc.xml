@@ -115,6 +115,16 @@
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
 
+		<!-- Missing helmet sequence -->
+		<sequence editable_state="true" name="'helmetnun'" once="true" triggable="true">
+			<!-- Empty - no helmet modification -->
+		</sequence>
+
+		<!-- Missing goggles sequence -->
+		<sequence editable_state="true" name="'goggles_nothing'" once="true" triggable="true">
+			<!-- Empty - no goggles applied -->
+		</sequence>
+
 		<sequence editable_state="true" name="'swat_sniper'" triggable="true" once="true">						
 			<set_variables var_gadgets_fbi_light="5"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		

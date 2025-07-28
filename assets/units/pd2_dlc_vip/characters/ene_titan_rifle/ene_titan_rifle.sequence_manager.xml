@@ -4,6 +4,37 @@
 			<var_gadgets_swat value="0"/>					
 			<var_goggles value="0"/>					
 		</variables>
+
+		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
+			<!-- GENERIC -->
+			<run_sequence name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
+			<run_sequence name="'face_'..pick('a','b','c')"/>
+
+			<!-- rifleman -->			
+			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar'"/>						
+			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
+						
+			<!-- heavy sg -->			
+			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg'"/>						
+			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg_lod1'"/>
+			<run_sequence filter="'check_swat_sg'" name="'heavy_helmet_b'"/>
+
+			<!-- shield -->			
+			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield'"/>						
+			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield_lod1'"/>
+			<run_sequence filter="'check_swat_shield'" name="'heavy_helmet_c'"/>
+
+			<!-- taser titan -->			
+			<object filter="'check_taser'" enabled="false" name="'g_balaclava'"/>						
+			<object filter="'check_taser'" enabled="false" name="'g_balaclava_lod1'"/>	
+			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b'"/>						
+			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b_lod1'"/>	
+			<object filter="'check_taser'" enabled="true" name="'g_body_tazer'"/>									
+			<object filter="'check_taser'" enabled="true" name="'g_body_tazer_lod1'"/>
+			<object filter="'check_taser'" enabled="false" name="'g_body'"/>									
+			<object filter="'check_taser'" enabled="false" name="'g_body_lod1'"/>
+			<run_sequence filter="'check_taser'" name="'heavy_helmet_e'"/>			
+		</sequence>
 		
 		<body name="'glass_swat'">
 			<endurance explosion="4" bullet="1">
@@ -80,36 +111,6 @@
 			<object enabled="false" name="'g_body_antenna_lod1'"/>			
 		</sequence>
 
-		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
-			<!-- GENERIC -->
-			<run_sequence name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
-			<run_sequence name="'face_'..pick('a','b','c')"/>
-
-			<!-- rifleman -->			
-			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar'"/>						
-			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
-						
-			<!-- heavy sg -->			
-			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg'"/>						
-			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg_lod1'"/>
-			<run_sequence filter="'check_swat_sg'" name="'heavy_helmet_b'"/>
-
-			<!-- shield -->			
-			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield'"/>						
-			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield_lod1'"/>
-			<run_sequence filter="'check_swat_shield'" name="'heavy_helmet_c'"/>
-
-			<!-- taser titan -->			
-			<object filter="'check_taser'" enabled="false" name="'g_balaclava'"/>						
-			<object filter="'check_taser'" enabled="false" name="'g_balaclava_lod1'"/>	
-			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b'"/>						
-			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b_lod1'"/>	
-			<object filter="'check_taser'" enabled="true" name="'g_body_tazer'"/>									
-			<object filter="'check_taser'" enabled="true" name="'g_body_tazer_lod1'"/>
-			<object filter="'check_taser'" enabled="false" name="'g_body'"/>									
-			<object filter="'check_taser'" enabled="false" name="'g_body_lod1'"/>
-			<run_sequence filter="'check_taser'" name="'heavy_helmet_e'"/>			
-		</sequence>
 		
 		<sequence editable_state="true" name="'heavy_helmet_b'" once="true" triggable="true">
 			<object enabled="true" name="'g_helmet_sg_lod1'"/>

@@ -708,6 +708,28 @@ CopBase.enemy_variations_texas_pd = deep_clone(enemy_variations_texas_pd)
 CopBase.enemy_variations_sfpd = deep_clone(enemy_variations_sfpd) 
 
 function CopBase:_run_unit_sequences()
+	-- ADD MULTIPLE NETWORKING CHECKS!
+	if managers.network and managers.network:session() then
+		local session = managers.network:session()
+		
+		-- Check if we're in the middle of drop-in
+		if session:local_peer() and session:local_peer():loading() then
+			return  -- Don't run during loading
+		end
+		
+		-- Check if any peers are still loading outfits
+		for _, peer in pairs(session:all_peers()) do
+			if peer and peer:loading() then
+				return  -- Don't run while anyone is loading
+			end
+		end
+	end
+	
+	-- ALSO CHECK IF UNIT IS READY
+	if not alive(self._unit) or not self._unit:base() then
+		return
+	end
+	
 	local name = self._unit:name():key()
 	
 	local enemy_sequence = self.enemy_variations[name]

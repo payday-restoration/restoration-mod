@@ -19621,7 +19621,9 @@ end)
 							translation = Vector3(-0.005, 9.6, -4.06),
 							rotation = Rotation(0, 0.02, 0)
 						}
-
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_howa_type20 = {
+						translation = Vector3(0.015, -0.8, -3.61)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_s556 = {
 						translation = Vector3(-0.065, 9.6, -2.1),
@@ -29323,6 +29325,25 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 
 	--[[ RJC9000'S MODS ]]
+
+		if self.parts.wpn_fps_ass_howa_type20_irons_rear_folded then
+			self.parts.wpn_fps_ass_howa_type20_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_howa_type20_flash_hider.custom_stats = {}
+			self.parts.wpn_fps_ass_howa_type20_flash_hider.perks = nil
+			self.parts.wpn_fps_ass_howa_type20_stock.stats = { value = 0 }
+			self.parts.wpn_fps_ass_howa_type20_stock.custom_stats = {}
+			self.parts.wpn_fps_ass_howa_type20_irons_rear.stance_mod = {
+				wpn_fps_ass_howa_type20 = {
+					translation = Vector3(0.034, -8, -2.85),
+					rotation = Rotation(0.02, -0.1, 0)
+				}
+			}
+
+			self.parts.wpn_fps_ass_howa_type20_stock_extended.supported = true
+			self.parts.wpn_fps_ass_howa_type20_stock_extended.stats = { value = 0, recoil = 2, concealment = -1 }
+			self.parts.wpn_fps_ass_howa_type20_stock_extended.custom_stats = nil
+		end
+
 		if self.parts.wpn_fps_ass_morita_barrel_shotgun then
 			self.parts.wpn_fps_ass_morita_barrel_shotgun.supported = true
 			self.parts.wpn_fps_ass_morita_barrel_shotgun.stats = {value = 0}

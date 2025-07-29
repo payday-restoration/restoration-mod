@@ -239,6 +239,9 @@ function CopBase:disable_asu_laser(state)
 	end
 end
 
+Hooks:PreHook(CopBase, "post_init", "run_fucking_heads_post_init", function(self)
+	self:_run_unit_sequences()
+end)
 
 Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	if self._tweak_table == "spooc" then
@@ -315,10 +318,6 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 		end
 	end		
 	
-end)
-
-Hooks:PreHook(CopBase, "post_init", "run_fucking_heads_post_init", function(self)
-	self:_run_unit_sequences()
 end)
 
 local enemy_variations_texas_pd_table = {
@@ -709,48 +708,6 @@ CopBase.enemy_variations_texas_pd = deep_clone(enemy_variations_texas_pd)
 CopBase.enemy_variations_sfpd = deep_clone(enemy_variations_sfpd) 
 
 function CopBase:_run_unit_sequences()
-	-- CRITICAL: Don't run during any network synchronization
-	if managers.network and managers.network:session() then
-		local session = managers.network:session()
-		
-		-- Check if we're the host and someone is joining
-		if Network:is_server() then
-			for _, peer in pairs(session:all_peers()) do
-				if peer and peer:loading() then
-					return  -- Don't run while anyone is loading
-				end
-			end
-		else
-			-- If we're a client, check if we're still loading
-			local local_peer = session:local_peer()
-			if local_peer and local_peer:loading() then
-				return
-			end
-		end
-	end
-	
-	-- CRITICAL: Validate unit state before proceeding
-	if not alive(self._unit) then
-		return
-	end
-	
-	-- Check if damage extension exists and is ready
-	local damage_ext = self._unit:damage()
-	if not damage_ext then
-		return
-	end
-	
-	-- CRITICAL: Check if sequence manager is ready
-	local sequence_manager = damage_ext._sequence_manager
-	if not sequence_manager or not sequence_manager._sequences then
-		return
-	end
-	
-	-- NETWORK RACE CONDITION FIX: Check if sequences are fully loaded
-	if not sequence_manager._sequences_loaded then
-		return
-	end
-	
 	local name = self._unit:name():key()
 	
 	local enemy_sequence = self.enemy_variations[name]
@@ -758,46 +715,51 @@ function CopBase:_run_unit_sequences()
 	local enemy_sequence_shart = self.enemy_variations_sfpd[name]
 	local head_sequence = self.head_variations[name]
 
-	-- SAFE SEQUENCE RUNNING: Check existence before running
-	if enemy_sequence and damage_ext:has_sequence(enemy_sequence) then
-		damage_ext:run_sequence_simple(enemy_sequence)
+
+	--[[
+	NOT NEEDED UNLESS  YOU WANT TO MAKE BODY FLASHLIGHTS (ON MURKIES AND STUFF) MAP DEPENDENT
+    local lvl_tweak_data = tweak_data.levels[job] 
+    local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
+	--]]
+
+	-- Run the enemy sequence to enable pouches and such
+	if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence) then
+		self._unit:damage():run_sequence_simple(enemy_sequence)
 	end
 
-	-- Map-specific sequences with safety checks
+
 	if table.contains(restoration.yee_and_I_cannot_stress_this_enough_haw, job) then
-		if enemy_sequence_fart and damage_ext:has_sequence(enemy_sequence_fart) then
-			damage_ext:run_sequence_simple(enemy_sequence_fart)
+		if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence_fart) then
+			self._unit:damage():run_sequence_simple(enemy_sequence_fart)
 		end	
 	end
 	
 	if table.contains(restoration.needle, job) then
-		if enemy_sequence_shart and damage_ext:has_sequence(enemy_sequence_shart) then
-			damage_ext:run_sequence_simple(enemy_sequence_shart)
+		if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence_shart) then
+			self._unit:damage():run_sequence_simple(enemy_sequence_shart)
 		end	
 	end
 	
-	-- HEAD UNIT SPAWNING: Add safety checks
 	local spawn_manager_ext = self._unit:spawn_manager()
-	local char_damage_ext = self._unit:character_damage()
+	local damage_ext = self._unit:character_damage()
+	local head = damage_ext._head
 	
-	if spawn_manager_ext and char_damage_ext then
-		local head = char_damage_ext._head
-		
-		if head and not self._head_unit then  -- Don't spawn if already exists
+	-- Run the head sequence to enable the head and arms
+	if spawn_manager_ext then	
+		if head then	
 			managers.dyn_resource:load(Idstring("unit"), Idstring(head), managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
 			
 			spawn_manager_ext:spawn_and_link_unit("_char_joint_names", "cop_head", head)
+
 			self._head_unit = spawn_manager_ext:get_unit("cop_head")
 		end
 	end
 	
-	-- HEAD SEQUENCE RUNNING: Multiple safety checks
 	if alive(self._head_unit) then		
 		self._head_unit:set_enabled(self._unit:enabled())
 		
-		local head_damage = self._head_unit:damage()
-		if head_damage and head_sequence and head_damage:has_sequence(head_sequence) then
-			head_damage:run_sequence_simple(head_sequence)
+		if self._head_unit:damage() and self._head_unit:damage():has_sequence(head_sequence) then
+			self._head_unit:damage():run_sequence_simple(head_sequence)
 		end
 	end
 end

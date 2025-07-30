@@ -20,7 +20,7 @@ local mayhem_above_filter = {
 		difficulty_sm_wish = true,
 	},
 }
-local ponr_start = {
+local pro_job_ponr = {
 	on_executed = {
 		{ id = 400050, delay = 0, },
 	},
@@ -28,15 +28,11 @@ local ponr_start = {
 
 return {
 	-- Pro Job PONR
-	[102644] = ponr_start,
-	[102654] = ponr_start,
-	-- Disable PONR if you somehow want to print money, re-trigger again if you done with it
-	[102551] = {
-		on_executed = {
-			{ id = 400051, delay = 0, },
-		},
-	},
-	-- Reinforce Spots
+	-- Triggers upon opening the manhole
+	-- PD2 Counterfeit is an infinite loot heist, this means any actually good PONR trigger is out of the question
+	[102047] = pro_job_ponr,
+	-- Reinforce points
+	-- Initial, added on alarm
 	[100031] = {
 		reinforce = {
 			{
@@ -66,11 +62,11 @@ return {
 			},
 		},
 	},
-	-- Additional Reinforce Spots
+	-- Added to whichever valve can be sabotaged
 	[101219] = {
 		reinforce = {
 			{
-				name = "protect_the_valveHQ_1",
+				name = "protect_the_valveHQ",
 				force = 3,
 				position = Vector3(-6624, 1545, 21.141),
 			},
@@ -79,7 +75,7 @@ return {
 	[101218] = {
 		reinforce = {
 			{
-				name = "protect_the_valveHQ_2",
+				name = "protect_the_valveHQ",
 				force = 3,
 				position = Vector3(-2402, -1326, 17.788),
 			},
@@ -88,8 +84,27 @@ return {
 	[101220] = {
 		reinforce = {
 			{
-				name = "protect_the_valveHQ_3",
+				name = "protect_the_valveHQ",
 				force = 3,
+				position = Vector3(-340, 2438, 26.700),
+			},
+		},
+	},
+	-- Added to whichever manhole is selected for the escape
+	[101475] = {
+		reinforce = {
+			{
+				name = "manhole",
+				force = 4,
+				position = Vector3(-5955, -331, 46),
+			},
+		},
+	},
+	[101476] = {
+		reinforce = {
+			{
+				name = "manhole",
+				force = 4,
 				position = Vector3(-340, 2438, 26.700),
 			},
 		},
@@ -111,6 +126,7 @@ return {
 		},
 	},
 	[101235] = {
+		spawn_bravos = pro_job,
 		values = {
 			time = 60,
 		},
@@ -120,17 +136,13 @@ return {
 			time = 30,
 		},
 	},
-	-- Trigger Hunt (Endless Assault)
-	-- Disable valve's Reinforce points
+	-- Disable valve's reinforce points
 	[102642] = {
-		hunt = true,
 		reinforce = {
-			{ name = "protect_the_valveHQ_1", },
-			{ name = "protect_the_valveHQ_2", },
-			{ name = "protect_the_valveHQ_3", },
+			{ name = "protect_the_valveHQ", },
 		},
 	},
-	-- Bain no longer will remind to find Mitchell when players masked up
+	-- Bain no longer reminds to find Mitchell when players masked up
 	[102410] = {
 		on_executed = {
 			{ id = 100096, delay = 0, },
@@ -170,17 +182,13 @@ return {
 			enemy = cop_sg,
 		},
 	},
-	-- Disable vanilla's reinforce points
-	[100218] = disabled,
-	[101635] = disabled,
-	[101636] = disabled,
-	-- SWAT Van that crashes through Wilson's wall no longer deploys turret on higher diffs
+	-- SWAT van that crashes through Wilson's wall no longer deploys turret
 	-- Disables the turret
 	[102821] = disabled,
 	[101965] = disabled,
 	-- Forces the reinforcments to spawn instead
 	[102819] = mayhem_above_filter,
-	-- Delay the next anim by few more seconds to let the previous anim end
+	-- Delay the next anim by a few more seconds to let the previous anim end
 	[101647] = {
 		on_executed = {
 			{ id = 101648, delay = 10.5, },
@@ -189,21 +197,21 @@ return {
 	-- Same as 2nd van near Mitchell's house
 	[102506] = disabled,
 	[102382] = disabled,
-	--Forces the reinforcments to spawn instead
+	-- Forces the reinforcments to spawn instead
 	[102383] = mayhem_above_filter,
-	--Disable this van (it's redunant)
+	-- Disable this van (it's redundant)
 	[102197] = disabled,
-	--disable vanilla snipers
+	-- Disable vanilla snipers
 	[102941] = disabled,
-	--Spawn Grenadiers at the start of 1st assault if Mitchell has been killed
-	--Bain warns about them
+	-- Spawn Grenadiers at the start of 1st assault if Mitchell has been killed
+	-- Bain warns about them
 	[102081] = {
 		on_executed = {
 			{ id = 400019, delay = 5, },
 		},
 	},
 	-- Spawn custom PDTH styled snipers at the start of 2nd assault
-	--Bain warns about them
+	-- Bain warns about them
 	[102082] = {
 		on_executed = {
 			{ id = 400001, delay = 5, },
@@ -282,7 +290,7 @@ return {
 			{ id = 400043, delay = 20 },
 		},
 	},
-	-- restore Bain's SWAT warnings from PDTH (why they were removed is beyond me)
+	-- Restore Bain's SWAT warnings from PDTH (why they were removed is beyond me)
 	[100714] = {
 		on_executed = {
 			{ id = 400046, delay = 0 },
@@ -321,7 +329,7 @@ return {
 			end
 		end,
 	},
-	-- Replace shields that cover the manhole with titan counterparts on Overkill-DS PJ
+	-- Replace shields that cover the manhole with Titan counterparts on Overkill-DS PJ
 	[100036] = tshield,
 	[100039] = tshield,
 	[100044] = tshield,

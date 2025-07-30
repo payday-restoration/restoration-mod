@@ -19,7 +19,7 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = pro_job
 local ponr_value = (difficulty <= 5 and 660 or (difficulty == 6 or difficulty == 7) and 630) or 600
---Setting up the murkies for epic three way fight (Featuring Winters on DSPJ)
+-- Setting up the murkies for epic three way fight (Featuring Winters on DSPJ)
 local specialenemy_1 = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" or difficulty == 8 and murkydozers_ds or (difficulty == 7 or difficulty == 6) and murkydozers_dw_mayhem or difficulty <= 5 and murkydozers_overkill)
 local specialenemy_2 = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1" or difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" or (difficulty == 7 or difficulty == 6 or difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1") or "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
 local specialenemy_3 = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault") or "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"
@@ -76,13 +76,19 @@ local swat = {
 	}
 }
 
+local disabled = {
+	values = {
+		enabled = false,
+	},
+}
+
 return {
-	--Pro Job PONR
+	-- Pro Job PONR
 	[103031] = {
 			ponr = ponr_value,
 			hunt = hunt_projob
 	},
-	--fixes one of the ai_hunt SOs not having taser access
+	-- Fixes one of the ai_hunt SOs not having taser access
 	[100675] = {
 		pre_func = function (self)
 			if not self._values.SO_access_original then
@@ -91,8 +97,8 @@ return {
 			end
 		end
 	},
-	--Three Way Fight feat. Murkywater, make Akan's mercs fight Murkies by changing teams
-	--1st Van (left one)
+	-- Three Way Fight feat. Murkywater, make Akan's mercs fight Murkies by changing teams
+	-- 1st Van (left one)
 	[100776] = enemy_special_1,
 	[100555] = enemy_special_3,
 	[100017] = enemy_special_2,
@@ -104,7 +110,7 @@ return {
 	[100548] = enemy_special_2,
 	[100767] = enemy_special_2,
 	[100768] = enemy_special_2,
-	--2nd Van (right one)
+	-- 2nd Van (right one)
 	[100777] = dozer,
 	[100556] = taser,
 	[100549] = shield,
@@ -116,7 +122,7 @@ return {
 	[100339] = swat,
 	[100400] = swat,
 	[100550] = swat,
-	--Far away from vans
+	-- Far away from vans
 	[101379] = dozer,
 	[101377] = taser,
 	[101375] = shield,
@@ -128,7 +134,7 @@ return {
 	[101385] = swat,
 	[101387] = swat,
 	[101388] = swat,
-	--nearby house
+	-- Nearby house
 	[101363] = dozer,
 	[101360] = taser,
 	[101364] = shield,
@@ -140,7 +146,14 @@ return {
 	[101371] = swat,
 	[101372] = swat,
 	[101373] = swat,
-	--change beat cops
+	-- Disable snipers because you already have mobile russian snipers kicking your ass 
+	[100487] = disabled,
+	[100945] = disabled,
+	[100975] = disabled,
+	[100488] = disabled,
+	[100740] = disabled,
+	[100748] = disabled, 
+	-- Change beat cops
 	[100634] = {
 		values = {
             enemy = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest"

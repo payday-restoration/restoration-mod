@@ -1,0 +1,12 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_fps_ass_g3_body_upper" materials="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_body_upper"/>
+    <animations>		
+		<animation_group name="recoil" enabled="false">
+			<object name="anim_bolt_recoil"/>
+		</animation_group>
+	</animations>
+    <graphics>
+        <object enabled="true" name="g_upper_body_lod0"/>
+        <object enabled="true" name="g_bolt"/>
+    </graphics>
+</dynamic_object>

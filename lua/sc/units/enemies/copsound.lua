@@ -238,9 +238,8 @@ function CopSound:init(unit)
 		ids_func("units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk")		
 	}
 	local russian_medic_list = {
-		--Doesn't work
-		--ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
-		--ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_husk")
+		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_husk"),
 	}
 	local russian_merc_list = {
 		ids_func("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1"),
@@ -463,7 +462,7 @@ function CopSound:init(unit)
 	local female_enemy = table_contains(female_enemy_list, self._unit:name())
 	local russian_taser = table_contains(russian_taser_list, self._unit:name())
 	local russian_cloaker = table_contains(russian_cloaker_list, self._unit:name())
-	local russian_medic = table_contains(russian_medic_list, self._unit:nane())
+	local russian_medic = table_contains(russian_medic_list, self._unit:name())
 	local russian_merc = table_contains(russian_merc_list, self._unit:name())
 	local russian_mobster = table_contains(russian_mobster_list, self._unit:name())
 	local cobra_gangster = table_contains(cobras_list, self._unit:name())
@@ -551,6 +550,155 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	end
 	
 	local full_sound = nil
+	
+	local l5n_missing_police_calls = {
+		"l5n_a08",
+		"l5n_a09",
+	}
+	local l5n_contact_lines = {
+		"Play_l5n_i01_con",
+		"Play_l5n_g90",
+	}
+	local l5n_alert = {
+		"Play_l5n_lk3_con",
+		"l5n_a08",
+	}
+	
+	-- restore the entire l5n voiceset
+	if self._prefix == "l5n_" then
+		if sound_name == "c01" or sound_name == "att" then
+			full_sound = l5n_contact_lines[math.random(#l5n_contact_lines)] -- use i01 and g90 as contact since l5n doesn't have any
+		end
+		if sound_name == "rdy" then
+			full_sound = "Play_l5n_rdy"
+		end
+		if sound_name == "h01" then
+			full_sound = "Play_l5n_c01a" -- contact line is actually a rescue line
+		end
+		if sound_name == "cn1" then
+			full_sound = "Play_l5n_cn1_con"
+		end
+		if sound_name == "civ" then
+			full_sound = "Play_l5n_civ_con"
+		end
+		if sound_name == "cr1" then
+			full_sound = "Play_l5n_cr1_con"
+		end
+		if sound_name == "clr" then
+			full_sound = "Play_l5n_clr_con"
+		end
+		if sound_name == "g90" then
+			full_sound = "Play_l5n_g90"
+		end
+		if sound_name == "d01" then
+			full_sound = "Play_l5n_d01_con"
+		end
+		if sound_name == "d02" then
+			full_sound = "Play_l5n_d02_con"
+		end
+		if sound_name == "ch1" then
+			full_sound = "Play_l5n_ch1_con"
+		end
+		if sound_name == "ch2" then
+			full_sound = "Play_l5n_ch2_con"
+		end
+		if sound_name == "ch3" then
+			full_sound = "Play_l5n_ch3_con"
+		end
+		if sound_name == "ch4" then
+			full_sound = "Play_l5n_ch4_con"
+		end
+		if sound_name == "gr1a" then
+			full_sound = "Play_l5n_gr1a_con"
+		end
+		if sound_name == "gr1b" then
+			full_sound = "Play_l5n_gr1b_con"
+		end
+		if sound_name == "gr1c" then
+			full_sound = "Play_l5n_gr1c_con"
+		end
+		if sound_name == "gr1d" then
+			full_sound = "Play_l5n_gr1d_con"
+		end
+		if sound_name == "gr2a" then
+			full_sound = "Play_l5n_gr2a_con"
+		end
+		if sound_name == "gr2b" then
+			full_sound = "Play_l5n_gr2b_con"
+		end
+		if sound_name == "gr2c" then
+			full_sound = "Play_l5n_gr2c_con"
+		end
+		if sound_name == "gr2d" then
+			full_sound = "Play_l5n_gr2d_con"
+		end
+		if sound_name == "med" then
+			full_sound = "Play_l5n_med_con"
+		end
+		if sound_name == "m01" then
+			full_sound = "Play_l5n_m01_any"
+		end
+		if sound_name == "mov" then
+			full_sound = "Play_l5n_mov_ass"
+		end
+		if sound_name == "p01" then
+			full_sound = "Play_l5n_p01_ass"
+		end
+		if sound_name == "p02" then
+			full_sound = "Play_l5n_p02_ass"
+		end
+		if sound_name == "p03" then
+			full_sound = "Play_l5n_p03_ass"
+		end
+		if sound_name == "pos" then
+			full_sound = "Play_l5n_pos_con"
+		end
+		if sound_name == "prm" then
+			full_sound = "Play_l5n_prm_con"
+		end
+		if sound_name == "pus" then
+			full_sound = "Play_l5n_pus_con"
+		end
+		if sound_name == "r01" then
+			full_sound = "Play_l5n_r01_con"
+		end
+		if sound_name == "s01x" then
+			full_sound = "Play_l5n_s01x_con"
+		end
+		if sound_name == "i01" then
+			full_sound = "Play_l5n_i01_con"
+		end
+		if sound_name == "i02" then
+			full_sound = "Play_l5n_i02_con"
+		end
+		if sound_name == "i03" then
+			full_sound = "Play_l5n_i03_con__________________MISSING_i03c"
+		end
+		if sound_name == "l01" then
+			full_sound = "Play_l5n_l01_con__________________MISSING_l01b"
+		end
+		if sound_name == "lk3a" then
+			full_sound = "Play_l5n_lk3_ass"
+		end
+		if sound_name == "lk3b" then
+			full_sound = "Play_l5n_lk3_con"
+		end
+		if sound_name == "hlp" then
+			full_sound = "Play_l5n_hlp_con"
+		end
+		if sound_name == "x02a_any_3p" then
+			full_sound = "l1n_x01a_any_3p"
+		end
+		if sound_name == "x01a_any_3p" then
+			full_sound = "l1n_x02a_any_3p"
+		end
+		if sound_name == "a07a" or sound_name == "a07b" then
+			full_sound = l5n_alert[math.random(#l5n_alert)]
+		end
+		if sound_name == "a10" or sound_name == "a11" or sound_name == "a12" then
+			full_sound = l5n_missing_police_calls[math.random(#l5n_missing_police_calls)]
+		end
+	end
 	
 	if self._prefix == "l5d_" then
 		if sound_name == "c01" or sound_name == "att" then

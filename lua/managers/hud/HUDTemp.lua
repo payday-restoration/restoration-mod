@@ -29,7 +29,7 @@ if restoration.Options:GetValue("HUD/MainHUD") then
 	function HUDTemp:RestorationValueChanged()
 		self._stamina_panel:set_alpha(restoration.Options:GetValue("HUD/StaminaIndicator") and 1 or 0)
 		local stamina_color = restoration.Options:GetValue("HUD/Colors/Stamina")
-		self._stamina_panel:child("stamina_bar_bg"):set_color(stamina_color)
+		self._stamina_panel:child("stamina_bar_bg"):set_color(restoration.Options:GetValue("HUD/Colors/StaminaBG"))
 		self._stamina_panel:child("low_stamina_bar"):set_color(stamina_color)
 		self._stamina_panel:child("stamina_bar"):set_color(stamina_color)
 		self._stamina_panel:child("stamina_threshold"):set_color(restoration.Options:GetValue("HUD/Colors/StaminaThreshold"))

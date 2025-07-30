@@ -195,7 +195,7 @@ end)
 --Initializes recoil_kick values since they start null.
 local old_start_shooting = FPCameraPlayerBase.start_shooting
 function FPCameraPlayerBase:start_shooting()
-	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
+	local enable_recoil_recover = restoration.Options:GetValue("WEAPONS/WeaponHandling/CarpalTunnel") or 1
 	if enable_recoil_recover == 1 then
 		self._recoil_kick.accumulated = self._recoil_kick.accumulated or 0 --Total amount of recoil to burn through in degrees.
 		self._recoil_kick.h.accumulated = self._recoil_kick.h.accumulated or 0
@@ -206,7 +206,7 @@ end
 
 function FPCameraPlayerBase:stop_shooting( wait )
 	local weapon = self._parent_unit:inventory():equipped_unit()
-	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
+	local enable_recoil_recover = restoration.Options:GetValue("WEAPONS/WeaponHandling/CarpalTunnel") or 1
 	local recoil_recover = (enable_recoil_recover and enable_recoil_recover ~= 1 and ((enable_recoil_recover == 3 and 1) or (weapon and weapon:base()._recoil_recovery) or 0.5)) or 0
 
 	if enable_recoil_recover ~= 1 then
@@ -247,7 +247,7 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	local player_state = self._parent_unit:movement():current_state()
 	local weapon = self._parent_unit:inventory():equipped_unit()
 	local center_speed = weapon and weapon:base()._recoil_center_speed or 7.5
-	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
+	local enable_recoil_recover = restoration.Options:GetValue("WEAPONS/WeaponHandling/CarpalTunnel") or 1
 	if enable_recoil_recover and enable_recoil_recover == 3 then
 		center_speed = math.max(center_speed * 0.75, 1)
 	end
@@ -291,7 +291,7 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	local player_state = self._parent_unit:movement():current_state()
 	local weapon = self._parent_unit:inventory():equipped_unit()
 	local center_speed = weapon and weapon:base()._recoil_center_speed or 7.5
-	local enable_recoil_recover = restoration.Options:GetValue("OTHER/WeaponHandling/CarpalTunnel") or 1
+	local enable_recoil_recover = restoration.Options:GetValue("WEAPONS/WeaponHandling/CarpalTunnel") or 1
 	if enable_recoil_recover and enable_recoil_recover == 3 then
 		center_speed = math.max(center_speed * 0.75, 1)
 	end
@@ -478,7 +478,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 
 			self._shoulder_stance.rotation = trans_data.start_rotation:slerp(trans_data.end_rotation, progress_smooth)
 
-			if restoration and restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") and restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") ~= 1 and not is_akimbo and not ignore_transition_styles then
+			if restoration and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") ~= 1 and not is_akimbo and not ignore_transition_styles then
 				if player_state and player_state ~= "bipod" and trans_data.absolute_progress and not self._steelsight_swap_state then
 					local prog = (1 - absolute_progress) * (dt * 100)
 					if self._shoulder_stance.was_in_steelsight and not in_steelsight then
@@ -491,10 +491,10 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 						if speen then
 							trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
 							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 36 * prog)
-						elseif restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") == 2 then
+						elseif restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") == 2 then
 							trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
 							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 1.25 * prog)
-						elseif restoration.Options:GetValue("OTHER/WeaponHandling/ADSTransitionStyle") == 3 then
+						elseif restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") == 3 then
 							trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.5 * prog)
 							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, -1.25 * prog)
 						end

@@ -21,6 +21,10 @@ GroupAIStateBase.MEGAPHONE_EVENTS = {
 }
 table.list_append(GroupAIStateBase.EVENT_SYNC, GroupAIStateBase.MEGAPHONE_EVENTS)
 
+GroupAIStateBase.DIFF_INC_INITIAL = 0.1
+GroupAIStateBase.DIFF_INC_CIVILIAN_KILLED = 0.1
+GroupAIStateBase.DIFF_INC_POLICE_REGROUPING = 0.3
+
 function GroupAIStateBase:_calculate_difficulty_ratio()
 	local ramp = tweak_data.group_ai.difficulty_curve_points
 
@@ -1556,6 +1560,9 @@ function GroupAIStateBase:on_criminal_suspicion_progress(u_suspect, u_observer, 
 	end
 end
 
+-- Modified function in Res
+-- Not needed in modern game versions?
+--[[
 function GroupAIStateBase:set_whisper_mode(state)
 	state = state and true or false
 
@@ -1588,6 +1595,7 @@ function GroupAIStateBase:set_whisper_mode(state)
 		self:_clear_criminal_suspicion_data()
 	end
 end
+]]
 
 function GroupAIStateBase:chk_say_teamAI_combat_chatter(unit)
 	if not self:is_detection_persistent() then
@@ -1617,6 +1625,9 @@ function GroupAIStateBase:chk_say_teamAI_combat_chatter(unit)
 	unit:sound():say("g90", true, true)
 end
 
+-- Modified function in Res
+-- Not needed in modern game versions?
+--[[
 function GroupAIStateBase:register_AI_attention_object(unit, handler, nav_tracker, team, SO_access)
 	local store_instead = nil
 
@@ -1650,7 +1661,10 @@ function GroupAIStateBase:register_AI_attention_object(unit, handler, nav_tracke
 
 	self:on_AI_attention_changed(unit:key())
 end
+]]
 
+-- New function to Res
+-- Not needed in modern game versions?
 function GroupAIStateBase:chk_register_removed_attention_objects()
 	if not self._removed_attention_objects then
 		return
@@ -1670,12 +1684,16 @@ function GroupAIStateBase:chk_register_removed_attention_objects()
 	self._removed_attention_objects = nil
 end
 
+-- New function to Res
+-- Not needed in modern game versions?
 function GroupAIStateBase:store_removed_attention_object(u_key, attention_info)
 	self._removed_attention_objects = self._removed_attention_objects or {}
 
 	self._removed_attention_objects[u_key] = attention_info
 end
 
+-- New function to Res
+-- Not needed in modern game versions?
 function GroupAIStateBase:chk_unregister_irrelevant_attention_objects()
 	local all_attention_objects = self:get_all_AI_attention_objects()
 
@@ -1712,7 +1730,7 @@ if Network:is_server() then
 		end
 
 		if restoration.civ_death_diff_increase then
-			self:set_difficulty(nil, 0.1) --Diff increase when killing a civ
+			self:set_difficulty(nil, self.DIFF_INC_CIVILIAN_KILLED or 0.1) --Diff increase when killing a civ
 		end
 
 		if not self._hunt_mode and self._assault_number and self._assault_number >= 1 then
@@ -1727,12 +1745,12 @@ if Network:is_server() then
 	end)
 end
 
---this function has been repurposed. instead of overriding any previous value, this ADDS diff
---this is set to 0.1 on loud, while other events increase it
---+0.1 on civilian kill (watch your fire!), +0.3 on assault end
---script value is used by the base game, we usually ignore it after the beginning of a level
---thanks (again) to hoxi for helping out with this
---perhaps modify these values at one point in crime spree? who knows
+-- This function has been repurposed - instead of overriding any previous value, this ADDS diff
+-- This is set to 0.1 on loud, while other events increase it
+-- +0.1 on civilian kill (watch your fire!), +0.3 on assault end
+-- Script value is used by the base game, we usually ignore it after the beginning of a level
+-- Thanks (again) to hoxi for helping out with this
+-- Perhaps modify these values at one point in Crime Spree? who knows
 local set_difficulty_original = GroupAIStateBase.set_difficulty
 function GroupAIStateBase:set_difficulty(script_value, manual_value)
 	if managers.skirmish:is_skirmish() then
@@ -1740,40 +1758,39 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 		return
 	end
 
-	--if diff is set to 0 in the middle of a mission, heists cannot start assaults. this ensures that we can set diff to default 0.1 again if a script sets it to 0
-	--i dont think any heists do this but there's no harm in having this check here
+	-- If diff is set to 0 in the middle of a mission, heists cannot start assaults
+	-- This ensures that we can set diff to default 0.1 again if a script sets it to 0
+	-- Don't think any heists do this but there's no harm in having this check here
 	if script_value == 0 then
+		managers.mutators:_run_func("OnDifficultyValueChanged", self._difficulty_value, -(self._difficulty_value or 0))
 		self._difficulty_value = 0
 		self._loud_diff_set = false
 		self:_calculate_difficulty_ratio()
-
 		return
 	end
 
-	if self._difficulty_value == 1 then
-		return
-	end
-
-	if script_value then
-		if not self._loud_diff_set and script_value > 0 then
-			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.1
-			--only do this once (or when value is set to false as said below). otherwise we'll set diff to 1 super fast and that's mean
-			--should fix armored transport and its jank mission scripts (ovk why)
-			--also, add 0.1 here instead of setting so you cant bypass civ penalty on some heists
-			self._difficulty_value = self._difficulty_value + self:_mutate_diff_value(0.1)
-			self:_calculate_difficulty_ratio()
-			--please kill me
-			self._loud_diff_set = true
-
-			return
-		end
+	-- When game tries to set diff to anything that isn't 0, we add 0.1
+	-- Only do this once (or when loud diff set value is set to false), otherwise we'll set diff to 1 super fast and that's mean
+	-- Should fix Armored Transport and its jank mission scripts (OVK why)
+	-- Also, add 0.1 here instead of setting so you can't bypass civ penalty on some heists
+	if script_value and script_value > 0 and not self._loud_diff_set then
+		self._loud_diff_set = true
+		manual_value = self:_mutate_diff_value(self.DIFF_INC_INITIAL or 0.1)
 	end
 
 	if not manual_value then
 		return
 	end
 
-	--note that this ADDS, not replaces. only way to replace is with a script_value of 0
+	-- Check if this heist has natural Bravo spawns on Pro Jobs
+	local pro_job = Global.game_settings and Global.game_settings.one_down
+	local bravos_threshold = pro_job and restoration.natural_mode_13[job]
+	if bravos_threshold and bravos_threshold < self._difficulty_value + manual_value then
+		restoration.always_bravos = "natural_mode_13"
+	end
+
+	-- Note that this ADDS, not replaces, only way to replace is with a script_value of 0
+	managers.mutators:_run_func("OnDifficultyValueChanged", self._difficulty_value, manual_value)
 	self._difficulty_value = math.min(self._difficulty_value + manual_value, 1)
 	self:_calculate_difficulty_ratio()
 end

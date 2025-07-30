@@ -2,6 +2,19 @@ HuskCopBase._run_unit_sequences = CopBase._run_unit_sequences
 
 --thanks eclipse gem mod by the way and shotout to the epic developer budies who help resmod!
 Hooks:PreHook(HuskCopBase, "post_init", "run_fucking_heads_post_init", function(self)
+	-- DON'T RUN SEQUENCES DURING DROP-IN NETWORKING!
+	if managers.network and managers.network:session() then
+		local session = managers.network:session()
+		if session:local_peer() and session:local_peer():loading() then
+			return  -- Skip during loading
+		end
+	end
+	
+	-- ALSO CHECK IF UNIT IS READY
+	if not alive(self._unit) or not self._unit:base() then
+		return
+	end
+	
 	self:_run_unit_sequences()
 end)
 

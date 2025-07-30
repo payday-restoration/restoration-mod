@@ -119,19 +119,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_doctor_bag_health_regenDescID"] = "Enables or disables tracking of doctor bag health regen.",
 
 		["RestorationModWEAPONSOptionsButtonTitleID"] = "Weapon Options",
-		["RestorationModWEAPONSOptionsButtonDescID"] = "Restoration Mod options for weapons, both for UI and in-game.",
-			["RestorationModWeaponHandlingOptionsButtonTitleID"] = "++ Weapon Handling Options ++",
-			["RestorationModWeaponHandlingOptionsButtonDescID"] = "Extra options regarding weapon handling.",
-				["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
-				["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming; overrides the \"Viewmodel Movement\" setting when enabled. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
-				["RestorationModBigScopeOffsetTitleID"] = "\"big Scope\" Viewmodel Offset",
-				["RestorationModBigScopeOffsetDescID"] = "Slightly tilts and shifts hipfire viewmoodels to the right when using large optics to reduce visual obstructions.",
-				["RestorationModViewmodelMovementTitleID"] = "Viewmodel Movement",
-				["RestorationModViewmodelMovementDescID"] = "Choose how your weapons' viewmodel moves on screen as you look around; ADS movement is overridden by the \"No Weapon Movement While ADS\" setting if enabled. Requires restart.",
-					["vm_vanilla"] = "Vanilla Behavior",
-					["vm_drag"] = "Weapon Drags Behind",
-					["vm_lead"] = "Weapon Leads Ahead",
-					["vm_static"] = "Static (No Movement)",
+		["RestorationModWEAPONSOptionsButtonDescID"] = "Restoration's weapon relating options",
+			["RestorationModWeaponHandlingOptionsButtonTitleID"] = "Extra Options",
+			["RestorationModWeaponHandlingOptionsButtonDescID"] = "Extra options regarding weapon behaviors.",
 				["RestorationModCarpalTunnelTitleID"] = "Recoil Auto-Recovery",
 				["RestorationModCarpalTunnelDescID"] = "Choose how recoil auto-recovery mechanics work. Enabled versions are balanced differently.",
 					["rr_off"] = "Disabled",
@@ -140,9 +130,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",
 				["RestorationModAutoDMRsDescID"] = "Toggle whether or not all Marksmen Rifles with semi-auto and full-auto firemodes start off on full-auto.",
 				["RestorationModWpnFireDescopeTitleID"] = "Allow De-scope for certain weapons",
-				["RestorationModWpnFireDescopeDescID"] = "Toggle whether or not some weapons de-scope when shooting. NOTE: the de-scope is used to reduce clipping; some sight may clip if disabled. Setting is ignored on weapons that mention de-scope as a mechanic.",
-				["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
-				["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
+				["RestorationModWpnFireDescopeDescID"] = "Toggle whether or not some weapons de-scope when shooting. NOTE: the de-scope is used to reduce clipping; some sights may clip if disabled. Setting is ignored on weapons that mention de-scope as a mechanic.",
+				["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
+				["RestorationModNoSwapOnReviveDescID"] = "Disables the forced weapon swap upon being revived when going down with a primary without Undying Aced.",
+
+			["RestorationModWEAPONINPUTSOptionsButtonTitleID"] = "Input Options",
+			["RestorationModWEAPONINPUTSOptionsButtonDescID"] = "Options for weapon inputs.",
 				["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
 				["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire). Enabling this disables Overkill's own fire input buffering.",
 				["RestorationModQueuedShootingWindowTitleID"] = "Single-Fire Buffer Sensitivity",
@@ -153,25 +146,47 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst. NOTE: Does not apply to auto-burst weapons.",
 				["RestorationModQueuedShootingBurstExcludeTitleID"] = "Mid-Burst Input Buffer Limit",
 				["RestorationModQueuedShootingBurstExcludeDescID"] = "Limits the buffering of fire inputs made *during* a burst to weapons that have a burst delay *below* the value (ms) set by this option.",
-				["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
-				["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers).",
-				["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
-				["RestorationModNoSwapOnReviveDescID"] = "Disables the forced weapon swap upon being revived when going down with a primary without Undying Aced.",
-				["RestorationModManualReloadsTitleID"] = "Manual Reloads",
-				["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty. NOTE: Setting is ignored if the \"Reload Marathon\" mutator is active.",
 				["RestorationModSecondSightSprintTitleID"] = "Sprint button for second sight toggle",
 				["RestorationModSecondSightSprintDescID"] = "Use the sprint button instead of the gadget button to toggle secondary sights while ADS.\nWhile enabled gadgets can be toggled as they could prior to U232 but you cannot enter a sprint while ADS.",
-				["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
-				["RestorationModADSTransitionStyleDescID"] = "Change the transition style of aiming down your sights.",
-					["vanilla_on_rails"] = "Default/On-Rails",
-					["kf_mw_style"] = "KF1/CoD Style",
-					["tilt_in"] = "Tilted In",
 				["RestorationModAimDeploysBipodTitleID"] = "ADS Deploys Bipod",
 				["RestorationModAimDeploysBipodDescID"] = "Enable/disable bipods auto-mounting when ADSing over a valid surface.",
 				["RestorationModMoveCancelBipodTitleID"] = "Movement Dismounts Bipod",
 				["RestorationModMoveCancelBipodDescID"] = "Enable/disable basic movement inputs dismounting bipods.",
 				["RestorationModSeparateBowADSTitleID"] = "Separate Bow Aiming",
 				["RestorationModSeparateBowADSDescID"] = "Disables forced aiming with bows when drawing an arrow. While enabled, your reload key is used to let down your drawn arrow.",
+				["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
+				["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
+				["RestorationModManualReloadsTitleID"] = "Manual Reloads",
+				["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty. NOTE: Setting is ignored if the \"Reload Marathon\" mutator is active.",
+
+			["RestorationModWEAPONANIMSOptionsButtonTitleID"] = "Viewmodel & Animation Options",
+			["RestorationModWEAPONANIMSOptionsButtonDescID"] = "Options for weapon viewmodels and animations",
+					["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
+					["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming; overrides the \"Viewmodel Movement\" setting when enabled. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
+					["RestorationModBigScopeOffsetTitleID"] = "\"big Scope\" Viewmodel Offset",
+					["RestorationModBigScopeOffsetDescID"] = "Slightly tilts and shifts hipfire viewmoodels down and to the right when using large optics to reduce visual obstructions.",
+					["RestorationModViewmodelMovementTitleID"] = "Viewmodel Movement",
+					["RestorationModViewmodelMovementDescID"] = "Choose how your weapons' viewmodel moves on screen as you look around; ADS movement is overridden by the \"No Weapon Movement While ADS\" setting if enabled. Requires restart.",
+						["vm_vanilla"] = "Vanilla Behavior",
+						["vm_drag"] = "Weapon Drags Behind",
+						["vm_lead"] = "Weapon Leads Ahead",
+						["vm_static"] = "Static (No Movement)",
+					["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
+					["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers).",
+					["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
+					["RestorationModADSTransitionStyleDescID"] = "Change the transition style of aiming down your sights.",
+						["vanilla_on_rails"] = "Default/On-Rails",
+						["kf_mw_style"] = "KF1/CoD Style",
+						["tilt_in"] = "Tilted In",
+					["RestorationModToggleAnimsTitleID"] = "===Animation Replacers===",
+					["RestorationModToggleAnimsDescID"] = "Toggles for use of animation replacers; Disable to use vanilla or custom Beardlib animations.\nChanges apply after a restart.",
+					--Pistols
+					["RestorationModm1911_foleyTitleID"] = "M1911 Reload Foley",
+					["RestorationModm1911_foleyDescID"] = "Changes the reload anim on the M1911 (Crosskill Chunky) to use the foley from the Jericho 941 (Baby Deagle) anim.",
+					--Rifles
+					["RestorationModg3_niphenTitleID"] = "G3 U65 Reload Animations",
+					["RestorationModg3_niphenDescID"] = "Changes the reload anim on the G3 (Gewehr 3) to use its Update 65 anim.",
+
 
 			["RestorationModPerformanceOptionsButtonTitleID"] = "++ Impact FX Settings ++",
 			["RestorationModPerformanceOptionsButtonDescID"] = "Extra options that change the playback of impact effects",
@@ -226,7 +241,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["sub_wpn_cat"] = "sub-category & damage tier",
 
 		["RestorationModOTHEROptionsButtonTitleID"] = "Extra Options",
-		["RestorationModOTHEROptionsButtonDescID"] = "Restoration Mod options for other things.",
+		["RestorationModOTHEROptionsButtonDescID"] = "Restoration's 'options for other things.",
 			["RestorationModTimeOfDayTitleID"] = "New + Randomized Time-of-days",
 			["RestorationModTimeOfDayDescID"] = "Allows you to customize the time-of-day on certain heists.",
 				["RestorationModEnv_BanksTitleID"] = "Branch Bank",
@@ -289,6 +304,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["resmod_advmov_melee_loud_only"] = "Loud Only",
 					["resmod_advmov_melee_off"] = "Disabled",
 		["bm_melee_advmov"] = "Kick",
+		["bm_melee_advmov_slidekick"] = "Slide Kick",
+		["bm_melee_advmov_wallkick"] = "Wall Kick",
 
 		--EXTRA OPTIONS
 		["RestorationModAltLastDownColorTitleID"] = "Alternative Last Down Color Grading",
@@ -783,6 +800,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModAssaultEndlessBGTitleID"] = "Captain assault background",
 		["RestorationModAssaultSurvivedBGTitleID"] = "Survived Assault background",
 		["RestorationModStaminaTitleID"] = "Stamina",
+		["RestorationModStaminaBGTitleID"] = "Stamina background",
 		["RestorationModStaminaThresholdTitleID"] = "Stamina threshold",
 		["RestorationModBagBitmapTitleID"] = "Bag",
 		["RestorationModBagTextTitleID"] = "Bag text",
@@ -794,6 +812,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModDownsTwoTitleID"] = "Down counter (2 downs left)",
 		["RestorationModDownsOneTitleID"] = "Down counter (1 downs left)",
 		["RestorationModDownsZeroTitleID"] = "Down counter (0 downs left)",
+		["RestorationModDodgeBarTitleID"] = "Dodge Bar",
+		["RestorationModDodgeBarBGTitleID"] = "Dodge Bar background",
+		["RestorationModDodgeBarThresholdTitleID"] = "Dodge Bar threshold",
 		["RestorationModStopAllBotsTitleID"] = "Stop All Bots",
 		["RestorationModStopAllBotsDescID"] = "Stops all bots by holding the stop bot key.",
 		["RestorationModPONRTrackTitleID"] = "Point Of No Return Music",
@@ -2202,9 +2223,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 			["st_menu_firemode_burst_autoburst"] = "AUTOBURST",
 		["st_menu_firemode_volley"] = "VOLLEY",
 
-		["menu_reticle_dmc_eotech"] = "TECopt Full",
-		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA Dot",
-		["menu_reticle_dmc_eotech_seggs"] = "TECopt Segmented",
+		["menu_reticle_dmc_eotech"] = "TECopt 0-Reticle",
+		["menu_reticle_dmc_eotech_moa"] = "TECopt 2-Reticle",
+		["menu_reticle_dmc_eotech_seggs"] = "TECopt 0-Reticle (Segmented)",
 		["menu_reticle_dmc_ebr_cqb"] = "Maelstrom EBR-CQB",
 		["menu_reticle_dmc_trijicon_chevron"] = "Trigonom Chevron",
 		["menu_reticle_dmc_ncstar"] = "Reconnaissance Cross",
@@ -2301,8 +2322,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_w_duke1911_desc"] = "#{important_1}#Hail to the king, baby!##",
 
 		--Bipod--
-		["bm_sc_bipod_desc_pc"] = "Mount by pressing #{skill_color}#$BTN_BIPOD## over a valid surface. Press again to dismount.\n\nReduces vertical recoil by #{skill_color}#50%##, horizontal recoil by #{skill_color}#75%## and increases range by #{skill_color}#30%## while mounted.\n\n#{item_stage_2}#Additional options for mounting can be found in Restoration Mod's extra options menu.##",
-		["bm_sc_bipod_desc"] = "Mount by holding #{skill_color}#$BTN_BIPOD## over a valid surface. Hold again to dismount.\n\nReduces vertical recoil by #{skill_color}#50%##, horizontal recoil by #{skill_color}#75%## and increases range by #{skill_color}#30%## while mounted.\n\n#{item_stage_2}#Additional options for mounting can be found in Restoration Mod's extra options menu.##",
+		["bm_sc_bipod_desc_pc"] = "Mount by pressing #{skill_color}#$BTN_BIPOD## over a valid surface. Press again to dismount.\n\nReduces vertical recoil by #{skill_color}#50%##, horizontal recoil by #{skill_color}#75%## and increases range by #{skill_color}#30%## while mounted.\n\n#{item_stage_2}#Additional options for mounting can be found in Restoration Mod's weapon options menu.##",
+		["bm_sc_bipod_desc"] = "Mount by holding #{skill_color}#$BTN_BIPOD## over a valid surface. Hold again to dismount.\n\nReduces vertical recoil by #{skill_color}#50%##, horizontal recoil by #{skill_color}#75%## and increases range by #{skill_color}#30%## while mounted.\n\n#{item_stage_2}#Additional options for mounting can be found in Restoration Mod's weapon options menu.##",
 		["hud_hint_bipod_moving"] = "Cannot mount while moving",
 		["hud_hint_bipod_slide"] = "Cannot mount while sliding",
 		["hud_hint_bipod_air"] = "Cannot mount while airborne",
@@ -2781,6 +2802,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_wp_hk51b_magazine_belt_80"] = "80 Round Belt",
 				--Buzzsaw/Mg42
 				["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has improved spread and recoil while hipfired.##",
+				["bm_wp_mg42_m_75"] = "75rnd Drum",
+				["bm_wp_mg42_m_75_desc"] = "Holds more rounds than physically possible by using the same technology to fit legs into jet engines.",
+				["bm_wp_mg42_m_100"] = "100rnd Drum",
+				["bm_wp_mg42_m_100_desc"] = "Holds even more rounds than physically possible by using the same technology to fit legs into jet engines.",
 				["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
 				["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#3s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
 				--M134
@@ -2818,7 +2843,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--KE7
 					["bm_wp_wpn_fps_upg_sigke7_mag50"] = "50rnd Magazine",
 
-
 			--[[ SHOTGUNS ]]
 				--Saiga
 				["bm_saiga_sc_desc"] = "This fully automatic shotgun is perfect for those days you just don't feel like aiming.",
@@ -2854,6 +2878,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Custom Shotguns
 					--BO6 ASG-89
 					["bm_wp_upg_i_autousas"] = "Battlefield-Tested Internals",
+					["bm_wp_upg_i_burstusas"] = "Systems Corp Internals",
+					["bm_wp_upg_i_burstusas_desc"] = "Locks firemode to a #{risk}#3-round burst## at #{skill_color}#800 RPM##.",
 					--Reinbeck M1
 					["bm_w_beck_desc"] = "The criminal underworld's most popular shotgun has returned from its grave to reclaim its rightful place in the shotgun hierarchy. Originally used in the 2011 Crimewave, this shotgun has been proven extremely reliable in just about any close range situation.",
 					--Doomstic
@@ -3145,6 +3171,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_w_toym16_sc_desc"] = "\"No full-auto in buildings.\"",
 				["bm_w_toy1911_sc_desc"] = "\"No full-auto in buildings.\"",
 
+			--[[ OTHER ]]
+				--soosh's Blue Archive skins 😭💢
+					["bm_w_tecci_ibuki"] = "Yay, Bang Bang!",
+					["bm_w_ben_hoshino"] = "Eye of Horus",
+					["bm_w_mg42_hinature"] = "Destroyer of Denouement",
+					["bm_w_mg42_hinature_desc"] = "#{stat_maxed}#Blows away school rule violators and degenerates with its ruthlessly destructive power.##",
+					["bm_w_m4_azusa"] = "Et Omnia Vanitas",
+					["bm_w_m4_azusa_desc"] = "#{risk}#Vanity of vanities: All is in vain.##",
+					["bm_w_m4_saori"] = "Arius Assault Rifle",
+					["bm_w_c96_satsuki"] = "NK Delta",
+					["bm_w_mpx_yuuka"] = "Logic",
+					["bm_w_x_mpx_yuuka"] = "Logic & Reason",
 	})
 
 	--[[
@@ -4592,6 +4630,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 
 						["bm_wp_upg_o_mbus_rear"] = "Magpul MBUS Back-up Sights",
 
+						["menu_reticle_dmc_eotech"] = "EOTech 0-Reticle",
+						["menu_reticle_dmc_eotech_moa"] = "EOTech 2-Reticle",
+						["menu_reticle_dmc_eotech_seggs"] = "EOTech 0-Reticle (Segmented)",
+						["menu_reticle_dmc_ebr_cqb"] = "Vortex EBR-CQB",
+						["menu_reticle_dmc_trijicon_chevron"] = "Trijicon Chevron",
+						["menu_reticle_dmc_ncstar"] = "NcStar Cross",
+						["menu_reticle_dmc_cross_holotherm"] = "Steiner CQT Cross",
+
 					--Vertical Grips
 						["bm_wp_upg_vg_tac"] = "Knights Armament Co. VFG",
 						["bm_wp_upg_vg_stubby"] = "Tango Down QD Stubby VFG",
@@ -5393,11 +5439,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 		["mutator_bravos_only"] = "Hardline",
 		["mutator_bravos_only_desc"] = "Enemies are replaced by their PONR equivalents.",
-		["mutator_bravos_only_longdesc"] = "Non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
+		["mutator_bravos_only_longdesc"] = "Assault-spawned enemies are replaced by their Pro Job Point of No Return equivalents. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.\n\nWhen Replacement Method is Random Chance, the replacement chance will increase after each assault (if minimum assaults requirement is satisfied), up to the specified maximum.\n\nWhen Replacement Method is Mode 13, spawn replacements are triggered after the assault's intensity surpasses the specified threshold. Don't take too long and watch your fire!",
 		["menu_bravo_replacement_choice"] = "Replacement Method",
 		["menu_mutator_bravo_replacement_all"] = "All Units",
 		["menu_mutator_bravo_replacement_random"] = "Random Chance",
-		["menu_mutator_bravo_replacement_slider"] = "Replacement Chance (in %)",
+		["menu_mutator_bravo_replacement_mode_13"] = "Mode 13",
+		["menu_mutator_bravo_replacement_slider"] = "Replacement Chance %",
+		["menu_mutator_bravo_replacement_increase_slider"] = "Replacement Chance Increase %",
+		["menu_mutator_bravo_replacement_max_slider"] = "Replacement Chance Maximum %",
+		["menu_mutator_bravo_replacement_increase_min_assaults_slider"] = "Minimum Assaults to Increase Chance %",
+		["menu_mutator_bravo_replacement_mode_13_slider"] = "Mode 13 Threshold %",
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",
@@ -5461,8 +5512,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_quickscope360_longdesc"] = "Snipers now aim their rifles 100% faster.",
 
 		["mutator_goldfarbdozers"] = "Double Trouble",
-		["mutator_goldfarbdozers_desc"] = "All Bulldozers that spawn will always deploy in pairs.",
-		["mutator_goldfarbdozers_longdesc"] = "All Bulldozers that spawn will always deploy in pairs.",
+		["mutator_goldfarbdozers_desc"] = "Bulldozers can deploy in pairs.",
+		["mutator_goldfarbdozers_longdesc"] = "Bulldozers can deploy in pairs.\n\nIf the Always Pairs toggle is turned off, it's up to luck if 1 or 2 spawn.",
+		["menu_mutator_goldfarbdozers_always_pairs_toggle"] = "Always Pairs",
+		["menu_mutator_goldfarbdozers_always_pairs"] = "Always",
+		["menu_mutator_goldfarbdozers_sometimes_pairs"] = "Sometimes",
 
 		["mutator_spoocsquad"] = "Sneaky Squad",
 		["mutator_spoocsquad_desc"] = "Cloakers tend to spawn in groups.",
@@ -5754,7 +5808,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   COMBAT ENGINEER SUBTREE   ]]--
 				--Sharpshooter--
 				["menu_discipline_sc"] = "Sharpshooter",
-				["menu_discipline_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nLethal headshots using #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## increase your rate of fire by #{skill_color}#$skill_value_p1## for #{skill_color}#$skill_value_p2## seconds.",
+				["menu_discipline_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nLethal headshots using #{skill_color}#rifles## will have their rate of fire while set to #{risk}#semi-auto## or #{risk}#burst## increased by #{skill_color}#$skill_value_p1## for #{skill_color}#$skill_value_p2## seconds; #{skill_color}#rifles## set to #{risk}#full-auto## will see reduced effectiveness.",
 
 				--Rifleman--
 				["menu_rifleman_sc"] = "Rifleman",
@@ -5810,7 +5864,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Evasion--
 				["menu_awareness_beta_sc"] = "Evasion",
-				["menu_awareness_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain an additional #{skill_color}#$skill_value_b1## movement speed.\n\nYour fall damage is reduced by #{skill_color}#$skill_value_b2.##\n\nACE: #{owned}#$pro##\nYou can #{skill_color}#reload your weapons while sprinting.##\n\n#{item_stage_2}#A setting to allow for sprint cancelling reloads can be found in Restoration Mod's extra options.##",
+				["menu_awareness_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain an additional #{skill_color}#$skill_value_b1## movement speed.\n\nYour fall damage is reduced by #{skill_color}#$skill_value_b2.##\n\nACE: #{owned}#$pro##\nYou can #{skill_color}#reload your weapons while sprinting.##\n\n#{item_stage_2}#A setting to allow for sprint cancelling reloads can be found in Restoration Mod's weapon options.##",
 
 				--Deep Pockets--
 				["menu_thick_skin_beta_sc"] = "Deep Pockets",

@@ -1,0 +1,11 @@
+<materials version="3" group="weapon_group">
+	<material name="wpn_fps_ass_fal_base_nm" mip="1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+		<diffuse_texture file="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green_df" mip="1"/>
+		<bump_normal_texture file="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_nm" mip="1"/>
+	</material>
+	<material name="mtr_bullet" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+		<diffuse_texture file="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_m249_pts/ammo_df" mip="1"/>
+		<bump_normal_texture file="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_m249_pts/ammo_nm" mip="1"/>
+		<reflection_texture file="environments/cubemaps/cubemap_gold" type="cubemap"/>
+	</material>
+</materials>

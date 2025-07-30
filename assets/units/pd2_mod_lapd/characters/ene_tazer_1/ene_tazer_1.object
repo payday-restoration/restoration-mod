@@ -40,11 +40,11 @@
 			<object name="Head"/>
 			<object name="c_glass_shield" collision_type="convex"/>
 		</body>
-		<body name="bag" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="bag" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="RightUpLeg"/>
 			<object name="c_explosion" collision_type="convex"/>
 		</body>
-		<body name="bag_gren" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="bag_gren" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Hips"/>
 			<object name="c_explosion_gren" collision_type="convex"/>
 		</body>		

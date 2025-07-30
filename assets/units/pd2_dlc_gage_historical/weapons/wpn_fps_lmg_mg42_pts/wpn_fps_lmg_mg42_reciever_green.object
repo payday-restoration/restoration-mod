@@ -1,0 +1,55 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_fps_lmg_mg42_reciever" materials="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green" />
+    
+	<animations>
+		<animation_group name="reload">
+		  <object name="anim_draghandle_reload" enabled="true" />
+		  <object name="anim_mag_hatch_reload" enabled="true" />
+		  <object name="anim_lid_reload" enabled="true" />
+		  <object name="anim_draghandle_reload" enabled="true" />
+		  <object name="anim_dh_reload" enabled="true" />
+		  <object name="anim_mag_reload" enabled="true" />
+		  <object name="a_belt_2_reload" enabled="true" />
+		  <object name="a_belt_3_reload" enabled="true" />
+		  <object name="a_belt_4_reload" enabled="true" />
+		  <object name="anim_mag_handle_reload" enabled="true" />
+		</animation_group>
+		
+		<animation_group name="reload_not_empty">
+		  <object name="anim_draghandle_reload_not_empty" enabled="true" />
+		  <object name="anim_mag_hatch_reload_not_empty" enabled="true" />
+		  <object name="anim_lid_reload_not_empty" enabled="true" />
+		  <object name="anim_draghandle_reload_not_empty" enabled="true" />
+		  <object name="anim_dh_reload_not_empty" enabled="true" />
+		  <object name="anim_mag_reload_not_empty" enabled="true" />
+		  <object name="a_belt_2_reload_not_empty" enabled="true" />
+		  <object name="a_belt_3_reload_not_empty" enabled="true" />
+		  <object name="a_belt_4_reload_not_empty" enabled="true" />
+		  <object name="anim_mag_handle_not_empty" enabled="true" />
+		</animation_group>
+		
+		<animation_group name="recoil">
+		</animation_group>
+	</animations>
+	
+	<graphics>
+        <object enabled="false" name="g_handle" />
+        <object enabled="false" name="g_base" />
+        <object enabled="false" name="g_handle_loose" />
+        <object enabled="false" name="g_lid" />
+        <object enabled="false" name="g_lock" />
+        <object enabled="true" name="g_mag_handle" />
+        <object enabled="true" name="g_mag" />
+		
+        <object enabled="true" name="g_bullet_1" />
+        <object enabled="true" name="g_bullet_2" />
+        <object enabled="true" name="g_bullet_3" />
+        <object enabled="true" name="g_bullet_4" />
+        <object enabled="true" name="g_bullet_5" />
+        <object enabled="true" name="g_bullet_6" />
+        <object enabled="true" name="g_band_1" />
+        <object enabled="true" name="g_band_2" />
+        <object enabled="true" name="g_band_3" />
+        <object enabled="true" name="g_band_4" />
+    </graphics>
+</dynamic_object>

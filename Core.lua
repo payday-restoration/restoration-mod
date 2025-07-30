@@ -357,6 +357,7 @@ function restoration:Init()
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
+		"arm_cro",  -- Transport: Crossroads
 		"pbr2", --Birth of Sky
 		"chca", --Black Cat Heist
 		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.
@@ -445,6 +446,30 @@ function restoration:Init()
 	restoration.no_smokes_or_flashes = table.list_to_set({
 		"haunted",  -- Safehouse Nightmare
 	})
+
+	-- Heists to disable automatic drill reinforcements on
+	restoration.no_automatic_drill_reinforce = table.list_to_set({
+		"arm_fac",  -- Transport: Harbor
+		"arm_par",  -- Transport: Park
+		"arm_hcm",  -- Transport: Downtown
+		"arm_und",  -- Transport: Underpass
+		"arm_cro",  -- Transport: Crossroads
+		"arm_for",  -- Transport: Train
+		"arm_for_restoration",  -- Transport: Train (Res edit)
+	})
+
+	-- When playing Pro Jobs, heists in this table enable Bravos when the specified diff threshold would be exceeded
+	-- This should be reserved only for infinite loot heists or other special cases where Bravos should spawn but PONRs won't work
+	-- Threshold = 0 will activate on the first diff increase, threshold = 1 will activate after the fourth assault if no civs killed
+	restoration.natural_mode_13 = {
+		pines = 1,  -- White Xmas
+		rat = 1,  -- Cook Off
+		nail = 1,  -- Lab Rats
+		cane = 1,  -- Santa's Workshop
+		-- pal = 1,  -- Counterfeit
+		help = 1,  -- Prison Nightmare
+		mex_cooking = 1,  -- Border Crystals
+	}
 
 	--Sub Faction overrides
 	--Texas
@@ -1416,11 +1441,23 @@ function restoration:gen_ai_global_event(id, name, pos, rot, opts)
 	}
 end
 
--- restoration.logging = io.file_is_readable("mods/developer.txt")
+-- Log tiers
+-- "log" is for general logging that is useful for players and developers
+-- "debug" is for general logging that only really developers/tinkerers need
+-- "warn" is for reasonably recoverable mishaps
+-- "error" is for anything worse
+
 restoration.logging = true
 function restoration:log(str, ...)
 	if self.logging then
 		log("[RestorationMod] " .. str:format(...))
+	end
+end
+
+restoration.is_debug = io.file_is_readable("mods/developer.txt")
+function restoration:debug(str, ...)
+	if self.is_debug then
+		log("[RestorationMod][Debug] " .. str:format(...))
 	end
 end
 
@@ -1431,4 +1468,3 @@ end
 function restoration:error(str, ...)
 	log("[RestorationMod][Error] " .. str:format(...))
 end
-

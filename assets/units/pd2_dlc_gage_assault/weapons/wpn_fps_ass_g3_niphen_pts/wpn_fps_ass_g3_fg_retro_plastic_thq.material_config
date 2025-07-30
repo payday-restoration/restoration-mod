@@ -1,0 +1,14 @@
+<materials version="3" group="weapon_group">
+    <material name="g3_rem1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_retro_belt_synthetic_df" mip="1"/>
+        <bump_normal_texture file="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_retro_belt_synthetic_nm" mip="1"/>
+    </material>
+    <material name="g3_foregrip_retro1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_retro_plastic_df" mip="1"/>
+        <bump_normal_texture file="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_retro_plastic_nm" mip="1"/>
+    </material>
+    <material name="g3_spanne" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_retro_buckle_df" mip="1"/>
+        <bump_normal_texture file="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_retro_buckle_nm" mip="1"/>
+    </material>
+</materials>

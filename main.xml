@@ -78,6 +78,7 @@
 		<!--///OVERHAUL\\\-->
 			<!--CORE-->
 				<hook file="sc/core/coreunitdamage.lua" source_file="core/lib/units/coreunitdamage"/>
+				<hook file="sc/core/coresetup.lua" source_file="core/lib/setups/coresetup"/>
 				<hook file="sc/core/coreworldinstancemanager.lua" source_file="core/lib/managers/coreworldinstancemanager"/>
 				<hook file="sc/core/coreenvironmentcontrollermanager.lua" source_file="core/lib/managers/coreenvironmentcontrollermanager"/>
 			<!--TWEAKDATA-->
@@ -467,6 +468,7 @@
 					<option type="color" default_value="Color.black" name="AssaultFG" desc_id="RestorationModColorOption"/>
 
 					<option type="color" default_value="Color(0.6, 0.6, 0.6)" name="Stamina" desc_id="RestorationModColorOption"/>
+					<option type="color" default_value="Color(0.6, 0.6, 0.6)" name="StaminaBG" desc_id="RestorationModColorOption"/>
 					<option type="color" default_value="Color.white" name="StaminaThreshold" desc_id="RestorationModColorOption"/>
 
 					<option type="color" default_value="Color.white" name="BagBitmap" desc_id="RestorationModColorOption"/>
@@ -482,6 +484,10 @@
 					<option type="color" default_value="Color.yellow" name="DownsTwo" desc_id="RestorationModColorOption"/>
 					<option type="color" default_value="Color(1, 0.37, 0)" name="DownsOne" desc_id="RestorationModColorOption"/>
 					<option type="color" default_value="Color.red" name="DownsZero" desc_id="RestorationModColorOption"/>
+
+					<option type="color" default_value="Color(0.5, 0.5, 0.8)" name="DodgeBar" desc_id="RestorationModColorOption"/>
+					<option type="color" default_value="Color(0.6, 0.6, 0.6)" name="DodgeBarBG" desc_id="RestorationModColorOption"/>
+					<option type="color" default_value="Color.white" name="DodgeBarThreshold" desc_id="RestorationModColorOption"/>
 				</option_group>
 				<option_group name="Extra">
 					<merge_data area_bg="half"/>
@@ -590,39 +596,49 @@
 				<!--<option type="bool" default_value="false" name="SC" value_changed="RestorationCoreCallbacks:Restart"/>-->
 				<!--<option type="bool" default_value="false" name="Save"/>-->
 			<!--</option_group>-->
-			<option_group name="OTHER">
+			<option_group name="WEAPONS">
 				<option_group name="WeaponHandling">
-					<option type="bool" default_value="true" name="WpnFireDescope"/>
+					<option type="multichoice" default_value="1" name="CarpalTunnel" values_tbl="restoration.recoil_recover_style"/>
 					<divider name="tod_divider" size="14"/>
-					<option type="bool" default_value="false" name="ManualReloads"/>
+					<option type="bool" default_value="false" name="WpnFireDescope"/>
 					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="true" name="NoSwapOnRevive"/>
 					<divider name="tod_divider" size="14"/>
-					<option type="bool" default_value="false" name="QueuedShooting"/>
-					<option type="number" default_value="0.5" min="0.01" max="1" step="0.01" show_value="true" name="QueuedShootingWindow"/>
+					<option type="bool" default_value="false" name="AutoDMRs"/>
+				</option_group>
+				<option_group name="WEAPONINPUTS">
+					<option type="bool" default_value="true" name="QueuedShooting"/>
+					<option type="number" default_value="1" min="0.01" max="1" step="0.01" show_value="true" name="QueuedShootingWindow"/>
 					<option type="number" default_value="100" min="1" max="800" step="1" show_value="true" name="QueuedShootingExclude"/>
 					<option type="bool" default_value="true" name="QueuedShootingMidBurst"/>
-					<option type="number" default_value="0.3" min="0" max="3" step="0.01" show_value="true" name="QueuedShootingBurstExclude"/>
-					<divider name="tod_divider" size="14"/>
-					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
-					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
-					<option type="multichoice" default_value="2" name="ViewmodelMovement" values_tbl="restoration.vm_move"/>
-					<option type="bool" default_value="true" name="BigScopeOffset"/>
-					<option type="bool" default_value="true" name="StaticAim"/>
-					<option type="multichoice" default_value="1" name="CarpalTunnel" values_tbl="restoration.recoil_recover_style"/>
+					<option type="number" default_value="0.2" min="0" max="3" step="0.01" show_value="true" name="QueuedShootingBurstExclude"/>
 					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="SeparateBowADS"/>
-					<divider name="tod_divider" size="7"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="AimDeploysBipod"/>
 					<option type="bool" default_value="false" name="MoveCancelBipod"/>
 					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="SecondSightSprint"/>
-					<divider name="tod_divider" size="7"/>
-					<option type="bool" default_value="false" name="SprintCancel"/>
 					<divider name="tod_divider" size="14"/>
-					<option type="bool" default_value="false" name="AutoDMRs"/>
+					<option type="bool" default_value="false" name="SprintCancel"/>
+					<option type="bool" default_value="false" name="ManualReloads"/>
 				</option_group>
-				<divider name="tod_divider" size="14"/>
+				<option_group name="WEAPONANIMS">
+					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
+					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="true" name="StaticAim"/>
+					<option type="multichoice" default_value="2" name="ViewmodelMovement" values_tbl="restoration.vm_move"/>
+					<option type="bool" default_value="true" name="BigScopeOffset"/>
+					<divider name="tod_divider" size="14"/>
+					<button name="ToggleAnims" disabled="true"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="bool" default_value="false" name="m1911_foley"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="bool" default_value="true" name="g3_niphen"/>
+				</option_group>
+			</option_group>
+			<option_group name="OTHER">
 				<option_group name="Performance">
 					<option type="multichoice" default_value="1" name="QueuedImpactFXType" values_tbl="restoration.queued_impact_effects_type"/>
 					<button name="QueuedImpactFXDEFAULT" disabled="true"/>

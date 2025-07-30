@@ -230,7 +230,7 @@
 			<run_sequence filter="'check_fbi_ar'" name="'acc_'..pick('headset','headset','nothing')"/>								
 			<object filter="'check_fbi_ar'" enabled="true" name="'g_swat_ar'"/>						
 			<object filter="'check_fbi_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
-			<run_sequence filter="'check_fbi_ar'" name="'holster_'..pick('l','r', 'twinnem)"/>
+			<run_sequence filter="'check_fbi_ar'" name="'holster_'..pick('l','r', 'twinnem')"/>
 			
 			<!-- smg -->
 			<run_sequence filter="'check_fbi_smg'" name="'goggles_'..pick('a','d','c')"/>								
@@ -241,7 +241,7 @@
 			<object filter="'check_fbi_smg'" enabled="false" name="'g_helmet_lod2'"/>
 			<object filter="'check_fbi_smg'" enabled="true" name="'g_hat_lod1'"/>						
 			<object filter="'check_fbi_smg'" enabled="true" name="'g_hat_lod2'"/>
-			<run_sequence filter="'check_fbi_smg'" name="'holster_'..pick('l','r', 'twinnem)"/>
+			<run_sequence filter="'check_fbi_smg'" name="'holster_'..pick('l','r', 'twinnem')"/>
 			<run_sequence filter="'check_fbi_smg'" name="'body_'..pick('nothing', 'nothing', 'shitbag')"/>
 			<decal_mesh filter="'check_fbi_smg'" enabled="false" name="'dm_helmet'"/>					
 	
@@ -252,9 +252,9 @@
 			<object filter="'check_fbi_sg'" enabled="true" name="'g_beanie_lod1'"/>						
 			<object filter="'check_fbi_sg'" enabled="true" name="'g_beanie_lod2'"/>						
 			<object filter="'check_fbi_sg'" enabled="true" name="'g_swat_sg_lod1'"/>	
-			<run_sequence filter="'check_fbi_sg'" name="'goggles_'..pick('c','d','d', 'd' 'd')"/>											
+			<run_sequence filter="'check_fbi_sg'" name="'goggles_'..pick('c','d','d', 'd', 'd')"/>											
 			<run_sequence filter="'check_fbi_sg'" name="'body_'..pick('nothing', 'nothing', 'shitbag')"/>
-			<run_sequence filter="'check_fbi_sg'" name="'holster_'..pick('l','r', 'twinnem)"/>
+			<run_sequence filter="'check_fbi_sg'" name="'holster_'..pick('l','r', 'twinnem')"/>
 			<run_sequence filter="'check_fbi_sg'" name="'acc_'..pick('headsets_random','headsets_random','nothing')"/>								
 			<decal_mesh filter="'check_fbi_sg'" enabled="false" name="'dm_helmet'"/>					
 
@@ -268,7 +268,7 @@
 			<!-- sg -->
 			<object filter="'check_blue_sg'" enabled="true" name="'g_swat_sg'"/>						
 			<object filter="'check_blue_sg'" enabled="true" name="'g_swat_sg_lod1'"/>	
-			<run_sequence filter="'check_blue_sg'" name="'goggles_'..pick('c','nothing','b', 'nothing' 'a')"/>											
+			<run_sequence filter="'check_blue_sg'" name="'goggles_'..pick('c','nothing','b', 'nothing', 'a')"/>											
 			<run_sequence filter="'check_blue_sg'" name="'acc_pillow'"/>
 			<run_sequence filter="'check_blue_sg'" name="'body_'..pick('nothing', 'nothing', 'shitbag')"/>
 			<run_sequence filter="'check_blue_sg'" name="'holster_'..pick('l','nothing')"/>
@@ -296,7 +296,7 @@
 			<object filter="'check_blue_heavy_ar'" enabled="true" name="'g_swat_heavy_ar_lod1'"/>
 			<run_sequence filter="'check_blue_heavy_ar'" name="'heavy_helmet_a'"/>
 			<run_sequence filter="'check_blue_heavy_ar'" name="'body_'..pick('nothing', 'nothing', 'shitbag')"/>
-			<run_sequence filter="'check_blue_heavy_ar'" name="'holster_'..pick('l','r', 'twinnem)"/>
+			<run_sequence filter="'check_blue_heavy_ar'" name="'holster_'..pick('l','r', 'twinnem')"/>
 			<run_sequence filter="'check_blue_heavy_ar'" name="'acc_'..pick('nothing','headset','nothing')"/>								
 			<run_sequence filter="'check_blue_heavy_ar'" name="'body_'..pick('longsleeve', 'longsleeve', 'nothing')"/>
 
@@ -305,7 +305,7 @@
 			<object filter="'check_blue_heavy_shield'" enabled="true" name="'g_swat_shield_lod1'"/>
 			<run_sequence filter="'check_blue_heavy_shield'" name="'heavy_helmet_a'"/>
 			<run_sequence filter="'check_blue_heavy_shield'" name="'body_'..pick('nothing', 'nothing', 'shitbag')"/>
-			<run_sequence filter="'check_blue_heavy_shield'" name="'holster_'..pick('l','r', 'twinnem)"/>
+			<run_sequence filter="'check_blue_heavy_shield'" name="'holster_'..pick('l','r', 'twinnem')"/>
 			<run_sequence filter="'check_blue_heavy_shield'" name="'acc_'..pick('nothing','headset','nothing')"/>								
 			<run_sequence filter="'check_blue_heavy_shield'" name="'body_'..pick('longsleeve', 'longsleeve', 'nothing')"/>
 			
@@ -314,7 +314,7 @@
 			<object filter="'check_blue_fbi_shield'" enabled="true" name="'g_swat_shield_lod1'"/>
 			<run_sequence filter="'check_blue_fbi_shield'" name="'heavy_helmet_e'"/>
 			<run_sequence filter="'check_blue_fbi_shield'" name="'body_'..pick('nothing', 'nothing', 'shitbag')"/>
-			<run_sequence filter="'check_blue_fbi_shield'" name="'holster_'..pick('l','r', 'twinnem)"/>
+			<run_sequence filter="'check_blue_fbi_shield'" name="'holster_'..pick('l','r', 'twinnem')"/>
 			<run_sequence filter="'check_blue_fbi_shield'" name="'acc_'..pick('nothing','headset','nothing')"/>								
 			<run_sequence filter="'check_blue_fbi_shield'" name="'body_'..pick('longsleeve', 'longsleeve', 'nothing')"/>
 
@@ -327,7 +327,7 @@
 			<object filter="'check_fbi_heavy_ar'" enabled="false" name="'g_body_lod1'"/>			
 			<run_sequence filter="'check_fbi_heavy_ar'" name="'heavy_helmet_e'"/>
 			<run_sequence filter="'check_fbi_heavy_ar'" name="'body_'..pick('nothing', 'nothing', 'shitbag')"/>
-			<run_sequence filter="'check_fbi_heavy_ar'" name="'holster_'..pick('l','r', 'twinnem)"/>
+			<run_sequence filter="'check_fbi_heavy_ar'" name="'holster_'..pick('l','r', 'twinnem')"/>
 			<run_sequence filter="'check_fbi_heavy_ar'" name="'acc_'..pick('nothing','headset','nothing')"/>								
 			
 			<object filter="'check_fbi_heavy_sg'" enabled="true" name="'g_swat_heavy_sg'"/>						
@@ -365,7 +365,7 @@
 			<object filter="'check_blue_taser'" enabled="true" name="'g_taser'"/>	
 			<object filter="'check_blue_taser'" enabled="true" name="'g_taser_lod1'"/>
 			<run_sequence filter="'check_blue_taser'" name="'heavy_helmet_d'"/>		
-			<run_sequence filter="'check_blue_taser'" name="'holster_'..pick('l', fuck)"/>
+			<run_sequence filter="'check_blue_taser'" name="'holster_'..pick('l')"/>
 			<run_sequence filter="'check_blue_taser'" name="'body_'..pick('longsleeve', 'longsleeve', 'nothing')"/>
 			<run_sequence filter="'check_blue_taser'" name="'goggles_'..pick('a','a','b')"/>								
 			<run_sequence filter="'check_blue_taser'" name="'acc_'..pick('nothing','headset','nothing')"/>								
@@ -401,6 +401,26 @@
 			<object filter="'check_fbi_sniper'" enabled="true" name="'g_hat_lod2'"/>
 			<decal_mesh filter="'check_fbi_sniper'" enabled="false" name="'dm_helmet'"/>					
 			
+		</sequence>
+
+		<!-- Missing accessory sequences -->
+		<sequence editable_state="true" name="'acc_nothing'" once="true" triggable="true">
+			<!-- Empty - no accessory applied -->
+		</sequence>
+
+		<!-- Missing body sequences -->
+		<sequence editable_state="true" name="'body_nothing'" once="true" triggable="true">
+			<!-- Empty - no body modification -->
+		</sequence>
+
+		<!-- Missing goggles sequence -->
+		<sequence editable_state="true" name="'goggles_nothing'" once="true" triggable="true">
+			<!-- Empty - no goggles applied -->
+		</sequence>
+
+		<!-- Missing holster sequences -->
+		<sequence editable_state="true" name="'holster_nothing'" once="true" triggable="true">
+			<!-- Empty - no holster applied -->
 		</sequence>
 
 		<sequence editable_state="true" name="'spawn_helmet'" once="true" triggable="true">
@@ -686,8 +706,6 @@
 			<body enabled="true" name="'body'"/>
 			<body enabled="true" name="'Head'"/>
 			<body enabled="false" motion="'keyframed'" name="'rag_Hips'"/>
-			<body enabled="false" name="'bag'"/>
-			<body enabled="false" name="'bag_gren'"/>
 			<body enabled="true" motion="'keyframed'" name="'rag_LeftUpLeg'"/>
 			<body enabled="true" motion="'keyframed'" name="'rag_RightUpLeg'"/>
 			<body enabled="true" motion="'keyframed'" name="'rag_LeftLeg'"/>

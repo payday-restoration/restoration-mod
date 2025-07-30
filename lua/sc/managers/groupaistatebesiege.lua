@@ -309,7 +309,7 @@ function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, grp_
 	local req_entry = valid_unit_types[i]
 	while req_entry do --Array size changes, so iteration finishes when the current entry is nil.
 		if wanted_nr_units > nr_units and req_entry.amount_min and req_entry.amount_min > 0 then
-			if _add_unit_type_to_spawn_task(i, req_entry) then --Don't increment to next value if a unit was invalidated.
+			if not _add_unit_type_to_spawn_task(i, req_entry) then --Don't increment to next value if a unit was invalidated.
 				i = i + 1
 			end
 		else
@@ -528,8 +528,9 @@ function GroupAIStateBesiege:_upd_assault_task()
 			end
 
 			managers.mission:call_global_event("end_assault")
+			managers.mutators:_run_func("OnAssaultRegrouping", self._assault_number)
 			self:_begin_regroup_task(force_regroup)
-			self:set_difficulty(nil, 0.3)
+			self:set_difficulty(nil, self.DIFF_INC_POLICE_REGROUPING or 0.3)
 			return
 		end
 	end

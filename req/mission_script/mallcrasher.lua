@@ -10,7 +10,7 @@ local fbi_access = {
 		end
 }	
 return {
-	--Pro Job PONR 
+	-- Pro Job PONR 
 	[300204] = {
 		ponr = ponr_value
 	},
@@ -20,8 +20,28 @@ return {
 			{ id = 300164, delay = 45 }
 		}
 	},
-	--access fix, beat cops use fbi access
+		[300164] = { -- Add an unused spawngroup
+		values = {
+			spawn_groups = { 300313, 300314, 300281 },
+		},
+	},
+	-- Fix one of the cop cars not being hidden
+	[302012] = {
+		values = {
+			unit_ids = {
+				302026,
+				302025,
+				302023,
+				302027,
+				500501,
+				500857,
+				500851,
+			},
+		},
+	},
+	-- Access fix, beat cops use fbi access
 	[302019] = fbi_access,
 	[302021] = fbi_access,
-	[302022] = fbi_access
+	[302022] = fbi_access,
+	
 }

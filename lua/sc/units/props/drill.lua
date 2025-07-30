@@ -1,7 +1,10 @@
 Drill.on_hit_autorepair_chance = 0.75
 
 Hooks:PostHook(Drill, "start", "res_start", function(self)
-	managers.groupai:state():set_area_min_police_force(self._unit:key(), 3, self._unit:position())
+	local job = Global.level_data and Global.level_data.level_id
+	if not restoration.no_automatic_drill_reinforce[job] then
+		managers.groupai:state():set_area_min_police_force(self._unit:key(), 3, self._unit:position())
+	end
 end)
 
 Hooks:PostHook(Drill, "done", "res_done", function(self)

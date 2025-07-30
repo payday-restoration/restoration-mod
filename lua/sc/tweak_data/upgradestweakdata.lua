@@ -10,7 +10,7 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 ]]--
 
 local job = Global.level_data and Global.level_data.level_id
-local per_pellet = true --restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
+local per_pellet = true
 
 function UpgradesTweakData:_init_value_tables()
 	self.values = {
@@ -2352,25 +2352,26 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.on_killshot_cooldown_reduction_melee = 1.5
 
 	--New Sociopath
+	local ene_mult = { --Point multiplier based on tags of the enemy killed, top-down priority; final value is always rounded down
+		{captain = 10},
+		{tank = 5},
+		{spooc_titan = 3},
+		{spooc = 2.75},
+		{vet = 2.50},
+		{taser_titan = 2.00},
+		{taser = 2.50},
+		{medic = 2.25},
+		{shield_titan = 2.00},
+		{shield = 1.75},
+		{sniper_titan = 1.75},
+		{sniper = 1.50},
+		{special = 1.50},
+	}
 	self.values.player.buildup_meter = {
 		{
 			combo_max = 100, --Max combo
 			combo_add = 3, --points per kill
-			combo_ene_mult = { --Point multiplier based on enemy killed; top-down priority
-				{captain = 10},
-				{tank = 5},
-				{spooc_titan = 3},
-				{spooc = 2.75},
-				{vet = 2.75},
-				{taser_titan = 2.25},
-				{taser = 2.75},
-				{medic = 2.25},
-				{shield_titan = 2.25},
-				{sniper_titan = 2},
-				{sniper = 1.75},
-				{shield = 1.75},
-				{special = 1.75},
-			},
+			combo_ene_mult = ene_mult,
 			combo_t = 5, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
@@ -2380,21 +2381,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{
 			combo_max = 100,
 			combo_add = 3,
-			combo_ene_mult = {
-				{captain = 10},
-				{tank = 5},
-				{spooc_titan = 3},
-				{spooc = 2.75},
-				{vet = 2.75},
-				{taser_titan = 2.25},
-				{taser = 2.75},
-				{medic = 2.25},
-				{shield_titan = 2.25},
-				{sniper_titan = 2},
-				{sniper = 1.75},
-				{shield = 1.75},
-				{special = 1.75},
-			},
+			combo_ene_mult = ene_mult,
 			combo_t = 5,
 			combo_decay = 5,
 			hurt_decay = 5,
@@ -2404,21 +2391,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{ --Copycat
 			combo_max = 50, --Max combo
 			combo_add = 2, --points per kill
-			combo_ene_mult = { --Point multiplier based on enemy killed
-				{captain = 10},
-				{tank = 5},
-				{spooc_titan = 3},
-				{spooc = 2.75},
-				{vet = 2.75},
-				{taser_titan = 2.25},
-				{taser = 2.75},
-				{medic = 2.25},
-				{shield_titan = 2.25},
-				{sniper_titan = 2},
-				{sniper = 1.75},
-				{shield = 1.75},
-				{special = 1.75},
-			},
+			combo_ene_mult = ene_mult,
 			combo_t = 5, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
@@ -2489,7 +2462,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			melee_mult = 1.33334,
 		},
 		{	--Alex & Ash
-			combo_steps = 5,
+			combo_steps = 2,
 			effect = 0.03,
 			effect_max = 0.3,
 			melee_mult = 1,

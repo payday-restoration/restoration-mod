@@ -36,6 +36,19 @@
 					
 		</sequence>				
 
+		<sequence editable_state="true" name="'helmet_nothing'" once="true" triggable="true">
+			<!-- Empty sequence - no helmet displayed -->
+		</sequence>
+
+		<sequence editable_state="true" name="'holster_r'" once="true" triggable="true">
+			<object enabled="true" name="'g_holster_r'"/>
+			<object enabled="true" name="'g_holster_r_lod1'"/>
+		</sequence>
+
+		<sequence editable_state="true" name="'holster_none'" once="true" triggable="true">
+			<!-- Empty sequence - no holster displayed -->
+		</sequence>
+
 		
 		<sequence editable_state="true" name="'spawn_helmet'" once="true" triggable="true">									
 

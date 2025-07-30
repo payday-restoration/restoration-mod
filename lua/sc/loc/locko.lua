@@ -5740,7 +5740,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   COMBAT ENGINEER SUBTREE   ]]--
 				--Sharpshooter--
 				["menu_discipline_sc"] = "명사수",
-				["menu_discipline_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##의 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#소총##을 반자동 또는 점사로 설정한 상태로 치명적인 헤드샷 성공 시, #{skill_color}#$skill_value_p2##초 동안 연사 속도가 #{skill_color}#$skill_value_p1##만큼 빨라집니다.",
+				["menu_discipline_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##의 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#소총##을 #{skill_color}#반자동## 또는 #{skill_color}#점사##로 설정한 상태로 치명적인 헤드샷 성공 시, #{skill_color}#$skill_value_p2##초 동안 발사 속도가 #{skill_color}#$skill_value_p1## 증가하지만, #{skill_color}#소총##을 #{risk}#완전 자동##으로 설정할 상태에는 효과가 감소합니다.",
 
 				--Rifleman--
 				["menu_rifleman_sc"] = "소총수",

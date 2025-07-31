@@ -81,9 +81,6 @@ local prefix_garbage_for_humans = {
 		-- Murky Zeal SWATs
 		"units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3",
 		"units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-		-- OMNIA Crewmen
-		"units/pd2_mod_omnia/characters/ene_omnia_crewman/ene_omnia_crewman",
-		"units/pd2_mod_omnia/characters/ene_omnia_crewman_2/ene_omnia_crewman_2",
 	},
 	american_taser_list = {
 		func = function(self, nr_variations)
@@ -139,13 +136,52 @@ local prefix_garbage_for_humans = {
 		func = function(self, nr_variations)
 			return "l5n_"
 		end,
+		-- Vanilla Murky guards
 		"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 		"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 		"units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light",
 		"units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security",
 		"units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1",
 		"units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2",
+		-- Murky cops
+		"units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45",
+		"units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull",
+		"units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5",
+		"units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870",
+		-- Murky security (they use "cop" models)
+		"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
+		"units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull",
+		"units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+		"units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
+		-- Murky FBIs
+		"units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
+		"units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
+		"units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
+		-- OMNIA FBIs
+		"units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
+		"units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2",
+		"units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
+		-- OMNIA crew
+		"units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew",
+		"units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2",
+		-- OMNIA Snipers (they use "crew" models)
+		"units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",
+		"units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2",
 	},
+	--[[
+	l5n_l3n_l2n_list = {
+		func = function(self, nr_variations)
+			local rand = math.random()
+			if rand < 0.33 then
+				return "l5n_"
+			elseif rand < 0.66 then
+				return "l3n_"
+			else
+				return "l2n_"
+			end
+		end,
+	},
+	]]
 	female_enemy_list = {
 		func = function(self, nr_variations)
 			return "fl1n_"

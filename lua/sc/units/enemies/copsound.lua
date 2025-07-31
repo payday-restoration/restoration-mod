@@ -124,12 +124,6 @@ local prefix_garbage_for_humans = {
 		"units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
 		"units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
 		"units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city",
-		"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
-		"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
-		"units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light",
-		"units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security",
-		"units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1",
-		"units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2",
 		"units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city",
 		"units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2",
 		"units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3",
@@ -140,6 +134,17 @@ local prefix_garbage_for_humans = {
 		"units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2",
 		"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
 		"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
+	},
+	l5n_list = {
+		func = function(self, nr_variations)
+			return "l5n_"
+		end,
+		"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+		"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+		"units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light",
+		"units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security",
+		"units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1",
+		"units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2",
 	},
 	female_enemy_list = {
 		func = function(self, nr_variations)

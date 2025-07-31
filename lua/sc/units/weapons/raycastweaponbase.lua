@@ -1208,7 +1208,9 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 			if weap_base then
 				can_push = (weap_base.near_falloff_distance and col_ray.distance and col_ray.distance <= weap_base.near_falloff_distance) 
 				armor_piercing = weap_base.has_armor_piercing and weap_base:has_armor_piercing()
-				knock_down = (weap_base._natascha and col_ray.distance and col_ray.distance <= weap_base._natascha) or (weap_base.is_knock_down and weap_base:is_knock_down())
+				knock_down = (col_ray.distance and (weap_base._natascha and col_ray.distance <= weap_base._natascha) or 
+									(weap_base._rays and weap_base._rays > 1 and col_ray.distance <= 300)) or 
+								(weap_base.is_knock_down and weap_base:is_knock_down())
 				stagger = weap_base.is_stagger and weap_base:is_stagger()
 				variant = weap_base.variant and weap_base:variant()
 			end
@@ -1433,7 +1435,9 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 
 			if weap_base then
 				armor_piercing = weap_base.has_armor_piercing and weap_base:has_armor_piercing()
-				knock_down = weap_base.is_knock_down and weap_base:is_knock_down()
+				knock_down = (col_ray.distance and (weap_base._natascha and col_ray.distance <= weap_base._natascha) or 
+									(weap_base._rays and weap_base._rays > 1 and col_ray.distance <= 300)) or 
+								(weap_base.is_knock_down and weap_base:is_knock_down())
 				stagger = weap_base.is_stagger and weap_base:is_stagger()
 				variant = weap_base.variant and weap_base:variant()
 			end

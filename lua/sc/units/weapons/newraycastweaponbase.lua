@@ -1742,8 +1742,13 @@ end
 function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 	local multiplier = self._fire_rate_multiplier or 1
 	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
-	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
-		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
+	local has_sharpshooter = managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") 
+	if self:is_category("assault_rifle", "snp") and has_sharpshooter then
+		local temp_mult = managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
+		if self:fire_mode() ~= "single" then
+			temp_mult = ((temp_mult - 1) * 0.35) + 1
+		end
+		multiplier = multiplier * temp_mult
 	end 
 	if ignore_anims then
 		return multiplier / (self._rof_mult or 1)
@@ -1798,7 +1803,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 		multiplier = multiplier * self._alt_rof_mult
 	end
 
-	if (self:can_toggle_firemode() or self._rof_mult_semi) and self:fire_mode() == "single" and not self:in_burst_mode() then
+	if ((self:can_toggle_firemode() and not has_sharpshooter) or self._rof_mult_semi) and self:fire_mode() == "single" and not self:in_burst_mode() then
 		multiplier = multiplier * (self._rof_mult_semi or 0.8)
 	end
 

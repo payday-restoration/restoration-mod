@@ -1353,7 +1353,7 @@ function PlayerManager:_trigger_sharpshooter(unit, attack_data)
 	local attacker_unit = attack_data.attacker_unit
 	local variant = attack_data.variant
 
-	if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("assault_rifle", "snp") and attack_data.result.type == "death" then
+	if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit --[[and weapon_unit:base():fire_mode() == "single"]] and weapon_unit:base():is_category("assault_rifle", "snp") and attack_data.result.type == "death" then
 		self:activate_temporary_upgrade("temporary", "headshot_fire_rate_mult")
 	end
 end

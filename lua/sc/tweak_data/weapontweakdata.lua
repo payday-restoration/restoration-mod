@@ -24829,6 +24829,59 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.howa_type20 then --ACR but Japanese
+				self.howa_type20.categories = { "assault_rifle" }
+				self.howa_type20.recategorize = { "light_ar" }
+				self.howa_type20.damage_type = "assault_rifle"
+				self.howa_type20.nato = true
+				self.howa_type20.tactical_reload = 1
+				self.howa_type20.fire_mode_data.fire_rate = 0.088235294
+				self.howa_type20.CLIP_AMMO_MAX = 30
+				self.howa_type20.AMMO_MAX = 150
+				self.howa_type20.CAN_TOGGLE_FIREMODE = true
+				self.howa_type20.FIRE_MODE = "auto"
+				self.howa_type20.kick = {}
+				self.howa_type20.kick = self.stat_info.kick_tables.moderate_kick
+				self.howa_type20.kick_pattern = {
+					{0, self.stat_info.kick_tables.left_recoil},
+					{4, self.stat_info.kick_tables.moderate_left_kick},
+					{9, self.stat_info.kick_tables.even_recoil},
+					{12, self.stat_info.kick_tables.moderate_right_kick},
+					{17, self.stat_info.kick_tables.even_recoil},
+					{21, self.stat_info.kick_tables.moderate_left_kick},
+					{25, self.stat_info.kick_tables.even_recoil}
+				}
+				self.howa_type20.supported = true
+				self.howa_type20.ads_speed = 0.300
+				self.howa_type20.damage_falloff = {
+					start_dist = 2600,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.howa_type20.stats = {
+					damage = 24,
+					spread = 86,
+					recoil = 89,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 10,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.howa_type20.stats_modifiers = nil
+				self.howa_type20.panic_suppression_chance = 0.05
+				self.howa_type20.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.howa_type20.timers.reload_empty = 3.12
+				self.howa_type20.timers.reload_exit_empty = 0.75
+				self.howa_type20.timers.reload_not_empty = 2.3
+				self.howa_type20.timers.reload_exit_not_empty = 0.96
+				self.howa_type20.reload_speed_multiplier = 1
+			end
+
 			if self.peppermill then --Bioshocock Infimate Crank Gun
 				self.peppermill.categories = {
 					"minigun",
@@ -25873,7 +25926,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{20, self.stat_info.kick_tables.right_kick}
 				}
 				self.acr_2012.supported = true
-				self.acr_2012.ads_speed = 0.300
+				self.acr_2012.ads_speed = 0.320
 				self.acr_2012.damage_falloff = {
 					start_dist = 2400,
 					end_dist = 5800,
@@ -25882,7 +25935,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.acr_2012.stats = {
 					damage = 24,
 					spread = 83,
-					recoil = 95,
+					recoil = 91,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 24,

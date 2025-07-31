@@ -416,8 +416,8 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	local full_sound = nil
 	
 	local l5n_missing_police_calls = {
-		"l5n_a08",
 		"l5n_a09",
+		"l5n_a23",
 	}
 	local l5n_contact_lines = {
 		"Play_l5n_i01_con",
@@ -520,7 +520,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		if sound_name == "prm" then
 			full_sound = "Play_l5n_prm_con"
 		end
-		if sound_name == "pus" then
+		if sound_name == "pus" or sound_name == "rrl" then
 			full_sound = "Play_l5n_pus_con"
 		end
 		if sound_name == "r01" then

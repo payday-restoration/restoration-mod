@@ -5353,9 +5353,9 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 			if self._is_sliding then
 				if not self._state_data.in_air then
 					-- calculate stamina drain scaling based on current speed vs standard running speed
-					local drain_mult = (self._slide_speed * 3)/self._sprinting_speed
+					local drain_mult = self._slide_speed/self._sprinting_speed --(self._slide_speed * 1)/self._sprinting_speed
 					-- drain stamina, prevent regen
-					self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.STAMINA_DRAIN_RATE * dt * drain_mult)
+					self._unit:movement():subtract_stamina((self._unit:movement():_max_stamina() * 0.2) * dt * drain_mult)
 					--if drain_mult > 0.50 then
 						self._unit:movement():_restart_stamina_regen_timer()
 					--end

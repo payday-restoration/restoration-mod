@@ -73,17 +73,17 @@
 			
 			<object enabled="true" name="'g_mask_lod1'"/>
 			<object enabled="true" name="'g_mask_lod2'"/>
-			<body 	enabled="true" name="'sg_mask'" />		
+			<body enabled="true" name="'sg_mask'"/>		
 			
 			<object enabled="false" name="'g_helmet_lod1'"/>
 			<object enabled="false" name="'g_helmet_lod2'"/>
 			<object enabled="false" name="'g_helmet_lod3'"/>
 						
-			<decal_mesh enabled="false" name="'c_glass'" />		
-			<decal_mesh enabled="true" name="'c_mask_taser'" />						
-			<decal_mesh enabled="true" name="'c_glass_shield'" />	
-			<body enabled="true" name="'glass_shield'" />								
-			<body enabled="false" name="'glass_swat'" />		
+			<decal_mesh enabled="false" name="'c_glass'"/>		
+			<decal_mesh enabled="true" name="'c_mask_taser'"/>						
+			<decal_mesh enabled="true" name="'c_glass_shield'"/>	
+			<body enabled="true" name="'glass_shield'"/>								
+			<body enabled="false" name="'glass_swat'"/>		
 		</sequence>
 		
 		<sequence editable_state="true" name="'heavy_helmet_c'" once="true" triggable="true">
@@ -93,33 +93,33 @@
 			<object enabled="true" name="'g_mask_lod1'"/>
 			<object enabled="true" name="'g_mask_lod2'"/>
 			<object enabled="true" name="'g_mask_lod3'"/>
-			<body  	enabled="true" name="'sg_mask'" />		
+			<body enabled="true" name="'sg_mask'"/>		
 			
 			<object enabled="false" name="'g_helmet_lod1'"/>
 			<object enabled="false" name="'g_helmet_lod2'"/>
 			<object enabled="false" name="'g_helmet_lod3'"/>
 						
-			<decal_mesh enabled="false" name="'c_glass'" />			
-			<decal_mesh enabled="true" name="'c_mask_taser'" />			
-			<decal_mesh enabled="false" name="'c_glass_shield'" />				
-			<body enabled="false" name="'glass_swat'" />		
+			<decal_mesh enabled="false" name="'c_glass'"/>			
+			<decal_mesh enabled="true" name="'c_mask_taser'"/>			
+			<decal_mesh enabled="false" name="'c_glass_shield'"/>				
+			<body enabled="false" name="'glass_swat'"/>		
 		</sequence>
 		
 		<sequence editable_state="true" name="'heavy_helmet_e'" once="true" triggable="true">
 			<object enabled="true" name="'g_helmet_taser_lod1'"/>
 			<object enabled="true" name="'g_helmet_taser_lod2'"/>
 			<object enabled="true" name="'g_helmet_taser_lod3'"/>
-			<decal_mesh enabled="true" name="'dm_helmet_taser'" />	
-			<body  	enabled="true" name="'sg_mask'" />		
-			<decal_mesh  	enabled="true" name="'c_mask_taser'" />		
-			<decal_mesh enabled="false" name="'dm_helmet'" />				
+			<decal_mesh enabled="true" name="'dm_helmet_taser'"/>	
+			<body enabled="true" name="'sg_mask'"/>		
+			<decal_mesh enabled="true" name="'c_mask_taser'"/>		
+			<decal_mesh enabled="false" name="'dm_helmet'"/>				
 			
 			<object enabled="false" name="'g_helmet_lod1'"/>
 			<object enabled="false" name="'g_helmet_lod2'"/>
 			<object enabled="false" name="'g_helmet_lod3'"/>						
 		</sequence>
 
-		<!-- DIRECT SWAT SEQUENCES (No more meat grinder) -->
+		<!-- DIRECT SWAT SEQUENCES -->
 		<sequence editable_state="true" name="'swat_ar'" triggable="true" once="true">						
 			<run_sequence name="'holster_r'"/>
 			<run_sequence name="'face_a'"/>
@@ -157,43 +157,12 @@
 			<run_sequence name="'heavy_helmet_e'"/>
 		</sequence>
 		
-		<!-- BODY DEFINITIONS -->
-		<body name="'glass_swat'">
-			<endurance explosion="4" bullet="1">
-				<run_sequence name="'crk_goggles'"/>
-			</endurance>
-		</body>	
-		
-		<body name="'antenna'">
-			<endurance damage="12">
-				<run_sequence name="'remove_healing'"/>
-			</endurance>
-		</body>	
-	
-		<body name="'glass_visor'">
-			<endurance bullet="2" explosion="4">
-				<run_sequence name="'crk_visor'"/>
-			</endurance>
-			<endurance explosion="6">
-				<run_sequence name="'destroy_visor'"/>
-			</endurance>
-		</body>	
-
-		<body name="'glass_shield'">
-			<endurance bullet="2" explosion="4">
-				<run_sequence name="'crk_visor'"/>
-			</endurance>
-			<endurance explosion="6">
-				<run_sequence name="'destroy_visor'"/>
-			</endurance>
-		</body>	
-
 		<!-- OTHER SEQUENCES -->
 		<sequence editable_state="true" name="'remove_healing'" triggable="true" once="true">	
-			<function   extension="'character_damage'" function="'lpf_disable'" start_time="0"/> 	
-			<effect 	damp_time="3" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
-			<effect 	damp_time="4" name="'effects/particles/dest/security_camera_dest'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
-			<effect 	damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
+			<function extension="'character_damage'" function="'lpf_disable'" start_time="0"/> 	
+			<effect damp_time="3" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
+			<effect damp_time="4" name="'effects/particles/dest/security_camera_dest'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
+			<effect damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
 			
 			<object enabled="false" name="'g_body_antenna'"/>						
 			<body enabled="false" name="'antenna'"/>						
@@ -227,7 +196,6 @@
 		</sequence>				
 		
 		<sequence editable_state="true" name="'crk_goggles'" once="true" triggable="true">
-			<!-- Empty - no goggle objects exist on titan -->
 		</sequence>				
 						
 		<!-- RAGDOLL SEQUENCES -->

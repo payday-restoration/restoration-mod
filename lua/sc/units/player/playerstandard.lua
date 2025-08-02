@@ -106,7 +106,7 @@ function PlayerStandard:push(vel, override_vel, override_vel_mult, allow_sprint,
 	local override_vel_mult = override_vel_mult or 0
 	if self._unit:mover() then
 		if override_vel then
-			--Scuffed as fuck way of doing this probably but I couldn't find another way to modify only x and y
+			--Scuffed as fuck way of doing this probably but I am what you call stupid and couldn't find another way to modify only x and y
 			self._last_velocity_xy = self._last_velocity_xy:with_x(self._last_velocity_xy.x * override_vel_mult):with_y(self._last_velocity_xy.y * override_vel_mult)
 		end
 		self._last_velocity_xy = self._last_velocity_xy + vel
@@ -5154,14 +5154,14 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 			self._is_wallkicking = nil
 		end
 		if not ((managers.groupai:state():whisper_mode() and AdvMov.settings.slidestealth == 1) or (not managers.groupai:state():whisper_mode() and AdvMov.settings.slideloud == 1)) then
-			if self._last_velocity_xy and (self._running or (self._last_dash_time and (self._last_dash_time + 0.25 > self._last_t)) or ( self._last_run_t and self._state_data.in_air and self._last_run_t + 0.5 > self._last_t ) or self._is_wallkicking) and not self._wallkick_is_clinging and (self._last_t - (self._start_running_t or 0)) > 0.2 then
+			if self._last_velocity_xy and (self._running or (self._last_dash_time and (self._last_dash_time + 0.25 > self._last_t)) or ( self._last_run_t and self._state_data.in_air and self._last_run_t + 0.5 > self._last_t ) or self._is_wallkicking) and not self._wallkick_is_clinging and (self._last_t - (self._start_running_t or 0)) > 0.25 then
 				-- must be moving at least a certain speed to slide
 				local movedir = self._move_dir or self._last_velocity_xy -- don't use self:get_sampled_xy() in any of the other lines in here
 				local velocity = Vector3()
 				mvector3.set(velocity, self._last_velocity_xy)
 				local horizontal_speed = mvector3.normalize(velocity)
 				local walkspeed = self:_get_modified_move_speed()
-				local slide_cooldown = 0.8
+				local slide_cooldown = 1
 				--[[
 				if self._slide_dir then
 					-- reduce cooldown if not attempting slide in the same direction i.e. do the speedyboi
@@ -5181,12 +5181,12 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 					self._slide_desired_dir = mvector3.copy(movedir)
 					self._sprinting_speed = self:_get_modified_move_speed("run")
 					-- make it feel like a speedy slide
-					self._slide_speed = math.clamp(self._sprinting_speed * 1.5, 1000, 1500) --self._tweak_data.movement.speed.RUNNING_MAX * 1.3
+					self._slide_speed = math.clamp(self._sprinting_speed * 1.5, 900, 1200) --self._tweak_data.movement.speed.RUNNING_MAX * 1.3
 					self._slide_refresh_t = 0
 					self._slide_last_z = self._unit:position().z
 					self._slide_last_speed = self._slide_speed
 					self._slide_end_speed = self:_get_modified_move_speed("crouch")/4 -- don't need to calculate every frame
-					self._slide_speed_factor = self._slide_speed/(self._tweak_data.movement.speed.RUNNING_MAX * 1.2) -- it's magic
+					self._slide_speed_factor = self._slide_speed/(self._tweak_data.movement.speed.RUNNING_MAX * 1.15) -- it's magic
 					self:_stance_entered()
 
 					self._last_slide_time = self._last_t
@@ -5353,9 +5353,9 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 			if self._is_sliding then
 				if not self._state_data.in_air then
 					-- calculate stamina drain scaling based on current speed vs standard running speed
-					local drain_mult = self._slide_speed/self._sprinting_speed
+					local drain_mult = self._slide_speed/self._sprinting_speed --(self._slide_speed * 1)/self._sprinting_speed
 					-- drain stamina, prevent regen
-					self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.STAMINA_DRAIN_RATE * dt * drain_mult)
+					self._unit:movement():subtract_stamina((self._unit:movement():_max_stamina() * 0.2) * dt * drain_mult)
 					--if drain_mult > 0.50 then
 						self._unit:movement():_restart_stamina_regen_timer()
 					--end

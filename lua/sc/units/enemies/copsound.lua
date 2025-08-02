@@ -1,534 +1,398 @@
+-- Put unit names in these lists as strings, NOT Idstrings
+-- Make sure there is a function
+-- Do not touch prefix_garbage_for_robots below
+local prefix_garbage_for_humans = {
+	american_cop_filtered_list = {
+		func = function(self, nr_variations)
+			return "l" .. nr_variations .. "d_"
+		end,
+		-- US Blue SWAT
+		"units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc",
+		"units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc",
+		"units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc",
+		-- US FBI SWAT
+		"units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc",
+		"units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
+		"units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc",
+		-- US GenSec
+		"units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
+		"units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc",
+		"units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc",
+		"units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
+		"units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
+		"units/payday2/characters/ene_shield_gensec/ene_shield_gensec",
+		-- US Zeals
+		"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
+		-- NYPD Blue SWATs
+		"units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4",
+		"units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870",
+		"units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield",
+		-- NYPD FBI SWATs
+		"units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		"units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
+		"units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1",
+		-- NYPD GenSec SWATs
+		"units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1",
+		"units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2",
+		"units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3",
+		"units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36",
+		"units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870",
+		"units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec",
+		-- LAPD Blue SWATs
+		"units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1",
+		"units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",
+		"units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2",
+		-- LAPD FBI SWATs
+		"units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		"units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
+		"units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1",
+		-- LAPD FBI Elites
+		"units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36",
+		"units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
+		"units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield",
+		-- Constantine GenSec SWATs
+		"units/pd2_mod_ttr/characters/ene_fbi_gensec_1/ene_fbi_gensec_1",
+		"units/pd2_mod_ttr/characters/ene_fbi_gensec_2/ene_fbi_gensec_2",
+		"units/pd2_mod_ttr/characters/ene_swat_gensec_shield/ene_swat_gensec_shield",
+		"units/pd2_mod_ttr/characters/ene_fbi_gensec_heavy/ene_fbi_gensec_heavy",
+		"units/pd2_mod_ttr/characters/ene_fbi_gensec_heavy_r870/ene_fbi_gensec_heavy_r870",
+		"units/pd2_mod_ttr/characters/ene_fbi_gensec_shield/ene_fbi_gensec_shield",
+		"units/pd2_mod_ttr/characters/ene_marshal_gensec/ene_marshal_gensec",
+	},
+	american_cop_list = {
+		func = function(self, nr_variations)
+			return "l" .. nr_variations .. "n_"
+		end,
+		-- Murky Blue SWATs
+		"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
+		"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
+		"units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3",
+		"units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",
+		-- Murky FBI SWATs
+		"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		"units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		-- Murky City SWATs
+		"units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2",
+		-- Murky Zeal SWATs
+		"units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3",
+		"units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+	},
+	american_taser_list = {
+		func = function(self, nr_variations)
+			return "tsr_"
+		end,
+		"units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
+		"units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser",
+		"units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+	},
+	american_dozer_list = {
+		func = function(self, nr_variations)
+			return "bdz_"
+		end,
+		"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
+		"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
+		"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+		"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli",
+	},
+	-- Scary gruff filtered lines, reserve for mercs and whatnot
+	l5d_list = {
+		func = function(self, nr_variations)
+			return "l5d_"
+		end,
+		"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",
+		"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
+		"units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		"units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		"units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+		"units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1",
+		"units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3",
+		"units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
+		"units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
+		"units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city",
+		"units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city",
+		"units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2",
+		"units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3",
+		"units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy",
+		"units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870",
+		"units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield",
+		"units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1",
+		"units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2",
+		"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
+		"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
+	},
+	l5n_list = {
+		func = function(self, nr_variations)
+			return "l5n_"
+		end,
+		-- Vanilla Murky guards
+		"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+		"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+		"units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light",
+		"units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security",
+		"units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1",
+		"units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2",
+		-- Murky cops
+		"units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45",
+		"units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull",
+		"units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5",
+		"units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870",
+		-- Murky security (they use "cop" models)
+		"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
+		"units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull",
+		"units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+		"units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
+		-- Murky FBIs
+		"units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
+		"units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
+		"units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
+		-- OMNIA FBIs
+		"units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1",
+		"units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2",
+		"units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3",
+		-- OMNIA crew
+		"units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew",
+		"units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2",
+		-- OMNIA Snipers (they use "crew" models)
+		"units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",
+		"units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2",
+	},
+	--[[
+	l5n_l3n_l2n_list = {
+		func = function(self, nr_variations)
+			local rand = math.random()
+			if rand < 0.33 then
+				return "l5n_"
+			elseif rand < 0.66 then
+				return "l3n_"
+			else
+				return "l2n_"
+			end
+		end,
+	},
+	]]
+	female_enemy_list = {
+		func = function(self, nr_variations)
+			return "fl1n_"
+		end,
+		"units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1",
+		"units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2",
+		"units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3",
+	},
+	russian_taser_list = {
+		func = function(self, nr_variations)
+			return "rtsr_"
+		end,
+		"units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser",
+	},
+	russian_cloaker_list = {
+		func = function(self, nr_variations)
+			return "rclk_"
+		end,
+		"units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1",
+	},
+	russian_medic_list = {
+		func = function(self, nr_variations)
+			return "rmdc_"
+		end,
+		"units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf",
+	},
+	russian_merc_list = {
+		func = function(self, nr_variations)
+			return "r" .. nr_variations .. "n_"
+		end,
+		"units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1",
+		-- Custom stuff below
+		"units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1",
+		"units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2",
+		"units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3",
+		"units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1",
+		"units/pd2_dlc_mad/characters/ene_rus_cop_2/ene_rus_cop_2",
+		"units/pd2_dlc_mad/characters/ene_rus_cop_3_mp5/ene_rus_cop_3_mp5",
+		"units/pd2_dlc_mad/characters/ene_rus_cop_3_r870/ene_rus_cop_3_r870",
+		"units/pd2_dlc_mad/characters/ene_rus_cop_4_m4/ene_rus_cop_4_m4",
+		"units/pd2_dlc_mad/characters/ene_rus_cop_4_r870/ene_rus_cop_4_r870",
+		"units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4",
+		"units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870",
+		"units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4",
+		"units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36",
+		"units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870",
+		"units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36",
+		"units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu",
+		"units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass",
+		"units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45",
+		"units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2",
+		"units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city",
+		"units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper",
+	},
+	russian_mobster_list = {
+		func = function(self, nr_variations)
+			return "rt" .. nr_variations .. "_"
+		end,
+		"units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1",
+		"units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2",
+		"units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3",
+		"units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4",
+		"units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5",
+		"units/payday2/characters/ene_gang_mobster_enforcer/ene_gang_mobster_enforcer",
+		"units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1",
+		"units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2",
+		-- Custom stuff below
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_1_pager/ene_gang_mobster_1_pager",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_2_pager/ene_gang_mobster_2_pager",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_3_pager/ene_gang_mobster_3_pager",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_4_pager/ene_gang_mobster_4_pager",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_5/ene_gang_mobster_5",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_5_pager/ene_gang_mobster_5_pager",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_6/ene_gang_mobster_6",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_6_pager/ene_gang_mobster_6_pager",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_7_pager/ene_gang_mobster_7_pager",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_armored/ene_gang_mobster_armored",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_armored_2/ene_gang_mobster_armored_2",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_clubowner/ene_gang_mobster_clubowner",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_vip_1/ene_gang_mobster_vip_1",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_vip_2/ene_gang_mobster_vip_2",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_enforcer/ene_gang_mobster_enforcer",
+		"units/pd2_mod_ttr/characters/ene_gang_mobster_clubsecurity/ene_gang_mobster_clubsecurity",
+	},
+	cobras_list = {
+		func = function(self, nr_variations)
+			return "ict" .. nr_variations .. "_"
+		end,
+		"units/payday2/characters/ene_gang_black_1/ene_gang_black_1",
+		"units/payday2/characters/ene_gang_black_2/ene_gang_black_2",
+		"units/payday2/characters/ene_gang_black_3/ene_gang_black_3",
+		"units/payday2/characters/ene_gang_black_4/ene_gang_black_4",
+		"units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer",
+	},
+	bexico_cop_list = {
+		func = function(self, nr_variations)
+			return "m" .. nr_variations .. "n_"
+		end,
+		-- Cartel faction below
+		"units/pd2_mod_ttr/characters/ene_cartel_commando/ene_cartel_commando",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier/ene_cartel_soldier",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_2/ene_cartel_soldier_2",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_3/ene_cartel_soldier_3",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_4/ene_cartel_soldier_4",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_1/ene_cartel_soldier_shotgun_1",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_2/ene_cartel_soldier_shotgun_2",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_3/ene_cartel_soldier_shotgun_3",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_4/ene_cartel_soldier_shotgun_4",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy/ene_cartel_soldier_heavy",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_shotgun/ene_cartel_soldier_heavy_shotgun",
+		"units/pd2_mod_ttr/characters/ene_cartel_shield/ene_cartel_shield",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_1/ene_cartel_soldier_fbi_1",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_2/ene_cartel_soldier_fbi_2",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_3/ene_cartel_soldier_fbi_3",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_4/ene_cartel_soldier_fbi_4",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_1/ene_cartel_soldier_fbi_shotgun_1",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_2/ene_cartel_soldier_fbi_shotgun_2",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_3/ene_cartel_soldier_fbi_shotgun_3",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_4/ene_cartel_soldier_fbi_shotgun_4",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_fbi/ene_cartel_soldier_heavy_fbi",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_fbi_shotgun/ene_cartel_soldier_heavy_fbi_shotgun",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_city_1/ene_cartel_soldier_city_1",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_city_2/ene_cartel_soldier_city_2",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_city_3/ene_cartel_soldier_city_3",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_city_4/ene_cartel_soldier_city_4",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_1/ene_cartel_soldier_city_shotgun_1",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_2/ene_cartel_soldier_city_shotgun_2",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_3/ene_cartel_soldier_city_shotgun_3",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_4/ene_cartel_soldier_city_shotgun_4",
+		"units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_city/ene_cartel_soldier_heavy_city",
+	},
+	bexico_taser_list = {
+		func = function(self, nr_variations)
+			return "mtsr_"
+		end,
+		"units/pd2_mod_ttr/characters/ene_cartel_tazer/ene_cartel_tazer",
+		"units/pd2_mod_ttr/characters/ene_cartel_tazer_normal/ene_cartel_tazer_normal",
+	},
+	bexico_cloaker_list = {
+		func = function(self, nr_variations)
+			return "mclk_"
+		end,
+		"units/pd2_mod_ttr/characters/ene_cartel_scout/ene_cartel_scout",
+	},
+	bexico_dozer_list = {
+		func = function(self, nr_variations)
+			return "mbdz_"
+		end,
+		"units/pd2_mod_ttr/characters/ene_cartel_bulldozer/ene_cartel_bulldozer",
+		"units/pd2_mod_ttr/characters/ene_cartel_bulldozer_2/ene_cartel_bulldozer_2",
+		"units/pd2_mod_ttr/characters/ene_cartel_bulldozer_3/ene_cartel_bulldozer_3",
+		"units/pd2_mod_ttr/characters/ene_cartel_grenadier/ene_cartel_grenadier",
+		"units/pd2_mod_ttr/characters/ene_cartel_grenadier_2/ene_cartel_grenadier_2",
+	},
+}
+
+local prefix_garbage_for_robots = {}
+for unit_type, list in pairs(prefix_garbage_for_humans) do
+	local func = list.func
+	list.func = nil
+	if not func then
+		restoration:warn("No prefix func found for unit type %s", unit_type)
+	else
+		for _, unit_name in pairs(list) do
+			prefix_garbage_for_robots[Idstring(unit_name):key()] = func
+			prefix_garbage_for_robots[Idstring(unit_name .. "_husk"):key()] = func
+		end
+	end
+end
+prefix_garbage_for_humans = nil
+
 function CopSound:init(unit)
-	local table_contains = table.contains
-	local ids_func = Idstring
-	local american_cop_filtered_list = {
-		--US Blue SWATs
-		ids_func("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"),
-		ids_func("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc_husk"),
-		ids_func("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-		ids_func("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk"),
-		ids_func("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"),
-		ids_func("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc_husk"),
-		--US FBI SWAT
-		ids_func("units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"),
-		ids_func("units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc_husk"),	
-		ids_func("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
-		ids_func("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),	
-		ids_func("units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"),
-		ids_func("units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc_husk"),	
-		--US GenSec
-		ids_func("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-		ids_func("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_husk"),
-		ids_func("units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc"),
-		ids_func("units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc_husk"),
-		ids_func("units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"),
-		ids_func("units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc_husk"),
-		ids_func("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"),
-		ids_func("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk"),	
-		ids_func("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-		ids_func("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),	
-		ids_func("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
-		ids_func("units/payday2/characters/ene_shield_gensec/ene_shield_gensec_husk"),
-		--LAPD FBI Elites
-		ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-		ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),	
-		ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-		ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),	
-		ids_func("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
-		ids_func("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield_husk"),
-		--US Zeals
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1_husk"),		
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk"),		
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),	
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),		
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),		
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc_husk"),		
-		--NYPD Blue SWATs
-		ids_func("units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"),
-		ids_func("units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4_husk"),		
-		ids_func("units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"),
-		ids_func("units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_husk"),
-		ids_func("units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"),
-		ids_func("units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_husk"),
-		--NYPD FBI SWATs		
-		ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-		ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),
-		ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
-		ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),	
-		ids_func("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
-		ids_func("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1_husk"),	
-		--NYPD GenSec SWATs		
-		ids_func("units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1"),
-		ids_func("units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1_husk"),
-		ids_func("units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2"),
-		ids_func("units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2_husk"),
-		ids_func("units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3"),
-		ids_func("units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3_husk"),
-		ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-		ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),
-		ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
-		ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk"),	
-		ids_func("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"),
-		ids_func("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec_husk"),		
-		--LAPD Blue SWATs
-		ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-		ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),		
-		ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),
-		ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk"),
-		ids_func("units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"),
-		ids_func("units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2_husk"),
-		--LAPD FBI SWATs		
-		ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-		ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),
-		ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
-		ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),	
-		ids_func("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
-		ids_func("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1_husk"),			
-		--Constantine GenSec SWATs
-		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_1/ene_fbi_gensec_1"),
-		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_1/ene_fbi_gensec_1_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_2/ene_fbi_gensec_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_2/ene_fbi_gensec_2_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_swat_gensec_shield/ene_swat_gensec_shield"),
-		ids_func("units/pd2_mod_ttr/characters/ene_swat_gensec_shield/ene_swat_gensec_shield_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_heavy/ene_fbi_gensec_heavy"),
-		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_heavy/ene_fbi_gensec_heavy_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_heavy_r870/ene_fbi_gensec_heavy_r870"),
-		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_heavy_r870/ene_fbi_gensec_heavy_r870_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_shield/ene_fbi_gensec_shield"),
-		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_shield/ene_fbi_gensec_shield_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_marshal_gensec/ene_marshal_gensec"),
-		ids_func("units/pd2_mod_ttr/characters/ene_marshal_gensec/ene_marshal_gensec_husk")			
-	}
-	local american_cop_list = {
-		--Murky SWAT
-		ids_func("units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"),
-		ids_func("units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1_husk"),		
-		ids_func("units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2"),
-		ids_func("units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2_husk"),	
-		ids_func("units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"),
-		ids_func("units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),
-		ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk"),
-		--Murky FBI SWATs
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk"),		
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk"),
-		--Murky City/Zeals
-		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2"),
-		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk"),
-		--OMNIA Crewmen
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_crewman/ene_omnia_crewman"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_crewman/ene_omnia_crewman_husk"),	
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_crewman_2/ene_omnia_crewman_2"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_crewman_2/ene_omnia_crewman_2_husk")	
-	}
-	local american_taser_list = {
-		ids_func("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
-		ids_func("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk"),	
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc_husk"),	
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer_husk")
-	}
-	local american_dozer_list = {
-		ids_func("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"),
-		ids_func("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_husk"),	
-		ids_func("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"),
-		ids_func("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc_husk"),
-		ids_func("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"),
-		ids_func("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc_husk"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc_husk"),		
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc_husk"),	
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"),
-		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc_husk"),	
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli_husk")
-	}
-	--Scary gruff filtered lines, reserve for mercs and what not
-	local l5d_list = {
-		ids_func("units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2"),
-		ids_func("units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-		ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),	
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
-		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1_husk"),	
-		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
-		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow_husk"),	
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city"),
-		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city_husk"),
-		ids_func("units/payday2/characters/ene_murkywater_1/ene_murkywater_1"),
-		ids_func("units/payday2/characters/ene_murkywater_1/ene_murkywater_1_husk"),	
-		ids_func("units/payday2/characters/ene_murkywater_2/ene_murkywater_2"),
-		ids_func("units/payday2/characters/ene_murkywater_2/ene_murkywater_2_husk"),		
-		ids_func("units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"),
-		ids_func("units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light_husk"),
-		ids_func("units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security"),
-		ids_func("units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security_husk"),	
-		ids_func("units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1"),
-		ids_func("units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1_husk"),
-		ids_func("units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2"),
-		ids_func("units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2_husk"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city_husk"),	
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2_husk"),	
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3_husk"),	
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_husk"),	
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk"),	
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_husk"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk")
-	}		
-	local female_enemy_list = {
-		ids_func("units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1"),
-		ids_func("units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1_husk"),	
-		ids_func("units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2"),
-		ids_func("units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2_husk"),	
-		ids_func("units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"),
-		ids_func("units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3_husk")		
-	}	
-	local russian_taser_list = {
-		ids_func("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser"),
-		ids_func("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser_husk")		
-	}
-	local russian_cloaker_list = {
-		ids_func("units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"),
-		ids_func("units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk")		
-	}
-	local russian_medic_list = {
-		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
-		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_husk"),
-	}
-	local russian_merc_list = {
-		ids_func("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1"),
-		ids_func("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk"),	
-		--Custom stuff below
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1_husk"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_2/ene_rus_cop_2"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_2/ene_rus_cop_2_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_3_mp5/ene_rus_cop_3_mp5"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_3_mp5/ene_rus_cop_3_mp5_husk"),		
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_3_r870/ene_rus_cop_3_r870"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_3_r870/ene_rus_cop_3_r870_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_4_m4/ene_rus_cop_4_m4"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_4_m4/ene_rus_cop_4_m4_husk"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_4_r870/ene_rus_cop_4_r870"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_cop_4_r870/ene_rus_cop_4_r870_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870_husk"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4_husk"),		
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870_husk"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass_husk"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45_husk"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2_husk"),	
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city_husk"),		
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper"),
-		ids_func("units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper_husk")		
-	}	
-	local russian_mobster_list = {
-		ids_func("units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1"),
-		ids_func("units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1_husk"),
-		ids_func("units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"),
-		ids_func("units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2_husk"),
-		ids_func("units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"),
-		ids_func("units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3_husk"),	
-		ids_func("units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"),
-		ids_func("units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4_husk"),	
-		ids_func("units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"),
-		ids_func("units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5_husk"),
-		ids_func("units/payday2/characters/ene_gang_mobster_enforcer/ene_gang_mobster_enforcer"),
-		ids_func("units/payday2/characters/ene_gang_mobster_enforcer/ene_gang_mobster_enforcer_husk"),
-		--Custom stuff below
-		ids_func("units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1"),
-		ids_func("units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk"),
-		ids_func("units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2"),
-		ids_func("units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_1_pager/ene_gang_mobster_1_pager"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_1_pager/ene_gang_mobster_1_pager_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_2_pager/ene_gang_mobster_2_pager"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_2_pager/ene_gang_mobster_2_pager_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_3_pager/ene_gang_mobster_3_pager"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_3_pager/ene_gang_mobster_3_pager_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_4_pager/ene_gang_mobster_4_pager"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_4_pager/ene_gang_mobster_4_pager_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_4_pager/ene_gang_mobster_4_pager"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_4_pager/ene_gang_mobster_4_pager_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_5/ene_gang_mobster_5"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_5/ene_gang_mobster_5_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_5_pager/ene_gang_mobster_5_pager"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_5_pager/ene_gang_mobster_5_pager_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_6/ene_gang_mobster_6"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_6/ene_gang_mobster_6_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_6_pager/ene_gang_mobster_6_pager"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_6_pager/ene_gang_mobster_6_pager_husk"),			
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_7_pager/ene_gang_mobster_7_pager"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_7_pager/ene_gang_mobster_7_pager_pager_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_armored/ene_gang_mobster_armored"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_armored/ene_gang_mobster_armored_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_armored_2/ene_gang_mobster_armored_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_armored_2/ene_gang_mobster_armored_2_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_clubowner/ene_gang_mobster_clubowner"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_clubowner/ene_gang_mobster_clubowner_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_vip_1/ene_gang_mobster_vip_1"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_vip_1/ene_gang_mobster_vip_1_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_vip_2/ene_gang_mobster_vip_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_vip_2/ene_gang_mobster_vip_2_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_enforcer/ene_gang_mobster_enforcer"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_enforcer/ene_gang_mobster_enforcer_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_clubsecurity/ene_gang_mobster_clubsecurity"),
-		ids_func("units/pd2_mod_ttr/characters/ene_gang_mobster_clubsecurity/ene_gang_mobster_clubsecurity_husk")	
-	}	
-	local cobras_list = {
-		ids_func("units/payday2/characters/ene_gang_black_1/ene_gang_black_1"),
-		ids_func("units/payday2/characters/ene_gang_black_1/ene_gang_black_1_husk"),
-		ids_func("units/payday2/characters/ene_gang_black_2/ene_gang_black_2"),
-		ids_func("units/payday2/characters/ene_gang_black_2/ene_gang_black_2_husk"),	
-		ids_func("units/payday2/characters/ene_gang_black_3/ene_gang_black_3"),
-		ids_func("units/payday2/characters/ene_gang_black_3/ene_gang_black_3_husk"),			
-		ids_func("units/payday2/characters/ene_gang_black_4/ene_gang_black_4"),
-		ids_func("units/payday2/characters/ene_gang_black_4/ene_gang_black_4_husk"),
-		ids_func("units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer"),
-		ids_func("units/payday2/characters/ene_gang_black_enforcer/ene_gang_black_enforcer_husk")	
-	}	
-
-	local bexico_cop_list = {
-		--Cartel faction below
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_commando/ene_cartel_commando"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_commando/ene_cartel_commando_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier/ene_cartel_soldier"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier/ene_cartel_soldier_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_2/ene_cartel_soldier_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_2/ene_cartel_soldier_2_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_3/ene_cartel_soldier_3"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_3/ene_cartel_soldier_3_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_4/ene_cartel_soldier_4"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_4/ene_cartel_soldier_4_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_1/ene_cartel_soldier_shotgun_1"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_1/ene_cartel_soldier_shotgun_1_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_2/ene_cartel_soldier_shotgun_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_2/ene_cartel_soldier_shotgun_2_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_3/ene_cartel_soldier_shotgun_3"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_3/ene_cartel_soldier_shotgun_3_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_4/ene_cartel_soldier_shotgun_4"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_4/ene_cartel_soldier_shotgun_4_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy/ene_cartel_soldier_heavy"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy/ene_cartel_soldier_heavy_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_shotgun/ene_cartel_soldier_heavy_shotgun"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_shotgun/ene_cartel_soldier_heavy_shotgun_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_shield/ene_cartel_shield"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_shield/ene_cartel_shield_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_1/ene_cartel_soldier_fbi_1"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_1/ene_cartel_soldier_fbi_1_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_2/ene_cartel_soldier_fbi_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_2/ene_cartel_soldier_fbi_2_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_3/ene_cartel_soldier_fbi_3"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_3/ene_cartel_soldier_fbi_3_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_4/ene_cartel_soldier_fbi_4"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_4/ene_cartel_soldier_fbi_4_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_1/ene_cartel_soldier_fbi_shotgun_1"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_1/ene_cartel_soldier_fbi_shotgun_1_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_2/ene_cartel_soldier_fbi_shotgun_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_2/ene_cartel_soldier_fbi_shotgun_2_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_3/ene_cartel_soldier_fbi_shotgun_3"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_3/ene_cartel_soldier_fbi_shotgun_3_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_4/ene_cartel_soldier_fbi_shotgun_4"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_4/ene_cartel_soldier_fbi_shotgun_4_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_fbi/ene_cartel_soldier_heavy_fbi"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_fbi/ene_cartel_soldier_heavy_fbi_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_fbi_shotgun/ene_cartel_soldier_heavy_fbi_shotgun"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_fbi_shotgun/ene_cartel_soldier_heavy_fbi_shotgun_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_1/ene_cartel_soldier_city_1"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_1/ene_cartel_soldier_city_1_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_2/ene_cartel_soldier_city_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_2/ene_cartel_soldier_city_2_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_3/ene_cartel_soldier_city_3"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_3/ene_cartel_soldier_city_3_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_4/ene_cartel_soldier_city_4"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_4/ene_cartel_soldier_city_4_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_1/ene_cartel_soldier_city_shotgun_1"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_1/ene_cartel_soldier_city_shotgun_1_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_2/ene_cartel_soldier_city_shotgun_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_2/ene_cartel_soldier_city_shotgun_2_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_3/ene_cartel_soldier_city_shotgun_3"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_3/ene_cartel_soldier_city_shotgun_3_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_4/ene_cartel_soldier_city_shotgun_4"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_4/ene_cartel_soldier_city_shotgun_4_husk"),	
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_4/ene_cartel_soldier_city_shotgun_4"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_city/ene_cartel_soldier_heavy_city"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_city/ene_cartel_soldier_heavy_city_husk")
-	}			
-	
-	local bexico_taser_list = {
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_tazer/ene_cartel_tazer"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_tazer/ene_cartel_tazer_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_tazer_normal/ene_cartel_tazer_normal"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_tazer_normal/ene_cartel_tazer_normal_husk")		
-	}
-	
-	local bexico_cloaker_list = {
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_scout/ene_cartel_scout"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_scout/ene_cartel_scout_husk")		
-	}	
-	
-	local bexico_dozer_list = {
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_bulldozer/ene_cartel_bulldozer"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_bulldozer/ene_cartel_bulldozer_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_bulldozer_2/ene_cartel_bulldozer_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_bulldozer_2/ene_cartel_bulldozer_2_husk"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_bulldozer_3/ene_cartel_bulldozer_3"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_bulldozer_3/ene_cartel_bulldozer_3_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_grenadier/ene_cartel_grenadier"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_grenadier/ene_cartel_grenadier_husk"),		
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_grenadier_2/ene_cartel_grenadier_2"),
-		ids_func("units/pd2_mod_ttr/characters/ene_cartel_grenadier_2/ene_cartel_grenadier_2_husk")			
-	}	
-
 	self._unit = unit
 	self._speak_expire_t = 0
 	local char_tweak = tweak_data.character[unit:base()._tweak_table]
 
 	self:set_voice_prefix(nil)
 
-	local nr_variations = char_tweak.speech_prefix_count
-	
-	local american_cop_filtered = table_contains(american_cop_filtered_list, self._unit:name())
-	local american_cop = table_contains(american_cop_list, self._unit:name())
-	local american_taser = table_contains(american_taser_list, self._unit:name())
-	local american_dozer = table_contains(american_dozer_list, self._unit:name())
-	local l5d_forced = table_contains(l5d_list, self._unit:name())
-	local female_enemy = table_contains(female_enemy_list, self._unit:name())
-	local russian_taser = table_contains(russian_taser_list, self._unit:name())
-	local russian_cloaker = table_contains(russian_cloaker_list, self._unit:name())
-	local russian_medic = table_contains(russian_medic_list, self._unit:name())
-	local russian_merc = table_contains(russian_merc_list, self._unit:name())
-	local russian_mobster = table_contains(russian_mobster_list, self._unit:name())
-	local cobra_gangster = table_contains(cobras_list, self._unit:name())
-	local bexico_cop = table_contains(bexico_cop_list, self._unit:name())
-	local bexico_taser = table_contains(bexico_taser_list, self._unit:name())
-	local bexico_cloaker = table_contains(bexico_cloaker_list, self._unit:name())
-	local bexico_dozer = table_contains(bexico_dozer_list, self._unit:name())
-			
-	if american_cop_filtered then
-		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"
-	elseif american_cop then
-		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("n") .. "_"
-	elseif american_taser then
-		self._prefix = ("tsr") .. "_"
-	elseif american_dozer then
-		self._prefix = ("bdz") .. "_"
-	elseif l5d_forced then
-		self._prefix = ("l5d") .. "_"
-	elseif female_enemy then
-		self._prefix = ("fl1n") .. "_"
-	elseif russian_taser then
-		self._prefix = ("rtsr") .. "_"	
-	elseif russian_cloaker then
-		self._prefix = ("rclk") .. "_"
-	elseif russian_medic then
-		self._prefix = ("rmdc") .. "_"
-	elseif russian_merc then
-		self._prefix = ("r") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("n") .. "_"	
-	elseif russian_mobster then
-		self._prefix = ("rt") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. "_"	
-	elseif cobra_gangster then
-		self._prefix = ("ict") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. "_"		
-	elseif bexico_cop then
-		self._prefix = ("m") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("n") .. "_"		
-	elseif bexico_taser then
-		self._prefix = ("mtsr") .. "_"		
-	elseif bexico_cloaker then
-		self._prefix = ("mclk") .. "_"	
-	elseif bexico_dozer then
-		self._prefix = ("mbdz") .. "_"			
-	elseif char_tweak.speech_prefix_p1 == "l5d" then
-		self._prefix = (char_tweak.speech_prefix_p1 or "") .. "_"
-	else
-		self._prefix = (char_tweak.speech_prefix_p1 or "") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. (char_tweak.speech_prefix_p2 or "") .. "_"
+	local nr_variations = char_tweak.speech_prefix_count and tostring(math.random(char_tweak.speech_prefix_count)) or ""
+	local prefix_func = prefix_garbage_for_robots[unit:name():key()]
+	self._prefix = prefix_func and prefix_func(self, nr_variations) or nil
+
+	if not self._prefix then
+		if char_tweak.speech_prefix_p1 == "l5d" then
+			self._prefix = "l5d_"
+		else
+			self._prefix = (char_tweak.speech_prefix_p1 or "") .. nr_variations .. (char_tweak.speech_prefix_p2 or "") .. "_"
+		end
 	end
-	
-	local spawn_sounds = restoration.Options:GetValue("OTHER/EnemySpawnSounds")			
+
+	local spawn_sounds = restoration.Options:GetValue("OTHER/EnemySpawnSounds")
 	if spawn_sounds then
 		if not restoration.Voicelines:say(self._unit, "spawn") then
 			self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event, nil, nil)
 		end
-		
+
 		--Mostly just here in the event we have a unit to have both an 'entrance' line *and* a global spawn in noise
 		if self._unit:base():char_tweak().spawn_sound_event_2 then
 			self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event_2, nil, nil)
-		end	
+		end
 
 		--Use this only if an enemy has custom voice and is already using 2nd spawn sound
 		if self._unit:base():char_tweak().spawn_sound_event_3 then
 			self._unit:sound():play(self._unit:base():char_tweak().spawn_sound_event_3, nil, nil)
-		end	
+		end
 	end
 
 	unit:base():post_init()
 end
 
+-- Is this even used?
 function CopSound:chk_voice_prefix()
 	if self._prefix then
 		return self._prefix
@@ -552,8 +416,8 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	local full_sound = nil
 	
 	local l5n_missing_police_calls = {
-		"l5n_a08",
 		"l5n_a09",
+		"l5n_a23",
 	}
 	local l5n_contact_lines = {
 		"Play_l5n_i01_con",
@@ -653,10 +517,10 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		if sound_name == "pos" then
 			full_sound = "Play_l5n_pos_con"
 		end
-		if sound_name == "prm" then
+		if sound_name == "prm" or sound_name == "t01" then
 			full_sound = "Play_l5n_prm_con"
 		end
-		if sound_name == "pus" then
+		if sound_name == "pus" or sound_name == "rrl" then
 			full_sound = "Play_l5n_pus_con"
 		end
 		if sound_name == "r01" then

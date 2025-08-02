@@ -709,48 +709,6 @@ CopBase.enemy_variations_texas_pd = deep_clone(enemy_variations_texas_pd)
 CopBase.enemy_variations_sfpd = deep_clone(enemy_variations_sfpd) 
 
 function CopBase:_run_unit_sequences()
-	-- CRITICAL: Don't run during any network synchronization
-	if managers.network and managers.network:session() then
-		local session = managers.network:session()
-		
-		-- Check if we're the host and someone is joining
-		if Network:is_server() then
-			for _, peer in pairs(session:all_peers()) do
-				if peer and (peer:loading() or peer:synching()) then
-					return  -- Don't run while anyone is loading/syncing
-				end
-			end
-		else
-			-- If we're a client, check if we're still syncing
-			local local_peer = session:local_peer()
-			if local_peer and (local_peer:loading() or local_peer:synching()) then
-				return
-			end
-		end
-	end
-	
-	-- CRITICAL: Validate unit state before proceeding
-	if not alive(self._unit) then
-		return
-	end
-	
-	-- Check if damage extension exists and is ready
-	local damage_ext = self._unit:damage()
-	if not damage_ext then
-		return
-	end
-	
-	-- CRITICAL: Check if sequence manager is ready
-	local sequence_manager = damage_ext._sequence_manager
-	if not sequence_manager or not sequence_manager._sequences then
-		return
-	end
-	
-	-- NETWORK RACE CONDITION FIX: Check if sequences are fully loaded
-	if not sequence_manager._sequences_loaded then
-		return
-	end
-	
 	local name = self._unit:name():key()
 	
 	local enemy_sequence = self.enemy_variations[name]

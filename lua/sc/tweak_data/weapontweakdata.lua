@@ -24897,7 +24897,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peppermill.fire_rate_init_count = 5
 				self.peppermill.fire_rate_init_mult = 0.7
 				self.peppermill.fire_rate_init_ramp_up = true
-				self.peppermill.fire_mode_data.fire_rate = 0.10909090
+				self.peppermill.fire_mode_data.fire_rate = 0.1
 				self.peppermill.CAN_TOGGLE_FIREMODE = false
 				self.peppermill.kick = self.stat_info.kick_tables.random_recoil
 				self.peppermill.kick_pattern = {
@@ -24933,7 +24933,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.peppermill.stats_modifiers = nil
 				self.peppermill.spin_up_anims = true
-				self.peppermill.spin_up_t = 0.05
+				self.peppermill.spin_up_t = 0.025
 				self.peppermill.spin_down_t = 0.1
 				self.peppermill.always_hipfire = true
 				self.peppermill.always_play_anims = true

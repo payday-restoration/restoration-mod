@@ -90,9 +90,9 @@
 
 		<!-- NOW THE MAIN MEAT GRINDER SEQUENCE -->
 		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
-			<!-- GENERIC -->
-			<run_sequence name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
-			<run_sequence name="'face_'..pick('a','b','c')"/>
+			<!-- GENERIC - Modified to use single variations instead of pick() -->
+			<run_sequence name="'holster_r'"/>
+			<run_sequence name="'face_a'"/>
 
 			<!-- rifleman -->			
 			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar'"/>						

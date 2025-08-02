@@ -5,7 +5,38 @@
 			<var_goggles value="0"/>					
 		</variables>
 		
-		<!-- MOVE ALL BASE SEQUENCES TO THE TOP FIRST -->
+		<!-- BODY DEFINITIONS -->
+		<body name="'glass_swat'">
+			<endurance explosion="4" bullet="1">
+				<run_sequence name="'crk_goggles'"/>
+			</endurance>
+		</body>	
+		
+		<body name="'antenna'">
+			<endurance damage="12">
+				<run_sequence name="'remove_healing'"/>
+			</endurance>
+		</body>	
+	
+		<body name="'glass_visor'">
+			<endurance bullet="2" explosion="4">
+				<run_sequence name="'crk_visor'"/>
+			</endurance>
+			<endurance explosion="6">
+				<run_sequence name="'destroy_visor'"/>
+			</endurance>
+		</body>	
+
+		<body name="'glass_shield'">
+			<endurance bullet="2" explosion="4">
+				<run_sequence name="'crk_visor'"/>
+			</endurance>
+			<endurance explosion="6">
+				<run_sequence name="'destroy_visor'"/>
+			</endurance>
+		</body>	
+
+		<!-- BASE SEQUENCES -->
 		<sequence editable_state="true" name="'holster_l'" once="true" triggable="true">
 			<object enabled="true" name="'g_holster_l'"/>
 			<object enabled="true" name="'g_holster_l_lod1'"/>
@@ -88,36 +119,42 @@
 			<object enabled="false" name="'g_helmet_lod3'"/>						
 		</sequence>
 
-		<!-- NOW THE MAIN MEAT GRINDER SEQUENCE -->
-		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
-			<!-- GENERIC - Modified to use single variations instead of pick() -->
+		<!-- DIRECT SWAT SEQUENCES (No more meat grinder) -->
+		<sequence editable_state="true" name="'swat_ar'" triggable="true" once="true">						
 			<run_sequence name="'holster_r'"/>
 			<run_sequence name="'face_a'"/>
+			<object enabled="true" name="'g_swat_ar'"/>						
+			<object enabled="true" name="'g_swat_ar_lod1'"/>
+		</sequence>
 
-			<!-- rifleman -->			
-			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar'"/>						
-			<object filter="'check_swat_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
-						
-			<!-- heavy sg -->			
-			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg'"/>						
-			<object filter="'check_swat_sg'" enabled="true" name="'g_swat_sg_lod1'"/>
-			<run_sequence filter="'check_swat_sg'" name="'heavy_helmet_b'"/>
+		<sequence editable_state="true" name="'swat_sg'" triggable="true" once="true">						
+			<run_sequence name="'holster_r'"/>
+			<run_sequence name="'face_a'"/>
+			<object enabled="true" name="'g_swat_sg'"/>						
+			<object enabled="true" name="'g_swat_sg_lod1'"/>
+			<run_sequence name="'heavy_helmet_b'"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'swat_shield'" triggable="true" once="true">						
+			<run_sequence name="'holster_r'"/>
+			<run_sequence name="'face_a'"/>
+			<object enabled="true" name="'g_swat_shield'"/>						
+			<object enabled="true" name="'g_swat_shield_lod1'"/>
+			<run_sequence name="'heavy_helmet_c'"/>
+		</sequence>
 
-			<!-- shield -->			
-			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield'"/>						
-			<object filter="'check_swat_shield'" enabled="true" name="'g_swat_shield_lod1'"/>
-			<run_sequence filter="'check_swat_shield'" name="'heavy_helmet_c'"/>
-
-			<!-- taser titan -->			
-			<object filter="'check_taser'" enabled="false" name="'g_balaclava'"/>						
-			<object filter="'check_taser'" enabled="false" name="'g_balaclava_lod1'"/>	
-			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b'"/>						
-			<object filter="'check_taser'" enabled="true" name="'g_balaclava_b_lod1'"/>	
-			<object filter="'check_taser'" enabled="true" name="'g_body_tazer'"/>									
-			<object filter="'check_taser'" enabled="true" name="'g_body_tazer_lod1'"/>
-			<object filter="'check_taser'" enabled="false" name="'g_body'"/>									
-			<object filter="'check_taser'" enabled="false" name="'g_body_lod1'"/>
-			<run_sequence filter="'check_taser'" name="'heavy_helmet_e'"/>			
+		<sequence editable_state="true" name="'taser_titan'" triggable="true" once="true">						
+			<run_sequence name="'holster_r'"/>
+			<run_sequence name="'face_a'"/>
+			<object enabled="false" name="'g_balaclava'"/>						
+			<object enabled="false" name="'g_balaclava_lod1'"/>	
+			<object enabled="true" name="'g_balaclava_b'"/>						
+			<object enabled="true" name="'g_balaclava_b_lod1'"/>	
+			<object enabled="true" name="'g_body_tazer'"/>									
+			<object enabled="true" name="'g_body_tazer_lod1'"/>
+			<object enabled="false" name="'g_body'"/>									
+			<object enabled="false" name="'g_body_lod1'"/>
+			<run_sequence name="'heavy_helmet_e'"/>
 		</sequence>
 		
 		<!-- BODY DEFINITIONS -->
@@ -151,41 +188,6 @@
 			</endurance>
 		</body>	
 
-		<!-- FILTERS -->
-		<filter name="'check_swat_ar'">
-			<check value="vars.var_gadgets_swat == 1"/>
-		</filter>
-		<filter name="'check_swat_sg'">
-			<check value="vars.var_gadgets_swat == 2"/>
-		</filter>
-		<filter name="'check_swat_shield'">
-			<check value="vars.var_gadgets_swat == 3"/>
-		</filter>
-		<filter name="'check_taser'">
-			<check value="vars.var_gadgets_swat == 6"/>
-		</filter>
-		
-		<!-- MAIN ENTRY SEQUENCES -->
-		<sequence editable_state="true" name="'swat_sg'" triggable="true" once="true">						
-			<set_variables var_gadgets_swat="2"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
-		</sequence>
-
-		<sequence editable_state="true" name="'swat_ar'" triggable="true" once="true">						
-			<set_variables var_gadgets_swat="1"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
-		</sequence>
-		
-		<sequence editable_state="true" name="'swat_shield'" triggable="true" once="true">						
-			<set_variables var_gadgets_swat="3"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
-		</sequence>
-
-		<sequence editable_state="true" name="'taser_titan'" triggable="true" once="true">						
-			<set_variables var_gadgets_swat="6"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
-		</sequence>
-		
 		<!-- OTHER SEQUENCES -->
 		<sequence editable_state="true" name="'remove_healing'" triggable="true" once="true">	
 			<function   extension="'character_damage'" function="'lpf_disable'" start_time="0"/> 	
@@ -200,25 +202,25 @@
 		</sequence>
 
 		<sequence editable_state="true" name="'crk_visor'" once="true" triggable="true">			
-			<object filter="'check_swat_sg'" enabled="false" name="'g_helmet_sg_lod3'"/>
-			<object filter="'check_swat_sg'" enabled="true" name="'g_helmet_sg_lod4'"/>
-			<body filter="'check_swat_sg'" enabled="false" name="'glass_shield'"/>
-			<effect filter="'check_swat_sg'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
+			<object enabled="false" name="'g_helmet_sg_lod3'"/>
+			<object enabled="true" name="'g_helmet_sg_lod4'"/>
+			<body enabled="false" name="'glass_shield'"/>
+			<effect damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 			
-			<body filter="'check_swat_ar'" enabled="false" name="'glass_visor'"/>
-			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
-			<object filter="'check_swat_ar'" enabled="true" name="'g_helmet_lod4'"/>
+			<body enabled="false" name="'glass_visor'"/>
+			<object enabled="false" name="'g_helmet_lod3'"/>
+			<object enabled="true" name="'g_helmet_lod4'"/>
 		</sequence>				
 
 		<sequence editable_state="true" name="'destroy_visor'" once="true" triggable="true">			
-			<object filter="'check_swat_sg'" enabled="false" name="'g_helmet_sg_lod3'"/>
-			<object filter="'check_swat_sg'" enabled="false" name="'g_helmet_sg_lod4'"/>
-			<body filter="'check_swat_sg'" enabled="false" name="'glass_shield'"/>
-			<effect filter="'check_swat_sg'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
+			<object enabled="false" name="'g_helmet_sg_lod3'"/>
+			<object enabled="false" name="'g_helmet_sg_lod4'"/>
+			<body enabled="false" name="'glass_shield'"/>
+			<effect damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 			
-			<body filter="'check_swat_ar'" enabled="false" name="'glass_visor'"/>
-			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
-			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod4'"/>
+			<body enabled="false" name="'glass_visor'"/>
+			<object enabled="false" name="'g_helmet_lod3'"/>
+			<object enabled="false" name="'g_helmet_lod4'"/>
 
 			<sound action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>			
 			<sound action="'play'" event="'bulldozer_visor_shatter'" object="'Head'"/>			

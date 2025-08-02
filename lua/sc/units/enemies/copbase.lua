@@ -716,14 +716,14 @@ function CopBase:_run_unit_sequences()
 		-- Check if we're the host and someone is joining
 		if Network:is_server() then
 			for _, peer in pairs(session:all_peers()) do
-				if peer and peer:loading() then
-					return  -- Don't run while anyone is loading
+				if peer and (peer:loading() or peer:synching()) then
+					return  -- Don't run while anyone is loading/syncing
 				end
 			end
 		else
-			-- If we're a client, check if we're still loading
+			-- If we're a client, check if we're still syncing
 			local local_peer = session:local_peer()
-			if local_peer and local_peer:loading() then
+			if local_peer and (local_peer:loading() or local_peer:synching()) then
 				return
 			end
 		end

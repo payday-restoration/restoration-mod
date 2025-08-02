@@ -517,7 +517,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		if sound_name == "pos" then
 			full_sound = "Play_l5n_pos_con"
 		end
-		if sound_name == "prm" then
+		if sound_name == "prm" or sound_name == "t01" then
 			full_sound = "Play_l5n_prm_con"
 		end
 		if sound_name == "pus" or sound_name == "rrl" then

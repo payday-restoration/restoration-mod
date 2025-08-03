@@ -1441,11 +1441,23 @@ function restoration:gen_ai_global_event(id, name, pos, rot, opts)
 	}
 end
 
--- restoration.logging = io.file_is_readable("mods/developer.txt")
+-- Log tiers
+-- "log" is for general logging that is useful for players and developers
+-- "debug" is for general logging that only really developers/tinkerers need
+-- "warn" is for reasonably recoverable mishaps
+-- "error" is for anything worse
+
 restoration.logging = true
 function restoration:log(str, ...)
 	if self.logging then
 		log("[RestorationMod] " .. str:format(...))
+	end
+end
+
+restoration.is_debug = io.file_is_readable("mods/developer.txt")
+function restoration:debug(str, ...)
+	if self.is_debug then
+		log("[RestorationMod][Debug] " .. str:format(...))
 	end
 end
 
@@ -1456,4 +1468,3 @@ end
 function restoration:error(str, ...)
 	log("[RestorationMod][Error] " .. str:format(...))
 end
-

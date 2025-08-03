@@ -1,0 +1,16 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_fps_ass_g3_m_mag" materials="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag"/>
+    <animations>		
+		<animation_group name="reload" enabled="false">
+			<object name="anim_mag_reload"/>
+		</animation_group>
+		<animation_group name="reload_not_empty" enabled="false">
+			<object name="anim_mag_reload_not_empty"/>
+		</animation_group>
+	</animations>
+    <graphics>
+        <object enabled="true" name="g_mag_lod0"/>
+        <object enabled="true" name="g_bullet_1"/>
+        <object enabled="true" name="g_bullet_2"/>
+    </graphics>
+</dynamic_object>

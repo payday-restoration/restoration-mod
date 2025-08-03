@@ -969,8 +969,11 @@ function RaycastWeaponBase:add_ammo_from_bag(available)
 end
 
 function RaycastWeaponBase:_get_anim_start_offset(anim)
-	if self:weapon_tweak_data().reload_offset and (anim == "reload" or anim == "reload_not_empty") then
-		return self:weapon_tweak_data().reload_offset
+	local offset = self:weapon_tweak_data().reload_offset
+	if offset then
+		if offset[anim] then
+			return offset[anim]
+		end
 	elseif anim == "reload" and self:ammo_base():get_ammo_remaining_in_clip() <= (self.AKIMBO and 1 or 0) and self:weapon_tweak_data().animations.magazine_empty then
 		return 0.033
 	end
@@ -1205,7 +1208,9 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 			if weap_base then
 				can_push = (weap_base.near_falloff_distance and col_ray.distance and col_ray.distance <= weap_base.near_falloff_distance) 
 				armor_piercing = weap_base.has_armor_piercing and weap_base:has_armor_piercing()
-				knock_down = (weap_base._natascha and col_ray.distance and col_ray.distance <= weap_base._natascha) or (weap_base.is_knock_down and weap_base:is_knock_down())
+				knock_down = (col_ray.distance and (weap_base._natascha and col_ray.distance <= weap_base._natascha) or 
+									(weap_base._rays and weap_base._rays > 1 and col_ray.distance <= 300)) or 
+								(weap_base.is_knock_down and weap_base:is_knock_down())
 				stagger = weap_base.is_stagger and weap_base:is_stagger()
 				variant = weap_base.variant and weap_base:variant()
 			end
@@ -1430,7 +1435,9 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 
 			if weap_base then
 				armor_piercing = weap_base.has_armor_piercing and weap_base:has_armor_piercing()
-				knock_down = weap_base.is_knock_down and weap_base:is_knock_down()
+				knock_down = (col_ray.distance and (weap_base._natascha and col_ray.distance <= weap_base._natascha) or 
+									(weap_base._rays and weap_base._rays > 1 and col_ray.distance <= 300)) or 
+								(weap_base.is_knock_down and weap_base:is_knock_down())
 				stagger = weap_base.is_stagger and weap_base:is_stagger()
 				variant = weap_base.variant and weap_base:variant()
 			end

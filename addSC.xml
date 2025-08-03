@@ -1489,6 +1489,8 @@
 
 	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_scope_cc" load="false"/>
 	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_scope_cc_thq" load="false"/>
+	<!--for w/e reason the reticle is severely misaligned when using a parallax enabled reticle-->
+	<!--material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_reddot" load="false"/-->
 
 	<!--Weapon Unit Overrides-->
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>
@@ -1943,15 +1945,40 @@
 	<animation			path="anims/fps/m590/m590_recoil" force="true"/>
 
 	<!-- Bearable G3 FPS Animations -->
-	<animation			path="anims/fps/g3/g3_reload_not_empty" force="true"/>
-	<animation			path="anims/fps/g3/g3_reload" force="true"/>
-	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_bipod" force="true"/>
-	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_psg" force="true"/>
-	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_railed" force="true"/>
-	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_retro" force="true"/>
-	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_retro_plastic" force="true"/>
-	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_m_mag" force="true"/>
-	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_m_mag_psg" force="true"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_com_var5"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_com_var1"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_com_var6"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_com_var7"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_get_up"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_recoil_loop"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_recoil_exit"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_recoil_zoom"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_reload_not_empty"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_reload"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_equip"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_recoil_enter"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_melee_miss"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_gogo"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_recoil"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_idle"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_melee"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_inspect"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_sprint"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_sprint_enter"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_tased"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_sprint_exit"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_tased_boost"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_tased_exit"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_use"/>
+	<animation			path="anims/fps/g3_niphen/g3_niphen_unequip"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_bipod" force="true"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_psg" force="true"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_railed" force="true"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_retro" force="true"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_retro_plastic" force="true"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag" force="true"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag_psg" force="true"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_body_upper" force="true"/>
 	
 	<!-- Fixed anim lengths for some melee sets -->
 	<animation			path="anims/fps/melee/agave/melee_attack_var1" force="true"/>

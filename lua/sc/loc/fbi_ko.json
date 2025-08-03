@@ -1,8 +1,12 @@
 {
-  "ene_city_swat" : "FBI SWAT 경무장 엘리트병",
-  "ene_city_heavy" : "FBI SWAT 중무장 엘리트병",
-  "ene_city_heavy_r870_sc" : "FBI SWAT 중무장 엘리트병",
-  "ene_city_shield" : "FBI SWAT 엘리트 실드",
-  "ene_sniper_3" : "FBI SWAT 엘리트 저격수",
-  "ene_bulldozer_3" : "FBI SWAT 엘리트 스컬 도저"
+  "ene_city_swat" : "FBI 정예 SWAT",
+  "ene_titan_sniper" : "연방보안국 샤프슈터",  
+  "ene_phalanx_1_assault" : "연방보안국 실드 대원",  
+  "ene_titan_rifle" : "연방보안국 거너",  
+  "ene_titan_shotgun" : "연방보안국 샷거너",  
+  "ene_city_heavy" : "FBI 정예 경갑 SWAT",
+  "ene_city_heavy_r870_sc" : "FBI 정예 경갑 SWAT",
+  "ene_city_shield" : "FBI 정예 실드",
+  "ene_sniper_3" : "FBI 정예 스나이퍼",
+  "ene_bulldozer_3" : "FBI 정예 스컬도저"
 }

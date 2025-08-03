@@ -21,6 +21,10 @@ GroupAIStateBase.MEGAPHONE_EVENTS = {
 }
 table.list_append(GroupAIStateBase.EVENT_SYNC, GroupAIStateBase.MEGAPHONE_EVENTS)
 
+GroupAIStateBase.DIFF_INC_INITIAL = 0.1
+GroupAIStateBase.DIFF_INC_CIVILIAN_KILLED = 0.1
+GroupAIStateBase.DIFF_INC_POLICE_REGROUPING = 0.3
+
 function GroupAIStateBase:_calculate_difficulty_ratio()
 	local ramp = tweak_data.group_ai.difficulty_curve_points
 
@@ -1556,6 +1560,9 @@ function GroupAIStateBase:on_criminal_suspicion_progress(u_suspect, u_observer, 
 	end
 end
 
+-- Modified function in Res
+-- Not needed in modern game versions?
+--[[
 function GroupAIStateBase:set_whisper_mode(state)
 	state = state and true or false
 
@@ -1588,6 +1595,7 @@ function GroupAIStateBase:set_whisper_mode(state)
 		self:_clear_criminal_suspicion_data()
 	end
 end
+]]
 
 function GroupAIStateBase:chk_say_teamAI_combat_chatter(unit)
 	if not self:is_detection_persistent() then
@@ -1617,6 +1625,9 @@ function GroupAIStateBase:chk_say_teamAI_combat_chatter(unit)
 	unit:sound():say("g90", true, true)
 end
 
+-- Modified function in Res
+-- Not needed in modern game versions?
+--[[
 function GroupAIStateBase:register_AI_attention_object(unit, handler, nav_tracker, team, SO_access)
 	local store_instead = nil
 
@@ -1650,7 +1661,10 @@ function GroupAIStateBase:register_AI_attention_object(unit, handler, nav_tracke
 
 	self:on_AI_attention_changed(unit:key())
 end
+]]
 
+-- New function to Res
+-- Not needed in modern game versions?
 function GroupAIStateBase:chk_register_removed_attention_objects()
 	if not self._removed_attention_objects then
 		return
@@ -1670,12 +1684,16 @@ function GroupAIStateBase:chk_register_removed_attention_objects()
 	self._removed_attention_objects = nil
 end
 
+-- New function to Res
+-- Not needed in modern game versions?
 function GroupAIStateBase:store_removed_attention_object(u_key, attention_info)
 	self._removed_attention_objects = self._removed_attention_objects or {}
 
 	self._removed_attention_objects[u_key] = attention_info
 end
 
+-- New function to Res
+-- Not needed in modern game versions?
 function GroupAIStateBase:chk_unregister_irrelevant_attention_objects()
 	local all_attention_objects = self:get_all_AI_attention_objects()
 
@@ -1712,7 +1730,7 @@ if Network:is_server() then
 		end
 
 		if restoration.civ_death_diff_increase then
-			self:set_difficulty(nil, 0.1) --Diff increase when killing a civ
+			self:set_difficulty(nil, self.DIFF_INC_CIVILIAN_KILLED or 0.1) --Diff increase when killing a civ
 		end
 
 		if not self._hunt_mode and self._assault_number and self._assault_number >= 1 then
@@ -1757,7 +1775,7 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 	-- Also, add 0.1 here instead of setting so you can't bypass civ penalty on some heists
 	if script_value and script_value > 0 and not self._loud_diff_set then
 		self._loud_diff_set = true
-		manual_value = self:_mutate_diff_value(0.1)
+		manual_value = self:_mutate_diff_value(self.DIFF_INC_INITIAL or 0.1)
 	end
 
 	if not manual_value then

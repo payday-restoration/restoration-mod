@@ -1583,6 +1583,10 @@ end
 function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_offset, set_offset2)
 	if anim ~= "deploy" and anim ~= "undeploy" and self._starwars and not self._starwars.can_reload then return end
 
+	if anim == "reload_slap" then
+		speed_multiplier = self._current_reload_speed_multiplier or self:reload_speed_multiplier()
+	end
+
 	local active_burst = self:in_burst_mode() and self._burst_rounds_remaining and self._burst_rounds_remaining > 0
 	local no_burst_anims = active_burst and self._burst_no_anim
 	if no_burst_anims then return end
@@ -1738,8 +1742,13 @@ end
 function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 	local multiplier = self._fire_rate_multiplier or 1
 	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
-	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
-		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
+	local has_sharpshooter = managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") 
+	if self:is_category("assault_rifle", "snp") and has_sharpshooter then
+		local temp_mult = managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
+		if self:fire_mode() ~= "single" then
+			temp_mult = ((temp_mult - 1) * 0.35) + 1
+		end
+		multiplier = multiplier * temp_mult
 	end 
 	if ignore_anims then
 		return multiplier / (self._rof_mult or 1)
@@ -1794,7 +1803,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 		multiplier = multiplier * self._alt_rof_mult
 	end
 
-	if (self:can_toggle_firemode() or self._rof_mult_semi) and self:fire_mode() == "single" and not self:in_burst_mode() then
+	if ((self:can_toggle_firemode() and not has_sharpshooter) or self._rof_mult_semi) and self:fire_mode() == "single" and not self:in_burst_mode() then
 		multiplier = multiplier * (self._rof_mult_semi or 0.8)
 	end
 
@@ -2101,14 +2110,27 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	local is_single = self:is_single_shot() and not self:in_burst_mode()
 	local main_category = self.AKIMBO and self:categories()[2] or self:categories()[1]
 	local damage_min_bonus = 1
-	local check_col_ray_head = col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name
+	local head_hitboxes = {
+		[Idstring("glass_shield"):key()] = true,
+		[Idstring("glass_swat"):key()] = true,
+		[Idstring("glass_c"):key()] = true,
+		[Idstring("glass_d"):key()] = true,
+		[Idstring("glass_l"):key()] = true,
+		[Idstring("glass_r"):key()] = true,
+		[Idstring("visor"):key()] = true,
+		[Idstring("sg_mask"):key()] = true,
+		[Idstring("glass_altyn"):key()] = true,
+		[Idstring("altyn_visor"):key()] = true,
+		[Idstring("glass_visor"):key()] = true
+	}
+	local check_col_ray_head = col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name or head_hitboxes[col_ray.body:name():key()]
 	--Initialize base info.
 
-	local has_mindblown_ace = managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head and (managers.player._last_no_falloff_headshot_t or 0) < self._unit:timer():time()
+	local has_mindblown_ace = managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head --and (managers.player._last_no_falloff_headshot_t or 0) < self._unit:timer():time()
 	if (self._chf and check_col_ray_head) or --[[not self:in_burst_mode() and not is_rapidfire and]] (self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase")) or has_mindblown_ace then
-		if has_mindblown_ace then
-			managers.player._last_no_falloff_headshot_t = self._unit:timer():time() + (tweak_data.upgrades.headshot_no_falloff_cd or 0)
-		end
+		--if has_mindblown_ace then
+			--managers.player._last_no_falloff_headshot_t = self._unit:timer():time() + (tweak_data.upgrades.headshot_no_falloff_cd or 0)
+		--end
 		return damage
 	end
 
@@ -2573,6 +2595,29 @@ function NewRaycastWeaponBase:_set_parts_visible(visible)
 
 	self:_chk_charm_upd_state()
 end
+
+
+local g3_niphen = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen")
+
+Hooks:PostHook(NewRaycastWeaponBase, "weapon_tweak_data", "res_weapon_tweak_data", function(self)
+	local wtd = NewRaycastWeaponBase.super.weapon_tweak_data(self)
+
+    if not self._parts then
+        return wtd
+    end
+
+    if not g3_niphen and BeardLib.Utils:FindMod("JustAnotherG3 Reload") and self._name_id == "g3" then
+		if self._parts.wpn_fps_ass_g3_b_sniper then 
+			wtd.animations.reload_name_id = "g3_psg"
+		elseif self._parts.wpn_fps_ass_g3_b_long or self._parts.wpn_fps_ass_g3_b_short then
+			wtd.animations.reload_name_id = "g3_long"
+		else
+			wtd.animations.reload_name_id = "g3"
+		end
+	end
+
+    return wtd
+end)
 
 if OWLFBullpupWeaponBase then
 	function OWLFBullpupWeaponBase:clbk_assembly_complete(...)

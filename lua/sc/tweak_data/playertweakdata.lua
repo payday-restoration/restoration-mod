@@ -818,8 +818,8 @@ if SystemFS:exists("assets/mod_overrides/Patchett Proper Hold Reload Animations"
 	end )
 end
 
-local static_aim = restoration.Options:GetValue("OTHER/WeaponHandling/StaticAim")
-local vm_move = restoration.Options:GetValue("OTHER/WeaponHandling/ViewmodelMovement") or 2
+local static_aim = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/StaticAim")
+local vm_move = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ViewmodelMovement") or 2
 Hooks:PostHook(PlayerTweakData, "_init_new_stances", "resmodviwemodeldrag", function(self)
 	for wep_id, i in pairs(self.stances) do
 		if self.stances[ wep_id ] then

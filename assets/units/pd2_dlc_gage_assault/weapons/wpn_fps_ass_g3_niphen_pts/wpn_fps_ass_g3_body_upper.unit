@@ -1,0 +1,6 @@
+<unit type="wpn" slot="1" >
+    <object file="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_body_upper" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

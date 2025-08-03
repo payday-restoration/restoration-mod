@@ -84,6 +84,9 @@
 			<set_variables var_gadgets_flashlight="1"/>
 			<run_sequence name="'gadget_meat_grinder'"/>					
 		</sequence>
+		<sequence editable_state="true" name="'helmet_nun'" once="true" triggable="true">
+			<!-- Add helmet_nun sequence content here -->
+		</sequence>
 
 		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
 			
@@ -92,7 +95,7 @@
 			<object filter="'check_fbi_swat_ar'" enabled="true" name="'g_swat_ar'"/>						
 			<object filter="'check_fbi_swat_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
 			<run_sequence filter="'check_fbi_swat_ar'" name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
-			<run_sequence filter="'check_fbi_swat_ar'" name="'helmet'..pick('nun','nun','nun','_flashlight','_flashlight','nun','_flashlight')"/>
+			<run_sequence filter="'check_fbi_swat_ar'" name="'helmet'..pick('_nun','_nun','_nun','_flashlight','_flashlight','_nun','_flashlight')"/>
 
 			<body filter="'check_fbi_swat_ar'" enabled="true" name="'visor'"/>						
 			<decal_mesh filter="'check_fbi_swat_ar'" enabled="true" name="'c_visor'"/>						

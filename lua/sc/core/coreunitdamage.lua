@@ -3,7 +3,6 @@ Hooks:PostHook(CoreBodyDamage, "init", "sh_init", function (self)
 	if not self._body_element then
 		return
 	end
-
 	if self._unit:character_damage() and self._unit:character_damage().IS_TANK then
 		if self._body_element._name:find("glass") then
 			self._body_element._damage_multiplier = tweak_data.character.tank_glass_damage_mul or self._body_element._damage_multiplier
@@ -14,3 +13,4 @@ Hooks:PostHook(CoreBodyDamage, "init", "sh_init", function (self)
 		self._body_element._damage_multiplier = 0.4
 	end
 end)
+

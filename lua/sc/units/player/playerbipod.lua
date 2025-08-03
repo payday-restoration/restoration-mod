@@ -223,7 +223,7 @@ function PlayerBipod:update(t, dt)
 end
 
 function PlayerBipod:_update_movement(t, dt)
-	if restoration.Options:GetValue("OTHER/WeaponHandling/MoveCancelBipod") then
+	if restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/MoveCancelBipod") then
 		local current_state = managers.player:get_current_state()
 		if self._move_dir then
 			self:_unmount_bipod()
@@ -309,7 +309,7 @@ function PlayerBipod:_check_action_run(t, input)
 
 	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
 
-	local second_sight_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SecondSightSprint")
+	local second_sight_sprint = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/SecondSightSprint")
 	if  input.btn_run_press and second_sight_sprint and weap_base.toggle_second_sight and self:in_steelsight() then
 		 weap_base:toggle_second_sight(self)
 	end

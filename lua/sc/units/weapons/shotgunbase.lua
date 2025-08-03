@@ -450,9 +450,6 @@ end
 function ShotgunBase:fire_rate_multiplier( ignore_anims )
 	local multiplier = self._fire_rate_multiplier or 1
 	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
-	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
-		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
-	end
 	if self._rof_mult and ignore_anims then
 		return multiplier / self._rof_mult
 	end

@@ -1,3 +1,4 @@
+
 <sequence_manager>
 	<unit>
 		<variables>
@@ -8,10 +9,10 @@
 		</variables>
 		
 		<body name="'glass_swat'">
-			<endurance explosion="4" bullet="1">
+			<endurance explosion="4" bullet="1" filter="'check_swat_ar'">
 				<run_sequence name="'crk_goggles'"/>
 			</endurance>
-		</body>	
+		</body>
 		
 		<body name="'antenna'">
 			<endurance damage="12">
@@ -20,22 +21,22 @@
 		</body>	
 	
 		<body name="'glass_visor'">
-			<endurance bullet="2" explosion="4">
+			<endurance bullet="2" explosion="4" filter="'check_swat_ar'">
 				<run_sequence name="'crk_visor'"/>
 			</endurance>
-			<endurance explosion="6">
+			<endurance explosion="6" filter="'check_swat_ar'">
 				<run_sequence name="'destroy_visor'"/>
 			</endurance>
-		</body>	
+		</body>
 
 		<body name="'glass_shield'">
-			<endurance bullet="2" explosion="4">
+			<endurance bullet="2" explosion="4" filter="'check_swat_shield'">
 				<run_sequence name="'crk_visor'"/>
 			</endurance>
-			<endurance explosion="6">
+			<endurance explosion="6" filter="'check_swat_shield'">
 				<run_sequence name="'destroy_visor'"/>
 			</endurance>
-		</body>	
+		</body>
 
 		<filter name="'check_swat_ar'">
 			<check value="vars.var_gadgets_swat == 1"/>
@@ -103,7 +104,7 @@
 		</sequence>
 		
 		<sequence editable_state="true" name="'remove_healing'" triggable="true" once="true">	
-			<function   extension="'character_damage'" function="'lpf_disable'" start_time="0"/> 	
+			<function   extension="'character_damage'" function="'lpf_disable'" start_time="0.05"/> 	
 			<effect 	damp_time="3" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
 			<effect 	damp_time="4" name="'effects/particles/dest/security_camera_dest'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
 			<effect 	damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>

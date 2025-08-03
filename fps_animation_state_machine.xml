@@ -15,4 +15,16 @@
 			<global name="stock" value="0"/>
 		</target>
 	</tweak>
+
+	
+	<tweak version="2" name="anims/fps/fps" extension="animation_state_machine">
+		<search>
+			<state_machine/>
+			<global name="beretta92" value="0"/>
+		</search>
+		
+		<target mode="append">
+			<global name="g3_niphen" value="0"/>
+		</target>
+	</tweak>
 </tweaks>

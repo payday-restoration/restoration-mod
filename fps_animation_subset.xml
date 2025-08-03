@@ -106,6 +106,33 @@
 
 
 			<anim name="melee_beardy_attack_var4" 					file="anims/fps/melee/beardy/melee_attack_var4" blend_set="all"/>
+
+			<anim name="g3_niphen_reload" 								file="anims/fps/g3_niphen/g3_niphen_reload" blend_set="all"/>
+			<anim name="g3_niphen_reload_not_empty" 						file="anims/fps/g3_niphen/g3_niphen_reload_not_empty" blend_set="all"/>
+			<anim name="g3_niphen_idle" 									file="anims/fps/g3_niphen/g3_niphen_idle" blend_set="all"/>
+			<anim name="g3_niphen_recoil" 								file="anims/fps/g3_niphen/g3_niphen_recoil" blend_set="all"/>
+			<anim name="g3_niphen_recoil_enter" 							file="anims/fps/g3_niphen/g3_niphen_recoil_enter" blend_set="all"/>
+			<anim name="g3_niphen_recoil_loop" 							file="anims/fps/g3_niphen/g3_niphen_recoil_loop" blend_set="all"/>
+			<anim name="g3_niphen_recoil_exit" 							file="anims/fps/g3_niphen/g3_niphen_recoil_exit" blend_set="all"/>
+			<anim name="g3_niphen_recoil_steelsight" 						file="anims/fps/g3_niphen/g3_niphen_recoil" blend_set="all"/>
+			<anim name="g3_niphen_equip" 									file="anims/fps/g3_niphen/g3_niphen_equip" blend_set="all"/>
+			<anim name="g3_niphen_unequip" 								file="anims/fps/g3_niphen/g3_niphen_unequip" blend_set="all"/>
+			<anim name="g3_niphen_melee" 									file="anims/fps/g3_niphen/g3_niphen_melee" blend_set="all"/>
+			<anim name="g3_niphen_melee_miss" 							file="anims/fps/g3_niphen/g3_niphen_melee_miss" blend_set="all"/>
+			<anim name="g3_niphen_use" 									file="anims/fps/g3_niphen/g3_niphen_use" blend_set="all"/>
+			<anim name="g3_niphen_sprint_enter" 							file="anims/fps/g3_niphen/g3_niphen_sprint_enter" blend_set="all"/>
+			<anim name="g3_niphen_sprint" 								file="anims/fps/g3_niphen/g3_niphen_sprint" blend_set="all"/>
+			<anim name="g3_niphen_sprint_exit" 							file="anims/fps/g3_niphen/g3_niphen_sprint_exit" blend_set="all"/>
+			<anim name="g3_niphen_com_down_var1" 							file="anims/fps/g3_niphen/g3_niphen_com_var1" blend_set="all"/>
+			<anim name="g3_niphen_com_stop" 								file="anims/fps/g3_niphen/g3_niphen_com_var5" blend_set="all"/>
+			<anim name="g3_niphen_com_come" 								file="anims/fps/g3_niphen/g3_niphen_com_var6" blend_set="all"/>
+			<anim name="g3_niphen_com_point" 								file="anims/fps/g3_niphen/g3_niphen_com_var7" blend_set="all"/>
+			<anim name="g3_niphen_get_up" 								file="anims/fps/g3_niphen/g3_niphen_get_up" blend_set="all"/>
+			<anim name="g3_niphen_gogo" 									file="anims/fps/g3_niphen/g3_niphen_gogo" blend_set="all"/>
+			<anim name="g3_niphen_tased" 									file="anims/fps/g3_niphen/g3_niphen_tased" blend_set="all"/>
+			<anim name="g3_niphen_tased_boost" 							file="anims/fps/g3_niphen/g3_niphen_tased_boost" blend_set="all"/>
+			<anim name="g3_niphen_tased_exit" 							file="anims/fps/g3_niphen/g3_niphen_tased_exit" blend_set="all"/>
+			<anim name="g3_niphen_inspect" 								file="anims/fps/g3_niphen/g3_niphen_inspect" blend_set="all"/>
 		</target>
 	</tweak>
 </tweaks>

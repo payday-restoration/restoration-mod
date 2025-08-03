@@ -160,6 +160,24 @@
 			<sound action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>					
 		</sequence>				
 
+		<!-- Missing helmet sequences -->
+		<sequence editable_state="true" name="'helmetnun'" once="true" triggable="true">
+			<!-- Empty - no helmet modification -->
+		</sequence>
+
+		<!-- Missing goggles sequences -->
+		<sequence editable_state="true" name="'goggles_a'" once="true" triggable="true">
+			<!-- Empty - goggles variant a -->
+		</sequence>
+
+		<sequence editable_state="true" name="'goggles_b'" once="true" triggable="true">
+			<!-- Empty - goggles variant b -->
+		</sequence>
+
+		<sequence editable_state="true" name="'goggles_d'" once="true" triggable="true">
+			<!-- Empty - goggles variant d -->
+		</sequence>
+
 		<sequence editable_state="true" name="'helmet_flashlight'" once="true" triggable="true">
 			<object enabled="true" name="'g_helmet_lod11'"/>
 			<object enabled="true" name="'g_helmet_lod12'"/>

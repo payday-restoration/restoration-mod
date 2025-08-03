@@ -163,7 +163,7 @@ function MutatorCaptainReplacer:setup()
 		}
 	else
 		winter_preset = {
-			amount = 13,
+			amount = 11,
 			force = true,
 			spawn = {
 				{
@@ -179,14 +179,6 @@ function MutatorCaptainReplacer:setup()
 					freq = 1,
 					amount_min = 6,
 					amount_max = 6,
-					tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
-					rank = 2
-				},
-				{
-					unit = "Phalanx_dozer",
-					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
 					tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
 					rank = 2
 				},

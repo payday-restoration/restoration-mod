@@ -410,6 +410,22 @@
 				<object enabled="true" name="'g_body_cop_sg_lod1'"/>				
 			</sequence>					
 		
+			<!-- Add these missing sequences to your XML -->
+
+			<!-- Empty accessory sequence -->
+			<sequence editable_state="true" name="'acc_nothing'" once="true" triggable="true">
+				<!-- Empty - no accessory applied -->
+			</sequence>
+
+			<!-- Empty body sequences -->
+			<sequence editable_state="true" name="'body_nothing'" once="true" triggable="true">
+				<!-- Empty - no body modification -->
+			</sequence>
+
+			<sequence editable_state="true" name="'body_'" once="true" triggable="true">
+				<!-- Empty - no body modification -->
+			</sequence>
+		
 			<!-- revolver -->
 			<sequence editable_state="true" name="'body_cop_rev'" once="true" triggable="true">				
 				<object enabled="true" name="'g_body_cop_revolver'"/>

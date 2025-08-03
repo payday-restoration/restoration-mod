@@ -13,7 +13,7 @@ function HuskCopDamage:die(attack_data)
 	end
 	
 	if self._unit:base() then
-		self._unit:base():disable_lpf_buff(true)
+		self._unit:base():disable_lpf_buff()
 		self._unit:base():disable_asu_laser(true)
 		self._unit:base():converted_enemy_effect(false)
 	end	

@@ -16899,7 +16899,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	else
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = 13,
+			amount = 11,
 			force = true,
 			spawn = {
 				{
@@ -16918,6 +16918,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				},
+				--[[
 				{
 					unit = "Phalanx_dozer", -- they're scary
 					freq = 1,
@@ -16926,6 +16927,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				},
+				]]
 				{
 					unit = "Phalanx_sniper",
 					freq = 1,

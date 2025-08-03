@@ -151,6 +151,19 @@
 			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
 		</sequence>				
 
+		<!-- Missing helmet sequences -->
+		<sequence editable_state="true" name="'helmetnun'" once="true" triggable="true">
+			<!-- Empty - no helmet modification -->
+		</sequence>
+
+		<sequence editable_state="true" name="'helmet_flashlight'" once="true" triggable="true">
+			<!-- Empty - flashlight helmet variant -->
+		</sequence>
+
+		<sequence editable_state="true" name="'helmet_nvg'" once="true" triggable="true">
+			<!-- Empty - nvg helmet variant -->
+		</sequence>
+
 		<sequence editable_state="true" name="'destroy_masks'" once="true" triggable="true">
 			<object filter="'check_fbi_swat_sg'" enabled="false" name="'g_helmet_lod7'"/>
 			<object filter="'check_fbi_swat_sg'" enabled="false" name="'g_helmet_lod8'"/>
@@ -226,8 +239,6 @@
 			
 			<sound 	filter="'check_fbi_swat_ar'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>			
 			<sound  filter="'check_fbi_swat_ar'" action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>	
-
-			<run_sequence filter="'check_fbi_swat_ar'" name="'destroy_altyn'"/>			
 
 			<effect_spawner enabled="false" name="'es_flashlight'"/>			
 		</sequence>		

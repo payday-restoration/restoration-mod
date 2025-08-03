@@ -204,7 +204,8 @@ function MissionManager.mission_script_patch_funcs.ponr(self, element, data)
 
 	local function set_ponr()
 		local balance_mul = data.player_mul or { 1, 1, 1, 1, }
-		local final_mul = managers.groupai:state():_get_balancing_multiplier(balance_mul) or balance_mul[#balance_mul] or 1
+		local include_team_ai = data.player_mul_include_team_ai == true
+		local final_mul = managers.groupai:state():_get_balancing_multiplier(balance_mul, include_team_ai) or balance_mul[#balance_mul] or 1
 		managers.groupai:state():set_point_of_no_return_timer(data.length * final_mul, 0)
 	end
 	Hooks:PostHook(element, "on_executed", "res_on_executed_ponr_" .. element:id(), set_ponr)

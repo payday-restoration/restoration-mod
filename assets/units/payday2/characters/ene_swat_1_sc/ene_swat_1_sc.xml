@@ -119,7 +119,7 @@
 			<!-- sg -->
 			<object filter="'check_blue_sg'" enabled="true" name="'g_swat_sg'"/>						
 			<object filter="'check_blue_sg'" enabled="true" name="'g_swat_sg_lod1'"/>					
-			<run_sequence filter="'check_blue_sg'" name="'goggles_c"/>								
+			<run_sequence filter="'check_blue_sg'" name="'goggles_c'"/>								
 			<run_sequence filter="'check_blue_sg'" name="'head_balaclava'"/>
 			
 			<!-- heavy sg -->			

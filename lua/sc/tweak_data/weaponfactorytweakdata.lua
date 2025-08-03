@@ -17,6 +17,7 @@ function WeaponFactoryTweakData:_clone_part_type_for_weapon(part_type, factory_i
 end
 
 local IsCAPInstalled = BeardLib.Utils:FindMod("Custom Attachment Points") and true or nil
+local g3_niphen = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen")
 
 --ATTACHMENT PRESETS
 local sight_1x_offset = {
@@ -9572,7 +9573,6 @@ end)
 				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 				table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_sig")
 
-				self.wpn_fps_lmg_par_npc.uses_parts = deep_clone(self.wpn_fps_lmg_par.uses_parts)
 
 				--sorry for the pasghetti! Fix my fucking coding mess!!!!
 				--Hey, can't be any worse than mine :^)
@@ -9588,6 +9588,7 @@ end)
 				self.wpn_fps_lmg_par.override.wpn_fps_upg_o_atibal_reddot = { parent = "upper_reciever" }
 
 				self.wpn_fps_lmg_par_npc.override = deep_clone(self.wpn_fps_lmg_par.override)
+				self.wpn_fps_lmg_par_npc.uses_parts = deep_clone(self.wpn_fps_lmg_par.uses_parts)
 			end)
 
 		--M60
@@ -9709,8 +9710,9 @@ end)
 						(self.parts[part_id].sub_type and self.parts[part_id].sub_type == "second_sight")) then
 						self.wpn_fps_lmg_m60.override[part_id] = {
 							parent = "upper_reciever",
-							forbids = { "wpn_fps_lmg_m60_sight_standard" }
+							forbids = self.parts[part_id].forbids or {}
 						}
+						table.insert(self.wpn_fps_lmg_m60.override[part_id].forbids ,"wpn_fps_lmg_m60_sight_standard")
 						self.wpn_fps_lmg_m60.adds[part_id] = {"wpn_fps_ass_groza_o_adapter"}
 					end
 				end
@@ -9973,6 +9975,7 @@ end)
 						30,
 						40
 					}
+
 					self.parts.wpn_fps_ass_g36_fg_c.supported = true
 					self.parts.wpn_fps_ass_g36_fg_c.stats = {
 						value = 3,
@@ -14094,6 +14097,17 @@ end)
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_lmg_hk21_g_ergo")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_i_g3_burst")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_box")
+
+				if g3_niphen then
+					self.parts.wpn_fps_ass_g3_fg_bipod.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_bipod"
+					self.parts.wpn_fps_ass_g3_fg_psg.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_psg"
+					self.parts.wpn_fps_ass_g3_fg_railed.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_railed"
+					self.parts.wpn_fps_ass_g3_fg_retro.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_retro"
+					self.parts.wpn_fps_ass_g3_fg_retro_plastic.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_retro_plastic"
+					self.parts.wpn_fps_ass_g3_m_mag.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag"
+					self.parts.wpn_fps_ass_g3_m_psg.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag_psg"
+					self.parts.wpn_fps_ass_g3_body_upper.unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_body_upper"
+				end
 
 				self.wpn_fps_ass_g3_npc.adds = deep_clone(self.wpn_fps_ass_g3.adds)
 				self.wpn_fps_ass_g3_npc.uses_parts = deep_clone(self.wpn_fps_ass_g3.uses_parts)
@@ -19080,7 +19094,10 @@ end)
 						translation = Vector3(0, -8, -2.77)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g3 = {
-						translation = Vector3(0.01, 2.5, -3.395)
+						translation = (
+							(cwakey and cwakey.Options:GetValue("g3_cwa_toggle") and Vector3(-0.0, -1.3, -3.38))
+							or Vector3(0.01, 2.5, -3.395)
+						)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_shak12 = {
 						translation = Vector3(0, -10, 1.585),
@@ -19604,7 +19621,9 @@ end)
 							translation = Vector3(-0.005, 9.6, -4.06),
 							rotation = Rotation(0, 0.02, 0)
 						}
-
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_howa_type20 = {
+						translation = Vector3(0.015, -0.8, -3.61)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_s556 = {
 						translation = Vector3(-0.065, 9.6, -2.1),
@@ -29306,6 +29325,25 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 
 	--[[ RJC9000'S MODS ]]
+
+		if self.parts.wpn_fps_ass_howa_type20_irons_rear_folded then
+			self.parts.wpn_fps_ass_howa_type20_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_howa_type20_flash_hider.custom_stats = {}
+			self.parts.wpn_fps_ass_howa_type20_flash_hider.perks = nil
+			self.parts.wpn_fps_ass_howa_type20_stock.stats = { value = 0 }
+			self.parts.wpn_fps_ass_howa_type20_stock.custom_stats = {}
+			self.parts.wpn_fps_ass_howa_type20_irons_rear.stance_mod = {
+				wpn_fps_ass_howa_type20 = {
+					translation = Vector3(0.034, -8, -2.85),
+					rotation = Rotation(0.02, -0.1, 0)
+				}
+			}
+
+			self.parts.wpn_fps_ass_howa_type20_stock_extended.supported = true
+			self.parts.wpn_fps_ass_howa_type20_stock_extended.stats = { value = 0, recoil = 2, concealment = -1 }
+			self.parts.wpn_fps_ass_howa_type20_stock_extended.custom_stats = nil
+		end
+
 		if self.parts.wpn_fps_ass_morita_barrel_shotgun then
 			self.parts.wpn_fps_ass_morita_barrel_shotgun.supported = true
 			self.parts.wpn_fps_ass_morita_barrel_shotgun.stats = {value = 0}
@@ -42850,11 +42888,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_body_lower_hk33"
 					},
 					wpn_fps_ass_g3_m_mag = {
-						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_m_hk33_old",
+						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_m_hk33" .. ((g3_niphen and "_old") or ""),
 						third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_m_hk33"
 					},
 					wpn_fps_ass_g3_fg_bipod = {
-						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_fg_hk33_old",
+						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_fg_hk33" .. ((g3_niphen and "_old") or ""),
 						third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_fg_hk33",
 						parent = "exclusive_set",
 						a_obj = "a_fg_hk33"
@@ -51833,7 +51871,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_fps_lmg_svinet_s_legend",
 					third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_third_lmg_svinet_s_legend",
 				}
-			elseif self.parts[used_part_id].type == "extra" then
+			elseif self.parts[used_part_id].type == "extra" and not self.parts[used_part_id].sub_type == "second_sight" then
 				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
 					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",

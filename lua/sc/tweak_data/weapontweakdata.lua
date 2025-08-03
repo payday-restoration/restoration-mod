@@ -7823,6 +7823,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m1911.reload_speed_multiplier = 1.15
 						self.m1911.timers.reload_exit_empty = 0.5
 						self.m1911.timers.reload_exit_not_empty = 0.65
+						if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/m1911_foley") then
+							self.m1911.animations.reload_name_id = "sparrow"
+						end
 					--Akimbo
 						self.x_m1911.has_description = true
 						self.x_m1911.desc_id = "bm_m1911_sc_desc"
@@ -12338,11 +12341,42 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g3.panic_suppression_chance = 0.05
 						self.g3.can_shoot_through_enemy = true
 						self.g3.can_shoot_through_wall = false
-						self.g3.timers.reload_empty = 3.3
-						self.g3.timers.reload_exit_empty = 1.45
-						self.g3.timers.reload_not_empty = 2.5
-						self.g3.timers.reload_exit_not_empty = 1.05
-						self.g3.reload_speed_multiplier = 1.425
+						if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen") then --Update 65 Animations
+							self.g3.animations.reload_name_id = "g3_niphen"
+							self.g3.timers.reload_empty = 3.3
+							self.g3.timers.reload_exit_empty = 1.45
+							self.g3.timers.reload_not_empty = 2.5
+							self.g3.timers.reload_exit_not_empty = 1.05
+							self.g3.reload_speed_multiplier = 1.425
+						elseif cwakey and cwakey.Options:GetValue("g3_cwa_toggle") then --Classic Weapon Animations
+							self.g3.animations.reload_name_id = "g3_cwa"
+							self.g3.weapon_hold = "g3_cwa"
+							self.g3.timers.reload_empty = 4.03
+							self.g3.timers.reload_exit_empty = 1
+							self.g3.timers.reload_not_empty = 2.15
+							self.g3.timers.reload_exit_not_empty = 1.1
+						else
+							--vanilla replacers
+							if BeardLib.Utils:FindMod("g3 animation") then --PlayBONK's Gewehr 3 Reload Animations (v3)
+								self.g3.reload_speed_multiplier = 0.7254
+								self.g3.timers.reload_empty = 1.65
+								self.g3.timers.reload_exit_empty = 0.82
+								self.g3.timers.reload_not_empty = 1.22
+								self.g3.timers.reload_exit_not_empty = 0.6
+							elseif BeardLib.Utils:FindMod("JustAnotherG3 Reload") then  --Masavik's G3 Reload Animations (The original version; NOT the vanilla timer version)
+								self.g3.timers.reload_empty = 2.67
+								self.g3.timers.reload_exit_empty = 0.9
+								self.g3.timers.reload_not_empty = 1.67
+								self.g3.timers.reload_exit_not_empty = 0.9
+								self.g3.reload_speed_multiplier = 1.15295
+							else
+								self.g3.reload_speed_multiplier = 0.865
+								self.g3.timers.reload_empty = 1.95
+								self.g3.timers.reload_exit_empty = 1.25
+								self.g3.timers.reload_not_empty = 1.47
+								self.g3.timers.reload_exit_not_empty = 0.6
+							end
+						end
 
 					--Galant (M1 Garand)
 						self.ching.categories = {
@@ -24794,6 +24828,128 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.howa_type20 then --ACR but Japanese
+				self.howa_type20.categories = { "assault_rifle" }
+				self.howa_type20.recategorize = { "light_ar" }
+				self.howa_type20.damage_type = "assault_rifle"
+				self.howa_type20.nato = true
+				self.howa_type20.tactical_reload = 1
+				self.howa_type20.fire_mode_data.fire_rate = 0.088235294
+				self.howa_type20.CLIP_AMMO_MAX = 30
+				self.howa_type20.AMMO_MAX = 150
+				self.howa_type20.CAN_TOGGLE_FIREMODE = true
+				self.howa_type20.FIRE_MODE = "auto"
+				self.howa_type20.kick = {}
+				self.howa_type20.kick = self.stat_info.kick_tables.moderate_kick
+				self.howa_type20.kick_pattern = {
+					{0, self.stat_info.kick_tables.left_recoil},
+					{4, self.stat_info.kick_tables.moderate_left_kick},
+					{9, self.stat_info.kick_tables.even_recoil},
+					{12, self.stat_info.kick_tables.moderate_right_kick},
+					{17, self.stat_info.kick_tables.even_recoil},
+					{21, self.stat_info.kick_tables.moderate_left_kick},
+					{25, self.stat_info.kick_tables.even_recoil}
+				}
+				self.howa_type20.supported = true
+				self.howa_type20.ads_speed = 0.300
+				self.howa_type20.damage_falloff = {
+					start_dist = 2600,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.howa_type20.stats = {
+					damage = 24,
+					spread = 86,
+					recoil = 89,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 10,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.howa_type20.stats_modifiers = nil
+				self.howa_type20.panic_suppression_chance = 0.05
+				self.howa_type20.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.howa_type20.timers.reload_empty = 3.12
+				self.howa_type20.timers.reload_exit_empty = 0.75
+				self.howa_type20.timers.reload_not_empty = 2.3
+				self.howa_type20.timers.reload_exit_not_empty = 0.96
+				self.howa_type20.reload_speed_multiplier = 1
+			end
+
+			if self.peppermill then --Bioshocock Infimate Crank Gun
+				self.peppermill.categories = {
+					"minigun",
+					"smg"
+				}
+				self.peppermill.recategorize = { "miniguns" }
+				self.peppermill.damage_type = "machine_gun"
+				self.peppermill.has_description = false
+				self.peppermill.CLIP_AMMO_MAX = 100
+				self.peppermill.AMMO_MAX = 200
+				self.peppermill.FIRE_MODE = "auto"
+				self.peppermill.fire_mode_data = {}
+				self.peppermill.fire_rate_init_count = 5
+				self.peppermill.fire_rate_init_mult = 0.7
+				self.peppermill.fire_rate_init_ramp_up = true
+				self.peppermill.fire_mode_data.fire_rate = 0.1
+				self.peppermill.CAN_TOGGLE_FIREMODE = false
+				self.peppermill.kick = self.stat_info.kick_tables.random_recoil
+				self.peppermill.kick_pattern = {
+					{0, self.stat_info.kick_tables.random_recoil},
+					{7, self.stat_info.kick_tables.even_recoil},
+					{21, self.stat_info.kick_tables.right_recoil},
+					{34, self.stat_info.kick_tables.horizontal_right_recoil},
+					{52, self.stat_info.kick_tables.even_recoil},
+					{68, self.stat_info.kick_tables.left_recoil}
+				}
+				self.peppermill.muzzleflash = "_dmc/effects/heavy_muzzle"
+				self.peppermill.panic_suppression_chance = 0.05
+				self.peppermill.supported = true
+				self.peppermill.ads_speed = 0.600
+				self.peppermill.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 6000,
+					min_mult = 0.3334
+				}
+				self.peppermill.stats = {
+					damage = 60,
+					spread = 61,
+					recoil = 67,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 17,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.peppermill.stats_modifiers = nil
+				self.peppermill.spin_up_anims = true
+				self.peppermill.spin_up_t = 0.025
+				self.peppermill.spin_down_t = 0.1
+				self.peppermill.always_hipfire = true
+				self.peppermill.always_play_anims = true
+				self.peppermill.ign_ts = true
+				self.peppermill.sounds.use_fix = nil
+				self.peppermill.sounds.no_fix = nil
+				self.peppermill.timers.equip = 0.4
+				self.peppermill.timers.unequip = 0.4
+				self.peppermill.timers.reload_empty = 3
+				self.peppermill.timers.reload_exit_empty = 0.66
+				self.peppermill.timers.reload_not_empty = self.peppermill.timers.reload_empty
+				self.peppermill.timers.reload_exit_not_empty = self.peppermill.timers.reload_exit_empty
+				self.peppermill.reload_speed_multiplier = 0.61
+				self.peppermill.sms = sms_preset.lmg_90
+				self.peppermill.weapon_movement_penalty = sms_preset.lmg_90
+			end
+
 			if self.morita then
 				self.morita.recategorize = { "light_ar" }
 				self.morita.damage_type = "assault_rifle"
@@ -25436,6 +25592,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.papa320.timers.reload_exit_not_empty = 1
 				self.papa320.stats_modifiers = nil
 				self.papa320.panic_suppression_chance = 0.05
+				self.papa320.it_eNDs_today = 0.1
 			end
 			if self.x_papa320 then
 				self.x_papa320.recategorize = { "light_pis" }
@@ -25483,6 +25640,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_papa320.stats_modifiers = nil
 				self.x_papa320.panic_suppression_chance = 0.05
+				self.x_papa320.it_eNDs_today = 0.1
 			end
 
 			if self.m6d then --RJC9000 and Offyerrocker's M6D
@@ -25767,7 +25925,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{20, self.stat_info.kick_tables.right_kick}
 				}
 				self.acr_2012.supported = true
-				self.acr_2012.ads_speed = 0.300
+				self.acr_2012.ads_speed = 0.320
 				self.acr_2012.damage_falloff = {
 					start_dist = 2400,
 					end_dist = 5800,
@@ -25776,7 +25934,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.acr_2012.stats = {
 					damage = 24,
 					spread = 83,
-					recoil = 95,
+					recoil = 91,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 24,
@@ -27720,7 +27878,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeo2.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.bromeo2.lock_slide = true
 				self.bromeo2.lock_slide_offset = 0.066
-				self.bromeo2.reload_offset = 0.033
+				self.bromeo2.reload_offset = {
+					reload = 0.033,
+					reload_not_empty = 0.033
+				}
 				self.bromeo2.animations.magazine_empty = nil
 				self.bromeo2.reload_speed_multiplier = 0.53
 				self.bromeo2.reload_not_empty_speed_multiplier = 1.2
@@ -27780,7 +27941,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bromeop.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.bromeop.lock_slide = true
 				self.bromeop.lock_slide_offset = 0.066
-				self.bromeop.reload_offset = 0.033
+				self.bromeop.reload_offset = {
+					reload = 0.033,
+					reload_not_empty = 0.033
+				}
 				self.bromeop.animations.magazine_empty = nil
 				self.bromeop.reload_speed_multiplier = 0.57
 				self.bromeop.reload_not_empty_speed_multiplier = 1.16
@@ -28628,11 +28792,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.s556.stats = {
 					damage = 30,
-					spread = 86,
-					recoil = 77,
+					spread = 84,
+					recoil = 79,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 23,
+					concealment = 24,
 					suppression = 10,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -29275,7 +29439,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.modl.stats_modifiers = nil
-				self.modl.timers = deep_clone(self.g3.timers)
+				self.modl.timers.reload_not_empty = 2.5
+				self.modl.timers.reload_exit_not_empty = 1.05
 				self.modl.timers.reload_empty = self.modl.timers.reload_not_empty
 				self.modl.timers.reload_exit_empty = self.modl.timers.reload_exit_not_empty
 				self.modl.reload_not_empty_speed_multiplier = 1.4285
@@ -34308,7 +34473,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 			end
 
-			if restoration.Options:GetValue("OTHER/WeaponHandling/AutoDMRs") then
+			if restoration.Options:GetValue("WEAPONS/WeaponHandling/AutoDMRs") then
 				if weap.recategorize[1] == "dmr_ar" and weap.CAN_TOGGLE_FIREMODE and weap.CAN_TOGGLE_FIREMODE == true and weap.FIRE_MODE == "single" then
 					weap.FIRE_MODE = "auto"
 				end

@@ -17190,7 +17190,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.virtus.stats_modifiers = nil
 				self.virtus.panic_suppression_chance = 0.05
-				self.virtus.keep_ammo = 1
 				self.virtus.lock_slide = true
 				self.virtus.reload_speed_multiplier = 0.9
 				self.virtus.timers = deep_clone(self.s552.timers)
@@ -22015,7 +22014,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mk12.stats_modifiers = nil
 				self.mk12.hs_mult = 2
-				self.mk12.keep_ammo = 1
 				self.mk12.reload_speed_multiplier = 0.9
 				self.mk12.armor_piercing_chance = 1
 				self.mk12.panic_suppression_chance = 0.05
@@ -22133,6 +22131,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk45c.recategorize = { "heavy_pis" }
 				self.hk45c.damage_type = "heavy_pistol"
 				self.hk45c.fire_mode_data.fire_rate = 0.1176470588
+				self.hk45c.tactical_reload = 1
 				self.hk45c.CLIP_AMMO_MAX = 8
 				self.hk45c.AMMO_MAX = 40
 				self.hk45c.kick = self.stat_info.kick_tables.right_recoil
@@ -29091,6 +29090,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sg45.recategorize = { "heavy_pis" }
 				self.sg45.damage_type = "heavy_pistol"
 				self.sg45.fire_mode_data.fire_rate = 0.1176470588
+				self.sg45.tactical_reload = 1
 				self.sg45.CLIP_AMMO_MAX = 10
 				self.sg45.AMMO_MAX = 40
 				self.sg45.kick = self.stat_info.kick_tables.right_recoil

@@ -37,9 +37,9 @@
 
 		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" startup="true" once="true">	
 			
-			<!-- rifleman - Modified to use single variations instead of pick() -->
-			<run_sequence name="'head_a'"/>
-			<run_sequence name="'holster_r'"/>
+			<!-- rifleman -->
+			<run_sequence name="'head_'..pick('a','b','c','d','e','f','g', 'h', 'i', 'j', 'k', 'l', 'm', 'balaclava', 'k', 'c')"/>
+			<run_sequence name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
 
 			<!-- ar (flashlight on)-->
 			<run_sequence filter="'check_flashlights'" name="'flashlight_on'"/>
@@ -171,7 +171,7 @@
 			<object enabled="true" name="'g_balaclava'"/>
 			<object enabled="true" name="'g_balaclava_lod1'"/>	
 
-			<run_sequence name="'face_a'" />										
+			<run_sequence name="'face_'..pick('a','b','c','d','e')" />										
 		</sequence>							
 		
 		<!-- RANDOM HOLSTERS -->

@@ -80,6 +80,9 @@ Hooks:PostHook(CopLogicSniper, "action_complete_clbk", "sh_action_complete_clbk"
 	local my_data = data.internal_data
 
 	if action_type ~= "hurt" and action_type ~= "dodge" and action_type ~= "act" then
+		if action_type == "walk" then
+			my_data.advancing = nil
+		end
 		return
 	end
 

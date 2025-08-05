@@ -631,6 +631,8 @@
 					<option type="multichoice" default_value="2" name="ViewmodelMovement" values_tbl="restoration.vm_move"/>
 					<option type="bool" default_value="true" name="BigScopeOffset"/>
 					<divider name="tod_divider" size="14"/>
+					<option type="bool" default_value="false" name="RunAndShootAnims"/>
+					<divider name="tod_divider" size="14"/>
 					<button name="ToggleAnims" disabled="true"/>
 					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="m1911_foley"/>

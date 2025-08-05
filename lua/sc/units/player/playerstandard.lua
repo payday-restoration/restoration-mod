@@ -1374,7 +1374,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							end
 
 							DelayedCalls:Add("clip_empty", 0.1, function ()
-								if not self:_is_reloading() and weap_base:clip_empty() and not manual_reloads then
+								if not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self:_is_reloading() and weap_base:clip_empty() and not manual_reloads then
 									self:_start_action_reload_enter(t + 0.1)
 								end
 							end)
@@ -1910,6 +1910,7 @@ end
 
 --Allows for melee sprinting.
 function PlayerStandard:_start_action_running(t)
+	self._delay_running_anim = nil
 	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
 
 	local second_sight_sprint = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/SecondSightSprint")
@@ -1963,8 +1964,9 @@ function PlayerStandard:_start_action_running(t)
 	local cancel_sprint = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/SprintCancel")
 
 	--Skip sprinting animations of player is doing melee things.
-	if not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and cancel_sprint == true))) then
-		if not self._equipped_unit:base():run_and_shoot_allowed() then
+	if not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and cancel_sprint == true))) and (not self._equipped_unit:base():run_and_shoot_allowed() or (self._equipped_unit:base():run_and_shoot_allowed() and not self._shooting)) then
+		if not self._equipped_unit:base():run_and_shoot_allowed() or 
+			(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
 			self._ext_camera:play_redirect(self:get_animation("start_running"))
 		else
 			self._ext_camera:play_redirect(self:get_animation("idle"))
@@ -2000,10 +2002,13 @@ function PlayerStandard:_end_action_running(t)
 		self._end_running_expire_t = t + sprintout_anim_time / speed_multiplier
 		--Adds a few melee related checks to avoid cutting off animations.
 		local cancel_sprint = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/SprintCancel")
-		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self._equipped_unit:base():run_and_shoot_allowed() and ((not self:_is_reloading() or not self.RUN_AND_RELOAD))
+		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() --[[and not self._equipped_unit:base():run_and_shoot_allowed()]] and ((not self:_is_reloading() or not self.RUN_AND_RELOAD)) and not self._delay_running_anim
 
 		if stop_running then
-			self._ext_camera:play_redirect(self:get_animation("stop_running"), math.min(speed_multiplier, 2) )
+			if not self._equipped_unit:base():run_and_shoot_allowed() or 
+				(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
+				self._ext_camera:play_redirect(self:get_animation("stop_running"), math.min(speed_multiplier, 2) )
+			end
 		end
 	end
 end
@@ -2215,7 +2220,8 @@ function PlayerStandard:_update_melee_timers(t, input)
 	--Resume normal sprinting animations once melee attack is done.
 	--Making it not cancel the equip animation will require a fair amount more work, since it doesn't set the timers. Is a job for another day.
 	if self._running and not self._end_running_expire_t and not self._state_data.meleeing and self._state_data.melee_expire_t and t >= self._state_data.melee_expire_t and not self:_is_charging_weapon() and (not self:_is_reloading() or not self.RUN_AND_RELOAD) and (instant or not self._state_data.melee_repeat_expire_t) then
-		if not self._equipped_unit:base():run_and_shoot_allowed() then
+		if not self._equipped_unit:base():run_and_shoot_allowed() or 
+			(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
 			self._ext_camera:play_redirect(self:get_animation("start_running"))
 			self._equipped_unit:base():tweak_data_anim_stop("equip")
 		else
@@ -2710,6 +2716,20 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	end
 end
 
+function PlayerStandard:_update_run_and_shoot_anim(t)
+	local weap_unit = self._equipped_unit
+	local weap_base = weap_unit and weap_unit:base()
+	if self._shooting then
+		local delay = 0.3 + ((weap_base and (weap_base._next_fire_allowed - t)) or 0)
+		self._delay_running_anim = t + delay
+	elseif self._delay_running_anim and self._delay_running_anim < t then
+		self._delay_running_anim = nil
+		if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims") and not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and cancel_sprint == true))) then
+			self._ext_camera:play_redirect(self:get_animation("start_running"))
+		end
+	end
+end
+
 --Updates burst fire and minigun spinup.
 Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	if alive(self._equipped_unit) then
@@ -2735,6 +2755,12 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		managers.hud:set_teammate_weapon_firemode_burst(weapon:selection_index())
 	end
 	--]]
+
+	if weapon:run_and_shoot_allowed() then
+		if self._running and not self._end_running_expire_t then
+			self:_update_run_and_shoot_anim(t)
+		end
+	end
 
 	local primary = alive(self._unit) and self._unit.inventory and alive(self._unit:inventory():unit_by_selection(2)) and self._unit:inventory():unit_by_selection(2).base and self._unit:inventory():unit_by_selection(2):base()
 	local secondary = alive(self._unit) and self._unit.inventory and alive(self._unit:inventory():unit_by_selection(1)) and self._unit:inventory():unit_by_selection(1).base and self._unit:inventory():unit_by_selection(1):base()
@@ -4225,8 +4251,11 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
 				if input.btn_steelsight_state then
 					self._steelsight_wanted = true
-				elseif self.RUN_AND_RELOAD and self._running and not self._end_running_expire_t and not self._equipped_unit:base():run_and_shoot_allowed() then
-					self._ext_camera:play_redirect(self:get_animation("start_running"))
+				elseif self.RUN_AND_RELOAD and self._running and not self._end_running_expire_t --[[and not self._equipped_unit:base():run_and_shoot_allowed()]] then
+					if not self._equipped_unit:base():run_and_shoot_allowed() or 
+						(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
+						self._ext_camera:play_redirect(self:get_animation("start_running"))
+					end
 				end
 			end
 		end
@@ -4247,8 +4276,11 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
 			if input.btn_steelsight_state then
 				self._steelsight_wanted = true
-			elseif self.RUN_AND_RELOAD and self._running and not self._end_running_expire_t and not self._equipped_unit:base():run_and_shoot_allowed() then
-				self._ext_camera:play_redirect(self:get_animation("start_running"))
+			elseif self.RUN_AND_RELOAD and self._running and not self._end_running_expire_t --[[and not self._equipped_unit:base():run_and_shoot_allowed()]] then
+				if not self._equipped_unit:base():run_and_shoot_allowed() or 
+					(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
+					self._ext_camera:play_redirect(self:get_animation("start_running"))
+				end
 			end
 			if self._equipped_unit:base().on_reload_stop then
 				self._equipped_unit:base():on_reload_stop()
@@ -4653,7 +4685,7 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	--Removed the ADS check so you can swap to the underbarrel while doing that, also for Kick Starter top tier skill
 	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:_is_reloading() or self:is_switching_stances() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:running() and not self._equipped_unit:base():run_and_shoot_allowed()
 
-	if self._running and not self._equipped_unit:base():run_and_shoot_allowed() and not self._end_running_expire_t then
+	if self._running --[[and not self._equipped_unit:base():run_and_shoot_allowed()]] and not self._end_running_expire_t then
 		self:_interupt_action_running(t)
 
 		self._toggle_underbarrel_wanted = true
@@ -4810,7 +4842,8 @@ function PlayerStandard:_update_equip_weapon_timers(t, input)
 		end
 
 		if self._running and not self._end_running_expire_t then
-			if not self._equipped_unit:base():run_and_shoot_allowed() then
+			if not self._equipped_unit:base():run_and_shoot_allowed() or 
+				(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
 				self._ext_camera:play_redirect(self:get_animation("start_running"))
 			else
 				self._ext_camera:play_redirect(self:get_animation("idle"))
@@ -5181,12 +5214,12 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 					self._slide_desired_dir = mvector3.copy(movedir)
 					self._sprinting_speed = self:_get_modified_move_speed("run")
 					-- make it feel like a speedy slide
-					self._slide_speed = math.clamp(self._sprinting_speed * 1.5, 900, 1200) --self._tweak_data.movement.speed.RUNNING_MAX * 1.3
+					self._slide_speed = math.clamp(self._sprinting_speed * 1.5, 950, 1250) --self._tweak_data.movement.speed.RUNNING_MAX * 1.3
 					self._slide_refresh_t = 0
 					self._slide_last_z = self._unit:position().z
 					self._slide_last_speed = self._slide_speed
 					self._slide_end_speed = self:_get_modified_move_speed("crouch")/4 -- don't need to calculate every frame
-					self._slide_speed_factor = self._slide_speed/(self._tweak_data.movement.speed.RUNNING_MAX * 1.15) -- it's magic
+					self._slide_speed_factor = self._slide_speed/(self._tweak_data.movement.speed.RUNNING_MAX * 1.20) -- it's magic
 					self:_stance_entered()
 
 					self._last_slide_time = self._last_t
@@ -5355,7 +5388,7 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 					-- calculate stamina drain scaling based on current speed vs standard running speed
 					local drain_mult = self._slide_speed/self._sprinting_speed --(self._slide_speed * 1)/self._sprinting_speed
 					-- drain stamina, prevent regen
-					self._unit:movement():subtract_stamina((self._unit:movement():_max_stamina() * 0.2) * dt * drain_mult)
+					self._unit:movement():subtract_stamina((self._unit:movement():_max_stamina() * 0.20) * dt * drain_mult)
 					--if drain_mult > 0.50 then
 						self._unit:movement():_restart_stamina_regen_timer()
 					--end

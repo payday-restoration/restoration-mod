@@ -7544,11 +7544,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_type54_underbarrel.stats_modifiers = nil
 						self.x_type54_underbarrel.panic_suppression_chance = 0.05
+						self.x_type54_underbarrel.use_stance = "x_type54"
+						self.x_type54_underbarrel.use_hipfire_stance = "x_type54"
 						self.x_type54_underbarrel.ignore_crit_damage = false
 						self.x_type54_underbarrel.ignore_damage_multipliers = false
 						self.x_type54_underbarrel.ignore_damage_upgrades = false
-						self.x_type54_underbarrel.timers.reload_exit_empty = 0.55
-						self.x_type54_underbarrel.timers.reload_exit_not_empty = 0.65
+						self.x_type54_underbarrel.timers.reload_empty = 3.1
+						self.x_type54_underbarrel.timers.reload_not_empty = 3.1
+						self.x_type54_underbarrel.timers.reload_exit_empty = 1.3
+						self.x_type54_underbarrel.timers.reload_exit_not_empty = 1.3
 
 					--Crosskill Guard
 						self.shrew.has_description = true
@@ -15251,6 +15255,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--OVE9000 SAW
 				self.saw.has_description = true
+				self.saw.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
+				}
 				self.saw.desc_id = "bm_ap_saw_sc_desc"
 				self.saw.CLIP_AMMO_MAX = 20
 				self.saw.AMMO_MAX = 40
@@ -15280,6 +15289,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.saw.timers.reload_exit_empty = 1.8
 				self.saw.timers.reload_empty = 3.75
 					self.saw_secondary.kick = self.stat_info.kick_tables.none
+					self.saw_secondary.upgrade_blocks = {
+						weapon = {
+							"clip_ammo_increase"
+						}
+					}
 					self.saw_secondary.has_description = true
 					self.saw_secondary.desc_id = "bm_ap_saw_sc_desc"
 					self.saw_secondary.CLIP_AMMO_MAX = 20
@@ -17805,6 +17819,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"grenade_launcher",
 					"gl_pistol"
 				}
+				self.nckuro.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
+				}
 				self.nckuro.use_data.selection_index = 2
 				self.nckuro.CLIP_AMMO_MAX = 30
 				self.nckuro.AMMO_MAX = 60
@@ -17853,6 +17872,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"gl_pistol",
 					"raygun"
 				}
+				self.raygun.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
+				}
 				self.raygun.use_data.selection_index = 2
 				self.raygun.AMMO_MAX = 60
 				self.raygun.fire_mode_data.fire_rate = 0.33149171270
@@ -17895,6 +17919,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"grenade_launcher",
 					"gl_pistol",
 					"raygun"
+				}
+				self.umd_launcher.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
 				}
 				self.umd_launcher.AMMO_MAX = 6
 				self.umd_launcher.kick = self.stat_info.kick_tables.even_recoil
@@ -20540,6 +20569,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hx25.categories = {
 					"grenade_launcher",
 					"gl_pistol"
+				}
+				self.hx25.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
 				}
 				self.hx25.AMMO_MAX = 10
 				self.hx25.rays = 7
@@ -31428,6 +31462,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.nothing then --Silent Enforcer's No Wep
 				self.nothing.recategorize = { "wpn_special" }
+				self.nothing.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
+				}
 				self.nothing.fire_mode_data.fire_rate = 0.8695652
 				self.nothing.CLIP_AMMO_MAX = 0
 				self.nothing.AMMO_MAX = 0
@@ -31464,6 +31503,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 			if self.nothing2 then
 				self.nothing2.recategorize = { "wpn_special" }
+				self.nothing2.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
+				}
 				self.nothing2.fire_mode_data.fire_rate = 0.8695652
 				self.nothing2.CLIP_AMMO_MAX = 0
 				self.nothing2.AMMO_MAX = 0
@@ -31919,6 +31963,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sidewinder.categories = {
 				"grenade_launcher",
 				"raygun"
+			}
+			self.sidewinder.upgrade_blocks = {
+				weapon = {
+					"clip_ammo_increase"
+				}
 			}
 			self.sidewinder.use_data.selection_index = 2
 			self.sidewinder.CLIP_AMMO_MAX = 20
@@ -33586,6 +33635,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mdr_308_underbarrel.categories = {
 				"rocket_launcher",
 				"grenade_launcher"
+			}
+			self.mdr_308_underbarrel.upgrade_blocks = {
+				weapon = {
+					"clip_ammo_increase"
+				}
 			}
 			self.mdr_308_underbarrel.supported = true
 			self.mdr_308_underbarrel.ads_speed = 0.380

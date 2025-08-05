@@ -24,6 +24,7 @@ function WeaponAmmo:replenish()
 
 		--Pickup multiplier from skills.
 		local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
+		local min_pickup_multiplier = managers.player:upgrade_value("player", "minimum_pick_up_multiplier", 1)
 		if not is_pro then
 			pickup_multiplier = pickup_multiplier * ( ((managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1) - 1) * is_solo) + 1 )
 		end
@@ -39,7 +40,7 @@ function WeaponAmmo:replenish()
 		pickup_multiplier = pickup_multiplier * ((self._is_controller and 1.15) or 1)
 		
 		--Apply multiplier from skills and ammo.
-		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier
+		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier * min_pickup_multiplier
 		self._ammo_pickup[2] = self._ammo_pickup[2] * pickup_multiplier
 	end
 end
@@ -47,16 +48,19 @@ end
 --Ensures that OICW magazine size increases don't result in broken decimal values.
 function WeaponAmmo:calculate_ammo_max_per_clip()
 	local ammo = tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + (self._extra_ammo or 0)
+	local ammo_mult = 1
 	if not self._starwars then
-		ammo = ammo * managers.player:upgrade_value(self._name_id, "clip_ammo_increase", 1)
+		ammo_mult = ammo_mult * managers.player:upgrade_value(self._name_id, "clip_ammo_increase", 1)
 		if not self:upgrade_blocked("weapon", "clip_ammo_increase") then
-			ammo = ammo * managers.player:upgrade_value("weapon", "clip_ammo_increase", 1)
+			ammo_mult = ammo_mult + ((managers.player:upgrade_value("weapon", "clip_ammo_increase", 1) - 1))
 		end
-		if not self:upgrade_blocked(tweak_data.weapon[self._name_id].category, "clip_ammo_increase") then
-			ammo = ammo * managers.player:upgrade_value(tweak_data.weapon[self._name_id].category, "clip_ammo_increase", 1)
+		for _, category in ipairs(tweak_data.weapon[self._name_id].categories) do
+			if not self:upgrade_blocked(category, "clip_ammo_increase") then
+				ammo_mult = ammo_mult + ((managers.player:upgrade_value(category, "clip_ammo_increase", 1) - 1))
+			end
 		end
 	end
-	ammo = math.round(ammo)
+	ammo = ammo * ammo_mult
 	return ammo
 end
 

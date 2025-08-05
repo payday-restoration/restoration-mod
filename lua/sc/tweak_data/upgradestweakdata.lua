@@ -861,14 +861,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 				
 			--Shock and Awe
-				self.values.weapon.clip_ammo_increase = {
+				self.values.smg.clip_ammo_increase = {
 					1.2, --Basic
 					1.5 --Ace
 				}
-				
 				self.skill_descs.spotter_teamwork = {
-					skill_value_b1 = tostring(self.values.weapon.clip_ammo_increase[1] % 1 * 100).."%", -- Mag size increase
-					skill_value_p1 = tostring((self.values.weapon.clip_ammo_increase[2] - self.values.weapon.clip_ammo_increase[1]) % 1 * 100).."%" -- Additional mag size increase
+					skill_value_b1 = tostring(self.values.smg.clip_ammo_increase[1] % 1 * 100).."%", -- Mag size increase
+					skill_value_p1 = tostring((self.values.smg.clip_ammo_increase[2] - self.values.smg.clip_ammo_increase[1]) % 1 * 100).."%" -- Additional mag size increase
 				}
 
 			--MG Specialist
@@ -902,15 +901,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 	
 			--Body Expertise a.k.a. Spray N' Pray
-				self.values.player.ap_bullets = {0.5}
-				self.values.smg.ap_bullets = {1.0}
-				self.values.smg.automatic_kills_to_damage = {
-					{
-						10, --stack limit
-						0.05, --dmg mult add
-						4 --time
+				--Basic
+					self.values.smg.ap_bullets = {1.0}
+				--Ace
+					self.values.smg.automatic_kills_to_damage = {
+						{
+							10, --stack limit
+							0.05, --dmg mult add
+							4 --time
+						}
 					}
-				}
 				--Unused
 					self.automatic_kills_to_damage_reset_t = 1.2 --delay to reset time (seconds)
 					self.values.weapon.automatic_head_shot_add = {0.03, 0.06}
@@ -923,8 +923,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 
 				self.skill_descs.single_shot_ammo_return = {
-					skill_value_b1 = tostring(self.values.player.ap_bullets[1] * 100).."%", -- AP for non-MG
-					skill_value_b2 = tostring(self.values.smg.ap_bullets[1] * 100).."%", -- AP for MG
+					skill_value_b1 = tostring(self.values.smg.ap_bullets[1] * 100).."%", -- AP for MG
 					skill_value_p1 = tostring(self.values.smg.automatic_kills_to_damage[1][3]), -- delay to reset time for keeping buff active
 					skill_value_p2 = tostring(self.values.smg.automatic_kills_to_damage[1][2] * 100).."%", -- Damage increase per stack
 					skill_value_p3 = tostring(self.values.smg.automatic_kills_to_damage[1][1]) -- Amount of stacks
@@ -1108,14 +1107,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Specialist Equipment formally Portable Saw
 				--Basic
 					self.values.saw.enemy_slicer = {true}
+					self.values.player.reload_speed_multiplier = {1.05}
 				--Ace
 					self.values.saw.reload_speed_multiplier = {1.25}
 					self.values.grenade_launcher.reload_speed_multiplier = {1.25}
 					self.values.crossbow.reload_speed_multiplier = {1.25}
 					self.values.bow.reload_speed_multiplier = {1.25}
+					self.values.player.minimum_pick_up_multiplier = {1.15}
 					
 					self.skill_descs.portable_saw = {
-						skill_value_p1 = tostring(self.values.saw.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed buff
+						skill_value_b1 = tostring(self.values.player.reload_speed_multiplier[1] % 1 * 100).."%", -- Universal reload speed buff
+						skill_value_p1 = tostring(self.values.saw.reload_speed_multiplier[1] % 1 * 100).."%", -- Special weapon reload speed buff
+						skill_value_p2 = tostring(self.values.player.minimum_pick_up_multiplier[1] % 1 * 100).."%", -- Minimum ammo pickup buff
 					}
 			
 			--Extra Lead
@@ -1132,7 +1135,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Rip and Tear
 				--Basic
 					self.values.saw.ignore_shields = {true}
+					self.values.player.ap_bullets = {0.25}
 				--Ace
+					self.values.weapon.clip_ammo_increase = {
+						1.25, --Basic
+						1.25 --Unused
+					}
 					self.values.saw.panic_when_kill = {
 						{
 							area = 1000,
@@ -1142,6 +1150,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 					self.skill_descs.carbon_blade = {
+						skill_value_b1 = tostring(self.values.player.ap_bullets[1] * 100).."%", -- Universal AP
+						skill_value_p3 = tostring(self.values.weapon.clip_ammo_increase[1] % 1 * 100).."%", -- Mag size increase
 						skill_value_p1 = tostring(self.values.saw.panic_when_kill[1].chance * 100).."%", -- Chance to cause panic
 						skill_value_p2 = tostring(self.values.saw.panic_when_kill[1].area / 100) -- Area of panic
 					}
@@ -1805,6 +1815,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Akimbo
 				--Basic
+					self.values.pistol.hip_run_and_shoot = {true}
 					self.values.akimbo.recoil_index_addend = {
 						0,
 						10,
@@ -1814,6 +1825,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 
 				--Ace
+					self.values.akimbo.hip_run_and_shoot = {true}
 					self.values.akimbo.spread_index_addend = {
 						0,
 						10,
@@ -4136,6 +4148,24 @@ function UpgradesTweakData:_player_definitions()
 			value = 2
 		}
 	}
+	self.definitions.player_reload_speed_multiplier = {
+		name_id = "menu_player_reload_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "reload_speed_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_minimum_pick_up_multiplier = {
+		name_id = "menu_player_minimum_pick_up_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "minimum_pick_up_multiplier",
+			category = "player"
+		}
+	}
 	self.definitions.player_armor_pickup_mul = {
 		name_id = "menu_player_armor_pickup_mul",
 		category = "feature",
@@ -4397,6 +4427,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "akimbo"
 		}
 	}	
+	self.definitions.akimbo_hip_run_and_shoot_1 = {
+		name_id = "menu_akimbo_hip_run_and_shoot",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hip_run_and_shoot",
+			category = "akimbo"
+		}
+	}
 	self.definitions.akimbo_spread_index_addend_2 = {
 		name_id = "menu_pistol_spread_index_addend",
 		category = "feature",
@@ -4485,6 +4524,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player",
 			upgrade = "health_multiplier",
 			value = 2
+		}
+	}
+	self.definitions.pistol_hip_run_and_shoot_1 = {
+		name_id = "menu_pistol_hip_run_and_shoot",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hip_run_and_shoot",
+			category = "pistol"
 		}
 	}
 	self.definitions.pistol_stacked_accuracy_bonus_1 = {
@@ -5923,7 +5971,7 @@ function UpgradesTweakData:_smg_definitions()
 			upgrade = "move_spread_multiplier",
 			category = "smg"
 		}
-	}	
+	}
 	self.definitions.smg_recoil_index_addend = {
 		category = "feature",
 		name_id = "menu_smg_recoil_index_addend",
@@ -5931,6 +5979,24 @@ function UpgradesTweakData:_smg_definitions()
 			category = "smg",
 			upgrade = "recoil_index_addend",
 			value = 1
+		}
+	}
+	self.definitions.smg_clip_ammo_increase_1 = {
+		category = "feature",
+		name_id = "menu_smg_clip_ammo_increase_1",
+		upgrade = {
+			category = "smg",
+			upgrade = "clip_ammo_increase",
+			value = 1
+		}
+	}
+	self.definitions.smg_clip_ammo_increase_2 = {
+		category = "feature",
+		name_id = "menu_smg_clip_ammo_increase_2",
+		upgrade = {
+			category = "smg",
+			upgrade = "clip_ammo_increase",
+			value = 2
 		}
 	}
 end

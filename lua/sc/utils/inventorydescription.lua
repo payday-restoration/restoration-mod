@@ -137,15 +137,21 @@ function WeaponDescription._get_skill_stats(name, category, slot, base_stats, mo
 	for _, stat in ipairs(WeaponDescription._stats_shown) do
 		if weapon_tweak.stats[stat.stat_name or stat.name] or stat.name == "totalammo" or stat.name == "fire_rate" then
 			if stat.name == "magazine" then
+				local skill_in_effect = nil
 				skill_stats[stat.name].value = (managers.player:upgrade_value(name, "clip_ammo_increase", 1) - 1) * (weapon_tweak.CLIP_AMMO_MAX + (mods_stats[stat.name].value or 0))
+				
 				if not weapon_tweak.upgrade_blocks or not weapon_tweak.upgrade_blocks.weapon or not table.contains(weapon_tweak.upgrade_blocks.weapon, "clip_ammo_increase") then
 					skill_stats[stat.name].value = skill_stats[stat.name].value + (managers.player:upgrade_value("weapon", "clip_ammo_increase", 1) - 1) * (weapon_tweak.CLIP_AMMO_MAX + (mods_stats[stat.name].value or 0))
 				end
-			   
-				if not weapon_tweak.upgrade_blocks or not weapon_tweak.upgrade_blocks[weapon_tweak.category] or not table.contains(weapon_tweak.upgrade_blocks[weapon_tweak.category], "clip_ammo_increase") then
-					skill_stats[stat.name].value = skill_stats[stat.name].value + (managers.player:upgrade_value(weapon_tweak.category, "clip_ammo_increase", 1) - 1) * (weapon_tweak.CLIP_AMMO_MAX + (mods_stats[stat.name].value or 0))
+			   	
+			   	for _, category in ipairs(weapon_tweak.categories) do
+					if not weapon_tweak.upgrade_blocks or not weapon_tweak.upgrade_blocks[category] or (weapon_tweak.upgrade_blocks[category] and not table.contains(weapon_tweak.upgrade_blocks[category], "clip_ammo_increase")) then
+						skill_in_effect = skill_in_effect or managers.player:has_category_upgrade(category, "clip_ammo_increase")
+						skill_stats[stat.name].value = skill_stats[stat.name].value + (managers.player:upgrade_value(category, "clip_ammo_increase", 1) - 1) * (weapon_tweak.CLIP_AMMO_MAX + (mods_stats[stat.name].value or 0))
+					end
 				end
-				skill_stats[stat.name].skill_in_effect = managers.player:has_category_upgrade(name, "clip_ammo_increase") or managers.player:has_category_upgrade("weapon", "clip_ammo_increase")
+
+				skill_stats[stat.name].skill_in_effect = skill_in_effect or managers.player:has_category_upgrade(name, "clip_ammo_increase") or managers.player:has_category_upgrade("weapon", "clip_ammo_increase")
 			elseif stat.name == "totalammo" then
 			elseif stat.name == "reload" then
 				local skill_in_effect = false
@@ -157,8 +163,12 @@ function WeaponDescription._get_skill_stats(name, category, slot, base_stats, mo
 					end
 				end	
 				local is_pro = Global.game_settings and Global.game_settings.one_down
-				if not is_pro then
+				if managers.player:has_category_upgrade("weapon", "passive_reload_speed_multiplier") and not is_pro then
 					mult = mult / managers.player:upgrade_value("weapon", "passive_reload_speed_multiplier", 1)
+					skill_in_effect = true
+				end
+				if managers.player:has_category_upgrade("player", "reload_speed_multiplier") then
+					mult = mult / managers.player:upgrade_value("player", "reload_speed_multiplier", 1)
 					skill_in_effect = true
 				end
 				mult = 1 / managers.blackmarket:_convert_add_to_mul(mult)
@@ -746,6 +756,7 @@ end
 
 function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stats)
 	local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
+	local min_pickup_multiplier = managers.player:upgrade_value("player", "minimum_pick_up_multiplier", 1)
 
 	local is_pro = Global.game_settings and Global.game_settings.one_down
 	local is_solo = (Global.game_settings and Global.game_settings.single_player and 2) or 1
@@ -764,7 +775,7 @@ function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stat
 
 	if pickup_multiplier then
 		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-		local min_pickup = weapon_tweak.AMMO_PICKUP[1] * (ammo_data.ammo_pickup_min_mul or 1) * pickup_multiplier
+		local min_pickup = weapon_tweak.AMMO_PICKUP[1] * (ammo_data.ammo_pickup_min_mul or 1) * pickup_multiplier * min_pickup_multiplier
 		local max_pickup = weapon_tweak.AMMO_PICKUP[2] * (ammo_data.ammo_pickup_max_mul or 1) * pickup_multiplier
 		local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 		for part_id, stats in pairs(custom_data) do
@@ -777,11 +788,13 @@ function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stat
 		end
 		local is_controller = ((managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR) and 1.15) or 1
 		local average_pickup = (min_pickup + max_pickup) * 0.5 * is_controller
-		return true, average_pickup - mods_stats.pickup.value - base_stats.pickup.value
+		local skill_in_effect = average_pickup ~= (mods_stats.pickup.value + base_stats.pickup.value)
+		return skill_in_effect, average_pickup - mods_stats.pickup.value - base_stats.pickup.value
 	else
 		return false, 0
 	end
 end
+
 
 function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
 	local weapon_tweak = tweak_data.weapon[name]

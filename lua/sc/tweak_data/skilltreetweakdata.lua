@@ -417,14 +417,13 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {2, 0},
 					[1] = {
 						upgrades = {
-							"weapon_clip_ammo_increase_1"
+							"smg_clip_ammo_increase_1"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
-							"player_run_and_shoot_1",
-							"weapon_clip_ammo_increase_2"
+							"smg_clip_ammo_increase_2"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -457,7 +456,6 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {7, 0},
 					[1] = {
 						upgrades = {
-							"player_ap_bullets_1",
 							"smg_ap_bullets_1"
 						},
 						cost = self.costs.hightier
@@ -766,7 +764,8 @@ function SkillTreeTweakData:init(tweak_data)
 						["icon_xy"] = {0, 1},
 						[1] = {
 							upgrades = {
-								"saw_enemy_slicer"
+								"saw_enemy_slicer",
+								"player_reload_speed_multiplier"
 							},
 							cost = self.costs.hightier
 						},
@@ -775,7 +774,8 @@ function SkillTreeTweakData:init(tweak_data)
 								"saw_reload_speed_multiplier",
 								"crossbow_reload_speed_multiplier",
 								"bow_reload_speed_multiplier",
-								"grenade_launcher_reload_speed_multiplier"
+								"grenade_launcher_reload_speed_multiplier",
+								"player_minimum_pick_up_multiplier"
 							},
 							cost = self.costs.hightierpro
 						}
@@ -807,13 +807,15 @@ function SkillTreeTweakData:init(tweak_data)
 						["icon_xy"] = {0, 2},
 						[1] = {
 							upgrades = {
+								"player_ap_bullets_1",
 								"saw_ignore_shields_1"
 							},
 							cost = self.costs.hightier
 						},
 						[2] = {
 							upgrades = {
-								"saw_panic_when_kill_1"
+								"saw_panic_when_kill_1",
+								"weapon_clip_ammo_increase_1"
 							},
 							cost = self.costs.hightierpro
 						}
@@ -1423,6 +1425,7 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
+							"player_run_and_shoot_1",
 	                   		"player_detection_risk_add_movement_speed_2",
 							"player_run_dodge_chance",
 							"player_on_zipline_dodge_chance"
@@ -1673,12 +1676,14 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {3, 11},
 					[1] = {
 						upgrades = {
+							"pistol_hip_run_and_shoot_1",
 							"akimbo_recoil_index_addend_2"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
+							"akimbo_hip_run_and_shoot_1",
 							"akimbo_spread_index_addend_2",
 						},
 						cost = self.costs.hightierpro

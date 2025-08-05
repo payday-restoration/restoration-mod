@@ -178,6 +178,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 						["vanilla_on_rails"] = "Default/On-Rails",
 						["kf_mw_style"] = "KF1/CoD Style",
 						["tilt_in"] = "Tilted In",
+					["RestorationModRunAndShootAnimsTitleID"] = "\"Shoot While Sprinting\" Sprint Animations",
+					["RestorationModRunAndShootAnimsDescID"] = "Enable/Disable sprinting animations when a \"Shoot While Sprinting\" skill is active.",
 					["RestorationModToggleAnimsTitleID"] = "===Animation Replacers===",
 					["RestorationModToggleAnimsDescID"] = "Toggles for use of animation replacers; Disable to use vanilla or custom Beardlib animations.\nChanges apply after a restart.",
 					--Pistols
@@ -5666,7 +5668,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
-				["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWeapon magazine sizes are increased by #{skill_color}#$skill_value_b1.##\n\n#{risk}#NOTE: Does not apply to## #{important_1}#bows, launchers or weapons that regenerate ammo.##\n\nACE: #{owned}#$pro##\nThe magazine size increase is raised by an additional #{skill_color}#$skill_value_p1.##\n\n#{skill_color}#All weapons## can be hipfired while sprinting and their sprint-to-fire delay is removed.",
+				["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nThe magazine size of #{skill_color}#machine guns## are increased by #{skill_color}#$skill_value_b1.##\n\n#{risk}#NOTE: The magazine size increase does not apply to## #{important_1}#machine guns that regenerate ammo.##\n\nACE: #{owned}#$pro##\nThe magazine size increase is raised by an additional #{skill_color}#$skill_value_p1.##",
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Heavy Impact",
@@ -5674,7 +5676,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Spray n' Pray",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#$skill_value_b1## of their damage through body armor; effect is increased to #{skill_color}#$skill_value_b2## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on #{risk}#full-auto## will grant them a stack of #{skill_color}#$skill_value_p2## more damage; stacks up to #{skill_color}#$skill_value_p3## times. Stacks decay one at a time every #{risk}#$skill_value_p1## seconds.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour #{skill_color}#machine guns## will deal #{skill_color}#$skill_value_b1## of their damage through body armor.\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on #{risk}#full-auto## will grant them a stack of #{skill_color}#$skill_value_p2## more damage; stacks up to #{skill_color}#$skill_value_p3## times. Stacks decay one at a time every #{risk}#$skill_value_p1## seconds.",
 
 
 		--[[   ENFORCER   ]]--
@@ -5741,8 +5743,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 				["menu_ammo_reservoir_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nAmmo bags placed by you grant its users the ability to shoot without depleting their ammunition for up to #{skill_color}#5## seconds after replenishing ammo from it.\n\nThe more ammo replenished, the longer the duration of the effect.\n\n#{risk}#NOTE:## #{important_1}#Launchers and weapons using explosive ammo## #{risk}#do not receive the effects of this skill.##\n\nACE: #{owned}#$pro##\nIncreases the maximum possible duration of the effect by an additional #{skill_color}#15## seconds.",
 
 				--Specialist Equipment formally Rip and Tear
-				["menu_portable_saw_beta_sc"] = "Specialist Equipment",
-				["menu_portable_saw_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nReduces the wear down of #{skill_color}#OVE9000 Saw## blades by #{skill_color}#50%.##\n\nACE: #{owned}#$pro##\nThe #{skill_color}#OVE9000 Saw, Bows and Launchers## reload #{skill_color}#$skill_value_p1## faster.",
+				["menu_portable_saw_beta_sc"] = "Specialist Training",
+				["menu_portable_saw_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nReduces the wear down of #{skill_color}#OVE9000 Saw## blades by #{skill_color}#50%.##\n\nYou reload your weapons #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Special weapons## such as the #{skill_color}#OVE9000 Saw, bows and launchers## reload an additional #{skill_color}#$skill_value_p1## faster.\n\nThe minimum amount of ammo you find from ammo boxes is increased by #{skill_color}#$skill_value_p2.##",
 
 				--Extra Lead
 				["menu_ammo_2x_beta_sc"] = "Extra Lead",
@@ -5750,7 +5752,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Rip and Tear formally Carbon Blade
 				["menu_carbon_blade_beta_sc"] = "Rip and Tear",
-				["menu_carbon_blade_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now saw through shields with your #{skill_color}#OVE9000 saw.##\n\nACE: #{owned}#$pro##\nKills with the #{skill_color}#OVE9000 Saw, Bows and Launchers## have a #{skill_color}#$skill_value_p1## chance to cause nearby enemies in a #{skill_color}#$skill_value_p2## meter radius to panic.\n\nPanic makes enemies go into short bursts of uncontrollable fear.",
+				["menu_carbon_blade_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now saw through shields with your #{skill_color}#OVE9000 saw.##\n\nYour weapons deal #{skill_color}#$skill_value_b1## of their damage through body armor.\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills with #{skill_color}#special weapons## such as the #{skill_color}#OVE9000 Saw, bows and launchers## have a #{skill_color}#$skill_value_p1## chance to cause enemies within #{skill_color}#$skill_value_p2## meters of you to panic.\n\nPanic makes enemies go into short bursts of uncontrollable fear.\n\nThe magazine size of #{skill_color}#non-special weapons## are increased by #{skill_color}#$skill_value_p3.##\n\n#{risk}#NOTE: The magazine size increase does not apply to## #{important_1}#weapons that regenerate ammo.\n ##",
 
 				--Fully Loaded--
 				["menu_bandoliers_beta_sc"] = "Fully Loaded",
@@ -5875,7 +5877,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Moving Target",
-				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nThe movement speed reduction while aiming is reduced by #{skill_color}#$skill_value_b5.##\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued) and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.",
+				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nThe movement speed reduction while aiming is reduced by #{skill_color}#$skill_value_b5.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued) and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.\n\nWeapons can be hipfired while sprinting and their sprint-to-fire delay is removed.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Shockproof",
@@ -5927,7 +5929,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "Akimbo",
-				["menu_akimbo_skill_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Akimbo## weapons gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Akimbo## weapons gain #{skill_color}#$skill_value_p1## accuracy.",
+				["menu_akimbo_skill_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Pistols,## including #{skill_color}#akimbo pistols,## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\n#{skill_color}#Akimbo## weapons gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nAll #{skill_color}#akimbo## weapons can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\n#{skill_color}#Akimbo## weapons gain #{skill_color}#$skill_value_p1## accuracy.",
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "Desperado",

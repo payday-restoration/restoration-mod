@@ -1762,7 +1762,8 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 	-- This ensures that we can set diff to default 0.1 again if a script sets it to 0
 	-- Don't think any heists do this but there's no harm in having this check here
 	if script_value == 0 then
-		managers.mutators:_run_func("OnDifficultyValueChanged", self._difficulty_value, -(self._difficulty_value or 0))
+		local current_diff = self._difficulty_value or 0
+		managers.mutators:_run_func("OnDifficultyValueChanged", current_diff, -current_diff)
 		self._difficulty_value = 0
 		self._loud_diff_set = false
 		self:_calculate_difficulty_ratio()

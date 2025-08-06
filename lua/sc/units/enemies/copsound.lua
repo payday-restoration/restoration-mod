@@ -397,170 +397,122 @@ function CopSound:chk_voice_prefix()
 	if self._prefix then
 		return self._prefix
 	end
-end	
+end
 
+-- TODO: split the prefix shit into functions or something
 function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	if self._last_speech then
 		self._last_speech:stop()
 	end
 
-    if restoration.Voicelines:say_id(self._unit, sound_name) then
-    	if sync then
+	if restoration.Voicelines:say_id(self._unit, sound_name) then
+		if sync then
 			self._unit:network():send("say", SoundDevice:string_to_id(sound_name))
 		end
 
 		self._speak_expire_t = TimerManager:game():time() + 2
 		return
 	end
-	
+
 	local full_sound = nil
-	
-	local l5n_missing_police_calls = {
-		"l5n_a09",
-		"l5n_a23",
-	}
-	local l5n_contact_lines = {
-		"Play_l5n_i01_con",
-		"Play_l5n_g90",
-	}
-	local l5n_alert = {
-		"Play_l5n_lk3_con",
-		"l5n_a08",
-	}
-	
-	-- restore the entire l5n voiceset
+
+	-- Restore the entire l5n voiceset
 	if self._prefix == "l5n_" then
-		if sound_name == "c01" or sound_name == "att" then
-			full_sound = l5n_contact_lines[math.random(#l5n_contact_lines)] -- use i01 and g90 as contact since l5n doesn't have any
-		end
-		if sound_name == "rdy" then
-			full_sound = "Play_l5n_rdy"
-		end
-		if sound_name == "h01" then
-			full_sound = "Play_l5n_c01a" -- contact line is actually a rescue line
-		end
-		if sound_name == "cn1" then
-			full_sound = "Play_l5n_cn1_con"
-		end
-		if sound_name == "civ" then
-			full_sound = "Play_l5n_civ_con"
-		end
-		if sound_name == "cr1" then
-			full_sound = "Play_l5n_cr1_con"
-		end
-		if sound_name == "clr" then
-			full_sound = "Play_l5n_clr_con"
-		end
-		if sound_name == "g90" then
-			full_sound = "Play_l5n_g90"
-		end
-		if sound_name == "d01" then
-			full_sound = "Play_l5n_d01_con"
-		end
-		if sound_name == "d02" then
-			full_sound = "Play_l5n_d02_con"
-		end
-		if sound_name == "ch1" then
-			full_sound = "Play_l5n_ch1_con"
-		end
-		if sound_name == "ch2" then
-			full_sound = "Play_l5n_ch2_con"
-		end
-		if sound_name == "ch3" then
-			full_sound = "Play_l5n_ch3_con"
-		end
-		if sound_name == "ch4" then
-			full_sound = "Play_l5n_ch4_con"
-		end
-		if sound_name == "gr1a" then
-			full_sound = "Play_l5n_gr1a_con"
-		end
-		if sound_name == "gr1b" then
-			full_sound = "Play_l5n_gr1b_con"
-		end
-		if sound_name == "gr1c" then
-			full_sound = "Play_l5n_gr1c_con"
-		end
-		if sound_name == "gr1d" then
-			full_sound = "Play_l5n_gr1d_con"
-		end
-		if sound_name == "gr2a" then
-			full_sound = "Play_l5n_gr2a_con"
-		end
-		if sound_name == "gr2b" then
-			full_sound = "Play_l5n_gr2b_con"
-		end
-		if sound_name == "gr2c" then
-			full_sound = "Play_l5n_gr2c_con"
-		end
-		if sound_name == "gr2d" then
-			full_sound = "Play_l5n_gr2d_con"
-		end
-		if sound_name == "med" then
-			full_sound = "Play_l5n_med_con"
-		end
-		if sound_name == "m01" then
-			full_sound = "Play_l5n_m01_any"
-		end
-		if sound_name == "mov" then
-			full_sound = "Play_l5n_mov_ass"
-		end
-		if sound_name == "p01" then
-			full_sound = "Play_l5n_p01_ass"
-		end
-		if sound_name == "p02" then
-			full_sound = "Play_l5n_p02_ass"
-		end
-		if sound_name == "p03" then
-			full_sound = "Play_l5n_p03_ass"
-		end
-		if sound_name == "pos" then
-			full_sound = "Play_l5n_pos_con"
-		end
-		if sound_name == "prm" or sound_name == "t01" then
-			full_sound = "Play_l5n_prm_con"
-		end
-		if sound_name == "pus" or sound_name == "rrl" then
-			full_sound = "Play_l5n_pus_con"
-		end
-		if sound_name == "r01" then
-			full_sound = "Play_l5n_r01_con"
-		end
-		if sound_name == "s01x" then
-			full_sound = "Play_l5n_s01x_con"
-		end
-		if sound_name == "i01" then
-			full_sound = "Play_l5n_i01_con"
-		end
-		if sound_name == "i02" then
-			full_sound = "Play_l5n_i02_con"
-		end
-		if sound_name == "i03" then
-			full_sound = "Play_l5n_i03_con__________________MISSING_i03c"
-		end
-		if sound_name == "l01" then
-			full_sound = "Play_l5n_l01_con__________________MISSING_l01b"
-		end
-		if sound_name == "lk3a" then
-			full_sound = "Play_l5n_lk3_ass"
-		end
-		if sound_name == "lk3b" then
-			full_sound = "Play_l5n_lk3_con"
-		end
-		if sound_name == "hlp" then
-			full_sound = "Play_l5n_hlp_con"
-		end
-		if sound_name == "x02a_any_3p" then
-			full_sound = "l1n_x01a_any_3p"
-		end
-		if sound_name == "x01a_any_3p" then
-			full_sound = "l1n_x02a_any_3p"
-		end
-		if sound_name == "a07a" or sound_name == "a07b" then
-			full_sound = l5n_alert[math.random(#l5n_alert)]
-		end
-		if sound_name == "a10" or sound_name == "a11" or sound_name == "a12" then
-			full_sound = l5n_missing_police_calls[math.random(#l5n_missing_police_calls)]
+		local contact_tbl = {
+			"Play_l5n_i01_con",
+			"Play_l5n_g90",
+		}
+		local alert_tbl = {
+			"Play_l5n_lk3_con",
+			"l5n_a08",
+		}
+		local police_calls_tbl = {
+			"l5n_a09",
+			"l5n_a23",
+		}
+		local l5n_lookup = {
+			c01 = contact_tbl,
+			att = contact_tbl,
+
+			rdy = "Play_l5n_rdy",
+
+			-- Contact line is actually a rescue line
+			h01 = "Play_l5n_c01a",
+
+			cn1 = "Play_l5n_cn1_con",
+
+			civ = "Play_l5n_civ_con",
+
+			cr1 = "Play_l5n_cr1_con",
+
+			clr = "Play_l5n_clr_con",
+
+			g90 = "Play_l5n_g90",
+
+			d01 = "Play_l5n_d01_con",
+			d02 = "Play_l5n_d02_con",
+
+			ch1 = "Play_l5n_ch1_con",
+			ch2 = "Play_l5n_ch2_con",
+			ch3 = "Play_l5n_ch3_con",
+			ch4 = "Play_l5n_ch4_con",
+
+			gr1a = "Play_l5n_gr1a_con",
+			gr1b = "Play_l5n_gr1b_con",
+			gr1c = "Play_l5n_gr1c_con",
+			gr1d = "Play_l5n_gr1d_con",
+
+			gr2a = "Play_l5n_gr2a_con",
+			gr2b = "Play_l5n_gr2b_con",
+			gr2c = "Play_l5n_gr2c_con",
+			gr2d = "Play_l5n_gr2d_con",
+
+			med = "Play_l5n_med_con",
+
+			m01 = "Play_l5n_m01_any",
+
+			mov = "Play_l5n_mov_ass",
+
+			p01 = "Play_l5n_p01_ass",
+			p02 = "Play_l5n_p02_ass",
+			p03 = "Play_l5n_p03_ass",
+
+			pos = "Play_l5n_pos_con",
+
+			prm = "Play_l5n_prm_con",
+			t01 = "Play_l5n_prm_con",
+
+			pus = "Play_l5n_pus_con",
+			rrl = "Play_l5n_pus_con",
+
+			r01 = "Play_l5n_r01_con",
+
+			s01x = "Play_l5n_s01x_con",
+
+			i01 = "Play_l5n_i01_con",
+			i02 = "Play_l5n_i02_con",
+			i03 = "Play_l5n_i03_con__________________MISSING_i03c",
+
+			l01 = "Play_l5n_l01_con__________________MISSING_l01b",
+
+			lk3a = "Play_l5n_lk3_ass",
+			lk3b = "Play_l5n_lk3_con",
+
+			hlp = "Play_l5n_hlp_con",
+
+			x02a_any_3p = "l1n_x01a_any_3p",
+			x01a_any_3p = "l1n_x02a_any_3p",
+
+			a07a = alert_tbl,
+			a07b = alert_tbl,
+
+			a10 = police_calls_tbl,
+			a11 = police_calls_tbl,
+			a12 = police_calls_tbl,
+		}
+		full_sound = l5n_lookup[sound_name] or nil
+		if type(full_sound) == "table" then
+			full_sound = table.random(full_sound)
 		end
 	end
 	

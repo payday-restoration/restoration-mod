@@ -404,8 +404,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["menu_support"] = "Overhaul Guide/Support",
 		["menu_support_help"] = "View the guide for Restoration Mod's Overhaul, get support, find crew mates.",
 		["menu_manual_header"] = "Placeholder Text",
-		["hud_assault_alpha"] = "POLICE ASSAULT",
-		["hud_loot_secured_title"] = "LOOT SECURED!",
+		["hud_assault_alpha"] = "경찰 타격대",
+		["hud_loot_secured_title"] = "전리품 확보!",
 		["debug_none"] = "OBJECTIVE",
 
 		["restoration_level_data_welcome_to_the_jungle_1"] = "오후 6:24, '오버킬 MC' 바이커 본부",
@@ -5600,7 +5600,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "충격과 공포",
-				["menu_spotter_teamwork_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#기관총##의 탄창 용량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{risk}#주의:# #{important_1}#탄약을 재생하는 기관총에는## #{risk}#탄창 용량 증가 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n탄창 용량 증가량이 추가로 #{skill_color}#$skill_value_p1## 증가합니다.",
+				["menu_spotter_teamwork_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#기관총##의 탄창 용량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{risk}#주의:## #{important_1}#탄약을 재생하는 기관총에는## #{risk}#탄창 용량 증가 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n탄창 용량 증가량이 추가로 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "강력한 타격",

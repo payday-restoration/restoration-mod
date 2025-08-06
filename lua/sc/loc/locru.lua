@@ -5469,7 +5469,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "Перегрузка",
-				["menu_spotter_teamwork_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nРазмеры магазинов #{skill_color}#всего## оружия увеличены на #{skill_color}#$skill_value_b1.##\n\n#{risk}#Не работает на арбалеты, луки, гранатометы, ракетометы и оружия с регенерацией патронов.##\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь вы можете стрелять от бедра во время бега и не имеете задержки на стрельбу после бега.\n\nРазмеры магазинов вашего оружия увеличены еще на #{skill_color}#$skill_value_p1.##",
+				["menu_spotter_teamwork_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nРазмеры магазинов для #{skill_color}#пулеметов## увеличены на #{skill_color}#$skill_value_b1.##\n\n#{risk}#Не работает на арбалеты, луки, гранатометы, ракетометы и оружия с регенерацией патронов.##\n\nПИКОВЫЙ: #{owned}#$pro##\nРазмеры магазинов для пулеметов увеличены еще на #{skill_color}#$skill_value_p1.##",
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Шок и трепет",
@@ -5477,7 +5477,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Свинцовый ад",
-				["menu_body_expertise_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Все оружие## наносит #{skill_color}#$skill_value_b1## урона через броню.\n\nЭтот эффект увеличивается до #{skill_color}#$skill_value_b2## для #{skill_color}#пулеметов.##\n\n#{risk}#Эффект складывается с бронебойностью вашего оружия, до максимальных 100%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства из #{skill_color}#пулеметов## в #{risk}#автоматическом режиме## увеличат урон на #{skill_color}#$skill_value_p2##; складывается до #{skill_color}#$skill_value_p3## раз, а бонус к урону спадает раз в #{risk}#$skill_value_p1## секунд.",
+				["menu_body_expertise_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пулеметы## наносят #{skill_color}#$skill_value_b1## урона через броню.\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства из #{skill_color}#пулеметов## в #{risk}#автоматическом режиме## увеличат урон на #{skill_color}#$skill_value_p2##; складывается до #{skill_color}#$skill_value_p3## раз, а бонус к урону спадает раз в #{risk}#$skill_value_p1## секунд.",
 
 
 		--[[   ENFORCER   ]]--
@@ -5546,7 +5546,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Specialist Equipment formally Rip and Tear
 				["menu_portable_saw_beta_sc"] = "Спецоборудование",
-				["menu_portable_saw_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает прочность пилы OVE9000 на #{skill_color}#50%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nПилы, арбалеты, луки, гранатометы и ракетометы перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
+				["menu_portable_saw_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает прочность пилы OVE9000 на #{skill_color}#50%.##\n\nСкорость перезарядки всех оружий быстрее на #{skill_color}#$skill_value_b1##.\n\nПИКОВЫЙ: #{owned}#$pro##\nПилы, арбалеты, луки, гранатометы и ракетометы перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.\n\nМинимальное количество патронов, подбираемое с коборок с патронами увеличено на #{skill_color}#$skill_value_p2.##",
 
 				--Extra Lead
 				["menu_ammo_2x_beta_sc"] = "Поставщик боеприпасов",
@@ -5554,7 +5554,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Rip and Tear formally Carbon Blade
 				["menu_carbon_blade_beta_sc"] = "Рвать и метать",
-				["menu_carbon_blade_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПила OVE9000 теперь распиливает щиты.\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства пилой, арбалетами, луками, гранатометами и ракетометами имеют #{skill_color}#$skill_value_p1## шанс посеять панику среди врагов на расстоянии #{skill_color}#$skill_value_p2## метров.\n\n#{risk}#Паника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.##",
+				["menu_carbon_blade_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПила OVE9000 теперь распиливает щиты.\n\nВсе оружие наносит #{skill_color}#$skill_value_b1## урона через броню.\n\n#{risk}#Эффект складывается с бронебойностью вашего оружия, до максимальных 100%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства пилой, арбалетами, луками, гранатометами и ракетометами имеют #{skill_color}#$skill_value_p1## шанс посеять панику среди врагов на расстоянии #{skill_color}#$skill_value_p2## метров.\n\n#{risk}#Паника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.##\n\nРазмер магазина для #{skill_color}#оружий## увеличен на #{skill_color}#$skill_value_p3.##\n\n#{risk}#Увеличение размера магазинов не работает на арбалеты, луки, гранатометы, ракетометы и оружия с регенерацией патронов.##",
 
 				--Fully Loaded--
 				["menu_bandoliers_beta_sc"] = "Вооружен до зубов",
@@ -5678,7 +5678,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Подвижная мишень",
-				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3##, до максимальных #{skill_color}#$skill_value_b4## скорости.\n\nВы передвигаетесь на #{skill_color}#$skill_value_b5## быстрее при прицеливании.\n#{risk}#Скорость передвижения в прицеливании не может превышать вашу максимальную.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#$skill_value_p1## быстрее за каждое #{skill_color}#$skill_value_p2## очко нагрузки ниже #{skill_color}#$skill_value_p3##, до максимальных #{skill_color}#$skill_value_p4## скорости.\n\nВаш уворот заполняется на #{skill_color}#$skill_value_p5## за каждую секунду бега и на #{skill_color}#$skill_value_p6## за каждую секунду на зиплайне.",
+				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3##, до максимальных #{skill_color}#$skill_value_b4## скорости.\n\nВы передвигаетесь на #{skill_color}#$skill_value_b5## быстрее при прицеливании.\n#{risk}#Скорость передвижения в прицеливании не может превышать вашу максимальную.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#$skill_value_p1## быстрее за каждое #{skill_color}#$skill_value_p2## очко нагрузки ниже #{skill_color}#$skill_value_p3##, до максимальных #{skill_color}#$skill_value_p4## скорости.\n\nВаш уворот заполняется на #{skill_color}#$skill_value_p5## за каждую секунду бега и на #{skill_color}#$skill_value_p6## за каждую секунду на зиплайне.\n\nТеперь вы можете стрелять от бедра во время бега и не имеете задержки на стрельбу после бега.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Заземленный",
@@ -5729,7 +5729,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "Акимбо",
-				["menu_akimbo_skill_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПарное оружие получает #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nПарное оружие получает #{skill_color}#$skill_value_p1## точности.",
+				["menu_akimbo_skill_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь вы можете стрелять от бедра во время бега и не имеете задержки на стрельбу после бега, пока используете #{skill_color}#пистолеты## и #{skill_color}#парные пистолеты##.\n\nПарное оружие получает #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь вы можете стрелять от бедра во время бега и не имеете задержки на стрельбу после бега, используя #{skill_color}#любое парное## оружие.\n\nПарное оружие получает #{skill_color}#$skill_value_p1## точности.",
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "Меткий стрелок",

@@ -76,6 +76,21 @@ return {
 			{ id = 400039, delay = 3, },
 		},
 	},
+	-- Add new reinforce
+	[100533] = { -- saws are done, roof objectives begin
+		reinforce = {
+			{
+				name = "third_floor",
+				force = 2,
+				position = Vector3(-925, 600, 700),
+			},
+			{
+				name = "fourth_floor",
+				force = 2,
+				position = Vector3(-1600, 500, 1025),
+			},
+		},
+	},
 	-- Add missing navlinks
 	[103247] = {
 		on_executed = {

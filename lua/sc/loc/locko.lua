@@ -176,6 +176,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 						["vanilla_on_rails"] = "기본/온레일",
 						["kf_mw_style"] = "KF1/CoD 스타일",
 						["tilt_in"] = "기울어짐",
+					["RestorationModRunAndShootAnimsTitleID"] = "\"달리기 동안 사격\"의 달리기 애니메이션",
+					["RestorationModRunAndShootAnimsDescID"] = "\"달리기 중 사격\" 스킬이 활성화되어 있을 때 달리기 애니메이션을 활성화 혹은 비활성화합니다.",						
 					["RestorationModToggleAnimsTitleID"] = "===애니메이션 교체===",
 					["RestorationModToggleAnimsDescID"] = "애니메이션 교체 사용을 전환하고, 바닐라 또는 커스텀 Beardlib 애니메이션을 사용하지 않도록 설정합니다.\n변경 사항은 재시작 후에 적용됩니다.",
 					--Pistols
@@ -5598,7 +5600,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "충격과 공포",
-				["menu_spotter_teamwork_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#모든 무기##의 탄창 용량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{risk}#주의:## #{important_1}#활, 발사기 또는 탄약을 재생하는 무기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n탄창 용량 증가량이 추가로 #{skill_color}#$skill_value_p1## 증가합니다.\n\n#{skill_color}#모든 무기##는 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.",
+				["menu_spotter_teamwork_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#기관총##의 탄창 용량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{risk}#주의:# #{important_1}#탄약을 재생하는 기관총에는## #{risk}#탄창 용량 증가 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n탄창 용량 증가량이 추가로 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "강력한 타격",
@@ -5606,7 +5608,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "뿌리고 기도하기",
-				["menu_body_expertise_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무기가 적의 방탄복을 관통하여 피해의 #{skill_color}#$skill_value_b1##를 가하며, #{skill_color}#기관총##의 경우 관통 피해가 #{skill_color}#$skill_value_b2##로 증가합니다.\n\n이 효과는 무기가 이미 보유한 관통 능력과 합산되어, 최대 #{skill_color}#100%##까지 적용됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##을 자동 사격으로 적 처치 시 추가 피해 #{skill_color}#$skill_value_p2## 스택을 얻으며, 최대 #{skill_color}#$skill_value_p3##회 중첩됩니다. 스택은 #{risk}#$skill_value_p1##초마다 하나씩 사라집니다.",
+				["menu_body_expertise_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#기관총##이 방탄복을 관통하여 피해의 #{skill_color}#$skill_value_b1##를 가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##을 자동 사격으로 적 처치 시 추가 피해 #{skill_color}#$skill_value_p2## 스택을 얻으며, 최대 #{skill_color}#$skill_value_p3##회 중첩됩니다. 스택은 #{risk}#$skill_value_p1##초마다 하나씩 사라집니다.",
 
 
 		--[[   ENFORCER   ]]--
@@ -5673,8 +5675,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 				["menu_ammo_reservoir_beta_desc_sc"] = "베이식: #{owned}#$basic##\n당신이 설치한 탄약 가방을 사용한 플레이어는 탄약을 보충한 이후 최대 #{skill_color}#5##초간 탄약 소모 없이 무기를 발사할 수 있습니다.\n\n보충하는 탄약량이 많을수록 지속 시간이 길어집니다.\n\n#{risk}#주의:## #{important_1}#발사기 및 폭발성 탄약을 사용하는 무기는## #{risk}#해당 스킬 효과를 받지 않습니다.##\n\n에이스: #{owned}#$pro##\n효과의 최대 지속 시간이 추가로 #{skill_color}#15##초 증가합니다.",
 
 				--Specialist Equipment formally Rip and Tear
-				["menu_portable_saw_beta_sc"] = "장비 전문가",
-				["menu_portable_saw_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#OVE9000 톱##의 날 소모량이 #{skill_color}#50%## 감소합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#OVE9000 톱, 활, 발사기##의 재장전 속도가 #{skill_color}#$skill_value_p1## 빨라집니다.",
+				["menu_portable_saw_beta_sc"] = "전문가 훈련",
+				["menu_portable_saw_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#OVE9000 톱##의 날 소모량이 #{skill_color}#50%## 감소합니다.\n\n무기의 재장전 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#OVE9000 톱, 활, 발사기## 같은 #{skill_color}#특수 무기##의 재장전 속도가 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n탄약 상자에서 찾을 수 있는 최소 탄약량이 #{skill_color}#$skill_value_p2## 증가합니다.",
 
 				--Extra Lead
 				["menu_ammo_2x_beta_sc"] = "추가 탄약",
@@ -5682,7 +5684,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Rip and Tear formally Carbon Blade
 				["menu_carbon_blade_beta_sc"] = "찢고 죽이기",
-				["menu_carbon_blade_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이제 당신의 #{skill_color}#OVE9000 전기톱##으로 실드를 관통할 수 있습니다.\n\n에이스: #{owned}#$pro##\n적을 #{skill_color}#OVE9000 톱, 활, 발사기##로 처치하면 #{skill_color}#$skill_value_p1## 확률로 주변 #{skill_color}#$skill_value_p2##미터 내의 적에게 공포감을 퍼트립니다.\n\n공포감 상태의 적은 짧은 시간 동안 통제 불능의 공포에 빠집니다.",
+				["menu_carbon_blade_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이제 당신의 #{skill_color}#OVE9000 전기톱##으로 실드를 관통할 수 있습니다.\n\n무기가 적의 방탄복을 관통하여 피해의 #{skill_color}#$skill_value_b1##를 가합니다.\n\n이 효과는 무기가 이미 보유한 관통 능력과 합산되어, 최대 #{skill_color}#100%##까지 적용됩니다.\n\n에이스: #{owned}#$pro##\n적을 #{skill_color}#OVE9000 톱, 활, 발사기##로 처치하면 #{skill_color}#$skill_value_p1## 확률로 주변 #{skill_color}#$skill_value_p2##미터 내의 적에게 공포감을 퍼트립니다.\n\n공포감 상태의 적은 짧은 시간 동안 통제 불능의 공포에 빠집니다.\n\n#{skill_color}#모든 무기##의 탄창 용량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{risk}#주의:## #{important_1}#탄약을 재생하는 무기에는## #{risk}#탄창 용량 증가 효과가 적용되지 않습니다.##",
 
 				--Fully Loaded--
 				["menu_bandoliers_beta_sc"] = "준비만전",
@@ -5807,7 +5809,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "움직이는 표적",
-				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2##포인트 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n#{risk}#주의: 조준 시 이동 속도는 현재 자세의 최대 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2##포인트 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.",
+				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2##포인트 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2##포인트 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "절연갑옷",
@@ -5859,7 +5861,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "아킴보",
-				["menu_akimbo_skill_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#아킴보##의 무기 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보##의 무기 명중률이 #{skill_color}#$skill_value_p1## 증가합니다.",
+				["menu_akimbo_skill_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#아킴보 권총##을 포함한 #{skill_color}#권총##을 달리는 동안 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{skill_color}#아킴보##의 무기 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보## 무기를 달리는 동안 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{skill_color}#아킴보## 무기의 명중률이 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "데스페라도",

@@ -5604,7 +5604,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "강력한 타격",
-				["menu_speedy_reload_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#기관총##은 #{skill_color}#$skill_value_b1## 확률로 적을 휘청거리게 만듭니다.\n\n양각대 사용 시 확률이 #{skill_color}#$skill_value_b2## 증가합니다.\n\n#{risk}#주의:## #{important_1}#캡틴, 불도저, 저격수, 실드에게는 휘청거림 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n웅크리고 있는 동안 받는 피해가 #{skill_color}#$skill_value_p1## 감소합니다.\n\n양각대 사용 시 피해 감소량이 #{skill_color}#$skill_value_p2## 증가합니다.",
+				["menu_speedy_reload_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#기관총##이 #{skill_color}#$skill_value_b1## 확률로 적을 휘청거리게 만듭니다.\n양각대 사용 시 확률이 #{skill_color}#$skill_value_b2## 증가합니다.\n\n#{risk}#주의:## #{important_1}#캡틴, 불도저, 저격수, 실드에게는 휘청거림 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##을 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n웅크리고 있는 동안 받는 피해가 #{skill_color}#$skill_value_p1## 감소합니다.\n\n양각대 사용 시 피해 감소량이 #{skill_color}#$skill_value_p2## 증가합니다.",
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "뿌리고 기도하기",
@@ -5634,7 +5634,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "겅호",
-				["menu_close_by_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##는 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n에이스: #{owned}#$pro##\n비조준 사격 시 #{skill_color}#산탄총과 화염방사기##의 발사 속도가 #{skill_color}#$skill_value_p1## 증가합니다.",
+				["menu_close_by_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##를 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n에이스: #{owned}#$pro##\n비조준 사격 시 #{skill_color}#산탄총과 화염방사기##의 발사 속도가 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Overkill
 				["menu_overkill_sc"] = "오버킬",

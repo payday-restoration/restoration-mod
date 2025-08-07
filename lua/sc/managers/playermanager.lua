@@ -1134,7 +1134,7 @@ function PlayerManager:get_deflection_from_skills()
 	addend = addend + self:upgrade_value("player", "deflection_addend", 0)
 
 	if self:has_activate_temporary_upgrade("temporary", "doctor_bag_health_regen") then	
-		addend = addend + tweak_data.upgrade.values.temporary.doctor_bag_health_regen_deflection_addend
+		addend = addend + tweak_data.upgrades.values.temporary.doctor_bag_health_regen_deflection_addend
 	end
 
 	return addend

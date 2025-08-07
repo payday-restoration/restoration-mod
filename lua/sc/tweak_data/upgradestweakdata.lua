@@ -1114,7 +1114,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.grenade_launcher.reload_speed_multiplier = {1.25}
 					self.values.crossbow.reload_speed_multiplier = {1.25}
 					self.values.bow.reload_speed_multiplier = {1.25}
-					self.values.player.minimum_pick_up_multiplier = {1.15}
+					self.values.player.minimum_pick_up_multiplier = {1.25}
 					
 					self.skill_descs.portable_saw = {
 						skill_value_b1 = tostring(self.values.player.reload_speed_multiplier[1] % 1 * 100).."%", -- Universal reload speed buff

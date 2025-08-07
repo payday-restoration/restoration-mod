@@ -443,7 +443,8 @@ function SkillTreeTweakData:init(tweak_data)
 					[2] = {
 						upgrades = {
 							"player_bipod_damage_reduction",
-							"player_crouching_damage_reduction"
+							"player_crouching_damage_reduction",
+							"smg_hip_run_and_shoot_1"
 						},
 						cost = self.costs.hightierpro
 					}

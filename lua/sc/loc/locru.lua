@@ -5473,7 +5473,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Шок и трепет",
-				["menu_speedy_reload_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пулеметы## получают #{skill_color}#$skill_value_b1## шанс сбить врага с ног.\n\nПри использования сошек, шанс повышается до #{skill_color}#$skill_value_b2##.\n\n#{risk}#Навык не действует на  капитанов, снайперов, бульдозеров и щитов.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете на #{skill_color}#$skill_value_p1## меньше урона в приседе.\n\nЭтот эффект повышается до #{skill_color}#$skill_value_p2## при использовании сошек.",
+				["menu_speedy_reload_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пулеметы## получают #{skill_color}#$skill_value_b1## шанс сбить врага с ног.\n\nПри использования сошек, шанс повышается до #{skill_color}#$skill_value_b2##.\n\n#{risk}#Навык не действует на  капитанов, снайперов, бульдозеров и щитов.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете на #{skill_color}#$skill_value_p1## меньше урона в приседе.\n\nЭтот эффект повышается до #{skill_color}#$skill_value_p2## при использовании сошек.\n\nТеперь вы можете стрелять от бедра во время бега и не имеете задержки на стрельбу после бега, используя #{skill_color}#пулеметы.##",
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Свинцовый ад",

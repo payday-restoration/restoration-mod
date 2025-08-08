@@ -17483,6 +17483,7 @@ end)
 					self.parts.wpn_fps_sho_ksg_b_long.custom_stats.ads_speed_mult = 1.075
 					--Short Barrel
 					self.parts.wpn_fps_sho_ksg_b_short.pcs = {}
+					self.parts.wpn_fps_sho_ksg_b_short.supported = true
 					self.parts.wpn_fps_sho_ksg_b_short.stats = deep_clone(barrels.short_b1_stats)
 					self.parts.wpn_fps_sho_ksg_b_short.stats.extra_ammo = -2
 					self.parts.wpn_fps_sho_ksg_b_short.stats.concealment = 2

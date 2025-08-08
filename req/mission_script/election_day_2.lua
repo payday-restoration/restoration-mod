@@ -26,13 +26,8 @@ local swat_ovk = {
         enemy = swat_overkill
 	}
 }
-local disabled = {
-	values = {
-        enabled = false
-	}
-}
 return {
-	--Pro Job PONR+Endless assault
+	-- Pro Job PONR+Endless assault
 	[100931] = {
 		ponr = ponr_value,
 		hunt = hunt_projob
@@ -43,9 +38,26 @@ return {
 			{ id = 102804, delay = 30 }
 		}
 	},
-	--Disable SWAT Turrets (when they're literally are next to harrasers)
-	[101495] = disabled,
-	[101496] = disabled,
+	-- Replace the turrets with spawngroups
+	-- Enable van arrived checks
+	[101488] = {
+		values = {
+			enabled = true,
+		},
+		on_executed = {
+			{ id = 101495, remove = true },
+			{ id = 400005, delay = 0, delay_rand = 5 },
+		},
+	},
+	[101492] = {
+		values = {
+			enabled = true,
+		},
+		on_executed = {
+			{ id = 101496, remove = true },
+			{ id = 400012, delay = 0, delay_rand = 5 },
+		},
+	},
 	--Harasser Tweak Spawns
 	[102732] = swat_n,
 	[102733] = swat_h,

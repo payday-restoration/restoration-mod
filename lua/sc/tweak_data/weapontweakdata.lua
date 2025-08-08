@@ -10020,13 +10020,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m249.kick = self.stat_info.kick_tables.random_left_recoil
 					self.m249.kick_pattern = {
 						{0, self.stat_info.kick_tables.random_left_recoil},
-						{8, self.stat_info.kick_tables.random_right_recoil},
-						{13, self.stat_info.kick_tables.left_recoil},
-						{21, self.stat_info.kick_tables.horizontal_recoil},
+						{6, self.stat_info.kick_tables.random_right_recoil},
+						{11, self.stat_info.kick_tables.left_recoil},
+						{18, self.stat_info.kick_tables.horizontal_recoil},
 						{25, self.stat_info.kick_tables.right_recoil},
 						{28, self.stat_info.kick_tables.moderate_right_kick},
 						{29, self.stat_info.kick_tables.even_recoil},
 						{34, self.stat_info.kick_tables.horizontal_right_recoil},
+						{42, self.stat_info.kick_tables.even_recoil},
 						{48, self.stat_info.kick_tables.left_recoil}
 					}
 					self.m249.always_use_standing = true
@@ -10191,9 +10192,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.rpk.BURST_FIRE = false
 					self.rpk.kick = self.stat_info.kick_tables.random_recoil
 					self.rpk.kick_pattern = {
-						{0, self.stat_info.kick_tables.right_kick},
-						{4, self.stat_info.kick_tables.random_recoil},
-						{10, self.stat_info.kick_tables.left_recoil},
+						{0, self.stat_info.kick_tables.random_recoil},
+						{6, self.stat_info.kick_tables.left_recoil},
+						{12, self.stat_info.kick_tables.moderate_left_kick},
 						{17, self.stat_info.kick_tables.horizontal_recoil},
 						{28, self.stat_info.kick_tables.right_recoil}
 					}
@@ -10373,8 +10374,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hk21.kick = self.stat_info.kick_tables.random_right_recoil
 						self.hk21.kick_pattern = {
 							{0, self.stat_info.kick_tables.random_right_recoil},
-							{15, self.stat_info.kick_tables.pattern_r2},
-							{18, self.stat_info.kick_tables.pattern_r1},
+							{8, self.stat_info.kick_tables.right_recoil},
+							{13, self.stat_info.kick_tables.right_kick},
 							{20, self.stat_info.kick_tables.vertical_kick},
 							{23, self.stat_info.kick_tables.right_kick}
 						}
@@ -10475,8 +10476,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m60.kick = self.stat_info.kick_tables.random_right_recoil
 						self.m60.kick_pattern = {
 							{0, self.stat_info.kick_tables.random_right_recoil},
-							{13, self.stat_info.kick_tables.vertical_kick},
-							{15, self.stat_info.kick_tables.moderate_right_kick},
+							{9, self.stat_info.kick_tables.vertical_kick},
+							{13, self.stat_info.kick_tables.moderate_right_kick},
 							{26, self.stat_info.kick_tables.vertical_kick},
 							{30, self.stat_info.kick_tables.left_recoil}
 						}
@@ -10533,9 +10534,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.par.kick = self.stat_info.kick_tables.random_left_recoil
 						self.par.kick_pattern = {
 							{0, self.stat_info.kick_tables.random_left_recoil},
-							{12, self.stat_info.kick_tables.left_recoil},
-							{20, self.stat_info.kick_tables.vertical_kick},
-							{26, self.stat_info.kick_tables.moderate_left_kick}
+							{10, self.stat_info.kick_tables.left_recoil},
+							{20, self.stat_info.kick_tables.even_recoil},
+							{25, self.stat_info.kick_tables.moderate_left_kick},
+							{36, self.stat_info.kick_tables.even_recoil},
+							{40, self.stat_info.kick_tables.moderate_right_kick},
 						}
 						self.par.always_use_standing = true
 						self.par.panic_suppression_chance = 0.05

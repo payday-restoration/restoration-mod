@@ -17476,30 +17476,19 @@ end)
 					--Long Barrel
 					self.parts.wpn_fps_sho_ksg_b_long.pcs = {}
 					self.parts.wpn_fps_sho_ksg_b_long.supported = true
-					self.parts.wpn_fps_sho_ksg_b_long.stats = {
-						value = 4,
-						concealment = -2,
-						extra_ammo = 2
-					}
-					self.parts.wpn_fps_sho_ksg_b_long.custom_stats = {
-						falloff_start_mult = 1.15,
-						falloff_end_mult = 1.15,
-						ads_speed_mult = 1.05
-					}
-
+					self.parts.wpn_fps_sho_ksg_b_long.stats = deep_clone(barrels.long_b2_stats)
+					self.parts.wpn_fps_sho_ksg_b_long.stats.extra_ammo = 4
+					self.parts.wpn_fps_sho_ksg_b_long.stats.concealment = -3
+					self.parts.wpn_fps_sho_ksg_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
+					self.parts.wpn_fps_sho_ksg_b_long.custom_stats.ads_speed_mult = 1.075
 					--Short Barrel
 					self.parts.wpn_fps_sho_ksg_b_short.pcs = {}
 					self.parts.wpn_fps_sho_ksg_b_short.supported = true
-					self.parts.wpn_fps_sho_ksg_b_short.stats = {
-						value = 4,
-						concealment = 2,
-						extra_ammo = -2
-					}
-					self.parts.wpn_fps_sho_ksg_b_short.custom_stats = {
-						falloff_start_mult = 0.9,
-						falloff_end_mult = 0.9,
-						ads_speed_mult = 0.95
-					}
+					self.parts.wpn_fps_sho_ksg_b_short.stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_sho_ksg_b_short.stats.extra_ammo = -2
+					self.parts.wpn_fps_sho_ksg_b_short.stats.concealment = 2
+					self.parts.wpn_fps_sho_ksg_b_short.custom_stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_sho_ksg_b_short.custom_stats.ads_speed_mult = 0.95
 
 					--Flip-up Sight
 					self.parts.wpn_fps_upg_o_mbus_rear.pcs = {}
@@ -43854,6 +43843,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ HYLIE'S MODS ]]
+
+		if self.parts.wpn_fps_sho_ksg_b_25 then
+			self.parts.wpn_fps_sho_ksg_b_25.supported = true
+			self.parts.wpn_fps_sho_ksg_b_25.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_sho_ksg_b_25.stats.extra_ammo = 10
+			self.parts.wpn_fps_sho_ksg_b_25.stats.concealment = -5
+			self.parts.wpn_fps_sho_ksg_b_25.custom_stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_sho_ksg_b_25.custom_stats.ads_speed_mult = 1.125
+		end
+
 		if self.parts.wpn_fps_lmg_m1918_body_standard then
 			self.parts.wpn_fps_lmg_m1918_m_mount = {
 				type = "shitass_m",

@@ -45083,9 +45083,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sho_ksg_b_25.supported = true
 			self.parts.wpn_fps_sho_ksg_b_25.stats = {
 				value = 4,
-				-- damage = 30,
-				extra_ammo = 10,
-				concealment = -7
+				extra_ammo = 10
+				concealment = -7,
 			}
 			self.parts.wpn_fps_sho_ksg_b_25.custom_stats = {
 				falloff_start_mult = 1.3,

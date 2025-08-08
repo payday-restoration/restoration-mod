@@ -22,7 +22,7 @@ local opts_swat_group = {
 	amount = 4,
 }
 
-return = {
+return {
 	-- swat van
 	restoration:gen_dummy(400001, "swat_van_spawn_1", Vector3(1567.972, 871.511, -76.450), Rotation(4, 0, 0), optsBesiegeDummy),
 	restoration:gen_dummy(400002, "swat_van_spawn_2", Vector3(1479.193, 865.163, -76.450), Rotation(4, 0, 0), optsBesiegeDummy),

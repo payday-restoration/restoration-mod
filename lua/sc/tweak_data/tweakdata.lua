@@ -68,6 +68,9 @@ tweak_data.pistol = {
 		moving_spread_mult = 1 / tweak_data.pistol.moving_spread_mult,
 		hipfire_spread_mult = 0.9 / tweak_data.pistol.hipfire_spread_mult
 	}
+		tweak_data.samurai = {
+			hipfire_spread_mult = 0.1 / (tweak_data.pistol.hipfire_spread_mult * tweak_data.handcannon.hipfire_spread_mult)
+		}
 
 tweak_data.bow = {
 	swap_bonus = 1,

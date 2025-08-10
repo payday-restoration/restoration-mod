@@ -2308,16 +2308,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_grenade_dada_com_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3s## \n\n인형의 바깥층은 폭발적인 내부 작용을 숨깁니다. 조국에 대한 헌사죠.",
 		--Snowball
 		["bm_grenade_xmas_snowball"] = "스노볼", --there is a fucking space at the end of the original string
-		["bm_grenade_xmas_snowball_desc"] = "피해량 (직격): #{skill_color}#90##\n피해량 (폭발): #{risk}#180## \n범위: #{skill_color}#1m## \nR재생 속도: #{skill_color}#25s 마다 1개 ## \n\n물에 담그고, 냉동고에 넣으면 치명적인 투척 무기가 됩니다. 참 쉽죠.",
+		["bm_grenade_xmas_snowball_desc"] = "피해량 (직격): #{skill_color}#90##\n피해량 (폭발): #{risk}#180## \n범위: #{skill_color}#1m## \n지연 시간: #{skill_color}#충격 시 폭발## \n재생 속도: #{skill_color}#25s 마다 1개 ## \n\n물에 담그고, 냉동고에 넣으면 치명적인 투척 무기가 됩니다. 참 쉽죠.",
 		--Zapper
 		["bm_grenade_electric_desc"] = "피해량: #{skill_color}#400## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3s## \n- #{skill_color}#대부분의 적을 감전시킵니다.## \n\n파편도 좋지만, 어떤 것들은 지져줘야죠. 이 작은 이쁜이는 고전압으로 피해를 가하는 데 꽤나 실용적인 녀석입니다.",
 		--Sticky
 		["bm_grenade_sticky_grenade"] = "샘텍스 수류탄",
 		["bm_grenade_sticky_grenade_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#2.5s## \n\n사람을 포함한 대부분의 표면에 부착되는 투척용 폭발성 혼합물입니다!",
 		--Molotov
-		["bm_grenade_molotov_desc"] = "피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200##\n피해량 (화염): #{heat_warm_color}#3s 동안 60## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (화염 지대): #{skill_color}#3.75m## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다. \n \n불붙은 천이 있는 인화성 액체가 담긴 부서지는 병입니다. 저렴하고 간단하지만 매우 효과적이죠. 이걸로 전부 태워 버리세요.",
+		["bm_grenade_molotov_desc"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3s 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n불붙은 천이 있는 인화성 액체가 담긴 부서지는 병입니다. 저렴하고 간단하지만 매우 효과적이죠. 이걸로 전부 태워 버리세요.",
 		--Incendiary
-		["bm_grenade_fir_com_desc"] = "피해량 (화염 지대): #{heat_warm_color}#12s 동안 1400##\n피해량 (화염): #{heat_warm_color}#6s 동안 120## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (화염 지대): #{skill_color}#3.75m## \n범위 (폭발): #{skill_color}#4.5m## \n지연 시간: #{skill_color}#2.5s## \n- #{skill_color}#50%## chance to #{heat_warm_color}#ignite## enemies, causing most to panic.\n\n자연적으로 발화되는 인을 담은 수류탄입니다. 벽이나 모퉁이를 이용해 적에게 효과적으로 던질 수 있죠.",
+		["bm_grenade_fir_com_desc"] = "피해량 (폭발): #{heat_warm_color}#120## \n범위 (폭발): #{skill_color}#4.5m## \n지연 시간: #{skill_color}#2.5s## \n피해량 (화염 지대): #{heat_warm_color}#12s 동안 1400##\n피해량 (화염 지대): #{heat_warm_color}#12s 동안 1400## \n범위 (화염 지대): #{skill_color}#3.75m## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n자연적으로 발화되는 인을 담은 수류탄입니다. 벽이나 모퉁이를 이용해 적에게 효과적으로 던질 수 있죠.",
 		--Concussion
 		["bm_concussion_desc"] = "범위: #{skill_color}#10m## \n- 최대 #{skill_color}#4s## 동안 적을 기절시킵니다.\n- 적의 명중률이 #{skill_color}#7s## 동안 #{skill_color}#50%## 감소합니다. \n- #{important_1}#타이탄 실드, 타이탄 불도저 및 캡틴은 기절 효과에 면역입니다.## \n\n이 조그맣고 짜릿한 녀석은 적들을 깜짝 놀래켜서, 그들을 처리할 기회를 더 줍니다.",
 		--Gas

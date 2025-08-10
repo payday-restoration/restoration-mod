@@ -68,6 +68,9 @@ tweak_data.pistol = {
 		moving_spread_mult = 1 / tweak_data.pistol.moving_spread_mult,
 		hipfire_spread_mult = 0.9 / tweak_data.pistol.hipfire_spread_mult
 	}
+		tweak_data.samurai = {
+			hipfire_spread_mult = 0.1 / (tweak_data.pistol.hipfire_spread_mult * tweak_data.handcannon.hipfire_spread_mult)
+		}
 
 tweak_data.bow = {
 	swap_bonus = 1,
@@ -592,14 +595,14 @@ tweak_data.projectiles.sticky_grenade.warning_data = {
 --Molliest of tovs--
 tweak_data.projectiles.molotov.range = 300
 tweak_data.projectiles.molotov.damage = 3.0
-tweak_data.projectiles.molotov.player_damage = 3.0
+tweak_data.projectiles.molotov.player_damage = 1.5
 tweak_data.projectiles.molotov.burn_duration = 10
 tweak_data.projectiles.molotov.dot_data_name = "proj_molotov"
 
 --Incendiary Nades, idea to make em a mollie--
 tweak_data.projectiles.fir_com.range = 450
-tweak_data.projectiles.fir_com.damage = 3.0
-tweak_data.projectiles.fir_com.player_damage = 3.0
+tweak_data.projectiles.fir_com.damage = 9.0
+tweak_data.projectiles.fir_com.player_damage = 4.5
 tweak_data.projectiles.fir_com.burn_duration = 12
 tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"
 

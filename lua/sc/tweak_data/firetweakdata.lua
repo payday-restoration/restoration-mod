@@ -130,9 +130,9 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		is_molotov = true
 	}
 	fire_entries.proj_fire_com = { --Incendiary Grenade
-		dot_trigger_chance = 1,
-		dot_damage = 3.0,
-		dot_length = 6.1,
+		dot_trigger_chance = 0,
+		dot_damage = 0.0,
+		dot_length = 0.1,
 		dot_trigger_max_distance = false
 	}
 	fire_entries.proj_ray_frag = { --M202 FLASH Rounds

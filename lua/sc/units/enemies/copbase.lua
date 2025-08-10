@@ -43,13 +43,8 @@ local tswat_high = { -- Majority of T SWAT need higher effect position
 	Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun_husk")
 }
 
-local units_low = { -- Zeal heavies and grenadier need lower effect position
-	Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_husk"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),
+--[[
+local units_low = { -- Zeal heavies and grenadier (Zombies) need lower effect position
 	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"),
 	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1_husk"),
 	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
@@ -57,6 +52,7 @@ local units_low = { -- Zeal heavies and grenadier need lower effect position
 	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
 	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk")
 }
+--]]
 
 local hrt_exclude_list = { -- for HRT enemies where usual effect position will be better
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
@@ -177,9 +173,11 @@ function CopBase:enable_lpf_buff(state)
 		effect_pos = effect_high
 	end
 	
+	--[[
 	if table.contains(units_low, unit_name) then
 		effect_pos = effect_low
 	end
+	--]]
 	
 	if unit == "taser_titan" and faction ~= "zombie" then
 		effect_pos = effect_high

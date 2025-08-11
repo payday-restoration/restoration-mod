@@ -44329,12 +44329,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		if self.parts.wpn_fps_pis_toz81_bayonet_unfolded then
 			self.parts.wpn_fps_pis_toz81_bayonet.supported = true
 			self.parts.wpn_fps_pis_toz81_bayonet.stats = {
-				value = 0,
-				ignore_stats = 1,
-				max_damage = 4.5,
-				min_damage = 4.5,
-				max_damage_effect = 1,
-				min_damage_effect = 1,
+				value = 0
 			}
 			self.parts.wpn_fps_pis_toz81_bayonet.custom_stats = {}
 

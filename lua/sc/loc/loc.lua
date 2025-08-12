@@ -159,6 +159,33 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModManualReloadsTitleID"] = "Manual Reloads",
 				["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty. NOTE: Setting is ignored if the \"Reload Marathon\" mutator is active.",
 
+			["RestorationModWEAPONSOUNDSOptionsButtonTitleID"] = "Sound Options",
+			["RestorationModWEAPONSOUNDSOptionsButtonDescID"] = "Options for weapon sounds",
+					["RestorationModResSoundscapingTitleID"] = "Alternate Weapon Reverb Effects",
+					["RestorationModResSoundscapingDescID"] = "Changes reverb effects to use louder alternatives. Disable to use vanilla effects or modded ones using the vanilla setup",
+					["RestorationModComboSoundsTitleID"] = "===Weapon Sounds===",
+					["RestorationModComboSoundsDescID"] = "Options for alternative weapon sounds.\nChanges apply after a restart.",
+						["RestorationModComboSoundsSW500TitleID"] = "Phoenix .500 (SW 500)",
+						["RestorationModComboSoundsSW500DescID"] = "Changes the sound of the Phoenix .500",
+							["snd_sw500_vanilla"] = "Vanilla Sounds (Bronco .44)",
+							["snd_sw500_peacemaker"] = "Peacemaker .45",
+							["snd_sw500_combo"] = "Peacemaker + Joceline",
+						["RestorationModComboSoundsRSH12TitleID"] = "RUS-12 (RSh-12)",
+						["RestorationModComboSoundsRSH12DescID"] = "Changes the sound of the RUS-12. NOTE: The vanilla sound has no suppressor support.",
+							["snd_rsh_vanilla"] = "Vanilla Sound",
+							["snd_rsh_garand"] = "M1 Galant",
+							["snd_rsh_combo"] = "Galant + Joceline",
+						["RestorationModComboSoundsSHAK12TitleID"] = "KS12 (ShAK-12)",
+						["RestorationModComboSoundsSHAK12DescID"] = "Changes the sound of the KS12",
+							["snd_shak_vanilla"] = "Vanilla Only",
+							["snd_shak_combo"] = "Vanilla + Compact-5",
+					["RestorationModComboSoundsAttachmentsTitleID"] = "===Attachment Sounds===",
+					["RestorationModComboSoundsAttachmentsDescID"] = "Options for alternative weapon sounds made via attachments.\nChanges apply after a restart.",
+						["RestorationModComboSoundsJiisuriTitleID"] = "Gewehr-3",
+						["RestorationModComboSoundsJiisuriDescID"] = "Changes the sound of the Gewehr-3 when the \"Präzision Internals\" attachment is in use",
+							["snd_jiisuri_vanilla"] = "Vanilla Only",
+							["snd_jiisuri_combo"] = "Vanilla + Galant",
+
 			["RestorationModWEAPONANIMSOptionsButtonTitleID"] = "Viewmodel & Animation Options",
 			["RestorationModWEAPONANIMSOptionsButtonDescID"] = "Options for weapon viewmodels and animations",
 					["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
@@ -182,12 +209,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["RestorationModRunAndShootAnimsDescID"] = "Enable/Disable sprinting animations when a \"Shoot While Sprinting\" skill is active.",
 					["RestorationModToggleAnimsTitleID"] = "===Animation Replacers===",
 					["RestorationModToggleAnimsDescID"] = "Toggles for use of animation replacers; Disable to use vanilla or custom Beardlib animations.\nChanges apply after a restart.",
-					--Pistols
-					["RestorationModm1911_foleyTitleID"] = "M1911 Reload Foley",
-					["RestorationModm1911_foleyDescID"] = "Changes the reload anim on the M1911 (Crosskill Chunky) to use the foley from the Jericho 941 (Baby Deagle) anim.",
-					--Rifles
-					["RestorationModg3_niphenTitleID"] = "G3 U65 Reload Animations",
-					["RestorationModg3_niphenDescID"] = "Changes the reload anim on the G3 (Gewehr 3) to use its Update 65 anim.",
+						--Pistols
+						["RestorationModm1911_foleyTitleID"] = "M1911 Reload Foley",
+						["RestorationModm1911_foleyDescID"] = "Changes the reload anim on the M1911 (Crosskill Chunky) to use the foley from the Jericho 941 (Baby Deagle) anim.",
+						--Rifles
+						["RestorationModg3_niphenTitleID"] = "G3 U65 Reload Animations",
+						["RestorationModg3_niphenDescID"] = "Changes the reload anim on the G3 (Gewehr 3) to use its Update 65 anim.",
 
 
 			["RestorationModPerformanceOptionsButtonTitleID"] = "++ Impact FX Settings ++",

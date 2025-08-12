@@ -7335,10 +7335,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{3, self.stat_info.kick_tables.vertical_kick},
 							{4, self.stat_info.kick_tables.right_kick}
 						}
-						--if restoration.Options:GetValue("OTHER/ComboSounds") then
+						if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRSH12") > 1 then
 							self.rsh12.sounds.fire = "ching_fire"
-							self.rsh12.sounds.fire2 = "b682_fire"
-						--end
+							if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRSH12") == 3 then
+								self.rsh12.sounds.fire2 = "b682_fire"
+							end
+						end
 						self.rsh12.supported = true
 						self.rsh12.ads_speed = 0.220
 						self.rsh12.damage_falloff = {
@@ -12221,10 +12223,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{9, self.stat_info.kick_tables.even_recoil},
 							{12, self.stat_info.kick_tables.vertical_kick},
 							{16, self.stat_info.kick_tables.moderate_right_kick}
-						}
-						--if restoration.Options:GetValue("OTHER/ComboSounds") then
+						}						
+						if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsSHAK12") then
 							self.shak12.sounds.fire2 = "mp5_fire_single"
-						--end
+						end
 						self.shak12.supported = true
 						self.shak12.ads_speed = 0.360
 						self.shak12.damage_falloff = {
@@ -15334,10 +15336,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shatters_fury.damage_type = "handcannon"
 			self.shatters_fury.fire_mode_data.fire_rate = 0.2142857
 			self.shatters_fury.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
-			--if restoration.Options:GetValue("OTHER/ComboSounds") then
-				self.shatters_fury.sounds.fire_single = "pmkr45_fire"
-				self.shatters_fury.sounds.stop_fire = "b682_fire" --"hajk_x_fire_single
-			--end
+			if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsSW500") > 1 then
+			self.shatters_fury.sounds.fire_single = "pmkr45_fire"
+				if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsSW500") == 3 then
+					self.shatters_fury.sounds.stop_fire = "b682_fire"
+				end
+			end
 			self.shatters_fury.weapon_hold = "model3"
 			self.shatters_fury.AMMO_MAX = 40
 			self.shatters_fury.CLIP_AMMO_MAX = 5

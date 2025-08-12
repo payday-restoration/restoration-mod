@@ -746,6 +746,25 @@ restoration.ponrtracks = {
 	"random"
 }
 
+restoration.snd_sw500 = {
+	"snd_sw500_vanilla",
+	"snd_sw500_peacemaker",
+	"snd_sw500_combo"
+}
+restoration.snd_rsh12 = {
+	"snd_rsh_vanilla",
+	"snd_rsh_garand",
+	"snd_rsh_combo"
+}
+restoration.snd_shak12 = {
+	"snd_shak_vanilla",
+	"snd_shak_combo"
+}
+restoration.snd_jiisuri = {
+	"snd_jiisuri_vanilla",
+	"snd_jiisuri_combo"
+}
+
 restoration.vm_move = {
 	"vm_vanilla",
 	"vm_drag",

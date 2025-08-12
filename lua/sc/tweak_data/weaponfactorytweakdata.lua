@@ -14075,7 +14075,8 @@ end)
 					custom_stats = { ads_speed_mult = 0.925},
 					animations = {
 						reload_not_empty = "reload_not_empty",
-						reload = "reload"
+						reload = "reload",
+						reload_slap = "reload_slap"
 					}
 				}
 				self.parts.wpn_fps_ass_g3_m_psg.third_unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_third_ass_g3_m_mag_psg"
@@ -24278,7 +24279,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		},
 		forbids = {},
-		adds = { "wpn_fps_ass_g3sg1_sounds" },
+		adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsJiisuri") == 2 and { "wpn_fps_ass_g3sg1_sounds" }) or {},
 		internal_part = true,
 		dlc = "sc"
 	}

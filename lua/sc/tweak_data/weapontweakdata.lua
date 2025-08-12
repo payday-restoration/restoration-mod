@@ -24886,37 +24886,35 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.howa_type20.damage_type = "assault_rifle"
 				self.howa_type20.nato = true
 				self.howa_type20.tactical_reload = 1
-				self.howa_type20.fire_mode_data.fire_rate = 0.088235294
+				self.howa_type20.fire_mode_data.fire_rate = 0.0888889
 				self.howa_type20.CLIP_AMMO_MAX = 30
 				self.howa_type20.AMMO_MAX = 150
 				self.howa_type20.CAN_TOGGLE_FIREMODE = true
 				self.howa_type20.FIRE_MODE = "auto"
 				self.howa_type20.kick = {}
-				self.howa_type20.kick = self.stat_info.kick_tables.moderate_kick
+				self.howa_type20.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.howa_type20.kick_pattern = {
-					{0, self.stat_info.kick_tables.left_recoil},
-					{4, self.stat_info.kick_tables.moderate_left_kick},
-					{9, self.stat_info.kick_tables.even_recoil},
-					{12, self.stat_info.kick_tables.moderate_right_kick},
-					{17, self.stat_info.kick_tables.even_recoil},
-					{21, self.stat_info.kick_tables.moderate_left_kick},
-					{25, self.stat_info.kick_tables.even_recoil}
-				}
+					{0, self.stat_info.kick_tables.right_recoil},
+					{4, self.stat_info.kick_tables.moderate_right_kick},
+					{9, self.stat_info.kick_tables.moderate_kick},
+					{18, self.stat_info.kick_tables.moderate_right_kick},
+					{22, self.stat_info.kick_tables.right_recoil}
+                }
 				self.howa_type20.supported = true
 				self.howa_type20.ads_speed = 0.300
 				self.howa_type20.damage_falloff = {
-					start_dist = 2600,
-					end_dist = 6000,
+					start_dist = 2700,
+					end_dist = 7000,
 					min_mult = 0.5
 				}
 				self.howa_type20.stats = {
 					damage = 24,
-					spread = 86,
-					recoil = 89,
-					spread_moving = 5,
+					spread = 81,
+					recoil = 77,
+					spread_moving = 6,
 					zoom = 1,
-					concealment = 24,
-					suppression = 10,
+					concealment = 26,
+					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
 					total_ammo_mod = 400,

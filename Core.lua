@@ -760,9 +760,30 @@ restoration.snd_shak12 = {
 	"snd_shak_vanilla",
 	"snd_shak_combo"
 }
+restoration.snd_rpk = {
+	"snd_rpk_vanilla",
+	"snd_rpk_akmDMR"
+}
+
+restoration.snd_fmg = {
+	"snd_fmg_vanilla",
+	"snd_fmg_g17"
+}
+restoration.snd_patriot = {
+	"snd_patriot_vanilla",
+	"snd_patriot_fal"
+}
+restoration.snd_krink74 = {
+	"snd_krink74_vanilla",
+	"snd_krink74_ak74"
+}
 restoration.snd_jiisuri = {
 	"snd_jiisuri_vanilla",
 	"snd_jiisuri_combo"
+}
+restoration.snd_rpk74 = {
+	"snd_rpk74_vanilla",
+	"snd_rpk74_ak74"
 }
 
 restoration.vm_move = {

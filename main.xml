@@ -633,9 +633,18 @@
 					<divider name="tod_divider" size="14"/>
 					<option type="multichoice" default_value="2" name="ComboSoundsSHAK12" values_tbl="restoration.snd_shak12"/>
 					<divider name="tod_divider" size="14"/>
+					<option type="multichoice" default_value="2" name="ComboSoundsRPK" values_tbl="restoration.snd_rpk"/>
+					<divider name="tod_divider" size="14"/>
 					<button name="ComboSoundsAttachments" disabled="true"/>
 					<divider name="tod_divider" size="7"/>
+					<option type="multichoice" default_value="2" name="ComboSoundsFMGCK" values_tbl="restoration.snd_fmg"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="multichoice" default_value="2" name="ComboSoundsPatriot" values_tbl="restoration.snd_patriot"/>
+					<option type="multichoice" default_value="2" name="ComboSoundsKrink74" values_tbl="restoration.snd_krink74"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="multichoice" default_value="2" name="ComboSoundsJiisuri" values_tbl="restoration.snd_jiisuri"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="multichoice" default_value="2" name="ComboSoundsRPK74" values_tbl="restoration.snd_rpk74"/>
 				</option_group>
 				<option_group name="WEAPONANIMS">
 					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>

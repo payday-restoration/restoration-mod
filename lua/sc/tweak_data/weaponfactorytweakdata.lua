@@ -1773,11 +1773,13 @@ end)
 					self.parts.wpn_fps_smg_fmg9_conversion.unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_fps_smg_fmg9_conversion"
 					self.parts.wpn_fps_smg_fmg9_conversion.third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_third_smg_fmg9_conversion"
 					self.parts.wpn_fps_smg_fmg9_conversion.adds = {
-						"wpn_fps_smg_fmg9_conversion_sound_switch",
 						"wpn_fps_smg_fmg9_conversion_display_dummy",
 						"wpn_fps_smg_fmg9_conversion_laser_dummy",
 						"wpn_fps_smg_fmg9_b_dummy"
 					}
+					if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsFMGCK") == 2  then
+						table.insert( self.parts.wpn_fps_smg_fmg9_conversion.adds, "wpn_fps_smg_fmg9_conversion_sound_switch")
+					end
 					self.parts.wpn_fps_smg_fmg9_conversion.sound_switch = nil
 					self.parts.wpn_fps_smg_fmg9_conversion.forbids = {
 						"wpn_fps_smg_fmg9_o_sight"
@@ -8438,8 +8440,8 @@ end)
 		--RPK
 			Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 
-				self.parts.wpn_fps_lmg_rpk_b_standard.adds = { "wpn_fps_ass_rpk_sound_switch" }
-				self.parts.wpn_fps_lmg_rpk_b_standard.sound_switch = { suppressed = "regular_b" }
+				self.parts.wpn_fps_lmg_rpk_b_standard.adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRPK") == 2 and { "wpn_fps_ass_rpk_sound_switch" }) or {}
+				self.parts.wpn_fps_lmg_rpk_b_standard.sound_switch = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRPK") == 2 and { suppressed = "regular_b" }) or {}
 
 				self.parts.wpn_fps_lmg_rpk_fg_wood.forbids = {
 					"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
@@ -12712,7 +12714,7 @@ end)
 							ammo_pickup_max_mul = 1.298245,
 						},
 						forbids = {},
-						adds = { "wpn_fps_ass_rpk74_sound_switch" },
+						adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsKrink74") == 2 and { "wpn_fps_ass_rpk74_sound_switch" }) or {},
 						override = {
 							wpn_fps_ass_akm_body_upperreceiver_vanilla = {
 								unit = "units/payday2/weapons/wpn_fps_ass_74_pts/wpn_fps_ass_74_body_upperreceiver",
@@ -12824,7 +12826,7 @@ end)
 							ammo_pickup_max_mul = 1.298245,
 						},
 						forbids = {},
-						adds = { "wpn_fps_ass_rpk74_sound_switch" },
+						adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsKrink74") == 2 and { "wpn_fps_ass_rpk74_sound_switch" }) or {},
 						override = {
 							wpn_fps_ass_akm_body_upperreceiver_vanilla = {
 								unit = "units/payday2/weapons/wpn_fps_ass_74_pts/wpn_fps_ass_74_body_upperreceiver",
@@ -24102,7 +24104,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		},
 		forbids = {},
-		adds = {"wpn_fps_ass_patriot_sounds"},
+		adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsPatriot") == 2 and { "wpn_fps_ass_patriot_sounds" }) or {},
 		dlc = "sc"
 	}
 	for k, used_part_id in ipairs(self.wpn_fps_ass_amcar.uses_parts) do
@@ -24186,8 +24188,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_ak_m_quick/wpn_fps_upg_ak_m_quick"
 			}
 		},
-		forbids = { "wpn_fps_ass_rpk_sound_switch" },
-		adds = { "wpn_fps_ass_rpk74_sound_switch" },
+		forbids = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRPK74") == 2 and { "wpn_fps_ass_rpk_sound_switch" }) or {},
+		adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRPK74") == 2 and { "wpn_fps_ass_rpk74_sound_switch" }) or {},
 		dlc = "sc"
 	}
 

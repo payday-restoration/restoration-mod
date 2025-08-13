@@ -13682,7 +13682,7 @@ end)
 				}
 				self.parts.wpn_fps_ass_shak12_body_vks.supported = true
 				self.parts.wpn_fps_ass_shak12_body_vks.has_description = true
-				self.parts.wpn_fps_ass_shak12_body_vks.sound_switch = { suppressed = "regular_b" }
+				--self.parts.wpn_fps_ass_shak12_body_vks.sound_switch = { suppressed = "regular_b" }
 				self.parts.wpn_fps_ass_shak12_body_vks.desc_id = "bm_wp_shak12_body_vks_ap_desc"
 				self.parts.wpn_fps_ass_shak12_body_vks.stats = {
 					value = 9,
@@ -15634,7 +15634,8 @@ end)
 							reload = "reload",
 							fire_steelsight = "recoil",
 							fire = "recoil"
-						}
+						},
+						forbids = { "wpn_fps_addon_ris" }
 					}
 					self.parts.wpn_fps_spec_bessy_stock = {
 						texture_bundle_folder = "pda10",
@@ -15772,6 +15773,9 @@ end)
 					table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_fl_ass_peq15")
 					table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_fl_ass_laser")
 
+					--:^)
+					--table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_ass_shak12_ns_suppressor")
+
 
 					for k, used_part_id in ipairs(self.wpn_fps_spec_bessy.uses_parts) do
 						if self.parts[used_part_id] and self.parts[used_part_id].type then
@@ -15808,6 +15812,10 @@ end)
 					}
 					self.wpn_fps_spec_bessy.override.wpn_fps_upg_o_arbiter_irons_dmc = {
 						parent = "shitass_o"
+					}
+
+					self.wpn_fps_spec_bessy.override.wpn_fps_ass_shak12_ns_suppressor = {
+						forbids = {"wpn_fps_spec_bessy_bayonette"}
 					}
 
 

@@ -3980,6 +3980,25 @@ end)
 			--RSH-12
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(self)
 
+					self.parts.wpn_fps_pis_rsh12_suppressed_sounds = {
+						third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						a_obj = "a_body",
+						type = "ammo",
+						name_id = "bm_m14_sounds",
+						unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching/wpn_fps_ass_ching",
+						internal_part = true,
+						no_cull = true,
+						stats = {
+							value = 5
+						},
+						custom_stats = {
+							sounds = {
+								fire = "ching_fire",
+								fire_single = "ching_fire"
+							}
+						}
+					}
+
 					--Compensated Barrel
 					self.parts.wpn_fps_pis_rsh12_b_comp.pcs = {
 						10,
@@ -4037,14 +4056,14 @@ end)
 					--Overrides for Glock comps
 					self.wpn_fps_pis_rsh12.override.wpn_fps_pis_g18c_co_comp_2 = { parent = "barrel",  a_obj = "a_ns" }
 					self.wpn_fps_pis_rsh12.override.wpn_fps_pis_g18c_co_1 = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_ass_filter = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_small = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium_gem = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium_slim = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_large = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_large_kac = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_jungle = { parent = "barrel",  a_obj = "a_ns" }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_ass_filter = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_small = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium_gem = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium_slim = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_large = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_large_kac = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_jungle = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
 
 					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_i_iw_hailstorm = {
 						desc_id = "bm_wp_upg_i_iw_hailstorm_no_pen_desc",

@@ -31,16 +31,16 @@ local opts_swat_group = {
 	amount = 4,
 }
 
-return = {
+return {
     elements = {
 	-- swat chopper
 	    restoration:gen_dummy(400001, "swat_chopper_spawn_1", Vector3(63.545, 3776.085, 25), Rotation(-2.446, 0, 0), optsBesiegeDummy_1),
 	    restoration:gen_dummy(400002, "swat_chopper_spawn_2", Vector3(-3.394, 3778.944, 25), Rotation(-2.446, 0, 0), optsBesiegeDummy_1),
-	    restoration:.gen_dummy(400003, "swat_chopper_spawn_3", Vector3(-23, 3392, 25), Rotation(169.554, 0, 0), optsBesiegeDummy_2),
-	    restoration:.gen_dummy(400004, "swat_chopper_spawn_4", Vector3(61, 3384, 25), Rotation(-177.165, 0, 0), optsBesiegeDummy_2),
-	    restoration:.gen_missionscript(400005, "spawn_swats_1", optsspawnchopperSWATs_1),
-	    restoration:.gen_spawngroup(400006, "swat_group_1", { 400001, 400002, 400003, 400004 }, 0, opts_swat_group),
-	    restoration:.objecteditor(400007, "open_heli_door_left", Vector3(0, 0, 0), Rotation(0, 0, -0), optsOpenHeliLefttDoor),
-	    restoration:.objecteditor(400008, "close_heli_door_left", Vector3(0, 0, 0), Rotation(0, 0, -0), optsCloseHeliLeftDoor),
+	    restoration:gen_dummy(400003, "swat_chopper_spawn_3", Vector3(-23, 3392, 25), Rotation(169.554, 0, 0), optsBesiegeDummy_2),
+	    restoration:gen_dummy(400004, "swat_chopper_spawn_4", Vector3(61, 3384, 25), Rotation(-177.165, 0, 0), optsBesiegeDummy_2),
+	    restoration:gen_missionscript(400005, "spawn_swats_1", optsspawnchopperSWATs_1),
+	    restoration:gen_spawngroup(400006, "swat_group_1", { 400001, 400002, 400003, 400004 }, 0, opts_swat_group),
+	    restoration:objecteditor(400007, "open_heli_door_left", Vector3(0, 0, 0), Rotation(0, 0, -0), optsOpenHeliLefttDoor),
+	    restoration:objecteditor(400008, "close_heli_door_left", Vector3(0, 0, 0), Rotation(0, 0, -0), optsCloseHeliLeftDoor),
     },
 }

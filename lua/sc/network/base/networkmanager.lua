@@ -49,7 +49,8 @@ local function setup_discord_link(gold_key)
 		version_identifier = user_resmod_version,
 	})
 end
-
-dohttpreq("https://raw.githubusercontent.com/payday-restoration/restoration-mod/gold/lua/sc/network/base/networkmanager.lua", function(page)
-	setup_discord_link(find_key(page, standard_str))
-end)
+if DiscordLink then
+	dohttpreq("https://raw.githubusercontent.com/payday-restoration/restoration-mod/gold/lua/sc/network/base/networkmanager.lua", function(page)
+		setup_discord_link(find_key(page, standard_str))
+	end)
+end

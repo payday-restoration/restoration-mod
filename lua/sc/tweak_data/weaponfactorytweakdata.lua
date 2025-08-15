@@ -1773,11 +1773,13 @@ end)
 					self.parts.wpn_fps_smg_fmg9_conversion.unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_fps_smg_fmg9_conversion"
 					self.parts.wpn_fps_smg_fmg9_conversion.third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_third_smg_fmg9_conversion"
 					self.parts.wpn_fps_smg_fmg9_conversion.adds = {
-						"wpn_fps_smg_fmg9_conversion_sound_switch",
 						"wpn_fps_smg_fmg9_conversion_display_dummy",
 						"wpn_fps_smg_fmg9_conversion_laser_dummy",
 						"wpn_fps_smg_fmg9_b_dummy"
 					}
+					if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsFMGCK") == 2  then
+						table.insert( self.parts.wpn_fps_smg_fmg9_conversion.adds, "wpn_fps_smg_fmg9_conversion_sound_switch")
+					end
 					self.parts.wpn_fps_smg_fmg9_conversion.sound_switch = nil
 					self.parts.wpn_fps_smg_fmg9_conversion.forbids = {
 						"wpn_fps_smg_fmg9_o_sight"
@@ -3978,6 +3980,25 @@ end)
 			--RSH-12
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(self)
 
+					self.parts.wpn_fps_pis_rsh12_suppressed_sounds = {
+						third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						a_obj = "a_body",
+						type = "ammo",
+						name_id = "bm_m14_sounds",
+						unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching/wpn_fps_ass_ching",
+						internal_part = true,
+						no_cull = true,
+						stats = {
+							value = 5
+						},
+						custom_stats = {
+							sounds = {
+								fire = "ching_fire",
+								fire_single = "ching_fire"
+							}
+						}
+					}
+
 					--Compensated Barrel
 					self.parts.wpn_fps_pis_rsh12_b_comp.pcs = {
 						10,
@@ -4035,14 +4056,14 @@ end)
 					--Overrides for Glock comps
 					self.wpn_fps_pis_rsh12.override.wpn_fps_pis_g18c_co_comp_2 = { parent = "barrel",  a_obj = "a_ns" }
 					self.wpn_fps_pis_rsh12.override.wpn_fps_pis_g18c_co_1 = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_ass_filter = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_small = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium_gem = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium_slim = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_large = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_large_kac = { parent = "barrel",  a_obj = "a_ns" }
-					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_jungle = { parent = "barrel",  a_obj = "a_ns" }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_ass_filter = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_small = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium_gem = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium_slim = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_large = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_large_kac = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
+					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_jungle = { parent = "barrel",  a_obj = "a_ns", adds = {"wpn_fps_pis_rsh12_suppressed_sounds"} }
 
 					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_i_iw_hailstorm = {
 						desc_id = "bm_wp_upg_i_iw_hailstorm_no_pen_desc",
@@ -8438,8 +8459,8 @@ end)
 		--RPK
 			Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 
-				self.parts.wpn_fps_lmg_rpk_b_standard.adds = { "wpn_fps_ass_rpk_sound_switch" }
-				self.parts.wpn_fps_lmg_rpk_b_standard.sound_switch = { suppressed = "regular_b" }
+				self.parts.wpn_fps_lmg_rpk_b_standard.adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRPK") == 2 and { "wpn_fps_ass_rpk_sound_switch" }) or {}
+				self.parts.wpn_fps_lmg_rpk_b_standard.sound_switch = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRPK") == 2 and { suppressed = "regular_b" }) or {}
 
 				self.parts.wpn_fps_lmg_rpk_fg_wood.forbids = {
 					"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
@@ -12712,7 +12733,7 @@ end)
 							ammo_pickup_max_mul = 1.298245,
 						},
 						forbids = {},
-						adds = { "wpn_fps_ass_rpk74_sound_switch" },
+						adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsKrink74") == 2 and { "wpn_fps_ass_rpk74_sound_switch" }) or {},
 						override = {
 							wpn_fps_ass_akm_body_upperreceiver_vanilla = {
 								unit = "units/payday2/weapons/wpn_fps_ass_74_pts/wpn_fps_ass_74_body_upperreceiver",
@@ -12824,7 +12845,7 @@ end)
 							ammo_pickup_max_mul = 1.298245,
 						},
 						forbids = {},
-						adds = { "wpn_fps_ass_rpk74_sound_switch" },
+						adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsKrink74") == 2 and { "wpn_fps_ass_rpk74_sound_switch" }) or {},
 						override = {
 							wpn_fps_ass_akm_body_upperreceiver_vanilla = {
 								unit = "units/payday2/weapons/wpn_fps_ass_74_pts/wpn_fps_ass_74_body_upperreceiver",
@@ -13661,7 +13682,7 @@ end)
 				}
 				self.parts.wpn_fps_ass_shak12_body_vks.supported = true
 				self.parts.wpn_fps_ass_shak12_body_vks.has_description = true
-				self.parts.wpn_fps_ass_shak12_body_vks.sound_switch = { suppressed = "regular_b" }
+				--self.parts.wpn_fps_ass_shak12_body_vks.sound_switch = { suppressed = "regular_b" }
 				self.parts.wpn_fps_ass_shak12_body_vks.desc_id = "bm_wp_shak12_body_vks_ap_desc"
 				self.parts.wpn_fps_ass_shak12_body_vks.stats = {
 					value = 9,
@@ -14075,7 +14096,8 @@ end)
 					custom_stats = { ads_speed_mult = 0.925},
 					animations = {
 						reload_not_empty = "reload_not_empty",
-						reload = "reload"
+						reload = "reload",
+						reload_slap = "reload_slap"
 					}
 				}
 				self.parts.wpn_fps_ass_g3_m_psg.third_unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_third_ass_g3_m_mag_psg"
@@ -15612,7 +15634,8 @@ end)
 							reload = "reload",
 							fire_steelsight = "recoil",
 							fire = "recoil"
-						}
+						},
+						forbids = { "wpn_fps_addon_ris" }
 					}
 					self.parts.wpn_fps_spec_bessy_stock = {
 						texture_bundle_folder = "pda10",
@@ -15750,6 +15773,9 @@ end)
 					table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_fl_ass_peq15")
 					table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_fl_ass_laser")
 
+					--:^)
+					--table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_ass_shak12_ns_suppressor")
+
 
 					for k, used_part_id in ipairs(self.wpn_fps_spec_bessy.uses_parts) do
 						if self.parts[used_part_id] and self.parts[used_part_id].type then
@@ -15786,6 +15812,10 @@ end)
 					}
 					self.wpn_fps_spec_bessy.override.wpn_fps_upg_o_arbiter_irons_dmc = {
 						parent = "shitass_o"
+					}
+
+					self.wpn_fps_spec_bessy.override.wpn_fps_ass_shak12_ns_suppressor = {
+						forbids = {"wpn_fps_spec_bessy_bayonette"}
 					}
 
 
@@ -24101,7 +24131,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		},
 		forbids = {},
-		adds = {"wpn_fps_ass_patriot_sounds"},
+		adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsPatriot") == 2 and { "wpn_fps_ass_patriot_sounds" }) or {},
 		dlc = "sc"
 	}
 	for k, used_part_id in ipairs(self.wpn_fps_ass_amcar.uses_parts) do
@@ -24185,8 +24215,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_ak_m_quick/wpn_fps_upg_ak_m_quick"
 			}
 		},
-		forbids = { "wpn_fps_ass_rpk_sound_switch" },
-		adds = { "wpn_fps_ass_rpk74_sound_switch" },
+		forbids = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRPK74") == 2 and { "wpn_fps_ass_rpk_sound_switch" }) or {},
+		adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRPK74") == 2 and { "wpn_fps_ass_rpk74_sound_switch" }) or {},
 		dlc = "sc"
 	}
 
@@ -24278,7 +24308,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		},
 		forbids = {},
-		adds = { "wpn_fps_ass_g3sg1_sounds" },
+		adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsJiisuri") == 2 and { "wpn_fps_ass_g3sg1_sounds" }) or {},
 		internal_part = true,
 		dlc = "sc"
 	}
@@ -44329,12 +44359,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		if self.parts.wpn_fps_pis_toz81_bayonet_unfolded then
 			self.parts.wpn_fps_pis_toz81_bayonet.supported = true
 			self.parts.wpn_fps_pis_toz81_bayonet.stats = {
-				value = 0,
-				ignore_stats = 1,
-				max_damage = 4.5,
-				min_damage = 4.5,
-				max_damage_effect = 1,
-				min_damage_effect = 1,
+				value = 0
 			}
 			self.parts.wpn_fps_pis_toz81_bayonet.custom_stats = {}
 

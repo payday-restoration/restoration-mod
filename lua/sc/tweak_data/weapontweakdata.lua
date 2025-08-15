@@ -7335,10 +7335,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{3, self.stat_info.kick_tables.vertical_kick},
 							{4, self.stat_info.kick_tables.right_kick}
 						}
-						--if restoration.Options:GetValue("OTHER/ComboSounds") then
+						if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRSH12") > 1 then
 							self.rsh12.sounds.fire = "ching_fire"
-							self.rsh12.sounds.fire2 = "b682_fire"
-						--end
+							if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRSH12") == 3 then
+								self.rsh12.sounds.fire2 = "b682_fire"
+							end
+						end
 						self.rsh12.supported = true
 						self.rsh12.ads_speed = 0.220
 						self.rsh12.damage_falloff = {
@@ -12221,10 +12223,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{9, self.stat_info.kick_tables.even_recoil},
 							{12, self.stat_info.kick_tables.vertical_kick},
 							{16, self.stat_info.kick_tables.moderate_right_kick}
-						}
-						--if restoration.Options:GetValue("OTHER/ComboSounds") then
+						}						
+						if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsSHAK12") then
 							self.shak12.sounds.fire2 = "mp5_fire_single"
-						--end
+						end
 						self.shak12.supported = true
 						self.shak12.ads_speed = 0.360
 						self.shak12.damage_falloff = {
@@ -15334,10 +15336,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shatters_fury.damage_type = "handcannon"
 			self.shatters_fury.fire_mode_data.fire_rate = 0.2142857
 			self.shatters_fury.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
-			--if restoration.Options:GetValue("OTHER/ComboSounds") then
-				self.shatters_fury.sounds.fire_single = "pmkr45_fire"
-				self.shatters_fury.sounds.stop_fire = "b682_fire" --"hajk_x_fire_single
-			--end
+			if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsSW500") > 1 then
+			self.shatters_fury.sounds.fire_single = "pmkr45_fire"
+				if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsSW500") == 3 then
+					self.shatters_fury.sounds.stop_fire = "b682_fire"
+				end
+			end
 			self.shatters_fury.weapon_hold = "model3"
 			self.shatters_fury.AMMO_MAX = 40
 			self.shatters_fury.CLIP_AMMO_MAX = 5
@@ -15992,9 +15996,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.bs23.recategorize = { "break_shot" }
 					self.bs23.damage_type = "shotgun_heavy"
 					self.bs23.damage_type_single_ray = "anti_materiel"
+					self.bs23.use_data.selection_index = 1
 					self.bs23.always_play_anims = true
 					self.bs23.tactical_reload = 1
-					self.bs23.AMMO_MAX = 30
+					self.bs23.AMMO_MAX = 15
 					self.bs23.CLIP_AMMO_MAX = 3
 					self.bs23.reload_speed_multiplier = 1.3
 					self.bs23.fire_rate_multiplier = 1.20
@@ -16024,6 +16029,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						reload = 20
 					}
 					self.bs23.stats_modifiers = nil
+					self.bs23.descope_on_fire = true
 					self.bs23.panic_suppression_chance = 0.05
 					self.bs23.timers.unequip = 0.6
 					self.bs23.timers.equip = 1
@@ -19073,9 +19079,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ks23.has_description = false
 				self.ks23.always_play_anims = true
 				self.ks23.use_data.selection_index = 2
-				self.ks23.categories = {
-						"shotgun"
-				}
+				self.ks23.categories = { "shotgun" }
 				self.ks23.recategorize = { "break_shot" }
 				self.ks23.damage_type = "shotgun_heavy"
 				self.ks23.damage_type_single_ray = "anti_materiel"
@@ -19109,6 +19113,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.ks23.armor_piercing_chance = 1
+				self.ks23.descope_on_fire = true
 				self.ks23.panic_suppression_chance = 0.05
 				self.ks23.stats_modifiers = nil
 				self.ks23.timers.unequip = 0.6
@@ -21689,6 +21694,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.toz66.stats_modifiers = nil
 				self.toz66.reload_speed_multiplier = 1.1
 				self.toz66.panic_suppression_chance = 0.05
+				self.toz66.sounds.stop_fire = "judge_x_fire"
 				self.toz66.timers = deep_clone(self.huntsman.timers)
 				if BeardLib.Utils:FindMod("Restored Mosconi Reload Animation") then
 					self.toz66.animations.ignore_nonemptyreload = true
@@ -24880,37 +24886,35 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.howa_type20.damage_type = "assault_rifle"
 				self.howa_type20.nato = true
 				self.howa_type20.tactical_reload = 1
-				self.howa_type20.fire_mode_data.fire_rate = 0.088235294
+				self.howa_type20.fire_mode_data.fire_rate = 0.0888889
 				self.howa_type20.CLIP_AMMO_MAX = 30
 				self.howa_type20.AMMO_MAX = 150
 				self.howa_type20.CAN_TOGGLE_FIREMODE = true
 				self.howa_type20.FIRE_MODE = "auto"
 				self.howa_type20.kick = {}
-				self.howa_type20.kick = self.stat_info.kick_tables.moderate_kick
+				self.howa_type20.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.howa_type20.kick_pattern = {
-					{0, self.stat_info.kick_tables.left_recoil},
-					{4, self.stat_info.kick_tables.moderate_left_kick},
-					{9, self.stat_info.kick_tables.even_recoil},
-					{12, self.stat_info.kick_tables.moderate_right_kick},
-					{17, self.stat_info.kick_tables.even_recoil},
-					{21, self.stat_info.kick_tables.moderate_left_kick},
-					{25, self.stat_info.kick_tables.even_recoil}
-				}
+					{0, self.stat_info.kick_tables.right_recoil},
+					{4, self.stat_info.kick_tables.moderate_right_kick},
+					{9, self.stat_info.kick_tables.moderate_kick},
+					{18, self.stat_info.kick_tables.moderate_right_kick},
+					{22, self.stat_info.kick_tables.right_recoil}
+                }
 				self.howa_type20.supported = true
 				self.howa_type20.ads_speed = 0.300
 				self.howa_type20.damage_falloff = {
-					start_dist = 2600,
-					end_dist = 6000,
+					start_dist = 2700,
+					end_dist = 7000,
 					min_mult = 0.5
 				}
 				self.howa_type20.stats = {
 					damage = 24,
-					spread = 86,
-					recoil = 89,
-					spread_moving = 5,
+					spread = 81,
+					recoil = 77,
+					spread_moving = 6,
 					zoom = 1,
-					concealment = 24,
-					suppression = 10,
+					concealment = 26,
+					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
 					total_ammo_mod = 400,
@@ -29743,6 +29747,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.toz81.panic_suppression_chance = 0.05
 				self.toz81.use_hipfire_stance = "breech"
 				self.toz81.reload_speed_multiplier = 1.02
+				self.toz81.sounds.stop_fire = "judge_x_fire"
 				self.toz81.timers.reload_empty = 2.18
 				self.toz81.timers.reload_exit_empty = 1.15
 				self.toz81.timers.reload_not_empty = 2.18
@@ -29793,6 +29798,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_toz81.stats_modifiers = nil
 				self.x_toz81.panic_suppression_chance = 0.05
+				self.x_toz81.sounds.stop_fire = "judge_x_fire"
 				self.x_toz81.timers = deep_clone(self.x_judge.timers)
 			end
 

@@ -425,8 +425,8 @@ local pivot_head_rotation
 
 local default_new_stances = PlayerTweakData._init_new_stances
 function PlayerTweakData:_init_new_stances()
-	default_new_stances(self)
 	self:_init_bessy()
+	default_new_stances(self)
 	--Ak5
 	pivot_shoulder_translation = Vector3(10.6877, 15.6166, -2.8033)
 	pivot_shoulder_rotation = Rotation(0.106298, -0.085067, 0.62852)

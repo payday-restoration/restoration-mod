@@ -76,11 +76,6 @@ local swat = {
 	}
 }
 
-local disabled = {
-	values = {
-		enabled = false,
-	},
-}
 
 return {
 	-- Pro Job PONR
@@ -146,13 +141,6 @@ return {
 	[101371] = swat,
 	[101372] = swat,
 	[101373] = swat,
-	-- Disable snipers because you already have mobile russian snipers kicking your ass 
-	[100487] = disabled,
-	[100945] = disabled,
-	[100975] = disabled,
-	[100488] = disabled,
-	[100740] = disabled,
-	[100748] = disabled, 
 	-- Change beat cops
 	[100634] = {
 		values = {

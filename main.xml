@@ -653,6 +653,10 @@
 					<option type="bool" default_value="true" name="StaticAim"/>
 					<option type="multichoice" default_value="2" name="ViewmodelMovement" values_tbl="restoration.vm_move"/>
 					<option type="bool" default_value="true" name="BigScopeOffset"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="false" name="BWAResmod"/>
+					<option type="bool" default_value="false" name="BWAResmodBob"/>
+					<option type="bool" default_value="false" name="BWAResmodSway"/>
 					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="RunAndShootAnims"/>
 					<divider name="tod_divider" size="14"/>

@@ -45303,7 +45303,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				value = 99
 			}
 
-			self.parts.wpn_fps_pis_tf2_revolver_aim.pcs = nil
+			self.parts.wpn_fps_pis_tf2_revolver_aim.supported = true
+			self.parts.wpn_fps_pis_tf2_revolver_aim.stats = {
+				value = 0
+			}
 
 			-- ambassador should be reverted
 			-- anyone who says otherwise is objectively wrong

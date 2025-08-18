@@ -31680,6 +31680,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sasha.sounds.spin_end = "turret_spin_stop"
 			end
 
+			-- spy has a gun
+			if self.tf2_revolver then
+				self.tf2_revolver.recategorize = {"heavy_pis", "handcannon"}
+				self.tf2_revolver.has_description = true
+				self.tf2_revolver.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.tf2_revolver.CLIP_AMMO_MAX = 6
+				self.tf2_revolver.AMMO_MAX = 30
+				self.tf2_revolver.fire_mode_data.fire_rate = 0.5
+				self.tf2_revolver.kick = self.stat_info.kick_tables.moderate_kick
+				self.tf2_revolver.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{2, self.stat_info.kick_tables.vertical_kick},
+					{4, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.tf2_revolver.supported = true
+				self.tf2_revolver.ads_speed = 0.200
+				self.tf2_revolver.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 3600,
+					min_mult = 0.3333
+				}
+				self.tf2_revolver.stats = {
+					damage = 60,
+					spread = 86,
+					recoil = 51,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.tf2_revolver.stats_modifiers = nil
+				self.tf2_revolver.panic_suppression_chance = 0.05
+				self.tf2_revolver.armor_piercing_chance = 0.5
+				self.tf2_revolver.can_shoot_through_enemy = true
+				self.tf2_revolver.can_shoot_through_enemy_unlim = true
+				self.tf2_revolver.timers = deep_clone(self.chinchilla.timers)
+			end
+
 		--Predator Pack
 			if self.owlfbullpup then
 				self.owlfbullpup.categories = {

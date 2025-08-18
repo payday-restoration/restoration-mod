@@ -31730,6 +31730,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tf2_revolver.CLIP_AMMO_MAX = 6
 				self.tf2_revolver.AMMO_MAX = 30
 				self.tf2_revolver.fire_mode_data.fire_rate = 0.5
+				self.tf2_revolver.no_auto_anims = true
+				self.tf2_revolver.FIRE_MODE = "auto"	-- all tf2 weapons technically are
 				self.tf2_revolver.kick = self.stat_info.kick_tables.moderate_kick
 				self.tf2_revolver.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
@@ -31762,6 +31764,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tf2_revolver.armor_piercing_chance = 0.5
 				self.tf2_revolver.can_shoot_through_enemy = true
 				self.tf2_revolver.can_shoot_through_enemy_unlim = true
+				self.tf2_revolver.sounds.fire_single = "tf2_revolver_fire"
+				self.tf2_revolver.sounds.fire_auto = "tf2_revolver_fire"
 				self.tf2_revolver.timers = deep_clone(self.chinchilla.timers)
 			end
 

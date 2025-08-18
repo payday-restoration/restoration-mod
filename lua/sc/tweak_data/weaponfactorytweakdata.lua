@@ -45293,6 +45293,84 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
+		if self.parts.wpn_fps_pis_tf2_revolver_festivizer then
+			self.parts.wpn_fps_pis_tf2_revolver_festivizer.supported = true
+			self.parts.wpn_fps_pis_tf2_revolver_festivizer.stats = {
+				value = 99
+			}
+			self.parts.wpn_fps_pis_tf2_revolver_australium.supported = true
+			self.parts.wpn_fps_pis_tf2_revolver_australium.stats = {
+				value = 99
+			}
+
+			self.parts.wpn_fps_pis_tf2_revolver_aim.supported = true
+			self.parts.wpn_fps_pis_tf2_revolver_aim.stats = {
+				value = 0
+			}
+
+			-- ambassador should be reverted
+			-- anyone who says otherwise is objectively wrong
+			self.parts.wpn_fps_pis_ambassador_frame.supported = true
+			self.parts.wpn_fps_pis_ambassador_frame.keep_damage = true
+			self.parts.wpn_fps_pis_ambassador_frame.desc_id = "bm_korth_r8"
+			self.parts.wpn_fps_pis_ambassador_frame.has_description = true
+			self.parts.wpn_fps_pis_ambassador_frame.stats = {
+				value = 0,
+				damage = -15,
+				recoil = -20
+			}
+			self.parts.wpn_fps_pis_ambassador_frame.custom_stats = {
+				hs_mult = 2,
+				hs_mult_desc = true,
+				rof_mult = 0.8
+			}
+
+			self.parts.wpn_fps_pis_diamondback_frame.supported = true
+			self.parts.wpn_fps_pis_diamondback_frame.desc_id = "bm_wp_chf_50_desc"
+			self.parts.wpn_fps_pis_diamondback_frame.has_description = true
+			self.parts.wpn_fps_pis_diamondback_frame.keep_damage = true
+			self.parts.wpn_fps_pis_diamondback_frame.stats = {
+				value = 0,
+				damage = -15
+			}
+			self.parts.wpn_fps_pis_diamondback_frame.custom_stats = {
+				chf = true
+			}
+
+			self.parts.wpn_fps_pis_letranger_frame.supported = true
+			self.parts.wpn_fps_pis_letranger_frame.keep_damage = true
+			self.parts.wpn_fps_pis_letranger_frame.stats = {
+				value = 0,
+				damage = -15,
+				concealment = 8
+			}
+			self.parts.wpn_fps_pis_letranger_frame.custom_stats = {
+			}
+
+			self.parts.wpn_fps_pis_enforcer_frame.supported = true
+			self.parts.wpn_fps_pis_enforcer_frame.keep_damage = true
+			self.parts.wpn_fps_pis_enforcer_frame.has_description = true
+			self.parts.wpn_fps_pis_enforcer_frame.desc_id = "bm_ap_weapon_sc_desc"
+			self.parts.wpn_fps_pis_enforcer_frame.alt_desc = "bm_ap_weapon_sc_desc"
+			self.parts.wpn_fps_pis_enforcer_frame.stats = {
+				value = 0,
+			}
+			self.parts.wpn_fps_pis_enforcer_frame.custom_stats = {
+				rof_mult = 0.8,
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
+			}
+
+			self.parts.wpn_fps_pis_big_kill_frame.supported = true
+			self.parts.wpn_fps_pis_big_kill_frame.stats = {
+				value = 0,
+			}
+			self.parts.wpn_fps_pis_big_kill_frame.custom_stats = {
+			}
+		end
+
 		if self.parts.wpn_fps_pis_pmm_conversion then
 			self.parts.wpn_fps_pis_pm_b_standard.forbids = {}
 			for k, used_part_id in ipairs(self.wpn_fps_pis_pm.uses_parts) do

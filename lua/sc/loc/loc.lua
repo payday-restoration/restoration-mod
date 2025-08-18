@@ -219,7 +219,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 						["vm_lead"] = "Weapon Leads Ahead",
 						["vm_static"] = "Static (No Movement)",
 					["RestorationModBWAResmodTitleID"] = "\"Better Weapon Animations\" Viewmodel Movement",
-					["RestorationModBWAResmodDescID"] = "Enable a custom version of Return's \"Better Weapon Animations\" viewmodel movement.",
+					["RestorationModBWAResmodDescID"] = "Enable a custom version of Return's \"Better Weapon Animations\" viewmodel movement. Overrides the movement settings above. Requires a restart to take full effect.",
 					["RestorationModBWAResmodBobTitleID"] = "ADS Viewbob",
 					["RestorationModBWAResmodBobDescID"] = "Enable viewbob when moving while ADS.",
 					["RestorationModBWAResmodSwayTitleID"] = "Viewmodel Look-sway Drag",

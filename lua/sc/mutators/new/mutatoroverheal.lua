@@ -21,13 +21,7 @@ function MutatorOverheal:register_values(mutator_manager)
 	self:register_value("overheal_mult_override", 1.5 , "omo")
 	self:register_value("captain_overheal_mult_override", false, "como")
 end
--- Modify_value do nothing ???
---[[function MutatorOverheal:modify_value(id, value)
-	if id == "CopBase:ExpandLPF" then
-		return true
-	end
-	return value
-end--]]
+
 
 function MutatorOverheal:setup(data)
 	local char_tweak = tweak_data.character

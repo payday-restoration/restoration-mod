@@ -60,6 +60,7 @@ function MutatorsManager:init()
 		MutatorBirthday:new(self),
 		MutatorReloadMarathon:new(self),
 		MutatorMagazineMartyr:new(self),
+		MutatorNoAmmoDrop:new(self),
 		--MutatorHighNoon:new(self)
 	}
 	self._active_mutators = {}

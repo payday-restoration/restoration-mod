@@ -19639,6 +19639,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sks.can_shoot_through_enemy = false
 				self.sks.ignore_reload_objects_not_empty = true
 				self.sks.panic_suppression_chance = 0.05
+				self.sks.sounds.stop_fire = "akm_stop"
 				--mag timers
 				--[[
 				self.sks.timers.reload_empty = 3.03

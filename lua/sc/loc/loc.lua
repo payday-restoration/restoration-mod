@@ -5565,8 +5565,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_crazytaser_longdesc"] = "Taser units no longer have an aim delay when attempting to stun players.\n\nNote: Normal cooldowns between attempts still apply.",
 
 		["mutator_masterdodger"] = "Dodge This!",
-		["mutator_masterdodger_desc"] = "Veteran Cops now dodge all bullets.",
-		["mutator_masterdodger_longdesc"] = "Veteran Cops now dodge all bullets.",
+		["menu_mutator_masterdodger"] = "Dodge Chance (in %)",
+		["mutator_masterdodger_desc"] = "Veteran Cop Dodge Chance value (in %).",
+		["mutator_masterdodger_longdesc"] = "Veteran Cops can now dodge bullets.",
 
 		["mutator_fullautoinbuilding"] = "Rabid Shooters",
 		["mutator_fullautoinbuilding_desc"] = "Titan Snipers and their equivalents will now fire their rifles on full auto at close range.",

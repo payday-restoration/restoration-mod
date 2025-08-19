@@ -19116,6 +19116,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ks23.descope_on_fire = true
 				self.ks23.panic_suppression_chance = 0.05
 				self.ks23.stats_modifiers = nil
+				self.ks23.sounds.stop_fire = "saiga_stop"
 				self.ks23.timers.unequip = 0.6
 				self.ks23.timers.equip = 1
 				self.ks23.timers.shotgun_reload_first_shell_offset = 0.45
@@ -24927,7 +24928,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.howa_type89.reload_speed_multiplier = 1
 				self.howa_type89.timers = deep_clone(self.ak5.timers)
 			end
-			
+
 			if self.howa_type20 then --ACR but Japanese
 				self.howa_type20.categories = { "assault_rifle" }
 				self.howa_type20.recategorize = { "light_ar" }
@@ -26788,6 +26789,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cp2077_guts.stats_modifiers = nil
 				self.cp2077_guts.reload_speed_multiplier = 0.95
 				self.cp2077_guts.panic_suppression_chance = 0.05
+				self.cp2077_guts.sounds.stop_fire = "saiga_stop"
 				self.cp2077_guts.timers.shotgun_reload_exit_not_empty = 0.5
 				self.cp2077_guts.timers.shotgun_reload_exit_empty = 0.77
 				self.cp2077_guts.timers.shotgun_reload_first_shell_offset = 0.25

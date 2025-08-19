@@ -5378,6 +5378,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["menu_mutator_no_outlines_enemies_toggle"] = "적 외곽선 비활성화",
 		["menu_mutator_no_outlines_objectives_toggle"] = "하이라이트 외곽선 비활성화 (에스코트 제외)",
 
+		["mutator_no_ammo_drops"] = "탄약 결핍",
+		["menu_mutator_ammo_drop_chance"] = "탄약 드랍 확률 (% 기준)",
+		["menu_mutator_ammo_drop_chance_ingame"] = "탄약 드랍 확률",
+		["menu_mutator_no_ammo_drops"] = "탄약 드랍 없음",
+		["mutator_no_ammo_drops_desc"] = "탄약 획득 드랍 확률을 변경하거나 아예 비활성화합니다.",
+		["mutator_no_ammo_drops_longdesc"] = "탄약 획득 드랍 확률을 변경하거나 아예 비활성화합니다.",
 
 		["mutator_spawn_mult"] = "증대된 대응",
 		["menu_mutator_enemy_spawn"] = "적 스폰 배율",

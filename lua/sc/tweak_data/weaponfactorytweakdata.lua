@@ -19643,6 +19643,10 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_howa_type20 = {
 						translation = Vector3(0.015, -0.8, -3.61)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_howa_type89 = {
+						translation = Vector3(-0.013, 3, -3.48),
+						rotation = Rotation(0.01, -0.05, 0)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_s556 = {
 						translation = Vector3(-0.065, 9.6, -2.1),
@@ -29344,6 +29348,79 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 
 	--[[ RJC9000'S MODS ]]
+
+		if self.parts.wpn_fps_ass_howa_type89_bolt then
+			self.parts.wpn_fps_ass_howa_type89_barrel.stats = { value = 0 }
+			self.parts.wpn_fps_ass_howa_type89_barrel.custom_stats = nil
+			self.parts.wpn_fps_ass_howa_type89_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_howa_type89_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_howa_type89_handguard.stats = { value = 0 }
+			self.parts.wpn_fps_ass_howa_type89_handguard.custom_stats = nil
+			self.parts.wpn_fps_ass_howa_type89_stock.stats = { value = 0 }
+			self.parts.wpn_fps_ass_howa_type89_stock.custom_stats = nil
+			self.parts.wpn_fps_ass_howa_type89_stock_gfl.stats = { value = 0 }
+			self.parts.wpn_fps_ass_howa_type89_stock_gfl.custom_stats = nil
+
+			self.parts.wpn_fps_ass_howa_type89_flash_hider_bayonet.supported = true
+			self.parts.wpn_fps_ass_howa_type89_flash_hider_bayonet.desc_id = "bm_wp_mosin_ns_bayonet_desc"
+			self.parts.wpn_fps_ass_howa_type89_flash_hider_bayonet.stats = {
+				value = 0,
+				concealment = -3,
+				spread = -2,
+				max_damage = 6,
+				min_damage = 6,
+				max_damage_effect = 1,
+				min_damage_effect = 1,
+				bayonet_range = 50
+			}
+			self.parts.wpn_fps_ass_howa_type89_flash_hider_bayonet.custom_stats = {
+				melee_speed_mult = 0.8,
+				alt_melee_sounds = {
+					"knife_hit_body",
+					"knife_hit_gen"
+				}
+			}
+
+			self.parts.wpn_fps_ass_howa_type89_barrel_carbine.supported = true
+			self.parts.wpn_fps_ass_howa_type89_barrel_carbine.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_howa_type89_barrel_carbine.stats.bayonet_range = -20
+			self.parts.wpn_fps_ass_howa_type89_barrel_carbine.custom_stats = deep_clone(barrels.short_b1_stats)
+
+			self.parts.wpn_fps_ass_howa_type89_magazine_20.supported = true
+			self.parts.wpn_fps_ass_howa_type89_magazine_20.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.stats)
+			self.parts.wpn_fps_ass_howa_type89_magazine_20.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_straight.custom_stats)
+
+			self.parts.wpn_fps_ass_howa_type89_optic_acog.supported = true
+			self.parts.wpn_fps_ass_howa_type89_optic_acog.desc_id = "bm_wp_upg_o_2_5"
+			self.parts.wpn_fps_ass_howa_type89_optic_acog.stats = {
+				zoom = 15
+			}
+			self.parts.wpn_fps_ass_howa_type89_optic_acog.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_ass_howa_type89_optic_acog.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0,-8,-0.07)
+				end
+			end
+
+			self.parts.wpn_fps_ass_howa_type89_optic_mdn.supported = true
+			self.parts.wpn_fps_ass_howa_type89_optic_mdn.desc_id = "bm_wp_upg_o_1_8"
+			self.parts.wpn_fps_ass_howa_type89_optic_mdn.stats = {
+				zoom = 8
+			}
+			self.parts.wpn_fps_ass_howa_type89_optic_mdn.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_ass_howa_type89_optic_mdn.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0,-2,-0.07)
+				end
+			end
+
+			self.parts.wpn_fps_ass_howa_type89_stock_acr.supported = true
+			self.parts.wpn_fps_ass_howa_type89_stock_acr.stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+			self.parts.wpn_fps_ass_howa_type89_stock_acr.custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+			self.parts.wpn_fps_ass_howa_type89_stock_paratrooper.supported = true
+			self.parts.wpn_fps_ass_howa_type89_stock_paratrooper.stats = deep_clone(stocks.fixed_to_folder_stats)
+			self.parts.wpn_fps_ass_howa_type89_stock_paratrooper.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+		end
 
 		if self.parts.wpn_fps_ass_howa_type20_irons_rear_folded then
 			self.parts.wpn_fps_ass_howa_type20_flash_hider.stats = { value = 0 }

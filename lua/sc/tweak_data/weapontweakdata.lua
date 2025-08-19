@@ -19639,6 +19639,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sks.can_shoot_through_enemy = false
 				self.sks.ignore_reload_objects_not_empty = true
 				self.sks.panic_suppression_chance = 0.05
+				self.sks.sounds.stop_fire = "akm_stop"
 				--mag timers
 				--[[
 				self.sks.timers.reload_empty = 3.03
@@ -24880,6 +24881,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.howa_type89 then --AR-18 but Japanese
+				self.howa_type89.categories = { "assault_rifle" }
+				self.howa_type89.recategorize = { "light_ar" }
+				self.howa_type89.damage_type = "assault_rifle"
+				self.howa_type89.nato = true
+				self.howa_type89.tactical_reload = 1
+				self.howa_type89.fire_mode_data.fire_rate = 0.08
+				self.howa_type89.CLIP_AMMO_MAX = 30
+				self.howa_type89.AMMO_MAX = 150
+				self.howa_type89.CAN_TOGGLE_FIREMODE = true
+				self.howa_type89.FIRE_MODE = "auto"
+				self.howa_type89.kick = {}
+				self.howa_type89.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.howa_type89.kick_pattern = {
+					{0, self.stat_info.kick_tables.left_recoil},
+					{4, self.stat_info.kick_tables.moderate_kick},
+					{8, self.stat_info.kick_tables.left_recoil},
+					{12, self.stat_info.kick_tables.moderate_kick},
+					{19, self.stat_info.kick_tables.right_recoil}
+                }
+				self.howa_type89.supported = true
+				self.howa_type89.ads_speed = 0.320
+				self.howa_type89.damage_falloff = {
+					start_dist = 2100,
+					end_dist = 6400,
+					min_mult = 0.5
+				}
+				self.howa_type89.stats = {
+					damage = 24,
+					spread = 82,
+					recoil = 79,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.howa_type89.stats_modifiers = nil
+				self.howa_type89.panic_suppression_chance = 0.05
+				self.howa_type89.reload_speed_multiplier = 1
+				self.howa_type89.timers = deep_clone(self.ak5.timers)
+			end
+			
 			if self.howa_type20 then --ACR but Japanese
 				self.howa_type20.categories = { "assault_rifle" }
 				self.howa_type20.recategorize = { "light_ar" }

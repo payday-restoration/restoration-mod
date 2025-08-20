@@ -29900,7 +29900,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fsa12.damage_type = "shotgun"
 				self.fsa12.damage_type_single_ray = "sniper"
 				self.fsa12.tactical_reload = 1
-				self.fsa12.CLIP_AMMO_MAX = 10
+				self.fsa12.CLIP_AMMO_MAX = 7
 				self.fsa12.fire_mode_data.fire_rate = 0.2
 				self.fsa12.AMMO_MAX = 60
 				self.fsa12.kick = self.stat_info.kick_tables.left_recoil
@@ -29937,7 +29937,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.fsa12.stats_modifiers = nil
 				self.fsa12.panic_suppression_chance = 0.05
-				--TODO: TIMERS
+				self.fsa12.sounds.stop_fire = "saiga_stop"
+				self.fsa12.reload_speed_multiplier = 1
+				self.fsa12.reload_not_empty_speed_multiplier = 1.1
+				self.fsa12.timers.reload_not_empty = 1.7
+				self.fsa12.timers.reload_exit_not_empty = 1.5
+				self.fsa12.timers.reload_empty = 2.2
+				self.fsa12.timers.reload_exit_empty = 0.9
 			end
 
 			if self.bp12 then

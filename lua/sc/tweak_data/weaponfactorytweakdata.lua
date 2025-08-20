@@ -19559,6 +19559,10 @@ end)
 						translation = Vector3(-0.005, 3, -0.007),
 						rotation = Rotation(0.0, 0.012, 0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_fsa12 = {
+						translation = Vector3(0, 4.5, 0.066),
+						rotation = Rotation(0.005, -0.19, 0)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_f500 = {
 						translation = Vector3(0, 8.6, -3.36)
@@ -40832,6 +40836,40 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
+		if self.parts.wpn_fps_sho_fsa12_b_ext then
+			self.parts.wpn_fps_sho_fsa12_b_ext.supported = true
+			self.parts.wpn_fps_sho_fsa12_b_ext.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_sho_fsa12_b_ext.custom_stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_sho_fsa12_b_short.supported = true
+			self.parts.wpn_fps_sho_fsa12_b_short.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_sho_fsa12_b_short.custom_stats = deep_clone(barrels.short_b2_stats)
+
+			self.parts.wpn_fps_sho_fsa12_m_ext.supported = true
+			self.parts.wpn_fps_sho_fsa12_m_ext.stats = {
+				value = 6,
+				extra_ammo = 3,
+				concealment = -1,
+				reload = -3
+			}
+			self.parts.wpn_fps_sho_fsa12_m_qpull.custom_stats = { ads_speed_mult = 1.025 }
+			self.parts.wpn_fps_sho_fsa12_m_qpull.supported = true
+			self.parts.wpn_fps_sho_fsa12_m_qpull.stats = {
+				value = 3,
+				spread = -1,
+				reload = 3,
+				concealment = -1
+			}
+			self.parts.wpn_fps_sho_fsa12_m_qpull.custom_stats = {}
+			self.parts.wpn_fps_sho_fsa12_m_short.supported = true
+			self.parts.wpn_fps_sho_fsa12_m_short.stats = {
+				value = 5,
+				extra_ammo = -2,
+				concealment = 2,
+				reload = 5
+			}
+			self.parts.wpn_fps_sho_fsa12_m_short.custom_stats = { ads_speed_mult = 0.95 }
+			
+		end
 		if self.parts.wpn_fps_sho_ksg_b_25 then
 			self.parts.wpn_fps_sho_ksg_b_25.supported = true
 			self.parts.wpn_fps_sho_ksg_b_25.stats = deep_clone(barrels.long_b3_stats)

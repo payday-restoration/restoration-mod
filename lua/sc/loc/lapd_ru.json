@@ -1,0 +1,21 @@
+{
+  "ene_lapd_veteran_cop" : "Шеф SWAT Мардо",
+  "ene_thug_indoor" : "Охранник Эрнесто Сосы",
+  "ene_bolivian_thug_outdoor" : "Охранник особняка Эрнесто Сосы",
+  "ene_security_manager" : "Менеджер охраны Эрнесто Сосы",
+  "ene_sniper_1" : "Снайпер LAPD SWAT",
+  "ene_sniper_2_sc" : "Снайпер LAPD FBI SWAT",
+  "ene_sniper_3" : "Элитный снайпер FBI",
+  "ene_shield_1" : "Щит LAPD FBI SWAT",
+  "ene_shield_2" : "Щит LAPD SWAT",
+  "ene_swat" : "LAPD SWAT",  
+  "ene_swat_heavy" : "Тяжелый LAPD SWAT",
+  "ene_fbi_swat" : "LAPD FBI SWAT",  
+  "ene_fbi_heavy" : "Тяжелый LAPD FBI SWAT",
+  "ene_fbi_heavy_r870_sc" : "Тяжелый LAPD FBI SWAT",
+  "ene_city_swat" : "Элита FBI SWAT",
+  "ene_city_heavy" : "Тяжелая элита FBI SWAT",
+  "ene_city_heavy_r870_sc" : "Тяжелая элитаFBI SWAT",
+  "ene_city_shield" : "Элитный щит FBI",
+  "ene_bulldozer_3" : "Элитный скалдозер FBI"
+}

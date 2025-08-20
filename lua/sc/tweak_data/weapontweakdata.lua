@@ -29894,6 +29894,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_toz81.timers = deep_clone(self.x_judge.timers)
 			end
 
+			if self.fsa12 then
+				self.fsa12.recategorize = { "light_shot" }
+				self.fsa12.categories = { "shotgun" }
+				self.fsa12.damage_type = "shotgun"
+				self.fsa12.damage_type_single_ray = "sniper"
+				self.fsa12.tactical_reload = 1
+				self.fsa12.CLIP_AMMO_MAX = 10
+				self.fsa12.fire_mode_data.fire_rate = 0.2
+				self.fsa12.AMMO_MAX = 60
+				self.fsa12.kick = self.stat_info.kick_tables.left_recoil
+				self.fsa12.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{3, self.stat_info.kick_tables.left_recoil},
+					{8, self.stat_info.kick_tables.moderate_left_kick},
+					{11, self.stat_info.kick_tables.even_recoil}
+				}
+				self.fsa12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.fsa12.CAN_TOGGLE_FIREMODE = false
+				self.fsa12.FIRE_MODE = "single"
+				self.fsa12.rays = 8
+				self.fsa12.supported = true
+				self.fsa12.ads_speed = 0.340
+				self.fsa12.damage_falloff = {
+					start_dist = 600,
+					end_dist = 2300,
+					min_mult = 0.15
+				}
+				self.fsa12.stats = {
+					damage = 120,
+					spread = 21,
+					recoil = 35,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.fsa12.stats_modifiers = nil
+				self.fsa12.panic_suppression_chance = 0.05
+				--TODO: TIMERS
+			end
+
 			if self.bp12 then
 				self.bp12.recategorize = { "light_shot" }
 				self.bp12.categories = { "shotgun" }

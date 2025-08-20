@@ -84,6 +84,7 @@ function FPCameraPlayerBase:update(unit, t, dt)
 		local p_mov = self._parent_movement_ext
 		local p_cam = p_unit:camera()
 		local p_equipped = p_unit:inventory():equipped_unit()
+		local wep_base = p_equipped and p_equipped.base and p_equipped:base()
 
 		if p_mov._current_state == nil then
 			return
@@ -92,6 +93,8 @@ function FPCameraPlayerBase:update(unit, t, dt)
 		local p_rot = unit:rotation()
 
 		local in_sight = p_mov._current_state:in_steelsight()
+		local in_full_sight = p_mov._current_state:is_full_steelsight()
+		local in_dash = p_mov._current_state._last_dash_time and (p_mov._current_state._last_dash_time + 0.1) > (t)
 		local in_air = p_mov:in_air()
 		local input_axis = p_unit:base():controller():get_input_axis("move")
 		local in_walk = not in_air and mvector3.length(input_axis) ~= 0
@@ -124,7 +127,8 @@ function FPCameraPlayerBase:update(unit, t, dt)
 
 		local mov_lp_speed = deltaT * 5.5
 		local run_mul = in_run and 1.65 or 1
-		local mov_mul = (enable_bob and (in_sight and 0.15)) or 0 --(in_run and 3.65 or 1.75) --disabled viewbob for walking and running for now
+		--disabled viewbob for walking and running for now as it doesn't play nice with camera viewbob
+		local mov_mul = (enable_bob and (in_sight and 0.15)) or 0 --(in_run and 3.65 or 1.75)
 
 		mov_pos = mov_pos or Vector3()
 		mov_ang = mov_ang or Rotation()
@@ -139,39 +143,44 @@ function FPCameraPlayerBase:update(unit, t, dt)
 		
 		-----------------------------------------------------------------------------------------------------------------------------
 
+		--Added a slight downward offset on the viewmodel when moving
+		--Added a speed-up to re-center when in the process of aiming
 		local tilt_lp_speed = deltaT * 5.5
 
 		tilt_pos = tilt_pos or Vector3()
 		tilt_ang = tilt_ang or Rotation()
-
-		mvector3.lerp(tilt_pos, tilt_pos, (not in_air) and Vector3((not in_sight and 16 or 0.5) * input_axis.x / 16, 0, (not in_sight and 2.25 or 0.4) * input_axis.x / 2) or Vector3(), tilt_lp_speed)
-		mrotation.slerp(tilt_ang, tilt_ang, (not in_air) and Rotation(0, 0, (not in_sight and 2.25 or 0.5) * input_axis.x * 2.625) or Rotation(), tilt_lp_speed)
+		mvector3.lerp(tilt_pos, tilt_pos, (not in_air) and Vector3((not in_sight and 16 or 0.5) * input_axis.x / 16, 0, ((not in_sight and 2.25 or 0.4) * input_axis.x / 2) + -math.abs(((in_walk and 1.15 or 0) * (in_run and 1.5 or 1)) * (not in_sight and 2 or 0))) or Vector3(), tilt_lp_speed * ((in_sight and not in_full_sight and 4) or 1))
+		mrotation.slerp(tilt_ang, tilt_ang, (not in_air) and Rotation(0, 0, (not in_sight and 2.25 or 0.5) * input_axis.x * 2.625 * (in_run and 2 or 1))  or Rotation(), tilt_lp_speed * ((in_sight and not in_full_sight and 4) or 1))
 		
 		-----------------------------------------------------------------------------------------------------------------------------
 
+		--Greatly reduced jump wobble
+		--Add AdvMov dashing as an additionl exception to the stronger jump wobble
 		local jump_lp_speed = deltaT * 8
 		local z_vel = p_unit:velocity().z / 5
 
-		z_last_vel = z_last_vel or 0
-		jump_wobble = jump_wobble or 0
+		z_last_vel = (in_dash and 0) or z_last_vel or 0
+		jump_wobble = (in_dash and 0) or jump_wobble or 0
 		invert_jump_wobble = invert_jump_wobble or 0
 
 		jump_pos = jump_pos or Vector3()
 
-		invert_jump_wobble = math.lerp(invert_jump_wobble, jump_wobble, jump_lp_speed)
-		jump_wobble = math.lerp(jump_wobble, (z_last_vel - z_vel) + (jump_wobble - invert_jump_wobble), jump_lp_speed)
-		mvector3.lerp(jump_pos, jump_pos, Vector3(0, 0, ((not in_sight and 0.2 or 0.05) * jump_wobble)) / (deltaT * 100), jump_lp_speed * 4)
+		invert_jump_wobble = math.lerp(invert_jump_wobble, jump_wobble, jump_lp_speed) * (in_dash and 0 or 1)
+		jump_wobble = math.lerp(jump_wobble, (z_last_vel - z_vel) + (jump_wobble - invert_jump_wobble), jump_lp_speed) * (in_dash and 0 or 1)
+		mvector3.lerp(jump_pos, jump_pos, Vector3(0, 0, ((not in_sight and 0.2 or 0.05) * jump_wobble) * (in_dash and 0 or 1)) / (deltaT * 100), jump_lp_speed * 4)
 
 		z_last_vel = z_vel
 
 		-----------------------------------------------------------------------------------------------------------------------------
 
+		--If look-sway drag is enabled, have weapon movement penalty contribute to how far the weapon drags behind
 		local sway_lp_speed = deltaT * 16
 
 		last_p_rot = last_p_rot or Rotation()
 
 		local p_rot_diff = Rotation(p_rot:yaw() - last_p_rot:yaw(), p_rot:pitch() - last_p_rot:pitch(), p_rot:roll() - last_p_rot:roll())
 		local sway_range = (not in_sight and 0.45 or 0.035) * ((sway_style and -1) or 1)
+		sway_range = sway_range / (((sway_style and wep_base) and math.min(wep_base._movement_penalty, 1)) or 1)
 		p_rot_diff_yaw = p_rot_diff_yaw and math.clamp(p_rot_diff:yaw(), -5, 5) * sway_range or 0
 		p_rot_diff_pitch = p_rot_diff_pitch and math.clamp(p_rot_diff:pitch(), -5, 5) * sway_range or 0
 
@@ -202,6 +211,7 @@ function FPCameraPlayerBase:update(unit, t, dt)
 
 			local ray = self._unit:raycast("ray", from, to, "slot_mask", managers.slot:get_mask("bullet_impact_targets"))
 
+			--Added snippet to disable the pushback effect while ADS to remove camera clipping
 			mvector3.lerp(wall_pos, wall_pos, ray and (-math.Y * (10 - ((in_sight and 100) or ray.distance) / 10)) or Vector3(), wall_lp_speed)
 		end
 

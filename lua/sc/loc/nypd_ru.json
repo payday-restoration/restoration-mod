@@ -1,0 +1,15 @@
+{
+  "ene_security" : "Белый охранник GenSec",
+  "ene_security_gensec" : "Красный охранник GenSec",
+  "ene_nypd_medic" : "Медик",
+  "ene_nypd_swat" : "NYPD SWAT",
+  "ene_nypd_heavy" : "Тяжелый NYPD SWAT",  
+  "ene_nypd_veteran_cop" : "Андрэ Ричардсон",
+  "ene_nypd_shield"  : "Щит NYPD SWAT",
+  "ene_shield_1" : "Щит NYPD FBI SWAT",
+  "ene_sniper_1" : "Снайпер NYPD SWAT",
+  "ene_sniper_2_sc" : "Снайпер NYPD FBI SWAT",
+  "ene_fbi_swat" : "NYPD FBI SWAT",  
+  "ene_fbi_heavy" : "Тяжелый NYPD FBI SWAT",
+  "ene_fbi_heavy_r870_sc" : "Тяжелый NYPD FBI SWAT"
+}

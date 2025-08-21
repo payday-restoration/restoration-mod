@@ -1,3 +1,6 @@
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local pro_job = Global.game_settings and Global.game_settings.one_down
+local bravo_dozer_ambush = ((pro_job and difficulty == 7 or pro_job and difficulty == 8) and "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer")
 local street_spawn = {
 	values = {
 		interval = 5,
@@ -51,6 +54,8 @@ return {
 			{ id = 400005, delay = 0, delay_rand = 5 },
 		},
 	},
+	-- National Guard Dozer kicks down door, only on DW/DS PJ
+	[106414] = bravo_dozer_ambush,
 	-- Spawngroup delays
 	[100128] = street_spawn,
 	[100132] = street_spawn,

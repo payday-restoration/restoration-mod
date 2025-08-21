@@ -86,6 +86,37 @@ return {
 			rotation = Rotation(140, 0, -0)
 		}
 	},
+	-- make Swat vans drop units
+	[103615] = { -- arrive 1
+		on_executed = {
+			{ id = 400005, delay = 0, delay_rand = 5 },
+		},
+	},
+	[103612] = { -- arrive 2
+		on_executed = {
+			{ id = 400012, delay = 0, delay_rand = 5 },
+		},
+	},
+	[103611] = { -- arrive 3
+		on_executed = {
+			{ id = 400019, delay = 0, delay_rand = 5 },
+		},
+	},
+	[103614] = { -- arrive 4
+		on_executed = {
+			{ id = 400026, delay = 0, delay_rand = 5 },
+		},
+	},
+	[103613] = { -- arrive 5
+		on_executed = {
+			{ id = 400033, delay = 0, delay_rand = 5 },
+		},
+	},
+	[103610] = { -- arrive 6
+		on_executed = {
+			{ id = 400040, delay = 0, delay_rand = 5 },
+		},
+	},
 	-- Reinforce spots
 		[100109] = {
 		reinforce = { -- Police arrived

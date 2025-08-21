@@ -5497,8 +5497,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_crazytaser_longdesc"] = "테이저 유닛이 플레이어를 감전시킬 때 더 이상 조준 지연이 없습니다.\n\n주의: 감전 시도 간 일반 재사용 대기 시간은 여전히 적용됩니다.",
 
 		["mutator_masterdodger"] = "이것도 피해보시지!",
-		["mutator_masterdodger_desc"] = "베테랑 경찰은 이제 모든 총알을 피합니다.",
-		["mutator_masterdodger_longdesc"] = "베테랑 경찰은 이제 모든 총알을 피합니다",
+		["menu_mutator_masterdodger"] = "회피 확률 (% 기준)",
+		["mutator_masterdodger_desc"] = "베테랑 경찰의 회피 확률 배율 (% 기준)",
+		["mutator_masterdodger_longdesc"] = "베테랑 경찰은 이제 모든 총알을 피합니다.",
 
 		["mutator_fullautoinbuilding"] = "광속 사수",
 		["mutator_fullautoinbuilding_desc"] = "타이탄 스나이퍼 및 유사한 스나이퍼들은 이제 근거리에서 소총을 자동 사격합니다.",

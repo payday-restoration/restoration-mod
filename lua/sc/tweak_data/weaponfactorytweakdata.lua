@@ -50106,14 +50106,18 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_pis_p38_mag_extended.stats = {
 			value = 3,
 			concealment = -1,
-			extra_ammo = 4,
+			extra_ammo = 7,
 			reload = -3
 		}
+		self.parts.wpn_fps_pis_p38_mag_extended.custom_stats = { ads_speed_mult = 1.025, movement_speed_add = -0.08 }
 
-		table.insert(self.wpn_fps_pis_p38.uses_parts, "wpn_fps_upg_fl_pis_perst")
 		self.wpn_fps_pis_p38.adds.wpn_fps_upg_fl_pis_perst = {
 			"wpn_fps_pis_p38_rail"
 		}
+		table.insert(self.wpn_fps_pis_p38.uses_parts, "wpn_fps_upg_fl_pis_perst")
+
+		self.wpn_fps_pis_p38_npc.adds = deep_clone(self.wpn_fps_pis_p38.adds)
+		self.wpn_fps_pis_p38_npc.uses_parts = deep_clone(self.wpn_fps_pis_p38.uses_parts)
 	end
 
 --Make more attachments universally available, cartridge mismatching be damned

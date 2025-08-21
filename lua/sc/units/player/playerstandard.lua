@@ -2488,6 +2488,7 @@ function PlayerStandard:_interupt_action_melee(t)
 		self._running_wanted = true
 	end
 end
+
 function PlayerStandard:_start_action_jump(t, action_start_data)
 	--Don't interrupt melee sprinting.
 	if self._running and self:_is_reloading() and not self.RUN_AND_RELOAD and not self._equipped_unit:base():run_and_shoot_allowed() and not self._is_meleeing then
@@ -3500,7 +3501,7 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		end
 	end
 	--Here!
-	if self:_changing_weapon() or self:_is_overheating() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._d_scope_t then
+	if self:_changing_weapon() or self:_is_overheating() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._d_scope_t or (self._is_sliding and not self._equipped_unit:base():run_and_shoot_allowed()) then
 		self._steelsight_wanted = true
 
 		return
@@ -5384,6 +5385,14 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 			self:_check_wallkick(t, dt)
 
 			if self._is_sliding then
+
+				if self._state_data.in_steelsight and not self._equipped_unit:base():run_and_shoot_allowed() then
+					self:_interupt_action_steelsight(t)
+					if self._steelsight_wanted ~= true and self._controller:get_input_bool("secondary_attack") then
+						self._steelsight_wanted = true
+					end
+				end
+
 				if not self._state_data.in_air then
 					-- calculate stamina drain scaling based on current speed vs standard running speed
 					local drain_mult = self._slide_speed/self._sprinting_speed --(self._slide_speed * 1)/self._sprinting_speed

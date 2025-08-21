@@ -95,10 +95,12 @@ function FPCameraPlayerBase:update(unit, t, dt)
 		local in_sight = p_mov._current_state:in_steelsight()
 		local in_full_sight = p_mov._current_state:is_full_steelsight()
 		local in_dash = p_mov._current_state._last_dash_time and (p_mov._current_state._last_dash_time + 0.1) > (t)
+		local in_slide = p_mov._current_state._is_sliding
+		local in_wallrun = p_mov._current_state._is_wallrunning
 		local in_air = p_mov:in_air()
 		local input_axis = p_unit:base():controller():get_input_axis("move")
-		local in_walk = not in_air and mvector3.length(input_axis) ~= 0
-		local in_run = in_walk and p_mov:running()
+		local in_walk = not in_air and (in_wallrun or in_slide or in_dash or mvector3.length(input_axis) ~= 0)
+		local in_run = in_walk and (in_dash or p_mov:running())
 		
 		local deltaT = math.max(dt, .0016)
 		local lp_speed = 16 * deltaT

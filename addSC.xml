@@ -1496,6 +1496,8 @@
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>
 	<unit				path="units/pd2_dlc_osa/weapons/wpn_fps_sho_x_judge/wpn_fps_pis_x_judge" load="false"/>
 	<unit				path="units/pd2_dlc_osa/weapons/wpn_fps_pis_x_rage/wpn_fps_pis_x_rage" load="false"/>
+
+	<unit				path="units/mods/weapons/wpn_fps_pis_p38/wpn_fps_pis_p38" load="false"/>
 	
 	<object				path="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_msr_pts/wpn_fps_snp_msr_ns_suppressor" load="false"/>
 

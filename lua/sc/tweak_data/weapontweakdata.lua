@@ -6919,6 +6919,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_breech.stats_modifiers = nil
 						self.x_breech.panic_suppression_chance = 0.05
 						self.x_breech.reload_speed_multiplier = 1.1
+						self.x_breech.weapon_movement_penalty = 1.10
 						self.x_breech.timers.reload_empty = 3
 						self.x_breech.timers.reload_exit_empty = 1.55
 						self.x_breech.timers.reload_not_empty = 1.8
@@ -24892,6 +24893,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.howa_type89.CLIP_AMMO_MAX = 30
 				self.howa_type89.AMMO_MAX = 150
 				self.howa_type89.CAN_TOGGLE_FIREMODE = true
+				self.howa_type89.BURST_FIRE = {
+					count = 3,
+					delay = 0.18,
+					recoil_mult = 0.8,
+					last_recoil_mult = 1.05
+				}
 				self.howa_type89.FIRE_MODE = "auto"
 				self.howa_type89.kick = {}
 				self.howa_type89.kick = self.stat_info.kick_tables.moderate_right_kick
@@ -31659,7 +31666,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.nothing.stats_modifiers = nil
 				self.nothing.swap_speed_multiplier = 2
-				self.nothing.weapon_movement_penalty = 1.07
+				self.nothing.weapon_movement_penalty = 1.14
 				self.nothing.timers = {
 					reload_not_empty = 0,
 					reload_empty = 0,
@@ -31700,7 +31707,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.nothing2.stats_modifiers = nil
 				self.nothing2.swap_speed_multiplier = 2
-				self.nothing2.weapon_movement_penalty = 1.07
+				self.nothing2.weapon_movement_penalty = 1.14
 				self.nothing2.timers = {
 					reload_not_empty = 0,
 					reload_empty = 0,
@@ -34180,6 +34187,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.p38.stats_modifiers = nil
 			self.p38.panic_suppression_chance = 0.05
+			self.p38.lock_slide = true
+			self.p38.weapon_hold = "colt_1911"
+			self.p38.sounds.fire = "legacy_fire"
 			self.p38.weapon_movement_penalty = 1.08
 			self.p38.timers = deep_clone(self.b92fs.timers)
 		end

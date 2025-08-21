@@ -28,6 +28,201 @@ function FPCameraPlayerBase:init( unit )
 end
 --]]
 
+
+function FPCameraPlayerBase:update(unit, t, dt)
+	if self._tweak_data.aim_assist_use_sticky_aim then
+		self:_update_aim_assist_sticky(t, dt)
+	end
+
+	if _G.IS_VR and self._hmd_tracking and not self._block_input then
+		self._output_data.rotation = self._base_rotation * VRManager:hmd_rotation()
+	end
+
+	if not _G.IS_VR then
+		self._parent_unit:base():controller():get_input_axis_clbk("look", callback(self, self, "_update_rot"))
+	end
+
+	self:_update_stance(t, dt)
+	self:_update_movement(t, dt)
+
+	if managers.player:current_state() ~= "driving" then
+		self._parent_unit:camera():set_position(self._output_data.position)
+		self._parent_unit:camera():set_rotation(self._output_data.rotation)
+	else
+		self:_set_camera_position_in_vehicle()
+	end
+
+	if _G.IS_VR then
+		self:_update_fadeout(self._output_data.mover_position, self._output_data.position, self._output_data.rotation, t, dt)
+		self._parent_unit:camera():update_transform()
+	end
+
+	if self._fov.dirty then
+		self._parent_unit:camera():set_FOV(self._fov.fov)
+
+		self._fov.dirty = nil
+	end
+
+	if alive(self._light) then
+		local weapon = self._parent_unit:inventory():equipped_unit()
+
+		if weapon then
+			local object = weapon:get_object(Idstring("fire"))
+			local pos = object:position() + object:rotation():y() * 10 + object:rotation():x() * 0 + object:rotation():z() * -2
+
+			self._light:set_position(pos)
+			self._light:set_rotation(Rotation(object:rotation():z(), object:rotation():x(), object:rotation():y()))
+			World:effect_manager():move_rotate(self._light_effect, pos, Rotation(object:rotation():x(), -object:rotation():y(), -object:rotation():z()))
+		end
+	end
+
+	--Code originally from "Better Weapon Animations" by return and "Viewmodel Tweaks" by returnho
+	if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmod") then
+		local enable_bob = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodBob")
+		local sway_style = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodSway")
+		local p_unit = self._parent_unit
+		local p_mov = self._parent_movement_ext
+		local p_cam = p_unit:camera()
+		local p_equipped = p_unit:inventory():equipped_unit()
+		local wep_base = p_equipped and p_equipped.base and p_equipped:base()
+
+		if p_mov._current_state == nil then
+			return
+		end
+		
+		local p_rot = unit:rotation()
+
+		local in_sight = p_mov._current_state:in_steelsight()
+		local in_full_sight = p_mov._current_state:is_full_steelsight()
+		local in_dash = p_mov._current_state._last_dash_time and (p_mov._current_state._last_dash_time + 0.1) > (t)
+		local in_air = p_mov:in_air()
+		local input_axis = p_unit:base():controller():get_input_axis("move")
+		local in_walk = not in_air and mvector3.length(input_axis) ~= 0
+		local in_run = in_walk and p_mov:running()
+		
+		local deltaT = math.max(dt, .0016)
+		local lp_speed = 16 * deltaT
+		local t_pi_2 = t * math.pi * 2
+
+		-----------------------------------------------------------------------------------------------------------------------------
+		-----------------------------------------------------------------------------------------------------------------------------
+
+		-- VM Tweaks
+
+		previousFrequency = previousFrequency or {}
+		phaseOffset = phaseOffset or {}
+
+		local function getWaveValue(frequency, socket)
+			previousFrequency[socket] = previousFrequency[socket] or 0
+			phaseOffset[socket] = phaseOffset[socket] or 0
+
+			if frequency ~= previousFrequency[socket] then
+				phaseOffset[socket] = phaseOffset[socket] + (previousFrequency[socket] - frequency) * t * math.pi * 2
+				previousFrequency[socket] = frequency
+			end
+			return t * frequency * math.pi * 2 + phaseOffset[socket]
+		end
+
+		-----------------------------------------------------------------------------------------------------------------------------
+
+		local mov_lp_speed = deltaT * 5.5
+		local run_mul = in_run and 1.65 or 1
+		--disabled viewbob for walking and running for now as it doesn't play nice with camera viewbob
+		local mov_mul = (enable_bob and (in_sight and 0.15)) or 0 --(in_run and 3.65 or 1.75)
+
+		mov_pos = mov_pos or Vector3()
+		mov_ang = mov_ang or Rotation()
+
+		mrotation.slerp(mov_ang, mov_ang, in_walk and Rotation(math.cos(getWaveValue(64 * run_mul, 1)) * mov_mul, math.sin(getWaveValue(128 * run_mul, 2)) * mov_mul, math.sin(getWaveValue(64 * run_mul, 1)) * mov_mul) or Rotation(), mov_lp_speed)
+
+		-----------------------------------------------------------------------------------------------------------------------------
+
+		look_pos = look_pos or Vector3()
+
+		mvector3.lerp(look_pos, look_pos, (not in_sight) and Vector3(0, 0, -unit:rotation():pitch() / 48) or Vector3(), lp_speed)
+		
+		-----------------------------------------------------------------------------------------------------------------------------
+
+		--Added a slight downward offset on the viewmodel when moving
+		--Added a speed-up to re-center when in the process of aiming
+		local tilt_lp_speed = deltaT * 5.5
+
+		tilt_pos = tilt_pos or Vector3()
+		tilt_ang = tilt_ang or Rotation()
+		mvector3.lerp(tilt_pos, tilt_pos, (not in_air) and Vector3((not in_sight and 16 or 0.5) * input_axis.x / 16, 0, ((not in_sight and 2.25 or 0.4) * input_axis.x / 2) + -math.abs(((in_walk and 1.15 or 0) * (in_run and 1.5 or 1)) * (not in_sight and 2 or 0))) or Vector3(), tilt_lp_speed * ((in_sight and not in_full_sight and 4) or 1))
+		mrotation.slerp(tilt_ang, tilt_ang, (not in_air) and Rotation(0, 0, (not in_sight and 2.25 or 0.5) * input_axis.x * 2.625 * (in_run and 2 or 1))  or Rotation(), tilt_lp_speed * ((in_sight and not in_full_sight and 4) or 1))
+		
+		-----------------------------------------------------------------------------------------------------------------------------
+
+		--Greatly reduced jump wobble
+		--Add AdvMov dashing as an additionl exception to the stronger jump wobble
+		local jump_lp_speed = deltaT * 8
+		local z_vel = p_unit:velocity().z / 5
+
+		z_last_vel = (in_dash and 0) or z_last_vel or 0
+		jump_wobble = (in_dash and 0) or jump_wobble or 0
+		invert_jump_wobble = invert_jump_wobble or 0
+
+		jump_pos = jump_pos or Vector3()
+
+		invert_jump_wobble = math.lerp(invert_jump_wobble, jump_wobble, jump_lp_speed) * (in_dash and 0 or 1)
+		jump_wobble = math.lerp(jump_wobble, (z_last_vel - z_vel) + (jump_wobble - invert_jump_wobble), jump_lp_speed) * (in_dash and 0 or 1)
+		mvector3.lerp(jump_pos, jump_pos, Vector3(0, 0, ((not in_sight and 0.2 or 0.05) * jump_wobble) * (in_dash and 0 or 1)) / (deltaT * 100), jump_lp_speed * 4)
+
+		z_last_vel = z_vel
+
+		-----------------------------------------------------------------------------------------------------------------------------
+
+		--If look-sway drag is enabled, have weapon movement penalty contribute to how far the weapon drags behind
+		local sway_lp_speed = deltaT * 16
+
+		last_p_rot = last_p_rot or Rotation()
+
+		local p_rot_diff = Rotation(p_rot:yaw() - last_p_rot:yaw(), p_rot:pitch() - last_p_rot:pitch(), p_rot:roll() - last_p_rot:roll())
+		local sway_range = (not in_sight and 0.45 or 0.035) * ((sway_style and -1) or 1)
+		sway_range = sway_range / (((sway_style and wep_base) and math.min(wep_base._movement_penalty, 1)) or 1)
+		p_rot_diff_yaw = p_rot_diff_yaw and math.clamp(p_rot_diff:yaw(), -5, 5) * sway_range or 0
+		p_rot_diff_pitch = p_rot_diff_pitch and math.clamp(p_rot_diff:pitch(), -5, 5) * sway_range or 0
+
+		sway_yaw = sway_yaw or 0
+		invert_sway_yaw = invert_sway_yaw and math.lerp(invert_sway_yaw, sway_yaw, sway_lp_speed) or 0
+		sway_yaw = math.lerp(sway_yaw, p_rot_diff_yaw + (sway_yaw - invert_sway_yaw), sway_lp_speed)
+
+		sway_pitch = sway_pitch or 0
+		invert_sway_pitch = invert_sway_pitch and math.lerp(invert_sway_pitch, sway_pitch, sway_lp_speed) or 0
+		sway_pitch = math.lerp(sway_pitch, p_rot_diff_pitch + (sway_pitch - invert_sway_pitch), sway_lp_speed)
+
+		last_p_rot = p_rot
+
+		sway_pos = sway_pos or Vector3()
+		mvector3.lerp(sway_pos, sway_pos, Vector3(sway_yaw / 2, -sway_yaw / 2, -sway_pitch / 4), sway_lp_speed)
+
+		sway_ang = sway_ang or Rotation()
+		mrotation.slerp(sway_ang, sway_ang, Rotation(sway_yaw * 2, sway_pitch * 2, 0), sway_lp_speed)
+
+		-----------------------------------------------------------------------------------------------------------------------------
+
+		local wall_lp_speed = deltaT * 8
+		wall_pos = wall_pos or Vector3()
+
+		if p_equipped then
+			local from = p_cam:position() + p_cam:forward()
+			local to = p_cam:position() + p_cam:forward() * 100
+
+			local ray = self._unit:raycast("ray", from, to, "slot_mask", managers.slot:get_mask("bullet_impact_targets"))
+
+			--Added snippet to disable the pushback effect while ADS to remove camera clipping
+			mvector3.lerp(wall_pos, wall_pos, ray and (-math.Y * (10 - ((in_sight and 100) or ray.distance) / 10)) or Vector3(), wall_lp_speed)
+		end
+
+		-----------------------------------------------------------------------------------------------------------------------------
+
+		mvector3.set(self._vel_overshot.translation, mov_pos + look_pos + tilt_pos + jump_pos + sway_pos + wall_pos)
+		mrotation.set_zero(self._vel_overshot.rotation)
+		mrotation.multiply(self._vel_overshot.rotation, mov_ang * tilt_ang * sway_ang)
+	end
+end
+
 --Add limit constraints to recoil, to allow for recoil to occur with a bipod.
 function FPCameraPlayerBase:_update_movement(t, dt)
 	local data = self._camera_properties

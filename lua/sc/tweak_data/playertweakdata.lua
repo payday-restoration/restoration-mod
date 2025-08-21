@@ -425,8 +425,8 @@ local pivot_head_rotation
 
 local default_new_stances = PlayerTweakData._init_new_stances
 function PlayerTweakData:_init_new_stances()
-	default_new_stances(self)
 	self:_init_bessy()
+	default_new_stances(self)
 	--Ak5
 	pivot_shoulder_translation = Vector3(10.6877, 15.6166, -2.8033)
 	pivot_shoulder_rotation = Rotation(0.106298, -0.085067, 0.62852)
@@ -840,6 +840,16 @@ Hooks:PostHook(PlayerTweakData, "_init_new_stances", "resmodviwemodeldrag", func
 					self.stances[ wep_id ].steelsight.vel_overshot.yaw_pos = 0
 					self.stances[ wep_id ].steelsight.vel_overshot.pitch_neg = 0
 					self.stances[ wep_id ].steelsight.vel_overshot.pitch_pos = 0
+				end
+			end
+			if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmod") then
+				for stance_id, v in pairs(self.stances[ wep_id ]) do
+					if stance_id == "standard" or stance_id == "crouched" or stance_id == "steelsight" then
+						self.stances[ wep_id ][ stance_id ].vel_overshot.yaw_neg = 0
+						self.stances[ wep_id ][ stance_id ].vel_overshot.yaw_pos = 0
+						self.stances[ wep_id ][ stance_id ].vel_overshot.pitch_neg = 0
+						self.stances[ wep_id ][ stance_id ].vel_overshot.pitch_pos = 0
+					end
 				end
 			end
 		end

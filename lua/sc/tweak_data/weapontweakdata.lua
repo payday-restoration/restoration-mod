@@ -19116,6 +19116,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ks23.descope_on_fire = true
 				self.ks23.panic_suppression_chance = 0.05
 				self.ks23.stats_modifiers = nil
+				self.ks23.sounds.stop_fire = "saiga_stop"
 				self.ks23.timers.unequip = 0.6
 				self.ks23.timers.equip = 1
 				self.ks23.timers.shotgun_reload_first_shell_offset = 0.45
@@ -19639,6 +19640,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sks.can_shoot_through_enemy = false
 				self.sks.ignore_reload_objects_not_empty = true
 				self.sks.panic_suppression_chance = 0.05
+				self.sks.sounds.stop_fire = "akm_stop"
 				--mag timers
 				--[[
 				self.sks.timers.reload_empty = 3.03
@@ -24880,6 +24882,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.howa_type89 then --AR-18 but Japanese
+				self.howa_type89.categories = { "assault_rifle" }
+				self.howa_type89.recategorize = { "light_ar" }
+				self.howa_type89.damage_type = "assault_rifle"
+				self.howa_type89.nato = true
+				self.howa_type89.tactical_reload = 1
+				self.howa_type89.fire_mode_data.fire_rate = 0.08
+				self.howa_type89.CLIP_AMMO_MAX = 30
+				self.howa_type89.AMMO_MAX = 150
+				self.howa_type89.CAN_TOGGLE_FIREMODE = true
+				self.howa_type89.FIRE_MODE = "auto"
+				self.howa_type89.kick = {}
+				self.howa_type89.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.howa_type89.kick_pattern = {
+					{0, self.stat_info.kick_tables.left_recoil},
+					{4, self.stat_info.kick_tables.moderate_kick},
+					{8, self.stat_info.kick_tables.left_recoil},
+					{12, self.stat_info.kick_tables.moderate_kick},
+					{19, self.stat_info.kick_tables.right_recoil}
+                }
+				self.howa_type89.supported = true
+				self.howa_type89.ads_speed = 0.320
+				self.howa_type89.damage_falloff = {
+					start_dist = 2100,
+					end_dist = 6400,
+					min_mult = 0.5
+				}
+				self.howa_type89.stats = {
+					damage = 24,
+					spread = 82,
+					recoil = 79,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.howa_type89.stats_modifiers = nil
+				self.howa_type89.panic_suppression_chance = 0.05
+				self.howa_type89.reload_speed_multiplier = 1
+				self.howa_type89.timers = deep_clone(self.ak5.timers)
+			end
+
 			if self.howa_type20 then --ACR but Japanese
 				self.howa_type20.categories = { "assault_rifle" }
 				self.howa_type20.recategorize = { "light_ar" }
@@ -25040,6 +25089,48 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.morita.timers.reload_exit_empty = 0.82
 				self.morita.timers.reload_not_empty = 2.22
 				self.morita.timers.reload_exit_not_empty = 0.63
+			end
+
+			if self.mas38 then
+				self.mas38.categories = { "smg" }
+				self.mas38.recategorize = { "light_smg" }
+				self.mas38.damage_type = "machine_gun"
+				self.mas38.fire_mode_data.fire_rate = 0.1
+				self.mas38.CAN_TOGGLE_FIREMODE = true
+				self.mas38.tactical_reload = 1
+				self.mas38.CLIP_AMMO_MAX = 32
+				self.mas38.AMMO_MAX = 60
+				self.mas38.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.mas38.kick_pattern = {
+					{0, self.stat_info.kick_tables.horizontal_recoil},
+					{7, self.stat_info.kick_tables.right_recoil},
+					{12, self.stat_info.kick_tables.moderate_right_kick},
+					{19, self.stat_info.kick_tables.left_recoil}
+				}
+				self.mas38.supported = true
+				self.mas38.ads_speed = 0.240
+				self.mas38.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3200,
+					min_mult = 0.25
+				}
+				self.mas38.stats = {
+					damage = 30,
+					spread = 61,
+					recoil = 85,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 28,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.mas38.stats_modifiers = nil
+				self.mas38.panic_suppression_chance = 0.05
+				self.mas38.timers = deep_clone(self.tec9.timers)
 			end
 
 			if self.tribune32 then
@@ -26698,6 +26789,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cp2077_guts.stats_modifiers = nil
 				self.cp2077_guts.reload_speed_multiplier = 0.95
 				self.cp2077_guts.panic_suppression_chance = 0.05
+				self.cp2077_guts.sounds.stop_fire = "saiga_stop"
 				self.cp2077_guts.timers.shotgun_reload_exit_not_empty = 0.5
 				self.cp2077_guts.timers.shotgun_reload_exit_empty = 0.77
 				self.cp2077_guts.timers.shotgun_reload_first_shell_offset = 0.25
@@ -29802,6 +29894,58 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_toz81.timers = deep_clone(self.x_judge.timers)
 			end
 
+			if self.fsa12 then
+				self.fsa12.recategorize = { "light_shot" }
+				self.fsa12.categories = { "shotgun" }
+				self.fsa12.damage_type = "shotgun"
+				self.fsa12.damage_type_single_ray = "sniper"
+				self.fsa12.tactical_reload = 1
+				self.fsa12.CLIP_AMMO_MAX = 7
+				self.fsa12.fire_mode_data.fire_rate = 0.2
+				self.fsa12.AMMO_MAX = 60
+				self.fsa12.kick = self.stat_info.kick_tables.left_recoil
+				self.fsa12.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{3, self.stat_info.kick_tables.left_recoil},
+					{8, self.stat_info.kick_tables.moderate_left_kick},
+					{11, self.stat_info.kick_tables.even_recoil}
+				}
+				self.fsa12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.fsa12.CAN_TOGGLE_FIREMODE = false
+				self.fsa12.FIRE_MODE = "single"
+				self.fsa12.rays = 8
+				self.fsa12.supported = true
+				self.fsa12.ads_speed = 0.340
+				self.fsa12.damage_falloff = {
+					start_dist = 600,
+					end_dist = 2300,
+					min_mult = 0.15
+				}
+				self.fsa12.stats = {
+					damage = 120,
+					spread = 21,
+					recoil = 35,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.fsa12.stats_modifiers = nil
+				self.fsa12.panic_suppression_chance = 0.05
+				self.fsa12.sounds.stop_fire = "saiga_stop"
+				self.fsa12.reload_speed_multiplier = 1
+				self.fsa12.reload_not_empty_speed_multiplier = 1.1
+				self.fsa12.timers.reload_not_empty = 1.7
+				self.fsa12.timers.reload_exit_not_empty = 1.5
+				self.fsa12.timers.reload_empty = 2.2
+				self.fsa12.timers.reload_exit_empty = 0.9
+			end
+
 			if self.bp12 then
 				self.bp12.recategorize = { "light_shot" }
 				self.bp12.categories = { "shotgun" }
@@ -31678,6 +31822,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sasha.reload_speed_multiplier = 2
 				self.sasha.sounds.spin_start = "turret_spin_start"
 				self.sasha.sounds.spin_end = "turret_spin_stop"
+			end
+
+			-- spy has a gun
+			if self.tf2_revolver then
+				self.tf2_revolver.recategorize = {"heavy_pis", "handcannon"}
+				self.tf2_revolver.has_description = true
+				self.tf2_revolver.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.tf2_revolver.CLIP_AMMO_MAX = 6
+				self.tf2_revolver.AMMO_MAX = 30
+				self.tf2_revolver.fire_mode_data.fire_rate = 0.5
+				self.tf2_revolver.no_auto_anims = true
+				self.tf2_revolver.FIRE_MODE = "auto"	-- all tf2 weapons technically are
+				self.tf2_revolver.kick = self.stat_info.kick_tables.moderate_kick
+				self.tf2_revolver.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{2, self.stat_info.kick_tables.vertical_kick},
+					{4, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.tf2_revolver.supported = true
+				self.tf2_revolver.ads_speed = 0.200
+				self.tf2_revolver.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 3600,
+					min_mult = 0.3333
+				}
+				self.tf2_revolver.stats = {
+					damage = 60,
+					spread = 86,
+					recoil = 51,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.tf2_revolver.stats_modifiers = nil
+				self.tf2_revolver.panic_suppression_chance = 0.05
+				self.tf2_revolver.armor_piercing_chance = 0.5
+				self.tf2_revolver.can_shoot_through_enemy = true
+				self.tf2_revolver.can_shoot_through_enemy_unlim = true
+				self.tf2_revolver.sounds.fire_single = "tf2_revolver_fire"
+				self.tf2_revolver.sounds.fire_auto = "tf2_revolver_fire"
+				self.tf2_revolver.timers = deep_clone(self.chinchilla.timers)
 			end
 
 		--Predator Pack

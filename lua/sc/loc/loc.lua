@@ -210,7 +210,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 			["RestorationModWEAPONANIMSOptionsButtonDescID"] = "Options for weapon viewmodels and animations",
 					["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
 					["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming; overrides the \"Viewmodel Movement\" setting when enabled. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
-					["RestorationModBigScopeOffsetTitleID"] = "\"big Scope\" Viewmodel Offset",
+					["RestorationModBigScopeOffsetTitleID"] = "\"Big Scope\" Viewmodel Offset",
 					["RestorationModBigScopeOffsetDescID"] = "Slightly tilts and shifts hipfire viewmoodels down and to the right when using large optics to reduce visual obstructions.",
 					["RestorationModViewmodelMovementTitleID"] = "Viewmodel Movement",
 					["RestorationModViewmodelMovementDescID"] = "Choose how your weapons' viewmodel moves on screen as you look around; ADS movement is overridden by the \"No Weapon Movement While ADS\" setting if enabled. Requires restart.",
@@ -218,6 +218,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 						["vm_drag"] = "Weapon Drags Behind",
 						["vm_lead"] = "Weapon Leads Ahead",
 						["vm_static"] = "Static (No Movement)",
+					["RestorationModBWAResmodTitleID"] = "\"Better Weapon Animations\" Viewmodel Movement",
+					["RestorationModBWAResmodDescID"] = "Enable a custom version of Return's \"Better Weapon Animations\" viewmodel movement. Overrides the movement settings above. Requires a restart to take full effect.",
+					["RestorationModBWAResmodBobTitleID"] = "ADS Viewbob",
+					["RestorationModBWAResmodBobDescID"] = "Enable viewbob when moving while ADS.",
+					["RestorationModBWAResmodSwayTitleID"] = "Viewmodel Look-sway Drag",
+					["RestorationModBWAResmodSwayDescID"] = "Enable to have the weapon drag behind your look movement",
 					["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
 					["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers).",
 					["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
@@ -5439,6 +5445,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_no_outlines_longdesc"] = "Majority of outlines are disabled as well as name labels above players/bots.",
 		["menu_mutator_no_outlines_enemies_toggle"] = "Disable Enemy Outlines",
 		["menu_mutator_no_outlines_objectives_toggle"] = "Disable Highlight Outlines (except escort)",
+		
+		["mutator_no_ammo_drops"] = "Ammo Deficiency",
+		["menu_mutator_ammo_drop_chance"] = "Ammo Drop Chance (in %)",
+		["menu_mutator_ammo_drop_chance_ingame"] = "Ammo Drop Chance",
+		["menu_mutator_no_ammo_drops"] = "No Ammo Drops",
+		["mutator_no_ammo_drops_desc"] = "Change the ammo pickup drop chance or disable them outright.",
+		["mutator_no_ammo_drops_longdesc"] = "Change the ammo pickup drop chance or disable them outright.",
 
 
 		["mutator_spawn_mult"] = "Amplified Response",
@@ -5552,8 +5565,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_crazytaser_longdesc"] = "Taser units no longer have an aim delay when attempting to stun players.\n\nNote: Normal cooldowns between attempts still apply.",
 
 		["mutator_masterdodger"] = "Dodge This!",
-		["mutator_masterdodger_desc"] = "Veteran Cops now dodge all bullets.",
-		["mutator_masterdodger_longdesc"] = "Veteran Cops now dodge all bullets.",
+		["menu_mutator_masterdodger"] = "Dodge Chance (in %)",
+		["mutator_masterdodger_desc"] = "Veteran Cop Dodge Chance value (in %).",
+		["mutator_masterdodger_longdesc"] = "Veteran Cops can now dodge bullets.",
 
 		["mutator_fullautoinbuilding"] = "Rabid Shooters",
 		["mutator_fullautoinbuilding_desc"] = "Titan Snipers and their equivalents will now fire their rifles on full auto at close range.",

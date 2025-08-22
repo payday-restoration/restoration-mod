@@ -17520,14 +17520,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vsk94.has_description = true
 				self.vsk94.fire_mode_data.fire_rate = 0.08571428
 				self.vsk94.auto.fire_rate = 0.08571428
-				self.vsk94.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.vsk94.kick = self.stat_info.kick_tables.moderate_kick
 				self.vsk94.kick_pattern = {
 					{0, self.stat_info.kick_tables.moderate_kick},
 					{4, self.stat_info.kick_tables.right_kick},
 					{6, self.stat_info.kick_tables.right_recoil},
 					{7, self.stat_info.kick_tables.right_kick},
-					{11, self.stat_info.kick_tables.vertical_kick},
-					{12, self.stat_info.kick_tables.right_kick}
+					{11, self.stat_info.kick_tables.moderate_kick},
+					{16, self.stat_info.kick_tables.right_recoil}
 				}
 				self.vsk94.supported = true
 				self.vsk94.ads_speed = 0.280
@@ -17539,8 +17539,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.vsk94.stats = {
 					damage = 45,
-					spread = 65,
-					recoil = 75,
+					spread = 69,
+					recoil = 67,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 29,
@@ -21500,6 +21500,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.sr3m then
+				self.sr3m.categories = {
+					"assault_rifle",
+					"dmr_l",
+				}
 				self.sr3m.warsaw = true
 				self.sr3m.recategorize = { "dmr_ar" }
 				self.sr3m.damage_type = "assault_rifle"
@@ -21510,14 +21514,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sr3m.has_description = true
 				self.sr3m.fire_mode_data.fire_rate = 0.06666666666
 				self.sr3m.auto.fire_rate = 0.06666666666
-				self.sr3m.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.sr3m.kick = self.stat_info.kick_tables.moderate_kick
 				self.sr3m.kick_pattern = {
 					{0, self.stat_info.kick_tables.moderate_kick},
 					{4, self.stat_info.kick_tables.right_kick},
 					{6, self.stat_info.kick_tables.right_recoil},
 					{7, self.stat_info.kick_tables.right_kick},
-					{11, self.stat_info.kick_tables.vertical_kick},
-					{12, self.stat_info.kick_tables.right_kick}
+					{11, self.stat_info.kick_tables.moderate_kick},
+					{16, self.stat_info.kick_tables.right_recoil}
 				}
 				self.sr3m.supported = true
 				self.sr3m.ads_speed = 0.320
@@ -21529,7 +21533,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sr3m.stats = {
 					damage = 45,
-					spread = 72,
+					spread = 74,
 					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,

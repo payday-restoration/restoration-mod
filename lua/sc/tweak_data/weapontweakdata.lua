@@ -24883,6 +24883,58 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.ak15 then
+				self.ak15.warsaw = true
+				self.ak15.recategorize = { "heavy_ar" }
+				self.ak15.damage_type = "assault_rifle"
+				self.ak15.tactical_reload = 1
+				self.ak15.CLIP_AMMO_MAX = 30
+				self.ak15.AMMO_MAX = 120
+				self.ak15.fire_mode_data.fire_rate = 0.08571428
+				self.ak15.BURST_FIRE = {
+					count = 2,
+					delay = 0.15,
+					rof_mult = 1.07142,
+					recoil_mult = 0.4,
+					last_recoil_mult = 1.05
+				}
+				self.ak15.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.ak15.kick_pattern = {
+					{0, self.stat_info.kick_tables.left_recoil},
+					{6, self.stat_info.kick_tables.moderate_kick},
+					{10, self.stat_info.kick_tables.right_recoil},
+					{14, self.stat_info.kick_tables.moderate_kick},
+					{22, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.ak15.supported = true
+				self.ak15.ads_speed = 0.340
+				self.ak15.damage_falloff = {
+					start_dist = 1900,
+					end_dist = 4800,
+					min_mult = 0.6
+				}
+				self.ak15.stats = {
+					damage = 30,
+					spread = 81,
+					recoil = 67,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.ak15.stats_modifiers = nil
+				self.ak15.panic_suppression_chance = 0.05
+				self.ak15.timers.reload_empty = 3.1
+				self.ak15.timers.reload_exit_empty = 1.08
+				self.ak15.timers.reload_not_empty = 2.05
+				self.ak15.timers.reload_exit_not_empty = 1.2
+			end
+
 			if self.howa_type89 then --AR-18 but Japanese
 				self.howa_type89.categories = { "assault_rifle" }
 				self.howa_type89.recategorize = { "light_ar" }
@@ -29488,6 +29540,50 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     HYLIE'S MODS     ]]--
+
+			if self.ak19 then
+				self.ak19.nato = true
+				self.ak19.recategorize = { "light_ar" }
+				self.ak19.damage_type = "assault_rifle"
+				self.ak19.tactical_reload = 1
+				self.ak19.CLIP_AMMO_MAX = 30
+				self.ak19.AMMO_MAX = 150
+				self.ak19.fire_mode_data.fire_rate = 0.08571428
+				self.ak19.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.ak19.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{6, self.stat_info.kick_tables.moderate_left_kick},
+					{10, self.stat_info.kick_tables.moderate_kick},
+					{12, self.stat_info.kick_tables.moderate_right_kick},
+					{18, self.stat_info.kick_tables.moderate_kick},
+					{22, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.ak19.supported = true
+				self.ak19.ads_speed = 0.320
+				self.ak19.damage_falloff = {
+					start_dist = 2500,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.ak19.stats = {
+					damage = 24,
+					spread = 82,
+					recoil = 77,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.ak19.stats_modifiers = nil
+				self.ak19.panic_suppression_chance = 0.05
+				self.ak19.timers.reload_exit_empty = 0.8
+				self.ak19.timers.reload_exit_not_empty = 1.4
+			end
 
 			if self.m1918 then --RAID WW2 BAR
 				self.m1918.categories = {
@@ -34156,6 +34252,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"pistol",
 			}
 			self.p38.fire_mode_data.fire_rate = 0.0882352
+			self.p38.tactical_reload = 1
 			self.p38.CLIP_AMMO_MAX = 8
 			self.p38.AMMO_MAX = 60
 			self.p38.kick = self.stat_info.kick_tables.left_kick

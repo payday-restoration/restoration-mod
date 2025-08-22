@@ -19651,6 +19651,11 @@ end)
 						translation = Vector3(-0.013, 3, -3.48),
 						rotation = Rotation(0.01, -0.05, 0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ak19 = {
+						translation = Vector3(-0.055, -15.4, -2.7),
+						rotation = Rotation(-0.05, -0.06, -0.6)
+					}
+
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_s556 = {
 						translation = Vector3(-0.065, 9.6, -2.1),
@@ -19694,6 +19699,11 @@ end)
 						translation = Vector3(0, -2.7, -0.068),
 						rotation = Rotation(-0.008, -0.066, 0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ak15 = {
+						translation = Vector3(0, -5.6, -2.67),
+						rotation = Rotation(0, 0, 0)
+					}
+
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_dd5 = {
 						translation = Vector3(0.04, 4, -0.17)
@@ -27592,9 +27602,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			end
 
-
-
 	--[[ RJC9000'S MODS ]]
+
+		if self.parts.wpn_fps_ass_ak15_irons then
+			self.parts.wpn_fps_ass_ak15_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_ak15_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_ak15_flash_hider.perks = nil
+
+			self.parts.wpn_fps_ass_ak15_irons.stance_mod = {
+				wpn_fps_ass_ak15 = {
+					translation = Vector3(-0.01, -9, -0.1),
+					rotation = Rotation(0, 0, 0)
+				}
+			}
+
+			self.parts.wpn_fps_ass_ak15_barrel_short.supported = true
+			self.parts.wpn_fps_ass_ak15_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_ak15_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+		end
 
 		if self.parts.wpn_fps_ass_howa_type89_bolt then
 			self.parts.wpn_fps_ass_howa_type89_barrel.stats = { value = 0 }
@@ -38413,7 +38438,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			end
 
-
 	--[[ CARL'S MODS ]]
 
 		if self.parts.wpn_fps_ass_l1a1_mag_big then
@@ -38530,7 +38554,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_tilt_stock_none.stats = deep_clone(stocks.remove_folder_stats)
 			self.parts.wpn_fps_ass_tilt_stock_none.custom_stats = deep_clone(stocks.remove_folder_stats)
 		end
-
 
 	--[[ ZDANN'S MODS ]]
 
@@ -40835,6 +40858,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ HYLIE'S MODS ]]
+
+		if self.parts.wpn_fps_ass_ak19_o_std then
+			self.parts.wpn_fps_ass_ak19_o_std.stance_mod = {
+				wpn_fps_ass_ak19 = {
+					translation = Vector3(-0.08, -19, -0.18),
+					rotation = Rotation(0, 0, -1)
+				}
+			}
+
+			self.parts.wpn_fps_ass_ak19_b_cqb.supported = true
+			self.parts.wpn_fps_ass_ak19_b_cqb.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_ak19_b_cqb.custom_stats = deep_clone(barrels.short_b2_stats)
+
+			self.parts.wpn_fps_ass_ak19_s_folded.supported = true
+			self.parts.wpn_fps_ass_ak19_s_folded.stats = deep_clone(stocks.adj_to_folded_stats)
+			self.parts.wpn_fps_ass_ak19_s_folded.stats.value = 0
+			self.parts.wpn_fps_ass_ak19_s_folded.custom_stats = deep_clone(stocks.adj_to_folded_stats)
+			self.parts.wpn_fps_ass_ak19_s_retracted.supported = true
+			self.parts.wpn_fps_ass_ak19_s_retracted.stats = deep_clone(stocks.adj_hvy_rec_stats)
+			self.parts.wpn_fps_ass_ak19_s_retracted.stats.value = 0
+			self.parts.wpn_fps_ass_ak19_s_retracted.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+
+			self.parts.wpn_fps_ass_ak19_m_banana.supported = true
+			self.parts.wpn_fps_ass_ak19_m_banana.stats = { value = 4, concealment = -1, recoil = 2}
+			self.parts.wpn_fps_ass_ak19_m_banana.custom_stats = nil
+			self.parts.wpn_fps_ass_ak19_m_classic.supported = true
+			self.parts.wpn_fps_ass_ak19_m_classic.stats = { value = 2, concealment = 1, recoil = -2}
+			self.parts.wpn_fps_ass_ak19_m_classic.custom_stats = nil
+		end
 
 		if self.parts.wpn_fps_sho_fsa12_b_ext then
 			self.parts.wpn_fps_sho_fsa12_b_ext.supported = true

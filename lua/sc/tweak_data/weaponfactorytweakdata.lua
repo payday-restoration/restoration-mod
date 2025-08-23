@@ -19705,6 +19705,9 @@ end)
 					}
 
 
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_vsk_94 = {
+						translation = Vector3(0.06, -22, -2.99)
+					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_dd5 = {
 						translation = Vector3(0.04, 4, -0.17)
 					}
@@ -40858,6 +40861,52 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ HYLIE'S MODS ]]
+
+		if self.parts.wpn_fps_ass_vsk94_ns_silencer then
+			self.parts.wpn_fps_ass_vsk94_ns_silencer.supported = true
+			self.parts.wpn_fps_ass_vsk94_ns_silencer.stats = { alert_size = -1, suppression = 12 }
+			self.parts.wpn_fps_ass_vsk94_ns_silencer.custom_stats = nil
+			self.parts.wpn_fps_ass_vsk94_ns_nosilencer.supported = true
+			self.parts.wpn_fps_ass_vsk94_ns_nosilencer.stats = { value = 0 }
+			self.parts.wpn_fps_ass_vsk94_ns_nosilencer.custom_stats = nil
+
+			self.parts.wpn_fps_ass_vsk94_fg_9a91.supported = true
+			self.parts.wpn_fps_ass_vsk94_fg_9a91.stats = {
+				value = 2,
+				recoil = 2,
+				concealment = -1
+			}
+
+			self.parts.wpn_fps_ass_vsk94_m_asval.supported = true
+			self.parts.wpn_fps_ass_vsk94_m_asval.stats = {
+				value = 2,
+				recoil = 2,
+				concealment = -1
+			}
+
+			self.parts.wpn_fps_ass_vsk94_s_9a91.supported = true
+			self.parts.wpn_fps_ass_vsk94_s_9a91.stats = {
+				value = 6,
+				spread = -2,
+				recoil = -8,
+				concealment = 6
+			}
+			self.parts.wpn_fps_ass_vsk94_s_9a91.custom_stats = {
+				ads_speed_mult = 0.85
+			}
+
+			self.parts.wpn_fps_ass_vsk94_o_pso1.supported = true
+			self.parts.wpn_fps_ass_vsk94_o_pso1.desc_id = "bm_wp_upg_o_4"
+			self.parts.wpn_fps_ass_vsk94_o_pso1.stats = { value = 3, zoom = 30 }
+			self.parts.wpn_fps_ass_vsk94_o_pso1.custom_stats = { big_scope = true }
+			self.parts.wpn_fps_ass_vsk94_o_pso1.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_ass_vsk94_o_pso1.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(1.31, 45, -0.5)
+					weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(0, 0, 1.25)
+				end
+			end
+		end
 
 		if self.parts.wpn_fps_ass_ak19_o_std then
 			self.parts.wpn_fps_ass_ak19_o_std.stance_mod = {

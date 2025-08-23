@@ -29550,6 +29550,56 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.vsk_94 then
+				self.vsk_94.warsaw = true
+				self.vsk_94.categories = {
+					"assault_rifle",
+					"dmr_l",
+				}
+				self.vsk_94.recategorize = { "dmr_ar" }
+				self.vsk_94.damage_type = "assault_rifle"
+				self.vsk_94.CLIP_AMMO_MAX = 20
+				self.vsk_94.tactical_reload = 1
+				self.vsk_94.AMMO_MAX = 80
+				self.vsk_94.desc_id = "bm_ap_armor_25_weapon_sc_desc"
+				self.vsk_94.has_description = true
+				self.vsk_94.fire_mode_data.fire_rate = 0.08571428
+				self.vsk_94.kick = self.stat_info.kick_tables.moderate_kick
+				self.vsk_94.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{4, self.stat_info.kick_tables.right_kick},
+					{6, self.stat_info.kick_tables.right_recoil},
+					{7, self.stat_info.kick_tables.right_kick},
+					{11, self.stat_info.kick_tables.moderate_kick},
+					{16, self.stat_info.kick_tables.right_recoil}
+				}
+				self.vsk_94.supported = true
+				self.vsk_94.ads_speed = 0.320
+				self.vsk_94.armor_piercing_chance = 0.25
+				self.vsk_94.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 3600,
+					min_mult = 0.53333
+				}
+				self.vsk_94.stats = {
+					damage = 45,
+					spread = 71,
+					recoil = 75,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.vsk_94.stats_modifiers = nil
+				self.vsk_94.panic_suppression_chance = 0.05
+				self.vsk_94.timers = deep_clone(self.asval.timers)
+			end
+
 			if self.ak19 then
 				self.ak19.nato = true
 				self.ak19.recategorize = { "light_ar" }

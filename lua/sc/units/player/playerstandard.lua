@@ -1858,6 +1858,9 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	end
 
 	local final_speed = movement_speed * multiplier
+	if speed_state == "crouch" then
+		final_speed = math.min(final_speed, speed_tweak.STANDARD_MAX)
+	end
 	self._cached_final_speed = self._cached_final_speed or 0
 
 	if final_speed ~= self._cached_final_speed then

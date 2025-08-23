@@ -10732,7 +10732,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						value = 9,
 						reload = 20
 					}
-					self.m134.stats_modifiers = {}
+					self.m134.stats_modifiers = nil
 					self.m134.jab_range = 50
 					self.m134.ads_spool = true
 					self.m134.spin_up_anims = true
@@ -11707,6 +11707,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.groza.stats_modifiers = nil
+						self.groza.has_underbarrel = true
 						self.groza.reload_speed_multiplier = 1
 						if SystemFS:exists("assets/mod_overrides/Groza Animation Overhaul") then
 							self.groza.timers.reload_empty = 2.55
@@ -12165,6 +12166,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							value = 1,
 							reload = 20
 						}
+						self.contraband.has_underbarrel = true
 						self.contraband.stats_modifiers = nil
 						self.contraband.panic_suppression_chance = 0.05
 						self.contraband.can_shoot_through_enemy = false
@@ -19577,6 +19579,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
+				self.xeno.has_underbarrel = true
 				self.xeno.stats_modifiers = nil
 				self.xeno.armor_piercing_chance = 0.25
 				self.xeno.can_shoot_through_enemy = false
@@ -20339,6 +20342,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m107cq.stats_modifiers = nil
 				self.m107cq.panic_suppression_chance = 0.05
 				self.m107cq.reload_speed_multiplier = 0.9
+				self.m107cq.sounds.fire2 = "lakner_lever_release"
 				self.m107cq.timers.reload_empty = 4.5
 				self.m107cq.timers.reload_exit_empty = 0.95
 				self.m107cq.timers.reload_not_empty = 2.8
@@ -24292,6 +24296,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
+				self.kurisumasu.has_underbarrel = true
 				self.kurisumasu.stats_modifiers = nil
 				self.kurisumasu.panic_suppression_chance = 0.05
 				self.kurisumasu.lock_slide = true
@@ -32589,7 +32594,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.iuhTTIPlus.upgrade_blocks = nil
 			self.iuhTTIPlus.tactical_reload = 1
 			self.iuhTTIPlus.CLIP_AMMO_MAX = 20
-			self.iuhTTIPlus.AMMO_MAX = 40 --60
+			self.iuhTTIPlus.AMMO_MAX = 48 --60
 			self.iuhTTIPlus.FIRE_MODE = "single"
 			self.iuhTTIPlus.CAN_TOGGLE_FIREMODE = false
 			self.iuhTTIPlus.fire_mode_data.fire_rate = 0.193548
@@ -33942,6 +33947,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				value = 4,
 				reload = 20
 			}
+			self.mdr_308.has_underbarrel = true
 			self.mdr_308.stats_modifiers = nil
 			self.mdr_308.is_bullpup = true
 			self.mdr_308.panic_suppression_chance = 0.05
@@ -34922,7 +34928,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 
 	--Determine the damage tier the gun falls under.
 	weapon.AMMO_PICKUP = {0, 0}
-	local damage_mul = weapon.stats_modifiers and weapon.stats_modifiers.damage or 1
+	local damage_mul = (weapon.stats_modifiers and weapon.stats_modifiers.damage) or 1
 	for i, pickup_tier in ipairs(damage_tiers_pickup) do
 		weapon.AMMO_PICKUP[1] = pickup_tier.pickup[1]
 		weapon.AMMO_PICKUP[2] = pickup_tier.pickup[2]
@@ -34985,14 +34991,29 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		"m134",
 		"shuno",
 	}
-	if id and weapon.AMMO_MAX and weapon.CLIP_AMMO_MAX and
-	not table.contains(exclude_ammo, id) and not table.contains(weapon.categories, "minigun") and not table.contains(weapon.categories, "saw") then
-		local mag_clamp = math.min(100, weapon.CLIP_AMMO_MAX / ((table.contains(weapon.categories, "akimbo") and 2) or 1) )
-		if mag_clamp * 2 > weapon.AMMO_MAX then
-			weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * (weapon.AMMO_MAX / (mag_clamp * 2))
-			weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * (weapon.AMMO_MAX / (mag_clamp * 2))
-			weapon.AMMO_MAX = mag_clamp * 2
-			weapon.stats.concealment = weapon.stats.concealment - 1
+	if id and weapon.AMMO_MAX and weapon.CLIP_AMMO_MAX then
+		--Ugly as fuck but it works
+		local exclude_calcs = table.contains(weapon.categories, "grenade_launcher") or 
+			table.contains(weapon.categories, "rocket_launcher") or 
+			table.contains(weapon.categories, "bow") or 
+			table.contains(weapon.categories, "crossbow")
+		local hs_mul = weapon.hs_mult or 1
+		local true_shotgun = table.contains(weapon.categories, "shotgun") and not table.contains(weapon.categories, "flamethrower")
+		local has_dot = table.contains(weapon.categories, "flamethrower") or table.contains(weapon.categories, "tranq")
+		local total_dmg_mul = 1 * (((hs_mul > 1) and 1.2) or 1) * 
+			(((weapon.has_underbarrel or has_dot) and 0.8) or 1) * 
+			((table.contains(weapon.categories, "minigun") and 3.3333) or ((table.contains(weapon.categories, "lmg") or true_shotgun) and 2) or 1)
+		damage_mul = (not exclude_calcs and (damage_mul * 2)) or damage_mul
+		weapon.AMMO_MAX = math.ceil((3600 * ((weapon.use_data.selection_index == 2 and 2) or 1) * total_dmg_mul)) / ((weapon.stats.damage * damage_mul) * hs_mul)
+		--Try to provide at least one full reload from empty (up to 100 round mags)
+		if not table.contains(exclude_ammo, id) and not table.contains(weapon.categories, "minigun") and not table.contains(weapon.categories, "saw") then
+			local mag_clamp = math.min(100, weapon.CLIP_AMMO_MAX / ((table.contains(weapon.categories, "akimbo") and 2) or 1) )
+			if mag_clamp * 2 > weapon.AMMO_MAX then
+				weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * (weapon.AMMO_MAX / (mag_clamp * 2))
+				weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * (weapon.AMMO_MAX / (mag_clamp * 2))
+				weapon.AMMO_MAX = mag_clamp * 2
+				weapon.stats.concealment = weapon.stats.concealment - 1
+			end
 		end
 	end
 end

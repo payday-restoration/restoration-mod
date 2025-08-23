@@ -21,6 +21,11 @@ local sewer_spawn = {
 		interval = 20,
 	},
 }
+local bravo_dozer = {
+	values = {
+		enemy = bravo_dozer_ambush,
+	},
+}
 return {
     -- Add early reinforce around the bank
 	[100109] = {
@@ -55,7 +60,7 @@ return {
 		},
 	},
 	-- National Guard Dozer kicks down door, only on DW/DS PJ
-	[106414] = bravo_dozer_ambush,
+	[106414] = bravo_dozer,
 	-- Spawngroup delays
 	[100128] = street_spawn,
 	[100132] = street_spawn,

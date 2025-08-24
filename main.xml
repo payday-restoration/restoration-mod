@@ -445,6 +445,8 @@
 		<hook file="sc/compatibility/ModStatGenerator.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
 		<!--Voiceline Shit-->
 		<hook file="sc/utils/restorationvoicelines.lua" source_file="lib/utils/game_state_machine/gamestatemachine"/>
+		<!--Restore active throwable after releasing from custody-->
+		<hook file="sc/utils/restoreactivethrowableaftercustody.lua" source_file="lib/utils/game_state_machine/gamestatemachine"/>
 		<!--///MOD SAVE DATA\\\-->
 		<!--DO NOT MODIFY-->
 		<hook file="sc/managers/savefilemanager.lua" source_file="lib/managers/savefilemanager"/>

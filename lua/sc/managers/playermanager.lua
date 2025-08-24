@@ -281,7 +281,7 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 	local function check_refresh(refresh, aubrey, time)
 		if refresh then
 			if aubrey then
-				if self._buildup_meter > 0 then
+				if self._buildup_meter and self._buildup_meter <= 0 then
 					self._buildup_meter_t = time
 					managers.hud:start_buff("sociopath", self._buildup_meter_t)
 				else
@@ -294,7 +294,7 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 				self._buildup_meter = math.clamp((self._buildup_meter or 0) + buildup_add, 0, self._buildup_meter_max)
 				managers.hud:set_stacks("sociopath", self._buildup_meter)
 			else
-				if self._buildup_meter > 0 then
+				if self._buildup_meter and self._buildup_meter > 0 then
 					self._buildup_meter_t = time
 					managers.hud:start_buff("sociopath", self._buildup_meter_t)
 				end

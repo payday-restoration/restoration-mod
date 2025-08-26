@@ -303,6 +303,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Settings", function(loc)
 		["RestorationModInfo_body_expertiseDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_long_dis_reviveTitleID"] = "Вдохновление",
 		["RestorationModInfo_long_dis_reviveDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_hostage_takerTitleID"] = "Похититель",
+		["RestorationModInfo_hostage_takerDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_messiahTitleID"] = "Мессия",
 		["RestorationModInfo_messiahDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_overkill_damage_multiplierTitleID"] = "Overkill",
@@ -311,6 +313,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Settings", function(loc)
 		["RestorationModInfo_revived_damage_reductionDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_first_aid_damage_reductionTitleID"] = "Скорая помощь",
 		["RestorationModInfo_first_aid_damage_reductionDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_crew_chiefTitleID"] = "Ситуация с заложниками (Капо)",
+		["RestorationModInfo_crew_chiefDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_rogueTitleID"] = "Смертельный инстинкт (Шпион)",
 		["RestorationModInfo_rogueDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_increased_movement_speedTitleID"] = "Бегущий от смерти",
@@ -327,6 +331,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Settings", function(loc)
 		["RestorationModInfo_survive_one_hitDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_doctor_bag_health_regenTitleID"] = "Лечение от Медицинских сумок",
 		["RestorationModInfo_doctor_bag_health_regenDescID"] = "Включает или выключает отображение лечения от Медицинских сумок.",
+		
+		["RestorationModmastermind_buffsTitleID"] = "===Манипулятор===",
+		["RestorationModenforcer_buffsTitleID"] = "===Штурмовик===",
+		["RestorationModtechnician_buffsTitleID"] = "===Техник===",
+		["RestorationModghost_buffsTitleID"] = "===Призрак===",
+		["RestorationModfugitive_buffsTitleID"] = "===Беглец===",
+		["RestorationModperk_buffsTitleID"] = "===Перки===",
 			
 		-- Время суток
 		["RestorationModEnv_BanksTitleID"] = "Ограбление банка",

@@ -1407,6 +1407,13 @@ function PlayerManager:fixed_health_regen()
 	if self:has_category_upgrade("player", "hostage_health_regen_max_mult") and ((groupai and groupai:hostage_count() + (groupai:num_converted_police() or self:num_local_minions()) or self:num_local_minions() or 0) >= tweak_data:get_raw_value("upgrades", "hostage_max_num", "health_regen")) then
 		health_regen = health_regen * self:upgrade_value("player", "hostage_health_regen_max_mult", 0)
 	end
+	
+	-- Show HP regen on buff tracker in numbers
+	if managers and managers.hud and health_regen then
+		managers.hud:add_skill("hostage_taker")
+		managers.hud:set_stacks("hostage_taker", health_regen * 10)
+	end
+	
 	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
 	
 	return health_regen
@@ -1595,7 +1602,13 @@ function PlayerManager:get_hostage_bonus_multiplier(category)
 	if hostage_max_num then
 		hostages = math.min(hostages, hostage_max_num)
 	end
-
+	
+	local is_crew_chief_in_the_team = self:team_upgrade_value("health", "hostage_multiplier", 1) - 1
+	if managers and managers.hud and is_crew_chief_in_the_team ~= 0 then
+		managers.hud:add_skill("crew_chief")
+		managers.hud:set_stacks("crew_chief", hostages)
+	end
+	
 	multiplier = multiplier + self:team_upgrade_value(category, "hostage_multiplier", 1) - 1
 	multiplier = multiplier + self:team_upgrade_value(category, "passive_hostage_multiplier", 1) - 1
 	multiplier = multiplier + self:upgrade_value("player", "hostage_" .. category .. "_multiplier", 1) - 1

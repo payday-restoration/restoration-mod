@@ -57,6 +57,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_first_aid_damage_reductionDescID"] = "Enables or disables tracking of this specific skill.",
 				["RestorationModInfo_long_dis_reviveTitleID"] = "Inspire (Cooldown)",
 				["RestorationModInfo_long_dis_reviveDescID"] = "Enables or disables tracking the cooldown of this specific skill.",
+				["RestorationModInfo_hostage_takerTitleID"] = "Hostage Taker",
+				["RestorationModInfo_hostage_takerDescID"] = "Enables or disables tracking the cooldown of this specific skill.",
 				["RestorationModInfo_body_expertiseTitleID"] = "Spray n' Pray",
 				["RestorationModInfo_body_expertiseDescID"] = "Enables or disables tracking of this specific skill.",
 
@@ -100,6 +102,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 
 				["RestorationModperk_buffsTitleID"] = "===Perks===",
 				["RestorationModperk_buffsDescID"] = "Buff trackers for perk deck perks.",
+				["RestorationModInfo_crew_chiefTitleID"] = "Hostage Situation (Crew Chief)",
+				["RestorationModInfo_crew_chiefDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_rogueTitleID"] = "Killer Instinct (Rogue)",
 				["RestorationModInfo_rogueDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_crookTitleID"] = "Composure and Release (Crook)",

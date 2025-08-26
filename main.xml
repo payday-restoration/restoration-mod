@@ -533,6 +533,7 @@
 					<option type="bool" default_value="true" name="Info_revive_damage_reduction"/> <!-- Combat Medic -->
 					<option type="bool" default_value="true" name="Info_first_aid_damage_reduction"/> <!-- Quick Fix -->
 					<option type="bool" default_value="true" name="Info_long_dis_revive"/> <!-- inspire -->
+					<option type="bool" default_value="true" name="Info_hostage_taker"/> <!-- inspire -->
 					<option type="bool" default_value="true" name="Info_body_expertise"/>
 					<!-- Enforcer -->
 					<divider name="tod_divider" size="7"/>
@@ -562,6 +563,7 @@
 					<!-- Perk Decks -->
 					<divider name="tod_divider" size="7"/>
 					<button name="perk_buffs" disabled="true"/>
+					<option type="bool" default_value="true" name="Info_crew_chief"/>
 					<option type="bool" default_value="true" name="Info_rogue"/>
 					<option type="bool" default_value="true" name="Info_crook"/>
 					<option type="bool" default_value="true" name="Info_grinder"/>

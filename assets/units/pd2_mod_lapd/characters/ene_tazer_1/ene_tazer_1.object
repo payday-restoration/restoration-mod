@@ -333,7 +333,7 @@
 					<material materials="mtr_spook_heavy" max_distance="1000"/>
 					<material materials="mtr_spook_heavy_lod"/>
 				</object>
-				<object name="g_explosivebag" 	enabled="false" lod="1" >
+				<object name="g_explosivebag_lod1" 	enabled="false" lod="1" >
 					<material materials="mtr_spook_heavy" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_spook_heavy_lod"/>
 				</object>

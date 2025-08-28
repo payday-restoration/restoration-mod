@@ -559,25 +559,25 @@
 
 			<lod_object name="lod_helmet_nvg">
 				<object name="g_helmet_sg_lod3" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_zeal_swat_static" max_distance="1000" />
-					<material materials="mtr_zeal_swat_static_lod1" max_distance="1500" />
-					<material materials="mtr_zeal_swat_static_lod2" />
+					<material materials="mtr_blue_swat_static" max_distance="1000" />
+					<material materials="mtr_blue_swat_static_lod1" max_distance="1500" />
+					<material materials="mtr_blue_swat_static_lod2" />
 				</object>
 				<object name="g_helmet_sg_lod4" 	enabled="false" lod="1" >
-					<material materials="mtr_zeal_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_zeal_swat_static_lod2" />
+					<material materials="mtr_blue_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_blue_swat_static_lod2" />
 				</object>
 			</lod_object>
 
 			<lod_object name="lod_helmet_nvg_down">
 				<object name="g_helmet_sg_lod5" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_zeal_swat_static" max_distance="1000" />
-					<material materials="mtr_zeal_swat_static_lod1" max_distance="1500" />
-					<material materials="mtr_zeal_swat_static_lod2" />
+					<material materials="mtr_blue_swat_static" max_distance="1000" />
+					<material materials="mtr_blue_swat_static_lod1" max_distance="1500" />
+					<material materials="mtr_blue_swat_static_lod2" />
 				</object>
 				<object name="g_helmet_sg_lod6" 	enabled="false" lod="1" >
-					<material materials="mtr_zeal_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_zeal_swat_static_lod2" />
+					<material materials="mtr_blue_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_blue_swat_static_lod2" />
 				</object>
 			</lod_object>
 

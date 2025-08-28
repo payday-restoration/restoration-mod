@@ -221,6 +221,8 @@
 	<unit				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc_husk"  load="true"/>
 	<material_config	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc"/>	
 	<material_config	path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc_contour"/>	
+
+	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic_df" />
 	
 	<!--Medic Dozer Armor Pieces-->
 	<unit_mat				path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" load="false"/>

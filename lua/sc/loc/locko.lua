@@ -55,7 +55,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_first_aid_damage_reductionDescID"] = "해당 스킬의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_long_dis_reviveTitleID"] = "인스파이어 (쿨다운)",
 				["RestorationModInfo_long_dis_reviveDescID"] = "해당 스킬의 쿨다운 표시를 활성화하거나 비활성화합니다.",
-				["RestorationModInfo_body_expertiseTitleID"] = "Spray n' Pray",
+				["RestorationModInfo_hostage_takerTitleID"] = "인질범",
+				["RestorationModInfo_hostage_takerDescID"] = "해당 스킬의 쿨다운 표시를 활성화하거나 비활성화합니다.",				
+				["RestorationModInfo_body_expertiseTitleID"] = "뿌리고 기도하기",
 				["RestorationModInfo_body_expertiseDescID"] = "해당 스킬의 표시를 활성화하거나 비활성화합니다.",
 
 				["RestorationModenforcer_buffsTitleID"] = "===인포서===",
@@ -98,6 +100,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 
 				["RestorationModperk_buffsTitleID"] = "===특성===",
 				["RestorationModperk_buffsDescID"] = "특성 덱의 특성 효과에 대한 버프 표시기를 엽니다.",
+				["RestorationModInfo_crew_chiefTitleID"] = "인질극 (크루 치프)",
+				["RestorationModInfo_crew_chiefDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",				
 				["RestorationModInfo_rogueTitleID"] = "킬러 인스팅트 (로그)",
 				["RestorationModInfo_rogueDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_crookTitleID"] = "평정심과 방출 (크룩)",

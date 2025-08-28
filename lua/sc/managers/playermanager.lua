@@ -236,6 +236,7 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 	if not player_unit then
 		return 0
 	end
+	self._buildup_meter = self._buildup_meter or 0 --Glass earthing this; no clue why it's returning nil sometimes given its in the init
 	local damage_ext = player_unit:character_damage()
 	local new_socio_panic = 0
 	local buildup_stats = self:upgrade_value("player", "buildup_meter", 0)

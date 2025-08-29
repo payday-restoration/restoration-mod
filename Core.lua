@@ -1481,6 +1481,29 @@ function restoration:gen_ai_global_event(id, name, pos, rot, opts)
 	}
 end
 
+function restoration:gen_object_editor_trigger(id, name, opts)
+	opts = opts or {}
+	local random_element = {
+		id = id,
+		editor_name = name,
+		module = "CoreElementRandom",
+		class = "ElementRandom",
+		values = {
+			execute_on_startup = false,
+			ignore_disabled = opts.ignore_disabled or false,
+			trigger_times = opts.trigger_times or 0,
+			amount = opts.amount or 0,
+			amount_random = opts.amount_random or 0,
+			on_executed = opts.on_executed or {},
+			base_delay = opts.base_delay or 0,
+			enabled = true,
+			callback = opts.callback or false,
+		},
+	}
+
+	return random_element
+end
+
 -- Log tiers
 -- "log" is for general logging that is useful for players and developers
 -- "debug" is for general logging that only really developers/tinkerers need

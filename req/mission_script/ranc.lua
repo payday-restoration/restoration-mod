@@ -96,4 +96,19 @@ return {
 			},
 		},
 	},
+	[103874] = { -- arrive 1
+		on_executed = {
+			{ id = 400005, delay = 0, delay_rand = 5 },
+		},
+	},
+	[103873] = { -- arrive 2
+		on_executed = {
+			{ id = 400012, delay = 0, delay_rand = 5 },
+		},
+	},
+	[103875] = { -- arrive 3
+		on_executed = {
+			{ id = 400019, delay = 0, delay_rand = 5 },
+		},
+	},
 }

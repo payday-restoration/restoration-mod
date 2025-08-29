@@ -12089,14 +12089,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fal.fire_mode_data.fire_rate = 0.085714285
 						self.fal.CAN_TOGGLE_FIREMODE = true
 						self.fal.FIRE_MODE = "auto"
-						self.fal.auto = {}
-						self.fal.auto.fire_rate = 0.085714285
 						self.fal.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.fal.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
-							{5, self.stat_info.kick_tables.left_kick},
-							{9, self.stat_info.kick_tables.moderate_kick},
-							{13, self.stat_info.kick_tables.moderate_right_kick}
+							{5, self.stat_info.kick_tables.moderate_left_kick},
+							{9, self.stat_info.kick_tables.even_recoil},
+							{13, self.stat_info.kick_tables.right_recoil}
 						}
 						self.fal.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 						self.fal.supported = true
@@ -12108,8 +12106,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.fal.stats = {
 							damage = 45,
-							spread = 83,
-							recoil = 61,
+							spread = 88,
+							recoil = 55,
 							spread_moving = 5,
 							zoom = 1,
 							concealment = 25,
@@ -12138,8 +12136,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.contraband.CAN_TOGGLE_FIREMODE = true
 						self.contraband.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.contraband.kick_pattern = {
-							{0, self.stat_info.kick_tables.left_kick},
-							{5, self.stat_info.kick_tables.vertical_kick},
+							{0, self.stat_info.kick_tables.moderate_left_kick},
+							{5, self.stat_info.kick_tables.moderate_kick},
 							{9, self.stat_info.kick_tables.moderate_right_kick},
 							{11, self.stat_info.kick_tables.moderate_kick},
 							{15, self.stat_info.kick_tables.right_recoil}
@@ -12325,8 +12323,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{4, self.stat_info.kick_tables.right_kick},
 							{7, self.stat_info.kick_tables.moderate_kick},
 							{9, self.stat_info.kick_tables.moderate_right_kick},
-							{11, self.stat_info.kick_tables.right_recoil},
-							{13, self.stat_info.kick_tables.moderate_right_kick}
+							{11, self.stat_info.kick_tables.even_recoil},
+							{14, self.stat_info.kick_tables.right_recoil}
 						}
 						self.g3.desc_id = "bm_g3_sc_desc"
 						self.g3.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
@@ -12339,7 +12337,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.g3.stats = {
 							damage = 60,
-							spread = 94,
+							spread = 86,
 							recoil = 53,
 							spread_moving = 7,
 							zoom = 1,

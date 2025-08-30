@@ -1483,25 +1483,22 @@ end
 
 function restoration:gen_object_editor_trigger(id, name, opts)
 	opts = opts or {}
-	local random_element = {
+	local object_editor_trigger = {
 		id = id,
 		editor_name = name,
-		module = "CoreElementRandom",
-		class = "ElementRandom",
+		module = "CoreElementUnitSequenceTrigger",
+		class = "ElementUnitSequenceTrigger",
 		values = {
 			execute_on_startup = false,
-			ignore_disabled = opts.ignore_disabled or false,
-			trigger_times = opts.trigger_times or 0,
-			amount = opts.amount or 0,
-			amount_random = opts.amount_random or 0,
+			trigger_times = 1,
+			sequence_list = opts.sequence_list or {},
 			on_executed = opts.on_executed or {},
 			base_delay = opts.base_delay or 0,
-			enabled = true,
-			callback = opts.callback or false,
+			enabled = opts.enabled or false,
 		},
 	}
 
-	return random_element
+	return object_editor_trigger
 end
 
 -- Log tiers

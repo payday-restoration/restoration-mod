@@ -54,7 +54,7 @@ return {
 		restoration:gen_dummy(400010, "swat_van_spawn_7", Vector3(-2292.224, 2016.435, -19.999), Rotation(74, 0, 0), optsBesiegeDummy),
 		restoration:gen_dummy(400011, "swat_van_spawn_8", Vector3(-2310.692, 1952.031, -19.999), Rotation(74, 0, 0), optsBesiegeDummy),
 		restoration:gen_missionscript(400012, "spawn_swats_2", optsspawnvanSWATs_2),
-		restoration:objecteditor(400013, "open_swat_doors_2", Vector3(0, 0, 0), Rotation(0, 0, -0), optsOpenSwatVanDoors_1),
+		restoration:objecteditor(400013, "open_swat_doors_2", Vector3(0, 0, 0), Rotation(0, 0, -0), optsOpenSwatVanDoors_2),
 		restoration:gen_spawngroup(400014, "swat_group_2", { 400008, 400009, 400010, 400011 }, 0, opts_swat_group),
 	},
 }

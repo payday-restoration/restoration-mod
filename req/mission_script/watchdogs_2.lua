@@ -120,6 +120,36 @@ return {
 			{ id = 400015, delay = 20, },
 		},
 	},
+	-- 1st assault reinforce
+	[100511] = {
+		reinforce = {
+			{
+				name = "diff50_reinforce1",
+				force = 3,
+				position = Vector3(-1500, 800, 0),
+			},
+			{
+				name = "diff50_reinforce2",
+				force = 3,
+				position = Vector3(-800, 3200, 0),
+			},
+		},
+	},
+	-- 2nd assault reinforce
+	[103637] = {
+		reinforce = {
+			{
+				name = "diff75_reinforce1",
+				force = 3,
+				position = Vector3(400, 1200, 0),
+			},
+			{
+				name = "diff75_reinforce2",
+				force = 3,
+				position = Vector3(900, -800, 0),
+			},
+		},
+	},
 	-- Fix cheat spawn area triggers not being wide enough and reenabling spawns too soon
 	[101013] = disable_cheat_spawns_fix,
 	[101235] = disable_cheat_spawns_fix,

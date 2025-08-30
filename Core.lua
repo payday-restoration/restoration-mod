@@ -1481,9 +1481,9 @@ function restoration:gen_ai_global_event(id, name, pos, rot, opts)
 	}
 end
 
-function restoration:gen_object_editor_trigger(id, name, opts)
+function restoration:gen_object_editor_trigger(id, name, pos, rot, opts)
 	opts = opts or {}
-	local object_editor_trigger = {
+	return {
 		id = id,
 		editor_name = name,
 		module = "CoreElementUnitSequenceTrigger",
@@ -1497,8 +1497,6 @@ function restoration:gen_object_editor_trigger(id, name, opts)
 			enabled = opts.enabled or false,
 		},
 	}
-
-	return object_editor_trigger
 end
 
 -- Log tiers

@@ -1289,6 +1289,9 @@
 	<effect				path="effects/particles/weapons/vapor_trail_5" force="false"/>
 	<effect				path="effects/particles/weapons/vapor_trail_sc" force="false"/>
 	
+	<!--Remove tracer sparks from hornet GL ammo-->
+	<effect				path="effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet" load="false"/>
+
 	<!--Bullet casings effects-->
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/shell_shak_smol" force="false" load="true" unload="true" reload="true"/>
@@ -1346,6 +1349,7 @@
     <effect				path="_dmc/effects/parts/concussion_streak" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/heavy_suppressed" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/heavy_muzzle" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/heavy_muzzle_ring" force="false" load="true" unload="true" reload="true"/>
 
 	<!--Snowball-->
 	<effect				path="effects/payday2/particles/impacts/snowball_impact" load="true"/>

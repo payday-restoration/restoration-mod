@@ -19511,6 +19511,10 @@ end)
 						translation = Vector3(-0.005, -4.2, -3.115),
 						rotation = Rotation(-0.0, -0.0, -0.0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mas38 = {
+						translation = Vector3(0, 3.4, -5.07),
+						rotation = Rotation(0.01, -0.074, 0.55)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_bp12 = {
 						translation = Vector3(0.04, 5.2, 0.04),
@@ -27606,6 +27610,65 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+
+		if self.parts.wpn_fps_smg_mas38_bolt then
+			self.parts.wpn_fps_smg_mas38_barrel.stats = { value = 0 }
+			self.parts.wpn_fps_smg_mas38_barrel.custom_stats = nil
+			
+			self.wpn_fps_smg_mas38.adds = {
+				wpn_fps_upg_o_specter = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_aimpoint = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_aimpoint_2 = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_docter = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_eotech = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_t1micro = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_cmore = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_acog = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_cs = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_eotech_xps = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_reflex = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_rx01 = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_rx30 = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_spot = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_bmg = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_uh = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_fc1 = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_tf90 = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_poe = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_health = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_hamr = { "wpn_fps_smg_thompson_o_adapter" },
+				wpn_fps_upg_o_atibal = { "wpn_fps_smg_thompson_o_adapter" },
+			}
+
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_specter")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_aimpoint")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_docter")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_eotech")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_t1micro")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_rx30")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_rx01")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_reflex")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_eotech_xps")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_cmore")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_aimpoint_2")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_acog")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_cs")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_spot")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_bmg")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_uh")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_fc1")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_tf90")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_poe")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_health")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_hamr")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_atibal")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
+			table.insert(self.wpn_fps_smg_mas38.uses_parts, "wpn_fps_upg_o_sig")
+
+			self.wpn_fps_smg_mas38_npc.adds = deep_clone(self.wpn_fps_smg_mas38.adds)
+			self.wpn_fps_smg_mas38_npc.uses_parts = deep_clone(self.wpn_fps_smg_mas38.uses_parts)
+
+		end
 
 		if self.parts.wpn_fps_ass_ak15_irons then
 			self.parts.wpn_fps_ass_ak15_flash_hider.stats = { value = 0 }

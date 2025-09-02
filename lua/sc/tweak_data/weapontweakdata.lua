@@ -25163,7 +25163,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mas38.damage_type = "machine_gun"
 				self.mas38.fire_mode_data.fire_rate = 0.1
 				self.mas38.CAN_TOGGLE_FIREMODE = true
-				self.mas38.tactical_reload = 1
 				self.mas38.CLIP_AMMO_MAX = 32
 				self.mas38.AMMO_MAX = 60
 				self.mas38.kick = self.stat_info.kick_tables.horizontal_recoil
@@ -25178,7 +25177,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mas38.damage_falloff = {
 					start_dist = 1300,
 					end_dist = 3200,
-					min_mult = 0.25
+					min_mult = 0.3334
 				}
 				self.mas38.stats = {
 					damage = 30,
@@ -25196,7 +25195,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mas38.stats_modifiers = nil
 				self.mas38.panic_suppression_chance = 0.05
-				self.mas38.timers = deep_clone(self.tec9.timers)
+				self.mas38.spin_up_shoot = true
+				self.mas38.spin_up_t = 0.07
+				self.mas38.spin_down_t = 0.0000000001
+				self.mas38.sounds.spin_start = "wp_uzi_clip_lever_pull"
+				self.mas38.timers.reload_empty = 2.98
+				self.mas38.timers.reload_exit_empty = 0.9
+				self.mas38.timers.reload_not_empty = 2
+				self.mas38.timers.reload_exit_not_empty = 0.75
 			end
 
 			if self.tribune32 then

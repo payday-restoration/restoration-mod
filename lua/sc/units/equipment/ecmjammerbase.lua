@@ -116,6 +116,7 @@ function ECMJammerBase:_set_feedback_active(state)
 	end
 
 	if Network:is_server() then
+		local owner_base = alive(self:owner()) and self:owner().base and self:owner():base()		
 		if state then
 			self._unit:interaction():set_active(false, true)
 
@@ -129,8 +130,8 @@ function ECMJammerBase:_set_feedback_active(state)
 				duration_mul = duration_mul * managers.player:upgrade_value("ecm_jammer", "feedback_duration_boost", 1)
 				duration_mul = duration_mul * managers.player:upgrade_value("ecm_jammer", "feedback_duration_boost_2", 1)
 			else
-				duration_mul = duration_mul * (self:owner():base():upgrade_value("ecm_jammer", "feedback_duration_boost") or 1)
-				duration_mul = duration_mul * (self:owner():base():upgrade_value("ecm_jammer", "feedback_duration_boost_2") or 1)
+				duration_mul = duration_mul * ((owner_base and owner_base:upgrade_value("ecm_jammer", "feedback_duration_boost")) or 1)
+				duration_mul = duration_mul * ((owner_base and owner_base:upgrade_value("ecm_jammer", "feedback_duration_boost_2")) or 1)
 			end
 
 			self._feedback_duration = math.lerp(tweak_data.upgrades.ecm_feedback_min_duration or 15, tweak_data.upgrades.ecm_feedback_max_duration or 20, math.random()) * duration_mul
@@ -154,7 +155,7 @@ function ECMJammerBase:_set_feedback_active(state)
 				if self._owner_id == 1 then
 					retrigger = managers.player:has_category_upgrade("ecm_jammer", "can_retrigger")
 				else
-					retrigger = self:owner():base():upgrade_value("ecm_jammer", "can_retrigger")
+					retrigger = (owner_base and owner_base:upgrade_value("ecm_jammer", "can_retrigger"))
 				end
 
 				if retrigger then

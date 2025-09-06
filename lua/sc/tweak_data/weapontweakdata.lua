@@ -17349,7 +17349,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.qsz92 then
 				self.qsz92.recategorize = { "light_pis" }
-				self.qsz92.damage_type = "light_pistol"
+				self.qsz92.damage_type = "pistol"
 				self.qsz92.categories = {
 					"pistol",
 					"pistol_pdw"
@@ -17394,7 +17394,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qsz92.timers = deep_clone(self.usp.timers)
 
 					self.x_qsz92.recategorize = {"light_pis"}
-					self.x_qsz92.damage_type = "light_pistol"
+					self.x_qsz92.damage_type = "pistol"
 					self.x_qsz92.categories = {
 						"akimbo",
 						"pistol",
@@ -18296,7 +18296,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.fmgnine then --Pawcio's FMG-9
 				self.fmgnine.categories = {"pistol"}
 				self.fmgnine.recategorize = {"light_pis"}
-				self.fmgnine.damage_type = "light_pistol"
+				self.fmgnine.damage_type = "pistol"
 				self.fmgnine.tactical_reload = 1
 				self.fmgnine.fire_mode_data.fire_rate = 0.05
 				self.fmgnine.CAN_TOGGLE_FIREMODE = true
@@ -18346,7 +18346,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.fmgnine and self.x_fmgnine then --Pawcio's Akimbo FMG-9
 				self.x_fmgnine.categories = {"akimbo","pistol"}
 				self.x_fmgnine.recategorize = {"light_pis"}
-				self.x_fmgnine.damage_type = "light_pistol"
+				self.x_fmgnine.damage_type = "pistol"
 				self.x_fmgnine.tactical_reload = 2
 				self.x_fmgnine.fire_mode_data.fire_rate = 0.06
 				self.x_fmgnine.CAN_TOGGLE_FIREMODE = true
@@ -25659,7 +25659,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.tti_2011 then --TTI 1911's
 				self.tti_2011.recategorize = { "light_pis" }
-				self.tti_2011.damage_type = "light_pistol"
+				self.tti_2011.damage_type = "pistol"
 				self.tti_2011.kick = self.stat_info.kick_tables.vertical_kick
 				self.tti_2011.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
@@ -25708,7 +25708,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.tti_viper then
 				self.tti_viper.recategorize = { "light_pis" }
-				self.tti_viper.damage_type = "light_pistol"
+				self.tti_viper.damage_type = "pistol"
 				self.tti_viper.kick = self.stat_info.kick_tables.vertical_kick
 				self.tti_viper.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
@@ -25759,7 +25759,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.papa320 then --RJC9000 and PlayBONK's MW2019 P320
 				self.papa320.recategorize = { "light_pis" }
-				self.papa320.damage_type = "light_pistol"
+				self.papa320.damage_type = "pistol"
 				self.papa320.kick = self.stat_info.kick_tables.vertical_kick
 				self.papa320.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
@@ -25809,7 +25809,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 			if self.x_papa320 then
 				self.x_papa320.recategorize = { "light_pis" }
-				self.x_papa320.damage_type = "light_pistol"
+				self.x_papa320.damage_type = "pistol"
 				self.x_papa320.kick = self.stat_info.kick_tables.vertical_kick
 				self.x_papa320.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
@@ -26649,7 +26649,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.bf2042_ayylmao then --RJC9000's BF2042 Ayy Lmao Pistol
 				self.bf2042_ayylmao.recategorize = { "light_pis" }
-				self.bf2042_ayylmao.damage_type = "light_pistol"
+				self.bf2042_ayylmao.damage_type = "pistol"
 				self.bf2042_ayylmao.fire_mode_data.fire_rate = 0.0882352
 				self.bf2042_ayylmao.AMMO_MAX = 75
 				self.bf2042_ayylmao.CLIP_AMMO_MAX = 17
@@ -29254,7 +29254,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.czshadow then
 				self.czshadow.recategorize = { "light_pis" }
-				self.czshadow.damage_type = "light_pistol"
+				self.czshadow.damage_type = "pistol"
 				self.czshadow.fire_mode_data.fire_rate =  0.08333
 				self.czshadow.AMMO_MAX = 75
 				self.czshadow.CLIP_AMMO_MAX = 17
@@ -29293,7 +29293,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.czshadow.timers = deep_clone(self.b92fs.timers)
 				--Akimbo
 					self.x_czshadow.recategorize = { "light_pis" }
-					self.x_czshadow.damage_type = "light_pistol"
+					self.x_czshadow.damage_type = "pistol"
 					self.x_czshadow.fire_mode_data.fire_rate =  0.08333
 					self.x_czshadow.BURST_FIRE = {
 						count = 2,
@@ -29341,7 +29341,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.polar9 then
 				self.polar9.recategorize = { "light_pis" }
-				self.polar9.damage_type = "light_pistol"
+				self.polar9.damage_type = "pistol"
 				self.polar9.fire_mode_data.fire_rate =  0.0882352
 				self.polar9.AMMO_MAX = 75
 				self.polar9.CLIP_AMMO_MAX = 17
@@ -29380,7 +29380,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.polar9.timers = deep_clone(self.b92fs.timers)
 				--Akimbo
 					self.x_polar9.recategorize = { "light_pis" }
-					self.x_polar9.damage_type = "light_pistol"
+					self.x_polar9.damage_type = "pistol"
 					self.x_polar9.fire_mode_data.fire_rate =  0.08333
 					self.x_polar9.BURST_FIRE = {
 						count = 2,
@@ -29557,8 +29557,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--[[     HYLIE'S MODS     ]]--
 
 			if self.mk22_pistol then
+				self.mk22_pistol.categories = { "pistol", "tranq" }
 				self.mk22_pistol.recategorize = { "light_pis" }
-				self.mk22_pistol.damage_type = "light_pistol"
+				self.mk22_pistol.damage_type = "pistol"
 				self.mk22_pistol.always_play_anims = true
 				self.mk22_pistol.lock_slide = true
 				self.mk22_pistol.fire_rate_multiplier = 1.6
@@ -30623,6 +30624,58 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g7.timers.reload_exit_not_empty = 0.58
 				self.g7.timers.reload_empty = 2.35
 				self.g7.timers.reload_exit_empty = 0.5
+			end
+
+			if self.coyote then
+				self.coyote.categories = {
+					"assault_rifle",
+					"sweet_liberty"
+				}
+				self.coyote.recategorize = {"heavy_ar"}
+				self.coyote.damage_type = "assault_rifle"
+				self.coyote.CLIP_AMMO_MAX = 45
+				self.coyote.AMMO_MAX = self.ar23.CLIP_AMMO_MAX * 9
+				self.coyote.ammo_ratio = 2
+				self.coyote.fire_mode_data.fire_rate = 0.1
+				self.coyote.fire_mode_data.toggable = nil
+				self.coyote.sms = 0.5
+				self.coyote.tactical_reload = 1
+				self.coyote.keep_ammo = 0
+				self.coyote.BURST_FIRE = nil
+				self.coyote.CAN_TOGGLE_FIREMODE = true
+				self.coyote.FIRE_MODE = "auto"
+				self.coyote.kick = self.stat_info.kick_tables.even_recoil
+				self.coyote.supported = true
+				self.coyote.ads_speed = 0.360
+				self.coyote.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 3400,
+					min_mult = 0.4
+				}
+				self.coyote.stats = {
+					damage = 30,
+					spread = 73,
+					recoil = 71,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 21,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.coyote.stats_modifiers = nil
+				self.coyote.panic_suppression_chance = 0.05
+				self.coyote.armor_piercing_chance = 0.25
+				self.coyote.ignore_damage_upgrades = nil
+				self.coyote.sounds.use_fix = nil
+				self.coyote.timers.reload_empty = 3.12
+				self.coyote.timers.reload_exit_empty = 0.75
+				self.coyote.timers.reload_not_empty = 2.3
+				self.coyote.timers.reload_exit_not_empty = 0.96
+				self.coyote.reload_speed_multiplier = 0.9
 			end
 
 			if self.ar23 then
@@ -33315,7 +33368,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		if self.mp443 then
 			self.mp443.recategorize = { "light_pis" }
-			self.mp443.damage_type = "light_pistol"
+			self.mp443.damage_type = "pistol"
 			self.mp443.fire_mode_data.fire_rate =  0.0882352
 			self.mp443.AMMO_MAX = 75
 			self.mp443.CLIP_AMMO_MAX = 18
@@ -33454,7 +33507,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.cz75b.timers = deep_clone(self.p226.timers)
 
 				self.x_cz75b.recategorize = { "light_pis" }
-				self.x_cz75b.damage_type = "light_pistol"
+				self.x_cz75b.damage_type = "pistol"
 				self.x_cz75b.fire_mode_data.fire_rate =  0.08571428571
 				self.x_cz75b.BURST_FIRE = {
 					count = 2,
@@ -33734,7 +33787,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		if self.k5 then
 			self.k5.recategorize = { "light_pis" }
-			self.k5.damage_type = "light_pistol"
+			self.k5.damage_type = "pistol"
 			self.k5.fire_mode_data.fire_rate =  0.0882352
 			self.k5.AMMO_MAX = 75
 			self.k5.CLIP_AMMO_MAX = 15
@@ -33910,7 +33963,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sw659.timers = deep_clone(self.usp.timers)
 
 				self.x_sw659.recategorize = { "light_pis" }
-				self.x_sw659.damage_type = "light_pistol"
+				self.x_sw659.damage_type = "pistol"
 				self.x_sw659.fire_mode_data.fire_rate =  0.08571428571
 				self.x_sw659.BURST_FIRE = {
 					count = 2,
@@ -34357,7 +34410,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		if self.p38 then
 			self.p38.recategorize = { "light_pis" }
-			self.p38.damage_type = "light_pistol"
+			self.p38.damage_type = "pistol"
 			self.p38.categories = {
 				"pistol",
 			}

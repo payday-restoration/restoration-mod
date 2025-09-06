@@ -40925,6 +40925,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
+		if self.parts.wpn_fps_ass_coyote_receiver then
+
+			self.parts.wpn_fps_ass_coyote_ammo_incendiary.supported = true
+			self.parts.wpn_fps_ass_coyote_ammo_incendiary.pcs = nil
+			self.parts.wpn_fps_ass_coyote_ammo_incendiary.no_cull = true
+			self.parts.wpn_fps_ass_coyote_ammo_incendiary.stats = { value = 0 }
+			self.parts.wpn_fps_ass_coyote_ammo_incendiary.custom_stats = {
+				bullet_class = "IncendiaryBulletBase",
+				ignore_statistic = true,
+				trail_effect = "_dmc/effects/nato_trail",
+				dot_data_name = "ammo_dragons_breath"
+			}
+		end
+
 		if self.parts.wpn_fps_pis_mk22_pistol_frame then
 			self.parts.wpn_fps_pis_mk22_pistol_frame.stance_mod = {
 				wpn_fps_pis_mk22_pistol = {

@@ -28966,7 +28966,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     TANGERINE'S MODS     ]]--
+			
 			if self.scar16 then
+				--has its own stats; this is just to adjust the reload timers to resmod's standard
 				self.scar16.timers.reload_empty = 3.1
 				self.scar16.timers.reload_exit_empty = 0.8
 				self.scar16.timers.reload_not_empty = 2.23
@@ -29553,6 +29555,50 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     HYLIE'S MODS     ]]--
+
+			if self.mk22_pistol then
+				self.mk22_pistol.recategorize = { "light_pis" }
+				self.mk22_pistol.damage_type = "light_pistol"
+				self.mk22_pistol.always_play_anims = true
+				self.mk22_pistol.lock_slide = true
+				self.mk22_pistol.fire_rate_multiplier = 1.6
+				self.mk22_pistol.fire_mode_data.fire_rate = 1.6
+				self.mk22_pistol.reload_speed_multiplier = 1.25
+				self.mk22_pistol.AMMO_MAX = 60
+				self.mk22_pistol.CLIP_AMMO_MAX = 8
+				self.mk22_pistol.tactical_reload = 1
+				self.mk22_pistol.kick = self.stat_info.kick_tables.right_recoil
+				self.mk22_pistol.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_right_kick},
+					{3, self.stat_info.kick_tables.right_recoil},
+					{8, self.stat_info.kick_tables.vertical_kick},
+				}
+				self.mk22_pistol.supported = true
+				self.mk22_pistol.ads_speed = 0.140
+				self.mk22_pistol.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3100,
+					min_mult = 0.25
+				}
+				self.mk22_pistol.stats = {
+					damage = 24,
+					spread = 59,
+					recoil = 77,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 30,
+					suppression = 12,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.mk22_pistol.stats_modifiers = nil
+				self.mk22_pistol.panic_suppression_chance = 0.05
+				self.mk22_pistol.reload_speed_multiplier = 1.25
+				self.mk22_pistol.timers = deep_clone(self.deagle.timers)
+			end
 
 			if self.vsk_94 then
 				self.vsk_94.warsaw = true

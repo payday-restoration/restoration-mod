@@ -40925,6 +40925,55 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
+		if self.parts.wpn_fps_pis_mk22_pistol_frame then
+			self.parts.wpn_fps_pis_mk22_pistol_frame.stance_mod = {
+				wpn_fps_pis_mk22_pistol = {
+					translation = Vector3(0, 0, 0.7)
+				}
+			}
+			self.parts.wpn_fps_pis_mk22_pistol_frame.adds = {
+				"wpn_fps_pis_mk22_pistol_ammo_tranq"
+			}
+
+			self.parts.wpn_fps_pis_mk22_pistol_ammo_tranq.pcs = nil
+			self.parts.wpn_fps_pis_mk22_pistol_ammo_tranq.no_cull = true
+			self.parts.wpn_fps_pis_mk22_pistol_ammo_tranq.supported = true
+			self.parts.wpn_fps_pis_mk22_pistol_ammo_tranq.stats = { value = 0}
+			self.parts.wpn_fps_pis_mk22_pistol_ammo_tranq.custom_stats = {
+				muzzleflash = "effects/payday2/particles/weapons/9mm_auto_fps",
+				muzzleflash_silenced = "effects/payday2/particles/weapons/air_pressure",
+				trail_effect = "_dmc/effects/warsaw_trail",
+				bullet_class = "PoisonBulletBase",
+				dot_data_name = "weapon_tranq_heavy"
+			}
+
+			self.parts.wpn_fps_pis_mk22_pistol_silencer.supported = true
+			self.parts.wpn_fps_pis_mk22_pistol_silencer.stats = {
+				value = 0,
+				alert_size = -1,
+				suppression = 12
+			}
+
+			--I don't feel like dealing with optic alignment in wake of the ironsight adjustments above, so I'm jsut removing the option
+			for i, part_id in pairs(self.wpn_fps_pis_mk22_pistol.uses_parts) do
+				attachment_list = {
+					"wpn_fps_upg_o_rmr",
+					"wpn_fps_upg_o_rikt",
+					"wpn_fps_upg_o_rms",
+
+					"wpn_fps_pis_triggermod_fast",
+					"wpn_fps_pis_triggermod_slow"
+				}
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_pis_mk22_pistol.uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end
+
+			self.wpn_fps_pis_mk22_pistol_npc.uses_parts = deep_clone(self.wpn_fps_pis_mk22_pistol.uses_parts)
+		end
+
 		if self.parts.wpn_fps_ass_vsk94_ns_silencer then
 			self.parts.wpn_fps_ass_vsk94_ns_silencer.supported = true
 			self.parts.wpn_fps_ass_vsk94_ns_silencer.stats = { alert_size = -1, suppression = 12 }

@@ -2039,7 +2039,8 @@ end)
 						custom_stats = {
 							rof_mult = 1.428571428,
 							falloff_start_mult = 0.5,
-							falloff_end_mult = 0.75
+							falloff_end_mult = 0.75,
+							info_lock_auto = true
 						},
 						alt_desc = "bm_tranq_maxim_auto_sc_desc",
 						override = {
@@ -19576,6 +19577,10 @@ end)
 						translation = Vector3(0.02, 9.5, -3.395)
 					}
 
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_coyote = {
+						translation = Vector3(-0.02, 3.1, -3.44),
+						rotation = Rotation(-0.03, -0.01, -0.6)
+					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar23 = {
 						--translation = Vector3(0.015, -3, -3.655)
 						translation = Vector3(-0.042, -6.7, -3.59),
@@ -40925,20 +40930,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
-		if self.parts.wpn_fps_ass_coyote_receiver then
-
-			self.parts.wpn_fps_ass_coyote_ammo_incendiary.supported = true
-			self.parts.wpn_fps_ass_coyote_ammo_incendiary.pcs = nil
-			self.parts.wpn_fps_ass_coyote_ammo_incendiary.no_cull = true
-			self.parts.wpn_fps_ass_coyote_ammo_incendiary.stats = { value = 0 }
-			self.parts.wpn_fps_ass_coyote_ammo_incendiary.custom_stats = {
-				bullet_class = "IncendiaryBulletBase",
-				ignore_statistic = true,
-				trail_effect = "_dmc/effects/nato_trail",
-				dot_data_name = "ammo_dragons_breath"
-			}
-		end
-
 		if self.parts.wpn_fps_pis_mk22_pistol_frame then
 			self.parts.wpn_fps_pis_mk22_pistol_frame.stance_mod = {
 				wpn_fps_pis_mk22_pistol = {
@@ -40958,7 +40949,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				muzzleflash_silenced = "effects/payday2/particles/weapons/air_pressure",
 				trail_effect = "_dmc/effects/warsaw_trail",
 				bullet_class = "PoisonBulletBase",
-				dot_data_name = "weapon_tranq_heavy"
+				dot_data_name = "weapon_tranq_extreme"
 			}
 
 			self.parts.wpn_fps_pis_mk22_pistol_silencer.supported = true
@@ -41906,6 +41897,79 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 			self.wpn_fps_ass_ar32_npc.uses_parts = deep_clone(self.wpn_fps_ass_ar32.uses_parts)
+		end
+		--Helldivers AR-2 Coyote
+		if self.parts.wpn_fps_ass_coyote_receiver then
+			self.parts.wpn_fps_ass_coyote_receiver.stance_mod = {
+				wpn_fps_ass_coyote = {
+					translation = Vector3(-0.02, -10, -0.35),
+					rotation = Rotation(-0.08, 0.1, 0)
+				}
+			}
+			self.parts.wpn_fps_ass_coyote_4x_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_ass_coyote_4x_optic.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.003, 2.5, 0.96)
+				end
+			end
+			self.parts.wpn_fps_ass_coyote_4x_optic.supported = true
+			self.parts.wpn_fps_ass_coyote_4x_optic.desc_id = "bm_wp_upg_o_4"
+			self.parts.wpn_fps_ass_coyote_4x_optic.stats = {
+				value = 1,
+				zoom = 30
+			}
+			self.parts.wpn_fps_ass_coyote_reflex_sight.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_ass_coyote_reflex_sight.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(-0.003, -2.5, -1)
+					weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(0.04, 0, 0)
+				end
+			end
+			self.parts.wpn_fps_ass_coyote_reflex_sight.supported = true
+			self.parts.wpn_fps_ass_coyote_reflex_sight.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_ass_coyote_reflex_sight.stats = {
+				value = 1,
+				zoom = 1
+			}
+			self.parts.wpn_fps_ass_coyote_reflex_sight_mk2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_ass_coyote_reflex_sight_mk2.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(-0.005, -10, 0.78)
+				end
+			end
+			self.parts.wpn_fps_ass_coyote_reflex_sight_mk2.supported = true
+			self.parts.wpn_fps_ass_coyote_reflex_sight_mk2.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_ass_coyote_reflex_sight_mk2.stats = {
+				value = 1,
+				zoom = 1
+			}
+
+			self.parts.wpn_fps_ass_coyote_holographic_sight.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_ass_coyote_holographic_sight.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.003, -5, 1.02)
+				end
+			end
+			self.parts.wpn_fps_ass_coyote_holographic_sight.supported = true
+			self.parts.wpn_fps_ass_coyote_holographic_sight.desc_id = "bm_wp_upg_o_1_5"
+			self.parts.wpn_fps_ass_coyote_holographic_sight.stats = {
+				value = 1,
+				zoom = 5
+			}
+
+			self.parts.wpn_fps_ass_coyote_ammo_incendiary.supported = true
+			self.parts.wpn_fps_ass_coyote_ammo_incendiary.pcs = nil
+			self.parts.wpn_fps_ass_coyote_ammo_incendiary.no_cull = true
+			self.parts.wpn_fps_ass_coyote_ammo_incendiary.stats = { value = 0 }
+			self.parts.wpn_fps_ass_coyote_ammo_incendiary.custom_stats = {
+				bullet_class = "IncendiaryBulletBase",
+				ignore_statistic = true,
+				trail_effect = "_dmc/effects/nato_trail",
+				dot_data_name = "ammo_dragons_breath"
+			}
+			
+			table.insert(self.wpn_fps_ass_coyote.uses_parts, "wpn_fps_upg_o_specter")
+			table.insert(self.wpn_fps_ass_coyote.uses_parts, "wpn_fps_upg_o_eotech")
 		end
 
 		--Helldivers 2 AR-23 (v5)

@@ -48,7 +48,13 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 	}
 	poison_entries.weapon_tranq_heavy = {
 		dot_damage = 1.5,
-		dot_length = 6.1,
+		dot_length = 8.1,
+		dot_tick_period = 0.5,
+		hurt_animation_chance = 1
+	}
+	poison_entries.weapon_tranq_extreme = {
+		dot_damage = 1.5,
+		dot_length = 16.1,
 		dot_tick_period = 0.5,
 		hurt_animation_chance = 1
 	}

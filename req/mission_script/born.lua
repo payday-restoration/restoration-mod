@@ -14,6 +14,11 @@ local guard_biker = {
          enemy = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
 	}
 }
+local disabled = {
+	values = {
+		enabled = false,
+	},
+}
 return {
 	-- Pro Job PONR 
 	-- kill the loop

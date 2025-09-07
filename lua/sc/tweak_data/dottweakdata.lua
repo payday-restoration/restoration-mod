@@ -34,7 +34,7 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_tick_period = 0.5,
 		use_weapon_damage_falloff = true,
 		duration_falloff_end_mult = 0.5,
-		hurt_animation_chance = 0
+		hurt_animation_chance = 0.5
 	}
 	poison_entries.weapon_tranq = {
 		dot_damage = 1.5,
@@ -42,13 +42,13 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_tick_period = 0.5,
 		use_weapon_damage_falloff = true,
 		duration_falloff_end_mult = 0.5,
-		hurt_animation_chance = 0.125
+		hurt_animation_chance = 0.5
 	}
 	poison_entries.weapon_tranq_medium = {
 		dot_damage = 1.5,
 		dot_length = 4.1,
 		dot_tick_period = 0.5,
-		hurt_animation_chance = 0.25
+		hurt_animation_chance = 0.5
 	}
 	poison_entries.weapon_tranq_heavy = {
 		dot_damage = 1.5,
@@ -60,7 +60,7 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_damage = 1.5,
 		dot_length = 16.1,
 		dot_tick_period = 0.5,
-		hurt_animation_chance = 0.75
+		hurt_animation_chance = 0.5
 	}
 	poison_entries.weapon_cyanide = {
 		dot_damage = 35,
@@ -72,28 +72,28 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_length = 2.1,
 		use_weapon_damage_falloff = true,
 		duration_falloff_end_mult = 0.5,
-		hurt_animation_chance = 0.1
+		hurt_animation_chance = 0.5
 	}
 	poison_entries.ammo_rip = {
 		dot_damage = 1.5,
 		dot_length = 4.1,
 		use_weapon_damage_falloff = true,
 		duration_falloff_end_mult = 0.5,
-		hurt_animation_chance = 0.2
+		hurt_animation_chance = 0.5
 	}
 	poison_entries.ammo_rip_pump = {
 		dot_damage = 1.5,
 		dot_length = 6.1,
 		use_weapon_damage_falloff = true,
 		duration_falloff_end_mult = 0.5,
-		hurt_animation_chance = 0.3
+		hurt_animation_chance = 0.5
 	}
 	poison_entries.ammo_rip_heavy = {
 		dot_damage = 1.5,
 		dot_length = 8.1,
 		use_weapon_damage_falloff = true,
 		duration_falloff_end_mult = 0.5,
-		hurt_animation_chance = 0.4
+		hurt_animation_chance = 0.5
 	}
 	
 	--(CROSS)BOW PROJECTILES

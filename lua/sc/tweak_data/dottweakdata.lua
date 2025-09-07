@@ -32,31 +32,35 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_damage = 1.5,
 		dot_length = 1.1,
 		dot_tick_period = 0.5,
+		use_weapon_damage_falloff = true,
+		duration_falloff_end_mult = 0.5,
 		hurt_animation_chance = 0
 	}
 	poison_entries.weapon_tranq = {
 		dot_damage = 1.5,
 		dot_length = 2.1,
 		dot_tick_period = 0.5,
-		hurt_animation_chance = 1
+		use_weapon_damage_falloff = true,
+		duration_falloff_end_mult = 0.5,
+		hurt_animation_chance = 0.125
 	}
 	poison_entries.weapon_tranq_medium = {
 		dot_damage = 1.5,
 		dot_length = 4.1,
 		dot_tick_period = 0.5,
-		hurt_animation_chance = 1
+		hurt_animation_chance = 0.25
 	}
 	poison_entries.weapon_tranq_heavy = {
 		dot_damage = 1.5,
 		dot_length = 8.1,
 		dot_tick_period = 0.5,
-		hurt_animation_chance = 1
+		hurt_animation_chance = 0.5
 	}
 	poison_entries.weapon_tranq_extreme = {
 		dot_damage = 1.5,
 		dot_length = 16.1,
 		dot_tick_period = 0.5,
-		hurt_animation_chance = 1
+		hurt_animation_chance = 0.75
 	}
 	poison_entries.weapon_cyanide = {
 		dot_damage = 35,

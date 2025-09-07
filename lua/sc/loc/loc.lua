@@ -2648,8 +2648,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 
 			--[[ PISTOLS ]]
 				--Gecko Pistol
-				["bm_tranq_maxim_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 60 damage over 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
-				["bm_tranq_maxim_auto_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistols, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 30 damage over 1 second with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
+				["bm_tranq_maxim_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 30 damage/sec for 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
+				["bm_tranq_maxim_auto_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistols, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 30 damage/sec for 1 second with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 
 				["bm_tranq_x_maxim_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 60 damage over 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 				--Igor (APS)
@@ -2779,7 +2779,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--Triad
 					["bm_triad_sc_desc"] = "#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##\n\nAlt-fire fires #{skill_color}#all 3 barrels at once## at the cost of #{important_1}#more recoil and spread.##",
 					--Taurus Cruve
-					["bm_curve_sc_desc"] = "Subcompact .380 pistol, maximizing concealability by adopting a shape that blends in with the human body's natural curves. Features an #{skill_color}#integrated flashlight and laser module##.\n\n#{stats_positive}#Deals 120 damage over 4 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
+					["bm_curve_sc_desc"] = "Subcompact .380 pistol, maximizing concealability by adopting a shape that blends in with the human body's natural curves. Features an #{skill_color}#integrated flashlight and laser module##.\n\n#{stats_positive}#Deals 30 damage/sec for 4 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 					--MP443
 					["bm_wp_upg_i_aw443"] = "Atlas PBW Kit",
 					["bm_wp_upg_i_aw443_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#800 RPM 2-round burst## setting.",

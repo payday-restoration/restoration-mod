@@ -2030,6 +2030,24 @@ end)
 						}
 					}
 
+					self.parts.wpn_fps_pis_maxim9_a_tranq_light = {
+						a_obj = "a_body",
+						type = "ammo",
+						third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						internal_part = true,
+						supported = true,
+						name_id = "bm_wp_upg_a_tranq",
+						unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						stats = {
+							value = 0
+						},
+						custom_stats = {
+							trail_effect = "_dmc/effects/warsaw_trail",
+							bullet_class = "PoisonBulletBase",
+							dot_data_name = "weapon_tranq_light"
+						}
+					}
+
 					self.wpn_fps_pis_maxim9.override = self.wpn_fps_pis_maxim9.override or {}
 					self.wpn_fps_pis_maxim9.override.wpn_fps_upg_i_autofire = {
 						stats = {
@@ -2037,19 +2055,15 @@ end)
 							recoil = -8
 						},
 						custom_stats = {
+							alt_desc = "bm_tranq_maxim_auto_sc_desc",
 							rof_mult = 1.428571428,
 							falloff_start_mult = 0.5,
 							falloff_end_mult = 0.75,
 							info_lock_auto = true
 						},
-						alt_desc = "bm_tranq_maxim_auto_sc_desc",
 						override = {
-							wpn_fps_pis_maxim9_a_tranq = {
-								custom_stats = {
-									trail_effect = "_dmc/effects/warsaw_trail",
-									bullet_class = "PoisonBulletBase",
-									dot_data_name = "weapon_tranq_light"
-								}
+							wpn_fps_pis_maxim9_body_upper = {
+								adds = { "wpn_fps_pis_maxim9_a_tranq_light" }
 							}
 						}
 					}
@@ -41967,9 +41981,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				trail_effect = "_dmc/effects/nato_trail",
 				dot_data_name = "ammo_dragons_breath"
 			}
-			
-			table.insert(self.wpn_fps_ass_coyote.uses_parts, "wpn_fps_upg_o_specter")
-			table.insert(self.wpn_fps_ass_coyote.uses_parts, "wpn_fps_upg_o_eotech")
 		end
 
 		--Helldivers 2 AR-23 (v5)
@@ -53175,6 +53186,7 @@ self.parts.wpn_fps_ass_m14_b_legendary.supported = true
 
 exclude = {
 	"wpn_fps_pis_maxim9_a_tranq",
+	"wpn_fps_pis_maxim9_a_tranq_light",
 	"wpn_fps_snp_mosin_a_tranq",
 	"wpn_fps_lmg_mg42_dummy_mag",
 	"wpn_fps_upg_a_custom",

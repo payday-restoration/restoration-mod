@@ -395,16 +395,6 @@ function CopDamage:damage_fire(attack_data)
 		end
 	end
 
-	local damage_type = (attack_data.variant == "fire_bullet" and weap_unit and weap_unit:base():get_damage_type()) or "normal"
-	if limbs[hit_body:name():key()] then
-		if damage_type_mult[damage_type] then
-			damage = damage * damage_type_mult[damage_type]
-		end
-		if is_pro and damage_type ~= "flamethrower" then
-			damage = damage * 0.75
-		end
-	end
-
 	--Allows seperate damage mults for fire pools and fire damage.
 	if alive(weap_unit) then
 		local weap_base = weap_unit:base()
@@ -418,6 +408,16 @@ function CopDamage:damage_fire(attack_data)
 				damage = damage * self._char_tweak.damage.fire_damage_mul
 			end	
 		end	
+
+		local damage_type = (attack_data.variant == "fire_bullet" and weap_base and weap_base.get_damage_type and weap_base:get_damage_type()) or "normal"
+		if hit_body and limbs[hit_body:name():key()] then
+			if damage_type_mult[damage_type] then
+				damage = damage * damage_type_mult[damage_type]
+			end
+			if is_pro and damage_type ~= "flamethrower" then
+				damage = damage * 0.75
+			end
+		end
 	end
 		
 	if self._marked_dmg_mul then

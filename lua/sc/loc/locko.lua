@@ -2577,7 +2577,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 
 			--[[ PISTOLS ]]
 				--Gecko Pistol
-				["bm_tranq_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 60의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
+				["bm_tranq_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
 				["bm_tranq_maxim_auto_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 1초간 30의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
 
 				["bm_tranq_x_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 60의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
@@ -2708,7 +2708,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--Triad
 					["bm_triad_sc_desc"] = "#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##\n\n보조 사격은 #{skill_color}#3개의 총열을 동시에 발사하지만## #{important_1}#반동과 탄퍼짐이 더 증가합니다.##",
 					--Taurus Cruve
-					["bm_curve_sc_desc"] = "인체의 자연스러운 곡선에 어울리는 디자인으로 은폐성을 극대화한 소형 .380탄 권총입니다. #{skill_color}#통합형 손전등 및 레이저 모듈##이 장착되어있습니다.\n\n#{stats_positive}#마취탄을 발사해 4초간 120의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
+					["bm_curve_sc_desc"] = "인체의 자연스러운 곡선에 어울리는 디자인으로 은폐성을 극대화한 소형 .380탄 권총입니다. #{skill_color}#통합형 손전등 및 레이저 모듈##이 장착되어있습니다.\n\n#{stats_positive}#마취탄을 발사해 4초간 30의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
 					--MP443
 					["bm_wp_upg_i_aw443"] = "Atlas PBW 키트",
 					["bm_wp_upg_i_aw443_desc"] = "#{risk}#발사 선택기를 추가하여## 이 무기에 #{skill_color}#800 RPM 3점사## 발사 모드로 전환할 수 있습니다.",

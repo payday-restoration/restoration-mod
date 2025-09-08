@@ -31043,6 +31043,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.sickle then
 				self.sickle.categories = {
 					"assault_rifle",
+					"sweet_liberty",
 					"battery"
 				}
 				self.sickle.recategorize = {"heavy_ar"}

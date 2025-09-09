@@ -1345,19 +1345,20 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 
 			--Rifleman
-				--Basic/Aced
-					self.values.assault_rifle.steelsight_accuracy_inc = {0.90, 0.75}
-					self.values.snp.steelsight_accuracy_inc = {0.90, 0.75}
-					self.values.assault_rifle.steelsight_range_inc = {1.10, 1.25}
-					self.values.snp.steelsight_range_inc = {1.10, 1.25}
-
+				--Basic
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.5, 0.5}
+					self.values.snp.steelsight_accuracy_inc = {0.5, 0.5}
+					--Sharpshooter has the additional +2 stabilty (a requirement to get this skill anyways)
+				--Aced
+					self.values.assault_rifle.steelsight_range_inc = {1.25, 1.25}
+					self.values.snp.steelsight_range_inc = {1.25, 1.25}
 					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.1}
 					self.values.snp.enter_steelsight_speed_multiplier = {1.1}
 
 					self.skill_descs.fire_control = {
-						skill_value_b1 = tostring(self.values.snp.steelsight_range_inc[1] % 1 * 100).."%", -- Accuracy and range buff
+						skill_value_b1 = tostring(self.values.snp.steelsight_accuracy_inc[1] % 1 * 100).."%", -- Accuracy buff
 						skill_value_b2 = tostring(self.values.snp.recoil_index_addend[1]), --++Stabilty
-						skill_value_p1 = tostring((self.values.snp.steelsight_range_inc[2] - self.values.snp.steelsight_range_inc[1]) * 100).."%",
+						skill_value_p1 = tostring(self.values.snp.steelsight_range_inc[2]) .."%", -- Range buff
 						skill_value_p2 = tostring(self.values.snp.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
 					}
 

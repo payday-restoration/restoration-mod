@@ -1144,8 +1144,6 @@ function SkillTreeTweakData:init(tweak_data)
 						upgrades = {
 							"assault_rifle_steelsight_accuracy_inc_1",
 							"snp_steelsight_accuracy_inc_1",
-							"assault_rifle_steelsight_range_inc_1",
-							"snp_steelsight_range_inc_1",
 							"assault_rifle_recoil_index_addend_2",
 							"snp_recoil_index_addend_2"
 						},
@@ -1153,10 +1151,8 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
-							"assault_rifle_steelsight_accuracy_inc_2",
-							"snp_steelsight_accuracy_inc_2",
-							"assault_rifle_steelsight_range_inc_2",
-							"snp_steelsight_range_inc_2",
+							"assault_rifle_steelsight_range_inc_1",
+							"snp_steelsight_range_inc_1",
 							"assault_rifle_enter_steelsight_speed_multiplier",
 							"snp_enter_steelsight_speed_multiplier"
 						},

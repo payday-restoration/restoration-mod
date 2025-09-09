@@ -25003,6 +25003,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	self.parts.wpn_fps_upg_o_shortdot_dmc.custom_stats = { big_scope = true }
 	self.parts.wpn_fps_upg_o_shortdot_dmc.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_shortdot_dmc.is_a_unlockable = true
+	self.parts.wpn_fps_upg_o_shortdot_dmc.exclude_from_challenge = true
 	self.parts.wpn_fps_upg_o_shortdot_dmc.name_id = "bm_wp_upg_o_shortdot_dmc"
 	self.parts.wpn_fps_upg_o_shortdot_dmc.desc_id = "bm_wp_upg_o_5_default"
 	self.parts.wpn_fps_upg_o_shortdot_dmc.has_description = true

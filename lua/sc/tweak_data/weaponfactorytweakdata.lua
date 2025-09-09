@@ -27648,9 +27648,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			}
 			self.parts.wpn_fps_ass_g11k2_optic.supported = true
+			self.parts.wpn_fps_ass_g11k2_optic.desc_id = "bm_wp_upg_o_1_8"
 			self.parts.wpn_fps_ass_g11k2_optic.stats = {
 				value = 1,
-				zoom = 8
+				zoom = 8,
+				base_zoom_off = 1
 			}
 			self.parts.wpn_fps_ass_g11k2_optic.stance_mod.wpn_fps_ass_g11k2 = {
 				translation = Vector3(-0.012, -1, -2.66)
@@ -27674,6 +27676,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				reload = 5
 			}
 			self.parts.wpn_fps_ass_g11k2_magazine_holder.custom_stats = { ads_speed_mult = 1.05 }
+
+			self.parts.wpn_fps_ass_g11k2_receiver_camo.supported = true
+			self.parts.wpn_fps_ass_g11k2_receiver_camo.desc_id = ""
+			self.parts.wpn_fps_ass_g11k2_receiver_camo.stats = { value = 0 }
+			self.parts.wpn_fps_ass_g11k2_receiver_camo.custom_stats = nil
 
 			table.insert(self.wpn_fps_ass_g11k2.uses_parts, "wpn_fps_upg_o_shortdot_dmc")
 			table.insert(self.wpn_fps_ass_g11k2.uses_parts, "wpn_fps_upg_o_leupold")

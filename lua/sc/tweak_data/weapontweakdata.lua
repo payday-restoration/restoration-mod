@@ -24912,7 +24912,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					count = 3,
 					no_anim = true,
 					burst_default = true,
-					delay = 0.240,
+					delay = 0.210,
 					rof_mult = 4.56521,
 					recoil_mult = 0.33,
 					last_recoil_mult = 1.2

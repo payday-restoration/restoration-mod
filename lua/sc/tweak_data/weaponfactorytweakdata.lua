@@ -19679,7 +19679,9 @@ end)
 						rotation = Rotation(-0.05, -0.06, -0.6)
 					}
 
-
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g11k2 = {
+						translation = Vector3(-0.012, -2.3, -2.756)
+					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_s556 = {
 						translation = Vector3(-0.065, 9.6, -2.1),
 						rotation = Rotation(0, -0.1, 0)
@@ -27629,6 +27631,57 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+
+		if self.parts.wpn_fps_ass_g11k2_selector then
+			self.parts.wpn_fps_ass_g11k2_selector.supported = true
+			self.parts.wpn_fps_ass_g11k2_selector.stats = { value = 0 }
+			self.parts.wpn_fps_ass_g11k2_selector.custom_stats = nil
+			self.parts.wpn_fps_ass_g11k2_selector.perks = nil
+			self.parts.wpn_fps_ass_g11k2_selector_auto.pcs = nil
+			self.parts.wpn_fps_ass_g11k2_selector_auto.supported = true
+			self.parts.wpn_fps_ass_g11k2_selector_auto.stats = { value = 0 }
+			self.parts.wpn_fps_ass_g11k2_selector_auto.custom_stats = nil
+			self.parts.wpn_fps_ass_g11k2_selector_auto.perks = nil
+			self.parts.wpn_fps_ass_g11k2_irons_rear.stance_mod = {
+				wpn_fps_ass_g11k2 = {
+					translation = Vector3(-0.014, -8, -1.64)
+				}
+			}
+			self.parts.wpn_fps_ass_g11k2_optic.supported = true
+			self.parts.wpn_fps_ass_g11k2_optic.stats = {
+				value = 1,
+				zoom = 8
+			}
+			self.parts.wpn_fps_ass_g11k2_optic.stance_mod.wpn_fps_ass_g11k2 = {
+				translation = Vector3(-0.012, -1, -2.66)
+			}
+
+			self.parts.wpn_fps_ass_g11k2_magazine_fast.supported = true
+			self.parts.wpn_fps_ass_g11k2_magazine_fast.stats = {
+				value = 2,
+				spread = -1,
+				concealment = -1,
+				reload = 3
+			}
+			self.parts.wpn_fps_ass_g11k2_magazine_fast.custom_stats = { rof_mult = 0.86956 }
+
+			self.parts.wpn_fps_ass_g11k2_magazine_holder.supported = true
+			self.parts.wpn_fps_ass_g11k2_magazine_holder.desc_id = ""
+			self.parts.wpn_fps_ass_g11k2_magazine_holder.stats = {
+				value = 8,
+				spread = -1,
+				concealment = -2,
+				reload = 5
+			}
+			self.parts.wpn_fps_ass_g11k2_magazine_holder.custom_stats = { ads_speed_mult = 1.05 }
+
+			table.insert(self.wpn_fps_ass_g11k2.uses_parts, "wpn_fps_upg_o_shortdot_dmc")
+			table.insert(self.wpn_fps_ass_g11k2.uses_parts, "wpn_fps_upg_o_leupold")
+			table.insert(self.wpn_fps_ass_g11k2.uses_parts, "wpn_fps_upg_o_box")
+			table.insert(self.wpn_fps_ass_g11k2.uses_parts, "wpn_fps_upg_o_northtac")
+
+			self.wpn_fps_ass_g11k2_npc.uses_parts = deep_clone(self.wpn_fps_ass_g11k2.uses_parts)
+		end
 
 		if self.parts.wpn_fps_smg_mas38_bolt then
 			self.parts.wpn_fps_smg_mas38_barrel.stats = { value = 0 }

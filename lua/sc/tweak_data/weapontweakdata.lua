@@ -8551,6 +8551,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hailstorm.sounds.fire = "hailstorm_fire"
 						self.hailstorm.sounds.fire_single = "hailstorm_fire"
 						self.hailstorm.sounds.fire_volley = "hailstorm_shotgun_fire_single"
+						self.hailstorm.sounds.stop_fire2 = "Stop_all_music" --haven't noticed any adverse effects come from this; all to just remove the falling casing sounds what shouldn't be there lmao
 						self.hailstorm.reload_speed_multiplier = 0.85
 						self.hailstorm.panic_suppression_chance = 0.05
 						self.hailstorm.timers.reload_exit_empty = 0.08
@@ -18241,7 +18242,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mars.reload_speed_multiplier = 1.02
 				self.mars.timers = deep_clone(self.deagle.timers)
 				self.mars.sounds.magazine_empty = nil
-				self.mars.sounds.stop_fire = "judge_x_fire"
+				self.mars.sounds.stop_fire = "saiga_npc1a_end"
 			end
 
 			if self.m712 then --Pawcio's M712
@@ -19039,7 +19040,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{4, self.stat_info.kick_tables.random_recoil}
 				}
 				self.quadbarrel.AMMO_MAX = 30
-				self.quadbarrel.sounds.stop_fire = "judge_x_fire"
+				self.quadbarrel.sounds.stop_fire = "saiga_npc1a_end"
 				self.quadbarrel.BURST_FIRE = {
 					count = 4,
 					delay = 0.75,
@@ -20247,7 +20248,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.musket.fire_mode_data.fire_rate = 2
 				self.musket.lock_slide = true
 				self.musket.sounds.magazine_empty = "shotgun_dryfire"
-				self.musket.sounds.stop_fire = "judge_x_fire"
+				self.musket.sounds.stop_fire = "saiga_npc1a_end"
 				self.musket.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.musket.kick_pattern = {
 					{0, self.stat_info.kick_tables.moderate_right_kick},
@@ -21703,7 +21704,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.toz66.stats_modifiers = nil
 				self.toz66.reload_speed_multiplier = 1.1
 				self.toz66.panic_suppression_chance = 0.05
-				self.toz66.sounds.stop_fire = "judge_x_fire"
+				self.toz66.sounds.stop_fire = "saiga_npc1a_end"
 				self.toz66.timers = deep_clone(self.huntsman.timers)
 				if BeardLib.Utils:FindMod("Restored Mosconi Reload Animation") then
 					self.toz66.animations.ignore_nonemptyreload = true
@@ -24890,6 +24891,70 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+
+			if self.g11k2 then --RJC9000 and PlayBONK's port of 3arc's absolute sin of a G11
+				self.g11k2.categories = { "assault_rifle" }
+				self.g11k2.recategorize = { "heavy_ar" }
+				self.g11k2.damage_type = "assault_rifle"
+				self.g11k2.has_description = true
+				self.g11k2.is_bullpup = true
+				self.g11k2.tactical_reload = 1
+				self.g11k2.CLIP_AMMO_MAX = 45
+				self.g11k2.AMMO_MAX = 120
+				self.g11k2.burst = nil
+				self.g11k2.fire_mode_data.burst_cooldown = nil
+				self.g11k2.BURST_COUNT = nil
+				self.g11k2.fire_mode_data.fire_rate = 0.130434
+				self.g11k2.CAN_TOGGLE_FIREMODE = true
+				self.g11k2.FIRE_MODE = "auto"
+				self.g11k2.BURST_FIRE_DEFAULT = true
+				self.g11k2.BURST_FIRE = {
+					count = 3,
+					no_anim = true,
+					burst_default = true,
+					delay = 0.240,
+					rof_mult = 4.56521,
+					recoil_mult = 0.33,
+					last_recoil_mult = 1.2
+				}
+				self.g11k2.kick = {}
+				self.g11k2.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.g11k2.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_recoil},
+					{12, self.stat_info.kick_tables.even_recoil},
+					{21, self.stat_info.kick_tables.right_recoil},
+					{33, self.stat_info.kick_tables.horizontal_recoil}
+				}
+				self.g11k2.supported = true
+				self.g11k2.ads_speed = 0.340
+				self.g11k2.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 7200,
+					min_mult = 0.3333
+				}
+				self.g11k2.stats = {
+					damage = 30,
+					spread = 81,
+					recoil = 75,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.g11k2.stats_modifiers = nil
+				self.g11k2.panic_suppression_chance = 0.05
+				self.g11k2.timers.reload_exit_not_empty = 0.8
+				self.g11k2.timers.reload_not_empty = 3.2
+				self.g11k2.timers.reload_exit_empty = 1.44
+				self.g11k2.timers.reload_empty = 5
+				self.g11k2.sounds.stop_fire = "sr2_x_npc1a_end"
+			end
+
 			if self.ak15 then
 				self.ak15.warsaw = true
 				self.ak15.recategorize = { "heavy_ar" }
@@ -25943,7 +26008,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m7caseless.timers.reload_empty = 1.8
 				self.m7caseless.timers.reload_exit_empty = 0.75
 				self.m7caseless.sounds.use_fix = nil
-				self.m7caseless.sounds.stop_fire = "judge_x_fire"
+				self.m7caseless.sounds.stop_fire = "sr2_x_npc1a_end"
 				self.m7caseless.panic_suppression_chance = 0.05
 			end
 
@@ -25990,7 +26055,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_m7caseless.timers.reload_empty = 3
 				self.x_m7caseless.timers.reload_exit_empty = 0.9
 				self.x_m7caseless.sounds.use_fix = nil
-				self.x_m7caseless.sounds.stop_fire = "judge_x_fire"
+				self.x_m7caseless.sounds.stop_fire = "sr2_x_npc1a_end"
 				self.x_m7caseless.panic_suppression_chance = 0.05
 			end
 
@@ -26549,7 +26614,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.t9fastburst.sounds.fire_single = "t9fastburst_fire"
 				self.t9fastburst.sounds.fire_auto = "t9fastburst_fire"
 				self.t9fastburst.sounds.use_fix = nil
-				self.t9fastburst.sounds.stop_fire = "judge_x_fire"
+				self.t9fastburst.sounds.stop_fire = "sr2_x_npc1a_end"
 				self.t9fastburst.timers.reload_exit_empty = 0.9
 				self.t9fastburst.timers.reload_not_empty = 2.31
 				self.t9fastburst.timers.reload_exit_not_empty = 0.8
@@ -26809,7 +26874,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.malorian_3516.timers.reload_exit_not_empty = 1
 				self.malorian_3516.lock_slide = nil
 				self.malorian_3516.sounds.magazine_empty = nil
-				self.malorian_3516.sounds.stop_fire = "judge_x_fire"
+				self.malorian_3516.sounds.stop_fire = "saiga_npc1a_end"
 				self.malorian_3516.shell_ejection = "_dmc/effects/shell_shak_smol"
 				self.malorian_3516.swap_speed_multiplier = 0.4
 				self.malorian_3516.use_unequip_swap = true
@@ -26961,7 +27026,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.swhiskey.can_shoot_through_enemy_unlim = true
 				self.swhiskey.can_shoot_through_shield = true
 				self.swhiskey.can_shoot_through_wall = true
-				self.swhiskey.sounds.stop_fire = "judge_x_fire"
+				self.swhiskey.sounds.stop_fire = "saiga_npc1a_end"
 				self.swhiskey.reload_speed_multiplier = 0.9
 				self.swhiskey.armor_piercing_chance = 1
 				self.swhiskey.spin_up_semi = true
@@ -29597,6 +29662,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mk22_pistol.stats_modifiers = nil
 				self.mk22_pistol.panic_suppression_chance = 0.05
+				self.mk22_pistol.sounds.stop_fire = "g18c_x_stop"
 				self.mk22_pistol.reload_speed_multiplier = 1.25
 				self.mk22_pistol.timers = deep_clone(self.deagle.timers)
 			end
@@ -30052,7 +30118,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.toz81.panic_suppression_chance = 0.05
 				self.toz81.use_hipfire_stance = "breech"
 				self.toz81.reload_speed_multiplier = 1.02
-				self.toz81.sounds.stop_fire = "judge_x_fire"
+				self.toz81.sounds.stop_fire = "saiga_npc1a_end"
 				self.toz81.timers.reload_empty = 2.18
 				self.toz81.timers.reload_exit_empty = 1.15
 				self.toz81.timers.reload_not_empty = 2.18
@@ -30103,7 +30169,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_toz81.stats_modifiers = nil
 				self.x_toz81.panic_suppression_chance = 0.05
-				self.x_toz81.sounds.stop_fire = "judge_x_fire"
+				self.x_toz81.sounds.stop_fire = "saiga_npc1a_end"
 				self.x_toz81.timers = deep_clone(self.x_judge.timers)
 			end
 
@@ -30320,7 +30386,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bk500.can_shoot_through_enemy_unlim = true
 				self.bk500.can_shoot_through_shield = true
 				self.bk500.can_shoot_through_wall = true
-				self.bk500.sounds.stop_fire = "judge_x_fire"
+				self.bk500.sounds.stop_fire = "saiga_npc1a_end"
 				self.bk500.reload_speed_multiplier = 0.9
 				self.bk500.armor_piercing_chance = 1
 				self.bk500.object_damage_mult = 1.75
@@ -31097,7 +31163,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.sounds.magazine_empty = "wp_sentrygun_swap_ammo"
 				self.sickle.sounds.spin_start = "hailstorm_shotgun_fire_charge"
 				self.sickle.sounds.spin_end = "swatturret_spin_stop"
-				self.sickle.sounds.stop_fire = "judge_x_fire"
+				self.sickle.sounds.stop_fire = "g3_npc1a_end"
 				self.sickle.recoil_values = {
 					{ 80, 60 },
 					7.5,
@@ -34731,7 +34797,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if table.contains(weap.categories, "dmr_h") or table.contains(weap.categories, "snp") or table.contains(weap.categories, "mmg") then
-				weap.sounds.fire_single3 = "judge_x_fire"
+				weap.sounds.fire_single3 = "saiga_npc1a_end"
 			end
 
 			if table.contains(weap.categories, "lmg") or table.contains(weap.categories, "minigun") then

@@ -240,7 +240,7 @@ tweak_data.assault_rifle = {
 	swap_bonus = 0.95,
 	ads_moving_recoil = 1.1,
 	ads_stationary_spread_mult = 0.75,
-	ads_moving_spread_mult = 1.22,
+	ads_moving_spread_mult = 1.25,
 	ads_move_speed_mult = 0.4,
 	hipfire_spread_mult = 1.5,
 	hipfire_moving_spread_mult = 1.75,
@@ -252,7 +252,7 @@ tweak_data.assault_rifle = {
 		hipfire_spread_mult = 1.2 / tweak_data.assault_rifle.hipfire_spread_mult,
 		hipfire_moving_spread_mult = 1.5 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
 		ads_moving_recoil = 1.05 / tweak_data.assault_rifle.ads_moving_recoil,
-		ads_moving_spread_mult = 1.11 / tweak_data.assault_rifle.ads_moving_spread_mult,
+		ads_moving_spread_mult = 1.15 / tweak_data.assault_rifle.ads_moving_spread_mult,
 		ads_move_speed_mult = 0.45 / tweak_data.assault_rifle.ads_move_speed_mult,
 	}
 	tweak_data.dmr_l = {
@@ -260,7 +260,7 @@ tweak_data.assault_rifle = {
 		hipfire_spread_mult = 1.8 / tweak_data.assault_rifle.hipfire_spread_mult,
 		hipfire_moving_spread_mult = 2 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
 		ads_stationary_spread_mult = 0.5,
-		ads_moving_spread_mult = 1.33 / tweak_data.assault_rifle.ads_moving_spread_mult,
+		ads_moving_spread_mult = 1.35 / tweak_data.assault_rifle.ads_moving_spread_mult,
 		shake_mul = 1.1
 	}
 	tweak_data.dmr_h = {
@@ -268,7 +268,7 @@ tweak_data.assault_rifle = {
 		hipfire_spread_mult = 2 / tweak_data.assault_rifle.hipfire_spread_mult,
 		hipfire_moving_spread_mult = 2.5 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
 		ads_stationary_spread_mult = 0.25,
-		ads_moving_spread_mult = 1.33 / tweak_data.assault_rifle.ads_moving_spread_mult,
+		ads_moving_spread_mult = 1.35 / tweak_data.assault_rifle.ads_moving_spread_mult,
 		shake_mul = 1.1
 	}
 

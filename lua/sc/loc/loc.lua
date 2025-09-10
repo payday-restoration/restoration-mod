@@ -1396,7 +1396,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to #{risk}#spread horizontally## instead of clustering.",
 		["bm_wp_ns_ultima_desc_sc"] = "Increases overall spread of pellets by 75%.",
 		["bm_wp_upg_a_slug_sc"] = "AP Slug",
-		["bm_wp_upg_a_slug_spam_desc"] = "Fires a lead slug that #{skill_color}#deals 75% of its damage through body armor and pierces enemies and thin walls.##",
+		["bm_wp_upg_a_slug_spam_desc"] = "Fires a lead slug that #{skill_color}#deals 75% of its damage through body armor, pierces enemies, shields within max damage range and thin walls.##",
 		["bm_wp_upg_a_slug_desc"] = "Fires a lead slug that #{skill_color}#pierces body armor, multiple enemies, shields and thin walls.##",
 		["bm_wp_upg_a_slug_titan_desc"] = "Fires a lead slug that #{skill_color}#pierces body armor, multiple enemies, shields, titan-shields and thin walls.##",
 		["bm_wp_upg_a_explosive_desc_sc"] = "Fires an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#2## meters.\nSlugs have #{skill_color}#no falloff## but #{risk}#damage is split between the slug and explosion.##",

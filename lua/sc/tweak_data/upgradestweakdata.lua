@@ -1331,9 +1331,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.snp.move_spread_multiplier = {0.4}
 					self.values.assault_rifle.move_spread_multiplier = {0.4}
-				--Ace
+				--Basic/Ace
 					self.values.snp.reload_speed_multiplier = {1.05, 1.15}
 					self.values.assault_rifle.reload_speed_multiplier = {1.05, 1.15}
+				--Ace
 					self.values.snp.ap_bullets_min = {0.25}
 					self.values.assault_rifle.ap_bullets_min = {0.25}
 

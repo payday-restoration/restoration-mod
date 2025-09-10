@@ -2577,10 +2577,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 
 			--[[ PISTOLS ]]
 				--Gecko Pistol
-				["bm_tranq_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
-				["bm_tranq_maxim_auto_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 1초간 30의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
+				["bm_tranq_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##",
+				["bm_tranq_maxim_auto_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
 
-				["bm_tranq_x_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 60의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
+				["bm_tranq_x_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##",
 				--Igor (APS)
 				["bm_stech_sc_desc"] = "더 무겁고 발사 속도가 느린 기관권총으로, 휴대성이 떨어져 선호도가 떨어졌습니다. 무거운 무게 덕분에 은폐성을 희생한 대신 더 나은 반동 제어가 가능합니다.",
 				["bm_x_stech_sc_desc"] = "더 무겁고 발사 속도가 느린 기관권총으로, 휴대성이 떨어져 선호도가 떨어졌습니다. 무거운 무게 덕분에 은폐성을 희생한 대신 더 나은 반동 제어가 가능합니다.",
@@ -2708,7 +2708,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--Triad
 					["bm_triad_sc_desc"] = "#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##\n\n보조 사격은 #{skill_color}#3개의 총열을 동시에 발사하지만## #{important_1}#반동과 탄퍼짐이 더 증가합니다.##",
 					--Taurus Cruve
-					["bm_curve_sc_desc"] = "인체의 자연스러운 곡선에 어울리는 디자인으로 은폐성을 극대화한 소형 .380탄 권총입니다. #{skill_color}#통합형 손전등 및 레이저 모듈##이 장착되어있습니다.\n\n#{stats_positive}#마취탄을 발사해 4초간 30의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
+					["bm_curve_sc_desc"] = "인체의 자연스러운 곡선에 어울리는 디자인으로 은폐성을 극대화한 소형 .380탄 권총입니다. #{skill_color}#통합형 손전등 및 레이저 모듈##이 장착되어있습니다.\n\n#{stats_positive}#마취탄을 발사해 4초간 30의 피해를 가합니다.##",
 					--MP443
 					["bm_wp_upg_i_aw443"] = "Atlas PBW 키트",
 					["bm_wp_upg_i_aw443_desc"] = "#{risk}#발사 선택기를 추가하여## 이 무기에 #{skill_color}#800 RPM 3점사## 발사 모드로 전환할 수 있습니다.",
@@ -5813,7 +5813,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Rifleman--
 				["menu_rifleman_sc"] = "소총수",
-				["menu_rifleman_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##의 조준 시 명중률과 사거리가 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{skill_color}#소총##의 안정성이 추가로 #{skill_color}#$skill_value_b2## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#소총##의 조준 시 명중률과 사거리가 추가로 #{skill_color}#$skill_value_p1## 증가합니다.\n\n#{skill_color}#소총##의 조준 및 달리기 후 사격 속도가 #{skill_color}#$skill_value_p2## 빨라집니다.",
+				["menu_rifleman_desc_sc"] = "베이식: #{owned}#$basic##\n조준 시 #{skill_color}#소총##의 명중률이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{skill_color}#소총##의 안정성이 추가로 #{skill_color}#$skill_value_b2## 증가합니다.\n\n에이스: #{owned}#$pro##\n조준 시 #{skill_color}#소총##의 사거리가 #{skill_color}#$skill_value_p1## 증가합니다.\n\n#{skill_color}#소총##의 조준 및 달리기 후 사격 속도가 #{skill_color}#$skill_value_p2## 빨라집니다.",
 
 				--Kilmer--
 				["menu_heavy_impact_beta_sc"] = "킬머",
@@ -6006,7 +6006,7 @@ end)
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_dodge"] = "회피",
-		["menu_st_category_activated"] = "Activatable",
+		["menu_st_category_activated"] = "활성화형",
 		["menu_st_category_challenge"] = "와일드 카드",
 		["menu_st_category_mod"] = "모드",
 

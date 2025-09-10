@@ -1356,9 +1356,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.snp.enter_steelsight_speed_multiplier = {1.1}
 
 					self.skill_descs.fire_control = {
-						skill_value_b1 = tostring(self.values.snp.steelsight_accuracy_inc[1] % 1 * 100).."%", -- Accuracy buff
+						skill_value_b1 = tostring((1 - self.values.snp.steelsight_accuracy_inc[1]) * 100).."%", -- Accuracy buff
 						skill_value_b2 = tostring(self.values.snp.recoil_index_addend[1]), --++Stabilty
-						skill_value_p1 = tostring(self.values.snp.steelsight_range_inc[2]) .."%", -- Range buff
+						skill_value_p1 = tostring(self.values.snp.steelsight_range_inc[2]  % 1 * 100) .."%", -- Range buff
 						skill_value_p2 = tostring(self.values.snp.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
 					}
 

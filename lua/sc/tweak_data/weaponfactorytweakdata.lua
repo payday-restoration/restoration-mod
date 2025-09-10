@@ -20174,10 +20174,9 @@ end)
 
 			for i, weap in pairs(self.parts.wpn_fps_upg_o_shortdot.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0, -21.5, -0.76)
+					weap.translation = weap.translation + Vector3(0.0045, -21.5, -0.76)
 				end
 			end
-
 
 			--Vanilla Shortdot
 			self.parts.wpn_fps_upg_o_shortdot_vanilla = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
@@ -24997,19 +24996,59 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	}
 
 	--Default Sniper Scope
-	self.parts.wpn_fps_upg_o_shortdot_dmc = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
-	self.parts.wpn_fps_upg_o_shortdot_dmc.pcs = {}
-	self.parts.wpn_fps_upg_o_shortdot_dmc.stats = {value = 0, zoom = 40}
-	self.parts.wpn_fps_upg_o_shortdot_dmc.custom_stats = { big_scope = true }
-	self.parts.wpn_fps_upg_o_shortdot_dmc.perks = {"scope"}
-	self.parts.wpn_fps_upg_o_shortdot_dmc.is_a_unlockable = true
-	self.parts.wpn_fps_upg_o_shortdot_dmc.exclude_from_challenge = true
-	self.parts.wpn_fps_upg_o_shortdot_dmc.name_id = "bm_wp_upg_o_shortdot_dmc"
-	self.parts.wpn_fps_upg_o_shortdot_dmc.desc_id = "bm_wp_upg_o_5_default"
-	self.parts.wpn_fps_upg_o_shortdot_dmc.has_description = true
-	self.parts.wpn_fps_upg_o_shortdot_dmc.alt_icon = "guis/dlcs/gage_pack_historical/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_c96_sight"
-	self.parts.wpn_fps_upg_o_shortdot_dmc.supported = true
-	self.parts.wpn_fps_upg_o_shortdot_dmc.dlc = "sc"
+	self.parts.wpn_fps_upg_o_shortdot_dmc = {
+		is_a_unlockable = true,
+		pcs = {},
+		dlc = "sc",
+		a_obj = "a_o",
+		reticle_obj = "g_reddot",
+		type = "sight",
+		name_id = "bm_wp_upg_o_shortdot_dmc",
+		desc_id = "bm_wp_upg_o_5_default",
+		has_description = true,
+		unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_fps_upg_o_shortdot",
+		third_unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_third_upg_o_shortdot",
+		alt_icon = "guis/dlcs/gage_pack_historical/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_c96_sight",
+		stats = { value = 0, zoom = 40 },
+		custom_stats = { big_scope = true },
+		perks = { "scope" },
+		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_shortdot.stance_mod),
+		forbids = {
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_upg_o_sig"
+		},
+		texture_switch = {
+			channel = "diffuse_texture",
+			material = {
+				"gfx_reddot1",
+				"screen"
+			}
+		},
+		visibility = {
+			{
+				condition = function (self, part, npc)
+					return _G.IS_VR and not npc
+				end,
+				objects = {
+					g_vr_lens = true,
+					g_gfx_lens = false,
+					g_gfx_lens_2 = false,
+					g_gfx_lens_3 = false,
+					g_reddot = false,
+					g_screen = true,
+					g_vr_phong = true,
+					g_reticle = false
+				}
+			}
+		},
+		camera = {
+			a_camera = "a_camera",
+			material = "screen",
+			fov = 9,
+			a_screen = "g_screen",
+			channel = "macrodetail_diffuse_texture"
+		}
+	}
 
 	for factory_id, i in pairs(self) do
 		if self[factory_id] and self[factory_id .. "_npc"] then

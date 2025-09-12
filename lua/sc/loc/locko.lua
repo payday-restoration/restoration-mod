@@ -1335,7 +1335,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_ns_duck_desc_sc"] = "펠릿이 뭉치지 않고 #{risk}#수평으로 퍼지게 합니다.##",
 		["bm_wp_ns_ultima_desc_sc"] = "펠릿의 종합 확산을 75%만큼 증가시킵니다.",
 		["bm_wp_upg_a_slug_sc"] = "철갑 슬러그탄",
-		["bm_wp_upg_a_slug_spam_desc"] = "#{skill_color}#방탄복을 관통하여 피해의 75% 가하고 다수의 적, 얇은 벽을 관통하는## 납탄을 발사합니다.",
+		["bm_wp_upg_a_slug_spam_desc"] = "#{skill_color}#방탄복을 관통하여 피해의 75% 가하고 다수의 적, 최대 피해량 사거리 내의 방패 및 얇은 벽을 관통하는## 납탄을 발사합니다.",
 		["bm_wp_upg_a_slug_desc"] = "#{skill_color}#방탄복과 다수의 적, 얇은 벽을 관통하는## 납탄을 발사합니다.",
 		["bm_wp_upg_a_slug_titan_desc"] = "#{skill_color}#방탄복과 다수의 적, 방패, 타이탄 방패, 얇은 벽을 관통하는## 납탄을 발사합니다.",
 		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#2##미터인 #{heat_warm_color}#폭발성## 납탄을 발사합니다.\n이 슬러그탄은 #{skill_color}#사거리 별 피해량 감소가 없습니다.## 하지만 #{risk}#피해는 슬러그탄과 폭발로 나뉩니다.##",

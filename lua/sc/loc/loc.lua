@@ -6304,7 +6304,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 
 		--CopyCat--
 		["menu_st_spec_23"] = "Copycat",
-		["menu_deck23_1_desc"] = "Killing #{skill_color}#$perk_value_1## enemies reloads your holstered weapon.\n\n#{risk}#NOTE: Kills are counted separately between weapons and the counter only resets once you trigger a reload for the holstered weapon.##\n\nYou swap between weapons #{skill_color}#$perk_value_2## faster.",
+		["menu_deck23_1_desc"] = "Killing #{skill_color}#$perk_value_1## enemies with your drawn weapon reloads your holstered weapon.\n\n#{risk}#NOTE: Kills are counted separately between weapons and the counter only resets once you trigger a reload for the holstered weapon.##\n\nYou swap between weapons #{skill_color}#$perk_value_2## faster.",
 		["menu_deck23_1_short"] = "Killing #{skill_color}#$perk_value_1## enemies reloads your holstered weapon.\n\nYou swap between weapons #{skill_color}#$perk_value_2## faster.",
 		["menu_deck23_1_1_desc"] = "You gain #{skill_color}#$perk_value_1## more health.",
 		["menu_deck23_1_1_short"] = "You gain #{skill_color}#$perk_value_1## more health.",

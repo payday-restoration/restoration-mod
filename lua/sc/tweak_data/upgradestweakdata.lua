@@ -2883,7 +2883,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1 + carry_speed_multiplier * 3,
 		1 + carry_speed_multiplier * 4
 	}
-	local auto_reload_kills = 10
+	local auto_reload_kills = 8
 	self.values.player.primary_reload_secondary = {
 		auto_reload_kills
 	}

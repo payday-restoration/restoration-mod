@@ -377,8 +377,13 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	end
 	
 	local selection_index = equipped_unit and equipped_unit:base() and equipped_unit:base():selection_index() or 0
+	local update_secondary_reload_primary = selection_index == 1 and self._has_secondary_reload_primary
+	local update_primary_reload_secondary = selection_index == 2 and self._has_primary_reload_secondary
+	local equipped_weapon_id = equipped_unit and equipped_unit:base() and equipped_unit:base():get_name_id()
+	update_secondary_reload_primary = update_secondary_reload_primary and weapon_id == equipped_weapon_id
+	update_primary_reload_secondary = update_primary_reload_secondary and weapon_id == equipped_weapon_id
 
-	if selection_index == 1 and self._has_secondary_reload_primary then
+	if update_secondary_reload_primary then
 		local kills_to_reload = self:upgrade_value("player", "secondary_reload_primary", 10)
 		local secondary_kills = self:get_property("secondary_reload_primary_kills", 0) + 1
 
@@ -391,13 +396,14 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 				primary_base:on_reload(nil, true)
 				managers.statistics:reloaded()
 				managers.hud:set_ammo_amount(primary_base:selection_index(), primary_base:ammo_info())
+				player_unit:sound():play("perkdeck_activate")
 			end
 
 			secondary_kills = 0
 		end
 
 		self:set_property("secondary_reload_primary_kills", secondary_kills)
-	elseif selection_index == 2 and self._has_primary_reload_secondary then
+	elseif update_primary_reload_secondary then
 		local kills_to_reload = self:upgrade_value("player", "primary_reload_secondary", 10)
 		local primary_kills = self:get_property("primary_reload_secondary_kills", 0) + 1
 
@@ -410,6 +416,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 				secondary_base:on_reload(nil, true)
 				managers.statistics:reloaded()
 				managers.hud:set_ammo_amount(secondary_base:selection_index(), secondary_base:ammo_info())
+				player_unit:sound():play("perkdeck_activate")
 			end
 
 			primary_kills = 0

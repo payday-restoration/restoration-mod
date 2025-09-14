@@ -6234,9 +6234,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 
 		--CopyCat--
 		["menu_st_spec_23"] = "카피캣",
-		["menu_deck23_1_desc"] = "적을 #{skill_color}#$perk_value_1##명 처치하면 수납한 무기를 자동으로 재장전합니다.\n\n#{risk}#주의: 처치 횟수는 무기별로 별도로 계산되며, 수납한 무기를 재장전하면 횟수가 초기화됩니다.##\n\n무기 전환 속도가 #{skill_color}#$perk_value_2## 증가합니다.",
-		["menu_deck23_1_short"] = "적을 #{skill_color}#$perk_value_1##명 처치하면 수납한 무기를 자동으로 재장전합니다.\n\n무기 전환 속도가 #{skill_color}#$perk_value_2## 증가합니다.",
-		["menu_deck23_1_short"] = "적을 #{skill_color}#$perk_value_1##명 처치하면 수납된 무기를 자동으로 재장전합니다.\n\n무기 전환 속도가 #{skill_color}#$perk_value_2## 증가합니다.",
+		["menu_deck23_1_desc"] = "들고 있는 무기로 적을 #{skill_color}#$perk_value_1##명 처치하면 수납한 무기를 자동으로 재장전합니다.\n\n#{risk}#주의: 처치 횟수는 무기별로 별도로 계산되며, 수납한 무기를 재장전하면 횟수가 초기화됩니다.##\n\n무기 전환 속도가 #{skill_color}#$perk_value_2## 증가합니다.",
+		["menu_deck23_1_short"] = "들고 있는 무기로 적을 #{skill_color}#$perk_value_1##명 처치하면 수납한 무기를 자동으로 재장전합니다.\n\n무기 전환 속도가 #{skill_color}#$perk_value_2## 증가합니다.",
 		["menu_deck23_1_1_desc"] = "체력이 #{skill_color}#$perk_value_1## 증가합니다.",
 		["menu_deck23_1_1_short"] = "체력이 #{skill_color}#$perk_value_1## 증가합니다.",
 		["menu_deck23_1_2_desc"] = "방탄량이 #{skill_color}#$perk_value_1## 증가합니다.",

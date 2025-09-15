@@ -14,17 +14,6 @@
 		<search>
 			<network/>
 			<rpc/>
-			<message name="set_equipped_weapon"/>
-			<param type="int" min="1" max="512"/>			
-		</search>
-		<target mode="attributes">	
-			<attr name="max" value="1024"/>
-		</target>
-	</tweak>
-	<tweak name="settings/network" extension="network_settings">
-		<search>
-			<network/>
-			<rpc/>
 			<message name="sync_smoke_grenade_kill"/>
 		</search>
 		<target mode="attributes">
@@ -152,6 +141,43 @@
 			<message name="sync_skm_captain" delivery="reliable" receiver="unit" check="server_to_client">
 				<param type="string" />
 			</message>
+		</target>
+	</tweak>
+
+	<!-- Stuff for weapon syncing -->
+	<tweak name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+			<message name="set_equipped_weapon"/>
+			<param type="int" min="1" max="512"/>
+		</search>
+		<target mode="attributes">	
+			<attr name="max" value="1024"/>
+		</target>
+	</tweak>
+
+	<!-- Testing -->
+	<tweak version="2" name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+			<message name="run_mission_element"/>
+			<param type="int" min="0" max="100"/>
+		</search>
+		<target mode="attributes">
+			<attr name="max" value="512"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+			<message name="run_mission_element_no_instigator"/>
+			<param type="int" min="0" max="100"/>
+		</search>
+		<target mode="attributes">
+			<attr name="max" value="512"/>
 		</target>
 	</tweak>
 </tweaks>

@@ -241,7 +241,6 @@ function restoration:Init()
 		"crojob2", --Bomb Dockyard
 		"friend", --Scarface Mansion
 		"kenaz", --Golden Grin Casino
-		"peta", --Goatsim 1
 		"watchdogs_2_day", --Watchdogs Day 2
 		"watchdogs_2", --Watchdogs Day 2 but night
 		"bex", --San Martin Bank
@@ -279,6 +278,7 @@ function restoration:Init()
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {
 		"welcome_to_the_jungle_2", --Big Oil 2. Scripted cloaker hell.
+		"peta", --Goatsim 1
 		"arena", -- Alesso Heist
 		"cane", --Santa's Workshop
 		"brb", --Brooklyn Bank
@@ -352,8 +352,6 @@ function restoration:Init()
 		"icing",	--Road Rage
 		"gunw_lvl",  -- Gun Waashing
 		"R&amp;B Bank" -- RNB Bank (Notoriety port)
-
-
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {

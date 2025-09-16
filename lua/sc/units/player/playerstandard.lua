@@ -1235,7 +1235,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						local stance_mults = weap_tweak_data.stance_multipliers or nil
 						recoil_multiplier = recoil_multiplier * ((stance_mults and (self._state_data.in_steelsight and stance_mults.steelsight or self._state_data.ducking and stance_mults.crouching or stance_mults.standing)) or 1)
 						recoil_multiplier_h = recoil_multiplier_h * ((stance_mults and (self._state_data.in_steelsight and stance_mults.steelsight or self._state_data.ducking and stance_mults.crouching or stance_mults.standing)) or 1)
-						recoil_multiplier_h = math.lerp(recoil_multiplier, recoil_multiplier_h, 0.20)
+						recoil_multiplier_h = math.lerp(recoil_multiplier, recoil_multiplier_h, 0.25)
 						local recoil_count = weap_base._shot_recoil_pattern_count or 0
 						local recoil_stage = nil
 						if weap_tweak_data.kick_pattern then

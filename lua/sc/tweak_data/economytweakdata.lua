@@ -28,15 +28,15 @@ function EconomyTweakData:init(tweak_data)
 	--Stability Bonuses
 	--This one is effectively a stabilty bonus, shush
 	self.bonuses.spread_n1.name_id = "bm_menu_bonus_spread_n1"
-	self.bonuses.spread_n1.stats = {spread = -3, recoil = 3}
+	self.bonuses.spread_n1.stats = {spread = -3, recoil = 6}
 	--self.bonuses.spread_n1.damage_near_mul = -300
 	--self.bonuses.spread_n1.damage_far_mul = -600
 	self.bonuses.recoil_p1.name_id = "bm_menu_bonus_recoil_p1"
-	self.bonuses.recoil_p1.stats = {spread = -1, recoil = 1}
+	self.bonuses.recoil_p1.stats = {spread = -1, recoil = 2}
 	--self.bonuses.recoil_p1.damage_near_mul = -100
 	--self.bonuses.recoil_p1.damage_far_mul = -200
 	self.bonuses.recoil_p2.name_id = "bm_menu_bonus_recoil_p2"
-	self.bonuses.recoil_p2.stats = {spread = -2, recoil = 2}
+	self.bonuses.recoil_p2.stats = {spread = -2, recoil = 4}
 	--self.bonuses.recoil_p2.damage_near_mul = -200
 	--self.bonuses.recoil_p2.damage_far_mul = -400
 

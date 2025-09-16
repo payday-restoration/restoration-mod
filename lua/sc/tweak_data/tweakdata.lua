@@ -1699,7 +1699,8 @@ local twf = tweak_data.weapon.factory
 local twb = tweak_data.blackmarket
 --Shitty way getting this to load late/after soosh's CunnyArchive weapon skin mod; if there's a better way, do tell
 --BRATTY CODE NEEDS CORRECTION 😭💢
-if twb.weapon_skins.mg42_cnuy_hina then --Version 0.5.0
+
+if twb.weapon_skins.tecci_cnuy_ibuki then --Version 0.7.0
 	twb.weapon_skins.mg42_cnuy_hina.default_blueprint = {
 		"wpn_fps_lmg_mg42_b_mg42",
 		"wpn_fps_lmg_mg42_n42",
@@ -1812,9 +1813,6 @@ if twb.weapon_skins.mg42_cnuy_hina then --Version 0.5.0
 		end
 	end
 
-end
-
-if twb.weapon_skins.benelli_cnuy_hoshino then --Version 0.6.0
 	twb.weapon_skins.benelli_cnuy_hoshino.default_blueprint = {
 		"wpn_fps_sho_ben_body_standard",
 		"wpn_fps_sho_ben_b_standard",
@@ -1833,9 +1831,7 @@ if twb.weapon_skins.benelli_cnuy_hoshino then --Version 0.6.0
 			end
 		end
 	end
-end
 
-if twb.weapon_skins.tecci_cnuy_ibuki then --Version 0.7.0
 	twb.weapon_skins.tecci_cnuy_ibuki.default_blueprint = {
 		"wpn_fps_ass_tecci_b_standard",
 		"wpn_fps_ass_tecci_dh_standard",
@@ -1862,6 +1858,170 @@ if twb.weapon_skins.tecci_cnuy_ibuki then --Version 0.7.0
 				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_ass_tecci_m_pudding)
 			elseif twf.parts[used_part_id].type == "stock" and used_part_id ~= "wpn_fps_snp_tti_s_vltor" then
 				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_snp_tti_s_vltor)
+			end
+		end
+	end
+end
+
+if twb.weapon_skins.mg42_schale_hina then --Version 0.7.1
+	twb.weapon_skins.mg42_schale_hina.default_blueprint = {
+		"wpn_fps_lmg_mg42_b_mg42",
+		"wpn_fps_lmg_mg42_n42",
+		"wpn_fps_lmg_mg42_reciever",
+		"wpn_fps_lmg_mg42_hina_cnuy"
+	}
+	twb.weapon_skins.mg42_schale_hina.parts.wpn_fps_lmg_mg42_reciever = deep_clone(twb.weapon_skins.mg42_schale_hina.parts.wpn_fps_lmg_mg42_receiver_hinature)
+	for k, used_part_id in ipairs(twf.wpn_fps_lmg_mg42.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "barrel" then
+				twb.weapon_skins.mg42_schale_hina.parts[used_part_id] = deep_clone(twb.weapon_skins.mg42_schale_hina.parts.wpn_fps_lmg_mg42_b_hinature)
+			elseif twf.parts[used_part_id].type == "barrel_ext" and not twf.parts[used_part_id].sub_type then
+				twb.weapon_skins.mg42_schale_hina.parts[used_part_id] = deep_clone(twb.weapon_skins.mg42_schale_hina.parts.wpn_fps_lmg_mg42_n42)
+			end
+		end
+	end
+
+	twb.weapon_skins.m4_schale_azusa.default_blueprint = {
+		"wpn_fps_m4_uupg_b_medium_vanilla",
+		"wpn_fps_upg_m4_g_standard_vanilla",
+		"wpn_fps_upg_ass_ns_battle",
+		"wpn_fps_upg_ass_m4_upper_reciever_core",
+		"wpn_fps_m4_uupg_m_std_vanilla",
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_upg_m4_s_pts",
+		"wpn_fps_amcar_bolt_standard",
+		"wpn_fps_m4_uupg_o_flipup",
+		"wpn_fps_m4_uupg_fg_lr300",
+		"wpn_fps_ass_m4_azusa_cnuy"
+	}
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_m4.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.m4_schale_azusa.parts[used_part_id] = deep_clone(twb.weapon_skins.m4_schale_azusa.parts.wpn_fps_upg_ass_m4_fg_vanitas_azusa)
+			end
+		end
+	end
+
+	twb.weapon_skins.c96_schale_satsuki.default_blueprint = {
+		"wpn_fps_pis_c96_b_standard",
+		"wpn_fps_pis_c96_body_standard",
+		"wpn_fps_pis_c96_m_standard",
+		"wpn_fps_pis_c96_g_standard",
+		"wpn_fps_pis_c96_cnuy_satsuki"
+	}
+	twb.weapon_skins.c96_schale_satsuki.parts.wpn_fps_pis_c96_body_standard = deep_clone(twb.weapon_skins.c96_schale_satsuki.parts.wpn_fps_pis_c96_body_mkultra)
+	twb.weapon_skins.c96_schale_satsuki.parts.wpn_fps_pis_c96_g_standard = deep_clone(twb.weapon_skins.c96_schale_satsuki.parts.wpn_fps_pis_c96_g_mkultra)
+
+	twb.weapon_skins.m4_schale_saori.default_blueprint = {
+		"wpn_fps_upg_m4_g_mgrip",
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_m4_uupg_upper_radian",
+		"wpn_fps_m4_uupg_b_short",
+		"wpn_fps_m4_uupg_fg_lr300",
+		"wpn_fps_upg_m4_m_l5",
+		"wpn_fps_upg_m4_s_pts",
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_upg_o_aimpoint",
+		"wpn_fps_amcar_bolt_standard",
+		"wpn_fps_upg_ns_ass_smg_firepig",
+		"wpn_fps_ass_m4_cnuy_saori"
+	}
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_m4.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.m4_schale_saori.parts[used_part_id] = deep_clone(twb.weapon_skins.m4_schale_saori.parts.wpn_fps_upg_ass_m4_fg_vanitas)
+			end
+		end
+	end
+
+	twb.weapon_skins.shepheard_schale_yuuka.default_blueprint = {
+		"wpn_fps_smg_shepheard_b_standard",
+		"wpn_fps_smg_shepheard_bolt_standard",
+		"wpn_fps_smg_shepheard_s_standard",
+		"wpn_fps_smg_shepheard_dh_standard",
+		"wpn_fps_smg_shepheard_mag_standard",
+		"wpn_fps_smg_shepheard_g_standard",
+		"wpn_fps_smg_shepheard_o_standard",
+		"wpn_fps_smg_shepheard_body",
+		"wpn_fps_smg_shepheard_ns_standard",
+		"wpn_fps_smg_shepheard_cnuy_yuuka"
+	}
+	twb.weapon_skins.shepheard_schale_yuuka.parts["wpn_fps_smg_shepheard_body_long"] = deep_clone(twb.weapon_skins.shepheard_schale_yuuka.parts.wpn_fps_smg_shepheard_body_100kg)
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_m4.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.shepheard_schale_yuuka.parts[used_part_id] = deep_clone(twb.weapon_skins.shepheard_schale_yuuka.parts.wpn_fps_smg_shepheard_body_100kg)
+			end
+		end
+	end
+
+	twb.weapon_skins.x_shepheard_schale_yuuka.default_blueprint = {
+		"wpn_fps_smg_shepheard_b_standard",
+		"wpn_fps_smg_shepheard_bolt_standard",
+		"wpn_fps_smg_shepheard_s_no_vanilla",
+		"wpn_fps_smg_shepheard_dh_standard",
+		"wpn_fps_smg_shepheard_mag_standard",
+		"wpn_fps_smg_shepheard_g_standard",
+		"wpn_fps_smg_shepheard_o_standard",
+		"wpn_fps_smg_shepheard_body",
+		"wpn_fps_smg_shepheard_ns_standard",
+		"wpn_fps_smg_shepheard_cnuy_yuuka"
+	}
+	twb.weapon_skins.x_shepheard_schale_yuuka.parts["wpn_fps_smg_shepheard_body_long"] = deep_clone(twb.weapon_skins.shepheard_schale_yuuka.parts.wpn_fps_smg_shepheard_body_100kg)
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_m4.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.x_shepheard_schale_yuuka.parts[used_part_id] = deep_clone(twb.weapon_skins.x_shepheard_schale_yuuka.parts.wpn_fps_smg_shepheard_body_100kg)
+			end
+		end
+	end
+
+	twb.weapon_skins.benelli_schale_hoshino.default_blueprint = {
+		"wpn_fps_sho_ben_body_standard",
+		"wpn_fps_sho_ben_b_standard",
+		"wpn_fps_sho_ben_fg_standard",
+		"wpn_fps_sho_ben_s_collapsable",
+		"wpn_fps_sho_ben_cnuy_hoshino"
+	}
+	for k, used_part_id in ipairs(twf.wpn_fps_sho_ben.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "barrel" then
+				twb.weapon_skins.benelli_schale_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_schale_hoshino.parts.wpn_fps_sho_ben_b_ojisan)
+			elseif twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.benelli_schale_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_schale_hoshino.parts.wpn_fps_sho_ben_fg_ojisan)
+			elseif twf.parts[used_part_id].type == "stock" then
+				twb.weapon_skins.benelli_schale_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_schale_hoshino.parts.wpn_fps_sho_ben_s_ojisan)
+			end
+		end
+	end
+
+	twb.weapon_skins.tecci_schale_ibuki.default_blueprint = {
+		"wpn_fps_ass_tecci_b_standard",
+		"wpn_fps_ass_tecci_dh_standard",
+		"wpn_fps_ass_tecci_fg_standard",
+		"wpn_fps_ass_tecci_g_standard",
+		"wpn_fps_ass_tecci_lower_reciever",
+		"wpn_fps_ass_tecci_m_drum",
+		"wpn_fps_ass_tecci_ns_standard",
+		"wpn_fps_ass_tecci_o_standard",
+		"wpn_fps_ass_tecci_s_standard",
+		"wpn_fps_ass_tecci_upper_reciever",
+		"wpn_fps_ass_tecci_vg_standard",
+		"wpn_fps_ass_tecci_cnuy_ibuki"
+	}
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_tecci.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.tecci_schale_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_schale_ibuki.parts.wpn_fps_ass_tecci_fg_standard)
+			elseif twf.parts[used_part_id].type == "grip" then
+				twb.weapon_skins.tecci_schale_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_schale_ibuki.parts.wpn_fps_ass_tecci_g_standard)
+			elseif twf.parts[used_part_id].type == "vertical_grip" then
+				twb.weapon_skins.tecci_schale_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_schale_ibuki.parts.wpn_fps_ass_tecci_vg_standard)
+			elseif twf.parts[used_part_id].type == "magazine" then
+				twb.weapon_skins.tecci_schale_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_schale_ibuki.parts.wpn_fps_ass_tecci_m_pudding)
+			elseif twf.parts[used_part_id].type == "stock" and used_part_id ~= "wpn_fps_snp_tti_s_vltor" then
+				twb.weapon_skins.tecci_schale_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_schale_ibuki.parts.wpn_fps_snp_tti_s_vltor)
 			end
 		end
 	end

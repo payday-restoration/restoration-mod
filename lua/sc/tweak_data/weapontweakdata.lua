@@ -29621,6 +29621,51 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.c96carbine then
+				self.c96carbine.categories = {"smg"}
+				self.c96carbine.recategorize = {"heavy_smg"}
+				self.c96carbine.damage_type = "machine_gun"
+				self.c96carbine.tactical_reload = 1
+				self.c96carbine.fire_mode_data.fire_rate = 0.066667
+				self.c96carbine.lock_slide = true
+				self.c96carbine.lock_slide_alt = true
+				self.c96carbine.CAN_TOGGLE_FIREMODE = true
+				self.c96carbine.CLIP_AMMO_MAX = 30
+				self.c96carbine.AMMO_MAX = 60
+				self.c96carbine.kick = self.stat_info.kick_tables.even_recoil
+				self.c96carbine.kick_pattern = {
+					{1, self.stat_info.kick_tables.moderate_left_kick},
+					{6, self.stat_info.kick_tables.even_recoil},
+					{9, self.stat_info.kick_tables.left_recoil},
+					{15, self.stat_info.kick_tables.moderate_kick},
+					{17, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.c96carbine.supported = true
+				self.c96carbine.ads_speed = 0.200
+				self.c96carbine.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 4800,
+					min_mult = 0.3333
+				}
+				self.c96carbine.stats = {
+					damage = 30,
+					spread = 70,
+					recoil = 73,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 27,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.c96carbine.stats_modifiers = nil
+				self.c96carbine.panic_suppression_chance = 0.05
+				self.c96carbine.timers = deep_clone(self.tec9.timers)
+			end
+
 			if self.mk22_pistol then
 				self.mk22_pistol.categories = { "pistol", "tranq" }
 				self.mk22_pistol.recategorize = { "light_pis" }

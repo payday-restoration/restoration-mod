@@ -4308,7 +4308,10 @@ Hooks:PostHook(PlayerStandard, "_start_action_reload_enter", "ResStopFireAnimRel
 	if weap_base and weap_base:can_reload() then
 		weap_base:tweak_data_anim_stop("fire")
 		weap_base:tweak_data_anim_stop("fire_steelsight")
-		weap_base:tweak_data_anim_stop("magazine_empty")
+		local weapon_tweak = weap_base:weapon_tweak_data()
+		if not weapon_tweak.lock_slide_allow_mag_empty then
+			weap_base:tweak_data_anim_stop("magazine_empty")
+		end
 		if weap_base.AKIMBO then
 			weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
 			weap_base._second_gun:base():tweak_data_anim_stop("reload")
@@ -4363,7 +4366,9 @@ function PlayerStandard:_start_action_reload(t)
 
 			weapon:tweak_data_anim_stop("fire")
 			weapon:tweak_data_anim_stop("fire_steelsight")
-			weapon:tweak_data_anim_stop("magazine_empty")
+			if not weapon_tweak.lock_slide_allow_mag_empty then
+				weapon:tweak_data_anim_stop("magazine_empty")
+			end
 
 			local speed_multiplier = weapon:reload_speed_multiplier()
 			local anim_multiplier = weapon._reload_anim_multiplier or 1

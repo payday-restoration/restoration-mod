@@ -18253,6 +18253,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m712.fire_mode_data.fire_rate = 0.06
 				self.m712.lock_slide = true
 				self.m712.lock_slide_alt = true
+				self.m712.lock_slide_allow_mag_empty = true
 				self.m712.CAN_TOGGLE_FIREMODE = true
 				self.m712.CLIP_AMMO_MAX = 20
 				self.m712.AMMO_MAX = 40
@@ -29629,6 +29630,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.c96carbine.fire_mode_data.fire_rate = 0.066667
 				self.c96carbine.lock_slide = true
 				self.c96carbine.lock_slide_alt = true
+				self.c96carbine.lock_slide_allow_mag_empty = true
 				self.c96carbine.CAN_TOGGLE_FIREMODE = true
 				self.c96carbine.CLIP_AMMO_MAX = 30
 				self.c96carbine.AMMO_MAX = 60
@@ -34703,7 +34705,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.always_play_anims = true
 				self:generate_custom_weapon_stats(weap)
 			end
-			if weap.animations and weap.animations.magazine_empty then
+			if not weap.lock_slide_allow_mag_empty and weap.animations and weap.animations.magazine_empty then
 				weap.animations.magazine_empty = ""
 			end
 

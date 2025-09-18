@@ -41048,6 +41048,47 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
+		if self.parts.wpn_fps_smg_c96carbine_barrel_3inch then
+			--BARRELS
+				self.parts.wpn_fps_smg_c96carbine_barrel_6inch.supported = true
+				self.parts.wpn_fps_smg_c96carbine_barrel_6inch.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_smg_c96carbine_barrel_6inch.custom_stats = deep_clone(barrels.long_b1_stats)
+
+				self.parts.wpn_fps_smg_c96carbine_barrel_9inch.supported = true
+				self.parts.wpn_fps_smg_c96carbine_barrel_9inch.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_smg_c96carbine_barrel_9inch.custom_stats = deep_clone(barrels.long_b2_stats)
+
+				self.parts.wpn_fps_smg_c96carbine_barrel_12inch.supported = true
+				self.parts.wpn_fps_smg_c96carbine_barrel_12inch.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_smg_c96carbine_barrel_12inch.custom_stats = deep_clone(barrels.long_b3_stats)
+			--STOCKS
+				self.parts.wpn_fps_smg_c96carbine_s_solid.supported = true
+				self.parts.wpn_fps_smg_c96carbine_s_solid.stats = deep_clone(stocks.folded_to_fixed_stats)
+				self.parts.wpn_fps_smg_c96carbine_s_solid.custom_stats = deep_clone(barrels.folded_to_fixed_stats)
+
+				self.parts.wpn_fps_smg_c96carbine_s_unfold.supported = true
+				self.parts.wpn_fps_smg_c96carbine_s_unfold.stats = deep_clone(stocks.unfold_nocheeks_stats)
+				self.parts.wpn_fps_smg_c96carbine_s_unfold.custom_stats = deep_clone(barrels.unfold_nocheeks_stats)
+			--MAGAZINE
+				self.parts.wpn_fps_smg_c96carbine_m_20rnd.supported = true
+				self.parts.wpn_fps_smg_c96carbine_m_20rnd.stats = {
+					value = 2,
+					concealment = 2,
+					extra_ammo = -10,
+					reload = 5
+				}
+				self.parts.wpn_fps_smg_c96carbine_m_20rnd.custom_stats = { ads_speed_mult = 0.95 }
+
+				self.parts.wpn_fps_smg_c96carbine_m_40rnd.supported = true
+				self.parts.wpn_fps_smg_c96carbine_m_40rnd.stats = {
+					value = 2,
+					concealment = -2,
+					extra_ammo = 10,
+					reload = -4
+				}
+				self.parts.wpn_fps_smg_c96carbine_m_40rnd.custom_stats = { ads_speed_mult = 1.05 }
+		end
+
 		if self.parts.wpn_fps_pis_mk22_pistol_frame then
 			self.parts.wpn_fps_pis_mk22_pistol_frame.stance_mod = {
 				wpn_fps_pis_mk22_pistol = {

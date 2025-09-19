@@ -41064,11 +41064,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			--STOCKS
 				self.parts.wpn_fps_smg_c96carbine_s_solid.supported = true
 				self.parts.wpn_fps_smg_c96carbine_s_solid.stats = deep_clone(stocks.folded_to_fixed_stats)
-				self.parts.wpn_fps_smg_c96carbine_s_solid.custom_stats = deep_clone(barrels.folded_to_fixed_stats)
+				self.parts.wpn_fps_smg_c96carbine_s_solid.custom_stats = deep_clone(stocks.folded_to_fixed_stats)
 
 				self.parts.wpn_fps_smg_c96carbine_s_unfold.supported = true
 				self.parts.wpn_fps_smg_c96carbine_s_unfold.stats = deep_clone(stocks.unfold_nocheeks_stats)
-				self.parts.wpn_fps_smg_c96carbine_s_unfold.custom_stats = deep_clone(barrels.unfold_nocheeks_stats)
+				self.parts.wpn_fps_smg_c96carbine_s_unfold.custom_stats = deep_clone(stocks.unfold_nocheeks_stats)
 			--MAGAZINE
 				self.parts.wpn_fps_smg_c96carbine_m_20rnd.supported = true
 				self.parts.wpn_fps_smg_c96carbine_m_20rnd.stats = {

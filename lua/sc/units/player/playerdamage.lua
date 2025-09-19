@@ -1488,6 +1488,12 @@ Hooks:PostHook(PlayerDamage, "damage_tase" , "ResTaserTaunts" , function(self, a
 	end	
 end)
 
+function PlayerDamage:on_copr_killshot()
+	local copr_regen_grace = tweak_data.upgrades.copr_regen_grace or 1
+	self._next_allowed_dmg_t = Application:digest_value(managers.player:player_timer():time() + copr_regen_grace, true)
+	self._last_received_dmg = self:_max_health()
+end
+
 function PlayerDamage:_max_armor()
 	local max_armor = self:_raw_max_armor()
 
@@ -1529,7 +1535,6 @@ function PlayerDamage:set_regenerate_timer_to_max()
 	self._regenerate_speed = self._regenerate_speed or 1
 	self._current_state = self._update_regenerate_timer
 end
-
 
 --Init function for dodge points to cache the value.
 function PlayerDamage:set_dodge_points()
@@ -1756,9 +1761,7 @@ function PlayerDamage:_upd_health_regen(t, dt)
 			})
 		end
 	--]]
-
 end
-
 
 Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", function(self, can_activate_berserker, ignore_movement_state)
 	if self._check_berserker_done then --Deals with swan song shenanigans.
@@ -1795,7 +1798,6 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 		end
 	end
 end)
-
 
 function PlayerDamage:_calc_armor_damage(attack_data)
 
@@ -1866,8 +1868,6 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 	return health_subtracted
 end
 
-
-
 --Whether the player can proc Sneaky Bastard.
 function PlayerDamage:can_dodge_heal()
 	if self._can_dodge_heal then
@@ -1933,8 +1933,6 @@ function PlayerDamage:add_revive()
 		"down_absorption",
 		managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
 	)
-	
-	
 end
 
 --Make Ex-Pres only consume stored health that actually goes to healing.

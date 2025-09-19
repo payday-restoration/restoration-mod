@@ -9745,7 +9745,8 @@ end)
 
 				for i, part_id in pairs(self.wpn_fps_lmg_m60.uses_parts) do
 					if self.parts[part_id] and ((self.parts[part_id].type and self.parts[part_id].type == "sight") or 
-						(self.parts[part_id].sub_type and self.parts[part_id].sub_type == "second_sight")) then
+						(self.parts[part_id].sub_type and self.parts[part_id].sub_type == "second_sight") and 
+						not (self.parts[part_id].a_obj and self.parts[part_id].a_obj == "a_magnifier")) then
 						self.wpn_fps_lmg_m60.override[part_id] = {
 							parent = "upper_reciever",
 							forbids = self.parts[part_id].forbids or {}

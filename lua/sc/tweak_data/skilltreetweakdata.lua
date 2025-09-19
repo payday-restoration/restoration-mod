@@ -3759,6 +3759,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"temporary_copr_ability_1",
 					"copr_ability",
 					"player_copr_static_damage_ratio_1",
+					"player_copr_static_damage_ratio_mult_1",
 					"player_copr_kill_life_leech_1",
 					"player_copr_activate_bonus_health_ratio_1"
 				},
@@ -3806,6 +3807,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck22_7",
 				upgrades = {
 					"player_copr_static_damage_ratio_2",
+					"player_copr_static_damage_ratio_mult_2",
 					"player_copr_kill_life_leech_2"
 				},
 				icon_xy = {

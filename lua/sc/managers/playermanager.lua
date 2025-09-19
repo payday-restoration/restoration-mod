@@ -478,7 +478,9 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	if self:has_activate_temporary_upgrade("temporary", "copr_ability") then
 		local kill_life_leech = self:upgrade_value_nil("player", "copr_kill_life_leech")
 		local static_damage_ratio = self:upgrade_value_nil("player", "copr_static_damage_ratio")
-
+		local static_damage_ratio_mult = self:upgrade_value_nil("player", "copr_static_damage_ratio_mult") or 1
+		static_damage_ratio = static_damage_ratio * static_damage_ratio_mult
+		
 		if kill_life_leech and static_damage_ratio and damage_ext then
 			self._copr_kill_life_leech_num = (self._copr_kill_life_leech_num or 0) + 1
 
@@ -494,7 +496,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 				end
 			end
 		end
-	end	
+	end
 
 	--Yakuza dodge meter generation.
 	if damage_ext:health_ratio() < 1 then

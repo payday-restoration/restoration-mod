@@ -17,6 +17,13 @@
 			<value_node value="levels/narratives/h_alex_must_die/stage_1/interior_01/interior_01"/>
 			<value_node value="levels/narratives/h_alex_must_die/stage_2/world/world"/>
 			<value_node value="levels/narratives/short1/stage1/lighting/lighting"/>
+			<value_node value="packages/normal_sc_fbi"/>
+			<value_node value="packages/hard_sc_fbi"/>
+			<value_node value="packages/overkill_sc_fbi"/>
+			<value_node value="packages/overkill_145_sc_fbi"/>
+			<value_node value="packages/overkill_290_sc_fbi"/>
+			<value_node value="packages/easy_wish_sc_fbi"/>
+			<value_node value="packages/sm_wish_sc_fbi"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
@@ -44,6 +51,13 @@
 			<value_node value="levels/instances/unique/brb/brb_deposit_room/world/world"/>
 			<value_node value="levels/narratives/classics/man/world/world"/>
 			<value_node value="levels/narratives/classics/man/world_sounds"/>
+			<value_node value="packages/normal_sc_fbi"/>
+			<value_node value="packages/hard_sc_fbi"/>
+			<value_node value="packages/overkill_sc_fbi"/>
+			<value_node value="packages/overkill_145_sc_fbi"/>
+			<value_node value="packages/overkill_290_sc_fbi"/>
+			<value_node value="packages/easy_wish_sc_fbi"/>
+			<value_node value="packages/sm_wish_sc_fbi"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
@@ -66,6 +80,13 @@
 			<value_node value="levels/narratives/h_alex_must_die/stage_3/editor_only/editor_only"/>
 			<value_node value="levels/narratives/e_welcome_to_the_jungle/stage_2/backdrop/backdrop"/>
 			<value_node value="levels/narratives/classics/flat/world/world"/>
+			<value_node value="packages/normal_sc_fbi"/>
+			<value_node value="packages/hard_sc_fbi"/>
+			<value_node value="packages/overkill_sc_fbi"/>
+			<value_node value="packages/overkill_145_sc_fbi"/>
+			<value_node value="packages/overkill_290_sc_fbi"/>
+			<value_node value="packages/easy_wish_sc_fbi"/>
+			<value_node value="packages/sm_wish_sc_fbi"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>

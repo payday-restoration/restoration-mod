@@ -37689,6 +37689,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_ass_contraband_body_mpx.custom_stats = {
 					alt_desc = "bm_mesa_vmp_sc_desc",
+					shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm",
 					tweak_categories = {"smg"},
 					falloff_start_mult = 0.6842105,
 					falloff_end_mult = 0.96,

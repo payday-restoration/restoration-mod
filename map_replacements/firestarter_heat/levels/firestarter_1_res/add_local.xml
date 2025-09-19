@@ -6,20 +6,20 @@
 	<world_sounds path="world_sounds" script_data_type="binary"/>
 	<world_cameras path="world_cameras" script_data_type="binary"/>
 	<massunit path="massunit" reload="true"/>
-	<continent path="lighting_fixes/lighting_fixes" script_data_type="binary"/>
-	<mission path="lighting_fixes/lighting_fixes" script_data_type="binary"/>
+	<continent path="bounce_lights/bounce_lights" script_data_type="binary"/>
+	<mission path="bounce_lights/bounce_lights" script_data_type="binary"/>
 	<continent path="pc_only/pc_only" script_data_type="binary"/>
 	<mission path="pc_only/pc_only" script_data_type="binary"/>
-	<continent path="env/env" script_data_type="binary"/>
-	<mission path="env/env" script_data_type="binary"/>
+	<continent path="editor_only/editor_only" script_data_type="binary"/>
+	<mission path="editor_only/editor_only" script_data_type="binary"/>
 	<continent path="lightfx/lightfx" script_data_type="binary"/>
 	<mission path="lightfx/lightfx" script_data_type="binary"/>
 	<continent path="world/world" script_data_type="binary"/>
 	<mission path="world/world" script_data_type="binary"/>
-	<continent path="bounce_lights/bounce_lights" script_data_type="binary"/>
-	<mission path="bounce_lights/bounce_lights" script_data_type="binary"/>
-	<continent path="editor_only/editor_only" script_data_type="binary"/>
-	<mission path="editor_only/editor_only" script_data_type="binary"/>
+	<continent path="lighting_fixes/lighting_fixes" script_data_type="binary"/>
+	<mission path="lighting_fixes/lighting_fixes" script_data_type="binary"/>
+	<continent path="env/env" script_data_type="binary"/>
+	<mission path="env/env" script_data_type="binary"/>
 	<cover_data path="cover_data" script_data_type="binary"/>
 	<texture path="cube_lights/102751"/>
 	<environment path="environments/fs1_sunset" script_data_type="custom_xml"/>

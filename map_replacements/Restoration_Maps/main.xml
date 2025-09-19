@@ -92,6 +92,14 @@
 			<value_node value="levels/narratives/e_election_day/stage_1/world/world"/>
 			<value_node value="levels/narratives/vlad/cane/world/world"/>
 			<value_node value="levels/narratives/vlad/cane/world"/>
+			<value_node value="packages/murkywatermisc"/>
+			<value_node value="packages/normal_sc_murkywater"/>
+			<value_node value="packages/hard_sc_murkywater"/>
+			<value_node value="packages/overkill_sc_murkywater"/>
+			<value_node value="packages/overkill_145_sc_murkywater"/>
+			<value_node value="packages/overkill_290_sc_murkywater"/>
+			<value_node value="packages/easy_wish_sc_murkywater"/>
+			<value_node value="packages/sm_wish_sc_murkywater"/>
 		</packages>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">

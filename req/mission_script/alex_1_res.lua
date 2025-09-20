@@ -1,5 +1,4 @@
--- TODO: investigate unplayable scripted Dozer spam
-do return end
+
 
 local cloaker_ds_table = {
 	"units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc",
@@ -28,31 +27,37 @@ return {
 			{id = 100965, delay = 180}
 		}
 	},
-	--loop the choppa+2 chopper spawns on DW and DS (PJ only)
+		-- loop the choppa+2 chopper spawns on  DW and DS (PJ only)
+	[100965] = {
+		on_executed = {
+			{ id = 400009, delay = 0 },
+			{ id = 100968, remove = true },
+		},
+	},
 	[100966] = {
 		values = {
-            amount = chopper_amount
+			amount = chopper_amount,
 		},
 		on_executed = {
-			{id = 100965, delay = 300}
-		}
+			{ id = 100993, remove = true },
+		},
 	},
-	--trigger_times to 0; making the loop possible
+	-- trigger_times to 0; making the loop possible
 	[100953] = {
 		values = {
-            trigger_times = 0
-		}
+			trigger_times = 0,
+		},
 	},
 	[100887] = {
 		values = {
-            trigger_times = 0
-		}
+			trigger_times = 0,
+		},
 	},
-	--disable this just in case
+	-- disable this just in case
 	[101652] = {
 		values = {
-            enabled = false
-		}
+			enabled = false,
+		},
 	},
 	-- Reinforce next to cars
 	[100941] = {

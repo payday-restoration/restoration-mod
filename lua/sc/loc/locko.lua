@@ -6228,8 +6228,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		--Leech
 		["menu_deck22_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#약병##의 잠금이 해제됩니다.\n\n약병을 활성화하면 #{important_1}#$perk_value_2##초 동안 #{risk}#방탄량을 소모하고## 최대 체력의 #{skill_color}#$perk_value_1##만큼 회복합니다.\n\n능력이 활성화되어 있는 동안에는 체력이 #{skill_color}#$perk_value_3##로 분할되며 피해를 입을 때마다 한 칸이 제거됩니다. 적을 #{skill_color}#$perk_value_4##명씩 처치하면 체력의 일부를 회복하고 #{skill_color}#$perk_value_5##초간 피해를 받지 않습니다.\n\n약병은 #{important_1}#$perk_value_6##초의 재사용 대기 시간을 가지고 있습니다.",
 		["menu_deck22_3_desc_sc"] = "약병이 활성화되어 있는 동안 피해를 입으면 팀원의 체력이 최대 체력의 #{skill_color}#$perk_value_1##만큼 회복합니다.",
-		["menu_deck22_5_desc_sc"] = "약병의 지속 시간이 #{skill_color}#$perk_value_1##초로 증가하고 적을 처치하면 약병의 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 감소합니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 ##$perk_value_2## 빨라집니다.",
-		["menu_deck22_7_desc_sc"] = "이제 체력이 #{skill_color}#$perk_value_1##로 분할됩니다.",
+		["menu_deck22_5_desc_sc"] = "약병의 지속 시간이 #{skill_color}#$perk_value_1##초로 증가하고 적을 처치하면 약병의 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 감소합니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 #{skill_color}##$perk_value_3## 빨라집니다.",
+		["menu_deck22_7_desc_sc"] = "이제 체력이 #{skill_color}#$perk_value_1##로 분할되고 적을 #{skill_color}#$perk_value_2##명 처치하면 분할된 체력의 #{skill_color}#$perk_value_3##만큼 회복됩니다.",
 		["menu_deck22_9_desc_sc"] = "다운된 상태에서도 약병을 사용하여 일시적으로 부활할 수 있고, 사용 후 약병의 재사용 대기 시간이 #{important_1}#$perk_value_1##초 추가됩니다.\n\n이제 공격을 받으면 팀원을 각자 최대 체력의 #{skill_color}#$perk_value_2##만큼 회복시킵니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--CopyCat--

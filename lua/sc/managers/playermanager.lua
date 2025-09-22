@@ -1297,7 +1297,10 @@ function PlayerManager:_internal_load()
 	--Removed armor kit weirdness.
 
 	--Fully loaded aced checks
-	self._throwable_chance_data = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0.01, chance_inc = 0})
+	local throw_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
+	local base_pickup_chance = (throw_tweak and throw_tweak.base_pickup_chance) or 0.01
+	local skill_pickup_chance = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
+	self._throwable_chance_data = {chance = base_pickup_chance + skill_pickup_chance.chance, chance_inc = 0 + skill_pickup_chance.chance_inc}
 	self._throwable_chance = self._throwable_chance_data.chance
 
 	--Reset when players are spawned, just in case.

@@ -1882,26 +1882,31 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_four.throw_allowed_expire_t = 0.05
 	self.projectiles.wpn_prj_four.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_four.expire_t = 0.6
+	self.projectiles.wpn_prj_four.base_pickup_chance = 0.08
 	--Throwing Cards
 	self.projectiles.wpn_prj_ace.throw_allowed_expire_t = 0.05
-	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.5
-	self.projectiles.wpn_prj_ace.expire_t = 0.6
+	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.625
+	self.projectiles.wpn_prj_ace.expire_t = 0.65
 	self.projectiles.wpn_prj_ace.max_amount = 9
+	self.projectiles.wpn_prj_ace.base_pickup_chance = 0.12
 	--Throwing Knife
 	self.projectiles.wpn_prj_target.throw_allowed_expire_t = 0.12
 	self.projectiles.wpn_prj_target.repeat_expire_t = 0.625
 	self.projectiles.wpn_prj_target.expire_t = 0.65
 	self.projectiles.wpn_prj_target.max_amount = 9
+	self.projectiles.wpn_prj_target.base_pickup_chance = 0.12
 	--Throwing Axe
 	self.projectiles.wpn_prj_hur.throw_allowed_expire_t = 0.35
-	self.projectiles.wpn_prj_hur.repeat_expire_t = 0.5
-	self.projectiles.wpn_prj_hur.expire_t = 0.6
+	self.projectiles.wpn_prj_hur.repeat_expire_t = 0.625
+	self.projectiles.wpn_prj_hur.expire_t = 0.65
 	self.projectiles.wpn_prj_hur.max_amount = 6
+	self.projectiles.wpn_prj_hur.base_pickup_chance = 0.10
 	--Javelin
 	self.projectiles.wpn_prj_jav.throw_allowed_expire_t = 0.75
 	self.projectiles.wpn_prj_jav.repeat_expire_t = 0.8
 	self.projectiles.wpn_prj_jav.expire_t = 0.9
-	self.projectiles.wpn_prj_jav.max_amount = 6
+	self.projectiles.wpn_prj_jav.max_amount = 4
+	self.projectiles.wpn_prj_jav.base_pickup_chance = 0.06
 	self.projectiles.fir_com.max_amount = 3
 	self.projectiles.smoke_screen_grenade.base_cooldown = 35
 	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
@@ -1916,7 +1921,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		self.projectiles.xmas_snowball.expire_t = 0.9
 		self.projectiles.xmas_snowball.max_amount = 3
 		self.projectiles.xmas_snowball.base_cooldown_no_perk = true --flag to allow JOAT calcs
-		self.projectiles.xmas_snowball.base_cooldown = 25
+		self.projectiles.xmas_snowball.base_cooldown = 35
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 

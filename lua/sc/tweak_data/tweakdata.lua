@@ -635,7 +635,7 @@ if tweak_data.projectiles.xmas_snowball then
 	tweak_data.projectiles.xmas_snowball.curve_pow = 0.5
 	tweak_data.projectiles.xmas_snowball.range = 100
 	tweak_data.projectiles.xmas_snowball.adjust_z = 0
-	tweak_data.projectiles.xmas_snowball.direct_damage_percent = 0
+	tweak_data.projectiles.xmas_snowball.direct_damage_percent = 0.5
 	tweak_data.projectiles.xmas_snowball.object_damage_mult = 2
 	tweak_data.projectiles.xmas_snowball.explosion_object_damage_mult = 3
 end

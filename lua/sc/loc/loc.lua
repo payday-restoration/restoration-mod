@@ -2436,7 +2436,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_grenade_dada_com_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n\nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
 		--Snowball
 		["bm_grenade_xmas_snowball"] = "Snowball", --there is a fucking space at the end of the original string
-		["bm_grenade_xmas_snowball_desc"] = "Damage (Impact): #{skill_color}#90##\nDamage (Blast): #{risk}#180## \nRadius: #{skill_color}#1m## \nFuse: #{skill_color}#Impact## \nRegen rate: #{skill_color}#1 snowball every $regen## \n\nDunk them in water, toss them in the freezer and you got yourself a deadly throwing weapon. Simple.",
+		["bm_grenade_xmas_snowball_desc"] = "Damage (Impact): #{skill_color}#90##\nDamage (Blast): #{risk}#180## \nRadius: #{skill_color}#1m## \nFuse: #{skill_color}#Impact## \nRegen Rate: #{skill_color}#1 snowball every $regen##\nAmmo Box Regen Bonus: #{skill_color}#$regen_t##  \n\nDunk them in water, toss them in the freezer and you got yourself a deadly throwing weapon. Simple.",
 		--Zapper
 		["bm_grenade_electric_desc"] = "Damage: #{skill_color}#400## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Electrocutes most enemies## \n\nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
 		--Sticky

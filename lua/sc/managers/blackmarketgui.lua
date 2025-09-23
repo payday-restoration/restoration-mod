@@ -5320,7 +5320,8 @@ function BlackMarketGui:update_info_text()
 		local desc_text = managers.localization:text(tweak_data.blackmarket.projectiles[slot_data.name].desc_id, {
 			damage = ((proj_tweak and proj_tweak.damage) or 0) * 10, --I LOVE that damage is defined elsewhere
 			pickup = (((proj_b_tweak and proj_b_tweak.base_pickup_chance) or 0.01) + skill_pickup_chance.chance) * 100 .. "%",
-			regen = ((proj_b_tweak and proj_b_tweak.base_cooldown) or 0) .. managers.localization:text("menu_seconds_suffix_short")
+			regen = ((proj_b_tweak and proj_b_tweak.base_cooldown) or 0) .. managers.localization:text("menu_seconds_suffix_short"),
+			regen_t = -((proj_b_tweak and proj_b_tweak.pickup_cooldown_t) or 0) .. managers.localization:text("menu_seconds_suffix_short")
 		})
 
 		for color_id in string.gmatch(desc_text, "#%{(.-)%}#") do

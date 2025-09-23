@@ -2674,7 +2674,8 @@ function PlayerInventoryGui:_update_info_throwable(name)
 			text_string = text_string .. managers.localization:text((has_short_desc and projectile_data.desc_id .. "_short") or projectile_data.desc_id, {
 				damage = ((proj_tweak and proj_tweak.damage) or 0) * 10,
 				pickup = (((proj_b_tweak and proj_b_tweak.base_pickup_chance) or 0.01) + skill_pickup_chance.chance) * 100 .. "%",
-				regen = ((proj_b_tweak and proj_b_tweak.base_cooldown) or 0) .. managers.localization:text("menu_seconds_suffix_short")
+				regen = ((proj_b_tweak and proj_b_tweak.base_cooldown) or 0) .. managers.localization:text("menu_seconds_suffix_short"),
+				regen_t = -((proj_b_tweak and proj_b_tweak.pickup_cooldown_t) or 0) .. managers.localization:text("menu_seconds_suffix_short")
 			}) .. "\n"
 		end
 	end

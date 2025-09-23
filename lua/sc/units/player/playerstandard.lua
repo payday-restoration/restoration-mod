@@ -4663,7 +4663,7 @@ end
 function PlayerStandard:_find_pickups(t)
 	local pickups = World:find_units_quick("sphere", self._unit:movement():m_pos(), self._pickup_area, self._slotmask_pickups)
 	local grenade_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
-	local may_find_grenade = not grenade_tweak.base_cooldown --and managers.player:has_category_upgrade("player", "regain_throwable_from_ammo")
+	local may_find_grenade = not grenade_tweak.base_cooldown or grenade_tweak.pickup_cooldown_t ~= nil --and managers.player:has_category_upgrade("player", "regain_throwable_from_ammo")
 
 	for _, pickup in ipairs(pickups) do
 		if pickup:pickup() and pickup:pickup():pickup(self._unit) then

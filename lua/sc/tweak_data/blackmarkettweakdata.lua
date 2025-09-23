@@ -1922,6 +1922,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		self.projectiles.xmas_snowball.max_amount = 3
 		self.projectiles.xmas_snowball.base_cooldown_no_perk = true --flag to allow JOAT calcs
 		self.projectiles.xmas_snowball.base_cooldown = 35
+		self.projectiles.xmas_snowball.pickup_cooldown_t = 2.5
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 

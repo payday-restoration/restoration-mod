@@ -1676,14 +1676,19 @@ end
 
 --Replacement for vanilla fully loaded throwable coroutine. The vanilla code has 0 benefits from being a coroutine, and it seems to have issues resetting the chance or firing at all.
 function PlayerManager:regain_throwable_from_ammo()
-	local roll = math.random()
-	
-	if self._throwable_chance then --Fixes bizzare startup crash
-		if roll < self._throwable_chance then
-			self._throwable_chance = self._throwable_chance_data.chance
-			self:add_grenade_amount(1, true)
-		else
-			self._throwable_chance = self._throwable_chance + self._throwable_chance_data.chance_inc
+	local throw_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
+	if throw_tweak and throw_tweak.pickup_cooldown_t then
+		managers.player:speed_up_grenade_cooldown(throw_tweak.pickup_cooldown_t)
+	else
+		local roll = math.random()
+		
+		if self._throwable_chance then --Fixes bizzare startup crash
+			if roll < self._throwable_chance then
+				self._throwable_chance = self._throwable_chance_data.chance
+				self:add_grenade_amount(1, true)
+			else
+				self._throwable_chance = self._throwable_chance + self._throwable_chance_data.chance_inc
+			end
 		end
 	end
 end

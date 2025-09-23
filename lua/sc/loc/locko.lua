@@ -2356,47 +2356,47 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_wp_upg_i_autofire_desc"] = "무기를 #{risk}#자동 사격으로 고정합니다.##",
 
 		--Throwables--
-		["bm_dynamite_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#3s## \n- 다른 투척물에 비해 튀고 굴러가는 일이 적습니다.\n\n바위를 효과적으로 폭파시키도록 설계되었습니다. 사람을 폭파시키는 것도 더욱 효과적이죠.",
+		["bm_dynamite_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- 다른 투척물에 비해 튀고 굴러가는 일이 적습니다.\n\n바위를 효과적으로 폭파시키도록 설계되었습니다. 사람을 폭파시키는 것도 더욱 효과적이죠.",
 		--Frag
-		["bm_grenade_frag_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3s## \n\n고전적인 폭발성 수류탄입니다. 뭐, 더 설명할 게 있나요?",
+		["bm_grenade_frag_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 폭발성 수류탄입니다. 뭐, 더 설명할 게 있나요?",
 		--Community Frag
-		["bm_grenade_frag_com_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3s## \n\n고전적인 수류탄에 세련된 새로운 모습을 더해, 매 폭발마다 더욱 오버킬의 느낌을 더할 것입니다.",
+		["bm_grenade_frag_com_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 수류탄에 세련된 새로운 모습을 더해, 매 폭발마다 더욱 오버킬의 느낌을 더할 것입니다.",
 		--Community Frag 2
-		["bm_grenade_dada_com_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3s## \n\n인형의 바깥층은 폭발적인 내부 작용을 숨깁니다. 조국에 대한 헌사죠.",
+		["bm_grenade_dada_com_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n인형의 바깥층은 폭발적인 내부 작용을 숨깁니다. 조국에 대한 헌사죠.",
 		--Snowball
 		["bm_grenade_xmas_snowball"] = "스노볼", --there is a fucking space at the end of the original string
-		["bm_grenade_xmas_snowball_desc"] = "피해량 (직격): #{skill_color}#90##\n피해량 (폭발): #{risk}#180## \n범위: #{skill_color}#1m## \n지연 시간: #{skill_color}#충격 시 폭발## \n재생 속도: #{skill_color}#25s 마다 1개 ## \n\n물에 담그고, 냉동고에 넣으면 치명적인 투척 무기가 됩니다. 참 쉽죠.",
+		["bm_grenade_xmas_snowball_desc"] = "피해량 (직격): #{skill_color}#90##\n피해량 (폭발): #{risk}#180## \n범위: #{skill_color}#1m## \n지연 시간: #{skill_color}#충격 시 폭발## \n재생 속도: #{skill_color}#$regen 마다 1개##\n탄약 상자 재생 보너스: #{skill_color}#$regen_t## \n\n물에 담그고, 냉동고에 넣으면 치명적인 투척 무기가 됩니다. 참 쉽죠.",
 		--Zapper
-		["bm_grenade_electric_desc"] = "피해량: #{skill_color}#400## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3s## \n- #{skill_color}#대부분의 적을 감전시킵니다.## \n\n파편도 좋지만, 어떤 것들은 지져줘야죠. 이 작은 이쁜이는 고전압으로 피해를 가하는 데 꽤나 실용적인 녀석입니다.",
+		["bm_grenade_electric_desc"] = "피해량: #{skill_color}#400## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#대부분의 적을 감전시킵니다.## \n\n파편도 좋지만, 어떤 것들은 지져줘야죠. 이 작은 이쁜이는 고전압으로 피해를 가하는 데 꽤나 실용적인 녀석입니다.",
 		--Sticky
 		["bm_grenade_sticky_grenade"] = "샘텍스 수류탄",
-		["bm_grenade_sticky_grenade_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#2.5s## \n\n사람을 포함한 대부분의 표면에 부착되는 투척용 폭발성 혼합물입니다!",
+		["bm_grenade_sticky_grenade_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#2.5초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n사람을 포함한 대부분의 표면에 부착되는 투척용 폭발성 혼합물입니다!",
 		--Molotov
-		["bm_grenade_molotov_desc"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3s 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n불붙은 천이 있는 인화성 액체가 담긴 부서지는 병입니다. 저렴하고 간단하지만 매우 효과적이죠. 이걸로 전부 태워 버리세요.",
+		["bm_grenade_molotov_desc"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n불붙은 천이 있는 인화성 액체가 담긴 부서지는 병입니다. 저렴하고 간단하지만 매우 효과적이죠. 이걸로 전부 태워 버리세요.",
 		--Incendiary
-		["bm_grenade_fir_com_desc"] = "피해량 (폭발): #{heat_warm_color}#120## \n범위 (폭발): #{skill_color}#4.5m## \n지연 시간: #{skill_color}#2.5s## \n피해량 (화염 지대): #{heat_warm_color}#12s 동안 1400##\n피해량 (화염 지대): #{heat_warm_color}#12s 동안 1400## \n범위 (화염 지대): #{skill_color}#3.75m## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n자연적으로 발화되는 인을 담은 수류탄입니다. 벽이나 모퉁이를 이용해 적에게 효과적으로 던질 수 있죠.",
+		["bm_grenade_fir_com_desc"] = "피해량 (폭발): #{heat_warm_color}#120## \n범위 (폭발): #{skill_color}#4.5m## \n지연 시간: #{skill_color}#2.5s## \n피해량 (화염 지대): #{heat_warm_color}#12s 동안 1400##\n피해량 (화염 지대): #{heat_warm_color}#12초 동안 1400## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n자연적으로 발화되는 인을 담은 수류탄입니다. 벽이나 모퉁이를 이용해 적에게 효과적으로 던질 수 있죠.",
 		--Concussion
-		["bm_concussion_desc"] = "범위: #{skill_color}#10m## \n- 최대 #{skill_color}#4s## 동안 적을 기절시킵니다.\n- 적의 명중률이 #{skill_color}#7s## 동안 #{skill_color}#50%## 감소합니다. \n- #{important_1}#타이탄 실드, 타이탄 불도저 및 캡틴은 기절 효과에 면역입니다.## \n\n이 조그맣고 짜릿한 녀석은 적들을 깜짝 놀래켜서, 그들을 처리할 기회를 더 줍니다.",
+		["bm_concussion_desc"] = "범위: #{skill_color}#10m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- 최대 #{skill_color}#4초## 동안 적을 기절시킵니다.\n- 적의 명중률이 #{skill_color}#7초## 동안 #{skill_color}#50%## 감소합니다. \n- #{important_1}#타이탄 실드, 타이탄 불도저 및 캡틴은 기절 효과에 면역입니다.## \n\n이 조그맣고 짜릿한 녀석은 적들을 깜짝 놀래켜서, 그들을 처리할 기회를 더 줍니다.",
 		--Gas
 		["bm_grenade_poison_gas_grenade"] = "만티코어-6 수류탄",
-		["bm_grenade_poison_gas_grenade_desc"] = "피해량: #{stats_positive}#10s 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12s## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.## \n\n이 실험용 생물학 무기는 특정 유전자형을 표적으로 삼는 독성 가스 구름을 방출하며, 당신이나 당신의 팀원에게 피해가 가지 않도록 설계되었습니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험하며 가장 강한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 쓸법한 무기인거야, 페코.",
-		["bm_grenade_poison_gas_grenade_desc_short"] = "피해량: #{stats_positive}#10s 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12s## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.##",
+		["bm_grenade_poison_gas_grenade_desc"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.## \n\n이 실험용 생물학 무기는 특정 유전자형을 표적으로 삼는 독성 가스 구름을 방출하며, 당신이나 당신의 팀원에게 피해가 가지 않도록 설계되었습니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험하며 가장 강한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 쓸법한 무기인거야, 페코.",
+		["bm_grenade_poison_gas_grenade_desc_short"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.##",
 
 		--Throwing Cards
-		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#240## \n- #{skill_color}#회수가 가능합니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
+		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
 		--Throwing Stars
-		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#200## \n피해량 (독): #{stats_positive}#4s 동안 120## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5s## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.## \n\n표창은 피와 전투로 물든 긴 역사를 지니고 있습니다. 이 독이 발라진 스테인리스 스틸 표창은 당신의 길을 막는 모든 이에게 치명적인 위협이 될 것입니다.",
+		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.## \n\n표창은 피와 전투로 물든 긴 역사를 지니고 있습니다. 이 독이 발라진 스테인리스 스틸 표창은 당신의 길을 막는 모든 이에게 치명적인 위협이 될 것입니다.",
 		--Javelin
-		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#360## \n- #{skill_color}#회수가 가능합니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
+		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
 		--Throwing Axe
-		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#360## \n- #{skill_color}#회수가 가능합니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
+		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
 		--Throwing Knife
-		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#240## \n- #{skill_color}#회수가 가능합니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
+		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
 
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "약병",
 		["bm_grenade_damage_control"] = "힙 플라스크",
-		["bm_grenade_smoke_screen_grenade_desc"] = "범위: #{skill_color}#6m## \n지속 시간: #{skill_color}#12s## \n지연 시간: #{skill_color}#연막탄이 멈춘 후 1초## \n\n이것 하나만 던지면, 연기 속으로 사라져서, 적이 당신을 제대로 조준하지 못하게 할 수 있습니다.",
+		["bm_grenade_smoke_screen_grenade_desc"] = "범위: #{skill_color}#6m## \n지속 시간: #{skill_color}#12초## \n지연 시간: #{skill_color}#연막탄이 멈춘 후 1초## \n\n이것 하나만 던지면, 연기 속으로 사라져서, 적이 당신을 제대로 조준하지 못하게 할 수 있습니다.",
 
 		--WEAPON & ATTACHMENT DESCRIPTIONS
 		--[[ MANUFACTURERS ]]

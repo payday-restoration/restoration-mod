@@ -4962,6 +4962,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 			LocalizationManager:add_localized_strings({
 				["bm_w_huntsman"] = "Bubble Daryl",
 				["bm_w_deagle"] = "Big Pistol",
+				["bm_w_ching"] = "This Machine",
+				["bm_galant_sc_desc"] = "#{risk}#\"Well This Machine Kills Commies\"##",
 				["bm_w_m16"] = weapon_names == 2 and "is that a famas" or "is that a clarion",
 				["bm_m16_sc_desc"] = "I'll give you a clip so you can do some damage",
 				["bm_w_x_type54"] = weapon_names == 2 and "The twin colts" or "The twin crosskills",

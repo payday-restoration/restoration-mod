@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1" >
+	<object file="units/pd2_dlc_khp/weapons/wpn_fps_pis_legacy/wpn_fps_pis_legacy" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_legacy"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="NewRaycastWeaponBase" >
+			<var name="name_id" value="legacy" />
+		</extension>
+	</extensions>
+</unit>

@@ -4893,6 +4893,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 			LocalizationManager:add_localized_strings({
 				["bm_w_huntsman"] = "버블 데럴",
 				["bm_w_deagle"] = "존나 큰 권총",
+				["bm_w_ching"] = "이 기계",
+				["bm_galant_sc_desc"] = "#{risk}#\"이 기계는 빨갱이를 죽이지.\"##",				
 				["bm_w_m16"] = weapon_names == 2 and "그거 파마스임?" or "그거 클라리온임?",
 				["bm_m16_sc_desc"] = "이 클립으로 멋진 활약을 펼쳐 봐.",
 				["bm_w_x_type54"] = weapon_names == 2 and "쌍둥이 콜트" or "쌍둥이 크로스킬",

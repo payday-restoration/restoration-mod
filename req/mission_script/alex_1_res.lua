@@ -77,17 +77,6 @@ return {
 				force = 2,
 				position = Vector3(3000, -900, 900),
 			},
-			{
-				name = "nice_van_bro"
-				force = 3,
-				position = Vector3(3200, 1400, 1124.160),
-			},
-			{
-				name = "ugly_ass_car_2"
-				force = 2,
-				position = Vector3(800, -1700 , 874.874),
-
-			},
 		},
-	}
+	},
 }

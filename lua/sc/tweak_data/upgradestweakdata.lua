@@ -2075,7 +2075,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.values.player.panic_suppression_mult = {
 		0.05,
-		0.01
+		0.025
 	}
 	self.values.player.corpse_dispose_speed_multiplier = {
 		0.25
@@ -2408,7 +2408,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_add = 2, --points per kill
 			combo_ene_mult = ene_mult,
 			combo_t = 5, --Combo decay timer
-			combo_decay = 10, --Points lost when combo decay timer expires
+			combo_decay = 5, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
 			hurt_t = 1, --Hurt decay cooldown
 			incap_decay = 40 --Points lost when entering bleedout (heath is 0)

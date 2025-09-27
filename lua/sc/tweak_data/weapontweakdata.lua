@@ -29622,6 +29622,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.sa1 then
+				self.sa1.warsaw = true
+				self.sa1.is_bullpup = true
+				self.sa1.recategorize = { "heavy_ar" }
+				self.sa1.damage_type = "assault_rifle"
+				self.sa1.tactical_reload = 1
+				self.sa1.CLIP_AMMO_MAX = 30
+				self.sa1.AMMO_MAX = 120
+				self.sa1.fire_mode_data.fire_rate = 0.092307
+				self.sa1.kick = self.stat_info.kick_tables.left_recoil
+				self.sa1.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_recoil},
+					{5, self.stat_info.kick_tables.moderate_kick},
+					{9, self.stat_info.kick_tables.right_recoil},
+					{13, self.stat_info.kick_tables.moderate_kick},
+					{18, self.stat_info.kick_tables.left_recoil},
+					{25, self.stat_info.kick_tables.even_recoil}
+				}
+				self.sa1.supported = true
+				self.sa1.ads_speed = 0.340
+				self.sa1.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 5100,
+					min_mult = 0.6
+				}
+				self.sa1.stats = {
+					damage = 30,
+					spread = 78,
+					recoil = 79,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.sa1.stats_modifiers = nil
+				self.sa1.panic_suppression_chance = 0.05
+				self.sa1.timers.reload_empty = 2.55
+				self.sa1.timers.reload_exit_empty = 0.95
+				self.sa1.timers.reload_not_empty = 1.95
+				self.sa1.timers.reload_exit_not_empty = 0.7
+			end
+
 			if self.c96carbine then
 				self.c96carbine.categories = {"smg"}
 				self.c96carbine.recategorize = {"heavy_smg"}
@@ -29636,7 +29683,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.c96carbine.AMMO_MAX = 60
 				self.c96carbine.kick = self.stat_info.kick_tables.even_recoil
 				self.c96carbine.kick_pattern = {
-					{1, self.stat_info.kick_tables.moderate_left_kick},
+					{0, self.stat_info.kick_tables.moderate_left_kick},
 					{6, self.stat_info.kick_tables.even_recoil},
 					{9, self.stat_info.kick_tables.left_recoil},
 					{15, self.stat_info.kick_tables.moderate_kick},

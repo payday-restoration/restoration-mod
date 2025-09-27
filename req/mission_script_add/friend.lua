@@ -9,6 +9,9 @@ local sosa_backup_4 =  "units/pd2_dlc_friend/characters/ene_thug_indoor_04/ene_t
 local sosa_cartel_amount = 1
 local sosa_table = {sosa_backup_1, sosa_backup_2, sosa_backup_3, sosa_backup_4}
 local death_sentence = difficulty == 8
+local tank_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
+local death_wish_above = difficulty >= 7
+
 
 
 local optsLieutenant = {
@@ -84,6 +87,28 @@ local opts_pro_job_ponr_counter = {
 	},
 }
 
+local optsBulldozer = {
+	enabled = false,
+	enemy = tank_skull,
+	on_executed = {
+		{ id = 400015, delay = 0, },
+	},
+}
+local optsDefend_SO = {
+	SO_access = "4096",
+	scan = true,
+	align_position = true,
+	needs_pos_rsrv = true,
+	align_rotation = true,
+	interval = 2,
+	so_action = "AI_sniper",
+}
+local opts_enable_dozers = {
+	enabled = death_wish_above,
+	elements = { 400014, },
+	toggle = "on",
+}
+
 return {
 	elements = {
 		-- Sosa's lieutenants
@@ -102,5 +127,9 @@ return {
 		-- PONR
 		restoration:gen_counter(400012, "pro_job_ponr_counter", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_counter),
 		restoration:gen_pointofnoreturn(400013, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
+		-- a surprise dozer in the escape :)
+		restoration:gen_dummy(400014, "boat_dozer_1", Vector3(-5700, -3400, -162.133), Rotation(-90, 0, -0), optsBulldozer),
+		restoration:gen_so(400015, "dozer_defend_so_1", Vector3(-6900, -2100, -162.133), Rotation(0, 0, -0), optsDefend_SO),
+		restoration:gen_toggleelement(400016, "enable_dozers", opts_enable_dozers),
 	},
 }

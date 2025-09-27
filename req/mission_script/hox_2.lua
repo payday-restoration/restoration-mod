@@ -32,4 +32,18 @@ return {
 			},
 		},
 	},
+		[100732] = { -- Activate operations room reinforce when the players are doing objectives
+		reinforce = {
+			{
+				name = "operations_room",
+				force = 3,
+				position = Vector3(-200, 300, 0),
+			},
+		},
+	},
+	[100733] = {
+		reinforce = {
+			{ name = "operations_room" },
+		},
+	},
 }

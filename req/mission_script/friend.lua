@@ -103,6 +103,19 @@ return {
 	[100213] = disabled,
 	[100214] = disabled,
 	[103446] = disabled,  -- Don't even try.....
+	-- Surprise Dozer (dont ask how he swam there)
+	-- Enable Dozer 
+	[100023] = {
+		on_executed = {
+			{id = 400016, delay = 0},
+		},
+	},
+	-- Spawn the fucker when escape boat is triggered 
+	[100259] =  {
+		on_executed = {
+			{id = 400014, delay = 0,},
+		},
+	},
 	-- Force spawn all possible guards during Sosa fight (DS only)
 	[101725] = {
 		values = {

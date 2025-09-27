@@ -41,8 +41,25 @@ local spooc = {
 		enemy = woman_spooc
 	}
 }
-
+local initial_reenforce = {
+	on_executed = {
+		{ id = 100364, delay = 0, },
+	},
+}
 return {
+	-- DW Trailer Skulldozer spawn event
+	-- Enable the Dozer when things go loud
+	[100568] = {
+		on_executed = {
+			{ id = 400003, delay = 0 },
+		},
+	},
+	-- Spawn him when the far van escape gets triggered on DW/DS
+	[104452] = {
+		on_executed = {
+			{ id = 400001, delay = 0 },
+		},
+	},
 	--Pro Job PONR, triggers when the fire is done, should probably trigger when the vault opens instead
 	[100872] = {
 		ponr_player_mul = ponr_timer_player_mul,
@@ -80,6 +97,11 @@ return {
 			amount = snipers
 		}
 	},
+	-- Enable all street reinforce spots when first responders arrive
+	[104727] = initial_reenforce,
+	[104728] = initial_reenforce,
+	[104729] = initial_reenforce,
+	[104730] = initial_reenforce,
 	--Don't repeat the same dialog with chopper deploying units and/or telling about the tear gas
 	[105362] = {
 		values = {

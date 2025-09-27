@@ -71,7 +71,7 @@ return {
 		-- Skulldozer nearby the van (based on DW Trailer)
 		restoration:gen_dummy(400001, "van_dozer_1", Vector3(-8305, -3511, 0), Rotation(-90, 0, -0), optsBulldozer),
 		restoration:gen_so(400002, "dozer_defend_so_1", Vector3(-7273, -2895, -19.999), Rotation(0, 0, -0), optsDefend_SO),
-		restoration:gen_toggleelement(400003, "enable_dozers", opts_enable_dozers),
+		restoration:gen_toggleelement(400003, "enable_dw_trailer_dozer", opts_enable_dozers),
 		restoration:gen_spawngroup(400004, "heli_group_1", { 101432, 101433, }, 0, opts_heli_group),
 		restoration:gen_spawngroup(400005, "heli_group_2", { 105620, 105621, }, 0, opts_heli_group),
 	},

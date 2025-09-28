@@ -2383,15 +2383,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_grenade_poison_gas_grenade_desc_short"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.##",
 
 		--Throwing Cards
-		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
-		--Throwing Stars
-		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.## \n\n표창은 피와 전투로 물든 긴 역사를 지니고 있습니다. 이 독이 발라진 스테인리스 스틸 표창은 당신의 길을 막는 모든 이에게 치명적인 위협이 될 것입니다.",
+		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬이 발동됩니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
+		--Throwing Stars/Shuriken
+		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 근접 공격 스킬이 발동됩니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.## \n\n표창은 피와 전투로 물든 긴 역사를 지니고 있습니다. 이 독이 발라진 스테인리스 스틸 표창은 당신의 길을 막는 모든 이에게 치명적인 위협이 될 것입니다.",
 		--Javelin
-		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
+		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬이 발동됩니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
 		--Throwing Axe
-		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
+		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬이 발동됩니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
 		--Throwing Knife
-		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
+		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬이 발동됩니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
 
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "약병",

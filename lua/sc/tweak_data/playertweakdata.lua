@@ -158,7 +158,7 @@ end
 
 function PlayerTweakData:_set_singleplayer()
 	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
-		self.max_nr_following_hostages = 4
+		self.max_nr_following_hostages = 8
 	end
 end
 
@@ -265,7 +265,7 @@ function PlayerTweakData:init()
 			0
 		}
 	}
-	self.max_nr_following_hostages = 1
+	self.max_nr_following_hostages = 4
 	self.TRANSITION_DURATION = 0.2
 	self.stances = {
 		default = {

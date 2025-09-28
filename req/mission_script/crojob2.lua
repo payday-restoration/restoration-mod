@@ -19,6 +19,43 @@ return {
 	[104838] = {
 		ponr = ponr_value
 	},
+	-- Dozer everywhere system (truck ambush dozer)
+	-- Enabale him when heist goes loud 
+	[101540] = {
+		on_executed = {
+			{id = 400003, delay = 0, },
+		},
+	},
+	-- Spawn the dozer when the ship starts to move 
+	[100000] = {
+		on_executed = {
+			{id = 400001, delay = 0, },
+		},
+	},
+	[101882] = { -- add reinforce
+		reinforce = {
+			{
+				name = "crane1",
+				force = 2,
+				position = Vector3(-4500, 600, 125),
+			},
+			{
+				name = "crane2",
+				force = 2,
+				position = Vector3(2100, 550, 125),
+			},
+			{
+				name = "wagon1",
+				force = 2,
+				position = Vector3(-2900, 2900, 500),
+			},
+			{
+				name = "wagon2",
+				force = 2,
+				position = Vector3(-3700, 0, 500),
+			},
+		},
+	},
 	--Murkywater Elite guards replace regular security on DW above
 	[101764] = murky_guard_2,
 	[101317] = murky_guard_1,

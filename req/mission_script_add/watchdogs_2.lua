@@ -573,7 +573,7 @@ return {
 		restoration:gen_element_random(400063, "pick_ground_sniper_respawn", opts_pick_ground_sniper_respawn),
 		restoration:gen_toggleelement(400064, "reenable_ground_sniper_1", opts_reenable_ground_sniper_1),
 		restoration:gen_toggleelement(400065, "reenable_ground_sniper_2", opts_reenable_ground_sniper_2),
-		-- 
+		-- Cloakers
 		restoration:gen_spawngroup(400066, "dock_cloaker_group", nil, nil, opts_dock_cloaker_group),
 		restoration:gen_element_random(400067, "pick_enable_dock_cloaker_spawns", opts_pick_enable_dock_cloaker_spawns),
 		restoration:gen_toggleelement(400068, "enable_dock_cloaker_spawns_dock_7", opts_enable_dock_cloaker_spawns_dock_7),
@@ -585,6 +585,7 @@ return {
 		restoration:gen_dummy(400074, "dock_cloaker_12", Vector3(2550, 3450, 0), Rotation(180, 0, 0), opts_dock_cloaker_spawn),
 		restoration:gen_dummy(400075, "dock_cloaker_13", Vector3(1650, 3450, 0), Rotation(180, 0, 0), opts_dock_cloaker_spawn),
 		restoration:gen_preferedadd(400076, "add_dock_cloaker_group", opts_add_dock_cloaker_group),
+		-- misc
 		restoration:gen_missionscript(400077, "fbi_ready_team_agent_spawn_group_1", opts_fbi_ready_team_agent_spawn_group_1),
 		restoration:gen_missionscript(400078, "fbi_ready_team_agent_spawn_group_2", opts_fbi_ready_team_agent_spawn_group_2),
 		restoration:gen_missionscript(400079, "fbi_ready_team_agent_spawn_group_3", opts_fbi_ready_team_agent_spawn_group_3),

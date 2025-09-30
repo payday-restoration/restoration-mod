@@ -1,6 +1,6 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local tank_skull = ((difficulty >= 8 and pro_job) and "units/pd2_mod_omnia/ene_bulldozer_3/ene_bulldozer_3" or "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249")
+local tank_skull = ((difficulty >= 8 and pro_job) and  "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249")
 local death_wish_above = difficulty >= 7
 
 local optsBulldozer = {

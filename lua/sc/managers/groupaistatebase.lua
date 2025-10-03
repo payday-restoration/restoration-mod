@@ -327,6 +327,14 @@ function GroupAIStateBase:use_ponr_music()
 	return true
 end
 
+Hooks:OverrideFunction(GroupAIStateBase, "set_is_inside_point_of_no_return", function(self, peer_id, is_inside, ...)
+	if self._peers_inside_point_of_no_return then
+		self._peers_inside_point_of_no_return[peer_id] = is_inside
+	else
+		-- Add debug later, this was done on mobile 
+	end
+end)
+
 Hooks:PreHook(GroupAIStateBase, "remove_point_of_no_return_timer", "res_remove_point_of_no_return_timer", function(self, point_of_no_return_id)
 	if setup:has_queued_exec() or self._point_of_no_return_id ~= point_of_no_return_id then
 		return

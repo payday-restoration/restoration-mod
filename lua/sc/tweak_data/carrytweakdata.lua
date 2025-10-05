@@ -3,7 +3,7 @@ Hooks:PostHook(CarryTweakData, "init", "res_carry", function(self, tweak_data)
 	-- Solo boon stuff
 	local solo_boon = 1
 	
-	if Global.game_settings.single_player then
+	if Global.game_settings and Global.game_settings.single_player then
 		if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
 			solo_boon = 0.5
 		end

@@ -97,7 +97,7 @@ local opts_pro_job_ponr_counter = {
 	enabled = true,
 	counter_target = 2,
 	on_executed = {
-		{ id = 400024, delay = 0, },
+		{ id = 400025, delay = 0, },
 	},
 }
 

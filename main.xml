@@ -158,13 +158,13 @@
 				<hook file="sc/managers/smokescreeneffect.lua" source_file="lib/managers/player/smokescreeneffect"/>
 				<hook file="sc/managers/firemanager.lua" source_file="lib/managers/firemanager"/>
 				<hook file="sc/managers/statisticsmanager.lua" source_file="lib/managers/statisticsmanager"/>
-				<hook file="sc/managers/playermanager.lua" source_file="lib/managers/playermanager"/>
-				<hook file="sc/managers/groupaistatebesiege.lua" source_file="lib/managers/group_ai_states/groupaistatebesiege"/>
-				<hook file="sc/managers/groupaistatebase.lua" source_file="lib/managers/group_ai_states/groupaistatebase"/>
+				<!--hook file="sc/managers/playermanager.lua" source_file="lib/managers/playermanager"-->
+				<!--hook file="sc/managers/groupaistatebesiege.lua" source_file="lib/managers/group_ai_states/groupaistatebesiege"-->
+				<!--hook file="sc/managers/groupaistatebase.lua" source_file="lib/managers/group_ai_states/groupaistatebase"-->
 				<hook file="sc/managers/blackmarketgui.lua" source_file="lib/managers/menu/blackmarketgui"/>
 				<hook file="sc/managers/weaponfactorymanager.lua" source_file="lib/managers/weaponfactorymanager"/>
 				<hook file="sc/managers/crimespreemanager.lua" source_file="lib/managers/crimespreemanager"/>
-				<hook file="sc/managers/skirmishmanager.lua" source_file="lib/managers/skirmishmanager"/>
+				<!--hook file="sc/managers/skirmishmanager.lua" source_file="lib/managers/skirmishmanager"-->
 				<hook file="sc/managers/jobmanager.lua" source_file="lib/managers/jobmanager"/>
 				<hook file="sc/managers/snipergrazedamage.lua" source_file="lib/managers/player/snipergrazedamage"/>
 				<hook file="sc/managers/menumanagerpd2.lua" source_file="lib/managers/menumanagerpd2"/>
@@ -192,13 +192,13 @@
 					<hook file="sc/units/weapons/weaponflashlight.lua" source_file="lib/units/weapons/weaponflashlight"/>
 					<hook file="sc/units/weapons/weaponlaser.lua" source_file="lib/units/weapons/weaponlaser"/>
 					<hook file="sc/units/weapons/weaponammo.lua" source_file="lib/units/weapons/weaponammo"/>
-					<hook file="sc/units/weapons/newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
+					<!--hook file="sc/units/weapons/newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"-->
 					<hook file="sc/units/weapons/newnpcraycastweaponbase.lua" source_file="lib/units/weapons/newnpcraycastweaponbase"/>
 					<hook file="sc/units/weapons/newflamethrowerbase.lua" source_file="lib/units/weapons/newflamethrowerbase"/>
 					<hook file="sc/units/weapons/flamethrowereffectextension.lua" source_file="lib/units/weapons/flamethrowereffectextension"/>
 					<hook file="sc/units/weapons/shotgunbase.lua" source_file="lib/units/weapons/shotgun/shotgunbase"/>
 					<hook file="sc/units/weapons/raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
-					<hook file="sc/units/weapons/sentrygunweapon.lua" source_file="lib/units/weapons/sentrygunweapon"/>
+					<!--hook file="sc/units/weapons/sentrygunweapon.lua" source_file="lib/units/weapons/sentrygunweapon"-->
 					<hook file="sc/units/weapons/bowweaponbase.lua" source_file="lib/units/weapons/bowweaponbase"/>
 					<hook file="sc/units/weapons/projectileweaponbase.lua" source_file="lib/units/weapons/projectileweaponbase"/>
 					<hook file="sc/units/weapons/weaponunderbarrellauncher.lua" source_file="lib/units/weapons/weaponunderbarrellauncher"/>
@@ -223,14 +223,14 @@
 					<hook file="sc/units/weapons/weaponliongadget1.lua" source_file="lib/units/weapons/weaponliongadget1"/>
 					<hook file="sc/units/weapons/trip_mine/tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
 				<!--PLAYER-->
-					<hook file="sc/units/player/playerdamage.lua" source_file="lib/units/beings/player/playerdamage"/>
+					<!--hook file="sc/units/player/playerdamage.lua" source_file="lib/units/beings/player/playerdamage"-->
 					<hook file="sc/units/player/playercarry.lua" source_file="lib/units/beings/player/states/playercarry"/>
 					<hook file="sc/units/player/playerbleedout.lua" source_file="lib/units/beings/player/states/playerbleedout"/>
-					<hook file="sc/units/player/playertased.lua" source_file="lib/units/beings/player/states/playertased"/>
+					<!--hook file="sc/units/player/playertased.lua" source_file="lib/units/beings/player/states/playertased"-->
 					<hook file="sc/units/player/playermovement.lua" source_file="lib/units/beings/player/playermovement"/>
 					<hook file="sc/units/beings/player/huskplayerbase.lua" source_file="lib/units/beings/player/huskplayerbase"/>
 					<hook file="sc/units/player/huskplayermovement.lua" source_file="lib/units/beings/player/huskplayermovement"/>
-					<hook file="sc/units/player/huskplayerdamage.lua" source_file="lib/units/beings/player/huskplayerdamage"/>
+					<!--hook file="sc/units/player/huskplayerdamage.lua" source_file="lib/units/beings/player/huskplayerdamage"-->
 					<hook file="sc/units/player/huskplayerinventory.lua" source_file="lib/units/beings/player/huskplayerinventory"/>
 					<hook file="sc/units/player/playerbipod.lua" source_file="lib/units/beings/player/states/playerbipod"/>
 					<hook file="sc/units/player/playerinventory.lua" source_file="lib/units/beings/player/playerinventory"/>

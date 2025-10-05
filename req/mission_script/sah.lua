@@ -32,7 +32,7 @@ return {
 		},
 	},
 	-- Turn off Whisper State
-	[100824] = {
+	[100680] = {
 			on_executed = {
 			{id = 400024, delay = 0, },
 		},

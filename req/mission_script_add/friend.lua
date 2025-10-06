@@ -128,8 +128,8 @@ return {
 		restoration:gen_counter(400012, "pro_job_ponr_counter", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_counter),
 		restoration:gen_pointofnoreturn(400013, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
 		-- a surprise dozer in the escape :)
-		restoration:gen_dummy(400014, "boat_dozer_1", Vector3(-5700, -3400, -162.133), Rotation(-90, 0, -0), optsBulldozer),
-		restoration:gen_so(400015, "dozer_defend_so_1", Vector3(-6900, -2100, -162.133), Rotation(0, 0, -0), optsDefend_SO),
+		restoration:gen_dummy(400014, "boat_dozer_1", Vector3(-5700, -3400, -162.133), Rotation(2 , 0, -0), optsBulldozer),
+		restoration:gen_so(400015, "dozer_defend_so_1", Vector3(-6900, -2100, -162.133), Rotation(-95, 0, -0), optsDefend_SO),
 		restoration:gen_toggleelement(400016, "enable_dozers", opts_enable_dozers),
 	},
 }

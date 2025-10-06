@@ -11,7 +11,7 @@ Hooks:PostHook(CarryTweakData, "init", "res_carry", function(self, tweak_data)
 
 	-- Tweaking Bag Weights to be more consistent and less of a giant jump between tiers	
 	self.weight_class = {
-		light = 5 * solo_boon,
+		light = 10 * solo_boon,
 		medium = 20 * solo_boon,
 		heavy = 35 * solo_boon,
 		very_heavy = 50 * solo_boon,

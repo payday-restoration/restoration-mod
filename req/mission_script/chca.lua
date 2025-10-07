@@ -58,7 +58,7 @@ return {
 	},
 	[101449] = { --Escape signalled
 		on_executed = {
-			{ id = 100890 },
+			{ id = 100890, delay = 0, },
 		},
 		reinforce = {
 			{ name = "elevator" },

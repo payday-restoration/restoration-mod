@@ -112,7 +112,7 @@ local optsDefend_SO = {
 	so_action = "AI_sniper",
 }
 local opts_enable_surprse_cloaker = {
-	enabled = (overkill_above and enabled_chance_ambush),
+	enabled = (overkill_above and and pro_job and enabled_chance_ambush),
 	elements = { 400061, },
 	toggle = "on",
 
@@ -137,12 +137,12 @@ local opts_surprise_gunners_2 = {
 	}
 }
 local opts_enable_marshal_gunners_1 = {
-	enabled = (death_wish_above and enabled_chance_ambush),
+	enabled = (death_wish_above and pro_job and  enabled_chance_ambush),
 	elements = {  400070,},
 		toggle = "on",
 }
 local opts_enable_marshal_gunners_2 = {
-	enabled = (death_wish_above and enabled_chance_ambush),
+	enabled = (death_wish_above and pro_job and enabled_chance_ambush),
 	elements = { 400069,},
 		toggle = "on",
 }
@@ -154,7 +154,7 @@ local opts_taser_stairs = {
 	},
 }
 local opts_enable_taser_ambush = {
-	enabled = (overkill_above and enabled_chance_ambush),
+	enabled = (overkill_above and pro_job and  enabled_chance_ambush),
 	elements = { 400073,},
 	toggle = "on"
 

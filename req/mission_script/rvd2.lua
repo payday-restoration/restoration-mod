@@ -93,6 +93,12 @@ return {
 			{ name = "zipline2" },
 		},
 	},
+	-- FBI Ready Teams when the ambush started 
+	[100109] = {
+		on_executed = {
+			{id = 400018, delay = 15, delay_rand = 10,},
+		},
+	},
 	-- Titan Cloakers replace scripted escape cloakers on DSPJ
 	[102430] = tcloaker,
 	[102431] = tcloaker,

@@ -21,15 +21,21 @@ return {
 	-- Starting up these guys first
 	[100018] = {
 		on_executed = {
-			{id = 400065, delay = 0,},
-			{id = 400066, delay = 0,},
+			{id = 400065 , delay = 0,},
+			{id = 400066 , delay = 0,},
+			{id = 400067 , delay = 0,},
+			{id = 400068 , delay =  0,},
+			{id = 400075, delay =  0,}
 		},
 	},
 	-- Garage ambush
 	[102022] = {
 		on_executed = {
-			{id = 400061, delay = 0, }, 
-			{id = 400063, delay = 0, }, 
+			{id = 400061 , delay = 0, }, 
+			{id = 400063 , delay = 0, }, 
+			{id = 400069  , delay = 0,}.
+			{id = 400070 , delay = 0,},
+			{id = 400073 , delay = 0,},
 		},
 	},
 	[100109] = { -- Atrium, always active

@@ -22,12 +22,12 @@
 	</material>
 
 	<material name="mtr_spook_heavy" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df"/>
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_atlas_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_atlas_df"/>
 	</material>
 	<material name="mtr_spook_heavy_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="4"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df" mip="4"/>
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_atlas_df" mip="4"/>
 	</material>
 
 	<material name="mtr_skulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">

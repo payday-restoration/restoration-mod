@@ -1,7 +1,8 @@
+local pro_job = Global.game_settings and Global.game_settings.one_down 
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local death_wish_above = difficulty >= 7
 local overkill_above = difficulty >= 5
-local diff_scaling = 0.065 * difficulty
+local diff_scaling = (death_wish_above and 0.7 or overkill_above and 0.5 or 0.3) + (pro_job and 0.15 or 0)
 local fbi_ready_team_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
 local fbi_ready_team_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
 local fbi_ready_team_group_spawn_amount = 1

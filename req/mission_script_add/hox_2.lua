@@ -112,7 +112,7 @@ local optsDefend_SO = {
 	so_action = "AI_sniper",
 }
 local opts_enable_surprse_cloaker = {
-	enabled = (overkill_above and and pro_job and enabled_chance_ambush),
+	enabled = (overkill_above and  pro_job and enabled_chance_ambush),
 	elements = { 400061, },
 	toggle = "on",
 

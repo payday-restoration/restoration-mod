@@ -33,7 +33,7 @@ return {
 		on_executed = {
 			{id = 400061 , delay = 0, }, 
 			{id = 400063 , delay = 0, }, 
-			{id = 400069  , delay = 0,}.
+			{id = 400069  , delay = 0,},
 			{id = 400070 , delay = 0,},
 			{id = 400073 , delay = 0,},
 		},

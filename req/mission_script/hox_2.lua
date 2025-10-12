@@ -25,7 +25,7 @@ return {
 			{id = 400066 , delay = 0,},
 			{id = 400067 , delay = 0,},
 			{id = 400068 , delay =  0,},
-			{id = 400075, delay =  0,}
+			{id = 400075, delay =  0,},
 		},
 	},
 	-- Garage ambush

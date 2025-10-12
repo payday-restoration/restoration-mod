@@ -93,7 +93,7 @@ local optsCloaker_Hide_SO_1 = {
 	interrupt_dis = 5,
 	interrupt_dmg = 0.3,
 	interval = 2,
-    so_action = "e_so_idle_by_container"
+    so_action = "e_so_idle_by_container",
 }
 local opts_surprise_dozer = {
 	enemy = tank_skull,
@@ -156,7 +156,7 @@ local opts_taser_stairs = {
 local opts_enable_taser_ambush = {
 	enabled = (overkill_above  and  enabled_chance_ambush),
 	elements = { 400073,},
-	toggle = "on"
+	toggle = "on",
 
 }
 local opts_taser_hide_SO = {
@@ -168,7 +168,7 @@ local opts_taser_hide_SO = {
 	interrupt_dis = 5,
 	interrupt_dmg = 0.3,
 	interval = 2,
-	so_action = "e_so_idle_by_container"
+	so_action = "e_so_idle_by_container",
 }
 return {
     elements = {

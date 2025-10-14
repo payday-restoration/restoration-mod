@@ -1755,9 +1755,15 @@ function BLT_CarryStacker:CanCarry(carry_id, logger)
     logger("Request to check whether the player can " ..
         "carry " .. tostring(carry_id))
     local check_weight = self.weight * self:getWeightForType(carry_id, logger)
+	local max_weight = tweak_data.player.max_carry_weight
+	
+	if managers.player:has_category_upgrade("carry", "increased_carry_weight") then
+		max_weight = max_weight - managers.player:upgrade_value("carry", "increased_carry_weight", 1)
+	end
+	
     logger("The current weight is " .. tostring(self.weight) .. 
         " and the new weight is " .. tostring(check_weight))
-    local result = check_weight >= tweak_data.player.max_carry_weight
+    local result = check_weight >= max_weight
     logger("The player can carry a bag: " .. tostring(result))
     return result
 end

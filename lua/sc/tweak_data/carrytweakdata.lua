@@ -11,11 +11,11 @@ Hooks:PostHook(CarryTweakData, "init", "res_carry", function(self, tweak_data)
 
 	-- Tweaking Bag Weights to be more consistent and less of a giant jump between tiers	
 	self.weight_class = {
-		light = 10 * solo_boon,
-		medium = 20 * solo_boon,
-		heavy = 35 * solo_boon,
-		very_heavy = 50 * solo_boon,
-		mega_heavy = 60 * solo_boon
+		light = 10,
+		medium = 20,
+		heavy = 30,
+		very_heavy = 40,
+		mega_heavy = 50
 	}
 	
 	-- Light (Jewelry, Coke) bags, no penalties and can still sprint just fine
@@ -31,61 +31,61 @@ Hooks:PostHook(CarryTweakData, "init", "res_carry", function(self, tweak_data)
 	self.types.light.throw_distance_multiplier = 1
 	self.types.light.weight = self.weight_class.light
 	
-	-- Medium Bags (Cash bags, bodybags), slight penalties and you can't sprint anymore
+	-- Medium Bags (Cash bags, bodybags), slight penalties
 	self.types.medium.move_speed_modifier = 0.8
 	self.types.medium.jump_modifier = 0.8
-	self.types.medium.can_run = false
+	self.types.medium.can_run = true
 	self.types.medium.throw_distance_multiplier = 0.85
 	self.types.medium.weight = self.weight_class.medium
 	
 	self.types.being.move_speed_modifier = 0.8
 	self.types.being.jump_modifier = 0.8
-	self.types.being.can_run = false
+	self.types.being.can_run = true
 	self.types.being.throw_distance_multiplier = 0.85
 	self.types.being.weight = self.weight_class.medium
 	
 	self.types.explosives.move_speed_modifier = 0.8
 	self.types.explosives.jump_modifier = 0.8
-	self.types.explosives.can_run = false
+	self.types.explosives.can_run = true
 	self.types.explosives.throw_distance_multiplier = 0.85
 	self.types.explosives.weight = self.weight_class.medium
 	
 	self.types.cloaker_explosives.move_speed_modifier = 0.8
 	self.types.cloaker_explosives.jump_modifier = 0.8
-	self.types.cloaker_explosives.can_run = false
+	self.types.cloaker_explosives.can_run = true
 	self.types.cloaker_explosives.throw_distance_multiplier = 0.85
 	self.types.cloaker_explosives.weight = self.weight_class.medium
 	
 	-- Heavy Bags, gold and such
 	self.types.slightly_heavy.move_speed_modifier = 0.65
 	self.types.slightly_heavy.jump_modifier = 0.65
-	self.types.slightly_heavy.can_run = false
+	self.types.slightly_heavy.can_run = true
 	self.types.slightly_heavy.throw_distance_multiplier = 0.7
 	self.types.explosives.weight = self.weight_class.heavy
 
 	self.types.heavy.move_speed_modifier = 0.65
 	self.types.heavy.jump_modifier = 0.65
-	self.types.heavy.can_run = false
+	self.types.heavy.can_run = true
 	self.types.heavy.throw_distance_multiplier = 0.7
 	self.types.heavy.weight = self.weight_class.heavy
 	
 	-- Very Heavy Bags (Safes)
 	self.types.slightly_very_heavy.move_speed_modifier = 0.5
 	self.types.slightly_very_heavy.jump_modifier = 0.5
-	self.types.slightly_very_heavy.can_run = false
+	self.types.slightly_very_heavy.can_run = true
 	self.types.slightly_very_heavy.throw_distance_multiplier = 0.55
 	self.types.slightly_very_heavy.weight = self.weight_class.very_heavy
 	
 	self.types.very_heavy.move_speed_modifier = 0.5
 	self.types.very_heavy.jump_modifier = 0.5
-	self.types.very_heavy.can_run = false
+	self.types.very_heavy.can_run = true
 	self.types.very_heavy.throw_distance_multiplier = 0.55
 	self.types.very_heavy.weight = self.weight_class.very_heavy
 	
 	-- Mega Heavy, Ancient babylonian crap
 	self.types.mega_heavy.move_speed_modifier = 0.35
 	self.types.mega_heavy.jump_modifier = 0.35
-	self.types.mega_heavy.can_run = false
+	self.types.mega_heavy.can_run = true
 	self.types.mega_heavy.throw_distance_multiplier = 0.4	
 	self.types.mega_heavy.weight = self.weight_class.mega_heavy
 	

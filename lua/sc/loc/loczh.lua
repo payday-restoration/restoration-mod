@@ -5302,7 +5302,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Transporter
         ["menu_pack_mule_beta_sc"] = "运输者",
-        ["menu_transporter_beta_desc_sc"] = "掌握: #{risk}#$basic##\n每#{skill_color}#10##点护甲值会减少携带战利品袋对移动速度的惩罚#{skill_color}#0.5%##\n\n专精: #{risk}#$pro##\n你现在可以#{skill_color}#背着重包跑步##了\n\n#{important_1}#提示：背包带来的移动速度惩罚依然存在##",
+        ["menu_transporter_beta_desc_sc"] = "掌握: #{risk}#$basic##\n每#{skill_color}#10##点护甲值会减少携带战利品袋对移动速度的惩罚#{skill_color}#0.5%##\n\nACE: #{owned}#$pro##\nYour max bag carry weight is increased by #{skill_color}#$skill_value_p2.##\n\n#{risk}#NOTE: The default carry weight is 45, and the movement penalty from the bag still applies.##",
 
         -- More Blood to Bleed--
         ["menu_iron_man_beta_sc"] = "血流成河",

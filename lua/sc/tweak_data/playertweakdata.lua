@@ -221,7 +221,7 @@ function PlayerTweakData:init()
 	self.damage.automatic_assault_ai_trade_time = 240
 	self.damage.automatic_assault_ai_trade_time_max = 300
 	self.fall_health_damage = 3
-	self.max_carry_weight = 0.25
+	self.max_carry_weight = 0.55
 	self.fall_damage_alert_size = 250
 	self.SUSPICION_OFFSET_LERP = 0.75
 	self.long_dis_interaction = {

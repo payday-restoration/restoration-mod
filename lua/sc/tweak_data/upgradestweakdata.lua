@@ -1037,9 +1037,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.armor_carry_bonus = {1.005}
 				--Ace
 					self.values.carry.movement_penalty_nullifier = {true}
+					self.values.carry.increased_carry_weight = {0.15}
 					
 					self.skill_descs.pack_mule = {
-						skill_value_b1 = tostring(math.ceil(self.values.player.armor_carry_bonus[1] % 1)/2).."%" -- Reducing movement penalty
+						skill_value_b1 = tostring(math.ceil(self.values.player.armor_carry_bonus[1] % 1)/2).."%", -- Reducing movement penalty
+						skill_value_p2 = tostring(self.values.carry.increased_carry_weight[1] * 100) -- Increased Carry Weight)
 					}
 
 			--More Blood To Bleed
@@ -4121,7 +4123,16 @@ local sc_definitions = UpgradesTweakData._player_definitions
 function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
-	--New Definitions, calling em here to play it safe--
+	--New Definitions, calling em here to play it safe--	
+	self.definitions.carry_increased_carry_weight = {
+		name_id = "menu_carry_weight_addition",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "increased_carry_weight",
+			category = "carry"
+		}
+	}	
 	self.definitions.assault_rifle_recoil_index_addend_2 = {
 		name_id = "menu_assault_rifle_recoil_index_addend",
 		category = "feature",

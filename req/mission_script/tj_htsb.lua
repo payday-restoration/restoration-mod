@@ -1,6 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local vet_on_break = ((pro_job and difficulty == 8) and "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")
+local asu_smoke = ((pro_job and difficulty == 8) and "units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
 local ponr_value = (difficulty <= 5 and 720 or (difficulty == 6 or difficulty == 7) and 660) or 600
 
 return {
@@ -8,10 +8,10 @@ return {
 	[103669] = {
 		ponr = ponr_value
 	},
-    -- non bloddy vet cop probably smoking at the police station 
+    -- random ass ASU having a smoke 
     [101606] = {
         values = {
-         enemy =  vet_on_break
+         enemy =  asu_smoke
         }
     }
 }

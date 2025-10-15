@@ -7,6 +7,7 @@ PlayerAction.AmmoEfficiency = {
 		local headshots = 1
 		local weapon_unit = player_manager:equipped_weapon_unit():base()
 		local to_magazine = player_manager:upgrade_value("player", "head_shot_ammo_return", nil).to_magazine
+		local pickup_ratio = player_manager:upgrade_value("player", "head_shot_ammo_return", nil).pickup_ratio
 		local hud_manager = managers.hud
 
 		local function on_headshot(unit, attack_data)
@@ -20,7 +21,7 @@ PlayerAction.AmmoEfficiency = {
 					
 					if headshots == target_headshots then
 						--Amount of ammo to refund. bullet_refund corresponds to % of ammo to refund. If amount would be less than 1 bullet, clamp it to 1 bullet.
-						local max_pickup = weapon_unit._ammo_pickup and ((weapon_unit._ammo_pickup[1] + weapon_unit._ammo_pickup[2]) * 0.5)
+						local max_pickup = weapon_unit._ammo_pickup and ((weapon_unit._ammo_pickup[1] + weapon_unit._ammo_pickup[2]) * pickup_ratio)
 						local refund_raw = math.max(max_pickup, 1)
 						local refund = math.ceil(refund_raw)
 						refund = refund + ((math.random() < refund_raw - refund) and 1 or 0) --Decimal values == random chance for extra bullet.

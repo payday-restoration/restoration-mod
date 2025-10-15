@@ -4954,6 +4954,7 @@ end)
 					self.parts.wpn_fps_pis_chinchilla_g_death.supported = true
 					self.parts.wpn_fps_pis_chinchilla_g_death.stats = deep_clone(grips.recoil_1)
 
+					--[[
 					self.parts.wpn_fps_pis_chinchilla_fl_mount = {
 						type = "shitass",
 						name_id = "none",
@@ -4962,7 +4963,6 @@ end)
 							value = 1
 						}
 					}
-
 					table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_m3x")
 					table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_crimson")
 					table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_x400v")
@@ -4970,13 +4970,15 @@ end)
 					table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
 					table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_perst")
 
-					self.wpn_fps_pis_chinchilla.adds = self.wpn_fps_pis_chinchilla.adds or {}
-					self.wpn_fps_pis_chinchilla.override = self.wpn_fps_pis_chinchilla.override or {}
-
 					self.wpn_fps_pis_chinchilla.override.wpn_fps_pis_usp_fl_adapter = {
 						parent = "shitass",
 						a_obj = "a_vg"
 					}
+					--]]
+
+					self.wpn_fps_pis_chinchilla.adds = self.wpn_fps_pis_chinchilla.adds or {}
+					self.wpn_fps_pis_chinchilla.override = self.wpn_fps_pis_chinchilla.override or {}
+
 				end)
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_x_chinchilla", "resmod_x_chinchilla", function(self)
 
@@ -4987,13 +4989,15 @@ end)
 					table.insert(self.wpn_fps_pis_x_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
 					table.insert(self.wpn_fps_pis_x_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_perst")
 
-					self.wpn_fps_pis_x_chinchilla.adds = self.wpn_fps_pis_x_chinchilla.adds or {}
-					self.wpn_fps_pis_x_chinchilla.override = self.wpn_fps_pis_x_chinchilla.override or {}
-
+					--[[
 					self.wpn_fps_pis_x_chinchilla.override.wpn_fps_pis_usp_fl_adapter = {
 						parent = "shitass",
 						a_obj = "a_vg"
 					}
+					--]]
+
+					self.wpn_fps_pis_x_chinchilla.adds = self.wpn_fps_pis_x_chinchilla.adds or {}
+					self.wpn_fps_pis_x_chinchilla.override = self.wpn_fps_pis_x_chinchilla.override or {}
 				end)
 
 			--RAGING BULL
@@ -5040,8 +5044,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_rage_b_short.supported = true
-					self.parts.wpn_fps_pis_rage_b_short.stats = deep_clone(barrels.short_b2_stats)
-					self.parts.wpn_fps_pis_rage_b_short.custom_stats = deep_clone(barrels.short_b2_stats)
+					self.parts.wpn_fps_pis_rage_b_short.stats = deep_clone(barrels.short_b3_stats)
+					self.parts.wpn_fps_pis_rage_b_short.custom_stats = deep_clone(barrels.short_b3_stats)
 
 					--Slimline Body
 					self.parts.wpn_fps_pis_rage_body_smooth.pcs = {
@@ -5067,11 +5071,13 @@ end)
 					self.parts.wpn_fps_pis_rage_g_ergo.supported = true
 					self.parts.wpn_fps_pis_rage_g_ergo.stats = deep_clone(grips.recoil_1)
 
+					--[[
 					self.parts.wpn_fps_pis_rage_fl_mount = {
 						type = "shitass",
 						name_id = "bm_wp_judge_b_standard",
-						unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_cobray/wpn_fps_smg_x_cobray",
+						--unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_cobray/wpn_fps_smg_x_cobray",
 						--unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota/wpn_fps_sho_rota",
+						unit = "units/payday2/weapons/wpn_fps_ass_aug/wpn_fps_ass_aug",
 						stats = {
 							value = 1
 						}
@@ -5085,6 +5091,7 @@ end)
 					table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_laser")
 					table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
 					table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_perst")
+					--]]
 
 					self.wpn_fps_pis_rage.override = self.wpn_fps_pis_rage.override or {}
 					self.wpn_fps_pis_rage.override.wpn_fps_pis_usp_fl_adapter = {
@@ -5138,6 +5145,10 @@ end)
 						}
 					}
 
+					self.wpn_fps_pis_x_rage.override.wpn_fps_pis_usp_fl_adapter = {
+						parent = "shitass",
+						a_obj = "a_vg"
+					}
 					self.wpn_fps_pis_x_rage.override.wpn_fps_pis_2006m_fl_adapter = {
 						parent = "shitass",
 						a_obj = "a_vg"
@@ -5386,9 +5397,11 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_peacemaker_s_skeletal.supported = true
+					self.parts.wpn_fps_pis_peacemaker_s_skeletal.has_description = true
 					self.parts.wpn_fps_pis_peacemaker_s_skeletal.fps_animation_weight = "stock"
 					self.parts.wpn_fps_pis_peacemaker_s_skeletal.stats = deep_clone(stocks.add_fixed_stats)
 					self.parts.wpn_fps_pis_peacemaker_s_skeletal.custom_stats = deep_clone(stocks.add_fixed_stats)
+					self.parts.wpn_fps_pis_peacemaker_s_skeletal.custom_stats.burst_fire = { no_ads = 0 }
 
 
 					self.wpn_fps_pis_peacemaker.override = self.wpn_fps_pis_peacemaker.override or {}
@@ -19149,7 +19162,7 @@ end)
 						translation = Vector3(0, 7, -0.33)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_tti = {
-						translation = Vector3(0, 9, -0.095),
+						translation = Vector3(-0.005, 9, -0.095),
 						rotation = Rotation(0, 0.008, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_qbu88 = {
@@ -19634,8 +19647,8 @@ end)
 						translation = Vector3(-0.01, 6.2, -3.48)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_acr_2012 = {
-						translation = Vector3(0.02, 6.2, -0.55),
-						rotation = Rotation(0.04, -0.05, 0)
+						translation = Vector3(0.032, 6.2, -0.54),
+						rotation = Rotation(0.057, -0.071, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_stango44 = {
 						translation = Vector3(0.006, 5.3, -3.495)
@@ -20169,22 +20182,44 @@ end)
 			--Shortdot Sight (Base Sniper Scope)
 			self.parts.wpn_fps_upg_o_shortdot.has_description = true
 			self.parts.wpn_fps_upg_o_shortdot.supported = true
-			self.parts.wpn_fps_upg_o_shortdot.stats = {value = 0, zoom = 40}
+			self.parts.wpn_fps_upg_o_shortdot.stats = {value = 0, zoom = 20, base_zoom_off = 40}
 			self.parts.wpn_fps_upg_o_shortdot.custom_stats = { big_scope = true }
 			self.parts.wpn_fps_upg_o_shortdot.perks = {"scope"}
 			self.parts.wpn_fps_upg_o_shortdot.reticle_obj = nil
+			self.parts.wpn_fps_upg_o_shortdot.adds = {"wpn_fps_upg_o_shortdot_alt"}
 			self.parts.wpn_fps_upg_o_shortdot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 
 			for i, weap in pairs(self.parts.wpn_fps_upg_o_shortdot.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0.0045, -21.5, -0.76)
+					weap.translation = weap.translation + Vector3(0.0045, -21.5, -0.76) + Vector3(0, -7.25, 0)
+				end
+			end
+
+			self.parts.wpn_fps_upg_o_shortdot_alt = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
+			self.parts.wpn_fps_upg_o_shortdot_alt.pcs = nil
+			self.parts.wpn_fps_upg_o_shortdot_alt.forbids = nil
+			self.parts.wpn_fps_upg_o_shortdot_alt.adds = nil
+			self.parts.wpn_fps_upg_o_shortdot_alt.type = "extra"
+			self.parts.wpn_fps_upg_o_shortdot_alt.sub_type = "second_sight"
+			self.parts.wpn_fps_upg_o_shortdot_alt.perks = { "second_sight" }
+			self.parts.wpn_fps_upg_o_shortdot_alt.unit = "units/pd2_dlc_mxm/weapons/wpn_fps_upg_o_piggyback/wpn_fps_upg_o_piggyback"
+			self.parts.wpn_fps_upg_o_shortdot_alt.third_unit = nil
+			self.parts.wpn_fps_upg_o_shortdot_alt.stats = {
+				value = 1,
+				gadget_zoom = 40
+			}
+			self.parts.wpn_fps_upg_o_shortdot_alt.custom_stats = {}
+			self.parts.wpn_fps_upg_o_shortdot_alt.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_shortdot.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_o_shortdot_alt.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0, 7.25, 0)
 				end
 			end
 
 			--Vanilla Shortdot
 			self.parts.wpn_fps_upg_o_shortdot_vanilla = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
 			self.parts.wpn_fps_upg_o_shortdot_vanilla.supported = true
-			self.parts.wpn_fps_upg_o_shortdot_vanilla.stats = {value = 0, zoom = 40}
+			self.parts.wpn_fps_upg_o_shortdot_vanilla.stats = {value = 0, zoom = 20, base_zoom_off = 40}
 			self.parts.wpn_fps_upg_o_shortdot_vanilla.reticle_obj = nil
 			self.parts.wpn_fps_upg_o_shortdot_vanilla.dlc = nil
 
@@ -21499,7 +21534,6 @@ end)
 					weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(-0.07, 0, 0)
 				end
 			end
-
 
 			--OVAL Foregrip
 			self.parts.wpn_fps_upg_ass_m4_fg_lvoa.pcs = {}
@@ -25001,10 +25035,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	--Default Sniper Scope
 	self.parts.wpn_fps_upg_o_shortdot_dmc = {
 		is_a_unlockable = true,
+		supported = true,
 		pcs = {},
 		dlc = "sc",
 		a_obj = "a_o",
-		reticle_obj = "g_reddot",
 		type = "sight",
 		name_id = "bm_wp_upg_o_shortdot_dmc",
 		desc_id = "bm_wp_upg_o_5_default",
@@ -25012,9 +25046,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_fps_upg_o_shortdot",
 		third_unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_third_upg_o_shortdot",
 		alt_icon = "guis/dlcs/gage_pack_historical/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_c96_sight",
-		stats = { value = 0, zoom = 40 },
+		stats = { value = 0, zoom = 20, base_zoom_off = 40 },
 		custom_stats = { big_scope = true },
 		perks = { "scope" },
+		adds = { "wpn_fps_upg_o_shortdot_alt" },
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_shortdot.stance_mod),
 		forbids = {
 			"wpn_fps_upg_o_xpsg33_magnifier",
@@ -39880,11 +39915,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_upg_ak_m_double.desc_id = ""
 			self.parts.wpn_fps_upg_ak_m_double.stats = {
 				value = 2,
-				recoil = 2
+				recoil = 6
 			}
 			self.parts.wpn_fps_upg_ak_m_double.custom_stats = {
-				falloff_start_mult = 0.75,
-				falloff_end_mult = 0.75
+				falloff_start_mult = 0.6,
+				falloff_end_mult = 0.6
 			}
 
 
@@ -51459,6 +51494,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 	self.wpn_fps_lmg_rpk_npc.override = deep_clone(self.wpn_fps_lmg_rpk.override)
 
+	--[[
 	for i, part_id in pairs(self.wpn_fps_pis_x_chinchilla.uses_parts) do
 		if self.parts[part_id] and self.parts[part_id].a_obj then
 			if self.parts[part_id].a_obj == "a_fl"  then
@@ -51495,7 +51531,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		if self.parts[part_id] and self.parts[part_id].a_obj then
 			if self.parts[part_id].a_obj == "a_fl"  then
 				self.wpn_fps_pis_rage.adds[part_id] = {
-					"wpn_fps_pis_rage_fl_mount","wpn_fps_pis_usp_fl_adapter"
+					"wpn_fps_pis_rage_fl_mount","wpn_fps_pis_2006m_fl_adapter"
 				}
 				self.wpn_fps_pis_rage.override[part_id] = {
 					parent = "shitass",
@@ -51522,6 +51558,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 	self.wpn_fps_pis_x_rage_npc.adds = deep_clone(self.wpn_fps_pis_x_rage.adds)
 	self.wpn_fps_pis_x_rage_npc.override = deep_clone(self.wpn_fps_pis_x_rage.override)
+	--]]
 
 	for i, part_id in pairs(self.wpn_fps_sho_x_basset.uses_parts) do
 		attachment_list = {

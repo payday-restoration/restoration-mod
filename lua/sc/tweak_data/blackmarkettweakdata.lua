@@ -1912,12 +1912,13 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_jav.max_amount = 4
 	self.projectiles.wpn_prj_jav.base_pickup_chance = 0.06
 	self.projectiles.wpn_prj_jav.count_as_melee = true
-	
+
 	self.projectiles.fir_com.max_amount = 3
 	self.projectiles.smoke_screen_grenade.base_cooldown = 35
 	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
 	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.concussion.max_amount = 3
+	self.projectiles.concussion.base_pickup_chance = 0.02
 	self.projectiles.wpn_gre_electric.max_amount = 3
 	self.projectiles.poison_gas_grenade.max_amount = 3
 
@@ -3993,21 +3994,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--self.melee_weapons[melee_id].sphere_cast_radius_add = 4
 		end
 		
-		--melee_fear
-		melee_anim = {
-			'fear'
-		}
-		for i, melee_id in ipairs(melee_anim) do
-			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_jab"
-			self.melee_weapons[melee_id].anim_global_param = "melee_fear"
-			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-			self.melee_weapons[melee_id].anim_attack_var_dir = {
-				var1 = {"left", -0.7},
-				var2 = {"left", -0.9}
-			}
-			self.melee_weapons[melee_id].anim_speed_mult = 1.4
-		end
-
 		--melee_cutters
 		melee_anim = {
 			'cutters'
@@ -4620,6 +4606,24 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_speed_mult = 1.2
 		end
 	
+		--melee_fear
+		melee_anim = {
+			'fear'
+		}
+		for i, melee_id in ipairs(melee_anim) do
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_jab"
+			self.melee_weapons[melee_id].anim_global_param = "melee_fear"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"left", -0.7},
+				var2 = {"left", -0.9}
+			}
+			self.melee_weapons[melee_id].expire_t = 0.825
+			self.melee_weapons[melee_id].repeat_expire_t = 0.5
+			self.melee_weapons[melee_id].melee_damage_delay = 0.1
+			self.melee_weapons[melee_id].anim_speed_mult = 1.2
+		end
+
 		--melee_taser
 		melee_anim = {
 			'taser'
@@ -5533,6 +5537,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.fairbair.stats.speed_mult = 0.96
 		
 		--REMEMBER THE BASICS OF--
+		self.melee_weapons.cqc.attack_pattern = "bm_melee_pattern_jab"
 		self.melee_weapons.cqc.info_id = "bm_melee_cqc_info"
 		self.melee_weapons.cqc.stats.cleave = 1
 		self.melee_weapons.cqc.stats.raycasts = 6

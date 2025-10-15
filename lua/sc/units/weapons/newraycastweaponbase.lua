@@ -275,6 +275,9 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 				local stationary_spread = tweak_data[category] and tweak_data[category].ads_stationary_spread_mult or 1
 				mul = mul * stationary_spread
 			end
+			for _, category in ipairs(self:categories()) do
+				mul = mul * pm:upgrade_value(category, "stationary_steelsight_accuracy_inc", 1)
+			end
 		end
 
 		for _, category in ipairs(self:categories()) do
@@ -1011,7 +1014,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			self._burst_fire_range_multiplier = self._burst_fire_range_multiplier or BURST_DATA.range_mult
 			self._burst_ads_toggle = self._burst_ads_toggle or BURST_DATA.ads_toggle --toggle to burst while aiming
 			self._burst_hipfire_toggle = self._burst_hipfire_toggle or BURST_DATA.hipfire_toggle --toggle to burstfire while hipfiring
-			self._burst_fire_no_ads = BURST_DATA.no_ads or self._burst_fire_no_ads
+			self._burst_fire_no_ads = self._burst_fire_no_ads or BURST_DATA.no_ads
 			self._block_toggle = self._block_toggle or BURST_DATA.block_toggle--blocks toggling between semi-auto and full-auto; does not stop toggling off burst
 			self._burst_toggle_to_semi = self._burst_toggle_to_semi or BURST_DATA.toggle_to_semi --forces toggling to semi-auto from burst; only applicable if the base firemode is full-auto
 			self._burst_toggle_to_auto = self._burst_toggle_to_auto or BURST_DATA.toggle_to_auto --forces toggling to full-auto from burst; only applicable if the base firemode is semi-auto
@@ -1176,7 +1179,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._burst_fire_spread_multiplier = burst_data.spread_mult or self._burst_fire_spread_multiplier
 				self._burst_fire_ads_spread_multiplier = burst_data.ads_spread_mult or self._burst_fire_ads_spread_multiplier
 				self._burst_fire_range_multiplier = burst_data.range_mult or self._burst_fire_range_multiplier
-				self._burst_fire_no_ads = burst_data.no_ads or self._burst_fire_no_ads
+				self._burst_fire_no_ads = (burst_data.no_ads ~= nil and burst_data.no_ads) or self._burst_fire_no_ads
 				self._burst_no_anim = burst_data.no_anim or self._burst_no_anim --only play anims for the last shot in a burst
 				self._burst_delay = burst_data.delay or self._burst_delay or 0.25
 				self._auto_burst = (burst_data.auto_burst ~= nil and burst_data.auto_burst) or self._auto_burst
@@ -1987,7 +1990,8 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
 	if managers.player:has_activate_temporary_upgrade("temporary", "reload_weapon_faster") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "reload_weapon_faster", 1)
 	end
-	if managers.player:has_activate_temporary_upgrade("temporary", "single_shot_fast_reload") then
+	if managers.player:has_activate_temporary_upgrade("temporary", "single_shot_fast_reload") and 
+		self:is_category(unpack(managers.player:upgrade_value("temporary", "single_shot_fast_reload").allowed_categories)) then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "single_shot_fast_reload", 1)
 	end
 	multiplier = multiplier * managers.player:get_property("shock_and_awe_reload_multiplier", 1)
@@ -2025,6 +2029,10 @@ function NewRaycastWeaponBase:enter_steelsight_speed_multiplier( mult_only )
 		multiplier = multiplier / self._ads_speed_mult / self:second_sight_steelsight_mult()
 	end
 
+	if not mult_only and managers.player:has_activate_temporary_upgrade("temporary", "single_shot_fast_reload") and 
+		self:is_category(unpack(managers.player:upgrade_value("temporary", "single_shot_fast_reload").allowed_categories)) then
+		multiplier = multiplier /  (1 + 1 - managers.player:upgrade_value("temporary", "single_shot_fast_reload", 1).ads_mult)
+	end
 	
 	for _, category in ipairs(self:categories()) do
 		multiplier = multiplier / (1 + 1 - managers.player:upgrade_value(category, "enter_steelsight_speed_multiplier", 1))
@@ -2270,7 +2278,7 @@ function NewRaycastWeaponBase:exit_run_speed_multiplier()
 
 	--multiplier = multiplier / ( (self:weapon_tweak_data().sprintout_time or 0.300) / (self:weapon_tweak_data().sprintout_anim_time or 0.350) )
 	multiplier = multiplier / ( (ads_speed / self:enter_steelsight_speed_multiplier(true)) * 1 / sprintout_anim_time )
-	return multiplier
+	return math.max( 0.01, multiplier)
 end
 
 
@@ -2613,12 +2621,6 @@ function NewRaycastWeaponBase:_set_parts_visible(visible)
 
 	self:_chk_charm_upd_state()
 end
-
-Hooks:PreHook(NewRaycastWeaponBase, "stance_mod", "stance_mod_npc", function(self)
-	if self:is_npc() then
-		return nil
-	end
-end)
 
 local g3_niphen = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen")
 

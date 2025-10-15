@@ -263,7 +263,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	if self._num_kills % self._SHOCK_AND_AWE_TARGET_KILLS == 0 and self:has_category_upgrade("player", "automatic_faster_reload") then
 		self:_on_enter_shock_and_awe_event()
 	end
-	
+
 	local selection_index = equipped_unit and equipped_unit:base() and equipped_unit:base():selection_index() or 0
 	local update_secondary_reload_primary = selection_index == 1 and self._has_secondary_reload_primary
 	local update_primary_reload_secondary = selection_index == 2 and self._has_primary_reload_secondary
@@ -419,6 +419,13 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	local equipped_unit = self:get_current_state()._equipped_unit
 	local weap_base = alive(equipped_unit) and equipped_unit.base and equipped_unit:base()
 	if weap_base and variant == "bullet" then
+
+		if self:has_category_upgrade("temporary", "single_shot_fast_reload") then
+		if weap_base:is_category("assault_rifle", "snp") and (headshot or self:upgrade_value("temporary", "single_shot_fast_reload")[3] == true) then
+				self:activate_temporary_upgrade("temporary", "single_shot_fast_reload")
+			end
+		end
+	
 		--for _, category in ipairs(weap_base:categories()) do
 			if self:has_category_upgrade("smg", "automatic_kills_to_damage") and weap_base:fire_mode() == "auto" then
 				local max = self:upgrade_value("smg", "automatic_kills_to_damage")[1]
@@ -583,7 +590,7 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 		if buildup_meter_variant == "melee" or buildup_meter_variant == "bullet" then
 			if not self._buildup_meter_last_kill or self._buildup_meter_last_kill ~= buildup_meter_variant then
 				buildup_add = math.floor((self:upgrade_value("player", "buildup_meter_swan", 0).combo_add + buildup_add_mod) * enemy_unit_mult())
-				log(tostring( buildup_add ))
+				--log(tostring( buildup_add ))
 				self._buildup_meter = math.clamp((self._buildup_meter or 0) + buildup_add, 0, self._buildup_meter_max)
 				self._buildup_meter_t = combo_t
 				managers.hud:start_buff("sociopath", self._buildup_meter_t)
@@ -963,11 +970,13 @@ function PlayerManager:check_skills()
 		self._message_system:unregister(Message.OnEnemyKilled, "double_ammo_drop")
 	end
 
+	--[[
 	if self:has_category_upgrade("temporary", "single_shot_fast_reload") then
 		self._message_system:register(Message.OnEnemyKilled, "activate_aggressive_reload", callback(self, self, "_on_activate_aggressive_reload_event"))
 	else
 		self._message_system:unregister(Message.OnEnemyKilled, "activate_aggressive_reload")
 	end
+	]]
 
 	if self:has_category_upgrade("player", "head_shot_ammo_return") then
 		self._ammo_efficiency = self:upgrade_value("player", "head_shot_ammo_return", nil)
@@ -1391,6 +1400,7 @@ function PlayerManager:_trigger_sharpshooter(unit, attack_data)
 	end
 end
 
+--Unused
 function PlayerManager:_on_activate_aggressive_reload_event(equipped_unit, variant, killed_unit)
 	if CopDamage.is_civilian(killed_unit:base()._tweak_table) or variant ~= "bullet" then
 		return

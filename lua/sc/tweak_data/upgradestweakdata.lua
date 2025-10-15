@@ -970,15 +970,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Far Away / Pigeon Shooter
 				--Basic
-					self.values.shotgun.ap_bullets = {0.25}
-					self.values.shotgun.can_shoot_through_enemy = {true}
+					self.values.shotgun.steelsight_accuracy_inc = {0.8, 0.8}
+					self.values.shotgun.steelsight_range_inc = {1.2, 1.2}
 				--Ace
-					self.values.shotgun.steelsight_accuracy_inc = {0.8}
-					self.values.shotgun.steelsight_range_inc = {1.2}
+					self.values.shotgun.ap_bullets = {0.5}
+					self.values.shotgun.can_shoot_through_enemy = {true}
 					
 					self.skill_descs.far_away = {
-						skill_value_b1 = tostring(self.values.shotgun.ap_bullets[1] * 100).."%", -- AP for shotguns
-						skill_value_p1 = tostring(self.values.shotgun.steelsight_range_inc[1] % 1 * 100).."%" -- Accuracy + range increase
+						skill_value_b1 = tostring(self.values.shotgun.steelsight_range_inc[1] % 1 * 100).."%", -- Accuracy + range increase
+						skill_value_p1 = tostring(self.values.shotgun.ap_bullets[1] * 100).."%" -- AP for shotguns
 					}
 
 			--Close By
@@ -1336,46 +1336,65 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic/Ace
 					self.values.snp.reload_speed_multiplier = {1.05, 1.15}
 					self.values.assault_rifle.reload_speed_multiplier = {1.05, 1.15}
+					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.10}
+					self.values.snp.enter_steelsight_speed_multiplier = {1.10}
 				--Ace
-					self.values.snp.ap_bullets_min = {0.25}
-					self.values.assault_rifle.ap_bullets_min = {0.25}
 
 					self.skill_descs.heavy_impact = {
 						skill_value_b1 = tostring((1 - self.values.snp.move_spread_multiplier[1]) * 100).."%", -- Movespeed during ADS
 						skill_value_b2 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed
 						skill_value_p1 = tostring((self.values.assault_rifle.reload_speed_multiplier[2] - self.values.assault_rifle.reload_speed_multiplier[1]) % 1 * 100).."%", -- Reload speed
-						skill_value_p2 = tostring(self.values.assault_rifle.ap_bullets_min[1] % 1 * 100).."%" -- AP
+						skill_value_p2 = tostring(self.values.snp.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
 					}
 
 			--Rifleman
 				--Basic
-					self.values.assault_rifle.steelsight_accuracy_inc = {0.5, 0.5}
-					self.values.snp.steelsight_accuracy_inc = {0.5, 0.5}
-					--Sharpshooter has the additional +2 stabilty (a requirement to get this skill anyways)
+					self.values.assault_rifle.stationary_steelsight_accuracy_inc = {
+						0.5, 
+						1.0 --Aced disables the bonus as it is swapped for an accuracy increase that applies regardless of movement state
+					} 
+					self.values.snp.stationary_steelsight_accuracy_inc = {0.5, 1.0}
+					--Sharpshooter has the additional +2 stabilty (a requirement to even climb the sub-tree anyways)
 				--Aced
+					self.values.assault_rifle.steelsight_accuracy_inc = {
+						0.5, 
+						0.5 --unused
+					}
+					self.values.snp.steelsight_accuracy_inc = {0.5, 0.5}
 					self.values.assault_rifle.steelsight_range_inc = {1.25, 1.25}
 					self.values.snp.steelsight_range_inc = {1.25, 1.25}
-					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.1}
-					self.values.snp.enter_steelsight_speed_multiplier = {1.1}
+
+					self.values.snp.ap_bullets_min = {0.25}
+					self.values.assault_rifle.ap_bullets_min = {0.25}
 
 					self.skill_descs.fire_control = {
-						skill_value_b1 = tostring((1 - self.values.snp.steelsight_accuracy_inc[1]) * 100).."%", -- Accuracy buff
+						skill_value_b1 = tostring((1 - self.values.snp.stationary_steelsight_accuracy_inc[1]) * 100).."%", -- Stationary accuracy buff
 						skill_value_b2 = tostring(self.values.snp.recoil_index_addend[1]), --++Stabilty
 						skill_value_p1 = tostring(self.values.snp.steelsight_range_inc[2]  % 1 * 100) .."%", -- Range buff
-						skill_value_p2 = tostring(self.values.snp.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
+						skill_value_p2 = tostring(self.values.assault_rifle.ap_bullets_min[1] % 1 * 100).."%" -- AP
 					}
 
 			--Aggressive Reload
 				self.values.temporary.single_shot_fast_reload = {
 					{ --Basic
-						1.15,
-						4,
-						false --Whether or not to allow full-auto
+						1.20, --Reload speed multiplier bonus
+						6, --Bonus duration
+						false, --bypass headshot trigger
+						allowed_categories = {
+							"assault_rifle",
+							"snp"
+						},
+						ads_mult = 1.20
 					},
 					{ --Ace
-						1.3,
-						4,
-						true
+						1.35,
+						6,
+						true,
+						allowed_categories = {
+							"assault_rifle",
+							"snp"
+						},
+						ads_mult = 1.20
 					},
 				}
 				
@@ -1387,14 +1406,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Ammo Efficiency
 				self.values.player.head_shot_ammo_return = {
-					{ ammo = 0.03, max = 8, time = 8, headshots = 3, to_magazine = false }, --Basic
-					{ ammo = 0.03, max = 8, time = 8, headshots = 2, to_magazine = true } --Ace
+					{ pickup_ratio = 0.5, time = 6, headshots = 3, to_magazine = false }, --Basic
+					{ pickup_ratio = 0.5, time = 6, headshots = 2, to_magazine = true } --Ace
 				}
 				
 				self.skill_descs.fast_fire = {
 					skill_value_b1 = tostring(self.values.player.head_shot_ammo_return[1].headshots), -- Amount of headshot kills to return ammo
 					skill_value_b2 = tostring(self.values.player.head_shot_ammo_return[1].time), -- Timer
-					skill_value_b3 = tostring(self.values.player.head_shot_ammo_return[1].ammo * 100).."%", -- Amount of ammo which will be returned in % (minimum 1 ammo)
+					skill_value_b4 = tostring(self.values.player.head_shot_ammo_return[1].pickup_ratio * 100 ).."%", -- % ammo return based on weapon's average pickup rate
 					skill_value_p1 = tostring(self.values.player.head_shot_ammo_return[2].headshots), -- Amount of headshot kills for ace version
 					skill_value_p2 = tostring(self.values.player.head_shot_ammo_return[2].time) -- Timer for ace version
 				}
@@ -6695,6 +6714,44 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			category = "assault_rifle"
 		}
 	}
+
+	self.definitions.snp_stationary_steelsight_accuracy_inc_1 = {
+		name_id = "menu_snp_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "stationary_steelsight_accuracy_inc",
+			category = "snp"
+		}
+	}
+	self.definitions.snp_stationary_steelsight_accuracy_inc_2 = {
+		name_id = "menu_snp_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "stationary_steelsight_accuracy_inc",
+			category = "snp"
+		}
+	}
+	self.definitions.assault_rifle_stationary_steelsight_accuracy_inc_1 = {
+		name_id = "menu_assault_rifle_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "stationary_steelsight_accuracy_inc",
+			category = "assault_rifle"
+		}
+	}
+	self.definitions.assault_rifle_stationary_steelsight_accuracy_inc_2 = {
+		name_id = "menu_assault_rifle_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "stationary_steelsight_accuracy_inc",
+			category = "assault_rifle"
+		}
+	}
+
 	self.definitions.snp_steelsight_range_inc_1 = {
 		name_id = "menu_snp_steelsight_range_inc",
 		category = "feature",

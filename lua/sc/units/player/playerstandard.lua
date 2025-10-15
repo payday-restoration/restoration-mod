@@ -3251,8 +3251,6 @@ function PlayerStandard:_in_burst()
 	return in_burst
 end
 
-
-
 --ADS speed stuff
 function PlayerStandard:_stance_entered(unequipped, timemult)
 	local stance_standard = tweak_data.player.stances.default[managers.player:current_state()] or tweak_data.player.stances.default.standard
@@ -3275,7 +3273,7 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 
 	local head_duration = tweak_data.player.TRANSITION_DURATION
 	local head_duration_multiplier = 1
-	local duration_multiplier = not self._state_data.in_full_steelsight and self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1
+	local duration_multiplier = math.max(0.01, not self._state_data.in_full_steelsight and self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1)
 	local duration = head_duration + (self._equipped_unit:base():transition_duration() or 0)
 
 	if not unequipped then
@@ -3340,6 +3338,7 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 		end
 	end
 end
+
 --Deals with burst fire hud stuff when swapping from an underbarrel back to a weapon in burst fire.
 local _check_action_deploy_underbarrel_original = PlayerStandard._check_action_deploy_underbarrel
 function PlayerStandard:_check_action_deploy_underbarrel(...)
@@ -3355,7 +3354,7 @@ end
 --Adds burst fire check.
 function PlayerStandard:_check_action_weapon_firemode(t, input)
 	local wbase = self._equipped_unit:base()
-	local burst_hipfire = self._equipped_unit:base()._burst_fire_no_ads and self._equipped_unit:base():in_burst_mode()
+	local burst_hipfire = self._equipped_unit:base()._burst_fire_no_ads == true and self._equipped_unit:base():in_burst_mode()
 	if burst_hipfire then
 		self:_interupt_action_steelsight(t)
 		if input.btn_steelsight_state then
@@ -3379,7 +3378,7 @@ end
 --Fires next round in burst if needed.
 function PlayerStandard:_update_burst_fire(t)
 	if alive(self._equipped_unit) and self._equipped_unit:base() and self._equipped_unit:base().in_burst_mode and self._equipped_unit:base():in_burst_mode() then
-		local burst_hipfire = self._equipped_unit:base()._burst_fire_no_ads
+		local burst_hipfire = self._equipped_unit:base()._burst_fire_no_ads == true
 		if burst_hipfire then
 			self:_interupt_action_steelsight(t)
 		end
@@ -3536,7 +3535,7 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
 		local orig_sprintout = sprintout_anim_time / speed_multiplier
 		local sads_mult = self._equipped_unit:base():weapon_tweak_data().sads_mult or 0.3
-		local burst_hipfire = self._equipped_unit:base()._burst_fire_no_ads and self._equipped_unit:base():in_burst_mode()
+		local burst_hipfire = self._equipped_unit:base()._burst_fire_no_ads == true and self._equipped_unit:base():in_burst_mode()
 		local no_ads = self._equipped_unit:base():weapon_tweak_data().no_ads
 
 		if burst_hipfire or no_ads or (self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * sads_mult)) then

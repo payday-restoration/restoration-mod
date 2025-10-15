@@ -8146,7 +8146,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Bronco
 						self.new_raging_bull.has_description = true
 						self.new_raging_bull.desc_id = "bm_rage_sc_desc"
-						self.new_raging_bull.fire_mode_data.fire_rate = 0.2
+						self.new_raging_bull.fire_mode_data.fire_rate = 0.1818181
 						self.new_raging_bull.AMMO_MAX = 30
 						self.new_raging_bull.kick = self.stat_info.kick_tables.moderate_kick
 						self.new_raging_bull.kick_pattern = {
@@ -8188,7 +8188,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Akimbo
 						self.x_rage.has_description = true
 						self.x_rage.desc_id = "bm_x_rage_sc_desc"
-						self.x_rage.fire_mode_data.fire_rate = 0.2
+						self.x_rage.fire_mode_data.fire_rate = 0.1818181
 						self.x_rage.AMMO_MAX = 60
 						self.x_rage.kick = self.stat_info.kick_tables.vertical_kick
 						self.x_rage.kick_pattern = {
@@ -8235,7 +8235,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Castigo
 						self.chinchilla.has_description = true
 						self.chinchilla.desc_id = "bm_chinchilla_sc_desc"
-						self.chinchilla.fire_mode_data.fire_rate = 0.1818181
+						self.chinchilla.fire_mode_data.fire_rate = 0.2
 						self.chinchilla.AMMO_MAX = 30
 						self.chinchilla.kick = self.stat_info.kick_tables.moderate_kick
 						self.chinchilla.kick_pattern = {
@@ -8278,7 +8278,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_chinchilla.has_description = true
 						self.x_chinchilla.desc_id = "bm_x_chinchilla_sc_desc"
 						self.x_chinchilla.panic_suppression_chance = 0.05
-						self.x_chinchilla.fire_mode_data.fire_rate = 0.1818181
+						self.x_chinchilla.fire_mode_data.fire_rate = 0.2
 						self.x_chinchilla.AMMO_MAX = 60
 						self.x_chinchilla.kick = self.stat_info.kick_tables.vertical_kick
 						self.x_chinchilla.kick_pattern = {
@@ -12266,8 +12266,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_m14.kick = self.stat_info.kick_tables.vertical_kick
 						self.new_m14.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
-							{2, self.stat_info.kick_tables.moderate_right_kick},
-							{4, self.stat_info.kick_tables.right_kick},
+							{2, self.stat_info.kick_tables.right_recoil},
+							{5, self.stat_info.kick_tables.right_kick},
 							{8, self.stat_info.kick_tables.moderate_right_kick},
 							{11, self.stat_info.kick_tables.moderate_left_kick},
 							{15, self.stat_info.kick_tables.moderate_kick}
@@ -12284,7 +12284,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_m14.stats = {
 							damage = 60,
 							spread = 90,
-							recoil = 57,
+							recoil = 55,
 							spread_moving = 7,
 							zoom = 1,
 							concealment = 22,
@@ -12320,9 +12320,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g3.FIRE_MODE = "single"
 						self.g3.kick = self.stat_info.kick_tables.right_kick
 						self.g3.kick_pattern = {
-							{0, self.stat_info.kick_tables.vertical_kick},
-							{4, self.stat_info.kick_tables.right_kick},
-							{7, self.stat_info.kick_tables.moderate_kick},
+							{0, self.stat_info.kick_tables.right_recoil},
+							{3, self.stat_info.kick_tables.vertical_kick},
+							{7, self.stat_info.kick_tables.even_recoil},
 							{9, self.stat_info.kick_tables.moderate_right_kick},
 							{11, self.stat_info.kick_tables.even_recoil},
 							{14, self.stat_info.kick_tables.right_recoil}
@@ -12339,7 +12339,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g3.stats = {
 							damage = 60,
 							spread = 86,
-							recoil = 53,
+							recoil = 51,
 							spread_moving = 7,
 							zoom = 1,
 							concealment = 23,
@@ -12407,8 +12407,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ching.kick = self.stat_info.kick_tables.vertical_kick
 						self.ching.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
-							{3, self.stat_info.kick_tables.right_kick},
-							{5, self.stat_info.kick_tables.vertical_kick},
+							{3, self.stat_info.kick_tables.moderate_right_kick},
+							{5, self.stat_info.kick_tables.even_recoil},
 							{8, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.ching.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
@@ -14117,8 +14117,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ksg.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.ksg.AMMO_MAX = 40
 						self.ksg.CLIP_AMMO_MAX = 14
-						self.ksg.fire_mode_data.fire_rate = 0.5
-						self.ksg.fire_rate_multiplier = 0.775
+						self.ksg.fire_mode_data.fire_rate = 0.6451612
 						self.ksg.kick = self.stat_info.kick_tables.vertical_kick
 						self.ksg.supported = true
 						self.ksg.ads_speed = 0.340
@@ -17885,8 +17884,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.raygun then --Leather Dann, Cpone and VxWolf's CoD:Zombies Raygun
 				self.raygun.categories = {
-					"grenade_launcher",
-					"gl_pistol",
+					"pistol",
 					"raygun"
 				}
 				self.raygun.upgrade_blocks = {
@@ -32053,6 +32051,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.nothing then --Silent Enforcer's No Wep
+				self.nothing.categories = { "nothing" }
 				self.nothing.recategorize = { "wpn_special" }
 				self.nothing.upgrade_blocks = {
 					weapon = {
@@ -32094,6 +32093,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 			end
 			if self.nothing2 then
+				self.nothing2.categories = { "nothing" }
 				self.nothing2.recategorize = { "wpn_special" }
 				self.nothing2.upgrade_blocks = {
 					weapon = {
@@ -35053,7 +35053,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.6,
 						srm = {
 							-0.007,
-							{1, 1.08},
+							{1, 1.075},
 							4
 						}
 					}
@@ -35064,8 +35064,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						6.5,
 						0.4,
 						srm = {
-							-0.01,
-							{1, 1.08},
+							-0.02,
+							{1, 1.1},
 							3
 						}
 					}
@@ -35076,8 +35076,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						5.5,
 						0.2,
 						srm = {
-							-0.025,
-							{1, 1.12},
+							-0.03,
+							{1, 1.15},
 							2
 						}
 					}
@@ -35241,6 +35241,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		akimbo = 1.05,
 		pistol = 1.25, --Compensate for low range.
 			zippy = 0.15,
+			raygun = 1.00,
 		smg = 1.125,
 			pdw = 0.675,
 			typh = 0.8,
@@ -35265,7 +35266,6 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		crossbow = 0.6,
 		tranq = 0.7,
 		--Custom weapon pickup
-		raygun = 1.3,
 		sweet_liberty = 0.04,
 		battery = 0
 	}
@@ -35302,7 +35302,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 			(((weapon.has_underbarrel or has_dot) and 0.8) or 1) * 
 			((table.contains(weapon.categories, "minigun") and 3.3333) or ((table.contains(weapon.categories, "lmg") or true_shotgun) and 2) or 1)
 		damage_mul = (not exclude_calcs and (damage_mul * 2)) or damage_mul
-		if not table.contains(weapon.categories, "sweet_liberty") then
+		if not table.contains(weapon.categories, "sweet_liberty") and not table.contains(weapon.categories, "nothing") then
 			weapon.AMMO_MAX = math.ceil((3600 * ((weapon.use_data.selection_index == 2 and 2) or 1) * total_dmg_mul)) / ((weapon.stats.damage * damage_mul) * hs_mul)
 		end
 		--Try to provide at least one full reload from empty (up to 100 round mags)

@@ -540,15 +540,15 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {8, 5},
 					[1] = {
 						upgrades = {
-							"shotgun_can_shoot_through_enemy",
-							"shotgun_ap_bullets_1"
+							"shotgun_steelsight_accuracy_inc_1",
+							"shotgun_steelsight_range_inc_1"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
-							"shotgun_steelsight_accuracy_inc_1",
-							"shotgun_steelsight_range_inc_1"
+							"shotgun_can_shoot_through_enemy",
+							"shotgun_ap_bullets_1"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -1127,10 +1127,10 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
-							"assault_rifle_ap_bullets_min_1",
-							"snp_ap_bullets_min_1",
 							"assault_rifle_reload_speed_multiplier_2",
-							"snp_reload_speed_multiplier_2"
+							"snp_reload_speed_multiplier_2",
+							"assault_rifle_enter_steelsight_speed_multiplier",
+							"snp_enter_steelsight_speed_multiplier"
 						},
 						cost = self.costs.pro
 					}
@@ -1143,8 +1143,8 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {6, 5},
 					[1] = {
 						upgrades = {
-							"assault_rifle_steelsight_accuracy_inc_1",
-							"snp_steelsight_accuracy_inc_1",
+							"assault_rifle_stationary_steelsight_accuracy_inc_1",
+							"snp_stationary_steelsight_accuracy_inc_1",
 							"assault_rifle_recoil_index_addend_2",
 							"snp_recoil_index_addend_2"
 						},
@@ -1152,10 +1152,14 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
+							"assault_rifle_stationary_steelsight_accuracy_inc_2",
+							"snp_stationary_steelsight_accuracy_inc_2",
+								"assault_rifle_steelsight_accuracy_inc_1",
+								"snp_steelsight_accuracy_inc_1",
 							"assault_rifle_steelsight_range_inc_1",
 							"snp_steelsight_range_inc_1",
-							"assault_rifle_enter_steelsight_speed_multiplier",
-							"snp_enter_steelsight_speed_multiplier"
+							"assault_rifle_ap_bullets_min_1",
+							"snp_ap_bullets_min_1"
 						},
 						cost = self.costs.hightierpro
 					}

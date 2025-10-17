@@ -8,12 +8,12 @@ local dw_pj_above = difficulty >= 7 and pro_job
 
 local street_spawn = {
 	values = {
-		interval = 5,
+		interval = 20,
 	},
 }
 local wall_spawn = {
 	values = {
-		interval = 10,
+		interval = 20,
 	},
 }
 local rear_spawn = {

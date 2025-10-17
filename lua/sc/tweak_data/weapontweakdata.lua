@@ -3651,8 +3651,8 @@ function WeaponTweakData:_init_stats()
 		standing = 3.5,
 		moving_crouching = 2.5,
 		crouching = 2.5,
-		moving_steelsight = 0.075,
-		steelsight = 0.075,
+		moving_steelsight = 0.05,
+		steelsight = 0.05,
 		bipod = 1,
 		player_turret = 1,
 	}
@@ -7345,7 +7345,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rsh12.supported = true
 						self.rsh12.ads_speed = 0.220
 						self.rsh12.damage_falloff = {
-							start_dist = 1900,
+							start_dist = 1800,
 							end_dist = 4300,
 							min_mult = 0.333333
 						}
@@ -15384,7 +15384,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shatters_fury.armor_piercing_chance = 1
 			self.shatters_fury.object_damage_mult = 1.75
 			--self.shatters_fury.animations.reload_name_id = "chinchilla"
-			self.shatters_fury.reload_speed_multiplier = 0.9
+			self.shatters_fury.reload_speed_multiplier = 0.8
 			self.shatters_fury.force_shake = true
 			self.shatters_fury.timers = deep_clone(self.new_raging_bull.timers)
 			--this line doesn't do shit
@@ -34968,9 +34968,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							3,
 							0.5,
 							srm = {
-								0.01,
-								{0.95, 1},
-								4
+								-0.1,
+								{1, 1.2},
+								2
 							}
 						}
 					end

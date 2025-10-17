@@ -63,10 +63,10 @@ tweak_data.pistol = {
 		ads_move_speed_mult = 0.7 / tweak_data.pistol.ads_move_speed_mult
 	}
 	tweak_data.handcannon = {
-		swap_bonus = 2.7 / tweak_data.pistol.swap_bonus,
+		swap_bonus = 2.2 / tweak_data.pistol.swap_bonus,
 		ads_move_speed_mult = 0.6 / tweak_data.pistol.ads_move_speed_mult,
 		moving_spread_mult = 1 / tweak_data.pistol.moving_spread_mult,
-		hipfire_spread_mult = 0.9 / tweak_data.pistol.hipfire_spread_mult
+		hipfire_spread_mult = 1.2 / tweak_data.pistol.hipfire_spread_mult
 	}
 		tweak_data.samurai = {
 			hipfire_spread_mult = 0.1 / (tweak_data.pistol.hipfire_spread_mult * tweak_data.handcannon.hipfire_spread_mult)
@@ -118,16 +118,17 @@ tweak_data.shotgun = {
 	tweak_data.shotgun_heavy = {
 		hipfire_spread_mult = 0.65,
 	}
+		tweak_data.shotgun_pistol = {
+			ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
+			swap_bonus = 2.2,
+			hipfire_spread_mult = 1.2 / tweak_data.shotgun_heavy.hipfire_spread_mult
+		}
 	tweak_data.shotgun_break = {
 		hipfire_spread_mult = 1.25,
 	}
 		tweak_data.shotgun_smasher = {
 			shake_mul = 3
 		}
-	tweak_data.shotgun_pistol = {
-		ads_move_speed_mult = 0.8 / tweak_data.shotgun.ads_move_speed_mult,
-		swap_bonus = 3.2
-	}
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 0.5 / tweak_data.shotgun.ads_move_speed_mult,
 		shake_mul = 0

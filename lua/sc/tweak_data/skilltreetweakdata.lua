@@ -728,7 +728,8 @@ function SkillTreeTweakData:init(tweak_data)
 						["icon_xy"] = {8, 11},
 						[1] = {
 							upgrades = {
-								"player_increased_pickup_area_1"
+								"player_increased_pickup_area_1",
+								"player_scaling_pickup_area"
 							},
 							cost = self.costs.hightier
 						},
@@ -960,7 +961,8 @@ function SkillTreeTweakData:init(tweak_data)
 					[2] = {
 						upgrades = {
 							"player_armor_regen_timer_multiplier_tier",
-							"player_armor_full_damage_absorb"
+							"player_armor_full_damage_absorb",
+							"player_scaling_armor_break_grace"
 						},
 						cost = self.costs.hightierpro
 					}

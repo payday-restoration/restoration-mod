@@ -548,6 +548,7 @@ function PlayerDamage:damage_bullet(attack_data)
 		
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
+				managers.player:apply_slow_debuff(0.75, 0.75, nil, true)
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
 				self._next_allowed_dmg_t = Application:digest_value(t + math.max(grace_bonus, self._dmg_interval), true)
@@ -686,6 +687,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
+				managers.player:apply_slow_debuff(0.75, 0.75, nil, true)
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
 				if grace_bonus then
@@ -1832,6 +1834,12 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 			if not self._ally_attack then
 				if not self._armor_broken then
 					self._armor_broken = true --notifies ex-pres when armor has broken to get around dumb interaction with bullseye (but only if the last shot taken was not friendly fire).
+					if pm:has_category_upgrade("player", "scaling_armor_break_grace") then
+						local t = pm:player_timer():time()
+						local base_armor = tweak_data.player.damage.ARMOR_INIT + pm:body_armor_value("armor")
+						local armor_break_grace = (math.floor(base_armor/pm:upgrade_value("player", "scaling_armor_break_grace", 1).armor_steps) * pm:upgrade_value("player", "scaling_armor_break_grace", 0).grace_mod) or 0
+						self._next_allowed_dmg_t = Application:digest_value(t + (self._dmg_interval + armor_break_grace), true)
+					end
 					if attack_data.attacker_unit then
 						if pm:has_category_upgrade("player", "dodge_ricochet_bullets") then
 							self:_mrwick_ricochet_bullets(attack_data, true)

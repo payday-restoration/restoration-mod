@@ -40,6 +40,14 @@ local original_init = PlayerStandard.init
 function PlayerStandard:init(unit)
 	original_init(self, unit)
 
+	local pm = managers.player
+	local max_armor = tweak_data.player.damage.ARMOR_INIT + pm:body_armor_value("armor")
+	local scaling_pickup = pm:has_category_upgrade("player", "scaling_pickup_area") and (math.floor(max_armor / pm:upgrade_value("player", "scaling_pickup_area", 1).armor_steps) * pm:upgrade_value("player", "scaling_pickup_area", 0).area_mod)
+
+	self._pickup_area = 200 * (pm:upgrade_value("player", "increased_pickup_area", 1) + 
+		((pm:has_category_upgrade("player", "scaling_pickup_area") and (math.floor(max_armor / pm:upgrade_value("player", "scaling_pickup_area", 1).armor_steps) * pm:upgrade_value("player", "scaling_pickup_area", 0).area_mod)) or 0))
+
+
 	if is_pro then
 		self._slotmask_bullet_impact_targets = self._slotmask_bullet_impact_targets + 3
 	else

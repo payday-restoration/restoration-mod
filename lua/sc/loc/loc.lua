@@ -5809,7 +5809,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger
 				["menu_scavenging_sc"] = "Scavenger",
-				["menu_scavenging_desc_sc"] = "BASIC: #{owned}#$basic##\nYour ammo box pick up range is increased by #{skill_color}#$skill_value_b1.##\n\nACE: #{owned}#$pro##\nEvery #{skill_color}#$skill_value_p1## enemies killed will result in an extra ammo box being dropped.",
+				["menu_scavenging_desc_sc"] = "BASIC: #{owned}#$basic##\nYour ammo box pick up range is increased by #{skill_color}#$skill_value_b1## plus an additonal #{skill_color}#$skill_value_b2## for every #{skill_color}#$skill_value_b3## points of base armor you have.\n\nACE: #{owned}#$pro##\nEvery #{skill_color}#$skill_value_p1## enemies killed will result in an extra ammo box being dropped.",
 
 				--Bulletstorm--
 				["menu_ammo_reservoir_beta_sc"] = "Bulletstorm",
@@ -5856,7 +5856,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Bulletproof",
-				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nBlocks the excess damage of Snipers, Titan Dozers, fire and explosives that break your armor continuing through to your health.\n\n#{risk}#NOTE: Does not protect against self damage or the direct health damage taken from Cloaker kicks and Taser shocks.##\n\nACE: #{owned}#$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to #{skill_color}#$skill_value_p1## of your maximum armor.\n\nYour armor recovers #{skill_color}#$skill_value_p2## faster. $anarc_disable",
+				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nBlocks the excess damage of Snipers, Titan Dozers, fire and explosives that break your armor continuing through to your health.\n\n#{risk}#NOTE: Does not protect against self damage or the direct health damage taken from Cloaker kicks and Taser shocks.##\n\nACE: #{owned}#$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to #{skill_color}#$skill_value_p1## of your maximum armor.\n\nWhen your armor is broken, you gain an additional #{skill_color}#$skill_value_p3## seconds of damage grace for every #{skill_color}#$skill_value_p4## points of base armor you have.\n\nYour armor recovers #{skill_color}#$skill_value_p2## faster. $anarc_disable\n\n ",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--
@@ -5902,7 +5902,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Aggressive Reload--
 				["menu_engineering_beta_sc"] = "Aggressive Reload",
-				["menu_engineering_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nLethal headshots using #{skill_color}#rifles## will increase their reload and aim-down-sight speeds by #{skill_color}#$skill_value_b1## for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nCan now be triggered through non-headshot kills and the reload speed bonus is increased to #{skill_color}#$skill_value_p1##.",
+				["menu_engineering_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nLethal headshots using #{skill_color}#rifles## will increase their reload and aim-down-sight speeds by #{skill_color}#$skill_value_b1## for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nCan now be triggered through non-headshot kills and the reload speed bonus is increased to #{skill_color}#$skill_value_p1.##",
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Mind Blown",
@@ -5983,7 +5983,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Low Blow",
-				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## critical hit chance for for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to a maximum of #{skill_color}#$skill_value_b4.##\n\nCritical hits deal #{skill_color}#100%## additional damage.\n\n#{risk}#NOTE: #{important_1}#Explosives and damage-over-time effects## cannot deal critical hits.##\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#$skill_value_p1## critical hit chance for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to a maximum of #{skill_color}#$skill_value_p4.##\n\nYour critical hit chance is increased by an additional #{skill_color}#$skill_value_p5## when attacking enemies from behind with guns or melee.",
+				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## critical hit chance for for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to a maximum of #{skill_color}#$skill_value_b4.##\n\nCritical hits deal #{skill_color}#100%## additional damage.\n\n#{risk}#NOTE: Explosives and damage-over-time effects## #{important_1}#cannot deal critical hits.##\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#$skill_value_p1## critical hit chance for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to a maximum of #{skill_color}#$skill_value_p4.##\n\nYour critical hit chance is increased by an additional #{skill_color}#$skill_value_p5## when attacking enemies from behind with guns or melee.",
 
 		--[[   FUGITIVE   ]]--
 

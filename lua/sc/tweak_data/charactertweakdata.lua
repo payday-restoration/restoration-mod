@@ -4647,6 +4647,20 @@ function CharacterTweakData:_presets(tweak_data)
 		tase = true
 	}
 	presets.hurt_severities.only_explosion_hurts_tankblack = deep_clone(presets.hurt_severities.only_explosion_hurts)
+	presets.hurt_severities.only_explosion_hurts_tankblack.explosion = {
+		health_reference = 850,
+		zones = {
+			{
+				health_limit = 0.2,
+				none = 1
+			},
+			{
+				health_limit = 1,
+				explode = 1
+			},
+			{none = 1}
+		}
+	}
 	presets.hurt_severities.only_explosion_hurts_tankblack.tase = false
 	presets.hurt_severities.only_fire_and_poison_hurts = {
 		bullet = {

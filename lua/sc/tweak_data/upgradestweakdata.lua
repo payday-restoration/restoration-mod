@@ -448,8 +448,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Armor Stats--
-	--Add 20 to the values in this table to get in game amounts.
 	--Things marked with * don't follow the x, x, x, x, x*y, x, x*y (y = 2, usually) increment logic
+	--Add 2 to the values in this table to get in game amounts.
 	self.values.player.body_armor.armor = { --increments of 2
 		2, --Suit
 		4, --LBV
@@ -460,14 +460,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		18 --ICTV (2 increments + 1)
 	}
 	
-	self.values.player.body_armor.movement = { --*increments of 0.04
+	self.values.player.body_armor.movement = { --*increments of 0.03
 		1,
-		0.96,
-		0.92,
-		0.88,
-		0.72, --4 increments
-		0.7, --0.5 increments
-		0.6 --2.5 increments
+		0.97,
+		0.94,
+		0.91,
+		0.76, --5 increments
+		0.745, --0.5 increments
+		0.7 --1.5 increments
 	}
 	self.values.player.body_armor.dodge = { --*increments of 0.1
 		0.2,
@@ -477,15 +477,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		-0.15, --half increment
 		-0.2, --half increment
 		-0.3
-	}
-	self.values.player.body_armor.dodge_grace = { --UNUSED, increments of 0.075
-		1, --.50,
-		1, --.425,
-		1, --.35,
-		1, --.275,
-		1, --.125,
-		1, --.05,
-		1  --.0
 	}
 	self.values.player.body_armor.concealment = { --*increments of 2
 		30,
@@ -505,14 +496,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.4,
 		0.2
 	}
-	self.values.player.body_armor.stamina = { --increments of 0.05
+	self.values.player.body_armor.stamina = { --increments of 0.025
 		1,
+		0.975,
 		0.95,
-		0.9,
+		0.925,
+		0.875,
 		0.85,
-		0.75,
-		0.7,
-		0.6
+		0.8
 	}
 	self.values.player.body_armor.skill_ammo_mul = { --repurposed to pick up mult
 		0.85,
@@ -523,26 +514,24 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.125,
 		1.15
 	}
-	self.values.player.armor_pickup_mul = {
-		true
-	}
+	self.values.player.armor_pickup_mul = {true}
 	self.max_deflection = 0.60
 	self.values.player.body_armor.deflection = { --*increments of 0.05
 		0.00,
 		0.05,
 		0.10,
 		0.15,
+		0.25,
 		0.20,
-		0.175,
-		0.125
+		0.15
 	}
-	self.values.player.body_armor.regen_delay = { --increments of 0.25
-		2.25,
-		2.50,
+	self.values.player.body_armor.regen_delay = { --*increments of 0.25
 		2.75,
 		3.00,
+		3.25,
 		3.50,
 		3.75,
+		4.00,
 		4.25
 	}
 
@@ -704,7 +693,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					6 --Ace
 				}
 				--Ace
-					self.values.first_aid_kit.uppers_cooldown = 60
+					self.values.first_aid_kit.uppers_cooldown = 120
 					
 					self.skill_descs.tea_cookies = {
 						skill_value_b1 = tostring(self.values.first_aid_kit.quantity[1] + 3), -- Amount of FAKs (3 by default)
@@ -1059,8 +1048,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Bullseye
 				self.values.player.headshot_regen_armor_bonus = {
-					0.5, --Basic
-					3.5 --Ace
+					0.1, --Basic
+					0.2 --Ace
 				}
 				self.values.player.headshot_regen_armor_bonus_cd_reduction = {
 					0.5, --Basic
@@ -1069,10 +1058,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.on_headshot_dealt_cooldown = 5
 				
 				self.skill_descs.prison_wife = {
-					skill_value_b1 = tostring(self.values.player.headshot_regen_armor_bonus[1] * 10), -- Armor regen on headshot
+					skill_value_b1 = tostring(self.values.player.headshot_regen_armor_bonus[1] * 100) .. "%", -- Armor regen on headshot
 					skill_value_b2 = tostring(self.on_headshot_dealt_cooldown), -- Bullseye's CD
 					skill_value_b3 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[1]), -- Bullseye CD reduction
-					skill_value_p1 = tostring((self.values.player.headshot_regen_armor_bonus[2] - self.values.player.headshot_regen_armor_bonus[1]) * 10),
+					skill_value_p1 = tostring((self.values.player.headshot_regen_armor_bonus[2] - self.values.player.headshot_regen_armor_bonus[1]) * 100) .. "%",
 					skill_value_p2 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[2] - self.values.player.headshot_regen_armor_bonus_cd_reduction[1])
 				}
 
@@ -1095,12 +1084,20 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Support--
 			--Scavenger
 				--Basic
-					self.values.player.increased_pickup_area = {1.5}
+					self.values.player.increased_pickup_area = {1.3}
+					self.values.player.scaling_pickup_area = {
+						{
+							area_mod = 0.3, --% pickup range increase added per step of armor
+							armor_steps = 10 --1 step for every 100 base armor
+						}
+					}
 				--Ace
 					self.values.player.double_drop = {5}
-					
+
 					self.skill_descs.scavenging = {
 						skill_value_b1 = tostring(self.values.player.increased_pickup_area[1] % 1 * 100).."%", -- Increase ammo pick up range
+						skill_value_b2 = tostring(self.values.player.scaling_pickup_area[1].area_mod % 1 * 100) .. "%",
+						skill_value_b3 = tostring(self.values.player.scaling_pickup_area[1].armor_steps * 10),
 						skill_value_p1 = tostring(self.values.player.double_drop[1]) -- +1 ammo box after X kills
 					}
 				
@@ -1240,12 +1237,20 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.level_6_armor_addend = {2}
 					--Ace
 						self.values.player.armor_full_damage_absorb = {0.15}
+						self.values.player.scaling_armor_break_grace = {
+							{
+								grace_mod = 0.25, --seconds of damage grace for every armor step
+								armor_steps = 10 --1 step for every 100 base armor
+							}
+						}
 						self.values.player.armor_regen_timer_multiplier_tier = {0.85}
 						
 						self.skill_descs.tower_defense = {
 							skill_value_b1 = tostring(self.values.player.level_5_armor_addend[1]*10), -- +armor for Flak and CTV
 							skill_value_p1 = tostring(self.values.player.armor_full_damage_absorb[1] * 100).."%", -- DA on 1st shot
-							skill_value_p2 = tostring((1 - self.values.player.armor_regen_timer_multiplier_tier[1]) * 100).."%" -- Armor recovery buff
+							skill_value_p2 = tostring((1 - self.values.player.armor_regen_timer_multiplier_tier[1]) * 100).."%", -- Armor recovery buff
+							skill_value_p3 = tostring(self.values.player.scaling_armor_break_grace[1].grace_mod),
+							skill_value_p4 = tostring(self.values.player.scaling_armor_break_grace[1].armor_steps * 10),
 						}
 			
 		--Breacher--
@@ -1761,18 +1766,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Low Blow
 				self.values.player.detection_risk_add_crit_chance = {
 					{ --Basic
-						0.03,
+						0.025,
 						2,
 						"below",
 						30,
-						0.3
+						0.25
 					},
 					{ --Ace
-						0.03,
+						0.025,
 						1,
 						"below",
 						30,
-						0.3
+						0.25
 					}
 				}
 				--Ace
@@ -2061,7 +2066,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		
 	--Shared Perks--
 	self.values.weapon.passive_reload_speed_multiplier = {1.1}
-	self.values.player.passive_pick_up_multiplier = {1.15}
+	self.values.player.passive_pick_up_multiplier = {1.10}
 	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
@@ -2281,14 +2286,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 	self.values.player.damage_to_hot = {
+		0.1,
 		0.2,
 		0.3,
-		0.4,
 		
 		0.0 --Unused
 	}
 	self.values.player.damage_to_hot_extra_ticks = {2}
-	self.values.player.hot_speed_bonus = {0.05}
+	self.values.player.hot_speed_bonus = {0.075}
 	
 	self.values.player.perk_armor_loss_multiplier = {
 		0.5,
@@ -2344,7 +2349,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
  	}
 	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}
-	self.values.player.loose_ammo_give_armor = {3}
+	self.values.player.loose_ammo_give_armor = {0.3} --Changed to % of armor
 	self.values.player.loose_ammo_give_dodge = {1}
 
 	--Create actual upgrade table for Gambler.
@@ -2603,15 +2608,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.50
 	}
 
-	self.values.player.damage_to_armor = { --increments of 0.8
+	self.values.player.damage_to_armor = { --*increments of 0.8
 		{
-			{1.6, 5},
-			{2.4, 5},
-			{3.2, 5},
-			{4.0, 5},
-			{5.6, 5},
-			{6.4, 5},
-			{8.0, 5}
+			{1.6, 5}, --1
+			{2.4, 5}, --1
+			{3.2, 5}, --1
+			{4.0, 5}, --1
+			{5.6, 5}, --2
+			{7.2, 5}, --2
+			{9.6, 5} --3
 		}
 	}
 	
@@ -3309,7 +3314,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.specialization_descs[10][9] = {
 		perk_value_1 = tostring(self.loose_ammo_restore_health_values[3][1]), -- Min HP regen on ammo pickup
 		perk_value_2 = tostring(self.loose_ammo_restore_health_values[3][2]),-- Max HP regen on ammo pickup
-		perk_value_3 = tostring(self.values.player.loose_ammo_give_armor[1] * 10)-- Armor regen when HP regen happen
+		perk_value_3 = tostring(self.values.player.loose_ammo_give_armor[1] * 100 .. "%")-- Armor regen when HP regen happen
 	}
 	
 	--Grinder
@@ -4142,7 +4147,17 @@ local sc_definitions = UpgradesTweakData._player_definitions
 function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
-	--New Definitions, calling em here to play it safe--	
+	--New Definitions, calling em here to play it safe--
+
+	self.definitions.player_scaling_pickup_area = {
+		name_id = "menu_scaling_pickup_area",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "scaling_pickup_area",
+			category = "player"
+		}
+	}	
 	self.definitions.carry_increased_carry_weight = {
 		name_id = "menu_carry_weight_addition",
 		category = "feature",
@@ -6546,6 +6561,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "armor_full_damage_absorb",
+			category = "player"
+		}
+	}
+	self.definitions.player_scaling_armor_break_grace = {
+		name_id = "menu_player_scaling_armor_break_grace",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "scaling_armor_break_grace",
 			category = "player"
 		}
 	}

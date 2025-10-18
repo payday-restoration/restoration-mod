@@ -644,6 +644,12 @@ function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 
 	if weapon_proj and weapon_proj.count_as_melee and damage_info.variant == "bullet" then
 		damage_info.variant = "melee"
+		if self:has_category_upgrade("player", "buildup_meter") and self:has_category_upgrade("player", "buildup_meter_refresh") and self._buildup_meter and self._buildup_meter > 0 then
+			local combo_t_mod = (self:has_category_upgrade("player", "buildup_meter_zack") and self:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
+			local combo_t = self:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
+			self._buildup_meter_t = combo_t
+			managers.hud:start_buff("sociopath", managers.player._buildup_meter_t)
+		end
 	end
 
 	--Allow healing over time to be applied to select non-grinder perks using dummy heal_over_time upgrade.

@@ -504,7 +504,6 @@ function PlayerDamage:_mrwick_ricochet_bullets(attack_data, armor_break)
 	end
 end
 
-
 --All damage_x functions have been rewritten.
 function PlayerDamage:damage_bullet(attack_data)
 	local attacker_unit = attack_data.attacker_unit
@@ -522,6 +521,15 @@ function PlayerDamage:damage_bullet(attack_data)
 
 	local pm = managers.player
 	local t = pm:player_timer():time()
+	local hit_pos = mvector3.copy(self._unit:movement():m_com())
+    local attack_dir = nil
+    if attacker_unit then
+        attack_dir = hit_pos - attacker_unit:position()
+        mvector3.normalize(attack_dir)
+    else
+        attack_dir = self._unit:rotation():y()
+    end
+
 	--local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
 	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
@@ -533,11 +541,74 @@ function PlayerDamage:damage_bullet(attack_data)
 			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 0.9)
 		end
 	end
-
+	
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
-		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
-			
+		local can_dodge = self._dodge_meter >= 1.0
+
+		if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] then
+			local driving = self._unit:movement():current_state().driving
+			local in_air = self._unit:movement():current_state():in_air()
+			local hit_in_air = self._unit:movement():current_state()._hit_in_air
+			local on_ladder = self._unit:movement():current_state():on_ladder() 
+			local distance = attacker_unit and hit_pos and mvector3.distance(attacker_unit:position(), hit_pos)
+			local range = nil
+
+			--Apply slow debuff if bullet has one.
+			if tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not driving then
+				local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets
+				range = slow_data and slow_data.range 
+				if not range or (range and distance < range) then
+					if slow_data.taunt then
+						attacker_unit:sound():say("post_tasing_taunt")
+					end
+					managers.player:apply_slow_debuff(slow_data.duration * ((can_dodge and 0.5) or 1), slow_data.power * ((can_dodge and 0.5) or 1), true)
+				end
+			end
+
+			local knockback_resistance = pm:upgrade_value("player", "knockback_resistance", 1) or 1
+			knockback_resistance = knockback_resistance * (1 - math.min(math.max(pm:upgrade_value("player", "resist_knockback_push", 0.0) * self:_max_armor(), 0.0), 0.95))
+			--Pain and suffering
+			if distance then
+				local effect_alpha = (restoration.Options:GetValue("HUD/Extra/ScreenEffectAlpha") or 1)
+				--Scab Gunner
+				if tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress and alive(self._unit) and not driving then
+					range = tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress.range
+					if distance < range and not on_ladder and not hit_in_air then
+						local attack_vec = attack_dir:with_z(0.1):normalized() * 600
+						mvector3.multiply(attack_vec, 0.5 * ((can_dodge and 0.5) or 1) * knockback_resistance)
+						self._unit:movement():current_state():push(attack_vec, true, 0.2, true)
+						if in_air then
+							self._unit:movement():current_state()._hit_in_air = true
+						end
+					end
+					local vars = {
+						"melee_hit",
+						"melee_hit_var2"
+					}
+					self._unit:camera():play_shaker(vars[math.random(#vars)], 0.02)
+					self._unit:movement():current_state()._spread_stun_t = 1
+					managers.hud:activate_effect_screen(0.75, Vector3(0.6, 0.3, 0.1) * effect_alpha)
+				end
+
+				--Shotgunner
+				if tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner and alive(self._unit) and not driving and not can_dodge then
+					range = tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner.range
+					if distance < range then
+						local vars = {
+							"melee_hit",
+							"melee_hit_var2"
+						}
+						self._unit:camera():play_shaker(vars[math.random(#vars)], 0.25, 0.5)
+						self._unit:movement():current_state()._d_scope_t = 0.5
+						managers.hud:activate_effect_screen(0.7, Vector3(0.35, 0.25, 0.1) * effect_alpha)
+					end
+				end
+
+			end
+		end
+
+		if can_dodge then --Dodge attacks if your meter is at '100'.
 			--This shit needs to be here, it is what it is
 			if pm:has_category_upgrade("player", "dodge_ricochet_bullets") then
 				self:_mrwick_ricochet_bullets(attack_data)
@@ -548,7 +619,7 @@ function PlayerDamage:damage_bullet(attack_data)
 		
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
-				managers.player:apply_slow_debuff(0.75, 0.75, nil, true)
+				self._unit:movement():subtract_stamina(self._unit:movement():_max_stamina() * 0.15)
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
 				self._next_allowed_dmg_t = Application:digest_value(t + math.max(grace_bonus, self._dmg_interval), true)
@@ -581,7 +652,6 @@ function PlayerDamage:damage_bullet(attack_data)
 		return
 	end
 
-	local hit_pos = mvector3.copy(self._unit:movement():m_com())
     local attack_dir = nil
     if attacker_unit then
         attack_dir = hit_pos - attacker_unit:position()
@@ -591,68 +661,6 @@ function PlayerDamage:damage_bullet(attack_data)
     end
 
     managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
-	
-	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] then
-		local driving = self._unit:movement():current_state().driving
-		local in_air = self._unit:movement():current_state():in_air()
-		local hit_in_air = self._unit:movement():current_state()._hit_in_air
-		local on_ladder = self._unit:movement():current_state():on_ladder() 
-		local distance = attacker_unit and hit_pos and mvector3.distance(attacker_unit:position(), hit_pos)
-		local range = nil
-
-		--Apply slow debuff if bullet has one.
-		if tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not driving then
-			local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets
-			range = slow_data and slow_data.range 
-			if not range or (range and distance < range) then
-				if slow_data.taunt then
-					attacker_unit:sound():say("post_tasing_taunt")
-				end
-				managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
-			end
-		end
-
-		local knockback_resistance = pm:upgrade_value("player", "knockback_resistance", 1) or 1
-		knockback_resistance = knockback_resistance * (1 - math.min(math.max(pm:upgrade_value("player", "resist_knockback_push", 0.0) * self:_max_armor(), 0.0), 0.95))
-		--Pain and suffering
-		if distance then
-			local effect_alpha = (restoration.Options:GetValue("HUD/Extra/ScreenEffectAlpha") or 1)
-			--Scab Gunner
-			if tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress and alive(self._unit) and not driving then
-				range = tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress.range
-				if distance < range and not on_ladder and not hit_in_air then
-					local attack_vec = attack_dir:with_z(0.1):normalized() * 600
-					mvector3.multiply(attack_vec, 0.5 * knockback_resistance)
-					self._unit:movement():current_state():push(attack_vec, true, 0.2, true)
-					if in_air then
-						self._unit:movement():current_state()._hit_in_air = true
-					end
-				end
-				local vars = {
-					"melee_hit",
-					"melee_hit_var2"
-				}
-				self._unit:camera():play_shaker(vars[math.random(#vars)], 0.02)
-				self._unit:movement():current_state()._spread_stun_t = 0.5
-				managers.hud:activate_effect_screen(0.5, Vector3(0.6, 0.3, 0.1) * effect_alpha)
-			end
-
-			--Shotgunner
-			if tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner and alive(self._unit) and not driving then
-				range = tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner.range
-				if distance < range then
-					local vars = {
-						"melee_hit",
-						"melee_hit_var2"
-					}
-					self._unit:camera():play_shaker(vars[math.random(#vars)], 0.25, 0.5)
-					self._unit:movement():current_state()._d_scope_t = 0.5
-					managers.hud:activate_effect_screen(0.7, Vector3(0.35, 0.25, 0.1) * effect_alpha)
-				end
-			end
-
-		end
-	end	
 	
 	return 
 end
@@ -687,7 +695,8 @@ function PlayerDamage:damage_fire_hit(attack_data)
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
-				managers.player:apply_slow_debuff(0.75, 0.75, nil, true)
+				--managers.player:apply_slow_debuff(0.5, 0.5, nil, true)
+				self._unit:movement():subtract_stamina(self._unit:movement():_max_stamina() * 0.15)
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
 				if grace_bonus then
@@ -721,15 +730,6 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	if not self:_apply_damage(attack_data, damage_info, "fire", t) then
 		return
 	end
-
-	local hit_pos = mvector3.copy(self._unit:movement():m_com())
-    local attack_dir = nil
-    if attacker_unit then
-        attack_dir = hit_pos - attacker_unit:position()
-        mvector3.normalize(attack_dir)
-    else
-        attack_dir = self._unit:rotation():y()
-    end
 
     managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	

@@ -1575,18 +1575,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 				self.values.player.detection_risk_add_movement_speed = {
 					{ --Basic
-						0.015,
+						0.02,
 						2,
 						"below",
 						30,
-						0.15
+						0.20
 					},
 					{ --Ace
-						0.015,
+						0.02,
 						1,
 						"below",
 						30,
-						0.15
+						0.20
 					}
 				}
 				--Ace

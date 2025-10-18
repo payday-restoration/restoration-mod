@@ -185,6 +185,11 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 	multiplier = multiplier + self:get_hostage_bonus_multiplier("speed") - 1
 	multiplier = multiplier + self:upgrade_value("player", "movement_speed_multiplier", 1) - 1
 
+	--Bloodthirst
+	if self:has_active_temporary_property("bloodthirst_reload_speed") then
+		multiplier = multiplier + self:get_temporary_property("bloodthirst_reload_speed", 1) - 1
+	end
+
 	--Kingpin movespeed bonus.
 	if self:has_activate_temporary_upgrade("temporary", "chico_injector") then
 		multiplier = multiplier + self:upgrade_value("player", "chico_injector_speed", 1) - 1

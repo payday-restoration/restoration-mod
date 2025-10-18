@@ -1987,16 +1987,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.player.melee_damage_stacking = {{melee_multiplier = 0.25, max_multiplier = 2}}
 				--Ace
-					self.values.temporary.melee_kill_increase_reload_speed = {
+					self.values.player.melee_kill_increase_reload_speed = {
 						{
 							1.25, -- speed increase
-							10 -- duration
+							6 -- duration
 						}
 					}
 					
 					self.skill_descs.drop_soap = {
-						skill_value_b1 = tostring(self.values.temporary.melee_kill_increase_reload_speed[1][1] % 1 * 100).."%", -- Reload speed buff
-						skill_value_b2 = tostring(self.values.temporary.melee_kill_increase_reload_speed[1][2]) -- Buff duration
+						skill_value_b1 = tostring(self.values.player.melee_kill_increase_reload_speed[1][1] % 1 * 100).."%", -- Reload speed buff
+						skill_value_b2 = tostring(self.values.player.melee_kill_increase_reload_speed[1][2]) -- Buff duration
 					}
 
 			--Pumping Iron

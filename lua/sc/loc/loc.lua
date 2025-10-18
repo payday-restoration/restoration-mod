@@ -6051,7 +6051,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bloodthirst--
 				["menu_bloodthirst_sc"] = "Bloodthirst",
-				["menu_bloodthirst_desc_sc"] = "BASIC: #{owned}#$basic##\nWhenever you kill an enemy with a melee attack, you will gain a #{skill_color}#$skill_value_b1## increase in reload speed for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nEvery non-melee kill you get will increase your next melee attack's damage by #{skill_color}#25%##, up to a maximum of #{skill_color}#100%.##\n\nThis effect gets reset when striking an enemy with a melee attack.",
+				["menu_bloodthirst_desc_sc"] = "BASIC: #{owned}#$basic##\nWhenever you kill an enemy with a melee attack, you will gain a #{skill_color}#$skill_value_b1## increase to both your movement and reload speeds for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nEvery non-melee kill you get will increase your next melee attack's damage by #{skill_color}#25%##, up to a maximum of #{skill_color}#100%.##\n\nThis effect gets reset when striking an enemy with a melee attack.",
 
 				--Frenzy--
 				["menu_wolverine_beta_sc"] = "Frenzy",

@@ -5809,7 +5809,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger
 				["menu_scavenging_sc"] = "Scavenger",
-				["menu_scavenging_desc_sc"] = "BASIC: #{owned}#$basic##\nYour ammo box pick up range is increased by #{skill_color}#$skill_value_b1## plus an additonal #{skill_color}#$skill_value_b2## for every #{skill_color}#$skill_value_b3## points of base armor you have.\n\nACE: #{owned}#$pro##\nEvery #{skill_color}#$skill_value_p1## enemies killed will result in an extra ammo box being dropped.",
+				["menu_scavenging_desc_sc"] = "BASIC: #{owned}#$basic##\nYour ammo box pick up range is increased by #{skill_color}#$skill_value_b1## plus an additional #{skill_color}#$skill_value_b2## for every #{skill_color}#$skill_value_b3## points of base armor you have.\n\nACE: #{owned}#$pro##\nEvery #{skill_color}#$skill_value_p1## enemies killed will result in an extra ammo box being dropped.",
 
 				--Bulletstorm--
 				["menu_ammo_reservoir_beta_sc"] = "Bulletstorm",

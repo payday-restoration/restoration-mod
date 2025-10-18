@@ -619,7 +619,7 @@ function PlayerDamage:damage_bullet(attack_data)
 		
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
-				self._unit:movement():subtract_stamina(self._unit:movement():_max_stamina() * 0.15)
+				self._unit:movement():subtract_stamina(6.75)
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
 				self._next_allowed_dmg_t = Application:digest_value(t + math.max(grace_bonus, self._dmg_interval), true)
@@ -696,7 +696,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				--managers.player:apply_slow_debuff(0.5, 0.5, nil, true)
-				self._unit:movement():subtract_stamina(self._unit:movement():_max_stamina() * 0.15)
+				self._unit:movement():subtract_stamina(6.75)
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
 				if grace_bonus then

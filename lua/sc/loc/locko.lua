@@ -5714,7 +5714,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "기절 저항력",
-				["menu_oppressor_beta_desc_sc"] = "베이식: #{owned}#$basic##\n적의 근접 공격에 의한 밀림이 보유한 방탄량 1포인트당 #{skill_color}#$skill_value_b1## 감소합니다.\n\n에이스: #{owned}#$pro##\n섬광탄 효과의 시각적 지속 시간이 #{skill_color}#$skill_value_p1## 감소합니다.\n\n적의 총격에 의한 밀림이 보유한 방탄량 1포인트당 #{skill_color}#$skill_value_p2## 감소합니다.",
+				["menu_oppressor_beta_desc_sc"] = "베이식: #{owned}#$basic##\n적의 근접 공격에 의한 밀림이 보유한 방탄량 1포인트당 #{skill_color}#$skill_value_b1## 감소합니다.\n\n에이스: #{owned}#$pro##\n섬광탄 효과의 시각적 지속 시간이 #{skill_color}#$skill_value_p1## 감소합니다.\n\n적의 총격에 의한 밀쳐짐이 보유한 방탄량 1포인트당 #{skill_color}#$skill_value_p2## 감소합니다.",
 
 				--Die Hard
 				["menu_show_of_force_sc"] = "다이 하드",
@@ -5722,7 +5722,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Transporter
 				["menu_pack_mule_beta_sc"] = "트랜스포터",
-				["menu_transporter_beta_desc_sc"] = "베이식: #{owned}#$basic##\n가방 운반 시 이동 속도 패널티가 보유한 방탄량 #{skill_color}#10##포인트당 #{skill_color}#$skill_value_b1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n가방을 운반할 수 있는 최대 무게량이 #{skill_color}#$skill_value_p2## 증가합니다.\n\n#{risk}#참고: 기본 운반 무게량은 45이며, 가방 운반 시의 이동 속도 패널티는 여전히 적용됩니다.##",
+				["menu_transporter_beta_desc_sc"] = "베이식: #{owned}#$basic##\n가방 운반 시 이동 속도 패널티가 보유한 방탄량 #{skill_color}#10##당 #{skill_color}#$skill_value_b1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n가방을 운반할 수 있는 최대 무게량이 #{skill_color}#$skill_value_p2## 증가합니다.\n\n#{risk}#참고: 기본 운반 무게량은 45이며, 가방 운반 시의 이동 속도 패널티는 여전히 적용됩니다.##",
 
 				--More Blood to Bleed--
 				["menu_iron_man_beta_sc"] = "아직 흘릴 피가 남아 있어",
@@ -5739,7 +5739,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger
 				["menu_scavenging_sc"] = "재활용꾼",
-				["menu_scavenging_desc_sc"] = "베이식: #{owned}#$basic##\n탄약 회수 범위가 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n적 #{skill_color}#$skill_value_p1##명을 처치할 때마다 추가 탄약 상자가 드롭됩니다.",
+				["menu_scavenging_desc_sc"] = "베이식: #{owned}#$basic##\n탄약 회수 범위가 #{skill_color}#$skill_value_b1## 증가하고, 기본 방탄력이 #{skill_color}#$skill_value_b3##씩 증가할 때마다 탄약 회수 범위가 #{skill_color}#$skill_value_b2## 추가로 증가합니다.\n\n에이스: #{owned}#$pro##\n적 #{skill_color}#$skill_value_p1##명을 처치할 때마다 추가 탄약 상자가 드롭됩니다.",
 
 				--Bulletstorm--
 				["menu_ammo_reservoir_beta_sc"] = "탄환 폭풍",
@@ -5786,7 +5786,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bulletproof--
 				["menu_iron_man_sc"] = "방탄 갑옷",
-				["menu_iron_man_desc_sc"] = "베이식: #{owned}#$basic##\n스나이퍼, 타이탄 도저, 화염, 폭발물이 당신의 방탄복을 파괴하며 체력으로 넘어오는 초과 피해를 막아줍니다.\n\n#{risk}#주의: 자가 피해 또는 클로커의 발차기 및 테이저의 전기 충격으로 직접 입는 체력 피해에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n방탄량이 가득 찬 경우, 최대 방탄량의 #{skill_color}#$skill_value_p1##에 해당하는 수치만큼 받는 피해가 감소합니다.\n\n방탄복 회복 속도가 #{skill_color}#$skill_value_p2## 빨라집니다. $anarc_disable",
+				["menu_iron_man_desc_sc"] = "베이식: #{owned}#$basic##\n스나이퍼, 타이탄 도저, 화염, 폭발물이 당신의 방탄복을 파괴하며 체력으로 넘어오는 초과 피해를 막아줍니다.\n\n#{risk}#주의: 자가 피해 또는 클로커의 발차기 및 테이저의 전기 충격으로 직접 입는 체력 피해에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n방탄량이 가득 차 있는 동안, 받는 피해가 최대 방탄량의 #{skill_color}#$skill_value_p1##만큼 감소합니다.\n\n방탄복이 파괴되면 기본 방탄량 #{skill_color}#$skill_value_p4##당 #{skill_color}#$skill_value_p3##초의 피해 유예 시간을 더 얻습니다.\n\n방탄복 회복 속도가 #{skill_color}#$skill_value_p2## 빨라집니다. $anarc_disable\n\n",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--
@@ -5836,7 +5836,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "마인드 블로우",
-				["menu_kilmer_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##을 반자동 또는 점사로 설정한 상태로 헤드샷 시, #{skill_color}#$skill_value_b2##미터 반경 내 가장 가까운 적에게 가한 피해의 #{skill_color}#$skill_value_b1##를 가합니다. 재사용 대기 시간은 #{important_1}#$skill_value_b5##초입니다.\n\n적으로부터 #{skill_color}#$skill_value_b3##미터 떨어져 있을 때마다 효과가 다른 적에게도 연쇄적으로 연결되며, 최대 #{skill_color}#$skill_value_b4##명까지 연결합니다.\n\n에이스: #{owned}#$pro##\n연쇄 효과의 반경이 #{skill_color}#$skill_value_p1##미터 증가합니다.\n\n#{skill_color}#소총##을 반자동 또는 점사로 설정한 상태로 헤드샷 시, #{skill_color}#피해량 감소가 없어지며## 적으로부터 #{skill_color}#$skill_value_b3##미터 떨어져 있을 때마다 연쇄 효과의 피해량이 추가로 #{skill_color}#$skill_value_p2## 증가하고, 최대치는 #{skill_color}#$skill_value_p3##입니다.\n ",
+				["menu_kilmer_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##을 반자동 또는 점사로 설정한 상태로 헤드샷 시, #{skill_color}#$skill_value_b2##미터 반경 내 가장 가까운 적에게 가한 피해의 #{skill_color}#$skill_value_b1##를 가합니다. 효과 대기 시간은 #{important_1}#$skill_value_b5##초입니다.\n\n적으로부터 #{skill_color}#$skill_value_b3##미터 떨어져 있을 때마다 효과가 다른 적에게도 연쇄적으로 연결되며, 최대 #{skill_color}#$skill_value_b4##명까지 연결합니다.\n\n에이스: #{owned}#$pro##\n연쇄 효과의 반경이 #{skill_color}#$skill_value_p1##미터 증가합니다.\n\n#{skill_color}#소총##을 반자동 또는 점사로 설정한 상태로 헤드샷 시, #{skill_color}#피해량 감소가 없어지며## 적으로부터 #{skill_color}#$skill_value_b3##미터 떨어져 있을 때마다 연쇄 효과의 피해량이 추가로 #{skill_color}#$skill_value_p2## 증가하고, 최대치는 #{skill_color}#$skill_value_p3##입니다.\n ",
 
 		--[[   GHOST   ]]--
 
@@ -5880,14 +5880,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "움직이는 표적",
-				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2##포인트 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2##포인트 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.",
+				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "절연갑옷",
 				["menu_insulation_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#이제 전기 충격에 당해도 강제로 사격하지 않으며,## 테이저의 전기 충격이 #{skill_color}#$skill_value_b2## 확률로 역효과를 일으켜 테이저를 뒤로 넘어뜨려 행동을 방해합니다.\n\n#{risk}#주의: 전기 충격으로 인한 명중률과 반동 패널티는 여전히 적용됩니다.##\n\n적 총격으로 인한 밀쳐짐이 #{skill_color}#$skill_value_b1## 감소합니다.\n\n에이스: #{owned}#$pro##\n테이저에게 전기 충격에 당한 후 #{skill_color}#$skill_value_p1##초 이내에 상호작용하면 테이저에게 #{skill_color}#역으로 전기 충격을 가하여,## 테이저 최대 체력의 #{skill_color}#$skill_value_p2##에 해당하는 피해를 가합니다.\n\n타이탄 테이저 공격의 감속 효과 및 지속 시간이 #{skill_color}#50%## 감소합니다.",
 
 				--Sneaky Bastard--
-				["menu_jail_diet_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2##포인트 감소할 때마다 회피율이 #{skill_color}#$skill_value_b1##포인트 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2##포인트 감소할 때마다 회피율이 #{skill_color}#$skill_value_p1##포인트 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n방탄복이 파괴된 동안, #{skill_color}#회피에 성공하면 회피율만큼 방탄복을 회복시키고## 추가로 최대 체력의 #{skill_color}#$skill_value_p2##를 회복합니다. 재사용 대기 시간은 #{important_1}#$skill_value_p3##초입니다.\n\n방탄복이 파괴된 동안 회피를 성공할 때마다 재사용 대기 시간이 #{skill_color}#$skill_value_p4##초 감소합니다.",
+				["menu_jail_diet_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 회피율이 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 회피율이 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n방탄복이 파괴된 동안, #{skill_color}#회피에 성공하면 회피율만큼 방탄복을 회복시키고## 추가로 최대 체력의 #{skill_color}#$skill_value_p2##를 회복합니다. 재사용 대기 시간은 #{important_1}#$skill_value_p3##초입니다.\n\n방탄복이 파괴된 동안 회피를 성공할 때마다 재사용 대기 시간이 #{skill_color}#$skill_value_p4##초 감소합니다.",
 
 			--[[   CONTRACT KILLER SUBTREE   ]]--
 			--FORMERLY "SILENT KILLER"
@@ -5913,7 +5913,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "로 블로",
-				["menu_unseen_strike_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2##포인트 감소할 때마다 치명타 확률이 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n치명타 발생 시 #{skill_color}#100%## 추가 피해를 가합니다.\n\n#{risk}#주의: 폭발물 및 지속 피해 효과는 치명타를 가할 수 없습니다.##\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2##포인트 감소할 때마다 치명타 확률이 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 #{skill_color}#$skill_value_p5## 증가합니다.",
+				["menu_unseen_strike_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 치명타 확률이 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n치명타 발생 시 #{skill_color}#100%## 추가 피해를 가합니다.\n\n#{risk}#주의: 폭발물 및 지속 피해 효과는## #{important_1}#치명타를 가할 수 없습니다.##\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 치명타 확률이 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 #{skill_color}#$skill_value_p5## 증가합니다.",
 
 		--[[   FUGITIVE   ]]--
 
@@ -6012,7 +6012,7 @@ end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", function(loc)
 	LocalizationManager:add_localized_strings({
-		["bm_menu_dodge"] = "회피",
+		["bm_menu_dodge"] = "회피율",
 		["menu_st_category_activated"] = "활성화형",
 		["menu_st_category_challenge"] = "와일드 카드",
 		["menu_st_category_mod"] = "모드",
@@ -6062,9 +6062,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck5_7_sc"] = "전문 암살자",
 
 		["menu_deck5_1_desc_sc"] = "근접 무기를 제외한 다른 무기로 적을 처치하면 #{skill_color}#$perk_value_1##의 체력이 저장되며, 최대 #{risk}#$perk_value_2##까지 저장할 수 있습니다.\n\n근접 공격으로 적을 처치하면 저장된 체력이 임시 체력으로 바뀌며, 이 체력은 초당 #{important_1}#$perk_value_3##씩 감소합니다.\n\n임시 체력은 최대 체력을 초과할 수 있지만, 한 번에 최대 #{risk}#$perk_value_4##까지만 가질 수 있습니다.",
-		["menu_deck5_3_desc_sc"] = "방탄복이 회복되었을 때 회피 미터가 회피율의 ##$perk_value_1##만큼 채워집니다.\n\n회피 포인트가 추가로 ##$perk_value_2## 증가합니다.",
+		["menu_deck5_3_desc_sc"] = "방탄복이 회복되었을 때 회피 미터가 회피율의 ##$perk_value_1##만큼 채워집니다.\n\n회피율이 추가로 ##$perk_value_2## 증가합니다.",
 		["menu_deck5_5_desc_sc"] = "체력을 ##$perk_value_1## 더 저장합니다.\n\n인벤토리에 시체 가방을 ##$perk_value_2##개 더 소지합니다.",
-		["menu_deck5_7_desc_sc"] = "되살아났을때 ##$perk_value_1##의 임시 체력을 얻습니다.\n\n회피 포인트가 추가로 ##$perk_value_2## 증가합니다.",
+		["menu_deck5_7_desc_sc"] = "되살아났을때 ##$perk_value_1##의 임시 체력을 얻습니다.\n\n회피율이 추가로 ##$perk_value_2## 증가합니다.",
 		["menu_deck5_9_desc_sc"] = "일시 체력을 가지고 있는 동안 방어력이 ##$perk_value_1## 증가하고 이동 속도가 추가로 ##$perk_value_2## 빨라집니다.\n\n방어력은 최대 ##$perk_value_3##까지 받는 체력 피해를 감소시키며, 다른 피해 감소 효과가 적용된 후 적용됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Muscle

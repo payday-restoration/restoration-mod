@@ -27712,6 +27712,33 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ RJC9000'S MODS ]]
 
+		if self.parts.wpn_fps_ass_c8sfw_gl_m26mass then
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_custom.pcs = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_custom.stats = {value = 0}
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_custom.custom_stats = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_slug.pcs = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_slug.stats = {value = 0}
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_slug.custom_stats = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_explosive.pcs = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_explosive.stats = {value = 0}
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_explosive.custom_stats = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_piercing.pcs = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_piercing.stats = {value = 0}
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_piercing.custom_stats = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_dragons_breath.pcs = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_dragons_breath.stats = {value = 0}
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_dragons_breath.custom_stats = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_rip.pcs = nil
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_rip.stats = {value = 0}
+			self.parts.wpn_fps_ass_c8sfw_underbarrel_rip.custom_stats = nil
+
+			self.parts.wpn_fps_ass_c8sfw_gl_m26mass.stats = {value = 0}
+			self.parts.wpn_fps_ass_c8sfw_gl_m26mass.custom_stats = nil
+			self.parts.wpn_fps_ass_c8sfw_flash_hider.stats = {value = 0}
+			self.parts.wpn_fps_ass_c8sfw_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_c8sfw_flash_hider.perks = nil
+		end
+
 		if self.parts.wpn_fps_ass_g11k2_selector then
 			self.parts.wpn_fps_ass_g11k2_selector.supported = true
 			self.parts.wpn_fps_ass_g11k2_selector.stats = { value = 0 }

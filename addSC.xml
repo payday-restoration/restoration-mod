@@ -77,9 +77,11 @@
 	<texture			path="guis/textures/pd2/skilltree/info_grinder" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_infiltrator" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_sociopath" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_gambler" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_body_expertise" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_long_dis_revive" force="false" load="false"/> <!-- inspire -->
-	<texture			path="guis/textures/pd2/skilltree/info_hostage_taker" force="false" load="false"/> <!-- inspire -->
+	<texture			path="guis/textures/pd2/skilltree/info_hostage_taker" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_first_aid_kit_auto_recovery" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_messiah" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_overkill_damage_multiplier" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_revived_damage_reduction" force="false" load="false"/> <!-- Painkillers -->

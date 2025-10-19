@@ -5981,7 +5981,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bloodthirst--
 				["menu_bloodthirst_sc"] = "피의 갈증",
-				["menu_bloodthirst_desc_sc"] = "베이식: #{owned}#$basic##\n적을 근접 공격으로 처치할 때마다, #{skill_color}#$skill_value_b2##초 동안 재장전 속도가 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n근접 공격이 아닌 다른 방식으로 적을 처치할 때마다 다음 근접 공격의 피해량이 #{skill_color}#25%## 증가하며, 최대 #{skill_color}#100%##까지 증가합니다.\n\n이 효과는 근접 공격으로 적을 타격할 때 초기화됩니다.",
+				["menu_bloodthirst_desc_sc"] = "베이식: #{owned}#$basic##\n적을 근접 공격으로 처치할 때마다, #{skill_color}#$skill_value_b2##초 동안 이동 속도와 재장전 속도가 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n근접 공격이 아닌 다른 방식으로 적을 처치할 때마다 다음 근접 공격의 피해량이 #{skill_color}#25%## 증가하며, 최대 #{skill_color}#100%##까지 증가합니다.\n\n이 효과는 근접 공격으로 적을 타격할 때 초기화됩니다.",
 
 				--Frenzy--
 				["menu_wolverine_beta_sc"] = "광분",

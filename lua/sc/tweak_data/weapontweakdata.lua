@@ -24981,7 +24981,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.c8sfw_underbarrel.has_underbarrel = true
 					self.c8sfw_underbarrel.ignore_crit_damage = nil
 					self.c8sfw_underbarrel.ignore_damage_multipliers = nil
-					self.c8sfw_underbarrel.ignore_damage_upgrades = 
+					self.c8sfw_underbarrel.ignore_damage_upgrades = nil
 					self.c8sfw_underbarrel.timers.reload_exit_not_empty = 0.7
 					self.c8sfw_underbarrel.timers.reload_not_empty = 1.6
 					self.c8sfw_underbarrel.timers.reload_exit_empty = 0.9

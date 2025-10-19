@@ -1222,7 +1222,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.custom_shout = true		
 	self.city_swat_titan.can_slide_on_suppress = true
 	self.city_swat_titan.dt_suppress = {
-		range = 1400
+		range = 1000
 	}
 	self.city_swat_titan.speech_prefix_p1 = "null"
 	self.city_swat_titan.speech_prefix_p2 = nil
@@ -18732,7 +18732,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan.dt_suppress = {
-		range = 1600
+		range = 1200
 	}
 	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
@@ -18960,7 +18960,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan.dt_suppress = {
-		range = 1800
+		range = 1500
 	}
 	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false

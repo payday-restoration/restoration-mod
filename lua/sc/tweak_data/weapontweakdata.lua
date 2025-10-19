@@ -7462,9 +7462,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"shotgun",
 							"shotgun_pistol"
 						}
-						self.type54_underbarrel.rays = 8
+						self.type54_underbarrel.rays = 12
 						self.type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.type54_underbarrel.AMMO_MAX = 16
+						self.type54_underbarrel.AMMO_MAX = 10
 						self.type54_underbarrel.has_underbarrel = true
 						self.type54_underbarrel.CLIP_AMMO_MAX = 1
 						self.type54_underbarrel.fire_mode_data = {}
@@ -7477,6 +7477,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.type54_underbarrel.supported = true
 						self.type54_underbarrel.use_stance = "type54"
+						self.type54_underbarrel.use_hipfire_stance = "type54"
 						self.type54_underbarrel.ads_speed = 0.180
 						self.type54_underbarrel.damage_falloff = {
 							start_dist = 400,
@@ -7484,8 +7485,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.125
 						}
 						self.type54_underbarrel.stats = {
-							damage = 180,
-							spread = 56,
+							damage = 90,
+							spread = 26,
 							recoil = 77,
 							spread_moving = 6,
 							zoom = 1,
@@ -7498,6 +7499,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.type54_underbarrel.stats_modifiers = nil
+						self.type54_underbarrel.armor_piercing_chance = 1
+						self.type54_underbarrel.ene_hs_mult = 1
+						self.type54_underbarrel.hs_mult = 3
 						self.type54_underbarrel.panic_suppression_chance = 0.05
 						self.type54_underbarrel.ignore_crit_damage = nil
 						self.type54_underbarrel.ignore_damage_multipliers = nil
@@ -7510,9 +7514,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"shotgun",
 							"shotgun_pistol"
 						}
-						self.x_type54_underbarrel.rays = 8
+						self.x_type54_underbarrel.rays = 12
 						self.x_type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.x_type54_underbarrel.AMMO_MAX = 32
+						self.x_type54_underbarrel.AMMO_MAX = 20
 						self.x_type54_underbarrel.has_underbarrel = true
 						self.x_type54_underbarrel.BURST_FIRE = {
 							count = 2
@@ -7536,7 +7540,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_type54_underbarrel.stats = {
 							damage = 180,
-							spread = 46,
+							spread = 16,
 							recoil = 67,
 							spread_moving = 6,
 							zoom = 1,
@@ -7549,6 +7553,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.x_type54_underbarrel.stats_modifiers = nil
+						self.x_type54_underbarrel.armor_piercing_chance = 1
+						self.x_type54_underbarrel.ene_hs_mult = 1
+						self.x_type54_underbarrel.hs_mult = 3
 						self.x_type54_underbarrel.panic_suppression_chance = 0.05
 						self.x_type54_underbarrel.use_stance = "x_type54"
 						self.x_type54_underbarrel.use_hipfire_stance = "x_type54"

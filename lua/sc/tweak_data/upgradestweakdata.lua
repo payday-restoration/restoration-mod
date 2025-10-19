@@ -1049,7 +1049,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Bullseye
 				self.values.player.headshot_regen_armor_bonus = {
 					0.1, --Basic
-					0.2 --Ace
+					0.3 --Ace
 				}
 				self.values.player.headshot_regen_armor_bonus_cd_reduction = {
 					0.5, --Basic

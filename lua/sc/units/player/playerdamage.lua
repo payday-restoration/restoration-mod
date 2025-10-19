@@ -730,6 +730,15 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	if not self:_apply_damage(attack_data, damage_info, "fire", t) then
 		return
 	end
+	
+	local hit_pos = mvector3.copy(self._unit:movement():m_com())
+    local attack_dir = nil
+    if attacker_unit then
+        attack_dir = hit_pos - attacker_unit:position()
+        mvector3.normalize(attack_dir)
+    else
+        attack_dir = self._unit:rotation():y()
+    end	
 
     managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	

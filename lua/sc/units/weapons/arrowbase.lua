@@ -40,7 +40,7 @@ function ArrowBase:update(unit, t, dt)
 
 			local speed = mvector3.normalize(tmp_vel)
 
-			mvector3.step(tmp_vel, tmp_vel, autohit_dir, dt * 0.15)
+			mvector3.step(tmp_vel, tmp_vel, autohit_dir, dt * 0.2)
 			body:set_velocity(tmp_vel * speed)
 		end
 	end

@@ -68,6 +68,10 @@ tweak_data.pistol = {
 		moving_spread_mult = 1 / tweak_data.pistol.moving_spread_mult,
 		hipfire_spread_mult = 1.2 / tweak_data.pistol.hipfire_spread_mult
 	}
+		tweak_data.yeehaw = {
+			ads_move_speed_mult = 0.8 / (tweak_data.pistol.ads_move_speed_mult * tweak_data.handcannon.ads_move_speed_mult),
+			hipfire_spread_mult = 0.5 / (tweak_data.pistol.hipfire_spread_mult * tweak_data.handcannon.hipfire_spread_mult)
+		}
 		tweak_data.samurai = {
 			hipfire_spread_mult = 0.1 / (tweak_data.pistol.hipfire_spread_mult * tweak_data.handcannon.hipfire_spread_mult)
 		}
@@ -928,7 +932,7 @@ velocity = {
 }
 for i, proj_id in ipairs(velocity) do
 	if tweak_data.projectiles[proj_id] then
-		tweak_data.projectiles[proj_id].launch_speed = 2500
+		tweak_data.projectiles[proj_id].launch_speed = 2000
 		tweak_data.projectiles[proj_id].adjust_z = 50
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -938,7 +942,7 @@ velocity = {
 }
 for i, proj_id in ipairs(velocity) do
 	if tweak_data.projectiles[proj_id] then
-		tweak_data.projectiles[proj_id].launch_speed = 1800
+		tweak_data.projectiles[proj_id].launch_speed = 1700
 		tweak_data.projectiles[proj_id].adjust_z = 50
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -948,7 +952,7 @@ velocity = {
 }
 for i, proj_id in ipairs(velocity) do
 	if tweak_data.projectiles[proj_id] then
-		tweak_data.projectiles[proj_id].launch_speed = 2500
+		tweak_data.projectiles[proj_id].launch_speed = 2100
 		tweak_data.projectiles[proj_id].adjust_z = 50
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end

@@ -1774,7 +1774,8 @@ function PlayerDamage:_upd_health_regen(t, dt)
 	--]]
 end
 
-Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", function(self, can_activate_berserker, ignore_movement_state)
+function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_state, ignore_reduce_revive)
+
 	if self._check_berserker_done then --Deals with swan song shenanigans.
 		if self._can_survive_one_hit then
 			self._can_survive_one_hit = false
@@ -1808,7 +1809,98 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 			end
 		end
 	end
-end)
+
+	if self:get_real_health() == 0 and not self._check_berserker_done then
+		if self._unit:movement():zipline_unit() then
+			self._bleed_out_blocked_by_zipline = true
+
+			return
+		end
+
+		if not ignore_movement_state and self._unit:movement():current_state():bleed_out_blocked() then
+			self._bleed_out_blocked_by_movement_state = true
+
+			return
+		end
+
+		if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") and managers.player:has_category_upgrade("player", "copr_out_of_health_move_slow") then
+			return
+		end
+
+		local time = Application:time()
+
+		if not self._block_medkit_auto_revive and not ignore_reduce_revive and time > (self._uppers_elapsed or 0) then
+			local auto_recovery_kit = FirstAidKitBase.GetFirstAidKit(self._unit:position())
+
+			if auto_recovery_kit then
+				auto_recovery_kit:take(self._unit)
+				self._unit:sound():play("pickup_fak_skill")
+
+				self._uppers_elapsed = time + self._UPPERS_COOLDOWN
+
+				return
+			end
+		end
+
+		if can_activate_berserker and not self._check_berserker_done then
+			local has_berserker_skill = managers.player:has_category_upgrade("temporary", "berserker_damage_multiplier")
+
+			if has_berserker_skill and not self._disable_next_swansong then
+				managers.hud:set_teammate_condition(HUDManager.PLAYER_PANEL, "mugshot_swansong", managers.localization:text("debug_mugshot_downed"))
+				managers.player:activate_temporary_upgrade("temporary", "berserker_damage_multiplier")
+
+				self._current_state = nil
+				self._check_berserker_done = true
+
+				if alive(self._interaction:active_unit()) and not self._interaction:active_unit():interaction():can_interact(self._unit) then
+					self._unit:movement():interupt_interact()
+				end
+
+				self._listener_holder:call("on_enter_swansong")
+			end
+
+			self._disable_next_swansong = nil
+		end
+
+		self._hurt_value = 0.2
+		self._damage_to_hot_stack = {}
+
+		managers.environment_controller:set_downed_value(0)
+		SoundDevice:set_rtpc("downed_state_progression", 0)
+
+		if not self._check_berserker_done or not can_activate_berserker then
+			if not ignore_reduce_revive then
+				self._revives = Application:digest_value(Application:digest_value(self._revives, false) - 1, true)
+
+				self:_send_set_revives()
+			end
+
+			self._check_berserker_done = nil
+
+			managers.environment_controller:set_last_life(Application:digest_value(self._revives, false) <= 1)
+
+			if Application:digest_value(self._revives, false) == 0 then
+				self._down_time = 0
+			end
+
+			self._bleed_out = true
+			self._current_state = nil
+
+			managers.player:set_player_state("bleed_out")
+
+			self._critical_state_heart_loop_instance = self._unit:sound():play("critical_state_heart_loop")
+			self._slomo_sound_instance = self._unit:sound():play("downed_slomo_fx")
+			self._bleed_out_health = Application:digest_value(tweak_data.player.damage.BLEED_OUT_HEALTH_INIT * managers.player:upgrade_value("player", "bleed_out_health_multiplier", 1), true)
+
+			self:_drop_blood_sample()
+			self:on_downed()
+		end
+	elseif not self._said_hurt and self:get_real_health() / self:_max_health() < 0.2 then
+		self._said_hurt = true
+
+		PlayerStandard.say_line(self, "g80x_plu")
+	end
+end
 
 function PlayerDamage:_calc_armor_damage(attack_data)
 

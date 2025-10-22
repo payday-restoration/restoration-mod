@@ -110,7 +110,13 @@ function PlayerDamage:init(unit)
 	self._deflection = math.max(1 - player_manager:body_armor_value("deflection", nil, 0) - player_manager:get_deflection_from_skills(), self._max_deflection) --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
 	self._unpierceable = player_manager:has_category_upgrade("player", "unpierceable_armor")
 	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
-	managers.player:set_damage_absorption("full_armor_absorption", managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor())
+
+	local bulletproof_aced = managers.player:has_category_upgrade("player", "armor_full_damage_absorb")
+	local pm = managers.player
+	local base_armor = tweak_data.player.damage.ARMOR_INIT + pm:body_armor_value("armor")
+	if bulletproof_aced then
+		managers.player:set_damage_absorption("full_armor_absorption", managers.player:upgrade_value("player", "armor_full_damage_absorb", 0)[1] * base_armor)
+	end
 	self._buildup_meter_hurt_t = 0
 
 	--The rest of this is unchanged vanilla code.
@@ -2206,11 +2212,13 @@ function PlayerDamage:set_armor(armor)
 		if current_armor ~= 0 and armor == 0 then
 			self._can_dodge_heal = true
 		end
-
-		if math.round(armor * 10) >= math.round(self:_max_armor() * 10) then --mmmmm floating point errors
+		local bulletproof_aced = managers.player:has_category_upgrade("player", "armor_full_damage_absorb")
+		if bulletproof_aced and math.round(armor * 10) >= (math.round(self:_max_armor() * 10) * managers.player:upgrade_value("player", "armor_full_damage_absorb", 0)[2]) then --mmmmm floating point errors
+			local pm = managers.player
+			local base_armor = tweak_data.player.damage.ARMOR_INIT + pm:body_armor_value("armor")
 			managers.player:set_damage_absorption(
 				"full_armor_absorption",
-				managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor()
+				managers.player:upgrade_value("player", "armor_full_damage_absorb", 0)[1] * base_armor
 			)
 		else
 			managers.player:set_damage_absorption(

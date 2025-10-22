@@ -5862,7 +5862,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Bulletproof",
-				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nBlocks the excess damage of Snipers, Titan Dozers, fire and explosives that break your armor continuing through to your health.\n\n#{risk}#NOTE: Does not protect against self damage or the direct health damage taken from Cloaker kicks and Taser shocks.##\n\nACE: #{owned}#$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to #{skill_color}#$skill_value_p1## of your maximum armor.\n\nWhen your armor breaks you gain #{skill_color}#$skill_value_p3## seconds of damage grace for every #{skill_color}#$skill_value_p4## points of base armor you have.\n\nYour armor recovers #{skill_color}#$skill_value_p2## faster. $anarc_disable\n\n ",
+				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nBlocks the excess damage of Snipers, Titan Dozers, fire and explosives that break your armor continuing through to your health.\n\n#{risk}#NOTE: Does not protect against self damage or the direct health damage taken from Cloaker kicks and Taser shocks.##\n\nACE: #{owned}#$pro##\nWhile your armor is at least #{skill_color}#$skill_value_p5## full, damage taken is reduced by a number of points equal to #{skill_color}#$skill_value_p1## of your base armor.\n\nWhen your armor breaks you gain #{skill_color}#$skill_value_p3## seconds of damage grace for every #{skill_color}#$skill_value_p4## points of base armor you have.\n\nYour armor recovers #{skill_color}#$skill_value_p2## faster. $anarc_disable\n\n ",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--

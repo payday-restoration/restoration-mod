@@ -1233,10 +1233,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Bulletproof
 					--Basic
 						self.values.player.unpierceable_armor = {true}
-						self.values.player.level_5_armor_addend = {2}
-						self.values.player.level_6_armor_addend = {2}
+						self.values.player.level_5_armor_addend = {2} --Unused
+						self.values.player.level_6_armor_addend = {2} --Unused
 					--Ace
-						self.values.player.armor_full_damage_absorb = {0.15}
+						self.values.player.armor_full_damage_absorb = {
+							{
+								0.15, -- % of armor as DA
+								0.75 -- Armor thereshold to recieve DA
+							}
+						}
 						self.values.player.scaling_armor_break_grace = {
 							{
 								grace_mod = 0.25, --seconds of damage grace for every armor step
@@ -1246,11 +1251,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.armor_regen_timer_multiplier_tier = {0.85}
 						
 						self.skill_descs.tower_defense = {
-							skill_value_b1 = tostring(self.values.player.level_5_armor_addend[1]*10), -- +armor for Flak and CTV
-							skill_value_p1 = tostring(self.values.player.armor_full_damage_absorb[1] * 100).."%", -- DA on 1st shot
+							skill_value_b1 = tostring(self.values.player.level_5_armor_addend[1]*10), -- +armor for Flak and CTV; unused
+							skill_value_p1 = tostring(self.values.player.armor_full_damage_absorb[1][1] * 100).."%", -- DA when armor is above threshold
 							skill_value_p2 = tostring((1 - self.values.player.armor_regen_timer_multiplier_tier[1]) * 100).."%", -- Armor recovery buff
 							skill_value_p3 = tostring(self.values.player.scaling_armor_break_grace[1].grace_mod),
 							skill_value_p4 = tostring(self.values.player.scaling_armor_break_grace[1].armor_steps * 10),
+							skill_value_p5 = tostring(self.values.player.armor_full_damage_absorb[1][2] * 100).."%", -- DA threshold
 						}
 			
 		--Breacher--

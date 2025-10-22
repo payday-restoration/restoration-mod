@@ -1140,6 +1140,7 @@ function PlayerManager:on_headshot_dealt(unit, attack_data)
 
 	if damage_ext and regen_armor_bonus > 0 then
 		damage_ext:restore_armor(damage_ext:_max_armor() * regen_armor_bonus)
+		managers.hud:start_buff("bullseye", tweak_data.upgrades.on_headshot_dealt_cooldown)
 	end
 
 	local regen_health_bonus = managers.player:upgrade_value("player", "headshot_regen_health_bonus", 0)
@@ -1160,6 +1161,7 @@ function PlayerManager:on_lethal_headshot_dealt(attacker_unit, attack_data)
 	local anarchist = managers.player:has_category_upgrade("player", "armor_grinding")
 	if self._on_headshot_dealt_t and not anarchist then
 		self._on_headshot_dealt_t = self._on_headshot_dealt_t - regen_armor_bonus_cd_reduction
+		managers.hud:change_cooldown("bullseye", -regen_armor_bonus_cd_reduction)
 	end
 end
 

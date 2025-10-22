@@ -532,7 +532,7 @@
 					<option type="bool" default_value="true" name="Info_revived_damage_reduction"/> <!-- Painkillers -->
 					<option type="bool" default_value="true" name="Info_revive_damage_reduction"/> <!-- Combat Medic -->
 					<option type="bool" default_value="true" name="Info_first_aid_damage_reduction"/> <!-- Quick Fix -->
-					<!--<option type="bool" default_value="true" name="Info_uppers"/> -->    <!-- Uppers -->					
+					<option type="bool" default_value="true" name="Info_uppers"/>   <!-- Uppers -->					
 					<option type="bool" default_value="true" name="Info_long_dis_revive"/> <!-- inspire -->
 					<option type="bool" default_value="true" name="Info_hostage_taker"/> <!-- inspire -->
 					<option type="bool" default_value="true" name="Info_body_expertise"/>
@@ -541,6 +541,7 @@
 					<button name="enforcer_buffs" disabled="true"/>
 					<option type="bool" default_value="true" name="Info_dmg_multiplier_outnumbered"/> <!-- Underdog -->
 					<option type="bool" default_value="true" name="Info_overkill_damage_multiplier"/>
+					<option type="bool" default_value="true" name="Info_bullseye"/>
 					<option type="bool" default_value="true" name="Info_bullet_storm"/>
 					<!-- Technician -->
 					<divider name="tod_divider" size="7"/>

@@ -1837,6 +1837,9 @@ function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_s
 				self._unit:sound():play("pickup_fak_skill")
 
 				self._uppers_elapsed = time + self._UPPERS_COOLDOWN
+				
+				--Uppers CD buff tracker
+				managers.hud:start_buff("uppers", self._UPPERS_COOLDOWN)
 
 				return
 			end

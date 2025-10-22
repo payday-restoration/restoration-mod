@@ -1211,7 +1211,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		
 			--Jack of All Trades
 				--Basic
-					self.values.player.throwables_multiplier = {1.5}
+					self.values.player.throwables_multiplier = {1.3}
 				--Ace
 					self.values.player.second_deployable = {true}
 					

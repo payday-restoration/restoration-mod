@@ -2986,6 +2986,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_damage_to_hot_1",
 					"player_level_5_armor_addend_grinder",
+					"player_level_5_deflection_addend_grinder",
 					"player_flak_jacket_concealment_1"
 				},
 				cost = 200,

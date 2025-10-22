@@ -1179,9 +1179,16 @@ end
 --Get health damage reduction gained via skills.
 --Crashes mentioning this function mean that there is a syntax error in the file.
 function PlayerManager:get_deflection_from_skills()
+	local armor_data = tweak_data.blackmarket.armors[managers.blackmarket:equipped_armor(true, true)]
+	local addend = 0
+
 	local addend = 0
 
 	addend = addend + self:upgrade_value("player", "deflection_addend", 0)
+	--Grinder Flak Jacket deflection modifier
+	if armor_data.upgrade_level == 5 then
+		addend = addend + self:upgrade_value("player", "level_5_deflection_addend_grinder", 0)
+	end
 
 	if self:has_activate_temporary_upgrade("temporary", "doctor_bag_health_regen") then	
 		addend = addend + tweak_data.upgrades.values.temporary.doctor_bag_health_regen_deflection_addend

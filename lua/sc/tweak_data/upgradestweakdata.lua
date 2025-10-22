@@ -2259,6 +2259,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Hey you're getting your grinder on my grinder
 	self.values.player.level_5_armor_addend_grinder = {-4}
+	self.values.player.level_5_deflection_addend_grinder = {-0.05}
 	self.values.player.flak_jacket_concealment = {
 		8,
 		4
@@ -2286,9 +2287,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 	self.values.player.damage_to_hot = {
-		0.1,
 		0.2,
 		0.3,
+		0.4,
 		
 		0.0 --Unused
 	}
@@ -3324,7 +3325,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring(self.damage_to_hot_data.max_stacks),-- Max amount of stacks
 		perk_value_4 = tostring(self.damage_to_hot_data.stacking_cooldown), -- Stacking CD
 		perk_value_5 = tostring(self.values.player.level_5_armor_addend_grinder[1] * -10), -- Flak Jacket armor reduction
-		perk_value_6 = tostring(self.values.player.flak_jacket_concealment[1]) -- Concealment bonus
+		perk_value_6 = tostring(self.values.player.flak_jacket_concealment[1]), -- Concealment bonus
+		perk_value_7 = tostring(self.values.player.level_5_deflection_addend_grinder[1] * -100), -- Flak Jacket deflection reduction
 	}
 	self.specialization_descs[11][3] = {
 		perk_value_1 = tostring((self.values.player.damage_to_hot[2] - self.values.player.damage_to_hot[1]) * 10),-- Additional HP regen per tick
@@ -3720,7 +3722,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_4 = tostring(self.damage_to_hot_data.stacking_cooldown), -- Stacking CD
 		perk_value_5 = tostring(self.values.player.level_5_armor_addend_grinder[1] * -10), -- Flak Jacket armor reduction
 		perk_value_6 = tostring(self.values.player.flak_jacket_concealment[2]), -- Concealment bonus
-		perk_value_7 = "2" -- Body bag cases quantity. Not defined here so beware
+		perk_value_7 = "2", -- Body bag cases quantity. Not defined here so beware
+		perk_value_8 = tostring(self.values.player.level_5_deflection_addend_grinder[1] * -100), -- Flak Jacket deflection reduction
 	}
 	self.multi_choice_specialization_descs[23][9][12] = { --Yakuza
 		perk_value_1 = tostring(self.values.player.kill_dodge_regen[1] * 100).."%", -- Max dodge gain on kill at low HP
@@ -3988,6 +3991,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			upgrades = {
 				"player_damage_to_hot_1",
 				"player_level_5_armor_addend_grinder",
+				"player_level_5_deflection_addend_grinder",
 				"player_flak_jacket_concealment_1",
 				"player_flak_jacket_concealment_2",
 				"bodybags_bag_quantity",
@@ -4776,6 +4780,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			category = "player",
 			upgrade = "level_5_armor_addend_grinder",
+			value = 1
+		}
+	}
+	self.definitions.player_level_5_deflection_addend_grinder = {
+		category = "feature",
+		name_id = "menu_player_level_5_level_5_deflection_addend_grinder",
+		upgrade = {
+			category = "player",
+			upgrade = "level_5_deflection_addend_grinder",
 			value = 1
 		}
 	}

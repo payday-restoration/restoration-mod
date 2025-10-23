@@ -136,14 +136,9 @@ local opts_surprise_gunners_2 = {
 	{id =  400072, delay = 0,},
 	}
 }
-local opts_enable_marshal_gunners_1 = {
+local opts_enable_marshal_gunners = {
 	enabled = (death_wish_above or pro_job and  enabled_chance_ambush),
-	elements = {  400070,},
-		toggle = "on",
-}
-local opts_enable_marshal_gunners_2 = {
-	enabled = (death_wish_above or pro_job and enabled_chance_ambush),
-	elements = { 400069,},
+	elements = {  400070, 400069 },
 		toggle = "on",
 }
 local opts_taser_stairs = {
@@ -201,8 +196,7 @@ return {
 		restoration:gen_so(400064, "dozer_ambush", Vector3(-60.461, 5191.758, -950), Rotation(-145, 0, -0)),
 		restoration:gen_toggleelement(400065, "enable_cloaker", opts_enable_surprse_cloaker),
 		restoration:gen_toggleelement(400066, "enable_dozer", opts_enable_dozer),
-		restoration:gen_toggleelement(400067, "enable_marshal_gunners", opts_enable_marshal_gunners_1),
-		restoration:gen_toggleelement(400068, "enable_marshal_gunners", opts_enable_marshal_gunners_2),
+		restoration:gen_toggleelement(400067, "enable_marshal_gunners", opts_enable_marshal_gunners),
 		restoration:gen_toggleelement(400075, "enabale_taser_ambush", opts_enable_taser_ambush),
 		restoration:gen_dummy (400069, "marshal_gunner_1", Vector3(-200, 6500, -644.242), Rotation(-174, 0, 0), opts_surprise_gunners_1),
 		restoration:gen_dummy (400070, "marshal_gunner_2", Vector3(0, 6500 ,-646.740), Rotation(179, 0, 0), opts_surprise_gunners_2),

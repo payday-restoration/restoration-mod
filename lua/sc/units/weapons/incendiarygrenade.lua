@@ -37,7 +37,7 @@ function IncendiaryGrenade:_detonate(tag, unit, body, other_unit, other_body, po
 	normal = normal or explosion_normal
 	local destruction_delay = self:_spawn_environment_fire(normal)
 
-	if self._unit:id() ~= -1 then
+	if self._unit:id() ~= -1 and managers.network:session() then
 		managers.network:session():send_to_peers_synched("sync_detonate_incendiary_grenade", self._unit, "base", GrenadeBase.EVENT_IDS.detonate, normal)
 	end
 

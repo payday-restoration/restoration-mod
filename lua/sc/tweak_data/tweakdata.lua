@@ -611,25 +611,25 @@ tweak_data.projectiles.fir_com.player_damage = 4.5
 tweak_data.projectiles.fir_com.burn_duration = 12
 tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"
 
---Throwing Card--
-tweak_data.projectiles.wpn_prj_ace.damage = 24
-tweak_data.projectiles.wpn_prj_ace.adjust_z = 0
-
 --Shuriken
 tweak_data.projectiles.wpn_prj_four.damage = 12
-tweak_data.projectiles.wpn_prj_four.adjust_z = 0
+tweak_data.projectiles.wpn_prj_four.magnetism = 0.25
+
+--Throwing Card--
+tweak_data.projectiles.wpn_prj_ace.damage = 24
+tweak_data.projectiles.wpn_prj_ace.magnetism = 0.25
 
 --Throwing Knife--
 tweak_data.projectiles.wpn_prj_target.damage = 24
-tweak_data.projectiles.wpn_prj_target.adjust_z = 0
-
---Javelin--
-tweak_data.projectiles.wpn_prj_jav.damage = 54
-tweak_data.projectiles.wpn_prj_jav.adjust_z = 0
+tweak_data.projectiles.wpn_prj_target.magnetism = 0.25
 
 --Throwing axe--
 tweak_data.projectiles.wpn_prj_hur.damage = 36
-tweak_data.projectiles.wpn_prj_hur.adjust_z = 0
+tweak_data.projectiles.wpn_prj_hur.magnetism = 0.25
+
+--Javelin--
+tweak_data.projectiles.wpn_prj_jav.damage = 54
+tweak_data.projectiles.wpn_prj_jav.magnetism = 0.15
 
 --Balled Snow--
 if tweak_data.projectiles.xmas_snowball then

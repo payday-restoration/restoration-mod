@@ -138,6 +138,7 @@ else
 		end
 
 		self._reload_objects = {}
+		self._next_fire_allowed = self._unit:timer():time()
 	end
 	
 	function NewRaycastWeaponBase:reload_expire_t(is_not_empty)

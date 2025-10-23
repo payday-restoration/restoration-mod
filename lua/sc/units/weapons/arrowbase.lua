@@ -3,6 +3,7 @@ function ArrowBase:_setup_from_tweak_data(arrow_entry)
 	local tweak_entry = tweak_data.projectiles[arrow_entry]
 	self._damage_class_string = tweak_data.projectiles[self._tweak_projectile_entry].bullet_class or "InstantBulletBase"
 	self._damage_class = CoreSerialize.string_to_classtable(self._damage_class_string)
+	self._magnetism = tweak_data.projectiles[self._tweak_projectile_entry].magnetism or 0.15
 	self._mass_look_up_modifier = tweak_entry.mass_look_up_modifier
 	self._damage = tweak_entry.damage or 1
 	self._slot_mask = managers.slot:get_mask("arrow_impact_targets")
@@ -40,7 +41,7 @@ function ArrowBase:update(unit, t, dt)
 
 			local speed = mvector3.normalize(tmp_vel)
 
-			mvector3.step(tmp_vel, tmp_vel, autohit_dir, dt * 0.2)
+			mvector3.step(tmp_vel, tmp_vel, autohit_dir, dt * self._magnetism)
 			body:set_velocity(tmp_vel * speed)
 		end
 	end

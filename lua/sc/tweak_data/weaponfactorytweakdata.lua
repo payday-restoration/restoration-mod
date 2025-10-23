@@ -98,7 +98,8 @@ local barrels = {
 	--barrels.short_b2_stats
 		short_b2_stats = {
 			value = 2,
-			spread = -4,
+			spread = -3,
+			recoil = -2,
 			concealment = 2,
 			falloff_start_mult = 0.85,
 			falloff_end_mult = 0.85,
@@ -108,7 +109,8 @@ local barrels = {
 	--barrels.short_b3_stats
 		short_b3_stats = {
 			value = 3,
-			spread = -6,
+			spread = -4,
+			recoil = -4,
 			concealment = 3,
 			falloff_start_mult = 0.775,
 			falloff_end_mult = 0.775,
@@ -14072,13 +14074,12 @@ end)
 				self.parts.wpn_fps_ass_g3_fg_retro_plastic.stats = {
 					value = 2,
 					spread = -1,
-					recoil = -4,
+					recoil = -2,
 					concealment = 2
 				}
 				self.parts.wpn_fps_ass_g3_fg_retro_plastic.custom_stats = {
 					falloff_start_mult = 0.925,
-					falloff_end_mult = 0.925,
-					ads_speed_mult = 0.975
+					falloff_end_mult = 0.925
 				}
 
 				--Retro Grip

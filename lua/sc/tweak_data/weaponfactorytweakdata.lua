@@ -14059,13 +14059,11 @@ end)
 				self.parts.wpn_fps_ass_g3_fg_retro.stats = {
 					value = 2,
 					spread = -1,
-					recoil = 2,
-					concealment = 1
+					recoil = 2
 				}
 				self.parts.wpn_fps_ass_g3_fg_retro.custom_stats = {
 					falloff_start_mult = 0.925,
-					falloff_end_mult = 0.925,
-					ads_speed_mult = 0.975
+					falloff_end_mult = 0.925
 				}
 
 				--Plastic Foregrip

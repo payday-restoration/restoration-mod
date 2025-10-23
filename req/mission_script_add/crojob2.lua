@@ -29,15 +29,15 @@ local opts_enable_dozer = {
 local optsShield_01 = {
 	spawn_action = "e_sp_clk_up_manhole",
 	enabled = false,
-	enemy = sheilds,
+	enemy = shields,
 	on_executed = {
-		{ id =  400004,  delay = 0, },
+		{id =  400004,  delay = 0, },
 	},
 }
 local optsShield_02 = {
 	spawn_action = "e_sp_clk_up_manhole",
 	enabled = false,
-	enemy = sheilds,
+	enemy = shields,
 	on_executed = {
 		{ id =  400005,  delay = 0, },
 	},
@@ -45,7 +45,7 @@ local optsShield_02 = {
 local optsShield_03 = {
 	spawn_action = "e_sp_clk_up_manhole",
 	enabled = false,
-	enemy = sheilds,
+	enemy = shields,
 	on_executed = {
 		{ id =  400006,  delay = 0, },
 	},
@@ -53,29 +53,14 @@ local optsShield_03 = {
 local optsShield_04 = {
 	spawn_action = "e_sp_clk_up_manhole",
 	enabled = false,
-	enemy = sheilds,
+	enemy = shields,
 	on_executed = {
 		{ id =  400013,  delay = 0, },
 	},
 }
-local opts_enabale_shield_01 = {
+local opts_enabale_shields = {
 	enabled = {death_wish_above and pro_job},
-	elements = { 400007, },
-	toggle = "on",
-}
-local opts_enabale_shield_02 = {
-	enabled = {death_wish_above and pro_job},
-	elements = { 400008, },
-	toggle = "on",
-}
-local opts_enabale_shield_03 = {
-	enabled = {death_wish_above and pro_job},
-	elements = { 400009, },
-	toggle = "on",
-}
-local opts_enabale_shield_04 = {
-	enabled = {death_wish_above and pro_job},
-	elements = { 400016, },
+	elements = { 400004, 400005, 400006, 400007 },
 	toggle = "on",
 }
 return  {
@@ -85,17 +70,14 @@ return  {
 		restoration:gen_so(400002, "dozer_defend_so_1", Vector3(-8800, 4200, 2.500), Rotation(-97, 0, -0), optsDefend_SO),
 		restoration:gen_toggleelement(400003, "enable_dozer", opts_enable_dozer),
 		-- Shield blockade after the gate opens (happens during the ship was moving as well, same when the dozer is activated)
-		restoration:gen_dummy(400007, "boat_blockade_01", Vector3(-7300, 11200, 2.500), Rotation(180, 0, -0), optsShield_01),
-		restoration:gen_dummy(400008, "boat_blockade_02", Vector3(-7100, 11200, 2.500), Rotation(179, 0, -0), optsShield_02),
-		restoration:gen_dummy(400009, "boat_blockade_03", Vector3(-6900, 11200, 2.500), Rotation(180, 0, -0), optsShield_03),
-		restoration:gen_dummy(400016, "boat_blockade_03", Vector3(-6700, 11200, 2.500), Rotation(-180, 0, -0), optsShield_04),
-		restoration:gen_so(400004, "shield_defend_so_1", Vector3(-7200, 7500, 2.500), Rotation( 95, -0, -0), optsDefend_SO),
-		restoration:gen_so(400005, "shield_defend_so_2", Vector3(-7200, 7600, 2.500), Rotation( 96, -0, -0), optsDefend_SO),
-		restoration:gen_so(400006, "shield_defend_so_3", Vector3(-7200, 7400, 2.500), Rotation( 85, -0, -0), optsDefend_SO),
-		restoration:gen_so(400013, "shield_defend_so_4", Vector3(-7208.716, 7300.380 , 2.500), Rotation( 85, -0, -0), optsDefend_SO),
-		restoration:gen_toggleelement(400010, "enable_shield_1", opts_enabale_shield_01),
-		restoration:gen_toggleelement(400011, "enable_shield_2", opts_enabale_shield_02),
-		restoration:gen_toggleelement(400012, "enable_shield_3", opts_enabale_shield_03),
-		restoration:gen_toggleelement(400015, "enable_shield_4", opts_enabale_shield_04),
+		restoration:gen_dummy(400004, "boat_blockade_01", Vector3(-7300, 11200, 2.500), Rotation(180, 0, -0), optsShield_01),
+		restoration:gen_dummy(400005, "boat_blockade_02", Vector3(-7100, 11200, 2.500), Rotation(179, 0, -0), optsShield_02),
+		restoration:gen_dummy(400006, "boat_blockade_03", Vector3(-6900, 11200, 2.500), Rotation(180, 0, -0), optsShield_03),
+		restoration:gen_dummy(400007, "boat_blockade_03", Vector3(-6700, 11200, 2.500), Rotation(-180, 0, -0), optsShield_04),
+		restoration:gen_so(400008, "shield_defend_so_1", Vector3(-7200, 7500, 2.500), Rotation( 95, -0, -0), optsDefend_SO),
+		restoration:gen_so(400009, "shield_defend_so_2", Vector3(-7200, 7600, 2.500), Rotation( 96, -0, -0), optsDefend_SO),
+		restoration:gen_so(400010, "shield_defend_so_3", Vector3(-7200, 7400, 2.500), Rotation( 85, -0, -0), optsDefend_SO),
+		restoration:gen_so(400011, "shield_defend_so_4", Vector3(-7208.716, 7300.380 , 2.500), Rotation( 85, -0, -0), optsDefend_SO),
+		restoration:gen_toggleelement(400012, "enable_shields", opts_enabale_shields),
     },
 }

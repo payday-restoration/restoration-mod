@@ -20,16 +20,25 @@ return {
 		ponr = ponr_value
 	},
 	-- Dozer everywhere system (truck ambush dozer)
-	-- Enabale him when heist goes loud 
+	-- Shield blockade when the gate is open 
+	-- Enabale them when heist goes loud
 	[101540] = {
 		on_executed = {
 			{id = 400003, delay = 0, },
+			{id = 400010, delay = 0, },
+			{id = 400011, delay = 0, },
+			{id = 400012, delay = 0, },
+			{id = 400015, delay = 0, },
 		},
 	},
-	-- Spawn the dozer when the ship starts to move 
+	-- Spawn the dozer and shields when the ship starts to move 
 	[100000] = {
 		on_executed = {
 			{id = 400001, delay = 0, },
+			{id = 400007, delay = 0, },
+			{id = 400008, delay = 0, },
+			{id = 400009, delay = 0, },
+			{id = 400016, delay = 0, },
 		},
 	},
 	[101882] = { -- add reinforce

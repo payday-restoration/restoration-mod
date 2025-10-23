@@ -15,6 +15,11 @@ return {
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},
+	[103285] = {
+		on_executed = {
+			{id = 400018, delay = 15, delay_rand = 10,}
+		},
+	},
 	--Force Vet Cop on DS (cause OMNIA ASU in FBI HQ looks odd)
 	[103085] = vet,
 	[103092] = vet,

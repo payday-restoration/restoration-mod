@@ -195,7 +195,7 @@ local optsDefendDozer_SO = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
-    so_action = "AI_defend"
+    so_action = "AI_sniper"
 }
 local optsCloaker_SO = {
     SO_access = "1024",

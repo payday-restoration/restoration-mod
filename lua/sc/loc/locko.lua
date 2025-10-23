@@ -53,8 +53,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_revive_damage_reductionDescID"] = "해당 스킬의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_first_aid_damage_reductionTitleID"] = "응급 치료",
 				["RestorationModInfo_first_aid_damage_reductionDescID"] = "해당 스킬의 표시를 활성화하거나 비활성화합니다.",
-				--["RestorationModInfo_uppersTitleID"] = "각성제",
-				--["RestorationModInfo_uppersDescID"] = "해당 스킬의 표시를 활성화하거나 비활성화합니다.",				
+				["RestorationModInfo_uppersTitleID"] = "각성제",
+				["RestorationModInfo_uppersDescID"] = "해당 스킬의 표시를 활성화하거나 비활성화합니다.",				
 				["RestorationModInfo_long_dis_reviveTitleID"] = "인스파이어 (쿨다운)",
 				["RestorationModInfo_long_dis_reviveDescID"] = "해당 스킬의 쿨다운 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_hostage_takerTitleID"] = "인질범",
@@ -68,6 +68,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_dmg_multiplier_outnumberedDescID"] = "해당 스킬의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_overkill_damage_multiplierTitleID"] = "오버킬",
 				["RestorationModInfo_overkill_damage_multiplierDescID"] = "해당 스킬의 표시를 활성화하거나 비활성화합니다.",
+				["RestorationModInfo_bullseyeTitleID"] = "불스아이",
+				["RestorationModInfo_bullseyeDescID"] = "해당 스킬의 표시를 활성화하거나 비활성화합니다.",				
 				["RestorationModInfo_bullet_stormTitleID"] = "탄환 폭풍",
 				["RestorationModInfo_bullet_stormDescID"] = "해당 스킬의 표시를 활성화하거나 비활성화합니다.",
 
@@ -5790,7 +5792,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bulletproof--
 				["menu_iron_man_sc"] = "방탄 갑옷",
-				["menu_iron_man_desc_sc"] = "베이식: #{owned}#$basic##\n스나이퍼, 타이탄 도저, 화염, 폭발물이 당신의 방탄복을 파괴하며 체력으로 넘어오는 초과 피해를 막아줍니다.\n\n#{risk}#주의: 자가 피해 또는 클로커의 발차기 및 테이저의 전기 충격으로 직접 입는 체력 피해에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n방탄량이 가득 차 있는 동안, 받는 피해가 최대 방탄량의 #{skill_color}#$skill_value_p1##만큼 감소합니다.\n\n방탄복이 파괴되면 기본 방탄량 #{skill_color}#$skill_value_p4## 당 #{skill_color}#$skill_value_p3##초의 피해 유예 시간을 얻습니다.\n\n방탄복 회복 속도가 #{skill_color}#$skill_value_p2## 빨라집니다. $anarc_disable\n\n",
+				["menu_iron_man_desc_sc"] = "베이식: #{owned}#$basic##\n스나이퍼, 타이탄 도저, 화염, 폭발물이 당신의 방탄복을 파괴하며 체력으로 넘어오는 초과 피해를 막아줍니다.\n\n#{risk}#주의: 자가 피해 또는 클로커의 발차기 및 테이저의 전기 충격으로 직접 입는 체력 피해에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n방탄량이 최소 #{skill_color}#$skill_value_p5## 이상 가득 차 있을때, 받는 피해가 기본 방탄량의 #{skill_color}#$skill_value_p1##만큼 감소합니다.\n\n방탄복이 파괴되면 기본 방탄량 #{skill_color}#$skill_value_p4## 당 #{skill_color}#$skill_value_p3##초의 피해 유예 시간을 얻습니다.\n\n방탄복 회복 속도가 #{skill_color}#$skill_value_p2## 빨라집니다. $anarc_disable\n\n",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--

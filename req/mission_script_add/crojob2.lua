@@ -1,7 +1,7 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local tank_skull = ((difficulty >= 8 and pro_job) and "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3" or "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249")
-local shields = ((difficulty >= 8 and pro_job)    and "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city" or "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
+local shields = ((difficulty >= 8 and pro_job)    and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city")
 local death_wish_above = difficulty >= 7
 
 local optsBulldozer = {
@@ -31,7 +31,7 @@ local optsShield_01 = {
 	enabled = false,
 	enemy = shields,
 	on_executed = {
-		{id =  400004,  delay = 0, },
+		{id =  400008,  delay = 0, },
 	},
 }
 local optsShield_02 = {
@@ -39,7 +39,7 @@ local optsShield_02 = {
 	enabled = false,
 	enemy = shields,
 	on_executed = {
-		{ id =  400005,  delay = 0, },
+		{ id =  400009,  delay = 0, },
 	},
 }
 local optsShield_03 = {
@@ -47,7 +47,7 @@ local optsShield_03 = {
 	enabled = false,
 	enemy = shields,
 	on_executed = {
-		{ id =  400006,  delay = 0, },
+		{ id =  400010,  delay = 0, },
 	},
 }
 local optsShield_04 = {
@@ -55,7 +55,7 @@ local optsShield_04 = {
 	enabled = false,
 	enemy = shields,
 	on_executed = {
-		{ id =  400007,  delay = 0, },
+		{ id =  400011,  delay = 0, },
 	},
 }
 local opts_enabale_shields = {

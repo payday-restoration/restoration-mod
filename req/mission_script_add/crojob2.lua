@@ -55,7 +55,7 @@ local optsShield_04 = {
 	enabled = false,
 	enemy = shields,
 	on_executed = {
-		{ id =  400013,  delay = 0, },
+		{ id =  400007,  delay = 0, },
 	},
 }
 local opts_enabale_shields = {
@@ -73,7 +73,7 @@ return  {
 		restoration:gen_dummy(400004, "boat_blockade_01", Vector3(-7300, 11200, 2.500), Rotation(180, 0, -0), optsShield_01),
 		restoration:gen_dummy(400005, "boat_blockade_02", Vector3(-7100, 11200, 2.500), Rotation(179, 0, -0), optsShield_02),
 		restoration:gen_dummy(400006, "boat_blockade_03", Vector3(-6900, 11200, 2.500), Rotation(180, 0, -0), optsShield_03),
-		restoration:gen_dummy(400007, "boat_blockade_03", Vector3(-6700, 11200, 2.500), Rotation(-180, 0, -0), optsShield_04),
+		restoration:gen_dummy(400007, "boat_blockade_04", Vector3(-6700, 11200, 2.500), Rotation(-180, 0, -0), optsShield_04),
 		restoration:gen_so(400008, "shield_defend_so_1", Vector3(-7200, 7500, 2.500), Rotation( 95, -0, -0), optsDefend_SO),
 		restoration:gen_so(400009, "shield_defend_so_2", Vector3(-7200, 7600, 2.500), Rotation( 96, -0, -0), optsDefend_SO),
 		restoration:gen_so(400010, "shield_defend_so_3", Vector3(-7200, 7400, 2.500), Rotation( 85, -0, -0), optsDefend_SO),

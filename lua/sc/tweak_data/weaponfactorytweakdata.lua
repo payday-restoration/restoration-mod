@@ -23778,7 +23778,7 @@ end)
 									}
 								}
 								self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p2 = {
-									stats = {value = 1, concealment = 2, spread = -4},
+									stats = {value = 1, concealment = 2, spread = -3, recoil = -2},
 									custom_stats = {
 										empire = true,
 										falloff_start_mult = 0.85,
@@ -23787,7 +23787,7 @@ end)
 									}
 								}
 								self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p3 = {
-									stats = {value = 1, concealment = 3, spread = -6},
+									stats = {value = 1, concealment = 3, spread = -4, recoil = -4},
 									custom_stats = {
 										empire = true,
 										falloff_start_mult = 0.775,

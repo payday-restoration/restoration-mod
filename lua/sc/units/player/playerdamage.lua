@@ -624,7 +624,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			end
 
 			self._unit:sound():play("Play_star_hit")
-			if attack_data.damage > 0 
+			if attack_data.damage > 0 then
 				local unit_movement = self._unit:movement()
 				local drain_mult = 0.5
 				if unit_movement then

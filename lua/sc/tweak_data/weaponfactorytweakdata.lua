@@ -24384,7 +24384,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		supported = true,
 		stats = {
 			value = 8,
-			spread = 6,
+			spread = 12,
 			recoil = -12,
 			concealment = -4
 		},
@@ -24396,7 +24396,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		},
 		forbids = {},
 		adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsJiisuri") == 2 and { "wpn_fps_ass_g3sg1_sounds" }) or {},
-		internal_part = true,
 		dlc = "sc"
 	}
 	for k, used_part_id in ipairs(self.wpn_fps_ass_g3.uses_parts) do

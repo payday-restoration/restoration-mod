@@ -2143,6 +2143,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wskn_resmod_2019"] = "Warfare Gold",
 		["bm_wskn_resmod_llenn"] = "Pink Devil",
 		["bm_wskn_resmod_llenn_desc"] = "This isn't exactly what I had in mind, but pink is pink.",
+		["bm_wskn_resmod_shigu"] = "Signature Green",
 		["bm_wskn_resmod_sugarhoneyicetea"] = "Zebra Gold",
 		["bm_wskn_resmod_blackzebra"] = "Black Zebra Gold",
 		["bm_wskn_resmod_charlotte"] = "Web Gold",
@@ -2152,6 +2153,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["menu_weapon_color_index_11"] = "Metal + Sights",
 		["menu_weapon_color_index_12"] = "Metal + Magazine",
 		["menu_weapon_color_index_13"] = "Metal + Sights + Magazine",
+		["menu_weapon_color_index_14"] = "Organic - Lower Reciever",
 
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",
@@ -3095,7 +3097,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_g3_sg1_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
 				["bm_wp_g3_m_psg"] = "Präzision Magazine",
 				["bm_wp_upg_i_g3sg1"] = "Präzision Internals",
-				["bm_wp_upg_i_g3sg1_desc"] = "Loads high-powered rounds that #{skill_color}#grant full armor penetration and shield piercing capabilites.## Parts are reinforced with heavier materials #{important_1}#reducing rate of fire## and locking your weapon to #{risk}#semi-auto##.",
+				["bm_wp_upg_i_g3sg1_desc"] = "Loads high-powered rounds in tandem with a heavy barrel that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Parts are reinforced with heavier materials #{important_1}#reducing rate of fire## and locking your weapon to #{risk}#semi-auto##.",
 				--KS12
 				["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				["bm_shak12_sc_oden_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",

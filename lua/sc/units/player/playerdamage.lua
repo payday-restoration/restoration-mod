@@ -638,7 +638,7 @@ function PlayerDamage:damage_bullet(attack_data)
 						drain_mult = 1
 					end
 				end
-				self._unit:movement():subtract_stamina(6.75 * drain_mult)
+				self._unit:movement():subtract_stamina(8 * drain_mult)
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
 				self._next_allowed_dmg_t = Application:digest_value(t + math.max(grace_bonus, self._dmg_interval), true)

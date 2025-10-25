@@ -2039,7 +2039,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wskn_resmod_blackgold"] = "블랙 골드",
 		["bm_wskn_resmod_cleangold"] = "클린 골드",
 		["bm_wskn_resmod_imissfauna"] = "세레스 골드",
-		["bm_wskn_resmod_imissfauna_desc"] = "대자연은 널 절대로 배신하지 않을거야... 맞지?",
+		["bm_wskn_resmod_imissfauna_desc"] = "대자연은 널 절대로 배신하지 않을거야... 그렇지?",
 		["bm_wskn_resmod_uuuuu"] = "고딕 세레스 골드",
 		["bm_wskn_resmod_uuuuu_desc"] = "자연은 어둡기도 하고 아름답기도 하지?",
 		["bm_wskn_resmod_ownthiscity"] = "플뢰르 골드",
@@ -2071,6 +2071,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wskn_resmod_2019"] = "워페어 골드",
 		["bm_wskn_resmod_llenn"] = "핑크 데블",
 		["bm_wskn_resmod_llenn_desc"] = "이건 내가 생각한 것이 정확히는 아니지만 분홍색은 분홍색이야.",
+		["bm_wskn_resmod_shigu"] = "시그니처 그린",
 		["bm_wskn_resmod_sugarhoneyicetea"] = "지브라 골드",
 		["bm_wskn_resmod_blackzebra"] = "블랙 지브라 골드",
 		["bm_wskn_resmod_charlotte"] = "웹 골드",
@@ -2080,6 +2081,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["menu_weapon_color_index_11"] = "메탈 + 조준기",
 		["menu_weapon_color_index_12"] = "메탈 + 탄창",
 		["menu_weapon_color_index_13"] = "메탈 + 조준기 + 탄창",
+		["menu_weapon_color_index_14"] = "유기적 - 하부 리시버",
 
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "무기 판매 ($price)",
@@ -3025,7 +3027,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_g3_sg1_sc_desc"] = "Compact-5 및 Brenner-21의 언니 역할을 하는 이 소총의 명중률은 저격소총의 명중률과 맞먹습니다.\n\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",
 				["bm_wp_g3_m_psg"] = "프레지션 탄창",
 				["bm_wp_upg_i_g3sg1"] = "프레지션 하부",
-				["bm_wp_upg_i_g3sg1_desc"] = "#{skill_color}#완전한 방탄복 관통력 및 방패 관통 능력을 부여하는## 고화력 탄을 장전합니다. 부품은 더 무거운 소재로 강화되어 #{important_1}#발사 속도가 감소하고## #{risk}#반자동##으로 고정됩니다.",
+				["bm_wp_upg_i_g3sg1_desc"] = "중총열로 교체하고 #{skill_color}#완전한 방탄복 관통력 및 방패 관통 능력을 부여하는## 고화력 탄을 장전합니다. 부품은 더 무거운 소재로 강화되어 #{important_1}#발사 속도가 감소하고## #{risk}#반자동##으로 고정됩니다.",
 				--KS12
 				["bm_shak12_sc_desc"] = "매우 강력한 12.7x55mm 탄을 사용하는 불펍 디자인의 전투 소총입니다. 최고의 대학살이 매우 작은 패키지에 담겨있죠.\n\n#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가하고 적을 관통할 수 있습니다.##",
 				["bm_shak12_sc_oden_desc"] = "매우 강력한 12.7x55mm 탄을 사용하는 불펍 디자인의 전투 소총입니다. 최고의 대학살이 매우 작은 패키지에 담겨있죠.\n\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",

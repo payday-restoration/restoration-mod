@@ -182,7 +182,7 @@ local opts_surprise_dozer = {
 	},
 }
 local opts_enable_dozer = {
-	enabled = (death_wish_above  or pro_job),
+	enabled = (enabled_ambush  or pro_job),
 	elements = { 400020, },
 	toggle = "on",
 }

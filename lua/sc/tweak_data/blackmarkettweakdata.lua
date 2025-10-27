@@ -1888,8 +1888,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_ace.throw_allowed_expire_t = 0.05
 	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.625
 	self.projectiles.wpn_prj_ace.expire_t = 0.65
-	self.projectiles.wpn_prj_ace.max_amount = 9
-	self.projectiles.wpn_prj_ace.base_pickup_chance = 0.12
+	self.projectiles.wpn_prj_ace.max_amount = 12
+	self.projectiles.wpn_prj_ace.base_pickup_chance = 0.15
 	self.projectiles.wpn_prj_ace.count_as_melee = true
 	--Throwing Knife
 	self.projectiles.wpn_prj_target.throw_allowed_expire_t = 0.12
@@ -3727,7 +3727,7 @@ function WeaponColorTemplates.setup_weapon_color_templates(tweak_data)
 		pattern_gradient = "gradient_barrel",
 		base_gradient = "base_lower_reciever"
 	}
-	
+
 	weapon_color_templates.color_skin.types.upper_reciever = {
 		pattern = "pattern_barrel",
 		pattern_gradient = "gradient_barrel",

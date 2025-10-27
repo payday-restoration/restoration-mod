@@ -4712,8 +4712,10 @@ function PlayerStandard:_find_pickups(t)
 	local pickups = World:find_units_quick("sphere", self._unit:movement():m_pos(), self._pickup_area, self._slotmask_pickups)
 	local grenade_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
 	local may_find_grenade = not grenade_tweak.base_cooldown or grenade_tweak.pickup_cooldown_t ~= nil --and managers.player:has_category_upgrade("player", "regain_throwable_from_ammo")
-
 	for _, pickup in ipairs(pickups) do
+		
+		may_find_grenade = alive(pickup) and pickup:pickup()._ammo_box --blocks retrievables from rolling additional pickups for themselves
+
 		if pickup:pickup() and pickup:pickup():pickup(self._unit) then
 			if may_find_grenade then
 				managers.player:regain_throwable_from_ammo() --Replace vanilla coroutine

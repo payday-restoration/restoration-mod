@@ -10,6 +10,7 @@ function ArrowBase:_setup_from_tweak_data(arrow_entry)
 	self._slot_mask = self._slot_mask - World:make_slot_mask(16)
 end
 
+
 local tmp_vel = Vector3()
 
 function ArrowBase:update(unit, t, dt)
@@ -43,6 +44,16 @@ function ArrowBase:update(unit, t, dt)
 
 			mvector3.step(tmp_vel, tmp_vel, autohit_dir, dt * self._magnetism)
 			body:set_velocity(tmp_vel * speed)
+
+			if tweak_data.projectiles[self._tweak_projectile_entry].push_at_body_index ~= 0 then
+				local body_2 = self._unit:body(tweak_data.projectiles[self._tweak_projectile_entry].push_at_body_index)
+				mvector3.set(tmp_vel, body_2:velocity())
+
+				local speed = mvector3.normalize(tmp_vel)
+
+				mvector3.step(tmp_vel, tmp_vel, autohit_dir, dt * self._magnetism)
+				body_2:set_velocity(tmp_vel * speed)
+			end
 		end
 	end
 

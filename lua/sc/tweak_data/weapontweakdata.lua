@@ -5323,14 +5323,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "handcannon"
 	end
 
-	recat = { "saiga", "aa12", "benelli", "ultima", "spas12", "striker", "rota", "x_rota", "basset", "x_basset", "sko12", "x_sko12" }
+	recat = { "judge", "x_judge", "saiga", "aa12", "benelli", "ultima", "spas12", "striker", "rota", "x_rota", "basset", "x_basset", "sko12", "x_sko12" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_shot" }
 		self[ wep_id ].damage_type = "shotgun"
 		self[ wep_id ].damage_type_single_ray = "sniper"
 	end
 
-	recat = { "judge", "x_judge", "m1897", "m590", "r870", "ksg", "m37", "serbu", "supernova", "x_type54_underbarrel", "type54_underbarrel" }
+	recat = { "m1897", "m590", "r870", "ksg", "m37", "serbu", "supernova", "x_type54_underbarrel", "type54_underbarrel" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_shot" }
 		self[ wep_id ].damage_type = "shotgun_heavy"
@@ -7462,11 +7462,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Model 54 Underbarrel
 						self.type54_underbarrel.categories = {
 							"shotgun",
-							"shotgun_pistol"
+							"shotgun_heavy_pistol"
 						}
-						self.type54_underbarrel.rays = 12
+						self.type54_underbarrel.rays = 8
 						self.type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.type54_underbarrel.AMMO_MAX = 12
+						self.type54_underbarrel.AMMO_MAX = 16
 						self.type54_underbarrel.has_underbarrel = true
 						self.type54_underbarrel.CLIP_AMMO_MAX = 1
 						self.type54_underbarrel.fire_mode_data = {}
@@ -7487,7 +7487,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.125
 						}
 						self.type54_underbarrel.stats = {
-							damage = 90,
+							damage = 180,
 							spread = 26,
 							recoil = 77,
 							spread_moving = 6,
@@ -7501,9 +7501,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.type54_underbarrel.stats_modifiers = nil
-						self.type54_underbarrel.armor_piercing_chance = 1
-						self.type54_underbarrel.ene_hs_mult = 1
-						self.type54_underbarrel.hs_mult = 3
 						self.type54_underbarrel.panic_suppression_chance = 0.05
 						self.type54_underbarrel.ignore_crit_damage = nil
 						self.type54_underbarrel.ignore_damage_multipliers = nil
@@ -7514,11 +7511,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_type54_underbarrel.categories = {
 							"akimbo",
 							"shotgun",
-							"shotgun_pistol"
+							"shotgun_heavy_pistol"
 						}
-						self.x_type54_underbarrel.rays = 12
+						self.x_type54_underbarrel.rays = 8
 						self.x_type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.x_type54_underbarrel.AMMO_MAX = 24
+						self.x_type54_underbarrel.AMMO_MAX = 32
 						self.x_type54_underbarrel.has_underbarrel = true
 						self.x_type54_underbarrel.BURST_FIRE = {
 							count = 2
@@ -7541,7 +7538,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.125
 						}
 						self.x_type54_underbarrel.stats = {
-							damage = 90,
+							damage = 180,
 							spread = 16,
 							recoil = 67,
 							spread_moving = 6,
@@ -7555,9 +7552,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.x_type54_underbarrel.stats_modifiers = nil
-						self.x_type54_underbarrel.armor_piercing_chance = 1
-						self.x_type54_underbarrel.ene_hs_mult = 1
-						self.x_type54_underbarrel.hs_mult = 3
 						self.x_type54_underbarrel.panic_suppression_chance = 0.05
 						self.x_type54_underbarrel.use_stance = "x_type54"
 						self.x_type54_underbarrel.use_hipfire_stance = "x_type54"
@@ -7579,7 +7573,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.shrew.kick_pattern = {
 							{0, self.stat_info.kick_tables.right_kick},
 							{4, self.stat_info.kick_tables.moderate_kick},
-							{6, self.stat_info.kick_tables.moderate_right_kick}
+							{7, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.shrew.supported = true
 						self.shrew.ads_speed = 0.140
@@ -7617,7 +7611,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_shrew.kick_pattern = {
 							{0, self.stat_info.kick_tables.right_kick},
 							{4, self.stat_info.kick_tables.moderate_kick},
-							{6, self.stat_info.kick_tables.moderate_right_kick}
+							{7, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.x_shrew.supported = true
 						self.x_shrew.ads_speed = 0.140
@@ -12141,7 +12135,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fal.panic_suppression_chance = 0.05
 						self.fal.can_shoot_through_enemy = false
 						self.fal.lock_slide_fire = true
-						self.fal.reload_speed_multiplier = 1.13
+						self.fal.reload_speed_multiplier = 1.1
 						self.fal.timers.reload_empty = 3
 						self.fal.timers.reload_exit_empty = 1.25
 						self.fal.timers.reload_exit_not_empty = 0.75
@@ -12358,7 +12352,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g3.stats = {
 							damage = 60,
 							spread = 86,
-							recoil = 51,
+							recoil = 53,
 							spread_moving = 7,
 							zoom = 1,
 							concealment = 23,
@@ -12395,7 +12389,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 								self.g3.timers.reload_empty = 1.65
 								self.g3.timers.reload_exit_empty = 0.82
 								self.g3.timers.reload_not_empty = 1.22
-								self.g3.timers.reload_exit_not_empty = 0.
+								self.g3.timers.reload_exit_not_empty = 0.6
 								self.g3.reload_speed_multiplier = self.g3.timers.reload_empty / empty_timer
 							elseif BeardLib.Utils:FindMod("JustAnotherG3 Reload") then  --Masavik's G3 Reload Animations (The original version; NOT the vanilla timer version)
 								self.g3.timers.reload_empty = 2.67
@@ -13537,24 +13531,26 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.saiga.fire_mode_data.fire_rate = 0.1333333
 						self.saiga.shake.fire_multiplier = 1
 						self.saiga.shake.fire_steelsight_multiplier = -1
-						self.saiga.kick = self.stat_info.kick_tables.right_kick
+						self.saiga.kick = self.stat_info.kick_tables.harsh_kick
 						self.saiga.kick_pattern = {
-							{0, self.stat_info.kick_tables.left_kick},
-							{2, self.stat_info.kick_tables.right_recoil},
-							{3, self.stat_info.kick_tables.right_kick},
-							{5, self.stat_info.kick_tables.right_recoil}
+							{0, self.stat_info.kick_tables.horizontal_recoil},
+							{3, self.stat_info.kick_tables.right_recoil},
+							{5, self.stat_info.kick_tables.moderate_right_kick},
+							{7, self.stat_info.kick_tables.left_recoil},
+							{9, self.stat_info.kick_tables.harsh_kick},
+							{13, self.stat_info.kick_tables.left_recoil}
 						}
 						self.saiga.supported = true
 						self.saiga.ads_speed = 0.340
 						self.saiga.damage_falloff = {
-							start_dist = 500,
+							start_dist = 400,
 							end_dist = 2000,
 							min_mult = 0.15
 						}
 						self.saiga.stats = {
 							damage = 120,
 							spread = 19,
-							recoil = 41,
+							recoil = 31,
 							spread_moving = 7,
 							zoom = 1,
 							concealment = 26,
@@ -13597,7 +13593,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.sko12.stats = {
 							damage = 120,
-							spread = 31,
+							spread = 28,
 							recoil = 53,
 							spread_moving = 7,
 							zoom = 1,
@@ -13618,6 +13614,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sko12.timers.reload_exit_not_empty = 0.8
 
 					--Steakout (AA-12)
+						self.aa12.categories = {
+							"shotgun",
+							"shotgun_light",
+							"shotgun_light_semi"
+						}
 						self.aa12.rays = 8
 						self.aa12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.aa12.AMMO_MAX = 60
@@ -13644,8 +13645,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.aa12.stats = {
 							damage = 120,
-							spread = 31,
-							recoil = 65,
+							spread = 36,
+							recoil = 61,
 							spread_moving = 7,
 							zoom = 1,
 							concealment = 24,
@@ -13658,7 +13659,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.aa12.stats_modifiers = nil
 						self.aa12.panic_suppression_chance = 0.05
-						self.aa12.reload_speed_multiplier = 1.2
+						self.aa12.reload_speed_multiplier = 1.26
 						self.aa12.sounds.spin_start = "wp_mac10_lever_pull"
 						self.aa12.spin_up_shoot = true
 						self.aa12.spin_up_t = 0.06
@@ -13691,7 +13692,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.ultima.stats = {
 							damage = 120,
-							spread = 21,
+							spread = 33,
 							recoil = 43,
 							spread_moving = 7,
 							zoom = 1,
@@ -13748,7 +13749,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.spas12.stats = {
 							damage = 120,
-							spread = 30,
+							spread = 38,
 							recoil = 53,
 							spread_moving = 7,
 							zoom = 1,
@@ -13794,7 +13795,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.benelli.stats = {
 							damage = 120,
-							spread = 35,
+							spread = 45,
 							recoil = 47,
 							spread_moving = 7,
 							zoom = 1,
@@ -13824,35 +13825,36 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.basset.CLIP_AMMO_MAX = 5
 						self.basset.AMMO_MAX = 30
 						self.basset.fire_mode_data.fire_rate = 0.1333333
-						self.basset.kick = self.stat_info.kick_tables.moderate_left_kick
+						self.basset.kick = self.stat_info.kick_tables.random_left_recoil
 						self.basset.kick_pattern = {
-							{0, self.stat_info.kick_tables.right_kick},
-							{3, self.stat_info.kick_tables.pattern_l2},
-							{4, self.stat_info.kick_tables.left_kick},
-							{6, self.stat_info.kick_tables.moderate_kick},
-							{7, self.stat_info.kick_tables.moderate_left_kick}
+							{0, self.stat_info.kick_tables.right_recoil},
+							{3, self.stat_info.kick_tables.horizontal_recoil},
+							{5, self.stat_info.kick_tables.moderate_left_kick},
+							{7, self.stat_info.kick_tables.left_recoil},
+							{9, self.stat_info.kick_tables.harsh_kick},
+							{13, self.stat_info.kick_tables.right_recoil}
 						}
 						self.basset.panic_suppression_chance = 0.05
 						self.basset.supported = true
 						self.basset.ads_speed = 0.340
 						self.basset.damage_falloff = {
 							start_dist = 400,
-							end_dist = 1800,
+							end_dist = 2000,
 							min_mult = 0.15
 						}
 						self.basset.stats = {
-							zoom = 1,
-							total_ammo_mod = 400,
 							damage = 120,
-							alert_size = 2,
-							spread = 19,
-							spread_moving = 8,
-							recoil = 39,
-							value = 1,
-							extra_ammo = 101,
-							reload = 20,
+							spread = 22,
+							recoil = 25,
+							spread_moving = 7,
+							zoom = 1,
+							concealment = 26,
 							suppression = 9,
-							concealment = 26
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 20
 						}
 						self.basset.stats_modifiers = nil
 						self.basset.reload_speed_multiplier = 0.925
@@ -13870,33 +13872,34 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_basset.fire_mode_data.fire_rate = 0.1333333
 						self.x_basset.kick = self.stat_info.kick_tables.random_left_recoil
 						self.x_basset.kick_pattern = {
-							{0, self.stat_info.kick_tables.right_kick},
-							{2, self.stat_info.kick_tables.pattern_l2},
-							{3, self.stat_info.kick_tables.left_kick},
-							{5, self.stat_info.kick_tables.random_left_recoil},
-							{8, self.stat_info.kick_tables.random_recoil}
+							{0, self.stat_info.kick_tables.right_recoil},
+							{3, self.stat_info.kick_tables.horizontal_recoil},
+							{5, self.stat_info.kick_tables.moderate_left_kick},
+							{7, self.stat_info.kick_tables.left_recoil},
+							{9, self.stat_info.kick_tables.harsh_kick},
+							{13, self.stat_info.kick_tables.right_recoil}
 						}
 						self.x_basset.panic_suppression_chance = 0.05
 						self.x_basset.supported = true
 						self.x_basset.ads_speed = 0.480
 						self.x_basset.damage_falloff = {
 							start_dist = 200,
-							end_dist = 1200,
+							end_dist = 1500,
 							min_mult = 0.15
 						}
 						self.x_basset.stats = {
-							zoom = 1,
-							total_ammo_mod = 400,
 							damage = 120,
-							alert_size = 2,
-							spread = 3,
-							spread_moving = 8,
-							recoil = 19,
-							value = 1,
-							extra_ammo = 101,
-							reload = 20,
+							spread = 12,
+							recoil = 15,
+							spread_moving = 7,
+							zoom = 1,
+							concealment = 26,
 							suppression = 9,
-							concealment = 21
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 20
 						}
 						self.x_basset.stats_modifiers = nil
 						self.x_basset.reload_speed_multiplier = 0.7
@@ -13906,6 +13909,107 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_basset.timers.reload_empty = 2.92
 						self.x_basset.timers.reload_exit_empty = 1.18
 						self.x_basset.sounds.fire_single = "basset_x_fire_single"
+
+					--Judge
+						self.judge.categories = {
+							"shotgun",
+							"shotgun_light_pistol"
+						}
+						self.judge.fire_mode_data.fire_rate = 0.2
+						self.judge.rays = 6
+						self.judge.kick = self.stat_info.kick_tables.left_kick
+						self.judge.kick_pattern = {
+							{0, self.stat_info.kick_tables.moderate_right_kick},
+							{3, self.stat_info.kick_tables.vertical_kick}
+						}
+						self.judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+						self.judge.AMMO_MAX = 30
+						self.judge.supported = true
+						self.judge.ads_speed = 0.200
+						self.judge.damage_falloff = {
+							start_dist = 700,
+							end_dist = 1900,
+							min_mult = 0.15
+						}
+						self.judge.stats = {
+							damage = 120,
+							spread = 31,
+							recoil = 61,
+							spread_moving = 5,
+							zoom = 1,
+							concealment = 28,
+							suppression = 7,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 20
+						}
+						self.judge.stats_modifiers = nil
+						self.judge.reload_speed_multiplier = 0.9
+						self.judge.timers.reload_empty = 1.6
+						self.judge.timers.reload_exit_empty = 1.1
+						self.judge.timers.reload_not_empty = 1.6
+						self.judge.timers.reload_exit_not_empty = 1.1
+						self.judge.panic_suppression_chance = 0.05
+					--Akimbo
+						self.x_judge.desc_id = "bm_x_judge_sc_desc"
+						self.x_judge.has_description = true
+						self.x_judge.categories = {
+							"akimbo",
+							"shotgun",
+							"shotgun_light_pistol"
+						}
+						self.x_judge.fire_mode_data.fire_rate = 0.2
+						self.x_judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+						self.x_judge.rays = 6
+						self.x_judge.BURST_FIRE = {
+							count = 2,
+							delay = 0.15,
+							rof_mult = 4,
+							recoil_mult = 0.25,
+							last_recoil_mult = 1.05,
+						}
+						self.x_judge.AMMO_MAX = 40
+						self.x_judge.supported = true
+						self.x_judge.ads_speed = 0.200
+						self.x_judge.damage_falloff = {
+							start_dist = 700,
+							end_dist = 1900,
+							min_mult = 0.15
+						}
+						self.x_judge.stats = {
+							damage = 120,
+							spread = 23,
+							recoil = 51,
+							spread_moving = 5,
+							zoom = 1,
+							concealment = 28,
+							suppression = 7,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 20
+						}
+						self.x_judge.stats_modifiers = nil
+						self.x_judge.panic_suppression_chance = 0.05
+						self.x_judge.kick = self.stat_info.kick_tables.vertical_kick
+						self.x_judge.kick_pattern = {
+							{0, self.stat_info.kick_tables.moderate_right_kick},
+							{3, self.stat_info.kick_tables.vertical_kick}
+						}
+						self.x_judge.reload_speed_multiplier = 0.9
+						self.x_judge.weapon_hold = "jowi_pistol"
+						self.x_judge.animations.reload_name_id = "x_judge"
+						self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
+						self.x_judge.animations.second_gun_versions.reload = "reload"
+						self.x_judge.sounds.fire = "judge_fire"
+						self.x_judge.sounds.fire_single = "judge_fire"
+						self.x_judge.timers.reload_empty = 3.1
+						self.x_judge.timers.reload_not_empty = 3.1
+						self.x_judge.timers.reload_exit_empty = 1.3
+						self.x_judge.timers.reload_exit_not_empty = 1.3
 
 					--Street Sweeper
 						self.striker.rays = 8
@@ -13924,13 +14028,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.striker.supported = true
 						self.striker.ads_speed = 0.300
 						self.striker.damage_falloff = {
-							start_dist = 600,
+							start_dist = 800,
 							end_dist = 2600,
 							min_mult = 0.15
 						}
 						self.striker.stats = {
 							damage = 120,
-							spread = 22,
+							spread = 33,
 							recoil = 41,
 							spread_moving = 7,
 							zoom = 1,
@@ -13962,13 +14066,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rota.supported = true
 						self.rota.ads_speed = 0.300
 						self.rota.damage_falloff = {
-							start_dist = 800,
+							start_dist = 900,
 							end_dist = 3000,
 							min_mult = 0.15
 						}
 						self.rota.stats = {
 							damage = 120,
-							spread = 26,
+							spread = 36,
 							recoil = 39,
 							spread_moving = 7,
 							zoom = 1,
@@ -13981,6 +14085,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.rota.stats_modifiers = nil
+						self.rota.reload_speed_multiplier = 1.13
 						self.rota.timers.reload_exit_empty = 0.5
 						self.rota.timers.reload_exit_not_empty = 0.5
 
@@ -14317,107 +14422,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m37.stats_modifiers = nil
 						self.m37.timers.shotgun_reload_exit_not_empty = 0.9
 						self.m37.timers.shotgun_reload_exit_empty = 0.9
-
-					--Judge
-						self.judge.categories = {
-							"shotgun",
-							"shotgun_pistol"
-						}
-						self.judge.fire_mode_data.fire_rate = 0.2
-						self.judge.rays = 6
-						self.judge.kick = self.stat_info.kick_tables.left_kick
-						self.judge.kick_pattern = {
-							{0, self.stat_info.kick_tables.moderate_right_kick},
-							{3, self.stat_info.kick_tables.vertical_kick}
-						}
-						self.judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.judge.AMMO_MAX = 20
-						self.judge.supported = true
-						self.judge.ads_speed = 0.200
-						self.judge.damage_falloff = {
-							start_dist = 700,
-							end_dist = 1900,
-							min_mult = 0.1333
-						}
-						self.judge.stats = {
-							damage = 180,
-							spread = 53,
-							recoil = 61,
-							spread_moving = 5,
-							zoom = 1,
-							concealment = 28,
-							suppression = 7,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 400,
-							value = 1,
-							reload = 20
-						}
-						self.judge.stats_modifiers = nil
-						self.judge.reload_speed_multiplier = 0.9
-						self.judge.timers.reload_empty = 1.6
-						self.judge.timers.reload_exit_empty = 1.1
-						self.judge.timers.reload_not_empty = 1.6
-						self.judge.timers.reload_exit_not_empty = 1.1
-						self.judge.panic_suppression_chance = 0.05
-					--Akimbo
-						self.x_judge.desc_id = "bm_x_judge_sc_desc"
-						self.x_judge.has_description = true
-						self.x_judge.categories = {
-							"akimbo",
-							"shotgun",
-							"shotgun_pistol"
-						}
-						self.x_judge.fire_mode_data.fire_rate = 0.2
-						self.x_judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.x_judge.rays = 6
-						self.x_judge.BURST_FIRE = {
-							count = 2,
-							delay = 0.15,
-							rof_mult = 4,
-							recoil_mult = 0.25,
-							last_recoil_mult = 1.05,
-						}
-						self.x_judge.AMMO_MAX = 40
-						self.x_judge.supported = true
-						self.x_judge.ads_speed = 0.200
-						self.x_judge.damage_falloff = {
-							start_dist = 700,
-							end_dist = 1900,
-							min_mult = 0.1333
-						}
-						self.x_judge.stats = {
-							damage = 180,
-							spread = 43,
-							recoil = 51,
-							spread_moving = 5,
-							zoom = 1,
-							concealment = 28,
-							suppression = 7,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 400,
-							value = 1,
-							reload = 20
-						}
-						self.x_judge.stats_modifiers = nil
-						self.x_judge.panic_suppression_chance = 0.05
-						self.x_judge.kick = self.stat_info.kick_tables.vertical_kick
-						self.x_judge.kick_pattern = {
-							{0, self.stat_info.kick_tables.moderate_right_kick},
-							{3, self.stat_info.kick_tables.vertical_kick}
-						}
-						self.x_judge.reload_speed_multiplier = 0.9
-						self.x_judge.weapon_hold = "jowi_pistol"
-						self.x_judge.animations.reload_name_id = "x_judge"
-						self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
-						self.x_judge.animations.second_gun_versions.reload = "reload"
-						self.x_judge.sounds.fire = "judge_fire"
-						self.x_judge.sounds.fire_single = "judge_fire"
-						self.x_judge.timers.reload_empty = 3.1
-						self.x_judge.timers.reload_not_empty = 3.1
-						self.x_judge.timers.reload_exit_empty = 1.3
-						self.x_judge.timers.reload_exit_not_empty = 1.3
 
 			--[[     BREAK-ACTION SHOTGUNS     ]]
 
@@ -24911,6 +24915,63 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.scotia then
+				self.scotia.categories = { "assault_rifle" }
+				self.scotia.recategorize = { "light_ar" }
+				self.scotia.damage_type = "assault_rifle"
+				self.scotia.has_description = true
+				self.scotia.tactical_reload = 1
+				self.scotia.CLIP_AMMO_MAX = 32
+				self.scotia.AMMO_MAX = 150
+				self.scotia.burst = nil
+				self.scotia.fire_mode_data.burst_cooldown = nil
+				self.scotia.BURST_COUNT = nil
+				self.scotia.fire_mode_data.fire_rate = 0.096
+				self.scotia.CAN_TOGGLE_FIREMODE = false
+				self.scotia.FIRE_MODE = "single"
+				self.scotia.BURST_FIRE_DEFAULT = true
+				self.scotia.BURST_FIRE = {
+					count = 4,
+					no_anim = true,
+					burst_default = true,
+					delay = 0.112,
+					rof_mult = 2,
+					recoil_mult = 0.33,
+					last_recoil_mult = 1.1
+				}
+				self.scotia.kick = {}
+				self.scotia.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.scotia.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_recoil},
+					{12, self.stat_info.kick_tables.even_recoil},
+					{21, self.stat_info.kick_tables.right_recoil},
+					{33, self.stat_info.kick_tables.horizontal_recoil}
+				}
+				self.scotia.supported = true
+				self.scotia.ads_speed = 0.340
+				self.scotia.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 7200,
+					min_mult = 0.3333
+				}
+				self.scotia.stats = {
+					damage = 24,
+					spread = 82,
+					recoil = 71,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.scotia.stats_modifiers = nil
+				self.scotia.panic_suppression_chance = 0.05
+			end
+
 			if self.baltic then
 				self.baltic.charge_data = {
 					max_t = 0.5,
@@ -25012,7 +25073,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.c8sfw_underbarrel.timers.reload_empty = 2.2
 			end
 
-			if self.g11k2 then --RJC9000 and PlayBONK's port of 3arc's absolute sin of a G11
+			if self.g11k2 then
 				self.g11k2.categories = { "assault_rifle" }
 				self.g11k2.recategorize = { "heavy_ar" }
 				self.g11k2.damage_type = "assault_rifle"
@@ -27362,7 +27423,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.geasy9.timers.reload_exit_not_empty = 0.72
 			end
 
-			if self.uncle12 then --BO6 ASG-89
+			if self.uncle12 then --BO6 ASG-89 (USAS-12)
 				self.uncle12.categories = { "shotgun" }
 				self.uncle12.recategorize = { "light_shot" }
 				self.uncle12.damage_type = "shotgun"
@@ -30291,7 +30352,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.toz81 then
 				self.toz81.recategorize = { "heavy_shot" }
-				self.toz81.categories = { "shotgun", "shotgun_pistol" }
+				self.toz81.categories = { "shotgun", "shotgun_heavy_pistol" }
 				self.toz81.damage_type = "shotgun"
 				self.toz81.damage_type_single_ray = "sniper"
 				self.toz81.fire_mode_data.fire_rate = 0.15
@@ -30338,7 +30399,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.toz81.timers.reload_exit_not_empty = 1.15
 
 				self.x_toz81.recategorize = { "heavy_shot" }
-				self.x_toz81.categories = { "akimbo", "shotgun", "shotgun_pistol" }
+				self.x_toz81.categories = { "akimbo", "shotgun", "shotgun_heavy_pistol" }
 				self.x_toz81.damage_type = "shotgun"
 				self.x_toz81.damage_type_single_ray = "sniper"
 				self.x_toz81.fire_mode_data.fire_rate = 0.15
@@ -33984,7 +34045,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		if self.ashot then
 			self.ashot.recategorize = { "break_shot" }
-			self.ashot.categories = { "shotgun", "shotgun_pistol" }
+			self.ashot.categories = { "shotgun", "shotgun_break_pistol" }
 			self.ashot.damage_type = "shotgun_heavy"
 			self.ashot.damage_type_single_ray = "anti_materiel"
 			self.ashot.CLIP_AMMO_MAX = 1

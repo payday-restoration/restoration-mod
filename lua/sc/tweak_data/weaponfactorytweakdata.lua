@@ -1485,7 +1485,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					can_shoot_through_shield = true,
 					ap_desc = "bm_ap_armor_75_weapon_sc_desc",
-					falloff_start_mult = 1.2,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = 1.4,
 					ads_speed_mult = 1.025
 				}
@@ -1517,7 +1517,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					can_shoot_through_shield = true,
 					ap_desc = "bm_ap_armor_75_weapon_sc_desc",
-					falloff_start_mult = 1.2,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = 1.4,
 					ads_speed_mult = 1.025
 				}
@@ -1551,7 +1551,7 @@ local grips = {
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_weapon_sc_desc",
-					falloff_start_mult = 1.2,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = 1.4,
 					ads_speed_mult = 1.025
 				}
@@ -1583,7 +1583,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					can_shoot_through_titan_shield = true,
 					ap_desc = "bm_heavy_ap_no_mult_weapon_sc_desc",
-					falloff_start_mult = 1.2,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = 1.4,
 					ads_speed_mult = 1.025
 				}
@@ -10278,6 +10278,9 @@ end)
 					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_northtac")
 					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_i_krieg")
+					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_schmidt")
+					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
+					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_box")
 
 					self.wpn_fps_ass_s552_npc.uses_parts = deep_clone(self.wpn_fps_ass_s552.uses_parts)
 
@@ -14027,8 +14030,8 @@ end)
 				--Assault Kit
 				self.parts.wpn_fps_ass_g3_b_short.pcs = {}
 				self.parts.wpn_fps_ass_g3_b_short.supported = true
-				self.parts.wpn_fps_ass_g3_b_short.stats = deep_clone(barrels.short_b2_stats)
-				self.parts.wpn_fps_ass_g3_b_short.custom_stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_ass_g3_b_short.stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_ass_g3_b_short.custom_stats = deep_clone(barrels.short_b3_stats)
 
 				--Precision Foregrip
 				self.parts.wpn_fps_ass_g3_fg_psg.pcs = {}
@@ -14038,11 +14041,6 @@ end)
 					spread = 1,
 					recoil = 2,
 					concealment = -2
-				}
-				self.parts.wpn_fps_ass_g3_fg_psg.custom_stats = {
-					falloff_start_mult = 1.075,
-					falloff_end_mult = 1.075,
-					ads_speed_mult = 1.025
 				}
 
 				--Tactical Foregrip
@@ -14060,12 +14058,8 @@ end)
 				self.parts.wpn_fps_ass_g3_fg_retro.supported = true
 				self.parts.wpn_fps_ass_g3_fg_retro.stats = {
 					value = 2,
-					spread = -1,
-					recoil = 2
-				}
-				self.parts.wpn_fps_ass_g3_fg_retro.custom_stats = {
-					falloff_start_mult = 0.925,
-					falloff_end_mult = 0.925
+					recoil = 2,
+					concealment = -1
 				}
 
 				--Plastic Foregrip
@@ -14074,12 +14068,8 @@ end)
 				self.parts.wpn_fps_ass_g3_fg_retro_plastic.stats = {
 					value = 2,
 					spread = -1,
-					recoil = -2,
+					recoil = -4,
 					concealment = 2
-				}
-				self.parts.wpn_fps_ass_g3_fg_retro_plastic.custom_stats = {
-					falloff_start_mult = 0.925,
-					falloff_end_mult = 0.925
 				}
 
 				--Retro Grip
@@ -14126,7 +14116,7 @@ end)
 					alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_straight",
 					unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_m_mag_psg",
 					supported = true,
-					stats = {value = 2, extra_ammo = -5, reload = 6, concealment = 3},
+					stats = {value = 2, extra_ammo = -10, reload = 6, concealment = 3},
 					custom_stats = { ads_speed_mult = 0.925},
 					animations = {
 						reload_not_empty = "reload_not_empty",
@@ -17641,19 +17631,19 @@ end)
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(self)
 					--Judge Override Table
 					self.wpn_fps_pis_judge.override.wpn_fps_sho_ultima_ns_comp = deep_clone(self.wpn_fps_pis_judge.override.wpn_fps_upg_ns_shot_shark)
-					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
-					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
+					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
+					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)
 					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
 					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
-					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
+					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override)
 					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
 					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
-					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
-					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
-					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
+					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_semi_override)
+					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override)
+					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override)
 					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
 					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
-					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
+					self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_revo_override)
 
 					table.insert(self.wpn_fps_pis_judge.uses_parts, "wpn_fps_upg_judge_legend")
 					self.wpn_fps_pis_judge_npc.uses_parts = deep_clone(self.wpn_fps_pis_judge.uses_parts)
@@ -27714,11 +27704,32 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+		if self.parts.wpn_fps_ass_scotia_safety then
+			self.parts.wpn_fps_ass_scotia_safety.supported = true
+			self.parts.wpn_fps_ass_scotia_safety.stats = { value = 0 }
+			self.parts.wpn_fps_ass_scotia_safety.custom_stats = nil
+			self.parts.wpn_fps_ass_scotia_safety.perks = nil
+
+			self.parts.wpn_fps_ass_scotia_safety_auto.supported = true
+			self.parts.wpn_fps_ass_scotia_safety_auto.stats = { 
+				value = 8,
+				spread = -5,
+				recoil = -6
+			}
+			self.parts.wpn_fps_ass_scotia_safety_auto.custom_stats = {
+				custom_stats = {
+					can_toggle_firemode = true,
+					orig_toggle_firemode = false,
+					default_firemode = "auto",
+					orig_firemode = "single",
+					block_burst = true,
+					info_burst_to_auto = true
+				}
+			}
+			self.parts.wpn_fps_ass_scotia_safety_auto.perks = nil
+		end
 
 		if self.parts.wpn_fps_ass_c8sfw_gl_m26mass then
-			self.parts.wpn_fps_ass_c8sfw_underbarrel_custom.pcs = nil
-			self.parts.wpn_fps_ass_c8sfw_underbarrel_custom.stats = {value = 0}
-			self.parts.wpn_fps_ass_c8sfw_underbarrel_custom.custom_stats = nil
 			self.parts.wpn_fps_ass_c8sfw_underbarrel_slug.pcs = nil
 			self.parts.wpn_fps_ass_c8sfw_underbarrel_slug.stats = {value = 0}
 			self.parts.wpn_fps_ass_c8sfw_underbarrel_slug.custom_stats = nil

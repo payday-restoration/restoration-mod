@@ -42,7 +42,7 @@ return {
 		},
 	},
 	-- Spawn them when the vault door opens 
-	{100851} = {
+	[100851] = {
 		on_executed = {
 			{id = 400008, delay = 0,},
 			{id = 400009, delay = 0,},

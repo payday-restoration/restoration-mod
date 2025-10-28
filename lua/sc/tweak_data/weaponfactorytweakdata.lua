@@ -1062,7 +1062,7 @@ local grips = {
 					spread = 5
 				},
 				custom_stats = {
-					hip_mult = 0.8,
+					hip_mult = 0.95,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = 0.65,
@@ -1098,7 +1098,7 @@ local grips = {
 					spread = 5
 				},
 				custom_stats = {
-					hip_mult = 0.8,
+					hip_mult = 0.9,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = 0.5,
@@ -17659,19 +17659,19 @@ end)
 						reload_not_empty = "reload"
 					}
 					self.wpn_fps_pis_x_judge.override.wpn_fps_sho_ultima_ns_comp = deep_clone(self.wpn_fps_pis_x_judge.override.wpn_fps_upg_ns_shot_shark)
-					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
-					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
+					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
+					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)
 					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
 					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
-					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
+					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override)
 					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
 					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
-					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
-					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
-					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
+					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_semi_override)
+					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override)
+					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override)
 					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
 					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
-					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
+					self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_revo_override)
 
 					self.wpn_fps_pis_x_judge.override.wpn_fps_pis_judge_body_standard = {
 						animations = {
@@ -24780,8 +24780,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				count = 3,
 				delay = 0.18,
 				desired_burst_rof = 0.06315,
-				recoil_mult = 0.6,
-				last_recoil_mult = 1,
+				recoil_mult = 0.4,
+				last_recoil_mult = 1.1,
 				block_toggle = true,
 				toggle_to_semi = true,
 				burst_default = true,

@@ -2591,8 +2591,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_wally_desc"] = "#{important_2}#Hey kiddo...##",
 				["bm_maralohk_desc"] = "#{important_1}#VOULL NE XATA VOK, MARA LOHK?##",
 				--AMR16--
-				["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
+				["bm_wp_upg_i_m16a2"] = "Crosskill B3 Kit",
 				["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst## fire rate is #{skill_color}#increased to 950 RPM.## ",
+				["bm_wp_upg_i_m16a2_famas_desc"] = "Trade full-auto for an improved #{skill_color}#3-round burst## setting and boosted damage.",
 				--G3A3--
 				["bm_wp_upg_i_g3"] = "SG-3 Kit",
 				["bm_wp_upg_i_g3_desc"] = "Adds a 4-position fire selector, granting the weapon a #{skill_color}#3-round burst## setting.",

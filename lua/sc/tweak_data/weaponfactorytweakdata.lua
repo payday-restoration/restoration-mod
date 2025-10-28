@@ -11807,6 +11807,7 @@ end)
 					table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_arbiter_irons_dmc")
 					table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac")
 					table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+					table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_i_m16a2")
 
 					self.wpn_fps_ass_famas.adds.wpn_fps_ass_famas_body_standard = {
 						"wpn_fps_ass_famas_m_standard_dummy"
@@ -11819,7 +11820,35 @@ end)
 					}
 
 					self.wpn_fps_ass_famas.override = self.wpn_fps_ass_famas.override or {}
-
+					self.wpn_fps_ass_famas.override.wpn_fps_upg_i_m16a2 = {
+						stats = {
+							damage = 10,
+							total_ammo_mod = -138,
+							recoil = 2,
+							spread = 1
+						},
+						desc_id = "bm_wp_upg_i_m16a2_famas_desc",
+						custom_stats = {
+							info_auto_to_burst = true,
+							burst_fire = {
+								count = 3,
+								delay = 0.2,
+								recoil_mult = 0.4,
+								last_recoil_mult = 1.1,
+								block_toggle = true,
+								toggle_to_semi = true,
+								burst_default = true,
+							},
+							ammo_pickup_max_mul = 0.608247,
+							ammo_pickup_min_mul = 0.608247,
+							alt_ammo_pickup_max_mul = 0.608247,
+							alt_ammo_pickup_min_mul = 0.608247,
+							damage_min_mult = 0.667,
+							rof_mult_semi = 0.4,
+							falloff_start_mult = 1,
+							falloff_end_mult = 1,
+						}
+					}
 					self.wpn_fps_ass_famas_npc.adds = deep_clone(self.wpn_fps_ass_famas.adds)
 					self.wpn_fps_ass_famas_npc.override = deep_clone(self.wpn_fps_ass_famas.override)
 					self.wpn_fps_ass_famas_npc.uses_parts = deep_clone(self.wpn_fps_ass_famas.uses_parts)
@@ -12760,14 +12789,12 @@ end)
 						},
 						custom_stats = {
 							rof_mult = 1.10769230,
-							falloff_end_mult = 1.142857,
-							falloff_start_mult = 1.1875,
-							damage_min_mult = 0.8333333,
+							damage_min_mult = 1.04,
 							ads_speed_mult = 0.93333333,
-							alt_ammo_pickup_min_mul = 1.298245,
-							alt_ammo_pickup_max_mul = 1.298245,
-							ammo_pickup_min_mul = 1.298245,
-							ammo_pickup_max_mul = 1.298245,
+							alt_ammo_pickup_min_mul = 1.305084,
+							alt_ammo_pickup_max_mul = 1.305084,
+							ammo_pickup_min_mul = 1.305084,
+							ammo_pickup_max_mul = 1.305084,
 						},
 						forbids = {},
 						adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsKrink74") == 2 and { "wpn_fps_ass_rpk74_sound_switch" }) or {},
@@ -23900,40 +23927,37 @@ end)
 			if weapon_skins then
 					local uses_parts = {
 						wpn_fps_upg_bonus_team_exp_money_p3 = {
-					exclude_category = {"saw", "bow"}
-				},
+							exclude_category = {"saw", "bow"}
+						},
 						wpn_fps_upg_bonus_concealment_p1 = {
 							exclude_category = {"saw"}
-				},
+						},
 						wpn_fps_upg_bonus_recoil_p1 = {
 							exclude_category = {"saw", "bow"},
-							exclude_weapon = {"x_judge"}
-				},
+						},
 						wpn_fps_upg_bonus_spread_p1 = {
-					exclude_category = {"saw", "bow"}
-				},
+							exclude_category = {"saw", "bow"}
+						},
 						wpn_fps_upg_bonus_spread_n1 = {
-					exclude_category = {"saw", "bow"}
-				},
+							exclude_category = {"saw", "bow"}
+						},
 						wpn_fps_upg_bonus_damage_p1 = {
-					exclude_category = {"saw", "bow"},
-					exclude_weapon = {"x_judge"}
-				},
+							exclude_category = {"saw", "bow"},
+						},
 						wpn_fps_upg_bonus_total_ammo_p1 = {
-				},
+						},
 						wpn_fps_upg_bonus_concealment_p2 = {
-					exclude_category = {"saw"}
-				},
+							exclude_category = {"saw"}
+						},
 						wpn_fps_upg_bonus_concealment_p3 = {
-					exclude_category = {"saw"}
-				},
+							exclude_category = {"saw"}
+						},
 						wpn_fps_upg_bonus_damage_p2 = {
-					exclude_category = {"saw", "bow"},
-					exclude_weapon = {"x_judge"}
-				},
+							exclude_category = {"saw", "bow"},
+						},
 						wpn_fps_upg_bonus_total_ammo_p3 = {
-				},
-				wpn_fps_upg_bonus_sc_none = {}
+						},
+						wpn_fps_upg_bonus_sc_none = {}
 					}
 				local all_pass, weapon_pass, exclude_weapon_pass, category_pass, exclude_category_pass
 				for id, data in pairs(tweak_data.upgrades.definitions) do
@@ -24786,7 +24810,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				toggle_to_semi = true,
 				burst_default = true,
 			},
-			rof_mult_semi = 0.6,
+			rof_mult_semi = 0.4,
 			falloff_start_mult = 1,
 			falloff_end_mult = 1
 		},

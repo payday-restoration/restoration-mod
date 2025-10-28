@@ -35420,6 +35420,24 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		end
 	end
 
+	if id and weapon.AMMO_MAX and weapon.CLIP_AMMO_MAX then
+		--Ugly as fuck but it works
+		local exclude_calcs = table.contains(weapon.categories, "grenade_launcher") or 
+			table.contains(weapon.categories, "rocket_launcher") or 
+			table.contains(weapon.categories, "bow") or 
+			table.contains(weapon.categories, "crossbow")
+		local hs_mult = weapon.hs_mult or 1
+		local true_shotgun = table.contains(weapon.categories, "shotgun") and not table.contains(weapon.categories, "flamethrower")
+		local has_dot = table.contains(weapon.categories, "flamethrower") or table.contains(weapon.categories, "tranq")
+		local total_dmg_mul = 1 * (((hs_mult > 1) and 1.2) or 1) * 
+			(((weapon.has_underbarrel or has_dot) and 0.8) or 1) * 
+			((table.contains(weapon.categories, "minigun") and 3.3333) or ((table.contains(weapon.categories, "lmg") or true_shotgun) and 2) or 1)
+		damage_mul = (not exclude_calcs and (damage_mul * 2)) or damage_mul
+		if not table.contains(weapon.categories, "sweet_liberty") and not table.contains(weapon.categories, "nothing") then
+			weapon.AMMO_MAX = math.ceil((3600 * (((weapon.use_data.selection_index == 2 or weapon.use_data.selection_index == 4) and 2) or 1) * total_dmg_mul)) / ((weapon.stats.damage * damage_mul) * hs_mult)
+		end
+	end
+
 	--Determine how much to multiply things by.
 	local pickup_multiplier = weapon.AMMO_MAX
 	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
@@ -35475,21 +35493,6 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		"shuno",
 	}
 	if id and weapon.AMMO_MAX and weapon.CLIP_AMMO_MAX then
-		--Ugly as fuck but it works
-		local exclude_calcs = table.contains(weapon.categories, "grenade_launcher") or 
-			table.contains(weapon.categories, "rocket_launcher") or 
-			table.contains(weapon.categories, "bow") or 
-			table.contains(weapon.categories, "crossbow")
-		local hs_mult = weapon.hs_mult or 1
-		local true_shotgun = table.contains(weapon.categories, "shotgun") and not table.contains(weapon.categories, "flamethrower")
-		local has_dot = table.contains(weapon.categories, "flamethrower") or table.contains(weapon.categories, "tranq")
-		local total_dmg_mul = 1 * (((hs_mult > 1) and 1.2) or 1) * 
-			(((weapon.has_underbarrel or has_dot) and 0.8) or 1) * 
-			((table.contains(weapon.categories, "minigun") and 3.3333) or ((table.contains(weapon.categories, "lmg") or true_shotgun) and 2) or 1)
-		damage_mul = (not exclude_calcs and (damage_mul * 2)) or damage_mul
-		if not table.contains(weapon.categories, "sweet_liberty") and not table.contains(weapon.categories, "nothing") then
-			weapon.AMMO_MAX = math.ceil((3600 * (((weapon.use_data.selection_index == 2 or weapon.use_data.selection_index == 4) and 2) or 1) * total_dmg_mul)) / ((weapon.stats.damage * damage_mul) * hs_mult)
-		end
 		--Try to provide at least one full reload from empty (up to 100 round mags)
 		if not table.contains(exclude_ammo, id) and not table.contains(weapon.categories, "minigun") and not table.contains(weapon.categories, "saw") then
 			local mag_clamp = math.min(100, weapon.CLIP_AMMO_MAX / ((table.contains(weapon.categories, "akimbo") and 2) or 1) )

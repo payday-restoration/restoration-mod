@@ -3232,11 +3232,12 @@ function PlayerStandard:secondary_add_ammo(value, mag_regen)
 end
 
 function PlayerStandard:_is_overheating()
-	local primary = alive(self._unit) and self._unit.inventory and self._unit:inventory().unit_by_selection and self._unit:inventory():unit_by_selection(2):base()
+	local unit_inv = alive(self._unit) and self._unit.inventory and self._unit:inventory()
+	local primary = unit_inv and unit_inv.unit_by_selection and unit_inv:unit_by_selection(2):base()
 	local primary_can_reload = primary and primary._starwars and primary._starwars.can_reload
-	local secondary = alive(self._unit) and self._unit.inventory and self._unit:inventory().unit_by_selection and self._unit:inventory():unit_by_selection(1):base()
+	local primary = unit_inv and unit_inv.unit_by_selection and unit_inv:unit_by_selection(1):base()
 	local secondary_can_reload = secondary and secondary._starwars and secondary._starwars.can_reload
-	return (primary and primary._primary_overheat_pen and self._unit:inventory():equipped_selection() == 2 and not primary_can_reload) or (secondary and secondary._secondary_overheat_pen and self._unit:inventory():equipped_selection() == 1 and not secondary_can_reload)
+	return (primary and primary._primary_overheat_pen and unit_inv:equipped_selection() == 2 and not primary_can_reload) or (secondary and secondary._secondary_overheat_pen and unit_inv:equipped_selection() == 1 and not secondary_can_reload)
 end
 
 function PlayerStandard:weapon_add_ammo(value)

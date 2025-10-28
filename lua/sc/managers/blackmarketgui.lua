@@ -4761,6 +4761,7 @@ function BlackMarketGui:update_info_text()
 								end
 							elseif is_akimbo or weapon_tweak.BURST_FIRE.burst_default then
 								firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
+							elseif auto_to_burst then
 							else
 								firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst") or managers.localization:to_upper_text("st_menu_firemode_burst")
 							end

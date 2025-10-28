@@ -13616,7 +13616,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Steakout (AA-12)
 						self.aa12.categories = {
 							"shotgun",
-							"shotgun_light",
 							"shotgun_light_semi"
 						}
 						self.aa12.rays = 8
@@ -35053,7 +35052,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				if weap.recategorize and weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then
 					if weap.recategorize[1] == "light_shot" and not table.contains(weap.categories, "shotgun_light") then
 						table.insert(weap.categories, "shotgun_light")
-						if weap.CAN_TOGGLE_FIREMODE ~= true and weap.FIRE_MODE == "single" then
+						if not table.contains(weap.categories, "shotgun_light_semi") and weap.CAN_TOGGLE_FIREMODE ~= true and weap.FIRE_MODE == "single" then
 							table.insert(weap.categories, "shotgun_light_semi")
 						end
 						weap.ene_hs_mult = table.contains(weap.categories, "shotgun_auto") and 0.35 or 0.5

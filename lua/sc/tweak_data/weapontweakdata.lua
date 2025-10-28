@@ -13970,7 +13970,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil_mult = 0.25,
 							last_recoil_mult = 1.05,
 						}
-						self.x_judge.AMMO_MAX = 40
+						self.x_judge.AMMO_MAX = 60
 						self.x_judge.supported = true
 						self.x_judge.ads_speed = 0.200
 						self.x_judge.damage_falloff = {

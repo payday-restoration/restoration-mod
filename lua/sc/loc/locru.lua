@@ -3949,6 +3949,21 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			["bm_w_stoner63a_rifle"] = "Стоунер 63А",
 			["bm_w_ar2"] = "Импульсная Винтовка Альянса",
 			["bm_w_akm_nomag"] = "АК 7.62 раннего доступа",
+			["bm_w_coslo723"] = "ИксЭм-4",
+			["bm_w_k2"] = "К-Двойка",
+			["bm_w_acr_2012"] = "Игл СабРат",
+			["bm_w_l403a1"] = "Воля Короля",
+			["bm_w_l119a2"] = "Страж Короны",
+			["bm_w_galilace"] = "Масада 23",
+			--не подходит, но каламбур же - наберите AEK кириллицей и выйдет...
+			["bm_w_aek971"] = "ФУЛ-971",
+			["bm_w_a545"] = "ФУЛ-5 ''Баланс''",
+			["bm_w_tkb0146"] = "Прото-146",
+			["bm_w_ma40"] = "МА40",
+			["bm_w_fakedefy"] = "Аколит 7.62с",
+			["bm_w_akilo_2022"] = "АК103",
+			["bm_w_akilo105_2022"] = "АК105",
+			["bm_w_malima"] = "Малима",
 		["bm_w_ching"] = "M1 Галант",
 		["bm_w_m14"] = "M308",
 		["bm_w_fal"] = "Фалкон 58",
@@ -5504,6 +5519,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 		--Переименовываем названия древ
 		["st_menu_mastermind_single_shot"] = "Штурмовик",
+		--["st_menu_enforcer"] = "это текст на замену",
 		["st_menu_enforcer_armor"] = "Джаггернаут",
 		["st_menu_enforcer_ammo"] = "Поддержка",
 		["st_menu_technician_auto"] = "Боевой инженер",
@@ -5515,16 +5531,16 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 	
 	--[[   SKILLTREES   ]]--
 
-		--[[   MASTERMIND   ]]--
+		--[[   МАНИПУЛЯТОР   ]]--
 
-			--[[   MEDIC SUBTREE   ]]--
+			--[[   МЕДИК   ]]--
 				--Combat Medic
 				["menu_combat_medic_beta_sc"] = "Интерн",
 				["menu_combat_medic_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете на #{skill_color}#$skill_value_b1## меньше урона во время поднятия напарника, и на #{skill_color}#$skill_value_b2## секунд после.\n\nПИКОВЫЙ: #{owned}#$pro##\nПоднятый напарник получит на #{skill_color}#$skill_value_p1## больше здоровья.",
 
 				--Quick Fix
 				["menu_tea_time_beta_sc"] = "Скорая помощь",
-				["menu_tea_time_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает скорость установки #{skill_color}#Аптечек первой помощи## и #{skill_color}#Медицинских сумок## на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nНапарники, которые воспользовались вашими #{skill_color}#Аптечками первой помощи##, будут получать на #{skill_color}#$skill_value_p1## меньше урона в течение #{skill_color}#$skill_value_p2## секунд.",
+				["menu_tea_time_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает скорость установки Аптечек первой помощи и Медицинских сумок на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nНапарники, которые воспользовались вашими Аптечками первой помощи, будут получать на #{skill_color}#$skill_value_p1## меньше урона в течение #{skill_color}#$skill_value_p2## секунд.",
 
 				--Pain Killers
 				["menu_fast_learner_beta_sc"] = "Анальгин",
@@ -5532,17 +5548,17 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Uppers
 				["menu_tea_cookies_beta_sc"] = "Колеса",
-				["menu_tea_cookies_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь вы можете носить #{skill_color}#$skill_value_b1## #{skill_color}#Аптечек первой помощи##.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь вы можете носить #{skill_color}#$skill_value_p1## #{skill_color}#Аптечек первых помощи##.\n\nВаши #{skill_color}#Аптечки первой помощи## используются автоматически, если игрок упадет в радиусе #{skill_color}#5## метров от аптечки.\n\nЭто может произойти только раз в #{important_1}#$skill_value_p2## секунд, индивидуально для каждого игрока.\n\n#{risk}#Не работает при использовании #{skill_color}#Лебединой песни##.##",
+				["menu_tea_cookies_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь вы можете носить #{skill_color}#$skill_value_b1## Аптечек первой помощи.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь вы можете носить #{skill_color}#$skill_value_p1## Аптечек первых помощи.\n\nВаши Аптечки первой помощи используются автоматически, если игрок упадет в радиусе #{skill_color}#5## метров от аптечки.\n\nЭто может произойти только раз в #{important_1}#$skill_value_p2## секунд, индивидуально для каждого игрока.\n\n#{risk}#Не работает при использовании #{skill_color}#Лебединой песни##.##",
 
 				--Combat Doctor
 				["menu_medic_2x_beta_sc"] = "Военврач",
-				["menu_medic_2x_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши #{skill_color}#Медицинские сумки## получают #{skill_color}#$skill_value_b1## дополнительное использование.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно ставить #{skill_color}#$skill_value_p1## #{skill_color}#Медицинские сумки##, а не одну.",
+				["menu_medic_2x_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши Медицинские сумки получают #{skill_color}#$skill_value_b1## дополнительное использование.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно ставить #{skill_color}#$skill_value_p1## Медицинские сумки вместо одной.",
 
 				--Inspire
 				["menu_inspire_beta_sc"] = "Мотивация",
 				["menu_inspire_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы поднимаете напарников на #{skill_color}#$skill_value_b1## быстрее.\n\nКрик на них повысит их скорость перезарядки и передвижения на #{skill_color}#$skill_value_b2## в течение #{skill_color}#$skill_value_b3## секунд.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаш крик может поднять напарника #{skill_color}#в зоне вашей видимости## на расстоянии не более #{skill_color}#9 метров##. Навык перезаряжается #{important_1}#$skill_value_p1## секунд.",
 
-			--[[   CONTROLLER SUBTREE   ]]--
+			--[[   Командир   ]]--
 				--Cable Guy
 				["menu_triathlete_beta_sc"] = "Навязанная дружба",
 				["menu_triathlete_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы носите на #{skill_color}#$skill_value_b1## кабельные стяжки больше.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаш шанс поднять стяжку из пачки патронов увеличен на #{skill_color}#30%.##\n\nВы носите еще на #{skill_color}#$skill_value_p1## кабельные стяжки больше.",
@@ -5567,7 +5583,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 				["menu_black_marketeer_beta_sc"] = "Похититель",
 				["menu_black_marketeer_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы восстанавливаете #{skill_color}#$skill_value_b1## здоровье каждые #{skill_color}#4## секунды за каждого заложника, вплоть до #{skill_color}#4## заложников.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаши заложники #{skill_color}#не будут убегать## после освобождения.\n\nЕсли вы попадете под стражу, ваши заложники самостоятельно обменяют себя на вас. Это может произойти во время штурма, но только #{skill_color}#1## раз за ограбление.\n\nРегенерация здоровья от навыка увеличена на #{skill_color}#$skill_value_p1##, когда у вас #{skill_color}#4## или более заложника.",
 
-			--[[   ASSAULT SUBTREE   ]]--
+			--[[   Штурмовик  ]]--
 				--Leadership
 				["menu_stable_shot_beta_sc"] = "Лидерство",
 				["menu_stable_shot_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пулеметы## получают #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nСтабильность у любого оружия у вас и вашей команды увеличена на #{skill_color}#$skill_value_p1.## \n\n#{risk}#Примечание: Командные навыки не складываются, если несколько игроков имеют этот навык.##",
@@ -5593,9 +5609,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 				["menu_body_expertise_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пулеметы## наносят #{skill_color}#$skill_value_b1## урона через броню.\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства из #{skill_color}#пулеметов## в #{risk}#автоматическом режиме## увеличат урон на #{skill_color}#$skill_value_p2##; складывается до #{skill_color}#$skill_value_p3## раз, а бонус к урону спадает раз в #{risk}#$skill_value_p1## секунд.",
 
 
-		--[[   ENFORCER   ]]--
+		--[[   Штурмовик, опять   ]]--
 
-			--[[   SHOTGUNNER SUBTREE   ]]--
+			--[[   ОХОТНИК   ]]--
 				--Underdog--
 				["menu_underdog_beta_sc"] = "Давление",
 				["menu_underdog_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКогда #{skill_color}#3## или более врага находятся в #{skill_color}#18## метрах от вас, вы получаете #{skill_color}#$skill_value_b1## бонус к урону на #{skill_color}#$skill_value_b2## секунд.\n\nПИКОВЫЙ: #{owned}#$pro##\nКогда #{skill_color}#3## или более врага находятся в #{skill_color}#18## метрах от вас, вы также получаете на #{skill_color}#$skill_value_p1## меньше урона в течении #{skill_color}#$skill_value_p2## секунд.",
@@ -5623,7 +5639,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 				["menu_overkill_sc"] = "OVERKILL",
 				["menu_overkill_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУбийство из #{skill_color}#дробовика, огнемета или пилы OVE9000## на #{skill_color}#эффективном расстоянии## увеличивает их урон на #{skill_color}#$skill_value_b1## на #{skill_color}#$skill_value_b2## секунды.\n\n#{risk}#Навык не сработает, если противник был убит## #{important_1}#взрывом или периодическим уроном.##\n\nПИКОВЫЙ: #{owned}#$pro##\nБонус к урону теперь работает на все оружие и действует #{skill_color}#$skill_value_p1## секунд. Навык должен быть активирован убийством из #{skill_color}#дробовика, огнемета или пилы OVE9000.##\n\n#{risk}#Бонус не работает на гранатометы и ракетометы.##\n\nВы убираете и достаете #{skill_color}#дробовики, огнеметы и пилу## на #{skill_color}#$skill_value_p2## быстрее.",
 
-			--[[   JUGGERNAUT SUBTREE   ]]--
+			--[[   ДЖАГГЕРНАУТ   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "Стойкий",
 				["menu_oppressor_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВражеские удары в ближнем бою отталкивают на #{skill_color}#$skill_value_b1## меньше за каждое очко брони.\n\nПИКОВЫЙ: #{owned}#$pro##\nУменьшает ослепление от светошумовых гранат на #{skill_color}#$skill_value_p1.##",
@@ -5648,7 +5664,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 				["menu_juggernaut_beta_sc"] = "Железный человек",
 				["menu_juggernaut_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nОткрывает возможность носить #{skill_color}#Улучшенный комбинированный тактический бронежилет.##\n\nПри ударе Щитов оружием ближнего боя, они отбрасываются от вашей силы.\n#{risk}#Не работает против## #{important_1}#Титановых Щитов## #{risk}#и## #{important_1}#Капитана Винтерса.##\n\nПИКОВЫЙ: #{owned}#$pro##\nОгнестрельное оружие получает шанс отбросить Щиты. Шанс отбрасывания зависит от урона оружия.\n\nВаша броня восстанавливается на #{skill_color}#$skill_value_p1## быстрее. $anarc_disable",
 
-			--[[   SUPPORT SUBTREE   ]]--
+			--[[   ПОДДЕРЖКА   ]]--
 				--Scavenger
 				["menu_scavenging_sc"] = "Мародер",
 				["menu_scavenging_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает расстояние подбора патронов на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nС каждого #{skill_color}#$skill_value_p1 - го## убитого противника выпадет дополнительная коробка патронов.",
@@ -5656,7 +5672,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 				--Bulletstorm--
 				--["menu_ammo_reservoir_beta_sc"] = "Свинцовый ливень",
 				["menu_ammo_reservoir_beta_sc"] = "Смертный ливень",
-				["menu_ammo_reservoir_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Сумки с патронами## дают возможность стрелять бесконечно до #{skill_color}#5## секунд после использования сумки.\n\nЧем больше патронов восстановлено, тем дольше будет эффект.\n\n#{risk}#Гранатометы, ракетометы и прочее взрывчатое оружие не получают эффекта.##\n\nПИКОВЫЙ: #{owned}#$pro##\nДлительность способности увеличена до #{skill_color}#15## секунд.",
+				["menu_ammo_reservoir_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nСумки с патронами дают возможность стрелять бесконечно до #{skill_color}#5## секунд после их использования.\n\nЧем больше патронов восстановлено, тем дольше будет эффект.\n\n#{risk}#Гранатометы, ракетометы и прочее взрывчатое оружие не получают эффекта.##\n\nПИКОВЫЙ: #{owned}#$pro##\nДлительность способности увеличена до #{skill_color}#15## секунд.",
 
 				--Specialist Equipment formally Rip and Tear
 				["menu_portable_saw_beta_sc"] = "Спецоборудование",
@@ -5664,7 +5680,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Extra Lead
 				["menu_ammo_2x_beta_sc"] = "Свинец оптом",
-				["menu_ammo_2x_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nОбъем #{skill_color}#Сумки с патронами## увеличен на #{skill_color}#$skill_value_b1##.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно ставить #{skill_color}#$skill_value_p1## #{skill_color}#Cумки с патронами## вместо одной.",
+				["menu_ammo_2x_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nОбъем Сумки с патронами увеличен на #{skill_color}#$skill_value_b1##.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно ставить #{skill_color}#$skill_value_p1## Cумки с патронами вместо одной.",
 
 				--Rip and Tear formally Carbon Blade
 				["menu_carbon_blade_beta_sc"] = "Рвать и метать",
@@ -5687,7 +5703,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Engineering
 				["menu_eco_sentry_beta_sc"] = "Инженер",
-				["menu_eco_sentry_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши #{skill_color}#Турели## наносят на #{skill_color}#$skill_value_b1## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаши #{skill_color}#Турели## получают на #{skill_color}#$skill_value_p1## больше здоровья.",
+				["menu_eco_sentry_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши Турели наносят на #{skill_color}#$skill_value_b1## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаши Турели получают на #{skill_color}#$skill_value_p1## больше здоровья.",
 
 				--Jack of all Trades
 				["menu_jack_of_all_trades_beta_sc"] = "Мастер на все руки",
@@ -5708,7 +5724,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Demoman
 				["menu_trip_mine_expert_beta_sc"] = "Подрывник",
-				["menu_combat_engineering_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь можно ставить до #{skill_color}#6## #{skill_color}#Кумулятивных зарядов##.\n\nВы ставите #{skill_color}#Кумулятивные заряды и Мины## на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно ставить до #{skill_color}#8## ##Кумулятивных зарядов##.\n\nРадиус взрыва ваших ##Мин## увеличен на #{skill_color}#$skill_value_p1.##",
+				["menu_combat_engineering_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь можно ставить до #{skill_color}#6## Кумулятивных зарядов.\n\nВы ставите Кумулятивные заряды и Мины на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно ставить до #{skill_color}#8## Кумулятивных зарядов.\n\nРадиус взрыва ваших Мин увеличен на #{skill_color}#$skill_value_p1.##",
 
 				--Drill Sawgeant
 				["menu_drill_expert_beta_sc"] = "Бурный взлом",
@@ -5717,7 +5733,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 				--Fire Trap--
 				--["menu_more_fire_power_sc"] = "Зажигательная ловушка",
 				["menu_more_fire_power_sc"] = "Минер",
-				["menu_more_fire_power_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши ##Мины## оставляют на месте взрыва огненную лужу в течение #{skill_color}#10## секунд в радиусе #{skill_color}#7.5## метров.\n\nОгонь не наносит урона вам и команде.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно носить #{skill_color}#10## ##Мин##.\n\nВаши ##Мины## наносят на #{skill_color}#50%## больше урона.",
+				["menu_more_fire_power_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши Мины оставляют на месте взрыва огненную лужу в течение #{skill_color}#10## секунд в радиусе #{skill_color}#7.5## метров.\n\nОгонь не наносит урона вам и команде.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно носить #{skill_color}#10## Мин.\n\nВаши Мины наносят на #{skill_color}#50%## больше урона.",
 
 				--Expert Hardware
 				["menu_kick_starter_beta_sc"] = "Техэксперт",
@@ -5774,7 +5790,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--ECM Specialist--
 				["menu_ecm_booster_beta_sc"] = "Диверсант",
-				["menu_ecm_booster_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь можно носить #{skill_color}#3## ##Генератора помех##.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно носить #{skill_color}#4## ##Генератора помех##.",
+				["menu_ecm_booster_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь можно носить #{skill_color}#3## Генератора помех.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно носить #{skill_color}#4## Генератора помех.",
 
 				--Spotter--
 				["menu_ecm_2x_beta_sc"] = "Шестерка",

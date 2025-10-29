@@ -44281,7 +44281,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.stats = {
 			value = 10,
 			zoom = -20,
-			damage = -30,
+			damage = -60,
 			spread = -10,
 			total_ammo_mod = 136,
 			extra_ammo = 6,
@@ -44303,7 +44303,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			alt_ammo_pickup_min_mul = 1.45,
 			alt_ammo_pickup_max_mul = 1.45,
 			ammo_pickup_min_mul = 1.45,
-			ammo_pickup_max_mul = 1.45
+			ammo_pickup_max_mul = 1.45,
+			hs_mult = 1.12494,
 		}
 
 

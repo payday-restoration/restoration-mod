@@ -13305,19 +13305,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m95.fire_rate_multiplier = 1.05
 					self.m95.kick = self.stat_info.kick_tables.right_kick
 					self.m95.supported = true
-					self.m95.ads_speed = 0.560
+					self.m95.ads_speed = 0.660
 					self.m95.damage_falloff = {
-						start_dist = 5000,
+						start_dist = 2500,
 						end_dist = 12000,
-						min_mult = 0.5
+						min_mult = 0.375
 					}
 					self.m95.stats = {
-						damage = 180,
+						damage = 240,
 						spread = 96,
-						recoil = 11,
+						recoil = 7,
 						spread_moving = 8,
 						zoom = 1,
-						concealment = 16,
+						concealment = 15,
 						suppression = 4,
 						alert_size = 2,
 						extra_ammo = 101,
@@ -13327,9 +13327,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 					self.m95.armor_piercing_chance = 1
 					self.m95.use_vapor_trail = true
-					self.m95.reload_speed_multiplier = 1.07
+					self.m95.reload_speed_multiplier = 1
 					self.m95.can_shoot_through_titan_shield = true
-					self.m95.hs_mult = 2
+					self.m95.hs_mult = 1.5
 					self.m95.stats_modifiers = nil
 					self.m95.panic_suppression_chance = 0.05
 					self.m95.timers.reload_empty = 4.06
@@ -17791,7 +17791,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.hmcar.fire_mode_data.volley = {}
 				self.hmcar.fire_mode_data.volley.spread_mul = 1
-				self.hmcar.fire_mode_data.volley.damage_mul = 2
+				self.hmcar.fire_mode_data.volley.damage_mul = 2.66667
 				self.hmcar.fire_mode_data.volley.damage_mul_step = true
 				self.hmcar.fire_mode_data.volley.ammo_usage = 2
 				self.hmcar.fire_mode_data.volley.rays = 1
@@ -20316,11 +20316,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.m107cq then --Pawcio's M107CQ v1.2
 				self.m107cq.categories = {
 					"snp",
-					"semi_snp",
+					"semi_amr",
 					"amr"
 				}
 				self.m107cq.recategorize = { "antim_snp" }
-				self.m107cq.hs_mult = 2
+				self.m107cq.hs_mult = 1.3334
 				self.m107cq.damage_type = "anti_materiel"
 				self.m107cq.upgrade_blocks = nil
 				self.m107cq.has_description = true
@@ -20338,19 +20338,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{4, self.stat_info.kick_tables.right_kick}
 				}
 				self.m107cq.supported = true
-				self.m107cq.ads_speed = 0.680
+				self.m107cq.ads_speed = 0.720
 				self.m107cq.damage_falloff = {
-					start_dist = 3000,
+					start_dist = 1500,
 					end_dist = 10000,
 					min_mult = 0.5
 				}
 				self.m107cq.stats = {
-					damage = 120,
+					damage = 180,
 					spread = 91,
 					recoil = 3,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 14,
+					concealment = 13,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -20377,7 +20377,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"amr"
 				}
 				self.m200.recategorize = { "antim_snp" }
-				self.m200.hs_mult = 2
+				self.m200.hs_mult = 1.5
 				self.m200.damage_type = "anti_materiel"
 				self.m200.always_play_anims = true
 				self.m200.upgrade_blocks = nil
@@ -20388,19 +20388,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m200.tactical_reload = 1
 				self.m200.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.m200.supported = true
-				self.m200.ads_speed = 0.580
+				self.m200.ads_speed = 0.680
 				self.m200.damage_falloff = {
-					start_dist = 4000,
+					start_dist = 2000,
 					end_dist = 15000,
-					min_mult = 0.5
+					min_mult = 0.375
 				}
 				self.m200.stats = {
-					damage = 180,
+					damage = 240,
 					spread = 99,
 					recoil = 13,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 14,
+					concealment = 13,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -20419,7 +20419,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					equip = 0.9
 				}
 				self.m200.use_vapor_trail = true
-				self.m200.reload_speed_multiplier = 0.98
+				self.m200.reload_speed_multiplier = 0.97
 				self.m200.reload_not_empty_speed_multiplier = 0.9
 				self.m200.armor_piercing_chance = 1
 				self.m200.can_shoot_through_titan_shield = true
@@ -20433,7 +20433,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"amr"
 				}
 				self.amr2.recategorize = { "antim_snp" }
-				self.amr2.hs_mult = 2
+				self.amr2.hs_mult = 1.5
 				self.amr2.damage_type = "anti_materiel"
 				self.amr2.always_play_anims = true
 				self.amr2.upgrade_blocks = nil
@@ -20444,19 +20444,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amr2.tactical_reload = 1
 				self.amr2.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.amr2.supported = true
-				self.amr2.ads_speed = 0.640
+				self.amr2.ads_speed = 0.700
 				self.amr2.damage_falloff = {
-					start_dist = 3000,
+					start_dist = 1500,
 					end_dist = 10000,
-					min_mult = 0.5
+					min_mult = 0.375
 				}
 				self.amr2.stats = {
-					damage = 180,
+					damage = 240,
 					spread = 98,
 					recoil = 9,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 15,
+					concealment = 14,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -20481,7 +20481,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"amr"
 				}
 				self.tac50.recategorize = { "antim_snp" }
-				self.tac50.hs_mult = 2
+				self.tac50.hs_mult = 1.5
 				self.tac50.damage_type = "anti_materiel"
 				self.tac50.always_play_anims = true
 				self.tac50.upgrade_blocks = nil
@@ -20492,19 +20492,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tac50.tactical_reload = 1
 				self.tac50.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.tac50.supported = true
-				self.tac50.ads_speed = 0.660
+				self.tac50.ads_speed = 0.680
 				self.tac50.damage_falloff = {
-					start_dist = 4000,
+					start_dist = 2000,
 					end_dist = 10000,
-					min_mult = 0.5
+					min_mult = 0.375
 				}
 				self.tac50.stats = {
-					damage = 180,
+					damage = 240,
 					spread = 100,
 					recoil = 5,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 13,
+					concealment = 12,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -25793,11 +25793,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.mptango41 then --Vanguard "PTRS-41" (Fuck you, Sledgehammer)
 				self.mptango41.categories = {
 					"snp",
-					"semi_snp",
+					"semi_amr",
 					"amr"
 				}
 				self.mptango41.recategorize = { "antim_snp" }
-				self.mptango41.hs_mult = 2
+				self.mptango41.hs_mult = 1.5
 				self.mptango41.damage_type = "anti_materiel"
 				self.mptango41.warsaw = true
 				self.mptango41.upgrade_blocks = nil
@@ -25812,19 +25812,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{2, self.stat_info.kick_tables.horizontal_recoil}
 				}
 				self.mptango41.supported = true
-				self.mptango41.ads_speed = 0.560
+				self.mptango41.ads_speed = 0.800
 				self.mptango41.damage_falloff = {
-					start_dist = 5000,
+					start_dist = 2500,
 					end_dist = 20000,
 					min_mult = 0.5
 				}
 				self.mptango41.stats = {
-					damage = 180,
+					damage = 240,
 					spread = 91,
 					recoil = 1,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 12,
+					concealment = 11,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -28701,13 +28701,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.srs99_s7 then --RJC9000's Halo Infinite SRS99-S7 AMR
 				self.srs99_s7.categories = {
 					"snp",
-					"semi_snp",
+					"semi_amr",
 					"amr",
 					"s7",
 					"no_shake"
 				}
 				self.srs99_s7.recategorize = { "antim_snp" }
-				self.srs99_s7.hs_mult = 2
+				self.srs99_s7.hs_mult = 1.3334
 				self.srs99_s7.damage_type = "anti_materiel"
 				self.srs99_s7.upgrade_blocks = nil
 				self.srs99_s7.AMMO_MAX = 18
@@ -28717,17 +28717,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.srs99_s7.supported = true
 				self.srs99_s7.ads_speed = 0.500
 				self.srs99_s7.damage_falloff = {
-					start_dist = 10000,
+					start_dist = 5000,
 					end_dist = 20000,
 					min_mult = 0.5
 				}
 				self.srs99_s7.stats = {
-					damage = 120,
+					damage = 180,
 					spread = 101,
 					recoil = 9,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 12,
+					concealment = 11,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -28801,11 +28801,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.pd3_lynx then --RJC9000's PD3 GM6 Lynx
 				self.pd3_lynx.categories = {
 					"snp",
-					"semi_snp",
+					"semi_amr",
 					"amr"
 				}
 				self.pd3_lynx.recategorize = { "antim_snp" }
-				self.pd3_lynx.hs_mult = 2
+				self.pd3_lynx.hs_mult = 1.3334
 				self.pd3_lynx.damage_type = "anti_materiel"
 				self.pd3_lynx.is_bullpup = true
 				self.pd3_lynx.upgrade_blocks = nil
@@ -28822,19 +28822,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{4, self.stat_info.kick_tables.right_recoil}
 				}
 				self.pd3_lynx.supported = true
-				self.pd3_lynx.ads_speed = 0.620
+				self.pd3_lynx.ads_speed = 0.700
 				self.pd3_lynx.damage_falloff = {
-					start_dist = 8000,
+					start_dist = 2000,
 					end_dist = 20000,
 					min_mult = 0.5
 				}
 				self.pd3_lynx.stats = {
-					damage = 120,
+					damage = 180,
 					spread = 93,
 					recoil = 5,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 13,
+					concealment = 12,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -30730,7 +30730,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"amr"
 				}
 				self.ntw20.recategorize = { "antim_snp" }
-				self.ntw20.hs_mult = 2
+				self.ntw20.hs_mult = 1.5
 				self.ntw20.damage_type = "anti_materiel"
 				self.ntw20.upgrade_blocks = nil
 				self.ntw20.has_description = true
@@ -30741,19 +30741,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ntw20.fire_mode_data.fire_rate = 0.48
 				self.ntw20.kick = deep_clone(self.stat_info.kick_tables.right_kick)
 				self.ntw20.supported = true
-				self.ntw20.ads_speed = 0.600
+				self.ntw20.ads_speed = 0.700
 				self.ntw20.damage_falloff = {
-					start_dist = 7000,
+					start_dist = 3500,
 					end_dist = 20000,
 					min_mult = 0.66667
 				}
 				self.ntw20.stats = {
-					damage = 180,
+					damage = 240,
 					spread = 91,
 					recoil = 1,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 15,
+					concealment = 13,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -34225,7 +34225,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"amr"
 			}
 			self.hecate.recategorize = { "antim_snp" }
-			self.hecate.hs_mult = 2
+			self.hecate.hs_mult = 1.5
 			self.hecate.damage_type = "anti_materiel"
 			self.hecate.always_play_anims = true
 			self.hecate.upgrade_blocks = nil
@@ -34236,19 +34236,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.hecate.tactical_reload = 1
 			self.hecate.kick = self.stat_info.kick_tables.moderate_right_kick
 			self.hecate.supported = true
-			self.hecate.ads_speed = 0.640
+			self.hecate.ads_speed = 0.680
 			self.hecate.damage_falloff = {
-				start_dist = 3000,
+				start_dist = 1500,
 				end_dist = 10000,
-				min_mult = 0.5
+				min_mult = 0.375
 			}
 			self.hecate.stats = {
-				damage = 180,
+				damage = 240,
 				spread = 96,
 				recoil = 13,
 				spread_moving = 8,
 				zoom = 1,
-				concealment = 15,
+				concealment = 14,
 				suppression = 4,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -34494,7 +34494,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		end
 
 		if self.degfifty then --Masavik's .50 Cal Deagle
-			self.degfifty.categories = { "pistol", "amr", "semi_snp" }
+			self.degfifty.categories = { "pistol", "amr", "semi_amr" }
 			self.degfifty.recategorize = { "heavy_pis" }
 			self.degfifty.has_description = false
 			self.degfifty.damage_type = "anti_materiel"
@@ -34513,14 +34513,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				{3, self.stat_info.kick_tables.moderate_right_kick}
 			}
 			self.degfifty.supported = true
-			self.degfifty.ads_speed = 0.300
+			self.degfifty.ads_speed = 0.400
 			self.degfifty.damage_falloff = {
-				start_dist = 500,
+				start_dist = 200,
 				end_dist = 5000,
-				min_mult = 0.2
+				min_mult = 0.13333
 			}
 			self.degfifty.stats = {
-				damage = 120,
+				damage = 180,
 				spread = 51,
 				recoil = 1,
 				spread_moving = 9,
@@ -34541,7 +34541,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.degfifty.can_shoot_through_shield = true
 			self.degfifty.can_shoot_through_titan_shield = true
 			self.degfifty.use_vapor_trail = true
-			self.degfifty.hs_mult = 2
+			self.degfifty.hs_mult = 1.3334
 			self.degfifty.lock_slide = true
 			self.degfifty.lock_slide_alt = true
 			self.degfifty.timers.reload_empty = 4.0

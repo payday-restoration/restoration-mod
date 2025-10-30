@@ -1692,7 +1692,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
 		["bm_wally_desc"] = "#{important_2}#Эй, малой...##",
 
 		--AMR16--
-		["bm_wp_upg_i_m16a2"] = "Набор АМР-16 B3",
+		["bm_wp_upg_i_m16a2"] = "Набор Кросскилл B3",
 		["bm_wp_upg_i_m16a2_desc"] = "Заменяет автоматический огонь на стрельбу #{skill_color}#очередями по три##. #{risk}#Очереди#{skill_color}# имеют повышенную скорость в #{skill_color}#950.##",
 
 		--Bernetti Auto--
@@ -3625,7 +3625,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			--The Triad
 			["bm_w_triad"] = "Триада",
 			--K5 Pistol (Korean Arms Pack)
-			["bm_w_k5"] = "К5",
+			["bm_w_k5"] = "К-пятерка",
 			--TTI STI 2011 Combat Master
 			["bm_w_tti_2011"] = "ТТИ СТИ 2011 Комбат Мастер",
 			--AYY LMAO
@@ -3703,7 +3703,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			--M2019 Blaster
 			["bm_w_lapd"] = "Бластер М2019",
 			--Malorian Arms 3516
-			["bm_w_malorian_3516"] = "Малориан армс 3516 'Сильверхенд'",
+			["bm_w_malorian_3516"] = "МА 3516 'Сильверхенд'",
 			--Nagant M1895
 			["bm_w_m1895"] = "Нагант М1895",
 			--Mars Automatic
@@ -5519,7 +5519,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 		--Переименовываем названия древ
 		["st_menu_mastermind_single_shot"] = "Штурмовик",
-		--["st_menu_enforcer"] = "это текст на замену",
+		["st_menu_enforcer"] = "Боевик",
 		["st_menu_enforcer_armor"] = "Джаггернаут",
 		["st_menu_enforcer_ammo"] = "Поддержка",
 		["st_menu_technician_auto"] = "Боевой инженер",
@@ -5609,7 +5609,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 				["menu_body_expertise_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пулеметы## наносят #{skill_color}#$skill_value_b1## урона через броню.\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства из #{skill_color}#пулеметов## в #{risk}#автоматическом режиме## увеличат урон на #{skill_color}#$skill_value_p2##; складывается до #{skill_color}#$skill_value_p3## раз, а бонус к урону спадает раз в #{risk}#$skill_value_p1## секунд.",
 
 
-		--[[   Штурмовик, опять   ]]--
+		--[[   Боевик   ]]--
 
 			--[[   ОХОТНИК   ]]--
 				--Underdog--
@@ -6438,7 +6438,14 @@ if not easterless then
 			  ["bm_ap_saw_sc_desc"] = "Легендарный инструмент в узких кругах Crime.Net, благодаря которому было распилено не один десяток голов гражданских.\n\n#{skill_color}#Прорезает броню.##",
 			["bm_w_x_basset"] = "Акимбо Грибы",
 			["bm_w_ar47"] = "Дочка Калаша и ЭМки",
-			  ["bm_w_ar47_desc"] = "Я не могу понять все твои тупые вопросы:\n«Зачем? Почему?» — а я че, Бог?\n\nЯ ебу что ли?"
+			  ["bm_w_ar47_desc"] = "Я не могу понять все твои тупые вопросы:\n«Зачем? Почему?» — а я че, Бог?\n\nЯ ебу что ли?",
+			--в память о ебнутом деде с анонсов пушек от маквшей
+			["bm_w_hailstorm_2006m"] = "Метал Петух 3",
+			["bm_w_korth"] = "Каха",
+			["bm_w_kacchainsaw"] = "Огнемет с надствольным пилометом",
+			["bm_w_contender"] = "АРА ТЫ ЧОООО",
+			["bm_w_tkb"] = "Трихерник",
+			["bm_w_scout"] = "Пронхорни",
 		})
 	 end
 	 

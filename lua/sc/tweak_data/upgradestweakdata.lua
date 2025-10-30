@@ -1417,8 +1417,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Ammo Efficiency
 				self.values.player.head_shot_ammo_return = {
-					{ pickup_ratio = 0.5, time = 6, headshots = 4, to_magazine = false }, --Basic
-					{ pickup_ratio = 0.5, time = 6, headshots = 3, to_magazine = true } --Ace
+					{ pickup_ratio = 0.5, time = 6, headshots = 3, to_magazine = false }, --Basic
+					{ pickup_ratio = 0.5, time = 6, headshots = 2, to_magazine = true } --Ace
 				}
 				
 				self.skill_descs.fast_fire = {

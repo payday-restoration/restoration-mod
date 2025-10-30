@@ -4132,6 +4132,7 @@ end)
 					table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_i_iw_hailstorm")
 					table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 					table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+					table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 					self.wpn_fps_pis_rsh12_npc.override = deep_clone(self.wpn_fps_pis_rsh12.override)
 					self.wpn_fps_pis_rsh12_npc.uses_parts = deep_clone(self.wpn_fps_pis_rsh12.uses_parts)
@@ -13984,6 +13985,7 @@ end)
 				self.parts.wpn_fps_ass_m14_body_ebr.supported = true
 				self.parts.wpn_fps_ass_m14_body_ebr.stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
 				self.parts.wpn_fps_ass_m14_body_ebr.custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
+				table.insert(self.parts.wpn_fps_ass_m14_body_ebr.forbids, "wpn_fps_pis_2006m_fl_adapter")
 
 				--Jaeger Body
 				self.parts.wpn_fps_ass_m14_body_jae.pcs = {
@@ -13995,6 +13997,7 @@ end)
 				self.parts.wpn_fps_ass_m14_body_jae.supported = true
 				self.parts.wpn_fps_ass_m14_body_jae.stats = deep_clone(stocks.fixed_to_thumbhole_stats)
 				self.parts.wpn_fps_ass_m14_body_jae.custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
+				table.insert(self.parts.wpn_fps_ass_m14_body_jae.forbids, "wpn_fps_pis_2006m_fl_adapter")
 
 				--M308 Additional Parts
 				table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_m14_legend")
@@ -14018,8 +14021,16 @@ end)
 				table.insert(self.wpn_fps_ass_m14_npc.uses_parts, "wpn_fps_upg_i_faster_rof")
 				]]--
 
+				self.wpn_fps_ass_m14.adds = self.wpn_fps_ass_m14.adds or {}
 				self.wpn_fps_ass_m14.override = self.wpn_fps_ass_m14.override or {}
+				self.wpn_fps_ass_m14.adds.wpn_fps_upg_vg_ass_smg_verticalgrip = { "wpn_fps_pis_2006m_fl_adapter" }
+				self.wpn_fps_ass_m14.adds.wpn_fps_upg_vg_ass_smg_afg = { "wpn_fps_pis_2006m_fl_adapter" }
+				self.wpn_fps_ass_m14.adds.wpn_fps_upg_vg_ass_smg_stubby = { "wpn_fps_pis_2006m_fl_adapter" }
+				self.wpn_fps_ass_m14.adds.wpn_fps_smg_schakal_vg_surefire = { "wpn_fps_pis_2006m_fl_adapter" }
 
+				self.wpn_fps_ass_m14.override.wpn_fps_pis_2006m_fl_adapter = {
+					a_obj = "a_vg"
+				}
 				self.wpn_fps_ass_m14.override.wpn_fps_smg_schakal_vg_surefire = {
 					stats = { value = 0, recoil = 4, concealment = -2 }
 				}
@@ -22558,6 +22569,11 @@ end)
 				falloff_end_mult = 0.925,
 				ads_speed_mult = 0.9
 			}
+			self.parts.wpn_fps_ass_m14_body_ruger.override.wpn_fps_pis_2006m_fl_adapter = {
+				unit = "units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/wpn_fps_smg_pm9_fl_adapter",
+				third_unit = "units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9_pts/wpn_third_smg_pm9_fl_adapter"
+			}
+
 		end)
 
 	--McShay Mod Pack

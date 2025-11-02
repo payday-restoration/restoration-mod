@@ -34750,6 +34750,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.dl.hs_mult = 2
 			self.dl.stats_modifiers = nil
 			self.dl.panic_suppression_chance = 0.05
+			self.dl.can_shoot_through_enemy = true
+			self.dl.can_shoot_through_enemy_unlim = true
+			self.dl.can_shoot_through_wall = true
+			self.dl.can_shoot_through_shield = true
 			self.dl.timers = deep_clone(self.model70.timers)
 		end
 

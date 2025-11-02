@@ -9642,7 +9642,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.schakal.stats_modifiers = nil
-						self.schakal.reload_speed_multiplier = 1.05
+						self.schakal.reload_speed_multiplier = 1.1
 						self.schakal.timers.reload_not_empty = 2.26
 						self.schakal.timers.reload_exit_not_empty = 0.95
 						self.schakal.timers.reload_empty = 3.52
@@ -29481,7 +29481,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sierra458.stats_modifiers = nil
 				self.sierra458.sms = sms_preset.semi_snp_light
-				self.sierra458.reload_speed_multiplier = 1.05
+				self.sierra458.reload_speed_multiplier = 1.12
 				self.sierra458.armor_piercing_chance = 1
 				self.sierra458.can_shoot_through_enemy = true
 				self.sierra458.can_shoot_through_enemy_unlim = true

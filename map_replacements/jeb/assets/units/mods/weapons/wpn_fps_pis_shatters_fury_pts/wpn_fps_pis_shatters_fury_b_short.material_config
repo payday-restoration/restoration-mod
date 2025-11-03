@@ -4,4 +4,11 @@
         <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_short_nm"/>
 		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
     </material>
+	<material name="glow" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_df"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_nm"/>
+		<self_illumination_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/glow_il"/>
+		<variable type="scalar" name="il_bloom" value="8"/>
+		<variable type="scalar" name="il_multiplier" value="neonsign"/>
+	</material>
 </materials>

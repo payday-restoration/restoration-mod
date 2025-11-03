@@ -125,6 +125,7 @@
         <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/lock_nm"/>
         <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_df"/>
         <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/glow_il"/>
         
     <!-- body -->
         <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard"/>

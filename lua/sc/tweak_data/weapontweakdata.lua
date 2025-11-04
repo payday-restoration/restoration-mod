@@ -17964,6 +17964,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						"clip_ammo_increase"
 					}
 				}
+				self.umd_launcher.has_description = true
 				self.umd_launcher.AMMO_MAX = 6
 				self.umd_launcher.kick = self.stat_info.kick_tables.even_recoil
 				self.umd_launcher.fire_mode_data.fire_rate = 0.5

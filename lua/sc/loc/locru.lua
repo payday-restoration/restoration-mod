@@ -2932,7 +2932,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
 		["st_menu_value"] = "Стоимость:",
 
 		["st_menu_skill_use"] = "ТИП НАВЫКА:",
-		["st_wpn_akimbo"] = "Парные+",
+		["st_wpn_akimbo"] = "Парн.+",
 		["st_wpn_assault_rifle"] = "Винтовка",
 		["st_wpn_snp"] = "Винтовка",
 		["st_wpn_pistol"] = "Пистолет",
@@ -3505,9 +3505,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			["bm_w_baller"] = "Crosskill Javelin",
 			["bm_baller_sc_desc"] = "Модернизированный Crosskill, заряжженный 10×25 мм патронами вместо стандартных 11.43х23 мм.", -- в оригинале описания указано, что это подобие чанки кросскила с затвором "Крепкий охотник": и как вы мне прикажете переводить очередной кросскил?
 			--Polar 9mm
+			["bm_w_polar9_primary"] = "Crosskill Polar",
 			["bm_w_polar9"] = "Crosskill Polar",
 			["bm_w_x_polar9"] = "Парные Polar",
 			["bm_polar9_desc"] = "Попытка модернизировать Crosskill под магазин с двойным стеком и боеприпас 9х19мм. Явный фаворит в спортивной стрельбе.",
+			--Рэдфилд
+			["bm_w_hipower"] = "Redfield GP-640b",
+			["bm_w_x_hipower"] = "Парные Redfield GP-640b",
 		--Дробовики
 			--PD3 Origin-12
 			["bm_w_or12"] = "ORIGIN-12",
@@ -3625,12 +3629,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			--The Triad
 			["bm_w_triad"] = "Триада",
 			--K5 Pistol (Korean Arms Pack)
-			["bm_w_k5"] = "К-пятерка",
+			["bm_w_k5"] = "К-Пятерка",
 			--TTI STI 2011 Combat Master
-			["bm_w_tti_2011"] = "ТТИ СТИ 2011 Комбат Мастер",
+			["bm_w_tti_2011"] = "Комбат Мастер",
 			--AYY LMAO
 			["bm_w_bf2042_ayylmao"] = "Лауго Элиен",
 			--Polar 9mm
+			["bm_w_polar9_primary"] = "Кросскилл Полар",
 			["bm_w_polar9"] = "Кросскилл Полар",
 			["bm_w_x_polar9"] = "Парные Полары",
 			["bm_polar9_desc"] = "Попытка модернизировать Кросскилл под магазин с двойным стеком и боеприпас 9х19мм. Явный фаворит в спортивной стрельбе.",
@@ -3638,7 +3643,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			["bm_w_cz75b"] = "ЦЗ 75 Б",
 			["bm_w_x_cz75b"] = "Парные ЦЗ 75 Б",
 			--TTI Pit Viper
-			["bm_w_tti_viper"] = "ТТИ Пит Вайпер",
+			["bm_w_tti_viper"] = "Пит Вайпер",
 			-- Piercer 9mm
 			["bm_w_rusglock"] = "Пирсер",
 			--Magpul FMG-9
@@ -3672,6 +3677,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			["bm_w_hhpc"] = "Плазменный пистолет Хищника",
 			--MR-96
 			["bm_w_mr96"] = "МР-96",
+			["bm_w_x_mr96"] = "Парные МР-96",
 			--M712 Schnellfeuer
 			["bm_w_m712"] = "Маузер M712 Шнельфайер",
 			--Javelin 10mm
@@ -3681,6 +3687,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			["bm_w_af2011"] = "АФ2011",
 			--HK45C
 			["bm_w_hk45c"] = "ХК45Ц",
+			["bm_w_x_hk45c"] = "Парные ХК45Ц",
 			--Korth PRS
 			["bm_w_korth_prs"] = "Корф ПРС",
 			--S&W Model 642
@@ -3718,6 +3725,27 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			["bm_w_degfifty"] = "Дигл, но есть 50-калиберный нюанс",
 			-- Пистолет Макарова (будь проще)
 			["bm_w_pm"] = "Макаров",
+			["bm_w_x_pm"] = "Парные Макаровы",
+			--Рэдфилд
+			["bm_w_hipower"] = "Рэдфилд ГП-640б",
+			["bm_w_x_hipower"] = "Парные Рэдфилды",
+			--Sw 659
+			["bm_w_sw659"] = "Кондор .659",
+			["bm_w_x_sw659"] = "Пинк и Пурпл",
+			--Walther p38
+			["bm_w_p38"] = "Грубер П38",
+			--Lahti
+			["bm_w_l35"] = "Л-35 ''Лахти''",
+			--NP762
+			["bm_w_chinesium"] = "Норинко НП762",
+			--FNP45T
+			["bm_w_fnp45"] = "Р45Т",
+			--SG45
+			["bm_w_sg45"] = "СГ-45",
+			["bm_w_x_sg45"] = "Парные СГ-45",
+			["bm_sg45_desc"] = "Практически старший брат Контрактора. И очень практически стреляет .45 ACP.",
+			--Degle
+			["bm_w_degle"] = "Дэгл .50",
 		["bm_w_p90"] = "Проджект-90",
 		["bm_w_x_p90"] = "Парные Проджект-90",
 		["bm_w_mp7"] = "СпекОпс-7",
@@ -5520,6 +5548,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 		--Переименовываем названия древ
 		["st_menu_mastermind_single_shot"] = "Штурмовик",
 		["st_menu_enforcer"] = "Боевик",
+		["st_menu_enforce_shotgun"] = "Зачинщик",
 		["st_menu_enforcer_armor"] = "Джаггернаут",
 		["st_menu_enforcer_ammo"] = "Поддержка",
 		["st_menu_technician_auto"] = "Боевой инженер",
@@ -5611,7 +5640,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 		--[[   Боевик   ]]--
 
-			--[[   ОХОТНИК   ]]--
+			--[[   Зачинщик   ]]--
 				--Underdog--
 				["menu_underdog_beta_sc"] = "Давление",
 				["menu_underdog_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКогда #{skill_color}#3## или более врага находятся в #{skill_color}#18## метрах от вас, вы получаете #{skill_color}#$skill_value_b1## бонус к урону на #{skill_color}#$skill_value_b2## секунд.\n\nПИКОВЫЙ: #{owned}#$pro##\nКогда #{skill_color}#3## или более врага находятся в #{skill_color}#18## метрах от вас, вы также получаете на #{skill_color}#$skill_value_p1## меньше урона в течении #{skill_color}#$skill_value_p2## секунд.",

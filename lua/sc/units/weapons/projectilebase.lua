@@ -130,7 +130,6 @@ function ProjectileBase.check_time_cheat(projectile_type, owner_peer_id)
 	return true
 end
 
-
 function ProjectileBase:throw(params)
 	self._owner = params.owner
 	local velocity = params.dir
@@ -152,7 +151,10 @@ function ProjectileBase:throw(params)
 
 	if self._simulated then
 		if push_at_body_index then
-			self._unit:push_at(mass, velocity, self._unit:body(push_at_body_index):center_of_mass())
+			self._unit:push_at(mass, velocity, self._unit:body(0):center_of_mass())
+			if push_at_body_index ~= 0 then 
+				self._unit:push_at(mass, velocity * 0.1, self._unit:body(push_at_body_index):center_of_mass())
+			end
 		else
 			self._unit:push_at(mass, velocity, self._unit:position())
 		end

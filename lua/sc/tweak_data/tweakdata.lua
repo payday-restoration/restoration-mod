@@ -109,27 +109,37 @@ tweak_data.shotgun = {
 	shake_mul = 2
 }
 	tweak_data.shotgun_auto = {
-		hipfire_spread_mult = 0.25,
+		hipfire_spread_mult = 0.4,
 	}
 	tweak_data.shotgun_light = {
-		hipfire_spread_mult = 1.25,
-		hipfire_moving_spread_mult = 1.5
+		hipfire_spread_mult = 1.5,
+		hipfire_moving_spread_mult = 1.6
 	}
 		tweak_data.shotgun_light_semi = {
 			hipfire_spread_mult = 0.8 / tweak_data.shotgun_light.hipfire_spread_mult,
 			hipfire_moving_spread_mult = 1 / tweak_data.shotgun_light.hipfire_moving_spread_mult
 		}
+			tweak_data.shotgun_light_pistol = {
+				ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
+				swap_bonus = 2.2,
+				hipfire_spread_mult = 1.4 / (tweak_data.shotgun_light.hipfire_spread_mult * tweak_data.shotgun_light_semi.hipfire_spread_mult)
+			}
 	tweak_data.shotgun_heavy = {
 		hipfire_spread_mult = 0.65,
 	}
-		tweak_data.shotgun_pistol = {
+			tweak_data.shotgun_heavy_pistol = {
+				ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
+				swap_bonus = 2.2,
+				hipfire_spread_mult = 1.1 / tweak_data.shotgun_heavy.hipfire_spread_mult
+			}
+	tweak_data.shotgun_break = {
+		hipfire_spread_mult = 1.35,
+	}
+		tweak_data.shotgun_break_pistol = {
 			ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
 			swap_bonus = 2.2,
-			hipfire_spread_mult = 1.2 / tweak_data.shotgun_heavy.hipfire_spread_mult
+			hipfire_spread_mult = 1.5 / tweak_data.shotgun_break.hipfire_spread_mult
 		}
-	tweak_data.shotgun_break = {
-		hipfire_spread_mult = 1.25,
-	}
 		tweak_data.shotgun_smasher = {
 			shake_mul = 3
 		}
@@ -213,11 +223,11 @@ tweak_data.snp = {
 	hipfire_moving_spread_mult = 1.5,
 	ads_move_speed_mult = 0.4,
 	ads_stationary_spread_mult = 0.1,
-	shake_mul = 1.1,
-	min_spread_mult = 2
+	shake_mul = 1,
+	min_spread_mult = 2.5
 }
 	tweak_data.snp_hip = {
-		min_spread_mult = 1 / tweak_data.snp.min_spread_mult,
+		min_spread_mult = 1.5 / tweak_data.snp.min_spread_mult,
 		hipfire_spread_mult = 2 / tweak_data.snp.hipfire_spread_mult,
 		hipfire_moving_spread_mult = 1.25 / tweak_data.snp.hipfire_moving_spread_mult
 	}
@@ -228,18 +238,29 @@ tweak_data.snp = {
 		ads_moving_recoil = 1.1,
 		ads_moving_spread_mult = 1.35,
 		ads_move_speed_mult = 0.3 / tweak_data.snp.ads_move_speed_mult,
-		shake_mul = 1.1
+		shake_mul = 1.1 / tweak_data.snp.shake_mul
 	}
-		tweak_data.s7 = {
-			min_spread_mult = 0.025 / (tweak_data.semi_snp.min_spread_mult * tweak_data.snp.min_spread_mult),
-			hipfire_spread_mult = 0.025 / (tweak_data.semi_snp.hipfire_spread_mult * tweak_data.snp.hipfire_spread_mult),
-			hipfire_moving_spread_mult = 0.025 / (tweak_data.semi_snp.hipfire_moving_spread_mult * tweak_data.snp.hipfire_moving_spread_mult),
-			ads_moving_spread_mult = 0.025 / tweak_data.semi_snp.ads_moving_spread_mult
-		}
 	tweak_data.amr = {
-		hipfire_spread_mult = 2,
-		shake_mul = 1.1
+		ads_move_speed_mult = 0.3 / tweak_data.snp.ads_move_speed_mult,
+		hipfire_spread_mult = 3,
+		shake_mul = 1.1,
+		min_spread_mult = 3.5 / tweak_data.snp.min_spread_mult,
 	}
+		tweak_data.semi_amr = {
+			min_spread_mult = 5 / (tweak_data.amr.min_spread_mult * tweak_data.snp.min_spread_mult),
+			hipfire_spread_mult = 5 / (tweak_data.amr.hipfire_spread_mult * tweak_data.snp.hipfire_spread_mult),
+			hipfire_moving_spread_mult = 2.5 / tweak_data.snp.hipfire_moving_spread_mult,
+			ads_moving_recoil = 1.1,
+			ads_moving_spread_mult = 1.35,
+			ads_move_speed_mult = 0.2 / (tweak_data.amr.ads_move_speed_mult * tweak_data.snp.ads_move_speed_mult),
+			shake_mul = 1.2 / (tweak_data.amr.shake_mul * tweak_data.snp.shake_mul)
+		}
+			tweak_data.s7 = {
+				min_spread_mult = 0.025 / (tweak_data.semi_amr.min_spread_mult * tweak_data.snp.min_spread_mult),
+				hipfire_spread_mult = 0.025 / (tweak_data.semi_amr.hipfire_spread_mult * tweak_data.snp.hipfire_spread_mult),
+				hipfire_moving_spread_mult = 0.025 / (tweak_data.semi_amr.hipfire_moving_spread_mult * tweak_data.snp.hipfire_moving_spread_mult),
+				ads_moving_spread_mult = 0.025 / tweak_data.semi_amr.ads_moving_spread_mult
+			}
 
 tweak_data.assault_rifle = {
 	swap_bonus = 0.95,
@@ -280,27 +301,27 @@ tweak_data.assault_rifle = {
 tweak_data.akimbo = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.9,
-	ads_moving_spread_mult = 2.5,
-	hipfire_spread_mult = 2.5,
-	moving_spread_mult = 2.5
+	ads_moving_spread_mult = 2,
+	hipfire_spread_mult = 2,
+	moving_spread_mult = 2
 }
 	tweak_data.akb_smg = {
 		swap_bonus = 0.9,
-		ads_move_speed_mult = 0.75 / tweak_data.akimbo.ads_move_speed_mult,
-		ads_moving_spread_mult = 4 / tweak_data.akimbo.ads_moving_spread_mult,
-		hipfire_spread_mult = 4 / tweak_data.akimbo.hipfire_spread_mult,
-		moving_spread_mult = 4 / tweak_data.akimbo.moving_spread_mult
+		ads_move_speed_mult = 0.9 / tweak_data.akimbo.ads_move_speed_mult,
+		ads_moving_spread_mult = 2.5 / tweak_data.akimbo.ads_moving_spread_mult,
+		hipfire_spread_mult = 2.5 / tweak_data.akimbo.hipfire_spread_mult,
+		moving_spread_mult = 2.5 / tweak_data.akimbo.moving_spread_mult
 	}
 	tweak_data.akb_shot = {
 		swap_bonus = 0.9,
-		ads_move_speed_mult = 0.75 / tweak_data.akimbo.ads_move_speed_mult,
+		ads_move_speed_mult = 0.8 / tweak_data.akimbo.ads_move_speed_mult,
 		ads_moving_spread_mult = 3 / tweak_data.akimbo.ads_moving_spread_mult,
 		hipfire_spread_mult = 3 / tweak_data.akimbo.hipfire_spread_mult,
 		moving_spread_mult = 3 / tweak_data.akimbo.moving_spread_mult
 	}
 	tweak_data.akb_rifle = {
 		swap_bonus = 0.9,
-		ads_move_speed_mult = 0.75 / tweak_data.akimbo.ads_move_speed_mult,
+		ads_move_speed_mult = 0.7 / tweak_data.akimbo.ads_move_speed_mult,
 		ads_moving_spread_mult = 3.5 / tweak_data.akimbo.ads_moving_spread_mult,
 		hipfire_spread_mult = 3.5 / tweak_data.akimbo.hipfire_spread_mult,
 		moving_spread_mult = 3.5 / tweak_data.akimbo.moving_spread_mult
@@ -611,25 +632,25 @@ tweak_data.projectiles.fir_com.player_damage = 4.5
 tweak_data.projectiles.fir_com.burn_duration = 12
 tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"
 
---Throwing Card--
-tweak_data.projectiles.wpn_prj_ace.damage = 24
-tweak_data.projectiles.wpn_prj_ace.adjust_z = 0
-
 --Shuriken
 tweak_data.projectiles.wpn_prj_four.damage = 12
-tweak_data.projectiles.wpn_prj_four.adjust_z = 0
+tweak_data.projectiles.wpn_prj_four.magnetism = 0.15
+
+--Throwing Card--
+tweak_data.projectiles.wpn_prj_ace.damage = 18
+tweak_data.projectiles.wpn_prj_ace.magnetism = 0.15
 
 --Throwing Knife--
 tweak_data.projectiles.wpn_prj_target.damage = 24
-tweak_data.projectiles.wpn_prj_target.adjust_z = 0
-
---Javelin--
-tweak_data.projectiles.wpn_prj_jav.damage = 54
-tweak_data.projectiles.wpn_prj_jav.adjust_z = 0
+tweak_data.projectiles.wpn_prj_target.magnetism = 0.15 * 5
 
 --Throwing axe--
 tweak_data.projectiles.wpn_prj_hur.damage = 36
-tweak_data.projectiles.wpn_prj_hur.adjust_z = 0
+tweak_data.projectiles.wpn_prj_hur.magnetism = 0.15 * 5
+
+--Javelin--
+tweak_data.projectiles.wpn_prj_jav.damage = 54
+tweak_data.projectiles.wpn_prj_jav.magnetism = 0.15
 
 --Balled Snow--
 if tweak_data.projectiles.xmas_snowball then
@@ -922,7 +943,7 @@ velocity = {
 }
 for i, proj_id in ipairs(velocity) do
 	if tweak_data.projectiles[proj_id] then
-		tweak_data.projectiles[proj_id].launch_speed = 1500
+		tweak_data.projectiles[proj_id].launch_speed = 1200
 		tweak_data.projectiles[proj_id].adjust_z = 50
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -932,9 +953,9 @@ velocity = {
 }
 for i, proj_id in ipairs(velocity) do
 	if tweak_data.projectiles[proj_id] then
-		tweak_data.projectiles[proj_id].launch_speed = 2000
+		tweak_data.projectiles[proj_id].launch_speed = 1000
 		tweak_data.projectiles[proj_id].adjust_z = 50
-		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 2
 	end
 end
 velocity = {
@@ -942,9 +963,9 @@ velocity = {
 }
 for i, proj_id in ipairs(velocity) do
 	if tweak_data.projectiles[proj_id] then
-		tweak_data.projectiles[proj_id].launch_speed = 1700
+		tweak_data.projectiles[proj_id].launch_speed = 900
 		tweak_data.projectiles[proj_id].adjust_z = 50
-		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 2
 	end
 end
 velocity = {
@@ -952,7 +973,7 @@ velocity = {
 }
 for i, proj_id in ipairs(velocity) do
 	if tweak_data.projectiles[proj_id] then
-		tweak_data.projectiles[proj_id].launch_speed = 2100
+		tweak_data.projectiles[proj_id].launch_speed = 2000
 		tweak_data.projectiles[proj_id].adjust_z = 50
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end

@@ -43,10 +43,8 @@ function PoisonGasGrenade:_detonate(tag, unit, body, other_unit, other_body, pos
 
 	self:remove_trail_effect()
 
-	if Network:is_server() then
-		if self._unit:id() ~= -1 then
-			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", GrenadeBase.EVENT_IDS.detonate)
-		end
+	if self._unit:id() ~= -1 and managers.network:session() then
+		managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", GrenadeBase.EVENT_IDS.detonate)
 	end
 
 	self:_handle_hiding_and_destroying(false, nil)

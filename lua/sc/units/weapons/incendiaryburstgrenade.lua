@@ -42,7 +42,7 @@ function IncendiaryBurstGrenade:_detonate(normal)
 	self:remove_trail_effect()
 	self:_spawn_environment_fire(normal)
 
-	if self._unit:id() ~= -1 then
+	if self._unit:id() ~= -1 and managers.network:session() then
 		managers.network:session():send_to_peers_synched("sync_detonate_molotov_grenade", self._unit, "base", GrenadeBase.EVENT_IDS.detonaten, normal)
 	end
 

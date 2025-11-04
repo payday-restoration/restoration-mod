@@ -622,10 +622,23 @@ function PlayerDamage:damage_bullet(attack_data)
 			else
 				pm:unregister_message(Message.OnPlayerDodge, "dodge_ricochet_bullets")
 			end
-		
+
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
-				self._unit:movement():subtract_stamina(6.75)
+				local unit_movement = self._unit:movement()
+				local drain_mult = 0.5
+				if unit_movement then
+					local current_state = unit_movement and unit_movement.current_state and unit_movement:current_state()
+					local advmov = current_state and (current_state:in_air() or current_state._is_sliding or current_state._is_wallrunning)
+					local freefall = unit_movement:current_state_name() == "jerry1" or unit_movement:current_state_name() == "jerry2"
+					local crouched = not advmov and unit_movement:crouching()
+					if crouched or freefall or unit_movement:zipline_unit() or current_state.driving or current_state._moving ~= true then
+						drain_mult = 0
+					elseif (unit_movement:running() or advmov) then
+						drain_mult = 1
+					end
+				end
+				self._unit:movement():subtract_stamina(8 * drain_mult)
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
 				self._next_allowed_dmg_t = Application:digest_value(t + math.max(grace_bonus, self._dmg_interval), true)

@@ -365,6 +365,20 @@
 				gradient_default = "units/pd2_dlc_wcc/weapon_colors/pattern_gradient/gradient_camo_19_df"
 			/>
 		</WeaponSkin>
+		
+		<WeaponSkin id="resmod_shigu" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="106" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_inf3/weapon_colors/pattern/pattern_inf_16_df"
+				gradient_default = "units/pd2_dlc_wcc/weapon_colors/pattern_gradient/gradient_camo_15_df"
+			/>
+		</WeaponSkin>
 
 	<!--Color Pack 3-->
 		<WeaponSkin id="resmod_sugarhoneyicetea" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_ocp" dlc="ocp" sort_number="200" rarity="legendary">
@@ -494,6 +508,7 @@
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_joe"/>
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_blackexotic"/>
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_llenn"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_shigu"/>
 
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_sugarhoneyicetea"/>
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_blackzebra"/>

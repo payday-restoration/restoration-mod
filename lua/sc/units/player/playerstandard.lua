@@ -828,7 +828,7 @@ PlayerStandard._primary_action_funcs = {
 		auto = function (self, t, input, params, weap_unit, weap_base, impact)
 			if weap_base.third_person_important and weap_base:third_person_important() then
 				self._ext_network:send("shot_blank_reliable", impact, 0)
-			elseif weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire then
+			elseif weap_base.akimbo and not weap_base:weapon_tweak_data().allow_akimbo_autofire then
 				self._ext_network:send("shot_blank", impact, 0)
 			end
 
@@ -3232,11 +3232,12 @@ function PlayerStandard:secondary_add_ammo(value, mag_regen)
 end
 
 function PlayerStandard:_is_overheating()
-	local primary = alive(self._unit) and self._unit.inventory and self._unit:inventory().unit_by_selection and self._unit:inventory():unit_by_selection(2):base()
+	local unit_inv = alive(self._unit) and self._unit.inventory and self._unit:inventory()
+	local primary = unit_inv and unit_inv.unit_by_selection and unit_inv:unit_by_selection(2):base()
 	local primary_can_reload = primary and primary._starwars and primary._starwars.can_reload
-	local secondary = alive(self._unit) and self._unit.inventory and self._unit:inventory().unit_by_selection and self._unit:inventory():unit_by_selection(1):base()
+	local primary = unit_inv and unit_inv.unit_by_selection and unit_inv:unit_by_selection(1):base()
 	local secondary_can_reload = secondary and secondary._starwars and secondary._starwars.can_reload
-	return (primary and primary._primary_overheat_pen and self._unit:inventory():equipped_selection() == 2 and not primary_can_reload) or (secondary and secondary._secondary_overheat_pen and self._unit:inventory():equipped_selection() == 1 and not secondary_can_reload)
+	return (primary and primary._primary_overheat_pen and unit_inv:equipped_selection() == 2 and not primary_can_reload) or (secondary and secondary._secondary_overheat_pen and unit_inv:equipped_selection() == 1 and not secondary_can_reload)
 end
 
 function PlayerStandard:weapon_add_ammo(value)
@@ -4712,8 +4713,10 @@ function PlayerStandard:_find_pickups(t)
 	local pickups = World:find_units_quick("sphere", self._unit:movement():m_pos(), self._pickup_area, self._slotmask_pickups)
 	local grenade_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
 	local may_find_grenade = not grenade_tweak.base_cooldown or grenade_tweak.pickup_cooldown_t ~= nil --and managers.player:has_category_upgrade("player", "regain_throwable_from_ammo")
-
 	for _, pickup in ipairs(pickups) do
+		
+		may_find_grenade = alive(pickup) and pickup:pickup() and pickup:pickup()._ammo_box --blocks retrievables from rolling additional pickups for themselves
+
 		if pickup:pickup() and pickup:pickup():pickup(self._unit) then
 			if may_find_grenade then
 				managers.player:regain_throwable_from_ammo() --Replace vanilla coroutine

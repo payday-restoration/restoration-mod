@@ -1888,8 +1888,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_ace.throw_allowed_expire_t = 0.05
 	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.625
 	self.projectiles.wpn_prj_ace.expire_t = 0.65
-	self.projectiles.wpn_prj_ace.max_amount = 9
-	self.projectiles.wpn_prj_ace.base_pickup_chance = 0.12
+	self.projectiles.wpn_prj_ace.max_amount = 12
+	self.projectiles.wpn_prj_ace.base_pickup_chance = 0.15
 	self.projectiles.wpn_prj_ace.count_as_melee = true
 	--Throwing Knife
 	self.projectiles.wpn_prj_target.throw_allowed_expire_t = 0.12
@@ -3673,8 +3673,8 @@ function WeaponColorTemplates.setup_weapon_color_templates(tweak_data)
 		color_skin = WeaponColorTemplates._setup_color_skin_template(tweak_data)
 	}
 
-	-- Metal+
-		-- Sights
+	-- Metal
+		-- +Sights
 		table.insert(weapon_color_templates.color_variation, 
 			{
 				--base_sights = "base_variation",
@@ -3685,7 +3685,7 @@ function WeaponColorTemplates.setup_weapon_color_templates(tweak_data)
 				base_magazine = "base_variation"
 			}
 		)
-		-- Magazine
+		-- +Magazine
 		table.insert(weapon_color_templates.color_variation, 
 			{
 				base_sights = "base_variation",
@@ -3696,7 +3696,7 @@ function WeaponColorTemplates.setup_weapon_color_templates(tweak_data)
 				--base_magazine = "base_variation"
 			}
 		)
-		-- Sights + Magazine
+		-- +Sights & Magazine
 		table.insert(weapon_color_templates.color_variation, 
 			{
 				--base_sights = "base_variation",
@@ -3707,6 +3707,32 @@ function WeaponColorTemplates.setup_weapon_color_templates(tweak_data)
 				--base_magazine = "base_variation"
 			}
 		)
+
+	--Organic
+		-- -Lower
+		table.insert(weapon_color_templates.color_variation, 
+			{
+				base_sights = "base_variation",
+				gradient_default = "gradient_default",
+				pattern_default = "pattern_default",
+				base_default = "base_plastic",
+				base_gadget = "base_variation",
+				base_magazine = "base_variation",
+				base_lower_reciever = "base_variation"
+			}
+		)
+
+	weapon_color_templates.color_skin.types.lower_reciever = {
+		pattern = "pattern_barrel",
+		pattern_gradient = "gradient_barrel",
+		base_gradient = "base_lower_reciever"
+	}
+
+	weapon_color_templates.color_skin.types.upper_reciever = {
+		pattern = "pattern_barrel",
+		pattern_gradient = "gradient_barrel",
+		base_gradient = "base_upper_reciever"
+	}
 
 	return weapon_color_templates
 end

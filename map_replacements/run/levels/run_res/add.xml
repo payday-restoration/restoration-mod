@@ -469,4 +469,9 @@
 		<material_config path="core/environments/skies/sky_cloudy_blue/sky_cloudy_blue"/>
 		<scene path="core/environments/skies/default/default"/>
 	</add>
+	<add from_db="true" path="units/dev_tools/editable_text_short/editable_text_short" type="unit">
+		<unit path="units/dev_tools/editable_text_short/editable_text_short"/>
+		<object path="units/dev_tools/editable_text_short/editable_text_short"/>
+		<material_config path="units/dev_tools/editable_text_short/editable_text_short"/>
+	</add>
 </table>

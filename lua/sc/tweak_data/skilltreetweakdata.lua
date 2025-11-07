@@ -2125,7 +2125,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
-				icon_xy = {1, 1},
+				icon_xy = {4, 0},
 				name_id = "menu_deck2_3",
 				desc_id = "menu_deck2_3_desc_sc"
 			},

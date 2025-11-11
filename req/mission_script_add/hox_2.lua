@@ -118,7 +118,7 @@ local opts_enable_surprse_cloaker = {
 
 }
 local opts_enable_dozer = {
-	enabled = (death_wish_above or pro_job and enabled_chance_ambush),
+	enabled = death_wish_above,
 	elements = { 400063, },
 	toggle = "on",
 }

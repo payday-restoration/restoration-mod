@@ -31,11 +31,11 @@ local double_dozers = {
 	}
 }
 return {
-	--Pro Job PONR
+	-- Pro Job PONR
 	[100176] = {
 		ponr = ponr_value
 	},
-	--fix hunt used by reaper sec in lab
+	-- Fix hunt used by reaper sec in lab
 	[100245] = {
 		pre_func = function (self)
 			if not self._values.SO_access_original then
@@ -44,13 +44,13 @@ return {
 			end
 		end
 	},
-	--trigger the elite spawn when enterning the lab
+	-- Trigger the elite spawn when enterning the lab
 	[100335] = {
 		on_executed = {
 			{id = 101053, delay = 1}
 		}
 	},
-	--use unused lab spawn as random elite unit
+	-- Use unused lab spawn as random elite unit
 	[101053] = {
 		values = {
             enemy = eseries_elite_unit,
@@ -58,15 +58,35 @@ return {
 			rotation = Rotation(138.000, 0, -0)
 		}
 	},
-	--Titan Shields for OVK+ (PJ only)
+	-- Addtional blockades 
+	[101589] = {
+		on_executed = {
+			{id = 400010, delay = 0},
+			{id = 400020, delay = 0}, 
+		},
+	},
+	-- Spawn these guys once you picked up the server 
+	[100776] = {
+		on_executed = {
+			{id = 400011, delay = 0}, -- shields
+			{id = 400012, delay = 0},
+			{id = 400013, delay = 0},
+			{id = 400014, delay = 0},
+			{id = 400015, delay = 0},
+			{id = 400016, delay = 0},
+			{id = 400017, delay = 0}, -- snipers
+			{id = 400018, delay = 0},
+		},
+	},
+	-- Titan Shields for OVK+ (PJ only)
 	[101860] = tshield,
 	[101863] = tshield,
 	[101864] = tshield,
-	--Disable single dozer mission scripts on higher diffs
+	-- Disable single dozer mission scripts on higher diffs
 	[101733] = double_dozers,
 	[101734] = double_dozers,
 	[100854] = double_dozers,
-	--fix this mission script not actually spawning skulldozers
+	-- fix this mission script not actually spawning skulldozers
 	[101698] = {
 		on_executed = {
 			{id = 101691, delay = 0},

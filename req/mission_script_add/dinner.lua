@@ -1,6 +1,6 @@
 local murkies_responders = {
-"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
-"units/payday2/characters/ene_murkywater_2/ene_murkywater_2"
+	"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+	"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 }
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
@@ -17,16 +17,17 @@ local enabled_chance_cloakers = math.random() < diff_scaling
 local enabled_chance_shields_and_tazer = math.random() < diff_scaling
 local enabled_chance_shields_and_tazer_2 = math.random() < diff_scaling
 local enabled_chance_shields_and_dozer = math.random() < diff_scaling
-local dozer_respawn_delay = (difficulty >= 7 and 240) or 300
-local ponr_value = (difficulty <= 5 and 120) or 90
-local ponr_timer_player_mul = {
-	1,
-	1,
-	1,
-	1,
-	1,  -- 5+ players
-}
 
+-- Minimum delay ranges from 270s on Normal to 180s on DS
+-- Maximum delay ranges from 405s on Normal to 270s on DS
+local dozer_respawn_delay = 300 - difficulty * 15
+local dozer_respawn_delay_rand = dozer_respawn_delay * 0.5
+
+-- 200s on DS, up to 260s on Normal
+local ponr_value = 200 + (8 - difficulty) * 10
+local ponr_timer_player_mul = {
+	1, -- No scaling
+}
 local opts_pro_job_ponr = {
 	elements = { 100989 },
 	trigger_times = 0,
@@ -187,6 +188,7 @@ local optsSniper_3 = {
 	enabled = (overkill_above and enabled_chance_snipers),
 }
 local optsMurky = {
+	enemy = murkies_responders[1],
 	enemy_table = murkies_responders,
 	participate_to_group_ai = true,
 	enabled = true,
@@ -249,21 +251,21 @@ local optsrespawn_murkies_4 = {
 }
 local optsrespawn_dozer_1 = {
 	on_executed = {
-		{ id = 400019, delay = dozer_respawn_delay, },
+		{ id = 400019, delay = dozer_respawn_delay, delay_rand = dozer_respawn_delay_rand, },
 	},
 	elements = {
 		400019,
 	},
-	event = "death"
+	event = "death",
 }
 local optsrespawn_dozer_2 = {
 	on_executed = {
-		{ id = 400020, delay = dozer_respawn_delay, },
+		{ id = 400020, delay = dozer_respawn_delay, delay_rand = dozer_respawn_delay_rand, },
 	},
 	elements = {
 		400020,
 	},
-	event = "death"
+	event = "death",
 }
 local van_spawngroup = {
 	spawn_groups = {

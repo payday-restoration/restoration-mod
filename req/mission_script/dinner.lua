@@ -52,15 +52,10 @@ local murky_dozer_skull = {
 
 return {
 	-- Pro Job PONR
-	[104979] = {
+	-- Triggers on second crane interaction
+	[100750] = {
 		on_executed = {
 			{ id = 400063, delay = 0, },
-		},
-	},
-	-- Slightly slower difficulty ramp up
-	[101357] = {
-		values = {
-			difficulty = 0.6,
 		},
 	},
 	-- Murky amount gets increased to 5 on PJs
@@ -93,6 +88,7 @@ return {
 			{ id = 400055, delay = 15, },
 		},
 	},
+	-- Make new scripted units trigger door opening in the long hallway
 	[102505] = {
 		values = {
 			elements = {

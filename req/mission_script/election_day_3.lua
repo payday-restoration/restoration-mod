@@ -26,6 +26,11 @@ return {
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},
+	[102174] = {
+		on_executed = {
+			{id = 400055, delay = 15, delay_rand = 5,},
+		},
+	},
 	-- New reinforce (from Eclipse)
 	[104306] = {
 		reinforce = {

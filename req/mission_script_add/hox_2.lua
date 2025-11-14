@@ -14,7 +14,7 @@ local enabled_chance_ambush = math.random() < diff_scaling
 local opts_fbi_ready_team_agent = {
 
 	enabled = true,
-    enemy = fbi_ready_team_1, fbi_ready_team_2
+    enemy = fbi_ready_team_1, fbi_ready_team_2,
     enemy_table = {fbi_ready_team_1, fbi_ready_team_2,},
     on_executed = {
         {id = 400057, delay= 0, },

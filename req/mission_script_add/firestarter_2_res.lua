@@ -4,7 +4,7 @@ local fbi_ready_team_group_spawn_amount = 1
 
 local opts_fbi_ready_team_agent = {
 	enabled = true,
-    enemy = fbi_ready_team_1, fbi_ready_team_2
+    enemy = fbi_ready_team_1, fbi_ready_team_2,
     enemy_table = {fbi_ready_team_1, fbi_ready_team_2,},
     on_executed = {
         {id = 400013, delay= 0, },

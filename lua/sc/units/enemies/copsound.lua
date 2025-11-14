@@ -49,7 +49,7 @@ function CopSound:chk_voice_prefix()
 	end
 end
 
-function CopSound:say(sound_name, sync, skip_prefix, important, callback)
+Hooks:OverrideFunction(CopSound, "say", function(self, sound_name, sync, skip_prefix, ...)
 	if self._last_speech then
 		self._last_speech:stop()
 	end
@@ -63,28 +63,16 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		return
 	end
 
-	-- Zombie cops have almost all lines replaced with g90, not included in the lookup tables (at least for now)
-	local full_sound = nil
-	if self._prefix == "z1n_" or self._prefix == "z2n_" or self._prefix == "z3n_" or self._prefix == "z4n_" then
-		if sound_name == "x02a_any_3p" then
-			full_sound = "l2n_x01a_any_3p"
-		elseif sound_name == "x01a_any_3p" then
-			full_sound = "l2n_x02a_any_3p"
-		else
-			sound_name = "g90"
-		end
-	else
-		local full_sound_lookup = self.full_sound_lookup_by_prefix[self._prefix]
-		full_sound = full_sound_lookup and full_sound_lookup[sound_name] or nil
-		if type(full_sound) == "table" then
-			full_sound = table.random(full_sound)
-		elseif full_sound then
-			-- Nothing
-		elseif self.sound_name_lookup_by_prefix[self._prefix] then
-			sound_name = self.sound_name_lookup_by_prefix[self._prefix][sound_name] or sound_name
-			if type(sound_name) == "table" then
-				sound_name = table.random(sound_name)
-			end
+	local full_sound_lookup = self.full_sound_lookup_by_prefix[self._prefix]
+	local full_sound = full_sound_lookup and full_sound_lookup[sound_name] or nil
+	if type(full_sound) == "table" then
+		full_sound = table.random(full_sound)
+	elseif full_sound then
+		-- Nothing
+	elseif self.sound_name_lookup_by_prefix[self._prefix] then
+		sound_name = self.sound_name_lookup_by_prefix[self._prefix][sound_name] or sound_name
+		if type(sound_name) == "table" then
+			sound_name = table.random(sound_name)
 		end
 	end
 
@@ -97,7 +85,6 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	end
 
 	local event_id = nil
-
 	if type(full_sound) == "number" then
 		event_id = full_sound
 		full_sound = nil
@@ -105,7 +92,6 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 
 	if sync then
 		event_id = event_id or SoundDevice:string_to_id(full_sound)
-
 		self._unit:network():send("say", event_id)
 	end
 
@@ -116,4 +102,4 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	end
 
 	self._speak_expire_t = TimerManager:game():time() + 2
-end
+end)

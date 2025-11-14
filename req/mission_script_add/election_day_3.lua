@@ -15,7 +15,7 @@ local opts_beat_cops = {
     enemy = cop_1, cop_2, cop_3, cop_4
     enemy_table = {cop_1,cop_2, cop_2, cop_3, cop_4},
     on_executed = {
-        {id = 400013, delay= 0, },
+        {id = 400025, delay= 0, },
     },
 }
 local opts_spawn_beat_cops = {
@@ -37,7 +37,7 @@ local opts_loop = {
 		{ id = 400024, delay = 0, },
 	},
 }
-local opts_beatcops_spawngroup_1 = {
+local opts_beat_cops_spawngroup_1 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400009, delay = 0 },
@@ -47,7 +47,7 @@ local opts_beatcops_spawngroup_1 = {
 		{ id = 400013, delay = 0 },
 	},
 }
-local opts_beatcops_spawngroup_2 = {
+local opts_beat_cops_spawngroup_2 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400014, delay = 0 },
@@ -55,14 +55,14 @@ local opts_beatcops_spawngroup_2 = {
 		{ id = 400016, delay = 0 },
 	},
 }
-local opts_beatcops_spawngroup_3 = {
+local opts_beat_cops_spawngroup_3 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400017, delay = 0 },
 		{ id = 400018, delay = 0 },
 	},
 }
-local opts_beatcops_spawngroup_4 = {
+local opts_beat_cops_spawngroup_4 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400019, delay = 0 },
@@ -70,7 +70,7 @@ local opts_beatcops_spawngroup_4 = {
 		{ id = 400021, delay = 0 },
 	},
 }
-local opts_beatcops_spawngroup_5 = {
+local opts_beat_cops_spawngroup_5 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400022, delay = 0 },
@@ -80,12 +80,12 @@ local opts_beatcops_spawngroup_5 = {
 return {
     elements = {
         -- beat  cops spawns system
-        restoration:gen_missionscript(400004, "beat_cops_spawngroup_1", opts_beatcops_spawngroup_1),
-		restoration:gen_missionscript(400005, "beat_cops_spawngroup_2", opts_beatcops_spawngroup_2),
-		restoration:gen_missionscript(400006, "beat_cops_spawngroup_3", opts_beatcops_spawngroup_3),
-        restoration:gen_missionscript(400007, "beat_cops_spawngroup_4", opts_beatcops_spawngroup_4),
-        restoration:gen_missionscript(400008, "beat_cops_spawngroup_5", opts_beatcops_spawngroup_5),
-        restoration:gen_so(400013, "hunt_so", Vector3(-700, 1000, 8.515), Rotation(0, 0, 0), opts_hunt_so),
+        restoration:gen_missionscript(400004, "beat_cops_spawngroup_1", opts_beat_cops_spawngroup_1),
+		restoration:gen_missionscript(400005, "beat_cops_spawngroup_2", opts_beat_cops_spawngroup_2),
+		restoration:gen_missionscript(400006, "beat_cops_spawngroup_3", opts_beat_cops_spawngroup_3),
+        restoration:gen_missionscript(400007, "beat_cops_spawngroup_4", opts_beat_cops_spawngroup_4),
+        restoration:gen_missionscript(400008, "beat_cops_spawngroup_5", opts_beat_cops_spawngroup_5),
+        restoration:gen_so(400025, "hunt_so", Vector3(-700, 1000, 8.515), Rotation(0, 0, 0), opts_hunt_so),
         restoration:gen_element_random(400024, "spawn_beat_cops", opts_spawn_beat_cops),
         restoration:gen_missionscript(400018, "loop_beat_cops", opts_loop),
 		-- beat cops 
@@ -103,6 +103,6 @@ return {
         restoration:gen_dummy(400020, "cop_12", Vector3(890.076, -8962.46, 2.5), Rotation(0, 0, -0), opts_beat_cops),    
         restoration:gen_dummy(400021, "cop_13", Vector3(826.155, -8986.63, 2.5), Rotation(0, 0, -0), opts_beat_cops),
         restoration:gen_dummy(400022, "cop_14", Vector3(302.03, -8894.75, 55), Rotation(0, -0, -0), opts_beat_cops),
-        restoration:gen_dummy(400023, "cop_15", Vector3(211.63, -8880.58, 55), Rotation(0, 0, -0), opts_beat_cops)
+        restoration:gen_dummy(400023, "cop_15", Vector3(211.63, -8880.58, 55), Rotation(0, 0, -0), opts_beat_cops),
     }
 }

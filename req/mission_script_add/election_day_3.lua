@@ -12,8 +12,8 @@ local opts_hunt_so = {
 }
 local opts_beat_cops = {
 	enabled = true,
-    enemy = cop_1, cop_2, cop_3, cop_4
-    enemy_table = {cop_1,cop_2, cop_2, cop_3, cop_4},
+    enemy = cop_1, cop_2, cop_3, cop_4,
+    enemy_table = {cop_1,cop_2, cop_2, cop_3, cop_4,},
     on_executed = {
         {id = 400025, delay= 0, },
     },

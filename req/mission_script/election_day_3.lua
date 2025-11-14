@@ -1,38 +1,44 @@
 local swat_overkill_table_pj = {
 	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
 	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
-	"units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
+	"units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
 }
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local jerome_dude = (difficulty == 8 and "units/payday2/characters/ene_city_guard_3/ene_city_guard_3" or difficulty == 7 and "units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3") or "units/payday2/characters/ene_security_3/ene_security_3"	
+local jerome_dude = (difficulty == 8 and "units/payday2/characters/ene_city_guard_3/ene_city_guard_3" or difficulty == 7 and "units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3") or "units/payday2/characters/ene_security_3/ene_security_3"
 local swat_overkill = (pro_job and swat_overkill_table_pj)
 local ponr_value = (difficulty <= 5 and 360 or (difficulty == 6 or difficulty == 7) and 330) or 300
 local hunt_projob = pro_job
 
 local swat_ovk_pj = {
 	values = {
-        enemy = swat_overkill
-	}
+		enemy = swat_overkill,
+	},
 }
 
 return {
 	-- Pro Job PONR+Endless assault
 	[104701] = {
 		ponr = ponr_value,
-		hunt = hunt_projob
+		hunt = hunt_projob,
 	},
 	[104650] = {
 		ponr = ponr_value,
-		hunt = hunt_projob
+		hunt = hunt_projob,
+	},
+	-- Trigger a beat cop swarm shortly after going loud
+	-- Delay first assault wave
+	-- New reinforce (from Eclipse)
+	[103750] = {
+		on_executed = {
+			{ id = 103467, remove = true, },
+		},
 	},
 	[104306] = {
 		on_executed = {
-			{id = 400055, delay = 15, delay_rand = 5,},
+			{ id = 400002, delay = 17, delay_rand = 3 }, -- Timed to very shortly after cop cars show up
+			{ id = 103467, delay = 50, },
 		},
-	},
-	-- New reinforce (from Eclipse)
-	[104306] = {
 		reinforce = {
 			{
 				name = "atrium_left",
@@ -54,8 +60,8 @@ return {
 	-- Shotgun Man in Sec Room
 	[104279] = {
 		values = {
-			enemy = jerome_dude	
-		}
+			enemy = jerome_dude,
+		},
 	},
 	-- Titan SWATs replacing some harrasers on OVK PJ (with occasional Titan Sniper)
 	[100208] = swat_ovk_pj,
@@ -69,5 +75,5 @@ return {
 	[103339] = swat_ovk_pj,
 	[103340] = swat_ovk_pj,
 	[103341] = swat_ovk_pj,
-	[103342] = swat_ovk_pj
+	[103342] = swat_ovk_pj,
 }

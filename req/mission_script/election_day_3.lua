@@ -26,7 +26,7 @@ return {
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},
-	[102174] = {
+	[104306] = {
 		on_executed = {
 			{id = 400055, delay = 15, delay_rand = 5,},
 		},

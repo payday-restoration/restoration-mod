@@ -6381,11 +6381,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.glock_17.stats = {
 							damage = 24,
-							spread = 59,
+							spread = 54,
 							recoil = 87,
 							spread_moving = 9,
 							zoom = 1,
-							concealment = 31,
+							concealment = 30,
 							suppression = 11,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -6420,11 +6420,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_g17.stats = {
 							damage = 24,
-							spread = 49,
+							spread = 44,
 							recoil = 77,
 							spread_moving = 9,
 							zoom = 1,
-							concealment = 31,
+							concealment = 30,
 							suppression = 11,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -6530,17 +6530,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.pl14.supported = true
 						self.pl14.ads_speed = 0.140
 						self.pl14.damage_falloff = {
-							start_dist = 1500,
+							start_dist = 1700,
 							end_dist = 3600,
 							min_mult = 0.25
 						}
 						self.pl14.stats = {
 							damage = 24,
-							spread = 54,
+							spread = 59,
 							recoil = 87,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 30,
+							concealment = 31,
 							suppression = 11,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -6569,17 +6569,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_pl14.supported = true
 						self.x_pl14.ads_speed = 0.140
 						self.x_pl14.damage_falloff = {
-							start_dist = 1500,
+							start_dist = 1700,
 							end_dist = 3600,
 							min_mult = 0.25
 						}
 						self.x_pl14.stats = {
 							damage = 24,
-							spread = 44,
+							spread = 49,
 							recoil = 77,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 30,
+							concealment = 31,
 							suppression = 11,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -24920,24 +24920,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scotia.recategorize = { "light_ar" }
 				self.scotia.damage_type = "assault_rifle"
 				self.scotia.has_description = true
+				self.scotia.nato = true
 				self.scotia.tactical_reload = 1
 				self.scotia.CLIP_AMMO_MAX = 32
-				self.scotia.AMMO_MAX = 150
+				self.scotia.AMMO_MAX = 0
 				self.scotia.burst = nil
 				self.scotia.fire_mode_data.burst_cooldown = nil
 				self.scotia.BURST_COUNT = nil
-				self.scotia.fire_mode_data.fire_rate = 0.096
+				self.scotia.fire_mode_data.fire_rate = 0.101522
 				self.scotia.CAN_TOGGLE_FIREMODE = false
 				self.scotia.FIRE_MODE = "single"
 				self.scotia.BURST_FIRE_DEFAULT = true
 				self.scotia.BURST_FIRE = {
 					count = 4,
-					no_anim = true,
 					burst_default = true,
-					delay = 0.112,
-					rof_mult = 2,
+					delay = 0.166,
+					rof_mult = 1.69204737,
 					recoil_mult = 0.33,
-					last_recoil_mult = 1.1
+					last_recoil_mult = 1.05
 				}
 				self.scotia.kick = {}
 				self.scotia.kick = self.stat_info.kick_tables.horizontal_recoil
@@ -24948,19 +24948,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{33, self.stat_info.kick_tables.horizontal_recoil}
 				}
 				self.scotia.supported = true
-				self.scotia.ads_speed = 0.340
+				self.scotia.ads_speed = 0.320
 				self.scotia.damage_falloff = {
-					start_dist = 2400,
-					end_dist = 7200,
-					min_mult = 0.3333
+					start_dist = 3600,
+					end_dist = 4800,
+					min_mult = 0.4
 				}
 				self.scotia.stats = {
-					damage = 24,
+					damage = 30,
 					spread = 82,
-					recoil = 71,
+					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 23,
+					concealment = 22,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -24970,13 +24970,51 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.scotia.stats_modifiers = nil
 				self.scotia.panic_suppression_chance = 0.05
+				self.scotia.reload_speed_multiplier = 0.85
+				self.scotia.timers.reload_not_empty = 1.9
+				self.scotia.timers.reload_exit_not_empty = 1
+				self.scotia.timers.reload_empty = 2.45
+				self.scotia.timers.reload_exit_empty = 1
 			end
 
 			if self.baltic then
-				self.baltic.charge_data = {
-					max_t = 0.5,
-					cooldown_t = 0.3
+				self.baltic.recategorize = { "light_snp" }
+				self.baltic.damage_type = "sniper"
+				self.baltic.has_description = true
+				self.baltic.tactical_reload = nil
+				self.baltic.CLIP_AMMO_MAX = 15
+				self.baltic.AMMO_MAX = 0
+				self.baltic.no_auto_anims = true
+				self.baltic.use_vapor_trail = true
+				self.baltic.kick = {}
+				self.baltic.kick = self.stat_info.kick_tables.right_recoil
+				self.baltic.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_recoil}
 				}
+				self.baltic.supported = true
+				self.baltic.ads_speed = 0.500
+				self.baltic.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 7200,
+					min_mult = 0.3333
+				}
+				self.baltic.stats = {
+					damage = 60,
+					spread = 81,
+					recoil = 55,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 22,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.baltic.stats_modifiers = nil
+				self.baltic.panic_suppression_chance = 0.05
+				self.baltic.sounds.charge = "hailstorm_shotgun_fire_charge"
 			end
 
 			if self.c8sfw then

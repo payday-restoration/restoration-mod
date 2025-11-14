@@ -4661,7 +4661,7 @@ function BlackMarketGui:update_info_text()
 			local weapon_category = nil
 			local is_akimbo = false
 			local firemode_string = ""
-			local add_burst, add_auto, burst_to_auto, auto_to_burst, lock_burst, lock_auto, lock_semi, lock_firemode, add_firemode, swap_firemode, firemode_modded = nil
+			local add_burst, add_auto, burst_to_auto, auto_to_burst, lock_burst, lock_auto, lock_volley, lock_semi, lock_firemode, add_firemode, swap_firemode, firemode_modded = nil
 
 			local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 			local custom_stats = crafted and managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
@@ -4680,6 +4680,11 @@ function BlackMarketGui:update_info_text()
 						break
 					elseif stats.info_lock_auto then
 						lock_auto = true
+						lock_firemode = true
+						firemode_modded = not stats.ignore_modify_firemode and true
+						break
+					elseif stats.info_lock_volley then
+						lock_volley = true
 						lock_firemode = true
 						firemode_modded = not stats.ignore_modify_firemode and true
 						break
@@ -4778,7 +4783,7 @@ function BlackMarketGui:update_info_text()
 						end
 					end
 				elseif lock_firemode then
-					firemode_string = lock_burst and managers.localization:to_upper_text("st_menu_firemode_burst") or lock_auto and managers.localization:to_upper_text("st_menu_firemode_auto") or managers.localization:to_upper_text("st_menu_firemode_semi")
+					firemode_string = lock_burst and managers.localization:to_upper_text("st_menu_firemode_burst") or lock_auto and managers.localization:to_upper_text("st_menu_firemode_auto") or lock_volley and managers.localization:to_upper_text("st_menu_firemode_volley") or managers.localization:to_upper_text("st_menu_firemode_semi")
 				else
 					firemode_string = "temp"
 				end

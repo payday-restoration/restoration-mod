@@ -24000,6 +24000,17 @@ end)
 --Resmod Custom Content
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 
+	self.parts.wpn_fps_hailstorm_sound_switch = {
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_wp_hailstorm_ck_switch",
+		unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_hailstorm/wpn_fps_hailstorm",
+		no_cull = true,
+		internal_part = true,
+		stats = { value = 0 },
+		custom_stats = {} --Just to load the soundbank into memory
+	}
+
 	--disables the VR renderscreen for this scope as it gets in the way of the non-VR view
 	self.parts.wpn_fps_upg_o_schmidt_steelsight.visibility = {
 		{
@@ -24373,7 +24384,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 	}
-
 
 	self.parts.wpn_fps_upg_i_g3sg1 = {
 		pcs = {},
@@ -27744,7 +27754,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
-		if self.parts.wpn_fps_ass_scotia_safety then
+		if self.parts.wpn_fps_snp_baltic_receiver_lower then
+			self.parts.wpn_fps_snp_baltic_receiver_lower.adds = { "wpn_fps_hailstorm_sound_switch" }
+			self.parts.wpn_fps_snp_baltic_receiver_lower.custom_stats = {
+				info_lock_volley = true,
+				ignore_modify_firemode = true
+			}
+		end
+
+		if self.parts.wpn_fps_ass_scotia_flash_hider then
+			self.parts.wpn_fps_ass_scotia_flash_hider.supported = true
+			self.parts.wpn_fps_ass_scotia_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_scotia_flash_hider.perks = nil
+			self.parts.wpn_fps_ass_scotia_flash_hider.custom_stats = nil
+
 			self.parts.wpn_fps_ass_scotia_safety.supported = true
 			self.parts.wpn_fps_ass_scotia_safety.stats = { value = 0 }
 			self.parts.wpn_fps_ass_scotia_safety.custom_stats = nil
@@ -27754,19 +27777,99 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_scotia_safety_auto.stats = { 
 				value = 8,
 				spread = -5,
-				recoil = -6
+				recoil = 4
 			}
 			self.parts.wpn_fps_ass_scotia_safety_auto.custom_stats = {
-				custom_stats = {
-					can_toggle_firemode = true,
-					orig_toggle_firemode = false,
-					default_firemode = "auto",
-					orig_firemode = "single",
-					block_burst = true,
-					info_burst_to_auto = true
-				}
+				can_toggle_firemode = true,
+				orig_toggle_firemode = false,
+				default_firemode = "auto",
+				orig_firemode = "single",
+				block_burst = true,
+				info_burst_to_auto = true,
+				rof_mult = 1.585448,
+				falloff_start_mult = 0.0555555,
+				falloff_end_mult = 0.64583
 			}
 			self.parts.wpn_fps_ass_scotia_safety_auto.perks = nil
+
+			--BARRELS
+				--Barrier
+				self.parts.wpn_fps_ass_scotia_barrel_xlong.supported = true
+				self.parts.wpn_fps_ass_scotia_barrel_xlong.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_ass_scotia_barrel_xlong.custom_stats = deep_clone(barrels.long_b3_stats)
+				--Iconic
+				self.parts.wpn_fps_ass_scotia_barrel_long.supported = true
+				self.parts.wpn_fps_ass_scotia_barrel_long.stats = {
+					value = 4,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_ass_scotia_barrel_long.custom_stats = nil
+				--Frontline
+				self.parts.wpn_fps_ass_scotia_barrel_med.supported = true
+				self.parts.wpn_fps_ass_scotia_barrel_med.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_ass_scotia_barrel_med.stats.concealment = -2
+				self.parts.wpn_fps_ass_scotia_barrel_med.stats.recoil = 2
+				self.parts.wpn_fps_ass_scotia_barrel_med.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Ascend
+				self.parts.wpn_fps_ass_scotia_barrel_short.supported = true
+				self.parts.wpn_fps_ass_scotia_barrel_short.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_scotia_barrel_short.custom_stats = deep_clone(barrels.short_b1_stats)
+				--Deadeye
+				self.parts.wpn_fps_ass_scotia_barrel_heavy.supported = true
+				self.parts.wpn_fps_ass_scotia_barrel_heavy.desc_id = "bm_wp_chf_50_desc"
+				self.parts.wpn_fps_ass_scotia_barrel_heavy.has_description = true
+				self.parts.wpn_fps_ass_scotia_barrel_heavy.stats = {
+					value = 10,
+					recoil = -20,
+					concealment = -4
+				}
+				self.parts.wpn_fps_ass_scotia_barrel_heavy.custom_stats = {
+					chf = true
+				}
+			--MAGS
+				--Blink (Short)
+					self.parts.wpn_fps_ass_scotia_magazine_short.supported = true
+					self.parts.wpn_fps_ass_scotia_magazine_short.stats = {
+						value = 2,
+						concealment = 2,
+						reload = 5,
+						extra_ammo = -4
+					}
+					self.parts.wpn_fps_ass_scotia_magazine_short.custom_stats = {
+						ads_speed_mult = 0.95
+					}
+				--Echo (Speed)
+					self.parts.wpn_fps_ass_scotia_magazine_flip.supported = true
+					self.parts.wpn_fps_ass_scotia_magazine_flip.stats = {
+						value = 5,
+						spread = -1,
+						concealment = -1,
+						reload = 2
+					}
+					self.parts.wpn_fps_ass_scotia_magazine_flip.custom_stats = nil
+				--Sentinel (Ext I)
+					self.parts.wpn_fps_ass_scotia_magazine_large.supported = true
+					self.parts.wpn_fps_ass_scotia_magazine_large.stats = {
+						value = 6,
+						concealment = -2,
+						reload = -4,
+						extra_ammo = 8
+					}
+					self.parts.wpn_fps_ass_scotia_magazine_large.custom_stats = {
+						ads_speed_mult = 1.05
+					}
+				--Redline (Ext II)
+					self.parts.wpn_fps_ass_scotia_magazine_drum.supported = true
+					self.parts.wpn_fps_ass_scotia_magazine_drum.stats = {
+						value = 8,
+						concealment = -5,
+						reload = -7,
+						extra_ammo = 20
+					}
+					self.parts.wpn_fps_ass_scotia_magazine_drum.custom_stats = {
+						ads_speed_mult = 1.125
+					}
 		end
 
 		if self.parts.wpn_fps_ass_c8sfw_gl_m26mass then
@@ -33178,7 +33281,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				info_auto_to_burst = true,
 				burst_fire = {
 					count = 3,
-					delay = 0.1,
+					delay = 0.11,
 					rof_mult = 1.269592,
 					recoil_mult = 0.6,
 					last_recoil_mult = 1,
@@ -42494,16 +42597,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		if self.parts.wpn_fps_sickle_m_battery then
 
-			self.parts.wpn_fps_hailstorm_sound_switch = {
-				a_obj = "a_body",
-				type = "ammo",
-				name_id = "bm_wp_hailstorm_ck_switch",
-				unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_hailstorm/wpn_fps_hailstorm",
-				no_cull = true,
-				internal_part = true,
-				stats = { value = 0 },
-				custom_stats = {} --Just to load the soundbank into memory
-			}
 			self.parts.wpn_fps_sickle_optic.supported = true
 			self.parts.wpn_fps_sickle_optic.stats = {
 				value = 0,

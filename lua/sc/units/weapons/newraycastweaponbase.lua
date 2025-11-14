@@ -624,7 +624,7 @@ function NewRaycastWeaponBase:_start_spin()
 end
 
 function NewRaycastWeaponBase:_stop_spin()
-	if self._spinning and not self._in_steelsight then
+	if self._spinning and not self._in_steelsight and (not self:in_burst_mode() or self:in_burst_mode() and (self._burst_rounds_remaining and self._burst_rounds_remaining < 1)) then
 		local t = self._unit:timer():time()
 		local spin_up_t = (self:weapon_tweak_data().spin_up_t or NewRaycastWeaponBase._SPIN_UP_T) * self._spin_up_mult
 		local spin_down_t = (self:weapon_tweak_data().spin_down_t or NewRaycastWeaponBase._SPIN_DOWN_T) * self._spin_up_mult
@@ -1030,7 +1030,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		--LEAVE THESE OUTSIDE OF THE 'BURST_DATA' if statement
 		if self._burst_fire_rate_multiplier then
-			self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier * 1.05 --to help with frame rounding
+			self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier * 1.05 --to help with frame rounding as to err on the side of "too early" over "too late"
 		end
 		if self._lock_burst and not self._locked_fire_mode then
 			self:_set_burst_mode(true, true)

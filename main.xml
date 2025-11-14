@@ -613,6 +613,8 @@
 					<option type="bool" default_value="true" name="NoSwapOnRevive"/>
 					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="bool" default_value="false" name="ProjectileMagnetism"/>
 				</option_group>
 				<option_group name="WEAPONINPUTS">
 					<option type="bool" default_value="true" name="QueuedShooting"/>

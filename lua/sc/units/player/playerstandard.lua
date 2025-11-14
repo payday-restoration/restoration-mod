@@ -1491,8 +1491,12 @@ function PlayerStandard:_check_stop_shooting()
 		if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/NoADSRecoilAnims") and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		else
-			if (is_auto_fire_mode or is_volley_fire_mode) and not self:_is_reloading() and not self:_is_meleeing() and not weap_base:weapon_tweak_data().no_auto_anims then
-				self._ext_camera:play_redirect(self:get_animation("recoil_exit"))
+			if (is_auto_fire_mode or is_volley_fire_mode) and not self:_is_reloading() and not self:_is_meleeing() then
+				if not weap_base:weapon_tweak_data().no_auto_anims then
+					self._ext_camera:play_redirect(self:get_animation("recoil_exit"))
+				else
+					self._ext_camera:play_redirect(self:get_animation("recoil"))
+				end
 			end
 		end
 		self._spin_up_shoot = nil
@@ -3963,7 +3967,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			if character_unit:base() then
 				if character_unit:base().char_tweak then
 					if character_unit:base():char_tweak().player_health_scaling_mul then
-						type_multiplier = math.max(1, type_multiplier * 0.25)
+						type_multiplier = math.max(1, type_multiplier * tweak_data.upgrades.values.player.tony_boss_mult)
 					end
 					if character_unit:base():char_tweak().priority_shout then
 						dmg_multiplier = dmg_multiplier * (tweak_data.blackmarket.melee_weapons[melee_entry].stats.special_damage_multiplier or 1)

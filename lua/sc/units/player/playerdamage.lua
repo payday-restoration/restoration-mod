@@ -28,10 +28,6 @@ function PlayerDamage:init(unit)
 	self._ws = self._gui:create_screen_workspace()
 	self._focus_delay_mul = 1
 	self._dmg_interval = tweak_data.player.damage.MIN_DAMAGE_INTERVAL
-	
-	if player_manager:has_category_upgrade("player", "damage_grace_mult") then
-		self._dmg_interval = self._dmg_interval * managers.player:upgrade_value("player", "damage_grace_mult", 1)
-	end
 
 	if managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR then
 		self._dmg_interval = self._dmg_interval * tweak_data.player.controller_damage_grace_multiplier or 2
@@ -330,6 +326,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	local attacker_unit = attack_data.attacker_unit
 	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
 
+	local pm = managers.player
 	if is_pro and self_damage then
 		attack_data.damage = attack_data.damage * 2
 	end
@@ -342,11 +339,16 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	end
 	
 	self._last_received_dmg = math.huge --As opposed to raw damage (attack_data.damage), just an idea to see if the game feels better without grace piercing
-	self._next_allowed_dmg_t = Application:digest_value(t + self._dmg_interval, true)
+	
+	local pm = managers.player
+	local damage_grace_mult = 1
+	if 0 >= self:get_real_armor() and pm:has_category_upgrade("player", "damage_grace_mult") then
+		damage_grace_mult = pm:upgrade_value("player", "damage_grace_mult", 1)
+	end
+	self._next_allowed_dmg_t = Application:digest_value(t + (self._dmg_interval * damage_grace_mult), true)
 
 	--Perform overall damage reduction calcs.
 	--NOTE: Stoic damage delay and Deflection are handled in _calc_health_damage()
-	local pm = managers.player
 	attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier(variant)
 	local damage_absorption = pm:damage_absorption()
 	if damage_absorption > 0 then

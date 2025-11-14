@@ -2038,8 +2038,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.frenzy_healing_reduction_ratio = 1.5
 				
 				self.skill_descs.wolverine = {
-					skill_value_b1 = tostring(self.values.player.frenzy_deflection[1] * 100).."%", -- +Deflection if player lose HP
-					skill_value_p1 = tostring(self.values.player.frenzy_deflection[2] * 100).."%"
+					skill_value_b1 = tostring(self.values.player.frenzy_deflection[1] * 100).."%", -- +Deflection if player lose HP Basic
+					skill_value_b2 = tostring((self.values.player.frenzy_deflection[1] * 100) * self.frenzy_healing_reduction_ratio).."%", --Healing reduction Basic
+					skill_value_p1 = tostring(self.values.player.frenzy_deflection[2] * 100).."%", -- +Deflection if player lose HP Aced
+					skill_value_p2 = tostring((self.values.player.frenzy_deflection[2] * 100) * self.frenzy_healing_reduction_ratio).."%" --Healing reduction Aced
 				}
 				
 			--Berserker (Frenzy)
@@ -2392,7 +2394,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.values.player.melee_kill_stamina = {
 		0.1,
-		0.2
+		0.2,
+		0.0
 	}
 	self.killshot_close_panic_range = 1200
 	self.on_killshot_cooldown = 5
@@ -2470,6 +2473,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_steps = 5,
 			effect = 0.02,
 			effect_max = 0.2,
+		},
+		{	--Mark
+			combo_steps = 2,
+			effect = 0.0,
+			effect_max = 0.0,
 		}
 	}
 	self.values.player.buildup_meter_hysteria = { --healing
@@ -2567,6 +2575,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			{ combo_t_mod = -2, combo_decay_mod = 5 }, --Tony R
 		}
 		self.values.player.buildup_meter_earl = { true } --boolean check for no combo loss when taking HP damage + full combo loss on bleedout
+		self.values.player.tony_boss_mult = 0.1
 		self.values.player.melee_fists_damage_multiplier = {10}
 		self.values.player.melee_brass_damage_multiplier = {10}
 		self.values.tony = {
@@ -2737,8 +2746,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Yakuza--
-	self.values.player.max_deflection_add = {0.2}
-	self.values.player.melee_double_interval = {true}
+	self.values.player.max_deflection_add = {0.15}
+	self.values.player.melee_double_interval = {true} --unused
 	self.values.player.survive_one_hit = {true}
 	self.values.survive_one_hit_armor = {5.0}
 
@@ -2751,11 +2760,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.melee_kill_dodge_regen = {
-		0.5
+		0.7
 	}
 
 	self.values.player.kill_dodge_regen = {
-		0.5
+		0.3
 	}
 	
 	--Fat benis :DDDDD
@@ -3242,6 +3251,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
 		perk_value_6 = tostring(math.abs(self.values.player.buildup_meter_rick[2].combo_max_mod)),
 		perk_value_7 = tostring(math.abs(self.values.player.buildup_meter_zack[3].combo_t_mod)),
+		perk_value_9 = tostring((1 - self.values.player.tony_boss_mult) * 100) .."%" ,
 	}
 	self.multi_choice_specialization_descs[9][9][3] = { --Aubrey
 		perk_value_1 = tostring(self.values.player.buildup_meter_aubrey[1].combo_add),
@@ -3251,7 +3261,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_1 = tostring(self.values.player.buildup_meter_pacify[2].effect * 100) .. "%",
 		perk_value_2 = tostring(self.values.player.buildup_meter_pacify[2].combo_steps),
 		perk_value_3 = tostring(self.values.player.buildup_meter_pacify[2].effect_max * 100) .. "%",
-		perk_value_4 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
+		perk_value_4 = tostring(self.values.player.buildup_meter_hurt_decay_mod[3]),
 	}
 	self.multi_choice_specialization_descs[9][9][5] = { --Zack
 		perk_value_1 = tostring(self.values.player.buildup_meter_zack[1].combo_t_mod),
@@ -3279,6 +3289,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_6 = tostring(math.abs(self.values.player.buildup_meter_rick[3].combo_max_mod)),
 		perk_value_7 = tostring(math.abs(self.values.player.buildup_meter_zack[4].combo_t_mod)),
 		perk_value_8 = tostring(math.abs(self.values.player.buildup_meter_zack[4].combo_decay_mod)),
+		perk_value_9 = tostring((1 - self.values.player.tony_boss_mult) * 100) .."%" ,
 	}
 	self.multi_choice_specialization_descs[9][9][10] = { --Mark
 		perk_value_1 = tostring(self.values.player.buildup_meter_mark[1].combo_steps),
@@ -3362,8 +3373,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[12][7] = {
 		perk_value_1 = tostring(self.values.player.melee_kill_dodge_regen[1] * 100).."%", -- Max dodge gain on melee kill at low HP
-		perk_value_2 = "150%", -- Grace period increase after melee kill
-		perk_value_3 = "900", -- Max grace period increase after melee kill (in ms)
+		perk_value_2 = "150%", -- Grace period increase after melee kill  --Unused
+		perk_value_3 = "900", -- Max grace period increase after melee kill (in ms) --Unused
 		perk_value_4 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
 	}
 	self.specialization_descs[12][9] = {
@@ -4095,7 +4106,7 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_19",
 			desc_id = "menu_deck19_mrwi_desc",
 			upgrades = {
-				"damage_grace_mult",
+				"player_damage_grace_mult",
 				"damage_control",
 				"player_damage_control_passive_1",
 				"player_damage_control_passive_2",
@@ -5350,6 +5361,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_melee_kill_stamina_3 = { 
+		name_id = "menu_player_melee_kill_stamina",
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "melee_kill_stamina",
+			category = "player"
+		}
+	}
 
 	self.definitions.akimbo_swap_speed_multiplier_1 = {
 		name_id = "menu_akimbo_swap_speed_multiplier",
@@ -5671,6 +5691,15 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 2,
+			upgrade = "buildup_meter_redline",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_redline_3 = {
+		name_id = "menu_player_buildup_naramon",
+		category = "feature",
+		upgrade = {
+			value = 3,
 			upgrade = "buildup_meter_redline",
 			category = "player"
 		}

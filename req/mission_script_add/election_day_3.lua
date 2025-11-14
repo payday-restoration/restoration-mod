@@ -2,56 +2,39 @@ local cop_1 = "units/payday2/characters/ene_cop_1/ene_cop_1"
 local cop_2 = "units/payday2/characters/ene_cop_2/ene_cop_2"
 local cop_3 = "units/payday2/characters/ene_cop_3/ene_cop_3"
 local cop_4 = "units/payday2/characters/ene_cop_4/ene_cop_4"
-local beat_cops_table = {cop_1, cop_1, cop_2, cop_2, cop_3, cop_3, cop_4}
+local beat_cop_amount = 1
 
-local optsBeatcops = {
-      enemy_table = beat_cops_table,
-	participate_to_group_ai = true,
-	on_executed = { 
-		{ id = 400057, delay = 0 } 
-	},
-    enabled = true
+local opts_hunt_so = {
+	scan = true,
+	SO_access = "32",
+	use_instigator = true,
+	so_action = "AI_hunt",
 }
-local global_beat_cops_spawn_mission_script = {
+local opts_beat_cops = {
 	enabled = true,
-	on_executed = { 
-		{ id = 400003, delay = 0 },
-		{ id = 400002, delay = 0 },
-	},
+    enemy = cop_1, cop_2, cop_3, cop_4
+    enemy_table = {cop_1,cop_2, cop_2, cop_3, cop_4},
+    on_executed = {
+        {id = 400013, delay= 0, },
+    },
 }
-local loop = {
+local opts_spawn_beat_cops = {
 	enabled = true,
-	on_executed = { 
-		{ id = 400001, delay = 15, delay_rand = 5 },
-	},
-}
-local choose_beat_cops_spawnpoint = {
-	amount = 2,
-	amount_random = 3,
+	trigger_times = 6,
+	amount = beat_cop_amount,
 	on_executed = {
-		{ id = 400004, delay = 1 },
-		{ id = 400005, delay = 1 },
-		{ id = 400006, delay = 1 },
-		{ id = 400007, delay = 1 },
-		{ id = 400008, delay = 1 }
+		{ id = 400004, delay = 0, },
+		{ id = 400005, delay = 0, },
+        { id = 400006, delay = 0, },
+        { id = 400007, delay = 0, },
+        { id = 400008, delay = 0, },
 	},
 }
-local beat_cops_spawnpoint_1 = {
+local opts_loop = {
 	enabled = true,
-	on_executed = { 
-		{ id = 400009, delay = 0 },
-		{ id = 400010, delay = 0 },
-		{ id = 400011, delay = 0 },
-		{ id = 400012, delay = 0 },
-		{ id = 400013, delay = 0 },
-	},
-}
-local beat_cops_spawnpoint_2 = {
-	enabled = true,
-	on_executed = { 
-		{ id = 400014, delay = 0 },
-		{ id = 400015, delay = 0 },
-		{ id = 400016, delay = 0 },
+	trigger_times = 6,
+	on_executed = {
+		{ id = 400024, delay = 0, },
 	},
 }
 local beat_cops_spawnpoint_3 = {
@@ -76,26 +59,18 @@ local beat_cops_spawnpoint_5 = {
 		{ id = 400023, delay = 0 },
 	},
 }
-local opts_hunt_so = {
-	scan = true,
-	SO_access = "32",
-	use_instigator = true,
-	so_action = "AI_hunt",
-}
-
 return {
     elements = {
         -- beat  cops spawns system
-        restoration:gen_missionscript(400001, "spawn_beat_cops", global_beat_cops_spawn_mission_script),
-		restoration:gen_missionscript(400002, "loop", loop),
-		restoration:gen_element_random(400003, "beat_cops_spawnpoint_select", choose_beat_cops_spawnpoint),
-		restoration:gen_missionscript(400004, "spawnpoint_1", beat_cops_spawnpoint_1),
-		restoration:gen_missionscript(400005, "spawnpoint_2", beat_cops_spawnpoint_2),
-		restoration:gen_missionscript(400006, "spawnpoint_3", beat_cops_spawnpoint_4),
-		restoration:gen_missionscript(400007, "spawnpoint_4", beat_cops_spawnpoint_4),
-		restoration:gen_missionscript(400008, "spawnpoint_5", beat_cops_spawnpoint_5),
-        restoration:gen_so(400057, "hunt_so", Vector3(-479.957, -2623.79, 0), Rotation(0, 0, 0), opts_hunt_so),
-		--beat cops 
+        restoration:gen_missionscript(400004, "beat_cops_spawngroup_1", opts_beatcops_spawngroup_1),
+		restoration:gen_missionscript(400005, "beat_cops_spawngroup_2", opts_beatcops_spawngroup_2),
+		restoration:gen_missionscript(400006, "beat_cops_spawngroup_3", opts_beatcops_spawngroup_3),
+        restoration:gen_missionscript(400007, "beat_cops_spawngroup_4", opts_beatcops_spawngroup_4),
+        restoration:gen_missionscript(400008, "beat_cops_spawngroup_5", opts_beatcops_spawngroup_5),
+        restoration:gen_so(400013, "hunt_so", Vector3(-700, 1000, 8.515), Rotation(0, 0, 0), opts_hunt_so),
+        restoration:gen_element_random(400024, "spawn_beat_cops", opts_spawn_beat_cops),
+        restoration:gen_missionscript(400018, "loop_beat_cops", opts_loop),
+		-- beat cops 
         restoration:gen_dummy(400009, "cop_1", Vector3(-654.089, 6904.53, 302.5), Rotation(0, 0, -0), optsBeatcops),
         restoration:gen_dummy(400010, "cop_2", Vector3(-597.869, 6860.76, 302.5), Rotation(0, 0, -0), optsBeatcops),
         restoration:gen_dummy(400011, "cop_3", Vector3(-764.385, 6902.21, 302.5), Rotation(0, 0, -0), optsBeatcops),

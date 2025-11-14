@@ -12,8 +12,9 @@ local taser = "units/payday2/characters/ene_tazer_1/ene_tazer_1"
 local marshal_gunners_garage = "units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle"
 local enabled_chance_ambush = math.random() < diff_scaling
 local opts_fbi_ready_team_agent = {
+
 	enabled = true,
-    enemy = fbi_ready_team_1,
+    enemy = fbi_ready_team_1, fbi_ready_team_2
     enemy_table = {fbi_ready_team_1, fbi_ready_team_2,},
     on_executed = {
         {id = 400057, delay= 0, },
@@ -32,6 +33,9 @@ local opts_spawn_fbi_ready_teams = {
 	on_executed = {
 		{ id = 400077, delay = 0, },
 		{ id = 400078, delay = 0, },
+		{ id = 400079, delay = 0, },
+		{ id = 400029, delay = 0, },
+		
 	},
 }
 local opts_loop_fbi_ready_teams = {

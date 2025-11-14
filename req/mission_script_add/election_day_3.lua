@@ -2,7 +2,7 @@ local cop_1 = "units/payday2/characters/ene_cop_1/ene_cop_1"
 local cop_2 = "units/payday2/characters/ene_cop_2/ene_cop_2"
 local cop_3 = "units/payday2/characters/ene_cop_3/ene_cop_3"
 local cop_4 = "units/payday2/characters/ene_cop_4/ene_cop_4"
-local beat_cop_amount = 1
+local beat_cop_amount = 4
 
 local opts_hunt_so = {
 	scan = true,
@@ -37,14 +37,32 @@ local opts_loop = {
 		{ id = 400024, delay = 0, },
 	},
 }
-local beat_cops_spawnpoint_3 = {
+local opts_beat_cops_spawnpoint_1 = {
+	enabled = true,
+	on_executed = { 
+		{ id = 400009, delay = 0 },
+		{ id = 400010, delay = 0 },
+		{ id = 400011, delay = 0 },
+		{ id = 400012, delay = 0 },
+		{ id = 400013, delay = 0 },
+	},
+}
+local opts_beat_cops_spawnpoint_2 = {
+	enabled = true,
+	on_executed = { 
+		{ id = 400014, delay = 0 },
+		{ id = 400015, delay = 0 },
+		{ id = 400016, delay = 0 },
+	},
+}
+local opts_beat_cops_spawnpoint_3 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400017, delay = 0 },
 		{ id = 400018, delay = 0 },
 	},
 }
-local beat_cops_spawnpoint_4 = {
+local opts_beat_cops_spawnpoint_4 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400019, delay = 0 },
@@ -52,7 +70,7 @@ local beat_cops_spawnpoint_4 = {
 		{ id = 400021, delay = 0 },
 	},
 }
-local beat_cops_spawnpoint_5 = {
+local opts_beat_cops_spawnpoint_5 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400022, delay = 0 },

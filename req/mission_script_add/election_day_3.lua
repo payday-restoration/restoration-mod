@@ -37,7 +37,7 @@ local opts_loop = {
 		{ id = 400024, delay = 0, },
 	},
 }
-local opts_beat_cops_spawnpoint_1 = {
+local opts_beatcops_spawngroup_1 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400009, delay = 0 },
@@ -47,7 +47,7 @@ local opts_beat_cops_spawnpoint_1 = {
 		{ id = 400013, delay = 0 },
 	},
 }
-local opts_beat_cops_spawnpoint_2 = {
+local opts_beatcops_spawngroup_2 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400014, delay = 0 },
@@ -55,14 +55,14 @@ local opts_beat_cops_spawnpoint_2 = {
 		{ id = 400016, delay = 0 },
 	},
 }
-local opts_beat_cops_spawnpoint_3 = {
+local opts_beatcops_spawngroup_3 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400017, delay = 0 },
 		{ id = 400018, delay = 0 },
 	},
 }
-local opts_beat_cops_spawnpoint_4 = {
+local opts_beatcops_spawngroup_4 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400019, delay = 0 },
@@ -70,7 +70,7 @@ local opts_beat_cops_spawnpoint_4 = {
 		{ id = 400021, delay = 0 },
 	},
 }
-local opts_beat_cops_spawnpoint_5 = {
+local opts_beatcops_spawngroup_5 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400022, delay = 0 },

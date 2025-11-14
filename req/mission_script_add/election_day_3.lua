@@ -117,7 +117,7 @@ return {
 		restoration:gen_missionscript(400008, "beat_cops_spawngroup_4", opts_beat_cops_spawngroup_4),
 		restoration:gen_missionscript(400009, "beat_cops_spawngroup_5", opts_beat_cops_spawngroup_5),
 		restoration:gen_missionscript(400010, "beat_cops_spawngroup_6", opts_beat_cops_spawngroup_6),
-
+		-- Beat cops 
 		restoration:gen_dummy(400011, "cop_1", Vector3(-4300, 6700, 300), Rotation(180, 0, 0), opts_beat_cops),
 		restoration:gen_dummy(400012, "cop_2", Vector3(-4300, 6650, 300), Rotation(180, 0, 0), opts_beat_cops),
 		restoration:gen_dummy(400013, "cop_3", Vector3(-4300, 6600, 300), Rotation(180, 0, 0), opts_beat_cops),

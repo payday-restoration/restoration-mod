@@ -117,6 +117,12 @@ return {
 			{ id = 400005, delay = 0, delay_rand = 5 },
 		},
 	},
+	-- Small beat cop wave 
+	[106265] = {
+		on_executed = {
+			{id = 400010, delay = 12, delay = 2},
+		},
+	},
 	-- tweak the ambush near the end
 	-- both SWATs and dozer ambush on death wish pro and above
 	[106416] = {

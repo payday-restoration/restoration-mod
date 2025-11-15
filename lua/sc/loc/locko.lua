@@ -141,6 +141,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModWpnFireDescopeDescID"] = "일부 무기의 사격 시 조준경 축소 여부를 설정합니다. 참고: 조준경 축소는 클리핑을 줄이는 데 사용되며, 비활성화하면 일부 조준경이 잘릴 수 있습니다. 조준경 축소 기능이 언급되는 무기에서는 이 설정이 무시됩니다.",
 				["RestorationModNoSwapOnReviveTitleID"] = "되살려졌을 시 강제 무기 교체 없음",
 				["RestorationModNoSwapOnReviveDescID"] = "언다잉 에이스 효과 없이 주무기로 쓰러졌을 때 되살려졌을 때 강제 무기 교체를 비활성화합니다.",
+				["RestorationModProjectileMagnetismTitleID"] = "투사체 자성",
+				["RestorationModProjectileMagnetismDescID"] = "폭발성이 아닌 발사체의 자기력/추적 효과를 전환합니다.",				
 				
 			["RestorationModWEAPONINPUTSOptionsButtonTitleID"] = "입력 옵션",
 			["RestorationModWEAPONINPUTSOptionsButtonDescID"] = "무기 입력에 대한 옵션을 엽니다.",				
@@ -2392,16 +2394,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_grenade_poison_gas_grenade_desc_short"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.##",
 
 		--Throwing Cards
-		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬이 발동됩니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
+		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 퍽 덱 효과가 발동됩니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
 		--Throwing Stars/Shuriken
 		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 근접 공격 스킬이 발동됩니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.## \n\n표창은 피와 전투로 물든 긴 역사를 지니고 있습니다. 이 독이 발라진 스테인리스 스틸 표창은 당신의 길을 막는 모든 이에게 치명적인 위협이 될 것입니다.",
 		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 근접 공격 스킬이 발동됩니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##",
 		--Javelin
-		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬이 발동됩니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
+		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 퍽 덱 효과가 발동됩니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
 		--Throwing Axe
-		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬이 발동됩니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
+		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 퍽 덱 효과가 발동됩니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
 		--Throwing Knife
-		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬이 발동됩니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
+		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 퍽 덱 효과가 발동됩니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
 
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "약병",
@@ -5994,7 +5996,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Frenzy--
 				["menu_wolverine_beta_sc"] = "광분",
-				["menu_wolverine_beta_desc_sc"] = "베이식: #{owned}#$basic##\n체력이 가득 찰수록 회복량이 최대 #{important_1}#30%##까지 감소합니다.\n\n쓰러질 수록 방어력이 최대 #{skill_color}#$skill_value_b1##까지 증가합니다.\n\n방어력은 최대 #{skill_color}#$deflection##까지 받는 체력 피해를 감소시키며, 다른 피해 감소 효과가 적용된 후 적용됩니다.\n\n에이스: #{owned}#$pro##\n회복량이 대신 최대 #{important_1}#75%##까지 감소하지만, 방어력은 최대 #{skill_color}#$skill_value_p1##까지 증가합니다.",
+				["menu_wolverine_beta_desc_sc"] = "베이식: #{owned}#$basic##\n체력이 최대치에 가까울수록 회복량이 최대 #{important_1}$skill_value_b2##까지 감소합니다.\n\n쓰러질 수록 방어력이 최대 #{skill_color}#$skill_value_b1##까지 증가합니다.\n\n방어력은 최대 #{skill_color}#$deflection##까지 받는 체력 피해를 감소시키며, 다른 피해 감소 효과가 적용된 후 적용됩니다.\n\n에이스: #{owned}#$pro##\n회복량이 최대 #{important_1}#$skill_value_p2##까지 감소하지만, 방어력은 최대 #{skill_color}#$skill_value_p1##까지 증가합니다.",
 
 				--Berserker--
 				["menu_frenzy_sc"] = "버서커",
@@ -6139,11 +6141,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck9_richard"] = "리차드",
 		["menu_deck9_richard_desc_sc"] = "추가 효과 없음.",
 		["menu_deck9_tony"] = "토니",
-		["menu_deck9_tony_desc_sc"] = "#{skill_color}#주먹##의 피해량이 #{skill_color}#$perk_value_1## 증가합니다.\n\n#{risk}#캡틴과 VIP 타겟은## #{risk}#주먹##에 #{important_1}#75%## 적은 피해를 입습니다.##\n#{risk}#과다 복용의 처치 시 회피와 결전의 처치 시 공포감##의 효과가 #{important_1}#33%## 감소합니다.\n최대 콤보가 #{important_1}#$perk_value_6## 감소합니다.\n콤보 감소 타이머가 #{important_1}#$perk_value_7##초 감소합니다.\n체력 피해를 입으면 콤보 점수가 추가로 #{important_1}#$perk_value_5## 감소합니다.\n총 탄약량이 #{important_1}#$perk_value_2## 감소하고 탄약 획득량이 #{important_1}#$perk_value_3## 감소합니다.",
+		["menu_deck9_tony_desc_sc"] = "#{skill_color}#주먹##의 피해량이 #{skill_color}#$perk_value_1## 증가합니다.\n\n#{risk}#캡틴과 VIP 타겟은## #{risk}#주먹##에 피해를 #{important_1}#$perk_value_9## 적게 받습니다.\n#{risk}#과다 복용의 처치 시 회피와 결전의 처치 시 공포감##의 효과가 #{important_1}#33%## 감소합니다.\n최대 콤보가 #{important_1}#$perk_value_6##점 감소합니다.\n콤보 감소 타이머가 #{important_1}#$perk_value_7##초 감소합니다.\n체력 피해를 입으면 콤보가 #{important_1}#$perk_value_5##점 더 잃습니다.\n총 탄약량이 #{important_1}#$perk_value_2## 감소하고 탄약 획득량이 #{important_1}#$perk_value_3## 감소합니다.",
 		["menu_deck9_aubrey"] = "오브리",
 		["menu_deck9_aubrey_desc_sc"] = "근접 공격이 아닌 직접 피해로 적을 처치하면 콤보가 기본 값의 #{skill_color}#$perk_value_1##점 증가합니다.\n\n근접 공격이 아닌 직접 피해로 적을 처치하면 활성화된 콤보의 감소 타이머에 #{risk}#$perk_value_2##초가 추가됩니다.\n#{risk}#폭발물이나 지속 피해로## 처치해도 콤보 감소 타이머가 #{important_1}#더 이상 초기화되지 않습니다.##",
 		["menu_deck9_rufus"] = "루퍼스",
-		["menu_deck9_rufus_desc_sc"] = "대신 콤보 #{risk}#$perk_value_2##점마다 #{skill_color}#$perk_value_1##의 피해 저항을 얻고, 최대 #{skill_color}#$perk_value_3##까지 얻을 수 있습니다.\n\n체력 피해를 입으면 콤보를 추가로 #{important_1}#$perk_value_4## 잃습니다.",
+		["menu_deck9_rufus_desc_sc"] = "콤보 #{risk}#$perk_value_2##점마다 #{skill_color}#$perk_value_1##의 피해 저항을 얻고, 최대 #{skill_color}#$perk_value_3##까지 얻을 수 있습니다.\n\n체력 피해를 입으면 콤보를 #{important_1}#$perk_value_4##점 더 잃습니다.",
 		["menu_deck9_zack"] = "잭",
 		["menu_deck9_zack_desc_sc"] = "콤보 감소 타이머가 #{skill_color}#$perk_value_1##초 연장되고, 콤보 감소 속도가 #{important_1}#$perk_value_2## 증가합니다.",
 		["menu_deck9_rick"] = "릭",
@@ -6153,9 +6155,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck9_earl"] = "얼",
 		["menu_deck9_earl_desc_sc"] = "체력 피해를 입으면 콤보 #{skill_color}#0##점을 잃습니다.\n\n#{risk}#클린 히트의 치료량이## #{important_1}#50%## 감소합니다.\n출혈 상태가 되면 콤보가 #{important_1}#0##점으로 감소합니다.",
 		["menu_deck9_tonyr"] = "토니의 복수",
-		["menu_deck9_tonyr_desc_sc"] = "#{skill_color}#황동 너클##의 피해량이 #{skill_color}#$perk_value_1## 증가합니다.\n\n#{risk}#캡틴과 VIP 타겟은## #{risk}#황동 너클##에 #{important_1}#75%## 적은 피해를 입습니다.##\n#{risk}#과다 복용의 처치 시 회피와 결전의 처치 시 공포감##의 효과가 #{important_1}#66%## 감소합니다.\n최대 콤보가 #{important_1}#$perk_value_6## 감소합니다.\n콤보 감소 타이머가 #{important_1}#$perk_value_7##초 감소하고, 감소 속도가 #{important_1}#$perk_value_8## 증가합니다.\n체력 피해를 입으면 콤보를 추가로 #{important_1}#$perk_value_5## 잃습니다.\n총 탄약량이 #{important_1}#$perk_value_2## 감소하고 탄약 획득량이 #{important_1}#$perk_value_3## 감소합니다.",
+		["menu_deck9_tonyr_desc_sc"] = "#{skill_color}#황동 너클##의 피해량이 #{skill_color}#$perk_value_1## 증가합니다.\n\n#{risk}#캡틴과 VIP 타겟은## #{risk}#황동 너클##에 피해를 #{important_1}#$perk_value_9## 적게 받습니다.\n#{risk}#과다 복용의 처치 시 회피와 결전의 처치 시 공포감##의 효과가 #{important_1}#66%## 감소합니다.\n최대 콤보가 #{important_1}#$perk_value_6##점 감소합니다.\n콤보 감소 타이머가 #{important_1}#$perk_value_7##초 감소하고, 감소 속도가 #{important_1}#$perk_value_8##초 증가합니다.\n체력 피해를 입으면 콤보가 #{important_1}#$perk_value_5##점을 더 잃습니다.\n총 탄약량이 #{important_1}#$perk_value_2## 감소하고 탄약 획득량이 #{important_1}#$perk_value_3## 감소합니다.",
 		["menu_deck9_mark"] = "마크",
-		["menu_deck9_mark_desc_sc"] = "#{risk}#과다 복용의 처치 시 회피##를 대신 #{skill_color}#방탄복 회복 속도##로 바꿉니다.\n\n콤보 #{risk}#$perk_value_1##점마다 방탄복 회복 속도가 #{skill_color}#$perk_value_2## 증가하고, 최대 #{skill_color}#$perk_value_3##까지 증가합니다.",
+		["menu_deck9_mark_desc_sc"] = "#{risk}#과다 복용의 처치 시 회피##를 대신 #{skill_color}#방탄복 회복 속도##로 바꿉니다.\n\n콤보 #{risk}#$perk_value_1##점마다 방탄복 회복 속도가 #{skill_color}#$perk_value_2## 증가하고, 최대 #{skill_color}#$perk_value_3##까지 증가합니다.\n\n#{risk}#긴장의 이동 속도 보너스와## #{risk}#클린 히트의 적을 죽이면 스태미나 회복이## #{important_1}#없어집니다.##",
 		["menu_deck9_swan"] = "알렉스 & 애쉬",
 		["menu_deck9_swan_desc_sc"] = "근접 공격과 비근접 공격으로 적을 처치할 때는 기본 값의 #{skill_color}#$perk_value_1##점으로 콤보를 구성하지만, #{risk}#반복적인 방법으로 적을 처치하면 콤보 감소 타이머가 초기화됩니다.##\n\n#{risk}#과다 복용의 처치 시 회피는## #{important_1}#근접 공격으로 적을 처치해도 증가하지 않습니다.##",
 		["menu_deck9_corey"] = "코리",
@@ -6206,7 +6208,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck18_9_desc_sc"] = "연막 속에 숨어 있을 동안 회피 미터가 초당 ##$perk_value_1##씩 채워집니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n누적 피해가 무효화될 때, 다음에 입는 피해를 제외하고 피해 유예 시간이 #{important_1}#$perk_value_7## 감소합니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##",
+		["menu_deck19_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n방탄복이 파괴되었을때, 피해 유예 시간이 #{important_1}#$perk_value_7## 감소하지만 지속 피해를 무효화할 때 받는 다음 피해는 제외됩니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##",
 		["menu_deck19_3_desc_sc"] = "적을 처치할 때마다 플라스크의 재사용 대기 시간이 ##$perk_value_1##초씩 감소합니다.",
 		["menu_deck19_5_desc_sc"] = "##$perk_value_1##초간 피해를 입지 않으면 남아있는 모든 누적 피해가 무효화됩니다.\n\n페이저를 응답하는 속도가 ##$perk_value_2## 빨라집니다.",
 		["menu_deck19_7_desc_sc"] = "체력이 ##$perk_value_1## 이하일 경우, 적을 처치할 때마다 플라스크의 재사용 대기 시간이 ##$perk_value_2##초씩 감소합니다.",
@@ -6230,7 +6232,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck12_1_desc_sc"] = "체력이 낮을 수록 회피 미터가 더 빠르게 자동으로 채워집니다.\n\n체력이 ##100%## 미만일 경우, 회피 미터가 매초 최대 ##$perk_value_1##만큼 채워집니다.\n\n회피율이 ##$perk_value_2## 증가합니다.",
 		["menu_deck12_3_desc_sc"] = "체력이 낮을 수록 적을 죽일 때마다 회피 미터가 채워집니다.\n\n체력이 ##100%## 미만일 경우, 적을 죽일 때마다 회피 미터가 최대 ##$perk_value_1##만큼 채워집니다.",
 		["menu_deck12_5_desc_sc"] = "체력이 낮을 수록 받는 피해가 감소합니다. 체력이 ##100%## 미만일 경우, 최대 ##$perk_value_1##만큼 피해를 덜 받습니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 ##$perk_value_2## 빨라집니다.",
-		["menu_deck12_7_desc_sc"] = "체력이 낮을 수록 근접 공격으로 적을 처치할 때 회피를 더욱 효과적으로 만듭니다.\n\n체력이 ##100%## 미만일 경우, 근접 공격으로 적을 처치하면 회피율의 회피 미터가 매초 최대 ##$perk_value_1##만큼 채워치고, 이는 뱀 문신(3번 카드)의 효과와 중첩되며, 다음 회피의 유예 시간이 최대 ##$perk_value_2##까지 늘어나 최대 ##$perk_value_3##ms가 됩니다.\n\n회피율이 추가로 ##$perk_value_4## 증가합니다.",
+		["menu_deck12_7_desc_sc"] = "체력이 낮을 수록 근접 공격으로 적을 처치할 때 회피를 더욱 효과적으로 만듭니다.\n\n체력이 ##100%## 미만일 경우, 근접 공격으로 적을 처치하면 회피율의 회피 미터가 매초 최대 ##$perk_value_1##만큼 채워치고, 이는 뱀 문신(3번 카드)의 효과와 중첩되며, 다음 회피의 유예 시간이 최대 ##$perk_value_2##까지 늘어나 최대 ##$perk_value_3##ms가 됩니다.\n\n회피율이 추가로 ##$perk_value_4## 증가합니다.",		
 		["menu_deck12_9_desc_sc"] = "얻을 수 있는 최대 방어력이 #{skill_color}#$perk_value_1## 증가합니다.\n\n다운 당 쓰러지는 대신 ##1##의 체력으로 살아남고 방탄력을 ##$perk_value_2## 회복됩니다.\n\n#{risk}#주의: 이 효과는 클로커의 킥과 테이저의 전기 충격으로 쓰러지는 경우에는 발동되지 않으며, 쓰러지는 경우에도 초기화 되지 않습니다.##\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 		["menu_yakuza_deflection_add"] = "(야쿠자로 인해 증가함)",
 
@@ -6333,7 +6335,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Sicario
 			["menu_deck18_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##이 잠금 해제됩니다.\n\n연막탄을 사용하면, #{skill_color}#$perk_value_1##초간 숨을 수 있는 연막을 형성합니다. 연막 속에 숨어 있으면, 당신과 팀원은 방탄력의 회복 속도가 #{skill_color}#$perk_value_2## 빨라집니다. 연막 속으로 들어간 적은 명중률이 #{skill_color}#$perk_value_3## 감소합니다.\n\n연막탄은 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있지만, 적을 처치하면 재사용 대기 시간이 #{skill_color}#$perk_value_5##초씩 감소합니다.\n\n회피율이 #{skill_color}#$perk_value_6## 증가합니다.\n\n인벤토리에 시체 가방을 #{skill_color}##$perk_value_7##개 더 소지합니다.",
 			--Stoic
-			["menu_deck19_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n누적 피해가 무효화될 때, 다음에 입는 피해를 제외하고 피해 유예 시간이 #{important_1}#$perk_value_7## 감소합니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##\n\n페이저를 응답하는 속도가 #{skill_color}#$perk_value_7## 빨라집니다.",
+			["menu_deck19_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n방탄복이 파괴되었을때, 피해 유예 시간이 #{important_1}#$perk_value_8## 감소하지만 지속 피해를 무효화할 때 받는 다음 피해는 제외됩니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##\n\n페이저를 응답하는 속도가 #{skill_color}#$perk_value_7## 빨라집니다.",
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#기체 디스펜서##가 잠금 해제됩니다.\n\n기체 디스펜서를 사용하려면, #{skill_color}#$perk_value_1##미터 이내에 있는 아군 대상을 바라보고 투척 무기 키를 눌러 대상을 지정할 수 있습니다.\n\n당신이나 지정된 대상이 적을 처치할 때마다 당신의 체력을 #{skill_color}#$perk_value_2##만큼 회복시키고, 태그한 대상의 체력을 #{skill_color}#$perk_value_3##만큼 회복시킵니다.\n\n이 효과는 #{skill_color}#$perk_value_4##초간 지속되고 #{important_1}#$perk_value_5##초의 재사용 대기 시간을 가집니다.\n\n카메라 루프의 지속 시간이 #{skill_color}#$perk_value_6##초 증가합니다.",
 			--Hacker
@@ -6396,5 +6398,3 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 
 	})
 end)
-
-

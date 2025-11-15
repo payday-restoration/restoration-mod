@@ -24992,7 +24992,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{0, self.stat_info.kick_tables.right_recoil}
 				}
 				self.baltic.supported = true
-				self.baltic.ads_speed = 0.500
+				self.baltic.ads_speed = 0.660
 				self.baltic.damage_falloff = {
 					start_dist = 2400,
 					end_dist = 7200,
@@ -25001,7 +25001,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.baltic.stats = {
 					damage = 60,
 					spread = 81,
-					recoil = 55,
+					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 22,
@@ -25013,6 +25013,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.baltic.stats_modifiers = nil
+				self.baltic.fire_mode_data.volley.spread_mul = 1
+				self.baltic.fire_mode_data.volley.damage_mul = 1
+				self.baltic.fire_mode_data.volley.ammo_usage = 3
+				self.baltic.fire_mode_data.volley.rays = 3
+				self.baltic.fire_mode_data.volley.can_shoot_through_wall = true
+				self.baltic.fire_mode_data.volley.can_shoot_through_shield = true
+				self.baltic.fire_mode_data.volley.can_shoot_through_enemy = true
+				self.baltic.fire_mode_data.volley.can_shoot_through_enemy_unlim = true
+				self.baltic.fire_mode_data.volley.armor_piercing_chance = 1
 				self.baltic.panic_suppression_chance = 0.05
 				self.baltic.sounds.charge = "hailstorm_shotgun_fire_charge"
 			end

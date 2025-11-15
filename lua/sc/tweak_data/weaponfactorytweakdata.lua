@@ -27755,11 +27755,98 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ RJC9000'S MODS ]]
 		if self.parts.wpn_fps_snp_baltic_receiver_lower then
+			self.parts.wpn_fps_snp_baltic_flash_hider.perks = nil
+			self.parts.wpn_fps_snp_baltic_flash_hider.custom_stats = nil
 			self.parts.wpn_fps_snp_baltic_receiver_lower.adds = { "wpn_fps_hailstorm_sound_switch" }
 			self.parts.wpn_fps_snp_baltic_receiver_lower.custom_stats = {
 				info_lock_volley = true,
-				ignore_modify_firemode = true
+				ignore_modify_firemode = true,
+				hip_mult = 3
 			}
+
+			self.parts.wpn_fps_snp_baltic_optic.supported = true
+			self.parts.wpn_fps_snp_baltic_optic.stats = { zoom = 50 }
+			self.parts.wpn_fps_snp_baltic_optic.stance_mod = {
+				wpn_fps_snp_baltic = {
+					translation = Vector3(-0.01, -5, 0.66)
+				}
+			}
+			--GRIPS
+				--Quickdraw
+				self.parts.wpn_fps_snp_baltic_grip_quick.supported = true
+				self.parts.wpn_fps_snp_baltic_grip_quick.stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_snp_baltic_grip_quick.custom_stats = deep_clone(grips.quickdraw_1)
+				--Ergonomic
+				self.parts.wpn_fps_snp_baltic_grip_tac.supported = true
+				self.parts.wpn_fps_snp_baltic_grip_tac.stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_snp_baltic_grip_tac.custom_stats = deep_clone(grips.dual_stat_1)
+				--Combat
+				self.parts.wpn_fps_snp_baltic_grip_rcvr.supported = true
+				self.parts.wpn_fps_snp_baltic_grip_rcvr.stats = deep_clone(grips.acc_1)
+				self.parts.wpn_fps_snp_baltic_grip_rcvr.custom_stats = deep_clone(grips.acc_1)
+				--CQB
+				self.parts.wpn_fps_snp_baltic_grip_cqb.supported = true
+				self.parts.wpn_fps_snp_baltic_grip_cqb.stats = deep_clone(grips.quickdraw_2)
+				self.parts.wpn_fps_snp_baltic_grip_cqb.custom_stats = deep_clone(grips.quickdraw_2)
+				--Commando
+				self.parts.wpn_fps_snp_baltic_grip_light.supported = true
+				self.parts.wpn_fps_snp_baltic_grip_light.stats = deep_clone(grips.recoil_1)
+				self.parts.wpn_fps_snp_baltic_grip_light.custom_stats = deep_clone(grips.recoil_1)
+			--STOCKS
+				--Infiltrator
+				self.parts.wpn_fps_snp_baltic_stock_tac.supported = true
+				self.parts.wpn_fps_snp_baltic_stock_tac.stats = deep_clone(stocks.adj_acc_stats)
+				self.parts.wpn_fps_snp_baltic_stock_tac.custom_stats = deep_clone(stocks.adj_acc_stats)
+				--Heavy
+				self.parts.wpn_fps_snp_baltic_stock_full.supported = true
+				self.parts.wpn_fps_snp_baltic_stock_full.stats = deep_clone(stocks.adj_rec_stats)
+				self.parts.wpn_fps_snp_baltic_stock_full.custom_stats = deep_clone(stocks.adj_rec_stats)
+				--Light
+				self.parts.wpn_fps_snp_baltic_stock_light.supported = true
+				self.parts.wpn_fps_snp_baltic_stock_light.stats = deep_clone(stocks.adj_to_fold_stats)
+				self.parts.wpn_fps_snp_baltic_stock_light.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+				--Balanced
+				self.parts.wpn_fps_snp_baltic_stock_heavy.supported = true
+				self.parts.wpn_fps_snp_baltic_stock_heavy.stats = deep_clone(stocks.adj_hvy_rec_stats)
+				self.parts.wpn_fps_snp_baltic_stock_heavy.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+				--Combat
+				self.parts.wpn_fps_snp_baltic_stock_skel.supported = true
+				self.parts.wpn_fps_snp_baltic_stock_skel.stats = deep_clone(stocks.adj_hvy_acc_stats)
+				self.parts.wpn_fps_snp_baltic_stock_skel.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
+			---MAGS
+				--Short
+				self.parts.wpn_fps_snp_baltic_magazine_fast.supported = true
+				self.parts.wpn_fps_snp_baltic_magazine_fast.stats = {
+					value = 2,
+					concealment = 2,
+					reload = 5,
+					extra_ammo = -3
+				}
+				self.parts.wpn_fps_snp_baltic_magazine_fast.custom_stats = {
+					ads_speed_mult = 0.95
+				}
+				--Ext I
+				self.parts.wpn_fps_snp_baltic_magazine_large.supported = true
+				self.parts.wpn_fps_snp_baltic_magazine_large.stats = {
+					value = 6,
+					concealment = -1,
+					reload = -3,
+					extra_ammo = 3
+				}
+				self.parts.wpn_fps_snp_baltic_magazine_large.custom_stats = {
+					ads_speed_mult = 1.025
+				}
+				--Ext II
+				self.parts.wpn_fps_snp_baltic_magazine_xlarge.supported = true
+				self.parts.wpn_fps_snp_baltic_magazine_xlarge.stats = {
+					value = 8,
+					concealment = -3,
+					reload = -5,
+					extra_ammo = 6
+				}
+				self.parts.wpn_fps_snp_baltic_magazine_xlarge.custom_stats = {
+					ads_speed_mult = 1.075
+				}
 		end
 
 		if self.parts.wpn_fps_ass_scotia_flash_hider then
@@ -27827,49 +27914,91 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_scotia_barrel_heavy.custom_stats = {
 					chf = true
 				}
+			--GRIPS
+				--Quickdraw
+				self.parts.wpn_fps_ass_scotia_grip_quick.supported = true
+				self.parts.wpn_fps_ass_scotia_grip_quick.stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_ass_scotia_grip_quick.custom_stats = deep_clone(grips.quickdraw_1)
+				--Ergonomic
+				self.parts.wpn_fps_ass_scotia_grip_tac.supported = true
+				self.parts.wpn_fps_ass_scotia_grip_tac.stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_ass_scotia_grip_tac.custom_stats = deep_clone(grips.dual_stat_1)
+				--Combat
+				self.parts.wpn_fps_ass_scotia_grip_rcvr.supported = true
+				self.parts.wpn_fps_ass_scotia_grip_rcvr.stats = deep_clone(grips.acc_1)
+				self.parts.wpn_fps_ass_scotia_grip_rcvr.custom_stats = deep_clone(grips.acc_1)
+				--CQB
+				self.parts.wpn_fps_ass_scotia_grip_cqb.supported = true
+				self.parts.wpn_fps_ass_scotia_grip_cqb.stats = deep_clone(grips.quickdraw_2)
+				self.parts.wpn_fps_ass_scotia_grip_cqb.custom_stats = deep_clone(grips.quickdraw_2)
+				--Commando
+				self.parts.wpn_fps_ass_scotia_grip_light.supported = true
+				self.parts.wpn_fps_ass_scotia_grip_light.stats = deep_clone(grips.recoil_1)
+				self.parts.wpn_fps_ass_scotia_grip_light.custom_stats = deep_clone(grips.recoil_1)
+			--STOCKS
+				--Infiltrator
+				self.parts.wpn_fps_ass_scotia_stock_tac.supported = true
+				self.parts.wpn_fps_ass_scotia_stock_tac.stats = deep_clone(stocks.adj_acc_stats)
+				self.parts.wpn_fps_ass_scotia_stock_tac.custom_stats = deep_clone(stocks.adj_acc_stats)
+				--Heavy
+				self.parts.wpn_fps_ass_scotia_stock_full.supported = true
+				self.parts.wpn_fps_ass_scotia_stock_full.stats = deep_clone(stocks.adj_rec_stats)
+				self.parts.wpn_fps_ass_scotia_stock_full.custom_stats = deep_clone(stocks.adj_rec_stats)
+				--Light
+				self.parts.wpn_fps_ass_scotia_stock_light.supported = true
+				self.parts.wpn_fps_ass_scotia_stock_light.stats = deep_clone(stocks.adj_to_fold_stats)
+				self.parts.wpn_fps_ass_scotia_stock_light.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+				--Light II
+				self.parts.wpn_fps_ass_scotia_stock_light_collapsed.supported = true
+				self.parts.wpn_fps_ass_scotia_stock_light_collapsed.stats = deep_clone(stocks.adj_to_folded_stats)
+				self.parts.wpn_fps_ass_scotia_stock_light_collapsed.custom_stats = deep_clone(stocks.adj_to_folded_stats)
+				--Balanced
+				self.parts.wpn_fps_ass_scotia_stock_heavy.supported = true
+				self.parts.wpn_fps_ass_scotia_stock_heavy.stats = deep_clone(stocks.adj_hvy_rec_stats)
+				self.parts.wpn_fps_ass_scotia_stock_heavy.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
 			--MAGS
 				--Blink (Short)
-					self.parts.wpn_fps_ass_scotia_magazine_short.supported = true
-					self.parts.wpn_fps_ass_scotia_magazine_short.stats = {
-						value = 2,
-						concealment = 2,
-						reload = 5,
-						extra_ammo = -4
-					}
-					self.parts.wpn_fps_ass_scotia_magazine_short.custom_stats = {
-						ads_speed_mult = 0.95
-					}
+				self.parts.wpn_fps_ass_scotia_magazine_short.supported = true
+				self.parts.wpn_fps_ass_scotia_magazine_short.stats = {
+					value = 2,
+					concealment = 2,
+					reload = 5,
+					extra_ammo = -4
+				}
+				self.parts.wpn_fps_ass_scotia_magazine_short.custom_stats = {
+					ads_speed_mult = 0.95
+				}
 				--Echo (Speed)
-					self.parts.wpn_fps_ass_scotia_magazine_flip.supported = true
-					self.parts.wpn_fps_ass_scotia_magazine_flip.stats = {
-						value = 5,
-						spread = -1,
-						concealment = -1,
-						reload = 2
-					}
-					self.parts.wpn_fps_ass_scotia_magazine_flip.custom_stats = nil
+				self.parts.wpn_fps_ass_scotia_magazine_flip.supported = true
+				self.parts.wpn_fps_ass_scotia_magazine_flip.stats = {
+					value = 5,
+					spread = -1,
+					concealment = -1,
+					reload = 2
+				}
+				self.parts.wpn_fps_ass_scotia_magazine_flip.custom_stats = nil
 				--Sentinel (Ext I)
-					self.parts.wpn_fps_ass_scotia_magazine_large.supported = true
-					self.parts.wpn_fps_ass_scotia_magazine_large.stats = {
-						value = 6,
-						concealment = -2,
-						reload = -4,
-						extra_ammo = 8
-					}
-					self.parts.wpn_fps_ass_scotia_magazine_large.custom_stats = {
-						ads_speed_mult = 1.05
-					}
+				self.parts.wpn_fps_ass_scotia_magazine_large.supported = true
+				self.parts.wpn_fps_ass_scotia_magazine_large.stats = {
+					value = 6,
+					concealment = -2,
+					reload = -4,
+					extra_ammo = 8
+				}
+				self.parts.wpn_fps_ass_scotia_magazine_large.custom_stats = {
+					ads_speed_mult = 1.05
+				}
 				--Redline (Ext II)
-					self.parts.wpn_fps_ass_scotia_magazine_drum.supported = true
-					self.parts.wpn_fps_ass_scotia_magazine_drum.stats = {
-						value = 8,
-						concealment = -5,
-						reload = -7,
-						extra_ammo = 20
-					}
-					self.parts.wpn_fps_ass_scotia_magazine_drum.custom_stats = {
-						ads_speed_mult = 1.125
-					}
+				self.parts.wpn_fps_ass_scotia_magazine_drum.supported = true
+				self.parts.wpn_fps_ass_scotia_magazine_drum.stats = {
+					value = 8,
+					concealment = -5,
+					reload = -7,
+					extra_ammo = 20
+				}
+				self.parts.wpn_fps_ass_scotia_magazine_drum.custom_stats = {
+					ads_speed_mult = 1.125
+				}
 		end
 
 		if self.parts.wpn_fps_ass_c8sfw_gl_m26mass then

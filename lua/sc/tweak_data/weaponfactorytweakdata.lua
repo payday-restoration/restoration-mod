@@ -19775,6 +19775,9 @@ end)
 						translation = Vector3(0, -5.6, -2.67),
 						rotation = Rotation(0, 0, 0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_scotia = {
+						translation = Vector3(0.042, -2.1, -2.345)
+					}
 
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_vsk_94 = {
@@ -19928,6 +19931,9 @@ end)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_r6 = {
 						translation = Vector3(-0.02, 2.7, -3.78)
+					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_baltic = {
+						translation = Vector3(-0.005, -13.4, 0.7)
 					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_stampede_ecs = {
@@ -27765,12 +27771,49 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 
 			self.parts.wpn_fps_snp_baltic_optic.supported = true
-			self.parts.wpn_fps_snp_baltic_optic.stats = { zoom = 50 }
+			self.parts.wpn_fps_snp_baltic_optic.desc_id = "bm_wp_upg_o_6"
+			self.parts.wpn_fps_snp_baltic_optic.stats = { value = 0, zoom = 50 }
+			self.parts.wpn_fps_snp_baltic_optic.custom_stats = { big_scope = true }
 			self.parts.wpn_fps_snp_baltic_optic.stance_mod = {
 				wpn_fps_snp_baltic = {
 					translation = Vector3(-0.01, -5, 0.66)
 				}
 			}
+			--BARRELS
+				--Barrier
+				self.parts.wpn_fps_snp_baltic_barrel_xlong.supported = true
+				self.parts.wpn_fps_snp_baltic_barrel_xlong.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_snp_baltic_barrel_xlong.custom_stats = deep_clone(barrels.long_b3_stats)
+				--Iconic
+				self.parts.wpn_fps_snp_baltic_barrel_long.supported = true
+				self.parts.wpn_fps_snp_baltic_barrel_long.stats = {
+					value = 4,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_snp_baltic_barrel_long.custom_stats = nil
+				--Frontline
+				self.parts.wpn_fps_snp_baltic_barrel_med.supported = true
+				self.parts.wpn_fps_snp_baltic_barrel_med.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_snp_baltic_barrel_med.stats.concealment = -2
+				self.parts.wpn_fps_snp_baltic_barrel_med.stats.recoil = 2
+				self.parts.wpn_fps_snp_baltic_barrel_med.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Ascend
+				self.parts.wpn_fps_snp_baltic_barrel_short.supported = true
+				self.parts.wpn_fps_snp_baltic_barrel_short.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_snp_baltic_barrel_short.custom_stats = deep_clone(barrels.short_b1_stats)
+				--Deadeye
+				self.parts.wpn_fps_snp_baltic_barrel_heavy.supported = true
+				self.parts.wpn_fps_snp_baltic_barrel_heavy.desc_id = "bm_wp_chf_50_desc"
+				self.parts.wpn_fps_snp_baltic_barrel_heavy.has_description = true
+				self.parts.wpn_fps_snp_baltic_barrel_heavy.stats = {
+					value = 10,
+					recoil = -20,
+					concealment = -4
+				}
+				self.parts.wpn_fps_snp_baltic_barrel_heavy.custom_stats = {
+					chf = true
+				}
 			--GRIPS
 				--Quickdraw
 				self.parts.wpn_fps_snp_baltic_grip_quick.supported = true
@@ -27855,6 +27898,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_scotia_flash_hider.perks = nil
 			self.parts.wpn_fps_ass_scotia_flash_hider.custom_stats = nil
 
+			self.parts.wpn_fps_ass_scotia_receiver_lower.custom_stats = { big_scope = true }
 			self.parts.wpn_fps_ass_scotia_safety.supported = true
 			self.parts.wpn_fps_ass_scotia_safety.stats = { value = 0 }
 			self.parts.wpn_fps_ass_scotia_safety.custom_stats = nil
@@ -27879,6 +27923,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_ass_scotia_safety_auto.perks = nil
 
+			self.parts.wpn_fps_ass_scotia_irons_rear.stance_mod = {
+				wpn_fps_ass_scotia = {
+					translation = Vector3(0.01, -3, 0.6),
+					rotation = Rotation(0.01, 0, 0)
+				}
+			}
 			--BARRELS
 				--Barrier
 				self.parts.wpn_fps_ass_scotia_barrel_xlong.supported = true

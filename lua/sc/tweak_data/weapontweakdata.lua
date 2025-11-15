@@ -24969,6 +24969,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.scotia.stats_modifiers = nil
+				self.scotia.lock_slide = true
+				self.scotia.sounds.magazine_empty_alt = "scotia_charging_handle_release"
 				self.scotia.panic_suppression_chance = 0.05
 				self.scotia.reload_speed_multiplier = 0.85
 				self.scotia.timers.reload_not_empty = 1.9
@@ -24995,8 +24997,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.baltic.ads_speed = 0.660
 				self.baltic.damage_falloff = {
 					start_dist = 2400,
-					end_dist = 7200,
-					min_mult = 0.3333
+					end_dist = 5100,
+					min_mult = 0.5
 				}
 				self.baltic.stats = {
 					damage = 60,
@@ -25024,6 +25026,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.baltic.fire_mode_data.volley.armor_piercing_chance = 1
 				self.baltic.panic_suppression_chance = 0.05
 				self.baltic.sounds.charge = "hailstorm_shotgun_fire_charge"
+				self.baltic.timers.reload_empty = 4.2
+				self.baltic.timers.reload_exit_empty = 1.58
+				self.baltic.timers.reload_not_empty = 2.72
+				self.baltic.timers.reload_exit_not_empty = 1.42
 			end
 
 			if self.c8sfw then

@@ -707,6 +707,9 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 			if w_td.sounds and w_td.sounds.magazine_empty then
 				self:play_tweak_data_sound("magazine_empty")
 			end
+			if w_td.sounds and w_td.sounds.magazine_empty_alt then
+				managers.player:local_player():sound():say(w_td.sounds.magazine_empty_alt)
+			end
 
 			if w_td.effects and w_td.effects.magazine_empty then
 				self:_spawn_tweak_data_effect("magazine_empty")

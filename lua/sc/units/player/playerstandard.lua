@@ -1491,7 +1491,7 @@ function PlayerStandard:_check_stop_shooting()
 		if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/NoADSRecoilAnims") and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		else
-			if (is_auto_fire_mode or is_volley_fire_mode) and not self:_is_reloading() and not self:_is_meleeing() then
+			if (is_auto_fire_mode or is_volley_fire_mode) and not self:_is_reloading() and not self:_is_meleeing() and not self:_changing_weapon() then
 				if not weap_base:weapon_tweak_data().no_auto_anims then
 					self._ext_camera:play_redirect(self:get_animation("recoil_exit"))
 				else
@@ -1521,6 +1521,17 @@ function PlayerStandard:_start_action_charging_weapon(t, no_redirect)
 		if not no_redirect then
 			self._ext_camera:play_redirect(self:get_animation("charge"), speed_multiplier)
 		end
+	end
+end
+
+function PlayerStandard:_end_action_charging_weapon(t, no_redirect)
+	self._state_data.charging_weapon = nil
+
+	self._equipped_unit:base():tweak_data_anim_stop("charge")
+
+	--Unsure what this is needed for since it breaks anim playback for melee and reloading while mid-charge
+	if not no_redirect then
+		--self._ext_camera:play_redirect(self:get_animation("idle"))
 	end
 end
 

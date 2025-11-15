@@ -27950,8 +27950,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_scotia_barrel_med.custom_stats = deep_clone(barrels.long_b1_stats)
 				--Ascend
 				self.parts.wpn_fps_ass_scotia_barrel_short.supported = true
-				self.parts.wpn_fps_ass_scotia_barrel_short.stats = deep_clone(barrels.short_b1_stats)
-				self.parts.wpn_fps_ass_scotia_barrel_short.custom_stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_scotia_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_ass_scotia_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
 				--Deadeye
 				self.parts.wpn_fps_ass_scotia_barrel_heavy.supported = true
 				self.parts.wpn_fps_ass_scotia_barrel_heavy.desc_id = "bm_wp_chf_50_desc"

@@ -2394,16 +2394,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_grenade_poison_gas_grenade_desc_short"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.##",
 
 		--Throwing Cards
-		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 퍽 덱 효과가 발동됩니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
+		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 특성 덱 효과가 발동됩니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
 		--Throwing Stars/Shuriken
 		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 근접 공격 스킬이 발동됩니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.## \n\n표창은 피와 전투로 물든 긴 역사를 지니고 있습니다. 이 독이 발라진 스테인리스 스틸 표창은 당신의 길을 막는 모든 이에게 치명적인 위협이 될 것입니다.",
 		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 근접 공격 스킬이 발동됩니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##",
 		--Javelin
-		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 퍽 덱 효과가 발동됩니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
+		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 특성 덱 효과가 발동됩니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
 		--Throwing Axe
-		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 퍽 덱 효과가 발동됩니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
+		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 특성 덱 효과가 발동됩니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
 		--Throwing Knife
-		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 퍽 덱 효과가 발동됩니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
+		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 특성 덱 효과가 발동됩니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
 
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "약병",
@@ -6134,9 +6134,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck9_3_desc_sc"] = "치명적이지 않은 근접 공격 혹은 근접 무기를 제외한 다른 무기로 적을 처치하면 콤보 감소 타이머가 초기화됩니다.\n\n콤보 #{risk}#$perk_value_1##점씩 쌓일 때마다 이동 속도가 #{skill_color}#$perk_value_2## 빨라지며, 최대 #{skill_color}#$perk_value_3##까지 증가합니다.\n\n회피율이 #{skill_color}#$perk_value_4## 증가합니다.",
 		["menu_deck9_5_desc_sc"] = "근접 무기로 적을 죽이면 스태미나를 #{skill_color}#$perk_value_1## 회복합니다.\n\n콤보 #{risk}#$perk_value_2##점마다 근접 무기로 적을 처치하면 체력이 #{skill_color}#$perk_value_3##씩 회복되며, 최대 #{skill_color}#$perk_value_4##까지 회복됩니다.\n\n인벤토리에 시체 가방을 #{skill_color}#$perk_value_5##개 더 소지합니다.",
 
-		["menu_deck9_7_desc_sc"] = "방탄력의 #{risk}#$perk_value_2## 마다 기본 콤보 값이 #{skill_color}#$perk_value_1## 증가하고, 체력 피해가 발생할 때마다 콤보가 끊어지는 데 걸리는 시간이 #{skill_color}#$perk_value_8##초 더 증가합니다.\n\n콤보가 #{risk}#$perk_value_3##점 증가할 때마다 적을 처치하면 회피 미터가 회피율의 #{skill_color}#$perk_value_4## 채워지며, 최대 #{skill_color}#$perk_value_5##까지 채웁니다.\n근접 공격으로 처치하면 추가로 #{skill_color}#$perk_value_7## 증가합니다.\n\n회피율이 추가로 ##$perk_value_6## 증가합니다.",
+		["menu_deck9_7_desc_sc"] = "방탄력의 #{risk}#$perk_value_2## 마다 기본 콤보 값이 #{skill_color}#$perk_value_1## 증가하고, 체력 피해가 발생할 때마다 콤보가 끊어지는 데 걸리는 시간이 #{skill_color}#$perk_value_8##초 더 증가합니다.\n\n콤보가 #{risk}#$perk_value_3##점 증가할 때마다 적을 처치하면 회피 미터가 회피율의 #{skill_color}#$perk_value_4## 채워지며, 최대 #{skill_color}#$perk_value_5##까지 채웁니다.\n근접 공격으로 처치하면 추가로 #{skill_color}#$perk_value_7## 증가합니다.\n\n회피율이 추가로 #{skill_color}#$perk_value_6## 증가합니다.",
 
-		["menu_deck9_9_desc_sc"] = "콤보는 대신 간격당 #{skill_color}#$perk_value_1##의 비율로 줄어듭니다.\n\n콤보 #{risk}#$perk_value_2##점마다 직접 피해를 가해 적을 처치하면 #{skill_color}#$perk_value_3##의 확률로 주변 #{skill_color}#$perk_value_4##미터 이내의 적에게 공포감을 퍼뜨릴 수 있으며, 최대 확률은 #{skill_color}#$perk_value_5##입니다.\n근접 공격으로 처치하면 이 확률이 #{skill_color}#$perk_value_6## 증가합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다. ",
+		["menu_deck9_9_desc_sc"] = "콤보는 대신 간격당 #{skill_color}#$perk_value_1##의 비율로 줄어듭니다.\n\n콤보 #{risk}#$perk_value_2##점마다 직접 피해를 가해 적을 처치하면 #{skill_color}#$perk_value_3##의 확률로 주변 #{skill_color}#$perk_value_4##미터 이내의 적에게 공포감을 퍼뜨릴 수 있으며, 최대 확률은 #{skill_color}#$perk_value_5##입니다.\n근접 공격으로 처치하면 이 확률이 #{skill_color}#$perk_value_6## 증가합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다. ",
 
 		["menu_deck9_richard"] = "리차드",
 		["menu_deck9_richard_desc_sc"] = "추가 효과 없음.",
@@ -6147,9 +6147,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck9_rufus"] = "루퍼스",
 		["menu_deck9_rufus_desc_sc"] = "콤보 #{risk}#$perk_value_2##점마다 #{skill_color}#$perk_value_1##의 피해 저항을 얻고, 최대 #{skill_color}#$perk_value_3##까지 얻을 수 있습니다.\n\n체력 피해를 입으면 콤보를 #{important_1}#$perk_value_4##점 더 잃습니다.",
 		["menu_deck9_zack"] = "잭",
-		["menu_deck9_zack_desc_sc"] = "콤보 감소 타이머가 #{skill_color}#$perk_value_1##초 연장되고, 콤보 감소 속도가 #{important_1}#$perk_value_2## 증가합니다.",
+		["menu_deck9_zack_desc_sc"] = "콤보 감소 타이머가 #{skill_color}#$perk_value_1##초 연장되고, 콤보 감소 속도가 #{important_1}#$perk_value_2##초 증가합니다.",
 		["menu_deck9_rick"] = "릭",
-		["menu_deck9_rick_desc_sc"] = "이제 근접 공격으로 적을 처치하면 콤보가 기본 값의 #{skill_color}#$perk_value_1##점 증가하지만, 최대 콤보는 #{important_1}#$perk_value_2## 감소합니다.",
+		["menu_deck9_rick_desc_sc"] = "이제 근접 공격으로 적을 처치하면 콤보가 기본 값의 #{skill_color}#$perk_value_1##점 증가하지만, 최대 콤보는 #{important_1}#$perk_value_2##점으로 감소합니다.",
 		["menu_deck9_brandon"] = "브랜든",
 		["menu_deck9_brandon_desc_sc"] = "대신 콤보 #{risk}#$perk_value_2##점마다 #{skill_color}#$perk_value_1## 증가하고, 최대 #{skill_color}#$perk_value_3##까지 증가합니다.\n\n콤보 감소 타이머가 #{important_1}#$perk_value_4##초 감소합니다.",
 		["menu_deck9_earl"] = "얼",

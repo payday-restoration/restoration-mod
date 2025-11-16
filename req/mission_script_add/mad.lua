@@ -70,12 +70,12 @@ local optsShield_06 = {
 	},
 }
 local opts_enabale_shields = {
-	enabled = {death_wish_above and pro_job},
+	enabled = death_wish_above and pro_job,
 	elements = {400011, 400012 , 400013, 400014, 400015, 400016 }, -- put enemy dummy ids here
 	toggle = "on",
 }
 local opts_enabale_snipers = {
-	enabled = {death_wish_above and pro_job},
+	enabled = death_wish_above and pro_job,
 	elements = {400017, 400018 },
 	toggle = "on",
 }

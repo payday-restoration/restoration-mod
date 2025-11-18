@@ -1,3 +1,4 @@
+local can_not_be_muted_patch = restoration:get_can_not_be_muted_patch()
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 540) or 480
@@ -27,6 +28,12 @@ return {
 			}
 		}
 	},
+	-- Fix initial "Commissar is in X" district lines being muteable if the setting is on
+	[101673] = can_not_be_muted_patch, -- Downtown
+	[101674] = can_not_be_muted_patch, -- Georgetown
+	[101658] = can_not_be_muted_patch, -- West End
+	[101664] = can_not_be_muted_patch, -- Foggy Bottom
+	[101672] = can_not_be_muted_patch, -- Shaw
 	[100589] = disabled,
 	[100590] = disabled,
 	-- Mobster Enforcers coming out from the van(s), only on DSPJ
@@ -48,5 +55,5 @@ return {
 	[105070] = mob_enforcer_van,
 	[105071] = mob_enforcer_van,
 	[105072] = mob_enforcer_van,
-	[105073] = mob_enforcer_van
-}	
+	[105073] = mob_enforcer_van,
+}

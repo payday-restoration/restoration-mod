@@ -924,6 +924,20 @@ function restoration:disable_mission_script_patches()
 	end
 end
 
+-- Always return a complete patch in case of a specific dialogue element needing other changes as well
+function restoration:get_can_not_be_muted_patch(value)
+	if value == true or value == false then
+		-- Nothing
+	else
+		value = self.Options:GetValue("OTHER/ExtraUnmuteables") and true or nil
+	end
+	return {
+		values = {
+			can_not_be_muted = value,
+		},
+	}
+end
+
 -- Load and execute a file from the req/ folder
 function restoration:require(file)
 	local path = self:GetPath() .. "req/" .. file .. ".lua"

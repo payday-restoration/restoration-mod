@@ -462,6 +462,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",
 		["RestorationModEnemySpawnSoundsTitleID"] = "Enemy Spawn Sounds",
 		["RestorationModEnemySpawnSoundsDescID"] = "Enable the playback of spawn-in sounds of enemies. Enabled by default.",
+		["RestorationModExtraUnmuteablesTitleID"] = "Extra Unmuteables (WIP)",
+		["RestorationModExtraUnmuteablesDescID"] = "Make some non-essential but helpful contractor voicelines unable to be muted. Enabled by default. Requires heist restart to apply after toggling.",
 		["RestorationModRestoreHitFlashTitleID"] = "Restore Hit Flash",
 		["RestorationModRestoreHitFlashDescID"] = "Enable or disable the restored hit flash when taking damage.",
 		["RestorationModBotsNoDropTitleID"] = "Disable Bot Loot Bag Dropping",

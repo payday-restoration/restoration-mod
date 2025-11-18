@@ -5877,6 +5877,7 @@ function BlackMarketGui:update_info_text()
 		local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 		local part_id = slot_data.name
 		local part_data = part_id and tweak_data.weapon.factory.parts[part_id]
+		local custom_stats = part_data and part_data.custom_stats
 		local perks = part_data and part_data.perks
 		local is_gadget = part_data and part_data.type == "gadget" or perks and table.contains(perks, "gadget")
 		local is_second_sight = part_data and part_data.sub_type == "second_sight" or perks and table.contains(perks, "second_sight")
@@ -5884,7 +5885,7 @@ function BlackMarketGui:update_info_text()
 		local is_bayonet = part_data and part_data.type == "bayonet" or perks and table.contains(perks, "bayonet")
 		local is_bipod = part_data and part_data.type == "bipod" or perks and table.contains(perks, "bipod")
 		local has_desc = part_data and part_data.has_description == true
-		local has_move_speed = part_data and part_data.custom_stats and part_data.custom_stats.movement_speed_add
+		local has_move_speed = custom_stats and custom_stats.movement_speed_add
 		local override_move_speed = has_move_speed and crafted and managers.weapon_factory:_part_data(slot_data.name, crafted.factory_id)
 		if override_move_speed then
 			if override_move_speed.custom_stats and override_move_speed.custom_stats.movement_speed_add then
@@ -5893,7 +5894,7 @@ function BlackMarketGui:update_info_text()
 				has_move_speed = false
 			end
 		end
-		local has_sms = part_data and part_data.custom_stats and part_data.custom_stats.sms
+		local has_sms = custom_stats and custom_stats.sms
 		local override_sms = has_sms and crafted and managers.weapon_factory:_part_data(slot_data.name, crafted.factory_id)
 		if override_sms then
 			if override_sms.custom_stats and override_sms.custom_stats.sms then
@@ -5903,7 +5904,6 @@ function BlackMarketGui:update_info_text()
 			end
 		end
 		local has_second_sight = nil
-
 		if crafted then
 			for _, id in ipairs(managers.weapon_factory:get_assembled_blueprint(crafted.factory_id, crafted.blueprint)) do
 				local part = managers.weapon_factory:_part_data(id, crafted.factory_id)
@@ -5913,6 +5913,8 @@ function BlackMarketGui:update_info_text()
 				end
 			end
 		end
+
+		local has_hs_mult = custom_stats and custom_stats.hs_mult
 
 
 		local desc_color_info = part_data and part_data.desc_color_info
@@ -5988,6 +5990,17 @@ function BlackMarketGui:update_info_text()
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.skill_color)
 			end
 		end
+
+		--[[
+		if has_hs_mult then
+			local penalty_as_string = string.format("%d%%", math.round((1 - has_sms) * 100)):gsub("-", "")
+			if (slot_data.global_value and slot_data.global_value ~= "normal") or is_gadget or is_ammo or is_bayonet or is_bipod or has_desc or has_move_speed or (perks and table.contains(perks, "bonus")) then
+				updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_sms_bonus_info") .. penalty_as_string .. ".##"
+			else
+				updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:text("bm_menu_weapon_sms_bonus_info") .. penalty_as_string .. ".##"
+			end
+		end
+		--]]
 
 
 		updated_texts[4].below_stats = true

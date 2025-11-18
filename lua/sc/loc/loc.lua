@@ -1435,11 +1435,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.",
 		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.",
-		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 200% and there is no reduction to enemy headshot multipliers.##",
-		["bm_wp_upg_a_piercing_9_auto_desc_per_pellet"] = "Fires #{skill_color}#9## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 200% and there is no reduction to enemy headshot multipliers.##",
-		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 200% and there is no reduction to enemy headshot multipliers.##",
-		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 200% and there is no reduction to enemy headshot multipliers.##",
-		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 200% and there is no reduction to enemy headshot multipliers.##",
+		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 150% and there is no reduction to enemy headshot multipliers.##",
+		["bm_wp_upg_a_piercing_9_auto_desc_per_pellet"] = "Fires #{skill_color}#9## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 150% and there is no reduction to enemy headshot multipliers.##",
+		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 150% and there is no reduction to enemy headshot multipliers.##",
+		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 150% and there is no reduction to enemy headshot multipliers.##",
+		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 150% and there is no reduction to enemy headshot multipliers.##",
 
 		--Generic Optic Zoom Descriptions--
 		["bm_wp_upg_o_1_1"] = "Red dot sight.\n#{risk}#1.1x magnification.##",

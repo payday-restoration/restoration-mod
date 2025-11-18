@@ -1891,7 +1891,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					skill_value_b1 = tostring((1 - self.values.pistol.stacked_accuracy_bonus[1].accuracy_bonus) * 100).."%", -- Accuracy bonus per stack
 					skill_value_b2 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_time), -- Duration of buff (basic)
 					skill_value_b3 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_stacks), -- Max amount of stacks
-					skill_value_p1 = tostring(self.values.pistol.stacked_accuracy_bonus[2].max_time), -- Duration of buff (ace)
+					skill_value_p1 = tostring(self.values.pistol.stacked_accuracy_bonus[2].max_time - self.values.pistol.stacked_accuracy_bonus[1].max_time), -- Duration of buff (ace)
 					skill_value_p2 = tostring(self.values.pistol.steelsight_range_inc[1] % 1 * 100).."%", -- Accuracy and range buff
 				}
 				
@@ -1905,7 +1905,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					skill_value_b1 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].damage_bonus % 1 * 100).."%", -- Damage bonus per stack
 					skill_value_b2 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].max_time), -- Duration of buff (basic)
 					skill_value_b3 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].max_stacks), -- Max stacks (basic)
-					skill_value_p1 = tostring(self.values.pistol.stacking_hit_damage_multiplier[2].max_time), -- Duration of buff (ace)
+					skill_value_p1 = tostring(self.values.pistol.stacking_hit_damage_multiplier[2].max_time - self.values.pistol.stacking_hit_damage_multiplier[1].max_time), -- additional duration of buff (ace)
 					skill_value_p2 = tostring(self.values.pistol.stacking_hit_damage_multiplier[2].max_stacks - self.values.pistol.stacking_hit_damage_multiplier[1].max_stacks) -- How many additional stacks give ace version
 				}
 			

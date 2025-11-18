@@ -72,7 +72,7 @@ Hooks:OverrideFunction(CopSound, "say", function(self, sound_name, sync, skip_pr
 	elseif self.sound_name_lookup_by_prefix[self._prefix] then
 		sound_name = self.sound_name_lookup_by_prefix[self._prefix][sound_name] or sound_name
 		if type(sound_name) == "table" then
-			sound_name = table.random(sound_name)
+			sound_name = table.random(sound_name) or sound_name
 		end
 	end
 

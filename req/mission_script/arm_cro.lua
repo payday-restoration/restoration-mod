@@ -10,7 +10,7 @@ local pro_job_ponr = {
 		{ id = 400001, delay = 0, },
 	},
 }
-local disable = {
+local disabled = {
 	values = {
 		enabled = false,
 	},
@@ -45,22 +45,22 @@ return {
 			{
 				name = "edge",
 				force = 4,
-				position = Vector3(0, 4300, 0),
+				position = Vector3(0, 3200, 0),
 			},
 			{
 				name = "grit",
 				force = 4,
-				position = Vector3(2600, 0, 0),
+				position = Vector3(3200, 0, 0),
 			},
 			{
 				name = "lawyers_advised_against_finishing_this_joke",
 				force = 4,
-				position = Vector3(0, -3800, 0),
+				position = Vector3(0, -3200, 0),
 			},
 			{
 				name = "rush",
 				force = 4,
-				position = Vector3(-3400, 0, 0),
+				position = Vector3(-3200, 0, 0),
 			},
 		},
 	},
@@ -75,18 +75,18 @@ return {
 	[101845] = interval_short,
 	[101846] = interval_short,
 	-- Disable vanilla reinforce on the trucks
-	[100267] = disable,
-	[100268] = disable,
-	[100269] = disable,
-	[100270] = disable,
-	[100271] = disable,
-	[100272] = disable,
-	[100273] = disable,
-	[100274] = disable,
-	[100275] = disable,
-	[100276] = disable,
-	[100277] = disable,
-	[100278] = disable,
+	[100267] = disabled,
+	[100268] = disabled,
+	[100269] = disabled,
+	[100270] = disabled,
+	[100271] = disabled,
+	[100272] = disabled,
+	[100273] = disabled,
+	[100274] = disabled,
+	[100275] = disabled,
+	[100276] = disabled,
+	[100277] = disabled,
+	[100278] = disabled,
 	-- Van Bulldozers
 	[101747] = gensec_tank,
 	[101748] = gensec_tank,

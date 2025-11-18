@@ -457,6 +457,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModDisableSoloBoonsDescID"] = "솔로 플레이 시 플레이어가 받는 추가적인 혜택을 비활성화합니다(Crime.net 오프라인).",
 		["RestorationModEnemySpawnSoundsTitleID"] = "적 생성 사운드",
 		["RestorationModEnemySpawnSoundsDescID"] = "적의 스폰 사운드 재생을 활성화합니다. 기본적으로 활성화되어 있습니다.",
+		["RestorationModExtraUnmuteablesTitleID"] = "엑스트라 음소거 없음 (WIP)",
+		["RestorationModExtraUnmuteablesDescID"] = "필요하지 않지만 도움이 되는 계약자 음성을 음소거하지 못하도록 설정합니다. 기본적으로 활성화되어 있습니다. 전환 후 변경 사항은 하이스트 재시작 후에 적용됩니다.",		
 		["RestorationModRestoreHitFlashTitleID"] = "히트 플래시 복원",
 		["RestorationModRestoreHitFlashDescID"] = "대미지를 입었을 때 복원된 히트 플래시를 활성화하거나 비활성화합니다.",
 		["RestorationModBotsNoDropTitleID"] = "봇 전리품 가방 드롭 비활성화",

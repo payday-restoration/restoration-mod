@@ -237,11 +237,6 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	local mul = 1
 	local multi_ray = self._rays and self._rays > 1
 
-	--Multi-pellet spread increase.
-	if multi_ray then
-		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase or 1
-	end
-
 	local pm = managers.player
 
 	mul = mul * pm:get_property("desperado", 1)
@@ -254,6 +249,14 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	local full_steelsight = current_state:is_full_steelsight()
 
 	if full_steelsight then
+		if self:weapon_tweak_data().always_hipfire or self.AKIMBO then
+			mul = mul * ((tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1) * ( (multi_ray and 0.33) or (self.AKIMBO and 1) or 1))
+		end
+
+		if self:second_sight_spread_mult() then
+			mul = mul * (self:second_sight_spread_mult() / ((multi_ray and (tweak_data.weapon.stat_info.shotgun_spread_increase * 3.33)) or 1) )
+		end
+
 		if multi_ray then
 			mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase_ads or 1
 			
@@ -261,14 +264,6 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 				local multishot_spread = tweak_data[category] and tweak_data[category].ads_multishot_spread_mult or 1
 				mul = mul * multishot_spread
 			end
-		end
-		
-		if self:weapon_tweak_data().always_hipfire or self.AKIMBO then
-			mul = mul * ((tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1) * ( (multi_ray and 0.33) or (self.AKIMBO and 1) or 1))
-		end
-
-		if self:second_sight_spread_mult() then
-			mul = mul * (self:second_sight_spread_mult() / ((multi_ray and (tweak_data.weapon.stat_info.shotgun_spread_increase * 3)) or 1) )
 		end
 
 		if not is_moving then
@@ -285,6 +280,10 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 			mul = mul * pm:upgrade_value(category, "steelsight_accuracy_inc", 1)
 		end
 	else
+		--Multi-pellet spread increase.
+		if multi_ray then
+			mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase or 1
+		end
 		for _, category in ipairs(self:categories()) do
 			mul = mul * pm:upgrade_value(category, "hip_fire_spread_multiplier", 1)
 		end

@@ -3658,11 +3658,11 @@ function WeaponTweakData:_init_stats()
 	}
 
 	--Multiplier for spread on multi-raycast weapons. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
-	self.stat_info.shotgun_spread_increase = 1.45
-	self.stat_info.shotgun_spread_increase_ads = 5
+	self.stat_info.shotgun_spread_increase = 1.5
+	self.stat_info.shotgun_spread_increase_ads = 0.6 / self.stat_info.stance_spread_mults.steelsight
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
-	self.stat_info.hipfire_only_spread_increase = 0.65 / self.stat_info.stance_spread_mults.steelsight
+	self.stat_info.hipfire_only_spread_increase = 0.6 / self.stat_info.stance_spread_mults.steelsight
 
 	self.stat_info.base_spread = 12.1 --How much spread area you have at 0 accuracy.
 	self.stat_info.spread_per_accuracy = -0.12 --How much each point of accuracy reduces spread area.
@@ -5678,6 +5678,33 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		end
 	end
 
+	local shared_timers = {
+		glock = {
+			reload_empty = 1,
+			reload_exit_empty = 1,
+			reload_not_empty = 1,
+			reload_exit_not_empty = 1,
+		},
+		spike = {
+			reload_empty = 1,
+			reload_exit_empty = 1,
+			reload_not_empty = 1,
+			reload_exit_not_empty = 1,
+		},
+		wick = {
+			reload_empty = 1,
+			reload_exit_empty = 1,
+			reload_not_empty = 1,
+			reload_exit_not_empty = 1,
+		},
+		rage = {
+			reload_empty = 1,
+			reload_exit_empty = 1,
+			reload_not_empty = 1,
+			reload_exit_not_empty = 1,
+		},
+	}
+
 	--[[     BASE WEAPONS     ]]--
 	--Sorted by "Primary Skill Use > Sub-category > Primary/Secondary"
 	--Akimbo weapons are sorted under their single-wielded secondary counterpart
@@ -6218,7 +6245,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.g26.fire_mode_data.fire_rate = 0.0857142
 						self.g26.supported = true
-						self.g26.ads_speed = 0.140
+						self.g26.ads_speed = 0.120
 						self.g26.damage_falloff = {
 							start_dist = 1000,
 							end_dist = 2700,
@@ -6240,7 +6267,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.g26.stats_modifiers = nil
 						self.g26.panic_suppression_chance = 0.05
-						self.g26.reload_speed_multiplier = 1.22
+						self.g26.reload_speed_multiplier = 1.25
 						self.g26.timers.reload_exit_empty = 0.5
 						self.g26.timers.reload_exit_not_empty = 0.65
 					--Akimbo
@@ -6382,7 +6409,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.glock_17.stats = {
 							damage = 24,
 							spread = 54,
-							recoil = 87,
+							recoil = 91,
 							spread_moving = 9,
 							zoom = 1,
 							concealment = 30,
@@ -6421,7 +6448,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_g17.stats = {
 							damage = 24,
 							spread = 44,
-							recoil = 77,
+							recoil = 81,
 							spread_moving = 9,
 							zoom = 1,
 							concealment = 30,
@@ -6634,7 +6661,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							equip = 0.35
 						}
 						self.legacy.panic_suppression_chance = 0.05
-						self.legacy.reload_speed_multiplier = 1.08
+						self.legacy.reload_speed_multiplier = 1.1
 						self.legacy.timers.reload_exit_empty = 0.5
 						self.legacy.timers.reload_exit_not_empty = 0.65
 						if BeardLib.Utils:FindMod("m13 reload animations") then
@@ -6702,7 +6729,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.holt.stats = {
 							damage = 24,
 							spread = 57,
-							recoil = 91,
+							recoil = 93,
 							spread_moving = 5,
 							zoom = 1,
 							concealment = 31,
@@ -6742,7 +6769,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_holt.stats = {
 							damage = 24,
 							spread = 47,
-							recoil = 81,
+							recoil = 83,
 							spread_moving = 5,
 							zoom = 1,
 							concealment = 31,
@@ -7356,7 +7383,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 43,
 							spread_moving = 9,
 							zoom = 1,
-							concealment = 24,
+							concealment = 25,
 							suppression = 7,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -7903,7 +7930,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 55,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 25,
+							concealment = 26,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -7956,7 +7983,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 45,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 25,
+							concealment = 26,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8000,7 +8027,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 59,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 26,
+							concealment = 27,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8041,7 +8068,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 49,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 26,
+							concealment = 27,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8087,7 +8114,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 47,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 27,
+							concealment = 28,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8128,7 +8155,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 37,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 27,
+							concealment = 28,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8172,7 +8199,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 45,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 25,
+							concealment = 26,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8214,7 +8241,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 33,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 25,
+							concealment = 26,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8261,7 +8288,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 43,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 25,
+							concealment = 26,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8304,7 +8331,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 33,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 25,
+							concealment = 26,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8351,7 +8378,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 35,
 							spread_moving = 6,
 							zoom = 1,
-							concealment = 24,
+							concealment = 25,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8400,7 +8427,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 19,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 24,
+							concealment = 25,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -8459,7 +8486,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 43,
 							spread_moving = 9,
 							zoom = 1,
-							concealment = 26,
+							concealment = 27,
 							suppression = 7,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -9273,9 +9300,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_mp5.desc_id = "bm_mp5_sc_desc"
 						self.new_mp5.BURST_FIRE = {
 							count = 3,
-							delay = 0.15,
-							recoil_mult = 0.75,
-							last_recoil_mult = 1.02
+							delay = 0.12,
+							recoil_mult = 0.6,
+							last_recoil_mult = 1.01
 						}
 						self.new_mp5.panic_suppression_chance = 0.05
 						self.new_mp5.kick = self.stat_info.kick_tables.even_recoil
@@ -9399,6 +9426,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.cobray.stats_modifiers = nil
 						self.cobray.sounds.spin_start = "wp_mac10_lever_pull"
 						self.cobray.spin_up_shoot = true
+						self.cobray.spin_up_semi = true
 						self.cobray.spin_up_t = 0.05
 						self.cobray.spin_down_t = 0.0000000001
 						self.cobray.panic_suppression_chance = 0.05
@@ -9445,6 +9473,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_cobray.stats_modifiers = nil
 						self.x_cobray.sounds.spin_start = "wp_mac10_lever_pull"
 						self.x_cobray.spin_up_shoot = true
+						self.x_cobray.spin_up_semi = true
 						self.x_cobray.spin_up_t = 0.05
 						self.x_cobray.spin_down_t = 0.0000000001
 						self.x_cobray.panic_suppression_chance = 0.05
@@ -9521,7 +9550,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.erma.supported = true
 						self.erma.ads_speed = 0.200
 						self.erma.damage_falloff = {
-							start_dist = 1100,
+							start_dist = 1000,
 							end_dist = 3700,
 							min_mult = 0.2
 						}
@@ -9542,7 +9571,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.erma.stats_modifiers = nil
 						self.erma.sounds.spin_start = "wp_mac10_lever_pull"
 						self.erma.spin_up_shoot = true
-						self.erma.spin_up_t = 0.07
+						self.erma.spin_up_semi = true
+						self.erma.spin_up_t = 0.09
 						self.erma.spin_down_t = 0.0000000001
 						self.erma.panic_suppression_chance = 0.05
 						self.erma.timers.reload_exit_empty = 0.6
@@ -9606,9 +9636,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.schakal.CLIP_AMMO_MAX = 25
 						self.schakal.BURST_FIRE = {
 							count = 2,
-							delay = 0.1,
-							recoil_mult = 0.85,
-							last_recoil_mult = 1.05
+							rof_mult = 1.1666,
+							delay = 0.12,
+							recoil_mult = 0.6,
+							last_recoil_mult = 1.02
 						}
 						self.schakal.ADAPTIVE_BURST_SIZE = false
 						self.schakal.kick = self.stat_info.kick_tables.even_recoil
@@ -9623,8 +9654,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.schakal.supported = true
 						self.schakal.ads_speed = 0.160
 						self.schakal.damage_falloff = {
-							start_dist = 900,
-							end_dist = 3100,
+							start_dist = 1100,
+							end_dist = 4200,
 							min_mult = 0.3
 						}
 						self.schakal.stats = {
@@ -9727,6 +9758,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sterling.stats_modifiers = nil
 						self.sterling.sounds.spin_start = "wp_mac10_lever_pull"
 						self.sterling.spin_up_shoot = true
+						self.sterling.spin_up_semi = true
 						self.sterling.spin_up_t = 0.07
 						self.sterling.spin_down_t = 0.0000000001
 						self.sterling.panic_suppression_chance = 0.05
@@ -9772,6 +9804,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mac10.stats_modifiers = nil
 						self.mac10.sounds.spin_start = "wp_mac10_lever_pull"
 						self.mac10.spin_up_shoot = true
+						self.mac10.spin_up_semi = true
 						self.mac10.spin_up_t = 0.05
 						self.mac10.spin_down_t = 0.0000000001
 						self.mac10.timers.reload_empty = 2.2
@@ -9867,6 +9900,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.uzi.panic_suppression_chance = 0.05
 						self.uzi.sounds.spin_start = "wp_uzi_clip_lever_pull"
 						self.uzi.spin_up_shoot = true
+						self.uzi.spin_up_semi = true
 						self.uzi.spin_up_t = 0.07
 						self.uzi.spin_down_t = 0.0000000001
 						self.uzi.reload_speed_multiplier = 1.1
@@ -9914,6 +9948,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_uzi.panic_suppression_chance = 0.05
 						self.x_uzi.sounds.spin_start = "wp_uzi_clip_lever_pull"
 						self.x_uzi.spin_up_shoot = true
+						self.x_uzi.spin_up_semi = true
 						self.x_uzi.spin_up_t = 0.07
 						self.x_uzi.spin_down_t = 0.0000000001
 						self.x_uzi.reload_speed_multiplier = 0.75
@@ -9962,6 +9997,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m1928.stats_modifiers = nil
 						self.m1928.sounds.spin_start = "wp_m1928_lever_release"
 						self.m1928.spin_up_shoot = true
+						self.m1928.spin_up_semi = true
 						self.m1928.spin_up_t = 0.06
 						self.m1928.spin_down_t = 0.00000001
 						self.m1928.timers.reload_not_empty = 3.3
@@ -10364,7 +10400,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mg42.spin_up_shoot = true
 						self.mg42.spin_up_t = 0.09
 						self.mg42.spin_down_t = 0.00000001
-						self.mg42.reload_speed_multiplier = 1.1
+						self.mg42.reload_speed_multiplier = 1.14
 						self.mg42.timers.reload_exit_empty = 1.65
 						self.mg42.timers.reload_exit_not_empty = 1.65
 
@@ -13520,7 +13556,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--[[     LIGHT SHOTGUNS     ]]
 
 				--PRIMARIES
-
 					--Izhma 12G
 						self.saiga.desc_id = "bm_saiga_sc_desc"
 						self.saiga.has_description = true
@@ -13533,23 +13568,23 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.saiga.shake.fire_steelsight_multiplier = -1
 						self.saiga.kick = self.stat_info.kick_tables.harsh_kick
 						self.saiga.kick_pattern = {
-							{0, self.stat_info.kick_tables.horizontal_recoil},
+							{0, self.stat_info.kick_tables.harsh_kick},
 							{3, self.stat_info.kick_tables.right_recoil},
 							{5, self.stat_info.kick_tables.moderate_right_kick},
 							{7, self.stat_info.kick_tables.left_recoil},
-							{9, self.stat_info.kick_tables.harsh_kick},
+							{9, self.stat_info.kick_tables.horizontal_recoil},
 							{13, self.stat_info.kick_tables.left_recoil}
 						}
 						self.saiga.supported = true
 						self.saiga.ads_speed = 0.340
 						self.saiga.damage_falloff = {
 							start_dist = 400,
-							end_dist = 2000,
+							end_dist = 1800,
 							min_mult = 0.15
 						}
 						self.saiga.stats = {
 							damage = 120,
-							spread = 19,
+							spread = 16,
 							recoil = 31,
 							spread_moving = 7,
 							zoom = 1,
@@ -13588,7 +13623,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sko12.ads_speed = 0.420
 						self.sko12.damage_falloff = {
 							start_dist = 600,
-							end_dist = 2500,
+							end_dist = 2200,
 							min_mult = 0.15
 						}
 						self.sko12.stats = {
@@ -13645,7 +13680,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.aa12.stats = {
 							damage = 120,
 							spread = 36,
-							recoil = 61,
+							recoil = 67,
 							spread_moving = 7,
 							zoom = 1,
 							concealment = 24,
@@ -13691,7 +13726,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.ultima.stats = {
 							damage = 120,
-							spread = 33,
+							spread = 35,
 							recoil = 43,
 							spread_moving = 7,
 							zoom = 1,
@@ -13798,7 +13833,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 47,
 							spread_moving = 7,
 							zoom = 1,
-							concealment = 24,
+							concealment = 25,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -13826,24 +13861,23 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.basset.fire_mode_data.fire_rate = 0.1333333
 						self.basset.kick = self.stat_info.kick_tables.random_left_recoil
 						self.basset.kick_pattern = {
-							{0, self.stat_info.kick_tables.right_recoil},
+							{0, self.stat_info.kick_tables.harsh_kick},
 							{3, self.stat_info.kick_tables.horizontal_recoil},
 							{5, self.stat_info.kick_tables.moderate_left_kick},
 							{7, self.stat_info.kick_tables.left_recoil},
-							{9, self.stat_info.kick_tables.harsh_kick},
-							{13, self.stat_info.kick_tables.right_recoil}
+							{11, self.stat_info.kick_tables.right_recoil}
 						}
 						self.basset.panic_suppression_chance = 0.05
 						self.basset.supported = true
 						self.basset.ads_speed = 0.340
 						self.basset.damage_falloff = {
 							start_dist = 400,
-							end_dist = 2000,
+							end_dist = 1900,
 							min_mult = 0.15
 						}
 						self.basset.stats = {
 							damage = 120,
-							spread = 22,
+							spread = 19,
 							recoil = 25,
 							spread_moving = 7,
 							zoom = 1,
@@ -13871,24 +13905,23 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_basset.fire_mode_data.fire_rate = 0.1333333
 						self.x_basset.kick = self.stat_info.kick_tables.random_left_recoil
 						self.x_basset.kick_pattern = {
-							{0, self.stat_info.kick_tables.right_recoil},
+							{0, self.stat_info.kick_tables.harsh_kick},
 							{3, self.stat_info.kick_tables.horizontal_recoil},
 							{5, self.stat_info.kick_tables.moderate_left_kick},
 							{7, self.stat_info.kick_tables.left_recoil},
-							{9, self.stat_info.kick_tables.harsh_kick},
-							{13, self.stat_info.kick_tables.right_recoil}
+							{11, self.stat_info.kick_tables.right_recoil}
 						}
 						self.x_basset.panic_suppression_chance = 0.05
 						self.x_basset.supported = true
 						self.x_basset.ads_speed = 0.480
 						self.x_basset.damage_falloff = {
 							start_dist = 200,
-							end_dist = 1500,
+							end_dist = 1400,
 							min_mult = 0.15
 						}
 						self.x_basset.stats = {
 							damage = 120,
-							spread = 12,
+							spread = 9,
 							recoil = 15,
 							spread_moving = 7,
 							zoom = 1,
@@ -15389,7 +15422,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				recoil = 37,
 				spread_moving = 9,
 				zoom = 1,
-				concealment = 24,
+				concealment = 25,
 				suppression = 7,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -16501,7 +16534,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 57,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 25,
+					concealment = 26,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -16701,7 +16734,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 55,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 28,
+					concealment = 29,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -17174,7 +17207,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 39,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 24,
+					concealment = 26,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -17222,7 +17255,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 39,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 24,
+					concealment = 26,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -18248,7 +18281,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 43,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 24,
+					concealment = 26,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -20715,7 +20748,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 57,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 27,
+					concealment = 28,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -20757,7 +20790,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 47,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 26,
+					concealment = 27,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -20885,7 +20918,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 59,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 24,
+					concealment = 26,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -20942,7 +20975,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 45,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 27,
+					concealment = 28,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -20993,7 +21026,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 49,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 24,
+					concealment = 26,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -22227,7 +22260,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 43,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 23,
+					concealment = 24,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -24917,7 +24950,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.scotia then
 				self.scotia.categories = { "assault_rifle" }
-				self.scotia.recategorize = { "light_ar" }
+				self.scotia.recategorize = { "heavy_ar" }
 				self.scotia.damage_type = "assault_rifle"
 				self.scotia.has_description = true
 				self.scotia.nato = true
@@ -24936,7 +24969,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					burst_default = true,
 					delay = 0.166,
 					rof_mult = 1.69204737,
-					recoil_mult = 0.33,
+					recoil_mult = 0.2,
 					last_recoil_mult = 1.05
 				}
 				self.scotia.kick = {}
@@ -24960,7 +24993,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 24,
+					concealment = 25,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -27085,7 +27118,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 35,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 24,
+					concealment = 25,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -27246,7 +27279,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 23,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 24,
+					concealment = 25,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -30701,7 +30734,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 27,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 24,
+					concealment = 25,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -32516,7 +32549,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 51,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 24,
+					concealment = 26,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -32658,7 +32691,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 77,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 23,
+					concealment = 24,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -32959,7 +32992,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				recoil = 31,
 				spread_moving = 6,
 				zoom = 1,
-				concealment = 24,
+				concealment = 25,
 				suppression = 8,
 				alert_size = 2,
 				extra_ammo = 101,

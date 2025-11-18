@@ -54,7 +54,7 @@ tweak_data.scene_poses.weapon.bessy = {
 --Swap Speed Multipliers
 --TODO: Move to stat_info
 tweak_data.pistol = {
-	swap_bonus = 3.2,
+	swap_bonus = 3.0,
 	ads_move_speed_mult = 0.8,
 	moving_spread_mult = 0.5,
 	hipfire_spread_mult = 0.5
@@ -63,7 +63,7 @@ tweak_data.pistol = {
 		ads_move_speed_mult = 0.7 / tweak_data.pistol.ads_move_speed_mult
 	}
 	tweak_data.handcannon = {
-		swap_bonus = 2.2 / tweak_data.pistol.swap_bonus,
+		swap_bonus = 2.0 / tweak_data.pistol.swap_bonus,
 		ads_move_speed_mult = 0.6 / tweak_data.pistol.ads_move_speed_mult,
 		moving_spread_mult = 1 / tweak_data.pistol.moving_spread_mult,
 		hipfire_spread_mult = 1.2 / tweak_data.pistol.hipfire_spread_mult
@@ -88,7 +88,7 @@ tweak_data.crossbow = {
 }
 	tweak_data.crossbow_pistol = {
 		ads_move_speed_mult = 0.8 / tweak_data.crossbow.ads_move_speed_mult,
-		swap_bonus = 3.2
+		swap_bonus = 3.0
 	}
 
 tweak_data.grenade_launcher = {
@@ -96,7 +96,7 @@ tweak_data.grenade_launcher = {
 }
 	tweak_data.gl_pistol = {
 		ads_move_speed_mult = 0.8 / tweak_data.grenade_launcher.ads_move_speed_mult,
-		swap_bonus = 3.2
+		swap_bonus = 3.0
 	}
 	tweak_data.rocket_launcher = {
 		ads_move_speed_mult = 0.25 / tweak_data.grenade_launcher.ads_move_speed_mult,
@@ -121,7 +121,7 @@ tweak_data.shotgun = {
 		}
 			tweak_data.shotgun_light_pistol = {
 				ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
-				swap_bonus = 2.2,
+				swap_bonus = 2.0,
 				hipfire_spread_mult = 1.4 / (tweak_data.shotgun_light.hipfire_spread_mult * tweak_data.shotgun_light_semi.hipfire_spread_mult)
 			}
 	tweak_data.shotgun_heavy = {
@@ -137,7 +137,7 @@ tweak_data.shotgun = {
 	}
 		tweak_data.shotgun_break_pistol = {
 			ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
-			swap_bonus = 2.2,
+			swap_bonus = 2.0,
 			hipfire_spread_mult = 1.5 / tweak_data.shotgun_break.hipfire_spread_mult
 		}
 		tweak_data.shotgun_smasher = {
@@ -153,7 +153,7 @@ tweak_data.shotgun = {
 		}
 
 tweak_data.smg = {
-	swap_bonus = 1.65,
+	swap_bonus = 1.55,
 	ads_move_speed_mult = 0.7,
 	moving_spread_mult = 0.7,
 	hipfire_spread_mult = 0.6
@@ -202,9 +202,9 @@ tweak_data.smg = {
 				shake_mul = 1 / tweak_data.lmg.shake_mul,
 			}
 	tweak_data.minigun = {
-		swap_bonus = 0.83334,
-		ads_move_speed_mult = 0.5, --lowered to 0.35
-		moving_spread_mult = 8.3333,
+		swap_bonus = 0.95 / tweak_data.smg.swap_bonus,
+		ads_move_speed_mult = 0.35 / tweak_data.smg.ads_move_speed_mult,
+		moving_spread_mult = 4.5 / tweak_data.smg.moving_spread_mult,
 		hipfire_spread_mult = 2.25 / tweak_data.smg.hipfire_spread_mult,
 	}
 		tweak_data.sasha = {

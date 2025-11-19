@@ -5401,6 +5401,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_no_outlines_longdesc"] = "대부분의 외곽선과 플레이어 및 봇 위의 이름 라벨이 비활성화됩니다.",
 		["menu_mutator_no_outlines_enemies_toggle"] = "적 외곽선 비활성화",
 		["menu_mutator_no_outlines_objectives_toggle"] = "하이라이트 외곽선 비활성화 (에스코트 제외)",
+		["menu_mutator_no_outlines_deployables_toggle"] = "배치물 외곽선 비활성화",
+		["menu_mutator_no_outlines_ammo_pickups_toggle"] = "탄약 상자 및 투척 무기 외곽선 비활성화",
 
 		["mutator_no_ammo_drops"] = "탄약 결핍",
 		["menu_mutator_ammo_drop_chance"] = "탄약 드랍 확률 (% 기준)",

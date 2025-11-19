@@ -42,9 +42,6 @@ if is_pro_job then
 	ContourExt._types.omnia_heal.priority = 10
 end
 
-Hooks:OverrideFunction(ContourExt, "add", function(self,type, sync, multiplier, override_color, is_element)
-local disable_outlines = managers.mutators:modify_value("ContourExt:DisableOutlines", false)
-local do_outline = true
 local enemy_contours = {
 	"friendly",
 	"mark_enemy",
@@ -54,12 +51,33 @@ local enemy_contours = {
 	"mark_unit_dangerous_damage_bonus",
 	"mark_unit_dangerous_damage_bonus_distance"
 }
+
+local deployable_contours = {
+	"deployable_selected",
+	"deployable_disabled",
+	"deployable_active",
+	"deployable_interactable"
+}
+
+Hooks:OverrideFunction(ContourExt, "add", function(self, type, sync, multiplier, override_color, is_element)
+local disable_outlines = managers.mutators:modify_value("ContourExt:DisableOutlines", false)
+local do_outline = true
+
 if disable_outlines then
 	do_outline = false
 	local disable_enemy_outlines = managers.mutators:modify_value("ContourExt:DisableEnemyOutlines", false)
 	if disable_outlines and not disable_enemy_outlines then
 		for _, enemy_contour in ipairs(enemy_contours) do
 			if type == enemy_contour then
+				do_outline = true
+			end	
+		end		
+	end
+	
+	local disable_deployable_outlines = managers.mutators:modify_value("ContourExt:DeployableOutlinesCheck", false)
+	if disable_outlines and not disable_deployable_outlines then
+		for _, deployable_contour in ipairs(deployable_contours) do
+			if type == deployable_contour then
 				do_outline = true
 			end	
 		end		

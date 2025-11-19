@@ -16,8 +16,10 @@ MutatorNoOutlines.icon_coords = {
 }
 
 function MutatorNoOutlines:register_values(mutator_manager)
-	self:register_value("no_outlines_enemies", false, "noe")
-	self:register_value("no_outlines_objectives", false, "noo")
+	self:register_value("no_outlines_enemies", true, "noe")
+	self:register_value("no_outlines_objectives", true, "noo")
+	self:register_value("no_outlines_deployables", true, "nod")
+	self:register_value("no_outlines_ammo_pickups", true, "noa")
 end
 
 function MutatorNoOutlines:get_no_outlines_enemies()
@@ -28,52 +30,74 @@ function MutatorNoOutlines:get_no_outlines_objectives()
 	return self:value("no_outlines_objectives")
 end
 
+function MutatorNoOutlines:get_no_outlines_deployables()
+	return self:value("no_outlines_deployables")
+end
+
+function MutatorNoOutlines:get_no_outlines_ammo_pickups()
+	return self:value("no_outlines_ammo_pickups")
+end
+
 function MutatorNoOutlines:modify_value(id, value)
 	local outlines_change_table = {
-		"HuskPlayerMovement",
+		--"HuskPlayerMovement",
 		"CopMovement",
 		"MedicDamage",
-		"TripMineBase",
-		"ECMJammerBase",
 		"CivilianBrain",
 		"HUDManager",
-		"AmmoClip",
-		"ArrowBase",
-		"SentryGunContour",
 		"ContourExt"
 	}
+	
 	for _, id_modifier in ipairs(outlines_change_table) do
 		if id == id_modifier..":DisableOutlines" then
 			value = true
 		end	
 	end
+	
+	
 	if id == "ContourExt:DisableEnemyOutlines" or id == "CopDamage:DisableEnemyOutlines" then
 		value = self:get_no_outlines_enemies()
-	end
+	end	
+	
 	if id == "ContourExt:DisableObjectiveOutlines" then
 		value = self:get_no_outlines_objectives()
 	end
+	
+	if id == "ContourExt:DeployableOutlinesCheck" or id == "AmmoClip:DeployableOutlinesCheck" then
+		value = self:get_no_outlines_deployables()
+	end
+	
+	if id == "ArrowBase:DisableAmmoPickupOutlines" or id == "AmmoClip:DisableAmmoPickupOutlines" then
+		value = self:get_no_outlines_ammo_pickups()
+	end
+	
 	return value
 end
 
 function MutatorNoOutlines:setup(data)
 	local no_outline = Vector3(0,0,0)
 	local disable_objective_outlines = self:get_no_outlines_objectives()
+	local disable_deployable_outlines = self:get_no_outlines_deployables()
+	
 	--idk why some contours are not disabled with countourext changes so need override colors just in case
 	if disable_objective_outlines then
 		tweak_data.contour.interactable.standard_color = no_outline
 	end
+	
+	if disable_deployable_outlines then
+		tweak_data.contour.deployable.standard_color = no_outline
+		tweak_data.contour.deployable.selected_color = no_outline
+		tweak_data.contour.deployable.disabled_color = no_outline
+		tweak_data.contour.deployable.active_color = no_outline
+		tweak_data.contour.deployable.interact_color = no_outline
+	end
+	
 	tweak_data.contour.character.downed_color = no_outline
 	tweak_data.contour.character.friendly_color = no_outline
 	tweak_data.contour.character_interactable.standard_color = no_outline
 	tweak_data.contour.character_interactable.selected_color = no_outline
 	tweak_data.contour.character.dangerous_color = no_outline
-	tweak_data.contour.character.more_dangerous_color = no_outline
-	tweak_data.contour.deployable.standard_color = no_outline
-	tweak_data.contour.deployable.selected_color = no_outline
-	tweak_data.contour.deployable.disabled_color = no_outline
-	tweak_data.contour.deployable.active_color = no_outline
-	tweak_data.contour.deployable.interact_color = no_outline
+	tweak_data.contour.character.more_dangerous_color = no_outline	
 	tweak_data.contour.upgradable.standard_color = no_outline
 	tweak_data.contour.upgradable.selected_color = no_outline
 	tweak_data.contour.character.heal_color = no_outline
@@ -165,6 +189,90 @@ function MutatorNoOutlines:setup_options_gui(node)
 
 	new_item:set_value(self:get_no_outlines_objectives() and "on" or "off")
 	node:add_item(new_item)
+	
+	local params = {
+		name = "no_outlines_deployables_toggle",
+		callback = "_update_mutator_value",
+		text_id = "menu_mutator_no_outlines_deployables_toggle",
+		update_callback = callback(self, self, "_toggle_no_outlines_deployables")
+	}
+	local data_node = {
+		{
+			w = 24,
+			y = 0,
+			h = 24,
+			s_y = 24,
+			value = "on",
+			s_w = 24,
+			s_h = 24,
+			s_x = 24,
+			_meta = "option",
+			icon = "guis/textures/menu_tickbox",
+			x = 24,
+			s_icon = "guis/textures/menu_tickbox"
+		},
+		{
+			w = 24,
+			y = 0,
+			h = 24,
+			s_y = 24,
+			value = "off",
+			s_w = 24,
+			s_h = 24,
+			s_x = 0,
+			_meta = "option",
+			icon = "guis/textures/menu_tickbox",
+			x = 0,
+			s_icon = "guis/textures/menu_tickbox"
+		},
+		type = "CoreMenuItemToggle.ItemToggle"
+	}
+	local new_item = node:create_item(data_node, params)
+
+	new_item:set_value(self:get_no_outlines_deployables() and "on" or "off")
+	node:add_item(new_item)
+	
+	local params = {
+		name = "no_outlines_ammo_pickups_toggle",
+		callback = "_update_mutator_value",
+		text_id = "menu_mutator_no_outlines_ammo_pickups_toggle",
+		update_callback = callback(self, self, "_toggle_no_outlines_ammo_pickups")
+	}
+	local data_node = {
+		{
+			w = 24,
+			y = 0,
+			h = 24,
+			s_y = 24,
+			value = "on",
+			s_w = 24,
+			s_h = 24,
+			s_x = 24,
+			_meta = "option",
+			icon = "guis/textures/menu_tickbox",
+			x = 24,
+			s_icon = "guis/textures/menu_tickbox"
+		},
+		{
+			w = 24,
+			y = 0,
+			h = 24,
+			s_y = 24,
+			value = "off",
+			s_w = 24,
+			s_h = 24,
+			s_x = 0,
+			_meta = "option",
+			icon = "guis/textures/menu_tickbox",
+			x = 0,
+			s_icon = "guis/textures/menu_tickbox"
+		},
+		type = "CoreMenuItemToggle.ItemToggle"
+	}
+	local new_item = node:create_item(data_node, params)
+
+	new_item:set_value(self:get_no_outlines_ammo_pickups() and "on" or "off")
+	node:add_item(new_item)
 
 	self._node = node
 
@@ -177,6 +285,14 @@ end
 
 function MutatorNoOutlines:_toggle_no_outlines_objectives(item)
 	self:set_value("no_outlines_objectives", item:value() == "on")
+end
+
+function MutatorNoOutlines:_toggle_no_outlines_deployables(item)
+	self:set_value("no_outlines_deployables", item:value() == "on")
+end
+
+function MutatorNoOutlines:_toggle_no_outlines_ammo_pickups(item)
+	self:set_value("no_outlines_ammo_pickups", item:value() == "on")
 end
 
 function MutatorNoOutlines:reset_to_default()
@@ -195,16 +311,39 @@ function MutatorNoOutlines:reset_to_default()
 			toggle:set_value(self:get_no_outlines_objectives() and "on" or "off")
 		end
 		
+		local toggle3 = self._node:item("no_outlines_deployables_toggle")
+
+		if toggle3 then
+			toggle:set_value(self:get_no_outlines_deployables() and "on" or "off")
+		end
+		
+		local toggle4 = self._node:item("no_outlines_ammo_pickups_toggle")
+
+		if toggle4 then
+			toggle:set_value(self:get_no_outlines_ammo_pickups() and "on" or "off")
+		end
+		
 	end
 end
 
 function MutatorNoOutlines:options_fill()
 	local option_fill = 0
+	
 	if self:get_no_outlines_enemies() then
-		option_fill = option_fill + 0.5
+		option_fill = option_fill + 0.25
 	end
+	
 	if self:get_no_outlines_objectives() then
-		option_fill = option_fill + 0.5
+		option_fill = option_fill + 0.25
 	end
+	
+	if self:get_no_outlines_deployables() then
+		option_fill = option_fill + 0.25
+	end
+	
+	if self:get_no_outlines_ammo_pickups() then
+		option_fill = option_fill + 0.25
+	end
+	
 	return option_fill
 end

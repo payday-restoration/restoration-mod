@@ -5357,6 +5357,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mutators", function(loc)
 		["mutator_no_outlines_longdesc"] = "Почти все контуры отключены. Также отключены ники над ботами/игроками.",
 		["menu_mutator_no_outlines_enemies_toggle"] = "Выключить контуры противников",
 		["menu_mutator_no_outlines_enemies_toggle"] = "Выключить подсвечивающие контуры (кроме обводки для сопровождения цели)",
+		["menu_mutator_no_outlines_deployables_toggle"] = "Выключить контуры снаряжения",
+		["menu_mutator_no_outlines_ammo_pickups_toggle"] = "Выключить контуры для пачек с патронами и метательного",
 
 		["mutator_spawn_mult"] = "Увеличенные отряды",
 		["menu_mutator_enemy_spawn"] = "МНОЖИТЕЛЬ СПАУНОВ",

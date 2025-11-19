@@ -163,11 +163,15 @@ function AmmoClip:sync_net_event(event, peer)
 		end
 	end
 end
---[[
+
 Hooks:PostHook(AmmoClip, "reload_contour", "reload_contour_ammo_mutator_no_outlines", function(self)
-    local disable_outlines = managers.mutators:modify_value("AmmoClip:DisableOutlines", false)
-	if disable_outlines then
+    local disable_ammo_pickup_outlines = managers.mutators:modify_value("AmmoClip:DisableAmmoPickupOutlines", false)
+	if disable_ammo_pickup_outlines then
 		self._unit:contour():remove("deployable_selected")
 	end
+	--In case if deployables outlines are enabled due ammo boxes use the same contour color
+	local are_deployable_outlines_disabled = managers.mutators:modify_value("AmmoClip:DeployableOutlinesCheck", false)
+	if not disable_ammo_pickup_outlines and are_deployable_outlines_disabled and managers.user:get_setting("ammo_contour") then
+		self._unit:contour():_upd_opacity(1)
+	end
 end)
---]]

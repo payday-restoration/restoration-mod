@@ -5470,6 +5470,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_no_outlines_longdesc"] = "Majority of outlines are disabled as well as name labels above players/bots.",
 		["menu_mutator_no_outlines_enemies_toggle"] = "Disable Enemy Outlines",
 		["menu_mutator_no_outlines_objectives_toggle"] = "Disable Highlight Outlines (except escort)",
+		["menu_mutator_no_outlines_deployables_toggle"] = "Disable Deployables Outlines",
+		["menu_mutator_no_outlines_ammo_pickups_toggle"] = "Disable Outlines for Ammo Pickups and Throwables",
 		
 		["mutator_no_ammo_drops"] = "Ammo Deficiency",
 		["menu_mutator_ammo_drop_chance"] = "Ammo Drop Chance (in %)",

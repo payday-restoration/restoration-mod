@@ -580,12 +580,15 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 end)
 
 function LevelsTweakData:get_ai_group_type()
-	if managers.mutators and managers.mutators:is_mutator_active(MutatorFactionsReplacer) then
-		local MutatorCheck = managers.mutators:get_mutator(MutatorFactionsReplacer) or nil
-		if MutatorCheck and MutatorCheck:get_faction_override() and MutatorCheck:get_faction_override() == "america" then
-			return self.ai_groups.america
-		elseif MutatorCheck and MutatorCheck:get_faction_override() and MutatorCheck:get_faction_override() == "russia" then
-			if not PackageManager:loaded("packages/akanassets") then
+	--[[if managers.mutators and managers.mutators:is_mutator_active(MutatorFactionReplacer) then
+		local new_faction = managers.mutators:modify_value("LevelsTweakData:GetFactionOverride", nil)
+		--log("ai_groups new_faction is "..tostring(new_faction))
+		if new_faction == "america" then
+			return self.ai_groups.america			
+		elseif new_faction == "murkywater" then
+			return self.ai_groups.murkywater
+		end		
+			--[[if not PackageManager:loaded("packages/akanassets") then
 				PackageManager:load("packages/akanassets")
 			end
 			if not PackageManager:loaded("packages/akanassetsnew") then
@@ -593,18 +596,16 @@ function LevelsTweakData:get_ai_group_type()
 			end
 			if not PackageManager:loaded("levels/narratives/elephant/mad/world_sounds") then
 				PackageManager:load("levels/narratives/elephant/mad/world_sounds")
-			end
-			return self.ai_groups.russia
-		elseif MutatorCheck and MutatorCheck:get_faction_override() and MutatorCheck:get_faction_override() == "murkywater" then
-			if not PackageManager:loaded("packages/murkyassets") then
+			end--]]
+
+			--[[if not PackageManager:loaded("packages/murkyassets") then
 				PackageManager:load("packages/murkyassets")
 			end
 			if not PackageManager:loaded("levels/narratives/locke/bph/world_sounds") then
 				PackageManager:load("levels/narratives/locke/bph/world_sounds")
-			end
-			return self.ai_groups.murkywater
-		end
-	else
+			end--]]
+	
+	--else
 		local level_data = Global.level_data and Global.level_data.level_id and self[Global.level_data.level_id]
 
 		if level_data then
@@ -615,7 +616,7 @@ function LevelsTweakData:get_ai_group_type()
 			end
 		end
 		return self.ai_groups.default
-	end
+	--end
 end
 
 function LevelsTweakData:get_team_setup()

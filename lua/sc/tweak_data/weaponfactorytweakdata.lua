@@ -39238,19 +39238,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -1
 			}
 			self.parts.wpn_fps_lmg_lsw_ck_m27.custom_stats = {
-				rof_mult = 1.175
+				rof_mult = 1.175,
+			}
+			self.parts.wpn_fps_lmg_lsw_ck_m27.override.wpn_fps_upg_o_hamr_reddot = {
+				a_obj = "a_o_2"
+			}
+			self.parts.wpn_fps_lmg_lsw_ck_m27.override.wpn_fps_upg_o_atibal_reddot = {
+				a_obj = "a_o_2"
 			}
 
 			self.parts.wpn_fps_lmg_lsw_ck_m231.supported = true
 			self.parts.wpn_fps_lmg_lsw_ck_m231.stats = {
 				value = 10,
-				spread = -5,
+				spread = -20,
 				recoil = -6,
 				concealment = 3
 			}
 			self.parts.wpn_fps_lmg_lsw_ck_m231.custom_stats = {
 				rof_mult = 1.66667,
-				hip_mult = 0.6
+				hip_mult = 0.4,
+				falloff_start_mult = 0.761904,
+				falloff_end_mult = 0.764705
 			}
 
 			self.parts.wpn_fps_lmg_lsw_m_quick.supported = true
@@ -39318,6 +39326,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				damage_min_mult = 1.5
 			}
 
+			self.wpn_fps_lmg_lsw.override.wpn_fps_lmg_lsw_m_quad = nil
 			self.wpn_fps_lmg_lsw.override.wpn_fps_upg_m4_s_standard = {
 				stats = deep_clone(stocks.fixed_to_adj_dual_stats),
 				custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)

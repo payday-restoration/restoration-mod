@@ -39222,8 +39222,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = 1,
 				recoil = -4
 			}
-			self.parts.wpn_fps_lmg_lsw_fg_smooth.supported = true
-			self.parts.wpn_fps_lmg_lsw_fg_smooth.stats = {
+			self.parts.wpn_fps_lmg_lsw_fg_tactical.supported = true
+			self.parts.wpn_fps_lmg_lsw_fg_tactical.stats = {
 				value = 6,
 				spread = 1,
 				concealment = 3,

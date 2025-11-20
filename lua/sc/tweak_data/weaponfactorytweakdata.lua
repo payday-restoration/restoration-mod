@@ -39227,7 +39227,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				value = 6,
 				spread = 1,
 				concealment = 3,
-				recoil = -6
+				recoil = -8
 			}
 
 			self.parts.wpn_fps_lmg_lsw_ck_m27.supported = true
@@ -39240,6 +39240,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_lmg_lsw_ck_m27.custom_stats = {
 				rof_mult = 1.175,
 			}
+			self.parts.wpn_fps_lmg_lsw_ck_m27.forbids = {}
+			for k, used_part_id in ipairs(self.wpn_fps_lmg_lsw.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].pcs and self.parts[used_part_id].type and not table.contains(self.wpn_fps_lmg_lsw.default_blueprint, used_part_id) then
+					if self.parts[used_part_id].type == "upper_reciever" or
+					self.parts[used_part_id].type == "lower_reciever" or
+					self.parts[used_part_id].type == "foregrip" then
+						table.insert(self.parts.wpn_fps_lmg_lsw_ck_m27.forbids, used_part_id)
+					end
+				end
+			end
 			self.parts.wpn_fps_lmg_lsw_ck_m27.override.wpn_fps_upg_o_hamr_reddot = {
 				a_obj = "a_o_2"
 			}
@@ -39260,6 +39270,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				falloff_start_mult = 0.761904,
 				falloff_end_mult = 0.764705
 			}
+			self.parts.wpn_fps_lmg_lsw_ck_m231.forbids = {}
+			for k, used_part_id in ipairs(self.wpn_fps_lmg_lsw.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].pcs and self.parts[used_part_id].type and not table.contains(self.wpn_fps_lmg_lsw.default_blueprint, used_part_id) then
+					if self.parts[used_part_id].type == "upper_reciever" or
+					self.parts[used_part_id].type == "lower_reciever" or
+					self.parts[used_part_id].type == "bipod" or
+					self.parts[used_part_id].type == "sight" or
+					self.parts[used_part_id].type == "second_sight" or
+					self.parts[used_part_id].type == "foregrip" or
+					self.parts[used_part_id].type == "stock" then
+						table.insert(self.parts.wpn_fps_lmg_lsw_ck_m231.forbids, used_part_id)
+					end
+				end
+			end
 
 			self.parts.wpn_fps_lmg_lsw_m_quick.supported = true
 			self.parts.wpn_fps_lmg_lsw_m_quick.stats = {

@@ -60,13 +60,13 @@ full_sound_lookup_by_prefix.l3d_ = {
 
 -- Tasers
 local tsr_tbl = {
-	x02a_any_3p = "tsr_x02_any_3p",
-	x01a_any_3p = "tsr_x01_any_3p",
+	x02a_any_3p = "tsr_x02a_any_3p",
+	x01a_any_3p = "tsr_x01a_any_3p",
 }
 full_sound_lookup_by_prefix.tsr_ = tsr_tbl
 full_sound_lookup_by_prefix.rtsr_ = {
-	x02a_any_3p = "rtsr_x02_any_3p",
-	x01a_any_3p = "rtsr_x01_any_3p",
+	x02a_any_3p = "rtsr_x02a_any_3p",
+	x01a_any_3p = "rtsr_x01a_any_3p",
 }
 full_sound_lookup_by_prefix.mtsr_ = tsr_tbl
 
@@ -99,8 +99,8 @@ full_sound_lookup_by_prefix.mclk_ = clk_tbl
 
 -- Medics
 local mdc_tbl = {
-	x02a_any_3p = "mdc_x02_any_3p",
-	x01a_any_3p = "mdc_x01_any_3p",
+	x02a_any_3p = "mdc_x02a_any_3p",
+	x01a_any_3p = "mdc_x01a_any_3p",
 }
 full_sound_lookup_by_prefix.mdc_ = mdc_tbl
 full_sound_lookup_by_prefix.rmdc_ = mdc_tbl

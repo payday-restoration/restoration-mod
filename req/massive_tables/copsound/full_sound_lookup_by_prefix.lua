@@ -92,8 +92,8 @@ full_sound_lookup_by_prefix.clk_ = clk_tbl
 full_sound_lookup_by_prefix.rclk_ = {
 	x02a_any_3p = "rclk_x02a_any_3p",
 	x01a_any_3p = "rclk_x01a_any_3p",
-	-- g90 = "clk_c01x_plu", -- Don't remember if Russian Cloaker already has lines for this
-	-- c01 = "clk_c01x_plu",
+	g90 = "clk_c01x_plu", -- Russian Cloaker technically has lines for this - but they're empty
+	c01 = "clk_c01x_plu",
 }
 full_sound_lookup_by_prefix.mclk_ = clk_tbl
 

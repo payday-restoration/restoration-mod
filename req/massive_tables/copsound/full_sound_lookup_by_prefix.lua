@@ -51,7 +51,7 @@ full_sound_lookup_by_prefix.fl1n_ = {
 -- Filtered cops
 -- These lines are just missing for these voicesets
 full_sound_lookup_by_prefix.l2d_ = {
-	x02a_any_3p = "l1d_x02_any_3p",
+	x02a_any_3p = "l1d_x02a_any_3p",
 }
 full_sound_lookup_by_prefix.l3d_ = {
 	burnhurt = "l1d_burnhurt",

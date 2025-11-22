@@ -5,7 +5,7 @@ local surprise_cloaker = "units/payday2/characters/ene_spook_1/ene_spook_1"
 local shields = ((difficulty >= 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/payday2/characters/ene_shield_2/ene_shield_2")
 local sniper = ((difficulty >= 7 and pro_job) and "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" or "units/payday2/characters/ene_sniper_1/ene_sniper_1")
 local death_wish_above = difficulty >= 7
-local overkill_above = diff_scaling >= 5
+local overkill_above = difficulty >= 5
 local diff_scaling = (death_wish_above and 0.7 or overkill_above and 0.15 or 0.3) + (pro_job and 0.5 or 0)
 local enabled_chance_ambush = math.random() < diff_scaling
 local enabled_ambush = pro_job or overkill_above and enabled_chance_ambush

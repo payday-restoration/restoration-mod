@@ -5951,11 +5951,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "데스페라도",
-				["menu_expert_handling_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 성공 시 #{skill_color}#$skill_value_b2##초간 명중률과 사거리가 #{skill_color}#$skill_value_b1## 증가합니다.\n\n이 효과는 최대 #{skill_color}#$skill_value_b3##번까지 중첩되며, 각 중첩의 지속 시간은 헤드샷 성공 시 새로 고침됩니다.\n\n에이스: #{owned}#$pro##\n명중률 및 사거리 증가 지속 시간이 추가로 #{skill_color}#$skill_value_p1##초 증가합니다.\n\n조준 시 #{skill_color}#권총##의 명중률과 사거리가 #{skill_color}#$skill_value_p2## 더 증가합니다.",
+				["menu_expert_handling_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 성공 시 #{skill_color}#$skill_value_b2##초간 명중률과 사거리가 #{skill_color}#$skill_value_b1## 증가합니다.\n\n이 효과는 최대 #{skill_color}#$skill_value_b3##번까지 중첩되며, 각 중첩의 지속 시간은 헤드샷 성공 시 되돌려집니다.\n\n조준 시 #{skill_color}#권총##의 명중률이 #{skill_color}#$skill_value_b4## 더 증가합니다.\n\n에이스: #{owned}#$pro##\n명중률 및 사거리 증가 지속 시간이 추가로 #{skill_color}#$skill_value_p1##초 증가합니다.\n\n조준 시 #{skill_color}#권총##의 사거리가 #{skill_color}#$skill_value_p2## 더 증가합니다.",
 
 				--Trigger Happy--
 				["menu_trigger_happy_beta_sc"] = "난사광",
-				["menu_trigger_happy_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 성공 시 #{skill_color}#$skill_value_b2##초간 #{skill_color}#$skill_value_b1## 피해량 증가 효과를 얻습니다.\n\n이 효과는 최대 #{skill_color}#$skill_value_b3##번까지 중첩되며, 각 중첩의 지속 시간은 헤드샷 성공 시 새로 고침됩니다.\n\n에이스: #{owned}#$pro##\n피해량 증가 효과 지속 시간이 추가로 #{skill_color}#$skill_value_p1##초 증가하고, 최대 중첩 수가 추가로 #{skill_color}#$skill_value_p2##회 증가합니다.",
+				["menu_trigger_happy_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 성공 시 #{skill_color}#$skill_value_b2##초간 #{skill_color}#$skill_value_b1## 피해량 증가 효과를 얻습니다.\n\n이 효과는 최대 #{skill_color}#$skill_value_b3##번까지 중첩되며, 각 중첩의 지속 시간은 헤드샷 성공 시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n피해량 증가 효과 지속 시간이 추가로 #{skill_color}#$skill_value_p1##초 증가하고, 최대 중첩 수가 추가로 #{skill_color}#$skill_value_p2##회 증가합니다.",
 
 			--[[   REVENANT SUBTREE   ]]--
 				--Running From Death--

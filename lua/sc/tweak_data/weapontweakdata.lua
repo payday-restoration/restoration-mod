@@ -5679,30 +5679,33 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	local shared_timers = {
-		glock = {
+		glock = { 
+			--glock_17, glock_18c, b92fs, g26, legacy, g22c, p226, hs2000, shrew
+			--anim timing is effectively identical: pl14, sparrow, m1911, colt_1911, usp
+			reload_empty = 2.08,
+			reload_exit_empty = 0.65,
+			reload_not_empty = 1.47,
+			reload_exit_not_empty = 0.9,
+		},
+		p30l = { --packrat, holt, maxim9
 			reload_empty = 1,
 			reload_exit_empty = 1,
 			reload_not_empty = 1,
 			reload_exit_not_empty = 1,
 		},
-		spike = {
+		fiveseven = { --lemming, type54
 			reload_empty = 1,
 			reload_exit_empty = 1,
 			reload_not_empty = 1,
 			reload_exit_not_empty = 1,
 		},
-		wick = {
+		rage = { --judge, rsh12
 			reload_empty = 1,
 			reload_exit_empty = 1,
 			reload_not_empty = 1,
 			reload_exit_not_empty = 1,
-		},
-		rage = {
-			reload_empty = 1,
-			reload_exit_empty = 1,
-			reload_not_empty = 1,
-			reload_exit_not_empty = 1,
-		},
+		}
+		--*anim timing is roughly the same
 	}
 
 	--[[     BASE WEAPONS     ]]--
@@ -5995,7 +5998,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.lemming.stats = {
 							damage = 18,
 							spread = 66,
-							recoil = 89,
+							recoil = 87,
 							spread_moving = 9,
 							zoom = 1,
 							concealment = 28,
@@ -6056,7 +6059,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							self.x_lemming.stats = {
 								damage = 18,
 								spread = 56,
-								recoil = 79,
+								recoil = 77,
 								spread_moving = 9,
 								zoom = 1,
 								concealment = 28,
@@ -6253,7 +6256,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.g26.stats = {
 							damage = 24,
-							spread = 52,
+							spread = 50,
 							recoil = 93,
 							spread_moving = 9,
 							zoom = 1,
@@ -6291,7 +6294,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.jowi.stats = {
 							damage = 24,
-							spread = 42,
+							spread = 40,
 							recoil = 83,
 							spread_moving = 9,
 							zoom = 1,
@@ -7057,7 +7060,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{12, self.stat_info.kick_tables.even_recoil},
 						}
 						self.p226.supported = true
-						self.p226.ads_speed = 0.160
+						self.p226.ads_speed = 0.140
 						self.p226.damage_falloff = {
 							start_dist = 1600,
 							end_dist = 3400,
@@ -7097,7 +7100,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_p226.fire_mode_data = {}
 						self.x_p226.fire_mode_data.fire_rate = 0.1
 						self.x_p226.supported = true
-						self.x_p226.ads_speed = 0.160
+						self.x_p226.ads_speed = 0.140
 						self.x_p226.damage_falloff = {
 							start_dist = 1600,
 							end_dist = 3400,
@@ -7137,7 +7140,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.sparrow.fire_mode_data.fire_rate = 0.09230769
 						self.sparrow.supported = true
-						self.sparrow.ads_speed = 0.160
+						self.sparrow.ads_speed = 0.140
 						self.sparrow.damage_falloff = {
 							start_dist = 1400,
 							end_dist = 3100,
@@ -7175,7 +7178,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_sparrow.fire_mode_data.fire_rate = 0.09230769
 						self.x_sparrow.supported = true
-						self.x_sparrow.ads_speed = 0.160
+						self.x_sparrow.ads_speed = 0.140
 						self.x_sparrow.damage_falloff = {
 							start_dist = 1400,
 							end_dist = 3100,
@@ -7208,7 +7211,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hs2000.AMMO_MAX = 60
 						self.hs2000.FIRE_MODE = "single"
 						self.hs2000.fire_mode_data = {}
-						self.hs2000.fire_mode_data.fire_rate = 0.10344827
+						self.hs2000.fire_mode_data.fire_rate = 0.1071428
 						self.hs2000.kick = self.stat_info.kick_tables.left_recoil
 						self.hs2000.kick_pattern = {
 							{0, self.stat_info.kick_tables.left_kick},
@@ -7227,7 +7230,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hs2000.stats = {
 							damage = 30,
 							spread = 60,
-							recoil = 83,
+							recoil = 81,
 							spread_moving = 8,
 							zoom = 1,
 							concealment = 29,
@@ -7515,7 +7518,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.type54_underbarrel.ads_speed = 0.180
 						self.type54_underbarrel.damage_falloff = {
 							start_dist = 400,
-							end_dist = 1200,
+							end_dist = 1000,
 							min_mult = 0.125
 						}
 						self.type54_underbarrel.stats = {
@@ -7566,7 +7569,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_type54_underbarrel.ads_speed = 0.180
 						self.x_type54_underbarrel.damage_falloff = {
 							start_dist = 400,
-							end_dist = 1200,
+							end_dist = 1000,
 							min_mult = 0.125
 						}
 						self.x_type54_underbarrel.stats = {
@@ -8507,12 +8510,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.peacemaker.can_shoot_through_enemy_unlim = true
 						self.peacemaker.can_shoot_through_wall = true
 						self.peacemaker.can_shoot_through_shield = true
-						self.peacemaker.reload_speed_multiplier = 1.35
+						self.peacemaker.reload_speed_multiplier = 1.4
 						self.peacemaker.timers.shotgun_reload_first_shell_offset = 0.5
 						self.peacemaker.timers.shotgun_reload_exit_empty = 0.7
 						self.peacemaker.timers.shotgun_reload_exit_not_empty = 0.7
 						self.peacemaker.use_unequip_swap = true
-						self.peacemaker.swap_speed_multiplier = 0.75
+						self.peacemaker.swap_speed_multiplier = 0.77
 
 		--[[     MGs     ]]--
 
@@ -15599,7 +15602,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.socom.stats_modifiers = nil
 			self.socom.panic_suppression_chance = 0.05
-			self.socom.animations.reload_name_id = "sparrow"
+			--self.socom.animations.reload_name_id = "sparrow"
 			self.socom.timers.reload_exit_empty = 0.7
 			self.socom.timers.reload_exit_not_empty = 0.65
 		end
@@ -27148,7 +27151,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.malorian_3516.sounds.magazine_empty = nil
 				self.malorian_3516.sounds.stop_fire = "saiga_npc1a_end"
 				self.malorian_3516.shell_ejection = "_dmc/effects/shell_shak_smol"
-				self.malorian_3516.swap_speed_multiplier = 0.4
+				self.malorian_3516.swap_speed_multiplier = 0.65
 				self.malorian_3516.use_unequip_swap = true
 			end
 
@@ -27470,6 +27473,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.geasy9.recategorize = { "light_smg" }
 				self.geasy9.damage_type = "machine_gun"
 				self.geasy9.has_description = true
+				self.geasy9.warsaw = true
 				self.geasy9.fire_mode_data.fire_rate = 0.08298
 				self.geasy9.CAN_TOGGLE_FIREMODE = true
 				self.geasy9.tactical_reload = 1
@@ -27487,9 +27491,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.geasy9.supported = true
 				self.geasy9.ads_speed = 0.180
 				self.geasy9.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 2700,
-					min_mult = 0.25
+					start_dist = 1500,
+					end_dist = 2900,
+					min_mult = 0.20833
 				}
 				self.geasy9.stats = {
 					damage = 24,

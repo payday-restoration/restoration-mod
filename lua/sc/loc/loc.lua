@@ -6021,7 +6021,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "Desperado",
-				["menu_expert_handling_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#pistols## grants them an #{skill_color}#$skill_value_b1## accuracy and range boost for #{skill_color}#$skill_value_b2## seconds.\n\nThis effect can stack #{skill_color}#$skill_value_b3## times; the duration of each stack is refreshed with each headshot.\n\nACE: #{owned}#$pro##\nIncreases the accuracy and range boost duration by an additional #{skill_color}#$skill_value_p1## seconds.\n\n#{skill_color}#Pistols## gain #{skill_color}#$skill_value_p2## more accuracy and range while aiming down sights.",
+				["menu_expert_handling_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#pistols## grants them an #{skill_color}#$skill_value_b1## accuracy and range boost for #{skill_color}#$skill_value_b2## seconds.\n\nThis effect can stack #{skill_color}#$skill_value_b3## times; the duration of each stack is refreshed with each headshot.\n\n#{skill_color}#Pistols## gain #{skill_color}#$skill_value_b4## more accuracy while aiming down sights.\n\nACE: #{owned}#$pro##\nIncreases the accuracy and range boost duration by an additional #{skill_color}#$skill_value_p1## seconds.\n\n#{skill_color}#Pistols## gain #{skill_color}#$skill_value_p2## more range while aiming down sights.",
 
 				--Trigger Happy--
 				["menu_trigger_happy_beta_sc"] = "Trigger Happy",

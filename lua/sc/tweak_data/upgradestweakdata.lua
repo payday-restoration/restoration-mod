@@ -1879,20 +1879,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 
 			--Desperado
+				self.values.pistol.steelsight_accuracy_inc = {0.85}
 				self.values.pistol.stacked_accuracy_bonus = {
 					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 4}, --Basic
 					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 8} --Ace
 				}
 				--Ace
-				self.values.pistol.steelsight_accuracy_inc = {0.85}
-				self.values.pistol.steelsight_range_inc = {1.15}
+				self.values.pistol.steelsight_range_inc = {1.25}
 				
 				self.skill_descs.expert_handling = {
 					skill_value_b1 = tostring((1 - self.values.pistol.stacked_accuracy_bonus[1].accuracy_bonus) * 100).."%", -- Accuracy bonus per stack
 					skill_value_b2 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_time), -- Duration of buff (basic)
 					skill_value_b3 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_stacks), -- Max amount of stacks
+					skill_value_b4 = tostring( (1 - self.values.pistol.steelsight_accuracy_inc[1]) % 1 * 100 ) .. "%", -- Accuracy buff
 					skill_value_p1 = tostring(self.values.pistol.stacked_accuracy_bonus[2].max_time - self.values.pistol.stacked_accuracy_bonus[1].max_time), -- Duration of buff (ace)
-					skill_value_p2 = tostring(self.values.pistol.steelsight_range_inc[1] % 1 * 100).."%", -- Accuracy and range buff
+					skill_value_p2 = tostring(self.values.pistol.steelsight_range_inc[1] % 1 * 100).."%", -- Range buff
 				}
 				
 			--Trigger Happy

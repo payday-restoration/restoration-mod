@@ -1701,12 +1701,14 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {11, 1},
 					[1] = {
 						upgrades = {
+							"pistol_steelsight_accuracy_inc_1",
 							"pistol_stacked_accuracy_bonus_1"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
+							"pistol_steelsight_range_inc_1",
 							"pistol_stacked_accuracy_bonus_2"
 						},
 						cost = self.costs.hightierpro

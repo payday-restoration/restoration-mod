@@ -3579,8 +3579,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_p226_b_long.supported = true
-					self.parts.wpn_fps_pis_p226_b_long.stats = deep_clone(barrels.long_b2_stats)
-					self.parts.wpn_fps_pis_p226_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
+					self.parts.wpn_fps_pis_p226_b_long.stats = deep_clone(barrels.long_b3_stats)
+					self.parts.wpn_fps_pis_p226_b_long.custom_stats = deep_clone(barrels.long_b3_stats)
 
 					--Ergo Grip
 					self.parts.wpn_fps_pis_p226_g_ergo.pcs = {
@@ -3719,7 +3719,7 @@ end)
 					self.parts.wpn_fps_pis_sparrow_body_941.stats = {
 						value = 3,
 						concealment = 1,
-						recoil = -2
+						recoil = -2,
 					}
 
 					--Spike Grip
@@ -3732,7 +3732,13 @@ end)
 					self.parts.wpn_fps_pis_sparrow_g_cowboy.supported = true
 					self.parts.wpn_fps_pis_sparrow_g_cowboy.has_description = true
 					self.parts.wpn_fps_pis_sparrow_g_cowboy.desc_id = "bm_w_sparrow_sc_g_cowboy_desc"
-					self.parts.wpn_fps_pis_sparrow_g_cowboy.stats = deep_clone(grips.acc_1)
+					self.parts.wpn_fps_pis_sparrow_g_cowboy.stats = {
+						value = 3,
+						reload = 2,
+						recoil = -2,
+						spread = 1,
+						concealment = -1
+					}
 
 					--Overrides for Glock comps
 					self.wpn_fps_pis_sparrow.override.wpn_fps_pis_g18c_co_comp_2 = {
@@ -18889,7 +18895,7 @@ end)
 			--self.parts.wpn_fps_upg_ns_ass_smg_stubby.perks = { "silencer" }
 			self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats = deep_clone(muzzle_device.muzz_con_a)
 			self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats = deep_clone(muzzle_device.muzz_con_a)
-			self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
+			self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats.use_silenced_muzzleflash = true
 
 			--The Tank Compensator
 			self.parts.wpn_fps_upg_ns_ass_smg_tank.pcs = {
@@ -20575,7 +20581,7 @@ end)
 			--self.parts.wpn_fps_upg_pis_ns_flash.perks = { "silencer" }
 			self.parts.wpn_fps_upg_pis_ns_flash.stats = deep_clone(muzzle_device.muzz_con_a)
 			self.parts.wpn_fps_upg_pis_ns_flash.custom_stats = deep_clone(muzzle_device.muzz_con_a)
-			self.parts.wpn_fps_upg_pis_ns_flash.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
+			self.parts.wpn_fps_upg_pis_ns_flash.custom_stats.use_silenced_muzzleflash = true
 
 			--King's Crown Compensator
 			self.parts.wpn_fps_upg_shot_ns_king.pcs = {}
@@ -37072,28 +37078,28 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			--Vanilla Mod Pack 23.3 v6
 			if self.parts.wpn_fps_pis_triggermod_fast then
-				--Pistol Triggers, Disabled for now
+				--Pistol Triggers
 					self.parts.wpn_fps_pis_triggermod_fast.supported = true
 					self.parts.wpn_fps_pis_triggermod_fast.pcs = {}
 					self.parts.wpn_fps_pis_triggermod_fast.stats = {
 						value = 5,
-						spread = -3,
-						recoil = -4
+						spread = -6,
+						recoil = -8
 					}
 					self.parts.wpn_fps_pis_triggermod_fast.custom_stats = {
-						rof_mult = 1.08,
+						rof_mult = 1.1,
 						hip_mult = 1.5
 					}
 					self.parts.wpn_fps_pis_triggermod_slow.supported = true
 					self.parts.wpn_fps_pis_triggermod_slow.pcs = {}
 					self.parts.wpn_fps_pis_triggermod_slow.stats = {
 						value = 5,
-						spread = 3,
+						spread = 4,
 						recoil = 2
 					}
 					self.parts.wpn_fps_pis_triggermod_slow.custom_stats = {
-						rof_mult = 0.9,
-						hip_mult = 0.9,
+						rof_mult = 0.8,
+						hip_mult = 0.8,
 					}
 
 				--Argos III

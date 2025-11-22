@@ -1466,6 +1466,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 	if self._use_silenced_muzzleflash then
 		self._muzzle_effect = Idstring(self:weapon_tweak_data().muzzleflash_silenced or "effects/payday2/particles/weapons/9mm_auto_silence_fps")
+		self._muzzle_effect_table.effect = self._muzzle_effect
 	end
 
 	if self._cbfd_to_add_this_check_elsewhere then

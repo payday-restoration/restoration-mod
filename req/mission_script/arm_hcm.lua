@@ -31,6 +31,11 @@ local gensec_tank = {
         enemy = gensec_dozer
 	}
 }
+local disabled = {
+	values = {
+		enabled = false,
+	},
+}
 --[[
 local fbi = {
 	values = {
@@ -39,7 +44,7 @@ local fbi = {
 }
 --]]
 return {
-	--Pro Job PONR+Hunt (Endless assault), triggers when van/chopper arrives cause that's better
+	-- Pro Job PONR+Hunt (Endless assault), triggers when van/chopper arrives cause that's better
 	[100329] = {
 		ponr = ponr_value,
 		hunt = hunt_projob
@@ -105,7 +110,7 @@ return {
 	[100524] = gensec,
 	[100525] = gensec,
 --]]	
-	--Van Bulldozers
+	-- Van Bulldozers
 	[103750] = gensec_tank,
 	[103751] = gensec_tank,
 	[103752] = gensec_tank,
@@ -117,5 +122,19 @@ return {
 	[103758] = gensec_tank,
 	[103759] = gensec_tank,
 	[103760] = gensec_tank,
-	[103761] = gensec_tank
+	[103761] = gensec_tank,
+	-- Disable vanilla reinforce on the trucks
+	[100267] = disabled,
+	[100268] = disabled,
+	[100269] = disabled,
+	[100270] = disabled,
+	[100270] = disabled,
+	[100271] = disabled,
+	[100272] = disabled,
+	[100273] = disabled,
+	[100274] = disabled,
+	[100275] = disabled,
+	[100276] = disabled,
+	[100277] = disabled,
+	[100278] = disabled,
 }

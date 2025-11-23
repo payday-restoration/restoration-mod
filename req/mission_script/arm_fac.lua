@@ -23,7 +23,11 @@ local gensec_tank = {
         enemy = gensec_dozer
 	}
 }	
-
+local disabled = {
+	values = {
+		enabled = false,
+	},
+}
 return {
 	--Pro Job PONR+Hunt (Endless assault), triggers when van arrives cause that's better
 	[102982] = {
@@ -87,5 +91,19 @@ return {
 	[101765] = gensec_tank,
 	[101766] = gensec_tank,
 	[101767] = gensec_tank,
-	[101768] = gensec_tank
+	[101768] = gensec_tank,
+	-- Disable vanilla reinforce on the trucks
+	[100267] = disabled,
+	[100268] = disabled,
+	[100269] = disabled,
+	[100270] = disabled,
+	[100270] = disabled,
+	[100271] = disabled,
+	[100272] = disabled,
+	[100273] = disabled,
+	[100274] = disabled,
+	[100275] = disabled,
+	[100276] = disabled,
+	[100277] = disabled,
+	[100278] = disabled,
 }

@@ -827,8 +827,14 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	multiplier = multiplier * self:get_hostage_bonus_multiplier("damage_dampener") --Might be unused.
 	multiplier = multiplier * self._properties:get_property("revive_damage_reduction", 1)
 	multiplier = multiplier * self._temporary_properties:get_property("revived_damage_reduction", 1)
-	local driving = self:current_state() == "driving"
-	multiplier = multiplier * ((driving and 0.5) or 1) --less ouchies when in a vehicle
+
+	-- Less ouchies when in a vehicle or on a zipline
+	if self:current_state() == "driving" then
+		multiplier = multiplier * 0.5
+	elseif self:player_unit():movement():zipline_unit() then
+		multiplier = multiplier * 0.75
+	end
+
 	--Removed vanilla crew chief team DR.
 	if self._buildup_meter and self:has_category_upgrade("player", "buildup_meter_pacify") then
 		local dr_stats = self:upgrade_value("player", "buildup_meter_pacify", 0)

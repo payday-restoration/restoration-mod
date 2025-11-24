@@ -777,6 +777,21 @@ function GroupAIStateBase:num_converted_police()
 	return self._converted_police and table.size(self._converted_police) or 0
 end
 
+-- Normally this check is only done in `sync_hostage_headcount`, and it works fine in vanilla
+-- In Res, where converts also count, the interaction doesn't work as expected
+-- Probably `sync_hostage_headcount` comes before converts are registered as converts
+function GroupAIStateBase:_upd_hostage_absorption()
+	if managers.player:has_team_category_upgrade("damage", "hostage_absorption") then
+		local hostage_count = math.min(self._hostage_headcount + (self:num_converted_police() or managers.player:num_local_minions() or 0), tweak_data.upgrades.values.team.damage.hostage_absorption_limit)
+		local absorption = managers.player:team_upgrade_value("damage", "hostage_absorption", 0) * hostage_count
+
+		managers.player:set_damage_absorption("hostage_absorption", absorption)
+	end
+end
+
+Hooks:PostHook(GroupAIStateBase, "convert_hostage_to_criminal", "res_convert_hostage_to_criminal", GroupAIStateBase._upd_hostage_absorption)
+Hooks:PostHook(GroupAIStateBase, "remove_minion", "res_remove_minion", GroupAIStateBase._upd_hostage_absorption)
+
 function GroupAIStateBase:sync_hostage_headcount(nr_hostages)
 	if nr_hostages and self._hostage_headcount < nr_hostages then
 		managers.player:captured_hostage()
@@ -788,12 +803,7 @@ function GroupAIStateBase:sync_hostage_headcount(nr_hostages)
 		managers.network:session():send_to_peers_synched("sync_hostage_headcount", math.min(self._hostage_headcount, 63))
 	end
 
-	if managers.player:has_team_category_upgrade("damage", "hostage_absorption") then
-		local hostage_count = math.min(self._hostage_headcount + (self:num_converted_police() or managers.player:num_local_minions() or 0), tweak_data.upgrades.values.team.damage.hostage_absorption_limit)
-		local absorption = managers.player:team_upgrade_value("damage", "hostage_absorption", 0) * hostage_count
-
-		managers.player:set_damage_absorption("hostage_absorption", absorption)
-	end
+	self:_upd_hostage_absorption()
 
 	managers.hud:set_control_info({
 		nr_hostages = self._hostage_headcount

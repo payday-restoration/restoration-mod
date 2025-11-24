@@ -776,22 +776,23 @@ function PlayerDamage:damage_fire_hit(attack_data)
 end
 
 function PlayerDamage:damage_melee(attack_data)
+	-- Imagine trying to punch a guy inside of a moving car...
+	if self._unit:movement():current_state().driving then
+		return
+	end
+
 	local attacker_unit = attack_data.attacker_unit
 	local attacker_char_tweak = tweak_data.character[attacker_unit:base()._tweak_table]
 	local damage_info = {
 		result = {type = "hurt", variant = "melee"},
 		attacker_unit = attacker_unit
 	}
-	
-	--Imagine trying to punch a guy inside of a moving car...
-	if not self:can_take_damage(attack_data, damage_info) and not self._unit:movement():current_state().driving then
-		return
-	end
 
-	if can_shield_knock and hit_unit:in_slot(8) and alive(hit_unit:parent()) and not hit_unit:parent():character_damage():is_immune_to_shield_knockback() then
-		shield_knock = true
-		character_unit = hit_unit:parent()
-	end
+	-- This part doesn't appear to be used at all
+	-- if can_shield_knock and hit_unit:in_slot(8) and alive(hit_unit:parent()) and not hit_unit:parent():character_damage():is_immune_to_shield_knockback() then
+	-- 	shield_knock = true
+	-- 	character_unit = hit_unit:parent()
+	-- end
 	if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() and not tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()].chainsaw then
 		--prevent the player from countering Dozers, Spring, Hatman or other players through FF, for obvious reasons
 		if alive(attacker_unit) and attacker_unit:base() and not attacker_unit:base().is_husk_player then
@@ -808,6 +809,10 @@ function PlayerDamage:damage_melee(attack_data)
 				return "countered"
 			end
 		end
+	end
+	
+	if not self:can_take_damage(attack_data, damage_info) then
+		return
 	end
 	
 	--Unit specific player state changing shenanigans.

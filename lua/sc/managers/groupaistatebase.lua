@@ -327,12 +327,12 @@ function GroupAIStateBase:use_ponr_music()
 	return true
 end
 
+-- The vanilla function crashes rarely - not entirely sure why
+-- Guessing it might be possible for a client to start the PONR on their end before the host does?
+-- Either way, create the table if it doesn't exist yet instead of exploding
 Hooks:OverrideFunction(GroupAIStateBase, "set_is_inside_point_of_no_return", function(self, peer_id, is_inside, ...)
-	if self._peers_inside_point_of_no_return then
-		self._peers_inside_point_of_no_return[peer_id] = is_inside
-	else
-		-- Add debug later, this was done on mobile 
-	end
+	self._peers_inside_point_of_no_return = self._peers_inside_point_of_no_return or {}
+	self._peers_inside_point_of_no_return[peer_id] = is_inside
 end)
 
 Hooks:PreHook(GroupAIStateBase, "remove_point_of_no_return_timer", "res_remove_point_of_no_return_timer", function(self, point_of_no_return_id)

@@ -40237,7 +40237,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_tti_body_receiverupper_223.supported = true
 			self.parts.wpn_fps_snp_tti_body_receiverupper_223.stats = {
 				value = 1,
-				spread = 1,
+				spread = 2,
 				concealment = -2
 			}
 			self.parts.wpn_fps_snp_tti_fg_m4.supported = true

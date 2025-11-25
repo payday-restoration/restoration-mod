@@ -23,7 +23,7 @@ local gensec_tank = {
 	values = {
         enemy = gensec_dozer
 	}
-}	
+}	,
 local disabled = {
 	values = {
 		enabled = false,
@@ -32,7 +32,7 @@ local disabled = {
 local avalon_side_spawwn = {
 	values = {
 		interval = 25, 
-	}
+	},
 }
 return {
 	--Pro Job PONR+Hunt (Endless assault), triggers when van arrives cause that's better

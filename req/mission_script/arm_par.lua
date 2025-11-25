@@ -29,6 +29,11 @@ local disabled = {
 		enabled = false,
 	},
 }
+local avalon_side_spawwn = {
+	values = {
+		interval = 25, 
+	}
+}
 return {
 	--Pro Job PONR+Hunt (Endless assault), triggers when van arrives cause that's better
 	[100329] = {
@@ -100,4 +105,10 @@ return {
 	[100276] = disabled,
 	[100277] = disabled,
 	[100278] = disabled,
+	-- increased spawn intervals on Avalon sides 
+	[100128] = avalon_side_spawwn,
+	[101046] = avalon_side_spawwn,
+	[100781] = avalon_side_spawwn,
+	[100794] = avalon_side_spawwn,
+	[101048] = avalon_side_spawwn,
 }

@@ -28,6 +28,21 @@ local disabled = {
 		enabled = false,
 	},
 }
+local disabled = {
+	values = {
+		enabled = false,
+	},
+}
+local street_spawn = {
+	values = {
+		interval = 10
+	},
+}
+local overpass_spawn = {
+	values = {
+		interval = 20
+	},
+}
 return {
 	--Pro Job PONR+Hunt (Endless assault), triggers when van arrives cause that's better
 	[102982] = {
@@ -106,4 +121,12 @@ return {
 	[100276] = disabled,
 	[100277] = disabled,
 	[100278] = disabled,
+	-- Increase spawn point intervals to promote more varied spawn directions (street)
+	[101205] = street_spawn,
+	[100132] = street_spawn,
+	[100154] = street_spawn,
+	[100133] = street_spawn,
+	[104938] = street_spawn,
+	-- bridge thing spawn 
+	[103176] = overpass_spawn,
 }

@@ -1479,7 +1479,7 @@ function PlayerStandard:_check_stop_shooting()
 			if (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) then
 				self._ext_network:send("sync_stop_auto_fire_sound", 0)
 			end
-			weap_base._next_fire_allowed = weap_base._next_fire_allowed + (next_fire * 0.2)
+			weap_base._next_fire_allowed = weap_base._next_fire_allowed + math.min((next_fire * 0.5), 0.05)
 		end
 		local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 		local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")

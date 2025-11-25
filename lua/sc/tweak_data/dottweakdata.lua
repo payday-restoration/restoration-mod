@@ -65,24 +65,28 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_damage = 1.5,
 		dot_length = 2.1,
 		use_weapon_damage_falloff = true,
+		apply_hurt_once = true,
 		duration_falloff_end_mult = 0.5
 	}
 	poison_entries.ammo_rip = {
 		dot_damage = 1.5,
 		dot_length = 4.1,
 		use_weapon_damage_falloff = true,
+		apply_hurt_once = true,
 		duration_falloff_end_mult = 0.5
 	}
 	poison_entries.ammo_rip_pump = {
 		dot_damage = 1.5,
 		dot_length = 6.1,
 		use_weapon_damage_falloff = true,
+		apply_hurt_once = true,
 		duration_falloff_end_mult = 0.5
 	}
 	poison_entries.ammo_rip_heavy = {
 		dot_damage = 1.5,
 		dot_length = 8.1,
 		use_weapon_damage_falloff = true,
+		apply_hurt_once = true,
 		duration_falloff_end_mult = 0.5
 	}
 	

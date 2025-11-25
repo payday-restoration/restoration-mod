@@ -625,7 +625,7 @@ function CopDamage:damage_fire(attack_data)
 		end
 
 		if flammable then
-			local fire_dot_max_distance = weap_base and weap_base.far_falloff_distance and weap_base.far_falloff_distance + weap_base.near_falloff_distance or tonumber(fire_dot_data.dot_trigger_max_distance) or 3000
+			local fire_dot_max_distance = weap_base and weap_base.far_falloff_distance and weap_base.far_falloff_distance + weap_base.near_falloff_distance or 3000
 			local fire_dot_panic_max_distance = weap_base and weap_base.near_falloff_distance or 500
 
 			if distance < fire_dot_max_distance then

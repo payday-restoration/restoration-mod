@@ -23,7 +23,7 @@ local gensec_tank = {
 	values = {
         enemy = gensec_dozer
 	}
-}	,
+}
 local disabled = {
 	values = {
 		enabled = false,

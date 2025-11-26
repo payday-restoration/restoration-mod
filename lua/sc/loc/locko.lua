@@ -1349,8 +1349,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_upg_a_slug_desc"] = "#{skill_color}#방탄복과 다수의 적, 얇은 벽을 관통하는## 납탄을 발사합니다.",
 		["bm_wp_upg_a_slug_titan_desc"] = "#{skill_color}#방탄복과 다수의 적, 방패, 타이탄 방패, 얇은 벽을 관통하는## 납탄을 발사합니다.",
 		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#2##미터인 #{heat_warm_color}#폭발성## 납탄을 발사합니다.\n이 슬러그탄은 #{skill_color}#사거리 별 피해량 감소가 없습니다.## 하지만 #{risk}#피해는 슬러그탄과 폭발로 나뉩니다.##",
-		["bm_wp_upg_a_custom_desc"] = "#{skill_color}#더 큰 피해량을 가진## 더 크고 무거운 펠릿을 #{important_1}#6개## 발사합니다.",
-		["bm_wp_upg_a_custom_4_desc"] = "#{skill_color}#더 큰 피해량을 가진## 더 크고 무거운 펠릿을 #{important_1}#4개## 발사합니다.",
+		["bm_wp_upg_a_custom_desc"] = "#{skill_color}#몸에 더 큰 피해를 가하는## 큰 펠릿 #{important_1}#6발##을 발사합니다. #{risk}#헤드샷 피해량은 약간만 증가합니다.##",
+		["bm_wp_upg_a_custom_4_desc"] = "#{skill_color}#몸에 더 큰 피해를 가하는## 큰 펠릿 #{important_1}#4발##을 발사합니다. #{risk}#헤드샷 피해량은 약간만 증가합니다.##",
 		--["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#15%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#90## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##", --NOT IN USE
 		--["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#40%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#120## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##",
 		--["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#60%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#180## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##",

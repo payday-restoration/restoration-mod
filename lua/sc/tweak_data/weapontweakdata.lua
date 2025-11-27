@@ -25278,8 +25278,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.howa_type89.BURST_FIRE = {
 					count = 3,
 					delay = 0.18,
-					recoil_mult = 0.8,
-					last_recoil_mult = 1.05
+					recoil_mult = 0.65,
+					last_recoil_mult = 1.02
 				}
 				self.howa_type89.FIRE_MODE = "auto"
 				self.howa_type89.kick = {}

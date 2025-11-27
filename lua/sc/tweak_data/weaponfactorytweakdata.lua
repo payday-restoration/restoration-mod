@@ -2157,7 +2157,7 @@ end)
 					self.parts.wpn_fps_pis_lemming_m_ext.stats = {
 						value = 1,
 						extra_ammo = 10,
-						concealment = -1,
+						concealment = -2,
 						reload = -3
 					}
 					self.parts.wpn_fps_pis_lemming_m_ext.custom_stats = {
@@ -2217,8 +2217,8 @@ end)
 					self.parts.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 						value = 6,
 						extra_ammo = 16,
-						concealment = -2,
-						reload = -4
+						concealment = -3,
+						reload = -5
 					}
 					self.parts.wpn_fps_pis_g18c_m_mag_33rnd.bullet_objects = {
 						amount = 1,
@@ -2287,8 +2287,8 @@ end)
 						stats = {
 							value = 6,
 							extra_ammo = 32,
-							concealment = -2,
-							reload = -4
+							concealment = -3,
+							reload = -5
 						}
 					}
 
@@ -2843,8 +2843,8 @@ end)
 						stats = {
 							value = 6,
 							extra_ammo = 23,
-							concealment = -3,
-							reload = -5
+							concealment = -4,
+							reload = -6
 						},
 						custom_stats = {
 							ads_speed_mult = 1.075
@@ -2889,8 +2889,8 @@ end)
 						stats = {
 							value = 6,
 							extra_ammo = 46,
-							concealment = -3,
-							reload = -5
+							concealment = -4,
+							reload = -6
 						},
 						custom_stats = {
 							ads_speed_mult = 1.075
@@ -2983,8 +2983,8 @@ end)
 					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 						value = 6,
 						extra_ammo = 32,
-						concealment = -2,
-						reload = -4
+						concealment = -3,
+						reload = -5
 					}
 
 					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_g18c_s_stock = {
@@ -3659,8 +3659,8 @@ end)
 					self.wpn_fps_pis_x_p226.override.wpn_fps_pis_p226_m_extended.stats = {
 						value = 3,
 						extra_ammo = 20,
-						reload = -3,
-						concealment = -1
+						reload = -4,
+						concealment = -2
 					}
 				end)
 
@@ -3690,8 +3690,8 @@ end)
 					self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 						value = 6,
 						extra_ammo = 32,
-						concealment = -2,
-						reload = -4
+						concealment = -3,
+						reload = -5
 					}
 				end)
 
@@ -4676,7 +4676,7 @@ end)
 							value = 2,
 							concealment = -3,
 							extra_ammo = 24,
-							reload = -3
+							reload = -5
 						}
 					}
 				end)
@@ -7194,8 +7194,8 @@ end)
 					self.parts.wpn_fps_smg_schakal_m_long.stats = {
 						value = 1,
 						extra_ammo = 20,
-						reload = -3,
-						concealment = -4
+						reload = -5,
+						concealment = -3
 					}
 					self.parts.wpn_fps_smg_schakal_m_long.custom_stats = {
 						ads_speed_mult = 1.1
@@ -9449,8 +9449,8 @@ end)
 				self.parts.wpn_fps_lmg_mg42_m_75.stats = {
 					value = 4,
 					extra_ammo = 25,
-					concealment = -2,
-					reload = -4
+					concealment = -3,
+					reload = -5
 				}
 				self.parts.wpn_fps_lmg_mg42_m_75.custom_stats = { ads_speed_mult = 1.075 }
 
@@ -26276,8 +26276,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_lewis_mag_ext.stats = {
 					value = 0,
 					extra_ammo = 50,
-					concealment = -4,
-					reload = -6
+					concealment = -5,
+					reload = -7
 				}
 				self.parts.wpn_fps_upg_lewis_mag_ext.custom_stats = {
 					ads_speed_mult = 1.1
@@ -41378,65 +41378,65 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_pis_glock_m_pmag.stats = {
 					value = 6,
 					extra_ammo = 10,
-					concealment = -2,
+					concealment = -3,
 					spread = -1,
-					reload = -2,
+					reload = -3,
 				}
 				self.parts.wpn_fps_pis_glock_m_pmag.custom_stats = {
-					ads_speed_mult = 1.05
+					ads_speed_mult = 1.075
 				}
 					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_pmag = {
 						stats = {
 							value = 6,
 							extra_ammo = 20,
-							concealment = -2,
+							concealment = -3,
 							spread = -1,
-							reload = -2,
+							reload = -3,
 						}
 					}
 					self.wpn_fps_pis_x_g18c.override.wpn_fps_pis_glock_m_pmag = {
 						stats = {
 							value = 6,
 							extra_ammo = 20,
-							concealment = -2,
+							concealment = -3,
 							spread = -1,
-							reload = -2,
+							reload = -3,
 						}
 					}
 					self.wpn_fps_pis_g26.override.wpn_fps_pis_glock_m_pmag = {
 						stats = {
 							value = 6,
 							extra_ammo = 17,
-							concealment = -2,
+							concealment = -3,
 							spread = -1,
-							reload = -2,
+							reload = -3,
 						}
 					}
 					self.wpn_fps_jowi.override.wpn_fps_pis_glock_m_pmag = {
 						stats = {
 							value = 6,
 							extra_ammo = 34,
-							concealment = -2,
+							concealment = -3,
 							spread = -1,
-							reload = -2,
+							reload = -3,
 						}
 					}
 					self.wpn_fps_pis_g22c.override.wpn_fps_pis_glock_m_pmag = {
 						stats = {
 							value = 6,
 							extra_ammo = 10,
-							concealment = -2,
+							concealment = -3,
 							spread = -1,
-							reload = -2,
+							reload = -3,
 						}
 					}
 					self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_glock_m_pmag = {
 						stats = {
 							value = 6,
 							extra_ammo = 20,
-							concealment = -2,
+							concealment = -3,
 							spread = -1,
-							reload = -2,
+							reload = -3,
 						}
 					}
 
@@ -41453,58 +41453,58 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_pis_glock_m_d50.supported = true
 				self.parts.wpn_fps_pis_glock_m_d50.stats = {
 					value = 7,
-					concealment = -4,
-					reload = -6,
+					concealment = -5,
+					reload = -7,
 					extra_ammo = 33
 				}
 				self.parts.wpn_fps_pis_glock_m_d50.custom_stats = {
-					ads_speed_mult = 1.1
+					ads_speed_mult = 1.125
 				}
 					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_d50 = {
 						stats = {
 							value = 7,
-							concealment = -4,
-							reload = -6,
+							concealment = -5,
+							reload = -7,
 							extra_ammo = 66
 						}
 					}
 					self.wpn_fps_pis_x_g18c.override.wpn_fps_pis_glock_m_d50 = {
 						stats = {
 							value = 7,
-							concealment = -4,
-							reload = -6,
+							concealment = -5,
+							reload = -7,
 							extra_ammo = 66
 						}
 					}
 					self.wpn_fps_pis_g26.override.wpn_fps_pis_glock_m_d50 = {
 						stats = {
 							value = 7,
-							concealment = -4,
-							reload = -6,
+							concealment = -5,
+							reload = -7,
 							extra_ammo = 40
 						}
 					}
 					self.wpn_fps_jowi.override.wpn_fps_pis_glock_m_d50 = {
 						stats = {
 							value = 7,
-							concealment = -4,
-							reload = -6,
+							concealment = -5,
+							reload = -7,
 							extra_ammo = 80
 						}
 					}
 					self.wpn_fps_pis_g22c.override.wpn_fps_pis_glock_m_d50 = {
 						stats = {
 							value = 7,
-							concealment = -4,
-							reload = -6,
+							concealment = -5,
+							reload = -7,
 							extra_ammo = 35
 						}
 					}
 					self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_glock_m_d50 = {
 						stats = {
 							value = 7,
-							concealment = -4,
-							reload = -6,
+							concealment = -5,
+							reload = -7,
 							extra_ammo = 70
 						}
 					}

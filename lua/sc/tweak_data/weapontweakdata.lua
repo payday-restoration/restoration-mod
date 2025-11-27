@@ -5871,6 +5871,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							value = 1,
 							reload = 20
 						}
+						if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRaffica") > 1 then
+							self.beer.sounds.fire_single = "beretta_fire"
+							if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRaffica") == 3 then
+								self.beer.sounds.fire_single2 = "beer_fire_single"
+							end
+						end
 						self.beer.stats_modifiers = nil
 						self.beer.panic_suppression_chance = 0.05
 						self.beer.timers.reload_not_empty = 1.47

@@ -638,6 +638,7 @@
 					<divider name="tod_divider" size="14"/>
 					<button name="ComboSounds" disabled="true"/>
 					<divider name="tod_divider" size="14"/>
+					<option type="multichoice" default_value="1" name="ComboSoundsRaffica" values_tbl="restoration.snd_raffica"/>
 					<option type="multichoice" default_value="3" name="ComboSoundsSW500" values_tbl="restoration.snd_sw500"/>
 					<option type="multichoice" default_value="3" name="ComboSoundsRSH12" values_tbl="restoration.snd_rsh12"/>
 					<divider name="tod_divider" size="14"/>

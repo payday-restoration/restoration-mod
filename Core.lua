@@ -744,6 +744,11 @@ restoration.ponrtracks = {
 	"random"
 }
 
+restoration.snd_raffica = {
+	"snd_raffica_vanilla",
+	"snd_raffica_b92fs",
+	"snd_raffica_combo"
+}
 restoration.snd_sw500 = {
 	"snd_sw500_vanilla",
 	"snd_sw500_peacemaker",

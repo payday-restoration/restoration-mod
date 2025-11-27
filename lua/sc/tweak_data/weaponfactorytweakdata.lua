@@ -29383,6 +29383,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_smg_geasy9_stock_true.stats = { value = 0 }
 				self.parts.wpn_fps_smg_geasy9_stock_true.custom_stats = nil
 			--MAGS
+				self.parts.wpn_fps_smg_geasy9_magazine.supported = true
+				self.parts.wpn_fps_smg_geasy9_magazine.custom_stats = {
+					reload_not_empty_speed_multiplier = 0.85
+				}
 				--FM 1
 				self.parts.wpn_fps_smg_geasy9_magazine_fast.supported = true
 				self.parts.wpn_fps_smg_geasy9_magazine_fast.stats = {
@@ -29393,6 +29397,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_smg_geasy9_magazine_fast.custom_stats = {
 					ads_speed_mult = 0.975,
+					reload_not_empty_speed_multiplier = 1.1,
 					reload_non_empty_anim_mult = 0.97,
 					adj_timers = {
 						reload_exit_empty = 1.35,
@@ -29418,12 +29423,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_smg_geasy9_xmag1.supported = true
 				self.parts.wpn_fps_smg_geasy9_xmag1.stats = {
 					value = 7,
-					concealment = -2,
-					reload = -4,
+					concealment = -1,
+					reload = -3,
 					extra_ammo = 10
 				}
 				self.parts.wpn_fps_smg_geasy9_xmag1.custom_stats = {
-					ads_speed_mult = 1.05,
+					ads_speed_mult = 1.025,
+					reload_not_empty_speed_multiplier = 1.02,
 					reload_non_empty_anim_mult = 0.97,
 					adj_timers = {
 						reload_exit_empty = 1.35,

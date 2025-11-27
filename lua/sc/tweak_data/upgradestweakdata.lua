@@ -2074,7 +2074,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 		
 	--Shared Perks--
-	self.values.weapon.passive_reload_speed_multiplier = {1.1}
+	self.values.weapon.passive_reload_speed_multiplier = {1.05}
 	self.values.player.passive_pick_up_multiplier = {1.10}
 	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}

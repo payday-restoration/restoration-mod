@@ -10853,8 +10853,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.s552.BURST_FIRE = {
 							count = 3,
 							delay = 0.18,
-							recoil_mult = 0.8,
-							last_recoil_mult = 1.05
+							recoil_mult = 0.7,
+							last_recoil_mult = 1.02
 						}
 						self.s552.ADAPTIVE_BURST_SIZE = false
 						self.s552.kick = self.stat_info.kick_tables.moderate_kick
@@ -10908,8 +10908,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g36.BURST_FIRE = {
 							count = 3,
 							delay = 0.18,
-							recoil_mult = 0.75,
-							last_recoil_mult = 1.05
+							recoil_mult = 0.7,
+							last_recoil_mult = 1.02
 						}
 						self.g36.ADAPTIVE_BURST_SIZE = false
 						self.g36.auto.fire_rate = 0.08
@@ -11422,7 +11422,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.famas.BURST_FIRE = {
 							count = 3,
 							delay = 0.18,
-							recoil_mult = 0.75,
+							recoil_mult = 0.65,
 							last_recoil_mult = 1.05
 						}
 						self.famas.reload_speed_multiplier = 1.1
@@ -11482,7 +11482,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hajk.BURST_FIRE = {
 							count = 2,
 							delay = 0.15,
-							recoil_mult = 0.75,
+							recoil_mult = 0.6,
 							last_recoil_mult = 1.02
 						}
 						self.hajk.kick = self.stat_info.kick_tables.moderate_kick
@@ -19291,8 +19291,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36k.BURST_FIRE = {
 					count = 3,
 					delay = 0.18,
-					recoil_mult = 0.75,
-					last_recoil_mult = 1.05
+					recoil_mult = 0.7,
+					last_recoil_mult = 1.02
 				}
 				self.g36k.ADAPTIVE_BURST_SIZE = false
 				self.g36k.fire_mode_data.fire_rate = 0.08
@@ -19440,8 +19440,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak12.BURST_FIRE = {
 					count = 3,
 					rof_mult = 1.6666,
-					recoil_mult = 0.75,
-					last_recoil_mult = 1.05
+					recoil_mult = 0.65,
+					last_recoil_mult = 1.02
 				}
 				self.ak12.ADAPTIVE_BURST_SIZE = false
 				self.ak12.fire_mode_data.fire_rate = 0.1
@@ -19597,7 +19597,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.xeno.BURST_FIRE = {
 					count = 4,
 					delay = 0.25,
-					recoil_mult = 0.75,
+					recoil_mult = 0.5,
 					last_recoil_mult = 1.05
 				}
 				self.xeno.kick = self.stat_info.kick_tables.moderate_kick
@@ -27487,7 +27487,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.geasy9.stats = {
 					damage = 24,
 					spread = 65,
-					recoil = 73,
+					recoil = 75,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 28,
@@ -27500,7 +27500,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.geasy9.stats_modifiers = nil
 				self.geasy9.panic_suppression_chance = 0.05
-				self.geasy9.reload_speed_multiplier = 1.4
+				self.geasy9.reload_speed_multiplier = 1.52
 				self.geasy9.timers.reload_empty = 3
 				self.geasy9.timers.reload_exit_empty = 1.33
 				self.geasy9.timers.reload_not_empty = 2.22
@@ -29379,8 +29379,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s556.BURST_FIRE = {
 					count = 3,
 					delay = 0.18,
-					recoil_mult = 0.8,
-					last_recoil_mult = 1.05,
+					recoil_mult = 0.7,
+					last_recoil_mult = 1.02,
 					rof_mult = 1.9375,
 					burst_default = true
 				}

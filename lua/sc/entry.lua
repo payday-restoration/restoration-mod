@@ -360,15 +360,13 @@ if GGWEPNENAME then
 	end)
 end
 
+--This stuff needs to load late as to override the hooks from their respective mods
 if SKSWeaponBase then
 	function SKSWeaponBase:clbk_assembly_complete(...)
 		SKSWeaponBase.super.clbk_assembly_complete(self, ...)
-		log("bingo banogo")
 		if table.contains(self._blueprint, "wpn_fps_upg_sks_mag_detach10") or table.contains(self._blueprint, "wpn_fps_upg_sks_mag_detach20") then
-		log("bingo mag")
 			self:weapon_tweak_data().animations.reload_name_id = "sks_mag"
 		else
-		log("bingo clips")
 			self:weapon_tweak_data().animations.reload_name_id = "sks"
 		end
 	end

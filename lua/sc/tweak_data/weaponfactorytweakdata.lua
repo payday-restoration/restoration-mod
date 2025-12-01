@@ -41544,32 +41544,32 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.wpn_fps_pis_g26.override.wpn_fps_pis_glock_m_cmag = {
 						stats = {
 							value = 7,
-							concealment = -4,
-							reload = -6,
+							reload = -9,
+							concealment = -7,
 							extra_ammo = 90
 						}
 					}
 					self.wpn_fps_jowi.override.wpn_fps_pis_glock_m_cmag = {
 						stats = {
 							value = 7,
-							concealment = -4,
-							reload = -6,
+							reload = -9,
+							concealment = -7,
 							extra_ammo = 180
 						}
 					}
 					self.wpn_fps_pis_g22c.override.wpn_fps_pis_glock_m_cmag = {
 						stats = {
 							value = 7,
-							concealment = -4,
-							reload = -6,
+							reload = -9,
+							concealment = -7,
 							extra_ammo = 85
 						}
 					}
 					self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_glock_m_cmag = {
 						stats = {
 							value = 7,
-							concealment = -4,
-							reload = -6,
+							reload = -9,
+							concealment = -7,
 							extra_ammo = 170
 						}
 					}

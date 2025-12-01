@@ -5742,7 +5742,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Transporter
 				["menu_pack_mule_beta_sc"] = "트랜스포터",
-				["menu_transporter_beta_desc_sc"] = "베이식: #{owned}#$basic##\n가방 운반 시 이동 속도 패널티가 보유한 방탄량 #{skill_color}#10##당 #{skill_color}#$skill_value_b1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n가방을 운반할 수 있는 최대 무게량이 #{skill_color}#$skill_value_p2## 증가합니다.\n\n#{risk}#참고: 기본 운반 무게량은 45이며, 가방 운반 시의 이동 속도 패널티는 여전히 적용됩니다.##",
+				["menu_transporter_beta_desc_sc"] = "베이식: #{owned}#$basic##\n가방 운반 시 이동 속도 패널티가 보유한 방탄량 #{skill_color}#10##당 #{skill_color}#$skill_value_b1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n가방을 운반할 수 있는 최대 무게량이 #{skill_color}#$skill_value_p2## 증가합니다.\n\n#{risk}#참고: 기본 운반 무게량은 30이며, 가방 운반 시의 이동 속도 패널티는 여전히 적용됩니다.##",
 
 				--More Blood to Bleed--
 				["menu_iron_man_beta_sc"] = "아직 흘릴 피가 남아 있어",

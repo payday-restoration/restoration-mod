@@ -1,5 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local pro_job = Global.game_settings and Global.game_settings.one_down
 
 --Scale effects per difficulty
 function QuickCsGrenade:_setup_from_tweak_data()
@@ -8,7 +9,8 @@ function QuickCsGrenade:_setup_from_tweak_data()
 	self._radius = self._tweak_data.radius or 300
 	self._radius_blurzone_multiplier = self._tweak_data.radius_blurzone_multiplier or 1.3
 	self._damage_per_tick = 0.6
-	self._stamina_per_tick = 0.0
+	self._stamina_per_tick = 2.5
+	self._ignore_armor = false
 	if difficulty_index <= 2 then
 		self._damage_tick_period = 0.5
 	elseif difficulty_index == 3 then
@@ -23,7 +25,12 @@ function QuickCsGrenade:_setup_from_tweak_data()
 		self._damage_tick_period = 0.3	
 	else
 		self._damage_tick_period = 0.25
-		self._stamina_per_tick = 2.5
+		self._ignore_armor = true
+	end
+	
+	-- Reduced grace slightly when playing on Pro Job
+	if pro_job then
+		self._damage_tick_period = self._damage_tick_period - 0.05
 	end
 end
 
@@ -39,7 +46,21 @@ function QuickCsGrenade:_do_damage()
 			}
 		}
 
-		player_unit:character_damage():damage_killzone(attack_data)
+		-- Work around that *should* be a bit more future proofed if playerdamage ever gets changed versus adding more attack data arguments
+		if self._ignore_armor then			
+			if player_unit.character_damage and player_unit:character_damage() then
+				-- Had to do this because of how bleedout health behaves. Otherwise you just go to custody when you're downed and getting gassed
+				if not player_unit:character_damage():is_downed() then
+					player_unit:character_damage()._unit:sound():play("player_hit_permadamage")
+					player_unit:character_damage():_calc_health_damage_no_deflection(attack_data)
+				else
+					player_unit:character_damage():_bleed_out_damage(attack_data)
+				end
+			end			
+			
+		else
+			player_unit:character_damage():damage_killzone(attack_data)
+		end
 
 		if self._stamina_per_tick > 0.0 then
 			player_unit:movement():subtract_stamina(self._stamina_per_tick)

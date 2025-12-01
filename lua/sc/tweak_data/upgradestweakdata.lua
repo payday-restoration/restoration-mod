@@ -1026,7 +1026,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.armor_carry_bonus = {1.005}
 				--Ace
 					self.values.carry.movement_penalty_nullifier = {true}
-					self.values.carry.increased_carry_weight = {0.15}
+					self.values.carry.increased_carry_weight = {0.1}
 					
 					self.skill_descs.pack_mule = {
 						skill_value_b1 = tostring(math.ceil(self.values.player.armor_carry_bonus[1] % 1)/2).."%", -- Reducing movement penalty

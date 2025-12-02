@@ -885,6 +885,8 @@ function NewRaycastWeaponBase:old_update_stats_values(disallow_replenish, ammo_d
 		stats.zoom = math.min(stats.zoom + managers.player:upgrade_value(primary_category, "zoom_increase", 0), #stats_tweak_data.zoom)
 	end
 
+	self._part_stats_uncapped = {}
+
 	for stat, _ in pairs(stats) do
 		if stats[stat] < 1 or stats[stat] > #stats_tweak_data[stat] then
 			Application:error("[NewRaycastWeaponBase] Base weapon stat is out of bound!", "stat: " .. stat, "index: " .. stats[stat], "max_index: " .. #stats_tweak_data[stat], "This stat will be clamped!")
@@ -892,6 +894,7 @@ function NewRaycastWeaponBase:old_update_stats_values(disallow_replenish, ammo_d
 
 		if parts_stats[stat] then
 			stats[stat] = stats[stat] + parts_stats[stat]
+			self._part_stats_uncapped[stat] = (self._part_stats_uncapped[stat] or 0) + parts_stats[stat]
 		end
 
 		if bonus_stats[stat] then

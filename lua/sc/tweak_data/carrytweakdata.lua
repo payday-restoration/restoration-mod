@@ -12,10 +12,10 @@ Hooks:PostHook(CarryTweakData, "init", "res_carry", function(self, tweak_data)
 	-- Tweaking Bag Weights to be more consistent and less of a giant jump between tiers	
 	self.weight_class = {
 		light = 10,
-		medium = 20,
-		heavy = 30,
-		very_heavy = 40,
-		mega_heavy = 50
+		medium = 15,
+		heavy = 20,
+		very_heavy = 30,
+		mega_heavy = 30
 	}
 	
 	-- Light (Jewelry, Coke) bags, no penalties and can still sprint just fine

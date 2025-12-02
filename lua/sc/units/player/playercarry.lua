@@ -10,7 +10,8 @@ end
 -- Ditto
 function PlayerCarry:_get_max_walk_speed(...)
 	-- local multiplier = tweak_data.carry.types[self._tweak_data_name].move_speed_modifier
-	local multiplier = BLT_CarryStacker.weight
+	-- Adding a raw carry speed mult to slow the player down to be closer to OG move speeds with the new weight system in place
+	local multiplier = BLT_CarryStacker.weight * 0.75
 	
 	if managers.player:has_category_upgrade("carry", "movement_penalty_nullifier") then
 		multiplier = math.clamp(multiplier * managers.player:upgrade_value("carry", "movement_speed_multiplier", 1), 0, 1)

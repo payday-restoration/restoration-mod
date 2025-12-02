@@ -24216,7 +24216,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		supported = true,
 		stats = {
 			value = 10,
-			spread = -44,
+			spread = -34,
 			recoil = -20,
 			concealment = -6,
 			extra_ammo = 70,
@@ -24232,7 +24232,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			alt_ammo_pickup_max_mul = 0,
 			ammo_pickup_min_mul = 0,
 			ammo_pickup_max_mul = 0,
-			hip_mult = 2.3333333,
+			hip_mult = 3,
 			rof_mult = 1.25,
 			ads_speed_mult = 1.3846153,
 			damage_min_mult = 0.5,

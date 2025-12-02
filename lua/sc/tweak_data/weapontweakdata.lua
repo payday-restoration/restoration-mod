@@ -10810,7 +10810,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{4, self.stat_info.kick_tables.moderate_right_kick},
 							{7, self.stat_info.kick_tables.right_recoil},
 							{12, self.stat_info.kick_tables.moderate_kick},
-							{19, self.stat_info.kick_tables.left_recoil}
+							{19, self.stat_info.kick_tables.left_recoil},
+							{36, self.stat_info.kick_tables.even_recoil}
 						}
 						self.amcar.supported = true
 						self.amcar.ads_speed = 0.300

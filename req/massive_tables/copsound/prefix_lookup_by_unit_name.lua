@@ -132,9 +132,16 @@ local prefix_lookup_for_humans = {
 		"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
 		"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
 	},
-	l5n_list = {
+	l5n_l3n_l2n_list = {
 		func = function(self, nr_variations)
-			return "l5n_"
+			local rand = math.random()
+			if rand < 0.33 then
+				return "l5n_"
+			elseif rand < 0.66 then
+				return "l3n_"
+			else
+				return "l2n_"
+			end
 		end,
 		-- Vanilla Murky guards
 		"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
@@ -168,20 +175,6 @@ local prefix_lookup_for_humans = {
 		"units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",
 		"units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2",
 	},
-	--[[
-	l5n_l3n_l2n_list = {
-		func = function(self, nr_variations)
-			local rand = math.random()
-			if rand < 0.33 then
-				return "l5n_"
-			elseif rand < 0.66 then
-				return "l3n_"
-			else
-				return "l2n_"
-			end
-		end,
-	},
-	]]
 	female_enemy_list = {
 		func = function(self, nr_variations)
 			return "fl1n_"

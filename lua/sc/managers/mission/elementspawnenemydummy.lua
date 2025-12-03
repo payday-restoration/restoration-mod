@@ -18,6 +18,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
 			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+			},
 			swat_1 = {
 				"units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
 				"units/payday2/characters/ene_swat_3/ene_swat_3"
@@ -39,6 +43,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
+			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 			},
 			swat_1 = {
 				"units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
@@ -80,6 +88,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
+			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 			},
 			swat_1 = {
 				"units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
@@ -126,6 +138,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"
 			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+			},
 			swat_1 = {
 				"units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
 				"units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"
@@ -158,6 +174,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
 			},
 			security_3 = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3",
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+			},
 			secret_service = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
 				"units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2",
@@ -1559,6 +1579,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"
 			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+			},
 			secret_service = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 				"units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"
@@ -1603,6 +1627,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = {
 				"units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"
+			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 			},
 			secret_service = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
@@ -1670,6 +1698,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = {
 				"units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"
+			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 			},
 			secret_service = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
@@ -1739,6 +1771,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"
 			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+			},
 			secret_service = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 				"units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"
@@ -1795,6 +1831,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = {
 				"units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
+			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 			},
 			secret_service = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
@@ -1925,6 +1965,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/payday2/characters/ene_security_3/ene_security_3"
 			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+			},
 			cop_1 = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
@@ -1965,6 +2009,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = {
 				"units/payday2/characters/ene_security_3/ene_security_3"
+			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 			},
 			cop_1 = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
@@ -2028,6 +2076,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = {
 				"units/payday2/characters/ene_security_3/ene_security_3"
+			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 			},
 			cop_1 = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
@@ -2093,6 +2145,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"
 			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+			},
 			cop_1 = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
@@ -2145,6 +2201,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = {
 				"units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
+			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 			},
 			cop_1 = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
@@ -2270,6 +2330,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
 			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
 				"units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2",
@@ -2296,6 +2360,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
+			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
@@ -2342,6 +2410,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
+			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
@@ -2393,6 +2465,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"
 			},
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
 				"units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"
@@ -2430,6 +2506,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
 			},
 			security_3 = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3",
+			murky_guard = {
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
 				"units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"

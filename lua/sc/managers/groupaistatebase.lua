@@ -569,31 +569,34 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 	end
 end
 
+-- TODO: handling for instance bullshit
 function GroupAIStateBase:check_ponr_escape_area()
 	if not self._point_of_no_return_areas or setup:has_queued_exec() then
 		return
 	end
 
-	local function check_executed_objects(area_trigger, current, recursion_depth)
-		current = current or area_trigger
-		recursion_depth = recursion_depth or 2
+	local function check_executed_objects(current, checked)
+		if not current or checked[current] then
+			return
+		end
+
+		checked[current] = true
 
 		for _, params in pairs(current._values.on_executed) do
 			local element = current:get_mission_element(params.id)
 			local element_class = getmetatable(element)
 			if element_class == ElementMissionEnd then
 				return true
-			elseif recursion_depth > 0 and element_class == MissionScriptElement then
-				if check_executed_objects(area_trigger, element, recursion_depth - 1) then
-					return true
-				end
+			elseif check_executed_objects(element, checked) then
+				return true
 			end
 		end
 	end
 
+	local valid_classes = table.set(ElementAreaTrigger)
 	for _, script in pairs_g(managers.mission:scripts()) do
 		for _, element in pairs_g(script:elements()) do
-			if getmetatable(element) == ElementAreaTrigger and check_executed_objects(element) then
+			if valid_classes[getmetatable(element)] and check_executed_objects(element, {}) then
 				if not self._point_of_no_return_areas[1] or not table_contains(self._point_of_no_return_areas, element) then
 					self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = element
 				end

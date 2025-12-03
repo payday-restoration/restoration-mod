@@ -1,44 +1,66 @@
--- TODO: add new Eclipse line tweaks
 local full_sound_lookup_by_prefix = {}
 
 -- Yes, the prefixes need the _ on the end
 -- This table is indexed by prefix as-is
 
+-- proper death sounds for civilains
+-- female civ voices have the same death sound since there's only one voiceset for female enemies
+-- male
+full_sound_lookup_by_prefix.cm1_ = {
+	x02a_any_3p = "l1n_x01a_any_3p",
+}
+full_sound_lookup_by_prefix.cm2_ = {
+	x02a_any_3p = "l2n_x01a_any_3p",
+}
+full_sound_lookup_by_prefix.cm3_ = {
+	x02a_any_3p = "l3n_x01a_any_3p",
+}
+full_sound_lookup_by_prefix.cm4_ = {
+	x02a_any_3p = "l4n_x01a_any_3p",
+}
+full_sound_lookup_by_prefix.cm5_ = {
+	x02a_any_3p = "l1n_x01a_any_3p",
+}
+full_sound_lookup_by_prefix.cm6_ = {
+	x02a_any_3p = "l2n_x01a_any_3p",
+}
+-- female
+full_sound_lookup_by_prefix.cf1_ = {
+	x02a_any_3p = "fl1n_x02a_any_3p",
+}
+full_sound_lookup_by_prefix.cf2_ = {
+	x02a_any_3p = "fl1n_x02a_any_3p",
+}
+full_sound_lookup_by_prefix.cf3_ = {
+	x02a_any_3p = "fl1n_x02a_any_3p",
+}
+full_sound_lookup_by_prefix.cf4_ = {
+	x02a_any_3p = "fl1n_x02a_any_3p",
+}
+full_sound_lookup_by_prefix.cf5_ = {
+	x02a_any_3p = "fl1n_x02a_any_3p",
+}
+
 -- Non-filtered cops
 full_sound_lookup_by_prefix.l4n_ = {
 	x01a_any_3p = "l1n_x02a_any_3p",
 }
+-- fix Akan's men not having any pain/death sounds
 full_sound_lookup_by_prefix.r1n_ = {
 	x02a_any_3p = "l1n_x01a_any_3p",
 	x01a_any_3p = "l1n_x02a_any_3p",
-	ch3 = "l1n_burndeath", -- Ears ouchies
 }
 full_sound_lookup_by_prefix.r2n_ = {
 	x02a_any_3p = "l2n_x01a_any_3p",
 	x01a_any_3p = "l2n_x02a_any_3p",
-	ch3 = "l2n_burndeath", -- Ears ouchies
 }
 full_sound_lookup_by_prefix.r3n_ = {
 	x02a_any_3p = "l3n_x01a_any_3p",
 	x01a_any_3p = "l3n_x02a_any_3p",
-	ch3 = "l3n_burndeath", -- Ears ouchies
 }
 full_sound_lookup_by_prefix.r4n_ = {
-	x02a_any_3p = "l1n_x01a_any_3p",
-	x01a_any_3p = "l4n_x02a_any_3p",
-	ch3 = "l4n_burndeath", -- Ears ouchies
-}
-full_sound_lookup_by_prefix.m1n_ = {
-	ch3 = "l1n_burndeath", -- Ears ouchies
-}
-full_sound_lookup_by_prefix.m2n_ = {
-	ch3 = "l2n_burndeath", -- Ears ouchies
-}
-full_sound_lookup_by_prefix.m3n_ = {
-	ch3 = "l3n_burndeath", -- Ears ouchies
-}
-full_sound_lookup_by_prefix.m4n_ = {
-	ch3 = "l4n_burndeath", -- Ears ouchies
+	x02a_any_3p = "l4n_x01a_any_3p",
+	x01a_any_3p = "l1n_x02a_any_3p",
 }
 
 -- Female cops
@@ -46,6 +68,7 @@ full_sound_lookup_by_prefix.m4n_ = {
 full_sound_lookup_by_prefix.fl1n_ = {
 	burnhurt = "cf1_burnhurt",
 	burndeath = "cf1_burndeath",
+	ch3 = "cf1_burndeath", -- Ears ouchies
 }
 
 -- Filtered cops
@@ -57,18 +80,6 @@ full_sound_lookup_by_prefix.l3d_ = {
 	burnhurt = "l1d_burnhurt",
 	burndeath = "l1d_burndeath",
 }
-
--- Tasers
-local tsr_tbl = {
-	x02a_any_3p = "tsr_x02a_any_3p",
-	x01a_any_3p = "tsr_x01a_any_3p",
-}
-full_sound_lookup_by_prefix.tsr_ = tsr_tbl
-full_sound_lookup_by_prefix.rtsr_ = {
-	x02a_any_3p = "rtsr_x02a_any_3p",
-	x01a_any_3p = "rtsr_x01a_any_3p",
-}
-full_sound_lookup_by_prefix.mtsr_ = tsr_tbl
 
 -- Bulldozers
 local bdz_tbl = {
@@ -83,28 +94,17 @@ full_sound_lookup_by_prefix.mbdz_ = bdz_tbl
 
 -- Cloakers
 local clk_tbl = {
-	x01a_any_3p = "l2d_x01a_any_3p", -- Radio filtered hurt sound, lacks his own
-	x02a_any_3p = "clk_x02a_any_3p",
 	g90 = "clk_c01x_plu", -- Cloakers whistle in place of contact/taunt lines
 	c01 = "clk_c01x_plu",
 }
-full_sound_lookup_by_prefix.clk_ = clk_tbl
-full_sound_lookup_by_prefix.rclk_ = {
-	x02a_any_3p = "rclk_x02a_any_3p",
-	x01a_any_3p = "rclk_x01a_any_3p",
-	g90 = "clk_c01x_plu", -- Russian Cloaker technically has lines for this - but they're empty
+full_sound_lookup_by_prefix.clk_ = {
+	x01a_any_3p = "l2d_x01a_any_3p", -- Radio filtered hurt sound, lacks his own
+	x02a_any_3p = "clk_x02a_any_3p",
+	g90 = "clk_c01x_plu",
 	c01 = "clk_c01x_plu",
 }
+full_sound_lookup_by_prefix.rclk_ = clk_tbl
 full_sound_lookup_by_prefix.mclk_ = clk_tbl
-
--- Medics
-local mdc_tbl = {
-	x02a_any_3p = "mdc_x02a_any_3p",
-	x01a_any_3p = "mdc_x01a_any_3p",
-}
-full_sound_lookup_by_prefix.mdc_ = mdc_tbl
-full_sound_lookup_by_prefix.rmdc_ = mdc_tbl
-full_sound_lookup_by_prefix.mmdc_ = mdc_tbl
 
 -- Gangsters
 local gangsters_1_tbl = {
@@ -149,7 +149,7 @@ local l5n_sabotage_tbl = {
 	"Play_l5n_r01_con",
 }
 full_sound_lookup_by_prefix.l5n_ = {
-	c01 = l5n_contact_tbl,  -- Use i01 and g90 as contact, l5n lacks them
+	c01 = l5n_contact_tbl, -- Use i01 and g90 as contact, l5n lacks them
 	att = l5n_contact_tbl,
 
 	a07a = l5n_alert_tbl,
@@ -234,17 +234,5 @@ full_sound_lookup_by_prefix.l5n_ = {
 	x02a_any_3p = "l1n_x01a_any_3p",
 	x01a_any_3p = "l1n_x02a_any_3p",
 }
--- Test fix for l5n on clientside
--- for _, replacement in pairs(full_sound_lookup_by_prefix.l5n_) do
--- 	if type(replacement) == "table" then
--- 		for _, v in pairs(replacement) do
--- 			if v:begins("Play_") then
--- 				full_sound_lookup_by_prefix.l5n_[SoundDevice:string_to_id(v)] = replacement
--- 			end
--- 		end
--- 	elseif replacement:begins("Play_") then
--- 		full_sound_lookup_by_prefix.l5n_[SoundDevice:string_to_id(replacement)] = replacement
--- 	end
--- end
 
 return full_sound_lookup_by_prefix

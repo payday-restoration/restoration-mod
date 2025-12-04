@@ -77,7 +77,7 @@ return {
 			{id = 400016, delay = 0},
 			{id = 400017, delay = 0}, -- snipers
 			{id = 400018, delay = 0},
-			{ID = 400021, delay = 0}, -- flammer 
+			{id = 400021, delay = 0}, -- flammer 
 		},
 	},
 	-- Titan Shields for OVK+ (PJ only)

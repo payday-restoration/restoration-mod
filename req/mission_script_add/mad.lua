@@ -2,7 +2,7 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local shields =  ((difficulty >= 8 and pro_job) and "units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield")
 local sniper = ((difficulty >= 8 and pro_job) and "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" or "units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3")
-local flammer = ((difficulty >= 8 and pro_job) and "units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
+local flammer =  "units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer"
 local death_wish_above = difficulty >= 7
 
 local optsDefend_SO = {
@@ -88,8 +88,8 @@ local opts_flammer = {
 	},
 }
 local enable_flammer = {
-	enabled = death_wish_above and pro_jbo,
-	elements = { id = 400021, delay = 0,},
+	enabled = death_wish_above and pro_job,
+	elements = { 400021 },
 	toggle = "on", 
 }
 return {
@@ -118,7 +118,7 @@ return {
 		-- Flammer 
 		restoration:gen_dummy(400021, "flammer blocker", Vector3(4705.25, 2923.58, 8.368), Rotation(0, 0, -0), opts_flammer),
 		restoration:gen_so(400022, "flammer_blocker_so",Vector3(4705.25, 2923.58, 8.368), Rotation(0, 0, -0), optsDefend_SO),
-		restoration:gen_toggleelement(400023, "enable_flammer", enabale_flammer),
+		restoration:gen_toggleelement(400023, "enable_flammer", enable_flammer),
 
 		-- Some Snipers 
 		restoration:gen_so(400001, "sniper_defend_so_1", Vector3(3262.032, 3805.700 ,400), Rotation(147 , -0, -0), optsDefend_SO),

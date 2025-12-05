@@ -1066,8 +1066,8 @@ local grips = {
 					trail_effect = "_dmc/effects/nato_trail",
 					object_damage_mult_override = 0.45,
 					ene_hs_mult_add = 0.65,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_max_mul = 0.75,
 					hs_mult = 2.5,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
@@ -1102,8 +1102,8 @@ local grips = {
 					trail_effect = "_dmc/effects/nato_trail",
 					object_damage_mult_override = 0.45,
 					ene_hs_mult_add = 0.5,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_max_mul = 0.75,
 					hs_mult = 2.5,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
@@ -1138,8 +1138,8 @@ local grips = {
 					trail_effect = "_dmc/effects/nato_trail",
 					object_damage_mult_override = 0.9,
 					ene_hs_mult_add = 0.35,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_max_mul = 0.75,
 					hs_mult = 2.5,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
@@ -1174,8 +1174,8 @@ local grips = {
 					trail_effect = "_dmc/effects/nato_trail",
 					object_damage_mult_override = 1.35,
 					ene_hs_mult_add = 0.2,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_max_mul = 0.75,
 					hs_mult = 2.5,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
@@ -35274,8 +35274,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						}
 						self.parts[ part_id ].custom_stats = nil
 					end
-					self.parts.wpn_fps_vg_vmp_vert.alt_icon = "guis/dlcs/turtles/textures/pd2/blackmarket/icons/weapons/polymer"
-					self.parts.wpn_fps_vg_vmp_medium.alt_icon = "guis/dlcs/rvd/textures/pd2/blackmarket/icons/weapons/corgi"
+					self.parts.wpn_fps_vg_vmp_vert.alt_icon = nil--"guis/dlcs/turtles/textures/pd2/blackmarket/icons/weapons/polymer"
+					self.parts.wpn_fps_vg_vmp_medium.alt_icon = nil--"guis/dlcs/rvd/textures/pd2/blackmarket/icons/weapons/corgi"
 					foregrips = { --standard vfg clones
 						"wpn_fps_vg_vmp_cheems",
 						"wpn_fps_vg_vmp_pod"
@@ -35290,8 +35290,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						}
 						self.parts[ part_id ].custom_stats = nil
 					end
-					self.parts.wpn_fps_vg_vmp_cheems.alt_icon = "guis/dlcs/bbq/textures/pd2/blackmarket/icons/weapons/m32"
-					self.parts.wpn_fps_vg_vmp_pod.alt_icon = "guis/dlcs/character_pack_clover/textures/pd2/blackmarket/icons/weapons/l85a2"
+					self.parts.wpn_fps_vg_vmp_cheems.alt_icon = nil--"guis/dlcs/bbq/textures/pd2/blackmarket/icons/weapons/m32"
+					self.parts.wpn_fps_vg_vmp_pod.alt_icon = nil--"guis/dlcs/character_pack_clover/textures/pd2/blackmarket/icons/weapons/l85a2"
 
 
 					self.parts.wpn_fps_smg_mac10_fg_m4.supported = true

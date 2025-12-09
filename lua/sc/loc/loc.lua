@@ -5804,7 +5804,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "Stun Resistance",
-				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemy melee attacks push you back #{skill_color}#$skill_value_b1## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the visual effect duration of flashbangs by #{skill_color}#$skill_value_p1.##\n\nKnockback from enemy gunfire is reduced by #{skill_color}#$skill_value_p2## for every point of armor you have.",
+				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemy melee attacks push you back #{skill_color}#$skill_value_b1## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the visual effect duration of flashbangs and enemy concussion rounds by #{skill_color}#$skill_value_p1.##\n\nKnockback from enemy gunfire is reduced by #{skill_color}#$skill_value_p2## for every point of armor you have.",
 
 				--Die Hard
 				["menu_show_of_force_sc"] = "Die Hard",
@@ -5876,7 +5876,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Bulletproof",
-				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nBlocks the excess damage of Snipers, Titan Dozers, fire and explosives that break your armor continuing through to your health.\n\n#{risk}#NOTE: Does not protect against self damage or the direct health damage taken from Cloaker kicks and Taser shocks.##\n\nACE: #{owned}#$pro##\nWhile your armor is at least #{skill_color}#$skill_value_p5## full, damage taken is reduced by a number of points equal to #{skill_color}#$skill_value_p1## of your base armor.\n\nWhen your armor breaks you gain #{skill_color}#$skill_value_p3## seconds of damage grace for every #{skill_color}#$skill_value_p4## points of base armor you have.\n\nYour armor recovers #{skill_color}#$skill_value_p2## faster. $anarc_disable\n\n ",
+				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nBlocks the excess damage of Snipers, Titan Dozers, fire and explosives that break your armor continuing through to your health.\n\n#{risk}#NOTE: Does not protect against self damage or the direct health damage taken from Cloaker kicks and Taser shocks.##\n\nACE: #{owned}#$pro##\nThe first #{skill_color}#$skill_value_p5## of your armor, to a maximum of #{skill_color}#$skill_value_p6## armor, will take reduced damage by a number of points equal to #{skill_color}#$skill_value_p1## of your base armor.\n\nWhen your armor breaks you gain #{skill_color}#$skill_value_p3## seconds of damage grace for every #{skill_color}#$skill_value_p4## points of base armor you have.\n\nYour armor recovers #{skill_color}#$skill_value_p2## faster. $anarc_disable\n\n ",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--

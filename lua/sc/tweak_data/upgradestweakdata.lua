@@ -1239,7 +1239,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.armor_full_damage_absorb = {
 							{
 								0.15, -- % of armor as DA
-								0.75 -- Armor thereshold to recieve DA
+								0.75, -- Armor thereshold to recieve DA
+								5.0 --Armor cap for DA 
 							}
 						}
 						self.values.player.scaling_armor_break_grace = {
@@ -1256,7 +1257,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 							skill_value_p2 = tostring((1 - self.values.player.armor_regen_timer_multiplier_tier[1]) * 100).."%", -- Armor recovery buff
 							skill_value_p3 = tostring(self.values.player.scaling_armor_break_grace[1].grace_mod),
 							skill_value_p4 = tostring(self.values.player.scaling_armor_break_grace[1].armor_steps * 10),
-							skill_value_p5 = tostring(self.values.player.armor_full_damage_absorb[1][2] * 100).."%", -- DA threshold
+							skill_value_p5 = tostring((1 - self.values.player.armor_full_damage_absorb[1][2]) * 100).."%", -- DA threshold
+							skill_value_p6 = tostring(self.values.player.armor_full_damage_absorb[1][3] * 10), -- DA clamp
 						}
 			
 		--Breacher--

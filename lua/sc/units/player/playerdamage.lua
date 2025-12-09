@@ -595,7 +595,7 @@ function PlayerDamage:damage_bullet(attack_data)
 						"melee_hit_var2"
 					}
 					self._unit:camera():play_shaker(vars[math.random(#vars)], 0.02)
-					self._unit:movement():current_state()._spread_stun_t = 1
+					self._unit:movement():current_state()._spread_stun_t = 0.5
 					managers.hud:activate_effect_screen(0.75, Vector3(0.6, 0.3, 0.1) * effect_alpha)
 				end
 
@@ -608,8 +608,9 @@ function PlayerDamage:damage_bullet(attack_data)
 							"melee_hit_var2"
 						}
 						self._unit:camera():play_shaker(vars[math.random(#vars)], 0.25, 0.5)
-						self._unit:movement():current_state()._d_scope_t = 0.5
-						managers.hud:activate_effect_screen(0.7, Vector3(0.35, 0.25, 0.1) * effect_alpha)
+						local d_scope_t = 2 * managers.player:upgrade_value("player", "flashbang_multiplier")
+						self._unit:movement():current_state()._d_scope_t = d_scope_t
+						managers.hud:activate_effect_screen(d_scope_t, Vector3(0.35, 0.25, 0.1) * effect_alpha)
 					end
 				end
 
@@ -2233,7 +2234,9 @@ function PlayerDamage:set_armor(armor)
 			self._can_dodge_heal = true
 		end
 		local bulletproof_aced = managers.player:has_category_upgrade("player", "armor_full_damage_absorb")
-		if bulletproof_aced and math.round(armor * 10) >= (math.round(self:_max_armor() * 10) * managers.player:upgrade_value("player", "armor_full_damage_absorb", 0)[2]) then --mmmmm floating point errors
+		local missing_armor = math.round((self:_max_armor() - armor) * 10)
+		if bulletproof_aced and (math.round(armor * 10) >= math.round(self:_max_armor() * 10) * managers.player:upgrade_value("player", "armor_full_damage_absorb", 0)[2]) and 
+		(missing_armor < (managers.player:upgrade_value("player", "armor_full_damage_absorb", 0)[3] * 10)) then --mmmmm floating point errors
 			local pm = managers.player
 			local base_armor = tweak_data.player.damage.ARMOR_INIT + pm:body_armor_value("armor")
 			managers.player:set_damage_absorption(

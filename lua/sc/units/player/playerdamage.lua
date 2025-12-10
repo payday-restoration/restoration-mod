@@ -608,7 +608,7 @@ function PlayerDamage:damage_bullet(attack_data)
 							"melee_hit_var2"
 						}
 						self._unit:camera():play_shaker(vars[math.random(#vars)], 0.25, 0.5)
-						local d_scope_t = 2 * managers.player:upgrade_value("player", "flashbang_multiplier")
+						local d_scope_t = 1.5 * managers.player:upgrade_value("player", "flashbang_multiplier")
 						self._unit:movement():current_state()._d_scope_t = d_scope_t
 						managers.hud:activate_effect_screen(d_scope_t, Vector3(0.35, 0.25, 0.1) * effect_alpha)
 					end

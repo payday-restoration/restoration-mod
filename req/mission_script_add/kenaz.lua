@@ -8,7 +8,7 @@ local death_wish_above = difficulty >= 7
 local overkill_above = difficulty >= 5
 local diff_scaling = (death_wish_above and 0.7 or overkill_above and 0.15 or 0.3) + (pro_job and 0.5 or 0)
 local enabled_chance_ambush = math.random() < diff_scaling
-local enabled_ambush = pro_job or overkill_above or death_wish_above and enabled_chance_ambush
+local enabled_ambush = pro_job or overkill_above  and enabled_chance_ambush
 
 local ponr_value_limo = 1500 - (difficulty * 10)
 local ponr_timer_player_mul_limo = {

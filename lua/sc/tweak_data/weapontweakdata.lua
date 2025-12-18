@@ -24994,7 +24994,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.kord_6p67.stats_modifiers = nil
 				self.kord_6p67.panic_suppression_chance = 0.05
-				self.kord_6p67.timers = deep_clone(self.ak5.timers)
+				self.kord_6p67.reload_not_empty_speed_multiplier = 1.1
+				self.kord_6p67.reload_speed_multiplier = 1.15
+				self.kord_6p67.timers.reload_empty = 3.87
+				self.kord_6p67.timers.reload_exit_empty = 0.8
+				self.kord_6p67.timers.reload_not_empty = 2.9
+				self.kord_6p67.timers.reload_exit_not_empty = 1.33
 			end
 
 			if self.scotia then

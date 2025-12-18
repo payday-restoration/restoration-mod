@@ -24573,6 +24573,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			burst_fire = {
 				rof_mult = 3,
 				delay = 0.15,
+				recoil_mult = 0.6,
+				last_recoil_mult = 1.02
 			},
 			init_rof = {
 				count = 2,
@@ -27772,6 +27774,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+		if self.parts.wpn_fps_ass_kord_6p67_safety_burst then
+			self.parts.wpn_fps_ass_kord_6p67_safety_burst.pcs = nil
+			self.parts.wpn_fps_ass_kord_6p67_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_kord_6p67_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_kord_6p67_flash_hider.perks = nil
+		end
+
 		if self.parts.wpn_fps_snp_baltic_receiver_lower then
 			self.parts.wpn_fps_snp_baltic_flash_hider.perks = nil
 			self.parts.wpn_fps_snp_baltic_flash_hider.custom_stats = nil
@@ -28018,6 +28027,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_scotia_stock_heavy.supported = true
 				self.parts.wpn_fps_ass_scotia_stock_heavy.stats = deep_clone(stocks.adj_hvy_rec_stats)
 				self.parts.wpn_fps_ass_scotia_stock_heavy.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+				--Combat
+				self.parts.wpn_fps_ass_scotia_stock_skel.supported = true
+				self.parts.wpn_fps_ass_scotia_stock_skel.stats = deep_clone(stocks.adj_hvy_acc_stats)
+				self.parts.wpn_fps_ass_scotia_stock_skel.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
 			--MAGS
 				--Blink (Short)
 				self.parts.wpn_fps_ass_scotia_magazine_short.supported = true

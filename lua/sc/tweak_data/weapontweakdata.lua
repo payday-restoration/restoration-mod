@@ -16615,7 +16615,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tilt.BURST_FIRE = {
 					count = 2,
 					rof_mult = 3,
-					delay = 0.15
+					delay = 0.15,
+					recoil_mult = 0.6,
+					last_recoil_mult = 1.02
 				}
 				self.tilt.ADAPTIVE_BURST_SIZE = false
 				self.tilt.fire_rate_init_count = 2
@@ -24945,6 +24947,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     RJC9000'S MODS     ]]--
+
+			if self.kord_6p67 then
+				self.kord_6p67.recategorize = { "light_ar" }
+				self.kord_6p67.damage_type = "assault_rifle"
+				self.kord_6p67.warsaw = true
+				self.kord_6p67.CLIP_AMMO_MAX = 30
+				self.kord_6p67.fire_mode_data.fire_rate = 0.0666667
+				self.kord_6p67.tactical_reload = 1
+				self.kord_6p67.AMMO_MAX = 150
+				self.kord_6p67.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.kord_6p67.kick_pattern = {
+					{0, self.stat_info.kick_tables.horizontal_recoil},
+					{3, self.stat_info.kick_tables.right_recoil},
+					{10, self.stat_info.kick_tables.even_recoil},
+					{16, self.stat_info.kick_tables.left_recoil},
+					{23, self.stat_info.kick_tables.horizontal_recoil}
+				}
+				self.kord_6p67.BURST_FIRE = true
+				self.kord_6p67.BURST_FIRE = {
+					count = 2,
+					delay = 0.120,
+					recoil_mult = 0.9,
+					last_recoil_mult = 1.01
+				}
+				self.kord_6p67.supported = true
+				self.kord_6p67.ads_speed = 0.320
+				self.kord_6p67.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 5000,
+					min_mult = 0.625
+				}
+				self.kord_6p67.stats = {
+					damage = 24,
+					spread = 71,
+					recoil = 71,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 25,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.kord_6p67.stats_modifiers = nil
+				self.kord_6p67.panic_suppression_chance = 0.05
+				self.kord_6p67.timers = deep_clone(self.ak5.timers)
+			end
 
 			if self.scotia then
 				self.scotia.categories = { "assault_rifle" }

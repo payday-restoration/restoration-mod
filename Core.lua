@@ -355,10 +355,10 @@ function restoration:Init()
 		"hogar",-- The House Robbery
 		"icing",	--Road Rage
 		"gunw_lvl",  -- Gun Waashing
-		"R&amp;B Bank" -- RNB Bank (Notoriety port)
-		"skm_tbh" --TBA
-		"skm_tbh_xmas" --TBA
-		"money_tbh" --TBA
+		"R&amp;B Bank", -- RNB Bank (Notoriety port)
+		"skm_tbh", --TBA
+		"skm_tbh_xmas", --TBA
+		"money_tbh", --TBA
 		"money_tbh_xmas" --TBA
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.

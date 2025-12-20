@@ -56,7 +56,7 @@ tweak_data.scene_poses.weapon.bessy = {
 tweak_data.pistol = {
 	swap_bonus = 3.0,
 	ads_move_speed_mult = 0.8,
-	moving_spread_mult = 0.5,
+	moving_spread_mult = 1,
 	hipfire_spread_mult = 0.5
 }
 	tweak_data.pistol_pdw = {
@@ -65,9 +65,10 @@ tweak_data.pistol = {
 	tweak_data.handcannon = {
 		swap_bonus = 2.0 / tweak_data.pistol.swap_bonus,
 		ads_move_speed_mult = 0.6 / tweak_data.pistol.ads_move_speed_mult,
-		moving_spread_mult = 1 / tweak_data.pistol.moving_spread_mult,
-		hipfire_spread_mult = 1.2 / tweak_data.pistol.hipfire_spread_mult
+		moving_spread_mult = 1.5 / tweak_data.pistol.moving_spread_mult,
+		hipfire_spread_mult = 1 / tweak_data.pistol.hipfire_spread_mult
 	}
+
 		tweak_data.yeehaw = {
 			ads_move_speed_mult = 0.8 / (tweak_data.pistol.ads_move_speed_mult * tweak_data.handcannon.ads_move_speed_mult),
 			hipfire_spread_mult = 0.5 / (tweak_data.pistol.hipfire_spread_mult * tweak_data.handcannon.hipfire_spread_mult)

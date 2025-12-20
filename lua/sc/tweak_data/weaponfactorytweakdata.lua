@@ -19737,6 +19737,9 @@ end)
 						translation = Vector3(-0.055, -15.4, -2.7),
 						rotation = Rotation(-0.05, -0.06, -0.6)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_kord_6p67 = {
+						translation = Vector3(0.015, 2.3, -3.495)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g11k2 = {
 						translation = Vector3(-0.012, -2.3, -2.756)
@@ -27779,6 +27782,69 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_kord_6p67_flash_hider.stats = { value = 0 }
 			self.parts.wpn_fps_ass_kord_6p67_flash_hider.custom_stats = nil
 			self.parts.wpn_fps_ass_kord_6p67_flash_hider.perks = nil
+
+			--BARRELS
+				self.parts.wpn_fps_ass_kord_6p67_barrel_fluted.supported = true
+				self.parts.wpn_fps_ass_kord_6p67_barrel_fluted.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_kord_6p67_barrel_fluted.custom_stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_kord_6p67_barrel_475.supported = true
+				self.parts.wpn_fps_ass_kord_6p67_barrel_475.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_ass_kord_6p67_barrel_475.custom_stats = deep_clone(barrels.long_b1_stats)
+			--STOCKS
+				self.parts.wpn_fps_ass_kord_6p67_stock_early.supported = true
+				self.parts.wpn_fps_ass_kord_6p67_stock_early.stats.value = 0
+				self.parts.wpn_fps_ass_kord_6p67_stock_early.stats = { value = 5, recoil = -2, spread = 1}
+				self.parts.wpn_fps_ass_kord_6p67_stock_early.custom_stats = nil
+
+				self.parts.wpn_fps_ass_kord_6p67_stock_collapsed.supported = true
+				self.parts.wpn_fps_ass_kord_6p67_stock_collapsed.stats = deep_clone(stocks.fold_nocheeks_stats)
+				self.parts.wpn_fps_ass_kord_6p67_stock_collapsed.stats.value = 0
+				self.parts.wpn_fps_ass_kord_6p67_stock_collapsed.custom_stats = deep_clone(stocks.fold_nocheeks_stats)
+
+				self.parts.wpn_fps_ass_kord_6p67_stock_transport_early.supported = true
+				self.parts.wpn_fps_ass_kord_6p67_stock_transport_early.stats.value = 0
+				self.parts.wpn_fps_ass_kord_6p67_stock_transport_early.stats = deep_clone(stocks.remove_nocheeks_stats)
+				self.parts.wpn_fps_ass_kord_6p67_stock_transport_early.custom_stats = deep_clone(stocks.remove_nocheeks_stats)
+
+				self.parts.wpn_fps_ass_kord_6p67_stock_transport.supported = true
+				self.parts.wpn_fps_ass_kord_6p67_stock_transport.stats = deep_clone(stocks.remove_folder_stats)
+				self.parts.wpn_fps_ass_kord_6p67_stock_transport.stats.value = 0
+				self.parts.wpn_fps_ass_kord_6p67_stock_transport.custom_stats = deep_clone(stocks.remove_folder_stats)
+			--MAGS
+				self.parts.wpn_fps_ass_kord_6p67_magazine_pmag_ext.stats = {
+					value = 7,
+					concealment = -1,
+					reload = -3,
+					extra_ammo = 6,
+				}
+				self.parts.wpn_fps_ass_kord_6p67_magazine_pmag_ext.custom_stats = {
+					ads_speed_mult = 1.025
+				}
+				self.parts.wpn_fps_ass_kord_6p67_magazine_pmag_fast.stats = {
+					value = 6,
+					spread = -1,
+					reload = 3,
+					concealment = -1
+				}
+				self.parts.wpn_fps_ass_kord_6p67_magazine_pmag_fast.custom_stats = nil
+
+			self.wpn_fps_ass_kord_6p67.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
+				stats = {
+					concealment = -1,
+					recoil = 2
+				}
+			}
+			self.wpn_fps_ass_kord_6p67.override.wpn_fps_upg_vg_ass_smg_stubby = {
+				stats = {
+					concealment = 1,
+					recoil = -2
+				}
+			}
+			self.wpn_fps_ass_kord_6p67.override.wpn_fps_upg_ak_m_uspalm = nil
+
+			table.insert(self.wpn_fps_ass_kord_6p67.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+
+			self.wpn_fps_ass_kord_6p67_npc.uses_parts = deep_clone(self.wpn_fps_ass_kord_6p67.uses_parts)
 		end
 
 		if self.parts.wpn_fps_snp_baltic_receiver_lower then
@@ -40902,7 +40968,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					armor_piercing_override = 0.25,
 					alt_desc = "bm_ap_armor_25_weapon_sc_desc",
 					ignore_rof_mult_anims = true,
-					rof_mult = 0.76923076,
+					rof_mult = 0.89230769,
 					srm = {
 						-0.02,
 						{1, 1.1},

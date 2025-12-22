@@ -24948,6 +24948,62 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.peacekeepermk1 then
+				self.peacekeepermk1.categories = {
+					"smg",
+					"pdw"
+				}
+				self.peacekeepermk1.recategorize = { "light_smg" }
+				self.peacekeepermk1.damage_type = "machine_gun"
+				self.peacekeepermk1.CLIP_AMMO_MAX = 30
+				self.peacekeepermk1.fire_mode_data.fire_rate = 0.0700116
+				self.peacekeepermk1.nato = true
+				self.peacekeepermk1.tactical_reload = 1
+				self.peacekeepermk1.AMMO_MAX = 150
+				self.peacekeepermk1.kick = self.stat_info.kick_tables.even_recoil
+				self.peacekeepermk1.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{3, self.stat_info.kick_tables.right_recoil},
+					{7, self.stat_info.kick_tables.even_recoil},
+					{9, self.stat_info.kick_tables.moderate_left_kick},
+					{12, self.stat_info.kick_tables.moderate_kick},
+					{15, self.stat_info.kick_tables.moderate_right_kick},
+					{17, self.stat_info.kick_tables.right_recoil}
+				}
+				self.peacekeepermk1.BURST_FIRE = false
+				self.peacekeepermk1.supported = true
+				self.peacekeepermk1.ads_speed = 0.220
+				self.peacekeepermk1.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3900,
+					min_mult = 0.55555
+				}
+				self.peacekeepermk1.stats = {
+					damage = 18,
+					spread = 81,
+					recoil = 75,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 24,
+					suppression = 12,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.peacekeepermk1.stats_modifiers = nil
+				self.peacekeepermk1.hs_mult = 1.33333
+				self.peacekeepermk1.armor_piercing_chance = 0.75
+				self.peacekeepermk1.panic_suppression_chance = 0.05
+				self.peacekeepermk1.lock_slide = true
+				self.peacekeepermk1.reload_speed_multiplier = 0.9
+				self.peacekeepermk1.timers.reload_empty = 2.04
+				self.peacekeepermk1.timers.reload_exit_empty = 0.7
+				self.peacekeepermk1.timers.reload_not_empty = 1.64
+				self.peacekeepermk1.timers.reload_exit_not_empty = 0.64
+			end
+
 			if self.kord_6p67 then
 				self.kord_6p67.recategorize = { "light_ar" }
 				self.kord_6p67.damage_type = "assault_rifle"

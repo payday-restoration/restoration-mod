@@ -19589,6 +19589,10 @@ end)
 						translation = Vector3(0, 3.4, -5.07),
 						rotation = Rotation(0.01, -0.074, 0.55)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_peacekeepermk1 = {
+						translation = Vector3(0.034, 5.8, -0.045),
+						rotation = Rotation(0.01, -0.045, 0.6)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_bp12 = {
 						translation = Vector3(0.04, 5.2, 0.04),
@@ -27777,6 +27781,153 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+
+		if self.parts.wpn_fps_smg_peacekeepermk1_barrel_xlong then
+			self.parts.wpn_fps_smg_peacekeepermk1_flash_hider.supported = true
+			self.parts.wpn_fps_smg_peacekeepermk1_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_smg_peacekeepermk1_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_smg_peacekeepermk1_flash_hider.perks = nil
+			self.parts.wpn_fps_smg_peacekeepermk1_stock.supported = true
+			self.parts.wpn_fps_smg_peacekeepermk1_stock.stats = { value = 0 }
+			self.parts.wpn_fps_smg_peacekeepermk1_stock.custom_stats = nil
+			self.parts.wpn_fps_smg_peacekeepermk1_bo2animation.supported = true
+			self.parts.wpn_fps_smg_peacekeepermk1_bo2animation.stats = {
+				reload = 10,
+				spread = -2,
+				recoil = -6
+			}
+			self.parts.wpn_fps_smg_peacekeepermk1_bo2animation.custom_stats = {
+				falloff_start_mult = 2.2,
+				falloff_end_mult = 1.6153846,
+				rof_mult = 0.87514585,
+				reload_non_empty_anim_mult = 0.84,
+				adj_timers = {
+					reload_exit_empty = 0.6,
+					reload_exit_not_empty = 0.95
+				}
+			}
+			--BARRELS
+				--Barrier
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_xlong.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_xlong.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_xlong.custom_stats = deep_clone(barrels.long_b3_stats)
+				--Iconic
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_long.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_long.stats = {
+					value = 4,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_long.custom_stats = nil
+				--Frontline
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_med.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_med.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_med.stats.concealment = -2
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_med.stats.recoil = 2
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_med.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Ascend
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_short.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+				--Deadeye
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_heavy.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_heavy.desc_id = "bm_wp_chf_50_desc"
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_heavy.has_description = true
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_heavy.stats = {
+					value = 10,
+					recoil = -20,
+					concealment = -4
+				}
+				self.parts.wpn_fps_smg_peacekeepermk1_barrel_heavy.custom_stats = {
+					chf = true
+				}
+			--GRIPS
+				--Quickdraw
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_quick.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_quick.stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_quick.custom_stats = deep_clone(grips.quickdraw_1)
+				--Ergonomic
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_tac.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_tac.stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_tac.custom_stats = deep_clone(grips.dual_stat_1)
+				--Combat
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_rcvr.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_rcvr.stats = deep_clone(grips.acc_1)
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_rcvr.custom_stats = deep_clone(grips.acc_1)
+				--CQB
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_cqb.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_cqb.stats = deep_clone(grips.quickdraw_2)
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_cqb.custom_stats = deep_clone(grips.quickdraw_2)
+				--Commando
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_light.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_light.stats = deep_clone(grips.recoil_1)
+				self.parts.wpn_fps_smg_peacekeepermk1_grip_light.custom_stats = deep_clone(grips.recoil_1)
+			--STOCKS
+				--Infiltrator
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_tac.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_tac.stats = deep_clone(stocks.adj_acc_stats)
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_tac.custom_stats = deep_clone(stocks.adj_acc_stats)
+				--Heavy
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_full.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_full.stats = deep_clone(stocks.adj_rec_stats)
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_full.custom_stats = deep_clone(stocks.adj_rec_stats)
+				--Light
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_light.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_light.stats = deep_clone(stocks.adj_to_fold_stats)
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_light.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+				--Balanced
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_heavy.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_heavy.stats = deep_clone(stocks.adj_hvy_rec_stats)
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_heavy.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+				--Combat
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_skel.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_skel.stats = deep_clone(stocks.adj_hvy_acc_stats)
+				self.parts.wpn_fps_smg_peacekeepermk1_stock_skel.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
+			--MAGS
+				--Recon (Short)
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_fast.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_fast.stats = {
+					value = 2,
+					concealment = 2,
+					reload = 5,
+					extra_ammo = -5
+				}
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_fast.custom_stats = {
+					ads_speed_mult = 0.95
+				}
+				--Snap (Speed)
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_flip.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_flip.stats = {
+					value = 5,
+					spread = -1,
+					concealment = -1,
+					reload = 2
+				}
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_flip.custom_stats = nil
+				--Vulcan (Ext I)
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_large.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_large.stats = {
+					value = 6,
+					concealment = -2,
+					reload = -4,
+					extra_ammo = 10
+				}
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_large.custom_stats = {
+					ads_speed_mult = 1.05
+				}
+				--Barrage (Ext II)
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_xlarge.supported = true
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_xlarge.stats = {
+					value = 8,
+					concealment = -5,
+					reload = -7,
+					extra_ammo = 20
+				}
+				self.parts.wpn_fps_smg_peacekeepermk1_magazine_xlarge.custom_stats = {
+					ads_speed_mult = 1.125
+				}
+		end
+
 		if self.parts.wpn_fps_ass_kord_6p67_safety_burst then
 			self.parts.wpn_fps_ass_kord_6p67_safety_burst.pcs = nil
 			self.parts.wpn_fps_ass_kord_6p67_flash_hider.stats = { value = 0 }

@@ -3984,7 +3984,8 @@ end)
 					self.parts.wpn_fps_pis_c96_m_extended.pcs = {}
 					self.parts.wpn_fps_pis_c96_m_extended.supported = true
 					self.parts.wpn_fps_pis_c96_m_extended.custom_stats = {
-						ads_speed_mult = 1.025
+						ads_speed_mult = 1.025,
+						is_internal = true
 					}
 					self.parts.wpn_fps_pis_c96_m_extended.stats = {
 						value = 1,
@@ -4100,6 +4101,7 @@ end)
 					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_i_iw_hailstorm = {
 						desc_id = "bm_wp_upg_i_iw_hailstorm_no_pen_desc",
 						custom_stats = {
+							is_internal = true,
 							info_lock_burst = true,
 							burst_fire = {
 								count = 3,
@@ -4862,7 +4864,8 @@ end)
 						reload = 4
 					}
 					self.parts.wpn_fps_pis_korth_m_6.custom_stats = {
-						ads_speed_mult = 0.95
+						ads_speed_mult = 0.95,
+						is_internal = true
 					}
 
 					--Exclusive Set
@@ -14438,6 +14441,7 @@ end)
 					self.parts.wpn_fps_snp_winchester_b_long.stats.concealment = -4
 					self.parts.wpn_fps_snp_winchester_b_long.stats.extra_ammo = 5
 					self.parts.wpn_fps_snp_winchester_b_long.custom_stats = deep_clone(barrels.long_b3_stats)
+					self.parts.wpn_fps_snp_winchester_b_long.custom_stats.is_internal = true
 
 					--Outlaw's Silenced Barrel
 					self.parts.wpn_fps_snp_winchester_b_suppressed.pcs = {
@@ -15350,6 +15354,7 @@ end)
 						spread = 1
 					}
 					self.parts.wpn_fps_snp_sbl_b_long.custom_stats = {
+						is_internal = true,
 						falloff_start_mult = 1.075,
 						falloff_end_mult = 1.075
 					}
@@ -15370,6 +15375,10 @@ end)
 						concealment = 1,
 						suppression = 12,
 						alert_size = -1
+					}
+					self.parts.wpn_fps_snp_sbl_b_short.custom_stats = {
+						ads_speed_mult = 0.975,
+						is_internal = true
 					}
 					self.parts.wpn_fps_snp_sbl_b_short.perks = {"silencer"}
 
@@ -16619,7 +16628,8 @@ end)
 					self.parts.wpn_fps_sho_ben_b_long.custom_stats = {
 						falloff_start_mult = 1.075,
 						falloff_end_mult = 1.075,
-						ads_speed_mult = 1.025
+						ads_speed_mult = 1.025,
+						is_internal = true
 					}
 
 					--Short Barrel
@@ -16634,7 +16644,8 @@ end)
 					self.parts.wpn_fps_sho_ben_b_short.custom_stats = {
 						falloff_start_mult = 0.9,
 						falloff_end_mult = 0.9,
-						ads_speed_mult = 0.95
+						ads_speed_mult = 0.95,
+						is_internal = true
 					}
 
 					--Collapsed Stock
@@ -16681,6 +16692,10 @@ end)
 						value = 1,
 						concealment = -1,
 						extra_ammo = 2
+					}
+					self.parts.wpn_fps_sho_b_spas12_long.custom_stats = {
+						ads_speed_mult = 1.025,
+						is_internal = true
 					}
 
 					--Folded Stock
@@ -17097,7 +17112,8 @@ end)
 						concealment = -2
 					}
 					self.parts.wpn_fps_sho_supernova_m_extender.custom_stats = {
-						ads_speed_mult = 1.05
+						ads_speed_mult = 1.05,
+						is_internal = true
 					}
 					self.parts.wpn_fps_sho_supernova_m_extender.override = nil
 
@@ -17237,6 +17253,7 @@ end)
 						falloff_start_mult = 1.075,
 						falloff_end_mult = 1.075,
 						ads_speed_mult = 1.05,
+						is_internal = true
 					}
 
 					--CE Rail Stabilizer
@@ -17463,16 +17480,14 @@ end)
 						40
 					}
 					self.parts.wpn_fps_shot_r870_m_extended.supported = true
-					self.parts.wpn_fps_shot_r870_m_extended.custom_stats = {
-						ads_speed_mult = 1.025
-					}
 					self.parts.wpn_fps_shot_r870_m_extended.stats = {
 						value = 7,
 						concealment = -1,
 						extra_ammo = 2
 					}
 					self.parts.wpn_fps_shot_r870_m_extended.custom_stats = {
-						ads_speed_mult = 1.025
+						ads_speed_mult = 1.025,
+						is_internal = true
 					}
 
 					--Muldon Stock
@@ -17585,6 +17600,7 @@ end)
 					self.parts.wpn_fps_sho_ksg_b_long.stats.concealment = -3
 					self.parts.wpn_fps_sho_ksg_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
 					self.parts.wpn_fps_sho_ksg_b_long.custom_stats.ads_speed_mult = 1.075
+					self.parts.wpn_fps_sho_ksg_b_long.custom_stats.is_internal = true
 					--Short Barrel
 					self.parts.wpn_fps_sho_ksg_b_short.pcs = {}
 					self.parts.wpn_fps_sho_ksg_b_short.supported = true
@@ -17593,6 +17609,7 @@ end)
 					self.parts.wpn_fps_sho_ksg_b_short.stats.concealment = 2
 					self.parts.wpn_fps_sho_ksg_b_short.custom_stats = deep_clone(barrels.short_b1_stats)
 					self.parts.wpn_fps_sho_ksg_b_short.custom_stats.ads_speed_mult = 0.95
+					self.parts.wpn_fps_sho_ksg_b_short.custom_stats.is_internal = true
 
 					--Flip-up Sight
 					self.parts.wpn_fps_upg_o_mbus_rear.pcs = {}
@@ -17762,7 +17779,8 @@ end)
 						concealment = -1
 					}
 					self.parts.wpn_fps_shot_shorty_m_extended_short.custom_stats = {
-						ads_speed_mult = 1.025
+						ads_speed_mult = 1.025,
+						is_internal = true
 					}
 
 					--Tactical Shorty Stock
@@ -17930,6 +17948,7 @@ end)
 						extra_ammo = -2
 					}
 					self.parts.wpn_fps_sho_boot_b_short.custom_stats = deep_clone(barrels.short_b2_stats)
+					self.parts.wpn_fps_sho_boot_b_short.custom_stats.is_internal = true
 
 					--Long Barrel
 					self.parts.wpn_fps_sho_boot_b_long.pcs = {
@@ -17946,6 +17965,7 @@ end)
 						extra_ammo = 1
 					}
 					self.parts.wpn_fps_sho_boot_b_long.custom_stats = deep_clone(barrels.long_b3_stats)
+					self.parts.wpn_fps_sho_boot_b_long.custom_stats.is_internal = true
 
 					--Long Stock
 					self.parts.wpn_fps_sho_boot_s_long.pcs = {
@@ -25295,6 +25315,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		supported = true,
 		keep_damage = true,
 		custom_stats = {
+			is_internal = true,
 			info_lock_burst = true,
 			burst_fire = {
 				count = 3,
@@ -26107,6 +26128,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_moss464spx_barrel_short.stats.extra_ammo = -1
 				self.parts.wpn_fps_upg_moss464spx_barrel_short.stats.concealment = 2
 				self.parts.wpn_fps_upg_moss464spx_barrel_short.custom_stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_upg_moss464spx_barrel_short.custom_stats.is_internal = true
 				self.parts.wpn_fps_upg_moss464spx_barrel_short.override_weapon_add = nil
 
 				self.parts.wpn_fps_snp_moss464spx_supp_maxim.supported = true
@@ -26669,7 +26691,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -1
 				}
 				self.parts.wpn_fps_upg_mp153_tube_ext_2.custom_stats = {
-					ads_speed_mult = 1.025
+					ads_speed_mult = 1.025,
+					is_internal = true
 				}
 
 				self.parts.wpn_fps_upg_mp153_tube_ext_4.supported = true
@@ -26680,7 +26703,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -2
 				}
 				self.parts.wpn_fps_upg_mp153_tube_ext_4.custom_stats = {
-					ads_speed_mult = 1.05
+					ads_speed_mult = 1.05,
+					is_internal = true
 				}
 
 				self.parts.wpn_fps_upg_mp153_tube_ext_6.supported = true
@@ -26691,7 +26715,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -3
 				}
 				self.parts.wpn_fps_upg_mp153_tube_ext_6.custom_stats = {
-					ads_speed_mult = 1.075
+					ads_speed_mult = 1.075,
+					is_internal = true
 				}
 
 				self.parts.wpn_fps_upg_mp153_ammo_000_magnum.supported = true
@@ -36297,6 +36322,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_snp_winchester_b_short.stats.concealment = 2
 				self.parts.wpn_fps_snp_winchester_b_short.custom_stats = deep_clone(barrels.short_b1_stats)
 				self.parts.wpn_fps_snp_winchester_b_short.custom_stats.ads_speed_mult = 0.95
+				self.parts.wpn_fps_snp_winchester_b_short.custom_stats.is_internal = true
 
 				--(Contractor Pistol) Bling Slide
 				self.parts.wpn_fps_pis_packrat_sl_silver.supported = true
@@ -36585,6 +36611,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						concealment = -1,
 						extra_ammo = 2
 					}
+					self.parts.wpn_fps_shot_beck_ext.custom_stats = {
+						ads_speed_mult = 1.025,
+						is_internal = true
+					}
 					--Shell Rack
 					self.parts.wpn_fps_shot_beck_shells.supported = true
 					self.parts.wpn_fps_shot_beck_shells.stats = {
@@ -36817,6 +36847,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_snp_sbl_b_stub.custom_stats = deep_clone(barrels.short_b1_stats)
 				self.parts.wpn_fps_snp_sbl_b_stub.custom_stats.ads_speed_mult = 0.95
+				self.parts.wpn_fps_snp_sbl_b_stub.custom_stats.is_internal = true
 
 				--(Czech 92) Angled Grip
 				self.parts.wpn_fps_pis_czech_body_afg.pcs = nil
@@ -37104,6 +37135,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					value = 3,
 					extra_ammo = 1,
 					concealment = -1,
+				}
+				self.parts.wpn_fps_shot_minibeck_ext.custom_stats = {
+					ads_speed_mult = 1.025,
+					is_internal = true
 				}
 
 				--(Reinbeck Auto) Solid Stock
@@ -38787,7 +38822,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				extra_ammo = 2
 			}
 			self.parts.wpn_fps_shot_fpsix_magext.custom_stats = {
-				ads_speed_mult = 1.025
+				ads_speed_mult = 1.025,
+				is_internal = true
 			}
 
 			self.parts.wpn_fps_shot_fpsix_stock_folded.supported = true
@@ -38815,6 +38851,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_shot_stf12_b_short.stats.concealment = 2
 			self.parts.wpn_fps_shot_stf12_b_short.custom_stats = deep_clone(barrels.short_b1_stats)
 			self.parts.wpn_fps_shot_stf12_b_short.custom_stats.ads_speed_mult = 0.95
+			self.parts.wpn_fps_shot_stf12_b_short.custom_stats.is_internal = true
 
 			self.parts.wpn_fps_shot_stf12_b_long.supported = true
 			self.parts.wpn_fps_shot_stf12_b_long.stats = deep_clone(barrels.long_b2_stats)
@@ -38822,6 +38859,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_shot_stf12_b_long.stats.concealment = -3
 			self.parts.wpn_fps_shot_stf12_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
 			self.parts.wpn_fps_shot_stf12_b_long.custom_stats.ads_speed_mult = 1.075
+			self.parts.wpn_fps_shot_stf12_b_long.custom_stats.is_internal = true
 
 			self.parts.wpn_fps_shot_stf12_choke.supported = true
 			self.parts.wpn_fps_shot_stf12_choke.stats = deep_clone(barrels.long_b1_stats)
@@ -42108,6 +42146,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sho_ksg_b_25.stats.concealment = -5
 			self.parts.wpn_fps_sho_ksg_b_25.custom_stats = deep_clone(barrels.long_b3_stats)
 			self.parts.wpn_fps_sho_ksg_b_25.custom_stats.ads_speed_mult = 1.125
+			self.parts.wpn_fps_sho_ksg_b_25.custom_stats.is_internal = true
 		end
 
 		if self.parts.wpn_fps_lmg_m1918_body_standard then
@@ -43940,6 +43979,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_mosin_body_bubba.stats.concealment = 2
 		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats = deep_clone(stocks.remove_fixed_stats)
 		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats.ads_speed_mult = 0.95
+		self.parts.wpn_fps_snp_mosin_body_bubba.custom_stats.is_internal = true
 
 		self.parts.wpn_fps_snp_mosin_bayonet_bubba.supported = true
 		self.parts.wpn_fps_snp_mosin_bayonet_bubba.stats = {
@@ -50530,7 +50570,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			extra_ammo = 2
 		}
 		self.parts.wpn_fps_sho_dp12_m_ext.custom_stats = {
-			ads_speed_mult = 1.025
+			ads_speed_mult = 1.025,
+			is_internal = true
 		}
 
 		self.parts.wpn_fps_sho_dp12_b_ext.supported = true
@@ -50618,6 +50659,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			extra_ammo = -2
 		}
 		self.parts.wpn_fps_shot_toz194_b_short.custom_stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_shot_toz194_b_short.custom_stats.is_internal = true
 
 		self.parts.wpn_fps_shot_toz194_b_silencer.supported = true
 		self.parts.wpn_fps_shot_toz194_b_silencer.stats = {
@@ -50664,6 +50706,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			extra_ammo = -1
 		}
 		self.parts.wpn_fps_shot_mossberg590_b_medium.custom_stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_shot_mossberg590_b_medium.custom_stats.is_internal = true
 		self.parts.wpn_fps_shot_mossberg590_b_short.supported = true
 		self.parts.wpn_fps_shot_mossberg590_b_short.stats = {
 			value = 3,
@@ -50672,6 +50715,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			extra_ammo = -2
 		}
 		self.parts.wpn_fps_shot_mossberg590_b_short.custom_stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_shot_mossberg590_b_short.custom_stats.is_internal = true
 
 		self.parts.wpn_fps_shot_mossberg590_b_silencer.supported = true
 		self.parts.wpn_fps_shot_mossberg590_b_silencer.stats = {
@@ -52430,12 +52474,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	self.wpn_fps_gre_m79_npc.override = deep_clone(self.wpn_fps_gre_m79.override)
 
 	for part_id, k in pairs(self.parts) do
-		if self.parts[part_id] and self.parts[part_id].type and (self.parts[part_id].type == "sight" or self.parts[part_id].type == "second_sight") then
-			local zoom = (self.parts[part_id].stats and (self.parts[part_id].stats.base_zoom_off or self.parts[part_id].stats.zoom or (self.parts[part_id].stats.gadget_zoom and self.parts[part_id].stats.gadget_zoom > 1 and self.parts[part_id].stats.gadget_zoom))) or 0
-			self.parts[part_id].custom_stats = self.parts[part_id].custom_stats or {}
-			self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult or 1
-			if zoom > 2 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then
-				self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult + (zoom * 0.003)
+		if self.parts[part_id] then 
+			if self.parts[part_id].type and (self.parts[part_id].type == "sight" or self.parts[part_id].type == "second_sight") then
+				local zoom = (self.parts[part_id].stats and (self.parts[part_id].stats.base_zoom_off or self.parts[part_id].stats.zoom or (self.parts[part_id].stats.gadget_zoom and self.parts[part_id].stats.gadget_zoom > 1 and self.parts[part_id].stats.gadget_zoom))) or 0
+				self.parts[part_id].custom_stats = self.parts[part_id].custom_stats or {}
+				self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult or 1
+				if zoom > 2 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then
+					self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult + (zoom * 0.003)
+				end
+			end
+			if self.parts[part_id].stats then
+				if self.parts[part_id].stats.extra_ammo and self.parts[part_id].stats.concealment and self.parts[part_id].stats.reload and (not self.parts[part_id].custom_stats or (self.parts[part_id].custom_stats and not self.parts[part_id].stats.is_internal)) then
+					local pickup_mod = 1
+					if self.parts[part_id].stats.concealment > 0 then
+						pickup_mod = pickup_mod + (math.abs(self.parts[part_id].stats.concealment) * 0.02)
+					else
+						pickup_mod = pickup_mod - (math.abs(self.parts[part_id].stats.concealment) * 0.06)
+					end
+					self.parts[part_id].custom_stats = self.parts[part_id].custom_stats or {}
+					if not self.parts[part_id].custom_stats.ammo_pickup_max_mul then
+						self.parts[part_id].custom_stats.alt_ammo_pickup_min_mul = pickup_mod
+						self.parts[part_id].custom_stats.alt_ammo_pickup_max_mul = pickup_mod
+						self.parts[part_id].custom_stats.ammo_pickup_min_mul = pickup_mod
+						self.parts[part_id].custom_stats.ammo_pickup_max_mul = pickup_mod
+					end
+				end
 			end
 		end
 	end
@@ -52443,6 +52506,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		if self[factory_id] and self[factory_id .. "_npc"] and not self[factory_id].real_factory_id then
 			if self[factory_id].uses_parts and self[factory_id].override then
 				for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+					if self[factory_id].override[used_part_id] and self[factory_id].override[used_part_id].stats then
+						if self[factory_id].override[used_part_id].stats.extra_ammo and  self[factory_id].override[used_part_id].stats.concealment and  self[factory_id].override[used_part_id].stats.reload and (not self[factory_id].override[used_part_id].custom_stats or (self[factory_id].override[used_part_id].custom_stats and not self[factory_id].override[used_part_id].custom_stats.is_internal)) then
+							local pickup_mod = 1
+							if self[factory_id].override[used_part_id].stats.concealment > 0 then
+								pickup_mod = pickup_mod + (math.abs(self[factory_id].override[used_part_id].stats.concealment) * 0.02)
+							else
+								pickup_mod = pickup_mod - (math.abs(self[factory_id].override[used_part_id].stats.concealment) * 0.06)
+							end
+							self[factory_id].override[used_part_id].custom_stats = self[factory_id].override[used_part_id].custom_stats or {}
+							if not self[factory_id].override[used_part_id].custom_stats.ammo_pickup_max_mul then
+								self[factory_id].override[used_part_id].custom_stats.alt_ammo_pickup_min_mul = pickup_mod
+								self[factory_id].override[used_part_id].custom_stats.alt_ammo_pickup_max_mul = pickup_mod
+								self[factory_id].override[used_part_id].custom_stats.ammo_pickup_min_mul = pickup_mod
+								self[factory_id].override[used_part_id].custom_stats.ammo_pickup_max_mul = pickup_mod
+							end
+						end
+					end
 					if self.parts[used_part_id] and self[factory_id].override[used_part_id] 
 						and (self.parts[used_part_id].type and (self.parts[used_part_id].type == "sight" or self.parts[used_part_id].type == "second_sight"))
 						and (self.parts[used_part_id].custom_stats and self.parts[used_part_id].custom_stats.ads_speed_mult) then

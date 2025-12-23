@@ -10026,13 +10026,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.tecci.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 					self.tecci.CLIP_AMMO_MAX = 100
 					self.tecci.AMMO_MAX = 360
-					self.tecci.fire_mode_data.fire_rate = 0.07692307
+					self.tecci.fire_mode_data.fire_rate = 0.07058823
 					self.tecci.CAN_TOGGLE_FIREMODE = true
 					self.tecci.panic_suppression_chance = 0.05
 					self.tecci.supported = true
 					self.tecci.ads_speed = 0.360
 					self.tecci.damage_falloff = {
-						start_dist = 1800,
+						start_dist = 2000,
 						end_dist = 5800,
 						min_mult = 0.6
 					}
@@ -10314,7 +10314,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.hk51b.supported = true
 					self.hk51b.ads_speed = 0.420
 					self.hk51b.damage_falloff = {
-						start_dist = 1200,
+						start_dist = 1600,
 						end_dist = 4800,
 						min_mult = 0.66667
 					}
@@ -10372,9 +10372,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mg42.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 						self.mg42.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 						self.mg42.supported = true
-						self.mg42.ads_speed = 0.500
+						self.mg42.ads_speed = 0.480
 						self.mg42.damage_falloff = {
-							start_dist = 2000,
+							start_dist = 2200,
 							end_dist = 6000,
 							min_mult = 0.53333
 						}
@@ -10437,7 +10437,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hk21.supported = true
 						self.hk21.ads_speed = 0.520
 						self.hk21.damage_falloff = {
-							start_dist = 1600,
+							start_dist = 1800,
 							end_dist = 5100,
 							min_mult = 0.44444
 						}
@@ -10487,8 +10487,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hcar.supported = true
 						self.hcar.ads_speed = 0.480
 						self.hcar.damage_falloff = {
-							start_dist = 1700,
-							end_dist = 5400,
+							start_dist = 2300,
+							end_dist = 5900,
 							min_mult = 0.4
 						}
 						self.hcar.stats = {
@@ -10538,7 +10538,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m60.supported = true
 						self.m60.ads_speed = 0.560
 						self.m60.damage_falloff = {
-							start_dist = 1400,
+							start_dist = 2100,
 							end_dist = 6000,
 							min_mult = 0.33333
 						}
@@ -10598,7 +10598,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.par.supported = true
 						self.par.ads_speed = 0.540
 						self.par.damage_falloff = {
-							start_dist = 1000,
+							start_dist = 1800,
 							end_dist = 5800,
 							min_mult = 0.33333
 						}
@@ -24980,8 +24980,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.peacekeepermk1.stats = {
 					damage = 18,
-					spread = 81,
-					recoil = 75,
+					spread = 77,
+					recoil = 81,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 24,
@@ -24997,6 +24997,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacekeepermk1.armor_piercing_chance = 0.75
 				self.peacekeepermk1.panic_suppression_chance = 0.05
 				self.peacekeepermk1.lock_slide = true
+				self.peacekeepermk1.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.peacekeepermk1.reload_speed_multiplier = 0.9
 				self.peacekeepermk1.timers.reload_empty = 2.04
 				self.peacekeepermk1.timers.reload_exit_empty = 0.7

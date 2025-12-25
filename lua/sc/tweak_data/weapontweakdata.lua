@@ -24998,7 +24998,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacekeepermk1.panic_suppression_chance = 0.05
 				self.peacekeepermk1.lock_slide = true
 				self.peacekeepermk1.sounds.magazine_empty = "wp_rifle_slide_lock"
-				self.peacekeepermk1.reload_speed_multiplier = 0.9
+				self.peacekeepermk1.reload_speed_multiplier = 0.95
 				self.peacekeepermk1.timers.reload_empty = 2.04
 				self.peacekeepermk1.timers.reload_exit_empty = 0.7
 				self.peacekeepermk1.timers.reload_not_empty = 1.64
@@ -25053,6 +25053,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.kord_6p67.panic_suppression_chance = 0.05
 				self.kord_6p67.reload_not_empty_speed_multiplier = 1.1
 				self.kord_6p67.reload_speed_multiplier = 1.15
+				self.kord_6p67.timers.equip = 0.65
 				self.kord_6p67.timers.reload_empty = 3.87
 				self.kord_6p67.timers.reload_exit_empty = 0.8
 				self.kord_6p67.timers.reload_not_empty = 2.9

@@ -2850,7 +2850,7 @@ end)
 							reload = -6
 						},
 						custom_stats = {
-							ads_speed_mult = 1.2
+							ads_speed_mult = 1.3
 						}
 					}
 
@@ -2896,7 +2896,7 @@ end)
 							reload = -6
 						},
 						custom_stats = {
-							ads_speed_mult = 1.2
+							ads_speed_mult = 1.3
 						}
 					}
 					self.wpn_fps_jowi.override.wpn_fps_pis_g26_b_standard = {
@@ -6900,7 +6900,7 @@ end)
 							reload = -7
 						},
 						custom_stats = {
-							ads_speed_mult = 1.3
+							ads_speed_mult = 1.375
 						}
 					}
 					self.parts.wpn_fps_smg_mp5_m_drum.third_unit = "units/payday2/weapons/wpn_third_smg_mp5_pts/wpn_third_smg_mp5_m_drum"
@@ -7211,7 +7211,7 @@ end)
 						concealment = -3
 					}
 					self.parts.wpn_fps_smg_schakal_m_long.custom_stats = {
-						ads_speed_mult = 1.2
+						ads_speed_mult = 1.3
 					}
 
 					--Short Magazine
@@ -8962,7 +8962,7 @@ end)
 						extra_ammo = 40
 					},
 					custom_stats = {
-						ads_speed_mult = 1.2
+						ads_speed_mult = 1.3
 					},
 					bullet_objects = {
 						amount = 3,
@@ -9110,11 +9110,11 @@ end)
 				self.parts.wpn_fps_lmg_hcar_m_drum.stats = {
 					extra_ammo = 30,
 					value = 10,
-					reload = -8,
-					concealment = -6
+					reload = -7,
+					concealment = -5
 				}
 				self.parts.wpn_fps_lmg_hcar_m_drum.custom_stats = {
-					ads_speed_mult = 1.3
+					ads_speed_mult = 1.375
 				}
 
 				self.parts.wpn_fps_lmg_hcar_body_conversionkit.supported = true
@@ -9487,7 +9487,7 @@ end)
 					concealment = -4,
 					reload = -6
 				}
-				self.parts.wpn_fps_lmg_mg42_m_100.custom_stats = { ads_speed_mult = 1.2 }
+				self.parts.wpn_fps_lmg_mg42_m_100.custom_stats = { ads_speed_mult = 1.3 }
 
 				--Bringing back my old MG42 mag/belt fix method for more accurate looking DLT-19
 				self.parts.wpn_fps_lmg_mg42_dummy_mag = deep_clone(self.parts.wpn_fps_lmg_mg42_reciever)
@@ -10560,7 +10560,7 @@ end)
 							concealment = -7
 						},
 						custom_stats = {
-							ads_speed_mult = 1.35
+							ads_speed_mult = 1.525
 						}
 					}
 					self.parts.wpn_fps_upg_m4_m_drum.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_m_drum"
@@ -14451,6 +14451,7 @@ end)
 					self.parts.wpn_fps_snp_winchester_b_long.stats.concealment = -4
 					self.parts.wpn_fps_snp_winchester_b_long.stats.extra_ammo = 5
 					self.parts.wpn_fps_snp_winchester_b_long.custom_stats = deep_clone(barrels.long_b3_stats)
+					self.parts.wpn_fps_snp_winchester_b_long.custom_stats.ads_speed_mult = 1.3
 					self.parts.wpn_fps_snp_winchester_b_long.custom_stats.is_internal = true
 
 					--Outlaw's Silenced Barrel
@@ -16334,7 +16335,7 @@ end)
 							concealment = -5
 						},
 						custom_stats = {
-							ads_speed_mult = 1.25
+							ads_speed_mult = 1.375
 						}
 					}
 					self.parts.wpn_upg_saiga_m_20rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_saiga_m_20rnd"
@@ -20525,12 +20526,12 @@ end)
 			self.parts.wpn_fps_upg_m4_m_quad.pcs = {}
 			self.parts.wpn_fps_upg_m4_m_quad.supported = true
 			self.parts.wpn_fps_upg_m4_m_quad.custom_stats = {
-				ads_speed_mult = 1.2
+				ads_speed_mult = 1.375
 			}
 			self.parts.wpn_fps_upg_m4_m_quad.stats = {
-				value = 3,
-				concealment = -4,
-				reload = -6,
+				value = 6,
+				concealment = -5,
+				reload = -7,
 				extra_ammo = 30
 			}
 
@@ -20565,13 +20566,13 @@ end)
 			self.parts.wpn_fps_upg_ak_m_quad.pcs = {}
 			self.parts.wpn_fps_upg_ak_m_quad.supported = true
 			self.parts.wpn_fps_upg_ak_m_quad.stats = {
-				value = 3,
-				concealment = -4,
+				value = 6,
+				concealment = -5,
 				extra_ammo = 30,
-				reload = -6
+				reload = -7
 			}
 			self.parts.wpn_fps_upg_ak_m_quad.custom_stats = {
-				ads_speed_mult = 1.2
+				ads_speed_mult = 1.375
 			}
 
 			--AK Rubber Grip
@@ -21031,7 +21032,7 @@ end)
 					reload = -8
 				},
 				custom_stats = {
-					ads_speed_mult = 1.3
+					ads_speed_mult = 1.45
 				}
 			}
 			self.parts.wpn_upg_ak_m_drum.third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_third_lmg_rpk_pts/wpn_third_lmg_rpk_m_drum"
@@ -26321,7 +26322,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload = -7
 				}
 				self.parts.wpn_fps_upg_lewis_mag_ext.custom_stats = {
-					ads_speed_mult = 1.2
+					ads_speed_mult = 1.375
 				}
 
 				self.parts.wpn_fps_upg_lewis_bipod.supported = true
@@ -27827,9 +27828,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_peacekeepermk1_stock.custom_stats = nil
 			self.parts.wpn_fps_smg_peacekeepermk1_bo2animation.supported = true
 			self.parts.wpn_fps_smg_peacekeepermk1_bo2animation.stats = {
-				reload = 10,
+				value = 0,
 				spread = -2,
-				recoil = -6
+				recoil = -6,
+				reload = 7
 			}
 			self.parts.wpn_fps_smg_peacekeepermk1_bo2animation.custom_stats = {
 				falloff_start_mult = 2.2,
@@ -27839,6 +27841,38 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				adj_timers = {
 					reload_exit_empty = 0.6,
 					reload_exit_not_empty = 0.95
+				},
+				sounds = {
+					fire = "peacekeeper_bo2_fire",
+					fire_single = "peacekeeper_bo2_fire",
+					fire_auto = "peacekeeper_bo2_fire"
+				}
+			}
+
+			self.parts.wpn_fps_smg_peacekeepermk1_sound_bo2.pcs = {}
+			self.parts.wpn_fps_smg_peacekeepermk1_sound_bo2.supported = true
+			self.parts.wpn_fps_smg_peacekeepermk1_sound_bo2.stats = { value = 0 }
+			self.parts.wpn_fps_smg_peacekeepermk1_sound_bo2.custom_stats = nil
+			self.parts.wpn_fps_smg_peacekeepermk1_sound_bo2.adds = {
+				"wpn_fps_smg_peacekeepermk1_bo2_snd"
+			}
+			self.parts.wpn_fps_smg_peacekeepermk1_bo2_snd = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				a_obj = "a_body",
+				type = "ammo",
+				name_id = "bm_wp_morita_hawkeye_sounds",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				internal_part = true,
+				no_cull = true,
+				stats = {
+					value = 5
+				},
+				custom_stats = {
+					sounds = {
+						fire = "peacekeeper_bo2_fire",
+						fire_single = "peacekeeper_bo2_fire",
+						fire_auto = "peacekeeper_bo2_fire"
+					}
 				}
 			}
 			--BARRELS
@@ -27959,8 +27993,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					extra_ammo = 20
 				}
 				self.parts.wpn_fps_smg_peacekeepermk1_magazine_xlarge.custom_stats = {
-					ads_speed_mult = 1.25
+					ads_speed_mult = 1.375
 				}
+
+				table.insert(self.wpn_fps_smg_peacekeepermk1.uses_parts, "wpn_fps_smg_peacekeepermk1_sound_bo2")
+
+				self.wpn_fps_smg_peacekeepermk1_npc.uses_parts = deep_clone(self.wpn_fps_smg_peacekeepermk1.uses_parts)
 		end
 
 		if self.parts.wpn_fps_ass_kord_6p67_safety_burst then
@@ -28324,7 +28362,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					extra_ammo = 20
 				}
 				self.parts.wpn_fps_ass_scotia_magazine_drum.custom_stats = {
-					ads_speed_mult = 1.25
+					ads_speed_mult = 1.375
 				}
 		end
 
@@ -28848,11 +28886,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_ass_bromeo805_magazine_casket.supported = true
 					self.parts.wpn_fps_ass_bromeo805_magazine_casket.stats = {
 						value = 8,
-						concealment = -4,
+						concealment = -5,
 						extra_ammo = 30,
-						reload = -6
+						reload = -7
 					}
-					self.parts.wpn_fps_ass_bromeo805_magazine_casket.custom_stats = { ads_speed_mult = 0.95 }
+					self.parts.wpn_fps_ass_bromeo805_magazine_casket.custom_stats = { ads_speed_mult = 1.375 }
 
 				self.wpn_fps_ass_bromeo805.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { stats = { recoil = 2, concealment = -1 } }
 				self.wpn_fps_ass_bromeo805.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 2, concealment = -1 } }
@@ -30086,12 +30124,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_coslo723_magazine_box.supported = true
 				self.parts.wpn_fps_ass_coslo723_magazine_box.stats = {
 					value = 8,
-					concealment = -4,
-					reload = -6,
+					concealment = -5,
+					reload = -7,
 					extra_ammo = 30
 				}
 				self.parts.wpn_fps_ass_coslo723_magazine_box.custom_stats = {
-					ads_speed_mult = 1.2
+					ads_speed_mult = 1.375
 				}
 				--EX 3
 				self.parts.wpn_fps_ass_coslo723_magazine_drum.supported = true
@@ -30102,7 +30140,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -7
 				}
 				self.parts.wpn_fps_ass_coslo723_magazine_drum.custom_stats = {
-					ads_speed_mult = 1.35
+					ads_speed_mult = 1.525
 				}
 
 			self.parts.wpn_fps_ass_coslo723_mode_burst.supported = true
@@ -31088,11 +31126,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_t9fastburst_magazine_mix_pro.stats = {
 					value = 8,
 					extra_ammo = 30,
-					concealment = -4,
+					concealment = -5,
 					reload = -3
 				}
 				self.parts.wpn_fps_ass_t9fastburst_magazine_mix_pro.custom_stats = {
-					ads_speed_mult = 1.2
+					ads_speed_mult = 1.375
 				}
 
 			--Barrels
@@ -32257,12 +32295,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_stoner63a_rifle_magazine_xmag.supported = true
 			self.parts.wpn_fps_ass_stoner63a_rifle_magazine_xmag.stats = {
 				value = 3,
-				concealment = -4,
-				reload = -6,
+				concealment = -5,
+				reload = -7,
 				extra_ammo = 30
 			}
 			self.parts.wpn_fps_ass_stoner63a_rifle_magazine_xmag.custom_stats = {
-				ads_speed_mult = 1.2
+				ads_speed_mult = 1.375
 			}
 		end
 
@@ -32694,7 +32732,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_shot_vecho_drum.custom_stats = {
 					reload_anim_mult = 1.4444,
-					ads_speed_mult = 1.25
+					ads_speed_mult = 1.375
 				}
 				self.parts.wpn_fps_shot_vecho_xmag.supported = true
 				self.parts.wpn_fps_shot_vecho_xmag.stats = {
@@ -33653,8 +33691,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_mike4_2022_xmag.stats = { value = 0, extra_ammo = 15, reload = -4, concealment = -2 }
 				self.parts.wpn_fps_ass_mike4_2022_xmag.custom_stats = { ads_speed_mult = 1.1 }
 				self.parts.wpn_fps_ass_mike4_2022_xmag_large.supported = true
-				self.parts.wpn_fps_ass_mike4_2022_xmag_large.stats = { value = 0, extra_ammo = 30, reload = -6, concealment = -4 }
-				self.parts.wpn_fps_ass_mike4_2022_xmag_large.custom_stats = { ads_speed_mult = 1.2 }
+				self.parts.wpn_fps_ass_mike4_2022_xmag_large.stats = { value = 0, extra_ammo = 30, reload = -7, concealment = -5 }
+				self.parts.wpn_fps_ass_mike4_2022_xmag_large.custom_stats = { ads_speed_mult = 1.375 }
 
 			--Grips
 				self.parts.wpn_fps_ass_mike4_2022_grip_tac.supported = true
@@ -34218,12 +34256,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_akilo_2022_xmag_large_akilo105.has_description = false
 				self.parts.wpn_fps_ass_akilo_2022_xmag_large_akilo105.stats = {
 					value = 0,
-					concealment = -4,
+					concealment = -5,
 					extra_ammo = 30,
-					reload = -6
+					reload = -7
 				}
 				self.parts.wpn_fps_ass_akilo_2022_xmag_large_akilo105.custom_stats = {
-					ads_speed_mult = 1.2
+					ads_speed_mult = 1.375
 				}
 				self.parts.wpn_fps_ass_akilo_2022_smag.supported = true
 				self.parts.wpn_fps_ass_akilo_2022_smag.has_description = false
@@ -34258,7 +34296,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -5
 				}
 				self.parts.wpn_fps_ass_akilo_2022_magazine_rkilo.custom_stats = {
-					ads_speed_mult = 1.25
+					ads_speed_mult = 1.375
 				}
 				self.parts.wpn_fps_ass_akilo_2022_xmag_rkilo.supported = true
 				self.parts.wpn_fps_ass_akilo_2022_xmag_rkilo.has_description = false
@@ -34271,7 +34309,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -7
 				}
 				self.parts.wpn_fps_ass_akilo_2022_xmag_rkilo.custom_stats = {
-					ads_speed_mult = 1.35
+					ads_speed_mult = 1.525
 				}
 
 				self.parts.wpn_fps_ass_akilo_2022_magazine_mw2.supported = true
@@ -35314,7 +35352,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -5
 			}
 			self.parts.wpn_fps_pis_zip22_magazine_drum.custom_stats = {
-				ads_speed_mult = 1.25,
+				ads_speed_mult = 1.375,
 				reload_empty_anim_mult = 1.25,
 				reload_non_empty_anim_mult = 1.3,
 				adj_timers = {
@@ -35330,7 +35368,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -8
 			}
 			self.parts.wpn_fps_pis_zip22_magazine_drum_110.custom_stats = {
-				ads_speed_mult = 1.4,
+				ads_speed_mult = 1.6,
 				reload_empty_anim_mult = 1.25,
 				reload_non_empty_anim_mult = 1.3,
 				adj_timers = {
@@ -35445,10 +35483,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_stango44_magazine_drum.stats = {
 					value = 0,
 					extra_ammo = 30,
-					concealment = -3,
-					reload = -5
+					concealment = -4,
+					reload = -6
 				}
-				self.parts.wpn_fps_ass_stango44_magazine_drum.custom_stats = { ads_speed_mult = 1.15 }
+				self.parts.wpn_fps_ass_stango44_magazine_drum.custom_stats = { ads_speed_mult = 1.3 }
 
 			--STOCKS
 				self.parts.wpn_fps_ass_stango44_stock_no.supported = true
@@ -39422,13 +39460,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_tilt_mag_big.supported = true
 			self.parts.wpn_fps_ass_tilt_mag_big.stats = {
 					value = 3,
-					concealment = -3,
+					concealment = -5,
 					extra_ammo = 30,
-					reload = -5,
-					spread = -1
+					reload = -7
 				}
 			self.parts.wpn_fps_ass_tilt_mag_big.custom_stats = {
-				ads_speed_mult = 1.15
+				ads_speed_mult = 1.375
 			}
 			self.parts.wpn_fps_ass_tilt_mag_swift.supported = true
 			self.parts.wpn_fps_ass_tilt_mag_swift.stats = {
@@ -39485,7 +39522,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -5
 			}
 			self.parts.wpn_fps_ass_tingledingle_m_extended.custom_stats = {
-				ads_speed_mult = 1.25
+				ads_speed_mult = 1.375
 			}
 
 			self.parts.wpn_fps_ass_tingledingle_fg_stealth.supported = true
@@ -39537,6 +39574,38 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ TANGERINE'S MODS ]]
+
+		if self.parts.wpn_fps_ass_scar16_b_short then
+			self.parts.wpn_fps_ass_scar16_b_short.supported = true
+			self.parts.wpn_fps_ass_scar16_b_short.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_scar16_b_short.custom_stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_scar16_b_cqb.supported = true
+			self.parts.wpn_fps_ass_scar16_b_cqb.stats = deep_clone(barrels.short_b3_stats)
+			self.parts.wpn_fps_ass_scar16_b_cqb.custom_stats = deep_clone(barrels.short_b3_stats)
+			self.parts.wpn_fps_ass_scar16_b_long.supported = true
+			self.parts.wpn_fps_ass_scar16_b_long.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_scar16_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_scar16_b_hamr.supported = true
+			self.parts.wpn_fps_ass_scar16_b_hamr.stats = {
+				value = 8,
+				recoil = 4,
+				concealment = -1,
+				spread = -1
+			}
+			self.parts.wpn_fps_ass_scar16_b_hamr.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+			self.parts.wpn_fps_ass_scar16_m_hamr.supported = true
+			self.parts.wpn_fps_ass_scar16_m_hamr.stats = {
+				value = 5,
+				extra_ammo = 20,
+				concealment = -3,
+				reload = -5
+			}
+			self.parts.wpn_fps_ass_scar16_m_hamr.custom_stats = {
+				ads_speed_mult = 1.15
+			}
+		end
 
 		if self.parts.wpn_fps_lmg_lsw_fg_tactical then
 
@@ -39662,7 +39731,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				extra_ammo = 50
 			}
 			self.parts.wpn_fps_lmg_lsw_m_drum.custom_stats = {
-				ads_speed_mult = 1.25
+				ads_speed_mult = 1.375
 			}
 			self.parts.wpn_fps_lmg_lsw_m_762.supported = true
 			self.parts.wpn_fps_lmg_lsw_m_762.stats = {
@@ -40329,7 +40398,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				reload = -7
 			}
 			self.parts.wpn_fps_snp_sierra458_m_d60.custom_stats = {
-				ads_speed_mult = 1.25
+				ads_speed_mult = 1.375
 			}
 
 			--.50 Beowulf mags
@@ -40591,6 +40660,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_m4_uupg_m_sharps.custom_stats = {
 				rof_mult = 0.9,
 				damage_min_mult = 1.25
+			}
+
+			self.parts.wpn_fps_upg_m4_m_40rnd.supported = true
+			self.parts.wpn_fps_upg_m4_m_40rnd.stats = {
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -3
+			}
+			self.parts.wpn_fps_upg_m4_m_40rnd.custom_stats = {
+				ads_speed_mult = 1.05
 			}
 
 			self.parts.wpn_fps_upg_m4_m_d60.supported = true
@@ -41766,7 +41845,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					extra_ammo = 33
 				}
 				self.parts.wpn_fps_pis_glock_m_d50.custom_stats = {
-					ads_speed_mult = 1.25
+					ads_speed_mult = 1.375
 				}
 					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_d50 = {
 						stats = {
@@ -41825,7 +41904,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -7
 				}
 				self.parts.wpn_fps_pis_glock_m_cmag.custom_stats = {
-					ads_speed_mult = 1.35
+					ads_speed_mult = 1.525
 				}
 					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_cmag = {
 						stats = {
@@ -41910,7 +41989,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -7
 				}
 				self.parts.wpn_fps_smg_polymer_m_cmag.custom_stats = {
-					ads_speed_mult = 1.35
+					ads_speed_mult = 1.525
 				}
 
 			--SUB2000
@@ -42179,7 +42258,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sho_ksg_b_25.stats.extra_ammo = 10
 			self.parts.wpn_fps_sho_ksg_b_25.stats.concealment = -5
 			self.parts.wpn_fps_sho_ksg_b_25.custom_stats = deep_clone(barrels.long_b3_stats)
-			self.parts.wpn_fps_sho_ksg_b_25.custom_stats.ads_speed_mult = 1.25
+			self.parts.wpn_fps_sho_ksg_b_25.custom_stats.ads_speed_mult = 1.375
 			self.parts.wpn_fps_sho_ksg_b_25.custom_stats.is_internal = true
 		end
 
@@ -42631,12 +42710,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_soa_m_3.supported = true
 			self.parts.wpn_fps_ass_soa_m_3.stats = {
 				value = 3,
-				concealment = -4,
+				concealment = -5,
 				extra_ammo = 30,
-				reload = -6
+				reload = -7
 			}
 			self.parts.wpn_fps_ass_soa_m_3.custom_stats = {
-				ads_speed_mult = 1.2
+				ads_speed_mult = 1.375
 			}
 
 			self.parts.wpn_fps_ass_soa_s_2.supported = true
@@ -43407,7 +43486,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload = -4
 				}
 				self.parts.wpn_fps_sho_haymaker_m_30rnd_pd3.custom_stats = {
-					ads_speed_mult = 1.3
+					ads_speed_mult = 1.375
 				}
 
 			--STOCKs
@@ -43484,7 +43563,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				reload = -8
 			}
 			self.parts.wpn_fps_ass_qbz95_m_drum.custom_stats = {
-				ads_speed_mult = 1.3
+				ads_speed_mult = 1.45
 			}
 		end
 
@@ -43507,7 +43586,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				reload = 3
 			}
 			self.parts.wpn_fps_lmg_mg34_m_double.custom_stats = {
-				ads_speed_mult = 1.2
+				ads_speed_mult = 1.3
 			}
 			self.parts.wpn_fps_lmg_mg34_m_double.visibility = nil
 			self.parts.wpn_fps_lmg_mg34_m_double.adds = nil
@@ -43713,7 +43792,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				reload = -10
 			}
 			self.parts.wpn_fps_pis_pm_m_drum.custom_stats = {
-				ads_speed_mult = 1.4
+				ads_speed_mult = 1.6
 			}
 
 			self.wpn_fps_pis_x_pm.override.wpn_fps_pis_pm_m_modern = {
@@ -43947,9 +44026,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m4_m_x15drum.supported = true
 		self.parts.wpn_fps_upg_m4_m_x15drum.stats = {
 			value = 3,
-			concealment = -3,
-			reload = -5,
+			concealment = -4,
+			reload = -6,
 			extra_ammo = 20
+		}
+		self.parts.wpn_fps_upg_m4_m_x15drum.custom_stats = {
+			ads_speed_mult = 1.3
 		}
 		self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_m_pmag20 = {
 			supported = true,
@@ -44554,7 +44636,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m_sgmt.stats.extra_ammo = 33
 		self.parts.wpn_fps_upg_m_sgmt.stats.concealment = -4
 		self.parts.wpn_fps_upg_m_sgmt.stats.reload = -6
-		self.parts.wpn_fps_upg_m_sgmt.custom_stats = { ads_speed_mult = 1.2 }
+		self.parts.wpn_fps_upg_m_sgmt.custom_stats = { ads_speed_mult = 1.3 }
 
 		self.wpn_fps_pis_g26.override.wpn_fps_upg_m_sgmt = {
 			stats = {
@@ -44597,14 +44679,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m_vecsgmt.stats.extra_ammo = 20
 		self.parts.wpn_fps_upg_m_vecsgmt.stats.concealment = -4
 		self.parts.wpn_fps_upg_m_vecsgmt.stats.reload = -6
-		self.parts.wpn_fps_upg_m_vecsgmt.custom_stats = { ads_speed_mult = 1.2 }
+		self.parts.wpn_fps_upg_m_vecsgmt.custom_stats = { ads_speed_mult = 1.3 }
 
 		self.parts.wpn_fps_upg_m_fmgdrum.supported = true
 		self.parts.wpn_fps_upg_m_fmgdrum.stats = deep_clone(self.parts.wpn_fps_upg_ak_m_quad.stats)
 		self.parts.wpn_fps_upg_m_fmgdrum.stats.extra_ammo = 17
 		self.parts.wpn_fps_upg_m_fmgdrum.stats.concealment = -4
 		self.parts.wpn_fps_upg_m_fmgdrum.stats.reload = -6
-		self.parts.wpn_fps_upg_m_fmgdrum.custom_stats = { ads_speed_mult = 1.2 }
+		self.parts.wpn_fps_upg_m_fmgdrum.custom_stats = { ads_speed_mult = 1.3 }
 
 		self.parts.wpn_fps_upg_m_7drum.supported = true
 		self.parts.wpn_fps_upg_m_7drum.stats = deep_clone(self.parts.wpn_fps_smg_mp7_m_extended.stats)
@@ -45876,7 +45958,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = -8
 		}
 		self.parts.wpn_fps_snp_iuhTTIPlus_m_d60.custom_stats = {
-			ads_speed_mult = 1.3
+			ads_speed_mult = 1.45
 		}
 
 		self.parts.wpn_fps_snp_iuhTTIPlus_s_victor_hera.supported = true
@@ -46095,7 +46177,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			extra_ammo = 20
 		}
 		self.parts.wpn_fps_sho_abzats_m_big.custom_stats = {
-			ads_speed_mult = 1.2
+			ads_speed_mult = 1.3
 		}
 
 		self.parts.wpn_fps_sho_abzats_body_upgrade.supported = true
@@ -47046,7 +47128,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = -6
 		}
 		self.parts.wpn_fps_upg_m1919a6_mag_ext.custom_stats = {
-			ads_speed_mult = 1.2
+			ads_speed_mult = 1.3
 		}
 
 		self.parts.wpn_fps_upg_m1919a6_barrel_m1917.supported = true
@@ -47541,7 +47623,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = -6
 		}
 		self.parts.wpn_fps_upg_mg3_mag_box.custom_stats = {
-			ads_speed_mult = 1.2
+			ads_speed_mult = 1.3
 		}
 
 		self.parts.wpn_fps_upg_mg3_bolt_heavy.supported = true
@@ -48232,7 +48314,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -4
 		}
 		self.parts.wpn_fps_upg_cbjms_drum_mag_half.custom_stats = {
-			ads_speed_mult = 1.2
+			ads_speed_mult = 1.3
 		}
 		self.parts.wpn_fps_upg_cbjms_drum_mag.supported = true
 		self.parts.wpn_fps_upg_cbjms_drum_mag.stats = {
@@ -48242,7 +48324,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -7
 		}
 		self.parts.wpn_fps_upg_cbjms_drum_mag.custom_stats = {
-			ads_speed_mult = 1.35
+			ads_speed_mult = 1.525
 		}
 	end
 
@@ -48541,7 +48623,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -4
 		}
 		self.parts.wpn_fps_upg_plr16_mag_pmag30.custom_stats = {
-			ads_speed_mult = 1.2
+			ads_speed_mult = 1.3
 		}
 		self.parts.wpn_fps_upg_plr16_mag_stanag.supported = true
 		self.parts.wpn_fps_upg_plr16_mag_stanag.has_description = false
@@ -48563,7 +48645,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -4
 		}
 		self.parts.wpn_fps_upg_plr16_mag_stanag30.custom_stats = {
-			ads_speed_mult = 1.2
+			ads_speed_mult = 1.3
 		}
 
 		self.wpn_fps_pis_plr16.override.wpn_fps_upg_m4_s_standard = {
@@ -48702,7 +48784,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -5,
 			reload = -7
 		}
-		self.parts.wpn_fps_upg_l35_mag_drum.custom_stats = { ads_speed_mult = 1.2 }
+		self.parts.wpn_fps_upg_l35_mag_drum.custom_stats = { ads_speed_mult = 1.3 }
 
 		self.parts.wpn_fps_upg_l35_grip_rubber.supported = true
 		self.parts.wpn_fps_upg_l35_grip_rubber.stats = deep_clone(grips.quickdraw_1)
@@ -48745,7 +48827,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = -5
 		}
 		self.parts.wpn_fps_upg_sigke7_mag50.custom_stats = {
-			ads_speed_mult = 1.2
+			ads_speed_mult = 1.3
 		}
 
 		self.parts.wpn_fps_upg_sigke7_bolt_light.supported = true
@@ -50355,7 +50437,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = -8
 		}
 		self.parts.wpn_fps_pis_degle_m_big.custom_stats = {
-			ads_speed_mult = 1.3
+			ads_speed_mult = 1.45
 		}
 
 		self.parts.wpn_fps_pis_degle_gr_camo.supported = true
@@ -51104,20 +51186,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_smg_mac10_m_casket.supported = true
 		self.parts.wpn_fps_smg_mac10_m_casket.stats = {
 			value = 2,
-			concealment = -4,
+			concealment = -5,
 			extra_ammo = 30,
-			reload = -6
+			reload = -7
 		}
 		self.parts.wpn_fps_smg_mac10_m_casket.custom_stats = {
-			ads_speed_mult = 1.2
+			ads_speed_mult = 1.375
 		}
 		self.wpn_fps_smg_x_mac10.override.wpn_fps_smg_mac10_m_casket = {
 			supported = true,
 			stats = {
 				value = 2,
-				concealment = -4,
+				concealment = -5,
 				extra_ammo = 60,
-				reload = -6
+				reload = -7
 			}
 		}
 
@@ -51338,12 +51420,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_iso_magazine_drum.supported = true
 		self.parts.wpn_fps_iso_magazine_drum.stats = {
 			value = 4,
-			concealment = -3,
-			reload = -6,
+			concealment = -5,
+			reload = -7,
 			extra_ammo = 30
 		}
 		self.parts.wpn_fps_iso_magazine_drum.custom_stats = {
-			ads_speed_mult = 1.15
+			ads_speed_mult = 1.375
 		}
 
 		self.parts.wpn_fps_iso_barrel_medium.supported = true
@@ -52829,11 +52911,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_l5.custom_stats = { ads_speed_mult = 1.05 }
 	self.wpn_fps_ass_famas.override.wpn_fps_m4_upg_m_quick.custom_stats = { ads_speed_mult = 1.05 }
 	self.wpn_fps_ass_famas.override.wpn_fps_m4_uupg_m_extend.custom_stats = { ads_speed_mult = 1.1 }
-	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_quad.custom_stats = { ads_speed_mult = 1.25 }
+	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_quad.custom_stats = { ads_speed_mult = 1.375 }
 	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_40rnd.custom_stats = { ads_speed_mult = 1.1 }
 	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_hk.custom_stats = { ads_speed_mult = 1.05 }
 	self.wpn_fps_ass_famas.override.wpn_fps_upg_m_pmag_quick.custom_stats = { ads_speed_mult = 1.05 }
-	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_d60.custom_stats = { ads_speed_mult = 1.25 }
+	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_d60.custom_stats = { ads_speed_mult = 1.375 }
 	self.wpn_fps_ass_famas.override.wpn_fps_m4_uupg_m_sharps.custom_stats = { ads_speed_mult = 1.05 }
 
 	self.wpn_fps_ass_famas_npc.override = deep_clone(self.wpn_fps_ass_famas.override)

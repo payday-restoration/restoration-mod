@@ -51,11 +51,11 @@ return {
 			},
 		},
 	},
-		[100732] = { -- Activate operations room reinforce when the players are doing objectives
+	[100732] = { -- Activate operations room reinforce when the players are doing objectives
 		reinforce = {
 			{
 				name = "operations_room",
-				force = 3,
+				force = 4,
 				position = Vector3(-200, 300, 0),
 			},
 		},
@@ -65,22 +65,40 @@ return {
 			{ name = "operations_room" },
 		},
 	},
-	[104460] = { -- Corridors around the operations room
+	-- Add reinforce around the operations room
+	[101839] = { -- entrance_001
 		reinforce = {
 			{
-				name = "corridor1",
+				name = "entrance01",
 				force = 2,
-				position = Vector3(1800, -150, -100),
+				position = Vector3(-200, 2200, -100),
 			},
+		},
+	},
+	[101840] = { -- entrance_002
+		reinforce = {
 			{
-				name = "corridor2",
+				name = "entrance02",
 				force = 2,
-				position = Vector3(600, 2225, -100)
+				position = Vector3(975, 2200, -100),
 			},
+		},
+	},
+	[101841] = { -- entrance_003
+		reinforce = {
 			{
-				name = "corridor3",
+				name = "entrance03",
 				force = 2,
-				position = Vector3(-1000, 2225, -100)
+				position = Vector3(1800, 625, -100),
+			},
+		},
+	},
+	[101842] = { -- entrance_004
+		reinforce = {
+			{
+				name = "entrance04",
+				force = 2,
+				position = Vector3(1800, -600, -100),
 			},
 		},
 	},

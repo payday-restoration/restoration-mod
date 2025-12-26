@@ -28344,9 +28344,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{7, self.stat_info.kick_tables.moderate_right_kick}
 				}
 				self.vecho.supported = true
-				self.vecho.ads_speed = 0.300
+				self.vecho.ads_speed = 0.320
 				self.vecho.damage_falloff = {
-					start_dist = 400,
+					start_dist = 300,
 					end_dist = 2500,
 					min_mult = 0.15
 				}

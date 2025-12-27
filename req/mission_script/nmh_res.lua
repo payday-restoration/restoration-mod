@@ -15,7 +15,7 @@ return {
             {id = 400006, delay = 2}, -- smokebomb
             -- Fishbowl men (will change if medic dozer gets added in roster)
             {id = 400001, delay = 0},
-            {id = 400001, delay = 0},
+            {id = 400002, delay = 0},
         },
     },
     -- Reinforce

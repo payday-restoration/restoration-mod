@@ -1,9 +1,8 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local tank_skull =  "units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3"
-local green_dozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
-local death_wish = difficulty >= 7
-local death_sentence = difficulty >= 8
+local tank_skull =  ((difficulty >= 8) and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc" or "units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3")
+local green_dozer = ((difficulty >= 8) and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1")
+local death_wish_above = difficulty >= 7
 
 local Smoke_bomb = {
 	duration = 8
@@ -36,7 +35,7 @@ local optsBulldozer_02 = {
     },
 }
 local opts_enable_dozers = {
-	enabled = death_wish and death_sentence,
+	enabled = death_wish_above,
 	elements = { 400001, 400002 },
 	toggle = "on",
 }

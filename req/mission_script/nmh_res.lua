@@ -10,7 +10,7 @@ return {
         },
     },
     -- ACCESS DENIED 
-    [102875] = {
+    [103439] = {
         on_executed = {
             -- smokebomb
             {id = 400006, delay = 2},

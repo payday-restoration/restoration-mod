@@ -49,7 +49,7 @@ return {
         restoration:gen_so(400004, "dozer_blocker_02", Vector3(-2187.72, 2779.06, 0.382), Rotation(-88, 0, -0), optsDefend_SO),
 
         restoration:gen_toggleelement(400005, "enable_dozers", opts_enable_dozers),
-        restoration:gen_smokeandnades(400006, "smoker", Vector3(-2209, 2823, 0.382), Rotation(0, 0, -0), Smoke_bomb)
+        restoration:gen_smokeandnades(400006, "Smoker", Vector3(-2168, 2834, 0.382), Rotation(0, 0, -0), Smoke_bomb)
 
     },
 }

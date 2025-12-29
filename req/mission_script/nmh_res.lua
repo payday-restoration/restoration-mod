@@ -10,9 +10,10 @@ return {
         },
     },
     -- ACCESS DENIED 
-    [102876] = {
+    [102875] = {
         on_executed = {
-            {id = 400006, delay = 2}, -- smokebomb
+            -- smokebomb
+            {id = 400006, delay = 2},
             -- Fishbowl men (will change if medic dozer gets added in roster)
             {id = 400001, delay = 0},
             {id = 400002, delay = 0},
@@ -33,7 +34,7 @@ return {
                 position = Vector3(1526, 866, -0.118),
             },
             {
-                name = "break_roomm",
+                name = "break_room",
                 force = 3,  
                 position = Vector3(3306, 1156, 0.382),
             },

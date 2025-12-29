@@ -20,9 +20,7 @@ function TripMineBase:_sensor(t)
 			self._sensor_units_detected[ray.unit:key()] = true
 
 			if managers.player:has_category_upgrade("trip_mine", "sensor_highlight") then
-				if (managers.groupai:state():whisper_mode() and tweak_data.character[ray.unit:base()._tweak_table].silent_priority_shout or tweak_data.character[ray.unit:base()._tweak_table].priority_shout) then
-					managers.game_play_central:auto_highlight_enemy(ray.unit, true)
-				end
+				managers.game_play_central:auto_highlight_enemy(ray.unit, true)
 				self:_emit_sensor_sound_and_effect()
 
 				if managers.network:session() then

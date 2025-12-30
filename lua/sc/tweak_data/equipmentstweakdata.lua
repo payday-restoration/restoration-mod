@@ -21,6 +21,10 @@ function EquipmentsTweakData:init()
 	self.ecm_jammer.deploy_time = 1
 	self.specials.cable_tie.quantity = 3
 	self.specials.cable_tie.max_quantity = 3
+
+	--Chance for equipment to be regained from ammo box pickups, and the amount that should be regained
+	self.trip_mine.get_chance = 0.01
+	self.trip_mine.get_amount = 1
 	
 	self.sentry_gun.repair_time_init = 60
 	self.sentry_gun.repair_time_min = 10

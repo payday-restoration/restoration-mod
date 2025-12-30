@@ -28,6 +28,14 @@ local function get_as_digested(amount)
 	return list
 end
 
+local function set_hud_item_amount(index, amount)
+	if #amount > 1 then
+		managers.hud:set_item_amount_from_string(index, make_double_hud_string(amount[1], amount[2]), amount)
+	else
+		managers.hud:set_item_amount(index, amount[1])
+	end
+end
+
 Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 	--Info for slow debuff, usually caused by Titan Tasers.
 	self._slow_data = {
@@ -1877,6 +1885,22 @@ function PlayerManager:add_cable_ties(amount)
 	end
 
 	self:update_synced_cable_ties_to_peers(new_amount)
+end
+
+--Accounts for max quantity changes when adding deployable equipment
+function PlayerManager:add_deployable_equipment(equipment_id, amount)
+	local equipment, index = self:equipment_data_by_name(equipment_id)
+
+	if equipment then
+		local max_amount = tweak_data.equipments[equipment.equipment].quantity[1]
+		max_amount = max_amount + self:upgrade_value(name, "quantity_increase_1") + self:upgrade_value(name, "quantity_increase_2")
+		local current_amount = Application:digest_value(equipment.amount[1], false)
+		local new_amount = math.min(current_amount + amount, max_amount)
+		
+		equipment.amount[1] = Application:digest_value(new_amount, true)
+		set_hud_item_amount(index, get_as_digested(equipment.amount))
+		self:update_deployable_equipment_amount_to_peers(equipment.equipment, new_amount)
+	end
 end
 
 -- Tag Team: tagged player will hear activation sound

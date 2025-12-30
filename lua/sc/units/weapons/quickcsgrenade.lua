@@ -25,7 +25,6 @@ function QuickCsGrenade:_setup_from_tweak_data()
 		self._damage_tick_period = 0.3	
 	else
 		self._damage_tick_period = 0.25
-		self._ignore_armor = true
 	end
 	
 	-- Reduced grace slightly when playing on Pro Job

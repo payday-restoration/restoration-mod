@@ -1893,7 +1893,7 @@ function PlayerManager:add_deployable_equipment(equipment_id, amount)
 
 	if equipment then
 		local max_amount = tweak_data.equipments[equipment.equipment].quantity[1]
-		max_amount = max_amount + self:upgrade_value(name, "quantity_increase_1") + self:upgrade_value(name, "quantity_increase_2")
+		max_amount = max_amount + self:upgrade_value(equipment.equipment, "quantity")
 		local current_amount = Application:digest_value(equipment.amount[1], false)
 		local new_amount = math.min(current_amount + amount, max_amount)
 		

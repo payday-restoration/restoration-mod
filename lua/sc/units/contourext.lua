@@ -22,20 +22,11 @@ ContourExt._types.deployable_blackout = { --for autumn's deployable disabling ab
 	priority = 1,
 	color = Vector3(0.5,0,1)
 }
-ContourExt._types.mark_enemy_sixth_sense = { -- 6th sense still will be useful with new PJ contours changes
-	fadeout = 4.5,
-	priority = 5,
-	material_swap_required = true,
-	fadeout_silent = 13.5,
-	--trigger_marked_event = true,
-	color = tweak_data.contour.character.dangerous_color
-}
-ContourExt._types.mark_enemy.priority = 6 -- Need lower priority for new 6th sense outline
 
 -- PJ modifier: Marked enemy will show contour only in LoS (unless you using any marking skills); Medic and LPF flash outlines are disabled;
 if is_pro_job then
 	ContourExt._types.mark_enemy.ray_check_reverse = true
-	--ContourExt._types.mark_unit.ray_check_reverse = true
+	ContourExt._types.mark_unit.ray_check_reverse = true
 	ContourExt._types.medic_show.color = Vector3(0,0,0)
 	ContourExt._types.medic_show.priority = 10
 	ContourExt._types.omnia_heal.color = Vector3(0,0,0)
@@ -59,7 +50,7 @@ local deployable_contours = {
 	"deployable_interactable"
 }
 
-Hooks:OverrideFunction(ContourExt, "add", function(self, type, sync, multiplier, override_color, is_element)
+Hooks:OverrideFunction(ContourExt, "add", function(self, type, sync, multiplier, override_color, is_element, wallhack)
 local disable_outlines = managers.mutators:modify_value("ContourExt:DisableOutlines", false)
 local do_outline = true
 
@@ -168,6 +159,7 @@ if do_outline then
 		fadeout_start_t = fadeout_start_t_dummy or nil,
 		fadeout_length = fadeout_length_dummy or nil,
 		color = override_color or nil,
+		wallhack = wallhack or false,
 		data = data
 	}
 
@@ -180,7 +172,7 @@ if do_outline then
 		end
 	end
 	
-	if data.ray_check_reverse then
+	if data.ray_check_reverse and not setup.wallhack then
 		setup.upd_skip_count_reverse = ContourExt.raycast_update_skip_count
 		local mov_ext = self._unit:movement()
 
@@ -293,7 +285,7 @@ if self.fadeout_start_percent == nil then -- for Vanilla Contours
 				end
 			end
 			--for PJ
-			if is_current and setup.data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
+			if is_current and setup.data.ray_check_reverse and not setup.wallhack and not managers.groupai:state():whisper_mode() then
 				if setup.upd_skip_count_reverse > 0 then
 					setup.upd_skip_count_reverse = setup.upd_skip_count_reverse - 1
 
@@ -348,7 +340,7 @@ if self.fadeout_start_percent == nil then -- for Vanilla Contours
 			end
 
 			if is_current then
-				if setup.data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
+				if setup.data.ray_check_reverse and not setup.wallhack and not managers.groupai:state():whisper_mode() then
 					if turn_off then
 						self:_upd_opacity(self.mod_lerp_opacity and setup.fadeout_t and math.lerp(1, 0, t / setup.fadeout_t) or 1)	
 					else
@@ -392,7 +384,7 @@ else -- for Smooth Contours
 				end
 			end
 			-- for PJ
-			if is_current and data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
+			if is_current and data.ray_check_reverse and not setup.wallhack and not managers.groupai:state():whisper_mode() then
 				local turn_on = nil
 				local cam_pos = managers.viewport:get_current_camera_position()
 				if cam_pos then
@@ -431,7 +423,7 @@ else -- for Smooth Contours
 			
 
 			if opacity then
-				if data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
+				if data.ray_check_reverse and not setup.wallhack and not managers.groupai:state():whisper_mode() then
 					if turn_off then
 						self:_upd_opacity(opacity)	
 					else

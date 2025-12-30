@@ -1823,7 +1823,7 @@ function PlayerStandard:_update_omniscience(t, dt)
 				if not self._state_data.omniscience_units_detected[unit:key()] or self._state_data.omniscience_units_detected[unit:key()] <= t then
 					self._state_data.omniscience_units_detected[unit:key()] = t + tweak_data.player.omniscience.target_resense_t
 
-					managers.game_play_central:auto_highlight_enemy(unit, true)
+					managers.game_play_central:auto_highlight_enemy(unit, true, "sixth_sense")
 					break
 				end
 			end

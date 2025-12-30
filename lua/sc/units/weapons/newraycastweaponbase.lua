@@ -2629,6 +2629,37 @@ function NewRaycastWeaponBase:_set_parts_visible(visible)
 	self:_chk_charm_upd_state()
 end
 
+-- Adds context to the highlighting to support marking enemies through walls in Pro Job.
+function NewRaycastWeaponBase:check_highlight_unit(unit)
+	if not self._can_highlight then
+		return
+	end
+
+	if not self._can_highlight_with_skill and self:is_second_sight_on() then
+		return
+	end
+
+	if unit:in_slot(8) and alive(unit:parent()) then
+		unit = unit:parent() or unit
+	end
+
+	if not unit or not unit:base() then
+		return
+	end
+
+	if unit:character_damage() and unit:character_damage().dead and unit:character_damage():dead() then
+		return
+	end
+
+	local is_enemy_in_cool_state = managers.enemy:is_enemy(unit) and not managers.groupai:state():enemy_weapons_hot()
+
+	if not is_enemy_in_cool_state and not unit:base().can_be_marked then
+		return
+	end
+
+	managers.game_play_central:auto_highlight_enemy(unit, true, "steelsight")
+end
+
 local g3_niphen = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen")
 
 Hooks:PostHook(NewRaycastWeaponBase, "weapon_tweak_data", "res_weapon_tweak_data", function(self)

@@ -851,7 +851,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Specialist
 				--Basic
-					self.values.smg.move_spread_multiplier = {0.6}
+					self.values.smg.move_spread_multiplier = {0.5}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
 					self.values.smg.full_auto_free_ammo = {4}
@@ -935,7 +935,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Shotgun CQB
 				--Basic
-					self.values.shotgun.enter_steelsight_speed_multiplier = {1.075}
+					self.values.shotgun.enter_steelsight_speed_multiplier = {1.1}
 				--Ace
 					self.values.shotgun.reload_speed_multiplier = {1.25, 1.25}
 					
@@ -1344,13 +1344,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Kilmer
 				--Basic
-					self.values.snp.move_spread_multiplier = {0.4}
-					self.values.assault_rifle.move_spread_multiplier = {0.4}
+					self.values.snp.move_spread_multiplier = {0.2}
+					self.values.assault_rifle.move_spread_multiplier = {0.2}
 				--Basic/Ace
 					self.values.snp.reload_speed_multiplier = {1.05, 1.15}
 					self.values.assault_rifle.reload_speed_multiplier = {1.05, 1.15}
-					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.10}
-					self.values.snp.enter_steelsight_speed_multiplier = {1.10}
+					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.125}
+					self.values.snp.enter_steelsight_speed_multiplier = {1.125}
 				--Ace
 
 					self.skill_descs.heavy_impact = {
@@ -1363,17 +1363,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Rifleman
 				--Basic
 					self.values.assault_rifle.stationary_steelsight_accuracy_inc = {
-						0.5, 
+						0.65, 
 						1.0 --Aced disables the bonus as it is swapped for an accuracy increase that applies regardless of movement state
 					} 
-					self.values.snp.stationary_steelsight_accuracy_inc = {0.5, 1.0}
+
+					self.values.snp.stationary_steelsight_accuracy_inc = {0.65, 1}
 					--Sharpshooter has the additional +2 stabilty (a requirement to even climb the sub-tree anyways)
 				--Aced
 					self.values.assault_rifle.steelsight_accuracy_inc = {
-						0.5, 
-						0.5 --unused
+						0.65, 
+						0.65 --unused
 					}
-					self.values.snp.steelsight_accuracy_inc = {0.5, 0.5}
+					self.values.snp.steelsight_accuracy_inc = {0.65, 0.65}
 					self.values.assault_rifle.steelsight_range_inc = {1.25, 1.25}
 					self.values.snp.steelsight_range_inc = {1.25, 1.25}
 
@@ -1707,8 +1708,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--The Professional
 				--Basic
 					self.values.weapon.enter_steelsight_speed_multiplier = {
-						1.0375,
-						1.075
+						1.05,
+						1.05 --unused
 					}
 				--Ace
 					self.values.player.special_double_drop = {true}
@@ -1841,14 +1842,17 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					1.05, --Basic
 					1.3 --Ace
 				}
-				--Basic
-					self.values.pistol.move_spread_multiplier = {0.6}
+				self.values.pistol.move_spread_multiplier = {
+					0.6, --Basic
+					0.4 --Ace
+				}
 					
-					self.skill_descs.akimbo = {
-						skill_value_b1 = tostring(self.values.pistol.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed bonus
-						skill_value_b2 = tostring((1 - self.values.pistol.move_spread_multiplier[1]) * 100).."%", -- Reduce spread
-						skill_value_p1 = tostring((self.values.pistol.reload_speed_multiplier[2] - self.values.pistol.reload_speed_multiplier[1]) % 1 * 100).."%"
-					}
+				self.skill_descs.akimbo = {
+					skill_value_b1 = tostring(self.values.pistol.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed bonus
+					skill_value_b2 = tostring((1 - self.values.pistol.move_spread_multiplier[1]) * 100).."%", -- Reduce spread
+					skill_value_p1 = tostring((self.values.pistol.reload_speed_multiplier[2] - self.values.pistol.reload_speed_multiplier[1]) % 1 * 100).."%",
+					skill_value_p2 = tostring((self.values.pistol.move_spread_multiplier[1] - self.values.pistol.move_spread_multiplier[2]) * 100).."%", -- Reduce spread
+				}
 				
 			--Akimbo
 				--Basic
@@ -5417,6 +5421,15 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 1,
+			upgrade = "move_spread_multiplier",
+			category = "pistol"
+		}
+	}
+	self.definitions.pistol_move_spread_multiplier_2 = {
+		name_id = "menu_snp_move_spread_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
 			upgrade = "move_spread_multiplier",
 			category = "pistol"
 		}

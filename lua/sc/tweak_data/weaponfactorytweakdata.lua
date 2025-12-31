@@ -19985,6 +19985,9 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_baltic = {
 						translation = Vector3(-0.005, -13.4, 0.7)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scar20 = {
+						translation = Vector3(-0.005, 6.5, -0.287)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_stampede_ecs = {
 						translation = Vector3(0.048, 11.5, -3.435)
@@ -39586,6 +39589,76 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ TANGERINE'S MODS ]]
+		if self.parts.wpn_fps_snp_scar20_o_lpvo then
+			self.parts.wpn_fps_snp_scar20_o_lpvo.stats = {
+				value = 0,
+				zoom = 20
+			}
+			self.parts.wpn_fps_snp_scar20_o_lpvo.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_snp_scar20_o_lpvo.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0,-28,-0.01)
+				end
+			end
+			self.parts.wpn_fps_snp_scar20_o_lpvo.adds = {
+				"wpn_fps_upg_o_northtac_steelsight",
+				"wpn_fps_snp_scar20_o_lpvo_alt"
+			}
+
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt = deep_clone(self.parts.wpn_fps_snp_scar20_o_lpvo)
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.pcs = nil
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.forbids = nil
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.adds = nil
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.type = "extra"
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.sub_type = "second_sight"
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.perks = { "second_sight" }
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_upg_o_schmidt/wpn_fps_upg_o_schmidt_magnified"
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.third_unit = nil
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.stats = {
+				value = 1,
+				gadget_zoom = 40
+			}
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.custom_stats = {
+				use_primary_steelsight_unit = true
+			}
+			self.parts.wpn_fps_snp_scar20_o_lpvo_alt.stance_mod = deep_clone(self.parts.wpn_fps_snp_scar20_o_lpvo.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_snp_scar20_o_lpvo_alt.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0, 9, 0)
+				end
+			end
+
+			self.parts.wpn_fps_snp_scar20_s_pdw.supported = true
+			self.parts.wpn_fps_snp_scar20_s_pdw.stats = deep_clone(stocks.adj_to_nocheeks_stats)
+			self.parts.wpn_fps_snp_scar20_s_pdw.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
+			self.parts.wpn_fps_snp_scar20_s_no.supported = true
+			self.parts.wpn_fps_snp_scar20_s_no.stats = deep_clone(stocks.remove_adj_stats)
+			self.parts.wpn_fps_snp_scar20_s_no.custom_stats = deep_clone(stocks.remove_adj_stats)
+
+			for i, part_id in pairs(self.wpn_fps_snp_scar20.default_blueprint) do
+				attachment_list = {
+					"wpn_fps_upg_vg_ass_smg_afg",
+				}
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_snp_scar20.default_blueprint[i] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"
+					end
+				end
+			end
+			for i, part_id in pairs(self.wpn_fps_snp_scar20.uses_parts) do
+				attachment_list = {
+					"wpn_fps_upg_vg_ass_smg_afg",
+				}
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_snp_scar20.uses_parts[i] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"
+					end
+				end
+			end
+
+			self.wpn_fps_snp_scar20_npc.default_blueprint = deep_clone(self.wpn_fps_snp_scar20.default_blueprint)
+			self.wpn_fps_snp_scar20_npc.uses_parts = deep_clone(self.wpn_fps_snp_scar20.uses_parts)
+		end
 
 		if self.parts.wpn_fps_ass_scar16_b_short then
 			self.parts.wpn_fps_ass_scar16_b_short.supported = true
@@ -46822,7 +46895,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				supported = true,
 				stats = { 
-					value = 0
+					value = 0,
+					reload = 4,
+					spread_mult = {2, 0.75}
 				},
 				custom_stats = { 
 					alt_desc = "bm_w_mg42_hinature_desc",
@@ -46851,11 +46926,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			for k, used_part_id in ipairs(self.wpn_fps_lmg_mg42.uses_parts) do
 				if self.parts[used_part_id] and self.parts[used_part_id].type then
-					if self.parts[used_part_id].type == "barrel" then
+					if self.parts[used_part_id].type == "barrel" and self.parts[used_part_id].pcs then
+						table.insert(self.parts.wpn_fps_lmg_mg42_hina_cnuy.forbids, used_part_id)
+						--[[
 						self.parts.wpn_fps_lmg_mg42_hina_cnuy.override[used_part_id] = {
 							override = {},
 							unit = "units/mods/weapons/wpn_fps_lmg_mg42_b_hinature/wpn_fps_lmg_mg42_b_hinature"
 						}
+						--]]
 					elseif self.parts[used_part_id].type == "barrel_ext" and not self.parts[used_part_id].sub_type then
 						self.parts.wpn_fps_lmg_mg42_hina_cnuy.override[used_part_id] = {
 							third_unit = "units/mods/weapons/wpn_fps_lmg_mg42_n_hinature/wpn_fps_lmg_mg42_n_hinature",
@@ -46954,7 +47032,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				supported = true,
-				stats = { value = 0 },
+				stats = { value = 0, recoil = 4, concealment = -1 },
 				internal_part = false,
 				texture_bundle_folder = "boost_in_lootdrop",
 				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
@@ -47023,12 +47101,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				supported = true,
-				stats = { value = 0 },
+				stats = { 
+					value = 0, 
+					extra_ammo = 1, 
+					recoil = -4
+				},
+				custom_stats = { 
+					rof_mult = 1.3333333,
+					is_internal = true 
+				},
 				internal_part = false,
 				texture_bundle_folder = "boost_in_lootdrop",
 				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
 				has_description = true,
-				override = {}
+				override = {},
 			}
 			for k, used_part_id in ipairs(self.wpn_fps_sho_ben.uses_parts) do
 				if self.parts[used_part_id] and self.parts[used_part_id].type then
@@ -47058,7 +47144,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				supported = true,
-				stats = { value = 0 },
+				stats = { value = 0, recoil = 2, concealment = 1, spread = -2 },
 				internal_part = false,
 				texture_bundle_folder = "boost_in_lootdrop",
 				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",

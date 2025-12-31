@@ -1537,7 +1537,6 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
-							"weapon_enter_steelsight_speed_multiplier_2",
 							"player_special_double_drop"
 						},
 						cost = self.costs.hightierpro
@@ -1667,7 +1666,8 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
-							"pistol_reload_speed_multiplier_2"
+							"pistol_reload_speed_multiplier_2",
+							"pistol_move_spread_multiplier_2"
 						},
 						cost = self.costs.hightierpro
 					}

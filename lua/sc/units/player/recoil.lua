@@ -28,54 +28,9 @@ function FPCameraPlayerBase:init( unit )
 end
 --]]
 
-
-function FPCameraPlayerBase:update(unit, t, dt)
-	if self._tweak_data.aim_assist_use_sticky_aim then
-		self:_update_aim_assist_sticky(t, dt)
-	end
-
-	if _G.IS_VR and self._hmd_tracking and not self._block_input then
-		self._output_data.rotation = self._base_rotation * VRManager:hmd_rotation()
-	end
-
-	if not _G.IS_VR then
-		self._parent_unit:base():controller():get_input_axis_clbk("look", callback(self, self, "_update_rot"))
-	end
-
-	self:_update_stance(t, dt)
-	self:_update_movement(t, dt)
-
-	if managers.player:current_state() ~= "driving" then
-		self._parent_unit:camera():set_position(self._output_data.position)
-		self._parent_unit:camera():set_rotation(self._output_data.rotation)
-	else
-		self:_set_camera_position_in_vehicle()
-	end
-
-	if _G.IS_VR then
-		self:_update_fadeout(self._output_data.mover_position, self._output_data.position, self._output_data.rotation, t, dt)
-		self._parent_unit:camera():update_transform()
-	end
-
-	if self._fov.dirty then
-		self._parent_unit:camera():set_FOV(self._fov.fov)
-
-		self._fov.dirty = nil
-	end
-
-	if alive(self._light) then
-		local weapon = self._parent_unit:inventory():equipped_unit()
-
-		if weapon then
-			local object = weapon:get_object(Idstring("fire"))
-			local pos = object:position() + object:rotation():y() * 10 + object:rotation():x() * 0 + object:rotation():z() * -2
-
-			self._light:set_position(pos)
-			self._light:set_rotation(Rotation(object:rotation():z(), object:rotation():x(), object:rotation():y()))
-			World:effect_manager():move_rotate(self._light_effect, pos, Rotation(object:rotation():x(), -object:rotation():y(), -object:rotation():z()))
-		end
-	end
-
+Hooks:RemovePostHook("immersive_fpcamera")
+Hooks:RemovePostHook("viewmodel_tweaks")
+Hooks:PostHook(FPCameraPlayerBase, "update", "ResBWAUpdate", function(self, unit, t, dt)
 	--Code originally from "Better Weapon Animations" by return and "Viewmodel Tweaks" by returnho
 	if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmod") then
 		local enable_bob = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodBob")
@@ -223,7 +178,7 @@ function FPCameraPlayerBase:update(unit, t, dt)
 		mrotation.set_zero(self._vel_overshot.rotation)
 		mrotation.multiply(self._vel_overshot.rotation, mov_ang * tilt_ang * sway_ang)
 	end
-end
+end)
 
 --Add limit constraints to recoil, to allow for recoil to occur with a bipod.
 function FPCameraPlayerBase:_update_movement(t, dt)
@@ -676,13 +631,13 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 			if restoration and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") ~= 1 and not is_akimbo and not ignore_transition_styles then
 				local temp = not self._steelsight_swap_state --and (not in_second_sight or (in_second_sight and not in_steelsight))
 				if player_state and player_state ~= "bipod" and trans_data.absolute_progress and temp then
-					local prog = (1 - absolute_progress) * (dt * 100)
+					local prog = (1 - absolute_progress) * (dt * math.clamp(120 * weapon_base:enter_steelsight_speed_multiplier(), 0.1, 120))
 					if self._shoulder_stance.was_in_steelsight and not in_steelsight then
 						self._shoulder_stance.was_in_steelsight = nil
 						self._shoulder_stance.was_in_second_sight = nil
 						prog = absolute_progress * (dt * 100)
 						trans_data.start_translation = trans_data.start_translation + Vector3(1 * prog, 0.5 * prog, 1 * prog)
-						trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 2.5 * prog)
+						trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 1.5 * prog)
 					elseif in_steelsight and in_full_steelsight ~= true then
 						if speen then
 							trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
@@ -691,7 +646,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 							trans_data.start_translation = trans_data.start_translation + Vector3(0.5 * prog, 0.5 * prog, -0.2 * prog)
 							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, 1.25 * prog)
 						elseif restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") == 3 then
-							trans_data.start_translation = trans_data.start_translation + Vector3(-0.5 * prog, 0.5 * prog, -0.5 * prog)
+							trans_data.start_translation = trans_data.start_translation + Vector3(-0.2 * prog, 0.5 * prog, -0.2 * prog)
 							trans_data.start_rotation = trans_data.start_rotation * Rotation(0 * prog, 0 * prog, -1.25 * prog)
 						end
 					end

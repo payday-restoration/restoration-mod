@@ -3249,7 +3249,7 @@ end
 
 Hooks:PreHook(CopDamage, "_chk_unique_death_requirements", "resmod_spoof_fire_bullet", function(self, damage_info, died)
 	if damage_info and damage_info.variant and damage_info.variant == "fire_bullet" then
-		damage_info.variant = "fire"
+		damage_info.variant = "fire" --changes the "fire_bullet" variant to "fire" so the damage check against the Yufu Wang doesn't fail
 	end
 end)
 
@@ -3262,10 +3262,15 @@ function CopDamage:_on_damage_received(damage_info)
 		managers.enemy:on_enemy_died(self._unit, damage_info)
 		self:chk_disable_aoe_damage()
 	end
-	
+
+	local damage_info_orig = deep_clone(damage_info) --clone the original damage_info table as the spoof done in "_chk_unique_death_requirements" modifies the original table
+
 	if not self._dead then
 		self:_chk_unique_death_requirements(damage_info, false)
-	end	
+	end
+
+	damage_info = damage_info_orig --revert the changes done in the "_chk_unique_death_requirements" prehook
+	--Is this ugly and likely a shit method of fixing this issue even with the requirement that "_chk_unique_death_requirements" is to not be not overridden? Probably. Can you tell I suck with Lua? -DMC
 
 	local attacker_unit = damage_info and damage_info.attacker_unit
 

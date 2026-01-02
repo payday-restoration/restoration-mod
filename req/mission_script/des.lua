@@ -41,6 +41,34 @@ return {
 		},
 
 	},
+	-- Enabling specific room defenses 
+	[100824] = {
+		on_executed = {
+			{ id = 400007, delay = 0 ,},
+			{ id = 400023, delay = 0 ,},
+		},
+	},
+-- Bio Weapons Labs Defense 
+	[108051] = {
+		on_executed = {
+			{ id = 400007, delay = 0 ,},
+			{ id = 400008, delay = 0 ,},
+			{ id = 400009, delay = 0 ,},
+		},
+	},
+-- Heavy Resistance on Escape 
+	[100697] = {
+		on_executed = {
+			{ id = 400007, delay = 0 ,},
+			{ id = 400008, delay = 0 ,},
+			{ id = 400009, delay = 0 ,},
+			{ id = 400010, delay = 0 ,},
+			{ id = 400011, delay = 0 ,},
+			{ id = 400017, delay = 0 ,},
+			{ id = 400018, delay = 0 ,},
+			{ id = 400019, delay = 0 ,},
+		},
+	},
 
 	-- Spawnpoint Delays
 	-- ai_enemy_group_001

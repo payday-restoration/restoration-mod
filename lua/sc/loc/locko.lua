@@ -3121,7 +3121,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Mosin--
 				["bm_mosin_sc_desc"] = "음식이 사치스럽더라도 여전히 총이 필요하다면 이 저렴하고 고전적인 볼트 액션 소총이 있습니다.\n\n이 무기는 한 번에 5발 재장전하고 #{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
 				["bm_wp_upg_a_tranq_mosin"] = "마취탄",
-				["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 종언을 위해, #{item_stage_2}#디 엔드.##\n\n#{skill_color}#8초간 초당 30의 피해를 가하고 적을 기절시킬 수 있는## #{stats_positive}#마취##탄을 발사합니다.\n\n#{important_1}#더 이상 적을 관통할 수 없습니다.##",
+				["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 종언을 위해, #{item_stage_2}#디 엔드.##\n\n#{skill_color}#4초간 초당 60의 피해를 가하고 적을 기절시킬 수 있는## #{stats_positive}#마취##탄을 발사합니다.\n\n#{important_1}#더 이상 적을 관통할 수 없습니다.##",
 				["bm_mosin_tranq_desc"] = "음식이 사치스럽더라도 여전히 총이 필요하다면 이 저렴하고 고전적인 볼트 액션 소총이 있습니다.n\n이 무기는 한 번에 5발 재장전하고\n\n#{stats_positive}#마취탄으로 시간이 지남에 따라 피해를 가하며## #{skill_color}#방탄복, 방패 그리고 얇은 벽을 관통할 수 있습니다.##",
 				--Desert Fox
 				["bm_desertfox_sc_desc"] = "윅이 러시아 마피아 은신처를 습격하는 동안 사용한 소형 불펍 저격 플랫폼입니다.\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",

@@ -156,6 +156,7 @@ local impenetrable_armour = {
 	[Idstring("acc_hat"):key()] = true,
 	[Idstring("bag"):key()] = true,
 	[Idstring("bag_gren"):key()] = true,
+	[Idstring("antenna"):key()] = true,
 }
 
 local limbs = {

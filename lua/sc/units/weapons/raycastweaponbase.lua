@@ -1334,6 +1334,7 @@ function DOTBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon_i
 end
 --]]
 
+FlameBulletBase.stop_on_impact = false
 FlameBulletBase.VARIANT = "fire_bullet"
 
 --Fire no longer memes on shields.
@@ -1493,7 +1494,13 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 	--Play Impact flesh is never true on fire bullets. No need for this conditional.
 
 	--DB Always plays impact sound and effects.
-	self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+	if play_impact_flesh then
+		managers.game_play_central:play_impact_flesh({
+			col_ray = col_ray,
+			no_sound = no_sound
+		})
+		self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+	end
 
 	return result
 end

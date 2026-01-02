@@ -29527,7 +29527,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"snp",
 					"semi_snp"
 				}
-				self.scar20.lock_slide = true
+				self.scar20.nato = true
 				self.scar20.has_description = true
 				self.scar20.desc_id = "bm_ap_weapon_semi_sc_desc"
 				self.scar20.upgrade_blocks = nil

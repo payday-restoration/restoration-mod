@@ -39607,7 +39607,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_scar20_o_lpvo.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_snp_scar20_o_lpvo.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0,-28,-0.01)
+					weap.translation = weap.translation + Vector3(0,-32,-0.01)
 				end
 			end
 			self.parts.wpn_fps_snp_scar20_o_lpvo.adds = {
@@ -39637,6 +39637,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					weap.translation = weap.translation + Vector3(0, 9, 0)
 				end
 			end
+
+			self.parts.wpn_fps_snp_scar20_b_short.supported = true
+			self.parts.wpn_fps_snp_scar20_b_short.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_snp_scar20_b_short.custom_stats = deep_clone(barrels.short_b2_stats)
 
 			self.parts.wpn_fps_snp_scar20_s_pdw.supported = true
 			self.parts.wpn_fps_snp_scar20_s_pdw.stats = deep_clone(stocks.adj_to_nocheeks_stats)

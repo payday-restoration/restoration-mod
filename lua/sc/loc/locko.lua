@@ -1361,15 +1361,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#60%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#180## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##",
 		--["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Fires magnesium shards that have up to an #{skill_color}#80%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#240## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##",
 		--Removed the "can only stun enemies before damage falloff starts" due to the DoT changes, dunno if I can bring it back
-		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#90##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##", --NOT IN USE
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#90##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#90##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#90##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#60##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##", --NOT IN USE
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#40%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#60%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#80%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
 		["bm_wp_upg_a_rip"] = "톰스톤 벅샷",
-		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#2##초에 걸쳐 #{stats_positive}#60##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#4##초에 걸쳐 #{stats_positive}#120##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_rip_pump_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#6##초에 걸쳐 #{stats_positive}#180##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_rip_heavy_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#8##초에 걸쳐 #{stats_positive}#240##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#3##초에 걸쳐 #{stats_positive}#90##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#3##초에 걸쳐 #{stats_positive}#120##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_rip_pump_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#3##초에 걸쳐 #{stats_positive}#180##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_rip_heavy_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#3##초에 걸쳐 #{stats_positive}#240##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
 		--["bm_wp_upg_a_piercing_auto_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#96## bleed damage over #{skill_color}#8## seconds.",
 		--["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#120## bleed damage over #{skill_color}#8## seconds.",
 		--["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#180## bleed damage over #{skill_color}#8## seconds.",
@@ -5921,7 +5921,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "프로페셔널",
-				["menu_silence_expert_beta_desc_sc"] = "베이식: #{owned}#$basic##\n조준 속도와 달리기 후 사격 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 달리기 후 사격 속도가 추가로 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n원거리 무기로 특수 및 정예 적에게 치명적인 헤드샷 성공 시, 적이 #{skill_color}#추가 탄약 상자를 드롭합니다.##",
+				["menu_silence_expert_beta_desc_sc"] = "베이식: #{owned}#$basic##\n조준 속도와 달리기 후 사격 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n원거리 무기로 특수 및 정예 적에게 치명적인 헤드샷 성공 시, #{skill_color}#추가 탄약 상자를 떨굽니다.##",
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "기습 공격",
@@ -5948,7 +5948,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Over Pressurized/Gunfighter--
 				["menu_gun_fighter_sc"] = "총싸움꾼",
-				["menu_gun_fighter_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#권총##의 재장전 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n#{skill_color}#권총##의 움직임에 따른 명중률 페널티가 #{skill_color}#$skill_value_b2## 감소합니다.\n\n움직임에 따른 명중률 페널티는 안정성의 영향을 받습니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 재장전 속도가 추가로 #{skill_color}#$skill_value_p1## 빨라집니다.",
+				["menu_gun_fighter_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#권총##의 재장전 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n#{skill_color}#권총##의 움직임으로 인한 명중률 페널티가 #{skill_color}#$skill_value_b2## 감소합니다.\n\n움직임으로 인한 명중률 페널티는 안정성의 영향을 받습니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 재장전 속도가 추가로 #{skill_color}#$skill_value_p1## 빨라지고 움직임으로 인한 명중률 감소 페널티가 추가로 #{skill_color}#$skill_value_p2## 감소합니다.",
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "아킴보",

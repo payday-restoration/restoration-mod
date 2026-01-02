@@ -3191,7 +3191,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Mosin--
 				["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can pierce body armor, multiple enemies, shields and thin walls.##",
 				["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
-				["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 30 damage/sec over 8 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce through enemies.##",
+				["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 60 damage/sec over 4 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce through enemies.##",
 				["bm_mosin_tranq_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time,\n\n#{stats_positive}#deals damage-over-time with tranquilizer rounds## and #{skill_color}#can pierce body armor, shields and thin walls.##",
 				--Desert Fox
 				["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",

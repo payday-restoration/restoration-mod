@@ -51,9 +51,9 @@ return {
 -- Bio Weapons Labs Defense 
 	[108051] = {
 		on_executed = {
-			{ id = 400007, delay = 0 ,},
-			{ id = 400008, delay = 0 ,},
-			{ id = 400009, delay = 0 ,},
+			{ id = 400001, delay = 0 ,},
+			{ id = 400002, delay = 0 ,},
+			{ id = 400005, delay = 0 ,},
 		},
 	},
 -- Heavy Resistance on Escape 

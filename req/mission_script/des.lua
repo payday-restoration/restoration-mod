@@ -42,7 +42,7 @@ return {
 
 	},
 	-- Enabling specific room defenses 
-	[100824] = {
+	[104652] = {
 		on_executed = {
 			{ id = 400007, delay = 0 ,},
 			{ id = 400023, delay = 0 ,},

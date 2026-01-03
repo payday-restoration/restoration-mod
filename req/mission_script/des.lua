@@ -57,7 +57,7 @@ return {
 		},
 	},
 -- Heavy Resistance on Escape 
-	[100697] = {
+	[102082] = {
 		on_executed = {
 			{ id = 400007, delay = 0 ,},
 			{ id = 400008, delay = 0 ,},

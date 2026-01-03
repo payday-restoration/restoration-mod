@@ -5892,7 +5892,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Evasion--
 				["menu_awareness_beta_sc"] = "위기모면",
-				["menu_awareness_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가합니다.\n\n낙하 피해가 #{skill_color}#$skill_value_b2## 감소합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#달리는 동안 무기를 재장전할 수 있습니다.##\n\n#{item_stage_2}#달리기 중 재장전 취소 설정은 레스토레이션 모드의 무기## 옵션에서 찾을 수 있습니다.##",
+				["menu_awareness_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가합니다.\n\n낙하 피해가 #{skill_color}#$skill_value_b2## 감소합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#달리는 동안 무기를 재장전할 수 있습니다.##\n\n#{item_stage_2}#달리기 중 재장전 취소 설정은 레스토레이션 모드의 무기## 옵션에서 찾을 수 있습니다.",
 
 				--Deep Pockets--
 				["menu_thick_skin_beta_sc"] = "속주머니",

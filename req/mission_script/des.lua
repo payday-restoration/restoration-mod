@@ -45,7 +45,7 @@ return {
 	[104652] = {
 		on_executed = {
 			{ id = 400007, delay = 0 ,},
-			{ id = 400023, delay = 0 ,},
+			{ id = 400024, delay = 0 ,},
 		},
 	},
 -- Bio Weapons Labs Defense 

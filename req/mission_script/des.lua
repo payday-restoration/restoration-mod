@@ -59,14 +59,14 @@ return {
 -- Heavy Resistance on Escape 
 	[102082] = {
 		on_executed = {
-			{ id = 400007, delay = 0 ,},
 			{ id = 400008, delay = 0 ,},
 			{ id = 400009, delay = 0 ,},
 			{ id = 400010, delay = 0 ,},
 			{ id = 400011, delay = 0 ,},
-			{ id = 400017, delay = 0 ,},
+			{ id = 400012, delay = 0 ,},
 			{ id = 400018, delay = 0 ,},
 			{ id = 400019, delay = 0 ,},
+			{ id = 400020, delay = 0 ,},
 		},
 	},
 

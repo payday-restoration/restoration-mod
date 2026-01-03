@@ -117,7 +117,7 @@ local optsShield_05 = {
 }
 local opts_enable_escape_defense = {
 	enabled = death_wish_above,
-	elements = { 400008, 400009, 400010, 400012, 400018, 400019, 400020 },
+	elements = {400008, 400009, 400010, 400011, 400012, 400018, 400019,  400020 },
 		toggle = "on",
 }
 

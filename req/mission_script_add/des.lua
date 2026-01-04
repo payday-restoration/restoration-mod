@@ -63,21 +63,21 @@ local optsBulldozer_01 = {
     enabled = false,
     enemy = tank_skull,
     on_executed = {
-        { id = 400022, delay = 0}
+        { id = 400021, delay = 0}
     },
 }
 local opts_gunner_1 = {
 	enemy = gunners,
 	enabled = false,
 	on_executed = {
-		{id =  400023, delay = 0,},
+		{id =  400022, delay = 0,},
 	},
 }
 local opts_gunner_2 = {
 	enemy = gunners,
 	enabled = false,
 	on_executed = {
-		{id = 400024, delay = 0,},
+		{id = 400023, delay = 0,},
 	}
 }
 local optsShield_01 = {

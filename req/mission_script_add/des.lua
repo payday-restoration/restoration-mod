@@ -3,7 +3,7 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local tank_skull = ((difficulty >= 8) and "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3" or "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249")
 local titan_dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 local cloaker = ((difficulty >= 8)  and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
-local gunners = ((difficulty >= 8)  and "units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" or "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+local gunners = ((difficulty >= 8)  and "units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" or "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")
 local shields = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city")
 local death_wish_above = difficulty >= 7
 
@@ -63,61 +63,61 @@ local optsBulldozer_01 = {
     enabled = false,
     enemy = tank_skull,
     on_executed = {
-        { id = 400020, delay = 0}
+        { id = 400022, delay = 0}
     },
 }
 local opts_gunner_1 = {
 	enemy = gunners,
 	enabled = false,
 	on_executed = {
-		{id =  400021, delay = 0,},
+		{id =  400023, delay = 0,},
 	},
 }
 local opts_gunner_2 = {
 	enemy = gunners,
 	enabled = false,
 	on_executed = {
-		{id =  400022, delay = 0,},
+		{id = 400024, delay = 0,},
 	}
 }
 local optsShield_01 = {
 	enabled = false,
 	enemy = shields,
 	on_executed = {
-		{id = 400012,  delay = 0, },
+		{id = 400013,  delay = 0, },
 	},
 }
 local optsShield_02 = {
 	enabled = false,
 	enemy = shields,
 	on_executed = {
-		{ id = 400013,  delay = 0, },
+		{ id = 400014,  delay = 0, },
 	},
 }
 local optsShield_03 = {
 	enabled = false,
 	enemy = shields,
 	on_executed = {
-		{ id =  400014, delay = 0, },
+		{ id =  400015, delay = 0, },
 	},
 }
 local optsShield_04 = {
 	enabled = false,
 	enemy = shields,
 	on_executed = {
-		{ id =  400015,  delay = 0, },
+		{ id =  400016,  delay = 0, },
 	},
 }
 local optsShield_05 = {
 	enabled = false,
 	enemy = shields,
 	on_executed = {
-		{ id =  400016,  delay = 0, },
+		{ id =  400017,  delay = 0, },
 	},
 }
 local opts_enable_escape_defense = {
 	enabled = death_wish_above,
-	elements = {400008, 400009, 400010, 400011, 400012, 400018, 400019,  400020 },
+	elements = {400008, 400009, 400010, 400011, 400012, 400018, 400019, 400020 },
 		toggle = "on",
 }
 
@@ -157,7 +157,7 @@ return {
 		restoration:gen_dummy(400019, "helipad_resistence_02", Vector3(-1281, 4759, 101.783), Rotation(172, 0, -0), opts_gunner_1 ),
 		restoration:gen_dummy(400020, "helipad_resistence_03", Vector3(-1052, 4736, 101.783), Rotation(172, 0, -0), opts_gunner_2 ),
 
-		restoration:gen_so(400022, "helipad_defend_so_01", Vector3(-1165, 4735, 101.783), Rotation(177, 0, -0), optsDefend_SO ),
+		restoration:gen_so(400021, "helipad_defend_so_01", Vector3(-1165, 4735, 101.783), Rotation(177, 0, -0), optsDefend_SO ),
 		restoration:gen_so(400022, "helipad_defend_so_02", Vector3(-1281, 4759, 101.783), Rotation(172, 0, -0), optsDefend_SO ),
 		restoration:gen_so(400023, "helipad_defend_so_03", Vector3(-1052, 4736, 101.783), Rotation(172, 0, -0), optsDefend_SO ),
 		-- toggle 

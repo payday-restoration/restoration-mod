@@ -2010,6 +2010,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
 			["bm_gsh18_sc_desc"] = "#{skill_color}#Наносит 50% урона через броню.##",
 			--SR1M
 			["bm_sr1_sc_desc"] = "#{skill_color}#Наносит 75% урона через броню.##",
+			--Howa Type 20
+			["menu_l_global_value_howa_type20_mod"] = "Предмет, Япония.",
 			--Видишь суслика? Вот и я не вижу. А он есть.
 			["bm_w_nothing"] = "Без оружия",
 			["bm_w_nothing2"] = "Без оружия",
@@ -2306,7 +2308,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
 		          ["bm_w_modl_desc"] = "Автоматическая винтовка. Стреляет медленно, но прямо. Наносит приемлемый урон.",
 
                         -- MW2023 Beretta ARX 200
-		          ["bm_w_modl_desc"] = "Сильная винтовка калибра 7.62. Бъет сильно, а также может стрелять на средней и дальней дистанции за счет медленного темпа огня и предсказуемой отдачи.",
+		          -- ["bm_w_modl_desc"] = "Сильная винтовка калибра 7.62. Бъет сильно, а также может стрелять на средней и дальней дистанции за счет медленного темпа огня и предсказуемой отдачи.", <- Стопэ, это точно не верный ID
 
                         -- War Sport LVOA-C
 		          ["bm_w_lvoac_desc"] = "Скорострельная винтовка с ультра-современным внешним видом. Произведена компанией ''War Sport''",
@@ -3748,7 +3750,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			--SG45
 			["bm_w_sg45"] = "СГ-45",
 			["bm_w_x_sg45"] = "Парные СГ-45",
-			["bm_sg45_desc"] = "Практически старший брат Контрактора. И очень практически стреляет .45 ACP.",
+			["bm_sg45_desc"] = "Практически старший брат Контрактора.\nИ он очень практически стреляет .45 ACP.",
 			--Degle
 			["bm_w_degle"] = "Дэгл .50",
 		["bm_w_p90"] = "Проджект-90",
@@ -3847,6 +3849,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			--Grease Gun
 			["bm_w_m3"] = "Масленка",
 			["bm_w_x_m3"] = "Парные Масленки",
+			["bm_w_peacekeepermk1"] = "Миротворец мк1",
 		--Кастомные дробовики
 			--PD3 Origin-12
 			["bm_w_or12"] = "Ориджин-12",
@@ -4015,6 +4018,14 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapon_Names", function(l
 			["bm_w_akilo105_2022"] = "АК105",
 			["bm_w_malima"] = "Малима",
 			["bm_w_ak556"] = "АК-56К",
+			["bm_w_lvoac"] = "ЛВОА-Ц",
+			--искал пушку, нашел только какую-то китайскую игру
+			["bm_w_mikon"] = "Онмедзи 5.56",
+			["bm_w_howa_type20"] = "Хова Тип 20",
+			["bm_w_howa_type20_desc"] = "Новая штатная винтовка Сил самообороны Японии, в дизайне которой использованы элементы других современных винтовок.",
+			["bm_w_howa"] = "Хова Тип 89",
+			["bm_w_modl"] = "Модель Л",
+			["bm_w_aku94"] = "АКУ-94",
 		["bm_w_ching"] = "M1 Галант",
 		["bm_w_m14"] = "M308",
 		["bm_w_fal"] = "Фалкон 58",

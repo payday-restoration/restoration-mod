@@ -46898,7 +46898,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 
-		--The End: Destroyer
+		--Destroyer of Denouement
 			self.parts.wpn_fps_lmg_mg42_hina_cnuy = {
 				type = "legendary",
 				name_id = "bm_wskn_mg42_hina_cnuy",
@@ -46910,7 +46910,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				supported = true,
 				stats = { 
 					value = 0,
-					reload = 4,
+					reload = 6,
 					spread_multi = {1.5, 0.75}
 				},
 				custom_stats = { 
@@ -47046,7 +47046,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				supported = true,
-				stats = { value = 0, recoil = 4, concealment = -1 },
+				stats = { value = 0, recoil = 6, concealment = -1 },
 				internal_part = false,
 				texture_bundle_folder = "boost_in_lootdrop",
 				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
@@ -47118,7 +47118,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				stats = { 
 					value = 0, 
 					extra_ammo = 1, 
-					recoil = -4
+					reload = 4,
+					recoil = -8
 				},
 				custom_stats = { 
 					rof_mult = 1.3333333,
@@ -47159,6 +47160,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				supported = true,
 				stats = { value = 0, recoil = 2, concealment = 1, spread = -2 },
+				custom_stats = { ads_speed_mult = 0.9 },
 				internal_part = false,
 				texture_bundle_folder = "boost_in_lootdrop",
 				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",

@@ -514,8 +514,9 @@ function CopDamage:damage_fire(attack_data)
 				managers.player:add_backstab_dodge(attack_data.backstab, head)
 			end
 
+			local orig_variant = attack_data.variant
 			self:die(attack_data)
-			self:chk_killshot(attack_data.attacker_unit, "fire", head, attack_data.weapon_unit and attack_data.weapon_unit:base():get_name_id())
+			self:chk_killshot(attack_data.attacker_unit, orig_variant or "fire", head, attack_data.weapon_unit and attack_data.weapon_unit:base():get_name_id())
 		end
 	else
 		attack_data.damage = damage
@@ -720,7 +721,7 @@ function CopDamage:sync_damage_fire(attacker_unit, damage_percent, death, direct
 		}
 
 		self:die(attack_data)
-		self:chk_killshot(attacker_unit, "fire", false, attack_data.weapon_unit and attack_data.weapon_unit:base():get_name_id())
+		self:chk_killshot(attacker_unit, (attack_data.variant == "fire_bullet" and "fire_bullet") or "fire", false, attack_data.weapon_unit and attack_data.weapon_unit:base():get_name_id())
 
 		local data = {
 			variant = "fire",

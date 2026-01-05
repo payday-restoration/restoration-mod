@@ -25196,10 +25196,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scotia.kick = {}
 				self.scotia.kick = self.stat_info.kick_tables.horizontal_recoil
 				self.scotia.kick_pattern = {
-					{0, self.stat_info.kick_tables.right_recoil},
-					{12, self.stat_info.kick_tables.even_recoil},
-					{21, self.stat_info.kick_tables.right_recoil},
-					{33, self.stat_info.kick_tables.horizontal_recoil}
+					{0, self.stat_info.kick_tables.moderate_right_kick},
+					{12, self.stat_info.kick_tables.right_recoil},
+					{28, self.stat_info.kick_tables.moderate_right_kick},
 				}
 				self.scotia.supported = true
 				self.scotia.ads_speed = 0.320

@@ -1497,7 +1497,8 @@ function PlayerStandard:_check_stop_shooting()
 				if not weap_base:weapon_tweak_data().no_auto_anims then
 					self._ext_camera:play_redirect(self:get_animation("recoil_exit"))
 				else
-					self._ext_camera:play_redirect(self:get_animation("recoil"))
+					--Can't seem to find why I put this here so I'm only commenting this out for now
+					--self._ext_camera:play_redirect(self:get_animation("recoil"))
 				end
 			end
 		end

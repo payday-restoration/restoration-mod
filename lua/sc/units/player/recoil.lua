@@ -375,7 +375,7 @@ end
 
 --Add more recoil to burn through.
 --Also no longer arbitrarily caps vertical recoil.
-function FPCameraPlayerBase:recoil_kick(up, down, left, right, min_h_recoil)
+function FPCameraPlayerBase:recoil_kick(up, down, left, right, min_h_recoil, last_recoil_mult, last_recoil_mult_h)
 	local player_state = managers.player:current_state()
 	if player_state == "bipod" then
 		up = up * 0.5
@@ -383,6 +383,9 @@ function FPCameraPlayerBase:recoil_kick(up, down, left, right, min_h_recoil)
 		left = left * 0.25
 		right = right * 0.25
 	end
+
+	self._last_recoil_mult = last_recoil_mult or 1
+	self._last_recoil_mult_h = last_recoil_mult_h or 1
 
 	local v = math.lerp(up, down, math.random())
 	self._recoil_kick.accumulated = (self._recoil_kick.accumulated or 0) + v
@@ -403,12 +406,13 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	if enable_recoil_recover and enable_recoil_recover == 3 then
 		center_speed = math.max(center_speed * 0.75, 1)
 	end
-	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[1] or 80, 0)
+	local recoil_mult = self._last_recoil_mult or 1
+	local recoil_speed = (math.max(weapon and weapon:base()._recoil_speed[1] or 80, 0) / 4) * recoil_mult
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
 	end
 	if enable_recoil_recover == 1 and self._recoil_kick.accumulated and self._episilon < math.abs(self._recoil_kick.accumulated) then
-		local degrees_to_move = 80 * dt --Move camera 80 degrees per second, increased speed over the vanilla 40 to reduce "ghost" recoil
+		local degrees_to_move = recoil_speed * dt --Move camera 80 degrees per second, increased speed over the vanilla 40 to reduce "ghost" recoil
 		r_value = math.min(self._recoil_kick.accumulated, degrees_to_move)
 		self._recoil_kick.accumulated = self._recoil_kick.accumulated - r_value
 	elseif enable_recoil_recover ~= 1 and self._recoil_kick.current and self._recoil_kick.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.current) or 0) > self._episilon then
@@ -447,12 +451,13 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	if enable_recoil_recover and enable_recoil_recover == 3 then
 		center_speed = math.max(center_speed * 0.75, 1)
 	end
-	local recoil_speed = math.max(weapon and weapon:base()._recoil_speed[2] or 60, 0)
+	local recoil_mult = self._last_recoil_mult or 1
+	local recoil_speed = (math.max(weapon and weapon:base()._recoil_speed[2] or 60, 0) / 4) * recoil_mult
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
 	end
 	if enable_recoil_recover == 1 and self._recoil_kick.h.accumulated and self._episilon < math.abs(self._recoil_kick.h.accumulated) then
-		local degrees_to_move = 60 * dt 
+		local degrees_to_move = recoil_speed * dt 
 		r_value = math.min(self._recoil_kick.h.accumulated, degrees_to_move)
 		self._recoil_kick.h.accumulated = self._recoil_kick.h.accumulated - r_value
 	elseif enable_recoil_recover ~= 1 and self._recoil_kick.h.current and math.abs(self._recoil_kick.h.accumulated - ((enable_recoil_recover ~= 1 and self._recoil_kick.h.current) or 0)) > self._episilon then

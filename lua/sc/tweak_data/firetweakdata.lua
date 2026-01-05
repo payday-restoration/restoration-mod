@@ -7,6 +7,7 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		dot_length = 3.1,
 		dot_trigger_chance = 0.35,
 		dot_trigger_max_distance = 3000,
+		dot_trigger_max_falloff = false,
 		dot_grace_period = 0.1,
 		variant = "fire",
 		dot_damage = 3.0,

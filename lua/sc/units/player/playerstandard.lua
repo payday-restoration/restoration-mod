@@ -1941,6 +1941,9 @@ end
 local _update_movement_old = PlayerStandard._update_movement
 function PlayerStandard:_update_movement(t, dt)
 	_update_movement_old(self, t, dt)
+	if self._state_data.in_air or self._moving then
+		self._last_move_t = t
+	end
 	if not self._move_dir then
 		self._running_wanted = false
 	end

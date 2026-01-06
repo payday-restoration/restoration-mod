@@ -407,7 +407,7 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 		center_speed = math.max(center_speed * 0.75, 1)
 	end
 	local recoil_mult = self._last_recoil_mult or 1
-	local recoil_speed = (math.max(weapon and weapon:base()._recoil_speed[1] or 80, 0) / 4) * recoil_mult
+	local recoil_speed = (math.max(weapon and weapon:base()._recoil_speed[1] or 80, 0) / 2) * recoil_mult
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
 	end
@@ -452,7 +452,7 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 		center_speed = math.max(center_speed * 0.75, 1)
 	end
 	local recoil_mult = self._last_recoil_mult or 1
-	local recoil_speed = (math.max(weapon and weapon:base()._recoil_speed[2] or 60, 0) / 4) * recoil_mult
+	local recoil_speed = (math.max(weapon and weapon:base()._recoil_speed[2] or 60, 0) / 3) * recoil_mult
 	if player_state and player_state:in_air() then
 		recoil_speed = recoil_speed * 1.25
 	end

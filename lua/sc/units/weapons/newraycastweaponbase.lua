@@ -31,6 +31,8 @@ Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 		self._use_armor_piercing = true
 	end
 
+	self._move_grace = 0.5
+
 	self._skill_global_ap = (managers.player:has_category_upgrade("player", "ap_bullets") and managers.player:upgrade_value("player", "ap_bullets", 1)) or nil
 
 	local fire_mode_data = self:weapon_tweak_data().fire_mode_data or {}
@@ -233,7 +235,7 @@ NewRaycastWeaponBase.IDSTRING_SINGLE = Idstring("single")
 NewRaycastWeaponBase.IDSTRING_AUTO = Idstring("auto")
 
 --Multipliers for overall spread.
-function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
+function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state, is_moving)
 	local mul = 1
 	local multi_ray = self._rays and self._rays > 1
 
@@ -245,7 +247,7 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 		return mul
 	end
 
-	local is_moving = current_state._moving or current_state:in_air()
+	--local is_moving = current_state._moving or current_state:in_air()
 	local full_steelsight = current_state:is_full_steelsight()
 
 	if full_steelsight then
@@ -349,7 +351,9 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	local is_steelsight = current_state and current_state:is_full_steelsight()
 	local is_hipfire = current_state and not current_state:is_full_steelsight()
 	local is_tacstance = self:second_sight_spread_mult()
-	local is_moving = current_state and (current_state._moving or current_state:in_air())
+	local t = self._unit:timer():time()
+	local last_move_t = current_state and current_state._last_move_t or -10
+	local is_moving = self._move_grace and last_move_t and last_move_t + self._move_grace > t or false --(current_state._moving or current_state:in_air())
 	local is_bipod = current_state and current_state:_is_using_bipod()
 	
 	if not current_state then
@@ -361,7 +365,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) * tweak_data.weapon.stat_info.spread_per_accuracy, 0.05)
 	
 	--Moving penalty to spread, based on stability stat- added to total area.
-	if is_moving then
+	if not is_bipod and is_moving then
 		--Get spread area from stability stat.
 		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * tweak_data.weapon.stat_info.spread_per_stability, 0)
 		local moving_spread_mult = 1
@@ -398,7 +402,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	end
 
 	--Apply skill and stance multipliers to overall spread area.
-	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
+	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state, is_moving)
 
 	if not is_steelsight or (is_steelsight and ( self:weapon_tweak_data().always_hipfire or is_tacstance ) ) then
 		local hipfire_spread_mult = 1
@@ -561,7 +565,9 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 	local user_unit = self._setup and self._setup.user_unit
 	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
 	if current_state then
-		local is_moving = current_state._moving or current_state:in_air()
+		local t = self._unit:timer():time()
+		local last_move_t = current_state and current_state._last_move_t or -10
+		local is_moving = self._move_grace and last_move_t and last_move_t + self._move_grace > t or false --(current_state._moving or current_state:in_air())
 		local full_steelsight = current_state:is_full_steelsight()
 		if full_steelsight then
 			local weapon_stats = tweak_data.weapon.stats

@@ -31,7 +31,7 @@ Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 		self._use_armor_piercing = true
 	end
 
-	self._move_grace = 0.5
+	self._move_grace = 0.2
 
 	self._skill_global_ap = (managers.player:has_category_upgrade("player", "ap_bullets") and managers.player:upgrade_value("player", "ap_bullets", 1)) or nil
 
@@ -353,7 +353,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	local is_tacstance = self:second_sight_spread_mult()
 	local t = self._unit:timer():time()
 	local last_move_t = current_state and current_state._last_move_t or -10
-	local is_moving = self._move_grace and last_move_t and last_move_t + self._move_grace > t or false --(current_state._moving or current_state:in_air())
+	local is_moving = self._move_grace and last_move_t and (last_move_t + self._move_grace) > t or false --(current_state._moving or current_state:in_air())
 	local is_bipod = current_state and current_state:_is_using_bipod()
 	
 	if not current_state then
@@ -567,7 +567,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 	if current_state then
 		local t = self._unit:timer():time()
 		local last_move_t = current_state and current_state._last_move_t or -10
-		local is_moving = self._move_grace and last_move_t and last_move_t + self._move_grace > t or false --(current_state._moving or current_state:in_air())
+		local is_moving = self._move_grace and last_move_t and (last_move_t + self._move_grace) > t or false --(current_state._moving or current_state:in_air())
 		local full_steelsight = current_state:is_full_steelsight()
 		if full_steelsight then
 			local weapon_stats = tweak_data.weapon.stats

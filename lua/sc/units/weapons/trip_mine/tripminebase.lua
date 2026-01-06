@@ -20,7 +20,7 @@ function TripMineBase:_sensor(t)
 			self._sensor_units_detected[ray.unit:key()] = true
 
 			if managers.player:has_category_upgrade("trip_mine", "sensor_highlight") then
-				managers.game_play_central:auto_highlight_enemy(ray.unit, true)
+				managers.game_play_central:auto_highlight_enemy(ray.unit, true, "trip_mine")
 				self:_emit_sensor_sound_and_effect()
 
 				if managers.network:session() then

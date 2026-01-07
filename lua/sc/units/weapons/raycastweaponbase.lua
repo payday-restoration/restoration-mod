@@ -1531,22 +1531,24 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 			attacker = alive(attacker) and attacker or nil
 			weapon = user_unit
 		end
+
+		distance = mvector3.distance(attacker:position(), target_unit:position())
 	end
 
-	distance = mvector3.distance(attacker:position(), target_unit:position())
-
-	if dot_data.dot_trigger_max_falloff then
-		if weap_base and weap_base.near_falloff_distance then
-			can_dot = distance <= weap_base.near_falloff_distance
-		end
-	end
-
-	if dot_data.dot_trigger_max_distance then
-		if not attacker then
-			return
+	if distance then
+		if dot_data.dot_trigger_max_falloff then
+			if weap_base and weap_base.near_falloff_distance then
+				can_dot = distance <= weap_base.near_falloff_distance
+			end
 		end
 
-		can_dot = distance <= dot_data.dot_trigger_max_distance
+		if dot_data.dot_trigger_max_distance then
+			if not attacker then
+				return
+			end
+
+			can_dot = distance <= dot_data.dot_trigger_max_distance
+		end
 	end
 
 	if not can_dot then

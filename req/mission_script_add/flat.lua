@@ -157,6 +157,7 @@ local optsShare_AIHunt = {
 	SO_access = tostring(128 + 4096),
 	path_style = "none",
 	scan = true,
+	use_instigator = true,
 	interval = 2,
 	so_action = "AI_hunt",
 }
@@ -166,6 +167,7 @@ local optsSniper_SO = {
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
+	use_instigator = true,
 	pose = "crouch",
 	interval = 2,
 	so_action = "AI_sniper",
@@ -176,6 +178,7 @@ local optsAI_Defend = {
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
+	use_instigator = true,
 	interval = 2,
 	so_action = "AI_defend",
 }
@@ -185,6 +188,7 @@ local optsShield_Defend_SO = {
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
+	use_instigator = true,
 	interval = 2,
 	so_action = "AI_sniper",
 }

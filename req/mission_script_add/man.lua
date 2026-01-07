@@ -2,6 +2,7 @@ local optsBulldozer_SO = {
 	SO_access = "4096",
 	path_style = "none",
 	scan = true,
+	use_instigator = true,
 	interval = 2,
 	so_action = "AI_hunt",
 }

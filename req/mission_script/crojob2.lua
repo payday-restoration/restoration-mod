@@ -25,7 +25,6 @@ return {
 	[101540] = {
 		on_executed = {
 			{id = 400003, delay = 0, },
-			{id = 400012, delay = 0, },
 		},
 	},
 	-- Spawn the dozer and shields when the ship starts to move 
@@ -36,6 +35,8 @@ return {
 			{id = 400005, delay = 0, },
 			{id = 400006, delay = 0, },
 			{id = 400007, delay = 0, },
+			{id = 400012, delay = 0, },
+			{id = 400013, delay = 0, },
 		},
 	},
 	[101882] = { -- add reinforce

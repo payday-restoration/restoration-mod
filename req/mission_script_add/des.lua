@@ -11,12 +11,13 @@ local optsDefend_SO = {
 	SO_access = {
         "tank",
         "shield",
-        "fbi",
+        "swat",
     },
 	scan = true,
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
+	use_instigator = true,
 	interval = 2,
 	so_action = "AI_sniper",
 }
@@ -54,6 +55,7 @@ local optsCloaker_Hide_SO_weapon_lab = {
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
+	use_instigator = true,
 	interrupt_dis = 5,
 	interrupt_dmg = 0.3,
 	interval = 2,

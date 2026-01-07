@@ -185,6 +185,7 @@ local optsDefend_and_Sniper_SO = {
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
+	use_instigator = true,
 	interval = 2,
     so_action = "AI_sniper"
 }
@@ -194,6 +195,7 @@ local optsDefendDozer_SO = {
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
+	use_instigator = true,
 	interval = 2,
     so_action = "AI_sniper"
 }

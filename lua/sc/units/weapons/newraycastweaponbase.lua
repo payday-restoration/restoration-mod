@@ -31,7 +31,7 @@ Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 		self._use_armor_piercing = true
 	end
 
-	self._move_grace = 0.2
+	self._move_decay = 0.2
 
 	self._skill_global_ap = (managers.player:has_category_upgrade("player", "ap_bullets") and managers.player:upgrade_value("player", "ap_bullets", 1)) or nil
 
@@ -353,7 +353,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	local is_tacstance = self:second_sight_spread_mult()
 	local t = self._unit:timer():time()
 	local last_move_t = current_state and current_state._last_move_t or -10
-	local is_moving = self._move_grace and last_move_t and (last_move_t + self._move_grace) > t or false --(current_state._moving or current_state:in_air())
+	local is_moving = self._move_decay and last_move_t and (last_move_t + self._move_decay) > t or false --(current_state._moving or current_state:in_air())
 	local is_bipod = current_state and current_state:_is_using_bipod()
 	
 	if not current_state then
@@ -427,7 +427,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	if self._alt_fire_active and self._alt_fire_data then
 		multiplier = multiplier * (self._alt_fire_data.spread_mul or 1)
 	end
-	
+
 	local spread_multiplier = 1
 	for _, category in ipairs(self._tweak_categories) do
 		local spread_mult = tweak_data[category] and tweak_data[category].spread_mult or 1
@@ -567,7 +567,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 	if current_state then
 		local t = self._unit:timer():time()
 		local last_move_t = current_state and current_state._last_move_t or -10
-		local is_moving = self._move_grace and last_move_t and (last_move_t + self._move_grace) > t or false --(current_state._moving or current_state:in_air())
+		local is_moving = self._move_decay and last_move_t and (last_move_t + self._move_decay) > t or false --(current_state._moving or current_state:in_air())
 		local full_steelsight = current_state:is_full_steelsight()
 		if full_steelsight then
 			local weapon_stats = tweak_data.weapon.stats
@@ -970,6 +970,23 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self:old_update_stats_values(disallow_replenish, ammo_data)
 
 	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:categories(), self._silencer, nil, current_state, self._blueprint)
+
+	--Use stability stat to get the moving accuracy penalty.
+	--Moved this from "RaycastWeaponBase:setup" as it lead to funky lingering stats in intances of mid-heist loadout changes
+	if self._current_stats_indices and self._current_stats_indices.recoil then
+		self._spread_moving = tweak_data.weapon.stats.spread_moving[self._current_stats_indices.recoil] or 0
+	else --Fallback method for getting stability moving accuracy penalty, in case the indices somehow don't get set.
+		log("Using fallback")
+		local moving_spread_index = 0
+		local recoil_table = tweak_data.weapon.stats.recoil
+		for i = 0, 100, 1 do
+			if recoil_table[i] == self._recoil then
+				moving_spread_index = i
+				break
+			end
+		end
+		self._spread_moving = tweak_data.weapon.stats.spread_moving[moving_spread_index] or 0
+	end
 
 	local recoil_values = self:weapon_tweak_data().recoil_values
 	self._recoil_speed = recoil_values and recoil_values[1] or { 90, 60 }

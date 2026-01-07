@@ -1354,7 +1354,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 
 					self.skill_descs.heavy_impact = {
-						skill_value_b1 = tostring((1 - self.values.snp.move_spread_multiplier[1]) * 100).."%", -- Movespeed during ADS
+						skill_value_b1 = tostring((1 - self.values.snp.move_spread_multiplier[1]) * 100).."%",
 						skill_value_b2 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed
 						skill_value_p1 = tostring((self.values.assault_rifle.reload_speed_multiplier[2] - self.values.assault_rifle.reload_speed_multiplier[1]) % 1 * 100).."%", -- Reload speed
 						skill_value_p2 = tostring(self.values.snp.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
@@ -1843,7 +1843,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					1.3 --Ace
 				}
 				self.values.pistol.move_spread_multiplier = {
-					0.6, --Basic
+					0.7, --Basic
 					0.4 --Ace
 				}
 					

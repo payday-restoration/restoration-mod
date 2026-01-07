@@ -1317,7 +1317,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							down * recoil_multiplier,
 							left * recoil_multiplier_h,
 							right * recoil_multiplier_h,
-						min_h_recoil)
+						min_h_recoil, recoil_multiplier, recoil_multiplier_h)
 
 						if not params or not params.no_shake then
 							local shake_tweak_data = weap_tweak_data.shake[fire_mode] or weap_tweak_data.shake

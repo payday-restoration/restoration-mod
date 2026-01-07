@@ -3651,8 +3651,8 @@ function WeaponTweakData:_init_stats()
 		standing = 3.5,
 		moving_crouching = 2.5,
 		crouching = 2.5,
-		moving_steelsight = 0.05,
-		steelsight = 0.05,
+		moving_steelsight = 0.025,
+		steelsight = 0.025,
 		bipod = 1,
 		player_turret = 1,
 	}
@@ -26990,7 +26990,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.t9british then --RJC9000 and PlayBONK's port of 3arc's absolute sin of an EM2
-				self.t9british.categories = { "assault_rifle" }
+				self.t9british.categories = { "assault_rifle", "dmr_l" }
 				self.t9british.recategorize = { "dmr_ar" }
 				self.t9british.damage_type = "assault_rifle"
 				self.t9british.has_description = true
@@ -35881,7 +35881,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		akimbo = 1.05,
 		pistol = 1.25, --Compensate for low range.
 			zippy = 0.15,
-			raygun = 1.00,
+			raygun = 0.8,
 		smg = 1.125,
 			pdw = 0.675,
 			typh = 0.8,

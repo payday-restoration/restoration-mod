@@ -45277,10 +45277,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 10,
 			zoom = -20,
 			damage = -60,
-			spread = -10,
+			spread = -12,
 			total_ammo_mod = 136,
 			extra_ammo = 6,
-			recoil = 10,
+			recoil = 4,
 			concealment = 5
 		}
 		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.stance_mod = {
@@ -45290,16 +45290,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.custom_stats = {
 			alt_desc = "bm_w_srs99_s7_flexfire_desc",
-			falloff_start_mult = 0.4,
-			falloff_end_mult = 0.4,
+			falloff_start_mult = 0.3,
+			falloff_end_mult = 0.3,
 			rof_mult = 2.25,
-			damage_min_mult = 0.66667,
+			damage_min_mult = 0.75,
 			can_shoot_through_titan_shield = false,
 			alt_ammo_pickup_min_mul = 1.45,
 			alt_ammo_pickup_max_mul = 1.45,
 			ammo_pickup_min_mul = 1.45,
 			ammo_pickup_max_mul = 1.45,
 			hs_mult = 1.12494,
+			hip_mult = 50,
 		}
 
 

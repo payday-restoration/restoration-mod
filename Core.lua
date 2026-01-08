@@ -1564,7 +1564,7 @@ end
 -- search_position must be the same for all GroupAI hiding SOs
 -- interrupt_dis is in meters
 -- The SO group element must also be in AI navigation (or at least able to be found by GroupAI)
-function restoration:get_hiding_cloaker_so_opts(so_action, search_position, interrupt_dis)
+function restoration.get_hiding_cloaker_so_opts(so_action, search_position, interrupt_dis)
 	return {
 		SO_access = "1024",
 		scan = true,

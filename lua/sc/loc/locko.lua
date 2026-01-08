@@ -1361,15 +1361,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#60%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#180## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##",
 		--["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Fires magnesium shards that have up to an #{skill_color}#80%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#240## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##",
 		--Removed the "can only stun enemies before damage falloff starts" due to the DoT changes, dunno if I can bring it back
-		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#90##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##", --NOT IN USE
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#90##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#90##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#90##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#60##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##", --NOT IN USE
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#40%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#60%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#80%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
 		["bm_wp_upg_a_rip"] = "톰스톤 벅샷",
-		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#2##초에 걸쳐 #{stats_positive}#60##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#4##초에 걸쳐 #{stats_positive}#120##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_rip_pump_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#6##초에 걸쳐 #{stats_positive}#180##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_rip_heavy_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#8##초에 걸쳐 #{stats_positive}#240##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#3##초에 걸쳐 #{stats_positive}#90##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#3##초에 걸쳐 #{stats_positive}#120##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_rip_pump_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#3##초에 걸쳐 #{stats_positive}#180##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_rip_heavy_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#3##초에 걸쳐 #{stats_positive}#240##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
 		--["bm_wp_upg_a_piercing_auto_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#96## bleed damage over #{skill_color}#8## seconds.",
 		--["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#120## bleed damage over #{skill_color}#8## seconds.",
 		--["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes that inflict #{skill_color}#180## bleed damage over #{skill_color}#8## seconds.",
@@ -3121,7 +3121,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Mosin--
 				["bm_mosin_sc_desc"] = "음식이 사치스럽더라도 여전히 총이 필요하다면 이 저렴하고 고전적인 볼트 액션 소총이 있습니다.\n\n이 무기는 한 번에 5발 재장전하고 #{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
 				["bm_wp_upg_a_tranq_mosin"] = "마취탄",
-				["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 종언을 위해, #{item_stage_2}#디 엔드.##\n\n#{skill_color}#8초간 초당 30의 피해를 가하고 적을 기절시킬 수 있는## #{stats_positive}#마취##탄을 발사합니다.\n\n#{important_1}#더 이상 적을 관통할 수 없습니다.##",
+				["bm_wp_upg_a_tranq_mosin_desc"] = "진정한 종언을 위해, #{item_stage_2}#디 엔드.##\n\n#{skill_color}#4초간 초당 60의 피해를 가하고 적을 기절시킬 수 있는## #{stats_positive}#마취##탄을 발사합니다.\n\n#{important_1}#더 이상 적을 관통할 수 없습니다.##",
 				["bm_mosin_tranq_desc"] = "음식이 사치스럽더라도 여전히 총이 필요하다면 이 저렴하고 고전적인 볼트 액션 소총이 있습니다.n\n이 무기는 한 번에 5발 재장전하고\n\n#{stats_positive}#마취탄으로 시간이 지남에 따라 피해를 가하며## #{skill_color}#방탄복, 방패 그리고 얇은 벽을 관통할 수 있습니다.##",
 				--Desert Fox
 				["bm_desertfox_sc_desc"] = "윅이 러시아 마피아 은신처를 습격하는 동안 사용한 소형 불펍 저격 플랫폼입니다.\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
@@ -5060,8 +5060,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["bm_equipment_grenade_crate_desc"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 총 탄약량의 ##25%##만큼 보충하고 투척 무기를 ##1##개를 보충할 수 있습니다.\n\n군장 가방은 #{skill_color}#4##번만 사용할 수 있으며, 군장 가방의 모습으로 얼마나 더 사용할 수 있는지 알 수 있습니다.\n\n군장 가방은 전투원이 폭발물 및 기타 투척물을 전투지역으로 운반할 때 사용하는 휴대용 가방입니다.\n\n#{important_1}#주의: 재생 또는 대기 시간 기반의 투척 무기는 보충할 수 업습니다.##",
 		["bm_equipment_grenade_crate_desc_short"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 총 탄약량의 ##25%##만큼 보충하고 투척 무기를 ##1##개를 보충할 수 있습니다.\n\n군장 가방은 #{skill_color}#4##번만 사용할 수 있으며, 군장 가방의 모습으로 얼마나 더 사용할 수 있는지 알 수 있습니다.\n\n#{important_1}#주의: 재생 또는 대기 시간 기반의 투척 무기는 보충할 수 업습니다.##",
 		--Trip Mine
-		["bm_equipment_trip_mine_desc"] = "트립 마인을 사용하라면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 격발용 레이저는 #{skill_color}#$BTN_INTERACT## 키를 눌러 폭발 모드와 센서 모드로 설정을 변경할 수 있습니다.\n\n성형작약탄을 사용하려면, #{skill_color}#$BTN_INTERACT.## 키를 길게 눌러 설치하여야 합니다. 필요한 수만큼 설치하면 몇 초 뒤에 폭발합니다.\n\n트립 마인 주로 레이저를 지나는 적에게 피해를 주거나 처치하는 함정으로 사용합니다. 성형작약탄은 주로 문이나 금고를 터트리는 데 사용합니다. 둘 다 대부분의 전투 상황에서 유용한 장비로 사용될 수 있습니다.",
-		["bm_equipment_trip_mine_desc_short"] = "트립 마인을 사용하라면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치하여야 합니다. 격발용 레이저는 #{skill_color}#$BTN_INTERACT## 키를 눌러 폭발 모드와 센서 모드로 설정을 변경할 수 있습니다.\n\n성형작약탄을 사용하려면, #{skill_color}#$BTN_INTERACT.## 키를 길게 눌러 설치하여야 합니다. 필요한 수만큼 설치하면 몇 초 뒤에 폭발합니다.",
+		["bm_equipment_trip_mine_desc"] = "트립 마인을 사용하라면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 격발용 레이저는 #{skill_color}#$BTN_INTERACT## 키를 눌러 폭발 모드와 센서 모드로 설정을 변경할 수 있습니다.\n\n성형작약탄을 사용하려면, #{skill_color}#$BTN_INTERACT.## 키를 길게 눌러 설치하여야 합니다. 필요한 수만큼 설치하면 몇 초 뒤에 폭발합니다. 탄약 상자를 획득할 때마다 #{skill_color}#1%## 확률로 트립 마인 #{skill_color}#1##개를 얻을 수 있습니다.\n\n트립 마인 주로 레이저를 지나는 적에게 피해를 주거나 처치하는 함정으로 사용합니다. 성형작약탄은 주로 문이나 금고를 터트리는 데 사용합니다. 둘 다 대부분의 전투 상황에서 유용한 장비로 사용될 수 있습니다.",
+		["bm_equipment_trip_mine_desc_short"] = "트립 마인을 사용하라면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치하여야 합니다. 격발용 레이저는 #{skill_color}#$BTN_INTERACT## 키를 눌러 폭발 모드와 센서 모드로 설정을 변경할 수 있습니다.\n\n성형작약탄을 사용하려면, #{skill_color}#$BTN_INTERACT.## 키를 길게 눌러 설치하여야 합니다. 필요한 수만큼 설치하면 몇 초 뒤에 폭발합니다. 탄약 상자를 획득할 때마다 #{skill_color}#1%## 확률로 트립 마인 #{skill_color}#1##개를 얻을 수 있습니다.",
 		--Ammo Bag
 		["bm_equipment_ammo_bag_desc"] = "탄약 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 탄약을 보충할 수 있습니다.\n\n탄약 가방은 당신의 무기 중 하나의 탄약을 #{skill_color}#$deployable_uses##번까지 완전히 보충할 수 있게 해주며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n탄약 가방은 원래 군인들이 전투에 참여할 때 추가 탄약을 챙길 수 있도록 만든 휴대용 가방입니다.",
 		["bm_equipment_ammo_bag_desc_short"] = "탄약 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 탄약을 보충할 수 있습니다.\n\n탄약 가방은 당신의 무기 중 하나의 탄약을 #{skill_color}#$deployable_uses##번까지 완전히 보충할 수 있게 해주며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.",
@@ -5892,7 +5892,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Evasion--
 				["menu_awareness_beta_sc"] = "위기모면",
-				["menu_awareness_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가합니다.\n\n낙하 피해가 #{skill_color}#$skill_value_b2## 감소합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#달리는 동안 무기를 재장전할 수 있습니다.##\n\n#{item_stage_2}#달리기 중 재장전 취소 설정은 레스토레이션 모드의 무기## 옵션에서 찾을 수 있습니다.##",
+				["menu_awareness_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가합니다.\n\n낙하 피해가 #{skill_color}#$skill_value_b2## 감소합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#달리는 동안 무기를 재장전할 수 있습니다.##\n\n#{item_stage_2}#달리기 중 재장전 취소 설정은 레스토레이션 모드의 무기## 옵션에서 찾을 수 있습니다.",
 
 				--Deep Pockets--
 				["menu_thick_skin_beta_sc"] = "속주머니",
@@ -5921,7 +5921,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "프로페셔널",
-				["menu_silence_expert_beta_desc_sc"] = "베이식: #{owned}#$basic##\n조준 속도와 달리기 후 사격 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 달리기 후 사격 속도가 추가로 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n원거리 무기로 특수 및 정예 적에게 치명적인 헤드샷 성공 시, 적이 #{skill_color}#추가 탄약 상자를 드롭합니다.##",
+				["menu_silence_expert_beta_desc_sc"] = "베이식: #{owned}#$basic##\n조준 속도와 달리기 후 사격 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n원거리 무기로 특수 및 정예 적에게 치명적인 헤드샷 성공 시, #{skill_color}#추가 탄약 상자를 떨굽니다.##",
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "기습 공격",
@@ -5948,7 +5948,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Over Pressurized/Gunfighter--
 				["menu_gun_fighter_sc"] = "총싸움꾼",
-				["menu_gun_fighter_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#권총##의 재장전 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n#{skill_color}#권총##의 움직임에 따른 명중률 페널티가 #{skill_color}#$skill_value_b2## 감소합니다.\n\n움직임에 따른 명중률 페널티는 안정성의 영향을 받습니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 재장전 속도가 추가로 #{skill_color}#$skill_value_p1## 빨라집니다.",
+				["menu_gun_fighter_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#권총##의 재장전 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n#{skill_color}#권총##의 움직임으로 인한 명중률 페널티가 #{skill_color}#$skill_value_b2## 감소합니다.\n\n움직임으로 인한 명중률 페널티는 안정성의 영향을 받습니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 재장전 속도가 추가로 #{skill_color}#$skill_value_p1## 빨라지고 움직임으로 인한 명중률 감소 페널티가 추가로 #{skill_color}#$skill_value_p2## 감소합니다.",
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "아킴보",

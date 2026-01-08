@@ -94,6 +94,7 @@ local optsCloaker_Hide_SO_1 = {
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
+	use_instigator = true,
 	interrupt_dis = 5,
 	interrupt_dmg = 0.3,
 	interval = 2,

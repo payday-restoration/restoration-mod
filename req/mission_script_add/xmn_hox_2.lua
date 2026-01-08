@@ -1,0 +1,1 @@
+return restoration:require("mission_script_add/hox_2")

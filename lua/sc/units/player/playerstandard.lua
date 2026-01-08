@@ -1317,7 +1317,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							down * recoil_multiplier,
 							left * recoil_multiplier_h,
 							right * recoil_multiplier_h,
-						min_h_recoil)
+						min_h_recoil, recoil_multiplier, recoil_multiplier_h)
 
 						if not params or not params.no_shake then
 							local shake_tweak_data = weap_tweak_data.shake[fire_mode] or weap_tweak_data.shake
@@ -1497,7 +1497,8 @@ function PlayerStandard:_check_stop_shooting()
 				if not weap_base:weapon_tweak_data().no_auto_anims then
 					self._ext_camera:play_redirect(self:get_animation("recoil_exit"))
 				else
-					self._ext_camera:play_redirect(self:get_animation("recoil"))
+					--Can't seem to find why I put this here so I'm only commenting this out for now
+					--self._ext_camera:play_redirect(self:get_animation("recoil"))
 				end
 			end
 		end
@@ -1823,7 +1824,7 @@ function PlayerStandard:_update_omniscience(t, dt)
 				if not self._state_data.omniscience_units_detected[unit:key()] or self._state_data.omniscience_units_detected[unit:key()] <= t then
 					self._state_data.omniscience_units_detected[unit:key()] = t + tweak_data.player.omniscience.target_resense_t
 
-					managers.game_play_central:auto_highlight_enemy(unit, true)
+					managers.game_play_central:auto_highlight_enemy(unit, true, "sixth_sense")
 					break
 				end
 			end
@@ -1940,6 +1941,9 @@ end
 local _update_movement_old = PlayerStandard._update_movement
 function PlayerStandard:_update_movement(t, dt)
 	_update_movement_old(self, t, dt)
+	if self._state_data.in_air or self._moving then
+		self._last_move_t = t
+	end
 	if not self._move_dir then
 		self._running_wanted = false
 	end

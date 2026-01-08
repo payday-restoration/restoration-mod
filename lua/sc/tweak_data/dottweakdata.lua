@@ -24,6 +24,7 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_grace_period = 0.5, --0.1,
 		variant = "poison"
 		--hurt_animation_chance = 1 --chance to cause poison stun ON HIT (boooo); you can actually wipe the stun effect by landing another hit that fails the stun check (BOOOOOOOO)
+		--duration_falloff_end_mult = 0.5 --rendered non-functional after the DoTManager changes; fix later???
 	}
 	--GUNS
 	poison_entries.weapon_dotbulletbase = { --unused?
@@ -34,7 +35,6 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_length = 1.1,
 		dot_tick_period = 0.5,
 		use_weapon_damage_falloff = true,
-		duration_falloff_end_mult = 0.5
 	}
 	poison_entries.weapon_tranq = {
 		dot_damage = 1.5,
@@ -47,13 +47,13 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_tick_period = 0.5
 	}
 	poison_entries.weapon_tranq_heavy = {
-		dot_damage = 1.5,
-		dot_length = 8.1,
+		dot_damage = 3.0,
+		dot_length = 4.1,
 		dot_tick_period = 0.5
 	}
 	poison_entries.weapon_tranq_extreme = {
-		dot_damage = 1.5,
-		dot_length = 16.1,
+		dot_damage = 3.0,
+		dot_length = 8.1,
 		dot_tick_period = 0.5
 	}
 	poison_entries.weapon_cyanide = {
@@ -63,31 +63,23 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 	}
 	poison_entries.ammo_rip_auto = {
 		dot_damage = 1.5,
-		dot_length = 2.1,
-		use_weapon_damage_falloff = true,
-		apply_hurt_once = true,
-		duration_falloff_end_mult = 0.5
+		dot_length = 3.1,
+		use_weapon_damage_falloff = true
 	}
 	poison_entries.ammo_rip = {
-		dot_damage = 1.5,
-		dot_length = 4.1,
-		use_weapon_damage_falloff = true,
-		apply_hurt_once = true,
-		duration_falloff_end_mult = 0.5
+		dot_damage = 2.0,
+		dot_length = 3.1,
+		use_weapon_damage_falloff = true
 	}
 	poison_entries.ammo_rip_pump = {
-		dot_damage = 1.5,
-		dot_length = 6.1,
-		use_weapon_damage_falloff = true,
-		apply_hurt_once = true,
-		duration_falloff_end_mult = 0.5
+		dot_damage = 3.0,
+		dot_length = 3.1,
+		use_weapon_damage_falloff = true
 	}
 	poison_entries.ammo_rip_heavy = {
-		dot_damage = 1.5,
-		dot_length = 8.1,
-		use_weapon_damage_falloff = true,
-		apply_hurt_once = true,
-		duration_falloff_end_mult = 0.5
+		dot_damage = 4.0,
+		dot_length = 3.1,
+		use_weapon_damage_falloff = true
 	}
 	
 	--(CROSS)BOW PROJECTILES

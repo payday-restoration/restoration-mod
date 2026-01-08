@@ -31,6 +31,8 @@ Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 		self._use_armor_piercing = true
 	end
 
+	self._move_decay = 0.2
+
 	self._skill_global_ap = (managers.player:has_category_upgrade("player", "ap_bullets") and managers.player:upgrade_value("player", "ap_bullets", 1)) or nil
 
 	local fire_mode_data = self:weapon_tweak_data().fire_mode_data or {}
@@ -233,7 +235,7 @@ NewRaycastWeaponBase.IDSTRING_SINGLE = Idstring("single")
 NewRaycastWeaponBase.IDSTRING_AUTO = Idstring("auto")
 
 --Multipliers for overall spread.
-function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
+function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state, is_moving)
 	local mul = 1
 	local multi_ray = self._rays and self._rays > 1
 
@@ -245,7 +247,7 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 		return mul
 	end
 
-	local is_moving = current_state._moving or current_state:in_air()
+	--local is_moving = current_state._moving or current_state:in_air()
 	local full_steelsight = current_state:is_full_steelsight()
 
 	if full_steelsight then
@@ -349,7 +351,9 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	local is_steelsight = current_state and current_state:is_full_steelsight()
 	local is_hipfire = current_state and not current_state:is_full_steelsight()
 	local is_tacstance = self:second_sight_spread_mult()
-	local is_moving = current_state and (current_state._moving or current_state:in_air())
+	local t = self._unit:timer():time()
+	local last_move_t = current_state and current_state._last_move_t or -10
+	local is_moving = self._move_decay and last_move_t and (last_move_t + self._move_decay) > t or false --(current_state._moving or current_state:in_air())
 	local is_bipod = current_state and current_state:_is_using_bipod()
 	
 	if not current_state then
@@ -361,7 +365,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) * tweak_data.weapon.stat_info.spread_per_accuracy, 0.05)
 	
 	--Moving penalty to spread, based on stability stat- added to total area.
-	if is_moving then
+	if not is_bipod and is_moving then
 		--Get spread area from stability stat.
 		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * tweak_data.weapon.stat_info.spread_per_stability, 0)
 		local moving_spread_mult = 1
@@ -398,7 +402,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	end
 
 	--Apply skill and stance multipliers to overall spread area.
-	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
+	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state, is_moving)
 
 	if not is_steelsight or (is_steelsight and ( self:weapon_tweak_data().always_hipfire or is_tacstance ) ) then
 		local hipfire_spread_mult = 1
@@ -423,7 +427,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	if self._alt_fire_active and self._alt_fire_data then
 		multiplier = multiplier * (self._alt_fire_data.spread_mul or 1)
 	end
-	
+
 	local spread_multiplier = 1
 	for _, category in ipairs(self._tweak_categories) do
 		local spread_mult = tweak_data[category] and tweak_data[category].spread_mult or 1
@@ -561,7 +565,9 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 	local user_unit = self._setup and self._setup.user_unit
 	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
 	if current_state then
-		local is_moving = current_state._moving or current_state:in_air()
+		local t = self._unit:timer():time()
+		local last_move_t = current_state and current_state._last_move_t or -10
+		local is_moving = self._move_decay and last_move_t and (last_move_t + self._move_decay) > t or false --(current_state._moving or current_state:in_air())
 		local full_steelsight = current_state:is_full_steelsight()
 		if full_steelsight then
 			local weapon_stats = tweak_data.weapon.stats
@@ -964,6 +970,23 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self:old_update_stats_values(disallow_replenish, ammo_data)
 
 	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:categories(), self._silencer, nil, current_state, self._blueprint)
+
+	--Use stability stat to get the moving accuracy penalty.
+	--Moved this from "RaycastWeaponBase:setup" as it lead to funky lingering stats in intances of mid-heist loadout changes
+	if self._current_stats_indices and self._current_stats_indices.recoil then
+		self._spread_moving = tweak_data.weapon.stats.spread_moving[self._current_stats_indices.recoil] or 0
+	else --Fallback method for getting stability moving accuracy penalty, in case the indices somehow don't get set.
+		log("Using fallback")
+		local moving_spread_index = 0
+		local recoil_table = tweak_data.weapon.stats.recoil
+		for i = 0, 100, 1 do
+			if recoil_table[i] == self._recoil then
+				moving_spread_index = i
+				break
+			end
+		end
+		self._spread_moving = tweak_data.weapon.stats.spread_moving[moving_spread_index] or 0
+	end
 
 	local recoil_values = self:weapon_tweak_data().recoil_values
 	self._recoil_speed = recoil_values and recoil_values[1] or { 90, 60 }
@@ -2627,6 +2650,37 @@ function NewRaycastWeaponBase:_set_parts_visible(visible)
 	end
 
 	self:_chk_charm_upd_state()
+end
+
+-- Adds context to the highlighting to support marking enemies through walls in Pro Job.
+function NewRaycastWeaponBase:check_highlight_unit(unit)
+	if not self._can_highlight then
+		return
+	end
+
+	if not self._can_highlight_with_skill and self:is_second_sight_on() then
+		return
+	end
+
+	if unit:in_slot(8) and alive(unit:parent()) then
+		unit = unit:parent() or unit
+	end
+
+	if not unit or not unit:base() then
+		return
+	end
+
+	if unit:character_damage() and unit:character_damage().dead and unit:character_damage():dead() then
+		return
+	end
+
+	local is_enemy_in_cool_state = managers.enemy:is_enemy(unit) and not managers.groupai:state():enemy_weapons_hot()
+
+	if not is_enemy_in_cool_state and not unit:base().can_be_marked then
+		return
+	end
+
+	managers.game_play_central:auto_highlight_enemy(unit, true, "steelsight")
 end
 
 local g3_niphen = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen")

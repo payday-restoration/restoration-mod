@@ -17718,7 +17718,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.akm_nomag then --Leather Dann's Early Access AK
 				self.akm_nomag.warsaw = true
 				self.akm_nomag.recategorize = { "heavy_ar" }
-				self.akm_nomag.has_description = false
+				self.akm_nomag.has_description = true
 				self.akm_nomag.AMMO_MAX = 120
 				self.akm_nomag.fire_mode_data.fire_rate = 0.1
 				self.akm_nomag.kick = self.stat_info.kick_tables.moderate_right_kick

@@ -31399,7 +31399,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coyote.recategorize = {"heavy_ar"}
 				self.coyote.damage_type = "assault_rifle"
 				self.coyote.CLIP_AMMO_MAX = 45
-				self.coyote.AMMO_MAX = self.ar23.CLIP_AMMO_MAX * 9
+				self.coyote.AMMO_MAX = self.coyote.CLIP_AMMO_MAX * 9
 				self.coyote.ammo_ratio = 2
 				self.coyote.fire_mode_data.fire_rate = 0.1
 				self.coyote.fire_mode_data.toggable = nil
@@ -32658,7 +32658,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.nothing then --Silent Enforcer's No Wep
-				self.nothing.categories = { "nothing" }
+				self.nothing.categories = { "wpn_special", "nothing" }
 				self.nothing.recategorize = { "wpn_special" }
 				self.nothing.upgrade_blocks = {
 					weapon = {
@@ -32700,7 +32700,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 			end
 			if self.nothing2 then
-				self.nothing2.categories = { "nothing" }
+				self.nothing2.categories = { "wpn_special", "nothing"  }
 				self.nothing2.recategorize = { "wpn_special" }
 				self.nothing2.upgrade_blocks = {
 					weapon = {

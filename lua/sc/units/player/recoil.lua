@@ -384,8 +384,8 @@ function FPCameraPlayerBase:recoil_kick(up, down, left, right, min_h_recoil, las
 		right = right * 0.25
 	end
 
-	self._last_recoil_mult = math.max(1, last_recoil_mult) or 1
-	self._last_recoil_mult_h = math.max(1, last_recoil_mult_h) or 1
+	self._last_recoil_mult = math.max(1, last_recoil_mult or 1)
+	self._last_recoil_mult_h = math.max(1, last_recoil_mult_h or 1)
 
 	local v = math.lerp(up, down, math.random())
 	self._recoil_kick.accumulated = (self._recoil_kick.accumulated or 0) + v

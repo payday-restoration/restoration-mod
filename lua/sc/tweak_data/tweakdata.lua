@@ -253,7 +253,7 @@ tweak_data.snp = {
 	}
 	tweak_data.amr = {
 		ads_move_speed_mult = 0.3 / tweak_data.snp.ads_move_speed_mult,
-		hipfire_spread_mult = 3,
+		hipfire_spread_mult = 4 / tweak_data.snp.ads_move_speed_mult,
 		shake_mul = 1.1,
 		min_spread_mult = 3.5 / tweak_data.snp.min_spread_mult,
 	}

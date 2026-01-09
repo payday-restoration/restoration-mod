@@ -55,7 +55,7 @@ function GenericDLCManager:give_missing_package()
 				end
 
 				if check_loot_drop then
-					entry = tweak_data.blackmarket[loot_drop.type_items][loot_drop.item_entry]
+					entry = loot_drop and loot_drop.type_items and loot_drop.item_entry and tweak_data.blackmarket[loot_drop.type_items] and tweak_data.blackmarket[loot_drop.type_items][loot_drop.item_entry]
 					global_value = loot_drop.global_value or data.content.loot_global_value or package_id
 					passed = false
 
@@ -93,7 +93,13 @@ function GenericDLCManager:give_missing_package()
 							end
 						end
 					else
-						log("something went wrong trying to give an item from: " .. tostring( loot_drop.item_entry ))
+						log("something went wrong trying to give an item from type_items: " .. tostring( loot_drop.type_items ) .. " and/or item_entry: " .. tostring( loot_drop.item_entry ))
+						if type(loot_drop.item_entry) == "table" then
+							for f, u in ipairs(loot_drop.item_entry) do
+								log(tostring(f) .. " " .. tostring(u))
+							end
+						end
+						log("global_value: " .. tostring( loot_drop.global_value ))
 					end
 
 					if passed then

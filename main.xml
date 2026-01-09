@@ -151,6 +151,7 @@
 				<hook file="sc/managers/blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
 				<hook file="sc/managers/skilltreemanager.lua" source_file="lib/managers/skilltreemanager"/>
 				<!--hook file="sc/managers/dotmanager.lua" source_file="lib/managers/dotmanager"/-->
+				<hook file="sc/managers/dlcmanager.lua" source_file="lib/managers/dlcmanager"/>
 				<hook file="sc/managers/enemymanager.lua" source_file="lib/managers/enemymanager"/>
 				<hook file="sc/managers/explosionmanager.lua" source_file="lib/managers/explosionmanager"/>
 				<hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/>

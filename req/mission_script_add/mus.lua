@@ -124,7 +124,7 @@ return {
 
 		restoration:gen_so(400009, "cloaker_so_4", Vector3(-2258, -284, -1200),  Rotation(87, -0, -0),  optsCloaker_Hide_SpotSO_2),
 		restoration:gen_so(400010, "cloaker_so_5", Vector3(-163, 3162, -300), Rotation(91, -0, -0), optsCloaker_Hide_SpotSO_3),
-		restoration:gen_so(400011, "cloaker_so_6", Vector3(-1926, -2628, -300), Rotation(-5, 0, -0), optsCloaker_Hide_SpotSO_3),
+		restoration:gen_so(400011, "cloaker_so_6",Vector3(-2445, -1931, -300), Rotation(-5, 0, -0), optsCloaker_Hide_SpotSO_3),
 		restoration:gen_so(400029, "cloaker_so_7", Vector3(-2836.89, -1409.8, -800.004), Rotation(179, 0, -0), optsCloaker_Hide_SpotSO_1),
 		-- the spooks themselves
 		restoration:gen_dummy(400012, "spook_01", Vector3(-69, 2013, -300), Rotation(-178, 0, -0), optsBesiegeDummyCloaker_2),

@@ -147,7 +147,7 @@ return {
 		-- the hider system 
 		restoration:gen_preferedadd(400026, "mus_spook_spawns", optsPreferedCloakerAdd1),
 		restoration:gen_sogroup(400027, "mus_spook_spawngroup", hide_so_search_pos, Rotation(0, 0, 0), optsCloakerHideGroup),
-		restoration:gen_missionscript(400028, "mus_spook_spawn_global", optsCloakerHideGroup),
+		restoration:gen_missionscript(400028, "mus_spook_spawn_global", optsAddCloakerHideGroup),
 
 	},
 }

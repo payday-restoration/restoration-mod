@@ -1,6 +1,7 @@
 local spook_spawn = {
 	values = {
 		interval = 90, 
+		preferred_spawn_groups = { "single_spooc" },
 	},
 }
 return {

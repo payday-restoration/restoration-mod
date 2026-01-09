@@ -74,7 +74,8 @@ local optsCloakerHideGroup = { -- hide SOs
 		400008,
 		400009,
 		400010,
-		400011, 
+		400011,
+		400029,
 	},
 }
 -- Sneaky bastards
@@ -117,13 +118,14 @@ return {
 		restoration:gen_toggleelement(400005, "enable_diamond_cloaker", opts_enable_cloaker_diamond),
 		-- Cloaker hiders
 		-- hiders 
-		restoration:gen_so(400006, "cloaker_so_1", Vector3(1498, 93, -350), Rotation(171, 0, -0), optsCloaker_Hide_SpotSO_3),
-		restoration:gen_so(400007, "claoker_so_2", Vector3(1022, -2755, -300), Rotation(-94, 0, -0), optsCloaker_Hide_SpotSO_3),
-		restoration:gen_so(400008, "cloaker_so_3", Vector3(2138, -353, -300), Rotation(56, -0, -0), optsCloaker_Hide_SpotSO_1),
+		restoration:gen_so(400006, "cloaker_so_1", Vector3(1506, 222, -350),  Rotation(171, 0, -0), optsCloaker_Hide_SpotSO_3),
+		restoration:gen_so(400007, "claoker_so_2", Vector3(663, -2755, -300),  Rotation(173, 0, -0), optsCloaker_Hide_SpotSO_3),
+		restoration:gen_so(400008, "cloaker_so_3", Vector3(-1611, 216, -350), Rotation(171, 0, -0), optsCloaker_Hide_SpotSO_3),
 
-		restoration:gen_so(400009, "cloaker_so_4", Vector3(-1595, 2503, -300), Rotation(176, 0, -0), optsCloaker_Hide_SpotSO_2),
+		restoration:gen_so(400009, "cloaker_so_4", Vector3(-2258, -284, -1200),  Rotation(87, -0, -0),  optsCloaker_Hide_SpotSO_2),
 		restoration:gen_so(400010, "cloaker_so_5", Vector3(-163, 3162, -300), Rotation(91, -0, -0), optsCloaker_Hide_SpotSO_3),
-		restoration:gen_so(400011, "cloaker_so_6", Vector3(-1926, -2628, -300), Rotation(-5, 0, -0), optsCloaker_Hide_SpotSO_3), 
+		restoration:gen_so(400011, "cloaker_so_6", Vector3(-1926, -2628, -300), Rotation(-5, 0, -0), optsCloaker_Hide_SpotSO_3),
+		restoration:gen_so(400029, "cloaker_so_7", Vector3(-2836.89, -1409.8, -800.004), Rotation(179, 0, -0), optsCloaker_Hide_SpotSO_1),
 		-- the spooks themselves
 		restoration:gen_dummy(400012, "spook_01", Vector3(-69, 2013, -300), Rotation(-178, 0, -0), optsBesiegeDummyCloaker_2),
 		restoration:gen_dummy(400013, "spook_02", Vector3(-49, 2902, -300), Rotation(-24, 0, 0), optsBesiegeDummyCloaker_2),

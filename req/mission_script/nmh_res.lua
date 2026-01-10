@@ -1,14 +1,15 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-
-return {
-    -- Nasty Elevator surprise
-    -- Enable them in loud first 
-    [100021] = {
-        on_executed = {
+local surprise_dozers = {
+  on_executed = {
         {id = 400005, delay = 0},
         },
-    },
+    }
+return {
+    -- Nasty Elevator surprise
+    -- enable when A) goes loud right away if you dont do the stealth portion B) activate during the ICU segment 
+    [100021] = surprise_dozers, 
+    [104090] = surprise_dozers,
     -- ACCESS DENIED 
     [103439] = {
         on_executed = {

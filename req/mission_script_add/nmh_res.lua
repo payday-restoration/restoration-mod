@@ -37,7 +37,7 @@ local optsBulldozer_02 = {
 }
 local opts_enable_dozers = {
 	enabled = death_wish_above,
-	elements = { 400001, 400002 },
+	elements = { 400001, 400002, 400006 },
 	toggle = "on",
 }
 return {

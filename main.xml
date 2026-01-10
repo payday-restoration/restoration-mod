@@ -823,7 +823,7 @@
     <Package id="packages/overkill_290_sc_murkywater" file="packages/murkywater_diff/overkill_290_sc_murkywater.xml"/>
     <Package id="packages/sm_wish_sc_murkywater" file="packages/murkywater_diff/sm_wish_sc_murkywater.xml"/>
 
-	<!--///DIFF PACKAGES ZOMBIE\\\-->
+	<!--///DIFF PACKAGES ZOMBIE\\\ -->
     <Package id="packages/normal_sc_zombie" file="packages/zombie_diff/normal_sc_zombie.xml"/>
     <Package id="packages/hard_sc_zombie" file="packages/zombie_diff/hard_sc_zombie.xml"/>
     <Package id="packages/overkill_sc_zombie" file="packages/zombie_diff/overkill_sc_zombie.xml"/>
@@ -832,7 +832,7 @@
     <Package id="packages/overkill_290_sc_zombie" file="packages/zombie_diff/overkill_290_sc_zombie.xml"/>
     <Package id="packages/sm_wish_sc_zombie" file="packages/zombie_diff/sm_wish_sc_zombie.xml"/>
 
-	<!--///DIFF PACKAGES REAPERS\\\-->
+	<!--///DIFF PACKAGES REAPERS\\\ -->
     <Package id="packages/normal_sc_russia" file="packages/russia_diff/normal_sc_russia.xml"/>
     <Package id="packages/hard_sc_russia" file="packages/russia_diff/hard_sc_russia.xml"/>
     <Package id="packages/overkill_sc_russia" file="packages/russia_diff/overkill_sc_russia.xml"/>

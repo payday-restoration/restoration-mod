@@ -99,7 +99,7 @@ function GenericDLCManager:give_missing_package()
 								log(tostring(f) .. " " .. tostring(u))
 							end
 						end
-						log("global_value: " .. tostring( loot_drop.global_value ))
+						log("global_value: " .. tostring( global_value ))
 					end
 
 					if passed then

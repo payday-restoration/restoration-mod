@@ -46,6 +46,7 @@ end
 local enemy_contours = {
 	"friendly",
 	"mark_enemy",
+	"mark_enemy_through_walls",
 	"mark_enemy_damage_bonus",
 	"mark_enemy_damage_bonus_distance",
 	"mark_unit_dangerous",

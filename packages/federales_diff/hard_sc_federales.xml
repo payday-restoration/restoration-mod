@@ -8,9 +8,6 @@
 	<!--SR2-->	
 	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc" load="false" force="false"/>
 	
-	<!--ASVAL -->	
-	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc" load="false" force="false"/>
-
 	<!--UZI Suzie i hate animations-->
 	<unit_mat			path="units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi" />
 	
@@ -350,26 +347,6 @@
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/k63_nm" force="false"/>
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/k63_df" force="false"/>
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/heads_dozer_il" force="false"/>
-
-	<!--Titan Sniper (temp crash fix) -->	
-	<unit				path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
-	<object				path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<model				path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<material_config	path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<material_config	path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
-	
-		
-	<texture			path="units/pd2_mod_reapers/characters/shared_textures/helmets_snp_df" force="false"/>	
-	<texture			path="units/pd2_mod_reapers/characters/shared_textures/ene_phalanx_snp_df" force="false"/>	
-
-	<!--Titan Sniper Cap Accessory (temp crash fix) -->
-	<object				path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
-	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
-	<model				path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false" load="true"/>
-	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
 
     <!--Titan Taser-->	
 	<unit				path="units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>

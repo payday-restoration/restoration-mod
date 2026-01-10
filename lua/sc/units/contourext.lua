@@ -33,6 +33,19 @@ ContourExt._types.mark_enemy_through_walls = {
 }
 ContourExt._types.mark_enemy.priority = 6 -- Lower priority for mark_enemy so that mark_enemy_through_walls can overwrite it.
 
+-- Reindexes the indexed_types table. Technically, this is only necessary for contours that would effect units (i.e., mark_enemy_through_walls), but we may as well index every Resmod-defined contour.
+ContourExt.indexed_types = {}
+
+for name, preset in pairs(ContourExt._types) do
+	table.insert(ContourExt.indexed_types, name)
+end
+
+table.sort(ContourExt.indexed_types)
+
+if #ContourExt.indexed_types > 128 then
+	Application:error("[ContourExt] max # contour presets exceeded!")
+end
+
 -- PJ modifier: Marked enemy will show contour only in LoS (unless you using any marking skills); Medic and LPF flash outlines are disabled;
 if is_pro_job then
 	ContourExt._types.mark_enemy.ray_check_reverse = true
@@ -46,6 +59,7 @@ end
 local enemy_contours = {
 	"friendly",
 	"mark_enemy",
+	"mark_enemy_through_walls",
 	"mark_enemy_damage_bonus",
 	"mark_enemy_damage_bonus_distance",
 	"mark_unit_dangerous",

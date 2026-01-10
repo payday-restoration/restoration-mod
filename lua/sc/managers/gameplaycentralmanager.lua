@@ -128,24 +128,24 @@ Hooks:OverrideFunction(GamePlayCentralManager, "auto_highlight_enemy", function(
 
 	local time_multiplier = 1
 	local contour_type = "mark_enemy"
-	local wallhack = false
 
 	if unit:base() and unit:base().is_security_camera then
 		contour_type = "mark_unit"
 		time_multiplier = managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1)
 	elseif use_player_upgrades then
 		contour_type = managers.player:get_contour_for_marked_enemy(unit:base().get_type and unit:base():get_type()) or contour_type
+
+		-- Trip mines, Sixth Sense Basic, and ADS (if applicable) "upgrade" the default mark_enemy contour to be visible through walls even during a Pro Job.
+		if (context == "trip_mine" or context == "sixth_sense" or context == "steelsight") and contour_type == "mark_enemy" then
+			contour_type = "mark_enemy_through_walls"
+		end
+
 		time_multiplier = managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1)
 	end
 
 	local context = context or "none"
 
-	-- Trip mines, Sixth Sense Basic, and ADS (if applicable) allow for marking through walls, even during a Pro Job.
-	if context == "trip_mine" or context == "sixth_sense" or context == "steelsight" then
-		wallhack = true
-	end
-
-	unit:contour():add(contour_type, true, time_multiplier, nil, nil, wallhack)
+	unit:contour():add(contour_type, true, time_multiplier)
 
 	return true
 end)

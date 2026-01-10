@@ -135,7 +135,7 @@ Hooks:OverrideFunction(GamePlayCentralManager, "auto_highlight_enemy", function(
 	elseif use_player_upgrades then
 		contour_type = managers.player:get_contour_for_marked_enemy(unit:base().get_type and unit:base():get_type()) or contour_type
 
-		-- Trip mines, Sixth Sense Basic, and ADS (if applicable) "upgrade" the default mark_enemy contour to be visible_if_locked through walls even during a Pro Job.
+		-- Trip mines, Sixth Sense Basic, and ADS (if applicable) "upgrade" the default mark_enemy contour to be visible through walls even during a Pro Job.
 		if (context == "trip_mine" or context == "sixth_sense" or context == "steelsight") and contour_type == "mark_enemy" then
 			contour_type = "mark_enemy_through_walls"
 		end

@@ -43,6 +43,9 @@ return {
 	-- Disable roof/stairs reinforcement
 	[102501] = disabled,
 	[103181] = disabled,
+	-- don't remove ground level spawns at any point
+	[102092] = disabled,
+	[102097] = disabled,
 	-- Restore roof access blockade
 	[100095] = {
 		on_executed = {

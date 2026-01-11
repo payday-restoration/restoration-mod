@@ -312,7 +312,21 @@ function MissionManager.mission_script_patch_funcs.hunt(self, element, data)
 		end
 	end)
 end
+-- From Streamlined Heisting 
+-- Allows to spawn specifying unit spawns 
+function MissionManager.mission_script_patch_funcs.spawn(self, element, data)
+		Hooks:PostHook(element, "on_executed", "res_on_executed_spawn_unit_" .. element:id(), function()
+			restoration:log("%s executed, spawning %d unit(s)", element:editor_name(), #data)
+			for _, u_data in ipairs(data) do
+				local unit = World:spawn_unit(u_data.name, u_data.pos or Vector3(), u_data.rot or Rotation())
+				if u_data.visible ~= nil then
+					unit:set_visible(u_data.visible)
+				end
+			end
+		end)
+		restoration:log("%s hooked as unit spawn trigger", element:editor_name())
 
+end 
 Hooks:PreHook(MissionManager, "_activate_mission", "res__activate_mission", function(self)
 	local mission_script_elements = restoration:mission_script_patches()
 	if not mission_script_elements then

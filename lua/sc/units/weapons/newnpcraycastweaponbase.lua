@@ -136,7 +136,7 @@ function NewNPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, d
 
 				if hit_char.type and hit_char.type == "death" then
 					if self:is_category("shotgun") then
-						managers.game_play_central:do_shotgun_push(hit.unit, hit.position, hit.ray, hit.distance, user_unit)
+						--managers.game_play_central:do_shotgun_push(hit.unit, hit.position, hit.ray, hit.distance, user_unit)
 					end
 
 					if user_unit:unit_data().mission_element then

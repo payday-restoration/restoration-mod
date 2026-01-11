@@ -19608,7 +19608,7 @@ end)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_reprimand = {
 						translation = Vector3(0.05, -0, -3.78),
-						rotation = Rotation(0.11, 0, 0.5)
+						rotation = Rotation(0.11, 0, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_r31 = {
 						translation = Vector3(-0.062, 18, -4.52),
@@ -23654,9 +23654,11 @@ end)
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				supported = true,
-				stats = {value = 1, concealment = 1, recoil = -2},
+				stats = {value = 1, concealment = 1, spread = -2},
 				custom_stats = {
 					empire = true,
+					falloff_start_mult = 0.925,
+					falloff_end_mult = 0.925,
 					ads_speed_mult = 0.975
 				},
 				internal_part = true,
@@ -23675,9 +23677,11 @@ end)
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				supported = true,
-				stats = {value = 1, concealment = 2, recoil = -4},
+				stats = {value = 1, concealment = 2, spread = -3, recoil = -2},
 				custom_stats = {
 					empire = true,
+					falloff_start_mult = 0.85,
+					falloff_end_mult = 0.85,
 					ads_speed_mult = 0.95
 				},
 				internal_part = true,
@@ -23696,9 +23700,11 @@ end)
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3_sc",
 				supported = true,
-				stats = {value = 1, concealment = 3, recoil = -6},
+				stats = {value = 1, concealment = 3, spread = -4, recoil = -4},
 				custom_stats = {
 					empire = true,
+					falloff_start_mult = 0.775,
+					falloff_end_mult = 0.775,
 					ads_speed_mult = 0.925
 				},
 				internal_part = true,
@@ -23864,6 +23870,7 @@ end)
 					if tweak_data.weapon[ weapon_id ] then
 						local tww = tweak_data.weapon[ weapon_id ]
 						if tww.categories then
+							--[[
 							if table.contains( tww.categories , "snp") or
 							table.contains( tww.categories , "assault_rifle") or
 							table.contains( tww.categories , "shotgun") or
@@ -23897,7 +23904,6 @@ end)
 										ads_speed_mult = 0.925
 									}
 								}
-							--[[
 							elseif table.contains( tww.categories , "akimbo") then
 								self[ factory_id ].override = self[ factory_id ].override or {}
 								for k, used_part_id in pairs(self[ factory_id ].uses_parts) do
@@ -23913,8 +23919,8 @@ end)
 										end
 									end
 								end
-							--]]
 							end
+							--]]
 
 							if not table.contains( tww.categories , "pistol") then
 								if self[factory_id].uses_parts then
@@ -43243,20 +43249,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		--Helldivers 2 AR-23 (v5)
 		if self.parts.wpn_fps_ass_ar23_body then
+			self.parts.wpn_fps_upg_ar23_o_promo.supported = true
+			self.parts.wpn_fps_upg_ar23_o_promo.stats = { value = 1 }
+			self.parts.wpn_fps_upg_ar23_o_promo.custom_stats = nil
+
 			--AR-23 Optic
 			self.parts.wpn_fps_ass_ar23_optic_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_ass_ar23_optic_2.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0.015, 0, 0.965)
+					weap.translation = weap.translation + Vector3(0.015, -5, 0.965)
 				end
 			end
 
+			self.parts.wpn_fps_ass_ar23_optic_2.supported = true
 			self.parts.wpn_fps_ass_ar23_optic_2.stats = {
 				value = 1,
 				zoom = 10,
 				base_zoom_off = 1
 			}
-
 			--Conc. Optic
 			self.parts.wpn_fps_ass_ar23_optic_3.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_ass_ar23_optic_3.stance_mod) do
@@ -43264,6 +43274,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					weap.translation = weap.translation + Vector3(0.04, -5, 1.45)
 				end
 			end
+			self.parts.wpn_fps_ass_ar23_optic_3.supported = true
 			self.parts.wpn_fps_ass_ar23_optic_3.stats = {
 				value = 1,
 				zoom = 5
@@ -43278,13 +43289,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					weap.translation = weap.translation + Vector3(0, -10, 0.75)
 				end
 			end
+			self.parts.wpn_fps_ass_ar23_o_carbine.supported = true
 			self.parts.wpn_fps_ass_ar23_o_carbine.stats = {
 				value = 1,
 				zoom = 1
 			}
 			self.parts.wpn_fps_ass_ar23_o_carbine_ck.stance_mod = deep_clone(self.parts.wpn_fps_ass_ar23_o_carbine.stance_mod)
 			self.parts.wpn_fps_ass_ar23_o_carbine_ck.stats = deep_clone(self.parts.wpn_fps_ass_ar23_o_carbine.stats)
-
 
 			--Pen. Optic
 			self.parts.wpn_fps_ass_ar23_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
@@ -43293,6 +43304,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					weap.translation = weap.translation + Vector3(0.0052, 2, 0.96)
 				end
 			end
+			self.parts.wpn_fps_ass_ar23_optic.supported = true
 			self.parts.wpn_fps_ass_ar23_optic.stats = {
 				value = 1,
 				zoom = 30
@@ -43304,10 +43316,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_carbine.keep_damage = true
 			self.parts.wpn_fps_ass_ar23_ck_carbine.stats = {
 				value = 10,
-				concealment = 1,
+				concealment = 2,
 				reload = 4,
-				spread = -4,
-				recoil = -10,
+				spread = -8,
+				recoil = -8,
 				zoom = -9
 			}
 			self.parts.wpn_fps_ass_ar23_ck_carbine.custom_stats = {
@@ -43353,7 +43365,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				value = 10,
 				extra_ammo = 0,
 				total_ammo_mod = 12,
-				recoil = -14,
+				spread = -4,
+				recoil = -6,
 				zoom = -5,
 				concealment = -2
 			}
@@ -43426,7 +43439,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_br14_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_ass_br14_optic.stance_mod) do
 				if weap and i ~= wep_id and weap.translation then
-					weap.translation = weap.translation + Vector3(0.01,-2,0.96)
+					weap.translation = weap.translation + Vector3(0.01,5,0.96)
 				end
 			end
 
@@ -43496,7 +43509,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sickle_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_sickle_optic.stance_mod) do
 				if weap and i ~= wep_id and weap.translation then
-					weap.translation = weap.translation + Vector3(-0.02,21,1.055)
+					weap.translation = weap.translation + Vector3(-0.02,16,1.055)
 				end
 			end
 

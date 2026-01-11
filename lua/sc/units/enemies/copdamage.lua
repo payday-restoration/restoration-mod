@@ -1510,7 +1510,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 	self:_on_damage_received(attack_data)
 
 	if shotgun_push then
-		managers.game_play_central:_do_shotgun_push(self._unit, hit_pos, attack_dir, distance)
+		--managers.game_play_central:_do_shotgun_push(self._unit, hit_pos, attack_dir, distance)
 	end
 end
 

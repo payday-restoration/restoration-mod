@@ -12442,6 +12442,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Galant (M1 Garand)
 						self.ching.categories = {
 							"assault_rifle",
+							"bump_stat_20",
 							"dmr_h"
 						}
 						self.ching.FIRE_MODE = "single"
@@ -31423,7 +31424,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 71,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 19,
+					concealment = 21,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -31476,10 +31477,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.stats = {
 					damage = 30,
 					spread = 76,
-					recoil = 81,
+					recoil = 75,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 20,
+					concealment = 24,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -31518,7 +31519,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta52.supported = true
 				self.sta52.ads_speed = 0.320
 				self.sta52.damage_falloff = {
-					start_dist = 1800,
+					start_dist = 1600,
 					end_dist = 4900,
 					min_mult = 0.4
 				}
@@ -31528,7 +31529,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 77,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 21,
+					concealment = 23,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -31582,7 +31583,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 81,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 22,
+					concealment = 24,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -31597,10 +31598,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar32.timers = deep_clone(self.ak5.timers)
 			end
 
-			if self.r2 then --R2 PLACEHOLDER
+			if self.r2 then --R2 AMENDMENT
 				self.r2.categories = {
 					"assault_rifle",
 					"dmr_h",
+					"dump_stat_40",
 					"sweet_liberty"
 				}
 				self.r2.recategorize = {"dmr_ar"}
@@ -31622,19 +31624,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r2.FIRE_MODE = "single"
 				self.r2.kick = self.stat_info.kick_tables.even_recoil
 				self.r2.supported = true
-				self.r2.ads_speed = 0.380
+				self.r2.ads_speed = 0.420
 				self.r2.damage_falloff = {
-					start_dist = 2200,
+					start_dist = 2000,
 					end_dist = 8200,
 					min_mult = 0.2666
 				}
 				self.r2.stats = {
 					damage = 90,
 					spread = 93,
-					recoil = 45,
+					recoil = 43,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 18,
+					concealment = 19,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -31673,7 +31675,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br14.FIRE_MODE = "single"
 				self.br14.kick = self.stat_info.kick_tables.even_recoil
 				self.br14.supported = true
-				self.br14.ads_speed = 0.420
+				self.br14.ads_speed = 0.440
 				self.br14.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 7500,
@@ -31682,10 +31684,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br14.stats = {
 					damage = 45,
 					spread = 91,
-					recoil = 55,
+					recoil = 51,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 19,
+					concealment = 21,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -31715,7 +31717,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.AMMO_MAX = self.reprimand.CLIP_AMMO_MAX * 10
 				self.reprimand.ammo_ratio = 2
 				self.reprimand.fire_mode_data.fire_rate = 0.12244
-				self.reprimand.sms = 0.8
+				self.reprimand.sms = 0.5
 				self.reprimand.tactical_reload = 1
 				self.reprimand.keep_ammo = 0
 				self.reprimand.BURST_FIRE = {
@@ -31730,8 +31732,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.ads_speed = 0.240
 				self.reprimand.damage_falloff = {
 					start_dist = 200,
-					end_dist = 2800,
-					min_mult = 0.15
+					end_dist = 3000,
+					min_mult = 0.2
 				}
 				self.reprimand.stats = {
 					damage = 60,
@@ -31739,7 +31741,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 51,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 20,
+					concealment = 23,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -31771,7 +31773,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta11.AMMO_MAX = self.sta11.CLIP_AMMO_MAX * 8
 				self.sta11.ammo_ratio = 2
 				self.sta11.fire_mode_data.fire_rate = 0.0571428
-				self.sta11.sms = 0.8
+				self.sta11.sms = 0.5
 				self.sta11.tactical_reload = 1
 				self.sta11.keep_ammo = 0
 				self.sta11.BURST_FIRE = false
@@ -31788,10 +31790,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta11.stats = {
 					damage = 30,
 					spread = 56,
-					recoil = 87,
+					recoil = 81,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 22,
+					concealment = 25,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -31818,7 +31820,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.CLIP_AMMO_MAX = 80
 				self.sickle.AMMO_MAX = self.sickle.CLIP_AMMO_MAX * 4
 				self.sickle.ammo_ratio = 2
-				self.sickle.sms = 0.5
+				self.sickle.sms = 0.2
 				self.sickle.fire_mode_data.fire_rate = 0.08
 				self.sickle.BURST_FIRE = false
 				self.sickle.CAN_TOGGLE_FIREMODE = false
@@ -31834,11 +31836,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sickle.stats = {
 					damage = 30,
-					spread = 61,
-					recoil = 93,
+					spread = 51,
+					recoil = 95,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 18,
+					concealment = 20,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -31887,7 +31889,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r6.always_play_anims = true
 				self.r6.BURST_FIRE = false
 				self.r6.CAN_TOGGLE_FIREMODE = false
-				self.r6.sms = 0.5
+				self.r6.sms = 0.3
 				self.r6.tactical_reload = 1
 				self.r6.has_description = true
 				self.r6.CLIP_AMMO_MAX = 6
@@ -31914,7 +31916,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 42,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 18,
+					concealment = 21,
 					suppression = 6,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -35908,7 +35910,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		crossbow = 0.6,
 		tranq = 0.7,
 		--Custom weapon pickup
+		bump_stat_20 = 1.2,
 		bump_stat_80 = 1.8,
+		dump_stat_40 = 0.6,
 		sweet_liberty = 0.2,
 		battery = 0,
 		nothing = 0

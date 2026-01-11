@@ -19977,8 +19977,8 @@ end)
 						translation = Vector3(0, 10, -0.1)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_pd3_lynx = {
-						translation = Vector3(0.01, -4.7, 0.638),
-						rotation = Rotation(0.005,0.14,0)
+						translation = Vector3(0.035, -8.6, 0.75),
+						rotation = Rotation(0.005,0,0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_martinihenry = {
 						translation = Vector3(-0.022, -7.8, -4.022)
@@ -30975,6 +30975,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_pd3_lynx_scope.stats = {
 				value = 0,
 				zoom = 30
+			}
+			self.parts.wpn_fps_snp_pd3_lynx_scope.stance_mod.wpn_fps_snp_pd3_lynx = {
+				translation = Vector3(0.015, -8, 0.755),
+				rotation = Rotation(0.005,0,0)
+			}
+			self.parts.wpn_fps_snp_pd3_lynx_scope_piggyback.stance_mod.wpn_fps_snp_pd3_lynx = {
+				translation = Vector3(0.015, -15, -2.55),
+				rotation = Rotation(0.005,0,0)
 			}
 
 			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_specter")
@@ -43296,10 +43304,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_carbine.keep_damage = true
 			self.parts.wpn_fps_ass_ar23_ck_carbine.stats = {
 				value = 10,
-				concealment = 2,
+				concealment = 1,
 				reload = 4,
 				spread = -4,
-				recoil = -12,
+				recoil = -10,
 				zoom = -9
 			}
 			self.parts.wpn_fps_ass_ar23_ck_carbine.custom_stats = {

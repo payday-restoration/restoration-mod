@@ -279,6 +279,9 @@
 	<sequence_manager	path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" force="true"/>
 	<world				path="levels/narratives/classics/man/world" force="true"/>
 	
+	<!--PANIC ROOM-->
+	<mission			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
+	
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	<!-- Gensec Security: Beret Poppin' -->
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" load="true" force="true" />

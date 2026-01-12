@@ -5993,7 +5993,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{14, self.stat_info.kick_tables.right_kick},
 							{20, self.stat_info.kick_tables.moderate_kick}
 						}
-						self.lemming.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+						self.lemming.shell_ejection = "_dmc/effects/shell_556_smol"
 						self.lemming.panic_suppression_chance = 0.05
 						self.lemming.can_shoot_through_enemy = false
 						self.lemming.can_shoot_through_shield = false
@@ -6053,7 +6053,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 								{14, self.stat_info.kick_tables.right_kick},
 								{20, self.stat_info.kick_tables.moderate_kick}
 							}
-							self.x_lemming.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+							self.x_lemming.shell_ejection = "_dmc/effects/shell_556_smol"
 							self.x_lemming.panic_suppression_chance = 0.05
 							self.x_lemming.can_shoot_through_enemy = false
 							self.x_lemming.can_shoot_through_shield = false
@@ -8782,6 +8782,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mp7.can_shoot_through_shield = false
 						self.mp7.can_shoot_through_wall = false
 						self.mp7.hs_mult = 1.3333333
+						self.mp7.shell_ejection = "_dmc/effects/shell_556_smol"
 						self.mp7.armor_piercing_chance = 0.75
 						self.mp7.kick = self.stat_info.kick_tables.even_recoil
 						self.mp7.kick_pattern = {
@@ -8835,6 +8836,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.p90.can_shoot_through_wall = false
 						self.p90.panic_suppression_chance = 0.05
 						self.p90.hs_mult = 1.33333
+						self.p90.shell_ejection = "_dmc/effects/shell_556_smol"
 						self.p90.kick = self.stat_info.kick_tables.even_recoil
 						self.p90.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
@@ -17843,6 +17845,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"auto"
 				}
 				self.hmcar.no_charge_anims = true
+				self.hmcar.shell_ejection = "_dmc/effects/shell_sniper_m95_semi"
 				self.hmcar.trail_effect = "effects/particles/weapons/titan_trail_sc"
 				self.hmcar.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.hmcar.kick = self.stat_info.kick_tables.vertical_kick
@@ -20366,6 +20369,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m107cq.AMMO_MAX = 18
 				self.m107cq.fire_mode_data.fire_rate = 0.48
 				self.m107cq.sms = sms_preset.semi_snp_amr
+				self.m107cq.shell_ejection = "_dmc/effects/shell_sniper_m95_semi"
 				self.m107cq.kick = deep_clone(self.stat_info.kick_tables.right_kick)
 				self.m107cq.kick_pattern = {
 					max_t = 0.6,
@@ -25070,6 +25074,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacekeepermk1.CLIP_AMMO_MAX = 30
 				self.peacekeepermk1.fire_mode_data.fire_rate = 0.0700116
 				self.peacekeepermk1.nato = true
+				self.peacekeepermk1.shell_ejection = "_dmc/effects/shell_556_smol"
 				self.peacekeepermk1.tactical_reload = 1
 				self.peacekeepermk1.AMMO_MAX = 150
 				self.peacekeepermk1.kick = self.stat_info.kick_tables.even_recoil
@@ -26115,6 +26120,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mptango41.AMMO_MAX = 12
 				self.mptango41.fire_mode_data.fire_rate = 0.540540540
 				self.mptango41.sms = 0.2
+				self.mptango41.shell_ejection = "_dmc/effects/shell_sniper_m95_semi"
 				self.mptango41.kick = deep_clone(self.stat_info.kick_tables.horizontal_recoil)
 				self.mptango41.kick_pattern = {
 					max_t = 0.6,
@@ -26561,6 +26567,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.alpha57_prim.recategorize = { "light_smg" }
 				self.alpha57_prim.damage_type = "machine_gun"
 				self.alpha57_prim.has_description = true
+				self.alpha57_prim.shell_ejection = "_dmc/effects/shell_556_smol"
 				self.alpha57_prim.muzzleflash = "_dmc/effects/heavy_muzzle"
 				self.alpha57_prim.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 				self.alpha57_prim.kick = self.stat_info.kick_tables.even_recoil
@@ -29023,6 +29030,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.srs99_s7.upgrade_blocks = nil
 				self.srs99_s7.AMMO_MAX = 18
 				self.srs99_s7.sms = sms_preset.semi_snp_amr
+				self.srs99_s7.shell_ejection = "_dmc/effects/shell_sniper_m95_semi"
 				self.srs99_s7.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
 				self.srs99_s7.descope_on_dmg = true
 				self.srs99_s7.supported = true
@@ -29123,6 +29131,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pd3_lynx.CLIP_AMMO_MAX = 5
 				self.pd3_lynx.AMMO_MAX = 18
 				self.pd3_lynx.tactical_reload = 1
+				self.pd3_lynx.shell_ejection = "_dmc/effects/shell_sniper_m95_semi"
 				self.pd3_lynx.muzzleflash = "effects/payday2/particles/weapons/50cal_auto_fps"
 				self.pd3_lynx.fire_mode_data.fire_rate = 0.545454
 				self.pd3_lynx.sms = sms_preset.semi_snp_amr
@@ -34929,6 +34938,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.degfifty.has_description = false
 			self.degfifty.damage_type = "anti_materiel"
 			self.degfifty.fire_mode_data.fire_rate = 0.4
+			self.degfifty.shell_ejection = "_dmc/effects/shell_sniper_m95_semi"
 			self.degfifty.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.degfifty.AMMO_MAX = 9
 			self.degfifty.CLIP_AMMO_MAX = 7

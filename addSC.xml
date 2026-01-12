@@ -1289,6 +1289,8 @@
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/shell_shak_smol" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/shell_shak_sniper" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_sniper_m95_semi" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_556_smol" force="false" load="true" unload="true" reload="true"/>
     <effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true"/>
 	<!--Weapon Mod Trails and Muzzle Effects-->
 	<!--NATO Tracer-->

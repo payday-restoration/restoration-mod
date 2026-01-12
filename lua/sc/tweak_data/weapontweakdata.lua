@@ -7357,6 +7357,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sub2000.timers.reload_exit_not_empty = 0.95
 
 					--RUS-12 Angry Tiger
+						self.rsh12.categories = { "pistol", "handcannon", "big_iron" }
 						self.rsh12.has_description = true
 						self.rsh12.desc_id = "bm_rsh12_sc_desc"
 						self.rsh12.fire_mode_data.fire_rate = 0.2
@@ -8443,6 +8444,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.peacemaker.categories = {
 							"pistol",
 							"handcannon",
+							"big_iron",
 							"yeehaw",
 						}
 						self.peacemaker.has_description = true
@@ -15385,7 +15387,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--Phoenix .500
 		if self.shatters_fury then
-			self.shatters_fury.categories = { "pistol", "handcannon" }
+			self.shatters_fury.categories = { "pistol", "handcannon", "big_iron" }
 			self.shatters_fury.recategorize = { "heavy_pis", "handcannon" }
 			self.shatters_fury.damage_type = "handcannon"
 			self.shatters_fury.fire_mode_data.fire_rate = 0.2142857
@@ -27471,7 +27473,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.swhiskey then --RJC9000 and PlayBONK's MW2022 SW500
-				self.swhiskey.categories = {"pistol", "handcannon"}
+				self.swhiskey.categories = {"pistol", "handcannon", "big_iron"}
 				self.swhiskey.recategorize = { "heavy_pis", "handcannon" }
 				self.swhiskey.damage_type = "handcannon"
 				self.swhiskey.fire_mode_data.fire_rate = 0.4195804
@@ -29158,10 +29160,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pd3_lynx.reload_speed_multiplier = 0.8
 				self.pd3_lynx.panic_suppression_chance = 0.05
 				self.pd3_lynx.timers.equip = 1.3
-				self.pd3_lynx.timers.reload_empty = 3.5
-				self.pd3_lynx.timers.reload_exit_empty = 0.9
-				self.pd3_lynx.timers.reload_not_empty = 3.2
-				self.pd3_lynx.timers.reload_exit_not_empty = 0.5
+				self.pd3_lynx.timers.reload_empty = 3.4
+				self.pd3_lynx.timers.reload_exit_empty = 0.1
+				self.pd3_lynx.timers.reload_not_empty = 3.1
+				self.pd3_lynx.timers.reload_exit_not_empty = 0.8
 			end
 
 			if self.raid_ww2_bren then --RJC9000 and PlayBONK's RAID WWII Bren Mk1
@@ -31043,7 +31045,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.bk500 then
-				self.bk500.categories = {"pistol", "handcannon"}
+				self.bk500.categories = {"pistol", "handcannon", "big_iron"}
 				self.bk500.recategorize = { "heavy_pis", "handcannon" }
 				self.bk500.damage_type = "handcannon"
 				self.bk500.always_play_anims = true
@@ -35884,6 +35886,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
 		akimbo = 1.05,
 		pistol = 1.25, --Compensate for low range.
+			big_iron = 0.85,
 			zippy = 0.15,
 			raygun = 0.8,
 		smg = 1.125,
@@ -35902,15 +35905,17 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		assault_rifle = 1,
 			dmr_l = 0.98,
 			dmr_h = 0.98,
-			snp = 0.965,
-				semi_snp = 0.8,
-				amr = 0.96,
+			snp = 0.9,
+				semi_snp = 0.95,
+				amr = 0.95,
+				semi_amr = 0.95,
 		saw = 1.25, --Compensate for jankiness.
 		bow = 0.6, --Compensate for picking arrows back up.
 		crossbow = 0.6,
 		tranq = 0.7,
 		--Custom weapon pickup
 		bump_stat_20 = 1.2,
+		bump_stat_50 = 1.5,
 		bump_stat_80 = 1.8,
 		dump_stat_40 = 0.6,
 		sweet_liberty = 0.2,

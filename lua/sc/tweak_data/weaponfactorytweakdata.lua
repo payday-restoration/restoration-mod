@@ -4119,7 +4119,7 @@ end)
 							burst_fire = {
 								count = 3,
 								recoil_mult = 0.25,
-								last_recoil_mult = 1,
+								last_recoil_mult = 0.25,
 								delay = 0.25,
 								lock = true,
 							},
@@ -13800,10 +13800,10 @@ end)
 					rof_mult = 0.66666,
 					ads_speed_mult = 1.277777,
 					tweak_categories = {"snp", "semi_snp"},
-					alt_ammo_pickup_min_mul = 0.7857,
-					alt_ammo_pickup_max_mul = 0.7857,
-					ammo_pickup_min_mul = 0.7857,
-					ammo_pickup_max_mul = 0.7857,
+					alt_ammo_pickup_min_mul = 0.8722,
+					alt_ammo_pickup_max_mul = 0.8722,
+					ammo_pickup_min_mul = 0.8722,
+					ammo_pickup_max_mul = 0.8722,
 					sms = 0.6,
 					alt_desc = "bm_shak12_sc_oden_desc",
 					srm = {
@@ -24485,10 +24485,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				{1, 1.3},
 				2
 			},
-			alt_ammo_pickup_min_mul = 0.7857,
-			alt_ammo_pickup_max_mul = 0.7857,
-			ammo_pickup_min_mul = 0.7857,
-			ammo_pickup_max_mul = 0.7857,
+			alt_ammo_pickup_min_mul = 0.8722,
+			alt_ammo_pickup_max_mul = 0.8722,
+			ammo_pickup_min_mul = 0.8722,
+			ammo_pickup_max_mul = 0.8722,
 			falloff_start_mult = 1.30,
 			falloff_end_mult = 1.30
 		},
@@ -25480,10 +25480,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			tweak_categories = {"snp", "semi_snp"},
 			damage_min_mult = 0.75,
 			sms = 0.6,
-			alt_ammo_pickup_min_mul = 0.5641,
-			alt_ammo_pickup_max_mul = 0.5641,
-			ammo_pickup_min_mul = 0.5641,
-			ammo_pickup_max_mul = 0.5641
+			alt_ammo_pickup_min_mul = 0.625,
+			alt_ammo_pickup_max_mul = 0.625,
+			ammo_pickup_min_mul = 0.625,
+			ammo_pickup_max_mul = 0.625
 		},
 		perks = { "fire_mode_single" },
 		internal_part = true,
@@ -28673,10 +28673,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					armor_piercing_override = 1,
 					tweak_categories = {"snp", "semi_snp"},
 					sms = 0.6,
-					alt_ammo_pickup_min_mul = 0.209302,
-					alt_ammo_pickup_max_mul = 0.209302,
-					ammo_pickup_min_mul = 0.209302,
-					ammo_pickup_max_mul = 0.209302
+					alt_ammo_pickup_min_mul = 0.235,
+					alt_ammo_pickup_max_mul = 0.235,
+					ammo_pickup_min_mul = 0.235,
+					ammo_pickup_max_mul = 0.235
 				}
 				self.parts.wpn_fps_ass_morita_barrel_hawkeye.adds = {"wpn_fps_ass_morita_hawkeye_sounds"}
 
@@ -31634,6 +31634,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			self.parts.wpn_fps_ass_t9british_irons.supported = true
 			self.parts.wpn_fps_ass_t9british_irons.stats = { value = 0, gadget_zoom = 1 }
+			self.parts.wpn_fps_ass_t9british_irons.stance_mod = { 
+				wpn_fps_ass_t9british = {
+					translation = Vector3(1.72, -13, -0.7),
+					rotation = Rotation(-0.1, 0, 0),
+				}
+			}
 
 			self.parts.wpn_fps_ass_t9british_scope.supported = true
 			self.parts.wpn_fps_ass_t9british_scope.stats = { value = 0, zoom = 5 }
@@ -50099,10 +50105,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				tweak_categories = {"snp", "semi_snp"},
 				damage_min_mult = 0.75,
 				sms = 0.6,
-				alt_ammo_pickup_min_mul = 0.5641,
-				alt_ammo_pickup_max_mul = 0.5641,
-				ammo_pickup_min_mul = 0.5641,
-				ammo_pickup_max_mul = 0.5641
+				alt_ammo_pickup_min_mul = 0.625,
+				alt_ammo_pickup_max_mul = 0.625,
+				ammo_pickup_min_mul = 0.625,
+				ammo_pickup_max_mul = 0.625
 			},
 		}
 	end

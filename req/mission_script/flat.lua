@@ -180,6 +180,22 @@ return {
 			{ id = 104691, remove = true, },
 		},
 	},
+	-- make some beat cops camp near police cars
+	[100040] = {
+		on_executed = {
+			{ id = 102579, remove = true },
+		},
+	},
+	[100035] = {
+		on_executed = {
+			{ id = 102579, remove = true },
+		},
+	},
+	[100037] = {
+		on_executed = {
+			{ id = 102579, remove = true },
+		},
+	},
 	-- Spawn Heavy SWAT squad if it's overkill above
 	-- Spawns Chavez's Lieutenant in Panic Room on DS
 	[102680] = {

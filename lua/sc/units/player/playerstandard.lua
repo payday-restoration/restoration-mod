@@ -2382,6 +2382,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 		if num_casts and num_casts > 1 then
 			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call mess this by DMC
 			--TODO: Make hit prioritization a thing, similar to how vanilla shotguns do it (head > breakable head protection > everything else)
+			--UPDATE: yeah its not happening, not from me at least -DMC
 			local from = self._unit:movement():m_head_pos()
 			local rotation = self._unit:movement():m_head_rot()
 			local base_direction = rotation:y()

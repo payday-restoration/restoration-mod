@@ -26742,6 +26742,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_alpha57.lock_slide = true
 				self.x_alpha57.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.x_alpha57.animations.reload_name_id = "x_p90"
+				self.x_alpha57.reload_speed_multiplier = 0.6
 				self.x_alpha57.timers = deep_clone(self.x_p90.timers)
 			end
 
@@ -27058,6 +27059,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lc10.timers.reload_exit_empty = 0.7
 				self.lc10.timers.reload_not_empty = 2.11
 				self.lc10.timers.reload_exit_not_empty = 0.72
+			end
+			if self.x_lc10 then
+				self.x_lc10.use_data.selection_index = 2
+				self.x_lc10.desc_id = "bm_w_lc10_desc_sc"
+				self.x_lc10.has_description = true
+				self.x_lc10.categories = { "akimbo", "smg" }
+				self.x_lc10.recategorize = { "heavy_smg" }
+				self.x_lc10.damage_type = "machine_gun"
+				self.x_lc10.fire_mode_data.fire_rate = 0.075
+				self.x_lc10.CAN_TOGGLE_FIREMODE = true
+				self.x_lc10.tactical_reload = 2
+				self.x_lc10.CLIP_AMMO_MAX = 60
+				self.x_lc10.AMMO_MAX = 0
+				self.x_lc10.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.x_lc10.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_right_kick},
+					{7, self.stat_info.kick_tables.moderate_kick},
+					{11, self.stat_info.kick_tables.moderate_left_kick},
+					{16, self.stat_info.kick_tables.left_recoil},
+					{19, self.stat_info.kick_tables.moderate_left_kick}
+				}
+				self.x_lc10.panic_suppression_chance = 0.05
+				self.x_lc10.supported = true
+				self.x_lc10.ads_speed = 0.200
+				self.x_lc10.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 3100,
+					min_mult = 0.3
+				}
+				self.x_lc10.stats = {
+					damage = 30,
+					spread = 56,
+					recoil = 71,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.x_lc10.stats_modifiers = nil
+				self.x_lc10.panic_suppression_chance = 0.05
+				self.x_lc10.reload_speed_multiplier = 0.65
+				self.x_lc10.timers = deep_clone(self.x_shepheard.timers)
 			end
 
 			if self.ksp45 then --RJC9000 and PlayBONK's port of 3arc's sin of a Franken-UMP(?)

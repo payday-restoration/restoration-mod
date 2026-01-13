@@ -31934,6 +31934,80 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 		end
 
+		if self.parts.wpn_fps_smg_x_lc10_xmag_01 then
+			--MAGAZINES
+				--45 Rnd
+				self.parts.wpn_fps_smg_x_lc10_xmag_01.supported = true
+				self.parts.wpn_fps_smg_x_lc10_xmag_01.has_description = false
+				self.parts.wpn_fps_smg_x_lc10_xmag_01.stats = { value = 1, extra_ammo = 30, concealment = -1 , reload = -3}
+				self.parts.wpn_fps_smg_x_lc10_xmag_01.custom_stats = { ads_speed_mult = 1.05 }
+				--Fast Mag
+				self.parts.wpn_fps_smg_x_lc10_magazine_fast_01.supported = true
+				self.parts.wpn_fps_smg_x_lc10_magazine_fast_01.has_description = false
+				self.parts.wpn_fps_smg_x_lc10_magazine_fast_01.stats = {
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 3
+				}
+				--42 Rnd Speed Mag
+				self.parts.wpn_fps_smg_x_lc10_magazine_mix_01.supported = true
+				self.parts.wpn_fps_smg_x_lc10_magazine_mix_01.has_description = false
+				self.parts.wpn_fps_smg_x_lc10_magazine_mix_01.stats = {
+					value = 4,
+					extra_ammo = 24,
+					spread = -1,
+					concealment = -2,
+					reload = 1
+				}
+				self.parts.wpn_fps_smg_x_lc10_magazine_mix_01.custom_stats = { ads_speed_mult = 1.05 }
+				--STANAG 55 Rnd
+				self.parts.wpn_fps_smg_x_lc10_xmag_01_pro.supported = true
+				self.parts.wpn_fps_smg_x_lc10_xmag_01_pro.has_description = false
+				self.parts.wpn_fps_smg_x_lc10_xmag_01_pro.stats = {
+					value = 5,
+					extra_ammo = 50,
+					concealment = -3,
+					reload = -5
+				}
+				self.parts.wpn_fps_smg_x_lc10_xmag_01_pro.custom_stats = { ads_speed_mult = 1.15 }
+				--Vandal Speed Loader
+				self.parts.wpn_fps_smg_x_lc10_magazine_fast_01_pro.supported = true
+				self.parts.wpn_fps_smg_x_lc10_magazine_fast_01_pro.has_description = false
+				self.parts.wpn_fps_smg_x_lc10_magazine_fast_01_pro.stats = {
+					value = 6,
+					spread = -1,
+					concealment = -2,
+					reload = 6
+				}
+				self.parts.wpn_fps_smg_x_lc10_magazine_fast_01_pro.custom_stats = { ads_speed_mult = 1.05 }
+				--Salvo 52 Rnd Fast Mag
+				self.parts.wpn_fps_smg_x_lc10_magazine_mix_01_pro.supported = true
+				self.parts.wpn_fps_smg_x_lc10_magazine_mix_01_pro.has_description = false
+				self.parts.wpn_fps_smg_x_lc10_magazine_mix_01_pro.stats = {
+					value = 8,
+					extra_ammo = 44,
+					spread = -1,
+					concealment = -3,
+					reload = 2
+				}
+				self.parts.wpn_fps_smg_x_lc10_magazine_mix_01_pro.custom_stats = { ads_speed_mult = 1.1 }
+
+			for i, part_id in pairs(self.wpn_fps_smg_x_lc10.uses_parts) do
+				attachment_list = {
+					"wpn_fps_upg_i_singlefire",
+					"wpn_fps_upg_i_autofire",
+				}
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_smg_x_lc10.uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end
+
+			self.wpn_fps_smg_x_lc10_npc.uses_parts = deep_clone(self.wpn_fps_smg_x_lc10.uses_parts)
+		end
+
 		if self.parts.wpn_fps_smg_ksp45_receiver then
 			self.parts.wpn_fps_smg_ksp45_receiver.perks = nil
 			self.parts.wpn_fps_smg_ksp45_stock.stats = { value = 0 }
@@ -37820,6 +37894,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_contraband_body_sayhello.keep_damage = true
 				self.parts.wpn_fps_ass_contraband_body_sayhello.stats = {
 					value = 10,
+					reload = 1,
 					extra_ammo = 10,
 					damage = -15,
 					total_ammo_mod = 198,

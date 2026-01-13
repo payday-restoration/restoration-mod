@@ -188,12 +188,14 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data, weapon_unit)
 				break
 			elseif hit.unit:in_slot(shield_mask) and alive(hit.unit:parent()) then
 				local parent_base = hit.unit:parent() and hit.unit:parent().base and hit.unit:parent():base()
-				if parent_base:has_tag("phalanx_vip") then
-					break
-				elseif parent_base:has_tag("shield_titan") and not can_shoot_through_titan_shield then
-					break
-				elseif parent_base:has_tag("shield") and (not can_shoot_through_shield or (is_semi_snp and distance > near_falloff_distance)) then
-					break
+				if parent_base then
+					if parent_base:has_tag("phalanx_vip") then
+						break
+					elseif parent_base:has_tag("shield_titan") and not can_shoot_through_titan_shield then
+						break
+					elseif parent_base:has_tag("shield") and (not can_shoot_through_shield or (is_semi_snp and distance > near_falloff_distance)) then
+						break
+					end
 				end
 			--[[
 				elseif hit.unit:in_slot(shield_mask) and (not can_shoot_through_shield or (is_semi_snp and distance > near_falloff_distance)) then

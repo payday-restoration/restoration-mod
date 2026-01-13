@@ -1863,7 +1863,7 @@ function NewRaycastWeaponBase:fire(...)
 		self:_fire_sound()
 	end
 
-	self._shots_fired = self._shots_fired + 1 --increases in half increments due some double call bug for this function (Should really figure this out)
+	self._shots_fired = self._shots_fired + 1
 
 	if not self._starwars then
 		self._shots_fired_mag = self._shots_fired_mag + 1

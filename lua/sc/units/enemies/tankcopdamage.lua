@@ -1,5 +1,19 @@
 TankCopDamage.IS_TANK = true
 
+local bodies_tmp = {
+	[Idstring("body_helmet_plate"):key()] = 1,
+	[Idstring("body_helmet_plate_black"):key()] = 1,
+	[Idstring("body_helmet_glass"):key()] = 1,
+	[Idstring("body_helmet_glass_ben"):key()] = 1,
+	[Idstring("body_helmet_glass_black"):key()] = 1,
+	[Idstring("body_armor_chest"):key()] = 2,
+	[Idstring("body_armor_stomache"):key()] = 2,
+	[Idstring("body_armor_back"):key()] = 2,
+	[Idstring("body_armor_throat"):key()] = 2,
+	[Idstring("body_armor_neck"):key()] = 2
+}
+TankCopDamage._priority_bodies_ids = bodies_tmp
+
 --Damage bonus on DS for Dozers when their visor breaks
 function TankCopDamage:seq_clbk_vizor_shatter()
 	if not self._unit:character_damage():dead() then

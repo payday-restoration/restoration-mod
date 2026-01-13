@@ -5334,14 +5334,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type_single_ray = "sniper"
 	end
 
-	recat = { "m1897", "m590", "r870", "ksg", "m37", "serbu", "supernova", "x_type54_underbarrel", "type54_underbarrel" }
+	recat = { "m1897", "m590", "r870", "ksg", "m37", "serbu", "supernova" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_shot" }
 		self[ wep_id ].damage_type = "shotgun_heavy"
 		self[ wep_id ].damage_type_single_ray = "sniper"
 	end
 
-	recat = { "huntsman", "b682", "boot", "coach" }
+	recat = { "huntsman", "b682", "boot", "coach", "x_type54_underbarrel", "type54_underbarrel" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "break_shot" }
 		self[ wep_id ].damage_type = "shotgun_heavy"
@@ -7491,11 +7491,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Model 54 Underbarrel
 						self.type54_underbarrel.categories = {
 							"shotgun",
-							"shotgun_heavy_pistol"
+							"shotgun_break_pistol"
 						}
 						self.type54_underbarrel.rays = 8
 						self.type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.type54_underbarrel.AMMO_MAX = 16
+						self.type54_underbarrel.AMMO_MAX = 12
 						self.type54_underbarrel.has_underbarrel = true
 						self.type54_underbarrel.CLIP_AMMO_MAX = 1
 						self.type54_underbarrel.fire_mode_data = {}
@@ -7516,8 +7516,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.125
 						}
 						self.type54_underbarrel.stats = {
-							damage = 180,
-							spread = 26,
+							damage = 240,
+							spread = 21,
 							recoil = 77,
 							spread_moving = 6,
 							zoom = 1,
@@ -7544,10 +7544,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_type54_underbarrel.rays = 8
 						self.x_type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.x_type54_underbarrel.AMMO_MAX = 32
+						self.x_type54_underbarrel.AMMO_MAX = 24
 						self.x_type54_underbarrel.has_underbarrel = true
 						self.x_type54_underbarrel.BURST_FIRE = {
-							count = 2
+							count = 2,
+							delay = 0.2
 						}
 						self.x_type54_underbarrel.tactical_reload = nil
 						self.x_type54_underbarrel.CLIP_AMMO_MAX = 2
@@ -7567,8 +7568,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.125
 						}
 						self.x_type54_underbarrel.stats = {
-							damage = 180,
-							spread = 16,
+							damage = 240,
+							spread = 11,
 							recoil = 67,
 							spread_moving = 6,
 							zoom = 1,
@@ -7940,7 +7941,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.korth.armor_piercing_chance = 0.5
 						self.korth.can_shoot_through_enemy = true
 						self.korth.panic_suppression_chance = 0.05
-						self.korth.swap_speed_multiplier = 0.85
+						self.korth.swap_speed_multiplier = 0.65
 						self.korth.timers.equip = 0.9
 						self.korth.timers.reload_empty = 2.3
 						self.korth.timers.reload_exit_empty = 1.6
@@ -8507,7 +8508,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.peacemaker.timers.shotgun_reload_exit_empty = 0.7
 						self.peacemaker.timers.shotgun_reload_exit_not_empty = 0.7
 						self.peacemaker.use_unequip_swap = true
-						self.peacemaker.swap_speed_multiplier = 0.77
+						self.peacemaker.swap_speed_multiplier = 0.63
 
 		--[[     MGs     ]]--
 
@@ -15536,6 +15537,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.osipr_gl.timers.reload_exit_not_empty = 0.8
 			self.osipr_gl.timers.reload_empty = 4.5
 			self.osipr_gl.timers.reload_exit_empty = 0.6
+			--self.osipr_gl.timers.equip_underbarrel = 0.4
+			--self.osipr_gl.timers.unequip_underbarrel = 0.4
 			self.osipr_gl.panic_suppression_chance = 0.05
 			self.osipr_gl.custom = false	--Temp fix for BeardLib sync
 			self.osipr_gl_npc.sounds.prefix = "contrabandm203_npc"

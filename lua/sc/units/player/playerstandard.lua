@@ -4764,17 +4764,11 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	end
 
 	--Removed the ADS check so you can swap to the underbarrel while doing that, also for Kick Starter top tier skill
-	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:_is_reloading() or self:is_switching_stances() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:running() and not self._equipped_unit:base():run_and_shoot_allowed()
+	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:is_switching_stances() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:running() and not self._equipped_unit:base():run_and_shoot_allowed()
 
-	if self._running --[[and not self._equipped_unit:base():run_and_shoot_allowed()]] and not self._end_running_expire_t then
-		self:_interupt_action_running(t)
-
-		self._toggle_underbarrel_wanted = true
-
-		return
-	end
 
 	if not action_forbidden then
+		self:_interupt_action_reload(t)
 		self._toggle_underbarrel_wanted = false
 		local weapon = self._equipped_unit:base()
 		local wep_tweak = weapon and weapon.name_id and tweak_data.weapon[weapon.name_id]
@@ -4836,6 +4830,24 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 
 
 	return new_action
+end
+
+function PlayerStandard:_upd_stance_switch_delay(t, dt)
+	if self._stance_switch_delay ~= nil then
+		self._stance_switch_delay = self._stance_switch_delay - dt
+
+		if self._stance_switch_delay <= 0 then
+			self._stance_switch_delay = nil
+			if self._running and not self._end_running_expire_t then
+				if not self._equipped_unit:base():run_and_shoot_allowed() or 
+					(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
+					self._ext_camera:play_redirect(self:get_animation("start_running"))
+				else
+					self._ext_camera:play_redirect(self:get_animation("idle"))
+				end
+			end
+		end
+	end
 end
 
 --Fixes weapons using shotgun-style reloads occasionally only loading one shell in

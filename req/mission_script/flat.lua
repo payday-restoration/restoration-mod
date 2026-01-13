@@ -19,14 +19,18 @@ local disabled = {
 		enabled = false,
 	},
 }
-
+local roof_spawn = {
+	values = {
+		interval = 30,
+	},
+}
 return {
-	-- Point of no return on C4 explosion, uncomment to edit
+	-- Point of no return on C4 explosion
 	-- Normally 1200s any difficulty, always enabled, no time balance mul
 	[100565] = {
 		values = {
 			elements = { 100245, },
-			--[[
+	
 			enabled = pro_job,
 			time_balance_mul = ponr_timer_player_mul,
 			time_easy = ponr_value,
@@ -37,7 +41,6 @@ return {
 			time_easy_wish = ponr_value,
 			time_overkill_290 = ponr_value,
 			time_sm_wish = ponr_value,
-			]]
 		},
 	},
 	-- Disable roof/stairs reinforcement
@@ -167,6 +170,23 @@ return {
 			{ id = 400032, delay = 17, },
 		},
 	},
+	-- delay Bile's chopper first arrival
+	[100247] = {
+		on_executed = {
+			{ id = 104456, delay = 120 },
+		},
+	},
+	[100001] = {
+		on_executed = {
+			{ id = 100620, delay = 120 },
+		},
+	},
+	-- delay Bile's chopper trigger after c4 blows up
+	[100082] = {
+		on_executed = {
+			{ id = 101562, delay = 110 },
+		},
+	},
 	-- Trigger dozer spawn
 	[104706] = {
 		on_executed = {
@@ -211,4 +231,10 @@ return {
 			{ id = 400063, delay = 0, },
 		},
 	},
+	-- slow down roof spawns, these are really fuckng annoying
+	[104650] = roof_spawn,
+	[100504] = roof_spawn,
+	[100505] = roof_spawn,
+	[100509] = roof_spawn,
+	[100396] = roof_spawn,
 }

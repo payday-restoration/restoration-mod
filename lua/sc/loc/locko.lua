@@ -2495,7 +2495,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_w_x_socom"] = "아킴보 Anubis .45",
 				--S&W .500
 				["bm_w_shatters_fury"] = "Phoenix .500",
-				["bm_wp_shatters_fury_desc"] = "엄청난 반동과 저지력을 가진 거대한 .500 탄을 사용하는 리볼버입니다. 샤터가 사용하는 무기죠.\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
+				["bm_wp_shatters_fury_desc"] = "엄청난 반동과 저지력을 가진 거대한 .500 탄을 사용하는 리볼버입니다. 샤터가 사용하는 무기죠.\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "호루스 총열",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "셰더 총열",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "하토르 총열",
@@ -2697,7 +2697,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_chinchilla_sc_desc"] = "강력하고 정확하며 스타일리시합니다. DC에서 더 튼튼한 적을 돌파하는 데 편리하죠.\n\n#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가하고 다수의 적을 관통할 수 있습니다.##",
 				["bm_x_chinchilla_sc_desc"] = "시카리오는 자신의 대상을 확실히 제거해야 하는데, 이 두 리볼버가 그것을 보장해 줄 겁니다.\n\n#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가하고 다수의 적을 관통할 수 있습니다.##",
 				--RUS-12
-				["bm_rsh12_sc_desc"] = "한 손으로 벌이는 구경 대결의 최종 종결자입니다.\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
+				["bm_rsh12_sc_desc"] = "한 손으로 벌이는 구경 대결의 최종 종결자입니다.\n\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",
+				["bm_rsh12_sc_iw_desc"] = "3점사 탄도 권총. 빠른 3점사 사격이 가능한 삼중 약실 구조를 갖추고 있습니다.\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
 				--SAA/Peacemaker
 				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#역사상 가장 뛰어난 권총.##\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 사거리가 감소하며 조준이 불가능해지는 대신## #{skill_color}#발사 속도가 증가하는## 팬링을 할 수 있습니다.",
 				--SAA/Peacemaker
@@ -2723,7 +2724,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--GSh18
 					["bm_gsh18_sc_desc"] = "#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가합니다.##",
 					--Nagant Revolver
-					["bm_m1895_sc_desc"] = "19세기 후반에 개발된 7연발 리볼버이자 소음기를 사용할 수 있는 몇 안 되는 리볼버 중 하나입니다. 하지만 #{risk}#이상하게도## 이 모델은 6연발 실린더를 장착하고 있습니다.\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 사거리가 감소하며 조준이 불가능해지는 대신## #{skill_color}#발사 속도가 증가하는## 팬링을 할 수 있습니다.",
+					["bm_m1895_sc_desc"] = "19세기 후반에 개발된 7연발 리볼버이자 소음기를 사용할 수 있는 몇 안 되는 리볼버 중 하나입니다. 하지만 #{risk}#이상하게도## 이 모델은 6연발 실린더를 장착하고 있습니다.\n\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 사거리가 감소하며 조준이 불가능해지는 대신## #{skill_color}#발사 속도가 증가하는## 팬링을 할 수 있습니다.",
 					--AF2011
 					["bm_af2011_sc_desc"] = "시대를 초월한 명작의 100주년을 기념하기 위해 제작된 권총입니다. 이제 #{risk}#총열이 두 배##로 늘었습니다!",
 					["bm_wp_upg_af2011_a_uno_desc"] = "총열이 동시에 발사되지 않고 개별적으로 발사되도록 만드는 내부 개조품입니다.",

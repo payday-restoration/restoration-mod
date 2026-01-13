@@ -2567,7 +2567,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_w_x_socom"] = "Akimbo Anubis .45s",
 				--S&W .500
 				["bm_w_shatters_fury"] = "Phoenix .500",
-				["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
+				["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\n#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Horus Barrel",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Shatter Barrel",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "Hathor Barrel",
@@ -2769,7 +2769,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_chinchilla_sc_desc"] = "Powerful, accurate, and stylish. Handy for breaking through the more durable foes in DC.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",
 				["bm_x_chinchilla_sc_desc"] = "A sicario needs to ensure his mark is down, two of these will guarantee it.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",
 				--RUS-12
-				["bm_rsh12_sc_desc"] = "The absolute final word in one handed caliber pissing matches.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
+				["bm_rsh12_sc_desc"] = "The absolute final word in one handed caliber pissing matches.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
+				["bm_rsh12_sc_iw_desc"] = "3-round burst ballistic pistol. Has a triple chamber stack for rapid three round bursts.\n\n#{skill_color}#Can pierce body armor, multiple enemies and thin walls.##",
 				--SAA/Peacemaker
 				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 				--SAA/Peacemaker
@@ -2795,7 +2796,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--GSh18
 					["bm_gsh18_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor.##",
 					--Nagant Revolver
-					["bm_m1895_sc_desc"] = "A late 19th century 7-shooter and one of the only revolvers that can make use of a suppressor. #{risk}#Strangely##, this one comes with a 6-shot cylinder instead.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
+					["bm_m1895_sc_desc"] = "A late 19th century 7-shooter and one of the only revolvers that can make use of a suppressor. #{risk}#Strangely##, this one comes with a 6-shot cylinder instead.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 					--AF2011
 					["bm_af2011_sc_desc"] = "Handgun made to celebrate a hundred years of an all-time classic. Now featuring #{risk}#double the barrels##!",
 					["bm_wp_upg_af2011_a_uno_desc"] = "Internal modification that makes the barrels fire separately rather than simultaneously.",

@@ -30,7 +30,7 @@ return {
 	[100565] = {
 		values = {
 			elements = { 100245, },
-	
+			--[[
 			enabled = pro_job,
 			time_balance_mul = ponr_timer_player_mul,
 			time_easy = ponr_value,
@@ -41,6 +41,7 @@ return {
 			time_easy_wish = ponr_value,
 			time_overkill_290 = ponr_value,
 			time_sm_wish = ponr_value,
+			]]
 		},
 	},
 	-- Disable roof/stairs reinforcement

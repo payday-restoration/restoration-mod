@@ -2257,8 +2257,9 @@ function PlayerStandard:_do_chainsaw_damage(t)
 
 			if character_unit:character_damage().dead and not character_unit:character_damage():dead() then
 				if managers.player:has_category_upgrade("player", "buildup_meter") and managers.player:has_category_upgrade("player", "buildup_meter_refresh") and managers.player._buildup_meter and managers.player._buildup_meter > 0 then
+					local additional_players = math.min((managers.groupai:state():num_alive_players() or 1) - 1, 3)
 					local combo_t_mod = (managers.player:has_category_upgrade("player", "buildup_meter_zack") and managers.player:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
-					local combo_t = managers.player:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
+					local combo_t = managers.player:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 					managers.player._buildup_meter_t = combo_t
 					managers.hud:start_buff("sociopath", managers.player._buildup_meter_t)
 				end
@@ -2381,93 +2382,131 @@ function PlayerStandard:_update_melee_timers(t, input)
 
 		if num_casts and num_casts > 1 then
 			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call mess this by DMC
-			--TODO: Make hit prioritization a thing, similar to how vanilla shotguns do it (head > breakable head protection > everything else)
+			--TODO (done): Make hit prioritization a thing, similar to how vanilla shotguns do it (head > breakable head protection > everything else)
 			--UPDATE: yeah its not happening, not from me at least -DMC
+			--UPDATE 2: I LIED HAHAHAHAHAHAHAHA but also FUCK THIS SHIT -DMC
+			--If anything else as a TODO it'd be to fix the debug visualization to account for what's taking the hit when multiple rays hit a single unit, when cleave is used and what's being ignored
+			--I'd have to solve it in _do_melee_damage or something though since all that sorted data doesn't exist when _calc_melee_hit_ray is called
 			local from = self._unit:movement():m_head_pos()
 			local rotation = self._unit:movement():m_head_rot()
-			local base_direction = rotation:y()
-
 			local yaw = rotation:yaw()
 			local pitch = rotation:pitch()
 			local roll = rotation:roll()
-
 			local no_shaker = nil
-			local hit_body, hit_gen, use_cleave = nil
+			local hit_body, hit_gen = nil
+			local all_hits = {}
 
-			local function collect_melee_hits(angle, unique_hits, l_r, v_mult, num_casts)
-				local v_mult = v_mult or 0 --0 is horizontal, 1 is vertical, + starts the line fom the top going down, - starts the line fom the bottom going up
+			local function collect_melee_hits(angle, l_r, v_mult)
+				local v_mult = v_mult or 0 --0 is horizontal, 1 is vertical, '+' starts the line fom the top going down, '-' starts the line from the bottom going up
 				local l_r = l_r or 1
-				local new_rotation = Rotation(yaw+(angle*(1-math.abs(v_mult) * math.abs(v_mult) )),pitch-(angle*(v_mult*l_r)), roll)
-				local direction = new_rotation:y()
-				local to = from + direction --* range
+				local new_rot = Rotation(yaw + (angle * (1 - math.abs(v_mult) * math.abs(v_mult))), pitch - (angle * (v_mult * l_r)), roll)
+				local direction = new_rot:y()
+				local col_ray = self:_calc_melee_hit_ray(t, 10, from, direction)
 
-				local col_ray = self:_calc_melee_hit_ray(t, 12, from, direction)
-				local ignore_hit = nil
-				if col_ray then
-					local hit_unit = col_ray.unit
-					local body_dmg_ext = col_ray.body and col_ray.body:extension() and col_ray.body:extension().damage
-					if hit_unit and alive(hit_unit) then
-						local is_enemy = hit_unit:in_slot(managers.slot:get_mask("enemies"))
-						local u_key = hit_unit:key()
-						local name_key = hit_unit:name():key()
-						local unit_damage = hit_unit and hit_unit.character_damage and hit_unit:character_damage() and not hit_unit:character_damage()._dead
-						if unique_hits[u_key] then
-							use_cleave = nil
-							if not is_enemy and unit_damage and body_dmg_ext and name_key ~= "e050221f8707ded8" then
-								self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, num_casts, true, true, true)
-							end
-						else
-							use_cleave = is_enemy and unit_damage and true
-							unique_hits[u_key] = hit_unit
-							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, nil, true, true)
+				if col_ray and alive(col_ray.unit) then
+					local unit = col_ray.unit
+					local u_key = unit:key()
+					local is_enemy = unit:in_slot(managers.slot:get_mask("enemies"))
+					local hit_unit = nil
+
+					for _, hit in ipairs(all_hits) do
+						if hit.u_key == u_key then
+							hit_unit = hit --use old table if unit was already hit
+							break
 						end
 					end
+					if not hit_unit then
+						hit_unit = {
+							unit = unit,
+							u_key = u_key,
+							col_rays = {}, --table for storing all hits on a singular unit
+							is_enemy = is_enemy --will this hit use cleave
+						}
+						all_hits[#all_hits + 1] = hit_unit --add the newly hit unit to the main table for tracking
+					end
 
-					if hit_unit and hit_unit.character_damage and hit_unit:character_damage() then
+					hit_unit.col_rays[#hit_unit.col_rays + 1] = col_ray --add the hit to a unit to their respective table entry
+
+					if unit.character_damage and unit:character_damage() then
 						hit_body = true
 					else
 						hit_gen = true
 					end
-				else
 				end
 				if not no_hit_shaker and not no_shaker then
-					self._ext_camera:play_shaker( l_r == 1 and "player_melee_var2" or l_r == -1 and "player_melee" or melee_vars[math.random(#melee_vars)], math.max( 0.2, math.min(0.7,lerp_value) ))
+					self._ext_camera:play_shaker(l_r == 1 and "player_melee_var2" or l_r == -1 and "player_melee" or melee_vars[math.random(#melee_vars)], math.max(0.2, math.min(0.7, lerp_value)))
 				end
-
 				no_shaker = true
-
-				return hit_body, use_cleave
 			end
 
 			local is_even = num_casts % 2 == 0
 			local half_casts = math.floor(num_casts / 2)
 			local angle_interval = (self._melee_charge_bonus and melee_weapon.interval_charge or melee_weapon.interval or 10) / 4
 			local cleave = melee_weapon.stats.cleave or 1
-
-			local unique_hits = {}
-
-			local l_r = self._melee_attack_var_l_r and (((self._melee_attack_var_l_r == "left" or self._melee_attack_var_l_r[1] == "left") and 1) or ((self._melee_attack_var_l_r == "right" or self._melee_attack_var_l_r[1] == "right") and -1) ) or nil
+			local l_r = self._melee_attack_var_l_r and (((self._melee_attack_var_l_r == "left" or self._melee_attack_var_l_r[1] == "left") and 1) or ((self._melee_attack_var_l_r == "right" or self._melee_attack_var_l_r[1] == "right") and -1)) or nil
 			local v_mult = self._melee_attack_var_l_r and self._melee_attack_var_l_r[2]
+
 			if l_r then
-				for i = 1, num_casts, 1 do
-					local angle = ((i* l_r) * angle_interval) - (((angle_interval * num_casts * 0.5) + (angle_interval / 2) ) * l_r)
-					local hit, cleave_enemy = collect_melee_hits(angle, unique_hits, l_r, v_mult, num_casts)
-					if cleave_enemy then
-						cleave = cleave - 1
-						if cleave < 1 then
-							break
+				for i = 1, num_casts do
+					local angle = ((i * l_r) * angle_interval) - (((angle_interval * num_casts * 0.5) + (angle_interval / 2)) * l_r)
+					collect_melee_hits(angle, l_r, v_mult)
+				end
+			else
+				--funky ass fallback I should probably remove as I can only imagine it royally fucks the raycast order
+				--Should only occur if I improperly set up a melee weapon tho
+				log(tostring("This melee weapon [".. tostring(melee_entry) .. "] has a wack setup, tell DMC"))
+				if not is_even then
+					collect_melee_hits(0)
+				end
+				for i = 1, half_casts do
+					collect_melee_hits(i * angle_interval)
+					collect_melee_hits(-i * angle_interval)
+				end
+			end
+
+			--Resolve ALL the hits
+			--Even says "all hits" here ↓↓↓ see?
+			for _, hit_unit in ipairs(all_hits) do
+				local unit = hit_unit.unit
+				local is_enemy = hit_unit.is_enemy
+				local char_dmg_ext = unit.character_damage and unit:character_damage()
+				local best_hit = hit_unit.col_rays[1]
+
+				if is_enemy and char_dmg_ext then
+					for i = 2, #hit_unit.col_rays do
+						local next_hit = hit_unit.col_rays[i]
+						--bum off the hit priority table in the character damage class of an enemy unit to get the best hit location if multiple raycasts cover said unit
+						--generally speaking it's head > plates and visor (Dozers) > everywhere else
+						if char_dmg_ext:chk_body_hit_priority(best_hit.body, next_hit.body) then
+							best_hit = next_hit
+						end
+					end
+				else
+					for i = 2, #hit_unit.col_rays do
+						local next_hit = hit_unit.col_rays[i]
+						local prev_dmg = best_hit.body and best_hit.body:extension() and best_hit.body:extension().damage
+						local new_dmg = next_hit.body and next_hit.body:extension() and next_hit.body:extension().damage
+						--priotitize parts on prop units that can break on a "first come, first serve" basis if multiple raycasts from a swing cover it
+						--Won't resolve issues of having two breakables on a single unit in a row if the 1st hit is already "broken" but still registers damage 
+						--i.e. on a car where the whole thing is considered one unit, the swing path hitting the windshield and then the driver-side window
+							--The windshield, even after being cracked, always takes priority since its still capable of registering damage even when broken
+						--I don't think much else can be done here without delving into individual prop units, getting all the part data and what-have-you like what OVK did for enemy hit locations
+							--that said the areas are uniform across enemies at the very least so there's not much to look after
+						--Doing the same for unique props is too much of an undertaking for anyone not being paid to do it I'd wager
+						--I'm not lying about not doing this one, fuck you and fuck off >:C. This shit was already a nightmare to work out
+						if new_dmg and not prev_dmg then
+							best_hit = next_hit
 						end
 					end
 				end
-			else
-				if not is_even then
-					collect_melee_hits(0,unique_hits)
-				end
-				for i = 1, half_casts, 1 do
-					local left_angle = i * angle_interval
-					local right_angle = -left_angle
-					collect_melee_hits(left_angle,unique_hits)
-					collect_melee_hits(right_angle,unique_hits)
+
+				self:_do_melee_damage(t, nil, nil, nil, nil, best_hit.unit, best_hit, nil, true, true)
+
+				if is_enemy then
+					cleave = cleave - 1
+					if cleave <= 0 then
+						break --stop calculating damage across the hits once cleave runs dry
+					end
 				end
 			end
 			if hit_body then
@@ -4100,8 +4139,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 
 			if character_unit:character_damage().dead and not character_unit:character_damage():dead() and managers.enemy:is_enemy(character_unit) then
 				if managers.player:has_category_upgrade("player", "buildup_meter") and managers.player:has_category_upgrade("player", "buildup_meter_refresh") and managers.player._buildup_meter and managers.player._buildup_meter > 0 then
+					local additional_players = math.min((managers.groupai:state():num_alive_players() or 1) - 1, 3)
 					local combo_t_mod = (managers.player:has_category_upgrade("player", "buildup_meter_zack") and managers.player:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
-					local combo_t = managers.player:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
+					local combo_t = managers.player:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players  + combo_t_mod
 					managers.player._buildup_meter_t = combo_t
 					managers.hud:start_buff("sociopath", managers.player._buildup_meter_t)
 				end

@@ -2430,7 +2430,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_max = 100, --Max combo
 			combo_add = 3, --points per kill
 			combo_ene_mult = ene_mult,
-			combo_t = 5, --Combo decay timer
+			combo_t = 6, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
 			hurt_t = 1, --Hurt decay cooldown
@@ -2440,7 +2440,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_max = 100,
 			combo_add = 3,
 			combo_ene_mult = ene_mult,
-			combo_t = 5,
+			combo_t = 6,
 			combo_decay = 5,
 			hurt_decay = 5,
 			hurt_t = 1,
@@ -2450,7 +2450,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_max = 50, --Max combo
 			combo_add = 2, --points per kill
 			combo_ene_mult = ene_mult,
-			combo_t = 5, --Combo decay timer
+			combo_t = 6, --Combo decay timer
 			combo_decay = 5, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
 			hurt_t = 1, --Hurt decay cooldown
@@ -2576,10 +2576,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_t_add = 2 --time added to active combo
 		}}
 		self.values.player.buildup_meter_zack = {
-			{ combo_t_mod = 3, combo_decay_mod = 5 },
+			{ combo_t_mod = 4, combo_decay_mod = 5 },
 			{ combo_t_mod = -1, combo_decay_mod = 0 }, --Brandon
 			{ combo_t_mod = -2, combo_decay_mod = 0 }, --Tony
-			{ combo_t_mod = -2, combo_decay_mod = 5 }, --Tony R
+			{ combo_t_mod = -3, combo_decay_mod = 5 }, --Tony R
 		}
 		self.values.player.buildup_meter_earl = { true } --boolean check for no combo loss when taking HP damage + full combo loss on bleedout
 		self.values.player.tony_boss_mult = 0.1

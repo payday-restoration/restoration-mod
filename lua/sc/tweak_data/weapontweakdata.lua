@@ -7493,6 +7493,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"shotgun",
 							"shotgun_break_pistol"
 						}
+						self.type54_underbarrel.upgrade_blocks = {
+							weapon = {
+								"clip_ammo_increase"
+							}
+						}
 						self.type54_underbarrel.rays = 8
 						self.type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.type54_underbarrel.AMMO_MAX = 12
@@ -7541,6 +7546,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"akimbo",
 							"shotgun",
 							"shotgun_heavy_pistol"
+						}
+						self.x_type54_underbarrel.upgrade_blocks = {
+							weapon = {
+								"clip_ammo_increase"
+							}
 						}
 						self.x_type54_underbarrel.rays = 8
 						self.x_type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"

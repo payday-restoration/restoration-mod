@@ -243,4 +243,6 @@ return {
 	[100505] = roof_spawn,
 	[100509] = roof_spawn,
 	[100396] = roof_spawn,
+	-- disable roof/stairs reinforcement
+	[103181] = disabled, -- 5, fucking, force
 }

@@ -38621,6 +38621,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_contraband_body_mpx.keep_damage = true
 				self.parts.wpn_fps_ass_contraband_body_mpx.stats = {
 					value = 10,
+					reload = 3,
 					extra_ammo = 10,
 					damage = -21,
 					total_ammo_mod = 350,

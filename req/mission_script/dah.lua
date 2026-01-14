@@ -52,10 +52,10 @@ return {
 	-- enable autrium snipers
 	[100429] = {
 		on_executed = {
-			{id = 102128, delay = 45},
-			{id = 102196, delay = 10},
-			{id = 400076, delay = 0}
-		}
+			{ id = 102128, delay = 45 },
+			{ id = 102196, delay = 10 },
+			{ id = 400076, delay = 0 },
+		},
 	},
 	-- make the elevator do actual beep sound
 	[102366] = {

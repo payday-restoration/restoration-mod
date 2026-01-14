@@ -31900,6 +31900,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.br14 then
+				--I wish this gun (and all the non-explosive, low ergo weapons in HD2 in general) didn't suck donkey asshole to use
+				--None of them are strong enough to warrant feeling like total and complete utter ass to just fucking LOOK AROUND
+				--It's one thing to have bad recoil
+				--But to put "difficulty" in something as basic as AQUIRING AND AIMING AT FUCKING TARGETS by effectively slapping us with "across the globe" connection levels of input lag?
+				--Fuck you
+				--If the weapon was that heavy to warrant looking around slower than a slug (surely it's not), the recoil wouldn't be that bad
+				--and fuck off with your armor passive band-aid bullshit because the smarter choice would be to pick a better weapon that doesn't handle like I'm lagging out in a fucking Minecraft server
+				--The weapon can't even one tap Heavy Devastators in the head for fucks sake
+				--ITS SUPPORT WEAPON COUSIN, THE MG-43, DOES THE SAME DAMAGE AS THE FUCKING STALWART (90)
+				--FUCKIN TELLING ME THE ONLY DIFFERENCE BETWEEN (fictionalized) 5.56 and (fictionalized) 7.62 NATO IS THAT THE LATTER HAS BETTER PENETRATION???
+				--FUCK
+				--OFF
+				--Certified Arrowhead moment
 				self.br14.categories = {
 					"assault_rifle",
 					"dmr_h",
@@ -31928,7 +31941,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br14.stats = {
 					damage = 45,
 					spread = 91,
-					recoil = 51,
+					recoil = 53,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 21,
@@ -32064,7 +32077,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.CLIP_AMMO_MAX = 80
 				self.sickle.AMMO_MAX = self.sickle.CLIP_AMMO_MAX * 4
 				self.sickle.ammo_ratio = 2
-				self.sickle.sms = 0.2
+				self.sickle.sms = 0.5
 				self.sickle.fire_mode_data.fire_rate = 0.08
 				self.sickle.BURST_FIRE = false
 				self.sickle.CAN_TOGGLE_FIREMODE = false
@@ -32133,7 +32146,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r6.always_play_anims = true
 				self.r6.BURST_FIRE = false
 				self.r6.CAN_TOGGLE_FIREMODE = false
-				self.r6.sms = 0.3
+				self.r6.sms = 0.5
 				self.r6.tactical_reload = 1
 				self.r6.has_description = true
 				self.r6.CLIP_AMMO_MAX = 6

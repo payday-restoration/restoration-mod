@@ -60,7 +60,8 @@ end)
 
 Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self, t, dt)
 	if self:has_category_upgrade("player", "buildup_meter") and self._buildup_meter_t then
-		local additional_players = (managers.groupai:state():num_alive_players() or 1) - 1
+		local groupai = managers.groupai and managers.groupai:state()
+		local additional_players = (groupai and math.min(groupai:num_alive_players() or 1) - 1, 3)) or 0
 		if self._buildup_meter_t > 0 then
 			self._buildup_meter_t = math.max(0, self._buildup_meter_t - dt)
 		else
@@ -534,7 +535,8 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 		return 0
 	end
 	self._buildup_meter = self._buildup_meter or 0 --Glass earthing this; no clue why it's returning nil sometimes given its in the init
-	local additional_players = math.min((managers.groupai:state():num_alive_players() or 1) - 1, 3)
+	local groupai = managers.groupai and managers.groupai:state()
+	local additional_players = (groupai and math.min(groupai:num_alive_players() or 1) - 1, 3)) or 0
 	local damage_ext = player_unit:character_damage()
 	local new_socio_panic = 0
 	local buildup_stats = self:upgrade_value("player", "buildup_meter", 0)
@@ -660,7 +662,8 @@ function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 	if weapon_proj and weapon_proj.count_as_melee and damage_info.variant == "bullet" then
 		damage_info.variant = "melee"
 		if self:has_category_upgrade("player", "buildup_meter") and self:has_category_upgrade("player", "buildup_meter_refresh") and self._buildup_meter and self._buildup_meter > 0 then
-			local additional_players = math.min((managers.groupai:state():num_alive_players() or 1) - 1, 3)
+			local groupai = managers.groupai and managers.groupai:state()
+			local additional_players = (groupai and math.min(groupai:num_alive_players() or 1) - 1, 3)) or 0
 			local combo_t_mod = (self:has_category_upgrade("player", "buildup_meter_zack") and self:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
 			local combo_t = self:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 			self._buildup_meter_t = combo_t

@@ -4805,8 +4805,7 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	end
 
 	--Removed the ADS check so you can swap to the underbarrel while doing that, also for Kick Starter top tier skill
-	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:is_switching_stances() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:running() and not self._equipped_unit:base():run_and_shoot_allowed()
-
+	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:is_switching_stances() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction")
 
 	if not action_forbidden then
 		self:_interupt_action_reload(t)

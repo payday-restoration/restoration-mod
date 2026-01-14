@@ -200,6 +200,12 @@ return {
 			{ id = 104691, remove = true, },
 		},
 	},
+	-- call the cops when the red door opens
+	[102680] = {
+		on_executed = {
+			{ id = 104691, delay = 0 },
+		},
+	},
 	-- make some beat cops camp near police cars
 	[100040] = {
 		on_executed = {

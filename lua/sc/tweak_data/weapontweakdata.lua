@@ -31988,13 +31988,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.supported = true
 				self.reprimand.ads_speed = 0.240
 				self.reprimand.damage_falloff = {
-					start_dist = 200,
-					end_dist = 3000,
+					start_dist = 600,
+					end_dist = 2400,
 					min_mult = 0.2
 				}
 				self.reprimand.stats = {
 					damage = 60,
-					spread = 51,
+					spread = 56,
 					recoil = 51,
 					spread_moving = 7,
 					zoom = 1,

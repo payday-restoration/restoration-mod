@@ -115,3 +115,70 @@ function WeaponFactoryManager:unpack_blueprint_from_string(factory_id, blueprint
 	return blueprint
 end
 --]]
+
+WeaponFactoryManager._override_parts_cache = WeaponFactoryManager._override_parts_cache or {}
+WeaponFactoryManager._forbidden_parts_cache = WeaponFactoryManager._forbidden_parts_cache or {}
+
+--Determined that both "_get_override_parts" and "_get_forbidden_parts" should to get cached after neutering the giant fuck-off for loops got rid of a majority of performance hitching
+--Cache the override data of a given blueprint as to not recreate it each time this gets called i.e. when connected clients swap weapons, switching to and from an underbarrel
+local _orig_override_parts = WeaponFactoryManager._get_override_parts
+function WeaponFactoryManager:_get_override_parts(factory_id, blueprint)
+	local key = self:blueprint_to_string(factory_id, blueprint) --generate a unique key off the blueprint string
+
+	if self._override_parts_cache[key] then
+		return self._override_parts_cache[key]
+	end
+
+	local overrides = _orig_override_parts(self, factory_id, blueprint)
+	self._override_parts_cache[key] = overrides
+
+	return overrides
+end
+
+--Ditto but for forbid data
+local _orig_forbid_parts = WeaponFactoryManager._get_forbidden_parts
+function WeaponFactoryManager:_get_forbidden_parts(factory_id, blueprint)
+	local key = self:blueprint_to_string(factory_id, blueprint)
+
+	if self._forbidden_parts_cache[key] then
+		return self._forbidden_parts_cache[key]
+	end
+
+	local forbidden = _orig_forbid_parts(self, factory_id, blueprint)
+	self._forbidden_parts_cache[key] = forbidden
+
+	return forbidden
+end
+
+--Call to nuke the cache if a blueprint change occurs
+function WeaponFactoryManager:_clear_parts_cache()
+	self._override_parts_cache = {}
+	self._forbidden_parts_cache = {}
+end
+
+--AFAIK finalized changes to blueprints are only carried out by these functions
+local _orig_change_part = WeaponFactoryManager.change_part
+function WeaponFactoryManager:change_part(...)
+	self:_clear_parts_cache()
+	return _orig_change_part(self, ...)
+end
+local _orig_remove_part = WeaponFactoryManager.remove_part
+function WeaponFactoryManager:remove_part(...)
+	self:_clear_parts_cache()
+	return _orig_remove_part(self, ...)
+end
+local _orig_remove_part_by_type = WeaponFactoryManager.remove_part_by_type
+function WeaponFactoryManager:remove_part_by_type(...)
+	self:_clear_parts_cache()
+	return _orig_remove_part_by_type(self, ...)
+end
+local _orig_change_blueprint = WeaponFactoryManager.change_blueprint
+function WeaponFactoryManager:change_blueprint(...)
+	self:_clear_parts_cache()
+	return _orig_change_blueprint(self, ...)
+end
+local _orig_disassemble = WeaponFactoryManager.disassemble
+function WeaponFactoryManager:disassemble(...)
+	self:_clear_parts_cache()
+	return _orig_disassemble(self, ...)
+end

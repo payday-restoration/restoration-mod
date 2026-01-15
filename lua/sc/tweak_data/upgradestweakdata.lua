@@ -2159,18 +2159,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.level_2_dodge_addend = {
 		0.05,
-		0.1,
-		0.15
+		0.15,
+		0.15 --unused
 	}
 	self.values.player.level_3_dodge_addend = {
 		0.05,
-		0.1,
-		0.15
+		0.15,
+		0.15 --unused
 	}
 	self.values.player.level_4_dodge_addend = {
 		0.05,
-		0.1,
-		0.15
+		0.15,
+		0.15 --unused
 	}
 
 	self.values.player.level_2_armor_multiplier = {

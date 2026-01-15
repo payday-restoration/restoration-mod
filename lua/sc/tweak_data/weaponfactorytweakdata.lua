@@ -20445,6 +20445,7 @@ end)
 			}
 			self.parts.wpn_fps_upg_i_autofire.custom_stats = {
 				info_lock_auto = true,
+				rof_mult = 1.1,
 				falloff_start_mult = 0.8,
 				falloff_end_mult = 0.8
 			}

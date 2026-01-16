@@ -164,8 +164,8 @@ end
 local _orig_forbid_parts = WeaponFactoryManager._get_forbidden_parts
 function WeaponFactoryManager:_get_forbidden_parts(factory_id, blueprint)
 	local key = self:blueprint_to_string(factory_id, blueprint)
-	local self._forbidden_parts_cache[key]
-	
+	local cache = self._forbidden_parts_cache[key]
+
 	if cache then
 		return cache
 	end

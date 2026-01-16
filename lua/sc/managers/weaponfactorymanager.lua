@@ -119,23 +119,28 @@ end
 WeaponFactoryManager._override_parts_cache = WeaponFactoryManager._override_parts_cache or {}
 WeaponFactoryManager._forbidden_parts_cache = WeaponFactoryManager._forbidden_parts_cache or {}
 
-function WeaponFactoryManager:blueprint_to_string(factory_id, blueprint)
+--bumming a vanilla func to generate a unique key for a given blueprint
+--UPDATE: originally bummed off and modified a vanilla func, decided to make it a new one instead in the event vanilla calls for "blueprint_to_string" leads to issues due to the added sanity checks that might prevent returning an expected result
+function WeaponFactoryManager:blueprint_to_key(factory_id, blueprint)
 	local blueprint_string = ""
 	local index_table = {}
 	local factory = tweak_data.weapon.factory[factory_id] or {}
 
+ 	--safety check as some weapons can just not have this (underbarrels)
 	if factory and factory.uses_parts then
 		for i, part_id in ipairs(factory.uses_parts) do
 			index_table[part_id] = i
 		end
 	end
 
+	--safety check 2 electirc boogaloo (I *think* "blueprint" is only ever sent as a table)
+	--don't bother with the loop if its empty
 	if blueprint and #blueprint ~= 0 then
 		for _, part_id in ipairs(blueprint) do
 			if index_table[part_id] then
 				blueprint_string = blueprint_string .. tostring(index_table[part_id]) .. " "
 			else
-				Application:error("[WeaponFactoryManager:blueprint_to_string] Part do not exist in weapon's uses_parts!", "factory_id", factory_id, "part_id", part_id)
+				Application:error("[WeaponFactoryManager:blueprint_to_key] Part do not exist in weapon's uses_parts!", "factory_id", factory_id, "part_id", part_id)
 			end
 		end
 	end
@@ -143,11 +148,11 @@ function WeaponFactoryManager:blueprint_to_string(factory_id, blueprint)
 	return blueprint_string
 end
 
---Determined that both "_get_override_parts" and "_get_forbidden_parts" should to get cached after neutering the giant fuck-off for loops got rid of a majority of performance hitching
+--Determined that both "_get_override_parts" and "_get_forbidden_parts" should to get cached after neutering the giant fuck-off for loops in them massively reduced the amount/length of hitching
 --Cache the override data of a given blueprint as to not recreate it each time this gets called i.e. when connected clients swap weapons, switching to and from an underbarrel
 local _orig_override_parts = WeaponFactoryManager._get_override_parts
 function WeaponFactoryManager:_get_override_parts(factory_id, blueprint)
-	local key = self:blueprint_to_string(factory_id, blueprint) --generate a unique key off the blueprint string
+	local key = self:blueprint_to_key(factory_id, blueprint) --generate a unique key off the blueprint string
 	local cache = self._override_parts_cache[key]
 
 	if cache then
@@ -155,7 +160,7 @@ function WeaponFactoryManager:_get_override_parts(factory_id, blueprint)
 	end
 
 	local overrides = _orig_override_parts(self, factory_id, blueprint)
-	self._override_parts_cache[key] = overrides
+	self._override_parts_cache[key] = overrides --cache the override table
 
 	return overrides
 end
@@ -163,7 +168,7 @@ end
 --Ditto but for forbid data
 local _orig_forbid_parts = WeaponFactoryManager._get_forbidden_parts
 function WeaponFactoryManager:_get_forbidden_parts(factory_id, blueprint)
-	local key = self:blueprint_to_string(factory_id, blueprint)
+	local key = self:blueprint_to_key(factory_id, blueprint)
 	local cache = self._forbidden_parts_cache[key]
 
 	if cache then
@@ -171,12 +176,12 @@ function WeaponFactoryManager:_get_forbidden_parts(factory_id, blueprint)
 	end
 
 	local forbidden = _orig_forbid_parts(self, factory_id, blueprint)
-	self._forbidden_parts_cache[key] = forbidden
+	self._forbidden_parts_cache[key] = forbidden --cache the forbid table
 
 	return forbidden
 end
 
---Call to nuke the cache if a blueprint change occurs
+--Call to nuke the cache if a blueprint change occurs - old data bad
 function WeaponFactoryManager:_clear_parts_cache()
 	self._override_parts_cache = {}
 	self._forbidden_parts_cache = {}

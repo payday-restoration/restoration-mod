@@ -10,7 +10,18 @@ local bodies_tmp = {
 	[Idstring("body_armor_stomache"):key()] = 2,
 	[Idstring("body_armor_back"):key()] = 2,
 	[Idstring("body_armor_throat"):key()] = 2,
-	[Idstring("body_armor_neck"):key()] = 2
+	[Idstring("body_armor_neck"):key()] = 2,
+    [Idstring("glass_shield"):key()] = 1,
+    [Idstring("glass_swat"):key()] = 1,
+    [Idstring("glass_c"):key()] = 1,
+    [Idstring("glass_d"):key()] = 1,
+    [Idstring("glass_l"):key()] = 1,
+    [Idstring("glass_r"):key()] = 1,
+    [Idstring("visor"):key()] = 1,
+    [Idstring("sg_mask"):key()] = 1,
+    [Idstring("glass_altyn"):key()] = 1,
+    [Idstring("altyn_visor"):key()] = 1,
+    [Idstring("glass_visor"):key()] = 1
 }
 TankCopDamage._priority_bodies_ids = bodies_tmp
 

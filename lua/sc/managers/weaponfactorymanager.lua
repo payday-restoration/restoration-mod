@@ -119,6 +119,30 @@ end
 WeaponFactoryManager._override_parts_cache = WeaponFactoryManager._override_parts_cache or {}
 WeaponFactoryManager._forbidden_parts_cache = WeaponFactoryManager._forbidden_parts_cache or {}
 
+function WeaponFactoryManager:blueprint_to_string(factory_id, blueprint)
+	local blueprint_string = ""
+	local index_table = {}
+	local factory = tweak_data.weapon.factory[factory_id] or {}
+
+	if factory and factory.uses_parts then
+		for i, part_id in ipairs(factory.uses_parts) do
+			index_table[part_id] = i
+		end
+	end
+
+	if blueprint and #blueprint ~= 0 then
+		for _, part_id in ipairs(blueprint) do
+			if index_table[part_id] then
+				blueprint_string = blueprint_string .. tostring(index_table[part_id]) .. " "
+			else
+				Application:error("[WeaponFactoryManager:blueprint_to_string] Part do not exist in weapon's uses_parts!", "factory_id", factory_id, "part_id", part_id)
+			end
+		end
+	end
+
+	return blueprint_string
+end
+
 --Determined that both "_get_override_parts" and "_get_forbidden_parts" should to get cached after neutering the giant fuck-off for loops got rid of a majority of performance hitching
 --Cache the override data of a given blueprint as to not recreate it each time this gets called i.e. when connected clients swap weapons, switching to and from an underbarrel
 local _orig_override_parts = WeaponFactoryManager._get_override_parts

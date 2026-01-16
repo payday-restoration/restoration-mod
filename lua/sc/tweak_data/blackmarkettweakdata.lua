@@ -4148,7 +4148,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_attack_charged_right_vars = {"var4"}
 			self.melee_weapons[melee_id].anim_attack_var_dir = {
 				var1 = {"left", -0.2},
-				var2 = {"right", 0.9},
+				var2 = {"left", -0.9},
 				var3 = {"right", -0.2},
 				var4 = {"right", 0.1}
 			}
@@ -5336,7 +5336,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.cutters.stats.cleave = 1
 		self.melee_weapons.cutters.stats.raycasts = 15
 		self.melee_weapons.cutters.stats.raycasts_charge = 8
-		self.melee_weapons.cutters.stats.min_damage = 8
+		self.melee_weapons.cutters.stats.min_damage = 9
 		self.melee_weapons.cutters.stats.max_damage = 12.001
 		self.melee_weapons.cutters.stats.min_damage_effect = 6.0
 		self.melee_weapons.cutters.stats.max_damage_effect = 24.0
@@ -5902,22 +5902,23 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.scalper.stats.speed_mult = 0.97
 		--Reminds me of how HL2 was gonna have an ice axe--
 		self.melee_weapons.iceaxe.info_id = "bm_melee_iceaxe_info"
+		self.melee_weapons.iceaxe.attack_pattern = "bm_melee_pattern_axe"
 		self.melee_weapons.iceaxe.stats.cleave = 1
 		self.melee_weapons.iceaxe.stats.raycasts = 8
-		self.melee_weapons.iceaxe.stats.raycasts_charge = 12
-		self.melee_weapons.iceaxe.stats.speed_mult = 0.95
+		self.melee_weapons.iceaxe.stats.raycasts_charge = nil
 		self.melee_weapons.iceaxe.anim_attack_vars = {"var1"}
+		self.melee_weapons.iceaxe.anim_attack_charged_vars = nil
 		self.melee_weapons.iceaxe.make_decal = true
 		self.melee_weapons.iceaxe.make_effect = true
 		self.melee_weapons.iceaxe.stats.min_damage = 6
 		self.melee_weapons.iceaxe.stats.max_damage = 12.001
 		self.melee_weapons.iceaxe.stats.min_damage_effect = 1.5
 		self.melee_weapons.iceaxe.stats.max_damage_effect = 3.0
-		self.melee_weapons.iceaxe.stats.charge_time = 1.55
+		self.melee_weapons.iceaxe.stats.charge_time = 1.7
 		self.melee_weapons.iceaxe.stats.range = 180
 		self.melee_weapons.iceaxe.stats.concealment = 28
 		self.melee_weapons.iceaxe.headshot_damage_multiplier = 1.5
-		self.melee_weapons.iceaxe.stats.speed_mult = 0.95
+		self.melee_weapons.iceaxe.stats.speed_mult = 0.9
 		--Whose plumes are gay now Carl? Whose plumes are gay now?--
 		self.melee_weapons.morning.info_id = "bm_melee_morning_info"
 		self.melee_weapons.morning.dot_data_name = "melee_bleed"
@@ -5983,6 +5984,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.mining_pick.stats.range = 200
 		self.melee_weapons.mining_pick.stats.concealment = 26
 		self.melee_weapons.mining_pick.headshot_damage_multiplier = 1.5
+		self.melee_weapons.mining_pick.stats.speed_mult = 0.98
 
 		--YOOOOOOOOOOOOOOOOOOOOOOOOOOO--
 		self.melee_weapons.sandsteel.info_id = "bm_melee_katana_info"
@@ -6373,7 +6375,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 			self.melee_weapons[melee_id].miss_anim_speed_mult = nil
 			self.melee_weapons[melee_id].melee_damage_delay = 0.015
 			self.melee_weapons[melee_id].anim_speed_mult = 0.8
-			--self.melee_weapons[melee_id].sphere_cast_radius_add = -10
+			self.melee_weapons[melee_id].sphere_cast_radius_add = -10
 			self.melee_weapons[melee_id].melee_charge_shaker = ""
 			self.melee_weapons[melee_id].no_hit_shaker = true
 			self.melee_weapons[melee_id].sounds.hit_air = ""

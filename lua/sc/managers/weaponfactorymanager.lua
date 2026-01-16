@@ -148,9 +148,10 @@ end
 local _orig_override_parts = WeaponFactoryManager._get_override_parts
 function WeaponFactoryManager:_get_override_parts(factory_id, blueprint)
 	local key = self:blueprint_to_string(factory_id, blueprint) --generate a unique key off the blueprint string
+	local cache = self._override_parts_cache[key]
 
-	if self._override_parts_cache[key] then
-		return self._override_parts_cache[key]
+	if cache then
+		return cache
 	end
 
 	local overrides = _orig_override_parts(self, factory_id, blueprint)
@@ -163,9 +164,10 @@ end
 local _orig_forbid_parts = WeaponFactoryManager._get_forbidden_parts
 function WeaponFactoryManager:_get_forbidden_parts(factory_id, blueprint)
 	local key = self:blueprint_to_string(factory_id, blueprint)
-
-	if self._forbidden_parts_cache[key] then
-		return self._forbidden_parts_cache[key]
+	local self._forbidden_parts_cache[key]
+	
+	if cache then
+		return cache
 	end
 
 	local forbidden = _orig_forbid_parts(self, factory_id, blueprint)

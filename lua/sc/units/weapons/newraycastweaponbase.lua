@@ -970,22 +970,23 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self:old_update_stats_values(disallow_replenish, ammo_data)
 
 	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:categories(), self._silencer, nil, current_state, self._blueprint)
-
 	--Use stability stat to get the moving accuracy penalty.
 	--Moved this from "RaycastWeaponBase:setup" as it lead to funky lingering stats in intances of mid-heist loadout changes
-	if self._current_stats_indices and self._current_stats_indices.recoil then
-		self._spread_moving = tweak_data.weapon.stats.spread_moving[self._current_stats_indices.recoil] or 0
-	else --Fallback method for getting stability moving accuracy penalty, in case the indices somehow don't get set.
-		log("Using fallback")
-		local moving_spread_index = 0
-		local recoil_table = tweak_data.weapon.stats.recoil
-		for i = 0, 100, 1 do
-			if recoil_table[i] == self._recoil then
-				moving_spread_index = i
-				break
+	if not self:is_npc() then
+		if self._current_stats_indices and self._current_stats_indices.recoil then
+			self._spread_moving = tweak_data.weapon.stats.spread_moving[self._current_stats_indices.recoil] or 0
+		else --Fallback method for getting stability moving accuracy penalty, in case the indices somehow don't get set.
+			log("Using fallback")
+			local moving_spread_index = 0
+			local recoil_table = tweak_data.weapon.stats.recoil
+			for i = 0, 100, 1 do
+				if recoil_table[i] == self._recoil then
+					moving_spread_index = i
+					break
+				end
 			end
+			self._spread_moving = tweak_data.weapon.stats.spread_moving[moving_spread_index] or 0
 		end
-		self._spread_moving = tweak_data.weapon.stats.spread_moving[moving_spread_index] or 0
 	end
 
 	local recoil_values = self:weapon_tweak_data().recoil_values

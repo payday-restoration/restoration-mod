@@ -81,6 +81,7 @@
 				<hook file="sc/core/coresetup.lua" source_file="core/lib/setups/coresetup"/>
 				<hook file="sc/core/coreworldinstancemanager.lua" source_file="core/lib/managers/coreworldinstancemanager"/>
 				<hook file="sc/core/coreenvironmentcontrollermanager.lua" source_file="core/lib/managers/coreenvironmentcontrollermanager"/>
+				<hook file="sc/core/coresequencemanager.lua" source_file="core/lib/managers/coresequencemanager"/>
 			<!--TWEAKDATA-->
 				<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
 				<hook file="sc/tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>

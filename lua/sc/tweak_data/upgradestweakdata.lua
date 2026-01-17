@@ -2013,7 +2013,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 
 			--Pumping Iron
-				self.values.player.melee_swing_multiplier = {1.15, 1.5}
+				self.values.player.melee_swing_multiplier = {1.15, 1.4}
 				self.values.player.melee_swing_multiplier_delay = {0.8, 0.5} --Unused
 				
 				self.skill_descs.steroids = {

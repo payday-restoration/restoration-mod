@@ -463,18 +463,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.body_armor.movement = { --*increments of 0.03
 		1,
 		0.97,
-		0.94,
-		0.91,
-		0.76, --5 increments
+		0.91, --2 increments
+		0.88,
+		0.76, --4 increments
 		0.745, --0.5 increments
 		0.7 --1.5 increments
 	}
 	self.values.player.body_armor.dodge = { --*increments of 0.1
 		0.2,
 		0.1,
-		0.0,
-		-0.1,
-		-0.15, --half increment
+		0.05, --half increment
+		-0.05,
+		-0.15,
 		-0.2, --half increment
 		-0.3
 	}
@@ -487,14 +487,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		8, --4 increments
 		4 --2 increments
 	}
-	self.values.player.body_armor.damage_shake = { --increments of 0.1
+	self.values.player.body_armor.damage_shake = { --*increments of 0.1
 		1.0,
 		0.9,
-		0.8,
-		0.7,
-		0.5,
+		0.7, --2 increments
+		0.6,
 		0.4,
-		0.2
+		0.3,
+		0.1
 	}
 	self.values.player.body_armor.stamina = { --increments of 0.025
 		1,
@@ -506,8 +506,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.8
 	}
 	self.values.player.body_armor.skill_ammo_mul = { --repurposed to pick up mult
-		0.85,
-		0.925,
+		0.875,
+		0.95,
 		1.00,
 		1.05,
 		1.075,
@@ -2013,7 +2013,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 
 			--Pumping Iron
-				self.values.player.melee_swing_multiplier = {1.2, 1.5}
+				self.values.player.melee_swing_multiplier = {1.15, 1.5}
 				self.values.player.melee_swing_multiplier_delay = {0.8, 0.5} --Unused
 				
 				self.skill_descs.steroids = {
@@ -2425,6 +2425,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{sniper = 1.50},
 		{special = 1.50},
 	}
+	self.socio_affinity_bonus_steps = 1 
 	self.values.player.buildup_meter = {
 		{
 			combo_max = 100, --Max combo
@@ -3202,6 +3203,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_8 = tostring(self.values.player.buildup_meter_pacify[1].combo_steps),
 		perk_value_9 = tostring(self.values.player.buildup_meter_pacify[1].effect * 100) .. "%",
 		perk_value_10 = tostring(self.values.player.buildup_meter_pacify[1].effect_max * 100) .. "%",
+		perk_value_11 = tostring(self.socio_affinity_bonus_steps)
 	}
 	self.specialization_descs[9][3] = {
 		--perk_value_1 = tostring(self.values.player.killshot_regen_armor_bonus[1] * 10), -- Armor regen on kill

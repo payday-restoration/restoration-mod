@@ -2351,7 +2351,7 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 
 			local digital_gui = part and part.unit:digital_gui()
 
-			is_visible = (part.steelsight_visible == nil or part.steelsight_visible == steelsight_swap_state) or nil
+			is_visible = (part and part.steelsight_visible == nil or part.steelsight_visible == steelsight_swap_state) or nil
 
 			if digital_gui and digital_gui.number_set then
 				part.unit:digital_gui():number_set(distance and math.round(distance) or false, false)

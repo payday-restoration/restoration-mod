@@ -1366,7 +1366,8 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 			local hurt_decay = pm:upgrade_value("player", "buildup_meter", 0).hurt_decay + hurt_decay_mod
 			local hurt_t_mod = (pm:has_category_upgrade("player", "buildup_meter_quickening") and (math.floor(self:_raw_max_armor()/pm:upgrade_value("player", "buildup_meter_quickening",0).armor_steps) * pm:upgrade_value("player", "buildup_meter_quickening", 0).hurt_t_mod)) or 0
 			local hurt_t = pm:upgrade_value("player", "buildup_meter", 0).hurt_t
-			local additional_players = math.min((managers.groupai:state():num_alive_players() or 1) - 1, 3)
+			local groupai = managers.groupai and managers.groupai:state()
+			local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 			local combo_t_mod = (pm:has_category_upgrade("player", "buildup_meter_zack") and pm:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
 			local combo_t = pm:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 			pm._buildup_meter = math.max( 0, managers.player._buildup_meter - hurt_decay )
@@ -1821,7 +1822,8 @@ function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_s
 		end
 		if managers.player:has_category_upgrade("player", "buildup_meter") and managers.player._buildup_meter then
 			local pm = managers.player
-			local additional_players = math.min((managers.groupai:state():num_alive_players() or 1) - 1, 3)
+			local groupai = managers.groupai and managers.groupai:state()
+			local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 			local combo_t_mod = (pm:has_category_upgrade("player", "buildup_meter_zack") and pm:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
 			local combo_t = pm:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 			if managers.player:has_category_upgrade("player", "buildup_meter_earl") then

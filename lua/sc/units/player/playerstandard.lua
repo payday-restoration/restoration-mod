@@ -2257,7 +2257,8 @@ function PlayerStandard:_do_chainsaw_damage(t)
 
 			if character_unit:character_damage().dead and not character_unit:character_damage():dead() then
 				if managers.player:has_category_upgrade("player", "buildup_meter") and managers.player:has_category_upgrade("player", "buildup_meter_refresh") and managers.player._buildup_meter and managers.player._buildup_meter > 0 then
-					local additional_players = math.min((managers.groupai:state():num_alive_players() or 1) - 1, 3)
+					local groupai = managers.groupai and managers.groupai:state()
+					local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 					local combo_t_mod = (managers.player:has_category_upgrade("player", "buildup_meter_zack") and managers.player:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
 					local combo_t = managers.player:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 					managers.player._buildup_meter_t = combo_t
@@ -3986,7 +3987,6 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 
 				self._unit:character_damage()._check_berserker_done = false
 				self._unit:character_damage()._can_survive_one_hit = false
-				self._unit:character_damage():force_into_bleedout()
     			managers.player:set_player_state("fatal")
 			elseif special_weapon == "mjolnir" then
 				local curve_pow = melee_weapon.explosion_curve_pow or 0.5
@@ -4139,7 +4139,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 
 			if character_unit:character_damage().dead and not character_unit:character_damage():dead() and managers.enemy:is_enemy(character_unit) then
 				if managers.player:has_category_upgrade("player", "buildup_meter") and managers.player:has_category_upgrade("player", "buildup_meter_refresh") and managers.player._buildup_meter and managers.player._buildup_meter > 0 then
-					local additional_players = math.min((managers.groupai:state():num_alive_players() or 1) - 1, 3)
+					local groupai = managers.groupai and managers.groupai:state()
+					local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 					local combo_t_mod = (managers.player:has_category_upgrade("player", "buildup_meter_zack") and managers.player:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
 					local combo_t = managers.player:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players  + combo_t_mod
 					managers.player._buildup_meter_t = combo_t

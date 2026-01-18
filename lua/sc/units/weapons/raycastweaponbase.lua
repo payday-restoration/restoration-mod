@@ -1232,9 +1232,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 				end
 
 				local base_ext = hit_unit:base()
-				local is_tank = base_ext and base_ext:has_tag("tank")
-
-				log(tostring( is_tank ))
+				local is_tank = base_ext and base_ext.has_tag and base_ext:has_tag("tank")
 
 				if base_ext and base_ext.char_tweak and base_ext:char_tweak().immune_to_concussion or is_tank then
 					return false
@@ -1481,9 +1479,7 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 				end
 
 				local base_ext = hit_unit:base()
-				local is_tank = base_ext and base_ext:has_tag("tank")
-
-				log(tostring( is_tank ))
+				local is_tank = base_ext and base_ext.has_tag and base_ext:has_tag("tank")
 
 				if base_ext and base_ext.char_tweak and base_ext:char_tweak().immune_to_concussion or is_tank then
 					return false
@@ -1500,7 +1496,7 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 				stagger = weap_base.is_stagger and weap_base:is_stagger()
 				variant = weap_base.variant and weap_base:variant()
 			end
-			
+
 			result = self:give_fire_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing, false, knock_down, stagger, variant)
 			if result and result.attack_data and result.attack_data.damage and result.attack_data.damage > 0 and can_stun then
 				result = ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, user_unit, 0, armor_piercing, false, false, false, "stun")

@@ -14,3 +14,21 @@ Hooks:PostHook(CoreBodyDamage, "init", "sh_init", function (self)
 	end
 end)
 
+--Altered to check if the compared values are both numbers
+function CoreBodyDamage:set_damage(damage_type, damage)
+	self._damage[damage_type] = tonumber(damage) or 0
+
+	local element = self._body_element._first_endurance[damage_type]
+
+	while element do
+		local endurance = tonumber(element._endurance[damage_type])
+
+		if not endurance or endurance > self._damage[damage_type] then
+			break
+		end
+
+		element = element._next[damage_type]
+	end
+
+	self._endurance[damage_type] = element
+end

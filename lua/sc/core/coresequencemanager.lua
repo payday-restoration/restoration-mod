@@ -1,3 +1,4 @@
+if not CoreSequenceManager then return end
 
 function CoreSequenceManager.UnitElement:save_by_unit(unit, data)
 	local state = {}
@@ -32,3 +33,5 @@ function CoreSequenceManager.UnitElement:load_by_unit(unit, data)
 		end
 	end
 end
+
+--log("CoreSequenceManager changes loaded!")

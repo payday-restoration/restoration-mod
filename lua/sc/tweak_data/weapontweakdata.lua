@@ -10195,6 +10195,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						"shotgun",
 						"flamethrower_lmg"
 					}
+					self.kacchainsaw_flamethrower.upgrade_blocks = {
+						weapon = {
+							"clip_ammo_increase"
+						}
+					}
 					self.kacchainsaw_flamethrower.has_description = true
 					self.kacchainsaw_flamethrower.desc_id = "bm_ap_flamethrower_sc_desc"
 					self.kacchainsaw_flamethrower.rays = 16
@@ -15517,6 +15522,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		end
 
 		if self.osipr_gl then
+			self.osipr_gl.categories = {
+				"grenade_launcher"
+			}
+			self.osipr_gl.upgrade_blocks = {
+				weapon = {
+					"clip_ammo_increase"
+				}
+			}
 			self.osipr_gl.AMMO_MAX = 9
 			self.osipr_gl.tactical_reload = 1
 			self.osipr_gl.is_bullpup = true
@@ -25357,6 +25370,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.c8sfw.timers.reload_exit_empty = 0.85
 				self.c8sfw.timers.reload_empty = 2.5
 				--M26 MASS
+					self.c8sfw_underbarrel.upgrade_blocks = {
+						weapon = {
+							"clip_ammo_increase"
+						}
+					}
 					self.c8sfw_underbarrel.categories = { "shotgun" }
 					self.c8sfw_underbarrel.recategorize = { "heavy_shot" }
 					self.c8sfw_underbarrel.damage_type = "shotgun_heavy"

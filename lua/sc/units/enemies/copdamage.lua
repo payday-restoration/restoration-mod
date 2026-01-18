@@ -3293,14 +3293,13 @@ function CopDamage:_on_damage_received(damage_info)
 		self:chk_disable_aoe_damage()
 	end
 
-	local damage_info_orig = deep_clone(damage_info) --clone the original damage_info table as the spoof done in "_chk_unique_death_requirements" modifies the original table
+	local damage_info_orig_variant = damage_info.variant
 
 	if not self._dead then
 		self:_chk_unique_death_requirements(damage_info, false)
 	end
 
-	damage_info = damage_info_orig --revert the changes done in the "_chk_unique_death_requirements" prehook
-	--Is this ugly and likely a shit method of fixing this issue even with the requirement that "_chk_unique_death_requirements" is to not be not overridden? Probably. Can you tell I suck with Lua? -DMC
+	damage_info.variant = damage_info_orig_variant --revert the variant change done in the "_chk_unique_death_requirements" prehook
 
 	local attacker_unit = damage_info and damage_info.attacker_unit
 

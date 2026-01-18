@@ -23,6 +23,13 @@ function CoreBodyDamage:set_damage(damage_type, damage)
 	while element do
 		local endurance = tonumber(element._endurance[damage_type])
 
+        if (type(endurance) ~= "number" or type(self._damage[damage_type]) ~= "number") then
+            log("A \"damage_type\" VALUE IS NOT A NUMBER")
+            log("damage_type: " .. tostring(damage_type))
+            log("self._damage[damage_type] type: " .. type(self._damage[damage_type]) .. " value: " .. tostring(self._damage[damage_type]))
+            log("element._endurance[damage_type] type: " .. type(element._endurance[damage_type]) .. " value: " .. tostring(element._endurance[damage_type]))
+        end
+
 		if not endurance or endurance > self._damage[damage_type] then
 			break
 		end

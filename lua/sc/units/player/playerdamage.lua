@@ -629,15 +629,11 @@ function PlayerDamage:damage_bullet(attack_data)
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				local unit_movement = self._unit:movement()
-				local drain_mult = 0.5
+				local drain_mult = 0
 				if unit_movement then
 					local current_state = unit_movement and unit_movement.current_state and unit_movement:current_state()
 					local advmov = current_state and (current_state:in_air() or current_state._is_sliding or current_state._is_wallrunning)
-					local freefall = unit_movement:current_state_name() == "jerry1" or unit_movement:current_state_name() == "jerry2"
-					local crouched = not advmov and unit_movement:crouching()
-					if crouched or freefall or unit_movement:zipline_unit() or current_state.driving or current_state._moving ~= true then
-						drain_mult = 0
-					elseif (unit_movement:running() or advmov) then
+					if (unit_movement:running() or advmov) then
 						drain_mult = 1
 					end
 				end

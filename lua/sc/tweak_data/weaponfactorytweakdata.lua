@@ -43477,8 +43477,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_carbine.stats = {
 				value = 10,
 				concealment = 2,
-				reload = 4,
-				spread = -8,
 				recoil = -8,
 				zoom = -9
 			}
@@ -43501,17 +43499,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.stats = {
 				value = 10,
 				recoil = -4,
-				--total_ammo_mod = -47,
+				damage = -5,
 				zoom = 20,
 				concealment = -3
 			}
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.custom_stats = {
 				alt_desc = "bm_wp_ck_penetrator_desc",
-				hs_mult = 2,
+				hs_mult = 1.384615,
 				hs_mult_desc = true,
-				armor_piercing_override = 05,
+				armor_piercing_override = 0.5,
+				ammo_pickup_max_mul = 1.2,
+				ammo_pickup_min_mul = 1.2,
+				alt_ammo_pickup_max_mul = 1.2,
+				alt_ammo_pickup_min_mul = 1.2,
 				falloff_start_mult = 0.70,
-				falloff_end_mult = 0.70
+				falloff_end_mult = 0.70,
+				damage_min_mult = 1.385
 			}
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.stance_mod = nil
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.override.wpn_fps_ass_ar23_optic_2.stance_mod = {}
@@ -43523,12 +43526,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_concussive.keep_damage = true
 			self.parts.wpn_fps_ass_ar23_ck_concussive.stats = {
 				value = 10,
-				extra_ammo = 0,
-				total_ammo_mod = 12,
-				spread = -4,
+				spread = -3,
 				recoil = -6,
+				damage = -3,
 				zoom = -5,
-				concealment = -2
+				concealment = -1
 			}
 			self.parts.wpn_fps_ass_ar23_ck_concussive.custom_stats = {
 				alt_desc = "bm_wp_ck_concussive_desc",
@@ -43539,7 +43541,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				natascha = 2000,
 				falloff_start_mult = 0.5,
 				falloff_end_mult = 0.5,
-				damage_min_mult = 0.5
+				damage_min_mult = 1.2
 			}
 			self.parts.wpn_fps_ass_ar23_ck_concussive.stance_mod = nil
 			self.parts.wpn_fps_ass_ar23_ck_concussive.override.wpn_fps_ass_ar23_optic_2.stance_mod = {}
@@ -43680,7 +43682,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				starwars = {
 					no_tracers = true, --this just disables the automatic application of starwars tracers
 					regen_ammo_time = 3,
-					regen_rate = 3.48,
+					regen_rate = 6.96,
 					can_reload = true,
 					mag_regen = true,
 					empty_no_regen = true

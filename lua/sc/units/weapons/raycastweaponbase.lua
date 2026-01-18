@@ -533,6 +533,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 		--There's still the limitation surrounding shots that go through things still appearing offset from any point of impact that isn't the last one
 			--since the offset of the muzzle makes it impossible to line up a trail through the new origin point, the area(s) shot through (which were calculated in relation to the camera) and the end point
+			--UNLESS... :^)
 		mvec3_set(self._trail_effect_table.normal, new_normal)
 		
 		if not self._trail_length then
@@ -1223,19 +1224,38 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 		if hit_dmg_ext and hit_dmg_ext.damage_bullet then
 			local was_alive = not hit_dmg_ext:dead()
 			local armor_piercing, knock_down, stagger, variant, falloff_start = nil
+			local function check_stun(hit_unit)
+				local brain_ext = hit_unit:brain()
 
+				if brain_ext and brain_ext.is_hostage and brain_ext:is_hostage() then
+					return false
+				end
+
+				local base_ext = hit_unit:base()
+				local is_tank = base_ext and base_ext:has_tag("tank")
+
+				log(tostring( is_tank ))
+
+				if base_ext and base_ext.char_tweak and base_ext:char_tweak().immune_to_concussion or is_tank then
+					return false
+				end
+
+				return true
+			end
+			local can_stun = check_stun(hit_unit) and col_ray.distance and (weap_base._natascha and col_ray.distance <= weap_base._natascha)
 			if weap_base then
 				can_push = (weap_base.near_falloff_distance and col_ray.distance and col_ray.distance <= weap_base.near_falloff_distance) 
 				armor_piercing = weap_base.has_armor_piercing and weap_base:has_armor_piercing()
-				knock_down = (col_ray.distance and (weap_base._natascha and col_ray.distance <= weap_base._natascha) or 
-									(weap_base._rays and weap_base._rays > 1 and col_ray.distance <= 300)) or 
+				knock_down = (weap_base._rays and weap_base._rays > 1 and col_ray.distance <= 300) or 
 								(weap_base.is_knock_down and weap_base:is_knock_down())
 				stagger = weap_base.is_stagger and weap_base:is_stagger()
 				variant = weap_base.variant and weap_base:variant()
 			end
 
 			result = self:give_impact_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing, false, knock_down, stagger, variant)
-
+			if result and result.attack_data and result.attack_data.damage and result.attack_data.damage > 0 and can_stun then
+				result = ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, user_unit, 0, armor_piercing, false, false, false, "stun")
+			end
 			--[[
 			if (weap_base._natascha and col_ray.distance and col_ray.distance <= weap_base._natascha) and 
 				result and result.attack_data and result.attack_data.damage and result.attack_data.damage > 0 then
@@ -1453,16 +1473,38 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 			local was_alive = not hit_dmg_ext:dead()
 			local armor_piercing, knock_down, stagger, variant = nil
 
+			local function check_stun(hit_unit)
+				local brain_ext = hit_unit:brain()
+
+				if brain_ext and brain_ext.is_hostage and brain_ext:is_hostage() then
+					return false
+				end
+
+				local base_ext = hit_unit:base()
+				local is_tank = base_ext and base_ext:has_tag("tank")
+
+				log(tostring( is_tank ))
+
+				if base_ext and base_ext.char_tweak and base_ext:char_tweak().immune_to_concussion or is_tank then
+					return false
+				end
+
+				return true
+			end
+			local can_stun = check_stun(hit_unit) and col_ray.distance and (weap_base._natascha and col_ray.distance <= weap_base._natascha)
 			if weap_base then
+				can_push = (weap_base.near_falloff_distance and col_ray.distance and col_ray.distance <= weap_base.near_falloff_distance) 
 				armor_piercing = weap_base.has_armor_piercing and weap_base:has_armor_piercing()
-				knock_down = (col_ray.distance and (weap_base._natascha and col_ray.distance <= weap_base._natascha) or 
-									(weap_base._rays and weap_base._rays > 1 and col_ray.distance <= 300)) or 
+				knock_down = (weap_base._rays and weap_base._rays > 1 and col_ray.distance <= 300) or 
 								(weap_base.is_knock_down and weap_base:is_knock_down())
 				stagger = weap_base.is_stagger and weap_base:is_stagger()
 				variant = weap_base.variant and weap_base:variant()
 			end
-
+			
 			result = self:give_fire_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing, false, knock_down, stagger, variant)
+			if result and result.attack_data and result.attack_data.damage and result.attack_data.damage > 0 and can_stun then
+				result = ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, user_unit, 0, armor_piercing, false, false, false, "stun")
+			end
 
 			if result ~= "friendly_fire" then
 				local ammo_data = weap_base and weap_base.ammo_data and weap_base:ammo_data()

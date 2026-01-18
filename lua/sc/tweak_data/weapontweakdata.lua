@@ -31681,11 +31681,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coyote.ads_speed = 0.360
 				self.coyote.damage_falloff = {
 					start_dist = 1800,
-					end_dist = 3400,
-					min_mult = 0.4
+					end_dist = 4000,
+					min_mult = 0.32
 				}
 				self.coyote.stats = {
-					damage = 30,
+					damage = 15,
 					spread = 73,
 					recoil = 71,
 					spread_moving = 7,
@@ -31698,7 +31698,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 4,
 					reload = 25
 				}
-				self.coyote.stats_modifiers = nil
+				self.coyote.stats_modifiers = {
+					damage = 2.5
+				}
 				self.coyote.panic_suppression_chance = 0.05
 				self.coyote.armor_piercing_chance = 0.25
 				self.coyote.ignore_damage_upgrades = nil
@@ -31736,14 +31738,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.supported = true
 				self.ar23.ads_speed = 0.300
 				self.ar23.damage_falloff = {
-					start_dist = 2000,
-					end_dist = 5500,
-					min_mult = 0.4
+					start_dist = 1800,
+					end_dist = 6000,
+					min_mult = 0.26667
 				}
 				self.ar23.stats = {
-					damage = 30,
+					damage = 18,
 					spread = 76,
-					recoil = 75,
+					recoil = 81,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 24,
@@ -31754,7 +31756,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 4,
 					reload = 25
 				}
-				self.ar23.stats_modifiers = nil
+				self.ar23.stats_modifiers = {
+					damage = 2.5
+				}
 				self.ar23.is_bullpup = true
 				self.ar23.panic_suppression_chance = 0.05
 				self.ar23.sounds.use_fix = nil
@@ -31785,13 +31789,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta52.supported = true
 				self.sta52.ads_speed = 0.320
 				self.sta52.damage_falloff = {
-					start_dist = 1600,
-					end_dist = 4900,
-					min_mult = 0.4
+					start_dist = 2000,
+					end_dist = 7000,
+					min_mult = 0.26667
 				}
 				self.sta52.stats = {
-					damage = 30,
-					spread = 81,
+					damage = 18,
+					spread = 76,
 					recoil = 77,
 					spread_moving = 7,
 					zoom = 1,
@@ -31802,6 +31806,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					total_ammo_mod = 400,
 					value = 4,
 					reload = 25
+				}
+				self.sta52.stats_modifiers = {
+					damage = 2.5
 				}
 				self.sta52.is_bullpup = true
 				self.sta52.stats_modifiers = nil
@@ -31830,7 +31837,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar32.BURST_FIRE = {
 					count = 3,
 					delay = 0.12,
-					recoil_mult = 0.9
+					recoil_mult = 0.9,
+					last_recoil_mult = 0.9
 				}
 				self.ar32.CAN_TOGGLE_FIREMODE = true
 				self.ar32.FIRE_MODE = "auto"
@@ -31839,14 +31847,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar32.supported = true
 				self.ar32.ads_speed = 0.300
 				self.ar32.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 5500,
-					min_mult = 0.25
+					start_dist = 1800,
+					end_dist = 6000,
+					min_mult = 0.43636
 				}
 				self.ar32.stats = {
-					damage = 24,
-					spread = 81,
-					recoil = 81,
+					damage = 11,
+					spread = 76,
+					recoil = 75,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 24,
@@ -31857,7 +31865,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 4,
 					reload = 25
 				}
-				self.ar32.stats_modifiers = nil
+				self.ar32.stats_modifiers = {
+					damage = 2.5
+				}
 				self.ar32.panic_suppression_chance = 0.05
 				self.ar32.sounds.use_fix = nil
 				self.ar32.armor_piercing_chance = 0.5
@@ -31884,7 +31894,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r2.BURST_FIRE = {
 					count = 3,
 					delay = 0.18,
-					recoil_mult = 0.9
+					recoil_mult = 0.9,
+					last_recoil_mult = 0.9
 				}
 				self.r2.CAN_TOGGLE_FIREMODE = false
 				self.r2.FIRE_MODE = "single"
@@ -31893,13 +31904,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r2.ads_speed = 0.420
 				self.r2.damage_falloff = {
 					start_dist = 2000,
-					end_dist = 8200,
-					min_mult = 0.2666
+					end_dist = 7500,
+					min_mult = 0.24
 				}
 				self.r2.stats = {
-					damage = 90,
-					spread = 93,
-					recoil = 43,
+					damage = 100,
+					spread = 91,
+					recoil = 55,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 19,
@@ -31915,6 +31926,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r2.object_damage_mult = 0.5
 				self.r2.sounds.use_fix = nil
 				self.r2.armor_piercing_chance = nil
+				self.r2.reload_speed_multiplier = 0.9
 				self.r2.timers.reload_empty = 2.8
 				self.r2.timers.reload_exit_empty = 0.92
 				self.r2.timers.reload_not_empty = 1.93
@@ -31951,17 +31963,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br14.keep_ammo = 0
 				self.br14.BURST_FIRE = false
 				self.br14.CAN_TOGGLE_FIREMODE = true
-				self.br14.FIRE_MODE = "single"
+				self.br14.FIRE_MODE = "auto"
 				self.br14.kick = self.stat_info.kick_tables.even_recoil
 				self.br14.supported = true
 				self.br14.ads_speed = 0.440
 				self.br14.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 7500,
-					min_mult = 0.5333
+					min_mult = 0.50526
 				}
 				self.br14.stats = {
-					damage = 45,
+					damage = 50,
 					spread = 91,
 					recoil = 53,
 					spread_moving = 7,
@@ -31974,7 +31986,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 4,
 					reload = 25
 				}
-				self.br14.stats_modifiers = nil
+				self.br14.stats_modifiers = {
+					damage = 0.95
+				}
 				self.br14.panic_suppression_chance = 0.05
 				self.br14.sounds.use_fix = nil
 				self.br14.armor_piercing_chance = 0.5
@@ -32002,7 +32016,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.BURST_FIRE = {
 					count = 3,
 					delay = 0.18,
-					recoil_mult = 0.9
+					recoil_mult = 0.9,
+					last_recoil_mult = 0.9
 				}
 				self.reprimand.CAN_TOGGLE_FIREMODE = true
 				self.reprimand.FIRE_MODE = "auto"
@@ -32011,7 +32026,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.ads_speed = 0.240
 				self.reprimand.damage_falloff = {
 					start_dist = 600,
-					end_dist = 2400,
+					end_dist = 2800,
 					min_mult = 0.2
 				}
 				self.reprimand.stats = {
@@ -32062,12 +32077,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta11.supported = true
 				self.sta11.ads_speed = 0.200
 				self.sta11.damage_falloff = {
-					start_dist = 900,
-					end_dist = 3100,
-					min_mult = 0.2
+					start_dist = 600,
+					end_dist = 2800,
+					min_mult = 0.13334
 				}
 				self.sta11.stats = {
-					damage = 30,
+					damage = 18,
 					spread = 56,
 					recoil = 81,
 					spread_moving = 7,
@@ -32080,7 +32095,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 4,
 					reload = 25
 				}
-				self.sta11.stats_modifiers = nil
+				self.sta11.stats_modifiers = {
+					damage = 2.5
+				}
 				self.sta11.sounds.use_fix = nil
 				self.sta11.panic_suppression_chance = 0.05
 				self.sta11.timers = deep_clone(self.coal.timers)
@@ -32096,7 +32113,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sickle.recategorize = {"heavy_ar"}
 				self.sickle.damage_type = "assault_rifle"
-				self.sickle.CLIP_AMMO_MAX = 80
+				self.sickle.CLIP_AMMO_MAX = 87
 				self.sickle.AMMO_MAX = self.sickle.CLIP_AMMO_MAX * 4
 				self.sickle.ammo_ratio = 2
 				self.sickle.sms = 0.5
@@ -32115,7 +32132,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sickle.stats = {
 					damage = 30,
-					spread = 51,
+					spread = 26,
 					recoil = 95,
 					spread_moving = 5,
 					zoom = 1,
@@ -32186,11 +32203,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r6.ads_speed = 0.360
 				self.r6.damage_falloff = {
 					start_dist = 1500,
-					end_dist = 4400,
-					min_mult = 0.375
+					end_dist = 4500,
+					min_mult = 0.3
 				}
 				self.r6.stats = {
-					damage = 120,
+					damage = 150,
 					spread = 96,
 					recoil = 42,
 					spread_moving = 9,
@@ -36195,7 +36212,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		bump_stat_50 = 1.5,
 		bump_stat_80 = 1.8,
 		dump_stat_40 = 0.6,
-		sweet_liberty = 0.2,
+		sweet_liberty = 0.18,
 		battery = 0,
 		nothing = 0
 	}

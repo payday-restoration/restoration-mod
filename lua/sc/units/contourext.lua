@@ -394,7 +394,7 @@ else -- for Smooth Contours
 			if is_current and data.ray_check then
 				local turn_on = nil
 				local cam_pos = managers.viewport:get_current_camera_position()
-				if cam_pos then
+				if cam_pos and alive(unit) then
 					turn_on = mvector3.distance_sq(cam_pos, unit:movement():m_com()) > 16000000
 					turn_on = turn_on or unit:raycast("ray", unit:movement():m_com(), cam_pos, "slot_mask", self._slotmask_world_geometry, "report")
 				end
@@ -410,7 +410,7 @@ else -- for Smooth Contours
 			if is_current and data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
 				local turn_on = nil
 				local cam_pos = managers.viewport:get_current_camera_position()
-				if cam_pos then
+				if cam_pos and alive(unit) then
 					turn_on = mvector3.distance_sq(cam_pos, unit:movement():m_com()) > 16000000
 					turn_on = turn_on or unit:raycast("ray", unit:movement():m_com(), cam_pos, "slot_mask", self._slotmask_world_geometry, "report")
 				end

@@ -1981,6 +1981,22 @@ function PlayerStandard:_check_action_run(t, input)
 	end
 end
 
+function PlayerStandard:_get_walk_headbob()
+	local enable_bob = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodBob")
+	if self._state_data.using_bipod or 
+		self._state_data.in_air or
+		self._state_data.in_steelsight or
+		enable_bob then
+		return 0
+	elseif self._state_data.ducking then
+		return 0.0125
+	elseif self._running then
+		return 0.1 * (self._equipped_unit:base():run_and_shoot_allowed() and 0.5 or 1)
+	end
+
+	return 0.025
+end
+
 --Allows for melee sprinting.
 function PlayerStandard:_start_action_running(t)
 	self._delay_running_anim = nil

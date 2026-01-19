@@ -31,6 +31,11 @@ end
 Hooks:RemovePostHook("immersive_fpcamera")
 Hooks:RemovePostHook("viewmodel_tweaks")
 Hooks:PostHook(FPCameraPlayerBase, "update", "ResBWAUpdate", function(self, unit, t, dt)
+	--putting this into a new function just so I can more easily do real-time changes without having to restart or override the whole function
+	self:_update_bwa(unit, t, dt)
+end)
+
+function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 	--Code originally from "Better Weapon Animations" by return and "Viewmodel Tweaks" by returnho
 	if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmod") then
 		local enable_bob = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodBob")
@@ -57,7 +62,7 @@ Hooks:PostHook(FPCameraPlayerBase, "update", "ResBWAUpdate", function(self, unit
 		local in_walk = not in_air and (in_wallrun or in_slide or in_dash or mvector3.length(input_axis) ~= 0)
 		local in_run = in_walk and (in_dash or p_mov:running())
 		
-		local deltaT = math.max(dt, .0016)
+		local deltaT = math.clamp(dt, .0016, .05) --clamp dt so FPS spikes (or low fps) don't make the viewmodel fly off
 		local lp_speed = 16 * deltaT
 		local t_pi_2 = t * math.pi * 2
 
@@ -83,9 +88,8 @@ Hooks:PostHook(FPCameraPlayerBase, "update", "ResBWAUpdate", function(self, unit
 		-----------------------------------------------------------------------------------------------------------------------------
 
 		local mov_lp_speed = deltaT * 5.5
-		local run_mul = in_run and 1.65 or 1
-		--disabled viewbob for walking and running for now as it doesn't play nice with camera viewbob
-		local mov_mul = (enable_bob and (in_sight and 0.15)) or 0 --(in_run and 3.65 or 1.75)
+		local run_mul = in_slide and 0 or in_run and 1.65 or 1
+		local mov_mul = (enable_bob and ((in_sight and 0.15) or 1.75)) or 0
 
 		mov_pos = mov_pos or Vector3()
 		mov_ang = mov_ang or Rotation()
@@ -102,12 +106,12 @@ Hooks:PostHook(FPCameraPlayerBase, "update", "ResBWAUpdate", function(self, unit
 
 		--Added a slight downward offset on the viewmodel when moving
 		--Added a speed-up to re-center when in the process of aiming
-		local tilt_lp_speed = deltaT * 5.5
+		local tilt_lp_speed = (deltaT * 5.5) * ((in_sight and not in_full_sight and 4) or 1)
 
 		tilt_pos = tilt_pos or Vector3()
 		tilt_ang = tilt_ang or Rotation()
-		mvector3.lerp(tilt_pos, tilt_pos, (not in_air) and Vector3((not in_sight and 16 or 0.5) * input_axis.x / 16, 0, ((not in_sight and 2.25 or 0.4) * input_axis.x / 2) + -math.abs(((in_walk and 1.15 or 0) * (in_run and 1.5 or 1)) * (not in_sight and 2 or 0))) or Vector3(), tilt_lp_speed * ((in_sight and not in_full_sight and 4) or 1))
-		mrotation.slerp(tilt_ang, tilt_ang, (not in_air) and Rotation(0, 0, (not in_sight and 2.25 or 0.5) * input_axis.x * 2.625 * (in_run and 2 or 1))  or Rotation(), tilt_lp_speed * ((in_sight and not in_full_sight and 4) or 1))
+		mvector3.lerp(tilt_pos, tilt_pos, (not in_air) and Vector3((not in_sight and 16 or 0.5) * input_axis.x / 16, 0, ((not in_sight and 2.25 or 0.4) * input_axis.x / 2) + -math.abs(((in_walk and 1.15 or 0) * (in_run and 1.5 or 1)) * (not in_sight and 2 or 0))) or Vector3(), tilt_lp_speed)
+		mrotation.slerp(tilt_ang, tilt_ang, (not in_air) and Rotation(0, 0, (not in_sight and 2.25 or 0.5) * input_axis.x * 2.625 * (in_run and 2 or 1))  or Rotation(), tilt_lp_speed)
 		
 		-----------------------------------------------------------------------------------------------------------------------------
 
@@ -136,7 +140,9 @@ Hooks:PostHook(FPCameraPlayerBase, "update", "ResBWAUpdate", function(self, unit
 		last_p_rot = last_p_rot or Rotation()
 
 		local p_rot_diff = Rotation(p_rot:yaw() - last_p_rot:yaw(), p_rot:pitch() - last_p_rot:pitch(), p_rot:roll() - last_p_rot:roll())
-		local sway_range = (not in_sight and 0.45 or 0.035) * ((sway_style and -1) or 1)
+		local sway_str = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodSwayStr") or 0.45
+		local in_sight_sway_str = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodADSSwayStr") or 0.03
+		local sway_range = (sway_str * (in_sight and in_sight_sway_str or 1)) * ((sway_style and -1) or 1)
 		sway_range = sway_range / (((sway_style and wep_base) and math.min(wep_base._movement_penalty, 1)) or 1)
 		p_rot_diff_yaw = p_rot_diff_yaw and math.clamp(p_rot_diff:yaw(), -5, 5) * sway_range or 0
 		p_rot_diff_pitch = p_rot_diff_pitch and math.clamp(p_rot_diff:pitch(), -5, 5) * sway_range or 0
@@ -178,7 +184,7 @@ Hooks:PostHook(FPCameraPlayerBase, "update", "ResBWAUpdate", function(self, unit
 		mrotation.set_zero(self._vel_overshot.rotation)
 		mrotation.multiply(self._vel_overshot.rotation, mov_ang * tilt_ang * sway_ang)
 	end
-end)
+end
 
 --Add limit constraints to recoil, to allow for recoil to occur with a bipod.
 function FPCameraPlayerBase:_update_movement(t, dt)
@@ -589,6 +595,11 @@ local bezier_values2 = {
 --Still wonky when swapping to your main optic (culls too early)
 --Also stuff to make ADS transitions less "on-rails"
 Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", function(self, t, dt)
+	--putting this into a new function just so I can more easily do real-time changes
+	self:_update_res_stance( t, dt)
+end)
+
+function FPCameraPlayerBase:_update_res_stance(t, dt)
 	if self._shoulder_stance.transition then
 		local trans_data = self._shoulder_stance.transition
 		local elapsed_t = t - trans_data.start_t
@@ -660,7 +671,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 
 		end
 	end
-end)
+end
 
 --For controllers
 function FPCameraPlayerBase:setSnapSpeed(value)

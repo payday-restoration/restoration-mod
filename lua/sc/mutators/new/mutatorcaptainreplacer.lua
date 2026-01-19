@@ -139,7 +139,7 @@ function MutatorCaptainReplacer:setup()
 			tweak_data.group_ai.besiege.group_constraints.Cap_Summers.cooldown = new_cooldown
 		else
 			tweak_data.group_ai.enemy_spawn_groups.Fake_Captain = new_captain
-			tweak_data.group_ai.besiege.assault.groups.Fake_Captain = {1, 1, 1}
+			tweak_data.group_ai.besiege.assault.groups.Fake_Captain = {0, 0.1, 0.2}
 			tweak_data.group_ai.besiege.group_constraints.Fake_Captain.cooldown = new_cooldown
 		end	
 	end

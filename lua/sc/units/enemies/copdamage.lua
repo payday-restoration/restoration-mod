@@ -246,7 +246,7 @@ function CopDamage:_spawn_head_gadget(params)
 	local unit_name = self._unit:name()
 	local my_unit = self._unit
 
-	if not self._head_gear then
+	if not self._head_gear or params then
 		return
 	end
 

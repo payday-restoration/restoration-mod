@@ -32027,12 +32027,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.supported = true
 				self.reprimand.ads_speed = 0.240
 				self.reprimand.damage_falloff = {
-					start_dist = 600,
+					start_dist = 500,
 					end_dist = 2800,
-					min_mult = 0.2
+					min_mult = 0.171428
 				}
 				self.reprimand.stats = {
-					damage = 24,
+					damage = 28,
 					spread = 56,
 					recoil = 51,
 					spread_moving = 7,
@@ -32071,7 +32071,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta11.AMMO_MAX = self.sta11.CLIP_AMMO_MAX * 8
 				self.sta11.ammo_ratio = 2
 				self.sta11.fire_mode_data.fire_rate = 0.0571428
-				self.sta11.sms = 0.5
+				self.sta11.sms = 0.7
 				self.sta11.tactical_reload = 1
 				self.sta11.keep_ammo = 0
 				self.sta11.BURST_FIRE = false
@@ -32082,7 +32082,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta11.ads_speed = 0.200
 				self.sta11.damage_falloff = {
 					start_dist = 400,
-					end_dist = 2800,
+					end_dist = 2600,
 					min_mult = 0.13334
 				}
 				self.sta11.stats = {

@@ -843,16 +843,6 @@ Hooks:PostHook(PlayerTweakData, "_init_new_stances", "resmodviwemodeldrag", func
 					self.stances[ wep_id ].steelsight.vel_overshot.pitch_pos = 0
 				end
 			end
-			if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmod") then
-				for stance_id, v in pairs(self.stances[ wep_id ]) do
-					if stance_id == "standard" or stance_id == "crouched" or stance_id == "steelsight" then
-						self.stances[ wep_id ][ stance_id ].vel_overshot.yaw_neg = 0
-						self.stances[ wep_id ][ stance_id ].vel_overshot.yaw_pos = 0
-						self.stances[ wep_id ][ stance_id ].vel_overshot.pitch_neg = 0
-						self.stances[ wep_id ][ stance_id ].vel_overshot.pitch_pos = 0
-					end
-				end
-			end
 		end
 	end
 end)

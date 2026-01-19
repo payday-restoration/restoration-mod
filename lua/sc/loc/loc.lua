@@ -31,7 +31,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 
 		["res_saveboost"] = "HOLD $BTN_INTERACT TO BOOST TO LEVEL 100",
 
-		["RestorationModOptionsButtonTitleID"] = "Restoration Mod Options",
+		["RestorationModOptionsButtonTitleID"] = "[[ Restoration Mod Options ]]",
 		["RestorationModOptionsButtonDescID"] = "Restoration Mod's Options.",
 
 		["RestorationModHUDOptionsButtonTitleID"] = "Restoration HUD & UI Options",
@@ -235,16 +235,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 						["vm_drag"] = "Weapon Drags Behind",
 						["vm_lead"] = "Weapon Leads Ahead",
 						["vm_static"] = "Static (No Movement)",
-					["RestorationModBWAResmodTitleID"] = "\"Better Weapon Animations\" Viewmodel Movement",
-					["RestorationModBWAResmodDescID"] = "Enable a custom version of Return's \"Better Weapon Animations\" viewmodel movement. Overrides the movement settings above. Requires a restart to take full effect.",
-					["RestorationModBWAResmodBobTitleID"] = "ADS Viewbob",
-					["RestorationModBWAResmodBobDescID"] = "Enable viewbob when moving while ADS.\nDisables movement viewbob when enabled.",
-					["RestorationModBWAResmodSwayTitleID"] = "Viewmodel Look-sway Drag",
-					["RestorationModBWAResmodSwayDescID"] = "Enable to have the weapon drag behind your look movement",
-					["RestorationModBWAResmodSwayStrTitleID"] = "Max Amount",
-					["RestorationModBWAResmodSwayStrDescID"] = "Change the amount your weapon moves when looking around (default 0.45)",
-					["RestorationModBWAResmodADSSwayStrTitleID"] = "ADS Strength Multiplier",
-					["RestorationModBWAResmodADSSwayStrDescID"] = "Change the amount your weapon moves when looking around while ADS in relation to the base amount (Default 0.05)",
 					["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
 					["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers).",
 					["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
@@ -363,9 +353,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["restoration_level_data_unknown"] = "TIME UNKNOWN, LOCATION UNKNOWN",
 
 		["RestorationModOtherModsTitleID"] = "===Other Mod Options===",
-		["RestorationModOtherModsDescID"] = "Additional options for other mods",
-			["RestorationModAdVMovResOptOptionsButtonTitleID"] = "\"Advanced Movement Standalone\" Options",
-			["RestorationModAdVMovResOptOptionsButtonDescID"] = "Additional options for Solo Queue Pixy's \"Advanced Movement Standalone\" mod.",
+		["RestorationModOtherModsDescID"] = "Additional options for other mods; some may require the original mod to be installed to have any effect.",
+			["RestorationModAdVMovResOptOptionsButtonTitleID"] = AdvMov and "\"Advanced Movement Standalone\"" or "\"Advanced Movement Standalone\" (NOT INSTALLED)",
+			["RestorationModAdVMovResOptOptionsButtonDescID"] = "Additional options for Solo Queue Pixy's \"Advanced Movement Standalone\" mod.\nNOTE: Requires the original mod to be installed.",
 				["RestorationModAdvMovBackstepTitleID"] = "Dash backwards on forward-only inputs",
 				["RestorationModAdvMovBackstepDescID"] = "Enable forward-only inputs to dash backwards.",
 				["RestorationModAdvMovDashScreenEffectAlphaTitleID"] = "Dash Screen Effect Strength",
@@ -379,9 +369,23 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["resmod_advmov_melee_on"] = "Default",
 					["resmod_advmov_melee_loud_only"] = "Loud Only",
 					["resmod_advmov_melee_off"] = "Disabled",
-		["bm_melee_advmov"] = "Kick",
-		["bm_melee_advmov_slidekick"] = "Slide Kick",
-		["bm_melee_advmov_wallkick"] = "Wall Kick",
+				["bm_melee_advmov"] = "Kick",
+				["bm_melee_advmov_slidekick"] = "Slide Kick",
+				["bm_melee_advmov_wallkick"] = "Wall Kick",
+			["RestorationModBWAResOptOptionsButtonTitleID"] = "\"Better Weapon Animations\"",
+			["RestorationModBWAResOptOptionsButtonDescID"] = "Additional options for a custom version of return's \"Better Weapon Animations\" mod.",
+					["RestorationModBWAResmodTitleID"] = "Enable \"Better Weapon Animations\"",
+					["RestorationModBWAResmodDescID"] = "Enable a custom version of return's \"Better Weapon Animations\" viewmodel movement. Overrides some of the settings in \"Viewmodel & Animation Options\"",
+					["RestorationModBWAResmodBobTitleID"] = "Viewbob",
+					["RestorationModBWAResmodBobDescID"] = "Enable viewbob when moving.\nDisables vanilla viewbob when enabled.",
+					["RestorationModBWAResmodBobADSTitleID"] = "ADS Viewbob",
+					["RestorationModBWAResmodBobADSDescID"] = "Enable ADS viewbob when moving.",
+					["RestorationModBWAResmodSwayTitleID"] = "Viewmodel Look-sway Drag",
+					["RestorationModBWAResmodSwayDescID"] = "Enable to have the weapon drag behind your look movement",
+					["RestorationModBWAResmodSwayStrTitleID"] = "Max Amount",
+					["RestorationModBWAResmodSwayStrDescID"] = "Change the amount your weapon moves when looking around (default 0.45)",
+					["RestorationModBWAResmodADSSwayStrTitleID"] = "ADS Strength Multiplier",
+					["RestorationModBWAResmodADSSwayStrDescID"] = "Change the amount your weapon moves when looking around while ADS vs. base look-sway (Default 0.05)",
 
 		--EXTRA OPTIONS
 		["RestorationModAltLastDownColorTitleID"] = "Alternative Last Down Color Grading",
@@ -5771,7 +5775,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Heavy Impact",
-				["menu_speedy_reload_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## have a #{skill_color}#$skill_value_b1## chance to stagger enemies.\nThis chance is raised to #{skill_color}#$skill_value_b2## when using a bipod.\n\n#{risk}#NOTE: Stagger effects do not apply to## #{important_1}#Captains, Bulldozers, Snipers, or Shields.##\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\nYou take #{skill_color}#$skill_value_p1## less damage while crouched.\nThe effect is raised to #{skill_color}#$skill_value_p2## when using a bipod.",
+				["menu_speedy_reload_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## have a #{skill_color}#$skill_value_b1## chance to stagger enemies.\nThis chance is raised to #{skill_color}#$skill_value_b2## when using a bipod.\n\n#{risk}#NOTE: Stagger effects do not apply to## #{important_1}#Captains, Bulldozers, Snipers, or Shields.##\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\n#{item_stage_2}#A setting to keep sprinting animations can be found in Restoration Mod's weapon options.##\n\nYou take #{skill_color}#$skill_value_p1## less damage while crouched.\nThe effect is raised to #{skill_color}#$skill_value_p2## when using a bipod.",
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Spray n' Pray",
@@ -5801,7 +5805,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "Gung-Ho",
-				["menu_close_by_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\nACE: #{owned}#$pro##\nWhile hip-firing, the rate of fire of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#$skill_value_p1.##",
+				["menu_close_by_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\n#{item_stage_2}#A setting to keep sprinting animations can be found in Restoration Mod's weapon options.##\n\nACE: #{owned}#$pro##\nWhile hip-firing, the rate of fire of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#$skill_value_p1.##",
 
 				--Overkill
 				["menu_overkill_sc"] = "OVERKILL",
@@ -5976,7 +5980,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Moving Target",
-				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nThe movement speed reduction while aiming is reduced by #{skill_color}#$skill_value_b5.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued) and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.\n\nWeapons can be hipfired while sprinting and their sprint-to-fire delay is removed.",
+				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nThe movement speed reduction while aiming is reduced by #{skill_color}#$skill_value_b5.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued) and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.\n\nWeapons can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\n#{item_stage_2}#A setting to keep sprinting animations can be found in Restoration Mod's weapon options.##\n ",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Shockproof",
@@ -6028,7 +6032,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "Akimbo",
-				["menu_akimbo_skill_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Pistols,## including #{skill_color}#akimbo pistols,## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\n#{skill_color}#Akimbo## weapons gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nAll #{skill_color}#akimbo## weapons can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\n#{skill_color}#Akimbo## weapons gain #{skill_color}#$skill_value_p1## accuracy.",
+				["menu_akimbo_skill_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Pistols,## including #{skill_color}#akimbo pistols,## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\n#{item_stage_2}#A setting to keep sprinting animations can be found in Restoration Mod's weapon options.##\n\n#{skill_color}#Akimbo## weapons gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nAll #{skill_color}#akimbo## weapons can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\n#{skill_color}#Akimbo## weapons gain #{skill_color}#$skill_value_p1## accuracy.",
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "Desperado",

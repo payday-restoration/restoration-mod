@@ -37,9 +37,10 @@ end)
 
 function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 	--Code originally from "Better Weapon Animations" by return and "Viewmodel Tweaks" by returnho
-	if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmod") then
-		local enable_bob = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodBob")
-		local sway_style = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodSway")
+	if restoration.Options:GetValue("BWAResOpt/BWAResmod") then
+		local enable_bob = restoration.Options:GetValue("BWAResOpt/BWAResmodBob")
+		local enable_bob_ads = restoration.Options:GetValue("BWAResOpt/BWAResmodBobADS")
+		local sway_style = restoration.Options:GetValue("BWAResOpt/BWAResmodSway")
 		local p_unit = self._parent_unit
 		local p_mov = self._parent_movement_ext
 		local p_cam = p_unit:camera()
@@ -89,7 +90,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 
 		local mov_lp_speed = deltaT * 5.5
 		local run_mul = in_slide and 0 or in_run and 1.65 or 1
-		local mov_mul = (enable_bob and ((in_sight and 0.15) or 1.75)) or 0
+		local mov_mul = (enable_bob_ads and in_sight and 0.15) or (enable_bob and not in_sight and 1.75) or 0
 
 		mov_pos = mov_pos or Vector3()
 		mov_ang = mov_ang or Rotation()
@@ -140,8 +141,8 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 		last_p_rot = last_p_rot or Rotation()
 
 		local p_rot_diff = Rotation(p_rot:yaw() - last_p_rot:yaw(), p_rot:pitch() - last_p_rot:pitch(), p_rot:roll() - last_p_rot:roll())
-		local sway_str = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodSwayStr") or 0.45
-		local in_sight_sway_str = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodADSSwayStr") or 0.03
+		local sway_str = restoration.Options:GetValue("BWAResOpt/BWAResmodSwayStr") or 0.45
+		local in_sight_sway_str = restoration.Options:GetValue("BWAResOpt/BWAResmodADSSwayStr") or 0.03
 		local sway_range = (sway_str * (in_sight and in_sight_sway_str or 1)) * ((sway_style and -1) or 1)
 		sway_range = sway_range / (((sway_style and wep_base) and math.min(wep_base._movement_penalty, 1)) or 1)
 		p_rot_diff_yaw = p_rot_diff_yaw and math.clamp(p_rot_diff:yaw(), -5, 5) * sway_range or 0
@@ -185,6 +186,16 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 		mrotation.multiply(self._vel_overshot.rotation, mov_ang * tilt_ang * sway_ang)
 	end
 end
+
+Hooks:PreHook(FPCameraPlayerBase, "clbk_stance_entered", "BWA_ZeroOvershot", function(self, new_shoulder_stance, new_head_stance, new_vel_overshot, new_fov, new_shakers, stance_mod, duration_multiplier, duration, head_duration_multiplier, head_duration)
+	if new_vel_overshot and restoration.Options:GetValue("BWAResOpt/BWAResmod") or 
+		(restoration.Options:GetValue("WEAPONS/WEAPONANIMS/StaticAim") and self._parent_unit:movement()._current_state:in_steelsight()) then
+		new_vel_overshot.yaw_neg = 0
+		new_vel_overshot.yaw_pos = 0
+		new_vel_overshot.pitch_neg = 0
+		new_vel_overshot.pitch_pos = 0
+	end
+end)
 
 --Add limit constraints to recoil, to allow for recoil to occur with a bipod.
 function FPCameraPlayerBase:_update_movement(t, dt)

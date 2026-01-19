@@ -1982,7 +1982,7 @@ function PlayerStandard:_check_action_run(t, input)
 end
 
 function PlayerStandard:_get_walk_headbob()
-	local enable_bob = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BWAResmodBob")
+	local enable_bob = restoration.Options:GetValue("BWAResOpt/BWAResmodBob")
 	if self._state_data.using_bipod or 
 		self._state_data.in_air or
 		self._state_data.in_steelsight or

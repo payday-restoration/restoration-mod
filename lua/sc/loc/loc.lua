@@ -5463,6 +5463,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["menu_mutator_captain_replace_spring"] = "Spring",
 		["menu_mutator_captain_replace_summer"] = "Summers",
 		["menu_mutator_captain_replace_hvh"] = "HHHTDFH",
+		["menu_mutator_captain_cooldown"] = "Captain Cooldown (in s)",
 		["menu_mutator_winter_blacklist_toggle"] = "Blacklist Winters for \"Random\" option",
 		["menu_mutator_spring_blacklist_toggle"] = "Blacklist Spring for \"Random\" option",
 		["menu_mutator_summer_blacklist_toggle"] = "Blacklist Summers for \"Random\" option",

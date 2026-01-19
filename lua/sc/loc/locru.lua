@@ -5344,6 +5344,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mutators", function(loc)
 		["menu_mutator_captain_replace_spring"] = "Спринг",
 		["menu_mutator_captain_replace_summer"] = "Саммерс",
 		["menu_mutator_captain_replace_hvh"] = "АТБГШИЛ",
+		["menu_mutator_captain_cooldown"] = "Таймер респавна капитана (в секундах)",
 		["menu_mutator_winter_blacklist_toggle"] = "Исключить Винтерса из случайного выбора",
 		["menu_mutator_spring_blacklist_toggle"] = "Исключить Спринга из случайного выбора",
 		["menu_mutator_summer_blacklist_toggle"] = "Исключить Саммерса из случайного выбора",

@@ -28,6 +28,7 @@ function MutatorCaptainReplacer:register_values(mutator_manager)
 	self:register_value("summer_blacklist", false, "cpt_bl3")
 	self:register_value("autumn_blacklist", false, "cpt_bl4")
 	self:register_value("hvh_blacklist", false, "cpt_bl5")
+	self:register_value("captain_cooldown", 2700, "cpt_cd")
 end
 
 function MutatorCaptainReplacer:name(lobby_data)
@@ -62,462 +63,48 @@ function MutatorCaptainReplacer:modify_value(id, value)
 end
 
 function MutatorCaptainReplacer:setup()
-	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local job = Global.level_data and Global.level_data.level_id
-	local pro_job = Global.game_settings and Global.game_settings.one_down
 	
-	local winter_preset = nil
-	local spring_preset = nil
-	local summer_preset = nil
-	local autumn_preset = nil
-	local spooky_preset = nil
+	local winter_preset = tweak_data.group_ai.enemy_spawn_groups.Cap_Winters
+	local spring_preset = tweak_data.group_ai.enemy_spawn_groups.Cap_Spring
+	local summer_preset = tweak_data.group_ai.enemy_spawn_groups.Cap_Summers
+	local autumn_preset = tweak_data.group_ai.enemy_spawn_groups.Cap_Autumn
+	local spooky_preset = tweak_data.group_ai.enemy_spawn_groups.HVH_Boss
 	local new_captain = self:get_captain_override()
-	if new_captain ~= "no_captain_override" then
-		--Winters
-		if difficulty_index <= 5 then
-			winter_preset = {
-				amount = 5,
-				force = true,
-				spawn = {
-					{
-						unit = "Phalanx_vip_new",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_winters,
-						rank = 1
-					},
-					{
-						unit = "Phalanx_minion_new",
-						freq = 1,
-						amount_min = 4,
-						amount_max = 4,
-						tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
-						rank = 2
-					}					
-				}
-			}	
-		elseif difficulty_index == 6 then
-			winter_preset = {
-				amount = 7,
-				force = true,
-				spawn = {
-					{
-						unit = "Phalanx_vip_new",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_winters,
-						rank = 1
-					},
-					{
-						unit = "Phalanx_minion_new",
-						freq = 1,
-						amount_min = 6,
-						amount_max = 6,
-						tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
-						rank = 2
-					}				
-				}
-			}
-		elseif difficulty_index == 7 then
-			winter_preset = {
-				amount = 7,
-				force = true,
-				spawn = {
-					{
-						unit = "Phalanx_vip_new",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_winters,
-						rank = 1
-					},
-					{
-						unit = "Phalanx_minion_new",
-						freq = 1,
-						amount_min = 6,
-						amount_max = 6,
-						tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
-						rank = 2
-					}				
-				}
-			}
-		else
-			winter_preset = {
-				amount = 9,
-				force = true,
-				spawn = {
-					{
-						unit = "Phalanx_vip_new",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_winters,
-						rank = 1
-					},
-					{
-						unit = "Phalanx_minion_new",
-						freq = 1,
-						amount_min = 6,
-						amount_max = 6,
-						tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
-						rank = 2
-					},
-					{
-						unit = "Phalanx_sniper",
-						freq = 1,
-						amount_min = 2,
-						amount_max = 2,
-						tactics = tweak_data.group_ai._tactics.Cap_winters_minion_sniper,
-						rank = 2
-					}
-				}
-			}				
-		end		
+	local new_cooldown = self:get_captain_cooldown()
+	if new_captain ~= "no_captain_override" then	
+		if new_captain == "captain_random" then
+			local captain_table = {}
+			local num_of_captains = 0
+			if not self:winter_blacklist() then
+				table.insert(captain_table, "winter")
+				num_of_captains = num_of_captains + 1
+			end
+			if not self:spring_blacklist() then
+				table.insert(captain_table, "spring")
+				num_of_captains = num_of_captains + 1
+			end
+			if not self:summer_blacklist() then
+				table.insert(captain_table, "summer")
+				num_of_captains = num_of_captains + 1
+			end
+			if not self:autumn_blacklist() then
+				table.insert(captain_table, "autumn")
+				num_of_captains = num_of_captains + 1
+			end
+			if not self:hvh_blacklist() then
+				table.insert(captain_table, "hvh")
+				num_of_captains = num_of_captains + 1
+			end
+			--[[for i, value in ipairs(captain_table) do
+				log("Captain Table "..tostring(i).." = "..tostring(value))
+			end--]]
 		
-		--Captain Spring
-		if difficulty_index <= 5 then
-			spring_preset = {
-				amount = 1,
-				force = true,
-				spawn = {
-					{
-						unit = "Cap_Spring",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_spring,
-						rank = 1
-					}
-				}
-			}	
-		elseif difficulty_index == 6 then
-			spring_preset = {
-				amount = 3,
-				force = true,
-				spawn = {
-					{
-						unit = "Cap_Spring",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_spring,
-						rank = 1
-					},
-					{
-						unit = "Taser_Titan",
-						freq = 1,
-						amount_min = 2,
-						amount_max = 2,
-						tactics = tweak_data.group_ai._tactics.CS_Tazer,
-						rank = 2
-					}
-				}
-			}
-		elseif difficulty_index == 7 then	
-			spring_preset = {
-				amount = 3,
-				force = true,
-				spawn = {
-					{
-						unit = "Cap_Spring",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_spring,
-						rank = 1
-					},
-					{
-						unit = "OMNIA_Tank",
-						freq = 1,
-						amount_min = 2,
-						amount_max = 2,
-						tactics = tweak_data.group_ai._tactics.Cap_spring,
-						rank = 2
-					}
-				}
-			}
-		else
-			spring_preset = {
-				amount = 3,
-				force = true,
-				spawn = {
-					{
-						unit = "Cap_Spring",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_spring,
-						rank = 1
-					},
-					{
-						unit = "Tank_Ben",
-						freq = 1,
-						amount_min = 2,
-						amount_max = 2,
-						tactics = tweak_data.group_ai._tactics.Cap_spring,
-						rank = 2
-					}					
-				}
-			}			
-		end
-		
-		--HVH boss
-		if difficulty_index <= 5 then
-			spooky_preset = {
-				amount = 1,
-				force = true,
-				spawn = {
-					{
-						unit = "HVH_Boss",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.HVH_boss,
-						rank = 1
-					}
-				}
-			}	
-		elseif difficulty_index == 6 then
-			spooky_preset = {
-				amount = 3,
-				force = true,
-				spawn = {
-					{
-						unit = "HVH_Boss",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.HVH_boss,
-						rank = 1
-					},
-					{
-						unit = "HVH_Boss_Spooc_Normal",
-						freq = 1,
-						amount_min = 2,
-						amount_max = 2,
-						tactics = tweak_data.group_ai._tactics.HVH_boss,
-						rank = 2
-					}
-				}
-			}
-		elseif difficulty_index == 7 then
-			spooky_preset = {
-				amount = 3,
-				force = true,
-				spawn = {
-					{
-						unit = "HVH_Boss",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.HVH_boss,
-						rank = 1
-					},
-					{
-						unit = "HVH_Boss_Headless",
-						freq = 1,
-						amount_min = 2,
-						amount_max = 2,
-						tactics = tweak_data.group_ai._tactics.HVH_boss,
-						rank = 2
-					}
-				}
-			}	
-		else
-			spooky_preset = {
-				amount = 5,
-				force = true,
-				spawn = {
-					{
-						unit = "HVH_Boss",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.HVH_boss,
-						rank = 1
-					},
-					{
-						unit = "HVH_Boss_Headless",
-						freq = 1,
-						amount_min = 2,
-						amount_max = 2,
-						tactics = tweak_data.group_ai._tactics.HVH_boss,
-						rank = 2
-					},
-					{
-						unit = "HVH_Boss_Spooc",
-						freq = 1,
-						amount_min = 2,
-						amount_max = 2,
-						tactics = tweak_data.group_ai._tactics.HVH_boss,
-						rank = 2
-					}							
-				}
-			}			
-		end	
-		
-		--Captain Autumn 
-		if difficulty_index <= 5 then
-			autumn_preset = {
-				amount = 1,
-				force = true,
-				spawn = {
-					{
-						unit = "Cap_Autumn",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_autumn,
-						rank = 1
-					}
-				}
-			}
-		elseif difficulty_index == 6 then
-			autumn_preset = {
-				amount = 3,
-				force = true,
-				spawn = {
-					{
-						unit = "Cap_Autumn",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_autumn,
-						rank = 1
-					},
-					{
-						unit = "Autumn_Spooc",
-						freq = 1,
-						amount_min = 2,
-						amount_max = 2,
-						tactics = tweak_data.group_ai._tactics.Cap_autumn,
-						rank = 2
-					}					
-				}
-			}	
-		elseif difficulty_index == 7 then
-			autumn_preset = {
-				amount = 5,
-				force = true,
-				spawn = {
-					{
-						unit = "Cap_Autumn",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_autumn,
-						rank = 1
-					},
-					{
-						unit = "Autumn_Spooc",
-						freq = 1,
-						amount_min = 4,
-						amount_max = 4,
-						tactics = tweak_data.group_ai._tactics.Cap_autumn,
-						rank = 2
-					}					
-				}
-			}	
-		else
-			autumn_preset = {
-				amount = 5,
-				force = true,
-				spawn = {
-					{
-						unit = "Cap_Autumn",
-						freq = 1,
-						amount_min = 1,
-						amount_max = 1,
-						tactics = tweak_data.group_ai._tactics.Cap_autumn,
-						rank = 1
-					},
-					{
-						unit = "Titan_Spooc",
-						freq = 1,
-						amount_min = 4,
-						amount_max = 4,
-						tactics = tweak_data.group_ai._tactics.Cap_autumn,
-						rank = 2
-					}				
-				}
-			}		
-		end
-	
-		--Captain Summers 
-		summer_preset = {
-			amount = 4,
-			force = true,
-			spawn = {
-				{
-					unit = "Cap_Summers",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = tweak_data.group_ai._tactics.Cap_summers,
-					rank = 4
-				},
-				{
-					unit = "medic_summers",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = tweak_data.group_ai._tactics.Cap_summers_minion,
-					rank = 1
-				},
-				{
-					unit = "boom_summers",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = tweak_data.group_ai._tactics.Cap_summers_minion,
-					rank = 1
-				},
-				{
-					unit = "taser_summers",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = tweak_data.group_ai._tactics.Cap_summers_minion,
-					rank = 1
-				}
-			}
-		}
-	
-	if new_captain == "captain_random" then
-		local captain_table = {}
-		local num_of_captains = 0
-		if not self:winter_blacklist() then
-			table.insert(captain_table, "winter")
-			num_of_captains = num_of_captains + 1
-		end
-		if not self:spring_blacklist() then
-			table.insert(captain_table, "spring")
-			num_of_captains = num_of_captains + 1
-		end
-		if not self:summer_blacklist() then
-			table.insert(captain_table, "summer")
-			num_of_captains = num_of_captains + 1
-		end
-		if not self:autumn_blacklist() then
-			table.insert(captain_table, "autumn")
-			num_of_captains = num_of_captains + 1
-		end
-		if not self:hvh_blacklist() then
-			table.insert(captain_table, "hvh")
-			num_of_captains = num_of_captains + 1
-		end
-		--[[for i, value in ipairs(captain_table) do
-			log("Captain Table "..tostring(i).." = "..tostring(value))
-		end--]]
-		
-		-- If host excluded all captains - do nothing. It will be just usual behaviour (as without mutator)
-		if num_of_captains > 0 then	
-			local cpt_index = math.random(1, num_of_captains)
-			new_captain = captain_table[cpt_index]
-		end
+			-- If host excluded all captains - do nothing. It will be just usual behaviour (as without mutator)
+			if num_of_captains > 0 then	
+				local cpt_index = math.random(1, num_of_captains)
+				new_captain = captain_table[cpt_index]
+			end
 	end
 	
 	if new_captain == "winter" then
@@ -537,16 +124,23 @@ function MutatorCaptainReplacer:setup()
 	else
 		if captain_type then
 			tweak_data.group_ai.enemy_spawn_groups.Cap_Winters = new_captain
+			tweak_data.group_ai.besiege.group_constraints.Cap_Winters.cooldown = new_cooldown
+			
 			tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = new_captain
+			tweak_data.group_ai.besiege.group_constraints.Cap_Spring.cooldown = new_cooldown
+			
 			tweak_data.group_ai.enemy_spawn_groups.HVH_Boss = new_captain
+			tweak_data.group_ai.besiege.group_constraints.HVH_Boss.cooldown = new_cooldown
+			
 			tweak_data.group_ai.enemy_spawn_groups.Cap_Autumn = new_captain
+			tweak_data.group_ai.besiege.group_constraints.Cap_Autumn.cooldown = new_cooldown
+			
 			tweak_data.group_ai.enemy_spawn_groups.Cap_Summers = new_captain
+			tweak_data.group_ai.besiege.group_constraints.Cap_Summers.cooldown = new_cooldown
 		else
 			tweak_data.group_ai.enemy_spawn_groups.Fake_Captain = new_captain
-			tweak_data.group_ai.besiege.assault.groups.Fake_Captain = {0, 0.2, 0.3}
-			if new_captain == "autumn" then
-				tweak_data.group_ai.besiege.group_constraints.Fake_Captain.cooldown = tweak_data.group_ai.besiege.group_constraints.Fake_Captain.cooldown / 2
-			end
+			tweak_data.group_ai.besiege.assault.groups.Fake_Captain = {1, 1, 1}
+			tweak_data.group_ai.besiege.group_constraints.Fake_Captain.cooldown = new_cooldown
 		end	
 	end
 	end
@@ -583,6 +177,10 @@ if specific_day == nil then
 else
 	return self:value("captain_replace_"..tostring(specific_day))
 end
+end
+
+function MutatorCaptainReplacer:get_captain_cooldown()
+	return self:value("captain_cooldown")
 end
 
 function MutatorCaptainReplacer:setup_options_gui(node)
@@ -658,6 +256,25 @@ function MutatorCaptainReplacer:setup_options_gui(node)
 	local new_item = node:create_item(data_node, params)
 
 	new_item:set_value(self:get_captain_override(3))
+	node:add_item(new_item)
+	
+	local params = {
+		name = "captain_cooldown_slider",
+		callback = "_update_mutator_value",
+		text_id = "menu_mutator_captain_cooldown",
+		update_callback = callback(self, self, "_update_captain_cooldown")
+	}
+	local data_node = {
+		show_value = true,
+		step = 100,
+		type = "CoreMenuItemSlider.ItemSlider",
+		decimal_count = 2,
+		min = 100,
+		max = 2700
+	}
+	local new_item = node:create_item(data_node, params)
+
+	new_item:set_value(self:get_captain_cooldown())
 	node:add_item(new_item)
 	
 	local params = {
@@ -887,6 +504,10 @@ function MutatorCaptainReplacer:_update_captain_override_3(item)
 	self:set_value("captain_replace_3", item:value())
 end
 
+function MutatorCaptainReplacer:_update_captain_cooldown(item)
+	self:set_value("captain_cooldown", math.round(item:value()))
+end
+
 function MutatorCaptainReplacer:_toggle_winter_blacklist(item)
 	self:set_value("winter_blacklist", item:value() == "on")
 end
@@ -911,10 +532,16 @@ function MutatorCaptainReplacer:reset_to_default()
 	self:clear_values()
 
 	if self._node then
-		local slider = self._node:item("captain_selector_choice")
+		local captain_node = self._node:item("captain_selector_choice")
+
+		if captain_node then
+			captain_node:set_value(self:get_captain_override())
+		end
+		
+		local slider = self._node:item("captain_cooldown_slider")
 
 		if slider then
-			slider:set_value(self:get_captain_override())
+			slider:set_value(self:get_captain_cooldown())
 		end
 		
 		local toggle1 = self._node:item("winter_blacklist_toggle")

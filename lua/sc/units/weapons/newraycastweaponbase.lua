@@ -2351,20 +2351,19 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 
 			local digital_gui = part and part.unit:digital_gui()
 
-			is_visible = (part and part.steelsight_visible == nil or part.steelsight_visible == steelsight_swap_state) or nil
+			is_visible = (part and (part.steelsight_visible == nil or part.steelsight_visible == steelsight_swap_state)) or nil
 
 			if digital_gui and digital_gui.number_set then
 				part.unit:digital_gui():number_set(distance and math.round(distance) or false, false)
-				if distance then
-					if (distance * 100) < falloff_start then
-						part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.green or scope_colors.red )
-					elseif (distance * 100) > falloff_start and (distance * 100) < falloff_end then
-						part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenmid or scope_colors.redmid )
-					elseif (distance * 100) > falloff_end then
-						part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenlow or scope_colors.redlow )
-					end
-				else
+				local dist = distance and distance * 100
+				if not dist then
 					part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenno or scope_colors.redno )
+				elseif dist < falloff_start then
+					part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.green or scope_colors.red )
+				elseif dist < falloff_end then
+					part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenlow or scope_colors.redlow )
+				else
+					part.unit:digital_gui()._title_text:set_color( not is_visible and scope_colors.off or green_display and scope_colors.greenmid or scope_colors.redmid )
 				end
 			end
 
@@ -2372,16 +2371,15 @@ function NewRaycastWeaponBase:set_scope_range_distance(distance)
 
 			if digital_gui_upper and digital_gui_upper.number_set then
 				part.unit:digital_gui_upper():number_set(distance and math.round(distance) or false, false)
-				if distance then
-					if (distance * 100) < falloff_start then
-						part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.green )
-					elseif (distance * 100) > falloff_start and (distance * 100) < falloff_end then
-						part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenmid )
-					elseif (distance * 100) > falloff_end then
-						part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenlow )
-					end
-				else
+				local dist = distance and distance * 100
+				if not dist then
 					part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenno )
+				elseif dist < falloff_start then
+					part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.green )
+				elseif dist < falloff_end then
+					part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenlow )
+				else
+					part.unit:digital_gui_upper()._title_text:set_color( not is_visible and scope_colors.off or scope_colors.greenmid )
 				end
 			end
 		end

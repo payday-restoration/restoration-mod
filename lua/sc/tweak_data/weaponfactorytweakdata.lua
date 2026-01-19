@@ -19,6 +19,20 @@ end
 local IsCAPInstalled = BeardLib.Utils:FindMod("Custom Attachment Points") and true or nil
 local g3_niphen = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen")
 
+--TODO: The fun process of replacing all those dog-ass for loops I used to do what this does much more cleanly
+local function replace_part(uses_parts_table, part_list, custom_replace_id)
+	local parts = {}
+
+	for i, part_id in ipairs(uses_parts_table) do
+		for _, replace_id in ipairs(part_list) do
+			if part_id == replace_id then
+				uses_parts_table[i] = custom_replace_id or "resmod_dummy"
+				break
+			end
+		end
+	end
+end
+
 --ATTACHMENT PRESETS
 local sight_1x_offset = {
 	sights = {
@@ -2097,18 +2111,12 @@ end)
 						}
 					}
 
-					for i, part_id in pairs(self.wpn_fps_pis_maxim9.uses_parts) do
-						attachment_list = {
-							"wpn_fps_upg_pis_ns_flash",
-							"wpn_fps_upg_ns_pis_ipsccomp",
-							"wpn_fps_upg_ns_pis_meatgrinder"
-						}
-						for _, remove_id in ipairs(attachment_list) do
-							if part_id == remove_id then
-								self.wpn_fps_pis_maxim9.uses_parts[i] = "resmod_dummy"
-							end
-						end
-					end
+					attachment_list = {
+						"wpn_fps_upg_pis_ns_flash",
+						"wpn_fps_upg_ns_pis_ipsccomp",
+						"wpn_fps_upg_ns_pis_meatgrinder"
+					}
+					replace_part(self.wpn_fps_pis_maxim9.uses_parts, attachment_list)
 
 					table.insert(self.wpn_fps_pis_maxim9.uses_parts, "wpn_fps_pis_maxim9_a_tranq")
 					table.insert(self.wpn_fps_pis_maxim9.uses_parts, "wpn_fps_upg_i_autofire")
@@ -2129,18 +2137,12 @@ end)
 						}
 					}
 
-					for i, part_id in pairs(self.wpn_fps_pis_x_maxim9.uses_parts) do
-						attachment_list = {
-							"wpn_fps_upg_pis_ns_flash",
-							"wpn_fps_upg_ns_pis_ipsccomp",
-							"wpn_fps_upg_ns_pis_meatgrinder"
-						}
-						for _, remove_id in ipairs(attachment_list) do
-							if part_id == remove_id then
-								self.wpn_fps_pis_x_maxim9.uses_parts[i] = "resmod_dummy"
-							end
-						end
-					end
+					attachment_list = {
+						"wpn_fps_upg_pis_ns_flash",
+						"wpn_fps_upg_ns_pis_ipsccomp",
+						"wpn_fps_upg_ns_pis_meatgrinder"
+					}
+					replace_part(self.wpn_fps_pis_x_maxim9.uses_parts, attachment_list)
 
 					table.insert(self.wpn_fps_pis_x_maxim9.uses_parts, "wpn_fps_pis_maxim9_a_tranq")
 
@@ -39811,12 +39813,45 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_scar20_b_short.stats = deep_clone(barrels.short_b2_stats)
 			self.parts.wpn_fps_snp_scar20_b_short.custom_stats = deep_clone(barrels.short_b2_stats)
 
+			self.parts.wpn_fps_snp_scar20_m_long.supported = true
+			self.parts.wpn_fps_snp_scar20_m_long.custom_stats = {
+				ads_speed_mult = 1.1
+			}
+			self.parts.wpn_fps_snp_scar20_m_long.stats = {
+				value = 6,
+				extra_ammo = 10,
+				concealment = -2,
+				reload = -4
+			}
+			
 			self.parts.wpn_fps_snp_scar20_s_pdw.supported = true
 			self.parts.wpn_fps_snp_scar20_s_pdw.stats = deep_clone(stocks.adj_to_nocheeks_stats)
 			self.parts.wpn_fps_snp_scar20_s_pdw.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
 			self.parts.wpn_fps_snp_scar20_s_no.supported = true
 			self.parts.wpn_fps_snp_scar20_s_no.stats = deep_clone(stocks.remove_adj_stats)
 			self.parts.wpn_fps_snp_scar20_s_no.custom_stats = deep_clone(stocks.remove_adj_stats)
+
+			self.parts.wpn_fps_snp_scar20_ck_light.supported = true
+			self.parts.wpn_fps_snp_scar20_ck_light.keep_damage = true
+			self.parts.wpn_fps_snp_scar20_ck_light.stats = {
+				damage = -15,
+				recoil = 10,
+				concealment = 2,
+				total_ammo_mod = 77
+			}
+			self.parts.wpn_fps_snp_scar20_ck_light.custom_stats = {
+				ads_speed_mult = 0.91304,
+				hs_mult = 2,
+				hs_mult_desc = true,
+				alt_ammo_pickup_min_mul = 1.35,
+				alt_ammo_pickup_max_mul = 1.35,
+				ammo_pickup_min_mul = 1.35,
+				ammo_pickup_max_mul = 1.35,
+				damage_min_mult = 0.5325,
+				rof_mult = 1.4,
+				falloff_start_mult = 0.78125,
+				falloff_end_mult = 0.8
+			}
 
 			for i, part_id in pairs(self.wpn_fps_snp_scar20.default_blueprint) do
 				attachment_list = {
@@ -43477,15 +43512,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_carbine.stats = {
 				value = 10,
 				concealment = 2,
-				recoil = -8,
+				spread = -6,
+				recoil = -6,
 				zoom = -9
 			}
 			self.parts.wpn_fps_ass_ar23_ck_carbine.custom_stats = {
 				alt_desc = "bm_wp_ck_carbine_desc",
 				ads_speed_mult = 0.95,
 				rof_mult = 1.4375,
-				falloff_start_mult = 0.80,
-				falloff_end_mult = 0.80
+				falloff_start_mult = 0.66667,
+				falloff_end_mult = 0.75
 			}
 			self.parts.wpn_fps_ass_ar23_ck_carbine.stance_mod = nil
 			self.parts.wpn_fps_ass_ar23_ck_carbine.override.wpn_fps_ass_ar23_optic_2.stance_mod = {}
@@ -43498,6 +43534,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.keep_damage = true
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.stats = {
 				value = 10,
+				spread = 2,
 				recoil = -4,
 				damage = -5,
 				zoom = 20,
@@ -43512,8 +43549,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				ammo_pickup_min_mul = 1.2,
 				alt_ammo_pickup_max_mul = 1.2,
 				alt_ammo_pickup_min_mul = 1.2,
-				falloff_start_mult = 0.70,
-				falloff_end_mult = 0.70,
+				falloff_start_mult = 0.8333,
+				falloff_end_mult = 0.9166,
 				damage_min_mult = 1.385
 			}
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.stance_mod = nil
@@ -43830,7 +43867,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				wpn_fps_ass_qbz95 = {
 					translation = Vector3(-0.01, 12, -3.525),
 					rotation = Rotation(0.1, 0, 0),
-			    }
+				}
 			}
 
 			self.parts.wpn_fps_ass_qbz95_magpul.supported = true
@@ -54582,6 +54619,14 @@ if self.wpn_fps_pis_shatters_fury then
 			"wpn_fps_pis_rage_o_adapter"
 		}
 	}
+
+	for i, part_id in pairs(self.wpn_fps_pis_shatters_fury.uses_parts) do
+		if self.parts[part_id] and ((self.parts[part_id].type and self.parts[part_id].type == "sight") or 
+			(self.parts[part_id].sub_type and self.parts[part_id].sub_type == "second_sight")) then
+			self.wpn_fps_pis_shatters_fury.adds[part_id] = { "wpn_fps_pis_rage_o_adapter" }
+		end
+	end
+
 	self.wpn_fps_pis_shatters_fury.override = self.wpn_fps_pis_shatters_fury.override or {}
 	self.wpn_fps_pis_shatters_fury.override.wpn_fps_pis_rage_lock = { forbids = {} }
 	self.wpn_fps_pis_shatters_fury.override.wpn_fps_pis_shatters_fury_body_smooth = {
@@ -54593,18 +54638,13 @@ if self.wpn_fps_pis_shatters_fury then
 		}
 	}
 
-	for i, part_id in pairs(self.wpn_fps_pis_shatters_fury.uses_parts) do
-		attachment_list = {
-			"wpn_fps_pis_rage_extra",
-			"wpn_fps_pis_rage_o_adapter",
-			"wpn_fps_pis_rage_lock",
-		}
-		for _, remove_id in ipairs(attachment_list) do
-			if part_id == remove_id then
-				self.wpn_fps_pis_shatters_fury.uses_parts[i] = "resmod_dummy"
-			end
-		end
-	end
+	attachment_list = {
+		"wpn_fps_pis_rage_extra",
+		"wpn_fps_pis_rage_o_adapter",
+		"wpn_fps_pis_rage_lock",
+	}
+	replace_part(self.wpn_fps_pis_shatters_fury.uses_parts, attachment_list)
+
 	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_sig")
 	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_uh")
@@ -56110,8 +56150,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "qbz95Init", function(self)
 		self.parts.wpn_fps_ass_qbz95_fg_rails.override.wpn_fps_ass_qbz95_ironsight_dummy = {
 			stance_mod = {
 				wpn_fps_ass_qbz95 = {
-				    translation = Vector3(-0.064, 5, -2.05),
-				    rotation = Rotation(0, 0, -0)
+					translation = Vector3(-0.064, 5, -2.05),
+					rotation = Rotation(0, 0, -0)
 				}
 			}
 		}
@@ -56119,10 +56159,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "qbz95Init", function(self)
 			wpn_fps_ass_qbz95 = {
 				translation = Vector3(-0.064, -0, -1.55),
 				rotation = Rotation(0, -0, -0)
-		    }
+			}
 		}
 		self.parts.wpn_fps_ass_qbz95_scope.override = {
-		    wpn_fps_ass_qbz95_body_iron_sights = {
+			wpn_fps_ass_qbz95_body_iron_sights = {
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 			}
 		}

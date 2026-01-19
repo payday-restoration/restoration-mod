@@ -31739,7 +31739,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.ads_speed = 0.300
 				self.ar23.damage_falloff = {
 					start_dist = 1800,
-					end_dist = 6000,
+					end_dist = 5000,
 					min_mult = 0.26667
 				}
 				self.ar23.stats = {
@@ -31790,7 +31790,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta52.ads_speed = 0.320
 				self.sta52.damage_falloff = {
 					start_dist = 2000,
-					end_dist = 7000,
+					end_dist = 6500,
 					min_mult = 0.26667
 				}
 				self.sta52.stats = {
@@ -31908,7 +31908,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					min_mult = 0.24
 				}
 				self.r2.stats = {
-					damage = 100,
+					damage = 40,
 					spread = 91,
 					recoil = 55,
 					spread_moving = 7,
@@ -31921,7 +31921,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 4,
 					reload = 25
 				}
-				self.r2.stats_modifiers = nil
+				self.r2.stats_modifiers = {
+					damage = 2.5
+				}
 				self.r2.panic_suppression_chance = 0.05
 				self.r2.object_damage_mult = 0.5
 				self.r2.sounds.use_fix = nil
@@ -31973,7 +31975,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					min_mult = 0.50526
 				}
 				self.br14.stats = {
-					damage = 50,
+					damage = 19,
 					spread = 91,
 					recoil = 53,
 					spread_moving = 7,
@@ -31987,7 +31989,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 25
 				}
 				self.br14.stats_modifiers = {
-					damage = 0.95
+					damage = 2.5
 				}
 				self.br14.panic_suppression_chance = 0.05
 				self.br14.sounds.use_fix = nil
@@ -32030,7 +32032,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					min_mult = 0.2
 				}
 				self.reprimand.stats = {
-					damage = 60,
+					damage = 24,
 					spread = 56,
 					recoil = 51,
 					spread_moving = 7,
@@ -32043,7 +32045,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 4,
 					reload = 25
 				}
-				self.reprimand.stats_modifiers = nil
+				self.reprimand.stats_modifiers = {
+					damage = 2.5
+				}
 				self.reprimand.sounds.use_fix = nil
 				self.reprimand.panic_suppression_chance = 0.05
 				self.reprimand.shell_ejection = "_dmc/effects/shell_shak_smol"
@@ -32131,7 +32135,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					min_mult = 0.5
 				}
 				self.sickle.stats = {
-					damage = 30,
+					damage = 12,
 					spread = 26,
 					recoil = 95,
 					spread_moving = 5,
@@ -32144,7 +32148,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 4,
 					reload = 25
 				}
-				self.sickle.stats_modifiers = nil
+				self.sickle.stats_modifiers = {
+					damage = 2.5
+				}
 				self.sickle.panic_suppression_chance = 0.05
 				self.sickle.nato = nil
 				self.sickle.trail_effect = "_dmc/effects/sterwers_trail_m_small"
@@ -32207,7 +32213,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					min_mult = 0.3
 				}
 				self.r6.stats = {
-					damage = 150,
+					damage = 60,
 					spread = 96,
 					recoil = 42,
 					spread_moving = 9,
@@ -32220,7 +32226,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 9,
 					reload = 25
 				}
-				self.r6.stats_modifiers = nil
+				self.r6.stats_modifiers = {
+					damage = 2.5
+				}
 				self.r6.panic_suppression_chance = 0.05
 				self.r6.reload_speed_multiplier = 0.85
 			end

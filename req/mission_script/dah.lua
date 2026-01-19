@@ -45,7 +45,8 @@ return {
 	[100000] = {
 		on_executed = {
 			{ id = 400077, delay = 3 },
-		}
+		},
+		spawn = vis_blockers, -- Add vis blockers
 	},
 	-- delay the elevator spawn
 	-- trigger the 3 cloakers event
@@ -274,8 +275,4 @@ return {
 	[100723] = interval,
 	[104821] = interval,
 	[104822] = interval,
-	-- Add vis blockers
-	[100000] = {
-		spawn = vis_blockers
-	}
 }

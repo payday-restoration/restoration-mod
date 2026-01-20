@@ -23974,9 +23974,9 @@ end)
 							end
 							--]]
 
-							if not table.contains( tww.categories , "pistol") then
+							if not table.contains( tww.categories , "pistol") or 
+								(table.contains( tww.categories , "pistol") and (tww.CAN_TOGGLE_FIREMODE == true or tww.FIRE_MODE == "auto")) then
 								if self[factory_id].uses_parts then
-
 									for i, part_id in pairs(self[factory_id].uses_parts) do
 										attachment_list = {
 											"wpn_fps_pis_triggermod_fast",

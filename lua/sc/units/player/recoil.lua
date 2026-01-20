@@ -188,8 +188,9 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 end
 
 Hooks:PreHook(FPCameraPlayerBase, "clbk_stance_entered", "BWA_ZeroOvershot", function(self, new_shoulder_stance, new_head_stance, new_vel_overshot, new_fov, new_shakers, stance_mod, duration_multiplier, duration, head_duration_multiplier, head_duration)
-	if new_vel_overshot and restoration.Options:GetValue("BWAResOpt/BWAResmod") or 
-		(restoration.Options:GetValue("WEAPONS/WEAPONANIMS/StaticAim") and self._parent_unit:movement()._current_state:in_steelsight()) then
+	if new_vel_overshot and 
+		(restoration.Options:GetValue("BWAResOpt/BWAResmod") or 
+		(restoration.Options:GetValue("WEAPONS/WEAPONANIMS/StaticAim") and self._parent_unit:movement()._current_state:in_steelsight())) then
 		new_vel_overshot.yaw_neg = 0
 		new_vel_overshot.yaw_pos = 0
 		new_vel_overshot.pitch_neg = 0

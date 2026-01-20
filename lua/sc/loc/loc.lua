@@ -31,7 +31,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 
 		["res_saveboost"] = "HOLD $BTN_INTERACT TO BOOST TO LEVEL 100",
 
-		["RestorationModOptionsButtonTitleID"] = "[[ Restoration Mod Options ]]",
+		["RestorationModOptionsButtonTitleID"] = "===Restoration Mod Options===",
 		["RestorationModOptionsButtonDescID"] = "Restoration Mod's Options.",
 
 		["RestorationModHUDOptionsButtonTitleID"] = "Restoration HUD & UI Options",

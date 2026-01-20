@@ -819,7 +819,6 @@ if SystemFS:exists("assets/mod_overrides/Patchett Proper Hold Reload Animations"
 	end )
 end
 
-local static_aim = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/StaticAim")
 local vm_move = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ViewmodelMovement") or 2
 Hooks:PostHook(PlayerTweakData, "_init_new_stances", "resmodviwemodeldrag", function(self)
 	for wep_id, i in pairs(self.stances) do
@@ -834,15 +833,7 @@ Hooks:PostHook(PlayerTweakData, "_init_new_stances", "resmodviwemodeldrag", func
 					end
 				end
 			end
-			if static_aim then
-				if self.stances[ wep_id ].steelsight then
-					self.stances[ wep_id ].steelsight.shakers.breathing.amplitude = 0
-					self.stances[ wep_id ].steelsight.vel_overshot.yaw_neg = 0
-					self.stances[ wep_id ].steelsight.vel_overshot.yaw_pos = 0
-					self.stances[ wep_id ].steelsight.vel_overshot.pitch_neg = 0
-					self.stances[ wep_id ].steelsight.vel_overshot.pitch_pos = 0
-				end
-			end
+
 		end
 	end
 end)

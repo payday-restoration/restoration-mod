@@ -29,7 +29,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 
 		["res_saveboost"] = "$BTN_INTERACT 키를 길게 눌려 레벨 100으로 업그레이드 하기",
 
-		["RestorationModOptionsButtonTitleID"] = "레스토레이션 모드 옵션",
+		["RestorationModOptionsButtonTitleID"] = "===레스토레이션 모드 옵션===",
 		["RestorationModOptionsButtonDescID"] = "레스토레이션 모드의 옵션을 엽니다.",
 
 		["RestorationModHUDOptionsButtonTitleID"] = "레스토레이션 HUD와 UI 옵션을 엽니다.",
@@ -232,13 +232,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 						["vm_vanilla"] = "바닐라 행동",
 						["vm_drag"] = "무기가 뒤로 끌려감",
 						["vm_lead"] = "무기가 앞으로 나아감",
-						["vm_static"] = "정적 (움직임 없음)",
-					["RestorationModBWAResmodTitleID"] = "\"Better Weapon Animations\" 뷰모델 움직임",
-					["RestorationModBWAResmodDescID"] = "Return의 \"Better Weapon Animations\" 뷰모델 동작의 커스텀 버전을 활성화합니다. 위의 움직임 설정을 재정의합니다. 완전히 적용하려면 재시작해야 합니다.",
-					["RestorationModBWAResmodBobTitleID"] = "정조준 뷰밥",
-					["RestorationModBWAResmodBobDescID"] = "정조준 중 이동할 때 뷰밥을 활성화합니다.",
-					["RestorationModBWAResmodSwayTitleID"] = "뷰모델 시선 돌리기 드래그",
-					["RestorationModBWAResmodSwayDescID"] = "무기를 움직이는 시선 뒤로 끌 수 있도록 활성화합니다.",						
+						["vm_static"] = "정적 (움직임 없음)",					
 					["RestorationModNoADSRecoilAnimsTitleID"] = "정조준 반동 애니메이션 없음",
 					["RestorationModNoADSRecoilAnimsDescID"] = "정조준 반동 애니메이션을 활성화/비활성화합니다. 일부 무기(예: 수동식 총기, 활, 화염 방사기)는 이 옵션의 영향을 받지 않습니다.",			
 					["RestorationModADSTransitionStyleTitleID"] = "정조준 스타일",
@@ -356,9 +350,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["restoration_level_data_unknown"] = "시간 미상, 위치 미상",
 
 		["RestorationModOtherModsTitleID"] = "===기타 모드 옵션===",
-		["RestorationModOtherModsDescID"] = "다른 모드에 대한 추가 옵션을 엽니다.",
-			["RestorationModAdVMovResOptOptionsButtonTitleID"] = "\"Advanced Movement Standalone\" 옵션",
-			["RestorationModAdVMovResOptOptionsButtonDescID"] = "Solo Queue Pixy의 \"Advanced Movement Standalone\" 모드에 대한 추가 옵션입니다.",
+		["RestorationModOtherModsDescID"] = "다른 모드에 대한 추가 옵션을 엽니다. 일부 옵션은 효과를 볼려면 원본 모드가 설치되어 있어야 합니다.",
+			["RestorationModAdVMovResOptOptionsButtonTitleID"] = AdvMov and "\"Advanced Movement Standalone\"" or "\"Advanced Movement Standalone\" (설치되지 않음)",
+			["RestorationModAdVMovResOptOptionsButtonDescID"] = "Solo Queue Pixy의 \"Advanced Movement Standalone\" 모드에 대한 추가 옵션을 엽니다.\n참고: 원본 모드가 설치되어 있어야 합니다.",
 				["RestorationModAdvMovBackstepTitleID"] = "앞으로만 입력 시 뒤로 대시",
 				["RestorationModAdvMovBackstepDescID"] = "앞으로만 입력해도 뒤로 돌진할 수 있도록 설정합니다.",
 				["RestorationModAdvMovDashScreenEffectAlphaTitleID"] = "대시 화면 효과 강도",
@@ -372,9 +366,23 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["resmod_advmov_melee_on"] = "기본",
 					["resmod_advmov_melee_loud_only"] = "라우드에만",
 					["resmod_advmov_melee_off"] = "비활성화",
-		["bm_melee_advmov"] = "킥",
-	    ["bm_melee_advmov_slidekick"] = "슬라이드 킥",
-		["bm_melee_advmov_wallkick"] = "월킥",
+				["bm_melee_advmov"] = "킥",
+				["bm_melee_advmov_slidekick"] = "슬라이드 킥",
+				["bm_melee_advmov_wallkick"] = "월킥",
+			["RestorationModBWAResOptOptionsButtonTitleID"] = "\"Better Weapon Animations\"",
+			["RestorationModBWAResOptOptionsButtonDescID"] = "return의 \"Better Weapon Animations\" 모드의 커스텀 버전에 대한 추가 옵션을 엽니다.",
+					["RestorationModBWAResmodTitleID"] = "\"Better Weapon Animations\" 활성화",
+					["RestorationModBWAResmodDescID"] = "return의 \"Better Weapon Animations\" 커스텀 버전의 뷰모델 움직임을 활성화합니다. \"뷰모델 및 애니메이션 옵션\"의 일부 설정을 재설정합니다.",			
+					["RestorationModBWAResmodBobTitleID"] = "화면 흔들림",
+					["RestorationModBWAResmodBobDescID"] = "이동할 때 화면 흔들림을 활성화합니다.\n활성화 시 바닐라의 화면 흔들림을 비활성화합니다.",
+					["RestorationModBWAResmodBobADSTitleID"] = "정조준 화면 흔들림",
+					["RestorationModBWAResmodBobADSDescID"] = "정조준 중 이동할 때 화면 흔들림을 활성화합니다.",					
+					["RestorationModBWAResmodSwayTitleID"] = "뷰모델 시선 돌리기 드래그",
+					["RestorationModBWAResmodSwayDescID"] = "무기를 움직이는 시선 뒤로 끌 수 있도록 활성화합니다.",
+					["RestorationModBWAResmodSwayStrTitleID"] = "최대 양",
+					["RestorationModBWAResmodSwayStrDescID"] = "주변을 둘러볼 때 무기가 움직이는 양을 변경합니다. (기본값 0.45)",
+					["RestorationModBWAResmodADSSwayStrTitleID"] = "정조준 강도 배율",
+					["RestorationModBWAResmodADSSwayStrDescID"] = "정조준 중 주변을 둘러볼 때 무기가 움직이는 양을 기본 움직임에 비레해 변경합니다. (기본값 0.05)",
 
 		--EXTRA OPTIONS
 		["RestorationModAltLastDownColorTitleID"] = "대체 마지막 다운 컬러 그레이딩",
@@ -5697,7 +5705,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "강력한 타격",
-				["menu_speedy_reload_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#기관총##이 #{skill_color}#$skill_value_b1## 확률로 적을 휘청거리게 만듭니다.\n양각대 사용 시 확률이 #{skill_color}#$skill_value_b2## 증가합니다.\n\n#{risk}#주의:## #{important_1}#캡틴, 불도저, 저격수, 실드에게는 휘청거림 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##을 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n웅크리고 있는 동안 받는 피해가 #{skill_color}#$skill_value_p1## 감소합니다.\n\n양각대 사용 시 피해 감소량이 #{skill_color}#$skill_value_p2## 증가합니다.",
+				["menu_speedy_reload_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#기관총##이 #{skill_color}#$skill_value_b1## 확률로 적을 휘청거리게 만듭니다.\n양각대 사용 시 확률이 #{skill_color}#$skill_value_b2## 증가합니다.\n\n#{risk}#주의:## #{important_1}#캡틴, 불도저, 저격수, 실드에게는 휘청거림 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##을 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##\n\n웅크리고 있는 동안 받는 피해가 #{skill_color}#$skill_value_p1## 감소합니다.\n양각대 사용 시 피해 감소량이 #{skill_color}#$skill_value_p2##로 증가합니다.",
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "뿌리고 기도하기",
@@ -5727,7 +5735,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "겅호",
-				["menu_close_by_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##를 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n에이스: #{owned}#$pro##\n비조준 사격 시 #{skill_color}#산탄총과 화염방사기##의 발사 속도가 #{skill_color}#$skill_value_p1## 증가합니다.",
+				["menu_close_by_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##를 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##\n\n에이스: #{owned}#$pro##\n비조준 사격 시 #{skill_color}#산탄총과 화염방사기##의 발사 속도가 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Overkill
 				["menu_overkill_sc"] = "오버킬",
@@ -5902,7 +5910,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "움직이는 표적",
-				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.",
+				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "절연갑옷",
@@ -5954,7 +5962,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "아킴보",
-				["menu_akimbo_skill_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#아킴보 권총##을 포함한 #{skill_color}#권총##을 달리는 동안 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{skill_color}#아킴보##의 무기 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보## 무기를 달리는 동안 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{skill_color}#아킴보## 무기의 명중률이 #{skill_color}#$skill_value_p1## 증가합니다.",
+				["menu_akimbo_skill_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#아킴보 권총##을 포함한 #{skill_color}#권총##을 달리는 동안 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##\n\n#{skill_color}#아킴보##의 무기 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보## 무기를 달리는 동안 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{skill_color}#아킴보## 무기의 명중률이 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "데스페라도",

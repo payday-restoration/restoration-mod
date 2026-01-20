@@ -14323,6 +14323,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield",
 			"charge"
 		},
+		Cap_spring_minion = {
+			"shield_cover",
+			"charge"
+		},
 		HVH_boss = {
 			"shield",
 			"charge"
@@ -16978,7 +16982,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
-					tactics = self._tactics.CS_Tazer,
+					tactics = self._tactics.Cap_spring_minion,
 					rank = 2
 				}
 			}
@@ -17001,7 +17005,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
-					tactics = self._tactics.Cap_spring,
+					tactics = self._tactics.Cap_spring_minion,
 					rank = 2
 				}
 			}
@@ -17024,7 +17028,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
-					tactics = self._tactics.Cap_spring,
+					tactics = self._tactics.Cap_spring_minion,
 					rank = 2
 				}		
 			}
@@ -19948,7 +19952,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
-					tactics = self._tactics.Cap_spring,
+					tactics = self._tactics.Cap_spring_minion,
 					rank = 2
 				}		
 			}

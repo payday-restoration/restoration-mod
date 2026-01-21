@@ -8891,8 +8891,8 @@ end)
 					40
 				}
 				self.parts.wpn_fps_lmg_hk51b_ns_jcomp.supported = true
-				self.parts.wpn_fps_lmg_hk51b_ns_jcomp.stats = deep_clone(muzzle_device.muzz_acc2_c)
-				self.parts.wpn_fps_lmg_hk51b_ns_jcomp.custom_stats = deep_clone(muzzle_device.muzz_acc2_c)
+				self.parts.wpn_fps_lmg_hk51b_ns_jcomp.stats = deep_clone(muzzle_device.muzz_acc2_r)
+				self.parts.wpn_fps_lmg_hk51b_ns_jcomp.custom_stats = deep_clone(muzzle_device.muzz_acc2_r)
 
 				local belt = {
 					{
@@ -23029,8 +23029,8 @@ end)
 				40
 			}
 			self.parts.wpn_fps_upg_ak_ns_zenitco.supported = true
-			self.parts.wpn_fps_upg_ak_ns_zenitco.stats = deep_clone(muzzle_device.muzz_dual_c)
-			self.parts.wpn_fps_upg_ak_ns_zenitco.custom_stats = deep_clone(muzzle_device.muzz_dual_c)
+			self.parts.wpn_fps_upg_ak_ns_zenitco.stats = deep_clone(muzzle_device.muzz_acc2_c)
+			self.parts.wpn_fps_upg_ak_ns_zenitco.custom_stats = deep_clone(muzzle_device.muzz_acc2_c)
 
 			--Biometric Analyzer
 			self.parts.wpn_fps_upg_o_health.pcs = {

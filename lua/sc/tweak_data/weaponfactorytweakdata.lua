@@ -19849,6 +19849,9 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_scotia = {
 						translation = Vector3(0.042, -2.1, -2.345)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mk47_mutant = {
+						translation = Vector3(-0.003, 3.1, -0.14)
+					}
 
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_vsk_94 = {
@@ -43834,8 +43837,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
-
-
 	--[[ SILENT ENFORCER'S MODS ]]
 
 		if self.parts.wpn_fps_ass_qbz95_body_standard then
@@ -44162,7 +44163,54 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_shot_f500.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 		end
 
+	--[[ DORPENKA'S MODS ]]
 
+		if self.parts.wpn_fps_ass_mk47_mutant_irons_rear then
+			self.parts.wpn_fps_ass_mk47_mutant_barrel.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_barrel.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mk47_mutant_barrel.custom_stats = nil
+			self.parts.wpn_fps_ass_mk47_mutant_handguard.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_handguard.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard.custom_stats = nil
+			self.parts.wpn_fps_ass_mk47_mutant_grip.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_grip.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mk47_mutant_grip.custom_stats = nil
+			self.parts.wpn_fps_ass_mk47_mutant_stock.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_stock.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mk47_mutant_stock.custom_stats = nil
+
+			self.parts.wpn_fps_ass_mk47_mutant_irons_rear.stance_mod = {
+				wpn_fps_ass_mk47_mutant = {
+					translation = Vector3(0, -3, 0.3)
+				}
+			}
+
+			self.parts.wpn_fps_ass_mk47_mutant_barrel_409.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_barrel_409.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_mk47_mutant_barrel_409.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_rsass.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_rsass.stats = { value = 2, recoil = -2, spread = 1 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_rsass.custom_stats = nil
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske.stats = { value = 2, recoil = 2, concealment = -1 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske.custom_stats = nil
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske_split.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske_split.stats = { value = 2, recoil = 4, concealment = -2 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske_split.custom_stats = nil
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx2.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx2.stats = { value = 2, recoil = 2, concealment = -1 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx2.custom_stats = nil
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx3.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx3.stats = { value = 3, recoil = 2, spread = 1, concealment = -2 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx3.custom_stats = nil
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx4.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx4.stats = { value = 3, recoil = -4, spread = 2 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx4.custom_stats = nil
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_lancer.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_lancer.stats = { value = 2, recoil = -2, spread = 1 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_lancer.custom_stats = nil
+		end
 
 	--Akimbo Mosconi 12G
 	if self.wpn_fps_shot_x_huntsman then

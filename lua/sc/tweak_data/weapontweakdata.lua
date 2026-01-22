@@ -24985,7 +24985,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
-
 			if self.hk433 then
 				self.hk433.categories = { "assault_rifle" }
 				self.hk433.recategorize = { "light_ar" }
@@ -33210,6 +33209,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tf2_revolver.sounds.fire_single = "tf2_revolver_fire"
 				self.tf2_revolver.sounds.fire_auto = "tf2_revolver_fire"
 				self.tf2_revolver.timers = deep_clone(self.chinchilla.timers)
+			end
+
+
+		--[[     DORPENKA'S MODS     ]]--
+
+			if self.mk47_mutant then --CMMG Mk47 Mutant
+				self.mk47_mutant.recategorize = { "heavy_ar" }
+				self.mk47_mutant.damage_type = "assault_rifle"
+				self.mk47_mutant.warsaw = true
+				self.mk47_mutant.AMMO_MAX = 120
+				self.mk47_mutant.tactical_reload = 1
+				self.mk47_mutant.CLIP_AMMO_MAX = 30
+				self.mk47_mutant.fire_mode_data.fire_rate = 0.0923076
+				self.mk47_mutant.FIRE_MODE = "auto"
+				self.mk47_mutant.CAN_TOGGLE_FIREMODE = true
+				self.mk47_mutant.BURST_FIRE = false
+				self.mk47_mutant.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.mk47_mutant.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{4, self.stat_info.kick_tables.right_recoil},
+					{11, self.stat_info.kick_tables.moderate_kick},
+					{16, self.stat_info.kick_tables.right_recoil},
+					{20, self.stat_info.kick_tables.even_recoil},
+					{24, self.stat_info.kick_tables.moderate_left_kick}
+				}
+				self.mk47_mutant.supported = true
+				self.mk47_mutant.ads_speed = 0.320
+				self.mk47_mutant.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 4500,
+					min_mult = 0.6
+				}
+				self.mk47_mutant.stats = {
+					damage = 30,
+					spread = 75,
+					recoil = 69,
+					zoom = 1,
+					concealment = 26,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.mk47_mutant.panic_suppression_chance = 0.05
+				self.mk47_mutant.stats_modifiers = nil
+				self.mk47_mutant.timers.reload_empty = 2.83
+				self.mk47_mutant.timers.reload_exit_empty = 0.71
+				self.mk47_mutant.timers.reload_not_empty = 2.1
+				self.mk47_mutant.timers.reload_exit_not_empty = 0.5
 			end
 
 		--Predator Pack

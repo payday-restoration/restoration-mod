@@ -108,10 +108,12 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 		--Added a slight downward offset on the viewmodel when moving
 		--Added a speed-up to re-center when in the process of aiming
 		local tilt_lp_speed = (deltaT * 5.5) * ((in_sight and not in_full_sight and 4) or 1)
+		local tilt_str = restoration.Options:GetValue("BWAResOpt/BWAResmodTiltStr") or 0.45
+		local in_sight_tilt_str = restoration.Options:GetValue("BWAResOpt/BWAResmodADSTiltStr") or 0.03
 
 		tilt_pos = tilt_pos or Vector3()
 		tilt_ang = tilt_ang or Rotation()
-		mvector3.lerp(tilt_pos, tilt_pos, (not in_air) and Vector3((not in_sight and 16 or 0.5) * input_axis.x / 16, 0, ((not in_sight and 2.25 or 0.4) * input_axis.x / 2) + -math.abs(((in_walk and 1.15 or 0) * (in_run and 1.5 or 1)) * (not in_sight and 2 or 0))) or Vector3(), tilt_lp_speed)
+		mvector3.lerp(tilt_pos, tilt_pos, (not in_air) and Vector3((not in_sight and 16 or 0.5) * input_axis.x / 16, 0, ((not in_sight and 2.25 or 0.5) * input_axis.x / 2) + -math.abs(((in_walk and 1.15 or 0) * (in_run and 1.5 or 1)) * (not in_sight and 2 or 0))) or Vector3(), tilt_lp_speed)
 		mrotation.slerp(tilt_ang, tilt_ang, (not in_air) and Rotation(0, 0, (not in_sight and 2.25 or 0.5) * input_axis.x * 2.625 * (in_run and 2 or 1))  or Rotation(), tilt_lp_speed)
 		
 		-----------------------------------------------------------------------------------------------------------------------------

@@ -344,6 +344,7 @@
 			<!--NETWORK-->
 			<hook file="sc/utils/inventorydescription.lua" source_file="lib/utils/inventorydescription"/>
 			<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
+			<hook file="sc/states/menumainstate.lua" source_file="lib/states/menumainstate"/>
 			<hook file="sc/entry.lua" source_file="lib/entry"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>

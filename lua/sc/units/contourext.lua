@@ -102,6 +102,9 @@ end
 if do_outline then
 	self._contour_list = self._contour_list or {}
 	local data = self._types[type]
+	
+	if not data then return end
+
 	local fadeout = data.fadeout
 
 	if data.fadeout_silent and managers.groupai:state():whisper_mode() then

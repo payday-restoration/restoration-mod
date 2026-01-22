@@ -5972,7 +5972,6 @@ end)
 					table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_upg_salad_legend")
 					table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_smg_p90_body_p90_tan")
 					table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_upg_o_schmidt")
-					table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
 					table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_upg_o_dd_irons_dmc")
 					table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_upg_o_arbiter_irons_dmc")
 
@@ -6007,7 +6006,6 @@ end)
 					--Kobus 90 Part Additions
 					table.insert(self.wpn_fps_smg_x_p90.uses_parts, "wpn_fps_smg_p90_body_p90_tan")
 					table.insert(self.wpn_fps_smg_x_p90.uses_parts, "wpn_fps_upg_o_schmidt")
-					table.insert(self.wpn_fps_smg_x_p90.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
 
 					self.wpn_fps_smg_x_p90.override = self.wpn_fps_smg_x_p90.override or {}
 
@@ -10323,10 +10321,8 @@ end)
 			
 
 					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_northtac")
-					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_i_krieg")
 					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_schmidt")
-					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
 					table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_box")
 
 					self.wpn_fps_ass_s552_npc.uses_parts = deep_clone(self.wpn_fps_ass_s552.uses_parts)
@@ -13407,9 +13403,7 @@ end)
 				table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_sho_sko12_stock")
 
 				table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_o_northtac")
-				table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 				table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_o_schmidt")
-				table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
 				table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_o_box")
 
 				self.wpn_fps_ass_scar.adds.wpn_fps_upg_o_northtac = {
@@ -14055,9 +14049,7 @@ end)
 				table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_vg_ass_smg_afg")
 
 				table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_o_northtac")
-				table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 				table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_o_schmidt")
-				table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
 				--table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_o_box")
 
 				--ROF Mods (Unused)
@@ -14221,9 +14213,7 @@ end)
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_ass_g3_m_psg")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_smg_mp5_s_adjust")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_northtac")
-				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_schmidt")
-				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_i_g3sg1")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_lmg_hk21_g_ergo")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_i_g3_burst")
@@ -33357,9 +33347,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_owd_m1a_stock_wood.custom_stats = nil
 
 			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_northtac")
-			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_schmidt")
-			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
 			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_i_singlefire")
 			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_i_autofire")
 
@@ -42570,7 +42558,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_sho_fsa12.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override)
 			self.wpn_fps_sho_fsa12.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override)
 			self.wpn_fps_sho_fsa12.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
-			
+
 		end
 		if self.parts.wpn_fps_sho_ksg_b_25 then
 			self.parts.wpn_fps_sho_ksg_b_25.supported = true

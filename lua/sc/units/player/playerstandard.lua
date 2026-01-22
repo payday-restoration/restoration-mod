@@ -2306,6 +2306,7 @@ function PlayerStandard:_do_chainsaw_damage(t)
 	return col_ray
 end
 
+
 --Updated version of vanilla function, adding in melee sprinting, chainsaw, and repeat_hit functionality.
 function PlayerStandard:_update_melee_timers(t, input)
 	--Resume normal sprinting animations once melee attack is done.
@@ -2481,6 +2482,8 @@ function PlayerStandard:_update_melee_timers(t, input)
 				end
 			end
 
+
+			local kills = 0
 			--Resolve ALL the hits
 			--Even says "all hits" here ↓↓↓ see?
 			for _, hit_unit in ipairs(all_hits) do
@@ -2517,7 +2520,15 @@ function PlayerStandard:_update_melee_timers(t, input)
 					end
 				end
 
-				self:_do_melee_damage(t, nil, nil, nil, nil, best_hit.unit, best_hit, nil, true, true)
+				local result = self:_do_melee_damage(t, nil, nil, nil, nil, best_hit.unit, best_hit, nil, true, true)
+
+				if result and result.type and result.type == "death" and is_enemy then
+					kills = kills + 1
+				end
+
+				if kills >= 5 then
+					--managers.player:local_player():sound():say( "cash_loot_drop_reveal" ,true,true)
+				end
 
 				if is_enemy then
 					cleave = cleave - 1
@@ -4812,7 +4823,10 @@ end
 function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	local new_action = nil
 	local action_forbidden = false
-
+	local weapon = self._equipped_unit:base()
+	local wep_tweak = weapon and weapon.name_id and tweak_data.weapon[weapon.name_id]
+	local can_toggle = weapon:underbarrel_name_id()
+	
 	if _G.IS_VR then
 		if not input.btn_weapon_firemode_press and not self._toggle_underbarrel_wanted then
 			return new_action
@@ -4822,19 +4836,16 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	end
 
 	--Removed the ADS check so you can swap to the underbarrel while doing that, also for Kick Starter top tier skill
-	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:is_switching_stances() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction")
+	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:is_switching_stances() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or can_toggle == nil
 
 	if not action_forbidden then
 		self:_interupt_action_reload(t)
 		self._toggle_underbarrel_wanted = false
-		local weapon = self._equipped_unit:base()
-		local wep_tweak = weapon and weapon.name_id and tweak_data.weapon[weapon.name_id]
 
 		if weapon.record_fire_mode then
 			weapon:record_fire_mode()
 		end
 
-		local underbarrel_state = weapon:underbarrel_toggle()
 
 		if underbarrel_state ~= nil then
 			local underbarrel_name_id = weapon:underbarrel_name_id()

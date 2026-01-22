@@ -42562,6 +42562,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_sho_fsa12_m_short.custom_stats = { ads_speed_mult = 0.95 }
 			
+			self.wpn_fps_sho_fsa12.override = self.wpn_fps_sho_fsa12.override or {}
+			self.wpn_fps_sho_fsa12.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
+			self.wpn_fps_sho_fsa12.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)
+			self.wpn_fps_sho_fsa12.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override)
+			self.wpn_fps_sho_fsa12.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_semi_override)
+			self.wpn_fps_sho_fsa12.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override)
+			self.wpn_fps_sho_fsa12.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override)
+			self.wpn_fps_sho_fsa12.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
+			
 		end
 		if self.parts.wpn_fps_sho_ksg_b_25 then
 			self.parts.wpn_fps_sho_ksg_b_25.supported = true
@@ -44189,9 +44198,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_mk47_mutant_barrel_409.stats = deep_clone(barrels.long_b2_stats)
 			self.parts.wpn_fps_ass_mk47_mutant_barrel_409.custom_stats = deep_clone(barrels.long_b2_stats)
 
-			self.parts.wpn_fps_ass_mk47_mutant_handguard_rsass.supported = true
-			self.parts.wpn_fps_ass_mk47_mutant_handguard_rsass.stats = { value = 2, recoil = -2, spread = 1 }
-			self.parts.wpn_fps_ass_mk47_mutant_handguard_rsass.custom_stats = nil
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske.supported = true
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske.stats = { value = 2, recoil = 2, concealment = -1 }
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske.custom_stats = nil
@@ -44199,17 +44205,40 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske_split.stats = { value = 2, recoil = 4, concealment = -2 }
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_noveske_split.custom_stats = nil
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx2.supported = true
-			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx2.stats = { value = 2, recoil = 2, concealment = -1 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx2.stats = { value = 2, spread = 1, concealment = -1 }
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx2.custom_stats = nil
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx3.supported = true
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx3.stats = { value = 3, recoil = 2, spread = 1, concealment = -2 }
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx3.custom_stats = nil
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx4.supported = true
-			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx4.stats = { value = 3, recoil = -4, spread = 2 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx4.stats = { value = 3, concealment = -3, recoil = 2, spread = 2 }
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_urx4.custom_stats = nil
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_lancer.supported = true
-			self.parts.wpn_fps_ass_mk47_mutant_handguard_lancer.stats = { value = 2, recoil = -2, spread = 1 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_lancer.stats = { value = 2, recoil = -4, spread = 2 }
 			self.parts.wpn_fps_ass_mk47_mutant_handguard_lancer.custom_stats = nil
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_rsass.supported = true
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_rsass.stats = { value = 2, recoil = -2, spread = 1 }
+			self.parts.wpn_fps_ass_mk47_mutant_handguard_rsass.custom_stats = nil
+
+			self.wpn_fps_ass_mk47_mutant.override = self.wpn_fps_ass_mk47_mutant.override or {}
+			self.wpn_fps_ass_mk47_mutant.override.wpn_lmg_rpk_m_ban = {
+				stats = {
+					value = 4,
+					extra_ammo = 15,
+					reload = -4,
+					concealment = -2
+				},
+				custom_stats = { ads_speed_mult = 1.1 }
+			}
+			if SystemFS:exists("assets/mod_overrides/AK Correct Magpul Assist Mags") then
+				self.wpn_fps_ass_mk47_mutant.override.wpn_fps_upg_ak_m_quick = {
+					unit = "units/mods/weapons/wpn_fps_ass_akm_m_magpul/wpn_fps_ass_akm_m_magpul"
+				}
+			end
+			table.insert(self.wpn_fps_ass_mk47_mutant.uses_parts, "wpn_fps_upg_ak_m_quick")
+			table.insert(self.wpn_fps_ass_mk47_mutant.uses_parts, "wpn_lmg_rpk_m_ban")
+			self.wpn_fps_ass_mk47_mutant_npc.override = deep_clone(self.wpn_fps_ass_mk47_mutant.override)
+			self.wpn_fps_ass_mk47_mutant_npc.uses_parts = deep_clone(self.wpn_fps_ass_mk47_mutant.uses_parts)
 		end
 
 	--Akimbo Mosconi 12G

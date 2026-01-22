@@ -29969,6 +29969,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar47.damage_type = "assault_rifle"
 				self.ar47.lock_slide = true
 				self.ar47.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.ar47.warsaw = true
 				self.ar47.AMMO_MAX = 120
 				self.ar47.tactical_reload = 1
 				self.ar47.CLIP_AMMO_MAX = 30
@@ -33211,7 +33212,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tf2_revolver.timers = deep_clone(self.chinchilla.timers)
 			end
 
-
 		--[[     DORPENKA'S MODS     ]]--
 
 			if self.mk47_mutant then --CMMG Mk47 Mutant
@@ -33256,6 +33256,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mk47_mutant.panic_suppression_chance = 0.05
 				self.mk47_mutant.stats_modifiers = nil
+				self.mk47_mutant.reload_offset = {
+					reload = 0,
+					reload_not_empty = 0
+				}
 				self.mk47_mutant.timers.reload_empty = 2.83
 				self.mk47_mutant.timers.reload_exit_empty = 0.71
 				self.mk47_mutant.timers.reload_not_empty = 2.1

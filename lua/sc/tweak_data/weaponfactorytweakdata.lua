@@ -5851,9 +5851,7 @@ end)
 					self.parts.wpn_fps_smg_shepheard_s_no.stats = deep_clone(stocks.remove_nocheeks_stats)
 					self.parts.wpn_fps_smg_shepheard_s_no.custom_stats = deep_clone(stocks.remove_nocheeks_stats)
 
-					if not self.wpn_fps_smg_shepheard.override then
-						self.wpn_fps_smg_shepheard.override = {}
-					end
+					self.wpn_fps_smg_shepheard.override = self.wpn_fps_smg_shepheard.override or {}
 
 					self.wpn_fps_smg_shepheard.override.wpn_fps_upg_m4_s_standard = {
 						stats = deep_clone(stocks.nocheeks_to_adj_dual_stats),
@@ -5894,6 +5892,7 @@ end)
 
 					self.wpn_fps_smg_shepheard_npc.uses_parts = deep_clone(self.wpn_fps_smg_shepheard.uses_parts)
 				end)
+
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_x_shepheard", "resmod_shepheard", function(self)
 					self.parts.wpn_fps_smg_shepheard_s_no_vanilla.supported = true
 					self.parts.wpn_fps_smg_shepheard_s_no_vanilla.stats = { value = 0 }
@@ -39761,6 +39760,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ TANGERINE'S MODS ]]
+
 		if self.parts.wpn_fps_snp_scar20_o_lpvo then
 			self.parts.wpn_fps_snp_scar20_o_lpvo.stats = {
 				value = 0,
@@ -44303,7 +44303,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 	end
 
-
 	if SystemFS:exists("assets/mod_overrides/Classic Weapon Animations") then
 		self.parts.wpn_fps_pis_g17_m_standard.unit = "units/payday2/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_m_standard"
 	end
@@ -44469,7 +44468,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				"wpn_fps_pis_deagle_fg_rail"
 			}
 	end
-
 
 	--Rex's Bubba Mosin Parts
 	if self.parts.wpn_fps_snp_mosin_barrel_bubba then
@@ -51986,86 +51984,86 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		if self[factory_id] and self[factory_id .. "_npc"] and not self[factory_id].real_factory_id then
 
 			--[[
-			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_specter") then
-				attachment_list = {
-					"wpn_fps_upg_o_northtac"
-				}
-				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
-						table.insert(self[factory_id].uses_parts, part_id)
-						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-					end
-					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_o_specter then
-						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_o_specter)
-						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
-					end
-					if self[factory_id].adds and self[factory_id].adds.wpn_fps_upg_o_specter then
-						self[factory_id].adds[part_id] = deep_clone(self[factory_id].adds.wpn_fps_upg_o_specter)
-						self[factory_id .. "_npc"].adds = deep_clone(self[factory_id].adds)
-					end
-					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
-						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_o_specter") then
-							table.insert(self.parts[used_part_id].forbids, part_id)
+				if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_specter") then
+					attachment_list = {
+						"wpn_fps_upg_o_northtac"
+					}
+					for _, part_id in ipairs(attachment_list) do
+						if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
+							table.insert(self[factory_id].uses_parts, part_id)
+							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						end
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_o_specter then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_o_specter)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+						if self[factory_id].adds and self[factory_id].adds.wpn_fps_upg_o_specter then
+							self[factory_id].adds[part_id] = deep_clone(self[factory_id].adds.wpn_fps_upg_o_specter)
+							self[factory_id .. "_npc"].adds = deep_clone(self[factory_id].adds)
+						end
+						for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+							if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_o_specter") then
+								table.insert(self.parts[used_part_id].forbids, part_id)
+							end
 						end
 					end
 				end
-			end
 			--]]
 
 			--[[ --disabling this for now; if it works, it works. if it doesn't ¯\_(ツ)_/¯
-			if self[factory_id].uses_parts and (table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_sig") or table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_xpsg33_magnifier"))
-			and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot")  then
-				self[factory_id].uses_parts[500] = "wpn_fps_upg_fl_ass_smg_sho_pointshoot"
+				if self[factory_id].uses_parts and (table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_sig") or table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_xpsg33_magnifier"))
+				and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot")  then
+					self[factory_id].uses_parts[500] = "wpn_fps_upg_fl_ass_smg_sho_pointshoot"
 
-				self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-			end
-
-			if self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot then
-				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
-				for i, weap in pairs(self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod) do
-					exclude = {
-						"wpn_fps_pis_deagle",
-						"wpn_fps_pis_rage",
-						"wpn_fps_snp_m200",
-						"wpn_fps_shot_bs23"
-					}
-					local excluded = table.contains(exclude, i)
-					if excluded then
-						self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[i] = nil
-					elseif weap and weap.translation then
-						weap.translation = (weap.translation or Vector3(0, 0, 0)) + Vector3(-1, 0, -15)
-						weap.rotation = Rotation(0, 0, -45)
-					end
+					self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 				end
-				for factory_id, i in pairs(self) do
-					if self[factory_id] and self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot") then
-						self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[ string.gsub(factory_id, "_npc", "") ] = self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[ string.gsub(factory_id, "_npc", "") ] or {
-							translation = Vector3(1, -4, -16),
-							rotation = Rotation(0, 0, -35)
+
+				if self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot then
+					self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+					for i, weap in pairs(self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod) do
+						exclude = {
+							"wpn_fps_pis_deagle",
+							"wpn_fps_pis_rage",
+							"wpn_fps_snp_m200",
+							"wpn_fps_shot_bs23"
 						}
+						local excluded = table.contains(exclude, i)
+						if excluded then
+							self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[i] = nil
+						elseif weap and weap.translation then
+							weap.translation = (weap.translation or Vector3(0, 0, 0)) + Vector3(-1, 0, -15)
+							weap.rotation = Rotation(0, 0, -45)
+						end
+					end
+					for factory_id, i in pairs(self) do
+						if self[factory_id] and self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot") then
+							self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[ string.gsub(factory_id, "_npc", "") ] = self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[ string.gsub(factory_id, "_npc", "") ] or {
+								translation = Vector3(1, -4, -16),
+								rotation = Rotation(0, 0, -35)
+							}
+						end
 					end
 				end
-			end
 
-			for factory_id, i in pairs(self) do
-				if self[ factory_id ] then
-					local weapon_id = peepee(factory_id)
-					if tweak_data.weapon[ weapon_id ] then
-						local tww = tweak_data.weapon[ weapon_id ]
-						if tww.categories then
-							if  table.contains( tww.categories , "pistol") then
-								if self[factory_id].uses_parts then
-									for i, part_id in pairs(self[factory_id].uses_parts) do
-										attachment_list = {
-											"wpn_fps_upg_fl_ass_smg_sho_pointshoot"
-										}
+				for factory_id, i in pairs(self) do
+					if self[ factory_id ] then
+						local weapon_id = peepee(factory_id)
+						if tweak_data.weapon[ weapon_id ] then
+							local tww = tweak_data.weapon[ weapon_id ]
+							if tww.categories then
+								if  table.contains( tww.categories , "pistol") then
+									if self[factory_id].uses_parts then
+										for i, part_id in pairs(self[factory_id].uses_parts) do
+											attachment_list = {
+												"wpn_fps_upg_fl_ass_smg_sho_pointshoot"
+											}
+										end
 									end
 								end
 							end
 						end
 					end
 				end
-			end
 			--]]
 
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_c79") and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_specter") then
@@ -53061,6 +53059,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 					if self.parts[used_part_id] and self[factory_id].override[used_part_id] 
+						and (self.parts[used_part_id].type and (self.parts[used_part_id].type == "sight" or self.parts[used_part_id].type == "second_sight"))
 						and (self.parts[used_part_id].custom_stats and self.parts[used_part_id].custom_stats.ads_speed_mult) then
 						self[factory_id].override[used_part_id].custom_stats = self[factory_id].override[used_part_id].custom_stats or {}
 						self[factory_id].override[used_part_id].custom_stats.ads_speed_mult = self.parts[used_part_id].custom_stats.ads_speed_mult

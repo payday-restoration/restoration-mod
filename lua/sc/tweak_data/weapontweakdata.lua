@@ -14532,8 +14532,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.boot.has_description = true
 						self.boot.AMMO_MAX = 30
 						self.boot.CLIP_AMMO_MAX = 6
-						self.boot.fire_mode_data.fire_rate = 1
-						self.boot.fire_rate_multiplier = 0.91667
+						self.boot.fire_mode_data.fire_rate = 1.2
+						self.boot.fire_rate_multiplier = 1.1
 						self.boot.rays = 8
 						self.boot.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.boot.kick = self.stat_info.kick_tables.right_kick

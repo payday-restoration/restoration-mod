@@ -4826,7 +4826,7 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	local weapon = self._equipped_unit:base()
 	local wep_tweak = weapon and weapon.name_id and tweak_data.weapon[weapon.name_id]
 	local can_toggle = weapon:underbarrel_name_id()
-	
+
 	if _G.IS_VR then
 		if not input.btn_weapon_firemode_press and not self._toggle_underbarrel_wanted then
 			return new_action
@@ -4841,11 +4841,14 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	if not action_forbidden then
 		self:_interupt_action_reload(t)
 		self._toggle_underbarrel_wanted = false
+		local weapon = self._equipped_unit:base()
+		local wep_tweak = weapon and weapon.name_id and tweak_data.weapon[weapon.name_id]
 
 		if weapon.record_fire_mode then
 			weapon:record_fire_mode()
 		end
 
+		local underbarrel_state = weapon:underbarrel_toggle()
 
 		if underbarrel_state ~= nil then
 			local underbarrel_name_id = weapon:underbarrel_name_id()

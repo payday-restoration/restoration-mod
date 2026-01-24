@@ -15,26 +15,24 @@ return {
 	-- FBI Ready Teams
 	[100107] = {
 		on_executed = {
-			{id = 400055, delay = 15, delay_rand = 10,},
+			{id = 400016, delay = 15, delay_rand = 10,},
 		},
 	},
 	-- Starting up these guys first
 	[100018] = {
 		on_executed = {
-			{id = 400065 , delay = 0,},
-			{id = 400066 , delay = 0,},
-			{id = 400067 , delay = 0,},
-			{id = 400075, delay =  0,},
+			{ id = 400024, delay = 0, }, 
 		},
 	},
 	-- Garage ambush
 	[102022] = {
 		on_executed = {
-			{id = 400061 , delay = 0, }, 
-			{id = 400063 , delay = 0, }, 
-			{id = 400069  , delay = 0,},
-			{id = 400070 , delay = 0,},
-			{id = 400073 , delay = 0,},
+			{id =  400025, delay = 0, }, -- cloaker 
+			{id =  400027, delay = 0, }, -- dozer 
+			{id =  400029, delay = 0,}, -- gunner 1
+			{id =  400030, delay = 0,}, -- gunner 2
+			{ id = 400035, delay = 0, }, -- gunner 3
+			{id =  400033, delay = 0,}, -- taser 
 		},
 	},
 	[100109] = { -- Atrium, always active

@@ -112,8 +112,8 @@ local barrels = {
 			value = 1,
 			spread = -2,
 			concealment = 1,
-			falloff_start_mult = 0.925,
-			falloff_end_mult = 0.925,
+			falloff_start_mult = 0.95,
+			falloff_end_mult = 0.95,
 			ads_speed_mult = 0.975
 		},
 	--Shorter Barrel
@@ -134,8 +134,8 @@ local barrels = {
 			spread = -4,
 			recoil = -4,
 			concealment = 3,
-			falloff_start_mult = 0.775,
-			falloff_end_mult = 0.775,
+			falloff_start_mult = 0.7,
+			falloff_end_mult = 0.7,
 			ads_speed_mult = 0.925
 		},
 
@@ -4088,16 +4088,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_rsh12_b_short.supported = true
-					self.parts.wpn_fps_pis_rsh12_b_short.stats = {
-						value = 3,
-						spread = -1,
-						concealment = 1
-					}
-					self.parts.wpn_fps_pis_rsh12_b_short.custom_stats = {
-						falloff_start_mult = 0.925,
-						falloff_end_mult = 0.925,
-						ads_speed_mult = 0.975
-					}
+					self.parts.wpn_fps_pis_rsh12_b_short.stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_pis_rsh12_b_short.custom_stats = deep_clone(barrels.short_b1_stats)
 
 					--Wood Grip
 					self.parts.wpn_fps_pis_rsh12_g_wood.pcs = {
@@ -4725,16 +4717,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_model3_b_short.supported = true
-					self.parts.wpn_fps_pis_model3_b_short.stats = {
-						value = 3,
-						spread = -1,
-						concealment = 1
-					}
-					self.parts.wpn_fps_pis_model3_b_short.custom_stats = {
-						falloff_start_mult = 0.925,
-						falloff_end_mult = 0.925,
-						ads_speed_mult = 0.975
-					}
+					self.parts.wpn_fps_pis_model3_b_short.stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_pis_model3_b_short.custom_stats  = deep_clone(barrels.short_b1_stats)
 
 					--Long barrel
 					self.parts.wpn_fps_pis_model3_b_long.pcs = {
@@ -7616,16 +7600,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_smg_m45_b_small.supported = true
-					self.parts.wpn_fps_smg_m45_b_small.stats = {
-						value = 3,
-						spread = -1,
-						concealment = 1
-					}
-					self.parts.wpn_fps_smg_m45_b_small.custom_stats = {
-						falloff_start_mult = 0.925,
-						falloff_end_mult = 0.925,
-						ads_speed_mult = 0.975
-					}
+					self.parts.wpn_fps_smg_m45_b_small.stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_smg_m45_b_small.custom_stats = deep_clone(barrels.short_b1_stats)
 
 					--Swedish Body
 					self.parts.wpn_fps_smg_m45_body_green.pcs = {
@@ -9144,8 +9120,8 @@ end)
 				}
 				self.parts.wpn_fps_lmg_hcar_body_conversionkit.custom_stats = {
 					rof_mult = 1.25,
-					falloff_start_mult = 0.775,
-					falloff_end_mult = 0.775,
+					falloff_start_mult = 0.7,
+					falloff_end_mult = 0.7,
 					ads_speed_mult = 0.975
 				}
 				self.parts.wpn_fps_lmg_hcar_body_conversionkit.forbids = {}
@@ -10076,16 +10052,8 @@ end)
 					}
 
 					self.parts.wpn_fps_ass_g36_fg_c.supported = true
-					self.parts.wpn_fps_ass_g36_fg_c.stats = {
-						value = 3,
-						spread = -1,
-						concealment = 1
-					}
-					self.parts.wpn_fps_ass_g36_fg_c.custom_stats = {
-						falloff_start_mult = 0.925,
-						falloff_end_mult = 0.925,
-						ads_speed_mult = 0.975
-					}
+					self.parts.wpn_fps_ass_g36_fg_c.stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_ass_g36_fg_c.custom_stats = deep_clone(barrels.short_b1_stats)
 					table.insert(self.parts.wpn_fps_ass_g36_fg_c.forbids, "wpn_fps_pis_usp_fl_adapter")
 
 					--Polizei Special Foregrip
@@ -12943,7 +12911,7 @@ end)
 							rof_mult = 1.038461,
 							falloff_end_mult = 1.142857,
 							falloff_start_mult = 1.1875,
-							damage_min_mult = 0.8333333,
+							damage_min_mult = 1.04,
 							ads_speed_mult = 0.93333333,
 							alt_ammo_pickup_min_mul = 1.298245,
 							alt_ammo_pickup_max_mul = 1.298245,
@@ -22673,8 +22641,8 @@ end)
 				value = 7
 			}
 			self.parts.wpn_fps_ass_m14_body_ruger.custom_stats = {
-				falloff_start_mult = 0.925,
-				falloff_end_mult = 0.925,
+				falloff_start_mult = 0.95,
+				falloff_end_mult = 0.95,
 				ads_speed_mult = 0.9
 			}
 			self.parts.wpn_fps_ass_m14_body_ruger.override.wpn_fps_pis_2006m_fl_adapter = {
@@ -23245,8 +23213,8 @@ end)
 				recoil = 6
 			}
 			self.parts.wpn_fps_pis_deagle_b_modern.custom_stats = {
-				falloff_start_mult = 0.775,
-				falloff_end_mult = 0.775
+				falloff_start_mult = 0.85,
+				falloff_end_mult = 0.85
 			}
 			self.parts.wpn_fps_pis_deagle_b_modern.forbids = {}
 
@@ -23701,8 +23669,8 @@ end)
 				stats = {value = 1, concealment = 1, spread = -2},
 				custom_stats = {
 					empire = true,
-					falloff_start_mult = 0.925,
-					falloff_end_mult = 0.925,
+					falloff_start_mult = 0.95,
+					falloff_end_mult = 0.95,
 					ads_speed_mult = 0.975
 				},
 				internal_part = true,
@@ -23747,8 +23715,8 @@ end)
 				stats = {value = 1, concealment = 3, spread = -4, recoil = -4},
 				custom_stats = {
 					empire = true,
-					falloff_start_mult = 0.775,
-					falloff_end_mult = 0.775,
+					falloff_start_mult = 0.7,
+					falloff_end_mult = 0.7,
 					ads_speed_mult = 0.925
 				},
 				internal_part = true,
@@ -23844,8 +23812,8 @@ end)
 				custom_stats = {
 					republic = true,
 					hip_mult = 1.1,
-					falloff_start_mult = 0.925,
-					falloff_end_mult = 0.925
+					falloff_start_mult = 0.95,
+					falloff_end_mult = 0.95
 				},
 				internal_part = true,
 				perks = {"bonus"},
@@ -23867,8 +23835,8 @@ end)
 				custom_stats = {
 					republic = true,
 					hip_mult = 1.2,
-					falloff_start_mult = 0.85,
-					falloff_end_mult = 0.85
+					falloff_start_mult = 0.9,
+					falloff_end_mult = 0.9
 				},
 				internal_part = true,
 				perks = {"bonus"},
@@ -23890,8 +23858,8 @@ end)
 				custom_stats = {
 					republic = true,
 					hip_mult = 1.3,
-					falloff_start_mult = 0.775,
-					falloff_end_mult = 0.775
+					falloff_start_mult = 0.85,
+					falloff_end_mult = 0.85
 				},
 				internal_part = true,
 				perks = {"bonus"},
@@ -33820,8 +33788,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					spread = -1
 				}
 				self.parts.wpn_fps_ass_mike4_2022_handguard_heavy_short.custom_stats = {
-					falloff_start_mult = 0.925,
-					falloff_end_mult = 0.925
+					falloff_start_mult = 0.95,
+					falloff_end_mult = 0.95
 				}
 				--11.5" TH-4 Barrel
 				self.parts.wpn_fps_ass_mike4_2022_handguard_mid_heavy.supported = true
@@ -42758,7 +42726,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_modl_m_3.custom_stats = {
 					ads_speed_mult = 1.15
 				}
-
 		end
 
 		if self.parts.wpn_fps_ass_lvoac_barrel then
@@ -43759,6 +43726,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					weap.translation = weap.translation + Vector3(0.003, 3, 0.94)
 				end
 			end
+		end
+
+		if self.parts.wpn_fps_pis_p4_frame then
+			self.parts.wpn_fps_pis_p4_frame.stance_mod = {
+				wpn_fps_pis_p4 = {
+					translation = Vector3(0.02, 8, -0.08),
+					rotation = Rotation(-0.02, 0.1, 0)
+				}
+			}
 		end
 
 		if self.parts.wpn_fps_ass_bulldog_burst then
@@ -47558,8 +47534,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		}
 		self.parts.wpn_fps_upg_m1919a6_barrel_m1917.custom_stats = {
-			falloff_start_mult = 0.925,
-			falloff_end_mult = 0.925,
+			falloff_start_mult = 0.95,
+			falloff_end_mult = 0.95,
 			ads_speed_mult = 0.975
 		}
 

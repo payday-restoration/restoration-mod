@@ -32233,6 +32233,65 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r6.reload_speed_multiplier = 0.85
 			end
 
+			if self.senator then
+				self.senator.categories = {"pistol", "handcannon", "sweet_liberty"}
+				self.senator.recategorize = { "heavy_pis", "handcannon" }
+				self.senator.damage_type = "handcannon"
+				self.senator.fire_mode_data.fire_rate = 0.3 * 1.8
+				self.senator.fire_rate_multiplier = 1.8
+				self.senator.sms = 0.7
+				self.senator.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.senator.desc_id = "bm_ap_weapon_sc_desc"
+				self.senator.rays = nil
+				self.senator.AMMO_MAX = 46
+				self.senator.CLIP_AMMO_MAX = 6
+				self.senator.kick = self.stat_info.kick_tables.even_recoil
+				self.senator.kick_pattern = {
+					{0, self.stat_info.kick_tables.horizontal_recoil},
+					{2, self.stat_info.kick_tables.right_kick}
+				}
+				self.senator.supported = true
+				self.senator.ads_speed = 0.220
+				self.senator.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 4500,
+					min_mult = 0.21333
+				}
+				self.senator.stats = {
+					damage = 45,
+					spread = 67,
+					recoil = 19,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 25,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.senator.stats_modifiers = {
+					damage = 2.5
+				}
+				self.senator.panic_suppression_chance = 0.05
+				self.senator.can_shoot_through_enemy = true
+				self.senator.can_shoot_through_enemy_unlim = true
+				self.senator.can_shoot_through_shield = true
+				self.senator.can_shoot_through_wall = true
+				self.senator.reload_speed_multiplier = 0.8
+				self.senator.armor_piercing_chance = 1
+				self.senator.object_damage_mult = 1.4 --scaled back to match the 180 damage revovlers
+				self.senator.keep_ammo = 0
+				self.senator.always_play_anims = true
+				self.senator.no_steelsight_anims = true
+				self.senator.timers.reload_empty = 1.44
+				self.senator.timers.reload_exit_empty = 1.2
+				self.senator.timers.reload_not_empty = 1.44
+				self.senator.timers.reload_exit_not_empty = 1.2
+				self.x_senator.use_data.selection_index = 5
+			end
+
 			if self.bulldog then --valorant gun
 				self.bulldog.categories = {
 					"assault_rifle"

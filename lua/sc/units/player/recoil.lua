@@ -535,6 +535,9 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 				if weap_base:weapon_tweak_data() and weap_base:weapon_tweak_data().fake_semi_anims then
 					redirect_name = Idstring("recoil_exit")
 				end
+				if weap_base:weapon_tweak_data() and weap_base:weapon_tweak_data().no_steelsight_anims then
+					redirect_name = Idstring("recoil")
+				end
 			end
 			--[[
 			if speed and weap_base:weapon_tweak_data().anim_speed_multiplier then

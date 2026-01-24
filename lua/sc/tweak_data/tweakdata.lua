@@ -344,7 +344,7 @@ tweak_data.cs_spread = {
 
 tweak_data.sweet_liberty = {
 	ads_moving_recoil = 1.1,
-	ads_moving_spread_mult = 1.2,
+	ads_moving_spread_mult = 2.5,
 	ads_move_speed_mult = 0.8
 }
 tweak_data.no_shake = {

@@ -39761,6 +39761,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ TANGERINE'S MODS ]]
 
+
+		if self.parts.wpn_fps_smg_schakal_m_clamp then
+			self.parts.wpn_fps_smg_schakal_m_clamp.supported = true
+			self.parts.wpn_fps_smg_schakal_m_clamp.stats = {
+				value = 6,
+				spread = -2,
+				reload = 3,
+				concealment = -1
+			}
+			self.parts.wpn_fps_smg_schakal_m_clamp.custom_stats = nil
+			self.parts.wpn_fps_smg_mp5_m_clamp.supported = true
+			self.parts.wpn_fps_smg_mp5_m_clamp.stats = {
+				value = 6,
+				spread = -2,
+				reload = 3,
+				concealment = -1
+			}
+			self.parts.wpn_fps_smg_mp5_m_clamp.custom_stats = nil
+		end
+
 		if self.parts.wpn_fps_snp_scar20_o_lpvo then
 			self.parts.wpn_fps_snp_scar20_o_lpvo.stats = {
 				value = 0,

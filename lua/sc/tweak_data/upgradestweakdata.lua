@@ -841,7 +841,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.smg.hip_fire_spread_multiplier = {0.8, 0.5}
 				--Ace
-					self.values.smg.reload_speed_multiplier = {1.15}
+					self.values.smg.reload_speed_multiplier = {1.20}
 					
 					self.skill_descs.rifleman = {
 						skill_value_b1 = tostring((1 - self.values.smg.hip_fire_spread_multiplier[1]) % 1 * 100).."%", -- Hipfire +accuracy
@@ -1349,10 +1349,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic/Ace
 					self.values.snp.reload_speed_multiplier = {1.05, 1.15}
 					self.values.assault_rifle.reload_speed_multiplier = {1.05, 1.15}
-					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.125}
-					self.values.snp.enter_steelsight_speed_multiplier = {1.125}
 				--Ace
-
+					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.15}
+					self.values.snp.enter_steelsight_speed_multiplier = {1.15}
+					
 					self.skill_descs.heavy_impact = {
 						skill_value_b1 = tostring((1 - self.values.snp.move_spread_multiplier[1]) * 100).."%",
 						skill_value_b2 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed

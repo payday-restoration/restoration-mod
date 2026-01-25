@@ -142,8 +142,6 @@ Hooks:OverrideFunction(GamePlayCentralManager, "auto_highlight_enemy", function(
 		contour_type = "mark_enemy_through_walls"
 	end
 
-	local context = context or "none"
-
 	unit:contour():add(contour_type, true, time_multiplier)
 
 	return true

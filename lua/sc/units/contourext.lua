@@ -394,6 +394,7 @@ else -- for Smooth Contours
 			local data = setup.data
 			local is_current = index == 1
 			local opacity = nil
+			local turn_off = nil
 			if is_current and data.ray_check then
 				local turn_on = nil
 				local cam_pos = managers.viewport:get_current_camera_position()
@@ -443,7 +444,6 @@ else -- for Smooth Contours
 			elseif is_current and setup.fadeout_start_t then
 				opacity = (t - setup.fadeout_start_t) / setup.fadeout_length
 				opacity = 1 - math.max(opacity, 0)
-				
 			end
 			
 			

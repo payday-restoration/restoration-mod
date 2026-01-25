@@ -191,7 +191,7 @@ return {
 		restoration:gen_missionscript(400020, "beat_cops_spawngroup_2", opts_fbi_ready_team_spawngroup_2),
 		restoration:gen_missionscript(400021, "beat_cops_spawngroup_3", opts_fbi_ready_team_spawngroup_3),
 		restoration:gen_missionscript(400022, "beat_cops_spawngroup_4", opts_fbi_ready_team_spawngroup_4),
-		restoration:gen_missionscript(400023, "beat_cops_spawngroup_5", opts_fbi_ready_teams_spawngroup_5),
+		restoration:gen_missionscript(400023, "beat_cops_spawngroup_5", opts_fbi_ready_team_spawngroup_5),
 		-- Garage last minute line of defense 
 		restoration:gen_toggleelement(400024, "enable_garage_ambush", opts_garage_ambush),
 		-- cloaker 

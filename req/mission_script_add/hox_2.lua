@@ -108,7 +108,7 @@ local opts_surprise_dozer = {
 	},
 }
 local opts_taser_stairs = {
-	enabled = taser, 
+	enemy = taser, 
 	enabled = false, 
 	on_executed = {
 		{ id = 400034, delay = 0, }, 

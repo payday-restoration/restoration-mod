@@ -163,23 +163,23 @@ local opts_garage_ambush = {
 return {
     elements = {
         -- FBI Ready Teams
-        restoration:gen_dummy(400001, "fbi_ready_team_agent_1", Vector3(1125, -2500, 300), Rotation(-90, 0, -0), opts_fbi_ready_team_agent),
-		restoration:gen_dummy(400002, "fbi_ready_team_agent_2", Vector3(1000, -2550, 300), Rotation(-90, 0, -0), opts_fbi_ready_team_agent),
-		restoration:gen_dummy(400003, "fbi_ready_team_agent_3", Vector3(1025, -2500, 300), Rotation(-90, 0, -0), opts_fbi_ready_team_agent),
+        restoration:gen_dummy(400001, "fbi_ready_team_agent_1", Vector3(1125, -2500, 300), Rotation(-90, 0, -0), opts_fbi_ready_teams ),
+		restoration:gen_dummy(400002, "fbi_ready_team_agent_2", Vector3(1000, -2550, 300), Rotation(-90, 0, -0), opts_fbi_ready_teams ),
+		restoration:gen_dummy(400003, "fbi_ready_team_agent_3", Vector3(1025, -2500, 300), Rotation(-90, 0, -0), opts_fbi_ready_teams ),
 
-		restoration:gen_dummy(400004, "fbi_ready_team_agent_4", Vector3(925, -2500, 300),  Rotation(-90, 0, -0), opts_fbi_ready_team_agent),
-        restoration:gen_dummy(400005, "fbi_ready_team_agent_5", Vector3(825, -2500, 300), Rotation(-90, 0, -0), opts_fbi_ready_team_agent),
-		restoration:gen_dummy(400006, "fbi_ready_team_agent_6", Vector3(808, -2606, 300), Rotation(-90, 0, -0), opts_fbi_ready_team_agent),
-		restoration:gen_dummy(400007, "fbi_ready_team_agent_8", Vector3(-738, -2567, 300), Rotation(90, -0, -0), opts_fbi_ready_team_agent),
+		restoration:gen_dummy(400004, "fbi_ready_team_agent_4", Vector3(925, -2500, 300),  Rotation(-90, 0, -0), opts_fbi_ready_teams ),
+        restoration:gen_dummy(400005, "fbi_ready_team_agent_5", Vector3(825, -2500, 300), Rotation(-90, 0, -0), opts_fbi_ready_teams ),
+		restoration:gen_dummy(400006, "fbi_ready_team_agent_6", Vector3(808, -2606, 300), Rotation(-90, 0, -0), opts_fbi_ready_teams ),
+		restoration:gen_dummy(400007, "fbi_ready_team_agent_8", Vector3(-738, -2567, 300), Rotation(90, -0, -0), opts_fbi_ready_teams ),
 
-		restoration:gen_dummy(400008, "fbi_ready_team_agent_9", Vector3(-825, -2500, 300), 	  Rotation(90, -0, -0), opts_fbi_ready_team_agent),
-		restoration:gen_dummy(400009, "fbi_ready_team_agent_10", Vector3(-783, -2612, 300),  Rotation(90, -0, -0), opts_fbi_ready_team_agent),
-		restoration:gen_dummy(400010, "fbi_ready_team_agent_11", Vector3(-3400, 5900, -500),  Rotation(0, 0, 0), opts_fbi_ready_team_agent),
-		restoration:gen_dummy(400011, "fbi_ready_team_agent_12", Vector3(-925, -2500, 300),  Rotation(90, -0, -0), opts_fbi_ready_team_agent),
+		restoration:gen_dummy(400008, "fbi_ready_team_agent_9", Vector3(-825, -2500, 300), 	  Rotation(90, -0, -0), opts_fbi_ready_teams),
+		restoration:gen_dummy(400009, "fbi_ready_team_agent_10", Vector3(-783, -2612, 300),  Rotation(90, -0, -0), opts_fbi_ready_teams),
+		restoration:gen_dummy(400010, "fbi_ready_team_agent_11", Vector3(-3400, 5900, -500),  Rotation(0, 0, 0), opts_fbi_ready_teams),
+		restoration:gen_dummy(400011, "fbi_ready_team_agent_12", Vector3(-925, -2500, 300),  Rotation(90, -0, -0), opts_fbi_ready_teams),
 
-		restoration:gen_dummy(400012, "fbi_ready_team_agent_13", Vector3(-3300, 5900, -500),     Rotation(0, 0, -0), opts_fbi_ready_team_agent),
-		restoration:gen_dummy(400013, "fbi_ready_team_agent_14", Vector3(-3400, 5900, -500),  	Rotation(0, 0, -0), opts_fbi_ready_team_agent),
-		restoration:gen_dummy(400014, "fbi_ready_team_agent_15", Vector3(-3500, 5900, -500),  	Rotation(0, 0, -0), opts_fbi_ready_team_agent),
+		restoration:gen_dummy(400012, "fbi_ready_team_agent_13", Vector3(-3300, 5900, -500),     Rotation(0, 0, -0), opts_fbi_ready_teams),
+		restoration:gen_dummy(400013, "fbi_ready_team_agent_14", Vector3(-3400, 5900, -500),  	Rotation(0, 0, -0), opts_fbi_ready_teams),
+		restoration:gen_dummy(400014, "fbi_ready_team_agent_15", Vector3(-3500, 5900, -500),  	Rotation(0, 0, -0), opts_fbi_ready_teams),
 		-- FBI Ready Teams Setup
 		restoration:gen_element_random(400015, "spawn_beat_cops", opts_spawn_fbi_ready_team_cops),
 		restoration:gen_missionscript(400016, "trigger_fbi_ready_team_spawn", opts_trigger_fbi_ready_team_spawn),

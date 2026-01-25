@@ -15,7 +15,7 @@ return {
 	-- FBI Ready Teams
 	[100107] = {
 		on_executed = {
-			{id = 400016, delay = 15, delay_rand = 10,},
+			{id = 400016, delay = 16, delay_rand = 3,},
 		},
 	},
 	-- Starting up these guys first

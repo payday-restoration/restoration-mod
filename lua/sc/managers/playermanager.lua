@@ -1154,16 +1154,26 @@ function PlayerManager:on_headshot_dealt(unit, attack_data)
 		return
 	end
 
-	self._on_headshot_dealt_t = t + (tweak_data.upgrades.on_headshot_dealt_cooldown or 0)
 	local damage_ext = player_unit:character_damage()
+
+	local replenishable_armour = damage_ext:_max_armor() - damage_ext:get_real_armor()
+	local replenishable_health = damage_ext:_max_health() - damage_ext:get_real_health()
 	local regen_armor_bonus = managers.player:upgrade_value("player", "headshot_regen_armor_bonus", 0)
+	local regen_health_bonus = managers.player:upgrade_value("player", "headshot_regen_health_bonus", 0)
+
+	if (replenishable_armour <= 0 or regen_armor_bonus == 0) and (replenishable_health <= 0 or regen_health_bonus == 0) then
+		-- Do not "waste" the Bullseye timer if we:
+		-- - Don't have armour to recover with it or don't have Bullseye, and we
+		-- - Don't have health to recover Head Games or we don't have that.
+		return
+	end
+
+	self._on_headshot_dealt_t = t + (tweak_data.upgrades.on_headshot_dealt_cooldown or 0)
+	managers.hud:start_buff("bullseye", tweak_data.upgrades.on_headshot_dealt_cooldown)
 
 	if damage_ext and regen_armor_bonus > 0 then
 		damage_ext:restore_armor(damage_ext:_max_armor() * regen_armor_bonus)
-		managers.hud:start_buff("bullseye", tweak_data.upgrades.on_headshot_dealt_cooldown)
 	end
-
-	local regen_health_bonus = managers.player:upgrade_value("player", "headshot_regen_health_bonus", 0)
 
 	if damage_ext and regen_health_bonus > 0 then
 		damage_ext:restore_health(regen_health_bonus, true)

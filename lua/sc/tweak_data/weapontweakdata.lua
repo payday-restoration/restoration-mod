@@ -31704,6 +31704,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coyote.panic_suppression_chance = 0.05
 				self.coyote.armor_piercing_chance = 0.25
 				self.coyote.ignore_damage_upgrades = nil
+				self.coyote.object_damage_mult = 0.8 --scaled to match the object damage of 60 damage rifles
 				self.coyote.sounds.use_fix = nil
 				self.coyote.timers.reload_empty = 3.12
 				self.coyote.timers.reload_exit_empty = 0.75
@@ -31761,6 +31762,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ar23.is_bullpup = true
 				self.ar23.panic_suppression_chance = 0.05
+				self.ar23.object_damage_mult = 0.66667 --scaled to match the object damage of 60 damage rifles
 				self.ar23.sounds.use_fix = nil
 				self.ar23.timers.reload_empty = 3.21
 				self.ar23.timers.reload_exit_empty = 1.12
@@ -31813,6 +31815,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta52.is_bullpup = true
 				self.sta52.stats_modifiers = nil
 				self.sta52.panic_suppression_chance = 0.05
+				self.sta52.object_damage_mult = 0.66667 --scaled to match the object damage of 60 damage rifles
 				self.sta52.sounds.use_fix = nil
 				self.sta52.reload_speed_multiplier = 0.9
 				self.sta52.timers = deep_clone(self.rota.timers)
@@ -31871,6 +31874,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar32.panic_suppression_chance = 0.05
 				self.ar32.sounds.use_fix = nil
 				self.ar32.armor_piercing_chance = 0.5
+				self.ar32.object_damage_mult = 0.727272 --scaled to match the object damage of 40 damage rifles
 				self.ar32.timers = deep_clone(self.ak5.timers)
 			end
 
@@ -31925,7 +31929,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					damage = 2.5
 				}
 				self.r2.panic_suppression_chance = 0.05
-				self.r2.object_damage_mult = 0.5
+				self.r2.object_damage_mult = 0.45 --scaled to match the object damage of 90 damage rifles
 				self.r2.sounds.use_fix = nil
 				self.r2.armor_piercing_chance = nil
 				self.r2.reload_speed_multiplier = 0.9
@@ -31993,11 +31997,106 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.br14.panic_suppression_chance = 0.05
 				self.br14.sounds.use_fix = nil
+				self.br14.object_damage_mult = 1.89473 --scaled to match the object damage of 120 damage rifles
 				self.br14.armor_piercing_chance = 0.5
 				self.br14.timers.reload_empty = 3.08
 				self.br14.timers.reload_exit_empty = 1.05
 				self.br14.timers.reload_not_empty = 2.05
 				self.br14.timers.reload_exit_not_empty = 0.95
+			end
+
+			if self.glar21 then
+				self.glar21.categories = {
+					"assault_rifle",
+					"dmr_l",
+					"sweet_liberty"
+				}
+				self.glar21.recategorize = {"dmr_ar"}
+				self.glar21.damage_type = "assault_rifle"
+				self.glar21.CLIP_AMMO_MAX = 40
+				self.glar21.AMMO_MAX = self.glar21.CLIP_AMMO_MAX * 7
+				self.glar21.ammo_ratio = 2
+				self.glar21.fire_mode_data.fire_rate = 0.0923076
+				self.glar21.sms = 0.5
+				self.glar21.tactical_reload = 1
+				self.glar21.keep_ammo = 0
+				self.glar21.BURST_FIRE = {
+					count = 3,
+					delay = 0.18,
+					recoil_mult = 0.9,
+					last_recoil_mult = 0.9
+				}
+				self.glar21.CAN_TOGGLE_FIREMODE = true
+				self.glar21.fire_mode_data.toggable = nil
+				self.glar21.FIRE_MODE = "auto"
+				self.glar21.kick = self.stat_info.kick_tables.even_recoil
+				self.glar21.supported = true
+				self.glar21.ads_speed = 0.440
+				self.glar21.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 6500,
+					min_mult = 0.50526
+				}
+				self.glar21.stats = {
+					damage = 19,
+					spread = 86,
+					recoil = 61,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 20,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 25
+				}
+				self.glar21.stats_modifiers = {
+					damage = 2.5
+				}
+				self.glar21.panic_suppression_chance = 0.05
+				self.glar21.sounds.use_fix = nil
+				self.glar21.armor_piercing_chance = nil
+				self.glar21.object_damage_mult = 0.94736 --scaled to match the object damage of 90 damage rifles
+				self.glar21.has_underbarrel = true
+				self.glar21.timers.reload_empty = 2.65
+				self.glar21.timers.reload_exit_empty = 1.24
+				self.glar21.timers.reload_not_empty = 2.41
+				self.glar21.timers.reload_exit_not_empty = 0.8
+					self.glar21_underbarrel.categories = {
+						"grenade_launcher",
+						"sweet_liberty_gl"
+					}
+					self.glar21_underbarrel.upgrade_blocks = {
+						weapon = {
+							"clip_ammo_increase"
+						}
+					}
+					self.glar21_underbarrel.sms = 0.5
+					self.glar21_underbarrel.AMMO_MAX = 4
+					self.glar21_underbarrel.kick = self.stat_info.kick_tables.right_kick
+					self.glar21_underbarrel.supported = true
+					self.glar21_underbarrel.ads_speed = 0.440
+					self.glar21_underbarrel.stats = {
+						damage = 72,
+						spread = 61,
+						recoil = 67,
+						spread_moving = 6,
+						zoom = 1,
+						concealment = 20,
+						suppression = 8,
+						alert_size = 2,
+						extra_ammo = 101,
+						total_ammo_mod = 400,
+						value = 4,
+						reload = 25
+					}
+					self.glar21_underbarrel.stats_modifiers = {
+						damage = 10
+					}
+					self.glar21_underbarrel.has_underbarrel = true
+					self.glar21_underbarrel.timers.reload_exit_empty = 0.4
+					self.glar21_underbarrel.timers.reload_exit_not_empty = 0.4
 			end
 
 			if self.reprimand then
@@ -32051,6 +32150,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.sounds.use_fix = nil
 				self.reprimand.panic_suppression_chance = 0.05
 				self.reprimand.shell_ejection = "_dmc/effects/shell_shak_smol"
+				self.reprimand.object_damage_mult = 0.42857 --scaled to match the object damage of 60 damage SMGs
 				self.reprimand.armor_piercing_chance = 0.5
 				self.reprimand.timers = deep_clone(self.new_mp5.timers)
 				--self.reprimand.timers.reload_empty = 2.75
@@ -32104,6 +32204,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sta11.sounds.use_fix = nil
 				self.sta11.panic_suppression_chance = 0.05
+				self.sta11.object_damage_mult = 0.44444 --scaled to match the object damage of 40 damage SMGs
 				self.sta11.timers = deep_clone(self.coal.timers)
 				self.sta11.timers.reload_empty = self.sta11.timers.reload_not_empty
 				self.sta11.timers.reload_exit_empty = self.sta11.timers.reload_exit_not_empty
@@ -32162,7 +32263,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.timers.reload_exit_empty = 0.85
 				--self.sickle.weapon_hold = "ching"
 				--self.sickle.no_auto_anims = true
-				self.sickle.object_damage_mult = 0.5
+				self.sickle.object_damage_mult = 0.66667 --scaled to match the object damage of 40 damage rifles
 				self.sickle.spin_up_t = 0.5
 				self.sickle.spin_down_t = 0.0001
 				self.sickle.sounds.magazine_empty = "wp_sentrygun_swap_ammo"
@@ -32230,6 +32331,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					damage = 2.5
 				}
 				self.r6.panic_suppression_chance = 0.05
+				self.r6.object_damage_mult = 1.6 --scaled to match the object damage of 240 damage snipers
 				self.r6.reload_speed_multiplier = 0.85
 			end
 
@@ -32260,7 +32362,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.senator.stats = {
 					damage = 45,
 					spread = 67,
-					recoil = 19,
+					recoil = 17,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 25,
@@ -32279,9 +32381,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.senator.can_shoot_through_enemy_unlim = true
 				self.senator.can_shoot_through_shield = true
 				self.senator.can_shoot_through_wall = true
-				self.senator.reload_speed_multiplier = 0.8
+				self.senator.reload_speed_multiplier = 0.75
 				self.senator.armor_piercing_chance = 1
-				self.senator.object_damage_mult = 1.4 --scaled back to match the 180 damage revovlers
+				self.senator.object_damage_mult = 1.2 --scaled to match the object damage of 180 damage handcannons
 				self.senator.keep_ammo = 0
 				self.senator.always_play_anims = true
 				self.senator.no_steelsight_anims = true
@@ -36292,7 +36394,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 			(((weapon.has_underbarrel or has_dot) and 0.8) or 1) * 
 			((table.contains(weapon.categories, "minigun") and 3.3333) or ((table.contains(weapon.categories, "lmg") or true_shotgun) and 2) or 1)
 		damage_mul = (not exclude_calcs and (damage_mul * 2)) or damage_mul
-		if not table.contains(weapon.categories, "sweet_liberty") and not table.contains(weapon.categories, "nothing") then
+		if not table.contains(weapon.categories, "sweet_liberty") and not table.contains(weapon.categories, "sweet_liberty_gl") and not table.contains(weapon.categories, "nothing") then
 			weapon.AMMO_MAX = math.ceil((3600 * (((weapon.use_data.selection_index == 2 or weapon.use_data.selection_index == 4) and 2) or 1) * total_dmg_mul)) / ((weapon.stats.damage * damage_mul) * hs_mult)
 		end
 	end
@@ -36333,7 +36435,8 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		bump_stat_50 = 1.5,
 		bump_stat_80 = 1.8,
 		dump_stat_40 = 0.6,
-		sweet_liberty = 0.18,
+		sweet_liberty = 0.175,
+		sweet_liberty_gl = 1,
 		battery = 0,
 		nothing = 0
 	}

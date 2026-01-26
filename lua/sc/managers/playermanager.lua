@@ -36,6 +36,26 @@ local function set_hud_item_amount(index, amount)
 	end
 end
 
+Hooks:PostHook(PlayerManager, "_setup", "ResSetup", function(_)
+	--- synced_carry_stacker is a table of tables, mapping peer IDs to a table of
+	--- all the bags the given player is carrying.
+	--- 
+	--- The carry table is a FILO queue: First In Last Out.
+	Global.player_manager.synced_carry_stacker = {}
+end)
+
+Hooks:PostHook(PlayerManager, "peer_dropped_out", "ResPeerDroppedOut", function(self, peer_id)
+	Global.player_manager.synced_carry_stacker[peer_id] = nil
+end)
+
+function PlayerManager:get_synced_carry_stacker(peer_id)
+	return self._global.synced_carry_stacker[peer_id]
+end
+
+function PlayerManager:get_all_synced_carry_stacker()
+	return self._global.synced_carry_stacker
+end
+
 Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 	--Info for slow debuff, usually caused by Titan Tasers.
 	self._slow_data = {
@@ -60,6 +80,13 @@ Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 	-- A few HUDs such as PocoHUD use this value directly. With the changes to on_headshot_dealt where
 	-- this wouldn't be created until it's relevant, these HUDs would cause the game to crash.
 	self._on_headshot_dealt_t = 0
+	
+	--- Represents how affected is the player's movement by the bags 
+    --- they are carrying. If weight is 1, the player is not affected at all. 
+	--- However, if weight is less than 1, the player's speed and jumping ability 
+	--- will be reduced. Furthermore, the player will not be able to pick more 
+	--- bags once a certain weight threshold is reached.
+	self._weight = 1
 end)
 
 Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self, t, dt)
@@ -1951,10 +1978,22 @@ local master_PlayerManager_can_carry = PlayerManager.can_carry
 	a bag.
 ]]
 function PlayerManager:can_carry(carry_id)
-	restoration:debug("Request to check whether the player can carry " ..
-		tostring(carry_id))
-	restoration:debug("Returning the result of BLT_CarryStacker:CanCarry")
-	return BLT_CarryStacker:CanCarry(carry_id)
+	local carry_type = tweak_data.carry[carry_id].type
+	local movement_penalty = nil
+		
+	movement_penalty = tweak_data.carry.types[carry_type].weight
+	local carried_weight_modifier = movement_penalty ~= nil 
+		and ((100 -movement_penalty) / 100) 
+		or 1
+
+    local check_weight = self._weight * carried_weight_modifier
+	local max_weight = tweak_data.player.max_carry_weight
+	
+	if managers.player:has_category_upgrade("carry", "increased_carry_weight") then
+		max_weight = max_weight - managers.player:upgrade_value("carry", "increased_carry_weight", 1)
+	end
+
+    return check_weight >= max_weight
 end
 
 --[[
@@ -1962,16 +2001,13 @@ end
 ]]
 function PlayerManager:drop_carry(...)
 	restoration:debug("Request to drop a carry")
+	local peer_id = managers.network:session():local_peer():id() -- TODO DO NOT KEEP CARRY_STACKER STACKS UNSYNCED
 
-	if #BLT_CarryStacker.stack == 0 then
+	if #self._global.synced_carry_stacker[peer_id] == 0 then
         restoration:debug("WARNING: Request to drop carry, but the stack is empty")
-        -- If the mod was disabled and the player picked a carry, the 
-        -- mod will not be aware of it. This is, even if #stack == 0, 
-        -- the player could be carrying a bag
-        -- return
     end
 
-    local cdata = BLT_CarryStacker.stack[#BLT_CarryStacker.stack]
+    local cdata = self._global.synced_carry_stacker[peer_id][#self._global.synced_carry_stacker[peer_id]]
     if cdata then
         restoration:debug("The carry being dropped is: " .. tostring(cdata.carry_id))
     else
@@ -1986,19 +2022,33 @@ function PlayerManager:drop_carry(...)
 		self._carry_blocked_cooldown_t = Application:time() + 0.5
 	end	
 	
-    restoration:debug("The carry has been dropped")
-    -- The Carry has to be removed from the stack after master 
-    -- drop_carry. This is so that the mod's state is updated 
-    -- afterwards. Therefore, the anticheat engine wont detect cheating
-    -- when dropping the carry
-    BLT_CarryStacker:RemoveCarry()
-    -- If there are more carries in the stack, the top-most has to be 
-    -- set using master set_carry so the game registers it for the next 
-    -- drop
-    if #BLT_CarryStacker.stack > 0 then
-        restoration:debug("Since there are more items in the stack, " ..
-                "using master set_carry with the current top-most carry")
-        cdata = BLT_CarryStacker.stack[#BLT_CarryStacker.stack]
+    if #self._global.synced_carry_stacker[peer_id] > 0 then
+		local carry_type = tweak_data.carry[cdata.carry_id].type
+		local movement_penalty = nil
+			
+		movement_penalty = tweak_data.carry.types[carry_type].weight
+		local carried_weight_modifier = movement_penalty ~= nil 
+			and ((100 -movement_penalty) / 100) 
+			or 1
+
+		self._weight = self._weight / carried_weight_modifier
+		table.remove(self._global.synced_carry_stacker[peer_id], #self._global.synced_carry_stacker[peer_id])
+		if #self._global.synced_carry_stacker[peer_id] == 0 then
+			self._weight = 1
+		end
+
+		managers.hud:remove_special_equipment("carrystacker")
+		if #self._global.synced_carry_stacker[peer_id] > 0 then
+			managers.hud:add_special_equipment({
+				id = "carrystacker", 
+				icon = "pd2_loot", 
+				amount = #self._global.synced_carry_stacker[peer_id]
+			})
+		end
+	end
+
+    if #self._global.synced_carry_stacker[peer_id] > 0 then
+        cdata = self._global.synced_carry_stacker[peer_id][#self._global.synced_carry_stacker[peer_id]]
         master_PlayerManager_set_carry(self, cdata.carry_id, 
                 cdata.multiplier or 1, cdata.dye_initiated, 
                 cdata.has_dye_pack, cdata.dye_value_multiplier)
@@ -2009,11 +2059,31 @@ end
 	This function will be called after player is done picking up a bag.
 ]]
 function PlayerManager:set_carry(...)
-	restoration:debug("Setting the carry with master set_carry and " ..
-		"adding the item to the stack")
 	master_PlayerManager_set_carry(self, ...)
-	BLT_CarryStacker:AddCarry(self:get_my_carry_data())
-	-- This will be used to prevent the player from picking a new bag
-	-- within the next 0.1 sec
+
+	local peer_id = managers.network:session():local_peer():id() -- TODO DO NOT KEEP CARRY_STACKER STACKS UNSYNCED
+	local cdata = self:get_my_carry_data()
+
+    local carry_type = tweak_data.carry[cdata.carry_id].type
+    local movement_penalty = nil
+		
+	movement_penalty = tweak_data.carry.types[carry_type].weight
+    local carried_weight_modifier = movement_penalty ~= nil 
+        and ((100 -movement_penalty) / 100) 
+        or 1
+	
+    self._weight = self._weight * carried_weight_modifier
+	self._global.synced_carry_stacker[peer_id] = self._global.synced_carry_stacker[peer_id] or {} -- TODO REMOVE TEMPORARY
+    table.insert(self._global.synced_carry_stacker[peer_id], cdata)
+    
+	managers.hud:remove_special_equipment("carrystacker")
+	if #self._global.synced_carry_stacker[peer_id] > 0 then
+		managers.hud:add_special_equipment({
+			id = "carrystacker", 
+			icon = "pd2_loot", 
+			amount = #self._global.synced_carry_stacker[peer_id]
+		})
+	end
+
 	PlayerStandard:block_use_item()
 end

@@ -497,41 +497,25 @@ local master_CarryInteractionExt_interact_blocked = CarryInteractionExt._interac
 local master_CarryInteractionExt_can_select = CarryInteractionExt.can_select
 
 function IntimitateInteractionExt:_interact_blocked(player)
-	restoration:debug("Called IntimitateInteractionExt:_interact_blocked")
-
 	if self.tweak_data == "corpse_dispose" then
-		restoration:debug("The interaction is corpse_dispose")
 		if managers.player:chk_body_bags_depleted() then
-			restoration:debug("The player is out of body bags. The " ..
-				"interaction is blocked")
 			return true, nil, "body_bag_limit_reached"
 		end
-		restoration:debug("Checking whether the player can carry the body")
 		local result = not managers.player:can_carry("person")
-		restoration:debug("The interaction is blocked: " .. tostring(result))
 		return result
 	end
-	restoration:debug("The interaction is not corpse_dispose. Using " ..
-		"master function")
 	local result = master_IntimitateInteractionExt_interact_blocked(self, player)
-	restoration:debug("The master's function result is " .. tostring(result))
 	return result
 end
 
 function CarryInteractionExt:_interact_blocked(player)
-	restoration:debug("Called CarryInteractionExt:_interact_blocked")
-	restoration:debug("Checking whether the player can carry the bag")
 	local result = not managers.player:can_carry(self._unit:carry_data():carry_id())
-	restoration:debug("The interacion is blocked: " .. tostring(result))
 	return result
 end
 
 function CarryInteractionExt:can_select(player)
-	restoration:debug("Request to check whether the player can select a bag")
-	restoration:debug("Calling super's can select")
 	local result = CarryInteractionExt.super.can_select(self, player)
 		and managers.player:can_carry(self._unit:carry_data():carry_id())
-	restoration:debug("The super's can_select result is: " .. tostring(result))
 	return result
 end
 

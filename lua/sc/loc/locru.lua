@@ -5396,7 +5396,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mutators", function(loc)
 		
 		["mutator_advancedtraining"] = "Современные тренировки",
 		["mutator_advancedtraining_desc"] = "Враги имеют здоровье и наносят урон как на сложности 'Смертный Приговор'.",
-		["mutator_advancedtraining_longdesc"] = "Враги имеют здоровье и наносят урон как на сложности 'Смертный Приговор' наряду с их способностями.",
+		["mutator_advancedtraining_longdesc"] = "Враги имеют здоровье и наносят урон как на сложности 'Смертный Приговор' наряду с их способностями (из-за тренировок).",
 
 		["menu_cg22_post_objective_1_desc"] = "Убить 200 врагов из любой снайперской винтовки.",
 		["menu_cg22_post_objective_2_desc"] = "Убить 15 Клокеров из винтовки 'Полярная Звезда' на сложности 'Очень Сложно' или выше.",

@@ -5502,7 +5502,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		
 		["mutator_advancedtraining"] = "Advanced Training",
 		["mutator_advancedtraining_desc"] = "Enemy forces have HP and DMG values from Death Sentence difficulty.",
-		["mutator_advancedtraining_longdesc"] = "Enemies have HP and DMG values from Death Sentence difficulty alongside of their abilities.",
+		["mutator_advancedtraining_longdesc"] = "Enemies have HP and DMG values from Death Sentence difficulty alongside of their abilities. Because of training.",
 
 		["mutator_spawn_mult"] = "Amplified Response",
 		["menu_mutator_enemy_spawn"] = "ENEMY SPAWN MULTIPLIER",

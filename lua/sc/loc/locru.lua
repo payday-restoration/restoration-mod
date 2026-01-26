@@ -5393,6 +5393,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mutators", function(loc)
 		["menu_mutator_no_ammo_drops"] = "Без выпадения патронов",
 		["mutator_no_ammo_drops_desc"] = "Позволяет отключить коробки патронов с врагов, или изменить процент их выпадения.",
 		["mutator_no_ammo_drops_longdesc"] = "Позволяет отключить коробки патронов с врагов, или изменить процент их выпадения.",
+		
+		["mutator_advancedtraining"] = "Современные тренировки",
+		["mutator_advancedtraining_desc"] = "Враги имеют здоровье и наносят урон как на сложности 'Смертный Приговор'.",
+		["mutator_advancedtraining_longdesc"] = "Враги имеют здоровье и наносят урон как на сложности 'Смертный Приговор' наряду с их способностями.",
 
 		["menu_cg22_post_objective_1_desc"] = "Убить 200 врагов из любой снайперской винтовки.",
 		["menu_cg22_post_objective_2_desc"] = "Убить 15 Клокеров из винтовки 'Полярная Звезда' на сложности 'Очень Сложно' или выше.",

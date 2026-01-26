@@ -426,6 +426,7 @@
 		<hook file="sc/mutators/new/mutatorcitadelmags.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorshighnoon.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatornoammodrop.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatoradvancedtraining.lua" source_file="lib/mutators/basemutator"/>
 		<!--<hook file="sc/mutators/new/mutatorfactionreplacer.lua" source_file="lib/mutators/basemutator"/>-->
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>

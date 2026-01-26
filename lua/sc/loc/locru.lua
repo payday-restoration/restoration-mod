@@ -545,8 +545,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Blackmarket", function(lo
 
 		["bm_msk_wolf_halloween"] = "Плач дьявола",
 		["bm_msk_wolf_halloween_desc"] = "Холодным октябрьским вечером 2010-го, Вульф до сих пор пытался выбраться из финансового кризиса после того, как его компания закрылась.\n\nОн лежал в гостинице, в полном одиночествеЮ и думал о своей семье, о том, что он их подвел и может их больше не увидеть - отрезанный от них целым океаном.\n\nОн потратил последние сбережения на поездку в США, в попытке накопить достаточно денег, чтобы начать сначала в новом доме, но он провалился.\n\nНесколько недель спустя, бродя по домам друзей, гостиницам и убежищам, ему позвонила его любимая, впервые за долгое время.\n\nОтношениям конец. 'Не вижу, как это может хорошо закончиться.'\n\nМожет, это и был повод начать сначала.\n\nМожет, настало время попробовать новую карьеру.",
---Player Outfits--
-		--Default Suit String
+--Костюмы--
+		--стринги дефолтного костюма
 		["bm_suit_none_desc"] = "Это стандартный костюм грабителя с выбранной броней. Может измениться с костюма-двойки в зависимости от ограбления!",
 		
 		["bm_suit_two_piece_sc"] = "Костюм-двойка",
@@ -573,7 +573,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Blackmarket", function(lo
 		["bm_suit_var_jumpsuit_flatgreen"] = "Вязко-зеленый",
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "Этот костюм, по слухам, принадлежал одному из трех членов банды психопатов и был найден в уничтоженном мусоровозе, который использовался в кровавом ограблении бронетранспорта GenSec, в ходе которого несколько членов SWAT были убиты и многие ранены. Личности этих бандитов до сих пор остаются в тайне, так как большинство улик было уничтожено вместе с мусоровозом - остался только этот костюм.",
 
-		-- Color variations - Combat Harness
+		-- вариации - Combat Harness
 			["bm_suit_var_loud_suit_default"] = "Профессиональный черный",
 			["bm_suit_var_loud_suit_default_desc"] = "Костюм-двойка стал частью бренда банды PAYDAY. Модный, стильный, позволяет легко затеряться в толпе - настоящая икона. 'Подождите ка! В какой, блядь, толпе?', спросил Чейнс, пока банда направлялась в очередной раз грабить склад Murkywater. И почему он не додумался раньше...",
 
@@ -609,7 +609,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Blackmarket", function(lo
 
 			["bm_suit_var_loud_suit_gorkasea"] = "Тактический морской",
 			["bm_suit_var_loud_suit_gorkasea_desc"] = "Вульф раздобыл их в 2011-ом, когда Бейн планировал ограбление яхты. Кто же знал, что этим костюмам придется собирать пыль почти шесть лет.",
-			-- Color variations - Sunny Side
+			-- вариации - Sunny Side
 			["bm_suit_var_suit_sunny_default"] = "Повседневные дела",
 			["bm_suit_var_suit_sunny_default_desc"] = "Будь героем боевиков 90-х, которым ты всегда хотел стать.",
 
@@ -666,7 +666,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Blackmarket", function(lo
 
 			["bm_suit_var_suit_sunny_soprano"] = "Мафиозные дела",
 			["bm_suit_var_suit_sunny_soprano_desc"] = "Мафия не очень близка банде PAYDAY, но их стиль заслуживает уважения.",
-		    -- Color variations - Prison Suit
+		    -- вариации - Prison Suit
 			["bm_suit_var_suit_prison_default"] = "Беглец",
 			["bm_suit_var_suit_prison_default_desc"] = "Роба, которая изменила Хокстона навсегда. Он был уверен, что сжег это напоминание о жутком прошлом вместе со старым убежищем, но каким-то мистическим образом оно оказалось в новом.",
 
@@ -686,7 +686,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Blackmarket", function(lo
 			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборатории АКАНа. Вдруг секрет их сверхъестественных способностей таится в этой робе?",
 
 
-		--Weapon Colors
+		--краски для оружий
 		["bm_wskn_resmod_blackgold"] = "Черное золото",
 		["bm_wskn_resmod_cleangold"] = "Чистое золото",
 		["bm_wskn_resmod_imissfauna"] = "Обработанное золото",
@@ -747,10 +747,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mix", function(loc)
 		["menu_diffgrade"] = "Сложность: ",
 		["menu_utility_radial_menu_name"] = "Utility Radial Menu",
 		["menu_utility_radial_menu_desc"] = "Open the Utility Menu",
-		
-		["resmod_1st_time_title"] = "Placeholder title",
-		["resmod_1st_time_desc"] = "Placeholder text info",
-		["resmod_1st_time_confirm"] = "OK",
 
 		["res_credits"] = "Титры Restoration Mod",
 		["res_credits_help"] = "Посмотреть титры RESTORATION MOD.",
@@ -763,7 +759,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mix", function(loc)
 		
 		["bm_sc_blank"] = "", --assumedly this is a debug thing, but I'm not going to touch it--
 
-		--Menu Stuff--
+		--Меню--
 		["menu_hud_cheater"] = "",
 		["menu_inspect_player"] = "Осмотреть игрока",
 		["menu_inspect_player_desc"] = "Осмотреть статистику игрока",
@@ -771,7 +767,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mix", function(loc)
 
 		["heist_safehouse"] = "Старое Убежище",
 
-		--Events
+		--События
 
 		--Anniversary Event
 		["menu_pda8_1_prog_obj_desc"] = "Найти 2 праздничные статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
@@ -949,11 +945,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mix", function(loc)
 		["RestorationModArmorFixTitleID"] = "Фикс подсвечивания брони",
 		["RestorationModArmorFixDescID"] = "Включить или выключить фикс подсвечивания брони.",
 		
-				["menu_toggle_one_down"] = "Pro-Job",
+		["menu_toggle_one_down"] = "Pro-Job",
 		["menu_one_down"] = "Pro-Job",
 		["menu_es_pro_job_bonus"] = "Pro-Job",
 
-		["menu_pro_warning"] = "Режим PRO JOB: При провале, контракт будет отменен.\nПод конец ограбления может начаться Точка Невозврата, во время которой появятся более опасные противники.\nПрохождение в режиме Pro Job дает 25% бонус к деньгам и опыту.",
+		["menu_pro_warning"] = "Режим PRO JOB: При провале, контракт будет отменен.\nПод конец ограбления может начаться Точка Невозврата, во время которой появятся более опасные противники.\nПрохождение в режиме Pro Job дает на 25% больше денег и опыта.",
 
 		["menu_asset_lock_additional_assets_pro"] = "НЕДОСТУПНО В РЕЖИМЕ PRO-JOB!",
 		["menu_asset_buy_all_req_skill"] = "##NOT AVAILABLE!##",
@@ -1469,11 +1465,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Heists", function(loc)
 		["restoration_level_data_pent"] = "23:30, Сан Франциско - Пентхаус Юфу Венга",
 		["restoration_level_data_ranc"] = "18:24, Техас - Ранчо Мидленд",
 		["restoration_level_data_trai"] = "19:40, Форт-Уэрт - Дэлтон Ярд",
-		["restoration_level_data_corp"] = "8:35 PM, Даллас - Исследовательский центр корпорации SERA",
-		["restoration_level_data_deep"] = "9:00 PM, Мексиканский залив - Нефтяная вышка корпорации SERA",
+		["restoration_level_data_corp"] = "20:35, Даллас - Исследовательский центр корпорации SERA",
+		["restoration_level_data_deep"] = "21:00, Мексиканский залив - Нефтяная вышка корпорации SERA",
 		["restoration_level_data_wetwork"] = "ВРЕМЯ ЗАСЕКРЕЧЕНО, ЛОКАЦИЯ ЗАСЕКРЕЧЕНА",
 		["restoration_level_data_junk"] = "ВРЕМЯ ЗАСЕКРЕЧЕНО, ЛОКАЦИЯ ЗАСЕКРЕЧЕНА",
-		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",
+		["restoration_level_data_holly"] = "17:00, Los Angeles - Lukas' Mansion",
 		["restoration_level_data_lvl_friday"] = "17:00, Торговый центр 'Щит'",
 		["restoration_level_data_skm_nightmare_lvl"] = "Прачечная? Хочешь отмыть грехи?",
 		["restoration_level_data_bluewave"] = "ВРЕМЯ ЗАСЕКРЕЧЕНО, Склад Aurelian",
@@ -1482,17 +1478,17 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Heists", function(loc)
 		["restoration_level_data_four_stores_remixed"] = "13:20, Магазины",
 
 
-         --custom heists
-		["restoration_level_data_flatline_lvl"] = "10:26 PM, Больница им. Н.И. Пирогова", --Flatline
-		["restoration_level_data_ahopl"] = "9:06 PM, Yuri's Private Club", --A House of Pleasure
-		["restoration_level_data_atocl"] = "7:03 PM, Penthouse Party", --A Touch of Class
-		["restoration_level_data_rusdl"] = "10:23 AM, Garnet Group Jewelery Store", --Cold Stones
-		["restoration_level_data_crimepunishlvl"] = "1:19 PM, Correctional Facility Somewhere in Russia", --Crime and Punishment
-		["restoration_level_data_deadcargol"] = "8:36 PM, Sewers Under The Depot", --Deadly Cargo
-		["restoration_level_data_hunter_party"] = "3:56 PM, Nikolai's Penthouse", --Hunter and Hunted d1
-		["restoration_level_data_hunter_departure"] = "10:13 PM, Aleksandr's Private Airport", --Hunger and Hunted d2
-		["restoration_level_data_hunter_fall"] = "1:36 AM, Somewhere Over International Waters", --Hunter and Hunted d3
-		["restoration_level_data_ruswl"] = "11:50 AM, Somewhere in Russia", --Scorched Earth
+         --кастомные хайсты
+		["restoration_level_data_flatline_lvl"] = "22:26, Больница им. Н.И. Пирогова", --Flatline
+		["restoration_level_data_ahopl"] = "21:06, Yuri's Private Club", --A House of Pleasure
+		["restoration_level_data_atocl"] = "1:03, Penthouse Party", --A Touch of Class
+		["restoration_level_data_rusdl"] = "10:23 , Garnet Group Jewelery Store", --Cold Stones
+		["restoration_level_data_crimepunishlvl"] = "13:19, Correctional Facility Somewhere in Russia", --Crime and Punishment
+		["restoration_level_data_deadcargol"] = "20:36, Sewers Under The Depot", --Deadly Cargo
+		["restoration_level_data_hunter_party"] = "15:56, Nikolai's Penthouse", --Hunter and Hunted d1
+		["restoration_level_data_hunter_departure"] = "22:13, Aleksandr's Private Airport", --Hunger and Hunted d2
+		["restoration_level_data_hunter_fall"] = "1:36, Somewhere Over International Waters", --Hunter and Hunted d3
+		["restoration_level_data_ruswl"] = "11:50, Somewhere in Russia", --Scorched Earth
 
 		["heist_greattrain_name"] = "Time Window",
 		["heist_easystore_name"] = "Twenty-Four Seven",
@@ -1533,7 +1529,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Heists", function(loc)
 		--Heist Breifings--
 		["heist_pines_briefing"] = "Место нахождения в такой дальней глуши, что вам надо поторопиться и бежать сломя голову. Найдите пилота. Он должен быть рядом с местом крушения. Мы отправим вертолет, чтобы эвакуировать его. Пилот должен быть в полной безопасности до тех пор, пока не отправится к нам. И еще кое-что: Влад говорит, что в самолете был неплохой товар. Прочешите лес и утащите столько кокаина, сколько сможете. На Рождество деньги лишними не будут.\n\nСООБЩЕНИЕ ОТ ДЖЕКЕЛА:\nШум от падения самолета привлек внимание находившихся неподалеку наемников организации REAPER. Сражаться будете не с полицией.",
 
-		----Custom Achievements----
+		----достижения из сторонних модов----
 
 		--Scarface Mansion--
 		["skm_friend_name"] = "Столкновение: Особняк Эль-Фурейдис",
@@ -2620,13 +2616,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration",
-		["loot_sc_desc"] = "ЭТО ПРЕДМЕТ ИЗ RESTORATION!",
-		["loot_sc_wcc_desc"] = "ЭТО ПРЕДМЕТ ИЗ RESTORATION! (Необходим WEAPON COLOR PACK 2)",
-		["loot_sc_ocp_desc"] = "ЭТО ПРЕДМЕТ ИЗ RESTORATION! (Необходим WEAPON COLOR PACK 3)",
-		["loot_sc_faco_desc"] = "ЭТО ПРЕДМЕТ ИЗ RESTORATION! (Необходим JIU FENG SMUGGLER PACK 1)",
+		["loot_sc_desc"] = "ПРЕДМЕТ ИЗ RESTORATION!",
+		["loot_sc_wcc_desc"] = "ПРЕДМЕТ ИЗ RESTORATION! (Необходим WEAPON COLOR PACK 2)",
+		["loot_sc_ocp_desc"] = "ПРЕДМЕТ ИЗ RESTORATION! (Необходим WEAPON COLOR PACK 3)",
+		["loot_sc_faco_desc"] = "ПРЕДМЕТ ИЗ RESTORATION! (Необходим JIU FENG SMUGGLER PACK 1)",
 
 		["menu_l_global_value_omnia"] = "OMNIA",
-		["menu_l_global_value_omnia_desc"] = "ЭТО ПРЕДМЕТ OMNIA!",
+		["menu_l_global_value_omnia_desc"] = "ПРЕДМЕТ OMNIA!",
 
 		["menu_rifle"] = "ВИНТОВКИ",
 		["menu_jowi"] = "Уик",
@@ -2793,7 +2789,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
 
 
 		--Melee Weapons
-		["bm_melee_twins"] = "Sai", --Plural form is still "sai"
+		["bm_melee_twins"] = "Саи", --поправьте, если слово не склоняется вообше, я не гумманитарий.
 		["bm_melee_twins_info"] = "Позволяет обезоружить врага с острым оружием за считанные секунды.\n\nПарирование противника наносит ему #{skill_color}#60## урона в ближнем бою. Навыки позволяют увеличить этот урон.",
 
 		--CUSTOM MELEE WEAPONS
@@ -3163,7 +3159,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
 
 		["menu_akimbo_assault_rifle"] = "Парные винтовки",
 		
-		--Throwables--
+		--Всякое бросаемое--
 		["bm_grenade_copr_ability"] = "Ампула",
 		["bm_grenade_damage_control"] = "Фляжка",
 		["bm_concussion_desc"] = "Радиус: #{skill_color}#10 м## \nОглушает врагов на промежуток до #{skill_color}#4## секунд \nТочность врагов уменьшается на #{skill_color}#50%## на #{skill_color}#7## секунд \nОглушает всех врагов, кроме #{important_1}#Титановых Щитов, Титановых Бульдозеров и Капитанов.##\nШанс подбора от коробки с патронами: #{skill_color}#$pickup## \n\nЭто сногсшибательная штучка поразит всех и даст вам лишние секунды чтобы их убить.",
@@ -5292,7 +5288,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_misc_res_title"] = "Restoration - прочие подсказки",
 		["loading_misc_res_1"] = "Попробуйте новые ограбления из Restoration! Вы можете найти их у заказчика 'Джекел', а также ограбление 'Наркопритон' у Влада.",
 		["loading_misc_res_2"] = "У Restoration Mod есть гайд в Steam и на YouTube! В них содержится вся нужная информация о моде. Ссылка в главном меню.",
-		["loading_misc_res_3"] = "У русского сообщества Restoration Mod есть Дискорд-канал! Присоединяйтесь для обсуждений, технической помощи и нахождения игроков. Ссылка в главном меню.",
+		["loading_misc_res_3"] = "У сообщества Restoration Mod есть Дискорд-канал! Присоединяйтесь для обсуждений, технической помощи и нахождения игроков. Ссылка в главном меню.",
 		--Trivia Hints
 		["loading_fluff_res_title"] = "Restoration - интересные факты",
 		["loading_fluff_res_1"] = "OMNIA тратит капитал на восстановление неудачных военных проектов.",
@@ -5417,7 +5413,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mutators", function(loc)
 		["menu_mutator_captain_replace_spring"] = "Спринг",
 		["menu_mutator_captain_replace_summer"] = "Саммерс",
 		["menu_mutator_captain_replace_hvh"] = "АТБГШИЛ",
-		["menu_mutator_captain_cooldown"] = "Таймер респавна капитана (в секундах)",
 		["menu_mutator_winter_blacklist_toggle"] = "Исключить Винтерса из случайного выбора",
 		["menu_mutator_spring_blacklist_toggle"] = "Исключить Спринга из случайного выбора",
 		["menu_mutator_summer_blacklist_toggle"] = "Исключить Саммерса из случайного выбора",
@@ -5462,11 +5457,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mutators", function(loc)
 		["menu_mutator_no_ammo_drops"] = "Без выпадения патронов",
 		["mutator_no_ammo_drops_desc"] = "Позволяет отключить коробки патронов с врагов, или изменить процент их выпадения.",
 		["mutator_no_ammo_drops_longdesc"] = "Позволяет отключить коробки патронов с врагов, или изменить процент их выпадения.",
-		
+
 		["mutator_advancedtraining"] = "Современные тренировки",
 		["mutator_advancedtraining_desc"] = "Враги имеют здоровье и наносят урон как на сложности 'Смертный Приговор'.",
 		["mutator_advancedtraining_longdesc"] = "Враги имеют здоровье и наносят урон как на сложности 'Смертный Приговор' наряду с их способностями (из-за тренировок).",
-
+		
 		["menu_cg22_post_objective_1_desc"] = "Убить 200 врагов из любой снайперской винтовки.",
 		["menu_cg22_post_objective_2_desc"] = "Убить 15 Клокеров из винтовки 'Полярная Звезда' на сложности 'Очень Сложно' или выше.",
 		["menu_cg22_post_objective_3_desc"] = "Сделать 50 двойных убийств из винтовки 'Полярная Звезда' на любой сложности.",
@@ -6570,7 +6565,8 @@ if not easterless then
 	 if butt <= sex then
 		 LocalizationManager:add_localized_strings({
 			["menu_st_spec_23"] = "Полурак-полухуй",
-			--["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
+			["menu_st_spec_23_desc"] = "Полурак-полухуй - уникальный уеба, обладающий ничем и всем сразу одновременно. Вечное нахождение под кроватью сделало вас, и вы там застряли надолго - зато ловить пули не нужно. Вы изучали своих патлатых товарищей пять секунд, но вам и так ясно, что лучше их посадить в кастоди и самому нагибать, взяв их навыки. Главное, не придумывать механики игры, которых нет - это высшая форма долбоебизма.",
+
 			["menu_difficulty_sm_wish"] = "Ванильный ДС",
 			["menu_risk_sm_wish"] = "Чувак. Ты думал что-то здесь будет? О, нет. От тебя ваниллой воняет, даже отсюда чувствую. Выходи, выходи с хаиста и иди нахуй. Друг крутой, а ты лоханулся."
 		 })

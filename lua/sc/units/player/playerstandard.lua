@@ -2309,6 +2309,20 @@ end
 
 --Updated version of vanilla function, adding in melee sprinting, chainsaw, and repeat_hit functionality.
 function PlayerStandard:_update_melee_timers(t, input)
+	local melee_entry = managers.blackmarket:equipped_melee_weapon()
+	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
+	local instant = melee_weapon.instant
+	local no_hit_shaker = melee_weapon.no_hit_shaker
+	local melee_charger = melee_weapon.special_weapon and melee_weapon.special_weapon == "charger"
+	local angle = self._stick_move and mvector3.angle(self._stick_move, math.Y)
+	local moving_forwards = angle and angle <= 15
+	local can_run = self._unit:movement():is_above_stamina_threshold()
+	local lerp_value = self:_get_melee_charge_lerp_value(t)
+	local max_charge = lerp_value and lerp_value >= 0.99
+	--local has_charged_range = self._melee_charge_bonus and self._melee_charge_bonus == true
+	--local charge_bonus_range = has_charged_range and melee_weapon.stats.charge_bonus_range or 0
+	--local range = melee_weapon.stats.range + charge_bonus_range
+
 	--Resume normal sprinting animations once melee attack is done.
 	--Making it not cancel the equip animation will require a fair amount more work, since it doesn't set the timers. Is a job for another day.
 	if self._running and not self._end_running_expire_t and not self._state_data.meleeing and self._state_data.melee_expire_t and t >= self._state_data.melee_expire_t and not self:_is_charging_weapon() and (not self:_is_reloading() or not self.RUN_AND_RELOAD) and (instant or not self._state_data.melee_repeat_expire_t) then
@@ -2319,7 +2333,10 @@ function PlayerStandard:_update_melee_timers(t, input)
 		else
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		end
-		self._camera_unit:base():unspawn_melee_item()
+		if not instant then
+			self._camera_unit:base():unspawn_melee_item()
+			self._camera_unit:base():show_weapon()
+		end
 	elseif self._state_data.meleeing then
 		local lerp_value = self:_get_melee_charge_lerp_value(t)
 
@@ -2339,20 +2356,6 @@ function PlayerStandard:_update_melee_timers(t, input)
 			}, lerp_value))
 		end
 	end
-
-    local melee_entry = managers.blackmarket:equipped_melee_weapon()
-	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
-	local instant = melee_weapon.instant
-	local no_hit_shaker = melee_weapon.no_hit_shaker
-	local melee_charger = melee_weapon.special_weapon and melee_weapon.special_weapon == "charger"
-	local angle = self._stick_move and mvector3.angle(self._stick_move, math.Y)
-	local moving_forwards = angle and angle <= 15
-	local can_run = self._unit:movement():is_above_stamina_threshold()
-	local lerp_value = self:_get_melee_charge_lerp_value(t)
-	local max_charge = lerp_value and lerp_value >= 0.99
-	--local has_charged_range = self._melee_charge_bonus and self._melee_charge_bonus == true
-	--local charge_bonus_range = has_charged_range and melee_weapon.stats.charge_bonus_range or 0
-	--local range = melee_weapon.stats.range + charge_bonus_range
 
 	-- No stamina regen while actively charging an attack with "charger" type melee weapons at max charge
 	if melee_charger and self._state_data.meleeing and max_charge then

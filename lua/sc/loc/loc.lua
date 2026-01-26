@@ -5921,7 +5921,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   COMBAT ENGINEER SUBTREE   ]]--
 				--Sharpshooter--
 				["menu_discipline_sc"] = "Sharpshooter",
-				["menu_discipline_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nLethal headshots using #{skill_color}#rifles## will have their rate of fire while set to #{risk}#semi-auto## or #{risk}#burst## increased by #{skill_color}#$skill_value_p1## for #{skill_color}#$skill_value_p2## seconds; #{skill_color}#rifles## set to #{risk}#full-auto## will see reduced effectiveness.",
+				["menu_discipline_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nLethal headshots using #{skill_color}#rifles## will have their rate of fire while set to #{risk}#semi-auto## or #{risk}#burst## increased by #{skill_color}#$skill_value_p1## for #{skill_color}#$skill_value_p2## seconds; #{skill_color}#rifles## set to #{risk}#full-auto## will only have their rate of fire increased by #{skill_color}#$skill_value_p3##.",
 
 				--Rifleman--
 				["menu_rifleman_sc"] = "Rifleman",

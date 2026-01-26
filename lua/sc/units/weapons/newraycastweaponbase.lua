@@ -1793,7 +1793,8 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 	if self:is_category("assault_rifle", "snp") and has_sharpshooter then
 		local temp_mult = managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
 		if self:fire_mode() ~= "single" then
-			temp_mult = ((temp_mult - 1) * 0.35) + 1
+			local auto_mult = tweak_data.upgrades.sharpshooter_auto_mult
+			temp_mult = ((temp_mult - 1) * auto_mult) + 1
 		end
 		multiplier = multiplier * temp_mult
 	end 

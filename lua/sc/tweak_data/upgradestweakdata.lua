@@ -1334,12 +1334,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.snp.recoil_index_addend = {2, 4} --2nd tier is in Rifleman Basic; you can't get Rifleman before this skill, so it's alright
 					self.values.assault_rifle.recoil_index_addend = {2, 4} --I'm reminded of Miku saying "I got that green onion for 90 yen, so it's alright" when I read that
 				--Ace
-					self.values.temporary.headshot_fire_rate_mult = {{1.2, 10}}
+					self.values.temporary.headshot_fire_rate_mult = {{1.25, 6}}
+					self.sharpshooter_auto_mult = 0.4
 					
 					self.skill_descs.steady_grip = {
 						skill_value_b1 = tostring(self.values.snp.recoil_index_addend[1]), -- +Stability
 						skill_value_p1 = tostring(self.values.temporary.headshot_fire_rate_mult[1][1] % 1 * 100).."%", -- RoF buff
-						skill_value_p2 = tostring(self.values.temporary.headshot_fire_rate_mult [1][2]) -- Duration of buff
+						skill_value_p2 = tostring(self.values.temporary.headshot_fire_rate_mult [1][2]), -- Duration of buff
+						skill_value_p3 = tostring(((self.values.temporary.headshot_fire_rate_mult[1][1] - 1) * self.sharpshooter_auto_mult) * 100) .. "%"
 					}
 
 			--Kilmer

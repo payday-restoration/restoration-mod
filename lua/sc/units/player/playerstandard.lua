@@ -477,13 +477,12 @@ local master_PlayerStandard_check_use_item = PlayerStandard._check_use_item
 
 local master_PlayerStandard_update = PlayerStandard.update
 function PlayerStandard:update(t, dt)
-	local logger = BLT_CarryStacker.RLog
-	logger("Request to update the player")
+	restoration:debug("Request to update the player")
 	master_PlayerStandard_update(self, t, dt)
 
 	if self ~= nil then
 		if self._get_input ~= nil then
-			logger("Storing whether the player is holding " ..
+			restoration:debug("Storing whether the player is holding " ..
 				"the use button")
 			btn_use_item_held = self._controller:get_input_bool("use_item")
 		end
@@ -491,15 +490,13 @@ function PlayerStandard:update(t, dt)
 end
 
 function PlayerStandard:use_item_held()
-	local logger = BLT_CarryStacker.Log
-	logger("Request to get whether the player is holding the " ..
+	restoration:debug("Request to get whether the player is holding the " ..
 		"use button. The answer is: " .. tostring(btn_use_item_held))
 	return btn_use_item_held
 end
 
 function PlayerStandard:block_use_item()
-	local logger = BLT_CarryStacker.Log
-	logger("Request to update the time from which the " ..
+	restoration:debug("Request to update the time from which the " ..
 		"player has to wait to use another item")
 	block_use_item_from = TimerManager:game():time()
 end

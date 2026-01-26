@@ -1613,105 +1613,6 @@ end
 _G.BLT_CarryStacker = _G.BLT_CarryStacker or {}
 
 --[[
-    Log the given message if debugging is enabled
-
-    message has to be a string
-    caller_function_level is a number. In general, this argument should 
-        be ommited. It is used to indicate what layer of the call-stack
-        contains the caller's function name. By default, it will be 2.
-        This is, the name of the caller function will be logged
-
-    The mod's logs are preceded by "[BLTCS]"
-]]
-function BLT_CarryStacker.Log(message, caller_function_level)
-    if BLT_CarryStacker.settings.toggle_debug then
-        local level = caller_function_level and caller_function_level or 2
-        local function_name = debug.getinfo(level).name
-        log("[BLTCS] - " .. function_name .. " - " .. message)
-    end
-end
-
---[[
-    Log the given message. It is expected that this log call will be 
-    repeatedly called many times per second.
-
-    The message will be logged if both debugging and repeated_logs are
-    enabled.
-
-    message has to be a string.
-]]
-function BLT_CarryStacker.RLog(message)
-    if BLT_CarryStacker.settings.toggle_repeated_logs then
-        BLT_CarryStacker.Log(message, 3)
-    end
-end
-
---[[
-    A higher order function to log the result of master_function
-
-    useRLog is a boolean value indicating whether the function should
-        use BLT_CarryStacker.Log or BLT_CarryStacker.RLog
-    master_function has to be a function
-    All other arguments passed to this function will be passed to 
-    master_function
-
-    Returns the master's function return value
-]]
-function BLT_CarryStacker.DoMasterFunction(useRLog, master_function, ...)
-    local logger = userRLog and BLT_CarryStacker.RLog or BLT_CarryStacker.Log
-    logger("The mod is not enabled. Using master function")
-    local result = master_function(...)
-    logger("The master's function result is " .. tostring(result))
-    return result
-end
-
---[[
-    STATES is a table.
-
-    It contains the different states in which the mod can be.
-
-    If the mod is ENABLED, all of its features should be usable.
-    If the mod is DISABLED, the vanilla features should be used.
-    If the mod is BEING_DISABLED, only certain features of the mod 
-        should be used. For example, the player will not be able to
-        carry more bags.
-]]
-BLT_CarryStacker.STATES = {
-    ENABLED = "enabled",
-    BEING_DISABLED = "being_disabled",
-    DISABLED = "disabled"
-}
---[[
-    NETWORK_MESSAGES is a table.
-
-    It contains the different messages ids that can be exchanged through 
-    the network.
-
-    Its content will be used as constants, and should NOT be MODIFIED 
-    on runtime.
-
-    ALLOW_MOD: Sent by the host to notify other players they can use 
-    the mod
-    REQUEST_MOD_USAGE: Sent to the host, to request using the mod
-    SET_HOST_CONFIG: Sent by the host, to synchronize configuration
-
-    Note: Modifying these ids may break backwards compatibility
-]]
-BLT_CarryStacker.NETWORK_MESSAGES = {
-    ALLOW_MOD = "BLT_CarryStacker_AllowMod",
-    REQUEST_MOD_USAGE = "BLT_CarryStacker_Request",
-    SET_HOST_CONFIG = "BLT_CarryStacker_SyncConfig"
-}
---[[
-    settings is a table.
-
-    As its name suggests, it will contain the mod's settings. For 
-    example, the movement_penalties of each type of carry/bag, whether
-    host sync is active or not, whether the mod can only be used 
-    offline...
-]]
-BLT_CarryStacker.settings = {}
---[[
     weight is a number in [0.25, 1].
 
     It represents how affected is the player's movement by the bags 
@@ -1736,49 +1637,6 @@ BLT_CarryStacker.weight = 1
     Last Out.
 ]]
 BLT_CarryStacker.stack = {}
---[[
-    host_settings is a table.
-
-    It will contain the configuration to be used when playing online
-    and not hosting the game.
-]]
-BLT_CarryStacker.host_settings = {
-    --[[
-        is_mod_allowed is a boolean variable .
-
-        It controls whether the mod should be used if the player is 
-        online and is not the host.
-
-        By default, the mod wont be used on an online lobby.
-    ]]
-    is_mod_allowed = false,
-    --[[
-        remote_host_sync is a boolean variable.
-
-        It indicates whether the movement_penalties provided by the 
-        host should be used, instead of the local ones.
-    ]]
-    remote_host_sync = false,
-    --[[
-        movement_penalties is a table.
-
-        It will contain the movement penalties to be used whenever 
-        playing online, with a host using this mod. This penalties 
-        will only be used if remote_host_sync is set to true.
-    ]]
-    movement_penalties = {}
-}
---[[
-    closePauseMenuCallbacks is a table.
-
-    It will contain the functions to be called when closing the pause
-    menu.
-
-    The keys in the table has to be the name of the setting that 
-    triggered the callback. The value has to be a function that takes 
-    no arguments.
-]]
-BLT_CarryStacker.closePauseMenuCallbacks = {}
 
 --[[
     Return the weight of a carry with id carry_id.
@@ -1796,34 +1654,18 @@ BLT_CarryStacker.closePauseMenuCallbacks = {}
 
         Note: the returned value is 10 according to default settings
 ]]
-function BLT_CarryStacker:getWeightForType(carry_id, logger)
-    logger = logger or BLT_CarryStacker.Log
-    logger("Request to get the weight of carry " .. 
+function BLT_CarryStacker:getWeightForType(carry_id)
+    restoration:debug("Request to get the weight of carry " .. 
         tostring(carry_id))
     local carry_type = tweak_data.carry[carry_id].type
     local movement_penalty = nil
-	logger("Using local movement penalties")
+	restoration:debug("Using local movement penalties")
 		
 	movement_penalty = tweak_data.carry.types[carry_type].weight
     local result = movement_penalty ~= nil 
         and ((100 -movement_penalty) / 100) 
         or 1
-    logger("The resulting weight is " .. tostring(result))
-    return result
-end
-
---[[
-    Return the current mod state
-
-    The return value one of the values of the BLT_CarryStacker.STATES
-    table.
-]]
-function BLT_CarryStacker:GetModState()
-    local logger = BLT_CarryStacker.RLog
-    logger("Request to get the mod's state")
-    local result = self.STATES.ENABLED
-
-    logger("The mod is: " .. tostring(result))
+    restoration:debug("The resulting weight is " .. tostring(result))
     return result
 end
 
@@ -1834,21 +1676,20 @@ end
 
     The return type is a boolean value.
 ]]
-function BLT_CarryStacker:CanCarry(carry_id, logger)
-    logger = logger or BLT_CarryStacker.Log
-    logger("Request to check whether the player can " ..
+function BLT_CarryStacker:CanCarry(carry_id)
+    restoration:debug("Request to check whether the player can " ..
         "carry " .. tostring(carry_id))
-    local check_weight = self.weight * self:getWeightForType(carry_id, logger)
+    local check_weight = self.weight * self:getWeightForType(carry_id)
 	local max_weight = tweak_data.player.max_carry_weight
 	
 	if managers.player:has_category_upgrade("carry", "increased_carry_weight") then
 		max_weight = max_weight - managers.player:upgrade_value("carry", "increased_carry_weight", 1)
 	end
 	
-    logger("The current weight is " .. tostring(self.weight) .. 
+    restoration:debug("The current weight is " .. tostring(self.weight) .. 
         " and the new weight is " .. tostring(check_weight))
     local result = check_weight >= max_weight
-    logger("The player can carry a bag: " .. tostring(result))
+    restoration:debug("The player can carry a bag: " .. tostring(result))
     return result
 end
 
@@ -1856,11 +1697,10 @@ end
     Add to the top of the stack the carry cdata.
 ]]
 function BLT_CarryStacker:AddCarry(cdata)
-    local logger = BLT_CarryStacker.Log
-    logger("Request to add the carry " .. tostring(cdata.carry_id))
-    logger("The previous weight was " .. tostring(self.weight))
+    restoration:debug("Request to add the carry " .. tostring(cdata.carry_id))
+    restoration:debug("The previous weight was " .. tostring(self.weight))
     self.weight = self.weight * self:getWeightForType(cdata.carry_id)
-    logger("The new weight is " .. tostring(self.weight))
+    restoration:debug("The new weight is " .. tostring(self.weight))
     table.insert(self.stack, cdata)
     self:HudRefresh()
 end
@@ -1871,20 +1711,19 @@ end
     If the stack is empty, it returns nil.
 ]]
 function BLT_CarryStacker:RemoveCarry()
-    local logger = BLT_CarryStacker.Log
-    logger("Request to remove the top-most carry from the stack")
+    restoration:debug("Request to remove the top-most carry from the stack")
     if #self.stack == 0 then
-        logger("The stack is empty. Returning")
+        restoration:debug("The stack is empty. Returning")
         return nil
     end
     local cdata = self.stack[#self.stack]
-    logger("The top-most item is: " .. tostring(cdata.carry_id))
-    logger("The previous weight was " .. tostring(self.weight))
+    restoration:debug("The top-most item is: " .. tostring(cdata.carry_id))
+    restoration:debug("The previous weight was " .. tostring(self.weight))
     self.weight = self.weight / self:getWeightForType(cdata.carry_id)
-    logger("The new weight is " .. tostring(self.weight))
+    restoration:debug("The new weight is " .. tostring(self.weight))
     table.remove(self.stack, #self.stack)
     if #self.stack == 0 then
-        logger("The stack is empty. Setting the weight to 1")
+        restoration:debug("The stack is empty. Setting the weight to 1")
         self.weight = 1
     end
     self:HudRefresh()
@@ -1896,11 +1735,10 @@ end
     carried by the player
 ]]
 function BLT_CarryStacker:HudRefresh()
-    local logger = BLT_CarryStacker.Log
-    logger("Request to refresh the HUD")
+    restoration:debug("Request to refresh the HUD")
     managers.hud:remove_special_equipment("carrystacker")
     if #self.stack > 0 then
-        logger("There are items in the stack. Adding the "
+        restoration:debug("There are items in the stack. Adding the "
             .. "corresponding special equipment icon")
         managers.hud:add_special_equipment({
             id = "carrystacker", 

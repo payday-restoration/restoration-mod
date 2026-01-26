@@ -81,6 +81,7 @@
 				<hook file="sc/core/coresetup.lua" source_file="core/lib/setups/coresetup"/>
 				<hook file="sc/core/coreworldinstancemanager.lua" source_file="core/lib/managers/coreworldinstancemanager"/>
 				<hook file="sc/core/coreenvironmentcontrollermanager.lua" source_file="core/lib/managers/coreenvironmentcontrollermanager"/>
+				<hook file="sc/core/coresequencemanager.lua" source_file="core/lib/managers/coresequencemanager"/>
 			<!--TWEAKDATA-->
 				<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
 				<hook file="sc/tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
@@ -96,8 +97,8 @@
 				<hook file="sc/tweak_data/infamynewtweakdata.lua" source_file="lib/tweak_data/infamynewtweakdata"/>
 				<hook file="sc/tweak_data/interactiontweakdata.lua" source_file="lib/tweak_data/interactiontweakdata"/>
 				<hook file="sc/tweak_data/levelstweakdata.lua" source_file="lib/tweak_data/levelstweakdata"/>
-				<hook file="sc/tweak_data/dlctweakdata.lua" source_file="lib/tweak_data/dlctweakdata"/>
 				<hook file="sc/tweak_data/lootdroptweakdata.lua" source_file="lib/tweak_data/lootdroptweakdata"/>
+				<hook file="sc/tweak_data/dlctweakdata.lua" source_file="lib/tweak_data/dlctweakdata"/>
 				<hook file="sc/tweak_data/playertweakdata.lua" source_file="lib/tweak_data/playertweakdata"/>
 				<hook file="sc/tweak_data/preplanningtweakdata.lua" source_file="lib/tweak_data/preplanningtweakdata"/>
 				<hook file="sc/tweak_data/blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
@@ -151,6 +152,7 @@
 				<hook file="sc/managers/blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
 				<hook file="sc/managers/skilltreemanager.lua" source_file="lib/managers/skilltreemanager"/>
 				<!--hook file="sc/managers/dotmanager.lua" source_file="lib/managers/dotmanager"/-->
+				<hook file="sc/managers/dlcmanager.lua" source_file="lib/managers/dlcmanager"/>
 				<hook file="sc/managers/enemymanager.lua" source_file="lib/managers/enemymanager"/>
 				<hook file="sc/managers/explosionmanager.lua" source_file="lib/managers/explosionmanager"/>
 				<hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/>
@@ -342,6 +344,7 @@
 			<!--NETWORK-->
 			<hook file="sc/utils/inventorydescription.lua" source_file="lib/utils/inventorydescription"/>
 			<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
+			<hook file="sc/states/menumainstate.lua" source_file="lib/states/menumainstate"/>
 			<hook file="sc/entry.lua" source_file="lib/entry"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
@@ -423,6 +426,7 @@
 		<hook file="sc/mutators/new/mutatorcitadelmags.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorshighnoon.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatornoammodrop.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatoradvancedtraining.lua" source_file="lib/mutators/basemutator"/>
 		<!--<hook file="sc/mutators/new/mutatorfactionreplacer.lua" source_file="lib/mutators/basemutator"/>-->
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
@@ -666,10 +670,6 @@
 					<option type="bool" default_value="true" name="StaticAim"/>
 					<option type="multichoice" default_value="2" name="ViewmodelMovement" values_tbl="restoration.vm_move"/>
 					<divider name="tod_divider" size="14"/>
-					<option type="bool" default_value="false" name="BWAResmod"/>
-					<option type="bool" default_value="false" name="BWAResmodBob"/>
-					<option type="bool" default_value="false" name="BWAResmodSway"/>
-					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="RunAndShootAnims"/>
 					<divider name="tod_divider" size="14"/>
 					<button name="ToggleAnims" disabled="true"/>
@@ -771,6 +771,16 @@
 				<option type="number" default_value="0.5" min="0" max="1" step="0.01" show_value="true" name="AdvMovDashScreenEffectAlpha"/>
 				<divider name="tod_divider" size="8"/>
 				<option type="number" default_value="0.5" min="0" max="1" step="0.01" show_value="true" name="AdvMovSlideScreenEffectAlpha"/>
+			</option_group>
+			<option_group name="BWAResOpt">
+				<option type="bool" default_value="false" name="BWAResmod"/>
+				<divider name="tod_divider" size="14"/>
+				<option type="bool" default_value="false" name="BWAResmodBob"/>
+				<option type="bool" default_value="false" name="BWAResmodBobADS"/>
+				<divider name="tod_divider" size="7"/>
+				<option type="bool" default_value="false" name="BWAResmodSway"/>
+				<option type="number" default_value="0.45" min="0" max="5" step="0.01" show_value="true" name="BWAResmodSwayStr"/>
+				<option type="number" default_value="0.03" min="0" max="1" step="0.01" show_value="true" name="BWAResmodADSSwayStr"/>
 			</option_group>
         </options>
     </Options>

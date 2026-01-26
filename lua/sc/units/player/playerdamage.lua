@@ -629,15 +629,11 @@ function PlayerDamage:damage_bullet(attack_data)
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				local unit_movement = self._unit:movement()
-				local drain_mult = 0.5
+				local drain_mult = 0
 				if unit_movement then
 					local current_state = unit_movement and unit_movement.current_state and unit_movement:current_state()
 					local advmov = current_state and (current_state:in_air() or current_state._is_sliding or current_state._is_wallrunning)
-					local freefall = unit_movement:current_state_name() == "jerry1" or unit_movement:current_state_name() == "jerry2"
-					local crouched = not advmov and unit_movement:crouching()
-					if crouched or freefall or unit_movement:zipline_unit() or current_state.driving or current_state._moving ~= true then
-						drain_mult = 0
-					elseif (unit_movement:running() or advmov) then
+					if (unit_movement:running() or advmov) then
 						drain_mult = 1
 					end
 				end
@@ -1366,8 +1362,10 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 			local hurt_decay = pm:upgrade_value("player", "buildup_meter", 0).hurt_decay + hurt_decay_mod
 			local hurt_t_mod = (pm:has_category_upgrade("player", "buildup_meter_quickening") and (math.floor(self:_raw_max_armor()/pm:upgrade_value("player", "buildup_meter_quickening",0).armor_steps) * pm:upgrade_value("player", "buildup_meter_quickening", 0).hurt_t_mod)) or 0
 			local hurt_t = pm:upgrade_value("player", "buildup_meter", 0).hurt_t
+			local groupai = managers.groupai and managers.groupai:state()
+			local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 			local combo_t_mod = (pm:has_category_upgrade("player", "buildup_meter_zack") and pm:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
-			local combo_t = pm:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
+			local combo_t = pm:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 			pm._buildup_meter = math.max( 0, managers.player._buildup_meter - hurt_decay )
 			pm._buildup_meter_t = combo_t
 			managers.hud:start_buff("sociopath", pm._buildup_meter_t)
@@ -1820,8 +1818,10 @@ function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_s
 		end
 		if managers.player:has_category_upgrade("player", "buildup_meter") and managers.player._buildup_meter then
 			local pm = managers.player
+			local groupai = managers.groupai and managers.groupai:state()
+			local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 			local combo_t_mod = (pm:has_category_upgrade("player", "buildup_meter_zack") and pm:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
-			local combo_t = pm:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
+			local combo_t = pm:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 			if managers.player:has_category_upgrade("player", "buildup_meter_earl") then
 				pm._buildup_meter_t = 0
 				pm._buildup_meter = 0

@@ -4,7 +4,7 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 return {
     -- Nasty Elevator surprise
     -- Enable them in loud first 
-    [100021] = {
+    [102551] = {
         on_executed = {
         {id = 400005, delay = 0},
         },

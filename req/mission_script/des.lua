@@ -16,30 +16,30 @@ return {
 	[100296] = {
 		ponr = ponr_value
 	},
-	[100304] = {
+[100304] = { -- objective 1 completed
 		reinforce = {
 			{
-				name = "main_hall",
-				force = 5,
-				position = Vector3(-120, -2400, 100),
-			}
+				name = "entrance",
+				force = 3,
+				position = Vector3(-1400, 2700, 0),
+			},
+			{
+				name = "hub",
+				force = 3,
+				position = Vector3(-150, -1225, 0),
+			},
 		},
 	},
 	[100286] = {
-		reinforce = { 
-		{ name = "main_hall" },
-		{ name = "hub" },
-		},
-	},
-	[100474] = {
 		reinforce = {
+			{ name = "entrance" },
+			{ name = "hub" },
 			{
-				name = "hub",
-				force = 3, 
-				position = Vector3(-421, -2484, 99.363),
+				name = "hub_escape",
+				force = 3,
+				position = Vector3(25, -350, 0),
 			},
 		},
-
 	},
 	-- Enabling specific room defenses 
 	[104652] = {
@@ -54,6 +54,8 @@ return {
 			{ id = 400001, delay = 0 ,},
 			{ id = 400002, delay = 0 ,},
 			{ id = 400005, delay = 0 ,},
+			{ id = 400025, delay = 0 ,},
+			{id =  400026, delay = 0 ,}, 
 		},
 	},
 -- Heavy Resistance on Escape 

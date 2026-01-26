@@ -4661,129 +4661,102 @@ function BlackMarketGui:update_info_text()
 			local weapon_category = nil
 			local is_akimbo = false
 			local firemode_string = ""
-			local add_burst, add_auto, burst_to_auto, auto_to_burst, lock_burst, lock_auto, lock_volley, lock_semi, lock_firemode, add_firemode, swap_firemode, firemode_modded = nil
+
+			local firemode = {
+				lock = nil,
+				add = nil,
+				swap_from = nil,
+				swap_to = nil,
+				modded = false
+			}
 
 			local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 			local custom_stats = crafted and managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
 			local maralohk = nil
-			if custom_stats then --GROSS and UGLY garbage
+			if custom_stats then
 				for part_id, stats in pairs(custom_stats) do
 					if stats.hey_kiddo then
 						maralohk = true
 					end
-				end
-				for part_id, stats in pairs(custom_stats) do
 					if stats.info_lock_burst then
-						lock_burst = true
-						lock_firemode = true
-						firemode_modded = not stats.ignore_modify_firemode and true
-						break
+						firemode.lock = "burst"
 					elseif stats.info_lock_auto then
-						lock_auto = true
-						lock_firemode = true
-						firemode_modded = not stats.ignore_modify_firemode and true
-						break
+						firemode.lock = "auto"
 					elseif stats.info_lock_volley then
-						lock_volley = true
-						lock_firemode = true
-						firemode_modded = not stats.ignore_modify_firemode and true
-						break
+						firemode.lock = "volley"
 					elseif stats.info_lock_semi then
-						lock_semi = true
-						lock_firemode = true
-						firemode_modded = not stats.ignore_modify_firemode and true
+						firemode.lock = "semi"
 					end
-				end
-				if not lock_firemode then
-					for part_id, stats in pairs(custom_stats) do
-						if stats.info_burst_to_auto then
-							burst_to_auto = true
-							swap_firemode = true
-							firemode_modded = not stats.ignore_modify_firemode and true
-							break
-						elseif stats.info_auto_to_burst then
-							auto_to_burst = true
-							swap_firemode = true
-							firemode_modded = not stats.ignore_modify_firemode and true
-							break
-						elseif stats.info_add_auto then
-							add_auto = true
-							add_firemode = true
-							firemode_modded = not stats.ignore_modify_firemode and true
-						elseif stats.info_add_burst then
-							add_burst = true
-							add_firemode = true
-							firemode_modded = not stats.ignore_modify_firemode and true
-						elseif stats.modify_firemode then
-							firemode_modded = true
-						end
+
+					if firemode.lock then
+						firemode.modded = not stats.ignore_modify_firemode
+						break
+					end
+
+					if stats.info_burst_to_auto then
+						firemode.swap_from = "burst"
+						firemode.swap_to = "auto"
+					elseif stats.info_auto_to_burst then
+						firemode.swap_from = "auto"
+						firemode.swap_to = "burst"
+					end
+
+					if stats.info_add_auto then
+						firemode.add = "auto"
+					elseif stats.info_add_burst then
+						firemode.add = "burst"
+					end
+
+					if firemode.add or firemode.swap_from then
+						firemode.modded = not stats.ignore_modify_firemode
 					end
 				end
 			end
-
+			local starting_firemode = weapon_tweak and weapon_tweak.FIRE_MODE
+			if starting_firemode == "single" then
+				starting_firemode = "semi"
+			end
+			local burst_firemode = weapon_tweak and weapon_tweak.BURST_FIRE
+			local toggle_firemode = weapon_tweak and weapon_tweak.CAN_TOGGLE_FIREMODE
 			if weapon_tweak then
 				if weapon_tweak.categories then
-					if weapon_tweak.categories[1] == "akimbo" then
+					if table.contains(weapon_tweak.categories, "akimbo") then
 						is_akimbo = true
 					end
 					weapon_category = is_akimbo and weapon_tweak.categories[2] or weapon_tweak.categories[1]
 				end
-				if not lock_firemode then
-					if weapon_tweak.FIRE_MODE == "single" then
-						firemode_string = managers.localization:to_upper_text("st_menu_firemode_semi")
-					elseif weapon_tweak.FIRE_MODE == "auto" then
-						firemode_string = managers.localization:to_upper_text("st_menu_firemode_auto")
-					end
-					if weapon_tweak.CAN_TOGGLE_FIREMODE then
-						if weapon_tweak.FIRE_MODE == "single" then
-							firemode_string = managers.localization:to_upper_text("st_menu_firemode_semi") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_auto")
+				if not firemode.lock then
+					firemode_string = managers.localization:to_upper_text("st_menu_firemode_" .. starting_firemode)
+					if starting_firemode == "volley" and toggle_firemode then
+						firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_auto")
+					elseif toggle_firemode then
+						if starting_firemode == "semi" then
+							firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_auto")
 						else
-							firemode_string = managers.localization:to_upper_text(auto_to_burst and "st_menu_firemode_burst" or "st_menu_firemode_auto") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_semi")
+							firemode_string = managers.localization:to_upper_text(firemode.swap and "st_menu_firemode_burst" or "st_menu_firemode_auto") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_semi")
 						end
 					end
-					if add_burst then
-						firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst")
+					if firemode.add then
+						firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_" .. firemode.add)
 					end
-					if add_auto then
-						firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_auto")
-					end
-					if weapon_tweak.BURST_FIRE and type(weapon_tweak.BURST_FIRE) == "table" then
-						local burst_type = nil --weapon_tweak.BURST_TYPE
-						if weapon_tweak.BURST_FIRE.lock or lock_burst then
+					if burst_firemode then
+						if burst_firemode.lock then
 							firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst")
+						elseif (is_akimbo and not toggle_firemode) or burst_firemode.burst_default then
+							firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
 						else
-							if burst_to_auto then
-								firemode_string = managers.localization:to_upper_text("st_menu_firemode_auto") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_semi")
-							elseif burst_type then
-								if burst_type == "fan" then
-									firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst_fanning") or managers.localization:	to_upper_text("st_menu_firemode_burst_fanning")
-								elseif burst_type == "slam" then
-									firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst_slamfire") or managers.localization:	to_upper_text("st_menu_firemode_burst_slamfire")
-								elseif burst_type == "rapid" then
-									firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst_rapidfire") or managers.localization:	to_upper_text("st_menu_firemode_burst_rapidfire")
-								elseif burst_type == "autoburst" then
-									firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst_autoburst") or managers.localization:	to_upper_text("st_menu_firemode_burst_autoburst")
-								end
-							elseif is_akimbo or weapon_tweak.BURST_FIRE.burst_default then
-								firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
-							elseif auto_to_burst then
-							else
-								firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst") or managers.localization:to_upper_text("st_menu_firemode_burst")
-							end
+							firemode_string = (not burst_firemode.lock and (firemode_string .. "+") or "") .. managers.localization:to_upper_text("st_menu_firemode_burst")
+						end
+					else
+						if firemode.swap_from then
+							firemode_string = managers.localization:to_upper_text("st_menu_firemode_" .. firemode.swap_to) .. "+" .. managers.localization:to_upper_text("st_menu_firemode_semi")
 						end
 					end
 					if weapon_tweak.fire_mode_data and weapon_tweak.fire_mode_data.volley then
 						firemode_string = managers.localization:to_upper_text("st_menu_firemode_auto") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_volley")
 					end
-					if weapon_tweak.FIRE_MODE == "volley" then
-						if weapon_tweak.CAN_TOGGLE_FIREMODE then
-							firemode_string = managers.localization:to_upper_text("st_menu_firemode_volley") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_auto")
-						else
-							firemode_string = managers.localization:to_upper_text("st_menu_firemode_volley")
-						end
-					end
-				elseif lock_firemode then
-					firemode_string = lock_burst and managers.localization:to_upper_text("st_menu_firemode_burst") or lock_auto and managers.localization:to_upper_text("st_menu_firemode_auto") or lock_volley and managers.localization:to_upper_text("st_menu_firemode_volley") or managers.localization:to_upper_text("st_menu_firemode_semi")
+				elseif firemode.lock then
+					firemode_string = managers.localization:to_upper_text("st_menu_firemode_" .. firemode.lock)
 				else
 					firemode_string = "temp"
 				end
@@ -4807,7 +4780,7 @@ function BlackMarketGui:update_info_text()
 					managers.localization:to_upper_text("st_menu_firemode") .. " ##" ..  firemode_string .. "##"
 
 					table.insert(resource_color, tweak_data.screen_colors.skill_color)
-					table.insert(resource_color, (add_firemode and tweak_data.screen_colors.stats_positive) or (firemode_modded and tweak_data.screen_colors.risk)  or tweak_data.screen_colors.skill_color)
+					table.insert(resource_color, (firemode.add and tweak_data.screen_colors.stats_positive) or (firemode.modded and tweak_data.screen_colors.risk)  or tweak_data.screen_colors.skill_color)
 				end
 			end
 

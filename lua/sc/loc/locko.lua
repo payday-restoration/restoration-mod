@@ -22,6 +22,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["menu_utility_radial_menu_name"] = "유틸리티 방사형 메뉴",
 		["menu_utility_radial_menu_desc"] = "유틸리티 메뉴를 엽니다.",
 
+		["resmod_1st_time_title"] = "Placeholder title",
+		["resmod_1st_time_desc"] = "Placeholder text info",
+		["resmod_1st_time_confirm"] = "OK",		
+
 		["res_credits"] = "레스토레이션 모드 크레딧",
 		["res_credits_help"] = "레스토레이션 모드의 크레딧을 봅니다.",
 
@@ -29,7 +33,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 
 		["res_saveboost"] = "$BTN_INTERACT 키를 길게 눌려 레벨 100으로 업그레이드 하기",
 
-		["RestorationModOptionsButtonTitleID"] = "레스토레이션 모드 옵션",
+		["RestorationModOptionsButtonTitleID"] = "===레스토레이션 모드 옵션===",
 		["RestorationModOptionsButtonDescID"] = "레스토레이션 모드의 옵션을 엽니다.",
 
 		["RestorationModHUDOptionsButtonTitleID"] = "레스토레이션 HUD와 UI 옵션을 엽니다.",
@@ -232,13 +236,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 						["vm_vanilla"] = "바닐라 행동",
 						["vm_drag"] = "무기가 뒤로 끌려감",
 						["vm_lead"] = "무기가 앞으로 나아감",
-						["vm_static"] = "정적 (움직임 없음)",
-					["RestorationModBWAResmodTitleID"] = "\"Better Weapon Animations\" 뷰모델 움직임",
-					["RestorationModBWAResmodDescID"] = "Return의 \"Better Weapon Animations\" 뷰모델 동작의 커스텀 버전을 활성화합니다. 위의 움직임 설정을 재정의합니다. 완전히 적용하려면 재시작해야 합니다.",
-					["RestorationModBWAResmodBobTitleID"] = "정조준 뷰밥",
-					["RestorationModBWAResmodBobDescID"] = "정조준 중 이동할 때 뷰밥을 활성화합니다.",
-					["RestorationModBWAResmodSwayTitleID"] = "뷰모델 시선 돌리기 드래그",
-					["RestorationModBWAResmodSwayDescID"] = "무기를 움직이는 시선 뒤로 끌 수 있도록 활성화합니다.",						
+						["vm_static"] = "정적 (움직임 없음)",					
 					["RestorationModNoADSRecoilAnimsTitleID"] = "정조준 반동 애니메이션 없음",
 					["RestorationModNoADSRecoilAnimsDescID"] = "정조준 반동 애니메이션을 활성화/비활성화합니다. 일부 무기(예: 수동식 총기, 활, 화염 방사기)는 이 옵션의 영향을 받지 않습니다.",			
 					["RestorationModADSTransitionStyleTitleID"] = "정조준 스타일",
@@ -356,9 +354,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["restoration_level_data_unknown"] = "시간 미상, 위치 미상",
 
 		["RestorationModOtherModsTitleID"] = "===기타 모드 옵션===",
-		["RestorationModOtherModsDescID"] = "다른 모드에 대한 추가 옵션을 엽니다.",
-			["RestorationModAdVMovResOptOptionsButtonTitleID"] = "\"Advanced Movement Standalone\" 옵션",
-			["RestorationModAdVMovResOptOptionsButtonDescID"] = "Solo Queue Pixy의 \"Advanced Movement Standalone\" 모드에 대한 추가 옵션입니다.",
+		["RestorationModOtherModsDescID"] = "다른 모드에 대한 추가 옵션을 엽니다. 일부 옵션은 효과를 볼려면 원본 모드가 설치되어 있어야 합니다.",
+			["RestorationModAdVMovResOptOptionsButtonTitleID"] = AdvMov and "\"Advanced Movement Standalone\"" or "\"Advanced Movement Standalone\" (설치되지 않음)",
+			["RestorationModAdVMovResOptOptionsButtonDescID"] = "Solo Queue Pixy의 \"Advanced Movement Standalone\" 모드에 대한 추가 옵션을 엽니다.\n참고: 원본 모드가 설치되어 있어야 합니다.",
 				["RestorationModAdvMovBackstepTitleID"] = "앞으로만 입력 시 뒤로 대시",
 				["RestorationModAdvMovBackstepDescID"] = "앞으로만 입력해도 뒤로 돌진할 수 있도록 설정합니다.",
 				["RestorationModAdvMovDashScreenEffectAlphaTitleID"] = "대시 화면 효과 강도",
@@ -372,9 +370,23 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["resmod_advmov_melee_on"] = "기본",
 					["resmod_advmov_melee_loud_only"] = "라우드에만",
 					["resmod_advmov_melee_off"] = "비활성화",
-		["bm_melee_advmov"] = "킥",
-	    ["bm_melee_advmov_slidekick"] = "슬라이드 킥",
-		["bm_melee_advmov_wallkick"] = "월킥",
+				["bm_melee_advmov"] = "킥",
+				["bm_melee_advmov_slidekick"] = "슬라이드 킥",
+				["bm_melee_advmov_wallkick"] = "월킥",
+			["RestorationModBWAResOptOptionsButtonTitleID"] = "\"Better Weapon Animations\"",
+			["RestorationModBWAResOptOptionsButtonDescID"] = "return의 \"Better Weapon Animations\" 모드의 커스텀 버전에 대한 추가 옵션을 엽니다.",
+					["RestorationModBWAResmodTitleID"] = "\"Better Weapon Animations\" 활성화",
+					["RestorationModBWAResmodDescID"] = "return의 \"Better Weapon Animations\" 커스텀 버전의 뷰모델 움직임을 활성화합니다. \"뷰모델 및 애니메이션 옵션\"의 일부 설정을 재설정합니다.",			
+					["RestorationModBWAResmodBobTitleID"] = "화면 흔들림",
+					["RestorationModBWAResmodBobDescID"] = "이동할 때 화면 흔들림을 활성화합니다.\n활성화 시 바닐라의 화면 흔들림을 비활성화합니다.",
+					["RestorationModBWAResmodBobADSTitleID"] = "정조준 화면 흔들림",
+					["RestorationModBWAResmodBobADSDescID"] = "정조준 중 이동할 때 화면 흔들림을 활성화합니다.",					
+					["RestorationModBWAResmodSwayTitleID"] = "뷰모델 시선 돌리기 드래그",
+					["RestorationModBWAResmodSwayDescID"] = "무기를 움직이는 시선 뒤로 끌 수 있도록 활성화합니다.",
+					["RestorationModBWAResmodSwayStrTitleID"] = "최대 양",
+					["RestorationModBWAResmodSwayStrDescID"] = "주변을 둘러볼 때 무기가 움직이는 양을 변경합니다. (기본값 0.45)",
+					["RestorationModBWAResmodADSSwayStrTitleID"] = "정조준 강도 배율",
+					["RestorationModBWAResmodADSSwayStrDescID"] = "정조준 중 주변을 둘러볼 때 무기가 움직이는 양을 기본 움직임에 비레해 변경합니다. (기본값 0.05)",
 
 		--EXTRA OPTIONS
 		["RestorationModAltLastDownColorTitleID"] = "대체 마지막 다운 컬러 그레이딩",
@@ -1449,7 +1461,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--Taser UGL Nades
 		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#360##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
 		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#180##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
-		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#300##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
+		["bm_wp_upg_a_grenade_launcher_electric_spam_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#300##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",		
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#3##미터 반경 내에 #{skill_color}#300##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
 		--Gas UGL Nades
 		["bm_wp_upg_a_grenade_launcher_poison"] = "만티코어-6 유탄",
 		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "목표에 적중 시 #{stats_positive}#유독가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터이며, #{skill_color}#8##초 동안 지속됩니다. 가스는 #{skill_color}#8##초에 걸쳐 #{skill_color}#240##의 피해를 가하며, 가스에 갇힌 대부분의 적에게 #{stats_positive}#구토##를 #{important_1}#한 번## 유발합니다.",
@@ -2327,15 +2340,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_w_duke1911_desc"] = "#{important_1}#Hail to the king, baby!##",
 
 		--Bipod--
-		["bm_sc_bipod_desc_pc"] = "유효한 표면 위에서 #{skill_color}#$BTN_BIPOD## 키를 눌러 거치하고 다시 누르면 해제합니다.\n\n거치 중에는 수직 반동이 #{skill_color}#50%## 감소하고, 수평 반동이 #{skill_color}#75%## 감소하며, 사거리가 #{skill_color}#30%## 증가합니다.\n\n#{item_stage_2}#거치에 관련된 추가 옵션은 레스토레이션 모드의 무기 옵션 메뉴에서 찾을 수 있습니다.##",
-		["bm_sc_bipod_desc"] = "유효한 표면 위에서 #{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 거치하고 다시 누르면 해제합니다.\n\n거치 중에는 수직 반동이 #{skill_color}#50%## 감소하고, 수평 반동이 #{skill_color}#75%## 감소하며, 사거리가 #{skill_color}#30%## 증가합니다.\n\n#{item_stage_2}#거치에 관련된 추가 옵션은 레스토레이션 모드의 무기 옵션 메뉴에서 찾을 수 있습니다.##",
+		["bm_sc_bipod_desc_pc"] = "유효한 표면 위에서 #{skill_color}#$BTN_BIPOD## 키를 눌러 거치하고 다시 누르면 해제합니다.\n\n거치 중에는 수직 반동이 #{skill_color}#50%## 감소하고 수평 반동은 #{skill_color}#75%## 감소하며, 사거리가 #{skill_color}#30%## 증가합니다.\n\n#{item_stage_2}#거치에 관련된 추가 옵션은 레스토레이션 모드의 무기 옵션 메뉴에서 찾을 수 있습니다.##",
+		["bm_sc_bipod_desc"] = "유효한 표면 위에서 #{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 거치하고 다시 누르면 해제합니다.\n\n거치 중에는 수직 반동이 #{skill_color}#50%## 감소하고 수평 반동은 #{skill_color}#75%## 감소하며, 사거리가 #{skill_color}#30%## 증가합니다.\n\n#{item_stage_2}#거치에 관련된 추가 옵션은 레스토레이션 모드의 무기 옵션 메뉴에서 찾을 수 있습니다.##",
 		["hud_hint_bipod_moving"] = "이동 중에는 거치할 수 없습니다.",
 		["hud_hint_bipod_slide"] = "슬라이딩 중에는 거치할 수 없습니다.",
 		["hud_hint_bipod_air"] = "공중에 떠 있을 동안에는 거치할 수 없습니다.",
 		["hud_hint_bipod_lean"] = "기울이는 동안에는 거치할 수 없습니다.",
 		["hud_hint_bipod_midstance"] = "자세를 바꾸는 동안에는 거치할 수 없습니다.",
 
-		["hud_interact_autumn_disable"] = "캡틴 오텀에 의해 비활성화 되었습니다!",
+		["hud_interact_autumn_disable"] = "캡틴 어텀에 의해 무력화 되었습니다!",
 
 		["hud_assault_restored_down"] = "어썰트에서 살아남아 다운 1회가 회복되었습니다.",
 		["hud_assault_remaining_single"] = "다운 회복까지 어썰트 1회 남았습니다.",
@@ -2359,7 +2372,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_menu_bonus_recoil_p1"] = "경미한 안정성 보너스 및 명중률 패널티",
 		["bm_menu_bonus_recoil_p1_mod"] = "경미한 안정성 수정치",
 		["bm_menu_bonus_recoil_p2"] = "상당한 안정성 보너스 및 명중률 패널티",
-		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "자신과 팀원에게 +3%의 추가 경험치를 제공합니다.",
+		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "자신과 팀원에게 추가 경험치 3%를 제공합니다.",
 		["bm_menu_spread"] = "명중률\n",
 		["bm_menu_recoil"] = "안정성\n",
 		["bm_menu_concealment"] = "기동성\n",
@@ -2373,21 +2386,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_wp_upg_i_autofire_desc"] = "무기를 #{risk}#자동 사격으로 고정합니다.##",
 
 		--Throwables--
-		["bm_dynamite_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- 다른 투척물에 비해 튀고 굴러가는 일이 적습니다.\n\n바위를 효과적으로 폭파시키도록 설계되었습니다. 사람을 폭파시키는 것도 더욱 효과적이죠.",
+		["bm_dynamite_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- 다른 투척물에 비해 튀고 굴러가는 일이 적습니다.\n\n바위를 효과적으로 폭파시키도록 설계되었습니다. 사람을 폭파시키는 것도 더욱 효과적이죠.",
 		--Frag
-		["bm_grenade_frag_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 폭발성 수류탄입니다. 뭐, 더 설명할 게 있나요?",
+		["bm_grenade_frag_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 폭발성 수류탄입니다. 뭐, 더 설명할 게 있나요?",
 		--Community Frag
-		["bm_grenade_frag_com_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 수류탄에 세련된 새로운 모습을 더해, 매 폭발마다 더욱 오버킬의 느낌을 더할 것입니다.",
+		["bm_grenade_frag_com_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 수류탄에 세련된 새로운 모습을 더해, 매 폭발마다 더욱 오버킬의 느낌을 더할 것입니다.",
 		--Community Frag 2
-		["bm_grenade_dada_com_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n인형의 바깥층은 폭발적인 내부 작용을 숨깁니다. 조국에 대한 헌사죠.",
-		--Snowball
-		["bm_grenade_xmas_snowball"] = "스노볼", --there is a fucking space at the end of the original string
-		["bm_grenade_xmas_snowball_desc"] = "피해량 (직격): #{skill_color}#90##\n피해량 (폭발): #{risk}#180## \n범위: #{skill_color}#1m## \n지연 시간: #{skill_color}#충격 시 폭발## \n재생 속도: #{skill_color}#$regen 마다 1개##\n탄약 상자 재생 보너스: #{skill_color}#$regen_t## \n\n물에 담그고, 냉동고에 넣으면 치명적인 투척 무기가 됩니다. 참 쉽죠.",
-		--Zapper
-		["bm_grenade_electric_desc"] = "피해량: #{skill_color}#400## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#대부분의 적을 감전시킵니다.## \n\n파편도 좋지만, 어떤 것들은 지져줘야죠. 이 작은 이쁜이는 고전압으로 피해를 가하는 데 꽤나 실용적인 녀석입니다.",
+		["bm_grenade_dada_com_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n인형의 바깥층은 폭발적인 내부 작용을 숨깁니다. 조국에 대한 헌사죠.",
 		--Sticky
 		["bm_grenade_sticky_grenade"] = "샘텍스 수류탄",
-		["bm_grenade_sticky_grenade_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#2.5초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n사람을 포함한 대부분의 표면에 부착되는 투척용 폭발성 혼합물입니다!",
+		["bm_grenade_sticky_grenade_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#2.5초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n대부분의 표면과 사람한테 달라붙는 투척용 폭발성 혼합물입니다!",
+		--Snowball
+		["bm_grenade_xmas_snowball"] = "스노볼", --there is a fucking space at the end of the original string
+		["bm_grenade_xmas_snowball_desc"] = "피해량 (직격): #{skill_color}#90##\n피해량 (폭발): #{risk}#180## \n범위: #{skill_color}#1m## \n지연 시간: #{skill_color}#충격 시 폭발## \n재생 속도: #{skill_color}#$regen 마다 1개##\n탄약 상자 재생 보너스: #{skill_color}#$regen_t## \n\n물에 담그고, 냉동고에 넣기만 하면 치명적인 투척 무기를 얻을 수 있습니다. 참 쉽죠?",
+		--Zapper
+		["bm_grenade_electric_desc"] = "피해량: #{skill_color}#400## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#대부분의 적을 감전시킵니다.## \n\n파편도 좋지만, 어떤 것들은 지져줘야죠. 이 작은 이쁜이는 고전압으로 피해를 가하는 데 꽤나 실용적인 녀석입니다.",
 		--Molotov
 		["bm_grenade_molotov_desc"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n불붙은 천이 있는 인화성 액체가 담긴 부서지는 병입니다. 저렴하고 간단하지만 매우 효과적이죠. 이걸로 전부 태워 버리세요.",
 		["bm_grenade_molotov_desc_short"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.",
@@ -2495,7 +2508,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_w_x_socom"] = "아킴보 Anubis .45",
 				--S&W .500
 				["bm_w_shatters_fury"] = "Phoenix .500",
-				["bm_wp_shatters_fury_desc"] = "엄청난 반동과 저지력을 가진 거대한 .500 탄을 사용하는 리볼버입니다. 샤터가 사용하는 무기죠.\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
+				["bm_wp_shatters_fury_desc"] = "엄청난 반동과 저지력을 가진 거대한 .500 탄을 사용하는 리볼버입니다. 샤터가 사용하는 무기죠.\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "호루스 총열",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "셰더 총열",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "하토르 총열",
@@ -2697,7 +2710,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_chinchilla_sc_desc"] = "강력하고 정확하며 스타일리시합니다. DC에서 더 튼튼한 적을 돌파하는 데 편리하죠.\n\n#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가하고 다수의 적을 관통할 수 있습니다.##",
 				["bm_x_chinchilla_sc_desc"] = "시카리오는 자신의 대상을 확실히 제거해야 하는데, 이 두 리볼버가 그것을 보장해 줄 겁니다.\n\n#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가하고 다수의 적을 관통할 수 있습니다.##",
 				--RUS-12
-				["bm_rsh12_sc_desc"] = "한 손으로 벌이는 구경 대결의 최종 종결자입니다.\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
+				["bm_rsh12_sc_desc"] = "한 손으로 벌이는 구경 대결의 최종 종결자입니다.\n\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",
+				["bm_rsh12_sc_iw_desc"] = "3점사 탄도 권총. 빠른 3점사 사격이 가능한 삼중 약실 구조를 갖추고 있습니다.\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
 				--SAA/Peacemaker
 				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#역사상 가장 뛰어난 권총.##\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 사거리가 감소하며 조준이 불가능해지는 대신## #{skill_color}#발사 속도가 증가하는## 팬링을 할 수 있습니다.",
 				--SAA/Peacemaker
@@ -2723,7 +2737,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--GSh18
 					["bm_gsh18_sc_desc"] = "#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가합니다.##",
 					--Nagant Revolver
-					["bm_m1895_sc_desc"] = "19세기 후반에 개발된 7연발 리볼버이자 소음기를 사용할 수 있는 몇 안 되는 리볼버 중 하나입니다. 하지만 #{risk}#이상하게도## 이 모델은 6연발 실린더를 장착하고 있습니다.\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 사거리가 감소하며 조준이 불가능해지는 대신## #{skill_color}#발사 속도가 증가하는## 팬링을 할 수 있습니다.",
+					["bm_m1895_sc_desc"] = "19세기 후반에 개발된 7연발 리볼버이자 소음기를 사용할 수 있는 몇 안 되는 리볼버 중 하나입니다. 하지만 #{risk}#이상하게도## 이 모델은 6연발 실린더를 장착하고 있습니다.\n\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 사거리가 감소하며 조준이 불가능해지는 대신## #{skill_color}#발사 속도가 증가하는## 팬링을 할 수 있습니다.",
 					--AF2011
 					["bm_af2011_sc_desc"] = "시대를 초월한 명작의 100주년을 기념하기 위해 제작된 권총입니다. 이제 #{risk}#총열이 두 배##로 늘었습니다!",
 					["bm_wp_upg_af2011_a_uno_desc"] = "총열이 동시에 발사되지 않고 개별적으로 발사되도록 만드는 내부 개조품입니다.",
@@ -5278,7 +5292,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["hint_short_max_pagers"] = "페이저를 소홀히 하면 경비원의 의심이 크게 높아집니다.",
 
 		--And now we're doing it again--
-		["menu_infamy_desc_root_new"] = "엘리트 범죄자로서 새로 시작하려면, 가장 먼저 여러분의 수준에 걸맞은 장비를 얻고 축하 팡파르를 울리는 것부터 시작해야겠군요.\n\n보너스:\n악명 아이템의 등장 확률이 ##0.3%##에서 ##$0.6%##로 증가합니다.\n획득 경험치가 ##5%##만큼 증가합니다.",
+		["menu_infamy_desc_root_new"] = "엘리트 범죄자로서 새로 시작하려면, 가장 먼저 여러분의 수준에 걸맞은 장비를 얻고 축하 팡파르를 울리는 것부터 시작해야겠군요.\n\n보너스:\n악명 아이템의 등장 확률이 ##0.3%##에서 ##$0.6%##로 증가합니다.\n획득 경험치가 ##5%## 증가합니다.",
 
 		--Renaming some of the skill subtrees--
 		["st_menu_mastermind_single_shot"] = "돌격",
@@ -5393,13 +5407,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["menu_mutator_captain_replace_spring"] = "스프링",
 		["menu_mutator_captain_replace_summer"] = "서머스",
 		["menu_mutator_captain_replace_hvh"] = "HHHTDFH",
+		["menu_mutator_captain_cooldown"] = "캡틴 쿨다운 (초 단위)",
 		["menu_mutator_winter_blacklist_toggle"] = "\"랜덤\" 옵션에 윈터스를 블랙리스트에 추가",
 		["menu_mutator_spring_blacklist_toggle"] = "\"랜덤\" 옵션에 스프링을 블랙리스트에 추가",
 		["menu_mutator_summer_blacklist_toggle"] = "\"랜덤\" 옵션에 서머스를 블랙리스트에 추가",
 		["menu_mutator_autumn_blacklist_toggle"] = "\"랜덤\" 옵션에 어텀을 블랙리스트에 추가",
 		["menu_mutator_hvh_blacklist_toggle"] = "\"랜덤\" 옵션에 HHHTDFH를 블랙리스트에 추가",
 		["mutator_captain_replace_desc"] = "하이스트 중에 스폰되는 캡틴을 변경합니다.",
-		["mutator_captain_replace_longdesc"] = "하이스트 도중에 스폰하는 캡틴을 선택한 캡틴으로 변경합니다.\n\n주의: 스크립트된 캡틴 엔카운터는 변경되지 않습니다. \"무작위\" 옵션에서 모든 캡틴을 블랙리스트에 등록하면 \"변경 없음\" 옵션을 대신 사용합니다.",
+		["mutator_captain_replace_longdesc"] = "하이스트 도중에 스폰하는 캡틴을 선택한 캡틴으로 변경합니다.\n\n주의: 스크립트 캡틴 엔카운터에는 영향을 주지 않습니다. \"랜덤\" 옵션에서 모든 캡틴을 블랙리스트에 등록하면 \"변경 없음\" 옵션을 대신 사용합니다.",
 
 		["mutator_no_outlines"] = "전문가 리얼리즘",
 		["mutator_no_outlines_desc"] = "대부분의 외곽선이 비활성화됩니다.",
@@ -5695,7 +5710,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "강력한 타격",
-				["menu_speedy_reload_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#기관총##이 #{skill_color}#$skill_value_b1## 확률로 적을 휘청거리게 만듭니다.\n양각대 사용 시 확률이 #{skill_color}#$skill_value_b2## 증가합니다.\n\n#{risk}#주의:## #{important_1}#캡틴, 불도저, 저격수, 실드에게는 휘청거림 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##을 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n웅크리고 있는 동안 받는 피해가 #{skill_color}#$skill_value_p1## 감소합니다.\n\n양각대 사용 시 피해 감소량이 #{skill_color}#$skill_value_p2## 증가합니다.",
+				["menu_speedy_reload_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#기관총##이 #{skill_color}#$skill_value_b1## 확률로 적을 휘청거리게 만듭니다.\n양각대 사용 시 확률이 #{skill_color}#$skill_value_b2## 증가합니다.\n\n#{risk}#주의:## #{important_1}#캡틴, 불도저, 저격수, 실드에게는 휘청거림 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#기관총##을 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##\n\n웅크리고 있는 동안 받는 피해가 #{skill_color}#$skill_value_p1## 감소합니다.\n양각대 사용 시 피해 감소량이 #{skill_color}#$skill_value_p2##로 증가합니다.",
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "뿌리고 기도하기",
@@ -5725,7 +5740,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "겅호",
-				["menu_close_by_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##를 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n에이스: #{owned}#$pro##\n비조준 사격 시 #{skill_color}#산탄총과 화염방사기##의 발사 속도가 #{skill_color}#$skill_value_p1## 증가합니다.",
+				["menu_close_by_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##를 달리면서 비조준 사격이 가능해지고 달리기 후 사격 지연이 제거됩니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##\n\n에이스: #{owned}#$pro##\n비조준 사격 시 #{skill_color}#산탄총과 화염방사기##의 발사 속도가 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Overkill
 				["menu_overkill_sc"] = "오버킬",
@@ -5900,7 +5915,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "움직이는 표적",
-				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.",
+				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "절연갑옷",
@@ -5952,7 +5967,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "아킴보",
-				["menu_akimbo_skill_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#아킴보 권총##을 포함한 #{skill_color}#권총##을 달리는 동안 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{skill_color}#아킴보##의 무기 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보## 무기를 달리는 동안 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{skill_color}#아킴보## 무기의 명중률이 #{skill_color}#$skill_value_p1## 증가합니다.",
+				["menu_akimbo_skill_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#아킴보 권총##을 포함한 #{skill_color}#권총##을 달리는 동안 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##\n\n#{skill_color}#아킴보##의 무기 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보## 무기를 달리는 동안 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{skill_color}#아킴보## 무기의 명중률이 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "데스페라도",
@@ -6138,12 +6153,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		--["menu_deck9_7_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters regenerates ##$perk_value_2## armor; melee kills double the amount.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYour dodge is increased by an additional ##$perk_value_3## points.",
 		--["menu_deck9_9_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters has a ##$perk_value_2## chance to spread panic among your enemies in a ##$perk_value_3## meter radius around you; melee kills double the chance.\n\n공포감은 적들이 잠시 동안 엄청난 두려움에 떨게 만듭니다.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다. ",
 
-		["menu_deck9_1_desc_sc"] = "콤보 미터를 얻습니다.\n\n근접 무기로 적을 처치하면 콤보 미터가 기본 값의 #{skill_color}#$perk_value_1##점 채우며, 최대 콤보는 #{skill_color}#$perk_value_2##점입니다. 정예 및 특수 적을 처치하면 콤보 게이지가 몇 배로 채워지며, 불도저와 캡틴을 처치하면 더 많은 콤보를 얻을 수 있습니다.\n\n콤보 미터는 #{risk}#$perk_value_4##초마다 #{important_1}#$perk_value_3##점씩 감소합니다.\n\n체력 피해를 입으면 콤보 미터가 #{important_1}#$perk_value_5##점 줄어들고, 이 효과는 #{skill_color}#$perk_value_6##초당 한 번만 발동합니다.\n출혈 상태가 되면 콤보 #{important_1}#$perk_value_7##점을 잃습니다.\n\n콤보 #{risk}#$perk_value_8##점마다 #{skill_color}#$perk_value_9##의 피해 저항이 부여되며, 최대 #{skill_color}#$perk_value_10##까지 증가합니다.",
+		["menu_deck9_1_desc_sc"] = "콤보 미터를 얻습니다.\n\n근접 무기로 적을 처치하면 콤보 미터가 기본 값의 #{skill_color}#$perk_value_1##점 채우며, 최대 콤보는 #{skill_color}#$perk_value_2##점입니다. 정예 및 특수 적을 처치하면 콤보 게이지가 몇 배로 채워지며, 불도저와 캡틴을 처치하면 더 많은 콤보를 얻을 수 있습니다.\n\n콤보 미터는 #{risk}#$perk_value_4##초마다 #{important_1}#$perk_value_3##점씩 감소합니다.\n\n구금당하지 않은 플레이어 팀원 한 명당 기본 점수와 콤보 지속 시간이 #{skill_color}#1##초씩 증가하며 최대 #{skill_color}#3##초까지 증가합니다.\n\n체력 피해를 입으면 콤보 미터가 #{important_1}#$perk_value_5##점씩 줄어들고, 이 효과는 #{skill_color}#$perk_value_6##초당 한 번만 발동합니다.\n출혈 상태가 되면 콤보 #{important_1}#$perk_value_7##점을 잃습니다.\n\n콤보 #{risk}#$perk_value_8##점마다 #{skill_color}#$perk_value_9##의 피해 저항이 부여되며, 최대 #{skill_color}#$perk_value_10##까지 증가합니다.",
 
 		["menu_deck9_3_desc_sc"] = "치명적이지 않은 근접 공격 혹은 근접 무기를 제외한 다른 무기로 적을 처치하면 콤보 감소 타이머가 초기화됩니다.\n\n콤보 #{risk}#$perk_value_1##점씩 쌓일 때마다 이동 속도가 #{skill_color}#$perk_value_2## 빨라지며, 최대 #{skill_color}#$perk_value_3##까지 증가합니다.\n\n회피율이 #{skill_color}#$perk_value_4## 증가합니다.",
 		["menu_deck9_5_desc_sc"] = "근접 무기로 적을 죽이면 스태미나를 #{skill_color}#$perk_value_1## 회복합니다.\n\n콤보 #{risk}#$perk_value_2##점마다 근접 무기로 적을 처치하면 체력이 #{skill_color}#$perk_value_3##씩 회복되며, 최대 #{skill_color}#$perk_value_4##까지 회복됩니다.\n\n인벤토리에 시체 가방을 #{skill_color}#$perk_value_5##개 더 소지합니다.",
 
-		["menu_deck9_7_desc_sc"] = "방탄력의 #{risk}#$perk_value_2## 마다 기본 콤보 값이 #{skill_color}#$perk_value_1## 증가하고, 체력 피해가 발생할 때마다 콤보가 끊어지는 데 걸리는 시간이 #{skill_color}#$perk_value_8##초 더 증가합니다.\n\n콤보가 #{risk}#$perk_value_3##점 증가할 때마다 적을 처치하면 회피 미터가 회피율의 #{skill_color}#$perk_value_4## 채워지며, 최대 #{skill_color}#$perk_value_5##까지 채웁니다.\n근접 공격으로 처치하면 추가로 #{skill_color}#$perk_value_7## 증가합니다.\n\n회피율이 추가로 #{skill_color}#$perk_value_6## 증가합니다.",
+		["menu_deck9_7_desc_sc"] = "방탄력의 #{risk}#$perk_value_2## 마다 포인트 값이 #{skill_color}#$perk_value_1## 증가하고, 체력 피해가 발생할 때마다 콤보가 끊어지는 데 걸리는 시간이 #{skill_color}#$perk_value_8##초 더 증가합니다.\n\n콤보가 #{risk}#$perk_value_3##점 증가할 때마다 적을 처치하면 회피 미터가 회피율의 #{skill_color}#$perk_value_4## 채워지며, 최대 #{skill_color}#$perk_value_5##까지 채웁니다.\n근접 공격으로 처치하면 추가로 #{skill_color}#$perk_value_7## 증가합니다.\n\n회피율이 추가로 #{skill_color}#$perk_value_6## 증가합니다.",
 
 		["menu_deck9_9_desc_sc"] = "콤보는 대신 간격당 #{skill_color}#$perk_value_1##의 비율로 줄어듭니다.\n\n콤보 #{risk}#$perk_value_2##점마다 직접 피해를 가해 적을 처치하면 #{skill_color}#$perk_value_3##의 확률로 주변 #{skill_color}#$perk_value_4##미터 이내의 적에게 공포감을 퍼뜨릴 수 있으며, 최대 확률은 #{skill_color}#$perk_value_5##입니다.\n근접 공격으로 처치하면 이 확률이 #{skill_color}#$perk_value_6## 증가합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다. ",
 

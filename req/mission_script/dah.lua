@@ -19,7 +19,21 @@ local spawnfix = {
 		event = "spawn"
 	}
 }
-
+local vis_blockers = {}
+local vis_blocker_ids = Idstring("units/dev_tools/level_tools/dev_ai_vis_blocker/dev_ai_vis_blocker_005x2x2m")
+for i = 0, 11 do
+	local y = 1300 - (i * 200)
+	table.insert(vis_blockers, {
+		name = vis_blocker_ids,
+		pos = Vector3(-4240, y, 1060),
+		visible = false
+	})
+	table.insert(vis_blockers, {
+		name = vis_blocker_ids,
+		pos = Vector3(-2365, y, 1060),
+		visible = false
+	})
+end
 return {
 	-- Disable outline for Ralph if he is tied
 	[100461] = {
@@ -31,17 +45,18 @@ return {
 	[100000] = {
 		on_executed = {
 			{ id = 400077, delay = 3 },
-		}
+		},
+		spawn = vis_blockers, -- Add vis blockers
 	},
 	-- delay the elevator spawn
 	-- trigger the 3 cloakers event
 	-- enable autrium snipers
 	[100429] = {
 		on_executed = {
-			{id = 102128, delay = 45},
-			{id = 102196, delay = 10},
-			{id = 400076, delay = 0}
-		}
+			{ id = 102128, delay = 45 },
+			{ id = 102196, delay = 10 },
+			{ id = 400076, delay = 0 },
+		},
 	},
 	-- make the elevator do actual beep sound
 	[102366] = {
@@ -259,5 +274,5 @@ return {
 	[100722] = interval,
 	[100723] = interval,
 	[104821] = interval,
-	[104822] = interval
+	[104822] = interval,
 }

@@ -191,6 +191,34 @@ local head_hitboxes = {
     [Idstring("glass_visor"):key()] = true
 }
 
+local bodies_tmp = {
+    [Idstring("glass_shield"):key()] = 1,
+    [Idstring("glass_swat"):key()] = 1,
+    [Idstring("glass_c"):key()] = 1,
+    [Idstring("glass_d"):key()] = 1,
+    [Idstring("glass_l"):key()] = 1,
+    [Idstring("glass_r"):key()] = 1,
+    [Idstring("visor"):key()] = 1,
+    [Idstring("sg_mask"):key()] = 1,
+    [Idstring("glass_altyn"):key()] = 1,
+    [Idstring("altyn_visor"):key()] = 1,
+    [Idstring("glass_visor"):key()] = 1,
+	[Idstring("body_helmet_plate"):key()] = 1,
+	[Idstring("body_helmet_plate_black"):key()] = 1,
+	[Idstring("body_helmet_glass"):key()] = 1,
+	[Idstring("body_helmet_glass_ben"):key()] = 1,
+	[Idstring("body_helmet_glass_black"):key()] = 1,
+	[Idstring("bag"):key()] = 2,
+	[Idstring("bag_gren"):key()] = 2,
+	[Idstring("antenna"):key()] = 2,
+	[Idstring("body_armor_chest"):key()] = 3,
+	[Idstring("body_armor_stomache"):key()] = 3,
+	[Idstring("body_armor_back"):key()] = 3,
+	[Idstring("body_armor_throat"):key()] = 3,
+	[Idstring("body_armor_neck"):key()] = 3,
+}
+CopDamage._priority_bodies_ids = bodies_tmp
+
 local is_pro = Global.game_settings and Global.game_settings.one_down
 
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
@@ -218,7 +246,7 @@ function CopDamage:_spawn_head_gadget(params)
 	local unit_name = self._unit:name()
 	local my_unit = self._unit
 
-	if not self._head_gear then
+	if not self._head_gear or not params then
 		return
 	end
 
@@ -1510,7 +1538,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 	self:_on_damage_received(attack_data)
 
 	if shotgun_push then
-		managers.game_play_central:_do_shotgun_push(self._unit, hit_pos, attack_dir, distance)
+		--managers.game_play_central:_do_shotgun_push(self._unit, hit_pos, attack_dir, distance)
 	end
 end
 
@@ -3265,14 +3293,13 @@ function CopDamage:_on_damage_received(damage_info)
 		self:chk_disable_aoe_damage()
 	end
 
-	local damage_info_orig = deep_clone(damage_info) --clone the original damage_info table as the spoof done in "_chk_unique_death_requirements" modifies the original table
+	local damage_info_orig_variant = damage_info.variant
 
 	if not self._dead then
 		self:_chk_unique_death_requirements(damage_info, false)
 	end
 
-	damage_info = damage_info_orig --revert the changes done in the "_chk_unique_death_requirements" prehook
-	--Is this ugly and likely a shit method of fixing this issue even with the requirement that "_chk_unique_death_requirements" is to not be not overridden? Probably. Can you tell I suck with Lua? -DMC
+	damage_info.variant = damage_info_orig_variant --revert the variant change done in the "_chk_unique_death_requirements" prehook
 
 	local attacker_unit = damage_info and damage_info.attacker_unit
 

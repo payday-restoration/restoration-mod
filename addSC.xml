@@ -279,7 +279,7 @@
 	<sequence_manager	path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" force="true"/>
 	<world				path="levels/narratives/classics/man/world" force="true"/>
 
-	
+		
 	<!--PANIC ROOM-->
 	<mission			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
@@ -1299,6 +1299,8 @@
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/shell_shak_smol" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/shell_shak_sniper" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_sniper_m95_semi" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_556_smol" force="false" load="true" unload="true" reload="true"/>
     <effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true"/>
 	<!--Weapon Mod Trails and Muzzle Effects-->
 	<!--NATO Tracer-->

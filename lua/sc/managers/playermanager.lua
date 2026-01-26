@@ -56,15 +56,21 @@ Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 		self._merciless_t = 0
 		self._merciless_stacks = 0
 	end
+
+	-- A few HUDs such as PocoHUD use this value directly. With the changes to on_headshot_dealt where
+	-- this wouldn't be created until it's relevant, these HUDs would cause the game to crash.
+	self._on_headshot_dealt_t = 0
 end)
 
 Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self, t, dt)
 	if self:has_category_upgrade("player", "buildup_meter") and self._buildup_meter_t then
+		local groupai = managers.groupai and managers.groupai:state()
+		local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 		if self._buildup_meter_t > 0 then
 			self._buildup_meter_t = math.max(0, self._buildup_meter_t - dt)
 		else
 			local combo_t_mod = (self:has_category_upgrade("player", "buildup_meter_zack") and self:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
-			local combo_t = self:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
+			local combo_t = self:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 			local combo_decay_mod = (self:has_category_upgrade("player", "buildup_meter_zack") and self:upgrade_value("player", "buildup_meter_zack", 0).combo_decay_mod) or 0
 			local combo_decay = self:upgrade_value("player", "buildup_meter", 0).combo_decay + combo_decay_mod
 			self._buildup_meter_t = combo_t
@@ -533,6 +539,8 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 		return 0
 	end
 	self._buildup_meter = self._buildup_meter or 0 --Glass earthing this; no clue why it's returning nil sometimes given its in the init
+	local groupai = managers.groupai and managers.groupai:state()
+	local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 	local damage_ext = player_unit:character_damage()
 	local new_socio_panic = 0
 	local buildup_stats = self:upgrade_value("player", "buildup_meter", 0)
@@ -540,7 +548,7 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 	local direct_variant = variant == "bullet" or variant == "fire_bullet"
 
 	local combo_t_mod = (self:has_category_upgrade("player", "buildup_meter_zack") and self:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
-	local combo_t = self:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
+	local combo_t = self:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 
 	local has_swan = self:has_category_upgrade("player", "buildup_meter_swan") 
 
@@ -573,7 +581,7 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 		local armor = tweak_data.player.damage.ARMOR_INIT + managers.player:body_armor_value("armor")
 		buildup_add_mod = buildup_add_mod + ( math.floor( armor / self:upgrade_value("player", "buildup_meter_quickening", 0).armor_steps ) * self:upgrade_value("player", "buildup_meter_quickening", 0).combo_add_mod )
 	end
-	local buildup_add = math.floor((self:upgrade_value("player", "buildup_meter", 0).combo_add + buildup_add_mod) * enemy_unit_mult())
+	local buildup_add = math.floor((self:upgrade_value("player", "buildup_meter", 0).combo_add + buildup_add_mod + additional_players) * enemy_unit_mult()) 
 
 	local function check_refresh(refresh, aubrey, time)
 		if refresh then
@@ -587,7 +595,7 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 					self._buildup_meter_t = self._buildup_meter_t + add_t
 					managers.hud:change_cooldown("sociopath", add_t)
 				end
-				buildup_add = math.floor((self:upgrade_value("player", "buildup_meter_aubrey", 0).combo_add + buildup_add_mod) * enemy_unit_mult())
+				buildup_add = math.floor((self:upgrade_value("player", "buildup_meter_aubrey", 0).combo_add + buildup_add_mod + additional_players) * enemy_unit_mult())
 				self._buildup_meter = math.clamp((self._buildup_meter or 0) + buildup_add, 0, self._buildup_meter_max)
 				managers.hud:set_stacks("sociopath", self._buildup_meter)
 			else
@@ -602,7 +610,7 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 	if has_swan then
 		if buildup_meter_variant == "melee" or buildup_meter_variant == "bullet" then
 			if not self._buildup_meter_last_kill or self._buildup_meter_last_kill ~= buildup_meter_variant then
-				buildup_add = math.floor((self:upgrade_value("player", "buildup_meter_swan", 0).combo_add + buildup_add_mod) * enemy_unit_mult())
+				buildup_add = math.floor((self:upgrade_value("player", "buildup_meter_swan", 0).combo_add + buildup_add_mod + additional_players) * enemy_unit_mult())
 				--log(tostring( buildup_add ))
 				self._buildup_meter = math.clamp((self._buildup_meter or 0) + buildup_add, 0, self._buildup_meter_max)
 				self._buildup_meter_t = combo_t
@@ -658,8 +666,10 @@ function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 	if weapon_proj and weapon_proj.count_as_melee and damage_info.variant == "bullet" then
 		damage_info.variant = "melee"
 		if self:has_category_upgrade("player", "buildup_meter") and self:has_category_upgrade("player", "buildup_meter_refresh") and self._buildup_meter and self._buildup_meter > 0 then
+			local groupai = managers.groupai and managers.groupai:state()
+			local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 			local combo_t_mod = (self:has_category_upgrade("player", "buildup_meter_zack") and self:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
-			local combo_t = self:upgrade_value("player", "buildup_meter", 0).combo_t + combo_t_mod
+			local combo_t = self:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 			self._buildup_meter_t = combo_t
 			managers.hud:start_buff("sociopath", managers.player._buildup_meter_t)
 		end
@@ -1148,16 +1158,26 @@ function PlayerManager:on_headshot_dealt(unit, attack_data)
 		return
 	end
 
-	self._on_headshot_dealt_t = t + (tweak_data.upgrades.on_headshot_dealt_cooldown or 0)
 	local damage_ext = player_unit:character_damage()
+
+	local replenishable_armour = damage_ext:_max_armor() - damage_ext:get_real_armor()
+	local replenishable_health = damage_ext:_max_health() - damage_ext:get_real_health()
 	local regen_armor_bonus = managers.player:upgrade_value("player", "headshot_regen_armor_bonus", 0)
+	local regen_health_bonus = managers.player:upgrade_value("player", "headshot_regen_health_bonus", 0)
+
+	if (replenishable_armour <= 0 or regen_armor_bonus == 0) and (replenishable_health <= 0 or regen_health_bonus == 0) then
+		-- Do not "waste" the Bullseye timer if we:
+		-- - Don't have armour to recover with it or don't have Bullseye, and we
+		-- - Don't have health to recover Head Games or we don't have that.
+		return
+	end
+
+	self._on_headshot_dealt_t = t + (tweak_data.upgrades.on_headshot_dealt_cooldown or 0)
+	managers.hud:start_buff("bullseye", tweak_data.upgrades.on_headshot_dealt_cooldown)
 
 	if damage_ext and regen_armor_bonus > 0 then
 		damage_ext:restore_armor(damage_ext:_max_armor() * regen_armor_bonus)
-		managers.hud:start_buff("bullseye", tweak_data.upgrades.on_headshot_dealt_cooldown)
 	end
-
-	local regen_health_bonus = managers.player:upgrade_value("player", "headshot_regen_health_bonus", 0)
 
 	if damage_ext and regen_health_bonus > 0 then
 		damage_ext:restore_health(regen_health_bonus, true)

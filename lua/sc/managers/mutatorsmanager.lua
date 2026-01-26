@@ -62,6 +62,7 @@ function MutatorsManager:init()
 		MutatorMagazineMartyr:new(self),
 		MutatorNoAmmoDrop:new(self),
 		--MutatorHighNoon:new(self)
+		MutatorAdvancedTraining:new(self),
 	}
 	self._active_mutators = {}
 	local activate = Global.mutators and Global.mutators.active_on_load

@@ -484,6 +484,13 @@ function ReviveInteractionExt:interact(reviving_unit)
 	end
 end
 
+if PickUpWeaponInteractionExt then
+	Hooks:PreHook(PickUpWeaponInteractionExt, "interact", "resPickUpWeaponclearcache", function(self, player)
+		--log("[RESTORATION MOD] CACHE CLEARED VIA \"PickUpWeaponInteractionExt:interact\"!!")
+		managers.weapon_factory:_clear_parts_cache()
+	end)
+end
+
 -- Carry Stacker below
 local master_IntimitateInteractionExt_interact_blocked = IntimitateInteractionExt._interact_blocked
 local master_CarryInteractionExt_interact_blocked = CarryInteractionExt._interact_blocked

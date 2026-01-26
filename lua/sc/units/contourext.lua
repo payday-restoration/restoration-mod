@@ -22,6 +22,29 @@ ContourExt._types.deployable_blackout = { --for autumn's deployable disabling ab
 	priority = 1,
 	color = Vector3(0.5,0,1)
 }
+-- Equivalent to mark_enemy except in priority (and Pro Jobs not enabling ray_check_reverse for it).
+ContourExt._types.mark_enemy_through_walls = {
+	fadeout = 4.5,
+	priority = 5,
+	material_swap_required = true,
+	fadeout_silent = 13.5,
+	trigger_marked_event = true,
+	color = tweak_data.contour.character.dangerous_color
+}
+ContourExt._types.mark_enemy.priority = 6 -- Lower priority for mark_enemy so that mark_enemy_through_walls can overwrite it.
+
+-- Reindexes the indexed_types table. Technically, this is only necessary for contours that would effect units (i.e., mark_enemy_through_walls), but we may as well index every Resmod-defined contour.
+ContourExt.indexed_types = {}
+
+for name, preset in pairs(ContourExt._types) do
+	table.insert(ContourExt.indexed_types, name)
+end
+
+table.sort(ContourExt.indexed_types)
+
+if #ContourExt.indexed_types > 128 then
+	Application:error("[ContourExt] max # contour presets exceeded!")
+end
 
 -- PJ modifier: Marked enemy will show contour only in LoS (unless you using any marking skills); Medic and LPF flash outlines are disabled;
 if is_pro_job then
@@ -36,6 +59,7 @@ end
 local enemy_contours = {
 	"friendly",
 	"mark_enemy",
+	"mark_enemy_through_walls",
 	"mark_enemy_damage_bonus",
 	"mark_enemy_damage_bonus_distance",
 	"mark_unit_dangerous",
@@ -50,7 +74,7 @@ local deployable_contours = {
 	"deployable_interactable"
 }
 
-Hooks:OverrideFunction(ContourExt, "add", function(self, type, sync, multiplier, override_color, is_element, wallhack)
+Hooks:OverrideFunction(ContourExt, "add", function(self, type, sync, multiplier, override_color, is_element)
 local disable_outlines = managers.mutators:modify_value("ContourExt:DisableOutlines", false)
 local do_outline = true
 
@@ -78,6 +102,9 @@ end
 if do_outline then
 	self._contour_list = self._contour_list or {}
 	local data = self._types[type]
+	
+	if not data then return end
+
 	local fadeout = data.fadeout
 
 	if data.fadeout_silent and managers.groupai:state():whisper_mode() then
@@ -159,7 +186,6 @@ if do_outline then
 		fadeout_start_t = fadeout_start_t_dummy or nil,
 		fadeout_length = fadeout_length_dummy or nil,
 		color = override_color or nil,
-		wallhack = wallhack or false,
 		data = data
 	}
 
@@ -172,7 +198,7 @@ if do_outline then
 		end
 	end
 	
-	if data.ray_check_reverse and not setup.wallhack then
+	if data.ray_check_reverse then
 		setup.upd_skip_count_reverse = ContourExt.raycast_update_skip_count
 		local mov_ext = self._unit:movement()
 
@@ -285,7 +311,7 @@ if self.fadeout_start_percent == nil then -- for Vanilla Contours
 				end
 			end
 			--for PJ
-			if is_current and setup.data.ray_check_reverse and not setup.wallhack and not managers.groupai:state():whisper_mode() then
+			if is_current and setup.data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
 				if setup.upd_skip_count_reverse > 0 then
 					setup.upd_skip_count_reverse = setup.upd_skip_count_reverse - 1
 
@@ -340,7 +366,7 @@ if self.fadeout_start_percent == nil then -- for Vanilla Contours
 			end
 
 			if is_current then
-				if setup.data.ray_check_reverse and not setup.wallhack and not managers.groupai:state():whisper_mode() then
+				if setup.data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
 					if turn_off then
 						self:_upd_opacity(self.mod_lerp_opacity and setup.fadeout_t and math.lerp(1, 0, t / setup.fadeout_t) or 1)	
 					else
@@ -368,10 +394,11 @@ else -- for Smooth Contours
 			local data = setup.data
 			local is_current = index == 1
 			local opacity = nil
+			local turn_off = nil
 			if is_current and data.ray_check then
 				local turn_on = nil
 				local cam_pos = managers.viewport:get_current_camera_position()
-				if cam_pos then
+				if cam_pos and alive(unit) then
 					turn_on = mvector3.distance_sq(cam_pos, unit:movement():m_com()) > 16000000
 					turn_on = turn_on or unit:raycast("ray", unit:movement():m_com(), cam_pos, "slot_mask", self._slotmask_world_geometry, "report")
 				end
@@ -384,10 +411,10 @@ else -- for Smooth Contours
 				end
 			end
 			-- for PJ
-			if is_current and data.ray_check_reverse and not setup.wallhack and not managers.groupai:state():whisper_mode() then
+			if is_current and data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
 				local turn_on = nil
 				local cam_pos = managers.viewport:get_current_camera_position()
-				if cam_pos then
+				if cam_pos and alive(unit) then
 					turn_on = mvector3.distance_sq(cam_pos, unit:movement():m_com()) > 16000000
 					turn_on = turn_on or unit:raycast("ray", unit:movement():m_com(), cam_pos, "slot_mask", self._slotmask_world_geometry, "report")
 				end
@@ -417,13 +444,12 @@ else -- for Smooth Contours
 			elseif is_current and setup.fadeout_start_t then
 				opacity = (t - setup.fadeout_start_t) / setup.fadeout_length
 				opacity = 1 - math.max(opacity, 0)
-				
 			end
 			
 			
 
 			if opacity then
-				if data.ray_check_reverse and not setup.wallhack and not managers.groupai:state():whisper_mode() then
+				if data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
 					if turn_off then
 						self:_upd_opacity(opacity)	
 					else

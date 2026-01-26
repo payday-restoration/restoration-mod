@@ -5,6 +5,7 @@ local titan_dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_as
 local cloaker = ((difficulty >= 8)  and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 local gunners = ((difficulty >= 8)  and "units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" or "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")
 local shields = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city")
+local snipers = ((difficulty >= 8) and "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper" or "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2")
 local death_wish_above = difficulty >= 7
 
 local optsDefend_SO = {
@@ -12,6 +13,7 @@ local optsDefend_SO = {
         "tank",
         "shield",
         "swat",
+		"sniper", 
     },
 	scan = true,
 	align_position = true,
@@ -25,26 +27,40 @@ local optsCloaker_01 = {
     enabled = false,
     enemy = cloaker,
     on_executed = {
-        { id = 400006, delay = 0}
+        { id = 400006, delay = 0},
     },
 }
 local optsTDozer_01 = {
     enabled = false,
     enemy = titan_dozer,
     on_executed = {
-        { id = 400003, delay = 0}
+        { id = 400003, delay = 0},
     },
 }
 local optsTDozer_02 = {
     enabled = false,
     enemy = titan_dozer,
     on_executed = {
-        { id = 400004, delay = 0}
+        { id = 400004, delay = 0},
     },
+}
+local optsSniper_01 = {
+	enabled = false,
+	enemy = snipers,
+	on_executed = {
+		{ id = 400027, delay = 0}
+	},
+}
+local optsSniper_02 = {
+	enabled = false,
+	enemy = snipers,
+	on_executed = {
+		{ id = 400028, delay = 0}
+	},
 }
 local opts_enable__weapon_lab_defenders = {
 	enabled = death_wish_above,
-	elements = { 400001 , 400002, 400005 },
+	elements = { 400001 , 400002, 400005, 400025,  400026},
 	toggle = "on",
 }
 local optsCloaker_Hide_SO_weapon_lab = {
@@ -136,6 +152,13 @@ return {
 		-- CLOAKER
 		restoration:gen_dummy(400005, "weapon_lab_ninja", Vector3(-3601, -3794, 0), Rotation(0, 0, -0), optsCloaker_01),
 		restoration:gen_so(400006, "weapons_lab_ninja_so", Vector3(-3623.54, -3703.27, 0), Rotation(9, -0, -0), optsCloaker_Hide_SO_weapon_lab),
+		-- Snipers 
+		restoration:gen_dummy(400025, "weapon_lab_sniper_01", Vector3(-4577, -4749, 400.101), Rotation(-14, 0, -0), optsSniper_01),
+		restoration:gen_dummy(400026, "weapon_lab_sniper_02", Vector3(-4143, -4387, 400.101), Rotation(-6, 0, -0), optsSniper_02),
+
+		restoration:gen_so(400027, "railgun_defend_03",  Vector3(-4577, -4749, 400.101), Rotation(-14, 0, -0), optsDefend_SO), 
+		restoration:gen_so(400028, "railgun_defend_04",  Vector3(-4143, -4387, 400.101), Rotation(-6, 0, -0), optsDefend_SO),
+
 		-- toggle
 		restoration:gen_toggleelement(400007, "enable_railgun_defenders", opts_enable__weapon_lab_defenders),
 

@@ -747,6 +747,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mix", function(loc)
 		["menu_diffgrade"] = "Сложность: ",
 		["menu_utility_radial_menu_name"] = "Utility Radial Menu",
 		["menu_utility_radial_menu_desc"] = "Open the Utility Menu",
+		
+		["resmod_1st_time_title"] = "Placeholder title",
+		["resmod_1st_time_desc"] = "Placeholder text info",
+		["resmod_1st_time_confirm"] = "OK",
 
 		["res_credits"] = "Титры Restoration Mod",
 		["res_credits_help"] = "Посмотреть титры RESTORATION MOD.",
@@ -5413,6 +5417,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mutators", function(loc)
 		["menu_mutator_captain_replace_spring"] = "Спринг",
 		["menu_mutator_captain_replace_summer"] = "Саммерс",
 		["menu_mutator_captain_replace_hvh"] = "АТБГШИЛ",
+		["menu_mutator_captain_cooldown"] = "Таймер респавна капитана (в секундах)",
 		["menu_mutator_winter_blacklist_toggle"] = "Исключить Винтерса из случайного выбора",
 		["menu_mutator_spring_blacklist_toggle"] = "Исключить Спринга из случайного выбора",
 		["menu_mutator_summer_blacklist_toggle"] = "Исключить Саммерса из случайного выбора",
@@ -5457,6 +5462,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mutators", function(loc)
 		["menu_mutator_no_ammo_drops"] = "Без выпадения патронов",
 		["mutator_no_ammo_drops_desc"] = "Позволяет отключить коробки патронов с врагов, или изменить процент их выпадения.",
 		["mutator_no_ammo_drops_longdesc"] = "Позволяет отключить коробки патронов с врагов, или изменить процент их выпадения.",
+		
+		["mutator_advancedtraining"] = "Современные тренировки",
+		["mutator_advancedtraining_desc"] = "Враги имеют здоровье и наносят урон как на сложности 'Смертный Приговор'.",
+		["mutator_advancedtraining_longdesc"] = "Враги имеют здоровье и наносят урон как на сложности 'Смертный Приговор' наряду с их способностями (из-за тренировок).",
 
 		["menu_cg22_post_objective_1_desc"] = "Убить 200 врагов из любой снайперской винтовки.",
 		["menu_cg22_post_objective_2_desc"] = "Убить 15 Клокеров из винтовки 'Полярная Звезда' на сложности 'Очень Сложно' или выше.",

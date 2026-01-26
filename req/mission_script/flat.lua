@@ -19,9 +19,13 @@ local disabled = {
 		enabled = false,
 	},
 }
-
+local roof_spawn = {
+	values = {
+		interval = 30,
+	},
+}
 return {
-	-- Point of no return on C4 explosion, uncomment to edit
+	-- Point of no return on C4 explosion
 	-- Normally 1200s any difficulty, always enabled, no time balance mul
 	[100565] = {
 		values = {
@@ -43,6 +47,9 @@ return {
 	-- Disable roof/stairs reinforcement
 	[102501] = disabled,
 	[103181] = disabled,
+	-- don't remove ground level spawns at any point
+	[102092] = disabled,
+	[102097] = disabled,
 	-- Restore roof access blockade
 	[100095] = {
 		on_executed = {
@@ -164,6 +171,23 @@ return {
 			{ id = 400032, delay = 17, },
 		},
 	},
+	-- delay Bile's chopper first arrival
+	[100247] = {
+		on_executed = {
+			{ id = 104456, delay = 120 },
+		},
+	},
+	[100001] = {
+		on_executed = {
+			{ id = 100620, delay = 120 },
+		},
+	},
+	-- delay Bile's chopper trigger after c4 blows up
+	[100082] = {
+		on_executed = {
+			{ id = 101562, delay = 110 },
+		},
+	},
 	-- Trigger dozer spawn
 	[104706] = {
 		on_executed = {
@@ -175,6 +199,28 @@ return {
 	[101853] = {
 		on_executed = {
 			{ id = 104691, remove = true, },
+		},
+	},
+	-- call the cops when the red door opens
+	[102680] = {
+		on_executed = {
+			{ id = 104691, delay = 0 },
+		},
+	},
+	-- make some beat cops camp near police cars
+	[100040] = {
+		on_executed = {
+			{ id = 102579, remove = true },
+		},
+	},
+	[100035] = {
+		on_executed = {
+			{ id = 102579, remove = true },
+		},
+	},
+	[100037] = {
+		on_executed = {
+			{ id = 102579, remove = true },
 		},
 	},
 	-- Spawn Heavy SWAT squad if it's overkill above
@@ -192,4 +238,12 @@ return {
 			{ id = 400063, delay = 0, },
 		},
 	},
+	-- slow down roof spawns, these are really fuckng annoying
+	[104650] = roof_spawn,
+	[100504] = roof_spawn,
+	[100505] = roof_spawn,
+	[100509] = roof_spawn,
+	[100396] = roof_spawn,
+	-- disable roof/stairs reinforcement
+	[103181] = disabled, -- 5, fucking, force
 }

@@ -463,18 +463,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.body_armor.movement = { --*increments of 0.03
 		1,
 		0.97,
-		0.94,
-		0.91,
-		0.76, --5 increments
+		0.91, --2 increments
+		0.88,
+		0.76, --4 increments
 		0.745, --0.5 increments
 		0.7 --1.5 increments
 	}
 	self.values.player.body_armor.dodge = { --*increments of 0.1
 		0.2,
 		0.1,
-		0.0,
-		-0.1,
-		-0.15, --half increment
+		0.05, --half increment
+		-0.05,
+		-0.15,
 		-0.2, --half increment
 		-0.3
 	}
@@ -487,14 +487,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		8, --4 increments
 		4 --2 increments
 	}
-	self.values.player.body_armor.damage_shake = { --increments of 0.1
+	self.values.player.body_armor.damage_shake = { --*increments of 0.1
 		1.0,
 		0.9,
-		0.8,
-		0.7,
-		0.5,
+		0.7, --2 increments
+		0.6,
 		0.4,
-		0.2
+		0.3,
+		0.1
 	}
 	self.values.player.body_armor.stamina = { --increments of 0.025
 		1,
@@ -506,8 +506,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.8
 	}
 	self.values.player.body_armor.skill_ammo_mul = { --repurposed to pick up mult
-		0.85,
-		0.925,
+		0.875,
+		0.95,
 		1.00,
 		1.05,
 		1.075,
@@ -841,7 +841,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.smg.hip_fire_spread_multiplier = {0.8, 0.5}
 				--Ace
-					self.values.smg.reload_speed_multiplier = {1.15}
+					self.values.smg.reload_speed_multiplier = {1.20}
 					
 					self.skill_descs.rifleman = {
 						skill_value_b1 = tostring((1 - self.values.smg.hip_fire_spread_multiplier[1]) % 1 * 100).."%", -- Hipfire +accuracy
@@ -1334,12 +1334,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.snp.recoil_index_addend = {2, 4} --2nd tier is in Rifleman Basic; you can't get Rifleman before this skill, so it's alright
 					self.values.assault_rifle.recoil_index_addend = {2, 4} --I'm reminded of Miku saying "I got that green onion for 90 yen, so it's alright" when I read that
 				--Ace
-					self.values.temporary.headshot_fire_rate_mult = {{1.2, 10}}
+					self.values.temporary.headshot_fire_rate_mult = {{1.25, 6}}
+					self.sharpshooter_auto_mult = 0.4
 					
 					self.skill_descs.steady_grip = {
 						skill_value_b1 = tostring(self.values.snp.recoil_index_addend[1]), -- +Stability
 						skill_value_p1 = tostring(self.values.temporary.headshot_fire_rate_mult[1][1] % 1 * 100).."%", -- RoF buff
-						skill_value_p2 = tostring(self.values.temporary.headshot_fire_rate_mult [1][2]) -- Duration of buff
+						skill_value_p2 = tostring(self.values.temporary.headshot_fire_rate_mult [1][2]), -- Duration of buff
+						skill_value_p3 = tostring(((self.values.temporary.headshot_fire_rate_mult[1][1] - 1) * self.sharpshooter_auto_mult) * 100) .. "%"
 					}
 
 			--Kilmer
@@ -1349,10 +1351,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic/Ace
 					self.values.snp.reload_speed_multiplier = {1.05, 1.15}
 					self.values.assault_rifle.reload_speed_multiplier = {1.05, 1.15}
-					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.125}
-					self.values.snp.enter_steelsight_speed_multiplier = {1.125}
 				--Ace
-
+					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.15}
+					self.values.snp.enter_steelsight_speed_multiplier = {1.15}
+					
 					self.skill_descs.heavy_impact = {
 						skill_value_b1 = tostring((1 - self.values.snp.move_spread_multiplier[1]) * 100).."%",
 						skill_value_b2 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed
@@ -2013,7 +2015,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 
 			--Pumping Iron
-				self.values.player.melee_swing_multiplier = {1.2, 1.5}
+				self.values.player.melee_swing_multiplier = {1.15, 1.4}
 				self.values.player.melee_swing_multiplier_delay = {0.8, 0.5} --Unused
 				
 				self.skill_descs.steroids = {
@@ -2159,18 +2161,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.level_2_dodge_addend = {
 		0.05,
-		0.1,
-		0.15
+		0.15,
+		0.15 --unused
 	}
 	self.values.player.level_3_dodge_addend = {
 		0.05,
-		0.1,
-		0.15
+		0.15,
+		0.15 --unused
 	}
 	self.values.player.level_4_dodge_addend = {
 		0.05,
-		0.1,
-		0.15
+		0.15,
+		0.15 --unused
 	}
 
 	self.values.player.level_2_armor_multiplier = {
@@ -2425,12 +2427,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{sniper = 1.50},
 		{special = 1.50},
 	}
+	self.socio_affinity_bonus_steps = 1 
 	self.values.player.buildup_meter = {
 		{
 			combo_max = 100, --Max combo
 			combo_add = 3, --points per kill
 			combo_ene_mult = ene_mult,
-			combo_t = 5, --Combo decay timer
+			combo_t = 6, --Combo decay timer
 			combo_decay = 10, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
 			hurt_t = 1, --Hurt decay cooldown
@@ -2440,7 +2443,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_max = 100,
 			combo_add = 3,
 			combo_ene_mult = ene_mult,
-			combo_t = 5,
+			combo_t = 6,
 			combo_decay = 5,
 			hurt_decay = 5,
 			hurt_t = 1,
@@ -2450,7 +2453,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_max = 50, --Max combo
 			combo_add = 2, --points per kill
 			combo_ene_mult = ene_mult,
-			combo_t = 5, --Combo decay timer
+			combo_t = 6, --Combo decay timer
 			combo_decay = 5, --Points lost when combo decay timer expires
 			hurt_decay = 5, --Points lost when health is lost
 			hurt_t = 1, --Hurt decay cooldown
@@ -2576,10 +2579,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			combo_t_add = 2 --time added to active combo
 		}}
 		self.values.player.buildup_meter_zack = {
-			{ combo_t_mod = 3, combo_decay_mod = 5 },
+			{ combo_t_mod = 4, combo_decay_mod = 5 },
 			{ combo_t_mod = -1, combo_decay_mod = 0 }, --Brandon
 			{ combo_t_mod = -2, combo_decay_mod = 0 }, --Tony
-			{ combo_t_mod = -2, combo_decay_mod = 5 }, --Tony R
+			{ combo_t_mod = -3, combo_decay_mod = 5 }, --Tony R
 		}
 		self.values.player.buildup_meter_earl = { true } --boolean check for no combo loss when taking HP damage + full combo loss on bleedout
 		self.values.player.tony_boss_mult = 0.1
@@ -3202,6 +3205,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_8 = tostring(self.values.player.buildup_meter_pacify[1].combo_steps),
 		perk_value_9 = tostring(self.values.player.buildup_meter_pacify[1].effect * 100) .. "%",
 		perk_value_10 = tostring(self.values.player.buildup_meter_pacify[1].effect_max * 100) .. "%",
+		perk_value_11 = tostring(self.socio_affinity_bonus_steps)
 	}
 	self.specialization_descs[9][3] = {
 		--perk_value_1 = tostring(self.values.player.killshot_regen_armor_bonus[1] * 10), -- Armor regen on kill

@@ -18174,8 +18174,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_gre_m32_barrel_short.supported = true
-					self.parts.wpn_fps_gre_m32_barrel_short.stats = deep_clone(barrels.short_b2_stats)
-					self.parts.wpn_fps_gre_m32_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+					self.parts.wpn_fps_gre_m32_barrel_short.stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_gre_m32_barrel_short.custom_stats = deep_clone(barrels.short_b1_stats)
 
 					--No Stock
 					self.parts.wpn_fps_gre_m32_no_stock.pcs = {}
@@ -18185,6 +18185,20 @@ end)
 
 					table.insert(self.wpn_fps_gre_m32.uses_parts, "wpn_fps_upg_i_ghosts_mk32")
 					table.insert(self.wpn_fps_gre_m32_npc.uses_parts, "wpn_fps_upg_i_ghosts_mk32")
+
+					self.wpn_fps_gre_m32.override = self.wpn_fps_gre_m32.override or {}
+					self.wpn_fps_gre_m32.override.wpn_fps_upg_a_grenade_launcher_incendiary = {
+						desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc",
+						stats = { damage = -52 }
+					}
+					self.wpn_fps_gre_m32.override.wpn_fps_upg_a_grenade_launcher_electric = {
+						desc_id = "bm_wp_upg_a_grenade_launcher_electric_spam_desc_sc",
+						stats = { damage = -30 }
+					}
+					self.wpn_fps_gre_m32.override.wpn_fps_upg_a_grenade_launcher_poison = {
+						desc_id = "bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc",
+						stats = { damage = -57 }
+					}
 
 					self.wpn_fps_gre_m32_npc.uses_parts = deep_clone(self.wpn_fps_gre_m32.uses_parts)
 				end)
@@ -18336,6 +18350,20 @@ end)
 					self.parts.wpn_fps_gre_china_s_short.supported = true
 					self.parts.wpn_fps_gre_china_s_short.stats = deep_clone(stocks.remove_fixed_stats)
 					self.parts.wpn_fps_gre_china_s_short.custom_stats = deep_clone(stocks.remove_fixed_stats)
+
+					self.wpn_fps_gre_china.override = self.wpn_fps_gre_china.override or {}
+					self.wpn_fps_gre_china.override.wpn_fps_upg_a_grenade_launcher_incendiary = {
+						desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc",
+						stats = { damage = -52 }
+					}
+					self.wpn_fps_gre_china.override.wpn_fps_upg_a_grenade_launcher_electric = {
+						desc_id = "bm_wp_upg_a_grenade_launcher_electric_spam_desc_sc",
+						stats = { damage = -30 }
+					}
+					self.wpn_fps_gre_china.override.wpn_fps_upg_a_grenade_launcher_poison = {
+						desc_id = "bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc",
+						stats = { damage = -57 }
+					}
 
 				end)
 

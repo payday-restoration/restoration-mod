@@ -1522,7 +1522,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--Taser UGL Nades
 		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#360## damage in a radius of #{skill_color}#5## meters and has a chance to #{ghost_color}#tase enemies.##",
 		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#180## damage in a radius of #{skill_color}#5## meters and has a chance to #{ghost_color}#tase enemies.##",
-		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#300## damage in a radius of #{skill_color}#5## meters and has a chance to #{ghost_color}#tase enemies.##",
+		["bm_wp_upg_a_grenade_launcher_electric_spam_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#300## damage in a radius of #{skill_color}#5## meters and has a chance to #{ghost_color}#tase enemies.##",
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#300## damage in a radius of #{skill_color}#3## meters and has a chance to #{ghost_color}#tase enemies.##",
 		--Gas UGL Nades
 		["bm_wp_upg_a_grenade_launcher_poison"] = "Manticore-6 Round",
 		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "Fires a round that creates a #{stats_positive}#cloud of poisonous gas## at point of impact.\nThe gas has a radius of #{skill_color}#6## meters, lingers for #{skill_color}#8## seconds, deals #{skill_color}#240## damage over #{skill_color}#8## seconds, and #{stats_positive}#induces vomiting## in most enemies #{important_1}#1## time when caught in it.",
@@ -2457,21 +2458,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_wp_upg_i_autofire_desc"] = "Locks your weapon to #{risk}#full-auto##.",
 
 		--Throwables--
-		["bm_dynamite_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#4m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- Reduced bounce and roll compared to other thrown explosives\n\nDesigned to effectively blast through rock. Even more effective at blasting through people.",
+		["bm_dynamite_desc"] = "Damage: #{risk}#$damage## \nRadius: #{skill_color}#4m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- Reduced bounce and roll compared to other thrown explosives\n\nDesigned to effectively blast through rock. Even more effective at blasting through people.",
 		--Frag
-		["bm_grenade_frag_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n\nThe classic explosive hand grenade. Is there any more to say?",
+		["bm_grenade_frag_desc"] = "Damage: #{risk}#$damage## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n\nThe classic explosive hand grenade. Is there any more to say?",
 		--Community Frag
-		["bm_grenade_frag_com_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n\nA sleek new look to the classic hand grenade, sure to provide that OVERKILL touch to each blast.",
+		["bm_grenade_frag_com_desc"] = "Damage: #{risk}#$damage## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n\nA sleek new look to the classic hand grenade, sure to provide that OVERKILL touch to each blast.",
 		--Community Frag 2
-		["bm_grenade_dada_com_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n\nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
+		["bm_grenade_dada_com_desc"] = "Damage: #{risk}#$damage## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n\nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
+		--Sticky
+		["bm_grenade_sticky_grenade"] = "Semtex Grenade",
+		["bm_grenade_sticky_grenade_desc"] = "Damage: #{risk}#$damage## \nRadius: #{skill_color}#4m## \nFuse: #{skill_color}#2.5s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n\nThrowable explosive compound that will stick to most surfaces, including people!",
 		--Snowball
 		["bm_grenade_xmas_snowball"] = "Snowball", --there is a fucking space at the end of the original string
 		["bm_grenade_xmas_snowball_desc"] = "Damage (Impact): #{skill_color}#90##\nDamage (Blast): #{risk}#180## \nRadius: #{skill_color}#1m## \nFuse: #{skill_color}#Impact## \nRegen Rate: #{skill_color}#1 snowball every $regen##\nAmmo Box Regen Bonus: #{skill_color}#$regen_t##  \n\nDunk them in water, toss them in the freezer and you got yourself a deadly throwing weapon. Simple.",
 		--Zapper
 		["bm_grenade_electric_desc"] = "Damage: #{skill_color}#400## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Electrocutes most enemies## \n\nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
-		--Sticky
-		["bm_grenade_sticky_grenade"] = "Semtex Grenade",
-		["bm_grenade_sticky_grenade_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#4m## \nFuse: #{skill_color}#2.5s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n\nThrowable explosive compound that will stick to most surfaces, including people!",
 		--Molotov
 		["bm_grenade_molotov_desc"] = "Damage (Blast): #{heat_warm_color}#30## \nDamage (Burn): #{heat_warm_color}#180 over 3s## \nRadius (Blast): #{skill_color}#3m## \nFuse: #{skill_color}#Impact## \nDamage (Fire Pool): #{heat_warm_color}#1200 over 10s## \nRadius (Fire Pool): #{skill_color}#3.75m##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- The fire pool has a #{skill_color}#50%## chance to #{heat_warm_color}#ignite## enemies, causing most to panic. \n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",
 		["bm_grenade_molotov_desc_short"] = "Damage (Blast): #{heat_warm_color}#30## \nDamage (Burn): #{heat_warm_color}#180 over 3s## \nRadius (Blast): #{skill_color}#3m## \nFuse: #{skill_color}#Impact## \nDamage (Fire Pool): #{heat_warm_color}#1200 over 10s## \nRadius (Fire Pool): #{skill_color}#3.75m##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- The fire pool has a #{skill_color}#50%## chance to #{heat_warm_color}#ignite## enemies, causing most to panic.",

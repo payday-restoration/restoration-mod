@@ -375,46 +375,75 @@ tweak_data.projectiles.launcher_rocket.turret_instakill = true
 tweak_data.projectiles.rocket_ray_frag.damage = 90
 tweak_data.projectiles.rocket_ray_frag.player_damage = 45
 tweak_data.projectiles.rocket_ray_frag.range = 500
-tweak_data.projectiles.rocket_ray_frag.curve_pow = 2
+tweak_data.projectiles.rocket_ray_frag.curve_pow = 1
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
 tweak_data.projectiles.rocket_ray_frag.incendiary = true
 tweak_data.projectiles.rocket_ray_frag.dot_data_name = "proj_ray_frag"
 
 --Grenade launcher stuff--
 local frag_40mm = {
-	'launcher_frag','launcher_frag_china','launcher_frag_m32','launcher_m203','underbarrel_m203_groza','launcher_frag_slap'
+	'launcher_frag','launcher_m203','underbarrel_m203_groza','launcher_frag_slap'
 }
 for i, proj_id in ipairs(frag_40mm) do
 	tweak_data.projectiles[proj_id].damage = 72
 	tweak_data.projectiles[proj_id].player_damage = 36
-	tweak_data.projectiles[proj_id].curve_pow = 1.5
+	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].range = 500
+end
+frag_40mm = {
+	'launcher_frag_china','launcher_frag_m32'
+}
+for i, proj_id in ipairs(frag_40mm) do
+	tweak_data.projectiles[proj_id].damage = 60
+	tweak_data.projectiles[proj_id].player_damage = 30
+	tweak_data.projectiles[proj_id].curve_pow = 1
 	tweak_data.projectiles[proj_id].range = 500
 end
 
 local incendiary_40mm = {
-	'launcher_incendiary','launcher_incendiary_china','launcher_incendiary_m32','launcher_incendiary_slap'
+	'launcher_incendiary','launcher_incendiary_slap'
 }
 for i, proj_id in ipairs(incendiary_40mm) do
 	tweak_data.projectiles[proj_id].damage = 6
 	tweak_data.projectiles[proj_id].player_damage = 3
-	tweak_data.projectiles[proj_id].curve_pow = 1.5
+	tweak_data.projectiles[proj_id].curve_pow = 1
 	tweak_data.projectiles[proj_id].range = 500
 	tweak_data.projectiles[proj_id].burn_duration = 5
 	tweak_data.projectiles[proj_id].dot_data_name = "proj_launcher_incendiary"
 end
+incendiary_40mm = {
+	'launcher_incendiary_china','launcher_incendiary_m32'
+}
+for i, proj_id in ipairs(incendiary_40mm) do
+	tweak_data.projectiles[proj_id].damage = 4
+	tweak_data.projectiles[proj_id].player_damage = 2
+	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].range = 500
+	tweak_data.projectiles[proj_id].burn_duration = 5
+	tweak_data.projectiles[proj_id].dot_data_name = "proj_launcher_incendiary_spam"
+end
 
 local electric_40mm = {
-	'launcher_electric','launcher_electric_china','launcher_electric_m32','underbarrel_electric','underbarrel_electric_groza','launcher_electric_slap'
+	'launcher_electric','underbarrel_electric','underbarrel_electric_groza','launcher_electric_slap'
 }
 for i, proj_id in ipairs(electric_40mm) do
-	tweak_data.projectiles[proj_id].damage = 40
-	tweak_data.projectiles[proj_id].player_damage = 20
-	tweak_data.projectiles[proj_id].curve_pow = 1.5
+	tweak_data.projectiles[proj_id].damage = 36
+	tweak_data.projectiles[proj_id].player_damage = 18
+	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].range = 500
+end
+electric_40mm = {
+	'launcher_electric_china','launcher_electric_m32'
+}
+for i, proj_id in ipairs(electric_40mm) do
+	tweak_data.projectiles[proj_id].damage = 30
+	tweak_data.projectiles[proj_id].player_damage = 15
+	tweak_data.projectiles[proj_id].curve_pow = 1
 	tweak_data.projectiles[proj_id].range = 500
 end
 
 local poison_40mm = {
-	'launcher_poison_gre_m79','launcher_poison_china','launcher_poison_m32','launcher_poison_contraband','launcher_poison_groza','launcher_poison_slap'
+	'launcher_poison_gre_m79','launcher_poison_contraband','launcher_poison_groza','launcher_poison_slap'
 }
 for i, proj_id in ipairs(poison_40mm) do
 	tweak_data.projectiles[proj_id].damage = 0
@@ -427,6 +456,21 @@ for i, proj_id in ipairs(poison_40mm) do
 	tweak_data.projectiles[proj_id].poison_gas_fade_time = 0.1
 	tweak_data.projectiles[proj_id].poison_gas_tick_time = 0.3
 	tweak_data.projectiles[proj_id].poison_gas_dot_data_name = "proj_launcher_cloud"
+end
+poison_40mm = {
+	'launcher_poison_china','launcher_poison_m32'
+}
+for i, proj_id in ipairs(poison_40mm) do
+	tweak_data.projectiles[proj_id].damage = 0
+	tweak_data.projectiles[proj_id].player_damage = 0
+	tweak_data.projectiles[proj_id].curve_pow = 0
+	tweak_data.projectiles[proj_id].range = 0
+	--tweak_data.projectiles[proj_id].manticore = true
+	tweak_data.projectiles[proj_id].poison_gas_range = 600
+	tweak_data.projectiles[proj_id].poison_gas_duration = 6
+	tweak_data.projectiles[proj_id].poison_gas_fade_time = 0.1
+	tweak_data.projectiles[proj_id].poison_gas_tick_time = 0.3
+	tweak_data.projectiles[proj_id].poison_gas_dot_data_name = "proj_launcher_cloud_spam"
 end
 
 --Arbiter--
@@ -587,32 +631,32 @@ tweak_data.projectiles.elastic_arrow_exp.damage = 60
 tweak_data.projectiles.elastic_arrow_poison.damage = 24
 
 --GRENADE OUT--
-tweak_data.projectiles.frag.damage = 80
-tweak_data.projectiles.frag.player_damage = 40
+tweak_data.projectiles.frag.damage = 90
+tweak_data.projectiles.frag.player_damage = 45
 tweak_data.projectiles.frag.curve_pow = 0.5
 tweak_data.projectiles.frag.range = 500
 
 --Dynamite--
-tweak_data.projectiles.dynamite.damage = 80
-tweak_data.projectiles.dynamite.player_damage = 40
+tweak_data.projectiles.dynamite.damage = 90
+tweak_data.projectiles.dynamite.player_damage = 45
 tweak_data.projectiles.dynamite.curve_pow = 0.5
 tweak_data.projectiles.dynamite.range = 400
 
 --Community Frag--
-tweak_data.projectiles.frag_com.damage = 80
-tweak_data.projectiles.frag_com.player_damage = 40
+tweak_data.projectiles.frag_com.damage = 90
+tweak_data.projectiles.frag_com.player_damage = 45
 tweak_data.projectiles.frag_com.curve_pow = 0.5
 tweak_data.projectiles.frag_com.range = 500
 
 --The other community frag--
-tweak_data.projectiles.dada_com.damage = 80
-tweak_data.projectiles.dada_com.player_damage = 40
+tweak_data.projectiles.dada_com.damage = 90
+tweak_data.projectiles.dada_com.player_damage = 45
 tweak_data.projectiles.dada_com.curve_pow = 0.5
 tweak_data.projectiles.dada_com.range = 500
 
 --SEEEEEEMTEEEEEEEEEEX
-tweak_data.projectiles.sticky_grenade.damage = 80
-tweak_data.projectiles.sticky_grenade.player_damage = 40
+tweak_data.projectiles.sticky_grenade.damage = 90
+tweak_data.projectiles.sticky_grenade.player_damage = 45
 tweak_data.projectiles.sticky_grenade.curve_pow = 0.5
 tweak_data.projectiles.sticky_grenade.range = 400
 tweak_data.projectiles.sticky_grenade.in_air_timer = 3

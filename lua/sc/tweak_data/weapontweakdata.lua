@@ -14987,7 +14987,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.gre_m79.alt_shotgunraycast = true
 						self.gre_m79.rays = 1
 						self.gre_m79.supported = true
-						self.gre_m79.ads_speed = 0.360
+						self.gre_m79.ads_speed = 0.300
 						self.gre_m79.damage_falloff = {
 							start_dist = 1400,
 							end_dist = 5500,
@@ -15024,11 +15024,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m32.kick = self.stat_info.kick_tables.right_kick
 						self.m32.has_description = true
 						self.m32.desc_id = "bm_m32_sc_desc"
-						self.m32.fire_mode_data.fire_rate = 0.6
+						self.m32.fire_mode_data.fire_rate = 0.6 * 1.5
 						self.m32.fire_rate_multiplier = 1.5
-						--self.m32.BURST_FIRE = 2
-						--self.m32.BURST_FIRE_RATE_MULTIPLIER = 3
-						--self.m32.BURST_FIRE_RECOIL_MULTIPLIER = 1.5
 						self.m32.AMMO_MAX = 10
 						self.m32.alt_shotgunraycast = true
 						self.m32.rays = 1
@@ -15040,12 +15037,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.033333
 						}
 						self.m32.stats = {
-							damage = 72,
-							spread = 73,
+							damage = 60,
+							spread = 63,
 							recoil = 69,
 							spread_moving = 6,
 							zoom = 1,
-							concealment = 15,
+							concealment = 14,
 							suppression = 1,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -15222,7 +15219,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.slap.alt_shotgunraycast = true
 						self.slap.rays = 1
 						self.slap.supported = true
-						self.slap.ads_speed = 0.360
+						self.slap.ads_speed = 0.300
 						self.slap.damage_falloff = {
 							start_dist = 1300,
 							end_dist = 5000,
@@ -15258,8 +15255,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.china.desc_id = "bm_w_china_sc_desc"
 						self.china.has_description = true
-						self.china.fire_mode_data.fire_rate = 1.3
-						self.china.fire_rate_multiplier = 0.75
+						self.china.fire_mode_data.fire_rate = 1.71428
+						self.china.fire_rate_multiplier = 1
 						self.china.AMMO_MAX = 5
 						self.china.alt_shotgunraycast = true
 						self.china.rays = 1
@@ -15272,7 +15269,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.033333
 						}
 						self.china.stats = {
-							damage = 72,
+							damage = 60,
 							spread = 56,
 							recoil = 61,
 							spread_moving = 6,
@@ -15287,7 +15284,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.china.panic_suppression_chance = 0.05
 						self.china.stats_modifiers = {damage = 10}
-						self.china.reload_speed_multiplier = 0.8
+						self.china.reload_speed_multiplier = 0.9
 						self.china.descope_on_fire = true
 						self.china.timers.shotgun_reload_first_shell_offset = 0.5
 						self.china.timers.shotgun_reload_exit_empty = 1.4

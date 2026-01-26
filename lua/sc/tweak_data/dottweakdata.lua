@@ -134,6 +134,12 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_damage = 1.5,
 		dot_length = 8.15
 	}
+	poison_entries.proj_launcher_cloud_spam = {
+		hurt_animation_chance = 1,
+		apply_hurt_once = true,
+		dot_damage = 1.5,
+		dot_length = 6.15
+	}
 	poison_entries.proj_launcher_arbiter_cloud = {
 		hurt_animation_chance = 1,
 		apply_hurt_once = true,

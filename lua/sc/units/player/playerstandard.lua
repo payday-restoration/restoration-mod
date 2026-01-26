@@ -2319,6 +2319,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 		else
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		end
+		self._camera_unit:base():unspawn_melee_item()
 	elseif self._state_data.meleeing then
 		local lerp_value = self:_get_melee_charge_lerp_value(t)
 

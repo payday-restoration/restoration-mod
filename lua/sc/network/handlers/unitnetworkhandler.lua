@@ -318,3 +318,15 @@ function UnitNetworkHandler:sync_vehicle_interact_trunk(vehicle_unit, sender_rpc
 		driving_ext:_interact_trunk()
 	end
 end
+
+--- The sync_remove_carry equivalent for the carry stack.
+--- You're better off checking out the CarryStacker stuff in PlayerManager for more info.
+function UnitNetworkHandler:sync_remove_carry_stacker(sender)
+	local peer = self._verify_sender(sender)
+
+	if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not peer then
+		return
+	end
+
+	managers.player:remove_synced_carry_stacker(peer)
+end

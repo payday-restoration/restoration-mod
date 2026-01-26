@@ -44,7 +44,40 @@ Hooks:PostHook(PlayerManager, "_setup", "ResSetup", function(_)
 	Global.player_manager.synced_carry_stacker = {}
 end)
 
+--- Vomits out all the carried items from the player that wasn't in synced_carry.
 Hooks:PostHook(PlayerManager, "peer_dropped_out", "ResPeerDroppedOut", function(self, peer_id)
+	if Network:is_server() then
+		local synced_carry_stacker_data = self:get_synced_carry_stacker(peer_id)
+
+		if synced_carry_stacker_data and #synced_carry_stacker_data > 0 then
+			for _, carry in ipairs(synced_carry_stacker_data) do
+				if not carry then
+					return
+				end
+
+				local carry_id = carry.carry_id
+				local carry_multiplier = carry.multiplier
+				local dye_initiated = carry.dye_initiated
+				local has_dye_pack = carry.has_dye_pack
+				local dye_value_multiplier = carry.dye_value_multiplier
+				local peer_unit = peer:unit()
+				local position = Vector3()
+
+				if alive(peer_unit) then
+					if peer_unit:movement():zipline_unit() then
+						position = peer_unit:movement():zipline_unit():position()
+					else
+						position = peer_unit:position()
+					end
+				end
+
+				local dir = Vector3(0, 0, 0)
+
+				self:server_drop_carry(carry_id, carry_multiplier, dye_initiated, has_dye_pack, dye_value_multiplier, position, Rotation(), dir, 0, nil, peer)
+			end
+		end
+	end
+
 	Global.player_manager.synced_carry_stacker[peer_id] = nil
 end)
 
@@ -2025,6 +2058,28 @@ function PlayerManager:update_carrystacker_hud(peer_id)
 	end
 end
 
+--- Effectively the update_removed_synced_carry_to_peers() equivalent for the carry stacker.
+--- Used to delete the local peer's carry stacker data for others.
+function PlayerManager:update_removed_synced_carry_stacker_to_peers()
+	local peer = managers.network:session():local_peer()
+
+	managers.network:session():send_to_peers_synched("sync_remove_carry_stacker")
+	self:remove_synced_carry_stacker(peer)
+end
+
+--- Clears the synced_carry_stacker table for a given peer.
+--- @param peer Peer The peer whose table to clear.
+function PlayerManager:remove_synced_carry_stacker(peer)
+	local peer_id = peer:id()
+
+	if not self._global.synced_carry_stacker[peer_id] then
+		return
+	end
+
+	self._global.synced_carry_stacker[peer_id] = nil
+	self:update_carrystacker_hud(peer_id)
+end
+
 --- This function will be called to check whether the player can carry a bag.
 Hooks:PostHook(PlayerManager, "can_carry", "ResCarryStackerCanCarry", function(self, carry_id)
 	if not Hooks:GetReturn() then
@@ -2054,7 +2109,7 @@ end)
 --- Makes the timing before you can interact again consistent. That's it.
 --- We DO base it on the synced_carry_stacker length rather than synced_carry, though this is
 --- because of the code reorganisation that mandates we trust the host with dropping stuff.
-Hooks:PostHook(PlayerManager, "drop_carry", "ResCarryStackerDropCarry", function(self, _)	
+Hooks:PostHook(PlayerManager, "drop_carry", "ResCarryStackerDropCarry", function(self, _)
 	local peer_id = managers.network:session():local_peer():id()
 	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
 	if remaining_cdata and #remaining_cdata > 0 then
@@ -2079,7 +2134,7 @@ Hooks:PostHook(PlayerManager, "remove_synced_carry", "ResCarryStackerPostRemoveS
 	end
 end)
 
--- Since we're about to pick up a a new carryable item, we should push the current one (if there's one), to the synced_carry_stacker.
+--- Since we're about to pick up a a new carryable item, we should push the current one (if there's one), to the synced_carry_stacker.
 Hooks:PreHook(PlayerManager, "set_synced_carry", "ResCarryStackerPreSetSyncedCarry", function(self, peer, _, _, _, _, _)
 	local peer_id = peer:id()
 	local carry = self._global.synced_carry[peer_id]
@@ -2092,8 +2147,88 @@ Hooks:PreHook(PlayerManager, "set_synced_carry", "ResCarryStackerPreSetSyncedCar
 	self:update_carrystacker_hud(peer_id)
 end)
 
--- Adjust the player weight, and block interactions for a short bit.
+--- Adjust the player weight, and block interactions for a short bit.
 Hooks:PostHook(PlayerManager, "set_carry", "ResCarryStackerPostSetCarry", function(self, _, _, _, _, _)
 	self:recalculate_carried_weights()
 	PlayerStandard:block_use_item()
+end)
+
+--- This should hopefully force the player to drop ALL their bags, not just the current one in `synced_carry`.
+Hooks:PreHook(PlayerManager, "force_drop_carry", "ResCarryStackerPreForceDropCarry", function(self)
+	local peer_id = managers.network:session():local_peer():id()
+	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
+
+	if remaining_cdata == nil then
+		return
+	end
+
+	local player = self:player_unit()
+	if not alive(player) then
+		print("COULDN'T FORCE DROP! DIDN'T HAVE A UNIT")
+		return
+	end
+
+	-- I'm not overjoyed about all the code duplication, but what can you do.
+	for _, carry in ipairs(remaining_cdata) do
+		if not carry then
+			-- HUH????
+			return
+		end
+
+		local dye_initiated = carry.dye_initiated
+		local has_dye_pack = carry.has_dye_pack
+		local dye_value_multiplier = carry.dye_value_multiplier
+		local camera_ext = player:camera()
+
+		if Network:is_client() then
+			managers.network:session():send_to_host("server_drop_carry", carry.carry_id, carry.multiplier, dye_initiated, has_dye_pack, dye_value_multiplier, camera_ext:position(), camera_ext:rotation(), Vector3(0, 0, 0), 0, nil)
+		else
+			self:server_drop_carry(carry.carry_id, carry.multiplier, dye_initiated, has_dye_pack, dye_value_multiplier, camera_ext:position(), camera_ext:rotation(), Vector3(0, 0, 0), 0, nil, managers.network:session():local_peer())
+		end
+	end
+
+	self:update_removed_synced_carry_stacker_to_peers()
+	self:recalculate_carried_weights()
+	self:update_carrystacker_hud(peer_id)
+end)
+
+--- Banking all the carry stacker carries *before* the synced_carry one because I'm not entirely sure
+--- how would the game behave because of the update_removed_synced_carry_to_peers() call in the original.
+Hooks:PreHook(PlayerManager, "bank_carry", "ResCarryStackerPreBankCarry", function(self)
+	local peer_id = managers.network:session() and managers.network:session():local_peer():id()
+
+	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
+
+	if remaining_cdata == nil then
+		return
+	end
+
+	for _, carry in ipairs(remaining_cdata) do
+		if not carry then
+			-- Not sure how this could happen, but Your Honour: PAYDAY 2.
+			return
+		end
+		managers.loot:secure(carry.carry_id, carry.multiplier, nil, peer_id)
+	end
+	
+	self:update_removed_synced_carry_stacker_to_peers()
+end)
+
+--- clear_carry seems "technical" enough that I think we should probably also clear our carry stacker table here.
+Hooks:PreHook(PlayerManager, "clear_carry", "ResCarryStackerPreClearCarry", function(self, soft_reset)
+	local peer_id = managers.network:session() and managers.network:session():local_peer():id()
+	local carry_stacker_data = self:get_synced_carry_stacker(peer_id)
+
+	if not carry_stacker_data then
+		return
+	end
+
+	local player = self:player_unit()
+
+	if not soft_reset and not alive(player) then
+		print("COULDN'T FORCE DROP! DIDN'T HAVE A UNIT")
+		return
+	end
+
+	self:update_removed_synced_carry_stacker_to_peers()
 end)

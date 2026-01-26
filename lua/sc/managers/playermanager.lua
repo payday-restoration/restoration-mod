@@ -56,6 +56,10 @@ Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 		self._merciless_t = 0
 		self._merciless_stacks = 0
 	end
+
+	-- A few HUDs such as PocoHUD use this value directly. With the changes to on_headshot_dealt where
+	-- this wouldn't be created until it's relevant, these HUDs would cause the game to crash.
+	self._on_headshot_dealt_t = 0
 end)
 
 Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self, t, dt)

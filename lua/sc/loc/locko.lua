@@ -22,6 +22,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["menu_utility_radial_menu_name"] = "유틸리티 방사형 메뉴",
 		["menu_utility_radial_menu_desc"] = "유틸리티 메뉴를 엽니다.",
 
+		["resmod_1st_time_title"] = "Placeholder title",
+		["resmod_1st_time_desc"] = "Placeholder text info",
+		["resmod_1st_time_confirm"] = "OK",		
+
 		["res_credits"] = "레스토레이션 모드 크레딧",
 		["res_credits_help"] = "레스토레이션 모드의 크레딧을 봅니다.",
 
@@ -1457,7 +1461,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--Taser UGL Nades
 		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#360##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
 		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#180##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
-		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#300##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
+		["bm_wp_upg_a_grenade_launcher_electric_spam_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#300##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",		
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#3##미터 반경 내에 #{skill_color}#300##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
 		--Gas UGL Nades
 		["bm_wp_upg_a_grenade_launcher_poison"] = "만티코어-6 유탄",
 		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "목표에 적중 시 #{stats_positive}#유독가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터이며, #{skill_color}#8##초 동안 지속됩니다. 가스는 #{skill_color}#8##초에 걸쳐 #{skill_color}#240##의 피해를 가하며, 가스에 갇힌 대부분의 적에게 #{stats_positive}#구토##를 #{important_1}#한 번## 유발합니다.",
@@ -2335,15 +2340,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_w_duke1911_desc"] = "#{important_1}#Hail to the king, baby!##",
 
 		--Bipod--
-		["bm_sc_bipod_desc_pc"] = "유효한 표면 위에서 #{skill_color}#$BTN_BIPOD## 키를 눌러 거치하고 다시 누르면 해제합니다.\n\n거치 중에는 수직 반동이 #{skill_color}#50%## 감소하고, 수평 반동이 #{skill_color}#75%## 감소하며, 사거리가 #{skill_color}#30%## 증가합니다.\n\n#{item_stage_2}#거치에 관련된 추가 옵션은 레스토레이션 모드의 무기 옵션 메뉴에서 찾을 수 있습니다.##",
-		["bm_sc_bipod_desc"] = "유효한 표면 위에서 #{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 거치하고 다시 누르면 해제합니다.\n\n거치 중에는 수직 반동이 #{skill_color}#50%## 감소하고, 수평 반동이 #{skill_color}#75%## 감소하며, 사거리가 #{skill_color}#30%## 증가합니다.\n\n#{item_stage_2}#거치에 관련된 추가 옵션은 레스토레이션 모드의 무기 옵션 메뉴에서 찾을 수 있습니다.##",
+		["bm_sc_bipod_desc_pc"] = "유효한 표면 위에서 #{skill_color}#$BTN_BIPOD## 키를 눌러 거치하고 다시 누르면 해제합니다.\n\n거치 중에는 수직 반동이 #{skill_color}#50%## 감소하고 수평 반동은 #{skill_color}#75%## 감소하며, 사거리가 #{skill_color}#30%## 증가합니다.\n\n#{item_stage_2}#거치에 관련된 추가 옵션은 레스토레이션 모드의 무기 옵션 메뉴에서 찾을 수 있습니다.##",
+		["bm_sc_bipod_desc"] = "유효한 표면 위에서 #{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 거치하고 다시 누르면 해제합니다.\n\n거치 중에는 수직 반동이 #{skill_color}#50%## 감소하고 수평 반동은 #{skill_color}#75%## 감소하며, 사거리가 #{skill_color}#30%## 증가합니다.\n\n#{item_stage_2}#거치에 관련된 추가 옵션은 레스토레이션 모드의 무기 옵션 메뉴에서 찾을 수 있습니다.##",
 		["hud_hint_bipod_moving"] = "이동 중에는 거치할 수 없습니다.",
 		["hud_hint_bipod_slide"] = "슬라이딩 중에는 거치할 수 없습니다.",
 		["hud_hint_bipod_air"] = "공중에 떠 있을 동안에는 거치할 수 없습니다.",
 		["hud_hint_bipod_lean"] = "기울이는 동안에는 거치할 수 없습니다.",
 		["hud_hint_bipod_midstance"] = "자세를 바꾸는 동안에는 거치할 수 없습니다.",
 
-		["hud_interact_autumn_disable"] = "캡틴 오텀에 의해 비활성화 되었습니다!",
+		["hud_interact_autumn_disable"] = "캡틴 어텀에 의해 무력화 되었습니다!",
 
 		["hud_assault_restored_down"] = "어썰트에서 살아남아 다운 1회가 회복되었습니다.",
 		["hud_assault_remaining_single"] = "다운 회복까지 어썰트 1회 남았습니다.",
@@ -2367,7 +2372,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_menu_bonus_recoil_p1"] = "경미한 안정성 보너스 및 명중률 패널티",
 		["bm_menu_bonus_recoil_p1_mod"] = "경미한 안정성 수정치",
 		["bm_menu_bonus_recoil_p2"] = "상당한 안정성 보너스 및 명중률 패널티",
-		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "자신과 팀원에게 +3%의 추가 경험치를 제공합니다.",
+		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "자신과 팀원에게 추가 경험치 3%를 제공합니다.",
 		["bm_menu_spread"] = "명중률\n",
 		["bm_menu_recoil"] = "안정성\n",
 		["bm_menu_concealment"] = "기동성\n",
@@ -2381,21 +2386,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_wp_upg_i_autofire_desc"] = "무기를 #{risk}#자동 사격으로 고정합니다.##",
 
 		--Throwables--
-		["bm_dynamite_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- 다른 투척물에 비해 튀고 굴러가는 일이 적습니다.\n\n바위를 효과적으로 폭파시키도록 설계되었습니다. 사람을 폭파시키는 것도 더욱 효과적이죠.",
+		["bm_dynamite_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- 다른 투척물에 비해 튀고 굴러가는 일이 적습니다.\n\n바위를 효과적으로 폭파시키도록 설계되었습니다. 사람을 폭파시키는 것도 더욱 효과적이죠.",
 		--Frag
-		["bm_grenade_frag_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 폭발성 수류탄입니다. 뭐, 더 설명할 게 있나요?",
+		["bm_grenade_frag_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 폭발성 수류탄입니다. 뭐, 더 설명할 게 있나요?",
 		--Community Frag
-		["bm_grenade_frag_com_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 수류탄에 세련된 새로운 모습을 더해, 매 폭발마다 더욱 오버킬의 느낌을 더할 것입니다.",
+		["bm_grenade_frag_com_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 수류탄에 세련된 새로운 모습을 더해, 매 폭발마다 더욱 오버킬의 느낌을 더할 것입니다.",
 		--Community Frag 2
-		["bm_grenade_dada_com_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n인형의 바깥층은 폭발적인 내부 작용을 숨깁니다. 조국에 대한 헌사죠.",
-		--Snowball
-		["bm_grenade_xmas_snowball"] = "스노볼", --there is a fucking space at the end of the original string
-		["bm_grenade_xmas_snowball_desc"] = "피해량 (직격): #{skill_color}#90##\n피해량 (폭발): #{risk}#180## \n범위: #{skill_color}#1m## \n지연 시간: #{skill_color}#충격 시 폭발## \n재생 속도: #{skill_color}#$regen 마다 1개##\n탄약 상자 재생 보너스: #{skill_color}#$regen_t## \n\n물에 담그고, 냉동고에 넣으면 치명적인 투척 무기가 됩니다. 참 쉽죠.",
-		--Zapper
-		["bm_grenade_electric_desc"] = "피해량: #{skill_color}#400## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#대부분의 적을 감전시킵니다.## \n\n파편도 좋지만, 어떤 것들은 지져줘야죠. 이 작은 이쁜이는 고전압으로 피해를 가하는 데 꽤나 실용적인 녀석입니다.",
+		["bm_grenade_dada_com_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n인형의 바깥층은 폭발적인 내부 작용을 숨깁니다. 조국에 대한 헌사죠.",
 		--Sticky
 		["bm_grenade_sticky_grenade"] = "샘텍스 수류탄",
-		["bm_grenade_sticky_grenade_desc"] = "피해량: #{risk}#800## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#2.5초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n사람을 포함한 대부분의 표면에 부착되는 투척용 폭발성 혼합물입니다!",
+		["bm_grenade_sticky_grenade_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#2.5초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n대부분의 표면과 사람한테 달라붙는 투척용 폭발성 혼합물입니다!",
+		--Snowball
+		["bm_grenade_xmas_snowball"] = "스노볼", --there is a fucking space at the end of the original string
+		["bm_grenade_xmas_snowball_desc"] = "피해량 (직격): #{skill_color}#90##\n피해량 (폭발): #{risk}#180## \n범위: #{skill_color}#1m## \n지연 시간: #{skill_color}#충격 시 폭발## \n재생 속도: #{skill_color}#$regen 마다 1개##\n탄약 상자 재생 보너스: #{skill_color}#$regen_t## \n\n물에 담그고, 냉동고에 넣기만 하면 치명적인 투척 무기를 얻을 수 있습니다. 참 쉽죠?",
+		--Zapper
+		["bm_grenade_electric_desc"] = "피해량: #{skill_color}#400## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#대부분의 적을 감전시킵니다.## \n\n파편도 좋지만, 어떤 것들은 지져줘야죠. 이 작은 이쁜이는 고전압으로 피해를 가하는 데 꽤나 실용적인 녀석입니다.",
 		--Molotov
 		["bm_grenade_molotov_desc"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n불붙은 천이 있는 인화성 액체가 담긴 부서지는 병입니다. 저렴하고 간단하지만 매우 효과적이죠. 이걸로 전부 태워 버리세요.",
 		["bm_grenade_molotov_desc_short"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.",
@@ -5287,7 +5292,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["hint_short_max_pagers"] = "페이저를 소홀히 하면 경비원의 의심이 크게 높아집니다.",
 
 		--And now we're doing it again--
-		["menu_infamy_desc_root_new"] = "엘리트 범죄자로서 새로 시작하려면, 가장 먼저 여러분의 수준에 걸맞은 장비를 얻고 축하 팡파르를 울리는 것부터 시작해야겠군요.\n\n보너스:\n악명 아이템의 등장 확률이 ##0.3%##에서 ##$0.6%##로 증가합니다.\n획득 경험치가 ##5%##만큼 증가합니다.",
+		["menu_infamy_desc_root_new"] = "엘리트 범죄자로서 새로 시작하려면, 가장 먼저 여러분의 수준에 걸맞은 장비를 얻고 축하 팡파르를 울리는 것부터 시작해야겠군요.\n\n보너스:\n악명 아이템의 등장 확률이 ##0.3%##에서 ##$0.6%##로 증가합니다.\n획득 경험치가 ##5%## 증가합니다.",
 
 		--Renaming some of the skill subtrees--
 		["st_menu_mastermind_single_shot"] = "돌격",

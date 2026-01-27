@@ -449,16 +449,18 @@ function CopDamage:damage_fire(attack_data)
 		end
 	end
 		
+	-- Separated the two damage boosts from marking.
+	-- Could have just swapped their order, but honestly, there's no reason why one should depend on the other anyway.
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
+	end
 
-		if not attack_data.is_fire_dot_damage and self._marked_dmg_dist_mul and alive(attacker_unit) then
-			local dst = mvector3.distance(attacker_unit:position(), self._unit:position())
-			local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
+	if not attack_data.is_fire_dot_damage and self._marked_dmg_dist_mul and alive(attacker_unit) then
+		local dst = mvector3.distance(attacker_unit:position(), self._unit:position())
+		local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
 
-			if spott_dst[1] < dst then
-				damage = damage * spott_dst[2]
-			end
+		if spott_dst[1] < dst then
+			damage = damage * spott_dst[2]
 		end
 	end
 
@@ -1058,16 +1060,18 @@ function CopDamage:damage_bullet(attack_data)
 			damage = self._health * 10
 		end
 	end
-		
+
+	-- Separated the two damage boosts from marking.
+	-- Could have just swapped their order, but honestly, there's no reason why one should depend on the other anyway.
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
+	end
 
-		if self._marked_dmg_dist_mul then
-			local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
+	if self._marked_dmg_dist_mul then
+		local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
 
-			if spott_dst[1] < distance then
-				damage = damage * spott_dst[2]
-			end
+		if spott_dst[1] < distance then
+			damage = damage * spott_dst[2]
 		end
 	end
 
@@ -2285,16 +2289,18 @@ function CopDamage:damage_explosion(attack_data)
 		end	
 	end	
 
+	-- Separated the two damage boosts from marking.
+	-- Could have just swapped their order, but honestly, there's no reason why one should depend on the other anyway.
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
+	end
 
-		if self._marked_dmg_dist_mul and alive(attacker_unit) then
-			local dst = mvector3.distance(attacker_unit:position(), self._unit:position())
-			local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
+	if self._marked_dmg_dist_mul and alive(attacker_unit) then
+		local dst = mvector3.distance(attacker_unit:position(), self._unit:position())
+		local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
 
-			if spott_dst[1] < dst then
-				damage = damage * spott_dst[2]
-			end
+		if spott_dst[1] < dst then
+			damage = damage * spott_dst[2]
 		end
 	end
 

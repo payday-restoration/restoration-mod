@@ -33,6 +33,14 @@ ContourExt._types.mark_enemy_through_walls = {
 }
 ContourExt._types.mark_enemy.priority = 6 -- Lower priority for mark_enemy so that mark_enemy_through_walls can overwrite it.
 
+-- The distance-based marking contours now no longer give a default damage bonus.
+-- Meanwhile, the non-distance based ones now give a damage bonus on distance too.
+-- For the why, see PlayerManager:get_contour_for_marked_enemy().
+ContourExt._types.mark_unit_dangerous_damage_bonus.damage_bonus_distance = 1
+ContourExt._types.mark_unit_dangerous_damage_bonus_distance.damage_bonus = nil
+ContourExt._types.mark_enemy_damage_bonus.damage_bonus_distance = 1
+ContourExt._types.mark_enemy_damage_bonus_distance.damage_bonus = nil
+
 table.insert(ContourExt.indexed_types, "mark_enemy_through_walls")
 
 if #ContourExt.indexed_types > 128 then

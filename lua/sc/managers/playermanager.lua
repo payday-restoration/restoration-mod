@@ -2046,6 +2046,9 @@ end
 --- 
 --- @param peer_id integer The Peer ID of the player whose HUD element needs to be updated.
 function PlayerManager:update_carrystacker_hud(peer_id)
+	if peer_id == managers.network:session():local_peer():id() then
+		return -- TODO HUD UPDATE
+	end
 	local carry_stacker_data = self:get_synced_carry_stacker(peer_id)
 
 	managers.hud:remove_special_equipment("carrystacker")
@@ -2112,6 +2115,8 @@ end)
 Hooks:PostHook(PlayerManager, "drop_carry", "ResCarryStackerDropCarry", function(self, _)
 	local peer_id = managers.network:session():local_peer():id()
 	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
+
+	managers.chat:send_message(1, '[Linchpin]','Drop_carry '..tostring(peer_id), Color.yellow)
 	if remaining_cdata and #remaining_cdata > 0 then
 		self._carry_blocked_cooldown_t = Application:time() + 0.5
 	end	
@@ -2124,6 +2129,7 @@ end)
 Hooks:PostHook(PlayerManager, "remove_synced_carry", "ResCarryStackerPostRemoveSyncedCarry", function(self, peer)
 	local peer_id = peer:id()
 	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
+	managers.chat:send_message(1, '[Linchpin]','remove_synced_carry | Peer ID '..tostring(peer_id)..' | Local PEer ID: '..tostring(managers.network:session():local_peer():id()), Color.yellow)
 
 	if remaining_cdata and #remaining_cdata > 0 then
 		local next_carry = table.remove(remaining_cdata, #remaining_cdata)
@@ -2138,6 +2144,7 @@ end)
 Hooks:PreHook(PlayerManager, "set_synced_carry", "ResCarryStackerPreSetSyncedCarry", function(self, peer, _, _, _, _, _)
 	local peer_id = peer:id()
 	local carry = self._global.synced_carry[peer_id]
+	managers.chat:send_message(1, '[Linchpin]','set_synced_carry | Peer ID '..tostring(peer_id)..' | Local PEer ID: '..tostring(managers.network:session():local_peer():id()), Color.yellow)
 
 	if carry then
 		self._global.synced_carry_stacker[peer_id] = self._global.synced_carry_stacker[peer_id] or {}

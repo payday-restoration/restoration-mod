@@ -2053,9 +2053,7 @@ function CopDamage:die(attack_data)
 	end
 
 	if self._unit:contour() then
-		self._unit:contour():remove("omnia_heal", false)
 		self._unit:contour():remove("medic_show", false)
-		self._unit:contour():remove("medic_buff", false)
 	end
 	
 	if self._unit:base() then

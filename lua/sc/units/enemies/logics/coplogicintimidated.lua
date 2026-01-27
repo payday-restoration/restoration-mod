@@ -42,12 +42,7 @@ function CopLogicIntimidated._do_tied(data, aggressor_unit)
 
 	if data.unit:unit_data().mission_element then
 		data.unit:unit_data().mission_element:event("tied", data.unit)
-	end
-	
-	if data.unit:contour() then
-		data.unit:contour():remove("omnia_heal", true)
-		data.unit:contour():remove("medic_buff", true)
-	end			
+	end	
 
 	if aggressor_unit then
 		data.unit:character_damage():drop_pickup()

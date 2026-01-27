@@ -2116,7 +2116,6 @@ Hooks:PostHook(PlayerManager, "drop_carry", "ResCarryStackerDropCarry", function
 	local peer_id = managers.network:session():local_peer():id()
 	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
 
-	managers.chat:send_message(1, '[Linchpin]','Drop_carry '..tostring(peer_id), Color.yellow)
 	if remaining_cdata and #remaining_cdata > 0 then
 		self._carry_blocked_cooldown_t = Application:time() + 0.5
 	end	
@@ -2130,7 +2129,6 @@ Hooks:PostHook(PlayerManager, "remove_synced_carry", "ResCarryStackerPostRemoveS
 	local peer_id = peer:id()
 	local local_peer_id = managers.network:session():local_peer():id()
 	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
-	managers.chat:send_message(1, '[Linchpin]','remove_synced_carry | Peer ID '..tostring(peer_id)..' | Local PEer ID: '..tostring(managers.network:session():local_peer():id()), Color.yellow)
 
 	if remaining_cdata and #remaining_cdata > 0 then
 		local next_carry = table.remove(remaining_cdata, #remaining_cdata)
@@ -2138,7 +2136,6 @@ Hooks:PostHook(PlayerManager, "remove_synced_carry", "ResCarryStackerPostRemoveS
 		if peer_id == local_peer_id then
 			self:set_carry(next_carry.carry_id, next_carry.multiplier, next_carry.dye_initiated, next_carry.has_dye_pack, next_carry.dye_value_multiplier)
 		else
-			managers.chat:send_message(1, '[Linchpin]','remove_synced_carry - we didn\'t set_carry because this peer is not local peer', Color.yellow)
 			self:recalculate_carried_weights()
 			self:update_carrystacker_hud(peer_id)
 		end
@@ -2149,7 +2146,6 @@ end)
 Hooks:PreHook(PlayerManager, "set_synced_carry", "ResCarryStackerPreSetSyncedCarry", function(self, peer, _, _, _, _, _)
 	local peer_id = peer:id()
 	local carry = self._global.synced_carry[peer_id]
-	managers.chat:send_message(1, '[Linchpin]','set_synced_carry | Peer ID '..tostring(peer_id)..' | Local PEer ID: '..tostring(managers.network:session():local_peer():id()), Color.yellow)
 
 	if carry then
 		self._global.synced_carry_stacker[peer_id] = self._global.synced_carry_stacker[peer_id] or {}

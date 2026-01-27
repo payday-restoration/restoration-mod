@@ -2099,6 +2099,13 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	for i, proj_id in ipairs(give_trails) do
 		self.projectiles[proj_id].add_trail_effect = true
 	end
+	local spam_projectile_id_fix = {
+		'launcher_incendiary_china','launcher_electric_china','launcher_poison_china',
+		'launcher_incendiary_m32','launcher_electric_m32','launcher_poison_m32',
+	}
+	for i, proj_id in ipairs(spam_projectile_id_fix) do
+		self.projectiles[proj_id].fix_projectile_id = true
+	end
 end
 
 

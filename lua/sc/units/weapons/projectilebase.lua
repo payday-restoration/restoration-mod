@@ -143,7 +143,9 @@ function ProjectileBase.throw_projectile(projectile_type, pos, dir, owner_peer_i
 		return
 	end
 
-	ProjectileBase:set_projectile_entry(projectile_type)
+	if tweak_entry and tweak_entry.fix_projectile_id then
+		ProjectileBase:set_projectile_entry(projectile_type)
+	end
 
 	local unit = World:spawn_unit(unit_name, pos, Rotation(dir, math.UP))
 

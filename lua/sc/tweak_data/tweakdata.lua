@@ -415,6 +415,7 @@ incendiary_40mm = {
 	'launcher_incendiary_china','launcher_incendiary_m32'
 }
 for i, proj_id in ipairs(incendiary_40mm) do
+	tweak_data.projectiles[proj_id].fix_projectile_id = true
 	tweak_data.projectiles[proj_id].damage = 4.5
 	tweak_data.projectiles[proj_id].player_damage = 2.25
 	tweak_data.projectiles[proj_id].curve_pow = 0.75
@@ -436,6 +437,7 @@ electric_40mm = {
 	'launcher_electric_china','launcher_electric_m32'
 }
 for i, proj_id in ipairs(electric_40mm) do
+	tweak_data.projectiles[proj_id].fix_projectile_id = true
 	tweak_data.projectiles[proj_id].damage = 30
 	tweak_data.projectiles[proj_id].player_damage = 15
 	tweak_data.projectiles[proj_id].curve_pow = 0.75

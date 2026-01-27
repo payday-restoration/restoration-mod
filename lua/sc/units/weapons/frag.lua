@@ -1,8 +1,5 @@
 function FragGrenade:_setup_from_tweak_data()
 	local grenade_entry = self._projectile_entry or self._tweak_projectile_entry or "frag"
-	if grenade_entry == "rocket_frag" then
-		grenade_entry = "launcher_rocket"
-	end
 	local tweak_entry = tweak_data.projectiles[grenade_entry]
 	self._init_timer = tweak_entry.init_timer or 2.5
 	self._mass_look_up_modifier = tweak_entry.mass_look_up_modifier

@@ -2128,13 +2128,15 @@ end)
 --- amount of time before "realising" we still have loot in synced_carry_stacker.
 Hooks:PostHook(PlayerManager, "remove_synced_carry", "ResCarryStackerPostRemoveSyncedCarry", function(self, peer)
 	local peer_id = peer:id()
+	local local_peer_id = managers.network:session():local_peer():id()
 	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
 	managers.chat:send_message(1, '[Linchpin]','remove_synced_carry | Peer ID '..tostring(peer_id)..' | Local PEer ID: '..tostring(managers.network:session():local_peer():id()), Color.yellow)
 
-	if remaining_cdata and #remaining_cdata > 0 then
+	if remaining_cdata and #remaining_cdata > 0 and peer_id == local_peer_id then
 		local next_carry = table.remove(remaining_cdata, #remaining_cdata)
 		self:set_carry(next_carry.carry_id, next_carry.multiplier, next_carry.dye_initiated, next_carry.has_dye_pack, next_carry.dye_value_multiplier)
 	else
+		managers.chat:send_message(1, '[Linchpin]','remove_synced_carry - we didn\'t set_carry because this peer is not local peer', Color.yellow)
 		self:recalculate_carried_weights()
 		self:update_carrystacker_hud(peer_id)
 	end

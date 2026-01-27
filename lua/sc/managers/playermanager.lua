@@ -2132,13 +2132,16 @@ Hooks:PostHook(PlayerManager, "remove_synced_carry", "ResCarryStackerPostRemoveS
 	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
 	managers.chat:send_message(1, '[Linchpin]','remove_synced_carry | Peer ID '..tostring(peer_id)..' | Local PEer ID: '..tostring(managers.network:session():local_peer():id()), Color.yellow)
 
-	if remaining_cdata and #remaining_cdata > 0 and peer_id == local_peer_id then
+	if remaining_cdata and #remaining_cdata > 0 then
 		local next_carry = table.remove(remaining_cdata, #remaining_cdata)
-		self:set_carry(next_carry.carry_id, next_carry.multiplier, next_carry.dye_initiated, next_carry.has_dye_pack, next_carry.dye_value_multiplier)
-	else
-		managers.chat:send_message(1, '[Linchpin]','remove_synced_carry - we didn\'t set_carry because this peer is not local peer', Color.yellow)
-		self:recalculate_carried_weights()
-		self:update_carrystacker_hud(peer_id)
+		
+		if peer_id == local_peer_id then
+			self:set_carry(next_carry.carry_id, next_carry.multiplier, next_carry.dye_initiated, next_carry.has_dye_pack, next_carry.dye_value_multiplier)
+		else
+			managers.chat:send_message(1, '[Linchpin]','remove_synced_carry - we didn\'t set_carry because this peer is not local peer', Color.yellow)
+			self:recalculate_carried_weights()
+			self:update_carrystacker_hud(peer_id)
+		end
 	end
 end)
 

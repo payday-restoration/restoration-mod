@@ -463,6 +463,7 @@ poison_40mm = {
 	'launcher_poison_china','launcher_poison_m32'
 }
 for i, proj_id in ipairs(poison_40mm) do
+	tweak_data.projectiles[proj_id].fix_projectile_id = true
 	tweak_data.projectiles[proj_id].damage = 0
 	tweak_data.projectiles[proj_id].player_damage = 0
 	tweak_data.projectiles[proj_id].curve_pow = 0

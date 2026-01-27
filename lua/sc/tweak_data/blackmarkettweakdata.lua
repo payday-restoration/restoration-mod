@@ -4231,6 +4231,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
 			self.melee_weapons[melee_id].anim_attack_charged_vars = {"var2"}
+			--vars 3 and 4 are just dupes of 2 and 1, respectively
 			self.melee_weapons[melee_id].anim_attack_var_dir = {
 				var1 = {"left", 0.9},
 				var2 = {"left", 0.2}
@@ -4274,8 +4275,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_global_param = "melee_axe"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var3","var4"}
+			--self.melee_weapons[melee_id].anim_attack_charged_vars = {"var2"}
 			self.melee_weapons[melee_id].anim_attack_var_dir = {
 				var1 = {"left", 0.9},
+				--var2 = {"left", 0.2},
 				var3 = {"left", 0.8},
 				var4 = {"right", 0.95}
 			}

@@ -18188,15 +18188,15 @@ end)
 
 					self.wpn_fps_gre_m32.override = self.wpn_fps_gre_m32.override or {}
 					self.wpn_fps_gre_m32.override.wpn_fps_upg_a_grenade_launcher_incendiary = {
-						desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc",
-						stats = { damage = -52 }
+						desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_spam_desc_sc",
+						stats = { damage = -51 }
 					}
 					self.wpn_fps_gre_m32.override.wpn_fps_upg_a_grenade_launcher_electric = {
 						desc_id = "bm_wp_upg_a_grenade_launcher_electric_spam_desc_sc",
 						stats = { damage = -30 }
 					}
 					self.wpn_fps_gre_m32.override.wpn_fps_upg_a_grenade_launcher_poison = {
-						desc_id = "bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc",
+						desc_id = "bm_wp_upg_a_grenade_launcher_poison_spam_desc_sc",
 						stats = { damage = -57 }
 					}
 
@@ -18353,15 +18353,15 @@ end)
 
 					self.wpn_fps_gre_china.override = self.wpn_fps_gre_china.override or {}
 					self.wpn_fps_gre_china.override.wpn_fps_upg_a_grenade_launcher_incendiary = {
-						desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc",
-						stats = { damage = -52 }
+						desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_spam_desc_sc",
+						stats = { damage = -51 }
 					}
 					self.wpn_fps_gre_china.override.wpn_fps_upg_a_grenade_launcher_electric = {
 						desc_id = "bm_wp_upg_a_grenade_launcher_electric_spam_desc_sc",
 						stats = { damage = -30 }
 					}
 					self.wpn_fps_gre_china.override.wpn_fps_upg_a_grenade_launcher_poison = {
-						desc_id = "bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc",
+						desc_id = "bm_wp_upg_a_grenade_launcher_poison_spam_desc_sc",
 						stats = { damage = -57 }
 					}
 
@@ -18383,7 +18383,7 @@ end)
 				self.parts.wpn_fps_upg_a_bow_explosion.has_description = true
 				self.parts.wpn_fps_upg_a_bow_explosion.desc_id = "bm_w_bow_exp_desc"
 				self.parts.wpn_fps_upg_a_bow_explosion.supported = true
-				self.parts.wpn_fps_upg_a_bow_explosion.stats = {damage = 60, total_ammo_mod = -204, spread = -6}
+				self.parts.wpn_fps_upg_a_bow_explosion.stats = {spread = -6}
 				self.parts.wpn_fps_upg_a_bow_explosion.custom_stats = {
 					alt_desc = "bm_bow_exp_sc_desc",
 					launcher_grenade = "west_arrow_exp",
@@ -18412,7 +18412,7 @@ end)
 				self.parts.wpn_fps_bow_long_m_explosive.supported = true
 				self.parts.wpn_fps_bow_long_m_explosive.has_description = true
 				self.parts.wpn_fps_bow_long_m_explosive.desc_id = "bm_w_bow_exp_desc"
-				self.parts.wpn_fps_bow_long_m_explosive.stats = {damage = 60, total_ammo_mod = -164, spread = -6}
+				self.parts.wpn_fps_bow_long_m_explosive.stats = {spread = -6}
 				self.parts.wpn_fps_bow_long_m_explosive.custom_stats = {
 					alt_desc = "bm_bow_exp_sc_desc",
 					launcher_grenade = "long_arrow_exp",
@@ -18476,7 +18476,7 @@ end)
 				self.parts.wpn_fps_bow_elastic_m_explosive.has_description = true
 				self.parts.wpn_fps_bow_elastic_m_explosive.desc_id = "bm_w_bow_exp_desc"
 				self.parts.wpn_fps_bow_elastic_m_explosive.supported = true
-				self.parts.wpn_fps_bow_elastic_m_explosive.stats = {damage = 60, total_ammo_mod = -164, spread = -6}
+				self.parts.wpn_fps_bow_elastic_m_explosive.stats = {spread = -6}
 				self.parts.wpn_fps_bow_elastic_m_explosive.custom_stats = {
 					alt_desc = "bm_bow_exp_sc_desc",
 					launcher_grenade = "elastic_arrow_exp",
@@ -18520,7 +18520,7 @@ end)
 					self.parts.wpn_fps_bow_frankish_m_explosive.supported = true
 					self.parts.wpn_fps_bow_frankish_m_explosive.has_description = true
 					self.parts.wpn_fps_bow_frankish_m_explosive.desc_id = "bm_w_xbow_exp_desc"
-					self.parts.wpn_fps_bow_frankish_m_explosive.stats = {damage = 60, total_ammo_mod = -204, spread = -12}
+					self.parts.wpn_fps_bow_frankish_m_explosive.stats = {spread = -12}
 					self.parts.wpn_fps_bow_frankish_m_explosive.custom_stats = {
 						hip_mult = 3,
 						alt_desc = "bm_xbow_exp_sc_desc",
@@ -18551,7 +18551,7 @@ end)
 					self.parts.wpn_fps_bow_arblast_m_explosive.supported = true
 					self.parts.wpn_fps_bow_arblast_m_explosive.has_description = true
 					self.parts.wpn_fps_bow_arblast_m_explosive.desc_id = "bm_w_xbow_exp_desc"
-					self.parts.wpn_fps_bow_arblast_m_explosive.stats = {damage = 60, total_ammo_mod = -164, spread = -12}
+					self.parts.wpn_fps_bow_arblast_m_explosive.stats = {spread = -12}
 					self.parts.wpn_fps_bow_arblast_m_explosive.custom_stats = {
 						hip_mult = 3,
 						alt_desc = "bm_xbow_exp_sc_desc",
@@ -18625,11 +18625,7 @@ end)
 					self.parts.wpn_fps_bow_ecp_m_arrows_explosive.has_description = true
 					self.parts.wpn_fps_bow_ecp_m_arrows_explosive.desc_id = "bm_w_bow_exp_desc"
 					self.parts.wpn_fps_bow_ecp_m_arrows_explosive.supported = true
-					self.parts.wpn_fps_bow_ecp_m_arrows_explosive.stats = {
-						damage = 45,
-						total_ammo_mod = -204,
-						spread = -12
-					}
+					self.parts.wpn_fps_bow_ecp_m_arrows_explosive.stats = {spread = -12}
 					self.parts.wpn_fps_bow_ecp_m_arrows_explosive.custom_stats = {
 						hip_mult = 3,
 						alt_desc = "bm_airbow_exp_sc_desc",
@@ -18797,7 +18793,7 @@ end)
 					self.parts.wpn_fps_upg_a_crossbow_explosion.supported = true
 					self.parts.wpn_fps_upg_a_crossbow_explosion.has_description = true
 					self.parts.wpn_fps_upg_a_crossbow_explosion.desc_id = "bm_w_xbow_exp_desc"
-					self.parts.wpn_fps_upg_a_crossbow_explosion.stats = {damage = 60, total_ammo_mod = -144, spread = -12}
+					self.parts.wpn_fps_upg_a_crossbow_explosion.stats = {spread = -12}
 					self.parts.wpn_fps_upg_a_crossbow_explosion.custom_stats = {
 						hip_mult = 3,
 						alt_desc = "bm_xbow_exp_sc_desc",
@@ -23376,7 +23372,7 @@ end)
 			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.has_description = true
 			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"
 			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.supported = true
-			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.stats = { damage = -52 }
+			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.stats = { damage = -32 }
 			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.custom_stats = {
 				launcher_grenade = "launcher_incendiary_arbiter"
 			}
@@ -23385,7 +23381,7 @@ end)
 			self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.has_description = true
 			self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.desc_id = "bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"
 			self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.supported = true
-			self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.stats = { damage = -30 }
+			self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.stats = { damage = -18 }
 			self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.custom_stats = {
 				launcher_grenade = "launcher_electric_arbiter"
 			}
@@ -23394,7 +23390,7 @@ end)
 			self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.has_description = true
 			self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.desc_id = "bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"
 			self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.supported = true
-			self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.stats = { damage = -57 }
+			self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.stats = { damage = -33 }
 			self.parts.wpn_fps_upg_a_grenade_launcher_poison_arbiter.custom_stats = {
 				launcher_grenade = "launcher_poison_arbiter"
 			}
@@ -23405,7 +23401,7 @@ end)
 			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.has_description = true
 			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"
 			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.supported = true
-			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.stats = { damage = -32 }
+			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.stats = { damage = -34 }
 			self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_ms3gl.custom_stats = {
 				launcher_grenade = "launcher_incendiary"
 			}
@@ -23413,7 +23409,7 @@ end)
 			self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.has_description = true
 			self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.desc_id = "bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"
 			self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.supported = true
-			self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.stats = { damage = -18 }
+			self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.stats = { damage = -20 }
 			self.parts.wpn_fps_upg_a_grenade_launcher_electric_ms3gl.custom_stats = {
 				launcher_grenade = "launcher_electric"
 			}
@@ -23421,7 +23417,7 @@ end)
 			self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.has_description = true
 			self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.desc_id = "bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"
 			self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.supported = true
-			self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.stats = { damage = -33 }
+			self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.stats = { damage = -37 }
 			self.parts.wpn_fps_upg_a_grenade_launcher_poison_ms3gl.custom_stats = {
 				launcher_grenade = "launcher_poison"
 			}
@@ -23429,7 +23425,7 @@ end)
 			self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.has_description = true
 			self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.desc_id = "bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"
 			self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.supported = true
-			self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.stats = { damage = -33 }
+			self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.stats = { damage = -37 }
 			self.parts.wpn_fps_gre_ms3gl_conversion_grenade_poison.custom_stats = {
 				launcher_grenade = "launcher_poison"
 			}
@@ -54778,6 +54774,14 @@ if self.wpn_fps_ass_osipr then
 	self.parts.wpn_fps_ass_osipr_scope.custom = false
 	self.parts.wpn_fps_ass_osipr_m_gl.custom = false
 	self.parts.wpn_fps_ass_osipr_m_gl_incendiary.custom = false
+	self.parts.wpn_fps_ass_osipr_m_gl_incendiary.desc_id = "bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"
+	self.wpn_fps_ass_osipr.override = self.wpn_fps_ass_osipr.override or {}
+	self.wpn_fps_ass_osipr.override.wpn_fps_upg_a_grenade_launcher_electric = {
+		desc_id = "bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"
+	}
+	self.wpn_fps_ass_osipr.override.wpn_fps_upg_a_grenade_launcher_poison = {
+		desc_id = "bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"
+	}
 end
 
 --Anubis

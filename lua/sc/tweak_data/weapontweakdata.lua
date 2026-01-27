@@ -15147,7 +15147,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.05
 						}
 						self.ms3gl.stats = {
-							damage = 36,
+							damage = 40,
 							spread = 61,
 							recoil = 69,
 							spread_moving = 6,
@@ -15170,25 +15170,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 								"clip_ammo_increase"
 							}
 						}
-						self.arbiter.fire_mode_data.fire_rate = 0.5
+						self.arbiter.fire_mode_data.fire_rate = 0.333333
 						self.arbiter.CLIP_AMMO_MAX = 5
-						self.arbiter.AMMO_MAX = 6
+						self.arbiter.AMMO_MAX = 10
 						self.arbiter.alt_shotgunraycast = true
 						self.arbiter.rays = 1
 						self.arbiter.supported = true
-						self.arbiter.ads_speed = 0.460
+						self.arbiter.ads_speed = 0.400
 						self.arbiter.damage_falloff = {
 							start_dist = 1600,
 							end_dist = 5500,
 							min_mult = 0.05
 						}
 						self.arbiter.stats = {
-							damage = 60,
+							damage = 36,
 							spread = 91,
 							recoil = 69,
 							spread_moving = 6,
 							zoom = 1,
-							concealment = 17,
+							concealment = 20,
 							suppression = 1,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -15527,11 +15527,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"clip_ammo_increase"
 				}
 			}
-			self.osipr_gl.AMMO_MAX = 9
+			self.osipr_gl.AMMO_MAX = 10
 			self.osipr_gl.tactical_reload = 1
 			self.osipr_gl.is_bullpup = true
-			self.osipr_gl.CLIP_AMMO_MAX = 6
-			self.osipr_gl.fire_mode_data.fire_rate = 0.5
+			self.osipr_gl.CLIP_AMMO_MAX = 5
+			self.osipr_gl.fire_mode_data.fire_rate = 0.333333
 			self.osipr_gl.kick = self.stat_info.kick_tables.vertical_kick
 			self.osipr_gl.supported = true
 			self.osipr_gl.use_data.selection_index = 4
@@ -15543,7 +15543,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				min_mult = 1
 			}
 			self.osipr_gl.stats = {
-				damage = 60,
+				damage = 36,
 				spread = 26,
 				recoil = 69,
 				spread_moving = 6,
@@ -32336,8 +32336,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.senator.categories = {"pistol", "handcannon", "sweet_liberty"}
 				self.senator.recategorize = { "heavy_pis", "handcannon" }
 				self.senator.damage_type = "handcannon"
-				self.senator.fire_mode_data.fire_rate = 0.3 * 1.8
-				self.senator.fire_rate_multiplier = 1.8
+				self.senator.fire_mode_data.fire_rate = 0.3 * 1.6
+				self.senator.fire_rate_multiplier = 1.6
 				self.senator.sms = 0.7
 				self.senator.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.senator.desc_id = "bm_ap_weapon_sc_desc"
@@ -32388,6 +32388,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.senator.timers.reload_exit_empty = 1.2
 				self.senator.timers.reload_not_empty = 1.44
 				self.senator.timers.reload_exit_not_empty = 1.2
+				self.senator.timers.equip = 0.8
+				self.senator.use_unequip_swap = true
+				self.senator.swap_speed_multiplier = 0.65
 				self.x_senator.use_data.selection_index = 5
 			end
 

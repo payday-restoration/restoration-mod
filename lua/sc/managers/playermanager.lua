@@ -1923,6 +1923,39 @@ function PlayerManager:add_deployable_equipment(equipment_id, amount)
 	end
 end
 
+--- Reversed the order in which the `_damage_bonus_distance` and `_damage_bonus` contours are applied.
+--- This needed to be done because unlike Vanilla's High Value Target, Spotter has logic based on distance
+--- in the Basic version of the skill, not aced.
+--- Leaving it unreversed would result in the Spotter Basic contour applying no matter if you had Basic or Aced.
+--- 
+--- Please note that the contours now handle distance differently! See contourext.lua for more info.
+function PlayerManager:get_contour_for_marked_enemy(enemy_type)
+	local contour_type = "mark_enemy"
+
+	if enemy_type == "swat_turret" or enemy_type == "sentry_gun" then
+		contour_type = "mark_unit_dangerous"
+
+		if managers.player:has_category_upgrade("player", "marked_inc_dmg_distance") then
+			contour_type = "mark_unit_dangerous_damage_bonus_distance"
+		end
+
+		if managers.player:has_category_upgrade("player", "marked_enemy_extra_damage") then
+			contour_type = "mark_unit_dangerous_damage_bonus"
+		end
+	else
+
+		if managers.player:has_category_upgrade("player", "marked_inc_dmg_distance") then
+			contour_type = "mark_enemy_damage_bonus_distance"
+		end
+
+		if managers.player:has_category_upgrade("player", "marked_enemy_extra_damage") then
+			contour_type = "mark_enemy_damage_bonus"
+		end
+	end
+
+	return contour_type
+end
+
 -- Tag Team: tagged player will hear activation sound
 Hooks:PostHook(PlayerManager, "sync_tag_team", "sync_tag_team_sound_effect", function(self, tagged, owner, end_time)
 	if tagged == self:local_player() then

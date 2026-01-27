@@ -15471,6 +15471,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		if self.osipr then
 			self.osipr.recategorize = { "light_ar" }
 			self.osipr.damage_type = "assault_rifle"
+			self.osipr.has_underbarrel = true
 			self.osipr.is_bullpup = true
 			self.osipr.nato = true
 			self.osipr.tactical_reload = 1
@@ -15530,6 +15531,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.osipr_gl.AMMO_MAX = 10
 			self.osipr_gl.tactical_reload = 1
 			self.osipr_gl.is_bullpup = true
+			self.osipr_gl.has_underbarrel = true
 			self.osipr_gl.CLIP_AMMO_MAX = 5
 			self.osipr_gl.fire_mode_data.fire_rate = 0.333333
 			self.osipr_gl.kick = self.stat_info.kick_tables.vertical_kick

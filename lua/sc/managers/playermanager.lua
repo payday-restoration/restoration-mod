@@ -2046,8 +2046,8 @@ end
 --- 
 --- @param peer_id integer The Peer ID of the player whose HUD element needs to be updated.
 function PlayerManager:update_carrystacker_hud(peer_id)
-	if peer_id == managers.network:session():local_peer():id() then
-		return -- TODO HUD UPDATE
+	if peer_id ~= managers.network:session():local_peer():id() then
+		return
 	end
 	local carry_stacker_data = self:get_synced_carry_stacker(peer_id)
 
@@ -2134,7 +2134,7 @@ Hooks:PostHook(PlayerManager, "remove_synced_carry", "ResCarryStackerPostRemoveS
 
 	if remaining_cdata and #remaining_cdata > 0 then
 		local next_carry = table.remove(remaining_cdata, #remaining_cdata)
-		
+
 		if peer_id == local_peer_id then
 			self:set_carry(next_carry.carry_id, next_carry.multiplier, next_carry.dye_initiated, next_carry.has_dye_pack, next_carry.dye_value_multiplier)
 		else

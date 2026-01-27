@@ -94,6 +94,16 @@
 		<search>
 			<network/>
 			<rpc/>
+			<message name="sync_remove_carry_stacker"/>
+		</search>
+		<target mode="attributes">
+			<attr name="delivery" value="ordered"/>
+		</target>
+	</tweak>
+	<tweak name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
 			<message name="damage_tase"/>
 	            	<param type="int" min="0" max="1" />
 		</search>

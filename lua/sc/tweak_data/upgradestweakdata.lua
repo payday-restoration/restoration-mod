@@ -1075,7 +1075,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						max_damage = 200,
 						chance = 0.8
 					}						
-					self.values.player.armor_regen_timer_multiplier = {0.9}
+					self.values.player.armor_regen_timer_multiplier = {0.85}
 					
 					self.skill_descs.juggernaut = {
 						skill_value_p1 = tostring((1 - self.values.player.armor_regen_timer_multiplier[1]) * 100).."%" -- Faster armor recovery
@@ -1249,7 +1249,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 								armor_steps = 10 --1 step for every 100 base armor
 							}
 						}
-						self.values.player.armor_regen_timer_multiplier_tier = {0.85}
+						self.values.player.armor_regen_timer_multiplier_tier = {0.90}
 						
 						self.skill_descs.tower_defense = {
 							skill_value_b1 = tostring(self.values.player.level_5_armor_addend[1]*10), -- +armor for Flak and CTV; unused

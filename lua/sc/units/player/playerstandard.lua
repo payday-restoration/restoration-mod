@@ -452,7 +452,7 @@ function PlayerStandard:_check_action_reload(t, input)
 			new_action = true
 		end
 		if restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/SeparateBowADS") then
-			if alive(self._equipped_unit) then
+			if alive(self._equipped_unit) and self:_is_charging_weapon() then
 				local result = nil
 				local weap_base = self._equipped_unit:base()
 
@@ -463,6 +463,7 @@ function PlayerStandard:_check_action_reload(t, input)
 						result = weap_base:steelsight_released()
 					end
 				end
+				self._ext_camera:play_redirect(self:get_animation("idle"))
 			end
 		end
 	end
@@ -1209,6 +1210,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						self:_start_action_charging_weapon(t)
 					elseif self._state_data.charging_weapon and not charging_weapon then
 						self:_end_action_charging_weapon(t)
+						self._ext_camera:play_redirect(self:get_animation("idle"))
 					end
 
 					new_action = true

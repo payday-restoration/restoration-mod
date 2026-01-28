@@ -29506,7 +29506,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{4, self.stat_info.kick_tables.right_recoil}
 				}
 				self.pd3_lynx.supported = true
-				self.pd3_lynx.ads_speed = 0.700
+				self.pd3_lynx.ads_speed = 0.680
 				self.pd3_lynx.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 20000,
@@ -29518,7 +29518,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 5,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 12,
+					concealment = 14,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -29530,13 +29530,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pd3_lynx.armor_piercing_chance = 1
 				self.pd3_lynx.can_shoot_through_titan_shield = true
 				self.pd3_lynx.stats_modifiers = nil
-				self.pd3_lynx.reload_speed_multiplier = 0.8
+				self.pd3_lynx.reload_speed_multiplier = 0.82
 				self.pd3_lynx.panic_suppression_chance = 0.05
 				self.pd3_lynx.timers.equip = 1.3
-				self.pd3_lynx.timers.reload_empty = 3.4
-				self.pd3_lynx.timers.reload_exit_empty = 0.1
+				self.pd3_lynx.timers.reload_empty = 3.3
+				self.pd3_lynx.timers.reload_exit_empty = 1.26
 				self.pd3_lynx.timers.reload_not_empty = 3.1
-				self.pd3_lynx.timers.reload_exit_not_empty = 0.8
+				self.pd3_lynx.timers.reload_exit_not_empty = 0.9
 			end
 
 			if self.raid_ww2_bren then --RJC9000 and PlayBONK's RAID WWII Bren Mk1

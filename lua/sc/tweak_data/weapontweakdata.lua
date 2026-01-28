@@ -27251,6 +27251,67 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksp45.lock_slide_offset = 0.066
 				self.ksp45.sounds.magazine_empty = "wp_pistol_slide_lock"
 			end
+				if self.x_ksp45 then --RJC9000 and PlayBONK's port of 3arc's sin of a Franken-UMP(?)
+					self.x_ksp45.use_data.selection_index = 2
+					self.x_ksp45.desc_id = "bm_w_ksp45_desc_sc"
+					self.x_ksp45.has_description = true
+					self.x_ksp45.categories = { "akimbo", "smg" }
+					self.x_ksp45.recategorize = { "heavy_smg" }
+					self.x_ksp45.damage_type = "machine_gun"
+					self.x_ksp45.fire_mode_data.fire_rate = 0.0831024
+					self.x_ksp45.CAN_TOGGLE_FIREMODE = false
+					self.x_ksp45.FIRE_MODE = "single"
+					self.x_ksp45.tactical_reload = 2
+					self.x_ksp45.CLIP_AMMO_MAX = 60
+					self.x_ksp45.AMMO_MAX = 120
+					self.x_ksp45.burst = nil
+					self.x_ksp45.fire_mode_data.burst_cooldown = nil
+					self.x_ksp45.BURST_COUNT = nil
+					self.x_ksp45.BURST_FIRE = {
+						count = 3,
+						delay = 0.083,
+						lock = true,
+						recoil_mult = 0.55,
+						last_recoil_mult = 0.55,
+						burst_default = true
+					}
+					self.x_ksp45.kick = self.stat_info.kick_tables.even_recoil
+					self.x_ksp45.kick_pattern = {
+						{0, self.stat_info.kick_tables.left_recoil},
+						{3, self.stat_info.kick_tables.even_recoil},
+						{6, self.stat_info.kick_tables.left_recoil},
+						{9, self.stat_info.kick_tables.right_recoil},
+						{12, self.stat_info.kick_tables.moderate_kick},
+						{15, self.stat_info.kick_tables.even_recoil}
+					}
+					self.x_ksp45.panic_suppression_chance = 0.05
+					self.x_ksp45.supported = true
+					self.x_ksp45.ads_speed = 0.280
+					self.x_ksp45.damage_falloff = {
+						start_dist = 1200,
+						end_dist = 2500,
+						min_mult = 0.3
+					}
+					self.x_ksp45.stats = {
+						damage = 30,
+						spread = 61,
+						recoil = 71,
+						spread_moving = 6,
+						zoom = 1,
+						concealment = 26,
+						suppression = 9,
+						alert_size = 2,
+						extra_ammo = 101,
+						total_ammo_mod = 400,
+						value = 9,
+						reload = 25
+					}
+					self.x_ksp45.stats_modifiers = nil
+					self.x_ksp45.panic_suppression_chance = 0.05
+					self.x_ksp45.reload_speed_multiplier = 0.65
+					self.x_ksp45.timers = deep_clone(self.x_shepheard.timers)
+					self.x_ksp45.sounds.magazine_empty = "wp_pistol_slide_lock"
+				end
 
 			if self.t9british then --RJC9000 and PlayBONK's port of 3arc's absolute sin of an EM2
 				self.t9british.categories = { "assault_rifle", "dmr_l" }

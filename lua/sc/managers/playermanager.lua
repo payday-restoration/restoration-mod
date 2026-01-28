@@ -2052,9 +2052,9 @@ function PlayerManager:recalculate_carried_weights()
 
     local all_weight_modifier = 1
 
-	local function add_carry_weight(carry)
-		if carry then
-			local carry_type = tweak_data.carry[cdata.carry_id].type
+	local function add_carry_weight(examined_carry)
+		if examined_carry then
+			local carry_type = tweak_data.carry[examined_carry.carry_id].type
 			local movement_penalty = tweak_data.carry.types[carry_type].weight
 
 			local this_weight_modifier = movement_penalty ~= nil 
@@ -2067,8 +2067,8 @@ function PlayerManager:recalculate_carried_weights()
 
 	add_carry_weight(cdata)
 	if remaining_cdata then
-		for _, carry in ipairs(remaining_cdata) do
-			add_carry_weight(carry)
+		for i, carry_iter in ipairs(remaining_cdata) do
+			add_carry_weight(carry_iter)
 		end
 	end
 	
@@ -2083,13 +2083,23 @@ function PlayerManager:update_carrystacker_hud(peer_id)
 		return
 	end
 	local carry_stacker_data = self:get_synced_carry_stacker(peer_id)
+	local carry_data = self:get_my_carry_data()
+	local bags = 0
+
+	if carry_data then
+		bags = bags + 1
+	end
+
+	if carry_stacker_data then
+		bags = bags + #carry_stacker_data
+	end
 
 	managers.hud:remove_special_equipment("carrystacker")
-	if carry_stacker_data and #carry_stacker_data > 0 then
+	if bags > 0 then
 		managers.hud:add_special_equipment({
 			id = "carrystacker", 
 			icon = "pd2_loot", 
-			amount = #carry_stacker_data
+			amount = bags
 		})
 	end
 end
@@ -2101,6 +2111,7 @@ function PlayerManager:update_removed_synced_carry_stacker_to_peers()
 
 	managers.network:session():send_to_peers_synched("sync_remove_carry_stacker")
 	self:remove_synced_carry_stacker(peer)
+	self:recalculate_carried_weights()
 end
 
 --- Clears the synced_carry_stacker table for a given peer.
@@ -2151,7 +2162,10 @@ Hooks:PostHook(PlayerManager, "drop_carry", "ResCarryStackerDropCarry", function
 
 	if remaining_cdata and #remaining_cdata > 0 then
 		self._carry_blocked_cooldown_t = Application:time() + 0.5
-	end	
+	end
+
+	self:update_carrystacker_hud(peer_id)
+	self:recalculate_carried_weights()
 end)
 
 --- This is a bit delayed compared to the original CarryStacker implementation where this (or rather
@@ -2190,6 +2204,8 @@ end)
 
 --- Adjust the player weight, and block interactions for a short bit.
 Hooks:PostHook(PlayerManager, "set_carry", "ResCarryStackerPostSetCarry", function(self, _, _, _, _, _)
+	local peer_id = managers.network:session():local_peer():id()
+	self:update_carrystacker_hud(peer_id)
 	self:recalculate_carried_weights()
 	PlayerStandard:block_use_item()
 end)

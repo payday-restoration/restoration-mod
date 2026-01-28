@@ -1286,7 +1286,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						recoil_multiplier_h = math.lerp(recoil_multiplier, recoil_multiplier_h, 0.75)
 						local recoil_count = weap_base._shot_recoil_pattern_count or 0
 						local recoil_stage = nil
-						if weap_tweak_data.kick_pattern then
+						if weap_base._kick_pattern then
 							local function shot_recoil_pattern(shot_count, recoil_table, weap_base)
 								local stage = nil
 								for i, k in pairs(recoil_table) do
@@ -1303,9 +1303,9 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								end
 								return stage
 							end
-							recoil_stage = shot_recoil_pattern(recoil_count, weap_tweak_data.kick_pattern, weap_base)
+							recoil_stage = shot_recoil_pattern(recoil_count, weap_base._kick_pattern, weap_base)
 						end
-						local kick_tweak_data = weap_tweak_data.kick[fire_mode] or (recoil_stage and weap_tweak_data.kick_pattern[recoil_stage][2]) or weap_tweak_data.kick
+						local kick_tweak_data = weap_tweak_data.kick[fire_mode] or (recoil_stage and weap_base._kick_pattern[recoil_stage][2]) or weap_tweak_data.kick
 						local always_standing = weap_tweak_data.always_use_standing
 						local up, down, left, right = unpack(kick_tweak_data[always_standing and "standing" or self._state_data.in_steelsight and "steelsight" or self._state_data.ducking and "crouching" or "standing"])
 						local min_h_recoil = kick_tweak_data.min_h_recoil
@@ -3088,24 +3088,24 @@ function PlayerStandard:_update_drain_stamina(t, dt)
 end
 
 function PlayerStandard:_last_shot_recoil_t(t, dt)
-	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
-	local fire_rate = weapon and weapon:weapon_fire_rate()
-	local weapon_tweak = weapon and weapon:weapon_tweak_data()
+	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
+	local fire_rate = weap_base and weap_base:weapon_fire_rate()
+	local weapon_tweak = weap_base and weap_base:weapon_tweak_data()
 	local base_fire_rate_multiplier = weapon_tweak.fire_rate_multiplier or 1
-	local in_burst = weapon:in_burst_mode()
-	local auto_burst = in_burst and weapon._auto_burst
-	local burst_delay = (in_burst and weapon._burst_delay) or 0
-	local max_t = weapon_tweak.kick_pattern and weapon_tweak.kick_pattern.max_t or 0.35
-	if weapon then
+	local in_burst = weap_base:in_burst_mode()
+	local auto_burst = in_burst and weap_base._auto_burst
+	local burst_delay = (in_burst and weap_base._burst_delay) or 0
+	local max_t = weap_base._kick_pattern and weap_base._kick_pattern.max_t or 0.35
+	if weap_base then
 		if self._shooting then
-			self._last_recoil_t = math.clamp( ((fire_rate + burst_delay) / (weapon:fire_rate_multiplier() * 0.8)) * 2 , math.max(0, math.lerp( 0.2, -0.25, fire_rate + burst_delay )) , max_t + burst_delay / ((not auto_burst and (weapon:fire_rate_multiplier() / base_fire_rate_multiplier) ) or 1) )
+			self._last_recoil_t = math.clamp( ((fire_rate + burst_delay) / (weap_base:fire_rate_multiplier() * 0.8)) * 2 , math.max(0, math.lerp( 0.2, -0.25, fire_rate + burst_delay )) , max_t + burst_delay / ((not auto_burst and (weap_base:fire_rate_multiplier() / base_fire_rate_multiplier) ) or 1) )
 		else
 			if self._last_recoil_t then
 				self._last_recoil_t = self._last_recoil_t - dt
 				if self._last_recoil_t < 0 then
 					self._last_recoil_t = nil
-					weapon._shot_recoil_pattern_count = 0
-					weapon._shot_recoil_magnitude_count = 0
+					weap_base._shot_recoil_pattern_count = 0
+					weap_base._shot_recoil_magnitude_count = 0
 				end
 			end
 		end

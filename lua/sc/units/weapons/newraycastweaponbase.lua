@@ -1009,6 +1009,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._can_shoot_through_titan_shield = self._can_shoot_through_titan_shield or self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
 	self._shield_pierce_damage_mult = self:weapon_tweak_data().shield_pierce_damage_mult or 0.5
 	self._ammo_ratio = self:weapon_tweak_data().ammo_ratio or 1
+	self._kick_pattern = self._kick_pattern or self:weapon_tweak_data().kick_pattern
 
 	self._warsaw = self:weapon_tweak_data().warsaw
 	self._nato = self:weapon_tweak_data().nato
@@ -1190,6 +1191,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = stats.can_toggle_firemode
 			end
 
+			if stats.kick_pattern then
+				self._kick_pattern = stats.kick_pattern
+			end
+			
 			--BURST STUFF HERE
 			if stats.burst_fire then
 				local burst_data = stats.burst_fire

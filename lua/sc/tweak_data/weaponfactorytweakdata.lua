@@ -24113,7 +24113,7 @@ end)
 
 
 --Resmod Custom Content
-Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
+Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self, tweak_data)
 
 	self.parts.wpn_fps_hailstorm_sound_switch = {
 		a_obj = "a_body",
@@ -28561,6 +28561,56 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_scotia_magazine_drum.custom_stats = {
 					ads_speed_mult = 1.375
 				}
+		end
+		if self.parts.wpn_fps_ass_scotia_barrel_fullauto then
+			self.parts.wpn_fps_ass_scotia_barrel_fullauto.supported = true
+			self.parts.wpn_fps_ass_scotia_barrel_fullauto.keep_damage = true
+			self.parts.wpn_fps_ass_scotia_barrel_fullauto.stats = {
+				value = 9,
+				recoil = 12,
+				spread = -2,
+				damage = -6,
+				total_ammo_mod = 97,
+				concealment = 1
+			}
+			self.parts.wpn_fps_ass_scotia_barrel_fullauto.custom_stats = {
+				can_toggle_firemode = true,
+				orig_toggle_firemode = false,
+				default_firemode = "auto",
+				orig_firemode = "single",
+				block_burst = true,
+				info_burst_to_auto = true,
+				rof_mult = 1.692047,
+				damage_min_mult = 1.25,
+				falloff_start_mult = 0.6944,
+				hip_mult = 1.2,
+				ads_speed_mult = 0.95,
+				kick_pattern = {
+					{0, tweak_data.weapon.stat_info.kick_tables.moderate_left_kick},
+					{8, tweak_data.weapon.stat_info.kick_tables.even_recoil},
+					{10, tweak_data.weapon.stat_info.kick_tables.right_kick},
+					{14, tweak_data.weapon.stat_info.kick_tables.harsh_right_kick},
+				},
+				alt_ammo_pickup_min_mul = 1.304,
+				alt_ammo_pickup_max_mul = 1.304,
+				ammo_pickup_min_mul = 1.304,
+				ammo_pickup_max_mul = 1.304
+			}
+			self.parts.wpn_fps_ass_scotia_barrel_fullauto.forbids = {
+				"wpn_fps_ass_scotia_safety_auto",
+				"wpn_fps_ass_scotia_safety_harper"
+			}
+			self.parts.wpn_fps_ass_scotia_barrel_fullauto.override = {
+				wpn_fps_ass_scotia_receiver_lower = { unit = "units/mods/weapons/wpn_fps_ass_scotia_pts/wpn_fps_ass_scotia_receiver_lower_fullauto" },
+				wpn_fps_m4_uupg_fg_rail_ext = { unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" },
+				wpn_fps_addon_ris = { unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" },
+				wpn_fps_ass_scotia_safety = { unit = "units/mods/weapons/wpn_fps_ass_scotia_pts/wpn_fps_ass_scotia_safety_fullauto", a_obj = "a_safety_auto" }
+			}
+
+			self.parts.wpn_fps_ass_scotia_receiver_lower_fullauto.pcs = nil
+			self.parts.wpn_fps_ass_scotia_receiver_lower_fullauto.supported = true
+			self.parts.wpn_fps_ass_scotia_receiver_lower_fullauto.stats = { value = 0 }
+			self.parts.wpn_fps_ass_scotia_receiver_lower_fullauto.custom_stats = nil
 		end
 
 		if self.parts.wpn_fps_ass_c8sfw_gl_m26mass then

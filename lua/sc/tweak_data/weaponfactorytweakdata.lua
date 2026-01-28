@@ -28180,6 +28180,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_snp_baltic_barrel_heavy.custom_stats = {
 					chf = true
 				}
+			--HANDGUARDS
+				--TODO
 			--GRIPS
 				--Quickdraw
 				self.parts.wpn_fps_snp_baltic_grip_quick.supported = true
@@ -28257,8 +28259,90 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ads_speed_mult = 1.15
 				}
 		end
-		if self.parts.wpn_fps_ass_m15mod0_magazine_drum then
 
+		if self.parts.wpn_fps_ass_m15mod0_magazine_drum then
+			self.parts.wpn_fps_ass_m15mod0_flash_hider.supported = true
+			self.parts.wpn_fps_ass_m15mod0_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_m15mod0_flash_hider.perks = nil
+			self.parts.wpn_fps_ass_m15mod0_flash_hider.custom_stats = nil
+
+			--BARRELS
+				--Delta-F2
+				self.parts.wpn_fps_ass_m15mod0_barrel_xlong.supported = true
+				self.parts.wpn_fps_ass_m15mod0_barrel_xlong.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_ass_m15mod0_barrel_xlong.custom_stats = deep_clone(barrels.long_b3_stats)
+				--Bowen
+				self.parts.wpn_fps_ass_m15mod0_barrel_long.supported = true
+				self.parts.wpn_fps_ass_m15mod0_barrel_long.stats = {
+					value = 4,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_ass_m15mod0_barrel_long.custom_stats = nil
+				--Fusion
+				self.parts.wpn_fps_ass_m15mod0_barrel_med.supported = true
+				self.parts.wpn_fps_ass_m15mod0_barrel_med.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_ass_m15mod0_barrel_med.stats.concealment = -2
+				self.parts.wpn_fps_ass_m15mod0_barrel_med.stats.recoil = 2
+				self.parts.wpn_fps_ass_m15mod0_barrel_med.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Mirage
+				self.parts.wpn_fps_ass_m15mod0_barrel_short.supported = true
+				self.parts.wpn_fps_ass_m15mod0_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_ass_m15mod0_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+				--Reticulated
+				self.parts.wpn_fps_ass_m15mod0_barrel_heavy.supported = true
+				self.parts.wpn_fps_ass_m15mod0_barrel_heavy.desc_id = "bm_wp_chf_50_desc"
+				self.parts.wpn_fps_ass_m15mod0_barrel_heavy.has_description = true
+				self.parts.wpn_fps_ass_m15mod0_barrel_heavy.stats = {
+					value = 10,
+					recoil = -20,
+					concealment = -4
+				}
+				self.parts.wpn_fps_ass_m15mod0_barrel_heavy.custom_stats = {
+					chf = true
+				}
+			--GRIPS
+				--Quickdraw
+				self.parts.wpn_fps_ass_m15mod0_grip_quick.supported = true
+				self.parts.wpn_fps_ass_m15mod0_grip_quick.stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_ass_m15mod0_grip_quick.custom_stats = deep_clone(grips.quickdraw_1)
+				--Ergonomic
+				self.parts.wpn_fps_ass_m15mod0_grip_tac.supported = true
+				self.parts.wpn_fps_ass_m15mod0_grip_tac.stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_ass_m15mod0_grip_tac.custom_stats = deep_clone(grips.dual_stat_1)
+				--Combat
+				self.parts.wpn_fps_ass_m15mod0_grip_rcvr.supported = true
+				self.parts.wpn_fps_ass_m15mod0_grip_rcvr.stats = deep_clone(grips.acc_1)
+				self.parts.wpn_fps_ass_m15mod0_grip_rcvr.custom_stats = deep_clone(grips.acc_1)
+				--CQB
+				self.parts.wpn_fps_ass_m15mod0_grip_cqb.supported = true
+				self.parts.wpn_fps_ass_m15mod0_grip_cqb.stats = deep_clone(grips.quickdraw_2)
+				self.parts.wpn_fps_ass_m15mod0_grip_cqb.custom_stats = deep_clone(grips.quickdraw_2)
+				--Commando
+				self.parts.wpn_fps_ass_m15mod0_grip_light.supported = true
+				self.parts.wpn_fps_ass_m15mod0_grip_light.stats = deep_clone(grips.recoil_1)
+				self.parts.wpn_fps_ass_m15mod0_grip_light.custom_stats = deep_clone(grips.recoil_1)
+			--STOCKS
+				--Infiltrator
+				self.parts.wpn_fps_ass_m15mod0_stock_tac.supported = true
+				self.parts.wpn_fps_ass_m15mod0_stock_tac.stats = deep_clone(stocks.adj_acc_stats)
+				self.parts.wpn_fps_ass_m15mod0_stock_tac.custom_stats = deep_clone(stocks.adj_acc_stats)
+				--Heavy
+				self.parts.wpn_fps_ass_m15mod0_stock_full.supported = true
+				self.parts.wpn_fps_ass_m15mod0_stock_full.stats = deep_clone(stocks.adj_rec_stats)
+				self.parts.wpn_fps_ass_m15mod0_stock_full.custom_stats = deep_clone(stocks.adj_rec_stats)
+				--Light
+				self.parts.wpn_fps_ass_m15mod0_stock_light.supported = true
+				self.parts.wpn_fps_ass_m15mod0_stock_light.stats = deep_clone(stocks.adj_to_fold_stats)
+				self.parts.wpn_fps_ass_m15mod0_stock_light.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+				--Balanced
+				self.parts.wpn_fps_ass_m15mod0_stock_heavy.supported = true
+				self.parts.wpn_fps_ass_m15mod0_stock_heavy.stats = deep_clone(stocks.adj_hvy_rec_stats)
+				self.parts.wpn_fps_ass_m15mod0_stock_heavy.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+				--Combat
+				self.parts.wpn_fps_ass_m15mod0_stock_skel.supported = true
+				self.parts.wpn_fps_ass_m15mod0_stock_skel.stats = deep_clone(stocks.adj_hvy_acc_stats)
+				self.parts.wpn_fps_ass_m15mod0_stock_skel.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
 			--MAGAZINES
 				--Nomad (Fast)
 				self.parts.wpn_fps_ass_m15mod0_magazine_fast.supported = true

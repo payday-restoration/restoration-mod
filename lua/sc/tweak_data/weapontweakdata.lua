@@ -25245,6 +25245,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 25
 				}
 				self.m15mod0.stats_modifiers = nil
+				self.m15mod0.lock_slide = true
+				self.m15mod0.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.m15mod0.panic_suppression_chance = 0.05
 				self.m15mod0.reload_speed_multiplier = 0.85
 				self.m15mod0.timers.reload_not_empty = 1.85

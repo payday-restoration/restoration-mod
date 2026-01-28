@@ -43886,7 +43886,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_smg_sta11_stock then
-
 			for i, part_id in pairs(self.wpn_fps_smg_sta11.uses_parts) do
 				if self.parts[part_id] and self.parts[part_id].type then
 					if self.parts[part_id].pcs then
@@ -43901,7 +43900,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_sickle_m_battery then
-
 			self.parts.wpn_fps_sickle_optic.supported = true
 			self.parts.wpn_fps_sickle_optic.stats = {
 				value = 0,
@@ -43950,6 +43948,47 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					translation = Vector3(0.02, 8, -0.08),
 					rotation = Rotation(-0.02, 0.1, 0)
 				}
+			}
+		end
+
+		if self.parts.wpn_fps_upg_hd2_m_short_ar59 then
+			self.parts.wpn_fps_ass_ar59_suppressor.supported = true
+			self.parts.wpn_fps_ass_ar59_suppressor.stats = { value = 0 }
+			self.parts.wpn_fps_ass_ar59_suppressor.custom_stats = nil
+			
+			self.parts.wpn_fps_ass_ar59_s_folded.supported = true
+			self.parts.wpn_fps_ass_ar59_s_folded.stats = deep_clone(stocks.adj_to_folded_stats)
+			self.parts.wpn_fps_ass_ar59_s_folded.custom_stats = deep_clone(stocks.adj_to_folded_stats)
+
+			self.parts.wpn_fps_upg_hd2_m_quick_ar59.supported = true
+			self.parts.wpn_fps_upg_hd2_m_quick_ar59.stats = {
+				value = 5,
+				spread = -2,
+				concealment = -1,
+				reload = 2
+			}
+			self.parts.wpn_fps_upg_hd2_m_quick_ar59.custom_stats = nil
+
+			self.parts.wpn_fps_upg_hd2_m_short_ar59.supported = true
+			self.parts.wpn_fps_upg_hd2_m_short_ar59.stats = {
+				extra_ammo = -15,
+				total_ammo_mod = -18,
+				concealment = 2,
+				reload = 5,
+			}
+			self.parts.wpn_fps_upg_hd2_m_short_ar59.custom_stats = {
+				ads_speed_mult = 0.95
+			}
+
+			self.parts.wpn_fps_upg_hd2_m_drum_ar59.supported = true
+			self.parts.wpn_fps_upg_hd2_m_drum_ar59.stats = {
+				extra_ammo = 15,
+				total_ammo_mod = 12,
+				concealment = -5,
+				reload = -7,
+			}
+			self.parts.wpn_fps_upg_hd2_m_drum_ar59.custom_stats = {
+				ads_speed_mult = 1.375
 			}
 		end
 

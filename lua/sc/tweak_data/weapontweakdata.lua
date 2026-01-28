@@ -31880,6 +31880,62 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.timers.reload_exit_not_empty = 1.13
 			end
 
+			if self.ar59 then
+				self.ar59.categories = {
+					"assault_rifle",
+					"sweet_liberty"
+				}
+				self.ar59.recategorize = {"heavy_ar"}
+				self.ar59.damage_type = "assault_rifle"
+				self.ar59.CLIP_AMMO_MAX = 45
+				self.ar59.AMMO_MAX = self.ar59.CLIP_AMMO_MAX * 9
+				self.ar59.ammo_ratio = 2
+				self.ar59.fire_mode_data.fire_rate = 0.070588
+				self.ar59.fire_mode_data.toggable = nil
+				self.ar59.sms = 0.5
+				self.ar59.tactical_reload = 1
+				self.ar59.keep_ammo = 0
+				self.ar59.fire_mode_data.toggable = nil
+				self.ar59.BURST_FIRE = false
+				self.ar59.CAN_TOGGLE_FIREMODE = true
+				self.ar59.FIRE_MODE = "auto"
+				self.ar59.kick = self.stat_info.kick_tables.even_recoil
+				self.ar59.supported = true
+				self.ar59.ads_speed = 0.320
+				self.ar59.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 4100,
+					min_mult = 0.26667
+				}
+				self.ar59.stats = {
+					damage = 16,
+					spread = 76,
+					recoil = 81,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 23,
+					suppression = 7,
+					alert_size = 1,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 25
+				}
+				self.ar59.stats_modifiers = {
+					damage = 2.5
+				}
+				self.ar59.panic_suppression_chance = 0.05
+				self.ar59.object_damage_mult = 0.75 --scaled to match the object damage of 60 damage rifles
+				self.ar59.lock_slide = true
+				self.ar59.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.ar59.sounds.use_fix = nil
+				self.ar59.reload_speed_multiplier = 0.85
+				self.ar59.timers.reload_not_empty = 1.85
+				self.ar59.timers.reload_exit_not_empty = 0.9
+				self.ar59.timers.reload_empty = 2.4
+				self.ar59.timers.reload_exit_empty = 0.6
+			end
+
 			if self.sta52 then
 				self.sta52.categories = {
 					"assault_rifle",

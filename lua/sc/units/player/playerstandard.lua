@@ -477,27 +477,27 @@ local master_PlayerStandard_check_use_item = PlayerStandard._check_use_item
 
 local master_PlayerStandard_update = PlayerStandard.update
 function PlayerStandard:update(t, dt)
-	restoration:debug("Request to update the player")
+	--restoration:debug("Request to update the player")
 	master_PlayerStandard_update(self, t, dt)
 
 	if self ~= nil then
 		if self._get_input ~= nil then
-			restoration:debug("Storing whether the player is holding " ..
-				"the use button")
+			--restoration:debug("Storing whether the player is holding " ..
+				--"the use button")
 			btn_use_item_held = self._controller:get_input_bool("use_item")
 		end
 	end
 end
 
 function PlayerStandard:use_item_held()
-	restoration:debug("Request to get whether the player is holding the " ..
-		"use button. The answer is: " .. tostring(btn_use_item_held))
+	--restoration:debug("Request to get whether the player is holding the " ..
+		--"use button. The answer is: " .. tostring(btn_use_item_held))
 	return btn_use_item_held
 end
 
 function PlayerStandard:block_use_item()
-	restoration:debug("Request to update the time from which the " ..
-		"player has to wait to use another item")
+	--restoration:debug("Request to update the time from which the " ..
+		--"player has to wait to use another item")
 	block_use_item_from = TimerManager:game():time()
 end
 
@@ -4535,7 +4535,7 @@ function PlayerStandard:_start_action_reload(t)
 			if is_reload_not_empty then
 				reload_anim = "reload_not_empty"
 				reload_default_expire_t = 2.2
-				reload_tweak = weapon_tweak.timers.reload_not_empty
+				reload_tweak = weapon._alt_reload_not_empty or weapon_tweak.timers.reload_not_empty
 			end
 
 			local reload_ids = Idstring(string.format("%s%s_%s", reload_prefix, reload_anim, reload_name_id))

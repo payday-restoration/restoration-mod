@@ -25205,6 +25205,54 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.kord_6p67.timers.reload_exit_not_empty = 1.33
 			end
 
+			if self.m15mod0 then
+				self.m15mod0.recategorize = { "light_ar" }
+				self.m15mod0.damage_type = "assault_rifle"
+				self.m15mod0.nato = true
+				self.m15mod0.CLIP_AMMO_MAX = 30
+				self.m15mod0.fire_mode_data.fire_rate = 0.078023
+				self.m15mod0.tactical_reload = 1
+				self.m15mod0.AMMO_MAX = 150
+				self.m15mod0.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.m15mod0.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{4, self.stat_info.kick_tables.right_recoil},
+					{7, self.stat_info.kick_tables.moderate_right_kick},
+					{9, self.stat_info.kick_tables.moderate_kick},
+					{14, self.stat_info.kick_tables.moderate_left_kick},
+					{20, self.stat_info.kick_tables.left_recoil}
+				}
+				self.m15mod0.BURST_FIRE = false
+				self.m15mod0.supported = true
+				self.m15mod0.ads_speed = 0.260
+				self.m15mod0.damage_falloff = {
+					start_dist = 3000,
+					end_dist = 4600,
+					min_mult = 0.5
+				}
+				self.m15mod0.stats = {
+					damage = 24,
+					spread = 79,
+					recoil = 81,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.m15mod0.stats_modifiers = nil
+				self.m15mod0.panic_suppression_chance = 0.05
+				self.m15mod0.reload_speed_multiplier = 0.85
+				self.m15mod0.timers.reload_not_empty = 1.85
+				self.m15mod0.timers.reload_exit_not_empty = 0.9
+				self.m15mod0.timers.reload_empty = 2.4
+				self.m15mod0.timers.reload_exit_empty = 0.6
+			end
+
 			if self.scotia then
 				self.scotia.categories = { "assault_rifle" }
 				self.scotia.recategorize = { "heavy_ar" }

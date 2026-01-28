@@ -1237,8 +1237,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 			if stats.adj_timers then
 				if self:weapon_tweak_data().timers then
-					self:weapon_tweak_data().timers.reload_empty = stats.adj_timers.reload_empty or self:weapon_tweak_data().timers.reload_empty
-					self:weapon_tweak_data().timers.reload_not_empty = stats.adj_timers.reload_not_empty or self:weapon_tweak_data().timers.reload_not_empty
+					--self:weapon_tweak_data().timers.reload_empty = stats.adj_timers.reload_empty or self:weapon_tweak_data().timers.reload_empty
+					--self:weapon_tweak_data().timers.reload_not_empty = stats.adj_timers.reload_not_empty or self:weapon_tweak_data().timers.reload_not_empty
+					self._alt_reload_not_empty = stats.adj_timers.reload_not_empty
 					self._alt_reload_exit_empty = stats.adj_timers.reload_exit_empty
 					self._alt_reload_exit_not_empty = stats.adj_timers.reload_exit_not_empty
 				end

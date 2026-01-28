@@ -28257,6 +28257,60 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ads_speed_mult = 1.15
 				}
 		end
+		if self.parts.wpn_fps_ass_m15mod0_magazine_drum then
+
+			--MAGAZINES
+				--Nomad (Fast)
+				self.parts.wpn_fps_ass_m15mod0_magazine_fast.supported = true
+				self.parts.wpn_fps_ass_m15mod0_magazine_fast.stats = {
+					value = 2,
+					concealment = 2,
+					reload = 5,
+					extra_ammo = -5
+				}
+				self.parts.wpn_fps_ass_m15mod0_magazine_fast.custom_stats = {
+					ads_speed_mult = 0.95,
+					reload_non_empty_anim_mult = 1.3,
+					adj_timers = {
+						reload_not_empty = 1.423
+					}
+				}
+				--Backline (Flip)
+				self.parts.wpn_fps_ass_m15mod0_magazine_flip.supported = true
+				self.parts.wpn_fps_ass_m15mod0_magazine_flip.stats = {
+					value = 5,
+					spread = -2,
+					concealment = -1,
+					reload = 2
+				}
+				self.parts.wpn_fps_ass_m15mod0_magazine_flip.custom_stats = nil
+				--Mayday (Ext I)
+				self.parts.wpn_fps_ass_m15mod0_magazine_large.supported = true
+				self.parts.wpn_fps_ass_m15mod0_magazine_large.stats = {
+					value = 6,
+					concealment = -2,
+					reload = -4,
+					extra_ammo = 15
+				}
+				self.parts.wpn_fps_ass_m15mod0_magazine_large.custom_stats = {
+					ads_speed_mult = 1.1,
+					reload_non_empty_anim_mult = 1.16,
+					adj_timers = {
+						reload_not_empty = 1.5948
+					}
+				}
+				--Bowen (Ext II)
+				self.parts.wpn_fps_ass_m15mod0_magazine_drum.supported = true
+				self.parts.wpn_fps_ass_m15mod0_magazine_drum.stats = {
+					value = 8,
+					concealment = -5,
+					reload = -7,
+					extra_ammo = 30
+				}
+				self.parts.wpn_fps_ass_m15mod0_magazine_drum.custom_stats = {
+					ads_speed_mult = 1.375
+				}
+		end
 
 		if self.parts.wpn_fps_ass_scotia_flash_hider then
 			self.parts.wpn_fps_ass_scotia_flash_hider.supported = true

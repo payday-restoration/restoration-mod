@@ -19692,10 +19692,8 @@ end
 					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_coyote = {
-						--translation = Vector3(-0.02, 3.1, -3.44),
-						--rotation = Rotation(-0.03, -0.01, -0.6)
-						translation = Vector3(-0.01, 3.1, -3.44),
-						rotation = Rotation(-0.02, -0.01, -0.6)
+						translation = Vector3(0.082, 3.1, -3.43),
+						rotation = Rotation(0.24, 0.18, -0.5)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar59 = {
 						translation = Vector3(0.015, 6.7, -1.51)
@@ -43670,6 +43668,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 
+			table.insert(self.wpn_fps_ass_coyote.uses_parts, "wpn_fps_upg_o_eotech")
+			table.insert(self.wpn_fps_ass_coyote.uses_parts, "wpn_fps_upg_o_specter")
 			self.wpn_fps_ass_coyote_npc.uses_parts = deep_clone(self.wpn_fps_ass_coyote.uses_parts)
 		end
 
@@ -43983,7 +43983,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_upg_hd2_m_short_ar59 then
-
 			self.parts.wpn_fps_upg_hd2_4x_scope_ar59.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_4x_scope_ar59.stance_mod) do
 				if weap and weap.translation then
@@ -44076,7 +44075,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_ass_glar21_bolt then
-
 			self.parts.wpn_fps_upg_hd2_2x_scope.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_2x_scope.stance_mod) do
 				if weap and weap.translation then
@@ -44162,7 +44160,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				zoom = 30,
 				base_zoom_off = 1
 			}
-			
+
 			self.parts.wpn_fps_upg_hd2_4x_scope_default.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_4x_scope_default.stance_mod) do
 				if weap and weap.translation then

@@ -19928,6 +19928,10 @@ end
 						translation = Vector3(-0.00, -2, -2.56),
 						rotation = Rotation(0.01, 0.01, 0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_r72 = {
+						translation = Vector3(-0.03, -11, -3.82),
+						rotation = Rotation(-0.1, 0.1, -0.5)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
 						translation = Vector3(-0.012, 4, 0.02),
@@ -44073,8 +44077,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		if self.parts.wpn_fps_ass_glar21_bolt then
 
-			twf.parts.wpn_fps_upg_hd2_2x_scope.stance_mod = deep_clone(twf.parts.wpn_fps_upg_o_specter.stance_mod)
-			for i, weap in pairs(twf.parts.wpn_fps_upg_hd2_2x_scope.stance_mod) do
+			self.parts.wpn_fps_upg_hd2_2x_scope.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_2x_scope.stance_mod) do
 				if weap and weap.translation then
 					weap.translation = weap.translation + Vector3(0.01, -4, 0.87)
 				end
@@ -44127,7 +44131,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_upg_hd2_holo_sight.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_holo_sight.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0.003, -5, 0.92)
+					weap.translation = weap.translation + Vector3(0.003, -5, 1.09)
 				end
 			end
 			self.parts.wpn_fps_upg_hd2_holo_sight.supported = true
@@ -44158,9 +44162,57 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				zoom = 30,
 				base_zoom_off = 1
 			}
+			
+			self.parts.wpn_fps_upg_hd2_4x_scope_default.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_4x_scope_default.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.007, 2.5, 1.05)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_4x_scope_default.supported = true
+			self.parts.wpn_fps_upg_hd2_4x_scope_default.desc_id = "bm_wp_upg_o_4"
+			self.parts.wpn_fps_upg_hd2_4x_scope_default.stats = {
+				value = 1,
+				zoom = 30
+			}
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_r72.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_alt_1x_scope_r72.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(-0.003, -2.5, -1.1)
+					weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(0.04, 0, 0)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_r72.supported = true
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_r72.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_r72.stats = {
+				value = 1,
+				zoom = 1
+			}
+			self.parts.wpn_fps_upg_hd2_1x_scope_r72.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_1x_scope_r72.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(-0.005, -10, 0.81)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_1x_scope_r72.supported = true
+			self.parts.wpn_fps_upg_hd2_1x_scope_r72.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_upg_hd2_1x_scope_r72.stats = {
+				value = 1,
+				zoom = 1
+			}
 
-			--table.insert(self.wpn_fps_ass_r72.uses_parts, "wpn_fps_upg_o_eotech")
-			--table.insert(self.wpn_fps_ass_r72.uses_parts, "wpn_fps_upg_o_specter")
+			self.parts.wpn_fps_upg_hd2_holo_sight_r72.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_holo_sight_r72.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.003, -5, 1.1)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_holo_sight_r72.supported = true
+			self.parts.wpn_fps_upg_hd2_holo_sight_r72.desc_id = "bm_wp_upg_o_1_5"
+			self.parts.wpn_fps_upg_hd2_holo_sight_r72.stats = {
+				value = 1,
+				zoom = 5
+			}
 		end
 
 		if self.parts.wpn_fps_ass_bulldog_burst then

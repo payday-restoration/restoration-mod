@@ -31905,7 +31905,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar59.damage_falloff = {
 					start_dist = 1100,
 					end_dist = 4100,
-					min_mult = 0.26667
+					min_mult = 0.3
 				}
 				self.ar59.stats = {
 					damage = 16,

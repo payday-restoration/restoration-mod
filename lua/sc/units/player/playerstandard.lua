@@ -2396,6 +2396,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 	end
 
 	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
+		self._state_data.chainsaw_t = nil
 		local num_casts = (self._melee_attack_var_charge_h and melee_weapon.stats.raycasts_charge_h) or
 		(self._melee_charge_bonus and melee_weapon.stats.raycasts_charge) or
 		(self._melee_attack_var_h and melee_weapon.stats.raycasts_h) or

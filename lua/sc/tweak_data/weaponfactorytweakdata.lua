@@ -28524,7 +28524,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_scotia_magazine_short.stats = {
 					value = 2,
 					concealment = 2,
-					reload = 5,
+					reload = 18,
 					extra_ammo = -4
 				}
 				self.parts.wpn_fps_ass_scotia_magazine_short.custom_stats = {
@@ -28536,7 +28536,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					value = 5,
 					spread = -2,
 					concealment = -1,
-					reload = 2
+					reload = 8
 				}
 				self.parts.wpn_fps_ass_scotia_magazine_flip.custom_stats = nil
 				--Sentinel (Ext I)
@@ -28544,7 +28544,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_scotia_magazine_large.stats = {
 					value = 6,
 					concealment = -2,
-					reload = -4,
 					extra_ammo = 8
 				}
 				self.parts.wpn_fps_ass_scotia_magazine_large.custom_stats = {
@@ -43943,6 +43942,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_pis_p4_frame then
+			self.parts.wpn_fps_pis_p4_frame.forbids = {
+				"wpn_fps_addon_ris"
+			}
 			self.parts.wpn_fps_pis_p4_frame.stance_mod = {
 				wpn_fps_pis_p4 = {
 					translation = Vector3(0.02, 8, -0.08),
@@ -43955,7 +43957,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar59_suppressor.supported = true
 			self.parts.wpn_fps_ass_ar59_suppressor.stats = { value = 0 }
 			self.parts.wpn_fps_ass_ar59_suppressor.custom_stats = nil
-			
+
 			self.parts.wpn_fps_ass_ar59_s_folded.supported = true
 			self.parts.wpn_fps_ass_ar59_s_folded.stats = deep_clone(stocks.adj_to_folded_stats)
 			self.parts.wpn_fps_ass_ar59_s_folded.custom_stats = deep_clone(stocks.adj_to_folded_stats)

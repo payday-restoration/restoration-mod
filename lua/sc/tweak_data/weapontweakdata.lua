@@ -25311,9 +25311,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scotia.lock_slide = true
 				self.scotia.sounds.magazine_empty_alt = "scotia_charging_handle_release"
 				self.scotia.panic_suppression_chance = 0.05
-				self.scotia.reload_speed_multiplier = 0.85
-				self.scotia.timers.reload_not_empty = 1.9
-				self.scotia.timers.reload_exit_not_empty = 1
+				self.scotia.reload_speed_multiplier = 0.9
+				self.scotia.timers.reload_not_empty = 1.93
+				self.scotia.timers.reload_exit_not_empty = 0.95
 				self.scotia.timers.reload_empty = 2.45
 				self.scotia.timers.reload_exit_empty = 1
 			end

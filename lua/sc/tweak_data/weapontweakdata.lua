@@ -32105,6 +32105,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r2.timers.reload_exit_not_empty = 0.85
 			end
 
+			if self.r72 then
+				self.r72.categories = {
+					"assault_rifle",
+					"dmr_h",
+					"sweet_liberty"
+				}
+				self.r72.recategorize = {"dmr_ar"}
+				self.r72.damage_type = "assault_rifle"
+				self.r72.CLIP_AMMO_MAX = 20
+				self.r72.AMMO_MAX = self.r72.CLIP_AMMO_MAX * 9
+				self.r72.ammo_ratio = 2
+				self.r72.fire_mode_data.fire_rate = 0.15
+				self.r72.fire_mode_data.toggable = nil
+				self.r72.sms = 0.5
+				self.r72.tactical_reload = 1
+				self.r72.keep_ammo = 0
+				self.r72.fire_mode_data.toggable = nil
+				self.r72.BURST_FIRE = false
+				self.r72.CAN_TOGGLE_FIREMODE = false
+				self.r72.FIRE_MODE = "single"
+				self.r72.kick = self.stat_info.kick_tables.even_recoil
+				self.r72.supported = true
+				self.r72.ads_speed = 0.380
+				self.r72.damage_falloff = {
+					start_dist = 2200,
+					end_dist = 6200,
+					min_mult = 0.2909091
+				}
+				self.r72.stats = {
+					damage = 33,
+					spread = 76,
+					recoil = 71,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 22,
+					suppression = 7,
+					alert_size = 1,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 25
+				}
+				self.r72.stats_modifiers = {
+					damage = 2.5
+				}
+				self.r72.panic_suppression_chance = 0.05
+				self.r72.object_damage_mult = 0.5454 --scaled to match the object damage of 90 damage rifles
+				self.r72.reload_speed_multiplier = 1
+				self.r72.timers = deep_clone(self.ak5.timers)
+			end
+
 			if self.br14 then
 				--I wish this gun (and all the non-explosive, low ergo weapons in HD2 in general) didn't suck donkey asshole to use
 				--None of them are strong enough to warrant feeling like total and complete utter ass to just fucking LOOK AROUND
@@ -32121,7 +32172,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				--Certified Arrowhead moment
 				self.br14.categories = {
 					"assault_rifle",
-					"dmr_h",
+					"dmr_l",
 					"sweet_liberty"
 				}
 				self.br14.recategorize = {"dmr_ar"}

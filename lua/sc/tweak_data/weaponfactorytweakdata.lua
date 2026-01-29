@@ -19692,8 +19692,13 @@ end
 					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_coyote = {
-						translation = Vector3(-0.02, 3.1, -3.44),
-						rotation = Rotation(-0.03, -0.01, -0.6)
+						--translation = Vector3(-0.02, 3.1, -3.44),
+						--rotation = Rotation(-0.03, -0.01, -0.6)
+						translation = Vector3(-0.01, 3.1, -3.44),
+						rotation = Rotation(-0.02, -0.01, -0.6)
+					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar59 = {
+						translation = Vector3(0.015, 6.7, -1.51)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar23 = {
 						--translation = Vector3(0.015, -3, -3.655)
@@ -19919,7 +19924,10 @@ end
 						translation = Vector3(-0.114, 5.6, -4.992),
 						rotation = Rotation(-0.1,0.1,-0.77)
 					}
-
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_glar21 = {
+						translation = Vector3(-0.00, -2, -2.56),
+						rotation = Rotation(0.01, 0.01, 0)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
 						translation = Vector3(-0.012, 4, 0.02),
@@ -43581,8 +43589,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		if self.parts.wpn_fps_ass_coyote_receiver then
 			self.parts.wpn_fps_ass_coyote_receiver.stance_mod = {
 				wpn_fps_ass_coyote = {
-					translation = Vector3(-0.02, -10, -0.35),
-					rotation = Rotation(-0.08, 0.1, 0)
+					translation = Vector3(-0.03, -10, -0.35),
+					rotation = Rotation(-0.25, 0.1, 0)
 				}
 			}
 			self.parts.wpn_fps_ass_coyote_4x_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
@@ -43646,6 +43654,19 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				trail_effect = "_dmc/effects/nato_trail",
 				dot_data_name = "ammo_dragons_breath_auto"
 			}
+
+			for i, part_id in pairs(self.wpn_fps_ass_coyote.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type then
+					if self.parts[part_id].pcs then
+						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "dustdevils_mod") or not self.parts[part_id].global_value) and
+							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom") then
+							self.wpn_fps_ass_coyote.uses_parts[i] = "resmod_dummy"
+						end
+					end
+				end
+			end
+
+			self.wpn_fps_ass_coyote_npc.uses_parts = deep_clone(self.wpn_fps_ass_coyote.uses_parts)
 		end
 
 		--Helldivers 2 AR-23 (v5)
@@ -43958,6 +43979,58 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_upg_hd2_m_short_ar59 then
+
+			self.parts.wpn_fps_upg_hd2_4x_scope_ar59.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_4x_scope_ar59.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(-0.005, 3.5, 0.96)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_4x_scope_ar59.supported = true
+			self.parts.wpn_fps_upg_hd2_4x_scope_ar59.desc_id = "bm_wp_upg_o_4"
+			self.parts.wpn_fps_upg_hd2_4x_scope_ar59.stats = {
+				value = 1,
+				zoom = 30
+			}
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_ar59.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_alt_1x_scope_ar59.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(-0.003, -2.5, -1)
+					weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(0.04, 0, 0)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_ar59.supported = true
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_ar59.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_ar59.stats = {
+				value = 1,
+				zoom = 1
+			}
+			self.parts.wpn_fps_upg_hd2_1x_scope_default.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_1x_scope_default.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(-0.005, -10, 0.78)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_1x_scope_default.supported = true
+			self.parts.wpn_fps_upg_hd2_1x_scope_default.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_upg_hd2_1x_scope_default.stats = {
+				value = 1,
+				zoom = 1
+			}
+
+			self.parts.wpn_fps_upg_hd2_holo_sight_ar59.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_holo_sight_ar59.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.003, -5, 1.02)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_holo_sight_ar59.supported = true
+			self.parts.wpn_fps_upg_hd2_holo_sight_ar59.desc_id = "bm_wp_upg_o_1_5"
+			self.parts.wpn_fps_upg_hd2_holo_sight_ar59.stats = {
+				value = 1,
+				zoom = 5
+			}
+
 			self.parts.wpn_fps_ass_ar59_suppressor.supported = true
 			self.parts.wpn_fps_ass_ar59_suppressor.stats = { value = 0 }
 			self.parts.wpn_fps_ass_ar59_suppressor.custom_stats = nil
@@ -43996,6 +44069,98 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_upg_hd2_m_drum_ar59.custom_stats = {
 				ads_speed_mult = 1.375
 			}
+		end
+
+		if self.parts.wpn_fps_ass_glar21_bolt then
+
+			twf.parts.wpn_fps_upg_hd2_2x_scope.stance_mod = deep_clone(twf.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(twf.parts.wpn_fps_upg_hd2_2x_scope.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.01, -4, 0.87)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_2x_scope.supported = true
+			self.parts.wpn_fps_upg_hd2_2x_scope.desc_id = "bm_wp_upg_o_2"
+			self.parts.wpn_fps_upg_hd2_2x_scope.stats = {
+				value = 1,
+				zoom = 10
+			}
+
+			self.parts.wpn_fps_upg_hd2_4x_scope.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_4x_scope.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(-0.005, 2.5, 0.87)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_4x_scope.supported = true
+			self.parts.wpn_fps_upg_hd2_4x_scope.desc_id = "bm_wp_upg_o_4"
+			self.parts.wpn_fps_upg_hd2_4x_scope.stats = {
+				value = 1,
+				zoom = 30
+			}
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_alt_1x_scope.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(-0.003, -2.5, -1)
+					weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(0.04, 0, 0)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope.supported = true
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope.stats = {
+				value = 1,
+				zoom = 1
+			}
+			self.parts.wpn_fps_upg_hd2_1x_scope.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_1x_scope.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(-0.005, -10, 0.68)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_1x_scope.supported = true
+			self.parts.wpn_fps_upg_hd2_1x_scope.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_upg_hd2_1x_scope.stats = {
+				value = 1,
+				zoom = 1
+			}
+
+			self.parts.wpn_fps_upg_hd2_holo_sight.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_holo_sight.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.003, -5, 0.92)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_holo_sight.supported = true
+			self.parts.wpn_fps_upg_hd2_holo_sight.desc_id = "bm_wp_upg_o_1_5"
+			self.parts.wpn_fps_upg_hd2_holo_sight.stats = {
+				value = 1,
+				zoom = 5
+			}
+		end
+
+		if self.parts.wpn_fps_ass_r72_m_ext then
+			self.parts.wpn_fps_ass_r72_b_sd.supported = true
+			self.parts.wpn_fps_ass_r72_b_sd.stats = { value = 0 }
+			self.parts.wpn_fps_ass_r72_b_sd.custom_stats = nil
+
+			self.parts.wpn_fps_ass_r72_m_ext.supported = true
+			self.parts.wpn_fps_ass_r72_m_ext.stats = {
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -3
+			}
+			self.parts.wpn_fps_ass_r72_m_ext.custom_stats = {
+				ads_speed_mult = 1.05
+			}
+
+			self.parts.wpn_fps_upg_hd2_4x_scope_default.stats = {
+				value = 1,
+				zoom = 30,
+				base_zoom_off = 1
+			}
+
+			--table.insert(self.wpn_fps_ass_r72.uses_parts, "wpn_fps_upg_o_eotech")
+			--table.insert(self.wpn_fps_ass_r72.uses_parts, "wpn_fps_upg_o_specter")
 		end
 
 		if self.parts.wpn_fps_ass_bulldog_burst then

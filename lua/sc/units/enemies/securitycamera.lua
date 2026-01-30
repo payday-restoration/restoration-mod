@@ -29,6 +29,7 @@ function SecurityCamera:generate_cooldown(amount)
 	end	
 end
 
+--[[
 function SecurityCamera:update(unit, t, dt)
 	self:_update_tape_loop_restarting(unit, t, dt)
 
@@ -68,6 +69,7 @@ function SecurityCamera:update(unit, t, dt)
         end
     end	
 end
+--]]
 
 function SecurityCamera:_init_dynamic_yaw()
     local max_yaw_negative = -60

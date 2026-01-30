@@ -223,7 +223,8 @@ local is_pro = Global.game_settings and Global.game_settings.one_down
 
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
-
+	self._last_overheal_t = 0 --- The last time the enemy has been near an LPF.
+	self._decay_start_t = 0 --- When the overheal decay last started.
 	
 	-- i don't want to sift through every single .object file in the game to do this so
 	if self._head_gear_decal_mesh then
@@ -241,6 +242,50 @@ Hooks:PostHook(CopDamage, "convert_to_criminal", "convert_to_criminal_mutator_no
 		self._unit:base():converted_enemy_effect(true)
 	end
 end)
+
+Hooks:PostHook(CopDamage, "_apply_damage_to_health", "res_apply_damage_to_health", function(self, damage)
+
+	if self._health > self._HEALTH_INIT then
+		self._unit:base():enable_lpf_buff(true)
+	else
+		self._unit:base():disable_lpf_buff()
+	end
+end)
+
+function CopDamage:decay_buffs(t)
+	local decay_delay_t = tweak_data.medic.overheal_decay_delay_t or 5
+	
+	if self._last_overheal_t + decay_delay_t < t then
+		-- It's been enough time to start decaying overheal if we have any.
+		local decay_t = tweak_data.medic.overheal_decay_t or 1
+		if not self._decay_start_t then
+			self._decay_start_t = self._last_overheal_t + decay_delay_t
+		end
+
+		if self._health > self._HEALTH_INIT and self._decay_start_t + decay_t < t then
+			-- Since this only gets run when CopMovement runs _upd_actions, there can be a situation where
+			-- we're lagging behind several decay_t amount of seconds.
+			-- So, we'll "catch up" to where our overheal decay should be in that case.
+			-- ...There's probably a smarter way of doing this.
+			local times_happened = math.floor((t - self._decay_start_t)/decay_t)
+
+			local self_tweak_data = tweak_data.character[self._unit:base()._tweak_table]
+			local overheal_mult = self_tweak_data.overheal_mult or 1
+			local overheal_full = self._HEALTH_INIT * overheal_mult - self._HEALTH_INIT -- Difference of max heal WITH overheal and just normal max health.
+			local decay_percent_loss = tweak_data.medic.overheal_decay_percent or 0.1
+
+			local final_damage = math.max(0,math.min(overheal_full * decay_percent_loss * times_happened, self._health - self._HEALTH_INIT))
+			self:_apply_damage_to_health(final_damage)	
+
+			self._decay_start_t = self._decay_start_t + times_happened * decay_t
+		end
+	end
+end
+
+function CopDamage:refresh_overheal_decay_timer(t)
+	self._last_overheal_t = t
+	self._decay_start_t = nil -- To enforce a recalculation in decay_buffs()
+end
 
 function CopDamage:_spawn_head_gadget(params)
 	local unit_name = self._unit:name()
@@ -3944,7 +3989,6 @@ function CopDamage:lpf_disable()
 	if self._unit:base() then
 		self._unit:base():change_char_tweak("omnia_lpf_no_heal")
 	end
-	
 	if self._unit:character_damage() and self._unit:character_damage().force_hurt then
 		local attack_data = {
 			variant = "bullet",
@@ -3959,7 +4003,28 @@ function CopDamage:lpf_disable()
 
 		self._unit:character_damage():force_hurt(attack_data)
 	end	
-	
+
+	if not self._unit:movement()._buff_targets then
+		return
+	end
+
+	for _, buffed_target in ipairs(self._unit:movement()._buff_targets) do
+		if alive(buffed_target) and buffed_target:character_damage() and buffed_target:character_damage().force_hurt then
+			local attack_data = {
+				variant = "bullet",
+				type = "hurt",
+				position = buffed_target:oobb():center(),
+				direction = buffed_target:rotation():y(),
+				col_ray = {
+					position = buffed_target:oobb():center(),
+					ray = buffed_target:rotation():y(),
+				}
+			}
+
+			buffed_target:character_damage():_apply_damage_to_health(math.max(buffed_target:character_damage()._health - buffed_target:character_damage()._HEALTH_INIT, 0)) -- Only take damage equivalent to the overheal, if any.
+			buffed_target:character_damage():force_hurt(attack_data)
+		end
+	end
 end
 
 --Added stuff for CG22 mutator

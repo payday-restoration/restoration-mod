@@ -189,6 +189,9 @@ function CopMovement:post_init()
 	self._omnia_cooldown = 0
 	self._asu_cooldown = 0
 	self._cloaked = false
+
+	--- Contains references to units that are affected by either this unit's LPF overheal or ASU damage boost.
+	self._buff_targets = {}
 	
 	if self._tweak_data.do_autumn_blackout then 
 		managers.groupai:state():register_blackout_source(self._unit)
@@ -209,7 +212,9 @@ Hooks:PostHook(CopMovement, "_upd_actions", "res_upd_actions", function(self, t)
 		if not self._unit:character_damage():dead() then			
 			self:do_asu(self)		
 		end
-	end		
+	end
+
+	self._unit:character_damage():decay_buffs(t)
 end)
 
 Hooks:PreHook(CopMovement, "_upd_stance", "res_upd_stance", function(self, t)
@@ -244,6 +249,8 @@ function CopMovement:do_omnia(self)
 				heal_vo = "heal_chatter_winters"
 			end
 			
+			-- Finding valid targets to overheal
+			
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), heal_range, managers.slot:get_mask("enemies"))
 			if enemies then
 				for _,enemy in ipairs(enemies) do
@@ -264,40 +271,63 @@ function CopMovement:do_omnia(self)
 					end
 					local team = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.team
 					local my_team = self._unit:brain() and self._unit:brain()._logic_data and self._unit:brain()._logic_data.team
+					local convert = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.is_converted
 					
-					if enemy_found and my_team == team then
-						local health_left = enemy:character_damage()._health
-						local max_health = enemy:character_damage()._HEALTH_INIT
-						local overheal_mult = enemy_tweak_data.overheal_mult or 1
-						local convert = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.is_converted
-						
-						if convert then
-							return
-						end
-						
-						max_health = enemy:character_damage()._HEALTH_INIT * overheal_mult
-						
-						if health_left < max_health then
-							local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-							local disable_outlines = managers.mutators:modify_value("CopMovement:DisableOutlines", false)
-							if self._unit:contour()  then
-								if not disable_outlines then
-									self._unit:contour():add("medic_show", false)
-									self._unit:contour():flash("medic_show", 0.2)
-								end
-								managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, heal_vo)
-							end										
-							if enemy:contour() then
-								if overheal_mult > 1 then
-									enemy:base():enable_lpf_buff(true)
-									enemy:base():lpf_heal_effect(true)
-								else
-									enemy:base():lpf_heal_effect(false)
-								end
-							end		
-							enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
-						end
+					if enemy_found and my_team == team and not convert then
+						table.insert(self._buff_targets, enemy)
 					end
+				end
+			end
+
+			-- Checking the buff_targets list to see if all inserted allies are actually valid
+
+			-- Iterating backwards to not accidentally skip over indices as I remove stuff
+			for i=#self._buff_targets,1,-1 do
+				local buffed_target = self._buff_targets[i]
+				local already_removed = false
+				if not alive(buffed_target) then
+					table.remove(self._buff_targets, i)
+					already_removed = true
+				end
+
+				local dst = mvector3.distance(buffed_target:position(), self._unit:movement():m_head_pos())
+
+				if not already_removed and dst > heal_range then
+					table.remove(self._buff_targets, i)
+					already_removed = true
+				end
+			end
+
+			-- Applying buffs to all the valid targets
+
+			for _, buffed_target in ipairs(self._buff_targets) do
+				local buffed_target_tweak_data = tweak_data.character[buffed_target:base()._tweak_table]
+				local health_left = buffed_target:character_damage()._health
+				local max_health = buffed_target:character_damage()._HEALTH_INIT
+				local overheal_mult = buffed_target_tweak_data.overheal_mult or 1
+				
+				max_health = buffed_target:character_damage()._HEALTH_INIT * overheal_mult
+
+				buffed_target:character_damage():refresh_overheal_decay_timer(t)
+				
+				if health_left < max_health then
+					local amount_to_heal = math.ceil(((max_health - health_left) / 20))
+					local disable_outlines = managers.mutators:modify_value("CopMovement:DisableOutlines", false)
+					if self._unit:contour()  then
+						if not disable_outlines then
+							self._unit:contour():add("medic_show", false)
+							self._unit:contour():flash("medic_show", 0.2)
+						end
+						managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, heal_vo)
+					end										
+					if buffed_target:contour() then
+						if overheal_mult > 1 then
+							buffed_target:base():lpf_heal_effect(true)
+						else
+							buffed_target:base():lpf_heal_effect(false)
+						end
+					end		
+					buffed_target:character_damage():_apply_damage_to_health((amount_to_heal * -1))
 				end
 			end
 		end

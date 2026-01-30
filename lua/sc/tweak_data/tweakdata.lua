@@ -1076,6 +1076,12 @@ tweak_data.medic.cooldown = 0
 tweak_data.medic.radius = 900
 tweak_data.medic.lpf_radius = 800
 
+-- LPF related tweak data
+
+tweak_data.medic.overheal_decay_percent = 0.1 --- When not being actively overhealed, how much of the overheal should be lost. Percent of the total max possible overheal.
+tweak_data.medic.overheal_decay_t = 1 --- In seconds, how often the unit should lose overheal_decay_percent amount of overheal.
+tweak_data.medic.overheal_decay_delay_t = 5 --- In seconds, the amount of time since last being near an LPF before the unit starts losing overheal.
+
 --ASU damage bonus (Titan HRT)
 tweak_data.asu_buff_radius = 800
 if difficulty_index <= 6 then

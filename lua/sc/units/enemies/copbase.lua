@@ -200,6 +200,7 @@ end
 function CopBase:disable_lpf_buff()
 	if self._overheal_unit then
 		World:effect_manager():fade_kill(self._overheal_unit)
+		self._overheal_unit = nil
 	end
 end
 

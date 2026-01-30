@@ -7494,6 +7494,11 @@ end
 					self.parts.wpn_fps_smg_mac10_s_skel.stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 					self.parts.wpn_fps_smg_mac10_s_skel.custom_stats = deep_clone(stocks.nocheeks_to_fixed_rec3_stats)
 
+					--Folded Stock
+					self.parts.wpn_fps_smg_mac10_s_fold2.supported = true
+					self.parts.wpn_fps_smg_mac10_s_fold2.stats = deep_clone(stocks.fold_nocheeks_stats)
+					self.parts.wpn_fps_smg_mac10_s_fold2.custom_stats = deep_clone(stocks.fold_nocheeks_stats)
+
 					self.wpn_fps_smg_mac10.override = self.wpn_fps_smg_mac10.override or {}
 
 					for i, part_id in pairs(self.wpn_fps_smg_mac10.uses_parts) do

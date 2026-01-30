@@ -250,6 +250,7 @@ function CopMovement:do_omnia(self)
 			end
 			
 			-- Finding valid targets to overheal
+			self._buff_targets = {}
 			
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), heal_range, managers.slot:get_mask("enemies"))
 			if enemies then
@@ -276,25 +277,6 @@ function CopMovement:do_omnia(self)
 					if enemy_found and my_team == team and not convert then
 						table.insert(self._buff_targets, enemy)
 					end
-				end
-			end
-
-			-- Checking the buff_targets list to see if all inserted allies are actually valid
-
-			-- Iterating backwards to not accidentally skip over indices as I remove stuff
-			for i=#self._buff_targets,1,-1 do
-				local buffed_target = self._buff_targets[i]
-				local already_removed = false
-				if not alive(buffed_target) then
-					table.remove(self._buff_targets, i)
-					already_removed = true
-				end
-
-				local dst = mvector3.distance(buffed_target:position(), self._unit:movement():m_head_pos())
-
-				if not already_removed and dst > heal_range then
-					table.remove(self._buff_targets, i)
-					already_removed = true
 				end
 			end
 

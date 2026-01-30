@@ -1663,6 +1663,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_wf_init", function(self)
 	self:_init_money()
 end)
 
+function WeaponFactoryTweakData:factory_part_post_process()
+	--nuked this function as sights (sans auto-marking ones) don't have a concealment hit
+end
+
 --Sorted by "Primary Skill Use > Sub-category > Primary/Secondary"
 --Akimbo weapons are sorted under their single-wielded secondary counterpart
 	

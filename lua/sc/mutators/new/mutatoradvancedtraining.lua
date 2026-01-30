@@ -11,7 +11,7 @@ MutatorAdvancedTraining.disables_achievements = false
 MutatorAdvancedTraining.categories = {"gameplay"}
 
 MutatorAdvancedTraining.icon_coords = {
-	7,
+	8,
 	5
 }
 

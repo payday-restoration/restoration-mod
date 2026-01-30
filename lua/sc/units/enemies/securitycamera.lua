@@ -1,9 +1,9 @@
 --Sora wuz here
 Hooks:PostHook(SecurityCamera, "init", "postinit_test_cam", function(self)
-    self._initialized_yaw = false
-    self._current_yaw_action = 1
-    -- 1 = Increase
-    -- 2 = Decrease
+	self._initialized_yaw = false
+	self._current_yaw_action = 1
+	-- 1 = Increase
+	-- 2 = Decrease
 end)
 
 function SecurityCamera:generate_cooldown(amount)
@@ -29,9 +29,26 @@ function SecurityCamera:generate_cooldown(amount)
 	end	
 end
 
---[[
 function SecurityCamera:update(unit, t, dt)
 	self:_update_tape_loop_restarting(unit, t, dt)
+
+	local max_yaw_positive = 60
+	local max_yaw_negative = -60
+
+	self:_init_dynamic_yaw()
+
+	local yaw_dt = 9 * dt
+	if self._current_yaw_action == 1 then
+		self._yaw = math.min(self._yaw + yaw_dt, max_yaw_positive)
+		if self._yaw >= max_yaw_positive then
+			self._current_yaw_action = 2
+		end
+	elseif self._current_yaw_action == 2 then
+		self._yaw = math.max(self._yaw - yaw_dt, max_yaw_negative)
+		if self._yaw <= max_yaw_negative then
+			self._current_yaw_action = 1
+		end
+	end
 
 	if not Network:is_server() then
 		return
@@ -45,60 +62,50 @@ function SecurityCamera:update(unit, t, dt)
 	end
 
 	self:_upd_sound(unit, t)
-	
-    local current_yaw = self._yaw
-    local current_pitch = self._pitch
-    local max_yaw_positive = 60
-    local max_yaw_negative = -60
 
-    self:_init_dynamic_yaw()
-
-    if self._current_yaw_action == 1 then
-        if math.floor(self._yaw) == max_yaw_positive then
-            self._current_yaw_action = 2
-        else
-            self:_increase_yaw()
-        end
-    end
-
-    if self._current_yaw_action == 2 then
-        if math.floor(self._yaw) == max_yaw_negative then
-            self._current_yaw_action = 1
-        else
-            self:_decrease_yaw()
-        end
-    end	
+	self:apply_rotations(self._yaw, self._pitch)
 end
---]]
 
 function SecurityCamera:_init_dynamic_yaw()
-    local max_yaw_negative = -60
-    local current_pitch = self._pitch
+	local max_yaw_negative = -60
+	local current_pitch = self._pitch
 
-    if not self._initialized_yaw then
-        self._initialized_yaw = true
-        self:apply_rotations(max_yaw_negative, current_pitch)
-    end
+	if not self._initialized_yaw then
+		self._initialized_yaw = true
+		self:apply_rotations(max_yaw_negative, current_pitch)
+	end
 end
 
-function SecurityCamera:_increase_yaw()
-    local max_yaw_positive = 60
-    local current_pitch = self._pitch
+function SecurityCamera:apply_rotations(yaw, pitch)
+	local yaw_obj = self._yaw_obj or self._unit:get_object(Idstring("CameraYaw"))
+	local pitch_obj = self._pitch_obj or self._unit:get_object(Idstring("CameraPitch"))
+	local original_yaw_rot = yaw_obj:local_rotation()
+	local new_yaw_rot = Rotation(180 + yaw, original_yaw_rot:pitch(), original_yaw_rot:roll())
 
-    if self._yaw <= max_yaw_positive then
-        local new_yaw = self._yaw + 0.1
-        self:apply_rotations(new_yaw, current_pitch)
-    end
-end
+	yaw_obj:set_local_rotation(new_yaw_rot)
 
-function SecurityCamera:_decrease_yaw()
-    local max_yaw_negative = -60
-    local current_pitch = self._pitch
+	local original_pitch_rot = pitch_obj:local_rotation()
+	local new_pitch_rot = Rotation(original_pitch_rot:yaw(), pitch, original_pitch_rot:roll())
 
-    if self._yaw >= max_yaw_negative then
-        local new_yaw = self._yaw - 0.1
-        self:apply_rotations(new_yaw, current_pitch)
-    end
+	pitch_obj:set_local_rotation(new_pitch_rot)
+
+	self._look_fwd = nil
+
+	self._unit:set_moving()
+
+	if Network:is_server() then
+		self._last_sync_t = self._last_sync_t or 0
+		local t = TimerManager:game():time()
+		if t - self._last_sync_t >= 0.1 then
+			local sync_yaw = 255 * (yaw + 180) / 360
+			local sync_pitch = 255 * (pitch + 90) / 180
+			managers.network:session():send_to_peers_synched("camera_yaw_pitch", self._unit, sync_yaw, sync_pitch)
+			self._last_sync_t = t
+		end
+	end
+
+	self._yaw = yaw
+	self._pitch = pitch
 end
 	
 function SecurityCamera:_sound_the_alarm(detected_unit)

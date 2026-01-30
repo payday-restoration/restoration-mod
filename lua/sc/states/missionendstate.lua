@@ -46,6 +46,20 @@ function MissionEndState:at_enter(old_state, params)
 				end
 			end
 
+			for peer_id, additional_carries in pairs(managers.player:get_all_synced_carry_stacker()) do
+				if additional_carries and #additional_carries > 0 then
+					for _, carry in ipairs(additional_carries) do
+						if not tweak_data.carry[carry.carry_id].skip_exit_secure then
+							managers.loot:secure(carry.carry_id, carry.multiplier)
+						end
+
+						if carry.carry_id == "sandwich" then
+							managers.mission:call_global_event("equipment_sandwich")
+						end
+					end
+				end
+			end
+
 			for _, team_ai in pairs(managers.groupai:state():all_AI_criminals()) do
 				local carry_data = team_ai and team_ai.unit and team_ai.unit:movement() and team_ai.unit:movement():carry_data()
 

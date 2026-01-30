@@ -4739,7 +4739,7 @@ function BlackMarketGui:update_info_text()
 					if firemode.add then
 						firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_" .. firemode.add)
 					end
-					if burst_firemode then
+					if burst_firemode and not firemode.swap_from then
 						if burst_firemode.lock then
 							firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst")
 						elseif (is_akimbo and not toggle_firemode) or burst_firemode.burst_default then

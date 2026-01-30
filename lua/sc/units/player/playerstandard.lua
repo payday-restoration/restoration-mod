@@ -452,7 +452,7 @@ function PlayerStandard:_check_action_reload(t, input)
 			new_action = true
 		end
 		if restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/SeparateBowADS") then
-			if alive(self._equipped_unit) then
+			if alive(self._equipped_unit) and self:_is_charging_weapon() then
 				local result = nil
 				local weap_base = self._equipped_unit:base()
 
@@ -463,6 +463,7 @@ function PlayerStandard:_check_action_reload(t, input)
 						result = weap_base:steelsight_released()
 					end
 				end
+				self._ext_camera:play_redirect(self:get_animation("idle"))
 			end
 		end
 	end
@@ -477,30 +478,27 @@ local master_PlayerStandard_check_use_item = PlayerStandard._check_use_item
 
 local master_PlayerStandard_update = PlayerStandard.update
 function PlayerStandard:update(t, dt)
-	local logger = BLT_CarryStacker.RLog
-	logger("Request to update the player")
+	--restoration:debug("Request to update the player")
 	master_PlayerStandard_update(self, t, dt)
 
 	if self ~= nil then
 		if self._get_input ~= nil then
-			logger("Storing whether the player is holding " ..
-				"the use button")
+			--restoration:debug("Storing whether the player is holding " ..
+				--"the use button")
 			btn_use_item_held = self._controller:get_input_bool("use_item")
 		end
 	end
 end
 
 function PlayerStandard:use_item_held()
-	local logger = BLT_CarryStacker.Log
-	logger("Request to get whether the player is holding the " ..
-		"use button. The answer is: " .. tostring(btn_use_item_held))
+	--restoration:debug("Request to get whether the player is holding the " ..
+		--"use button. The answer is: " .. tostring(btn_use_item_held))
 	return btn_use_item_held
 end
 
 function PlayerStandard:block_use_item()
-	local logger = BLT_CarryStacker.Log
-	logger("Request to update the time from which the " ..
-		"player has to wait to use another item")
+	--restoration:debug("Request to update the time from which the " ..
+		--"player has to wait to use another item")
 	block_use_item_from = TimerManager:game():time()
 end
 
@@ -1212,6 +1210,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						self:_start_action_charging_weapon(t)
 					elseif self._state_data.charging_weapon and not charging_weapon then
 						self:_end_action_charging_weapon(t)
+						self._ext_camera:play_redirect(self:get_animation("idle"))
 					end
 
 					new_action = true
@@ -1289,7 +1288,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						recoil_multiplier_h = math.lerp(recoil_multiplier, recoil_multiplier_h, 0.75)
 						local recoil_count = weap_base._shot_recoil_pattern_count or 0
 						local recoil_stage = nil
-						if weap_tweak_data.kick_pattern then
+						if weap_base._kick_pattern then
 							local function shot_recoil_pattern(shot_count, recoil_table, weap_base)
 								local stage = nil
 								for i, k in pairs(recoil_table) do
@@ -1306,9 +1305,9 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								end
 								return stage
 							end
-							recoil_stage = shot_recoil_pattern(recoil_count, weap_tweak_data.kick_pattern, weap_base)
+							recoil_stage = shot_recoil_pattern(recoil_count, weap_base._kick_pattern, weap_base)
 						end
-						local kick_tweak_data = weap_tweak_data.kick[fire_mode] or (recoil_stage and weap_tweak_data.kick_pattern[recoil_stage][2]) or weap_tweak_data.kick
+						local kick_tweak_data = weap_tweak_data.kick[fire_mode] or (recoil_stage and weap_base._kick_pattern[recoil_stage][2]) or weap_tweak_data.kick
 						local always_standing = weap_tweak_data.always_use_standing
 						local up, down, left, right = unpack(kick_tweak_data[always_standing and "standing" or self._state_data.in_steelsight and "steelsight" or self._state_data.ducking and "crouching" or "standing"])
 						local min_h_recoil = kick_tweak_data.min_h_recoil
@@ -2397,6 +2396,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 	end
 
 	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
+		self._state_data.chainsaw_t = nil
 		local num_casts = (self._melee_attack_var_charge_h and melee_weapon.stats.raycasts_charge_h) or
 		(self._melee_charge_bonus and melee_weapon.stats.raycasts_charge) or
 		(self._melee_attack_var_h and melee_weapon.stats.raycasts_h) or
@@ -3091,24 +3091,24 @@ function PlayerStandard:_update_drain_stamina(t, dt)
 end
 
 function PlayerStandard:_last_shot_recoil_t(t, dt)
-	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
-	local fire_rate = weapon and weapon:weapon_fire_rate()
-	local weapon_tweak = weapon and weapon:weapon_tweak_data()
+	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
+	local fire_rate = weap_base and weap_base:weapon_fire_rate()
+	local weapon_tweak = weap_base and weap_base:weapon_tweak_data()
 	local base_fire_rate_multiplier = weapon_tweak.fire_rate_multiplier or 1
-	local in_burst = weapon:in_burst_mode()
-	local auto_burst = in_burst and weapon._auto_burst
-	local burst_delay = (in_burst and weapon._burst_delay) or 0
-	local max_t = weapon_tweak.kick_pattern and weapon_tweak.kick_pattern.max_t or 0.35
-	if weapon then
+	local in_burst = weap_base:in_burst_mode()
+	local auto_burst = in_burst and weap_base._auto_burst
+	local burst_delay = (in_burst and weap_base._burst_delay) or 0
+	local max_t = weap_base._kick_pattern and weap_base._kick_pattern.max_t or 0.35
+	if weap_base then
 		if self._shooting then
-			self._last_recoil_t = math.clamp( ((fire_rate + burst_delay) / (weapon:fire_rate_multiplier() * 0.8)) * 2 , math.max(0, math.lerp( 0.2, -0.25, fire_rate + burst_delay )) , max_t + burst_delay / ((not auto_burst and (weapon:fire_rate_multiplier() / base_fire_rate_multiplier) ) or 1) )
+			self._last_recoil_t = math.clamp( ((fire_rate + burst_delay) / (weap_base:fire_rate_multiplier() * 0.8)) * 2 , math.max(0, math.lerp( 0.2, -0.25, fire_rate + burst_delay )) , max_t + burst_delay / ((not auto_burst and (weap_base:fire_rate_multiplier() / base_fire_rate_multiplier) ) or 1) )
 		else
 			if self._last_recoil_t then
 				self._last_recoil_t = self._last_recoil_t - dt
 				if self._last_recoil_t < 0 then
 					self._last_recoil_t = nil
-					weapon._shot_recoil_pattern_count = 0
-					weapon._shot_recoil_magnitude_count = 0
+					weap_base._shot_recoil_pattern_count = 0
+					weap_base._shot_recoil_magnitude_count = 0
 				end
 			end
 		end
@@ -4538,7 +4538,7 @@ function PlayerStandard:_start_action_reload(t)
 			if is_reload_not_empty then
 				reload_anim = "reload_not_empty"
 				reload_default_expire_t = 2.2
-				reload_tweak = weapon_tweak.timers.reload_not_empty
+				reload_tweak = weapon._alt_reload_not_empty or weapon_tweak.timers.reload_not_empty
 			end
 
 			local reload_ids = Idstring(string.format("%s%s_%s", reload_prefix, reload_anim, reload_name_id))

@@ -3,7 +3,7 @@ local armor_init = tweak_data.player.damage.ARMOR_INIT
 -- Changed to account for multi bag stack instead
 function PlayerCarry:_perform_jump(jump_vec)
     -- mvector3.multiply(jump_vec, tweak_data.carry.types[self._tweak_data_name].jump_modifier)
-	mvector3.multiply(jump_vec, BLT_CarryStacker.weight)
+	mvector3.multiply(jump_vec, managers.player._weight)
 	PlayerCarry.super._perform_jump(self, jump_vec)
 end
 
@@ -11,7 +11,7 @@ end
 function PlayerCarry:_get_max_walk_speed(...)
 	-- local multiplier = tweak_data.carry.types[self._tweak_data_name].move_speed_modifier
 	-- Adding a raw carry speed mult to slow the player down to be closer to OG move speeds with the new weight system in place
-	local multiplier = BLT_CarryStacker.weight * 0.75
+	local multiplier = managers.player._weight * 0.75
 	
 	if managers.player:has_category_upgrade("carry", "movement_penalty_nullifier") then
 		multiplier = math.clamp(multiplier * managers.player:upgrade_value("carry", "movement_speed_multiplier", 1), 0, 1)

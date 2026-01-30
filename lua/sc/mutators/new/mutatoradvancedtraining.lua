@@ -11,11 +11,14 @@ MutatorAdvancedTraining.disables_achievements = false
 MutatorAdvancedTraining.categories = {"gameplay"}
 
 MutatorAdvancedTraining.icon_coords = {
-	7,
+	8,
 	5
 }
 
 function MutatorAdvancedTraining:setup(data)
+	-- Multiplication is funny, hope this doesn't kill the game
+	tweak_data.character:init()
+	tweak_data.weapon:init()
 	--Adjust hp and hs multiplier values for SWAT and Heavy SWAT units that spawn on low diffs
 	tweak_data.character.swat.HEALTH_INIT = 15
 	tweak_data.character.swat.headshot_dmg_mul = 3

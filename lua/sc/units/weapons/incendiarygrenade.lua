@@ -48,7 +48,7 @@ function IncendiaryGrenade:_spawn_environment_fire(normal)
 	local position = self._unit:position()
 	local rotation = self._unit:rotation()
 	local data = tweak_data.env_effect:incendiary_launcher_fire()
-	local tweak = tweak_data.projectiles[self._tweak_projectile_entry] or {}
+	local tweak = tweak_data.projectiles[self._projectile_entry or self._tweak_projectile_entry] or {}
 	data.damage = tweak.damage or data.damage or 6
 	data.player_damage = tweak.player_damage or data.player_damage or 3
 	data.burn_duration = tweak.burn_duration or data.burn_duration or 6

@@ -2099,6 +2099,13 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	for i, proj_id in ipairs(give_trails) do
 		self.projectiles[proj_id].add_trail_effect = true
 	end
+	local spam_projectile_id_fix = {
+		'launcher_incendiary_china','launcher_electric_china','launcher_poison_china',
+		'launcher_incendiary_m32','launcher_electric_m32','launcher_poison_m32',
+	}
+	for i, proj_id in ipairs(spam_projectile_id_fix) do
+		self.projectiles[proj_id].fix_projectile_id = true
+	end
 end
 
 
@@ -4231,6 +4238,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
 			self.melee_weapons[melee_id].anim_attack_charged_vars = {"var2"}
+			--vars 3 and 4 are just dupes of 2 and 1, respectively
 			self.melee_weapons[melee_id].anim_attack_var_dir = {
 				var1 = {"left", 0.9},
 				var2 = {"left", 0.2}
@@ -4274,8 +4282,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_global_param = "melee_axe"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var3","var4"}
+			--self.melee_weapons[melee_id].anim_attack_charged_vars = {"var2"}
 			self.melee_weapons[melee_id].anim_attack_var_dir = {
 				var1 = {"left", 0.9},
+				--var2 = {"left", 0.2},
 				var3 = {"left", 0.8},
 				var4 = {"right", 0.95}
 			}

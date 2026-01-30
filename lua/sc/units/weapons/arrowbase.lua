@@ -103,6 +103,32 @@ function ArrowBase:_calculate_autohit_direction()
 	end
 end	
 
+function ArrowBase:_on_collision(col_ray)
+	local damage_mult = self._weapon_damage_mult or 1
+	local loose_shoot = self._weapon_charge_fail
+
+	if not loose_shoot and alive(col_ray.unit) then
+		local client_damage = self._damage_class.is_explosive_bullet or alive(col_ray.unit) and col_ray.unit:id() ~= -1
+		local is_explosive_bullet = self._damage_class.is_explosive_bullet
+		if Network:is_server() or client_damage then
+			self._damage_class:on_collision(col_ray, self._weapon_unit or self._unit, self._thrower_unit, self._damage * ((not is_explosive_bullet and damage_mult) or 1), false, false, damage_mult)
+		end
+	end
+
+	if not loose_shoot and tweak_data.projectiles[self._tweak_projectile_entry].remove_on_impact then
+		self._unit:set_slot(0)
+
+		return
+	end
+
+	self._unit:body("dynamic_body"):set_deactivate_tag(Idstring())
+
+	self._col_ray = col_ray
+
+	self:_attach_to_hit_unit(nil, loose_shoot)
+end
+
+
 Hooks:PostHook(ArrowBase, "reload_contour", "reload_contour_arrow_mutator_no_outlines", function(self)
     local disable_outlines = managers.mutators:modify_value("ArrowBase:DisableAmmoPickupOutlines", false)
 	if disable_outlines then

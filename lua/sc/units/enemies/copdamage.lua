@@ -178,31 +178,31 @@ local damage_type_mult = {
 }
 
 local head_hitboxes = {
-    [Idstring("glass_shield"):key()] = true,
-    [Idstring("glass_swat"):key()] = true,
-    [Idstring("glass_c"):key()] = true,
-    [Idstring("glass_d"):key()] = true,
-    [Idstring("glass_l"):key()] = true,
-    [Idstring("glass_r"):key()] = true,
-    [Idstring("visor"):key()] = true,
-    [Idstring("sg_mask"):key()] = true,
-    [Idstring("glass_altyn"):key()] = true,
-    [Idstring("altyn_visor"):key()] = true,
-    [Idstring("glass_visor"):key()] = true
+	[Idstring("glass_shield"):key()] = true,
+	[Idstring("glass_swat"):key()] = true,
+	[Idstring("glass_c"):key()] = true,
+	[Idstring("glass_d"):key()] = true,
+	[Idstring("glass_l"):key()] = true,
+	[Idstring("glass_r"):key()] = true,
+	[Idstring("visor"):key()] = true,
+	[Idstring("sg_mask"):key()] = true,
+	[Idstring("glass_altyn"):key()] = true,
+	[Idstring("altyn_visor"):key()] = true,
+	[Idstring("glass_visor"):key()] = true
 }
 
 local bodies_tmp = {
-    [Idstring("glass_shield"):key()] = 1,
-    [Idstring("glass_swat"):key()] = 1,
-    [Idstring("glass_c"):key()] = 1,
-    [Idstring("glass_d"):key()] = 1,
-    [Idstring("glass_l"):key()] = 1,
-    [Idstring("glass_r"):key()] = 1,
-    [Idstring("visor"):key()] = 1,
-    [Idstring("sg_mask"):key()] = 1,
-    [Idstring("glass_altyn"):key()] = 1,
-    [Idstring("altyn_visor"):key()] = 1,
-    [Idstring("glass_visor"):key()] = 1,
+	[Idstring("glass_shield"):key()] = 1,
+	[Idstring("glass_swat"):key()] = 1,
+	[Idstring("glass_c"):key()] = 1,
+	[Idstring("glass_d"):key()] = 1,
+	[Idstring("glass_l"):key()] = 1,
+	[Idstring("glass_r"):key()] = 1,
+	[Idstring("visor"):key()] = 1,
+	[Idstring("sg_mask"):key()] = 1,
+	[Idstring("glass_altyn"):key()] = 1,
+	[Idstring("altyn_visor"):key()] = 1,
+	[Idstring("glass_visor"):key()] = 1,
 	[Idstring("body_helmet_plate"):key()] = 1,
 	[Idstring("body_helmet_plate_black"):key()] = 1,
 	[Idstring("body_helmet_glass"):key()] = 1,
@@ -280,10 +280,10 @@ function CopDamage:_spawn_head_gadget(params)
 		body:push_at(body:mass(), dir * math.lerp(450, 650, math.random()), unit:position() + Vector3(math.rand(1), math.rand(1), math.rand(1)))
 	end
 	
-    local smashablefuckers = table_contains(enemies_visor, unit_name)
-    local smashablefuckers_hsg = table_contains(enemies_plink, unit_name)
+	local smashablefuckers = table_contains(enemies_visor, unit_name)
+	local smashablefuckers_hsg = table_contains(enemies_plink, unit_name)
 	
- 	local head_obj = ids_func("Head")
+	local head_obj = ids_func("Head")
 	local head_object_get = my_unit:get_object(head_obj)
 	
 	if not head_object_get then
@@ -292,7 +292,7 @@ function CopDamage:_spawn_head_gadget(params)
 	
 	local world_g = World		
 	local sound_ext = my_unit:sound()	
-      
+	  
 	if smashablefuckers then
 		world_g:effect_manager():spawn({
 			effect = ids_func("effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable"),
@@ -384,10 +384,19 @@ function CopDamage:damage_fire(attack_data)
 	local head = attack_data.variant ~= "stun" and self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name or attack_data.variant ~= "stun" and self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name and head_hitboxes[attack_data.col_ray.body:name():key()]
 
 	if head and weap_unit and alive(weap_unit) and weap_unit:base() and not weap_unit:base().thrower_unit and attack_data.col_ray and attack_data.col_ray.ray and self._unit:base():has_tag("tank") then
-		mvector3.set(mvec_1, attack_data.col_ray.ray)
-		mrotation.z(self._unit:movement():m_head_rot(), mvec_2)
+		--mvector3.set(mvec_1, attack_data.col_ray.ray)
+		--mrotation.z(self._unit:movement():m_head_rot(), mvec_2)
 
-		local not_from_the_front = mvector3.dot(mvec_1, mvec_2) >= 0
+		--local not_from_the_front = mvector3.dot(mvec_1, mvec_2) >= 0
+		mvector3.set(mvec_1, attack_data.col_ray.ray)
+		mvector3.set_z(mvec_1, 0)
+		mvector3.normalize(mvec_1)
+
+		mrotation.y(self._unit:rotation(), mvec_2)
+		mvector3.set_z(mvec_2, 0)
+		mvector3.normalize(mvec_2)
+
+		local not_from_the_front = mvector3.dot(mvec_1, mvec_2) + (mvec_1.x * mvec_2.y - mvec_1.y * mvec_2.x) * 0.35 >= 0.3
 
 		if not_from_the_front then
 			head = false
@@ -449,16 +458,18 @@ function CopDamage:damage_fire(attack_data)
 		end
 	end
 		
+	-- Separated the two damage boosts from marking.
+	-- Could have just swapped their order, but honestly, there's no reason why one should depend on the other anyway.
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
+	end
 
-		if not attack_data.is_fire_dot_damage and self._marked_dmg_dist_mul and alive(attacker_unit) then
-			local dst = mvector3.distance(attacker_unit:position(), self._unit:position())
-			local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
+	if not attack_data.is_fire_dot_damage and self._marked_dmg_dist_mul and alive(attacker_unit) then
+		local dst = mvector3.distance(attacker_unit:position(), self._unit:position())
+		local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
 
-			if spott_dst[1] < dst then
-				damage = damage * spott_dst[2]
-			end
+		if spott_dst[1] < dst then
+			damage = damage * spott_dst[2]
 		end
 	end
 
@@ -976,10 +987,19 @@ function CopDamage:damage_bullet(attack_data)
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()]
 
 	if head and not weap_base.thrower_unit and self._unit:base():has_tag("tank") then
-		mvector3.set(mvec_1, attack_data.col_ray.ray)
-		mrotation.z(self._unit:movement():m_head_rot(), mvec_2)
+		--mvector3.set(mvec_1, attack_data.col_ray.ray)
+		--mrotation.z(self._unit:movement():m_head_rot(), mvec_2)
 
-		local not_from_the_front = mvector3.dot(mvec_1, mvec_2) >= 0
+		--local not_from_the_front = mvector3.dot(mvec_1, mvec_2) >= 0
+		mvector3.set(mvec_1, attack_data.col_ray.ray)
+		mvector3.set_z(mvec_1, 0)
+		mvector3.normalize(mvec_1)
+
+		mrotation.y(self._unit:rotation(), mvec_2)
+		mvector3.set_z(mvec_2, 0)
+		mvector3.normalize(mvec_2)
+
+		local not_from_the_front = mvector3.dot(mvec_1, mvec_2) + (mvec_1.x * mvec_2.y - mvec_1.y * mvec_2.x) * 0.35 >= 0.3
 
 		if not_from_the_front then
 			head = false
@@ -1058,16 +1078,18 @@ function CopDamage:damage_bullet(attack_data)
 			damage = self._health * 10
 		end
 	end
-		
+
+	-- Separated the two damage boosts from marking.
+	-- Could have just swapped their order, but honestly, there's no reason why one should depend on the other anyway.
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
+	end
 
-		if self._marked_dmg_dist_mul then
-			local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
+	if self._marked_dmg_dist_mul then
+		local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
 
-			if spott_dst[1] < distance then
-				damage = damage * spott_dst[2]
-			end
+		if spott_dst[1] < distance then
+			damage = damage * spott_dst[2]
 		end
 	end
 
@@ -2053,9 +2075,7 @@ function CopDamage:die(attack_data)
 	end
 
 	if self._unit:contour() then
-		self._unit:contour():remove("omnia_heal", false)
 		self._unit:contour():remove("medic_show", false)
-		self._unit:contour():remove("medic_buff", false)
 	end
 	
 	if self._unit:base() then
@@ -2287,16 +2307,18 @@ function CopDamage:damage_explosion(attack_data)
 		end	
 	end	
 
+	-- Separated the two damage boosts from marking.
+	-- Could have just swapped their order, but honestly, there's no reason why one should depend on the other anyway.
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
+	end
 
-		if self._marked_dmg_dist_mul and alive(attacker_unit) then
-			local dst = mvector3.distance(attacker_unit:position(), self._unit:position())
-			local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
+	if self._marked_dmg_dist_mul and alive(attacker_unit) then
+		local dst = mvector3.distance(attacker_unit:position(), self._unit:position())
+		local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
 
-			if spott_dst[1] < dst then
-				damage = damage * spott_dst[2]
-			end
+		if spott_dst[1] < dst then
+			damage = damage * spott_dst[2]
 		end
 	end
 
@@ -3353,9 +3375,9 @@ function CopDamage:_on_damage_received(damage_info)
 	end
 	
 	--[[if not self._dead and self._unit:base():has_tag("tank") and self._health > 0 then
-	    self._unit:sound():play("fist_hit_gen", nil, nil)
+		self._unit:sound():play("fist_hit_gen", nil, nil)
 	else	
-	    self._unit:sound():play("fist_hit_body", nil, nil)
+		self._unit:sound():play("fist_hit_body", nil, nil)
 	end]]--
 	
 end

@@ -36,6 +36,59 @@ local function set_hud_item_amount(index, amount)
 	end
 end
 
+Hooks:PostHook(PlayerManager, "_setup", "ResSetup", function(_)
+	--- synced_carry_stacker is a table of tables, mapping peer IDs to a table of
+	--- all the bags the given player is carrying, **OTHER THAN** the one stored in `synced_carry`.
+	--- 
+	--- The carry table is a FILO queue: First In Last Out.
+	Global.player_manager.synced_carry_stacker = {}
+end)
+
+--- Vomits out all the carried items from the player that wasn't in synced_carry.
+Hooks:PostHook(PlayerManager, "peer_dropped_out", "ResPeerDroppedOut", function(self, peer_id)
+	if Network:is_server() then
+		local synced_carry_stacker_data = self:get_synced_carry_stacker(peer_id)
+
+		if synced_carry_stacker_data and #synced_carry_stacker_data > 0 then
+			for _, carry in ipairs(synced_carry_stacker_data) do
+				if not carry then
+					return
+				end
+
+				local carry_id = carry.carry_id
+				local carry_multiplier = carry.multiplier
+				local dye_initiated = carry.dye_initiated
+				local has_dye_pack = carry.has_dye_pack
+				local dye_value_multiplier = carry.dye_value_multiplier
+				local peer_unit = peer:unit()
+				local position = Vector3()
+
+				if alive(peer_unit) then
+					if peer_unit:movement():zipline_unit() then
+						position = peer_unit:movement():zipline_unit():position()
+					else
+						position = peer_unit:position()
+					end
+				end
+
+				local dir = Vector3(0, 0, 0)
+
+				self:server_drop_carry(carry_id, carry_multiplier, dye_initiated, has_dye_pack, dye_value_multiplier, position, Rotation(), dir, 0, nil, peer)
+			end
+		end
+	end
+
+	Global.player_manager.synced_carry_stacker[peer_id] = nil
+end)
+
+function PlayerManager:get_synced_carry_stacker(peer_id)
+	return self._global.synced_carry_stacker[peer_id]
+end
+
+function PlayerManager:get_all_synced_carry_stacker()
+	return self._global.synced_carry_stacker
+end
+
 Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 	--Info for slow debuff, usually caused by Titan Tasers.
 	self._slow_data = {
@@ -60,6 +113,20 @@ Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 	-- A few HUDs such as PocoHUD use this value directly. With the changes to on_headshot_dealt where
 	-- this wouldn't be created until it's relevant, these HUDs would cause the game to crash.
 	self._on_headshot_dealt_t = 0
+	
+	--- Rather than constantly using the current weight for calculations 
+	--- (and no doubt losing some speed to rounding, I'M SURE OF IT)
+	--- Whenever the weight would change, we start out from this number.
+	--- 
+	--- For further details on weight, see self._weight below.
+	self._default_weight = 1
+
+	--- Represents how affected is the player's movement by the bags 
+    --- they are carrying. If weight is 1, the player is not affected at all. 
+	--- However, if weight is less than 1, the player's speed and jumping ability 
+	--- will be reduced. Furthermore, the player will not be able to pick more 
+	--- bags once a certain weight threshold is reached.
+	self._weight = self._default_weight
 end)
 
 Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self, t, dt)
@@ -1923,6 +1990,39 @@ function PlayerManager:add_deployable_equipment(equipment_id, amount)
 	end
 end
 
+--- Reversed the order in which the `_damage_bonus_distance` and `_damage_bonus` contours are applied.
+--- This needed to be done because unlike Vanilla's High Value Target, Spotter has logic based on distance
+--- in the Basic version of the skill, not aced.
+--- Leaving it unreversed would result in the Spotter Basic contour applying no matter if you had Basic or Aced.
+--- 
+--- Please note that the contours now handle distance differently! See contourext.lua for more info.
+function PlayerManager:get_contour_for_marked_enemy(enemy_type)
+	local contour_type = "mark_enemy"
+
+	if enemy_type == "swat_turret" or enemy_type == "sentry_gun" then
+		contour_type = "mark_unit_dangerous"
+
+		if managers.player:has_category_upgrade("player", "marked_inc_dmg_distance") then
+			contour_type = "mark_unit_dangerous_damage_bonus_distance"
+		end
+
+		if managers.player:has_category_upgrade("player", "marked_enemy_extra_damage") then
+			contour_type = "mark_unit_dangerous_damage_bonus"
+		end
+	else
+
+		if managers.player:has_category_upgrade("player", "marked_inc_dmg_distance") then
+			contour_type = "mark_enemy_damage_bonus_distance"
+		end
+
+		if managers.player:has_category_upgrade("player", "marked_enemy_extra_damage") then
+			contour_type = "mark_enemy_damage_bonus"
+		end
+	end
+
+	return contour_type
+end
+
 -- Tag Team: tagged player will hear activation sound
 Hooks:PostHook(PlayerManager, "sync_tag_team", "sync_tag_team_sound_effect", function(self, tagged, owner, end_time)
 	if tagged == self:local_player() then
@@ -1942,97 +2042,250 @@ end
 
 -- Carry Stacker stuff inbound
 
-local master_PlayerManager_set_carry = PlayerManager.set_carry
-local master_PlayerManager_drop_carry = PlayerManager.drop_carry
-local master_PlayerManager_can_carry = PlayerManager.can_carry
+--- Gets the carried items' data, and recalculates their modifiers on the carried weight.
+--- 
+--- Typically should be called whenever the carry data updates, but shouldn't cause any problems if called any other time.
+function PlayerManager:recalculate_carried_weights()
+	local peer_id = managers.network:session():local_peer():id()
+	local cdata = self:get_my_carry_data()
+	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
 
---[[
-	This function will be called to check whether the player can carry 
-	a bag.
-]]
-function PlayerManager:can_carry(carry_id, logger)
-	logger = logger or BLT_CarryStacker.Log
-	logger("Request to check whether the player can carry " ..
-		tostring(carry_id))
-	if BLT_CarryStacker:GetModState() == BLT_CarryStacker.STATES.DISABLED then
-		return BLT_CarryStacker.DoMasterFunction(false,
-			master_PlayerManager_can_carry, self, carry_id)
+    local all_weight_modifier = 1
+
+	local function add_carry_weight(examined_carry)
+		if examined_carry then
+			local carry_type = tweak_data.carry[examined_carry.carry_id].type
+			local movement_penalty = tweak_data.carry.types[carry_type].weight
+
+			local this_weight_modifier = movement_penalty ~= nil 
+				and ((100 -movement_penalty) / 100) 
+				or 1
+
+			all_weight_modifier = all_weight_modifier * this_weight_modifier
+		end
 	end
-	logger("Returning the result of BLT_CarryStacker:CanCarry")
-	return BLT_CarryStacker:CanCarry(carry_id, logger)
+
+	add_carry_weight(cdata)
+	if remaining_cdata then
+		for i, carry_iter in ipairs(remaining_cdata) do
+			add_carry_weight(carry_iter)
+		end
+	end
+	
+    self._weight = self._default_weight * all_weight_modifier
 end
 
---[[
-	This function will be called when the player wants to carry a bag.
-]]
-function PlayerManager:drop_carry(...)
-	local logger = BLT_CarryStacker.Log
-	logger("Request to drop a carry")
-	if BLT_CarryStacker:GetModState() == BLT_CarryStacker.STATES.DISABLED then
-		BLT_CarryStacker.DoMasterFunction(false,
-			master_PlayerManager_drop_carry, self, ...)
+--- Adds a special loot icon to the player's HUD to represent how many extra loot they're carrying.
+--- 
+--- @param peer_id integer The Peer ID of the player whose HUD element needs to be updated.
+function PlayerManager:update_carrystacker_hud(peer_id)
+	if peer_id ~= managers.network:session():local_peer():id() then
 		return
 	end
-
-	if #BLT_CarryStacker.stack == 0 then
-        logger("WARNING: Request to drop carry, but the stack is empty")
-        -- If the mod was disabled and the player picked a carry, the 
-        -- mod will not be aware of it. This is, even if #stack == 0, 
-        -- the player could be carrying a bag
-        -- return
-    end
-
-    local cdata = BLT_CarryStacker.stack[#BLT_CarryStacker.stack]
-    if cdata then
-        logger("The carry being dropped is: " .. tostring(cdata.carry_id))
-    else
-        logger("The mod has no data on the carry being dropped")
-    end
-    master_PlayerManager_drop_carry(self, ...)
-	
-	--Makes the Drop cooldown consistent
+	local carry_stacker_data = self:get_synced_carry_stacker(peer_id)
 	local carry_data = self:get_my_carry_data()
-	
+	local bags = 0
+
 	if carry_data then
-		self._carry_blocked_cooldown_t = Application:time() + 0.5
-	end	
-	
-    logger("The carry has been dropped")
-    -- The Carry has to be removed from the stack after master 
-    -- drop_carry. This is so that the mod's state is updated 
-    -- afterwards. Therefore, the anticheat engine wont detect cheating
-    -- when dropping the carry
-    BLT_CarryStacker:RemoveCarry()
-    -- If there are more carries in the stack, the top-most has to be 
-    -- set using master set_carry so the game registers it for the next 
-    -- drop
-    if #BLT_CarryStacker.stack > 0 then
-        logger("Since there are more items in the stack, " ..
-                "using master set_carry with the current top-most carry")
-        cdata = BLT_CarryStacker.stack[#BLT_CarryStacker.stack]
-        master_PlayerManager_set_carry(self, cdata.carry_id, 
-                cdata.multiplier or 1, cdata.dye_initiated, 
-                cdata.has_dye_pack, cdata.dye_value_multiplier)
-    end
+		bags = bags + 1
+	end
+
+	if carry_stacker_data then
+		bags = bags + #carry_stacker_data
+	end
+
+	managers.hud:remove_special_equipment("carrystacker")
+	if bags > 0 then
+		managers.hud:add_special_equipment({
+			id = "carrystacker", 
+			icon = "pd2_loot", 
+			amount = bags
+		})
+	end
 end
 
---[[
-	This function will be called after player is done picking up a bag.
-]]
-function PlayerManager:set_carry(...)
-	local logger = BLT_CarryStacker.Log
-	logger("Request to set a new carry")
-	if BLT_CarryStacker:GetModState() == BLT_CarryStacker.STATES.DISABLED then
-		BLT_CarryStacker.DoMasterFunction(false,
-			master_PlayerManager_set_carry, self, ...)
+--- Effectively the update_removed_synced_carry_to_peers() equivalent for the carry stacker.
+--- Used to delete the local peer's carry stacker data for others.
+function PlayerManager:update_removed_synced_carry_stacker_to_peers()
+	local peer = managers.network:session():local_peer()
+
+	managers.network:session():send_to_peers_synched("sync_remove_carry_stacker")
+	self:remove_synced_carry_stacker(peer)
+	self:recalculate_carried_weights()
+end
+
+--- Clears the synced_carry_stacker table for a given peer.
+--- @param peer Peer The peer whose table to clear.
+function PlayerManager:remove_synced_carry_stacker(peer)
+	local peer_id = peer:id()
+
+	if not self._global.synced_carry_stacker[peer_id] then
 		return
 	end
 
-	logger("Setting the carry with master set_carry and " ..
-		"adding the item to the stack")
-	master_PlayerManager_set_carry(self, ...)
-	BLT_CarryStacker:AddCarry(self:get_my_carry_data())
-	-- This will be used to prevent the player from picking a new bag
-	-- within the next 0.1 sec
-	PlayerStandard:block_use_item()
+	self._global.synced_carry_stacker[peer_id] = nil
+	self:update_carrystacker_hud(peer_id)
 end
+
+--- This function will be called to check whether the player can carry a bag.
+Hooks:PostHook(PlayerManager, "can_carry", "ResCarryStackerCanCarry", function(self, carry_id)
+	if not Hooks:GetReturn() then
+		-- I don't think it ever *can*, but if the original can_carry returns false,
+		-- well, no point in looking further.
+		return false
+	end
+
+	local carry_type = tweak_data.carry[carry_id].type
+	local movement_penalty = nil
+		
+	movement_penalty = tweak_data.carry.types[carry_type].weight
+	local carried_weight_modifier = movement_penalty ~= nil 
+		and ((100 -movement_penalty) / 100) 
+		or 1
+
+    local check_weight = self._weight * carried_weight_modifier
+	local max_weight = tweak_data.player.max_carry_weight
+	
+	if managers.player:has_category_upgrade("carry", "increased_carry_weight") then
+		max_weight = max_weight - managers.player:upgrade_value("carry", "increased_carry_weight", 1)
+	end
+
+    return check_weight >= max_weight
+end)
+
+--- Makes the timing before you can interact again consistent. That's it.
+--- We DO base it on the synced_carry_stacker length rather than synced_carry, though this is
+--- because of the code reorganisation that mandates we trust the host with dropping stuff.
+Hooks:PostHook(PlayerManager, "drop_carry", "ResCarryStackerDropCarry", function(self, _)
+	local peer_id = managers.network:session():local_peer():id()
+	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
+
+	if remaining_cdata and #remaining_cdata > 0 then
+		self._carry_blocked_cooldown_t = Application:time() + 0.5
+	end
+
+	self:update_carrystacker_hud(peer_id)
+	self:recalculate_carried_weights()
+end)
+
+--- This is a bit delayed compared to the original CarryStacker implementation where this (or rather
+--- a similar) logic was in drop_carry directly. However, I think it's fine mainly because that one
+--- wasn't synchronised over the net. It's *probably* alright that we wait some barely perceptible
+--- amount of time before "realising" we still have loot in synced_carry_stacker.
+Hooks:PostHook(PlayerManager, "remove_synced_carry", "ResCarryStackerPostRemoveSyncedCarry", function(self, peer)
+	local peer_id = peer:id()
+	local local_peer_id = managers.network:session():local_peer():id()
+	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
+
+	if remaining_cdata and #remaining_cdata > 0 then
+		local next_carry = table.remove(remaining_cdata, #remaining_cdata)
+
+		if peer_id == local_peer_id then
+			self:set_carry(next_carry.carry_id, next_carry.multiplier, next_carry.dye_initiated, next_carry.has_dye_pack, next_carry.dye_value_multiplier)
+		else
+			self:recalculate_carried_weights()
+			self:update_carrystacker_hud(peer_id)
+		end
+	end
+end)
+
+--- Since we're about to pick up a a new carryable item, we should push the current one (if there's one), to the synced_carry_stacker.
+Hooks:PreHook(PlayerManager, "set_synced_carry", "ResCarryStackerPreSetSyncedCarry", function(self, peer, _, _, _, _, _)
+	local peer_id = peer:id()
+	local carry = self._global.synced_carry[peer_id]
+
+	if carry then
+		self._global.synced_carry_stacker[peer_id] = self._global.synced_carry_stacker[peer_id] or {}
+		table.insert(self._global.synced_carry_stacker[peer_id], deep_clone(carry))
+	end
+
+	self:update_carrystacker_hud(peer_id)
+end)
+
+--- Adjust the player weight, and block interactions for a short bit.
+Hooks:PostHook(PlayerManager, "set_carry", "ResCarryStackerPostSetCarry", function(self, _, _, _, _, _)
+	local peer_id = managers.network:session():local_peer():id()
+	self:update_carrystacker_hud(peer_id)
+	self:recalculate_carried_weights()
+	PlayerStandard:block_use_item()
+end)
+
+--- This should hopefully force the player to drop ALL their bags, not just the current one in `synced_carry`.
+Hooks:PreHook(PlayerManager, "force_drop_carry", "ResCarryStackerPreForceDropCarry", function(self)
+	local peer_id = managers.network:session():local_peer():id()
+	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
+
+	if remaining_cdata == nil then
+		return
+	end
+
+	local player = self:player_unit()
+	if not alive(player) then
+		print("COULDN'T FORCE DROP! DIDN'T HAVE A UNIT")
+		return
+	end
+
+	-- I'm not overjoyed about all the code duplication, but what can you do.
+	for _, carry in ipairs(remaining_cdata) do
+		if not carry then
+			-- HUH????
+			return
+		end
+
+		local dye_initiated = carry.dye_initiated
+		local has_dye_pack = carry.has_dye_pack
+		local dye_value_multiplier = carry.dye_value_multiplier
+		local camera_ext = player:camera()
+
+		if Network:is_client() then
+			managers.network:session():send_to_host("server_drop_carry", carry.carry_id, carry.multiplier, dye_initiated, has_dye_pack, dye_value_multiplier, camera_ext:position(), camera_ext:rotation(), Vector3(0, 0, 0), 0, nil)
+		else
+			self:server_drop_carry(carry.carry_id, carry.multiplier, dye_initiated, has_dye_pack, dye_value_multiplier, camera_ext:position(), camera_ext:rotation(), Vector3(0, 0, 0), 0, nil, managers.network:session():local_peer())
+		end
+	end
+
+	self:update_removed_synced_carry_stacker_to_peers()
+	self:recalculate_carried_weights()
+	self:update_carrystacker_hud(peer_id)
+end)
+
+--- Banking all the carry stacker carries *before* the synced_carry one because I'm not entirely sure
+--- how would the game behave because of the update_removed_synced_carry_to_peers() call in the original.
+Hooks:PreHook(PlayerManager, "bank_carry", "ResCarryStackerPreBankCarry", function(self)
+	local peer_id = managers.network:session() and managers.network:session():local_peer():id()
+
+	local remaining_cdata = self:get_synced_carry_stacker(peer_id)
+
+	if remaining_cdata == nil then
+		return
+	end
+
+	for _, carry in ipairs(remaining_cdata) do
+		if not carry then
+			-- Not sure how this could happen, but Your Honour: PAYDAY 2.
+			return
+		end
+		managers.loot:secure(carry.carry_id, carry.multiplier, nil, peer_id)
+	end
+	
+	self:update_removed_synced_carry_stacker_to_peers()
+end)
+
+--- clear_carry seems "technical" enough that I think we should probably also clear our carry stacker table here.
+Hooks:PreHook(PlayerManager, "clear_carry", "ResCarryStackerPreClearCarry", function(self, soft_reset)
+	local peer_id = managers.network:session() and managers.network:session():local_peer():id()
+	local carry_stacker_data = self:get_synced_carry_stacker(peer_id)
+
+	if not carry_stacker_data then
+		return
+	end
+
+	local player = self:player_unit()
+
+	if not soft_reset and not alive(player) then
+		print("COULDN'T FORCE DROP! DIDN'T HAVE A UNIT")
+		return
+	end
+
+	self:update_removed_synced_carry_stacker_to_peers()
+end)

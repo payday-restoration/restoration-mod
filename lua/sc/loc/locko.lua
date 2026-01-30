@@ -1454,20 +1454,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--'Nade Launchers--
 		--Incendiary UGL Nades
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "목표에 적중 시 #{heat_warm_color}#화염 지대##를 생성하는 유탄을 발사합니다.\n화염 지대는 반경 #{skill_color}#3.75##미터이며, #{skill_color}#5##초 동안 지속됩니다. 화염 지대 안에 있는 적에게는 초당 #{skill_color}#120##의 피해를 가하며, 일정 확률로 적을 불태워 대부분의 적을 공포에 휩싸이게 만들고, #{skill_color}#3##초 동안 추가로 #{skill_color}#60##의 피해를 가합니다.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "목표에 적중 시 #{heat_warm_color}#화염 지대##를 생성하는 유탄을 발사합니다.\n화염 지대는 반경 #{skill_color}#3.75##미터이며, #{skill_color}#5##초 동안 지속됩니다. 화염 지대 안에 있는 적에게는 초당 #{skill_color}#80##의 피해를 가하며, 일정 확률로 적을 불태워 대부분의 적을 공포에 휩싸이게 만들고, #{skill_color}#3##초 동안 추가로 #{skill_color}#60##의 피해를 가합니다.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "목표에 적중 시 #{heat_warm_color}#화염 지대##를 생성하는 유탄을 발사합니다.\n화염 지대는 반경 #{skill_color}#3.75##미터이며, #{skill_color}#5##초 동안 지속됩니다. 화염 지대 안에 있는 적에게는 초당 #{skill_color}#36##의 피해를 가하며, 일정 확률로 적을 불태워 대부분의 적을 공포에 휩싸이게 만들고, #{skill_color}#3##초 동안 추가로 #{skill_color}#60##의 피해를 가합니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_spam_desc_sc"] = "목표에 적중 시 #{heat_warm_color}#화염 지대##를 생성하는 유탄을 발사합니다.\n화염 지대는 반경 #{skill_color}#3.75##미터이며, #{skill_color}#5##초 동안 지속됩니다. 화염 지대 안에 있는 적에게는 초당 #{skill_color}#90##의 피해를 가하며, 일정 확률로 적을 불태워 대부분의 적을 공포에 휩싸이게 만들고, #{skill_color}#3##초 동안 추가로 #{skill_color}#60##의 피해를 가합니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "목표에 적중 시 #{heat_warm_color}#화염 지대##를 생성하는 유탄을 발사합니다.\n화염 지대는 반경 #{skill_color}#3.75##미터이며, #{skill_color}#5##초 동안 지속됩니다. 화염 지대 안에 있는 적에게는 초당 #{skill_color}#60##의 피해를 가하며, 일정 확률로 적을 불태워 대부분의 적을 공포에 휩싸이게 만들고, #{skill_color}#3##초 동안 추가로 #{skill_color}#60##의 피해를 가합니다.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "목표에 적중 시 #{heat_warm_color}#화염 지대##를 생성하는 유탄을 발사합니다.\n화염 지대는 반경 #{skill_color}#3.75##미터이며, #{skill_color}#5##초 동안 지속됩니다. 화염 지대 안에 있는 적에게는 초당 #{skill_color}#40##의 피해를 가하며, 일정 확률로 적을 불태워 대부분의 적을 공포에 휩싸이게 만들고, #{skill_color}#3##초 동안 추가로 #{skill_color}#60##의 피해를 가합니다.",
 		--Frag UGL Nade
 		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "목표에 적중 시 #{risk}#폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#720##의 피해를 가하고 반경은 #{skill_color}#5##미터입니다.",
 		--Taser UGL Nades
-		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#360##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
-		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#180##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
-		["bm_wp_upg_a_grenade_launcher_electric_spam_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#300##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",		
-		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#3##미터 반경 내에 #{skill_color}#300##의 피해를 가하고 일정 확률로 적을 #{ghost_color}#감전시킵니다.##",
+		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#360##의 피해를 가하고 #{ghost_color}#대부분의 적을 감전시킵니다.##",
+		["bm_wp_upg_a_grenade_launcher_electric_spam_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#300##의 피해를 가하고 #{ghost_color}#대부분의 적을 감전시킵니다.##",
+		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경 내에 #{skill_color}#200##의 피해를 가하고 #{ghost_color}#대부분의 적을 감전시킵니다.##",		
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "목표에 적중 시 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#3##미터 반경 내에 #{skill_color}#180##의 피해를 가하고 #{ghost_color}#대부분의 적을 감전시킵니다.##",
 		--Gas UGL Nades
 		["bm_wp_upg_a_grenade_launcher_poison"] = "만티코어-6 유탄",
-		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "목표에 적중 시 #{stats_positive}#유독가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터이며, #{skill_color}#8##초 동안 지속됩니다. 가스는 #{skill_color}#8##초에 걸쳐 #{skill_color}#240##의 피해를 가하며, 가스에 갇힌 대부분의 적에게 #{stats_positive}#구토##를 #{important_1}#한 번## 유발합니다.",
-		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "목표에 적중 시 #{stats_positive}#유독가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터이며, #{skill_color}#8##초 동안 지속됩니다. 가스는 #{skill_color}#8##초에 걸쳐 #{skill_color}#180##의 피해를 가하며, 가스에 갇힌 대부분의 적에게 #{stats_positive}#구토##를 #{important_1}#한 번## 유발합니다.",
-		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "목표에 적중 시 #{stats_positive}#유독가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터이며, #{skill_color}#8##초 동안 지속됩니다. 가스는 #{skill_color}#8##초에 걸쳐 #{skill_color}#120##의 피해를 가하며, 가스에 갇힌 대부분의 적에게 #{stats_positive}#구토##를 #{important_1}#한 번## 유발합니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "목표에 적중 시 #{stats_positive}#유독가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터이며, #{skill_color}#6##초 동안 지속됩니다. 가스는 #{skill_color}#6##초에 걸쳐 #{skill_color}#180##의 피해를 가하며, 가스 구름에 있는 대부분의 적에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_spam_desc_sc"] = "목표에 적중 시 #{stats_positive}#유독가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터이며, #{skill_color}#5##초 동안 지속됩니다. 가스는 #{skill_color}#5##초에 걸쳐 #{skill_color}#150##의 피해를 가하며, 가스 구름에 있는 대부분의 적에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "목표에 적중 시 #{stats_positive}#유독가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터이며, #{skill_color}#4##초 동안 지속됩니다. 가스는 #{skill_color}#4##초에 걸쳐 #{skill_color}#120##의 피해를 가하며, 가스 구름에 있는 대부분의 적에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "목표에 적중 시 #{stats_positive}#유독가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 반경 #{skill_color}#6##미터이며, #{skill_color}#3##초 동안 지속됩니다. 가스는 #{skill_color}#3##초에 걸쳐 #{skill_color}#90##의 피해를 가하며, 가스 구름에 있는 대부분의 적에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "레어",
@@ -5431,11 +5433,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_no_ammo_drops_desc"] = "탄약 획득 드랍 확률을 변경하거나 아예 비활성화합니다.",
 		["mutator_no_ammo_drops_longdesc"] = "탄약 획득 드랍 확률을 변경하거나 아예 비활성화합니다.",
 
+		["mutator_advancedtraining"] = "고급 훈련",
+		["mutator_advancedtraining_desc"] = "적이 데스 센텐스 난이도의 체력과 피해량 값을 갖습니다.",
+		["mutator_advancedtraining_longdesc"] = "적들이 훈련을 받은 덕분에 데스 센텐스 난이도의 체력과 피해량 값을 능력치와 함께 가지게 됩니다.",
+
 		["mutator_spawn_mult"] = "증대된 대응",
 		["menu_mutator_enemy_spawn"] = "적 스폰 배율",
-		["mutator_spawn_mult_desc"] = "적의 스폰을 수정합니다.",
-		["mutator_spawn_mult_longdesc"] = "공세가 진행되는 동안 더 많은(혹은 적은) 적들이 스폰됩니다. Overkill™이 써먹는 방식이죠!",
-
+		["mutator_spawn_mult_desc"] = "적의 스폰률을 수정합니다.",
+		["mutator_spawn_mult_longdesc"] = "공세가 진행되는 동안 더 많은(혹은 적은) 적들을 스폰하게 합니다. Overkill™이 써먹는 방식이죠!",
 
 		["mutator_birthday"] = "풍선 터트리기",
 		["mutator_birthday_desc"] = "특수 적을 처치 시 버프를 제공하는 풍선이 생성됩니다.",
@@ -5851,7 +5856,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   COMBAT ENGINEER SUBTREE   ]]--
 				--Sharpshooter--
 				["menu_discipline_sc"] = "명사수",
-				["menu_discipline_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##의 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#소총##을 #{skill_color}#반자동## 또는 #{skill_color}#점사##로 설정한 상태로 치명적인 헤드샷 성공 시, #{skill_color}#$skill_value_p2##초 동안 발사 속도가 #{skill_color}#$skill_value_p1## 증가하지만, #{skill_color}#소총##을 #{risk}#완전 자동##으로 설정할 상태에는 효과가 감소합니다.",
+				["menu_discipline_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##의 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#소총##을 #{skill_color}#반자동## 또는 #{skill_color}#점사##로 설정한 상태에서 헤드샷으로 적을 처치할 경우, #{skill_color}#$skill_value_p2##초 동안 발사 속도가 #{skill_color}#$skill_value_p1## 증가하지만, #{risk}#완전 자동##으로 설정한 상태의 #{skill_color}#소총##으로 적을 처치할 시 발사 속도가 #{skill_color}#$skill_value_p3##만 증가합니다.",
 
 				--Rifleman--
 				["menu_rifleman_sc"] = "소총수",

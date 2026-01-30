@@ -368,14 +368,14 @@ tweak_data.concealment_cap = 32
 tweak_data.projectiles.launcher_rocket.damage = 120
 tweak_data.projectiles.launcher_rocket.player_damage = 60
 tweak_data.projectiles.launcher_rocket.range = 500
-tweak_data.projectiles.launcher_rocket.curve_pow = 1
+tweak_data.projectiles.launcher_rocket.curve_pow = 0.75
 tweak_data.projectiles.launcher_rocket.turret_instakill = true
 
 --M202--
 tweak_data.projectiles.rocket_ray_frag.damage = 90
 tweak_data.projectiles.rocket_ray_frag.player_damage = 45
 tweak_data.projectiles.rocket_ray_frag.range = 500
-tweak_data.projectiles.rocket_ray_frag.curve_pow = 1
+tweak_data.projectiles.rocket_ray_frag.curve_pow = 0.75
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
 tweak_data.projectiles.rocket_ray_frag.incendiary = true
 tweak_data.projectiles.rocket_ray_frag.dot_data_name = "proj_ray_frag"
@@ -387,7 +387,7 @@ local frag_40mm = {
 for i, proj_id in ipairs(frag_40mm) do
 	tweak_data.projectiles[proj_id].damage = 72
 	tweak_data.projectiles[proj_id].player_damage = 36
-	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].curve_pow = 0.75
 	tweak_data.projectiles[proj_id].range = 500
 end
 frag_40mm = {
@@ -396,7 +396,7 @@ frag_40mm = {
 for i, proj_id in ipairs(frag_40mm) do
 	tweak_data.projectiles[proj_id].damage = 60
 	tweak_data.projectiles[proj_id].player_damage = 30
-	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].curve_pow = 0.75
 	tweak_data.projectiles[proj_id].range = 500
 end
 
@@ -406,7 +406,7 @@ local incendiary_40mm = {
 for i, proj_id in ipairs(incendiary_40mm) do
 	tweak_data.projectiles[proj_id].damage = 6
 	tweak_data.projectiles[proj_id].player_damage = 3
-	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].curve_pow = 0.75
 	tweak_data.projectiles[proj_id].range = 500
 	tweak_data.projectiles[proj_id].burn_duration = 5
 	tweak_data.projectiles[proj_id].dot_data_name = "proj_launcher_incendiary"
@@ -415,9 +415,9 @@ incendiary_40mm = {
 	'launcher_incendiary_china','launcher_incendiary_m32'
 }
 for i, proj_id in ipairs(incendiary_40mm) do
-	tweak_data.projectiles[proj_id].damage = 4
-	tweak_data.projectiles[proj_id].player_damage = 2
-	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].damage = 4.5
+	tweak_data.projectiles[proj_id].player_damage = 2.25
+	tweak_data.projectiles[proj_id].curve_pow = 0.75
 	tweak_data.projectiles[proj_id].range = 500
 	tweak_data.projectiles[proj_id].burn_duration = 5
 	tweak_data.projectiles[proj_id].dot_data_name = "proj_launcher_incendiary_spam"
@@ -429,7 +429,7 @@ local electric_40mm = {
 for i, proj_id in ipairs(electric_40mm) do
 	tweak_data.projectiles[proj_id].damage = 36
 	tweak_data.projectiles[proj_id].player_damage = 18
-	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].curve_pow = 0.75
 	tweak_data.projectiles[proj_id].range = 500
 end
 electric_40mm = {
@@ -438,7 +438,7 @@ electric_40mm = {
 for i, proj_id in ipairs(electric_40mm) do
 	tweak_data.projectiles[proj_id].damage = 30
 	tweak_data.projectiles[proj_id].player_damage = 15
-	tweak_data.projectiles[proj_id].curve_pow = 1
+	tweak_data.projectiles[proj_id].curve_pow = 0.75
 	tweak_data.projectiles[proj_id].range = 500
 end
 
@@ -452,7 +452,7 @@ for i, proj_id in ipairs(poison_40mm) do
 	tweak_data.projectiles[proj_id].range = 0
 	--tweak_data.projectiles[proj_id].manticore = true
 	tweak_data.projectiles[proj_id].poison_gas_range = 600
-	tweak_data.projectiles[proj_id].poison_gas_duration = 8
+	tweak_data.projectiles[proj_id].poison_gas_duration = 6
 	tweak_data.projectiles[proj_id].poison_gas_fade_time = 0.1
 	tweak_data.projectiles[proj_id].poison_gas_tick_time = 0.3
 	tweak_data.projectiles[proj_id].poison_gas_dot_data_name = "proj_launcher_cloud"
@@ -467,26 +467,28 @@ for i, proj_id in ipairs(poison_40mm) do
 	tweak_data.projectiles[proj_id].range = 0
 	--tweak_data.projectiles[proj_id].manticore = true
 	tweak_data.projectiles[proj_id].poison_gas_range = 600
-	tweak_data.projectiles[proj_id].poison_gas_duration = 6
+	tweak_data.projectiles[proj_id].poison_gas_duration = 5
 	tweak_data.projectiles[proj_id].poison_gas_fade_time = 0.1
 	tweak_data.projectiles[proj_id].poison_gas_tick_time = 0.3
 	tweak_data.projectiles[proj_id].poison_gas_dot_data_name = "proj_launcher_cloud_spam"
 end
 
 --Arbiter--
-tweak_data.projectiles.launcher_frag_arbiter.damage = 60
-tweak_data.projectiles.launcher_frag_arbiter.player_damage = 30
+tweak_data.projectiles.launcher_frag_arbiter.damage = 36
+tweak_data.projectiles.launcher_frag_arbiter.player_damage = 18
 tweak_data.projectiles.launcher_frag_arbiter.range = 300
 tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 0.75
 tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
 tweak_data.projectiles.launcher_frag_arbiter.effect_name = "effects/payday2/particles/explosions/shapecharger_explosion"
-tweak_data.projectiles.launcher_incendiary_arbiter.damage = 4
-tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2
+tweak_data.projectiles.launcher_incendiary_arbiter.damage = 2.4
+tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 1.2
+tweak_data.projectiles.launcher_incendiary_arbiter.range = 300
 tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 5
 tweak_data.projectiles.launcher_incendiary_arbiter.init_timer = nil
 tweak_data.projectiles.launcher_incendiary_arbiter.dot_data_name = "proj_launcher_incendiary_arbiter"
-tweak_data.projectiles.launcher_electric_arbiter.damage = 30
-tweak_data.projectiles.launcher_electric_arbiter.player_damage = 15
+tweak_data.projectiles.launcher_incendiary_arbiter.effect_name = "effects/payday2/particles/explosions/shapecharger_explosion"
+tweak_data.projectiles.launcher_electric_arbiter.damage = 18
+tweak_data.projectiles.launcher_electric_arbiter.player_damage = 9
 tweak_data.projectiles.launcher_electric_arbiter.range = 300
 tweak_data.projectiles.launcher_electric_arbiter.curve_pow = 0.75
 tweak_data.projectiles.launcher_electric_arbiter.init_timer = nil
@@ -496,17 +498,17 @@ tweak_data.projectiles.launcher_poison_arbiter.curve_pow = 0
 tweak_data.projectiles.launcher_poison_arbiter.range = 0
 --tweak_data.projectiles.launcher_poison_arbiter.manticore = true
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_arbiter.poison_gas_duration = 6
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_duration = 3
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_dot_data_name = "proj_launcher_arbiter_cloud"
 
 --SABR Grenade Launcher.
 tweak_data.projectiles.launcher_frag_osipr = {
-	damage = 60,
+	damage = 36,
 	launch_speed = 2500,
 	curve_pow = 0.75,
-	player_damage = 30,
+	player_damage = 18,
 	range = 300,
 	init_timer = nil,
 	mass_look_up_modifier = 0,
@@ -515,25 +517,26 @@ tweak_data.projectiles.launcher_frag_osipr = {
 	effect_name = "effects/payday2/particles/explosions/shapecharger_explosion"
 }
 tweak_data.projectiles.launcher_incendiary_osipr = {
-	damage = 4,
+	damage = 2.4,
 	launch_speed = 2500,
 	curve_pow = 0.75,
-	player_damage = 2,
+	player_damage = 1.2,
 	dot_data_name = "proj_launcher_incendiary_arbiter",
-	range = 350,
+	range = 300,
 	init_timer = nil,
 	mass_look_up_modifier = 0,
 	sound_event = "gl_explode",
 	sound_event_impact_duration = 0.25,
 	name_id = "bm_launcher_incendiary",
 	burn_duration = 5,
-	burn_tick_period = 0.5
+	burn_tick_period = 0.5,
+	effect_name = "effects/payday2/particles/explosions/shapecharger_explosion"
 }
 tweak_data.projectiles.launcher_electric_osipr = {
-	damage = 30,
+	damage = 18,
 	launch_speed = 2500,
 	curve_pow = 0.75,
-	player_damage = 15,
+	player_damage = 9,
 	range = 300,
 	init_timer = nil,
 	mass_look_up_modifier = 0,
@@ -552,24 +555,24 @@ tweak_data.projectiles.launcher_poison_osipr = {
 	range = 0,
 	--manticore = true,
 	poison_gas_range = 600,
-	poison_gas_duration = 6,
+	poison_gas_duration = 3,
 	poison_gas_fade_time = 0.1,
 	poison_gas_tick_time = 0.3,
 	poison_gas_dot_data_name = "proj_launcher_arbiter_cloud"
 }
 
 --3GL
-tweak_data.projectiles.launcher_frag_ms3gl.damage = 36
-tweak_data.projectiles.launcher_frag_ms3gl.player_damage = 18
-tweak_data.projectiles.launcher_frag_ms3gl.curve_pow = 1
+tweak_data.projectiles.launcher_frag_ms3gl.damage = 40
+tweak_data.projectiles.launcher_frag_ms3gl.player_damage = 20
+tweak_data.projectiles.launcher_frag_ms3gl.curve_pow = 0.75
 tweak_data.projectiles.launcher_frag_ms3gl.range = 500
-tweak_data.projectiles.launcher_incendiary_ms3gl.damage = 2
-tweak_data.projectiles.launcher_incendiary_ms3gl.player_damage = 1
+tweak_data.projectiles.launcher_incendiary_ms3gl.damage = 3
+tweak_data.projectiles.launcher_incendiary_ms3gl.player_damage = 1.5
 tweak_data.projectiles.launcher_incendiary_ms3gl.burn_duration = 5
 tweak_data.projectiles.launcher_incendiary_ms3gl.dot_data_name = "proj_launcher_incendiary_3gl"
-tweak_data.projectiles.launcher_electric_ms3gl.damage = 18
-tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 6
-tweak_data.projectiles.launcher_electric_ms3gl.curve_pow = 1
+tweak_data.projectiles.launcher_electric_ms3gl.damage = 20
+tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 10
+tweak_data.projectiles.launcher_electric_ms3gl.curve_pow = 0.75
 tweak_data.projectiles.launcher_electric_ms3gl.range = 500
 tweak_data.projectiles.launcher_poison.damage = 0
 tweak_data.projectiles.launcher_poison.player_damage = 0
@@ -597,37 +600,38 @@ tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data_name
 
 --Plainsrider--
 tweak_data.projectiles.west_arrow.damage = 24
-tweak_data.projectiles.west_arrow_exp.damage = 48
+tweak_data.projectiles.west_arrow_exp.damage = 24
 tweak_data.projectiles.bow_poison_arrow.damage = 18
 
 --Hunter crossbow--
 tweak_data.projectiles.crossbow_arrow.damage = 24
-tweak_data.projectiles.crossbow_arrow_exp.damage = 36
+tweak_data.projectiles.crossbow_arrow_exp.damage = 24
 tweak_data.projectiles.crossbow_poison_arrow.damage = 18
 
 --Arblast Heavy Crossbow--
 tweak_data.projectiles.arblast_arrow.damage = 36
-tweak_data.projectiles.arblast_arrow_exp.damage = 60
+tweak_data.projectiles.arblast_arrow_exp.damage = 36
 tweak_data.projectiles.arblast_poison_arrow.damage = 24
 
 --Franken fish--
 tweak_data.projectiles.frankish_arrow.damage = 24
-tweak_data.projectiles.frankish_arrow_exp.damage = 48
+tweak_data.projectiles.frankish_arrow_exp.damage = 24
 tweak_data.projectiles.frankish_poison_arrow.damage = 18
 
 --BOWMEN, FORM UP--
 tweak_data.projectiles.long_arrow.damage = 36
-tweak_data.projectiles.long_arrow_exp.damage = 60
+tweak_data.projectiles.long_arrow_exp.damage = 36
 tweak_data.projectiles.long_poison_arrow.damage = 24
 
 --le happy merchant--
 tweak_data.projectiles.ecp_arrow.damage = 18
-tweak_data.projectiles.ecp_arrow_exp.damage = 36
+tweak_data.projectiles.ecp_arrow_exp.damage = 18
+tweak_data.projectiles.ecp_arrow_exp.direct_damage_percent = 0
 tweak_data.projectiles.ecp_arrow_poison.damage = 12
 
 --The not longbow--
 tweak_data.projectiles.elastic_arrow.damage = 36
-tweak_data.projectiles.elastic_arrow_exp.damage = 60
+tweak_data.projectiles.elastic_arrow_exp.damage = 36
 tweak_data.projectiles.elastic_arrow_poison.damage = 24
 
 --GRENADE OUT--

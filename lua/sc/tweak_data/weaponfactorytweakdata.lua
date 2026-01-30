@@ -9124,13 +9124,13 @@ end
 				self.parts.wpn_fps_lmg_hcar_body_conversionkit.stats = {
 					value = 10,
 					recoil = -2,
-					spread = -5,
+					spread = -6,
 					concealment = 1
 				}
 				self.parts.wpn_fps_lmg_hcar_body_conversionkit.custom_stats = {
-					rof_mult = 1.25,
-					falloff_start_mult = 0.7,
-					falloff_end_mult = 0.7,
+					rof_mult = 1.8,
+					falloff_start_mult = 0.5217391,
+					falloff_end_mult = 0.694915,
 					ads_speed_mult = 0.975
 				}
 				self.parts.wpn_fps_lmg_hcar_body_conversionkit.forbids = {}

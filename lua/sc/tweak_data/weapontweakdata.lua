@@ -5414,6 +5414,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].sms = sms_preset.lmg_48
 		self[ wep_id ].weapon_movement_penalty = sms_preset.lmg_48
 	end
+	self.kacchainsaw_flamethrower.sms = sms_preset.lmg_48
+	self.kacchainsaw_flamethrower.weapon_movement_penalty = sms_preset.lmg_48
 
 	recat = { "rpk", "hk51b" }
 	for i, wep_id in ipairs(recat) do
@@ -10031,7 +10033,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.tecci.kick_pattern = {
 						{0, self.stat_info.kick_tables.even_recoil},
 						{4, self.stat_info.kick_tables.left_recoil},
-						{16, self.stat_info.kick_tables.right_recoil},
+						{14, self.stat_info.kick_tables.right_recoil},
 						{28, self.stat_info.kick_tables.even_recoil},
 						{33, self.stat_info.kick_tables.right_recoil}
 					}
@@ -10055,7 +10057,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						recoil = 79,
 						spread_moving = 5,
 						zoom = 1,
-						concealment = 22,
+						concealment = 24,
 						suppression = 8,
 						alert_size = 2,
 						extra_ammo = 101,
@@ -10164,7 +10166,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 					self.kacchainsaw.stats = {
 						damage = 24,
-						spread = 51,
+						spread = 43,
 						recoil = 73,
 						spread_moving = 5,
 						zoom = 1,
@@ -10242,7 +10244,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.kacchainsaw_flamethrower.timers.reload_empty = 2.6
 					self.kacchainsaw_flamethrower.timers.reload_exit_empty = 0.8
 					self.kacchainsaw_flamethrower.timers.reload_exit_not_empty = 0.8
-					self.kacchainsaw_flamethrower.weapon_movement_penalty = sms_preset.lmg_48
 					self.kacchainsaw_flamethrower.shake.bypass_global_shake = true
 					self.kacchainsaw_flamethrower.ign_ts = true
 
@@ -10312,7 +10313,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						count = 3,
 						delay = 0.25,
 						recoil_mult = 0.85,
-						last_recoil_mult = 1.05
+						last_recoil_mult = 0.9
 					}
 					self.hk51b.kick = self.stat_info.kick_tables.right_kick
 					self.hk51b.kick_pattern = {
@@ -10436,7 +10437,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							count = 3,
 							delay = 0.3,
 							recoil_mult = 0.85,
-							last_recoil_mult = 1.1
+							last_recoil_mult = 0.9
 						}
 						self.hk21.fake_semi_anims = true
 						self.hk21.kick = self.stat_info.kick_tables.random_right_recoil
@@ -10474,7 +10475,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 25
 						}
 						self.hk21.stats_modifiers = nil
-						self.hk21.reload_speed_multiplier = 0.88
+						self.hk21.reload_speed_multiplier = 0.9
 						self.hk21.bipod_req_scope = true
 						self.hk21.animations.ignore_nonemptyreload = true
 						self.hk21.timers.reload_not_empty = self.hk21.timers.reload_empty
@@ -10538,8 +10539,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"mmg",
 							"rambo"
 						}
-						self.m60.CLIP_AMMO_MAX = 75
-						self.m60.AMMO_MAX = 120
+						self.m60.CLIP_AMMO_MAX = 100
+						self.m60.AMMO_MAX = 200
 						self.m60.fire_mode_data.fire_rate = 0.1034482
 						self.m60.kick = self.stat_info.kick_tables.random_right_recoil
 						self.m60.kick_pattern = {
@@ -10595,9 +10596,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"smg",
 							"mmg"
 						}
-						self.par.CLIP_AMMO_MAX = 50
+						self.par.CLIP_AMMO_MAX = 75
 						self.par.fire_mode_data.fire_rate = 0.092307
-						self.par.AMMO_MAX = 120
+						self.par.AMMO_MAX = 150
 						self.par.kick = {}
 						self.par.kick = self.stat_info.kick_tables.random_left_recoil
 						self.par.kick_pattern = {
@@ -25968,7 +25969,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scp_mg36.supported = true
 				self.scp_mg36.ads_speed = 0.400
 				self.scp_mg36.damage_falloff = {
-					start_dist = 2400,
+					start_dist = 2000,
 					end_dist = 6300,
 					min_mult = 0.5
 				}
@@ -36261,6 +36262,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						weap.sms = weap.sms / 1.2
 						weap.rms = weap.weapon_movement_penalty
 						weap.zoom_recoil_reduction = 0.025
+					end
+					if table.contains(weap.categories, "lmg_moving") or table.contains(weap.categories, "mmg_moving") or table.contains(weap.categories, "finn_the_lmg") or table.contains(weap.categories, "flamethrower_lmg") then
+						weap.weapon_movement_penalty = 1 - ((1 - weap.weapon_movement_penalty) * 0.75)
+						weap.sms = 1 - ((1 - weap.sms) * 0.25)
+						weap.rms = nil
 					end
 					weap.smt_mult = 4
 					weap.smt_range = { 0.5, 0.9 }

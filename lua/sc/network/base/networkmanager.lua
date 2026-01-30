@@ -11,29 +11,23 @@ NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY = "restoration_13_dev"
 local current_key = NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY
 local standard_str = 'NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY = \"'
 
---Compatibility for BeardLib Editor just in case.
-if BLE and BLE:RunningFix() then
-	NetworkMatchMakingEPIC._BUILD_SEARCH_INTEREST_KEY  = NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY .. "_editor"
-	NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY = NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY .. "_editor"
-end
-
 -- Invite-Link-on-Discord support
 
 local function find_key(page, str)
 	local _, st = string.find(tostring(page), str)
 	local en, _ = string.find(tostring(page), '"', st + 1)
 	local key = string.sub(tostring(page), st + 1, en - 1)
-	
+
 	return key
 end
 
 local function setup_discord_link(gold_key)
 	local is_gold = false
-	
+
 	if gold_key == current_key then
 		is_gold = true
 	end
-	
+
 	local user_resmod_version = ""
 
 	if is_gold then

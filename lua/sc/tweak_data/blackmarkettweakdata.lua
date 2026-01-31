@@ -97,6 +97,27 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMaskFixes", function(sel
 		}
 	}
 
+	if BeardLib.Utils:FindMod("Old John Wick Remade") then
+		self.masks.almirs_beard.offsets.jowi = {
+			Vector3(-0.1, -0.9, -0.8),
+			Rotation(1, 0, 2)
+		}
+		self.masks.balaclava.characters.jowi = "balaclava_dallas"
+		self.masks.balaclava_dallas.offsets = self.masks.balaclava_dallas.offsets or {}	
+		self.masks.balaclava_dallas.offsets.jowi = {
+			Vector3(0, -0.45, -0.55),
+			Rotation(0, 0, 0)
+		}
+		self.masks.skm_02.offsets.jowi = {
+			Vector3(-0.55, -0.6, -0.8),
+			Rotation(0, 0, 2)
+		}
+		self.masks.jfr_04.offsets.jowi = {
+			Vector3(0, -0.9, -0.8),
+			Rotation(0, 0, -0)
+		}
+	end
+
 end)
 
 --This is a helmet, not a mask--

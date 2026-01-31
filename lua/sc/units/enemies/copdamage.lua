@@ -2122,10 +2122,16 @@ function CopDamage:die(attack_data)
 	if self._unit:contour() then
 		self._unit:contour():remove("medic_show", false)
 	end
+
+	if tweak_data.character[self._unit:base()._tweak_table].do_asu then
+		for _, buffed_target in ipairs(self._unit:movement()._buff_targets or {}) do
+			buffed_target:base():disable_asu_laser()
+		end
+	end
 	
 	if self._unit:base() then
 		self._unit:base():disable_lpf_buff()
-		self._unit:base():disable_asu_laser(true)
+		self._unit:base():disable_asu_laser()
 		self._unit:base():converted_enemy_effect(false)
 	end
 

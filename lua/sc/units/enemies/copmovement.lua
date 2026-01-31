@@ -215,6 +215,7 @@ Hooks:PostHook(CopMovement, "_upd_actions", "res_upd_actions", function(self, t)
 	end
 
 	self._unit:character_damage():decay_buffs(t)
+	self._unit:base():decay_buffs(t)
 end)
 
 Hooks:PreHook(CopMovement, "_upd_stance", "res_upd_stance", function(self, t)
@@ -332,6 +333,9 @@ function CopMovement:do_asu(self)
 			local buff_range = tweak_data.asu_buff_radius or 800
 			local asu_vo = "asu_command"
 			local damage_buff = tweak_data.asu_damage_buff or 10
+			
+			-- Finding valid targets to buff
+			self._buff_targets = {}
 						
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), buff_range, managers.slot:get_mask("enemies"))
 			if enemies then
@@ -348,24 +352,22 @@ function CopMovement:do_asu(self)
 					
 					local team = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.team
 					local my_team = self._unit:brain() and self._unit:brain()._logic_data and self._unit:brain()._logic_data.team
+					local convert = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.is_converted
 					
-					if enemy_found and my_team == team then		
-						local convert = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.is_converted
-						if convert then
-							return
-						end	
-					
-						if enemy:base():get_total_buff("base_damage") > 0 then
-							return
-						end
-																		
-						managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, asu_vo)		
-														
-						enemy:base():enable_asu_laser(true)
-						
-						enemy:base():add_buff("base_damage", damage_buff * 0.01)
+					if enemy_found and my_team == team and not convert then
+						table.insert(self._buff_targets, enemy)
 					end
 				end
+			end
+
+			for _, buffed_target in ipairs(self._buff_targets) do
+				if buffed_target:base():get_total_buff("base_damage") > 0 then
+					-- When the ASU buffs were rewritten, I was originally gonna change this too,
+					-- but actually, it makes sense to look for general damage buffs.
+					return
+				end
+				managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, asu_vo)
+				buffed_target:base():enable_asu_laser(damage_buff * 0.01, t, false)
 			end
 		end
 	else

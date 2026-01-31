@@ -224,14 +224,31 @@ function CopBase:lpf_heal_effect(overheal)
 	end
 end
 
-function CopBase:enable_asu_laser(state)
+--- Enables the ASU laser *and* applies the damage boost if it doesn't already exist.
+--- @param boost number Percentage by which to boost damage. Typically 0.1 to 0.2 for a 10%-20% damage boost.
+--- @param t number The time when the buff was applied.
+--- @param keep_forever boolean If true, the damage boost should be kept forever (typically from Medics or Dozer faceplate breaking).
+function CopBase:enable_asu_laser(boost, t, keep_forever)
+	self._last_asu_buff_t = t
+
+	self._asu_keep_forever = self._asu_keep_forever or keep_forever -- Cannot remove forever buff!
+	if self._asu_buff_id then
+		return
+	end
+	self._asu_buff_id = self:add_buff("base_damage", boost)
+
 	local weapon = self._unit:inventory():equipped_unit()
 	if weapon and alive(weapon) then
-		weapon:base():set_asu_laser_enabled(state)
+		weapon:base():set_asu_laser_enabled(true)
 	end
 end
 
-function CopBase:disable_asu_laser(state)
+function CopBase:disable_asu_laser()
+	if self._asu_buff_id then
+		self:remove_buff_by_id("base_damage", self._asu_buff_id)
+		self._asu_buff_id = nil
+	end
+
 	local weapon = self._unit:inventory():equipped_unit()
 	if weapon and alive(weapon) then
 		weapon:base():set_asu_laser_enabled(false)
@@ -317,7 +334,18 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 		end
 	end		
 	
+	self._last_asu_buff_t = 0 -- To keep track of when the ASU buff was last applied.
+	self._asu_buff_id = nil -- If not nil, we know we already have an ASU buff applied to us.
+	self._asu_keep_forever = false -- Some damage boosts should stick around forever.
 end)
+
+function CopBase:decay_buffs(t)
+	-- 1.3 was largely chosen on a whim, I just don't want cops to be 
+	-- "toggling" their buffs on and off while near an ASU.
+	if self._last_asu_buff_t + 1.3 < t and not self._asu_keep_forever then
+		self:disable_asu_laser()
+	end
+end
 
 local enemy_variations_texas_pd_table = {
 	["units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"] = "awesometexpd",

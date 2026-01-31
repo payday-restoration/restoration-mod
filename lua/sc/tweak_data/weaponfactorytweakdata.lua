@@ -15210,11 +15210,8 @@ end
 						40
 					}
 					self.parts.wpn_fps_snp_siltstone_ns_variation_b.supported = true
-					self.parts.wpn_fps_snp_siltstone_ns_variation_b.stats = {
-						value = 5,
-						spread = 1,
-						concealment = -3
-					}
+					self.parts.wpn_fps_snp_siltstone_ns_variation_b.stats = deep_clone(muzzle_device.muzz_acc_c)
+					self.parts.wpn_fps_snp_siltstone_ns_variation_b.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 
 					--Lightweight Foregrip
 					self.parts.wpn_fps_snp_siltstone_fg_polymer.pcs = {
@@ -24462,8 +24459,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			alt_ammo_pickup_max_mul = 1.294871,
 			ammo_pickup_min_mul = 1.294871,
 			ammo_pickup_max_mul = 1.294871,
-			movement_speed_add = 0.08,
-			sms = 1.0666667
+			movement_speed_add = 0.05,
+			sms = 1.05882
 		},
 		override = {
 			wpn_fps_ass_74_body_upperreceiver = {

@@ -29956,6 +29956,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.scar16 then
 				--has its own stats; this is just to adjust the reload timers to resmod's standard
+				self.scar16.sounds.fire = "aug_fire_single"
+				self.scar16.sounds.fire_single = "aug_fire_single"
+				self.scar16.sounds.fire_auto = "aug_fire"
+				self.scar16.sounds.stop_fire = "aug_stop"
 				self.scar16.timers.reload_empty = 3.1
 				self.scar16.timers.reload_exit_empty = 0.8
 				self.scar16.timers.reload_not_empty = 2.23

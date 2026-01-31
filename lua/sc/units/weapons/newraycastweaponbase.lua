@@ -587,6 +587,12 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 		end
 	end
 
+	if self._fire_rate_init_count and self:fire_mode() ~= "single" and not self:in_burst_mode() then
+		if (self._fire_rate_init_count > self._shots_fired) then
+			mult = mult * self._fire_rate_init_recoil_mult
+		end
+	end
+
 	mult = mult * ((self._is_controller and 0.7) or 1)
 
 	return mult
@@ -1074,6 +1080,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._fire_rate_init_count_mag = self._fire_rate_init_count_mag or self:weapon_tweak_data().fire_rate_init_count_mag or nil
 		self._fire_rate_init_mult = self._fire_rate_init_mult or self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
 		self._fire_rate_init_delay = self._fire_rate_init_delay or self:weapon_tweak_data().fire_rate_init_delay or self._burst_delay or 0
+		self._fire_rate_init_recoil_mult = self._fire_rate_init_recoil_mult or self:weapon_tweak_data().fire_rate_init_recoil_mult or 1
 		self._fire_rate_init_ramp_up = self._fire_rate_init_ramp_up or self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 		self._fire_rate_init_ramp_up_add = 0
 
@@ -1234,6 +1241,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._fire_rate_init_count_mag = stats.init_rof.count_mag or self._fire_rate_init_count_mag
 				self._fire_rate_init_mult = stats.init_rof.rof_mult or self._fire_rate_init_mult
 				self._fire_rate_init_delay = stats.init_rof.delay or self._fire_rate_init_delay
+				self._fire_rate_init_recoil_mult = stats.init_rof.recoil_mult or self._fire_rate_init_recoil_mult
 			end
 	
 			if stats.reload_not_empty_speed_multiplier then

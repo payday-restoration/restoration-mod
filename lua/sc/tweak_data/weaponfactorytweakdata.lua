@@ -11002,9 +11002,9 @@ end
 					self.parts.wpn_fps_ass_ak5_fg_fnc.custom_stats = {
 						burst_fire = {
 							count = 3,
-							delay = 0.18,
+							delay = 0.15,
 							recoil_mult = 0.6,
-							last_recoil_mult = 1.02
+							last_recoil_mult = 0.85
 						},
 						info_add_burst = true
 					}
@@ -24688,13 +24688,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = {
 			burst_fire = {
 				rof_mult = 3,
-				delay = 0.15,
-				recoil_mult = 0.6,
-				last_recoil_mult = 1.02
+				delay = 0.14,
+				recoil_mult = 0.2,
+				last_recoil_mult = 0.6
 			},
 			init_rof = {
 				count = 2,
 				rof_mult = 3,
+				recoil_mult = 0.2,
 				delay = 0.09,
 			},
 			rof_mult = 0.85714,
@@ -43040,8 +43041,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						delay = 0.09,
 						rof_mult_alt = true,
 						desired_burst_rof = 0.09202,
-						recoil_mult = 0.75,
-						last_recoil_mult = 1,
+						recoil_mult = 0.6,
+						last_recoil_mult = 0.75,
 						toggle_to_semi = true,
 						burst_default = true,
 					}

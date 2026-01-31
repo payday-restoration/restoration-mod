@@ -3702,7 +3702,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 5.8, 0.4, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 5.5, 0.75, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -11211,10 +11211,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.flint.CLIP_AMMO_MAX = 30
 						self.flint.BURST_FIRE = {
 							count = 2,
-							delay = 0.15,
+							delay = 0.13,
 							rof_mult = 1.07142,
 							recoil_mult = 0.4,
-							last_recoil_mult = 1.05
+							last_recoil_mult = 0.8
 						}
 						self.flint.ADAPTIVE_BURST_SIZE = false
 						self.flint.fire_mode_data.fire_rate = 0.08571428571
@@ -16649,13 +16649,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tilt.BURST_FIRE = {
 					count = 2,
 					rof_mult = 3,
-					delay = 0.15,
-					recoil_mult = 0.6,
-					last_recoil_mult = 1.02
+					delay = 0.14,
+					recoil_mult = 0.2,
+					last_recoil_mult = 0.6
 				}
 				self.tilt.ADAPTIVE_BURST_SIZE = false
 				self.tilt.fire_rate_init_count = 2
 				self.tilt.fire_rate_init_mult = 3
+				self.tilt.fire_rate_init_recoil_mult = 0.2
 				self.tilt.fire_mode_data.fire_rate = 0.1
 				self.tilt.auto.fire_rate = 0.1
 				self.tilt.kick = self.stat_info.kick_tables.moderate_kick
@@ -36635,7 +36636,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		smg = 1.125,
 			pdw = 0.675,
 			typh = 0.8,
-			lmg = 0.575,
+			lmg = 0.6,
 				mmg = 0.95,
 			minigun = 0.55,
 		shotgun = 1.275, --Pickup is increased to compensate for the inconsistency of per-pellet damage

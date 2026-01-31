@@ -36115,7 +36115,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if weap.BURST_FIRE and type(weap.BURST_FIRE) == "number" then
-				weap.BURST_FIRE = false
+				local burst_size = weap.BURST_FIRE
+				weap.BURST_FIRE = {
+					count = burst_size,
+					delay = 0.15,
+					recoil_mult = 0.8,
+					last_recoil_mult = 0.9
+				}
 			end
 
 			if weap.sounds then

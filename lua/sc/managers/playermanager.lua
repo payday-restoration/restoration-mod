@@ -2153,6 +2153,10 @@ Hooks:PostHook(PlayerManager, "can_carry", "ResCarryStackerCanCarry", function(s
     return check_weight >= max_weight
 end)
 
+Hooks:PreHook(PlayerManager, "drop_carry", "ResCarryStackerPreDropCarry", function(self, _)
+	self._player_state_before_drop = self._current_state
+end)
+
 --- Makes the timing before you can interact again consistent. That's it.
 --- We DO base it on the synced_carry_stacker length rather than synced_carry, though this is
 --- because of the code reorganisation that mandates we trust the host with dropping stuff.
@@ -2166,6 +2170,15 @@ Hooks:PostHook(PlayerManager, "drop_carry", "ResCarryStackerDropCarry", function
 
 	self:update_carrystacker_hud(peer_id)
 	self:recalculate_carried_weights()
+
+	if not self._player_state_before_drop then
+		return
+	end
+	if self._player_state_before_drop == "carry" then
+		managers.player:set_player_state("standard")
+	else
+		managers.player:set_player_state(self._player_state_before_drop)
+	end
 end)
 
 --- This is a bit delayed compared to the original CarryStacker implementation where this (or rather

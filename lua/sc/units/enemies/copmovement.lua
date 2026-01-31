@@ -189,6 +189,9 @@ function CopMovement:post_init()
 	self._omnia_cooldown = 0
 	self._asu_cooldown = 0
 	self._cloaked = false
+
+	--- Contains references to units that are affected by either this unit's LPF overheal or ASU damage boost.
+	self._buff_targets = {}
 	
 	if self._tweak_data.do_autumn_blackout then 
 		managers.groupai:state():register_blackout_source(self._unit)
@@ -209,7 +212,15 @@ Hooks:PostHook(CopMovement, "_upd_actions", "res_upd_actions", function(self, t)
 		if not self._unit:character_damage():dead() then			
 			self:do_asu(self)		
 		end
-	end		
+	end
+
+	if self._unit:character_damage() and self._unit:character_damage()._may_decay_buffs then
+		self._unit:character_damage():decay_buffs(t)
+	end
+	
+	if self._unit:base() and self._unit:base()._may_decay_buffs then
+		self._unit:base():decay_buffs(t)
+	end
 end)
 
 Hooks:PreHook(CopMovement, "_upd_stance", "res_upd_stance", function(self, t)
@@ -244,6 +255,9 @@ function CopMovement:do_omnia(self)
 				heal_vo = "heal_chatter_winters"
 			end
 			
+			-- Finding valid targets to overheal
+			self._buff_targets = {}
+			
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), heal_range, managers.slot:get_mask("enemies"))
 			if enemies then
 				for _,enemy in ipairs(enemies) do
@@ -264,40 +278,44 @@ function CopMovement:do_omnia(self)
 					end
 					local team = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.team
 					local my_team = self._unit:brain() and self._unit:brain()._logic_data and self._unit:brain()._logic_data.team
+					local convert = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.is_converted
 					
-					if enemy_found and my_team == team then
-						local health_left = enemy:character_damage()._health
-						local max_health = enemy:character_damage()._HEALTH_INIT
-						local overheal_mult = enemy_tweak_data.overheal_mult or 1
-						local convert = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.is_converted
-						
-						if convert then
-							return
-						end
-						
-						max_health = enemy:character_damage()._HEALTH_INIT * overheal_mult
-						
-						if health_left < max_health then
-							local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-							local disable_outlines = managers.mutators:modify_value("CopMovement:DisableOutlines", false)
-							if self._unit:contour()  then
-								if not disable_outlines then
-									self._unit:contour():add("medic_show", false)
-									self._unit:contour():flash("medic_show", 0.2)
-								end
-								managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, heal_vo)
-							end										
-							if enemy:contour() then
-								if overheal_mult > 1 then
-									enemy:base():enable_lpf_buff(true)
-									enemy:base():lpf_heal_effect(true)
-								else
-									enemy:base():lpf_heal_effect(false)
-								end
-							end		
-							enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))
-						end
+					if enemy_found and my_team == team and not convert then
+						table.insert(self._buff_targets, enemy)
 					end
+				end
+			end
+
+			-- Applying buffs to all the valid targets
+
+			for _, buffed_target in ipairs(self._buff_targets) do
+				local buffed_target_tweak_data = tweak_data.character[buffed_target:base()._tweak_table]
+				local health_left = buffed_target:character_damage()._health
+				local max_health = buffed_target:character_damage()._HEALTH_INIT
+				local overheal_mult = buffed_target_tweak_data.overheal_mult or 1
+				
+				max_health = buffed_target:character_damage()._HEALTH_INIT * overheal_mult
+
+				buffed_target:character_damage():refresh_overheal_decay_timer(t)
+				
+				if health_left < max_health then
+					local amount_to_heal = math.ceil(((max_health - health_left) / 20))
+					local disable_outlines = managers.mutators:modify_value("CopMovement:DisableOutlines", false)
+					if self._unit:contour()  then
+						if not disable_outlines then
+							self._unit:contour():add("medic_show", false)
+							self._unit:contour():flash("medic_show", 0.2)
+						end
+						managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, heal_vo)
+					end										
+					if buffed_target:contour() then
+						if overheal_mult > 1 then
+							buffed_target:base():lpf_heal_effect(true)
+						else
+							buffed_target:base():lpf_heal_effect(false)
+						end
+					end		
+					buffed_target:character_damage():_apply_damage_to_health((amount_to_heal * -1))
 				end
 			end
 		end
@@ -320,6 +338,9 @@ function CopMovement:do_asu(self)
 			local buff_range = tweak_data.asu_buff_radius or 800
 			local asu_vo = "asu_command"
 			local damage_buff = tweak_data.asu_damage_buff or 10
+			
+			-- Finding valid targets to buff
+			self._buff_targets = {}
 						
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), buff_range, managers.slot:get_mask("enemies"))
 			if enemies then
@@ -336,24 +357,17 @@ function CopMovement:do_asu(self)
 					
 					local team = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.team
 					local my_team = self._unit:brain() and self._unit:brain()._logic_data and self._unit:brain()._logic_data.team
+					local convert = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.is_converted
 					
-					if enemy_found and my_team == team then		
-						local convert = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.is_converted
-						if convert then
-							return
-						end	
-					
-						if enemy:base():get_total_buff("base_damage") > 0 then
-							return
-						end
-																		
-						managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, asu_vo)		
-														
-						enemy:base():enable_asu_laser(true)
-						
-						enemy:base():add_buff("base_damage", damage_buff * 0.01)
+					if enemy_found and my_team == team and not convert then
+						table.insert(self._buff_targets, enemy)
 					end
 				end
+			end
+
+			for _, buffed_target in ipairs(self._buff_targets) do
+				managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, asu_vo)
+				buffed_target:base():enable_asu_laser(damage_buff * 0.01, t, false)
 			end
 		end
 	else

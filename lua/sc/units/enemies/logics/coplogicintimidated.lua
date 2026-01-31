@@ -1,6 +1,6 @@
 --Remove ASU Laser when they surrender
 Hooks:PostHook(CopLogicIntimidated, "enter", "fuck_enter", function(data, new_logic_name, enter_params)
-	data.unit:base():disable_asu_laser(true)
+	data.unit:base():disable_asu_laser()
 end)
 
 --Remove OMNIA buffs/no pager on tie down

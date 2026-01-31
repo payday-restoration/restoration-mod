@@ -33,9 +33,7 @@ function MedicDamage:heal_unit(unit)
 	--To do: make this actually sync correctly, since Overkill likely never will
 	if Global.game_settings.difficulty == "sm_wish" then
 		if my_tweak_data == "medic" or my_tweak_data == "tank_medic" then
-			unit:base():add_buff("base_damage", 15 * 0.01)
-
-			unit:base():enable_asu_laser(true)
+			unit:base():enable_asu_laser(15 * 0.01, TimerManager:game():time(), true)
 		end
 	end	
 

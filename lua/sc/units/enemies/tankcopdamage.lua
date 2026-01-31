@@ -32,9 +32,8 @@ function TankCopDamage:seq_clbk_vizor_shatter()
 		if Global.game_settings.difficulty == "sm_wish" then
 			self._unit:sound():say("visor_lost")
 			self._unit:sound():play("clk_turn", nil, nil)
-			self._unit:base():add_buff("base_damage", 10 * 0.01)
 			self._unit:movement():play_redirect("use_syringe")
-			self._unit:base():enable_asu_laser(true)
+			self._unit:base():enable_asu_laser(10 * 0.01, TimerManager:game():time(), true)
 		else
 			self._unit:sound():say("visor_lost")
 		end		

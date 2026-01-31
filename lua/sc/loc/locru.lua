@@ -5659,7 +5659,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Inspire
 				["menu_inspire_beta_sc"] = "Мотивация",
-				["menu_inspire_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы поднимаете напарников на #{skill_color}#$skill_value_b1## быстрее.\n\nКрик на них повысит их скорость перезарядки и передвижения на #{skill_color}#$skill_value_b2## в течение #{skill_color}#$skill_value_b3## секунд.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы можете поднять упавшего напарника #{skill_color}#в зоне прямой видимости## раз в #{important_1}#$skill_value_p1## секунд, крикнув на него на расстоянии до #{skill_color}#9## метров .",
+				["menu_inspire_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы поднимаете напарников на #{skill_color}#$skill_value_b1## быстрее.\n\nКрик на них повысит их скорость перезарядки и передвижения на #{skill_color}#$skill_value_b2## в течение #{skill_color}#$skill_value_b3## секунд.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы можете поднять упавшего напарника #{skill_color}#в зоне прямой видимости## раз в #{important_1}#$skill_value_p1## секунд, крикнув на него на расстоянии до #{skill_color}#9## метров.",
 
 			--[[   Командир   ]]--
 				--Cable Guy
@@ -5668,7 +5668,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Clowns are Scary
 				["menu_cable_guy_beta_sc"] = "Боязнь клоунов",
-				["menu_cable_guy_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nГражданские остаются запуганными #{skill_color}#$skill_value_b1## дольше.\n\nПИКОВЫЙ: #{owned}#$pro##\nУспех и дальность вашего запугивания увеличены на #{skill_color}#$skill_value_p1.##",
+				["menu_cable_guy_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nГражданские остаются запуганными на #{skill_color}#$skill_value_b1## дольше.\n\nПИКОВЫЙ: #{owned}#$pro##\nУспешность и дальность вашего запугивания увеличены на #{skill_color}#$skill_value_p1.##",
 
 				--Stockholm Syndrome
 				["menu_joker_beta_sc"] = "Стокгольмский синдром",
@@ -5684,7 +5684,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Hostage Taker
 				["menu_black_marketeer_beta_sc"] = "Похититель",
-				["menu_black_marketeer_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы восстанавливаете #{skill_color}#$skill_value_b1## очко здоровья каждые #{skill_color}#4## секунды за каждого заложника; складывается до #{skill_color}#4## раз.\n\nПИКОВЫЙ: #{owned}#$pro##\nРегенерация здоровья от этого навыка увеличена на #{skill_color}#$skill_value_p1##, когда у вас #{skill_color}#4 или более## заложников.\n\n#{skill_color}#Ваши гражданские заложники не будут убегать##, когда их освободят.\n\n#{skill_color}#Заложник сам обменяет себя## на вас, если вы попадете под стражу во время штурма.\n\n#{risk}#Это может произойти только## #{important_1}#1## #{risk}#раз за ограбление.##",
+				["menu_black_marketeer_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы восстанавливаете #{skill_color}#$skill_value_b1## здоровье каждые #{skill_color}#4## секунды за каждого заложника; складывается до #{skill_color}#4## раз.\n\nПИКОВЫЙ: #{owned}#$pro##\nРегенерация здоровья от этого навыка увеличена на #{skill_color}#$skill_value_p1##, когда у вас #{skill_color}#4 или более## заложников.\n\n#{skill_color}#Ваши гражданские заложники не будут убегать##, когда их освободят.\n\n#{important_1}#1## #{risk}#раз за ограбление.##, вы #{skill_color}#можете провести обмен гражданского на себя## даже во время штурма, если вы попадете под стражу.",
 
 			--[[   Штурмовик  ]]--
 				--Leadership
@@ -5720,35 +5720,35 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Shotgun CQB
 				["menu_shotgun_cqb_beta_sc"] = "Гладкоствол",
-				["menu_shotgun_cqb_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь из #{skill_color}#дробовиков и огнеметов## на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
-				["menu_shotgun_cqb_per_pellet_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь из #{skill_color}#дробовиков и огнеметов## на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
+				["menu_shotgun_cqb_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nСкорость прицеливания и возвращения в боевую стойку после спринта при использовании #{skill_color}#Дробовиков и Огнеметов## теперь на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и Огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
+				["menu_shotgun_cqb_per_pellet_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nСкорость прицеливания и возвращения в боевую стойку после спринта при использовании #{skill_color}#Дробовиков и Огнеметов## теперь на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и Огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
 
 
 				--Shotgun Impact
 				["menu_shotgun_impact_beta_sc"] = "Ружьевой импульс",
-				["menu_shotgun_impact_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Дробовики и огнеметы## получают #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики## получают #{skill_color}#3## дополнительные дробинки.\n\n#{risk}#Не работает на бронебойные и разрывные пули.##",
-				["menu_shotgun_impact_per_pellet_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Дробовики и огнеметы## получают #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nМинимальный урон #{skill_color}#дробовиков## увеличен на #{skill_color}#25%.##\n\n#{risk}#Не работает на бронебойные и разрывные пули.##",
+				["menu_shotgun_impact_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Дробовики и Огнеметы## получают #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики## получают #{skill_color}#3## дополнительные дробинки.\n\n#{risk}#Не работает на бронебойные и разрывные пули.##",
+				["menu_shotgun_impact_per_pellet_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Дробовики и Огнеметы## получают #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nМинимальный урон #{skill_color}#Дробовиков## увеличен на #{skill_color}#25%.##\n\n#{risk}#Не работает на бронебойные и разрывные пули.##",
 
 				--Pigeon Shooting
 				["menu_far_away_beta_sc"] = "Охотник",
-				["menu_far_away_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$pro##\nТочность и дальнобойность #{skill_color}#дробовиков и огнеметов## увеличена на #{skill_color}#$skill_value_b1## при прицеливании.\n\nПИКОВЫЙ: #{owned}#$basic##\nТеперь каждая дробинка может пройти насквозь через #{skill_color}#1## врага и наносит #{skill_color}#$skill_value_p1## урона через броню.",
+				["menu_far_away_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТочность и дальнобойность #{skill_color}#Дробовиков и Огнеметов## увеличена на #{skill_color}#$skill_value_b1## при прицеливании.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь каждая дробинка может пройти насквозь через #{skill_color}#1## врага и наносит #{skill_color}#$skill_value_p1## урона сквозь броню.\n\n#{risk}#Эффект складывается с бронебойностью## #{skill_color}#Дробовика## #{risk}#и другими схожими эффектами, вплоть до## #{skill_color}#100%.##",
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "Беги и стреляй",
-				["menu_close_by_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы можете стрелять из #{skill_color}#дробовиков и огнеметов## от бедра во время бега и не имеете задержки на стрельбу после бега.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаша скорострельность увеличена на #{skill_color}#$skill_value_p1## при стрельбе от бедра из #{skill_color}#дробовиков и огнеметов.##",
+				["menu_close_by_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы можете стрелять из #{skill_color}#Дробовиков и Огнеметов## от бедра во время бега и не имеете задержки на стрельбу после бега.\n\n#{item_stage_2}#Настройка для сохранения анимаций спринта находится в оружейных опциях Restoration Mod.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВаша скорострельность увеличена на #{skill_color}#$skill_value_p1## при стрельбе от бедра из #{skill_color}#Дробовиков и Огнеметов.##",
 
 				--Overkill
 				["menu_overkill_sc"] = "OVERKILL",
-				["menu_overkill_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУбийство из #{skill_color}#дробовика, огнемета или пилы OVE9000## на #{skill_color}#эффективном расстоянии## увеличивает их урон на #{skill_color}#$skill_value_b1## на #{skill_color}#$skill_value_b2## секунды.\n\n#{risk}#Навык не сработает, если противник был убит## #{important_1}#взрывом или периодическим уроном.##\n\nПИКОВЫЙ: #{owned}#$pro##\nБонус к урону теперь работает на все оружие и действует #{skill_color}#$skill_value_p1## секунд. Навык должен быть активирован убийством из #{skill_color}#дробовика, огнемета или пилы OVE9000.##\n\n#{risk}#Бонус не работает на гранатометы и ракетометы.##\n\nВы убираете и достаете #{skill_color}#дробовики, огнеметы и пилу## на #{skill_color}#$skill_value_p2## быстрее.",
+				["menu_overkill_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУбийство из #{skill_color}#Дробовика, Огнемета или Пилы OVE9000## на #{skill_color}#эффективном расстоянии## или #{skill_color}#в голову## увеличивает значение максимального урона на #{skill_color}#$skill_value_b1## на #{skill_color}#$skill_value_b2## секунды.\n\n#{risk}#Навык не сработает, если противник был убит## #{important_1}#взрывом или периодическим уроном.##\n\nПИКОВЫЙ: #{owned}#$pro##\nБонус к урону теперь работает на все оружие и действует #{skill_color}#$skill_value_p1## секунд. Навык должен быть активирован убийством из #{skill_color}#Дробовика, Огнемета или Пилы OVE9000.##\n\n#{risk}#Бонус не работает на гранатометы и ракетометы.##\n\nВы убираете и достаете #{skill_color}#Дробовики, Огнеметы и Пилы## на #{skill_color}#$skill_value_p2## быстрее.",
 
 			--[[   ДЖАГГЕРНАУТ   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "Стойкий",
-				["menu_oppressor_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВражеские удары в ближнем бою отталкивают на #{skill_color}#$skill_value_b1## меньше за каждое очко брони.\n\nПИКОВЫЙ: #{owned}#$pro##\nУменьшает ослепление от светошумовых гранат на #{skill_color}#$skill_value_p1.##",
+				["menu_oppressor_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВражеские удары в ближнем бою отталкивают на #{skill_color}#$skill_value_b1## меньше за каждую единицу брони.\n\nПИКОВЫЙ: #{owned}#$pro##\nУменьшает ослепление от светошумовых гранат на #{skill_color}#$skill_value_p1.##\n\nОтталкивание от стрельбы по вам уменьшено на #{skill_color}#$skill_value_p2## за каждую единицу брони.",
 
 				--Die Hard
 				["menu_show_of_force_sc"] = "Крепкий орешек",
-				["menu_show_of_force_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#$skill_value_b1## устойчивости.\n\nУстойчивость уменьшает урон по вашему здоровью, до максимальных #{skill_color}#$deflection## и накладывается после всех остальных бонусов.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете еще #{skill_color}#$skill_value_p1## устойчивости.",
+				["menu_show_of_force_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#$skill_value_b1## Устойчивости.\n\nУстойчивость уменьшает урон по вашему здоровью, до максимальных #{skill_color}#$deflection## и накладывается после всех остальных бонусов.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете еще #{skill_color}#$skill_value_p1## Устойчивости.",
 
 				--Transporter
 				["menu_pack_mule_beta_sc"] = "Перевозчик",
@@ -5769,7 +5769,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 			--[[   ПОДДЕРЖКА   ]]--
 				--Scavenger
 				["menu_scavenging_sc"] = "Мародер",
-				["menu_scavenging_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает расстояние подбора патронов на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nС каждого #{skill_color}#$skill_value_p1 - го## убитого противника выпадет дополнительная коробка патронов.",
+				["menu_scavenging_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает расстояние подбора патронов на #{skill_color}#$skill_value_b1## и дополнительно на #{skill_color}#$skill_value_b2## за каждые #{skill_color}#$skill_value_b3## единиц брони.\n\nПИКОВЫЙ: #{owned}#$pro##\nС каждого #{skill_color}#$skill_value_p1 - го## убитого противника выпадет дополнительная коробка патронов.",
 
 				--Bulletstorm--
 				--["menu_ammo_reservoir_beta_sc"] = "Свинцовый ливень",
@@ -5778,7 +5778,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Specialist Equipment formally Rip and Tear
 				["menu_portable_saw_beta_sc"] = "Спецоборудование",
-				["menu_portable_saw_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает прочность #{skill_color}#пилы OVE9000## на #{skill_color}#50%.##\n\nВы перезаряжаете оружие на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы перезаряжаете особые оружия (##пилы, арбалеты, луки, гранатометы и ракетометы##) на #{skill_color}#$skill_value_p1## быстрее.\n\nМинимальное количество патронов, подбираемое с коборок с патронами увеличено на #{skill_color}#$skill_value_p2.##",
+				["menu_portable_saw_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУвеличивает прочность #{skill_color}#Пилы OVE9000## на #{skill_color}#50%.##\n\nВы перезаряжаете оружие на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы перезаряжаете особые оружия (##пилы, арбалеты, луки, гранатометы и ракетометы##) на #{skill_color}#$skill_value_p1## быстрее.\n\nМинимальное количество патронов, подбираемое с коборок с патронами увеличено на #{skill_color}#$skill_value_p2.##",
 
 				--Extra Lead
 				["menu_ammo_2x_beta_sc"] = "Свинец оптом",
@@ -5786,11 +5786,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Rip and Tear formally Carbon Blade
 				["menu_carbon_blade_beta_sc"] = "Рвать и метать",
-				["menu_carbon_blade_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пила OVE9000## теперь распиливает щиты.\n\nВсе оружие наносит #{skill_color}#$skill_value_b1## урона через броню.\n\n#{risk}#Эффект складывается с бронебойностью вашего оружия, до максимальных 100%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства #{skill_color}#пилой, арбалетами, луками, гранатометами и ракетометами## имеют #{skill_color}#$skill_value_p1## шанс посеять панику среди врагов на расстоянии #{skill_color}#$skill_value_p2## метров.\n\n#{risk}#Паника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.##\n\nРазмер магазина для #{skill_color}#оружий## увеличен на #{skill_color}#$skill_value_p3.##\n\n#{risk}#Увеличение размера магазинов не работает на арбалеты, луки, гранатометы, ракетометы и оружия с регенерацией патронов.##",
+				["menu_carbon_blade_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пила OVE9000## теперь распиливает щиты.\n\nВсе оружие наносит #{skill_color}#$skill_value_b1## урона сквозь броню.\n\n#{risk}#Эффект складывается с бронебойностью вашего оружия, вплоть до ## #{skill_color}#100%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства #{skill_color}#пилой, арбалетами, луками, гранатометами и ракетометами## имеют #{skill_color}#$skill_value_p1## шанс посеять панику среди врагов на расстоянии #{skill_color}#$skill_value_p2## метров.\n\n#{risk}#Паника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.##\n\nРазмер магазина для #{skill_color}#всех оружий, кроме особых## увеличен на #{skill_color}#$skill_value_p3.##\n\n#{risk}#Увеличение размера магазинов не работает для оружия с регенерацией патронов.##",
 
 				--Fully Loaded--
 				["menu_bandoliers_beta_sc"] = "Вооружен до зубов",
-				["menu_bandoliers_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаш общий запас патронов увеличен на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы подбираете на #{skill_color}#$skill_value_p1## больше патронов из коробок.\n\nВаш шанс получить метательное оружие из коробки патронов увеличено на #{skill_color}#$skill_value_p2##; шанс увеличивается еще на #{skill_color}#$skill_value_p3## за каждый подбор. Шанс обнуляется, когда вы получаете метательное оружие из коробки.\n\n#{risk}#Не работает на метательное оружие из перков.##",
+				["menu_bandoliers_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы подбираете на #{skill_color}#$skill_value_p1## больше патронов из коробок.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаш общий запас патронов увеличен на #{skill_color}#$skill_value_b1.##\n\nВаш шанс получить метательное оружие из коробки патронов увеличено на #{skill_color}#$skill_value_p2##; шанс увеличивается еще на #{skill_color}#$skill_value_p3## за каждый подбор. Шанс обнуляется, когда вы получаете метательное оружие из коробки.\n\n#{risk}#Не работает с метательным оружием из перков.##",
 
 		--[[   TECHNICIAN   ]]--
 

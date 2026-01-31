@@ -344,10 +344,9 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	self._may_decay_buffs = true
 end)
 
+--- Forces the ASU buff to disappear if the unit hasn't been affected by an ASU unit's buff in a bit.
 function CopBase:decay_buffs(t)
-	-- 2 sounds like a lot, but I think there's some timing fuckery going on, as 1.3 was just not enough.
-	-- (For reference, ASUs re-add their buffs every second.)
-	if self._last_asu_buff_t and self._last_asu_buff_t + 2 < t and not self._asu_keep_forever then
+	if self._last_asu_buff_t and self._last_asu_buff_t + (tweak_data.asu_buff_decay_delay or 10) < t and not self._asu_keep_forever then
 		self:disable_asu_laser()
 	end
 end

@@ -1084,6 +1084,8 @@ tweak_data.medic.overheal_decay_delay_t = 5 --- In seconds, the amount of time s
 
 --ASU damage bonus (Titan HRT)
 tweak_data.asu_buff_radius = 800
+tweak_data.asu_buff_decay_delay = 10 --- In seconds, the amount of time before the ASU damage bonus decays from a unit without the ASU unit being nearby to refresh it.
+
 if difficulty_index <= 6 then
 	tweak_data.asu_damage_buff = 10
 elseif difficulty_index == 7 then

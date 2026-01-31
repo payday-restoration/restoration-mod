@@ -366,11 +366,6 @@ function CopMovement:do_asu(self)
 			end
 
 			for _, buffed_target in ipairs(self._buff_targets) do
-				if buffed_target:base():get_total_buff("base_damage") > 0 then
-					-- When the ASU buffs were rewritten, I was originally gonna change this too,
-					-- but actually, it makes sense to look for general damage buffs.
-					return
-				end
 				managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, asu_vo)
 				buffed_target:base():enable_asu_laser(damage_buff * 0.01, t, false)
 			end

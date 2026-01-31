@@ -29,7 +29,9 @@ function SecurityCamera:generate_cooldown(amount)
 	end	
 end
 
+local CAMERA_UPDATE_RATE = 0.1
 local CAMERA_TURN_RATE = 9
+local MAX_DESYNC_ANGLE = 5
 
 function SecurityCamera:update(unit, t, dt)
 	self:_update_tape_loop_restarting(unit, t, dt)
@@ -39,13 +41,27 @@ function SecurityCamera:update(unit, t, dt)
 
 	self:_init_dynamic_yaw()
 
+	local yaw_dt = CAMERA_TURN_RATE * dt
+	if self._current_yaw_action == 1 then
+		self._yaw = math.min(self._yaw + yaw_dt, max_yaw_positive)
+		if self._yaw >= max_yaw_positive then
+			self._current_yaw_action = 2
+		end
+	elseif self._current_yaw_action == 2 then
+		self._yaw = math.max(self._yaw - yaw_dt, max_yaw_negative)
+		if self._yaw <= max_yaw_negative then
+			self._current_yaw_action = 1
+		end
+	end
+
 	if not Network:is_server() then
-		self._client_yaw = self._client_yaw or self._yaw
-		self._client_pitch = self._client_pitch or self._pitch
-		local diff = self._yaw / self._client_yaw
-		local client_dt = (CAMERA_TURN_RATE * diff) * dt
-		self._yaw = math.step(self._yaw, self._client_yaw, client_dt)
-		self._pitch = math.step(self._pitch, self._client_pitch, client_dt)
+		self._synced_yaw = self._synced_yaw or self._yaw
+
+		local yaw_diff = math.abs(self._synced_yaw - self._yaw)
+
+		if yaw_diff > MAX_DESYNC_ANGLE then
+			self._yaw = math.clamp(math.step(self._yaw, self._synced_yaw, math.clamp(yaw_diff * 3, CAMERA_TURN_RATE / 2, CAMERA_TURN_RATE * 2) * dt), max_yaw_negative, max_yaw_positive)
+		end
 
 		self:apply_rotations(self._yaw, self._pitch, true)
 
@@ -60,19 +76,6 @@ function SecurityCamera:update(unit, t, dt)
 	end
 
 	self:_upd_sound(unit, t)
-
-	local yaw_dt = CAMERA_TURN_RATE * dt
-	if self._current_yaw_action == 1 then
-		self._yaw = math.min(self._yaw + yaw_dt, max_yaw_positive)
-		if self._yaw >= max_yaw_positive then
-			self._current_yaw_action = 2
-		end
-	elseif self._current_yaw_action == 2 then
-		self._yaw = math.max(self._yaw - yaw_dt, max_yaw_negative)
-		if self._yaw <= max_yaw_negative then
-			self._current_yaw_action = 1
-		end
-	end
 
 	self:apply_rotations(self._yaw, self._pitch)
 end
@@ -107,7 +110,7 @@ function SecurityCamera:apply_rotations(yaw, pitch, no_update)
 	if Network:is_server() then
 		self._last_sync_t = self._last_sync_t or 0
 		local t = TimerManager:game():time()
-		if t - self._last_sync_t >= 0.1 then
+		if t - self._last_sync_t >= CAMERA_UPDATE_RATE then
 			local sync_yaw = 255 * (yaw + 180) / 360
 			local sync_pitch = 255 * (pitch + 90) / 180
 			managers.network:session():send_to_peers_synched("camera_yaw_pitch", self._unit, sync_yaw, sync_pitch)
@@ -115,8 +118,8 @@ function SecurityCamera:apply_rotations(yaw, pitch, no_update)
 		end
 	else
 		if not no_update then
-			self._client_yaw = yaw
-			self._client_pitch = pitch
+			self._synced_yaw = yaw
+			self._synced_pitch = pitch
 		end
 	end
 

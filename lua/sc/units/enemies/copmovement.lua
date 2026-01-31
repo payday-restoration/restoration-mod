@@ -214,8 +214,13 @@ Hooks:PostHook(CopMovement, "_upd_actions", "res_upd_actions", function(self, t)
 		end
 	end
 
-	self._unit:character_damage():decay_buffs(t)
-	self._unit:base():decay_buffs(t)
+	if self._unit:character_damage() and self._unit:character_damage()._may_decay_buffs then
+		self._unit:character_damage():decay_buffs(t)
+	end
+	
+	if self._unit:base() and self._unit:base()._may_decay_buffs then
+		self._unit:base():decay_buffs(t)
+	end
 end)
 
 Hooks:PreHook(CopMovement, "_upd_stance", "res_upd_stance", function(self, t)

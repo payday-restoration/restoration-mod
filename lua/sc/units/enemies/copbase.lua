@@ -337,12 +337,17 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	self._last_asu_buff_t = 0 -- To keep track of when the ASU buff was last applied.
 	self._asu_buff_id = nil -- If not nil, we know we already have an ASU buff applied to us.
 	self._asu_keep_forever = false -- Some damage boosts should stick around forever.
+
+	--- I've been running into issues where CopMovement doesn't recognise decay_buffs().
+	--- So one way I thought I could force the issue was by setting a "flag" to signal
+	--- we're ready.
+	self._may_decay_buffs = true
 end)
 
 function CopBase:decay_buffs(t)
-	-- 1.3 was largely chosen on a whim, I just don't want cops to be 
-	-- "toggling" their buffs on and off while near an ASU.
-	if self._last_asu_buff_t and self._last_asu_buff_t + 1.3 < t and not self._asu_keep_forever then
+	-- 2 sounds like a lot, but I think there's some timing fuckery going on, as 1.3 was just not enough.
+	-- (For reference, ASUs re-add their buffs every second.)
+	if self._last_asu_buff_t and self._last_asu_buff_t + 2 < t and not self._asu_keep_forever then
 		self:disable_asu_laser()
 	end
 end

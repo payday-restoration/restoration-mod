@@ -225,6 +225,11 @@ Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
 	self._last_overheal_t = 0 --- The last time the enemy has been near an LPF.
 	self._decay_start_t = 0 --- When the overheal decay last started.
+
+	--- I've been running into issues where CopMovement doesn't recognise decay_buffs().
+	--- So one way I thought I could force the issue was by setting a "flag" to signal
+	--- we're ready.
+	self._may_decay_buffs = true
 	
 	-- i don't want to sift through every single .object file in the game to do this so
 	if self._head_gear_decal_mesh then

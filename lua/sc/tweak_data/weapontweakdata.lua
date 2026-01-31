@@ -36114,6 +36114,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.animations.magazine_empty = ""
 			end
 
+			if weap.BURST_FIRE and type(weap.BURST_FIRE) == "number" then
+				weap.BURST_FIRE = false
+			end
+
 			if weap.sounds then
 				weap.sounds.use_fix = nil
 			end

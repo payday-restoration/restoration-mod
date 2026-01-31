@@ -342,7 +342,7 @@ end)
 function CopBase:decay_buffs(t)
 	-- 1.3 was largely chosen on a whim, I just don't want cops to be 
 	-- "toggling" their buffs on and off while near an ASU.
-	if self._last_asu_buff_t + 1.3 < t and not self._asu_keep_forever then
+	if self._last_asu_buff_t and self._last_asu_buff_t + 1.3 < t and not self._asu_keep_forever then
 		self:disable_asu_laser()
 	end
 end

@@ -331,6 +331,7 @@ function UnitNetworkHandler:sync_remove_carry_stacker(sender)
 	managers.player:remove_synced_carry_stacker(peer)
 end
 
+function UnitNetworkHandler:sync_camera_rotation(cam_unit, yaw_255, pitch_255, duration)
 	if not alive(cam_unit) or not self._verify_gamestate(self._gamestate_filter.any_ingame) then
 		return
 	end

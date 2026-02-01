@@ -102,8 +102,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Settings", function(loc)
 		["RestorationModProjectileMagnetismDescID"] = "Toggles the magnetism/tracking effect of non-explosive projectiles.",
 		["RestorationModManualReloadsTitleID"] = "Перезарядка вручную",
 		["RestorationModManualReloadsDescID"] = "Выключает автоматическую перезарядку, когда магазин оружия пуст.",
-		["RestorationModSecondSightSprintTitleID"] = "Кнопка спринта включает второй прицел",
-		["RestorationModSecondSightSprintDescID"] = "Переключаться между прицелами с помощью кнопки спринта, а не гаджета. С этой настройкой нельзя использовать спринт во время прицеливания, а кнопка гаджета будет включать и выключать гаджеты даже во время прицеливания.",
+		["RestorationModSecondSightSprintTitleID"] = "Кнопка бега включает второй прицел",
+		["RestorationModSecondSightSprintDescID"] = "Переключаться между прицелами с помощью кнопки бега, а не гаджета. С этой настройкой нельзя использовать бег во время прицеливания, а кнопка гаджета будет включать и выключать гаджеты даже во время прицеливания.",
 		["RestorationModAimDeploysBipodTitleID"] = "Прицеливание с сошками",
 		["RestorationModAimDeploysBipodDescID"] = "Кнопка прицеливания развернет сошки, если имеется такая возможность.",
 		["RestorationModMoveCancelBipodTitleID"] = "Движение убирает сошки",
@@ -5631,6 +5631,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 		["st_menu_technician_sentry"] = "Крепость",
 		["st_menu_ghost_silencer"] = "Наемный убийца",
 		["menu_st_points_total"] = "Вложено очков",
+		["menu_st_points_unlock"] = "ОЧКОВ ДЛЯ ОТКРЫТИЯ",
 	
 	--[[   SKILLTREES   ]]--
 
@@ -5705,7 +5706,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Шок и трепет",
-				["menu_speedy_reload_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пулеметы## имеют #{skill_color}#$skill_value_b1## шанс сбить врагов с ног.\nЭтот шанс повышается до #{skill_color}#$skill_value_b2## при использовании сошек.\n\n#{risk}#Навык не действует на## #{important_1}#капитанов, бульдозеров, снайперов или щитов.##\n\nПИКОВЫЙ: #{owned}#$pro##\nИз #{skill_color}#Пулеметов## можно стрелять от бедра во время спринта, и у них отсутствует задержка перед стрельбой после спринта.\n\n#{item_stage_2}#Настройка для сохранения анимаций спринта находится в оружейных опциях Restoration Mod.##\n\nВы получаете на #{skill_color}#$skill_value_p1## меньше урона в приседе.\nЭтот эффект повышается до #{skill_color}#$skill_value_p2## при использовании сошек.",
+				["menu_speedy_reload_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пулеметы## имеют #{skill_color}#$skill_value_b1## шанс сбить врагов с ног.\nЭтот шанс повышается до #{skill_color}#$skill_value_b2## при использовании сошек.\n\n#{risk}#Навык не действует на## #{important_1}#капитанов, бульдозеров, снайперов или щитов.##\n\nПИКОВЫЙ: #{owned}#$pro##\nИз #{skill_color}#Пулеметов## можно стрелять от бедра во время бега, и у них отсутствует задержка перед стрельбой после бега.\n\n#{item_stage_2}#Настройка для сохранения анимаций бега находится в оружейных опциях Restoration Mod.##\n\nВы получаете на #{skill_color}#$skill_value_p1## меньше урона в приседе.\nЭтот эффект повышается до #{skill_color}#$skill_value_p2## при использовании сошек.",
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Свинцовый ад",
@@ -5720,8 +5721,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Shotgun CQB
 				["menu_shotgun_cqb_beta_sc"] = "Гладкоствол",
-				["menu_shotgun_cqb_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nСкорость прицеливания и возвращения в боевую стойку после спринта при использовании #{skill_color}#Дробовиков и Огнеметов## теперь на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и Огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
-				["menu_shotgun_cqb_per_pellet_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nСкорость прицеливания и возвращения в боевую стойку после спринта при использовании #{skill_color}#Дробовиков и Огнеметов## теперь на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и Огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
+				["menu_shotgun_cqb_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nСкорость прицеливания и возвращения в боевую стойку после бега при использовании #{skill_color}#Дробовиков и Огнеметов## теперь на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и Огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
+				["menu_shotgun_cqb_per_pellet_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nСкорость прицеливания и возвращения в боевую стойку после бега при использовании #{skill_color}#Дробовиков и Огнеметов## теперь на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и Огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
 
 
 				--Shotgun Impact
@@ -5735,7 +5736,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "Беги и стреляй",
-				["menu_close_by_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы можете стрелять из #{skill_color}#Дробовиков и Огнеметов## от бедра во время бега и не имеете задержки на стрельбу после бега.\n\n#{item_stage_2}#Настройка для сохранения анимаций спринта находится в оружейных опциях Restoration Mod.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВаша скорострельность увеличена на #{skill_color}#$skill_value_p1## при стрельбе от бедра из #{skill_color}#Дробовиков и Огнеметов.##",
+				["menu_close_by_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы можете стрелять из #{skill_color}#Дробовиков и Огнеметов## от бедра во время бега и не имеете задержки на стрельбу после бега.\n\n#{item_stage_2}#Настройка для сохранения анимаций бега находится в оружейных опциях Restoration Mod.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВаша скорострельность увеличена на #{skill_color}#$skill_value_p1## при стрельбе от бедра из #{skill_color}#Дробовиков и Огнеметов.##",
 
 				--Overkill
 				["menu_overkill_sc"] = "OVERKILL",
@@ -5797,26 +5798,27 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 			--[[   FORTRESS SUBTREE   ]]--
 				--Logistician
 				["menu_defense_up_beta_sc"] = "Логист",
-				["menu_defense_up_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы взаимодействуете со снаряжением на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь вы взаимодействуете и ставите снаряжение на #{skill_color}#$skill_value_p1## быстрее.\nВаши члены команды взаимодействуют и ставят снаряжение на #{skill_color}#$skill_value_p2## быстрее.\n\n#{risk}#Примечание: Командные навыки не складываются, если несколько игроков имеют этот навык.##",
+				["menu_defense_up_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВсе виды взаимодействия со снаряжением на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь вы взаимодействуете со всем снаряжением на #{skill_color}#$skill_value_p1## быстрее.\nВаши члены команды взаимодействуют и ставят снаряжение на #{skill_color}#$skill_value_p2## быстрее.\n\n#{risk}#Примечание: Командные навыки не складываются, если несколько игроков имеют этот навык.##",
 
 				--Nerves of Steel--
 				["menu_fast_fire_beta_sc"] = "Стальные нервы",
-				["menu_fast_fire_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете возможность #{skill_color}#прицеливаться во время падения.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете на #{skill_color}#$skill_value_p1## меньше урона во время любого взаимодействия.",
+				["menu_fast_fire_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете возможность #{skill_color}#прицеливаться после падения.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете на #{skill_color}#$skill_value_p1## меньше урона во время любого взаимодействия.",
 
 				--Engineering
 				["menu_eco_sentry_beta_sc"] = "Инженер",
-				["menu_eco_sentry_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши Турели наносят на #{skill_color}#$skill_value_b1## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаши Турели получают на #{skill_color}#$skill_value_p1## больше здоровья.",
+				["menu_eco_sentry_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши Турели получают на #{skill_color}#$skill_value_b1## больше здоровья.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаши Турели получают еще на #{skill_color}#$skill_value_p1## больше здоровья.",
 
 				--Jack of all Trades
 				["menu_jack_of_all_trades_beta_sc"] = "Мастер на все руки",
-				["menu_jack_of_all_trades_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы носите на #{skill_color}#$skill_value_b1## больше метательного оружия.\n\nПИКОВЫЙ: #{owned}#$pro##\n##Вы можете носить с собой второе оборудование.## Нажмите клавишу #{skill_color}#$BTN_CHANGE_EQ## чтобы переключиться на другое оборудование.\n\nВторое оборудование содержит на #{important_1}#50%## меньше использований, минимум - #{skill_color}#1.##",
+				["menu_jack_of_all_trades_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы носите на #{skill_color}#$skill_value_b1## больше метательного оружия.\n\n#{risk}#Не работает с метательным оружием из перков.##\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Вы можете носить с собой второе оборудование.## Нажмите клавишу #{skill_color}#$BTN_CHANGE_EQ## чтобы переключиться на другое оборудование.\n\nВторое оборудование содержит на #{important_1}#50%## меньше использований, минимум - #{skill_color}#1.##",
 
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "Круговая оборона",
-				["menu_tower_defense_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь можно использовать бронебойные патроны на #{skill_color}#Турелях##, которые уменьшают их скорострельность на #{skill_color}#66%## и позволяют им пробивать врагов и щиты.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы можете ставить #{skill_color}#$skill_value_p1## #{skill_color}#Турели##.\n\n#{skill_color}#Турели## теперь стоят #{skill_color}#35%## вашего боезапаса.",
+				["menu_tower_defense_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь можно переключать тип патронов в Турелях на бронебойные, которые уменьшают их скорострельность на #{skill_color}#66%## и позволяют им пробивать врагов и щиты.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы можете носить с собой #{skill_color}#$skill_value_p1## Турели.\n\nТурели теперь стоят #{skill_color}#35%## вашего боезапаса.",
 
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Пуленепробиваемый",
+				-- "Blocks the excess damage of Snipers, Titan Dozers, fire and explosives" - does it actually blocks fire? Isn't that a thing by default?
 				["menu_iron_man_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПока у вас есть броня, ее будет невозможно прошить, блокируя урон по здоровью от атак Снайпера, Титанового Дозера и взрывов.\n\n#{risk}#Навык не работает против атак Клокеров и Тазеров, а также нанесения урона самому себе.##\n\nПИКОВЫЙ: #{owned}#$pro##\nПока ваша броня заполнена хотя бы на #{skill_color}#$skill_value_p5##, получаемый урон уменьшается на #{skill_color}#$skill_value_p1## от вашей максимальной брони.\n\nКогда ваша броня ломается, к вашему следующему периоду бессмертия добавится #{skill_color}#$skill_value_p3## секунд за каждые #{skill_color}#$skill_value_p4## брони.\n\nВаша броня восстанавливается на #{skill_color}#$skill_value_p2## быстрее. $anarc_disable",
 
 			--[[   Перфоратор   ]]--
@@ -5848,29 +5850,29 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 			--[[   COMBAT ENGINEER SUBTREE   ]]--
 				--Sharpshooter--
 				["menu_discipline_sc"] = "Крепкий хват",
-				["menu_discipline_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## получают #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства в голову из #{skill_color}#винтовок## в режиме одиночной стрельбы или очередями увеличивают вашу скорострельность на #{skill_color}#$skill_value_p1## в течение #{skill_color}#$skill_value_p2## секунд.",
+				["menu_discipline_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## получают #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства в голову из #{skill_color}#Винтовок## в режиме #{risk}#одиночной стрельбы## или #{risk}#очередями## в течение #{skill_color}#$skill_value_p2## секунд увеличивают вашу скорострельность на #{skill_color}#$skill_value_p1##, а из #{skill_color}#Винтовок## в #{risk}#автоматическом режиме## стрельбы - только на #{skill_color}#$skill_value_p3.##",
 
 				--Rifleman
 				["menu_rifleman_sc"] = "Пехотинец",
-				["menu_rifleman_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## получают на #{skill_color}#$skill_value_b1## больше точности и урона на расстоянии во время прицеливания.\n\n#{skill_color}#Винтовки## получают еще #{skill_color}#$skill_value_b2## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Винтовки## получают еще на #{skill_color}#$skill_value_p1## больше точности и урона на расстоянии во время прицеливания.\n\nСкорость прицеливания и задержка после бега быстрее и меньше соответственно на #{skill_color}#$skill_value_p2##.",
+				["menu_rifleman_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПока вы стоите на месте, #{skill_color}#Винтовки## получают на #{skill_color}#$skill_value_b1## больше точности и урона на расстоянии во время прицеливания.\n\n#{skill_color}#Винтовки## получают еще #{skill_color}#$skill_value_b2## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Винтовки## получают еще на #{skill_color}#$skill_value_p1## больше точности и урона на расстоянии во время прицеливания, даже если вы в движении.\n\n#{skill_color}#Винтовки## теперь наносят #{skill_color}#$skill_value_p2## урона сквозь броню.\n\n#{risk}#Эффект не складывается с бронебойностью вашей ## #{skill_color}#Винтовки.##",
 
 				--Kilmer--
 				["menu_heavy_impact_beta_sc"] = "Килмер",
-				["menu_heavy_impact_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## перезаряжаются на #{skill_color}#$skill_value_b2## быстрее.\nШтраф на точность во время передвижения для #{skill_color}#винтовок## уменьшен на #{skill_color}#$skill_value_b1##.\n\nШтраф на точность во время передвижения зависит от стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Винтовки## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.\n\n#{skill_color}#Винтовки## наносят #{skill_color}#$skill_value_p2## урона через броню.\n#{important_1}#Винтовки, которые уже имеют такой эффект, не получают дополнительный урон.##",
+				["menu_heavy_impact_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## перезаряжаются на #{skill_color}#$skill_value_b2## быстрее.\nШтраф на точность во время передвижения для #{skill_color}#Винтовок## уменьшен на #{skill_color}#$skill_value_b1##.\n\nШтраф на точность во время передвижения зависит от стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Винтовки## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.\n\nСкорость прицеливания и задержка стрельбы после бега из #{skill_color}#Винтовок## на #{skill_color}#$skill_value_p2## быстрее.",
 
 				--Ammo Efficiency--
 				--["menu_single_shot_ammo_return_sc"] = "Эффективный расход",
 				["menu_single_shot_ammo_return_sc"] = "Практичность",
-				["menu_single_shot_ammo_return_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#$skill_value_b1## убийства в голову из #{skill_color}#винтовок## в течение #{skill_color}#$skill_value_b2## секунд восстановят #{skill_color}#$skill_value_b4## от вашего подбора патронов (минимум #{skill_color}#1## патрон).\n\nПИКОВЫЙ: #{owned}#$pro##\nНавык теперь срабатывает после #{skill_color}#$skill_value_p1## убийств в голову в течение #{skill_color}#$skill_value_p2## секунд. #{skill_color}#Патроны возвращаются прямо в магазин.##",
+				["menu_single_shot_ammo_return_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#$skill_value_b1## убийства в голову из #{skill_color}#Винтовок## в течение #{skill_color}#$skill_value_b2## секунд восстановят #{skill_color}#$skill_value_b4## от вашего подбора патронов (минимум #{skill_color}#1## патрон).\n\nПИКОВЫЙ: #{owned}#$pro##\nНавык теперь срабатывает после #{skill_color}#$skill_value_p1## убийств в голову в течение #{skill_color}#$skill_value_p2## секунд. #{skill_color}#Патроны возвращаются прямо в магазин.##",
 
 				--Aggressive Reload
 				--["menu_engineering_beta_sc"] = "Агрессивная перезарядка",
 				["menu_engineering_beta_sc"] = "Проактивность",
-				["menu_engineering_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУбийства в голову из #{skill_color}#винтовок## увеличивают скорость перезарядки и прицеливания на #{skill_color}#$skill_value_b1## в течение #{skill_color}#$skill_value_b2## секунд.\n\nПИКОВЫЙ: #{owned}#$pro##\nБонус к скорости перезарядки увеличен до #{skill_color}#$skill_value_p1## и может быть получен при убийстве не в голову.",
+				["menu_engineering_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nУбийства в голову из #{skill_color}#Винтовок## увеличивают скорость перезарядки и прицеливания на #{skill_color}#$skill_value_b1## в течение #{skill_color}#$skill_value_b2## секунд.\n\nПИКОВЫЙ: #{owned}#$pro##\nБонус к скорости перезарядки увеличен до #{skill_color}#$skill_value_p1## и может быть получен при убийстве не в голову.",
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Рикошет",
-				["menu_kilmer_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову из #{skill_color}#винтовок## наносят #{skill_color}#$skill_value_b1## урона ближайшему врагу в радиусе #{skill_color}#$skill_value_b2## метров; срабатывает раз в #{important_1}#$skill_value_b5## секунды.\n\nЕсли ваша #{skill_color}#винтовка## находится в режиме #{risk}#одиночной стрельбы## или #{risk}#очереди##, за каждые #{skill_color}#$skill_value_b3## метров от цели эффект перебрасывается еще до #{skill_color}#$skill_value_b4## раз.\n\nПИКОВЫЙ: #{owned}#$pro##\nРадиус навыка увеличен на #{skill_color}#$skill_value_p1## метр.\nПопадания в голову из #{skill_color}#винтовок## в режиме #{risk}#одиночной стрельбы## или #{risk}#очереди## #{skill_color}#не теряют урон на расстоянии##, и за каждые #{skill_color}#$skill_value_b3## метров от врага эффект наносит дополнительные #{skill_color}#$skill_value_p2## урона; вплоть до #{skill_color}#$skill_value_p3## урона.",
+				["menu_kilmer_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову из #{skill_color}#Винтовок## наносят #{skill_color}#$skill_value_b1## урона ближайшему врагу в радиусе #{skill_color}#$skill_value_b2## метров; срабатывает раз в #{important_1}#$skill_value_b5## секунды.\n\nЕсли ваша #{skill_color}#винтовка## находится в режиме #{risk}#одиночной стрельбы## или #{risk}#очереди##, за каждые #{skill_color}#$skill_value_b3## метров от цели эффект перебрасывается еще до #{skill_color}#$skill_value_b4## раз.\n\nПИКОВЫЙ: #{owned}#$pro##\nРадиус навыка увеличен на #{skill_color}#$skill_value_p1## метр.\nПопадания в голову из #{skill_color}#Винтовок## в режиме #{risk}#одиночной стрельбы## или #{risk}#очереди## #{skill_color}#не теряют урон на расстоянии##, и за каждые #{skill_color}#$skill_value_b3## метров от врага эффект наносит дополнительные #{skill_color}#$skill_value_p2## урона; вплоть до #{skill_color}#$skill_value_p3## урона.",
 		--[[   GHOST   ]]--
 
 			--[[   SHINOBI SUBTREE   ]]--
@@ -6213,7 +6215,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Perk_Decks", function(loc
 		["menu_deck18_9_desc_sc"] = "Полоска уворота будет заполняться на ##$perk_value_1## каждую секунду, пока вы находитесь внутри дымовой завесы.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
 		--Стоик не про алкоголизм, но что нам стоит взять механику Монаха из Варкрафта и добавить в наш шутер
-		["menu_deck19_1_desc_sc"] = "Теперь вы можете использовать ##Фляжку##. Переключение на другой набор перков сделает Фляжку недоступным. Фляжка занимает слот метательного оружия.\n\n##$perk_value_1## полученного урона по здоровью превращается во ##временное здоровье##, которые убывает в течении ##$perk_value_2## секунд.\n\nВы можете нажать на кнопку метательного оружия, чтобы использовать Фляжку и обнулить временное здоровье, ##$perk_value_3## от которого превращается в настоящее здоровье. Фляжку можно использовать раз в ##$perk_value_4## секунд.\n\n##$perk_value_5## вашей брони переводятся в ##$perk_value_6## здоровья.\n\nПока ваша броня сломана, ваше время неуязвимости уменьшено на #{important_1}#$perk_value_7##.\n#{risk}# Это не влияет на естественное убывание временного здоровья и увороты.##",
+		["menu_deck19_1_desc_sc"] = "Теперь вы можете использовать ##Фляжку##. Переключение на другой набор перков сделает Фляжку недоступным. Фляжка занимает слот метательного оружия.\n\n##$perk_value_1## полученного урона по здоровью превращается во ##временное здоровье##, которые убывает в течении ##$perk_value_2## секунд.\n\nВы можете нажать на кнопку метательного оружия, чтобы использовать Фляжку и обнулить временное здоровье, ##$perk_value_3## от которого превращается в настоящее здоровье. Фляжку можно использовать раз в ##$perk_value_4## секунд.\n\n##$perk_value_5## вашей брони переводятся в ##$perk_value_6## здоровья.\n\nПока ваша броня сломана, ваше период неуязвимости уменьшен на #{important_1}#$perk_value_7##.\n#{risk}# Это не влияет на естественное убывание временного здоровья и увороты.##",
 		["menu_deck19_3_desc_sc"] = "Задержка Фляжки сокращается на ##$perk_value_1## секунды за каждого убитого врага.",
 		["menu_deck19_5_desc_sc"] = "Если вы не получаете урон в течение ##$perk_value_1## секунд, все текущее временное здоровье становится настоящим.\n\nВы отвечаете на пейджеры на ##$perk_value_2## быстрее.",
 		["menu_deck19_7_desc_sc"] = "Когда у вас меньше ##$perk_value_1## здоровья, задержка Фляжки сокращается на ##$perk_value_2## секунды за каждого убитого врага.",
@@ -6365,7 +6367,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Perk_Decks", function(loc
 			--Sicario
 			["menu_deck18_mrwi_desc"] = "Теперь вы можете использовать ##Дымовую шашку##.\n\nПри броске, дымовая шашка создает завесу на ##$perk_value_1## секунд. Внутри завесы вы и ваша команда восстанавливаете броню на ##$perk_value_2## быстрее. Любые противники, стоящие в завесе, получат штраф ##$perk_value_3## к точности.\n\nДымовую шашку можно использовать раз в ##$perk_value_4## секунд, но убийство врага сокращает эту задержку на ##$perk_value_5## секунды.\n\nВаш уворот увеличен на ##$perk_value_6## очков.\n\nВы носите на ##$perk_value_7## мешок для тел больше.",
 			--Stoic
-			["menu_deck19_mrwi_desc"] = "Теперь вы можете использовать ##Фляжку##.\n\n##$perk_value_1## получаемого урона по здоровью станет ##временным здоровьем##, которая будет убывать в течение ##$perk_value_2## секунд.\n\nВы можете нажать на кнопку метательного оружия, чтобы использовать Фляжку и обнулить временное здоровье, ##$perk_value_3## от которого превращается в настоящее здоровье. Фляжку можно использовать раз в ##$perk_value_4## секунд.\n\n##$perk_value_5## вашей брони переводится в ##$perk_value_6## здоровья.\n\nПока ваша броня сломана, ваше время неуязвимости уменьшено на #{important_1}#$perk_value_8## милисекунд.\n#{risk}#Это не влияет на естественное убывание временного здоровья и увороты.##\n\nВы отвечаете на пейджеры на ##$perk_value_7## быстрее.",
+			["menu_deck19_mrwi_desc"] = "Теперь вы можете использовать ##Фляжку##.\n\n##$perk_value_1## получаемого урона по здоровью станет ##временным здоровьем##, которая будет убывать в течение ##$perk_value_2## секунд.\n\nВы можете нажать на кнопку метательного оружия, чтобы использовать Фляжку и обнулить временное здоровье, ##$perk_value_3## от которого превращается в настоящее здоровье. Фляжку можно использовать раз в ##$perk_value_4## секунд.\n\n##$perk_value_5## вашей брони переводится в ##$perk_value_6## здоровья.\n\nПока ваша броня сломана, ваш период неуязвимости уменьшен на #{important_1}#$perk_value_8## милисекунд.\n#{risk}#Это не влияет на естественное убывание временного здоровья и увороты.##\n\nВы отвечаете на пейджеры на ##$perk_value_7## быстрее.",
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "Теперь вы можете использовать ##Парилку##.\n\nЧтобы активировать Парилку, вам нужно смотреть на союзника на расстоянии не более ##$perk_value_1## метров и нажать на кнопку метательного оружия, чтобы отметить его. Между вами и союзником не должно быть препятствий или стен.\n\nКаждый противник, убитый вами или выбранным союзником, восстановит ##$perk_value_2## здоровья вам и ##$perk_value_3## здоровья союзнику.\n\nПарилка длится ##$perk_value_4## секунд и восстанавливается ##$perk_value_5## секунд.\n\nВы зацикливаете камеры на ##$perk_value_6## секунд дольше.",
 			--Hacker

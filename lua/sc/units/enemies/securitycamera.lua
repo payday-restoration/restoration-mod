@@ -29,12 +29,57 @@ function SecurityCamera:generate_cooldown(amount)
 	end	
 end
 
-local CAMERA_UPDATE_RATE = 1
+local CAMERA_UPDATE_RATE = 0.2
 local CAMERA_TURN_RATE = 9
-local MAX_DESYNC_ANGLE = 9
+local MAX_DESYNC_ANGLE = 5
 
 function SecurityCamera:update(unit, t, dt)
 	self:_update_tape_loop_restarting(unit, t, dt)
+
+	--[[
+	local max_yaw_positive = 60
+	local max_yaw_negative = -60
+
+	self:_init_dynamic_yaw()
+
+	local yaw_dt = CAMERA_TURN_RATE * dt
+	if self._current_yaw_action == 1 then
+		self._yaw = math.min(self._yaw + yaw_dt, max_yaw_positive)
+		if self._yaw >= max_yaw_positive then
+			self._current_yaw_action = 2
+		end
+	elseif self._current_yaw_action == 2 then
+		self._yaw = math.max(self._yaw - yaw_dt, max_yaw_negative)
+		if self._yaw <= max_yaw_negative then
+			self._current_yaw_action = 1
+		end
+	end
+	--]]
+
+	if not Network:is_server() then
+		--[[
+		self._synced_yaw = self._synced_yaw or self._yaw
+
+		local yaw_diff = math.abs(self._synced_yaw - self._yaw)
+
+		if yaw_diff > MAX_DESYNC_ANGLE then
+			self._yaw = math.clamp(math.step(self._yaw, self._synced_yaw, math.clamp(yaw_diff * 3, CAMERA_TURN_RATE / 2, CAMERA_TURN_RATE * 2) * dt), max_yaw_negative, max_yaw_positive)
+		end
+
+		self:apply_rotations(self._yaw, self._pitch, true)
+		--]]
+
+		return
+	end
+
+	if managers.groupai:state():is_ecm_jammer_active("camera") or self._tape_loop_expired_clbk_id or self._tape_loop_restarting_t or self._call_police_clbk_id then
+		self:_destroy_all_detected_attention_object_data()
+		self:_stop_all_sounds()
+	else
+		self:_upd_detection(t)
+	end
+
+	self:_upd_sound(unit, t)
 
 	local max_yaw_positive = 60
 	local max_yaw_negative = -60
@@ -53,29 +98,6 @@ function SecurityCamera:update(unit, t, dt)
 			self._current_yaw_action = 1
 		end
 	end
-
-	if not Network:is_server() then
-		self._synced_yaw = self._synced_yaw or self._yaw
-
-		local yaw_diff = math.abs(self._synced_yaw - self._yaw)
-
-		if yaw_diff > MAX_DESYNC_ANGLE then
-			self._yaw = math.clamp(math.step(self._yaw, self._synced_yaw, math.clamp(yaw_diff * 3, CAMERA_TURN_RATE / 2, CAMERA_TURN_RATE * 2) * dt), max_yaw_negative, max_yaw_positive)
-		end
-
-		self:apply_rotations(self._yaw, self._pitch, true)
-
-		return
-	end
-
-	if managers.groupai:state():is_ecm_jammer_active("camera") or self._tape_loop_expired_clbk_id or self._tape_loop_restarting_t or self._call_police_clbk_id then
-		self:_destroy_all_detected_attention_object_data()
-		self:_stop_all_sounds()
-	else
-		self:_upd_detection(t)
-	end
-
-	self:_upd_sound(unit, t)
 
 	self:apply_rotations(self._yaw, self._pitch)
 end

@@ -29,9 +29,9 @@ function SecurityCamera:generate_cooldown(amount)
 	end	
 end
 
-local CAMERA_UPDATE_RATE = 0.1
+local CAMERA_UPDATE_RATE = 1
 local CAMERA_TURN_RATE = 9
-local MAX_DESYNC_ANGLE = 5
+local MAX_DESYNC_ANGLE = 9
 
 function SecurityCamera:update(unit, t, dt)
 	self:_update_tape_loop_restarting(unit, t, dt)

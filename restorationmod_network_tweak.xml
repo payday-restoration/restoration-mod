@@ -153,6 +153,20 @@
 			</message>
 		</target>
 	</tweak>
+	<!-- Proposed camera yaw networking stuff -->
+	<tweak version="2" name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+		</search>
+		<target mode="attach">
+			<message name="sync_camera_rotation" delivery="reliable" receiver="unit" check="server_to_client">
+				<param type="unit" />
+				<param type="int" min="0" max="255"/>	<!-- end_yaw -->
+				<param type="float" min="0" max="255" step="0.1" exact="false"/>	<!-- duration -->
+			</message>
+		</target>
+	</tweak>
 
 	<!-- Stuff for weapon syncing -->
 	<tweak name="settings/network" extension="network_settings">

@@ -10454,7 +10454,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hk21.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 						self.hk21.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 						self.hk21.supported = true
-						self.hk21.ads_speed = 0.520
+						self.hk21.ads_speed = 0.500
 						self.hk21.damage_falloff = {
 							start_dist = 1800,
 							end_dist = 5100,
@@ -10555,7 +10555,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m60.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 						self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 						self.m60.supported = true
-						self.m60.ads_speed = 0.560
+						self.m60.ads_speed = 0.540
 						self.m60.damage_falloff = {
 							start_dist = 2100,
 							end_dist = 6000,
@@ -10615,7 +10615,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.par.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 						self.par.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 						self.par.supported = true
-						self.par.ads_speed = 0.540
+						self.par.ads_speed = 0.520
 						self.par.damage_falloff = {
 							start_dist = 1800,
 							end_dist = 5800,
@@ -21151,7 +21151,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60e4.always_use_standing = true
 				self.m60e4.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.m60e4.supported = true
-				self.m60e4.ads_speed = 0.540
+				self.m60e4.ads_speed = 0.520
 				self.m60e4.damage_falloff = {
 					start_dist = 1100,
 					end_dist = 5000,
@@ -28285,27 +28285,26 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pkilo.AMMO_MAX = 120
 				self.pkilo.kick = self.stat_info.kick_tables.random_recoil
 				self.pkilo.kick_pattern = {
-					{0, self.stat_info.kick_tables.random_left_recoil},
-					{5, self.stat_info.kick_tables.horizontal_left_recoil},
-					{8, self.stat_info.kick_tables.moderate_left_kick},
-					{12, self.stat_info.kick_tables.moderate_kick},
-					{23, self.stat_info.kick_tables.right_recoil},
-					{38, self.stat_info.kick_tables.moderate_right_kick}
+					{0, self.stat_info.kick_tables.random_right_recoil},
+					{5, self.stat_info.kick_tables.right_recoil},
+					{8, self.stat_info.kick_tables.moderate_right_kick},
+					{11, self.stat_info.kick_tables.moderate_kick},
+					{25, self.stat_info.kick_tables.moderate_right_kick}
 				}
 				self.pkilo.always_use_standing = true
 				self.pkilo.muzzleflash = "_dmc/effects/heavy_muzzle"
 				self.pkilo.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 				self.pkilo.supported = true
-				self.pkilo.ads_speed = 0.580
+				self.pkilo.ads_speed = 0.560
 				self.pkilo.damage_falloff = {
-					start_dist = 1800,
+					start_dist = 2600,
 					end_dist = 5400,
 					min_mult = 0.4
 				}
 				self.pkilo.stats = {
 					damage = 60,
 					spread = 66,
-					recoil = 51,
+					recoil = 55,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 14,
@@ -29558,17 +29557,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.raid_ww2_bren.kick = self.stat_info.kick_tables.random_right_recoil
 				self.raid_ww2_bren.kick_pattern = {
 					{0, self.stat_info.kick_tables.random_left_recoil},
-					{8, self.stat_info.kick_tables.pattern_l2},
-					{10, self.stat_info.kick_tables.pattern_l1},
-					{14, self.stat_info.kick_tables.vertical_kick},
-					{20, self.stat_info.kick_tables.left_kick}
+					{6, self.stat_info.kick_tables.pattern_l2},
+					{9, self.stat_info.kick_tables.pattern_l1},
+					{12, self.stat_info.kick_tables.vertical_kick},
+					{18, self.stat_info.kick_tables.left_kick}
 				}
 				self.raid_ww2_bren.muzzleflash = "_dmc/effects/heavy_muzzle"
 				self.raid_ww2_bren.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 				self.raid_ww2_bren.supported = true
 				self.raid_ww2_bren.ads_speed = 0.480
 				self.raid_ww2_bren.damage_falloff = {
-					start_dist = 1600,
+					start_dist = 1800,
 					end_dist = 5800,
 					min_mult = 0.53333
 				}
@@ -29956,10 +29955,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.scar16 then
 				--has its own stats; this is just to adjust the reload timers to resmod's standard
-				self.scar16.sounds.fire = "aug_fire_single"
-				self.scar16.sounds.fire_single = "aug_fire_single"
-				self.scar16.sounds.fire_auto = "aug_fire"
-				self.scar16.sounds.stop_fire = "aug_stop"
+				--self.scar16.sounds.fire = "aug_fire_single"
+				--self.scar16.sounds.fire_single = "aug_fire_single"
+				--self.scar16.sounds.fire_auto = "aug_fire"
+				--self.scar16.sounds.stop_fire = "aug_stop"
 				self.scar16.timers.reload_empty = 3.1
 				self.scar16.timers.reload_exit_empty = 0.8
 				self.scar16.timers.reload_not_empty = 2.23

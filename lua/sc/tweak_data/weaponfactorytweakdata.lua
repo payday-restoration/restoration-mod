@@ -28148,7 +28148,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_snp_baltic_receiver_lower then
+			self.parts.wpn_fps_snp_baltic_flash_hider.supported = true
 			self.parts.wpn_fps_snp_baltic_flash_hider.perks = nil
+			self.parts.wpn_fps_snp_baltic_flash_hider.stats = {value = 0}
 			self.parts.wpn_fps_snp_baltic_flash_hider.custom_stats = nil
 			self.parts.wpn_fps_snp_baltic_receiver_lower.adds = { "wpn_fps_hailstorm_sound_switch" }
 			self.parts.wpn_fps_snp_baltic_receiver_lower.custom_stats = {
@@ -28166,6 +28168,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					translation = Vector3(-0.01, -5, 0.66)
 				}
 			}
+			--MUZZLES
+				--Compensator
+				self.parts.wpn_fps_snp_baltic_compensator.supported = true
+				self.parts.wpn_fps_snp_baltic_compensator.desc_id = nil
+				self.parts.wpn_fps_snp_baltic_compensator.has_description = false
+				self.parts.wpn_fps_snp_baltic_compensator.stats = deep_clone(muzzle_device.muzz_rec2_c)
+				self.parts.wpn_fps_snp_baltic_compensator.custom_stats = deep_clone(muzzle_device.muzz_rec2_c)
+				--Brake
+				self.parts.wpn_fps_snp_baltic_muzzle_brake.supported = true
+				self.parts.wpn_fps_snp_baltic_muzzle_brake.desc_id = nil
+				self.parts.wpn_fps_snp_baltic_muzzle_brake.has_description = false
+				self.parts.wpn_fps_snp_baltic_muzzle_brake.stats = deep_clone(muzzle_device.muzz_acc2_r)
+				self.parts.wpn_fps_snp_baltic_muzzle_brake.custom_stats = deep_clone(muzzle_device.muzz_acc2_r)
+				--Suppressor
+				self.parts.wpn_fps_snp_baltic_suppressor.supported = true
+				self.parts.wpn_fps_snp_baltic_suppressor.stats = {
+					value = 2,
+					suppression = 12,
+					alert_size = -1
+				}
+				self.parts.wpn_fps_snp_baltic_suppressor.custom_stats = nil
+				--Monolithic
+				self.parts.wpn_fps_snp_baltic_suppressor_mono.supported = true
+				self.parts.wpn_fps_snp_baltic_suppressor_mono.stats = deep_clone(muzzle_device.supp_acc2_c)
+				self.parts.wpn_fps_snp_baltic_suppressor_mono.custom_stats = deep_clone(muzzle_device.supp_acc2_c)
 			--BARRELS
 				--Barrier
 				self.parts.wpn_fps_snp_baltic_barrel_xlong.supported = true
@@ -28202,7 +28229,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					chf = true
 				}
 			--HANDGUARDS
-				--TODO
+				--Stalwart
+				self.parts.wpn_fps_snp_baltic_handguard_focus.supported = true
+				self.parts.wpn_fps_snp_baltic_handguard_focus.stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_snp_baltic_handguard_focus.custom_stats = deep_clone(grips.dual_stat_1)
+				--Neutralize
+				self.parts.wpn_fps_snp_baltic_handguard_recoil.supported = true
+				self.parts.wpn_fps_snp_baltic_handguard_recoil.stats = deep_clone(grips.recoil_1)
+				self.parts.wpn_fps_snp_baltic_handguard_recoil.custom_stats = deep_clone(grips.recoil_1)
+				--Zero-S
+				self.parts.wpn_fps_snp_baltic_handguard_sway.supported = true
+				self.parts.wpn_fps_snp_baltic_handguard_sway.stats = deep_clone(grips.acc_1)
+				self.parts.wpn_fps_snp_baltic_handguard_sway.custom_stats = deep_clone(grips.acc_1)
+				--LTi Enforcer
+				self.parts.wpn_fps_snp_baltic_handguard_mix1.supported = true
+				self.parts.wpn_fps_snp_baltic_handguard_mix1.stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_snp_baltic_handguard_mix1.custom_stats = deep_clone(grips.quickdraw_1)
+				--Advanced
+				self.parts.wpn_fps_snp_baltic_handguard_mix2.supported = true
+				self.parts.wpn_fps_snp_baltic_handguard_mix2.stats = deep_clone(grips.recoil_acc)
+				self.parts.wpn_fps_snp_baltic_handguard_mix2.custom_stats = deep_clone(grips.recoil_acc)
 			--GRIPS
 				--Quickdraw
 				self.parts.wpn_fps_snp_baltic_grip_quick.supported = true

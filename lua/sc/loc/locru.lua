@@ -748,7 +748,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Mix", function(loc)
 		
 		["resmod_1st_time_title"] = "Placeholder title",
 		["resmod_1st_time_desc"] = "Placeholder text info",
-		["resmod_1st_time_confirm"] = "OK",
+		["resmod_message_confirm"] = "OK",
 
 		["res_credits"] = "Титры Restoration Mod",
 		["res_credits_help"] = "Посмотреть титры RESTORATION MOD.",

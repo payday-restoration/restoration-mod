@@ -24,7 +24,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 
 		["resmod_1st_time_title"] = "Placeholder title",
 		["resmod_1st_time_desc"] = "Placeholder text info",
-		["resmod_1st_time_confirm"] = "OK",		
+		["resmod_message_confirm"] = "OK",		
 
 		["res_credits"] = "레스토레이션 모드 크레딧",
 		["res_credits_help"] = "레스토레이션 모드의 크레딧을 봅니다.",

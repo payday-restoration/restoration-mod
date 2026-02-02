@@ -331,13 +331,12 @@ function UnitNetworkHandler:sync_remove_carry_stacker(sender)
 	managers.player:remove_synced_carry_stacker(peer)
 end
 
-function UnitNetworkHandler:sync_camera_rotation(cam_unit, yaw_255, pitch_255, duration)
+function UnitNetworkHandler:sync_camera_rotation(cam_unit, end_yaw, duration)
 	if not alive(cam_unit) or not self._verify_gamestate(self._gamestate_filter.any_ingame) then
 		return
 	end
 
-	local yaw = 360 * yaw_255 / 255 - 180
-	local pitch = 180 * pitch_255 / 255 - 90
+	local target_yaw = (360 * (end_yaw / 255))
 
-	--cam_unit:base():apply_rotations(yaw, pitch)
+	cam_unit:base():set_target_yaw(target_yaw, duration)
 end

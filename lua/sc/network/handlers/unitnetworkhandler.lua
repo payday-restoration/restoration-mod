@@ -336,7 +336,7 @@ function UnitNetworkHandler:sync_camera_rotation(cam_unit, end_yaw, duration)
 		return
 	end
 
-	local target_yaw = (360 * (end_yaw / 255))
+	local target_yaw = (360 * (end_yaw / 255)) - 180
 
 	cam_unit:base():set_target_yaw(target_yaw, duration)
 end

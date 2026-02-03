@@ -78,12 +78,14 @@ end)
 
 Hooks:OverrideFunction(SecurityCamera, "apply_rotations", function (self, yaw, pitch, no_sync)
 	local yaw_obj = self._yaw_obj or self._unit:get_object(Idstring("CameraYaw"))
-	local original_yaw_rot = yaw_obj:local_rotation()
-	local new_yaw_rot = Rotation(180 + yaw, original_yaw_rot:pitch(), original_yaw_rot:roll())
+	if yaw_obj then
+		local original_yaw_rot = yaw_obj and yaw_obj:local_rotation()
+		local new_yaw_rot = Rotation(180 + yaw, original_yaw_rot:pitch(), original_yaw_rot:roll())
 
-	yaw_obj:set_local_rotation(new_yaw_rot)
+		yaw_obj:set_local_rotation(new_yaw_rot)
 
-	self._yaw = yaw
+		self._yaw = yaw
+	end
 
 	if pitch then
 		local pitch_obj = self._pitch_obj or self._unit:get_object(Idstring("CameraPitch"))

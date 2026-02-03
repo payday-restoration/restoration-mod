@@ -1266,6 +1266,34 @@ function PlayerManager:on_lethal_headshot_dealt(attacker_unit, attack_data)
 	end
 end
 
+function PlayerManager:_on_expert_handling_event(unit, attack_data)
+	local attacker_unit = attack_data.attacker_unit
+	local variant = attack_data.variant
+	local is_bullet = variant and (variant == "bullet" or variant == "fire_bullet")
+
+	if attacker_unit == self:player_unit() and self:is_current_weapon_of_category("pistol") and is_bullet and not self._coroutine_mgr:is_running(PlayerAction.ExpertHandling) then
+		local data = self:upgrade_value("pistol", "stacked_accuracy_bonus", nil)
+
+		if data and type(data) ~= "number" then
+			self._coroutine_mgr:add_coroutine(PlayerAction.ExpertHandling, PlayerAction.ExpertHandling, self, data.accuracy_bonus, data.max_stacks, Application:time() + data.max_time)
+		end
+	end
+end
+
+function PlayerManager:_on_enter_trigger_happy_event(unit, attack_data)
+	local attacker_unit = attack_data.attacker_unit
+	local variant = attack_data.variant
+	local is_bullet = variant and (variant == "bullet" or variant == "fire_bullet")
+
+	if attacker_unit == self:player_unit() and is_bullet and not self._coroutine_mgr:is_running("trigger_happy") and self:is_current_weapon_of_category("pistol") then
+		local data = self:upgrade_value("pistol", "stacking_hit_damage_multiplier", 0)
+
+		if data and type(data) ~= "number" then
+			self._coroutine_mgr:add_coroutine("trigger_happy", PlayerAction.TriggerHappy, self, data.damage_bonus, data.max_stacks, Application:time() + data.max_time)
+		end
+	end
+end
+
 --Add extra checks to make sure that it only looks for killing headshots done with valid guns.
 function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
 	if not self._coroutine_mgr:is_running("ammo_efficiency") then

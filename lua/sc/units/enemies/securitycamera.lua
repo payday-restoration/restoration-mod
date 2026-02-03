@@ -39,7 +39,7 @@ function SecurityCamera:_update_camera_rotation(unit, t, dt)
 	elseif self._target_yaw then
 		local new_yaw = math.step(self._yaw, self._target_yaw, self._yaw_difference * (dt / self._turn_duration))
 
-		self:apply_rotations(new_yaw, nil, true)
+		self:apply_rotations(new_yaw, self._pitch, true)
 
 		if new_yaw ~= self._target_yaw then
 			return
@@ -83,21 +83,17 @@ Hooks:OverrideFunction(SecurityCamera, "apply_rotations", function (self, yaw, p
 		local new_yaw_rot = Rotation(180 + yaw, original_yaw_rot:pitch(), original_yaw_rot:roll())
 
 		yaw_obj:set_local_rotation(new_yaw_rot)
-
-		self._yaw = yaw
 	end
+	self._yaw = yaw
 
-	if pitch then
-		local pitch_obj = self._pitch_obj or self._unit:get_object(Idstring("CameraPitch"))
-		if pitch_obj then
-			local original_pitch_rot = pitch_obj:local_rotation()
-			local new_pitch_rot = Rotation(original_pitch_rot:yaw(), pitch, original_pitch_rot:roll())
+	local pitch_obj = self._pitch_obj or self._unit:get_object(Idstring("CameraPitch"))
+	if pitch_obj then
+		local original_pitch_rot = pitch_obj:local_rotation()
+		local new_pitch_rot = Rotation(original_pitch_rot:yaw(), pitch, original_pitch_rot:roll())
 
-			pitch_obj:set_local_rotation(new_pitch_rot)
-
-			self._pitch = pitch
-		end
+		pitch_obj:set_local_rotation(new_pitch_rot)
 	end
+	self._pitch = pitch
 
 	self._look_fwd = nil
 

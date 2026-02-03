@@ -8136,6 +8136,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.model3.stats_modifiers = nil
 						self.model3.armor_piercing_chance = 0.5
+						self.model3.hs_mult = 1.5
 						self.model3.can_shoot_through_enemy = true
 						self.model3.reload_speed_multiplier = 0.95
 						self.model3.timers.reload_empty = 1.62
@@ -8177,6 +8178,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_model3.stats_modifiers = nil
 						self.x_model3.armor_piercing_chance = 0.5
+						self.x_model3.hs_mult = 1.5
 						self.x_model3.can_shoot_through_enemy = true
 						self.x_model3.weapon_hold = "jowi_pistol"
 						self.x_model3.animations.reload_name_id = "x_judge"
@@ -8221,6 +8223,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.new_raging_bull.stats_modifiers = nil
 						self.new_raging_bull.armor_piercing_chance = 0.5
+						self.new_raging_bull.hs_mult = 1.5
 						self.new_raging_bull.can_shoot_through_enemy = true
 						self.new_raging_bull.can_shoot_through_enemy_unlim = true
 						self.new_raging_bull.reload_speed_multiplier = 0.9
@@ -8260,6 +8263,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_rage.stats_modifiers = nil
 						self.x_rage.armor_piercing_chance = 0.5
+						self.x_rage.hs_mult = 1.5
 						self.x_rage.can_shoot_through_enemy = true
 						self.x_rage.can_shoot_through_enemy_unlim = true
 						self.x_rage.panic_suppression_chance = 0.05
@@ -8307,6 +8311,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.chinchilla.stats_modifiers = nil
 						self.chinchilla.armor_piercing_chance = 0.5
+						self.chinchilla.hs_mult = 1.5
 						self.chinchilla.can_shoot_through_enemy = true
 						self.chinchilla.can_shoot_through_enemy_unlim = true
 						self.chinchilla.reload_speed_multiplier = 1.12
@@ -8350,6 +8355,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_chinchilla.reload_speed_multiplier = 0.9
 						self.x_chinchilla.stats_modifiers = nil
+						self.x_chinchilla.hs_mult = 1.5
 						self.x_chinchilla.armor_piercing_chance = 0.5
 						self.x_chinchilla.can_shoot_through_enemy = true
 						self.x_chinchilla.can_shoot_through_enemy_unlim = true
@@ -16780,6 +16786,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lapd.stats_modifiers = nil
 				self.lapd.panic_suppression_chance = 0.05
 				self.lapd.armor_piercing_chance = 0.5
+				self.lapd.hs_mult = 1.5
 				self.lapd.can_shoot_through_enemy = true
 				self.lapd.can_shoot_through_enemy_unlim = true
 				self.lapd.sounds.fire2 = "rbull_fire"
@@ -21073,6 +21080,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 25
 				}
 				self.deckard.stats_modifiers = nil
+				self.deckard.hs_mult = 1.5
 				self.deckard.reload_speed_multiplier = 0.9
 				self.deckard.timers = deep_clone(self.new_raging_bull.timers)
 				self.deckard.panic_suppression_chance = 0.05
@@ -34830,6 +34838,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 25
 			}
 			self.degle.stats_modifiers = nil
+			self.degle.hs_mult = 1.5
 			self.degle.panic_suppression_chance = 0.05
 			self.degle.armor_piercing_chance = 1
 			self.degle.timers = deep_clone(self.deagle.timers)

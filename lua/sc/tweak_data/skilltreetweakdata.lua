@@ -2616,6 +2616,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"player_melee_kill_stamina_1",
 				
 				"player_melee_fists_damage_multiplier",
+				"player_melee_fists_damage_effect_multiplier",
 				"buildup_meter_tony_extra_ammo_multiplier_1",
 				"buildup_meter_tony_pick_up_multiplier_1",
 				"player_buildup_meter_rick",
@@ -2760,6 +2761,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"player_melee_kill_stamina_1",
 				
 				"player_melee_brass_damage_multiplier",
+				"player_melee_brass_damage_effect_multiplier",
 				"buildup_meter_tony_extra_ammo_multiplier_1",
 				"buildup_meter_tony_extra_ammo_multiplier_2",
 				"buildup_meter_tony_pick_up_multiplier_1",

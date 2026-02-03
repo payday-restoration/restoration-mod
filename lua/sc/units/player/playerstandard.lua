@@ -3974,13 +3974,15 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			local dmg_multiplier = self._melee_repeat_damage_bonus or 1
 
 			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
-
-			local type_multiplier = managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[melee_entry].stats.weapon_type) .. "_damage_multiplier", 1)
+			local melee_type = tostring(tweak_data.blackmarket.melee_weapons[melee_entry].stats.weapon_type)
+			local type_multiplier = managers.player:upgrade_value("player", "melee_" .. melee_type .. "_damage_multiplier", 1)
+			local type_effect_multiplier = managers.player:upgrade_value("player", "melee_" .. melee_type .. "_damage_effect_multiplier", 1)
 
 			if character_unit:base() then
 				if character_unit:base().char_tweak then
 					if character_unit:base():char_tweak().player_health_scaling_mul then
-						type_multiplier = math.max(1, type_multiplier * tweak_data.upgrades.values.player.tony_boss_mult)
+						local tony_mult = tweak_data.upgrades.values.player["tony_boss_" .. melee_type .. "_mult"] or 0.1
+						type_multiplier = math.max(1, type_multiplier * tony_mult)
 					end
 					if character_unit:base():char_tweak().priority_shout then
 						dmg_multiplier = dmg_multiplier * (tweak_data.blackmarket.melee_weapons[melee_entry].stats.special_damage_multiplier or 1)
@@ -3989,7 +3991,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			end
 
 			dmg_multiplier = dmg_multiplier * type_multiplier
-			damage_effect = damage_effect * type_multiplier
+			damage_effect = damage_effect * type_effect_multiplier
 
 			if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 				self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}

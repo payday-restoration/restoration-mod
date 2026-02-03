@@ -4774,7 +4774,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 	self.melee_weapons.fists.stats.max_damage = 4.501
 	self.melee_weapons.fists.stats.min_damage_effect = 4.5
 	self.melee_weapons.fists.stats.max_damage_effect = 9.0
-	self.melee_weapons.fists.stats.charge_time = 0.5
+	self.melee_weapons.fists.stats.charge_time = 0.7
 	self.melee_weapons.fists.stats.range = 150
 	self.melee_weapons.fists.stats.concealment = 30
 	self.melee_weapons.fists.stats.speed_mult = 1.08
@@ -4790,10 +4790,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.brass_knuckles.stats.max_damage = 6.001
 		self.melee_weapons.brass_knuckles.stats.min_damage_effect = 6.0
 		self.melee_weapons.brass_knuckles.stats.max_damage_effect = 12.0
-		self.melee_weapons.brass_knuckles.stats.charge_time = 1.1
+		self.melee_weapons.brass_knuckles.stats.charge_time = 1.4
 		self.melee_weapons.brass_knuckles.stats.range = 155
 		self.melee_weapons.brass_knuckles.stats.concealment = 30
-		self.melee_weapons.brass_knuckles.stats.speed_mult = 1.08
+		self.melee_weapons.brass_knuckles.stats.speed_mult = 1.06
 		--Thanks Boss--	
 		self.melee_weapons.fight.info_id = "bm_melee_fight_info"
 		self.melee_weapons.fight.stats.weapon_type = "fists"
@@ -4804,7 +4804,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.fight.stats.max_damage = 2.401
 		self.melee_weapons.fight.stats.min_damage_effect = 9.0
 		self.melee_weapons.fight.stats.max_damage_effect = 18.0
-		self.melee_weapons.fight.stats.charge_time = 0.9
+		self.melee_weapons.fight.stats.charge_time = 1.0
 		self.melee_weapons.fight.stats.range = 160
 		self.melee_weapons.fight.stats.concealment = 30
 		self.melee_weapons.fight.stats.speed_mult = 1.1

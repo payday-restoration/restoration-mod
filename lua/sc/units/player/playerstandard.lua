@@ -958,9 +958,9 @@ PlayerStandard._primary_action_get_value = {
 		end
 	}
 }
-function PlayerStandard:_chk_action_stop_shooting(new_action)
+function PlayerStandard:_chk_action_stop_shooting(new_action, input)
 	if not new_action then
-		self._already_fired = nil
+		self._already_fired = input.btn_primary_attack_state or nil
 		self._spin_up_shoot = nil
 		self:_check_stop_shooting()
 	end
@@ -1465,7 +1465,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 		end
 	end
 
-	self:_chk_action_stop_shooting(new_action)
+	self:_chk_action_stop_shooting(new_action, input)
 
 	return new_action
 end

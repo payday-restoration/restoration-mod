@@ -32512,6 +32512,66 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 			end
 
+			if self.las58 then
+				self.las58.categories = {"pistol", "handcannon", "sweet_liberty", "battery"}
+				self.las58.recategorize = { "heavy_pis", "handcannon" }
+				self.las58.damage_type = "handcannon"
+				self.las58.CLIP_AMMO_MAX = 7
+				self.las58.AMMO_MAX = self.las58.CLIP_AMMO_MAX * 4
+				self.las58.ammo_ratio = 2
+				self.las58.sms = 0.7
+				self.las58.fire_mode_data.fire_rate = 0.08 * 1.6
+				self.las58.fire_rate_multiplier = 1.6
+				self.las58.BURST_FIRE = false
+				self.las58.CAN_TOGGLE_FIREMODE = false
+				self.las58.FIRE_MODE = "single"
+				self.las58.kick = self.stat_info.kick_tables.even_recoil
+				self.las58.supported = true
+				self.las58.keep_ammo = 0
+				self.las58.ads_speed = 0.220
+				self.las58.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 5000,
+					min_mult = 0.15
+				}
+				self.las58.stats = {
+					damage = 40,
+					spread = 26,
+					recoil = 95,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 25
+				}
+				self.las58.stats_modifiers = {
+					damage = 2.5
+				}
+				self.las58.panic_suppression_chance = 0.05
+				self.las58.nato = nil
+				self.las58.trail_effect = "_dmc/effects/sterwers_trail_m_small"
+				self.las58.trail_effect_npc = "_dmc/effects/sterwers_trail_m_small_npc"
+				self.las58.always_play_anims = true
+				self.las58.can_shoot_through_enemy = true
+				self.las58.armor_piercing_chance = 0.5
+				self.las58.timers.equip = 0.3
+				self.las58.use_unequip_swap = true
+				self.las58.swap_speed_multiplier = 0.65
+				self.las58.object_damage_mult = 0.15 --scaled to match the object damage of 30 damage pistols
+				self.las58.sounds.magazine_empty = "wp_sentrygun_swap_ammo"
+				self.las58.sounds.stop_fire = "g3_npc1a_end"
+				self.las58.timers.equip = 0.8
+				self.las58.timers.reload_empty = 3.2
+				self.las58.timers.reload_exit_empty = 0.33
+				self.las58.timers.reload_not_empty = 3.2
+				self.las58.timers.reload_exit_not_empty = 0.33
+				self.x_las58.use_data.selection_index = 5
+			end
+
 			if self.r6 then
 				self.r6.categories = {
 					"snp",

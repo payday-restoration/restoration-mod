@@ -43976,6 +43976,28 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_smg_sta11_npc.uses_parts = deep_clone(self.wpn_fps_smg_sta11.uses_parts)
 		end
 
+		if self.parts.wpn_fps_pis_talon_battery then
+			self.parts.wpn_fps_pis_talon_barrel.supported = true
+			self.parts.wpn_fps_pis_talon_barrel.stats = { value = 10 }
+			self.parts.wpn_fps_pis_talon_barrel.custom_stats = nil
+			self.parts.wpn_fps_pis_talon_barrel.adds = nil
+			
+			self.parts.wpn_fps_pis_talon_battery.supported = true
+			self.parts.wpn_fps_pis_talon_battery.stats = { value = 10 }
+			self.parts.wpn_fps_pis_talon_battery.custom_stats = {
+				starwars = {
+					no_tracers = true, --this just disables the automatic application of starwars tracers
+					allow_anim_mults = true,
+					regen_ammo_time = 1,
+					regen_rate = 0.5,
+					can_reload = true,
+					empty_no_regen = true,
+					mag_regen = true,
+					shut_up = true
+				}
+			}
+		end
+
 		if self.parts.wpn_fps_sickle_m_battery then
 			self.parts.wpn_fps_sickle_optic.supported = true
 			self.parts.wpn_fps_sickle_optic.stats = {
@@ -43996,11 +44018,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sickle_m_battery.custom_stats = {
 				starwars = {
 					no_tracers = true, --this just disables the automatic application of starwars tracers
-					regen_ammo_time = 3,
+					allow_anim_mults = true,
+					regen_ammo_time = 2,
 					regen_rate = 6.96,
 					can_reload = true,
+					empty_no_regen = true,
 					mag_regen = true,
-					empty_no_regen = true
+					shut_up = true
 				}
 			}
 		end

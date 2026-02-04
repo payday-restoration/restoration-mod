@@ -1,6 +1,6 @@
 local job = Global.level_data and Global.level_data.level_id
 local is_pro = Global.game_settings and Global.game_settings.one_down
-
+local sounds = 1
 local damage_set = {
 	smg = {
 		"shepheard_crew",
@@ -5873,9 +5873,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							value = 1,
 							reload = 25
 						}
-						if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRaffica") > 1 then
+						sounds = restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRaffica") or 1
+						if sounds > 1 then
 							self.beer.sounds.fire_single = "beretta_fire"
-							if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRaffica") == 3 then
+							if sounds == 3 then
 								self.beer.sounds.fire_single2 = "beer_fire_single"
 							end
 						end
@@ -7372,9 +7373,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{3, self.stat_info.kick_tables.right_recoil},
 							{4, self.stat_info.kick_tables.even_recoil}
 						}
-						if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRSH12") > 1 then
+						sounds = restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRSH12") or 1
+						if sounds > 1 then
 							self.rsh12.sounds.fire = "ching_fire"
-							if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsRSH12") == 3 then
+							if sounds == 3 then
 								self.rsh12.sounds.fire2 = "b682_fire"
 							end
 						end
@@ -15419,9 +15421,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shatters_fury.fire_mode_data.fire_rate = 0.2142857
 			self.shatters_fury.muzzleflash = "_dmc/effects/heavy_muzzle"
 			self.shatters_fury.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
-			if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsSW500") > 1 then
-			self.shatters_fury.sounds.fire_single = "pmkr45_fire"
-				if restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsSW500") == 3 then
+			sounds = restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsSW500") or 1
+			if sounds > 1 then
+				self.shatters_fury.sounds.fire_single = "pmkr45_fire"
+				if sounds == 3 then
 					self.shatters_fury.sounds.stop_fire = "b682_fire"
 				end
 			end

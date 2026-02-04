@@ -22,11 +22,12 @@ HUDManager.ASSAULTS_MAX = 1024
 
 core:import("CoreEvent")
 function HUDManager:_setup_player_info_hud_pd2(...)
-	self:_create_level_suspicion_hud(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
 	_setup_player_info_hud_pd2_original(self,...)
 	self._dodge_meter = HUDDodgeMeter:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
 	self._skill_list = HUDSkill:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
 	self._effect_screen = HUDEffectScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
+
+    self:_create_level_suspicion_hud(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
 		--managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel
 		--[[
 --setup radial mouse menu
@@ -239,7 +240,6 @@ function HUDManager:_create_level_suspicion_hud(hud)
 		})
 		suspicion_ghost:set_center(center_x,center_y)
 	end
-	
 end
 
 --Just in case

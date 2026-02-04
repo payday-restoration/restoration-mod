@@ -76,24 +76,18 @@ Hooks:OverrideFunction(SecurityCamera, "set_update_enabled", function (self, sta
 	return set_update_enabled_orig(self, state or self._target_yaw and true, ...)
 end)
 
-Hooks:OverrideFunction(SecurityCamera, "apply_rotations", function (self, yaw, pitch, no_sync)
+function SecurityCamera:apply_rotations(yaw, pitch, no_sync)
 	local yaw_obj = self._yaw_obj or self._unit:get_object(Idstring("CameraYaw"))
-	if yaw_obj then
-		local original_yaw_rot = yaw_obj and yaw_obj:local_rotation()
-		local new_yaw_rot = Rotation(180 + yaw, original_yaw_rot:pitch(), original_yaw_rot:roll())
-
-		yaw_obj:set_local_rotation(new_yaw_rot)
-	end
-	self._yaw = yaw
-
 	local pitch_obj = self._pitch_obj or self._unit:get_object(Idstring("CameraPitch"))
-	if pitch_obj then
-		local original_pitch_rot = pitch_obj:local_rotation()
-		local new_pitch_rot = Rotation(original_pitch_rot:yaw(), pitch, original_pitch_rot:roll())
+	local original_yaw_rot = yaw_obj:local_rotation()
+	local new_yaw_rot = Rotation(180 + yaw, original_yaw_rot:pitch(), original_yaw_rot:roll())
 
-		pitch_obj:set_local_rotation(new_pitch_rot)
-	end
-	self._pitch = pitch
+	yaw_obj:set_local_rotation(new_yaw_rot)
+
+	local original_pitch_rot = pitch_obj:local_rotation()
+	local new_pitch_rot = Rotation(original_pitch_rot:yaw(), pitch, original_pitch_rot:roll())
+
+	pitch_obj:set_local_rotation(new_pitch_rot)
 
 	self._look_fwd = nil
 
@@ -105,7 +99,10 @@ Hooks:OverrideFunction(SecurityCamera, "apply_rotations", function (self, yaw, p
 
 		managers.network:session():send_to_peers_synched("camera_yaw_pitch", self._unit, sync_yaw, sync_pitch)
 	end
-end)
+
+	self._yaw = yaw
+	self._pitch = pitch
+end
 
 Hooks:PostHook(SecurityCamera, "save", "camerarot_save", function(self, data)
 	if self._target_yaw then

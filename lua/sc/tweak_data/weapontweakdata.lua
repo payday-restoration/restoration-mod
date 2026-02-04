@@ -8109,7 +8109,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.model3.AMMO_MAX = 30
 						self.model3.kick = self.stat_info.kick_tables.moderate_kick
 						self.model3.kick_pattern = {
-							{0, self.stat_info.kick_tables.left_kick},
+							{0, self.stat_info.kick_tables.moderate_left_kick},
 							{2, self.stat_info.kick_tables.moderate_kick},
 							{4, self.stat_info.kick_tables.moderate_right_kick}
 						}
@@ -8151,7 +8151,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_model3.AMMO_MAX = 60
 						self.x_model3.kick = self.stat_info.kick_tables.moderate_kick
 						self.x_model3.kick_pattern = {
-							{0, self.stat_info.kick_tables.left_kick},
+							{0, self.stat_info.kick_tables.moderate_left_kick},
 							{2, self.stat_info.kick_tables.moderate_kick},
 							{4, self.stat_info.kick_tables.moderate_right_kick}
 						}
@@ -8196,7 +8196,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_raging_bull.AMMO_MAX = 30
 						self.new_raging_bull.kick = self.stat_info.kick_tables.moderate_kick
 						self.new_raging_bull.kick_pattern = {
-							{0, self.stat_info.kick_tables.right_kick},
+							{0, self.stat_info.kick_tables.right_recoil},
 							{2, self.stat_info.kick_tables.vertical_kick},
 							{4, self.stat_info.kick_tables.moderate_right_kick}
 						}
@@ -8236,7 +8236,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_rage.AMMO_MAX = 60
 						self.x_rage.kick = self.stat_info.kick_tables.vertical_kick
 						self.x_rage.kick_pattern = {
-							{0, self.stat_info.kick_tables.right_kick},
+							{0, self.stat_info.kick_tables.right_recoil},
 							{2, self.stat_info.kick_tables.vertical_kick},
 							{4, self.stat_info.kick_tables.moderate_right_kick}
 						}
@@ -8284,7 +8284,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.chinchilla.AMMO_MAX = 30
 						self.chinchilla.kick = self.stat_info.kick_tables.moderate_kick
 						self.chinchilla.kick_pattern = {
-							{0, self.stat_info.kick_tables.vertical_kick},
+							{0, self.stat_info.kick_tables.horizontal_recoil},
 							{2, self.stat_info.kick_tables.left_kick},
 							{4, self.stat_info.kick_tables.moderate_right_kick}
 						}
@@ -8328,7 +8328,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_chinchilla.AMMO_MAX = 60
 						self.x_chinchilla.kick = self.stat_info.kick_tables.vertical_kick
 						self.x_chinchilla.kick_pattern = {
-							{0, self.stat_info.kick_tables.vertical_kick},
+							{0, self.stat_info.kick_tables.horizontal_recoil},
 							{2, self.stat_info.kick_tables.left_kick},
 							{4, self.stat_info.kick_tables.moderate_right_kick}
 						}
@@ -8409,7 +8409,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.deagle.sounds.fire = "deagle_fire"
 						self.deagle.sounds.fire_single = "deagle_fire"
 						self.deagle.sounds.fire_auto = "deagle_fire"
-						self.deagle.reload_speed_multiplier = 1.09
+						self.deagle.reload_speed_multiplier = 1.12
 						self.deagle.timers.reload_empty = 2.6
 						self.deagle.timers.reload_exit_empty = 1.23
 						self.deagle.timers.reload_exit_not_empty = 0.8
@@ -16586,7 +16586,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.limafive.desc_id = "bm_ap_armor_50_weapon_sc_desc"
 				self.limafive.can_shoot_through_enemy = true
 				self.limafive.armor_piercing_chance = 0.5
-				self.limafive.reload_speed_multiplier = 1.12
+				self.limafive.reload_speed_multiplier = 1.15
 				self.limafive.timers = deep_clone(self.deagle.timers)
 			end
 
@@ -18338,7 +18338,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mars.armor_piercing_chance = 0.5
 				self.mars.object_damage_mult = 1.25
 				self.mars.tactical_reload = 1
-				self.mars.reload_speed_multiplier = 1.02
+				self.mars.reload_speed_multiplier = 1.09
 				self.mars.timers = deep_clone(self.deagle.timers)
 				self.mars.sounds.magazine_empty = nil
 				self.mars.sounds.stop_fire = "saiga_npc1a_end"
@@ -34095,7 +34095,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.amt.stats_modifiers = nil
 			self.amt.panic_suppression_chance = 0.05
-			self.amt.reload_speed_multiplier = 1.02
+			self.amt.reload_speed_multiplier = 1.09
 			self.amt.timers = deep_clone(self.deagle.timers)
 		end
 

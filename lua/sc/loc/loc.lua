@@ -2788,7 +2788,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_rsh12_sc_desc"] = "The absolute final word in one handed caliber pissing matches.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
 				["bm_rsh12_sc_iw_desc"] = "3-round burst ballistic pistol. Has a triple chamber stack for rapid three round bursts.\n\n#{skill_color}#Can pierce body armor, multiple enemies and thin walls.##",
 				--SAA/Peacemaker
-				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
+				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\nLoaded with specialized .45 rounds that #{skill_color}#can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 				--SAA/Peacemaker
 				["bm_wp_peacemaker_rifle_stock_desc"] = "Allows for aiming while fanning the hammer.",
 				--CUSTOM PISTOLS

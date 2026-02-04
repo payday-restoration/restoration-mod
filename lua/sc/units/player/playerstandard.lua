@@ -504,6 +504,15 @@ end
 
 
 function PlayerStandard:_check_use_item(t, input)
+	if STI and STI.settings.equipment then
+		if input.btn_use_item_press and self:is_deploying() then
+			self:_interupt_action_use_item()
+			return false
+		elseif input.btn_use_item_release then
+			return false
+		end
+	end
+
 	local pressed, released, holding = nil
 	
 	if block_use_item_from ~= nil then
@@ -1552,6 +1561,21 @@ function PlayerStandard:_check_action_night_vision(t, input)
 end
 
 function PlayerStandard:_check_action_interact(t, input)
+	if STI and STI.settings.interaction then
+		local interrupt_key_press = input.btn_interact_press
+			if STI.settings.interact_interrupt_key == 2 then
+				interrupt_key_press = input.btn_use_item_press
+			end
+		if interrupt_key_press and self:_interacting() then
+			self:_interupt_action_interact()
+			return false
+		elseif input.btn_interact_release and self._interact_params then
+			if self._interact_params.timer >= STI.settings.min_timer_duration then
+				return false
+			end
+		end
+	end
+
 	local keyboard = self._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"
 	local pressed, released, holding = nil
 

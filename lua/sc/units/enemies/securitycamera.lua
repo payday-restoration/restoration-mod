@@ -97,6 +97,9 @@ Hooks:PostHook(SecurityCamera, "init", "camerarot_init", function(self)
 	self._yaw = 0
 	self._pitch = 0
 
+	self._original_yaw = 0
+	self._original_pitch = 0
+
 	self._max_yaw = 60
 	self._max_pitch = 30
 
@@ -145,7 +148,7 @@ function SecurityCamera:_update_camera_rotation(unit, t, dt)
 			self._stalled_until = nil
 
 			local new_target_yaw = self._max_yaw * self._turn_direction
-			if self._yaw == new_target_yaw then
+			if math.abs(self._yaw - new_target_yaw) < 5 then
 				self._turn_direction = -self._turn_direction
 				new_target_yaw = -new_target_yaw
 			end
@@ -169,17 +172,21 @@ function SecurityCamera:_update_camera_rotation(unit, t, dt)
 	end
 
 	local angle_diff = angular_difference(self._yaw, target_yaw, self._pitch, target_pitch)
-	if angle_diff > 0 then
-		mrotation.set_yaw_pitch_roll(tmp_rot, self._yaw, self._pitch, 0)
-		mrotation.set_yaw_pitch_roll(tmp_rot2, target_yaw, target_pitch, 0)
+	local rate = self._initial_angle_diff and (self._initial_angle_diff / self._turn_duration) or self._turn_rate
+	local lerp_t = math.min((rate * dt) / angle_diff, 1)
 
-		local rate = self._initial_angle_diff and (self._initial_angle_diff / self._turn_duration) or self._turn_rate
-		local lerp_t = math.min(1, (rate * dt) / angle_diff)
+	mrotation.set_yaw_pitch_roll(tmp_rot, self._yaw, self._pitch, 0)
+	mrotation.set_yaw_pitch_roll(tmp_rot2, target_yaw, target_pitch, 0)
 
-		mrotation.slerp(tmp_rot, tmp_rot, tmp_rot2, lerp_t)
+	mrotation.slerp(tmp_rot, tmp_rot, tmp_rot2, lerp_t)
 
-		self:apply_rotations(tmp_rot:yaw(), tmp_rot:pitch(), true)
-	elseif attention and attention.pos then
+	self:apply_rotations(tmp_rot:yaw(), tmp_rot:pitch(), true)
+
+	if lerp_t < 1 then
+		return
+	end
+
+	if attention and attention.pos then
 		self:set_target_attention(nil)
 
 		if Network:is_client() then
@@ -201,13 +208,13 @@ function SecurityCamera:_get_local_yaw_pitch_to_position(target_pos)
 	self._look_obj:m_position(tmp_vec)
 
 	mvector3.direction(tmp_vec, tmp_vec, target_pos)
-    mvector3.rotate_with(tmp_vec, tmp_rot:inverse()) -- => local space
+	mvector3.rotate_with(tmp_vec, tmp_rot:inverse()) -- => local space
 	mrotation.set_look_at(tmp_rot2, tmp_vec, math.UP)
 
-    local target_yaw = tmp_rot2:yaw() - 180
-    if target_yaw < -180 then
-        target_yaw = target_yaw + 360
-    end
+	local target_yaw = tmp_rot2:yaw() - 180
+	if target_yaw < -180 then
+		target_yaw = target_yaw + 360
+	end
 
 	local target_pitch = tmp_rot2:pitch()
 
@@ -403,7 +410,6 @@ end)
 -- full function override is unfortunately necessary
 Hooks:OverrideFunction(SecurityCamera, "_upd_detect_attention_objects", function(self, t)
 	local detected_obj = self._detected_attention_objects
-	local my_key = self._u_key
 	local my_pos = self._pos
 	local my_fwd = self._look_fwd
 	local det_delay = self._detection_delay

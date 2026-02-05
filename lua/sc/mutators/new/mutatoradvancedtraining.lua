@@ -8,7 +8,7 @@ MutatorAdvancedTraining.reductions = {
 	exp = 0
 }
 MutatorAdvancedTraining.disables_achievements = false
-MutatorAdvancedTraining.categories = {"gameplay"}
+MutatorAdvancedTraining.categories = {"enemies"}
 
 MutatorAdvancedTraining.icon_coords = {
 	8,

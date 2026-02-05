@@ -207,8 +207,10 @@ function SecurityCamera:_get_local_yaw_pitch_to_position(target_pos)
 	self._unit:m_rotation(tmp_rot)
 	self._look_obj:m_position(tmp_vec)
 
+	mrotation.invert(tmp_rot)
+
 	mvector3.direction(tmp_vec, tmp_vec, target_pos)
-	mvector3.rotate_with(tmp_vec, tmp_rot:inverse()) -- => local space
+	mvector3.rotate_with(tmp_vec, tmp_rot) -- => local space
 	mrotation.set_look_at(tmp_rot2, tmp_vec, math.UP)
 
 	local target_yaw = tmp_rot2:yaw() - 180

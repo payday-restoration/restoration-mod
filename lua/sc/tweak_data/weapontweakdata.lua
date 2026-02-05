@@ -5706,10 +5706,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload_exit_not_empty = 0.5
 		},
 		rage = { --new_raging_bull, judge, rsh12
-			reload_empty = 1.6,
-			reload_exit_empty = 1.1,
-			reload_not_empty = 1.6,
-			reload_exit_not_empty = 1.1,
+			reload_empty = 2.1,
+			reload_exit_empty = 0.6,
+			reload_not_empty = 2.1,
+			reload_exit_not_empty = 0.6
+		},
+		--Custom weapons
+		swhiskey = {
+			reload_empty = 3,
+			reload_exit_empty = 0.6,
+			reload_not_empty = 3,
+			reload_exit_not_empty = 0.6
 		}
 	}
 
@@ -7957,10 +7964,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.korth.panic_suppression_chance = 0.05
 						self.korth.swap_speed_multiplier = 0.65
 						self.korth.timers.equip = 0.9
-						self.korth.timers.reload_empty = 2.3
-						self.korth.timers.reload_exit_empty = 1.6
-						self.korth.timers.reload_not_empty = 2.3
-						self.korth.timers.reload_exit_not_empty = 1.6
+						self.korth.timers.reload_empty = 2.8
+						self.korth.timers.reload_exit_empty = 0.9
+						self.korth.timers.reload_not_empty = 2.8
+						self.korth.timers.reload_exit_not_empty = 0.9
 						self.korth.ignore_reload_objects = true
 						--stupid garbage implementation; should proabably slap this into the actual timers table but IDGAF, it works
 						--Am I upset that this dogshit workaround is needed to make it look proper?
@@ -8054,10 +8061,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mateba.can_shoot_through_enemy = true
 						self.mateba.panic_suppression_chance = 0.05
 						self.mateba.reload_speed_multiplier = 1.24
-						self.mateba.timers.reload_empty = 2.3
-						self.mateba.timers.reload_exit_empty = 1.9
-						self.mateba.timers.reload_not_empty = 2.3
-						self.mateba.timers.reload_exit_not_empty = 1.9
+						self.mateba.timers.reload_empty = 3.5
+						self.mateba.timers.reload_exit_empty = 0.8
+						self.mateba.timers.reload_not_empty = 3.5
+						self.mateba.timers.reload_exit_not_empty = 0.8
 					--Akimbo
 						self.x_2006m.has_description = true
 						self.x_2006m.desc_id = "bm_x_2006m_sc_desc"
@@ -8141,10 +8148,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.model3.hs_mult = 1.5
 						self.model3.can_shoot_through_enemy = true
 						self.model3.reload_speed_multiplier = 0.95
-						self.model3.timers.reload_empty = 1.62
-						self.model3.timers.reload_exit_empty = 1
-						self.model3.timers.reload_not_empty = 1.62
-						self.model3.timers.reload_exit_not_empty = 1
+						blanket_timer("model3", shared_timers.rage)
 						self.model3.panic_suppression_chance = 0.05
 					--Akimbo
 						self.x_model3.has_description = true
@@ -8318,10 +8322,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.chinchilla.can_shoot_through_enemy_unlim = true
 						self.chinchilla.reload_speed_multiplier = 1.12
 						self.chinchilla.ignore_reload_objects = true
-						self.chinchilla.timers.reload_empty = 2.1
-						self.chinchilla.timers.reload_exit_empty = 1.1
-						self.chinchilla.timers.reload_not_empty = 2.1
-						self.chinchilla.timers.reload_exit_not_empty = 1.1
+						self.chinchilla.timers.reload_empty = 2.9
+						self.chinchilla.timers.reload_exit_empty = 0.5
+						self.chinchilla.timers.reload_not_empty = 2.9
+						self.chinchilla.timers.reload_exit_not_empty = 0.5
 					--Akimbo
 						self.x_chinchilla.has_description = true
 						self.x_chinchilla.desc_id = "bm_x_chinchilla_sc_desc"
@@ -10425,7 +10429,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mg42.spin_up_shoot = true
 						self.mg42.spin_up_t = 0.09
 						self.mg42.spin_down_t = 0.00000001
-						self.mg42.reload_speed_multiplier = 1.14
+						self.mg42.reload_speed_multiplier = 1.16
 						self.mg42.timers.reload_exit_empty = 1.65
 						self.mg42.timers.reload_exit_not_empty = 1.65
 
@@ -10483,7 +10487,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 25
 						}
 						self.hk21.stats_modifiers = nil
-						self.hk21.reload_speed_multiplier = 0.9
+						self.hk21.reload_speed_multiplier = 1
 						self.hk21.bipod_req_scope = true
 						self.hk21.animations.ignore_nonemptyreload = true
 						self.hk21.timers.reload_not_empty = self.hk21.timers.reload_empty
@@ -12553,7 +12557,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{9, self.stat_info.kick_tables.vertical_kick}
 						}
 						self.qbu88.supported = true
-						self.qbu88.ads_speed = 0.460
+						self.qbu88.ads_speed = 0.440
 						self.qbu88.damage_falloff = {
 							start_dist = 2500,
 							end_dist = 6500,
@@ -12746,8 +12750,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.awp.upgrade_blocks = nil
 						self.awp.CLIP_AMMO_MAX = 5
 						self.awp.AMMO_MAX = 40
-						self.awp.fire_mode_data.fire_rate = 1.4
-						self.awp.fire_rate_multiplier = 1.47
+						self.awp.fire_mode_data.fire_rate = 1.3333
+						self.awp.fire_rate_multiplier = 1.335
 						self.awp.kick = self.stat_info.kick_tables.vertical_kick
 						self.awp.muzzleflash = "effects/payday2/particles/weapons/awp_muzzle"
 						self.awp.supported = true
@@ -12886,7 +12890,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.victor.can_shoot_through_shield = true
 						self.victor.can_shoot_through_wall = true
 						self.victor.supported = true
-						self.victor.ads_speed = 0.460
+						self.victor.ads_speed = 0.440
 						self.victor.damage_falloff = {
 							start_dist = 2000,
 							end_dist = 6000,
@@ -13356,9 +13360,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.contender.use_vapor_trail = true
 						self.contender.use_hipfire_stance = "groza"
 						self.contender.reload_speed_multiplier = 0.85
-						self.contender.timers.reload_not_empty = 0.65
+						self.contender.timers.reload_not_empty = 1.1
 						self.contender.timers.reload_empty = self.contender.timers.reload_not_empty
-						self.contender.timers.reload_exit_not_empty = 1.3
+						self.contender.timers.reload_exit_not_empty = 0.85
 						self.contender.timers.reload_exit_empty = self.contender.timers.reload_exit_not_empty
 
 			--[[     ANTI-MATERIEL     ]]
@@ -14627,11 +14631,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 25
 						}
 						self.huntsman.stats_modifiers = nil
-						self.huntsman.timers.reload_empty = 1.8
-						self.huntsman.timers.reload_exit_empty = 1
-						self.huntsman.timers.reload_not_empty = 1.8
-						self.huntsman.timers.reload_exit_not_empty = 1
-						self.huntsman.reload_speed_multiplier = 0.85
+						self.huntsman.timers.reload_empty = 2.33
+						self.huntsman.timers.reload_exit_empty = 0.6
+						self.huntsman.timers.reload_not_empty = 2.33
+						self.huntsman.timers.reload_exit_not_empty = 0.6
+						self.huntsman.reload_speed_multiplier = 1.0591
 						self.huntsman.panic_suppression_chance = 0.05
 						if BeardLib.Utils:FindMod("Restored Mosconi Reload Animation") then
 							self.huntsman.keep_ammo = 1
@@ -14685,11 +14689,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.coach.stats_modifiers = nil
 						self.coach.keep_ammo = 1
 						self.coach.panic_suppression_chance = 0.05
-						self.coach.timers.reload_empty = 1
-						self.coach.timers.reload_exit_empty = 1.65
-						self.coach.timers.reload_not_empty = 1
-						self.coach.timers.reload_exit_not_empty = 1.65
-						self.coach.reload_speed_multiplier = 0.88
+						self.coach.timers.reload_empty = 2.2
+						self.coach.timers.reload_exit_empty = 0.8
+						self.coach.timers.reload_not_empty = 2.2
+						self.coach.timers.reload_exit_not_empty = 0.8
+						self.coach.reload_speed_multiplier = 1
 
 		--[[     SPECIALS     ]]--
 
@@ -15019,10 +15023,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.gre_m79.panic_suppression_chance = 0.05
 						self.gre_m79.stats_modifiers = {damage = 10}
 						self.gre_m79.reload_speed_multiplier = 1.25
-						self.gre_m79.timers.reload_empty = 2.35
-						self.gre_m79.timers.reload_exit_empty = 1.1
-						self.gre_m79.timers.reload_not_empty = 2.35
-						self.gre_m79.timers.reload_exit_not_empty = 1.1
+						self.gre_m79.timers.reload_empty = 3
+						self.gre_m79.timers.reload_exit_empty = 0.5
+						self.gre_m79.timers.reload_not_empty = 3
+						self.gre_m79.timers.reload_exit_not_empty = 0.6
 
 					--Piglet
 						self.m32.upgrade_blocks = {
@@ -15250,10 +15254,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.slap.panic_suppression_chance = 0.05
 						self.slap.stats_modifiers = {damage = 10}
-						self.slap.timers.reload_empty = 2.2
-						self.slap.timers.reload_exit_empty = 2
-						self.slap.timers.reload_not_empty = 2.2
-						self.slap.timers.reload_exit_not_empty = 2
+						self.slap.timers.reload_empty = 3
+						self.slap.timers.reload_exit_empty = 1.1
+						self.slap.timers.reload_not_empty = 3
+						self.slap.timers.reload_exit_not_empty = 1.1
 						self.slap.reload_speed_multiplier = 1.2
 
 					--China Puff
@@ -27856,10 +27860,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.swhiskey.spin_up_t = 0.08
 				self.swhiskey.spin_down_t = 0.00000001
 				self.swhiskey.object_damage_mult = 1.75
-				self.swhiskey.timers.reload_empty = 2.05
-				self.swhiskey.timers.reload_exit_empty = 1.38
-				self.swhiskey.timers.reload_not_empty = 2.05
-				self.swhiskey.timers.reload_exit_not_empty = 1.38
+				blanket_timer("swhiskey", shared_timers.swhiskey)
 			end
 
 			if self.sbeta then
@@ -31209,10 +31210,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.toz81.use_hipfire_stance = "breech"
 				self.toz81.reload_speed_multiplier = 1.02
 				self.toz81.sounds.stop_fire = "saiga_npc1a_end"
-				self.toz81.timers.reload_empty = 2.18
-				self.toz81.timers.reload_exit_empty = 1.15
-				self.toz81.timers.reload_not_empty = 2.18
-				self.toz81.timers.reload_exit_not_empty = 1.15
+				self.toz81.timers.reload_empty = 2.6
+				self.toz81.timers.reload_exit_empty = 0.65
+				self.toz81.timers.reload_not_empty = 2.6
+				self.toz81.timers.reload_exit_not_empty = 0.65
 
 				self.x_toz81.recategorize = { "heavy_shot" }
 				self.x_toz81.categories = { "akimbo", "shotgun", "shotgun_heavy_pistol" }
@@ -31482,10 +31483,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bk500.reload_speed_multiplier = 0.9
 				self.bk500.armor_piercing_chance = 1
 				self.bk500.object_damage_mult = 1.75
-				self.bk500.timers.reload_empty = 2.05
-				self.bk500.timers.reload_exit_empty = 1.38
-				self.bk500.timers.reload_not_empty = 2.05
-				self.bk500.timers.reload_exit_not_empty = 1.38
+				blanket_timer("bk500", shared_timers.swhiskey)
 			end
 
 			if self.haymaker then
@@ -32680,10 +32678,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.senator.keep_ammo = 0
 				self.senator.always_play_anims = true
 				self.senator.no_steelsight_anims = true
-				self.senator.timers.reload_empty = 1.44
-				self.senator.timers.reload_exit_empty = 1.2
-				self.senator.timers.reload_not_empty = 1.44
-				self.senator.timers.reload_exit_not_empty = 1.2
+				self.senator.timers.reload_empty = 2.2
+				self.senator.timers.reload_exit_empty = 0.44
+				self.senator.timers.reload_not_empty = 2.2
+				self.senator.timers.reload_exit_not_empty = 0.44
 				self.senator.timers.equip = 0.8
 				self.senator.use_unequip_swap = true
 				self.senator.swap_speed_multiplier = 0.65
@@ -36404,7 +36402,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.02,
 							{0.9, 1},
-							4
+							2
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_pis" then
@@ -36416,11 +36414,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.01,
 							{0.9, 1},
-							4
+							3
 						}
 					}
-					if weap.recategorize[2] and weap.recategorize[2] == "handcannon" then
-						weap.sads_mult = 0.6
+					if table.contains(weap.recategorize, "handcannon") then
+						weap.sads_mult = 0.4
 						weap.recoil_values = {
 							{ 80, 60 },
 							3,
@@ -36428,11 +36426,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							srm = {
 								-0.1,
 								{1, 1.2},
-								2
+								1
 							}
 						}
 					end
 				elseif weap.categories[1] == "flamethrower" then
+					weap.sads_mult = 0.4
 					weap.recoil_values = {
 						{ 80, 60 },
 						5,
@@ -36487,7 +36486,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.6,
 						srm = {
 							0.025,
-							{0.85, 1},
+							{0.8, 1},
 							2
 						}
 					}
@@ -36499,8 +36498,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.5,
 						srm = {
 							0.02,
-							{0.9, 1},
-							2
+							{0.8, 1},
+							3
 						}
 					}
 				elseif weap.recategorize[1] == "light_ar" then
@@ -36548,7 +36547,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.015,
 							{0.8, 1},
-							8
+							6
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_mg" then
@@ -36560,7 +36559,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.01,
 							{0.8, 1},
-							11
+							8
 						}
 					}
 				elseif weap.recategorize[1] == "miniguns" then
@@ -36572,7 +36571,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.015,
 							{0.7, 1},
-							15
+							11
 						}
 					}
 				elseif weap.recategorize[1] == "light_snp" then
@@ -36722,7 +36721,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 			pdw = 0.675,
 			typh = 0.8,
 			lmg = 0.6,
-				mmg = 0.95,
+				mmg = 1,
 			minigun = 0.55,
 		shotgun = 1.275, --Pickup is increased to compensate for the inconsistency of per-pellet damage
 			flamethrower = 0.7 / 1.275, --flamethrowers do not get the pickup bonus as they are not per-pellet based

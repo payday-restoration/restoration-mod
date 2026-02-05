@@ -164,7 +164,7 @@ tweak_data.shotgun = {
 		}
 
 tweak_data.smg = {
-	swap_bonus = 1.55,
+	swap_bonus = 1.6,
 	ads_move_speed_mult = 0.7,
 	hipfire_spread_mult = 0.6,
 	hipfire_moving_spread_mult = 0.7,

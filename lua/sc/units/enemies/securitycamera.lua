@@ -92,22 +92,23 @@ local function angular_difference(start_yaw, end_yaw, start_pitch, end_pitch)
 end
 
 SecurityCamera._stall_time = {1.5, 2.5}
+SecurityCamera._turn_rate = 24 -- degrees/s
 
 Hooks:PostHook(SecurityCamera, "init", "camerarot_init", function(self)
-	self._yaw = 0
-	self._pitch = 0
-
-	self._original_yaw = 0
-	self._original_pitch = 0
-
-	self._max_yaw = 60
-	self._max_pitch = 30
-
 	self._look_obj = self._unit:get_object(idstr_camera_lens)
 	self._yaw_obj = self._unit:get_object(idstr_camera_yaw)
 	self._pitch_obj = self._unit:get_object(idstr_camera_pitch)
 
-	self._turn_rate = 24 -- degrees/s
+	if self._yaw_obj and self._pitch_obj then
+		self._yaw = 0
+		self._pitch = 0
+
+		self._original_yaw = 0
+		self._original_pitch = 0
+
+		self._max_yaw = 60
+		self._max_pitch = 30
+	end
 end)
 
 Hooks:PostHook(SecurityCamera, "set_detection_enabled", "camerarot_set_detection_enabled", function(self, state)
@@ -172,8 +173,7 @@ function SecurityCamera:_update_camera_rotation(unit, t, dt)
 	end
 
 	local angle_diff = angular_difference(self._yaw, target_yaw, self._pitch, target_pitch)
-	local rate = self._initial_angle_diff and (self._initial_angle_diff / self._turn_duration) or self._turn_rate
-	local lerp_t = math.min((rate * dt) / angle_diff, 1)
+	local lerp_t = math.min((self._turn_rate * dt) / angle_diff, 1)
 
 	mrotation.set_yaw_pitch_roll(tmp_rot, self._yaw, self._pitch, 0)
 	mrotation.set_yaw_pitch_roll(tmp_rot2, target_yaw, target_pitch, 0)
@@ -228,13 +228,16 @@ end
 
 function SecurityCamera:set_target_yaw(yaw, duration)
 	self._target_yaw = yaw
-	self._initial_angle_diff = angular_difference(self._yaw, yaw, self._pitch, self._original_pitch)
-	self._turn_duration = duration or self._initial_angle_diff / self._turn_rate
+
+	local angle_diff = angular_difference(self._yaw, yaw, self._pitch, self._original_pitch)
+	if duration then -- client catchup
+		self._turn_rate = angle_diff / duration
+	end
 
 	if Network:is_server() then
 		local sync_yaw = math.round(255 * ((self._target_yaw + 180) / 360))
 
-		managers.network:session():send_to_peers_synched("sync_camera_rotation", self._unit, sync_yaw, self._turn_duration)
+		managers.network:session():send_to_peers_synched("sync_camera_rotation", self._unit, sync_yaw, duration or angle_diff / self._turn_rate)
 	else
 		self:chk_update_state()
 	end
@@ -359,8 +362,7 @@ Hooks:OverrideFunction(SecurityCamera, "set_update_enabled", SecurityCamera.chk_
 
 function SecurityCamera:stop_current_rotation(finished)
 	self._target_yaw = nil
-	self._turn_duration = nil
-	self._initial_angle_diff = nil
+	self._turn_rate = nil
 
 	if Network:is_server() then
 		self._stalled_until = finished and TimerManager:game():time() + math.rand(self._stall_time[1], self._stall_time[2]) or nil
@@ -368,15 +370,17 @@ function SecurityCamera:stop_current_rotation(finished)
 end
 
 Hooks:OverrideFunction(SecurityCamera, "apply_rotations", function (self, yaw, pitch, no_sync)
-	local yaw_obj = self._yaw_obj or self._unit:get_object(idstr_camera_yaw)
-	local original_yaw_rot = yaw_obj:local_rotation()
-	local new_yaw_rot = Rotation(180 + yaw, original_yaw_rot:pitch(), original_yaw_rot:roll())
+	if yaw and self._yaw ~= yaw then
+		local yaw_obj = self._yaw_obj or self._unit:get_object(idstr_camera_yaw)
+		local original_yaw_rot = yaw_obj:local_rotation()
+		local new_yaw_rot = Rotation(180 + yaw, original_yaw_rot:pitch(), original_yaw_rot:roll())
 
-	yaw_obj:set_local_rotation(new_yaw_rot)
+		yaw_obj:set_local_rotation(new_yaw_rot)
 
-	self._yaw = yaw
+		self._yaw = yaw
+	end
 
-	if pitch then
+	if pitch and self._pitch ~= pitch then
 		local pitch_obj = self._pitch_obj or self._unit:get_object(idstr_camera_pitch)
 		local original_pitch_rot = pitch_obj:local_rotation()
 		local new_pitch_rot = Rotation(original_pitch_rot:yaw(), pitch, original_pitch_rot:roll())
@@ -597,11 +601,8 @@ Hooks:PostHook(SecurityCamera, "load", "camerarot_load", function(self, data)
 		self:set_target_attention({ pos = data.attention_pos })
 	end
 
-	if data.original_yaw then
+	if data.original_yaw and data.original_pitch then
 		self._original_yaw = data.original_yaw
-	end
-
-	if data.original_pitch then
 		self._original_pitch = data.original_pitch
 	end
 end)

@@ -1,7 +1,7 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local death_wish_above = difficulty >= 7
-
+local surprise_cloaker = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or "units/payday2/characters/ene_spook_1/ene_spook_1")
 
 -- Without serious crowd control like multiple ECM feedback loops, it's suicidal to try and get all loot
 -- Team AI are excluded from PONR duration calculation
@@ -50,7 +50,7 @@ local optsCloaker_Hide_SO = {
 }
 local optsCloaker_01 = {
     enabled = false,
-    enemy = cloaker,
+    enemy = surprise_cloaker,
     on_executed = {
         { id = 400003, delay = 0}
     },

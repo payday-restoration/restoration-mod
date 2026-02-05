@@ -300,6 +300,10 @@ function CopDamage:_spawn_head_gadget(params)
 		return
 	end
 
+	if not params.position or params.rotation then
+		return
+	end
+
 	if self._head_gear_object then
 		if self._nr_head_gear_objects then
 			for i = 1, self._nr_head_gear_objects do

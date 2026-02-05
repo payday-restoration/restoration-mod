@@ -1939,18 +1939,19 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
 	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.concussion.max_amount = 3
-	self.projectiles.concussion.base_pickup_chance = 0.02
+	self.projectiles.concussion.base_pickup_chance = 0.03
 	self.projectiles.wpn_gre_electric.max_amount = 3
+	self.projectiles.wpn_gre_electric.base_pickup_chance = 0.02
 	self.projectiles.poison_gas_grenade.max_amount = 3
+	self.projectiles.poison_gas_grenade.base_pickup_chance = 0.02
 
 	self.projectiles.sticky_grenade.throw_shout = nil
 
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.expire_t = 0.9
 		self.projectiles.xmas_snowball.max_amount = 3
-		self.projectiles.xmas_snowball.base_cooldown_no_perk = true --flag to allow JOAT calcs
 		self.projectiles.xmas_snowball.base_cooldown = 35
-		self.projectiles.xmas_snowball.pickup_cooldown_t = 2.5
+		self.projectiles.xmas_snowball.pickup_cooldown_t = 3.5 --10~ pickups to gain back one immediately
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 

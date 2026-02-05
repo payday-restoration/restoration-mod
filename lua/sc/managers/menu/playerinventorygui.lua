@@ -2662,8 +2662,10 @@ function PlayerInventoryGui:_update_info_throwable(name)
 	local text_string = ""
 
 	if projectile_data then
-		local is_perk_throwable = tweak_data.blackmarket.projectiles[throwable_id].base_cooldown and not tweak_data.blackmarket.projectiles[throwable_id].base_cooldown_no_perk
-		local amount = is_perk_throwable and 1 or math.round(tweak_data.blackmarket.projectiles[throwable_id].max_amount *  managers.player:upgrade_value("player", "throwables_multiplier", 1))
+		local is_cooldown = projectile_data.base_cooldown
+		local is_perk_throwable = is_cooldown and not projectile_data.base_cooldown_no_perk
+		local throwables_multiplier = (not is_cooldown and managers.player:upgrade_value("player", "throwables_multiplier", 1)) or 1
+		local amount = is_perk_throwable and 1 or math.round(projectile_data.max_amount * throwables_multiplier)
 		local has_short_desc = managers.localization:exists(projectile_data.desc_id .. "_short")
 
 		text_string = text_string .. managers.localization:text(projectile_data.name_id) .. " (x" .. tostring(amount) .. ")" .. "\n\n"

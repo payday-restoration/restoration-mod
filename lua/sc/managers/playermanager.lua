@@ -1334,9 +1334,11 @@ function PlayerManager:get_max_grenades(grenade_id)
 
 	--Jack of all trades basic grenade count increase.
 	--MAY be source of grenade syncing issues due to interaction with get_max_grenades_by_peer_id(). Is worth investigating some time.
+	local is_cooldown = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown")
 	local is_perk_throwable = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown") and not tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown_no_perk")
-	if max_amount and not is_perk_throwable then
-		max_amount = math.ceil(max_amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
+	local throwables_multiplier = (not is_cooldown and self:upgrade_value("player", "throwables_multiplier", 1.0)) or 1
+	if max_amount and not is_perk_throwable then 
+		max_amount = math.ceil(max_amount * throwables_multiplier)
 	end
 	max_amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", max_amount)
 
@@ -1376,10 +1378,12 @@ function PlayerManager:_internal_load()
 		amount = self:get_grenade_amount(peer_id) or amount
 	end
 	
+	local is_cooldown = grenade.base_cooldown
 	local is_perk_throwable = grenade.base_cooldown and not grenade.base_cooldown_no_perk
+	local throwables_multiplier = (not is_cooldown and self:upgrade_value("player", "throwables_multiplier", 1)) or 1
 	if amount and not is_perk_throwable then --*Should* stop perk deck actives from being increased.
 		amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount) --Crime spree throwables mod.
-		amount = math.ceil(amount * self:upgrade_value("player", "throwables_multiplier", 1.0)) --JOAT Basic
+		amount = math.ceil(amount * throwables_multiplier) --JOAT Basic
 	end
 
 	self:_set_grenade({

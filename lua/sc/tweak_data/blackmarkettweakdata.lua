@@ -1950,6 +1950,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.expire_t = 0.9
 		self.projectiles.xmas_snowball.max_amount = 3
+		self.projectiles.xmas_snowball.base_cooldown_no_perk = true
 		self.projectiles.xmas_snowball.base_cooldown = 35
 		self.projectiles.xmas_snowball.pickup_cooldown_t = 3.5 --10~ pickups to gain back one immediately
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all

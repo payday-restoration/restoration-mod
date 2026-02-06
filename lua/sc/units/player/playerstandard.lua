@@ -893,7 +893,8 @@ PlayerStandard._primary_action_get_value = {
 			end
 
 			if weap_base:weapon_tweak_data().spin_up_semi then
-				if not self._spin_up_shoot and not self._anim_played then
+				local result = not self._already_fired and weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
+				if result == nil and not self._spin_up_shoot and not self._anim_played then
 					self._anim_played = true
 					local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
 					local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
@@ -901,7 +902,7 @@ PlayerStandard._primary_action_get_value = {
 						weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( weap_base._ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
 					end
 				end
-				return not self._already_fired and weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
+				return result
 			else
 				if (trigger_pressed or self._queue_fire) and start_shooting then
 					return weap_base:trigger_pressed(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
@@ -968,7 +969,10 @@ end
 
 function PlayerStandard:_check_action_primary_attack(t, input, params)
 	local new_action, action_wanted = nil
-	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and (input.btn_primary_attack_state or input.btn_primary_attack_release or self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
+	local weap_unit = self._equipped_unit
+	local weap_base = weap_unit and weap_unit:base()
+	local fire_mode = weap_unit and weap_base:fire_mode()
+	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and ((input.btn_primary_attack_state and not (self._already_fired and fire_mode == "single")) or input.btn_primary_attack_release or self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
 
 	if action_wanted then
 		local action_forbidden = nil
@@ -987,11 +991,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 			self._ext_inventory:equip_selected_primary(false)
 
-			local weap_unit = self._equipped_unit
-
 			if weap_unit then
-				local weap_base = weap_unit:base()
-				local fire_mode = weap_base:fire_mode()
 				local fire_on_release = weap_base:fire_on_release()
 				--Resmod custom vars
 				local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
@@ -1188,7 +1188,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 					local fired = nil
 					local fired_func = self._primary_action_get_value.fired[fire_mode]
-					local spin_up_semi = weap_base:weapon_tweak_data().spin_up_semi
+					local spin_up_semi = not (self._already_fired and input.btn_primary_attack_state) and weap_base:weapon_tweak_data().spin_up_semi
 					local spin_up_check = (not spin_up_semi and fire_mode ~= "single") or spin_up_semi
 
 					if fired_func then

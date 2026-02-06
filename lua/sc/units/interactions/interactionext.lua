@@ -363,7 +363,7 @@ function IntimitateInteractionExt:interact(player)
 		self:remove_interact()
 		self:set_active(false)
 		player:sound():play("cable_tie_apply")
-		self._unit:brain():on_tied(player, false, managers.player:has_category_upgrade("player", "civilians_dont_flee")) --No longer uses super_syndrome.
+		self._unit:brain():on_tied(player, false, not managers.player:has_category_upgrade("player", "civilians_dont_flee")) --No longer uses super_syndrome.
 	end
 end
 

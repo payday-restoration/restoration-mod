@@ -5818,7 +5818,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Jack of all Trades
 				["menu_jack_of_all_trades_beta_sc"] = "팔방미인",
-				["menu_jack_of_all_trades_beta_desc_sc"] = "베이식: #{owned}#$basic##\n투척물 소지 개수가 #{skill_color}#$skill_value_b1##개 증가합니다.\n\n#{risk}#주의: 특성 덱 투척물에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#이제 두 번째 설치형 장비를 소지할 수 있습니다.## 장비 전환 키인 #{skill_color}#$BTN_CHANGE_EQ## 키를 눌러 두 장비 사이를 전환할 수 있습니다.\n\n보조 장비는 일반 소지량의 #{important_1}#50%##를 소지하며, 최소 #{skill_color}#1##개까지 소지합니다.",
+				["menu_jack_of_all_trades_beta_desc_sc"] = "베이식: #{owned}#$basic##\n투척물 소지 개수가 #{skill_color}#$skill_value_b1##개 증가합니다.\n\n#{risk}#주의: 재생되는 투척물이나 특성 덱 투척물에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#이제 두 번째 설치형 장비를 소지할 수 있습니다.## 장비 전환 키인 #{skill_color}#$BTN_CHANGE_EQ## 키를 눌러 두 장비 사이를 전환할 수 있습니다.\n\n보조 장비는 일반 소지량의 #{important_1}#50%##를 소지하며, 최소 #{skill_color}#1##개까지 소지합니다.",
 
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "타워 디펜스",

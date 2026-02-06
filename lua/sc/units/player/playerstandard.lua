@@ -973,6 +973,9 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 	local weap_base = weap_unit and weap_unit:base()
 	local fire_mode = weap_unit and weap_base:fire_mode()
 	local in_burst_mode = weap_unit and weap_base:in_burst_mode()
+	if input.btn_primary_attack_press then
+		self._already_fired = nil
+	end
 	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and ((input.btn_primary_attack_state and not (self._already_fired and fire_mode == "single" and not in_burst_mode )) or input.btn_primary_attack_release or self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
 
 	if action_wanted then

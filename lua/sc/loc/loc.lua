@@ -2618,7 +2618,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--AMR16--
 				["bm_wp_upg_i_m16a2"] = "Crosskill B3 Kit",
 				["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst## fire rate is #{skill_color}#increased to 950 RPM.## ",
-				["bm_wp_upg_i_m16a2_famas_desc"] = "Trade full-auto for an improved #{skill_color}#3-round burst## setting and boosted damage.",
+				["bm_wp_upg_i_m16a2_famas_desc"] = "Trade full-auto for an improved #{skill_color}#3-round burst## setting with boosted damage.",
+				--Dredge--
+				["bm_wp_upg_i_dredge"] = "Dredge Burst Kit",
+				["bm_wp_upg_i_dredge_desc"] = "Trade full-auto for a rapid-fire #{skill_color}#6-round auto-burst.##",
 				--G3A3--
 				["bm_wp_upg_i_g3"] = "SG-3 Kit",
 				["bm_wp_upg_i_g3_desc"] = "Adds a 4-position fire selector, granting the weapon a #{skill_color}#3-round burst## setting.",

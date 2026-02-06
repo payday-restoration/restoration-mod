@@ -210,8 +210,10 @@ function restorationVoiceline:unload()
 
 	--Clear any active sources.
 	for _, source in pairs(self._active_sources) do
-		source:stop()
-		source:close()
+		if source and not source:is_closed() then
+			source:stop()
+			source:close()
+		end
 	end 
 	self._active_sources = {}
 

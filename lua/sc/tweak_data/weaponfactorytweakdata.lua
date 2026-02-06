@@ -8513,6 +8513,7 @@ end
 				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_atibal_reddot")
 				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_sig")
+				table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_i_dredge")
 
 				self.wpn_fps_lmg_m249_npc.uses_parts = deep_clone(self.wpn_fps_lmg_m249.uses_parts)
 				self.wpn_fps_lmg_m249_npc.override = deep_clone(self.wpn_fps_lmg_m249.override)
@@ -24940,6 +24941,43 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		},
 		stats = {
 			value = 0
+		},
+		forbids = {},
+		internal_part = true,
+		dlc = "sc"
+	}
+
+	--Dredge kit
+	self.parts.wpn_fps_upg_i_dredge = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_dredge",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		custom_stats = {
+			info_lock_burst = true,
+			burst_fire = {
+				count = 6,
+				delay = 0.166,
+				recoil_mult = 0.8,
+				last_recoil_mult = 0.9,
+				burst_default = true,
+				lock = true,
+				auto_burst = true,
+			},
+			rof_mult = 1.40243,
+			falloff_start_mult = 1,
+			falloff_end_mult = 1
+		},
+		stats = {
+			value = 5,
+			spread = 2,
+			extra_ammo = -50,
 		},
 		forbids = {},
 		internal_part = true,

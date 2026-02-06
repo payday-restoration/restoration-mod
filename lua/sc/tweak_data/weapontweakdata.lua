@@ -10143,6 +10143,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m249.shell_ejection = "_dmc/effects/shell_lmg_down"
 					self.m249.stats_modifiers = nil
 					self.m249.sounds.spin_start = "wp_m249_lever_release"
+					self.m249.fake_semi_anims = true
 					self.m249.spin_up_shoot = true
 					self.m249.spin_up_t = 0.08
 					self.m249.spin_down_t = 0.00000001
@@ -36371,7 +36372,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.smt_mult = 4
 					weap.smt_range = { 0.5, 0.9 }
 				end
-				weap.ene_hs_mult = 0.5
+				weap.ene_hs_mult = 0.65
 			end
 
 			if table.contains(weap.categories, "akimbo") then

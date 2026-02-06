@@ -972,7 +972,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 	local weap_unit = self._equipped_unit
 	local weap_base = weap_unit and weap_unit:base()
 	local fire_mode = weap_unit and weap_base:fire_mode()
-	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and ((input.btn_primary_attack_state and not (self._already_fired and fire_mode == "single")) or input.btn_primary_attack_release or self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
+	local in_burst_mode = weap_unit and weap_base:in_burst_mode()
+	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and ((input.btn_primary_attack_state and not (self._already_fired and fire_mode == "single" and not in_burst_mode )) or input.btn_primary_attack_release or self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
 
 	if action_wanted then
 		local action_forbidden = nil
@@ -1006,7 +1007,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 				local queue_exlude = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/QueuedShootingExclude") or 0.6
 				local queue_burst_exclude = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/QueuedShootingBurstExclude") or 0.3
 				local queue_mid_burst = weap_base._burst_delay and queue_burst_exclude and queue_burst_exclude > weap_base._burst_delay and restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/QueuedShootingMidBurst")
-				if queue_inputs and weap_base:in_burst_mode() then
+				if queue_inputs and in_burst_mode then
 					if queue_mid_burst and input.real_input_pressed then
 						self._queue_burst = true
 					end
@@ -1091,7 +1092,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							if queue_inputs then
 								if input.btn_primary_attack_press and fire_mode == "single" then
 									self._primary_attack_input_cache = nil
-									if not weap_base:in_burst_mode() and not weap_base:start_shooting_allowed() then
+									if not in_burst_mode and not weap_base:start_shooting_allowed() then
 										local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
 										local next_fire_last = weap_base._next_fire_allowed - next_fire
 										local next_fire_delay = weap_base._next_fire_allowed - next_fire_last
@@ -1120,7 +1121,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							if queue_inputs then
 								if input.btn_primary_attack_press and fire_mode == "single" then
 									self._primary_attack_input_cache = nil
-									if not weap_base:in_burst_mode() and not weap_base:start_shooting_allowed() then
+									if not in_burst_mode and not weap_base:start_shooting_allowed() then
 										local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
 										local next_fire_last = weap_base._next_fire_allowed - next_fire
 										local next_fire_delay = weap_base._next_fire_allowed - next_fire_last
@@ -1156,7 +1157,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					local weapon_tweak_data = weap_base:weapon_tweak_data()
 					local primary_category = weapon_tweak_data.categories[1]
 					--Resmod custom var(s)
-					local true_semi = fire_mode == "single" and not weap_base:in_burst_mode()
+					local true_semi = fire_mode == "single" and not in_burst_mode
 					local ignore_rof_mult_anims = weap_base and (weap_base._ignore_rof_mult_anims or (true_semi and weap_base._ignore_rof_mult_anims_semi) or weap_base._fire_rate_init_progress)
 
 					if not weapon_tweak_data.ignore_damage_multipliers then

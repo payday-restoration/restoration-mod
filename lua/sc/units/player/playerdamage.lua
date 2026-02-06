@@ -381,7 +381,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 
 	--Kingpin stuff.
 	self._ally_attack = self:is_friendly_fire(attacker_unit, true, variant == "explosion" or variant == "fire") --Filter out friendly fire from perk deck stuff and the armor_broken flag.
-	if not self._ally_attack then
+	if not self_damage and not self._ally_attack then
 		self:_check_chico_heal(attack_data)
 	end
 
@@ -1969,7 +1969,7 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 		local pm = managers.player
 
 		if self:get_real_armor() <= 0 then
-			if not self._ally_attack then
+			if not self_damage and not self._ally_attack then
 				if not self._armor_broken then
 					self._armor_broken = true --notifies ex-pres when armor has broken to get around dumb interaction with bullseye (but only if the last shot taken was not friendly fire).
 					if pm:has_category_upgrade("player", "scaling_armor_break_grace") then

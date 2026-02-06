@@ -4070,7 +4070,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 								camera_shake_max_mul = 2
 							}
 							managers.explosion:play_sound_and_effects(col_ray.position, col_ray.normal, exp_range, effect_params)
-							managers.explosion:give_local_player_dmg(col_ray.position, exp_range, exp_dmg, self._unit, curve_pow)
+							managers.explosion:give_local_player_dmg(col_ray.position, exp_range, exp_dmg, self._unit, curve_pow, true)
 							managers.explosion:detect_and_give_dmg({
 								hit_pos = col_ray.position,
 								range = exp_range,

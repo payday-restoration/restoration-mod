@@ -5117,7 +5117,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.model24.stats.cleave = 1
 		self.melee_weapons.model24.stats.raycasts = 15
 		self.melee_weapons.model24.explosion_chance = 0.05
-		self.melee_weapons.model24.explosion_curve_pow = 0.5
+		self.melee_weapons.model24.explosion_curve_pow = 0
 		self.melee_weapons.model24.explosion_damage = 60
 		self.melee_weapons.model24.explosion_range = 500
 		self.melee_weapons.model24.stats.speed_mult = 1.18

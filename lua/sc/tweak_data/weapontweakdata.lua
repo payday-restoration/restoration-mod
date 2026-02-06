@@ -36372,7 +36372,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.smt_mult = 4
 					weap.smt_range = { 0.5, 0.9 }
 				end
-				weap.ene_hs_mult = 0.65
+				if weap.stats and weap.stats.damage < 30 then
+					weap.ene_hs_mult = 0.65
+				else
+					weap.ene_hs_mult = 0.5
+				end
 			end
 
 			if table.contains(weap.categories, "akimbo") then

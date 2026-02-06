@@ -24461,7 +24461,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ammo_pickup_min_mul = 1.294871,
 			ammo_pickup_max_mul = 1.294871,
 			movement_speed_add = 0.05,
-			sms = 1.05882
+			sms = 1.05882,
+			ene_hs_mult_add = 0.15
 		},
 		override = {
 			wpn_fps_ass_74_body_upperreceiver = {

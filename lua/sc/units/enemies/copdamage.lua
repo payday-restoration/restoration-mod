@@ -598,6 +598,11 @@ function CopDamage:damage_fire(attack_data)
 			}
 			self._player_damage_ratio = 0
 		else
+			if head then
+				-- This feels... weird, but flames can technically headshot, I guess!
+				managers.player:on_lethal_headshot_dealt(attack_data.attacker_unit, attack_data)
+			end
+
 			result = {
 				type = "death",
 				variant = attack_data.variant
@@ -1791,6 +1796,8 @@ function CopDamage:damage_melee(attack_data)
 			attack_data.damage_effect = self._health
 
 			if head then
+				managers.player:on_lethal_headshot_dealt(attack_data.attacker_unit, attack_data)
+
 				if table_contains(grenadier_smash, self._unit:name()) then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else

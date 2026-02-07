@@ -13649,6 +13649,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.saiga.timers.reload_exit_not_empty = 0.96
 
 					--VD-12 (SKO12)
+						self.sko12.categories = {
+							"shotgun",
+							"shotgun_light"
+						}
 						self.sko12.use_data.selection_index = 2
 						self.sko12.rays = 8
 						self.sko12.AMMO_MAX = 60
@@ -13696,6 +13700,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Steakout (AA-12)
 						self.aa12.categories = {
 							"shotgun",
+							"shotgun_light",
 							"shotgun_light_semi"
 						}
 						self.aa12.rays = 8
@@ -13808,9 +13813,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.spas12.fire_mode_data.fire_rate = 0.25
 						self.spas12.BURST_FIRE = {
 							count = 2,
-							delay = 0.25,
+							delay = 0.4,
 							rof_mult = 5,
-							spread_mult = 3,
+							spread_mult = 4,
 							recoil_mult = 0.25,
 							last_recoil_mult = 1.35
 						}
@@ -13991,6 +13996,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Judge
 						self.judge.categories = {
 							"shotgun",
+							"shotgun_light",
+							"shotgun_light_semi",
 							"shotgun_light_pistol"
 						}
 						self.judge.fire_mode_data.fire_rate = 0.2
@@ -14033,6 +14040,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_judge.categories = {
 							"akimbo",
 							"shotgun",
+							"shotgun_light",
+							"shotgun_light_semi",
 							"shotgun_light_pistol"
 						}
 						self.x_judge.fire_mode_data.fire_rate = 0.2
@@ -15969,6 +15978,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 
 				if self.amr12 then --Gambyt's AMR 12G Shotgun
+					self.amr12.categories = { "shotgun", "shotgun_light" }
 					self.amr12.recategorize = { "light_shot" }
 					self.amr12.damage_type = "shotgun"
 					self.amr12.damage_type_single_ray = "sniper"
@@ -28832,7 +28842,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.vecho then
 				self.vecho.categories = {
-					"shotgun"
+					"shotgun",
+					"shotgun_light"
 				}
 				self.vecho.recategorize = { "light_shot" }
 				self.vecho.damage_type = "shotgun"
@@ -31282,7 +31293,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.fsa12 then
 				self.fsa12.recategorize = { "light_shot" }
-				self.fsa12.categories = { "shotgun" }
+				self.fsa12.categories = { "shotgun", "shotgun_light" }
 				self.fsa12.damage_type = "shotgun"
 				self.fsa12.damage_type_single_ray = "sniper"
 				self.fsa12.tactical_reload = 1
@@ -31395,7 +31406,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.or12 then
 				self.or12.recategorize = { "light_shot" }
-				self.or12.categories = { "shotgun" }
+				self.or12.categories = { "shotgun", "shotgun_light" }
 				self.or12.damage_type = "shotgun"
 				self.or12.damage_type_single_ray = "sniper"
 				self.or12.tactical_reload = 1
@@ -32657,7 +32668,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.senator.kick = self.stat_info.kick_tables.even_recoil
 				self.senator.kick_pattern = {
 					{0, self.stat_info.kick_tables.horizontal_recoil},
-					{2, self.stat_info.kick_tables.right_kick}
+					{2, self.stat_info.kick_tables.even_recoil}
 				}
 				self.senator.supported = true
 				self.senator.ads_speed = 0.220
@@ -32668,8 +32679,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.senator.stats = {
 					damage = 45,
-					spread = 67,
-					recoil = 17,
+					spread = 68,
+					recoil = 11,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 25,
@@ -36326,10 +36337,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
 				weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
 				if weap.recategorize and weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then
-					if weap.recategorize[1] == "light_shot" and not table.contains(weap.categories, "shotgun_light") then
-						table.insert(weap.categories, "shotgun_light")
-						if not table.contains(weap.categories, "shotgun_light_semi") and weap.CAN_TOGGLE_FIREMODE ~= true and weap.FIRE_MODE == "single" then
-							table.insert(weap.categories, "shotgun_light_semi")
+					if weap.recategorize[1] == "light_shot" then
+						if not table.contains(weap.categories, "shotgun_light") then
+							table.insert(weap.categories, "shotgun_light")
+							if not table.contains(weap.categories, "shotgun_light_semi") and weap.CAN_TOGGLE_FIREMODE ~= true and weap.FIRE_MODE == "single" then
+								table.insert(weap.categories, "shotgun_light_semi")
+							end
 						end
 						weap.ene_hs_mult = table.contains(weap.categories, "shotgun_auto") and 0.35 or 0.5
 					elseif weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then

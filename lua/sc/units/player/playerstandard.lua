@@ -3696,7 +3696,9 @@ function PlayerStandard:full_steelsight()
 end
 
 function PlayerStandard:is_full_steelsight()
-	return self._state_data.in_full_steelsight
+	local result = ((self._state_data.in_full_steelsight and not self._spread_stun_t) and true) or nil
+	self._state_data.in_full_steelsight = result
+	return result
 end
 
 
@@ -4251,7 +4253,7 @@ end
 
 --Now also returns steelsight information. Used for referencing spread values to give steelsight bonuses.
 function PlayerStandard:get_movement_state()
-	if not self._spread_stun_t and self._state_data.in_steelsight and self._state_data.in_full_steelsight then
+	if self._state_data.in_steelsight and self._state_data.in_full_steelsight then
 		return self._moving and "moving_steelsight" or "steelsight"
 	end
 

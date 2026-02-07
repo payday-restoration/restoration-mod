@@ -126,17 +126,18 @@ tweak_data.shotgun = {
 		}
 			tweak_data.shotgun_light_pistol = {
 				ads_moving_recoil = 1.2,
-				ads_moving_spread_mult = 1.35 / tweak_data.shotgun.ads_moving_spread_mult,
+				ads_moving_spread_mult = 1.2 / tweak_data.shotgun.ads_moving_spread_mult,
 				ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
 				swap_bonus = 2.1,
-				hipfire_spread_mult = 1.4 / (tweak_data.shotgun_light.hipfire_spread_mult * tweak_data.shotgun_light_semi.hipfire_spread_mult)
+				hipfire_moving_spread_mult = 1.6 / (tweak_data.shotgun_light.hipfire_spread_mult * tweak_data.shotgun_light_semi.hipfire_spread_mult),
+				hipfire_spread_mult = 1.5 / (tweak_data.shotgun_light.hipfire_spread_mult * tweak_data.shotgun_light_semi.hipfire_spread_mult)
 			}
 	tweak_data.shotgun_heavy = {
 		hipfire_spread_mult = 0.65,
 	}
 			tweak_data.shotgun_heavy_pistol = {
 				ads_moving_recoil = 1.2,
-				ads_moving_spread_mult = 1.35 / tweak_data.shotgun.ads_moving_spread_mult,
+				ads_moving_spread_mult = 1.2 / tweak_data.shotgun.ads_moving_spread_mult,
 				ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
 				swap_bonus = 2.1,
 				hipfire_spread_mult = 1.1 / tweak_data.shotgun_heavy.hipfire_spread_mult
@@ -146,7 +147,7 @@ tweak_data.shotgun = {
 	}
 		tweak_data.shotgun_break_pistol = {
 			ads_moving_recoil = 1.2,
-			ads_moving_spread_mult = 1.35 / tweak_data.shotgun.ads_moving_spread_mult,
+			ads_moving_spread_mult = 1.2 / tweak_data.shotgun.ads_moving_spread_mult,
 			ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
 			swap_bonus = 2.1,
 			hipfire_spread_mult = 1.5 / tweak_data.shotgun_break.hipfire_spread_mult

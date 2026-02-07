@@ -2545,7 +2545,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--AMR16--
 				["bm_wp_upg_i_m16a2"] = "Crosskill B3 키트",
 				["bm_wp_upg_i_m16a2_desc"] = "자동 사격을 #{skill_color}#3점사##로 대체합니다. #{risk}#점사## 속도가 #{skill_color}#950 RPM으로 증가합니다.## ",
-				["bm_wp_upg_i_m16a2_famas_desc"] = "자동 사격을 개선된 #{skill_color}#3점사##로 대체되고 피해량이 증가합니다.",
+				["bm_wp_upg_i_m16a2_famas_desc"] = "자동 사격을 피해량이 개선된 #{skill_color}#3점사##로 대체합니다.",
+				--Dredge--
+				["bm_wp_upg_i_dredge"] = "Dredge 점사 키트",
+				["bm_wp_upg_i_dredge_desc"] = "자동 사격을 빠른 연사 속도를 가진 #{skill_color}#6발 자동 점사##로 대체합니요.",	
 				--G3A3--
 				["bm_wp_upg_i_g3"] = "SG-3 키트",
 				["bm_wp_upg_i_g3_desc"] = "4단계 사격 선택기를 추가하여 무기에 #{skill_color}#3점사## 설정을 추가합니다.",

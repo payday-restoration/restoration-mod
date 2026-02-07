@@ -40,6 +40,13 @@ function CopLogicIntimidated._do_tied(data, aggressor_unit)
 		data.unit:interaction():set_active(true, true, false)
 	end
 
+	-- Show when intimidated guards will increase suspicion.
+	if not data.brain:is_pager_started() and managers.groupai:state():whisper_mode() and not managers.mutators:modify_value("CopMovement:VanillaPoliceCall", false) then
+		managers.enemy:register_intimidated_guard(data.unit, data.t)
+		data.unit:interaction():set_tweak_data("intimidated_guard_checkin")
+		data.unit:interaction():set_active(true, true, false)
+	end
+
 	if data.unit:unit_data().mission_element then
 		data.unit:unit_data().mission_element:event("tied", data.unit)
 	end	

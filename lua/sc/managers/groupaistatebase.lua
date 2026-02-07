@@ -1028,9 +1028,41 @@ function GroupAIStateBase:update(t, dt)
 	if self._last_detection_mul and self._last_detection_mul ~= self._old_guard_detection_mul_raw and Network:is_server() then 
 		LuaNetworking:SendToPeers("restoration_sync_level_suspicion",tostring(self._old_guard_detection_mul_raw) .. ":" .. tostring(self._weapons_hot_threshold))
 	end
-			
 	
-	
+	-- Update intimidated guards in stealth to check in with the pager operators
+	if is_whisper_mode and Network:is_server() then
+		-- You cannot use # to check the length of a table with non-sequential keys, but still, I only wanna dirty
+		-- the interaction text once per run through the intimidated guards.
+		local _has_dirtied_text_once_per_check = false
+
+		for index, data in pairs(managers.enemy:all_intimidated_guards()) do
+			local vanilla_behaviour = managers.mutators:modify_value("CopMovement:VanillaPoliceCall", false)
+			local potential_sus_increase = math.max(math.min((tweak_data.stealth_intimidiated_checkin.limit * alarm_threshold) - level_suspicion, tweak_data.stealth_intimidiated_checkin.penalty * alarm_threshold), 0)
+			local time_since_intimidation = t - data.t
+
+			if not vanilla_behaviour and potential_sus_increase > 0 and time_since_intimidation > tweak_data.stealth_intimidiated_checkin.time then
+				self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + potential_sus_increase
+				self._guard_detection_mul_raw = self._old_guard_detection_mul_raw
+				self._decay_target = self._old_guard_detection_mul_raw * 0.75
+				self._guard_delay_deduction = self._guard_delay_deduction + potential_sus_increase
+				self:_delay_whisper_suspicion_mul_decay()
+
+				data.t = data.t + time_since_intimidation
+			end
+
+			managers.enemy:update_intimidated_guard_hints(index, tweak_data.stealth_intimidiated_checkin.time - time_since_intimidation, potential_sus_increase)
+
+			if potential_sus_increase == 0 and data.unit:interaction() and data.unit:interaction().tweak_data == "intimidated_guard_checkin" then
+				data.unit:interaction():set_tweak_data("intimidated_guard_checkin_pointless")
+			end
+
+			if alive(managers.interaction:active_unit()) and not _has_dirtied_text_once_per_check then
+				managers.interaction:active_unit():interaction():set_text_dirty(true)
+				_has_dirtied_text_once_per_check = true
+			end
+		end
+	end
+
 	if is_whisper_mode then
 		local warning_1_threshold = self._weapons_hot_threshold * 0.25
 		local warning_2_threshold = self._weapons_hot_threshold * 0.5

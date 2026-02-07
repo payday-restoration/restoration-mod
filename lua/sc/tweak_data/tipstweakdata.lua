@@ -500,6 +500,18 @@ function TipsTweakData:init()
 			category = "stealth_res"
 		},
 		{
+			cat_index = 22,
+			image = "enemy_guards",
+			consoles = true,
+			category = "stealth_res"
+		},
+		{
+			cat_index = 23,
+			image = "enemy_guards",
+			consoles = true,
+			category = "stealth_res"
+		},
+		{
 			cat_index = 1,
 			image = "general_enforcer",
 			consoles = true,

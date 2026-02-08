@@ -1132,6 +1132,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		self._use_vapor_trail = self:weapon_tweak_data().use_vapor_trail
 		self._use_sniper_trail = self:weapon_tweak_data().use_sniper_trail
+		self._is_beam = self:weapon_tweak_data().is_beam
 
 		self._use_silenced_muzzleflash = nil
 

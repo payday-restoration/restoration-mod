@@ -32540,6 +32540,82 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 			end
 
+			if self.las5 then
+				self.las5.categories = {
+					"assault_rifle",
+					"sweet_liberty",
+					"sweet_liberty_las",
+					"battery"
+				}
+				self.las5.recategorize = {"light_ar"}
+				self.las5.damage_type = "assault_rifle"
+				self.las5.upgrade_blocks = nil
+				self.las5.ignore_damage_upgrades = nil
+				self.las5.CLIP_AMMO_MAX = 100
+				self.las5.AMMO_MAX = self.las5.CLIP_AMMO_MAX * 5
+				self.las5.ammo_ratio = 2
+				self.las5.sms = 0.5
+				self.las5.fire_mode_data.fire_rate = 0.08
+				self.las5.BURST_FIRE = false
+				self.las5.CAN_TOGGLE_FIREMODE = false
+				self.las5.FIRE_MODE = "auto"
+				self.las5.kick = self.stat_info.kick_tables.even_recoil
+				self.las5.supported = true
+				self.las5.keep_ammo = 0
+				self.las5.ads_speed = 0.320
+				self.las5.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 5000,
+					min_mult = 0.35714
+				}
+				self.las5.stats = {
+					damage = 14,
+					spread = 101,
+					recoil = 101,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 22,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 25
+				}
+				self.las5.stats_modifiers = nil
+				self.las5.panic_suppression_chance = 0.05
+				self.las5.shake.bypass_global_shake = true
+				self.las5.shake.fire_multiplier = 0.25
+				self.las5.shake.fire_steelsight_multiplier = -0.25
+				self.las5.rays = nil
+				self.las5.nato = nil
+				self.las5.object_damage_mult = 0.25
+				self.las5.spin_up_t = 0.25
+				self.las5.spin_down_t = 0.0001
+				self.las5.muzzleflash = "effects/particles/weapons/laser_trail_muzzle"
+				self.las5.use_sniper_trail = true
+				self.las5.is_beam = true
+				self.las5.trail_effect = "effects/particles/weapons/laser_trail_vector2"
+				self.las5.timers.reload_exit_not_empty = 1.87
+				self.las5.timers.reload_exit_empty = 1.87
+				self.las5.sounds.use_fix = nil
+				self.las5.sounds.no_fix = true
+				self.las5.sounds.magazine_empty = "wp_sentrygun_swap_ammo"
+				self.las5.sounds.charge_start = nil
+				self.las5.sounds.spin_start = "scythe_cooloff"
+				self.las5.sounds.spin_end = "swatturret_spin_stop"
+				self.las5.recoil_values = {
+					{ 80, 60 },
+					7.5,
+					0.6,
+					srm = {
+						1,
+						{0.0, 0},
+						0
+					}
+				}
+			end
+
 			if self.las58 then
 				self.las58.categories = {"pistol", "handcannon", "sweet_liberty", "battery"}
 				self.las58.recategorize = { "heavy_pis", "handcannon" }

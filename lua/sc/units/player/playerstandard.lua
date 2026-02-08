@@ -843,6 +843,7 @@ PlayerStandard._primary_action_funcs = {
 		end
 	}
 }
+
 PlayerStandard._primary_action_get_value = {
 	chk_start_fire = {
 		default = function (self, t, input, params, weap_unit, weap_base)
@@ -959,9 +960,9 @@ PlayerStandard._primary_action_get_value = {
 		end
 	}
 }
-function PlayerStandard:_chk_action_stop_shooting(new_action, input)
+function PlayerStandard:_chk_action_stop_shooting(new_action, input, params)
 	if not new_action then
-		self._already_fired = nil
+		self._already_fired = not params and not input.btn_primary_attack_press and input.btn_primary_attack_state or nil
 		self._spin_up_shoot = nil
 		self:_check_stop_shooting()
 	end
@@ -973,7 +974,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 	local weap_base = weap_unit and weap_unit:base()
 	local fire_mode = weap_unit and weap_base:fire_mode()
 	local in_burst_mode = weap_unit and weap_base:in_burst_mode()
-	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and ((input.btn_primary_attack_state and not (self._already_fired and fire_mode == "single" and not in_burst_mode )) or input.btn_primary_attack_release or self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
+	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and ((input.btn_primary_attack_state and not (not params and self._already_fired and fire_mode == "single" and not in_burst_mode )) or input.btn_primary_attack_release or self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
 
 	if action_wanted then
 		local action_forbidden = nil
@@ -1466,7 +1467,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 		end
 	end
 
-	self:_chk_action_stop_shooting(new_action, input)
+	self:_chk_action_stop_shooting(new_action, input, params)
 
 	return new_action
 end

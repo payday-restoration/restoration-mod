@@ -44058,6 +44058,74 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
+		if self.parts.wpn_fps_scythe_m_heatsink_std then
+			self.parts.wpn_fps_scythe_laser.supported = true
+			self.parts.wpn_fps_scythe_laser.no_cull = true
+			self.parts.wpn_fps_scythe_laser.stats = { value = 0 }
+			self.parts.wpn_fps_scythe_laser.custom_stats = {
+				bullet_class = "ScytheLaserWeaponBase",
+				ignore_statistic = true,
+				ignore_damage_upgrades = false,
+				dot_data_name = "ammo_dragons_breath_auto"
+			}
+
+			self.parts.wpn_fps_scythe_m_heatsink_std.supported = true
+			self.parts.wpn_fps_scythe_m_heatsink_std.custom_stats = {
+				starwars = {
+					shut_up = true,
+					no_tracers = true,
+					regen_ammo_time = 1.75, --delay to start regen 
+					regen_rate = 8.5, --speed of regen per second
+					can_reload = true,
+					empty_no_regen = true, --no regen if mag is emptied
+					mag_regen = true --mag regens without using reserve ammo
+				}
+			}
+
+			self.parts.wpn_fps_scythe_m_heatsink_highcap.supported = true
+			self.parts.wpn_fps_scythe_m_heatsink_highcap.stats = {
+				total_ammo_mod = 237,
+				extra_ammo = 100,
+				concealment = -6
+			}
+			self.parts.wpn_fps_scythe_m_heatsink_highcap.custom_stats = {
+				ads_speed_mult = 1.2,
+				starwars = {
+					shut_up = true,
+					no_tracers = true,
+					regen_ammo_time = 2.75, --delay to start regen 
+					regen_rate = 4, --speed of regen per second
+					can_reload = true,
+					empty_no_regen = true, --no regen if mag is emptied
+					mag_regen = true --mag regens without using reserve ammo
+				}
+			}
+
+			self.parts.wpn_fps_scythe_m_heatsink_highdiss.supported = true
+			self.parts.wpn_fps_scythe_m_heatsink_highdiss.stats = {
+				total_ammo_mod = -203,
+				extra_ammo = -50,
+				concealment = 2
+			}
+			self.parts.wpn_fps_scythe_m_heatsink_highdiss.custom_stats = {
+				starwars = {
+					shut_up = true,
+					no_tracers = true,
+					regen_ammo_time = 0.75, --delay to start regen 
+					regen_rate = 16.5, --speed of regen per second
+					can_reload = true,
+					empty_no_regen = true, --no regen if mag is emptied
+					mag_regen = true --mag regens without using reserve ammo
+				}
+			}
+
+
+			self.parts.wpn_fps_upg_hd2_1_5x_scope_las5.adds = { "wpn_fps_upg_hd2_1_5x_scope_las5_steelsight" }
+
+
+		end
+
+
 		if self.parts.wpn_fps_upg_hd2_pen_optic then
 			self.parts.wpn_fps_upg_hd2_pen_optic.stats = {
 				value = 1,
@@ -44379,7 +44447,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload = -4
 				}
 				self.parts.wpn_fps_sho_haymaker_m_30rnd_pd3.custom_stats = {
-					ads_speed_mult = 1.375
+					ads_speed_mult = 1.3
 				}
 
 			--STOCKs

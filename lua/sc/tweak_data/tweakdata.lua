@@ -348,6 +348,10 @@ tweak_data.sweet_liberty = {
 	ads_moving_spread_mult = 4,
 	ads_move_speed_mult = 0.8
 }
+tweak_data.sweet_liberty_las = {
+	min_spread_mult = 0.25, 
+	hipfire_spread_mult = 0.01
+}
 tweak_data.sweet_liberty_gl = {
 	ads_moving_recoil = 1.1,
 	ads_moving_spread_mult = 4,

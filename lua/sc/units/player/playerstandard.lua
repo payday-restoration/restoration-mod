@@ -4104,7 +4104,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			action_data.damage_effect = damage_effect
 			action_data.attacker_unit = self._unit
 			action_data.col_ray = col_ray
-			action_data.shield_knock = can_shield_knock --Silly vanilla code using branching when it doesn't need to.
+			action_data.shield_knock = shield_knock and can_shield_knock --Silly vanilla code using branching when it doesn't need to.
 			action_data.name_id = melee_entry
 			action_data.charge_lerp_value = charge_lerp_value
 			--Damage multipliers for certain melees (IE: Butterfly Knife).

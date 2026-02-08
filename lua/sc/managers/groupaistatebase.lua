@@ -1069,7 +1069,8 @@ function GroupAIStateBase:update(t, dt)
 			-- value of the overall suspicion meter visually, not as a percentage value of the internal numbers.
 			-- So this way, we get that back.
 
-			if potential_sus_increase == 0 and data.unit:interaction() and data.unit:interaction().tweak_data == "intimidated_guard_checkin" then
+			if potential_sus_increase == 0 and data.unit and alive(data.unit) and data.unit:base() and data.unit:interaction() and data.unit:interaction().tweak_data == "intimidated_guard_checkin" then
+				--  This is a comical amount of checks, but this goddamn if crashed the game with access violations so fucking much.
 				data.unit:interaction():set_tweak_data("intimidated_guard_checkin_pointless")
 			end
 

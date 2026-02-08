@@ -499,7 +499,7 @@ function IntimitateInteractionExt:_add_string_macros(macros)
 		macros.SUSP_IN = "0.0%"
 
 		if data and data.hints then 
-			macros.CHECKIN_TIME = tostring(math.ceil(data.hints.time_left))
+			macros.CHECKIN_TIME = tostring(math.ceil(math.max(0, data.hints.time_left)))
 			macros.SUSP_INC = tostring(math.floor(data.hints.sus_increase * 1000) / 10).."%" -- Multiplying by 100 gets a percentage value, doing it this way just lets us show one fractional.
 		end
 	end

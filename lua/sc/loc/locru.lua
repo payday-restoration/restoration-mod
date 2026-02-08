@@ -5890,7 +5890,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--ECM Overdrive--
 				["menu_cleaner_beta_sc"] = "Электровзлом",
-				["menu_cleaner_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nГенератор помех теперь #{skill_color}#может открывать некоторые электронные двери.##\n\nПИКОВЫЙ: #{owned}#$pro##\nДлительность генератора помех увеличена на #{skill_color}#25%.##\n\n##Пейджеры теперь удерживаются помехами.##",
+				["menu_cleaner_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nГенератор помех теперь #{skill_color}#может открывать некоторые электронные двери.##\n\nПИКОВЫЙ: #{owned}#$pro##\nДлительность генератора помех увеличена на #{skill_color}#25%,## #{risk}#пока вы не под стражей.##\n\n##Пейджеры теперь удерживаются помехами.##",
 
 				--Nimble--
 				["menu_second_chances_beta_sc"] = "Шустрые пальцы",
@@ -5902,7 +5902,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Spotter--
 				["menu_ecm_2x_beta_sc"] = "Шестерка",
-				["menu_ecm_2x_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВраги, отмеченные вами, получают на #{skill_color}#$skill_value_b1## больше урона на расстоянии дальше #{skill_color}#$skill_value_b2## метров.\n\nПИКОВЫЙ: #{owned}#$pro##\nВраги, отмеченные вами, получают на #{skill_color}#35%## больше урона с любого расстояния, от любого оружия.",
+				["menu_ecm_2x_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВраги, отмеченные вами, получают на #{skill_color}#$skill_value_b1## больше урона на расстоянии дальше #{risk}#$skill_value_b2## метров.\n\nПИКОВЫЙ: #{owned}#$pro##\nВраги, отмеченные вами, получают на #{skill_color}#$skill_value_p1## больше урона с любого расстояния, от любого оружия.",
 
 			--[[   ARTFUL DODGER SUBTREE   ]]--
 				--Duck and Cover--
@@ -5911,7 +5911,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Evasion--
 				["menu_awareness_beta_sc"] = "Атлет",
-				["menu_awareness_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее.\n\nУрон от падений с высоты уменьшен на #{skill_color}#$skill_value_b2.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы можете перезаряжаться во время бега.\n\n#{item_stage_2}#Чтобы отменять перезарядку при помощи кнопки бега, включите соответствующую опцию в настройках Restoration Mod.##",
+				["menu_awareness_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее.\n\nУрон от падений с высоты уменьшен на #{skill_color}#$skill_value_b2.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы можете #{skill_color}#перезаряжаться во время бега.##\n\n#{item_stage_2}#Чтобы отменять перезарядку при помощи кнопки бега, включите соответствующую опцию в настройках Restoration Mod.##",
 
 				--Deep Pockets--
 				["menu_thick_skin_beta_sc"] = "Широкие карманы",
@@ -5919,14 +5919,14 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Неуловимый",
-				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3##, до максимальных #{skill_color}#$skill_value_b4## скорости.\n\nВы передвигаетесь на #{skill_color}#$skill_value_b5## быстрее при прицеливании.\n#{risk}#Скорость передвижения в прицеливании не может превышать вашу максимальную.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#$skill_value_p1## быстрее за каждое #{skill_color}#$skill_value_p2## очко нагрузки ниже #{skill_color}#$skill_value_p3##, до максимальных #{skill_color}#$skill_value_p4## скорости.\n\nВаш уворот заполняется на #{skill_color}#$skill_value_p5## за каждую секунду бега и на #{skill_color}#$skill_value_p6## за каждую секунду на зиплайне.\n\nТеперь вы можете стрелять от бедра во время бега и не имеете задержки на стрельбу после бега.",
+				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3##, до максимальных #{skill_color}#$skill_value_b4## скорости.\n\nВы передвигаетесь на #{skill_color}#$skill_value_b5## быстрее при прицеливании.\n#{risk}#Скорость передвижения в прицеливании не может превышать вашу максимальную.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#$skill_value_p1## быстрее за каждое #{skill_color}#$skill_value_p2## очко нагрузки ниже #{skill_color}#$skill_value_p3##, до максимальных #{skill_color}#$skill_value_p4## скорости.\n\nВаш уворот заполняется на #{skill_color}#$skill_value_p5## за каждую секунду бега (в два раза меньше, если нет выносливости) и на #{skill_color}#$skill_value_p6## за каждую секунду на зиплайне.\n\nТеперь вы можете стрелять от бедра во время бега и не имеете задержки на стрельбу после бега.\n\n#{item_stage_2}#Настройка для сохранения анимаций бега находится в оружейных опциях Restoration Mod.##",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Заземленный",
-				["menu_insulation_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nШоковая атака Тазера больше не заставляет вас стрелять и имеет #{skill_color}#15%## шанс отскочить от вас, оглушая Тазера.\n\n#{risk}#Не отменяет штрафов на точность и урон во время шоковой атаки.##\n\nОтталкивание от попаданий по вам уменьшено на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВзаимодействие с вражеским Тазером в течение #{skill_color}#$skill_value_p1## секунд после шоковой атаки контр-атакует его, нанося #{skill_color}#$skill_value_p2## урона его здоровью.\n\nЗамедление от атак Титановых Тазеров уменьшено на #{skill_color}#50%.##",
+				["menu_insulation_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nШоковая атака Тазера больше #{skill_color}#не заставляет вас стрелять## и имеет #{skill_color}#15%## шанс отскочить от вас, оглушая Тазера.\n\n#{risk}#Не отменяет штрафов на точность и урон во время шоковой атаки.##\n\nОтталкивание от попаданий по вам уменьшено на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВзаимодействие с вражеским Тазером в течение #{skill_color}#$skill_value_p1## секунд после шоковой атаки производит контратаку, нанося #{skill_color}#$skill_value_p2## урона его здоровью.\n\nЗамедление и его длительность от атак Титановых Тазеров уменьшено на #{skill_color}#50%.##\n",
 
 				--Sneaky Bastard--
-				["menu_jail_diet_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#$skill_value_b1## очко уворота за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3## до максимальных #{skill_color}#$skill_value_b4## уворота.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете #{skill_color}#$skill_value_b1## очко уворота за каждое #{skill_color}#$skill_value_p1## очко нагрузки ниже #{skill_color}#$skill_value_b3## до максимальных #{skill_color}#$skill_value_b4## уворота.\n\nКогда ваша броня ломается, следующий уворот #{skill_color}#восстанавливает вашу броню в количестве, равное вашему увороту##, и #{skill_color}#$skill_value_p2## вашего здоровья. \nЭто может произойти только раз в #{important_1}#$skill_value_p3## секунд; пока ваша броня сломана, каждый уворот сокращает время на #{skill_color}#$skill_value_p4## секунды.",
+				["menu_jail_diet_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#$skill_value_b1## очко уворота за каждые #{risk}#$skill_value_b2## очка нагрузки ниже #{risk}#$skill_value_b3## до максимальных #{skill_color}#$skill_value_b4## уворота.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете #{skill_color}#$skill_value_b1## очко уворота за каждое #{risk}#$skill_value_p1## очко нагрузки ниже #{risk}#$skill_value_b3## до максимальных #{skill_color}#$skill_value_b4## уворота.\n\nКогда ваша броня ломается, следующий уворот #{skill_color}#восстанавливает вашу броню в количестве, равное вашему увороту##, и #{skill_color}#$skill_value_p2## вашего здоровья. \nЭто может произойти только раз в #{important_1}#$skill_value_p3## секунд; пока ваша броня сломана, каждый уворот сокращает время на #{skill_color}#$skill_value_p4## секунды.",
 
 			--[[   SILENT KILLER SUBTREE   ]]--
 				--Second Wind
@@ -5939,19 +5939,19 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "Профессионал",
-				["menu_silence_expert_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь на #{skill_color}#$skill_value_b1## быстрее, а ваша задержка после бега уменьшена на #{skill_color}#$skill_value_b1##.\n\nПИКОВЫЙ: #{owned}#$pro##\nБонусы на прицеливание и задержку после бега увеличены еще на #{skill_color}#$skill_value_p1##.\n\nУбийство особых и титановых врагов огнестрельным оружием предоставляет дополнительную пачку патронов.",
+				["menu_silence_expert_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь на #{skill_color}#$skill_value_b1## быстрее, а ваша задержка после бега уменьшена на #{skill_color}#$skill_value_b1##.\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийство особых и титановых врагов огнестрельным оружием предоставляет дополнительную пачку патронов.",
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Удар исподтишка",
-				["menu_backstab_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nЕсли вам не наносится урон в течение #{skill_color}#$skill_value_b1## секунд, то вы получите #{skill_color}#$skill_value_b2## шанс критического попадания, пока по вам не нанесут урон.\n\nКритические попадания наносят на #{skill_color}#100%## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nКритический шанс теперь остается на #{skill_color}#$skill_value_p1## секунды после получения урона.",
+				["menu_backstab_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nЕсли вы не получаете урон в течение #{skill_color}#$skill_value_b1## секунд, то вы получите #{skill_color}#$skill_value_b2## шанс критического попадания. Бонус пропадает спустя #{skill_color}#$skill_value_b3## секунд после получения урона.\n\nКритические попадания наносят на #{skill_color}#100%## больше урона.\n#{risk}#Попадания от взрывов и периодическего урона## #{important_1}#не могут быть критическими.##\n\nПИКОВЫЙ: #{owned}#$pro##\nКритический шанс теперь остается на #{skill_color}#$skill_value_p1## секунды после получения урона.",
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "Чистильщик",
-				["menu_hitman_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы наносите на #{skill_color}#$skill_value_b1## больше урона по особым и элитным врагам.\n\n#{risk}#Не действует на ракетометы и гранатометы.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы наносите еще #{skill_color}#$skill_value_p1## дополнительного урона по особым и элитным врагам.\n\nУбийство врага в голову заполнит вашу полоску уворота на #{skill_color}#$skill_value_p2##; убийство сзади заполнят ее на #{skill_color}#$skill_value_p3##; этот эффект складывается с убийством в голову.\n\n#{risk}#Убийства при помощи## #{important_1}#взрывов, огня и при нанесении урона через время## #{risk}#не считаются.##",
+				["menu_hitman_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы наносите на #{skill_color}#$skill_value_b1## больше урона по особым и элитным врагам.\n\n#{risk}#Не действует на ракетометы и гранатометы.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы наносите еще #{skill_color}#$skill_value_p1## дополнительного урона по особым и элитным врагам.\n\nУбийство врага в голову заполнит вашу полоску уворота на #{skill_color}#$skill_value_p2##; убийство сзади заполнят ее на #{skill_color}#$skill_value_p3##; этот эффект складывается с убийством в голову.\n\n#{risk}#Убийства при помощи## #{important_1}#взрывов, огня и периодическего урона## #{risk}#не считаются.##",
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Подлый прием",
-				["menu_unseen_strike_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#$skill_value_b1## шанс критического попадания за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3##, до максимального шанса #{skill_color}#$skill_value_b4.##\n\nКритические попадания наносят на #{skill_color}#100%## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете #{skill_color}#$skill_value_p1## шанс критического попадания за каждое #{skill_color}#$skill_value_p2## очко нагрузки ниже #{skill_color}#$skill_value_p3##, до максимального шанса #{skill_color}#$skill_value_p4.##\n\nВаш шанс критического попадания увеличивается на #{skill_color}#$skill_value_p5## при атаках сзади.",
+				["menu_unseen_strike_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#$skill_value_b1## шанс критического попадания за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3##, до максимального шанса #{skill_color}#$skill_value_b4.##\n\nКритические попадания наносят на #{skill_color}#100%## больше урона.\n#{risk}#Попадания от взрывов и периодическего урона## #{important_1}#не могут быть критическими.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете #{skill_color}#$skill_value_p1## шанс критического попадания за каждое #{skill_color}#$skill_value_p2## очко нагрузки ниже #{skill_color}#$skill_value_p3##, до максимального шанса #{skill_color}#$skill_value_p4.##\n\nВаш шанс критического попадания увеличивается на #{skill_color}#$skill_value_p5## при атаках сзади.",
 
 		--[[   FUGITIVE   ]]--
 
@@ -6425,7 +6425,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Perk_Decks", function(loc
 	["menu_deck_kmerc_5"] = "Отстранись",
 	["menu_deck_kmerc_5_desc_sc"] = "Если у вас закончится здоровье, вы выживите с ##1## здоровьем и получите ##2## секунды неуязвимости.\nВо время неуязвимости нельзя бежать.\nЭтот эффект не может повториться, пока вы не вылечитесь до 100% здоровья.\n\nВы получаете на ##5%## больше здоровья.",
 	["menu_deck_kmerc_7"] = "Лечебный слой",
-	["menu_deck_kmerc_7_desc_sc"] = "Если ваша броня держится ##2## секунды, вы лечитесь на число равное ##1%## вашей максимальной брони каждые ##5## секунд, пока у вас есть броня.",
+	["menu_deck_kmerc_7_desc_sc"] = "Если в течение ##2## секунд у вас все еще есть броня, вы восстанавливаете здоровье, равное ##1%## вашей брони каждые ##5## секунд, пока ваша броня не будет сломана.",
 	["menu_deck_kmerc_9"] = "Сильная сторона",
 	["menu_deck_kmerc_9_desc_sc"] = "Когда вы получаете урон, который оставит вас с меньше чем ##30%## здоровья, вы восстанавливаете броню на ##50%## от полученного урона.\nЭффект имеет задержку в ##1## секунду и не может сработать одновременно с неуязвимостью от карты ##Отстранись##.",
 
@@ -6443,7 +6443,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Perk_Decks", function(loc
 	["menu_deck_liberator_7"] = "Проблемная личность",
 	["menu_deck_liberator_7_desc_sc"] = "Ваше здоровье увеличено на ##10%##.\n\nРегенерация здоровья от Инъектора теперь длится на ##2## секунды дольше.",
 	["menu_deck_liberator_9"] = "Внезапная сила",
-	["menu_deck_liberator_9_desc_sc"] = "Инъектор теперь восстанавливает дополнительно ##1## единицу здоровья каждую секунду.",
+	["menu_deck_liberator_9_desc_sc"] = "Инъектор теперь восстанавливает дополнительную ##единицу## здоровья каждую секунду.",
 
 	})
 end)

@@ -1056,6 +1056,11 @@ function GroupAIStateBase:update(t, dt)
 					self:_delay_whisper_suspicion_mul_decay()
 				end
 
+				if data.unit:sound() then
+					data.unit:sound():stop()
+					data.unit:sound():play(data.unit:brain():_get_radio_id("dsp_radio_fooled_1"), nil, true)
+				end
+
 				data.t = data.t + time_since_intimidation
 			end
 

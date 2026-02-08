@@ -1030,7 +1030,7 @@ function GroupAIStateBase:update(t, dt)
 	end
 	
 	-- Update intimidated guards in stealth to check in with the pager operators
-	if is_whisper_mode and Network:is_server() then
+	if is_whisper_mode then
 		-- You cannot use # to check the length of a table with non-sequential keys, but still, I only wanna dirty
 		-- the interaction text once per run through the intimidated guards.
 		local _has_dirtied_text_once_per_check = false
@@ -1041,16 +1041,18 @@ function GroupAIStateBase:update(t, dt)
 			local time_since_intimidation = t - data.t
 
 			if not vanilla_behaviour and potential_sus_increase > 0 and time_since_intimidation > tweak_data.stealth_intimidiated_checkin.time then
-				self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + potential_sus_increase
-				self._guard_detection_mul_raw = self._old_guard_detection_mul_raw
-				self._decay_target = self._old_guard_detection_mul_raw * 0.75
-				self._guard_delay_deduction = self._guard_delay_deduction + potential_sus_increase
-				self:_delay_whisper_suspicion_mul_decay()
+				if Network:is_server() then
+					self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + potential_sus_increase
+					self._guard_detection_mul_raw = self._old_guard_detection_mul_raw
+					self._decay_target = self._old_guard_detection_mul_raw * 0.75
+					self._guard_delay_deduction = self._guard_delay_deduction + potential_sus_increase
+					self:_delay_whisper_suspicion_mul_decay()
+				end
 
 				data.t = data.t + time_since_intimidation
 			end
 
-			managers.enemy:update_intimidated_guard_hints(index, tweak_data.stealth_intimidiated_checkin.time - time_since_intimidation, potential_sus_increase)
+			managers.enemy:update_intimidated_guard_hints(index, tweak_data.stealth_intimidiated_checkin.time - time_since_intimidation, potential_sus_increase / alarm_threshold)
 
 			if potential_sus_increase == 0 and data.unit:interaction() and data.unit:interaction().tweak_data == "intimidated_guard_checkin" then
 				data.unit:interaction():set_tweak_data("intimidated_guard_checkin_pointless")

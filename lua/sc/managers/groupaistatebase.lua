@@ -1037,10 +1037,17 @@ function GroupAIStateBase:update(t, dt)
 
 		for index, data in pairs(managers.enemy:all_intimidated_guards()) do
 			local vanilla_behaviour = managers.mutators:modify_value("CopMovement:VanillaPoliceCall", false)
-			local potential_sus_increase = math.max(math.min((tweak_data.stealth_intimidiated_checkin.limit * alarm_threshold) - level_suspicion, tweak_data.stealth_intimidiated_checkin.penalty * alarm_threshold), 0)
+			local potential_sus_increase = math.max(math.min((tweak_data.stealth_intimidiated_checkin.limit * alarm_threshold) - level_suspicion, tweak_data.stealth_intimidiated_checkin.penalty * alarm_threshold), 0) -- Effectively clamps the value between 0 and as many as needed to reach the limit. Couldn't actually use math.clamp because limit-current can be negative.
 			local time_since_intimidation = t - data.t
 
-			if not vanilla_behaviour and potential_sus_increase > 0 and time_since_intimidation > tweak_data.stealth_intimidiated_checkin.time then
+			local player_count = 1
+			if managers.network:session() then
+				player_count = table.size(managers.network:session():all_peers())
+			end
+			-- Theoretically supports big lobby mods if someone gets their jollies from 12 player stealth.
+			local time_til_checkin = tweak_data.stealth_intimidiated_checkin.time[math.clamp(player_count,1,#tweak_data.stealth_intimidiated_checkin.time)]
+
+			if not vanilla_behaviour and potential_sus_increase > 0 and time_since_intimidation > time_til_checkin then
 				if Network:is_server() then
 					self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + potential_sus_increase
 					self._guard_detection_mul_raw = self._old_guard_detection_mul_raw
@@ -1052,7 +1059,10 @@ function GroupAIStateBase:update(t, dt)
 				data.t = data.t + time_since_intimidation
 			end
 
-			managers.enemy:update_intimidated_guard_hints(index, tweak_data.stealth_intimidiated_checkin.time - time_since_intimidation, potential_sus_increase / alarm_threshold)
+			managers.enemy:update_intimidated_guard_hints(index, time_til_checkin - time_since_intimidation, potential_sus_increase / alarm_threshold)
+			-- potential_sus_increase needs to be divided by alarm_threshold, as the suspicion increase is stored as an actual percentage
+			-- value of the overall suspicion meter visually, not as a percentage value of the internal numbers.
+			-- So this way, we get that back.
 
 			if potential_sus_increase == 0 and data.unit:interaction() and data.unit:interaction().tweak_data == "intimidated_guard_checkin" then
 				data.unit:interaction():set_tweak_data("intimidated_guard_checkin_pointless")

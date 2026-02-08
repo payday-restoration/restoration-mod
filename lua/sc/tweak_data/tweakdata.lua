@@ -1099,13 +1099,13 @@ end
 --- When a guard is intimidated during stealth, every X seconds, they'll do a check-in with control.
 --- This simply means that every X seconds, every intimidated guard will increase the suspicion meter by a given amount.   
 --- @class StealthIntimidationCheckin
---- @field time number Defines how many seconds should there been between check-ins.
+--- @field time number[] Defines how many seconds should there been between check-ins based on player count, with the index representing the current amount of players.
 --- @field penalty number A number between 0 and 1 that increases the suspicion meter by this much during a check-in. Do note that this is in relation to what you visually see -- in code, the "maximum" isn't 1 / 100% for the suspicion meter, but you can treat this number as if it was (it'll get adjusted to to the suspicion meter maximum).
 --- @field limit number A number between 0 and 1 that defines a point past which check-ins cannot increase the suspicion meter. Same as with the `penalty` field -- treat this as if it *actually* meant a percentage of the suspicion meter, so 0.5 will *always* mean 50% of the suspicion meter, regardless of difficulty.
 
 --- @type StealthIntimidationCheckin
 tweak_data.stealth_intimidiated_checkin = {}
-tweak_data.stealth_intimidiated_checkin.time = 60
+tweak_data.stealth_intimidiated_checkin.time = {80, 70, 60, 50}
 
 if difficulty_index <= 4 then
 	-- This gameplay mechanic is turned off for difficulties below Overkill.

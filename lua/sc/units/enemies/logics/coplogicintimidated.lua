@@ -70,6 +70,10 @@ function CopLogicIntimidated._do_tied(data, aggressor_unit)
 	managers.groupai:state():on_criminal_suspicion_progress(nil, data.unit, nil)
 end
 
+Hooks.PostHook(CopLogicIntimidated, "on_enemy_weapons_hot", "res_on_enemy_weapons_hot", function(data)
+	managers.enemy:unregister_intimidated_guard(data.unit)
+end)
+
 -- Tweak hostage rescue conditions
 function CopLogicIntimidated.rescue_SO_verification(ignore_this, data, unit, ...)
 	if unit:movement():cool() then

@@ -143,11 +143,14 @@ function HUDSkill:add_stack(name)
 		self:add_skill(name)
 	end
 	self._stacks[name] = self._stacks[name] + 1
+	self._skill_panel:child(name .. "_stacks"):set_text(tostring(self._stacks[name]))
+	--[[
 	if self._stacks[name] < 10 then
 		self._skill_panel:child(name .. "_stacks"):set_text(tostring(self._stacks[name]))
 	else
 		self._skill_panel:child(name .. "_stacks"):set_text("X")
 	end
+	--]]
 end
 
 --Reduces number next to skill icon. If reduced to 0, the skill is removed from the list.

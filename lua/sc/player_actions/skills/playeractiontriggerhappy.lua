@@ -13,9 +13,10 @@ PlayerAction.TriggerHappy = {
 		local function on_headshot(unit, attack_data)
 			local attacker_unit = attack_data.attacker_unit
 			local variant = attack_data.variant
+			local is_bullet = variant and (variant == "bullet" or variant == "fire_bullet")
 			
 			--Extra checks that you're actually *shooting* enemies with your *pistol*
-			if attacker_unit == player_manager:player_unit() and variant == "bullet" and not pistol_unequipped then
+			if attacker_unit == player_manager:player_unit() and is_bullet and not pistol_unequipped then
 				current_stacks = current_stacks + 1
 
 				if current_stacks <= max_stacks then

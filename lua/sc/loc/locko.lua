@@ -24,7 +24,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 
 		["resmod_1st_time_title"] = "Placeholder title",
 		["resmod_1st_time_desc"] = "Placeholder text info",
-		["resmod_1st_time_confirm"] = "OK",		
+		["resmod_message_confirm"] = "OK",		
 
 		["res_credits"] = "레스토레이션 모드 크레딧",
 		["res_credits_help"] = "레스토레이션 모드의 크레딧을 봅니다.",
@@ -1391,11 +1391,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.",
 		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.",
-		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.\n#{skill_color}#헤드샷 피해가 150% 증가하고 적의 헤드샷 배수가 감소하지 않습니다.##",
-		["bm_wp_upg_a_piercing_9_auto_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#9##발을 발사합니다.\n#{skill_color}#헤드샷 피해가 150% 증가하고 적의 헤드샷 배수가 감소하지 않습니다.##",
-		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.\n#{skill_color}#헤드샷 피해가 150% 증가하고 적의 헤드샷 배수가 감소하지 않습니다.##",
-		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.\n#{skill_color}#헤드샷 피해가 150% 증가하고 적의 헤드샷 배수가 감소하지 않습니다.##",
-		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.\n#{skill_color}#헤드샷 피해가 150% 증가하고 적의 헤드샷 배수가 감소하지 않습니다.##",
+		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.\n#{skill_color}#헤드샷 피해가 150% 증가하고 적의 헤드샷 배율이 감소하지 않습니다.##",
+		["bm_wp_upg_a_piercing_9_auto_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#9##발을 발사합니다.\n#{skill_color}#헤드샷 피해가 150% 증가하고 적의 헤드샷 배율이 감소하지 않습니다.##",
+		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.\n#{skill_color}#헤드샷 피해가 150% 증가하고 적의 헤드샷 배율이 감소하지 않습니다.##",
+		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.\n#{skill_color}#헤드샷 피해가 150% 증가하고 적의 헤드샷 배율이 감소하지 않습니다.##",
+		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12##발을 발사합니다.\n#{skill_color}#헤드샷 피해가 150% 증가하고 적의 헤드샷 배율이 감소하지 않습니다.##",
 
 		--Generic Optic Zoom Descriptions--
 		["bm_wp_upg_o_1_1"] = "레드 닷 조준기.\n#{risk}#1.1배 배율.##",
@@ -1506,8 +1506,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_weapon_multishot_1"] = ".",
 		["bm_menu_weapon_multishot_2"] = "발의 투사체를 발사하며, 각 투사체는",
 		["bm_menu_weapon_multishot_3"] = "의 피해를 가합니다.",
-		["bm_menu_weapon_ene_hs_mult_sub"] = "적 헤드샷 배수가 ",
-		["bm_menu_weapon_ene_hs_mult_add"] = "적 헤드샷 배수가 ",
+		["bm_menu_weapon_ene_hs_mult_sub"] = "기본 적 헤드샷 배율 감소량이 ",
+		["bm_menu_weapon_ene_hs_mult_add"] = "기본 적 헤드샷 배율 증가량이 ",
 		["bm_menu_weapon_ene_hs_mult_end"] = "로 조정됩니다.",
 		["bm_menu_weapon_hs_mult_1"] = "캡틴을 제외한 적에게 헤드샷을 가하면 ",
 		["bm_menu_weapon_hs_mult_2"] = "의 추가 피해를 가합니다.",
@@ -2416,16 +2416,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_grenade_poison_gas_grenade_desc_short"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.##",
 
 		--Throwing Cards
-		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 특성 덱 효과가 발동됩니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
+		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
 		--Throwing Stars/Shuriken
-		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 근접 공격 스킬이 발동됩니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.## \n\n표창은 피와 전투로 물든 긴 역사를 지니고 있습니다. 이 독이 발라진 스테인리스 스틸 표창은 당신의 길을 막는 모든 이에게 치명적인 위협이 될 것입니다.",
-		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 근접 공격 스킬이 발동됩니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##",
+		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬을 발동시킬 수 있습니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.## \n\n표창은 피와 전투로 물든 긴 역사를 지니고 있습니다. 이 독이 발라진 스테인리스 스틸 표창은 당신의 길을 막는 모든 이에게 치명적인 위협이 될 것입니다.",
+		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬을 발동시킬 수 있습니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##",
 		--Javelin
-		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 특성 덱 효과가 발동됩니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
+		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
 		--Throwing Axe
-		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 특성 덱 효과가 발동됩니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
+		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
 		--Throwing Knife
-		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 근접 공격 스킬과 특성 덱 효과가 발동됩니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
+		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
 
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "약병",
@@ -2545,7 +2545,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--AMR16--
 				["bm_wp_upg_i_m16a2"] = "Crosskill B3 키트",
 				["bm_wp_upg_i_m16a2_desc"] = "자동 사격을 #{skill_color}#3점사##로 대체합니다. #{risk}#점사## 속도가 #{skill_color}#950 RPM으로 증가합니다.## ",
-				["bm_wp_upg_i_m16a2_famas_desc"] = "자동 사격을 개선된 #{skill_color}#3점사##로 대체되고 피해량이 증가합니다.",
+				["bm_wp_upg_i_m16a2_famas_desc"] = "자동 사격을 피해량이 개선된 #{skill_color}#3점사##로 대체합니다.",
+				--Dredge--
+				["bm_wp_upg_i_dredge"] = "Dredge 점사 키트",
+				["bm_wp_upg_i_dredge_desc"] = "자동 사격을 빠른 연사 속도를 가진 #{skill_color}#6발 자동 점사##로 대체합니요.",	
 				--G3A3--
 				["bm_wp_upg_i_g3"] = "SG-3 키트",
 				["bm_wp_upg_i_g3_desc"] = "4단계 사격 선택기를 추가하여 무기에 #{skill_color}#3점사## 설정을 추가합니다.",
@@ -2715,7 +2718,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_rsh12_sc_desc"] = "한 손으로 벌이는 구경 대결의 최종 종결자입니다.\n\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",
 				["bm_rsh12_sc_iw_desc"] = "3점사 탄도 권총. 빠른 3점사 사격이 가능한 삼중 약실 구조를 갖추고 있습니다.\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
 				--SAA/Peacemaker
-				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#역사상 가장 뛰어난 권총.##\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 사거리가 감소하며 조준이 불가능해지는 대신## #{skill_color}#발사 속도가 증가하는## 팬링을 할 수 있습니다.",
+				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#역사상 가장 뛰어난 권총.##\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있는## 특수 .45구경 탄이 장전되어 있습니다.\n\n#{important_1}#반동이 증가하고 유효 사거리가 감소하며 조준이 불가능해지는 대신## #{skill_color}#발사 속도가 증가하는## 팬링을 할 수 있습니다.",
 				--SAA/Peacemaker
 				["bm_wp_peacemaker_rifle_stock_desc"] = "해머를 팬링하는 도중에도 조준이 가능합니다.",				
 				--CUSTOM PISTOLS
@@ -5818,7 +5821,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Jack of all Trades
 				["menu_jack_of_all_trades_beta_sc"] = "팔방미인",
-				["menu_jack_of_all_trades_beta_desc_sc"] = "베이식: #{owned}#$basic##\n투척물 소지 개수가 #{skill_color}#$skill_value_b1##개 증가합니다.\n\n#{risk}#주의: 특성 덱 투척물에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#이제 두 번째 설치형 장비를 소지할 수 있습니다.## 장비 전환 키인 #{skill_color}#$BTN_CHANGE_EQ## 키를 눌러 두 장비 사이를 전환할 수 있습니다.\n\n보조 장비는 일반 소지량의 #{important_1}#50%##를 소지하며, 최소 #{skill_color}#1##개까지 소지합니다.",
+				["menu_jack_of_all_trades_beta_desc_sc"] = "베이식: #{owned}#$basic##\n투척물 소지 개수가 #{skill_color}#$skill_value_b1##개 증가합니다.\n\n#{risk}#주의: 재생되는 투척물이나 특성 덱 투척물에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#이제 두 번째 설치형 장비를 소지할 수 있습니다.## 장비 전환 키인 #{skill_color}#$BTN_CHANGE_EQ## 키를 눌러 두 장비 사이를 전환할 수 있습니다.\n\n보조 장비는 일반 소지량의 #{important_1}#50%##를 소지하며, 최소 #{skill_color}#1##개까지 소지합니다.",
 
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "타워 디펜스",

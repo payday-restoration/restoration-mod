@@ -351,7 +351,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	--NOTE: Stoic damage delay and Deflection are handled in _calc_health_damage()
 	attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier(variant)
 	local damage_absorption = pm:damage_absorption()
-	if damage_absorption > 0 then
+	if not self_damage and damage_absorption > 0 then
 		attack_data.damage = attack_data.damage - damage_absorption
 	end
 
@@ -381,7 +381,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 
 	--Kingpin stuff.
 	self._ally_attack = self:is_friendly_fire(attacker_unit, true, variant == "explosion" or variant == "fire") --Filter out friendly fire from perk deck stuff and the armor_broken flag.
-	if not self._ally_attack then
+	if not self_damage and not self._ally_attack then
 		self:_check_chico_heal(attack_data)
 	end
 
@@ -1353,11 +1353,14 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 		self._damage_to_hot_stack = {}
 	end
 
+	local attacker_unit = attack_data and attack_data.attacker_unit
+	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
+
 	if attack_data.damage > 0 then
 		local t = Application:time()
 		local pm = managers.player
 		local socio_hurt_t = pm:has_category_upgrade("player", "buildup_meter") and not pm:has_category_upgrade("player", "buildup_meter_earl")
-		if not self._ally_attack and socio_hurt_t and t > (self._buildup_meter_hurt_t or 0) and pm._buildup_meter then
+		if not self_damage and not self._ally_attack and socio_hurt_t and t > (self._buildup_meter_hurt_t or 0) and pm._buildup_meter then
 			local hurt_decay_mod = (pm:has_category_upgrade("player", "buildup_meter_hurt_decay_mod") and pm:upgrade_value("player", "buildup_meter_hurt_decay_mod", 0)) or 0
 			local hurt_decay = pm:upgrade_value("player", "buildup_meter", 0).hurt_decay + hurt_decay_mod
 			local hurt_t_mod = (pm:has_category_upgrade("player", "buildup_meter_quickening") and (math.floor(self:_raw_max_armor()/pm:upgrade_value("player", "buildup_meter_quickening",0).armor_steps) * pm:upgrade_value("player", "buildup_meter_quickening", 0).hurt_t_mod)) or 0
@@ -1379,7 +1382,7 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	--OFFYERROCKER'S MERC PERK DECK
 	--[ [
 		local kmerc_proc_invuln = false
-		if attack_data.damage >= health_subtracted then
+		if not self_damage and attack_data.damage >= health_subtracted then
 			if managers.player:has_category_upgrade("player","kmerc_fatal_triggers_invuln") then
 				local kmerc_invuln_data = managers.player:upgrade_value("player","kmerc_fatal_triggers_invuln")
 				if managers.player:get_property("kmerc_invuln_ready") then
@@ -1408,7 +1411,7 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 
 	health_subtracted = health_subtracted - self:get_real_health()
 	
-	if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") and health_subtracted > 0 then
+	if not self_damage and managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") and health_subtracted > 0 then
 		local teammate_heal_level = managers.player:upgrade_level_nil("player", "copr_teammate_heal")
 
 		if teammate_heal_level and self:get_real_health() > 0 then
@@ -1416,7 +1419,7 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 		end
 	end
 	
-	if self._has_mrwi_health_invulnerable then
+	if not self_damage and self._has_mrwi_health_invulnerable then
 		local health_threshold = self._mrwi_health_invulnerable_threshold or 0.25
 		local is_cooling_down = managers.player:get_temporary_property("mrwi_health_invulnerable", false)
 
@@ -1436,7 +1439,7 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	}, attack_data.variant)
 	local ignore_reduce_revive = self:check_ignore_reduce_revive()
 	
-	if self:get_real_health() == 0 and trigger_skills then
+	if not self_damage and self:get_real_health() == 0 and trigger_skills then
 		self:_chk_cheat_death(ignore_reduce_revive)
 	end
 	
@@ -1455,7 +1458,7 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 
 	--OFFYERROCKER'S MERC PERK DECK
 	--[ [
-		if not kmerc_proc_invuln and managers.player:has_category_upgrade("player","kmerc_bloody_armor") and not self._kmerc_bloody_armor_t then
+		if not kmerc_proc_invuln and managers.player:has_category_upgrade("player","kmerc_bloody_armor") and not self._kmerc_bloody_armor_t and not self_damage then
 			if health_subtracted > 0 then
 				self._kmerc_bloody_armor_t = 1
 				if self:health_ratio() <= 0.3 then
@@ -1470,47 +1473,51 @@ end
 
 --Applies deflection and stoic effects.
 function PlayerDamage:_calc_health_damage(attack_data)
+	local attacker_unit = attack_data and attack_data.attacker_unit
+	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
 
-	--OFFYERROCKER'S MERC PERK DECK
-	--[ [
-		if managers.player:get_temporary_property("kmerc_invuln") then
+	if not self_damage then
+		--OFFYERROCKER'S MERC PERK DECK
+		--[ [
+			if managers.player:get_temporary_property("kmerc_invuln") then
+				return 0
+			end
+		
+			if managers.player:has_category_upgrade("player","kmerc_reactive_absorption") then
+				local max_health = self:_max_health()
+				
+				local base_damage = attack_data.damage
+				local new_damage = (base_damage * max_health) / (base_damage + max_health)
+				attack_data.damage = new_damage
+			end
+		--]]
+
+		if attack_data.weapon_unit then
+			local weap_base = alive(attack_data.weapon_unit) and attack_data.weapon_unit:base()
+			local weap_tweak_data = weap_base and weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()
+
+			if weap_tweak_data and weap_tweak_data.slowdown_data then
+				self:apply_slowdown(weap_tweak_data.slowdown_data)
+			end
+		end
+
+		if managers.player:has_activate_temporary_upgrade("temporary", "mrwi_health_invulnerable") then
 			return 0
-		end
-	
-		if managers.player:has_category_upgrade("player","kmerc_reactive_absorption") then
-			local max_health = self:_max_health()
-			
-			local base_damage = attack_data.damage
-			local new_damage = (base_damage * max_health) / (base_damage + max_health)
-			attack_data.damage = new_damage
-		end
-	--]]
-	
-	if attack_data.weapon_unit then
-		local weap_base = alive(attack_data.weapon_unit) and attack_data.weapon_unit:base()
-		local weap_tweak_data = weap_base and weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()
+		end	
 
-		if weap_tweak_data and weap_tweak_data.slowdown_data then
-			self:apply_slowdown(weap_tweak_data.slowdown_data)
+		local deflection = math.max(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), self._max_deflection)
+		if self:has_temp_health() then --Hitman deflection bonus.
+			deflection = math.max(deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0), self._max_deflection)
 		end
-	end
-	
-	if managers.player:has_activate_temporary_upgrade("temporary", "mrwi_health_invulnerable") then
-		return 0
-	end	
+		attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
 
-	local deflection = math.max(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), self._max_deflection)
-	if self:has_temp_health() then --Hitman deflection bonus.
-		deflection = math.max(deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0), self._max_deflection)
-	end
-	attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
-
-	if not self._ally_attack then
-		if self:get_real_armor() <= 0 then
-			--Will look into tying this to Yakuza later if needed
-			--self:fill_dodge_meter(self._dodge_points * 0.25)
+		if not self._ally_attack then
+			if self:get_real_armor() <= 0 then
+				--Will look into tying this to Yakuza later if needed
+				--self:fill_dodge_meter(self._dodge_points * 0.25)
+			end
+			attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data) --Stoic damage delay. Done here so it applies to all health damage taken.
 		end
-		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data) --Stoic damage delay. Done here so it applies to all health damage taken.
 	end
 	
 	return self:_calc_health_damage_no_deflection(attack_data)
@@ -1624,7 +1631,7 @@ end
 function PlayerDamage:cloak_or_shock_incap(damage)
 	damage = damage * managers.player:damage_reduction_skill_multiplier("kick_or_shock")
 	local damage_absorption = managers.player:damage_absorption()
-	if damage_absorption > 0 then
+	if not self_damage and damage_absorption > 0 then
 		damage = math.max(0.1, damage - damage_absorption)
 	end
 	
@@ -1962,7 +1969,7 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 		local pm = managers.player
 
 		if self:get_real_armor() <= 0 then
-			if not self._ally_attack then
+			if not self_damage and not self._ally_attack then
 				if not self._armor_broken then
 					self._armor_broken = true --notifies ex-pres when armor has broken to get around dumb interaction with bullseye (but only if the last shot taken was not friendly fire).
 					if pm:has_category_upgrade("player", "scaling_armor_break_grace") then

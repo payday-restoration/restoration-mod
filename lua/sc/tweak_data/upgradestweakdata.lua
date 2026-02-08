@@ -2177,17 +2177,17 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.level_2_armor_multiplier = {
 		1.10,
-		1.20,
+		1.15,
 		1.05
 	}
 	self.values.player.level_3_armor_multiplier = {
 		1.10,
-		1.20,
+		1.15,
 		1.05
 	}
 	self.values.player.level_4_armor_multiplier = {
 		1.10,
-		1.20,
+		1.15,
 		1.05
 	}
 
@@ -2585,9 +2585,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			{ combo_t_mod = -3, combo_decay_mod = 5 }, --Tony R
 		}
 		self.values.player.buildup_meter_earl = { true } --boolean check for no combo loss when taking HP damage + full combo loss on bleedout
-		self.values.player.tony_boss_mult = 0.1
-		self.values.player.melee_fists_damage_multiplier = {10}
+		self.values.player.tony_boss_fists_mult = 0.1333334
+		self.values.player.tony_boss_brass_mult = 0.1
+		self.values.player.melee_fists_damage_multiplier = {7.5}
+		self.values.player.melee_fists_damage_effect_multiplier = {2}
 		self.values.player.melee_brass_damage_multiplier = {10}
+		self.values.player.melee_brass_damage_effect_multiplier = {5}
 		self.values.tony = {
 			extra_ammo_multiplier = {
 				0.5,
@@ -2604,7 +2607,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			{ combo_add_mod = 0, combo_max_mod = -40 } --Tony R
 		}
 		self.values.player.buildup_meter_swan = {{
-			combo_add = 3
+			combo_add = 6
 		}}
 		self.values.player.buildup_meter_mark = {{ --armor regen speed
 			combo_steps = 5,
@@ -3262,7 +3265,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
 		perk_value_6 = tostring(math.abs(self.values.player.buildup_meter_rick[2].combo_max_mod)),
 		perk_value_7 = tostring(math.abs(self.values.player.buildup_meter_zack[3].combo_t_mod)),
-		perk_value_9 = tostring((1 - self.values.player.tony_boss_mult) * 100) .."%" ,
+		perk_value_9 = tostring(math.round((1 - self.values.player.tony_boss_fists_mult) * 100)) .."%" ,
 	}
 	self.multi_choice_specialization_descs[9][9][3] = { --Aubrey
 		perk_value_1 = tostring(self.values.player.buildup_meter_aubrey[1].combo_add),
@@ -3292,7 +3295,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Nothing, it's a boolean change
 	}
 	self.multi_choice_specialization_descs[9][9][9] = { --Tony's Revenge
-		perk_value_1 = tostring(self.values.player.melee_fists_damage_multiplier[1] * 100) .. "%",
+		perk_value_1 = tostring(self.values.player.melee_brass_damage_multiplier[1] * 100) .. "%",
 		perk_value_2 = tostring((1 - self.values.tony.extra_ammo_multiplier[2]) * 100) .. "%",
 		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[2]) * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[3].combo_add_mod),
@@ -3300,7 +3303,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_6 = tostring(math.abs(self.values.player.buildup_meter_rick[3].combo_max_mod)),
 		perk_value_7 = tostring(math.abs(self.values.player.buildup_meter_zack[4].combo_t_mod)),
 		perk_value_8 = tostring(math.abs(self.values.player.buildup_meter_zack[4].combo_decay_mod)),
-		perk_value_9 = tostring((1 - self.values.player.tony_boss_mult) * 100) .."%" ,
+		perk_value_9 = tostring(math.round((1 - self.values.player.tony_boss_brass_mult) * 100)) .."%" ,
 	}
 	self.multi_choice_specialization_descs[9][9][10] = { --Mark
 		perk_value_1 = tostring(self.values.player.buildup_meter_mark[1].combo_steps),
@@ -5913,12 +5916,30 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_melee_fists_damage_effect_multiplier = {
+		name_id = "menu_player_buildup_tony",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "melee_fists_damage_effect_multiplier",
+			category = "player"
+		}
+	}
 	self.definitions.player_melee_brass_damage_multiplier = {
 		name_id = "menu_player_buildup_tony",
 		category = "feature",
 		upgrade = {
 			value = 1,
 			upgrade = "melee_brass_damage_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_melee_brass_damage_effect_multiplier = {
+		name_id = "menu_player_buildup_tony",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "melee_brass_damage_effect_multiplier",
 			category = "player"
 		}
 	}

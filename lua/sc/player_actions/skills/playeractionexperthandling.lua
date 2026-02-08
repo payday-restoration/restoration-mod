@@ -11,9 +11,11 @@ PlayerAction.ExpertHandling = {
 		local function on_headshot(unit, attack_data)
 			local attacker_unit = attack_data.attacker_unit
 			local variant = attack_data.variant
+			local is_bullet = variant and (variant == "bullet" or variant == "fire_bullet")
+
 			
 			--Extra checks that you're actually *shooting* enemies with your *pistol*
-			if attacker_unit == player_manager:player_unit() and variant == "bullet" and player_manager:is_current_weapon_of_category("pistol") then
+			if attacker_unit == player_manager:player_unit() and is_bullet and player_manager:is_current_weapon_of_category("pistol") then
 				current_stacks = current_stacks + 1
 
 				if current_stacks <= max_stacks then

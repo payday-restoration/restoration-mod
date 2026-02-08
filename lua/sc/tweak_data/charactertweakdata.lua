@@ -6710,7 +6710,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				0,
 				6
 			}
 		},
@@ -6722,7 +6722,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				1,
 				6
 			}
 		},
@@ -7140,9 +7140,9 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.95,
 			recoil = {0.45, 0.8},
 			mode = {
-				1,
-				2,
-				2,
+				0,
+				0,
+				0,
 				1
 			}
 		},
@@ -7152,9 +7152,9 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.9,
 			recoil = {1, 1.2},
 			mode = {
-				4,
-				2,
 				1,
+				2,
+				2,
 				0
 			}
 		},
@@ -9135,7 +9135,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				0,
 				6
 			}
 		},
@@ -9147,7 +9147,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				1,
 				6
 			}
 		},
@@ -9360,9 +9360,9 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1.425,
 			recoil = {0.45, 0.8},
 			mode = {
-				1,
-				2,
-				2,
+				0,
+				0,
+				0,
 				1
 			}
 		},
@@ -9372,9 +9372,9 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1.35,
 			recoil = {1, 1.2},
 			mode = {
-				4,
-				2,
 				1,
+				2,
+				2,
 				0
 			}
 		},
@@ -11309,7 +11309,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				0,
 				6
 			}
 		},	
@@ -11321,7 +11321,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				0,
 				6
 			}
 		},
@@ -11534,9 +11534,9 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 1.9,
 			recoil = {0.45, 0.8},
 			mode = {
-				1,
-				2,
-				2,
+				0,
+				0,
+				0,
 				1
 			}
 		},
@@ -13462,7 +13462,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				0,
 				6
 			}
 		},
@@ -13474,7 +13474,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				0,
 				6
 			}
 		},
@@ -13486,7 +13486,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				0,
 				6
 			}
 		},
@@ -13682,10 +13682,10 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 2.3,
 			recoil = {0.45, 0.8},
 			mode = {
-				1,
-				3,
-				6,
-				6
+				0,
+				0,
+				0,
+				1
 			}
 		},
 		{
@@ -13694,9 +13694,9 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 2.185,
 			recoil = {0.45, 0.8},
 			mode = {
-				1,
-				2,
-				2,
+				0,
+				0,
+				0,
 				1
 			}
 		},
@@ -15217,7 +15217,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				0,
 				6
 			}
 		},
@@ -15229,7 +15229,7 @@ function CharacterTweakData:_presets(tweak_data)
 			mode = {
 				0,
 				0,
-				2,
+				0,
 				6
 			}
 		},
@@ -18557,11 +18557,7 @@ function CharacterTweakData:_set_overkill()
 end
 
 function CharacterTweakData:_set_overkill_145()
-	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1, 1)
-	else
-		self:_multiply_all_hp(1, 1)
-	end
+	self:_multiply_all_hp(1, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -18620,12 +18616,7 @@ end
 
 function CharacterTweakData:_set_easy_wish()
 	self.tank_hw_black.headshot_dmg_mul = 4.4
-
-	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.5, 1)
-	else
-		self:_multiply_all_hp(1.5, 1)
-	end
+	self:_multiply_all_hp(1.5, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -18691,12 +18682,7 @@ end
 
 function CharacterTweakData:_set_overkill_290()
 	self.tank_hw_black.headshot_dmg_mul = 2.75
-
-	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.75, 0.801)
-	else
-		self:_multiply_all_hp(1.75, 0.801)
-	end
+	self:_multiply_all_hp(1.75, 0.801)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -18786,12 +18772,7 @@ function CharacterTweakData:_set_sm_wish()
 	
 	self.tank_hw_black.headshot_dmg_mul = 2.75
 
-	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(2, 0.915)
-	else
-		self:_multiply_all_hp(2, 0.915)
-	end
-	
+	self:_multiply_all_hp(2, 0.915)	
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.expert, 0)
@@ -19020,6 +19001,18 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 			self[enemy_tweak].HEALTH_INIT = self[enemy_tweak].HEALTH_INIT * hp_mul
 			if self[enemy_tweak].headshot_dmg_mul then
 				self[enemy_tweak].headshot_dmg_mul = self[enemy_tweak].headshot_dmg_mul * hs_mul
+			end
+		end
+	end
+end
+
+-- Only for Advanced Training mutator
+function CharacterTweakData:_unmultiply_all_hp(hp_mul, hs_mul)
+	for _, enemy_tweak in ipairs(self._enemy_list) do
+		if self[enemy_tweak] then
+			self[enemy_tweak].HEALTH_INIT = self[enemy_tweak].HEALTH_INIT / hp_mul
+			if self[enemy_tweak].headshot_dmg_mul then
+				self[enemy_tweak].headshot_dmg_mul = self[enemy_tweak].headshot_dmg_mul / hs_mul
 			end
 		end
 	end

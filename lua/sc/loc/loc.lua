@@ -24,7 +24,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		
 		["resmod_1st_time_title"] = "Placeholder title",
 		["resmod_1st_time_desc"] = "Placeholder text info",
-		["resmod_1st_time_confirm"] = "OK",
+		["resmod_message_confirm"] = "OK",
 
 		["res_credits"] = "Restoration Mod Credits",
 		["res_credits_help"] = "View the credits for RESTORATION MOD.",
@@ -2489,16 +2489,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_grenade_poison_gas_grenade_desc_short"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Medics, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once##",
 
 		--Throwing Cards
-		["bm_wpn_prj_ace_desc"] = "Damage: #{skill_color}#$damage##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{skill_color}#Hits and kills trigger melee skills and perks## \n\nThrowing cards with added weight and a razor edge. A real killer hand of cards.",
+		["bm_wpn_prj_ace_desc"] = "Damage: #{skill_color}#$damage##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{skill_color}#hits and kills can trigger melee skills in the Brawler sub-tree and melee-focused perks## \n\nThrowing cards with added weight and a razor edge. A real killer hand of cards.",
 		--Throwing Stars/Shuriken
-		["bm_wpn_prj_four_desc"] = "Damage (Impact): #{skill_color}#$damage## \nDamage (Poison): #{stats_positive}#120 over 4s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{risk}#Direct## #{skill_color}#hits and kills trigger melee skills and perks##\n- #{skill_color}#50%## chance to stun most enemies every #{skill_color}#0.5s##\n- #{important_1}#Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.## \n\nThe throwing star has a long history filled with blood and battle. These poison coated stainless steel stars will pose a lethal threat to anyone in your way.",
-		["bm_wpn_prj_four_desc_short"] = "Damage (Impact): #{skill_color}#$damage## \nDamage (Poison): #{stats_positive}#120 over 4s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{risk}#Direct## #{skill_color}#hits and kills trigger melee skills and perks##\n- #{skill_color}#50%## chance to stun most enemies every #{skill_color}#0.5s##\n- #{important_1}#Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.##",
+		["bm_wpn_prj_four_desc"] = "Damage (Impact): #{skill_color}#$damage## \nDamage (Poison): #{stats_positive}#120 over 4s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{risk}#Direct## #{skill_color}#hits and kills can trigger melee skills in the Brawler sub-tree and melee-focused perks##\n- #{skill_color}#50%## chance to stun most enemies every #{skill_color}#0.5s##\n- #{important_1}#Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.## \n\nThe throwing star has a long history filled with blood and battle. These poison coated stainless steel stars will pose a lethal threat to anyone in your way.",
+		["bm_wpn_prj_four_desc_short"] = "Damage (Impact): #{skill_color}#$damage## \nDamage (Poison): #{stats_positive}#120 over 4s##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{risk}#Direct## #{skill_color}#hits and kills trigger melee skills in the Brawler sub-tree and perks##\n- #{skill_color}#50%## chance to stun most enemies every #{skill_color}#0.5s##\n- #{important_1}#Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects.##",
 		--Javelin
-		["bm_wpn_prj_jav_desc"] = "Damage: #{skill_color}#$damage##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{skill_color}#Hits and kills trigger melee skills and perks## \n\nWith its origins lost in cloudy pre-history, the javelin is a simple weapon. After all, it's a thrown stick with a pointy end that ruins someone's day.",
+		["bm_wpn_prj_jav_desc"] = "Damage: #{skill_color}#$damage##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{skill_color}#hits and kills can trigger melee skills in the Brawler sub-tree and melee-focused perks## \n\nWith its origins lost in cloudy pre-history, the javelin is a simple weapon. After all, it's a thrown stick with a pointy end that ruins someone's day.",
 		--Throwing Axe
-		["bm_wpn_prj_hur_desc"] = "Damage: #{skill_color}#$damage##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{skill_color}#Hits and kills trigger melee skills and perks## \n\nThey say a sharp axe is never wrong. A thrown sharp axe couldn't be any more right.",
+		["bm_wpn_prj_hur_desc"] = "Damage: #{skill_color}#$damage##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{skill_color}#hits and kills can trigger melee skills in the Brawler sub-tree and melee-focused perks## \n\nThey say a sharp axe is never wrong. A thrown sharp axe couldn't be any more right.",
 		--Throwing Knife
-		["bm_wpn_prj_target_desc"] = "Damage: #{skill_color}#$damage##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{skill_color}#Hits and kills trigger melee skills and perks## \n\nA solid backup plan and a reliable tactic for a precise and silent kill.",
+		["bm_wpn_prj_target_desc"] = "Damage: #{skill_color}#$damage##\nAmmo Box Pickup Chance: #{skill_color}#$pickup## \n- #{skill_color}#Can be retrieved##\n- #{skill_color}#hits and kills can trigger melee skills in the Brawler sub-tree and melee-focused perks## \n\nA solid backup plan and a reliable tactic for a precise and silent kill.",
 
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "Ampule",
@@ -2618,7 +2618,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--AMR16--
 				["bm_wp_upg_i_m16a2"] = "Crosskill B3 Kit",
 				["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst## fire rate is #{skill_color}#increased to 950 RPM.## ",
-				["bm_wp_upg_i_m16a2_famas_desc"] = "Trade full-auto for an improved #{skill_color}#3-round burst## setting and boosted damage.",
+				["bm_wp_upg_i_m16a2_famas_desc"] = "Trade full-auto for an improved #{skill_color}#3-round burst## setting with boosted damage.",
+				--Dredge--
+				["bm_wp_upg_i_dredge"] = "Dredge Burst Kit",
+				["bm_wp_upg_i_dredge_desc"] = "Trade full-auto for a rapid-fire #{skill_color}#6-round auto-burst.##",
 				--G3A3--
 				["bm_wp_upg_i_g3"] = "SG-3 Kit",
 				["bm_wp_upg_i_g3_desc"] = "Adds a 4-position fire selector, granting the weapon a #{skill_color}#3-round burst## setting.",
@@ -2788,7 +2791,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_rsh12_sc_desc"] = "The absolute final word in one handed caliber pissing matches.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
 				["bm_rsh12_sc_iw_desc"] = "3-round burst ballistic pistol. Has a triple chamber stack for rapid three round bursts.\n\n#{skill_color}#Can pierce body armor, multiple enemies and thin walls.##",
 				--SAA/Peacemaker
-				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
+				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\nLoaded with specialized .45 rounds that #{skill_color}#can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 				--SAA/Peacemaker
 				["bm_wp_peacemaker_rifle_stock_desc"] = "Allows for aiming while fanning the hammer.",
 				--CUSTOM PISTOLS
@@ -5889,7 +5892,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Jack of all Trades
 				["menu_jack_of_all_trades_beta_sc"] = "Jack of All Trades",
-				["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou carry #{skill_color}#$skill_value_b1## more throwables.\n\n#{risk}#NOTE: Does not apply to perk deck throwables.##\n\nACE: #{owned}#$pro##\n#{skill_color}#You can now equip a second deployable to bring with you.## Pressing #{skill_color}#$BTN_CHANGE_EQ## will allow you to toggle between deployables.\n\nYou carry #{important_1}#50%## the normal amount of your second deployable, to a minimum of #{skill_color}#1.##",
+				["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou carry #{skill_color}#$skill_value_b1## more throwables.\n\n#{risk}#NOTE: Does not apply to throwables that regenerate or come from perk decks.##\n\nACE: #{owned}#$pro##\n#{skill_color}#You can now equip a second deployable to bring with you.## Pressing #{skill_color}#$BTN_CHANGE_EQ## will allow you to toggle between deployables.\n\nYou carry #{important_1}#50%## the normal amount of your second deployable, to a minimum of #{skill_color}#1.##",
 
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "Tower Defense",

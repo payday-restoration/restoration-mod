@@ -1,0 +1,33 @@
+<effect force_synch="false">
+	<atom name="trail" min_size="1" max_size="1" lifetime="1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update_render" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+		<initializerstack>
+			<boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+			<boxrandomvelocity relative="effect" min="0 0 1000" max="0 0 1000"/>
+			<boxrandomrotation relative="effect" min="0 1 0" max="0 1 0" min_rot="0" max_rot="0"/>
+			<boxrandomaspectsize size="2 10" min="1" max="1"/>
+		</initializerstack>
+		<simulatorstack>
+			<scaledvelocityintegrator channel="world" per_particle_age="false">
+				<scale_keys loop="false">
+					<key t="0" v="0"/>
+				</scale_keys>
+			</scaledvelocityintegrator>
+			<rotationbyvelocity velocity="10000"/>
+			<variablesize name="simulator_length" size="5 15000"/>
+		</simulatorstack>
+		<visualizerstack>
+			<billboard texture="effects/textures/add_atlas_df" intensity="sun" billboard_type="normal_locked" rotation_channel="world_rotation" blend_mode="add" render_template="effect_op_add" origo="0.5 1" per_particle_age="false" size_input="scaled_channel" color_input="keys" opacity_input="constant" opacity="255" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.25 0.074" uv_offset_input="constant" uv_offset="0.5 0.17">
+				<size_scale_keys loop="false">
+					<key t="0" v="0 0"/>
+					<key t="0.025380710139871" v="1 1"/>
+					<key t="4.2639594078064" v="15 1"/>
+				</size_scale_keys>
+				<color_keys loop="false">
+					<key t="0" v="239 215 119"/>
+					<key t="0.02" v="233 202 104"/>
+					<key t="0.15" v="0 0 0"/>
+				</color_keys>
+			</billboard>
+		</visualizerstack>
+	</atom>
+</effect>

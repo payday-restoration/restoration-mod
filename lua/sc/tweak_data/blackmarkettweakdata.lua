@@ -97,6 +97,27 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMaskFixes", function(sel
 		}
 	}
 
+	if BeardLib.Utils:FindMod("Old John Wick Remade") then
+		self.masks.almirs_beard.offsets.jowi = {
+			Vector3(-0.1, -0.9, -0.8),
+			Rotation(1, 0, 2)
+		}
+		self.masks.balaclava.characters.jowi = "balaclava_dallas"
+		self.masks.balaclava_dallas.offsets = self.masks.balaclava_dallas.offsets or {}	
+		self.masks.balaclava_dallas.offsets.jowi = {
+			Vector3(0, -0.45, -0.55),
+			Rotation(0, 0, 0)
+		}
+		self.masks.skm_02.offsets.jowi = {
+			Vector3(-0.55, -0.6, -0.8),
+			Rotation(0, 0, 2)
+		}
+		self.masks.jfr_04.offsets.jowi = {
+			Vector3(0, -0.9, -0.8),
+			Rotation(0, 0, -0)
+		}
+	end
+
 end)
 
 --This is a helmet, not a mask--
@@ -1918,18 +1939,20 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
 	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.concussion.max_amount = 3
-	self.projectiles.concussion.base_pickup_chance = 0.02
+	self.projectiles.concussion.base_pickup_chance = 0.03
 	self.projectiles.wpn_gre_electric.max_amount = 3
+	self.projectiles.wpn_gre_electric.base_pickup_chance = 0.02
 	self.projectiles.poison_gas_grenade.max_amount = 3
+	self.projectiles.poison_gas_grenade.base_pickup_chance = 0.02
 
 	self.projectiles.sticky_grenade.throw_shout = nil
 
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.expire_t = 0.9
 		self.projectiles.xmas_snowball.max_amount = 3
-		self.projectiles.xmas_snowball.base_cooldown_no_perk = true --flag to allow JOAT calcs
+		self.projectiles.xmas_snowball.base_cooldown_no_perk = true
 		self.projectiles.xmas_snowball.base_cooldown = 35
-		self.projectiles.xmas_snowball.pickup_cooldown_t = 2.5
+		self.projectiles.xmas_snowball.pickup_cooldown_t = 3.5 --10~ pickups to gain back one immediately
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 
@@ -4753,7 +4776,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 	self.melee_weapons.fists.stats.max_damage = 4.501
 	self.melee_weapons.fists.stats.min_damage_effect = 4.5
 	self.melee_weapons.fists.stats.max_damage_effect = 9.0
-	self.melee_weapons.fists.stats.charge_time = 0.5
+	self.melee_weapons.fists.stats.charge_time = 0.7
 	self.melee_weapons.fists.stats.range = 150
 	self.melee_weapons.fists.stats.concealment = 30
 	self.melee_weapons.fists.stats.speed_mult = 1.08
@@ -4769,10 +4792,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.brass_knuckles.stats.max_damage = 6.001
 		self.melee_weapons.brass_knuckles.stats.min_damage_effect = 6.0
 		self.melee_weapons.brass_knuckles.stats.max_damage_effect = 12.0
-		self.melee_weapons.brass_knuckles.stats.charge_time = 1.1
+		self.melee_weapons.brass_knuckles.stats.charge_time = 1.4
 		self.melee_weapons.brass_knuckles.stats.range = 155
 		self.melee_weapons.brass_knuckles.stats.concealment = 30
-		self.melee_weapons.brass_knuckles.stats.speed_mult = 1.08
+		self.melee_weapons.brass_knuckles.stats.speed_mult = 1.06
 		--Thanks Boss--	
 		self.melee_weapons.fight.info_id = "bm_melee_fight_info"
 		self.melee_weapons.fight.stats.weapon_type = "fists"
@@ -4783,7 +4806,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.fight.stats.max_damage = 2.401
 		self.melee_weapons.fight.stats.min_damage_effect = 9.0
 		self.melee_weapons.fight.stats.max_damage_effect = 18.0
-		self.melee_weapons.fight.stats.charge_time = 0.9
+		self.melee_weapons.fight.stats.charge_time = 1.0
 		self.melee_weapons.fight.stats.range = 160
 		self.melee_weapons.fight.stats.concealment = 30
 		self.melee_weapons.fight.stats.speed_mult = 1.1
@@ -5094,7 +5117,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.model24.stats.cleave = 1
 		self.melee_weapons.model24.stats.raycasts = 15
 		self.melee_weapons.model24.explosion_chance = 0.05
-		self.melee_weapons.model24.explosion_curve_pow = 0.5
+		self.melee_weapons.model24.explosion_curve_pow = 0
 		self.melee_weapons.model24.explosion_damage = 60
 		self.melee_weapons.model24.explosion_range = 500
 		self.melee_weapons.model24.stats.speed_mult = 1.18

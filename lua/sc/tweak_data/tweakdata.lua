@@ -126,17 +126,18 @@ tweak_data.shotgun = {
 		}
 			tweak_data.shotgun_light_pistol = {
 				ads_moving_recoil = 1.2,
-				ads_moving_spread_mult = 1.35 / tweak_data.shotgun.ads_moving_spread_mult,
+				ads_moving_spread_mult = 1.2 / tweak_data.shotgun.ads_moving_spread_mult,
 				ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
 				swap_bonus = 2.1,
-				hipfire_spread_mult = 1.4 / (tweak_data.shotgun_light.hipfire_spread_mult * tweak_data.shotgun_light_semi.hipfire_spread_mult)
+				hipfire_moving_spread_mult = 1.6 / (tweak_data.shotgun_light.hipfire_spread_mult * tweak_data.shotgun_light_semi.hipfire_spread_mult),
+				hipfire_spread_mult = 1.5 / (tweak_data.shotgun_light.hipfire_spread_mult * tweak_data.shotgun_light_semi.hipfire_spread_mult)
 			}
 	tweak_data.shotgun_heavy = {
 		hipfire_spread_mult = 0.65,
 	}
 			tweak_data.shotgun_heavy_pistol = {
 				ads_moving_recoil = 1.2,
-				ads_moving_spread_mult = 1.35 / tweak_data.shotgun.ads_moving_spread_mult,
+				ads_moving_spread_mult = 1.2 / tweak_data.shotgun.ads_moving_spread_mult,
 				ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
 				swap_bonus = 2.1,
 				hipfire_spread_mult = 1.1 / tweak_data.shotgun_heavy.hipfire_spread_mult
@@ -146,7 +147,7 @@ tweak_data.shotgun = {
 	}
 		tweak_data.shotgun_break_pistol = {
 			ads_moving_recoil = 1.2,
-			ads_moving_spread_mult = 1.35 / tweak_data.shotgun.ads_moving_spread_mult,
+			ads_moving_spread_mult = 1.2 / tweak_data.shotgun.ads_moving_spread_mult,
 			ads_move_speed_mult = 0.6 / tweak_data.shotgun.ads_move_speed_mult,
 			swap_bonus = 2.1,
 			hipfire_spread_mult = 1.5 / tweak_data.shotgun_break.hipfire_spread_mult
@@ -164,7 +165,7 @@ tweak_data.shotgun = {
 		}
 
 tweak_data.smg = {
-	swap_bonus = 1.55,
+	swap_bonus = 1.6,
 	ads_move_speed_mult = 0.7,
 	hipfire_spread_mult = 0.6,
 	hipfire_moving_spread_mult = 0.7,
@@ -346,6 +347,10 @@ tweak_data.sweet_liberty = {
 	ads_moving_recoil = 1.1,
 	ads_moving_spread_mult = 4,
 	ads_move_speed_mult = 0.8
+}
+tweak_data.sweet_liberty_las = {
+	min_spread_mult = 0.25, 
+	hipfire_spread_mult = 0.01
 }
 tweak_data.sweet_liberty_gl = {
 	ads_moving_recoil = 1.1,
@@ -925,7 +930,7 @@ end
 		'frankish_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 3000 * velocity_mult * 0.45
+		tweak_data.projectiles[proj_id].launch_speed = 3000 * velocity_mult * 0.60
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -953,7 +958,7 @@ end
 		'arblast_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 5000 * velocity_mult * 0.45
+		tweak_data.projectiles[proj_id].launch_speed = 5000 * velocity_mult * 0.60
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -981,7 +986,7 @@ end
 		'ecp_arrow_exp'
 	}
 	for i, proj_id in ipairs(velocity) do
-		tweak_data.projectiles[proj_id].launch_speed = 7000 * velocity_mult * 0.45
+		tweak_data.projectiles[proj_id].launch_speed = 7000 * velocity_mult * 0.60
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end
@@ -1076,8 +1081,16 @@ tweak_data.medic.cooldown = 0
 tweak_data.medic.radius = 900
 tweak_data.medic.lpf_radius = 800
 
+-- LPF related tweak data
+
+tweak_data.medic.overheal_decay_percent = 0.1 --- When not being actively overhealed, how much of the overheal should be lost. Percent of the total max possible overheal.
+tweak_data.medic.overheal_decay_t = 1 --- In seconds, how often the unit should lose overheal_decay_percent amount of overheal.
+tweak_data.medic.overheal_decay_delay_t = 5 --- In seconds, the amount of time since last being near an LPF before the unit starts losing overheal.
+
 --ASU damage bonus (Titan HRT)
 tweak_data.asu_buff_radius = 800
+tweak_data.asu_buff_decay_delay = 10 --- In seconds, the amount of time before the ASU damage bonus decays from a unit without the ASU unit being nearby to refresh it.
+
 if difficulty_index <= 6 then
 	tweak_data.asu_damage_buff = 10
 elseif difficulty_index == 7 then

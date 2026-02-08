@@ -527,7 +527,7 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 				return 
 			end
 			if redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil then
-				if weap_base._starwars then
+				if weap_base._starwars and not weap_base._starwars.allow_anim_mults then
 					speed = 1
 				else
 					speed = weap_base:fire_rate_multiplier( weap_base._ignore_rof_mult_anims or true_semi and weap_base._ignore_rof_mult_anims_semi )

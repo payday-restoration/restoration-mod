@@ -1266,6 +1266,34 @@ function PlayerManager:on_lethal_headshot_dealt(attacker_unit, attack_data)
 	end
 end
 
+function PlayerManager:_on_expert_handling_event(unit, attack_data)
+	local attacker_unit = attack_data.attacker_unit
+	local variant = attack_data.variant
+	local is_bullet = variant and (variant == "bullet" or variant == "fire_bullet")
+
+	if attacker_unit == self:player_unit() and self:is_current_weapon_of_category("pistol") and is_bullet and not self._coroutine_mgr:is_running(PlayerAction.ExpertHandling) then
+		local data = self:upgrade_value("pistol", "stacked_accuracy_bonus", nil)
+
+		if data and type(data) ~= "number" then
+			self._coroutine_mgr:add_coroutine(PlayerAction.ExpertHandling, PlayerAction.ExpertHandling, self, data.accuracy_bonus, data.max_stacks, Application:time() + data.max_time)
+		end
+	end
+end
+
+function PlayerManager:_on_enter_trigger_happy_event(unit, attack_data)
+	local attacker_unit = attack_data.attacker_unit
+	local variant = attack_data.variant
+	local is_bullet = variant and (variant == "bullet" or variant == "fire_bullet")
+
+	if attacker_unit == self:player_unit() and is_bullet and not self._coroutine_mgr:is_running("trigger_happy") and self:is_current_weapon_of_category("pistol") then
+		local data = self:upgrade_value("pistol", "stacking_hit_damage_multiplier", 0)
+
+		if data and type(data) ~= "number" then
+			self._coroutine_mgr:add_coroutine("trigger_happy", PlayerAction.TriggerHappy, self, data.damage_bonus, data.max_stacks, Application:time() + data.max_time)
+		end
+	end
+end
+
 --Add extra checks to make sure that it only looks for killing headshots done with valid guns.
 function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
 	if not self._coroutine_mgr:is_running("ammo_efficiency") then
@@ -1306,9 +1334,11 @@ function PlayerManager:get_max_grenades(grenade_id)
 
 	--Jack of all trades basic grenade count increase.
 	--MAY be source of grenade syncing issues due to interaction with get_max_grenades_by_peer_id(). Is worth investigating some time.
+	local is_cooldown = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown")
 	local is_perk_throwable = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown") and not tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown_no_perk")
-	if max_amount and not is_perk_throwable then
-		max_amount = math.ceil(max_amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
+	local throwables_multiplier = (not is_cooldown and self:upgrade_value("player", "throwables_multiplier", 1.0)) or 1
+	if max_amount and not is_perk_throwable then 
+		max_amount = math.ceil(max_amount * throwables_multiplier)
 	end
 	max_amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", max_amount)
 
@@ -1348,10 +1378,12 @@ function PlayerManager:_internal_load()
 		amount = self:get_grenade_amount(peer_id) or amount
 	end
 	
+	local is_cooldown = grenade.base_cooldown
 	local is_perk_throwable = grenade.base_cooldown and not grenade.base_cooldown_no_perk
+	local throwables_multiplier = (not is_cooldown and self:upgrade_value("player", "throwables_multiplier", 1)) or 1
 	if amount and not is_perk_throwable then --*Should* stop perk deck actives from being increased.
 		amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount) --Crime spree throwables mod.
-		amount = math.ceil(amount * self:upgrade_value("player", "throwables_multiplier", 1.0)) --JOAT Basic
+		amount = math.ceil(amount * throwables_multiplier) --JOAT Basic
 	end
 
 	self:_set_grenade({
@@ -2153,6 +2185,10 @@ Hooks:PostHook(PlayerManager, "can_carry", "ResCarryStackerCanCarry", function(s
     return check_weight >= max_weight
 end)
 
+Hooks:PreHook(PlayerManager, "drop_carry", "ResCarryStackerPreDropCarry", function(self, _)
+	self._player_state_before_drop = self._current_state
+end)
+
 --- Makes the timing before you can interact again consistent. That's it.
 --- We DO base it on the synced_carry_stacker length rather than synced_carry, though this is
 --- because of the code reorganisation that mandates we trust the host with dropping stuff.
@@ -2166,6 +2202,15 @@ Hooks:PostHook(PlayerManager, "drop_carry", "ResCarryStackerDropCarry", function
 
 	self:update_carrystacker_hud(peer_id)
 	self:recalculate_carried_weights()
+
+	if not self._player_state_before_drop then
+		return
+	end
+	if self._player_state_before_drop == "carry" then
+		managers.player:set_player_state("standard")
+	else
+		managers.player:set_player_state(self._player_state_before_drop)
+	end
 end)
 
 --- This is a bit delayed compared to the original CarryStacker implementation where this (or rather

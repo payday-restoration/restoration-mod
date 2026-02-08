@@ -1886,6 +1886,7 @@ function InstantExplosiveBulletBase:on_collision_client(position, normal, damage
 end
 
 function ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, user_unit, damage, ...)
+	--[[
 	if col_ray.unit:character_damage().on_concussion then
 		local conc_tweak = alive(weapon_unit) and weapon_unit:base().concussion_tweak and weapon_unit:base():concussion_tweak()
 		local conc_mul = conc_tweak and conc_tweak.mul or tweak_data.character.concussion_multiplier
@@ -1901,7 +1902,7 @@ function ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, us
 			managers.environment_controller:set_concussion_grenade(col_ray.unit:movement():m_head_pos(), true, 0, 0, conc_mul, true, true)
 			col_ray.unit:character_damage():on_concussion(sound_eff_mul, false, sound_tweak)
 		end
-	elseif Network:is_server() and col_ray.unit:character_damage().stun_hit then
+	else--]] if Network:is_server() and col_ray.unit:character_damage().stun_hit then
 		local function can_stun(hit_unit)
 			local brain_ext = hit_unit:brain()
 

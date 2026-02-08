@@ -602,15 +602,26 @@ function PlayerDamage:damage_bullet(attack_data)
 				--Shotgunner
 				if tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner and alive(self._unit) and not driving and not can_dodge then
 					range = tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner.range
+					local flashbang_mul = managers.player:upgrade_value("player", "flashbang_multiplier")
+					local atk_inv = attacker_unit.inventory and attacker_unit:inventory()
+					local atk_eq = atk_inv and atk_inv.equipped_unit and atk_inv:equipped_unit()
+					local atk_eq_base = atk_eq and atk_eq.base and atk_eq:base()
+					local conc_tweak = atk_eq_base and atk_eq_base.concussion_tweak and atk_eq_base:concussion_tweak()
+					local conc_mul = (conc_tweak and conc_tweak.mul or tweak_data.character.concussion_multiplier or 1) * flashbang_mul
+					local sound_tweak = conc_tweak and conc_tweak.sound_duration
+					local sound_eff_mul = (sound_tweak and sound_tweak.mul or 0.3) * flashbang_mul
+					log(tostring( conc_mul ))
 					if distance < range then
 						local vars = {
 							"melee_hit",
 							"melee_hit_var2"
 						}
 						self._unit:camera():play_shaker(vars[math.random(#vars)], 0.25, 0.5)
-						local d_scope_t = 1.5 * managers.player:upgrade_value("player", "flashbang_multiplier")
+						local d_scope_t = 1.5 * flashbang_mul
 						self._unit:movement():current_state()._d_scope_t = d_scope_t
 						managers.hud:activate_effect_screen(d_scope_t, Vector3(0.35, 0.25, 0.1) * effect_alpha)
+						managers.environment_controller:set_concussion_grenade(self._unit:movement():m_head_pos(), true, 0, 0, conc_mul, true, true)
+						self:on_concussion(sound_eff_mul, false, sound_tweak)
 					end
 				end
 

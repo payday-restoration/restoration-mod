@@ -35,3 +35,42 @@ Hooks:PostHook(EnemyManager, "on_enemy_died", "ResOnEnemyDied", function(self, d
 	end
 	
 end)
+
+-- For intimidated guards checking in with the pager operators.
+
+Hooks:PostHook(EnemyManager, "_init_enemy_data", "res_init_enemy_data", function(self)
+	--- Contains the actual data about intimidated guards.
+	self._intimidated_guards = {}
+end)
+
+function EnemyManager:all_intimidated_guards()
+	return self._intimidated_guards
+end
+
+function EnemyManager:register_intimidated_guard(guard_unit, t)
+	self._intimidated_guards[guard_unit:key()] = {
+		unit = guard_unit, -- Unit data.
+		t = t, -- The time when the unit was intimidated.
+		hints = { -- Used exclusively for the interaction text.
+			time_left = 0, -- Time left before next check-in.
+			sus_increase = 0 -- By how much will the next check-in increase suspicion.
+		}
+	}
+end
+
+function EnemyManager:unregister_intimidated_guard(guard_unit)
+	self._intimidated_guards[guard_unit:key()] = nil
+end
+
+--- Updates only the hints of the intimidated guard (hints being what are used to fill out the interaction text).
+--- @param key Key The unit's key, typically obtained with unit:key(). Used for index determination.
+--- @param time_left number Seconds left before the next check-in.
+--- @param sus_increase number Number between 0-1, the amount the suspicion meter will be increased by. Percentage of the suspicion meter, not related to the internal values -- so 0.5 will *always* mean 50% suspicion increase, no matter what difficulty.
+function EnemyManager:update_intimidated_guard_hints(key, time_left, sus_increase)
+	if self._intimidated_guards[key] then
+		self._intimidated_guards[key].hints = {
+			time_left = time_left,
+			sus_increase = sus_increase
+		}
+	end
+end

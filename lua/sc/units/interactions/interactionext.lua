@@ -491,6 +491,20 @@ if PickUpWeaponInteractionExt then
 	end)
 end
 
+--- Intimidated guards will display how long until they next check in, and how much they'll increase the suspicion meter.
+function IntimitateInteractionExt:_add_string_macros(macros)
+	if self.tweak_data == "intimidated_guard_checkin" then
+		local data = managers.enemy:all_intimidated_guards()[self._unit:key()]
+		macros.CHECKIN_TIME = "0"
+		macros.SUSP_IN = "0.0%"
+
+		if data and data.hints then 
+			macros.CHECKIN_TIME = tostring(math.ceil(math.max(0, data.hints.time_left)))
+			macros.SUSP_INC = tostring(math.floor(data.hints.sus_increase * 1000) / 10).."%" -- Multiplying by 100 gets a percentage value, doing it this way just lets us show one fractional.
+		end
+	end
+end
+
 -- Carry Stacker below
 local master_IntimitateInteractionExt_interact_blocked = IntimitateInteractionExt._interact_blocked
 local master_CarryInteractionExt_interact_blocked = CarryInteractionExt._interact_blocked
@@ -503,6 +517,12 @@ function IntimitateInteractionExt:_interact_blocked(player)
 		end
 		local result = not managers.player:can_carry("person")
 		return result
+	elseif self.tweak_data == "intimidated_guard_checkin" then
+		-- The intimidated guard check-in "interactions" never actually have you interact.
+		return true, nil, "intimidated_guard_checkin_active"
+	elseif self.tweak_data == "intimidated_guard_checkin_pointless" then
+		-- The intimidated guard check-in "interactions" never actually have you interact.
+		return true, nil, "intimidated_guard_checkin_inactive"
 	end
 	local result = master_IntimitateInteractionExt_interact_blocked(self, player)
 	return result

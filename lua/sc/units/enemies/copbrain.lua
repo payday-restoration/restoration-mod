@@ -281,6 +281,10 @@ logic_variants.hector_boss = logic_variants.triad_boss
 logic_variants.drug_lord_boss = logic_variants.triad_boss
 logic_variants.biker_boss = logic_variants.triad_boss
 
+Hooks:PostHook(CopBrain, "init", "res_init", function(self, unit)
+	self._intimidation_t = 0 -- In Stealth, when the cop was intimidated
+end)
+
 -- Update immediately once we have our pathing results instead of waiting for the next update
 -- Not posthooking _add_pathing_result instead of these two just in case the path gets modified before navlink delays are applied in clbk_pathing_results
 Hooks:PostHook(CopBrain, "clbk_pathing_results", "res_clbk_pathing_results", function(self, search_id, path)

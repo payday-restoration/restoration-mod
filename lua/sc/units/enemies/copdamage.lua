@@ -2126,6 +2126,11 @@ function CopDamage:die(attack_data)
 		self._unit:interaction():set_active(false, true, false)
 	end
 
+	if self._unit:interaction().tweak_data == "intimidated_guard_checkin" or self._unit:interaction().tweak_data == "intimidated_guard_checkin_pointless" then
+		self._unit:interaction():set_active(false, true, false)
+	end
+	managers.enemy:unregister_intimidated_guard(self._unit)
+
 	if self._char_tweak.ends_assault_on_death then
 		if job == "crojob3" or job == "crojob3_night" then
 			--No assault end, as they're not the assaulting force

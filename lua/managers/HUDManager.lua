@@ -127,6 +127,7 @@ function HUDManager:_upd_animate_level_suspicion(t,amount,amount_max,amount_inte
 	panel:child("suspicion_interp"):set_color(Color(amount_interpolated/amount_max,0,0))
 	suspicion_icon:set_alpha(ratio + base_icon_alpha)
 	panel:child("suspicion_circle"):set_color(Color(ratio,0,0)) --progress radial
+	panel:child("suspicion_checkin"):set_color(Color(tweak_data.stealth_intimidiated_checkin.limit,0,0)) -- Show the stealth checkin limit.
 	local alert_on = amount >= amount_max
 	
 	if alert_on then
@@ -180,7 +181,7 @@ function HUDManager:_create_level_suspicion_hud(hud)
 		texture = radial_texture, -- "guis/dlcs/coco/textures/pd2/hud_absorb_shield", --for soft blue outline instead
 		color = Color.black, --starts out invisible
 		alpha = 0.5,
-		layer = 3,
+		layer = 4,
 		w = radial_size,
 		h = radial_size
 	})
@@ -190,9 +191,19 @@ function HUDManager:_create_level_suspicion_hud(hud)
 		texture = radial_texture,
 		color = Color.black,
 		alpha = 1,
-		layer = 2,
+		layer = 3,
 		w = radial_size,
 		h = radial_size
+	})
+	local suspicion_checkin = level_suspicion_panel:bitmap({ -- Used to visually show how much can checkins add to suspicion.
+		name = "suspicion_checkin",
+		render_template = "VertexColorTexturedRadial",
+		texture = "guis/dlcs/coco/textures/pd2/hud_absorb_shield",
+		color = Color.black,
+		alpha = 0.5,
+		layer = 2,
+		w = radial_size * 0.46, -- The textures (this and hud_rip) are actually roughly the same size visually, but hud_rip has comical amounts of padding to it.
+		h = radial_size * 0.46
 	})
 	local suspicion_bg = level_suspicion_panel:bitmap({ --circle outline bg
 		name = "suspicion_bg",
@@ -225,6 +236,7 @@ function HUDManager:_create_level_suspicion_hud(hud)
 	local center_x,center_y = level_suspicion_panel:center()
 	suspicion_circle:set_center(center_x,center_y)
 	suspicion_interp:set_center(center_x,center_y)
+	suspicion_checkin:set_center(center_x,center_y)
 	suspicion_bg:set_center(center_x,center_y)
 	suspicion_icon:set_center(center_x,center_y)
 	for i=1,NUM_SUSPICION_EFFECT_GHOSTS,1 do 

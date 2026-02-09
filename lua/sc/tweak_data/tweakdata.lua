@@ -1099,6 +1099,41 @@ else
 	tweak_data.asu_damage_buff = 20
 end	
 
+-- Stealth-related tweaks
+
+--- When a guard is intimidated during stealth, every X seconds, they'll do a check-in with control.
+--- This simply means that every X seconds, every intimidated guard will increase the suspicion meter by a given amount.   
+--- @class StealthIntimidationCheckin
+--- @field time number[] Defines how many seconds should there been between check-ins based on player count, with the index representing the current amount of players.
+--- @field penalty number A number between 0 and 1 that increases the suspicion meter by this much during a check-in. Do note that this is in relation to what you visually see -- in code, the "maximum" isn't 1 / 100% for the suspicion meter, but you can treat this number as if it was (it'll get adjusted to to the suspicion meter maximum).
+--- @field limit number A number between 0 and 1 that defines a point past which check-ins cannot increase the suspicion meter. Same as with the `penalty` field -- treat this as if it *actually* meant a percentage of the suspicion meter, so 0.5 will *always* mean 50% of the suspicion meter, regardless of difficulty.
+
+--- @type StealthIntimidationCheckin
+tweak_data.stealth_intimidiated_checkin = {}
+tweak_data.stealth_intimidiated_checkin.time = {80, 70, 60, 50}
+
+if difficulty_index <= 4 then
+	-- This gameplay mechanic is turned off for difficulties below Overkill.
+	tweak_data.stealth_intimidiated_checkin.penalty = 0
+	tweak_data.stealth_intimidiated_checkin.limit = 0
+elseif difficulty_index == 5 then
+	-- 0.016 = 0.5 / 30 -> If you have a single guard intimidated, you'll reach the 50% limit in 30 minutes.
+	tweak_data.stealth_intimidiated_checkin.penalty = 0.016
+	tweak_data.stealth_intimidiated_checkin.limit = 0.5
+elseif difficulty_index == 6 then
+	-- 0.025 = 0.5 / 20 -> If you have a single guard intimidated, you'll reach the 50% limit in 20 minutes.
+	tweak_data.stealth_intimidiated_checkin.penalty = 0.025
+	tweak_data.stealth_intimidiated_checkin.limit = 0.5
+elseif difficulty_index == 7 then
+	-- 0.0375 = 0.75 / 20
+	tweak_data.stealth_intimidiated_checkin.penalty = 0.0375
+	tweak_data.stealth_intimidiated_checkin.limit = 0.75
+else
+	-- 0.05 = 1 / 20 (just rounding the 0.99 up)
+	tweak_data.stealth_intimidiated_checkin.penalty = 0.05
+	tweak_data.stealth_intimidiated_checkin.limit = 0.99
+end
+
 tweak_data.achievement.complete_heist_achievements.pain_train.num_players = nil
 tweak_data.achievement.complete_heist_achievements.anticimex.num_players = nil
 tweak_data.achievement.complete_heist_achievements.ovk_8.num_players = nil

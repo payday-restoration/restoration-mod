@@ -1028,9 +1028,59 @@ function GroupAIStateBase:update(t, dt)
 	if self._last_detection_mul and self._last_detection_mul ~= self._old_guard_detection_mul_raw and Network:is_server() then 
 		LuaNetworking:SendToPeers("restoration_sync_level_suspicion",tostring(self._old_guard_detection_mul_raw) .. ":" .. tostring(self._weapons_hot_threshold))
 	end
-			
 	
-	
+	-- Update intimidated guards in stealth to check in with the pager operators
+	if is_whisper_mode then
+		-- You cannot use # to check the length of a table with non-sequential keys, but still, I only wanna dirty
+		-- the interaction text once per run through the intimidated guards.
+		local _has_dirtied_text_once_per_check = false
+
+		for index, data in pairs(managers.enemy:all_intimidated_guards()) do
+			local vanilla_behaviour = managers.mutators:modify_value("CopMovement:VanillaPoliceCall", false)
+			local potential_sus_increase = math.max(math.min((tweak_data.stealth_intimidiated_checkin.limit * alarm_threshold) - level_suspicion, tweak_data.stealth_intimidiated_checkin.penalty * alarm_threshold), 0) -- Effectively clamps the value between 0 and as many as needed to reach the limit. Couldn't actually use math.clamp because limit-current can be negative.
+			local time_since_intimidation = t - data.t
+
+			local player_count = 1
+			if managers.network:session() then
+				player_count = table.size(managers.network:session():all_peers())
+			end
+			-- Theoretically supports big lobby mods if someone gets their jollies from 12 player stealth.
+			local time_til_checkin = tweak_data.stealth_intimidiated_checkin.time[math.clamp(player_count,1,#tweak_data.stealth_intimidiated_checkin.time)]
+
+			if not vanilla_behaviour and potential_sus_increase > 0 and time_since_intimidation > time_til_checkin then
+				if Network:is_server() then
+					self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + potential_sus_increase
+					self._guard_detection_mul_raw = self._old_guard_detection_mul_raw
+					self._decay_target = self._old_guard_detection_mul_raw * 0.75
+					self._guard_delay_deduction = self._guard_delay_deduction + potential_sus_increase
+					self:_delay_whisper_suspicion_mul_decay()
+				end
+
+				if data.unit:sound() then
+					data.unit:sound():stop()
+					data.unit:sound():play(data.unit:brain():_get_radio_id("dsp_radio_fooled_1"), nil, true)
+				end
+
+				data.t = data.t + time_since_intimidation
+			end
+
+			managers.enemy:update_intimidated_guard_hints(index, time_til_checkin - time_since_intimidation, potential_sus_increase / alarm_threshold)
+			-- potential_sus_increase needs to be divided by alarm_threshold, as the suspicion increase is stored as an actual percentage
+			-- value of the overall suspicion meter visually, not as a percentage value of the internal numbers.
+			-- So this way, we get that back.
+
+			if potential_sus_increase == 0 and data.unit and alive(data.unit) and data.unit:base() and data.unit:interaction() and data.unit:interaction().tweak_data == "intimidated_guard_checkin" then
+				--  This is a comical amount of checks, but this goddamn if crashed the game with access violations so fucking much.
+				data.unit:interaction():set_tweak_data("intimidated_guard_checkin_pointless")
+			end
+
+			if alive(managers.interaction:active_unit()) and not _has_dirtied_text_once_per_check then
+				managers.interaction:active_unit():interaction():set_text_dirty(true)
+				_has_dirtied_text_once_per_check = true
+			end
+		end
+	end
+
 	if is_whisper_mode then
 		local warning_1_threshold = self._weapons_hot_threshold * 0.25
 		local warning_2_threshold = self._weapons_hot_threshold * 0.5

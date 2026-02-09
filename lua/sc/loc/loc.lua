@@ -5194,6 +5194,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["hud_repair_sentry"] = "$AMMO_LEFT",
 		["hud_action_repair_sentry"] = "Repairing sentry...",
 
+		-- Intimidated guards checking in in stealth
+		["intimidated_guard_checkin_active"] = "Guard will check in in $CHECKIN_TIME seconds. (+$SUSP_INC suspicion)",
+		["intimidated_guard_checkin_inactive"] = "No effect on guard checking in.",
+
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
 		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
@@ -5290,6 +5294,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["loading_stealth_res_19"] = "Pager operators are less lenient on higher difficulties. Your last pager is indicated by the use of a special voice line.",
 		["loading_stealth_res_20"] = "Answering pagers beyond your allowed limit massively increases suspicion, but not as much as dropping or not answering.",
 		["loading_stealth_res_21"] = "Pagers take longer to answer and expire faster on the ground on higher difficulties.",
+		["loading_stealth_res_22"] = "Intimidated guards check in with the operators every so often, raising your suspicion over time. However, the heist cannot ever go loud because of a check-in.",
+		["loading_stealth_res_23"] = "You can see when an intimidated guard will next check in with the pager operators (and how much your suspicion will increase when that happens) by hovering over them.",
 		--Equipment/Skill Hints
 		["loading_equip_skills_res_title"] = "Restoration Equipment/Skill Tips",
 		["loading_equip_skills_res_1"] = "Shotguns lose effectiveness at long range as their accuracy gets lower while higher accuracy hurts their ability to hit multiple targets; experiment and see what works best!",

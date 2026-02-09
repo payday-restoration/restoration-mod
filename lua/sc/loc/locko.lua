@@ -389,6 +389,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["RestorationModBWAResmodADSSwayStrDescID"] = "정조준 중 주변을 둘러볼 때 무기가 움직이는 양을 기본 움직임에 비레해 변경합니다. (기본값 0.05)",
 
 		--EXTRA OPTIONS
+		["RestorationModHearNonLocalPECMTitleID"] = "다른 플레이어의 휴대용 ECM 사운드 재생",
+		["RestorationModHearNonLocalPECMDescID"] = "다른 플레이어가 휴대용 ECM을 활성화 했을때 사운드를 재생합니다.",		
 		["RestorationModAltLastDownColorTitleID"] = "대체 마지막 다운 컬러 그레이딩",
 		["RestorationModAltLastDownColorDescID"] = "마지막 다운 컬러 그레이딩을 color_sin_classic으로 전환합니다.",
 		["RestorationModNoBleedoutTiltTitleID"] = "출혈 카메라 틸트 비활성화",

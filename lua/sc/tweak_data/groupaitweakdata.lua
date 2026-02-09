@@ -14350,6 +14350,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		Cap_winters = {
 			"ranged_fire", -- fuck you
 			"shield",
+			"shield_cover", -- Should be fine since only he has both shield and shield cover
 			"provide_coverfire",
 			"provide_support"
 		},	
@@ -14361,6 +14362,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},	
 		Cap_winters_minion_sniper = {
 			"ranged_fire",
+			"shield_cover",
 			"provide_coverfire",
 			"provide_support"
 		},		
@@ -21560,4 +21562,5 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	}
 	self.safehouse = deep_clone(self.besiege)	
 end
+
 

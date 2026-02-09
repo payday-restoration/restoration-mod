@@ -31,6 +31,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Settings", function(loc)
 			["resmod_advmov_melee_loud_only"] = "Во время громкого подхода",
 			["resmod_advmov_melee_off"] = "Выключено",
 		
+		["RestorationModHearNonLocalPECMTitleID"] = "Звуки карманного ГП от других игроков",
+		["RestorationModHearNonLocalPECMDescID"] = "Проигрывать звуки работающего КГП при активации его другим игроком.",
 		["RestorationModAltLastDownColorTitleID"] = "Другой фильтр для последнего падения",
 		["RestorationModAltLastDownColorDescID"] = "Переключает цветовой фильтр при последнем падении на color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Отключить наклон камеры при падении",

@@ -1,4 +1,5 @@
 local old_PlayerInventory = PlayerInventory.add_unit_by_factory_name
+local hacker_pecm_sound = restoration.Options:GetValue("OTHER/HearNonLocalPECM")
 
 function PlayerInventory:add_unit_by_factory_name(...)
 	old_PlayerInventory(self, ...)
@@ -263,3 +264,29 @@ function PlayerInventory:_chk_ammo_type_buff(weapon_unit)
 		end
 	end
 end
+
+Hooks:OverrideFunction(PlayerInventory, "sync_net_event", function (self, event_id, peer)
+	if self._unit:base().is_local_player and not hacker_pecm_sound then
+		return
+	end
+
+	local net_events = self._NET_EVENTS
+
+	if event_id == net_events.jammer_start then
+		self:_start_jammer_effect()
+	elseif event_id == net_events.jammer_stop then
+		local found_queued = self:_chk_remove_queued_jammer_effects("jamming")
+
+		if not found_queued then
+			self:_stop_jammer_effect()
+		end
+	elseif event_id == net_events.feedback_start then
+		self:_start_feedback_effect()
+	elseif event_id == net_events.feedback_stop then
+		local found_queued = self:_chk_remove_queued_jammer_effects("feedback")
+
+		if not found_queued then
+			self:_stop_feedback_effect()
+		end
+	end
+end)

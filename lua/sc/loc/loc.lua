@@ -392,6 +392,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["RestorationModBWAResmodADSSwayStrDescID"] = "Change the amount your weapon moves when looking around while ADS vs. base look-sway (Default 0.05)",
 
 		--EXTRA OPTIONS
+		["RestorationModHearNonLocalPECMTitleID"] = "Pocket ECM Sounds From Other Players",
+		["RestorationModHearNonLocalPECMDescID"] = "Play PECM sounds if other player activate it.",
 		["RestorationModAltLastDownColorTitleID"] = "Alternative Last Down Color Grading",
 		["RestorationModAltLastDownColorDescID"] = "Switches the last down color grading to color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Disable Bleedout Camera Tilt",

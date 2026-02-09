@@ -48,7 +48,7 @@ function EnemyManager:all_intimidated_guards()
 end
 
 function EnemyManager:register_intimidated_guard(guard_unit, t)
-	self._intimidated_guards[guard_unit:key()] = {
+	self._intimidated_guards[guard_unit:id()] = {
 		unit = guard_unit, -- Unit data.
 		t = t, -- The time when the unit was intimidated.
 		hints = { -- Used exclusively for the interaction text.
@@ -58,19 +58,40 @@ function EnemyManager:register_intimidated_guard(guard_unit, t)
 	}
 end
 
-function EnemyManager:unregister_intimidated_guard(guard_unit)
-	self._intimidated_guards[guard_unit:key()] = nil
+function EnemyManager:unregister_intimidated_guard(guard_id)
+	self._intimidated_guards[guard_id] = nil
 end
 
 --- Updates only the hints of the intimidated guard (hints being what are used to fill out the interaction text).
---- @param key Key The unit's key, typically obtained with unit:key(). Used for index determination.
+--- @param id UnitID The unit's ID, typically obtained with unit:id(). Used for index determination.
 --- @param time_left number Seconds left before the next check-in.
 --- @param sus_increase number Number between 0-1, the amount the suspicion meter will be increased by. Percentage of the suspicion meter, not related to the internal values -- so 0.5 will *always* mean 50% suspicion increase, no matter what difficulty.
-function EnemyManager:update_intimidated_guard_hints(key, time_left, sus_increase)
-	if self._intimidated_guards[key] then
-		self._intimidated_guards[key].hints = {
+function EnemyManager:update_intimidated_guard_hints(id, time_left, sus_increase)
+	if self._intimidated_guards[id] then
+		self._intimidated_guards[id].hints = {
 			time_left = time_left,
 			sus_increase = sus_increase
 		}
+	end
+end
+
+function EnemyManager:decode_intimidated_guard_units(unit_id, time)
+
+	local units = World:find_units_quick("all", managers.slot:get_mask("hostages"))
+	for _, unit in pairs(units) do
+		if tonumber(unit:id()) == tonumber(unit_id) then
+			self:register_intimidated_guard(unit, tonumber(time))
+			return
+		end
+	end
+end
+
+function EnemyManager:update_intimidated_guard_data_to_peer(peer)
+	if peer:ip_verified() then
+		for unit_id, data in pairs(self._intimidated_guards) do
+			if data.t and data.unit then
+				LuaNetworking:SendToPeers("sync_intimidated_guard_data",data.unit:id(), tostring(data.t))
+			end
+		end
 	end
 end

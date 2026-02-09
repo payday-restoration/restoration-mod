@@ -2129,7 +2129,10 @@ function CopDamage:die(attack_data)
 	if self._unit:interaction().tweak_data == "intimidated_guard_checkin" or self._unit:interaction().tweak_data == "intimidated_guard_checkin_pointless" then
 		self._unit:interaction():set_active(false, true, false)
 	end
-	managers.enemy:unregister_intimidated_guard(self._unit)
+	managers.enemy:unregister_intimidated_guard(self._unit:id())
+	if Network:is_server() then
+		LuaNetworking:SendToPeers("sync_intimidated_guard_data_delete", self._unit:id())
+	end
 
 	if self._char_tweak.ends_assault_on_death then
 		if job == "crojob3" or job == "crojob3_night" then

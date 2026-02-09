@@ -94,16 +94,6 @@
 		<search>
 			<network/>
 			<rpc/>
-			<message name="sync_remove_carry_stacker"/>
-		</search>
-		<target mode="attributes">
-			<attr name="delivery" value="ordered"/>
-		</target>
-	</tweak>
-	<tweak name="settings/network" extension="network_settings">
-		<search>
-			<network/>
-			<rpc/>
 			<message name="damage_tase"/>
 					<param type="int" min="0" max="1" />
 		</search>
@@ -119,6 +109,15 @@
 		</search>
 		<target mode="attach">
 			<param type="float" min="0" max="63" step="0.1" exact="false"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+		</search>
+		<target mode="attach">
+			<message name="sync_remove_carry_stacker"/>
 		</target>
 	</tweak>
 	<tweak version="2" name="settings/network" extension="network_settings">

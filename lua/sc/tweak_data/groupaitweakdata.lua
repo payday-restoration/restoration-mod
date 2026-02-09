@@ -14325,7 +14325,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		Cap_spring_minion = {
 			"shield_cover",
-			"charge"
+			-- "charge"
 		},
 		HVH_boss = {
 			"shield",
@@ -21562,5 +21562,4 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	}
 	self.safehouse = deep_clone(self.besiege)	
 end
-
 

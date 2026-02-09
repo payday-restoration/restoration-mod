@@ -300,7 +300,7 @@ function CopDamage:_spawn_head_gadget(params)
 		return
 	end
 
-	if not params.position or params.rotation then
+	if not params.position or not params.rotation then
 		return
 	end
 

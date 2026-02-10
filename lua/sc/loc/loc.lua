@@ -5836,7 +5836,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "Stun Resistance",
-				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemy melee attacks push you back #{skill_color}#$skill_value_b1## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the visual effect duration of flashbangs and enemy concussion rounds by #{skill_color}#$skill_value_p1.##\n\nKnockback from enemy gunfire is reduced by #{skill_color}#$skill_value_p2## for every point of armor you have.",
+				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nKnockback from enemies push you back #{skill_color}#$skill_value_b1## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the visual effect duration of flashbangs and enemy concussion rounds by #{skill_color}#$skill_value_p1.##",
 
 				--Die Hard
 				["menu_show_of_force_sc"] = "Die Hard",

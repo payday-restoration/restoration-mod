@@ -1308,6 +1308,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 			if stats.object_damage_mult_override then		
 				self._object_damage_mult = stats.object_damage_mult_override
+				self._object_damage_mult_single_ray = stats.object_damage_mult_override
 			end
 			if stats.descope_on_fire then		
 				self._descope_on_fire = stats.descope_on_fire

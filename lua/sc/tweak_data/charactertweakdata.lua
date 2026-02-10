@@ -1583,6 +1583,7 @@ end
 function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss = deep_clone(presets.base)
 	self.triad_boss.experience = {}
+	self.triad_boss.tags = {"boss"}
 	self.triad_boss.weapon = deep_clone(presets.weapon.normal)
 	self.triad_boss.detection = presets.detection.normal	
 	self.triad_boss.HEALTH_INIT = 375
@@ -1671,6 +1672,7 @@ end
 function CharacterTweakData:_init_deep_boss(presets)
 	self.deep_boss = deep_clone(presets.base)
 	self.deep_boss.experience = {}
+	self.deep_boss.tags = {"boss"}
 	self.deep_boss.weapon = deep_clone(presets.weapon.good)
 	self.deep_boss.weapon.is_rifle.melee_retry_delay = {
 		7,
@@ -1868,7 +1870,7 @@ end
 
 function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss = deep_clone(presets.base)
-	self.mobster_boss.tags = {"custom", "special"}
+	self.mobster_boss.tags = {"custom", "special", "boss"}
 	self.mobster_boss.experience = {}
 	self.mobster_boss.detection = presets.detection.normal
 	self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
@@ -1926,7 +1928,7 @@ end
 
 function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss = deep_clone(presets.base)
-	self.biker_boss.tags = {"custom", "special"}
+	self.biker_boss.tags = {"custom", "special", "boss"}
 	self.biker_boss.experience = {}
 	self.biker_boss.weapon = deep_clone(presets.weapon.normal)
 	self.biker_boss.detection = presets.detection.normal
@@ -1984,7 +1986,7 @@ end
 
 function CharacterTweakData:_init_hector_boss(presets)
 	self.hector_boss = deep_clone(self.mobster_boss)
-	self.hector_boss.tags = {"custom", "special"}
+	self.hector_boss.tags = {"custom", "special", "boss"}
 	self.hector_boss.weapon = deep_clone(presets.weapon.normal)
 	self.hector_boss.can_be_tased = false
 	self.hector_boss.priority_shout = "g29"
@@ -2022,7 +2024,7 @@ end
 function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss = deep_clone(presets.base)
 	self.chavez_boss.experience = {}
-	self.chavez_boss.tags = {"custom", "special"}
+	self.chavez_boss.tags = {"custom", "special", "boss"}
 	self.chavez_boss.weapon = deep_clone(presets.weapon.normal)
 	self.chavez_boss.detection = presets.detection.normal
 	self.chavez_boss.priority_shout = "g29"
@@ -2437,7 +2439,7 @@ end
 function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss = deep_clone(presets.base)
 	self.drug_lord_boss.experience = {}
-	self.drug_lord_boss.tags = {"custom", "special"}
+	self.drug_lord_boss.tags = {"custom", "special", "boss"}
 	self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
 	self.drug_lord_boss.detection = presets.detection.normal
 	self.drug_lord_boss.HEALTH_INIT = 375

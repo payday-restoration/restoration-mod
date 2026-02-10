@@ -998,18 +998,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Juggernaut--
 			--Stun Resistance
 				--Basic
-					self.values.player.damage_shake_addend = {1}
 					self.values.player.resist_melee_push = {0.025}
+					self.values.player.resist_knockback_push = {0.025}
 				--Ace
 					self.values.player.flashbang_multiplier = {1, 0.5}
-					self.values.player.resist_knockback_push = {0.025}
+				--UNUSED
+					self.values.player.damage_shake_addend = {1}
 					
 					self.skill_descs.oppressor = {
 						skill_value_b1 = tostring(self.values.player.resist_melee_push[1] * 10).."%", -- Melee push resistance (depends of armor)
 						skill_value_p1 = tostring(self.values.player.flashbang_multiplier[2] * 100).."%", -- Reduce duration of flashbang effect
-						skill_value_p2 = tostring(self.values.player.resist_knockback_push[1] * 10).."%", -- Knockback resistance (depends of armor)
+						--skill_value_p2 = tostring(self.values.player.resist_knockback_push[1] * 10).."%", -- Knockback resistance (depends of armor)
 					}
-				
 			--Die Hard
 				self.values.player.deflection_addend = {
 					0.05, --Basic
@@ -2414,11 +2414,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--New Sociopath
 	local ene_mult = { --Point multiplier based on tags of the enemy killed, top-down priority; final value is always rounded down
 		{captain = 10},
+		{boss = 10},
 		{tank = 5},
 		{spooc_titan = 3},
 		{spooc = 2.75},
 		{vet = 2.50},
-		{taser_titan = 2.00},
+		{taser_titan = 2.50},
 		{taser = 2.50},
 		{medic = 2.25},
 		{shield_titan = 2.00},
@@ -2427,7 +2428,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{sniper = 1.50},
 		{special = 1.50},
 	}
-	self.socio_affinity_bonus_steps = 1 
+	self.socio_affinity_bonus_steps = 1
 	self.values.player.buildup_meter = {
 		{
 			combo_max = 100, --Max combo
@@ -2537,7 +2538,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.buildup_meter_quickening = { --armor to base combo
 		{
 			combo_add_mod = 1, --base combo added per step
-			hurt_t_mod = 0.5, --hurt decay cooldown added per step
+			hurt_t_mod = 1, --hurt decay cooldown added per step
 			armor_steps = 10 --armor steps
 		}
 	}
@@ -3275,7 +3276,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_1 = tostring(self.values.player.buildup_meter_pacify[2].effect * 100) .. "%",
 		perk_value_2 = tostring(self.values.player.buildup_meter_pacify[2].combo_steps),
 		perk_value_3 = tostring(self.values.player.buildup_meter_pacify[2].effect_max * 100) .. "%",
-		perk_value_4 = tostring(self.values.player.buildup_meter_hurt_decay_mod[3]),
+		perk_value_4 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
 	}
 	self.multi_choice_specialization_descs[9][9][5] = { --Zack
 		perk_value_1 = tostring(self.values.player.buildup_meter_zack[1].combo_t_mod),

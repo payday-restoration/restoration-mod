@@ -1948,7 +1948,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.sticky_grenade.throw_shout = nil
 
 	if self.projectiles.xmas_snowball then
-		self.projectiles.xmas_snowball.expire_t = 0.9
+		self.projectiles.xmas_snowball.throw_allowed_expire_t = 0.1
+		self.projectiles.xmas_snowball.expire_t = 1.3
 		self.projectiles.xmas_snowball.max_amount = 3
 		self.projectiles.xmas_snowball.base_cooldown_no_perk = true
 		self.projectiles.xmas_snowball.base_cooldown = 35
@@ -2004,6 +2005,9 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	--Viper Gas
 	--self.projectiles.poison_gas_grenade.animation = "throw_grenade_com"				--throw_grenade_com
 	--self.projectiles.poison_gas_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com	
+	--Snowball
+	self.projectiles.xmas_snowball.animation = "throw_dynamite"							--throw_snowball
+	self.projectiles.xmas_snowball.anim_global_param = "projectile_dynamite"			--projectile_snowball
 	
 	if SystemFS:exists("assets/mod_overrides/CoD Inspired Flashbang Animation") then
 		self.projectiles.concussion.animation = "throw_concussion"

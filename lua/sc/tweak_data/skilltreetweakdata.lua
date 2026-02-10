@@ -605,14 +605,14 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {6, 1},
 					[1] = {
 						upgrades = {
-							"player_resist_melee_push"
+							"player_resist_melee_push",
+							"player_resist_knockback_push"
 						},
 						cost = self.costs.default
 					},
 					[2] = {
 						upgrades = {
-							"player_flashbang_multiplier_2",
-							"player_resist_knockback_push"
+							"player_flashbang_multiplier_2"
 						},
 						cost = self.costs.pro
 					}
@@ -2667,7 +2667,6 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_2",
 				"buildup_meter_hurt_decay_mod_1",
 				"buildup_meter_hurt_decay_mod_2",
-				"buildup_meter_hurt_decay_mod_3",
 			},
 			texture_bundle_folder = "sc",
 			icon_xy = {0, 3}

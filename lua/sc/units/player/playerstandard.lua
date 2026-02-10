@@ -1966,6 +1966,16 @@ end
 local _update_movement_old = PlayerStandard._update_movement
 function PlayerStandard:_update_movement(t, dt)
 	_update_movement_old(self, t, dt)
+	if not self._wallkick_is_clinging then
+		if self._state_data.in_air and not self._set_z then
+			if self._unit:mover():velocity().z < -125 then
+				self._set_z = true
+				self._state_data.enter_air_pos_z = self._pos.z
+			end
+		elseif not self._state_data.in_air then
+			self._set_z = nil
+		end
+	end
 	if self._state_data.in_air or self._moving then
 		self._last_move_t = t
 	end

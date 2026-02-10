@@ -36398,6 +36398,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					elseif table.contains(weap.recategorize, "break_shot") then
 						weap.object_damage_mult = 0.75
 					end
+				elseif table.contains(weap.categories, "raygun") then
+					weap.object_damage_mult = 0.25
 				end
 
 				if weap.damage_type_single_ray == "sniper" then

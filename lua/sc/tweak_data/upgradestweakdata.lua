@@ -2894,8 +2894,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.025 --Copycat
 	}
 	self.values.player.copr_teammate_heal = {
-		0.01,
-		0.02
+		0.02,
+		0.04
 	}
 	self.values.player.copr_kill_life_leech = {
 		3,
@@ -3608,24 +3608,37 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring(self.values.player.copr_static_damage_ratio[1] * 100).."%", -- HP for 1 segment
 		perk_value_4 = tostring(self.values.player.copr_kill_life_leech[1]), -- Required kills for 1 restoring segment
 		perk_value_5 = tostring(self.copr_regen_grace), -- Invulnerability period
-		perk_value_6 = tostring(self.copr_ability_cooldown) -- CD of ampule
+		perk_value_6 = tostring(self.copr_ability_cooldown), -- CD of ampule
+		perk_value_7 = tostring(self.values.player.wild_health_amount[1] * 10), -- HP regen per (team) kill from old Biker
+		perk_value_8 = tostring(self.wild_trigger_time), -- CD of the old Biker regen ability
 	}
 	self.specialization_descs[22][3] = {
-		perk_value_1 = tostring(self.values.player.copr_teammate_heal[1] * 100).."%", -- HP regen for teammates when Leech user lost segment
+		perk_value_1 = tostring(self.values.player.copr_teammate_heal[1] * 100), -- HP regen for teammates when Leech user lost segment
+		perk_value_2 = tostring(self.values.player.biker_armor_regen[1][1] * 10), -- Passive armor regen from old Biker
+		perk_value_3 = tostring(self.values.player.biker_armor_regen[1][2]), -- CD of armor regen ability from old Biker
+		perk_value_4 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[22][5] = {
 		perk_value_1 = tostring(self.values.temporary.copr_ability[2][2]), -- Duration buff
 		perk_value_2 = tostring(self.values.player.copr_speed_up_on_kill[1]), -- CD reduction on kill
-		perk_value_3 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
+		perk_value_3 = tostring(self.values.player.less_armor_wild_cooldown[1][1] * 100).."%", -- Missing armor reduce ability's CD from old Biker
+		perk_value_4 = tostring(self.values.player.less_armor_wild_cooldown[1][2]), -- CD reduction per missing armor from old Biker
+		perk_value_5 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.specialization_descs[22][7] = {
 		perk_value_1 = tostring(self.values.player.copr_static_damage_ratio[2] * 100).."%", -- HP for 1 segment buff
 		perk_value_2 = tostring(self.values.player.copr_kill_life_leech[1]), -- Required kills for restoring segments
-		perk_value_3 = tostring(self.values.player.copr_static_damage_ratio_mult[2]) -- Number of segments restored
+		perk_value_3 = tostring(self.values.player.copr_static_damage_ratio_mult[2]), -- Number of segments restored
+		perk_value_4 = tostring(self.values.player.biker_armor_regen[2][1] * 10), -- Passive armor regen buff
+		perk_value_5 = tostring(self.values.player.biker_armor_regen[2][2]), -- CD of armor regen ability
+		perk_value_6 = tostring(self.values.player.biker_armor_regen[2][3]), -- CD reduction on melee kill
+		perk_value_7 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
 	}
 	self.specialization_descs[22][9] = {
 		perk_value_1 = tostring(self.copr_risen_cooldown_add), -- Additional CD if player revive himself
-		perk_value_2 = tostring(self.values.player.copr_teammate_heal[2] * 100).."%" -- HP regen for teammates buff
+		perk_value_2 = tostring(self.values.player.copr_teammate_heal[2] * 100), -- HP regen for teammates buff
+		perk_value_3 = tostring(self.values.player.less_armor_wild_health[1][1] * 100).."%", -- Missing armor increase HP per kill from old Biker
+		perk_value_4 = tostring(self.values.player.less_armor_wild_health[1][2] * 10) -- Additional HP regen per missing armor from old Biker
 	}
 	
 	--Copycat

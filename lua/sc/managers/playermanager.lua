@@ -2006,6 +2006,37 @@ function PlayerManager:add_cable_ties(amount)
 	self:update_synced_cable_ties_to_peers(new_amount)
 end
 
+-- While the ampoule is active, the old biker "gain HP on crew kill" effect is turned off.
+Hooks:PreHook(PlayerManager, "chk_wild_kill_counter", "res_chk_wild_kill_counter", function(self, _, _)
+	if self:has_activate_temporary_upgrade("temporary", "copr_ability") then
+		return
+	end
+end)
+
+-- Store the Leech user's armour when they activate the Ampoule, to the grant it back to them.
+Hooks:PreHook(PlayerManager, "_attempt_copr_ability", "res_attempt_copr_ability", function(self, _, _)
+	if self:has_activate_temporary_upgrade("temporary", "copr_ability") then
+		return false
+	end
+
+	local player_unit = self:player_unit()
+
+	if alive(player_unit) then
+		player_unit:character_damage():add_stored_armor(player_unit:character_damage():get_real_armor())
+	end
+end)
+
+-- When the Ampoule's effects end, consume any stored armour.
+-- Would have preferred this in PlayerDamage, but its on_copr_ability_deactivated get called before Leech gets forced into bleedout.
+Hooks:PostHook(PlayerManager, "clbk_copr_ability_ended", "res_clbk_copr_ability_ended", function(self)
+	local player_unit = self:local_player()
+	local character_damage = alive(player_unit) and player_unit:character_damage()
+
+	if character_damage then
+		character_damage:consume_stored_armor()
+	end
+end)
+
 --Accounts for max quantity changes when adding deployable equipment
 function PlayerManager:add_deployable_equipment(equipment_id, amount)
 	local equipment, index = self:equipment_data_by_name(equipment_id)

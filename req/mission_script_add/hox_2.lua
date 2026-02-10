@@ -24,7 +24,7 @@ local opts_hunt_so = {
 	use_instigator = true,
 	so_action = "AI_hunt",
 }
-local spawn_fbi_ready_team = {
+local opts_spawn_fbi_ready_team = {
 	enabled = true,
 	amount = 4,
 	amount_random = 0,

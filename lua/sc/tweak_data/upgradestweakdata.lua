@@ -3844,7 +3844,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_4 = tostring(self.values.player.copr_kill_life_leech[1]), -- Required kills for 1 restoring segment
 		perk_value_5 = "1", -- Invulnerability period. Not defined here (?)
 		perk_value_6 = tostring(self.copr_ability_cooldown), -- CD of ampule
-		perk_value_7 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
+		perk_value_7 = tostring(self.values.player.wild_health_amount[1] * 10), -- HP regen per (team) kill of old Biker
+		perk_value_8 = tostring(self.wild_trigger_time), -- CD of the above ability
+		perk_value_9 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	
 	local editable_skill_btns = {
@@ -4182,7 +4184,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 				"player_copr_activate_bonus_health_ratio_2",
 				"player_corpse_dispose_speed_multiplier",
 				"player_civ_move_multiplier",
-				"player_passive_loot_drop_multiplier_1"	
+				"player_wild_health_amount_1",
+				"player_passive_loot_drop_multiplier_1"
 			}
 		}
 	}

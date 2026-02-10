@@ -1036,7 +1036,12 @@ function GroupAIStateBase:update(t, dt)
 		local _has_dirtied_text_once_per_check = false
 
 		for index, data in pairs(managers.enemy:all_intimidated_guards()) do
-			local temp_alarm_threshold = (alarm_threshold ~= 0) and alarm_threshold or self._weapons_hot_threshold or 1 -- While the alarm threshold is 0, the server won't sync it over. Until then, we'll just pretend we got the most amount of suspicion possible to fill.
+			-- While the alarm threshold is 0, the server won't sync it over. Until then, we'll just pretend we got the most amount
+			-- of suspicion possible to fill. _weapons_hot_threshold shouldn't ever be 0, but I'm starting to not trust PAYDAY code.
+			local temp_alarm_threshold =
+				(alarm_threshold ~= 0 and alarm_threshold)
+				or (self._weapons_hot_threshold ~= 0 and self._weapons_hot_threshold)
+				or 1
 
 			local vanilla_behaviour = managers.mutators:modify_value("CopMovement:VanillaPoliceCall", false)
 			local potential_sus_increase = math.max(math.min((tweak_data.stealth_intimidiated_checkin.limit * temp_alarm_threshold) - level_suspicion, tweak_data.stealth_intimidiated_checkin.penalty * temp_alarm_threshold), 0) -- Effectively clamps the value between 0 and as many as needed to reach the limit. Couldn't actually use math.clamp because limit-current can be negative.

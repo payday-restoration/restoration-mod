@@ -2373,3 +2373,13 @@ end
 function PlayerDamage:stun_hit(attack_data)
 	return
 end
+
+-- Remove red screen flash if player has temp HP active
+Hooks:OverrideFunction(PlayerDamage, "_set_health_effect", function (self)
+	if not self:has_temp_health() then
+		local hp = self:get_real_health() / self:_max_health()
+
+		math.clamp(hp, 0, 1)
+		managers.environment_controller:set_health_effect_value(hp)
+	end
+end)

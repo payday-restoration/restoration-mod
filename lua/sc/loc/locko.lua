@@ -5123,6 +5123,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["hud_repair_sentry"] = "$AMMO_LEFT",
 		["hud_action_repair_sentry"] = "센트리 수리 중...",
 
+		-- Intimidated guards checking in in stealth
+		["intimidated_guard_checkin_active"] = "경비원이 상황 보고를 할 때까지 $CHECKIN_TIME 초 남음 (의심도 $SUSP_INC 증가)",
+		["intimidated_guard_checkin_inactive"] = "경비원 상황 보고에 영향 없음",
+
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "데스 위시. 당신을 위한 난이도, 행동이 곧 활력입니다.",
 		["menu_risk_sm_wish"] = "데스 센텐스. 이제 그 누구도 당신을 막을 수 없다는 걸 보여주십시오.",
@@ -5202,7 +5206,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["loading_stealth_res_2"] = "경고 상태가 아닌 경비원을 근접 공격으로 재빨리 처치하면 페이저를 빼앗을 수 있습니다.",
 		["loading_stealth_res_3"] = "보안 지휘소는 경비원의 실종을 알아차리고 지원 경비원을 보낼 가능성이 높습니다.",
 		["loading_stealth_res_4"] = "페이저가 없는 경비원을 죽여도 의심도가 커지지 않습니다.",
-		["loading_stealth_res_5"] = "스텔스 상태의 모든 무기의 소음은 소음 반경이 25미터로 고정되어 있습니다",
+		["loading_stealth_res_5"] = "스텔스 상태의 모든 무기의 소음 반경은 25미터로 고정되어 있습니다",
 		["loading_stealth_res_6"] = "시민들은 라우드와 스텔스에서 총격에 반응하여 엎드립니다.",
 		["loading_stealth_res_7"] = "센트리 건은 자신을 중심으로 상당한 반경 내에 있는 모든 시민을 진정시킵니다.",
 		["loading_stealth_res_8"] = "가방을 들고 있는 동안에는 훨씬 더 멀리서도 보일 수 있으며, 서 있거나 질주하거나 점프하는 동안에도 훨씬 더 빠르게 감지됩니다. 몸을 낮추고 천천히 움직이세요.",
@@ -5210,7 +5214,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["loading_stealth_res_10"] = "스텔스 상태에서 소음기가 장착된 무기는 소음을 발생시키지 않습니다.",
 		["loading_stealth_res_11"] = "스텔스에서는 라우드와 마찬가지로 최대 4명의 경찰을 인질로 잡을 수 있습니다.",
 		["loading_stealth_res_12"] = "스텔스는 더 관대하여 더 많은 뒷수습을 가능하게 합니다.",
-		["loading_stealth_res_13"] = "경비원은 더 이상 경고를 받지 않은 상태에서 어떤 피해를 입어도 즉사하지 않습니다. 머리쪽을 노리고 주먹보다 더 강력한 것을 가져오세요.",
+		["loading_stealth_res_13"] = "경비원은 더 이상 경고를 받지 않은 상태에서 어떤 피해를 입어도 즉사하지 않습니다. 주먹보다 더 강력한 근접 무기로 머리를 노리세요.",
 		["loading_stealth_res_14"] = "만일 의심 미터가 가득 차게되면 알람이 울리기 전에 시작한 일을 완료하는 데 60초가 주어집니다.",
 		["loading_stealth_res_15"] = "의심 미터가 높을수록 경비원에게 발각당하기 더 쉬워집니다.",
 		["loading_stealth_res_16"] = "기본 게임보다 더 많은 시체 가방을 운반할 수 있으며, 혼자 플레이하는 경우 가질 수 있는 시체 가방의 개수가 더욱 증가합니다",
@@ -5219,6 +5223,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["loading_stealth_res_19"] = "페이저 교환원은 난이도가 높을수록 덜 관대해집니다. 마지막 페이저는 특수 음성 대사를 통해 이를 알릴 것입니다.",
 		["loading_stealth_res_20"] = "허용된 한도를 초과한 채 페이저에 응답하면 의심도가 엄청나게 증가하지만, 중간에 끊거나 응답하지 않는 것만큼은 아닙니다.",
 		["loading_stealth_res_21"] = "난이도가 높을수록 페이저를 응답하는 데 시간이 더 오래 걸리고, 땅에 떨어진 상태에서 사라지는 시간도 빨라집니다.",
+		["loading_stealth_res_22"] = "제압된 경비원은 주기적으로 오퍼레이터에게 상황 보고를 하여 의심도를 늘리지만 이러한 상황 보고는 하이스트를 라우드로 전환시키지 않습니다.",
+		["loading_stealth_res_23"] = "제압된 경비원을 근처에 보고 있을때 페이저 오퍼레이터에게 언제 다시 상황 보고를 할지 (그리고 의심도를 얼마나 늘릴지) 확인할 수 있습니다.",		
 		--Equipment/Skill Hints
 		["loading_equip_skills_res_title"] = "레스토레이션 장비 및 스킬 팁",
 		["loading_equip_skills_res_1"] = "산탄총은 명중률이 낮으면 장거리에서 효율성이 떨어지고, 명중률이 높으면 여러 타겟을 맞추는 능력이 떨어집니다. 실험을 해보고 무엇이 가장 효과적인지 알아보세요!",
@@ -5759,7 +5765,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "기절 저항력",
-				["menu_oppressor_beta_desc_sc"] = "베이식: #{owned}#$basic##\n적의 근접 공격에 의한 밀림이 보유한 방탄량 1포인트당 #{skill_color}#$skill_value_b1## 감소합니다.\n\n에이스: #{owned}#$pro##\n섬광탄과 적 충격탄으로 인한 시각적 효과의 지속 시간이 #{skill_color}#$skill_value_p1## 감소합니다.\n\n적의 총격에 의한 밀쳐짐이 보유한 방탄량 1포인트당 #{skill_color}#$skill_value_p2## 감소합니다.",
+				["menu_oppressor_beta_desc_sc"] = "베이식: #{owned}#$basic##\n적의 공격으로 인한 밀쳐짐이 보유한 방탄량 1포인트당 #{skill_color}#$skill_value_b1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n섬광탄과 적 충격탄으로 인한 시각적 효과의 지속 시간이 #{skill_color}#$skill_value_p1## 감소합니다.",
 
 				--Die Hard
 				["menu_show_of_force_sc"] = "다이 하드",

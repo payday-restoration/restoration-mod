@@ -49,6 +49,12 @@ function NetworkPeer:mark_cheater(reason, auto_kick)
 	return
 end
 
+Hooks:PostHook(NetworkPeer, "sync_data", "res_sync_data", function(self, peer)
+	if Network:is_server() then
+		managers.enemy:update_intimidated_guard_data_to_peer(peer)
+	end
+end)
+
 -- Hooks:PostHook( NetworkPeer, "send", "SC_Network", function(self, func_name, ...)
 -- 	-- In SC mode if the func is matched, call the prefixed version instead
 -- 	if restoration.network_handler_funcs[func_name] then

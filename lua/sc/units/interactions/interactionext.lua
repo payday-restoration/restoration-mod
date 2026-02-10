@@ -495,7 +495,7 @@ end
 function IntimitateInteractionExt:_add_string_macros(macros)
 	IntimitateInteractionExt.super._add_string_macros(self, macros)
 	if self.tweak_data == "intimidated_guard_checkin" then
-		local data = managers.enemy:all_intimidated_guards()[self._unit:key()]
+		local data = managers.enemy:all_intimidated_guards()[self._unit:id()]
 		macros.CHECKIN_TIME = "0"
 		macros.SUSP_IN = "0.0%"
 

@@ -553,7 +553,7 @@ function PlayerDamage:damage_bullet(attack_data)
 	
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
-		local can_dodge = self._dodge_meter >= 1.0
+		local can_dodge = self._dodge_meter >= 1.0 and not managers.player:has_activate_temporary_upgrade("temporary", "copr_ability")
 
 		if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] then
 			local driving = self._unit:movement():current_state().driving

@@ -493,6 +493,7 @@ end
 
 --- Intimidated guards will display how long until they next check in, and how much they'll increase the suspicion meter.
 function IntimitateInteractionExt:_add_string_macros(macros)
+	IntimitateInteractionExt.super._add_string_macros(self, macros)
 	if self.tweak_data == "intimidated_guard_checkin" then
 		local data = managers.enemy:all_intimidated_guards()[self._unit:key()]
 		macros.CHECKIN_TIME = "0"

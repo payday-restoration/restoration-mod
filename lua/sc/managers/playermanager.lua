@@ -2334,3 +2334,8 @@ Hooks:PreHook(PlayerManager, "clear_carry", "ResCarryStackerPreClearCarry", func
 
 	self:update_removed_synced_carry_stacker_to_peers()
 end)
+
+Hooks:PostHook(PlayerManager, "sync_carry_data", "ResSyncCarryData", function(self, _, _, _, _, _, _, _, _, _, _, peer_id)
+	self:recalculate_carried_weights()
+	self:update_carrystacker_hud(peer_id)
+end)

@@ -16,6 +16,7 @@ function PlayerDamage:init(unit)
 	self._temp_health = 0 --Hitman temporary health.
 	self._health_without_temp = 0 --Health below temp hp. Needed for correct max health calculations.
 	self._next_temp_health_decay_t = 0 --When to hit hitman temp health with decay next.
+	self._leech_stored_armor = 0 -- Used to store the Leech's armour while they are using the ampoule.
 	self:replenish() --Sets a number of things, mostly resetting armor, health, and ui stuff. Vanilla code.
 
 	local player_manager = managers.player
@@ -2223,6 +2224,82 @@ function PlayerDamage:_max_health()
 	return math.max(self:_max_health_orig(), self._temp_health + self._health_without_temp) 
 end
 
+-- Added a Leech-specific part at the end to store any gained ammo while the Leech is under the effects of Ampoule.
+-- Needed to overwrite the whole function because the actual restored value is only implied from local variables.
+Hooks:OverrideFunction(PlayerDamage, "restore_armor", function (self, armor_restored)
+	if self._dead or self._bleed_out or self._check_berserker_done then
+		return
+	end
+
+	local max_armor = self:_max_armor()
+	local armor = self:get_real_armor()
+	local new_armor = math.min(armor + armor_restored, max_armor)
+
+	self:set_armor(new_armor)
+	self:_send_set_armor()
+
+	if self._unit:sound() and new_armor ~= armor and new_armor == max_armor then
+		self._unit:sound():play("shield_full_indicator")
+	end
+
+	if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") then
+		self:add_stored_armor(new_armor - armor)
+	end
+end)
+
+-- For Leech: adds to the stored armour value, to be regained when the ampoule's effects are over.
+function PlayerDamage:add_stored_armor(amount)
+	self._leech_stored_armor = math.min(self._leech_stored_armor + amount, self:_max_armor())
+
+	if managers.hud and not self._check_berserker_done then
+		local stored_armor_ratio = self._leech_stored_armor / self:_max_armor()
+
+		-- Probably fine to reuse this, as I don't intend to have both Hitman-like storage AND Leech-like storage on the same character.
+		managers.hud:set_stored_health(stored_armor_ratio)
+	end
+end
+
+-- For Leech: clears the stored armour.
+function PlayerDamage:clear_stored_armor()
+	self._leech_stored_armor = 0
+
+	if managers.hud then
+		managers.hud:set_stored_health(0)
+	end
+end
+
+
+-- For Leech: manages the HUD to show the stored armour value.
+function PlayerDamage:update_stored_armor()
+	if managers.hud then
+		local max_armour = self:_max_armor()
+
+		managers.hud:set_stored_health_max(1)
+
+		if self._leech_stored_armor then
+			self._leech_stored_armor = math.min(self._leech_stored_armor, self:_max_armor())
+			local stored_health_ratio = self._leech_stored_armor / max_armour
+
+			if self._leech_stored_armor == 0 then
+				managers.hud:set_stored_health_max(0)
+			else
+				managers.hud:set_stored_health(stored_health_ratio)
+			end
+		end
+	end
+end
+
+
+-- For Leech: transfers all the stored armour into actual armour.
+function PlayerDamage:consume_stored_armor()
+	if self._leech_stored_armor and not self._dead and not self._bleed_out and not self._check_berserker_done then
+		self:change_armor(self._leech_stored_armor)
+	end
+
+	self:clear_stored_armor()
+	self:update_stored_armor()
+end
+
 --New trigger for ex-pres. Now occurs when armor regen kicks in any time after armor has been broken. Ignores partial regen from stuff like Bullseye.
 --Also includes trigger for Hitman dodge regen bonus.
 Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(self, no_sound)
@@ -2381,5 +2458,21 @@ Hooks:OverrideFunction(PlayerDamage, "_set_health_effect", function (self)
 
 		math.clamp(hp, 0, 1)
 		managers.environment_controller:set_health_effect_value(hp)
+	end
+end)
+
+-- All this to change the false in restore_health to true to make the Leech healing not be percentage-based.
+Hooks:OverrideFunction(PlayerDamage, "on_copr_heal_received", function(self, healer_unit, upgrade_level)
+	local player_count = managers.player:count_copr_ability_players()
+
+	if player_count > 0 then
+		local max_health = self:_max_health()
+		local copr_teammate_heal_count_multipliers = tweak_data.upgrades.copr_teammate_heal_count_multipliers or {}
+		local player_multiplier = copr_teammate_heal_count_multipliers[player_count] or copr_teammate_heal_count_multipliers[#copr_teammate_heal_count_multipliers] or 1
+		local upgrade_value = managers.player:upgrade_value_by_level("player", "copr_teammate_heal", upgrade_level)
+
+		if upgrade_value and self:get_real_health() < max_health then
+			self:restore_health(upgrade_value * player_multiplier, true, true)
+		end
 	end
 end)

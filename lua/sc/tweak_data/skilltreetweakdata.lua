@@ -3350,7 +3350,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_less_armor_wild_cooldown_1",
 					"player_corpse_dispose_speed_multiplier",
-					"player_civ_move_multiplier"	
+					"player_civ_move_multiplier"
 				},
 				icon_xy = {
 					0,
@@ -3789,7 +3789,8 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_copr_static_damage_ratio_1",
 					"player_copr_static_damage_ratio_mult_1",
 					"player_copr_kill_life_leech_1",
-					"player_copr_activate_bonus_health_ratio_1"
+					"player_copr_activate_bonus_health_ratio_1",
+					"player_wild_health_amount_1"
 				},
 				icon_xy = {
 					0,
@@ -3803,7 +3804,9 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck22_3_desc_sc",
 				name_id = "menu_deck22_3",
 				upgrades = {
-					"player_copr_teammate_heal_1"		
+					"player_copr_teammate_heal_1",
+					"player_biker_armor_regen_1",
+					"player_passive_dodge_chance_1"
 				},
 				icon_xy = {
 					1,
@@ -3820,7 +3823,10 @@ function SkillTreeTweakData:init(tweak_data)
 					"temporary_copr_ability_2",
 					"player_copr_speed_up_on_kill_1",
 					"player_corpse_dispose_speed_multiplier",
-					"player_civ_move_multiplier"	
+					"player_civ_move_multiplier",
+					"player_less_armor_wild_cooldown_1",
+					"player_corpse_dispose_speed_multiplier",
+					"player_civ_move_multiplier"
 				},
 				icon_xy = {
 					0,
@@ -3836,7 +3842,9 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_copr_static_damage_ratio_2",
 					"player_copr_static_damage_ratio_mult_2",
-					"player_copr_kill_life_leech_2"
+					"player_copr_kill_life_leech_2",
+					"player_biker_armor_regen_2",
+					"player_passive_dodge_chance_2"
 				},
 				icon_xy = {
 					3,
@@ -3852,7 +3860,9 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_activate_ability_downed",
 					"player_passive_loot_drop_multiplier_1",
-					"player_copr_teammate_heal_2"
+					"player_copr_teammate_heal_2",
+					"player_passive_loot_drop_multiplier_1",
+					"player_less_armor_wild_health_1"
 				},
 				icon_xy = {
 					1,

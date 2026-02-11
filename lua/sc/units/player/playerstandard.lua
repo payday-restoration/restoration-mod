@@ -2121,16 +2121,17 @@ function PlayerStandard:_update_running_timers(t)
 		local weap_unit = self._equipped_unit
 		local weap_base = weap_unit and weap_unit:base()
 		local in_burst_mode = weap_base and weap_base.in_burst_mode and weap_base:in_burst_mode()
-		local delay = 1
+		local delay = 1 + ((weap_base and weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()) or 0)
 		if self._running_sprintout_expire_t <= t then
 			if not self._delay_running_anim then
-				self._delay_running_anim = t + delay
+				self._delay_running_anim = t + 1
 			end
 			self._running_sprintout_expire_t = nil
 			self._already_fired  = nil
 			if self._controller then
 				local input_bool = self._controller and self._controller:get_input_bool("primary_attack") == true
 				if input_bool then
+					self._delay_running_anim = t + delay
 					self:_check_action_primary_attack(t, { btn_primary_attack_state = true, real_input_pressed = not in_burst_mode and input_bool, btn_primary_attack_press = true})
 				end
 			end
@@ -3978,13 +3979,16 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		local character_unit, shield_knock
 		local can_shield_knock = managers.player:has_category_upgrade("player", "shield_knock")
 		local hit_shield = hit_unit:in_slot(8) and alive(hit_unit:parent()) 
-		local caber_shield = special_weapon == "caber" and charge_lerp_value >= 0.99 and math.random() <= (melee_weapon.explosion_chance or 0.05)
-		if (can_shield_knock and hit_shield) or caber_shield then
+		if hit_shield then
 			shield_knock = can_shield_knock
 			character_unit = hit_unit:parent()
 		end
 
 		character_unit = character_unit or hit_unit
+		local unit_base = character_unit and character_unit.base and character_unit:base()
+		local is_titan = hit_shield and unit_base and unit_base.has_tag and unit_base:has_tag("shield_titan")
+		log(tostring( is_titan ))
+		local dmg_ext = character_unit and character_unit.character_damage and character_unit:character_damage()
 
 		if self._melee_charge_bonus then
 			if special_weapon == "megumin" then
@@ -4051,15 +4055,13 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			local type_multiplier = managers.player:upgrade_value("player", "melee_" .. melee_type .. "_damage_multiplier", 1)
 			local type_effect_multiplier = managers.player:upgrade_value("player", "melee_" .. melee_type .. "_damage_effect_multiplier", 1)
 
-			if character_unit:base() then
-				if character_unit:base().char_tweak then
-					if character_unit:base():char_tweak().player_health_scaling_mul then
-						local tony_mult = tweak_data.upgrades.values.player["tony_boss_" .. melee_type .. "_mult"] or 0.1
-						type_multiplier = math.max(1, type_multiplier * tony_mult)
-					end
-					if character_unit:base():char_tweak().priority_shout then
-						dmg_multiplier = dmg_multiplier * (tweak_data.blackmarket.melee_weapons[melee_entry].stats.special_damage_multiplier or 1)
-					end
+			if unit_base.char_tweak then
+				if unit_base:char_tweak().player_health_scaling_mul then
+					local tony_mult = tweak_data.upgrades.values.player["tony_boss_" .. melee_type .. "_mult"] or 0.1
+					type_multiplier = math.max(1, type_multiplier * tony_mult)
+				end
+				if unit_base:char_tweak().priority_shout then
+					dmg_multiplier = dmg_multiplier * (tweak_data.blackmarket.melee_weapons[melee_entry].stats.special_damage_multiplier or 1)
 				end
 			end
 
@@ -4149,7 +4151,10 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				dmg_multiplier = 0.1
 			end
 
-			action_data.damage = hit_shield and 0 or damage * dmg_multiplier
+			if character_unit.base and character_unit:base().char_tweak and character_unit:base():char_tweak() then
+			end
+
+			action_data.damage = is_titan and 0 or hit_shield and damage_effect * 0.5 or damage * dmg_multiplier
 			action_data.damage_effect = damage_effect
 			action_data.attacker_unit = self._unit
 			action_data.col_ray = col_ray

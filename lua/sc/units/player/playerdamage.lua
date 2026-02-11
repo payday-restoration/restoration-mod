@@ -1192,7 +1192,7 @@ function PlayerDamage:damage_fall(data)
 	self:_send_set_health()
 	self:_set_health_effect()
 	self:_damage_screen()
-	self:_check_bleed_out(nil, true)
+	self:_check_bleed_out(nil, true, nil, true)
 	self:_call_listeners(damage_info)
 
 	return true
@@ -1458,7 +1458,7 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	if attack_data.variant ~= "delayed_tick" then
 		self:_damage_screen()
 	end
-	self:_check_bleed_out(trigger_skills, nil, ignore_reduce_revive)
+	self:_check_bleed_out(trigger_skills, nil, ignore_reduce_revive, self_damage)
 	managers.hud:set_player_health({
 		current = self:get_real_health(),
 		total = self:_max_health(),
@@ -1643,7 +1643,7 @@ end
 function PlayerDamage:cloak_or_shock_incap(damage)
 	damage = damage * managers.player:damage_reduction_skill_multiplier("kick_or_shock")
 	local damage_absorption = managers.player:damage_absorption()
-	if not self_damage and damage_absorption > 0 then
+	if damage_absorption > 0 then
 		damage = math.max(0.1, damage - damage_absorption)
 	end
 	
@@ -1830,7 +1830,10 @@ function PlayerDamage:_upd_health_regen(t, dt)
 	--]]
 end
 
-function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_state, ignore_reduce_revive)
+function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_state, ignore_reduce_revive, self_damage)
+	if self_damage then
+		can_activate_berserker = nil
+	end
 
 	if self._check_berserker_done then --Deals with swan song shenanigans.
 		if self._can_survive_one_hit then
@@ -1840,9 +1843,11 @@ function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_s
 	end
 	if self:get_real_health() == 0 and not self._check_berserker_done then --If you would be in bleedout but you dont want to, then don't.
 		if self._can_survive_one_hit then
-			self:change_health(0.1)
+			if not self_damage then
+				self:change_health(0.1)
+				self:restore_armor(tweak_data.upgrades.values.survive_one_hit_armor[1])
+			end
 			self._can_survive_one_hit = false
-			self:restore_armor(tweak_data.upgrades.values.survive_one_hit_armor[1])
 			managers.hud:remove_skill("survive_one_hit")
 		else
 			--self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
@@ -1973,6 +1978,9 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 	--]]
 
 	local health_subtracted = 0
+
+	local attacker_unit = attack_data.attacker_unit
+	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
 
 	if self:get_real_armor() > 0 then
 		health_subtracted = self:get_real_armor()

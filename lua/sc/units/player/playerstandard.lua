@@ -2123,7 +2123,9 @@ function PlayerStandard:_update_running_timers(t)
 		local in_burst_mode = weap_base and weap_base.in_burst_mode and weap_base:in_burst_mode()
 		local delay = 1
 		if self._running_sprintout_expire_t <= t then
-			self._delay_running_anim = t + delay
+			if not self._delay_running_anim then
+				self._delay_running_anim = t + delay
+			end
 			self._running_sprintout_expire_t = nil
 			self._already_fired  = nil
 			if self._controller then
@@ -3975,10 +3977,13 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 
 		local character_unit, shield_knock
 		local can_shield_knock = managers.player:has_category_upgrade("player", "shield_knock")
-		if can_shield_knock and hit_unit:in_slot(8) and alive(hit_unit:parent()) then
-			shield_knock = true
+		local hit_shield = hit_unit:in_slot(8) and alive(hit_unit:parent()) 
+		local caber_shield = special_weapon == "caber" and charge_lerp_value >= 0.99 and math.random() <= (melee_weapon.explosion_chance or 0.05)
+		if (can_shield_knock and hit_shield) or caber_shield then
+			shield_knock = can_shield_knock
 			character_unit = hit_unit:parent()
 		end
+
 		character_unit = character_unit or hit_unit
 
 		if self._melee_charge_bonus then
@@ -4098,9 +4103,10 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 
 			if charge_lerp_value >= 0.99 then
 				if special_weapon == "caber" then
-					if character_unit:character_damage().dead and not character_unit:character_damage():dead() and managers.enemy:is_enemy(character_unit) then
+					if hit_shield or character_unit:character_damage().dead and not character_unit:character_damage():dead() and managers.enemy:is_enemy(character_unit) then 
 						local explosion_chance = melee_weapon.explosion_chance or 0.05
-						if math.random() <= explosion_chance then
+						local can_explode = math.random() <= explosion_chance
+						if caber_shield or can_explode then
 							local exp_sound = melee_weapon.explosion_sound or "trip_mine_explode"
 							local exp_effect = melee_weapon.explosion_effect or "effects/payday2/particles/explosions/shapecharger_explosion"
 							local curve_pow = melee_weapon.explosion_curve_pow or 0.5
@@ -4143,7 +4149,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				dmg_multiplier = 0.1
 			end
 
-			action_data.damage = shield_knock and 0 or damage * dmg_multiplier
+			action_data.damage = hit_shield and 0 or damage * dmg_multiplier
 			action_data.damage_effect = damage_effect
 			action_data.attacker_unit = self._unit
 			action_data.col_ray = col_ray
@@ -4979,6 +4985,8 @@ function PlayerStandard:_start_action_unequip_weapon(t, data, alt_swap)
 	self._queue_burst = nil
 	self._queue_fire = nil
 	self._last_recoil_t = nil
+	self._delay_running_anim = nil
+	self._running_sprintout_expire_t = nil
 
 	local result = self._ext_camera:play_redirect(self:get_animation("unequip"), speed_multiplier)
 

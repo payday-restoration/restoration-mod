@@ -465,7 +465,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 				local health_regen = wanted_health - current_health
 
 				if health_regen > 0 then
-					damage_ext:restore_health(health_regen)
+					damage_ext:restore_health(health_regen, true)
 					damage_ext:on_copr_killshot()
 				end
 			end

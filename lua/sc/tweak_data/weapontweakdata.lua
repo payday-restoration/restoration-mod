@@ -18052,7 +18052,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					1
 				}
 				self.raygun.panic_suppression_chance = 0.05
-				self.raygun.direct_damage_percent = 2
+				self.raygun.direct_damage_percent = 1
 				self.raygun.timers.reload_exit_not_empty = 0.7
 				self.raygun.timers.reload_exit_empty = 0.7
 				self.raygun.always_play_anims = true
@@ -32521,7 +32521,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.timers.reload_exit_empty = 0.85
 				--self.sickle.weapon_hold = "ching"
 				--self.sickle.no_auto_anims = true
-				self.sickle.object_damage_mult = 0.66667 --scaled to match the object damage of 40 damage rifles
+				self.sickle.object_damage_mult = 0.5 --scaled to match the object damage of a 30 damage weapon
 				self.sickle.spin_up_t = 0.5
 				self.sickle.spin_down_t = 0.0001
 				self.sickle.sounds.magazine_empty = "wp_sentrygun_swap_ammo"
@@ -32564,7 +32564,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.las5.keep_ammo = 0
 				self.las5.ads_speed = 0.320
 				self.las5.damage_falloff = {
-					start_dist = 1000,
+					start_dist = 2000,
 					end_dist = 5000,
 					min_mult = 0.35714
 				}
@@ -32589,7 +32589,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.las5.shake.fire_steelsight_multiplier = -0.25
 				self.las5.rays = nil
 				self.las5.nato = nil
-				self.las5.object_damage_mult = 0.25
+				self.las5.object_damage_mult = 0.4285 --scaled to match the object damage of a 12 damage weapon
 				self.las5.spin_up_t = 0.25
 				self.las5.spin_down_t = 0.0001
 				self.las5.muzzleflash = "effects/particles/weapons/laser_trail_muzzle"
@@ -32665,7 +32665,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.las58.timers.equip = 0.3
 				self.las58.use_unequip_swap = true
 				self.las58.swap_speed_multiplier = 0.65
-				self.las58.object_damage_mult = 0.15 --scaled to match the object damage of 30 damage pistols
+				self.las58.object_damage_mult = 0.3 --scaled to match the object damage of a 60 damage weapon
 				self.las58.sounds.magazine_empty = "wp_sentrygun_swap_ammo"
 				self.las58.sounds.stop_fire = "g3_npc1a_end"
 				self.las58.timers.equip = 0.8
@@ -36399,7 +36399,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						weap.object_damage_mult = 0.75
 					end
 				elseif table.contains(weap.categories, "raygun") then
-					weap.object_damage_mult = 0.25
+					weap.object_damage_mult = 0.5
 				end
 
 				if weap.damage_type_single_ray == "sniper" then

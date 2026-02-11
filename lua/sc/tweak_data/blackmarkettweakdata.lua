@@ -5120,16 +5120,16 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.model24.special_weapon = "caber"
 		self.melee_weapons.model24.stats.cleave = 1
 		self.melee_weapons.model24.stats.raycasts = 15
-		self.melee_weapons.model24.explosion_chance = 0.05
+		self.melee_weapons.model24.explosion_chance = 0.5
 		self.melee_weapons.model24.explosion_curve_pow = 0
-		self.melee_weapons.model24.explosion_damage = 60
+		self.melee_weapons.model24.explosion_damage = 72
 		self.melee_weapons.model24.explosion_range = 500
 		self.melee_weapons.model24.stats.speed_mult = 1.18
 		self.melee_weapons.model24.stats.max_damage = 9.001
 		self.melee_weapons.model24.stats.min_damage = 4.5
 		self.melee_weapons.model24.stats.min_damage_effect = 9.0
 		self.melee_weapons.model24.stats.max_damage_effect = 18.0
-		self.melee_weapons.model24.stats.charge_time = 1.8
+		self.melee_weapons.model24.stats.charge_time = 2.5
 		self.melee_weapons.model24.stats.range = 170
 		self.melee_weapons.model24.stats.concealment = 27
 
@@ -6684,6 +6684,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.megumins_staff.stats = deep_clone(self.melee_weapons.stick.stats)
 		self.melee_weapons.megumins_staff.stats.charge_bonus_start = 0.99
 		self.melee_weapons.megumins_staff.stats.charge_bonus_range = 2800
+		self.melee_weapons.megumins_staff.stats.raycasts_charge = 1
 		self.melee_weapons.megumins_staff.stats.concealment = 23
 		self.melee_weapons.megumins_staff.stats.charge_time = 55
 		self.melee_weapons.megumins_staff.ignore_charge_speed = true
@@ -6955,6 +6956,24 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.zd_poke.anim_attack_var_dir = {
 			var1 = {"right", 0.2}
 		}
+	end
+
+	if self.melee_weapons.cqc20 then --CQC-20
+		self.melee_weapons.cqc20.info_id = "bm_melee_cqc20_info"
+		self.melee_weapons.cqc20.special_weapon = "caber"
+		self.melee_weapons.cqc20.explosion_effect = "effects/payday2/particles/impacts/shotgun_explosive_round"
+		self.melee_weapons.cqc20.explosion_chance = 1
+		self.melee_weapons.cqc20.explosion_curve_pow = 0
+		self.melee_weapons.cqc20.explosion_damage = 72
+		self.melee_weapons.cqc20.explosion_player_damage = 0
+		self.melee_weapons.cqc20.explosion_range = 200
+		self.melee_weapons.cqc20.stats = deep_clone(self.melee_weapons.dingdong.stats)
+		self.melee_weapons.cqc20.stats.cleave = 1
+		self.melee_weapons.cqc20.stats.charge_bonus_start = nil
+		self.melee_weapons.cqc20.stats.charge_bonus_speed = nil
+		self.melee_weapons.cqc20.stats.charge_time = 3.5
+		self.melee_weapons.cqc20.stats.speed_mult = 0.95
+		self.melee_weapons.cqc20.stats.range = 250
 	end
 
 

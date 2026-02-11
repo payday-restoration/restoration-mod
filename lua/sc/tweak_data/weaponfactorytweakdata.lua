@@ -1639,7 +1639,7 @@ local grips = {
 					damage = 0
 				},
 				custom_stats = {
-					object_damage_mult_override = 0.125,
+					object_damage_mult_override = 0.25,
 					ads_speed_mult = 1.1,
 					hip_mult = 3,
 					ammo_pickup_max_mul = 0.55,
@@ -1661,7 +1661,7 @@ local grips = {
 					damage = 0
 				},
 				custom_stats = {
-					object_damage_mult_override = 0.125,
+					object_damage_mult_override = 0.25,
 					ads_speed_mult = 1.1,
 					hip_mult = 3,
 					ammo_pickup_max_mul = 0.55,
@@ -1684,7 +1684,7 @@ local grips = {
 					damage = 0
 				},
 				custom_stats = {
-					object_damage_mult_override = 0.25,
+					object_damage_mult_override = 0.375,
 					ads_speed_mult = 1.1,
 					hip_mult = 3,
 					--ene_hs_mult_add = -0.15,
@@ -1701,13 +1701,12 @@ local grips = {
 				stats = {
 					value = 10,
 					total_ammo_mod = -204,
-					damage = 0,
 					recoil = -30,
 					concealment = -4,
-					moving_spread = 3
+					damage = 0
 				},
 				custom_stats = {
-					object_damage_mult_override = 0.375,
+					object_damage_mult_override = 0.5,
 					ads_speed_mult = 1.1,
 					hip_mult = 3,
 					--ene_hs_mult_add = -0.3,

@@ -1775,7 +1775,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--FREEDOM ISN'T FREE
 		["bm_melee_freedom_info"] = "Thirteen stripes of red alternating with white, a blue rectangle in the canton, fifty small, white, five-pointed stars, a pinch of patriotism, two cups of freedom and a broken flag pole.\n\nVoilà - you have yourself a deadly weapon.",
 		--Who needs pants?
-		["bm_melee_erica_info"] = "A sane person would throw this.\n\nFully charged hits against living enemies have a #{skill_color}#5%## chance to explode dealing #{risk}#720## damage in a #{skill_color}#5## meter radius from the point of impact.",
+		["bm_melee_erica_info"] = "A sane person would throw this.\n\nFully charged hits against living enemies have a #{skill_color}#100%## chance to explode dealing #{risk}#720## damage in a #{skill_color}#5## meter radius from the point of impact.",
+			["bm_melee_cqc20_info"] = "#{risk}#GET SOME!##\n\nFully charged hits against living enemies have a #{skill_color}#100%## chance to set off a controlled explosion dealing #{risk}#720## damage to enemies in a #{skill_color}#2## meter radius from the point of impact.",
 
 		--Hammer
 		["bm_melee_hammer_info"] = "The \"Carpenter’s Delight\" is Jacket’s favorite hammer. The hammer is the perfect tool to deliver blunt blows to people you don’t like.\n\nThe most common uses for hammers are to drive nails, fit parts, forge metal, and break apart objects, none of which Jacket cares for particularly much.",

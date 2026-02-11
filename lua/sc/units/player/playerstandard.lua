@@ -4008,8 +4008,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				local network_damage = math.ceil(exp_dmg * 163.84)
 				managers.network:session():send_to_peers_synched("sync_explode_bullet", col_ray.position, col_ray.normal, math.min(16384, network_damage), managers.network:session():local_peer():id())
 
-				self._unit:character_damage()._check_berserker_done = false
-				self._unit:character_damage()._can_survive_one_hit = false
+				managers.explosion:give_local_player_dmg(col_ray.position, exp_range * 2, exp_dmg, self._unit, curve_pow, true)
     			managers.player:set_player_state("fatal")
 			elseif special_weapon == "mjolnir" then
 				local curve_pow = melee_weapon.explosion_curve_pow or 0.5
@@ -4100,19 +4099,22 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 					if character_unit:character_damage().dead and not character_unit:character_damage():dead() and managers.enemy:is_enemy(character_unit) then
 						local explosion_chance = melee_weapon.explosion_chance or 0.05
 						if math.random() <= explosion_chance then
+							local exp_sound = melee_weapon.explosion_sound or "trip_mine_explode"
+							local exp_effect = melee_weapon.explosion_effect or "effects/payday2/particles/explosions/shapecharger_explosion"
 							local curve_pow = melee_weapon.explosion_curve_pow or 0.5
 							local exp_dmg = melee_weapon.explosion_damage or 60
+							local player_dmg = melee_weapon.explosion_player_damage or exp_dmg or 60
 							local exp_range = melee_weapon.explosion_range or 500
 							local effect_params = {
-								sound_event = "trip_mine_explode",
-								effect = "effects/payday2/particles/explosions/shapecharger_explosion",
+								sound_event = exp_sound,
+								effect = exp_effect,
 								on_unit = true,
 								sound_muffle_effect = true,
 								feedback_range = exp_range,
 								camera_shake_max_mul = 2
 							}
 							managers.explosion:play_sound_and_effects(col_ray.position, col_ray.normal, exp_range, effect_params)
-							managers.explosion:give_local_player_dmg(col_ray.position, exp_range, exp_dmg, self._unit, curve_pow, true)
+							managers.explosion:give_local_player_dmg(col_ray.position, exp_range * 2, player_dmg, self._unit, curve_pow, true)
 							managers.explosion:detect_and_give_dmg({
 								hit_pos = col_ray.position,
 								range = exp_range,

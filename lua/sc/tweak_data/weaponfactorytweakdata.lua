@@ -37550,8 +37550,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ak_bolt_chrome.supported = true
 				self.parts.wpn_fps_ak_bolt_chrome.stats = {
 					value = 2,
-					recoil = 1,
-					concealment = -2
+					recoil = 2,
+					concealment = -1
 				}
 
 				--(Patchett L2A1) Extended Barrel
@@ -52555,6 +52555,80 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_iso_stock_full.supported = true
 		self.parts.wpn_fps_iso_stock_full.stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
 		self.parts.wpn_fps_iso_stock_full.custom_stats = deep_clone(stocks.nocheeks_to_adj_acc_stats)
+	end
+
+	if self.parts.wpn_fps_smg_kacpdw_handguard then		-- KAC PDW
+		self.parts.wpn_fps_smg_kacpdw_handguard.stats = { value = 0 }
+		self.parts.wpn_fps_smg_kacpdw_handguard.custom_stats = nil
+
+		self.parts.wpn_fps_smg_kacpdw_flash_hider.stats = { value = 0 }
+		self.parts.wpn_fps_smg_kacpdw_flash_hider.custom_stats = nil
+
+		self.parts.wpn_fps_smg_kacpdw_grip.stats = { value = 0 }
+		self.parts.wpn_fps_smg_kacpdw_grip.custom_stats = nil
+
+		self.wpn_fps_smg_kacpdw.override.wpn_fps_upg_vg_ass_smg_stubby = {
+			stats = {
+				recoil = -2,
+				concealment = 1
+			}
+		}
+		self.wpn_fps_smg_kacpdw.override.wpn_fps_smg_schakal_vg_surefire = {
+			stats = {
+				value = 0
+			}
+		}
+
+		self.wpn_fps_smg_kacpdw.override.wpn_fps_vg_vmp_vert = {
+			stats = {
+				recoil = -2,
+				concealment = 1
+			}
+		}
+		self.wpn_fps_smg_kacpdw.override.wpn_fps_vg_vmp_medium = {
+			stats = {
+				recoil = -2,
+				concealment = 1
+			}
+		}
+		self.wpn_fps_smg_kacpdw.override.wpn_fps_vg_vmp_cheems = {
+			stats = {
+				value = 0
+			}
+		}
+		self.wpn_fps_smg_kacpdw.override.wpn_fps_vg_vmp_pod = {
+			stats = {
+				value = 0
+			}
+		}
+
+		table.insert(self.wpn_fps_smg_kacpdw.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+		table.insert(self.wpn_fps_smg_kacpdw.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+		table.insert(self.wpn_fps_smg_kacpdw.uses_parts, "wpn_fps_vg_vmp_vert")
+		table.insert(self.wpn_fps_smg_kacpdw.uses_parts, "wpn_fps_vg_vmp_medium")
+		table.insert(self.wpn_fps_smg_kacpdw.uses_parts, "wpn_fps_vg_vmp_cheems")
+		table.insert(self.wpn_fps_smg_kacpdw.uses_parts, "wpn_fps_vg_vmp_pod")
+
+		for i, part_id in pairs(self.wpn_fps_smg_kacpdw.default_blueprint) do
+			attachment_list = {
+				"wpn_fps_upg_vg_ass_smg_verticalgrip"
+			}
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.wpn_fps_smg_kacpdw.default_blueprint[i] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+				end
+			end
+		end
+		for i, part_id in pairs(self.wpn_fps_smg_kacpdw.uses_parts) do
+			attachment_list = {
+				"wpn_fps_upg_vg_ass_smg_verticalgrip"
+			}
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.wpn_fps_smg_kacpdw.uses_parts[i] = "resmod_dummy"
+				end
+			end
+		end
 	end
 
 	-- Nelson

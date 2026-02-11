@@ -34629,6 +34629,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.pdw.timers = deep_clone(self.new_m4.timers)
 		end
 
+		-- new version
+		if self.kacpdw then
+			self.kacpdw.recategorize = {"light_smg"}
+			self.kacpdw.damage_type = "machine_gun"
+			self.kacpdw.tactical_reload = 1
+			self.kacpdw.BURST_FIRE = false
+			self.kacpdw.ADAPTIVE_BURST_SIZE = false
+			self.kacpdw.FIRE_MODE = "auto"
+			self.kacpdw.CLIP_AMMO_MAX = 30
+			self.kacpdw.AMMO_MAX = 75
+			self.kacpdw.fire_mode_data.fire_rate = 0.08571428571
+			self.kacpdw.kick = self.stat_info.kick_tables.moderate_kick
+			self.kacpdw.kick_pattern = {
+				{0, self.stat_info.kick_tables.right_kick},
+				{9, self.stat_info.kick_tables.vertical_kick},
+				{11, self.stat_info.kick_tables.left_kick},
+				{15, self.stat_info.kick_tables.vertical_kick},
+				{20, self.stat_info.kick_tables.right_kick}
+			}
+			self.kacpdw.supported = true
+			self.kacpdw.ads_speed = 0.200
+			self.kacpdw.damage_falloff = {
+				start_dist = 2500,
+				end_dist = 3500,
+				min_mult = 0.5
+			}
+			self.kacpdw.stats = {
+				damage = 24,
+				spread = 71,
+				recoil = 77,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 27,
+				suppression = 9,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 400,
+				value = 1,
+				reload = 20
+			}
+			self.kacpdw.stats_modifiers = nil
+			self.kacpdw.panic_suppression_chance = 0.05
+			self.kacpdw.lock_slide = true
+			self.kacpdw.sounds.magazine_empty = "wp_rifle_slide_lock"
+			self.kacpdw.timers.reload_not_empty = 1.4
+			self.kacpdw.timers.reload_exit_not_empty = 0.9
+			self.kacpdw.timers.reload_exit_empty = 0.6
+
+			self.x_kacpdw.use_data.selection_index = 5 -- maybe later
+		end
+
 		if self.iso then
 			self.iso.recategorize = {"light_smg"}
 			self.iso.damage_type = "machine_gun"

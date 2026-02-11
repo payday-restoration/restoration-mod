@@ -5931,7 +5931,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "움직이는 표적",
-				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있으며, 달리기 후 사격의 지연 시간이 제거됩니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##",
+				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있습니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "절연갑옷",
@@ -6189,7 +6189,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck9_zack"] = "잭",
 		["menu_deck9_zack_desc_sc"] = "콤보 감소 타이머가 #{skill_color}#$perk_value_1##초 연장되고, 콤보 감소 속도가 #{important_1}#$perk_value_2##초 증가합니다.",
 		["menu_deck9_rick"] = "릭",
-		["menu_deck9_rick_desc_sc"] = "이제 근접 공격으로 적을 처치하면 콤보가 기본 값의 #{skill_color}#$perk_value_1##점 증가하지만, 최대 콤보는 #{important_1}#$perk_value_2##점으로 감소합니다.",
+		["menu_deck9_rick_desc_sc"] = "이제 근접 공격으로 적을 처치하면 콤보가 기본 값의 #{skill_color}#$perk_value_1##점 증가하지만, 최대 콤보가 #{important_1}#$perk_value_2##점으로 감소하고 특수 적 처치 배율이 감소합니다.",
 		["menu_deck9_brandon"] = "브랜든",
 		["menu_deck9_brandon_desc_sc"] = "대신 콤보 #{risk}#$perk_value_2##점마다 #{skill_color}#$perk_value_1## 증가하고, 최대 #{skill_color}#$perk_value_3##까지 증가합니다.\n\n콤보 감소 타이머가 #{important_1}#$perk_value_4##초 감소합니다.",
 		["menu_deck9_earl"] = "얼",
@@ -6284,11 +6284,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck21_9_desc_sc"] = "ECM 피드백의 효과가 작동 중일 때 팀원이 적을 처치하면 체력을 ##$perk_value_1## 회복합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Leech
-		["menu_deck22_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#약병##의 잠금이 해제됩니다.\n\n약병을 활성화하면 #{important_1}#$perk_value_2##초 동안 #{risk}#방탄량을 소모하고## 최대 체력의 #{skill_color}#$perk_value_1##만큼 회복합니다.\n\n능력이 활성화되어 있는 동안에는 체력이 #{skill_color}#$perk_value_3##로 분할되며 피해를 입을 때마다 한 칸이 제거됩니다. 적을 #{skill_color}#$perk_value_4##명씩 처치하면 체력의 일부를 회복하고 #{skill_color}#$perk_value_5##초간 피해를 받지 않습니다.\n\n약병은 #{important_1}#$perk_value_6##초의 재사용 대기 시간을 가지고 있습니다.",
-		["menu_deck22_3_desc_sc"] = "약병이 활성화되어 있는 동안 피해를 입으면 팀원의 체력이 최대 체력의 #{skill_color}#$perk_value_1##만큼 회복합니다.",
-		["menu_deck22_5_desc_sc"] = "약병의 지속 시간이 #{skill_color}#$perk_value_1##초로 증가하고 적을 처치하면 약병의 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 감소합니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 #{skill_color}##$perk_value_3## 빨라집니다.",
-		["menu_deck22_7_desc_sc"] = "이제 체력이 #{skill_color}#$perk_value_1##로 분할되고 적을 #{skill_color}#$perk_value_2##명 처치하면 분할된 체력의 #{skill_color}#$perk_value_3##만큼 회복됩니다.",
-		["menu_deck22_9_desc_sc"] = "다운된 상태에서도 약병을 사용하여 일시적으로 부활할 수 있고, 사용 후 약병의 재사용 대기 시간이 #{important_1}#$perk_value_1##초 추가됩니다.\n\n이제 공격을 받으면 팀원을 각자 최대 체력의 #{skill_color}#$perk_value_2##만큼 회복시킵니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck22_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#약병##의 잠금이 해제됩니다.\n\n약병을 활성화하면 #{important_1}#$perk_value_2##초 동안 최대 체력의 #{skill_color}#$perk_value_1##만큼 회복되고 #{risk}#회피가 불가능해지며 방탄력이 저장됩니다.##\n\n능력이 활성화되어 있는 동안에는 체력이 #{skill_color}#$perk_value_3##로 분할되며 피해를 입을 때마다 한 칸이 제거됩니다. 적을 #{skill_color}#$perk_value_4##명씩 처치하면 분활된 체력을 회복하고 #{skill_color}#$perk_value_5##초간 피해를 받지 않습니다.\n\n효과가 끝나면 저장된 방탄력과 지속 시간동안 얻었던 추가 방탄력(예: 불스아이)이 모두 회복합니다.\n\n약병은 #{important_1}#$perk_value_6##초의 재사용 대기 시간을 가지고 있습니다.\n\n약병이 활성화되지 않은 동안, 본인 또는 팀원이 적을 처치할 때마다 체력을 #{skill_color}#$perk_value_7##만큼 회복합니다. 이 효과는 #{important_1}#$perk_value_8##초당 한 번만 발생합니다.",
+		["menu_deck22_3_desc_sc"] = "약병이 활성화되어 있는 동안 피해를 입으면 팀원의 체력이 최대 체력의 #{skill_color}#$perk_value_1##만큼 회복합니다.\n\n#{skill_color}#$perk_value_3##초마다 방탄력을 #{skill_color}#$perk_value_2## 회복합니다.\n\n회피율이 #{skill_color}#$perk_value_4## 증가합니다.",
+		["menu_deck22_5_desc_sc"] = "약병의 지속 시간이 #{skill_color}#$perk_value_1##초 증가하고 적을 처치하면 약병의 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 감소합니다.\n\n약병이 활성화되지 않은 동안 방탄력이 #{skill_color}#$perk_value_3##씩 없어질 때마다 적 처치 회복 재사용 대기시간이 #{skill_color}#$perk_value_4##초 감소합니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 #{skill_color}#$perk_value_5## 빨라집니다.",
+		["menu_deck22_7_desc_sc"] = "이제 체력이 #{skill_color}#$perk_value_1##로 분할되고 적을 #{skill_color}#$perk_value_2##명 처치하면 분할된 체력의 #{skill_color}#$perk_value_3##만큼 회복됩니다.\n\n이제 #{skill_color}#$perk_value_5##초마다 방탄력을 #{skill_color}#$perk_value_4##씩 회복합니다.\n\n근접 무기로 적을 처치하면 다음 방탄력 회복 간격이 #{skill_color}#$perk_value_6##초 더 빨리 발생합니다.\n\n회피율이 추가로 #{skill_color}#$perk_value_7## 증가합니다.",
+		["menu_deck22_9_desc_sc"] = "다운된 상태에서도 약병을 사용하여 일시적으로 부활할 수 있고, 사용 후 약병의 재사용 대기 시간이 #{important_1}#$perk_value_1##초 추가됩니다.\n\n이제 피해를 입으면 팀원의 체력을 #{skill_color}#$perk_value_2##만큼 회복시킵니다.\n\n약병이 #{skill_color}#$perk_value_4##초까지 활성화되지 않은 동안 방탄력이 #{skill_color}#$perk_value_3##씩 없어질 때마다 적 처치 시 얻는 체력량이 증가합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다.",
 
 		--CopyCat--
 		["menu_st_spec_23"] = "카피캣",
@@ -6381,7 +6381,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Hacker
 			["menu_deck21_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##가 잠금 해제됩니다.\n\n휴대용 ECM 장치의 지속 시간은 #{skill_color}#$perk_value_1##초입니다.\n\n경보가 울리기 전 휴대용 ECM 장치를 작동시키면 통신 장애를 일으켜, 모든 전자 장비와 페이저를 무력화시킵니다.\n\n경보가 울린 후 휴대용 ECM 장치를 작동시키면 #{skill_color}#$perk_value_2##미터 반경을 가진 피드백 효과를 일으킵니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#$perk_value_3## 확률로 대부분의 적을 기절시키며, 그 이후의 루프는 #{skill_color}#$perk_value_4##초마다 #{skill_color}#$perk_value_5## 확률로 기절시킵니다.\n\n휴대용 ECM 장치는 #{important_1}#$perk_value_6##초의 재사용 대기 시간을 가지고 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_7##초씩 감소합니다.",
 			--Leech
-			["menu_deck22_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#약병##을 잠금 해제됩니다.\n\n약병을 활성화하면 #{important_1}#$perk_value_2##초 동안 #{risk}#방탄량을 소모하고## 최대 체력의 #{skill_color}#$perk_value_1##만큼 회복합니다.\n\n능력이 활성화되어 있는 동안에는 체력이 #{skill_color}#$perk_value_3##로 분할되며 피해를 입을 때마다 한 칸이 제거됩니다. 적을 #{skill_color}#$perk_value_4##명씩 처치하면 체력의 일부를 회복하고 #{skill_color}#$perk_value_5##초간 피해를 받지 않습니다.\n\n약병은 #{important_1}#$perk_value_6##초의 재사용 대기 시간을 가지고 있습니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 #{skill_color}#$perk_value_2## 빨라집니다.",
+			["menu_deck22_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#약병##의 잠금이 해제됩니다.\n\n약병을 활성화하면 #{important_1}#$perk_value_2##초 동안 최대 체력의 #{skill_color}#$perk_value_1##만큼 회복되고 #{risk}#회피가 불가능해지며 방탄력이 저장됩니다.##\n\n능력이 활성화되어 있는 동안에는 체력이 #{skill_color}#$perk_value_3##로 분할되며 피해를 입을 때마다 한 칸이 제거됩니다. 적을 #{skill_color}#$perk_value_4##명씩 처치하면 분활된 체력을 회복하고 #{skill_color}#$perk_value_5##초간 피해를 받지 않습니다.\n\n효과가 끝나면 저장된 방탄력과 지속 시간동안 얻었던 추가 방탄력(예: 불스아이)이 모두 회복합니다.\n\n약병은 #{important_1}#$perk_value_6##초의 재사용 대기 시간을 가지고 있습니다.\n\n약병이 활성화되지 않은 동안, 본인 또는 팀원이 적을 처치할 때마다 체력을 #{skill_color}#$perk_value_7##만큼 회복합니다. 이 효과는 #{important_1}#$perk_value_8##초당 한 번만 발생합니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 #{skill_color}#$perk_value_2## 빨라집니다.",
 
 		["menu_deck23_9_desc"] = "덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 

@@ -1937,7 +1937,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	end
 
 	if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") then
-		local out_of_health = self._unit:character_damage():health_ratio() + 0.01 < managers.player:upgrade_value("player", "copr_static_damage_ratio", 0)
+		local out_of_health = self._unit:character_damage():get_real_health() + 0.01 < managers.player:upgrade_value("player", "copr_static_damage_ratio", 0)
 
 		if out_of_health then
 			multiplier = multiplier * managers.player:upgrade_value("player", "copr_out_of_health_move_slow", 1)

@@ -829,6 +829,143 @@ function HUDTeammate:set_name(teammate_name)
 	name_bg:set_w(name:w() + 4)
 end
 
+-- All this just to make Leech's notches appear properly with the changed mechanics of segments 
+-- being based on fixed HP values instead of HP percentages. :weary:
+function HUDTeammate:set_health(data)
+	local prev_data = self._health_data
+	self._health_data = data
+	local radial_health_panel = self._radial_health_panel
+	local radial_health = radial_health_panel:child("radial_health")
+	local radial_rip = radial_health_panel:child("radial_rip")
+	local radial_rip_bg = radial_health_panel:child("radial_rip_bg")
+	local red = data.current / data.total
+
+	if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") and self._id == HUDManager.PLAYER_PANEL then
+		local static_damage_segment_size = managers.player:upgrade_value_nil("player", "copr_static_damage_ratio")
+
+		if static_damage_segment_size then
+			local static_damage_ratio = static_damage_segment_size / data.total
+			red = math.floor((red + 0.01) / static_damage_ratio) * static_damage_ratio
+		end
+
+		local copr_overlay_panel = radial_health_panel:child("copr_overlay_panel")
+
+		if alive(copr_overlay_panel) then
+			for _, notch in ipairs(copr_overlay_panel:children()) do
+				notch:set_visible(notch:script().red <= red + 0.01)
+			end
+		end
+	end
+
+	radial_health:stop()
+
+	if data.current < prev_data.current then
+		self:_damage_taken()
+		radial_health:set_color(Color(1, red, 1, 1))
+
+		if alive(radial_rip) then
+			radial_rip:set_rotation((1 - radial_health:color().r) * 360)
+			radial_rip_bg:set_rotation((1 - radial_health:color().r) * 360)
+		end
+
+		self:update_delayed_damage()
+	else
+		radial_health:animate(function (o)
+			local s = radial_health:color().r
+			local e = red
+			local health_ratio = nil
+
+			over(0.2, function (p)
+				health_ratio = math.lerp(s, e, p)
+
+				radial_health:set_color(Color(1, health_ratio, 1, 1))
+
+				if alive(radial_rip) then
+					radial_rip:set_rotation((1 - radial_health:color().r) * 360)
+					radial_rip_bg:set_rotation((1 - radial_health:color().r) * 360)
+				end
+
+				self:update_delayed_damage()
+
+				local copr_overlay_panel = radial_health_panel:child("copr_overlay_panel")
+
+				if alive(copr_overlay_panel) then
+					for _, notch in ipairs(copr_overlay_panel:children()) do
+						notch:set_visible(notch:script().red <= health_ratio + 0.01)
+					end
+				end
+			end)
+		end)
+	end
+end
+
+-- Decided to separate the actual Leech notch generation, as it'll need to be separately updated if max health changes while
+-- the ampoule is active.
+function HUDTeammate:set_copr_indicator(enabled, static_damage_ratio)
+	local radial_health_panel = self._radial_health_panel
+	local copr_overlay_panel = radial_health_panel:child("copr_overlay_panel")
+	if alive(copr_overlay_panel) then
+		copr_overlay_panel:clear()
+		copr_overlay_panel:set_visible(enabled)
+
+		if enabled then
+			self:update_leech_notches(static_damage_ratio)
+		end
+	end
+end
+
+--- Updates the Leech health display notch count.
+--- @param static_damage_ratio number The ratio of the full HP circle a Leech health segment represents, between 0 and 1.
+function HUDTeammate:update_leech_notches(static_damage_ratio)
+	local radial_health_panel = self._radial_health_panel
+	local radial_health = radial_health_panel:child("radial_health")
+	local red = radial_health:color().r
+	local copr_overlay_panel = radial_health_panel:child("copr_overlay_panel")
+	if not alive(copr_overlay_panel) then
+		return
+	end
+
+	copr_overlay_panel:clear()
+	local num_notches = math.ceil(1 / static_damage_ratio)
+	local rotation = nil
+	local cx, cy = copr_overlay_panel:center()
+	local v1 = Vector3()
+	local v2 = Vector3()
+	local v3 = Vector3()
+	local mset = mvector3.set_static
+	local x, y = nil
+	local w = 5
+	local h = math.min(copr_overlay_panel:w(), copr_overlay_panel:h()) / 7
+
+	for i = 0, num_notches - 1 do
+		rotation = i / num_notches * 360
+		x = cx + math.sin(rotation) * 21.5
+		y = cy - math.cos(rotation) * 21.5
+
+		mset(v1, 0, h, 0)
+		mset(v2, w, h, 0)
+		mset(v3, w / 2, 0, 0)
+
+		local notch = copr_overlay_panel:polygon({
+			layer = 0,
+			name = tostring(i),
+			color = Color.black:with_alpha(0.6),
+			rotation = rotation,
+			triangles = {
+				v1,
+				v2,
+				v3
+			},
+			w = w,
+			h = h
+		})
+		notch:script().red = 1 - i / num_notches
+
+		notch:set_visible(notch:script().red <= red + 0.01)
+		notch:set_center(x, y)
+	end
+end
+
 function HUDTeammate:set_revives_amount(revive_amount)
 	if revive_amount then
 		local teammate_panel = self._panel:child("player")

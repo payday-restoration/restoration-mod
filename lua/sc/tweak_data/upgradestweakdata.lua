@@ -2881,9 +2881,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Leech
+	-- No longer a ratio, exact HP values, but name kept the same to not fuck over anything else.
 	self.values.player.copr_static_damage_ratio = {
-		0.1,
-		0.05
+		2,
+		1
 	}
 	self.values.player.copr_static_damage_ratio_mult = {
 		1,
@@ -3605,7 +3606,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.specialization_descs[22][1] = {
 		perk_value_1 = tostring(self.values.player.copr_activate_bonus_health_ratio[1] * 100).."%", -- HP regen during activation
 		perk_value_2 = tostring(self.values.temporary.copr_ability[1][2]), -- Duration of effect
-		perk_value_3 = tostring(self.values.player.copr_static_damage_ratio[1] * 100).."%", -- HP for 1 segment
+		perk_value_3 = tostring(self.values.player.copr_static_damage_ratio[1] * 10), -- HP for 1 segment
 		perk_value_4 = tostring(self.values.player.copr_kill_life_leech[1]), -- Required kills for 1 restoring segment
 		perk_value_5 = tostring(self.copr_regen_grace), -- Invulnerability period
 		perk_value_6 = tostring(self.copr_ability_cooldown), -- CD of ampule
@@ -3626,7 +3627,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_5 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.specialization_descs[22][7] = {
-		perk_value_1 = tostring(self.values.player.copr_static_damage_ratio[2] * 100).."%", -- HP for 1 segment buff
+		perk_value_1 = tostring(self.values.player.copr_static_damage_ratio[2] * 10), -- HP for 1 segment buff
 		perk_value_2 = tostring(self.values.player.copr_kill_life_leech[1]), -- Required kills for restoring segments
 		perk_value_3 = tostring(self.values.player.copr_static_damage_ratio_mult[2]), -- Number of segments restored
 		perk_value_4 = tostring(self.values.player.biker_armor_regen[2][1] * 10), -- Passive armor regen buff
@@ -3840,7 +3841,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.multi_choice_specialization_descs[23][9][22] = { --Leech
 		perk_value_1 = tostring(self.values.player.copr_activate_bonus_health_ratio[2] * 100).."%", -- HP regen during activation
 		perk_value_2 = tostring(self.values.temporary.copr_ability[1][2]), -- Duration of effect
-		perk_value_3 = tostring(self.values.player.copr_static_damage_ratio[1] * 100).."%", -- HP for 1 segment
+		perk_value_3 = tostring(self.values.player.copr_static_damage_ratio[1] * 10), -- HP for 1 segment
 		perk_value_4 = tostring(self.values.player.copr_kill_life_leech[1]), -- Required kills for 1 restoring segment
 		perk_value_5 = "1", -- Invulnerability period. Not defined here (?)
 		perk_value_6 = tostring(self.copr_ability_cooldown), -- CD of ampule

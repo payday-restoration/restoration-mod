@@ -960,6 +960,7 @@ PlayerStandard._primary_action_get_value = {
 		end
 	}
 }
+
 function PlayerStandard:_chk_action_stop_shooting(new_action, input, params)
 	if not new_action then
 		self._already_fired = not params and not input.btn_primary_attack_press and input.btn_primary_attack_state or nil
@@ -974,7 +975,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 	local weap_base = weap_unit and weap_unit:base()
 	local fire_mode = weap_unit and weap_base:fire_mode()
 	local in_burst_mode = weap_unit and weap_base:in_burst_mode()
-	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and ((input.btn_primary_attack_state and not (not params and self._already_fired and fire_mode == "single" and not in_burst_mode )) or input.btn_primary_attack_release or self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
+	local fire_on_release = weap_base:fire_on_release()
+	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and ((input.btn_primary_attack_state and not (not params and not fire_on_release and self._already_fired and fire_mode == "single" and not in_burst_mode )) or input.btn_primary_attack_release or self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
 
 	if action_wanted then
 		local action_forbidden = nil
@@ -994,7 +996,6 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 			self._ext_inventory:equip_selected_primary(false)
 
 			if weap_unit then
-				local fire_on_release = weap_base:fire_on_release()
 				--Resmod custom vars
 				local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 				local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
@@ -2124,6 +2125,7 @@ function PlayerStandard:_update_running_timers(t)
 		if self._running_sprintout_expire_t <= t then
 			self._delay_running_anim = t + delay
 			self._running_sprintout_expire_t = nil
+			self._already_fired  = nil
 			if self._controller then
 				local input_bool = self._controller and self._controller:get_input_bool("primary_attack") == true
 				if input_bool then
@@ -2134,6 +2136,7 @@ function PlayerStandard:_update_running_timers(t)
 	end
 	if self._end_running_expire_t then
 		if self._end_running_expire_t <= t then
+			self._already_fired  = nil
 			self._end_running_expire_t = nil
 
 			self:set_running(false)
@@ -4352,7 +4355,7 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 		if self._state_data.reload_expire_t <= t or interupt then
 			managers.player:remove_property("shock_and_awe_reload_multiplier")
 			self._state_data.reload_expire_t = nil
-
+			self._delay_running_anim = nil
 			if (self._equipped_unit:base():weapon_tweak_data().empty_use_mag and self._equipped_unit:base():clip_empty()) or (not self._equipped_unit:base()._use_shotgun_reload and self._equipped_unit:base():reload_exit_expire_t() and self._equipped_unit:base():reload_not_empty_exit_expire_t()) then
 				local is_reload_not_empty = not self._equipped_unit:base():clip_empty()
 				if not interupt then
@@ -4408,6 +4411,7 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 
 	if self._state_data.reload_exit_expire_t and self._state_data.reload_exit_expire_t <= t then
 
+		self._delay_running_anim = nil
 		self._state_data.reload_exit_expire_t = nil
 		if self._equipped_unit then
 			managers.statistics:reloaded()

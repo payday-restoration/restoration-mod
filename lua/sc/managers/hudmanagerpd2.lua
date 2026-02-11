@@ -27,3 +27,7 @@ function HUDManager:on_effective_hit_confirmed(damage_scale)
 
 	self._hud_hit_confirm:on_effective_hit_confirmed(damage_scale)
 end
+
+function HUDManager:update_leech_notches(static_damage_ratio)
+	self._teammate_panels[HUDManager.PLAYER_PANEL]:update_leech_notches(static_damage_ratio)
+end

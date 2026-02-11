@@ -1714,9 +1714,21 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		self._dodge_meter_prev = self._dodge_meter
 	end
 
-	--Biker Armor Regen
+	--Leech Armor Regen (stolen from old Biker)
 	if pm:has_category_upgrade("player", "biker_armor_regen") then
 		self:tick_biker_armor_regen(dt)
+	end
+
+	-- Leech update HUD if max health changes
+	if pm:has_activate_temporary_upgrade("temporary", "copr_ability") then
+		local max_hp = self:_max_health()
+		self._leech_max_hp_cache = self._leech_max_hp_cache or max_hp
+
+		if self._leech_max_hp_cache ~= max_hp then
+			self._leech_max_hp_cache = max_hp
+			local static_damage_ratio = pm:upgrade_value("player", "copr_static_damage_ratio", 0) / math.max(self._leech_max_hp_cache, 0.01)
+			managers.hud:update_leech_notches(static_damage_ratio)
+		end
 	end
 
 	--Hitman temporary hp drain over time.
@@ -2310,6 +2322,19 @@ Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(se
 		self._armor_broken = nil
 	end
 	self:fill_dodge_meter(managers.player:upgrade_value("player", "armor_regen_dodge", 0) * (self._dodge_points or 0))
+end)
+
+-- Instead of using max health percentage, it now uses fix HP values for the segments.
+Hooks:OverrideFunction(PlayerDamage, "copr_update_attack_data", function(self, attack_data)
+	if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") then
+		local static_damage_segment_size = managers.player:upgrade_value_nil("player", "copr_static_damage_ratio")
+
+		if static_damage_segment_size and attack_data.damage > 0 then
+			local high_damage_tweak = tweak_data.upgrades.copr_high_damage_multiplier
+			local damage_multiplier = high_damage_tweak[1] <= attack_data.damage and high_damage_tweak[2] or 1
+			attack_data.damage = static_damage_segment_size * damage_multiplier
+		end
+	end
 end)
 
 --Remove old ex-pres stuff.

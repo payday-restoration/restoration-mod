@@ -451,18 +451,18 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	--Leech stuff
 	if self:has_activate_temporary_upgrade("temporary", "copr_ability") then
 		local kill_life_leech = self:upgrade_value_nil("player", "copr_kill_life_leech")
-		local static_damage_ratio = self:upgrade_value_nil("player", "copr_static_damage_ratio")
+		local static_damage_segment_size = self:upgrade_value_nil("player", "copr_static_damage_ratio")
 		local static_damage_ratio_mult = self:upgrade_value_nil("player", "copr_static_damage_ratio_mult") or 1
-		static_damage_ratio = static_damage_ratio * static_damage_ratio_mult
+		static_damage_segment_size = static_damage_segment_size * static_damage_ratio_mult
 		
-		if kill_life_leech and static_damage_ratio and damage_ext then
+		if kill_life_leech and static_damage_segment_size and damage_ext then
 			self._copr_kill_life_leech_num = (self._copr_kill_life_leech_num or 0) + 1
 
 			if kill_life_leech <= self._copr_kill_life_leech_num then
 				self._copr_kill_life_leech_num = 0
-				local current_health_ratio = damage_ext:health_ratio()
-				local wanted_health_ratio = math.floor((current_health_ratio + 0.01 + static_damage_ratio) / static_damage_ratio) * static_damage_ratio
-				local health_regen = wanted_health_ratio - current_health_ratio
+				local current_health = damage_ext:get_real_health()
+				local wanted_health = math.floor((current_health + 0.01 + static_damage_segment_size) / static_damage_segment_size) * static_damage_segment_size
+				local health_regen = wanted_health - current_health
 
 				if health_regen > 0 then
 					damage_ext:restore_health(health_regen)
@@ -483,7 +483,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	end
 
 	if variant == "melee" then
-		--Biker Armor Regen
+		--Leech Armor Regen (from old Biker)
 		if self:has_category_upgrade("player", "biker_armor_regen") then
 			damage_ext:tick_biker_armor_regen(self:upgrade_value("player", "biker_armor_regen")[3])
 		end
@@ -2020,7 +2020,7 @@ Hooks:PreHook(PlayerManager, "chk_wild_kill_counter", "res_chk_wild_kill_counter
 end)
 
 -- Store the Leech user's armour when they activate the Ampoule, to the grant it back to them.
-Hooks:PreHook(PlayerManager, "_attempt_copr_ability", "res_attempt_copr_ability", function(self, _, _)
+Hooks:PreHook(PlayerManager, "_attempt_copr_ability", "res_attempt_copr_ability_store_armour", function(self, _, _)
 	if self:has_activate_temporary_upgrade("temporary", "copr_ability") then
 		return false
 	end
@@ -2032,15 +2032,41 @@ Hooks:PreHook(PlayerManager, "_attempt_copr_ability", "res_attempt_copr_ability"
 	end
 end)
 
--- When the Ampoule's effects end, consume any stored armour.
--- Would have preferred this in PlayerDamage, but its on_copr_ability_deactivated get called before Leech gets forced into bleedout.
-Hooks:PostHook(PlayerManager, "clbk_copr_ability_ended", "res_clbk_copr_ability_ended", function(self)
+-- Store the Leech user's armour when they activate the Ampoule, to the grant it back to them.
+Hooks:PostHook(PlayerManager, "_attempt_copr_ability", "res_attempt_copr_ability_fix_display", function(self, _, _)
+	local result = Hooks:GetReturn()
+	local character_damage = self:local_player():character_damage()
+	if result and character_damage then
+		-- Playing it safe with the potential division by 0 (even though I'm not sure if it could even happen).
+		local static_damage_ratio = self:upgrade_value("player", "copr_static_damage_ratio", 0) / math.max(character_damage:_max_health(), 0.01)
+		managers.hud:set_copr_indicator(true, static_damage_ratio)
+	end
+end)
+
+-- Leech now uses fixed HP segment sizes instead of max HP percentages, and
+-- when the Ampoule's effects end, it should consume any stored armour and give it to the player.
+Hooks:OverrideFunction(PlayerManager, "clbk_copr_ability_ended", function(self)
+	self:deactivate_temporary_upgrade("temporary", "copr_ability")
+
 	local player_unit = self:local_player()
 	local character_damage = alive(player_unit) and player_unit:character_damage()
 
 	if character_damage then
-		character_damage:consume_stored_armor()
+		local static_damage_segment_size = self:upgrade_value("player", "copr_static_damage_ratio", 0) - 1e-08
+		local out_of_health = character_damage:get_real_health() < static_damage_segment_size
+		local risen_from_dead = self:get_property("copr_risen", false) == true
+
+		character_damage:on_copr_ability_deactivated()
+
+		if out_of_health or risen_from_dead then
+			character_damage:force_into_bleedout(false, risen_from_dead)
+		else
+			character_damage:consume_stored_armor()
+		end
 	end
+
+	self:set_property("copr_risen", nil)
+	managers.hud:set_copr_indicator(false)
 end)
 
 --Accounts for max quantity changes when adding deployable equipment

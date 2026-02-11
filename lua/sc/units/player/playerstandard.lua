@@ -4007,7 +4007,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				})
 				local network_damage = math.ceil(exp_dmg * 163.84)
 				managers.network:session():send_to_peers_synched("sync_explode_bullet", col_ray.position, col_ray.normal, math.min(16384, network_damage), managers.network:session():local_peer():id())
-
+				
+				self._unit:character_damage()._check_berserker_done = false
+				self._unit:character_damage()._can_survive_one_hit = false
 				managers.explosion:give_local_player_dmg(col_ray.position, exp_range * 2, exp_dmg, self._unit, curve_pow, true)
     			managers.player:set_player_state("fatal")
 			elseif special_weapon == "mjolnir" then

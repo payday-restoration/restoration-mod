@@ -638,6 +638,12 @@ function PlayerManager:_check_resmod_sociopath(player_unit, killed_unit, variant
 					break
 				end
 			end
+
+			if self:has_category_upgrade("player", "buildup_meter_rick") then
+				local ene_mult_mod = self:upgrade_value("player", "buildup_meter_rick", 0).ene_mult_mod or 1
+				ene_mult = math.lerp(1, ene_mult, ene_mult_mod)
+			end
+
 			return ene_mult or 1
 		end
 		return 1

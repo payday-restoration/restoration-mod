@@ -2603,9 +2603,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			}
 		}
 		self.values.player.buildup_meter_rick = {
-			{ combo_add_mod = 2, combo_max_mod = -50 },
-			{ combo_add_mod = 0, combo_max_mod = -20 }, --Tony
-			{ combo_add_mod = 0, combo_max_mod = -40 } --Tony R
+			{ combo_add_mod = 2, combo_max_mod = -50, ene_mult_mod = 0.7 },
+			{ combo_add_mod = 0, combo_max_mod = -20, ene_mult_mod = 1.0  }, --Tony
+			{ combo_add_mod = 0, combo_max_mod = -40, ene_mult_mod = 1.0  } --Tony R
 		}
 		self.values.player.buildup_meter_swan = {{
 			combo_add = 6

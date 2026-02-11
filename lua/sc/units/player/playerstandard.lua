@@ -981,7 +981,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 		if params and params.action_forbidden ~= nil then
 			action_forbidden = params.action_forbidden
-		elseif self:_is_reloading() or self:_is_overheating() or self:_changing_weapon() or self:_is_meleeing() or self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_deploying_bipod() or self._menu_closed_fire_cooldown > 0 or self:is_switching_stances() then
+		elseif self._running_sprintout_expire_t or self:_is_reloading() or self:_is_overheating() or self:_changing_weapon() or self:_is_meleeing() or self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_deploying_bipod() or self._menu_closed_fire_cooldown > 0 or self:is_switching_stances() then
 			action_forbidden = true
 		else
 			action_forbidden = false
@@ -1048,6 +1048,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					end
 				elseif params and params.block_fire then
 					-- Nothing
+				elseif input.btn_primary_attack_press and self._running and weap_base.run_and_shoot_allowed and weap_base:run_and_shoot_allowed() and not weap_base:run_and_shoot_no_sprintout() and not self._delay_running_anim then
+					self:_start_sprintout(t)
 				elseif self._running and (params and params.no_running or weap_base.run_and_shoot_allowed and not weap_base:run_and_shoot_allowed()) then
 					self:_interupt_action_running(t)
 				else
@@ -2089,7 +2091,7 @@ function PlayerStandard:_start_action_running(t)
 
 	--Skip sprinting animations of player is doing melee things.
 	if not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and cancel_sprint == true))) and (not self._equipped_unit:base():run_and_shoot_allowed() or (self._equipped_unit:base():run_and_shoot_allowed() and not self._shooting)) then
-		if not self._equipped_unit:base():run_and_shoot_allowed() or 
+		if not self._equipped_unit:base():run_and_shoot_no_sprintout() or not self._equipped_unit:base():run_and_shoot_allowed() or 
 			(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
 			self._ext_camera:play_redirect(self:get_animation("start_running"))
 		else
@@ -2105,7 +2107,31 @@ function PlayerStandard:_start_action_running(t)
 	self:_interupt_action_ducking(t)
 end
 
+function PlayerStandard:_start_sprintout(t)
+	local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier()
+	self._running_sprintout_expire_t = self._end_running_expire_t or t + 0.4 / speed_multiplier
+	if not self._end_running_expire_t then
+		self._ext_camera:play_redirect(self:get_animation("stop_running"), speed_multiplier)
+	end
+end
+
 function PlayerStandard:_update_running_timers(t)
+	if self._running_sprintout_expire_t then
+		local weap_unit = self._equipped_unit
+		local weap_base = weap_unit and weap_unit:base()
+		local in_burst_mode = weap_base and weap_base.in_burst_mode and weap_base:in_burst_mode()
+		local delay = 1
+		if self._running_sprintout_expire_t <= t then
+			self._delay_running_anim = t + delay
+			self._running_sprintout_expire_t = nil
+			if self._controller then
+				local input_bool = self._controller and self._controller:get_input_bool("primary_attack") == true
+				if input_bool then
+					self:_check_action_primary_attack(t, { btn_primary_attack_state = true, real_input_pressed = not in_burst_mode and input_bool, btn_primary_attack_press = true})
+				end
+			end
+		end
+	end
 	if self._end_running_expire_t then
 		if self._end_running_expire_t <= t then
 			self._end_running_expire_t = nil
@@ -2128,8 +2154,8 @@ function PlayerStandard:_end_action_running(t)
 		local cancel_sprint = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/SprintCancel")
 		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() --[[and not self._equipped_unit:base():run_and_shoot_allowed()]] and ((not self:_is_reloading() or not self.RUN_AND_RELOAD)) and not self._delay_running_anim
 
-		if stop_running and not self._shooting then
-			if not self._equipped_unit:base():run_and_shoot_allowed() or 
+		if stop_running and not self._shooting and not self._running_sprintout_expire_t then
+			if not self._equipped_unit:base():run_and_shoot_no_sprintout() or not self._equipped_unit:base():run_and_shoot_allowed() or 
 				(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
 				self._ext_camera:play_redirect(self:get_animation("stop_running"), math.min(speed_multiplier, 2) )
 			end
@@ -2361,7 +2387,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 	--Resume normal sprinting animations once melee attack is done.
 	--Making it not cancel the equip animation will require a fair amount more work, since it doesn't set the timers. Is a job for another day.
 	if self._running and not self._end_running_expire_t and not self._state_data.meleeing and self._state_data.melee_expire_t and t >= self._state_data.melee_expire_t and not self:_is_charging_weapon() and (not self:_is_reloading() or not self.RUN_AND_RELOAD) and (instant or not self._state_data.melee_repeat_expire_t) then
-		if not self._equipped_unit:base():run_and_shoot_allowed() or 
+		if not self._equipped_unit:base():run_and_shoot_no_sprintout() or not self._equipped_unit:base():run_and_shoot_allowed() or 
 			(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
 			self._ext_camera:play_redirect(self:get_animation("start_running"))
 			self._equipped_unit:base():tweak_data_anim_stop("equip")
@@ -2902,11 +2928,11 @@ function PlayerStandard:_update_run_and_shoot_anim(t)
 	local weap_unit = self._equipped_unit
 	local weap_base = weap_unit and weap_unit:base()
 	if self._shooting then
-		local delay = 0.3 + ((weap_base and (weap_base._next_fire_allowed - t)) or 0)
+		local delay = 1 + ((weap_base and (weap_base._next_fire_allowed - t)) or 0)
 		self._delay_running_anim = t + delay
 	elseif self._delay_running_anim and self._delay_running_anim < t then
 		self._delay_running_anim = nil
-		if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims") and not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and cancel_sprint == true))) then
+		if (not self._equipped_unit:base():run_and_shoot_no_sprintout() or restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) and not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and cancel_sprint == true))) then
 			self._ext_camera:play_redirect(self:get_animation("start_running"))
 		end
 	end
@@ -4364,7 +4390,7 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 				if input.btn_steelsight_state then
 					self._steelsight_wanted = true
 				elseif self.RUN_AND_RELOAD and self._running and not self._end_running_expire_t --[[and not self._equipped_unit:base():run_and_shoot_allowed()]] then
-					if not self._equipped_unit:base():run_and_shoot_allowed() or 
+					if not self._equipped_unit:base():run_and_shoot_no_sprintout() or not self._equipped_unit:base():run_and_shoot_allowed() or 
 						(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
 						self._ext_camera:play_redirect(self:get_animation("start_running"))
 					end
@@ -4389,7 +4415,7 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			if input.btn_steelsight_state then
 				self._steelsight_wanted = true
 			elseif self.RUN_AND_RELOAD and self._running and not self._end_running_expire_t --[[and not self._equipped_unit:base():run_and_shoot_allowed()]] then
-				if not self._equipped_unit:base():run_and_shoot_allowed() or 
+				if not self._equipped_unit:base():run_and_shoot_no_sprintout() or not self._equipped_unit:base():run_and_shoot_allowed() or 
 					(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
 					self._ext_camera:play_redirect(self:get_animation("start_running"))
 				end
@@ -4879,7 +4905,7 @@ function PlayerStandard:_upd_stance_switch_delay(t, dt)
 		if self._stance_switch_delay <= 0 then
 			self._stance_switch_delay = nil
 			if self._running and not self._end_running_expire_t then
-				if not self._equipped_unit:base():run_and_shoot_allowed() or 
+				if not self._equipped_unit:base():run_and_shoot_no_sprintout() or not self._equipped_unit:base():run_and_shoot_allowed() or 
 					(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
 					self._ext_camera:play_redirect(self:get_animation("start_running"))
 				else
@@ -4975,7 +5001,7 @@ function PlayerStandard:_update_equip_weapon_timers(t, input)
 		end
 
 		if self._running and not self._end_running_expire_t then
-			if not self._equipped_unit:base():run_and_shoot_allowed() or 
+			if not self._equipped_unit:base():run_and_shoot_no_sprintout() or not self._equipped_unit:base():run_and_shoot_allowed() or 
 				(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
 				self._ext_camera:play_redirect(self:get_animation("start_running"))
 			else

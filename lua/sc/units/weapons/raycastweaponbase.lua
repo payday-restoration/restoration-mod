@@ -867,6 +867,16 @@ function RaycastWeaponBase:run_and_shoot_allowed()
 	return allowed
 end
 
+function RaycastWeaponBase:run_and_shoot_no_sprintout()
+	local allowed = nil
+
+	for _, category in ipairs(self:categories()) do
+		allowed = allowed or managers.player:has_category_upgrade(category, "hip_run_and_shoot")
+	end
+
+	return allowed
+end
+
 --Multipliers for overall spread.
 function RaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	local mul = 1

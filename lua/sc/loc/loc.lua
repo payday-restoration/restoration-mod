@@ -6002,7 +6002,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Moving Target",
-				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nThe movement speed reduction while aiming is reduced by #{skill_color}#$skill_value_b5.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued) and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.\n\nWeapons can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\n#{item_stage_2}#A setting to keep sprinting animations can be found in Restoration Mod's weapon options.##\n ",
+				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nThe movement speed reduction while aiming is reduced by #{skill_color}#$skill_value_b5.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued) and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.\n\nWeapons can be hipfired while sprinting.\n\n#{item_stage_2}#A setting to keep sprinting animations can be found in Restoration Mod's weapon options.##\n ",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Shockproof",
@@ -6261,7 +6261,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck9_zack"] = "Zack",
 		["menu_deck9_zack_desc_sc"] = "Your combo decay timer is extended by #{skill_color}#$perk_value_1## seconds; your combo decay rate is increased by #{important_1}#$perk_value_2## points.",
 		["menu_deck9_rick"] = "Rick",
-		["menu_deck9_rick_desc_sc"] = "Melee kills now instead build up your combo by a base value of #{skill_color}#$perk_value_1## points; your maximum combo is reduced by #{important_1}#$perk_value_2.##",
+		["menu_deck9_rick_desc_sc"] = "Melee kills now instead build up your combo by a base value of #{skill_color}#$perk_value_1## points; your maximum combo is reduced by #{important_1}#$perk_value_2## and special enemy kill multipliers are reduced.",
 		["menu_deck9_brandon"] = "Brandon",
 		["menu_deck9_brandon_desc_sc"] = "Instead gain #{skill_color}#$perk_value_1## speed for every #{risk}#$perk_value_2## points of combo you have, to a maximum of #{skill_color}#$perk_value_3.##\n\nYour combo decay timer is reduced by #{important_1}#$perk_value_4## second.",
 		["menu_deck9_earl"] = "Earl",

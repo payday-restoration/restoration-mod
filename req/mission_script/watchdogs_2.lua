@@ -47,7 +47,11 @@ local enable_cheat_spawns_fix = {
 		width = 7000,
 	},
 }
-
+local interval_front = {
+	values = {
+		interval = 6, 
+	},
+}
 return {
 	-- Pro Job PONR when the escape heli arrives
 	[100324] = {
@@ -166,4 +170,8 @@ return {
 	[103975] = disable,
 	[103977] = disable,
 	[103979] = disable,
+	-- decreased front spawn intervals since players are mostly at the back anyways 
+	[100167] = interval_front, 
+	[100154] = interval_front, 
+	[100146] = interval_front, 
 }

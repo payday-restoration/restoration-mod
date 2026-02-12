@@ -154,11 +154,11 @@ return {
 		restoration:gen_dummy(400005, "weapon_lab_ninja", Vector3(-3601, -3794, 0), Rotation(0, 0, -0), optsCloaker_01),
 		restoration:gen_so(400006, "weapons_lab_ninja_so", Vector3(-3623.54, -3703.27, 0), Rotation(9, -0, -0), optsCloaker_Hide_SO_weapon_lab),
 		-- Snipers 
-		restoration:gen_dummy(400025, "weapon_lab_sniper_01", Vector3(-4577, -4749, 400.101), Rotation(-14, 0, -0), optsSniper_01),
-		restoration:gen_dummy(400026, "weapon_lab_sniper_02", Vector3(-4143, -4387, 400.101), Rotation(-6, 0, -0), optsSniper_02),
+		restoration:gen_dummy(400025, "weapon_lab_sniper_01", Vector3(-4321, -3152, 0), Rotation(-105, 0, -0), optsSniper_01),
+		restoration:gen_dummy(400026, "weapon_lab_sniper_02", Vector3(-4313, -3000, 0), Rotation(-115, 0, -0), optsSniper_02),
 
-		restoration:gen_so(400027, "railgun_defend_03",  Vector3(-4577, -4749, 400.101), Rotation(-14, 0, -0), optsDefend_SO), 
-		restoration:gen_so(400028, "railgun_defend_04",  Vector3(-4143, -4387, 400.101), Rotation(-6, 0, -0), optsDefend_SO),
+		restoration:gen_so(400027, "railgun_defend_03",  Vector3(-4321, -3152, 0), Rotation(-105, 0, -0), optsDefend_SO), 
+		restoration:gen_so(400028, "railgun_defend_04",  Vector3(-4317, -3000, 0), Rotation(-99, 0, -0), optsDefend_SO),
 
 		-- toggle
 		restoration:gen_toggleelement(400007, "enable_railgun_defenders", opts_enable__weapon_lab_defenders),

@@ -14357,6 +14357,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		Cap_winters_minion = {
 			"ranged_fire",
 			"shield",
+			"shield_cover",
 			"provide_coverfire",
 			"provide_support"
 		},	

@@ -1727,7 +1727,7 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		if self._leech_max_hp_cache ~= max_hp then
 			self._leech_max_hp_cache = max_hp
 			local static_damage_ratio = pm:upgrade_value("player", "copr_static_damage_ratio", 0) / math.max(self._leech_max_hp_cache, 0.01)
-			managers.hud:update_leech_notches(static_damage_ratio)
+			managers.hud:set_copr_indicator(true, static_damage_ratio)
 		end
 	end
 

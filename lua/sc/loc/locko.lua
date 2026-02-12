@@ -1703,7 +1703,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--FREEDOM ISN'T FREE
 		["bm_melee_freedom_info"] = "빨간색과 흰색이 번갈아 배열된 13개의 줄무늬, 깃대 끝 쪽 파란색 직사각형, 작고 흰색의 오각별 50개, 한 꼬집의 애국심, 두 컵의 자유, 그리고 부러진 깃대.\n\n짜잔. 이로써 당신은 치명적인 무기를 손에 넣었습니다.",
 		--Who needs pants?
-		["bm_melee_erica_info"] = "정신이 멀쩡한 사람이라면 이걸 던질 겁니다.\n\n살아있는 적에게 완전히 충전된 공격을 가하면 #{skill_color}#5%## 확률로 폭발하여 목표 적중 지점으로부터 #{skill_color}#5##미터 반경 내에 #{risk}#720##의 피해를 가합니다.",
+		["bm_melee_erica_info"] = "정신이 멀쩡한 사람이라면 이걸 던질 겁니다.\n\n살아있는 적에게 완전히 충전된 공격을 가하면 #{skill_color}#100%## 확률로 폭발하여 목표 적중 지점으로부터 #{skill_color}#5##미터 반경 내에 #{risk}#720##의 피해를 가합니다.",
+			["bm_melee_cqc20_info"] = "#{risk}#받아라!##\n\n살아있는 적에게 완전히 충전된 공격을 가하면 #{skill_color}#100%## 확률로 제어된 폭발이 발생하여 목표 적중 지점으로부터 #{skill_color}#2##미터 반경 내에 있는 적들에게 #{risk}#720##의 피해를 가합니다.",
 
 		--Hammer
 		["bm_melee_hammer_info"] = "\"목수의 기쁨\"은 자켓이 가장 좋아하는 망치입니다. 망치는 당신이 싫어하는 사람에게 둔탁한 타격을 가하기에 완벽한 도구죠.\n\n망치의 가장 흔한 용도는 못을 박거나, 부품을 맞추거나, 금속을 단조하거나, 물건을 부수는 것인데 자켓은 이런 용도로 쓰는 것에 별로 관심이 없습니다.",
@@ -6007,7 +6008,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 				["menu_what_doesnt_kill_beta_desc_sc"] = "베이식: #{owned}#$basic##\n구금에 가까워질수록 받는 피해가 다운당 #{skill_color}#$skill_value_b1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n항상 받는 피해가 추가로 #{skill_color}#$skill_value_p1## 감소합니다.",
 
 				--Swan Song
-				["menu_perseverance_desc_sc"] = "베이식: #{owned}#$basic##\n체력이 #{skill_color}#0##이 되면, 즉시 쓰러지는 대신 스완 송 상태에 진입합니다. 이 상태에서는 #{skill_color}#$skill_value_b1##초간 이동 속도 패널티 #{skill_color}#60%##를 받으며 싸울 수 있습니다.\n\n#{risk}#주의: 스완 송 상태가 종료되면 항상 쓰러집니다.##\n\n에이스: #{owned}#$pro##\n추가로 #{skill_color}#$skill_value_p1##초 더 싸울 수 있습니다.",
+				["menu_perseverance_desc_sc"] = "베이식: #{owned}#$basic##\n체력이 #{skill_color}#0##이 되면, 즉시 쓰러지는 대신 스완 송 상태에 진입합니다. 이 상태에서는 #{skill_color}#$skill_value_b1##초간 이동 속도 패널티 #{skill_color}#60%##를 받으며 싸울 수 있습니다.\n\n#{risk}#주의: 스완 송 상태가 종료되면 항상 쓰러지고 낙하 피해와 자가 피해는 효과를 발동시키지 않습니다.##\n\n에이스: #{owned}#$pro##\n추가로 #{skill_color}#$skill_value_p1##초 더 싸울 수 있습니다.",
 
 				--Haunt--
 				["menu_haunt_sc"] = "저주",
@@ -6020,7 +6021,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   BRAWLER SUBTREE   ]]--
 				--Martial Arts--
 				["menu_martial_arts_beta_sc"] = "무술의 달인",
-				["menu_martial_arts_beta_desc_sc"] = "베이식: #{owned}#$basic##\n모든 근접 공격 피해를 #{skill_color}#$skill_value_b1## 적게 받습니다.\n\n에이스: #{owned}#$pro##\n근접 공격의 녹다운 수치가 #{skill_color}#$skill_value_p1## 증가합니다.\n\n근접 무기의 녹다운 수치는 근접 공격으로 적을 휘청거리게 하거나 불도저의 장갑판 및 타이탄 실드, 캡틴 윈터스의 방패에 가해지는 피해량에 영향을 줍니다.",
+				["menu_martial_arts_beta_desc_sc"] = "베이식: #{owned}#$basic##\n모든 근접 공격 피해를 #{skill_color}#$skill_value_b1## 적게 받습니다.\n\n에이스: #{owned}#$pro##\n근접 공격의 녹다운 수치가 #{skill_color}#$skill_value_p1## 증가합니다.\n\n근접 무기의 녹다운 수치는 근접 공격으로 적을 휘청거리게 만들거나 타이탄 실드가 아닌 적에게 방패를 뚫고 가하는 피해량, 불도저 장갑판과 타이탄 실드, 캡틴 윈터스의 방패를 파괴하는 데 필요한 피해량을 결정합니다.",
 
 				--Counter-Strike--
 				["menu_drop_soap_beta_sc"] = "반격",
@@ -6273,7 +6274,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck12_3_desc_sc"] = "체력이 낮을 수록 적을 죽일 때마다 회피 미터가 채워집니다.\n\n체력이 ##100%## 미만일 경우, 적을 죽일 때마다 회피 미터가 최대 ##$perk_value_1##만큼 채워집니다.",
 		["menu_deck12_5_desc_sc"] = "체력이 낮을 수록 받는 피해가 감소합니다. 체력이 ##100%## 미만일 경우, 최대 ##$perk_value_1##만큼 피해를 덜 받습니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 ##$perk_value_2## 빨라집니다.",
 		["menu_deck12_7_desc_sc"] = "체력이 낮을 수록 근접 공격으로 적을 처치할 때 회피를 더욱 효과적으로 만듭니다.\n\n체력이 ##100%## 미만일 경우, 근접 공격으로 적을 처치하면 회피율의 회피 미터가 매초 최대 ##$perk_value_1##만큼 채워치고, 이는 뱀 문신(3번 카드)의 효과와 중첩되며, 다음 회피의 유예 시간이 최대 ##$perk_value_2##까지 늘어나 최대 ##$perk_value_3##ms가 됩니다.\n\n회피율이 추가로 ##$perk_value_4## 증가합니다.",		
-		["menu_deck12_9_desc_sc"] = "얻을 수 있는 최대 방어력이 #{skill_color}#$perk_value_1## 증가합니다.\n\n다운 당 쓰러지는 대신 ##1##의 체력으로 살아남고 방탄력을 #{skill_color}#$perk_value_2## 회복됩니다.\n\n#{risk}#주의: 이 효과는 클로커의 킥과 테이저의 전기 충격으로 쓰러지는 경우에는 발동되지 않으며, 쓰러지는 경우에도 초기화 되지 않습니다.##\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck12_9_desc_sc"] = "얻을 수 있는 최대 방어력이 #{skill_color}#$perk_value_1## 증가합니다.\n\n다운 당 쓰러지는 대신 #{skill_color}#1##의 체력으로 살아남고 방탄력을 #{skill_color}#$perk_value_2## 회복됩니다.\n\n#{risk}#주의: 이 효과는## #{important_1}#낙하 피해, 자가 피해, 클로커의 킥 또는 테이저의 전기 충격으로 인해## #{risk}#쓰러지는 경우에는 발동되지 않으며, 횟수가 초기화 되지 않습니다.##\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다.",
 		["menu_yakuza_deflection_add"] = "(야쿠자로 인해 증가함)",
 
 		--Hacker--

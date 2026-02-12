@@ -16,6 +16,7 @@ local optsDefend_SO = {
 		"sniper", 
     },
 	scan = true,
+	forced = true,
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
@@ -48,14 +49,14 @@ local optsSniper_01 = {
 	enabled = false,
 	enemy = snipers,
 	on_executed = {
-		{ id = 400027, delay = 0}
+		{ id = 400027, delay = 0},
 	},
 }
 local optsSniper_02 = {
 	enabled = false,
 	enemy = snipers,
 	on_executed = {
-		{ id = 400028, delay = 0}
+		{ id = 400028, delay = 0},
 	},
 }
 local opts_enable__weapon_lab_defenders = {

@@ -2568,7 +2568,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 					for i = 2, #hit_unit.col_rays do
 						local next_hit = hit_unit.col_rays[i]
 						--bum off the hit priority table in the character damage class of an enemy unit to get the best hit location if multiple raycasts cover said unit
-						--generally speaking it's head > plates and visor (Dozers) > everywhere else
+						--generally speaking it's head > plates and visor (Dozers) > Taser/Grenadier bags + LPF antenna >  everywhere else
 						if char_dmg_ext:chk_body_hit_priority(best_hit.body, next_hit.body) then
 							best_hit = next_hit
 						end
@@ -4214,7 +4214,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			end
 			]]
 
-			return defense_data
+			return defense_data or col_ray
 		else
 			self:_perform_sync_melee_damage(hit_unit, col_ray, damage, damage_effect)
 		end

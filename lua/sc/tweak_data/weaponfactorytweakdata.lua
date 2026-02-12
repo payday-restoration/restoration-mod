@@ -43630,8 +43630,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				value = 5,
 				max_damage = 6,
 				min_damage = 6,
-				max_damage_effect = 1,
-				min_damage_effect = 1,
+				max_damage_effect = 0.5,
+				min_damage_effect = 0.5,
 				bayonet_range = 50
 			}
 			self.parts.wpn_fps_ass_r2_bayonet.custom_stats = {
@@ -45197,8 +45197,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -2,
 			max_damage = 6,
 			min_damage = 6,
-			max_damage_effect = 1,
-			min_damage_effect = 1,
+			max_damage_effect = 0.5,
+			min_damage_effect = 0.5,
 			bayonet_range = 50
 		}
 		self.parts.wpn_fps_snp_mosin_bayonet_bubba.custom_stats = {
@@ -47592,8 +47592,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload = -5,
 					max_damage = 6,
 					min_damage = 6,
-					max_damage_effect = 1,
-					min_damage_effect = 1,
+					max_damage_effect = 0.5,
+					min_damage_effect = 0.5,
 					bayonet_range = 100
 				}
 				self.parts[knife_id].custom_stats = {
@@ -47622,8 +47622,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload = -5,
 					max_damage = 12,
 					min_damage = 12,
-					max_damage_effect = 1,
-					min_damage_effect = 1,
+					max_damage_effect = 0.25,
+					min_damage_effect = 0.25,
 					bayonet_range = 15,
 				}
 				self.parts[knife_id].custom_stats = {
@@ -47665,8 +47665,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload = -3,
 					max_damage = 9,
 					min_damage = 9,
-					max_damage_effect = 1,
-					min_damage_effect = 1,
+					max_damage_effect = 0.3334,
+					min_damage_effect = 0.3334,
 					bayonet_range = 10,
 				}
 				self.parts[knife_id].custom_stats = {
@@ -47704,8 +47704,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload = -2,
 					max_damage = 6,
 					min_damage = 6,
-					max_damage_effect = 1,
-					min_damage_effect = 1,
+					max_damage_effect = 0.5,
+					min_damage_effect = 0.5,
 					bayonet_range = 5
 				}
 				self.parts[knife_id].custom_stats = {
@@ -47736,8 +47736,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					value = 0,
 					max_damage = 4.5,
 					min_damage = 4.5,
-					max_damage_effect = 1,
-					min_damage_effect = 1,
+					max_damage_effect = 0.66667,
+					min_damage_effect = 0.66667,
 					bayonet_range = 5
 				}
 				self.parts[knife_id].custom_stats = {

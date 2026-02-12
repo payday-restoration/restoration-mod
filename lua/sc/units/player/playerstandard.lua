@@ -3987,7 +3987,6 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		character_unit = character_unit or hit_unit
 		local unit_base = character_unit and character_unit.base and character_unit:base()
 		local is_titan = hit_shield and unit_base and unit_base.has_tag and unit_base:has_tag("shield_titan")
-		log(tostring( is_titan ))
 		local dmg_ext = character_unit and character_unit.character_damage and character_unit:character_damage()
 
 		if self._melee_charge_bonus then
@@ -4108,7 +4107,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 					if hit_shield or character_unit:character_damage().dead and not character_unit:character_damage():dead() and managers.enemy:is_enemy(character_unit) then 
 						local explosion_chance = melee_weapon.explosion_chance or 0.05
 						local can_explode = math.random() <= explosion_chance
-						if caber_shield or can_explode then
+						if can_explode then
 							local exp_sound = melee_weapon.explosion_sound or "trip_mine_explode"
 							local exp_effect = melee_weapon.explosion_effect or "effects/payday2/particles/explosions/shapecharger_explosion"
 							local curve_pow = melee_weapon.explosion_curve_pow or 0.5
@@ -4128,12 +4127,11 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 							managers.explosion:detect_and_give_dmg({
 								hit_pos = col_ray.position,
 								range = exp_range,
-								collision_slotmask = managers.slot:get_mask("explosion_targets"),
+								collision_slotmask = managers.slot:get_mask("enemies"),
 								curve_pow = curve_pow,
 								damage = exp_dmg,
 								player_damage = 0,
 								alert_radius = 2500,
-								ignore_unit = self._unit,
 								user = self._unit
 							})
 							local network_damage = math.ceil(exp_dmg * 163.84)
@@ -4154,7 +4152,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			if character_unit.base and character_unit:base().char_tweak and character_unit:base():char_tweak() then
 			end
 
-			action_data.damage = is_titan and 0 or hit_shield and damage_effect * 0.5 or damage * dmg_multiplier
+			action_data.damage = (is_titan and 0) or (hit_shield and damage_effect * 0.25) or damage * dmg_multiplier
 			action_data.damage_effect = damage_effect
 			action_data.attacker_unit = self._unit
 			action_data.col_ray = col_ray

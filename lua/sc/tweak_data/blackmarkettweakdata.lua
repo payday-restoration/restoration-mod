@@ -6053,7 +6053,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.pitchfork.stats.charge_time = 2.1
 		self.melee_weapons.pitchfork.stats.range = 175
 		self.melee_weapons.pitchfork.stats.concealment = 26
-		self.melee_weapons.pitchfork.stats.speed_mult = 1.1
+		self.melee_weapons.pitchfork.stats.speed_mult = 1.08
 		--Manly Miner Men--
 		self.melee_weapons.mining_pick.info_id = "bm_melee_mining_pick_info"
 		self.melee_weapons.mining_pick.make_decal = true
@@ -6068,7 +6068,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.mining_pick.stats.range = 200
 		self.melee_weapons.mining_pick.stats.concealment = 26
 		self.melee_weapons.mining_pick.headshot_damage_multiplier = 1.5
-		self.melee_weapons.mining_pick.stats.speed_mult = 0.98
+		self.melee_weapons.mining_pick.stats.speed_mult = 0.97
 
 		--YOOOOOOOOOOOOOOOOOOOOOOOOOOO--
 		self.melee_weapons.sandsteel.info_id = "bm_melee_katana_info"
@@ -6085,7 +6085,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.sandsteel.stats.range = 190
 		self.melee_weapons.sandsteel.attack_allowed_expire_t = 0.1
 		self.melee_weapons.sandsteel.stats.concealment = 27
-		self.melee_weapons.sandsteel.stats.speed_mult = 1.05
+		self.melee_weapons.sandsteel.stats.speed_mult = 1.03
 		--C/C quality master race--
 		self.melee_weapons.great.info_id = "bm_melee_great_info"
 		self.melee_weapons.great.stats.cleave = 5
@@ -6095,13 +6095,13 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.great.stats.min_damage = 9
 		self.melee_weapons.great.stats.max_damage = 18.001
 		self.melee_weapons.great.stats.min_damage_effect = 3.0
-		self.melee_weapons.great.stats.max_damage_effect = 6.0
+		self.melee_weapons.great.stats.max_damage_effect = 9.0
 		self.melee_weapons.great.stats.charge_time = 2
 		self.melee_weapons.great.stats.range = 210
 		self.melee_weapons.great.stats.charge_bonus_start = 0.9
 		self.melee_weapons.great.stats.charge_bonus_range = 50
 		self.melee_weapons.great.stats.concealment = 26
-		self.melee_weapons.great.stats.speed_mult = 1.0
+		self.melee_weapons.great.stats.speed_mult = 0.99
 		--Fear the beard--
 		self.melee_weapons.beardy.info_id = "bm_melee_beardy_info"
 		self.melee_weapons.beardy.stats.cleave = 3
@@ -6114,7 +6114,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.beardy.stats.charge_time = 2.2
 		self.melee_weapons.beardy.stats.range = 230
 		self.melee_weapons.beardy.stats.concealment = 25
-		self.melee_weapons.beardy.stats.speed_mult = 0.97
+		self.melee_weapons.beardy.stats.speed_mult = 0.96
 		--For the longest time the Fireaxe was the most satisfying melee weapon to use, seriously sucks they killed its swing animation--
 		self.melee_weapons.fireaxe.info_id = "bm_melee_fireaxe_info"
 		self.melee_weapons.fireaxe.stats.cleave = 1
@@ -6122,12 +6122,12 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.fireaxe.stats.raycasts_charge_h = 20
 		self.melee_weapons.fireaxe.stats.min_damage = 6
 		self.melee_weapons.fireaxe.stats.max_damage = 18.001
-		self.melee_weapons.fireaxe.stats.min_damage_effect = 3.0
+		self.melee_weapons.fireaxe.stats.min_damage_effect = 4.5
 		self.melee_weapons.fireaxe.stats.max_damage_effect = 12.0
 		self.melee_weapons.fireaxe.stats.charge_time = 1.85
 		self.melee_weapons.fireaxe.stats.range = 190
 		self.melee_weapons.fireaxe.stats.concealment = 26
-		self.melee_weapons.fireaxe.stats.speed_mult = 1.02
+		self.melee_weapons.fireaxe.stats.speed_mult = 1.01
 	
 		--Fires actual nails when--
 		self.melee_weapons.nin.info_id = "bm_melee_nin_info" 

@@ -758,6 +758,24 @@ function TipsTweakData:init()
 			category = "equip_skills_res"
 		},
 		{
+			cat_index = 42,
+			image = "heister_rust",
+			consoles = true,
+			category = "equip_skills_res"
+		},
+		{
+			cat_index = 43,
+			image = "heister_rust",
+			consoles = true,
+			category = "equip_skills_res"
+		},
+		{
+			cat_index = 44,
+			image = "heister_rust",
+			consoles = true,
+			category = "equip_skills_res"
+		},
+		{
 			cat_index = 1,
 			image = "crimenet_heists",
 			consoles = true,

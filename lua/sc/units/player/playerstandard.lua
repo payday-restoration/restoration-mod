@@ -2440,7 +2440,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			end
 			managers.environment_controller:set_downed_value(math.lerp(0, 40, lerp_value))
 			managers.player:apply_slow_debuff(1, math.lerp(0.2, 0.8, lerp_value), nil, true)
-			managers.hud:activate_effect_screen(1, {math.lerp(0, 0.8, lerp_value), math.lerp(0, 0.08, lerp_value), 0})
+			managers.hud:activate_effect_screen(1, {math.lerp(0, 0.8, lerp_value), math.lerp(0, 0.08, lerp_value), 0}, "megumin")
 		end
 	else
 		self._state_data._drain_stamina = nil
@@ -3872,6 +3872,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
+	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].charge_bonus_start or nil
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
 	local sphere_cast_radius = 20
 	local col_ray = col_ray or nil
@@ -5411,7 +5412,7 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 					local dash_base_t = dash_stats.grace_t
 					if ch_dmg and self._last_t + dash_base_t > ((self._last_dash_iframes or 0) + dash_base_t) then
 						local effect_alpha = (restoration.Options:GetValue("AdVMovResOpt/AdvMovSlideScreenEffectAlpha") or 0.5)
-						managers.hud:activate_effect_screen(dash_base_t, Vector3(0.625, 0.625, 1.0) * effect_alpha, true)
+						managers.hud:activate_effect_screen(dash_base_t, Vector3(0.625, 0.625, 1.0) * effect_alpha, "AdvMov_dodge", "topbottomrim")
 						ch_dmg._last_received_dmg = math.huge
 						ch_dmg._next_allowed_dmg_t = Application:digest_value(self._last_t + dash_base_t, true)
 					end
@@ -5474,7 +5475,7 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 					local dash_t_cap = (full_dodge and dash_stats.grace_cap_dodge) or dash_stats.grace_cap
 					local iframes = (math.min( dash_t_cap, (dash_base_t + dodge_t)) * ((dash_fatigue and dash_stats.fatigue_mult) or 1))
 					local effect_alpha = (restoration.Options:GetValue("AdVMovResOpt/AdvMovDashScreenEffectAlpha") or 0.8) * ((dash_fatigue and 0.5) or 1)
-					managers.hud:activate_effect_screen(iframes, ((last_dash and Vector3(1.0, 1.0, 0.625)) or (dash_fatigue and Vector3(1.0, 0.625, 0.625)) or Vector3(0.625, 0.625, 1.0)) * effect_alpha, true)
+					managers.hud:activate_effect_screen(iframes, ((last_dash and Vector3(1.0, 1.0, 0.625)) or (dash_fatigue and Vector3(1.0, 0.625, 0.625)) or Vector3(0.625, 0.625, 1.0)) * effect_alpha, "AdvMov_dodge", "topbottomrim")
 					ch_dmg._last_received_dmg = math.huge
 					ch_dmg._next_allowed_dmg_t = Application:digest_value(self._last_t + iframes, true)
 					if dash_fatigue then

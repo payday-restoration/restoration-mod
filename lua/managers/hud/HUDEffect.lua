@@ -2,10 +2,21 @@ HUDEffectScreen = HUDEffectScreen or class()
 function HUDEffectScreen:init(hud)
 	self._hud_panel = hud.panel
 	
-	self._effect_panel = self._hud_panel:bitmap({
-		name = "effect_panel",
+	self._effect_panels = {}
+end
+
+function HUDEffectScreen:_get_or_create_effect(effect_id, texture)
+	effect_id = effect_id or "default"
+	texture = texture or "bloodyscreen"
+	
+	if self._effect_panels[effect_id] then
+		return self._effect_panels[effect_id]
+	end
+	
+	local panel = self._hud_panel:bitmap({
+		name = "effect_layer_" .. tostring(effect_id),
 		visible = true,
-		texture = "guis/textures/restoration/bloodyscreen",
+		texture = "guis/textures/restoration/" .. texture,
 		layer = 0,
 		color = Color(1, 1, 1),
 		alpha = 0,
@@ -13,75 +24,49 @@ function HUDEffectScreen:init(hud)
 		w = self._hud_panel:w(),
 		h = self._hud_panel:h(),
 		x = 0,
-		y = 0 
+		y = 0
 	})
 	
-	self._effect_panel_alt = self._hud_panel:bitmap({
-		name = "effect_panel_alt",
-		visible = true,
-		texture = "guis/textures/restoration/topbottomrim",
-		layer = 0,
-		color = Color(1, 1, 1),
-		alpha = 0,
-		blend_mode = "add",
-		w = self._hud_panel:w(),
-		h = self._hud_panel:h(),
-		x = 0,
-		y = 0 
-	})
-
-	self._active = 0.0
-	self._active_alt = 0.0
-	self._duration = 0.0
-	self._duration_alt = 0.0
+	self._effect_panels[effect_id] = {
+		panel = panel,
+		active = false,
+		duration = 0
+	}
+	
+	return self._effect_panels[effect_id]
 end
 
-function HUDEffectScreen:do_effect_screen(duration, color, use_alt)
-	if not _G.is_vr then
-		self._effect_panel:set_alpha(1)
-		self._duration = duration
-		self._effect_panel:set_color(Color(color[1], color[2], color[3]))
-		if self._active == true then
-			self._effect_panel:stop()
-		end
-		self._active = true
-		self._effect_panel:animate(callback(self, self, "_fadeout_effect_screen"))
+function HUDEffectScreen:do_effect_screen(duration, color, effect_id, texture)
+	if _G.is_vr then
+		return
 	end
+	
+	local effect = self:_get_or_create_effect(effect_id, texture)
+	
+	effect.panel:set_alpha(1)
+	effect.duration = duration
+	effect.panel:set_color(Color(color[1], color[2], color[3]))
+	
+	if effect.active then
+		effect.panel:stop()
+	end
+	
+	effect.active = true
+	
+	effect.panel:animate(function(panel)
+		self:_fadeout_effect_screen(panel, effect_id)
+	end)
 end
 
-function HUDEffectScreen:_fadeout_effect_screen()
+function HUDEffectScreen:_fadeout_effect_screen(panel, effect_id)
+	local effect = self._effect_panels[effect_id]
 	local start_time = Application:time()
 	local curr_time = start_time
-	while curr_time - start_time < self._duration do
+	while curr_time - start_time < effect.duration do
 		curr_time = Application:time()
-		self._effect_panel:set_alpha(1 - ((curr_time - start_time) / self._duration))
+		panel:set_alpha(1 - ((curr_time - start_time) / effect.duration))
 		coroutine.yield()
 	end
-	self._effect_panel:set_alpha(0)
-	self._active = false
-end
-
-function HUDEffectScreen:do_effect_screen_alt(duration, color, use_alt)
-	if not _G.is_vr then
-		self._effect_panel_alt:set_alpha(1)
-		self._duration_alt = duration
-		self._effect_panel_alt:set_color(Color(color[1], color[2], color[3]))
-		if self._active_alt == true then
-			self._effect_panel_alt:stop()
-		end
-		self._active_alt = true
-		self._effect_panel_alt:animate(callback(self, self, "_fadeout_effect_screen_alt"))
-	end
-end
-
-function HUDEffectScreen:_fadeout_effect_screen_alt()
-	local start_time = Application:time()
-	local curr_time = start_time
-	while curr_time - start_time < self._duration_alt do
-		curr_time = Application:time()
-		self._effect_panel_alt:set_alpha(1 - ((curr_time - start_time) / self._duration_alt))
-		coroutine.yield()
-	end
-	self._effect_panel_alt:set_alpha(0)
-	self._active_alt = false
+	panel:set_alpha(0)
+	effect.active = false
 end

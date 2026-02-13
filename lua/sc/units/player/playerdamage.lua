@@ -402,7 +402,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 		attack_data.damage = attack_data.damage - health_subtracted
 		if not _G.IS_VR then --Add screen effect to signify armor piercing attack.
 			local effect_alpha = (restoration.Options:GetValue("HUD/Extra/ScreenEffectAlpha") or 1)
-			managers.hud:activate_effect_screen(0.75, Vector3(1, 0.2, 0) * effect_alpha)
+			managers.hud:activate_effect_screen(0.75, Vector3(1, 0.2, 0) * effect_alpha, "armor_piercing")
 		end
 	else
 		attack_data.damage = attack_data.damage * armor_reduction_multiplier
@@ -597,7 +597,7 @@ function PlayerDamage:damage_bullet(attack_data)
 					}
 					self._unit:camera():play_shaker(vars[math.random(#vars)], 0.02)
 					self._unit:movement():current_state()._spread_stun_t = 0.5
-					managers.hud:activate_effect_screen(0.75, Vector3(0.6, 0.3, 0.1) * effect_alpha)
+					managers.hud:activate_effect_screen(0.75, Vector3(0.6, 0.3, 0.1) * effect_alpha, "dt_suppress")
 				end
 
 				--Shotgunner
@@ -611,7 +611,6 @@ function PlayerDamage:damage_bullet(attack_data)
 					local conc_mul = (conc_tweak and conc_tweak.mul or tweak_data.character.concussion_multiplier or 1) * flashbang_mul
 					local sound_tweak = conc_tweak and conc_tweak.sound_duration
 					local sound_eff_mul = (sound_tweak and sound_tweak.mul or 0.3) * flashbang_mul
-					log(tostring( conc_mul ))
 					if distance < range then
 						local vars = {
 							"melee_hit",
@@ -620,7 +619,7 @@ function PlayerDamage:damage_bullet(attack_data)
 						self._unit:camera():play_shaker(vars[math.random(#vars)], 0.25, 0.5)
 						local d_scope_t = 1.5 * flashbang_mul
 						self._unit:movement():current_state()._d_scope_t = d_scope_t
-						managers.hud:activate_effect_screen(d_scope_t, Vector3(0.35, 0.25, 0.1) * effect_alpha)
+						managers.hud:activate_effect_screen(d_scope_t, Vector3(0.35, 0.25, 0.1) * effect_alpha, "dt_sgunner")
 						managers.environment_controller:set_concussion_grenade(self._unit:movement():m_head_pos(), true, 0, 0, conc_mul, true, true)
 						self:on_concussion(sound_eff_mul, false, sound_tweak)
 					end

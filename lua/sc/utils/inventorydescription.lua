@@ -853,7 +853,7 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 			damage_min_mult = damage_min_mult * stats.damage_min_mult
 		end
 		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
-			damage_min_mult = 1
+			--damage_min_mult = 1
 		end
 		if stats.dont_ignore_rays and stats.dont_ignore_rays == true then
 			ignore_rays = false
@@ -917,9 +917,6 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 	for part_id, stats in pairs(custom_data) do
 		if stats.damage_min_mult then
 			damage_min_mult = damage_min_mult * stats.damage_min_mult
-		end
-		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
-			damage_min_mult = 1
 		end
 		if stats.dont_ignore_rays then
 			ignore_rays = false

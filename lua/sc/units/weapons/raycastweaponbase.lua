@@ -233,8 +233,10 @@ function RaycastWeaponBase:_get_current_damage(dmg_mul)
 end
 
 local ids_volley = Idstring("volley")
-function RaycastWeaponBase:get_object_damage_mult()
-	if self._fire_mode and self._fire_mode == ids_volley then
+function RaycastWeaponBase:get_object_damage_mult(is_explosion)
+	if is_explosion then
+		return self._object_damage_mult_exp
+	elseif self._fire_mode and self._fire_mode == ids_volley then
 		return self._object_damage_mult_volley
 	elseif self._rays and self._rays == 1 and self._object_damage_mult_single_ray then
 		return self._object_damage_mult_single_ray
@@ -1810,8 +1812,9 @@ function InstantExplosiveBulletBase:on_collision(col_ray, weapon_unit, user_unit
 		local overkill = managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
 		local weap_base = weapon_unit:base()
 		local tweak_data = weap_base and ((weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()) or (weap_base._tweak_projectile_entry and tweak_data.projectiles[weap_base._tweak_projectile_entry]))
-		local di_percent = ((tweak_data and tweak_data.direct_damage_percent) or 0.5) * (di_mult or 1)
-		local object_damage_mult = weap_base and weap_base.get_object_damage_mult and weap_base:get_object_damage_mult()
+		local falloff = weap_base:get_damage_falloff(1, col_ray, user_unit, nil, true) or 1
+		local di_percent = (((tweak_data and tweak_data.direct_damage_percent) or 0.5) * (di_mult or 1)) * falloff
+		local object_damage_mult = weap_base and weap_base.get_object_damage_mult and weap_base:get_object_damage_mult(true)
 		self.super:on_collision(col_ray, weapon_unit, user_unit, (damage * di_percent) * overkill, blank, no_sound)
 		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 1, user_unit, weapon_unit, managers.network:session():local_peer():id(), nil, object_damage_mult)
 

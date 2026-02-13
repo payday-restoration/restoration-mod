@@ -1074,6 +1074,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._single_fire_ap_add = self:weapon_tweak_data().SINGLE_FIRE_AP_ADD or 0
 	
 		self._object_damage_mult = self._object_damage_mult or self:weapon_tweak_data().object_damage_mult or 1
+		self._object_damage_mult_exp = self._object_damage_mult or self:weapon_tweak_data().object_damage_mult or 1
 		self._object_damage_mult_single_ray = self._object_damage_mult_single_ray or self:weapon_tweak_data().object_damage_mult_single_ray or 1
 		self._object_damage_mult_volley = self._object_damage_mult_volley or self:weapon_tweak_data().object_damage_mult_volley or 1
 		self._fire_rate_init_count = self._fire_rate_init_count or self:weapon_tweak_data().fire_rate_init_count or nil
@@ -1309,6 +1310,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.object_damage_mult_override then		
 				self._object_damage_mult = stats.object_damage_mult_override
 				self._object_damage_mult_single_ray = stats.object_damage_mult_override
+			end
+			if stats.object_damage_mult_exp_override then		
+				self._object_damage_mult_exp = stats.object_damage_mult_exp_override
 			end
 			if stats.descope_on_fire then		
 				self._descope_on_fire = stats.descope_on_fire
@@ -2178,7 +2182,7 @@ function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 end
 
 
-function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot_only)
+function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot_only, ignore_ammo)
 	local is_rapidfire = self._burst_fire_range_multiplier and self:in_burst_mode()
 	local is_fullauto = self._auto_fire_range_multiplier and not self:is_single_shot()
 	local is_single = self:is_single_shot() and not self:in_burst_mode()
@@ -2201,7 +2205,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	--Initialize base info.
 
 	local has_mindblown_ace = managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head --and (managers.player._last_no_falloff_headshot_t or 0) < self._unit:timer():time()
-	if (self._chf and check_col_ray_head) or --[[not self:in_burst_mode() and not is_rapidfire and]] (self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase")) or has_mindblown_ace then
+	if (self._chf and check_col_ray_head) or --[[not self:in_burst_mode() and not is_rapidfire and]] (not ignore_ammo and self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase")) or has_mindblown_ace then
 		--if has_mindblown_ace then
 			--managers.player._last_no_falloff_headshot_t = self._unit:timer():time() + (tweak_data.upgrades.headshot_no_falloff_cd or 0)
 		--end

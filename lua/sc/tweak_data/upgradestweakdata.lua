@@ -6253,7 +6253,223 @@ function UpgradesTweakData:_player_definitions()
 		}
 	}
 
+	-- The "aura", the 18 metres proximity around the Biker user.
+    self.definitions.player_biker_aura = {
+		name_id = "menu_player_biker_aura",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_emit_aura",
+			category = "player"
+		}
+	}
+
+    -- Treats the user as having more Cohesion for effects.
+    self.definitions.player_biker_treat_as_more_cohesion = {
+		name_id = "menu_player_biker_treat_as_more_cohesion",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_treat_as_more_cohesion",
+			category = "player"
+		}
+	}
+
+	-- Change Cohesion gain and loss.
+    self.definitions.player_biker_stack_change_adjustments_1 = {
+		name_id = "menu_player_biker_stack_change_adjustments_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_stack_change_adjustments",
+			category = "player"
+		}
+	}
+    self.definitions.player_biker_stack_change_adjustments_2 = {
+		name_id = "menu_player_biker_stack_change_adjustments_2",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "biker_stack_change_adjustments",
+			category = "player"
+		}
+	}
+    self.definitions.player_biker_stack_change_adjustments_3 = {
+		name_id = "menu_player_biker_stack_change_adjustments_3",
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "biker_stack_change_adjustments",
+			category = "player"
+		}
+	}
+
+    -- Cohesion stacks on revive.
+    self.definitions.player_biker_stacks_on_revive = {
+		name_id = "menu_player_biker_stacks_on_revive",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_stacks_on_revive",
+			category = "player"
+		}
+	}
+
+    -- Cohesion stacks on kills.
+    self.definitions.player_biker_personal_kill_stack_reward = {
+		name_id = "menu_player_biker_personal_kill_stack_reward",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_personal_kill_stack_reward",
+			category = "player"
+		}
+	}
 end
+
+Hooks:PostHook(UpgradesTweakData, "_team_definitions", "res_team_definitions", function(self)
+	-- Damage to take to lose Cohesion.
+    self.definitions.team_biker_damage_to_lose_1 = {
+		name_id = "menu_team_biker_damage_to_lose_1",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_damage_to_lose",
+			category = "player"
+		}
+	}
+    self.definitions.team_biker_damage_to_lose_2 = {
+		name_id = "menu_team_biker_damage_to_lose_2",
+		category = "team",
+		upgrade = {
+			value = 2,
+			upgrade = "biker_damage_to_lose",
+			category = "player"
+		}
+	}
+
+    -- Crew healing potency increase from Cohesion stacks.
+    self.definitions.team_biker_crew_heal_potency = {
+		name_id = "menu_team_biker_crew_heal_potency",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_crew_heal_potency",
+			category = "player"
+		}
+	}
+
+	-- Ammo pickup multiplier for the crew based on Cohesion stacks.
+	self.definitions.team_biker_ammo_pickup_multiplier = {
+		name_id = "menu_team_biker_ammo_pickup_multiplier",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_ammo_pickup_boost",
+			category = "player"
+		}
+	}
+
+    -- Crew movespeed increase from Cohesion stacks.
+    self.definitions.team_biker_crew_movespeed_bonus = {
+		name_id = "menu_team_biker_crew_movespeed_bonus",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_crew_movespeed_bonus",
+			category = "player"
+		}
+	}
+
+    -- Crew reload speed increase from Cohesion stacks.
+    self.definitions.team_biker_crew_reload_bonus = {
+		name_id = "menu_team_biker_crew_reload_bonus",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_crew_reload_bonus",
+			category = "player"
+		}
+	}
+
+    -- Crew default tendency increase.
+    self.definitions.team_biker_increase_default_tendency = {
+		name_id = "menu_team_biker_increase_default_tendency",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_increase_default_tendency",
+			category = "player"
+		}
+	}
+
+    -- Crew health regen from Cohesion stacks.
+    self.definitions.team_biker_regen_health = {
+		name_id = "menu_team_biker_regen_health",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_regen_health",
+			category = "player"
+		}
+	}
+
+	-- Crew armour regen from Cohesion stacks.
+    self.definitions.team_biker_armour_regen_bonus = {
+		name_id = "menu_team_biker_armour_regen_bonus",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_armour_regen_bonus",
+			category = "player"
+		}
+	}
+
+	-- Additional crew armour from Cohesion stacks.
+    self.definitions.team_biker_additional_armour = {
+		name_id = "menu_team_biker_additional_armour",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_additional_armour",
+			category = "player"
+		}
+	}
+
+	-- Crew stamina regeneration speed from Cohesion stacks.
+    self.definitions.team_biker_stamina_regen_bonus = {
+		name_id = "menu_team_biker_stamina_regen_bonus",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_stamina_regen_bonus",
+			category = "player"
+		}
+	}
+
+	-- Additional bonus to the movement and reload speed bonuses.
+	-- Yeeeeaaaah, kinda weirdly done.
+    self.definitions.team_biker_additional_move_reload_bonus = {
+		name_id = "menu_team_biker_additional_move_reload_bonus",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_additional_move_reload_bonus",
+			category = "player"
+		}
+	}
+
+	-- Cohesion stack bonuses to everyone nearby whenever a crew member kills enough enemies.
+    self.definitions.team_biker_crew_kill_stack_reward = {
+		name_id = "menu_team_biker_crew_kill_stack_reward",
+		category = "team",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_crew_kill_stack_reward",
+			category = "player"
+		}
+	}
+end)
 
 function UpgradesTweakData:_smg_definitions()
 	self.definitions.smg_reload_speed_multiplier = {

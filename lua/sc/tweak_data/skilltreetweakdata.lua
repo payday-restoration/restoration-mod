@@ -3322,6 +3322,7 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_1_1_desc_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"team_linchpin_crew_heal_potency"
 			},
 			icon_xy = {
 				0,
@@ -3334,6 +3335,7 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_1_2_desc_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"team_linchpin_ammo_pickup_multiplier"
 			},
 			icon_xy = {
 				6,
@@ -3348,6 +3350,7 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_3_1_desc_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"player_linchpin_stack_change_adjustments_1"
 			},
 			icon_xy = {
 				2,
@@ -3360,6 +3363,7 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_3_2_desc_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"player_linchpin_stack_change_adjustments_2"
 			},
 			icon_xy = {
 				4,
@@ -3372,6 +3376,7 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_3_3_desc_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"player_linchpin_stack_change_adjustments_3"
 			},
 			icon_xy = {
 				7,
@@ -3386,6 +3391,7 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_5_1_desc_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"team_linchpin_crew_movespeed_bonus"
 			},
 			icon_xy = {
 				1,
@@ -3398,6 +3404,7 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_5_2_desc_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"team_linchpin_crew_reload_bonus"
 			},
 			icon_xy = {
 				7,
@@ -3412,6 +3419,7 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_7_1_desc_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"player_linchpin_stacks_on_revive"
 			},
 			icon_xy = {
 				1,
@@ -3424,6 +3432,7 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_7_2_short_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"player_linchpin_personal_kill_stack_reward"
 			},
 			icon_xy = {
 				3,
@@ -3438,6 +3447,8 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_9_1_desc_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"team_linchpin_damage_to_lose_2",
+				"team_linchpin_regen_health"
 			},
 			icon_xy = {
 				4,
@@ -3450,6 +3461,8 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_9_2_short_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"team_linchpin_armour_regen_bonus",
+				"team_linchpin_additional_armour"
 			},
 			icon_xy = {
 				0,
@@ -3462,6 +3475,8 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_9_3_desc_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"team_linchpin_stamina_regen_bonus",
+				"team_linchpin_additional_move_reload_bonus"
 			},
 			icon_xy = {
 				2,
@@ -3474,6 +3489,7 @@ function SkillTreeTweakData:init(tweak_data)
 			short_id = "menu_deck16_9_4_short_sc",
 			icon_atlas = "icons_atlas",
 			upgrades = {
+				"team_linchpin_crew_kill_stack_reward"
 			},
 			icon_xy = {
 				3,
@@ -3489,6 +3505,8 @@ function SkillTreeTweakData:init(tweak_data)
 				short_id = "menu_deck16_1_short_sc",
 				name_id = "menu_deck16_1",
 				upgrades = {
+					"player_linchpin_aura",
+					"team_linchpin_damage_to_lose_1"
 				},
 				icon_xy = {4, 2},
 				multi_choice = biker_1_multi_choice
@@ -3499,6 +3517,8 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck16_3_desc_sc",
 				name_id = "menu_deck16_3",
 				upgrades = {
+					"player_linchpin_treat_as_more_cohesion",
+					"player_passive_dodge_chance_1"
 				},
 				icon_xy = {3, 4},
 				multi_choice = biker_3_multi_choice
@@ -3509,6 +3529,8 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck16_5_desc_sc",
 				name_id = "menu_deck16_5",
 				upgrades = {
+					"player_corpse_dispose_speed_multiplier",
+					"player_civ_move_multiplier"
 				},
 				icon_xy = {3, 0},
 				multi_choice = biker_5_multi_choice
@@ -3519,6 +3541,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck16_7_desc_sc",
 				name_id = "menu_deck16_7",
 				upgrades = {
+					"player_passive_dodge_chance_2"
 				},
 				icon_xy = {4, 4},
 				multi_choice = biker_7_multi_choice
@@ -3529,6 +3552,8 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck16_9_desc_sc",
 				name_id = "menu_deck16_9",
 				upgrades = {
+					"player_passive_loot_drop_multiplier_1",
+					"team_linchpin_increase_default_tendency"
 				},
 				icon_xy = {6, 4},
 				multi_choice = biker_9_multi_choice

@@ -28,7 +28,7 @@ return {
 			},
 			{
 				name = "middle", 
-				force = 3, 
+				force = 2, 
 				position = Vector3(-440, 85, -363.758),
 			},
 			{

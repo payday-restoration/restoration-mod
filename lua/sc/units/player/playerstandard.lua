@@ -2437,7 +2437,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 
 	-- No stamina regen while actively charging an attack with "charger" type melee weapons at max charge
 	if max_charge and self._state_data.meleeing then
-		local melee_flash = restoration.Options:GetValue("WEAPONS/WeaponHandling/MeleeChargeFlash") or true
+		local melee_flash = restoration.Options:GetValue("WEAPONS/WeaponHandling/MeleeChargeFlash") or false
 		if not self._trigger_max_charge and melee_flash and charge_time > 0.01 then
 			local effect_alpha = (restoration.Options:GetValue("WEAPONS/WeaponHandling/MeleeChargeA") or 0.5)
 			local effect_r = (restoration.Options:GetValue("WEAPONS/WeaponHandling/MeleeChargeR") or 1)

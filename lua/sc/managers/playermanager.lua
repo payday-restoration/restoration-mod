@@ -42,6 +42,12 @@ Hooks:PostHook(PlayerManager, "_setup", "ResSetup", function(_)
 	--- 
 	--- The carry table is a FILO queue: First In Last Out.
 	Global.player_manager.synced_carry_stacker = {}
+
+	--- Represents any biker data needed to be synchronised over the net.
+	--- @class SyncedBikerAuraData
+	--- @field amount integer The amount of Cohesion stacks the current peer has.
+	--- @field to_tend integer The amount of Cohesion stacks the current peer suggest other peers tend to.
+	Global.player_manager.synced_cohesion_stacks = {}
 end)
 
 --- Vomits out all the carried items from the player that wasn't in synced_carry.
@@ -79,6 +85,7 @@ Hooks:PostHook(PlayerManager, "peer_dropped_out", "ResPeerDroppedOut", function(
 	end
 
 	Global.player_manager.synced_carry_stacker[peer_id] = nil
+	Global.player_manager.synced_cohesion_stacks[peer_id] = nil
 end)
 
 function PlayerManager:get_synced_carry_stacker(peer_id)
@@ -87,6 +94,10 @@ end
 
 function PlayerManager:get_all_synced_carry_stacker()
 	return self._global.synced_carry_stacker
+end
+
+function PlayerManager:get_synced_cohesion_stacks(peer_id)
+	return self._global.synced_cohesion_stacks[peer_id]
 end
 
 Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
@@ -164,6 +175,7 @@ Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self,
 		end
 	end
 
+	self:update_cohesion_stacks(t, dt)
 end)
 
 --Had to do this cause Bodybag base was being a bastard
@@ -196,6 +208,15 @@ function PlayerManager:body_armor_skill_addend(override_armor)
 	--Grinder Flak Jacket armor modifier
 	if armor_data.upgrade_level == 5 then
 		addend = addend + self:upgrade_value("player", "level_5_armor_addend_grinder", 0)
+	end
+
+	-- Biker armour increase.
+	-- As the perk deck says, this should happen before any other multiplicating thing, so before Anarchist, but
+	-- it's fine for it to happen after Grinder as the intention there is more changing how Flak Jacket is.
+	if self:has_team_category_upgrade("player", "biker_additional_armour") then
+		local cohesion_steps = self:get_cohesion_stacks_as_treated()
+		local extra_armour_percent = self:team_upgrade_value("player", "biker_additional_armour", 0) * cohesion_steps
+		addend = addend * extra_armour_percent
 	end
 
 	if self:has_category_upgrade("player", "armor_increase") then
@@ -265,6 +286,14 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 		
 	multiplier = multiplier + self:get_hostage_bonus_multiplier("speed") - 1
 	multiplier = multiplier + self:upgrade_value("player", "movement_speed_multiplier", 1) - 1
+
+	-- Biker
+	if self:has_team_category_upgrade("player", "biker_crew_movespeed_bonus") then
+		local potency_amount = self:get_cohesion_stacks_as_treated()
+		local bonus = self:team_upgrade_value("player", "biker_crew_movespeed_bonus", 0) + self:team_upgrade_value("player", "biker_additional_move_reload_bonus", 0)
+
+		multiplier = multiplier + bonus * potency_amount
+	end
 
 	--Bloodthirst
 	if self:has_active_temporary_property("bloodthirst_reload_speed") then
@@ -1185,6 +1214,30 @@ function PlayerManager:check_skills()
 		self._message_system:unregister(Message.OnEnemyKilled, "expres_store_health")
 	end
 
+	-- Biker: Earn Your Keep!
+	if self:has_category_upgrade("player", "biker_personal_kill_stack_reward") then
+		self._biker_personal_target_kills = self:upgrade_value("player", "biker_personal_kill_stack_reward").enemies
+		self._biker_personal_target_rewards = self:upgrade_value("player", "biker_personal_kill_stack_reward").stacks
+
+		self._message_system:register(Message.OnEnemyKilled, "biker_personal_give_nearby_crewmembers_stacks", callback(self, self, "_biker_on_personal_kill"))
+	else
+		self._biker_personal_target_kills = 0
+		self._biker_personal_target_rewards = 0
+		self._message_system:unregister(Message.OnEnemyKilled, "biker_personal_give_nearby_crewmembers_stacks")
+	end
+
+	-- Biker: Press The Advantage!
+	if self:has_team_category_upgrade("player", "biker_crew_kill_stack_reward") then
+		self._biker_crew_target_kills = self:team_upgrade_value("player", "biker_crew_kill_stack_reward").enemies
+		self._biker_crew_target_rewards = self:team_upgrade_value("player", "biker_crew_kill_stack_reward").stacks
+
+		self._message_system:register(Message.OnEnemyKilled, "biker_crew_give_nearby_crewmembers_stacks", callback(self, self, "_biker_on_crew_kill"))
+	else
+		self._biker_crew_target_kills = 0
+		self._biker_crew_target_rewards = 0
+		self._message_system:unregister(Message.OnEnemyKilled, "biker_crew_give_nearby_crewmembers_stacks")
+	end
+
 	--OFFYERROCKER'S MERC PERK DECK
 	--[ [
 		if self:has_category_upgrade("player","kmerc_fatal_triggers_invuln") then
@@ -1460,6 +1513,11 @@ function PlayerManager:_internal_load()
 
 	if self:has_category_upgrade("cooldown", "long_dis_revive") then
 		managers.hud:add_skill("long_dis_revive")
+	end
+
+	if self:has_team_category_upgrade("player", "biker_regen_health") then
+		managers.hud:add_skill("dig_in_your_heels")
+		managers.hud:start_cooldown("dig_in_your_heels", managers.player:team_upgrade_value("player", "biker_regen_health").seconds or 5)
 	end
 	
 	if self:has_category_upgrade("player", "cocaine_stacking") then
@@ -2124,6 +2182,388 @@ Hooks:PostHook(PlayerManager, "sync_tag_team", "sync_tag_team_sound_effect", fun
 		self:local_player():sound():play(tweak_data.blackmarket.projectiles.tag_team.sounds.activate)
 	end
 end)
+
+--- Packs a table of peer IDs into a comma-separated string.
+--- @param peer_set table<integer, boolean> Set of peer IDs. Keys are IDs, values are true.
+--- @return string packed_ids Comma-separated list of peer IDs.
+function PlayerManager:pack_biker_affected_peer_set(peer_set)
+    local ids = {}
+
+    for peer_id, _ in pairs(peer_set) do
+        ids[#ids + 1] = tostring(peer_id)
+    end
+
+    return table.concat(ids, ",")
+end
+
+--- Unpacks a table of peer IDs from a string.
+--- @param str string See pack_biker_affected_peer_set().
+--- @return table<integer, boolean> peer_set Set of peer IDs. Keys are IDs, values are true.
+function PlayerManager:unpack_biker_affected_peer_set(str)
+    local result = {}
+
+    if str == nil or str == "" then
+        return result
+    end
+
+    for id in string.gmatch(str, "([^,]+)") do
+        local num_id = tonumber(id)
+        if num_id then
+            result[num_id] = true
+        end
+    end
+
+    return result
+end
+
+
+--- For the purposes of effects, returns the amount of Cohesion stacks the local peer is treated as having (which may be different than how many it has), divided by the amount necessary for a "step" (typically 8).
+---@return integer cohesion_stacks The actual Cohesion stacks, plus any "as treated" extras, divided by 8.
+function PlayerManager:get_cohesion_stacks_as_treated()
+	local local_peer = managers.network:session() and managers.network:session():local_peer()
+	if not local_peer then
+		return 0
+	end
+
+	local extra_amount = self:upgrade_value("player", "biker_treat_as_more_cohesion", 0)
+	local cohesion_stacks = managers.player:get_synced_cohesion_stacks(local_peer:id())
+	local all = (cohesion_stacks and cohesion_stacks.amount or 0) + extra_amount
+
+	return self:get_cohesion_step(all)
+end
+
+--- Updates a given peer's biker-related data.
+--- @param peer_id integer The source peer's ID, whose data needs to be updated.
+--- @param data SyncedBikerAuraData Cohesion stack data for the selected peer.
+--- @param change_tendency boolean If true, the `to_tend` the select peer's tendency will be changed on this side. How is determined by `is_affected`.
+--- @param is_affected boolean Working in tandem with `change_tendency`, if true (and `change_tendency` is true), use the `to_tend` from the incoming data to set the matching peer's tendency. If false, but `change_tendency` is true, forcibly 0 the matching peer's tendency.
+function PlayerManager:set_synced_cohesion_stacks(peer_id, data, is_affected, change_tendency)
+	local received_to_tend = 0
+
+	if change_tendency then
+		if is_affected and data.to_tend ~= nil then
+			received_to_tend = data.to_tend
+		end
+	else
+		if self._global.synced_cohesion_stacks[peer_id] ~= nil and self._global.synced_cohesion_stacks[peer_id].to_tend ~= nil then
+			received_to_tend = self._global.synced_cohesion_stacks[peer_id].to_tend
+		end
+	end
+
+	self._global.synced_cohesion_stacks[peer_id] = {
+		amount = data.amount,
+		to_tend = received_to_tend
+	}
+end
+
+---Iterates through all the synced biker data, and picks out the highest suggested Cohesion stack count to tend to.
+---@return integer highest_to_tend The highest to_tend value in the synced Cohesion stack data.
+function PlayerManager:get_highest_cohesion_tendency_target()
+	local highest = 0
+	for i, cohesion_data in ipairs(self._global.synced_cohesion_stacks) do
+		highest = math.max(cohesion_data.to_tend, highest)
+	end
+
+	return highest
+end
+
+--- A simple function that just returns number / 8, rounded down. Used to determine Cohesion "steps", i.e., how much is that "for every X amount of stacks" amount. Primarily exists for if I ever decide to change the step amount.
+---@param number integer The number to determine steps for, typically own Cohesion stack count (but not necessarily).
+---@return integer Step count.
+function PlayerManager:get_cohesion_step(number)
+	return math.floor(number / tweak_data.upgrades.biker_per_crew_member)
+end
+
+--- Returns how much should the Cohesion stack amount be changed by.
+--- Considers limits, how far away the current amount is from the goal, etc.
+---@param current_amount integer The current amount of Cohesion stacks.
+---@param goal integer The amount that the Cohesion stacks should approach.
+---@return integer change A positive, negative, or 0 value.
+function PlayerManager:get_cohesion_stack_change_amount(current_amount, goal)
+	local change = 0
+	local per_eight_goal = self:get_cohesion_step(goal) -- This represents the amount of "steps" (eight stacks) the goal has. Since only every 8 stack matters, this can be used to determine how far away the current is from the goal.
+	local per_eight_current =  self:get_cohesion_step(current_amount) -- Similar to per_eight_goal.
+	local step_difference = math.abs(per_eight_goal - per_eight_current)
+
+	
+	if current_amount < goal then
+		local additional_gain = self:has_category_upgrade("player","biker_stack_change_adjustments") and self:upgrade_value("player", "biker_stack_change_adjustments").gain or 0
+		change = math.min(goal - current_amount, ((tweak_data.upgrades.biker_cohesion_gain or 1) + additional_gain) * math.max(step_difference,1))
+	elseif current_amount > goal then
+		local additional_loss = self:has_category_upgrade("player","biker_stack_change_adjustments") and self:upgrade_value("player", "biker_stack_change_adjustments").loss or 0
+		change = -math.min(current_amount - goal, ((tweak_data.upgrades.biker_cohesion_loss or 2) + additional_loss) * math.max(step_difference,1))
+	end
+
+	return change
+end
+
+--- Updates the current player's Cohesion stacks for all players, and updates the Cohesion tendency suggested by the current player based on the affected parameter.
+--- @param data SyncedBikerAuraData See class for details.
+--- @param affected boolean[] The table of peer IDs who are currently in the current player's biker aura. Used for determining whose tendency numbers should be changed. Values don't matter, only indices. Can be empty.
+--- @param change_tendency boolean If true, tendency should be changed as well. If false, do not adjust it.
+function PlayerManager:update_cohesion_stacks_for_peers(data, affected, change_tendency)
+	local peer = managers.network:session():local_peer()
+	local is_affected = false
+	if peer then 
+		is_affected = affected[peer:id()] ~= nil
+	end
+
+	local packedData = {
+		amount = data.amount,
+		to_tend = data.to_tend,
+		affected = affected,
+		change_tendency = change_tendency
+	}
+
+	-- Criminal.
+	LuaNetworking:SendToPeers("biker_message_sync_cohesion_stacks", 
+		tostring(packedData.amount)..
+		';'..
+		tostring(packedData.to_tend)..
+		';'..
+		tostring(self:pack_biker_affected_peer_set(packedData.affected))..
+		';'..
+		tostring(packedData.change_tendency)
+	)
+
+	self:set_synced_cohesion_stacks(peer:id(), data, is_affected, change_tendency)
+end
+
+--- A simplified function that simply just adds an amount to the Cohesion stacks. It then synchronises the changes to the other clients.
+--- @param amount number The amount that should be added to the Cohesion stacks.
+--- @param go_over_tendency boolean If true, the final Cohesion stack count can go over the tendency.
+function PlayerManager:add_cohesion_stacks(amount, go_over_tendency)
+	local local_peer_id = managers.network:session() and managers.network:session():local_peer():id()
+
+	if not local_peer_id then
+		return
+	end
+
+	local data = self:get_synced_cohesion_stacks(local_peer_id) or {amount = 0, to_tend = 0}
+	local new_amount = data.amount + amount
+
+	if not go_over_tendency then
+		-- While I don't want it going over the tendency if the option is off, I DO want to keep any amount that already existed (in case you just ran out of a biker aura, for example).
+		new_amount = math.max(math.min(new_amount, data.to_tend), data.amount)
+	end
+
+	if new_amount ~= data.amount then
+		self:update_cohesion_stacks_for_peers({
+			amount = new_amount,
+			to_tend = nil
+		}, {}, false)
+	end
+end
+
+---  Calculates how many valid crew members are around a given position.
+--- @param position Vector3 I'm not sure about this, but I also don't care, I'm just passing it along to World:find_units_quick().
+--- @return table<integer,boolean> affected_players A table where all affected players' peer IDs are keys. Values are just true, but they shouldn't matter.
+--- @return integer heister_count The amount of non-convert heisters.
+--- @return integer convert_count The amount of converted enemies.
+function PlayerManager:get_biker_aura_affected(position)
+	local affected_players = {}
+	local heister_count = 0
+	local convert_count = 0
+	local heisters = World:find_units_quick("sphere", position,
+		tweak_data.upgrades.biker_proximity or 0, managers.slot:get_mask("all_criminals"))
+
+	for i, unit in ipairs(heisters) do
+		if unit:slot() == 16 and  managers.groupai and not managers.groupai:state():is_unit_team_AI(unit) then
+			convert_count = convert_count + 1
+		else
+			heister_count = heister_count + 1
+		end
+		if managers.network:session():peer_by_unit(unit) then
+			local tagged_id = managers.network:session():peer_by_unit(unit):id()
+			affected_players[tagged_id] = true
+		end
+	end
+
+	return affected_players, heister_count, convert_count
+end
+
+--- Handles manipulating the Cohesion stack count.
+function PlayerManager:update_cohesion_stacks(t, dt)
+	local local_peer_id = managers.network:session() and managers.network:session():local_peer():id()
+	local player_unit = self:player_unit()
+	self._prev_keep_track_of_cohesion = self._prev_keep_track_of_cohesion or false
+	local keep_track_of_cohesion = self:has_team_category_upgrade("player", "biker_damage_to_lose")
+
+	if not local_peer_id or not player_unit or not keep_track_of_cohesion then
+		if managers.hud and self._prev_keep_track_of_cohesion then
+			managers.hud:remove_skill("heisters_in_aura")
+			managers.hud:remove_skill("cohesion")
+		end
+		return
+	end
+	self._prev_keep_track_of_cohesion = keep_track_of_cohesion
+
+	self._cohesion_stack_t = self._cohesion_stack_t or t + (tweak_data.upgrades.biker_change_t or 1)
+	local cohesion_stacks = self:get_synced_cohesion_stacks(local_peer_id)
+
+	local amount = cohesion_stacks and cohesion_stacks.amount or 0
+	local new_amount = amount + self:upgrade_value("player", "linchpin_treat_as_more_cohesion", 0)
+
+	local to_tend = cohesion_stacks and cohesion_stacks.to_tend or 0
+	local new_to_tend = to_tend
+
+	-- Handle the HUD update.
+	self._cached_cohesion_amount = self._cached_cohesion_amount or 0
+	if self._cached_cohesion_amount ~= new_amount and managers.hud then
+		managers.hud:start_progress_representation(
+			"cohesion",
+			tweak_data.upgrades.biker_change_t or 1,
+			new_amount,
+			tweak_data.upgrades.biker_per_crew_member or 8
+		)
+		self._cached_cohesion_amount = new_amount
+	end
+
+	local affected_players = {}
+
+	-- biker users get to update their "suggested" tendency.
+	if self:upgrade_value("player", "biker_emit_aura", 0) ~= 0 then
+		local heisters_affected = 0
+		local converts_affected = 0
+		affected_players, heisters_affected, converts_affected = self:get_biker_aura_affected(player_unit:position())
+
+		if managers and managers.hud then
+			managers.hud:add_skill("heisters_in_aura")
+			managers.hud:set_stacks("heisters_in_aura", heisters_affected)
+		end
+
+		local tendency_from_proximity = math.min(heisters_affected + converts_affected / 2, tweak_data.upgrades.biker_hard_limit) * (tweak_data.upgrades.biker_per_crew_member or 0)
+
+		local is_downed = game_state_machine:verify_game_state(GameStateFilters.downed)
+		new_to_tend = is_downed and 0 or (tendency_from_proximity + self:team_upgrade_value("player", "biker_increase_default_tendency", 0))
+	end
+
+	if self._cohesion_stack_t <= t then
+		self._cohesion_stack_t = t + (tweak_data.upgrades.biker_change_t or 1)
+
+		-- I didn't originally plan for fractional Cohesion stack changes, guh!
+		self._fractional_change_amount = (self._fractional_change_amount or 0.0) + self:get_cohesion_stack_change_amount(amount, self:get_highest_cohesion_tendency_target())
+		local integer_change_amount = math.round(self._fractional_change_amount)
+		self._fractional_change_amount = self._fractional_change_amount - integer_change_amount
+
+		new_amount = new_amount + integer_change_amount
+	end
+
+	new_to_tend = math.clamp(math.floor(new_to_tend), 0, 256)
+	new_amount = math.clamp(math.floor(new_amount), 0, 256)
+
+	if new_amount ~= amount or new_to_tend ~= to_tend then
+		self:update_cohesion_stacks_for_peers({
+			amount = new_amount,
+			to_tend = new_to_tend
+		}, affected_players, true)
+	end
+end
+
+LuaNetworking:AddReceiveHook("biker_message_sync_cohesion_stacks", "sync_stack_message", function(packed_data, sender)
+	local local_peer = managers.network:session():local_peer()
+
+	if not BaseNetworkHandler._verify_gamestate(BaseNetworkHandler._gamestate_filter.any_ingame) and not local_peer then 
+		return
+	end
+
+    local deseralised_data = {}
+    for part in string.gmatch(packed_data.. ";", "(.-);") do
+        table.insert(deseralised_data, part)
+    end
+
+    if #deseralised_data ~= 4 then
+        return
+    end
+
+    local checked_cohesion_data = {
+        amount = tonumber(deseralised_data[1]) or 0,
+        to_tend = tonumber(deseralised_data[2]) or 0
+    }
+
+	local affected_peers = managers.player:unpack_biker_affected_peer_set(deseralised_data[3])
+    local is_affected = affected_peers[local_peer:id()] ~= nil
+	local change_tendency = (deseralised_data[4] == "true")
+
+	managers.player:set_synced_cohesion_stacks(sender, checked_cohesion_data, is_affected, change_tendency)
+end)
+
+LuaNetworking:AddReceiveHook("biker_message_add_cohesion_stacks", "add_stack_message", function(packed_data, sender)
+	local local_peer = managers.network:session():local_peer()
+
+	if not BaseNetworkHandler._verify_gamestate(BaseNetworkHandler._gamestate_filter.any_ingame) and not local_peer then 
+		return
+	end
+
+    local deseralised_data = {}
+    for part in string.gmatch(packed_data.. ";", "(.-);") do
+        table.insert(deseralised_data, part)
+    end
+
+    if #deseralised_data ~= 3 then
+        return
+    end
+
+    local checked_cohesion_data = {
+        amount = tonumber(deseralised_data[1]) or 0,
+        go_over_tendency = (deseralised_data[2] == "true")
+    }
+
+	local affected_peers = managers.player:unpack_biker_affected_peer_set(deseralised_data[3])
+    local is_affected = affected_peers[local_peer:id()] ~= nil
+	
+	if  is_affected then
+		managers.player:add_cohesion_stacks(checked_cohesion_data.amount, checked_cohesion_data.go_over_tendency)
+	end
+end)
+
+-- Biker: add Cohesion stacks on kills
+function PlayerManager:_biker_on_personal_kill(_, _, _)
+	local player_unit = self:player_unit()
+	if self._num_kills % self._biker_personal_target_kills == 0 and player_unit ~= nil then
+		local affected_players = self:get_biker_aura_affected(player_unit:position())
+
+		local packedData = {
+			amount = self._biker_personal_target_rewards,
+			go_over_tendency = false,
+			affected = affected_players
+		}
+
+		-- Criminal.
+		LuaNetworking:SendToPeers("biker_message_add_cohesion_stacks", 
+			tostring(packedData.amount)..
+			';'..
+			tostring(packedData.go_over_tendency)..
+			';'..
+			tostring(self:pack_biker_affected_peer_set(packedData.affected))
+		)
+
+		managers.player:add_cohesion_stacks(self._biker_personal_target_rewards, false)
+	end
+end
+
+function PlayerManager:_biker_on_crew_kill(_, _, _)
+	local player_unit = self:player_unit()
+	if self._num_kills % self._biker_crew_target_kills == 0 and player_unit ~= nil then
+		local affected_players = self:get_biker_aura_affected(player_unit:position())
+
+		local packedData = {
+			amount = self._biker_crew_target_rewards,
+			go_over_tendency = true,
+			affected = affected_players
+		}
+		
+		LuaNetworking:SendToPeers("biker_message_add_cohesion_stacks", 
+			tostring(packedData.amount)..
+			';'..
+			tostring(packedData.go_over_tendency)..
+			';'..
+			tostring(self:pack_biker_affected_peer_set(packedData.affected))
+		)
+
+		managers.player:add_cohesion_stacks(self._biker_crew_target_rewards, true)
+	end
+end
 
 -- Disables Bag Anti Cheat
 -- I will end you

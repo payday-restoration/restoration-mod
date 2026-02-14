@@ -3315,79 +3315,256 @@ function SkillTreeTweakData:init(tweak_data)
 		}
 		
 	--Rust Perlman--
+	local biker_1_multi_choice = {
+		{
+			name_id = "menu_deck16_1_1_sc",
+			desc_id = "menu_deck16_1_1_desc_sc",
+			short_id = "menu_deck16_1_1_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"team_biker_crew_heal_potency"
+			},
+			icon_xy = {
+				0,
+				5
+			}
+		},
+		{
+			name_id = "menu_deck16_1_2_sc",
+			desc_id = "menu_deck16_1_2_desc_sc",
+			short_id = "menu_deck16_1_2_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"team_biker_ammo_pickup_multiplier"
+			},
+			icon_xy = {
+				6,
+				5
+			}
+		}
+	}
+	local biker_3_multi_choice = {
+		{
+			name_id = "menu_deck16_3_1_sc",
+			desc_id = "menu_deck16_3_1_desc_sc",
+			short_id = "menu_deck16_3_1_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"player_biker_stack_change_adjustments_1"
+			},
+			icon_xy = {
+				2,
+				7
+			}
+		},
+		{
+			name_id = "menu_deck16_3_2_sc",
+			desc_id = "menu_deck16_3_2_desc_sc",
+			short_id = "menu_deck16_3_2_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"player_biker_stack_change_adjustments_2"
+			},
+			icon_xy = {
+				4,
+				2
+			}
+		},
+		{
+			name_id = "menu_deck16_3_3_sc",
+			desc_id = "menu_deck16_3_3_desc_sc",
+			short_id = "menu_deck16_3_3_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"player_biker_stack_change_adjustments_3"
+			},
+			icon_xy = {
+				7,
+				3
+			}
+		}
+	}
+	local biker_5_multi_choice = {
+		{
+			name_id = "menu_deck16_5_1_sc",
+			desc_id = "menu_deck16_5_1_desc_sc",
+			short_id = "menu_deck16_5_1_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"team_biker_crew_movespeed_bonus"
+			},
+			icon_xy = {
+				1,
+				2
+			}
+		},
+		{
+			name_id = "menu_deck16_5_2_sc",
+			desc_id = "menu_deck16_5_2_desc_sc",
+			short_id = "menu_deck16_5_2_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"team_biker_crew_reload_bonus"
+			},
+			icon_xy = {
+				7,
+				0
+			}
+		}
+	}
+	local biker_7_multi_choice = {
+		{
+			name_id = "menu_deck16_7_1_sc",
+			desc_id = "menu_deck16_7_1_desc_sc",
+			short_id = "menu_deck16_7_1_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"player_biker_stacks_on_revive"
+			},
+			icon_xy = {
+				1,
+				5
+			}
+		},
+		{
+			name_id = "menu_deck16_7_2_sc",
+			desc_id = "menu_deck16_7_2_desc_sc",
+			short_id = "menu_deck16_7_2_short_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"player_biker_personal_kill_stack_reward"
+			},
+			icon_xy = {
+				3,
+				7
+			}
+		}
+	}
+	local biker_9_multi_choice = {
+		{
+			name_id = "menu_deck16_9_1_sc",
+			desc_id = "menu_deck16_9_1_desc_sc",
+			short_id = "menu_deck16_9_1_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"team_biker_damage_to_lose_2",
+				"team_biker_regen_health"
+			},
+			icon_xy = {
+				4,
+				0
+			}
+		},
+		{
+			name_id = "menu_deck16_9_2_sc",
+			desc_id = "menu_deck16_9_2_desc_sc",
+			short_id = "menu_deck16_9_2_short_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"team_biker_armour_regen_bonus",
+				"team_biker_additional_armour"
+			},
+			icon_xy = {
+				0,
+				2
+			}
+		},
+		{
+			name_id = "menu_deck16_9_3_sc",
+			desc_id = "menu_deck16_9_3_desc_sc",
+			short_id = "menu_deck16_9_3_desc_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"team_biker_stamina_regen_bonus",
+				"team_biker_additional_move_reload_bonus"
+			},
+			icon_xy = {
+				2,
+				0
+			}
+		},
+		{
+			name_id = "menu_deck16_9_4_sc",
+			desc_id = "menu_deck16_9_4_desc_sc",
+			short_id = "menu_deck16_9_4_short_sc",
+			icon_atlas = "icons_atlas",
+			upgrades = {
+				"team_biker_crew_kill_stack_reward"
+			},
+			icon_xy = {
+				3,
+				7
+			}
+		}
+	}
+
 	local sc_fat_dick = {
 			{
 				cost = 200,
-				texture_bundle_folder = "wild",
 				desc_id = "menu_deck16_1_desc_sc",
+				short_id = "menu_deck16_1_short_sc",
 				name_id = "menu_deck16_1",
 				upgrades = {
-					"player_wild_health_amount_1"
+					"player_biker_aura",
+					"team_biker_damage_to_lose_1"
 				},
-				icon_xy = {
-					0,
-					0
-				}
+				icon_xy = {4, 2},
+				multi_choice = biker_1_multi_choice
 			},
 			deck2,
 			{
 				cost = 400,
-				texture_bundle_folder = "wild",
 				desc_id = "menu_deck16_3_desc_sc",
 				name_id = "menu_deck16_3",
 				upgrades = {
-					"player_biker_armor_regen_1"
+					"player_biker_treat_as_more_cohesion",
+					"player_passive_dodge_chance_1"
 				},
-				icon_xy = {0, 0},
-				texture_bundle_folder = "opera"
+				icon_xy = {3, 4},
+				multi_choice = biker_3_multi_choice
 			},
 			deck4,
 			{
 				cost = 1000,
-				texture_bundle_folder = "wild",
 				desc_id = "menu_deck16_5_desc_sc",
 				name_id = "menu_deck16_5",
 				upgrades = {
-					"player_less_armor_wild_cooldown_1",
 					"player_corpse_dispose_speed_multiplier",
 					"player_civ_move_multiplier"
 				},
-				icon_xy = {
-					0,
-					1
-				}
+				icon_xy = {3, 0},
+				multi_choice = biker_5_multi_choice
 			},
 			deck6,
 			{
 				cost = 2400,
-				texture_bundle_folder = "wild",
 				desc_id = "menu_deck16_7_desc_sc",
 				name_id = "menu_deck16_7",
 				upgrades = {
-					"player_biker_armor_regen_2"
+					"player_passive_dodge_chance_2"
 				},
-				icon_xy = {0, 0},
-				texture_bundle_folder = "opera"
+				icon_xy = {4, 4},
+				multi_choice = biker_7_multi_choice
 			},
 			deck8,
 			{
 				cost = 4000,
-				texture_bundle_folder = "wild",
 				desc_id = "menu_deck16_9_desc_sc",
 				name_id = "menu_deck16_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier_1",
-					"player_less_armor_wild_health_1"
+					"team_biker_increase_default_tendency"
 				},
-				icon_xy = {
-					3,
-					0
-				}
+				icon_xy = {6, 4},
+				multi_choice = biker_9_multi_choice
 			},
 			name_id = "menu_st_spec_16",
 			desc_id = "menu_st_spec_16_desc",
-			force_icon = 1,
-			category = "defensive",
+			force_icon = 9,
+			category = {
+				"supportive",
+				"challenge"
+			},
 			dlc = "wild"
 		}
 

@@ -22,6 +22,7 @@ function HUDSkill:init(hud)
 	self._durations = {}
 	self._start_times = {}
 	self._stacks = {}
+	self._progress_counts = {}
 end
 
 --Adds a new skill to the list.
@@ -127,6 +128,21 @@ function HUDSkill:trigger_cooldown(name, duration)
 	end
 end
 
+--- Using the icon and the background of the skill, represents how many times "per" fits into "amount".
+--- If more than once, uses the stack count to represent that. Effectively a graphical division + modulo.
+function HUDSkill:trigger_represent_amount_progress(name, duration, amount, per)
+	if not duration or duration == 0 then
+		return
+	end
+	if not self:_check_skill_active(name) then
+		self:add_skill(name)
+	end
+
+	self._durations[name] = duration
+	self._skill_panel:animate(callback(self, self, "_animate_amount_fitting_into_stack"), name, self._progress_counts[name] or 0, amount, per)
+	self._progress_counts[name] = amount
+end
+
 --Can be used for cooldown reduction and such.
 function HUDSkill:change_start_time(name, amount)
 	if not self:_check_skill_active(name) then
@@ -208,6 +224,54 @@ function HUDSkill:_fill(input_panel, name)
 		end
 		coroutine.yield()
 	end
+	self._start_times[name] = nil
+end
+
+--- Skill animation used primarily for Biker's Cohesion stacks.
+--- 
+--- Given a starting number, a target number, and a "per cycle" number, the skill's icon and background will start filling up or draining.
+--- The animation completes as many times as the "per cycle" number can fit between the target number and the starting number.  
+--- Additionally, the animation can stop partially filled based on these numbers.  
+--- The animation will also update the skill's stack count, to represent how many times the current value would "fit" the per cycle amount.
+--- 
+--- ## Example 1:
+--- - starting_amount = 0
+--- - target_amount = 4
+--- - per_cycle = 8
+--- 
+--- This will cause the animation to start filling up from nothing, and stop halfway. 
+--- The stack count would start out at 0 and stay that way.
+--- 
+--- ## Example 2:
+--- - starting_amount = 20
+--- - target_amount = 5
+--- - per_cycle = 10
+--- 
+--- This will cause the animation to start out fully filled, drain completely once, then drain halfway.  
+--- The stack count would start out at 2, show 1 during the full drain animation, then show 0 during the halfway drain animation.
+--- @param input_panel InputPanel As with other animations.
+--- @param name string As with other animations.
+--- @param starting_amount number See description.
+--- @param target_amount number See description.
+--- @param per_cycle number See description.
+function HUDSkill:_animate_amount_fitting_into_stack(input_panel, name, starting_amount, target_amount, per_cycle)
+	self._start_times[name] = Application:time()
+	repeat
+		local completion_ratio = math.min((Application:time() - self._start_times[name]) / self._durations[name], 1)
+		local current_amount = starting_amount + (target_amount - starting_amount) * completion_ratio
+		local filled = math.floor(current_amount / per_cycle)
+		local partial_ratio = (current_amount - filled * per_cycle) / per_cycle
+
+		if partial_ratio <= 0.01 then
+			-- Purely graphical adjustment, a 0 makes the icon completely disappear.
+			partial_ratio = 1
+		end
+
+		input_panel:child(name .. "_back"):set_color(Color(0.75, partial_ratio, 1, 1))
+		input_panel:child(name .. "_icon"):set_color(Color(0.8, partial_ratio, 1, 1))
+		input_panel:child(name .. "_stacks"):set_text(tostring(filled))
+		coroutine.yield()
+	until completion_ratio == 1
 	self._start_times[name] = nil
 end
 

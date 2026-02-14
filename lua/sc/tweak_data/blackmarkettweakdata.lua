@@ -2079,6 +2079,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		throwable = false,
 		is_a_grenade = true,
 		add_trail_effect = true,
+		trail_effect_id = "effects/payday2/particles/weapons/tear_gas_trail_green"
 	}
 
 --SABR Grenade Launcher.

@@ -892,6 +892,10 @@ if difficulty_index <= 2 then
 	else
 		tweak_data.projectiles.gas_grenade.damage_tick_period  = 0.25
 end
+
+if difficulty_index == 8 then
+	tweak_data.blackmarket.projectiles.gas_grenade.trail_effect_id = "effects/payday2/particles/weapons/tear_gas_trail_red"
+end
 	
 -- Reduced grace slightly for tear gas when playing on Pro Job
 if pro_job then

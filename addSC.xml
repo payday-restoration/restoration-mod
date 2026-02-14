@@ -1809,6 +1809,9 @@
 	<!-- Grenadier Grenades -->
 	<unit path="units/weapons/gas_grenade/gas_grenade_husk" load="true"/>
 	<unit path="units/weapons/gas_grenade/gas_grenade" load="true"/>
+	<!-- Trails for Tear Gas Grenades -->
+	<effect				path="effects/payday2/particles/weapons/tear_gas_trail_red"/>
+	<effect				path="effects/payday2/particles/weapons/tear_gas_trail_green"/>
 	
     <!--not shit secret masks-->
 	<object				path="units/pd2_dlc_sms/masks/sms_01/msk_sms_01" force="true"/>

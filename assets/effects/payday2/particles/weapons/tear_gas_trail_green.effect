@@ -1,0 +1,51 @@
+<effect force_synch="false">
+    <atom name="Trail - Straight" min_size="1" max_size="1" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update_render" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="1" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <localboxrandomposition min="0 0 0" max="0 0 0"/>
+            <boxrandomrotation relative="world" min="0 1 0" max="0 1 0" min_rot="0" max_rot="0"/>
+            <boxrandomrotation relative="effect" min="0 1 0" max="0 1 0" min_rot="0" max_rot="0"/>
+            <trail size="20"/>
+        </initializerstack>
+        <simulatorstack>
+            <worldtransform transform_rotations="true"/>
+            <trail size="20" mode="distance" distance="300"/>
+            <variableopacity name="opacity_1" opacity="1"/>
+        </simulatorstack>
+        <visualizerstack>
+            <trail size="20" trail_type="normal_locked" tesselation="1" curvature="0.019999999552965" tile_uv="false" tiles_per_meter="1" texture="effects/textures/misc/e_arrow_trail_df" intensity="searchlight" blend_mode="normal" render_template="effect_op_add" per_particle_age="false" color_input="constant" color="148 255 41" opacity_input="scaled_channel" width_input="constant" width="20" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <color_multiplier_keys loop="false">
+                    <key t="0" v="1 1 1"/>
+                </color_multiplier_keys>
+                <opacity_scale_keys loop="false">
+                    <key t="0" v="1"/>
+                    <key t="0.49727767705917" v="50"/>
+                </opacity_scale_keys>
+                <opacity_multiplier_keys loop="false">
+                    <key t="0" v="1"/>
+                    <key t="50000" v="1"/>
+                    <key t="60000" v="0"/>
+                </opacity_multiplier_keys>
+            </trail>
+            <trail size="5" trail_type="normal_locked" tesselation="1" curvature="0.019999999552965" tile_uv="false" tiles_per_meter="1" texture="effects/textures/misc/e_arrow_trail_df" intensity="supernova" blend_mode="normal" render_template="effect_op_add" per_particle_age="false" color_input="constant" color="139 214 41" opacity_input="scaled_channel" width_input="keys" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <color_multiplier_keys loop="false">
+                    <key t="0" v="1 1 1"/>
+                </color_multiplier_keys>
+                <opacity_scale_keys loop="false">
+                    <key t="0" v="255"/>
+                    <key t="0.28312158584595" v="5"/>
+                    <key t="0.82032668590546" v="0"/>
+                </opacity_scale_keys>
+                <opacity_multiplier_keys loop="false">
+                    <key t="0" v="1"/>
+                    <key t="500" v="1"/>
+                    <key t="1000" v="1"/>
+                </opacity_multiplier_keys>
+                <width_keys loop="false">
+                    <key t="0" v="1"/>
+                    <key t="0.49785408377647" v="5"/>
+                </width_keys>
+            </trail>
+        </visualizerstack>
+    </atom>
+</effect>

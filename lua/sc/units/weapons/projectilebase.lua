@@ -223,7 +223,11 @@ function ProjectileBase:throw(params)
 		end
 
 		if tweak_entry.add_trail_effect then
-			self:add_trail_effect(tweak_entry.add_trail_effect)
+			if tweak_entry.trail_effect_id then
+				self:add_trail_effect(tweak_entry.trail_effect_id)
+			else
+				self:add_trail_effect()
+			end
 		end
 
 		local unit_name = tweak_entry.sprint_unit
@@ -253,4 +257,14 @@ Hooks:PreHook(ProjectileBase, "throw_projectile_npc", "sh_throw_projectile_npc",
 	if not PackageManager:has(unit_ids, unit_name) then
 		managers.dyn_resource:load(unit_ids, unit_name, managers.dyn_resource.DYN_RESOURCES_PACKAGE)
 	end
+end)
+
+Hooks:OverrideFunction(ProjectileBase, "add_trail_effect", function (self, trail_effect_id)
+	if trail_effect_id then
+		managers.game_play_central:add_projectile_trail(self._unit, self._unit:orientation_object(), trail_effect_id)
+	else
+		managers.game_play_central:add_projectile_trail(self._unit, self._unit:orientation_object())
+	end
+
+	self._added_trail_effect = true
 end)

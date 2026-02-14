@@ -1436,7 +1436,6 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 
 	health_subtracted = health_subtracted - self:get_real_health()
 
-
 	self:biker_lose_stacks_on_damage(health_subtracted, tweak_data.upgrades.biker_damage_weighs_for_stack_loss.health or 2)
 	
 	if not self_damage and managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") and health_subtracted > 0 then
@@ -2589,7 +2588,7 @@ end
 --- @param damage_taken number The amount of damage taken.
 --- @param weight number A number to multiply the damage_taken number with. Used typically to distinguish between health and armour damage, with health damage counting as double. See biker_damage_weighs_for_stack_loss for what this means.
 function PlayerDamage:biker_lose_stacks_on_damage(damage_taken, weight)
-	if damage_taken >= 0 or not managers.player:has_team_category_upgrade("player", "biker_damage_to_lose") then
+	if damage_taken <= 0 or not managers.player:has_team_category_upgrade("player", "biker_damage_to_lose") then
 		return
 	end
 
@@ -2597,7 +2596,7 @@ function PlayerDamage:biker_lose_stacks_on_damage(damage_taken, weight)
 	local damage_bound = managers.player:team_upgrade_value("player", "biker_damage_to_lose", 10000)
 	local cohesion_loss = 0
 
-	self._biker_damage_taken = self._biker_damage_taken - damage_taken * weight * 10
+	self._biker_damage_taken = self._biker_damage_taken + damage_taken * weight * 10
 
 	while self._biker_damage_taken > damage_bound do
 		cohesion_loss = cohesion_loss + 1
@@ -2612,7 +2611,7 @@ function PlayerDamage:biker_lose_stacks_on_damage(damage_taken, weight)
 		end
 
 		managers.player:update_cohesion_stacks_for_peers({
-			amount = math.max(0,(cohesion.amount or cohesion_loss) - cohesion_loss), 
+			amount = math.max(0,(cohesion.amount or cohesion_loss) - cohesion_loss),
 			to_tend = nil
 		}, {}, false)
 	end

@@ -137,14 +137,10 @@ function HUDSkill:trigger_represent_amount_progress(name, duration, amount, per)
 	if not self:_check_skill_active(name) then
 		self:add_skill(name)
 	end
+
 	self._durations[name] = duration
-	self._progress_counts[name] = self._progress_counts[name] or 0
-	if self._start_times[name] then
-		self._start_times[name] = Application:time()
-	else
-		self._skill_panel:animate(callback(self, self, "_animate_amount_fitting_into_stack"), name, self._progress_counts[name], amount, per)
-		self._progress_counts[name] = amount
-	end
+	self._skill_panel:animate(callback(self, self, "_animate_amount_fitting_into_stack"), name, self._progress_counts[name] or 0, amount, per)
+	self._progress_counts[name] = amount
 end
 
 --Can be used for cooldown reduction and such.
@@ -259,12 +255,17 @@ end
 --- @param target_amount number See description.
 --- @param per_cycle number See description.
 function HUDSkill:_animate_amount_fitting_into_stack(input_panel, name, starting_amount, target_amount, per_cycle)
-	self._skill_list._start_times[name] = Application:time()
+	self._start_times[name] = Application:time()
 	repeat
-		local completion_ratio = math.min((Application:time() - self._skill_list._start_times[name]) / self._durations[name], 1)
+		local completion_ratio = math.min((Application:time() - self._start_times[name]) / self._durations[name], 1)
 		local current_amount = starting_amount + (target_amount - starting_amount) * completion_ratio
 		local filled = math.floor(current_amount / per_cycle)
 		local partial_ratio = (current_amount - filled * per_cycle) / per_cycle
+
+		if partial_ratio <= 0.01 then
+			-- Purely graphical adjustment, a 0 makes the icon completely disappear.
+			partial_ratio = 1
+		end
 
 		input_panel:child(name .. "_back"):set_color(Color(0.75, partial_ratio, 1, 1))
 		input_panel:child(name .. "_icon"):set_color(Color(0.8, partial_ratio, 1, 1))

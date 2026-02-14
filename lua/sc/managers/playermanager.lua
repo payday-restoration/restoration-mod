@@ -2397,7 +2397,7 @@ function PlayerManager:update_cohesion_stacks(t, dt)
 	local cohesion_stacks = self:get_synced_cohesion_stacks(local_peer_id)
 
 	local amount = cohesion_stacks and cohesion_stacks.amount or 0
-	local new_amount = amount
+	local new_amount = amount + self:upgrade_value("player", "linchpin_treat_as_more_cohesion", 0)
 
 	local to_tend = cohesion_stacks and cohesion_stacks.to_tend or 0
 	local new_to_tend = to_tend
@@ -2405,8 +2405,6 @@ function PlayerManager:update_cohesion_stacks(t, dt)
 	-- Handle the HUD update.
 	self._cached_cohesion_amount = self._cached_cohesion_amount or 0
 	if self._cached_cohesion_amount ~= new_amount and managers.hud then
-		-- TODO BIKER
-		--managers.hud:set_cohesion_value(new_amount, self:upgrade_value("player", "biker_treat_as_more_cohesion", 0))
 		managers.hud:start_progress_representation(
 			"cohesion",
 			tweak_data.upgrades.biker_change_t or 1,
@@ -2465,7 +2463,7 @@ LuaNetworking:AddReceiveHook("biker_message_sync_cohesion_stacks", "sync_stack_m
 	end
 
     local deseralised_data = {}
-    for part in string.gmatch(packed_data, "([^;]+)") do
+    for part in string.gmatch(packed_data.. ";", "(.-);") do
         table.insert(deseralised_data, part)
     end
 
@@ -2493,7 +2491,7 @@ LuaNetworking:AddReceiveHook("biker_message_add_cohesion_stacks", "add_stack_mes
 	end
 
     local deseralised_data = {}
-    for part in string.gmatch(packed_data, "([^;]+)") do
+    for part in string.gmatch(packed_data.. ";", "(.-);") do
         table.insert(deseralised_data, part)
     end
 

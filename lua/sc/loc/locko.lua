@@ -146,7 +146,17 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModNoSwapOnReviveTitleID"] = "되살려졌을 시 강제 무기 교체 없음",
 				["RestorationModNoSwapOnReviveDescID"] = "언다잉 에이스 효과 없이 주무기로 쓰러졌을 때 되살려졌을 때 강제 무기 교체를 비활성화합니다.",
 				["RestorationModProjectileMagnetismTitleID"] = "투사체 자성",
-				["RestorationModProjectileMagnetismDescID"] = "폭발성이 아닌 발사체의 자기력/추적 효과를 전환합니다.",				
+				["RestorationModProjectileMagnetismDescID"] = "폭발성이 아닌 발사체의 자기력/추적 효과를 전환합니다.",
+				["RestorationModMeleeChargeFlashTitleID"] = "근접 무기 충전 섬광 효과",
+				["RestorationModMeleeChargeFlashDescID"] = "근접 무기가 완전히 충전될때 화면 상단과 하단에 짧은 섬광이 나타나게 합니다.",
+				["RestorationModMeleeChargeATitleID"] = "효과 강도",
+				["RestorationModMeleeChargeADescID"] = "",
+				["RestorationModMeleeChargeRTitleID"] = "빨강",
+				["RestorationModMeleeChargeRDescID"] = "",
+				["RestorationModMeleeChargeGTitleID"] = "초록",
+				["RestorationModMeleeChargeGDescID"] = "",
+				["RestorationModMeleeChargeBTitleID"] = "파랑",
+				["RestorationModMeleeChargeBDescID"] = "",				
 				
 			["RestorationModWEAPONINPUTSOptionsButtonTitleID"] = "입력 옵션",
 			["RestorationModWEAPONINPUTSOptionsButtonDescID"] = "무기 입력에 대한 옵션을 엽니다.",				
@@ -1367,7 +1377,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_upg_a_slug_spam_desc"] = "#{skill_color}#방탄복을 관통하여 피해의 75% 가하고 다수의 적, 최대 피해량 사거리 내의 방패 및 얇은 벽을 관통하는## 납탄을 발사합니다.",
 		["bm_wp_upg_a_slug_desc"] = "#{skill_color}#방탄복과 다수의 적, 얇은 벽을 관통하는## 납탄을 발사합니다.",
 		["bm_wp_upg_a_slug_titan_desc"] = "#{skill_color}#방탄복과 다수의 적, 방패, 타이탄 방패, 얇은 벽을 관통하는## 납탄을 발사합니다.",
-		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#2##미터인 #{heat_warm_color}#폭발성## 납탄을 발사합니다.\n이 슬러그탄은 #{skill_color}#사거리 별 피해량 감소가 없습니다.## 하지만 #{risk}#피해는 슬러그탄과 폭발로 나뉩니다.##",
+		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#2##미터인 #{heat_warm_color}#폭발성## 납탄을 발사합니다.\n#{skill_color}#폭발은 모든 거리에서 최대 피해를 가합니다.##\n직격타는 추가로 #{skill_color}#50%## 피해를 가하며, 총알 피해로 간주됩니다.",
 		["bm_wp_upg_a_custom_desc"] = "#{skill_color}#몸에 더 큰 피해를 가하는## 큰 펠릿 #{important_1}#6발##을 발사합니다. #{risk}#헤드샷 피해량은 약간만 증가합니다.##",
 		["bm_wp_upg_a_custom_4_desc"] = "#{skill_color}#몸에 더 큰 피해를 가하는## 큰 펠릿 #{important_1}#4발##을 발사합니다. #{risk}#헤드샷 피해량은 약간만 증가합니다.##",
 		--["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#15%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#90## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##", --NOT IN USE
@@ -1704,7 +1714,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_melee_freedom_info"] = "빨간색과 흰색이 번갈아 배열된 13개의 줄무늬, 깃대 끝 쪽 파란색 직사각형, 작고 흰색의 오각별 50개, 한 꼬집의 애국심, 두 컵의 자유, 그리고 부러진 깃대.\n\n짜잔. 이로써 당신은 치명적인 무기를 손에 넣었습니다.",
 		--Who needs pants?
 		["bm_melee_erica_info"] = "정신이 멀쩡한 사람이라면 이걸 던질 겁니다.\n\n살아있는 적에게 완전히 충전된 공격을 가하면 #{skill_color}#100%## 확률로 폭발하여 목표 적중 지점으로부터 #{skill_color}#5##미터 반경 내에 #{risk}#720##의 피해를 가합니다.",
-			["bm_melee_cqc20_info"] = "#{risk}#받아라!##\n\n살아있는 적에게 완전히 충전된 공격을 가하면 #{skill_color}#100%## 확률로 제어된 폭발이 발생하여 목표 적중 지점으로부터 #{skill_color}#2##미터 반경 내에 있는 적들에게 #{risk}#720##의 피해를 가합니다.",
+			["bm_melee_cqc20_info"] = "#{risk}#덤벼라!##\n\n살아있는 적에게 완전히 충전된 공격을 가하면 #{skill_color}#100%## 확률로 제어된 폭발이 발생하여 목표 적중 지점으로부터 #{skill_color}#2##미터 반경 내에 있는 적들에게 #{risk}#720##의 피해를 가합니다.",
 
 		--Hammer
 		["bm_melee_hammer_info"] = "\"목수의 기쁨\"은 자켓이 가장 좋아하는 망치입니다. 망치는 당신이 싫어하는 사람에게 둔탁한 타격을 가하기에 완벽한 도구죠.\n\n망치의 가장 흔한 용도는 못을 박거나, 부품을 맞추거나, 금속을 단조하거나, 물건을 부수는 것인데 자켓은 이런 용도로 쓰는 것에 별로 관심이 없습니다.",

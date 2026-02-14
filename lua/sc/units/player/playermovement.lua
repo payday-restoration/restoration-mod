@@ -188,3 +188,18 @@ end
 function PlayerMovement:activate_regeneration()
 	self._regenerate_timer = ((tweak_data.player.movement_state.stamina.REGENERATE_TIME or 5) + self._stamina_regen_add ) * managers.player:upgrade_value("player", "stamina_regen_timer_multiplier", 1)
 end
+
+function PlayerMovement:add_stamina(value)
+	local multiplier = 1
+
+	-- Duck and Cover
+	multiplier = multiplier * managers.player:upgrade_value("player", "stamina_regen_multiplier", 1)
+
+	-- Biker
+	if managers.player:has_team_category_upgrade("player", "biker_stamina_regen_bonus") then
+		local cohesion_steps = managers.player:get_cohesion_stacks_as_treated()
+		multiplier = multiplier * (1 + managers.player:team_upgrade_value("player", "biker_stamina_regen_bonus", 0) * cohesion_steps)
+    end
+
+	self:_change_stamina(math.abs(value) * multiplier)
+end

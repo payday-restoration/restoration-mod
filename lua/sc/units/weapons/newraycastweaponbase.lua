@@ -1793,6 +1793,11 @@ function NewRaycastWeaponBase:precalculate_ammo_pickup()
 			pickup_multiplier = pickup_multiplier * managers.player:body_armor_value("skill_ammo_mul", nil, 1)
 		end
 
+		if managers.player:has_team_category_upgrade("player", "biker_ammo_pickup_boost") then
+			local cohesion_stacks = managers.player:get_cohesion_stacks_as_treated() or 0
+			pickup_multiplier = pickup_multiplier * (1 + managers.player:team_upgrade_value("player", "biker_ammo_pickup_boost", 0) * cohesion_stacks)
+		end
+
 		--Sharpeyed Team AI bonus, since now Enduring is a base thing
 		--Moved to RaycastWeaponBase:add_ammo; precalculate_ammo_pickup is first called on spawn *before* the crew bonus becomes active and renders it useless unless you leave custody or do something else to call this function after crew AI is active
 		--pickup_multiplier = pickup_multiplier + managers.player:crew_ability_upgrade_value("crew_scavenge", 1) - 1
@@ -2052,6 +2057,13 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
 
 	multiplier = multiplier * self:reload_speed_stat()
 	multiplier = managers.modifiers:modify_value("WeaponBase:GetReloadSpeedMultiplier", multiplier)
+
+	if managers.player:has_team_category_upgrade("player", "biker_crew_reload_bonus") then
+		local potency_amount = managers.player:get_cohesion_stacks_as_treated()
+		local bonus = managers.player:team_upgrade_value("player", "biker_crew_reload_bonus", 0) + managers.player:team_upgrade_value("player", "biker_additional_move_reload_bonus", 0)
+
+		multiplier = multiplier * (1 + bonus * potency_amount)
+	end
 
 	--MERCENARY DECK
 	if managers.player:has_category_upgrade("player","kmerc_reload_speed_per_max_armor") then

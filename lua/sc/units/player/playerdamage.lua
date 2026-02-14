@@ -8,7 +8,7 @@ function PlayerDamage:init(unit)
 	self._lives_init = managers.modifiers:modify_value("PlayerDamage:GetMaximumLives", self._lives_init)
 	self._unit = unit
 	self._max_health_reduction = managers.player:upgrade_value("player", "max_health_reduction", 1)
-	self._healing_reduction = managers.player:upgrade_value("player", "healing_reduction", 1)
+	self._healing_reduction = managers.player:upgrade_value("player", "healing_reduction", 1) -- Hijacked to also use as healing increase,from Biker
 	self._revives = Application:digest_value(0, true)
 	self._uppers_elapsed = 0
 
@@ -18,6 +18,7 @@ function PlayerDamage:init(unit)
 	self._next_temp_health_decay_t = 0 --When to hit hitman temp health with decay next.
 	self._leech_stored_armor = 0 -- Used to store the Leech's armour while they are using the ampoule.
 	self:replenish() --Sets a number of things, mostly resetting armor, health, and ui stuff. Vanilla code.
+	self._biker_damage_taken = 0 -- Keeps tracks of amount of damage taken for Biker's Cohesion loss.
 
 	local player_manager = managers.player
 	self._bleed_out_health = Application:digest_value(tweak_data.player.damage.BLEED_OUT_HEALTH_INIT * player_manager:upgrade_value("player", "bleed_out_health_multiplier", 1), true)
@@ -183,6 +184,13 @@ function PlayerDamage:init(unit)
 		self._listener_holder:add("on_revive", {"on_revive"}, callback(self, self, "_on_revive_event"))
 	else
 		self:_init_standard_listeners()
+	end
+
+	-- Biker: Back To It, revival with stacks
+	if managers.player:has_category_upgrade("player", "biker_stacks_on_revive") then
+		self._listener_holder:add("_biker_revive_with_stacks", {
+			"on_revive"
+		}, callback(self, self, "_on_biker_revive_with_stacks"))
 	end
 
 	if player_manager:has_category_upgrade("player", "revive_damage_reduction") and player_manager:has_category_upgrade("player", "revive_damage_reduction") then
@@ -1427,6 +1435,9 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	end
 
 	health_subtracted = health_subtracted - self:get_real_health()
+
+
+	self:biker_lose_stacks_on_damage(health_subtracted, tweak_data.upgrades.biker_damage_weighs_for_stack_loss.health or 2)
 	
 	if not self_damage and managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") and health_subtracted > 0 then
 		local teammate_heal_level = managers.player:upgrade_level_nil("player", "copr_teammate_heal")
@@ -1580,6 +1591,13 @@ function PlayerDamage:_update_regenerate_timer(t, dt)
 		regenerate_timer_tick = regenerate_timer_tick * tweak_data.upgrades.smoke_screen_armor_regen[1]
 	end
 
+	-- Biker's armour regen bonus.
+	if managers.player:has_team_category_upgrade("player", "biker_armour_regen_bonus") then
+		local cohesion_steps = managers.player:get_cohesion_stacks_as_treated()
+		local extra_regen_timer_tick = 1 + managers.player:team_upgrade_value("player", "biker_armour_regen_bonus", 0) * cohesion_steps
+		regenerate_timer_tick = regenerate_timer_tick * extra_regen_timer_tick
+	end
+
 	self._regenerate_timer = math.max(self._regenerate_timer - regenerate_timer_tick, 0)
 
 	if self._regenerate_timer <= 0 then
@@ -1681,6 +1699,13 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	--Frenzy inverse healing
 	local healing_reduction_ratio = tweak_data.upgrades.frenzy_healing_reduction_ratio or 1
 	self._healing_reduction = 1 * 1 - ( (pm:upgrade_value("player", "frenzy_deflection", 0) * healing_reduction_ratio) * (self:health_ratio()) )
+
+	-- Biker: increased healing potency from Stick Together.
+    if managers.player:has_team_category_upgrade("player", "biker_crew_heal_potency") then
+		local potency_amount = managers.player:get_cohesion_stacks_as_treated()
+
+		self._healing_reduction = self._healing_reduction + managers.player:team_upgrade_value("player", "biker_crew_heal_potency", 0) * potency_amount
+	end
 
 	--Add passive dodge increases. Start with bot dodge boost.
 	local passive_dodge = pm:upgrade_value("team", "crew_add_dodge", 0)
@@ -2025,6 +2050,7 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 		health_subtracted = self:get_real_armor()
 
 		self:change_armor(-attack_data.damage)
+		self:biker_lose_stacks_on_damage(attack_data.damage, tweak_data.upgrades.biker_damage_weighs_for_stack_loss.armour or 1)
 
 		health_subtracted = health_subtracted - self:get_real_armor()
 
@@ -2548,3 +2574,46 @@ Hooks:OverrideFunction(PlayerDamage, "on_copr_heal_received", function(self, hea
 		end
 	end
 end)
+
+function PlayerDamage:_on_biker_revive_with_stacks()
+	local stacks = managers.player:upgrade_value("player", "biker_stacks_on_revive", 0)
+	if stacks and stacks > 0 then
+		managers.player:update_cohesion_stacks_for_peers({
+			amount = stacks,
+			to_tend = nil
+		}, {}, false)
+	end
+end
+
+--- Causes the player to potentially lose Cohesion stacks from damage taken.
+--- @param damage_taken number The amount of damage taken.
+--- @param weight number A number to multiply the damage_taken number with. Used typically to distinguish between health and armour damage, with health damage counting as double. See biker_damage_weighs_for_stack_loss for what this means.
+function PlayerDamage:biker_lose_stacks_on_damage(damage_taken, weight)
+	if damage_taken >= 0 or not managers.player:has_team_category_upgrade("player", "biker_damage_to_lose") then
+		return
+	end
+
+	self._biker_damage_taken = self._biker_damage_taken or 0
+	local damage_bound = managers.player:team_upgrade_value("player", "biker_damage_to_lose", 10000)
+	local cohesion_loss = 0
+
+	self._biker_damage_taken = self._biker_damage_taken - damage_taken * weight * 10
+
+	while self._biker_damage_taken > damage_bound do
+		cohesion_loss = cohesion_loss + 1
+		self._biker_damage_taken = self._biker_damage_taken - damage_bound
+	end
+
+	if cohesion_loss > 0 then
+		local cohesion = managers.player:get_synced_cohesion_stacks(managers.network:session():local_peer():id())
+
+		if not cohesion or not cohesion.amount then
+			return
+		end
+
+		managers.player:update_cohesion_stacks_for_peers({
+			amount = math.max(0,(cohesion.amount or cohesion_loss) - cohesion_loss), 
+			to_tend = nil
+		}, {}, false)
+	end
+end

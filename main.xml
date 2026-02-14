@@ -581,6 +581,7 @@
 					<option type="bool" default_value="true" name="Info_survive_one_hit"/> <!-- Yakuza Oni Irezumi -->
 					<option type="bool" default_value="true" name="Info_cohesion"/> <!-- Biker's Cohesion display -->
 					<option type="bool" default_value="true" name="Info_heisters_in_aura"/> <!-- Biker helper display for how many players are around -->
+					<option type="bool" default_value="true" name="Info_dig_in_your_heels"/> <!-- Biker regeneration timer -->
 					<!-- Other -->
 					<divider name="tod_divider" size="7"/>
 					<button name="other_buffs" disabled="true"/>

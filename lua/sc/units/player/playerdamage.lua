@@ -1853,6 +1853,21 @@ function PlayerDamage:_upd_health_regen(t, dt)
 	    end
 	end
 
+	managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
+
+	-- Biker: Dig In Your Heels regen.
+	if managers.player:has_team_category_upgrade("player", "biker_regen_health") then
+		local biker_diyh_timer = (managers.player:team_upgrade_value("player", "biker_regen_health").seconds or 5)
+		self._biker_regen_t = self._biker_regen_t or t + biker_diyh_timer
+		if self._biker_regen_t <= t then
+			self._biker_regen_t = t + biker_diyh_timer
+			local cohesion_steps = managers.player:get_cohesion_stacks_as_treated()
+			local heal =(managers.player:team_upgrade_value("player", "biker_regen_health").amount or 0) * cohesion_steps
+			self:restore_health(heal, true)
+			managers.hud:start_cooldown("dig_in_your_heels", biker_diyh_timer)
+		end
+	end
+
 	--OFFYERROCKER'S MERC PERK DECK
 	--[ [
 		if managers.player:has_category_upgrade("player","kmerc_armored_hot") then

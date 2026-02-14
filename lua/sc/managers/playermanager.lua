@@ -1514,6 +1514,11 @@ function PlayerManager:_internal_load()
 	if self:has_category_upgrade("cooldown", "long_dis_revive") then
 		managers.hud:add_skill("long_dis_revive")
 	end
+
+	if self:has_team_category_upgrade("player", "biker_regen_health") then
+		managers.hud:add_skill("dig_in_your_heels")
+		managers.hud:start_cooldown("dig_in_your_heels", managers.player:team_upgrade_value("player", "biker_regen_health").seconds or 5)
+	end
 	
 	if self:has_category_upgrade("player", "cocaine_stacking") then
 		self:update_synced_cocaine_stacks_to_peers(0, self:upgrade_value("player", "sync_cocaine_upgrade_level", 1), self:upgrade_level("player", "cocaine_stack_absorption_multiplier", 0))

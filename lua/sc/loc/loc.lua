@@ -130,6 +130,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_cohesionDescID"] = "Enables or disables tracking the Cohesion stacks from this perk deck.",
 				["RestorationModInfo_heisters_in_auraTitleID"] = "Heisters in Proximity (Biker)",
 				["RestorationModInfo_heisters_in_auraDescID"] = "Enables or disables tracking how many players are nearby for this perk deck.",
+				["RestorationModInfo_dig_in_your_heelsTitleID"] = "Dig In Your Heels! (Biker)",
+				["RestorationModInfo_dig_in_your_heelsDescID"] = "Enables or disables tracking of this specific perk.",
 
 				["RestorationModother_buffsTitleID"] = "===Other===",
 				["RestorationModother_buffsDescID"] = "Buff trackers for aspects that don't have skills or perks directly linked to them.",

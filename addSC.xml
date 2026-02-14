@@ -100,6 +100,7 @@
 	<texture			path="guis/textures/pd2/skilltree/info_sneaky_bastard" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_cohesion" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_heisters_in_aura" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_dig_in_your_heels" force="false" load="false"/>
 
 
 	<model				path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="true"/>

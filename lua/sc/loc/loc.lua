@@ -126,6 +126,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_sociopathDescID"] = "Enables or disables tracking of this perk deck.",
 				["RestorationModInfo_survive_one_hitTitleID"] = "Oni Irezumi (Yakuza)",
 				["RestorationModInfo_survive_one_hitDescID"] = "Enables or disables tracking the active state this specific perk.",
+				["RestorationModInfo_cohesionTitleID"] = "Cohesion (Biker)",
+				["RestorationModInfo_cohesionDescID"] = "Enables or disables tracking the Cohesion stacks from this perk deck.",
+				["RestorationModInfo_heisters_in_auraTitleID"] = "Heisters in Proximity (Biker)",
+				["RestorationModInfo_heisters_in_auraDescID"] = "Enables or disables tracking how many players are nearby for this perk deck.",
 
 				["RestorationModother_buffsTitleID"] = "===Other===",
 				["RestorationModother_buffsDescID"] = "Buff trackers for aspects that don't have skills or perks directly linked to them.",

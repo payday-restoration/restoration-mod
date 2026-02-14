@@ -323,6 +323,12 @@ function HUDManager:add_stack(name)
 	end
 end
 
+function HUDManager:start_progress_representation(name, duration, amount, per)
+	if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
+		self._skill_list:trigger_represent_amount_progress(name, duration, amount, per)
+	end
+end
+
 function HUDManager:remove_stack(name)
 	self._skill_list:remove_stack(name)
 end

@@ -2381,7 +2381,17 @@ end
 function PlayerManager:update_cohesion_stacks(t, dt)
 	local local_peer_id = managers.network:session() and managers.network:session():local_peer():id()
 	local player_unit = self:player_unit()
+	self._prev_keep_track_of_cohesion = self._prev_keep_track_of_cohesion or false
 	local keep_track_of_cohesion = self:has_team_category_upgrade("player", "biker_damage_to_lose")
+
+	if not local_peer_id or not player_unit or not keep_track_of_cohesion then
+		if managers.hud and self._prev_keep_track_of_cohesion then
+			managers.hud:remove_skill("heisters_in_aura")
+			managers.hud:remove_skill("cohesion")
+		end
+		return
+	end
+	self._prev_keep_track_of_cohesion = keep_track_of_cohesion
 
 	self._cohesion_stack_t = self._cohesion_stack_t or t + (tweak_data.upgrades.biker_change_t or 1)
 	local cohesion_stacks = self:get_synced_cohesion_stacks(local_peer_id)
@@ -2397,6 +2407,12 @@ function PlayerManager:update_cohesion_stacks(t, dt)
 	if self._cached_cohesion_amount ~= new_amount and managers.hud then
 		-- TODO BIKER
 		--managers.hud:set_cohesion_value(new_amount, self:upgrade_value("player", "biker_treat_as_more_cohesion", 0))
+		managers.hud:start_progress_representation(
+			"cohesion",
+			tweak_data.upgrades.biker_change_t or 1,
+			new_amount,
+			tweak_data.upgrades.biker_per_crew_member or 8
+		)
 		self._cached_cohesion_amount = new_amount
 	end
 
@@ -2409,9 +2425,8 @@ function PlayerManager:update_cohesion_stacks(t, dt)
 		affected_players, heisters_affected, converts_affected = self:get_biker_aura_affected(player_unit:position())
 
 		if managers and managers.hud then
-			-- TODO BIKER
-			--managers.hud:biker_add_skill("heisters_in_aura")
-			--managers.hud:biker_set_stacks("heisters_in_aura", heisters_affected)
+			managers.hud:add_skill("heisters_in_aura")
+			managers.hud:set_stacks("heisters_in_aura", heisters_affected)
 		end
 
 		local tendency_from_proximity = math.min(heisters_affected + converts_affected / 2, tweak_data.upgrades.biker_hard_limit) * (tweak_data.upgrades.biker_per_crew_member or 0)

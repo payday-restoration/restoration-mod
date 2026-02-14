@@ -2078,7 +2078,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		unit_dummy = "units/weapons/gas_grenade/gas_grenade_husk",
 		throwable = false,
 		is_a_grenade = true,
-		add_trail_effect = false,
+		add_trail_effect = true,
 	}
 
 --SABR Grenade Launcher.

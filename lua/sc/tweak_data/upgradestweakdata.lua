@@ -2326,7 +2326,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		works_with_armor_kit = true,
 		tick_time = 1,
 		total_ticks = 5,
-		max_stacks = 67,
+		max_stacks = 10,
 		stacking_cooldown = 0.0,
 		add_stack_sources = {
 			bullet = false,
@@ -3084,7 +3084,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[4][9] = {
 		perk_value_1 = tostring(self.values.player.heal_over_time[1] * 10), -- HP regen per tick
-		perk_value_2 = tostring(self.dodge_to_hot_data.total_ticks/self.dodge_to_hot_data.tick_time) -- Duration of 1 stack
+		perk_value_2 = tostring(self.dodge_to_hot_data.total_ticks/self.dodge_to_hot_data.tick_time), -- Duration of 1 stack
+		perk_value_3 = tostring(self.dodge_to_hot_data.max_stacks) -- Max amount of stacks
 	}
 	
 	--Hitman

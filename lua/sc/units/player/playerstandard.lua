@@ -2378,14 +2378,27 @@ end
 function PlayerStandard:_update_melee_timers(t, input)
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
 	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
+	if not melee_weapon then
+		return
+	end
+	local special_weapon = melee_weapon.special_weapon
+	local charge_time = melee_weapon.stats.charge_time
 	local instant = melee_weapon.instant
 	local no_hit_shaker = melee_weapon.no_hit_shaker
-	local melee_charger = melee_weapon.special_weapon and melee_weapon.special_weapon == "charger"
+	local melee_charger = special_weapon and special_weapon == "charger"
 	local angle = self._stick_move and mvector3.angle(self._stick_move, math.Y)
 	local moving_forwards = angle and angle <= 15
 	local can_run = self._unit:movement():is_above_stamina_threshold()
 	local lerp_value = self:_get_melee_charge_lerp_value(t)
 	local max_charge = lerp_value and lerp_value >= 0.99
+	local pre_calc_hit_ray = melee_weapon.hit_pre_calculation
+	local speed = melee_weapon.stats.speed_mult or 1
+	local anim_speed = melee_weapon.anim_speed_mult or 1
+	speed = speed * anim_speed
+	speed = speed * managers.player:upgrade_value("player", "melee_swing_multiplier", 1)
+	local melee_damage_delay = (melee_weapon.melee_damage_delay or 0) / speed
+	local lerp_value_offset = self:_get_melee_charge_lerp_value(t, melee_damage_delay)
+	local max_charge_offset = lerp_value_offset and lerp_value_offset >= 0.99
 	--local has_charged_range = self._melee_charge_bonus and self._melee_charge_bonus == true
 	--local charge_bonus_range = has_charged_range and melee_weapon.stats.charge_bonus_range or 0
 	--local range = melee_weapon.stats.range + charge_bonus_range
@@ -2405,8 +2418,6 @@ function PlayerStandard:_update_melee_timers(t, input)
 			self._camera_unit:base():show_weapon()
 		end
 	elseif self._state_data.meleeing then
-		local lerp_value = self:_get_melee_charge_lerp_value(t)
-
 		self._camera_unit:anim_state_machine():set_parameter(self:get_animation("melee_charge_state"), "charge_lerp", math.bezier({
 			0,
 			0,
@@ -2425,12 +2436,25 @@ function PlayerStandard:_update_melee_timers(t, input)
 	end
 
 	-- No stamina regen while actively charging an attack with "charger" type melee weapons at max charge
-	if melee_charger and self._state_data.meleeing and max_charge then
-		self._unit:movement():_restart_stamina_regen_timer()
+	if max_charge and self._state_data.meleeing then
+		local melee_flash = restoration.Options:GetValue("WEAPONS/WeaponHandling/MeleeChargeFlash") or true
+		if not self._trigger_max_charge and melee_flash and charge_time > 0.01 then
+			local effect_alpha = (restoration.Options:GetValue("WEAPONS/WeaponHandling/MeleeChargeA") or 0.5)
+			local effect_r = (restoration.Options:GetValue("WEAPONS/WeaponHandling/MeleeChargeR") or 1)
+			local effect_g = (restoration.Options:GetValue("WEAPONS/WeaponHandling/MeleeChargeG") or 1)
+			local effect_b = (restoration.Options:GetValue("WEAPONS/WeaponHandling/MeleeChargeB") or 1)
+			managers.hud:activate_effect_screen(0.2, Vector3(effect_r, effect_g, effect_b) * effect_alpha, "melee_max_charge", "topbottomrim")
+			self._trigger_max_charge = true
+		end
+		if melee_charger and self._state_data.meleeing then
+			self._unit:movement():_restart_stamina_regen_timer()
+		end
+	else
+		self._trigger_max_charge = nil
 	end
 
 	if self._state_data.meleeing then
-		if lerp_value >= 1 and melee_weapon.special_weapon == "taser" and not self._state_data._stop_melee_sound_check then
+		if max_charge and melee_weapon.special_weapon == "taser" and not self._state_data._stop_melee_sound_check then
 			self._state_data._stop_melee_sound_check = true
 			self._unit:sound():play("tasered_loop")
 		elseif melee_weapon.special_weapon == "megumin" then
@@ -2458,7 +2482,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 	end
 
 	--Trigger chainsaw damage and update timer.
-	if self:_is_meleeing() and ((melee_weapon.chainsaw and not melee_charger) or (melee_charger and self._running and moving_forwards and can_run and max_charge)) and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
+	if self:_is_meleeing() and ((melee_weapon.chainsaw and not melee_charger) or (melee_charger and self._running and moving_forwards and can_run and max_charge_offset)) and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
 		self:_do_chainsaw_damage(t)
 		self._state_data.chainsaw_t = t + (melee_weapon.chainsaw.tick_delay * (1 + (1 - managers.player:upgrade_value("player", "melee_swing_multiplier", 1))))
 	end
@@ -2592,7 +2616,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 					end
 				end
 
-				local result = self:_do_melee_damage(t, nil, nil, nil, nil, best_hit.unit, best_hit, nil, true, true)
+				local result = self:_do_melee_damage(t, nil, nil, nil, nil, best_hit.unit, best_hit, nil, true, true, nil, lerp_value_offset)
 
 				if result and result.type and result.type == "death" and is_enemy then
 					kills = kills + 1
@@ -2609,10 +2633,15 @@ function PlayerStandard:_update_melee_timers(t, input)
 					end
 				end
 			end
-			if hit_body then
-				self:_play_melee_sound(melee_entry, "hit_body")
-			elseif hit_gen then
-				self:_play_melee_sound(melee_entry, "hit_gen")
+
+			if #all_hits ~= 0 and special_weapon == "taser" and not max_charge_offset then
+				self._unit:sound():play("melee_hit_gen", nil, false)
+			else
+				if hit_body then
+					self:_play_melee_sound(melee_entry, "hit_body")
+				elseif hit_gen then
+					self:_play_melee_sound(melee_entry, "hit_gen")
+				end
 			end
 		else
 			self:_do_melee_damage(t, nil, self._state_data.melee_hit_ray)
@@ -2737,8 +2766,7 @@ function PlayerStandard:_get_melee_charge_lerp_value(t, offset)
 	if not self._state_data.melee_start_t then
 		return 0
 	end
-
-	return math.clamp(t - self._state_data.melee_start_t - offset, 0, max_charge_time) / max_charge_time
+	return math.clamp((t - self._state_data.melee_start_t - offset) / max_charge_time, 0, 1)
 end
 
 function PlayerStandard:_do_action_melee(t, input, skip_damage)
@@ -3868,12 +3896,18 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, directi
 	return col_ray
 end
 
-function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, dmg_div, no_shaker, no_sound, no_effect)
+function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, dmg_div, no_shaker, no_sound, no_effect, charge_lerp)
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].charge_bonus_start or nil
-	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
+	local speed = tweak_data.blackmarket.melee_weapons[melee_entry].stats.speed_mult or 1
+	local anim_speed = tweak_data.blackmarket.melee_weapons[melee_entry].anim_speed_mult or 1
+	speed = speed * anim_speed
+	speed = speed * managers.player:upgrade_value("player", "melee_swing_multiplier", 1)
+	melee_damage_delay = melee_damage_delay / speed
+	local charge_lerp_value = charge_lerp or instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
+
 	local sphere_cast_radius = 20
 	local col_ray = col_ray or nil
 	local make_effect = bayonet_melee or tweak_data.blackmarket.melee_weapons[melee_entry].make_effect or nil
@@ -3912,7 +3946,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				self._unit:sound():play("fairbairn_hit_body", nil, false)
 			elseif alt_sound and alt_sound[1] then
 				self._unit:sound():play(alt_sound[1], nil, false)
-			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
+			elseif special_weapon == "taser" and charge_lerp_value < 0.99 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
 				if not no_sound then
@@ -3937,7 +3971,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				self._unit:sound():play("knife_hit_gen", nil, false)
 			elseif alt_sound and alt_sound[2] then
 				self._unit:sound():play(alt_sound[2], nil, false)
-			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
+			elseif special_weapon == "taser" and charge_lerp_value < 0.99 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
 				if not no_sound then

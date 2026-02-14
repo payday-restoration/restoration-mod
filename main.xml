@@ -620,6 +620,12 @@
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="ProjectileMagnetism"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="bool" default_value="false" name="MeleeChargeFlash"/>
+					<option type="number" default_value="0.5" min="0" max="1" step="0.01" show_value="true" name="MeleeChargeA"/>
+					<option type="number" default_value="1.0" min="0" max="1" step="0.01" show_value="true" name="MeleeChargeR"/>
+					<option type="number" default_value="1.0" min="0" max="1" step="0.01" show_value="true" name="MeleeChargeG"/>
+					<option type="number" default_value="1.0" min="0" max="1" step="0.01" show_value="true" name="MeleeChargeB"/>
 				</option_group>
 				<option_group name="WEAPONINPUTS">
 					<option type="bool" default_value="true" name="QueuedShooting"/>

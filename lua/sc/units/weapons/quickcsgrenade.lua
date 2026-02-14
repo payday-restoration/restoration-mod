@@ -2,35 +2,16 @@ local difficulty = Global.game_settings and Global.game_settings.difficulty or "
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local pro_job = Global.game_settings and Global.game_settings.one_down
 
---Scale effects per difficulty
+--Scale effects per difficulty (Damage tick period setuped in tweakdata)
 function QuickCsGrenade:_setup_from_tweak_data()
-	local grenade_entry = self._tweak_projectile_entry or "cs_grenade_quick"
+	local grenade_entry = self._tweak_projectile_entry or "gas_grenade"
 	self._tweak_data = tweak_data.projectiles[grenade_entry]
 	self._radius = self._tweak_data.radius or 300
 	self._radius_blurzone_multiplier = self._tweak_data.radius_blurzone_multiplier or 1.3
-	self._damage_per_tick = 0.6
-	self._stamina_per_tick = 2.5
+	self._damage_per_tick = self._tweak_data.damage_per_tick or 0.6
+	self._stamina_per_tick = self._tweak_data.stamina_per_tick or 2.5
+	self._damage_tick_period = self._tweak_data.damage_tick_period or 0.25
 	self._ignore_armor = false
-	if difficulty_index <= 2 then
-		self._damage_tick_period = 0.5
-	elseif difficulty_index == 3 then
-		self._damage_tick_period = 0.45
-	elseif difficulty_index == 4 then
-		self._damage_tick_period = 0.4
-	elseif difficulty_index == 5 then
-		self._damage_tick_period = 0.35
-	elseif difficulty_index == 6 then
-		self._damage_tick_period = 0.3
-	elseif difficulty_index == 7 then
-		self._damage_tick_period = 0.3	
-	else
-		self._damage_tick_period = 0.25
-	end
-	
-	-- Reduced grace slightly when playing on Pro Job
-	if pro_job then
-		self._damage_tick_period = self._damage_tick_period - 0.05
-	end
 end
 
 --Drain stamina 

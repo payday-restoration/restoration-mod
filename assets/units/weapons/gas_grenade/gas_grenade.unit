@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<unit type="item" slot="14">
+	<network sync="spawn" />
+	<object file="units/pd2_dlc_max/weapons/wpn_fps_smoke_screen_grenade/wpn_third_smoke_screen_grenade" />
+	<dependencies>
+		<depends_on unit="units/weapons/gas_grenade/gas_grenade_husk" />
+		<!-- <depends_on effect="effects/particles/explosions/explosion_smoke_grenade" />
+		<depends_on effect="effects/particles/explosions/cs_grenade_smoke" /> -->
+	</dependencies>
+	<extensions>
+		<extension name="base" class="GasGrenade">
+			<var name="_tweak_projectile_entry" value="gas_grenade" />
+		</extension>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" >
+			<var name="_collision_event" value="lung_roll" />
+			<var name="_collision_sfx_quite_time" value="0.1" />
+		</extension>
+	</extensions>
+	<sounds>
+		<default_soundsource source="rp_smoke_grenade" />
+	</sounds>
+</unit>

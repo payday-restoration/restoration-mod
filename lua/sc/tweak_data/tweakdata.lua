@@ -809,6 +809,7 @@ tweak_data.interaction.gen_int_saw_upgrade.timer = 3
 
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local pro_job = Global.game_settings and Global.game_settings.one_down 
 if difficulty_index == 8 then
 	tweak_data.interaction.corpse_alarm_pager.timer = 15
 elseif difficulty_index == 7 then
@@ -863,6 +864,39 @@ tweak_data.projectiles.child_grenade = {
 	range = 500,
 	launch_speed = 100
 }
+
+
+tweak_data.projectiles.gas_grenade = {
+	radius = 300,
+	radius_blurzone_multiplier = 1.3,
+	damage_tick_period = 0.2,
+	damage_per_tick = 0.6,
+	--no_stamina_damage_mul = 2, -- Unused value. In HEAT tear gas deal more dmg if you have no stamina
+	stamina_per_tick = 2.5,
+	duration = 7.5
+}
+
+-- Reduce dmg interval for tear gas grenades
+if difficulty_index <= 2 then
+		tweak_data.projectiles.gas_grenade.damage_tick_period = 0.5
+	elseif difficulty_index == 3 then
+		tweak_data.projectiles.gas_grenade.damage_tick_period  = 0.45
+	elseif difficulty_index == 4 then
+		tweak_data.projectiles.gas_grenade.damage_tick_period  = 0.4
+	elseif difficulty_index == 5 then
+		tweak_data.projectiles.gas_grenade.damage_tick_period  = 0.35
+	elseif difficulty_index == 6 then
+		tweak_data.projectiles.gas_grenade.damage_tick_period  = 0.3
+	elseif difficulty_index == 7 then
+		tweak_data.projectiles.gas_grenade.damage_tick_period  = 0.3	
+	else
+		tweak_data.projectiles.gas_grenade.damage_tick_period  = 0.25
+end
+	
+-- Reduced grace slightly for tear gas when playing on Pro Job
+if pro_job then
+	tweak_data.projectiles.gas_grenade.damage_tick_period = tweak_data.projectiles.gas_grenade.damage_tick_period  - 0.05
+end
 
 if difficulty_index <= 4 then --Enemy grenades deal reduced damage on lower difficulties.
 	tweak_data.projectiles.bravo_frag.damage = 9.0

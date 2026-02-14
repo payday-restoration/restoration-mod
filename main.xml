@@ -211,6 +211,7 @@
 					<hook file="sc/units/weapons/arrowbase.lua" source_file="lib/units/weapons/projectiles/arrowbase"/>
 					<hook file="sc/units/weapons/projectilebase.lua" source_file="lib/units/weapons/projectiles/projectilebase"/>
 					<hook file="sc/units/weapons/quickcsgrenade.lua" source_file="lib/units/weapons/grenades/quickcsgrenade"/>
+					<hook file="sc/units/weapons/gasgrenade.lua" source_file="lib/units/weapons/grenades/quickcsgrenade"/>
 					<hook file="sc/units/weapons/quicksmokegrenade.lua" source_file="lib/units/weapons/grenades/quicksmokegrenade"/>
 					<hook file="sc/units/weapons/smokescreengrenade.lua" source_file="lib/units/weapons/grenades/smokescreengrenade"/>
 					<hook file="sc/units/weapons/poisongasgrenade.lua" source_file="lib/units/weapons/grenades/poisongasgrenade"/>

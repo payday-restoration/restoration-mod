@@ -1806,6 +1806,10 @@
 	<object				path="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade"/>
 	<unit				path="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade" load="true"/>
 	
+	<!-- Grenadier Grenades -->
+	<unit path="units/weapons/gas_grenade/gas_grenade_husk" load="true"/>
+	<unit path="units/weapons/gas_grenade/gas_grenade" load="true"/>
+	
     <!--not shit secret masks-->
 	<object				path="units/pd2_dlc_sms/masks/sms_01/msk_sms_01" force="true"/>
     <object				path="units/pd2_dlc_sms/masks/sms_02/msk_sms_02" force="true"/>

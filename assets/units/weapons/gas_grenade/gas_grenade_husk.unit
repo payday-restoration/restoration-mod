@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<unit type="item" slot="14">
+	<object file="units/pd2_dlc_max/weapons/wpn_fps_smoke_screen_grenade/wpn_third_smoke_screen_grenade" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_lung" />
+	</dependencies>
+	<extensions>
+	</extensions>
+	<sounds>
+		<default_soundsource source="rp_smoke_grenade" />
+	</sounds>
+</unit>

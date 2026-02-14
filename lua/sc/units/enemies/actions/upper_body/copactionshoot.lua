@@ -587,12 +587,12 @@ function CopActionShoot:set_sniper_focus_sound(sound_progress)
 end
 
 function CopActionShoot:throw_grenade(shoot_from_pos, target_vec, target_pos, grenade_type, distance)
-	if grenade_type == "frag" or grenade_type == "bravo_frag" or grenade_type == "cluster_fuck" or grenade_type == "molotov" or grenade_type == "hatman_molotov" then
+	--if grenade_type == "frag" or grenade_type == "bravo_frag" or grenade_type == "cluster_fuck" or grenade_type == "molotov" or grenade_type == "hatman_molotov" then
 		mvec3_set_l(target_vec, distance / 1300)
 		if ProjectileBase.throw_projectile_npc(grenade_type, shoot_from_pos, target_vec, self._unit) then
 			return true
 		end
-	elseif grenade_type == "tear_gas" then
+	--[[elseif grenade_type == "tear_gas" then
 		local attention_m_pos = nil
 
 		if self._attention.handler then
@@ -622,7 +622,7 @@ function CopActionShoot:throw_grenade(shoot_from_pos, target_vec, target_pos, gr
 
 			return true
 		end
-	end
+	end--]]
 end
 
 function CopActionShoot:update(t)
@@ -747,7 +747,7 @@ function CopActionShoot:update(t)
 					local gas_roll = math_random() <= roll_chance
 
 					if gas_roll then
-						if self:throw_grenade(nil, nil, nil, "tear_gas") then
+						if self:throw_grenade(mvec3_copy(shoot_from_pos), mvec3_copy(target_vec), mvec3_copy(target_pos), "gas_grenade", target_dis) then
 							if is_normal_grenadier then
 								self._unit:sound():say("use_gas", true, nil, true)
 							end
@@ -781,7 +781,9 @@ function CopActionShoot:update(t)
 						local gas_roll = math_random() <= self._common_data.char_tweak.chance_use_gas or 0.3
 
 						if gas_roll then
-							if self:throw_grenade(nil, nil, nil, "tear_gas") then
+							if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), "gas_grenade", target_dis) then
+								self._ext_movement:play_redirect("throw_grenade")
+								managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")
 								self._unit:sound():say("i03", true, nil, true)
 							end
 						end

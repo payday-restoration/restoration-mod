@@ -2413,10 +2413,6 @@ function PlayerStandard:_update_melee_timers(t, input)
 		else
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		end
-		if not instant then
-			self._camera_unit:base():unspawn_melee_item()
-			self._camera_unit:base():show_weapon()
-		end
 	elseif self._state_data.meleeing then
 		self._camera_unit:anim_state_machine():set_parameter(self:get_animation("melee_charge_state"), "charge_lerp", math.bezier({
 			0,

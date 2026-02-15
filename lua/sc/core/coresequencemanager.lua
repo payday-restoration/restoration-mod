@@ -14,9 +14,9 @@ function CoreSequenceManager.UnitElement:save_by_unit(unit, data)
 		end
 	end
 
-	--if changed then
+	if changed then
 		data.UnitElement = state
-	--end
+	end
 
 	return changed
 end

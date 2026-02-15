@@ -744,7 +744,6 @@ function CopActionShoot:update(t)
 					local is_normal_grenadier = self._ext_base._tweak_table == "boom"
 					local roll_chance = self._common_data.char_tweak.chance_use_gas or 0.5
 					local gas_roll = math_random() <= roll_chance
-					gas_roll = true
 
 					if gas_roll then
 						local weapon_unit = self._unit:inventory():equipped_unit()

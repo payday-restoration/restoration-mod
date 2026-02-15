@@ -94,10 +94,10 @@ function GasGrenade:update(unit, t, dt)
 		end
 		
 		ProjectileBase.update(self, unit, t, dt)
-		if t > self._last_damage_tick + self._damage_tick_period then
-			self._last_damage_tick = t
-			self:_do_damage()
-		end
+	end
+	if t > self._last_damage_tick + self._damage_tick_period then
+		self._last_damage_tick = t
+		self:_do_damage()
 	end
 end
 
@@ -110,6 +110,10 @@ function GasGrenade:destroy()
 end
 
 function GasGrenade:_do_damage()
+	if not self._remove_t then
+		return
+	end
+	
 	local player_unit = managers.player:player_unit()
 
 	if player_unit and mvector3.distance_sq(self._unit:position(), player_unit:position()) < self._tweak_data.radius * self._tweak_data.radius then		

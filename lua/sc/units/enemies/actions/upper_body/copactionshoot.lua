@@ -747,7 +747,7 @@ function CopActionShoot:update(t)
 					local gas_roll = math_random() <= roll_chance
 
 					if gas_roll then
-						if self:throw_grenade(mvec3_copy(shoot_from_pos), mvec3_copy(target_vec), mvec3_copy(target_pos), "gas_grenade", target_dis) then
+						if self:throw_grenade(mvec3_copy(shoot_from_pos) + Vector3(-10,-15,0), mvec3_copy(target_vec), mvec3_copy(target_pos), "gas_grenade", target_dis) then
 							if is_normal_grenadier then
 								self._unit:sound():say("use_gas", true, nil, true)
 							end

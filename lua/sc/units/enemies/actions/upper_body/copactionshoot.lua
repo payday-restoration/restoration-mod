@@ -13,6 +13,7 @@ local mvec3_rot = mvector3.rotate_with
 local mvec3_rand_orth = mvector3.random_orthogonal
 local mvec3_lerp = mvector3.lerp
 local mvec3_copy = mvector3.copy
+local mvec3_step = mvector3.step
 local mrot_axis_angle = mrotation.set_axis_angle
 local math_min = math.min
 local math_lerp = math.lerp
@@ -587,42 +588,40 @@ function CopActionShoot:set_sniper_focus_sound(sound_progress)
 end
 
 function CopActionShoot:throw_grenade(shoot_from_pos, target_vec, target_pos, grenade_type, distance)
-	--if grenade_type == "frag" or grenade_type == "bravo_frag" or grenade_type == "cluster_fuck" or grenade_type == "molotov" or grenade_type == "hatman_molotov" then
+	if grenade_type ~= "gas_grenade" then
 		mvec3_set_l(target_vec, distance / 1300)
 		if ProjectileBase.throw_projectile_npc(grenade_type, shoot_from_pos, target_vec, self._unit) then
 			return true
 		end
-	--[[elseif grenade_type == "tear_gas" then
-		local attention_m_pos = nil
+	elseif grenade_type == "gas_grenade" then
+		--Borrowed code from BossLogicAttack. Should throw tear gas at player's feet more precisely and faster than method above
+		local throwable_tweak = tweak_data.projectiles.gas_grenade
 
-		if self._attention.handler then
-			attention_m_pos = self._attention.handler:get_ground_m_pos()
-		elseif self._attention.unit then
-			if self._attention.unit:movement() and self._attention.unit:movement().m_pos then
-				attention_m_pos = self._attention.unit:movement():m_pos()
-			end
+		local throw_from = shoot_from_pos
+
+		local throw_to = target_pos
+		local slotmask = managers.slot:get_mask("bullet_blank_impact_targets")
+		mvec3_set(temp_vec2, throw_to)
+		mvec3_set_z(temp_vec2, temp_vec2.z - 200)
+		local ray = self._unit:raycast("ray", throw_to, temp_vec2, "slot_mask", slotmask)
+		if not ray then
+			return
 		end
+		throw_to = ray.hit_position
 
-		if not attention_m_pos then
+		local compensation = throwable_tweak.adjust_z ~= 0 and (((distance - 400) / 10) ^ 2) / ((throwable_tweak.launch_speed or 250) / 10) or 0
+		mvec3_set_z(throw_to, throw_to.z + compensation)
+		mvec3_step(temp_vec2, throw_from, throw_to, 400)
+		if self._unit:raycast("ray", throw_from, temp_vec2, "sphere_cast_radius", 15, "slot_mask", slotmask, "report") then
 			return
 		end
 
-		local detonate_pos = nil
-		local ray_to = mvec3_copy(attention_m_pos)
-
-		mvec3_set_z(ray_to, ray_to.z - 1000)
-
-		local ground_ray = self._unit:raycast("ray", attention_m_pos, ray_to, "slot_mask", managers.slot:get_mask("world_geometry", "statics"))
-
-		if ground_ray then
-			detonate_pos = mvec3_copy(ground_ray.hit_position)
-			mvec3_set_z(detonate_pos, detonate_pos.z + 3)
-
-			managers.groupai:state():detonate_cs_grenade(detonate_pos, mvec3_copy(self._shoot_from_pos), 7.5)
-
+		local throw_dir = temp_vec2
+		mvec3_dir(throw_dir, throw_from, throw_to)
+		if ProjectileBase.throw_projectile_npc(grenade_type, throw_from, throw_dir, self._unit) then
 			return true
-		end
-	end--]]
+		end		
+	end
 end
 
 function CopActionShoot:update(t)
@@ -745,9 +744,14 @@ function CopActionShoot:update(t)
 					local is_normal_grenadier = self._ext_base._tweak_table == "boom"
 					local roll_chance = self._common_data.char_tweak.chance_use_gas or 0.5
 					local gas_roll = math_random() <= roll_chance
+					gas_roll = true
 
 					if gas_roll then
-						if self:throw_grenade(mvec3_copy(shoot_from_pos) + Vector3(-10,-15,0), mvec3_copy(target_vec), mvec3_copy(target_pos), "gas_grenade", target_dis) then
+						local weapon_unit = self._unit:inventory():equipped_unit()
+						local fire_object = weapon_unit:base():fire_object() or weapon_unit:orientation_object()
+						local throw_from_weapon = fire_object:position()
+						if self:throw_grenade(throw_from_weapon, mvec3_copy(target_vec), mvec3_copy(target_pos), "gas_grenade", target_dis) then
+							self._ext_movement:play_redirect("recoil_single")
 							if is_normal_grenadier then
 								self._unit:sound():say("use_gas", true, nil, true)
 							end

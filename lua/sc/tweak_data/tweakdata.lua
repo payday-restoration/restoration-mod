@@ -893,6 +893,7 @@ if difficulty_index <= 2 then
 		tweak_data.projectiles.gas_grenade.damage_tick_period  = 0.25
 end
 
+-- Different trail color for DS difficulty (due tear gas is red on DS)
 if difficulty_index == 8 then
 	tweak_data.blackmarket.projectiles.gas_grenade.trail_effect_id = "effects/payday2/particles/weapons/tear_gas_trail_red"
 end

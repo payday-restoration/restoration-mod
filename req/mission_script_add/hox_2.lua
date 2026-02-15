@@ -26,10 +26,9 @@ local opts_hunt_so = {
 }
 local opts_spawn_fbi_ready_team = {
 	enabled = true,
-	amount = 4,
-	amount_random = 0,
+	amount = 2,
+	amount_random = 1,
 	on_executed = {
-		{ id = 400018, delay = 0 },
 		{ id = 400019, delay = 0 },
 		{ id = 400020, delay = 0 },
 		{ id = 400021, delay = 0 },

@@ -1671,6 +1671,13 @@ function PlayerManager:fixed_health_regen()
 		managers.hud:add_skill("hostage_taker")
 		managers.hud:set_stacks("hostage_taker", health_regen * 10)
 	end
+
+	-- Biker's healing potency increase.
+	-- Intentionally before the AI crew health bonus.
+	if managers.player:has_team_category_upgrade("player", "biker_crew_heal_potency") then
+		local cohesion_steps = managers.player:get_cohesion_stacks_as_treated()
+		health_regen = health_regen * (1 + managers.player:team_upgrade_value("player", "biker_crew_heal_potency", 0) * cohesion_steps)
+	end
 	
 	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
 	
@@ -2260,7 +2267,7 @@ end
 ---@return integer highest_to_tend The highest to_tend value in the synced Cohesion stack data.
 function PlayerManager:get_highest_cohesion_tendency_target()
 	local highest = 0
-	for i, cohesion_data in ipairs(self._global.synced_cohesion_stacks) do
+	for i, cohesion_data in pairs(self._global.synced_cohesion_stacks) do
 		highest = math.max(cohesion_data.to_tend, highest)
 	end
 

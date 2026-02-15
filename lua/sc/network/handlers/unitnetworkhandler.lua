@@ -372,9 +372,13 @@ function UnitNetworkHandler:camera_set_attention_pos(cam_unit, pos)
 end
 
 LuaNetworking:AddReceiveHook("sync_intimidated_guard_data", "SyncIntimidatedGuardDataHook", function(unit_id, time, sender)
-	managers.enemy:decode_intimidated_guard_units(unit_id, time)
+	if managers.enemy then
+		managers.enemy:decode_intimidated_guard_units(unit_id, time)
+	end
 end)
 
 LuaNetworking:AddReceiveHook("sync_intimidated_guard_data_delete", "SyncIntimidatedGuardDataDeleteHook", function(unit_id, sender)
-	managers.enemy:unregister_intimidated_guard(unit_id)
+	if managers.enemy then
+		managers.enemy:unregister_intimidated_guard(unit_id)
+	end
 end)

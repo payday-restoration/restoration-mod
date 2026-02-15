@@ -5245,7 +5245,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["loading_equip_skills_res_5"] = "울프는 현장 수리가 가능하도록 센트리 건을 업그레이드 했습니다. 시간이 좀 걸리지만 일단 가동하면 자동으로 복구됩니다. ",
 		["loading_equip_skills_res_6"] = "센트리 철갑탄이 잠금 해제되어 있으면 장비 메뉴에서 기본 탄약 유형을 선택할 수 있습니다.",
 		["loading_equip_skills_res_7"] = "특성 덱은 상당한 피해량 보너스를 제공하며 그 중 다수는 희귀하고 귀중한 치유 능력을 제공합니다.",
-		["loading_equip_skills_res_8"] = "크루 치프, 아머러, 머슬, 크룩, 갬블러, 바이커는 기본적이지만 일관성이 있는 특성 덱입니다.",
+		["loading_equip_skills_res_8"] = "크루 치프, 아머러, 머슬, 크룩, 갬블러는 기본적이지만 일관성이 있는 특성 덱입니다.",
 		["loading_equip_skills_res_9"] = "히트맨은 장기 생존성과 지속성이 낮은 특성 덱으로 재설계되었지만, 그 대가로 어려운 상황을 헤쳐 나갈 수 있게 해주는 막대한 양의 '임시 체력'을 얻을 수 있습니다.",
 		["loading_equip_skills_res_10"] = "크루 치프는 낮지만 유용한 버프를 당신과 당신의 팀원들에게 부여하고 인질이 여러 명인 경우 더 높은 버프를 제공하는 팀 중심 특성 덱입니다. 이 특성 덱은 마스터마인드의 컨트롤러 트리와 유용하게 쓰일 수 있습니다.",
 		["loading_equip_skills_res_11"] = "갬블러는 탄약을 획득할 때 팀원에게 약간의 체력과 보너스 탄약을 제공하는 팀 중심 특성 덱입니다. 이 특전 덱은 탄약을 더 드랍하는 스킬과 유용하게 쓰일 수 있습니다.",
@@ -5278,7 +5278,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["loading_equip_skills_res_38"] = "근접 무기의 \"휩쓸기 수\" 능력치는 한 번의 공격으로 얼마나 많은 적들을 공격할 수 있는지를 나타냅니다. 실드 유닛이 들고 있는 방패는 휩쓸기에 영항을 받지 않습니다.",
 		["loading_equip_skills_res_39"] = "슬러그탄을 발사하지 않는 산탄총 같이 한 번에 여러 개의 발사체를 발사하는 무기는 근거리에서 대부분의 적을 밀쳐낼 수 있습니다.",
 		["loading_equip_skills_res_40"] = "무기의 명중률은 수평 반동에 영향을 미칩니다.",
-		["loading_equip_skills_res_41"] = "무기의 안정성은 비조준 명중률에 영향을 미칩니다.",		
+		["loading_equip_skills_res_41"] = "무기의 안정성은 비조준 명중률에 영향을 미칩니다.",
+		["loading_equip_skills_res_42"] = "예전 바이커 특성 덱을 찾으시나요? 이제 리치 특성 덱에 포함되어 있습니다.",
+		["loading_equip_skills_res_43"] = "바이커 특성 덱은 팀원들과 가까이 붙어 다니도록 개편되었습니다. 팀원들과 붙어 다니는 시간이 길수록 특성 덱에서 선택한 보너스를 더 많이 받을 수 있습니다.",
+		["loading_equip_skills_res_44"] = "바이커 특성 덱은 단결력 스택을 언제 얻었는지에는 상관하지 않고, 스택을 보유하고 있는지 여부만 중요합니다. 바이커 특성을 사용하는 두 명의 하이스터는 카드 선택을 서로 다르게 하여 팀 전체에 대부분의 보너스를 제공할 수 있습니다.",
 		--Misc Hints
 		["loading_misc_res_title"] = "레스토레이션 기타 팁",
 		["loading_misc_res_1"] = "저희가 만든 커스텀 하이스트도 해보십시오! 대부분의 하이스트는 '자칼' 계약자에게서 찾을 수 있고, '도그하우스'는 블라드에게서 찾을 수 있습니다.",
@@ -6039,7 +6042,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Pumping Iron--
 				["menu_steroids_beta_sc"] = "펌핑 아이언",
-				["menu_steroids_beta_desc_sc"] = "베이식: #{owned}#$basic##\n근접 무기의 휘두르거나 충전하는 속도가 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n근접 무기의 휘두르거나 충전하는 속도가 추가로 #{skill_color}#$skill_value_p1## 증가합니다.",
+				["menu_steroids_beta_desc_sc"] = "베이식: #{owned}#$basic##\n근접 무기의 휘두르거나 충전하는 속도가 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{item_stage_2}#레스토레이션 모드의 무기 옵션에서 근접 무기가 완전히 충전되었음을 나타내는 설정을 찾을 수 있습니다.##\n\n에이스: #{owned}#$pro##\n근접 무기의 휘두르거나 충전하는 속도가 추가로 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Bloodthirst--
 				["menu_bloodthirst_sc"] = "피의 갈증",
@@ -6115,7 +6118,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck4_3_desc_sc"] = "회피율이 추가로 ##$perk_value_1## 증가합니다.",
 		["menu_deck4_5_desc_sc"] = "되살아났을때 회피 미터가 기본 최대치의 ##200%##까지 채워집니다.\n\n카메라 루프의 지속 시간이 ##20##초 증가합니다.",
 		["menu_deck4_7_desc_sc"] = "회피율이 추가로 ##$perk_value_1## 증가합니다.",
-		["menu_deck4_9_desc_sc"] = "공격을 희피할 시 ##$perk_value_2##초간 초당 ##$perk_value_1##씩 체력을 회복합니다. 이 효과는 중첩될 수 있지만, 체력 피해를 입을 때마다 모든 중첩을 잃습니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck4_9_desc_sc"] = "공격을 희피할 시 ##$perk_value_2##초간 초당 ##$perk_value_1##씩 체력을 회복합니다. 이 효과는 ##$perk_value_3##번까지 중첩될 수 있지만, 체력 피해를 입을 때마다 모든 중첩을 잃습니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Hitman--
 		["menu_deck5_1_sc"] = "건푸",
@@ -6273,11 +6276,45 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck20_9_desc_sc"] = "적을 처치할 때마다 기체 디스펜서의 재사용 대기 시간이 ##$perk_value_1##초씩 감소합니다.\n\n지정한 대상이 적을 처치할 때마다 기체 디스펜서의 대기 시간이 ##$perk_value_2##초씩 감소하며, 이 효과는 대상과 지정이 풀릴 때까지 적용됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Biker--
-		["menu_deck16_1_desc_sc"] = "당신이나 팀원이 적을 처치할 때마다 체력이 #{skill_color}#$perk_value_1##씩 회복합니다. 이 효과는 매 #{important_1}#$perk_value_2##초 마다 한 번만 발생합니다.",
-		["menu_deck16_3_desc_sc"] = "##$perk_value_2##초마다 방탄량을 ##$perk_value_1##씩 재생합니다.",
-		["menu_deck16_5_desc_sc"] = "매 ##$perk_value_1##의 방탄량을 잃을 때마다 처치 회복의 재사용 대기 시간이 ##$perk_value_2##초씩 감소합니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 ##$perk_value_3## 빨라집니다.",
-		["menu_deck16_7_desc_sc"] = "이제 ##$perk_value_2##초마다 ##$perk_value_1##의 방탄량을 재생합니다.\n\n근접 무기로 적을 처치하면 다음 방탄복 재생 시간을 ##$perk_value_3##초 앞당깁니다.",
-		["menu_deck16_9_desc_sc"] = "매 ##$perk_value_1##의 방탄량을 잃을 때마다 처치 시 얻는 회복량이 ##$perk_value_2## 증가합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck16_1_desc_sc"] = "당신과 당신의 팀원 (이하 \"팀원\") 단결 스택을 획득할 수 있습니다. 단결력 스탯은 주변 팀원 수의 $perk_value_1배에 해당하는 수치로 유지되지만, 팀원이 당신으로부터 #{skill_color}#$perk_value_2## 이내에 있고 쓰려지지 않는 상태여야 합니다. 단결력 스택은 해당 수치보다 낮으면 초당 #{skill_color}#$perk_value_3## 스택을 얻지만, 얻지 못하면 스택을 초당 #{important_1}#$perk_value_4##씩 잃으며 팀원의 단결력 스택이 목표 수치에서 멀어질 수록 잃는 속도가 빨라집니다.\n팀원은 피해를 #{skill_color}#$perk_value_6##씩 받을때마다 단결력 스택 #{important_1}#$perk_value_5##개를 잃으며, 체력 피해의 경우 두 배로 계산됩니다.\n\n#{risk}#참고: 여러 바이커 사용자가 동일한 카드를 선택하더라도 카드 효과는 중첩되지 않으며, 주변에 여러 바이커 사용자가 있어도 단결력 스택이 더 빨리 쌓이지 않습닏. 서로 가까이 있는 여러 바이커 사용자의 단결력 스택이 다를 경우, 더 높은 스택이 우선 적용됩니다.##",
+		["menu_deck16_1_short_sc"] = "팀원들이 단결력 스택을 획득할 수 있습니다. 팀원들의 단결력 스택은 서로 가까이 있을수록 증가하고, 멀어져 있거나 피해를 입을 경우 감소합니다.",
+		["menu_deck16_1_1_sc"] = "다같이 뭉쳐!",
+		["menu_deck16_1_1_desc_sc"] = "팀원이 단결력 스택을 8개 얻을 때마다 팀원의 받는 치료량이 #{skill_color}#$perk_value_1## 증가합니다.",
+		["menu_deck16_1_2_sc"] = "탄 아껴!",
+		["menu_deck16_1_2_desc_sc"] = "팀원이 단결력 스택을 8개 얻을 때마다 팀원의 탄약 상자 획득량이 추가로 #{skill_color}#$perk_value_1## 증가합니다.",
+
+		["menu_deck16_3_desc_sc"] = "해당 특성 덱의 효과를 받을 때, #{skill_color}#실제로 보유한 단결력 스택보다 $perk_value_1만큼 더 많은 단결력 스택을 보유한 것으로 간주됩니다.##\n\n회피율이 #{skill_color}#$perk_value_2## 증가합니다.",
+		["menu_deck16_3_1_sc"] = "솔선수범!",
+		["menu_deck16_3_1_desc_sc"] = "팀원과 가까이 있을 때 얻는 단결력 스택의 양이 #{skill_color}#$perk_value_1## 증가합니다.\n가까이 있지 않거나 쓰러졌을 때 잃는 단결력 스택의 양이 #{important_1}#$perk_value_2## 증가합니다.",
+		["menu_deck16_3_2_sc"] = "전선 유지!",
+		["menu_deck16_3_2_desc_sc"] = "팀원과 가까이 있을 때 얻는 단결력 스택의 양이 #{skill_color}#$perk_value_1## 감소합니다.\n가까이 있지 않거나 쓰러졌을 때 잃는 단결력 스택의 양이 #{important_1}#$perk_value_2## 감소합니다.",
+		["menu_deck16_3_3_sc"] = "기본 전술!",
+		["menu_deck16_3_3_desc_sc"] = "추가 효과 없음",
+
+		["menu_deck16_5_desc_sc"] = "시체를 가방에 넣거나 인질과 상호 작용하는 속도가 ##$perk_value_1## 빨라집니다.",
+		["menu_deck16_5_1_sc"] = "계속 움직여!",
+		["menu_deck16_5_1_desc_sc"] = "팀원이 단결력 스택을 8개 얻을 때마다 팀원의 이동 속도가 #{skill_color}#$perk_value_1## 빨라집니다.",
+		["menu_deck16_5_2_sc"] = "쏘고 튀어!",
+		["menu_deck16_5_2_desc_sc"] = "팀원이 단결력 스택을 8개 얻을 때마다 팀원의 장전 속도가 #{skill_color}#$perk_value_1## 빨라집니다.",
+
+		["menu_deck16_7_desc_sc"] = "회피율이 추가로 #{skill_color}#$perk_value_1## 증가합니다.",
+		["menu_deck16_7_1_sc"] = "다시 일어나!",
+		["menu_deck16_7_1_desc_sc"] = "되살아났을때 단결력 스택 #{skill_color}#$perk_value_1##개를 얻습니다.",
+		["menu_deck16_7_2_sc"] = "너의 가치를 보여줘!",
+		["menu_deck16_7_2_desc_sc"] = "적을 #{skill_color}#$perk_value_2##명씩 처치할 때마다 당신과 주변의 모든 팀원이 단결력 스택 #{skill_color}#$perk_value_1##개를 얻습니다.\n이 효과는 해당 카드를 선택한 다른 바이커 사용자의 효과와 중첩됩니다.\n\n#{risk}#참고: 이런 방식으로 얻은 단결력 스택은 팀원의 단결력 스택을 정상적인 수준 이상으로 증가시킬 수 없습니다.##",
+		["menu_deck16_7_2_short_sc"] = "적을 #{skill_color}#$perk_value_2##명씩 처치할 때마다 당신과 주변의 모든 팀원이 단결력 스택 #{skill_color}#$perk_value_1##개를 얻습니다.",
+
+		["menu_deck16_9_desc_sc"] = "이제 팀원들의 단결력은 주변 팀원 수의 #{skill_color}#$perk_value_1 + $perk_value_2배만큼 증가합니다.##\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다.",
+		["menu_deck16_9_1_sc"] = "좀 더 버텨!",
+		["menu_deck16_9_1_desc_sc"] = "이제 팀원이 피해를 #{skill_color}#$perk_value_1##씩 입을 때마다 스택이 감소합니다.\n또한, 팀원이 단결력 스택을 8개 얻을 때마다 #{skill_color}#$perk_value_3##초마다 체력을 #{skill_color}#$perk_value_2##씩 회복합니다.",
+		["menu_deck16_9_2_sc"] = "굳건히 서!",
+		["menu_deck16_9_2_desc_sc"] = "팀원이 단결력 스택을 8개 얻을 때마다 팀원의 방탄복 재생 속도가 #{skill_color}#$perk_value_1## 빨라집니다.\n또한, 팀원이 단결력 스택을 8개 얻을 때마다 팀원의 방탄력이 추가로 #{skill_color}#$perk_value_2## 회복합니다.\n\n#{risk}#참고: 해당 추가 방탄력은 스토익의 미덕(카드 1)과 같은 다른 방탄력 곱셈보다 먼저 적용되며, 기본 방탄력 값을 기준으로 계산됩니다.##",
+		["menu_deck16_9_2_short_sc"] = "팀원이 단결력 스택을 8개 얻을 때마다 팀원의 방탄복 재생 속도가 #{skill_color}#$perk_value_1## 빨라지고, 팀원의 방탄력이 추가로 #{skill_color}#$perk_value_2## 회복합니다.",
+		["menu_deck16_9_3_sc"] = "계속 밀어붙어!",
+		["menu_deck16_9_3_desc_sc"] = "팀원이 단결력 스택을 8개 얻을 때마다 팀원의 스태미나 회복 속도가 #{skill_color}#$perk_value_1## 빨라집니다.\n또한, '계속 움직여!'(카드 5, 선택 1)와 '쏘고 튀어!'(카드 5, 선택 2)의 효과가 #{skill_color}#$perk_value_2## 증가합니다.",
+		["menu_deck16_9_4_sc"] = "우위를 점해!",
+		["menu_deck16_9_4_desc_sc"] = "당신이나 주변의 팀원이 적을 #{skill_color}#$perk_value_2##명씩 처치할 때마다 단결력 스택 #{skill_color}#$perk_value_1##개를 얻습니다.\n처치 수는 각 팀원별로 별도로 추적됩니다.\n\n해당 효과는 너의 가치를 보여줘! (카드 7, 선택 2)와는 달리, 각 팀원 단결력 스택 누적량을 초과할 수 있습니다.",
+		["menu_deck16_9_4_short_sc"] = "당신이나 주변의 팀원이 적을 #{skill_color}#$perk_value_2##명씩 처치할 때마다 단결력 스택 #{skill_color}#$perk_value_1##개를 얻습니다.",
 
 		--Yakuza--
 		["menu_deck12_1_desc_sc"] = "체력이 낮을 수록 회피 미터가 더 빠르게 자동으로 채워집니다.\n\n체력이 ##100%## 미만일 경우, 회피 미터가 매초 최대 ##$perk_value_1##만큼 채워집니다.\n\n회피율이 ##$perk_value_2## 증가합니다.",

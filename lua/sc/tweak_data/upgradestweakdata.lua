@@ -2304,9 +2304,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 	self.values.player.damage_to_hot = {
+		0.1,
 		0.2,
 		0.3,
-		0.4,
 		
 		0.0 --Unused
 	}

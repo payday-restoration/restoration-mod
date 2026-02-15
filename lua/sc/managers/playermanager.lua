@@ -1674,9 +1674,9 @@ function PlayerManager:fixed_health_regen()
 
 	-- Biker's healing potency increase.
 	-- Intentionally before the AI crew health bonus.
-	if managers.player:has_team_category_upgrade("player", "biker_crew_heal_potency") then
-		local cohesion_steps = managers.player:get_cohesion_stacks_as_treated()
-		health_regen = health_regen * (1 + managers.player:team_upgrade_value("player", "biker_crew_heal_potency", 0) * cohesion_steps)
+	if self:has_team_category_upgrade("player", "biker_crew_heal_potency") then
+		local cohesion_steps = self:get_cohesion_stacks_as_treated()
+		health_regen = health_regen * (1 + self:team_upgrade_value("player", "biker_crew_heal_potency", 0) * cohesion_steps)
 	end
 	
 	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)

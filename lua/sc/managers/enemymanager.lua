@@ -37,7 +37,6 @@ Hooks:PostHook(EnemyManager, "on_enemy_died", "ResOnEnemyDied", function(self, d
 end)
 
 -- For intimidated guards checking in with the pager operators.
-
 Hooks:PostHook(EnemyManager, "_init_enemy_data", "res_init_enemy_data", function(self)
 	--- Contains the actual data about intimidated guards.
 	self._intimidated_guards = {}
@@ -95,3 +94,7 @@ function EnemyManager:update_intimidated_guard_data_to_peer(peer)
 		end
 	end
 end
+
+Hooks:PreHook(EnemyManager, "on_enemy_destroyed", "ResOnEnemyDestroyed", function(self, enemy)
+	self:unregister_intimidated_guard(enemy:id())
+end)

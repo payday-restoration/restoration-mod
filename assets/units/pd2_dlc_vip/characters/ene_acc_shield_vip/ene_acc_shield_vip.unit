@@ -16,6 +16,14 @@
 		<extension name="base" class="ShieldFlashBase">
 			<var name="_shield_tweak_name" value="phalanx_vip"/>
 			<var name="_effect_parent_obj_name" value="e_01"/>
+			<var name="_sync_flash_start_lookup" type="table">
+				<var value="start_flash_light_1"/>
+				<var value="start_flash_light_2"/>
+			</var>
+			<var name="_sync_flash_counter_lookup" type="table">
+				<var value="int_seq_light_1_break"/>
+				<var value="int_seq_light_2_break"/>
+			</var>
 		</extension>	
 		<extension name="damage" class="UnitDamage">
 			<var name="_collision_event" value="USM_Drop"/>

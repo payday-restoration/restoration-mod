@@ -2843,6 +2843,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 
+	-- Literally only exists to determine who should the Dig in Your Heels regeneration affect when someone has Berserker.
+	self.values.player.biker_causer_of_regen = {
+		true
+	}
+
 	-- How much faster should armour be regenerated based on stacks, in percentages.
 	self.values.team.player.biker_armour_regen_bonus = {
 		0.02
@@ -6322,6 +6327,17 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "biker_personal_kill_stack_reward",
+			category = "player"
+		}
+	}
+
+    -- Signifies the current player as the one who is (one of) the source(s) of Dig In Your Heels regen.
+    self.definitions.player_biker_causer_of_regen = {
+		name_id = "menu_player_biker_causer_of_regen",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "biker_causer_of_regen",
 			category = "player"
 		}
 	}

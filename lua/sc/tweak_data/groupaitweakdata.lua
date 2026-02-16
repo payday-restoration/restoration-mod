@@ -14350,6 +14350,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		Cap_winters = {
 			"ranged_fire", -- fuck you
 			"shield",
+			"shield_cover", -- Should be fine since only he has both shield and shield cover
 			"provide_coverfire",
 			"provide_support"
 		},	

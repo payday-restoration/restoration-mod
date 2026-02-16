@@ -3324,9 +3324,10 @@ function SkillTreeTweakData:init(tweak_data)
 			upgrades = {
 				"team_biker_crew_heal_potency"
 			},
+			texture_bundle_folder = "wild",
 			icon_xy = {
 				0,
-				5
+				2
 			}
 		},
 		{
@@ -3337,9 +3338,10 @@ function SkillTreeTweakData:init(tweak_data)
 			upgrades = {
 				"team_biker_ammo_pickup_multiplier"
 			},
+			texture_bundle_folder = "wild",
 			icon_xy = {
-				6,
-				5
+				1,
+				3
 			}
 		}
 	}
@@ -3393,6 +3395,7 @@ function SkillTreeTweakData:init(tweak_data)
 			upgrades = {
 				"team_biker_crew_movespeed_bonus"
 			},
+			texture_bundle_folder = "wild",
 			icon_xy = {
 				1,
 				2
@@ -3406,9 +3409,10 @@ function SkillTreeTweakData:init(tweak_data)
 			upgrades = {
 				"team_biker_crew_reload_bonus"
 			},
+			texture_bundle_folder = "wild",
 			icon_xy = {
-				7,
-				0
+				3,
+				2
 			}
 		}
 	}
@@ -3421,9 +3425,10 @@ function SkillTreeTweakData:init(tweak_data)
 			upgrades = {
 				"player_biker_stacks_on_revive"
 			},
+			texture_bundle_folder = "wild",
 			icon_xy = {
-				1,
-				5
+				0,
+				3
 			}
 		},
 		{
@@ -3450,9 +3455,10 @@ function SkillTreeTweakData:init(tweak_data)
 				"team_biker_damage_to_lose_2",
 				"team_biker_regen_health"
 			},
+			texture_bundle_folder = "wild",
 			icon_xy = {
-				4,
-				0
+				2,
+				2
 			}
 		},
 		{
@@ -3464,9 +3470,10 @@ function SkillTreeTweakData:init(tweak_data)
 				"team_biker_armour_regen_bonus",
 				"team_biker_additional_armour"
 			},
+			texture_bundle_folder = "wild",
 			icon_xy = {
-				0,
-				2
+				2,
+				3
 			}
 		},
 		{
@@ -3508,7 +3515,8 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_biker_aura",
 					"team_biker_damage_to_lose_1"
 				},
-				icon_xy = {4, 2},
+				texture_bundle_folder = "wild",
+				icon_xy = {0, 0},
 				multi_choice = biker_1_multi_choice
 			},
 			deck2,
@@ -3520,7 +3528,8 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_biker_treat_as_more_cohesion",
 					"player_passive_dodge_chance_1"
 				},
-				icon_xy = {3, 4},
+				texture_bundle_folder = "wild",
+				icon_xy = {1, 0},
 				multi_choice = biker_3_multi_choice
 			},
 			deck4,
@@ -3543,7 +3552,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_passive_dodge_chance_2"
 				},
-				icon_xy = {4, 4},
+				icon_xy = {2, 2},
 				multi_choice = biker_7_multi_choice
 			},
 			deck8,
@@ -3560,7 +3569,7 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			name_id = "menu_st_spec_16",
 			desc_id = "menu_st_spec_16_desc",
-			force_icon = 9,
+			force_icon = 1,
 			category = {
 				"supportive",
 				"challenge"

@@ -178,11 +178,11 @@
 		</sequence>
 		<sequence editable_state="false" name="'start_flash_light_1'" triggable="false">
 			<set_variables var_charging_1_state="1"/>
-			<function extension="'base'" function="'clbk_seq_flash_start'" param1="object('e_01')"/>
+			<function extension="'base'" function="'clbk_seq_flash_start'" param1="object('e_01')" param2="body('light_01')"/>
 		</sequence>
 		<sequence editable_state="false" name="'start_flash_light_2'" triggable="false">
 			<set_variables var_charging_2_state="1"/>
-			<function extension="'base'" function="'clbk_seq_flash_start'" param1="object('e_02')"/>
+			<function extension="'base'" function="'clbk_seq_flash_start'" param1="object('e_02')" param2="body('light_02')"/>
 		</sequence>
 		<sequence editable_state="false" name="'verify_flash'" triggable="false">
 			<run_sequence filter="'filter_can_flash_light_1'" name="'flash_light_1'"/>

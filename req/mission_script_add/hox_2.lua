@@ -3,7 +3,7 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local death_wish_above = difficulty >= 7
 local surprise_cloaker = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or "units/payday2/characters/ene_spook_1/ene_spook_1")
 local tank_skull =  ((difficulty >= 8) and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc" or "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3")
-local taser = ((difficulty >= 8) and "units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser" or "units/payday2/characters/ene_tazer_1/ene_tazer_1")
+local taser = ((difficulty >= 8) and "units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser" or "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc")
 local marshal_gunners_garage = "units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle"
 local fbi_ready_team = {
 	"units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1",

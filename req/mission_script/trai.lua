@@ -23,6 +23,16 @@ local disable = {
 		enabled = false,
 	},
 }
+local rapple_spawn = {
+	values = {
+		interval = 20, 
+	},
+}
+local front_spawns = {
+	values = {
+		interval = 30,
+	},
+}
 return {
 	-- Call Bravos on startup
 	[100017] = {
@@ -62,6 +72,21 @@ return {
 				name = "traincar3",
 				force = 3,
 				position = Vector3(2090, 5770, 450),
+			},
+			{
+				name = "turntable", 
+				force = 3, 
+				position = Vector3(-8614, 9055, 0),
+			},
+			{
+				name = "entrance", 
+				force = 3, 
+				position = Vector3(-175, 3665, 0),
+			},
+			{
+				name = "truck",
+				force = 2,
+				position = Vector3(-2942, 2310, 101.820), 
 			},
 		},
 	},
@@ -160,4 +185,10 @@ return {
 	[103317] = bravo_guards,
 	[103321] = bravo_guards,
 	[103327] = bravo_guards,
+	-- some spawn intervals 
+	[100133] = rapple_spawn,
+	[100132] = front_spawns, 
+	[100128] = front_spawns,
+	[100130] = front_spawns,
+	[100131] = front_spawns, 
 }

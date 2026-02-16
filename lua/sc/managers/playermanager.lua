@@ -2429,7 +2429,7 @@ function PlayerManager:update_cohesion_stacks(t, dt)
 	local affected_players = {}
 
 	-- biker users get to update their "suggested" tendency.
-	if self:upgrade_value("player", "biker_emit_aura", 0) ~= 0 then
+	if self:has_category_upgrade("player","biker_emit_aura") then
 		local heisters_affected = 0
 		local converts_affected = 0
 		affected_players, heisters_affected, converts_affected = self:get_biker_aura_affected(player_unit:position())

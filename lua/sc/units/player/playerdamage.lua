@@ -1862,8 +1862,8 @@ function PlayerDamage:_upd_health_regen(t, dt)
 		if self._biker_regen_t <= t then
 			self._biker_regen_t = t + biker_diyh_timer
 			local cohesion_steps = managers.player:get_cohesion_stacks_as_treated()
-			local heal =(managers.player:team_upgrade_value("player", "biker_regen_health").amount or 0) * cohesion_steps
-			self:restore_health(heal, true)
+			local heal = (managers.player:team_upgrade_value("player", "biker_regen_health").amount or 0) * cohesion_steps
+			self:restore_health(heal, true, not managers.player:has_category_upgrade("player","biker_causer_of_regen"))
 			managers.hud:start_cooldown("dig_in_your_heels", biker_diyh_timer)
 		end
 	end

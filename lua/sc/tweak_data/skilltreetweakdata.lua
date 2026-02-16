@@ -3453,7 +3453,8 @@ function SkillTreeTweakData:init(tweak_data)
 			icon_atlas = "icons_atlas",
 			upgrades = {
 				"team_biker_damage_to_lose_2",
-				"team_biker_regen_health"
+				"team_biker_regen_health",
+				"player_biker_causer_of_regen"
 			},
 			texture_bundle_folder = "wild",
 			icon_xy = {

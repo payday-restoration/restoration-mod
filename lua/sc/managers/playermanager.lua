@@ -1391,11 +1391,10 @@ function PlayerManager:get_max_grenades(grenade_id)
 	grenade_id = grenade_id or managers.blackmarket:equipped_grenade()
 	local max_amount = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "max_amount") or 0
 
-	--Jack of all trades basic grenade count increase.
+	--Fully Loaded basic grenade count increase.
 	--MAY be source of grenade syncing issues due to interaction with get_max_grenades_by_peer_id(). Is worth investigating some time.
-	local is_cooldown = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown")
 	local is_perk_throwable = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown") and not tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown_no_perk")
-	local throwables_multiplier = (not is_cooldown and self:upgrade_value("player", "throwables_multiplier", 1.0)) or 1
+	local throwables_multiplier = (not is_perk_throwable and self:upgrade_value("player", "throwables_multiplier", 1.0)) or 1
 	if max_amount and not is_perk_throwable then 
 		max_amount = math.ceil(max_amount * throwables_multiplier)
 	end
@@ -1437,12 +1436,11 @@ function PlayerManager:_internal_load()
 		amount = self:get_grenade_amount(peer_id) or amount
 	end
 	
-	local is_cooldown = grenade.base_cooldown
 	local is_perk_throwable = grenade.base_cooldown and not grenade.base_cooldown_no_perk
-	local throwables_multiplier = (not is_cooldown and self:upgrade_value("player", "throwables_multiplier", 1)) or 1
+	local throwables_multiplier = (not is_perk_throwable and self:upgrade_value("player", "throwables_multiplier", 1)) or 1
 	if amount and not is_perk_throwable then --*Should* stop perk deck actives from being increased.
 		amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount) --Crime spree throwables mod.
-		amount = math.ceil(amount * throwables_multiplier) --JOAT Basic
+		amount = math.ceil(amount * throwables_multiplier) --Fully Loaded Aced
 	end
 
 	self:_set_grenade({
@@ -1930,7 +1928,7 @@ end
 function PlayerManager:regain_throwable_from_ammo()
 	local throw_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
 	if throw_tweak and throw_tweak.pickup_cooldown_t then
-		managers.player:speed_up_grenade_cooldown(throw_tweak.pickup_cooldown_t)
+		managers.player:speed_up_grenade_cooldown(throw_tweak.pickup_cooldown_t * self:upgrade_value("player"," throwable_regen_timer_increase_from_ammo", 1))
 	else
 		local roll = math.random()
 		

@@ -5901,7 +5901,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Fully Loaded--
 				["menu_bandoliers_beta_sc"] = "Fully Loaded",
-				["menu_bandoliers_desc_sc"] = "BASIC: #{owned}#$basic##\nYou pick up #{skill_color}#$skill_value_p1## more ammo from ammo boxes.\n\nACE: #{owned}#$pro##\nYour total ammo capacity is increased by #{skill_color}#$skill_value_b1.##\n\nYour base chance to pick up a throwable is raised by #{skill_color}#$skill_value_p2##; chance is increased by an additional #{skill_color}#$skill_value_p3## each time you don't find one and will reset to base when you do.\n\n#{risk}#NOTE: You cannot pick up regenerative or cooldown-based throwables.##",
+				["menu_bandoliers_desc_sc"] = "BASIC: #{owned}#$basic##\nYou pick up #{skill_color}#$skill_value_b1## more ammo from ammo boxes.\n\nACE: #{owned}#$pro##\nYour total ammo capacity is increased by #{skill_color}#$skill_value_p1## and you carry #{skill_color}#$skill_value_p2## more throwables.\n\nYour ammo box regen bonus for your throwables is increased by #{skill_color}#$skill_value_p3.##",
 
 		--[[   TECHNICIAN   ]]--
 

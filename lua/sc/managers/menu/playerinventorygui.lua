@@ -2664,7 +2664,7 @@ function PlayerInventoryGui:_update_info_throwable(name)
 	if projectile_data then
 		local is_cooldown = projectile_data.base_cooldown
 		local is_perk_throwable = is_cooldown and not projectile_data.base_cooldown_no_perk
-		local throwables_multiplier = (not is_cooldown and managers.player:upgrade_value("player", "throwables_multiplier", 1)) or 1
+		local throwables_multiplier = (not is_perk_throwable and managers.player:upgrade_value("player", "throwables_multiplier", 1)) or 1
 		local amount = is_perk_throwable and 1 or math.round(projectile_data.max_amount * throwables_multiplier)
 		local has_short_desc = managers.localization:exists(projectile_data.desc_id .. "_short")
 
@@ -2672,12 +2672,14 @@ function PlayerInventoryGui:_update_info_throwable(name)
 		local proj_tweak = tweak_data.projectiles[throwable_id]
 		local proj_b_tweak = tweak_data.blackmarket.projectiles[throwable_id]
 		local skill_pickup_chance = managers.player:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
+		local regen_multiplier_increase = managers.player:upgrade_value("player", "throwable_regen_timer_increase_from_ammo", 1)
+
 		if self:_should_show_description() then
 			text_string = text_string .. managers.localization:text((has_short_desc and projectile_data.desc_id .. "_short") or projectile_data.desc_id, {
 				damage = ((proj_tweak and proj_tweak.damage) or 0) * 10,
 				pickup = (((proj_b_tweak and proj_b_tweak.base_pickup_chance) or 0.01) + skill_pickup_chance.chance) * 100 .. "%",
 				regen = ((proj_b_tweak and proj_b_tweak.base_cooldown) or 0) .. managers.localization:text("menu_seconds_suffix_short"),
-				regen_t = -((proj_b_tweak and proj_b_tweak.pickup_cooldown_t) or 0) .. managers.localization:text("menu_seconds_suffix_short")
+				regen_t = -((proj_b_tweak and proj_b_tweak.pickup_cooldown_t) or 0) * regen_multiplier_increase .. managers.localization:text("menu_seconds_suffix_short")
 			}) .. "\n"
 		end
 	end

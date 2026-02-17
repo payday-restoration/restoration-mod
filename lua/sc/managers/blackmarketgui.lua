@@ -5258,7 +5258,7 @@ function BlackMarketGui:update_info_text()
 	elseif identifier == self.identifiers.grenade then
 		local is_cooldown = tweak_data.blackmarket.projectiles[slot_data.name].base_cooldown
 		local is_perk_throwable = is_cooldown and not tweak_data.blackmarket.projectiles[slot_data.name].base_cooldown_no_perk
-		local throwables_multiplier = (not is_cooldown and managers.player:upgrade_value("player", "throwables_multiplier", 1)) or 1
+		local throwables_multiplier = (not is_perk_throwable and managers.player:upgrade_value("player", "throwables_multiplier", 1)) or 1
 		local amount = is_perk_throwable and 1 or math.round(tweak_data.blackmarket.projectiles[slot_data.name].max_amount * throwables_multiplier)
 		updated_texts[1].text = self._slot_data.name_localized .. " (x" .. tostring(amount) .. ")"
 
@@ -5298,11 +5298,12 @@ function BlackMarketGui:update_info_text()
 		local proj_tweak = tweak_data.projectiles[slot_data.name]
 		local proj_b_tweak = tweak_data.blackmarket.projectiles[slot_data.name]
 		local skill_pickup_chance = managers.player:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
+		local regen_multiplier_increase = managers.player:upgrade_value("player", "throwable_regen_timer_increase_from_ammo", 1)
 		local desc_text = managers.localization:text(tweak_data.blackmarket.projectiles[slot_data.name].desc_id, {
 			damage = ((proj_tweak and proj_tweak.damage) or 0) * 10, --I LOVE that damage is defined elsewhere
 			pickup = (((proj_b_tweak and proj_b_tweak.base_pickup_chance) or 0.01) + skill_pickup_chance.chance) * 100 .. "%",
 			regen = ((proj_b_tweak and proj_b_tweak.base_cooldown) or 0) .. managers.localization:text("menu_seconds_suffix_short"),
-			regen_t = -((proj_b_tweak and proj_b_tweak.pickup_cooldown_t) or 0) .. managers.localization:text("menu_seconds_suffix_short")
+			regen_t = -((proj_b_tweak and proj_b_tweak.pickup_cooldown_t) or 0) * regen_multiplier_increase .. managers.localization:text("menu_seconds_suffix_short")
 		})
 
 		for color_id in string.gmatch(desc_text, "#%{(.-)%}#") do

@@ -1161,6 +1161,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.extra_ammo_multiplier = {1.25}
 				--Ace
 					self.values.player.fully_loaded_pick_up_multiplier = {1.5}
+					self.values.player.throwables_multiplier = {1.3}
+					self.values.player.throwable_regen_timer_increase_from_ammo = {1.5}
+
+					-- No longer used, but kept here if anything needs it.
 					self.values.player.regain_throwable_from_ammo = {
 						{chance = 0.05, chance_inc = 0.01}
 					}
@@ -1168,8 +1172,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.skill_descs.bandoliers = {
 						skill_value_b1 = tostring(self.values.player.extra_ammo_multiplier[1] % 1 * 100).."%", -- +Max ammo capacity
 						skill_value_p1 = tostring(self.values.player.fully_loaded_pick_up_multiplier[1] % 1 * 100).."%", -- Increase ammo pick up
-						skill_value_p2 = tostring(self.values.player.regain_throwable_from_ammo[1].chance * 100).."%", --Chance to pick up throwable from ammo boxes
-						skill_value_p3 = tostring(self.values.player.regain_throwable_from_ammo [1].chance_inc * 100).."%" -- Increase chance to pick up throwable if ammo box didn't give one
+						skill_value_p2 = tostring(self.values.player.throwables_multiplier[1] % 1 * 100).."%", -- More throwables
+						skill_value_p3 = tostring(self.values.player.throwable_regen_timer_increase_from_ammo[1] % 1 * 100).."%" -- Ammo box regen timer increase for throwables
 					}
 		
 	--TECHNICIAN--
@@ -6338,6 +6342,17 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "biker_causer_of_regen",
+			category = "player"
+		}
+	}
+
+	-- Fully Loaded: boost ammo box regen bonus for throwables
+	self.definitions.player_throwable_regen_timer_increase_from_ammo_1 = {
+		name_id = "menu_player_throwable_regen_timer_increase_from_ammo",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "throwable_regen_timer_increase_from_ammo",
 			category = "player"
 		}
 	}

@@ -13,8 +13,9 @@ function GrenadeCrateBase:take_grenade(unit)
 		managers.player:register_grenade(managers.network:session():local_peer():id())
 
 		self._grenade_amount = self._grenade_amount - 1
-
 		print("Took " .. 1 .. " grenades, " .. self._grenade_amount .. " left")
+		
+		unit:character_damage():start_throwable_regen_boost(2)
 	end
 
 	if self._grenade_amount <= 0 then
@@ -58,6 +59,8 @@ function GrenadeCrateDeployableBase:take_grenade(unit)
 	managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", 1)
 
 	self._grenade_amount = self._grenade_amount - 1
+
+	unit:character_damage():start_throwable_regen_boost(2)
 
 	if self._grenade_amount <= 0 then
 		self:_set_empty()

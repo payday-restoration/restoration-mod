@@ -175,6 +175,10 @@ Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self,
 		end
 	end
 
+	if self:has_activate_temporary_upgrade("temporary", "throwable_regen") then
+		self:speed_up_grenade_cooldown(dt * self:temporary_upgrade_value("temporary", "throwable_regen", 0))
+	end
+
 	self:update_cohesion_stacks(t, dt)
 end)
 
@@ -2006,6 +2010,29 @@ function PlayerManager:activate_temporary_upgrade_indefinitely(category, upgrade
 	}
 	managers.hud:remove_skill(upgrade)
 	managers.hud:add_skill(upgrade)
+end
+
+-- Adds a Buff Tracker call.
+function PlayerManager:activate_temporary_upgrade_by_level(category, upgrade, level)
+	local upgrade_level = self:upgrade_level(category, upgrade, 0) or 0
+
+	if level > upgrade_level then
+		return
+	end
+
+	local upgrade_value = self:upgrade_value_by_level(category, upgrade, level, 0)
+
+	if upgrade_value == 0 then
+		return
+	end
+
+	local time = upgrade_value[2]
+	self._temporary_upgrades[category] = self._temporary_upgrades[category] or {}
+	self._temporary_upgrades[category][upgrade] = {
+		upgrade_value = upgrade_value[1],
+		expire_time = Application:time() + time
+	}
+	managers.hud:start_buff(upgrade, time)
 end
 
 --Use the old version of this function prior to Overkill's update because they don't invalidate the cached value properly in menus.

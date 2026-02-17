@@ -2631,3 +2631,13 @@ function PlayerDamage:biker_lose_stacks_on_damage(damage_taken, weight)
 		}, {}, false)
 	end
 end
+
+-- Activates the throwable regen boost from interacting with Ordnance Bags / Throwable cases.
+-- Biiiit indirect, but eeeh.
+function PlayerDamage:start_throwable_regen_boost(level)
+	if managers.platform:presence() == "Playing" and self:arrested() then
+		return
+	end
+
+	managers.player:activate_temporary_upgrade_by_level("temporary", "throwable_regen", level or 1)
+end

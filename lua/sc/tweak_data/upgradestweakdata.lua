@@ -672,6 +672,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	-- Ordnance bag
 	self.ordnance_bag_ammo = 0.25
 	self.ordnance_bag_grenades = 4
+	self.values.temporary.throwable_regen = {
+		-- Ordnance Bag
+		{ 
+			0.25, -- Additional percent increase to throwable regen per tick
+			90.1 -- The time for the above increase to last
+		},
+		-- Throwable Case
+		{ 
+			0.25,
+			180.1
+		}
+	} 
 	
 	self.values.player.corpse_dispose_amount = {2, 3}
 	self.values.bodybags_bag.quantity = {1}
@@ -5833,6 +5845,29 @@ function UpgradesTweakData:_player_definitions()
 			category = "temporary"
 		}
 	}
+
+	-- Throwable regeneration boost
+	-- Ordnance Bag
+	self.definitions.player_throwable_regen_1 = {
+		name_id = "menu_temporary_throwable_regen",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "throwable_regen",
+			category = "temporary"
+		}
+	}
+	-- Throwable Case
+	self.definitions.player_throwable_regen_2 = {
+		name_id = "menu_temporary_throwable_regen",
+		category = "temporary",
+		upgrade = {
+			value = 2,
+			upgrade = "throwable_regen",
+			category = "temporary"
+		}
+	}
+
 	self.definitions.player_steelsight_move_speed_multiplier = {
 		name_id = "menu_player_steelsight_speed_multiplier",
 		category = "feature",

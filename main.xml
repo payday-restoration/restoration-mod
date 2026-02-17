@@ -586,6 +586,7 @@
 					<divider name="tod_divider" size="7"/>
 					<button name="other_buffs" disabled="true"/>
 					<option type="bool" default_value="true" name="Info_doctor_bag_health_regen"/>
+					<option type="bool" default_value="true" name="Info_throwable_regen"/>
 				</option_group>
 				<option type="bool" default_value="false" name="MainHUD"/>
 				<option type="bool" default_value="true" name="Teammate"/>

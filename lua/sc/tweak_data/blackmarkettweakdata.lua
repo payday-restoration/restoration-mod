@@ -1952,9 +1952,6 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		self.projectiles.xmas_snowball.throw_allowed_expire_t = 0.1
 		self.projectiles.xmas_snowball.expire_t = 1.3
 		self.projectiles.xmas_snowball.max_amount = 3
-		self.projectiles.xmas_snowball.base_cooldown_no_perk = true
-		self.projectiles.xmas_snowball.base_cooldown = 35
-		self.projectiles.xmas_snowball.pickup_cooldown_t = 3.5 --10~ pickups to gain back one immediately
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 
@@ -1977,6 +1974,89 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_gre_electric.no_cheat_count = true
 	self.projectiles.poison_gas_grenade.no_cheat_count = true
 	self.projectiles.sticky_grenade.no_cheat_count = true
+
+	-- Make every throwable recharge naturally over time.
+	-- Separated out here to be able to better compare numbers if need be.
+	self.projectiles.xmas_snowball.base_pickup_chance = nil
+	self.projectiles.frag.base_pickup_chance = nil
+	self.projectiles.concussion.base_pickup_chance = nil
+	self.projectiles.dynamite.base_pickup_chance = nil
+	self.projectiles.molotov.base_pickup_chance = nil
+	self.projectiles.wpn_prj_four.base_pickup_chance = nil
+	self.projectiles.wpn_prj_ace.base_pickup_chance = nil
+	self.projectiles.wpn_prj_jav.base_pickup_chance = nil
+	self.projectiles.wpn_prj_hur.base_pickup_chance = nil
+	self.projectiles.wpn_prj_target.base_pickup_chance = nil
+	self.projectiles.frag_com.base_pickup_chance = nil
+	self.projectiles.fir_com.base_pickup_chance = nil
+	self.projectiles.dada_com.base_pickup_chance = nil
+	self.projectiles.wpn_gre_electric.base_pickup_chance = nil
+	self.projectiles.poison_gas_grenade.base_pickup_chance = nil
+	self.projectiles.sticky_grenade.base_pickup_chance = nil
+
+	self.projectiles.xmas_snowball.base_cooldown_no_perk = true
+	self.projectiles.xmas_snowball.base_cooldown = 60
+	self.projectiles.xmas_snowball.pickup_cooldown_t = 6
+
+	self.projectiles.frag.base_cooldown_no_perk = true
+	self.projectiles.frag.base_cooldown = 600
+	self.projectiles.frag.pickup_cooldown_t = 6
+
+	self.projectiles.dynamite.base_cooldown_no_perk = true
+	self.projectiles.dynamite.base_cooldown = 600
+	self.projectiles.dynamite.pickup_cooldown_t = 6
+
+	self.projectiles.molotov.base_cooldown_no_perk = true
+	self.projectiles.molotov.base_cooldown = 600
+	self.projectiles.molotov.pickup_cooldown_t = 6
+
+	self.projectiles.frag_com.base_cooldown_no_perk = true
+	self.projectiles.frag_com.base_cooldown = 600
+	self.projectiles.frag_com.pickup_cooldown_t = 6
+
+	self.projectiles.fir_com.base_cooldown_no_perk = true
+	self.projectiles.fir_com.base_cooldown = 600
+	self.projectiles.fir_com.pickup_cooldown_t = 6
+
+	self.projectiles.dada_com.base_cooldown_no_perk = true
+	self.projectiles.dada_com.base_cooldown = 600
+	self.projectiles.dada_com.pickup_cooldown_t = 6
+
+	self.projectiles.sticky_grenade.base_cooldown_no_perk = true
+	self.projectiles.sticky_grenade.base_cooldown = 600
+	self.projectiles.sticky_grenade.pickup_cooldown_t = 6
+
+	self.projectiles.wpn_gre_electric.base_cooldown_no_perk = true
+	self.projectiles.wpn_gre_electric.base_cooldown = 600
+	self.projectiles.wpn_gre_electric.pickup_cooldown_t = 12
+
+	self.projectiles.poison_gas_grenade.base_cooldown_no_perk = true
+	self.projectiles.poison_gas_grenade.base_cooldown = 600
+	self.projectiles.poison_gas_grenade.pickup_cooldown_t = 12
+
+	self.projectiles.concussion.base_cooldown_no_perk = true
+	self.projectiles.concussion.base_cooldown = 450
+	self.projectiles.concussion.pickup_cooldown_t = 13.5
+
+	self.projectiles.wpn_prj_jav.base_cooldown_no_perk = true
+	self.projectiles.wpn_prj_jav.base_cooldown = 150
+	self.projectiles.wpn_prj_jav.pickup_cooldown_t = 9
+
+	self.projectiles.wpn_prj_four.base_cooldown_no_perk = true
+	self.projectiles.wpn_prj_four.base_cooldown = 150
+	self.projectiles.wpn_prj_four.pickup_cooldown_t = 12
+
+	self.projectiles.wpn_prj_hur.base_cooldown_no_perk = true
+	self.projectiles.wpn_prj_hur.base_cooldown = 120
+	self.projectiles.wpn_prj_hur.pickup_cooldown_t = 12
+
+	self.projectiles.wpn_prj_target.base_cooldown_no_perk = true
+	self.projectiles.wpn_prj_target.base_cooldown = 120
+	self.projectiles.wpn_prj_target.pickup_cooldown_t = 14.5
+
+	self.projectiles.wpn_prj_ace.base_cooldown_no_perk = true
+	self.projectiles.wpn_prj_ace.base_cooldown = 60
+	self.projectiles.wpn_prj_ace.pickup_cooldown_t = 9
 
 	--Animation overrides for grenades so they aren't shitty. Like seriously, Javelin throw for grenades..?	
 	--HE
@@ -2005,10 +2085,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	--self.projectiles.smoke_screen_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com
 	--Viper Gas
 	--self.projectiles.poison_gas_grenade.animation = "throw_grenade_com"				--throw_grenade_com
-	--self.projectiles.poison_gas_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com	
-	--Snowball
-	self.projectiles.xmas_snowball.animation = "throw_dynamite"							--throw_snowball
-	self.projectiles.xmas_snowball.anim_global_param = "projectile_dynamite"			--projectile_snowball
+	--self.projectiles.poison_gas_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com
 	
 	if SystemFS:exists("assets/mod_overrides/CoD Inspired Flashbang Animation") then
 		self.projectiles.concussion.animation = "throw_concussion"

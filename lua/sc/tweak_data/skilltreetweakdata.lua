@@ -916,13 +916,14 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {9, 4},
 					[1] = {
 						upgrades = {
-							"player_throwables_multiplier"
+							"grenade_crate_ammo_increase1"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
-							"second_deployable_1"
+							"second_deployable_1",
+							"grenade_crate_quantity"
 						},
 						cost = self.costs.hightierpro
 					}

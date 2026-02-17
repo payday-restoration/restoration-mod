@@ -28,7 +28,8 @@ end
 
 --Overkill Grenade Case
 function GrenadeCrateDeployableBase:setup()
-	self._max_grenade_amount = 4
+	self._max_grenade_amount = tweak_data.upgrades.ordnance_bag_grenades
+	self._ammo_amount = tweak_data.upgrades.ordnance_bag_ammo * managers.player:upgrade_value("grenade_crate", "ammo_increase", 1)
 	
 	GrenadeCrateDeployableBase.super.setup(self)
 end
@@ -49,7 +50,7 @@ function GrenadeCrateDeployableBase:take_grenade(unit)
 	--So you take some ammo back too
 	if inventory then
 		for id, weapon in pairs(inventory:available_selections()) do
-			local took = self:round_value(weapon.unit:base():add_ammo_from_bag(0.25))
+			local took = self:round_value(weapon.unit:base():add_ammo_from_bag(self._ammo_amount))
 			managers.hud:set_ammo_amount(id, weapon.unit:base():ammo_info())
 		end
 	end

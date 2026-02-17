@@ -432,3 +432,11 @@ function BlackMarketManager:_calculate_suspicion_offset(index, lerp)
 
 	return math.lerp(0, lerp, susp_lerp)
 end
+
+-- Rewritten to *actually* represent what it's supposed to, which is blocking you from refilling perk deck throwables.
+function BlackMarketManager:equipped_grenade_allows_pickups()
+	local id = self:equipped_grenade()
+	local grenade_tweak = id and tweak_data.blackmarket.projectiles[id]
+
+	return grenade_tweak and (not grenade_tweak.base_cooldown or grenade_tweak.base_cooldown_no_perk)
+end

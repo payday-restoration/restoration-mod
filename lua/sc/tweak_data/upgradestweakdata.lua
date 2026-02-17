@@ -368,6 +368,42 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 	self:_money_weapon_definitions()
 end)
 
+-- Ordnance bag definitions
+function UpgradesTweakData:_grenade_crate_definitions()
+
+	self.definitions.grenade_crate = {
+		equipment_id = "grenade_crate",
+		slot = 1,
+		dlc = "mxm",
+		category = "equipment",
+		name_id = "menu_equipment_grenade_crate"
+	}
+
+	-- I've taken this from the ammo_bag_definitions, and I'm gonna be honest, I've no idea why that one
+	-- has so much shit in it. Definitions typically just have name_id and category.
+	for i, _ in ipairs(self.values.grenade_crate.ammo_increase) do
+		self.definitions["grenade_crate_ammo_increase" .. i] = {
+			name_id = "grenade_crate_ammo_increase" .. i,
+			category = "equipment_upgrade",
+			upgrade = {
+				upgrade = "ammo_increase",
+				category = "grenade_crate",
+				value = i
+			}
+		}
+	end
+
+	self.definitions.grenade_crate_quantity = {
+		name_id = "menu_grenade_crate_quantity",
+		category = "equipment_upgrade",
+		upgrade = {
+			value = 1,
+			upgrade = "quantity",
+			category = "grenade_crate"
+		}
+	}
+end
+
 --Money thrower definitions
 function UpgradesTweakData:_money_weapon_definitions()
 	self.definitions.money = {
@@ -632,6 +668,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.3,
 		1.2
 	}
+
+	-- Ordnance bag
+	self.ordnance_bag_ammo = 0.25
+	self.ordnance_bag_grenades = 4
 	
 	self.values.player.corpse_dispose_amount = {2, 3}
 	self.values.bodybags_bag.quantity = {1}
@@ -1215,12 +1255,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		
 			--Jack of All Trades
 				--Basic
-					self.values.player.throwables_multiplier = {1.3}
+					self.values.grenade_crate = self.values.grenade_crate or {}
+					self.values.grenade_crate.ammo_increase = {2}
 				--Ace
+					self.values.grenade_crate.quantity = {1}
 					self.values.player.second_deployable = {true}
 					
 					self.skill_descs.engineering = {
-						skill_value_b1 = tostring(self.values.player.throwables_multiplier[1] % 1 * 100).."%" -- more throwables
+						skill_value_b1 = tostring(self.values.grenade_crate.ammo_increase[1] * self.ordnance_bag_ammo * 100).."%", -- More ammo for weapons
+						skill_value_p1 = tostring(self.values.grenade_crate.quantity[1] + 1) -- Quantity of ammo bags
 					}
 	
 			--Tower Defense

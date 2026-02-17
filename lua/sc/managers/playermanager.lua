@@ -176,7 +176,11 @@ Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self,
 	end
 
 	if self:has_activate_temporary_upgrade("temporary", "throwable_regen") then
-		self:speed_up_grenade_cooldown(dt * self:temporary_upgrade_value("temporary", "throwable_regen", 0))
+		local is_perk_throwable = tweak_data:get_raw_value("blackmarket", "projectiles", managers.blackmarket:equipped_grenade(), "base_cooldown") and not tweak_data:get_raw_value("blackmarket", "projectiles", managers.blackmarket:equipped_grenade(), "base_cooldown_no_perk")
+
+		if not is_perk_throwable then
+			self:speed_up_grenade_cooldown(dt * self:temporary_upgrade_value("temporary", "throwable_regen", 0))
+		end
 	end
 
 	self:update_cohesion_stacks(t, dt)

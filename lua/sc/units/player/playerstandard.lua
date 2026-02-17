@@ -5126,6 +5126,38 @@ function PlayerStandard:_check_step(t)
 	end
 end
 
+-- Allows projectiles to have a "throwing speed" which changes how fast the animation plays.
+function PlayerStandard:_start_action_throw_grenade(t, input)
+	self:_interupt_action_reload(t)
+	self:_interupt_action_steelsight(t)
+	self:_interupt_action_running(t)
+	self:_interupt_action_charging_weapon(t)
+
+	local equipped_grenade = managers.blackmarket:equipped_grenade()
+	local projectile_tweak = tweak_data.blackmarket.projectiles[equipped_grenade]
+
+	if self._projectile_global_value then
+		self._camera_unit:anim_state_machine():set_global(self._projectile_global_value, 0)
+
+		self._projectile_global_value = nil
+	end
+
+	if projectile_tweak.anim_global_param then
+		self._projectile_global_value = projectile_tweak.anim_global_param
+
+		self._camera_unit:anim_state_machine():set_global(self._projectile_global_value, 1)
+	end
+
+	local delay = self:_get_projectile_throw_offset()
+
+	managers.network:session():send_to_peers_synched("play_distance_interact_redirect_delay", self._unit, "throw_grenade", delay)
+	self._ext_camera:play_redirect(Idstring(projectile_tweak.animation or "throw_grenade"), projectile_tweak.throw_speed or 1)
+
+	local projectile_data = tweak_data.blackmarket.projectiles[equipped_grenade]
+	self._state_data.throw_grenade_expire_t = t + (projectile_data.expire_t or 1.1)
+
+	self:_stance_entered()
+end
 
 if AdvMov and AdvMov.settings then --Everything here was originally from Solo Queue Pixy and none of this will function without the "Advanced Movement Standalone" mod
 --Sorry for butchering your code :> -DMC

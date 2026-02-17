@@ -2086,6 +2086,10 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	--Viper Gas
 	--self.projectiles.poison_gas_grenade.animation = "throw_grenade_com"				--throw_grenade_com
 	--self.projectiles.poison_gas_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com
+	--Snowball
+	self.projectiles.xmas_snowball.animation = "throw_dynamite"							--throw_snowball
+	self.projectiles.xmas_snowball.throw_speed = 1.44									-- Match the speed of the actual snowball throw anim
+	self.projectiles.xmas_snowball.anim_global_param = "projectile_dynamite"			--projectile_snowball
 	
 	if SystemFS:exists("assets/mod_overrides/CoD Inspired Flashbang Animation") then
 		self.projectiles.concussion.animation = "throw_concussion"

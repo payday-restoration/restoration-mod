@@ -350,6 +350,48 @@ function PlayerStandard:_check_action_throw_projectile(t, input)
 	return true
 end
 
+function PlayerStandard:_start_action_throw_projectile(t, input)
+	self._equipped_unit:base():tweak_data_anim_stop("fire")
+	self:_interupt_action_reload(t)
+	self:_interupt_action_steelsight(t)
+	self:_interupt_action_running(t)
+	self:_interupt_action_charging_weapon(t)
+
+	self._state_data.projectile_idle_wanted = nil
+	self._state_data.throwing_projectile = true
+	self._state_data.projectile_start_t = nil
+	local projectile_entry = managers.blackmarket:equipped_projectile()
+
+	self:_stance_entered()
+
+	if self._state_data.projectile_global_value then
+		self._camera_unit:anim_state_machine():set_global(self._state_data.projectile_global_value, 0)
+	end
+
+	self._state_data.projectile_global_value = tweak_data.blackmarket.projectiles[projectile_entry].anim_global_param or "projectile_frag"
+
+	self._camera_unit:anim_state_machine():set_global(self._state_data.projectile_global_value, 1)
+
+	local current_state_name = self._camera_unit:anim_state_machine():segment_state(self:get_animation("base"))
+	local throw_allowed_expire_t = tweak_data.blackmarket.projectiles[projectile_entry].throw_allowed_expire_t or 0.15
+	self._state_data.projectile_throw_allowed_t = t + (current_state_name ~= self:get_animation("projectile_throw_state") and throw_allowed_expire_t or 0)
+
+	if current_state_name == self:get_animation("projectile_throw_state") then
+		self._ext_camera:play_redirect(self:get_animation("projectile_idle"))
+
+		return
+	end
+
+	local offset = nil
+
+	if current_state_name == self:get_animation("projectile_exit_state") then
+		local segment_relative_time = self._camera_unit:anim_state_machine():segment_relative_time(self:get_animation("base"))
+		offset = (1 - segment_relative_time) * 0.9
+	end
+
+	self._ext_camera:play_redirect(self:get_animation("projectile_enter"), 999, offset) --make the holstering of the drawn weapon instant
+end
+
 function PlayerStandard:_check_action_throw_grenade(t, input)
 	local action_wanted = input.btn_throw_grenade_press
 
@@ -373,6 +415,39 @@ function PlayerStandard:_check_action_throw_grenade(t, input)
 	self._queue_burst = nil
 
 	return action_wanted
+end
+
+function PlayerStandard:_start_action_throw_grenade(t, input)
+	self:_interupt_action_reload(t)
+	self:_interupt_action_steelsight(t)
+	self:_interupt_action_running(t)
+	self:_interupt_action_charging_weapon(t)
+
+	local equipped_grenade = managers.blackmarket:equipped_grenade()
+	local projectile_tweak = tweak_data.blackmarket.projectiles[equipped_grenade]
+	local speed_mult = projectile_tweak and projectile_tweak.speed_mult or 1
+
+	if self._projectile_global_value then
+		self._camera_unit:anim_state_machine():set_global(self._projectile_global_value, 0)
+
+		self._projectile_global_value = nil
+	end
+
+	if projectile_tweak.anim_global_param then
+		self._projectile_global_value = projectile_tweak.anim_global_param
+
+		self._camera_unit:anim_state_machine():set_global(self._projectile_global_value, 1)
+	end
+
+	local delay = self:_get_projectile_throw_offset()
+
+	managers.network:session():send_to_peers_synched("play_distance_interact_redirect_delay", self._unit, "throw_grenade", delay)
+	self._ext_camera:play_redirect(Idstring(projectile_tweak.animation or "throw_grenade"), 999) --make the holstering of the drawn weapon instant
+	--Unfortunately the actual anim for throwing a grenade is done from the animation state side of things (a.k.a. not lua sided)
+
+	self._state_data.throw_grenade_expire_t = t + (projectile_tweak.expire_t or 1.1)
+
+	self:_stance_entered()
 end
 
 function PlayerStandard:_action_interact_forbidden()
@@ -3399,16 +3474,16 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 		stance_id = self._equipped_unit:base():get_stance_id()
 		if not self._state_data.in_steelsight then
 			stance_id = self._equipped_unit:base():get_hipfire_stance_id()
+
+			local use_big_scope_offset = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BigScopeOffset")
+			if use_big_scope_offset and self._equipped_unit:base()._has_big_scope then
+				stance_mod.translation = stance_mod.translation + Vector3(1, 0, -2)
+				stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, 3)
+			end
 		end
 
 		if self._state_data.in_steelsight and self._equipped_unit:base().stance_mod then
 			stance_mod = self._equipped_unit:base():stance_mod() or stance_mod
-		end
-
-		local use_big_scope_offset = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/BigScopeOffset")
-		if use_big_scope_offset and self._equipped_unit:base()._has_big_scope and not self._state_data.in_steelsight then
-			stance_mod.translation = stance_mod.translation + Vector3(1, 0, -2)
-			stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, 3)
 		end
 	end
 
@@ -4852,7 +4927,11 @@ function PlayerStandard:_find_pickups(t)
 
 		if pickup:pickup() and pickup:pickup():pickup(self._unit) then
 			if may_find_grenade then
-				managers.player:regain_throwable_from_ammo() --Replace vanilla coroutine
+				if managers.player:got_max_grenades() then
+					managers.player._throwable_chance.amount = 0
+				else
+					managers.player:regain_throwable_from_ammo() --Replace vanilla coroutine
+				end
 			end
 
 			for id, weapon in pairs(self._unit:inventory():available_selections()) do

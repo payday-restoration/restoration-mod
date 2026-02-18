@@ -1904,35 +1904,35 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_four.throw_allowed_expire_t = 0.05
 	self.projectiles.wpn_prj_four.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_four.expire_t = 0.6
-	self.projectiles.wpn_prj_four.base_pickup_chance = 0.08
+	self.projectiles.wpn_prj_four.base_pickup_chance = {0.05, 0.10}
 	self.projectiles.wpn_prj_four.count_as_melee = true
 	--Throwing Cards
 	self.projectiles.wpn_prj_ace.throw_allowed_expire_t = 0.05
 	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.625
 	self.projectiles.wpn_prj_ace.expire_t = 0.65
 	self.projectiles.wpn_prj_ace.max_amount = 12
-	self.projectiles.wpn_prj_ace.base_pickup_chance = 0.15
+	self.projectiles.wpn_prj_ace.base_pickup_chance = {0.08, 0.16}
 	self.projectiles.wpn_prj_ace.count_as_melee = true
 	--Throwing Knife
 	self.projectiles.wpn_prj_target.throw_allowed_expire_t = 0.12
 	self.projectiles.wpn_prj_target.repeat_expire_t = 0.625
 	self.projectiles.wpn_prj_target.expire_t = 0.65
 	self.projectiles.wpn_prj_target.max_amount = 9
-	self.projectiles.wpn_prj_target.base_pickup_chance = 0.12
+	self.projectiles.wpn_prj_target.base_pickup_chance = {0.08, 0.16}
 	self.projectiles.wpn_prj_target.count_as_melee = true
 	--Throwing Axe
 	self.projectiles.wpn_prj_hur.throw_allowed_expire_t = 0.35
 	self.projectiles.wpn_prj_hur.repeat_expire_t = 0.625
 	self.projectiles.wpn_prj_hur.expire_t = 0.65
 	self.projectiles.wpn_prj_hur.max_amount = 6
-	self.projectiles.wpn_prj_hur.base_pickup_chance = 0.10
+	self.projectiles.wpn_prj_hur.base_pickup_chance = {0.06, 0.12}
 	self.projectiles.wpn_prj_hur.count_as_melee = true
 	--Javelin
 	self.projectiles.wpn_prj_jav.throw_allowed_expire_t = 0.75
 	self.projectiles.wpn_prj_jav.repeat_expire_t = 0.8
 	self.projectiles.wpn_prj_jav.expire_t = 0.9
 	self.projectiles.wpn_prj_jav.max_amount = 4
-	self.projectiles.wpn_prj_jav.base_pickup_chance = 0.06
+	self.projectiles.wpn_prj_jav.base_pickup_chance = {0.05, 0.10}
 	self.projectiles.wpn_prj_jav.count_as_melee = true
 
 	self.projectiles.fir_com.max_amount = 3
@@ -1940,11 +1940,11 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
 	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.concussion.max_amount = 3
-	self.projectiles.concussion.base_pickup_chance = 0.03
+	self.projectiles.concussion.base_pickup_chance = {0.025, 0.05}
 	self.projectiles.wpn_gre_electric.max_amount = 3
-	self.projectiles.wpn_gre_electric.base_pickup_chance = 0.02
+	self.projectiles.wpn_gre_electric.base_pickup_chance = {0.0125, 0.025}
 	self.projectiles.poison_gas_grenade.max_amount = 3
-	self.projectiles.poison_gas_grenade.base_pickup_chance = 0.02
+	self.projectiles.poison_gas_grenade.base_pickup_chance = {0.015, 0.03}
 
 	self.projectiles.sticky_grenade.throw_shout = nil
 
@@ -1953,8 +1953,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		self.projectiles.xmas_snowball.expire_t = 1.3
 		self.projectiles.xmas_snowball.max_amount = 3
 		self.projectiles.xmas_snowball.base_cooldown_no_perk = true
-		self.projectiles.xmas_snowball.base_cooldown = 35
-		self.projectiles.xmas_snowball.pickup_cooldown_t = 3.5 --10~ pickups to gain back one immediately
+		self.projectiles.xmas_snowball.base_cooldown = 60
+		self.projectiles.xmas_snowball.pickup_cooldown_t = 6 --10~ pickups to gain back one immediately
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 
@@ -1962,21 +1962,28 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.pocket_ecm_jammer.base_cooldown = 60
 	
 	--Fuck off
-	self.projectiles.frag.no_cheat_count = true
-	self.projectiles.concussion.no_cheat_count = true
-	self.projectiles.dynamite.no_cheat_count = true
-	self.projectiles.molotov.no_cheat_count = true
 	self.projectiles.wpn_prj_four.no_cheat_count = true
 	self.projectiles.wpn_prj_ace.no_cheat_count = true
 	self.projectiles.wpn_prj_jav.no_cheat_count = true
 	self.projectiles.wpn_prj_hur.no_cheat_count = true
 	self.projectiles.wpn_prj_target.no_cheat_count = true
-	self.projectiles.frag_com.no_cheat_count = true
-	self.projectiles.fir_com.no_cheat_count = true
-	self.projectiles.dada_com.no_cheat_count = true
 	self.projectiles.wpn_gre_electric.no_cheat_count = true
+	self.projectiles.concussion.no_cheat_count = true
 	self.projectiles.poison_gas_grenade.no_cheat_count = true
+	self.projectiles.frag.no_cheat_count = true
+	self.projectiles.frag.base_pickup_chance = {0.0133, 0.02}
+	self.projectiles.dynamite.no_cheat_count = true
+	self.projectiles.dynamite.base_pickup_chance = {0.0133, 0.02}
+	self.projectiles.frag_com.no_cheat_count = true
+	self.projectiles.frag_com.base_pickup_chance = {0.0133, 0.02}
+	self.projectiles.dada_com.no_cheat_count = true
+	self.projectiles.dada_com.base_pickup_chance = {0.0133, 0.02}
 	self.projectiles.sticky_grenade.no_cheat_count = true
+	self.projectiles.sticky_grenade.base_pickup_chance = {0.0133, 0.02}
+	self.projectiles.molotov.no_cheat_count = true
+	self.projectiles.molotov.base_pickup_chance = {0.0142, 0.025}
+	self.projectiles.fir_com.no_cheat_count = true
+	self.projectiles.fir_com.base_pickup_chance = {0.0142, 0.02}
 
 	--Animation overrides for grenades so they aren't shitty. Like seriously, Javelin throw for grenades..?	
 	--HE
@@ -2007,8 +2014,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	--self.projectiles.poison_gas_grenade.animation = "throw_grenade_com"				--throw_grenade_com
 	--self.projectiles.poison_gas_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com	
 	--Snowball
-	self.projectiles.xmas_snowball.animation = "throw_dynamite"							--throw_snowball
-	self.projectiles.xmas_snowball.anim_global_param = "projectile_dynamite"			--projectile_snowball
+	--self.projectiles.xmas_snowball.animation = "throw_dynamite"							--throw_snowball
+	--self.projectiles.xmas_snowball.anim_global_param = "projectile_dynamite"			--projectile_snowball
 	
 	if SystemFS:exists("assets/mod_overrides/CoD Inspired Flashbang Animation") then
 		self.projectiles.concussion.animation = "throw_concussion"

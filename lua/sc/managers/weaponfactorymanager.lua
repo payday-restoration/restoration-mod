@@ -117,12 +117,14 @@ end
 --]]
 
 WeaponFactoryManager._override_parts_cache = WeaponFactoryManager._override_parts_cache or {}
+WeaponFactoryManager._override_parts_cache_npc = WeaponFactoryManager._override_parts_cache_npc or {}
 WeaponFactoryManager._forbidden_parts_cache = WeaponFactoryManager._forbidden_parts_cache or {}
+WeaponFactoryManager._forbidden_parts_cache_npc = WeaponFactoryManager._forbidden_parts_cache_npc or {}
 
 --bumming a vanilla func to generate a unique key for a given blueprint
 --UPDATE: originally bummed off and modified a vanilla func, decided to make it a new one instead in the event vanilla calls for "blueprint_to_string" leads to issues due to the added sanity checks that might prevent returning an expected result
-function WeaponFactoryManager:blueprint_to_key(factory_id, blueprint)
-	local blueprint_string = ""
+function WeaponFactoryManager:blueprint_to_key(factory_id, blueprint, npc)
+	local blueprint_string = npc and "npc_" or ""
 	local index_table = {}
 	local factory = tweak_data.weapon.factory[factory_id] or {}
 
@@ -148,35 +150,60 @@ function WeaponFactoryManager:blueprint_to_key(factory_id, blueprint)
 	return blueprint_string
 end
 
+
+function WeaponFactoryManager:_assemble(factory_id, p_unit, blueprint, third_person, npc, done_cb, skip_queue)
+	if not npc then
+		self:_clear_parts_cache()
+	end
+	if not done_cb then
+		Application:error("-----------------------------")
+		Application:stack_dump()
+	end
+
+	local factory = tweak_data.weapon.factory
+	local factory_weapon = factory[factory_id]
+	local forbidden = self:_get_forbidden_parts(factory_id, blueprint, npc)
+
+	return self:_add_parts(p_unit, factory_id, factory_weapon, blueprint, forbidden, third_person, npc, done_cb, skip_queue)
+end
+
 --Determined that both "_get_override_parts" and "_get_forbidden_parts" should to get cached after neutering the giant fuck-off for loops in them massively reduced the amount/length of hitching
 --Cache the override data of a given blueprint as to not recreate it each time this gets called i.e. when connected clients swap weapons, switching to and from an underbarrel
 local _orig_override_parts = WeaponFactoryManager._get_override_parts
-function WeaponFactoryManager:_get_override_parts(factory_id, blueprint)
-	local key = self:blueprint_to_key(factory_id, blueprint) --generate a unique key off the blueprint string
-	local cache = self._override_parts_cache[key]
+function WeaponFactoryManager:_get_override_parts(factory_id, blueprint, npc)
+	local key = self:blueprint_to_key(factory_id, blueprint, npc) --generate a unique key off the blueprint string
+	local cache = npc and self._override_parts_cache_npc[key] or self._override_parts_cache[key]
 
 	if cache then
 		return cache
 	end
 
 	local overrides = _orig_override_parts(self, factory_id, blueprint)
-	self._override_parts_cache[key] = overrides --cache the override table
+	if npc then
+		self._override_parts_cache_npc[key] = overrides
+	else
+		self._override_parts_cache[key] = overrides --cache the override table
+	end
 
 	return overrides
 end
 
 --Ditto but for forbid data
 local _orig_forbid_parts = WeaponFactoryManager._get_forbidden_parts
-function WeaponFactoryManager:_get_forbidden_parts(factory_id, blueprint)
-	local key = self:blueprint_to_key(factory_id, blueprint)
-	local cache = self._forbidden_parts_cache[key]
+function WeaponFactoryManager:_get_forbidden_parts(factory_id, blueprint, npc)
+	local key = self:blueprint_to_key(factory_id, blueprint, npc)
+	local cache = npc and self._forbidden_parts_cache_npc[key] or self._forbidden_parts_cache[key]
 
 	if cache then
 		return cache
 	end
 
 	local forbidden = _orig_forbid_parts(self, factory_id, blueprint)
-	self._forbidden_parts_cache[key] = forbidden --cache the forbid table
+	if npc then
+		self._forbidden_parts_cache_npc[key] = forbidden
+	else
+		self._forbidden_parts_cache[key] = forbidden --cache the override table
+	end
 
 	return forbidden
 end
@@ -184,7 +211,9 @@ end
 --Call to nuke the cache if a blueprint change occurs - old data bad
 function WeaponFactoryManager:_clear_parts_cache()
 	self._override_parts_cache = {}
+	self._override_parts_cache_npc = {}
 	self._forbidden_parts_cache = {}
+	self._forbidden_parts_cache_npc = {}
 end
 
 --AFAIK finalized changes to blueprints are only carried out by these functions

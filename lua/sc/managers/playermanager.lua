@@ -1542,10 +1542,8 @@ function PlayerManager:_internal_load()
 
 	--Fully loaded aced checks
 	local throw_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
-	local base_pickup_chance = (throw_tweak and throw_tweak.base_pickup_chance) or 0.01
-	local skill_pickup_chance = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
-	self._throwable_chance_data = {chance = base_pickup_chance + skill_pickup_chance.chance, chance_inc = 0 + skill_pickup_chance.chance_inc}
-	self._throwable_chance = self._throwable_chance_data.chance
+	local base_pickup_chance = (throw_tweak and throw_tweak.base_pickup_chance) or {0.01, 0.02}
+	self._throwable_chance = {min = base_pickup_chance[1], max = base_pickup_chance[2], amount = 0}
 
 	--Reset when players are spawned, just in case.
 	self._slow_data = {
@@ -1928,18 +1926,19 @@ end
 
 --Replacement for vanilla fully loaded throwable coroutine. The vanilla code has 0 benefits from being a coroutine, and it seems to have issues resetting the chance or firing at all.
 function PlayerManager:regain_throwable_from_ammo()
+	local skill_pickup_chance = self:upgrade_value("player", "regain_throwable_from_ammo", 1)
 	local throw_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
 	if throw_tweak and throw_tweak.pickup_cooldown_t then
 		managers.player:speed_up_grenade_cooldown(throw_tweak.pickup_cooldown_t)
 	else
-		local roll = math.random()
-		
-		if self._throwable_chance then --Fixes bizzare startup crash
-			if roll < self._throwable_chance then
-				self._throwable_chance = self._throwable_chance_data.chance
+		if self._throwable_chance then
+			local pickup_low = self._throwable_chance.min * skill_pickup_chance
+			local pickup_high = self._throwable_chance.max * skill_pickup_chance
+			local roll = math.random(pickup_low * 1000, pickup_high * 1000) / 1000 --math.random does not like decimals
+			self._throwable_chance.amount = (self._throwable_chance.amount or 0) + roll
+			if self._throwable_chance.amount >= 1 then
 				self:add_grenade_amount(1, true)
-			else
-				self._throwable_chance = self._throwable_chance + self._throwable_chance_data.chance_inc
+				self._throwable_chance.amount = 0
 			end
 		end
 	end

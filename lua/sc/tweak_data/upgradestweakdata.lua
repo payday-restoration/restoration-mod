@@ -3682,7 +3682,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_4 = "1" -- CD reduction on kill. Not defined here (?)
 	}
 	self.specialization_descs[17][3] = {
-		perk_value_1 = tostring(self.values.player.chico_injector_speed[1] % 1 * 100).."%" -- Movement speed bonus when injector is active
+		perk_value_1 = tostring(self.values.player.chico_injector_speed[1] % 1 * 100).."%", -- Movement speed bonus when injector is active
+        perk_value_2 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[17][5] = {
 		perk_value_1 = tostring(self.values.temporary.chico_injector[3][1] * 100).."%", -- HP regen on damage taken
@@ -3690,7 +3691,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[17][7] = {
 		perk_value_1 = tostring(self.values.player.chico_injector_low_health_multiplier[1][2] * 100).."%", -- HP regen buff on low HP
-		perk_value_2 = tostring(self.values.player.chico_injector_low_health_multiplier[1][1] * 100).."%" -- HP threshold for HP regen buff
+		perk_value_2 = tostring(self.values.player.chico_injector_low_health_multiplier[1][1] * 100).."%", -- HP threshold for HP regen buff
+        perk_value_3 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[17][9] = {
 		perk_value_1 = tostring(self.values.player.chico_injector_health_to_speed[1][1] * 10), -- Gives CD reduction for every X HP "healed" at max HP

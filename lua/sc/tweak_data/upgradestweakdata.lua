@@ -2209,7 +2209,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
 		works_with_armor_kit = true,
 		tick_time = 1,
-		total_ticks = 5,
+		total_ticks = 3,
 		max_stacks = 5,
 		stacking_cooldown = 0.1,
 		add_stack_sources = {
@@ -2283,8 +2283,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,
-		tick_time = 1,
-		total_ticks = 3,
+		tick_time = 0.5,
+		total_ticks = 4,
 		max_stacks = 5,
 		stacking_cooldown = 0.5,
 		add_stack_sources = {
@@ -2303,9 +2303,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 	self.values.player.damage_to_hot = {
-		0.1,
-		0.2,
-		0.3,
+		0.05,
+		0.10,
+		0.15,
 		
 		0.0 --Unused
 	}
@@ -2324,8 +2324,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
 		works_with_armor_kit = true,
 		tick_time = 1,
-		total_ticks = 5,
-		max_stacks = 10,
+		total_ticks = 3,
+		max_stacks = 5,
 		stacking_cooldown = 0.0,
 		add_stack_sources = {
 			bullet = false,
@@ -3482,8 +3482,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Grinder
 	self.specialization_descs[11][1] = {
-		perk_value_1 = tostring(self.values.player.damage_to_hot[1] * 10), -- HP regen per tick
-		perk_value_2 = tostring(self.damage_to_hot_data.total_ticks/self.damage_to_hot_data.tick_time), -- Duration of 1 stack
+		perk_value_1 = tostring(self.values.player.damage_to_hot[1] * 20), -- HP regen per tick
+		perk_value_2 = tostring(self.damage_to_hot_data.total_ticks*self.damage_to_hot_data.tick_time), -- Duration of 1 stack
 		perk_value_3 = tostring(self.damage_to_hot_data.max_stacks),-- Max amount of stacks
 		perk_value_4 = tostring(self.damage_to_hot_data.stacking_cooldown), -- Stacking CD
 		perk_value_5 = tostring(self.values.player.level_5_armor_addend_grinder[1] * -10), -- Flak Jacket armor reduction
@@ -3491,14 +3491,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_7 = tostring(self.values.player.level_5_deflection_addend_grinder[1] * -100), -- Flak Jacket deflection reduction
 	}
 	self.specialization_descs[11][3] = {
-		perk_value_1 = tostring((self.values.player.damage_to_hot[2] - self.values.player.damage_to_hot[1]) * 10),-- Additional HP regen per tick
+		perk_value_1 = tostring((self.values.player.damage_to_hot[2] - self.values.player.damage_to_hot[1]) * 20),-- Additional HP regen per tick
 	}
 	self.specialization_descs[11][5] = {
 		perk_value_1 = tostring(self.values.player.damage_to_hot_extra_ticks[1]), -- Additional duration for stack
 		perk_value_2 = "2" -- Body bag cases quantity. Not defined here so beware
 	}
 	self.specialization_descs[11][7] = {
-		perk_value_1 = tostring((self.values.player.damage_to_hot[3] - self.values.player.damage_to_hot[2]) * 10) -- Another additional HP regen per tick
+		perk_value_1 = tostring((self.values.player.damage_to_hot[3] - self.values.player.damage_to_hot[2]) * 20) -- Another additional HP regen per tick
 	}
 	self.specialization_descs[11][9] = {
 		perk_value_1 = tostring(self.values.player.hot_speed_bonus[1] * 100).."%", -- Movement speed bonus per stack
@@ -3958,7 +3958,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_7 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
 	}
 	self.multi_choice_specialization_descs[23][9][11] = {--Grinder
-		perk_value_1 = tostring(self.values.player.damage_to_hot[1] * 10), -- HP regen per tick
+		perk_value_1 = tostring(self.values.player.damage_to_hot[1] * 20), -- HP regen per tick
 		perk_value_2 = tostring(self.damage_to_hot_data.total_ticks/self.damage_to_hot_data.tick_time), -- Duration of 1 stack
 		perk_value_3 = tostring(self.damage_to_hot_data.max_stacks),-- Max amount of stacks
 		perk_value_4 = tostring(self.damage_to_hot_data.stacking_cooldown), -- Stacking CD

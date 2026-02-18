@@ -3587,12 +3587,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Biker
 	self.specialization_descs[16][1] = {
-        perk_value_1 = tostring(self.biker_per_crew_member), -- Tendency per crew member
-        perk_value_2 = tostring(self.biker_proximity / 100).." meter", -- Proximity requirement
-        perk_value_3 = tostring(self.biker_cohesion_gain), -- Cohesion gained nearby
-        perk_value_4 = tostring(self.biker_cohesion_loss), -- Cohesion lost from lack of proximity
-        perk_value_5 = tostring(self.biker_damage_weighs_for_stack_loss.armour), -- Cohesion lost from taking damage
-        perk_value_6 = tostring(self.values.team.player.biker_damage_to_lose[1]) -- Damage to be taken to lose stacks
+		perk_value_1 = tostring(self.biker_proximity / 100).." meter", -- Proximity requirement
+        perk_value_2 = tostring(self.biker_per_crew_member), -- Tendency per crew member
+        perk_value_3 = tostring(self.biker_damage_weighs_for_stack_loss.armour), -- Cohesion lost from taking damage
+        perk_value_4 = tostring(self.values.team.player.biker_damage_to_lose[1]) -- Damage to be taken to lose stacks
 	}
 	self.specialization_descs[16][3] = {
         perk_value_1 = tostring(self.values.player.biker_treat_as_more_cohesion[1]), -- Treat as having this many extra Cohesion stacks
@@ -3985,9 +3983,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_1 = tostring(self.values.team.player.civ_intimidation_mul[1] % 1 * 100).."%" -- Civs intimidated longer
 	}
 	self.multi_choice_specialization_descs[23][9][16] = { --Biker
-		perk_value_1 = tostring(self.values.player.wild_health_amount[1] * 10), -- HP regen per (team) kill
-		perk_value_2 = tostring(self.wild_trigger_time), -- CD of this ability
-		perk_value_3 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
+		perk_value_1 = tostring(self.biker_proximity / 100).." meter", -- Proximity requirement
+        perk_value_2 = tostring(self.biker_per_crew_member), -- Tendency per crew member
+        perk_value_3 = tostring(self.biker_damage_weighs_for_stack_loss.armour), -- Cohesion lost from taking damage
+        perk_value_4 = tostring(self.values.team.player.biker_damage_to_lose[1]), -- Damage to be taken to lose stacks
+        perk_value_5 = tostring(self.values.team.player.biker_crew_movespeed_bonus[1] * 100)..'%', -- Movement increase
+		perk_value_6 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.multi_choice_specialization_descs[23][9][17] = { --Kingpin
 		perk_value_1 = tostring(self.values.temporary.chico_injector[4][1] * 100).."%", -- HP regen on damage taken
@@ -4293,9 +4294,11 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_16",
 			desc_id = "menu_deck16_mrwi_desc",
 			upgrades = {
-				"player_wild_health_amount_1",
+				"player_biker_aura",
+				"team_biker_damage_to_lose_1",
+				"team_biker_crew_movespeed_bonus",
 				"team_civ_intimidation_mul",
-				"player_passive_loot_drop_multiplier_1"	
+				"player_passive_loot_drop_multiplier_1"
 			}
 		},
 		{ --Kingpin

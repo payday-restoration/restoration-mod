@@ -647,6 +647,8 @@ function PlayerDamage:damage_bullet(attack_data)
 				pm:unregister_message(Message.OnPlayerDodge, "dodge_ricochet_bullets")
 			end
 
+			self:_check_chico_heal(attack_data)
+
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				local unit_movement = self._unit:movement()

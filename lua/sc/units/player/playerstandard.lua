@@ -4927,7 +4927,7 @@ function PlayerStandard:_find_pickups(t)
 
 		if pickup:pickup() and pickup:pickup():pickup(self._unit) then
 			if may_find_grenade then
-				if managers.player:got_max_grenades() then
+				if managers.player:got_max_grenades() and managers.player._throwable_chance then
 					managers.player._throwable_chance.amount = 0
 				else
 					managers.player:regain_throwable_from_ammo() --Replace vanilla coroutine

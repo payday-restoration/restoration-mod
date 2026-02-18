@@ -3327,8 +3327,8 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			texture_bundle_folder = "wild",
 			icon_xy = {
-				0,
-				2
+				1,
+				3
 			}
 		},
 		{
@@ -3341,8 +3341,8 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			texture_bundle_folder = "wild",
 			icon_xy = {
-				1,
-				3
+				0,
+				2
 			}
 		}
 	}

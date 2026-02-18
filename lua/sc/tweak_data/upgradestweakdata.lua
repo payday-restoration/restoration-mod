@@ -3591,7 +3591,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Biker
 	self.specialization_descs[16][1] = {
         perk_value_1 = tostring(self.biker_per_crew_member), -- Tendency per crew member
-        perk_value_2 = tostring(self.biker_proximity / 100).." metres", -- Proximity requirement
+        perk_value_2 = tostring(self.biker_proximity / 100).." meter", -- Proximity requirement
         perk_value_3 = tostring(self.biker_cohesion_gain), -- Cohesion gained nearby
         perk_value_4 = tostring(self.biker_cohesion_loss), -- Cohesion lost from lack of proximity
         perk_value_5 = tostring(self.biker_damage_weighs_for_stack_loss.armour), -- Cohesion lost from taking damage

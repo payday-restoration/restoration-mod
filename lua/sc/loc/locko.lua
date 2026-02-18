@@ -124,6 +124,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_sociopathDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_survive_one_hitTitleID"] = "도깨비 문신 (야쿠자)",
 				["RestorationModInfo_survive_one_hitDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.",
+				["RestorationModInfo_cohesionTitleID"] = "단결력 (바이커)",
+				["RestorationModInfo_cohesionDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.\n숫자는 단결력 스택이 8개마다 표시됩니다.",
+				["RestorationModInfo_heisters_in_auraTitleID"] = "근처에 있는 하이스터 표시 (바이커)",
+				["RestorationModInfo_heisters_in_auraDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.",
+				["RestorationModInfo_dig_in_your_heelsTitleID"] = "너의 가치를 보여라! (바이커)",
+				["RestorationModInfo_dig_in_your_heelsDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.",				
 
 				["RestorationModother_buffsTitleID"] = "===기타===",
 				["RestorationModother_buffsDescID"] = "스킬이나 특성 덱에 관련되어 있지 않는 측면에 대한 버프 표시기를 엽니다.",
@@ -6276,8 +6282,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck20_9_desc_sc"] = "적을 처치할 때마다 기체 디스펜서의 재사용 대기 시간이 ##$perk_value_1##초씩 감소합니다.\n\n지정한 대상이 적을 처치할 때마다 기체 디스펜서의 대기 시간이 ##$perk_value_2##초씩 감소하며, 이 효과는 대상과 지정이 풀릴 때까지 적용됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Biker--
-		["menu_deck16_1_desc_sc"] = "당신과 당신의 팀원 (이하 \"팀원\") 단결 스택을 획득할 수 있습니다. 단결력 스탯은 주변 팀원 수의 $perk_value_1배에 해당하는 수치로 유지되지만, 팀원이 당신으로부터 #{skill_color}#$perk_value_2## 이내에 있고 쓰려지지 않는 상태여야 합니다. 단결력 스택은 해당 수치보다 낮으면 초당 #{skill_color}#$perk_value_3## 스택을 얻지만, 얻지 못하면 스택을 초당 #{important_1}#$perk_value_4##씩 잃으며 팀원의 단결력 스택이 목표 수치에서 멀어질 수록 잃는 속도가 빨라집니다.\n팀원은 피해를 #{skill_color}#$perk_value_6##씩 받을때마다 단결력 스택 #{important_1}#$perk_value_5##개를 잃으며, 체력 피해의 경우 두 배로 계산됩니다.\n\n#{risk}#참고: 여러 바이커 사용자가 동일한 카드를 선택하더라도 카드 효과는 중첩되지 않으며, 주변에 여러 바이커 사용자가 있어도 단결력 스택이 더 빨리 쌓이지 않습닏. 서로 가까이 있는 여러 바이커 사용자의 단결력 스택이 다를 경우, 더 높은 스택이 우선 적용됩니다.##",
-		["menu_deck16_1_short_sc"] = "팀원들이 단결력 스택을 획득할 수 있습니다. 팀원들의 단결력 스택은 서로 가까이 있을수록 증가하고, 멀어져 있거나 피해를 입을 경우 감소합니다.",
+		["menu_deck16_1_desc_sc"] = "쓰러지지 않는 상태에서 #{skill_color}#$perk_value_2## 반경의 오라를 발산합니다. 오라 안에 있는 당신과 팀원은 단결력 스택을 얻습니다. 단결력은 오라 범위 내에 있는 팀원 수(본인 포함)의 #{skill_color}#$perk_value_1 배에 해당하는 목표값으로 도달하며##, 목표값보다 낮으면 증가하고 높으면 감소합니다. 차이가 클수록 조정 속도가 빨라집니다.\n팀원은 피해를 #{skill_color}#$perk_value_6##씩 입을 때마다 단결력 #{important_1}#$perk_value_5## 스택씩 감소합니다. (체력 피해의 경우 두 배로 감소).\n\n#{risk}#참고: 여러 바이커의 오라가 겹치는 경우, 팀원은 가장 높은 목표값을 가진 쪽을 사용합니다. 또한 여러 바이커 특성 덱이 있어도 단결력 증가율은 중첩되지 않습니다. 카드 효과는 중첩되지 않지만, 모든 상황에서 얻는 단결력은 선택된 모든 효과에 적용됩니다.##",
+		["menu_deck16_1_short_sc"] = "팀원들이 단결력 스택을 획득할 수 있습니다. 팀원들의 단결력 스택은 서로 가까이 있을수록 증가하고, 멀어져 있거나 피해를 입을 경우 감소합니다. 단결력 스택은 선택한 카드에 따라 다양한 이점을 줍니다.",
 		["menu_deck16_1_1_sc"] = "다같이 뭉쳐!",
 		["menu_deck16_1_1_desc_sc"] = "팀원이 단결력 스택을 8개 얻을 때마다 팀원의 받는 치료량이 #{skill_color}#$perk_value_1## 증가합니다.",
 		["menu_deck16_1_2_sc"] = "탄 아껴!",
@@ -6300,7 +6306,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck16_7_desc_sc"] = "회피율이 추가로 #{skill_color}#$perk_value_1## 증가합니다.",
 		["menu_deck16_7_1_sc"] = "다시 일어나!",
 		["menu_deck16_7_1_desc_sc"] = "되살아났을때 단결력 스택 #{skill_color}#$perk_value_1##개를 얻습니다.",
-		["menu_deck16_7_2_sc"] = "너의 가치를 보여줘!",
+		["menu_deck16_7_2_sc"] = "너의 가치를 보여라!",
 		["menu_deck16_7_2_desc_sc"] = "적을 #{skill_color}#$perk_value_2##명씩 처치할 때마다 당신과 주변의 모든 팀원이 단결력 스택 #{skill_color}#$perk_value_1##개를 얻습니다.\n이 효과는 해당 카드를 선택한 다른 바이커 사용자의 효과와 중첩됩니다.\n\n#{risk}#참고: 이런 방식으로 얻은 단결력 스택은 팀원의 단결력 스택을 정상적인 수준 이상으로 증가시킬 수 없습니다.##",
 		["menu_deck16_7_2_short_sc"] = "적을 #{skill_color}#$perk_value_2##명씩 처치할 때마다 당신과 주변의 모든 팀원이 단결력 스택 #{skill_color}#$perk_value_1##개를 얻습니다.",
 

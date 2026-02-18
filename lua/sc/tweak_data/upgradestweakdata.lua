@@ -2806,8 +2806,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	-- How much damage must be taken to lose a stack of Cohesion.
 	self.values.team.player.biker_damage_to_lose = {
-		16, -- default
-		32 -- Dig In Your Heels
+		25, -- default
+		50 -- Dig In Your Heels
 	}
 
 	-- Healing potency increase from Stick Together, per crew member.

@@ -831,7 +831,8 @@ function SkillTreeTweakData:init(tweak_data)
 						["icon_xy"] = {3, 0},
 						[1] = {
 							upgrades = {
-								"player_fully_loaded_pick_up_multiplier"
+								"player_fully_loaded_pick_up_multiplier",
+								"player_throwables_multiplier"
 							},
 							cost = self.costs.hightier
 						},
@@ -915,7 +916,7 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {9, 4},
 					[1] = {
 						upgrades = {
-							"player_throwables_multiplier"
+							--TEMP
 						},
 						cost = self.costs.hightier
 					},

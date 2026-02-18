@@ -647,7 +647,9 @@ function PlayerDamage:damage_bullet(attack_data)
 				pm:unregister_message(Message.OnPlayerDodge, "dodge_ricochet_bullets")
 			end
 
-			self:_check_chico_heal(attack_data)
+			if 0 < self:get_real_armor() then
+				self:_check_chico_heal(attack_data)
+			end
 
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then

@@ -647,9 +647,9 @@ function PlayerDamage:damage_bullet(attack_data)
 				pm:unregister_message(Message.OnPlayerDodge, "dodge_ricochet_bullets")
 			end
 
-			if 0 < self:get_real_armor() then
-				self:_check_chico_heal(attack_data)
-			end
+			--if 0 < self:get_real_armor() then
+				self:_check_chico_heal(attack_data, true)
+			--end
 
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
@@ -1226,7 +1226,7 @@ end)
 
 --Include deflection in calcs. Doesn't work in cases where armor is pierced, but I can't be assed to fix it.
 --Also ignores temp hp in max health calcs. Not important for now, but may be in the future.
-function PlayerDamage:_check_chico_heal(attack_data)
+function PlayerDamage:_check_chico_heal(attack_data, dodge_clamp)
 	if managers.player:has_activate_temporary_upgrade("temporary", "chico_injector") then
 		local dmg_to_hp_ratio = managers.player:temporary_upgrade_value("temporary", "chico_injector", 0)
 
@@ -1238,7 +1238,8 @@ function PlayerDamage:_check_chico_heal(attack_data)
 			end
 		end
 
-		local health_received = attack_data.damage * dmg_to_hp_ratio
+		local max_health_conversion = dodge_clamp and math.min(attack_data.damage, self:_max_armor()) or attack_data.damage
+		local health_received = max_health_conversion * dmg_to_hp_ratio
 
 		if self._armor_broken then
 			local deflection = math.max(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), self._max_deflection)

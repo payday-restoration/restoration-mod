@@ -2668,6 +2668,15 @@ function PlayerManager:remove_synced_carry_stacker(peer)
 	self:update_carrystacker_hud(peer_id)
 end
 
+function PlayerManager:get_max_carry_weight()
+	local max_weight = tweak_data.player.max_carry_weight
+	
+	if managers.player:has_category_upgrade("carry", "increased_carry_weight") then
+		max_weight = max_weight - managers.player:upgrade_value("carry", "increased_carry_weight", 1)
+	end
+	return max_weight
+end
+
 --- This function will be called to check whether the player can carry a bag.
 Hooks:PostHook(PlayerManager, "can_carry", "ResCarryStackerCanCarry", function(self, carry_id)
 	if not Hooks:GetReturn() then

@@ -3043,6 +3043,30 @@ function PlayerStandard:_update_run_and_shoot_anim(t)
 	end
 end
 
+function PlayerStandard:_update_fat_fuck(t)
+	local pm = managers.player
+	if not pm then return end
+	local peer_id = managers.network:session():local_peer():id()
+	local remaining_cdata = pm:get_synced_carry_stacker(peer_id) or {}
+	local max_weight = pm and pm:get_max_carry_weight()
+	local current_weight = pm and pm._weight
+	local carry_ratio = (1 - current_weight) / (1 - max_weight)
+	local overweight = remaining_cdata and #remaining_cdata > 0 and carry_ratio >= 0.66
+	if overweight and not pm._fat_fuck then
+		pm._fat_fuck = true --tossing bags does wonky stuff in playerstandard so the flag goes in playermanager
+		if self._state_data.in_full_steelsight then
+			managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_fatty") })
+			self._fat_fuck_t = t + 2
+		end
+		self:_interupt_action_steelsight()
+	elseif pm._fat_fuck and not overweight then
+		pm._fat_fuck = nil
+		if self._steelsight_wanted ~= true and self._controller:get_input_bool("secondary_attack") then
+			self._steelsight_wanted = true
+		end
+	end
+end
+
 --Updates burst fire and minigun spinup.
 Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	if alive(self._equipped_unit) then
@@ -3051,6 +3075,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		self:_shooting_move_speed_timer(t, dt)
 		self:_last_shot_recoil_t(t, dt)
 	end
+	self:_update_fat_fuck(t)
 	self:_update_js_t(t, dt)
 	self:_update_d_scope_t(t, dt)
 	self:_update_spread_stun_t(t, dt)
@@ -3682,7 +3707,7 @@ function PlayerStandard:_check_action_steelsight(t, input)
 		end
 	elseif input.btn_steelsight_press or self._steelsight_wanted then
 
-		if self._state_data.in_steelsight then
+		if self._state_data.in_steelsight and not self._setting_hold_to_steelsight then 
 			self:_end_action_steelsight(t)
 
 			new_action = true
@@ -3738,7 +3763,11 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		end
 	end
 	--Here!
-	if self:_changing_weapon() or self:_is_overheating() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._d_scope_t or (self._is_sliding and not self._equipped_unit:base():run_and_shoot_allowed()) then
+	if managers.player._fat_fuck or self:_changing_weapon() or self:_is_overheating() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._d_scope_t or (self._is_sliding and not self._equipped_unit:base():run_and_shoot_allowed()) then
+		if managers.player._fat_fuck and (self._fat_fuck_t or 0) < t and not self._steelsight_wanted then
+			self._fat_fuck_t = t + 2
+			managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_fatty") })
+		end
 		self._steelsight_wanted = true
 
 		return

@@ -1936,17 +1936,27 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_jav.count_as_melee = true
 
 	self.projectiles.fir_com.max_amount = 3
-	self.projectiles.smoke_screen_grenade.base_cooldown = 35
-	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
-	self.projectiles.tag_team.base_cooldown = 80
-	self.projectiles.concussion.max_amount = 3
-	self.projectiles.concussion.base_pickup_chance = {0.0133, 0.025}
-	self.projectiles.wpn_gre_electric.max_amount = 3
-	self.projectiles.wpn_gre_electric.base_pickup_chance = {0.0133, 0.025}
+	self.projectiles.fir_com.base_pickup_chance = {0.0142, 0.025}
+	self.projectiles.molotov.max_amount = 3
+	self.projectiles.molotov.base_pickup_chance = {0.0142, 0.025}
 	self.projectiles.poison_gas_grenade.max_amount = 3
-	self.projectiles.poison_gas_grenade.base_pickup_chance = {0.015, 0.03}
+	self.projectiles.poison_gas_grenade.base_pickup_chance = {0.0142, 0.025}
+	self.projectiles.concussion.max_amount = 3
+	self.projectiles.concussion.base_pickup_chance = {0.0142, 0.025}
+	self.projectiles.wpn_gre_electric.max_amount = 3
+	self.projectiles.wpn_gre_electric.base_pickup_chance = {0.0142, 0.025}
 
+	self.projectiles.frag.max_amount = 3
+	self.projectiles.frag.base_pickup_chance = {0.0125, 0.025}
+	self.projectiles.dada_com.max_amount = 3
+	self.projectiles.dada_com.base_pickup_chance = {0.0125, 0.025}
+	self.projectiles.frag_com.max_amount = 3
+	self.projectiles.frag_com.base_pickup_chance = {0.0125, 0.025}
+	self.projectiles.dynamite.max_amount = 3
+	self.projectiles.dynamite.base_pickup_chance = {0.0125, 0.025}
 	self.projectiles.sticky_grenade.throw_shout = nil
+	self.projectiles.sticky_grenade.max_amount = 3
+	self.projectiles.sticky_grenade.base_pickup_chance = {0.0125, 0.025}
 
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.throw_allowed_expire_t = 0.1
@@ -1958,6 +1968,9 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 
+	self.projectiles.smoke_screen_grenade.base_cooldown = 35
+	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
+	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.pocket_ecm_jammer.max_amount = 1
 	self.projectiles.pocket_ecm_jammer.base_cooldown = 60
 	
@@ -1971,19 +1984,12 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.concussion.no_cheat_count = true
 	self.projectiles.poison_gas_grenade.no_cheat_count = true
 	self.projectiles.frag.no_cheat_count = true
-	self.projectiles.frag.base_pickup_chance = {0.0133, 0.02}
 	self.projectiles.dynamite.no_cheat_count = true
-	self.projectiles.dynamite.base_pickup_chance = {0.0133, 0.02}
 	self.projectiles.frag_com.no_cheat_count = true
-	self.projectiles.frag_com.base_pickup_chance = {0.0133, 0.02}
 	self.projectiles.dada_com.no_cheat_count = true
-	self.projectiles.dada_com.base_pickup_chance = {0.0133, 0.02}
 	self.projectiles.sticky_grenade.no_cheat_count = true
-	self.projectiles.sticky_grenade.base_pickup_chance = {0.0133, 0.02}
 	self.projectiles.molotov.no_cheat_count = true
-	self.projectiles.molotov.base_pickup_chance = {0.0142, 0.025}
 	self.projectiles.fir_com.no_cheat_count = true
-	self.projectiles.fir_com.base_pickup_chance = {0.0142, 0.02}
 
 	--Animation overrides for grenades so they aren't shitty. Like seriously, Javelin throw for grenades..?	
 	--HE

@@ -701,7 +701,7 @@ tweak_data.projectiles.molotov.dot_data_name = "proj_molotov"
 
 --Incendiary Nades, idea to make em a mollie--
 tweak_data.projectiles.fir_com.range = 450
-tweak_data.projectiles.fir_com.damage = 9.0
+tweak_data.projectiles.fir_com.damage = 12.0
 tweak_data.projectiles.fir_com.player_damage = 4.5
 tweak_data.projectiles.fir_com.burn_duration = 12
 tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"

@@ -3494,7 +3494,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_1 = tostring((self.values.player.damage_to_hot[2] - self.values.player.damage_to_hot[1]) * 20),-- Additional HP regen per tick
 	}
 	self.specialization_descs[11][5] = {
-		perk_value_1 = tostring(self.values.player.damage_to_hot_extra_ticks[1]), -- Additional duration for stack
+		perk_value_1 = tostring(self.values.player.damage_to_hot_extra_ticks[1]*self.damage_to_hot_data.tick_time), -- Additional duration for stack
 		perk_value_2 = "2" -- Body bag cases quantity. Not defined here so beware
 	}
 	self.specialization_descs[11][7] = {

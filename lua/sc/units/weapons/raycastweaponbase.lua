@@ -1935,7 +1935,7 @@ function ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, us
 
 		if can_stun(col_ray.unit) then
 			local action_data = {
-				variant = "stun",
+				variant = "bullet",
 				damage = 0,
 				attacker_unit = user_unit,
 				weapon_unit = weapon_unit,

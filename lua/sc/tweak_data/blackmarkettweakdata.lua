@@ -1940,9 +1940,9 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
 	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.concussion.max_amount = 3
-	self.projectiles.concussion.base_pickup_chance = {0.0125, 0.025}
+	self.projectiles.concussion.base_pickup_chance = {0.0133, 0.025}
 	self.projectiles.wpn_gre_electric.max_amount = 3
-	self.projectiles.wpn_gre_electric.base_pickup_chance = {0.0125, 0.025}
+	self.projectiles.wpn_gre_electric.base_pickup_chance = {0.0133, 0.025}
 	self.projectiles.poison_gas_grenade.max_amount = 3
 	self.projectiles.poison_gas_grenade.base_pickup_chance = {0.015, 0.03}
 

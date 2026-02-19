@@ -1257,7 +1257,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.second_deployable = {true}
 					
 					self.skill_descs.engineering = {
-						skill_value_b1 = tostring(self.values.grenade_crate.ammo_increase[1] * self.ordnance_bag_ammo * 100).."%", -- More ammo for weapons
+						skill_value_b1 = tostring((self.values.grenade_crate.ammo_increase[1] - 1) * self.ordnance_bag_ammo * 100).."%", -- More ammo for weapons
 						skill_value_p1 = tostring(self.values.grenade_crate.quantity[1] + 1) -- Quantity of ammo bags
 					}
 	

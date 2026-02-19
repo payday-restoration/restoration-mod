@@ -6376,6 +6376,9 @@ function BlackMarketGui:update_info_text()
 			deployable_uses = tweak_data.upgrades.ecm_jammer_base_battery_life * mult_1 * mult_2
 		elseif deployable_id == "sentry_gun_silent" then
 			deployable_id = "sentry_gun"
+		elseif deployable_id == "grenade_crate" then
+			deployable_uses = tweak_data.upgrades.ordnance_bag_grenades
+			deployable_secondary_info = tweak_data.upgrades.ordnance_bag_ammo * managers.player:upgrade_value("grenade_crate", "ammo_increase", 1) * 100 .. "%"
 		end
 
 		if deployable_id == "sentry_gun" then
@@ -6392,7 +6395,8 @@ function BlackMarketGui:update_info_text()
 		local description = managers.localization:text(tweak_data.blackmarket.deployables[slot_data.name].desc_id, {
 			BTN_INTERACT = managers.localization:btn_macro("interact", true),
 			BTN_USE_ITEM = managers.localization:btn_macro("use_item", true),
-			deployable_uses = deployable_uses
+			deployable_uses = deployable_uses,
+			deployable_secondary_info = deployable_secondary_info
 		})
 		for color_id in string.gmatch(description, "#%{(.-)%}#") do
 			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])

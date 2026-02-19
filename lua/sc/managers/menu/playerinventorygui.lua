@@ -2750,6 +2750,9 @@ function PlayerInventoryGui:_update_info_deployable(name, slot)
 			deployable_uses = tweak_data.upgrades.ecm_jammer_base_battery_life * mult_1 * mult_2
 		elseif deployable_id == "sentry_gun_silent" then
 			deployable_id = "sentry_gun"
+		elseif deployable_id == "grenade_crate" then
+			deployable_uses = tweak_data.upgrades.ordnance_bag_grenades
+			deployable_secondary_info = tweak_data.upgrades.ordnance_bag_ammo * managers.player:upgrade_value("grenade_crate", "ammo_increase", 1) * 100 .. "%"
 		end
 
 		if deployable_id == "sentry_gun" then
@@ -2777,7 +2780,8 @@ function PlayerInventoryGui:_update_info_deployable(name, slot)
 			text_string = text_string .. managers.localization:text(((has_short_desc and deployable_data.desc_id .. "_short") or deployable_data.desc_id), {
 				BTN_INTERACT = managers.localization:btn_macro("interact", true),
 				BTN_USE_ITEM = managers.localization:btn_macro("use_item", true),
-				deployable_uses = deployable_uses
+				deployable_uses = deployable_uses,
+				deployable_secondary_info = deployable_secondary_info
 			}) .. "\n"
 		end
 	end

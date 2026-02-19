@@ -3045,13 +3045,19 @@ end
 
 function PlayerStandard:_update_fat_fuck(t)
 	local pm = managers.player
+	local is_solo
+	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+		if Global and Global.game_settings and Global.game_settings.single_player then
+			is_solo = true
+		end	
+	end
 	if not pm then return end
 	local peer_id = managers.network:session():local_peer():id()
 	local remaining_cdata = pm:get_synced_carry_stacker(peer_id) or {}
 	local max_weight = pm and pm:get_max_carry_weight()
 	local current_weight = pm and pm._weight
 	local carry_ratio = (1 - current_weight) / (1 - max_weight)
-	local overweight = remaining_cdata and #remaining_cdata > 0 and carry_ratio >= 0.66
+	local overweight = not is_solo and remaining_cdata and #remaining_cdata > 0 and carry_ratio >= 0.66
 	if overweight and not pm._fat_fuck then
 		pm._fat_fuck = true --tossing bags does wonky stuff in playerstandard so the flag goes in playermanager
 		if self._state_data.in_full_steelsight then

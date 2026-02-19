@@ -2737,6 +2737,7 @@ function PlayerInventoryGui:_update_info_deployable(name, slot)
 		local amount_2 = nil
 		local has_short_desc = managers.localization:exists(deployable_data.desc_id .. "_short")
 		local deployable_uses = nil
+		local deployable_secondary_info = nil
 
 		if deployable_id == "doctor_bag" then
 			deployable_uses = tweak_data.upgrades.doctor_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "amount_increase") or 0)

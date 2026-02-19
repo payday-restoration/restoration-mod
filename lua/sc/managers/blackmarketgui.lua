@@ -6366,6 +6366,8 @@ function BlackMarketGui:update_info_text()
 
 		local deployable_id = slot_data.name
 		local deployable_uses = nil
+		local deployable_secondary_info = nil
+		
 		if deployable_id == "doctor_bag" then
 			deployable_uses = tweak_data.upgrades.doctor_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "amount_increase") or 0)
 		elseif deployable_id == "ammo_bag" then

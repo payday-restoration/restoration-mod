@@ -1205,9 +1205,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.regain_throwable_from_ammo = {2.0} --non-linear mult, 2x translates to a 50% increase
 
 					self.skill_descs.bandoliers = {
-						skill_value_b1 = tostring(self.values.player.extra_ammo_multiplier[1] % 1 * 100).."%", -- +Max ammo capacity
+						skill_value_b1 = tostring(self.values.player.fully_loaded_pick_up_multiplier[1] % 1 * 100).."%", -- Increase ammo pick up
 						skill_value_b2 = tostring(self.values.player.throwables_multiplier[1] % 1 * 100).."%", -- more throwables
-						skill_value_p1 = tostring(self.values.player.fully_loaded_pick_up_multiplier[1] % 1 * 100).."%", -- Increase ammo pick up
+						skill_value_p1 = tostring(self.values.player.extra_ammo_multiplier[1] % 1 * 100).."%", -- +Max ammo capacity
 						skill_value_p2 = tostring(math.floor((1 - 1 / self.values.player.regain_throwable_from_ammo[1]) * 100)) .. "%", --Chance to pick up throwable from ammo boxes
 					}
 

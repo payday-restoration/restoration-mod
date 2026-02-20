@@ -3045,7 +3045,7 @@ end
 
 function PlayerStandard:_update_fat_fuck(t)
 	local pm = managers.player
-	local is_solo
+	local is_solo = nil
 	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
 		if Global and Global.game_settings and Global.game_settings.single_player then
 			is_solo = true

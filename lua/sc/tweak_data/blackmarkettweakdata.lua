@@ -1960,7 +1960,6 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.throw_allowed_expire_t = 0.1
-		self.projectiles.xmas_snowball.expire_t = 1.3
 		self.projectiles.xmas_snowball.max_amount = 3
 		self.projectiles.xmas_snowball.base_cooldown_no_perk = true
 		self.projectiles.xmas_snowball.base_cooldown = 60

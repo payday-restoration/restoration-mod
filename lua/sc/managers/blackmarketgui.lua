@@ -6405,7 +6405,14 @@ function BlackMarketGui:update_info_text()
 		end
 		description = description:gsub("#%{(.-)%}#", "##")
 
-		updated_texts[4].text = description
+		updated_texts[4].text = description .. "\n\n"
+
+		if slot_data.global_value and slot_data.global_value ~= "normal" then
+			updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
+
+			table.insert(updated_texts[4].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
+		end
+
 	elseif identifier == self.identifiers.character then
 		updated_texts[1].text = slot_data.name_localized
 

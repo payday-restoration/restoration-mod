@@ -18360,7 +18360,7 @@ function CharacterTweakData:_set_easy()
 	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
 	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
 	self.shield.weapon.is_pistol.melee_range = 200
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 25
 	self.old_hoxton_mission.HEALTH_INIT = 25
@@ -18423,7 +18423,7 @@ function CharacterTweakData:_set_normal()
 	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
 	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
 	self.shield.weapon.is_pistol.melee_range = 200
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 50
 	self.old_hoxton_mission.HEALTH_INIT = 50
@@ -18486,7 +18486,7 @@ function CharacterTweakData:_set_hard()
 	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
 	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
 	self.shield.weapon.is_pistol.melee_range = 200
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 75
 	self.old_hoxton_mission.HEALTH_INIT = 75
@@ -18549,7 +18549,7 @@ function CharacterTweakData:_set_overkill()
 	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
 	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
 	self.shield.weapon.is_pistol.melee_range = 200
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1.25
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 100
 	self.old_hoxton_mission.HEALTH_INIT = 100
@@ -18607,7 +18607,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.shield.weapon.is_pistol.melee_range = 200
 	self.autumn.damage.bullet_damage_mul = 0.6
 		
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1.5
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 125
 	self.old_hoxton_mission.HEALTH_INIT = 125
@@ -18677,7 +18677,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.old_hoxton_mission.HEALTH_INIT = 150
 	self.spa_vip.HEALTH_INIT = 150
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1.75
 	self.concussion_multiplier = 1
 	self:_multiply_all_speeds(1, 1)
 end
@@ -18753,7 +18753,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.old_hoxton_mission.HEALTH_INIT = 175
 	self.spa_vip.HEALTH_INIT = 175
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1.75
 	self.concussion_multiplier = 1
 	self:_multiply_all_speeds(1, 1.05)
 end

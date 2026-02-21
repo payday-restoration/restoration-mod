@@ -773,7 +773,7 @@ end
 function GroupAIStateBase:has_room_for_police_hostage()
 	local nr_hostages_allowed = 4
 
-	return nr_hostages_allowed > self._police_hostage_headcount
+	return true
 end
 
 function GroupAIStateBase:num_converted_police()

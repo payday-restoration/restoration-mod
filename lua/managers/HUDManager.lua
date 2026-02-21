@@ -127,7 +127,9 @@ function HUDManager:_upd_animate_level_suspicion(t,amount,amount_max,amount_inte
 	panel:child("suspicion_interp"):set_color(Color(amount_interpolated/amount_max,0,0))
 	suspicion_icon:set_alpha(ratio + base_icon_alpha)
 	panel:child("suspicion_circle"):set_color(Color(ratio,0,0)) --progress radial
-	panel:child("suspicion_checkin"):set_color(Color(tweak_data.stealth_intimidiated_checkin.limit,0,0)) -- Show the stealth checkin limit.
+	-- While we're testing infinite cop doms and fixed 99% checkin limit on all difficulties, no point in adding extra visual noise to the HUD.
+	-- Uncomment this line if we decide this shit's fucked, or remove it (and all suspicion_checkin stuff) if we decide it's based, actually.
+	-- panel:child("suspicion_checkin"):set_color(Color(tweak_data.stealth_intimidiated_checkin.limit,0,0)) -- Show the stealth checkin limit.
 	local alert_on = amount >= amount_max
 	
 	if alert_on then

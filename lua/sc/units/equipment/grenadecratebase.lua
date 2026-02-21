@@ -27,11 +27,36 @@ function GrenadeCrateBase:take_grenade(unit)
 end
 
 --Overkill Grenade Case
-function GrenadeCrateDeployableBase:setup()
-	self._max_grenade_amount = tweak_data.upgrades.ordnance_bag_grenades
+function GrenadeCrateDeployableBase.spawn(pos, rot, ammo_upgrade_lvl)
+	local unit_name = "units/pd2_dlc_mxm/equipment/gen_equipment_grenade_crate/gen_equipment_grenade_crate"
+	local unit = World:spawn_unit(Idstring(unit_name), pos, rot)
+
+	managers.network:session():send_to_peers_synched("sync_ordnance_bag_setup", unit, ammo_upgrade_lvl)
+	unit:base():setup(ammo_upgrade_lvl)
+
+	return unit
+end
+
+function GrenadeCrateDeployableBase:init(unit)
 	self._ammo_amount = tweak_data.upgrades.ordnance_bag_ammo * managers.player:upgrade_value("grenade_crate", "ammo_increase", 1)
+	GrenadeCrateDeployableBase.super.init(self, unit, false)
+end
+
+function GrenadeCrateDeployableBase:setup(ammo_upgrade_lvl)
+	self._max_grenade_amount = tweak_data.upgrades.ordnance_bag_grenades
+	self._ammo_amount = tweak_data.upgrades.ordnance_bag_ammo * managers.player:upgrade_value_by_level("grenade_crate", "ammo_increase", ammo_upgrade_lvl)
 	
 	GrenadeCrateDeployableBase.super.setup(self)
+end
+
+function GrenadeCrateDeployableBase:sync_setup(ammo_upgrade_lvl)
+	if self._validate_clbk_id then
+		managers.enemy:remove_delayed_clbk(self._validate_clbk_id)
+
+		self._validate_clbk_id = nil
+	end
+
+	self:setup(ammo_upgrade_lvl)
 end
 
 function GrenadeCrateDeployableBase:take_grenade(unit)

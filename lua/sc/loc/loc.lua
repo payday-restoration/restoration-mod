@@ -5305,7 +5305,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["loading_stealth_res_8"] = "While carrying any bag, you can be seen from much farther away, and will also be detected much faster while standing, sprinting, or jumping. Stay low and slow.",
 		["loading_stealth_res_9"] = "You get up to 4 ECMs instead of 2 like in vanilla, but they have half duration.",
 		["loading_stealth_res_10"] = "Suppressed weapons generate no noise in stealth.",
-		["loading_stealth_res_11"] = "You can take up to 4 cops hostage in stealth, just like in loud.",
+		["loading_stealth_res_11"] = "You can take up to 8 cops hostage in stealth, just like in loud.",
 		["loading_stealth_res_12"] = "Stealth is more forgiving, allowing for more recovery.",
 		["loading_stealth_res_13"] = "Guards will no longer instantly die from any source of damage while unalerted. Aim for the head, and bring something more damaging than your fists.",
 		["loading_stealth_res_14"] = "When the suspicion meter is full, you have 60 seconds to finish up what you started before the alarm is raised.",

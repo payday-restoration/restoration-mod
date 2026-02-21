@@ -771,9 +771,9 @@ end
 
 --No longer increases with more players, also ignores converts.
 function GroupAIStateBase:has_room_for_police_hostage()
-	local nr_hostages_allowed = 4
+	local nr_hostages_allowed = 8
 
-	return true
+	return nr_hostages_allowed > self._police_hostage_headcount
 end
 
 function GroupAIStateBase:num_converted_police()

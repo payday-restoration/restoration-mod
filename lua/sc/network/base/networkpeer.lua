@@ -49,6 +49,14 @@ function NetworkPeer:mark_cheater(reason, auto_kick)
 	return
 end
 
+Hooks:PostHook(NetworkPeer, "set_outfit_string", "res_set_outfit_string", function(self, outfit_string)
+	log("[OUTFIT SET] peer id: " .. tostring(self._id))
+	log("[OUTFIT SET] local peer id: " .. tostring(managers.network:session():local_peer():id()))
+	log("[OUTFIT SET] outfit_string: " .. tostring(outfit_string))
+
+	log(debug.traceback())
+end)
+
 Hooks:PostHook(NetworkPeer, "sync_data", "res_sync_data", function(self, peer)
 	if Network:is_server() then
 		managers.enemy:update_intimidated_guard_data_to_peer(peer)

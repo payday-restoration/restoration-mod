@@ -203,7 +203,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"x_breech",
 					"ching",
 					"erma",
-					"sap"
+					"sap",
+					"funder_strike"
 				}
 			},
 		l27 = {
@@ -2634,16 +2635,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		self.values.player.melee_fists_damage_effect_multiplier = {2}
 		self.values.player.melee_brass_damage_multiplier = {10}
 		self.values.player.melee_brass_damage_effect_multiplier = {5}
-		self.values.tony = {
-			extra_ammo_multiplier = {
-				0.5,
-				0.2
-			},
-			pick_up_multiplier = {
-				0.2,
-				0.05
-			}
-		}
+		self.values.player.tony_pick_up_multiplier = {0.2, 0.05}
+		self.values.player.tony_extra_ammo_multiplier = {0.5, 0.2}
+
 		self.values.player.buildup_meter_rick = {
 			{ combo_add_mod = 2, combo_max_mod = -50, ene_mult_mod = 0.7 },
 			{ combo_add_mod = 0, combo_max_mod = -20, ene_mult_mod = 1.0  }, --Tony
@@ -3433,8 +3427,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.multi_choice_specialization_descs[9] = { [9] = {} } --table setup for last card multichoice
 	self.multi_choice_specialization_descs[9][9][2] = { --Tony
 		perk_value_1 = tostring(self.values.player.melee_fists_damage_multiplier[1] * 100) .. "%",
-		perk_value_2 = tostring((1 - self.values.tony.extra_ammo_multiplier[1]) * 100) .. "%",
-		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[1]) * 100) .. "%",
+		perk_value_2 = tostring((1 - self.values.player.tony_extra_ammo_multiplier[1]) * 100) .. "%",
+		perk_value_3 = tostring((1 - self.values.player.tony_pick_up_multiplier[1]) * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[2].combo_add_mod),
 		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
 		perk_value_6 = tostring(math.abs(self.values.player.buildup_meter_rick[2].combo_max_mod)),
@@ -3470,8 +3464,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.multi_choice_specialization_descs[9][9][9] = { --Tony's Revenge
 		perk_value_1 = tostring(self.values.player.melee_brass_damage_multiplier[1] * 100) .. "%",
-		perk_value_2 = tostring((1 - self.values.tony.extra_ammo_multiplier[2]) * 100) .. "%",
-		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[2]) * 100) .. "%",
+		perk_value_2 = tostring((1 - self.values.player.tony_extra_ammo_multiplier[2]) * 100) .. "%",
+		perk_value_3 = tostring((1 - self.values.player.tony_pick_up_multiplier[2]) * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[3].combo_add_mod),
 		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[4]),
 		perk_value_6 = tostring(math.abs(self.values.player.buildup_meter_rick[3].combo_max_mod)),
@@ -6138,8 +6132,8 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "extra_ammo_multiplier",
-			category = "tony"
+			upgrade = "tony_extra_ammo_multiplier",
+			category = "player"
 		}
 	}
 	self.definitions.buildup_meter_tony_extra_ammo_multiplier_2 = {
@@ -6147,8 +6141,8 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 2,
-			upgrade = "extra_ammo_multiplier",
-			category = "tony"
+			upgrade = "tony_extra_ammo_multiplier",
+			category = "player"
 		}
 	}
 	self.definitions.buildup_meter_tony_pick_up_multiplier_1 = {
@@ -6156,8 +6150,8 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "pick_up_multiplier",
-			category = "tony"
+			upgrade = "tony_pick_up_multiplier",
+			category = "player"
 		}
 	}
 	self.definitions.buildup_meter_tony_pick_up_multiplier_2 = {
@@ -6165,8 +6159,8 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 2,
-			upgrade = "pick_up_multiplier",
-			category = "tony"
+			upgrade = "tony_pick_up_multiplier",
+			category = "player"
 		}
 	}
 	self.definitions.player_melee_fists_damage_multiplier = {

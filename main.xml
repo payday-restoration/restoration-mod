@@ -787,6 +787,8 @@
 			<option_group name="BWAResOpt">
 				<option type="bool" default_value="false" name="BWAResmod"/>
 				<divider name="tod_divider" size="14"/>
+				<option type="multichoice" default_value="1" name="BWAResADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="bool" default_value="false" name="BWAResmodBob"/>
 				<option type="bool" default_value="false" name="BWAResmodBobADS"/>
 				<divider name="tod_divider" size="7"/>

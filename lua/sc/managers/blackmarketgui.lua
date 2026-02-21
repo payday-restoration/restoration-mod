@@ -7457,27 +7457,34 @@ function BlackMarketGui:populate_choose_mask_mod(data)
 		end
 	end
 
-	local guis_catalog = "guis/"
+	local num_data = #data
+
+	for i = 1, num_data do
+		data[i] = nil
+	end
+
+	local hide_unavailable, dlc_unlock_id = nil
 	local type_func = type
+	local guis_catalog = "guis/"
 	local sort_data = data.on_create_data
 	sort_data = self:get_filtered_search_list(sort_data, tweak_data.blackmarket[data.category], "id")
 
-	for k, mods in pairs(sort_data) do
-
+	for type, mods in pairs(sort_data) do
 		guis_catalog = "guis/"
 		local bundle_folder = tweak_data.blackmarket[data.category][mods.id] and tweak_data.blackmarket[data.category][mods.id].texture_bundle_folder
+
 		if bundle_folder then
 			guis_catalog = guis_catalog .. "dlcs/" .. tostring(bundle_folder) .. "/"
 		end
 
-		new_data = {}
-		new_data.name = mods.id
+		new_data = {
+			name = mods.id
+		}
 		new_data.name_localized = tweak_data.blackmarket[data.category][new_data.name] and managers.localization:text(tweak_data.blackmarket[data.category][new_data.name].name_id) or "NIL:" .. tostring(new_data.name)
 		new_data.category = data.category
 		new_data.slot = index
 		new_data.prev_slot = data.prev_node_data and data.prev_node_data.slot
 		new_data.unlocked = mods.default or mods.amount
-		new_data.amount = mods.amount or 0
 		new_data.equipped = equipped_mod == mods.id
 		new_data.equipped_text = managers.localization:text("bm_menu_chosen")
 		new_data.mods = mods
@@ -7485,38 +7492,15 @@ function BlackMarketGui:populate_choose_mask_mod(data)
 		new_data.global_value = mods.global_value
 		new_data.dlc = managers.dlc:global_value_to_dlc(new_data.global_value)
 		local is_locked = false
-		if new_data.amount < 1 and mods.id ~= "plastic" and mods.id ~= "strip_paint" and mods.id ~= "no_color_full_material" and not mods.free_of_charge then
-			if type(new_data.unlocked) == "number" then
-				new_data.unlocked = -math.abs(new_data.unlocked)
-			end
-			new_data.lock_texture = true
-			new_data.dlc_locked = "bm_menu_amount_locked"
-			is_locked = true
-		end
+		hide_unavailable = nil
 
-		if new_data.unlocked and type_func(new_data.unlocked) == "number" and tweak_data.lootdrop.global_values[new_data.global_value] and tweak_data.lootdrop.global_values[new_data.global_value].dlc and not managers.dlc:is_dlc_unlocked(new_data.global_value) then
+		if new_data.unlocked and type_func(new_data.unlocked) == "number" and tweak_data.lootdrop.global_values[new_data.global_value] and tweak_data.lootdrop.global_values[new_data.global_value].dlc and not managers.dlc:is_dlc_unlocked(new_data.dlc) then
 			new_data.unlocked = -math.abs(new_data.unlocked)
 			new_data.lock_texture = self:get_lock_icon(new_data)
-			new_data.dlc_locked = tweak_data.lootdrop.global_values[new_data.global_value].unlock_id or "bm_menu_dlc_locked"
+			dlc_unlock_id = tweak_data.lootdrop.global_values[new_data.global_value].unlock_id or managers.dlc:get_unavailable_id(new_data.global_value)
+			hide_unavailable = managers.dlc:should_hide_unavailable(new_data.dlc)
+			new_data.dlc_locked = hide_unavailable and managers.dlc:get_unavailable_id(new_data.global_value) or dlc_unlock_id
 			is_locked = true
-		elseif managers.dlc:is_content_achievement_locked(data.category, new_data.name) or managers.dlc:is_content_achievement_milestone_locked(data.category, new_data.name) then
-			new_data.unlocked = -math.abs(new_data.unlocked)
-			new_data.lock_texture = "guis/textures/pd2/lock_achievement"
-		elseif managers.dlc:is_content_skirmish_locked(data.category, new_data.name) and (not new_data.unlocked or new_data.unlocked == 0) then
-			new_data.lock_texture = "guis/textures/pd2/skilltree/padlock"
-		elseif managers.dlc:is_content_crimespree_locked(data.category, new_data.name) and (not new_data.unlocked or new_data.unlocked == 0) then
-			new_data.lock_texture = "guis/textures/pd2/skilltree/padlock"
-		elseif managers.dlc:is_content_infamy_locked(data.category, new_data.name) and (not new_data.unlocked or new_data.unlocked == 0) then
-			new_data.lock_texture = "guis/textures/pd2/lock_infamy"
-			-- new_data.infamy_lock = true
-		else
-			local event_job_challenge = managers.event_jobs:get_challenge_from_reward(data.category, new_data.name)
-
-			if event_job_challenge and not event_job_challenge.completed then
-				new_data.unlocked = -math.abs(new_data.unlocked)
-				new_data.lock_texture = "guis/textures/pd2/lock_achievement"
-				new_data.dlc_locked = event_job_challenge.locked_id or "menu_event_job_lock_info"
-			end
 		end
 
 		local active = true
@@ -7533,16 +7517,18 @@ function BlackMarketGui:populate_choose_mask_mod(data)
 
 		if managers.blackmarket:got_new_drop(new_data.global_value or "normal", new_data.category, new_data.name) then
 			new_data.mini_icons = new_data.mini_icons or {}
+
 			table.insert(new_data.mini_icons, {
-				name = "new_drop",
 				texture = "guis/textures/pd2/blackmarket/inv_newdrop",
-				right = 0,
-				top = 0,
-				layer = 1,
-				w = 16,
+				name = "new_drop",
 				h = 16,
-				stream = false
+				w = 16,
+				top = 0,
+				layer = 3,
+				stream = false,
+				right = 0
 			})
+
 			new_data.new_drop_data = {
 				new_data.global_value or "normal",
 				new_data.category,
@@ -7554,8 +7540,7 @@ function BlackMarketGui:populate_choose_mask_mod(data)
 			type = managers.localization:text("bm_menu_" .. data.category)
 		}
 
-		if not is_locked then
-
+		if not is_locked and active then
 			if data.category == "materials" then
 				if data.is_first_color then
 					table.insert(new_data, "mp_choose_first")
@@ -7571,17 +7556,20 @@ function BlackMarketGui:populate_choose_mask_mod(data)
 			end
 
 			table.insert(new_data, "mp_preview")
+			
+			table.insert(new_data, "mp_modshop")
 		end
 
 		if managers.blackmarket:can_finish_customize_mask(true) then
 			table.insert(new_data, "mm_buy")
 		end
 
-		Hooks:Call("BlackMarketGUIOnPopulateMaskModsActionList", self, new_data)
+		--Hooks:Call("BlackMarketGUIOnPopulateMaskModsActionList", self, new_data)
 
-		data[index] = new_data
-		index = index + 1
-
+		if not hide_unavailable then
+			data[index] = new_data
+			index = index + 1
+		end
 	end
 
 	if #data == 0 then

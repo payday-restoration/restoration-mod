@@ -101,8 +101,55 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 
 		look_pos = look_pos or Vector3()
 
-		mvector3.lerp(look_pos, look_pos, (not in_sight) and Vector3(0, 0, -unit:rotation():pitch() / 48) or Vector3(), lp_speed)
+		local pitch = unit:rotation():pitch()
+		local up_mul = 1.5
+		local down_mul = 1
+		local pitch_mul = pitch > 0 and up_mul or down_mul
+
+		mvector3.lerp(look_pos, look_pos, (not in_sight) and Vector3(0, 0, -(pitch * pitch_mul) / 48) or Vector3(), lp_speed)
 		
+		-----------------------------------------------------------------------------------------------------------------------------
+
+		--ADS tilt
+		ads_tilt_pos = ads_tilt_pos or Vector3()
+		ads_tilt_ang = ads_tilt_ang or Rotation()
+
+		local res_ads_style = restoration.Options:GetValue("BWAResOpt/BWAResADSTransitionStyle") or 1
+		local is_akimbo = wep_base and wep_base.AKIMBO
+		local ignore_transition_styles = wep_base and wep_base:weapon_tweak_data().ign_ts
+
+		if res_ads_style ~= 1 and not is_akimbo and not ignore_transition_styles then
+			ads_tilt_progress = ads_tilt_progress or 0
+			ads_tilt_target_ang = ads_tilt_target_ang or Rotation()
+			ads_tilt_target_pos = ads_tilt_target_pos or Vector3()
+			local ads_tilt_lp_speed = deltaT * 8 * ((in_full_sight and 1.5) or 1)
+			local steelsight_t = wep_base and (tweak_data.player.TRANSITION_DURATION / wep_base:enter_steelsight_speed_multiplier() / wep_base:second_sight_steelsight_mult()  ) or 0.2
+			if in_sight and not in_full_sight then
+			    ads_tilt_progress = math.min(ads_tilt_progress + dt, steelsight_t * 0.5)
+			elseif not in_sight then
+			    ads_tilt_progress = math.max(ads_tilt_progress - dt, 0)
+			end
+
+			local tilt_pow = 0
+			if ads_tilt_progress > 0 then
+			    tilt_pow = math.clamp(1 - (ads_tilt_progress / (steelsight_t * 0.5)), 0, 1)
+			end
+			if not in_sight then
+				tilt_pow = 0
+			end
+			--tilt_pow = tilt_pow / pitch_mul
+
+			if res_ads_style == 2 then
+				ads_tilt_target_ang = Rotation(-0.5 * tilt_pow, 0.5 * tilt_pow, 20 * tilt_pow)
+				ads_tilt_target_pos = Vector3(3 * tilt_pow, 2 * tilt_pow, 1.5 * tilt_pow)
+			else
+				ads_tilt_target_ang = Rotation(0.2 * tilt_pow, 0 * tilt_pow, -20 * tilt_pow)
+				ads_tilt_target_pos = Vector3(1 * tilt_pow, 5 * tilt_pow, -3 * tilt_pow)
+			end
+			mrotation.slerp(ads_tilt_ang, ads_tilt_ang, ads_tilt_target_ang, ads_tilt_lp_speed * ((tilt_pow == 0 and 1.2) or 1))
+			mvector3.lerp(ads_tilt_pos, ads_tilt_pos, ads_tilt_target_pos, ads_tilt_lp_speed * ((tilt_pow == 0 and 1.2) or 1))
+		end
+
 		-----------------------------------------------------------------------------------------------------------------------------
 
 		--Added a slight downward offset on the viewmodel when moving
@@ -183,9 +230,9 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 
 		-----------------------------------------------------------------------------------------------------------------------------
 
-		mvector3.set(self._vel_overshot.translation, mov_pos + look_pos + tilt_pos + jump_pos + sway_pos + wall_pos)
+		mvector3.set(self._vel_overshot.translation, mov_pos + look_pos + tilt_pos + jump_pos + sway_pos + wall_pos + ads_tilt_pos)
 		mrotation.set_zero(self._vel_overshot.rotation)
-		mrotation.multiply(self._vel_overshot.rotation, mov_ang * tilt_ang * sway_ang)
+		mrotation.multiply(self._vel_overshot.rotation, mov_ang * tilt_ang * sway_ang * ads_tilt_ang)
 	end
 end
 
@@ -582,20 +629,34 @@ function FPCameraPlayerBase:play_anim_melee_item(tweak_name, speed_multiplier)
 		self._melee_item_anim = nil
 	end
 
-	local ids = anim_data.anim and Idstring(anim_data.anim)
+	local anim_ids = anim_data.anim and Idstring(anim_data.anim)
 
-	if ids then
+	if anim_ids then
 		for _, unit in ipairs(self._melee_item_units) do
-			local length = unit:anim_length(ids)
+			local anim_length = unit:anim_length(anim_ids)
 
 			if anim_data.loop then
-				unit:anim_play_loop(ids, 0, length, 1)
+				unit:anim_play_loop(anim_ids, 0, anim_length, 1)
 			else
-				unit:anim_play_to(ids, length, speed_multiplier or 1)
+				if anim_data.from then
+					unit:anim_set_time(anim_ids, anim_data.from)
+				end
+
+				unit:anim_play_to(anim_ids, anim_length, speed_multiplier or 1)
+			end
+
+			if type(anim_data.start_time) == "number" then
+				local start_time = anim_data.start_time
+
+				if start_time == -1 then
+					start_time = anim_length
+				end
+
+				unit:anim_set_time(start_time)
 			end
 		end
 
-		self._melee_item_anim = ids
+		self._melee_item_anim = anim_ids
 	end
 end
 
@@ -620,7 +681,7 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 end)
 
 function FPCameraPlayerBase:_update_res_stance(t, dt)
-	if self._shoulder_stance.transition then
+	if self._shoulder_stance.transition and not restoration.Options:GetValue("BWAResOpt/BWAResmod") then
 		local trans_data = self._shoulder_stance.transition
 		local elapsed_t = t - trans_data.start_t
 		local player_state = managers.player:current_state()
@@ -664,7 +725,7 @@ function FPCameraPlayerBase:_update_res_stance(t, dt)
 
 			self._shoulder_stance.rotation = trans_data.start_rotation:slerp(trans_data.end_rotation, progress_smooth)
 
-			if restoration and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") ~= 1 and not is_akimbo and not ignore_transition_styles then
+			if restoration and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/ADSTransitionStyle") ~= 1 and not is_akimbo and not ignore_transition_styles and not restoration.Options:GetValue("BWAResOpt/BWAResmod") then
 				local temp = not self._steelsight_swap_state --and (not in_second_sight or (in_second_sight and not in_steelsight))
 				if player_state and player_state ~= "bipod" and trans_data.absolute_progress and temp then
 					local prog = (1 - absolute_progress) * (dt * math.clamp(120 * weapon_base:enter_steelsight_speed_multiplier(), 0.1, 120))

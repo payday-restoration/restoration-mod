@@ -2242,7 +2242,7 @@ function CopDamage:stun_hit(attack_data)
 
 	if self._char_tweak.tank_concussion or self._unit:base():has_tag("shield") then
 		result_type = "expl_hurt"
-	elseif self._unit:base():has_tag("special") or attack_data.variant == "bullet" then
+	elseif attack_data.variant == "bullet" then
 		result_type = "hurt"
 	end
 
@@ -2276,7 +2276,7 @@ function CopDamage:sync_damage_stun(attacker_unit, damage_percent, i_attack_vari
 	
 	if self._char_tweak.tank_concussion or self._unit:base():has_tag("shield") then
 		result_type = "expl_hurt"
-	elseif self._unit:base():has_tag("special") or attack_data.variant == "bullet" then
+	elseif attack_data.variant == "bullet" then
 		result_type = "hurt"
 	end
 	

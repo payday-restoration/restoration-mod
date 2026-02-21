@@ -7,6 +7,10 @@ function WeaponAmmo:replenish()
 	for _, category in ipairs(self:weapon_tweak_data().categories) do
 		ammo_max_multiplier = ammo_max_multiplier * managers.player:upgrade_value(category, "extra_ammo_multiplier", 1)
 	end
+	
+	if managers.player:has_category_upgrade("player", "tony_extra_ammo_multiplier") then
+		ammo_max_multiplier = ammo_max_multiplier * managers.player:upgrade_value("player", "tony_extra_ammo_multiplier", 1)
+	end
 
 	ammo_max_multiplier = managers.modifiers:modify_value("WeaponBase:GetMaxAmmoMultiplier", ammo_max_multiplier)
 	local ammo_max_per_clip = self:calculate_ammo_max_per_clip()
@@ -31,6 +35,10 @@ function WeaponAmmo:replenish()
 
 		for _, category in ipairs(self:weapon_tweak_data().categories) do
 			pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
+		end
+
+		if managers.player:has_category_upgrade("player", "tony_pick_up_multiplier") then
+			pickup_multiplier = pickup_multiplier * managers.player:upgrade_value("player", "tony_pick_up_multiplier", 1)
 		end
 
 		if managers.player:has_category_upgrade("player", "armor_pickup_mul") then

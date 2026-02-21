@@ -216,7 +216,14 @@ function BlackMarketTweakData:_init_textures(tweak_data)
 		value = 0,
 		global_value = "rest"
 	}			
-			
+	
+	--nuke accent overwrites for all patterns (aside from the patternless options)
+	for texture_id, k in pairs(self.textures) do
+		if texture_id ~= "no_color_no_material" and texture_id ~= "no_color_full_material"  then 
+			self.textures[texture_id].overwrites = nil
+		end
+	end
+
 end
 
 Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", function(self, tweak_data)
@@ -4279,7 +4286,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_blunt
 		melee_anim = {
-			'baton','oldbaton','detector','shovel','shillelagh','whiskey','morning','branding_iron','slot_lever','hammer','tenderizer','croupier_rake','shock',
+			'baton','oldbaton','detector','shovel','shillelagh','whiskey','morning','branding_iron','slot_lever','hammer','tenderizer','croupier_rake','shock','funder_strike',
 			'spatula','swagger','selfie','chac',
 			'iceaxe'
 		}
@@ -4300,6 +4307,34 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_speed_mult = 1
 			--self.melee_weapons[melee_id].sphere_cast_radius_add = 4
 		end	
+			melee_anim = {
+				'funder_strike'
+			}
+			for i, melee_id in ipairs(melee_anim) do
+				self.melee_weapons[melee_id].anims = {
+					var1_attack = {
+						from = 1,
+						anim = "menu"
+					},		
+					var2_attack = {
+						from = 1,
+						anim = "menu"
+					},		
+					var3_attack = {
+						from = 1,
+						anim = "menu"
+					},
+					var4_attack = {
+						from = 1,
+						anim = "menu"
+					},
+					charge = {
+						loop = false,
+						anim = "menu",
+						from = 1
+					}
+				}
+			end
 
 		--melee_brick
 		--Pretty much a clone of melee_blunt but the hand hold is wider
@@ -4896,6 +4931,20 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.taser.stats.range = 165
 			self.melee_weapons.taser.stats.concealment = 29
 			self.melee_weapons.taser.stats.speed_mult = 1.1
+			--Zap Stick--
+			self.melee_weapons.funder_strike.info_id = "bm_melee_taser_info"
+			self.melee_weapons.funder_strike.tase_data = nil
+			self.melee_weapons.funder_strike.special_weapon = "taser"
+			self.melee_weapons.funder_strike.stats.cleave = 1
+			self.melee_weapons.funder_strike.stats.raycasts = 10
+			self.melee_weapons.funder_strike.stats.min_damage = 2.4
+			self.melee_weapons.funder_strike.stats.max_damage = 6.001
+			self.melee_weapons.funder_strike.stats.min_damage_effect = 3.0
+			self.melee_weapons.funder_strike.stats.max_damage_effect = 9.0
+			self.melee_weapons.funder_strike.stats.charge_time = 1.5
+			self.melee_weapons.funder_strike.stats.range = 170
+			self.melee_weapons.funder_strike.stats.concealment = 28
+			self.melee_weapons.funder_strike.stats.speed_mult = 1.0
 
 		--Money money money--
 		self.melee_weapons.moneybundle.info_id = "bm_melee_moneybundle_info"

@@ -2408,7 +2408,7 @@ function PlayerManager:update_cohesion_stacks(t, dt)
 	local cohesion_stacks = self:get_synced_cohesion_stacks(local_peer_id)
 
 	local amount = cohesion_stacks and cohesion_stacks.amount or 0
-	local new_amount = amount + self:upgrade_value("player", "linchpin_treat_as_more_cohesion", 0)
+	local new_amount = amount
 
 	local to_tend = cohesion_stacks and cohesion_stacks.to_tend or 0
 	local new_to_tend = to_tend

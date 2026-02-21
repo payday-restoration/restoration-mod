@@ -70,3 +70,27 @@ function PlayerEquipment:use_armor_kit()
 	end
 	return false
 end
+
+function PlayerEquipment:use_grenade_crate()
+	local ray = self:valid_shape_placement("grenade_crate")
+
+	if ray then
+		local pos = ray.position
+		local rot = self:_m_deploy_rot()
+		rot = Rotation(rot:yaw(), 0, 0)
+
+		managers.statistics:use_body_bag()
+
+		local ammo_upgrade_lvl = managers.player:upgrade_level("grenade_crate", "ammo_increase")
+
+		if Network:is_client() then
+			managers.network:session():send_to_host("place_ordnance_bag", pos, rot, ammo_upgrade_lvl)
+		else
+			local unit = GrenadeCrateDeployableBase.spawn(pos, rot, ammo_upgrade_lvl, managers.network:session():local_peer():id())
+		end
+
+		return true
+	end
+
+	return false
+end

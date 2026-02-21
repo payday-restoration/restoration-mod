@@ -189,6 +189,34 @@
 		</target>
 	</tweak>
 
+	<!-- Ordnance Bag synchronisation -->
+	<tweak version="2" name="setting/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+		</search>
+		<target mode="attach">
+			<message name="place_ordnance_bag" delivery="ordered" receiver="unit" check="client_to_server">
+				<param type="vector3" />
+				<param type="rotation" />
+				<param type="int" min="0" max="1"/> <!-- Ordnance Bag upgrade level -->
+		</message>
+		</target>
+	</tweak>
+
+	<tweak version="2" name="setting/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+		</search>
+		<target mode="attach">
+			<message name="sync_ordnance_bag_setup" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="unit" />
+				<param type="int" min="0" max="1"/>	<!-- Ordnance Bag upgrade level -->
+			</message>
+		</target>
+	</tweak>
+
 	<!-- Testing -->
 	<tweak version="2" name="settings/network" extension="network_settings">
 		<search>

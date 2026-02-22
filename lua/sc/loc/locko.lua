@@ -186,8 +186,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModSeparateBowADSDescID"] = "활로 화살을 당낄 때 강제 조준 기능을 비활성화합니다. 해당 옵션이 활성화된 경우에는 재장전 키를 눌러 당겨진 화살을 내릴 수 있습니다.",
 				["RestorationModSprintCancelTitleID"] = "회피 에이스 효과의 달리기 재장전 취소",
 				["RestorationModSprintCancelDescID"] = "\"회피\" 스킬을 에이스까지 습득했을 때, 달리기를 *시작할 때* 재장전을 취소할지 여부를 설정합니다. 달리기 중 재장전은 영향을 받지 않습니다.",				
-				["RestorationModManualReloadsTitleID"] = "수동 재장전",
-				["RestorationModManualReloadsDescID"] = "탄창이 비어 있을 때 자동 재장전을 비활성화합니다. 참고: \"재장전 마라톤\" 뮤테이터가 활성화되어 있으면 해당 설정은 무시됩니다.",
+				["RestorationModManualReloadsTitleID"] = AFR and "수동 재장전 (모드 충돌)" or "수동 재장전",
+				["RestorationModManualReloadsDescID"] = AFR and "\"Auto Fire & Reload\" 모드가 설치되어 있어 해당 옵션을 사용할 수 없습니다." or "탄창이 비어 있을 때 자동 재장전을 비활성화합니다. 참고: \"재장전 마라톤\" 뮤테이터가 활성화되어 있으면 해당 설정은 무시됩니다.",
 
 			["RestorationModWEAPONSOUNDSOptionsButtonTitleID"] = "사운드 옵션",
 			["RestorationModWEAPONSOUNDSOptionsButtonDescID"] = "무기 사운드에 대한 옵션을 엽니다.",
@@ -258,8 +258,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["RestorationModADSTransitionStyleTitleID"] = "정조준 스타일",
 					["RestorationModADSTransitionStyleDescID"] = "조준경을 내려다보는 전환 스타일을 바꿉니다.",
 						["vanilla_on_rails"] = "기본/온레일",
-						["kf_mw_style"] = "KF1/CoD 스타일",
-						["tilt_in"] = "기울어짐",
+						["kf_mw_style"] = "조준기 뒤로 당기기",
+						["tilt_in"] = "조준기 안쪽으로 기울이기",
 					["RestorationModRunAndShootAnimsTitleID"] = "\"달리기 동안 사격\"의 달리기 애니메이션",
 					["RestorationModRunAndShootAnimsDescID"] = "\"달리기 중 사격\" 스킬이 활성화되어 있을 때 달리기 애니메이션을 활성화 혹은 비활성화합니다.",						
 					["RestorationModToggleAnimsTitleID"] = "===애니메이션 교체===",
@@ -392,7 +392,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 			["RestorationModBWAResOptOptionsButtonTitleID"] = "\"Better Weapon Animations\"",
 			["RestorationModBWAResOptOptionsButtonDescID"] = "return의 \"Better Weapon Animations\" 모드의 커스텀 버전에 대한 추가 옵션을 엽니다.",
 					["RestorationModBWAResmodTitleID"] = "\"Better Weapon Animations\" 활성화",
-					["RestorationModBWAResmodDescID"] = "return의 \"Better Weapon Animations\" 커스텀 버전의 뷰모델 움직임을 활성화합니다. \"뷰모델 및 애니메이션 옵션\"의 일부 설정을 재설정합니다.",			
+					["RestorationModBWAResmodDescID"] = "return의 \"Better Weapon Animations\" 커스텀 버전의 뷰모델 움직임을 활성화합니다. \"뷰모델 및 애니메이션 옵션\"의 일부 설정을 재설정합니다.",
+					["RestorationModBWAResADSTransitionStyleTitleID"] = "정조준 전환 스타일",
+						--multichoice option strings are the same as the non-BWA version
+					["RestorationModBWAResADSTransitionStyleDescID"] = "조준기로 조준할 때 전환 스타일을 변경합니다.",					
 					["RestorationModBWAResmodBobTitleID"] = "화면 흔들림",
 					["RestorationModBWAResmodBobDescID"] = "이동할 때 화면 흔들림을 활성화합니다.\n활성화 시 바닐라의 화면 흔들림을 비활성화합니다.",
 					["RestorationModBWAResmodBobADSTitleID"] = "정조준 화면 흔들림",
@@ -403,6 +406,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["RestorationModBWAResmodSwayStrDescID"] = "주변을 둘러볼 때 무기가 움직이는 양을 변경합니다. (기본값 0.45)",
 					["RestorationModBWAResmodADSSwayStrTitleID"] = "정조준 강도 배율",
 					["RestorationModBWAResmodADSSwayStrDescID"] = "정조준 중 주변을 둘러볼 때 무기가 움직이는 양을 기본 움직임에 비레해 변경합니다. (기본값 0.05)",
+
+		["RestorationModDebugOptionsTitleID"] = "===디버그 옵션===",
+		["RestorationModDebugOptionsDescID"] = "디버깅용 옵션 - 이 옵션은 켜두지 마십시오!",
+			["RestorationModLogOutfitStringsTitleID"] = "복장 스트링 호출 로그",
+			["RestorationModLogOutfitStringsDescID"] = "NetworkPeer를 통해 복장 스트링 업데이트가 호출될 때 로그가 기록됩니다. - 이로 인해 성능 저하가 발생할 수 있습니다.",
 
 		--EXTRA OPTIONS
 		["RestorationModHearNonLocalPECMTitleID"] = "다른 플레이어의 휴대용 ECM 사운드 재생",
@@ -2368,6 +2376,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["hud_hint_bipod_air"] = "공중에 떠 있을 동안에는 거치할 수 없습니다.",
 		["hud_hint_bipod_lean"] = "기울이는 동안에는 거치할 수 없습니다.",
 		["hud_hint_bipod_midstance"] = "자세를 바꾸는 동안에는 거치할 수 없습니다.",
+		["hud_hint_fatty"] = "가방을 너무 많이 들어 조준이 불가능합니다!",
 
 		["hud_interact_autumn_disable"] = "캡틴 어텀에 의해 무력화 되었습니다!",
 
@@ -2407,44 +2416,44 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_wp_upg_i_autofire_desc"] = "무기를 #{risk}#자동 사격으로 고정합니다.##",
 
 		--Throwables--
-		["bm_dynamite_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- 다른 투척물에 비해 튀고 굴러가는 일이 적습니다.\n\n바위를 효과적으로 폭파시키도록 설계되었습니다. 사람을 폭파시키는 것도 더욱 효과적이죠.",
+		["bm_dynamite_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- 다른 투척물에 비해 튀고 굴러가는 일이 적습니다.\n\n바위를 효과적으로 폭파시키도록 설계되었습니다. 사람을 폭파시키는 것도 더욱 효과적이죠.",
 		--Frag
-		["bm_grenade_frag_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 폭발성 수류탄입니다. 뭐, 더 설명할 게 있나요?",
+		["bm_grenade_frag_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n\n고전적인 폭발성 수류탄입니다. 뭐, 더 설명할 게 있나요?",
 		--Community Frag
-		["bm_grenade_frag_com_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n고전적인 수류탄에 세련된 새로운 모습을 더해, 매 폭발마다 더욱 오버킬의 느낌을 더할 것입니다.",
+		["bm_grenade_frag_com_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n\n고전적인 수류탄에 세련된 새로운 모습을 더해, 매 폭발마다 더욱 오버킬의 느낌을 더할 것입니다.",
 		--Community Frag 2
-		["bm_grenade_dada_com_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n인형의 바깥층은 폭발적인 내부 작용을 숨깁니다. 조국에 대한 헌사죠.",
+		["bm_grenade_dada_com_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n\n인형의 바깥층은 폭발적인 내부 작용을 숨깁니다. 조국에 대한 헌사죠.",
 		--Sticky
 		["bm_grenade_sticky_grenade"] = "샘텍스 수류탄",
-		["bm_grenade_sticky_grenade_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#2.5초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n\n대부분의 표면과 사람한테 달라붙는 투척용 폭발성 혼합물입니다!",
+		["bm_grenade_sticky_grenade_desc"] = "피해량: #{risk}#$damage## \n범위: #{skill_color}#4m## \n지연 시간: #{skill_color}#2.5초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n\n대부분의 표면과 사람한테 달라붙는 투척용 폭발성 혼합물입니다!",
 		--Snowball
 		["bm_grenade_xmas_snowball"] = "스노볼", --there is a fucking space at the end of the original string
 		["bm_grenade_xmas_snowball_desc"] = "피해량 (직격): #{skill_color}#90##\n피해량 (폭발): #{risk}#180## \n범위: #{skill_color}#1m## \n지연 시간: #{skill_color}#충격 시 폭발## \n재생 속도: #{skill_color}#$regen 마다 1개##\n탄약 상자 재생 보너스: #{skill_color}#$regen_t## \n\n물에 담그고, 냉동고에 넣기만 하면 치명적인 투척 무기를 얻을 수 있습니다. 참 쉽죠?",
 		--Zapper
-		["bm_grenade_electric_desc"] = "피해량: #{skill_color}#400## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 획득 확률: #{skill_color}#$pickup##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#대부분의 적을 감전시킵니다.## \n\n파편도 좋지만, 어떤 것들은 지져줘야죠. 이 작은 이쁜이는 고전압으로 피해를 가하는 데 꽤나 실용적인 녀석입니다.",
+		["bm_grenade_electric_desc"] = "피해량: #{skill_color}#400## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- 대부분의 적을 #{skill_color}#감전 및 기절시킵니다.##\n- #{important_1}#타이탄 실드, 타이탄 테이저, 타이탄 도저, 및 캡틴은 기절에 면역입니다.## \n\n파편도 좋지만, 어떤 것들은 지져줘야죠. 이 작은 이쁜이는 고전압으로 피해를 가하는 데 꽤나 실용적인 녀석입니다.",
 		--Molotov
-		["bm_grenade_molotov_desc"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n불붙은 천이 있는 인화성 액체가 담긴 부서지는 병입니다. 저렴하고 간단하지만 매우 효과적이죠. 이걸로 전부 태워 버리세요.",
-		["bm_grenade_molotov_desc_short"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.",
+		["bm_grenade_molotov_desc"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n불붙은 천이 있는 인화성 액체가 담긴 부서지는 병입니다. 저렴하고 간단하지만 매우 효과적이죠. 이걸로 전부 태워 버리세요.",
+		["bm_grenade_molotov_desc_short"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.",
 		--Incendiary
-		["bm_grenade_fir_com_desc"] = "피해량 (폭발): #{heat_warm_color}#120## \n범위 (폭발): #{skill_color}#4.5m## \n지연 시간: #{skill_color}#2.5s## \n피해량 (화염 지대): #{heat_warm_color}#12s 동안 1400##\n피해량 (화염 지대): #{heat_warm_color}#12초 동안 1400## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n자연적으로 발화되는 인을 담은 수류탄입니다. 벽이나 모퉁이를 이용해 적에게 효과적으로 던질 수 있죠.",
+		["bm_grenade_fir_com_desc"] = "피해량 (폭발): #{heat_warm_color}#120## \n범위 (폭발): #{skill_color}#4.5m## \n지연 시간: #{skill_color}#2.5s## \n피해량 (화염 지대): #{heat_warm_color}#12s 동안 1400##\n피해량 (화염 지대): #{heat_warm_color}#12초 동안 1400## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n자연적으로 발화되는 인을 담은 수류탄입니다. 벽이나 모퉁이를 이용해 적에게 효과적으로 던질 수 있죠.",
 		--Concussion
-		["bm_concussion_desc"] = "범위: #{skill_color}#10m##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- 최대 #{skill_color}#4초## 동안 적을 기절시킵니다.\n- 적의 명중률이 #{skill_color}#7초## 동안 #{skill_color}#50%## 감소합니다. \n- #{important_1}#타이탄 실드, 타이탄 불도저 및 캡틴은 기절 효과에 면역입니다.## \n\n이 조그맣고 짜릿한 녀석은 적들을 깜짝 놀래켜서, 그들을 처리할 기회를 더 줍니다.",
+		["bm_concussion_desc"] = "범위: #{skill_color}#10m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- 최대 #{skill_color}#4초## 동안 적을 기절시킵니다.\n- 적의 명중률이 #{skill_color}#7초## 동안 #{skill_color}#50%## 감소합니다. \n- #{important_1}#타이탄 실드, 타이탄 불도저 및 캡틴은 기절 효과에 면역입니다.## \n\n이 조그맣고 짜릿한 녀석은 적들을 깜짝 놀래켜서, 그들을 처리할 기회를 더 줍니다.",
 		--Gas
 		["bm_grenade_poison_gas_grenade"] = "만티코어-6 수류탄",
-		["bm_grenade_poison_gas_grenade_desc"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.## \n\n이 실험용 생물학 무기는 특정 유전자형을 표적으로 삼는 독성 가스 구름을 방출하며, 당신이나 당신의 팀원에게 피해가 가지 않도록 설계되었습니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험하며 가장 강한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 쓸법한 무기인거야, 페코.",
-		["bm_grenade_poison_gas_grenade_desc_short"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.##",
+		["bm_grenade_poison_gas_grenade_desc"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.## \n\n이 실험용 생물학 무기는 특정 유전자형을 표적으로 삼는 독성 가스 구름을 방출하며, 당신이나 당신의 팀원에게 피해가 가지 않도록 설계되었습니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험하며 가장 강한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 쓸법한 무기인거야, 페코.",
+		["bm_grenade_poison_gas_grenade_desc_short"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.##",
 
 		--Throwing Cards
-		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
+		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
 		--Throwing Stars/Shuriken
-		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬을 발동시킬 수 있습니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.## \n\n표창은 피와 전투로 물든 긴 역사를 지니고 있습니다. 이 독이 발라진 스테인리스 스틸 표창은 당신의 길을 막는 모든 이에게 치명적인 위협이 될 것입니다.",
-		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬을 발동시킬 수 있습니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##",
+		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬을 발동시킬 수 있습니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.## \n\n표창은 피와 전투로 물든 긴 역사를 지니고 있습니다. 이 독이 발라진 스테인리스 스틸 표창은 당신의 길을 막는 모든 이에게 치명적인 위협이 될 것입니다.",
+		["bm_wpn_prj_four_desc"] = "피해량 (직격): #{skill_color}#$damage## \n피해량 (독): #{stats_positive}#4초 동안 120##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#회수가 가능합니다.## \n- #{skill_color}#적을## #{risk}#직격으로## #{skill_color}#맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬을 발동시킬 수 있습니다.##\n- #{skill_color}#50%## 확률로 #{skill_color}#0.5초## 마다 가스 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##",
 		--Javelin
-		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
+		["bm_wpn_prj_jav_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n비록 이 무기의 기원은 흐릿한 원시시대 중 어딘가로 추정되지만, 재블린은 아주 단순한 무기입니다. 무엇보다도, 이것은 누군가의 하루를 망칠 수 있는 뾰족한 날을 지닌 투척 막대기일 뿐이니까요.",
 		--Throwing Axe
-		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
+		["bm_wpn_prj_hur_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n날카로운 도끼는 절대 틀리지 않는다고들 합니다. 던질 수 있는 날카로운 도끼는 더할 나위 없이 옳죠.",
 		--Throwing Knife
-		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 획득 확률: #{skill_color}#$pickup## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
+		["bm_wpn_prj_target_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n정밀하고 조용한 살인을 위한 든든한 예비책이자 믿음직한 도구입니다.",
 
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "약병",
@@ -5095,8 +5104,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["bm_equipment_armor_kit_desc"] = "투척물 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 투척 무기를 보충할 수 있습니다.\n\n투척물 가방은 #{skill_color}#3##번만 사용할 수 있으며, 가방을 보고 얼마나 많은 투척물이 남았는지 짐작할 수 있습니다.\n\n투척물 가방은 일반적으로 군인이나 용병이 상황이 위급할 때를 대비해 특수 무기를 휴대하기 위해 사용하는 은페용 가방입니다.\n\n#{important_1}#주의: 재생 또는 대기 시간 기반의 투척 무기는 보충할 수 업습니다.##",
 		["bm_equipment_armor_kit_desc_short"] = "투척물 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 투척 무기를 보충할 수 있습니다.\n\n투척물 가방은 #{skill_color}#3##번만 사용할 수 있으며, 가방을 보고 얼마나 많은 투척물이 남았는지 짐작할 수 있습니다.\n\n#{important_1}#주의: 재생 또는 쿨다운 기반의 투척물은 사용할 수 없습니다.##",
 		--Ordnance Bag
-		["bm_equipment_grenade_crate_desc"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 총 탄약량의 ##25%##만큼 보충하고 투척 무기를 ##1##개를 보충할 수 있습니다.\n\n군장 가방은 #{skill_color}#4##번만 사용할 수 있으며, 군장 가방의 모습으로 얼마나 더 사용할 수 있는지 알 수 있습니다.\n\n군장 가방은 전투원이 폭발물 및 기타 투척물을 전투지역으로 운반할 때 사용하는 휴대용 가방입니다.\n\n#{important_1}#주의: 재생 또는 대기 시간 기반의 투척 무기는 보충할 수 업습니다.##",
-		["bm_equipment_grenade_crate_desc_short"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 총 탄약량의 ##25%##만큼 보충하고 투척 무기를 ##1##개를 보충할 수 있습니다.\n\n군장 가방은 #{skill_color}#4##번만 사용할 수 있으며, 군장 가방의 모습으로 얼마나 더 사용할 수 있는지 알 수 있습니다.\n\n#{important_1}#주의: 재생 또는 대기 시간 기반의 투척 무기는 보충할 수 업습니다.##",
+		["bm_equipment_grenade_crate_desc"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 총 탄약량의 #{skill_color}#$deployable_secondary_info##만큼 보충하고 투척 무기를 ##1##개를 보충할 수 있습니다.\n\n군장 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 군장 가방의 모습으로 얼마나 더 사용할 수 있는지 알 수 있습니다.\n\n군장 가방은 전투원이 폭발물 및 기타 투척물을 전투지역으로 운반할 때 사용하는 휴대용 가방입니다.\n\n#{important_1}#주의: 재생 또는 대기 시간 기반의 투척 무기는 보충할 수 업습니다.##",
+		["bm_equipment_grenade_crate_desc_short"] = "군장 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 총 탄약량의 #{skill_color}#$deployable_secondary_info##만큼 보충하고 투척 무기를 ##1##개를 보충할 수 있습니다.\n\n군장 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 군장 가방의 모습으로 얼마나 더 사용할 수 있는지 알 수 있습니다.\n\n#{important_1}#주의: 재생 또는 대기 시간 기반의 투척 무기는 보충할 수 업습니다.##",
 		--Trip Mine
 		["bm_equipment_trip_mine_desc"] = "트립 마인을 사용하라면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 격발용 레이저는 #{skill_color}#$BTN_INTERACT## 키를 눌러 폭발 모드와 센서 모드로 설정을 변경할 수 있습니다.\n\n성형작약탄을 사용하려면, #{skill_color}#$BTN_INTERACT.## 키를 길게 눌러 설치하여야 합니다. 필요한 수만큼 설치하면 몇 초 뒤에 폭발합니다. 탄약 상자를 획득할 때마다 #{skill_color}#1%## 확률로 트립 마인 #{skill_color}#1##개를 얻을 수 있습니다.\n\n트립 마인 주로 레이저를 지나는 적에게 피해를 주거나 처치하는 함정으로 사용합니다. 성형작약탄은 주로 문이나 금고를 터트리는 데 사용합니다. 둘 다 대부분의 전투 상황에서 유용한 장비로 사용될 수 있습니다.",
 		["bm_equipment_trip_mine_desc_short"] = "트립 마인을 사용하라면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치하여야 합니다. 격발용 레이저는 #{skill_color}#$BTN_INTERACT## 키를 눌러 폭발 모드와 센서 모드로 설정을 변경할 수 있습니다.\n\n성형작약탄을 사용하려면, #{skill_color}#$BTN_INTERACT.## 키를 길게 눌러 설치하여야 합니다. 필요한 수만큼 설치하면 몇 초 뒤에 폭발합니다. 탄약 상자를 획득할 때마다 #{skill_color}#1%## 확률로 트립 마인 #{skill_color}#1##개를 얻을 수 있습니다.",
@@ -5229,7 +5238,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["loading_stealth_res_8"] = "가방을 들고 있는 동안에는 훨씬 더 멀리서도 보일 수 있으며, 서 있거나 질주하거나 점프하는 동안에도 훨씬 더 빠르게 감지됩니다. 몸을 낮추고 천천히 움직이세요.",
 		["loading_stealth_res_9"] = "바닐라처럼 2개 대신 최대 4개의 ECM을 얻지만 지속 시간은 절반입니다.",
 		["loading_stealth_res_10"] = "스텔스 상태에서 소음기가 장착된 무기는 소음을 발생시키지 않습니다.",
-		["loading_stealth_res_11"] = "스텔스에서는 라우드와 마찬가지로 최대 4명의 경찰을 인질로 잡을 수 있습니다.",
+		["loading_stealth_res_11"] = "스텔스에서는 라우드와 마찬가지로 최대 8명의 경찰을 인질로 잡을 수 있습니다.",
 		["loading_stealth_res_12"] = "스텔스는 더 관대하여 더 많은 뒷수습을 가능하게 합니다.",
 		["loading_stealth_res_13"] = "경비원은 더 이상 경고를 받지 않은 상태에서 어떤 피해를 입어도 즉사하지 않습니다. 주먹보다 더 강력한 근접 무기로 머리를 노리세요.",
 		["loading_stealth_res_14"] = "만일 의심 미터가 가득 차게되면 알람이 울리기 전에 시작한 일을 완료하는 데 60초가 주어집니다.",
@@ -5481,9 +5490,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_CG22_desc"] = "하이스트에 크리스마스 트리가 스폰되어 선물을 으깨거나 하이루딘에게 줄 수 있습니다.",
 		["mutator_CG22_longdesc"] = "PAYDAY 2 2022년 크리스마스 이벤트:\n\n하이스트에 나타나는 크리스마스 트리는 크리스마스 선물을 떨어뜨립니다. 크리스마스 선물은 하이스트 도중에 분쇄하여 일시적인 버프를 받거나, 하이루딘에게 주어 보너스 경험치, 현금 또는 컨티넨탈 코인를 얻을 수 있습니다. 둘 중 하나를 수행하면 일정 확률로 냉기 방사기를 사용하는 스노우맨 도저가 스폰합니다.",
 
-		["mutator_thecandlesburnoutforyou"] = "재장전 마라톤",
-		["mutator_thecandlesburnoutforyou_desc"] = "자동 재장전을 비활성화 하며, 탄창이 비었을 때 수동으로 재장전해야 합니다.",
-		["mutator_thecandlesburnoutforyou_longdesc"] = "자동 재장전을 비활성화 하며, 탄창이 비었을 때 수동으로 재장전해야 합니다.",
+		["mutator_thecandlesburnoutforyou"] = AFR and "재장전 마라톤 (모드 충돌)" or "재장전 마라톤",
+		["mutator_thecandlesburnoutforyou_desc"] = AFR and "\"Auto Fire & Reload\" 모드가 설치되어 있어 해당 뮤테이터를 사용할 수 없습니다." or "자동 재장전을 비활성화 하며, 탄창이 비었을 때 수동으로 재장전해야 합니다.",
+		["mutator_thecandlesburnoutforyou_longdesc"] = AFR and "\"Auto Fire & Reload\" 모드가 설치되어 있어 해당 뮤테이터를 사용할 수 없습니다." or "자동 재장전을 비활성화 하며, 탄창이 비었을 때 수동으로 재장전해야 합니다.",
 
 		["mutator_letthesleepinggoddie"] = "탄창 희생",
 		["mutator_letthesleepinggoddie_desc"] = "비어 있지 않은 탄창을 재장전할 시 이전 탄창의 탄약이 사라집니다.",
@@ -5830,7 +5839,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Fully Loaded--
 				["menu_bandoliers_beta_sc"] = "준비만전",
-				["menu_bandoliers_desc_sc"] = "베이식: #{owned}#$basic##\n탄약 상자에서 획득하는 탄약량이 #{skill_color}#$skill_value_p1## 증가합니다.\n\n에이스: #{owned}#$pro##\n총 탄약 휴대량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n투척 무기 획득 기본 확률이 #{skill_color}#$skill_value_p2## 증가합니다. 투척 무기 획득 실패 시 확률이 #{skill_color}#$skill_value_p3##씩 증가하며, 획득 성공 시 기본 확률로 초기화됩니다.\n\n#{risk}#주의: 재생성 또는 쿨타임 기반의 투척 무기는 획득할 수 없습니다.##",
+				["menu_bandoliers_desc_sc"] = "베이식: #{owned}#$basic##\n탄약 상자에서 획득하는 탄약량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n투척물을 #{skill_color}#$skill_value_b2## 더 많이 소지합니다.\n\n#{risk}#주의: 재생되는 투척물이나 재사용 대기시간이 있는 투척물에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n총 탄약 휴대량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n투척물을 획득할 때 필요한 탄약 상자가 #{skill_color}#$skill_value_p2## 감소합니다.",
 
 		--[[   TECHNICIAN   ]]--
 
@@ -5849,7 +5858,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Jack of all Trades
 				["menu_jack_of_all_trades_beta_sc"] = "팔방미인",
-				["menu_jack_of_all_trades_beta_desc_sc"] = "베이식: #{owned}#$basic##\n투척물 소지 개수가 #{skill_color}#$skill_value_b1##개 증가합니다.\n\n#{risk}#주의: 재생되는 투척물이나 특성 덱 투척물에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#이제 두 번째 설치형 장비를 소지할 수 있습니다.## 장비 전환 키인 #{skill_color}#$BTN_CHANGE_EQ## 키를 눌러 두 장비 사이를 전환할 수 있습니다.\n\n보조 장비는 일반 소지량의 #{important_1}#50%##를 소지하며, 최소 #{skill_color}#1##개까지 소지합니다.",
+				["menu_jack_of_all_trades_beta_desc_sc"] = "베이식: #{owned}#$basic##\n군장 가방을 사용할 때마다 탄약이 추가로 #{skill_color}#$skill_value_b1## 보충됩니다.\n\n에이스: #{owned}#$pro##\n소지 및 배치 가능한 군장 가방 수가 #{skill_color}#$skill_value_p1##개로 증가합니다.\n\n#{skill_color}#두 번째 설치형 장비를 소지할 수 있습니다.## 장비 전환 키인 #{skill_color}#$BTN_CHANGE_EQ## 키를 눌러 두 장비 사이를 전환할 수 있습니다.\n\n보조 장비는 일반 소지량의 #{important_1}#50%##를 소지하며, 최소 #{skill_color}#1##개까지 소지합니다.",
 
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "타워 디펜스",
@@ -6254,10 +6263,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_anarc_disable"] = "#{important_1}#(아나키스트로 인해 비활성화됨)##",
 
 		--Scarface--
-		["menu_deck17_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 #{skill_color}#$perk_value_2##초 동안 받는 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복하고, 효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n주사기는 #{important_1}#$perk_value_3##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_4##초씩 단축됩니다.",
-		["menu_deck17_3_desc_sc"] = "주사기 사용 효과가 지속되는 동안 이동 속도가 #{skill_color}#$perk_value_1## 증가합니다.",
-		["menu_deck17_5_desc_sc"] = "이제 주사기 사용 효과가 지속되는 동안 #{skill_color}#$perk_value_2##초간 받는 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복됩니다.\n\n주사기의 효과가 지속하는 동안 #{risk}#근처의 적이 당신을 집중 공격합니다.##",
-		["menu_deck17_7_desc_sc"] = "주사기 사용 효과가 지속되는 동안 체력이 #{skill_color}#$perk_value_2## 이하일 때, 주사기의 회복 효과가 #{skill_color}#$perk_value_1## 증가합니다.",
+		["menu_deck17_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 방탄복이 있을때 #{skill_color}#$perk_value_2##초 동안 받거나 회피한 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복하고, 효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n주사기는 #{important_1}#$perk_value_3##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_4##초씩 단축됩니다.",
+		["menu_deck17_3_desc_sc"] = "주사기 사용 효과가 지속되는 동안 이동 속도가 #{skill_color}#$perk_value_1## 증가합니다.\n\n회피율이 ##$perk_value_2## 증가합니다.",
+		["menu_deck17_5_desc_sc"] = "이제 주사기 사용 효과가 지속되는 동안 방탄복이 있을때 #{skill_color}#$perk_value_2##초 동안 받거나 회피한 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복됩니다.\n\n주사기의 효과가 지속하는 동안 #{risk}#근처의 적이 당신을 집중 공격합니다.##",
+		["menu_deck17_7_desc_sc"] = "주사기 사용 효과가 지속되는 동안 체력이 #{skill_color}#$perk_value_2## 이하일 때, 주사기의 회복 효과가 #{skill_color}#$perk_value_1## 증가합니다.\n\n회피율이 추가로 ##$perk_value_3## 증가합니다.",
 		["menu_deck17_9_desc_sc"] = "체력이 최대일 때 체력을 #{skill_color}#$perk_value_1##씩 회복 할때마다 주사기 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 줄어듭니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--10 feet higher--
@@ -6282,7 +6291,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck20_9_desc_sc"] = "적을 처치할 때마다 기체 디스펜서의 재사용 대기 시간이 ##$perk_value_1##초씩 감소합니다.\n\n지정한 대상이 적을 처치할 때마다 기체 디스펜서의 대기 시간이 ##$perk_value_2##초씩 감소하며, 이 효과는 대상과 지정이 풀릴 때까지 적용됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Biker--
-		["menu_deck16_1_desc_sc"] = "쓰러지지 않는 상태에서 #{skill_color}#$perk_value_2## 반경의 오라를 발산합니다. 오라 안에 있는 당신과 팀원은 단결력 스택을 얻습니다. 단결력은 오라 범위 내에 있는 팀원 수(본인 포함)의 #{skill_color}#$perk_value_1 배에 해당하는 목표값으로 도달하며##, 목표값보다 낮으면 증가하고 높으면 감소합니다. 차이가 클수록 조정 속도가 빨라집니다.\n팀원은 피해를 #{skill_color}#$perk_value_6##씩 입을 때마다 단결력 #{important_1}#$perk_value_5## 스택씩 감소합니다. (체력 피해의 경우 두 배로 감소).\n\n#{risk}#참고: 여러 바이커의 오라가 겹치는 경우, 팀원은 가장 높은 목표값을 가진 쪽을 사용합니다. 또한 여러 바이커 특성 덱이 있어도 단결력 증가율은 중첩되지 않습니다. 카드 효과는 중첩되지 않지만, 모든 상황에서 얻는 단결력은 선택된 모든 효과에 적용됩니다.##",
+		["menu_deck16_1_desc_sc"] = "쓰러지지 않는 상태에서 #{skill_color}#$perk_value_1##미터 반경의 오라를 발산합니다. 오라 안에 있는 당신과 팀원은 단결력 스택을 얻습니다.\n단결력은 오라 범위 내에 있는 팀원 수(본인 포함)의 #{skill_color}#$perk_value_2 배에 해당하는 목표값으로 도달하며##, 목표값보다 낮으면 증가하고 높으면 감소합니다. 차이가 클수록 조정 속도가 빨라집니다.\n팀원은 피해를 #{skill_color}#$perk_value_4##씩 입을 때마다 단결력 #{important_1}#$perk_value_3## 스택씩 감소합니다. (체력 피해의 경우 두 배로 감소).\n\n#{risk}#참고: 여러 바이커의 오라가 겹치는 경우, 팀원은 가장 높은 목표값을 가진 쪽을 사용합니다. 또한 여러 바이커 특성 덱이 있어도 단결력 증가율은 중첩되지 않습니다. 카드 효과는 중첩되지 않지만, 모든 상황에서 얻는 단결력은 선택된 모든 효과에 적용됩니다.##",
 		["menu_deck16_1_short_sc"] = "팀원들이 단결력 스택을 획득할 수 있습니다. 팀원들의 단결력 스택은 서로 가까이 있을수록 증가하고, 멀어져 있거나 피해를 입을 경우 감소합니다. 단결력 스택은 선택한 카드에 따라 다양한 이점을 줍니다.",
 		["menu_deck16_1_1_sc"] = "다같이 뭉쳐!",
 		["menu_deck16_1_1_desc_sc"] = "팀원이 단결력 스택을 8개 얻을 때마다 팀원의 받는 치료량이 #{skill_color}#$perk_value_1## 증가합니다.",
@@ -6423,9 +6432,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Anarchist
 			["menu_deck15_mrwi_desc"] = "전투에서 벗어났을 때 방탄복을 완전히 회복하는 대신, 아나키스트는 주기적으로 초당 방탄력을 #{skill_color}#8##씩 재생합니다. 방탄복이 두터울수록 간격당 더 많은 방탄량을 회복하지만, 재생이 일어나는 간격이 길어집니다.\n\n#{risk}#주의: 이 특성 덱을 사용하는 동안은 방탄복 회복 속도를 증가시키거나 방탄복 재생과 관련된 재사용 대기 시간 감소가 있는 스킬과 특성 효과는 비활성화됩니다.##\n\n당신과 당신의 텀원에게 위협을 느낀 시민은 ##$perk_value_1##초간 위협을 오래 받습니다.",
 			--Biker
-			["menu_deck16_mrwi_desc"] = "당신이나 팀원이 적을 처치할 때마다 체력이 #{skill_color}#$perk_value_1##씩 회복합니다. 이 효과는 매 #{important_1}#$perk_value_2##초 마다 한 번만 발생합니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 #{skill_color}#$perk_value_3## 빨라집니다.",
+			["menu_deck16_mrwi_desc"] = "쓰러지지 않는 상태에서 #{skill_color}#$perk_value_1## 반경의 오라를 발산합니다. 오라 안에 있는 당신과 팀원은 단결력 스택을 얻습니다.\n단결력은 오라 범위 내에 있는 팀원 수(본인 포함)의 #{skill_color}#$perk_value_2 배에 해당하는 목표값으로 도달하며##, 목표값보다 낮으면 증가하고 높으면 감소합니다. 차이가 클수록 조정 속도가 빨라집니다.\n팀원은 피해를 #{skill_color}#$perk_value_4##씩 입을 때마다 단결력 #{important_1}#$perk_value_3## 스택씩 감소합니다. (체력 피해의 경우 두 배로 감소).\n팀원이 단결력 스택을 8개 얻을 때마다 팀원의 이동 속도가 #{skill_color}#$perk_value_5## 빨라집니다.\n\n#{risk}#참고: 여러 바이커의 오라가 겹치는 경우, 팀원은 가장 높은 목표값을 가진 쪽을 사용합니다. 또한 여러 바이커 특성 덱이 있어도 단결력 증가율은 중첩되지 않습니다. 카드 효과는 중첩되지 않지만, 모든 상황에서 얻는 단결력은 선택된 모든 효과에 적용됩니다.##\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 #{skill_color}#$perk_value_6## 빨라집니다.",
 			--Kingpin
-			["menu_deck17_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 #{skill_color}#$perk_value_2##초 동안 받는 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복합니다.\n\n효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n주사기 사용 효과가 지속되는 동안 이동 속도가 #{skill_color}##$perk_value_3## 증가합니다.\n\n주사기는 #{important_1}#$perk_value_4##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_5##초씩 단축됩니다.",
+			["menu_deck17_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 방탄복이 있을때 #{skill_color}#$perk_value_2##초 동안 받거나 회피한 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복합니다.\n\n효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n주사기 사용 효과가 지속되는 동안 이동 속도가 #{skill_color}##$perk_value_3## 증가합니다.\n\n주사기는 #{important_1}#$perk_value_4##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_5##초씩 단축됩니다.",
 			--Sicario
 			["menu_deck18_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##이 잠금 해제됩니다.\n\n연막탄을 사용하면, #{skill_color}#$perk_value_1##초간 숨을 수 있는 연막을 형성합니다. 연막 속에 숨어 있으면, 당신과 팀원은 방탄력의 회복 속도가 #{skill_color}#$perk_value_2## 빨라집니다. 연막 속으로 들어간 적은 명중률이 #{skill_color}#$perk_value_3## 감소합니다.\n\n연막탄은 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있지만, 적을 처치하면 재사용 대기 시간이 #{skill_color}#$perk_value_5##초씩 감소합니다.\n\n회피율이 #{skill_color}#$perk_value_6## 증가합니다.\n\n인벤토리에 시체 가방을 #{skill_color}##$perk_value_7##개 더 소지합니다.",
 			--Stoic

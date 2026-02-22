@@ -113,7 +113,7 @@ function UnitNetworkHandler:sync_explosion_to_client(unit, position, normal, dam
 		return
 	end
 
-	managers.explosion:give_local_player_dmg(position, range, damage, nil, unit)
+	managers.explosion:give_local_player_dmg(position, range, damage, unit, curve_pow)
 	managers.explosion:explode_on_client(position, normal, unit, damage, range, curve_pow)
 end
 
@@ -369,6 +369,28 @@ function UnitNetworkHandler:camera_set_attention_pos(cam_unit, pos)
 	end
 
 	cam_unit:base():set_target_attention({ pos = pos })
+end
+
+function UnitNetworkHandler:place_ordnance_bag(pos, rot, upgrade_lvl, rpc)
+	local peer = self._verify_sender(rpc)
+
+	if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not peer then
+		return
+	end
+
+	local unit = GrenadeCrateDeployableBase.spawn(pos, rot, upgrade_lvl, peer:id())
+
+	if unit then
+		unit:base():set_server_information(peer:id())
+	end
+end
+
+function UnitNetworkHandler:sync_ordnance_bag_setup(unit, upgrade_lvl)
+	if not alive(unit) or not self._verify_gamestate(self._gamestate_filter.any_ingame) then
+		return
+	end
+
+	unit:base():sync_setup(upgrade_lvl)
 end
 
 LuaNetworking:AddReceiveHook("sync_intimidated_guard_data", "SyncIntimidatedGuardDataHook", function(unit_id, time, sender)

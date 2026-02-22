@@ -701,7 +701,7 @@ tweak_data.projectiles.molotov.dot_data_name = "proj_molotov"
 
 --Incendiary Nades, idea to make em a mollie--
 tweak_data.projectiles.fir_com.range = 450
-tweak_data.projectiles.fir_com.damage = 9.0
+tweak_data.projectiles.fir_com.damage = 12.0
 tweak_data.projectiles.fir_com.player_damage = 4.5
 tweak_data.projectiles.fir_com.burn_duration = 12
 tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"
@@ -1150,27 +1150,20 @@ end
 --- @type StealthIntimidationCheckin
 tweak_data.stealth_intimidiated_checkin = {}
 tweak_data.stealth_intimidiated_checkin.time = {80, 70, 60, 50}
+tweak_data.stealth_intimidiated_checkin.limit = 0.99
 
 if difficulty_index <= 4 then
 	-- This gameplay mechanic is turned off for difficulties below Overkill.
 	tweak_data.stealth_intimidiated_checkin.penalty = 0
 	tweak_data.stealth_intimidiated_checkin.limit = 0
 elseif difficulty_index == 5 then
-	-- 0.016 = 0.5 / 30 -> If you have a single guard intimidated, you'll reach the 50% limit in 30 minutes.
 	tweak_data.stealth_intimidiated_checkin.penalty = 0.016
-	tweak_data.stealth_intimidiated_checkin.limit = 0.5
 elseif difficulty_index == 6 then
-	-- 0.025 = 0.5 / 20 -> If you have a single guard intimidated, you'll reach the 50% limit in 20 minutes.
 	tweak_data.stealth_intimidiated_checkin.penalty = 0.025
-	tweak_data.stealth_intimidiated_checkin.limit = 0.5
 elseif difficulty_index == 7 then
-	-- 0.0375 = 0.75 / 20
 	tweak_data.stealth_intimidiated_checkin.penalty = 0.0375
-	tweak_data.stealth_intimidiated_checkin.limit = 0.75
 else
-	-- 0.05 = 1 / 20 (just rounding the 0.99 up)
 	tweak_data.stealth_intimidiated_checkin.penalty = 0.05
-	tweak_data.stealth_intimidiated_checkin.limit = 0.99
 end
 
 tweak_data.achievement.complete_heist_achievements.pain_train.num_players = nil

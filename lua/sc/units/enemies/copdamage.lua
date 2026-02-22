@@ -2240,8 +2240,10 @@ function CopDamage:stun_hit(attack_data)
 
 	local result_type = "concussion"
 
-	if self._char_tweak.tank_concussion then
+	if self._char_tweak.tank_concussion or self._unit:base():has_tag("shield") then
 		result_type = "expl_hurt"
+	elseif attack_data.variant == "bullet" then
+		result_type = "hurt"
 	end
 
 	local result = {
@@ -2272,8 +2274,10 @@ function CopDamage:sync_damage_stun(attacker_unit, damage_percent, i_attack_vari
 	local result = nil
 	local result_type = "concussion"
 	
-	if self._char_tweak.tank_concussion then
+	if self._char_tweak.tank_concussion or self._unit:base():has_tag("shield") then
 		result_type = "expl_hurt"
+	elseif attack_data.variant == "bullet" then
+		result_type = "hurt"
 	end
 	
 	result = {

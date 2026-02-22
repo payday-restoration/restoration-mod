@@ -61,7 +61,7 @@ Hooks:PostHook(CarryTweakData, "init", "res_carry", function(self, tweak_data)
 	self.types.slightly_heavy.jump_modifier = 0.65
 	self.types.slightly_heavy.can_run = true
 	self.types.slightly_heavy.throw_distance_multiplier = 0.7
-	self.types.explosives.weight = self.weight_class.heavy
+	self.types.slightly_heavy.weight = self.weight_class.heavy
 
 	self.types.heavy.move_speed_modifier = 0.65
 	self.types.heavy.jump_modifier = 0.65

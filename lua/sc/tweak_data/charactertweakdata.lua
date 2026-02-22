@@ -18360,7 +18360,7 @@ function CharacterTweakData:_set_easy()
 	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
 	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
 	self.shield.weapon.is_pistol.melee_range = 200
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 25
 	self.old_hoxton_mission.HEALTH_INIT = 25
@@ -18423,7 +18423,7 @@ function CharacterTweakData:_set_normal()
 	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
 	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
 	self.shield.weapon.is_pistol.melee_range = 200
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 50
 	self.old_hoxton_mission.HEALTH_INIT = 50
@@ -18486,7 +18486,7 @@ function CharacterTweakData:_set_hard()
 	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
 	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
 	self.shield.weapon.is_pistol.melee_range = 200
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 75
 	self.old_hoxton_mission.HEALTH_INIT = 75
@@ -18549,7 +18549,7 @@ function CharacterTweakData:_set_overkill()
 	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
 	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
 	self.shield.weapon.is_pistol.melee_range = 200
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1.25
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 100
 	self.old_hoxton_mission.HEALTH_INIT = 100
@@ -18607,7 +18607,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.shield.weapon.is_pistol.melee_range = 200
 	self.autumn.damage.bullet_damage_mul = 0.6
 		
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1.5
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 125
 	self.old_hoxton_mission.HEALTH_INIT = 125
@@ -18677,7 +18677,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.old_hoxton_mission.HEALTH_INIT = 150
 	self.spa_vip.HEALTH_INIT = 150
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1.75
 	self.concussion_multiplier = 1
 	self:_multiply_all_speeds(1, 1)
 end
@@ -18753,7 +18753,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.old_hoxton_mission.HEALTH_INIT = 175
 	self.spa_vip.HEALTH_INIT = 175
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
-	self.flashbang_multiplier = 2
+	self.flashbang_multiplier = 1.75
 	self.concussion_multiplier = 1
 	self:_multiply_all_speeds(1, 1.05)
 end
@@ -19095,9 +19095,10 @@ function CharacterTweakData:_set_characters_melee_preset(preset, special_preset)
 	end
 end
 
+-- TODO: alphabetize the lists so it's easier to see when a unit is missing or shouldn't be there
 local orig_character_map = CharacterTweakData.character_map
-function CharacterTweakData:character_map()
-	local char_map = orig_character_map()
+function CharacterTweakData.character_map(...)
+	local char_map = orig_character_map(...)
 	--Basic
 		table.insert(char_map.basic.list, "ene_head_atlas")
 	
@@ -19168,6 +19169,7 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.dlc1.list, "ene_security_gensec_3")
 		
 	--drm	
+		table.insert(char_map.drm.list, "ene_bulldozer_medic_classic")
 		table.insert(char_map.drm.list, "ene_bulldozer_medic_sc")
 		
 	--flat
@@ -19215,9 +19217,11 @@ function CharacterTweakData:character_map()
 				"ene_phalanx_grenadier",
 				"ene_phalanx_taser",
 				"ene_phalanx_1",
+				"ene_phalanx_1_new",
 				"ene_phalanx_1_assault",					
 				"ene_titan_shotgun",
 				"ene_titan_rifle",
+				"ene_titan_grenadier",
 				"ene_omnia_lpf",
 				"ene_fbi_titan_1",
 				"ene_titan_sniper",
@@ -19254,11 +19258,8 @@ function CharacterTweakData:character_map()
 				"ene_zeal_fbi_mp5",
 				"ene_zeal_swat_heavy_sc",
 				"ene_zeal_swat_heavy_r870_sc",
-				"ene_zeal_swat_heavy_benelli"
 			}
 		}
-	--drm
-		table.insert(char_map.drm.list, "ene_bulldozer_medic_classic")
 	--bex
 		char_map.bex = {
 			path = "units/pd2_dlc_bex/characters/",
@@ -19317,7 +19318,6 @@ function CharacterTweakData:character_map()
 				"ene_city_heavy_r870",
 				"ene_zeal_swat_heavy_sc",
 				"ene_zeal_swat_heavy_r870",
-				"ene_zeal_swat_heavy_benelli",
 				"ene_swat_1",
 				"ene_swat_2",
 				"ene_swat_3",
@@ -19390,7 +19390,6 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_3",
 				"ene_zeal_swat_heavy",
 				"ene_zeal_swat_heavy_r870",
-				"ene_zeal_swat_heavy_benelli",
 				"ene_murky_fbi_tank_m249",
 				"ene_murky_fbi_tank_benelli",
 				"ene_murky_fbi_tank_medic",
@@ -19444,11 +19443,11 @@ function CharacterTweakData:character_map()
 			list = {
 				"ene_shield_1",
 				"ene_sniper_1",
+				"ene_sniper_2",
 				"ene_fbi_swat_1",
 				"ene_fbi_swat_2",
 				"ene_fbi_swat_3",
 				"ene_fbi_heavy_1",
-				"ene_fbi_heavy_r870",
 				"ene_fbi_heavy_r870_sc",
 				"ene_city_swat_1",
 				"ene_city_swat_2",
@@ -19467,6 +19466,7 @@ function CharacterTweakData:character_map()
 				"ene_nypd_medic",
 				"ene_tazer_1",
 				"ene_grenadier_1",
+				"ene_fbi_1",
 				"ene_fbi_2",	
 				"ene_fbi_3",	
 				"ene_nypd_veteran_cop_1",		
@@ -19476,8 +19476,6 @@ function CharacterTweakData:character_map()
 				"ene_nypd_swat_2",
 				"ene_nypd_swat_3",
 				"ene_nypd_shield",
-				"ene_nypd_murky_1",
-				"ene_nypd_murky_2",
 				"ene_security_1",	
 				"ene_security_2",	
 				"ene_security_3",	
@@ -19501,10 +19499,10 @@ function CharacterTweakData:character_map()
 				"ene_cop_3",
 				"ene_cop_4",				
 				"ene_sniper_1",
+				"ene_sniper_2",
 				"ene_sniper_3",				
 				"ene_grenadier_1",
 				"ene_tazer_1",
-				"ene_spook_1",	
 				"ene_fbi_swat_1",
 				"ene_fbi_swat_2",
 				"ene_fbi_3",
@@ -19516,7 +19514,6 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_3",
 				"ene_city_shield",
 				"ene_fbi_heavy_1",
-				"ene_fbi_heavy_r870",
 				"ene_fbi_heavy_r870_sc",
 				"ene_city_heavy_g36",
 				"ene_city_heavy_r870_sc",
@@ -19574,7 +19571,6 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_3",
 				"ene_zeal_swat_heavy_sc",
 				"ene_zeal_swat_heavy_r870_sc",
-				"ene_zeal_swat_heavy_benelli",
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
@@ -19679,7 +19675,6 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_3",
 				"ene_zeal_swat_heavy",
 				"ene_zeal_swat_heavy_r870",
-				"ene_zeal_swat_heavy_benelli",
 				"ene_zeal_swat_shield",
 				"ene_drak_medic",
 				"ene_zeal_sniper",

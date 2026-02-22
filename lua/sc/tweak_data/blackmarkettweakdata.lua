@@ -216,7 +216,14 @@ function BlackMarketTweakData:_init_textures(tweak_data)
 		value = 0,
 		global_value = "rest"
 	}			
-			
+	
+	--nuke accent overwrites for all patterns (aside from the patternless options)
+	for texture_id, k in pairs(self.textures) do
+		if texture_id ~= "no_color_no_material" and texture_id ~= "no_color_full_material"  then 
+			self.textures[texture_id].overwrites = nil
+		end
+	end
+
 end
 
 Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", function(self, tweak_data)
@@ -1904,79 +1911,91 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_four.throw_allowed_expire_t = 0.05
 	self.projectiles.wpn_prj_four.repeat_expire_t = 0.5
 	self.projectiles.wpn_prj_four.expire_t = 0.6
-	self.projectiles.wpn_prj_four.base_pickup_chance = 0.08
+	self.projectiles.wpn_prj_four.base_pickup_chance = {0.05, 0.10}
 	self.projectiles.wpn_prj_four.count_as_melee = true
 	--Throwing Cards
 	self.projectiles.wpn_prj_ace.throw_allowed_expire_t = 0.05
 	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.625
 	self.projectiles.wpn_prj_ace.expire_t = 0.65
 	self.projectiles.wpn_prj_ace.max_amount = 12
-	self.projectiles.wpn_prj_ace.base_pickup_chance = 0.15
+	self.projectiles.wpn_prj_ace.base_pickup_chance = {0.08, 0.16}
 	self.projectiles.wpn_prj_ace.count_as_melee = true
 	--Throwing Knife
 	self.projectiles.wpn_prj_target.throw_allowed_expire_t = 0.12
 	self.projectiles.wpn_prj_target.repeat_expire_t = 0.625
 	self.projectiles.wpn_prj_target.expire_t = 0.65
 	self.projectiles.wpn_prj_target.max_amount = 9
-	self.projectiles.wpn_prj_target.base_pickup_chance = 0.12
+	self.projectiles.wpn_prj_target.base_pickup_chance = {0.08, 0.16}
 	self.projectiles.wpn_prj_target.count_as_melee = true
 	--Throwing Axe
 	self.projectiles.wpn_prj_hur.throw_allowed_expire_t = 0.35
 	self.projectiles.wpn_prj_hur.repeat_expire_t = 0.625
 	self.projectiles.wpn_prj_hur.expire_t = 0.65
 	self.projectiles.wpn_prj_hur.max_amount = 6
-	self.projectiles.wpn_prj_hur.base_pickup_chance = 0.10
+	self.projectiles.wpn_prj_hur.base_pickup_chance = {0.06, 0.12}
 	self.projectiles.wpn_prj_hur.count_as_melee = true
 	--Javelin
 	self.projectiles.wpn_prj_jav.throw_allowed_expire_t = 0.75
 	self.projectiles.wpn_prj_jav.repeat_expire_t = 0.8
 	self.projectiles.wpn_prj_jav.expire_t = 0.9
 	self.projectiles.wpn_prj_jav.max_amount = 4
-	self.projectiles.wpn_prj_jav.base_pickup_chance = 0.06
+	self.projectiles.wpn_prj_jav.base_pickup_chance = {0.05, 0.10}
 	self.projectiles.wpn_prj_jav.count_as_melee = true
 
 	self.projectiles.fir_com.max_amount = 3
-	self.projectiles.smoke_screen_grenade.base_cooldown = 35
-	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
-	self.projectiles.tag_team.base_cooldown = 80
-	self.projectiles.concussion.max_amount = 3
-	self.projectiles.concussion.base_pickup_chance = 0.03
-	self.projectiles.wpn_gre_electric.max_amount = 3
-	self.projectiles.wpn_gre_electric.base_pickup_chance = 0.02
+	self.projectiles.fir_com.base_pickup_chance = {0.0142, 0.025}
+	self.projectiles.molotov.max_amount = 3
+	self.projectiles.molotov.base_pickup_chance = {0.0142, 0.025}
 	self.projectiles.poison_gas_grenade.max_amount = 3
-	self.projectiles.poison_gas_grenade.base_pickup_chance = 0.02
+	self.projectiles.poison_gas_grenade.base_pickup_chance = {0.0142, 0.025}
+	self.projectiles.concussion.max_amount = 3
+	self.projectiles.concussion.base_pickup_chance = {0.0142, 0.025}
+	self.projectiles.wpn_gre_electric.max_amount = 3
+	self.projectiles.wpn_gre_electric.base_pickup_chance = {0.0142, 0.025}
 
+	self.projectiles.frag.max_amount = 3
+	self.projectiles.frag.base_pickup_chance = {0.0125, 0.025}
+	self.projectiles.dada_com.max_amount = 3
+	self.projectiles.dada_com.base_pickup_chance = {0.0125, 0.025}
+	self.projectiles.frag_com.max_amount = 3
+	self.projectiles.frag_com.base_pickup_chance = {0.0125, 0.025}
+	self.projectiles.dynamite.max_amount = 3
+	self.projectiles.dynamite.base_pickup_chance = {0.0125, 0.025}
 	self.projectiles.sticky_grenade.throw_shout = nil
+	self.projectiles.sticky_grenade.max_amount = 3
+	self.projectiles.sticky_grenade.base_pickup_chance = {0.0125, 0.025}
 
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.throw_allowed_expire_t = 0.1
-		self.projectiles.xmas_snowball.expire_t = 1.3
 		self.projectiles.xmas_snowball.max_amount = 3
 		self.projectiles.xmas_snowball.base_cooldown_no_perk = true
-		self.projectiles.xmas_snowball.base_cooldown = 35
-		self.projectiles.xmas_snowball.pickup_cooldown_t = 3.5 --10~ pickups to gain back one immediately
+		self.projectiles.xmas_snowball.base_cooldown = 60
+		self.projectiles.xmas_snowball.pickup_cooldown_t = 6 --10~ pickups to gain back one immediately
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 
+	self.projectiles.smoke_screen_grenade.base_cooldown = 35
+	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
+	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.pocket_ecm_jammer.max_amount = 1
 	self.projectiles.pocket_ecm_jammer.base_cooldown = 60
 	
 	--Fuck off
-	self.projectiles.frag.no_cheat_count = true
-	self.projectiles.concussion.no_cheat_count = true
-	self.projectiles.dynamite.no_cheat_count = true
-	self.projectiles.molotov.no_cheat_count = true
 	self.projectiles.wpn_prj_four.no_cheat_count = true
 	self.projectiles.wpn_prj_ace.no_cheat_count = true
 	self.projectiles.wpn_prj_jav.no_cheat_count = true
 	self.projectiles.wpn_prj_hur.no_cheat_count = true
 	self.projectiles.wpn_prj_target.no_cheat_count = true
-	self.projectiles.frag_com.no_cheat_count = true
-	self.projectiles.fir_com.no_cheat_count = true
-	self.projectiles.dada_com.no_cheat_count = true
 	self.projectiles.wpn_gre_electric.no_cheat_count = true
+	self.projectiles.concussion.no_cheat_count = true
 	self.projectiles.poison_gas_grenade.no_cheat_count = true
+	self.projectiles.frag.no_cheat_count = true
+	self.projectiles.dynamite.no_cheat_count = true
+	self.projectiles.frag_com.no_cheat_count = true
+	self.projectiles.dada_com.no_cheat_count = true
 	self.projectiles.sticky_grenade.no_cheat_count = true
+	self.projectiles.molotov.no_cheat_count = true
+	self.projectiles.fir_com.no_cheat_count = true
 
 	--Animation overrides for grenades so they aren't shitty. Like seriously, Javelin throw for grenades..?	
 	--HE
@@ -2007,8 +2026,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	--self.projectiles.poison_gas_grenade.animation = "throw_grenade_com"				--throw_grenade_com
 	--self.projectiles.poison_gas_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com	
 	--Snowball
-	self.projectiles.xmas_snowball.animation = "throw_dynamite"							--throw_snowball
-	self.projectiles.xmas_snowball.anim_global_param = "projectile_dynamite"			--projectile_snowball
+	--self.projectiles.xmas_snowball.animation = "throw_dynamite"							--throw_snowball
+	--self.projectiles.xmas_snowball.anim_global_param = "projectile_dynamite"			--projectile_snowball
 	
 	if SystemFS:exists("assets/mod_overrides/CoD Inspired Flashbang Animation") then
 		self.projectiles.concussion.animation = "throw_concussion"
@@ -4267,7 +4286,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_blunt
 		melee_anim = {
-			'baton','oldbaton','detector','shovel','shillelagh','whiskey','morning','branding_iron','slot_lever','hammer','tenderizer','croupier_rake','shock',
+			'baton','oldbaton','detector','shovel','shillelagh','whiskey','morning','branding_iron','slot_lever','hammer','tenderizer','croupier_rake','shock','funder_strike',
 			'spatula','swagger','selfie','chac',
 			'iceaxe'
 		}
@@ -4288,6 +4307,34 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_speed_mult = 1
 			--self.melee_weapons[melee_id].sphere_cast_radius_add = 4
 		end	
+			melee_anim = {
+				'funder_strike'
+			}
+			for i, melee_id in ipairs(melee_anim) do
+				self.melee_weapons[melee_id].anims = {
+					var1_attack = {
+						from = 1,
+						anim = "menu"
+					},		
+					var2_attack = {
+						from = 1,
+						anim = "menu"
+					},		
+					var3_attack = {
+						from = 1,
+						anim = "menu"
+					},
+					var4_attack = {
+						from = 1,
+						anim = "menu"
+					},
+					charge = {
+						loop = false,
+						anim = "menu",
+						from = 1
+					}
+				}
+			end
 
 		--melee_brick
 		--Pretty much a clone of melee_blunt but the hand hold is wider
@@ -4884,6 +4931,20 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.taser.stats.range = 165
 			self.melee_weapons.taser.stats.concealment = 29
 			self.melee_weapons.taser.stats.speed_mult = 1.1
+			--Zap Stick--
+			self.melee_weapons.funder_strike.info_id = "bm_melee_taser_info"
+			self.melee_weapons.funder_strike.tase_data = nil
+			self.melee_weapons.funder_strike.special_weapon = "taser"
+			self.melee_weapons.funder_strike.stats.cleave = 1
+			self.melee_weapons.funder_strike.stats.raycasts = 10
+			self.melee_weapons.funder_strike.stats.min_damage = 2.4
+			self.melee_weapons.funder_strike.stats.max_damage = 6.001
+			self.melee_weapons.funder_strike.stats.min_damage_effect = 3.0
+			self.melee_weapons.funder_strike.stats.max_damage_effect = 9.0
+			self.melee_weapons.funder_strike.stats.charge_time = 1.5
+			self.melee_weapons.funder_strike.stats.range = 170
+			self.melee_weapons.funder_strike.stats.concealment = 28
+			self.melee_weapons.funder_strike.stats.speed_mult = 1.0
 
 		--Money money money--
 		self.melee_weapons.moneybundle.info_id = "bm_melee_moneybundle_info"

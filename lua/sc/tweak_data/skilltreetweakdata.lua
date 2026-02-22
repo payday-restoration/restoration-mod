@@ -831,7 +831,8 @@ function SkillTreeTweakData:init(tweak_data)
 						["icon_xy"] = {3, 0},
 						[1] = {
 							upgrades = {
-								"player_fully_loaded_pick_up_multiplier"
+								"player_fully_loaded_pick_up_multiplier",
+								"player_throwables_multiplier"
 							},
 							cost = self.costs.hightier
 						},
@@ -915,13 +916,14 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {9, 4},
 					[1] = {
 						upgrades = {
-							"player_throwables_multiplier"
+							"grenade_crate_ammo_increase1"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
-							"second_deployable_1"
+							"second_deployable_1",
+							"grenade_crate_quantity"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -3326,8 +3328,8 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			texture_bundle_folder = "wild",
 			icon_xy = {
-				0,
-				2
+				1,
+				3
 			}
 		},
 		{
@@ -3340,8 +3342,8 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			texture_bundle_folder = "wild",
 			icon_xy = {
-				1,
-				3
+				0,
+				2
 			}
 		}
 	}
@@ -3602,7 +3604,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_chico_injector_speed"
+					"player_chico_injector_speed",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {1, 0},
@@ -3625,7 +3628,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_chico_injector_low_health_multiplier"
+					"player_chico_injector_low_health_multiplier",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {3, 0},

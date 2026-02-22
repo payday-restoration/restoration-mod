@@ -787,6 +787,8 @@
 			<option_group name="BWAResOpt">
 				<option type="bool" default_value="false" name="BWAResmod"/>
 				<divider name="tod_divider" size="14"/>
+				<option type="multichoice" default_value="1" name="BWAResADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="bool" default_value="false" name="BWAResmodBob"/>
 				<option type="bool" default_value="false" name="BWAResmodBobADS"/>
 				<divider name="tod_divider" size="7"/>
@@ -794,6 +796,10 @@
 				<option type="number" default_value="0.45" min="0" max="5" step="0.01" show_value="true" name="BWAResmodSwayStr"/>
 				<option type="number" default_value="0.03" min="0" max="1" step="0.01" show_value="true" name="BWAResmodADSSwayStr"/>
 			</option_group>
+			<divider name="tod_divider" size="16"/>
+			<button name="DebugOptions" disabled="true"/>
+			<divider name="tod_divider" size="8"/>
+			<option type="bool" default_value="false" name="LogOutfitStrings"/>
         </options>
     </Options>
 	<!--///PACKAGES\\\-->

@@ -203,7 +203,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"x_breech",
 					"ching",
 					"erma",
-					"sap"
+					"sap",
+					"funder_strike"
 				}
 			},
 		l27 = {
@@ -367,6 +368,42 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 	self:_bessy_definitions()
 	self:_money_weapon_definitions()
 end)
+
+-- Ordnance bag definitions
+function UpgradesTweakData:_grenade_crate_definitions()
+
+	self.definitions.grenade_crate = {
+		equipment_id = "grenade_crate",
+		slot = 1,
+		dlc = "mxm",
+		category = "equipment",
+		name_id = "menu_equipment_grenade_crate"
+	}
+
+	-- I've taken this from the ammo_bag_definitions, and I'm gonna be honest, I've no idea why that one
+	-- has so much shit in it. Definitions typically just have name_id and category.
+	for i, _ in ipairs(self.values.grenade_crate.ammo_increase) do
+		self.definitions["grenade_crate_ammo_increase" .. i] = {
+			name_id = "grenade_crate_ammo_increase" .. i,
+			category = "equipment_upgrade",
+			upgrade = {
+				upgrade = "ammo_increase",
+				category = "grenade_crate",
+				value = i
+			}
+		}
+	end
+
+	self.definitions.grenade_crate_quantity = {
+		name_id = "menu_grenade_crate_quantity",
+		category = "equipment_upgrade",
+		upgrade = {
+			value = 1,
+			upgrade = "quantity",
+			category = "grenade_crate"
+		}
+	}
+end
 
 --Money thrower definitions
 function UpgradesTweakData:_money_weapon_definitions()
@@ -632,6 +669,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.3,
 		1.2
 	}
+
+	-- Ordnance bag
+	self.ordnance_bag_ammo = 0.25
+	self.ordnance_bag_grenades = 4
 	
 	self.values.player.corpse_dispose_amount = {2, 3}
 	self.values.bodybags_bag.quantity = {1}
@@ -1159,19 +1200,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Fully Loaded
 				--Basic
 					self.values.player.extra_ammo_multiplier = {1.25}
+					self.values.player.throwables_multiplier = {1.3}
 				--Ace
 					self.values.player.fully_loaded_pick_up_multiplier = {1.5}
-					self.values.player.regain_throwable_from_ammo = {
-						{chance = 0.05, chance_inc = 0.01}
-					}
-					
+					self.values.player.regain_throwable_from_ammo = {2.0} --non-linear mult, 2x translates to a 50% increase
+
 					self.skill_descs.bandoliers = {
-						skill_value_b1 = tostring(self.values.player.extra_ammo_multiplier[1] % 1 * 100).."%", -- +Max ammo capacity
-						skill_value_p1 = tostring(self.values.player.fully_loaded_pick_up_multiplier[1] % 1 * 100).."%", -- Increase ammo pick up
-						skill_value_p2 = tostring(self.values.player.regain_throwable_from_ammo[1].chance * 100).."%", --Chance to pick up throwable from ammo boxes
-						skill_value_p3 = tostring(self.values.player.regain_throwable_from_ammo [1].chance_inc * 100).."%" -- Increase chance to pick up throwable if ammo box didn't give one
+						skill_value_b1 = tostring(self.values.player.fully_loaded_pick_up_multiplier[1] % 1 * 100).."%", -- Increase ammo pick up
+						skill_value_b2 = tostring(self.values.player.throwables_multiplier[1] % 1 * 100).."%", -- more throwables
+						skill_value_p1 = tostring(self.values.player.extra_ammo_multiplier[1] % 1 * 100).."%", -- +Max ammo capacity
+						skill_value_p2 = tostring(math.floor((1 - 1 / self.values.player.regain_throwable_from_ammo[1]) * 100)) .. "%", --Chance to pick up throwable from ammo boxes
 					}
-		
+
 	--TECHNICIAN--
 		--Fortress--
 			--Logistician
@@ -1211,12 +1251,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		
 			--Jack of All Trades
 				--Basic
-					self.values.player.throwables_multiplier = {1.3}
+					self.values.grenade_crate = self.values.grenade_crate or {}
+					self.values.grenade_crate.ammo_increase = {2}
 				--Ace
+					self.values.grenade_crate.quantity = {1}
 					self.values.player.second_deployable = {true}
 					
 					self.skill_descs.engineering = {
-						skill_value_b1 = tostring(self.values.player.throwables_multiplier[1] % 1 * 100).."%" -- more throwables
+						skill_value_b1 = tostring((self.values.grenade_crate.ammo_increase[1] - 1) * self.ordnance_bag_ammo * 100).."%", -- More ammo for weapons
+						skill_value_p1 = tostring(self.values.grenade_crate.quantity[1] + 1) -- Quantity of ammo bags
 					}
 	
 			--Tower Defense
@@ -2210,7 +2253,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
 		works_with_armor_kit = true,
 		tick_time = 1,
-		total_ticks = 5,
+		total_ticks = 3,
 		max_stacks = 5,
 		stacking_cooldown = 0.1,
 		add_stack_sources = {
@@ -2284,8 +2327,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,
-		tick_time = 1,
-		total_ticks = 3,
+		tick_time = 0.5,
+		total_ticks = 4,
 		max_stacks = 5,
 		stacking_cooldown = 0.5,
 		add_stack_sources = {
@@ -2304,9 +2347,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 	self.values.player.damage_to_hot = {
-		0.1,
-		0.2,
-		0.3,
+		0.05,
+		0.10,
+		0.15,
 		
 		0.0 --Unused
 	}
@@ -2325,8 +2368,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		armors_allowed = {"level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7"},
 		works_with_armor_kit = true,
 		tick_time = 1,
-		total_ticks = 5,
-		max_stacks = 10,
+		total_ticks = 3,
+		max_stacks = 5,
 		stacking_cooldown = 0.0,
 		add_stack_sources = {
 			bullet = false,
@@ -2592,16 +2635,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		self.values.player.melee_fists_damage_effect_multiplier = {2}
 		self.values.player.melee_brass_damage_multiplier = {10}
 		self.values.player.melee_brass_damage_effect_multiplier = {5}
-		self.values.tony = {
-			extra_ammo_multiplier = {
-				0.5,
-				0.2
-			},
-			pick_up_multiplier = {
-				0.2,
-				0.05
-			}
-		}
+		self.values.player.tony_pick_up_multiplier = {0.2, 0.05}
+		self.values.player.tony_extra_ammo_multiplier = {0.5, 0.2}
+
 		self.values.player.buildup_meter_rick = {
 			{ combo_add_mod = 2, combo_max_mod = -50, ene_mult_mod = 0.7 },
 			{ combo_add_mod = 0, combo_max_mod = -20, ene_mult_mod = 1.0  }, --Tony
@@ -3391,8 +3427,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.multi_choice_specialization_descs[9] = { [9] = {} } --table setup for last card multichoice
 	self.multi_choice_specialization_descs[9][9][2] = { --Tony
 		perk_value_1 = tostring(self.values.player.melee_fists_damage_multiplier[1] * 100) .. "%",
-		perk_value_2 = tostring((1 - self.values.tony.extra_ammo_multiplier[1]) * 100) .. "%",
-		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[1]) * 100) .. "%",
+		perk_value_2 = tostring((1 - self.values.player.tony_extra_ammo_multiplier[1]) * 100) .. "%",
+		perk_value_3 = tostring((1 - self.values.player.tony_pick_up_multiplier[1]) * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[2].combo_add_mod),
 		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
 		perk_value_6 = tostring(math.abs(self.values.player.buildup_meter_rick[2].combo_max_mod)),
@@ -3428,8 +3464,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.multi_choice_specialization_descs[9][9][9] = { --Tony's Revenge
 		perk_value_1 = tostring(self.values.player.melee_brass_damage_multiplier[1] * 100) .. "%",
-		perk_value_2 = tostring((1 - self.values.tony.extra_ammo_multiplier[2]) * 100) .. "%",
-		perk_value_3 = tostring((1 - self.values.tony.pick_up_multiplier[2]) * 100) .. "%",
+		perk_value_2 = tostring((1 - self.values.player.tony_extra_ammo_multiplier[2]) * 100) .. "%",
+		perk_value_3 = tostring((1 - self.values.player.tony_pick_up_multiplier[2]) * 100) .. "%",
 		perk_value_4 = tostring(self.values.player.buildup_meter[1].combo_add + self.values.player.buildup_meter_rick[3].combo_add_mod),
 		perk_value_5 = tostring(self.values.player.buildup_meter_hurt_decay_mod[4]),
 		perk_value_6 = tostring(math.abs(self.values.player.buildup_meter_rick[3].combo_max_mod)),
@@ -3483,8 +3519,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Grinder
 	self.specialization_descs[11][1] = {
-		perk_value_1 = tostring(self.values.player.damage_to_hot[1] * 10), -- HP regen per tick
-		perk_value_2 = tostring(self.damage_to_hot_data.total_ticks/self.damage_to_hot_data.tick_time), -- Duration of 1 stack
+		perk_value_1 = tostring(self.values.player.damage_to_hot[1] * 20), -- HP regen per tick
+		perk_value_2 = tostring(self.damage_to_hot_data.total_ticks*self.damage_to_hot_data.tick_time), -- Duration of 1 stack
 		perk_value_3 = tostring(self.damage_to_hot_data.max_stacks),-- Max amount of stacks
 		perk_value_4 = tostring(self.damage_to_hot_data.stacking_cooldown), -- Stacking CD
 		perk_value_5 = tostring(self.values.player.level_5_armor_addend_grinder[1] * -10), -- Flak Jacket armor reduction
@@ -3492,14 +3528,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_7 = tostring(self.values.player.level_5_deflection_addend_grinder[1] * -100), -- Flak Jacket deflection reduction
 	}
 	self.specialization_descs[11][3] = {
-		perk_value_1 = tostring((self.values.player.damage_to_hot[2] - self.values.player.damage_to_hot[1]) * 10),-- Additional HP regen per tick
+		perk_value_1 = tostring((self.values.player.damage_to_hot[2] - self.values.player.damage_to_hot[1]) * 20),-- Additional HP regen per tick
 	}
 	self.specialization_descs[11][5] = {
-		perk_value_1 = tostring(self.values.player.damage_to_hot_extra_ticks[1]), -- Additional duration for stack
+		perk_value_1 = tostring(self.values.player.damage_to_hot_extra_ticks[1]*self.damage_to_hot_data.tick_time), -- Additional duration for stack
 		perk_value_2 = "2" -- Body bag cases quantity. Not defined here so beware
 	}
 	self.specialization_descs[11][7] = {
-		perk_value_1 = tostring((self.values.player.damage_to_hot[3] - self.values.player.damage_to_hot[2]) * 10) -- Another additional HP regen per tick
+		perk_value_1 = tostring((self.values.player.damage_to_hot[3] - self.values.player.damage_to_hot[2]) * 20) -- Another additional HP regen per tick
 	}
 	self.specialization_descs[11][9] = {
 		perk_value_1 = tostring(self.values.player.hot_speed_bonus[1] * 100).."%", -- Movement speed bonus per stack
@@ -3590,12 +3626,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Biker
 	self.specialization_descs[16][1] = {
-        perk_value_1 = tostring(self.biker_per_crew_member), -- Tendency per crew member
-        perk_value_2 = tostring(self.biker_proximity / 100).." meter", -- Proximity requirement
-        perk_value_3 = tostring(self.biker_cohesion_gain), -- Cohesion gained nearby
-        perk_value_4 = tostring(self.biker_cohesion_loss), -- Cohesion lost from lack of proximity
-        perk_value_5 = tostring(self.biker_damage_weighs_for_stack_loss.armour), -- Cohesion lost from taking damage
-        perk_value_6 = tostring(self.values.team.player.biker_damage_to_lose[1]) -- Damage to be taken to lose stacks
+		perk_value_1 = tostring(self.biker_proximity / 100), -- Proximity requirement
+        perk_value_2 = tostring(self.biker_per_crew_member), -- Tendency per crew member
+        perk_value_3 = tostring(self.biker_damage_weighs_for_stack_loss.armour), -- Cohesion lost from taking damage
+        perk_value_4 = tostring(self.values.team.player.biker_damage_to_lose[1]) -- Damage to be taken to lose stacks
 	}
 	self.specialization_descs[16][3] = {
         perk_value_1 = tostring(self.values.player.biker_treat_as_more_cohesion[1]), -- Treat as having this many extra Cohesion stacks
@@ -3687,7 +3721,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_4 = "1" -- CD reduction on kill. Not defined here (?)
 	}
 	self.specialization_descs[17][3] = {
-		perk_value_1 = tostring(self.values.player.chico_injector_speed[1] % 1 * 100).."%" -- Movement speed bonus when injector is active
+		perk_value_1 = tostring(self.values.player.chico_injector_speed[1] % 1 * 100).."%", -- Movement speed bonus when injector is active
+        perk_value_2 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[17][5] = {
 		perk_value_1 = tostring(self.values.temporary.chico_injector[3][1] * 100).."%", -- HP regen on damage taken
@@ -3695,7 +3730,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[17][7] = {
 		perk_value_1 = tostring(self.values.player.chico_injector_low_health_multiplier[1][2] * 100).."%", -- HP regen buff on low HP
-		perk_value_2 = tostring(self.values.player.chico_injector_low_health_multiplier[1][1] * 100).."%" -- HP threshold for HP regen buff
+		perk_value_2 = tostring(self.values.player.chico_injector_low_health_multiplier[1][1] * 100).."%", -- HP threshold for HP regen buff
+        perk_value_3 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[17][9] = {
 		perk_value_1 = tostring(self.values.player.chico_injector_health_to_speed[1][1] * 10), -- Gives CD reduction for every X HP "healed" at max HP
@@ -3959,7 +3995,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_7 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
 	}
 	self.multi_choice_specialization_descs[23][9][11] = {--Grinder
-		perk_value_1 = tostring(self.values.player.damage_to_hot[1] * 10), -- HP regen per tick
+		perk_value_1 = tostring(self.values.player.damage_to_hot[1] * 20), -- HP regen per tick
 		perk_value_2 = tostring(self.damage_to_hot_data.total_ticks/self.damage_to_hot_data.tick_time), -- Duration of 1 stack
 		perk_value_3 = tostring(self.damage_to_hot_data.max_stacks),-- Max amount of stacks
 		perk_value_4 = tostring(self.damage_to_hot_data.stacking_cooldown), -- Stacking CD
@@ -3988,9 +4024,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_1 = tostring(self.values.team.player.civ_intimidation_mul[1] % 1 * 100).."%" -- Civs intimidated longer
 	}
 	self.multi_choice_specialization_descs[23][9][16] = { --Biker
-		perk_value_1 = tostring(self.values.player.wild_health_amount[1] * 10), -- HP regen per (team) kill
-		perk_value_2 = tostring(self.wild_trigger_time), -- CD of this ability
-		perk_value_3 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
+		perk_value_1 = tostring(self.biker_proximity / 100).." meter", -- Proximity requirement
+        perk_value_2 = tostring(self.biker_per_crew_member), -- Tendency per crew member
+        perk_value_3 = tostring(self.biker_damage_weighs_for_stack_loss.armour), -- Cohesion lost from taking damage
+        perk_value_4 = tostring(self.values.team.player.biker_damage_to_lose[1]), -- Damage to be taken to lose stacks
+        perk_value_5 = tostring(self.values.team.player.biker_crew_movespeed_bonus[1] * 100)..'%', -- Movement increase
+		perk_value_6 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.multi_choice_specialization_descs[23][9][17] = { --Kingpin
 		perk_value_1 = tostring(self.values.temporary.chico_injector[4][1] * 100).."%", -- HP regen on damage taken
@@ -4296,9 +4335,11 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_16",
 			desc_id = "menu_deck16_mrwi_desc",
 			upgrades = {
-				"player_wild_health_amount_1",
+				"player_biker_aura",
+				"team_biker_damage_to_lose_1",
+				"team_biker_crew_movespeed_bonus",
 				"team_civ_intimidation_mul",
-				"player_passive_loot_drop_multiplier_1"	
+				"player_passive_loot_drop_multiplier_1"
 			}
 		},
 		{ --Kingpin
@@ -6091,8 +6132,8 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "extra_ammo_multiplier",
-			category = "tony"
+			upgrade = "tony_extra_ammo_multiplier",
+			category = "player"
 		}
 	}
 	self.definitions.buildup_meter_tony_extra_ammo_multiplier_2 = {
@@ -6100,8 +6141,8 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 2,
-			upgrade = "extra_ammo_multiplier",
-			category = "tony"
+			upgrade = "tony_extra_ammo_multiplier",
+			category = "player"
 		}
 	}
 	self.definitions.buildup_meter_tony_pick_up_multiplier_1 = {
@@ -6109,8 +6150,8 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "pick_up_multiplier",
-			category = "tony"
+			upgrade = "tony_pick_up_multiplier",
+			category = "player"
 		}
 	}
 	self.definitions.buildup_meter_tony_pick_up_multiplier_2 = {
@@ -6118,8 +6159,8 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 2,
-			upgrade = "pick_up_multiplier",
-			category = "tony"
+			upgrade = "tony_pick_up_multiplier",
+			category = "player"
 		}
 	}
 	self.definitions.player_melee_fists_damage_multiplier = {

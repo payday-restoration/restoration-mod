@@ -38,6 +38,11 @@ return {
 	[100407] = enabled,
 	[100397] = enabled,
 	[100417] = enabled,
+	-- Nuke stupid cheat spawns
+	[100741] = disabled,
+	[102369] = disabled,
+	[102382] = disabled,
+	[102781] = disabled,
 	--disables the weird roof navlink
 	[102554] = disabled,
 	--fixes Locke repeating the same "Play_loc_bex_108" dialogue instead of using the correct one

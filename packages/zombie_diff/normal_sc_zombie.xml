@@ -129,7 +129,8 @@
 	<material_config	path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_contour" force="false"/>
 	
-	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_phalanx_body_df" force="false"/>	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_phalanx_body_df" force="false"/>
+	<texture			path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/heads_atlas_hvh_df" force="false"/>
 
 	<!--skeleton SWAT m4-->
     <object				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
@@ -139,7 +140,7 @@
 	<material_config	path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_contour"/>
 	<unit				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_husk" load="true"/>
-		
+	
 	<!--skeleton SWAT saiga-->	
     <object				path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
 	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
@@ -195,8 +196,8 @@
 	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false" load="true"/>	
-		
-	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_taser_df" />	
+	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_taser_df" />
 	
 	<!--Titan HRT-->	
 	<unit				path="units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>

@@ -541,13 +541,13 @@ function PlayerDamage:damage_bullet(attack_data)
 	local pm = managers.player
 	local t = pm:player_timer():time()
 	local hit_pos = mvector3.copy(self._unit:movement():m_com())
-    local attack_dir = nil
-    if attacker_unit then
-        attack_dir = hit_pos - attacker_unit:position()
-        mvector3.normalize(attack_dir)
-    else
-        attack_dir = self._unit:rotation():y()
-    end
+	local attack_dir = nil
+	if attacker_unit then
+		attack_dir = hit_pos - attacker_unit:position()
+		mvector3.normalize(attack_dir)
+	else
+		attack_dir = self._unit:rotation():y()
+	end
 
 	--local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
 	local grace_bonus = self._dmg_interval + self._dodge_interval
@@ -647,6 +647,10 @@ function PlayerDamage:damage_bullet(attack_data)
 				pm:unregister_message(Message.OnPlayerDodge, "dodge_ricochet_bullets")
 			end
 
+			--if 0 < self:get_real_armor() then
+				self:_check_chico_heal(attack_data, true)
+			--end
+
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				local unit_movement = self._unit:movement()
@@ -691,15 +695,15 @@ function PlayerDamage:damage_bullet(attack_data)
 		return
 	end
 
-    local attack_dir = nil
-    if attacker_unit then
-        attack_dir = hit_pos - attacker_unit:position()
-        mvector3.normalize(attack_dir)
-    else
-        attack_dir = self._unit:rotation():y()
-    end
+	local attack_dir = nil
+	if attacker_unit then
+		attack_dir = hit_pos - attacker_unit:position()
+		mvector3.normalize(attack_dir)
+	else
+		attack_dir = self._unit:rotation():y()
+	end
 
-    managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
+	managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	
 	return 
 end
@@ -771,15 +775,15 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	end
 	
 	local hit_pos = mvector3.copy(self._unit:movement():m_com())
-    local attack_dir = nil
-    if attacker_unit then
-        attack_dir = hit_pos - attacker_unit:position()
-        mvector3.normalize(attack_dir)
-    else
-        attack_dir = self._unit:rotation():y()
-    end	
+	local attack_dir = nil
+	if attacker_unit then
+		attack_dir = hit_pos - attacker_unit:position()
+		mvector3.normalize(attack_dir)
+	else
+		attack_dir = self._unit:rotation():y()
+	end	
 
-    managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
+	managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	
 	--Apply slow debuff if bullet has one.
 	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not self._unit:movement():current_state().driving then
@@ -1222,7 +1226,7 @@ end)
 
 --Include deflection in calcs. Doesn't work in cases where armor is pierced, but I can't be assed to fix it.
 --Also ignores temp hp in max health calcs. Not important for now, but may be in the future.
-function PlayerDamage:_check_chico_heal(attack_data)
+function PlayerDamage:_check_chico_heal(attack_data, dodge_clamp)
 	if managers.player:has_activate_temporary_upgrade("temporary", "chico_injector") then
 		local dmg_to_hp_ratio = managers.player:temporary_upgrade_value("temporary", "chico_injector", 0)
 
@@ -1234,7 +1238,8 @@ function PlayerDamage:_check_chico_heal(attack_data)
 			end
 		end
 
-		local health_received = attack_data.damage * dmg_to_hp_ratio
+		local max_health_conversion = dodge_clamp and math.min(attack_data.damage, self:_max_armor()) or attack_data.damage
+		local health_received = max_health_conversion * dmg_to_hp_ratio
 
 		if self._armor_broken then
 			local deflection = math.max(self._deflection - (managers.player:upgrade_value("player", "frenzy_deflection", 0) * (1 - self:health_ratio())), self._max_deflection)
@@ -1374,8 +1379,8 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 		self._damage_to_hot_stack = {}
 		self._hot_decay_t = nil
 		self._hot_next_heal_t = nil
-	    managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
-	    managers.hud:start_buff(self._hot_type, 0)
+		managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
+		managers.hud:start_buff(self._hot_type, 0)
 	end
 
 	local attacker_unit = attack_data and attack_data.attacker_unit
@@ -1700,7 +1705,7 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	self._healing_reduction = 1 * 1 - ( (pm:upgrade_value("player", "frenzy_deflection", 0) * healing_reduction_ratio) * (self:health_ratio()) )
 
 	-- Biker: increased healing potency from Stick Together.
-    if managers.player:has_team_category_upgrade("player", "biker_crew_heal_potency") then
+	if managers.player:has_team_category_upgrade("player", "biker_crew_heal_potency") then
 		local potency_amount = managers.player:get_cohesion_stacks_as_treated()
 
 		self._healing_reduction = self._healing_reduction + managers.player:team_upgrade_value("player", "biker_crew_heal_potency", 0) * potency_amount
@@ -1778,34 +1783,34 @@ end)
 
 --Rewrote how stacks are added
 function PlayerDamage:add_damage_to_hot()
-    if self:need_revive() or self:dead() or self._check_berserker_done then
-        return
-    end
+	if self:need_revive() or self:dead() or self._check_berserker_done then
+		return
+	end
 
-    local t = TimerManager:game():time()
-    local tick_time = self._doh_data.tick_time or 1
-    local total_ticks = (self._doh_data.total_ticks or 1) + managers.player:upgrade_value("player", "damage_to_hot_extra_ticks", 0)
-    local stack_duration = total_ticks * tick_time
+	local t = TimerManager:game():time()
+	local tick_time = self._doh_data.tick_time or 1
+	local total_ticks = (self._doh_data.total_ticks or 1) + managers.player:upgrade_value("player", "damage_to_hot_extra_ticks", 0)
+	local stack_duration = total_ticks * tick_time
 
-    if self:got_max_doh_stacks() then
-        self._hot_decay_t = t + stack_duration
+	if self:got_max_doh_stacks() then
+		self._hot_decay_t = t + stack_duration
 
-        if #self._damage_to_hot_stack > 0 then
-            self._damage_to_hot_stack[1] = stack_duration
-        end
-	    managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
-	    managers.hud:start_buff(self._hot_type, stack_duration)
-        return
-    end
+		if #self._damage_to_hot_stack > 0 then
+			self._damage_to_hot_stack[1].duration = stack_duration
+		end
+		managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
+		managers.hud:start_buff(self._hot_type, stack_duration)
+		return
+	end
 
-    table.insert(self._damage_to_hot_stack, stack_duration)
-    self._hot_decay_t = t + stack_duration
-    if not self._hot_next_heal_t then
-        self._hot_next_heal_t = t + 0.01
-    end
+	table.insert(self._damage_to_hot_stack, { duration = stack_duration, next_tick = tick_time, ticks_left = total_ticks })
+	self._hot_decay_t = t + stack_duration
+	if not self._hot_next_heal_t then
+		self._hot_next_heal_t = t + 0.01
+	end
 
-    managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
-    managers.hud:start_buff(self._hot_type, stack_duration)
+	managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
+	managers.hud:start_buff(self._hot_type, stack_duration)
 end
 
 --Deals with resmod's health regen changes.
@@ -1831,26 +1836,26 @@ function PlayerDamage:_upd_health_regen(t, dt)
 	local stack_count = #self._damage_to_hot_stack
 	local tick_time = self._doh_data.tick_time or 1
 	if stack_count > 0 then
-	    if self._hot_next_heal_t and t >= self._hot_next_heal_t then
-	        local regen_rate = self._hot_amount * stack_count
-	        self:restore_health(regen_rate, true)
-	        self._hot_next_heal_t = t + tick_time
-	    end
+		if self._hot_next_heal_t and t >= self._hot_next_heal_t then
+			local regen_rate = self._hot_amount * stack_count
+			self:restore_health(regen_rate, true)
+			self._hot_next_heal_t = t + tick_time
+		end
 
-	    if self._hot_decay_t and t >= self._hot_decay_t then
-	        table.remove(self._damage_to_hot_stack, 1)
+		if self._hot_decay_t and t >= self._hot_decay_t then
+			table.remove(self._damage_to_hot_stack, 1)
 
-	        if #self._damage_to_hot_stack > 0 then
-	            local total_ticks = (self._doh_data.total_ticks or 1) + managers.player:upgrade_value("player", "damage_to_hot_extra_ticks", 0)
-	            local next_duration = total_ticks * tick_time
-	            self._hot_decay_t = t + next_duration
-	            managers.hud:start_buff(self._hot_type, next_duration)
-	        else
-	            self._hot_decay_t = nil
-	            self._hot_next_heal_t = nil
-	        end
-	        managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
-	    end
+			if #self._damage_to_hot_stack > 0 then
+				local total_ticks = (self._doh_data.total_ticks or 1) + managers.player:upgrade_value("player", "damage_to_hot_extra_ticks", 0)
+				local next_duration = total_ticks * tick_time
+				self._hot_decay_t = t + next_duration
+				managers.hud:start_buff(self._hot_type, next_duration)
+			else
+				self._hot_decay_t = nil
+				self._hot_next_heal_t = nil
+			end
+			managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
+		end
 	end
 
 	managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
@@ -2006,8 +2011,8 @@ function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_s
 		self._damage_to_hot_stack = {}
 		self._hot_decay_t = nil
 		self._hot_next_heal_t = nil
-	    managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
-	    managers.hud:start_buff(self._hot_type, 0)
+		managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
+		managers.hud:start_buff(self._hot_type, 0)
 
 		managers.environment_controller:set_downed_value(0)
 		SoundDevice:set_rtpc("downed_state_progression", 0)

@@ -49,6 +49,10 @@ function AmmoClip:_pickup(unit)
 					end
 				end
 			end
+			
+			if not picked_up and not player_manager:got_max_grenades() then
+				picked_up = true
+			end
 		end
 
 		if picked_up then

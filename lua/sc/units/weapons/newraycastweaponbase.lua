@@ -1793,6 +1793,10 @@ function NewRaycastWeaponBase:precalculate_ammo_pickup()
 			pickup_multiplier = pickup_multiplier * managers.player:body_armor_value("skill_ammo_mul", nil, 1)
 		end
 
+		if managers.player:has_category_upgrade("player", "tony_pick_up_multiplier") then
+			pickup_multiplier = pickup_multiplier * managers.player:upgrade_value("player", "tony_pick_up_multiplier", 1)
+		end
+
 		if managers.player:has_team_category_upgrade("player", "biker_ammo_pickup_boost") then
 			local cohesion_stacks = managers.player:get_cohesion_stacks_as_treated() or 0
 			pickup_multiplier = pickup_multiplier * (1 + managers.player:team_upgrade_value("player", "biker_ammo_pickup_boost", 0) * cohesion_stacks)
@@ -1843,7 +1847,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 			local moremath = fire_rate / no_burst_mult
 			local delay = self._burst_delay - moremath
 			local current_state_name = managers.player:current_state()
-			local og_next_fire = current_state_name and current_state_name == "tased" and self._next_fire_allowed
+			local og_next_fire = (current_state_name and current_state_name == "tased" or self._spinning) and self._next_fire_allowed
 			self._macno = nil
 			self._fire_rate_init_cancel = nil
 			if not self._burst_delay_alt_calc then
@@ -1976,8 +1980,13 @@ end
 function NewRaycastWeaponBase:in_burst_mode()
 	if self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE and self._in_burst_mode and not self:gadget_overrides_weapon_functions() then
 		managers.hud:set_teammate_weapon_firemode_burst(self:selection_index())
+		if not self._afr_memory then
+			self._afr_memory = self._afr_is_single
+		end
+		self._afr_is_single = false
 		return true --self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE and self._in_burst_mode and not self:gadget_overrides_weapon_functions()
 	else
+		self._afr_is_single = self._afr_memory or nil
 		return false --self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE and self._in_burst_mode and not self:gadget_overrides_weapon_functions()
 	end
 end

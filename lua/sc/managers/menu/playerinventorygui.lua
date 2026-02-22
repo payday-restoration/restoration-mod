@@ -2671,11 +2671,14 @@ function PlayerInventoryGui:_update_info_throwable(name)
 		text_string = text_string .. managers.localization:text(projectile_data.name_id) .. " (x" .. tostring(amount) .. ")" .. "\n\n"
 		local proj_tweak = tweak_data.projectiles[throwable_id]
 		local proj_b_tweak = tweak_data.blackmarket.projectiles[throwable_id]
-		local skill_pickup_chance = managers.player:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
+		local pickup_low = proj_b_tweak and proj_b_tweak.base_pickup_chance and proj_b_tweak.base_pickup_chance[1] or 0.01
+		local pickup_high = proj_b_tweak and proj_b_tweak.base_pickup_chance and proj_b_tweak.base_pickup_chance[2] or 0.02
+		local skill_pickup_chance = managers.player:upgrade_value("player", "regain_throwable_from_ammo", 1)
 		if self:_should_show_description() then
 			text_string = text_string .. managers.localization:text((has_short_desc and projectile_data.desc_id .. "_short") or projectile_data.desc_id, {
 				damage = ((proj_tweak and proj_tweak.damage) or 0) * 10,
-				pickup = (((proj_b_tweak and proj_b_tweak.base_pickup_chance) or 0.01) + skill_pickup_chance.chance) * 100 .. "%",
+				pickup_1 = math.floor(1 / (pickup_high * skill_pickup_chance)),
+				pickup_2 = math.floor(1 / (pickup_low * skill_pickup_chance)),
 				regen = ((proj_b_tweak and proj_b_tweak.base_cooldown) or 0) .. managers.localization:text("menu_seconds_suffix_short"),
 				regen_t = -((proj_b_tweak and proj_b_tweak.pickup_cooldown_t) or 0) .. managers.localization:text("menu_seconds_suffix_short")
 			}) .. "\n"
@@ -2734,6 +2737,7 @@ function PlayerInventoryGui:_update_info_deployable(name, slot)
 		local amount_2 = nil
 		local has_short_desc = managers.localization:exists(deployable_data.desc_id .. "_short")
 		local deployable_uses = nil
+		local deployable_secondary_info = nil
 
 		if deployable_id == "doctor_bag" then
 			deployable_uses = tweak_data.upgrades.doctor_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "amount_increase") or 0)
@@ -2747,6 +2751,9 @@ function PlayerInventoryGui:_update_info_deployable(name, slot)
 			deployable_uses = tweak_data.upgrades.ecm_jammer_base_battery_life * mult_1 * mult_2
 		elseif deployable_id == "sentry_gun_silent" then
 			deployable_id = "sentry_gun"
+		elseif deployable_id == "grenade_crate" then
+			deployable_uses = tweak_data.upgrades.ordnance_bag_grenades
+			deployable_secondary_info = tweak_data.upgrades.ordnance_bag_ammo * managers.player:upgrade_value("grenade_crate", "ammo_increase", 1) * 100 .. "%"
 		end
 
 		if deployable_id == "sentry_gun" then
@@ -2774,7 +2781,8 @@ function PlayerInventoryGui:_update_info_deployable(name, slot)
 			text_string = text_string .. managers.localization:text(((has_short_desc and deployable_data.desc_id .. "_short") or deployable_data.desc_id), {
 				BTN_INTERACT = managers.localization:btn_macro("interact", true),
 				BTN_USE_ITEM = managers.localization:btn_macro("use_item", true),
-				deployable_uses = deployable_uses
+				deployable_uses = deployable_uses,
+				deployable_secondary_info = deployable_secondary_info
 			}) .. "\n"
 		end
 	end

@@ -65,7 +65,7 @@ function CoreEnvironmentControllerManager:test_line_of_sight_explosion(test_pos,
 	local vp = managers.viewport:first_active_viewport()
 
 	if not vp then
-		return 0
+		return false
 	end
 
 	local camera = vp:camera()
@@ -77,16 +77,16 @@ function CoreEnvironmentControllerManager:test_line_of_sight_explosion(test_pos,
 	local dis = mvector3.direction(test_vec, cam_pos, test_pos)
 
 	if max_distance < dis then
-		return 0
+		return false
 	end
 
 	local ray_hit = World:raycast("ray", cam_pos, test_pos, "slot_mask", managers.slot:get_mask("AI_visibility"), "ray_type", "ai_vision", "report")
 
 	if ray_hit then
-		return 0
+		return false
 	end
 
-	return 1
+	return true
 end
 
 --[[function CoreEnvironmentControllerManager:set_chromatic_enabled(enabled)

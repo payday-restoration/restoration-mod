@@ -410,6 +410,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["RestorationModBWAResmodADSSwayStrTitleID"] = "ADS Strength Multiplier",
 					["RestorationModBWAResmodADSSwayStrDescID"] = "Change the amount your weapon moves when looking around while ADS vs. base look-sway (Default 0.05)",
 
+		["RestorationModDebugOptionsTitleID"] = "===Debug Options===",
+		["RestorationModBWAResOptOptionsButtonDescID"] = "Degugging options - Do not leave these on!",
+			["RestorationModLogOutfitStringsTitleID"] = "Log Outfit String Calls",
+			["RestorationModBWAResmodADSSwayStrDescID"] = "Logs when outfit string updates are called through NetworkPeer - WILL CAUSE PERFORMANCE DROPS",
+
 		--EXTRA OPTIONS
 		["RestorationModHearNonLocalPECMTitleID"] = "Pocket ECM Sounds From Other Players",
 		["RestorationModHearNonLocalPECMDescID"] = "Play PECM sounds if other player activate it.",

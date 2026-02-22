@@ -1,3 +1,5 @@
+local tmp_vec = Vector3()
+
 Hooks:PostHook(CoreEnvironmentControllerManager, "init", "res_init", function(self)
 	self._GAME_DEFAULT_COLOR_GRADING = "color_payday"
 end)
@@ -24,6 +26,68 @@ Hooks:PostHook(CoreEnvironmentControllerManager, "set_post_composite", "res_set_
 		self._vp:vp():set_post_processor_effect("World", ids_color_grading_post, Idstring(color_grading))
 	end
 end)
+
+-- Make flashbangs scale with look direction instead of a flat reduction at some certain angle
+Hooks:OverrideFunction(CoreEnvironmentControllerManager, "test_line_of_sight", function (self, test_pos, min_distance, dot_distance, max_distance)
+	local vp = managers.viewport:first_active_viewport()
+
+	if not vp then
+		return 0
+	end
+
+	local camera = vp:camera()
+
+	camera:m_position(tmp_vec)
+
+	local dis = mvector3.direction(tmp_vec, tmp_vec, test_pos)
+
+	if dis > max_distance then
+		return 0
+	end
+
+	if dis < min_distance then
+		return 1
+	end
+
+	local cam_fwd = camera:rotation():y()
+	local dot_mul = (mvector3.dot(cam_fwd, tmp_vec) + 1) / 2
+	local dot_effect = dis > dot_distance and 1 or dis / dot_distance
+
+	return math.map_range_clamped(dis, min_distance, max_distance, 1, 0) * (dot_mul ^ dot_effect)
+end)
+
+-- LoS checks for explosions. Borrowed from vanilla `test_line_of_sight` function because the one from SH don't work as LoS check for this.
+-- Anyway, this should prevent explosions deal dmg through walls.
+function CoreEnvironmentControllerManager:test_line_of_sight_explosion(test_pos, max_distance)
+	local tmp_vec1 = Vector3()
+	local tmp_vec2 = Vector3()
+	local tmp_vec3 = Vector3()
+	local vp = managers.viewport:first_active_viewport()
+
+	if not vp then
+		return 0
+	end
+
+	local camera = vp:camera()
+	local cam_pos = tmp_vec1
+
+	camera:m_position(cam_pos)
+
+	local test_vec = tmp_vec2
+	local dis = mvector3.direction(test_vec, cam_pos, test_pos)
+
+	if max_distance < dis then
+		return 0
+	end
+
+	local ray_hit = World:raycast("ray", cam_pos, test_pos, "slot_mask", managers.slot:get_mask("AI_visibility"), "ray_type", "ai_vision", "report")
+
+	if ray_hit then
+		return 0
+	end
+
+	return 1
+end
 
 --[[function CoreEnvironmentControllerManager:set_chromatic_enabled(enabled)
 	self._chromatic_enabled = enabled

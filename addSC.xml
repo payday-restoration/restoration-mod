@@ -431,9 +431,6 @@
 
 	<unit				path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest" load="true"/>
     <unit				path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk" load="true"/>
-	
-	<!--Parachute Collision edit (No more Boiling Point suicides)-->
-	<object				path="units/pd2_dlc_jerry/props/jry_equipment_parachute/jry_equipment_parachute_ragdoll" force="true"/>
 		
 	<!--Change to Armored Hector's Visor Texture (now uses the Hard Hat's visor texture, for consistency reasons.)-->
 	<material_config	path="units/pd2_mcmansion/characters/ene_male_hector_1/ene_male_hector_1" force="true" />

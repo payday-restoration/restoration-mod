@@ -63,18 +63,6 @@ function AmmoClip:_pickup(unit)
 				managers.player:add_cable_ties(CABLE_TIE_GET_AMOUNT)
 			end
 
-			for i, equipment in ipairs(player_manager._equipment.selections) do
-				local equipment_chance = tweak_data.equipments[equipment.equipment].get_chance or 0
-				local equipment_amount = tweak_data.equipments[equipment.equipment].get_amount or 0
-				
-				if equipment_chance > 0 and equipment_amount > 0 then
-					local equipment_rand = math.random()
-					if equipment_rand <= equipment_chance and self._ammo_box then
-						managers.player:add_deployable_equipment(equipment.equipment, equipment_amount)
-					end
-				end
-			end
-
 			if not self._projectile_id and not self._weapon_category then
 				local restored_health = nil
 

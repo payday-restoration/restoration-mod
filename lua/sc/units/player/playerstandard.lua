@@ -4967,6 +4967,8 @@ function PlayerStandard:_find_pickups(t)
 				else
 					managers.player:regain_throwable_from_ammo() --Replace vanilla coroutine
 				end
+
+				managers.player:regain_deployables_from_ammo()
 			end
 
 			for id, weapon in pairs(self._unit:inventory():available_selections()) do

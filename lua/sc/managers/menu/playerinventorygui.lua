@@ -2738,6 +2738,9 @@ function PlayerInventoryGui:_update_info_deployable(name, slot)
 		local has_short_desc = managers.localization:exists(deployable_data.desc_id .. "_short")
 		local deployable_uses = nil
 		local deployable_secondary_info = nil
+		local pickup_low = 0.01
+		local pickup_high = 0.01
+		local skill_pickup_chance = 1 -- Currently fixed at 1, might or might not see more use if we decide to make a skill that increases it.
 
 		if deployable_id == "doctor_bag" then
 			deployable_uses = tweak_data.upgrades.doctor_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "amount_increase") or 0)
@@ -2745,6 +2748,8 @@ function PlayerInventoryGui:_update_info_deployable(name, slot)
 			deployable_uses = tweak_data.upgrades.ammo_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "ammo_increase") or 0)
 		elseif deployable_id == "trip_mine" then
 			amount_2 = (equipment_data.quantity[2] or 1) + (managers.player:equiptment_upgrade_value("shape_charge", "quantity") or 0)
+			pickup_low = equipment_data.pickup_low or pickup_low
+			pickup_high = equipment_data.pickup_high or pickup_high
 		elseif deployable_id == "ecm_jammer" then
 			local mult_1 = managers.player:has_category_upgrade(deployable_id, "duration_multiplier") and managers.player:equiptment_upgrade_value(deployable_id, "duration_multiplier") or 1
 			local mult_2 = managers.player:has_category_upgrade(deployable_id, "duration_multiplier_2") and managers.player:equiptment_upgrade_value(deployable_id, "duration_multiplier_2") or 1
@@ -2782,7 +2787,9 @@ function PlayerInventoryGui:_update_info_deployable(name, slot)
 				BTN_INTERACT = managers.localization:btn_macro("interact", true),
 				BTN_USE_ITEM = managers.localization:btn_macro("use_item", true),
 				deployable_uses = deployable_uses,
-				deployable_secondary_info = deployable_secondary_info
+				deployable_secondary_info = deployable_secondary_info,
+				pickup_1 = math.floor(1 / (pickup_high * skill_pickup_chance)),
+				pickup_2 = math.floor(1 / (pickup_low * skill_pickup_chance))
 			}) .. "\n"
 		end
 	end

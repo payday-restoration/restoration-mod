@@ -6401,11 +6401,17 @@ function BlackMarketGui:update_info_text()
 		local deployable_id = slot_data.name
 		local deployable_uses = nil
 		local deployable_secondary_info = nil
+		local pickup_low = 0.01
+		local pickup_high = 0.01
+		local skill_pickup_chance = 1 -- Currently fixed at 1, might or might not see more use if we decide to make a skill that increases it.
 
 		if deployable_id == "doctor_bag" then
 			deployable_uses = tweak_data.upgrades.doctor_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "amount_increase") or 0)
 		elseif deployable_id == "ammo_bag" then
 			deployable_uses = tweak_data.upgrades.ammo_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "ammo_increase") or 0)
+		elseif deployable_id == "trip_mine" then
+			pickup_low = tweak_data.equipments.trip_mine.pickup_low or pickup_low
+			pickup_high = tweak_data.equipments.trip_mine.pickup_high or pickup_high
 		elseif deployable_id == "ecm_jammer" then
 			local mult_1 = managers.player:has_category_upgrade(deployable_id, "duration_multiplier") and managers.player:equiptment_upgrade_value(deployable_id, "duration_multiplier") or 1
 			local mult_2 = managers.player:has_category_upgrade(deployable_id, "duration_multiplier_2") and managers.player:equiptment_upgrade_value(deployable_id, "duration_multiplier_2") or 1
@@ -6432,7 +6438,9 @@ function BlackMarketGui:update_info_text()
 			BTN_INTERACT = managers.localization:btn_macro("interact", true),
 			BTN_USE_ITEM = managers.localization:btn_macro("use_item", true),
 			deployable_uses = deployable_uses,
-			deployable_secondary_info = deployable_secondary_info
+			deployable_secondary_info = deployable_secondary_info,
+			pickup_1 = math.floor(1 / (pickup_high * skill_pickup_chance)),
+			pickup_2 = math.floor(1 / (pickup_low * skill_pickup_chance))
 		})
 		for color_id in string.gmatch(description, "#%{(.-)%}#") do
 			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])

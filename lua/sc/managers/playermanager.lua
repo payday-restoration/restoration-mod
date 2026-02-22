@@ -1937,7 +1937,7 @@ function PlayerManager:regain_throwable_from_ammo()
 		if self._throwable_chance then
 			local pickup_low = self._throwable_chance.min * skill_pickup_chance
 			local pickup_high = self._throwable_chance.max * skill_pickup_chance
-			local roll = math.random(pickup_low * 1000, pickup_high * 1000) / 1000 --math.random does not like decimals
+			local roll = math.rand(pickup_low, pickup_high)
 			self._throwable_chance.amount = (self._throwable_chance.amount or 0) + roll
 			if self._throwable_chance.amount >= 1 then
 				self:add_grenade_amount(1, true)
@@ -1953,7 +1953,7 @@ function PlayerManager:regain_deployables_from_ammo()
 		local pickup_high = tweak_data.equipments[equipment.equipment].pickup_high or 0
 		
 		if pickup_low > 0 and pickup_high > 0 then
-			local roll = math.random(pickup_low * 1000, pickup_high * 1000) / 1000 --math.random does not like decimals
+			local roll = math.rand(pickup_low, pickup_high)
 			self._deployable_chance[equipment.equipment] = (self._deployable_chance[equipment.equipment] or 0) + roll
 			if self._deployable_chance[equipment.equipment] >= 1 then
 				managers.player:add_deployable_equipment(equipment.equipment, 1)

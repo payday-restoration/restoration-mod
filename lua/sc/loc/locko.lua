@@ -407,6 +407,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["RestorationModBWAResmodADSSwayStrTitleID"] = "정조준 강도 배율",
 					["RestorationModBWAResmodADSSwayStrDescID"] = "정조준 중 주변을 둘러볼 때 무기가 움직이는 양을 기본 움직임에 비레해 변경합니다. (기본값 0.05)",
 
+		["RestorationModDebugOptionsTitleID"] = "===디버그 옵션===",
+		["RestorationModDebugOptionsDescID"] = "디버깅용 옵션 - 이 옵션은 켜두지 마십시오!",
+			["RestorationModLogOutfitStringsTitleID"] = "복장 스트링 호출 로그",
+			["RestorationModLogOutfitStringsDescID"] = "NetworkPeer를 통해 복장 스트링 업데이트가 호출될 때 로그가 기록됩니다. - 이로 인해 성능 저하가 발생할 수 있습니다.",
+
 		--EXTRA OPTIONS
 		["RestorationModHearNonLocalPECMTitleID"] = "다른 플레이어의 휴대용 ECM 사운드 재생",
 		["RestorationModHearNonLocalPECMDescID"] = "다른 플레이어가 휴대용 ECM을 활성화 했을때 사운드를 재생합니다.",		
@@ -5233,7 +5238,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["loading_stealth_res_8"] = "가방을 들고 있는 동안에는 훨씬 더 멀리서도 보일 수 있으며, 서 있거나 질주하거나 점프하는 동안에도 훨씬 더 빠르게 감지됩니다. 몸을 낮추고 천천히 움직이세요.",
 		["loading_stealth_res_9"] = "바닐라처럼 2개 대신 최대 4개의 ECM을 얻지만 지속 시간은 절반입니다.",
 		["loading_stealth_res_10"] = "스텔스 상태에서 소음기가 장착된 무기는 소음을 발생시키지 않습니다.",
-		["loading_stealth_res_11"] = "스텔스에서는 라우드와 마찬가지로 최대 4명의 경찰을 인질로 잡을 수 있습니다.",
+		["loading_stealth_res_11"] = "스텔스에서는 라우드와 마찬가지로 최대 8명의 경찰을 인질로 잡을 수 있습니다.",
 		["loading_stealth_res_12"] = "스텔스는 더 관대하여 더 많은 뒷수습을 가능하게 합니다.",
 		["loading_stealth_res_13"] = "경비원은 더 이상 경고를 받지 않은 상태에서 어떤 피해를 입어도 즉사하지 않습니다. 주먹보다 더 강력한 근접 무기로 머리를 노리세요.",
 		["loading_stealth_res_14"] = "만일 의심 미터가 가득 차게되면 알람이 울리기 전에 시작한 일을 완료하는 데 60초가 주어집니다.",

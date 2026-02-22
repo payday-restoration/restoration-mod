@@ -249,6 +249,7 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state, is_
 
 	--local is_moving = current_state._moving or current_state:in_air()
 	local full_steelsight = current_state:is_full_steelsight()
+	local is_tacstance = self:second_sight_spread_mult()
 
 	if full_steelsight then
 		if self:weapon_tweak_data().always_hipfire or self.AKIMBO then
@@ -273,13 +274,17 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state, is_
 				local stationary_spread = tweak_data[category] and tweak_data[category].ads_stationary_spread_mult or 1
 				mul = mul * stationary_spread
 			end
-			for _, category in ipairs(self:categories()) do
-				mul = mul * pm:upgrade_value(category, "stationary_steelsight_accuracy_inc", 1)
+			if not is_tacstance then
+				for _, category in ipairs(self:categories()) do
+					mul = mul * pm:upgrade_value(category, "stationary_steelsight_accuracy_inc", 1)
+				end
 			end
 		end
 
-		for _, category in ipairs(self:categories()) do
-			mul = mul * pm:upgrade_value(category, "steelsight_accuracy_inc", 1)
+		if not is_tacstance then
+			for _, category in ipairs(self:categories()) do
+				mul = mul * pm:upgrade_value(category, "steelsight_accuracy_inc", 1)
+			end
 		end
 	else
 		--Multi-pellet spread increase.

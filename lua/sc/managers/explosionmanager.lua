@@ -152,7 +152,7 @@ end
 
 function ExplosionManager:give_local_player_dmg(pos, range, damage, user_unit, curve_pow, ignore_los)
 	local player = managers.player:player_unit()
-	local los = (ignore_los and 1) or managers.environment_controller:test_line_of_sight_explosion(pos, range) or false
+	local los = (ignore_los and true) or managers.environment_controller:test_line_of_sight_explosion(pos, range) or false
 
 	if player and los then
 		player:character_damage():damage_explosion({

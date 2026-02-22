@@ -24008,7 +24008,7 @@ end
 									custom_stats = {
 										pointshoot_ads = 0.75,
 										pointshoot_spread = 20,
-										pointshoot_strafe = 0.5,
+										pointshoot_strafe = 0.6,
 									}
 								}
 							end
@@ -29099,7 +29099,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_bromeo805_angled_sight_tacstance.custom_stats = {
 					pointshoot_ads = 0.75,
 					pointshoot_spread = 20,
-					pointshoot_strafe = 0.5,
+					pointshoot_strafe = 0.6,
 				}
 				for i, weap in pairs(self.parts.wpn_fps_ass_bromeo805_angled_sight_tacstance.stance_mod) do
 					if weap and i ~= wep_id and weap.translation then
@@ -37771,7 +37771,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.custom_stats = {
 					pointshoot_ads = 0.75,
 					pointshoot_spread = 20,
-					pointshoot_strafe = 0.5,
+					pointshoot_strafe = 0.6,
 				}
 
 				--(M308) Mini 308 Magazine

@@ -44,7 +44,7 @@ end
 
 function GrenadeCrateDeployableBase:setup(ammo_upgrade_lvl)
 	self._max_grenade_amount = tweak_data.upgrades.ordnance_bag_grenades
-	self._ammo_amount = tweak_data.upgrades.ordnance_bag_ammo * managers.player:upgrade_value_by_level("grenade_crate", "ammo_increase", ammo_upgrade_lvl)
+	self._ammo_amount = tweak_data.upgrades.ordnance_bag_ammo * math.max(managers.player:upgrade_value_by_level("grenade_crate", "ammo_increase", ammo_upgrade_lvl), 1)
 	
 	GrenadeCrateDeployableBase.super.setup(self)
 end

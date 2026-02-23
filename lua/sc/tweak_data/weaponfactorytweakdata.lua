@@ -8464,9 +8464,6 @@ end
 				self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_eotech_xps = {
 					parent = "upper_reciever"
 				}
-				self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_sig = {
-					parent = "upper_reciever"
-				}
 				self.wpn_fps_lmg_m249.override.wpn_fps_upg_o_uh = {
 					parent = "upper_reciever"
 				}

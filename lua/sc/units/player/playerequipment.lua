@@ -82,9 +82,10 @@ function PlayerEquipment:use_grenade_crate()
 		managers.statistics:use_body_bag()
 
 		local ammo_upgrade_lvl = managers.player:upgrade_level("grenade_crate", "ammo_increase")
+		ammo_upgrade_lvl = math.clamp(ammo_upgrade_lvl, 0, 1)
 
 		if Network:is_client() then
-			managers.network:session():send_to_host("place_ordnance_bag", pos, rot, ammo_upgrade_lvl)
+			managers.network:session():send_to_host("place_deployable_bag", "GrenadeCrateDeployableBase", pos, rot, ammo_upgrade_lvl)
 		else
 			local unit = GrenadeCrateDeployableBase.spawn(pos, rot, ammo_upgrade_lvl, managers.network:session():local_peer():id())
 		end

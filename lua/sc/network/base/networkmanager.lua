@@ -5,8 +5,8 @@
 -- 		self:register_handler("RestorationMod__unit", RestorationMod__UnitNetworkHandler)
 -- 	end
 -- end)
-NetworkMatchMakingEPIC._BUILD_SEARCH_INTEREST_KEY = "restoration_13_dev_ordnance"
-NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY = "restoration_13_dev_ordnance"
+NetworkMatchMakingEPIC._BUILD_SEARCH_INTEREST_KEY = "restoration_13_dev_ordnance2"
+NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY = "restoration_13_dev_ordnance2"
 
 local current_key = NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY
 local standard_str = 'NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY = \"'

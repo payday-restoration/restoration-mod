@@ -2457,6 +2457,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 		return
 	end
 	local special_weapon = melee_weapon.special_weapon
+	local max_charge_lerp_anim = melee_weapon.max_charge_lerp_anim or 1
 	local charge_time = melee_weapon.stats.charge_time
 	local instant = melee_weapon.instant
 	local no_hit_shaker = melee_weapon.no_hit_shaker
@@ -2494,7 +2495,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			0,
 			1,
 			1
-		}, lerp_value))
+		}, math.clamp(lerp_value, 0, max_charge_lerp_anim) ))
 
 		if self._state_data.melee_charge_shake then
 			self._ext_camera:shaker():set_parameter(self._state_data.melee_charge_shake, "amplitude", math.bezier({

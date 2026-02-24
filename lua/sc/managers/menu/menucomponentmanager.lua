@@ -62,6 +62,7 @@ function MenuComponentManager:create_melee_status_icon_list(melee_weapon)
 
 	local shock_weapon = special_weapon == "taser" or special_weapon == "mjolnir"
 	local explosive_weapon = special_weapon == "caber" or special_weapon == "megumin"
+	local flashlight = melee_data.flashlight
 	local defensive_weapon = melee_data.block
 	local parry_weapon = melee_data.counter_damage
 	local panic_weapon = special_weapon == "panic"
@@ -120,6 +121,10 @@ function MenuComponentManager:create_melee_status_icon_list(melee_weapon)
 
 	if panic_weapon then
 		table.insert(icon_list, "guis/textures/pd2/blackmarket/melee_panic")
+	end
+
+	if flashlight then
+		table.insert(icon_list, "guis/textures/pd2/blackmarket/inv_mod_flashlight")
 	end
 
 	return icon_list

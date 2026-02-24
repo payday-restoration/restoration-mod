@@ -4891,6 +4891,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 
 		--Fleshlight--
 		self.melee_weapons.aziz.info_id = "bm_melee_aziz_info"
+		self.melee_weapons.aziz.flashlight = true
+		self.melee_weapons.aziz.max_charge_lerp_anim = 0.45
 		self.melee_weapons.aziz.stats.cleave = 1
 		self.melee_weapons.aziz.stats.raycasts = 8
 		self.melee_weapons.aziz.stats.min_damage = 2.4

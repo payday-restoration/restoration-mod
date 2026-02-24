@@ -336,6 +336,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	--Get hit direction and display it on hud.
 	local attacker_unit = attack_data.attacker_unit
 	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
+	self._ally_attack = self:is_friendly_fire(attacker_unit, true, variant == "explosion" or variant == "fire") --Filter out friendly fire from perk deck stuff and the armor_broken flag.
 
 	local pm = managers.player
 	if is_pro and self_damage then
@@ -385,15 +386,14 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 		self._unit:sound():play("player_hit_permadamage")
 	end
 	
-	--Leech stuff
-	self:copr_update_attack_data(attack_data)	
 
 	self:mutator_update_attack_data(attack_data)
 
-	--Kingpin stuff.
-	self._ally_attack = self:is_friendly_fire(attacker_unit, true, variant == "explosion" or variant == "fire") --Filter out friendly fire from perk deck stuff and the armor_broken flag.
 	if not self_damage and not self._ally_attack then
+		--Kingpin stuff.
 		self:_check_chico_heal(attack_data)
+		--Leech stuff
+		self:copr_update_attack_data(attack_data)	
 	end
 
 	--Notify listeners.
@@ -639,18 +639,6 @@ function PlayerDamage:damage_bullet(attack_data)
 		end
 
 		if can_dodge then --Dodge attacks if your meter is at '100'.
-			--This shit needs to be here, it is what it is
-			if pm:has_category_upgrade("player", "dodge_ricochet_bullets") then
-				self:_mrwick_ricochet_bullets(attack_data)
-				pm:register_message(Message.OnPlayerDodge, "dodge_ricochet_bullets", on_player_dodged)
-			else
-				pm:unregister_message(Message.OnPlayerDodge, "dodge_ricochet_bullets")
-			end
-
-			--if 0 < self:get_real_armor() then
-				self:_check_chico_heal(attack_data, true)
-			--end
-
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				local unit_movement = self._unit:movement()
@@ -672,7 +660,15 @@ function PlayerDamage:damage_bullet(attack_data)
 			self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 			self._last_received_dmg = math.huge --Makes the grace period from dodging effectively impossible to pierce.
 			if not self:is_friendly_fire(attacker_unit, true) then
+			--This shit needs to be here, it is what it is
+				if pm:has_category_upgrade("player", "dodge_ricochet_bullets") then
+					self:_mrwick_ricochet_bullets(attack_data)
+					pm:register_message(Message.OnPlayerDodge, "dodge_ricochet_bullets", on_player_dodged)
+				else
+					pm:unregister_message(Message.OnPlayerDodge, "dodge_ricochet_bullets")
+				end
 				managers.player:send_message(Message.OnPlayerDodge, nil, attack_data) --Call skills that listen for dodging.
+				self:_check_chico_heal(attack_data, true)
 			end
 			return	
 		end
@@ -751,7 +747,15 @@ function PlayerDamage:damage_fire_hit(attack_data)
 			self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 			self._last_received_dmg = math.huge --Makes the grace period from dodging effectively impossible to pierce.
 			if not self:is_friendly_fire(attacker_unit, true) then
+			--This shit needs to be here, it is what it is
+				if pm:has_category_upgrade("player", "dodge_ricochet_bullets") then
+					self:_mrwick_ricochet_bullets(attack_data)
+					pm:register_message(Message.OnPlayerDodge, "dodge_ricochet_bullets", on_player_dodged)
+				else
+					pm:unregister_message(Message.OnPlayerDodge, "dodge_ricochet_bullets")
+				end
 				managers.player:send_message(Message.OnPlayerDodge, nil, attack_data) --Call skills that listen for dodging.
+				self:_check_chico_heal(attack_data, true)
 			end
 			return	
 		end

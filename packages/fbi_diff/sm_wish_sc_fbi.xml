@@ -352,7 +352,49 @@
 	<unit				path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3" load="true" />
 	<unit				path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3_husk" load="true"  />	
 
-	<texture			path="units/payday2/characters/shared_textures/swat_city_df_guard" />		
+	<texture			path="units/payday2/characters/shared_textures/swat_city_df_guard" />	
+
+	<!-- titans dependencies -->
+		
+	<!--Keep those helmets flying ;)-->	
+	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" load="false"/>
+	<!-- <sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/> -->
+				
+	<!--Titan Rifle-->	
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_lightsout" force="false"/>		
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>				
+
+	<!--Titan Shotgunner-->	
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
+
+	<!--Titanshield-->	
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
+
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new" force="false" load="true"/>	
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new_husk" force="false" load="true"/>	
+
+    <!--Titan Sniper-->
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>	
+
+    <!--Titan Taser-->
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>		
 		
 	<!-- titans	 -->
 	<!--Titandozer-->
@@ -376,15 +418,15 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
 	
 	<!--titandozer accs-->	
-	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 	
-	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	
-	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 	
-	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
 	
-	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
 
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
 
@@ -407,15 +449,6 @@
 	<unit				path="units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" load="true"/>	
 
 	<texture			path="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_df" />
-
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
-	
-	<object				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>	
-	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>	
-	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new" force="false" load="true"/>	
-	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new_husk" force="false" load="true"/>	
 
 	<!-- Titan Sniper -->
 	<unit				path="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper" force="true" load="true"/>

@@ -48,7 +48,7 @@ local optsCloaker_Hide_SO_1 = {
 	interrupt_dis = 0.5,
 	interrupt_dmg = 0.3,
 	interval = 2,
-    so_action = "e_so_hide_behind_door_enter"
+    so_action = "e_so_hide_behind_door_enter",
 }
 local optsCloaker_01 = {
     enabled = false,

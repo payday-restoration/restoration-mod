@@ -53,7 +53,7 @@ function PlayerBleedOut:call_civilian(line, t, no_gesture, skip_alert, revive_SO
 		return
 	end
 	local detect_only = false
-	local voice_type, plural, prime_target = self:_get_unit_intimidation_action(false, true, false, false, false, 0, true, detect_only)
+	local voice_type, plural, prime_target = self:_get_unit_intimidation_action(false, true, false, false, false, 0, true, detect_only, nil, true)
 	if prime_target and not prime_target.unit:base():char_tweak().is_escort then
 		if detect_only then
 			if not prime_target.unit:sound():speaking(t) then
@@ -115,7 +115,7 @@ function PlayerBleedOut:call_civilian(line, t, no_gesture, skip_alert, revive_SO
 	end
 end
 
-function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimidate_civilians, intimidate_teammates, only_special_enemies, intimidate_escorts, intimidation_amount, primary_only, detect_only)
+function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimidate_civilians, intimidate_teammates, only_special_enemies, intimidate_escorts, intimidation_amount, primary_only, detect_only, secondary, force_through_walls)
 	local char_table = {}
 	local unit_type_enemy = 0
 	local unit_type_civilian = 1
@@ -128,20 +128,28 @@ function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimi
 	local intimidate_range_civ = tweak_data.player.long_dis_interaction.intimidate_range_civilians * range_mul
 	local intimidate_range_ene = tweak_data.player.long_dis_interaction.intimidate_range_enemies * range_mul
 	local highlight_range = tweak_data.player.long_dis_interaction.highlight_range * range_mul
+
+	-- I hate Lua.
+	local function _force_through_walls(value, default)
+		if value == nil then
+			return default
+		end
+		return value
+	end
 	if intimidate_enemies then
 		local enemies = managers.enemy:all_enemies()
 		for u_key, u_data in pairs(enemies) do
 			if self._unit:movement():team().foes[u_data.unit:movement():team().id] and not u_data.unit:anim_data().hands_tied and not u_data.unit:anim_data().long_dis_interact_disabled and (u_data.char_tweak.priority_shout or not only_special_enemies) then
 				if managers.groupai:state():whisper_mode() then
 					if u_data.char_tweak.silent_priority_shout and u_data.unit:movement():cool() then
-						self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_enemy, highlight_range, false, false, 0.01, my_head_pos, cam_fwd)
+						self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_enemy, highlight_range, _force_through_walls(force_through_walls, false), false, 0.01, my_head_pos, cam_fwd)
 					elseif not u_data.unit:movement():cool() then
-						self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_enemy, intimidate_range_ene, false, false, 100, my_head_pos, cam_fwd)
+						self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_enemy, intimidate_range_ene, _force_through_walls(force_through_walls, false), false, 100, my_head_pos, cam_fwd)
 					end
 				elseif u_data.char_tweak.priority_shout then
-					self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_enemy, highlight_range, false, false, 0.01, my_head_pos, cam_fwd)
+					self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_enemy, highlight_range, _force_through_walls(force_through_walls, false), false, 0.01, my_head_pos, cam_fwd)
 				else
-					self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_enemy, intimidate_range_ene, false, false, 100, my_head_pos, cam_fwd)
+					self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_enemy, intimidate_range_ene, _force_through_walls(force_through_walls, false), false, 100, my_head_pos, cam_fwd)
 				end
 			end
 		end
@@ -151,14 +159,14 @@ function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimi
 		for u_key, u_data in pairs(civilians) do
 			local dist = intimidate_range_civ
 			local prio = 100
-			self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_civilian, dist, false, false, prio, my_head_pos, cam_fwd)
+			self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_civilian, dist, _force_through_walls(force_through_walls, false), false, prio, my_head_pos, cam_fwd)
 		end
 		
 		if SC._converts then
 			for u_key, u_data in pairs(SC._converts) do
 				if alive(u_data) and u_data.movement and u_data:movement() and u_data:movement().cool then
 					if not u_data:movement():cool() and not u_data:movement().long_dis_interact_disabled then
-						self:_add_unit_to_char_table(char_table, u_data, unit_type_enemy, highlight_range, false, false, 100, my_head_pos, cam_fwd)
+						self:_add_unit_to_char_table(char_table, u_data, unit_type_enemy, highlight_range, _force_through_walls(force_through_walls, false), false, 100, my_head_pos, cam_fwd)
 					end
 				end
 			end
@@ -180,12 +188,12 @@ function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimi
 					end
 					if needs_revive then
 						added = true
-						self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_teammate, 100000, true, true, 5000, my_head_pos, cam_fwd)
+						self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_teammate, 100000, _force_through_walls(force_through_walls, true), true, 5000, my_head_pos, cam_fwd)
 					end
 				end
 			end
 			if not added and not u_data.is_deployable and not u_data.unit:movement():downed() and not u_data.unit:base().is_local_player and not u_data.unit:anim_data().long_dis_interact_disabled then
-				self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_teammate, 100000, true, true, 0.01, my_head_pos, cam_fwd)
+				self:_add_unit_to_char_table(char_table, u_data.unit, unit_type_teammate, 100000, _force_through_walls(force_through_walls, true), true, 0.01, my_head_pos, cam_fwd)
 			end
 		end
 	end
@@ -195,7 +203,7 @@ function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimi
 				if alive(unit) and unit:enabled() and not unit:base():destroyed() then
 					local dist = 2000
 					local prio = 0.001
-					self:_add_unit_to_char_table(char_table, unit, unit_type_camera, dist, false, false, prio, my_head_pos, cam_fwd, {unit})
+					self:_add_unit_to_char_table(char_table, unit, unit_type_camera, dist, _force_through_walls(force_through_walls, false), false, prio, my_head_pos, cam_fwd, {unit})
 				end
 			end
 		end
@@ -203,7 +211,7 @@ function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimi
 		if turret_units then
 			for _, unit in pairs(turret_units) do
 				if alive(unit) and unit:movement():team().foes[self._ext_movement:team().id] then
-					self:_add_unit_to_char_table(char_table, unit, unit_type_turret, 2000, false, false, 0.01, my_head_pos, cam_fwd, {unit})
+					self:_add_unit_to_char_table(char_table, unit, unit_type_turret, 2000, _force_through_walls(force_through_walls, false), false, 0.01, my_head_pos, cam_fwd, {unit})
 				end
 			end
 		end

@@ -64,6 +64,7 @@ function MenuComponentManager:create_melee_status_icon_list(melee_weapon)
 	local explosive_weapon = special_weapon == "caber" or special_weapon == "megumin"
 	local defensive_weapon = melee_data.block
 	local parry_weapon = melee_data.counter_damage
+	local panic_weapon = special_weapon == "panic"
 	local fire_weapon = false
 	local poison_weapon = false
 	local bleed_weapon = false
@@ -115,6 +116,10 @@ function MenuComponentManager:create_melee_status_icon_list(melee_weapon)
 
 	if parry_weapon then
 		table.insert(icon_list, "guis/textures/pd2/blackmarket/melee_parry")
+	end
+
+	if panic_weapon then
+		table.insert(icon_list, "guis/textures/pd2/blackmarket/melee_panic")
 	end
 
 	return icon_list

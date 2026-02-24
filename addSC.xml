@@ -1382,6 +1382,7 @@
 	<texture			path="guis/textures/pd2/blackmarket/inv_mod_ammo_bleed"/>
 	<texture			path="guis/textures/pd2/blackmarket/melee_defense"/>
 	<texture			path="guis/textures/pd2/blackmarket/melee_parry"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_panic"/>
 
 	<!--Incendiary Grenade-->
 	<effect				path="effects/payday2/particles/explosions/grenade_incendiary_explosion_sc" load="false"/>

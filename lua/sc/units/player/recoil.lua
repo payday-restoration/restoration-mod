@@ -44,6 +44,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 		local p_unit = self._parent_unit
 		local p_mov = self._parent_movement_ext
 		local p_cam = p_unit:camera()
+		local p_state = managers.player:current_state()
 		local p_equipped = p_unit:inventory():equipped_unit()
 		local wep_base = p_equipped and p_equipped.base and p_equipped:base()
 
@@ -99,6 +100,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 
 		-----------------------------------------------------------------------------------------------------------------------------
 
+		local pitch_lp_speed = (deltaT * 8) * ((in_sight and not in_full_sight and 2) or 1)
 		look_pos = look_pos or Vector3()
 
 		local pitch = unit:rotation():pitch()
@@ -106,7 +108,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 		local down_mul = 1
 		local pitch_mul = pitch > 0 and up_mul or down_mul
 
-		mvector3.lerp(look_pos, look_pos, (not in_sight) and Vector3(0, 0, -(pitch * pitch_mul) / 48) or Vector3(), lp_speed)
+		mvector3.lerp(look_pos, look_pos, (not in_sight) and Vector3(0, 0, -(pitch * pitch_mul) / 48) or Vector3(), pitch_lp_speed)
 		
 		-----------------------------------------------------------------------------------------------------------------------------
 
@@ -118,7 +120,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 		local is_akimbo = wep_base and wep_base.AKIMBO
 		local ignore_transition_styles = wep_base and wep_base:weapon_tweak_data().ign_ts
 
-		if res_ads_style ~= 1 and not is_akimbo and not ignore_transition_styles then
+		if res_ads_style ~= 1 and not is_akimbo and not ignore_transition_styles and p_state ~= "bipod" then
 			ads_tilt_progress = ads_tilt_progress or 0
 			ads_tilt_target_ang = ads_tilt_target_ang or Rotation()
 			ads_tilt_target_pos = ads_tilt_target_pos or Vector3()
@@ -144,7 +146,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 				ads_tilt_target_pos = Vector3(3 * tilt_pow, 2 * tilt_pow, 1.5 * tilt_pow)
 			else
 				ads_tilt_target_ang = Rotation(0.2 * tilt_pow, 0 * tilt_pow, -20 * tilt_pow)
-				ads_tilt_target_pos = Vector3(1 * tilt_pow, 5 * tilt_pow, -3 * tilt_pow)
+				ads_tilt_target_pos = Vector3(0 * tilt_pow, 5 * tilt_pow, -3 * tilt_pow)
 			end
 			mrotation.slerp(ads_tilt_ang, ads_tilt_ang, ads_tilt_target_ang, ads_tilt_lp_speed * ((tilt_pow == 0 and 1.2) or 1))
 			mvector3.lerp(ads_tilt_pos, ads_tilt_pos, ads_tilt_target_pos, ads_tilt_lp_speed * ((tilt_pow == 0 and 1.2) or 1))
@@ -154,7 +156,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 
 		--Added a slight downward offset on the viewmodel when moving
 		--Added a speed-up to re-center when in the process of aiming
-		local tilt_lp_speed = (deltaT * 5.5) * ((in_sight and not in_full_sight and 4) or 1)
+		local tilt_lp_speed = (deltaT * 5.5) * ((in_sight and not in_full_sight and 2) or 1)
 		local tilt_str = restoration.Options:GetValue("BWAResOpt/BWAResmodTiltStr") or 0.45
 		local in_sight_tilt_str = restoration.Options:GetValue("BWAResOpt/BWAResmodADSTiltStr") or 0.03
 

@@ -2651,6 +2651,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 
 
 			local kills = 0
+			local enemies_hit = 0
 			--Resolve ALL the hits
 			--Even says "all hits" here ↓↓↓ see?
 			for _, hit_unit in ipairs(all_hits) do
@@ -2660,10 +2661,11 @@ function PlayerStandard:_update_melee_timers(t, input)
 				local best_hit = hit_unit.col_rays[1]
 
 				if is_enemy and char_dmg_ext then
+					enemies_hit = enemies_hit + 1
 					for i = 2, #hit_unit.col_rays do
 						local next_hit = hit_unit.col_rays[i]
 						--bum off the hit priority table in the character damage class of an enemy unit to get the best hit location if multiple raycasts cover said unit
-						--generally speaking it's head > plates and visor (Dozers) > Taser/Grenadier bags + LPF antenna >  everywhere else
+						--generally speaking it's head > plates and visor (Dozers) > Taser/Grenadier bags + LPF antenna > everywhere else
 						if char_dmg_ext:chk_body_hit_priority(best_hit.body, next_hit.body) then
 							best_hit = next_hit
 						end
@@ -2687,7 +2689,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 					end
 				end
 
-				local result = self:_do_melee_damage(t, nil, nil, nil, nil, best_hit.unit, best_hit, nil, true, true, nil, lerp_value_offset)
+				local result = self:_do_melee_damage(t, nil, nil, nil, nil, best_hit.unit, best_hit, nil, true, true, nil, lerp_value_offset, true)
 
 				if result and result.type and result.type == "death" and is_enemy then
 					kills = kills + 1
@@ -2702,6 +2704,16 @@ function PlayerStandard:_update_melee_timers(t, input)
 					if cleave <= 0 then
 						break --stop calculating damage across the hits once cleave runs dry
 					end
+				end
+			end
+
+			if enemies_hit < 1 then
+				if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
+					self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
+					self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {nil, 0}
+					local stack = self._state_data.stacking_dmg_mul.melee
+					stack[1] = nil
+					stack[2] = 0
 				end
 			end
 
@@ -4002,7 +4014,7 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, directi
 	return col_ray
 end
 
-function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, dmg_div, no_shaker, no_sound, no_effect, charge_lerp)
+function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, dmg_div, no_shaker, no_sound, no_effect, charge_lerp, bypass_stacking)
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
@@ -4195,7 +4207,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			local type_multiplier = managers.player:upgrade_value("player", "melee_" .. melee_type .. "_damage_multiplier", 1)
 			local type_effect_multiplier = managers.player:upgrade_value("player", "melee_" .. melee_type .. "_damage_effect_multiplier", 1)
 
-			if unit_base.char_tweak then
+			if unit_base and unit_base.char_tweak then
 				if unit_base:char_tweak().player_health_scaling_mul then
 					local tony_mult = tweak_data.upgrades.values.player["tony_boss_" .. melee_type .. "_mult"] or 0.1
 					type_multiplier = math.max(1, type_multiplier * tony_mult)
@@ -4290,8 +4302,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				dmg_multiplier = 0.1
 			end
 
-			if character_unit.base and character_unit:base().char_tweak and character_unit:base():char_tweak() then
-			end
+			--if character_unit.base and character_unit:base().char_tweak and character_unit:base():char_tweak() then --why is this here????
+			--end
 
 			action_data.damage = (is_titan and 0) or (hit_shield and damage_effect * 0.25) or damage * dmg_multiplier
 			action_data.damage_effect = damage_effect
@@ -4311,8 +4323,10 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 					stack[1] = t + managers.player:upgrade_value("melee", "stacking_hit_expire_t", 1)
 					stack[2] = math.min(stack[2] + 1, tweak_data.upgrades.max_melee_weapon_dmg_mul_stacks or 5)
 				else
-					stack[1] = nil
-					stack[2] = 0
+					if not bypass_stacking then
+						stack[1] = nil
+						stack[2] = 0
+					end
 				end
 			end
 
@@ -4365,8 +4379,10 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
 		self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {nil, 0}
 		local stack = self._state_data.stacking_dmg_mul.melee
-		stack[1] = nil
-		stack[2] = 0
+		if not bypass_stacking then
+			stack[1] = nil
+			stack[2] = 0
+		end
 	end
 	return col_ray
 end

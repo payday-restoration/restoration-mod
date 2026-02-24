@@ -38,15 +38,17 @@ local opts_pro_job_ponr_counter = {
 		{ id = 400001, delay = 0, },
 	},
 }
-local optsCloaker_Hide_SO = {
-	SO_access = "1024",
+local optsCloaker_Hide_SO_1 = {
+    SO_access = "1024",
 	scan = true,
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	use_instigator = true,
+	interrupt_dis = 0.5,
+	interrupt_dmg = 0.3,
 	interval = 2,
-	so_action = "e_so_hide_behind_door_enter",
+    so_action = "e_so_hide_behind_door_enter"
 }
 local optsCloaker_01 = {
     enabled = false,
@@ -67,7 +69,7 @@ return {
 		restoration:gen_pointofnoreturn(400001, "pro_job_ponr", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr),
 		restoration:gen_counter(400002, "pro_job_ponr_counter", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_counter),
 		-- Cloaker in the diamond room 
-		restoration:gen_so(400003, "diamond_room_hider", Vector3(6132, 356, -598.295), Rotation(103, -0, -0), optsCloaker_Hide_SO),
+		restoration:gen_so(400003, "diamond_room_hider", Vector3(6132, 356, -598.295), Rotation(103, -0, -0), optsCloaker_Hide_SO_1),
 		restoration:gen_dummy(400004, "clokaer_diamond", Vector3(6092, 460, -598.397), Rotation(131, 0, -0), optsCloaker_01),
 		restoration:gen_toggleelement(400005, "enable_diamond_cloaker", opts_enable_cloaker_diamond),
 

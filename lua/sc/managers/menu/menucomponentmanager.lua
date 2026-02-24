@@ -50,3 +50,72 @@ function MenuComponentManager:make_color_text(text_object, resource_color)
 		end
 	end
 end
+
+function MenuComponentManager:create_melee_status_icon_list(melee_weapon)
+	local icon_list = {}
+	local melee_data = tweak_data.blackmarket.melee_weapons[melee_weapon]
+	local special_weapon = melee_data and melee_data.special_weapon
+
+	if not melee_data then
+		return icon_list
+	end
+
+	local shock_weapon = special_weapon == "taser" or special_weapon == "mjolnir"
+	local explosive_weapon = special_weapon == "caber" or special_weapon == "megumin"
+	local defensive_weapon = melee_data.block
+	local parry_weapon = melee_data.counter_damage
+	local fire_weapon = false
+	local poison_weapon = false
+	local bleed_weapon = false
+
+	local function check_dot(dot_name)
+		if dot_name then
+			local dot_data = tweak_data.dot:get_dot_data(dot_name)
+			fire_weapon = fire_weapon or dot_data.variant == "fire"
+			poison_weapon = poison_weapon or dot_data.variant == "poison"
+			bleed_weapon = bleed_weapon or dot_data.variant == "bleed"
+			log(tostring( dot_name ) .. " <name variant> " .. tostring( dot_data.variant ))
+		end
+	end
+
+	if melee_data.random_special_effects then
+		for _, effect in ipairs(melee_data.random_special_effects) do
+			log(tostring( melee_weapon ))
+			shock_weapon = shock_weapon or effect.tase_data
+
+			check_dot(effect.dot_data_name)
+		end
+	else
+		check_dot(melee_data.dot_data_name)
+	end
+
+	if shock_weapon then
+		table.insert(icon_list, "guis/textures/pd2/blackmarket/inv_mod_ammo_electric")
+	end
+
+	if fire_weapon then
+		table.insert(icon_list, "guis/textures/pd2/blackmarket/inv_mod_ammo_dragons_breath")
+	end
+
+	if poison_weapon then
+		table.insert(icon_list, "guis/textures/pd2/blackmarket/inv_mod_ammo_poison")
+	end
+
+	if bleed_weapon then
+		table.insert(icon_list, "guis/textures/pd2/blackmarket/inv_mod_ammo_bleed")
+	end
+
+	if explosive_weapon then
+		table.insert(icon_list, "guis/textures/pd2/blackmarket/inv_mod_ammo_explosive")
+	end
+
+	if defensive_weapon then
+		table.insert(icon_list, "guis/textures/pd2/blackmarket/melee_defense")
+	end
+
+	if parry_weapon then
+		table.insert(icon_list, "guis/textures/pd2/blackmarket/melee_parry")
+	end
+
+	return icon_list
+end

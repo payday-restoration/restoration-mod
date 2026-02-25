@@ -980,7 +980,7 @@ end
 function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data)
 	self:old_update_stats_values(disallow_replenish, ammo_data)
 
-	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:categories(), self._silencer, nil, current_state, self._blueprint)
+	self._fire_rate_multiplier = self:is_npc() and 1 or managers.blackmarket:fire_rate_multiplier(self._name_id, self:categories(), self._silencer, nil, current_state, self._blueprint)
 	--Use stability stat to get the moving accuracy penalty.
 	--Moved this from "RaycastWeaponBase:setup" as it lead to funky lingering stats in intances of mid-heist loadout changes
 	if not self:is_npc() then
@@ -1098,8 +1098,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
 	end	
 	
-	self._hs_mult = self._hs_mult or self:weapon_tweak_data().hs_mult or 1
-	self._ene_hs_mult = self._ene_hs_mult or self:weapon_tweak_data().ene_hs_mult or 1
+	self._hs_mult = self:is_npc() and 1 or self._hs_mult or self:weapon_tweak_data().hs_mult or 1
+	self._ene_hs_mult = self:is_npc() and 1 or self._ene_hs_mult or self:weapon_tweak_data().ene_hs_mult or 1
 
 	self._shots_fired = 0
 	self._shots_fired_mag = 0

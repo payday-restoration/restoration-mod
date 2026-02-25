@@ -32470,11 +32470,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.sickle then
 				self.sickle.categories = {
-					"assault_rifle",
+					"wpn_special",
+					"assault_rifle_special",
 					"sweet_liberty",
 					"battery"
 				}
-				self.sickle.recategorize = {"heavy_ar"}
+				self.sickle.recategorize = { "wpn_special", "heavy_ar" }
 				self.sickle.damage_type = "assault_rifle"
 				self.sickle.CLIP_AMMO_MAX = 87
 				self.sickle.AMMO_MAX = self.sickle.CLIP_AMMO_MAX * 4
@@ -32542,12 +32543,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.las5 then
 				self.las5.categories = {
-					"assault_rifle",
+					"wpn_special",
+					"assault_rifle_special",
 					"sweet_liberty",
 					"sweet_liberty_las",
 					"battery"
 				}
-				self.las5.recategorize = {"light_ar"}
+				self.las5.recategorize = { "wpn_special", "light_ar" }
 				self.las5.damage_type = "assault_rifle"
 				self.las5.upgrade_blocks = nil
 				self.las5.ignore_damage_upgrades = nil
@@ -32617,8 +32619,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.las58 then
-				self.las58.categories = {"pistol", "handcannon", "sweet_liberty", "battery"}
-				self.las58.recategorize = { "heavy_pis", "handcannon" }
+				self.las58.categories = {
+					"wpn_special",
+					"pistol_special",
+					"handcannon_special",
+					"sweet_liberty",
+					"battery"
+				}
+				self.las58.recategorize = { "wpn_special", "heavy_pis", "handcannon" }
 				self.las58.damage_type = "handcannon"
 				self.las58.CLIP_AMMO_MAX = 7
 				self.las58.AMMO_MAX = self.las58.CLIP_AMMO_MAX * 4
@@ -36539,7 +36547,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 			end
 			--]]
-			if table.contains(weap.recategorize, "handcannon") and not table.contains(weap.categories, "handcannon") then
+			if table.contains(weap.recategorize, "handcannon") and not table.contains(weap.categories, "handcannon") and not table.contains(weap.categories, "handcannon_special") then
 				table.insert(weap.categories, "handcannon")
 			end
 

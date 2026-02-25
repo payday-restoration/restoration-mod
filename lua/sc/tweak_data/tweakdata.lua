@@ -60,6 +60,7 @@ tweak_data.pistol = {
 	ads_moving_recoil = 1.1,
 	hipfire_spread_mult = 0.5
 }
+	tweak_data.pistol_special = deep_clone(tweak_data.pistol)
 	tweak_data.pistol_pdw = {
 		ads_move_speed_mult = 0.7 / tweak_data.pistol.ads_move_speed_mult
 	}
@@ -71,6 +72,7 @@ tweak_data.pistol = {
 		hipfire_spread_mult = 1.25 / tweak_data.pistol.hipfire_spread_mult,
 		hipfire_moving_spread_mult = 1.75
 	}
+		tweak_data.handcannon_special = deep_clone(tweak_data.handcannon)
 		tweak_data.yeehaw = {
 			ads_move_speed_mult = 0.8 / (tweak_data.pistol.ads_move_speed_mult * tweak_data.handcannon.ads_move_speed_mult),
 			hipfire_spread_mult = 0.5 / (tweak_data.pistol.hipfire_spread_mult * tweak_data.handcannon.hipfire_spread_mult)
@@ -282,6 +284,7 @@ tweak_data.assault_rifle = {
 	shake_mul = 1.1,
 	min_spread_mult = 3
 }
+	tweak_data.assault_rifle_special = deep_clone(tweak_data.assault_rifle)
 	tweak_data.crb = {
 		swap_bonus = 1.05 / tweak_data.assault_rifle.swap_bonus,
 		min_spread_mult = 2.5 / tweak_data.assault_rifle.min_spread_mult,

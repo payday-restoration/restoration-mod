@@ -28670,7 +28670,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_scotia_barrel_fullauto.keep_damage = true
 			self.parts.wpn_fps_ass_scotia_barrel_fullauto.stats = {
 				value = 9,
-				recoil = 12,
+				recoil = 16,
 				spread = -2,
 				damage = -6,
 				total_ammo_mod = 97,

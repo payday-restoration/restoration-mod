@@ -5530,7 +5530,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.tiger.stats.min_damage = 3
 		self.melee_weapons.tiger.stats.max_damage = 6.001
 		self.melee_weapons.tiger.stats.min_damage_effect = 4.0
-		self.melee_weapons.tiger.stats.max_damage_effect = 8.0
+		self.melee_weapons.tiger.stats.max_damage_effect = 9.0
 		self.melee_weapons.tiger.stats.charge_time = 0.65
 		self.melee_weapons.tiger.stats.range = 150
 		self.melee_weapons.tiger.stats.concealment = 30
@@ -6069,13 +6069,14 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.iceaxe.make_decal = true
 		self.melee_weapons.iceaxe.make_effect = true
 		self.melee_weapons.iceaxe.stats.min_damage = 6
-		self.melee_weapons.iceaxe.stats.max_damage = 12.001
+		self.melee_weapons.iceaxe.stats.max_damage = 6
 		self.melee_weapons.iceaxe.stats.min_damage_effect = 1.5
 		self.melee_weapons.iceaxe.stats.max_damage_effect = 3.0
 		self.melee_weapons.iceaxe.stats.charge_time = 1.7
 		self.melee_weapons.iceaxe.stats.range = 180
 		self.melee_weapons.iceaxe.stats.concealment = 28
-		self.melee_weapons.iceaxe.headshot_damage_multiplier = 1.5
+		self.melee_weapons.iceaxe.headshot_damage_multiplier = 3
+		self.melee_weapons.iceaxe.charge_bonus_start = 0.99
 		self.melee_weapons.iceaxe.stats.speed_mult = 1.0
 		--Whose plumes are gay now Carl? Whose plumes are gay now?--
 		self.melee_weapons.morning.info_id = "bm_melee_morning_info"
@@ -6136,13 +6137,14 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.mining_pick.stats.cleave = 2
 		self.melee_weapons.mining_pick.stats.raycasts = 10
 		self.melee_weapons.mining_pick.stats.min_damage = 6
-		self.melee_weapons.mining_pick.stats.max_damage = 18.001
+		self.melee_weapons.mining_pick.stats.max_damage = 6
 		self.melee_weapons.mining_pick.stats.min_damage_effect = 3.0
 		self.melee_weapons.mining_pick.stats.max_damage_effect = 6.0
 		self.melee_weapons.mining_pick.stats.charge_time = 2
 		self.melee_weapons.mining_pick.stats.range = 200
 		self.melee_weapons.mining_pick.stats.concealment = 26
-		self.melee_weapons.mining_pick.headshot_damage_multiplier = 1.5
+		self.melee_weapons.mining_pick.headshot_damage_multiplier = 4.5
+		self.melee_weapons.mining_pick.charge_bonus_start = 0.99
 		self.melee_weapons.mining_pick.stats.speed_mult = 0.97
 
 		--YOOOOOOOOOOOOOOOOOOOOOOOOOOO--

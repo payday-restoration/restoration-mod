@@ -4306,6 +4306,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			--if character_unit.base and character_unit:base().char_tweak and character_unit:base():char_tweak() then --why is this here????
 			--end
 
+			local melee_hs_mult = (charge_bonus_start and melee_weapon.headshot_damage_multiplier and ((charge_lerp_value >= charge_bonus_start and melee_weapon.headshot_damage_multiplier) or 1)) or melee_weapon.headshot_damage_multiplier or 1
+
 			action_data.damage = (is_titan and 0) or (hit_shield and damage_effect * 0.25) or damage * dmg_multiplier
 			action_data.damage_effect = damage_effect
 			action_data.attacker_unit = self._unit
@@ -4315,7 +4317,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			action_data.charge_lerp_value = charge_lerp_value
 			--Damage multipliers for certain melees (IE: Butterfly Knife).
 			action_data.backstab_multiplier = melee_weapon.backstab_damage_multiplier or 1
-			action_data.headshot_multiplier = melee_weapon.headshot_damage_multiplier or 1
+			action_data.headshot_multiplier = melee_hs_mult
 			if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 				self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
 				self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {nil, 0}

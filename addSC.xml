@@ -1383,6 +1383,10 @@
 	<texture			path="guis/textures/pd2/blackmarket/melee_defense"/>
 	<texture			path="guis/textures/pd2/blackmarket/melee_parry"/>
 	<texture			path="guis/textures/pd2/blackmarket/melee_panic"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_headshot"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_backstab"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_chainsaw"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_charger"/>
 
 	<!--Incendiary Grenade-->
 	<effect				path="effects/payday2/particles/explosions/grenade_incendiary_explosion_sc" load="false"/>

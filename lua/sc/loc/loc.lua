@@ -1827,7 +1827,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_melee_spatula_info"] = "A melee weapon with a dual purpose – use it to smear a cop all across the road, and then let others use it to scoop up their remains.\n\nTake an extra napkin for this one.",
 
 		--PIPPA NO
-		["bm_melee_mining_pick_info"] = "There's gold in 'dem 'der hills! And by hills we mean teeth. But, hills or teeth, nothing digs the gold out faster than a swinging spike of pig iron.\n\nDeals #{skill_color}#50%## more headshot damage.",
+		["bm_melee_mining_pick_info"] = "There's gold in 'dem 'der hills! And by hills we mean teeth. But, hills or teeth, nothing digs the gold out faster than a swinging spike of pig iron.\n\nDeals #{skill_color}#300%## more headshot damage when fully charged.",
 		--Ebay Seller
 		["bm_melee_scalper_info"] = "For the victor, it is the symbol of war, of power and of dominance.\n\nFor the loser, it is the symbol of a really, really bad haircut.",
 		--NAOW THIS IS A KNOIFE
@@ -1903,7 +1903,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--Selfie
 		["bm_melee_selfie_info"] = "As Hoxton said, \"look at that fucking berk with the selfie-stick. What a bellend. I bet it's strong, though. Y'know, I should take it off him and twat him with it. Back in a mo...\"",
 		--Lara
-		["bm_melee_iceaxe_info"] = "When you're scaling the slick cliffs beneath Angel Falls, you need something that can gouge into the hard rock. When you're robbing banks in D.C., you need something that can gouge into the helmets of cops.\n\nDeals #{skill_color}#50%## more headshot damage.",
+		["bm_melee_iceaxe_info"] = "When you're scaling the slick cliffs beneath Angel Falls, you need something that can gouge into the hard rock. When you're robbing banks in D.C., you need something that can gouge into the helmets of cops.\n\nDeals #{skill_color}#200%## more headshot damage when fully charged.",
 			["bm_melee_iceaxe_gen_info"] = "Deals #{skill_color}#50%## more headshot damage.",
 		--Dive
 		["bm_melee_pugio_info"] = "Simple and strong. Whether you're cutting throats, or cutting dolphins free of tangling fishing nets, it gets the job done. And it looks badass on your hip when you come swaggering out of the surf.",

@@ -2207,7 +2207,7 @@ function PlayerStandard:_update_running_timers(t)
 				local input_bool = self._controller and self._controller:get_input_bool("primary_attack") == true
 				if input_bool then
 					self._delay_running_anim = t + delay
-					self:_check_action_primary_attack(t, { btn_primary_attack_state = true, real_input_pressed = not in_burst_mode and input_bool, btn_primary_attack_press = true})
+					self._queue_fire = input_bool
 				end
 			end
 		end

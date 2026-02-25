@@ -127,7 +127,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_survive_one_hitTitleID"] = "Oni Irezumi (Yakuza)",
 				["RestorationModInfo_survive_one_hitDescID"] = "Enables or disables tracking the active state this specific perk.",
 				["RestorationModInfo_cohesionTitleID"] = "Cohesion (Biker)",
-				["RestorationModInfo_cohesionDescID"] = "Enables or disables tracking the Cohesion stacks from this perk deck.\nNumber shows every 8 stacks of Cohesion.",
+				["RestorationModInfo_cohesionDescID"] = "Enables or disables tracking the Cohesion stacks from this perk deck.\nGreen number shows every 8 stacks of Cohesion.",
 				["RestorationModInfo_heisters_in_auraTitleID"] = "Heisters in Proximity (Biker)",
 				["RestorationModInfo_heisters_in_auraDescID"] = "Enables or disables tracking how many players are nearby for this perk deck.",
 				["RestorationModInfo_dig_in_your_heelsTitleID"] = "Dig In Your Heels! (Biker)",

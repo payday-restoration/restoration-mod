@@ -67,6 +67,17 @@ function HUDSkill:add_skill(name)
 		font = tweak_data.menu.default_font,
 		font_size = self._icon_size * 0.6
 	})
+	local special = self._skill_panel:text({
+		alpha = 1,
+		name = name .. "_special",
+		text = "",
+		x = x_offset + (0.05 * self._icon_size), --Move text to corner of icon.
+		y = y_offset - (0.1 * self._icon_size),
+		layer = 3,
+		color = Color(255, 167, 248, 87) / 255,
+		font = tweak_data.menu.default_font,
+		font_size = self._icon_size * 0.6
+	})
 
 	--Insert information regarding skill to tables.
 	table.insert(self._active_skills, name)
@@ -83,11 +94,13 @@ function HUDSkill:destroy(name)
 			self._skill_panel:remove(self._skill_panel:child(skill .. "_back"))
 			self._skill_panel:remove(self._skill_panel:child(skill .. "_icon"))
 			self._skill_panel:remove(self._skill_panel:child(skill .. "_stacks"))
+			self._skill_panel:remove(self._skill_panel:child(skill .. "_special"))
 		elseif skill == name then
 			table.remove(self._active_skills, i)
 			self._skill_panel:remove(self._skill_panel:child(skill .. "_back"))
 			self._skill_panel:remove(self._skill_panel:child(skill .. "_icon"))
 			self._skill_panel:remove(self._skill_panel:child(skill .. "_stacks"))
+			self._skill_panel:remove(self._skill_panel:child(skill .. "_special"))
 			self:_reshuffle_locations() --Fix positions to fill in hole.
 			break
 		end
@@ -232,7 +245,8 @@ end
 --- Given a starting number, a target number, and a "per cycle" number, the skill's icon and background will start filling up or draining.
 --- The animation completes as many times as the "per cycle" number can fit between the target number and the starting number.  
 --- Additionally, the animation can stop partially filled based on these numbers.  
---- The animation will also update the skill's stack count, to represent how many times the current value would "fit" the per cycle amount.
+--- The animation will also both show the number of stacks (in `_stacks`)
+--- and the number of times the "per cycle" amount fits into the stack count (in `_special`).
 --- 
 --- ## Example 1:
 --- - starting_amount = 0
@@ -240,7 +254,7 @@ end
 --- - per_cycle = 8
 --- 
 --- This will cause the animation to start filling up from nothing, and stop halfway. 
---- The stack count would start out at 0 and stay that way.
+--- The special count would start out at 0 and stay that way, but the stack count would count up from 0 to 4.
 --- 
 --- ## Example 2:
 --- - starting_amount = 20
@@ -248,7 +262,8 @@ end
 --- - per_cycle = 10
 --- 
 --- This will cause the animation to start out fully filled, drain completely once, then drain halfway.  
---- The stack count would start out at 2, show 1 during the full drain animation, then show 0 during the halfway drain animation.
+--- The special count would start out at 2, show 1 during the full drain animation, then show 0 during the halfway drain animation.  
+--- The stack count would start from 20, counting down to 19, 18, etc., up until it reaches 5.
 --- @param input_panel InputPanel As with other animations.
 --- @param name string As with other animations.
 --- @param starting_amount number See description.
@@ -269,7 +284,8 @@ function HUDSkill:_animate_amount_fitting_into_stack(input_panel, name, starting
 
 		input_panel:child(name .. "_back"):set_color(Color(0.75, partial_ratio, 1, 1))
 		input_panel:child(name .. "_icon"):set_color(Color(0.8, partial_ratio, 1, 1))
-		input_panel:child(name .. "_stacks"):set_text(tostring(filled))
+		input_panel:child(name .. "_stacks"):set_text(tostring(math.floor(current_amount)))
+		input_panel:child(name .. "_special"):set_text(tostring(filled))
 		coroutine.yield()
 	until completion_ratio == 1
 	self._start_times[name] = nil
@@ -295,5 +311,7 @@ function HUDSkill:_reshuffle_locations()
 		self._skill_panel:child(skill .. "_back"):set_left(x_offset)
 		self._skill_panel:child(skill .. "_stacks"):set_top(y_offset - (0.1 * self._icon_size))
 		self._skill_panel:child(skill .. "_stacks"):set_left(x_offset + (0.67 * self._icon_size))
+		self._skill_panel:child(skill .. "_special"):set_top(y_offset - (0.1 * self._icon_size))
+		self._skill_panel:child(skill .. "_special"):set_left(x_offset + (0.05 * self._icon_size))
 	end
 end

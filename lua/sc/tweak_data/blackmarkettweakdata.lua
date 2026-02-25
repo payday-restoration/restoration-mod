@@ -4637,18 +4637,18 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_boxcutter"
 			self.melee_weapons[melee_id].anim_global_param = "melee_road"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-			self.melee_weapons[melee_id].anim_attack_vars = { "var1","var2","var3","var4"}
+			self.melee_weapons[melee_id].anim_attack_vars = { "var1" }
 			self.melee_weapons[melee_id].anim_attack_var_dir = {
-				var1 = {"left", -0.2},
+				var1 = {"left", -0.1},
 				var2 = {"left", 0.1},
 				var3 = {"left", -0.1},
-				var4 = {"left", 0.2},
+				var4 = {"left", 0.1},
 			}
 			self.melee_weapons[melee_id].expire_t = 0.7
 			self.melee_weapons[melee_id].repeat_expire_t = 0.6
 			self.melee_weapons[melee_id].melee_damage_delay = 0.35
 			self.melee_weapons[melee_id].force_play_charge = true
-			self.melee_weapons[melee_id].anim_speed_mult = 0.85714
+			self.melee_weapons[melee_id].anim_speed_mult = 0.8
 		end
 		
 		--melee_cleaver
@@ -5252,13 +5252,13 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--YEAH YEAH YEAH YEAH--
 		self.melee_weapons.road.info_id = "bm_melee_road_info"
 		self.melee_weapons.road.stats.cleave = 1
-		self.melee_weapons.road.stats.raycasts = 25
+		self.melee_weapons.road.stats.raycasts = 30
 		self.melee_weapons.road.stats.min_damage = 4.5
 		self.melee_weapons.road.stats.max_damage = 9.001
 		self.melee_weapons.road.stats.min_damage_effect = 9.0
 		self.melee_weapons.road.stats.max_damage_effect = 18.0
 		self.melee_weapons.road.stats.charge_time = 1.8
-		self.melee_weapons.road.stats.range = 180
+		self.melee_weapons.road.stats.range = 190
 		self.melee_weapons.road.stats.concealment = 27
 
 		--Mic stand--

@@ -2585,8 +2585,19 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local function collect_melee_hits(angle, l_r, v_mult)
 				local v_mult = v_mult or 0 --0 is horizontal, 1 is vertical, '+' starts the line fom the top going down, '-' starts the line from the bottom going up
 				local l_r = l_r or 1
-				local new_rot = Rotation(yaw + (angle * (1 - math.abs(v_mult) * math.abs(v_mult))), pitch - (angle * (v_mult * l_r)), roll)
-				local direction = new_rot:y()
+				local forward = rotation:y()
+				local right = rotation:x()
+				local up = rotation:z()
+				local h_angle = angle * (1 - math.abs(v_mult) * math.abs(v_mult))
+				local v_angle = angle * (v_mult * l_r)
+				local new_dir = forward
+				if h_angle ~= 0 then
+					new_dir = new_dir:rotate_with(Rotation(up, h_angle))
+				end
+				if v_angle ~= 0 then
+					new_dir = new_dir:rotate_with(Rotation(right, -v_angle))
+				end
+				local direction = new_dir
 				local col_ray = self:_calc_melee_hit_ray(t, 10, from, direction)
 
 				if col_ray and alive(col_ray.unit) then

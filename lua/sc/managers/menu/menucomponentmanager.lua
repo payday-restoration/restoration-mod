@@ -62,6 +62,7 @@ function MenuComponentManager:create_melee_status_icon_list(melee_weapon)
 
 	local shock_weapon = special_weapon == "taser" or special_weapon == "mjolnir"
 	local explosive_weapon = special_weapon == "caber" or special_weapon == "megumin"
+	local jackpot_weapon = special_weapon == "hyper_crit"
 	local flashlight = melee_data.flashlight
 	local headshot_weapon = melee_data.headshot_damage_multiplier and melee_data.headshot_damage_multiplier > 1
 	local backstab_weapon = melee_data.backstab_damage_multiplier and melee_data.backstab_damage_multiplier > 1
@@ -145,6 +146,10 @@ function MenuComponentManager:create_melee_status_icon_list(melee_weapon)
 
 	if backstab_weapon then
 		table.insert(icon_list, "guis/textures/pd2/blackmarket/melee_backstab")
+	end
+
+	if jackpot_weapon then
+		table.insert(icon_list, "guis/textures/pd2/blackmarket/melee_jackpot")
 	end
 
 	return icon_list

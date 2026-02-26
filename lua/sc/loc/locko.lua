@@ -125,7 +125,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_survive_one_hitTitleID"] = "도깨비 문신 (야쿠자)",
 				["RestorationModInfo_survive_one_hitDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_cohesionTitleID"] = "단결력 (바이커)",
-				["RestorationModInfo_cohesionDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.\n숫자는 단결력 스택이 8개마다 표시됩니다.",
+				["RestorationModInfo_cohesionDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.\n초로객 숫자는 단결력 스택이 8 스택일때 마다 표시됩니다.",
 				["RestorationModInfo_heisters_in_auraTitleID"] = "근처에 있는 하이스터 표시 (바이커)",
 				["RestorationModInfo_heisters_in_auraDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_dig_in_your_heelsTitleID"] = "너의 가치를 보여라! (바이커)",
@@ -1755,7 +1755,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_melee_spatula_info"] = "이 근접 무기는 도로 건너편에 있는 경찰을 뭉개버리거나 다른 사람들이 경찰의 유해를 치우는 데 사용되는 이중 목적을 가졌습니다.\n\n이 경우에는 냅킨을 한 장 더 가져가십시오.",
 
 		--PIPPA NO
-		["bm_melee_mining_pick_info"] = "저 언덕에 금이 있다네! 여기서 '언덕'은 '이빨'을 뜻하지만 말이죠. 허나 언덕이든 이빨이든, 이 주철 스파이크를 휘두르는 것보다 더 빨리 금을 캐낼 수는 없을 것입니다.\n\n헤드샷 피해가 #{skill_color}#50%## 증가합니다.",
+		["bm_melee_mining_pick_info"] = "저 언덕에 금이 있다네! 여기서 '언덕'은 '이빨'을 뜻하지만 말이죠. 허나 언덕이든 이빨이든, 이 주철 스파이크를 휘두르는 것보다 더 빨리 금을 캐낼 수는 없을 것입니다.\n\n완전 충전 시 헤드샷 피해가 #{skill_color}#300%## 증가합니다.",
 		--Ebay Seller
 		["bm_melee_scalper_info"] = "승자에게는 전쟁과 권력, 지배의 상징입니다.\n\n그리고 패자에게는 정말, 정말 나쁜 머리 스타일이라는 상징이죠.",
 		--NAOW THIS IS A KNOIFE
@@ -1831,7 +1831,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--Selfie
 		["bm_melee_selfie_info"] = "혹스턴이 말하길, \"저 셀카봉을 들고 있는 멍청한 새끼 좀 봐. 정말 병신이군. 저거 강력해 보이는데, 저걸 빼앗아서 저 놈을 조져 버릴꺼야. 잠깐 돌아오겠...\"",
 		--Lara
-		["bm_melee_iceaxe_info"] = "앙헬 폭포 아래의 미끄러운 절벽을 오를 때는 단단한 바위를 파낼 수 있는 무언가가 필요하고 D.C.에서 은행을 털 때는 경찰의 헬멧을 파낼 수 있는 무언가가 필요합니다.\n\n헤드샷 피해가 #{skill_color}#50%## 증가합니다.",
+		["bm_melee_iceaxe_info"] = "앙헬 폭포 아래의 미끄러운 절벽을 오를 때는 단단한 바위를 파낼 수 있는 무언가가 필요하고 D.C.에서 은행을 털 때는 경찰의 헬멧을 파낼 수 있는 무언가가 필요합니다.\n\n완전 충전 시 헤드샷 피해가 #{skill_color}#200%## 증가합니다.",
 			["bm_melee_iceaxe_gen_info"] = "헤드샷 피해가 #{skill_color}#50%## 증가합니다.",
 		--Dive
 		["bm_melee_pugio_info"] = "단순하면서도 강력합니다. 목을 자르든, 엉킨 어망에 빠져나온 돌고래를 잘라내든, 잘 해내죠. 그리고 서프에서 뽐내며 허풍 떨 때 멋지게 보여줍니다.",
@@ -4795,13 +4795,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_melee_stick"] = "Shepherd's Crook",
 					["bm_melee_nin"] = "Paslode IM90i Nailgun",
 					["bm_melee_ballistic"] = "Ballistic Knives",
-					["bm_melee_wing"] = "Benchmade Model 42 Balisong",
+					["bm_melee_wing"] = "Benchmade Model 62 Balisong",
 					["bm_melee_cs"] = "Homelite Super 2 Chainsaw",
 					["bm_melee_brick"] = "Motorola DynaTAC 8000X",
 					["bm_melee_sword"] = "Pencil",
 					["bm_melee_oxide"] = "UVSR Taiga-1",
 					["bm_melee_selfie"] = "PolarPro PowerPole GoPro Extension",
 					["bm_melee_twins"] = "Shureido Sai",
+					["bm_melee_iceaxe"] = "Black Diamond Viper Ice Axe", --Looks to be a mix of the Black Diamond Viper (V2) and Cobra (V2) Ice Axes - the Viper's shaft and head connection style and the Cobra's grip
 
 				--[[THROWABLES]]
 					["bm_grenade_frag"] = "M67 파편 수류탄",

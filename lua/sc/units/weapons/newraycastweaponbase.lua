@@ -327,6 +327,20 @@ function NewRaycastWeaponBase:second_sight_spread_mult()
 	return false
 end
 
+function NewRaycastWeaponBase:second_sight_hip_spread_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats and part_stats.pointshoot_hip_spread then
+			return self._pointshoot_hip_spread
+		end
+	end
+
+	return false
+end
+
 function NewRaycastWeaponBase:second_sight_strafe()
 	local second_sight = self:get_active_second_sight()
 
@@ -340,6 +354,124 @@ function NewRaycastWeaponBase:second_sight_strafe()
 
 	return false
 end
+
+function NewRaycastWeaponBase:second_sight_rof_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats and part_stats.pointshoot_rof then
+			return self._pointshoot_rof
+		end
+	end
+
+	return false
+end
+
+function NewRaycastWeaponBase:second_sight_recoil_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats and part_stats.pointshoot_recoil then
+			return self._pointshoot_recoil
+		end
+	end
+
+	return false
+end
+
+function NewRaycastWeaponBase:second_sight_falloff_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats and part_stats.pointshoot_falloff then
+			return self._pointshoot_falloff
+		end
+	end
+
+	return false
+end
+
+function NewRaycastWeaponBase:second_sight_damage_min_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats and part_stats.pointshoot_damage_min then
+			return self._pointshoot_damage_min
+		end
+	end
+
+	return false
+end
+
+function NewRaycastWeaponBase:_refresh_second_sight_extra_list()
+	local second_sight_extras = managers.weapon_factory:get_parts_from_weapon_by_type_or_perk("second_sight_extra", self._factory_id, self._blueprint)
+
+	table.sort(second_sight_extras, function (a, b)
+		return b < a
+	end)
+
+	self._second_sight_extras = {}
+
+	for _, part_id in ipairs(second_sight_extras) do
+		table.insert(self._second_sight_extras, {
+			part_id = part_id,
+			unit = self._parts and self._parts[part_id] and self._parts[part_id].unit
+		})
+	end
+end
+
+Hooks:PostHook(NewRaycastWeaponBase, "_refresh_second_sight_list", "resmod_second_sight_extra_list", function(self)
+	self:_refresh_second_sight_extra_list()
+end)
+
+Hooks:PostHook(NewRaycastWeaponBase, "set_second_sight_on", "resmod_second_sight_extra_list", function(self, second_sight_on, ignore_enable, second_sights, current_state)
+	local second_sight_extra = nil
+	for i, data in ipairs(self._second_sight_extras) do
+		second_sight_extra = data
+
+		if second_sight_extra and alive(second_sight_extra.unit) then
+			second_sight_extra.unit:base():set_state(self._second_sight_on == i, self._sound_fire, current_state)
+		end
+	end
+end)
+
+--[[
+local _orig_fire_rate_multiplier = NewRaycastWeaponBase.fire_rate_multiplier
+function NewRaycastWeaponBase:fire_rate_multiplier(...)
+	local result = _orig_fire_rate_multiplier(self, ...)
+
+	if self.second_sight_rof_mult then
+		local second_sight_rof_mult = self:second_sight_rof_mult()
+		if second_sight_rof_mult then
+			result = result * second_sight_rof_mult
+		end
+	end
+
+	return result
+end
+
+local _orig_recoil_multiplier = NewRaycastWeaponBase.recoil_multiplier
+function NewRaycastWeaponBase:recoil_multiplier(...)
+	local result = _orig_recoil_multiplier(self, ...)
+
+	if self.second_sight_recoil_mult then
+		local second_sight_recoil_mult = self:second_sight_recoil_mult()
+		if second_sight_recoil_mult then
+			result = result * second_sight_recoil_mult
+		end
+	end
+
+	return result
+end
+--]]
 
 --Multiplier for movement penalty to spread.
 function NewRaycastWeaponBase:moving_spread_penalty_reduction()
@@ -418,7 +550,12 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		if self._hipfire_mult then
 			hipfire_spread_mult = hipfire_spread_mult * self._hipfire_mult
 		end
+		local second_sight_hip_spread_mult = self.second_sight_hip_spread_mult and self:second_sight_hip_spread_mult()
+		if second_sight_hip_spread_mult then
+			hipfire_spread_mult = hipfire_spread_mult * second_sight_hip_spread_mult
+		end
 		multiplier = multiplier * hipfire_spread_mult
+
 	end
 
 	if self:in_burst_mode() then
@@ -595,6 +732,13 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 	if self._fire_rate_init_count and self:fire_mode() ~= "single" and not self:in_burst_mode() then
 		if (self._fire_rate_init_count > self._shots_fired) then
 			mult = mult * self._fire_rate_init_recoil_mult
+		end
+	end
+
+	if self.second_sight_recoil_mult then
+		local second_sight_recoil_mult = self:second_sight_recoil_mult()
+		if second_sight_recoil_mult then
+			mult = mult * second_sight_recoil_mult
 		end
 	end
 
@@ -1147,7 +1291,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		self._pointshoot_ads = 1
 		self._pointshoot_spread = 1
+		self._pointshoot_hip_spread = 1
 		self._pointshoot_strafe = 0
+		self._pointshoot_rof = 1
+		self._pointshoot_recoil = 1
+		self._pointshoot_falloff = 1
+		self._pointshoot_damage_min = 1
 
 		self._keep_ammo = self:weapon_tweak_data().keep_ammo
 
@@ -1308,8 +1457,23 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.pointshoot_spread then
 				self._pointshoot_spread = (self._pointshoot_spread or 1) * stats.pointshoot_spread
 			end
+			if stats.pointshoot_hip_spread then
+				self._pointshoot_hip_spread = (self._pointshoot_hip_spread or 1) * stats.pointshoot_hip_spread
+			end
 			if stats.pointshoot_strafe then
 				self._pointshoot_strafe = math.min( (self._pointshoot_strafe or 0) + stats.pointshoot_strafe, 1 )
+			end
+			if stats.pointshoot_rof then
+				self._pointshoot_rof = (self._pointshoot_rof or 1) * stats.pointshoot_rof
+			end
+			if stats.pointshoot_recoil then
+				self._pointshoot_recoil = (self._pointshoot_recoil or 1) * stats.pointshoot_recoil
+			end
+			if stats.pointshoot_falloff then
+				self._pointshoot_falloff = (self._pointshoot_falloff or 1) * stats.pointshoot_falloff
+			end
+			if stats.pointshoot_damage_min then
+				self._pointshoot_damage_min = (self._pointshoot_damage_min or 1) * stats.pointshoot_damage_min
 			end
 
 			if stats.object_damage_mult_override then		
@@ -1888,6 +2052,11 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 	if ((self:can_toggle_firemode() and not has_sharpshooter) or self._rof_mult_semi) and self:fire_mode() == "single" and not self:in_burst_mode() then
 		multiplier = multiplier * (self._rof_mult_semi or 0.8)
 	end
+	
+	local second_sight_rof_mult = self.second_sight_rof_mult and self:second_sight_rof_mult()
+	if second_sight_rof_mult then
+		multiplier = multiplier * second_sight_rof_mult
+	end
 
 	return multiplier
 end
@@ -2291,6 +2460,12 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	falloff_start = falloff_start * self._damage_near_mul
 	falloff_end = falloff_end * self._damage_far_mul
 
+	local second_sight_falloff_mult = self.second_sight_falloff_mult and self:second_sight_falloff_mult()
+	if second_sight_falloff_mult then
+		falloff_start = falloff_start * second_sight_falloff_mult
+		falloff_end = falloff_end * second_sight_falloff_mult
+	end
+
 	if dot_only then
 		falloff_start = falloff_start * self._duration_falloff_start_mult
 		falloff_end = falloff_end * self._duration_falloff_end_mult
@@ -2311,7 +2486,15 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 		end
 	end
 
-	minimum_damage = ( minimum_damage * (self._damage_min_mult or 1)) / managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
+	local damage_min_mult = self._damage_min_mult
+
+	local second_sight_damage_min_mult = self.second_sight_damage_min_mult and self:second_sight_damage_min_mult()
+	if second_sight_damage_min_mult then
+		damage_min_mult = damage_min_mult * second_sight_damage_min_mult
+	end
+
+
+	minimum_damage = ( minimum_damage * (damage_min_mult or 1)) / managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
 	
 	--[[
 	log("DAMAGE: " .. tostring( damage * 10 ))
@@ -2553,7 +2736,6 @@ function NewRaycastWeaponBase:can_shoot_through_enemy()
 	return can_shoot_through_enemy or self._can_shoot_through_enemy
 end
 
-
 -- 10th Anniversary Mutator Ammo
 function NewRaycastWeaponBase:ammo_type_buff_add(ammo_id, ammo_buff_data)
 	if self._buffs_data and self._buffs_data[ammo_id] then
@@ -2734,11 +2916,11 @@ local g3_niphen = restoration.Options:GetValue("WEAPONS/WEAPONANIMS/g3_niphen")
 Hooks:PostHook(NewRaycastWeaponBase, "weapon_tweak_data", "res_weapon_tweak_data", function(self)
 	local wtd = NewRaycastWeaponBase.super.weapon_tweak_data(self)
 
-    if not self._parts then
-        return wtd
-    end
+	if not self._parts then
+		return wtd
+	end
 
-    if not g3_niphen and BeardLib.Utils:FindMod("JustAnotherG3 Reload") and self._name_id == "g3" then
+	if not g3_niphen and BeardLib.Utils:FindMod("JustAnotherG3 Reload") and self._name_id == "g3" then
 		if self._parts.wpn_fps_ass_g3_b_sniper then 
 			wtd.animations.reload_name_id = "g3_psg"
 		elseif self._parts.wpn_fps_ass_g3_b_long or self._parts.wpn_fps_ass_g3_b_short then
@@ -2748,5 +2930,5 @@ Hooks:PostHook(NewRaycastWeaponBase, "weapon_tweak_data", "res_weapon_tweak_data
 		end
 	end
 
-    return wtd
+	return wtd
 end)

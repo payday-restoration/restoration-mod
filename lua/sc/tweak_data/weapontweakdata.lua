@@ -27836,6 +27836,60 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti_dracarys.timers.reload_exit_not_empty = 0.82
 			end
 
+			if self.ghosts_ripper then --BO6 Jackal PDW
+				self.ghosts_ripper.categories = { "smg" }
+				self.ghosts_ripper.recategorize = { "heavy_smg" }
+				self.ghosts_ripper.damage_type = "machine_gun"
+				self.ghosts_ripper.has_description = true
+				self.ghosts_ripper.nato = true
+				self.ghosts_ripper.fire_mode_data.fire_rate = 0.062047
+				self.ghosts_ripper.CAN_TOGGLE_FIREMODE = false
+				self.ghosts_ripper.tactical_reload = 1
+				self.ghosts_ripper.CLIP_AMMO_MAX = 32
+				self.ghosts_ripper.AMMO_MAX = 0
+				self.ghosts_ripper.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.ghosts_ripper.kick_pattern = {
+					{0, self.stat_info.kick_tables.horizontal_recoil}
+				}
+				self.ghosts_ripper.supported = true
+				self.ghosts_ripper.ads_speed = 0.260
+				self.ghosts_ripper.damage_falloff = {
+					start_dist = 900,
+					end_dist = 1900,
+					min_mult = 0.2
+				}
+				self.ghosts_ripper.stats = {
+					damage = 30,
+					spread = 71,
+					recoil = 65,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 27,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.ghosts_ripper.stats_modifiers = nil
+				self.ghosts_ripper.panic_suppression_chance = 0.05
+				self.ghosts_ripper.timers.reload_empty = 2.75
+				self.ghosts_ripper.timers.reload_exit_empty = 0.58
+				self.ghosts_ripper.timers.reload_not_empty = 2
+				self.ghosts_ripper.timers.reload_exit_not_empty = 1
+				self.ghosts_ripper.recoil_values = {
+					{ 80, 60 },
+					7.5,
+					0.6,
+					srm = {
+						-0.007,
+						{1, 1.075},
+						4
+					}
+				}
+			end
+
 			if self.swhiskey then --RJC9000 and PlayBONK's MW2022 SW500
 				self.swhiskey.categories = {"pistol", "handcannon"}
 				self.swhiskey.recategorize = { "heavy_pis", "handcannon" }

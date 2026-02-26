@@ -27843,7 +27843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ghosts_ripper.has_description = true
 				self.ghosts_ripper.nato = true
 				self.ghosts_ripper.fire_mode_data.fire_rate = 0.062047
-				self.ghosts_ripper.CAN_TOGGLE_FIREMODE = false
+				self.ghosts_ripper.CAN_TOGGLE_FIREMODE = true
 				self.ghosts_ripper.tactical_reload = 1
 				self.ghosts_ripper.CLIP_AMMO_MAX = 32
 				self.ghosts_ripper.AMMO_MAX = 0

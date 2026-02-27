@@ -25027,6 +25027,113 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.kuro556 then
+				self.kuro556.categories = { "assault_rifle" }
+				self.kuro556.recategorize = { "light_ar" }
+				self.kuro556.damage_type = "assault_rifle"
+				self.kuro556.has_description = true
+				self.kuro556.nato = true
+				self.kuro556.tactical_reload = 1
+				self.kuro556.CLIP_AMMO_MAX = 30
+				self.kuro556.AMMO_MAX = 0
+				self.kuro556.fire_mode_data.fire_rate = 0.0923076
+				self.kuro556.CAN_TOGGLE_FIREMODE = true
+				self.kuro556.FIRE_MODE = "auto"
+				self.kuro556.BURST_FIRE = false
+				self.kuro556.kick = {}
+				self.kuro556.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.kuro556.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{5, self.stat_info.kick_tables.left_recoil},
+					{11, self.stat_info.kick_tables.even_recoil},
+					{13, self.stat_info.kick_tables.right_recoil},
+					{22, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.kuro556.supported = true
+				self.kuro556.ads_speed = 0.300
+				self.kuro556.damage_falloff = {
+					start_dist = 3100,
+					end_dist = 5000,
+					min_mult = 0.5
+				}
+				self.kuro556.stats = {
+					damage = 24,
+					spread = 82,
+					recoil = 75,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 26,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.kuro556.stats_modifiers = nil
+				self.kuro556.lock_slide = true
+				self.kuro556.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.kuro556.panic_suppression_chance = 0.05
+				self.kuro556.timers.reload_empty = 3
+				self.kuro556.timers.reload_exit_empty = 0.9
+				self.kuro556.timers.reload_not_empty = 2
+				self.kuro556.timers.reload_exit_not_empty = 0.6
+			end
+
+			if self.kuro762 then
+				self.kuro762.categories = { "assault_rifle", "dmr_l" }
+				self.kuro762.recategorize = { "dmr_ar" }
+				self.kuro762.damage_type = "assault_rifle"
+				self.kuro762.has_description = true
+				self.kuro762.nato = true
+				self.kuro762.tactical_reload = 1
+				self.kuro762.CLIP_AMMO_MAX = 20
+				self.kuro762.AMMO_MAX = 0
+				self.kuro762.fire_mode_data.fire_rate = 0.0923076
+				self.kuro762.CAN_TOGGLE_FIREMODE = true
+				self.kuro762.FIRE_MODE = "auto"
+				self.kuro762.BURST_FIRE = false
+				self.kuro762.kick = {}
+				self.kuro762.kick = self.stat_info.kick_tables.right_recoil
+				self.kuro762.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{5, self.stat_info.kick_tables.left_recoil},
+					{11, self.stat_info.kick_tables.even_recoil},
+					{13, self.stat_info.kick_tables.right_recoil},
+					{22, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.kuro762.supported = true
+				self.kuro762.ads_speed = 0.380
+				self.kuro762.damage_falloff = {
+					start_dist = 3100,
+					end_dist = 5000,
+					min_mult = 0.5
+				}
+				self.kuro762.stats = {
+					damage = 24,
+					spread = 85,
+					recoil = 67,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.kuro762.stats_modifiers = nil
+				self.kuro762.lock_slide = true
+				self.kuro762.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.kuro762.panic_suppression_chance = 0.05
+				self.kuro762.reload_speed_multiplier = 0.95
+				self.kuro762.timers.reload_empty = 3
+				self.kuro762.timers.reload_exit_empty = 0.9
+				self.kuro762.timers.reload_not_empty = 2
+				self.kuro762.timers.reload_exit_not_empty = 0.6
+			end
+
 			if self.hk433 then
 				self.hk433.categories = { "assault_rifle" }
 				self.hk433.recategorize = { "light_ar" }

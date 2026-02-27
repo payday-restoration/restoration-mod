@@ -355,6 +355,60 @@ function NewRaycastWeaponBase:second_sight_strafe()
 	return false
 end
 
+function NewRaycastWeaponBase:second_sight_falloff_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats and part_stats.pointshoot_falloff then
+			return self._pointshoot_falloff
+		end
+	end
+
+	return false
+end
+function NewRaycastWeaponBase:second_sight_falloff_start_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats and part_stats.pointshoot_falloff_start then
+			return self._pointshoot_falloff_start
+		end
+	end
+
+	return false
+end
+function NewRaycastWeaponBase:second_sight_falloff_end_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats and part_stats.pointshoot_falloff_end then
+			return self._pointshoot_falloff_end
+		end
+	end
+
+	return false
+end
+
+function NewRaycastWeaponBase:second_sight_damage_min_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats and part_stats.pointshoot_damage_min then
+			return self._pointshoot_damage_min
+		end
+	end
+
+	return false
+end
+
 function NewRaycastWeaponBase:second_sight_rof_mult()
 	local second_sight = self:get_active_second_sight()
 
@@ -383,34 +437,6 @@ function NewRaycastWeaponBase:second_sight_recoil_mult()
 	return false
 end
 
-function NewRaycastWeaponBase:second_sight_falloff_mult()
-	local second_sight = self:get_active_second_sight()
-
-	if second_sight then
-		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
-
-		if part_stats and part_stats.pointshoot_falloff then
-			return self._pointshoot_falloff
-		end
-	end
-
-	return false
-end
-
-function NewRaycastWeaponBase:second_sight_damage_min_mult()
-	local second_sight = self:get_active_second_sight()
-
-	if second_sight then
-		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
-
-		if part_stats and part_stats.pointshoot_damage_min then
-			return self._pointshoot_damage_min
-		end
-	end
-
-	return false
-end
-
 function NewRaycastWeaponBase:_refresh_second_sight_extra_list()
 	local second_sight_extras = managers.weapon_factory:get_parts_from_weapon_by_type_or_perk("second_sight_extra", self._factory_id, self._blueprint)
 
@@ -432,7 +458,7 @@ Hooks:PostHook(NewRaycastWeaponBase, "_refresh_second_sight_list", "resmod_secon
 	self:_refresh_second_sight_extra_list()
 end)
 
-Hooks:PostHook(NewRaycastWeaponBase, "set_second_sight_on", "resmod_second_sight_extra_list", function(self, second_sight_on, ignore_enable, second_sights, current_state)
+Hooks:PostHook(NewRaycastWeaponBase, "set_second_sight_on", "resmod_second_sight_extra_on", function(self, second_sight_on, ignore_enable, second_sights, current_state)
 	local second_sight_extra = nil
 	for i, data in ipairs(self._second_sight_extras) do
 		second_sight_extra = data
@@ -448,11 +474,9 @@ local _orig_fire_rate_multiplier = NewRaycastWeaponBase.fire_rate_multiplier
 function NewRaycastWeaponBase:fire_rate_multiplier(...)
 	local result = _orig_fire_rate_multiplier(self, ...)
 
-	if self.second_sight_rof_mult then
-		local second_sight_rof_mult = self:second_sight_rof_mult()
-		if second_sight_rof_mult then
-			result = result * second_sight_rof_mult
-		end
+	local second_sight_rof_mult = self.second_sight_rof_mult and self:second_sight_rof_mult()
+	if second_sight_rof_mult then
+		result = result * second_sight_rof_mult
 	end
 
 	return result
@@ -462,11 +486,9 @@ local _orig_recoil_multiplier = NewRaycastWeaponBase.recoil_multiplier
 function NewRaycastWeaponBase:recoil_multiplier(...)
 	local result = _orig_recoil_multiplier(self, ...)
 
-	if self.second_sight_recoil_mult then
-		local second_sight_recoil_mult = self:second_sight_recoil_mult()
-		if second_sight_recoil_mult then
-			result = result * second_sight_recoil_mult
-		end
+	local second_sight_recoil_mult = self.second_sight_recoil_mult and self:second_sight_recoil_mult()
+	if second_sight_recoil_mult then
+		result = result * second_sight_recoil_mult
 	end
 
 	return result
@@ -1296,6 +1318,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._pointshoot_rof = 1
 		self._pointshoot_recoil = 1
 		self._pointshoot_falloff = 1
+		self._pointshoot_falloff_start = 1
+		self._pointshoot_falloff_end = 1
 		self._pointshoot_damage_min = 1
 
 		self._keep_ammo = self:weapon_tweak_data().keep_ammo
@@ -1471,6 +1495,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.pointshoot_falloff then
 				self._pointshoot_falloff = (self._pointshoot_falloff or 1) * stats.pointshoot_falloff
+			end
+			if stats.pointshoot_falloff_start then
+				self._pointshoot_falloff_start = (self._pointshoot_falloff_start or 1) * stats.pointshoot_falloff_start
+			end
+			if stats.pointshoot_falloff_end then
+				self._pointshoot_falloff_end = (self._pointshoot_falloff_end or 1) * stats.pointshoot_falloff_end
 			end
 			if stats.pointshoot_damage_min then
 				self._pointshoot_damage_min = (self._pointshoot_damage_min or 1) * stats.pointshoot_damage_min
@@ -2463,7 +2493,16 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	local second_sight_falloff_mult = self.second_sight_falloff_mult and self:second_sight_falloff_mult()
 	if second_sight_falloff_mult then
 		falloff_start = falloff_start * second_sight_falloff_mult
-		falloff_end = falloff_end * second_sight_falloff_mult
+		falloff_end = falloff_end * second_sight_falloff_end_mult
+	else
+		local second_sight_falloff_start_mult = self.second_sight_falloff_start_mult and self:second_sight_falloff_start_mult()
+		local second_sight_falloff_end_mult = self.second_sight_falloff_end_mult and self:second_sight_falloff_end_mult()
+		if second_sight_falloff_start_mult then
+			falloff_start = falloff_start * second_sight_falloff_start_mult
+		end
+		if second_sight_falloff_end_mult then
+			falloff_end = falloff_end * second_sight_falloff_end_mult
+		end
 	end
 
 	if dot_only then

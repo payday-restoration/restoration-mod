@@ -27936,14 +27936,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	--[[ RJC9000'S MODS ]]
 
 		if self.parts.wpn_fps_ass_ghosts_ripper_optic then
-			self.parts.wpn_fps_ass_ghosts_ripper_optic.pcs = nil
 			self.parts.wpn_fps_ass_ghosts_ripper_optic.supported = true
 			self.parts.wpn_fps_ass_ghosts_ripper_optic.stats = { gadget_zoom = 8 }
 			self.parts.wpn_fps_ass_ghosts_ripper_optic.perks = { "second_sight" }
 			self.parts.wpn_fps_ass_ghosts_ripper_optic.custom_stats = {
 				pointshoot_rof = 0.440537, --Infinte Warfare AR Mode ROF
 				pointshoot_recoil = 0.75,
-				pointshoot_falloff = 2,
+				pointshoot_falloff_start = 2.666,
+				pointshoot_falloff_end = 2.3684,
 				pointshoot_hip_spread = 6,
 				pointshoot_damage_min = 2
 			}
@@ -27959,9 +27959,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ghosts_ripper_irons_front.stats = { gadget_zoom = 1 }
 			self.parts.wpn_fps_ass_ghosts_ripper_irons_front.custom_stats = nil
 			self.parts.wpn_fps_ass_ghosts_ripper_irons_front.perks = nil
-			self.parts.wpn_fps_ass_ghosts_ripper_irons_front.stance_mod = nil
-
-			self.parts.wpn_fps_ass_ghosts_ripper_receiver.stance_mod = {
+			self.parts.wpn_fps_ass_ghosts_ripper_irons_front.stance_mod = {
 				wpn_fps_ass_ghosts_ripper = {
 					translation = Vector3(0.04, -8, -2.26),
 					rotation = Rotation(0.05, -0.07, 0)

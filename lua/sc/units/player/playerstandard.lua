@@ -4303,10 +4303,12 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 							managers.network:session():send_to_peers_synched("sync_explode_bullet", col_ray.position, col_ray.normal, math.min(16384, network_damage), managers.network:session():local_peer():id())
 						end
 					end
-				elseif special_weapon == "taser" then
-					action_data.variant = "taser_tased"
-				elseif special_weapon == "panic" then
-					managers.player:spread_psycho_knife_panic()
+				elseif not hit_shield then
+					if special_weapon == "taser" then
+						action_data.variant = "taser_tased"
+					elseif special_weapon == "panic" then
+						managers.player:spread_psycho_knife_panic()
+					end
 				end
 			end
 
@@ -4356,7 +4358,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			end
 
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
-			self:_check_melee_special_damage(col_ray, character_unit, defense_data, melee_entry)
+			if not hit_shield then
+				self:_check_melee_special_damage(col_ray, character_unit, defense_data, melee_entry)
+			end
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage, action_data.damage_effect)
 
 			--[[

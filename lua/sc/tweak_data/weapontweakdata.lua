@@ -25045,12 +25045,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.kuro556.kick_pattern = {
 					{0, self.stat_info.kick_tables.even_recoil},
 					{5, self.stat_info.kick_tables.left_recoil},
-					{11, self.stat_info.kick_tables.even_recoil},
+					{11, self.stat_info.kick_tables.moderate_kick},
 					{13, self.stat_info.kick_tables.right_recoil},
 					{22, self.stat_info.kick_tables.moderate_right_kick}
 				}
 				self.kuro556.supported = true
-				self.kuro556.ads_speed = 0.300
+				self.kuro556.ads_speed = 0.280
 				self.kuro556.damage_falloff = {
 					start_dist = 3100,
 					end_dist = 5000,
@@ -25059,7 +25059,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.kuro556.stats = {
 					damage = 24,
 					spread = 82,
-					recoil = 75,
+					recoil = 73,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 26,
@@ -25072,6 +25072,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.kuro556.stats_modifiers = nil
 				self.kuro556.lock_slide = true
+				self.kuro556.is_bullpup = true
 				self.kuro556.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.kuro556.panic_suppression_chance = 0.05
 				self.kuro556.timers.reload_empty = 3
@@ -25097,25 +25098,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.kuro762.kick = self.stat_info.kick_tables.right_recoil
 				self.kuro762.kick_pattern = {
 					{0, self.stat_info.kick_tables.even_recoil},
-					{5, self.stat_info.kick_tables.left_recoil},
-					{11, self.stat_info.kick_tables.even_recoil},
-					{13, self.stat_info.kick_tables.right_recoil},
-					{22, self.stat_info.kick_tables.moderate_right_kick}
+					{3, self.stat_info.kick_tables.left_recoil},
+					{8, self.stat_info.kick_tables.moderate_kick},
+					{11, self.stat_info.kick_tables.right_recoil},
+					{16, self.stat_info.kick_tables.moderate_right_kick}
 				}
 				self.kuro762.supported = true
-				self.kuro762.ads_speed = 0.380
+				self.kuro762.ads_speed = 0.360
 				self.kuro762.damage_falloff = {
-					start_dist = 3100,
-					end_dist = 5000,
-					min_mult = 0.5
+					start_dist = 3300,
+					end_dist = 7000,
+					min_mult = 0.53333
 				}
 				self.kuro762.stats = {
-					damage = 24,
+					damage = 45,
 					spread = 85,
-					recoil = 67,
+					recoil = 53,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 24,
+					concealment = 25,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -25125,6 +25126,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.kuro762.stats_modifiers = nil
 				self.kuro762.lock_slide = true
+				self.kuro762.is_bullpup = true
 				self.kuro762.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.kuro762.panic_suppression_chance = 0.05
 				self.kuro762.reload_speed_multiplier = 0.95

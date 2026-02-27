@@ -19789,6 +19789,14 @@ end
 						translation = Vector3(0.03, 4.2, -0.51),
 						rotation = Rotation(0.008,-0.06,0.7)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_kuro556 = {
+						translation = Vector3(0, 12.3, 1.71),
+						rotation = Rotation(-0.005, -0.01, -0.5)
+					}
+						self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_kuro762 = {
+							translation = Vector3(0, 12.3, 1.71),
+							rotation = Rotation(-0.005, -0.01, -0.5)
+						}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g11k2 = {
 						translation = Vector3(-0.012, -2.3, -2.756)

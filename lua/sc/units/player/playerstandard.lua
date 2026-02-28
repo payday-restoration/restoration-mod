@@ -2137,7 +2137,7 @@ function PlayerStandard:_start_action_running(t)
 
 	--local slide_threshold = self._slide_speed and self._slide_end_speed and self._slide_end_speed * 4 >= self._slide_speed and self._unit:movement():is_above_stamina_threshold()
 
-	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() --[[or (is_pro and self._is_sliding and not slide_threshold)]] or self:_in_burst() or self._state_data.ducking and not self:_can_stand() or (self._dash_slide and (self._last_dash_time + 0.5 > t)) then
+	if self._melee_disallow_sprint or (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() --[[or (is_pro and self._is_sliding and not slide_threshold)]] or self:_in_burst() or self._state_data.ducking and not self:_can_stand() or (self._dash_slide and (self._last_dash_time + 0.5 > t)) then
 		self._running_wanted = true
 		return
 	end
@@ -2448,7 +2448,6 @@ function PlayerStandard:_do_chainsaw_damage(t)
 	return col_ray
 end
 
-
 --Updated version of vanilla function, adding in melee sprinting, chainsaw, and repeat_hit functionality.
 function PlayerStandard:_update_melee_timers(t, input)
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
@@ -2461,6 +2460,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 	local charge_time = melee_weapon.stats.charge_time
 	local instant = melee_weapon.instant
 	local no_hit_shaker = melee_weapon.no_hit_shaker
+	local disallow_sprint = melee_weapon.disallow_sprint
 	local melee_charger = special_weapon and special_weapon == "charger"
 	local angle = self._stick_move and mvector3.angle(self._stick_move, math.Y)
 	local moving_forwards = angle and angle <= 15
@@ -2478,6 +2478,22 @@ function PlayerStandard:_update_melee_timers(t, input)
 	--local has_charged_range = self._melee_charge_bonus and self._melee_charge_bonus == true
 	--local charge_bonus_range = has_charged_range and melee_weapon.stats.charge_bonus_range or 0
 	--local range = melee_weapon.stats.range + charge_bonus_range
+
+	if disallow_sprint and (self._state_data.meleeing or (self._state_data.melee_expire_t and self._state_data.melee_expire_t > t)) then
+		self._melee_disallow_sprint = true
+		if self._running and not self._end_running_expire_t then
+			self:_end_action_running(t)
+		end
+		if self._is_wallrunning then
+			self._end_wallrun_kick_dir = self:_get_end_wallrun_kick_dir()
+			self:_cancel_wallrun(t, "fall")
+		end
+		if self._is_sliding then
+			self:_cancel_slide()
+		end
+	else
+		self._melee_disallow_sprint = nil
+	end
 
 	--Resume normal sprinting animations once melee attack is done.
 	--Making it not cancel the equip animation will require a fair amount more work, since it doesn't set the timers. Is a job for another day.
@@ -5976,7 +5992,7 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 					elseif dash_off_cooldown and ((self._dash_stage == 3 and doubletap_conditions) or keybind_conditions) then
 						-- player has released for the second time (and not held down the input)
 						local dir = doubletap_conditions and self._dash_dir or input
-						local dashed = self:_do_dash(dir)
+						local dashed = not self._melee_disallow_sprint and self:_do_dash(dir)
 						if dashed then
 							self._dash_dir = nil
 							self._dash_stage = 0

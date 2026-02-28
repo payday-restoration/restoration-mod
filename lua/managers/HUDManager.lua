@@ -279,6 +279,10 @@ function HUDManager:unhide_dodge_panel(dodge_points)
 	self._dodge_meter:unhide_dodge_panel(dodge_points)
 end
 
+function HUDManager:hide_dodge_panel()
+	self._dodge_meter:hide_dodge_panel()
+end
+
 function HUDManager:activate_effect_screen(duration, color, effect_id, texture)
 	--Apply the effect screen with a color over a duration.
 	self._effect_screen:do_effect_screen(duration, color, effect_id, texture)

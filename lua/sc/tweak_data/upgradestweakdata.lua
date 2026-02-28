@@ -3742,10 +3742,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.specialization_descs[18][1] = {
 		perk_value_1 = "12", -- Duration of smoke. Not defined here (?)
 		perk_value_2 = tostring((self.smoke_screen_armor_regen[1] - 1) * 100).."%", -- Armor regen bonus while you inside the smoke screen
-		perk_value_3 = "75%", -- Accuracy debuff for enemies inside the smoke screen. Not defined here (?)
-		perk_value_4 = "35", --CD of smoke bomb. Not defined here
-		perk_value_5 = "2", -- CD reduction on kill
-		perk_value_6 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
+		perk_value_3 = "20", -- Minimum dodge while inside smoke. Can't reach it from here. :(
+		perk_value_4 = "75%", -- Accuracy debuff for enemies inside the smoke screen. Not defined here (?)
+		perk_value_5 = "35", --CD of smoke bomb. Not defined here
+		perk_value_6 = "2", -- CD reduction on kill
+		perk_value_7 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[18][3] = {
 		perk_value_1 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
@@ -4041,11 +4042,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.multi_choice_specialization_descs[23][9][18] = { --Sicario
 		perk_value_1 = "12", -- Duration of smoke. Not defined here (?)
 		perk_value_2 = tostring((self.smoke_screen_armor_regen[1] - 1) * 100).."%", -- Armor regen bonus while you inside the smoke screen
-		perk_value_3 = "75%", -- Accuracy debuff for enemies inside the smoke screen. Not defined here (?)
-		perk_value_4 = "35", --CD of smoke bomb. Not defined here
-		perk_value_5 = "2", -- CD reduction on kill
-		perk_value_6 = tostring(self.values.player.passive_dodge_chance[1] * 100), -- Passive dodge increase
-		perk_value_7 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
+		perk_value_3 = "20", -- Minimum dodge while inside smoke. Can't reach it from here. :(
+		perk_value_4 = "75%", -- Accuracy debuff for enemies inside the smoke screen. Not defined here (?)
+		perk_value_5 = "35", --CD of smoke bomb. Not defined here
+		perk_value_6 = "2", -- CD reduction on kill
+		perk_value_7 = tostring(self.values.player.passive_dodge_chance[1] * 100), -- Passive dodge increase
+		perk_value_8 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
 	}
 	self.multi_choice_specialization_descs[23][9][19] = { --Stoic
 		perk_value_1 = tostring(self.values.player.damage_control_passive[2][1]).."%", -- % of damage converted into DoT 

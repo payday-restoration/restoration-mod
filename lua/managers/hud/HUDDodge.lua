@@ -84,6 +84,10 @@ function HUDDodgeMeter:unhide_dodge_panel(dodge_points)
 	end
 end
 
+function HUDDodgeMeter:hide_dodge_panel()
+	self._dodge_panel:set_alpha(0)
+end
+
 function HUDDodgeMeter:set_dodge_value(value)
 	local dodge_display = restoration.Options:GetValue("HUD/DodgeDisplay")
 	if dodge_display then

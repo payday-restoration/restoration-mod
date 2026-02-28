@@ -1624,15 +1624,21 @@ function PlayerDamage:set_dodge_points()
 		+managers.player:body_armor_value("dodge")
 		+managers.player:skill_dodge_chance(false, false, false))
 		or 0.0
+
+	if self._dodge_points < tweak_data.projectiles.smoke_screen_grenade.dodge_chance and self._in_smoke_bomb > 0 then
+		self._dodge_points = tweak_data.projectiles.smoke_screen_grenade.dodge_chance
+	end
+
 	local current_diff = Global.game_settings.difficulty or "easy"
 	local is_pro = Global.game_settings and Global.game_settings.one_down
 	local difficulty_id = math.max(0, (tweak_data:difficulty_to_index(current_diff) or 0) - 2)			
 	local diff_reduction = difficulty_id and ((((difficulty_id == 4 or difficulty_id == 5) and 0.35) or (difficulty_id == 6 and 0.25) or 0.45) - ((is_pro and 0.1) or 0)) or 0.45
 	local grace_cap = (0.45 - (0.45 - diff_reduction))
 	self._dodge_interval = math.clamp(self._dodge_points, 0, grace_cap )
-	
 	if self._dodge_points > 0 then
 		managers.hud:unhide_dodge_panel(self._dodge_points)
+	else
+		managers.hud:hide_dodge_panel()
 	end
 end
 
@@ -1648,7 +1654,7 @@ function PlayerDamage:fill_dodge_meter(dodge_added, overfill)
 		elseif self._dodge_meter < 1.5 then
 			self._dodge_meter = math.max(math.min(self._dodge_meter + dodge_added, 1.5), 0.0)
 		end
-	elseif self:is_downed() then
+	else
 		self._dodge_meter = 0.0
 	end
 end
@@ -1699,6 +1705,12 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 			end
 		end
 	end
+
+	if self._cached_in_smoke_bomb and self._cached_in_smoke_bomb ~= self._in_smoke_bomb then
+		self:set_dodge_points()
+	end
+
+	self._cached_in_smoke_bomb = self._in_smoke_bomb
 
 	--Frenzy inverse healing
 	local healing_reduction_ratio = tweak_data.upgrades.frenzy_healing_reduction_ratio or 1

@@ -5198,6 +5198,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.model24.explosion_chance = 0.5
 		self.melee_weapons.model24.explosion_curve_pow = 0
 		self.melee_weapons.model24.explosion_damage = 72
+		self.melee_weapons.model24.explosion_player_damage = 36
 		self.melee_weapons.model24.explosion_range = 500
 		self.melee_weapons.model24.stats.speed_mult = 1.18
 		self.melee_weapons.model24.stats.max_damage = 9.001
@@ -6765,6 +6766,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.megumins_staff.stats.concealment = 23
 		self.melee_weapons.megumins_staff.stats.charge_time = 55
 		self.melee_weapons.megumins_staff.ignore_charge_speed = true
+		self.melee_weapons.megumins_staff.disallow_sprint = true
 		self.melee_weapons.megumins_staff.special_weapon = "megumin"
 		self.melee_weapons.megumins_staff.explosion_range = 2000
 		self.melee_weapons.megumins_staff.explosion_damage = 5000
@@ -7044,12 +7046,15 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.cqc20.explosion_damage = 72
 		self.melee_weapons.cqc20.explosion_player_damage = 0
 		self.melee_weapons.cqc20.explosion_range = 200
+		self.melee_weapons.cqc20.ignore_charge_speed = true
 		self.melee_weapons.cqc20.stats = deep_clone(self.melee_weapons.dingdong.stats)
+		self.melee_weapons.cqc20.stats.min_damage_effect = 6.0
+		self.melee_weapons.cqc20.stats.max_damage_effect = 6.0
 		self.melee_weapons.cqc20.stats.cleave = 1
 		self.melee_weapons.cqc20.stats.charge_bonus_start = nil
 		self.melee_weapons.cqc20.stats.charge_bonus_speed = nil
-		self.melee_weapons.cqc20.stats.charge_time = 3.5
-		self.melee_weapons.cqc20.stats.speed_mult = 0.95
+		self.melee_weapons.cqc20.stats.charge_time = 3
+		self.melee_weapons.cqc20.stats.speed_mult = 0.9
 		self.melee_weapons.cqc20.stats.range = 250
 	end
 

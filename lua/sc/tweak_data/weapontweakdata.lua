@@ -27064,8 +27064,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.acr_2012.stats = {
 					damage = 24,
-					spread = 83,
-					recoil = 91,
+					spread = 81,
+					recoil = 93,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 24,

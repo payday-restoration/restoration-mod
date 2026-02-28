@@ -27973,6 +27973,38 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					rotation = Rotation(0.05, -0.07, 0)
 				}
 			}
+			self.wpn_fps_ass_ghosts_ripper.override = self.wpn_fps_ass_ghosts_ripper.override or {}
+			self.wpn_fps_ass_ghosts_ripper.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
+				desc_id = "ghosts_ripper_vfg",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+			self.wpn_fps_ass_ghosts_ripper.override.wpn_fps_upg_ak_ns_zenitco = {
+				stats = {
+					concealment = -3,
+					spread = 3
+				},
+				custom_stats = {
+					falloff_start_mult = 1.20,
+					falloff_end_mult = 1.20
+				}
+			}
+			self.wpn_fps_ass_ghosts_ripper.override.wpn_fps_upg_ns_shot_shark = {
+				stats = {
+					concealment = -3,
+					spread = 3
+				},
+				custom_stats = {
+					falloff_start_mult = 1.20,
+					falloff_end_mult = 1.20
+				}
+			}
+
+			table.insert(self.wpn_fps_ass_ghosts_ripper.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+			table.insert(self.wpn_fps_ass_ghosts_ripper.uses_parts, "wpn_fps_upg_ns_shot_shark")
+
+			self.wpn_fps_ass_ghosts_ripper_npc.uses_parts = deep_clone(self.wpn_fps_ass_ghosts_ripper.uses_parts)
+
 		end
 
 		if self.parts.wpn_fps_smg_peacekeepermk1_barrel_xlong then

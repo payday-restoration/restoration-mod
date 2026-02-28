@@ -360,7 +360,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 
 	--Perform overall damage reduction calcs.
 	--NOTE: Stoic damage delay and Deflection are handled in _calc_health_damage()
-	attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier(variant)
+	attack_data.damage = attack_data.damage * ((not self_damage and pm:damage_reduction_skill_multiplier(variant)) or 1)
 	local damage_absorption = pm:damage_absorption()
 	if not self_damage and damage_absorption > 0 then
 		attack_data.damage = attack_data.damage - damage_absorption
@@ -405,7 +405,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	if 0 >= self:get_real_armor() then
 		armor_reduction_multiplier = 1
 	end
-	local health_subtracted = self:_calc_armor_damage(attack_data)
+	local health_subtracted = self:_res_calc_armor_damage(attack_data)
 
 	--Apply health damage.
 	if ((attack_data.armor_piercing or variant == "explosion" or variant == "fire") and not self._unpierceable) or self_damage then
@@ -417,7 +417,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	else
 		attack_data.damage = attack_data.damage * armor_reduction_multiplier
 	end
-	health_subtracted = health_subtracted + self:_calc_health_damage(attack_data)
+	health_subtracted = health_subtracted + self:_res_calc_health_damage(attack_data)
 
 	if health_subtracted > 0 then
 		self:_send_damage_drama(attack_data, health_subtracted)
@@ -1101,7 +1101,7 @@ function PlayerDamage:damage_killzone(attack_data)
 		self:mutator_update_attack_data(attack_data)
 		self:_check_chico_heal(attack_data)
 
-		local health_subtracted = self:_calc_armor_damage(attack_data)
+		local health_subtracted = self:_res_calc_armor_damage(attack_data)
 		attack_data.damage = attack_data.damage * armor_reduction_multiplier
 
 		--Ignores deflection and Stoic, just like it should for all other forms of DR.
@@ -1504,7 +1504,7 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 end
 
 --Applies deflection and stoic effects.
-function PlayerDamage:_calc_health_damage(attack_data)
+function PlayerDamage:_res_calc_health_damage(attack_data)
 	local attacker_unit = attack_data and attack_data.attacker_unit
 	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
 
@@ -2063,7 +2063,7 @@ function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_s
 	end
 end
 
-function PlayerDamage:_calc_armor_damage(attack_data)
+function PlayerDamage:_res_calc_armor_damage(attack_data)
 
 	--OFFYERROCKER'S MERC PERK DECK
 	--[ [

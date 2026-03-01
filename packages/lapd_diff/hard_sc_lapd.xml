@@ -209,7 +209,9 @@
 	<!-- specials-->
 	<!-- greendozer -->
     <unit				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" load="true"/>
-    <unit				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_husk" load="true"/>	
+    <unit				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_husk" load="true"/>
+	<unit 				path="units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard" load="true"/>
+	<unit 				path="units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard_husk" load="true"/>
 	<model				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
 	<object				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
 	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />

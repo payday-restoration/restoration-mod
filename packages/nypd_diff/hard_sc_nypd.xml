@@ -175,6 +175,8 @@
 	<!-- greendozer -->
     <unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" load="true"/>
     <unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1_husk" load="true"/>	
+	<unit 				path="units/pd2_mod_nypd/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard" load="true"/>
+	<unit 				path="units/pd2_mod_nypd/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard_husk" load="true"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />	
 	<object				path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />
 	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />
@@ -196,7 +198,7 @@
 	<material_config	path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc_contour" />			
 	
 	<unit_obj				path="units/payday2/characters/ene_bulldozer_2_sc/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
-	
+
 	<!-- cloaca -->
 	<unit				path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1" load="true"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1_husk" load="true"/>	
@@ -207,6 +209,14 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1" load="true"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_husk" load="true"/>
 	<!-- specials end -->
+
+	<!--NYPD shield acc-->
+	<object				path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights" load="true"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>		
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_acc_shield_lights_df"/>
 
 	<!-- titans -->
 	<!--Keep those helmets flying ;)-->	

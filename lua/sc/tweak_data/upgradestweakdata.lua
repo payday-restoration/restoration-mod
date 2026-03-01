@@ -966,12 +966,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.shotgun.recoil_index_addend = {2}
 				--Ace
-					self.values.shotgun.extra_rays = {per_pellet and 0 or 3}
-					self.values.shotgun.damage_min_bonus = {per_pellet and 1.25 or 1}
+					self.values.shotgun.damage_min_bonus = {1.25}
+				--Unused
+					self.values.shotgun.extra_rays = {0}
 					
 					self.skill_descs.underdog = {
 						skill_value_b1 = tostring(self.values.shotgun.recoil_index_addend[1]), -- +Stability
-						skill_value_p1 = tostring((per_pellet and  self.values.shotgun.damage_min_bonus[1] % 1 * 100) or self.values.shotgun.extra_rays[1]) .. ((per_pellet and "%") or "") -- Ace Effect
+						skill_value_p1 = tostring(self.values.shotgun.damage_min_bonus[1] % 1 * 100) .. "%" -- Ace Effect
 					}
 
 			--Shotgun CQB
@@ -1317,7 +1318,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 				self.skill_descs.hardware_expert = {
 					skill_value_p1 = tostring((1 - self.values.player.drill_fix_interaction_speed_multiplier[1]) * 100).."%", -- Faster repair speed
-					skill_value_p2 = tostring((1 - self.values.player.drill_fix_interaction_speed_multiplier[2] - self.values.player.drill_fix_interaction_speed_multiplier[1]) * 100).."%" 
+					skill_value_p2 = tostring((self.values.player.drill_fix_interaction_speed_multiplier[1] - self.values.player.drill_fix_interaction_speed_multiplier[2]) * 100).."%" 
 				}
 				
 			--Demoman
@@ -1325,7 +1326,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.player.trip_mine_deploy_time_multiplier = {
 					0.75, --Basic
 					0.5 --Unused
-				}					
+				}
 				--Ace
 				self.values.trip_mine.explosion_size_multiplier_1 = {1.3}
 				--Shaped Charge increase amount handled in tweakdata

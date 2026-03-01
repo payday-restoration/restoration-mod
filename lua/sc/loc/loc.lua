@@ -5945,7 +5945,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--
 				["menu_hardware_expert_beta_sc"] = "Silent Drilling",
-				["menu_hardware_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour #{skill_color}#drills and saws are now silent##, civilians and guards have to see them in order to be alerted.\n\nYou fix drills and saws #{skill_color}#$skill_value_p1## faster.\n\nACE: #{owned}#$pro##\nYou fix drills and saws by an additional #{skill_color}#$skill_value_p2## faster.",
+				["menu_hardware_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour #{skill_color}#drills and saws are now silent##, civilians and guards have to see them in order to be alerted.\n\nYou fix drills and saws #{skill_color}#$skill_value_p1## faster.\n\nACE: #{owned}#$pro##\nYou fix drills and saws an additional #{skill_color}#$skill_value_p2## faster.",
 
 				--Demoman
 				["menu_trip_mine_expert_beta_sc"] = "Demoman",

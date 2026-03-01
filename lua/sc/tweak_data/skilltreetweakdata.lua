@@ -488,7 +488,7 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
-							"shotgun_extra_rays",
+							--"shotgun_extra_rays",
 							"shotgun_damage_min_bonus"
 						},
 						cost = self.costs.pro

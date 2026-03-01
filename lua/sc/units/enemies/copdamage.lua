@@ -219,6 +219,9 @@ local bodies_tmp = {
 }
 CopDamage._priority_bodies_ids = bodies_tmp
 
+--CopDamage._ON_STUN_ACCURACY_DECREASE = 0.5
+--CopDamage._ON_STUN_ACCURACY_DECREASE_TIME = 5
+
 local is_pro = Global.game_settings and Global.game_settings.one_down
 
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)

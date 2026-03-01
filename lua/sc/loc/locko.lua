@@ -1728,7 +1728,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_melee_freedom_info"] = "빨간색과 흰색이 번갈아 배열된 13개의 줄무늬, 깃대 끝 쪽 파란색 직사각형, 작고 흰색의 오각별 50개, 한 꼬집의 애국심, 두 컵의 자유, 그리고 부러진 깃대.\n\n짜잔. 이로써 당신은 치명적인 무기를 손에 넣었습니다.",
 		--Who needs pants?
 		["bm_melee_erica_info"] = "정신이 멀쩡한 사람이라면 이걸 던질 겁니다.\n\n살아있는 적에게 완전히 충전된 공격을 가하면 #{skill_color}#100%## 확률로 폭발하여 목표 적중 지점으로부터 #{skill_color}#5##미터 반경 내에 #{risk}#720##의 피해를 가합니다.",
-			["bm_melee_cqc20_info"] = "#{risk}#덤벼라!##\n\n살아있는 적에게 완전히 충전된 공격을 가하면 #{skill_color}#100%## 확률로 제어된 폭발이 발생하여 목표 적중 지점으로부터 #{skill_color}#2##미터 반경 내에 있는 적들에게 #{risk}#720##의 피해를 가합니다.",
+			["bm_melee_cqc20_info"] = "#{risk}#덤벼라!##\n\n살아있는 적에게 완전히 충전된 공격을 가하면 #{skill_color}#100%## 확률로 제어된 폭발이 발생하여 목표 적중 지점으로부터 #{skill_color}#2##미터 반경 내에 있는 적들에게 #{risk}#720##의 피해를 가합니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.##",
 
 		--Hammer
 		["bm_melee_hammer_info"] = "\"목수의 기쁨\"은 자켓이 가장 좋아하는 망치입니다. 망치는 당신이 싫어하는 사람에게 둔탁한 타격을 가하기에 완벽한 도구죠.\n\n망치의 가장 흔한 용도는 못을 박거나, 부품을 맞추거나, 금속을 단조하거나, 물건을 부수는 것인데 자켓은 이런 용도로 쓰는 것에 별로 관심이 없습니다.",
@@ -2832,6 +2832,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_lc10_desc_sc"] = "뛰어난 사거리와 좋은 명중률을 갖춘 다재다능한 전자동 기관단총입니다. 인상적인 총알 속도와 높은 발사 속도로 적당한 피해를 가하죠.",
 					--REDACTED
 					["bm_w_redacted_desc_sc"] = "#{stats_positive}#편집됨##\n\n#{risk}#이 무기는 비조준 상태로 사격하면 2발씩 발사하고, 조준 상태로 사격하면 반자동으로 발사합니다.##",
+					--Ripper
+					["ghosts_ripper_vfg"] = "#{item_stage_2}#웃긴 사실을 알려드리자면 콜옵 고스트에서 나오는 리퍼는 전방 손잡이를 장착해도 외형적으로 바뀌지 않는데, 이는 이미 리퍼에 전방 손잡이가 이미 달려있다는 걸 간과한 것입니다.#",					
 
 			--[[ MGs ]]
 				--Bootleg/HK416c
@@ -5884,7 +5886,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Fire Trap--
 				["menu_more_fire_power_sc"] = "화염 함정",
-				["menu_more_fire_power_desc_sc"] = "베이식: #{owned}#$basic##\n최대 #{skill_color}#skill_value_p1##개의 트립 마인을 소지 및 설치할 수 있습니다.\n\n당신이 설치한 트립 마인은 폭발 시 #{skill_color}#10##초 동안 폭발한 지점을 중심으로 #{skill_color}#7.5##미터 반경에 화염 지대를 생성합니다.\n\n트립 마인으로 생성된 화염은 자가 피해나 아군에게 피해를 주지 않습니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#skill_value_p2##개의 트립 마인을 소지 및 설치할 수 있습니다.\n\n트립 마인의 피해량이 #{skill_color}#50%## 증가합니다.",
+				["menu_more_fire_power_desc_sc"] = "베이식: #{owned}#$basic##\n트립 마인 #{skill_color}#skill_value_p1##개를 소지 및 설치할 수 있습니다.\n\n당신이 설치한 트립 마인은 폭발 시 #{skill_color}#10##초 동안 폭발한 지점을 중심으로 #{skill_color}#7.5##미터 반경에 화염 지대를 생성합니다.\n\n트립 마인으로 생성된 화염은 자가 피해나 아군에게 피해를 주지 않습니다.\n\n에이스: #{owned}#$pro##\n트립 마인 #{skill_color}#skill_value_p2##개를 소지 및 설치할 수 있습니다.\n\n트립 마인의 피해량이 #{skill_color}#50%## 증가합니다.",
 				
 				--Expert Hardware
 				["menu_kick_starter_beta_sc"] = "하드웨어 전문가",
@@ -6271,7 +6273,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck17_9_desc_sc"] = "체력이 최대일 때 체력을 #{skill_color}#$perk_value_1##씩 회복 할때마다 주사기 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 줄어듭니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##이 잠금 해제됩니다.\n\n연막탄을 사용하면, #{skill_color}#$perk_value_1##초간 숨을 수 있는 연막을 형성합니다. 연막 속에 숨어 있으면, 당신과 팀원은 방탄력의 회복 속도가 #{skill_color}#$perk_value_2## 빨라집니다. 연막 속으로 들어간 적은 명중률이 #{skill_color}#$perk_value_3## 감소합니다.\n\n연막탄은 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있지만, 적을 처치하면 재사용 대기 시간이 #{skill_color}#$perk_value_5##초씩 감소합니다.\n\n회피율이 #{skill_color}#$perk_value_6## 증가합니다.",
+		["menu_deck18_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##이 잠금 해제됩니다.\n\n연막탄을 사용하면, #{skill_color}#$perk_value_1##초간 숨을 수 있는 연막을 형성합니다. 연막 속에 숨어 있으면, 당신과 팀원은 방탄력의 회복 속도가 #{skill_color}#$perk_value_2## 빨라지고, 회피율이 낮으면 #{skill_color}#$perk_value_3##로 설정됩니다. 연막 속으로 들어간 적은 명중률이 #{skill_color}#perk_value_4## 감소합니다.\n\n연막탄은 #{important_1}#$perk_value_5##초의 재사용 대기 시간이 있지만, 적을 처치하면 재사용 대기 시간이 #{skill_color}#$perk_value_6##초씩 감소합니다.\n\n회피율이 #{skill_color}#$perk_value_7## 증가합니다.",
 		["menu_deck18_3_desc_sc"] = "회피율이 추가로 ##$perk_value_1## 증가합니다.",
 		["menu_deck18_5_desc_sc"] = "공격을 회피하면 연막탄의 재사용 대기 시간이 ##$perk_value_1##초 감소합니다.\n\n인벤토리에 시체 가방을 ##$perk_value_2##개 더 소지합니다.",
 		["menu_deck18_7_desc_sc"] = "회피율이 추가로 ##$perk_value_1## 증가합니다.",
@@ -6437,7 +6439,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Kingpin
 			["menu_deck17_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 방탄복이 있을때 #{skill_color}#$perk_value_2##초 동안 받거나 회피한 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복합니다.\n\n효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n주사기 사용 효과가 지속되는 동안 이동 속도가 #{skill_color}##$perk_value_3## 증가합니다.\n\n주사기는 #{important_1}#$perk_value_4##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_5##초씩 단축됩니다.",
 			--Sicario
-			["menu_deck18_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##이 잠금 해제됩니다.\n\n연막탄을 사용하면, #{skill_color}#$perk_value_1##초간 숨을 수 있는 연막을 형성합니다. 연막 속에 숨어 있으면, 당신과 팀원은 방탄력의 회복 속도가 #{skill_color}#$perk_value_2## 빨라집니다. 연막 속으로 들어간 적은 명중률이 #{skill_color}#$perk_value_3## 감소합니다.\n\n연막탄은 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있지만, 적을 처치하면 재사용 대기 시간이 #{skill_color}#$perk_value_5##초씩 감소합니다.\n\n회피율이 #{skill_color}#$perk_value_6## 증가합니다.\n\n인벤토리에 시체 가방을 #{skill_color}##$perk_value_7##개 더 소지합니다.",
+			["menu_deck18_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##이 잠금 해제됩니다.\n\n연막탄을 사용하면, #{skill_color}#$perk_value_1##초간 숨을 수 있는 연막을 형성합니다. 연막 속에 숨어 있으면, 당신과 팀원은 방탄력의 회복 속도가 #{skill_color}#$perk_value_2## 빨라지고, 회피율이 낮으면 #{skill_color}#$perk_value_3##로 설정됩니다. 연막 속으로 들어간 적은 명중률이 #{skill_color}#$perk_value_4## 감소합니다.\n\n연막탄은 #{important_1}#$perk_value_5##초의 재사용 대기 시간이 있지만, 적을 처치하면 재사용 대기 시간이 #{skill_color}#$perk_value_6##초씩 감소합니다.\n\n회피율이 #{skill_color}#$perk_value_7## 증가합니다.\n\n인벤토리에 시체 가방을 #{skill_color}##$perk_value_8##개 더 소지합니다.",
 			--Stoic
 			["menu_deck19_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n방탄복이 파괴되었을때, 피해 유예 시간이 #{important_1}#$perk_value_8## 감소하지만 지속 피해를 무효화할 때 받는 다음 피해는 제외됩니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##\n\n페이저를 응답하는 속도가 #{skill_color}#$perk_value_7## 빨라집니다.",
 			--Tag Team

@@ -2907,7 +2907,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--REDACTED
 					["bm_w_redacted_desc_sc"] = "#{stats_positive}#REDACTED##\n\n#{risk}#This weapon shoots in 2-round auto-bursts when fired from the hip and shoots in semi-auto when fired while aiming down the sights.##",
 					--Ripper
-					["ghosts_ripper_vfg"] = "#{item_stage_2}#The joke is that the Ripper in Ghosts could accept the foregrip attachment despite it presenting no visual change while also overlooking the fact it already has one built-in.#",
+					["ghosts_ripper_vfg"] = "#{item_stage_2}#The joke is that the Ripper in Ghosts could accept the foregrip attachment despite it presenting no visual change while also overlooking the fact it already has one built-in.##",
 
 			--[[ MGs ]]
 				--Bootleg/HK416c
@@ -5945,7 +5945,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--
 				["menu_hardware_expert_beta_sc"] = "Silent Drilling",
-				["menu_hardware_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour #{skill_color}#drills and saws are now silent##, civilians and guards have to see them in order to be alerted.\n\nYou fix drills and saws #{skill_color}#$skill_value_p1## faster.\n\nACE: #{owned}#$pro##\nYou fix drills and saws #{skill_color}#$skill_value_p2## faster.",
+				["menu_hardware_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour #{skill_color}#drills and saws are now silent##, civilians and guards have to see them in order to be alerted.\n\nYou fix drills and saws #{skill_color}#$skill_value_p1## faster.\n\nACE: #{owned}#$pro##\nYou fix drills and saws by an additional #{skill_color}#$skill_value_p2## faster.",
 
 				--Demoman
 				["menu_trip_mine_expert_beta_sc"] = "Demoman",

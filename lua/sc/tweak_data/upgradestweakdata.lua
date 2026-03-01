@@ -1317,7 +1317,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 				self.skill_descs.hardware_expert = {
 					skill_value_p1 = tostring((1 - self.values.player.drill_fix_interaction_speed_multiplier[1]) * 100).."%", -- Faster repair speed
-					skill_value_p2 = tostring((1 - self.values.player.drill_fix_interaction_speed_multiplier[2]) * 100).."%" 
+					skill_value_p2 = tostring((1 - self.values.player.drill_fix_interaction_speed_multiplier[2] - self.values.player.drill_fix_interaction_speed_multiplier[1]) * 100).."%" 
 				}
 				
 			--Demoman

@@ -2833,7 +2833,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--REDACTED
 					["bm_w_redacted_desc_sc"] = "#{stats_positive}#편집됨##\n\n#{risk}#이 무기는 비조준 상태로 사격하면 2발씩 발사하고, 조준 상태로 사격하면 반자동으로 발사합니다.##",
 					--Ripper
-					["ghosts_ripper_vfg"] = "#{item_stage_2}#웃긴 사실을 알려드리자면 콜옵 고스트에서 나오는 리퍼는 전방 손잡이를 장착해도 외형적으로 바뀌지 않는데, 이는 이미 리퍼에 전방 손잡이가 이미 달려있다는 걸 간과한 것입니다.#",					
+					["ghosts_ripper_vfg"] = "#{item_stage_2}#웃긴 사실을 알려드리자면 콜옵 고스트에서 나오는 리퍼는 전방 손잡이를 장착해도 외형적으로 바뀌지 않는데, 이는 이미 리퍼에 전방 손잡이가 이미 달려있다는 걸 간과한 것입니다.##",					
 
 			--[[ MGs ]]
 				--Bootleg/HK416c
@@ -5874,7 +5874,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--
 				["menu_hardware_expert_beta_sc"] = "무소음 드릴링",
-				["menu_hardware_expert_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#드릴과 톱이 이제 소리를 내지 않습니다.## 시민과 경비는 경보를 울리기 위해 드릴이나 톱을 직접 목격해야 합니다.\n\n드릴과 톱 수리 속도가 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱 수리 속도가 #{skill_color}#$skill_value_p2## 빨라집니다.",
+				["menu_hardware_expert_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#드릴과 톱이 이제 소리를 내지 않습니다.## 시민과 경비는 경보를 울리기 위해 드릴이나 톱을 직접 목격해야 합니다.\n\n드릴과 톱 수리 속도가 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱 수리 속도가 추가로 #{skill_color}#$skill_value_p2## 빨라집니다.",
 
 				--Demoman
 				["menu_trip_mine_expert_beta_sc"] = "폭파광",

@@ -5824,7 +5824,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 			--[[   Перфоратор   ]]--
 				--Silent Drilling--
 				["menu_hardware_expert_beta_sc"] = "Бесшумная дрель",
-				["menu_hardware_expert_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши дрели и пилы #{skill_color}#теперь бесшумны##. Гражданским и охранникам нужно увидеть дрель или пилу, чтобы поднять тревогу.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы чините дрели и пилы на #{skill_color}#$skill_value_p1## быстрее.",
+				["menu_hardware_expert_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши дрели и пилы #{skill_color}#теперь бесшумны##. Гражданским и охранникам нужно увидеть дрель или пилу, чтобы поднять тревогу.\n\nВы чините дрели и пилы на #{skill_color}#$skill_value_p1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы чините дрели и пилы на #{skill_color}#$skill_value_p2## быстрее.",
 
 				--Demoman
 				["menu_trip_mine_expert_beta_sc"] = "Подрывник",
@@ -5837,7 +5837,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Skills", function(loc)
 				--Fire Trap--
 				--["menu_more_fire_power_sc"] = "Зажигательная ловушка",
 				["menu_more_fire_power_sc"] = "Минер",
-				["menu_more_fire_power_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши Мины оставляют на месте взрыва огненную лужу в течение #{skill_color}#10## секунд в радиусе #{skill_color}#7.5## метров.\n\nОгонь не наносит урона вам и команде.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно носить #{skill_color}#10## Мин.\n\nВаши Мины наносят на #{skill_color}#50%## больше урона.",
+				["menu_more_fire_power_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь можно носить #{skill_color}#$skill_value_p1## Мин.\n\nВаши Мины оставляют на месте взрыва огненную лужу в течение #{skill_color}#10## секунд в радиусе #{skill_color}#7.5## метров.\n\nОгонь не наносит урона вам и команде.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно носить #{skill_color}#$skill_value_p2## Мин.\n\nВаши Мины наносят на #{skill_color}#50%## больше урона.",
 
 				--Expert Hardware
 				["menu_kick_starter_beta_sc"] = "Техэксперт",

@@ -1311,12 +1311,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.silent_drill = {true}
 				--Ace
 				self.values.player.drill_fix_interaction_speed_multiplier = {
-					0.5, --Aced
-					0.5 --Unused
+					0.75, --Basic
+					0.5 --Aced
 				}
 				
 				self.skill_descs.hardware_expert = {
-					skill_value_p1 = tostring(self.values.player.drill_fix_interaction_speed_multiplier[1] * 100).."%" -- Faster repair speed
+					skill_value_p1 = tostring((1 - self.values.player.drill_fix_interaction_speed_multiplier[1]) * 100).."%", -- Faster repair speed
+					skill_value_p2 = tostring((1 - self.values.player.drill_fix_interaction_speed_multiplier[2]) * 100).."%" 
 				}
 				
 			--Demoman
@@ -1350,6 +1351,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					{10, 1.5} --Unused
 				}				
 				--Quantity Increase Located in tweakdata.lua since their quantity is hardcoded in the exe
+				
+				-- Annoying
+				self.skill_descs.more_fire_power = {
+					skill_value_p1 = tostring("7"), -- Trips Quantity
+					skill_value_p2 = tostring("10")
+				}
 
 			--Expert Hardware
 				--Basic

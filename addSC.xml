@@ -486,7 +486,8 @@
 
 	
 	<!-- secs -->
-	<unit				path="units/payday2/characters/ene_security_1/ene_security_1" force="true"/>
+	<!-- Disabling for now, the game does *not* like them being loaded like this t. SC -->
+	<!--unit				path="units/payday2/characters/ene_security_1/ene_security_1" force="true"/>
 	<unit				path="units/payday2/characters/ene_security_1/ene_security_1_husk" force="true"/>
 	<material_config	path="units/payday2/characters/ene_security_1/ene_security_1"/>
 	<material_config	path="units/payday2/characters/ene_security_1/ene_security_1_contour"/>
@@ -509,7 +510,7 @@
 	<unit				path="units/payday2/characters/ene_security_6/ene_security_6_husk" force="true"/>
 	
 	<unit				path="units/payday2/characters/ene_security_7/ene_security_7" force="true"/>
-	<unit				path="units/payday2/characters/ene_security_7/ene_security_7_husk" force="true"/>
+	<unit				path="units/payday2/characters/ene_security_7/ene_security_7_husk" force="true"--/>
 
 	<!-- murkywater -->
 	<unit				path="units/payday2/characters/ene_murkywater_1/ene_murkywater_1" force="true" load="true"/>

@@ -5872,7 +5872,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--
 				["menu_hardware_expert_beta_sc"] = "무소음 드릴링",
-				["menu_hardware_expert_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#드릴과 톱이 이제 소리를 내지 않습니다.## 시민과 경비는 경보를 울리기 위해 드릴이나 톱을 직접 목격해야 합니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱 수리 속도가 #{skill_color}#$skill_value_p1## 빨라집니다.",
+				["menu_hardware_expert_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#드릴과 톱이 이제 소리를 내지 않습니다.## 시민과 경비는 경보를 울리기 위해 드릴이나 톱을 직접 목격해야 합니다.\n\n드릴과 톱 수리 속도가 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱 수리 속도가 #{skill_color}#$skill_value_p2## 빨라집니다.",
 
 				--Demoman
 				["menu_trip_mine_expert_beta_sc"] = "폭파광",
@@ -5884,8 +5884,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Fire Trap--
 				["menu_more_fire_power_sc"] = "화염 함정",
-				["menu_more_fire_power_desc_sc"] = "베이식: #{owned}#$basic##\n당신이 설치한 트립 마인은 폭발 시 #{skill_color}#10##초 동안 폭발한 지점을 중심으로 #{skill_color}#7.5##미터 반경에 화염 지대를 생성합니다.\n\n트립 마인으로 생성된 화염은 자가 피해나 아군에게 피해를 주지 않습니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#10##개의 트립 마인을 소지 및 설치할 수 있습니다.\n\n트립 마인의 피해량이 #{skill_color}#50%## 증가합니다.",
-
+				["menu_more_fire_power_desc_sc"] = "베이식: #{owned}#$basic##\n최대 #{skill_color}#skill_value_p1##개의 트립 마인을 소지 및 설치할 수 있습니다.\n\n당신이 설치한 트립 마인은 폭발 시 #{skill_color}#10##초 동안 폭발한 지점을 중심으로 #{skill_color}#7.5##미터 반경에 화염 지대를 생성합니다.\n\n트립 마인으로 생성된 화염은 자가 피해나 아군에게 피해를 주지 않습니다.\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#skill_value_p2##개의 트립 마인을 소지 및 설치할 수 있습니다.\n\n트립 마인의 피해량이 #{skill_color}#50%## 증가합니다.",
+				
 				--Expert Hardware
 				["menu_kick_starter_beta_sc"] = "하드웨어 전문가",
 				["menu_kick_starter_beta_desc_sc"] = "베이식: #{owned}#$basic##\n드릴과 톱이 고장난 후 #{skill_color}#$skill_value_b1## 확률로 자동으로 재시작합니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱이 고장난 후 추가로 #{skill_color}#$skill_value_p1## 확률로 자동으로 재시작합니다.\n\n드릴과 톱의 작동을 방해하려는 적은 #{skill_color}#$skill_value_p2## 확률로 감전 공격을 받아 방해 행동을 멈춥니다.",

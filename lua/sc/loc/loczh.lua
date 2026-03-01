@@ -5384,7 +5384,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Hardware Expert-- 硬件专家  Silent Drilling
         ["menu_hardware_expert_beta_sc"] = "静音钻机",
-        ["menu_hardware_expert_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你的钻机现在#{skill_color}#完全静音##，平民和保安必须看到钻机才会警觉。\n\n专精: #{risk}#$pro##\n你修理电锯和钻机的速度加快#{skill_color}#50%##。",
+        ["menu_hardware_expert_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你的钻机现在#{skill_color}#完全静音##，平民和保安必须看到钻机才会警觉。\n\n你修理电锯和钻机的速度加快#{skill_color}#$skill_value_p1##。\n\n专精: #{risk}#$pro##\n你修理电锯和钻机的速度加快#{skill_color}#$skill_value_p2##。",
 
         -- Danger Close 危险勿近  Demoman
         ["menu_trip_mine_expert_beta_sc"] = "恐怖分子",
@@ -5396,7 +5396,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Demoman-- 恐怖分子  Fire Trap
         ["menu_more_fire_power_sc"] = "火焰陷阱",
-        ["menu_more_fire_power_desc_sc"] = "掌握: #{risk}#$basic##\n你的诡雷在爆炸后将释放一个持续#{skill_color}#10##秒，半径#{skill_color}#7.5##米的火焰。\n\n诡雷释放的火焰不会伤害你和你的队友。\n\n专精: #{risk}#$pro##\n你现在可以携带#{skill_color}#10##个诡雷。\n\n你诡雷的伤害提高#{skill_color}#50%##。",
+        ["menu_more_fire_power_desc_sc"] = "掌握: #{risk}#$basic##\n你现在可以携带#{skill_color}#$skill_value_p1##个诡雷。你的诡雷在爆炸后将释放一个持续#{skill_color}#10##秒，半径#{skill_color}#7.5##米的火焰。\n\n诡雷释放的火焰不会伤害你和你的队友。\n\n专精: #{risk}#$pro##\n你现在可以携带#{skill_color}#$skill_value_p2##个诡雷。\n\n你诡雷的伤害提高#{skill_color}#50%##。",
 
         -- Kickstarter 物理修复  Expert Hardware
         ["menu_kick_starter_beta_sc"] = "硬件专家",

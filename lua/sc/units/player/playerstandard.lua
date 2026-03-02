@@ -4088,14 +4088,14 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		col_ray.sphere_cast_radius = sphere_cast_radius
 		local hit_unit = hit_unit or col_ray.unit
 		if hit_unit:character_damage() then
-			if bayonet_melee then
-				self._unit:sound():play("fairbairn_hit_body", nil, false)
-			elseif alt_sound and alt_sound[1] then
-				self._unit:sound():play(alt_sound[1], nil, false)
-			elseif special_weapon == "taser" and charge_lerp_value < 0.99 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
-				self._unit:sound():play("melee_hit_gen", nil, false)
-			else
-				if not no_sound then
+			if not no_sound then
+				if bayonet_melee then
+					self._unit:sound():play("fairbairn_hit_body", nil, false)
+				elseif alt_sound and alt_sound[1] then
+					self._unit:sound():play(alt_sound[1], nil, false)
+				elseif special_weapon == "taser" and charge_lerp_value < 0.99 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
+					self._unit:sound():play("melee_hit_gen", nil, false)
+				else
 					self:_play_melee_sound(melee_entry, "hit_body")
 				end
 			end
@@ -4112,16 +4112,16 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			if self._on_melee_restart_drill and hit_unit:base() and (hit_unit:base().is_drill or hit_unit:base().is_saw) then
 				hit_unit:base():on_melee_hit(managers.network:session():local_peer():id())
 			end
-
-			if bayonet_melee then
-				self._unit:sound():play("knife_hit_gen", nil, false)
-			elseif alt_sound and alt_sound[2] then
-				self._unit:sound():play(alt_sound[2], nil, false)
-			elseif special_weapon == "taser" and charge_lerp_value < 0.99 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
-				self._unit:sound():play("melee_hit_gen", nil, false)
-			else
-				if not no_sound then
-					self:_play_melee_sound(melee_entry, "hit_gen")
+			if not no_sound then
+				if bayonet_melee then
+					self._unit:sound():play("knife_hit_gen", nil, false)
+				elseif alt_sound and alt_sound[2] then
+					self._unit:sound():play(alt_sound[2], nil, false)
+				elseif special_weapon == "taser" and charge_lerp_value < 0.99 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
+					self._unit:sound():play("melee_hit_gen", nil, false)
+				else
+						self:_play_melee_sound(melee_entry, "hit_gen")
+					
 				end
 			end
 			if not no_effect then

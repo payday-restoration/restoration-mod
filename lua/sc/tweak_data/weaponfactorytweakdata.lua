@@ -19798,6 +19798,10 @@ end
 							rotation = Rotation(-0.005, -0.01, -0.5)
 						}
 
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ghosts_badger = {
+						translation = Vector3(0.03, 1.1, -0.50),
+						rotation = Rotation(0.008,-0.06,0.7)
+					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g11k2 = {
 						translation = Vector3(-0.012, -2.3, -2.756)
 					}
@@ -27942,6 +27946,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+
+		if self.parts.wpn_fps_ass_ghosts_badger_bolt then
+			self.parts.wpn_fps_ass_ghosts_badger_vg_no.supported = true
+			self.parts.wpn_fps_ass_ghosts_badger_vg_no.pcs = nil
+			self.parts.wpn_fps_ass_ghosts_badger_vg_no.stats = { value = 0 }
+
+			self.parts.wpn_fps_ass_ghosts_badger_stock_extended.supported = true
+			self.parts.wpn_fps_ass_ghosts_badger_stock_extended.stats = deep_clone(stocks.unfold_folded_stats)
+			self.parts.wpn_fps_ass_ghosts_badger_stock_extended.custom_stats = deep_clone(stocks.unfold_folded_stats)
+
+			self.parts.wpn_fps_ass_ghosts_badger_stock_collapsed.supported = true
+			self.parts.wpn_fps_ass_ghosts_badger_stock_collapsed.stats = deep_clone(stocks.fold_folder_stats)
+			self.parts.wpn_fps_ass_ghosts_badger_stock_collapsed.stats.value = 0
+			self.parts.wpn_fps_ass_ghosts_badger_stock_collapsed.custom_stats = deep_clone(stocks.fold_folder_stats)
+
+			self.wpn_fps_ass_ghosts_badger.adds = self.wpn_fps_ass_ghosts_badger.adds or {}
+			self.wpn_fps_ass_ghosts_badger.adds.wpn_fps_upg_vg_ass_smg_stubby = { "wpn_fps_ass_ghosts_badger_mlok_vg" }
+
+			self.wpn_fps_ass_ghosts_badger.override = self.wpn_fps_ass_ghosts_badger.override or {}
+			self.wpn_fps_ass_ghosts_badger.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 4, concealment = -2 } }
+			self.wpn_fps_ass_ghosts_badger.override.wpn_fps_m4_uupg_m_std = { stats = {} }
+			self.wpn_fps_ass_ghosts_badger.override.wpn_fps_upg_m4_m_pmag = nil
+			self.wpn_fps_ass_ghosts_badger.override.wpn_fps_ass_l85a2_m_emag = nil
+			self.wpn_fps_ass_ghosts_badger.override.wpn_fps_upg_m4_m_l5 = nil
+
+			table.insert(self.wpn_fps_ass_ghosts_badger.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+
+			self.wpn_fps_ass_ghosts_badger_npc.uses_parts = deep_clone(self.wpn_fps_ass_ghosts_badger.uses_parts)
+		end
 
 		if self.parts.wpn_fps_ass_ghosts_ripper_optic then
 			self.parts.wpn_fps_ass_ghosts_ripper_optic.supported = true

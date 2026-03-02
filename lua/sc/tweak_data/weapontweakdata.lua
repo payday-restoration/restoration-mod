@@ -28037,6 +28037,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ghosts_badger.stats_modifiers = nil
 				self.ghosts_badger.lock_slide = true
 				self.ghosts_badger.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.ghosts_badger.sounds.stop_fire = "val_stop"
 				self.ghosts_badger.timers.reload_empty = 1.53
 				self.ghosts_badger.timers.reload_exit_empty = 1.63
 				self.ghosts_badger.timers.reload_not_empty = 1.53
@@ -34500,8 +34501,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				{4, self.stat_info.kick_tables.vertical_kick},
 				{6, self.stat_info.kick_tables.moderate_right_kick}
 			}
-			self.amt.CLIP_AMMO_MAX = 8
-			self.amt.AMMO_MAX = 40
+			self.amt.CLIP_AMMO_MAX = 7
+			self.amt.AMMO_MAX = 0
 			self.amt.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.amt.supported = true
 			self.amt.ads_speed = 0.260
@@ -34511,9 +34512,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				min_mult = 0.22222
 			}
 			self.amt.stats = {
-				damage = 90,
+				damage = 60,
 				spread = 63,
-				recoil = 31,
+				recoil = 35,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 25,
@@ -34527,6 +34528,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.amt.stats_modifiers = nil
 			self.amt.panic_suppression_chance = 0.05
 			self.amt.reload_speed_multiplier = 1.09
+			self.amt.hs_mult = 1.5
 			self.amt.timers = deep_clone(self.deagle.timers)
 		end
 

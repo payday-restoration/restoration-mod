@@ -3559,7 +3559,7 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 	end
 
 	if AdvMov and AdvMov.settings then
-		if not self._state_data.in_steelsight then
+		if not self._state_data.in_steelsight and not self:_is_meleeing() then
 			if self._is_sliding and AdvMov.settings.slidewpnangle then
 				stance_mod.translation = stance_mod.translation + Vector3(0, -3, 0)
 				stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, AdvMov.settings.slidewpnangle)

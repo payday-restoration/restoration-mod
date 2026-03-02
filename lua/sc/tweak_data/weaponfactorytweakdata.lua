@@ -42731,6 +42731,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
+		if self.parts.wpn_fps_gauss_scope_std then
+			self.parts.wpn_fps_gauss_scope_std.stats = {
+				zoom = 10, base_zoom_off = 1
+			}
+			self.parts.wpn_fps_gauss_scope_std.stance_mod = {
+				wpn_fps_gauss = {
+					translation = Vector3(0.005, -10, -2.605)
+				}
+			}
+			self.parts.wpn_fps_gauss_magazine_ext.supported = true
+			self.parts.wpn_fps_gauss_magazine_ext.stats = {
+				value = 8, extra_ammo = 10, concealment = -4, reload = -6, spread = -10
+			}
+			self.parts.wpn_fps_gauss_magazine_ext.custom_stats = {
+				ads_speed_mult = 1.2
+			}
+		end
+
 		if self.parts.wpn_fps_smg_c96carbine_barrel_3inch then
 			--BARRELS
 				self.parts.wpn_fps_smg_c96carbine_barrel_6inch.supported = true

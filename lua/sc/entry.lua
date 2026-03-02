@@ -386,3 +386,19 @@ if OWLFBullpupWeaponBase then
 		end
 	end
 end
+
+if StalkerGaussWeaponBase then
+	function StalkerGaussWeaponBase:fire(...)
+		local ray_res = NewRaycastWeaponBase.super.fire(self, ...)
+		if self._icws_extensions then
+			--local ammo_max = self:get_ammo_max_per_clip()
+			local ammo_current = self:get_ammo_remaining_in_clip()
+			local fire_rate = self:weapon_fire_rate()
+			
+			for k,icws in pairs(self._icws_extensions) do 
+				icws:animate_charge_meter(ammo_current,fire_rate)
+			end
+		end
+		return ray_res
+	end
+end

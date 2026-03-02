@@ -258,6 +258,10 @@ tweak_data.snp = {
 		shake_mul = 1.1,
 		min_spread_mult = 3.5 / tweak_data.snp.min_spread_mult,
 	}
+		tweak_data.gauss = {
+			min_spread_mult = 1.5 / (tweak_data.amr.min_spread_mult * tweak_data.snp.min_spread_mult),
+			hipfire_spread_mult = 0.5 / (tweak_data.amr.hipfire_spread_mult * tweak_data.snp.hipfire_spread_mult)
+		}
 		tweak_data.semi_amr = {
 			min_spread_mult = 5 / (tweak_data.amr.min_spread_mult * tweak_data.snp.min_spread_mult),
 			hipfire_spread_mult = 14 / (tweak_data.amr.hipfire_spread_mult * tweak_data.snp.hipfire_spread_mult),

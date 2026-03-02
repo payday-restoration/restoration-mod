@@ -3137,7 +3137,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#deals 25% of its damage through body armor.##",
 				["bm_asval_spp_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
 				["bm_wp_upg_i_asval_spp"] = "Valkyria SPP-ecial",
-				["bm_wp_upg_i_asval_spp_desc"] = "Upgraged internals mixed with specialized armor piercing ammo that can #{skill_color}#can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
+				["bm_wp_upg_i_asval_spp_desc"] = "Upgraded internals mixed with specialized armor piercing ammo that can #{skill_color}#can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
 				--Galil
 				["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 25% of its damage through body armor.##",
 				["bm_galil_ap25_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 50% of its damage through body armor.##",

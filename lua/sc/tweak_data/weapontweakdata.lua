@@ -27983,10 +27983,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ghosts_ripper.stats_modifiers = nil
 				self.ghosts_ripper.panic_suppression_chance = 0.05
-				self.ghosts_ripper.timers.reload_empty = 2.75
-				self.ghosts_ripper.timers.reload_exit_empty = 0.58
-				self.ghosts_ripper.timers.reload_not_empty = 2
-				self.ghosts_ripper.timers.reload_exit_not_empty = 1
+				self.ghosts_ripper.timers.reload_empty = 1.767
+				self.ghosts_ripper.timers.reload_exit_empty = 1.563
+				self.ghosts_ripper.timers.reload_not_empty = 1.767
+				self.ghosts_ripper.timers.reload_exit_not_empty = 1.333
 				self.ghosts_ripper.recoil_values = {
 					{ 80, 60 },
 					7.5,
@@ -27997,6 +27997,50 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						4
 					}
 				}
+			end
+
+			if self.ghosts_badger then
+				self.ghosts_badger.recategorize = { "heavy_ar" }
+				self.ghosts_badger.has_description = true
+				self.ghosts_badger.damage_type = "assault_rifle"
+				self.ghosts_badger.fire_mode_data.fire_rate = 0.075
+				self.ghosts_badger.fire_rate_init_count = 2
+				self.ghosts_badger.fire_rate_init_mult = 1
+				self.ghosts_badger.fire_rate_init_recoil_mult = 0.7
+				self.ghosts_badger.tactical_reload = 1
+				self.ghosts_badger.AMMO_MAX = 0
+				self.ghosts_badger.supported = true
+				self.ghosts_badger.ads_speed = 0.300
+				self.ghosts_badger.damage_falloff = {
+					start_dist = 1900,
+					end_dist = 3300,
+					min_mult = 0.6
+				}
+				self.ghosts_badger.stats = {
+					damage = 30,
+					spread = 78,
+					recoil = 73,
+					zoom = 1,
+					concealment = 24,
+					alert_size = 2,
+					suppression = 20,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					reload = 25,
+					value = 6
+				}
+				self.ghosts_badger.kick = self.stat_info.kick_tables.even_recoil
+				self.ghosts_badger.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil}
+				}
+				self.ghosts_badger.panic_suppression_chance = 0.05
+				self.ghosts_badger.stats_modifiers = nil
+				self.ghosts_badger.lock_slide = true
+				self.ghosts_badger.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.ghosts_badger.timers.reload_empty = 1.53
+				self.ghosts_badger.timers.reload_exit_empty = 1.63
+				self.ghosts_badger.timers.reload_not_empty = 1.53
+				self.ghosts_badger.timers.reload_exit_not_empty = 1.1
 			end
 
 			if self.swhiskey then --RJC9000 and PlayBONK's MW2022 SW500
@@ -28776,7 +28820,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo105_2022.panic_suppression_chance = 0.05
 				end
 
-			if self.mcbravo then --RJC9000 and PlayBONK's Honey Badger
+			if self.mcbravo then --RJC9000 and PlayBONK's MW2022 Chimera/Honey Badger
 				self.mcbravo.recategorize = { "heavy_ar" }
 				self.mcbravo.has_description = true
 				self.mcbravo.desc_id = "bm_w_mcbravo_desc"
@@ -30808,6 +30852,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     HYLIE'S MODS     ]]--
+
+			if self.gauss_gun then --Stalker Gauss Rifle
+				self.gauss_gun.categories = {
+					"snp",
+					"amr",
+					"gauss"
+				}
+				self.gauss_gun.recategorize = { "antim_snp" }
+				self.gauss_gun.hs_mult = 1.5
+				self.gauss_gun.damage_type = "anti_materiel"
+				self.gauss_gun.upgrade_blocks = nil
+				self.gauss_gun.ignore_damage_upgrades = nil
+				self.gauss_gun.has_description = true
+				self.gauss_gun.CLIP_AMMO_MAX = 10
+				self.gauss_gun.AMMO_MAX = 0
+				self.gauss_gun.fire_mode_data.fire_rate = 3
+				self.gauss_gun.kick = self.stat_info.kick_tables.even_recoil
+				self.gauss_gun.supported = true
+				self.gauss_gun.ads_speed = 0.700
+				self.gauss_gun.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 10000,
+					min_mult = 0.375
+				}
+				self.gauss_gun.stats = {
+					damage = 240,
+					spread = 101,
+					recoil = 81,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 10,
+					suppression = 4,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.gauss_gun.armor_piercing_chance = 1
+				--self.gauss_gun.use_vapor_trail = true
+				self.gauss_gun.trail_effect = "effects/particles/weapons/sniper_trail_sc"
+				self.gauss_gun.use_sniper_trail = true
+				self.gauss_gun.can_shoot_through_titan_shield = true
+				self.gauss_gun.stats_modifiers = nil
+				self.gauss_gun.panic_suppression_chance = 0.05
+				self.gauss_gun.reload_speed_multiplier = 1
+				self.gauss_gun.timers.reload_empty = 3.08
+				self.gauss_gun.timers.reload_exit_empty = 0
+				self.gauss_gun.timers.reload_not_empty = 2.05
+				self.gauss_gun.timers.reload_exit_not_empty = 0
+			end
 
 			if self.sa1 then
 				self.sa1.warsaw = true

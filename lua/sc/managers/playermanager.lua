@@ -51,7 +51,9 @@ Hooks:PostHook(PlayerManager, "_setup", "ResSetup", function(_)
 end)
 
 --- Vomits out all the carried items from the player that wasn't in synced_carry.
-Hooks:PostHook(PlayerManager, "peer_dropped_out", "ResPeerDroppedOut", function(self, peer_id)
+Hooks:PostHook(PlayerManager, "peer_dropped_out", "ResPeerDroppedOut", function(self, peer)
+	local peer_id = peer:id()
+
 	if Network:is_server() then
 		local synced_carry_stacker_data = self:get_synced_carry_stacker(peer_id)
 
@@ -138,6 +140,11 @@ Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 	--- will be reduced. Furthermore, the player will not be able to pick more 
 	--- bags once a certain weight threshold is reached.
 	self._weight = self._default_weight
+
+	--- Amount of kills attributed to sentry guns.
+	--- When it reaches the amount in tweak_data.sentry_kills_to_on_kill_effects,
+	--- rolls over and triggers on-kill effects using the last sentry kill.
+	self._sentry_kills = 0
 end)
 
 Hooks:PostHook(PlayerManager, "update", "ResPlayerManagerUpdate", function(self, t, dt)
@@ -355,6 +362,16 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 
 	if CopDamage.is_civilian(killed_unit:base()._tweak_table) then
 		return
+	end
+
+	if weapon_id == "sentry_gun" then
+		self._sentry_kills = self._sentry_kills + 1
+
+		if self._sentry_kills < tweak_data.sentry_kills_to_on_kill_effects then
+			return
+		else
+			self._sentry_kills = self._sentry_kills - tweak_data.sentry_kills_to_on_kill_effects
+		end
 	end
 
 	local twb = tweak_data.blackmarket

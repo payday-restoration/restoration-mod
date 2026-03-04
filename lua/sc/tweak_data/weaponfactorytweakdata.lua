@@ -27958,7 +27958,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			self.parts.wpn_fps_ass_ghosts_badger_stock_collapsed.supported = true
 			self.parts.wpn_fps_ass_ghosts_badger_stock_collapsed.stats = deep_clone(stocks.fold_folder_stats)
-			self.parts.wpn_fps_ass_ghosts_badger_stock_collapsed.stats.value = 0
 			self.parts.wpn_fps_ass_ghosts_badger_stock_collapsed.custom_stats = deep_clone(stocks.fold_folder_stats)
 
 			self.wpn_fps_ass_ghosts_badger.adds = self.wpn_fps_ass_ghosts_badger.adds or {}

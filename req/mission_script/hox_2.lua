@@ -25,7 +25,7 @@ return {
 		},
 	},
 	-- Garage ambush
-	[102022] = {
+	[101629] = {
 		on_executed = {
 			{id =  400025, delay = 0, }, -- cloaker 
 			{id =  400027, delay = 0, }, -- dozer 

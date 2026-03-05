@@ -27947,6 +27947,100 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ RJC9000'S MODS ]]
 
+		if self.parts.wpn_fps_ass_kuro556_bolt then
+			self.parts.wpn_fps_ass_kuro556_flash_hider.supported = true
+			self.parts.wpn_fps_ass_kuro556_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_kuro556_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_kuro556_flash_hider.perks = nil
+
+			self.parts.wpn_fps_ass_kuro556_vg_no.supported = true
+			self.parts.wpn_fps_ass_kuro556_vg_no.pcs = nil
+			self.parts.wpn_fps_ass_kuro556_vg_no.stats = { value = 0 }
+			self.parts.wpn_fps_ass_kuro556_vg_no.custom_stats = nil
+			self.parts.wpn_fps_ass_kuro556_vg_no.perks = nil
+			
+			self.parts.wpn_fps_ass_kuro556_grip.supported = true
+			self.parts.wpn_fps_ass_kuro556_grip.stats = { value = 0 }
+			self.parts.wpn_fps_ass_kuro556_grip.custom_stats = nil
+			self.parts.wpn_fps_ass_kuro556_grip_black.supported = true
+			self.parts.wpn_fps_ass_kuro556_grip_black.stats = { value = 0 }
+			self.parts.wpn_fps_ass_kuro556_grip_black.custom_stats = nil
+			--5.56
+				self.parts.wpn_fps_ass_kuro556_barrel_292.supported = true
+				self.parts.wpn_fps_ass_kuro556_barrel_292.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_kuro556_barrel_292.custom_stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_kuro556_barrel_508.supported = true
+				self.parts.wpn_fps_ass_kuro556_barrel_508.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_ass_kuro556_barrel_508.custom_stats = deep_clone(barrels.long_b2_stats)
+
+				attachment_list = {}
+				for i, part_id in pairs(self.wpn_fps_ass_kuro556.default_blueprint) do
+					if part_id ~= "wpn_fps_ass_bromeo805_angled_sight_tacstance" and self.parts[part_id].pcs then
+						self.parts[part_id .. "_vanilla"] = deep_clone(self.parts[part_id])
+						self.parts[part_id .. "_vanilla"].pcs = nil
+						self.parts[part_id .. "_vanilla"].stats = { value = 1 }
+						self.parts[part_id .. "_vanilla"].custom_stats = {}
+						table.insert(attachment_list, part_id)
+					end
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_ass_kuro556.default_blueprint[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+				for i, part_id in pairs(self.wpn_fps_ass_kuro556.uses_parts) do
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_ass_kuro556.uses_parts[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+			--7.62
+				self.parts.wpn_fps_ass_kuro762_barrel_508.supported = true
+				self.parts.wpn_fps_ass_kuro762_barrel_508.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_ass_kuro762_barrel_508.custom_stats = deep_clone(barrels.long_b2_stats)
+
+				self.parts.wpn_fps_ass_kuro762_magazine_kac_10.supported = true
+				self.parts.wpn_fps_ass_kuro762_magazine_kac_10.stats = { value = 1, concealment = 3, reload = 6, extra_ammo = -10 }
+				self.parts.wpn_fps_ass_kuro762_magazine_kac_10.custom_stats = { ads_speed_mult = 0.925 }
+
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm.supported = true
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm.stats = { value = 3, concealment = -1, recoil = 2 }
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm.custom_stats = nil
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_black.supported = true
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_black.stats = { value = 3, concealment = -1, recoil = 2 }
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_black.custom_stats = nil
+
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25.supported = true
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25.stats = { value = 3, concealment = -1, extra_ammo = 5, reload = -3 }
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25.custom_stats = nil
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25_black.supported = { ads_speed_mult = 1.05 }
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25_black.stats = { value = 3, concealment = -1, extra_ammo = 5, reload = -3 }
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25_black.custom_stats = { ads_speed_mult = 1.05 }
+				attachment_list = {}
+				for i, part_id in pairs(self.wpn_fps_ass_kuro762.default_blueprint) do
+					if part_id ~= "wpn_fps_ass_bromeo805_angled_sight_tacstance" and self.parts[part_id].pcs then
+						self.parts[part_id .. "_vanilla"] = deep_clone(self.parts[part_id])
+						self.parts[part_id .. "_vanilla"].pcs = nil
+						self.parts[part_id .. "_vanilla"].stats = { value = 1 }
+						self.parts[part_id .. "_vanilla"].custom_stats = {}
+						table.insert(attachment_list, part_id)
+					end
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_ass_kuro762.default_blueprint[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+				for i, part_id in pairs(self.wpn_fps_ass_kuro762.uses_parts) do
+					for _, modify_id in ipairs(attachment_list) do
+						if part_id == modify_id then
+							self.wpn_fps_ass_kuro762.uses_parts[i] = tostring(part_id) .. "_vanilla"
+						end
+					end
+				end
+		end
+
 		if self.parts.wpn_fps_ass_ghosts_badger_bolt then
 			self.parts.wpn_fps_ass_ghosts_badger_vg_no.supported = true
 			self.parts.wpn_fps_ass_ghosts_badger_vg_no.pcs = nil

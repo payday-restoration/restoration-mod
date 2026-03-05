@@ -89,6 +89,8 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 
 		-----------------------------------------------------------------------------------------------------------------------------
 
+		--Old viewbob calcs
+		--[[
 		local mov_lp_speed = deltaT * 5.5
 		local run_mul = in_slide and 0 or in_run and 1.65 or 1
 		local mov_mul = (enable_bob_ads and in_sight and 0.15) or (enable_bob and not in_sight and 1.75) or 0
@@ -97,6 +99,23 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 		mov_ang = mov_ang or Rotation()
 
 		mrotation.slerp(mov_ang, mov_ang, in_walk and Rotation(math.cos(getWaveValue(64 * run_mul, 1)) * mov_mul, math.sin(getWaveValue(128 * run_mul, 2)) * mov_mul, math.sin(getWaveValue(64 * run_mul, 1)) * mov_mul) or Rotation(), mov_lp_speed)
+		--]]
+
+		--New viewbob calcs that attempt to scale the viewbob rate with your actual speed
+		local mov_lp_speed = deltaT * 8--5.5
+		local base_speed = tweak_data.player.movement_state.standard.movement.speed.STANDARD_MAX or 300
+		local current_speed = (p_mov._current_state._get_max_walk_speed and p_mov._current_state:_get_max_walk_speed(t)) or base_speed
+		local step_mod = 150 / (((in_sight or in_crouch) and 125) or (in_run and 175) or 150)
+		local speed_mult = current_speed / base_speed * step_mod
+		local run_mul = (in_slide and 0 or 0.9) * speed_mult--in_run and 1.45 or 1 --* ((in_sight and 0.8) or 1)
+		local mov_mul = (enable_bob_ads and in_sight and 0.15) or (enable_bob and not in_sight and 1.75) or 0
+
+		mov_pos = mov_pos or Vector3()
+		mov_ang = mov_ang or Rotation()
+		local rot_mul = mov_mul * 0.4
+		mrotation.slerp(mov_ang, mov_ang, not in_sight and in_walk and Rotation(math.cos(getWaveValue(64 * run_mul, 1.5)) * rot_mul, math.sin(getWaveValue(128 * run_mul, -2.5)) * rot_mul, math.sin(getWaveValue(64 * run_mul, 1)) * rot_mul) or Rotation(), mov_lp_speed)
+		mov_mul = mov_mul * ((in_sight and 0.5) or -0.5)
+		mvector3.lerp(mov_pos, mov_pos, in_walk and Vector3(-math.sin(getWaveValue(64 * run_mul, 1.5)) * mov_mul, 0, -math.sin(getWaveValue(128 * run_mul, -2.5)) * mov_mul) or Vector3(), mov_lp_speed)
 
 		-----------------------------------------------------------------------------------------------------------------------------
 

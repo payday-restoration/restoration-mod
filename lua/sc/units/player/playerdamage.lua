@@ -2,7 +2,7 @@ local mvec1 = Vector3()
 local is_pro = Global.game_settings and Global.game_settings.one_down
 PlayerDamage._UPPERS_COOLDOWN = tweak_data.upgrades.values.first_aid_kit.uppers_cooldown
 
-function PlayerDamage:init(unit)
+Hooks:OverrideFunction(PlayerDamage, "init", function (self, unit)
 	self._lives_init = tweak_data.player.damage.LIVES_INIT
 	--No longer check for one_down.
 	self._lives_init = managers.modifiers:modify_value("PlayerDamage:GetMaximumLives", self._lives_init)
@@ -239,7 +239,7 @@ function PlayerDamage:init(unit)
 	self._can_play_tinnitus_clbk_func = callback(self, self, "clbk_tinnitus_toggle_changed")
 
 	managers.user:add_setting_changed_callback("accessibility_sounds_tinnitus", self._can_play_tinnitus_clbk_func)	
-end
+end)
 
 --check_ally_attack == check if the attack came from an ally at all.
 function PlayerDamage:is_friendly_fire(unit, check_ally_attack, is_explosive)

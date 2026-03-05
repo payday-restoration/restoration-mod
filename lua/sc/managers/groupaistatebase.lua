@@ -656,7 +656,7 @@ function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers, include
 	end
 
 	local nr_players = 0
-	local criminals = include_team_ai and self:all_criminals() or self:all_player_criminals()
+	local criminals = include_team_ai and self:all_char_criminals() or self:all_player_criminals()
 	for _, u_data in pairs(criminals) do
 		if whisper_mode or not u_data.status then
 			nr_players = nr_players + 1

@@ -116,7 +116,7 @@ function CoreEnvironmentControllerManager:set_default_color_grading(color_gradin
 end
 
 -- No Outlines mutator. Only works when all outlines settings are disabled in mutator settings because method below nuke outlines render completely
-Hooks:PostHook(CoreEnvironmentControllerManager, "refresh_render_settings", "ContourSS_refresh_render_settings", function(self, vp)
+Hooks:PostHook(CoreEnvironmentControllerManager, "refresh_render_settings", "refresh_render_settings_disable_outlines", function(self, vp)
 	if not alive(self._vp) then
 		return
 	end

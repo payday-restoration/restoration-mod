@@ -15493,7 +15493,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shatters_fury.armor_piercing_chance = 1
 			self.shatters_fury.object_damage_mult = 1.75
 			--self.shatters_fury.animations.reload_name_id = "chinchilla"
-			self.shatters_fury.reload_speed_multiplier = 0.64
+			self.shatters_fury.reload_speed_multiplier = 0.67
 			self.shatters_fury.force_shake = true
 			blanket_timer("shatters_fury", shared_timers.rage)
 			--this line doesn't do shit

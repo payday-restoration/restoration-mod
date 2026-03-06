@@ -189,6 +189,47 @@ function PlayerMovement:activate_regeneration()
 	self._regenerate_timer = ((tweak_data.player.movement_state.stamina.REGENERATE_TIME or 5) + self._stamina_regen_add ) * managers.player:upgrade_value("player", "stamina_regen_timer_multiplier", 1)
 end
 
+local armor_init = tweak_data.player.damage.ARMOR_INIT
+function PlayerMovement:update_stamina(t, dt, ignore_running)
+	local dt = self._last_stamina_regen_t and t - self._last_stamina_regen_t or dt
+	self._last_stamina_regen_t = t
+
+	if not ignore_running and self._is_running then
+		local drain_rate = tweak_data.player.movement_state.stamina.STAMINA_DRAIN_RATE
+		local pm = managers.player
+		if pm and pm._fat_fuck then
+			local drain_rate_mult = 3
+			if managers.player:has_category_upgrade("player", "armor_carry_stamina_drain_reduction") then
+				local max_armor = armor_init + managers.player:body_armor_value("armor") + managers.player:body_armor_skill_addend()
+				local mul = managers.player:upgrade_value("player", "armor_carry_stamina_drain_reduction", 1)
+				drain_rate_mult = drain_rate_mult / (mul ^ math.floor(max_armor))
+				drain_rate_mult = math.max(drain_rate_mult, 1)
+			end
+			drain_rate = drain_rate * drain_rate_mult
+		end
+		self:subtract_stamina(dt * drain_rate)
+	elseif self._regenerate_timer then
+		self._regenerate_timer = self._regenerate_timer - dt
+
+		if self._regenerate_timer < 0 then
+			self:add_stamina(dt * tweak_data.player.movement_state.stamina.STAMINA_REGEN_RATE)
+
+			if self:_max_stamina() <= self._stamina then
+				self._regenerate_timer = nil
+			end
+		end
+	elseif self._stamina < self:_max_stamina() then
+		self:_restart_stamina_regen_timer()
+	end
+
+	if _G.IS_VR then
+		managers.hud:set_stamina({
+			current = self._stamina,
+			total = self:_max_stamina()
+		})
+	end
+end
+
 function PlayerMovement:add_stamina(value)
 	local multiplier = 1
 

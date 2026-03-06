@@ -3085,12 +3085,14 @@ end
 
 function PlayerStandard:_update_fat_fuck(t)
 	local pm = managers.player
+	--[[
 	local is_solo = nil
 	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
 		if Global and Global.game_settings and Global.game_settings.single_player then
 			is_solo = true
 		end	
 	end
+	--]]
 	if not pm then return end
 	local peer_id = managers.network:session():local_peer():id()
 	local remaining_cdata = pm:get_synced_carry_stacker(peer_id) or {}
@@ -3100,16 +3102,20 @@ function PlayerStandard:_update_fat_fuck(t)
 	local overweight = not is_solo and remaining_cdata and #remaining_cdata > 0 and carry_ratio >= 0.66
 	if overweight and not pm._fat_fuck then
 		pm._fat_fuck = true --tossing bags does wonky stuff in playerstandard so the flag goes in playermanager
+		--[[
 		if self._state_data.in_full_steelsight then
 			managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_fatty") })
 			self._fat_fuck_t = t + 2
 		end
 		self:_interupt_action_steelsight()
+		--]]
 	elseif pm._fat_fuck and not overweight then
 		pm._fat_fuck = nil
+		--[[
 		if self._steelsight_wanted ~= true and self._controller:get_input_bool("secondary_attack") then
 			self._steelsight_wanted = true
 		end
+		--]]
 	end
 end
 
@@ -3809,11 +3815,13 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		end
 	end
 	--Here!
-	if managers.player._fat_fuck or self:_changing_weapon() or self:_is_overheating() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._d_scope_t or (self._is_sliding and not self._equipped_unit:base():run_and_shoot_allowed()) then
+	if --[[managers.player._fat_fuck or--]] self:_changing_weapon() or self:_is_overheating() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._d_scope_t or (self._is_sliding and not self._equipped_unit:base():run_and_shoot_allowed()) then
+		--[[
 		if managers.player._fat_fuck and (self._fat_fuck_t or 0) < t and not self._steelsight_wanted then
 			self._fat_fuck_t = t + 2
 			managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_fatty") })
 		end
+		--]]
 		self._steelsight_wanted = true
 
 		return

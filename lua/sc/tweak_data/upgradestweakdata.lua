@@ -1066,12 +1066,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Transporter
 				--Basic
 					self.values.player.armor_carry_bonus = {1.005}
+
 				--Ace
+					self.values.player.armor_carry_stamina_drain_reduction = {1.05}
 					self.values.carry.movement_penalty_nullifier = {true}
 					self.values.carry.increased_carry_weight = {0.1}
 					
 					self.skill_descs.pack_mule = {
 						skill_value_b1 = tostring(math.ceil(self.values.player.armor_carry_bonus[1] % 1)/2).."%", -- Reducing movement penalty
+						skill_value_p1 = tostring(math.ceil(self.values.player.armor_carry_stamina_drain_reduction[1] % 1)/2).."%", -- Reduce overweight stamina drain penalty
 						skill_value_p2 = tostring(self.values.carry.increased_carry_weight[1] * 100) -- Increased Carry Weight)
 					}
 
@@ -4456,6 +4459,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "scaling_pickup_area",
+			category = "player"
+		}
+	}
+	self.definitions.player_armor_carry_stamina_drain_reduction = {
+		name_id = "menu_armor_carry_stamina_drain_reduction_addition",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "armor_carry_stamina_drain_reduction",
 			category = "player"
 		}
 	}	

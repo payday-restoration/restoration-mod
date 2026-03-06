@@ -651,6 +651,7 @@ function SkillTreeTweakData:init(tweak_data)
 					[2] = {
 						upgrades = {
 							"carry_movement_penalty_nullifier",
+							"player_armor_carry_stamina_drain_reduction",
 							"carry_increased_carry_weight"
 						},
 						cost = self.costs.pro

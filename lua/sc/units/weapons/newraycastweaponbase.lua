@@ -2300,9 +2300,10 @@ end
 function NewRaycastWeaponBase:enter_steelsight_speed_multiplier( mult_only )
 	local multiplier = 1
 	local ads_time = self:weapon_tweak_data().ads_speed or 0.200
+	local base_transition_dur = tweak_data.player.TRANSITION_DURATION
 
 	if not mult_only then
-		multiplier = multiplier / ( ads_time / tweak_data.player.TRANSITION_DURATION)
+		multiplier = multiplier / ( ads_time / base_transition_dur)
 		multiplier = multiplier / self._ads_speed_mult / self:second_sight_steelsight_mult()
 	end
 
@@ -2316,6 +2317,16 @@ function NewRaycastWeaponBase:enter_steelsight_speed_multiplier( mult_only )
 	end
 	
 	multiplier = multiplier / ( 1 + 1 - managers.player:upgrade_value("weapon", "enter_steelsight_speed_multiplier", 1))
+
+	local fatty = managers.player and managers.player._fat_fuck
+	if fatty and not mult_only then
+		local current_ads_time = base_transition_dur / multiplier
+		local penalty_cap = 0.8
+		if current_ads_time < penalty_cap then
+			ads_time = math.min(ads_time + 0.5, penalty_cap)
+		end
+		multiplier = base_transition_dur / ads_time
+	end
 	
 	return multiplier
 end

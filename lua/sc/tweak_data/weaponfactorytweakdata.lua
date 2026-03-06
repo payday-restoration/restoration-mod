@@ -27952,13 +27952,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_kuro556_flash_hider.stats = { value = 0 }
 			self.parts.wpn_fps_ass_kuro556_flash_hider.custom_stats = nil
 			self.parts.wpn_fps_ass_kuro556_flash_hider.perks = nil
+			self.parts.wpn_fps_ass_kuro556_barrel_406.supported = true
+			self.parts.wpn_fps_ass_kuro556_barrel_406.stats = {value = 0}
+			self.parts.wpn_fps_ass_kuro556_barrel_406.custom_stats = nil
 
 			self.parts.wpn_fps_ass_kuro556_vg_no.supported = true
 			self.parts.wpn_fps_ass_kuro556_vg_no.pcs = nil
 			self.parts.wpn_fps_ass_kuro556_vg_no.stats = { value = 0 }
 			self.parts.wpn_fps_ass_kuro556_vg_no.custom_stats = nil
 			self.parts.wpn_fps_ass_kuro556_vg_no.perks = nil
-			
+
 			self.parts.wpn_fps_ass_kuro556_grip.supported = true
 			self.parts.wpn_fps_ass_kuro556_grip.stats = { value = 0 }
 			self.parts.wpn_fps_ass_kuro556_grip.custom_stats = nil

@@ -71,6 +71,10 @@ function MutatorNoOutlines:modify_value(id, value)
 		value = self:get_no_outlines_ammo_pickups()
 	end
 	
+	if id == "CoreEnvironmentControllerManager:DisableOutlinesCompletely" and self:get_no_outlines_enemies() and self:get_no_outlines_objectives() and self:get_no_outlines_deployables() and self:get_no_outlines_ammo_pickups() then
+		value = true
+	end
+	
 	return value
 end
 

@@ -114,3 +114,17 @@ function CoreEnvironmentControllerManager:set_default_color_grading(color_gradin
 	color_grading = color_grading == "color_off" and "color_payday" or color_grading
 	return set_default_color_grading_original(self, color_grading, ...)
 end
+
+-- No Outlines mutator. Only works when all outlines settings are disabled in mutator settings because method below nuke outlines render completely
+Hooks:PostHook(CoreEnvironmentControllerManager, "refresh_render_settings", "ContourSS_refresh_render_settings", function(self, vp)
+	if not alive(self._vp) then
+		return
+	end
+
+	if managers.mutators:modify_value("CoreEnvironmentControllerManager:DisableOutlinesCompletely", false) then
+		self._vp:vp():set_post_processor_effect("World", Idstring("bloom_combine_post_processor"), Idstring("bloom_combine_empty"))
+		self._vp:vp():set_post_processor_effect("World", Idstring("bloom_combine"), Idstring("bloom_combine_empty"))
+		self._vp:vp():set_post_processor_effect("World", Idstring("shadow_modifier"), Idstring("empty"))
+		self._vp:vp():set_post_processor_effect("World", Idstring("shadow_rendering"), Idstring("empty"))
+	end
+end)

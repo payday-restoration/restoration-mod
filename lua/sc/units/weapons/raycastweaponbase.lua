@@ -304,6 +304,17 @@ function RaycastWeaponBase:categories()
 	return self:weapon_tweak_data().categories or {}
 end
 
+function RaycastWeaponBase:clip_empty()
+	local clip_empty = self:ammo_base():get_ammo_remaining_in_clip() == 0
+	if self._starwars and not self._starwars.can_reload then
+		local user_unit = self._setup and self._setup.user_unit
+		local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
+		if current_state._is_overheating and current_state:_is_overheating() then
+			clip_empty = nil
+		end
+	end
+	return clip_empty
+end
 
 --Refactored from vanilla code for consistency and simplicity.
 function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
@@ -360,7 +371,6 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 	end
 
 	return picked_up, add_amount
-
 end
 
 function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, ignore_hit_stats)

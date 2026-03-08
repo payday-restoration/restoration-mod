@@ -577,7 +577,6 @@ function PlayerStandard:block_use_item()
 	block_use_item_from = TimerManager:game():time()
 end
 
-
 function PlayerStandard:_check_use_item(t, input)
 	if STI and STI.settings.equipment then
 		if input.btn_use_item_press and self:is_deploying() then
@@ -676,8 +675,6 @@ function PlayerStandard:_check_action_equip(t, input)
 
 	return new_action
 end
-
-
 
 function PlayerStandard:_check_action_jump(t, input)
 	local new_action = nil
@@ -1433,15 +1430,26 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.25 or 1) , 1, 0.15)
 						end
 
-						if not self._hit_in_air and weap_base and weap_base:weapon_tweak_data().rebecca then
+						if weap_base and weap_base:weapon_tweak_data().rebecca then
 							local data = weap_base:weapon_tweak_data().rebecca
-							self._hit_in_air = self._state_data.in_air and true
-							local force_a_nature = -self._ext_camera:forward()
-							local kick = data[1] * ((self._state_data.in_air and (data[2] or 0.6)) or 1)
-							force_a_nature = Vector3(force_a_nature.x, force_a_nature.y, ((self._state_data.in_air and force_a_nature.z) or 0)):normalized()
-							force_a_nature = (not self._state_data.in_air and force_a_nature:with_z(-0.5)) or force_a_nature
-							if not self._state_data.in_air or self._state_data.in_air and not data[3] then
-								self:push(force_a_nature * kick , true, 0.2, true)
+							if data[4] or not self._hit_in_air then
+								local force_a_nature = -self._ext_camera:forward()
+								local kick = data[1] * ((self._hit_in_air and (data[5] or 0.3)) or (self._state_data.in_air and (data[2] or 0.6)) or 1)
+								local downward = force_a_nature.z > 0.5
+								force_a_nature = Vector3(force_a_nature.x, force_a_nature.y, ((self._state_data.in_air and force_a_nature.z) or 0)):normalized()
+								force_a_nature = (not self._state_data.in_air and force_a_nature:with_z(-0.5)) or force_a_nature
+								if not self._state_data.in_air or self._state_data.in_air and not data[3] then
+									self:push(force_a_nature * kick , downward and not self._hit_in_air and true, 0.2, true)
+								end
+								log(tostring( self._unit:mover():velocity().z ))
+								if downward then
+									if self._unit:mover():velocity().z >= 400 then
+										self._state_data.enter_air_pos_z = self._pos.z
+									else
+										self._state_data.enter_air_pos_z = math.max(self._state_data.enter_air_pos_z - self._unit:mover():velocity().z, 0)
+									end
+								end
+								self._hit_in_air = self._state_data.in_air and true
 							end
 						end
 
@@ -3165,8 +3173,13 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		end
 	end
 
-	if self._hit_in_air and not self._state_data.in_air then
-		self._hit_in_air = nil
+	if not self._state_data.in_air then
+		if self._hit_in_air then
+			self._hit_in_air = nil
+		end
+		if self._enemy_hit_in_air then
+			self._enemy_hit_in_air = nil
+		end
 	end
 
 	--Applying (and removing) the conditon for being fully ADS'd
@@ -3362,8 +3375,6 @@ function PlayerStandard:_last_shot_recoil_t(t, dt)
 		end
 	end
 end
-
-
 
 function PlayerStandard:_shooting_move_speed_timer(t, dt, external_trigger)
 	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()

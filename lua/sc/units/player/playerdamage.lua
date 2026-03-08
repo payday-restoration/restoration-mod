@@ -937,7 +937,7 @@ function PlayerDamage:damage_melee(attack_data)
 	self._unit:movement():current_state()._d_scope_t = 0.6
 
 	local in_air = self._unit:movement():current_state():in_air()
-	local hit_in_air = self._unit:movement():current_state()._hit_in_air
+	local hit_in_air = self._unit:movement():current_state()._enemy_hit_in_air
 	
 	--Apply changes to actual melee push, this *can* be reduced to 0. Also don't allow players in bleedout to be pushed.
 	--Also don't allow for multiple pushes if in the air
@@ -946,7 +946,7 @@ function PlayerDamage:damage_melee(attack_data)
 		mvector3.multiply(attack_data.push_vel, push_multiplier)
 		self._unit:movement():current_state():push(attack_data.push_vel, true, 0.2, not force_crouch and true, force_crouch)
 		if in_air then
-			self._unit:movement():current_state()._hit_in_air = true
+			self._unit:movement():current_state()._enemy_hit_in_air = true
 		end
 	end
 	

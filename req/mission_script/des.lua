@@ -11,6 +11,11 @@ local medium_interval = {
 			interval = 30
 		},
 }
+local disabled = {
+	values = {
+		enabled = false,
+	},
+}
 return {
 	-- Pro Job PONR 
 	[100296] = {
@@ -71,7 +76,14 @@ return {
 			{ id = 400020, delay = 0 ,},
 		},
 	},
-
+	-- Disable a bunch of cheaty preferreds
+	[100919] = disabled, -- weapon preferreds 6
+	[101320] = disabled, -- biolab preferreds 6
+	[101334] = disabled, -- books preferreds 4
+	-- Disable non-cheaty preferreds that just suck
+	[107974] = disabled, -- wF
+	[107975] = disabled, -- entrance_preferreds
+	[101453] = disabled, -- entrance_preferreds004
 	-- Spawnpoint Delays
 	-- ai_enemy_group_001
 	[100128] = low_interval,

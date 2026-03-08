@@ -27,7 +27,7 @@ function GamePlayCentralManager:do_shotgun_push(unit, hit_pos, dir, distance, at
 end
 
 function GamePlayCentralManager:_do_shotgun_push(unit, hit_pos, dir, distance, attacker)
-	if tweak_data.disable_shotgun_push then
+	if tweak_data.disable_shotgun_push or (managers.groupai and managers.groupai:state():whisper_mode()) then
 		return
 	end
 
@@ -39,18 +39,20 @@ function GamePlayCentralManager:_do_shotgun_push(unit, hit_pos, dir, distance, a
 	end
 
 	local scale = math.clamp(1 - distance / self:get_shotgun_push_range(attacker), 0.5, 1)
-	local rot_time = 0.5 --+ math.rand(2)
+	--local rot_time = 0.5 --+ math.rand(2)
+	local rot_time = 0.4 + math.rand(0.4)
 	local asm = unit:anim_state_machine()
 
 	if asm and asm:get_global("tank") == 1 then
 		scale = scale * 0.3
-		rot_time = rot_time * 0.2
+		rot_time = rot_time * 0.5 --0.2
 	end
 
 	local push_vec = tmp_vec1
 
 	mvector3.set_static(push_vec, dir.x, dir.y, dir.z + 0.5)
-	mvec3_mul(push_vec, 600 * scale)
+	--mvec3_mul(push_vec, 600 * scale)
+	mvec3_mul(push_vec, 300 * scale)
 
 	local unit_pos = tmp_vec2
 

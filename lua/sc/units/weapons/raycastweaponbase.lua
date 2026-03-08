@@ -1315,23 +1315,30 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 		do_push = true
 	end
 
-	if do_push then
-		managers.game_play_central:physics_push(col_ray, push_mul)
-	end
-
-	if headshot then
+	if headshot and math.rand(1) >= 0.5 then
 		local mov_ext = col_ray.unit and col_ray.unit.movement and col_ray.unit:movement()
 		local full_body_action = mov_ext and mov_ext:get_action(1)
-		DelayedCalls:Add("tbox_shot", 0.09, function ()
+		local delay = math.rand(0.03, 0.09)
+		DelayedCalls:Add("tbox_shot", delay, function()
 			local hurt_ext = full_body_action and full_body_action.force_ragdoll and full_body_action:force_ragdoll(true)
-			managers.game_play_central:physics_push(col_ray, push_mul)
+			if col_ray then
+				managers.game_play_central:physics_push(col_ray, 1.75)
+			end
 		end)
 	end
 
-	if do_shotgun_push then
+	if do_push then
+		if weap_base._rays and weap_base._rays > 1 then
+			local force = math.clamp(weap_base._rays / 4, 4, 12)
+			push_mul = 2.5 / force
+		end
+		managers.game_play_central:physics_push(col_ray, push_mul)
+	end
+
+	if do_shotgun_push and weap_base._rays and weap_base._rays > 1 then
 		local dir = col_ray.ray
-		mvector3.multiply(dir, 0.75)
-		--managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, dir, col_ray.distance, user_unit)
+		mvector3.multiply(dir, 1)
+		managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, dir, col_ray.distance, user_unit)
 	end
 
 	--[[
@@ -1554,7 +1561,7 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 	end
 
 	if do_shotgun_push then
-		-- managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, col_ray.ray, col_ray.distance, user_unit)
+		--managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, col_ray.ray, col_ray.distance, user_unit)
 	end
 
 	--Play Impact flesh is never true on fire bullets. No need for this conditional.

@@ -1441,7 +1441,6 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								if not self._state_data.in_air or self._state_data.in_air and not data[3] then
 									self:push(force_a_nature * kick , downward and not self._hit_in_air and true, 0.2, true)
 								end
-								log(tostring( self._unit:mover():velocity().z ))
 								if downward then
 									if self._unit:mover():velocity().z >= 400 then
 										self._state_data.enter_air_pos_z = self._pos.z

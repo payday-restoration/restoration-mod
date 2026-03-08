@@ -27860,7 +27860,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cp2077_guts.fire_rate_multiplier = 1.25
 				self.cp2077_guts.force_shake = true
 				self.cp2077_guts.sms = 0.5
-				self.cp2077_guts.rebecca = {750}
+				self.cp2077_guts.rebecca = {750, nil, nil, true}
 				self.cp2077_guts.descope_on_fire_ignore_setting = true
 				self.cp2077_guts.hipfire_shake = true
 				self.cp2077_guts.supported = true

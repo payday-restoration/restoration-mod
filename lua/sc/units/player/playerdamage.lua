@@ -1111,6 +1111,10 @@ function PlayerDamage:damage_killzone(attack_data)
 	self:_call_listeners(damage_info)
 end
 
+function PlayerDamage:stun_hit(attack_data)
+	return nil --self:damage_tase(attack_data)
+end
+
 --Refactored from vanilla. Applies damage linearly on a % basis starting with damage then health. 
 local height_limit = 300 --Point at which players start taking armor damage.
 local damage_limit = 650 --Point at which players start taking health damage and slow.

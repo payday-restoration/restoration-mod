@@ -2234,13 +2234,16 @@ end
 function PlayerStandard:_end_action_running(t)
 	self._last_run_t = t
 	if not self._end_running_expire_t then
-		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier()
-		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
+		local weap_unit = self._equipped_unit
+		local weap_base = weap_unit and weap_unit:base()
+		local weap_tweak = weap_base and weap_base:weapon_tweak_data()
+		local speed_multiplier = weap_base and weap_base:exit_run_speed_multiplier()
+		local sprintout_anim_time = sweap_base and weap_base:weapon_tweak_data().sprintout_anim_time or 0.4
 
 		self._end_running_expire_t = t + sprintout_anim_time / speed_multiplier
 		--Adds a few melee related checks to avoid cutting off animations.
 		local cancel_sprint = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/SprintCancel")
-		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() --[[and not self._equipped_unit:base():run_and_shoot_allowed()]] and ((not self:_is_reloading() or not self.RUN_AND_RELOAD)) and not self._delay_running_anim
+		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() --[[and not self._equipped_unit:base():run_and_shoot_allowed()]] and ((not self:_is_reloading() or (self:_is_reloading() and weap_tweak.no_reload_anims) or not self.RUN_AND_RELOAD)) and not self._delay_running_anim
 
 		if stop_running and not self._shooting and not self._running_sprintout_expire_t then
 			if not self._equipped_unit:base():run_and_shoot_no_sprintout() or not self._equipped_unit:base():run_and_shoot_allowed() or 
@@ -4533,7 +4536,7 @@ Hooks:PostHook(PlayerStandard, "_enter", "ResDodgeInit", function(self, enter_da
 end)
 
 function PlayerStandard:_update_reload_timers(t, dt, input)
-	if self._state_data.reload_enter_expire_t and self._state_data.reload_enter_expire_t <= t then
+	if self._state_data.reload_enter_expire_t and self._state_data.reload_enter_expire_t <= t and not self._equipped_unit:base():weapon_tweak_data().no_reload_anims then
 		self._equipped_unit:base():tweak_data_anim_stop("fire")
 		self._equipped_unit:base():tweak_data_anim_stop("fire_steelsight")
 		self._equipped_unit:base():tweak_data_anim_stop("magazine_empty")
@@ -4666,15 +4669,17 @@ end
 Hooks:PostHook(PlayerStandard, "_start_action_reload_enter", "ResStopFireAnimReloadFix", function(self, t)
 	local weap_base = self._equipped_unit:base()
 	if weap_base and weap_base:can_reload() then
-		weap_base:tweak_data_anim_stop("fire")
-		weap_base:tweak_data_anim_stop("fire_steelsight")
-		local weapon_tweak = weap_base:weapon_tweak_data()
-		if not weapon_tweak.lock_slide_allow_mag_empty then
-			weap_base:tweak_data_anim_stop("magazine_empty")
-		end
-		if weap_base.AKIMBO then
-			weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
-			weap_base._second_gun:base():tweak_data_anim_stop("reload")
+		if not weap_base:weapon_tweak_data().no_reload_anims then
+			weap_base:tweak_data_anim_stop("fire")
+			weap_base:tweak_data_anim_stop("fire_steelsight")
+			local weapon_tweak = weap_base:weapon_tweak_data()
+			if not weapon_tweak.lock_slide_allow_mag_empty then
+				weap_base:tweak_data_anim_stop("magazine_empty")
+			end
+			if weap_base.AKIMBO then
+				weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
+				weap_base._second_gun:base():tweak_data_anim_stop("reload")
+			end
 		end
 		weap_base._current_reload_speed_multiplier = nil
 	end
@@ -4693,9 +4698,11 @@ function PlayerStandard:_start_action_reload(t)
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		end
 		if ((ignore_fullreload and clip_empty) or (ignore_nonemptyreload and not clip_empty)) then
-			weapon:tweak_data_anim_stop("fire")
-			weapon:tweak_data_anim_stop("fire_steelsight")
-			weapon:tweak_data_anim_stop("magazine_empty")
+			if not weapon:weapon_tweak_data().no_reload_anims then
+				weapon:tweak_data_anim_stop("fire")
+				weapon:tweak_data_anim_stop("fire_steelsight")
+				weapon:tweak_data_anim_stop("magazine_empty")
+			end
 
 			local speed_multiplier = weapon:reload_speed_multiplier()
 			local anim_multiplier = weapon._reload_anim_multiplier or 1
@@ -4724,10 +4731,12 @@ function PlayerStandard:_start_action_reload(t)
 		else
 			local is_reload_not_empty = weapon:clip_not_empty()
 
-			weapon:tweak_data_anim_stop("fire")
-			weapon:tweak_data_anim_stop("fire_steelsight")
-			if not weapon_tweak.lock_slide_allow_mag_empty then
-				weapon:tweak_data_anim_stop("magazine_empty")
+			if not weapon:weapon_tweak_data().no_reload_anims then
+				weapon:tweak_data_anim_stop("fire")
+				weapon:tweak_data_anim_stop("fire_steelsight")
+				if not weapon_tweak.lock_slide_allow_mag_empty then
+					weapon:tweak_data_anim_stop("magazine_empty")
+				end
 			end
 
 			local speed_multiplier = weapon:reload_speed_multiplier()
@@ -5245,6 +5254,14 @@ function PlayerStandard:_update_equip_weapon_timers(t, input)
 
 		TestAPIHelper.on_event("load_weapon")
 		TestAPIHelper.on_event("mask_up")
+	end
+	--TF2 Sniper compat
+	if self._equipped_unit and alive(self._equipped_unit) and self._equipped_unit:base() and self._equipped_unit:base()._is_auto_refill_snp and self._equipped_unit:base()._auto_refill_snp_ask_forced_reload and self._equipped_unit:base()._auto_refill_snp_ask_forced_reload < TimerManager:game():time() then
+		self._equipped_unit:base()._auto_refill_snp_ask_forced_reload = nil
+		if self._equipped_unit:base():can_reload() then
+			self._equipped_unit:base():on_reload()
+			managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
+		end
 	end
 end
 

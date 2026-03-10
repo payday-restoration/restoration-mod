@@ -356,10 +356,11 @@ function restoration:Init()
 		"icing",	--Road Rage
 		"gunw_lvl",  -- Gun Waashing
 		"R&amp;B Bank", -- RNB Bank (Notoriety port)
-		"skm_tbh", --TBA
-		"skm_tbh_xmas", --TBA
-		"money_tbh", --TBA
-		"money_tbh_xmas" --TBA
+		"skm_tbh", --Taco Bell Holdout
+		"skm_tbh_xmas", --TAce Bell Holdour Christmas
+		"money_tbh", --Taco Bell Raid
+		"money_tbh_xmas", --Tacobell Raid Christmas
+		"dch" --Dark Carnival Holdout
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {

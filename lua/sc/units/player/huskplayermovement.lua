@@ -274,7 +274,6 @@ function HuskPlayerMovement:update(unit, t, dt)
 end]]
 
 
-
 function HuskPlayerMovement:sync_call_civilian(civilian_unit)
 	if civilian_unit and civilian_unit:base():char_tweak().is_escort then
 		return
@@ -321,5 +320,82 @@ function HuskPlayerMovement:sync_call_civilian(civilian_unit)
 		self._sympathy_civ = civilian_unit
 
 		civilian_unit:brain():set_objective(objective)
+	end
+end
+
+--TEMP
+function HuskPlayerMovement:anim_cbk_spawn_melee_item(unit, graphic_object)
+	if alive(self._melee_item_unit) or not managers.network:session() or not managers.network:session():peer_by_unit(self._unit) then
+		return
+	end
+
+	local align_obj_name = Idstring("a_weapon_left_front")
+
+	if self:arm_animation_enabled() then
+		self:refresh_primary_hand()
+
+		if self._melee_hand == 1 then
+			align_obj_name = Idstring("a_weapon_right_front")
+		end
+	end
+
+	local align_obj = self._unit:get_object(align_obj_name)
+	local peer_id = managers.network:session():peer_by_unit(self._unit):id()
+	local peer = managers.network:session():peer(peer_id)
+	local melee_entry = peer:melee_id()
+	local graphic_object_name = Idstring(graphic_object)
+	local graphic_objects = tweak_data.blackmarket.melee_weapons[melee_entry].graphic_objects or {}
+	local unit_name = tweak_data.blackmarket.melee_weapons[melee_entry].third_unit
+
+	if unit_name then
+		self._melee_item_unit = World:spawn_unit(Idstring(unit_name), align_obj:position(), align_obj:rotation())
+
+		self._unit:link(align_obj:name(), self._melee_item_unit, self._melee_item_unit:orientation_object():name())
+
+		if self:arm_animation_enabled() then
+			local offset = tweak_data.vr.melee_offsets.weapons_npc[melee_entry]
+
+			if offset then
+				if offset.right and self._melee_hand == 1 then
+					self._melee_item_unit:set_local_position(offset.right.position or Vector3())
+					self._melee_item_unit:set_local_rotation(offset.right.rotation or Rotation())
+				elseif offset.left and self._melee_hand == 0 then
+					self._melee_item_unit:set_local_position(offset.left.position or Vector3())
+					self._melee_item_unit:set_local_rotation(offset.left.rotation or Rotation())
+				else
+					self._melee_item_unit:set_local_position(offset.position or Vector3())
+					self._melee_item_unit:set_local_rotation(offset.rotation or Rotation())
+				end
+
+				if offset.hidden_objects then
+					for _, object in ipairs(offset.hidden_objects) do
+						local obj = self._melee_item_unit:get_object(object)
+
+						if obj then
+							obj:set_visibility(false)
+						end
+					end
+				end
+			end
+		end
+
+		for a_object, g_object in pairs(graphic_objects) do
+			local g_obj_name = Idstring(g_object)
+			local g_obj = self._melee_item_unit:get_object(g_obj_name)
+
+			g_obj:set_visibility(Idstring(a_object) == graphic_object_name)
+		end
+
+		if self._unit:inventory().on_melee_item_shown then
+			self._unit:inventory():on_melee_item_shown()
+		end
+	end
+
+	if alive(self._unit:inventory():equipped_unit()) then
+		if self._unit:inventory():equipped_unit():base().AKIMBO then
+			self._unit:inventory():equipped_unit():base():on_melee_item_shown(self._use_primary_melee_hand)
+		elseif self._use_primary_melee_hand then
+			self._unit:inventory():equipped_unit():base():on_disabled()
+		end
 	end
 end

@@ -309,7 +309,7 @@ function RaycastWeaponBase:clip_empty()
 	if self._starwars and not self._starwars.can_reload then
 		local user_unit = self._setup and self._setup.user_unit
 		local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
-		if current_state._is_overheating and current_state:_is_overheating() then
+		if current_state and current_state._is_overheating and current_state:_is_overheating() then
 			clip_empty = nil
 		end
 	end

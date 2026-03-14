@@ -10,7 +10,7 @@ return {
 		reinforce = {
 			{
 				name = "entrance", 
-				force = 3, 
+				force = 4, 
 				position = Vector3(-1994, -4730, -38.001),
 			},
 			{

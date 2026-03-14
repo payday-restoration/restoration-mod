@@ -1439,7 +1439,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								force_a_nature = Vector3(force_a_nature.x, force_a_nature.y, ((self._state_data.in_air and force_a_nature.z) or 0)):normalized()
 								force_a_nature = (not self._state_data.in_air and force_a_nature:with_z(-0.5)) or force_a_nature
 								if not self._state_data.in_air or self._state_data.in_air and not data[3] then
-									self:push(force_a_nature * kick , downward and not self._hit_in_air and true, 0.2, true)
+									self:push(force_a_nature * kick, not self._hit_in_air and true, 0.2, true)
 								end
 								if downward then
 									if self._unit:mover():velocity().z >= 400 then

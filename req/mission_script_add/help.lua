@@ -1,7 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local death_wish_above = difficulty >= 7
-local tank_skull =  ((difficulty >= 8) and "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion" or "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3")
+local tank_skull =  ((difficulty >= 8) and "units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" or "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3")
 local shields = ((difficulty >= 8) and "units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec")
 local cloaker = ((difficulty >= 8) and "units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1" or "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1")
 
@@ -52,7 +52,7 @@ local optsCloaker_zipline = {
 local optsShield_blocker_01 = {
 	enemy = shields,
 	on_executed = { { id = 400010, delay = 0 } },
-	enabled = death_wish_above
+	enabled = true,
 }
 local optsShield_blocker_02 = {
 	enemy = shields,

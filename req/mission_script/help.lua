@@ -6,7 +6,7 @@ local so_action_fix = {
 
 return {
 	-- reinforce once you enter the prison 
-	[101852] = {
+	[100178] = {
 		reinforce = {
 			{
 				name = "entrance", 

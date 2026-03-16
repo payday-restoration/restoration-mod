@@ -41,39 +41,21 @@ return {
 			{ name = "hub" },
 			{
 				name = "hub_escape",
-				force = 3,
+				force = 4,
 				position = Vector3(25, -350, 0),
 			},
-		},
-	},
-	-- Enabling specific room defenses 
-	[104652] = {
-		on_executed = {
-			{ id = 400007, delay = 0 ,},
-			{ id = 400024, delay = 0 ,},
 		},
 	},
 -- Bio Weapons Labs Defense 
 	[108051] = {
 		on_executed = {
-			{ id = 400001, delay = 0 ,},
-			{ id = 400002, delay = 0 ,},
-			{ id = 400005, delay = 0 ,},
-			{ id = 400025, delay = 0 ,},
-			{id =  400026, delay = 0 ,}, 
+			{ id = 400007, delay = 0 ,},
 		},
 	},
 -- Heavy Resistance on Escape 
 	[102082] = {
 		on_executed = {
-			{ id = 400008, delay = 0 ,},
-			{ id = 400009, delay = 0 ,},
-			{ id = 400010, delay = 0 ,},
-			{ id = 400011, delay = 0 ,},
-			{ id = 400012, delay = 0 ,},
-			{ id = 400018, delay = 0 ,},
-			{ id = 400019, delay = 0 ,},
-			{ id = 400020, delay = 0 ,},
+			{ id = 400024, delay = 0 ,},
 		},
 	},
 	-- Disable a bunch of cheaty preferreds

@@ -25,44 +25,39 @@ local optsDefend_SO = {
 	so_action = "AI_sniper",
 }
 local optsCloaker_01 = {
-    enabled = false,
+    enabled = true,
     enemy = cloaker,
-    on_executed = {
-        { id = 400006, delay = 0},
-    },
+    on_executed = { { id = 400006, delay = 0}, },
 }
 local optsTDozer_01 = {
-    enabled = false,
+    enabled = true,
     enemy = titan_dozer,
-    on_executed = {
-        { id = 400003, delay = 0},
-    },
+    on_executed = { { id = 400003, delay = 0}, },
 }
 local optsTDozer_02 = {
-    enabled = false,
+    enabled = true,
     enemy = titan_dozer,
-    on_executed = {
-        { id = 400004, delay = 0},
-    },
+    on_executed = { { id = 400004, delay = 0}, },
 }
 local optsSniper_01 = {
-	enabled = false,
+	enabled = true,
 	enemy = snipers,
-	on_executed = {
-		{ id = 400027, delay = 0},
-	},
+	on_executed = { { id = 400027, delay = 0}, },
 }
 local optsSniper_02 = {
-	enabled = false,
+	enabled = true,
 	enemy = snipers,
-	on_executed = {
-		{ id = 400028, delay = 0},
-	},
+	on_executed = { { id = 400028, delay = 0}, },
 }
-local opts_enable__weapon_lab_defenders = {
+local opts_spawn__weapon_lab_defenders = {
 	enabled = death_wish_above,
-	elements = { 400001 , 400002, 400005, 400025,  400026},
-	toggle = "on",
+	on_executed = {
+		{ id = 400001, delay = 0, },
+		{ id = 400002, delay = 0, },
+		{ id = 400005, delay = 0, }, 
+		{ id = 400025, delay = 0, },
+		{ id = 400026, delay = 0, },
+	},
 }
 local optsCloaker_Hide_SO_weapon_lab = {
     SO_access = {
@@ -79,32 +74,24 @@ local optsCloaker_Hide_SO_weapon_lab = {
     so_action = "e_so_sneak_wait_crh_var3"
 }
 local optsBulldozer_01 = {
-    enabled = false,
+    enabled = true,
     enemy = tank_skull,
-    on_executed = {
-        { id = 400021, delay = 0}
-    },
+    on_executed = { { id = 400021, delay = 0} },
 }
 local opts_gunner_1 = {
 	enemy = gunners,
-	enabled = false,
-	on_executed = {
-		{id =  400022, delay = 0,},
-	},
+	enabled = true,
+	on_executed = { {id =  400022, delay = 0,}, },
 }
 local opts_gunner_2 = {
 	enemy = gunners,
-	enabled = false,
-	on_executed = {
-		{id = 400023, delay = 0,},
-	}
+	enabled = true,
+	on_executed = { {id = 400023, delay = 0,}, },
 }
 local optsShield_01 = {
-	enabled = false,
+	enabled = true,
 	enemy = shields,
-	on_executed = {
-		{id = 400013,  delay = 0, },
-	},
+	on_executed = { {id = 400013,  delay = 0, }, },
 }
 local optsShield_02 = {
 	enabled = false,
@@ -114,30 +101,32 @@ local optsShield_02 = {
 	},
 }
 local optsShield_03 = {
-	enabled = false,
+	enabled = true,
 	enemy = shields,
-	on_executed = {
-		{ id = 400015, delay = 0, },
-	},
+	on_executed = { { id = 400015, delay = 0, }, },
 }
 local optsShield_04 = {
-	enabled = false,
+	enabled = true,
 	enemy = shields,
-	on_executed = {
-		{ id =  400016,  delay = 0, },
-	},
+	on_executed = { { id =  400016,  delay = 0, }, },
 }
 local optsShield_05 = {
-	enabled = false,
+	enabled = true,
 	enemy = shields,
-	on_executed = {
-		{ id =  400017,  delay = 0, },
-	},
+	on_executed = { { id =  400017,  delay = 0, }, },
 }
-local opts_enable_escape_defense = {
+local opts_spawn_escape_defense = {
 	enabled = death_wish_above,
-	elements = {400008, 400009, 400010, 400011, 400012, 400018, 400019, 400020 },
-		toggle = "on",
+	on_executed = {
+		{ id = 400008, delay = 0, },
+		{ id = 400009, delay = 0, },
+		{ id = 400010, delay = 0, },
+		{ id = 400011, delay = 0, },
+		{ id = 400012, delay = 0, },
+		{ id = 400018, delay = 0, },
+		{ id = 400019, delay = 0, },
+		{ id = 400020, delay = 0, },
+	},
 }
 
 return {
@@ -160,8 +149,8 @@ return {
 		restoration:gen_so(400027, "railgun_defend_03",  Vector3(-4321, -3152, 0), Rotation(-105, 0, -0), optsDefend_SO), 
 		restoration:gen_so(400028, "railgun_defend_04",  Vector3(-4317, -3000, 0), Rotation(-99, 0, -0), optsDefend_SO),
 
-		-- toggle
-		restoration:gen_toggleelement(400007, "enable_railgun_defenders", opts_enable__weapon_lab_defenders),
+		-- misison script
+		restoration:gen_missionscript(400007, "spawn_railgun_defenders", opts_spawn__weapon_lab_defenders),
 
 		-- The Sharks are giving everything they have to stop you. give em hell.
 		-- SHIELD WALL
@@ -187,6 +176,6 @@ return {
 		restoration:gen_so(400022, "helipad_defend_so_02", Vector3(-1281, 4759, 101.783), Rotation(172, 0, -0), optsDefend_SO ),
 		restoration:gen_so(400023, "helipad_defend_so_03", Vector3(-1052, 4736, 101.783), Rotation(172, 0, -0), optsDefend_SO ),
 		-- toggle 
-		restoration:gen_toggleelement(400024, "enable_heavy_escape_resistance", opts_enable_escape_defense),
+		restoration:gen_missionscript(400024, "spawn_heavy_escape_resistance", opts_spawn_escape_defense),
     },
 }

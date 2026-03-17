@@ -12,13 +12,6 @@ return {
 			{ id = 400002, delay = 0, },
 		},
 	},
-	-- Cloaker in the diamond room 
-	-- activate in loud 
-	[100023] = {
-		on_executed = {
-			{ id = 400005, delay = 0,},
-		},
-	},
 	[100109] = { -- reinforce stuff 
 		reinforce = {
 			{
@@ -43,10 +36,4 @@ return {
 			},
 		},
 	},
-	-- spawn cloaker as the door opens 
-	[101893] = {
-		on_executed = {
-			{ id = 400004, delay = 0,}, 
-		},
-	},s
 }

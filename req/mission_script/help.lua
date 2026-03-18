@@ -60,4 +60,10 @@ return {
 			{ id = 400013, delay = 0 }
 		}
 	},
+	-- Escape Defenders 
+	[100634] = {
+		on_executed = {
+			{ id = 400031, delay = 0}
+		}
+	},
 }

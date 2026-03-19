@@ -5826,7 +5826,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bulletstorm--
 				["menu_ammo_reservoir_beta_sc"] = "탄환 폭풍",
-				["menu_ammo_reservoir_beta_desc_sc"] = "베이식: #{owned}#$basic##\n당신이 설치한 탄약 가방을 사용한 플레이어는 탄약을 보충한 이후 최대 #{skill_color}#5##초간 탄약 소모 없이 무기를 발사할 수 있습니다.\n\n보충하는 탄약량이 많을수록 지속 시간이 길어집니다.\n\n#{risk}#주의:## #{important_1}#발사기 및 폭발성 탄약을 사용하는 무기는## #{risk}#해당 스킬 효과를 받지 않습니다.##\n\n에이스: #{owned}#$pro##\n효과의 최대 지속 시간이 추가로 #{skill_color}#15##초 증가합니다.",
+				["menu_ammo_reservoir_beta_desc_sc"] = "베이식: #{owned}#$basic##\n당신이 설치한 탄약 가방을 사용한 플레이어는 탄약을 보충한 이후 최대 #{skill_color}#5##초간 탄약 소모 없이 무기를 발사할 수 있습니다.\n\n보충하는 탄약량이 많을수록 지속 시간이 길어집니다.\n\n#{risk}#주의:## #{important_1}#발사기, OVE9000 톱 및 폭발성 탄약을 사용하는 무기는## #{risk}#해당 스킬 효과를 받지 않습니다.##\n\n에이스: #{owned}#$pro##\n효과의 최대 지속 시간이 추가로 #{skill_color}#15##초 증가합니다.",
 
 				--Specialist Equipment formally Rip and Tear
 				["menu_portable_saw_beta_sc"] = "전문가 훈련",

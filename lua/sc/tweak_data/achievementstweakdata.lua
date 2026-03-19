@@ -67,7 +67,7 @@ function AchievementsTweakData:init(tweak_data)
 		}
 	}
 	
-	--Fix for Sneaky Beaky Like to be possible
+	-- Fix for Sneaky Beaky Like to be possible
 	self.complete_heist_achievements.grv_4 = {
 		stealth = true,
 		award = "grv_4",		
@@ -79,6 +79,12 @@ function AchievementsTweakData:init(tweak_data)
 				"wpn_fps_smg_coal"
 			}
 		}
+	}
+	
+	-- Fix for "I just had to" to be possible
+	self.complete_heist_achievements.trophy_fbi.levels = {
+		"firestarter_2_res",
+		"firestarter_2"
 	}
 	
 	self.complete_heist_achievements.tawp_1 = {

@@ -5897,7 +5897,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bulletstorm--
 				["menu_ammo_reservoir_beta_sc"] = "Bulletstorm",
-				["menu_ammo_reservoir_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nAmmo bags placed by you grant its users the ability to shoot without depleting their ammunition for up to #{skill_color}#5## seconds after replenishing ammo from it.\n\nThe more ammo replenished, the longer the duration of the effect.\n\n#{risk}#NOTE:## #{important_1}#Launchers and weapons using explosive ammo## #{risk}#do not receive the effects of this skill.##\n\nACE: #{owned}#$pro##\nIncreases the maximum possible duration of the effect by an additional #{skill_color}#15## seconds.",
+				["menu_ammo_reservoir_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nAmmo bags placed by you grant its users the ability to shoot without depleting their ammunition for up to #{skill_color}#5## seconds after replenishing ammo from it.\n\nThe more ammo replenished, the longer the duration of the effect.\n\n#{risk}#NOTE:## #{important_1}#Launchers, the OVE9000 Saw, and weapons using explosive ammo## #{risk}#do not receive the effects of this skill.##\n\nACE: #{owned}#$pro##\nIncreases the maximum possible duration of the effect by an additional #{skill_color}#15## seconds.",
 
 				--Specialist Equipment formally Rip and Tear
 				["menu_portable_saw_beta_sc"] = "Specialist Training",

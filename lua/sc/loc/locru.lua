@@ -2213,7 +2213,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_Ruloc_Weapons", function(loc)
 		    ["bm_w_r31_desc"] = "Полуавтоматический карабин, стреляющий калибром .22 Winchester Magnum. Произведен компанией ''Grendel Inc.''",
 
 	        ["bm_wp_wpn_fps_smg_r31_b_highcal"] = "Ствол CHF I",
-	        ["bm_wp_wpn_fps_smg_r31_b_highcal2" = "Ствол CHF II",
+	        ["bm_wp_wpn_fps_smg_r31_b_highcal2"] = "Ствол CHF II",
 	        ["bm_wp_wpn_fps_smg_r31_b_int"] = "Короткий Ствол",
 	        ["bm_wp_wpn_fps_smg_r31_b_mix"] = "Закалённый Ствол",
 	        ["bm_wp_wpn_fps_smg_r31_b_range"] = "Длинный Ствол",

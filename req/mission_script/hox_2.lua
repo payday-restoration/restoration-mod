@@ -1,5 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local chance_dozer = ((difficulty == 8 or difficulty == 7) and 75 or (difficulty == 6 or difficulty == 5) and 50) or 25
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local ponr_value = (difficulty <= 5 and 300 or (difficulty == 6 or difficulty == 7) and 270) or 240
 
 return {
@@ -12,27 +13,25 @@ return {
             chance = chance_dozer
 		},
 	},
+	-- Spawn the weekend boys in final hacking phase (i hope this is the right element for it)
+	[101235] = {
+		spawn_bravos = pro_job,
+		values = {
+			time = 30,
+		},
+	},
 	-- FBI Ready Teams
 	[100115] = {
 		on_executed = {
 			{ id = 400016, delay = 17, delay_rand = 3 }
 		},
-	},
-	-- Starting up these guys first
-	[100018] = {
-		on_executed = {
-			{ id = 400024, delay = 0, }, 
-		},
-	},
+	},	
 	-- Garage ambush
 	[102022] = {
 		on_executed = {
-			{id =  400025, delay = 0, }, -- cloaker 
-			{id =  400027, delay = 0, }, -- dozer 
-			{id =  400029, delay = 0,}, -- gunner 1
-			{id =  400030, delay = 0,}, -- gunner 2
-			{ id = 400035, delay = 0, }, -- gunner 3
-			{id =  400033, delay = 0,}, -- taser 
+			{id =  400024, delay = 0, },
+			-- smokebamb
+			{ id = 400025, delay = 3, },
 		},
 	},
 	[100109] = { -- Atrium, always active

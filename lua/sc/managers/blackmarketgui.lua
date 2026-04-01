@@ -6835,8 +6835,8 @@ function BlackMarketGui:_set_detection(value, maxed_reached, min_reached)
 
 	local has_advmov = (_G.AdvMov and true) or false
 	local dash_stats = has_advmov and tweak_data.upgrades.values.player.dash_stats
-	local dash_limit = has_advmov and ( dash_stats.limit + managers.player:get_value_from_risk_upgrade( managers.player:upgrade_value("player", "detection_risk_dash_count") ) )
-	local advmov_desc = has_advmov and ( " - " .. managers.localization:text("bm_menu_stats_dash_limit") .. " " .. tostring(dash_limit)) or ""
+	local dash_limit = dash_stats and ( dash_stats.limit + managers.player:get_value_from_risk_upgrade( managers.player:upgrade_value("player", "detection_risk_dash_count") ) )
+	local advmov_desc = dash_limit and ( " - " .. managers.localization:text("bm_menu_stats_dash_limit") .. " " .. tostring(dash_limit)) or ""
 
 	if maxed_reached then
 		detection_text:set_text(utf8.to_upper(managers.localization:text("bm_menu_stats_max_detection") .. ((has_advmov and advmov_desc) or "") ))

@@ -5902,6 +5902,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 				--SECONDARIES
 
+					--Welrod
+						self.welrod.categories = { "pistol" }
+						self.welrod.recategorize = { "light_pis" }
+						self.welrod.desc_id = "bm_welrod_sc_desc"
+						self.welrod.has_description = true
+						self.welrod.fire_mode_data.fire_rate = 2.233
+						self.welrod.fire_rate_multiplier = 1.36
+						self.welrod.CLIP_AMMO_MAX = 8
+						self.welrod.kick = self.stat_info.kick_tables.right_recoil
+						self.welrod.kick_pattern = {
+							{0, self.stat_info.kick_tables.even_recoil},
+							{3, self.stat_info.kick_tables.moderate_right_kick},
+							{5, self.stat_info.kick_tables.right_recoil}
+						}
+						self.welrod.supported = true
+						self.welrod.ads_speed = 0.100
+						self.welrod.damage_falloff = {
+							start_dist = 1200,
+							end_dist = 3600,
+							min_mult = 0.1667
+						}
+						self.welrod.stats = {
+							damage = 30,
+							spread = 61,
+							recoil = 97,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 32,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.welrod.stats_modifiers = nil
+						self.welrod.panic_suppression_chance = 0.05
+						self.welrod.weapon_movement_penalty = 1.14
+						self.welrod.sounds.magazine_empty = nil
+						self.welrod.hs_mult = 2
+						self.welrod.always_play_anims = true
+						self.welrod.timers.reload_not_empty = 2.8
+						self.welrod.timers.reload_exit_not_empty = 0.5
+						self.welrod.timers.reload_empty = 2.8
+						self.welrod.timers.reload_exit_empty = 0.5
+
 					--Gecko M2 (Maxim 9)
 						self.maxim9.categories = {
 							"pistol",
@@ -33523,6 +33569,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qbs.timers = deep_clone(self.benelli.timers)
 			end
 
+			--[[
 			if self.welrod then
 				self.welrod.recategorize = {"light_pis"}
 				self.welrod.damage_type = "pistol"
@@ -33566,6 +33613,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.welrod.hs_mult = 2.5
 				self.welrod.timers = deep_clone(self.ppk.timers)
 			end
+			--]]
 
 			if self.spectre_m4 then
 				self.spectre_m4.categories = { "smg" }

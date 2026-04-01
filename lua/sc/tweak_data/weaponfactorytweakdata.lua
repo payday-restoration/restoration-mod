@@ -2022,6 +2022,16 @@ end
 
 		--SECONDARIES
 
+			--WELROD
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_welrod", "resmod_welrod", function(self)
+					self.parts.wpn_fps_pis_welrod_b_standard.supported = true
+					self.parts.wpn_fps_pis_welrod_b_standard.stats = {
+						value = 0,
+						alert_size = -1,
+						suppression = 12
+					}
+				end)
+
 			--MAXIM 9
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function(self)
 
@@ -17972,6 +17982,18 @@ end
 					self.parts.wpn_fps_sho_boot_s_long.supported = true
 					self.parts.wpn_fps_sho_boot_s_long.stats = deep_clone(stocks.add_fixed_stats)
 					self.parts.wpn_fps_sho_boot_s_long.custom_stats = deep_clone(stocks.add_fixed_stats)
+					self.parts.wpn_fps_sho_boot_s_long.custom_stats.burst_fire = {
+						count = 1,
+						rof_mult = 1.8,
+						auto_burst = true,
+						no_ads = true,
+						slamfire = true,
+						spread_mult = 1.5,
+						ads_spread_mult = 18,
+						range_mult = 0.33,
+						recoil_mult = 1.5,
+						last_recoil_mult = 1.5
+					}
 
 					--Treated Body
 					self.parts.wpn_fps_sho_boot_body_exotic.pcs = {
@@ -20474,6 +20496,29 @@ end
 				"fire_mode_auto"
 			}
 			self.parts.wpn_fps_upg_i_autofire.forbids = {
+				"wpn_fps_upg_extra_mp_lock"
+			}
+
+			self.parts.wpn_fps_upg_i_burstfire.has_description = true
+			self.parts.wpn_fps_upg_i_burstfire.supported = true
+			self.parts.wpn_fps_upg_i_burstfire.stats = {
+				value = 5,
+				spread = 3,
+				recoil = -6
+			}
+			self.parts.wpn_fps_upg_i_burstfire.custom_stats = {
+				info_lock_burst = true,
+				burst_fire = {
+					count = 3,
+					delay = 0.25,
+					recoil_mult = 0.5,
+					last_recoil_mult = 1.1,
+					lock = true
+				},
+				rof_mult = 1.25
+			}
+			self.parts.wpn_fps_upg_i_burstfire.perks = nil
+			self.parts.wpn_fps_upg_i_burstfire.forbids = {
 				"wpn_fps_upg_extra_mp_lock"
 			}
 
@@ -42860,7 +42905,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
+		if self.parts.wpn_fps_snp_tf2sr_scope then
+			self.parts.wpn_fps_snp_tf2sr_scope.supported = true
+			self.parts.wpn_fps_snp_tf2sr_scope.stats = {
+				zoom = 40, base_zoom_off = 1
+			}
+		end
+
 		if self.parts.wpn_fps_gauss_scope_std then
+			self.parts.wpn_fps_gauss_scope_std.supported = true
 			self.parts.wpn_fps_gauss_scope_std.stats = {
 				zoom = 10, base_zoom_off = 1
 			}

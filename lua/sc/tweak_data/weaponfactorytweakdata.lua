@@ -20882,6 +20882,10 @@ end
 						translation = Vector3(0, 0, -1.15)
 					}
 
+					self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_welrod = {
+						translation = Vector3(0, 0, -0.4),
+						scale = 0.65
+					}
 					self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_g22c = {
 						translation = Vector3(0, 0, -0.45),
 						rotation = Rotation(0, -0.3, 0)
@@ -22695,7 +22699,7 @@ end
 			self.parts.wpn_fps_upg_o_rikt.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_rmr.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_o_rikt.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0,0,-0.65)
+					weap.translation = weap.translation + (Vector3(0,0,-0.65) * (weap.scale or 1))
 				end
 			end
 			self.parts.wpn_fps_upg_o_rikt.stance_mod.wpn_fps_pis_bigglock = {

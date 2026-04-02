@@ -761,6 +761,16 @@ function PlayerTweakData:_init_g3()
 	self.stances.g3.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	self.stances.g3.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
+local default_init_welrod = PlayerTweakData._init_welrod
+function PlayerTweakData:_init_welrod()
+	default_init_welrod(self)	
+	pivot_shoulder_translation = Vector3(8.44539, 46.3056, -4.95)
+	pivot_shoulder_rotation = Rotation(0.100026, -0.68821, 0.629665)
+	pivot_head_translation = Vector3(-0.02, 37.62, 0.1)
+	pivot_head_rotation = Rotation(0, 0, 0)
+	self.stances.welrod.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.welrod.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
 
 
 

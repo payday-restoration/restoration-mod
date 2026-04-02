@@ -2030,6 +2030,9 @@ end
 						alert_size = -1,
 						suppression = 12
 					}
+					self.parts.wpn_fps_pis_welrod_b_standard.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { a_obj = "a_fl_2" }
+					self.parts.wpn_fps_pis_welrod_b_standard.override.wpn_fps_upg_vg_ass_smg_stubby = { a_obj = "a_fl_2" }
+					self.parts.wpn_fps_pis_welrod_b_standard.override.wpn_fps_smg_schakal_vg_surefire = { a_obj = "a_fl_2" }
 
 					self.wpn_fps_pis_welrod.override = self.wpn_fps_pis_welrod.override or {}
 
@@ -2070,6 +2073,9 @@ end
 					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_ass_shak12_ns_suppressor")
 					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_ass_shak12_ns_muzzle")
 					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_ns_ass_filter")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 					self.wpn_fps_pis_welrod_npc.override = deep_clone(self.wpn_fps_pis_welrod.override)
 					self.wpn_fps_pis_welrod_npc.uses_parts = deep_clone(self.wpn_fps_pis_welrod.uses_parts)
@@ -53857,6 +53863,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	local felony = {
+		"wpn_fps_pis_welrod",
 		"wpn_fps_pis_maxim9",
 		"wpn_fps_pis_lemming",
 

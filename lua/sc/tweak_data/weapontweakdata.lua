@@ -25148,6 +25148,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 25
 				}
 				self.rem1858.stats_modifiers = nil
+				self.rem1858.panic_suppression_chance = 0.05
+				self.rem1858.use_unequip_swap = true
+				self.rem1858.swap_speed_multiplier = 0.63
+				self.rem1858.always_play_anims = true
+				self.rem1858.timers.reload_empty = 2.2
+				self.rem1858.timers.reload_exit_empty = 1.69
+				self.rem1858.timers.reload_not_empty = 2.2
+				self.rem1858.timers.reload_exit_not_empty = 1.69
+			end
+
 			if self.kuro556 then
 				self.kuro556.categories = { "assault_rifle" }
 				self.kuro556.recategorize = { "light_ar" }

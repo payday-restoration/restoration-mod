@@ -1569,7 +1569,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_pdw_gen_sc_desc"] = "#{skill_color}#무기 피해량의 75%가 방탄복을 관통하여 들어갑니다.##",
 		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#다수의 적, 방탄복, 방패, 타이탄 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#다수의 적, 방탄복, 방패, 타이탄 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
-		["bm_integral_suppressor_desc"] = "#{skill_color}#소음기가 일체형으로## 장착되어 있습니다.",
+		["bm_integral_suppressor_desc"] = "#{skill_color}#일체형 소음기##가 장착되어 있습니다.",
 
 		["bm_bow_sc_desc"] = "#{skill_color}#$BTN_FIRE## 키를 누르고 있으면 화살을 당기고, 놓는 순간 발사됩니다.\n화살을 최대한 당길수록 화살의 피해량과 속도가 증가합니다.\n\n#{skill_color}#$BTN_AIM## 키을 누르면 당겨진 화살를 놓습니다.\n\n화살은 주워서 회수할 수 있습니다.\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
 		["bm_bow_exp_sc_desc"] = "#{skill_color}#$BTN_FIRE## 키를 누르고 있으면 화살을 당기고, 놓는 순간 발사됩니다.\n화살을 최대한 당길수록 화살의 속도가 빨라집니다.\n\n#{skill_color}#$BTN_AIM## 키을 누르면 당겨진 화살를 놓습니다.\n\n#{risk}#화살은 목표에 적중 시 폭발하며, 피해는 화살과 폭발로 나뉩니다.##",
@@ -2642,11 +2642,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_raygun_o_waw_desc"] = "콜 오브 듀티: 블랙 옵스 II 이전과 같은 방식으로 기계식 조준기의 정렬을 변경합니다.",
 
 			--[[ PISTOLS ]]
+				["bm_welrod_sc_desc"] = "바이크 펌프처럼 생긴 이 잠입용 소형 권총은 홀로 있는 목표를 조용히 암살할 수 있습니다. #{skill_color}#일체형 소음기##가 장착되어 있습니다.",
 				--Gecko Pistol
-				["bm_tranq_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##",
-				["bm_tranq_maxim_auto_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
+				["bm_tranq_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음기##가 장착된 반자동 권총으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##",
+				["bm_tranq_maxim_auto_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음기##가 장착된 반자동 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##\n#{risk}#지속 시간은 사거리에 따라 감소합니다.##",
 
-				["bm_tranq_x_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 반자동 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##",
+				["bm_tranq_x_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음기##가 장착된 반자동 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 발사해 2초간 30의 피해를 가합니다.##",
 				--Igor (APS)
 				["bm_stech_sc_desc"] = "더 무겁고 발사 속도가 느린 기관권총으로, 휴대성이 떨어져 선호도가 떨어졌습니다. 무거운 무게 덕분에 은폐성을 희생한 대신 더 나은 반동 제어가 가능합니다.",
 				["bm_x_stech_sc_desc"] = "더 무겁고 발사 속도가 느린 기관권총으로, 휴대성이 떨어져 선호도가 떨어졌습니다. 무거운 무게 덕분에 은폐성을 희생한 대신 더 나은 반동 제어가 가능합니다.",

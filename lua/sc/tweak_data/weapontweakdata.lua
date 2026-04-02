@@ -25111,6 +25111,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.volcanic.stats_modifiers = nil
 				self.volcanic.panic_suppression_chance = 0.05
 				self.volcanic.always_play_anims = true
+				self.volcanic.weapon_movement_penalty = 1.14
 			end
 
 			if self.rem1858 then

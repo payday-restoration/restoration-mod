@@ -5908,7 +5908,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.welrod.desc_id = "bm_welrod_sc_desc"
 						self.welrod.has_description = true
 						self.welrod.fire_mode_data.fire_rate = 2.233
-						self.welrod.fire_rate_multiplier = 1.36
+						self.welrod.fire_rate_multiplier = 1.45
 						self.welrod.CLIP_AMMO_MAX = 8
 						self.welrod.kick = self.stat_info.kick_tables.right_recoil
 						self.welrod.kick_pattern = {
@@ -25073,6 +25073,81 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.volcanic then
+				self.volcanic.recategorize = { "light_pis" }
+				self.volcanic.damage_type = "pistol"
+				self.volcanic.kick = self.stat_info.kick_tables.vertical_kick
+				self.volcanic.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+				}
+				self.volcanic.tactical_reload = 1
+				self.volcanic.FIRE_MODE = "single"
+				self.volcanic.CAN_TOGGLE_FIREMODE = false
+				self.volcanic.BURST_FIRE = false
+				self.volcanic.fire_mode_data.fire_rate = 0.689
+				self.volcanic.CLIP_AMMO_MAX = 10
+				self.volcanic.AMMO_MAX = 0
+				self.volcanic.supported = true
+				self.volcanic.ads_speed = 0.100
+				self.volcanic.damage_falloff = {
+					start_dist = 900,
+					end_dist = 2400,
+					min_mult = 0.5
+				}
+				self.volcanic.stats = {
+					damage = 20,
+					spread = 51,
+					recoil = 91,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 32,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.volcanic.stats_modifiers = nil
+				self.volcanic.panic_suppression_chance = 0.05
+				self.volcanic.always_play_anims = true
+			end
+
+			if self.rem1858 then
+				self.rem1858.recategorize = {"heavy_pis", "handcannon"}
+				self.rem1858.has_description = true
+				self.rem1858.CLIP_AMMO_MAX = 6
+				self.rem1858.kick = self.stat_info.kick_tables.right_kick
+				self.rem1858.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{3, self.stat_info.kick_tables.right_recoil},
+					{4, self.stat_info.kick_tables.left_recoil}
+				}
+				self.rem1858.fire_mode_data.fire_rate = 0.5357142
+				self.rem1858.fire_rate_multiplier = 2.6785
+				self.rem1858.muzzleflash = "effects/payday2/particles/weapons/bessy_muzzle"
+				self.rem1858.supported = true
+				self.rem1858.ads_speed = 0.180
+				self.rem1858.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 3200,
+					min_mult = 0.333333
+				}
+				self.rem1858.stats = {
+					damage = 90,
+					spread = 82,
+					recoil = 45,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 28,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.rem1858.stats_modifiers = nil
 			if self.kuro556 then
 				self.kuro556.categories = { "assault_rifle" }
 				self.kuro556.recategorize = { "light_ar" }

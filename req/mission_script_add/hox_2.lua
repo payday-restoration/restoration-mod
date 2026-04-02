@@ -225,7 +225,7 @@ return {
 		-- Garage last minute line of defense 
 		restoration:gen_missionscript(400024, "garage_ambush", opts_garage_ambush),
 		-- smok 
-		restoration:gen_smokeandnades(400025, "Smoker", Vector3(-774, 5194, -900), Rotation(0, 0, -0), Smoke_bomb)
+		restoration:gen_smokeandnades(400037, "Smoker", Vector3(-774, 5194, -900), Rotation(0, 0, -0), Smoke_bomb)
 
     },
 }

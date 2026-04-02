@@ -14,10 +14,10 @@ return {
 		},
 	},
 	-- Spawn the weekend boys in final hacking phase (i hope this is the right element for it)
-	[101235] = {
+	[102114] = {
 		spawn_bravos = pro_job,
 		values = {
-			time = 10,
+			time = 20,
 		},
 	},
 	-- FBI Ready Teams
@@ -31,7 +31,7 @@ return {
 		on_executed = {
 			{id =  400024, delay = 0, },
 			-- smokebamb
-			{ id = 400025, delay = 0.3, },
+			{ id = 400037, delay = 0.3, },
 		},
 	},
 	[100109] = { -- Atrium, always active

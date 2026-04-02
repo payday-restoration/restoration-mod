@@ -5943,10 +5943,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.welrod.sounds.magazine_empty = nil
 						self.welrod.hs_mult = 3
 						self.welrod.always_play_anims = true
-						self.welrod.timers.reload_not_empty = 2.8
-						self.welrod.timers.reload_exit_not_empty = 0.5
-						self.welrod.timers.reload_empty = 2.8
-						self.welrod.timers.reload_exit_empty = 0.5
+						self.welrod.timers.reload_not_empty = 2
+						self.welrod.timers.reload_exit_not_empty = 1.14
+						self.welrod.timers.reload_empty = 2
+						self.welrod.timers.reload_exit_empty = 1.14
 
 					--Gecko M2 (Maxim 9)
 						self.maxim9.categories = {

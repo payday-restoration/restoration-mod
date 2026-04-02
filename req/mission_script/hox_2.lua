@@ -17,7 +17,7 @@ return {
 	[101235] = {
 		spawn_bravos = pro_job,
 		values = {
-			time = 30,
+			time = 10,
 		},
 	},
 	-- FBI Ready Teams
@@ -31,7 +31,7 @@ return {
 		on_executed = {
 			{id =  400024, delay = 0, },
 			-- smokebamb
-			{ id = 400025, delay = 3, },
+			{ id = 400025, delay = 0.3, },
 		},
 	},
 	[100109] = { -- Atrium, always active

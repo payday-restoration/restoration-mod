@@ -34,7 +34,7 @@ return {
 			},
             {
                 name = "seven_bucks", 
-                force = 4, 
+                force = 3, 
                 position = Vector3(12239, 4607, -2800),
             },
 		},

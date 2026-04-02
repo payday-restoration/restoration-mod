@@ -2030,6 +2030,49 @@ end
 						alert_size = -1,
 						suppression = 12
 					}
+
+					self.wpn_fps_pis_welrod.override = self.wpn_fps_pis_welrod.override or {}
+
+					self.wpn_fps_pis_welrod.override.wpn_fps_smg_cobray_ns_barrelextension = {
+						parent = "lower_receiver",
+						a_obj = "a_ns",
+						forbids = {
+							"wpn_upg_o_marksmansight_front",
+							"wpn_fps_pis_welrod_o_standard_front"
+						}
+					}
+					self.wpn_fps_pis_welrod.override.wpn_fps_ass_shak12_ns_muzzle = {
+						parent = "lower_receiver",
+						a_obj = "a_ns",
+						forbids = {
+							"wpn_upg_o_marksmansight_front",
+							"wpn_fps_pis_welrod_o_standard_front"
+						}
+					}
+					self.wpn_fps_pis_welrod.override.wpn_fps_ass_shak12_ns_suppressor = {
+						parent = "lower_receiver",
+						a_obj = "a_ns",
+						forbids = {
+							"wpn_upg_o_marksmansight_front",
+							"wpn_fps_pis_welrod_o_standard_front"
+						}
+					}
+					self.wpn_fps_pis_welrod.override.wpn_fps_upg_ns_ass_filter = {
+						parent = "lower_receiver",
+						a_obj = "a_ns",
+						forbids = {
+							"wpn_upg_o_marksmansight_front",
+							"wpn_fps_pis_welrod_o_standard_front"
+						}
+					}
+
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_smg_cobray_ns_barrelextension")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_ass_shak12_ns_suppressor")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_ass_shak12_ns_muzzle")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_ns_ass_filter")
+
+					self.wpn_fps_pis_welrod_npc.override = deep_clone(self.wpn_fps_pis_welrod.override)
+					self.wpn_fps_pis_welrod_npc.uses_parts = deep_clone(self.wpn_fps_pis_welrod.uses_parts)
 				end)
 
 			--MAXIM 9

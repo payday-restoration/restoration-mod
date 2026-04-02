@@ -5941,7 +5941,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.welrod.panic_suppression_chance = 0.05
 						self.welrod.weapon_movement_penalty = 1.14
 						self.welrod.sounds.magazine_empty = nil
-						self.welrod.hs_mult = 2
+						self.welrod.hs_mult = 3
 						self.welrod.always_play_anims = true
 						self.welrod.timers.reload_not_empty = 2.8
 						self.welrod.timers.reload_exit_not_empty = 0.5

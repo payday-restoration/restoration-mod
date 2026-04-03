@@ -2030,11 +2030,76 @@ end
 						alert_size = -1,
 						suppression = 12
 					}
+
+					self.parts.wpn_fps_pis_welrod_shitfuck = {
+						type = "shitfuck",
+						name_id = "none",
+						stats = {
+							value = 1
+						},
+						unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_pis_c96/wpn_fps_pis_c96"
+					}
+
 					self.parts.wpn_fps_pis_welrod_b_standard.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { a_obj = "a_fl_2" }
 					self.parts.wpn_fps_pis_welrod_b_standard.override.wpn_fps_upg_vg_ass_smg_stubby = { a_obj = "a_fl_2" }
 					self.parts.wpn_fps_pis_welrod_b_standard.override.wpn_fps_smg_schakal_vg_surefire = { a_obj = "a_fl_2" }
 
 					self.wpn_fps_pis_welrod.override = self.wpn_fps_pis_welrod.override or {}
+					self.wpn_fps_pis_welrod.adds = self.wpn_fps_pis_welrod.adds or {}
+
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_smg_cobray_ns_barrelextension")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_ass_shak12_ns_suppressor")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_ass_shak12_ns_muzzle")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_ns_ass_filter")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+
+					attachment_list = {
+						"wpn_fps_upg_o_specter",
+						"wpn_fps_upg_o_aimpoint",
+						"wpn_fps_upg_o_docter",
+						"wpn_fps_upg_o_eotech",
+						"wpn_fps_upg_o_t1micro",
+						"wpn_fps_upg_o_rx30",
+						"wpn_fps_upg_o_rx01",
+						"wpn_fps_upg_o_reflex",
+						"wpn_fps_upg_o_eotech_xps",
+						"wpn_fps_upg_o_cmore",
+						"wpn_fps_upg_o_aimpoint_2",
+						"wpn_fps_upg_o_acog",
+						"wpn_fps_upg_o_cs",
+						"wpn_fps_upg_o_spot",
+						"wpn_fps_upg_o_bmg",
+						"wpn_fps_upg_o_uh",
+						"wpn_fps_upg_o_fc1",
+						"wpn_fps_upg_o_tf90",
+						"wpn_fps_upg_o_poe",
+						"wpn_fps_upg_o_health",
+						"wpn_fps_upg_o_hamr",
+						"wpn_fps_upg_o_atibal",
+					}
+					for _, add_uses_parts in ipairs(attachment_list) do
+						table.insert(self.wpn_fps_pis_welrod.uses_parts, add_uses_parts)
+						self.wpn_fps_pis_welrod.adds[add_uses_parts] = {"wpn_fps_pis_welrod_shitfuck", "wpn_fps_smg_thompson_o_adapter"}
+						self.wpn_fps_pis_welrod.override[add_uses_parts] = {
+							parent = "shitfuck",
+							a_obj = "a_rds"
+						}
+					end
+
+					self.wpn_fps_pis_welrod.override.wpn_fps_upg_o_hamr_reddot = {
+						parent = "shitfuck",
+						a_obj = "a_rds"
+					}
+					self.wpn_fps_pis_welrod.override.wpn_fps_upg_o_atibal_reddot = {
+						parent = "shitfuck",
+						a_obj = "a_rds"
+					}
+					self.wpn_fps_pis_welrod.override.wpn_fps_smg_thompson_o_adapter = {
+						parent = "shitfuck",
+						a_obj = "a_rds"
+					}
 
 					self.wpn_fps_pis_welrod.override.wpn_fps_smg_cobray_ns_barrelextension = {
 						parent = "lower_receiver",
@@ -2069,14 +2134,8 @@ end
 						}
 					}
 
-					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_smg_cobray_ns_barrelextension")
-					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_ass_shak12_ns_suppressor")
-					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_ass_shak12_ns_muzzle")
-					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_ns_ass_filter")
-					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
-					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
-					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
+					self.wpn_fps_pis_welrod_npc.adds = deep_clone(self.wpn_fps_pis_welrod.adds)
 					self.wpn_fps_pis_welrod_npc.override = deep_clone(self.wpn_fps_pis_welrod.override)
 					self.wpn_fps_pis_welrod_npc.uses_parts = deep_clone(self.wpn_fps_pis_welrod.uses_parts)
 				end)
@@ -19448,6 +19507,9 @@ end
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_deagle = {
 						translation = Vector3(0, -14, -4.23),
 						rotation = Rotation(0, -0.5, 0)
+					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_welrod = {
+						translation = Vector3(0.02, -1.4, -4.466),
 					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_p90 = {

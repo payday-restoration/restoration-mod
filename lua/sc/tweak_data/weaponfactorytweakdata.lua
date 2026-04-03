@@ -44428,15 +44428,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_talon_battery.stats = { value = 10 }
 			self.parts.wpn_fps_pis_talon_battery.custom_stats = {
 				battery_mag = {
-					no_tracers = true, --this just disables the automatic application of starwars tracers
-					no_overheat_yell = true,
-					shut_up = true,
+					allow_anim_mults = true,
+					regen_ammo_time = 1,
+					regen_rate = 0.5,
+					can_reload = true,
 					allow_anims = true,
-					overheat_descope_delay = 0.2,
-					overheat_pen = 1.5,
-					regen_ammo_time = 1.5,
-					regen_rate = 25,
-					regen_rate_overheat = 25,
+					empty_no_regen = true,
+					mag_regen = true,
+					shut_up = true
 				}
 			}
 		end
@@ -44465,6 +44464,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					regen_ammo_time = 2,
 					regen_rate = 6.96,
 					can_reload = true,
+					allow_anims = true,
 					empty_no_regen = true,
 					mag_regen = true,
 					shut_up = true
@@ -44494,6 +44494,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					regen_ammo_time = 1.75, --delay to start regen 
 					regen_rate = 8.5, --speed of regen per second
 					can_reload = true,
+					allow_anims = true,
 					empty_no_regen = true, --no regen if mag is emptied
 					mag_regen = true --mag regens without using reserve ammo
 				}
@@ -44513,6 +44514,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					regen_ammo_time = 2.75, --delay to start regen 
 					regen_rate = 4, --speed of regen per second
 					can_reload = true,
+					allow_anims = true,
 					empty_no_regen = true, --no regen if mag is emptied
 					mag_regen = true --mag regens without using reserve ammo
 				}
@@ -44531,6 +44533,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					regen_ammo_time = 0.75, --delay to start regen 
 					regen_rate = 16.5, --speed of regen per second
 					can_reload = true,
+					allow_anims = true,
 					empty_no_regen = true, --no regen if mag is emptied
 					mag_regen = true --mag regens without using reserve ammo
 				}

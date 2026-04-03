@@ -43025,6 +43025,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_tf2sr_scope.stats = {
 				zoom = 40, base_zoom_off = 1
 			}
+
+			self.parts.wpn_fps_snp_tf2sr_receiver.supported = true
+			self.parts.wpn_fps_snp_tf2sr_receiver.custom_stats = {
+				battery_mag = {
+					no_tracers = true, --this just disables the automatic application of starwars tracers
+					no_overheat_yell = true,
+					no_charge_yell = true,
+					shut_up = true,
+					allow_anims = true,
+					overheat_descope_delay = 0.2,
+					overheat_pen = 1.4,
+					regen_ammo_time = 1,
+					regen_rate = 25,
+					regen_rate_overheat = 25,
+				}
+			}
 		end
 
 		if self.parts.wpn_fps_gauss_scope_std then
@@ -44411,15 +44427,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_talon_battery.supported = true
 			self.parts.wpn_fps_pis_talon_battery.stats = { value = 10 }
 			self.parts.wpn_fps_pis_talon_battery.custom_stats = {
-				starwars = {
+				battery_mag = {
 					no_tracers = true, --this just disables the automatic application of starwars tracers
-					allow_anim_mults = true,
-					regen_ammo_time = 1,
-					regen_rate = 0.5,
-					can_reload = true,
-					empty_no_regen = true,
-					mag_regen = true,
-					shut_up = true
+					no_overheat_yell = true,
+					shut_up = true,
+					allow_anims = true,
+					overheat_descope_delay = 0.2,
+					overheat_pen = 1.5,
+					regen_ammo_time = 1.5,
+					regen_rate = 25,
+					regen_rate_overheat = 25,
 				}
 			}
 		end
@@ -44442,7 +44459,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sickle_m_battery.adds = { "wpn_fps_hailstorm_sound_switch" }
 			self.parts.wpn_fps_sickle_m_battery.stats = { value = 10 }
 			self.parts.wpn_fps_sickle_m_battery.custom_stats = {
-				starwars = {
+				battery_mag = {
 					no_tracers = true, --this just disables the automatic application of starwars tracers
 					allow_anim_mults = true,
 					regen_ammo_time = 2,
@@ -44471,7 +44488,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				value = 0
 			}
 			self.parts.wpn_fps_scythe_m_heatsink_std.custom_stats = {
-				starwars = {
+				battery_mag = {
 					shut_up = true,
 					no_tracers = true,
 					regen_ammo_time = 1.75, --delay to start regen 
@@ -44490,7 +44507,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_scythe_m_heatsink_highcap.custom_stats = {
 				ads_speed_mult = 1.2,
-				starwars = {
+				battery_mag = {
 					shut_up = true,
 					no_tracers = true,
 					regen_ammo_time = 2.75, --delay to start regen 
@@ -44508,7 +44525,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = 2
 			}
 			self.parts.wpn_fps_scythe_m_heatsink_highdiss.custom_stats = {
-				starwars = {
+				battery_mag = {
 					shut_up = true,
 					no_tracers = true,
 					regen_ammo_time = 0.75, --delay to start regen 

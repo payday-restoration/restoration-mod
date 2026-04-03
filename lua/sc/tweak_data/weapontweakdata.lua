@@ -30276,6 +30276,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     TANGERINE'S MODS     ]]--
 
+			if self.groza4 then --Groza-2 uhhhhh Groza-4 uhhhh Groza-24 uhhh Kiefer Sutherland uhh Venom Snake
+				self.groza4.recategorize = { "light_ar" }
+				self.groza4.damage_type = "assault_rifle"
+				self.groza4.tactical_reload = 1
+				self.groza4.warsaw = true
+				self.groza4.AMMO_MAX = 0
+				self.groza4.CLIP_AMMO_MAX = 30
+				self.groza4.BURST_FIRE = false
+				self.groza4.fire_mode_data.fire_rate = 0.08571428571
+				self.groza4.kick = self.stat_info.kick_tables.even_recoil
+				self.groza4.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{4, self.stat_info.kick_tables.moderate_right_kick},
+					{9, self.stat_info.kick_tables.moderate_kick},
+					{12, self.stat_info.kick_tables.left_recoil},
+					{22, self.stat_info.kick_tables.moderate_left_kick}
+				}
+				self.groza4.supported = true
+				self.groza4.ads_speed = 0.300
+				self.groza4.damage_falloff = {
+					start_dist = 3100,
+					end_dist = 6500,
+					min_mult = 0.625
+				}
+				self.groza4.stats = {
+					damage = 24,
+					spread = 83,
+					recoil = 71,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 26,
+					suppression = 10,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 25
+				}
+				self.groza4.stats_modifiers = nil
+				self.groza4.panic_suppression_chance = 0.05
+				self.groza4.timers.reload_empty = 2.55
+				self.groza4.timers.reload_exit_empty = 0.95
+				self.groza4.timers.reload_not_empty = 1.95
+				self.groza4.timers.reload_exit_not_empty = 0.7
+			end
+
 			if self.scar20 then
 				self.scar20.recategorize = { "light_snp" }
 				self.scar20.categories = {
@@ -30985,6 +31031,60 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     HYLIE'S MODS     ]]--
+
+			if self.tf2sr then
+				self.tf2sr.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
+				}
+				self.tf2sr.categories = {
+					"snp",
+					"piss",
+					"bump_stat_50",
+					"keep_ammo_max",
+				}
+				self.tf2sr.recategorize = { "light_snp" }
+				self.tf2sr.damage_type = "anti_materiel"
+				self.tf2sr.ignore_damage_upgrades = nil
+				self.tf2sr.has_description = true
+				self.tf2sr.CLIP_AMMO_MAX = 1
+				self.tf2sr.AMMO_MAX = 25
+				self.tf2sr.fire_mode_data.fire_rate = 1.5
+				self.tf2sr.fire_rate_multiplier = nil
+				self.tf2sr.kick = self.stat_info.kick_tables.none
+				self.tf2sr.supported = true
+				self.tf2sr.ads_speed = 0.200
+				self.tf2sr.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 10000,
+					min_mult = 1
+				}
+				self.tf2sr.stats = {
+					damage = 25,
+					spread = 101,
+					recoil = 101,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 15,
+					suppression = 4,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.tf2sr.armor_piercing_chance = 1
+				self.tf2sr.stats_modifiers = nil
+				self.tf2sr.panic_suppression_chance = 0.05
+				self.tf2sr.reload_speed_multiplier = 1
+				self.tf2sr.no_reload_anims = true
+				self.tf2sr.always_play_anims = true
+				self.tf2sr.timers.reload_empty = 0.01
+				self.tf2sr.timers.reload_exit_empty = 0.01
+				self.tf2sr.timers.reload_not_empty = 0.01
+				self.tf2sr.timers.reload_exit_not_empty = 0.01
+			end
 
 			if self.gauss_gun then --Stalker Gauss Rifle
 				self.gauss_gun.categories = {
@@ -32203,6 +32303,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.coyote then
 				self.coyote.categories = {
 					"assault_rifle",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.coyote.recategorize = {"heavy_ar"}
@@ -32258,6 +32359,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.ar23 then
 				self.ar23.categories = {
 					"assault_rifle",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.ar23.recategorize = {"heavy_ar"}
@@ -32315,6 +32417,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.ar59 then
 				self.ar59.categories = {
 					"assault_rifle",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.ar59.recategorize = {"heavy_ar"}
@@ -32371,6 +32474,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.sta52 then
 				self.sta52.categories = {
 					"assault_rifle",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.sta52.recategorize = {"heavy_ar"}
@@ -32422,6 +32526,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.ar32 then
 				self.ar32.categories = {
 					"assault_rifle",
+					"keep_ammo_max",
 					"sweet_liberty",
 					"bump_stat_80"
 				}
@@ -32481,6 +32586,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"assault_rifle",
 					"dmr_h",
 					"dump_stat_40",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.r2.recategorize = {"dmr_ar"}
@@ -32541,6 +32647,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r72.categories = {
 					"assault_rifle",
 					"dmr_h",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.r72.recategorize = {"dmr_ar"}
@@ -32605,6 +32712,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br14.categories = {
 					"assault_rifle",
 					"dmr_l",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.br14.recategorize = {"dmr_ar"}
@@ -32658,6 +32766,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.glar21.categories = {
 					"assault_rifle",
 					"dmr_l",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.glar21.recategorize = {"dmr_ar"}
@@ -32714,6 +32823,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.glar21.timers.reload_exit_not_empty = 0.8
 					self.glar21_underbarrel.categories = {
 						"grenade_launcher",
+						"keep_ammo_max",
 						"sweet_liberty_gl"
 					}
 					self.glar21_underbarrel.upgrade_blocks = {
@@ -32751,6 +32861,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.reprimand then
 				self.reprimand.categories = {
 					"smg",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.reprimand.recategorize = {"heavy_smg"}
@@ -32811,6 +32922,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.sta11 then
 				self.sta11.categories = {
 					"smg",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.sta11.recategorize = {"heavy_smg"}
@@ -32863,6 +32975,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.categories = {
 					"wpn_special",
 					"assault_rifle_special",
+					"keep_ammo_max",
 					"sweet_liberty",
 					"battery"
 				}
@@ -32936,6 +33049,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.las5.categories = {
 					"wpn_special",
 					"assault_rifle_special",
+					"keep_ammo_max",
 					"sweet_liberty",
 					"sweet_liberty_las",
 					"battery"
@@ -33014,6 +33128,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"wpn_special",
 					"pistol_special",
 					"handcannon_special",
+					"keep_ammo_max",
 					"sweet_liberty",
 					"battery"
 				}
@@ -33078,6 +33193,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.r6 then
 				self.r6.categories = {
 					"snp",
+					"keep_ammo_max",
 					"sweet_liberty"
 				}
 				self.r6.recategorize = {"heavy_snp"}
@@ -33129,7 +33245,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.senator then
-				self.senator.categories = {"pistol", "handcannon", "sweet_liberty"}
+				self.senator.categories = {
+					"pistol",
+					"handcannon",
+					"keep_ammo_max",
+					"sweet_liberty"
+				}
 				self.senator.recategorize = { "heavy_pis", "handcannon" }
 				self.senator.damage_type = "handcannon"
 				self.senator.fire_mode_data.fire_rate = 0.3 * 1.6
@@ -37269,7 +37390,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 			(((weapon.has_underbarrel or has_dot) and 0.8) or 1) * 
 			((table.contains(weapon.categories, "minigun") and 3.3333) or ((table.contains(weapon.categories, "lmg") or true_shotgun) and 2) or 1)
 		damage_mul = (not exclude_calcs and (damage_mul * 2)) or damage_mul
-		if not table.contains(weapon.categories, "sweet_liberty") and not table.contains(weapon.categories, "sweet_liberty_gl") and not table.contains(weapon.categories, "nothing") then
+		if not table.contains(weapon.categories, "keep_ammo_max") and not table.contains(weapon.categories, "nothing") then
 			weapon.AMMO_MAX = math.ceil((3600 * (((weapon.use_data.selection_index == 2 or weapon.use_data.selection_index == 4) and 2) or 1) * total_dmg_mul)) / ((weapon.stats.damage * damage_mul) * hs_mult)
 		end
 	end
@@ -37338,7 +37459,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 	if id and weapon.AMMO_MAX and weapon.CLIP_AMMO_MAX 
 	and not table.contains(weapon.categories, "minigun") 
 	and not table.contains(weapon.categories, "saw") 
-	and not table.contains(weapon.categories, "sweet_liberty") 
+	and not table.contains(weapon.categories, "keep_ammo_max") 
 	then
 		--Try to provide at least one full reload from empty (up to 100 round mags)
 		if not table.contains(exclude_ammo, id) then

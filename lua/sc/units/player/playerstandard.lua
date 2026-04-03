@@ -1520,6 +1520,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							end
 
 							DelayedCalls:Add("clip_empty", 0.1, function ()
+								if not alive(self._unit) then return end
 								if not self.tased and not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self:_is_reloading() and weap_base:clip_empty() and not manual_reloads then
 									self:_start_action_reload_enter(t + 0.1)
 								end
@@ -3423,6 +3424,9 @@ function PlayerStandard:_regen_ammo(t, dt, slot, weap_base)
 		local empty_no_regen = has_sw.empty_no_regen
 		local mag_regen = has_sw.mag_regen
 		local shut_up = has_sw.shut_up
+		local no_overheat_yell = has_sw.no_overheat_yell
+		local no_charge_yell = has_sw.no_charge_yell
+		local overheat_descope_delay = has_sw.overheat_descope_delay
 
 		weap_base._regen_rate = weap_base._regen_rate or regen_rate
 		weap_base._regenerate_ammo_timer = weap_base._regenerate_ammo_timer or 0
@@ -3434,14 +3438,27 @@ function PlayerStandard:_regen_ammo(t, dt, slot, weap_base)
 		if weap_base:clip_empty() then
 			if active and self._shooting then
 				self:_check_stop_shooting()
-				self:_interupt_action_steelsight(t)
+				if overheat_descope_delay then
+					DelayedCalls:Add("delay_overheat_descope", overheat_descope_delay, function ()
+						if not alive(self._unit) then return end
+						self:_interupt_action_steelsight(t)
+						if self._steelsight_wanted ~= true and self._controller and self._controller:get_input_bool("secondary_attack") then
+							self._steelsight_wanted = true
+						end
+					end)
+				else
+					self:_interupt_action_steelsight(t)
+					if self._steelsight_wanted ~= true and self._controller and self._controller:get_input_bool("secondary_attack") then
+						self._steelsight_wanted = true
+					end
+				end
 			end
 			weap_base._regen_rate = (empty_no_regen and 0) or regen_rate_overheat
 			weap_base._overheat_pen = (empty_no_regen and 0) or overheat_pen
 		end
 		if weap_base._overheat_pen and weap_base._overheat_pen <= 0 then
 			--log( "COOL" )
-			if active and not empty_no_regen then
+			if active and not empty_no_regen and not no_overheat_yell then
 				weap_base._sound_fire:post_event(weap_base:weapon_tweak_data().sounds.charge_end or "wp_sentrygun_swap_ammo")
 			end
 			weap_base._regen_rate = regen_rate
@@ -3455,7 +3472,9 @@ function PlayerStandard:_regen_ammo(t, dt, slot, weap_base)
 				if not shut_up then
 					managers.player:local_player():sound():say("g29",false,nil)
 				end
-				weap_base._sound_fire:post_event("turret_cooldown")
+				if not no_overheat_yell then
+					weap_base._sound_fire:post_event("turret_cooldown")
+				end
 				weap_base._overheat_yell = true
 			end
 		end
@@ -3473,7 +3492,7 @@ function PlayerStandard:_regen_ammo(t, dt, slot, weap_base)
 				self:_add_ammo(dt * weap_base._regen_rate, mag_regen, weap_base, slot)
 				if not weap_base._recharge_yell then
 					weap_base._recharge_yell = true
-					if active then
+					if active and not no_charge_yell then
 						weap_base._sound_fire:post_event(weap_base:weapon_tweak_data().sounds.charge_start or "night_vision_on")
 					end
 				end
@@ -3896,7 +3915,7 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	self._ext_network:send("set_stance", 3, false, false)
 	managers.job:set_memory("cac_4", true)
 
-	--Compatibilty for Offyerocker's MA40 Overlay
+	--Compatibilty for Offyerocker's scope Overlays
 	if self._state_data.in_steelsight then
 		local weap_base = self._equipped_unit:base()
 		if weap_base and weap_base._scope_overlay then
@@ -3909,6 +3928,20 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 				managers.hud:set_ma40_overlay(weap_base._scope_overlay)
 				managers.hud:start_ma40_overlay()
 			end
+			if managers.hud.set_tf2sr_overlay then
+				managers.hud:set_tf2sr_overlay(weap_base._scope_overlay)
+				managers.hud:start_tf2sr_overlay()
+			end
+		end
+	end
+end
+
+local function set_viewmodel_visible(state,visible)
+	local fp = state._camera_unit
+	fp:set_visible(visible)
+	for unit_id, unit_entry in pairs(fp:spawn_manager():spawned_units()) do
+		if alive(unit_entry.unit) then
+			unit_entry.unit:set_visible(visible)
 		end
 	end
 end

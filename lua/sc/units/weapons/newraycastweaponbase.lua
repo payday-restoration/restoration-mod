@@ -1574,6 +1574,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 					self._starwars = deep_clone(stats.starwars)
 				end
 			end
+			if stats.battery_mag then
+				self._starwars = deep_clone(stats.battery_mag)
+			end
 			if stats.use_silenced_muzzleflash then
 				self._use_silenced_muzzleflash = true
 			end
@@ -1847,7 +1850,7 @@ function NewRaycastWeaponBase:should_reload_immediately()
 end
 
 function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_offset, set_offset2)
-	if anim ~= "deploy" and anim ~= "undeploy" and self._starwars and not self._starwars.can_reload then return end
+	if anim ~= "deploy" and anim ~= "undeploy" and self._starwars and (not self._starwars.can_reload and not self._starwars.allow_anims) then return end
 
 	if anim == "reload_slap" then
 		speed_multiplier = self._current_reload_speed_multiplier or self:reload_speed_multiplier()
@@ -1936,9 +1939,8 @@ end
 
 
 function NewRaycastWeaponBase:tweak_data_anim_offset(anim, offset, second_gun)
-	if self._starwars and not self._starwars.can_reload then
-		return
-	end
+	if self._starwars and (not self._starwars.can_reload and not self._starwars.allow_anims) then return end
+	
 	local unit_anim = anim
 	local data = tweak_data.weapon.factory[self._factory_id]
 	if second_gun and alive(self._second_gun) then

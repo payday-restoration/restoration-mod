@@ -617,6 +617,42 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.25
 	}
 	
+	-- Extra Cable ties from bots
+	self.values.team.crew_ai_cable_ties = {
+		{
+			2,
+			3,
+			4
+		}
+	}
+	
+	-- Cortex Bomb for Bots 
+	self.values.team.crew_ai_flashbang = {
+		{
+			360,
+			240,
+			120
+		}
+	}
+	
+	-- Counter Strike for Bots
+	self.values.team.crew_ai_counter_strike = {
+		{
+			360,
+			240,
+			120
+		}
+	}
+	
+	-- Shockproof for Bots
+	self.values.team.crew_ai_counter_tase = {
+		{
+			180,
+			120,
+			60
+		}
+	}	
+	
 	--Equipment--
 	--FAKS: Intended to offer on-demand burst healing that can save people from going down.
 	self.values.first_aid_kit.heal_amount = 15 --Heals 150 health on use.

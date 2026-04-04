@@ -8,7 +8,11 @@ local disable = {
 		enabled = false,
 	},
 }
-
+local middle_spawn = {
+	values = {
+		interval = 35,
+	},
+}
 return {
 	-- Disable endless assault
 	[102786] = disable,
@@ -116,4 +120,6 @@ return {
 			},
 		},
 	},
+	-- inrease interval of middle spawn 
+	[103218] = middle_spawn,
 }

@@ -833,7 +833,23 @@ local muzzle_device = {
 			alert_size = -1,
 			value = 5,
 			recoil = 6,
-			concealment = -3
+			concealment = -3,
+			ads_speed_mult = 1.075
+		},
+	-- +++Stab ---Con
+		muzz_rec3_c = {
+			value = 5,
+			recoil = 6,
+			concealment = -3,
+			ads_speed_mult = 1.075
+		},
+		supp_rec3_c = { --Extra Stab for Con
+			suppression = 12,
+			alert_size = -1,
+			value = 5,
+			recoil = 8,
+			concealment = -4,
+			ads_speed_mult = 1.1
 		},
 
 	-- +Acc/Range -Stab
@@ -921,7 +937,8 @@ local muzzle_device = {
 			spread = 3,
 			concealment = -3,
 			falloff_start_mult = 1.15,
-			falloff_end_mult = 1.15
+			falloff_end_mult = 1.15,
+			ads_speed_mult = 1.075
 		},
 
 	-- +Stab +Acc/Range --Con
@@ -940,9 +957,9 @@ local muzzle_device = {
 			value = 5,
 			spread = 1,
 			recoil = 4,
-			concealment = -2,
-			falloff_start_mult = 1.1,
-			falloff_end_mult = 1.1,
+			concealment = -3,
+			falloff_start_mult = 1.05,
+			falloff_end_mult = 1.05,
 			ads_speed_mult = 1.05
 		},
 	-- ++Stab ++Acc/Range ----Con
@@ -953,7 +970,7 @@ local muzzle_device = {
 			concealment = -4,
 			falloff_start_mult = 1.1,
 			falloff_end_mult = 1.1,
-			ads_speed_mult = 1.05
+			ads_speed_mult = 1.1
 		},
 		supp_dual2_c = { --Extra Acc/range for Con
 			suppression = 12,
@@ -964,7 +981,7 @@ local muzzle_device = {
 			concealment = -5,
 			falloff_start_mult = 1.15,
 			falloff_end_mult = 1.15,
-			ads_speed_mult = 1.1
+			ads_speed_mult = 1.125
 		}
 }
 
@@ -14788,8 +14805,8 @@ end
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 
 					self.parts.wpn_fps_snp_awp_ns_muzzle.supported = true
-					self.parts.wpn_fps_snp_awp_ns_muzzle.stats = deep_clone(muzzle_device.muzz_dual_c)
-					self.parts.wpn_fps_snp_awp_ns_muzzle.custom_stats = deep_clone(muzzle_device.muzz_dual_c)
+					self.parts.wpn_fps_snp_awp_ns_muzzle.stats = deep_clone(muzzle_device.muzz_rec3_c)
+					self.parts.wpn_fps_snp_awp_ns_muzzle.custom_stats = deep_clone(muzzle_device.muzz_rec3_c)
 
 					self.parts.wpn_fps_snp_awp_ns_suppressor.supported = true
 					self.parts.wpn_fps_snp_awp_ns_suppressor.has_description = true
@@ -28176,7 +28193,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25.supported = true
 				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25.stats = { value = 3, concealment = -1, extra_ammo = 5, reload = -3 }
-				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25.custom_stats = nil
+				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25.custom_stats = { ads_speed_mult = 1.05 }
 				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25_black.supported = { ads_speed_mult = 1.05 }
 				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25_black.stats = { value = 3, concealment = -1, extra_ammo = 5, reload = -3 }
 				self.parts.wpn_fps_ass_kuro762_magazine_l7awm_25_black.custom_stats = { ads_speed_mult = 1.05 }

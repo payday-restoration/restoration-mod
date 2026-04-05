@@ -3206,7 +3206,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_upg_a_dl_a_cyanide_desc"] = "시안화물이 첨가된 총알은 2차 세계대전 당시 독일의 소음기 장착 볼트 액션 소총에서 영감을 받았습니다.\n\n이 탄은 #{skill_color}#목표 적중 이후 5초 후에 350의 피해를 가합니다.##\n\n#{important_1}#더 이상 추가 헤드샷 데미지를 가하지 않으며, 적을 관통할 수 없습니다.##",
 					["bm_dl_cyanide_desc"] = "#{stats_positive}#몇 초 후에 큰 피해를 가히는 시안화물이 첨가된 탄환을 발사하고## #{skill_color}#방탄복, 방패, 얇은 벽을 관통할 수 있습니다.##",
 					--SVT-40
-					["bm_wp_upg_i_avt40_desc"] = "#{risk}#완전 자동 발사##가 가능한 개조된 내부 장치.\n그리고 당신은 M308이 반동 제어가 어려웠다고 생각할 것입니다.",
+					["bm_wp_upg_i_avt40_desc"] = "#{risk}#완전 자동 발사##가 가능하게 개조된 부품이 장착되어 있습니다.\n그리고 M308가 다루기 힘들다고 생각하겠죠.",
+					--Stalker Gauss Rifle
+					["bm_w_gauss_gun_desc"] = "이 저격 소총은 존에서 개발되었고 전자기 탄도 가속 시스템을 탑재하고 있으며 존에서만 사용합니다.\n\n#{skill_color}#다수의 적, 방탄복, 방패, 타이탄 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",					
 
 			--[[ SPECIALS ]]
 				--Saw

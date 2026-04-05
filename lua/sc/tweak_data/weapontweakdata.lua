@@ -31056,8 +31056,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tf2sr.supported = true
 				self.tf2sr.ads_speed = 0.200
 				self.tf2sr.damage_falloff = {
-					start_dist = 2000,
-					end_dist = 10000,
+					start_dist = 51200,
+					end_dist = 102400,
 					min_mult = 1
 				}
 				self.tf2sr.stats = {
@@ -31066,7 +31066,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 101,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 15,
+					concealment = 20,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -31079,6 +31079,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tf2sr.panic_suppression_chance = 0.05
 				self.tf2sr.reload_speed_multiplier = 1
 				self.tf2sr.no_reload_anims = true
+				self.tf2sr.no_falloff = true
+				self.tf2sr.descope_on_jump = true
 				self.tf2sr.always_play_anims = true
 				self.tf2sr.timers.reload_empty = 0.01
 				self.tf2sr.timers.reload_exit_empty = 0.01
@@ -31115,7 +31117,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 81,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 10,
+					concealment = 11,
 					suppression = 4,
 					alert_size = 2,
 					extra_ammo = 101,

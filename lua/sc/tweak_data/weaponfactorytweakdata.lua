@@ -43063,7 +43063,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		if self.parts.wpn_fps_gauss_scope_std then
 			self.parts.wpn_fps_gauss_scope_std.supported = true
 			self.parts.wpn_fps_gauss_scope_std.stats = {
-				zoom = 10, base_zoom_off = 1
+				zoom = 10
 			}
 			self.parts.wpn_fps_gauss_scope_std.stance_mod = {
 				wpn_fps_gauss = {

@@ -2860,6 +2860,18 @@ function PlayerStandard:_start_action_jump(t, action_start_data)
 		self._ext_camera:play_redirect(self:get_animation("stop_running"), self._equipped_unit:base():exit_run_speed_multiplier())
 	end
 
+	local weap_unit = self._equipped_unit
+	local weap_base = weap_unit and weap_unit:base()
+	local weap_tweak = weap_base and weap_base:weapon_tweak_data()
+	if weap_tweak and weap_tweak.descope_on_jump then
+		self:_interupt_action_steelsight(t)
+		self._descope_on_jump = true
+		self._d_scope_t = 0.2
+		if self._steelsight_wanted ~= true and self._controller and self._controller:get_input_bool("secondary_attack") then
+			self._steelsight_wanted = true
+		end
+	end
+
 	self:_interupt_action_running(t)
 
 	self._jump_t = t
@@ -3177,6 +3189,9 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	end
 
 	if not self._state_data.in_air then
+		if not self._d_scope_t and self._descope_on_jump then
+			self._descope_on_jump = nil
+		end
 		if self._hit_in_air then
 			self._hit_in_air = nil
 		end
@@ -3847,7 +3862,7 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		end
 	end
 	--Here!
-	if --[[managers.player._fat_fuck or--]] self:_changing_weapon() or self:_is_overheating() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._d_scope_t or (self._is_sliding and not self._equipped_unit:base():run_and_shoot_allowed()) then
+	if --[[managers.player._fat_fuck or--]] self:_changing_weapon() or self:_is_overheating() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._descope_on_jump or self._d_scope_t or (self._is_sliding and not self._equipped_unit:base():run_and_shoot_allowed()) then
 		--[[
 		if managers.player._fat_fuck and (self._fat_fuck_t or 0) < t and not self._steelsight_wanted then
 			self._fat_fuck_t = t + 2

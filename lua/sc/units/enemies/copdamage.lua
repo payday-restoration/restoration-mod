@@ -260,6 +260,13 @@ Hooks:PostHook(CopDamage, "_apply_damage_to_health", "res_apply_damage_to_health
 	end
 end)
 
+
+function CopDamage:is_head(body)
+	local head = self._head_body_name and body and (body:name() == self._ids_head_body_name or head_hitboxes[body:name():key()])
+
+	return head
+end
+
 function CopDamage:decay_buffs(t)
 	local decay_delay_t = tweak_data.medic.overheal_decay_delay_t or 5
 	

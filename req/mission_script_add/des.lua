@@ -94,7 +94,7 @@ local optsShield_01 = {
 	on_executed = { {id = 400013,  delay = 0, }, },
 }
 local optsShield_02 = {
-	enabled = false,
+	enabled = true,
 	enemy = shields,
 	on_executed = {
 		{ id = 400014,  delay = 0, },

@@ -15,16 +15,16 @@ local optsBesiegeDummyCloaker_2 = { -- (beseiege stuff)
 	enabled = true,
 }
 local optsPreferedCloakerAdd = {
-	spawn_groups = { 400016, 400017, 400018 , 400019 , 400020 , 400021  , 400022}, -- spawngroup 
+	spawn_groups = { 400014, 400015, 400016, 400017, 400018 }, -- spawngroup 
 	on_executed = {
-		{ id = 400024, delay = 0 }, -- so group 
+		{ id = 400020, delay = 0 }, -- so group 
 	},
 	enabled = true,
 }
 local optsAddCloakerHideGroup = { -- needed for mission script 
 	enabled = true,
 	on_executed = {
-		{ id = 400023, delay = 0 }, -- preferedadd 
+		{ id = 400019, delay = 0 }, -- preferedadd 
 	},
 }
 local optsCloakerHideGroup = { -- hide SOs
@@ -51,7 +51,7 @@ return {
 		-- hiders 
 		restoration:gen_so(400001, "cloaker_so_1", Vector3(-1526, 770, 1000), Rotation(98, -0, -0),  optsCloaker_Hide_SpotSO_4),
 		restoration:gen_so(400002, "claoker_so_2", Vector3(-683, 1217, 1000), Rotation(137, 0, -0),  optsCloaker_Hide_SpotSO_4),
-		restoration:gen_so(400003, "cloaker_so_3", Vector3(2300.4, -1338.28, 400), Rotation(76, -0, -0), optsCloaker_Hide_SpotSO_3),
+		restoration:gen_so(400003, "cloaker_so_3", Vector3(1704, -1342, 400), Rotation(0, 0, -0), optsCloaker_Hide_SpotSO_3),
 
 		restoration:gen_so(400004, "cloaker_so_4",  Vector3(-634.587, 2215.35, 400), Rotation(-145, 0, -0), optsCloaker_Hide_SpotSO_2),
 		restoration:gen_so(400005, "cloaker_so_5",  Vector3(-1387, -2291, 0), Rotation(-89, 0, -0), optsCloaker_Hide_SpotSO_2),
@@ -64,22 +64,19 @@ return {
 		restoration:gen_dummy(400011, "spook_03", Vector3(1697, -1951, 1475), Rotation(84, -0, -0),  optsBesiegeDummyCloaker_2),
 		restoration:gen_dummy(400012, "spook_04", Vector3(-638, -2260, 1556.21), Rotation(-88, 0, -0), optsBesiegeDummyCloaker_2),
 		
-		restoration:gen_dummy(400013, "spook_05", Vector3(1088, -3835, 3.5), Rotation(87, -0, -0),  optsBesiegeDummyCloaker_2),
-		restoration:gen_dummy(400014, "spook_06",  Vector3(-508, -3989, 3.5), Rotation(-96, 0, -0), optsBesiegeDummyCloaker_2),
-		restoration:gen_dummy(400015, "spook_07",  Vector3(-3896, -659, 4.5), Rotation(10, -0, -0), optsBesiegeDummyCloaker_2),
+		restoration:gen_dummy(400013, "spook_05",  Vector3(-508, -3989, 3.5), Rotation(-96, 0, -0), optsBesiegeDummyCloaker_2),
 		-- spawwngroups 
-		restoration:gen_spawngroup(400016, "moon_spook_spawngroup_01", {400009}, 0), -- ones in yellow are dummies 
-		restoration:gen_spawngroup(400017, "moon_spook_spawngroup_02", {400010}, 0),
+		restoration:gen_spawngroup(400014, "moon_spook_spawngroup_01", {400009}, 0), -- ones in yellow are dummies 
+		restoration:gen_spawngroup(400015, "moon_spook_spawngroup_02", {400010}, 0),
 
-		restoration:gen_spawngroup(400018, "moon_spook_spawngroup_03", {400011}, 0),
-		restoration:gen_spawngroup(400019, "moon_spook_spawngroup_04", {400012}, 0),
+		restoration:gen_spawngroup(400016, "moon_spook_spawngroup_03", {400011}, 0),
+		restoration:gen_spawngroup(400017, "moon_spook_spawngroup_04", {400012}, 0),
 
-		restoration:gen_spawngroup(400020, "moon_spook_spawngroup_05", {400013}, 0),
-		restoration:gen_spawngroup(400021, "moon_spook_spawngroup_06", {400014}, 0),
-		restoration:gen_spawngroup(400022, "moon_spook_spawngroup_07", {400015}, 0),
+		restoration:gen_spawngroup(400018, "moon_spook_spawngroup_05", {400013}, 0),
+		
 		-- the hider system 
-		restoration:gen_preferedadd(400023, "moon_spook_spawns", optsPreferedCloakerAdd),
-		restoration:gen_sogroup(400024, "moon_spook_spawngroup", hide_so_search_pos, Rotation(0, 0, 0), optsCloakerHideGroup),
-		restoration:gen_missionscript(400025, "moon_spook_spawn_global", optsAddCloakerHideGroup),
+		restoration:gen_preferedadd(400019, "moon_spook_spawns", optsPreferedCloakerAdd),
+		restoration:gen_sogroup(400020, "moon_spook_spawngroup", hide_so_search_pos, Rotation(0, 0, 0), optsCloakerHideGroup),
+		restoration:gen_missionscript(400021, "moon_spook_spawn_global", optsAddCloakerHideGroup),
 	},
 }

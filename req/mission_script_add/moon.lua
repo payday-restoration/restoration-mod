@@ -80,6 +80,6 @@ return {
 		-- the hider system 
 		restoration:gen_preferedadd(400023, "moon_spook_spawns", optsPreferedCloakerAdd),
 		restoration:gen_sogroup(400024, "moon_spook_spawngroup", hide_so_search_pos, Rotation(0, 0, 0), optsCloakerHideGroup),
-		restoration:gen_missionscript(400025, "moon_spook_spawn_global", optsCloakerHideGroup),
+		restoration:gen_missionscript(400025, "moon_spook_spawn_global", optsAddCloakerHideGroup),
 	},
 }

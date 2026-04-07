@@ -8,12 +8,12 @@ local cloaker_spawn = {
 }
 local entrance_spawns = {
 	values = {
-		interval = 25, 
+		interval = 15, 
 	},
 }
 local roof_spawns = {
 	values = {
-		interval = 35,
+		interval = 19,
 	},
 }
 return {

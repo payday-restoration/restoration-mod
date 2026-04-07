@@ -20,7 +20,11 @@ return {
 		{ id = 103742, remove = true }, -- remove vanilla cloaker hiding spots
 		},
 	},
+	-- the cloaker hiding thing
 	[100824] = {
+		values = {
+			trigger_times = 1,
+		},
 		on_executed = {
 			{ id = 400025, delay = 0}, 
 		},

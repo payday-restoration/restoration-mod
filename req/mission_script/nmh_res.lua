@@ -13,10 +13,17 @@ return {
     [103439] = {
         on_executed = {
             -- smokebomb
-            {id = 400006, delay = 0},
+            {id = 400006, delay = 0.3},
             -- Fishbowl men (will change if medic dozer gets added in roster)
             {id = 400001, delay = 0},
             {id = 400002, delay = 0},
+        },
+    },
+    -- Bravo six, going dark.
+    [104788] = {
+        spawn_bravos = pro_job, 
+        values = {
+            time = 20,
         },
     },
     -- Reinforce

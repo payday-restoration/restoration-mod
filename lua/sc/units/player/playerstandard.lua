@@ -3847,6 +3847,16 @@ function PlayerStandard:_toggle_gadget(weap_base)
 	end
 end
 
+local function set_viewmodel_visible(state,visible)
+	local fp = state._camera_unit
+	fp:set_visible(visible)
+	for unit_id, unit_entry in pairs(fp:spawn_manager():spawned_units()) do
+		if alive(unit_entry.unit) then
+			unit_entry.unit:set_visible(visible)
+		end
+	end
+end
+
 function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	if self._equipped_unit and self._equipped_unit:base() then
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier() or 1
@@ -3933,7 +3943,14 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	--Compatibilty for Offyerocker's scope Overlays
 	if self._state_data.in_steelsight then
 		local weap_base = self._equipped_unit:base()
+		if weap_base._do_tf2sr_overlay then
+			managers.hud:set_tf2sr_overlay(weap_base._scope_overlay)
+			managers.hud:start_tf2sr_overlay()
+		end
 		if weap_base and weap_base._scope_overlay then
+			if managers.hud.show_scope_overlay then
+				managers.hud:show_scope_overlay(weap_base:get_name_id(), weap_base._scope_overlay, nil, weap_base._scopeoverlay_fit)
+			end
 			if not weap_base._steelsight_weapon_visible and set_viewmodel_visible then
 				set_viewmodel_visible(self,false)
 				weap_base:set_visibility_state(false)
@@ -3943,23 +3960,10 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 				managers.hud:set_ma40_overlay(weap_base._scope_overlay)
 				managers.hud:start_ma40_overlay()
 			end
-			if managers.hud.set_tf2sr_overlay then
-				managers.hud:set_tf2sr_overlay(weap_base._scope_overlay)
-				managers.hud:start_tf2sr_overlay()
-			end
 		end
 	end
 end
 
-local function set_viewmodel_visible(state,visible)
-	local fp = state._camera_unit
-	fp:set_visible(visible)
-	for unit_id, unit_entry in pairs(fp:spawn_manager():spawned_units()) do
-		if alive(unit_entry.unit) then
-			unit_entry.unit:set_visible(visible)
-		end
-	end
-end
 
 --Check for being fully ADS'd
 function PlayerStandard:full_steelsight()
@@ -4009,6 +4013,9 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 		if restoration.Options:GetValue("WEAPONS/WEAPONANIMS/NoADSRecoilAnims") and self._shooting and not self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
 			self._ext_camera:play_redirect(self:get_animation("recoil_enter"))
 		end
+	end
+	if managers.hud.hide_scope_overlay then
+		managers.hud:hide_scope_overlay()
 	end
 end)
 

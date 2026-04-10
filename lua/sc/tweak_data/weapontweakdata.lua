@@ -26784,6 +26784,66 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_papa320.it_eNDs_today = 0.1
 			end
 
+			if self.aalpha12 then --MW2019 JAK-12 (AA-12)
+				self.aalpha12.categories = { 
+					"shotgun",
+					"shotgun_light",
+					"shotgun_light_semi"
+				}
+				self.aalpha12.recategorize = { "light_shot" }
+				self.aalpha12.damage_type = "shotgun"
+				self.aalpha12.damage_type_single_ray = "sniper"
+				self.aalpha12.fire_mode_data.fire_rate = 0.2
+				self.aalpha12.CLIP_AMMO_MAX = 8
+				self.aalpha12.AMMO_MAX = 0
+				self.aalpha12.kick = self.stat_info.kick_tables.even_recoil
+				self.aalpha12.kick_pattern = {
+					{0, self.stat_info.kick_tables.left_kick},
+					{2, self.stat_info.kick_tables.right_kick},
+					{6, self.stat_info.kick_tables.left_kick},
+					{10, self.stat_info.kick_tables.moderate_kick}
+				}
+				self.aalpha12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.aalpha12.FIRE_MODE = "auto"
+				self.aalpha12.CAN_TOGGLE_FIREMODE = false
+				self.aalpha12.rays = 8
+				self.aalpha12.supported = true
+				self.aalpha12.ads_speed = 0.320
+				self.aalpha12.damage_falloff = {
+					start_dist = 300,
+					end_dist = 2300,
+					min_mult = 0.15
+				}
+				self.aalpha12.stats = {
+					damage = 120,
+					spread = 39,
+					recoil = 69,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 22,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.aalpha12.stats_modifiers = nil
+				self.aalpha12.sounds.use_fix = nil
+				self.aalpha12.sounds.stop_fire = "saiga_stop"
+				self.aalpha12.panic_suppression_chance = 0.05
+				self.aalpha12.lock_slide = true
+				self.aalpha12.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.aalpha12.sounds.spin_start = "wp_mac10_lever_pull"
+				self.aalpha12.spin_up_shoot = true
+				self.aalpha12.spin_up_t = 0.05
+				self.aalpha12.spin_down_t = 0.00000001
+				self.aalpha12.timers.reload_empty = 2
+				self.aalpha12.timers.reload_exit_empty = 1.4
+				self.aalpha12.timers.reload_not_empty = 1.7
+				self.aalpha12.timers.reload_exit_not_empty = 1
+			end
+
 			if self.m6d then --RJC9000 and Offyerrocker's M6D
 				self.m6d.categories = {"pistol", "handcannon", "no_shake", "samurai"}
 				self.m6d.recategorize = { "heavy_pis", "handcannon" }
@@ -28433,7 +28493,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.uncle12 then --BO6 ASG-89 (USAS-12)
-				self.uncle12.categories = { "shotgun" }
+				self.uncle12.categories = { "shotgun", "shotgun_light", "shotgun_light_semi" }
 				self.uncle12.recategorize = { "light_shot" }
 				self.uncle12.damage_type = "shotgun"
 				self.uncle12.damage_type_single_ray = "sniper"

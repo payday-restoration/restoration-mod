@@ -28124,6 +28124,101 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ RJC9000'S MODS ]]
 
+		if self.parts.wpn_fps_shot_aalpha12_bolt then
+			self.parts.wpn_fps_shot_aalpha12_choke.pcs = nil
+			self.parts.wpn_fps_shot_aalpha12_choke.supported = true
+			self.parts.wpn_fps_shot_aalpha12_choke.stats = {value = 0}
+			self.parts.wpn_fps_shot_aalpha12_choke.custom_stats = nil
+			self.parts.wpn_fps_shot_aalpha12_choke_heavy.pcs = nil
+			self.parts.wpn_fps_shot_aalpha12_choke_heavy.supported = true
+			self.parts.wpn_fps_shot_aalpha12_choke_heavy.stats = {value = 0}
+			self.parts.wpn_fps_shot_aalpha12_choke_heavy.custom_stats = nil
+			self.parts.wpn_fps_shot_aalpha12_choke_long.pcs = nil
+			self.parts.wpn_fps_shot_aalpha12_choke_long.supported = true
+			self.parts.wpn_fps_shot_aalpha12_choke_long.stats = {value = 0}
+			self.parts.wpn_fps_shot_aalpha12_choke_long.custom_stats = nil
+			self.parts.wpn_fps_shot_aalpha12_magazine.pcs = nil
+			self.parts.wpn_fps_shot_aalpha12_magazine.supported = true
+			self.parts.wpn_fps_shot_aalpha12_magazine.stats = {value = 0}
+			self.parts.wpn_fps_shot_aalpha12_magazine.custom_stats = nil
+			self.parts.wpn_fps_shot_aalpha12_magazine.pcs = nil
+			self.parts.wpn_fps_shot_aalpha12_stock.supported = true
+			self.parts.wpn_fps_shot_aalpha12_stock.stats = {value = 0}
+			self.parts.wpn_fps_shot_aalpha12_stock.custom_stats = nil
+
+			self.parts.wpn_fps_shot_aalpha12_barrel_short.supported = true
+			self.parts.wpn_fps_shot_aalpha12_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_shot_aalpha12_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_shot_aalpha12_barrel_heavy.supported = true
+			self.parts.wpn_fps_shot_aalpha12_barrel_heavy.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_shot_aalpha12_barrel_heavy.custom_stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_shot_aalpha12_barrel_long.supported = true
+			self.parts.wpn_fps_shot_aalpha12_barrel_long.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_shot_aalpha12_barrel_long.custom_stats = deep_clone(barrels.long_b3_stats)
+
+			self.parts.wpn_fps_shot_aalpha12_suppressor.supported = true
+			self.parts.wpn_fps_shot_aalpha12_suppressor.stats = deep_clone(muzzle_device.supp_acc2_c)
+			self.parts.wpn_fps_shot_aalpha12_suppressor.custom_stats = deep_clone(muzzle_device.supp_acc2_c)
+
+			self.parts.wpn_fps_shot_aalpha12_stock_light.supported = true
+			self.parts.wpn_fps_shot_aalpha12_stock_light.stats = deep_clone(stocks.adj_acc_stats)
+			self.parts.wpn_fps_shot_aalpha12_stock_light.custom_stats = deep_clone(stocks.adj_acc_stats)
+			self.parts.wpn_fps_shot_aalpha12_stock_stable.supported = true
+			self.parts.wpn_fps_shot_aalpha12_stock_stable.stats = deep_clone(stocks.adj_rec_stats)
+			self.parts.wpn_fps_shot_aalpha12_stock_stable.custom_stats = deep_clone(stocks.adj_rec_stats)
+			self.parts.wpn_fps_shot_aalpha12_stock_heavy.supported = true
+			self.parts.wpn_fps_shot_aalpha12_stock_heavy.stats = deep_clone(stocks.adj_to_fold_stats)
+			self.parts.wpn_fps_shot_aalpha12_stock_heavy.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+
+			self.parts.wpn_fps_shot_aalpha12_grip_tape.supported = true
+			self.parts.wpn_fps_shot_aalpha12_grip_tape.stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_shot_aalpha12_grip_tape.custom_stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_shot_aalpha12_grip_tape_02.supported = true
+			self.parts.wpn_fps_shot_aalpha12_grip_tape_02.stats = {
+				value = 4,
+				spread = 1,
+				recoil = -2,
+			}
+			self.parts.wpn_fps_shot_aalpha12_grip_tape_03.supported = true
+			self.parts.wpn_fps_shot_aalpha12_grip_tape_03.stats = {
+				value = 2,
+				recoil = 2,
+				spread = -1
+			}
+
+			--20 Drum
+			self.parts.wpn_fps_shot_aalpha12_magazine_xmaglarge.supported = true
+			self.parts.wpn_fps_shot_aalpha12_magazine_xmaglarge.custom_stats = {
+				ads_speed_mult = 1.15,
+			}
+			self.parts.wpn_fps_shot_aalpha12_magazine_xmaglarge.stats = {
+				value = 1,
+				extra_ammo = 12,
+				reload = -6,
+				concealment = -4
+			}
+			--32 Drum
+			self.parts.wpn_fps_shot_aalpha12_magazine_drum.supported = true
+			self.parts.wpn_fps_shot_aalpha12_magazine_drum.custom_stats = {
+				ads_speed_mult = 1.225,
+			}
+			self.parts.wpn_fps_shot_aalpha12_magazine_drum.stats = {
+				value = 1,
+				extra_ammo = 24,
+				reload = -8,
+				concealment = -6
+			}
+
+			self.wpn_fps_shot_aalpha12.override = self.wpn_fps_shot_aalpha12.override or {}
+			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
+			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)
+			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override)
+			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_semi_override)
+			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override)
+			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override)
+			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
+		end
+
 		if self.parts.wpn_fps_ass_kuro556_bolt then
 			self.parts.wpn_fps_ass_kuro556_flash_hider.supported = true
 			self.parts.wpn_fps_ass_kuro556_flash_hider.stats = { value = 0 }

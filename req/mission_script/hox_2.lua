@@ -14,7 +14,7 @@ return {
 		},
 	},
 	-- Spawn the weekend boys in final hacking phase (i hope this is the right element for it)
-	[102114] = {
+	[104489] = {
 		spawn_bravos = pro_job,
 		values = {
 			time = 10,

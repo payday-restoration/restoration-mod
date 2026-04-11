@@ -21,23 +21,22 @@ local optsDefend_SO = {
 }
 local optsBulldozer_01 = {
     spawn_action = "e_sp_kick_enter_bulldozer",
-    enabled = false,
+    enabled = true,
     enemy = tank_skull,
-    on_executed = {
-        { id = 400003, delay = 0}
-    },
+    on_executed = { { id = 400003, delay = 0} },
 }
 local optsBulldozer_02 = {
     spawn_action = "e_sp_kick_enter_bulldozer",
-    enabled = false,
+    enabled = true,
     enemy = green_dozer,
-    on_executed = {
-        { id = 400004, delay = 0}
-    },
+    on_executed = { { id = 400004, delay = 0}  },
 }
-local opts_enable_dozers = {
+local opts_blocker_dozers = {
 	enabled = death_wish_above,
-	elements = { 400001, 400002, 400006 },
+	on_executed = {
+        { id = 400001, delay = 0},
+        { id = 400002, delay = 0},
+    },
 	toggle = "on",
 }
 return {
@@ -49,7 +48,7 @@ return {
         restoration:gen_so(400003, "dozer_blocker_01", Vector3(-2191, 2873, 0.382), Rotation(-88, 0, -0), optsDefend_SO),
         restoration:gen_so(400004, "dozer_blocker_02", Vector3(-2187.72, 2779.06, 0.382), Rotation(-88, 0, -0), optsDefend_SO),
 
-        restoration:gen_toggleelement(400005, "enable_dozers", opts_enable_dozers),
+        restoration:gen_missionscript(400005, "blocker_dozers", opts_blocker_dozers),
         restoration:gen_smokeandnades(400006, "Smoker", Vector3(-2168, 2834, 0.382), Rotation(0, 0, -0), Smoke_bomb)
 
     },

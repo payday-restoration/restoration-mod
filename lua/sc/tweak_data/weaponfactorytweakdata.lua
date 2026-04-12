@@ -28124,6 +28124,75 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ RJC9000'S MODS ]]
 
+		if self.parts.wpn_fps_ass_noobtube_so_mw2 then
+
+			self.parts.wpn_fps_ass_noobtube_so_mw2.custom_stats = { rof_mult = 1.07125 }
+			self.parts.wpn_fps_ass_noobtube_so_mw2.adds = {
+				"wpn_fps_ass_noobtube_so_mw2_snd"
+			}
+			self.parts.wpn_fps_ass_noobtube_so_mw2_snd = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				a_obj = "a_body",
+				type = "ammo",
+				name_id = "bm_wp_morita_hawkeye_sounds",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				internal_part = true,
+				no_cull = true,
+				stats = {
+					value = 5
+				},
+				custom_stats = {
+					sounds = {
+						fire = "noobtube_fire_nostalgic",
+						fire_single = "noobtube_fire_nostalgic",
+						fire_auto = "noobtube_fire_nostalgic"
+					}
+				}
+			}
+
+			self.parts.wpn_fps_ass_noobtube_so_mw3.custom_stats = { rof_mult = 0.98625 }
+			self.parts.wpn_fps_ass_noobtube_so_mw3.adds = {
+				"wpn_fps_ass_noobtube_so_mw3_snd"
+			}
+			self.parts.wpn_fps_ass_noobtube_so_mw3_snd = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				a_obj = "a_body",
+				type = "ammo",
+				name_id = "bm_wp_morita_hawkeye_sounds",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				internal_part = true,
+				no_cull = true,
+				stats = {
+					value = 5
+				},
+				custom_stats = {
+					sounds = {
+						fire = "noobtube_fire_mw3",
+						fire_single = "noobtube_fire_mw3",
+						fire_auto = "noobtube_fire_mw3"
+					}
+				}
+			}
+			
+			local weapons_to_add = {
+				"wpn_fps_ass_noobtube_vg",
+				"wpn_fps_ass_noobtube"
+			}
+			for _, weapon_id in pairs(weapons_to_add) do
+				if self[weapon_id] then
+					local weapon_uses_parts_list = {
+					"wpn_fps_ass_noobtube_so_mw2",
+					"wpn_fps_ass_noobtube_so_mw3"
+					}
+					for _,part_id in ipairs( weapon_uses_parts_list ) do
+						table.insert( self[weapon_id].uses_parts, part_id )
+					end
+					self[weapon_id .. "_npc"].uses_parts = deep_clone( self[weapon_id].uses_parts )
+				end
+			end
+
+		end
+
 		if self.parts.wpn_fps_shot_aalpha12_bolt then
 			self.parts.wpn_fps_shot_aalpha12_choke.pcs = nil
 			self.parts.wpn_fps_shot_aalpha12_choke.supported = true

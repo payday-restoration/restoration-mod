@@ -190,6 +190,7 @@
 	</tweak>
 
 	<!-- Testing -->
+	<!--
 	<tweak version="2" name="settings/network" extension="network_settings">
 		<search>
 			<network/>
@@ -212,4 +213,5 @@
 			<attr name="max" value="512"/>
 		</target>
 	</tweak>
+	-->
 </tweaks>

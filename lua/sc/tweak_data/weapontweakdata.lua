@@ -25073,6 +25073,98 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 
+			if self.noobtube_vg then
+				self.noobtube_vg.recategorize = { "light_ar" }
+				self.noobtube_vg.damage_type = "assault_rifle"
+				self.noobtube_vg.nato = true
+				self.noobtube_vg.CLIP_AMMO_MAX = 30
+				self.noobtube_vg.fire_mode_data.fire_rate = 0.075
+				self.noobtube_vg.tactical_reload = 1
+				self.noobtube_vg.AMMO_MAX = 0
+				self.noobtube_vg.kick = self.stat_info.kick_tables.even_recoil
+				self.noobtube_vg.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{4, self.stat_info.kick_tables.even_recoil},
+				}
+				self.noobtube_vg.BURST_FIRE = false
+				self.noobtube_vg.supported = true
+				self.noobtube_vg.ads_speed = 0.260
+				self.noobtube_vg.damage_falloff = {
+					start_dist = 3000,
+					end_dist = 4600,
+					min_mult = 0.5
+				}
+				self.noobtube_vg.stats = {
+					damage = 24,
+					spread = 81,
+					recoil = 89,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.noobtube_vg.stats_modifiers = nil
+				self.noobtube_vg.lock_slide = true
+				self.noobtube_vg.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.noobtube_vg.panic_suppression_chance = 0.05
+				self.noobtube_vg.reload_speed_multiplier = 0.85
+				self.noobtube_vg.timers.reload_not_empty = 1.2
+				self.noobtube_vg.timers.reload_exit_not_empty = 0.83
+				self.noobtube_vg.timers.reload_empty = 1.2
+				self.noobtube_vg.timers.reload_exit_empty = 1.13
+			end
+			if self.noobtube then
+				self.noobtube.recategorize = { "light_ar" }
+				self.noobtube.damage_type = "assault_rifle"
+				self.noobtube.nato = true
+				self.noobtube.has_underbarrel = true
+				self.noobtube.CLIP_AMMO_MAX = 30
+				self.noobtube.fire_mode_data.fire_rate = 0.075
+				self.noobtube.tactical_reload = 1
+				self.noobtube.AMMO_MAX = 0
+				self.noobtube.kick = self.stat_info.kick_tables.even_recoil
+				self.noobtube.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{4, self.stat_info.kick_tables.even_recoil},
+				}
+				self.noobtube.BURST_FIRE = false
+				self.noobtube.supported = true
+				self.noobtube.ads_speed = 0.260
+				self.noobtube.damage_falloff = {
+					start_dist = 3000,
+					end_dist = 4600,
+					min_mult = 0.5
+				}
+				self.noobtube.stats = {
+					damage = 24,
+					spread = 81,
+					recoil = 89,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 21,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.noobtube.stats_modifiers = nil
+				self.noobtube.lock_slide = true
+				self.noobtube.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.noobtube.panic_suppression_chance = 0.05
+				self.noobtube.reload_speed_multiplier = 0.85
+				self.noobtube.timers.reload_not_empty = 1.85
+				self.noobtube.timers.reload_exit_not_empty = 0.9
+				self.noobtube.timers.reload_empty = 2.4
+				self.noobtube.timers.reload_exit_empty = 0.6
+			end
+
 			if self.volcanic then
 				self.volcanic.recategorize = { "light_pis" }
 				self.volcanic.damage_type = "pistol"
@@ -37523,14 +37615,14 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 	and not table.contains(weapon.categories, "saw") 
 	and not table.contains(weapon.categories, "keep_ammo_max") 
 	then
-		--Try to provide at least one full reload from empty (up to 100 round mags)
+		--Try to provide at least one full reload from empty (up to 100 rounds per default mag)
 		if not table.contains(exclude_ammo, id) then
 			local mag_clamp = math.min(100, weapon.CLIP_AMMO_MAX / ((table.contains(weapon.categories, "akimbo") and 2) or 1) )
 			if mag_clamp * 2 > weapon.AMMO_MAX then
-				weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * (weapon.AMMO_MAX / (mag_clamp * 2))
-				weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * (weapon.AMMO_MAX / (mag_clamp * 2))
-				weapon.AMMO_MAX = mag_clamp * 2
-				weapon.stats.concealment = weapon.stats.concealment - 1
+				--weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * (weapon.AMMO_MAX / (mag_clamp * 2))
+				--weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * (weapon.AMMO_MAX / (mag_clamp * 2))
+				--weapon.AMMO_MAX = mag_clamp * 2
+				--weapon.stats.concealment = weapon.stats.concealment - 1
 			end
 		end
 	end

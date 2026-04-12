@@ -12,10 +12,10 @@ return {
         },
     },
     -- Bravo six, going dark.
-    [104788] = {
+    [103456] = {
         spawn_bravos = pro_job, 
         values = {
-            time = 10,
+            time = 5,
         },
     },
     -- Reinforce

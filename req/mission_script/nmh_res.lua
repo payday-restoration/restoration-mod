@@ -11,13 +11,6 @@ return {
             {id = 400006, delay = 0.3},
         },
     },
-    -- Bravo six, going dark.
-    [103456] = {
-        spawn_bravos = pro_job, 
-        values = {
-            time = 5,
-        },
-    },
     -- Reinforce
     [102325] = { -- when the ICU doors open 
 

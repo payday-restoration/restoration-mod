@@ -13,7 +13,7 @@
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/secret_service_nm"/>
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/secret_service_df"/>
     </material>
-    <material name="mtr_secret_service_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" uni version="2" >
+    <material name="mtr_secret_service_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2" >
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/secret_service_nm" mip="4"/>
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/secret_service_df" mip="4"/>
     </material>

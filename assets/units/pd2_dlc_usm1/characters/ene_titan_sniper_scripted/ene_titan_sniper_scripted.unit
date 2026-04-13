@@ -13,9 +13,9 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true"/>
-			<var name="_tweak_table" value="marshal_marksman"/>
+			<var name="_tweak_table" value="marshal_marksman_scripted"/>
 			<var name="_default_weapon_id" value="dmr"/>
-            <var name="_stats_name" value="marshal_marksman_scripted"/>
+            <var name="_stats_name" value="marshal_marksman"/>
 		</extension>
 		<extension name="spawn_manager" class="ManageSpawnedUnits" >
 			<var name="_char_joint_names" type="table" >	

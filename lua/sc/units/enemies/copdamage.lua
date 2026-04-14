@@ -260,7 +260,6 @@ Hooks:PostHook(CopDamage, "_apply_damage_to_health", "res_apply_damage_to_health
 	end
 end)
 
-
 function CopDamage:is_head(body)
 	local head = self._head_body_name and body and (body:name() == self._ids_head_body_name or head_hitboxes[body:name():key()])
 

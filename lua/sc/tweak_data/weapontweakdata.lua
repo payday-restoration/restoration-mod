@@ -25090,14 +25090,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.noobtube_vg.supported = true
 				self.noobtube_vg.ads_speed = 0.260
 				self.noobtube_vg.damage_falloff = {
-					start_dist = 3000,
-					end_dist = 4600,
+					start_dist = 3800,
+					end_dist = 5000,
 					min_mult = 0.5
 				}
 				self.noobtube_vg.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 24,
@@ -25136,14 +25136,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.noobtube.supported = true
 				self.noobtube.ads_speed = 0.260
 				self.noobtube.damage_falloff = {
-					start_dist = 3000,
-					end_dist = 4600,
+					start_dist = 3800,
+					end_dist = 5000,
 					min_mult = 0.5
 				}
 				self.noobtube.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 21,

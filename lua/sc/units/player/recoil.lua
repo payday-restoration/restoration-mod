@@ -115,7 +115,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 			local step_mod = ((in_sight or in_crouch) and 125) or (in_run and 175) or 150
 			local speed_mult = (current_speed / step_mod) * 0.44 --it just works lmao???
 			local run_mul = (in_slide and 0 or 1) * speed_mult --in_run and 1.45 or 1 --* ((in_sight and 0.8) or 1)
-			local mov_mul = (enable_bob_ads and in_sight and 0.15) or (enable_bob and not in_sight and 1) or 0
+			local mov_mul = (enable_bob_ads and in_sight and 0.15) or (enable_bob and not in_sight and 0.7) or 0
 
 			local rot_mul = mov_mul * 0.5
 			mrotation.slerp(mov_ang, mov_ang, not in_sight and in_walk and Rotation(math.cos(getWaveValue(64 * run_mul, 1.5)) * rot_mul, math.sin(getWaveValue(128 * run_mul, -2.5)) * rot_mul, math.sin(getWaveValue(64 * run_mul, 1)) * rot_mul) or Rotation(), mov_lp_speed)

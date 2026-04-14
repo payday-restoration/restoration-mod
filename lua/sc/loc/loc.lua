@@ -3121,6 +3121,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_mod3_sc_desc"] = "Special modification of the Valkyria with improved ergonomics and shortened dimensions, seeing notable use in armed conflicts between PMCs in areas near the Russian coast of the Gulf of Finland.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#deals 25% of its damage through body armor.##",
 					-- Malyuk
 					["bm_wp_wpn_fps_ass_malima_xmag"] = "45 Round Mag",
+					-- MW2 (2009 M4)
+					["bm_wp_wpn_fps_ass_noobtube_so_mw2"] = "MW2 (2009) Bolt",
+					["bm_wp_wpn_fps_ass_noobtube_so_mw3"] = "MW3 (2011) Bolt",
 
 			--[[ DMRs ]]
 				--Little Friend

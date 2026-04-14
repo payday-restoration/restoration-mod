@@ -28125,7 +28125,65 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	--[[ RJC9000'S MODS ]]
 
 		if self.parts.wpn_fps_ass_noobtube_so_mw2 then
+			self.parts.wpn_fps_ass_noobtube_flash_hider.supported = true
+			self.parts.wpn_fps_ass_noobtube_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_noobtube_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_noobtube_flash_hider.perks = nil
+			self.parts.wpn_fps_ass_noobtube_handguard.supported = true
+			self.parts.wpn_fps_ass_noobtube_handguard.stats = { value = 0 }
+			self.parts.wpn_fps_ass_noobtube_handguard.custom_stats = nil
+			self.parts.wpn_fps_ass_noobtube_stock.supported = true
+			self.parts.wpn_fps_ass_noobtube_stock.stats = { value = 0 }
+			self.parts.wpn_fps_ass_noobtube_stock.custom_stats = nil
+			self.parts.wpn_fps_ass_noobtube_stock_black.supported = true
+			self.parts.wpn_fps_ass_noobtube_stock_black.stats = { value = 0 }
+			self.parts.wpn_fps_ass_noobtube_stock_black.custom_stats = nil
+			self.parts.wpn_fps_ass_noobtube_vg_kac.supported = true
+			self.parts.wpn_fps_ass_noobtube_vg_kac.pcs =  nil
+			self.parts.wpn_fps_ass_noobtube_vg_kac.stats = { value = 0 }
+			self.parts.wpn_fps_ass_noobtube_vg_kac.custom_stats = nil
 
+			self.parts.wpn_fps_ass_noobtube_magazine_mw3.supported = true
+			self.parts.wpn_fps_ass_noobtube_magazine_mw3.stats = {
+				value = 5,
+				extra_ammo = -5,
+				spread = -2,
+				reload = 4
+			}
+			self.parts.wpn_fps_ass_noobtube_magazine_mw3.custom_stats = {
+				ads_speed_mult = 0.975
+			}
+			self.parts.wpn_fps_ass_noobtube_magazine_scarface.supported = true
+			self.parts.wpn_fps_ass_noobtube_magazine_scarface.stats = {
+				value = 2,
+				spread = -2,
+				concealment = -1,
+				reload = 3
+			}
+			self.parts.wpn_fps_ass_noobtube_magazine_scarface.custom_stats = nil
+
+			self.parts.wpn_fps_ass_noobtube_gadget_peq2.supported = true
+			self.parts.wpn_fps_ass_noobtube_gadget_peq2.stats = { value = 0 }
+			self.parts.wpn_fps_ass_noobtube_gadget_peq2.custom_stats = nil
+
+			self.parts.wpn_fps_ass_noobtube_barrel_11.supported = true
+			self.parts.wpn_fps_ass_noobtube_barrel_11.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_noobtube_barrel_11.custom_stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_noobtube_barrel_16.supported = true
+			self.parts.wpn_fps_ass_noobtube_barrel_16.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_noobtube_barrel_16.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			self.parts.wpn_fps_ass_noobtube_stock_ctr.supported = true
+			self.parts.wpn_fps_ass_noobtube_stock_ctr.stats = deep_clone(stocks.adj_acc_stats)
+			self.parts.wpn_fps_ass_noobtube_stock_ctr.custom_stats = nil
+			self.parts.wpn_fps_ass_noobtube_stock_a1.supported = true
+			self.parts.wpn_fps_ass_noobtube_stock_a1.stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+			self.parts.wpn_fps_ass_noobtube_stock_a1.custom_stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+
+			self.parts.wpn_fps_ass_noobtube_so_mw2.supported = true
+			self.parts.wpn_fps_ass_noobtube_so_mw2.type = "custom"
+			self.parts.wpn_fps_ass_noobtube_so_mw2.alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire"
+			self.parts.wpn_fps_ass_noobtube_so_mw2.stats = { value = 0, recoil = -2, spread = -1 }
 			self.parts.wpn_fps_ass_noobtube_so_mw2.custom_stats = { rof_mult = 1.07125 }
 			self.parts.wpn_fps_ass_noobtube_so_mw2.adds = {
 				"wpn_fps_ass_noobtube_so_mw2_snd"
@@ -28150,7 +28208,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			}
 
-			self.parts.wpn_fps_ass_noobtube_so_mw3.custom_stats = { rof_mult = 0.98625 }
+			self.parts.wpn_fps_ass_noobtube_so_mw3.supported = true
+			self.parts.wpn_fps_ass_noobtube_so_mw3.type = "custom"
+			self.parts.wpn_fps_ass_noobtube_so_mw3.alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire"
+			self.parts.wpn_fps_ass_noobtube_so_mw3.stats = { value = 0, spread = 1 }
+			self.parts.wpn_fps_ass_noobtube_so_mw3.custom_stats = { rof_mult = 0.98625, falloff_start_mult = 0.52631, falloff_end_mult = 0.7 }
 			self.parts.wpn_fps_ass_noobtube_so_mw3.adds = {
 				"wpn_fps_ass_noobtube_so_mw3_snd"
 			}
@@ -28174,12 +28236,43 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			}
 			
+
 			local weapons_to_add = {
 				"wpn_fps_ass_noobtube_vg",
 				"wpn_fps_ass_noobtube"
 			}
+			local ignore_list = {
+				"wpn_fps_ass_noobtube_gadget_leftrail",
+				"wpn_fps_ass_noobtube_gadget_toprail",
+				"wpn_fps_upg_gadget_heartsensor",
+				"wpn_fps_ass_coslo723_stock_mix2",
+				"wpn_fps_ass_coslo723_flash_hider_xm177",
+				"wpn_fps_ass_noobtube_handguard_classic",
+				"wpn_fps_ass_noobtube_irons_rear_bo1",
+				"wpn_fps_ass_noobtube_strap"
+			}
 			for _, weapon_id in pairs(weapons_to_add) do
-				if self[weapon_id] then
+				if self[weapon_id] and self[weapon_id].uses_parts then
+
+					for i, part_id in pairs(self[weapon_id].uses_parts) do
+						if self.parts[part_id] and self.parts[part_id].type then
+							if self.parts[part_id].pcs then
+								if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "noobtube_mod" 
+									and self.parts[part_id].global_value ~= "noobtube_gfl_mod"
+									and self.parts[part_id].global_value ~= "noobtube_scarface_mod") 
+									or not self.parts[part_id].global_value) 
+									and (self.parts[part_id].type ~= "sight"
+									and self.parts[part_id].type ~= "second_sight"
+									and self.parts[part_id].type ~= "barrel_ext"
+									and self.parts[part_id].type ~= "underbarrel_ammo"
+									and self.parts[part_id].type ~= "gadget") 
+									and not table.contains(ignore_list, part_id) then
+
+									self[weapon_id].uses_parts[i] = "resmod_dummy"
+								end
+							end
+						end
+					end
 					local weapon_uses_parts_list = {
 					"wpn_fps_ass_noobtube_so_mw2",
 					"wpn_fps_ass_noobtube_so_mw3"
@@ -40590,7 +40683,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ TANGERINE'S MODS ]]
 
-
 		if self.parts.wpn_fps_smg_schakal_m_clamp then
 			self.parts.wpn_fps_smg_schakal_m_clamp.supported = true
 			self.parts.wpn_fps_smg_schakal_m_clamp.stats = {
@@ -44604,11 +44696,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_talon_barrel.stats = { value = 10 }
 			self.parts.wpn_fps_pis_talon_barrel.custom_stats = nil
 			self.parts.wpn_fps_pis_talon_barrel.adds = nil
+			self.parts.wpn_fps_pis_talon_barrel.stance_mod = {
+				wpn_fps_pis_las58 = {
+					translation = Vector3(0,10,0)
+				}
+			}
 			
 			self.parts.wpn_fps_pis_talon_battery.supported = true
 			self.parts.wpn_fps_pis_talon_battery.stats = { value = 10 }
 			self.parts.wpn_fps_pis_talon_battery.custom_stats = {
 				battery_mag = {
+					no_tracers = true, --this just disables the automatic application of starwars tracers
 					allow_anim_mults = true,
 					regen_ammo_time = 1,
 					regen_rate = 0.5,

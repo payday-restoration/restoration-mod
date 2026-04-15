@@ -22,7 +22,7 @@
 		<diffuse_texture 		file="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_df"/>
 	</material>
 	<material name="mtr_ene_acc_swat_helmet_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_nm"mip="4" />
+		<bump_normal_texture 	file="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_nm" mip="4" />
 		<diffuse_texture 		file="units/pd2_mod_reapers/characters/shared_textures/spook_heavy_df" mip="4" />
 	</material>
 

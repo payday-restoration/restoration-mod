@@ -458,6 +458,27 @@ function PlayerStandard:_action_interact_forbidden()
 end
 
 function PlayerStandard:_check_action_melee(t, input)
+
+	local melee_entry = managers.blackmarket:equipped_melee_weapon()
+	
+	--Stuff for Zdann's Truck-kun
+	if melee_entry == "sakura_dork" then
+		local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
+		local max_charge_time = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_time
+		local melee_unit
+		if self._camera_unit:base()._melee_item_units and self._camera_unit:base()._melee_item_units[1] then
+			melee_unit = self._camera_unit:base()._melee_item_units[1]
+		end
+		if melee_unit ~= nil then
+			for _, material in ipairs(melee_unit:get_objects_by_type(Idstring("material"))) do
+				if material:name() == Idstring("mtr_dork_glow") then
+					material:set_variable(Idstring("uv0_speed"), Vector3(0, (max_charge_time / 2) / max_charge_time, 0)) --so the animated texture syncs with w/e the charge time is
+					material:set_time(math.min(1, charge_lerp_value))
+				end
+			end
+		end
+	end
+
 	if self._state_data.melee_attack_wanted then
 		if not self._state_data.melee_attack_allowed_t then
 			self._state_data.melee_attack_wanted = nil
@@ -497,7 +518,7 @@ function PlayerStandard:_check_action_melee(t, input)
 		return
 	end
 
-	local melee_entry = managers.blackmarket:equipped_melee_weapon()
+	--local melee_entry = managers.blackmarket:equipped_melee_weapon()
 	local instant = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 
 	self:_start_action_melee(t, input, instant)
@@ -4118,7 +4139,7 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, directi
 	return col_ray
 end
 
-function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, dmg_div, no_shaker, no_sound, no_effect, charge_lerp, bypass_stacking)
+Hooks:OverrideFunction(PlayerStandard, "_do_melee_damage", function(self, t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, dmg_div, no_shaker, no_sound, no_effect, charge_lerp, bypass_stacking)
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
@@ -4495,7 +4516,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		end
 	end
 	return col_ray
-end
+end)
 
 function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, defense_data, melee_entry)
 	if not defense_data or defense_data.type == "death" then

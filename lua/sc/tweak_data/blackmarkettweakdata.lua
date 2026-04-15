@@ -6758,6 +6758,64 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		end
 	end
 
+	--melee_sakura_dork
+	melee_anim = {
+		'sakura_dork'
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		if self.melee_weapons[melee_id] then
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_blunt"
+			self.melee_weapons[melee_id].anim_global_param = "melee_sakura_dork"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var3"}
+			self.melee_weapons[melee_id].anim_attack_charged_vars = {"var2"}
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"left", 0.7},
+				var2 = {"left", 0.1},
+				var3 = {"left", 0.5},
+			}
+			self.melee_weapons[melee_id].expire_t = 0.625
+			self.melee_weapons[melee_id].repeat_expire_t = 0.575
+			self.melee_weapons[melee_id].melee_damage_delay = 0.125
+			self.melee_weapons[melee_id].anim_speed_mult = 0.74
+			--self.melee_weapons[melee_id].sphere_cast_radius_add = 4
+			self.melee_weapons[melee_id].force_play_charge = nil
+			self.melee_weapons[melee_id].anims = {
+				var1_attack = {
+					anim = "var2"
+				},		
+				var2_attack = {
+					anim = "var2"
+				},		
+				var3_attack = {
+					anim = "var2"
+				},
+				var4_attack = {
+					anim = "var2"
+				},
+				charge = {
+					anim = "charge"
+				}
+			}
+		end
+	end
+
+	if self.melee_weapons.sakura_dork then
+		self.melee_weapons.sakura_dork.stats.cleave = 1
+		self.melee_weapons.sakura_dork.stats.raycasts = 1
+		self.melee_weapons.sakura_dork.stats.raycasts_charge = 1
+		self.melee_weapons.sakura_dork.stats.min_damage = 1
+		self.melee_weapons.sakura_dork.stats.max_damage = 2.001
+		self.melee_weapons.sakura_dork.stats.min_damage_effect = 1.0
+		self.melee_weapons.sakura_dork.stats.max_damage_effect = 2.0
+		self.melee_weapons.sakura_dork.stats.charge_time = 10
+		self.melee_weapons.sakura_dork.stats.range = 100
+		self.melee_weapons.sakura_dork.stats.concealment = 20
+		self.melee_weapons.sakura_dork.stats.speed_mult = 1
+		self.melee_weapons.sakura_dork.disallow_sprint = true
+		self.melee_weapons.sakura_dork.ignore_charge_speed = true
+	end
+
 	if self.melee_weapons.megumins_staff then --Hoppip's Megumin Staff
 		self.melee_weapons.megumins_staff.stats = deep_clone(self.melee_weapons.stick.stats)
 		self.melee_weapons.megumins_staff.stats.charge_bonus_start = 0.99

@@ -19008,18 +19008,6 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 	end
 end
 
--- Only for Advanced Training mutator
-function CharacterTweakData:_unmultiply_all_hp(hp_mul, hs_mul)
-	for _, enemy_tweak in ipairs(self._enemy_list) do
-		if self[enemy_tweak] then
-			self[enemy_tweak].HEALTH_INIT = self[enemy_tweak].HEALTH_INIT / hp_mul
-			if self[enemy_tweak].headshot_dmg_mul then
-				self[enemy_tweak].headshot_dmg_mul = self[enemy_tweak].headshot_dmg_mul / hs_mul
-			end
-		end
-	end
-end
-
 function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
 	for _, enemy_tweak in ipairs(self._enemy_list) do
 		if self[enemy_tweak] then

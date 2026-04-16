@@ -3049,6 +3049,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_mod3_sc_desc"] = "Valkyria 소총을 특별히 개조하여 인체공학적 설계로 개선하고 크기를 줄인 모델로, 핀란드 만의 러시아 해안 근처 지역에 벌어진 PMC 간의 무력 충돌에서 눈에 띄게 사용되었습니다.\n\n#{skill_color}#일체형 소음기##가 장착되어 있고 #{skill_color}#무기 피해량의 25%가 방탄복을 관통하여 가합니다.##",
 					-- Malyuk
 					["bm_wp_wpn_fps_ass_malima_xmag"] = "45발 탄창",
+					-- MW2 (2009 M4)
+					["bm_wp_wpn_fps_ass_noobtube_so_mw2"] = "모던2 (2009년) 볼트",
+					["bm_wp_wpn_fps_ass_noobtube_so_mw3"] = "모던3 (2011년) 볼트",					
 
 			--[[ DMRs ]]
 				--Little Friend

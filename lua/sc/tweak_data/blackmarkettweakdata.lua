@@ -6801,6 +6801,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	if self.melee_weapons.sakura_dork then
+		self.melee_weapons.sakura_dork.attack_pattern = nil
 		self.melee_weapons.sakura_dork.stats.cleave = 1
 		self.melee_weapons.sakura_dork.stats.raycasts = 1
 		self.melee_weapons.sakura_dork.stats.raycasts_charge = 1

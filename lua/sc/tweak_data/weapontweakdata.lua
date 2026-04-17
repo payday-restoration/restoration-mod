@@ -10665,7 +10665,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"mmg"
 						}
 						self.par.CLIP_AMMO_MAX = 75
-						self.par.fire_mode_data.fire_rate = 0.092307
+						self.par.fire_mode_data.fire_rate = 0.08
 						self.par.AMMO_MAX = 150
 						self.par.kick = {}
 						self.par.kick = self.stat_info.kick_tables.random_left_recoil
@@ -10705,7 +10705,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.par.stats_modifiers = nil
 						self.par.no_bipod_anims = true
-						self.par.reload_speed_multiplier = 0.775
+						self.par.reload_speed_multiplier = 0.785
 						self.par.sounds.spin_start = "wp_m249_lever_release"
 						self.par.spin_up_shoot = true
 						self.par.spin_up_t = 0.1
@@ -26900,9 +26900,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aalpha12.CAN_TOGGLE_FIREMODE = false
 				self.aalpha12.rays = 8
 				self.aalpha12.supported = true
-				self.aalpha12.ads_speed = 0.320
+				self.aalpha12.ads_speed = 0.340
 				self.aalpha12.damage_falloff = {
-					start_dist = 300,
+					start_dist = 400,
 					end_dist = 2300,
 					min_mult = 0.15
 				}
@@ -37554,6 +37554,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
 		akimbo = 1.05,
 		pistol = 1.25, --Compensate for low range.
+			pistol_pdw = 0.675,
 			zippy = 0.15,
 			raygun = 0.8,
 		smg = 1.125,

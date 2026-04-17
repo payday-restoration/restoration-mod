@@ -28358,7 +28358,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				ads_speed_mult = 1.15,
 			}
 			self.parts.wpn_fps_shot_aalpha12_magazine_xmaglarge.stats = {
-				value = 1,
+				value = 6,
 				extra_ammo = 12,
 				reload = -6,
 				concealment = -4
@@ -28369,7 +28369,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				ads_speed_mult = 1.225,
 			}
 			self.parts.wpn_fps_shot_aalpha12_magazine_drum.stats = {
-				value = 1,
+				value = 8,
 				extra_ammo = 24,
 				reload = -8,
 				concealment = -6
@@ -28383,6 +28383,39 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override)
 			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override)
 			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
+		end
+
+		if self.parts.wpn_fps_shot_x_aalpha12_magazine_xmaglarge then
+			--20 Drum
+			self.parts.wpn_fps_shot_x_aalpha12_magazine_xmaglarge.supported = true
+			self.parts.wpn_fps_shot_x_aalpha12_magazine_xmaglarge.custom_stats = {
+				ads_speed_mult = 1.15,
+			}
+			self.parts.wpn_fps_shot_x_aalpha12_magazine_xmaglarge.stats = {
+				value = 6,
+				extra_ammo = 24,
+				reload = -6,
+				concealment = -4
+			}
+			--32 Drum
+			self.parts.wpn_fps_shot_x_aalpha12_magazine_drum.supported = true
+			self.parts.wpn_fps_shot_x_aalpha12_magazine_drum.custom_stats = {
+				ads_speed_mult = 1.225,
+			}
+			self.parts.wpn_fps_shot_x_aalpha12_magazine_drum.stats = {
+				value = 8,
+				extra_ammo = 48,
+				reload = -8,
+				concealment = -6
+			}
+			self.wpn_fps_shot_x_aalpha12.override = self.wpn_fps_shot_x_aalpha12.override or {}
+			self.wpn_fps_shot_x_aalpha12.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
+			self.wpn_fps_shot_x_aalpha12.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)
+			self.wpn_fps_shot_x_aalpha12.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override)
+			self.wpn_fps_shot_x_aalpha12.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_semi_override)
+			self.wpn_fps_shot_x_aalpha12.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override)
+			self.wpn_fps_shot_x_aalpha12.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override)
+			self.wpn_fps_shot_x_aalpha12.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
 		end
 
 		if self.parts.wpn_fps_ass_kuro556_bolt then

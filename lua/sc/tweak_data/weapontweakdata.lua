@@ -26903,7 +26903,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aalpha12.ads_speed = 0.340
 				self.aalpha12.damage_falloff = {
 					start_dist = 400,
-					end_dist = 2300,
+					end_dist = 2400,
 					min_mult = 0.15
 				}
 				self.aalpha12.stats = {
@@ -26934,6 +26934,66 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aalpha12.timers.reload_exit_empty = 1.4
 				self.aalpha12.timers.reload_not_empty = 1.7
 				self.aalpha12.timers.reload_exit_not_empty = 1
+			end
+			if self.x_aalpha12 then --MW2019 JAK-12 (AA-12)
+				self.x_aalpha12.categories = { 
+					"akimbo",
+					"shotgun",
+					"shotgun_light"
+				}
+				self.x_aalpha12.recategorize = { "light_shot" }
+				self.x_aalpha12.damage_type = "shotgun"
+				self.x_aalpha12.damage_type_single_ray = "sniper"
+				self.x_aalpha12.fire_mode_data.fire_rate = 0.2
+				self.x_aalpha12.CLIP_AMMO_MAX = 16
+				self.x_aalpha12.AMMO_MAX = 0
+				self.x_aalpha12.kick = self.stat_info.kick_tables.even_recoil
+				self.x_aalpha12.kick_pattern = {
+					{0, self.stat_info.kick_tables.left_kick},
+					{2, self.stat_info.kick_tables.right_kick},
+					{6, self.stat_info.kick_tables.left_kick},
+					{10, self.stat_info.kick_tables.moderate_kick}
+				}
+				self.x_aalpha12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.x_aalpha12.FIRE_MODE = "auto"
+				self.x_aalpha12.CAN_TOGGLE_FIREMODE = false
+				self.x_aalpha12.rays = 8
+				self.x_aalpha12.supported = true
+				self.x_aalpha12.ads_speed = 0.420
+				self.x_aalpha12.damage_falloff = {
+					start_dist = 200,
+					end_dist = 1200,
+					min_mult = 0.15
+				}
+				self.x_aalpha12.stats = {
+					damage = 120,
+					spread = 29,
+					recoil = 59,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 22,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.x_aalpha12.stats_modifiers = nil
+				self.x_aalpha12.sounds.use_fix = nil
+				self.x_aalpha12.sounds.stop_fire = "saiga_stop"
+				self.x_aalpha12.panic_suppression_chance = 0.05
+				self.x_aalpha12.lock_slide = true
+				self.x_aalpha12.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.x_aalpha12.sounds.spin_start = "wp_mac10_lever_pull"
+				self.x_aalpha12.spin_up_shoot = true
+				self.x_aalpha12.spin_up_t = 0.05
+				self.x_aalpha12.spin_down_t = 0.00000001
+				self.x_aalpha12.reload_speed_multiplier = 0.7
+				self.x_aalpha12.timers.reload_not_empty = 2.1
+				self.x_aalpha12.timers.reload_exit_not_empty = 1.5
+				self.x_aalpha12.timers.reload_empty = 3
+				self.x_aalpha12.timers.reload_exit_empty = 0.9
 			end
 
 			if self.m6d then --RJC9000 and Offyerrocker's M6D

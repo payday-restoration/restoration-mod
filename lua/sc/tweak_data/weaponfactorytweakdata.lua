@@ -19951,6 +19951,14 @@ end
 							translation = Vector3(0, 12.3, 1.71),
 							rotation = Rotation(-0.005, -0.01, -0.5)
 						}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_noobtube_vg = {
+						translation = Vector3(-0.018, 5.6, -0.46),
+						rotation = Rotation(0.01, -0.05, 0)
+					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_noobtube = {
+						translation = Vector3(-0.0, 5.6, -0.46),
+						rotation = Rotation(0.01, -0.05, 0)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ghosts_badger = {
 						translation = Vector3(0.03, 1.1, -0.50),
@@ -28136,6 +28144,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_noobtube_handguard.supported = true
 			self.parts.wpn_fps_ass_noobtube_handguard.stats = { value = 0 }
 			self.parts.wpn_fps_ass_noobtube_handguard.custom_stats = nil
+			self.parts.wpn_fps_ass_noobtube_handguard.stance_mod = {
+				wpn_fps_ass_noobtube = {
+					translation = Vector3( 0, 0, -1.665)
+				},
+				wpn_fps_ass_noobtube_vg = {
+					translation = Vector3( 0, 0, -1.665)
+				}
+			}
+			self.parts.wpn_fps_ass_noobtube_handguard.override.wpn_fps_ass_noobtube_irons_rear = {
+				stance_mod = {
+					wpn_fps_ass_noobtube = {
+						translation = Vector3(-0.02, -4, 0.98),
+						rotation = Rotation(0, -0.1, 0)
+					},
+					wpn_fps_ass_noobtube_vg = {
+						translation = Vector3(-0.02, -4, 0.98),
+						rotation = Rotation(0, -0.1, 0)
+					}
+				}
+			}
 			self.parts.wpn_fps_ass_noobtube_stock.supported = true
 			self.parts.wpn_fps_ass_noobtube_stock.stats = { value = 0 }
 			self.parts.wpn_fps_ass_noobtube_stock.custom_stats = nil
@@ -28146,6 +28174,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_noobtube_vg_kac.pcs =  nil
 			self.parts.wpn_fps_ass_noobtube_vg_kac.stats = { value = 0 }
 			self.parts.wpn_fps_ass_noobtube_vg_kac.custom_stats = nil
+			self.parts.wpn_fps_ass_noobtube_irons_rear.supported = true
+			self.parts.wpn_fps_ass_noobtube_irons_rear.stats = { zoom = 14 }
+			self.parts.wpn_fps_ass_noobtube_irons_rear.custom_stats = nil
 
 			self.parts.wpn_fps_ass_noobtube_magazine_mw3.supported = true
 			self.parts.wpn_fps_ass_noobtube_magazine_mw3.stats = {
@@ -28165,6 +28196,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				reload = 3
 			}
 			self.parts.wpn_fps_ass_noobtube_magazine_scarface.custom_stats = nil
+
+			self.parts.wpn_fps_ass_noobtube_optic_t904.supported = true
+			self.parts.wpn_fps_ass_noobtube_optic_t904.desc_id = "bm_wp_upg_o_3"
+			self.parts.wpn_fps_ass_noobtube_optic_t904.stats = {
+				value = 1,
+				zoom = 20
+			}
+
+			self.parts.wpn_fps_ass_noobtube_optic_riser_reflex.supported = true
+			self.parts.wpn_fps_ass_noobtube_optic_riser_reflex.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_ass_noobtube_optic_riser_reflex.stats = {
+				value = 1,
+				zoom = 1
+			}
+			self.parts.wpn_fps_ass_noobtube_optic_riser_xps.supported = true
+			self.parts.wpn_fps_ass_noobtube_optic_riser_xps.desc_id = "bm_wp_upg_o_1_5"
+			self.parts.wpn_fps_ass_noobtube_optic_riser_xps.stats = {
+				value = 1,
+				zoom = 5
+			}
 
 			self.parts.wpn_fps_ass_noobtube_gadget_peq2.supported = true
 			self.parts.wpn_fps_ass_noobtube_gadget_peq2.stats = { value = 0 }

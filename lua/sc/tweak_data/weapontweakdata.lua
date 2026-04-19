@@ -25111,6 +25111,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.noobtube_vg.stats_modifiers = nil
 				self.noobtube_vg.lock_slide = true
 				self.noobtube_vg.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.noobtube.sounds.stop_fire = "akm_stop"
 				self.noobtube_vg.panic_suppression_chance = 0.05
 				self.noobtube_vg.reload_speed_multiplier = 0.85
 				self.noobtube_vg.timers.reload_not_empty = 1.2
@@ -25157,13 +25158,51 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.noobtube.stats_modifiers = nil
 				self.noobtube.lock_slide = true
 				self.noobtube.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.noobtube.sounds.stop_fire = "akm_stop"
 				self.noobtube.panic_suppression_chance = 0.05
 				self.noobtube.reload_speed_multiplier = 0.85
-				self.noobtube.timers.reload_not_empty = 1.85
-				self.noobtube.timers.reload_exit_not_empty = 0.9
-				self.noobtube.timers.reload_empty = 2.4
-				self.noobtube.timers.reload_exit_empty = 0.6
+				self.noobtube.timers.reload_not_empty = 1.2
+				self.noobtube.timers.reload_exit_not_empty = 0.83
+				self.noobtube.timers.reload_empty = 1.2
+				self.noobtube.timers.reload_exit_empty = 1.13
 			end
+				if self.noobtube_underbarrel then
+					self.noobtube_underbarrel.categories = {
+						"rocket_launcher",
+						"grenade_launcher"
+					}
+					self.noobtube_underbarrel.upgrade_blocks = {
+						weapon = {
+							"clip_ammo_increase"
+						}
+					}
+					self.noobtube_underbarrel.supported = true
+					self.noobtube_underbarrel.ads_speed = 0.260
+					self.noobtube_underbarrel.kick = self.stat_info.kick_tables.right_kick
+					self.noobtube_underbarrel.CLIP_AMMO_MAX = 1
+					self.noobtube_underbarrel.AMMO_MAX = 4
+					self.noobtube_underbarrel.damage_falloff = deep_clone(self.contraband_m203.damage_falloff)
+					self.noobtube_underbarrel.stats = {
+						damage = 72,
+						spread = 61,
+						recoil = 61,
+						spread_moving = 6,
+						zoom = 1,
+						concealment = 21,
+						suppression = 8,
+						alert_size = 2,
+						extra_ammo = 101,
+						total_ammo_mod = 400,
+						value = 1,
+						reload = 25
+					}
+					self.noobtube_underbarrel.use_stance = "mdr_308"
+					self.noobtube_underbarrel.is_bullpup = true
+					self.noobtube_underbarrel.has_underbarrel = true
+					self.noobtube_underbarrel.panic_suppression_chance = 0.05
+					self.noobtube_underbarrel.timers.reload_exit_empty = 0.3
+					self.noobtube_underbarrel.timers.reload_exit_not_empty = 0.3
+				end
 
 			if self.volcanic then
 				self.volcanic.recategorize = { "light_pis" }

@@ -7423,6 +7423,19 @@ end
 						stats = deep_clone(stocks.remove_folder_stats),
 						custom_stats = deep_clone(stocks.remove_folder_stats)
 					}
+					self.wpn_fps_smg_schakal.override.wpn_fps_upg_i_burstfire = {
+						custom_stats = {
+							info_lock_burst = true,
+							burst_fire = {
+								count = 2,
+								delay = 0.2,
+								recoil_mult = 0.5,
+								last_recoil_mult = 1.1,
+								lock = true
+							},
+							rof_mult = 1.25
+						}
+					}
 
 					for i, part_id in pairs(self.wpn_fps_smg_schakal.default_blueprint) do
 						attachment_list = {
@@ -7524,6 +7537,19 @@ end
 					self.wpn_fps_smg_polymer.override.wpn_fps_smg_mac10_s_no = {
 						stats = deep_clone(stocks.remove_folder_stats),
 						custom_stats = deep_clone(stocks.remove_folder_stats)
+					}
+					self.wpn_fps_smg_polymer.override.wpn_fps_upg_i_burstfire = {
+						custom_stats = {
+							info_lock_burst = true,
+							burst_fire = {
+								count = 2,
+								delay = 0.2,
+								recoil_mult = 0.5,
+								last_recoil_mult = 1.1,
+								lock = true
+							},
+							rof_mult = 1.25
+						}
 					}
 
 					--Disabling Vertical Grip mods (they don't fit)
@@ -12114,6 +12140,20 @@ end
 						stats = {
 							recoil = 2,
 							concealment = -1
+						}
+					}
+
+					self.wpn_fps_smg_hajk.override.wpn_fps_upg_i_burstfire = {
+						custom_stats = {
+							info_lock_burst = true,
+							burst_fire = {
+								count = 2,
+								delay = 0.2,
+								recoil_mult = 0.5,
+								last_recoil_mult = 1.1,
+								lock = true
+							},
+							rof_mult = 1.25
 						}
 					}
 

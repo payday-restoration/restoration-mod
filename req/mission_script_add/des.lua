@@ -186,7 +186,7 @@ return {
 
 		-- CLOAKER
 		restoration:gen_dummy(400005, "weapon_lab_ninja", Vector3(-4138, -3412, 0), Rotation(0, 0, -0), optsCloaker_01),
-		restoration:gen_so(400006, "weapons_lab_ninja_so", Vector3(-4138, -3412, 0), Rotation(9, -0, -0), optsCloaker_Hide_SO_01),
+		restoration:gen_so(400006, "weapons_lab_ninja_so", Vector3(-4138, -3412, 0), Rotation(9, -0, -0), optsCloaker_Hide_SO_02),
 		-- Snipers 
 		restoration:gen_dummy(400025, "weapon_lab_sniper_01", Vector3(-3842.79, -2954.82, 0), Rotation(-105, 0, -0), optsSniper_01),
 		restoration:gen_dummy(400026, "weapon_lab_sniper_02", Vector3(-3647, -3673, 0), Rotation(-65, 0, -0), optsSniper_02),

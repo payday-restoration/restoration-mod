@@ -25196,12 +25196,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						value = 1,
 						reload = 25
 					}
-					self.noobtube_underbarrel.use_stance = "mdr_308"
+					self.noobtube_underbarrel.use_stance = "noobtube"
 					self.noobtube_underbarrel.is_bullpup = true
 					self.noobtube_underbarrel.has_underbarrel = true
 					self.noobtube_underbarrel.panic_suppression_chance = 0.05
-					self.noobtube_underbarrel.timers.reload_exit_empty = 0.3
-					self.noobtube_underbarrel.timers.reload_exit_not_empty = 0.3
+					self.noobtube_underbarrel.timers = deep_clone(self.contraband_m203.timers)
+					self.noobtube_underbarrel.timers.reload_exit_empty = 0.8
+					self.noobtube_underbarrel.timers.reload_exit_not_empty = 0.8
 				end
 
 			if self.volcanic then
@@ -31151,90 +31152,91 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.x_polar9.stats_modifiers = nil
 					self.x_polar9.panic_suppression_chance = 0.05
 					self.x_polar9.timers = deep_clone(self.x_b92fs.timers)
-
+				end
 				--Primary
-				self.polar9_primary.recategorize = { "light_pis" }
-				self.polar9_primary.damage_type = "pistol"
-				self.polar9_primary.fire_mode_data.fire_rate =  0.0882352
-				self.polar9_primary.AMMO_MAX = 150
-				self.polar9_primary.CLIP_AMMO_MAX = 17
-				self.polar9_primary.tactical_reload = 1
-				self.polar9_primary.lock_slide = true
-				self.polar9_primary.kick = self.stat_info.kick_tables.even_recoil
-				self.polar9_primary.kick_pattern = {
-					{0, self.stat_info.kick_tables.moderate_kick},
-					{3, self.stat_info.kick_tables.right_kick},
-					{8, self.stat_info.kick_tables.moderate_left_kick},
-					{14, self.stat_info.kick_tables.even_recoil}
-				}
-				self.polar9_primary.supported = true
-				self.polar9_primary.ads_speed = 0.140
-				self.polar9_primary.damage_falloff = {
-					start_dist = 1500,
-					end_dist = 2700,
-					min_mult = 0.25
-				}
-				self.polar9_primary.stats = {
-					damage = 24,
-					spread = 61,
-					recoil = 79,
-					spread_moving = 9,
-					zoom = 1,
-					concealment = 30,
-					suppression = 12,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 400,
-					value = 1,
-					reload = 25
-				}
-				self.polar9_primary.stats_modifiers = nil
-				self.polar9_primary.panic_suppression_chance = 0.05
-				self.polar9_primary.timers = deep_clone(self.colt_1911.timers)
+				if self.polar9_primary then
+					self.polar9_primary.recategorize = { "light_pis" }
+					self.polar9_primary.damage_type = "pistol"
+					self.polar9_primary.fire_mode_data.fire_rate =  0.0882352
+					self.polar9_primary.AMMO_MAX = 150
+					self.polar9_primary.CLIP_AMMO_MAX = 17
+					self.polar9_primary.tactical_reload = 1
+					self.polar9_primary.lock_slide = true
+					self.polar9_primary.kick = self.stat_info.kick_tables.even_recoil
+					self.polar9_primary.kick_pattern = {
+						{0, self.stat_info.kick_tables.moderate_kick},
+						{3, self.stat_info.kick_tables.right_kick},
+						{8, self.stat_info.kick_tables.moderate_left_kick},
+						{14, self.stat_info.kick_tables.even_recoil}
+					}
+					self.polar9_primary.supported = true
+					self.polar9_primary.ads_speed = 0.140
+					self.polar9_primary.damage_falloff = {
+						start_dist = 1500,
+						end_dist = 2700,
+						min_mult = 0.25
+					}
+					self.polar9_primary.stats = {
+						damage = 24,
+						spread = 61,
+						recoil = 79,
+						spread_moving = 9,
+						zoom = 1,
+						concealment = 30,
+						suppression = 12,
+						alert_size = 2,
+						extra_ammo = 101,
+						total_ammo_mod = 400,
+						value = 1,
+						reload = 25
+					}
+					self.polar9_primary.stats_modifiers = nil
+					self.polar9_primary.panic_suppression_chance = 0.05
+					self.polar9_primary.timers = deep_clone(self.colt_1911.timers)
 
-				self.baller.desc_id = "bm_baller_sc_desc"
-				self.baller.recategorize = { "heavy_pis" }
-				self.baller.damage_type = "heavy_pistol"
-				self.baller.lock_slide = true
-				self.baller.fire_mode_data.fire_rate = 0.1263157894
-				self.baller.CLIP_AMMO_MAX = 8
-				self.baller.AMMO_MAX = 40
-				self.baller.kick = self.stat_info.kick_tables.right_recoil
-				self.baller.kick_pattern = {
-					{0, self.stat_info.kick_tables.even_recoil},
-					{3, self.stat_info.kick_tables.right_kick},
-					{6, self.stat_info.kick_tables.right_recoil}
-				}
-				self.baller.supported = true
-				self.baller.can_shoot_through_enemy = false
-				self.baller.can_shoot_through_shield = false
-				self.baller.can_shoot_through_wall = false
-				self.baller.armor_piercing_chance = 0
-				self.baller.ads_speed = 0.200
-				self.baller.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 3600,
-					min_mult = 0.333333
-				}
-				self.baller.stats = {
-					damage = 45,
-					spread = 61,
-					recoil = 69,
-					spread_moving = 5,
-					zoom = 1,
-					concealment = 27,
-					suppression = 9,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 400,
-					value = 1,
-					reload = 25
-				}
-				self.baller.stats_modifiers = nil
-				self.baller.reload_speed_multiplier = 1.02
-				self.baller.panic_suppression_chance = 0.05
-				self.baller.timers = deep_clone(self.colt_1911.timers)
-			end
+					self.baller.desc_id = "bm_baller_sc_desc"
+					self.baller.recategorize = { "heavy_pis" }
+					self.baller.damage_type = "heavy_pistol"
+					self.baller.lock_slide = true
+					self.baller.fire_mode_data.fire_rate = 0.1263157894
+					self.baller.CLIP_AMMO_MAX = 8
+					self.baller.AMMO_MAX = 40
+					self.baller.kick = self.stat_info.kick_tables.right_recoil
+					self.baller.kick_pattern = {
+						{0, self.stat_info.kick_tables.even_recoil},
+						{3, self.stat_info.kick_tables.right_kick},
+						{6, self.stat_info.kick_tables.right_recoil}
+					}
+					self.baller.supported = true
+					self.baller.can_shoot_through_enemy = false
+					self.baller.can_shoot_through_shield = false
+					self.baller.can_shoot_through_wall = false
+					self.baller.armor_piercing_chance = 0
+					self.baller.ads_speed = 0.200
+					self.baller.damage_falloff = {
+						start_dist = 1200,
+						end_dist = 3600,
+						min_mult = 0.333333
+					}
+					self.baller.stats = {
+						damage = 45,
+						spread = 61,
+						recoil = 69,
+						spread_moving = 5,
+						zoom = 1,
+						concealment = 27,
+						suppression = 9,
+						alert_size = 2,
+						extra_ammo = 101,
+						total_ammo_mod = 400,
+						value = 1,
+						reload = 25
+					}
+					self.baller.stats_modifiers = nil
+					self.baller.reload_speed_multiplier = 1.02
+					self.baller.panic_suppression_chance = 0.05
+					self.baller.timers = deep_clone(self.colt_1911.timers)
+				end
 
 			if self.sg45 then
 				self.sg45.recategorize = { "heavy_pis" }

@@ -31152,6 +31152,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.x_polar9.panic_suppression_chance = 0.05
 					self.x_polar9.timers = deep_clone(self.x_b92fs.timers)
 
+				--Primary
+				self.polar9_primary.recategorize = { "light_pis" }
+				self.polar9_primary.damage_type = "pistol"
+				self.polar9_primary.fire_mode_data.fire_rate =  0.0882352
+				self.polar9_primary.AMMO_MAX = 150
+				self.polar9_primary.CLIP_AMMO_MAX = 17
+				self.polar9_primary.tactical_reload = 1
+				self.polar9_primary.lock_slide = true
+				self.polar9_primary.kick = self.stat_info.kick_tables.even_recoil
+				self.polar9_primary.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{3, self.stat_info.kick_tables.right_kick},
+					{8, self.stat_info.kick_tables.moderate_left_kick},
+					{14, self.stat_info.kick_tables.even_recoil}
+				}
+				self.polar9_primary.supported = true
+				self.polar9_primary.ads_speed = 0.140
+				self.polar9_primary.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 2700,
+					min_mult = 0.25
+				}
+				self.polar9_primary.stats = {
+					damage = 24,
+					spread = 61,
+					recoil = 79,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 30,
+					suppression = 12,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.polar9_primary.stats_modifiers = nil
+				self.polar9_primary.panic_suppression_chance = 0.05
+				self.polar9_primary.timers = deep_clone(self.colt_1911.timers)
+
 				self.baller.desc_id = "bm_baller_sc_desc"
 				self.baller.recategorize = { "heavy_pis" }
 				self.baller.damage_type = "heavy_pistol"

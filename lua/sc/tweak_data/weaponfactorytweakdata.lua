@@ -42493,7 +42493,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_galil_body_intermediate.custom_stats = {
 					alt_desc = "bm_galil_556_sc_desc",
 					ads_speed_mult = 0.842105,
-					damage_min_mult = 0.625,
+					damage_min_mult = 0.75,
 					falloff_start_mult = 0.72,
 					armor_piercing_override = 0,
 					armor_piercing_add_override = 0,
@@ -42625,7 +42625,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					trail_effect = "effects/particles/weapons/weapon_trail",
 					falloff_start_mult = 1.06667,
 					falloff_end_mult = 1.1206896,
-					damage_min_mult = 0.8,
+					damage_min_mult = 0.853333,
 					ammo_pickup_max_mul = 0.43243,
 					ammo_pickup_min_mul = 0.43243,
 					alt_ammo_pickup_max_mul = 0.43243,

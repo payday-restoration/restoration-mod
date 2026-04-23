@@ -2249,7 +2249,7 @@ end
 						},
 						custom_stats = {
 							alt_desc = "bm_tranq_maxim_auto_sc_desc",
-							rof_mult = 1.428571428,
+							rof_mult = 1.612903,
 							falloff_start_mult = 0.5,
 							falloff_end_mult = 0.75,
 							info_lock_auto = true
@@ -2974,6 +2974,7 @@ end
 					self.parts.wpn_fps_upg_ns_pis_large_kac.has_description = true
 					self.parts.wpn_fps_upg_ns_pis_large_kac.desc_id = "bm_wp_upg_suppressor"
 					self.parts.wpn_fps_upg_ns_pis_large_kac.stats = deep_clone(muzzle_device.supp_rec2_c)
+					self.parts.wpn_fps_upg_ns_pis_large_kac.custom_stats = deep_clone(muzzle_device.supp_rec2_c)
 					self.parts.wpn_fps_upg_ns_pis_large_kac.perks = {"silencer"}
 
 					--Roctec Suppressor
@@ -4126,12 +4127,17 @@ end
 							overheat_pen = 2,
 							regen_rate_overheat = 1.5,
 						},
-						rof_mult = 0.35,
+						rof_mult = 0.388889,
 						armor_piercing_override = 0.5,
 						info_lock_semi = true
 
 					}
-					self.parts.wpn_fps_pis_c96_nozzle.forbids = {"wpn_fps_pis_c96_m_extended"}
+					self.parts.wpn_fps_pis_c96_nozzle.forbids = {
+						"wpn_fps_pis_c96_m_extended",
+						"wpn_fps_upg_i_singlefire",
+						"wpn_fps_upg_i_autofire",
+						"wpn_fps_upg_i_burstfire",
+					}
 					self.parts.wpn_fps_pis_c96_nozzle.sub_type = nil--"silencer"
 					self.parts.wpn_fps_pis_c96_nozzle.perks = { "fire_mode_single" }
 
@@ -4172,6 +4178,24 @@ end
 					self.parts.wpn_fps_pis_c96_s_solid.stats = deep_clone(stocks.add_fixed_stats)
 					self.parts.wpn_fps_pis_c96_s_solid.custom_stats = deep_clone(stocks.add_fixed_stats)
 
+					self.wpn_fps_pis_c96.override = self.wpn_fps_pis_c96.override or {}
+					self.wpn_fps_pis_c96.override.wpn_fps_upg_i_singlefire = {
+						stats = {
+							value = 5,
+							recoil = -8,
+							spread = 10
+						},
+						custom_stats = {
+							info_lock_semi = true,
+							ignore_rof_mult_anims = true,
+							hip_mult = 1.15,
+							rof_mult = 0.5111111,
+							falloff_start_mult = 1.33333,
+							falloff_end_mult = 1.33333
+						}
+					}
+
+
 					--Extra Barrel Extensions
 					table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 					table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_pis_g18c_co_1")
@@ -4179,6 +4203,9 @@ end
 					table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 					table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 					table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_pis_c96_cnuy_satsuki")
+					table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_upg_i_singlefire")
+					table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_upg_i_autofire")
+					table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_upg_i_burstfire")
 
 					self.wpn_fps_pis_c96_npc.uses_parts = deep_clone(self.wpn_fps_pis_c96.uses_parts)
 				end)
@@ -4286,7 +4313,7 @@ end
 							alt_ammo_pickup_max_mul = 2,
 							alt_ammo_pickup_min_mul = 2,
 							damage_min_mult = 2,
-							rof_mult = 4.443333
+							rof_mult = 5.332
 						},
 						stats = {
 							value = 10,
@@ -6532,6 +6559,7 @@ end
 					self.parts.wpn_fps_smg_cobray_ns_silencer.has_description = true
 					self.parts.wpn_fps_smg_cobray_ns_silencer.desc_id = "bm_wp_upg_suppressor"
 					self.parts.wpn_fps_smg_cobray_ns_silencer.stats = deep_clone(muzzle_device.supp_rec2_c)
+					self.parts.wpn_fps_smg_cobray_ns_silencer.custom_stats = deep_clone(muzzle_device.supp_rec2_c)
 					self.parts.wpn_fps_smg_cobray_ns_silencer.perks = {"silencer"}
 
 					if not self.wpn_fps_smg_cobray.override then
@@ -25688,7 +25716,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			info_lock_burst = true,
 			burst_fire = {
 				count = 3,
-				recoil_mult = 0.25,
+				recoil_mult = 0.2,
 				last_recoil_mult = 1,
 				delay = 0.25,
 				lock = true
@@ -25703,7 +25731,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			alt_ammo_pickup_max_mul = 2,
 			alt_ammo_pickup_min_mul = 2,
 			damage_min_mult = 2,
-			rof_mult = 3.3325,
+			rof_mult = 3.8085714,
 		},
 		stats = {
 			value = 10,
@@ -38668,12 +38696,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_pis_triggermod_fast.pcs = {}
 					self.parts.wpn_fps_pis_triggermod_fast.stats = {
 						value = 5,
-						spread = -6,
-						recoil = -8
+						spread = -8,
+						recoil = -10
 					}
 					self.parts.wpn_fps_pis_triggermod_fast.custom_stats = {
+						falloff_start_mult = 0.8,
 						rof_mult = 1.1,
-						hip_mult = 1.5
+						hip_mult = 2.0
 					}
 					self.parts.wpn_fps_pis_triggermod_slow.supported = true
 					self.parts.wpn_fps_pis_triggermod_slow.pcs = {}
@@ -38683,8 +38712,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						recoil = 2
 					}
 					self.parts.wpn_fps_pis_triggermod_slow.custom_stats = {
+						falloff_start_mult = 1.05,
+						falloff_end_mult = 1.05,
 						rof_mult = 0.8,
-						hip_mult = 0.8,
+						hip_mult = 0.7,
 					}
 
 				--Argos III
@@ -40027,8 +40058,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_vp70_stock_standard.custom_stats.burst_fire = {
 				count = 3,
 				delay = 0.18,
-				rof_mult = 3.6666,
-				recoil_mult = 0.4,
+				rof_mult = 3.8461538,
+				recoil_mult = 0.3,
 				last_recoil_mult = 1.08
 			}
 			self.parts.wpn_fps_pis_vp70_stock_standard.custom_stats.info_add_burst = true
@@ -44725,7 +44756,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							and self.parts[part_id].global_value ~= "helldivers2sv_mod"
 							and self.parts[part_id].global_value ~= "helldivers2vc_mod")
 							) or not self.parts[part_id].global_value) and
-							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom" or self.parts[part_id].type == "second_sight") then
+							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "custom" or self.parts[part_id].type == "second_sight") then
 							self.wpn_fps_ass_ar23.uses_parts[i] = "resmod_dummy"
 						end
 					end
@@ -44741,7 +44772,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				if self.parts[part_id] and self.parts[part_id].type then
 					if self.parts[part_id].pcs then
 						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and
-							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom" or self.parts[part_id].type == "second_sight") then
+							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "custom" or self.parts[part_id].type == "second_sight") then
 							self.wpn_fps_ass_sta52.uses_parts[i] = "resmod_dummy"
 						end
 					end
@@ -44769,7 +44800,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				if self.parts[part_id] and self.parts[part_id].type then
 					if self.parts[part_id].pcs then
 						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and
-							(self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom") then
+							(self.parts[part_id].type == "custom") then
 							self.wpn_fps_ass_br14.uses_parts[i] = "resmod_dummy"
 						end
 					end
@@ -44796,7 +44827,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				if self.parts[part_id] and self.parts[part_id].type then
 					if self.parts[part_id].pcs then
 						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and
-							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom") then
+							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "custom") then
 							self.wpn_fps_smg_reprimand.uses_parts[i] = "resmod_dummy"
 						end
 					end
@@ -44810,7 +44841,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				if self.parts[part_id] and self.parts[part_id].type then
 					if self.parts[part_id].pcs then
 						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and
-							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom") then
+							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "custom") then
 							self.wpn_fps_smg_sta11.uses_parts[i] = "resmod_dummy"
 						end
 					end

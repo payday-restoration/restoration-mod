@@ -534,23 +534,23 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.3,
 		0.1
 	}
-	self.values.player.body_armor.stamina = { --increments of 0.025
+	self.values.player.body_armor.stamina = { --*increments of 0.0125
 		1,
-		0.975,
+		0.975, --2 increments
+		0.9625,
 		0.95,
-		0.925,
-		0.875,
-		0.85,
-		0.8
+		0.925, --2 increments
+		0.9, --2 increments
+		0.875 --2 increments
 	}
 	self.values.player.body_armor.skill_ammo_mul = { --repurposed to pick up mult
-		0.875,
-		0.95,
-		1.00,
-		1.05,
-		1.075,
-		1.125,
-		1.15
+		0.9, --Suit
+		0.95, --LBV
+		1.00, --BV
+		1.075, --HBV
+		1.075, --FJ
+		1.125, --CTV
+		1.125 --ICTV
 	}
 	self.values.player.armor_pickup_mul = {true}
 	self.max_deflection = 0.60
@@ -2181,8 +2181,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Crew Chief
 	self.values.team.stamina.passive_multiplier = {
-		1.5,
-		1.3
+		1.3,
+		1.5
 	}
 	self.values.team.armor.multiplier = {1.05}
 	self.values.team.health.passive_multiplier = {1.05}
@@ -3217,7 +3217,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_1 = tostring(self.values.player.passive_health_multiplier[2] % 1 * 100).."%" -- HP increase
 	}
 	self.specialization_descs[1][3] = {
-		perk_value_1 = tostring(self.values.team.stamina.passive_multiplier[1] % 1 * 100).."%", -- Stamina increase (for everyone)
+		perk_value_1 = tostring(self.values.team.stamina.passive_multiplier[2] % 1 * 100).."%", -- Stamina increase (for everyone)
 		perk_value_2 = tostring(self.values.player.passive_intimidate_range_mul[1] % 1 * 100).."%", -- Shout distance increase
 		perk_value_3 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
 	}

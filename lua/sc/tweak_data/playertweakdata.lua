@@ -394,9 +394,9 @@ function PlayerTweakData:init()
 	self.movement_state.stamina = {}
 
 	if is_vr then
-		self.movement_state.stamina.STAMINA_INIT = 45
+		self.movement_state.stamina.STAMINA_INIT = 40
 	else
-		self.movement_state.stamina.STAMINA_INIT = 45
+		self.movement_state.stamina.STAMINA_INIT = 40
 	end
 
 	self.movement_state.stamina.STAMINA_REGEN_RATE = 4

@@ -2063,6 +2063,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"team_passive_stamina_multiplier_1",
+					"team_passive_stamina_multiplier_2",
 					"player_passive_intimidate_range_mul",
 					"player_passive_dodge_chance_1"
 				},

@@ -654,6 +654,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				local unit_movement = self._unit:movement()
+				--[[
 				local drain_mult = 0
 				if unit_movement then
 					local current_state = unit_movement and unit_movement.current_state and unit_movement:current_state()
@@ -663,6 +664,7 @@ function PlayerDamage:damage_bullet(attack_data)
 					end
 				end
 				self._unit:movement():subtract_stamina(8 * drain_mult)
+				--]]
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
 				self._next_allowed_dmg_t = Application:digest_value(t + math.max(grace_bonus, self._dmg_interval), true)

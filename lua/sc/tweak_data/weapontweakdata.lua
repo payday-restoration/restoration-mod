@@ -7602,7 +7602,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_type54_underbarrel.categories = {
 							"akimbo",
 							"shotgun",
-							"shotgun_heavy_pistol"
+							"shotgun_break_pistol"
 						}
 						self.x_type54_underbarrel.upgrade_blocks = {
 							weapon = {
@@ -14040,7 +14040,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"shotgun_light_semi",
 							"shotgun_light_pistol"
 						}
-						self.judge.fire_mode_data.fire_rate = 0.2
+						self.judge.fire_mode_data.fire_rate = 0.24
 						self.judge.rays = 6
 						self.judge.kick = self.stat_info.kick_tables.left_kick
 						self.judge.kick_pattern = {
@@ -14084,7 +14084,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"shotgun_light_semi",
 							"shotgun_light_pistol"
 						}
-						self.x_judge.fire_mode_data.fire_rate = 0.2
+						self.x_judge.fire_mode_data.fire_rate = 0.24
 						self.x_judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.x_judge.rays = 6
 						self.x_judge.BURST_FIRE = {
@@ -28947,6 +28947,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pkilo.timers.equip = 1
 			end
 
+			if self.mike2011 then
+				self.mike2011.recategorize = { "light_pis" }
+				self.mike2011.damage_type = "pistol"
+				self.mike2011.fire_mode_data.fire_rate = 0.12987012
+				self.mike2011.AMMO_MAX = 0
+				self.mike2011.CLIP_AMMO_MAX = 15
+				self.mike2011.tactical_reload = 1
+				self.mike2011.keep_ammo = 1
+				self.mike2011.lock_slide = true
+				self.mike2011.kick = self.stat_info.kick_tables.even_recoil
+				self.mike2011.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{4, self.stat_info.kick_tables.left_recoil},
+					{7, self.stat_info.kick_tables.even_recoil}
+				}
+				self.mike2011.supported = true
+				self.mike2011.ads_speed = 0.200
+				self.mike2011.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3200,
+					min_mult = 0.25
+				}
+				self.mike2011.stats = {
+					damage = 24,
+					spread = 51,
+					recoil = 91,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 30,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.mike2011.stats_modifiers = nil
+				self.mike2011.panic_suppression_chance = 0.05
+				blanket_timer("mike2011", shared_timers.glock)
+			end
+
 			--MW2022 458 AR
 			if self.msecho then
 				self.msecho.recategorize = { "dmr_ar" }
@@ -31974,7 +32015,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.toz81.categories = { "shotgun", "shotgun_heavy_pistol" }
 				self.toz81.damage_type = "shotgun"
 				self.toz81.damage_type_single_ray = "sniper"
-				self.toz81.fire_mode_data.fire_rate = 0.15
+				self.toz81.fire_mode_data.fire_rate = 0.17647058
 				self.toz81.rays = 6
 				self.toz81.kick = self.stat_info.kick_tables.left_kick
 				self.toz81.kick_pattern = {
@@ -32021,7 +32062,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_toz81.categories = { "akimbo", "shotgun", "shotgun_heavy_pistol" }
 				self.x_toz81.damage_type = "shotgun"
 				self.x_toz81.damage_type_single_ray = "sniper"
-				self.x_toz81.fire_mode_data.fire_rate = 0.15
+				self.x_toz81.fire_mode_data.fire_rate = 0.17647058
 				self.x_toz81.rays = 6
 				self.x_toz81.kick = self.stat_info.kick_tables.left_kick
 				self.x_toz81.kick_pattern = {

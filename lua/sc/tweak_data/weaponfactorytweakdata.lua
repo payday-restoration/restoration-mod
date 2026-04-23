@@ -25089,7 +25089,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				lock = true
 			},
 			hey_kiddo = true,
-			rof_mult = 2.0408163,
+			rof_mult = 2.32558139,
 			alt_desc = "bm_wally_desc",
 			alt_desc_2 = {"bm_maralohk_desc", 0.01},
 		},
@@ -33564,6 +33564,68 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_bf2042_ayylmao_suppressor.perks = {"silencer"}
 
 			table.insert(self.wpn_fps_pis_bf2042_ayylmao.uses_parts, "wpn_fps_upg_fl_pis_perst")
+		end
+
+		if self.parts.wpn_fps_pis_mike2011_trigger then --MW2022 2011
+			self.parts.wpn_fps_pis_mike2011_grip.supported = true
+			self.parts.wpn_fps_pis_mike2011_grip.stats = { value = 0 }
+			self.parts.wpn_fps_pis_mike2011_grip.custom_stats = nil
+
+			self.parts.wpn_fps_pis_mike2011_slide_heavy.supported = true
+			self.parts.wpn_fps_pis_mike2011_slide_heavy.stats = { value = 3, recoil = 4, concealment = -2 }
+			self.parts.wpn_fps_pis_mike2011_slide_heavy.custom_stats = nil
+			self.parts.wpn_fps_pis_mike2011_slide_light.supported = true
+			self.parts.wpn_fps_pis_mike2011_slide_light.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_pis_mike2011_slide_light.custom_stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_pis_mike2011_slide_short.supported = true
+			self.parts.wpn_fps_pis_mike2011_slide_short.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_pis_mike2011_slide_short.custom_stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_pis_mike2011_slide_long.supported = true
+			self.parts.wpn_fps_pis_mike2011_slide_long.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_pis_mike2011_slide_long.custom_stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_pis_mike2011_slide_comp.supported = true
+			self.parts.wpn_fps_pis_mike2011_slide_comp.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_pis_mike2011_slide_comp.stats.recoil = 6
+			self.parts.wpn_fps_pis_mike2011_slide_comp.stats.concealment = -5
+			self.parts.wpn_fps_pis_mike2011_slide_comp.custom_stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_pis_mike2011_slide_comp.custom_stats.ads_speed_mult = 1.125
+
+			self.parts.wpn_fps_pis_mike2011_grip_aim.supported = true
+			self.parts.wpn_fps_pis_mike2011_grip_aim.stats = { value = 3, reload = 4, concealment = -1, spread = -2 }
+			self.parts.wpn_fps_pis_mike2011_grip_aim.custom_stats = nil
+			self.parts.wpn_fps_pis_mike2011_grip_ass.supported = true
+			self.parts.wpn_fps_pis_mike2011_grip_ass.stats = { value = 1, recoil = 2, spread = -1 }
+			self.parts.wpn_fps_pis_mike2011_grip_ass.custom_stats = nil
+			self.parts.wpn_fps_pis_mike2011_grip_tac.supported = true
+			self.parts.wpn_fps_pis_mike2011_grip_tac.stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_pis_mike2011_grip_tac.custom_stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_pis_mike2011_grip_skeleton.supported = true
+			self.parts.wpn_fps_pis_mike2011_grip_skeleton.stats = deep_clone(grips.quickdraw_dual)
+			self.parts.wpn_fps_pis_mike2011_grip_skeleton.custom_stats = deep_clone(grips.quickdraw_dual)
+
+			self.parts.wpn_fps_pis_mike2011_xmag.supported = true
+			self.parts.wpn_fps_pis_mike2011_xmag.stats = { value = 5, reload = -3, concealment = -1, extra_ammo = 5 }
+			self.parts.wpn_fps_pis_mike2011_xmag.custom_stats = { ads_speed_mult = 1.05}
+			self.parts.wpn_fps_pis_mike2011_xmag_large.supported = true
+			self.parts.wpn_fps_pis_mike2011_xmag_large.stats = { value = 5, reload = -5, concealment = -3, extra_ammo = 11 }
+			self.parts.wpn_fps_pis_mike2011_xmag_large.custom_stats = { ads_speed_mult = 1.15}
+
+			self.parts.wpn_fps_pis_mike2011_trigger_hair.supported = true
+			self.parts.wpn_fps_pis_mike2011_trigger_hair.stats = { value = 6, recoil = -8, spread = -2 }
+			self.parts.wpn_fps_pis_mike2011_trigger_hair.custom_stats = {
+				rof_mult = 1.17965367
+			}
+			self.parts.wpn_fps_pis_mike2011_trigger_light.supported = true
+			self.parts.wpn_fps_pis_mike2011_trigger_light.stats = { value = 3, recoil = -2 }
+			self.parts.wpn_fps_pis_mike2011_trigger_light.custom_stats = {
+				rof_mult = 1.082251
+			}
+			self.parts.wpn_fps_pis_mike2011_trigger_heavy.supported = true
+			self.parts.wpn_fps_pis_mike2011_trigger_heavy.stats = { value = 2, recoil = 2, spread = 2 }
+			self.parts.wpn_fps_pis_mike2011_trigger_heavy.custom_stats = {
+				rof_mult = 0.865800865,
+				hip_mult = 1.2
+			}
 		end
 
 		if self.parts.wpn_fps_ass_ngsierra_irons_angled then --MW2022 RM277

@@ -51,6 +51,13 @@ return {
 			},
 		},
 	},
+	-- OMNIA is coming for your ass
+	[100772] = {
+		spawn_bravos = pro_job,
+		values = {
+			time = 30,
+		},
+	},
 -- Bio Weapons Labs Defense 
 	[108051] = {
 		on_executed = {

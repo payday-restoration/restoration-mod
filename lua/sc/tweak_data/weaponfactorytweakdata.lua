@@ -40976,7 +40976,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -2,
 				reload = -4
 			}
-			
+
 			self.parts.wpn_fps_snp_scar20_s_pdw.supported = true
 			self.parts.wpn_fps_snp_scar20_s_pdw.stats = deep_clone(stocks.adj_to_nocheeks_stats)
 			self.parts.wpn_fps_snp_scar20_s_pdw.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
@@ -40987,7 +40987,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_scar20_ck_light.supported = true
 			self.parts.wpn_fps_snp_scar20_ck_light.keep_damage = true
 			self.parts.wpn_fps_snp_scar20_ck_light.stats = {
-				damage = -15,
+				damage = -30,
 				recoil = 10,
 				concealment = 2,
 				total_ammo_mod = 77

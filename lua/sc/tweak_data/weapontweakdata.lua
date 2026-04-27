@@ -33463,7 +33463,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.las58.AMMO_MAX = self.las58.CLIP_AMMO_MAX * 4
 				self.las58.ammo_ratio = 2
 				self.las58.sms = 0.7
-				self.las58.fire_mode_data.fire_rate = 0.096 * 1.6
+				self.las58.fire_mode_data.fire_rate = 0.133333 * 1.6
 				self.las58.fire_rate_multiplier = 1.6
 				self.las58.BURST_FIRE = false
 				self.las58.CAN_TOGGLE_FIREMODE = false
@@ -33479,8 +33479,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.las58.stats = {
 					damage = 40,
-					spread = 26,
-					recoil = 95,
+					spread = 16,
+					recoil = 85,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 24,
@@ -33578,7 +33578,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.senator.recategorize = { "heavy_pis", "handcannon" }
 				self.senator.damage_type = "handcannon"
-				self.senator.fire_mode_data.fire_rate = 0.3614457 * 1.6
+				self.senator.fire_mode_data.fire_rate = 0.3599928 * 1.6
 				self.senator.fire_rate_multiplier = 1.6
 				self.senator.sms = 0.7
 				self.senator.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
@@ -33600,8 +33600,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.senator.stats = {
 					damage = 45,
-					spread = 68,
-					recoil = 11,
+					spread = 61,
+					recoil = 7,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 25,

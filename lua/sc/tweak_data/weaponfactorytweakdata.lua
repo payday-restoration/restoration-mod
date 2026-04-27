@@ -11581,6 +11581,20 @@ end
 						custom_stats = { ads_speed_mult = 1.1 }
 					}
 
+					self.wpn_fps_ass_flint.override.wpn_fps_upg_i_burstfire = {
+						custom_stats = {
+							info_lock_burst = true,
+							burst_fire = {
+								count = 2,
+								delay = 0.2,
+								recoil_mult = 0.5,
+								last_recoil_mult = 1.1,
+								lock = true
+							},
+							rof_mult = 1.25
+						}
+					}
+
 					table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_ak_g_rk3")
 					table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_i_singlefire")
 					table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_i_autofire")
@@ -28528,6 +28542,29 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -6
 			}
 			self.wpn_fps_shot_x_aalpha12.override = self.wpn_fps_shot_x_aalpha12.override or {}
+
+			for i, part_id in pairs(self.wpn_fps_shot_x_aalpha12.uses_parts) do
+				if self.parts[part_id] and not table.contains(self.wpn_fps_shot_x_aalpha12.default_blueprint, part_id) and (self.parts[part_id].type == "sight" or self.parts[part_id].type == "second_sight") then
+					self.wpn_fps_shot_x_aalpha12.override[part_id] = {
+						custom_stats = {}
+					}
+					if self.parts[part_id].type == "second_sight" then
+						self.wpn_fps_shot_x_aalpha12.override[part_id].stats = { value = 0, gadget_zoom = 1}
+					else
+						self.wpn_fps_shot_x_aalpha12.override[part_id].stats = { value = 0, zoom = 1}
+					end
+					if self.parts[part_id].adds then
+						for v, add_part_id in pairs(self.parts[part_id].adds) do
+							if part_id .. "_steelsight" == add_part_id then
+								self.wpn_fps_shot_x_aalpha12.override[add_part_id] = {
+									unit = self.parts[part_id].unit
+								}
+							end
+						end
+					end
+				end
+			end
+
 			self.wpn_fps_shot_x_aalpha12.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
 			self.wpn_fps_shot_x_aalpha12.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)
 			self.wpn_fps_shot_x_aalpha12.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override)

@@ -1329,6 +1329,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			self._descope_on_fire_ignore_setting = self:weapon_tweak_data().descope_on_fire_ignore_setting
 			self._descope_on_dmg = self:weapon_tweak_data().descope_on_dmg
 			self._srm = self:weapon_tweak_data().recoil_values and self:weapon_tweak_data().recoil_values.srm
+			self._sam = self:weapon_tweak_data().recoil_values and self:weapon_tweak_data().recoil_values.sam
 			self._rms = self:weapon_tweak_data().rms
 			self._sms = self:weapon_tweak_data().sms
 			self._smt = self._sms and self:weapon_tweak_data().fire_mode_data and ((self:weapon_tweak_data().fire_mode_data.fire_rate * 5) * (self:weapon_tweak_data().smt_mult or 1))

@@ -1288,6 +1288,17 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					local fired_func = self._primary_action_get_value.fired[fire_mode]
 					local spin_up_semi = not (self._already_fired and input.btn_primary_attack_state) and weap_base:weapon_tweak_data().spin_up_semi
 					local spin_up_check = (not spin_up_semi and fire_mode ~= "single") or spin_up_semi
+					local sam = weap_base._sam
+					if sam then
+						local shots_fired = sam and math.max(weap_base._shot_recoil_magnitude_count - 1 - (sam.start or 0), 0)  or 0
+						local shots_fired_mult
+						if sam.mod > 0 then
+							shots_fired_mult = sam and math.clamp(sam.init - (shots_fired * sam.mod), sam.final, sam.init)
+						else
+							shots_fired_mult = sam and math.clamp(sam.init - (shots_fired * sam.mod), sam.init, sam.final)
+						end
+						spread_mul = spread_mul * shots_fired_mult
+					end
 
 					if fired_func then
 						fired = fired_func(self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
@@ -3398,10 +3409,11 @@ function PlayerStandard:_last_shot_recoil_t(t, dt)
 	local in_burst = weap_base:in_burst_mode()
 	local auto_burst = in_burst and weap_base._auto_burst
 	local burst_delay = (in_burst and weap_base._burst_delay) or 0
-	local max_t = weap_base._kick_pattern and weap_base._kick_pattern.max_t or 0.35
+	local max_t = weap_base._kick_pattern and weap_base._kick_pattern.max_t or
+				weap_base._sam and weap_base._sam.max_t or 0.35
 	if weap_base then
 		if self._shooting then
-			self._last_recoil_t = math.clamp( ((fire_rate + burst_delay) / (weap_base:fire_rate_multiplier() * 0.8)) * 2 , math.max(0, math.lerp( 0.2, -0.25, fire_rate + burst_delay )) , max_t + burst_delay / ((not auto_burst and (weap_base:fire_rate_multiplier() / base_fire_rate_multiplier) ) or 1) )
+			self._last_recoil_t = math.clamp( ((fire_rate + burst_delay) / (weap_base:fire_rate_multiplier() * 0.8)) * 2 , math.max(0, math.lerp( 0.2, -0.25, fire_rate + burst_delay )) , max_t + (fire_rate * 0.5) + burst_delay / ((not auto_burst and (weap_base:fire_rate_multiplier() / base_fire_rate_multiplier) ) or 1) )
 		else
 			if self._last_recoil_t then
 				self._last_recoil_t = self._last_recoil_t - dt

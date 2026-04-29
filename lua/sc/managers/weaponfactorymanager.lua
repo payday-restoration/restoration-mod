@@ -242,3 +242,211 @@ function WeaponFactoryManager:disassemble(...)
 	self:_clear_parts_cache()
 	return _orig_disassemble(self, ...)
 end
+
+--Stance mod stuff really doesn't like the cache stuff so associated functions get a vanilla version of functions specifically for  them until I figure out why this happens
+function WeaponFactoryManager:get_assembled_blueprint_stance_mod(factory_id, blueprint)
+	local assembled_blueprint = {}
+	local factory = tweak_data.weapon.factory
+	local forbidden = self:_get_forbidden_parts_stance_mod(factory_id, blueprint)
+	local override = self:_get_override_parts_stance_mod(factory_id, blueprint)
+
+	for _, part_id in ipairs(blueprint) do
+		if not forbidden[part_id] then
+			local part = self:_part_data_stance_mod(part_id, factory_id, override)
+			local original_part = factory.parts[part_id] or part
+
+			if factory[factory_id].adds and factory[factory_id].adds[part_id] then
+				local add_blueprint = self:get_assembled_blueprint_stance_mod(factory_id, factory[factory_id].adds[part_id]) or {}
+
+				for i, d in ipairs(add_blueprint) do
+					table.insert(assembled_blueprint, d)
+				end
+			end
+
+			if part.adds_type then
+				for _, add_type in ipairs(part.adds_type) do
+					local add_id = factory[factory_id][add_type]
+
+					table.insert(assembled_blueprint, add_id)
+				end
+			end
+
+			if part.adds then
+				for _, add_id in ipairs(part.adds) do
+					table.insert(assembled_blueprint, add_id)
+				end
+			end
+
+			table.insert(assembled_blueprint, part_id)
+		end
+	end
+
+	return assembled_blueprint
+end
+
+function WeaponFactoryManager:get_stance_mod(factory_id, blueprint, using_second_sight)
+	local factory = tweak_data.weapon.factory
+	local assembled_blueprint = self:get_assembled_blueprint_stance_mod(factory_id, blueprint)
+	local forbidden = self:_get_forbidden_parts_stance_mod(factory_id, assembled_blueprint)
+	local override = self:_get_override_parts_stance_mod(factory_id, assembled_blueprint)
+	local part = nil
+	local translation = Vector3()
+	local rotation = Rotation()
+	local is_not_sight_type, is_weapon_sight, is_second_sight = nil
+	local second_sight_id = using_second_sight
+
+	for _, part_id in ipairs(assembled_blueprint) do
+		if not forbidden[part_id] then
+			part = self:_part_data_stance_mod(part_id, factory_id, override)
+
+			if part.stance_mod then
+				is_not_sight_type = part.type ~= "sight" and part.type ~= "second_sight" and part.sub_type ~= "second_sight" or false
+				is_weapon_sight = not second_sight_id and part.type == "sight" or false
+				is_second_sight = second_sight_id and part_id == second_sight_id or false
+
+				if (is_not_sight_type or is_weapon_sight or is_second_sight) and part.stance_mod[factory_id] then
+					local part_translation = part.stance_mod[factory_id].translation
+
+					if part_translation then
+						mvector3.add(translation, part_translation)
+					end
+
+					local part_rotation = part.stance_mod[factory_id].rotation
+
+					if part_rotation then
+						mrotation.multiply(rotation, part_rotation)
+					end
+				end
+			end
+		end
+	end
+
+	return {
+		translation = translation,
+		rotation = rotation
+	}
+end
+
+function WeaponFactoryManager:_get_override_parts_stance_mod(factory_id, blueprint)
+	local factory = tweak_data.weapon.factory
+	local overridden = {}
+	local override_override = {}
+
+	for _, part_id in ipairs(blueprint) do
+		local part = self:_part_data_stance_mod(part_id, factory_id)
+
+		if part and part.override then
+			for override_id, override_data in pairs(part.override) do
+				if override_data.override then
+					override_override[override_id] = override_data
+				end
+			end
+		end
+	end
+
+	if factory[factory_id] and factory[factory_id].merge_overrides then
+		for _, part_id in ipairs(blueprint) do
+			local part = self:_part_data_stance_mod(part_id, factory_id, override_override)
+
+			if part and part.override then
+				for override_id, override_data in pairs(part.override) do
+					overridden[override_id] = overridden[override_id] or {}
+
+					for id, data in pairs(override_data) do
+						overridden[override_id][id] = data
+					end
+				end
+			end
+		end
+
+		return overridden
+	end
+
+	for _, part_id in ipairs(blueprint) do
+		local part = self:_part_data_stance_mod(part_id, factory_id, override_override)
+
+		if part and part.override then
+			for override_id, override_data in pairs(part.override) do
+				overridden[override_id] = override_data
+			end
+		end
+	end
+
+	return overridden
+end
+
+function WeaponFactoryManager:_get_forbidden_parts_stance_mod(factory_id, blueprint)
+	local factory = tweak_data.weapon.factory
+	local forbidden = {}
+	local override = self:_get_override_parts_stance_mod(factory_id, blueprint)
+
+	for _, part_id in ipairs(blueprint) do
+		if self:is_part_valid(part_id) then
+			local part = self:_part_data_stance_mod(part_id, factory_id, override)
+
+			if part.depends_on then
+				local part_forbidden = true
+
+				for _, other_part_id in ipairs(blueprint) do
+					local other_part = self:_part_data_stance_mod(other_part_id, factory_id, override)
+
+					if part.depends_on == other_part.type then
+						part_forbidden = false
+
+						break
+					end
+				end
+
+				if part_forbidden then
+					forbidden[part_id] = part.depends_on
+				end
+			end
+
+			if part.forbids then
+				for _, forbidden_id in ipairs(part.forbids) do
+					forbidden[forbidden_id] = part_id
+				end
+			end
+
+			if part.adds then
+				local add_forbidden = self:_get_forbidden_parts_stance_mod(factory_id, part.adds)
+
+				for forbidden_id, part_id in pairs(add_forbidden) do
+					forbidden[forbidden_id] = part_id
+				end
+			end
+		else
+			Application:error("[WeaponFactoryManager:_get_forbidden_parts] Part do not exist!", part_id, "factory_id", factory_id)
+
+			forbidden[part_id] = part_id
+		end
+	end
+
+	return forbidden
+end
+
+function WeaponFactoryManager:_part_data_stance_mod(part_id, factory_id, override)
+	local factory = tweak_data.weapon.factory
+
+	if not self:is_part_valid(part_id) then
+		Application:error("[WeaponFactoryManager:_part_data] Part do not exist!", part_id, "factory_id", factory_id)
+
+		return {}
+	end
+
+	local part = deep_clone(factory.parts[part_id])
+
+	if factory[factory_id].override and factory[factory_id].override[part_id] then
+		for d, v in pairs(factory[factory_id].override[part_id]) do
+			part[d] = type(v) == "table" and deep_clone(v) or v
+		end
+	end
+
+	if override and override[part_id] then
+		for d, v in pairs(override[part_id]) do
+			part[d] = type(v) == "table" and deep_clone(v) or v
+		end
+	end
+
+	return part
+end

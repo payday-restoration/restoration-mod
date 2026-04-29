@@ -1289,15 +1289,27 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					local spin_up_semi = not (self._already_fired and input.btn_primary_attack_state) and weap_base:weapon_tweak_data().spin_up_semi
 					local spin_up_check = (not spin_up_semi and fire_mode ~= "single") or spin_up_semi
 					local sam = weap_base._sam
+					local sam_hf = sam and sam.hf
 					if sam then
-						local shots_fired = sam and math.max(weap_base._shot_recoil_magnitude_count - 1 - (sam.start or 0), 0)  or 0
-						local shots_fired_mult
-						if sam.mod > 0 then
-							shots_fired_mult = sam and math.clamp(sam.init - (shots_fired * sam.mod), sam.final, sam.init)
-						else
-							shots_fired_mult = sam and math.clamp(sam.init - (shots_fired * sam.mod), sam.init, sam.final)
+						if self._state_data.in_full_steelsight then
+							local shots_fired = math.max(weap_base._shot_recoil_magnitude_count - 1 - (sam.start or 0), 0)  or 0
+							local shots_fired_mult
+							if sam.mod > 0 then
+								shots_fired_mult = math.clamp(sam.init - (shots_fired * sam.mod), sam.final, sam.init)
+							else
+								shots_fired_mult = math.clamp(sam.init - (shots_fired * sam.mod), sam.init, sam.final)
+							end
+							spread_mul = spread_mul * shots_fired_mult
+						elseif sam_hf and not self._state_data.in_full_steelsight then
+							local shots_fired = sam_hf and math.max(weap_base._shot_recoil_magnitude_count - 1 - (sam_hf.start or 0), 0)  or 0
+							local shots_fired_mult
+							if sam_hf.mod > 0 then
+								shots_fired_mult = math.clamp(sam_hf.init - (shots_fired * sam_hf.mod), sam_hf.final, sam_hf.init)
+							else
+								shots_fired_mult = math.clamp(sam_hf.init - (shots_fired * sam_hf.mod), sam_hf.init, sam_hf.final)
+							end
+							spread_mul = spread_mul * shots_fired_mult
 						end
-						spread_mul = spread_mul * shots_fired_mult
 					end
 
 					if fired_func then

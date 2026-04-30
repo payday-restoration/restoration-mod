@@ -3335,6 +3335,112 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				end
 			end
 
+			self._throwable_stats_shown = {
+				{
+					range = true,
+					name = "damage"
+				},
+				{
+					range = true,
+					name = "range"
+				},
+				{
+					inverse = true,
+					name = "cooldown",
+					num_decimals = 1,
+					suffix = managers.localization:text("menu_seconds_suffix_short")
+				},
+				{
+					index = true,
+					name = "amount"
+				}
+			}
+			local x = 0
+			local y = 20
+			local text_panel = nil
+			self._throwable_stats_texts = {}
+			local text_columns = {
+				{
+					size = 100,
+					name = "name"
+				},
+				{
+					align = "right",
+					name = "equip",
+					blend = "add",
+					alpha = 0.75,
+					size = 55
+				},
+				{
+					align = "right",
+					name = "base",
+					blend = "add",
+					alpha = 0.75,
+					size = 60
+				},
+				{
+					align = "right",
+					name = "skill",
+					blend = "add",
+					alpha = 0.75,
+					size = 65,
+					color = tweak_data.screen_colors.resource
+				},
+				{
+					size = 55,
+					name = "total",
+					align = "right"
+				}
+			}
+			self._throwable_stats_panel = self._stats_panel:panel({
+				visible = false
+			})
+
+			for i, stat in ipairs(self._throwable_stats_shown) do
+				panel = self._throwable_stats_panel:panel({
+					h = 20,
+					layer = 1,
+					name = stat.name,
+					y = y,
+					w = self._throwable_stats_panel:w()
+				})
+
+				if math.mod(i, 2) == 0 and not panel:child(tostring(i)) then
+					panel:rect({
+						name = tostring(i),
+						color = Color.black:with_alpha(0.3)
+					})
+				end
+
+				x = 2
+				y = y + 20
+				self._throwable_stats_texts[stat.name] = {}
+
+				for _, column in ipairs(text_columns) do
+					text_panel = panel:panel({
+						layer = 0,
+						x = x,
+						w = column.size,
+						h = panel:h()
+					})
+					self._throwable_stats_texts[stat.name][column.name] = text_panel:text({
+						rotation = 360,
+						layer = 1,
+						font_size = small_font_size,
+						font = small_font,
+						align = column.align,
+						alpha = column.alpha,
+						blend_mode = column.blend,
+						color = column.color or tweak_data.screen_colors.text
+					})
+					x = x + column.size
+
+					if column.name == "total" then
+						text_panel:set_x(190)
+					end
+				end
+			end
+
 			panel = self._stats_panel:panel({
 				name = "modslist_panel",
 				layer = 0,
@@ -4168,6 +4274,91 @@ function BlackMarketGui:show_stats()
 		end
 
 		hide_stats = true
+		elseif tweak_data.blackmarket.projectiles[self._slot_data.name] then
+		self:hide_melee_weapon_stats()
+		self:hide_armor_stats()
+		self:hide_weapon_stats()
+		self._throwable_stats_panel:show()
+
+		for _, title in pairs(self._stats_titles) do
+			title:hide()
+		end
+
+		self:set_stats_titles({
+			show = true,
+			name = "total"
+		}, {
+			name = "equip",
+			text_id = "bm_menu_equipped",
+			alpha = 0.75,
+			x = 105,
+			show = true
+		})
+
+		local equipped_item = managers.blackmarket:equipped_item(category)
+		local equip_base_stats, equip_mods_stats, equip_skill_stats = self:_get_grenade_stats(equipped_item)
+		local base_stats, mods_stats, skill_stats = self:_get_grenade_stats(self._slot_data.name)
+		local no_data_string = managers.localization:to_upper_text("bm_menu_damage_falloff_no_data")
+
+		for _, stat in ipairs(self._throwable_stats_shown) do
+			self._throwable_stats_texts[stat.name].name:set_text(utf8.to_upper(managers.localization:text("bm_menu_" .. stat.name)))
+
+			local equip = equip_base_stats[stat.name].value
+			value = base_stats[stat.name].value
+
+			if equip or value then
+				local equip_text = equip and format_round(equip, stat.round_value) or no_data_string
+				local total_text = value and format_round(value, stat.round_value) or no_data_string
+
+				if stat.suffix then
+					if equip then
+						equip_text = equip_text .. tostring(stat.suffix) or equip_text
+					end
+
+					if value then
+						total_text = total_text .. tostring(stat.suffix) or total_text
+					end
+				end
+
+				if stat.prefix then
+					if equip then
+						equip_text = tostring(stat.prefix) .. equip_text or equip_text
+					end
+
+					if value then
+						total_text = tostring(stat.prefix) .. total_text or total_text
+					end
+				end
+
+				self._throwable_stats_panel:child(stat.name):show()
+				self._throwable_stats_texts[stat.name].equip:set_alpha(0.75)
+				self._throwable_stats_texts[stat.name].equip:set_text(equip_text)
+				self._throwable_stats_texts[stat.name].base:set_text("")
+				self._throwable_stats_texts[stat.name].skill:set_text("")
+				self._throwable_stats_texts[stat.name].total:set_text(total_text)
+
+				local positive = value and equip and equip < value
+				local negative = value and equip and value < equip
+
+				if stat.inverse then
+					local temp = positive
+					positive = negative
+					negative = temp
+				end
+
+				if positive then
+					self._throwable_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stats_positive)
+				elseif negative then
+					self._throwable_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stats_negative)
+				else
+					self._throwable_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.text)
+				end
+
+				self._throwable_stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.text)
+			else
+				self._throwable_stats_panel:child(stat.name):hide()
+			end
+		end
 	elseif tweak_data.blackmarket.melee_weapons[self._slot_data.name] then
 		self:hide_armor_stats()
 		self:hide_weapon_stats()
@@ -4630,6 +4821,16 @@ function BlackMarketGui:show_stats()
 	elseif self._mweapon_stats_panel:visible() then
 		for i, child in ipairs(self._mweapon_stats_panel:children()) do
 			y = math.max(y, child:bottom())
+		end
+	elseif self._throwable_stats_panel:visible() then
+		y = 20
+
+		for i, child in ipairs(self._throwable_stats_panel:children()) do
+			if child:visible() then
+				child:set_y(y)
+
+				y = math.max(y, child:bottom())
+			end
 		end
 	end
 
@@ -7605,7 +7806,7 @@ function BlackMarketGui:populate_choose_mask_mod(data)
 			end
 
 			table.insert(new_data, "mp_preview")
-			
+
 			table.insert(new_data, "mp_modshop")
 		end
 

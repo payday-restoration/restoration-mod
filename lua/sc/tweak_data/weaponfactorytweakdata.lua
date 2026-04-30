@@ -2395,7 +2395,7 @@ end
 						prefix = "g_bullet_"
 					}
 					self.parts.wpn_fps_pis_g18c_m_mag_33rnd.custom_stats = {
-						ads_speed_mult = 1.1
+						ads_speed_mult = 1.15
 					}
 
 					--(STRYK 18c) Stock
@@ -2816,6 +2816,24 @@ end
 
 					self.wpn_fps_pis_x_stech_npc.override = deep_clone(self.wpn_fps_pis_x_stech.override)
 					self.wpn_fps_pis_x_stech_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_stech.uses_parts)
+				end)
+
+			--MAKAROV
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_pmm", "resmod_pmm", function(self)
+					self.parts.wpn_fps_pis_pmm_g_black.supported = true
+					self.parts.wpn_fps_pis_pmm_g_black.stats = deep_clone(grips.quickdraw_1)
+					self.parts.wpn_fps_pis_pmm_g_black.custom_stats = deep_clone(grips.quickdraw_1)
+
+					self.parts.wpn_fps_pis_pmm_slide_suppressed.supported = true
+					self.parts.wpn_fps_pis_pmm_slide_suppressed.stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_pis_pmm_slide_suppressed.custom_stats = deep_clone(barrels.short_b1_stats)
+
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.supported = true
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.has_description = true
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.desc_id = "bm_wp_upg_suppressor"
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.stats = deep_clone(muzzle_device.supp_dual2_c)
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.custom_stats= deep_clone(muzzle_device.supp_dual2_c)
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.perks = {"silencer"}
 				end)
 
 			--PPK
@@ -4023,6 +4041,36 @@ end
 					table.insert(self.wpn_fps_pis_hs2000.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 					self.wpn_fps_pis_hs2000_npc.uses_parts = deep_clone(self.wpn_fps_pis_hs2000.uses_parts)
+				end)
+
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_speen", "resmod_speen", function(self)
+
+					--extendo barrel
+					self.parts.wpn_fps_smg_speen_barrel_dmr.supported = true
+					self.parts.wpn_fps_smg_speen_barrel_dmr.stats = deep_clone(barrels.long_b1_stats)
+					self.parts.wpn_fps_smg_speen_barrel_dmr.custom_stats = deep_clone(barrels.long_b1_stats)
+
+					--give me a clip so i can do some damage
+					self.parts.wpn_fps_smg_speen_extra_magazine.supported = true
+					self.parts.wpn_fps_smg_speen_extra_magazine.stats = {
+						value = 2,
+						spread = -2,
+						concealment = -1,
+						reload = 5
+					}
+
+					--extendo clipazine
+					self.parts.wpn_fps_smg_speen_magazine_extended.supported = true
+					self.parts.wpn_fps_smg_speen_magazine_extended.stats = {
+						value = 6,
+						extra_ammo = 16,
+						concealment = -3,
+						reload = -5
+					}
+					self.parts.wpn_fps_smg_speen_magazine_extended.custom_stats = {
+						ads_speed_mult = 1.15
+					}
+
 				end)
 
 	--[[     HEAVY PISTOLS     ]]
@@ -19609,6 +19657,10 @@ end
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_welrod = {
 						translation = Vector3(0.02, -1.4, -4.466),
+					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_speen = {
+						translation = Vector3(0, 14.3, -0.41),
+						rotation = Rotation(-0.1, -0.31, 0)
 					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_p90 = {

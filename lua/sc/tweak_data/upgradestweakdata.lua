@@ -173,7 +173,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"cs",
 					"brick",
 					"ostry",
-					"r700"
+					"r700",
+					"laser_watch"
 				}
 			},
 		l24 = {
@@ -238,7 +239,11 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"holt",
 					"x_holt",
 					"x_korth",
-					"welrod"
+					"welrod",
+					"pmm",
+					"x_pmm",
+					"speen",
+					"dart"
 				}
 			},
 		l32 = {

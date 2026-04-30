@@ -5227,6 +5227,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sterling.lock_slide_alt = true
 	self.schakal.lock_slide_alt = true
 	self.m1911.lock_slide_alt = true
+	self.pmm.lock_slide_alt = true
 	self.rpg7.sounds.magazine_empty = nil
 	self.coach.sounds.magazine_empty = nil
 	self.contender.sounds.magazine_empty = nil
@@ -6302,6 +6303,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 					--Strix (Makarov)
 						self.pmm.has_description = true
+						self.pmm.desc_id = "bm_pmm_sc_desc"
 						self.pmm.AMMO_MAX = 75
 						self.pmm.CLIP_AMMO_MAX = 8
 						self.pmm.fire_mode_data.fire_rate = 0.09677419
@@ -6321,7 +6323,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.pmm.stats = {
 							damage = 24,
 							spread = 57,
-							recoil = 89,
+							recoil = 87,
 							spread_moving = 9,
 							zoom = 1,
 							concealment = 32,
@@ -6334,14 +6336,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.pmm.stats_modifiers = nil
 						self.pmm.panic_suppression_chance = 0.05
-						self.pmm.reload_speed_multiplier = 1.4
+						self.pmm.reload_speed_multiplier = 1.35
 						self.pmm.timers.reload_empty = 2
 						self.pmm.timers.reload_exit_empty = 1
 						self.pmm.timers.reload_not_empty = 1.45
 						self.pmm.timers.reload_exit_not_empty = 0.5
 						self.pmm.weapon_movement_penalty = 1.14
+						self.pmm.weapon_hold = "glock" --temp until the wrists for its anims get fixed
+						self.pmm.animations.reload_name_id = "ppk"
 					--Akimbo
 						self.x_pmm.has_description = true
+						self.x_pmm.desc_id = "bm_x_pmm_sc_desc"
 						self.x_pmm.AMMO_MAX = 150
 						self.x_pmm.CLIP_AMMO_MAX = 16
 						self.x_pmm.fire_mode_data.fire_rate = 0.09677419
@@ -6361,7 +6366,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_pmm.stats = {
 							damage = 24,
 							spread = 47,
-							recoil = 79,
+							recoil = 77,
 							spread_moving = 9,
 							zoom = 1,
 							concealment = 32,
@@ -6375,7 +6380,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_pmm.stats_modifiers = nil
 						self.x_pmm.weapon_movement_penalty = 1.14
 						self.x_pmm.panic_suppression_chance = 0.05
-						self.x_pmm.reload_speed_multiplier = 1.4
+						self.x_pmm.reload_speed_multiplier = 1.35
 						self.x_pmm.timers.reload_exit_not_empty = 0.55
 						self.x_pmm.timers.reload_exit_empty = 0.65
 
@@ -7005,6 +7010,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_packrat.timers.reload_exit_empty = 0.55
 						self.x_packrat.timers.reload_exit_not_empty = 0.65
 
+					--Ballerina 9mm
+						self.speen.has_description = true
+						self.speen.desc_id = "bm_speen_sc_desc"
+						self.speen.categories = {"pistol"}
+						self.speen.CLIP_AMMO_MAX = 17
+						self.speen.AMMO_MAX = 60
+						self.speen.sounds.enter_steelsight = "secondary_steel_sight_enter"
+						self.speen.sounds.leave_steelsight = "secondary_steel_sight_exit"
+						self.speen.fire_mode_data.fire_rate = 0.1
+						self.speen.CAN_TOGGLE_FIREMODE = false
+						self.speen.FIRE_MODE = "single"
+						self.speen.kick = {}
+						self.speen.kick = self.stat_info.kick_tables.left_recoil
+						self.speen.kick_pattern = {
+							{0, self.stat_info.kick_tables.left_recoil},
+							{4, self.stat_info.kick_tables.even_recoil},
+							{7, self.stat_info.kick_tables.right_recoil},
+							{10, self.stat_info.kick_tables.moderate_right_kick},
+							{16, self.stat_info.kick_tables.even_recoil},
+						}
+						self.speen.supported = true
+						self.speen.ads_speed = 0.180
+						self.speen.damage_falloff = {
+							start_dist = 2000,
+							end_dist = 4300,
+							min_mult = 0.2
+						}
+						self.speen.stats = {
+							damage = 30,
+							spread = 76,
+							recoil = 93,
+							spread_moving = 5,
+							zoom = 1,
+							concealment = 29,
+							suppression = 9,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.speen.panic_suppression_chance = 0.05
+						self.speen.stats_modifiers = nil
+						self.speen.use_unequip_swap = true
+						self.speen.swap_speed_multiplier = 0.55
+						self.speen.timers.equip = 1.3
+						self.speen.timers.reload_empty = 2.3
+						self.speen.timers.reload_exit_empty = 0.65
+						self.speen.timers.reload_not_empty = 1.3
+						self.speen.timers.reload_exit_not_empty = 0.51
+
 					--Parabellum (Luger)
 						self.breech.has_description = true
 						self.breech.desc_id = "bm_breech_sc_desc"
@@ -7418,10 +7474,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.c96.stats = {
 							damage = 45,
 							spread = 67,
-							recoil = 69,
+							recoil = 66,
 							spread_moving = 8,
 							zoom = 1,
-							concealment = 28,
+							concealment = 29,
 							suppression = 9,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -7475,7 +7531,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 89,
 							spread_moving = 5,
 							zoom = 1,
-							concealment = 30,
+							concealment = 29,
 							suppression = 9,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -7486,7 +7542,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sub2000.panic_suppression_chance = 0.05
 						self.sub2000.stats_modifiers = nil
 						self.sub2000.use_unequip_swap = true
-						self.sub2000.swap_speed_multiplier = 0.4
+						self.sub2000.swap_speed_multiplier = 0.46
 						self.sub2000.timers.reload_empty = 3.1
 						self.sub2000.timers.reload_exit_empty = 1.05
 						self.sub2000.timers.reload_exit_not_empty = 0.95
@@ -7548,55 +7604,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 				--SECONDARIES
 
-					--Ballerina 9mm
-						self.speen.has_description = true
-						self.speen.categories = {"pistol"}
-						self.speen.CLIP_AMMO_MAX = 15
-						self.speen.AMMO_MAX = 0
-						self.speen.sounds.enter_steelsight = "secondary_steel_sight_enter"
-						self.speen.sounds.leave_steelsight = "secondary_steel_sight_exit"
-						self.speen.fire_mode_data.fire_rate = 0.115384615
-						self.speen.CAN_TOGGLE_FIREMODE = false
-						self.speen.FIRE_MODE = "single"
-						self.speen.kick = {}
-						self.speen.kick = self.stat_info.kick_tables.left_recoil
-						self.speen.kick_pattern = {
-							{0, self.stat_info.kick_tables.left_recoil},
-							{4, self.stat_info.kick_tables.even_recoil},
-							{7, self.stat_info.kick_tables.right_recoil},
-							{10, self.stat_info.kick_tables.moderate_right_kick},
-							{16, self.stat_info.kick_tables.even_recoil},
-						}
-						self.speen.supported = true
-						self.speen.ads_speed = 0.180
-						self.speen.damage_falloff = {
-							start_dist = 2000,
-							end_dist = 4300,
-							min_mult = 0.2
-						}
-						self.speen.stats = {
-							damage = 45,
-							spread = 72,
-							recoil = 89,
-							spread_moving = 5,
-							zoom = 1,
-							concealment = 30,
-							suppression = 9,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 400,
-							value = 1,
-							reload = 25
-						}
-						self.speen.panic_suppression_chance = 0.05
-						self.speen.stats_modifiers = nil
-						self.speen.use_unequip_swap = true
-						self.speen.swap_speed_multiplier = 0.44
-						self.speen.timers.equip = 1.3
-						self.speen.timers.reload_empty = 2.5
-						self.speen.timers.reload_exit_empty = 0.1
-						self.speen.timers.reload_not_empty = 1.6
-						self.speen.timers.reload_exit_not_empty = 0.1
 					--Model 54
 						self.type54.has_description = true
 						self.type54.desc_id = "bm_type54_sc_desc"

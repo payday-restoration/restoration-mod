@@ -44914,6 +44914,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					weap.translation = weap.translation + Vector3(0, 5, 1.73)
 				end
 			end
+			self.parts.wpn_fps_upg_hd2_1_5x_scope_ar23.supported = true
+			self.parts.wpn_fps_upg_hd2_1_5x_scope_ar23.desc_id = "bm_wp_upg_o_1_5"
+			self.parts.wpn_fps_upg_hd2_1_5x_scope_ar23.stats = {
+				value = 1,
+				zoom = 5
+			}
 			self.parts.wpn_fps_upg_hd2_1_5x_scope_ar23.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_1_5x_scope_ar23.stance_mod) do
 				if weap and weap.translation then

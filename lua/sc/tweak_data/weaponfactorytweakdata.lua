@@ -8974,7 +8974,7 @@ end
 					stats = {
 						value = 6,
 						spread = -2,
-						recoil = -4,
+						recoil = -6,
 						concealment = 3,
 						reload = 6,
 						extra_ammo = -45
@@ -9239,7 +9239,7 @@ end
 						srm = {
 							-0.02,
 							{1, 1.1},
-							4
+							3
 						}
 					}
 				}
@@ -9576,7 +9576,7 @@ end
 						srm = {
 							-0.02,
 							{1, 1.1},
-							4
+							3
 						}
 					}
 				}
@@ -10150,9 +10150,9 @@ end
 						custom_stats = {
 							rof_mult = 0.68125,
 							srm = {
-								-0.025,
+								-0.02,
 								{1, 1.1},
-								2
+								3
 							}
 						}
 					}
@@ -11108,9 +11108,9 @@ end
 						custom_stats = {
 							rof_mult = 0.8,
 							srm = {
-								-0.025,
+								-0.02,
 								{1, 1.1},
-								2
+								3
 							}
 						}
 					}
@@ -11766,9 +11766,9 @@ end
 						custom_stats = {
 							rof_mult = 0.8525,
 							srm = {
-								-0.025,
+								-0.02,
 								{1, 1.1},
-								2
+								3
 							}
 						}
 					}
@@ -24640,7 +24640,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			sms = 0.5,
 			srm = {
 				-0.04,
-				{1, 3},
+				{1, 2},
 				2
 			}
 		},
@@ -24747,7 +24747,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ammo_pickup_max_mul = 1.294871,
 			movement_speed_add = 0.05,
 			sms = 1.05882,
-			ene_hs_mult_add = 0.15
+			--ene_hs_mult_add = 0.15
 		},
 		override = {
 			wpn_fps_ass_74_body_upperreceiver = {
@@ -38234,7 +38234,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_lmg_rpk_m_jungle.stats = {
 					value = 6,
 					spread = -2,
-					recoil = -4,
+					recoil = -6,
 					concealment = 3,
 					reload = 6,
 					extra_ammo = -45
@@ -39090,9 +39090,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					armor_piercing_override = 0,
 					ads_speed_mult = 0.9523809,
 					srm = {
-						-0.01,
-						{1, 1.05},
-						4
+						-0.02,
+						{1, 1.1},
+						3
 					}
 				}
 				self.parts.wpn_fps_ass_contraband_body_sayhello.stance_mod = {
@@ -39819,7 +39819,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ads_speed_mult = 0.85714285,
 					srm = {
 						0.025,
-						{0.85, 1},
+						{0.7, 1},
 						2
 					}
 				}
@@ -39897,9 +39897,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					rof_mult = 1.0416666,
 					ads_speed_mult = 0.888888,
 					srm = {
-						-0.01,
-						{1, 1.05},
-						4
+						-0.02,
+						{1, 1.1},
+						3
 					}
 				}
 				self.parts.wpn_fps_ass_scar_body_light.forbids = { "wpn_fps_ass_scar_m_extended", "bm_wp_upg_a_ap25", "wpn_fps_ass_scar_b_long" }
@@ -42560,9 +42560,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ammo_pickup_min_mul = 3.23,
 					ammo_pickup_max_mul = 3.23,
 					srm = {
-						-0.005,
-						{1, 1.05},
-						9
+						-0.007,
+						{1, 1.075},
+						4
 					}
 				}
 				self.parts.wpn_fps_ass_g3_body_hk33.forbids = {
@@ -42632,8 +42632,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ammo_pickup_min_mul = 1.78,
 					ammo_pickup_max_mul = 1.78,
 					srm = {
-						-0.01,
-						{1, 1.05},
+						-0.007,
+						{1, 1.075},
 						4
 					}
 				}
@@ -42709,9 +42709,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ammo_pickup_min_mul = 0.6793,
 					ammo_pickup_max_mul = 0.6793,
 					srm = {
-						-0.01,
-						{1, 1.05},
-						4
+						-0.02,
+						{1, 1.1},
+						3
 					}
 				}
 				self.parts.wpn_fps_ass_amcar_body_ddm4.forbids = {}
@@ -42765,9 +42765,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ignore_rof_mult_anims = true,
 					rof_mult = 0.89230769,
 					srm = {
-						-0.02,
-						{1, 1.1},
-						4
+						-0.04,
+						{1, 1.2},
+						2
 					}
 				}
 				self.parts.wpn_fps_ass_ak_body_creedmoor.forbids = {
@@ -42997,9 +42997,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					rof_mult = 1.0416,
 					ads_speed_mult = 1.11111,
 					srm = {
-						-0.01,
-						{1, 1.05},
-						4
+						-0.02,
+						{1, 1.1},
+						3
 					}
 				}
 				self.parts.wpn_fps_ass_scar_body_hamr.adds = {}
@@ -44611,6 +44611,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 			self.wpn_fps_ass_ar32_npc.uses_parts = deep_clone(self.wpn_fps_ass_ar32.uses_parts)
 		end
+
 		--Helldivers AR-2 Coyote
 		if self.parts.wpn_fps_ass_coyote_receiver then
 			self.parts.wpn_fps_ass_coyote_receiver.stance_mod = {
@@ -44862,6 +44863,168 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 			self.wpn_fps_ass_ar23_npc.uses_parts = deep_clone(self.wpn_fps_ass_ar23.uses_parts)
+		end
+		--Helldivers 2 AR-23 (v6)
+		if self.parts.wpn_fps_ass_ar23_receiver_std then
+
+			self.parts.wpn_fps_upg_hd2_2x_scope_ar23.supported = true
+			self.parts.wpn_fps_upg_hd2_2x_scope_ar23.stats = {
+				value = 1,
+				zoom = 10
+			}
+			self.parts.wpn_fps_upg_hd2_2x_scope_ar23.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_2x_scope_ar23.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.015, 10.5, 3.73)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_holo_sight_ar23.supported = true
+			self.parts.wpn_fps_upg_hd2_holo_sight_ar23.desc_id = "bm_wp_upg_o_1_5"
+			self.parts.wpn_fps_upg_hd2_holo_sight_ar23.stats = {
+				value = 1,
+				zoom = 5
+			}
+			self.parts.wpn_fps_upg_hd2_holo_sight_ar23.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_holo_sight_ar23.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.0, 5, 3.79)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_1x_scope_ar23.supported = true
+			self.parts.wpn_fps_upg_hd2_1x_scope_ar23.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_upg_hd2_1x_scope_ar23.stats = {
+				value = 1,
+				zoom = 1
+			}
+			self.parts.wpn_fps_upg_hd2_1x_scope_ar23.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_1x_scope_ar23.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0, 5, 3.55)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_ar23.supported = true
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_ar23.desc_id = "bm_wp_upg_o_1_1"
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_ar23.stats = {
+				value = 1,
+				zoom = 1
+			}
+			self.parts.wpn_fps_upg_hd2_alt_1x_scope_ar23.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_alt_1x_scope_ar23.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0, 5, 1.73)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_1_5x_scope_ar23.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_1_5x_scope_ar23.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.015, 5, 4.22)
+				end
+			end
+			self.parts.wpn_fps_upg_hd2_4x_scope_ar23.supported = true
+			self.parts.wpn_fps_upg_hd2_4x_scope_ar23.desc_id = "bm_wp_upg_o_4"
+			self.parts.wpn_fps_upg_hd2_4x_scope_ar23.stats = {
+				value = 1,
+				zoom = 30
+			}
+			self.parts.wpn_fps_upg_hd2_4x_scope_ar23.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_hd2_4x_scope_ar23.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0.005, 18, 3.73)
+				end
+			end
+
+			self.parts.wpn_fps_ck_ar23a.supported = true
+			self.parts.wpn_fps_ck_ar23a.keep_damage = true
+			self.parts.wpn_fps_ck_ar23a.stats = {
+				value = 10,
+				concealment = 2,
+				spread = -6,
+				recoil = -6
+			}
+			self.parts.wpn_fps_ck_ar23a.custom_stats = {
+				alt_desc = "bm_wp_ck_carbine_desc",
+				ads_speed_mult = 0.95,
+				rof_mult = 1.4375,
+				falloff_start_mult = 0.5,
+				falloff_end_mult = 0.7
+			}
+
+			self.parts.wpn_fps_ck_ar23p.supported = true
+			self.parts.wpn_fps_ck_ar23p.keep_damage = true
+			self.parts.wpn_fps_ck_ar23p.stats = {
+				value = 10,
+				spread = 2,
+				recoil = -4,
+				damage = -5,
+				concealment = -3
+			}
+			self.parts.wpn_fps_ck_ar23p.custom_stats = {
+				alt_desc = "bm_wp_ck_penetrator_desc",
+				hs_mult = 1.384615,
+				hs_mult_desc = true,
+				armor_piercing_override = 0.5,
+				ammo_pickup_max_mul = 1.2,
+				ammo_pickup_min_mul = 1.2,
+				alt_ammo_pickup_max_mul = 1.2,
+				alt_ammo_pickup_min_mul = 1.2,
+				falloff_start_mult = 0.9375,
+				falloff_end_mult = 0.9,
+				damage_min_mult = 1.385
+			}
+
+			self.parts.wpn_fps_ck_ar23c.supported = true
+			self.parts.wpn_fps_ck_ar23c.keep_damage = true
+			self.parts.wpn_fps_ck_ar23c.stats = {
+				value = 10,
+				spread = -3,
+				recoil = -6,
+				damage = -3,
+				concealment = -1
+			}
+			self.parts.wpn_fps_ck_ar23c.custom_stats = {
+				alt_desc = "bm_wp_ck_concussive_desc",
+				rof_mult = 0.625,
+				ignore_rof_mult_anims = true,
+				block_burst = true,
+				info_burst_to_auto = true,
+				natascha = 2000,
+				falloff_start_mult = 0.5,
+				falloff_end_mult = 0.5,
+				damage_min_mult = 1.2
+			}
+			table.insert(self.parts.wpn_fps_ck_ar23c.forbids, "wpn_fps_upg_i_burstfire")
+
+			self.parts.wpn_fps_ass_ar23_m_drum.supported = true
+			self.parts.wpn_fps_ass_ar23_m_drum.stats = {
+				value = 5,
+				concealment = -6,
+				extra_ammo = 15,
+				reload = -8,
+				total_ammo_mod = 12
+			}
+			self.parts.wpn_fps_ass_ar23_m_drum.custom_stats = {
+				ads_speed_mult = 1.45
+			}
+			self.parts.wpn_fps_ass_ar23_m_quick.supported = true
+			self.parts.wpn_fps_ass_ar23_m_quick.stats = {
+				value = 5,
+				spread = -2,
+				concealment = -1,
+				reload = 2
+			}
+			self.parts.wpn_fps_ass_ar23_m_quick.custom_stats = {}
+			self.parts.wpn_fps_ass_ar23_m_short.supported = true
+			self.parts.wpn_fps_ass_ar23_m_short.stats = {
+				value = 2,
+				concealment = 3,
+				reload = 6,
+				extra_ammo = -15,
+				total_ammo_mod = -18
+
+			}
+			self.parts.wpn_fps_ass_ar23_m_short.custom_stats = {
+				ads_speed_mult = 0.925
+			}
 		end
 
 		--Helldivers 2 x Killzone StA-52
@@ -45143,7 +45306,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_upg_hd2_1_5x_scope_las5.adds = { "wpn_fps_upg_hd2_1_5x_scope_las5_steelsight" }
 		end
-
 
 		if self.parts.wpn_fps_upg_hd2_pen_optic then
 			self.parts.wpn_fps_upg_hd2_pen_optic.stats = {

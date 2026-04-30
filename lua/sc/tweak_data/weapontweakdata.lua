@@ -32714,8 +32714,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ar23.stats = {
 					damage = 18,
-					spread = 76,
-					recoil = 81,
+					spread = 72,
+					recoil = 77,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 24,
@@ -32733,10 +32733,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.panic_suppression_chance = 0.05
 				self.ar23.object_damage_mult = 0.66667 --scaled to match the object damage of 60 damage rifles
 				self.ar23.sounds.use_fix = nil
-				self.ar23.timers.reload_empty = 3.21
-				self.ar23.timers.reload_exit_empty = 1.12
-				self.ar23.timers.reload_not_empty = 2.32
-				self.ar23.timers.reload_exit_not_empty = 1.13
+				self.ar23.timers.reload_empty = 2.66
+				self.ar23.timers.reload_exit_empty = 0.87
+				self.ar23.timers.reload_not_empty = 2.10
+				self.ar23.timers.reload_exit_not_empty = 0.8
 			end
 
 			if self.ar59 then
@@ -37359,10 +37359,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.smt_mult = 4
 					weap.smt_range = { 0.5, 0.9 }
 				end
-				if weap.stats and weap.stats.damage < 30 then
-					weap.ene_hs_mult = 0.65
-				else
-					weap.ene_hs_mult = 0.5
+				if weap.stats then
+					if weap.stats.damage < 24 then
+						weap.ene_hs_mult = 0.8
+					elseif weap.stats.damage < 30 then
+						weap.ene_hs_mult = 0.65
+					else
+						weap.ene_hs_mult = 0.65
+					end
 				end
 			end
 
@@ -37410,6 +37414,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							0.02,
 							{0.9, 1},
 							2
+						},
+						sam = {
+							mod = -0.1,
+							init = 1,
+							final = 1.5,
+							start = 3
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_pis" then
@@ -37422,6 +37432,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							0.01,
 							{0.9, 1},
 							3
+						},
+						sam = {
+							mod = -0.125,
+							init = 1,
+							final = 1.5,
+							start = 2
 						}
 					}
 					if table.contains(weap.recategorize, "handcannon") then
@@ -37434,6 +37450,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 								-0.1,
 								{1, 1.2},
 								1
+							},
+							sam = {
+								mod = -0.5,
+								init = 1,
+								final = 2,
+								start = 1,
+								hf = {
+									mod = -0.1667,
+									init = 1,
+									final = 1.5,
+									start = 1
+								}
 							}
 						}
 					end
@@ -37493,8 +37521,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.6,
 						srm = {
 							0.025,
-							{0.8, 1},
+							{0.7, 1},
 							2
+						},
+						sam = {
+							mod = -0.125,
+							init = 1,
+							final = 2,
+							start = 3
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_smg" then
@@ -37505,8 +37539,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.5,
 						srm = {
 							0.02,
-							{0.8, 1},
+							{0.7, 1},
 							3
+						},
+						sam = {
+							mod = -0.25,
+							init = 1,
+							final = 2,
+							start = 2
 						}
 					}
 				elseif weap.recategorize[1] == "light_ar" then
@@ -37519,6 +37559,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							-0.007,
 							{1, 1.075},
 							4
+						},
+						sam = {
+							mod = 0,
+							init = 1,
+							final = 1,
+							start = 0,
+							hf = {
+								mod = -0.05,
+								init = 1,
+								final = 1.25,
+								start = 1
+							}
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_ar" then
@@ -37531,6 +37583,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							-0.02,
 							{1, 1.1},
 							3
+						},
+						sam = {
+							mod = 0,
+							init = 1,
+							final = 1,
+							start = 0,
+							hf = {
+								mod = -0.1,
+								init = 1,
+								final = 1.5,
+								start = 1
+							}
 						}
 					}
 				elseif weap.recategorize[1] == "dmr_ar" then
@@ -37543,6 +37607,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							-0.04,
 							{1, 1.2},
 							2
+						},
+						sam = {
+							mod = 0,
+							init = 1,
+							final = 1,
+							start = 0,
+							hf = {
+								mod = -0.25,
+								init = 1,
+								final = 2,
+								start = 1
+							}
 						}
 					}
 				elseif weap.recategorize[1] == "light_mg" then
@@ -37552,9 +37628,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						6,
 						0.3,
 						srm = {
-							0.015,
-							{0.8, 1},
-							6
+							0.04,
+							{0.7, 1},
+							4
+						},
+						sam = {
+							mod = 2,
+							init = 4,
+							final = 1,
+							start = 0
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_mg" then
@@ -37564,9 +37646,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						5.5,
 						0.2,
 						srm = {
-							0.01,
-							{0.8, 1},
-							8
+							0.025,
+							{0.7, 1},
+							6
+						},
+						sam = {
+							mod = 1,
+							init = 4,
+							final = 1,
+							start = 0
 						}
 					}
 				elseif weap.recategorize[1] == "miniguns" then
@@ -37578,7 +37666,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.015,
 							{0.7, 1},
-							11
+							6
+						},
+						sam = {
+							mod = 2,
+							init = 3,
+							final = 1,
+							start = 0
 						}
 					}
 				elseif weap.recategorize[1] == "light_snp" then
@@ -37591,6 +37685,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							-0.1,
 							{1, 1.3},
 							2
+						},
+						sam = {
+							mod = 0,
+							init = 1,
+							final = 1,
+							start = 0,
+							hf = {
+								mod = -0.2,
+								init = 1,
+								final = 2,
+								start = 1
+							}
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_snp" then
@@ -37603,6 +37709,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							-0.1,
 							{1, 1.4},
 							2
+						},
+						sam = {
+							mod = 0,
+							init = 1,
+							final = 1,
+							start = 0,
+							hf = {
+								mod = -0.25,
+								init = 1,
+								final = 2,
+								start = 1
+							}
 						}
 					}
 				elseif weap.recategorize[1] == "antim_snp" then
@@ -37615,6 +37733,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							-0.2,
 							{1, 1.4},
 							1
+						},
+						sam = {
+							mod = 0,
+							init = 1,
+							final = 1,
+							start = 0,
+							hf = {
+								mod = -0.5,
+								init = 1,
+								final = 3,
+								start = 1
+							}
 						}
 					}
 				end

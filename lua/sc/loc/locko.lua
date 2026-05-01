@@ -1935,6 +1935,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_melee_megumins_staff_info"] = "완전히 충전되면 강력한 폭렬 마법을 시전합니다!\n모든 표면이나 존재에게 최대 #{skill_color}#30##미터까지 시전할 수 있지만, #{risk}#공중에는 시전할 수 없습니다.##\n\n#{important_1}#충전 속도는 스킬의 영향을 받지 않습니다.\n충전하는 동안 달리기가 불가능해지고, 시야가 왜곡되며 스태미나가 소모되고, 이동 속도가 점점 느려집니다.\n성공적으로 폭렬 마법을 시전했다면 즉시 쓰러지며, 쓰러지는 것을 지연시키거나 막아주는 스킬과 특성 덱 효과는 무시됩니다.##",
 		--ISEKAI
 		["bm_melee_sakura_dork_info"] = "로켓 배송 요청 받았습니다!\n\n완전히 충전한 후 휘두르면 트럭 씨를 소환합니다.\n\n#{important_1}#충전 속도는 스킬의 영향을 받지 않습니다.\n충전하거나 공격하는 동안 달릴 수 없습니다.##",		
+		--Makarov (Strix)
+		["bm_pmm_sc_desc"] = "이 소련제 권총은 오늘날까지도 전 세계 전장에서 사용되고 있습니다. 작은 크기 덕분에 숨기기에도 좋지만, 라우드에서도 강력한 화력을 발휘합니다.",
+		["bm_x_pmm_sc_desc"] = "",
 		--fishe
 		["bm_melee_holy_mackerel_info"] = "#{item_stage_2}#레벨 42 생선##\n\n물고기에게 맞으면 아주 창피할 겁니다.",
 
@@ -2703,6 +2706,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Baby Deagle--
 				["bm_sparrow_sc_desc"] = "다음에 보자고, 스페이스 카우보이...",
 				["bm_w_sparrow_sc_g_cowboy_desc"] = "그 무게을 짊어지고 살아라.",
+				--Ballerina 9mm (Pivot PCC)
+				["bm_speen_sc_desc"] = "권총탄을 사용하는 이 카빈은 사용하지 않을 때 깔금하게 접을 수 있어 휴대가 간편한 덕분에 잠복 요원 사이에서 선호도가 높습니다.",				
 				--socom deez nuts--
 				["bm_w_socom_desc"] = "자칼이 사용하는 권총입니다. 스타일리시한 디자인의 안정적이고 강력한 .45ACP 권총이죠.",
 				["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "라 결합 모듈",
@@ -2750,7 +2755,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_rsh12_sc_iw_desc"] = "3점사 탄도 권총. 빠른 3점사 사격이 가능한 삼중 약실 구조를 갖추고 있습니다.\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
 				--SAA/Peacemaker
 				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#역사상 가장 뛰어난 권총.##\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있는## 특수 .45구경 탄이 장전되어 있습니다.\n\n#{important_1}#반동이 증가하고 유효 사거리가 감소하며 조준이 불가능해지는 대신## #{skill_color}#발사 속도가 증가하는## 팬링을 할 수 있습니다.",
-				--SAA/Peacemaker
 				["bm_wp_peacemaker_rifle_stock_desc"] = "해머를 팬링하는 도중에도 조준이 가능합니다.",				
 				--CUSTOM PISTOLS
 					--Px4 Storm
@@ -3284,6 +3288,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--PPK (Gruber)
 					["bm_w_ppk"] = "Gruber Kurz",
 					["bm_w_x_ppk"] = "아킴보 Gruber Kurze",
+					["bm_w_pmm"] = "Strix",
+					["bm_w_x_pmm"] = "아킴보 Strix",					
 					--M13
 					["bm_w_legacy"] = "M13",
 					["bm_w_x_legacy"] = "아킴보 M13",
@@ -3322,6 +3328,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--Baby Deagle--
 					["bm_w_sparrow"] = "Sparrow 941",
 					["bm_w_x_sparrow"] = "스파이크 & 비서스",
+					--Ballerina
+					["bm_w_speen"] = "Ballerina 9mm",					
 					--Crosskill
 					["bm_w_colt_1911"] = "Crosskill Operator II",
 					["bm_w_x_1911"] = "머스탱 & 섈리",
@@ -3846,8 +3854,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_x_stech"] = "아킴보 Stechkin",
 					--Gruber
 					["bm_w_ppk"] = "Walther PPK/S",
+					["bm_w_x_ppk"] = "아킴보 PPK",					
 					["bm_wp_pis_ppk_g_laser"] = "크림슨 트레이스 레이저 손잡이",
 					["bm_wp_pis_ppk_b_long"] = "PPKS 슬라이드",
+					--Strix (Makarov)
+					["bm_w_pmm"] = "Makarov PM",
+					["bm_w_x_pmm"] = "아킴보 Makarov",					
 					--Chimano 88
 					["bm_w_glock_17"] = "Glock 17",
 					["bm_w_x_g17"] = "아킴보 Glock 17",
@@ -3906,7 +3918,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_sparrow_body_941"] = "IWI Jericho 941F 키트",
 					["bm_wp_sparrow_g_cowboy"] = "가중 손잡이",
 					["bm_wp_sparrow_g_cowboy_desc"] = "그 무게을 짊어지고 살아라.",
-
+					--Ballerina
+					["bm_w_speen"] = "Trailblazer Pivot",					
 					--SUB2000
 					["bm_w_sub2000"] = "Kel-Tec SUB-2000",
 					["bm_sub2000_sc_desc"] = "지금까지 만들어진 총 중 하나. 작은 권총탄은 긴 총열에서 발사할 때 훨씬 더 세게 맞추며 접이식 기능 덕분에 괜찮은 은폐력을 제공하죠.",

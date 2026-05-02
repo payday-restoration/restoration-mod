@@ -19,7 +19,7 @@ function SpyCameraBase:update(unit, t, dt)
 	local position = self._unit:position()
 	local rotation = self._unit:rotation()
 	local forward = rotation:y()
-	local found_units = World:find_units_quick("cone", position, position + forward * 3000, 2300, managers.slot:get_mask("persons_no_players"))
+	local found_units = World:find_units_quick("cone", position, position + forward * 3000, 2300, managers.slot:get_mask("trip_mine_targets"))
 
 	if not found_units then
 		return

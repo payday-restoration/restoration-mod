@@ -1706,7 +1706,7 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		if smoke_screen:is_in_smoke(self._unit) then
 			if smoke_screen:mine() then
 				self._in_smoke_bomb = 2.0
-			elseif self._in_smoke_bomb < 1.0
+			elseif self._in_smoke_bomb < 1.0 then
 				-- To cover the case where there are two Sicarios. Whoever threw their smoke bomb second would
 				-- "overwrite" the other Sicario's full benefit.
 				self._in_smoke_bomb = 1.0

@@ -4096,6 +4096,14 @@ end
 						ads_speed_mult = 1.15
 					}
 
+					self.parts.wpn_fps_smg_speen_sights_rear_no_parent = {
+						a_obj = "a_o_rear",
+						type = "sight_special",
+						name_id = "bm_wp_speen_iron_sights",
+						unit = "units/pd2_dlc_esp/weapons/wpn_fps_smg_speen_pts/optics/wpn_fps_smg_speen_sights_rear_standard",
+						third_unit = "units/pd2_dlc_esp/weapons/wpn_third_smg_speen_pts/optics/wpn_third_smg_speen_sights_rear_standard"
+					}
+
 				end)
 
 	--[[     HEAVY PISTOLS     ]]
@@ -11443,6 +11451,15 @@ end
 					self.wpn_fps_ass_aug.override.wpn_fps_upg_o_mbus_front = {
 						a_obj = "a_of"
 					}
+					self.wpn_fps_ass_aug.override.wpn_fps_upg_o_arbiter_irons_dmc = {
+						unit = "units/pd2_dlc_esp/weapons/wpn_fps_smg_speen_pts/optics/wpn_fps_smg_speen_sights_front_standard",
+						third_unit = "units/pd2_dlc_esp/weapons/wpn_third_smg_speen_pts/optics/wpn_third_smg_speen_sights_front_standard",
+						a_obj = "a_of",
+						adds = {"wpn_fps_smg_speen_sights_rear_no_parent"},
+					}
+					self.wpn_fps_ass_aug.override.wpn_fps_smg_speen_sights_rear_no_parent = {
+						a_obj = "a_or"
+					}
 
 					--[[
 					self.wpn_fps_ass_aug.override.wpn_upg_o_marksmansight_rear_vanilla = {
@@ -11488,6 +11505,7 @@ end
 					table.insert(self.wpn_fps_ass_aug.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 					table.insert(self.wpn_fps_ass_aug.uses_parts, "wpn_fps_upg_o_dd_irons_dmc")
 					table.insert(self.wpn_fps_ass_aug.uses_parts, "wpn_fps_upg_o_mbus_rear")
+					table.insert(self.wpn_fps_ass_aug.uses_parts, "wpn_fps_upg_o_arbiter_irons_dmc")
 
 					self.wpn_fps_ass_aug_npc.uses_parts = deep_clone(self.wpn_fps_ass_aug.uses_parts)
 
@@ -16683,11 +16701,22 @@ end
 						custom_stats = { big_scope = true }
 					}
 
+					self.wpn_fps_shot_saiga.override.wpn_fps_upg_o_arbiter_irons_dmc = {
+						unit = "units/pd2_dlc_esp/weapons/wpn_fps_smg_speen_pts/optics/wpn_fps_smg_speen_sights_front_standard",
+						third_unit = "units/pd2_dlc_esp/weapons/wpn_third_smg_speen_pts/optics/wpn_third_smg_speen_sights_front_standard",
+						a_obj = "a_of",
+						adds = {"wpn_fps_smg_speen_sights_rear_no_parent"},
+					}
+					self.wpn_fps_shot_saiga.override.wpn_fps_smg_speen_sights_rear_no_parent = {
+						a_obj = "a_or"
+					}
+
 					--Izhma Part Additions
 					--Drum Mag
 					table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_upg_saiga_m_20rnd")
 					table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_fps_upg_o_dd_irons_dmc")
 					table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_fps_upg_o_mbus_rear")
+					table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_fps_upg_o_arbiter_irons_dmc")
 
 					self.wpn_fps_shot_saiga_npc.override = deep_clone(self.wpn_fps_shot_saiga.override)
 					self.wpn_fps_shot_saiga_npc.uses_parts = deep_clone(self.wpn_fps_shot_saiga.uses_parts)
@@ -16862,10 +16891,20 @@ end
 					self.wpn_fps_sho_sko12.override.wpn_fps_upg_o_mbus_front = {
 						a_obj = "a_of"
 					}
+					self.wpn_fps_sho_sko12.override.wpn_fps_upg_o_arbiter_irons_dmc = {
+						unit = "units/pd2_dlc_esp/weapons/wpn_fps_smg_speen_pts/optics/wpn_fps_smg_speen_sights_front_standard",
+						third_unit = "units/pd2_dlc_esp/weapons/wpn_third_smg_speen_pts/optics/wpn_third_smg_speen_sights_front_standard",
+						a_obj = "a_o_f",
+						adds = {"wpn_fps_smg_speen_sights_rear_no_parent"},
+					}
+					self.wpn_fps_sho_sko12.override.wpn_fps_smg_speen_sights_rear_no_parent = {
+						a_obj = "a_o_r"
+					}
 
 					table.insert(self.wpn_fps_sho_sko12.uses_parts, "wpn_fps_smg_mac10_s_no")
 					table.insert(self.wpn_fps_sho_sko12.uses_parts, "wpn_fps_upg_o_dd_irons_dmc")
 					table.insert(self.wpn_fps_sho_sko12.uses_parts, "wpn_fps_upg_o_mbus_rear")
+					table.insert(self.wpn_fps_sho_sko12.uses_parts, "wpn_fps_upg_o_arbiter_irons_dmc")
 
 					self.wpn_fps_sho_sko12_npc.uses_parts = deep_clone(self.wpn_fps_sho_sko12.uses_parts)
 					self.wpn_fps_sho_sko12_npc.override = deep_clone(self.wpn_fps_sho_sko12.override)
@@ -17269,8 +17308,19 @@ end
 					self.wpn_fps_sho_striker.override.wpn_fps_upg_o_mbus_front = {
 						a_obj = "a_o_f"
 					}
+					self.wpn_fps_sho_striker.override.wpn_fps_upg_o_arbiter_irons_dmc = {
+						unit = "units/pd2_dlc_esp/weapons/wpn_fps_smg_speen_pts/optics/wpn_fps_smg_speen_sights_front_standard",
+						third_unit = "units/pd2_dlc_esp/weapons/wpn_third_smg_speen_pts/optics/wpn_third_smg_speen_sights_front_standard",
+						a_obj = "a_o_f",
+						adds = {"wpn_fps_smg_speen_sights_rear_no_parent"},
+					}
+					self.wpn_fps_sho_striker.override.wpn_fps_smg_speen_sights_rear_no_parent = {
+						a_obj = "a_o_r"
+					}
+
 					table.insert(self.wpn_fps_sho_striker.uses_parts, "wpn_fps_upg_o_dd_irons_dmc")
 					table.insert(self.wpn_fps_sho_striker.uses_parts, "wpn_fps_upg_o_mbus_rear")
+					table.insert(self.wpn_fps_sho_striker.uses_parts, "wpn_fps_upg_o_arbiter_irons_dmc")
 
 					self.wpn_fps_sho_striker_npc.override = deep_clone(self.wpn_fps_sho_striker.override)
 					self.wpn_fps_sho_striker_npc.uses_parts = deep_clone(self.wpn_fps_sho_striker.uses_parts)
@@ -25547,7 +25597,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			"wpn_fps_upg_o_45iron",
 			"wpn_fps_upg_o_45steel",
 			"wpn_fps_ass_shak12_o_carry_dummy",
-			"wpn_fps_hailstorm_o_irons"
+			"wpn_fps_hailstorm_o_irons",
+			"wpn_fps_upg_o_ak_scopemount"
 		},
 		dlc = "sc",
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)

@@ -3396,6 +3396,11 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					suffix = managers.localization:text("menu_seconds_suffix_short")
 				},
 				{
+					name = "cooldown_reduction",
+					num_decimals = 1,
+					suffix = managers.localization:text("menu_seconds_suffix_short")
+				},
+				{
 					index = true,
 					name = "amount"
 				}
@@ -3965,6 +3970,8 @@ function BlackMarketGui:_get_grenade_stats(name)
 			base_stats[stat.name].value = dot_data and dot_data.dot_length and  dot_data.dot_length > dot_data.dot_grace_period and (dot_data.dot_length - (dot_data.dot_grace_period or 0.1))
 		elseif stat.name == "cooldown" then
 			base_stats[stat.name].value = bm_projectile_data and bm_projectile_data.base_cooldown
+		elseif stat.name == "cooldown_reduction" then
+			base_stats[stat.name].value = bm_projectile_data and bm_projectile_data.pickup_cooldown_t
 		elseif stat.name == "amount" then
 			base_stats[stat.name].value = bm_projectile_data and bm_projectile_data.max_amount
 			if base_stats[stat.name].value and bm_projectile_data then

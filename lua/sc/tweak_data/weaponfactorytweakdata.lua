@@ -16894,11 +16894,11 @@ end
 					self.wpn_fps_sho_sko12.override.wpn_fps_upg_o_arbiter_irons_dmc = {
 						unit = "units/pd2_dlc_esp/weapons/wpn_fps_smg_speen_pts/optics/wpn_fps_smg_speen_sights_front_standard",
 						third_unit = "units/pd2_dlc_esp/weapons/wpn_third_smg_speen_pts/optics/wpn_third_smg_speen_sights_front_standard",
-						a_obj = "a_o_f",
+						a_obj = "a_of",
 						adds = {"wpn_fps_smg_speen_sights_rear_no_parent"},
 					}
 					self.wpn_fps_sho_sko12.override.wpn_fps_smg_speen_sights_rear_no_parent = {
-						a_obj = "a_o_r"
+						a_obj = "a_or"
 					}
 
 					table.insert(self.wpn_fps_sho_sko12.uses_parts, "wpn_fps_smg_mac10_s_no")

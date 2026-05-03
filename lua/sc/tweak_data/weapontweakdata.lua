@@ -38001,10 +38001,11 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 	--Determine the damage tier the gun falls under.
 	weapon.AMMO_PICKUP = {0, 0}
 	local damage_mul = (weapon.stats_modifiers and weapon.stats_modifiers.damage) or 1
+	local weapon_damage = weapon.stats.damage - 1
 	for i, pickup_tier in ipairs(damage_tiers_pickup) do
 		weapon.AMMO_PICKUP[1] = pickup_tier.pickup[1]
 		weapon.AMMO_PICKUP[2] = pickup_tier.pickup[2]
-		if weapon.stats.damage * damage_mul <= pickup_tier.damage - 1 then --subtract 1 to counteract floating point error.
+		if weapon_damage * damage_mul <= pickup_tier.damage - 1 then --subtract 1 to counteract floating point error.
 			break
 		end
 	end
@@ -38023,7 +38024,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 			((table.contains(weapon.categories, "minigun") and 3.3333) or ((table.contains(weapon.categories, "lmg") or true_shotgun) and 2) or 1)
 		damage_mul = (not exclude_calcs and (damage_mul * 2)) or damage_mul
 		if not table.contains(weapon.categories, "keep_ammo_max") and not table.contains(weapon.categories, "nothing") then
-			weapon.AMMO_MAX = math.ceil((3600 * (((weapon.use_data.selection_index == 2 or weapon.use_data.selection_index == 4) and 2) or 1) * total_dmg_mul)) / ((weapon.stats.damage * damage_mul) * hs_mult)
+			weapon.AMMO_MAX = math.ceil((3600 * (((weapon.use_data.selection_index == 2 or weapon.use_data.selection_index == 4) and 2) or 1) * total_dmg_mul)) / ((weapon_damage * damage_mul) * hs_mult)
 		end
 	end
 

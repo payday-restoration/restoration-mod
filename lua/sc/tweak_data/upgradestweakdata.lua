@@ -3813,6 +3813,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[18][9] = {
 		perk_value_1 = tostring(self.values.player.sicario_multiplier[1] * 100).."%" -- Dodge regen while you inside the smoke screen
+		perk_value_2 = tostring(self.values.player.sicario_multiplier[1] * 100 / 2).."%" -- Dodge regen for allies inside your smoke screen
 	}
 	
 	--Stoic

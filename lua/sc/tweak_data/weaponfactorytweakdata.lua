@@ -982,6 +982,27 @@ local muzzle_device = {
 			falloff_start_mult = 1.15,
 			falloff_end_mult = 1.15,
 			ads_speed_mult = 1.125
+		},
+	-- ++Stab +++Acc/Range -----Con
+		muzz_dual3_c = {
+			value = 7,
+			spread = 3,
+			recoil = 4,
+			concealment = -5,
+			falloff_start_mult = 1.15,
+			falloff_end_mult = 1.15,
+			ads_speed_mult = 1.125
+		},
+		supp_dual3_c = { --Extra Acc/range for Con
+			suppression = 12,
+			alert_size = -1,
+			value = 7,
+			spread = 4,
+			recoil = 4,
+			concealment = -6,
+			falloff_start_mult = 1.2,
+			falloff_end_mult = 1.2,
+			ads_speed_mult = 1.15
 		}
 }
 
@@ -2825,14 +2846,18 @@ end
 					self.parts.wpn_fps_pis_pmm_g_black.custom_stats = deep_clone(grips.quickdraw_1)
 
 					self.parts.wpn_fps_pis_pmm_slide_suppressed.supported = true
-					self.parts.wpn_fps_pis_pmm_slide_suppressed.stats = deep_clone(barrels.short_b1_stats)
-					self.parts.wpn_fps_pis_pmm_slide_suppressed.custom_stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_pis_pmm_slide_suppressed.stats = {
+						value = 3,
+						spread = -1,
+						recoil = 2
+					}
+					self.parts.wpn_fps_pis_pmm_slide_suppressed.custom_stats = nil
 
 					self.parts.wpn_fps_pis_pmm_ns_suppressor.supported = true
 					self.parts.wpn_fps_pis_pmm_ns_suppressor.has_description = true
 					self.parts.wpn_fps_pis_pmm_ns_suppressor.desc_id = "bm_wp_upg_suppressor"
-					self.parts.wpn_fps_pis_pmm_ns_suppressor.stats = deep_clone(muzzle_device.supp_dual2_c)
-					self.parts.wpn_fps_pis_pmm_ns_suppressor.custom_stats= deep_clone(muzzle_device.supp_dual2_c)
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.stats = deep_clone(muzzle_device.supp_dual3_c)
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.custom_stats= deep_clone(muzzle_device.supp_dual3_c)
 					self.parts.wpn_fps_pis_pmm_ns_suppressor.perks = {"silencer"}
 				end)
 
@@ -19007,6 +19032,55 @@ end
 
 		--SECONDARIES
 
+			--PNUE-DART X-2
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_dart", "resmod_dart", function(self)
+					self.parts.wpn_fps_upg_a_dart_poison.supported = true
+
+					self.parts.wpn_fps_upg_a_dart_daze.supported = true
+					self.parts.wpn_fps_upg_a_dart_daze.keep_damage = true
+					self.parts.wpn_fps_upg_a_dart_daze.stats = {
+						value = 1,
+						damage = -120
+					}
+					self.parts.wpn_fps_upg_a_dart_daze.custom_stats = {
+						launcher_grenade = "dart_daze"
+					}
+
+					self.parts.wpn_fps_upg_a_dart_revive.supported = true
+					self.parts.wpn_fps_upg_a_dart_revive.keep_damage = true
+					self.parts.wpn_fps_upg_a_dart_revive.stats = {
+						value = 1,
+						damage = -120,
+						total_ammo_mod = -266
+					}
+					self.parts.wpn_fps_upg_a_dart_revive.custom_stats = {
+						launcher_grenade = "dart_revive",
+						ammo_pickup_max_mul = 0.5,
+						ammo_pickup_min_mul = 0.5
+					}
+
+					self.parts.wpn_fps_spe_dart_magazine_high_pressure.supported = true
+					self.parts.wpn_fps_spe_dart_magazine_high_pressure.stats = {
+						value = 3,
+						recoil = -4,
+						spread = -5
+					}
+					self.parts.wpn_fps_spe_dart_magazine_high_pressure.custom_stats = {
+						hip_mult = 2,
+						launch_speed_mul = 1.25
+					}
+
+					self.parts.wpn_fps_spe_dart_magazine_high_capacity.supported = true
+					self.parts.wpn_fps_spe_dart_magazine_high_capacity.stats = {
+						value = 3,
+						concealment = -1
+					}
+					self.parts.wpn_fps_spe_dart_magazine_high_capacity.custom_stats = {
+						launch_speed_mul = 0.75,
+						charge_speed_mul = 0.5
+					}
+				end)
+
 			--CB1-50
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function(self)
 
@@ -19663,6 +19737,7 @@ end
 						rotation = Rotation(-0.1, -0.31, 0)
 					}
 
+
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_p90 = {
 						translation = Vector3(-0.005, 1.6, -3.028)
 					}
@@ -19774,6 +19849,10 @@ end
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_ecp = {
 						translation = Vector3(-0.001, -1, -3.325)
+					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_spe_dart = {
+						translation = Vector3(0.038, -5, -0.525),
+						rotation = Rotation(0, 0, -0.4)
 					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_m79 = {
@@ -56814,6 +56893,9 @@ exclude = {
 	"wpn_fps_ass_osipr_m_gl_poison",
 	"wpn_fps_upg_a_underbarrel_hornet",
 	"wpn_fps_upg_a_grenade_launcher_hornet",
+	"wpn_fps_upg_a_dart_poison",
+	"wpn_fps_upg_a_dart_daze",
+	"wpn_fps_upg_a_dart_revive",
 }
 
 local no_vfgs = restoration and restoration.Options:GetValue("OTHER/GOTTAGETAGRIP")

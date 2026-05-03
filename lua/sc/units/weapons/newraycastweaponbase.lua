@@ -964,6 +964,14 @@ function NewRaycastWeaponBase:old_update_stats_values(disallow_replenish, ammo_d
 			if stats.volley_rays then
 				self._volley_rays = stats.volley_rays
 			end
+
+			if stats.launch_speed_mul then
+				self._launch_speed_mul = stats.launch_speed_mul
+			end
+
+			if stats.charge_speed_mul then
+				self._charge_speed_mul = stats.charge_speed_mul
+			end
 		end
 	end
 

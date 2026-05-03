@@ -1799,7 +1799,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--FREEDOM ISN'T FREE
 		["bm_melee_freedom_info"] = "Thirteen stripes of red alternating with white, a blue rectangle in the canton, fifty small, white, five-pointed stars, a pinch of patriotism, two cups of freedom and a broken flag pole.\n\nVoilà - you have yourself a deadly weapon.",
 		--Who needs pants?
-		["bm_melee_erica_info"] = "A sane person would throw this.\n\nFully charged hits against living enemies have a #{skill_color}#100%## chance to explode dealing #{risk}#720## damage in a #{skill_color}#5## meter radius from the point of impact.",
+		["bm_melee_erica_info"] = "A sane person would throw this.\n\nFully charged hits against living enemies have a #{skill_color}#100%## chance to explode dealing #{risk}#720## damage in a #{skill_color}#5## meter radius from the point of impact.\n\n#{important_1}#The explosion deals self-damage.##",
 			["bm_melee_cqc20_info"] = "#{risk}#GET SOME!##\n\nFully charged hits against living enemies have a #{skill_color}#100%## chance to set off a controlled explosion dealing #{risk}#720## damage to enemies in a #{skill_color}#2## meter radius from the point of impact.\n\n#{important_1}#Charge speed is unaffected by skills.##",
 
 		--Hammer
@@ -2213,6 +2213,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "BUY WEAPON ($price)",
 
+		["menu_persecond_suffix_short"] = "/s",
 		["menu_milliseconds_suffix_short"] = "ms", --milliseconds
 		["menu_meters_suffix_short"] = "m", --meters
 
@@ -2232,6 +2233,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_damage_min"] = "Damage Min",
 		["bm_menu_moving_range"] = "Falloff End",
 
+		--Throwables
+		["bm_menu_damage_blast"] = "Damage (Blast)",
+		["bm_menu_range_blast"] = "Range (Blast)",
+		["bm_menu_time_blast"] = "Duration (Blast)",
+		["bm_menu_damage_impact"] = "Damage (Impact)",
+		["bm_menu_range_impact"] = "Range (Impact)",
+		["bm_menu_damage_pool"] = "Damage (Pool)",
+		["bm_menu_range_pool"] = "Range (Pool)",
+		["bm_menu_time_pool"] = "Duration (Pool)",
+		["bm_menu_damage_dot"] = "Damage (DOT)",
+		["bm_menu_range_dot"] = "Range (DOT)",
+		["bm_menu_time_dot"] = "Duration (DOT)",
+
+		--Melee
 		["bm_menu_attack_speed"] = "Repeat Delay",
 		["bm_menu_impact_delay"] = "Impact Delay",
 		["bm_menu_cleave"] = "Cleave",
@@ -3292,6 +3307,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_gauss_gun_desc"] = "Developed in the Zone and incorporating an electromagnetic bullet acceleration system, this sniper rifle is used exclusively within the Zone.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 
 			--[[ SPECIALS ]]
+				--Dart Gun
+				["bm_dart_sc_desc"] = "A quiet and adaptable weapon that can launch highly damaging darts at unsuspecting targets.\n\nComes equipped with powerful #{stats_positive}#Poison Darts## that can be exchanged for #{ghost_color}#Sedation Darts## or #{stat_maxed}#Revival-Stimulant Darts## to adjust to any challenge.\n ",
 				--Saw
 				["bm_ap_saw_sc_desc"] = "#{skill_color}#Cuts through body armor.##",
 				["bm_ap_saw_blade_sc_desc"] = "Sharpens the blade enough to #{skill_color}#cut through body armor.##",
@@ -4641,6 +4658,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_hunter"] = "Avalanche CB1-50 Pistol Grip Crossbow",
 					["bm_w_elastic"] = "Hoyt Carbon Spyder ZT 30 Bow",
 					["bm_wp_elastic_body_tactic"] = "Hoyt Ignite Riser",
+
+					["bm_w_dart"] = "Pneu-Dart X-2",
 
 				--Attachments
 

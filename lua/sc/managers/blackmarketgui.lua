@@ -4304,6 +4304,8 @@ function BlackMarketGui:show_stats()
 			self._throwable_stats_texts[stat.name].name:set_text(utf8.to_upper(managers.localization:text("bm_menu_" .. stat.name)))
 
 			local equip = equip_base_stats[stat.name].value
+			local skill = equip_skill_stats[stat.name].value
+			local use_skill_color = nil
 			value = base_stats[stat.name].value
 
 			if equip or value then
@@ -4330,6 +4332,12 @@ function BlackMarketGui:show_stats()
 					end
 				end
 
+				if stat.name == "amount" then
+					if skill then
+						use_skill_color = true
+					end
+				end
+
 				self._throwable_stats_panel:child(stat.name):show()
 				self._throwable_stats_texts[stat.name].equip:set_alpha(0.75)
 				self._throwable_stats_texts[stat.name].equip:set_text(equip_text)
@@ -4337,7 +4345,7 @@ function BlackMarketGui:show_stats()
 				self._throwable_stats_texts[stat.name].skill:set_text("")
 				self._throwable_stats_texts[stat.name].total:set_text(total_text)
 
-				local positive = value and equip and equip < value
+				local positive = value and equip and equip < value or (equip_text == no_data_string)
 				local negative = value and equip and value < equip
 
 				if stat.inverse then
@@ -4350,6 +4358,10 @@ function BlackMarketGui:show_stats()
 					self._throwable_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stats_positive)
 				elseif negative then
 					self._throwable_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stats_negative)
+				elseif no_data_string and not value then
+					self._throwable_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.item_stage_2)
+				elseif use_skill_color then
+					self._throwable_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.skill_color)
 				else
 					self._throwable_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.text)
 				end

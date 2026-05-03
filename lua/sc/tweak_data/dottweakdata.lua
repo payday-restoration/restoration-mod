@@ -90,6 +90,7 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 	}
 	poison_entries.ammo_proj_arblast = clone(poison_entries.ammo_proj_elastic)
 	poison_entries.ammo_proj_long = clone(poison_entries.ammo_proj_elastic)
+	poison_entries.ammo_proj_dart = clone(poison_entries.ammo_proj_elastic)
 	poison_entries.ammo_proj_bow = {
 		damage_class = "ProjectilesPoisonBulletBase",
 		dot_damage = 1.5,
@@ -102,6 +103,7 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		dot_damage = 1.5,
 		dot_length = 4.1
 	}
+	
 	--MELEE
 	poison_entries.melee_piggy_hammer = {
 		dot_damage = 1.5,
@@ -126,31 +128,31 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		hurt_animation_chance = 1,
 		apply_hurt_once = true,
 		dot_damage = 1.5,
-		dot_length = 10.15
+		dot_length = 10.5
 	}
 	poison_entries.proj_launcher_cloud = {
 		hurt_animation_chance = 1,
 		apply_hurt_once = true,
 		dot_damage = 1.5,
-		dot_length = 8.15
+		dot_length = 8.5
 	}
 	poison_entries.proj_launcher_cloud_spam = {
 		hurt_animation_chance = 1,
 		apply_hurt_once = true,
 		dot_damage = 1.5,
-		dot_length = 6.15
+		dot_length = 6.5
 	}
 	poison_entries.proj_launcher_arbiter_cloud = {
 		hurt_animation_chance = 1,
 		apply_hurt_once = true,
 		dot_damage = 1.5,
-		dot_length = 6.15
+		dot_length = 6.5
 	}
 	poison_entries.proj_launcher_3gl_cloud = {
 		hurt_animation_chance = 1,
 		apply_hurt_once = true,
 		dot_damage = 1.5,
-		dot_length = 4.15
+		dot_length = 4.5
 	}
 end
 

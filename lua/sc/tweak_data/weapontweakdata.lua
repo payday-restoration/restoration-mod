@@ -118,12 +118,12 @@ local crew_wep_preset = {
 	},
 	sniper_auto = {
 		mag_capacity = 8,
-		fire_rate = 3.75,
+		fire_rate = 1.5,
 		damage = 9.0 / 1.25
 	},
 	sniper_bolt = {
 		mag_capacity = 5,
-		fire_rate = 7.5,
+		fire_rate = 3.3333,
 		damage = 18.0 / 1.25
 	}
 }
@@ -3404,7 +3404,7 @@ local crew_wep_preset = {
 		end
 
 		function WeaponTweakData:_init_data_awp_crew()
-			self.awp_crew.categories = clone(self.r700.categories)
+			self.awp_crew.categories = clone(self.awp.categories)
 			self.awp_crew.sounds.prefix = "awp_npc"
 			self.awp_crew.use_data.selection_index = 2
 			self.awp_crew.DAMAGE = crew_wep_preset.sniper_bolt.damage
@@ -3636,7 +3636,7 @@ function WeaponTweakData:_init_stats()
 	end
 
 	self.stats.damage = {}
-	for i = 0.1, 50.01, 0.1 do
+	for i = 0.0, 50.01, 0.1 do
 		table.insert(self.stats.damage, i)
 	end
 
@@ -7014,6 +7014,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.speen.has_description = true
 						self.speen.desc_id = "bm_speen_sc_desc"
 						self.speen.categories = {"pistol"}
+						self.speen.recategorize = {"light_pis"}
 						self.speen.CLIP_AMMO_MAX = 17
 						self.speen.AMMO_MAX = 60
 						self.speen.sounds.enter_steelsight = "secondary_steel_sight_enter"
@@ -15156,7 +15157,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hunter.fire_mode_data.fire_rate = 1
 						self.hunter.kick = self.stat_info.kick_tables.horizontal_recoil
 						self.hunter.supported = true
-						self.hunter.ads_speed = 0.200
+						self.hunter.ads_speed = 0.120
 						self.hunter.stats = {
 							damage = 120,
 							spread = 96,
@@ -15175,6 +15176,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hunter.stats_modifiers = {damage = 2}
 						self.hunter.timers.reload_exit_empty = 0.3
 						self.hunter.timers.reload_exit_not_empty = 0.3
+
+					--Dart Gun
+						self.dart.categories = {
+							"crossbow",
+							"crossbow_pistol"
+						}
+						self.dart.upgrade_blocks = {
+							weapon = {
+								"clip_ammo_increase"
+							}
+						}
+						self.dart.damage_type = "sniper"
+						self.dart.has_description = true
+						self.dart.desc_id = "bm_dart_sc_desc"
+						self.dart.AMMO_MAX = 15
+						self.dart.panic_suppression_chance = 0.05
+						self.dart.ignore_damage_upgrades = true
+						self.dart.fire_mode_data.fire_rate = 1
+						self.dart.kick = self.stat_info.kick_tables.horizontal_recoil
+						self.dart.supported = true
+						self.dart.ads_speed = 0.160
+						self.dart.stats = {
+							damage = 120,
+							spread = 96,
+							recoil = 95,
+							spread_moving = 8,
+							zoom = 1,
+							concealment = 30,
+							suppression = 20,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.dart.panic_suppression_chance = 0.05
+						self.dart.stats_modifiers = {damage = 2}
+						self.dart.timers.reload_not_empty = 2.4
+						self.dart.timers.reload_exit_not_empty = 1.1
+						self.dart.timers.reload_empty = 2.4
+						self.dart.timers.reload_exit_empty = 1.1
 
 			--[[     LAUNCHERS     ]]
 
@@ -37314,6 +37356,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for id, weap in pairs(self) do
 
 		if weap.categories and weap.stats then
+
+			weap.stats.damage = weap.stats.damage + 1 --lazy
+
 			if not weap.supported then
 				weap.always_play_anims = true
 				self:generate_custom_weapon_stats(weap)

@@ -1889,6 +1889,10 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		"launcher_incendiary_ms3gl",
 		"launcher_electric_ms3gl",
 		"sticky_grenade",
+		"dart_poison",
+		"dart_daze",
+		"dart_revive",
+		"laser_watch",
 		--Resmod projectiles
 		"bravo_frag",
 		"cluster_fuck",
@@ -1964,6 +1968,10 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.sticky_grenade.throw_shout = nil
 	self.projectiles.sticky_grenade.max_amount = 3
 	self.projectiles.sticky_grenade.base_pickup_chance = {0.0125, 0.025}
+
+	self.projectiles.laser_watch.base_cooldown_no_perk = true
+	self.projectiles.laser_watch.base_cooldown = 45
+	self.projectiles.laser_watch.pickup_cooldown_t = 4.5 --10~ pickups to gain back one immediately
 
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.throw_allowed_expire_t = 0.1
@@ -5195,7 +5203,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.model24.special_weapon = "caber"
 		self.melee_weapons.model24.stats.cleave = 1
 		self.melee_weapons.model24.stats.raycasts = 15
-		self.melee_weapons.model24.explosion_chance = 0.5
+		self.melee_weapons.model24.explosion_chance = 1
 		self.melee_weapons.model24.explosion_curve_pow = 0
 		self.melee_weapons.model24.explosion_damage = 72
 		self.melee_weapons.model24.explosion_player_damage = 36

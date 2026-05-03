@@ -361,6 +361,7 @@ function PlayerStandard:_start_action_throw_projectile(t, input)
 	self._state_data.throwing_projectile = true
 	self._state_data.projectile_start_t = nil
 	local projectile_entry = managers.blackmarket:equipped_projectile()
+	local projectile_tweak = tweak_data.blackmarket.projectiles[projectile_entry]
 
 	self:_stance_entered()
 
@@ -368,12 +369,12 @@ function PlayerStandard:_start_action_throw_projectile(t, input)
 		self._camera_unit:anim_state_machine():set_global(self._state_data.projectile_global_value, 0)
 	end
 
-	self._state_data.projectile_global_value = tweak_data.blackmarket.projectiles[projectile_entry].anim_global_param or "projectile_frag"
+	self._state_data.projectile_global_value = projectile_tweak.anim_global_param or "projectile_frag"
 
 	self._camera_unit:anim_state_machine():set_global(self._state_data.projectile_global_value, 1)
 
 	local current_state_name = self._camera_unit:anim_state_machine():segment_state(self:get_animation("base"))
-	local throw_allowed_expire_t = tweak_data.blackmarket.projectiles[projectile_entry].throw_allowed_expire_t or 0.15
+	local throw_allowed_expire_t = projectile_tweak.throw_allowed_expire_t or 0.15
 	self._state_data.projectile_throw_allowed_t = t + (current_state_name ~= self:get_animation("projectile_throw_state") and throw_allowed_expire_t or 0)
 
 	if current_state_name == self:get_animation("projectile_throw_state") then
@@ -387,6 +388,14 @@ function PlayerStandard:_start_action_throw_projectile(t, input)
 	if current_state_name == self:get_animation("projectile_exit_state") then
 		local segment_relative_time = self._camera_unit:anim_state_machine():segment_relative_time(self:get_animation("base"))
 		offset = (1 - segment_relative_time) * 0.9
+	end
+
+	if projectile_tweak.reuse_expire_t then
+		self._state_data.projectile_reuse_t = t + throw_allowed_expire_t + projectile_tweak.reuse_expire_t
+	end
+
+	if projectile_tweak.use_interact_anim then
+		self._unit:network():send("sync_interaction_anim", true, projectile_entry)
 	end
 
 	self._ext_camera:play_redirect(self:get_animation("projectile_enter"), 999, offset) --make the holstering of the drawn weapon instant
@@ -551,6 +560,7 @@ function PlayerStandard:_check_action_reload(t, input)
 			if alive(self._equipped_unit) and self:_is_charging_weapon() then
 				local result = nil
 				local weap_base = self._equipped_unit:base()
+				--local cancel_charge
 
 				if weap_base.manages_steelsight and weap_base:manages_steelsight() then
 					if input.btn_reload_press and weap_base.steelsight_pressed then
@@ -558,8 +568,10 @@ function PlayerStandard:_check_action_reload(t, input)
 					elseif input.btn_steelsight_release and weap_base.steelsight_released then
 						result = weap_base:steelsight_released()
 					end
+					--if cancel_charge then
+						self._ext_camera:play_redirect(self:get_animation("idle"))
+					--end
 				end
-				self._ext_camera:play_redirect(self:get_animation("idle"))
 			end
 		end
 	end
@@ -5391,7 +5403,7 @@ end
 
 function PlayerStandard:_play_unequip_animation()
 	local speed_multiplier = self:_get_swap_speed_multiplier()
-	self._ext_camera:play_redirect(self:get_animation("unequip"), speed_multiplier)
+	local result = self._ext_camera:play_redirect(self:get_animation("unequip"), speed_multiplier)
 	self._equipped_unit:base():tweak_data_anim_stop("equip")
 	self._equipped_unit:base():tweak_data_anim_play("unequip", speed_multiplier)
 end
@@ -5401,16 +5413,30 @@ function PlayerStandard:_interupt_action_throw_projectile(t)
 		return
 	end
 
+	self._state_data.projectile_start_t = nil
 	self._state_data.projectile_idle_wanted = nil
 	self._state_data.projectile_expire_t = nil
 	self._state_data.projectile_throw_allowed_t = nil
 	self._state_data.throwing_projectile = nil
 	self._camera_unit_anim_data.throwing = nil
+	self._state_data.projectile_reuse_t = nil
+	local projectile_entry = managers.blackmarket:equipped_projectile()
+	local projectile_data = tweak_data.blackmarket.projectiles[projectile_entry]
 
-	self._camera_unit:base():unspawn_grenade()
-	self._camera_unit:base():show_weapon()
-	self:_play_equip_animation()
-	self:_stance_entered()
+	if projectile_data.use_interact_anim then
+		self._ext_camera:play_redirect(self:get_animation("projectile_throw"))
+
+		self._state_data.projectile_expire_t = t + projectile_data.expire_t
+		self._state_data.projectile_repeat_expire_t = t + math.min(projectile_data.repeat_expire_t, projectile_data.expire_t)
+	else
+		--self._ext_camera:play_redirect(self:get_animation("equip"))
+		--self._equipped_unit:base():tweak_data_anim_stop("unequip")
+		--self._equipped_unit:base():tweak_data_anim_play("equip")
+		self:_play_equip_animation()
+		self._camera_unit:base():unspawn_grenade()
+		self._camera_unit:base():show_weapon()
+		self:_stance_entered()
+	end
 end
 
 function PlayerStandard:_check_step(t)

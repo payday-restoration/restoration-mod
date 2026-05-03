@@ -628,6 +628,11 @@ tweak_data.projectiles.crossbow_arrow.damage = 24
 tweak_data.projectiles.crossbow_arrow_exp.damage = 24
 tweak_data.projectiles.crossbow_poison_arrow.damage = 18
 
+--Dart Gun
+tweak_data.projectiles.dart_poison.damage = 24
+tweak_data.projectiles.dart_daze.damage = 6.0
+tweak_data.projectiles.dart_revive.damage = 0
+
 --Arblast Heavy Crossbow--
 tweak_data.projectiles.arblast_arrow.damage = 36
 tweak_data.projectiles.arblast_arrow_exp.damage = 36
@@ -649,36 +654,45 @@ tweak_data.projectiles.ecp_arrow_exp.damage = 18
 tweak_data.projectiles.ecp_arrow_exp.direct_damage_percent = 0
 tweak_data.projectiles.ecp_arrow_poison.damage = 12
 
+--HEAVY LIKE A BRINKS TRUCK
+tweak_data.projectiles.laser_watch.damage = 12
+tweak_data.projectiles.laser_watch.range = 169
+
 --The not longbow--
 tweak_data.projectiles.elastic_arrow.damage = 36
 tweak_data.projectiles.elastic_arrow_exp.damage = 36
 tweak_data.projectiles.elastic_arrow_poison.damage = 24
 
 --GRENADE OUT--
+tweak_data.projectiles.frag.is_explosive = true
 tweak_data.projectiles.frag.damage = 90
 tweak_data.projectiles.frag.player_damage = 45
 tweak_data.projectiles.frag.curve_pow = 0.5
 tweak_data.projectiles.frag.range = 500
 
 --Dynamite--
+tweak_data.projectiles.dynamite.is_explosive = true
 tweak_data.projectiles.dynamite.damage = 90
 tweak_data.projectiles.dynamite.player_damage = 45
 tweak_data.projectiles.dynamite.curve_pow = 0.5
 tweak_data.projectiles.dynamite.range = 400
 
 --Community Frag--
+tweak_data.projectiles.frag_com.is_explosive = true
 tweak_data.projectiles.frag_com.damage = 90
 tweak_data.projectiles.frag_com.player_damage = 45
 tweak_data.projectiles.frag_com.curve_pow = 0.5
 tweak_data.projectiles.frag_com.range = 500
 
 --The other community frag--
+tweak_data.projectiles.dada_com.is_explosive = true
 tweak_data.projectiles.dada_com.damage = 90
 tweak_data.projectiles.dada_com.player_damage = 45
 tweak_data.projectiles.dada_com.curve_pow = 0.5
 tweak_data.projectiles.dada_com.range = 500
 
 --SEEEEEEMTEEEEEEEEEEX
+tweak_data.projectiles.sticky_grenade.is_explosive = true
 tweak_data.projectiles.sticky_grenade.damage = 90
 tweak_data.projectiles.sticky_grenade.player_damage = 45
 tweak_data.projectiles.sticky_grenade.curve_pow = 0.5
@@ -708,18 +722,22 @@ tweak_data.projectiles.sticky_grenade.warning_data = {
 }
 
 --Molliest of tovs--
+tweak_data.projectiles.molotov.is_explosive = true
 tweak_data.projectiles.molotov.range = 300
 tweak_data.projectiles.molotov.damage = 3.0
 tweak_data.projectiles.molotov.player_damage = 1.5
 tweak_data.projectiles.molotov.burn_duration = 10
 tweak_data.projectiles.molotov.dot_data_name = "proj_molotov"
+tweak_data.projectiles.molotov.fire_env_name = "molotov_fire"
 
 --Incendiary Nades, idea to make em a mollie--
+tweak_data.projectiles.fir_com.is_explosive = true
 tweak_data.projectiles.fir_com.range = 450
 tweak_data.projectiles.fir_com.damage = 12.0
 tweak_data.projectiles.fir_com.player_damage = 4.5
 tweak_data.projectiles.fir_com.burn_duration = 12
 tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"
+tweak_data.projectiles.fir_com.fire_env_name = "incendiary_burst_fire"
 
 --Shuriken
 tweak_data.projectiles.wpn_prj_four.damage = 12
@@ -743,6 +761,7 @@ tweak_data.projectiles.wpn_prj_jav.magnetism = 0.15
 
 --Balled Snow--
 if tweak_data.projectiles.xmas_snowball then
+	tweak_data.projectiles.xmas_snowball.is_explosive = true
 	tweak_data.projectiles.xmas_snowball.damage = 18
 	tweak_data.projectiles.xmas_snowball.player_dmg_mul = 0
 	tweak_data.projectiles.xmas_snowball.camera_shake_max_mul = 0
@@ -807,6 +826,7 @@ tweak_data.fire.effects.money_endless = {
 }
 
 --Stun nades--
+tweak_data.projectiles.concussion.is_explosive = true
 tweak_data.projectiles.concussion.damage = 0
 tweak_data.projectiles.concussion.curve_pow = 0.8
 tweak_data.projectiles.concussion.range = 1000
@@ -840,6 +860,7 @@ tweak_data.narrative.jobs.chill_combat.contract_visuals.preview_image = {
 }	
 
 --Smoke Grenades--
+tweak_data.projectiles.smoke_screen_grenade.is_explosive = true
 tweak_data.projectiles.smoke_screen_grenade.damage = 0
 tweak_data.projectiles.smoke_screen_grenade.curve_pow = 1
 tweak_data.projectiles.smoke_screen_grenade.range = 1500
@@ -1013,6 +1034,24 @@ end
 	}
 	for i, proj_id in ipairs(velocity) do
 		tweak_data.projectiles[proj_id].launch_speed = 5000 * velocity_mult * 0.60
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+
+velocity = {
+	'dart_poison',
+	'dart_daze'
+}
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 5000 * velocity_mult
+	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
+	velocity = {
+		'dart_revive'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 5000 * velocity_mult * 0.5
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end

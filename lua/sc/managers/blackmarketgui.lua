@@ -3338,11 +3338,56 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			self._throwable_stats_shown = {
 				{
 					range = true,
-					name = "damage"
+					name = "damage_impact"
 				},
 				{
 					range = true,
-					name = "range"
+					name = "range_impact",
+					suffix = managers.localization:text("menu_meters_suffix_short")
+				},
+				{
+					range = true,
+					name = "damage_blast"
+				},
+				{
+					range = true,
+					name = "range_blast",
+					suffix = managers.localization:text("menu_meters_suffix_short")
+				},
+				{
+					range = true,
+					name = "time_blast",
+					suffix = managers.localization:text("menu_seconds_suffix_short")
+				},
+				{
+					range = true,
+					name = "damage_pool",
+					suffix = managers.localization:text("menu_persecond_suffix_short")
+				},
+				{
+					range = true,
+					name = "range_pool",
+					suffix = managers.localization:text("menu_meters_suffix_short")
+				},
+				{
+					range = true,
+					name = "time_pool",
+					suffix = managers.localization:text("menu_seconds_suffix_short")
+				},
+				{
+					range = true,
+					name = "damage_dot",
+					suffix = managers.localization:text("menu_persecond_suffix_short")
+				},
+				{
+					range = true,
+					name = "range_dot",
+					suffix = managers.localization:text("menu_meters_suffix_short")
+				},
+				{
+					range = true,
+					name = "time_dot",
+					suffix = managers.localization:text("menu_seconds_suffix_short")
 				},
 				{
 					inverse = true,
@@ -3387,7 +3432,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					color = tweak_data.screen_colors.resource
 				},
 				{
-					size = 55,
+					size = 60,
 					name = "total",
 					align = "right"
 				}
@@ -3396,24 +3441,26 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				visible = false
 			})
 
+			local scale_chart = 0.9 -- STAT CHART SCALING
 			for i, stat in ipairs(self._throwable_stats_shown) do
 				panel = self._throwable_stats_panel:panel({
-					h = 20,
+					h = 20 * scale_chart,
 					layer = 1,
 					name = stat.name,
-					y = y,
+					y = y * scale_chart,
 					w = self._throwable_stats_panel:w()
 				})
 
 				if math.mod(i, 2) == 0 and not panel:child(tostring(i)) then
 					panel:rect({
 						name = tostring(i),
-						color = Color.black:with_alpha(0.3)
+						color = Color.black:with_alpha(0.3),
+						h = h + 2 * scale_chart
 					})
 				end
 
 				x = 2
-				y = y + 20
+				y = y + 20 * scale_chart
 				self._throwable_stats_texts[stat.name] = {}
 
 				for _, column in ipairs(text_columns) do
@@ -3426,12 +3473,13 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					self._throwable_stats_texts[stat.name][column.name] = text_panel:text({
 						rotation = 360,
 						layer = 1,
-						font_size = small_font_size,
+						font_size = small_font_size * scale_chart,
 						font = small_font,
 						align = column.align,
 						alpha = column.alpha,
 						blend_mode = column.blend,
-						color = column.color or tweak_data.screen_colors.text
+						color = column.color or tweak_data.screen_colors.text,
+						y = panel:h() - (column.font_size or small_font_size) * scale_chart
 					})
 					x = x + column.size
 
@@ -3865,6 +3913,101 @@ function BlackMarketGui:show_btns(slot)
 	self:_update_borders()
 end
 
+function BlackMarketGui:_get_grenade_stats(name)
+	local base_stats = {}
+	local mods_stats = {}
+	local skill_stats = {}
+	local projectile_data = tweak_data.projectiles[name]
+	local bm_projectile_data = tweak_data.blackmarket.projectiles[name]
+
+	for i, stat in ipairs(self._throwable_stats_shown) do
+		local skip_rounding = stat.num_decimals
+		base_stats[stat.name] = {
+			value = 0
+		}
+		mods_stats[stat.name] = {
+			value = 0
+		}
+		skill_stats[stat.name] = {
+			value = 0
+		}
+
+		local dot_tweak = projectile_data and (projectile_data.dot_data_name or projectile_data.poison_gas_dot_data_name)
+		local dot_data = dot_tweak and tweak_data.dot:get_dot_data(dot_tweak)
+		local env_data = projectile_data and projectile_data.fire_env_name and tweak_data.env_effect[projectile_data.fire_env_name]()
+
+		if stat.name == "damage_blast" then
+			base_stats[stat.name].value = projectile_data and (projectile_data.is_explosive and projectile_data.damage and projectile_data.damage > 0 and projectile_data.damage * 10) or nil
+		elseif stat.name == "range_blast" then
+			base_stats[stat.name].value = projectile_data and 
+				((projectile_data.is_explosive and projectile_data.range / 100) or 
+				(projectile_data.poison_gas_range and projectile_data.poison_gas_range / 100))
+				or nil
+		elseif stat.name == "time_blast" then
+			base_stats[stat.name].value = projectile_data and (projectile_data.poison_gas_duration or projectile_data.duration)
+		elseif stat.name == "damage_impact" then
+			base_stats[stat.name].value = projectile_data and 
+				((projectile_data.is_explosive and projectile_data.direct_damage_percent and (projectile_data.direct_damage_percent * projectile_data.damage * 10)) or 
+				(not projectile_data.is_explosive and projectile_data.damage and projectile_data.damage > 0 and projectile_data.damage * 10)) or nil
+		elseif stat.name == "range_impact" then
+			base_stats[stat.name].value = projectile_data and ((not projectile_data.is_explosive and projectile_data.range and projectile_data.range > 0 and projectile_data.range / 100) or nil)
+		elseif stat.name == "damage_pool" then
+			base_stats[stat.name].value = env_data and env_data.damage and (env_data.damage * 10 / (env_data.burn_tick_period or 1))
+		elseif stat.name == "range_pool" then
+			base_stats[stat.name].value = env_data and env_data.range and env_data.range / 10
+		elseif stat.name == "time_pool" then
+			base_stats[stat.name].value = env_data and env_data.burn_duration
+		elseif stat.name == "damage_dot" then
+			base_stats[stat.name].value = dot_data and dot_data.dot_damage and  dot_data.dot_damage > 0  and (dot_data.dot_damage * 10) / (dot_data.dot_tick_period or 0.5)
+		elseif stat.name == "range_dot" then
+			base_stats[stat.name].value = nil
+		elseif stat.name == "time_dot" then
+			base_stats[stat.name].value = dot_data and dot_data.dot_length and  dot_data.dot_length > dot_data.dot_grace_period and (dot_data.dot_length - (dot_data.dot_grace_period or 0.1))
+		elseif stat.name == "cooldown" then
+			base_stats[stat.name].value = bm_projectile_data and bm_projectile_data.base_cooldown
+		elseif stat.name == "amount" then
+			base_stats[stat.name].value = bm_projectile_data and bm_projectile_data.max_amount
+			if base_stats[stat.name].value and bm_projectile_data then
+				local is_cooldown = bm_projectile_data.base_cooldown
+				local is_perk_throwable = is_cooldown and not bm_projectile_data.base_cooldown_no_perk
+				local throwables_multiplier = (not is_cooldown and managers.player:upgrade_value("player", "throwables_multiplier", 1)) or 1
+				base_stats[stat.name].value = math.round(base_stats[stat.name].value * throwables_multiplier)
+				skill_stats[stat.name].value = (throwables_multiplier > 1 and 1) or nil
+			end
+		end
+
+
+		if base_stats[stat.name].value ~= nil and type(base_stats[stat.name].value) ~= "number" then
+			--log( "something is fucky with " .. tostring( stat.name ) .. " for " .. tostring(name) )
+			base_stats[stat.name].value = nil
+		end
+
+		base_stats[stat.name].real_value = base_stats[stat.name].value
+		mods_stats[stat.name].real_value = mods_stats[stat.name].value
+		skill_stats[stat.name].real_value = skill_stats[stat.name].value
+	end
+
+	for i, stat in ipairs(self._throwable_stats_shown) do
+		if not stat.index then
+			if skill_stats[stat.name].value and base_stats[stat.name].value then
+				skill_stats[stat.name].value = base_stats[stat.name].value * skill_stats[stat.name].value
+				base_stats[stat.name].value = base_stats[stat.name].value
+			end
+
+			if skill_stats[stat.name].min_value and base_stats[stat.name].min_value then
+				skill_stats[stat.name].min_value = base_stats[stat.name].min_value * skill_stats[stat.name].min_value
+				base_stats[stat.name].min_value = base_stats[stat.name].min_value
+			end
+
+			if skill_stats[stat.name].max_value and base_stats[stat.name].max_value then
+				skill_stats[stat.name].max_value = base_stats[stat.name].max_value * skill_stats[stat.name].max_value
+				base_stats[stat.name].max_value = base_stats[stat.name].max_value
+			end
+		end
+	end
+
+	return base_stats, mods_stats, skill_stats
+end
 
 function BlackMarketGui:show_stats()
 	if not self._stats_panel or not self._rweapon_stats_panel or not self._armor_stats_panel or not self._mweapon_stats_panel then
@@ -4309,8 +4452,8 @@ function BlackMarketGui:show_stats()
 			value = base_stats[stat.name].value
 
 			if equip or value then
-				local equip_text = equip and format_round(equip, stat.round_value) or no_data_string
-				local total_text = value and format_round(value, stat.round_value) or no_data_string
+				local equip_text = equip and format_round_3(equip, stat.round_value) or no_data_string
+				local total_text = value and format_round_3(value, stat.round_value) or no_data_string
 
 				if stat.suffix then
 					if equip then

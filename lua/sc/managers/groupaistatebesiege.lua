@@ -1377,6 +1377,10 @@ function GroupAIStateBesiege:force_spawn_group(...)
 	self._force_next_group_spawn = true
 	force_spawn_group_original(self, ...)
 	self._force_next_group_spawn = nil
+
+	if self:_spawn_in_group(spawn_group, spawn_group_type, grp_objective) then
+		self:_perform_group_spawning(self._spawning_groups[#self._spawning_groups], true)
+	end
 end
 
 Hooks:OverrideFunction(GroupAIStateBesiege, "_perform_group_spawning", function (self, spawn_task, force, use_last)

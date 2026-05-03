@@ -7,12 +7,10 @@ Hooks:OverrideFunction(ElementSpawnEnemyGroup, "on_executed", function (self, in
 	self:_check_spawn_points()
 
 	if #self._spawn_points > 0 then
-		if self._group_data.spawn_type == "group" then
+		local spawn_type = self._group_data.spawn_type
+		if spawn_type == "group" or spawn_type == "group_guaranteed" then
 			local spawn_group_data = managers.groupai:state():create_spawn_group(self._id, self, self._spawn_points)
-			managers.groupai:state():force_spawn_group(spawn_group_data, self._values.preferred_spawn_groups)
-		elseif self._group_data.spawn_type == "group_guaranteed" then
-			local spawn_group_data = managers.groupai:state():create_spawn_group(self._id, self, self._spawn_points)
-			managers.groupai:state():force_spawn_group(spawn_group_data, self._values.preferred_spawn_groups, true)
+			managers.groupai:state():force_spawn_group(spawn_group_data, self._values.preferred_spawn_groups, spawn_type == "group_guaranteed")
 		else
 			for i = 1, self:get_random_table_value(self._group_data.amount) do
 				local element = self._spawn_points[self:_get_spawn_point(i)]

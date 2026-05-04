@@ -641,6 +641,9 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 		sound_done = "bar_bag_generic_finished",
 		action_text_id = "hud_action_taking_grenades"
 	}
+
+	-- Tightens how close your crosshair has to the spy camera to interact with it.
+	self.spy_camera_access.dot_limit = 0.95
 	
 	--Gage package
 	self.gage_assignment.timer = 0		

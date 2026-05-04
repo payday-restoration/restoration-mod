@@ -2245,7 +2245,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_damage_dot"] = "Damage (DOT)",
 		["bm_menu_range_dot"] = "Range (DOT)",
 		["bm_menu_time_dot"] = "Duration (DOT)",
-		["bm_menu_cooldown_reduction"] = "Pickup Recharge Reduction",
+		["bm_menu_cooldown_reduction"] = "Pickup Reduction",
 
 		--Melee
 		["bm_menu_attack_speed"] = "Repeat Delay",

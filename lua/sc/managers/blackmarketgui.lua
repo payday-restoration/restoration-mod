@@ -3940,6 +3940,9 @@ function BlackMarketGui:_get_grenade_stats(name)
 		local dot_tweak = projectile_data and (projectile_data.dot_data_name or projectile_data.poison_gas_dot_data_name)
 		local dot_data = dot_tweak and tweak_data.dot:get_dot_data(dot_tweak)
 		local env_data = projectile_data and projectile_data.fire_env_name and tweak_data.env_effect[projectile_data.fire_env_name]()
+		local env_dot_data = env_data and env_data.dot_data_name and tweak_data.dot:get_dot_data(env_data.dot_data_name)
+		local dot_source = env_dot_data or dot_data
+		local detonates = projectile_data and is_smoke or is_explosive
 
 		if stat.name == "damage_blast" then
 			base_stats[stat.name].value = projectile_data and (projectile_data.is_explosive and projectile_data.damage and projectile_data.damage > 0 and projectile_data.damage * 10) or nil
@@ -3963,15 +3966,18 @@ function BlackMarketGui:_get_grenade_stats(name)
 		elseif stat.name == "time_pool" then
 			base_stats[stat.name].value = env_data and env_data.burn_duration
 		elseif stat.name == "damage_dot" then
-			base_stats[stat.name].value = dot_data and dot_data.dot_damage and  dot_data.dot_damage > 0  and (dot_data.dot_damage * 10) / (dot_data.dot_tick_period or 0.5)
+			base_stats[stat.name].value = dot_source and dot_source.dot_damage and  dot_source.dot_damage > 0  and (dot_source.dot_damage * 10) / (dot_source.dot_tick_period or 0.5)
 		elseif stat.name == "range_dot" then
 			base_stats[stat.name].value = nil
 		elseif stat.name == "time_dot" then
-			base_stats[stat.name].value = dot_data and dot_data.dot_length and  dot_data.dot_length > dot_data.dot_grace_period and (dot_data.dot_length - (dot_data.dot_grace_period or 0.1))
+			base_stats[stat.name].value = dot_source and dot_source.dot_length and  dot_source.dot_length > dot_source.dot_grace_period and (dot_source.dot_length - (dot_source.dot_grace_period or 0.1))
 		elseif stat.name == "cooldown" then
 			base_stats[stat.name].value = bm_projectile_data and bm_projectile_data.base_cooldown
 		elseif stat.name == "cooldown_reduction" then
 			base_stats[stat.name].value = bm_projectile_data and bm_projectile_data.pickup_cooldown_t
+		elseif stat.name == "detonate_time" then
+			base_stats[stat.name].value = detonates and projectile_data and (projectile_data.in_air_timer or projectile_data.init_timer)
+			mods_stats[stat.name].value = detonates and 1
 		elseif stat.name == "amount" then
 			base_stats[stat.name].value = bm_projectile_data and bm_projectile_data.max_amount
 			if base_stats[stat.name].value and bm_projectile_data then

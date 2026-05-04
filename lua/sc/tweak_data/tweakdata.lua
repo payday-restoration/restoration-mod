@@ -781,6 +781,8 @@ tweak_data.projectiles.wpn_gre_electric.curve_pow = 0.5
 tweak_data.projectiles.wpn_gre_electric.range = 500
 
 --Viper Gas
+tweak_data.projectiles.poison_gas_grenade.is_smoke = true
+tweak_data.projectiles.poison_gas_grenade.stationary_detonation = true
 tweak_data.projectiles.poison_gas_grenade.damage = 0
 tweak_data.projectiles.poison_gas_grenade.player_damage = 0
 tweak_data.projectiles.poison_gas_grenade.curve_pow = 0
@@ -861,6 +863,7 @@ tweak_data.narrative.jobs.chill_combat.contract_visuals.preview_image = {
 
 --Smoke Grenades--
 tweak_data.projectiles.smoke_screen_grenade.is_explosive = true
+tweak_data.projectiles.smoke_screen_grenade.stationary_detonation = true
 tweak_data.projectiles.smoke_screen_grenade.damage = 0
 tweak_data.projectiles.smoke_screen_grenade.curve_pow = 1
 tweak_data.projectiles.smoke_screen_grenade.range = 1500

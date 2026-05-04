@@ -32,53 +32,53 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 	}
 	poison_entries.weapon_tranq_light = {
 		dot_damage = 1.5,
-		dot_length = 1.1,
+		dot_length = 1.5,
 		dot_tick_period = 0.5,
 		use_weapon_damage_falloff = true,
 	}
 	poison_entries.weapon_tranq = {
 		dot_damage = 1.5,
-		dot_length = 2.1,
+		dot_length = 2.5,
 		dot_tick_period = 0.5
 	}
 	poison_entries.weapon_tranq_medium = {
 		dot_damage = 1.5,
-		dot_length = 4.1,
+		dot_length = 4.5,
 		dot_tick_period = 0.5
 	}
 	poison_entries.weapon_tranq_heavy = {
 		dot_damage = 3.0,
-		dot_length = 4.1,
+		dot_length = 4.5,
 		dot_tick_period = 0.5
 	}
 	poison_entries.weapon_tranq_extreme = {
 		dot_damage = 3.0,
-		dot_length = 8.1,
+		dot_length = 8.5,
 		dot_tick_period = 0.5
 	}
 	poison_entries.weapon_cyanide = {
 		dot_damage = 35,
-		dot_length = 5.1,
+		dot_length = 5.5,
 		dot_tick_period = 5
 	}
 	poison_entries.ammo_rip_auto = {
 		dot_damage = 1.5,
-		dot_length = 3.1,
+		dot_length = 3.5,
 		use_weapon_damage_falloff = true
 	}
 	poison_entries.ammo_rip = {
 		dot_damage = 2.0,
-		dot_length = 3.1,
+		dot_length = 3.5,
 		use_weapon_damage_falloff = true
 	}
 	poison_entries.ammo_rip_pump = {
 		dot_damage = 3.0,
-		dot_length = 3.1,
+		dot_length = 3.5,
 		use_weapon_damage_falloff = true
 	}
 	poison_entries.ammo_rip_heavy = {
 		dot_damage = 4.0,
-		dot_length = 3.1,
+		dot_length = 3.5,
 		use_weapon_damage_falloff = true
 	}
 	
@@ -86,7 +86,7 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 	poison_entries.ammo_proj_elastic = {
 		damage_class = "ProjectilesPoisonBulletBase",
 		dot_damage = 1.5,
-		dot_length = 8.1
+		dot_length = 8.5
 	}
 	poison_entries.ammo_proj_arblast = clone(poison_entries.ammo_proj_elastic)
 	poison_entries.ammo_proj_long = clone(poison_entries.ammo_proj_elastic)
@@ -94,34 +94,34 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 	poison_entries.ammo_proj_bow = {
 		damage_class = "ProjectilesPoisonBulletBase",
 		dot_damage = 1.5,
-		dot_length = 6.1
+		dot_length = 6.5
 	}
 	poison_entries.ammo_proj_frankish = clone(poison_entries.ammo_proj_bow)
 	poison_entries.ammo_proj_crossbow = clone(poison_entries.ammo_proj_bow)
 	poison_entries.ammo_proj_ecp = {
 		damage_class = "ProjectilesPoisonBulletBase",
 		dot_damage = 1.5,
-		dot_length = 4.1
+		dot_length = 4.5
 	}
 	
 	--MELEE
 	poison_entries.melee_piggy_hammer = {
 		dot_damage = 1.5,
-		dot_length = 4.1
+		dot_length = 4.5
 	}
 	poison_entries.melee_cqc = {
 		dot_damage = 1.5,
-		dot_length = 4.1
+		dot_length = 4.5
 	}
 	poison_entries.melee_fear = {
 		dot_damage = 1.5,
-		dot_length = 4.1
+		dot_length = 4.5
 	}
 	--THROWABLES
 	poison_entries.proj_four = {
 		damage_class = "ProjectilesPoisonBulletBase",
 		dot_damage = 1.5,
-		dot_length = 4.1
+		dot_length = 4.5
 	}
 	--GAS
 	poison_entries.proj_gas_grenade_cloud = {

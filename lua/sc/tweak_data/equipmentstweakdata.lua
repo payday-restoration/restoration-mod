@@ -21,6 +21,7 @@ function EquipmentsTweakData:init()
 	self.ecm_jammer.deploy_time = 1
 	self.specials.cable_tie.quantity = 3
 	self.specials.cable_tie.max_quantity = 3
+	self.spy_camera.quantity = {5}
 
 	-- Ammo-box based pickup chances, exact same logic as with throwables
 	self.trip_mine.pickup_low = 0.008

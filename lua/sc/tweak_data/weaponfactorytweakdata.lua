@@ -45136,6 +45136,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				falloff_start_mult = 0.5,
 				falloff_end_mult = 0.7
 			}
+			self.parts.wpn_fps_ck_ar23a_soundswitch.supported = true
+			self.parts.wpn_fps_ck_ar23a_soundswitch.custom_stats = {
+				sounds = {
+					fire = "ar23a_fire",
+					fire_single = "ar23a_fire",
+					fire_auto = "ar23a_fire",
+				}
+			}
 
 			self.parts.wpn_fps_ck_ar23p.supported = true
 			self.parts.wpn_fps_ck_ar23p.keep_damage = true

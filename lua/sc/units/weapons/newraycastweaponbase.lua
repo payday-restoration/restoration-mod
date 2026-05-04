@@ -2982,6 +2982,12 @@ Hooks:PostHook(NewRaycastWeaponBase, "weapon_tweak_data", "res_weapon_tweak_data
 		return wtd
 	end
 
+	if self._name_id == "ar23" and self._parts then
+		local is_carbine = self._parts.wpn_fps_ck_ar23a
+		local has_drum = self._parts.wpn_fps_ass_ar23_m_drum
+		wtd.animations.reload_name_id = "ar23" .. ((is_carbine and "a") or "") .. ((has_drum and "_drum") or "")
+	end
+
 	if not g3_niphen and BeardLib.Utils:FindMod("JustAnotherG3 Reload") and self._name_id == "g3" then
 		if self._parts.wpn_fps_ass_g3_b_sniper then 
 			wtd.animations.reload_name_id = "g3_psg"

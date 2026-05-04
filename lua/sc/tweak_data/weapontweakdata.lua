@@ -32910,10 +32910,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.panic_suppression_chance = 0.05
 				self.ar23.object_damage_mult = 0.66667 --scaled to match the object damage of 60 damage rifles
 				self.ar23.sounds.use_fix = nil
-				self.ar23.timers.reload_empty = 2.66
-				self.ar23.timers.reload_exit_empty = 0.87
-				self.ar23.timers.reload_not_empty = 2.10
-				self.ar23.timers.reload_exit_not_empty = 0.8
+				self.ar23.sounds.stop_fire = "m4_olympic_stop"
+				self.ar23.timers.reload_empty = 3.01
+				self.ar23.timers.reload_exit_empty = 0.95
+				self.ar23.timers.reload_not_empty = 2
+				self.ar23.timers.reload_exit_not_empty = 0.6
 			end
 
 			if self.ar59 then

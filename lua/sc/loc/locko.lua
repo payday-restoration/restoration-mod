@@ -2143,6 +2143,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_btn_sell"] = "무기 판매 ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "무기 구매 ($price)",
 
+		["menu_persecond_suffix_short"] = "/s",
 		["menu_milliseconds_suffix_short"] = "ms", --milliseconds
 		["menu_meters_suffix_short"] = "m", --meters
 
@@ -2162,6 +2163,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_damage_min"] = "최소 피해량",
 		["bm_menu_moving_range"] = "피해량 감소 종점",
 
+		--Throwables
+		["bm_menu_damage_blast"] = "피해량 (폭발)",
+		["bm_menu_range_blast"] = "범위 (폭발)",
+		["bm_menu_time_blast"] = "지속 시간 (폭발)",
+		["bm_menu_damage_impact"] = "피해량 (직격)",
+		["bm_menu_range_impact"] = "범위 (직격)",
+		["bm_menu_damage_pool"] = "피해량 (지대)",
+		["bm_menu_range_pool"] = "범위 (지대)",
+		["bm_menu_time_pool"] = "지속 시간 (지대)",
+		["bm_menu_damage_dot"] = "피해량 (지속 피해)",
+		["bm_menu_range_dot"] = "범위 (지속 피해)",
+		["bm_menu_time_dot"] = "지속 시간 (지속 피해)",
+		["bm_menu_cooldown_reduction"] = "재충전 절감",
+
+		--Melee
 		["bm_menu_attack_speed"] = "반복 지연",
 		["bm_menu_impact_delay"] = "타격 지연",
 		["bm_menu_cleave"] = "휩쓸기 수",
@@ -3220,6 +3236,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_gauss_gun_desc"] = "이 저격 소총은 존에서 개발되었고 전자기 탄도 가속 시스템을 탑재하고 있으며 존에서만 사용합니다.\n\n#{skill_color}#다수의 적, 방탄복, 방패, 타이탄 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",					
 
 			--[[ SPECIALS ]]
+				--Dart Gun
+				["bm_dart_sc_desc"] = "방심한 목표물에 매우 강력한 다트를 발사할 수 있는 조용하고 활용도가 높은 무기입니다.\n\n강력한 #{stats_positive}#독 다트##가 기본 장착되어 있으며, 상황에 맞춰 #{ghost_color}#안정제 다트## 또는 #{stat_maxed}#소생자극제 다트##로 교체할 수 있습니다.",			
 				--Saw
 				["bm_ap_saw_sc_desc"] = "#{skill_color}#방탄복을 뚫고 썰어버릴 수 있습니다.##",
 				["bm_ap_saw_blade_sc_desc"] = "칼날을 날카롭게 하여 #{skill_color}#방탄복을 관통할 수 있습니다.##",
@@ -4568,6 +4586,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_hunter"] = "Avalanche CB1-50 Pistol Grip Crossbow",
 					["bm_w_elastic"] = "Hoyt Carbon Spyder ZT 30 Bow",
 					["bm_wp_elastic_body_tactic"] = "Hoyt Ignite Riser",
+
+					["bm_w_dart"] = "Pneu-Dart X-2",
 
 				--Attachments
 
@@ -6298,7 +6318,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck18_3_desc_sc"] = "회피율이 추가로 ##$perk_value_1## 증가합니다.",
 		["menu_deck18_5_desc_sc"] = "공격을 회피하면 연막탄의 재사용 대기 시간이 ##$perk_value_1##초 감소합니다.\n\n인벤토리에 시체 가방을 ##$perk_value_2##개 더 소지합니다.",
 		["menu_deck18_7_desc_sc"] = "회피율이 추가로 ##$perk_value_1## 증가합니다.",
-		["menu_deck18_9_desc_sc"] = "연막 속에 숨어 있을 동안 회피 미터가 초당 ##$perk_value_1##씩 채워집니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck18_9_desc_sc"] = "연막 속에 숨어 있을 동안 회피 미터가 초당 ##$perk_value_1##씩 채워집니다.\n연막 속에 있는 동료는 회피 게이지를 ##$perk_value_2## 채워집니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Sweet liquor eases the pain--
 		["menu_deck19_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n방탄복이 파괴되었을때, 피해 유예 시간이 #{important_1}#$perk_value_7## 감소하지만 지속 피해를 무효화할 때 받는 다음 피해는 제외됩니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##",

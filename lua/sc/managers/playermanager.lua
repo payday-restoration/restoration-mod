@@ -1742,7 +1742,7 @@ function PlayerManager:check_selected_equipment_placement_valid(player)
 		return false
 	end
 	
-	if equipment_data.equipment == "trip_mine" or equipment_data.equipment == "ecm_jammer" then
+	if equipment_data.equipment == "trip_mine" or equipment_data.equipment == "ecm_jammer" or equipment_data.equipment == "spy_camera" then
 		return player:equipment():valid_look_at_placement(tweak_data.equipments[equipment_data.equipment]) and true or false
 	else
 		return player:equipment():valid_shape_placement(equipment_data.equipment, tweak_data.equipments[equipment_data.equipment]) and true or false

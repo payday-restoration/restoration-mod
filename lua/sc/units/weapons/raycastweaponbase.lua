@@ -2008,6 +2008,65 @@ function InstantSnowballBase:on_collision(col_ray, weapon_unit, user_unit, damag
 	return nil
 end
 
+function ReviveInstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
+	local hit_unit = col_ray.unit
+	user_unit = alive(user_unit) and user_unit or nil
+
+	weapon_unit = alive(weapon_unit) and weapon_unit or nil
+	local dmg_ext = hit_unit:character_damage()
+
+	if not dmg_ext then
+		local slotmask = managers.slot:get_mask("criminals_no_deployables")
+		local criminals = World:find_units("sphere", col_ray.position, self.GENEROCITY_RADIUS, slotmask)
+
+		for _, criminal_unit in ipairs(criminals) do
+			local needs_revive = false
+
+			if criminal_unit:base() and criminal_unit:base().is_husk_player then
+				needs_revive = criminal_unit:interaction():active() and criminal_unit:movement():need_revive() and criminal_unit:movement():current_state_name() ~= "arrested"
+			elseif criminal_unit:character_damage() and criminal_unit:character_damage().need_revive then
+				needs_revive = criminal_unit:character_damage():need_revive()
+			end
+
+			if needs_revive then
+				mvector3.set(tmp_vec1, criminal_unit:position())
+				mvector3.subtract(tmp_vec1, col_ray.position)
+				mvector3.normalize(tmp_vec1)
+
+				local criminal_fwd = -criminal_unit:rotation():y()
+				local dot = mvector3.dot(criminal_fwd, tmp_vec1)
+
+				if self.GENEROCITY_DOT <= dot then
+					hit_unit = criminal_unit
+					dmg_ext = hit_unit:character_damage()
+					col_ray.position = criminal_unit:position()
+					col_ray.unit = criminal_unit
+					col_ray.body = nil
+
+					break
+				end
+			end
+		end
+	end
+
+	local play_impact_flesh = not dmg_ext or not dmg_ext._no_blood
+
+	if play_impact_flesh then
+		self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+	end
+
+	if not blank and weapon_unit and dmg_ext then
+		ReviveInstantBulletBase:give_revive_damage(hit_unit, user_unit)
+
+		return {
+			variant = "revive",
+			col_ray = col_ray
+		}
+	end
+
+	return nil
+end
+
 function RaycastWeaponBase:get_hipfire_stance_id()
 	return self:weapon_tweak_data().use_hipfire_stance or self:get_name_id()
 end

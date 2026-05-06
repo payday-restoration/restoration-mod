@@ -15174,6 +15174,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.hunter.panic_suppression_chance = 0.05
 						self.hunter.stats_modifiers = {damage = 2}
+						self.hunter.sprintout_anim_offset = 0.015
 						self.hunter.timers.reload_exit_empty = 0.3
 						self.hunter.timers.reload_exit_not_empty = 0.3
 
@@ -15213,6 +15214,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.dart.panic_suppression_chance = 0.05
 						self.dart.stats_modifiers = {damage = 2}
+						self.dart.sprintout_anim_offset = 0.015
 						self.dart.timers.reload_not_empty = 2.4
 						self.dart.timers.reload_exit_not_empty = 1.1
 						self.dart.timers.reload_empty = 2.4

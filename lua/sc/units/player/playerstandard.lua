@@ -2294,8 +2294,9 @@ function PlayerStandard:_end_action_running(t)
 		local weap_unit = self._equipped_unit
 		local weap_base = weap_unit and weap_unit:base()
 		local weap_tweak = weap_base and weap_base:weapon_tweak_data()
+		local anim_offset = weap_tweak and weap_tweak.sprintout_anim_offset
 		local speed_multiplier = weap_base and weap_base:exit_run_speed_multiplier()
-		local sprintout_anim_time = sweap_base and weap_base:weapon_tweak_data().sprintout_anim_time or 0.4
+		local sprintout_anim_time = weap_tweak and weap_tweak.sprintout_anim_time or 0.4
 
 		self._end_running_expire_t = t + sprintout_anim_time / speed_multiplier
 		--Adds a few melee related checks to avoid cutting off animations.
@@ -2305,11 +2306,12 @@ function PlayerStandard:_end_action_running(t)
 		if stop_running and not self._shooting and not self._running_sprintout_expire_t then
 			if not self._equipped_unit:base():run_and_shoot_no_sprintout() or not self._equipped_unit:base():run_and_shoot_allowed() or 
 				(self._equipped_unit:base():run_and_shoot_allowed() and restoration.Options:GetValue("WEAPONS/WEAPONANIMS/RunAndShootAnims")) then
-				self._ext_camera:play_redirect(self:get_animation("stop_running"), math.min(speed_multiplier, 2) )
+				self._ext_camera:play_redirect(self:get_animation("stop_running"), math.min(speed_multiplier, 2), anim_offset )
 			end
 		end
 	end
 end
+
 
 --Stores running input, is a workaround for other things that may interrupt running.
 Hooks:PreHook(PlayerStandard, "_start_action_melee", "ResPlayerStandardPreStartActionMelee", function(self, t, input, instant)

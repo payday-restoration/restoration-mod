@@ -2067,6 +2067,57 @@ function ReviveInstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, d
 	return nil
 end
 
+function ReviveInstantBulletBase:give_revive_damage(hit_unit, user_unit)
+	if not hit_unit then
+		return
+	end
+
+	local base_ext = hit_unit:base()
+	local dmg_ext = hit_unit:character_damage()
+
+	if not base_ext or not dmg_ext then
+		return
+	end
+
+	if dmg_ext:dead() then
+		return
+	end
+
+	local needs_revive = nil
+
+	if base_ext.is_husk_player then
+		needs_revive = hit_unit:interaction():active() and hit_unit:movement():need_revive() and hit_unit:movement():current_state_name() ~= "arrested"
+	elseif dmg_ext.need_revive then
+		needs_revive = dmg_ext:need_revive()
+	end
+
+	if needs_revive then
+		hit_unit:interaction():interact(user_unit)
+
+		return
+	end
+
+	if not hit_unit:movement().cool or hit_unit:movement():cool() then
+		return
+	end
+
+	local my_team = hit_unit:movement():team()
+
+	if my_team.friends.criminal1 then
+		--return
+	end
+
+	local char_tweak = base_ext and base_ext.char_tweak and base_ext:char_tweak()
+
+	if not char_tweak or char_tweak.can_be_healed == false then
+		return false
+	end
+
+	if dmg_ext and dmg_ext.do_medic_heal_and_action then
+		dmg_ext:do_medic_heal_and_action(true)
+	end
+end
+
 function RaycastWeaponBase:get_hipfire_stance_id()
 	return self:weapon_tweak_data().use_hipfire_stance or self:get_name_id()
 end

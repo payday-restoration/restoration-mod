@@ -19105,8 +19105,8 @@ end
 					}
 					self.parts.wpn_fps_upg_a_dart_revive.custom_stats = {
 						launcher_grenade = "dart_revive",
-						ammo_pickup_max_mul = 0.5,
-						ammo_pickup_min_mul = 0.5
+						ammo_pickup_max_mul = 0.2,
+						ammo_pickup_min_mul = 0.1
 					}
 
 					self.parts.wpn_fps_spe_dart_magazine_high_pressure.supported = true

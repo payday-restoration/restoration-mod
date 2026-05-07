@@ -97,8 +97,8 @@ function IngameAccessCamera:update(t, dt)
 
 				managers.hud:access_camera_track(amount, self._cam_unit:camera()._camera, unit:movement():m_head_pos())
 
-				if self._last_access_camera and not self._last_access_camera:value("destroyed") and managers.player:upgrade_value("player", "sec_camera_highlight", false) and unit:base()._tweak_table then
-					managers.game_play_central:auto_highlight_enemy(unit, true)
+				if self._last_access_camera and not self._last_access_camera:value("destroyed") and managers.player:upgrade_value("player", "sec_camera_highlight", false) and unit:base()._tweak_table and unit:in_slot(managers.slot:get_mask("trip_mine_targets")) then
+					managers.game_play_central:auto_highlight_enemy(unit, true, "trip_mine")
 				end
 			end
 		end

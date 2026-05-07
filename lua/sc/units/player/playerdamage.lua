@@ -1702,18 +1702,18 @@ end
 Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, unit, t, dt)
 	local pm = managers.player
 	self._in_smoke_bomb = 0.0
-	self._smoke_bomb_thrower = nil
+	self._selected_smoke_screen = nil
 
 	for _, smoke_screen in ipairs(pm._smoke_screen_effects or {}) do
 		if smoke_screen:is_in_smoke(self._unit) then
 			if smoke_screen:mine() then
 				self._in_smoke_bomb = 2.0
-				self._smoke_bomb_thrower = smoke_screen:thrower()
+				self._selected_smoke_screen = smoke_screen
 			elseif self._in_smoke_bomb < 1.0 then
 				-- To cover the case where there are two Sicarios. Whoever threw their smoke bomb second would
 				-- "overwrite" the other Sicario's full benefit.
 				self._in_smoke_bomb = 1.0
-				self._smoke_bomb_thrower = smoke_screen:thrower()
+				self._selected_smoke_screen = smoke_screen
 			end
 		end
 	end
@@ -1744,11 +1744,10 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	end
 
 	--Sicario capstone skill.
-	if self._in_smoke_bomb > 0 and self._smoke_bomb_thrower then
-		-- Since self._in_smoke_bomb is 2.0 if you're in your own smoke, you get the full +40% dodge metre increase
-		-- (+40% * 2 / 2 = +40% * 1 = +40%). It is 1.0 if you're in an ally's smoke, so in that case, you'd get +20%
-		-- (+40% * 1 / 2 = +40% / 2 = +20%) of the dodge metre increase.
-		passive_dodge = passive_dodge + self._smoke_bomb_thrower:base():upgrade_value("player", "sicario_multiplier", 0) * self._in_smoke_bomb / 2.0
+	if self._in_smoke_bomb == 2.0 then
+		passive_dodge = passive_dodge + pm:upgrade_value("player", "sicario_multiplier", 0)
+	elseif self._in_smoke_bomb == 1.0 and self._selected_smoke_screen then
+		passive_dodge = passive_dodge + self._selected_smoke_screen:dodge_bonus()
 	end
 
 	if alive(self._unit) and self._unit.movement and self._unit:movement() then

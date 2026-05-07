@@ -2814,6 +2814,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--sicario
 	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
 	self.values.player.sicario_multiplier = {0.4} --Multiplier for dodge gained per second while inside grenade.
+	self.values.player.smoke_screen_ally_dodge_bonus = {0.2} --Multiplier for dodge gained per second for allies while inside the Sicario's smoke.
 	self.values.player.bomb_cooldown_reduction = {1} --Cooldown reduction on smoke bomb for dodging.
 	
 	--alcoholism is no joke
@@ -3813,7 +3814,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[18][9] = {
 		perk_value_1 = tostring(self.values.player.sicario_multiplier[1] * 100).."%", -- Dodge regen while you inside the smoke screen
-		perk_value_2 = tostring(self.values.player.sicario_multiplier[1] * 100 / 2).."%" -- Dodge regen for allies inside your smoke screen
+		perk_value_2 = tostring(self.values.player.smoke_screen_ally_dodge_bonus[1] * 100).."%" -- Dodge regen for allies inside your smoke screen
 	}
 	
 	--Stoic

@@ -3710,6 +3710,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_sicario_multiplier",
+					"player_smoke_screen_ally_dodge_bonus",
 					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,

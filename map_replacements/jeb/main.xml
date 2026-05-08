@@ -28,7 +28,8 @@
             <fire_mode_data fire_rate="0.19047619047"/>
 			<use_data selection_index="2"/>
             <sounds fire="rbull_fire" fire_single="rbull_fire"/>                
-            <animations reload_name_id="new_raging_bull" equip_id="equip_glock" recoil_steelsight="true">
+            <animations reload_name_id="shatters_fury" equip_id="equip_glock" recoil_steelsight="true">
+            <timers reload_empty="2.25" reload_not_empty="2.25"/>
             </animations>             
         </weapon>
         <factory id="wpn_fps_pis_shatters_fury" unit="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury">        
@@ -126,6 +127,19 @@
         <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_df"/>
         <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_nm"/>
         <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/glow_il"/>
+
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_long_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_short_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_standard_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/base_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/comp1_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/comp2_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_smooth_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/ergo_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/grip_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/lock_df_cc"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_df_cc"/>
         
     <!-- body -->
         <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard"/>
@@ -135,6 +149,9 @@
         <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard"/>
         
         <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard_thq"/>
+
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard_cc"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard_cc_thq"/>
                 
     <!-- body_smooth -->
         <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth"/>
@@ -144,6 +161,9 @@
         <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth"/>
         
         <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth_thq"/>
+
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth_cc"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth_cc_thq"/>
         
     <!-- barrel -->        
         <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard"/>
@@ -153,6 +173,9 @@
         <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard"/>
         
         <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard_thq"/>
+
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard_cc"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard_cc_thq"/>
                 
     <!-- barrel_long -->        
         <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long"/>
@@ -162,6 +185,9 @@
         <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long"/>
         
         <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long_thq"/>
+
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long_cc"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long_cc_thq"/>
                         
     <!-- barrel_long -->        
         <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short"/>
@@ -171,6 +197,9 @@
         <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short"/>
         
         <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short_thq"/>
+
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short_cc"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short_cc_thq"/>
         
     <!-- barrel_compensator_1 -->        
         <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1"/>
@@ -180,6 +209,9 @@
         <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1"/>
         
         <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1_thq"/>
+
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1_cc"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1_cc_thq"/>
                 
         
     <!-- barrel_compensator_2 -->        
@@ -190,6 +222,9 @@
         <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2"/>
         
         <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2_thq"/>
+
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2_cc"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2_cc_thq"/>
                 
     <!-- grip -->        
         <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard"/>
@@ -199,6 +234,9 @@
         <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard"/>
         
         <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard_thq"/>
+
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard_cc"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard_cc_thq"/>
         
     <!-- grip_ergo -->        
         <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo"/>
@@ -208,6 +246,9 @@
         <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo"/>
         
         <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo_thq"/>
+
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo_cc"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo_cc_thq"/>
         
     <!-- icons -->
         <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/shatters_fury"/>
@@ -217,5 +258,8 @@
         <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_shatters_fury_b_short"/>
         <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_shatters_fury_body_smooth"/>
         <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_shatters_fury_g_ergo"/>
+
+    <!-- reload_animations -->
+        <animation path="anims/fps/shatters_fury/shatters_fury_reload" load="true"/>
     </AddFiles>
 </table>

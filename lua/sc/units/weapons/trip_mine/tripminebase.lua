@@ -86,6 +86,10 @@ function TripMineBase:_explode(col_ray)
 		return
 	end
 
+	if not self:armed() then
+    	return
+  	end
+
 	local damage_size = tweak_data.weapon.trip_mines.damage_size * managers.player:upgrade_value("trip_mine", "explosion_size_multiplier_1", 1) * managers.player:upgrade_value("trip_mine", "damage_multiplier", 1)
 	local player = managers.player:player_unit()
 	local my_pos = self._ray_from_pos

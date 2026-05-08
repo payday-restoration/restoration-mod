@@ -1,0 +1,89 @@
+<materials version="3" group="weapon_group">
+	<material name="smooth" render_template="generic_customizable:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DEPTH_SCALING:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:WEAR_TEAR_MASKING" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_smooth_df_cc"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_smooth_nm"/>
+        <diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+        <diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+        <diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="1 0 1" type="vector3" name="pattern_tweak"/>
+		<variable value="0 0 0" type="vector3" name="pattern_pos"/>
+        <variable value="0" type="scalar" name="wear_tear_value"/>
+        <diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+        <variable value="1 1 1" type="vector3" name="uv_scale"/>
+        <variable value="0 0 0" type="vector3" name="uv_offset_rot"/>
+        <variable value="0 0 0" type="vector3" name="cubemap_pattern_control"/>
+    </material>
+	<material name="base" render_template="generic_customizable:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DEPTH_SCALING:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:WEAR_TEAR_MASKING" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/base_df_cc"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/base_nm"/>
+        <diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+        <diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+        <diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="1 0 1" type="vector3" name="pattern_tweak"/>
+		<variable value="0 0 0" type="vector3" name="pattern_pos"/>
+        <variable value="0" type="scalar" name="wear_tear_value"/>
+        <diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+        <variable value="1 1 1" type="vector3" name="uv_scale"/>
+        <variable value="0 0 0" type="vector3" name="uv_offset_rot"/>
+        <variable value="0 0 0" type="vector3" name="cubemap_pattern_control"/>
+    </material>
+	<material name="lock" render_template="generic_customizable:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DEPTH_SCALING:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:WEAR_TEAR_MASKING" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/lock_df_cc"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/lock_nm"/>
+        <diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+        <diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+        <diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="1 0 1" type="vector3" name="pattern_tweak"/>
+		<variable value="0 0 0" type="vector3" name="pattern_pos"/>
+        <variable value="0" type="scalar" name="wear_tear_value"/>
+        <diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+        <variable value="1 1 1" type="vector3" name="uv_scale"/>
+        <variable value="0 0 0" type="vector3" name="uv_offset_rot"/>
+        <variable value="0 0 0" type="vector3" name="cubemap_pattern_control"/>
+    </material>
+	<material name="mag44" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/44mag_df"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/44mag_nm"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+	<material name="rearsight" render_template="generic_customizable:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DEPTH_SCALING:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:WEAR_TEAR_MASKING" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_df_cc"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_nm"/>
+        <diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+        <diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+        <diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="1 0 1" type="vector3" name="pattern_tweak"/>
+		<variable value="0 0 0" type="vector3" name="pattern_pos"/>
+        <variable value="0" type="scalar" name="wear_tear_value"/>
+        <diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+        <variable value="1 1 1" type="vector3" name="uv_scale"/>
+        <variable value="0 0 0" type="vector3" name="uv_offset_rot"/>
+        <variable value="0 0 0" type="vector3" name="cubemap_pattern_control"/>
+    </material>
+	<material name="glow" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_df"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_nm"/>
+		<self_illumination_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/glow_il"/>
+		<variable type="scalar" name="il_bloom" value="8"/>
+		<variable type="scalar" name="il_multiplier" value="neonsign"/>
+	</material>
+	<material name="cylinder_castigo" render_template="generic_customizable:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DEPTH_SCALING:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:WEAR_TEAR_MASKING" unique="true" version="2">
+		<diffuse_texture file="units/pd2_dlc_max/weapons/wpn_fps_pis_chinchilla_pts/chinchilla_cylinder_df_cc" />
+		<bump_normal_texture file="units/pd2_dlc_max/weapons/wpn_fps_pis_chinchilla_pts/chinchilla_cylinder_nm" />
+        <diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+        <diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+        <diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="1 0 1" type="vector3" name="pattern_tweak"/>
+		<variable value="0 0 0" type="vector3" name="pattern_pos"/>
+        <variable value="0" type="scalar" name="wear_tear_value"/>
+        <diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+        <variable value="1 1 1" type="vector3" name="uv_scale"/>
+        <variable value="0 0 0" type="vector3" name="uv_offset_rot"/>
+        <variable value="0 0 0" type="vector3" name="cubemap_pattern_control"/>
+    </material>
+</materials>

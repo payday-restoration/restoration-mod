@@ -10,6 +10,9 @@
 			<anim name="melee_nin_res_charge_var2"					file="anims/fps/melee/nin_res/nin_charge" blend_set="all"/>
 			<anim name="melee_nin_res_attack_var1" 					file="anims/fps/melee/nin_res/nin_attack_var1" blend_set="all"/>
 			<anim name="melee_nin_res_attack_var_miss" 				file="anims/fps/melee/nin_res/nin_attack_var_miss" blend_set="all"/>
+
+			<anim name="shatters_fury_reload" 						file="anims/fps/shatters_fury/shatters_fury_reload" blend_set="all"/>
+			<anim name="shatters_fury_reload_not_empty" 			file="anims/fps/shatters_fury/shatters_fury_reload" blend_set="all"/>
 			
 			<anim name="oicw_reload" 								file="anims/fps/oicw/oicw_reload" blend_set="all"/>
 			<anim name="oicw_reload_not_empty" 						file="anims/fps/oicw/oicw_reload_not_empty" blend_set="all"/>

@@ -15714,7 +15714,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--self.shatters_fury.animations.reload_name_id = "chinchilla"
 			self.shatters_fury.reload_speed_multiplier = 0.67
 			self.shatters_fury.force_shake = true
-			blanket_timer("shatters_fury", shared_timers.rage)
+			self.shatters_fury.timers.reload_empty = 1.44
+			self.shatters_fury.timers.reload_exit_empty = 1.2
+			self.shatters_fury.timers.reload_not_empty = 1.44
+			self.shatters_fury.timers.reload_exit_not_empty = 1.2
 			--this line doesn't do shit
 			--self.shatters_fury.custom = true
 		end
@@ -15877,9 +15880,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.socom.stats_modifiers = nil
 			self.socom.panic_suppression_chance = 0.05
+			self.socom.lock_slide_alt = true
 			--self.socom.animations.reload_name_id = "sparrow"
-			self.socom.timers.reload_exit_empty = 0.7
-			self.socom.timers.reload_exit_not_empty = 0.65
+			blanket_timer("socom", shared_timers.glock)
 		end
 		--Akimbo Anubis .45
 		if self.x_socom then

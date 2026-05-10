@@ -53479,7 +53479,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = 5,
 			extra_ammo = -20
 		}
-		self.wpn_fps_smg_x_m3.override.wpn_fps_smg_m3_m_short.stats = {
+		self.wpn_fps_smg_x_m3.override.wpn_fps_smg_m3_m_long.stats = {
 			extra_ammo = 20,
 			concealment = -1,
 			reload = -3

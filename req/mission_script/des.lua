@@ -52,7 +52,7 @@ return {
 		},
 	},
 	-- OMNIA is coming for your ass
-	[100772] = {
+	[101687] = {
 		spawn_bravos = pro_job,
 		values = {
 			time = 30,

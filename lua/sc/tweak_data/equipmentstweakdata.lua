@@ -23,6 +23,24 @@ function EquipmentsTweakData:init()
 	self.specials.cable_tie.max_quantity = 3
 	self.spy_camera.quantity = {6}
 
+	-- New spycam tweakdata
+	self.spy_camera.mark_limit_per_update = {
+		hostages = 3,
+		hostiles = 2,
+	}
+	self.spy_camera.ordered_mark_priority = {
+		"boss", -- Map bosses
+		"captain", -- Captains
+		"tank", -- Dozers
+		"spooc", -- Cloakers
+		"boom", -- Grenadiers
+		"taser", -- Tasers
+		"medic", -- Medics/LPFs
+		"sniper", -- Snipers (including T-Snipers)
+		"shield", -- Shields
+		"special", -- Elites with none of the above tags
+	}
+
 	-- Ammo-box based pickup chances, exact same logic as with throwables
 	self.trip_mine.pickup_low = 0.008
 	self.trip_mine.pickup_high = 0.0133

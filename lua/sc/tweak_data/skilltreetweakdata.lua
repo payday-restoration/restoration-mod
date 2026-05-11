@@ -1427,7 +1427,8 @@ function SkillTreeTweakData:init(tweak_data)
 					[1] = {
 						upgrades = {
 							"player_steelsight_move_speed_multiplier",
-	                   		"player_detection_risk_add_movement_speed_1"
+	                   		"player_detection_risk_add_movement_speed_1",
+							"player_on_zipline_dodge_chance"
 						},
 						cost = self.costs.hightier
 					},
@@ -1435,8 +1436,7 @@ function SkillTreeTweakData:init(tweak_data)
 						upgrades = {
 							"player_run_and_shoot_1",
 	                   		"player_detection_risk_add_movement_speed_2",
-							"player_run_dodge_chance",
-							"player_on_zipline_dodge_chance"
+							"player_run_dodge_chance"
 						},
 						cost = self.costs.hightierpro
 					}

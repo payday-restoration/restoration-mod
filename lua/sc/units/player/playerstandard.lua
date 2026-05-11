@@ -2159,19 +2159,20 @@ function PlayerStandard:_check_action_run(t, input)
 end
 
 function PlayerStandard:_get_walk_headbob()
-	local enable_bob = restoration.Options:GetValue("BWAResOpt/BWAResmodBob")
+	local bwa_bob_mult_walk = (restoration.Options:GetValue("BWAResOpt/BWAResmod") and restoration.Options:GetValue("BWAResOpt/BWAResmodCamViewbob")) or 1
+	local bwa_bob_mult_run = (restoration.Options:GetValue("BWAResOpt/BWAResmod") and restoration.Options:GetValue("BWAResOpt/BWAResmodCamViewbobRun")) or 1
+	local bob_strength = 0.025 * bwa_bob_mult_walk
 	if self._state_data.using_bipod or 
 		self._state_data.in_air or
-		self._state_data.in_steelsight or
-		enable_bob then
-		return 0
+		self._state_data.in_steelsight then
+		bob_strength = 0
 	elseif self._state_data.ducking then
-		return 0.0125
+		bob_strength = 0.0125 * bwa_bob_mult_walk
 	elseif self._running then
-		return 0.1 * (self._equipped_unit:base():run_and_shoot_allowed() and 0.5 or 1)
+		bob_strength = (0.1 * (self._equipped_unit:base():run_and_shoot_allowed() and 0.5 or 1)) * bwa_bob_mult_run
 	end
 
-	return 0.025
+	return bob_strength
 end
 
 --Allows for melee sprinting.

@@ -92,29 +92,29 @@ local damage_set = {
 }
 local crew_wep_preset = {
 	smg = {
-		mag_capacity = 45,
+		mag_capacity = 42,
 		fire_rate = 0.0727272,
 		damage = 4.0
 	},
 	assault_rifle = {
-		mag_capacity = 25,
+		mag_capacity = 24,
 		fire_rate = 0.1090909,
 		damage = 6.0
 	},
 	lmg = {
-		mag_capacity = 100,
+		mag_capacity = 125,
 		fire_rate = 0.0833333,
 		damage = 3.6
 	},
 	shotgun_auto = {
-		mag_capacity = 8,
+		mag_capacity = 6,
 		fire_rate = 0.6,
-		damage = 7.0
+		damage = 9.0
 	},
 	shotgun_pump = {
-		mag_capacity = 5,
+		mag_capacity = 4,
 		fire_rate = 1.2,
-		damage = 13.0
+		damage = 18.0
 	},
 	sniper_auto = {
 		mag_capacity = 8,
@@ -25431,12 +25431,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rem1858.supported = true
 				self.rem1858.ads_speed = 0.180
 				self.rem1858.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 3200,
+					start_dist = 900,
+					end_dist = 3000,
 					min_mult = 0.333333
 				}
 				self.rem1858.stats = {
-					damage = 90,
+					damage = 60,
 					spread = 82,
 					recoil = 45,
 					spread_moving = 9,
@@ -25453,6 +25453,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rem1858.panic_suppression_chance = 0.05
 				self.rem1858.use_unequip_swap = true
 				self.rem1858.swap_speed_multiplier = 0.63
+				self.rem1858.hs_mult = 1.5
+				self.rem1858.armor_piercing_chance = 0.5
+				self.rem1858.can_shoot_through_enemy = true
+				self.rem1858.can_shoot_through_enemy_unlim = true
 				self.rem1858.always_play_anims = true
 				self.rem1858.timers.reload_empty = 2.2
 				self.rem1858.timers.reload_exit_empty = 1.69
@@ -37752,9 +37756,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							final = 1,
 							start = 0,
 							hf = {
-								mod = -0.05,
+								mod = -0.2,
 								init = 1,
-								final = 1.25,
+								final = 2,
 								start = 1
 							}
 						}
@@ -37776,9 +37780,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							final = 1,
 							start = 0,
 							hf = {
-								mod = -0.1,
+								mod = -0.25,
 								init = 1,
-								final = 1.5,
+								final = 2,
 								start = 1
 							}
 						}
@@ -37800,7 +37804,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							final = 1,
 							start = 0,
 							hf = {
-								mod = -0.25,
+								mod = -0.5,
 								init = 1,
 								final = 2,
 								start = 1
@@ -37878,7 +37882,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							final = 1,
 							start = 0,
 							hf = {
-								mod = -0.2,
+								mod = -0.34,
 								init = 1,
 								final = 2,
 								start = 1
@@ -37902,7 +37906,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							final = 1,
 							start = 0,
 							hf = {
-								mod = -0.25,
+								mod = -0.5,
 								init = 1,
 								final = 2,
 								start = 1
@@ -37926,9 +37930,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							final = 1,
 							start = 0,
 							hf = {
-								mod = -0.5,
+								mod = -1,
 								init = 1,
-								final = 3,
+								final = 2,
 								start = 1
 							}
 						}

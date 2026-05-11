@@ -399,10 +399,14 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["RestorationModBWAResADSTransitionStyleTitleID"] = "ADS Transition Style",
 						--multichoice option strings are the same as the non-BWA version
 					["RestorationModBWAResADSTransitionStyleDescID"] = "Change the transition style of aiming down your sights.",
-					["RestorationModBWAResmodBobTitleID"] = "Viewbob",
-					["RestorationModBWAResmodBobDescID"] = "Enable viewbob when moving.\nDisables vanilla viewbob when enabled.",
-					["RestorationModBWAResmodBobADSTitleID"] = "ADS Viewbob",
-					["RestorationModBWAResmodBobADSDescID"] = "Enable ADS viewbob when moving.",
+					["RestorationModBWAResmodCamViewbobTitleID"] = "Viewbob Strength",
+					["RestorationModBWAResmodCamViewbobDescID"] = "Strength of camera viewbob when moving.",
+					["RestorationModBWAResmodCamViewbobRunTitleID"] = "Viewbob Strength (Running)",
+					["RestorationModBWAResmodCamViewbobRunDescID"] = "Strength of camera viewbob when running.",
+					["RestorationModBWAResmodBobTitleID"] = "Viewmodel Bob",
+					["RestorationModBWAResmodBobDescID"] = "Enable viewmodel bob when moving.",
+					["RestorationModBWAResmodBobADSTitleID"] = "Viewmodel Bob (ADS)",
+					["RestorationModBWAResmodBobADSDescID"] = "Enable viewmodel bob when moving while ADS.",
 					["RestorationModBWAResmodSwayTitleID"] = "Viewmodel Look-sway Drag",
 					["RestorationModBWAResmodSwayDescID"] = "Enable to have the weapon drag behind your look movement",
 					["RestorationModBWAResmodSwayStrTitleID"] = "Max Amount",
@@ -6076,7 +6080,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Moving Target",
-				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nThe movement speed reduction while aiming is reduced by #{skill_color}#$skill_value_b5.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued) and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.\n\nWeapons can be hipfired while sprinting.\n\n#{item_stage_2}#A setting to keep sprinting animations can be found in Restoration Mod's weapon options.##\n ",
+				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p6## of your dodge every second ziplining.\n\nThe movement speed reduction while aiming is reduced by #{skill_color}#$skill_value_b5.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued).\n\nWeapons can be hipfired while sprinting.\n\n#{item_stage_2}#A setting to keep sprinting animations can be found in Restoration Mod's weapon options.##\n ",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Shockproof",

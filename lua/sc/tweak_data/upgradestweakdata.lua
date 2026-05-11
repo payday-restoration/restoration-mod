@@ -1679,6 +1679,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Moving Target
 				--Basic
 				self.values.player.steelsight_move_speed_multiplier = {0.35} --Movement speed penalty reduction while ADSing.
+				self.values.player.zipline_dodge_chance = {0.8}
 				
 				self.values.player.detection_risk_add_movement_speed = {
 					{ --Basic
@@ -1698,7 +1699,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				--Ace
 				self.values.player.run_dodge_chance = {0.2}
-				self.values.player.zipline_dodge_chance = {0.6}
+				--Also gets universal sprint and shoot
 				
 				self.skill_descs.dire_need = {
 					skill_value_b1 = tostring(self.values.player.detection_risk_add_movement_speed[1][1] * 100).."%", -- movement speed per concealment

@@ -3389,6 +3389,28 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					name = "time_dot",
 					suffix = managers.localization:text("menu_seconds_suffix_short")
 				},
+				--[[
+				{
+					range = true,
+					name = "damage"
+				},
+				{
+					range = true,
+					name = "dot",
+					suffix = managers.localization:text("menu_persecond_suffix_short")
+				},
+				--]]
+				{
+					range = true,
+					name = "time",
+					suffix = managers.localization:text("menu_seconds_suffix_short")
+				},
+				--[[
+				{
+					range = true,
+					name = "range"
+				},
+				--]]
 				{
 					inverse = true,
 					name = "cooldown",

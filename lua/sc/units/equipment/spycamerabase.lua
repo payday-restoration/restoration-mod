@@ -48,11 +48,13 @@ Hooks:OverrideFunction(SpyCameraBase, "update", function(self, unit, t, dt)
 	local spy_camera_tweak = tweak_data.equipments.spy_camera
 
 	-- Don't worry about it giving a "trip mine" context, it doesn't matter that much.
-	for i, unit in ipairs(candidate_units.hostages) do
-		if i <= spy_camera_tweak.mark_limit_per_update.hostages then
-			managers.game_play_central:auto_highlight_enemy(unit, true, "trip_mine")
-		else
-			break
+	local marked_hostages = 0
+	for _, unit in ipairs(candidate_units.hostages) do
+		if managers.game_play_central:auto_highlight_enemy(unit, true, "trip_mine") then
+			marked_hostages = marked_hostages + 1
+			if marked_hostages >= spy_camera_tweak.mark_limit_per_update.hostages then
+				break
+			end
 		end
 	end
 

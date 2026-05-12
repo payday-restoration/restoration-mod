@@ -81,6 +81,7 @@ function TripMineBase:_check_body()
 	end
 end
 
+--[[
 Hooks:PostHook(TripMineBase, "_set_armed", "resmod_tripmine_set_armed", function(self, armed)
 	if armed then
 		self._unit:body("body_static"):set_enabled(true)
@@ -88,6 +89,7 @@ Hooks:PostHook(TripMineBase, "_set_armed", "resmod_tripmine_set_armed", function
 		self._unit:body("body_static"):set_enabled(false)
 	end
 end)
+--]]
 
 function TripMineBase:_explode(col_ray)
 	if not managers.network:session() then

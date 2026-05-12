@@ -395,11 +395,15 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 					["RestorationModBWAResmodDescID"] = "return의 \"Better Weapon Animations\" 커스텀 버전의 뷰모델 움직임을 활성화합니다. \"뷰모델 및 애니메이션 옵션\"의 일부 설정을 재설정합니다.",
 					["RestorationModBWAResADSTransitionStyleTitleID"] = "정조준 전환 스타일",
 						--multichoice option strings are the same as the non-BWA version
-					["RestorationModBWAResADSTransitionStyleDescID"] = "조준기로 조준할 때 전환 스타일을 변경합니다.",					
-					["RestorationModBWAResmodBobTitleID"] = "화면 흔들림",
-					["RestorationModBWAResmodBobDescID"] = "이동할 때 화면 흔들림을 활성화합니다.\n활성화 시 바닐라의 화면 흔들림을 비활성화합니다.",
-					["RestorationModBWAResmodBobADSTitleID"] = "정조준 화면 흔들림",
-					["RestorationModBWAResmodBobADSDescID"] = "정조준 중 이동할 때 화면 흔들림을 활성화합니다.",					
+					["RestorationModBWAResADSTransitionStyleDescID"] = "조준기로 조준할 때 전환 스타일을 변경합니다.",
+					["RestorationModBWAResmodCamViewbobTitleID"] = "흔들림 강도",
+					["RestorationModBWAResmodCamViewbobDescID"] = "이동할 때 카메라 시점 흔들림의 강도를 설정합니다.",
+					["RestorationModBWAResmodCamViewbobRunTitleID"] = "흔들림 강도 (달리기)",
+					["RestorationModBWAResmodCamViewbobRunDescID"] = "달리기 할 때 카메라 시점 흔들림의 흔들림의 강도를 설정합니다.",
+					["RestorationModBWAResmodBobTitleID"] = "뷰모델 흔들림",
+					["RestorationModBWAResmodBobDescID"] = "이동할 때 뷰모델 흔들림을 활성화합니다.\n활성화 시 바닐라의 화면 흔들림을 비활성화합니다.",
+					["RestorationModBWAResmodBobADSTitleID"] = "정조준 뷰모델 흔들림",
+					["RestorationModBWAResmodBobADSDescID"] = "정조준 중 이동할 때 뷰모델 흔들림을 활성화합니다.",					
 					["RestorationModBWAResmodSwayTitleID"] = "뷰모델 시선 돌리기 드래그",
 					["RestorationModBWAResmodSwayDescID"] = "무기를 움직이는 시선 뒤로 끌 수 있도록 활성화합니다.",
 					["RestorationModBWAResmodSwayStrTitleID"] = "최대 양",
@@ -6004,7 +6008,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "움직이는 표적",
-				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워지고 (피로 상태일 경우 절반으로 감소), 짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있습니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##",
+				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n짚라인을 타는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p6##씩 채워집니다.\n\n조준 시 이동 속도 감소량이 #{skill_color}#$skill_value_b5## 감소합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 이동 속도가 추가로 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n달리는 동안 회피 미터가 초당 회피율의 #{skill_color}#$skill_value_p5##씩 채워집니다. (피로 상태일 경우 절반으로 감소)\n\n달리는 동안 무기를 비조준 상태로 발사할 수 있습니다.\n\n#{item_stage_2}#달리기 애니메이션을 유지하는 설정은 레스토레이션 모드의 무기 옵션에서 찾을 수 있습니다.##",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "절연갑옷",

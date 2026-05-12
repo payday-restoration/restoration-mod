@@ -57874,6 +57874,8 @@ end)
 
 Hooks:PostHook(WeaponFactoryTweakData, "init", "scar16paintf_sc", function(self)
 
+	if self.parts.wpn_fps_ass_scar16_b_cqb then
+
 		table.insert(self.wpn_fps_ass_scar16.uses_parts, "wpn_fps_upg_o_northtac")
 
 		self.parts.wpn_fps_ass_scar16_b_long.has_description = false
@@ -58004,6 +58006,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "scar16paintf_sc", function(self)
 		}
 		self.parts.wpn_fps_ass_scar16_body_pdw.custom_stats = deep_clone(barrels.short_b2_stats)
 
+		--Marksman Body        
+		if self.parts.wpn_fps_ass_scar16_body_dmr then
+
+			self.parts.wpn_fps_ass_scar16_body_dmr.supported = true
+			self.parts.wpn_fps_ass_scar16_body_dmr.stats = {}
+
+		end
+
 		self.parts.wpn_fps_ass_scar16_s_pdw.supported = true
 		self.parts.wpn_fps_ass_scar16_s_pdw.stats = {
 			value = 0,
@@ -58109,7 +58119,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "scar16paintf_sc", function(self)
 		}]]
 
 		self.wpn_fps_ass_scar16_npc.uses_parts = deep_clone(self.wpn_fps_ass_scar16.uses_parts)
-	
+	end
 end)
 
 --Override stance_mod data

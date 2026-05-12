@@ -43175,6 +43175,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						count = 7,
 						rof_mult = 1.4992,
 						delay = 0.1,
+						reset = 1,
 					},
 					rof_mult = 1.0416,
 					ads_speed_mult = 1.11111,
@@ -57869,6 +57870,246 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "socomstuff_init", function(self)
 			-- AR AK mod pack not installed
 		end
 	end
+end)
+
+Hooks:PostHook(WeaponFactoryTweakData, "init", "scar16paintf_sc", function(self)
+
+		table.insert(self.wpn_fps_ass_scar16.uses_parts, "wpn_fps_upg_o_northtac")
+
+		self.parts.wpn_fps_ass_scar16_b_long.has_description = false
+		self.parts.wpn_fps_ass_scar16_b_long.custom_stats = {
+			falloff_start_mult = 1.15,
+			falloff_end_mult = 1.15,
+			ads_speed_mult = 1.05
+		}
+
+		self.parts.wpn_fps_ass_scar16_b_cqb.supported = true
+		self.parts.wpn_fps_ass_scar16_b_cqb.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_ass_scar16_b_cqb.custom_stats = deep_clone(barrels.short_b3_stats)		
+
+		self.parts.wpn_fps_ass_scar16_ns_mk12.supported = true
+		self.parts.wpn_fps_ass_scar16_ns_mk12.stats = deep_clone(muzzle_device.muzz_dual_c)
+		self.parts.wpn_fps_ass_scar16_ns_mk12.custom_stats = deep_clone(muzzle_device.muzz_dual_c)	
+
+		self.parts.wpn_fps_upg_o_eotech_tan.stats = deep_clone(self.parts.wpn_fps_upg_o_eotech.stats)
+
+		self.parts.wpn_fps_ass_scar16_m_hamr.supported = true
+		self.parts.wpn_fps_ass_scar16_m_hamr.stats = {
+			value = 0,
+			extra_ammo = 20,
+			concealment = -3,
+			reload = -5
+		}
+		self.parts.wpn_fps_ass_scar16_m_hamr.custom_stats = {
+			ads_speed_mult = 1.075
+		}
+
+		self.parts.wpn_fps_ass_scar16_body_tan.supported = true
+		self.parts.wpn_fps_ass_scar16_body_tan.stats = {
+			value = 2,
+			spread = 1,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_ass_scar16_m_speed.stats = deep_clone(self.parts.wpn_fps_m4_upg_m_quick.stats)
+		
+		self.parts.wpn_fps_ass_scar16_body_hamr.supported = true
+		self.parts.wpn_fps_ass_scar16_body_hamr.has_description = true
+		--[[self.parts.wpn_fps_ass_scar16_body_hamr.perks = nil
+		self.parts.wpn_fps_ass_scar16_body_hamr.forbids = { "wpn_fps_addon_ris" }]]
+		self.parts.wpn_fps_ass_scar16_body_hamr.desc_id = "bm_wp_wpn_fps_ass_scar16_body_hamr_desc"
+		self.parts.wpn_fps_ass_scar16_body_hamr.stats = {
+			value = 7,
+			reload = -1,
+			recoil = -6,
+			concealment = -2
+		}
+		self.parts.wpn_fps_ass_scar16_body_hamr.custom_stats = {
+			alt_desc = "bm_scarhamr_sc_desc",
+			falloff_start_mult = 1.17857142857,
+			falloff_end_mult = 1.09230769231,
+			init_rof = {
+				count = 7,
+				rof_mult = 1.4992,
+				delay = 0.1,
+				reset = 1
+			},
+			ads_speed_mult = 372 / 340
+		}
+
+		self.parts.wpn_fps_upg_i_pf.supported = true
+		self.parts.wpn_fps_upg_i_pf.alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire"
+		self.parts.wpn_fps_upg_i_pf.pcs = {}
+		self.parts.wpn_fps_upg_i_pf.forbids = { "wpn_fps_ass_scar16_body_hamr" }
+		self.parts.wpn_fps_upg_i_pf.stats = {
+			value = 0,
+			spread = -2
+		}
+		self.parts.wpn_fps_upg_i_pf.custom_stats = {
+			falloff_start_mult = 0.85714285714,
+			falloff_end_mult = 0.84615384615,
+			rof_mult = 1.04
+		}		
+		
+		if self.parts.wpn_fps_m4_uupg_m_sharps then
+
+			self.parts.wpn_fps_ass_scar16_body_hamr.forbids = self.parts.wpn_fps_ass_scar16_body_hamr.forbids or {}
+			table.insert(self.parts.wpn_fps_ass_scar16_body_hamr.forbids, "wpn_fps_m4_uupg_m_sharps")
+
+			self.parts.wpn_fps_upg_i_pf.forbids = self.parts.wpn_fps_upg_i_pf.forbids or {}			
+			table.insert(self.parts.wpn_fps_upg_i_pf.forbids, "wpn_fps_m4_uupg_m_sharps")
+		
+		end
+
+		if self.parts.wpn_fps_ass_m16_m_soviet then
+
+			self.parts.wpn_fps_ass_scar16_body_hamr.forbids = self.parts.wpn_fps_ass_scar16_body_hamr.forbids or {}
+			table.insert(self.parts.wpn_fps_ass_scar16_body_hamr.forbids, "wpn_fps_ass_m16_m_soviet")	
+
+			self.parts.wpn_fps_upg_i_pf.forbids = self.parts.wpn_fps_upg_i_pf.forbids or {}			
+			table.insert(self.parts.wpn_fps_upg_i_pf.forbids, "wpn_fps_ass_m16_m_soviet")
+		
+		end
+		
+		self.parts.wpn_fps_ass_scar16_body_black.supported = true
+		self.parts.wpn_fps_ass_scar16_body_black.stats = {
+			value = 2,
+			spread = -1,
+			concealment = 1
+		}
+
+		self.parts.wpn_fps_ass_scar16_b_hamr.supported = true
+		self.parts.wpn_fps_ass_scar16_b_hamr.stats = {
+			value = 8,
+			spread = -1,
+			recoil = 4,
+			concealment = -1
+		}
+
+		self.parts.wpn_fps_ass_scar16_fg_ext.supported = true
+		self.parts.wpn_fps_ass_scar16_fg_ext.stats = {
+			value = 0,
+			recoil = 2,
+			spread = 1,
+			concealment = -2
+		}
+		self.parts.wpn_fps_ass_scar16_fg_ext.custom_stats = {}
+
+		self.parts.wpn_fps_ass_scar16_body_pdw.supported = true
+		self.parts.wpn_fps_ass_scar16_body_pdw.stats = {
+			value = 3,
+			spread = -4,
+			recoil = -2,
+			concealment = 4
+		}
+		self.parts.wpn_fps_ass_scar16_body_pdw.custom_stats = deep_clone(barrels.short_b2_stats)
+
+		self.parts.wpn_fps_ass_scar16_s_pdw.supported = true
+		self.parts.wpn_fps_ass_scar16_s_pdw.stats = {
+			value = 0,
+			spread = -1,
+			recoil = -2,
+			concealment = 2
+		}
+		self.parts.wpn_fps_ass_scar16_s_pdw.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
+		
+		self.parts.wpn_fps_ass_scar16_s_no.supported = true		
+		self.parts.wpn_fps_ass_scar16_s_no.stats = {
+				value = 0,
+				spread = -1,
+				recoil = -8,
+				concealment = 5,
+		}		
+		self.parts.wpn_fps_ass_scar16_s_no.custom_stats = deep_clone(stocks.remove_adj_stats)		
+		
+		self.wpn_fps_ass_scar.override = self.wpn_fps_ass_scar.override or {}
+		self.wpn_fps_ass_scar.override.wpn_fps_upg_m4_s_ubr = {
+			parent = "stock_adapter"
+		}
+		
+		self.wpn_fps_ass_tecci.override = self.wpn_fps_ass_tecci.override or {}
+		self.wpn_fps_ass_tecci.override.wpn_fps_ass_scar16_m_hamr = {
+			stats = {
+				extra_ammo = -50,
+				concealment = 2,
+				reload = 5,
+				value = 0
+			},
+			custom_stats = { 
+				ads_speed_mult = 0.95 
+			},
+			animations = {
+				reload_not_empty = "reload_not_empty",
+				reload = "reload"
+			}
+		}
+
+		self.wpn_fps_smg_x_olympic.override = self.wpn_fps_smg_x_olympic.override or {}
+		self.wpn_fps_smg_x_olympic.override.wpn_fps_ass_scar16_m_hamr = {
+			stats = {
+				value = 0,
+				extra_ammo = 40,
+				concealment = -3,
+				reload = -5
+			},
+			custom_stats = {
+				ads_speed_mult = 1.075
+			}
+		}
+
+		self.wpn_fps_ass_scar.stock_adapter = "wpn_fps_ass_scar16_s_adapter"
+		self.wpn_fps_ass_scar_npc.stock_adapter = "wpn_fps_ass_scar16_s_adapter"
+
+		--[[Stocks
+		self.wpn_fps_ass_scar16.override.wpn_fps_ass_scar_s_sniper = {
+			stats = deep_clone(stocks.fixed_acc_stats),
+			custom_stats = {}
+		}
+		self.wpn_fps_ass_scar16.override.wpn_fps_upg_m4_s_standard = {
+			stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
+		}
+		self.wpn_fps_ass_scar16.override.wpn_fps_upg_m4_s_pts = {
+			stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+		}
+		self.wpn_fps_ass_scar16.override.wpn_fps_sho_sko12_stock = {
+			stats = deep_clone(stocks.fixed_to_adj_acc_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+		}
+		self.wpn_fps_ass_scar16.override.wpn_fps_upg_m4_s_crane = {
+			stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+		}
+		self.wpn_fps_ass_scar16.override.wpn_fps_upg_m4_s_mk46 = {
+			stats = deep_clone(stocks.fixed_to_adj_rec_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+		}
+		self.wpn_fps_ass_scar16.override.wpn_fps_upg_m4_s_ubr = {
+			stats = deep_clone(stocks.fixed_to_hvy_acc_stats),
+			custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
+		}
+		self.wpn_fps_ass_scar16.override.wpn_fps_snp_tti_s_vltor = {
+			stats = deep_clone(stocks.fixed_to_hvy_rec_stats),
+			custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
+		}
+		self.wpn_fps_ass_scar16.override.wpn_fps_upg_m4_s_mag = {
+			stats = {
+				value = 0,
+				reload = 3,
+				spread = -2,
+				recoil = -2,
+				concealment = 1
+			},
+			custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
+		}
+		self.wpn_fps_ass_scar16.override.wpn_fps_upg_m4_s_magless = {
+			stats = deep_clone(stocks.fixed_to_adj_dual_stats),
+			custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
+		}]]
+
+		self.wpn_fps_ass_scar16_npc.uses_parts = deep_clone(self.wpn_fps_ass_scar16.uses_parts)
+	
 end)
 
 --Override stance_mod data

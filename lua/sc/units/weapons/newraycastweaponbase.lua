@@ -654,13 +654,17 @@ end
 
 function NewRaycastWeaponBase:stop_shooting(...)
 	stop_shooting_original(self, ...)
+
 	self._shooting = nil
 	self._shots_fired = 0
+	if not self._fire_rate_init_reset_t then
+		self._shots_fired_init = 0
+	end
 	if self._fire_rate_init_progress then
 		self._fire_rate_init_progress = nil
-		self._fire_rate_init_cancel = true
 		self._next_fire_allowed = self._next_fire_allowed + self._fire_rate_init_delay
 	end
+
 	if self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t then
 		self._vulcan_firing = nil
 		self:_stop_spin()
@@ -678,6 +682,10 @@ function NewRaycastWeaponBase:_fire_sound(...)
 end
 
 function NewRaycastWeaponBase:trigger_held(...)
+	local t = self._unit:timer():time()
+	if self._fire_rate_init_reset_t and self._fire_rate_init_reset_t < t then
+		self._shots_fired_init = 0
+	end
 	if self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t then
 		self:update_spin()
 		local fired
@@ -1260,6 +1268,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._fire_rate_init_count_mag = self._fire_rate_init_count_mag or self:weapon_tweak_data().fire_rate_init_count_mag or nil
 		self._fire_rate_init_mult = self._fire_rate_init_mult or self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
 		self._fire_rate_init_delay = self._fire_rate_init_delay or self:weapon_tweak_data().fire_rate_init_delay or self._burst_delay or 0
+		self._fire_rate_init_reset = self._fire_rate_init_reset or self:weapon_tweak_data().fire_rate_init_reset or 0
+		self._fire_rate_init_reset_t = self._fire_rate_init_reset ~= 0 and 0
 		self._fire_rate_init_recoil_mult = self._fire_rate_init_recoil_mult or self:weapon_tweak_data().fire_rate_init_recoil_mult or 1
 		self._fire_rate_init_ramp_up = self._fire_rate_init_ramp_up or self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 		self._fire_rate_init_ramp_up_add = 0
@@ -1276,6 +1286,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._ene_hs_mult = self:is_npc() and 1 or self._ene_hs_mult or self:weapon_tweak_data().ene_hs_mult or 1
 
 	self._shots_fired = 0
+	self._shots_fired_init = 0
 	self._shots_fired_mag = 0
 
 	local primary_category = self:weapon_tweak_data().categories and self:weapon_tweak_data().categories[1]
@@ -1431,6 +1442,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._fire_rate_init_count_mag = stats.init_rof.count_mag or self._fire_rate_init_count_mag
 				self._fire_rate_init_mult = stats.init_rof.rof_mult or self._fire_rate_init_mult
 				self._fire_rate_init_delay = stats.init_rof.delay or self._fire_rate_init_delay
+				self._fire_rate_init_reset = stats.init_rof.reset or self._fire_rate_init_reset
 				self._fire_rate_init_recoil_mult = stats.init_rof.recoil_mult or self._fire_rate_init_recoil_mult
 			end
 	
@@ -2060,7 +2072,6 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 			local current_state_name = managers.player:current_state()
 			local og_next_fire = (current_state_name and current_state_name == "tased" or self._spinning) and self._next_fire_allowed
 			self._macno = nil
-			self._fire_rate_init_cancel = nil
 			if not self._burst_delay_alt_calc then
 				self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed - ((bypass_firerate and moremath) or 0), self._unit:timer():time() + delay))
 				self._ignore__next_fire_allowed = true
@@ -2071,14 +2082,14 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 
 	local init_mult = self._fire_rate_init_mult
 	if self._fire_rate_init_count and self:fire_mode() ~= "single" and not self:in_burst_mode() then
-		if (self._fire_rate_init_count > self._shots_fired) then
+		if (self._fire_rate_init_count > self._shots_fired_init) then
 			self._fire_rate_init_progress = true
 			if self._fire_rate_init_ramp_up then
-				local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
+				local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired_init + init_mult
 				init_mult =  init_ramp_up_add
 			end
 			multiplier = multiplier * init_mult
-		elseif (self._fire_rate_init_count < self._shots_fired) then
+		elseif (self._fire_rate_init_count < self._shots_fired_init) then
 			self._fire_rate_init_progress = nil
 		end
 	end
@@ -2109,6 +2120,12 @@ function NewRaycastWeaponBase:fire(...)
 	if self._fire_mode == ids_burst and self._bullets_fired > 1 and not self:weapon_tweak_data().sounds.fire_single then
 		self:_fire_sound()
 	end
+	
+	local t = self._unit:timer():time()
+	if self._fire_rate_init_reset_t then
+		self._fire_rate_init_reset_t = t + self._fire_rate_init_reset
+	end
+	self._shots_fired_init = self._shots_fired_init + 1
 
 	self._shots_fired = self._shots_fired + 1
 

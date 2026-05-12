@@ -37823,8 +37823,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							4
 						},
 						sam = {
-							mod = 2,
-							init = 4,
+							mod = 1.5,
+							init = 3,
 							final = 1,
 							start = 0
 						}
@@ -37842,7 +37842,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						},
 						sam = {
 							mod = 1,
-							init = 4,
+							init = 3,
 							final = 1,
 							start = 0
 						}
@@ -37859,7 +37859,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							6
 						},
 						sam = {
-							mod = 2,
+							mod = 1.5,
 							init = 3,
 							final = 1,
 							start = 0

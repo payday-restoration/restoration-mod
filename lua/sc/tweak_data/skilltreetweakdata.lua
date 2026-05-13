@@ -705,15 +705,16 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {3, 1},
 					[1] = {
 						upgrades = {
-							"body_armor6",
+							"player_armor_regen_timer_multiplier_tier",
 							"player_shield_knock"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
+							"body_armor6",
 							"player_bullet_shield_knock",
-							"player_armor_regen_timer_multiplier"
+							"player_armor_regen_timer_multiplier_tier_2"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -963,7 +964,6 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
-							"player_armor_regen_timer_multiplier_tier",
 							"player_armor_full_damage_absorb",
 							"player_scaling_armor_break_grace"
 						},

@@ -631,6 +631,7 @@ function PlayerDamage:damage_bullet(attack_data)
 						self._unit:movement():current_state()._d_scope_t = d_scope_t
 						managers.hud:activate_effect_screen(d_scope_t, Vector3(0.35, 0.25, 0.1) * effect_alpha, "dt_sgunner")
 						managers.environment_controller:set_concussion_grenade(self._unit:movement():m_head_pos(), true, 0, 0, conc_mul, true, true)
+						self._unit:movement():current_state():_do_aimpunch(attack_dir, flashbang_mul)
 						self:on_concussion(sound_eff_mul, false, sound_tweak)
 					end
 				end

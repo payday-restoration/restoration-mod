@@ -728,7 +728,7 @@ tweak_data.projectiles.molotov.damage = 3.0
 tweak_data.projectiles.molotov.player_damage = 1.5
 tweak_data.projectiles.molotov.burn_duration = 10
 tweak_data.projectiles.molotov.dot_data_name = "proj_molotov"
-tweak_data.projectiles.molotov.fire_env_name = "molotov_fire"
+tweak_data.projectiles.molotov.fire_env_name = "molotov_fire" --Just for grabbing info for the UI; does not set the fire_env that's used (That's handled by the throwable's base)
 
 --Incendiary Nades, idea to make em a mollie--
 tweak_data.projectiles.fir_com.is_explosive = true
@@ -737,7 +737,7 @@ tweak_data.projectiles.fir_com.damage = 12.0
 tweak_data.projectiles.fir_com.player_damage = 4.5
 tweak_data.projectiles.fir_com.burn_duration = 12
 tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"
-tweak_data.projectiles.fir_com.fire_env_name = "incendiary_burst_fire"
+tweak_data.projectiles.fir_com.fire_env_name = "incendiary_burst_fire" --Just for grabbing info for the UI
 
 --Shuriken
 tweak_data.projectiles.wpn_prj_four.damage = 12

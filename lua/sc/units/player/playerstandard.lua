@@ -2313,6 +2313,31 @@ function PlayerStandard:_end_action_running(t)
 	end
 end
 
+function PlayerStandard:_do_aimpunch(attack_dir, mul)
+	mul = mul or 1
+	if managers.menu:get_controller():get_default_controller_id() ~= "keyboard" then
+		mul = mul * 0.3
+	end
+	if attack_dir then
+		local camera_unit = self._unit:camera():camera_unit()
+		local direction = mvector3.copy(attack_dir)
+		mvector3.normalize(direction)
+		
+		local infront = -math.dot(self._unit:camera():forward(), direction)
+		local facing = (infront + 1.5) * 0.5
+
+		local polar = self._unit:camera():forward():to_polar_with_reference(-direction, math.UP)
+		local spin_dir = polar.spin > 0 and -1 or 1
+
+		local pitch_strength = (facing * math.rand(3, 6)) * mul
+		local pitch = camera_unit:base()._camera_properties.pitch + pitch_strength
+		camera_unit:base():set_pitch(math.clamp(pitch, -90, 90))
+
+		local spin_strength = (spin_dir * facing * math.rand(3, 6)) * mul
+		local spin = camera_unit:base()._camera_properties.spin - spin_strength
+		camera_unit:base():set_spin(spin)
+	end
+end
 
 --Stores running input, is a workaround for other things that may interrupt running.
 Hooks:PreHook(PlayerStandard, "_start_action_melee", "ResPlayerStandardPreStartActionMelee", function(self, t, input, instant)

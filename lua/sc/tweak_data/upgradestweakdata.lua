@@ -569,13 +569,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.15
 	}
 	self.values.player.body_armor.regen_delay = { --*increments of 0.25
-		2.75,
 		3.00,
 		3.25,
 		3.50,
 		3.75,
 		4.00,
-		4.25
+		4.25,
+		4.50
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -1136,7 +1136,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Bullseye
 				self.values.player.headshot_regen_armor_bonus = {
 					0.1, --Basic
-					0.3 --Ace
+					0.25 --Ace
 				}
 				self.values.player.headshot_regen_armor_bonus_cd_reduction = {
 					0.5, --Basic
@@ -1154,9 +1154,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Iron Man
 				--Basic
-					--Unlock ICTV
+					self.values.player.armor_regen_timer_multiplier_tier = {0.90, 0.75}
 					self.values.player.shield_knock = {true}
-				--Ace						
+				--Ace				
+					--Unlock ICTV		
 					self.values.player.bullet_shield_knock = {true}
 					self.values.player.shield_knock_bullet = {
 						max_damage = 200,
@@ -1165,7 +1166,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.armor_regen_timer_multiplier = {0.85}
 					
 					self.skill_descs.juggernaut = {
-						skill_value_p1 = tostring((1 - self.values.player.armor_regen_timer_multiplier[1]) * 100).."%" -- Faster armor recovery
+						skill_value_b1 = tostring((1 - self.values.player.armor_regen_timer_multiplier_tier[1]) * 100).."%", -- Armor recovery
+						skill_value_p1 = tostring((self.values.player.armor_regen_timer_multiplier_tier[1] - self.values.player.armor_regen_timer_multiplier_tier[2]) * 100).."%" -- More armor recovery
 					}
 			
 		--Support--
@@ -1334,16 +1336,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						}
 						self.values.player.scaling_armor_break_grace = {
 							{
-								grace_mod = 0.25, --seconds of damage grace for every armor step
-								armor_steps = 10 --1 step for every 100 base armor
+								grace_mod = 0.125, --seconds of damage grace for every armor step
+								armor_steps = 5 --1 step for every 50 base armor
 							}
 						}
-						self.values.player.armor_regen_timer_multiplier_tier = {0.90}
 						
 						self.skill_descs.tower_defense = {
 							skill_value_b1 = tostring(self.values.player.level_5_armor_addend[1]*10), -- +armor for Flak and CTV; unused
 							skill_value_p1 = tostring(self.values.player.armor_full_damage_absorb[1][1] * 100).."%", -- DA when armor is above threshold
-							skill_value_p2 = tostring((1 - self.values.player.armor_regen_timer_multiplier_tier[1]) * 100).."%", -- Armor recovery buff
 							skill_value_p3 = tostring(self.values.player.scaling_armor_break_grace[1].grace_mod),
 							skill_value_p4 = tostring(self.values.player.scaling_armor_break_grace[1].armor_steps * 10),
 							skill_value_p5 = tostring((1 - self.values.player.armor_full_damage_absorb[1][2]) * 100).."%", -- DA threshold
@@ -4498,6 +4498,15 @@ function UpgradesTweakData:_player_definitions()
 
 	--New Definitions, calling em here to play it safe--
 
+	self.definitions.player_armor_regen_timer_multiplier_tier_2 = {
+		name_id = "menu_player_armor_regen_timer_multiplier_tier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "armor_regen_timer_multiplier_tier",
+			category = "player"
+		}
+	}
 	self.definitions.player_scaling_pickup_area = {
 		name_id = "menu_scaling_pickup_area",
 		category = "feature",

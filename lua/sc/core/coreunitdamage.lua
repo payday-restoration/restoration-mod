@@ -19,8 +19,23 @@ function CoreBodyDamage:damage_endurance(endurance_type, attack_unit, normal, po
 	--Start
 	local is_tripmine = self._unit and self._unit.base and self._unit:base() and self._unit:base().is_tripmine
 	local tripmine_base = is_tripmine and self._unit:base()
-	if tripmine_base then
-		if --[[tripmine_base._armed ~= true and]] managers.player:player_unit() ~= attack_unit then
+
+
+	if attack_unit and tripmine_base then
+		local function is_player(unit)
+			if managers.player:player_unit() == unit then
+				return true
+			end
+			if managers.network and managers.network:session() then
+				for peer_id, peer in pairs(managers.network:session():peers()) do
+					if alive(peer:unit()) and peer:unit() == unit then
+						return true
+					end
+				end
+			end
+			return false
+		end
+		if not is_player(attack_unit) then
 			damage = 0
 		end
 	end

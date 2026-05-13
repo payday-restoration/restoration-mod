@@ -2672,6 +2672,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_2",
 				"buildup_meter_hurt_decay_mod_1",
 				"buildup_meter_hurt_decay_mod_2",
+				"buildup_meter_hurt_decay_mod_3",
 			},
 			texture_bundle_folder = "sc",
 			icon_xy = {0, 3}

@@ -28690,7 +28690,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -6
 			}
 
-			self.wpn_fps_shot_aalpha12.override = self.wpn_fps_shot_aalpha12.override or {}
+			self.wpn_fps_shot_aalpha12.override = {}
 			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
 			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)
 			self.wpn_fps_shot_aalpha12.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override)

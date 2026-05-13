@@ -1891,8 +1891,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 				--im not gaj
 				["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
 			--Wt ring u got bithc?
-			["bm_melee_zweihander"] = "Flammenschwert",
-			["bm_melee_zweihander_info"] = "#{heat_warm_color}#\"Parry this.\"##\n\nA massive two-handed blade that's more akin to a polearm than a sword.\n\nParrying an enemy attack deals #{skill_color}#180## melee damage to them. This can be increased with skills.",
+			["bm_melee_klara"] = "Flammenschwert",
+			["bm_melee_klara_info"] = "#{heat_warm_color}#\"Parry this.\"##\n\nA massive two-handed blade that's more akin to a polearm than a sword.\n\nParrying an enemy attack deals #{skill_color}#180## melee damage to them. This can be increased with skills.",
 			["bm_melee_broad"] = "Longsword",
 			["bm_melee_broad_info"] = "The signature weapon of knights.",
 		--Buckler Shield
@@ -5810,7 +5810,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   MEDIC SUBTREE   ]]--
 				--Combat Medic
 				["menu_combat_medic_beta_sc"] = "Combat Medic",
-				["menu_combat_medic_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## damage reduction for #{skill_color}#$skill_value_b2## seconds while and after reviving another crew member.\n\nACE: #{owned}#$pro##\nReviving a crew member gives them #{skill_color}#$skill_value_p1## more health.",
+				["menu_combat_medic_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## damage reduction while reviving another crew member and the effect lingers for #{skill_color}#$skill_value_b2## seconds afterwards upon a successful revive.\n\n#{risk}#NOTE: The damage reduction only applies to revives performed via interaction.##\n\nACE: #{owned}#$pro##\nReviving a crew member gives them #{skill_color}#$skill_value_p1## more health.",
 
 				--Quick Fix
 				["menu_tea_time_beta_sc"] = "Quick Fix",
@@ -5915,7 +5915,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "Stun Resistance",
-				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nKnockback from enemies push you back #{skill_color}#$skill_value_b1## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the blind duration of flashbangs and the stun duration and impact of enemy concussion rounds by #{skill_color}#$skill_value_p1.##",
+				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nKnockback from enemies push you back #{skill_color}#$skill_value_b1## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the blind duration of flashbangs as well as the stun duration and impact of enemy concussion rounds by #{skill_color}#$skill_value_p1.##",
 
 				--Die Hard
 				["menu_show_of_force_sc"] = "Die Hard",
@@ -5983,7 +5983,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "Tower Defense",
-				["menu_tower_defense_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now toggle #{skill_color}#armor-piercing rounds## on your sentry guns, lowering the rate of fire by #{skill_color}#66%## and allowing it to pierce through enemies and shields.\n\nACE: #{owned}#$pro##\nYou can now carry a maximum of #{skill_color}#$skill_value_p1## sentry guns.\n\nSentry guns now cost #{skill_color}#35%## of your maximum ammo to place.",
+				["menu_tower_defense_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now toggle #{skill_color}#armor-piercing rounds## on your sentry guns, lowering the rate of fire by #{skill_color}#66%## and allowing it to pierce through enemies and shields.\n\nACE: #{owned}#$pro##\nYou can now carry a maximum of #{skill_color}#$skill_value_p1## sentry guns.\n\nSentry guns now cost #{skill_color}#25%## of your maximum ammo to place.",
 
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Bulletproof",

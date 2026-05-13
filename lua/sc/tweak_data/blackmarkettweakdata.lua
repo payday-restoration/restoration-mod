@@ -3966,9 +3966,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			table.insert(melee_anim, "halloween_sword")
 			self:_clear_melee_anim_vars("halloween_sword")
 		end
-		if self.melee_weapons.zweihander then
-			table.insert(melee_anim, "zweihander")
-			self:_clear_melee_anim_vars("zweihander")
+		if self.melee_weapons.klara then
+			table.insert(melee_anim, "klara")
+			self:_clear_melee_anim_vars("klara")
 		end
 		if self.melee_weapons.broad then
 			table.insert(melee_anim, "broad")
@@ -6350,22 +6350,22 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	self.melee_weapons.titham.stats.range = 230
 	self.melee_weapons.titham.stats.speed_mult = 0.93
 
-	self.melee_weapons.zweihander.info_id = "bm_melee_zweihander_info"
-	self.melee_weapons.zweihander.stats.cleave = 5
-	self.melee_weapons.zweihander.stats.raycasts = 25
-	self.melee_weapons.zweihander.stats.raycasts_h = 35
-	self.melee_weapons.zweihander.stats.raycasts_charge = 6
-	self.melee_weapons.zweihander.stats.min_damage = 9
-	self.melee_weapons.zweihander.stats.max_damage = 18.001
-	self.melee_weapons.zweihander.stats.min_damage_effect = 4.0
-	self.melee_weapons.zweihander.stats.max_damage_effect = 12.0
-	self.melee_weapons.zweihander.stats.charge_time = 2.5
-	self.melee_weapons.zweihander.stats.range = 250
-	self.melee_weapons.zweihander.stats.charge_bonus_start = 0.9
-	self.melee_weapons.zweihander.stats.charge_bonus_range = 50
-	self.melee_weapons.zweihander.stats.concealment = 25
-	self.melee_weapons.zweihander.stats.speed_mult = 0.91
-	self.melee_weapons.zweihander.counter_damage = 18
+	self.melee_weapons.klara.info_id = "bm_melee_klara_info"
+	self.melee_weapons.klara.stats.cleave = 5
+	self.melee_weapons.klara.stats.raycasts = 25
+	self.melee_weapons.klara.stats.raycasts_h = 35
+	self.melee_weapons.klara.stats.raycasts_charge = 6
+	self.melee_weapons.klara.stats.min_damage = 9
+	self.melee_weapons.klara.stats.max_damage = 18.001
+	self.melee_weapons.klara.stats.min_damage_effect = 4.0
+	self.melee_weapons.klara.stats.max_damage_effect = 12.0
+	self.melee_weapons.klara.stats.charge_time = 2.5
+	self.melee_weapons.klara.stats.range = 250
+	self.melee_weapons.klara.stats.charge_bonus_start = 0.9
+	self.melee_weapons.klara.stats.charge_bonus_range = 50
+	self.melee_weapons.klara.stats.concealment = 25
+	self.melee_weapons.klara.stats.speed_mult = 0.91
+	self.melee_weapons.klara.counter_damage = 18
 
 	self.melee_weapons.broad.anim_attack_charged_vars = nil
 	self.melee_weapons.broad.anim_attack_charged_left_vars = nil

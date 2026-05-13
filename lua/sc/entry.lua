@@ -441,3 +441,17 @@ if TF2SniperWeaponBase then
 		return ray_res
 	end
 end
+
+--ABYSMAL DOGSHIT \o/ fix to keep both PocoHUD and the Mercenary Perk Deck happy
+--Poco localizes all its hooks so intercepting the hooks into "_calc_x_damage" isn't going to work
+--The Mercenary Perk Deck loads late and overrides Resmod's version of the "_calc_x_damage" funcs; I am not shoving a good chunck of PlayerDamage in here just to get around that
+--But it doesn't load so late as to override the GOAT that is 'entry.lua'
+--So you get this atrocity :^)
+if PlayerDamage then 
+	function PlayerDamage:_calc_armor_damage(attack_data, ...)
+		return self:_res_calc_armor_damage(attack_data, ...)
+	end
+	function PlayerDamage:_calc_health_damage(attack_data, ...)
+		return self:_res_calc_health_damage(attack_data, ...)
+	end
+end

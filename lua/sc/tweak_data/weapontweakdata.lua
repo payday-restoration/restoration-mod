@@ -9520,8 +9520,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_mp5.kick = self.stat_info.kick_tables.even_recoil
 						self.new_mp5.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_right_kick},
-							{3, self.stat_info.kick_tables.harsh_right_kick},
 							{5, self.stat_info.kick_tables.horizontal_right_recoil},
+							{8, self.stat_info.kick_tables.right_recoil},
 							{12, self.stat_info.kick_tables.moderate_kick},
 							{16, self.stat_info.kick_tables.left_recoil},
 							{22, self.stat_info.kick_tables.moderate_left_kick},
@@ -9564,8 +9564,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_mp5.kick = self.stat_info.kick_tables.even_recoil
 						self.x_mp5.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_right_kick},
-							{3, self.stat_info.kick_tables.harsh_right_kick},
 							{5, self.stat_info.kick_tables.horizontal_right_recoil},
+							{8, self.stat_info.kick_tables.right_recoil},
 							{12, self.stat_info.kick_tables.moderate_kick},
 							{16, self.stat_info.kick_tables.left_recoil},
 							{22, self.stat_info.kick_tables.moderate_left_kick},
@@ -37758,7 +37758,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							hf = {
 								mod = -0.2,
 								init = 1,
-								final = 2,
+								final = 1.8,
 								start = 1
 							}
 						}
@@ -37782,7 +37782,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							hf = {
 								mod = -0.25,
 								init = 1,
-								final = 2,
+								final = 1.8,
 								start = 1
 							}
 						}
@@ -37806,7 +37806,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							hf = {
 								mod = -0.5,
 								init = 1,
-								final = 2,
+								final = 1.8,
 								start = 1
 							}
 						}

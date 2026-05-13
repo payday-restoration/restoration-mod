@@ -981,7 +981,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						{
 							10, --stack limit
 							0.05, --dmg mult add
-							4 --time
+							5 --time
 						}
 					}
 				--Unused
@@ -1329,9 +1329,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					--Ace
 						self.values.player.armor_full_damage_absorb = {
 							{
-								0.15, -- % of armor as DA
+								0.10, -- % of armor as DA
 								0.75, -- Armor thereshold to recieve DA
-								5.0 --Armor cap for DA 
+								5.0 -- Armor cap for DA 
 							}
 						}
 						self.values.player.scaling_armor_break_grace = {
@@ -1646,7 +1646,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Evasion
 				self.values.player.movement_speed_multiplier = {
 					1.05, --Basic
-					1.1 --Unused
+					1.05 --Unused
 				}
 				--Basic
 					self.values.player.fall_damage_multiplier = {0.25}
@@ -1687,14 +1687,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						2,
 						"below",
 						30,
-						0.20
+						0.15
 					},
 					{ --Ace
 						0.02,
 						1,
 						"below",
 						30,
-						0.20
+						0.15
 					}
 				}
 				--Ace
@@ -1718,8 +1718,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Shockproof
 				--Basic
 					self.values.player.taser_malfunction = {{
-							interval = 0.5,
-							chance_to_trigger = 0.3
+						interval = 0.5,
+						chance_to_trigger = 0.3
 					}}
 					self.values.player.knockback_resistance = {0.7}
 				--Ace
@@ -1731,8 +1731,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						2
 					}
 					self.values.player.slowing_bullet_resistance = {{
-							duration = 0.5,
-							power = 0.5
+						duration = 0.5,
+						power = 0.5
 					}}
 					
 					self.skill_descs.insulation = {
@@ -1854,7 +1854,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic					
 					self.values.weapon.special_damage_taken_multiplier = {
 						1.1, --Basic
-						1.25 --Ace
+						1.2 --Ace
 					}					
 				--Ace		
 					self.values.player.backstab_dodge = {
@@ -1938,7 +1938,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Gunfighter
 				self.values.pistol.reload_speed_multiplier = {
-					1.05, --Basic
+					1.1, --Basic
 					1.3 --Ace
 				}
 				self.values.pistol.move_spread_multiplier = {
@@ -2515,15 +2515,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{tank = 5},
 		{spooc_titan = 3},
 		{spooc = 2.75},
-		{vet = 2.50},
+		{vet = 2.25},
 		{taser_titan = 2.50},
 		{taser = 2.50},
 		{medic = 2.25},
-		{shield_titan = 2.00},
-		{shield = 1.75},
-		{sniper_titan = 1.75},
-		{sniper = 1.50},
-		{special = 1.50},
+		{shield_titan = 1.75},
+		{shield = 1.50},
+		{sniper_titan = 1.50},
+		{sniper = 1.25},
+		{special = 1.25},
 	}
 	self.socio_affinity_bonus_steps = 1
 	self.values.player.buildup_meter = {
@@ -2635,7 +2635,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.buildup_meter_quickening = { --armor to base combo
 		{
 			combo_add_mod = 1, --base combo added per step
-			hurt_t_mod = 1, --hurt decay cooldown added per step
+			hurt_t_mod = 0.75, --hurt decay cooldown added per step
 			armor_steps = 10 --armor steps
 		}
 	}
@@ -2673,7 +2673,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			20,
 		}
 		self.values.player.buildup_meter_aubrey = {{
-			combo_add = 1,
+			combo_add = 1, --combo added on gun kills
 			combo_t_add = 2 --time added to active combo
 		}}
 		self.values.player.buildup_meter_zack = {
@@ -2693,12 +2693,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		self.values.player.tony_extra_ammo_multiplier = {0.5, 0.2}
 
 		self.values.player.buildup_meter_rick = {
-			{ combo_add_mod = 2, combo_max_mod = -50, ene_mult_mod = 0.7 },
+			{ combo_add_mod = 2, combo_max_mod = -50, ene_mult_mod = 0.6 },
 			{ combo_add_mod = 0, combo_max_mod = -20, ene_mult_mod = 1.0  }, --Tony
 			{ combo_add_mod = 0, combo_max_mod = -40, ene_mult_mod = 1.0  } --Tony R
 		}
 		self.values.player.buildup_meter_swan = {{
-			combo_add = 6
+			combo_add = 4
 		}}
 		self.values.player.buildup_meter_mark = {{ --armor regen speed
 			combo_steps = 5,
@@ -3498,7 +3498,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_1 = tostring(self.values.player.buildup_meter_pacify[2].effect * 100) .. "%",
 		perk_value_2 = tostring(self.values.player.buildup_meter_pacify[2].combo_steps),
 		perk_value_3 = tostring(self.values.player.buildup_meter_pacify[2].effect_max * 100) .. "%",
-		perk_value_4 = tostring(self.values.player.buildup_meter_hurt_decay_mod[2]),
+		perk_value_4 = tostring(self.values.player.buildup_meter_hurt_decay_mod[3]),
 	}
 	self.multi_choice_specialization_descs[9][9][5] = { --Zack
 		perk_value_1 = tostring(self.values.player.buildup_meter_zack[1].combo_t_mod),

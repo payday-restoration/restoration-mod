@@ -118,7 +118,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 			local base_speed = tweak_data.player.movement_state.standard.movement.speed.STANDARD_MAX or 300
 			local current_speed = (p_mov._current_state._get_max_walk_speed and p_mov._current_state:_get_max_walk_speed(t)) or base_speed
 			local step_mod = ((in_sight or in_crouch) and 125) or (in_run and 175) or 150
-			local speed_mult = (current_speed / step_mod) * 0.44 --it just works lmao???
+			local speed_mult = (current_speed / step_mod) * 0.4417 --it just works lmao???
 			local run_mul = (in_slide and 0 or 1) * speed_mult --in_run and 1.45 or 1 --* ((in_sight and 0.8) or 1)
 			local mov_mul = ((enable_bob_ads and in_sight and 0.15) or (enable_bob and not in_sight and 0.7) or 0) * bob_pow
 

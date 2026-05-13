@@ -58001,8 +58001,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "scar16paintf_sc", function(self)
 		self.parts.wpn_fps_ass_scar16_body_pdw.stats = {
 			value = 3,
 			spread = -4,
-			recoil = -2,
-			concealment = 4
+			concealment = 2
 		}
 		self.parts.wpn_fps_ass_scar16_body_pdw.custom_stats = deep_clone(barrels.short_b2_stats)
 

@@ -3399,13 +3399,11 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					name = "dot",
 					suffix = managers.localization:text("menu_persecond_suffix_short")
 				},
-				--]]
 				{
 					range = true,
 					name = "time",
 					suffix = managers.localization:text("menu_seconds_suffix_short")
 				},
-				--[[
 				{
 					range = true,
 					name = "range"

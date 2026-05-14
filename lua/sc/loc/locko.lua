@@ -1819,8 +1819,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 				--im not gaj
 				["bm_melee_goat_info"] = "\"그것은 검이라 하기엔 너무도 컸다. 엄청나게 크고 두껍고 무거우며, 그리고 조잡했다. 그것은 말 그대로 철퇴였다.\"\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.",
 			--Wt ring u got bithc?
-			["bm_melee_zweihander"] = "플레멘슈베어",
-			["bm_melee_zweihander_info"] = "#{heat_warm_color}#\"한 번 받아쳐봐.\"##\n\n검이라기보다는 장창에 더 가까운, 거대한 양손검입니다.\n\n적의 근접 공격을 받아치면 적에게 #{skill_color}#180##의 근접 피해를 가합니다. 이 피해량은 스킬로 증가시킬 수 있습니다.",
+			["bm_melee_klara"] = "플레멘슈베어",
+			["bm_melee_klara_info"] = "#{heat_warm_color}#\"한 번 받아쳐봐.\"##\n\n검이라기보다는 장창에 더 가까운, 거대한 양손검입니다.\n\n적의 근접 공격을 받아치면 적에게 #{skill_color}#180##의 근접 피해를 가합니다. 이 피해량은 스킬로 증가시킬 수 있습니다.",
 			["bm_melee_broad"] = "롱소드",
 			["bm_melee_broad_info"] = "기사의 상징적인 무기.",
 		--Buckler Shield
@@ -5737,7 +5737,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 			--[[   MEDIC SUBTREE   ]]--
 				["menu_combat_medic_beta_sc"] = "의무병",
-				["menu_combat_medic_beta_desc_sc"] = "베이식: #{owned}#$basic##\n팀원을 되살리는 동안과 그 이후 #{skill_color}#$skill_value_b2##초간 #{skill_color}#$skill_value_b1## 피해 감소 효과를 받습니다.\n\n에이스: #{owned}#$pro##\n팀원을 되살릴 때 #{skill_color}#$skill_value_p1##의 추가 체력을 회복시켜 되살립니다.",
+				["menu_combat_medic_beta_desc_sc"] = "베이식: #{owned}#$basic##\n팀원을 되살리는 동안 피해 감소를 #{skill_color}#$skill_value_b1## 얻으며, 팀원을 소생하는 데 성공하면 피해 감소 효과가 #{skill_color}#$skill_value_b2##초 동안 지속됩니다.\n\n#{risk}#참고: 피해 감소는 상호 작용을 통한 소생에만 적용됩니다.##\n\n에이스: #{owned}#$pro##\n팀원을 되살릴 때 #{skill_color}#$skill_value_p1##의 추가 체력을 회복시켜 되살립니다.",
 
 				--Quick Fix
 				["menu_tea_time_beta_sc"] = "응급 치료",
@@ -5842,7 +5842,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "기절 저항력",
-				["menu_oppressor_beta_desc_sc"] = "베이식: #{owned}#$basic##\n적의 공격으로 인한 밀쳐짐이 보유한 방탄량 1포인트당 #{skill_color}#$skill_value_b1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n섬광탄과 적 충격탄으로 인한 시각적 효과의 지속 시간이 #{skill_color}#$skill_value_p1## 감소합니다.",
+				["menu_oppressor_beta_desc_sc"] = "베이식: #{owned}#$basic##\n적의 공격으로 인한 밀쳐짐이 보유한 방탄량 1포인트당 #{skill_color}#$skill_value_b1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n섬광탄의 시야 차단과 적 충격탄의 기절 및 충격 지속 시간이 #{skill_color}#$skill_value_p1## 감소합니다.",
 
 				--Die Hard
 				["menu_show_of_force_sc"] = "다이 하드",
@@ -5862,7 +5862,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "아이언맨",
-				["menu_juggernaut_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#개량형 복합 전술 조끼##를 착용할 수 있습니다.\n\n방패를 든 적에게 근접 공격 시, 압도적인 힘으로 해당 적을 휘청거리게 합니다.\n\n#{risk}#주의:## #{important_1}#타이탄 실드와 캡틴 윈터스에게는## #{risk}#휘청거림 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n방탄복 회복 속도가 #{skill_color}#$skill_value_p1## 빨라집니다. $anarc_disable\n\n방패 적을 휘청거리게 하는 능력이 원거리 무기에도 적용되며, 무기의 총 피해량이 높을수록 확률이 증가합니다.",
+				["menu_juggernaut_beta_desc_sc"] = "베이식: #{owned}#$basic##\n방탄복 회복 속도가 #{skill_color}#$skill_value_p1## 빨라집니다. $anarc_disable\n\n방패를 든 적에게 근접 공격 시, 압도적인 힘으로 해당 적을 휘청거리게 합니다.\n\n#{risk}#주의:## #{important_1}#타이탄 실드와 캡틴 윈터스에게는## #{risk}#휘청거림 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#개량형 복합 전술 조끼##를 착용할 수 있습니다.\n방탄복 회복 속도가 추기로 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n방패 적을 휘청거리게 하는 능력이 원거리 무기에도 적용되며, 무기의 총 피해량이 높을수록 확률이 증가합니다.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger
@@ -5910,11 +5910,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "타워 디펜스",
-				["menu_tower_defense_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이제 센트리 건에 연사 속도가 #{skill_color}#66%## 감소하지만, 적과 방패를 관통할 수 있는 #{skill_color}#철갑탄##을 사용하도록 설정할 수 있습니다.\n\n에이스: #{owned}#$pro##\n센트리 건의 최대 소지 개수가 #{skill_color}#$skill_value_p1##개로 증가합니다.\n\n센트리 건 배치 시 최대 탄약량의 #{skill_color}#35%##가 소모됩니다.",
+				["menu_tower_defense_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이제 센트리 건에 연사 속도가 #{skill_color}#66%## 감소하지만, 적과 방패를 관통할 수 있는 #{skill_color}#철갑탄##을 사용하도록 설정할 수 있습니다.\n\n에이스: #{owned}#$pro##\n센트리 건의 최대 소지 개수가 #{skill_color}#$skill_value_p1##개로 증가합니다.\n\n센트리 건 배치 시 최대 탄약량의 #{skill_color}#25%##가 소모됩니다.",
 
 				--Bulletproof--
 				["menu_iron_man_sc"] = "방탄 갑옷",
-				["menu_iron_man_desc_sc"] = "베이식: #{owned}#$basic##\n스나이퍼, 타이탄 도저, 화염, 폭발물이 당신의 방탄복을 파괴하며 체력으로 넘어오는 초과 피해를 막아줍니다.\n\n#{risk}#주의: 자가 피해 또는 클로커의 발차기 및 테이저의 전기 충격으로 직접 입는 체력 피해에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#$skill_value_p6##까지 방탄량의 첫 #{skill_color}#$skill_value_p5##당 받는 피해가 기본 방탄량의 #{skill_color}#$skill_value_p1##만큼 감소합니다.\n\n방탄복이 파괴되면 기본 방탄량 #{skill_color}#$skill_value_p4## 당 #{skill_color}#$skill_value_p3##초의 피해 유예 시간을 얻습니다.\n\n방탄복 회복 속도가 #{skill_color}#$skill_value_p2## 빨라집니다. $anarc_disable\n\n",
+				["menu_iron_man_desc_sc"] = "베이식: #{owned}#$basic##\n스나이퍼, 타이탄 도저, 화염, 폭발물이 당신의 방탄복을 파괴하며 체력으로 넘어오는 초과 피해를 막아줍니다.\n\n#{risk}#주의: 자가 피해 또는 클로커의 발차기 및 테이저의 전기 충격으로 직접 입는 체력 피해에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n최대 #{skill_color}#$skill_value_p6##까지 방탄량의 첫 #{skill_color}#$skill_value_p5##당 받는 피해가 기본 방탄량의 #{skill_color}#$skill_value_p1##만큼 감소합니다.\n\n방탄복이 파괴되면 기본 방탄량 #{skill_color}#$skill_value_p4## 당 #{skill_color}#$skill_value_p3##초의 피해 유예 시간을 얻습니다.\n\n",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--

@@ -443,9 +443,11 @@ if TF2SniperWeaponBase then
 end
 
 --ABYSMAL DOGSHIT \o/ fix to keep both PocoHUD and the Mercenary Perk Deck happy
---Poco localizes all its hooks so intercepting the hooks into "_calc_x_damage" isn't going to work
---The Mercenary Perk Deck loads late and overrides Resmod's version of the "_calc_x_damage" funcs; I am not shoving a good chunck of PlayerDamage in here just to get around that
---But it doesn't load so late as to override the GOAT that is 'entry.lua'
+--PocoHUD explicitly needs the output data from the vanilla "_calc_x_damage" functions it hooks into to draw its directional damage indicators
+--But PocoHUD localizes all its inner workings so intercepting its hooks into "_calc_x_damage" isn't going to work
+--The Mercenary Perk Deck loads late and overrides Resmod's version of the "_calc_x_damage" funcs, breaking things; I am not shoving a good chunk of PlayerDamage in here just to get around that
+--My initial fix was to just skirt around it with resmod-specific "_calc_x_damage" funcs but that broke PocoHUD's directional damage indicators
+--That said the Mercenary Perk Deck doesn't load so late as to override the GOAT that is 'entry.lua' (This file)
 --So you get this atrocity :^)
 if PlayerDamage then 
 	function PlayerDamage:_calc_armor_damage(attack_data, ...)

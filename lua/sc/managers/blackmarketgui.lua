@@ -6855,9 +6855,9 @@ function BlackMarketGui:update_info_text()
 
 		if deployable_id == "sentry_gun" then
 			local ammo_cost = { --SentryGunBase isn't loaded outside of gameplay so I gotta dupe the cost table here, maybe I'll move it to tweak_data
-				0.4,
 				0.35,
-				0.3
+				0.25,
+				0.25
 			}
 			local cost_reduction = managers.player:has_category_upgrade(deployable_id, "cost_reduction") and managers.player:equiptment_upgrade_value(deployable_id, "cost_reduction") or 1
 			deployable_uses = ammo_cost[cost_reduction] * 100 .. "%"

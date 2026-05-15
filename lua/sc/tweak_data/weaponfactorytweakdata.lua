@@ -40665,7 +40665,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_smg45_g_skel.supported = true
 			self.parts.wpn_fps_smg_smg45_g_skel.stats = {
 				value = 0,
-				reload = -2,
+				spread = -2,
 				concealment = 1
 			}
 			self.parts.wpn_fps_smg_smg45_g_skel.custom_stats = {

@@ -1,4 +1,4 @@
-<mod name="fps_anims" author="Zdann" min_lib_ver="3.38">
+<mod name="fps_anims" author="Zdann (and Hylie)" min_lib_ver="3.38">
 	<AddFiles directory="assets">
 		<!--Nailgun-->
 		<animation path="anims/fps/melee/nin_res/nin_attack_var_miss" load="true"/>
@@ -21,6 +21,12 @@
 		<!--AK Drum Mag-->
 		<animation path="anims/fps/ak47/ak47_reload_drum" load="true"/>
 		<animation path="anims/fps/ak47/ak47_reload_drum_not_empty" load="true"/>
+
+		<animation path="anims/fps/ak74/ak74_reload_drum" load="true"/>
+		<animation path="anims/fps/ak74/ak74_reload_drum_not_empty" load="true"/>
+		
+		<animation path="anims/fps/flint/flint_reload_drum" load="true"/>
+		<animation path="anims/fps/flint/flint_reload_drum_not_empty" load="true"/>
 		
 		<!--MP5 Tweaks-->
 		<animation path="anims/fps/mp5/mp5_vg_idle" load="true"/>

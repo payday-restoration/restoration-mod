@@ -1,0 +1,27 @@
+<dynamic_object>
+	<diesel materials="units/mods/weapons/wpn_fps_upg_sniper_magpul/wpn_fps_upg_snp_tti_m_magpul" orientation_object="rp_wpn_fps_snp_tti_m_standard" />
+	<graphics>
+		<object name="g_mag" enabled="true" />
+		<object name="g_magpul" enabled="true" />
+		<object name="g_mag_trans" enabled="true" />
+		
+		<object name="g_bullet_1" enabled="true" />
+		<object name="g_bullet_2" enabled="true" />
+		<object name="g_bullet_3" enabled="true" />
+		<object name="g_bullet_6" enabled="true" />
+		<object name="g_bullet_7" enabled="true" />
+		<object name="g_bullet_8" enabled="true" />
+		<object name="g_bullet_9" enabled="true" />
+		<object name="g_bullet_10" enabled="true" />
+		<object name="g_bullet_11" enabled="true" />
+		<object name="g_bullet_12" enabled="true" />
+		<object name="g_bullet_13" enabled="true" />
+		<object name="g_bullet_14" enabled="true" />
+		<object name="g_bullet_15" enabled="true" />
+		<object name="g_bullet_16" enabled="true" />
+		<object name="g_bullet_17" enabled="true" />
+		<object name="g_bullet_18" enabled="true" />
+		<object name="g_bullet_19" enabled="true" />
+		<object name="g_bullet_20" enabled="true" />
+	</graphics>
+</dynamic_object>

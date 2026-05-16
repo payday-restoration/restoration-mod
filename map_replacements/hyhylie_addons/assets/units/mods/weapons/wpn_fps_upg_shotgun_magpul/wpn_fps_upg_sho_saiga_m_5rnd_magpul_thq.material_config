@@ -1,0 +1,14 @@
+<materials version="3" group="weapon_saiga">
+	<material name="saiga_5rnd" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_fps_shot_saiga_m_5rnd_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_fps_shot_saiga_m_5rnd_nm" mip="1"/>
+    </material>
+	<material name="slug" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+		<diffuse_texture file="units/payday2/weapons/wpn_fps_shot_r870_pts/slug_df" mip="1" />
+		<bump_normal_texture file="units/payday2/weapons/wpn_fps_shot_r870_pts/slug_nm" mip="1" />
+	</material>
+	<material name="mtr_mag_speed" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+		<diffuse_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_ass_groza_pts/mag_speed_df" mip="1" />
+		<bump_normal_texture file="units/pd2_dlc_sawp/weapons/wpn_fps_ass_groza_pts/mag_speed_nm" mip="1" />
+	</material>
+</materials>

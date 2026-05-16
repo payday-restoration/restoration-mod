@@ -1,0 +1,16 @@
+<dynamic_object>
+    <diesel materials="units/mods/weapons/wpn_fps_upg_shotgun_magpul/wpn_fps_upg_sho_saiga_m_5rnd_magpul" orientation_object="rp_wpn_fps_shot_saiga_m_5rnd" />
+	<animations>
+		<animation_group name="reload">
+			<object name="anim_reload" enabled="true" />	
+		</animation_group>   
+		<animation_group name="reload_not_empty">
+			<object name="anim_reload_not_empty" enabled="true" />
+		</animation_group> 
+  </animations>
+    <graphics>
+        <object enabled="true" name="g_mag" />
+        <object enabled="true" name="g_magpul" />
+        <object enabled="true" name="g_bullet_1" />
+    </graphics>
+</dynamic_object>

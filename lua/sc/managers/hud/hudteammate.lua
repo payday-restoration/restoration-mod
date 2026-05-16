@@ -34,8 +34,58 @@ HUDTeammate.set_weapon_firemode_burst = HUDTeammate.set_weapon_firemode_burst or
 
 end
 
-if VoidUI.options.teammate_panels then
-	return
+if VoidUI and VoidUI.options.teammate_panels then
+	function HUDTeammate:set_health(data)
+		if self:ai() then
+			data.current = (data.current / data.total) * 10
+			data.total = 10
+		end
+
+		self._health_data = data
+		local anim_time = self._main_player and VoidUI.options.main_anim_time or VoidUI.options.mate_anim_time
+		local health_stored = self._custom_player_panel:child("health_stored")
+		local health_stored_bg = self._custom_player_panel:child("health_stored_bg")
+		local health_panel = self._custom_player_panel:child("health_panel")
+		local health_background = health_panel:child("health_background")
+		local health_bar = health_panel:child("health_bar")
+		local health_value = health_panel:child("health_value")
+		local show_health_value = self._main_player and VoidUI.options.main_health or VoidUI.options.mate_health
+		local amount = math.clamp(data.current / data.total, 0, 1)
+		if amount < math.clamp(health_bar:h() / self._bg_h, 0, 1) then self:_damage_taken() end
+
+		if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") and self._id == HUDManager.PLAYER_PANEL then
+			local static_damage_segment_size = managers.player:upgrade_value_nil("player", "copr_static_damage_ratio")
+
+			if static_damage_segment_size then
+				local static_damage_ratio = static_damage_segment_size / data.total
+				amount = math.floor((amount + 0.01) / static_damage_ratio) * static_damage_ratio
+			end
+		end
+
+		health_bar:stop()
+		health_bar:animate(function(o)
+			local s = math.clamp(health_bar:h() / self._bg_h, 0, 1)
+			local c = s
+			over(anim_time, function(p)
+				if alive(health_bar) then
+					c =	math.lerp(s, amount, p)
+					health_bar:set_h(self._bg_h * c)
+					health_bar:set_texture_rect(203, 0 + ((1- c) * 472),202,472 * c)
+					health_bar:set_bottom(health_background:bottom())
+
+					if show_health_value == 1 then health_value:set_text("")
+					elseif show_health_value == 2 then health_value:set_text(math.clamp(self:round(c * 100), 0, 100))
+					elseif show_health_value == 3 then health_value:set_text(self:round((data.total * 10) * c)) end
+
+					health_stored_bg:set_bottom(math.clamp(health_panel:y() + health_bar:top(), health_panel:top() + health_stored_bg:h(), health_panel:bottom()))
+					health_stored:set_bottom(health_stored_bg:bottom())
+					health_stored_bg:set_texture_rect(811,(((health_stored_bg:y() - health_panel:y()) / self._bg_h) * 472),70,472 * (health_stored_bg:h() / self._bg_h))
+					health_stored:set_texture_rect(811,(((health_stored:y() - health_panel:y()) / self._bg_h) * 472),70,472 * (health_stored:h() / self._bg_h))
+					self:update_delayed_damage()
+				end
+			end)
+		end)
+	end
 else
 	-- All this just to make Leech's notches appear properly with the changed mechanics of segments
 	-- being based on fixed HP values instead of HP percentages. :weary:

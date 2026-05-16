@@ -1618,6 +1618,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_gadget_plural"] = "Gadgets",
 		["menu_pistol_carbine"] = "Pistol Carbine",
 		["menu_battle_rifle"] = "Battle Rifle",
+		
+		["bm_wp_wpn_fps_upg_sho_ben_shell_rack"] = "산탄 홀더",
+        ["bm_wp_wpn_fps_upg_sho_boot_shell_rack"] = "산탄 홀더",
+        ["bm_wp_wpn_fps_upg_sho_ksg_shell_rack"] = "산탄 홀더",
+        ["bm_wp_wpn_fps_upg_sho_m37_shell_rack"] = "산탄 홀더",
+        ["bm_wp_wpn_fps_upg_sho_m590_shell_rack"] = "산탄 홀더",
+        ["bm_wp_wpn_fps_upg_sho_spas12_shell_rack"] = "산탄 홀더",
+
+        ["menu_l_global_value_res_hylie_mod"] = "이 상품은 Hylie's Restoration Mod Attachments Pack 아이템입니다!",
 
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 			--Attack patterns - These are added at the end of melee weapon descriptions and are purposely phrased to leave the end result of a melee attack ambiguous so I don't have to make different lines for something cutting vs something bludgeoning vs something stabbing etc.

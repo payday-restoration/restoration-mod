@@ -1619,12 +1619,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["menu_pistol_carbine"] = "Pistol Carbine",
 		["menu_battle_rifle"] = "Battle Rifle",
 		
-		["bm_wp_wpn_fps_upg_sho_ben_shell_rack"] = "산탄 홀더",
-        ["bm_wp_wpn_fps_upg_sho_boot_shell_rack"] = "산탄 홀더",
-        ["bm_wp_wpn_fps_upg_sho_ksg_shell_rack"] = "산탄 홀더",
-        ["bm_wp_wpn_fps_upg_sho_m37_shell_rack"] = "산탄 홀더",
-        ["bm_wp_wpn_fps_upg_sho_m590_shell_rack"] = "산탄 홀더",
-        ["bm_wp_wpn_fps_upg_sho_spas12_shell_rack"] = "산탄 홀더",
+		["bm_wp_wpn_fps_upg_sho_ben_shell_rack"] = "빅벤 쉘 랙",
+        ["bm_wp_wpn_fps_upg_sho_boot_shell_rack"] = "부츠 킥 쉘 랙",
+        ["bm_wp_wpn_fps_upg_sho_ksg_shell_rack"] = "칵 칵 쉘 랙",
+        ["bm_wp_wpn_fps_upg_sho_m37_shell_rack"] = "염소 쉘 랙",
+        ["bm_wp_wpn_fps_upg_sho_m590_shell_rack"] = "모시 쉘 랙",
+        ["bm_wp_wpn_fps_upg_sho_spas12_shell_rack"] = "라티나 쉘 랙",
+		
+		["bm_wp_wpn_fps_upg_sho_saiga_m_5rnd_magpul"] = "신속 장전 탄창",
+		["bm_wp_wpn_fps_upg_sho_aa12_mag_straight_magpul"] = "신속 장전 직선 탄창",
+
+		["bm_wp_wpn_fps_upg_sho_coach_s_ammopouch"] = "그다지 고급스럽지 않는 탄약 파우치",
+		["bm_wp_wpn_fps_upg_sho_huntsman_s_ammopouch"] = "사냥꾼 탄약 파우치",
+		["bm_wp_wpn_fps_upg_sho_m1897_s_ammopouch"] = "딘 탄약 파우치",
+
+		["bm_wp_wpn_fps_upg_snp_tti_m_magpul"] = "텍티쿨 신속 장전 탄창",
+		["bm_wp_wpn_fps_upg_snp_victor_m_1_magpul"] = "세인트 신속 장전 탄창",
+
+		["bm_wp_wpn_fps_upg_snp_model70_pouch"] = "포인트드 탄약 파운치",
+		["bm_wp_wpn_fps_upg_snp_mosin_pouch"] = "쓰리 라인드 탄약 파운치",
+		["bm_wp_wpn_fps_upg_snp_winchester_pouch"] = "샘 탄약 파운치",
+
+		["bm_wp_wpn_fps_upg_r93_shellrack"] = "밀스팩 쉘 랙",		
 
         ["menu_l_global_value_res_hylie_mod"] = "이 상품은 Hylie's Restoration Mod Attachments Pack 아이템입니다!",
 

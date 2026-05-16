@@ -1598,7 +1598,7 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 
 	if dot_data.use_weapon_damage_falloff_chance then
 		if weap_base and weap_base.get_damage_falloff then
-			chance = weap_base:get_damage_falloff(chance, col_ray, user_unit)
+			chance = weap_base:get_damage_falloff(chance, col_ray, user_unit, nil, nil, dot_data.falloff_chance_lerp or 1)
 		end
 	end
 
@@ -1664,6 +1664,10 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 
 	if not friendly_fire then 
 		managers.fire:add_doted_enemy(data)
+	end
+
+	if dot_data.no_dot_stun then
+		return
 	end
 
 	if distance and dot_data.dot_stun_max_distance and weap_base and weap_base.near_falloff_distance and distance > weap_base.near_falloff_distance then

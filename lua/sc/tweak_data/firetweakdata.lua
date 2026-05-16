@@ -75,36 +75,40 @@ function FireTweakData:_init_dot_entries_fire(entries)
 
 	--Dragons Breath
 	fire_entries.ammo_dragons_breath_auto = {
-		dot_trigger_chance = 0.3,
+		dot_trigger_chance = 1.0,
 		dot_damage = 1.5,
 		dot_length = 2.1,
 		dot_trigger_max_distance = false,
-		dot_stun_max_distance = true,
-		use_weapon_damage_falloff_chance = true
+		no_dot_stun = true,
+		use_weapon_damage_falloff_chance = true,
+		falloff_chance_lerp = 0.4
 	}
 	fire_entries.ammo_dragons_breath = {
-		dot_trigger_chance = 0.4,
+		dot_trigger_chance = 1.0,
 		dot_damage = 3.0,
 		dot_length = 2.1,
 		dot_trigger_max_distance = false,
-		dot_stun_max_distance = true,
-		use_weapon_damage_falloff_chance = true
+		no_dot_stun = true,
+		use_weapon_damage_falloff_chance = true,
+		falloff_chance_lerp = 0.4
 	}
 	fire_entries.ammo_dragons_breath_pump = {
-		dot_trigger_chance = 0.5,
+		dot_trigger_chance = 1.0,
 		dot_damage = 3.0,
 		dot_length = 2.1,
 		dot_trigger_max_distance = false,
-		dot_stun_max_distance = true,
-		use_weapon_damage_falloff_chance = true
+		no_dot_stun = true,
+		use_weapon_damage_falloff_chance = true,
+		falloff_chance_lerp = 0.4
 	}
 	fire_entries.ammo_dragons_breath_heavy = {
-		dot_trigger_chance = 0.6,
+		dot_trigger_chance = 1.0,
 		dot_damage = 3.0,
 		dot_length = 2.1,
 		dot_trigger_max_distance = false,
-		dot_stun_max_distance = true,
-		use_weapon_damage_falloff_chance = true
+		no_dot_stun = true,
+		use_weapon_damage_falloff_chance = true,
+		falloff_chance_lerp = 0.4
 	}
 
 	--MELEE

@@ -506,47 +506,47 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.body_armor.movement = { --*increments of 0.03
 		1,
 		0.97,
-		0.91, --2 increments
+		0.91, -- 2 increments
 		0.88,
-		0.76, --4 increments
+		0.76, -- 4 increments
 		0.745, --0.5 increments
-		0.7 --1.5 increments
+		0.64 -- 3.5 increments
 	}
 	self.values.player.body_armor.dodge = { --*increments of 0.1
-		0.2,
-		0.1,
-		0.05, --half increment
+		0.15,
+		0.10, -- half increment
+		0.05, -- half increment
 		-0.05,
 		-0.15,
-		-0.2, --half increment
+		-0.2, -- half increment
 		-0.3
 	}
 	self.values.player.body_armor.concealment = { --*increments of 2
 		30,
-		26, --2 increments
+		26, -- 2 increments
 		24,
 		22,
-		16,	--3 increments
-		8, --4 increments
-		4 --2 increments
+		16,	-- 3 increments
+		8, -- 4 increments
+		4 -- 2 increments
 	}
 	self.values.player.body_armor.damage_shake = { --*increments of 0.1
 		1.0,
 		0.9,
-		0.7, --2 increments
-		0.6,
+		0.7, -- 2 increments
+		0.5, -- 2 increments
 		0.4,
 		0.3,
 		0.1
 	}
 	self.values.player.body_armor.stamina = { --*increments of 0.0125
 		1,
-		0.975, --2 increments
+		0.975, -- 2 increments
 		0.9625,
 		0.95,
-		0.925, --2 increments
-		0.9, --2 increments
-		0.875 --2 increments
+		0.925, -- 2 increments
+		0.9, -- 2 increments
+		0.875 -- 2 increments
 	}
 	self.values.player.body_armor.skill_ammo_mul = { --repurposed to pick up mult
 		0.9, --Suit
@@ -564,18 +564,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.05,
 		0.10,
 		0.15,
-		0.25,
-		0.20,
-		0.15
+		0.25, -- 2 increments
+		0.20, -- -1 increment
+		0.10 -- -2 increments
 	}
-	self.values.player.body_armor.regen_delay = { --*increments of 0.25
+	self.values.player.body_armor.regen_delay = { --increments of 0.25
 		3.00,
 		3.25,
 		3.50,
 		3.75,
-		4.00,
-		4.25,
-		4.50
+		4.25, -- 2 increments
+		4.50,
+		5.00 -- 2 increments
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -679,7 +679,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Sentry Guns
 	self.sentry_gun_base_armor = 15
-	self.sentry_gun_base_ammo = 140
+	self.sentry_gun_base_ammo = 150
+	self.sentry_gun_ammo_cost = {
+		0.35,
+		0.25,
+		0.25 --unused
+	}
 
 	--"Baked In" upgrades
 	self.values.cable_tie.interact_speed_multiplier = {0.25}
@@ -1154,21 +1159,40 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Iron Man
 				--Basic
-					self.values.player.armor_regen_timer_multiplier_tier = {0.90, 0.75}
+					--Unlock ICTV
+					self.values.player.level_1_armor_regen_timer_mult = {0.9, 0.8}
+					self.values.player.level_2_armor_regen_timer_mult = {0.9, 0.8}
+					self.values.player.level_3_armor_regen_timer_mult = {0.9, 0.8}
+					self.values.player.level_4_armor_regen_timer_mult = {0.9, 0.8}
+					self.values.player.level_5_armor_regen_timer_mult = {0.9, 0.8}
+					self.values.player.level_6_armor_regen_timer_mult = {0.9, 0.8}
 					self.values.player.shield_knock = {true}
 				--Ace				
-					--Unlock ICTV		
+					self.values.player.level_7_armor_regen_timer_mult = {0.8, 0.8}
+					self.values.player.level_7_armor_deflection_addend = {0.1}
+					self.values.player.level_7_armor_movement_speed_addend = {0.06}
 					self.values.player.bullet_shield_knock = {true}
 					self.values.player.shield_knock_bullet = {
 						max_damage = 200,
 						chance = 0.8
-					}						
+					}
+
+				--Unused
+					self.values.player.armor_regen_timer_multiplier_tier = {
+						0.90, --Basic
+						0.80 --Ace
+					}
 					self.values.player.armor_regen_timer_multiplier = {0.85}
 					
-					self.skill_descs.juggernaut = {
-						skill_value_b1 = tostring((1 - self.values.player.armor_regen_timer_multiplier_tier[1]) * 100).."%", -- Armor recovery
-						skill_value_p1 = tostring((self.values.player.armor_regen_timer_multiplier_tier[1] - self.values.player.armor_regen_timer_multiplier_tier[2]) * 100).."%" -- More armor recovery
-					}
+				self.skill_descs.juggernaut = {
+					--skill_value_b1 = tostring((1 - self.values.player.armor_regen_timer_multiplier_tier[1]) * 100).."%", -- Armor recovery
+					--skill_value_p1 = tostring((self.values.player.armor_regen_timer_multiplier_tier[1] - self.values.player.armor_regen_timer_multiplier_tier[2]) * 100).."%" -- More armor recovery
+					skill_value_b1 = tostring((1 - self.values.player.level_1_armor_regen_timer_mult[1]) * 100).."%", -- Armor recovery
+					skill_value_p1 = tostring((self.values.player.level_1_armor_regen_timer_mult[1] - self.values.player.level_1_armor_regen_timer_mult[2]) * 100).."%", -- More armor recovery
+					skill_value_p2 = tostring((1 - self.values.player.level_7_armor_regen_timer_mult[1]) * 100).."%", -- ICTV armor recovery speed
+					skill_value_p3 = tostring(self.values.player.level_7_armor_deflection_addend[1] * 100).."%", -- ICTV armor deflection
+					skill_value_p4 = tostring(self.values.player.level_7_armor_movement_speed_addend[1] * 100).."%", -- ICTV armor movement speed
+				}
 			
 		--Support--
 			--Scavenger
@@ -4497,6 +4521,50 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+
+	for armor_level = 1, 7 do
+		for skill_tier = 1, 2 do
+			local id = "level_" .. armor_level .. "_armor_regen_timer_mult"
+			self.definitions["player_" .. id .. "_" .. skill_tier] = {
+				name_id = "menu_player_" .. id,
+				category = "feature",
+				upgrade = {
+					value = skill_tier,
+					upgrade = id,
+					category = "player"
+				}
+			}
+		end
+	end
+
+	self.definitions.player_level_7_armor_deflection_addend = {
+		name_id = "menu_player_level_7_armor_deflection_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "level_7_armor_deflection_addend" ,
+			category = "player"
+		}
+	}
+	self.definitions.player_level_7_armor_movement_speed_addend = {
+		name_id = "menu_player_level_7_armor_movement_speed_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "level_7_armor_movement_speed_addend" ,
+			category = "player"
+		}
+	}
+
+	self.definitions.player_level_3_armor_addend = {
+		name_id = "menu_player_level_3_armor_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "level_3_armor_addend",
+			category = "player"
+		}
+	}
 
 	self.definitions.player_armor_regen_timer_multiplier_tier_2 = {
 		name_id = "menu_player_armor_regen_timer_multiplier_tier",

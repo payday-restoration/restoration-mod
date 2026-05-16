@@ -132,13 +132,13 @@ local crew_wep_preset = {
 	function WeaponTweakData:_init_data_sentry_gun_npc()
 		self.sentry_gun.categories = {}
 		self.sentry_gun.name_id = "debug_sentry_gun"
-		self.sentry_gun.DAMAGE = 2.8
+		self.sentry_gun.DAMAGE = 3.0
 		self.sentry_gun.SUPPRESSION = 1
 		self.sentry_gun.SPREAD = 2
 		self.sentry_gun.FIRE_RANGE = 2500
 		self.sentry_gun.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.sentry_gun.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-		self.sentry_gun.auto.fire_rate = 0.175
+		self.sentry_gun.auto.fire_rate = 0.1875
 		self.sentry_gun.alert_size = 2500
 		self.sentry_gun.BAG_DMG_MUL = 0.25
 		self.sentry_gun.SHIELD_DMG_MUL = 0
@@ -14741,7 +14741,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.boot.AMMO_MAX = 30
 						self.boot.CLIP_AMMO_MAX = 6
 						self.boot.fire_mode_data.fire_rate = 1.2
-						self.boot.fire_rate_multiplier = 1.1
+						self.boot.fire_rate_multiplier = 1.2
 						self.boot.rays = 8
 						self.boot.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.boot.kick = self.stat_info.kick_tables.right_kick

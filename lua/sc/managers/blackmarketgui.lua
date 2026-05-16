@@ -1050,14 +1050,14 @@ function BlackMarketGui:_get_armor_stats(name)
 			local base = 0
 			local mod = managers.player:body_armor_value("deflection", upgrade_level, 0)
 			base_stats[stat.name] = {value = (base + mod) * 100}
-			skill_stats[stat.name] = {value = managers.player:get_deflection_from_skills() * 100}
+			skill_stats[stat.name] = {value = managers.player:get_deflection_from_skills(name) * 100}
 		elseif stat.name == "regen_time" then
 			local base = managers.player:body_armor_value("regen_delay", upgrade_level, 0)
 			base_stats[stat.name] = {value = base}
 			if managers.player:has_category_upgrade("player", "armor_grinding") then
 				skill_stats[stat.name] = {value = tweak_data.upgrades.values.player.armor_grinding[1][upgrade_level][2] - base}
 			else
-				skill_stats[stat.name] = {value = base * managers.player:body_armor_regen_multiplier(false, 0) - base}
+				skill_stats[stat.name] = {value = base * managers.player:body_armor_regen_multiplier(false, 0, name) - base}
 			end
 		elseif stat.name == "damage_shake" then
 			local base = 10--tweak_data.gui.armor_damage_shake_base
@@ -6854,11 +6854,7 @@ function BlackMarketGui:update_info_text()
 		end
 
 		if deployable_id == "sentry_gun" then
-			local ammo_cost = { --SentryGunBase isn't loaded outside of gameplay so I gotta dupe the cost table here, maybe I'll move it to tweak_data
-				0.35,
-				0.25,
-				0.25
-			}
+			local ammo_cost = tweak_data.upgrades.sentry_gun_ammo_cost
 			local cost_reduction = managers.player:has_category_upgrade(deployable_id, "cost_reduction") and managers.player:equiptment_upgrade_value(deployable_id, "cost_reduction") or 1
 			deployable_uses = ammo_cost[cost_reduction] * 100 .. "%"
 		end

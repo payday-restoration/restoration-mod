@@ -705,16 +705,29 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {3, 1},
 					[1] = {
 						upgrades = {
-							"player_armor_regen_timer_multiplier_tier",
+							"body_armor6", --I hate that ICTV's skill definition is labled a 6
+							"player_level_1_armor_regen_timer_mult_1",
+							"player_level_2_armor_regen_timer_mult_1",
+							"player_level_3_armor_regen_timer_mult_1",
+							"player_level_4_armor_regen_timer_mult_1",
+							"player_level_5_armor_regen_timer_mult_1",
+							"player_level_6_armor_regen_timer_mult_1",
 							"player_shield_knock"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
-							"body_armor6",
+							"player_level_1_armor_regen_timer_mult_2",
+							"player_level_2_armor_regen_timer_mult_2",
+							"player_level_3_armor_regen_timer_mult_2",
+							"player_level_4_armor_regen_timer_mult_2",
+							"player_level_5_armor_regen_timer_mult_2",
+							"player_level_6_armor_regen_timer_mult_2",
+							"player_level_7_armor_regen_timer_mult_1",
+							"player_level_7_armor_deflection_addend",
+							"player_level_7_armor_movement_speed_addend",
 							"player_bullet_shield_knock",
-							"player_armor_regen_timer_multiplier_tier_2"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -938,14 +951,15 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {9, 5},
 					[1] = {
 						upgrades = {
-							"sentry_gun_ap_bullets"
+							"sentry_gun_ap_bullets",
+							"sentry_gun_cost_reduction_1"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
 							"sentry_gun_quantity_1",
-							"sentry_gun_cost_reduction_1"
+							"sentry_gun_shield"
 						},
 						cost = self.costs.hightierpro
 					}

@@ -5766,6 +5766,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.chef.stats.concealment = 29
 		self.melee_weapons.chef.stats.speed_mult = 1.1
 		self.melee_weapons.chef.special_weapon = "panic"
+		self.melee_weapons.chef.ignore_charge_speed = true
 		--I wonder how many people caught that this is a Shawn the Sheep reference--
 		self.melee_weapons.shawn.info_id = "bm_melee_shawn_info"
 		self.melee_weapons.shawn.stats.cleave = 1
@@ -6097,10 +6098,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.morning.stats.max_damage = 12.001
 		self.melee_weapons.morning.stats.min_damage_effect = 4.5
 		self.melee_weapons.morning.stats.max_damage_effect = 12.0
-		self.melee_weapons.morning.stats.charge_time = 1.8
+		self.melee_weapons.morning.stats.charge_time = 2.0
 		self.melee_weapons.morning.stats.range = 180
 		self.melee_weapons.morning.stats.concealment = 25
-		self.melee_weapons.morning.stats.speed_mult = 1.05
+		self.melee_weapons.morning.stats.speed_mult = 1.01
 
 		--FREEEEEEEDOM--
 		self.melee_weapons.freedom.info_id = "bm_melee_freedom_info"
@@ -6332,6 +6333,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	self.melee_weapons.halloween_sword.attack_pattern = "bm_melee_pattern_great_no_stab"
+	self.melee_weapons.halloween_sword.ignore_charge_speed = true
 	self.melee_weapons.halloween_sword.stats.raycasts = 20
 	self.melee_weapons.halloween_sword.stats.raycasts_h = 30
 	self.melee_weapons.halloween_sword.stats.raycasts_charge = nil
@@ -6962,6 +6964,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.dragon_slayer.attack_pattern = "bm_melee_pattern_great_no_stab"
 		self.melee_weapons.dragon_slayer.info_id = "bm_melee_goat_info"
 		self.melee_weapons.dragon_slayer.special_weapon = "panic"
+		self.melee_weapons.dragon_slayer.ignore_charge_speed = true
 		self.melee_weapons.dragon_slayer.stats = deep_clone(self.melee_weapons.halloween_sword.stats)
 		self.melee_weapons.dragon_slayer.stats.min_damage_effect = 9.0
 		self.melee_weapons.dragon_slayer.stats.max_damage_effect = 24.0
@@ -7118,6 +7121,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.cqc20.stats.min_damage_effect = 6.0
 		self.melee_weapons.cqc20.stats.max_damage_effect = 6.0
 		self.melee_weapons.cqc20.stats.cleave = 1
+		self.melee_weapons.cqc20.stats.concealment = 20
 		self.melee_weapons.cqc20.stats.charge_bonus_start = nil
 		self.melee_weapons.cqc20.stats.charge_bonus_speed = nil
 		self.melee_weapons.cqc20.stats.charge_time = 3

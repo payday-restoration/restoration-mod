@@ -2447,7 +2447,7 @@ function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 end
 
 
-function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot_only, ignore_ammo)
+function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot_only, ignore_ammo, lerp_mult)
 	local is_rapidfire = self._burst_fire_range_multiplier and self:in_burst_mode()
 	local is_fullauto = self._auto_fire_range_multiplier and not self:is_single_shot()
 	local is_single = self:is_single_shot() and not self:in_burst_mode()
@@ -2482,7 +2482,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	local damage_falloff = self:weapon_tweak_data().damage_falloff
 	local falloff_start = damage_falloff and damage_falloff.start_dist or 3000
 	local falloff_end = damage_falloff and damage_falloff.end_dist or 6000
-	
+
 	--[[
 	log("falloff_start : " .. tostring( falloff_start /100 ))
 	log("falloff_end : " .. tostring( falloff_end /100 ))
@@ -2550,6 +2550,10 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 		falloff_end = falloff_end * self._duration_falloff_end_mult
 	end
 	
+	if lerp_mult then
+		falloff_end = math.lerp(falloff_start, falloff_end, math.max(lerp_mult, 0))
+	end
+
 	--Cache falloff values for usage in hitmarkers.
 	self.near_falloff_distance = falloff_start
 	self.far_falloff_distance = falloff_end
@@ -2581,7 +2585,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	log("HIT AT: " .. tostring( distance / 100 ) .. " METERS")
 	log("DAMAGE DONE: " .. tostring( (math.max((1 - math.min(1, math.max(0, distance - falloff_start) / (falloff_end - falloff_start))) * damage, minimum_damage * damage)) * 10 ) .. "\n\n")
 	--]]
-	
+
 	--Compute final damage.
 	return math.lerp(damage, minimum_damage * damage, math.min(1, math.max(0, distance - falloff_start) / (falloff_end - falloff_start)))
 end

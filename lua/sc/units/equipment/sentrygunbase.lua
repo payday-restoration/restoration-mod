@@ -1,8 +1,4 @@
-SentryGunBase.DEPLOYEMENT_COST = { --Deploying a sentry eats up 40% of your *maximum* ammo.
-	0.35,
-	0.25,
-	0.25
-}
+SentryGunBase.DEPLOYEMENT_COST = tweak_data.upgrades.sentry_gun_ammo_cost
 SentryGunBase.MIN_DEPLOYEMENT_COST = 0.25
 
 Hooks:PostHook(SentryGunBase, "post_init", "sentrybase_postinit_repairsentries", function(self)
@@ -23,6 +19,28 @@ Hooks:PostHook(SentryGunBase, "update", "sentrybase_update_repairsentries", func
 		end
 	end
 end)
+
+function SentryGunBase:remove()
+	self._removed = true
+
+	--Kill the firing audio of actively shooting sentries when they get removed
+	--from the world for w/e reason (being picked up being the primary one)
+	local sentryweapon = self._unit:weapon()
+	if sentryweapon and sentryweapon._autofire_sound_event then
+		DelayedCalls:Remove("delay_fire_end" .. tostring(sentryweapon._unit:key())) --kill queued up DelayedCalls
+		sentryweapon._autofire_sound_event = sentryweapon._unit:sound_source():post_event(sentryweapon._fire_stop_snd_event)
+		sentryweapon._autofire_sound_event = sentryweapon._unit:sound_source():post_event(sentryweapon._fire_stop_snd_event_ap)
+		sentryweapon._autofire_sound_event:stop()
+		sentryweapon._autofire_sound_event = nil
+	end
+	--TODO: apply this to the turning sound too
+
+	self._unit:set_slot(0)
+end
+
+function SentryGunBase:armor_piercing_chance()
+	return self._unit:weapon():armor_piercing_chance()
+end
 
 function SentryGunBase:unregister()
 	if self._registered then

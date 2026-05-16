@@ -49422,17 +49422,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				stats = { 
 					value = 0, 
 					extra_ammo = 1, 
-					reload = 4,
-					recoil = -8
+					reload = 5,
+					recoil = -12
 				},
 				custom_stats = { 
-					rof_mult = 1.3333333,
+					rof_mult = 1.5,
 					is_internal = true 
 				},
 				internal_part = false,
 				texture_bundle_folder = "boost_in_lootdrop",
 				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
 				has_description = true,
+				forbids = {
+					"wpn_fps_upg_sho_ben_shell_rack"
+				},
 				override = {},
 			}
 			for k, used_part_id in ipairs(self.wpn_fps_sho_ben.uses_parts) do

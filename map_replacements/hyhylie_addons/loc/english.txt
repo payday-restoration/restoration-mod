@@ -1,0 +1,13 @@
+{
+
+    "bm_wp_wpn_fps_upg_sho_ben_shell_rack" : "Shell Rack",
+    "bm_wp_wpn_fps_upg_sho_boot_shell_rack" : "Shell Rack",
+    "bm_wp_wpn_fps_upg_sho_ksg_shell_rack" : "Shell Rack",
+    "bm_wp_wpn_fps_upg_sho_m37_shell_rack" : "Shell Rack",
+    "bm_wp_wpn_fps_upg_sho_m590_shell_rack" : "Shell Rack",
+    "bm_wp_wpn_fps_upg_sho_spas12_shell_rack" : "Shell Rack",
+
+    "menu_l_global_value_res_hylie_mod" : "This is a Hylie's Restoration Mod Attachments Pack item!"
+
+}
+

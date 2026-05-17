@@ -920,9 +920,11 @@ function PlayerDamage:damage_melee(attack_data)
 	end
 
 	local force_crouch = attacker_char_tweak and attacker_char_tweak.melee_force_crouch
+	--[[
 	if alive(attacker_unit) and attacker_unit:base() then
 		is_shield = attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield") and true
 	end
+	--]]
 
 	--Apply slow debuff if melee has one.
 	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table].ewgf and alive(self._unit) and not self._unit:movement():current_state().driving then
@@ -930,7 +932,7 @@ function PlayerDamage:damage_melee(attack_data)
 
 		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
 	end
-	
+
 	--Apply changes to melee push camera effect, cap effects of it so even players with insane armor can tell they were meleed.
 	local vars = {
 		"melee_hit",

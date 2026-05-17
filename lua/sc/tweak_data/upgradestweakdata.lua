@@ -1034,7 +1034,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 				
 			--Underdog
-					self.values.shotgun.object_damage_bonus = {1.25, 1.75}
+					self.values.shotgun.object_damage_bonus = {1.35, 2.00}
 				--Basic
 					self.values.temporary.dmg_multiplier_outnumbered = {{1.1, 7}}
 				--Ace

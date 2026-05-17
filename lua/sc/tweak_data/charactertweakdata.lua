@@ -2690,6 +2690,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.damage.rocket_damage_mul = 1.25
 	self.tank_titan.damage.tase_damage_mul = 5
 	self.tank_titan.melee_push_multiplier = 2 --he punches you harder now
+	self.tank_titan.melee_force_crouch = true
 	self.tank_titan.is_special = true
 	self.tank_titan.no_asu = true
 	self.tank_titan.heal_cooldown = 22.5
@@ -3041,7 +3042,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.HEALTH_INIT = 15
 	self.shield.headshot_dmg_mul = 2.2
 	self.shield.damage_resistance = presets.damage_resistance.none
-	self.shield.damage.explosion_damage_mul = 0.8
+	self.shield.damage.explosion_damage_mul = 0.75
 	self.shield.allowed_stances = {cbt = true}
 	self.shield.allowed_poses = {crouch = true}
 	self.shield.always_face_enemy = true
@@ -3205,8 +3206,8 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
 	self.phalanx_vip.damage.rocket_damage_mul = 0.05
 	self.phalanx_vip.damage.fire_pool_damage_mul = 0.05
-	self.phalanx_vip.damage.bullet_damage_mul = 0.25
-	self.phalanx_vip.damage.fire_damage_mul = 0.25
+	self.phalanx_vip.damage.bullet_damage_mul = 0.1
+	self.phalanx_vip.damage.fire_damage_mul = 0.05
 	self.phalanx_vip.spawn_sound_event = "cpa_a02_01"
 	self.phalanx_vip.priority_shout = "f45"
 	self.phalanx_vip.bot_priority_shout = "f45x_any"
@@ -3280,7 +3281,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip_break.damage.rocket_damage_mul = 0.40
 	self.phalanx_vip_break.damage.fire_pool_damage_mul = 0.20
 	self.phalanx_vip_break.damage.bullet_damage_mul = 0.45
-	self.phalanx_vip_break.damage.fire_damage_mul = 0.30		
+	self.phalanx_vip_break.damage.fire_damage_mul = 0.30
 	self.phalanx_vip_break.modify_health_on_tweak_change = true
 	self.phalanx_vip_break.announce_incomming = nil
 	self.phalanx_vip_break.marshal_logic = true	
@@ -3340,6 +3341,8 @@ function CharacterTweakData:_init_spring(presets)
         power = 4
     }
 	self.spring.melee_push_multiplier = 3
+	self.spring.melee_force_crouch = true
+	self.spring.melee_concuss = true
 	self.spring.speech_prefix_p1 = "cpa"
 	self.spring.speech_prefix_p2 = nil
 	self.spring.speech_prefix_count = nil

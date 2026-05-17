@@ -2779,7 +2779,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.1,
 		0.05
 	}
-	self.values.player.body_armor.skill_max_health_store = { --Fixed to 40 HP for all armor sets
+	self.values.player.body_armor.skill_max_health_store = { --Fixed to 25 HP for all armor sets
 		2.5,
 		2.5,
 		2.5,

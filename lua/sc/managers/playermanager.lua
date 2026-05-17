@@ -276,8 +276,7 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 	local armor_penalty = self:mod_movement_penalty(self:body_armor_value("movement", upgrade_level, 1))
 	multiplier = multiplier + armor_penalty - 1
 
-	local armor_data = tweak_data.blackmarket.armors[managers.blackmarket:equipped_armor(true, true)]
-	if armor_data and armor_data.upgrade_level == 7 then
+	if upgrade_level == 7 then
 		multiplier = multiplier + self:upgrade_value("player", "level_7_armor_movement_speed_addend", 0)
 	end
 

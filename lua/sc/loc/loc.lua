@@ -3338,6 +3338,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_w_toym16_sc_desc"] = "\"No full-auto in buildings.\"",
 				["bm_w_toy1911_sc_desc"] = "\"No full-auto in buildings.\"",
 
+				-- Minecraft Bow (Modern)
+				["bm_minecraft_bow_sc_desc"] = "A makeshift ranged weapon that fires arrows.\n\nHold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.",
+				["bm_minecraft_bow_alpha_sc_desc"] = "Doesn't need to be charged up to fire, and fires as fast as your trigger finger allows.\n\nArrows can be retrieved by picking them up.",
+
 			--[[ OTHER ]]
 				--soosh's Blue Archive skins 😭💢
 					["bm_w_tecci_ibuki"] = "Yay, Bang Bang!",

@@ -43734,6 +43734,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
+	    if self.parts.wpn_fps_minecraft_bow_ench_power then
+			self.parts.wpn_fps_minecraft_bow_ench_power.supported = true
+            self.parts.wpn_fps_minecraft_bow_ench_power.stats = {damage = 20}
+		end
+
 		if self.parts.wpn_fps_snp_tf2sr_scope then
 			self.parts.wpn_fps_snp_tf2sr_scope.supported = true
 			self.parts.wpn_fps_snp_tf2sr_scope.stats = {

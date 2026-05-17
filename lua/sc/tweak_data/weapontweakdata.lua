@@ -31541,6 +31541,99 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.minecraft_bow then
+				-- I am placing blocks and shit cuz I'm in fuckin' MINECRAAAAAAAAAAFT
+				-- OOOOOOOOOOOOOOOHHHHHHHHHHHHHH MYYYYYYYYYYYYYYYYYYYYYYYY GOOOOOOOOOOOOOOOOOOOOOOOOOD
+				-- IS THAT FUCKIN PIG BECAUSE IM FUCKIN STEEEEEEEEEEEEEVE IIIIIIII AAAAAAAAAMM FUUUUUUUUUCKIN STEEEEEEEEEVE FUCK YEAH
+				self.minecraft_bow.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
+				}
+				self.minecraft_bow.categories = {
+					"bow",
+					"nothing",
+				}
+				self.minecraft_bow.damage_type = "sniper"
+				self.minecraft_bow.has_description = true
+				self.minecraft_bow.desc_id = "bm_minecraft_bow_sc_desc"
+				self.minecraft_bow.kick = self.stat_info.kick_tables.none
+				self.minecraft_bow.charge_data.max_t = 1
+				self.minecraft_bow.not_allowed_in_bleedout = false
+				self.minecraft_bow.supported = true
+				self.minecraft_bow.ads_speed = 0.5
+				self.minecraft_bow.stats = {
+					damage = 10, -- 100 damage minimum, charge up to deal more (like in Minecraft!)
+					spread = 100,
+					recoil = 100,
+					spread_moving = 12,
+					zoom = 1,
+					concealment = 29,
+					suppression = 20,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.minecraft_bow.panic_suppression_chance = 0.05
+				self.minecraft_bow.stats_modifiers = {damage = 10}
+				self.minecraft_bow.no_reload_anims = true
+				self.minecraft_bow.timers.reload_not_empty = 0.01
+				self.minecraft_bow.timers.reload_empty = self.minecraft_bow.timers.reload_not_empty
+				self.minecraft_bow.timers.reload_exit_not_empty = 0.01
+				self.minecraft_bow.timers.reload_exit_empty = self.minecraft_bow.timers.reload_exit_not_empty
+			end
+
+			if self.minecraft_bow_alpha then
+				-- I AM BUILDIN SHIIIIIIIIIIIIIIIIT I AM FUCKIIIIIN STIIIIIIIIIIICK
+				-- Yes indeed
+				-- FLINTDHWEKUJFBUWOIEBDFUOIEWQGFUOWEBFUOWBOUFBWOUEFBUO FRIGGIDY GIDDYGIDDIGJKFKJRHUF
+				self.minecraft_bow_alpha.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
+				}
+				self.minecraft_bow_alpha.categories = {
+					"bow",
+					"nothing",
+				}
+				self.minecraft_bow_alpha.damage_type = "sniper"
+				self.minecraft_bow_alpha.has_description = true
+				self.minecraft_bow_alpha.desc_id = "bm_minecraft_bow_alpha_sc_desc"
+				self.minecraft_bow_alpha.kick = self.stat_info.kick_tables.none
+				self.minecraft_bow_alpha.charge_data.max_t = 1
+				self.minecraft_bow_alpha.not_allowed_in_bleedout = false
+				self.minecraft_bow_alpha.supported = true
+				self.minecraft_bow_alpha.ads_speed = 0.001
+				self.minecraft_bow_alpha.stats = {
+					damage = 40, -- 400 damage to replicate Minecraft Classic's bows that used to deal 2 hearts (4HP) of damage per hit
+					spread = 88,
+					recoil = 88,
+					spread_moving = 12,
+					zoom = 1,
+					concealment = 29,
+					suppression = 20,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.minecraft_bow_alpha.damage_falloff = {
+					start_dist = 3000,
+					end_dist = 9000,
+					min_mult = 1
+				}
+				self.minecraft_bow_alpha.panic_suppression_chance = 0.05
+				self.minecraft_bow_alpha.stats_modifiers = {damage = 10}
+				self.minecraft_bow_alpha.no_reload_anims = true
+				self.minecraft_bow_alpha.timers.reload_not_empty = 0.01
+				self.minecraft_bow_alpha.timers.reload_empty = self.minecraft_bow_alpha.timers.reload_not_empty
+				self.minecraft_bow_alpha.timers.reload_exit_not_empty = 0.01
+				self.minecraft_bow_alpha.timers.reload_exit_empty = self.minecraft_bow_alpha.timers.reload_exit_not_empty
+			end
+
 			if self.tf2sr then
 				self.tf2sr.upgrade_blocks = {
 					weapon = {

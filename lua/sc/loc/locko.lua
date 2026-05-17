@@ -1403,10 +1403,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#60%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#180## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##",
 		--["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Fires magnesium shards that have up to an #{skill_color}#80%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#240## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##",
 		--Removed the "can only stun enemies before damage falloff starts" due to the DoT changes, dunno if I can bring it back
-		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#15%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#60##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##", --NOT IN USE
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#40%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#60%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "마그네슘 파편을 발사하여 최대 #{skill_color}#80%## 확률로 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 사거리에 따라 감소합니다.##",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "마그네슘 파편을 발사하여 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#60##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 최대 피해 사거리를 넘으면 감소합니다.##", --NOT IN USE
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "마그네슘 파편을 발사하여 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 최대 피해 사거리를 넘으면 감소합니다.##",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "마그네슘 파편을 발사하여 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 최대 피해 사거리를 넘으면 감소합니다.##",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "마그네슘 파편을 발사하여 적을 #{heat_warm_color}#불태우고## #{skill_color}#2##초에 걸쳐 #{heat_warm_color}#120##의 피해를 가합니다.\n\n#{risk}#적을 태울 확률은 최대 피해 사거리를 넘으면 감소합니다.##",
 		["bm_wp_upg_a_rip"] = "톰스톤 벅샷",
 		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#3##초에 걸쳐 #{stats_positive}#90##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
 		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{stats_positive}#독이 섞인## 벅샷을 발사하여 적을 기절시키고 #{skill_color}#3##초에 걸쳐 #{stats_positive}#120##의 독 피해를 가합니다.\n\n#{risk}#지속시간은 사거리에 따라 감소합니다.##",
@@ -1747,7 +1747,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 
 		--Psycho Knife
 		--["bm_melee_chef_info"] = "Whether you're an angry heister or a psycho bank robber, this hot-forged, laser sharpened chef knife in fine, stainless molybdenum steel will serve you for years.\n\nBy the way, did you know that the traditional chef's knife was originally intended to slice and disjoint large cuts of flesh?\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
-		["bm_melee_chef_info"] = "이 칼이 슈퍼마켓에서 구매한 고기를 다지는 데 사용되었는지는 잘 모르겠습니다.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.",
+		["bm_melee_chef_info"] = "이 칼이 슈퍼마켓에서 구매한 고기를 다지는 데 사용되었는지는 잘 모르겠습니다.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.",
 
 		--Trench Knife
 		["bm_melee_fairbair_info"] = "영국 코만도들에게 인기 있는 트렌치 나이프는 베는 데 매우 뛰어납니다. 매우 인기 있는 나이프로, 오늘날에도 사용되고 생산되고 있습니다.",
@@ -1837,15 +1837,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 			--Jebus
 			["bm_melee_jebus_info"] = "빛과 #{item_stage_2}#어둠##\n#{item_stage_2}#흑##과 백\n#{stats_positive}#생명##과 #{important_1}#죽음##\n\n바이너리 소드는 타협하지 못합니다. 그 전에 상대방을 #{important_1}#반갈죽##으로 만들기 때문이죠.",
 			--Headless Dozer Sword
-			["bm_melee_headless_sword_info"] = "악몽에서 만들어진 검.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.",
+			["bm_melee_headless_sword_info"] = "악몽에서 만들어진 검.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.",
 				--Headless Dozer Hammer
 				["bm_melee_titham"] = "머리없는 불도저의 망치",
-				["bm_melee_titan_hammer_info"] = "악몽에서 만들어진 망치.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.",
+				["bm_melee_titan_hammer_info"] = "악몽에서 만들어진 망치.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.",
 				--im not gaj
-				["bm_melee_goat_info"] = "\"그것은 검이라 하기엔 너무도 컸다. 엄청나게 크고 두껍고 무거우며, 그리고 조잡했다. 그것은 말 그대로 철퇴였다.\"\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.",
+				["bm_melee_goat_info"] = "\"그것은 검이라 하기엔 너무도 컸다. 엄청나게 크고 두껍고 무거우며, 그리고 조잡했다. 그것은 말 그대로 철퇴였다.\"\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.",
 			--Wt ring u got bithc?
 			["bm_melee_klara"] = "플레멘슈베어",
-			["bm_melee_klara_info"] = "#{heat_warm_color}#\"한 번 받아쳐봐.\"##\n\n검이라기보다는 장창에 더 가까운, 거대한 양손검입니다.\n\n적의 근접 공격을 받아치면 적에게 #{skill_color}#180##의 근접 피해를 가합니다. 이 피해량은 스킬로 증가시킬 수 있습니다.",
+			["bm_melee_klara_info"] = "#{important_1}#\"한 번 받아쳐봐.\"##\n\n검이라기보다는 장창에 더 가까운, 거대한 양손검입니다.\n\n적의 근접 공격을 받아치면 적에게 #{skill_color}#180##의 근접 피해를 가합니다. 이 피해량은 스킬로 증가시킬 수 있습니다.",
 			["bm_melee_broad"] = "롱소드",
 			["bm_melee_broad_info"] = "기사의 상징적인 무기.",
 		--Buckler Shield
@@ -2349,8 +2349,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_armor_grinding_1"] = "간격당 방탄복 재생량: #{skill_color}#$passive_armor_regen##",
 		["bm_menu_armor_grinding_2"] = "간격당 방탄복 재생량: #{skill_color}#$passive_armor_regen## \n적에게 피해를 가할 시 방탄복 재생량: #{skill_color}#$active_armor_regen##",
 
-		["bm_menu_armor_max_health_store_1"] = "체력 최대 저장량: #{skill_color}#$health_stored##",
-		["bm_menu_armor_max_health_store_2"] = "체력 최대 저장량: #{skill_color}#$health_stored## \n적 처치 시 방탄복 재생 보너스: #{skill_color}#$regen_bonus%##",
+		["bm_menu_armor_max_health_store_1"] = "처치 시 체력 저장량: #{skill_color}#$health_stored##",
+		["bm_menu_armor_max_health_store_2"] = "처치 시 체력 저장량: #{skill_color}#$health_stored## \n적 처치 시 방탄복 재생 보너스: #{skill_color}#$regen_bonus%##",
 	})
 
 
@@ -3290,6 +3290,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				-- Toy weapons
 				["bm_w_toym16_sc_desc"] = "\"건물 안에서는 연사 금지라고요.\"",
 				["bm_w_toy1911_sc_desc"] = "\"건물 안에서는 연사 금지라고요.\"",
+
+				-- Minecraft Bow (Modern)
+				["bm_minecraft_bow_sc_desc"] = "임시방편으로 만든 화살을 발사하는 원거리 무기입니다.\n\n#{skill_color}#$BTN_FIRE## 키를 누르고 있으면 화살을 당기고, 놓는 순간 발사됩니다.\n화살을 최대한 당길수록 화살의 피해량과 속도가 증가합니다.\n\n#{skill_color}#$BTN_AIM## 키을 누르면 당겨진 화살를 놓습니다.\n\n화살은 주워서 회수할 수 있습니다.",
+				["bm_minecraft_bow_alpha_sc_desc"] = "당기지 않고 바로 발사할 수 있으며, 방아쇠를 당기는 속도만큼 빠르게 발사됩니다.\n\n화살은 주워서 회수할 수 있습니다.",
 				
 			--[[ OTHER ]]
 				--soosh's Blue Archive skins 😭💢
@@ -5192,14 +5196,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["bm_equipment_first_aid_kit_desc"] = "구급 키트를 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 #{skill_color}#150##만큼 체력을 회복할 수 있습니다.\n\n구급 키트는 #{skill_color}#한 번만## 사용할 수 있습니다.\n\n구급 키트는 응급치료를 위한 의약품 및 장비를 모은 조그만한 주머니입니다.",
 		["bm_equipment_first_aid_kit_desc_short"] = "구급 키트를 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 #{skill_color}#150##만큼 체력을 회복할 수 있습니다.\n\n구급 키트는 #{skill_color}#한 번만## 사용할 수 있습니다.",
 		--AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-		["bm_equipment_doctor_bag_desc"] = "의료 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 최대 체력 #{skill_color}#20%##만큼 회복하고 #{skill_color}#3##분 동안 #{skill_color}#5##초마다 최대 체력의 #{skill_color}#4%##씩 회복하며, 방어력을 #{skill_color}#10##만큼 얻습니다.\n\n의료 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n의료 가방은 의사 또는 기타 의료 전문가가 의료 용품 및 의약품을 쉽게 들고 다니기 위해 사용하는 휴대용 가방입니다.",
-		["bm_equipment_doctor_bag_desc_short"] = "의료 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 최대 체력 #{skill_color}#20%##만큼 회복하고 #{skill_color}#3##분 동안 #{skill_color}#5##초마다 최대 체력의 #{skill_color}#4%##씩 회복하며, 방어력을 #{skill_color}#10##만큼 얻습니다.\n\n의료 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.",
+		["bm_equipment_doctor_bag_desc"] = "의료 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 최대 체력 #{skill_color}#20%##만큼 회복하고 #{skill_color}#3##분 동안 방어력을 #{skill_color}#10##포인트 얻으며, #{skill_color}#10##포인트를 얻으며, #{skill_color}#5##초마다 최대 체력의 #{skill_color}#4%##씩 회복합니다.\n\n의료 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n의료 가방은 의사 또는 기타 의료 전문가가 의료 용품 및 의약품을 쉽게 들고 다니기 위해 사용하는 휴대용 가방입니다.",
+		["bm_equipment_doctor_bag_desc_short"] = "의료 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 최대 체력 #{skill_color}#20%##만큼 회복하고 #{skill_color}#3##분 동안 방어력을 #{skill_color}#10##포인트 얻으며, #{skill_color}#5##초마다 최대 체력의 #{skill_color}#4%##씩 회복합니다.\n\n의료 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.",
 		--Sentry
-		["bm_equipment_sentry_gun_desc"] = "센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 센트리 건은 당신의 무기들의 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n센트리 건은 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.\n\n센트리 건은 시민들을 위협하여 땅에 눕히게 합니다.\n\n센트리 건은 부착된 센서를 통해 자동으로 목표를 조준하고 사격합니다. 센트리 건은 주로 당신과 당신의 팀원으로부터 주의를 끌어 교란용으로 주로 사용됩니다.",
-		["bm_equipment_sentry_gun_desc_short"] = "센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 센트리 건은 당신의 무기들의 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n센트리 건은 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.",
+		["bm_equipment_sentry_gun_desc"] = "센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n설치된 센트리 건은 장탄수가 #{skill_color}#150##발이며, 발당 피해량은 #{skill_color}#30##, 분당 발사 속도는 #{skill_color}#320##발입니다.\n\n센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n센트리 건은 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.\n\n센트리 건은 시민들을 위협하여 땅에 눕히게 합니다.\n\n센트리 건은 부착된 센서를 통해 자동으로 목표를 조준하고 사격합니다. 센트리 건은 주로 당신과 당신의 팀원으로부터 주의를 끌어 교란용으로 주로 사용됩니다.",
+		["bm_equipment_sentry_gun_desc_short"] = "센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 전체 탄약의 #{skill_color}#$deployable_uses##를 사용하며, 장탄수는 #{skill_color}#150##발, 발당 피해량은 #{skill_color}#30##, 분당 발사 속도는 #{skill_color}#320##발입니다.\n\n센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 센트리 건에 남아있는 탄약을 회수하고 수리합니다.\n\n센트리 건은 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.",
 		--Supp. Sentry
-		["bm_equipment_sentry_gun_silent_desc"] = "저소음 센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 저소음 센트리 건은 당신의 무기들의 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n저소음 센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 저소음 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 저소음 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n저소음 센트리 건은 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.\n\n저소음 센트리 건은 시민들을 위협하여 땅에 눕히게 합니다.\n\n저소음 센트리 건은 일반적인 시끄러운 센트리 건의 대체품으로 주의 분산보다는 적을 사살하는 데 더 자주 사용됩니다.",
-		["bm_equipment_sentry_gun_silent_desc_short"] = "저소음 센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 저소음 센트리 건은 당신의 무기들의 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n저소음 센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 저소음 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 저소음 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n저소음 센트리 건은 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.",
+		["bm_equipment_sentry_gun_silent_desc"] = "저소음 센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n저소음 센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 저소음 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 저소음 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n저소음 센트리 건은 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.\n\n저소음 센트리 건은 시민들을 위협하여 땅에 눕히게 합니다.\n\n저소음 센트리 건은 일반적인 시끄러운 센트리 건의 대체품으로 주의 분산보다는 적을 사살하는 데 더 자주 사용됩니다.",
+		["bm_equipment_sentry_gun_silent_desc_short"] = "저소음 센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n저소음 센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 저소음 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 저소음 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n저소음 센트리 건은 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.",
 		--Body Bags
 		["bm_equipment_bodybags_bag_desc"] = "시체 가방 케이스를 사용하려면 #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 시체 가방과 케이블 타이를 보충할 수 있습니다.\n\n시체 가방 케이스는 사용한도가 있습니다. 당신은 케이스를 보고 얼마나 사용 할 수 있는지 확인할 수 있습니다.\n\n시체 가방 케이스는 스텔스 도중에 시체를 운반할 때 사용되는 여분의 가방과 시민 군중을 통제하는 데 사용되는 추가 케이블 타이가 포함되어 있습니다.",
 		["bm_equipment_bodybags_bag_desc_short"] = "시체 가방 케이스를 사용하려면 #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 시체 가방과 케이블 타이를 보충할 수 있습니다.\n\n시체 가방 케이스는 사용한도가 있습니다. 당신은 케이스를 보고 얼마나 사용 할 수 있는지 확인할 수 있습니다.",
@@ -5883,11 +5887,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bullseye--
 				["menu_prison_wife_beta_sc"] = "불스아이",
-				["menu_prison_wife_beta_desc_sc"] = "베이식: #{owned}#$basic##\n헤드샷 시 방탄력을 #{skill_color}#$skill_value_b1## 회복합니다. 재사용 대기 시간은 #{important_1}#$skill_value_b2##초입니다.\n\n치명적인 헤드샷으로 처치 시 재사용 대기 시간이 #{skill_color}#$skill_value_b3##초 감소합니다. $anarc_disable\n\n에이스: #{owned}#$pro##\n헤드샷 시 추가로 #{skill_color}#$skill_value_p1##의 방탄복을 회복합니다.\n\n재사용 대기 시간 감소량이 추가로 #{skill_color}#$skill_value_p2##초 증가합니다. $anarc_disable\n\n",
+				["menu_prison_wife_beta_desc_sc"] = "베이식: #{owned}#$basic##\n헤드샷 시 방탄력을 #{skill_color}#$skill_value_b1## 회복합니다. 재사용 대기 시간은 #{important_1}#$skill_value_b2##초입니다.\n\n치명적인 헤드샷으로 처치 시 재사용 대기 시간이 #{skill_color}#$skill_value_b3##초 감소합니다.\n\n에이스: #{owned}#$pro##\n헤드샷 시 추가로 #{skill_color}#$skill_value_p1##의 방탄복을 회복합니다.\n\n재사용 대기 시간 감소량이 추가로 #{skill_color}#$skill_value_p2##초 증가합니다. $anarc_disable\n\n",
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "아이언맨",
-				["menu_juggernaut_beta_desc_sc"] = "베이식: #{owned}#$basic##\n방탄복 회복 속도가 #{skill_color}#$skill_value_p1## 빨라집니다. $anarc_disable\n\n방패를 든 적에게 근접 공격 시, 압도적인 힘으로 해당 적을 휘청거리게 합니다.\n\n#{risk}#주의:## #{important_1}#타이탄 실드와 캡틴 윈터스에게는## #{risk}#휘청거림 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#개량형 복합 전술 조끼##를 착용할 수 있습니다.\n방탄복 회복 속도가 추기로 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n방패 적을 휘청거리게 하는 능력이 원거리 무기에도 적용되며, 무기의 총 피해량이 높을수록 확률이 증가합니다.",
+				["menu_juggernaut_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#개량형 복합 전술 조끼##를 착용할 수 있습니다.\n\n다른 모든 방탄복의 회복 속도가 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n방패를 든 적에게 근접 공격 시, 압도적인 힘으로 해당 적을 휘청거리게 합니다.\n\n#{risk}#주의:## #{important_1}#타이탄 실드와 캡틴 윈터스에게는## #{risk}#휘청거림 효과가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#개량형 복합 전술 조끼##가 방어력 #{skill_color}#$skill_value_p3##를 얻고, 이동 속도가 #{skill_color}#$skill_value_p4## 증가하며, 회복 속도가 #{skill_color}#$skill_value_p2## 더 빨라집니다.\n\n다른 모든 방탄복의 회복 속도가 #{skill_color}#$skill_value_p1## 더 빨라집니다.\n\n방패 적을 휘청거리게 하는 능력이 원거리 무기에도 적용되며, 무기의 총 피해량이 높을수록 확률이 증가합니다.$anarc_disable\n",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger
@@ -5935,7 +5939,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "타워 디펜스",
-				["menu_tower_defense_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이제 센트리 건에 연사 속도가 #{skill_color}#66%## 감소하지만, 적과 방패를 관통할 수 있는 #{skill_color}#철갑탄##을 사용하도록 설정할 수 있습니다.\n\n에이스: #{owned}#$pro##\n센트리 건의 최대 소지 개수가 #{skill_color}#$skill_value_p1##개로 증가합니다.\n\n센트리 건 배치 시 최대 탄약량의 #{skill_color}#25%##가 소모됩니다.",
+				["menu_tower_defense_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이제 센트리 건에 공격력이 기본 값의 #{skill_color}#300%##까지 증가시키고 #{skill_color}#적과 방탄복, 방패##를 관통할 수 있지만, 발사 속도가 #{skill_color}#75%## 감소하고 탄약 소모량을 기본 값의 #{important_1}#300%##로 증가시키는 #{skill_color}#철갑탄##을 사용하도록 설정할 수 있습니다.\n\n센트리 건 배치 시 최대 탄약량의 #{skill_color}#25%##가 소모됩니다.\n\n에이스: #{owned}#$pro##\n센트리 건의 최대 소지 개수가 #{skill_color}#$skill_value_p1##개로 증가합니다.\n\n센트리 건에 #{skill_color}#전면 방탄판이 장착됩니다.##",
 
 				--Bulletproof--
 				["menu_iron_man_sc"] = "방탄 갑옷",
@@ -6313,7 +6317,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck11_9_desc_sc"] = "스택 하나당 이동 속도가 ##$perk_value_1## 증가합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Open your mind--
-		["menu_deck13_1_desc_sc"] = "방탄량이 남아있는 동안, 적을 처치할 때마다 ##$perk_value_1##의 체력이 저장됩니다.\n\n방탄량이 완전히 고갈되어 재생되기 시작하면, 저장했던 체력량만큼의 체력을 회복합니다.\n\n저장할 수 있는 최대 체력량은 착용한 방탄복에 따라 달라지며, 중량 방탄복일수록 경량 방탄복보다 적은 체력을 저장할 수 있습니다.",
+		["menu_deck13_1_desc_sc"] = "방탄량이 남아있는 동안, 적을 처치할 때마다 체력이 저장되며, 최대 저장량은 ##$perk_value_1## 입니다.\n\n방탄량이 완전히 고갈되어 재생되기 시작하면, 저장했던 체력량만큼의 체력을 회복합니다.\n\n적을 처치했을 때 저장되는 체력량은 착용한 방탄복에 따라 달라지며, 중량 방탄복일수록 저장되는 체력량이 줄어듭니다.",
 		["menu_deck13_3_desc_sc"] = "적을 처치할 때 저장되는 체력량이 ##$perk_value_1## 증가합니다.\n\n회피율이 ##$perk_value_2## 증가합니다.",
 		["menu_deck13_5_desc_sc"] = "저장할 수 있는 최대 체력량이 ##$perk_value_1## 증가합니다.\n\n당신과 당신의 텀원에게 위협을 느낀 시민은 ##$perk_value_2##초간 위협을 오래 받습니다.",
 		["menu_deck13_7_desc_sc"] = "적을 처치할 때 저장되는 체력량이 ##$perk_value_1## 증가합니다.\n\n회피율이 추가로 ##$perk_value_2## 증가합니다.",
@@ -6333,7 +6337,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck15_5_desc_sc"] = "체력의 #{risk}#$perk_value_1##가 방탄량의 #{skill_color}#$perk_value_2##로 변환됩니다.\n\n당신과 당신의 텀원에게 위협을 느낀 시민은 ##$perk_value_3##초간 위협을 오래 받습니다.",
 		["menu_deck15_7_desc_sc"] = "체력의 #{risk}#$perk_value_1##가 방탄량의 #{skill_color}#$perk_value_2##로 변환됩니다.",
 		["menu_deck15_9_desc_sc"] = "#{skill_color}#피해를 가하면 방탄량을 재생하고## 방탄복이 두터울수록 방탄량이 더 많이 재생합니다.\n이 효과는 매 #{important_1}#$perk_value_1##초 마다 한 번만 발생합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
-		["menu_anarc_disable"] = "#{important_1}#(아나키스트로 인해 비활성화됨)##",
+		["menu_anarc_disable"] = "\n\n#{important_1}#참고: 아나키스트는 방어구 회복 속도를 향상시키거나 회복 대기 시간을 감소시키는 스킬을 비활성화합니다.##",
 
 		--Scarface--
 		["menu_deck17_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 방탄복이 있을때 #{skill_color}#$perk_value_2##초 동안 받거나 회피한 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복하고, 효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n주사기는 #{important_1}#$perk_value_3##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_4##초씩 단축됩니다.",
@@ -6499,7 +6503,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Yakuza
 			["menu_deck12_mrwi_desc"] = "체력이 낮을 수록 회피 미터가 더 빠르게 자동으로 채워집니다.\n\n체력이 ##100%## 미만일 경우, 회피 미터가 매초 최대 ##$perk_value_1##만큼 채워집니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 ##$perk_value_2## 빨라집니다.",
 			--Ex-Pres
-			["menu_deck13_mrwi_desc"] = "방탄량이 남아있는 동안, 적을 처치할 때마다 ##$perk_value_1##의 체력이 저장됩니다.\n\n방탄량이 완전히 고갈되어 재생되기 시작하면, 저장했던 체력량만큼의 체력을 회복합니다.\n\n저장할 수 있는 최대 체력량은 착용한 방탄복에 따라 달라지며, 중량 방탄복일수록 경량 방탄복보다 적은 체력을 저장할 수 있습니다.\n\n당신과 당신의 텀원에게 위협을 느낀 시민은 ##$perk_value_2##초간 위협을 오래 받습니다.",
+			["menu_deck13_mrwi_desc"] = "방탄량이 남아있는 동안, 적을 처치할 때마다 체력이 저장되며, 최대 저장량은 ##$perk_value_1## 입니다.\n\n방탄량이 완전히 고갈되어 재생되기 시작하면, 저장했던 체력량만큼의 체력을 회복합니다.\n\n적을 처치했을 때 저장되는 체력량은 착용한 방탄복에 따라 달라지며, 중량 방탄복일수록 저장되는 체력량이 줄어듭니다.\n\n당신과 당신의 텀원에게 위협을 느낀 시민은 ##$perk_value_2##초간 위협을 오래 받습니다.",
 			--Maniac
 			["menu_deck14_mrwi_desc"] = "당신이 가한 피해는 히스테리아 스택으로 변환됩니다. 최대 스택은 ##$perk_value_1## 입니다.\n\n히스테리아 스택:\n##$perk_value_3##의 히스테리아 스택당 받는 피해가 ##$perk_value_2## 감소합니다. 히스테리아 스택은 ##$perk_value_5##초마다 ##$perk_value_4##씩 감소합니다.\n\n당신과 당신의 텀원에게 위협을 느낀 시민은 ##$perk_value_6##초간 위협을 오래 받습니다.",
 			--Anarchist

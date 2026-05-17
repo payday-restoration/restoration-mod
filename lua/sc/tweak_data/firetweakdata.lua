@@ -79,36 +79,36 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		dot_damage = 1.5,
 		dot_length = 2.1,
 		dot_trigger_max_distance = false,
-		no_dot_stun = true,
+		 --no_dot_stun = true,
 		use_weapon_damage_falloff_chance = true,
-		falloff_chance_lerp = 0.4
+		falloff_chance_lerp = 0.25
 	}
 	fire_entries.ammo_dragons_breath = {
 		dot_trigger_chance = 1.0,
 		dot_damage = 3.0,
 		dot_length = 2.1,
 		dot_trigger_max_distance = false,
-		no_dot_stun = true,
+		 --no_dot_stun = true,
 		use_weapon_damage_falloff_chance = true,
-		falloff_chance_lerp = 0.4
+		falloff_chance_lerp = 0.25
 	}
 	fire_entries.ammo_dragons_breath_pump = {
 		dot_trigger_chance = 1.0,
 		dot_damage = 3.0,
 		dot_length = 2.1,
 		dot_trigger_max_distance = false,
-		no_dot_stun = true,
+		 --no_dot_stun = true,
 		use_weapon_damage_falloff_chance = true,
-		falloff_chance_lerp = 0.4
+		falloff_chance_lerp = 0.25
 	}
 	fire_entries.ammo_dragons_breath_heavy = {
 		dot_trigger_chance = 1.0,
 		dot_damage = 3.0,
 		dot_length = 2.1,
 		dot_trigger_max_distance = false,
-		no_dot_stun = true,
+		 --no_dot_stun = true,
 		use_weapon_damage_falloff_chance = true,
-		falloff_chance_lerp = 0.4
+		falloff_chance_lerp = 0.25
 	}
 
 	--MELEE

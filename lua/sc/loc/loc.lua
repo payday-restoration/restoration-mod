@@ -5890,19 +5890,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		--[[   ENFORCER   ]]--
 
 			--[[   SHOTGUNNER SUBTREE   ]]--
+				--Shotgun Impact
+				["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
+				["menu_shotgun_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns## fire #{skill_color}#$skill_value_p1## extra pellets.\n\n#{risk}#NOTE: Does not apply to shotguns using slugs or explosive rounds.##",
+				["menu_shotgun_impact_per_pellet_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nThe minimum damage of #{skill_color}#shotguns## is increased by #{skill_color}#$skill_value_p1.##\n\n#{risk}#NOTE: Does not apply to shotguns using slugs or explosive rounds.##",
+
 				--Underdog--
 				["menu_underdog_beta_sc"] = "Underdog",
-				["menu_underdog_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen three or more enemies are within #{skill_color}#18## meters of you, you receive a #{skill_color}#$skill_value_b1## damage bonus that lasts for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nWhen three or more enemies are within #{skill_color}#18## meters of you, you also receive a #{skill_color}#$skill_value_p1## damage reduction that lasts for #{skill_color}#$skill_value_p2## seconds.",
+				["menu_underdog_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen three or more enemies are within #{skill_color}#18## meters of you, you receive a #{skill_color}#$skill_value_b1## damage bonus that lasts for #{skill_color}#$skill_value_b2## seconds.\n\nYour #{skill_color}#Shotguns and flamethrowers## deal #{skill_color}#$skill_value_b3## more damage towards breaking objects, like a Bulldozer's armor and the shields of Titan Shields and Captain Winters.\n\n#{risk}#NOTE: The increased object damage does not apply to explosive damage.##\n\nACE: #{owned}#$pro##\nWhen three or more enemies are within #{skill_color}#18## meters of you, you also receive a #{skill_color}#$skill_value_p1## damage reduction that lasts for #{skill_color}#$skill_value_p2## seconds.\n\nYour #{skill_color}#Shotguns and flamethrowers## deal an additional #{skill_color}#$skill_value_p3## more damage towards breaking objects.\n ",
 
 				--Shotgun CQB
 				["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
 				["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim-down-sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#$skill_value_p1## faster.",
 				["menu_shotgun_cqb_per_pellet_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim-down-sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#$skill_value_p1## faster.",
-
-				--Shotgun Impact
-				["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
-				["menu_shotgun_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns## fire #{skill_color}#$skill_value_p1## extra pellets.\n\n#{risk}#NOTE: Does not apply to shotguns using slugs or explosive rounds.##",
-				["menu_shotgun_impact_per_pellet_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nThe minimum damage of #{skill_color}#shotguns## is increased by #{skill_color}#$skill_value_p1.##\n\n#{risk}#NOTE: Does not apply to shotguns using slugs or explosive rounds.##",
 
 				--Pigeon Shooting
 				["menu_far_away_beta_sc"] = "Pigeon Shooter",

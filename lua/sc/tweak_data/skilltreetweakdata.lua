@@ -521,13 +521,15 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {2, 1},
 					[1] = {
 						upgrades = {
-							"player_damage_multiplier_outnumbered"
+							"player_damage_multiplier_outnumbered",
+							"shotgun_object_damage_bonus_1"
 						},
 						cost = self.costs.default
 					},
 					[2] = {
 						upgrades = {
-							"player_damage_dampener_outnumbered"
+							"player_damage_dampener_outnumbered",
+							"shotgun_object_damage_bonus_2"
 						},
 						cost = self.costs.pro
 					}

@@ -510,7 +510,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.88,
 		0.76, -- 4 increments
 		0.745, --0.5 increments
-		0.64 -- 3.5 increments
+		0.61 -- 4.5 increments
 	}
 	self.values.player.body_armor.dodge = { --*increments of 0.1
 		0.15,
@@ -1034,6 +1034,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 				
 			--Underdog
+					self.values.shotgun.object_damage_bonus = {1.25, 1.75}
 				--Basic
 					self.values.temporary.dmg_multiplier_outnumbered = {{1.1, 7}}
 				--Ace
@@ -1042,8 +1043,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.skill_descs.shotgun_impact = {
 						skill_value_b1 = tostring(self.values.temporary.dmg_multiplier_outnumbered[1][1] % 1 * 100).."%", -- Damage buff when surrounded
 						skill_value_b2 = tostring(self.values.temporary.dmg_multiplier_outnumbered[1][2]), -- Duration of damage buff
+						skill_value_b3 = tostring(self.values.shotgun.object_damage_bonus[1] % 1 * 100) .. "%", -- shotgun object damage increase
 						skill_value_p1 = tostring((1 - self.values.temporary.dmg_dampener_outnumbered[1][1]) % 1 * 100).."%", -- DR when surrounded
-						skill_value_p2 = tostring(self.values.temporary.dmg_dampener_outnumbered[1][2]) -- Duration of DR
+						skill_value_p2 = tostring(self.values.temporary.dmg_dampener_outnumbered[1][2]), -- Duration of DR
+						skill_value_p3 = tostring((self.values.shotgun.object_damage_bonus[2] - self.values.shotgun.object_damage_bonus[1]) % 1 * 100) .. "%" -- shotgun object damage increase
 					}
 				
 			--Far Away / Pigeon Shooter
@@ -7426,6 +7429,24 @@ function UpgradesTweakData:_saw_definitions()
 end
 
 Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", function(self)
+	self.definitions.shotgun_object_damage_bonus_1 = {
+		name_id = "menu_shotgun_object_damage_bonus",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "object_damage_bonus",
+			category = "shotgun"
+		}
+	}
+	self.definitions.shotgun_object_damage_bonus_2 = {
+		name_id = "menu_shotgun_object_damage_bonus",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "object_damage_bonus",
+			category = "shotgun"
+		}
+	}
 	self.definitions.snp_steelsight_accuracy_inc_1 = {
 		name_id = "menu_snp_steelsight_accuracy_inc",
 		category = "feature",

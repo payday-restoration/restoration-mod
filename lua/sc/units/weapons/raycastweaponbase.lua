@@ -234,15 +234,24 @@ end
 
 local ids_volley = Idstring("volley")
 function RaycastWeaponBase:get_object_damage_mult(is_explosion)
+	local mult = 1
 	if is_explosion then
-		return self._object_damage_mult_exp
-	elseif self._fire_mode and self._fire_mode == ids_volley then
-		return self._object_damage_mult_volley
-	elseif self._rays and self._rays == 1 and self._object_damage_mult_single_ray then
-		return self._object_damage_mult_single_ray
+			return self._object_damage_mult_exp
 	else
-		return self._object_damage_mult
+		if self._fire_mode and self._fire_mode == ids_volley then
+			mult = self._object_damage_mult_volley
+		elseif self._rays and self._rays == 1 and self._object_damage_mult_single_ray then
+			mult = self._object_damage_mult_single_ray
+		else
+			mult = self._object_damage_mult
+		end
+
+		for _, category in ipairs(self:categories()) do
+			mult = mult * managers.player:upgrade_value(category, "object_damage_bonus", 1)
+		end
 	end
+
+	return mult
 end
 
 function RaycastWeaponBase:is_knock_down()

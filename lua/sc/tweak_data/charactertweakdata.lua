@@ -3342,7 +3342,14 @@ function CharacterTweakData:_init_spring(presets)
     }
 	self.spring.melee_push_multiplier = 3
 	self.spring.melee_force_crouch = true
-	self.spring.melee_concuss = true
+	self.spring.melee_concuss = {
+		mul = 1.2,
+		sound_duration = {
+			min = 4,
+			mul = 1.2,
+			additional = 4
+		}
+	}
 	self.spring.speech_prefix_p1 = "cpa"
 	self.spring.speech_prefix_p2 = nil
 	self.spring.speech_prefix_count = nil

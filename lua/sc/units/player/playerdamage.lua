@@ -920,17 +920,29 @@ function PlayerDamage:damage_melee(attack_data)
 	end
 
 	local force_crouch = attacker_char_tweak and attacker_char_tweak.melee_force_crouch
-	--[[
+	--[[ --doesn't get used, unsure what it might've been for but I'm leaving it in the event it was for something awaiting implementation
 	if alive(attacker_unit) and attacker_unit:base() then
 		is_shield = attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield") and true
 	end
 	--]]
 
-	--Apply slow debuff if melee has one.
-	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table].ewgf and alive(self._unit) and not self._unit:movement():current_state().driving then
-		local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].ewgf
+	--Apply slow debuff/concussion effect if melee has one.
+	local attacker_tweak = alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table]
+	if alive(self._unit) and not self._unit:movement():current_state().driving and attacker_tweak then
+		if attacker_tweak.ewgf then
+			local slow_data = attacker_tweak.ewgf
 
-		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
+			managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
+		end
+		if attacker_tweak.melee_concuss then
+			local concuss_data = attacker_tweak.melee_concuss
+			local concuss_mul = concuss_data and concuss_data.mul or 1
+			local concuss_sound = concuss_data and concuss_data.sound_duration
+			local concuss_sound_mul = concuss_sound and concuss_sound.mul or 1
+
+			managers.environment_controller:set_concussion_grenade(self._unit:movement():m_head_pos(), true, 0, 0, conc_mul, true, true)
+			self:on_concussion(concuss_sound_mul, false, concuss_sound)
+		end
 	end
 
 	--Apply changes to melee push camera effect, cap effects of it so even players with insane armor can tell they were meleed.

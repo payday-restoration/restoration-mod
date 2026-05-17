@@ -238,11 +238,11 @@ function RaycastWeaponBase:get_object_damage_mult(is_explosion)
 	if is_explosion then
 			return self._object_damage_mult_exp
 	else
-		if self._fire_mode and self._fire_mode == ids_volley then
+		if self._fire_mode and self._fire_mode == ids_volley and self._object_damage_mult_volley then
 			mult = self._object_damage_mult_volley
 		elseif self._rays and self._rays == 1 and self._object_damage_mult_single_ray then
 			mult = self._object_damage_mult_single_ray
-		else
+		elseif self._object_damage_mult then
 			mult = self._object_damage_mult
 		end
 

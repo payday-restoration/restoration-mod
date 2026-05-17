@@ -5797,8 +5797,9 @@ function BlackMarketGui:update_info_text()
 		end
 
 		if managers.player:has_category_upgrade("player", "armor_health_store_amount") then --Add Ex-Pres per-kill armor regen bonus.
-			local amount = managers.player:body_armor_value("skill_max_health_store", upgrade_level, 1)
-			local multiplier = managers.player:upgrade_value("player", "armor_max_health_store_multiplier", 1)
+			local amount = managers.player:body_armor_value("skill_health_store_on_kill", upgrade_level, 1)
+			amount = amount + managers.player:upgrade_value("player", "armor_health_store_amount", 0)
+			local multiplier = 1--managers.player:upgrade_value("player", "armor_max_health_store_multiplier", 1)
 			local regen_speed = format_round((managers.player:body_armor_value("skill_kill_change_regenerate_speed", upgrade_level, 1) - 1) * 100)
 			local description = (managers.player:has_category_upgrade("player", "kill_change_regenerate_speed") and
 								managers.localization:to_upper_text("bm_menu_armor_max_health_store_2", {health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier), regen_bonus = regen_speed})

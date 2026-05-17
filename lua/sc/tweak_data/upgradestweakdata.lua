@@ -2765,33 +2765,41 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Ex President
-	self.values.player.armor_health_store_amount = {
+	self.values.player.armor_health_store_amount = { --repurposed to be added to the base health stored on kill
+		0.05, --Card 1
+		0.10, --Card 3
+		0.15 --Card 5
+	}
+	self.values.player.body_armor.skill_health_store_on_kill = { --add Card 1's 0.5 for the base HP stored on kill
+		0.35,
 		0.3,
-		0.4,
-		0.5
+		0.25,
+		0.2,
+		0.15,
+		0.1,
+		0.05
+	}
+	self.values.player.body_armor.skill_max_health_store = { --Fixed to 40 HP for all armor sets
+		2.5,
+		2.5,
+		2.5,
+		2.5,
+		2.5,
+		2.5,
+		2.5
 	}
 	self.values.player.armor_max_health_store_multiplier = {
-		1.25
-	}
-
-	self.values.player.body_armor.skill_max_health_store = { --increments of 0.4
-		4.0,
-		3.6,
-		3.2,
-		2.8,
-		2.0, -- -0.8
-		1.6,
-		1.2
+		2.00 --increases max HP stroage to 50
 	}
 	self.kill_change_regenerate_speed_percentage = true
-	self.values.player.body_armor.skill_kill_change_regenerate_speed = { --increments of 0.02
-		1.16,
-		1.14,
-		1.12,
-		1.10,
-		1.08,
-		1.06,
-		1.04
+	self.values.player.body_armor.skill_kill_change_regenerate_speed = { --increments of 0.0125
+		1.125,
+		1.1125,
+		1.1,
+		1.0875,
+		1.075,
+		1.0625,
+		1.05
 	}
 
 	--I AM A BAD MOTHERFUCKA--
@@ -3645,14 +3653,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--(S)Ex-President
 	self.specialization_descs[13][1] = {
-		perk_value_1 = tostring(self.values.player.armor_health_store_amount[1] * 10) -- HP stored per kill
+		perk_value_1 = tostring(self.values.player.body_armor.skill_max_health_store[1] * 10) -- Max HP stored 
 	}
 	self.specialization_descs[13][3] = {
 		perk_value_1 = tostring((self.values.player.armor_health_store_amount[2] - self.values.player.armor_health_store_amount[1]) * 10), -- Additional HP stored per kill
 		perk_value_2 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[13][5] = {
-		perk_value_1 = tostring(self.values.player.armor_max_health_store_multiplier[1] % 1 * 100).."%", -- Max HP store increase
+		perk_value_1 = tostring(((self.values.player.body_armor.skill_max_health_store[1] * self.values.player.armor_max_health_store_multiplier[1]) - self.values.player.body_armor.skill_max_health_store[1]) * 10), -- Max HP stored increase
 		perk_value_2 = tostring(self.values.team.player.civ_intimidation_mul[1] % 1 * 100).."%" -- Civs intimidated longer
 	}
 	self.specialization_descs[13][7] = {
@@ -4090,7 +4098,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.multi_choice_specialization_descs[23][9][13] = { --Ex-President
-		perk_value_1 = tostring(self.values.player.armor_health_store_amount[1] * 10), -- HP stored per kill
+		perk_value_1 = tostring(self.values.player.body_armor.skill_max_health_store[1] * 10), -- Max HP stored 
 		perk_value_2 = tostring(self.values.team.player.civ_intimidation_mul[1] % 1 * 100).."%" -- Civs intimidated longer
 	}
 	self.multi_choice_specialization_descs[23][9][14] = { --Maniac

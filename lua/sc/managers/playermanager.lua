@@ -1810,7 +1810,11 @@ function PlayerManager:_trigger_expres(equipped_unit, variant, killed_unit)
 	local player_unit = self:player_unit()
 
 	if alive(player_unit) then
-		player_unit:character_damage():add_armor_stored_health(self:upgrade_value("player", "armor_health_store_amount", 0))
+		local armor_data = tweak_data.blackmarket.armors[managers.blackmarket:equipped_armor(true, true)]
+		local upgrade_level = armor_data and armor_data.upgrade_level or 1
+		local amount = self:body_armor_value("skill_health_store_on_kill", upgrade_level, 1)
+		amount = amount + self:upgrade_value("player", "armor_health_store_amount", 0)
+		player_unit:character_damage():add_armor_stored_health(amount)
 	end
 end
 

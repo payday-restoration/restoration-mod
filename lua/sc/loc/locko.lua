@@ -1539,7 +1539,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_weapon_ene_hs_mult_sub"] = "기본 적 헤드샷 배율 감소량이 ",
 		["bm_menu_weapon_ene_hs_mult_add"] = "기본 적 헤드샷 배율 증가량이 ",
 		["bm_menu_weapon_ene_hs_mult_end"] = "로 조정됩니다.",
-		["bm_menu_weapon_hs_mult_1"] = "캡틴을 제외한 적에게 헤드샷을 가하면 ",
+		["bm_menu_weapon_hs_mult_1"] = "캡틴과 보스를 제외한 적에게 헤드샷을 가하면 ",
 		["bm_menu_weapon_hs_mult_2"] = "의 추가 피해를 가합니다.",
 		["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#폭발성 슬러그탄이 장전되어 있습니다.## #{skill_color}#직격 시 총알 피해로 판정되는 피해를 50% 추가로 가합니다.##",
 		["bm_menu_weapon_movement_penalty_info"] = "이동 속도 감소폭: ",
@@ -2782,7 +2782,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_deagle_sc_desc"] = "이 반자동 마술 지팡이에 대해 무슨 말이 더 필요할까요? 그저 나쁜 놈들에게 손 흔들며 \"헤디쿠스 익스플로디쿠스!\"라고 외치면 되죠.\n\n#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가하고 적을 관통할 수 있습니다.##",
 				["bm_x_deagle_sc_desc"] = "전투에서 정말 엄청난 용기가 필요한 쌍손목 파괴자입니다.\n\n#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가하고 적을 관통할 수 있습니다.##",
 				--Kahn .357
-				["bm_korth_r8"] = "#{skill_color}#캡틴을 제외한 적에게 헤드샷을 가하면 100%의 추가 피해를 가합니다.##",
+				["bm_korth_r8"] = "#{skill_color}#캡틴과 보스를 제외한 적에게 헤드샷을 가하면 100%의 추가 피해를 가합니다.##",
 				--Matever 2006m
 				["bm_2006m_sc_desc"] = "이미 드물게 생산되는 희귀한 디자인이자, .38탄을 발사하는 멋진 방식입니다.\n\n#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가하고 적을 관통할 수 있습니다.##",
 				["bm_x_2006m_sc_desc"] = "이 중 두 자루를 다루는 실용적인 어려움은 순전히 엄청난 간지에 비하면 아무것도 아닙니다.\n\n#{skill_color}#무기 피해량의 50%가 방탄복을 관통하여 가하고 적을 관통할 수 있습니다.##",
@@ -2859,7 +2859,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_erma_sc_desc"] = "제2차 세계대전 당시 보병들이 널리 사용했던 꽤 안정적인 기관단총입니다만, 탄창을 그립으로 사용하지 마세요.",
 				--CUSTOM SMGs
 					["bm_w_geasy9_desc_grom"] = "전자동 기관단총. 뛰어난 기동성과 조작성을 자랑하며, 피해량, 사거리, 연사력은 중간 정도입니다.\n\n#{skill_color}#무기 피해량의 75%가 방탄복을 관통하여 가합니다.##",
-					["bm_wp_wpn_fps_smg_geasy9_ammo_grom_desc"] = "무기 피해량의 #{skill_color}#75%##가 방탄복을 관통하여 가하고 캡틴을 제외한 적에게 헤드샷을 가하면 #{skill_color}#25%##의 추가 피해를 가합니다.##",
+					["bm_wp_wpn_fps_smg_geasy9_ammo_grom_desc"] = "무기 피해량의 #{skill_color}#75%##가 방탄복을 관통하여 가하고 캡틴과 보스를 제외한 적에게 헤드샷을 가하면 #{skill_color}#25%##의 추가 피해를 가합니다.##",
 
 					["bm_w_r31_desc"] = "연사력은 느리지만 피해량은 높은 전자동 기관단총입니다. 조작성과 기동성이 좋죠.",
 					["bm_wp_wpn_fps_smg_r31_b_highcal"] = "단축 총열",
@@ -3210,7 +3210,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_awp_cs_dragon"] = "AWP | 용의 전설",
 				["bm_awp_cs"] = "AWP",
 				["bm_wp_upg_bazooka"] = "용의 비전설 전용 세트",
-				["bm_wp_upg_bazooka_desc"] = "위험할수록 큰 보상이 따르는 이 악명 높은 소총은 단방에 적을 제압하는 방식이 특징인 것으로 널리 알려져 있습니다.\n\n#{skill_color}#캡틴을 제외한 적에게 헤드샷을 가하면 #{skill_color}#50%##의 추가 피해를 가합니다.##\n#{skill_color}#타이탄 방패를 관통할 수 있습니다.##\n\n#{risk}#사격 시 잠시 동안 조준을 할 수 없습니다.##",
+				["bm_wp_upg_bazooka_desc"] = "위험할수록 큰 보상이 따르는 이 악명 높은 소총은 단방에 적을 제압하는 방식이 특징인 것으로 널리 알려져 있습니다.\n\n#{skill_color}#캡틴과 보스를 제외한 적에게 헤드샷을 가하면 #{skill_color}#50%##의 추가 피해를 가합니다.##\n#{skill_color}#타이탄 방패를 관통할 수 있습니다.##\n\n#{risk}#사격 시 잠시 동안 조준을 할 수 없습니다.##",
 				["bm_bazooka_sc_desc"] = "위험할수록 큰 보상이 따르는 이 악명 높은 소총은 단방에 적을 제압하는 방식이 특징인 것으로 널리 알려져 있습니다.\n\n#{skill_color}#다수의 적, 방탄복, 방패, 타이탄 방패, 그리고 얇은 벽을 관통할 수 있습니다.##\n\n#{risk}#사격 시 잠시동안 조준을 할 수 없습니다.##",
 				--WA2000
 				["bm_wa2000_sc_desc"] = "일류 암살자에게 적합한 저격소총인 이 명품 소총은 단 몇 백 정만 제작되었습니다.\n\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",
@@ -5842,19 +5842,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		--[[   ENFORCER   ]]--
 
 			--[[   SHOTGUNNER SUBTREE   ]]--
+				--Shotgun Impact
+				["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",
+				["menu_shotgun_impact_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##은 추가 펠릿 #{skill_color}#$skill_value_p1##발 발사합니다.\n\n#{risk}#주의: 슬러그탄이나 폭발탄을 사용하는 산탄총에는 적용되지 않습니다.##",
+				["menu_shotgun_impact_per_pellet_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##의 최소 피해량이 #{skill_color}#$skill_value_p1## 증가합니다.\n\n#{risk}#주의: 슬러그탄이나 폭발탄을 사용하는 산탄총에는 적용되지 않습니다.##",			
+			
 				--Underdog--
 				["menu_underdog_beta_sc"] = "언더독",
-				["menu_underdog_beta_desc_sc"] = "베이식: #{owned}#$basic##\n18미터 이내에 3명 이상의 적이 있을 때, #{skill_color}#$skill_value_b2##초 동안 #{skill_color}#$skill_value_b1##의 피해량 보너스를 받습니다.\n\n에이스: #{owned}#$pro##\n18미터 이내에 3명 이상의 적이 있을 때, #{skill_color}#$skill_value_p2##초 동안 #{skill_color}#$skill_value_p1## 피해 감소 효과를 받습니다.",
+				["menu_underdog_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#18##미터 이내에 3명 이상의 적이 있을 때, #{skill_color}#$skill_value_b2##초 동안 #{skill_color}#$skill_value_b1##의 피해량 보너스를 받습니다.\n\n#{skill_color}#산탄총과 화염방사기##가 불도저의 장갑판, 타이탄 실드와 캡틴 윈터스의 방패 같은 파괴 가능한 물체를 상대로 피해를 #{skill_color}#$skill_value_b3## 더 가합니다.\n\n#{risk}#참고: 폭발 피해에는 물체 피해량 증가가 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#18##미터 이내에 3명 이상의 적이 있을 때, #{skill_color}#$skill_value_p2##초 동안 #{skill_color}#$skill_value_p1## 피해 감소 효과를 받습니다.\n\n#{skill_color}#산탄총과 화염방사기##가 파괴 가능한 물체를 상대로 피해를 #{skill_color}#$skill_value_p3## 추가로 가합니다.",
 
 				--Shotgun CQB
 				["menu_shotgun_cqb_beta_sc"] = "산탄총 CQB",
 				["menu_shotgun_cqb_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 및 달리기 후 사격 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 재장전 속도가 #{skill_color}#$skill_value_p1## 빨라집니다.",
 				["menu_shotgun_cqb_per_pellet_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 및 달리기 후 사격 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 재장전 속도가 #{skill_color}#$skill_value_p1## 빨라집니다.",
-
-				--Shotgun Impact
-				["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",
-				["menu_shotgun_impact_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#$skill_value_b1## 상승합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##은 추가 펠릿 #{skill_color}#$skill_value_p1##발 발사합니다.\n\n#{risk}#주의: 슬러그탄이나 폭발탄을 사용하는 산탄총에는 적용되지 않습니다.##",
-				["menu_shotgun_impact_per_pellet_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##의 최소 피해량이 #{skill_color}#$skill_value_p1## 증가합니다.\n\n#{risk}#주의: 슬러그탄이나 폭발탄을 사용하는 산탄총에는 적용되지 않습니다.##",
 
 				--Pigeon Shooting
 				["menu_far_away_beta_sc"] = "비둘기 사수",
@@ -6368,7 +6368,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck20_9_desc_sc"] = "적을 처치할 때마다 기체 디스펜서의 재사용 대기 시간이 ##$perk_value_1##초씩 감소합니다.\n\n지정한 대상이 적을 처치할 때마다 기체 디스펜서의 대기 시간이 ##$perk_value_2##초씩 감소하며, 이 효과는 대상과 지정이 풀릴 때까지 적용됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Biker--
-		["menu_deck16_1_desc_sc"] = "쓰러지지 않는 상태에서 #{skill_color}#$perk_value_1##미터 반경의 오라를 발산합니다. 오라 안에 있는 당신과 팀원은 단결력 스택을 얻습니다.\n단결력은 오라 범위 내에 있는 팀원 수(본인 포함)의 #{skill_color}#$perk_value_2 배에 해당하는 목표값으로 도달하며##, 목표값보다 낮으면 증가하고 높으면 감소합니다. 차이가 클수록 조정 속도가 빨라집니다.\n팀원은 피해를 #{skill_color}#$perk_value_4##씩 입을 때마다 단결력 #{important_1}#$perk_value_3## 스택씩 감소합니다. (체력 피해의 경우 두 배로 감소).\n\n#{risk}#참고: 여러 바이커의 오라가 겹치는 경우, 팀원은 가장 높은 목표값을 가진 쪽을 사용합니다. 또한 여러 바이커 특성 덱이 있어도 단결력 증가율은 중첩되지 않습니다. 카드 효과는 중첩되지 않지만, 모든 상황에서 얻는 단결력은 선택된 모든 효과에 적용됩니다.##",
+		["menu_deck16_1_desc_sc"] = "쓰러지지 않는 상태에서 #{skill_color}#$perk_value_1##미터 반경의 오라를 발산합니다. 오라 안에 있는 당신과 팀원은 단결력 스택을 얻습니다.\n단결력은 오라 범위 내에 있는 팀원 수(본인 포함)의 #{skill_color}#$perk_value_2 배에 해당하는 목표값으로 도달하며##, 목표값보다 낮으면 증가하고 높으면 감소합니다. 차이가 클수록 조정 속도가 빨라집니다.\n팀원은 피해를 #{skill_color}#$perk_value_4##씩 입을 때마다 단결력 #{important_1}#$perk_value_3## 스택씩 감소합니다. (체력 피해의 경우 두 배로 감소).\n\n해당 특성 덱에서 선택하는 카드는 단결력 특성이 어떤 효과를 부여할지 정합니다.\n\n#{risk}#참고: 여러 바이커의 오라가 겹치는 경우, 팀원은 가장 높은 목표값을 가진 쪽을 사용합니다. 또한 여러 바이커 특성 덱이 있어도 단결력 증가율은 중첩되지 않습니다. 카드 효과는 중첩되지 않지만, 모든 상황에서 얻는 단결력은 선택된 모든 효과에 적용됩니다.##",
 		["menu_deck16_1_short_sc"] = "팀원들이 단결력 스택을 획득할 수 있습니다. 팀원들의 단결력 스택은 서로 가까이 있을수록 증가하고, 멀어져 있거나 피해를 입을 경우 감소합니다. 단결력 스택은 선택한 카드에 따라 다양한 이점을 줍니다.",
 		["menu_deck16_1_1_sc"] = "다같이 뭉쳐!",
 		["menu_deck16_1_1_desc_sc"] = "팀원이 단결력 스택을 8개 얻을 때마다 팀원의 받는 치료량이 #{skill_color}#$perk_value_1## 증가합니다.",

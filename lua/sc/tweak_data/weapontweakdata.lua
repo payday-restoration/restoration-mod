@@ -5825,14 +5825,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fmg9.stats_modifiers = nil
 						self.fmg9.panic_suppression_chance = 0.05
 						self.fmg9.swap_speed_multiplier = 0.45
+						local empty_timer = 3.42
+						local not_empty_timer = 1.87
 						self.fmg9.timers = {
-							reload_empty = 3.42,
+							reload_empty = empty_timer,
 							reload_exit_empty = 0.85,
-							reload_not_empty = 1.87,
-							reload_exit_not_empty = 0.8,
+							reload_not_empty = not_empty_timer,
+							reload_exit_not_empty = 1,
 							unequip = 1.7,
 							equip = 1.4
 						}
+						if SystemFS:exists("assets/mod_overrides/New Wasp-DS Animations V2") then
+							self.fmg9.timers.reload_empty = 2.4
+							self.fmg9.timers.reload_exit_empty = 0.66
+							self.fmg9.reload_speed_multiplier = self.fmg9.timers.reload_empty / empty_timer
+							self.fmg9.timers.reload_not_empty = 1.6
+							self.fmg9.timers.reload_exit_not_empty = 0.5
+							self.fmg9.reload_not_empty_speed_multiplier = self.fmg9.timers.reload_not_empty / (self.fmg9.reload_speed_multiplier * not_empty_timer)				
+						end
 						self.fmg9.use_unequip_swap = true
 
 					--Beretta Auto (93R)

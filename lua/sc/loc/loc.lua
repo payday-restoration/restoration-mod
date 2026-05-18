@@ -1602,7 +1602,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_menu_weapon_ene_hs_mult_add"] = "Enemy headshot multipliers are increased to ",
 		["bm_menu_weapon_ene_hs_mult_end"] = " of their normal value.",
 		["bm_menu_weapon_hs_mult_1"] = "Headshots deal ",
-		["bm_menu_weapon_hs_mult_2"] = " more damage to non-captain enemies.",
+		["bm_menu_weapon_hs_mult_2"] = " more damage to non-captain/boss enemies.",
 		["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#Loaded with explosive slugs;## #{skill_color}#direct hits deal an additional 50% more damage that counts as bullet damage.##",
 		["bm_menu_weapon_movement_penalty_info"] = "Slows move speed by ",
 		["bm_menu_weapon_movement_bonus_info"] = "Raises move speed by ",
@@ -2831,7 +2831,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_deagle_sc_desc"] = "What more needs to be said about this semi automatic magic wand? Just wave it at the bad guys and shout \"Headicus Explodicus!\"\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				["bm_x_deagle_sc_desc"] = "Twin wrist wreckers that take a real nut to actually carry into battle.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				--Kahn .357
-				["bm_korth_r8"] = "#{skill_color}#Headshots deal 100% more damage to non-captain enemies.##",
+				["bm_korth_r8"] = "#{skill_color}#Headshots deal 100% more damage to non-captain/boss enemies.##",
 				--Matever 2006m
 				["bm_2006m_sc_desc"] = "A rare design of an already rare production run. A fancy way to send .38 down range.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				["bm_x_2006m_sc_desc"] = "The logistics of handling two of these is outweighed by the sheer badass factor.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
@@ -2908,7 +2908,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
 				--CUSTOM SMGs
 					["bm_w_geasy9_desc_grom"] = "Full-auto submachine gun. Great mobility and handling. Moderate damage, range, and rate of fire.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
-					["bm_wp_wpn_fps_smg_geasy9_ammo_grom_desc"] = "Deals #{skill_color}#75%## of this weapon's damage through body armor and headshots deal #{skill_color}#25%## more damage to non-captain enemies.##",
+					["bm_wp_wpn_fps_smg_geasy9_ammo_grom_desc"] = "Deals #{skill_color}#75%## of this weapon's damage through body armor and headshots deal #{skill_color}#25%## more damage to non-captain/boss enemies.##",
 
 					["bm_w_r31_desc"] = "Full-auto submachine gun. Very slow rate of fire with high damage. Good handling and mobility",
 					["bm_wp_wpn_fps_smg_r31_b_highcal"] = "Short Barrel",
@@ -3257,7 +3257,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_awp_cs_dragon"] = "AWP | Dragon Lore",
 				["bm_awp_cs"] = "AWP",
 				["bm_wp_upg_bazooka"] = "Dragon Lore-less Exclusive Set",
-				["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##\n\n#{risk}#Shooting temporarily knocks you out of aiming.##",
+				["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain/boss enemies.##\n#{skill_color}#Allows for piercing titan-shields.##\n\n#{risk}#Shooting temporarily knocks you out of aiming.##",
 				["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##\n\n#{risk}#Shooting temporarily knocks you out of aiming.##",
 				--WA2000
 				["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",

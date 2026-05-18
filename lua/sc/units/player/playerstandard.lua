@@ -2762,7 +2762,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			else
 				--funky ass fallback I should probably remove as I can only imagine it royally fucks the raycast order
 				--Should only occur if I improperly set up a melee weapon tho
-				log(tostring("This melee weapon [".. tostring(melee_entry) .. "] has a wack setup, tell DMC"))
+				log( "This melee weapon [".. tostring(melee_entry) .. "] has a wack setup, tell DMC" )
 				if not is_even then
 					collect_melee_hits(0)
 				end
@@ -2772,6 +2772,28 @@ function PlayerStandard:_update_melee_timers(t, input)
 				end
 			end
 
+			--Check to remove shield (object) hits if the Shield (enemy) is also in the attack 
+			local shield_parent_keys = {}
+			for _, hit_unit in ipairs(all_hits) do
+			    local unit = hit_unit.unit
+			    if unit:in_slot(8) and alive(unit:parent()) then
+			        for _, wielder_hit in ipairs(all_hits) do
+			            if wielder_hit.u_key == unit:parent():key() then
+			                shield_parent_keys[unit:key()] = true
+			                break
+			            end
+			        end
+			    end
+			end
+			if next(shield_parent_keys) then
+				local hit_filter = {}
+				for _, hit_unit in ipairs(all_hits) do
+					if not shield_parent_keys[hit_unit.u_key] then
+						hit_filter[#hit_filter + 1] = hit_unit
+					end
+				end
+				all_hits = hit_filter
+			end
 
 			local kills = 0
 			local enemies_hit = 0
@@ -2798,6 +2820,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 						local next_hit = hit_unit.col_rays[i]
 						local prev_dmg = best_hit.body and best_hit.body:extension() and best_hit.body:extension().damage
 						local new_dmg = next_hit.body and next_hit.body:extension() and next_hit.body:extension().damage
+
 						--priotitize parts on prop units that can break on a "first come, first serve" basis if multiple raycasts from a swing cover it
 						--Won't resolve issues of having two breakables on a single unit in a row if the 1st hit is already "broken" but still registers damage 
 						--i.e. on a car where the whole thing is considered one unit, the swing path hitting the windshield and then the driver-side window
@@ -2840,15 +2863,17 @@ function PlayerStandard:_update_melee_timers(t, input)
 				end
 			end
 
+			--[[
 			if #all_hits ~= 0 and special_weapon == "taser" and not max_charge_offset then
 				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
+			--]]
 				if hit_body then
 					self:_play_melee_sound(melee_entry, "hit_body")
 				elseif hit_gen then
 					self:_play_melee_sound(melee_entry, "hit_gen")
 				end
-			end
+			--end
 		else
 			self:_do_melee_damage(t, nil, self._state_data.melee_hit_ray)
 		end
@@ -4254,8 +4279,10 @@ Hooks:OverrideFunction(PlayerStandard, "_do_melee_damage", function(self, t, bay
 					self._unit:sound():play("fairbairn_hit_body", nil, false)
 				elseif alt_sound and alt_sound[1] then
 					self._unit:sound():play(alt_sound[1], nil, false)
+				--[[
 				elseif special_weapon == "taser" and charge_lerp_value < 0.99 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 					self._unit:sound():play("melee_hit_gen", nil, false)
+				--]]
 				else
 					self:_play_melee_sound(melee_entry, "hit_body")
 				end
@@ -4278,8 +4305,10 @@ Hooks:OverrideFunction(PlayerStandard, "_do_melee_damage", function(self, t, bay
 					self._unit:sound():play("knife_hit_gen", nil, false)
 				elseif alt_sound and alt_sound[2] then
 					self._unit:sound():play(alt_sound[2], nil, false)
+				--[[
 				elseif special_weapon == "taser" and charge_lerp_value < 0.99 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 					self._unit:sound():play("melee_hit_gen", nil, false)
+				--]]
 				else
 						self:_play_melee_sound(melee_entry, "hit_gen")
 					
@@ -4338,7 +4367,7 @@ Hooks:OverrideFunction(PlayerStandard, "_do_melee_damage", function(self, t, bay
 				local exp_range = melee_weapon.explosion_range or 500
 				local effect_params = {
 					sound_event = "grenade_explode",
-    				effect = "effects/payday2/particles/explosions/grenade_explosion",
+					effect = "effects/payday2/particles/explosions/grenade_explosion",
 					sound_muffle_effect = true,
 					feedback_range = exp_range * 2,
 					camera_shake_max_mul = 2
@@ -4361,7 +4390,7 @@ Hooks:OverrideFunction(PlayerStandard, "_do_melee_damage", function(self, t, bay
 				self._unit:character_damage()._check_berserker_done = false
 				self._unit:character_damage()._can_survive_one_hit = false
 				managers.explosion:give_local_player_dmg(col_ray.position, exp_range * 2, exp_dmg, self._unit, curve_pow, true)
-    			managers.player:set_player_state("fatal")
+				managers.player:set_player_state("fatal")
 			elseif special_weapon == "mjolnir" then
 				local curve_pow = melee_weapon.explosion_curve_pow or 0.5
 				local exp_dmg = melee_weapon.explosion_damage or 60
@@ -4481,9 +4510,12 @@ Hooks:OverrideFunction(PlayerStandard, "_do_melee_damage", function(self, t, bay
 						end
 					end
 				elseif not hit_shield then
+					--[[
 					if special_weapon == "taser" then
 						action_data.variant = "taser_tased"
 					elseif special_weapon == "panic" then
+					--]]
+					if special_weapon == "panic" then
 						managers.player:spread_psycho_knife_panic()
 					end
 				end
@@ -4614,17 +4646,29 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 			Application:error("[PlayerStandard:_check_melee_special_damage] No '" .. tostring(data.damage_class) .. "' class found for dot tweak with name '" .. tostring(melee_tweak.dot_data_name) .. "'.")
 		end
 	end
-
+	local allow_tase = true
+	local tase_strength = melee_tweak.tase_data and melee_tweak.tase_data.tase_strength 
 	if melee_tweak.tase_data and char_damage.damage_tase then
-		local action_data = {
-			variant = melee_tweak.tase_data.tase_strength,
-			damage = 0,
-			attacker_unit = self._unit,
-			col_ray = col_ray
-		}
+		if melee_tweak.special_weapon == "taser" then
+			if charge_lerp_value < 0.99 then
+				if char_base:has_tag("special") then
+					allow_tase = false
+				end
+			elseif not char_base:has_tag("special") and melee_tweak.tase_data and melee_tweak.tase_data.tase_strength_charged then
+				tase_strength = melee_tweak.tase_data.tase_strength_charged
+			end
+		end
+		if allow_tase then
+			local action_data = {
+				variant = tase_strength or "light",
+				damage = 0,
+				attacker_unit = self._unit,
+				col_ray = col_ray
+			}
 
-		if char_tweak and char_tweak.can_be_tased ~= false then
-			char_damage:damage_tase(action_data)
+			if char_tweak and char_tweak.can_be_tased ~= false then
+				char_damage:damage_tase(action_data)
+			end
 		end
 	end
 
@@ -4932,7 +4976,7 @@ function PlayerStandard:_start_action_reload(t)
 		if weapon_base and weapon_base.DMM_can_drop_magazine and weapon_base:DMM_can_drop_magazine() then
 			weapon_base:drop_magazine_object()
 		end
- 	end
+	end
 end
 
 function PlayerStandard:_get_swap_speed_multiplier(use_alt)
@@ -5605,7 +5649,7 @@ if AdvMov and AdvMov.settings then --Everything here was originally from Solo Qu
 		end
 	end
 
- 	-- DON'T FORGET TO CHANGE THE INFMENU TO ADVMOV WHEN COPYING CHANGES OVER DOOFUS
+	-- DON'T FORGET TO CHANGE THE INFMENU TO ADVMOV WHEN COPYING CHANGES OVER DOOFUS
 	function PlayerStandard:_do_movement_melee_damage(forward_only, strongkick, sprintkick)
 		local AdvMovMelee = restoration.Options:GetValue("AdVMovResOpt/AdvMovMelee") or 1
 		if not self._unit:movement():is_above_stamina_threshold() or (AdvMovMelee == 2 and managers.groupai:state():whisper_mode()) or AdvMovMelee == 3 and not self._is_dashing then

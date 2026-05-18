@@ -4915,6 +4915,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--woo free tasers--
 		self.melee_weapons.zeus.tase_data = nil
 		self.melee_weapons.zeus.special_weapon = "taser"
+		self.melee_weapons.zeus.tase_data = {
+			tase_strength = "light",
+			tase_strength_charged = "heavy",
+		}
 		self.melee_weapons.zeus.info_id = "bm_melee_zeus_info"
 		self.melee_weapons.zeus.stats.cleave = 1
 		self.melee_weapons.zeus.stats.raycasts = 8
@@ -4926,11 +4930,15 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.zeus.stats.charge_time = 0.6
 		self.melee_weapons.zeus.stats.range = 155
 		self.melee_weapons.zeus.stats.concealment = 29
-		self.melee_weapons.zeus.stats.speed_mult = 1.1
+		self.melee_weapons.zeus.stats.speed_mult = 0.9
 			--RIP Buzzer meta--
 			self.melee_weapons.taser.info_id = "bm_melee_taser_info"
 			self.melee_weapons.taser.tase_data = nil
 			self.melee_weapons.taser.special_weapon = "taser"
+			self.melee_weapons.taser.tase_data = {
+				tase_strength = "light",
+				tase_strength_charged = "heavy",
+			}
 			self.melee_weapons.taser.stats.cleave = 1
 			self.melee_weapons.taser.stats.raycasts = 8
 			self.melee_weapons.taser.stats.min_damage = 1.2
@@ -4940,11 +4948,15 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.taser.stats.charge_time = 0.8
 			self.melee_weapons.taser.stats.range = 165
 			self.melee_weapons.taser.stats.concealment = 29
-			self.melee_weapons.taser.stats.speed_mult = 1.1
+			self.melee_weapons.taser.stats.speed_mult = 0.9
 			--Zap Stick--
 			self.melee_weapons.funder_strike.info_id = "bm_melee_taser_info"
 			self.melee_weapons.funder_strike.tase_data = nil
 			self.melee_weapons.funder_strike.special_weapon = "taser"
+			self.melee_weapons.funder_strike.tase_data = {
+				tase_strength = "heavy",
+				tase_strength_charged = "heavy",
+			}
 			self.melee_weapons.funder_strike.stats.cleave = 1
 			self.melee_weapons.funder_strike.stats.raycasts = 10
 			self.melee_weapons.funder_strike.stats.min_damage = 2.4
@@ -4954,7 +4966,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.funder_strike.stats.charge_time = 1.5
 			self.melee_weapons.funder_strike.stats.range = 170
 			self.melee_weapons.funder_strike.stats.concealment = 28
-			self.melee_weapons.funder_strike.stats.speed_mult = 1.0
+			self.melee_weapons.funder_strike.stats.speed_mult = 0.8
 
 		--Money money money--
 		self.melee_weapons.moneybundle.info_id = "bm_melee_moneybundle_info"
@@ -5299,6 +5311,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.barbedwire.stats.range = 200
 		self.melee_weapons.barbedwire.stats.concealment = 25
 		self.melee_weapons.barbedwire.stats.speed_mult = 1.05
+		self.melee_weapons.barbedwire.headshot_damage_multiplier = 2
+		self.melee_weapons.barbedwire.charge_bonus_start = 0.99
 		--It has a crowbar we can't use--
 		self.melee_weapons.dingdong.info_id = "bm_melee_dingdong_info"
 		self.melee_weapons.dingdong.stats.cleave = 3
@@ -6101,7 +6115,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.morning.stats.charge_time = 2.0
 		self.melee_weapons.morning.stats.range = 180
 		self.melee_weapons.morning.stats.concealment = 25
-		self.melee_weapons.morning.stats.speed_mult = 1.01
+		self.melee_weapons.morning.stats.speed_mult = 0.95
 
 		--FREEEEEEEDOM--
 		self.melee_weapons.freedom.info_id = "bm_melee_freedom_info"
@@ -6905,6 +6919,8 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.invincible.stats.raycasts_charge = 25
 		self.melee_weapons.invincible.dot_data_name = "melee_bleed"
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
+		self.melee_weapons.invincible.headshot_damage_multiplier = nil
+		self.melee_weapons.invincible.charge_bonus_start = nil
 	end
 	if self.melee_weapons.astranger then --Rikerus's L'Etranger (Pitchfork)
 		self.melee_weapons.astranger.info_id = "bm_melee_number_3_info"
@@ -7037,6 +7053,8 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.predator_wristblades.dot_data_name = "melee_bleed"
 		self.melee_weapons.predator_wristblades.stats = deep_clone(self.melee_weapons.barbedwire.stats)
 		self.melee_weapons.predator_wristblades.anim_speed_mult = 0.67
+		self.melee_weapons.predator_wristblades.headshot_damage_multiplier = nil
+		self.melee_weapons.predator_wristblades.charge_bonus_start = nil
 	end
 
 	if self.melee_weapons.revenant_heirloom then --PlayBONK, Masavik and Ommfe's Revenant Heirloom Scythe

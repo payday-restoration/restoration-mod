@@ -1666,10 +1666,9 @@ function CopDamage:damage_melee(attack_data)
 	local is_player = attack_data.attacker_unit == managers.player:player_unit() and true
 	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_MELEE
 	
-	if hit_body and impenetrable_armour[hit_body:name():key()] then -- nothing
-		return
+	if hit_body and impenetrable_armour[hit_body:name():key()] then
+		--return
 	end
-
 
 	if is_player then
 		if self._char_tweak.priority_shout then

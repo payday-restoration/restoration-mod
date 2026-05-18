@@ -1,5 +1,5 @@
 SentryGunWeapon._AP_ROUNDS_FIRE_RATE = 4 --Multiplies the delay between shots while in AP mode.
-SentryGunWeapon._AP_ROUNDS_DAMAGE_MULTIPLIER = 3
+SentryGunWeapon._AP_ROUNDS_DAMAGE_MULTIPLIER = 3 -- 30 * 3 = 90
 
 
 --attempt at an autofire sound fix for sentries

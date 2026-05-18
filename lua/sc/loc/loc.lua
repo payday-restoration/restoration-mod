@@ -1759,7 +1759,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_melee_brass_knuckles_info"] = "Knuckle style weapons have been used all over the world for hundreds of years.\nBrass knuckles concentrate the punch's force by directing it towards a harder and smaller area, increasing the chances of tissue disruption. Hit hard enough and you'll even fracture some bones.",
 
 		--Lucille
-		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
+		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.\n\nDeals #{skill_color}#100%## more headshot damage when fully charged.",
 			["bm_melee_bleed_info"] = "Deals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
 			["bm_melee_inner_child_info"] = "Get in touch with your inner child.\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
 
@@ -1855,7 +1855,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--Slot Lever
 		["bm_melee_slot_lever_info"] = "GIMME A JACKPOT!\n\nHas a #{skill_color}#5%## chance to deal #{skill_color}#10x## times the damage and knockdown.",
 		--ZAP ZAP MOTHERFUCKER
-		["bm_melee_taser_info"] = "Exact sweet, electifiying revenge againsts those smug Tasers.\n\nElectrocutes and interrupts targets on touch when fully charged.",
+		["bm_melee_taser_info"] = "Exact sweet, electifiying revenge againsts those smug Tasers.\n\nElectrocutes and interrupts targets on touch.\n\nFully charged attacks are capable of electrocuting most special and elite enemies.",
 
 		--Kunai
 		["bm_melee_cqc_info"] = "Even the mightiest of opponents will fall when touched a single time by this poison dipped Kunai Knife.\n\nContains an exotic poison that stuns enemies and deals #{stats_positive}#120## poison damage over #{skill_color}#4## seconds.",
@@ -1934,7 +1934,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_melee_ballistic_info"] = "Jimmy isn't the kind of guy that thinks less is more, which is why he has a twin set of Specialist knives.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.",
 
 		--ALSO ZAP ZAP MOTHERFUCKER
-		["bm_melee_zeus_info"] = "A pair of homebrew electric knuckle dusters that electrocutes and interrupts targets on touch when fully charged.",
+		["bm_melee_zeus_info"] = "A pair of homebrew electric knuckle dusters that electrocutes and interrupts targets on touch.\n\nFully charged attacks are capable of electrocuting most special and elite enemies.",
 
 		--Wing Butterfly Knife
 		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals #{skill_color}#400%## damage when attacking enemies from behind.",

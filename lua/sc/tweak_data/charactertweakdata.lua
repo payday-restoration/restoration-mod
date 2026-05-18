@@ -647,7 +647,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.player_health_scaling_mul = 1.25		
 	self.medic_summers.headshot_dmg_mul = 1.5
 	self.medic_summers.damage_resistance = presets.damage_resistance.none
-	self.medic_summers.tags = {"custom", "special"}
+	self.medic_summers.tags = {"custom", "special", "captain"}
 	self.medic_summers.ignore_medic_revive_animation = false
 	self.medic_summers.surrender = nil
 	self.medic_summers.flammable = false
@@ -3404,7 +3404,7 @@ end
 
 function CharacterTweakData:_init_summers(presets)	
 	self.summers = deep_clone(presets.base)
-	self.summers.tags = {"law", "custom", "special", "summers"}
+	self.summers.tags = {"law", "custom", "special", "summers", "captain"}
 	self.summers.experience = {}
 	self.summers.weapon = deep_clone(presets.weapon.normal)
 	self.summers.melee_weapon_dmg_multiplier = 1
@@ -3472,7 +3472,7 @@ end
 
 function CharacterTweakData:_init_autumn(presets)
 	self.autumn = deep_clone(presets.base)
-	self.autumn.tags = {"law", "custom", "special", "customvo", "autumn"}
+	self.autumn.tags = {"law", "custom", "special", "customvo", "autumn", "captain"}
 	self.autumn.experience = {}
 	self.autumn.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.autumn.weapon = deep_clone(presets.weapon.normal)
@@ -3650,7 +3650,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.player_health_scaling_mul = 1.25	
 	self.taser_summers.headshot_dmg_mul = 1.5
 	self.taser_summers.damage_resistance = presets.damage_resistance.none
-	self.taser_summers.tags = {"female_enemy","taser", "custom", "special"}
+	self.taser_summers.tags = {"female_enemy","taser", "custom", "special", "captain"}
 	self.taser_summers.ignore_medic_revive_animation = false
 	self.taser_summers.flammable = false
 	self.taser_summers.use_animation_on_fire_damage = false
@@ -3829,7 +3829,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.player_health_scaling_mul = 1.25	
 	self.boom_summers.headshot_dmg_mul = 1.5
 	self.boom_summers.damage_resistance = presets.damage_resistance.none
-	self.boom_summers.tags = {"female_enemy", "custom", "special"}
+	self.boom_summers.tags = {"female_enemy", "custom", "special", "captain"}
 	self.boom_summers.ignore_medic_revive_animation = false
 	self.boom_summers.can_deploy_tear_gas = false
 	self.boom_summers.can_throw_molotov = true

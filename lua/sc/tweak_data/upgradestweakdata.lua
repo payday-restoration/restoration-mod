@@ -119,7 +119,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"road",
 					"legacy",
 					"x_legacy",
-					"fmg9"
+					"fmg9",
+					"flun"
 				}
 			},
 		l18 = {
@@ -205,7 +206,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"ching",
 					"erma",
 					"sap",
-					"funder_strike"
+					"funder_strike",
+					"bonk",
+					"bonk2"
 				}
 			},
 		l27 = {
@@ -1172,7 +1175,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.shield_knock = {true}
 				--Ace				
 					self.values.player.level_7_armor_regen_timer_mult = {0.8, 0.8}
-					self.values.player.level_7_armor_deflection_addend = {0.1}
+					self.values.player.level_7_armor_deflection_addend = {0.05}
 					self.values.player.level_7_armor_movement_speed_addend = {0.06}
 					self.values.player.bullet_shield_knock = {true}
 					self.values.player.shield_knock_bullet = {

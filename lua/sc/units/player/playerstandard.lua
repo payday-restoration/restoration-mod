@@ -4623,7 +4623,7 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 	local char_tweak = char_base and char_base.char_tweak and char_base:char_tweak()
 	local char_damage = character_unit:character_damage()
 	local fire_on_charge = melee_tweak and melee_tweak.stats.charge_bonus_fire
-	local charge_lerp_value = defense_data.charge_lerp_value
+	local charge_lerp_value = defense_data.charge_lerp_value or 0
 	local charge_fire_check = (fire_on_charge and charge_lerp_value and charge_lerp_value > tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start) or (not fire_on_charge and true)
 
 	if melee_tweak.random_special_effects then

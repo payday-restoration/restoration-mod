@@ -645,6 +645,9 @@ function CopMovement:set_cloaked(state, sync)
 	if not self._tweak_data.can_cloak or self._cloaked == state then
 		return
 	end
+	if self._ext_damage and self._ext_damage.is_tased then
+		return
+	end
 
 	local sequence_name = state and "cloak_engaged" or "decloak"
 	local weapon_unit = self._unit:inventory():equipped_unit()

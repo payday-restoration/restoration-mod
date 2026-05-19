@@ -3052,7 +3052,9 @@ function CopDamage:damage_tase(attack_data)
 		self:_apply_damage_to_health(damage)
 	end
 
-	if result.type == "taser_tased" and (attack_data.forced or not self._unit:anim_data() or not self._unit:anim_data().act) then
+	if (result.type == "taser_tased" or result.type == "heavy_hurt") and (attack_data.forced or not self._unit:anim_data() or not self._unit:anim_data().act) then
+		self.is_tased = true
+
 		if self._tase_effect then
 			World:effect_manager():fade_kill(self._tase_effect)
 		end

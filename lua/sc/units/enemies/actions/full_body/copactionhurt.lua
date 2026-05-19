@@ -641,7 +641,7 @@ function CopActionHurt:init(action_desc, common_data)
 
 		if Network:is_server() then
 			local radius, filter_name = nil
-			local default_radius = managers.groupai:state():whisper_mode() and tweak_data.upgrades.cop_hurt_alert_radius_whisper or tweak_data.upgrades.cop_hurt_alert_radius
+			local default_radius = managers.groupai:state():whisper_mode() and tweak_data.upgrades.enemy_hurt_alert_radius_whisper or tweak_data.upgrades.enemy_hurt_alert_radius
 
 			if action_desc.attacker_unit and alive(action_desc.attacker_unit) and action_desc.attacker_unit:base().upgrade_value then
 				radius = action_desc.attacker_unit:base():upgrade_value("player", "silent_kill") or default_radius
@@ -853,6 +853,67 @@ function CopActionHurt:_upd_bleedout(t)
 
 			self._machine:allow_modifier(self._head_modifier_name)
 			self._machine:allow_modifier(self._arm_modifier_name)
+		end
+	end
+end
+
+function CopActionHurt:on_exit()
+	if self._shooting_hurt then
+		self._shooting_hurt = false
+
+		if self._weapon_unit then
+			self._weapon_unit:base():stop_autofire()
+		end
+	end
+
+	if self._delayed_shooting_hurt_clbk_id then
+		managers.enemy:remove_delayed_clbk(self._delayed_shooting_hurt_clbk_id)
+
+		self._delayed_shooting_hurt_clbk_id = nil
+	end
+
+	if self._friendly_fire then
+		self._unit:movement():set_friendly_fire(false)
+
+		self._friendly_fire = nil
+	end
+
+	if self._modifier_on then
+		self._machine:allow_modifier(self._head_modifier_name)
+		self._machine:allow_modifier(self._arm_modifier_name)
+	end
+
+	if self._expired then
+		CopActionWalk._chk_correct_pose(self)
+	end
+
+	if not self._expired and Network:is_server() then
+		if self._hurt_type == "bleedout" or self._hurt_type == "fatal" or self._variant == "tase" then
+			self._unit:network():send("action_hurt_end")
+		end
+
+		if self._hurt_type == "bleedout" or self._hurt_type == "fatal" then
+			self._ext_inventory:equip_selection(2, true)
+		end
+	end
+
+	if self._hurt_type == "fatal" or self._variant == "tase" then
+		managers.hud:set_mugshot_normal(self._unit:unit_data().mugshot_id)
+	end
+
+	local char_dmg_ext = self._unit:character_damage()
+
+	if char_dmg_ext then
+		if char_dmg_ext.is_tased and char_dmg_ext.on_tase_ended then --add tase end conditions
+			char_dmg_ext:on_tase_ended()
+		end
+
+		if self._hurt_type == "fire_hurt" and char_dmg_ext.set_last_time_unit_got_fire_damage then
+			char_dmg_ext:set_last_time_unit_got_fire_damage(TimerManager:game():time())
+		end
+
+		if char_dmg_ext.call_listener then
+			char_dmg_ext:call_listener("on_exit_hurt")
 		end
 	end
 end

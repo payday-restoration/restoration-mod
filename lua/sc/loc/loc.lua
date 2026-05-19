@@ -1855,7 +1855,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--Slot Lever
 		["bm_melee_slot_lever_info"] = "GIMME A JACKPOT!\n\nHas a #{skill_color}#5%## chance to deal #{skill_color}#10x## times the damage and knockdown.",
 		--ZAP ZAP MOTHERFUCKER
-		["bm_melee_taser_info"] = "Exact sweet, electifiying revenge againsts those smug Tasers.\n\nElectrocutes and interrupts targets on touch.\n\nFully charged attacks are capable of electrocuting most special and elite enemies.",
+		["bm_melee_taser_info"] = "This is the one you have been waiting for. Exact sweet, electrifying revenge against those smug tasers. Eat it, lightning bolt!\n\n#{skill_color}#Electrocutes on impact,## stunning most enemies; a fully charged strike is needed to stun special and elite enemies.\n#{important_1}#Titan-Shields, Titan-Tasers, Titan-Bulldozers and Captains are immune to its stunning effects.##",
+		--ALSO ZAP ZAP MOTHERFUCKER
+		["bm_melee_zeus_info"] = "This piece of melee equipment might look unstable. But relax, it was made by some kid on the internet, so it’s perfectly safe! Homebrewed and experimental electricity in a gloriously stunning way.\n\n#{skill_color}#Electrocutes on impact,## stunning most enemies; a fully charged strike is needed to stun special and elite enemies.\n#{important_1}#Titan-Shields, Titan-Tasers, Titan-Bulldozers and Captains are immune to its stunning effects.##",
+		--ALSO ALSO ZAP ZAP MOTHERFUCKER
+		["bm_melee_funder_info"] = "Zappy stick\n\n#{skill_color}#Electrocutes on impact,## stunning most enemies; a fully charged strike is needed to stun special and elite enemies.\n#{important_1}#Titan-Shields, Titan-Tasers, Titan-Bulldozers and Captains are immune to its stunning effects.##",
 
 		--Kunai
 		["bm_melee_cqc_info"] = "Even the mightiest of opponents will fall when touched a single time by this poison dipped Kunai Knife.\n\nContains an exotic poison that stuns enemies and deals #{stats_positive}#120## poison damage over #{skill_color}#4## seconds.",
@@ -1932,9 +1936,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 
 		--Ballistic Knives
 		["bm_melee_ballistic_info"] = "Jimmy isn't the kind of guy that thinks less is more, which is why he has a twin set of Specialist knives.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.",
-
-		--ALSO ZAP ZAP MOTHERFUCKER
-		["bm_melee_zeus_info"] = "A pair of homebrew electric knuckle dusters that electrocutes and interrupts targets on touch.\n\nFully charged attacks are capable of electrocuting most special and elite enemies.",
 
 		--Wing Butterfly Knife
 		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals #{skill_color}#400%## damage when attacking enemies from behind.",

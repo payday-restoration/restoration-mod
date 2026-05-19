@@ -1893,6 +1893,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		"dart_daze",
 		"dart_revive",
 		"laser_watch",
+		"flun_flare",
 		--Resmod projectiles
 		"bravo_frag",
 		"cluster_fuck",
@@ -4006,6 +4007,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--made into an alternative directional set to "melee_great" that's suited for wider grips though it lacks the stab anim
 		melee_anim = {
 			'hockey','barbedwire','baseballbat','stick',
+			'bonk','bonk2',
 			'piggy_hammer','dingdong','alien_maul',
 			'beardy','fireaxe'
 		}
@@ -4036,7 +4038,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		end
 			--melee_beardy directional attacks without needing charge
 			melee_anim = {
-				'hockey','barbedwire','baseballbat','stick'
+				'hockey','barbedwire','baseballbat','stick',
+				'bonk','bonk2'
 			}
 			for i, melee_id in ipairs(melee_anim) do
 				if self.melee_weapons[melee_id] then
@@ -4913,7 +4916,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.aziz.stats.speed_mult = 1.1
 
 		--woo free tasers--
-		self.melee_weapons.zeus.tase_data = nil
 		self.melee_weapons.zeus.special_weapon = "taser"
 		self.melee_weapons.zeus.tase_data = {
 			tase_strength = "light",
@@ -4933,7 +4935,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.zeus.stats.speed_mult = 0.9
 			--RIP Buzzer meta--
 			self.melee_weapons.taser.info_id = "bm_melee_taser_info"
-			self.melee_weapons.taser.tase_data = nil
 			self.melee_weapons.taser.special_weapon = "taser"
 			self.melee_weapons.taser.tase_data = {
 				tase_strength = "light",
@@ -4950,8 +4951,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.taser.stats.concealment = 29
 			self.melee_weapons.taser.stats.speed_mult = 0.9
 			--Zap Stick--
-			self.melee_weapons.funder_strike.info_id = "bm_melee_taser_info"
-			self.melee_weapons.funder_strike.tase_data = nil
+			--self.melee_weapons.funder_strike.info_id = "bm_melee_taser_info"
 			self.melee_weapons.funder_strike.special_weapon = "taser"
 			self.melee_weapons.funder_strike.tase_data = {
 				tase_strength = "heavy",
@@ -5395,6 +5395,36 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.spoon.stats.speed_mult = 1.08
 			self.melee_weapons.spoon.stats.charge_bonus_start = 0.5
 			self.melee_weapons.spoon.stats.charge_bonus_speed = 1.25
+			--I'LL USE THIS FRYING PAN
+			self.melee_weapons.bonk.stats.cleave = 2
+			self.melee_weapons.bonk.stats.raycasts = 20
+			self.melee_weapons.bonk.stats.raycasts_h = 25
+			self.melee_weapons.bonk.stats.raycasts_charge_h = 25
+			self.melee_weapons.bonk.stats.min_damage = 6
+			self.melee_weapons.bonk.stats.max_damage = 12.001
+			self.melee_weapons.bonk.stats.min_damage_effect = 9.0
+			self.melee_weapons.bonk.stats.max_damage_effect = 12.0
+			self.melee_weapons.bonk.stats.charge_time = 2.1
+			self.melee_weapons.bonk.stats.range = 160
+			self.melee_weapons.bonk.stats.concealment = 29
+			self.melee_weapons.bonk.stats.speed_mult = 1.12
+			self.melee_weapons.bonk.stats.charge_bonus_start = 0.5
+			self.melee_weapons.bonk.stats.charge_bonus_speed = 1.25
+			--AS A DRYING PAN
+			self.melee_weapons.bonk2.stats.cleave = 2
+			self.melee_weapons.bonk2.stats.raycasts = 20
+			self.melee_weapons.bonk2.stats.raycasts_h = 25
+			self.melee_weapons.bonk2.stats.raycasts_charge_h = 25
+			self.melee_weapons.bonk2.stats.min_damage = 6
+			self.melee_weapons.bonk2.stats.max_damage = 12.001
+			self.melee_weapons.bonk2.stats.min_damage_effect = 9.0
+			self.melee_weapons.bonk2.stats.max_damage_effect = 12.0
+			self.melee_weapons.bonk2.stats.charge_time = 2.1
+			self.melee_weapons.bonk2.stats.range = 160
+			self.melee_weapons.bonk2.stats.concealment = 29
+			self.melee_weapons.bonk2.stats.speed_mult = 1.12
+			self.melee_weapons.bonk2.stats.charge_bonus_start = 0.5
+			self.melee_weapons.bonk2.stats.charge_bonus_speed = 1.25
 		--We'll put you in the hospital for free eh?--
 		self.melee_weapons.hockey.info_id = "bm_melee_hockey_info"
 		self.melee_weapons.hockey.stats.cleave = 1

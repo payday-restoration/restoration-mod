@@ -1712,7 +1712,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_melee_brass_knuckles_info"] = "너클 스타일 무기는 수백 년 동안 전 세계에서 사용되어 왔습니다.\n황동 너클은 펀치의 힘을 더 단단하고 작은 부위로 집중시켜 조직이 파괴될 가능성을 높입니다. 충분히 세게 치면 뼈를 부러트릴 수도 있죠.",
 
 		--Lucille
-		["bm_melee_barbedwire_info"] = "불쌍한 나에게 내세가 찾아오지 않아... 난 그저... 빌어먹을 야구 방방이에 대고 이야기하고 있을 뿐이라고!\n\n#{skill_color}#3##초에 걸쳐 #{skill_color}#120##의 출혈 피해를 가합니다.",
+		["bm_melee_barbedwire_info"] = "불쌍한 나에게 내세가 찾아오지 않아... 난 그저... 빌어먹을 야구 방방이에 대고 이야기하고 있을 뿐이라고!\n\n#{skill_color}#3##초에 걸쳐 #{skill_color}#120##의 출혈 피해를 가합니다.\n\n완전 충전 시 헤드샷 피해가 #{skill_color}#100%## 증가합니다.",
 			["bm_melee_bleed_info"] = "#{skill_color}#3##초에 걸쳐 #{skill_color}#120##의 출혈 피해를 가합니다.",
 			["bm_melee_inner_child_info"] = "장난감처럼 즐겨 보세요\n\n#{skill_color}#3##초에 걸쳐 #{skill_color}#120##의 출혈 피해를 가합니다.",
 
@@ -1808,7 +1808,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--Slot Lever
 		["bm_melee_slot_lever_info"] = "잭팟 좀 떠라!\n\n#{skill_color}#5%## 확률로 #{skill_color}#10##배의 피해량과 녹다운을 가합니다.",
 		--ZAP ZAP MOTHERFUCKER
-		["bm_melee_taser_info"] = "교만한 테이저에게 달콤하고 짜릿한 복수를 하십시오.\n\n완전히 충전되면 닿은 대상을 감전시키고 방해합니다.",
+		["bm_melee_taser_info"] = "이것이 바로 당신 기다려온 근접 무기입니다. 이걸로 교만한 테이저에게 통쾌하고 짜릿한 복수를 선사하십시오. 번개 맛 좀 받아라!\n\n#{skill_color}#적중 시 감전되어## 대부분의 적을 기절시키며, 특수 및 정예 적을 기절시킬려면 완전 충전으로 적중해야합니다.\n#{important_1}#타이탄 실드, 타이탄 테이저, 타이탄 도저, 및 캡틴은 기절에 면역입니다.##",
+		--ALSO ZAP ZAP MOTHERFUCKER
+		["bm_melee_zeus_info"] = "이 근접 무기는 불안정해 보일지도 모르지만 걱정하지 마십시오. 인터넷에서 어떤 꼬마가 만든 완벽하게 안전한 무기이니까요! 기발하고 놀라운 방식으로 만들어진 수제 실험용 전기 장치라는거죠.\n\n#{skill_color}#적중 시 감전되어## 대부분의 적을 기절시키며, 특수 및 정예 적을 기절시킬려면 완전 충전으로 적중해야합니다.\n#{important_1}#타이탄 실드, 타이탄 테이저, 타이탄 도저, 및 캡틴은 기절에 면역입니다.##",
+		--ALSO ALSO ZAP ZAP MOTHERFUCKER
+		["bm_melee_funder_info"] = "찌릿찌릿한 막대기입니다.\n\n#{skill_color}#적중 시 감전되어## 대부분의 적을 기절시키며, 특수 및 정예 적을 기절시킬려면 완전 충전으로 적중해야합니다.\n#{important_1}#타이탄 실드, 타이탄 테이저, 타이탄 도저, 및 캡틴은 기절에 면역입니다.##",
 
 		--Kunai
 		["bm_melee_cqc_info"] = "아무리 가장 강한 상대라도 이 독이 묻은 쿠나이 칼에 한 번만 상처를 내면 쓰러질 겁니다.\n\n적을 기절시키고 #{skill_color}#4##초 동안 #{stats_positive}#120##의 독 피해를 가하는 특이한 독이 발라져 있습니다.",
@@ -1885,9 +1889,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 
 		--Ballistic Knives
 		["bm_melee_ballistic_info"] = "지미는 적을수록 좋다고 생각하는 사람이 아니기 때문에 스페셜리스트 칼 두 세트를 가지고 있죠.\n\n근접 무기를 든 상태에서 첫 번째 공격 이후에 매 공격마다 #{skill_color}#2배##의 피해를 가합니다.",
-
-		--ALSO ZAP ZAP MOTHERFUCKER
-		["bm_melee_zeus_info"] = "완전히 충전되면 접촉하는 대상에게 감전을 일으켜 방해를 하는 수제 전기 너클 더스터 한 쌍입니다.",
 
 		--Wing Butterfly Knife
 		["bm_melee_wing_info"] = "변장 키트와 아주 잘 어울릴 겁니다!\n\n적을 뒤에서 공격하면 #{skill_color}#400%##의 피해를 가합니다.",
@@ -5045,7 +5046,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_m16_sc_desc"] = "이 클립으로 멋진 활약을 펼쳐 봐.",
 				["bm_w_x_type54"] = weapon_names == 2 and "쌍둥이 콜트" or "쌍둥이 크로스킬",
 				["bm_akmsu_sc_desc"] = "#{stat_maxed}#큰 남자##를 쓰러뜨리는 데 유용한 작은 소총입니다. 이 소총은 거의 모든 상황에서 자체 성능을 발휘할 수 있으므로 과소평가해서는 안 됩니다.",
-				["bm_melee_shock_info"] = "\"Th- This is all I could gift.... Um...\" \n\"Spanner!\" \n\"For you!\"",
+				["bm_melee_shock_info"] = "\"너, 너한테 전할게 있어... 음...\" \n\"이, 이건 널 위한!\" \n\"스패너야!\"",
 			})
 		end
 

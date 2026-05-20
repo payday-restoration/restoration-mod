@@ -853,6 +853,9 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 
 	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	for part_id, stats in pairs(custom_data) do
+		if stats.gl_buck then
+			gl_buck = true
+		end
 		if stats.damage_min_mult then
 			damage_min_mult = damage_min_mult * stats.damage_min_mult
 		end

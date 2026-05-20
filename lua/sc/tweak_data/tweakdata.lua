@@ -618,6 +618,14 @@ tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_fade_time = 0
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data_name = "proj_launcher_3gl_cloud"
 
+--Incendiary Nades, idea to make em a mollie--
+tweak_data.projectiles.flun_flare.is_explosive = true
+tweak_data.projectiles.flun_flare.range = 500
+tweak_data.projectiles.flun_flare.curve_pow = 0.75
+tweak_data.projectiles.flun_flare.damage = 6.0
+tweak_data.projectiles.flun_flare.player_damage = 3.0
+tweak_data.projectiles.flun_flare.dot_data_name = "proj_flun_flare"
+
 --Plainsrider--
 tweak_data.projectiles.west_arrow.damage = 24
 tweak_data.projectiles.west_arrow_exp.damage = 24
@@ -734,7 +742,7 @@ tweak_data.projectiles.molotov.fire_env_name = "molotov_fire" --Just for grabbin
 tweak_data.projectiles.fir_com.is_explosive = true
 tweak_data.projectiles.fir_com.range = 450
 tweak_data.projectiles.fir_com.damage = 12.0
-tweak_data.projectiles.fir_com.player_damage = 4.5
+tweak_data.projectiles.fir_com.player_damage = 6.0
 tweak_data.projectiles.fir_com.burn_duration = 12
 tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"
 tweak_data.projectiles.fir_com.fire_env_name = "incendiary_burst_fire" --Just for grabbing info for the UI
@@ -980,6 +988,16 @@ for i, proj_id in ipairs(velocity) do
 	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 end
 tweak_data.projectiles.rocket_frag.launch_speed = 30000 * velocity_mult
+
+velocity_mult = 1
+velocity = {
+	'flun_flare',
+}
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 130 * velocity_mult
+	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
 
 velocity_mult = 0.8
 velocity = {

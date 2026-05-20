@@ -18730,6 +18730,105 @@ end
 					self.wpn_fps_rpg7_npc.uses_parts = deep_clone(self.wpn_fps_rpg7.uses_parts)
 				end)
 
+			--FLARE GUN
+
+				Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_flun", function(self) --hooked to "create_ammunition" as the ammo overrides for it are done there
+					--[ [
+					self.parts.wpn_fps_upg_a_flun_flare.supported = true
+					self.parts.wpn_fps_upg_a_flun_shell.supported = true
+					self.parts.wpn_fps_upg_a_flun_shell.stats = {
+						value = 9,
+						damage = 150,
+						spread = -35,
+						total_ammo_mod = 118
+					}
+					self.parts.wpn_fps_upg_a_flun_shell.custom_stats = {
+						weapon_unit = "units/pd2_dlc_unk/weapons/wpn_fps_spe_flun/wpn_fps_sho_flun",
+						gl_buck = true,
+						ammo_pickup_max_mul = 1.93,
+						ammo_pickup_max_mul = 1.93,
+						ene_hs_mult_add = -0.35,
+						rays = 8
+					}
+					self.wpn_fps_spe_flun.override = self.wpn_fps_spe_flun.override or {}
+					self.wpn_fps_spe_flun.override.wpn_fps_upg_a_piercing = {
+						parent = "lower_body",
+						a_obj = "a_shell",
+						unit = "units/pd2_dlc_unk/weapons/wpn_fps_spe_flun_pts/ammos/wpn_fps_upg_a_flun_shot",
+						bullet_objects = {
+							amount = 1,
+							prefix = "g_bullet_"
+						},
+						sound_switch = { suppressed = "regular_b" },
+						stats = {
+							value = 9,
+							damage = 60,
+							spread = -30,
+							recoil = -10,
+							total_ammo_mod = -70
+						},
+						custom_stats = {
+							weapon_unit = "units/pd2_dlc_unk/weapons/wpn_fps_spe_flun/wpn_fps_sho_flun",
+							gl_buck = true,
+							ap_desc = "bm_ap_armor_weapon_sc_desc",
+							trail_effect = "_dmc/effects/nato_trail",
+							object_damage_mult_override = 0.375,
+							ammo_pickup_max_mul = 1.5,
+							ammo_pickup_max_mul = 1.5,
+							ene_hs_mult_add = -0.35,
+							hs_mult = 2.5,
+							hs_mult_desc = true,
+							falloff_start_mult = 1,
+							falloff_end_mult = 1.15,
+							damage_min_mult = 4,
+							armor_piercing_add = 1,
+							rays = 12
+						}
+					}
+					self.wpn_fps_spe_flun.override.wpn_fps_upg_a_slug = {
+						parent = "lower_body",
+						a_obj = "a_shell",
+						unit = "units/pd2_dlc_unk/weapons/wpn_fps_spe_flun_pts/ammos/wpn_fps_upg_a_flun_shot",
+						bullet_objects = {
+							amount = 1,
+							prefix = "g_bullet_"
+						},
+						sound_switch = { suppressed = "regular_b" },
+						stats = {
+							value = 10,
+							concealment = -1,
+							total_ammo_mod = -70,
+							damage = 150,
+							recoil = -30,
+							spread = -20,
+							spread_multi = {1, 1},
+							suppression = -1,
+							moving_spread = 0
+						},
+						custom_stats = {
+							weapon_unit = "units/pd2_dlc_unk/weapons/wpn_fps_spe_flun/wpn_fps_sho_flun",
+							muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",
+							gl_buck = true,
+							rays = 1,
+							hip_mult = 2,
+							armor_piercing_add = 1,
+							ene_hs_mult_add = -0.35,
+							ammo_pickup_max_mul = 0.9,
+							ammo_pickup_min_mul = 0.9,
+							can_shoot_through_enemy_unlim = true,
+							can_shoot_through_enemy = true,
+							can_shoot_through_shield = true,
+							can_shoot_through_wall = true,
+							ap_desc = "bm_ap_weapon_sc_desc",
+							falloff_start_mult = 1.1,
+							falloff_end_mult = 1.4,
+							ads_speed_mult = 1.025
+						},
+						desc_id = "bm_wp_upg_a_slug_desc"
+					}
+					--]]
+				end)
+
 	--[[     BOWS     ]]
 
 		--PLAINSRIDER
@@ -56964,6 +57063,8 @@ exclude = {
 	"wpn_fps_upg_a_dart_poison",
 	"wpn_fps_upg_a_dart_daze",
 	"wpn_fps_upg_a_dart_revive",
+	"wpn_fps_upg_a_flun_flare",
+	"wpn_fps_upg_a_flun_shell"
 }
 
 local no_vfgs = restoration and restoration.Options:GetValue("OTHER/GOTTAGETAGRIP")

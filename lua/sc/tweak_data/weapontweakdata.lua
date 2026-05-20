@@ -15596,6 +15596,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rpg7.timers.reload_exit_empty = 3.1
 						self.rpg7.timers.reload_exit_not_empty = 3.1
 
+					--Flare Gun
+						self.flun.categories = {
+							"grenade_launcher",
+							"gl_pistol",
+							"keep_ammo_max"
+						}
+						self.flun.upgrade_blocks = {
+							weapon = {
+								"clip_ammo_increase"
+							}
+						}
+						self.flun.has_description = true
+						self.flun.fire_mode_data.fire_rate = 0.3
+						self.flun.AMMO_MAX = 15
+						self.flun.kick = self.stat_info.kick_tables.moderate_kick
+						self.flun.rays = 1
+						self.flun.alt_shotgunraycast = true
+						self.flun.supported = true
+						self.flun.ads_speed = 0.160
+						self.flun.damage_falloff = {
+							start_dist = 300,
+							end_dist = 1800,
+							min_mult = 0.1333
+						}
+						self.flun.stats = {
+							damage = 30,
+							spread = 51,
+							recoil = 51,
+							spread_moving = 5,
+							zoom = 1,
+							concealment = 30,
+							suppression = 8,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.flun.stats_modifiers = { damage = 2 }
+						self.flun.reload_speed_multiplier = 1
+						self.flun.timers.reload_empty = 1.62
+						self.flun.timers.reload_exit_empty = 1
+						self.flun.timers.reload_not_empty = 1.62
+						self.flun.timers.reload_exit_not_empty = 1
+						self.flun.panic_suppression_chance = 0.05
+
 			--OVE9000 SAW
 				self.saw.has_description = true
 				self.saw.upgrade_blocks = {

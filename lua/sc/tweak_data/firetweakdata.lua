@@ -125,7 +125,7 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		dot_trigger_max_distance = false
 	}
 
-	--THROWABLES
+	--PROJECTILES
 	--This is for the explosion, not the ground fire
 	fire_entries.proj_molotov = { --Molotov
 		dot_trigger_chance = 1,
@@ -169,6 +169,12 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		dot_damage = 0.0,
 		dot_length = 0.1,
 		dot_trigger_chance = 0
+	}
+	fire_entries.proj_flun_flare = { --Incendiary Grenade
+		dot_trigger_chance = 1,
+		dot_damage = 3.0,
+		dot_length = 3.1,
+		dot_trigger_max_distance = false
 	}
 
 	--GROUND FIRES

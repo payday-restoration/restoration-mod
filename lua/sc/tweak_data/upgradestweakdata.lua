@@ -1302,7 +1302,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					
 				self.skill_descs.defense_up = {
 					skill_value_b1 = tostring((1 - self.values.player.deploy_interact_faster[1]) % 1 * 100).."%", -- increase interaciton speed with deployables
-					skill_value_p1 = tostring((1 - self.values.player.deploy_interact_faster[2]) % 1 * 100).."%",
+					skill_value_p1 = tostring((self.values.player.deploy_interact_faster[2] - self.values.player.deploy_interact_faster[1]) % 1 * 100).."%",
 					skill_value_p2 = tostring(self.values.team.deploy_interact_faster[1] * 100).."%" -- interaction speed bonus for teammates
 				}
 				

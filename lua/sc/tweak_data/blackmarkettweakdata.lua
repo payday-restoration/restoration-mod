@@ -5068,6 +5068,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.slot_lever.stats.raycasts_charge = 15
 		self.melee_weapons.slot_lever.info_id = "bm_melee_slot_lever_info"
 		self.melee_weapons.slot_lever.special_weapon = "hyper_crit"
+		self.melee_weapons.slot_lever.crit_stats = {
+			chance = 0.05,
+			sound = "bell_ring"
+		}
 		self.melee_weapons.slot_lever.stats.min_damage = 4.5
 		self.melee_weapons.slot_lever.stats.max_damage = 9.001
 		self.melee_weapons.slot_lever.stats.min_damage_effect = 6.0
@@ -5407,11 +5411,16 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.bonk.stats.max_damage_effect = 12.0
 			self.melee_weapons.bonk.stats.charge_time = 2.1
 			self.melee_weapons.bonk.stats.range = 160
-			self.melee_weapons.bonk.stats.concealment = 29
+			self.melee_weapons.bonk.stats.concealment = 28
 			self.melee_weapons.bonk.stats.speed_mult = 1.12
 			self.melee_weapons.bonk.stats.charge_bonus_start = 0.5
 			self.melee_weapons.bonk.stats.charge_bonus_speed = 1.25
 			--AS A DRYING PAN
+			self.melee_weapons.bonk2.special_weapon = "hyper_crit"
+			self.melee_weapons.bonk2.crit_stats = {
+				chance = 0.10,
+				sound = "cash_loot_drop_reveal"
+			}
 			self.melee_weapons.bonk2.stats.cleave = 2
 			self.melee_weapons.bonk2.stats.raycasts = 20
 			self.melee_weapons.bonk2.stats.raycasts_h = 25
@@ -5420,10 +5429,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.bonk2.stats.max_damage = 12.001
 			self.melee_weapons.bonk2.stats.min_damage_effect = 9.0
 			self.melee_weapons.bonk2.stats.max_damage_effect = 12.0
-			self.melee_weapons.bonk2.stats.charge_time = 2.1
+			self.melee_weapons.bonk2.stats.charge_time = 2.3
 			self.melee_weapons.bonk2.stats.range = 160
-			self.melee_weapons.bonk2.stats.concealment = 29
-			self.melee_weapons.bonk2.stats.speed_mult = 1.12
+			self.melee_weapons.bonk2.stats.concealment = 27
+			self.melee_weapons.bonk2.stats.speed_mult = 0.98
 			self.melee_weapons.bonk2.stats.charge_bonus_start = 0.5
 			self.melee_weapons.bonk2.stats.charge_bonus_speed = 1.25
 		--We'll put you in the hospital for free eh?--

@@ -4467,10 +4467,15 @@ Hooks:OverrideFunction(PlayerStandard, "_do_melee_damage", function(self, t, bay
 				self._melee_repeat_damage_bonus = 2.0
 			elseif special_weapon == "talk" and character_unit:character_damage().dead and not character_unit:character_damage():dead() and managers.enemy:is_enemy(character_unit) and math.random() <= 0.2 then
 				self._unit:sound():say("f46x_any", true)
-			elseif special_weapon == "hyper_crit" and math.random() <= 0.05 then
-				dmg_multiplier = dmg_multiplier * 10
-				damage_effect = damage_effect * 10
-				self._unit:sound():play("bell_ring")
+			elseif special_weapon == "hyper_crit" then
+				local crit_stats = melee_weapon.crit_stats
+				local crit_chance = (crit_stats and crit_stats.chance) or 0.05
+				local crit_sound = (crit_stats and crit_stats.sound) or "bell_ring"
+				if math.random() <= crit_chance then
+					dmg_multiplier = dmg_multiplier * 10
+					damage_effect = damage_effect * 10
+					self._unit:sound():play(crit_sound)
+				end
 			end
 
 			if charge_lerp_value >= 0.99 then

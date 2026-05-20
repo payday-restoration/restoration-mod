@@ -60,6 +60,7 @@
 	   <weapons>
 	      <value_node value="wpn_fps_shot_saiga"/>
 		  <value_node value="wpn_fps_sho_basset"/>
+		  <value_node value="wpn_fps_sho_x_basset"/>
 	   </weapons>
 	</WeaponMod>
 

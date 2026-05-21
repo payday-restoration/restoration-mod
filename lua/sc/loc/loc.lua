@@ -1859,7 +1859,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--ALSO ZAP ZAP MOTHERFUCKER
 		["bm_melee_zeus_info"] = "This piece of melee equipment might look unstable. But relax, it was made by some kid on the internet, so it’s perfectly safe! Homebrewed and experimental electricity in a gloriously stunning way.\n\n#{skill_color}#Electrocutes on impact,## stunning most enemies; a fully charged strike is needed to stun special and elite enemies.\n#{important_1}#Titan-Shields, Titan-Tasers, Titan-Bulldozers and Captains are immune to its stunning effects.##",
 		--ALSO ALSO ZAP ZAP MOTHERFUCKER
-		["bm_melee_funder_info"] = "Zappy stick\n\n#{skill_color}#Electrocutes on impact,## stunning most enemies; a fully charged strike is needed to stun special and elite enemies.\n#{important_1}#Titan-Shields, Titan-Tasers, Titan-Bulldozers and Captains are immune to its stunning effects.##",
+		["bm_melee_funder_strike_info"] = "#{skill_color}#\"Pick up that can.\"##\n\nJerry rigged shock baton that stuns targets on touch.\n\n#{skill_color}#Electrocutes on impact,## stunning most enemies; a fully charged strike is needed to stun special and elite enemies.\n#{important_1}#Titan-Shields, Titan-Tasers, Titan-Bulldozers and Captains are immune to its stunning effects.##",
 		--PANPAKAPAN!
 		["bm_melee_bonk_info"] = "Not for cooking...",
 		["bm_melee_bonk2_info"] = "#{risk}#WINNER WINNER CHICKEN DINNER!##\n\nHas a #{skill_color}#10%## chance to deal #{skill_color}#10x## times the damage and knockdown.",

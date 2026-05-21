@@ -4952,7 +4952,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.taser.stats.concealment = 29
 			self.melee_weapons.taser.stats.speed_mult = 0.9
 			--Zap Stick--
-			--self.melee_weapons.funder_strike.info_id = "bm_melee_taser_info"
+			self.melee_weapons.funder_strike.info_id = "bm_melee_funder_strike_info"
 			self.melee_weapons.funder_strike.special_weapon = "taser"
 			self.melee_weapons.funder_strike.tase_data = {
 				tase_strength = "heavy",

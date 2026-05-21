@@ -20321,6 +20321,9 @@ end
 						translation = Vector3(-0.0, 5.6, -0.46),
 						rotation = Rotation(0.01, -0.05, 0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_tilt = {
+						translation = Vector3(-0.012, -7.4, -0.09)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ghosts_badger = {
 						translation = Vector3(0.03, 1.1, -0.50),
@@ -20561,6 +20564,7 @@ end
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_l115 = {
 						translation = Vector3(-0.02, -3, -3.521)
 					}
+
 			--Milspec Scope Back-up Irons
 			self.parts.wpn_fps_upg_o_specter_piggyback.stats = {
 				value = 1,
@@ -41145,6 +41149,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_tilt_stock_none.supported = true
 			self.parts.wpn_fps_ass_tilt_stock_none.stats = deep_clone(stocks.remove_folder_stats)
 			self.parts.wpn_fps_ass_tilt_stock_none.custom_stats = deep_clone(stocks.remove_folder_stats)
+
+			self.wpn_fps_ass_tilt.override = self.wpn_fps_ass_tilt.override or {}
+			self.wpn_fps_ass_tilt.override.wpn_fps_upg_i_burstfire = {
+				custom_stats = {
+					info_lock_burst = true,
+					burst_fire = {
+						count = 2,
+						delay = 0.25,
+						recoil_mult = 0.4,
+						last_recoil_mult = 0.6,
+						lock = true
+					},
+					rof_mult = 3
+				}
+			}
+
 		end
 
 	--[[ ZDANN'S MODS ]]

@@ -1812,7 +1812,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--ALSO ZAP ZAP MOTHERFUCKER
 		["bm_melee_zeus_info"] = "이 근접 무기는 불안정해 보일지도 모르지만 걱정하지 마십시오. 인터넷에서 어떤 꼬마가 만든 완벽하게 안전한 무기이니까요! 기발하고 놀라운 방식으로 만들어진 수제 실험용 전기 장치라는거죠.\n\n#{skill_color}#적중 시 감전되어## 대부분의 적을 기절시키며, 특수 및 정예 적을 기절시킬려면 완전 충전으로 적중해야합니다.\n#{important_1}#타이탄 실드, 타이탄 테이저, 타이탄 도저, 및 캡틴은 기절에 면역입니다.##",
 		--ALSO ALSO ZAP ZAP MOTHERFUCKER
-		["bm_melee_funder_info"] = "찌릿찌릿한 막대기입니다.\n\n#{skill_color}#적중 시 감전되어## 대부분의 적을 기절시키며, 특수 및 정예 적을 기절시킬려면 완전 충전으로 적중해야합니다.\n#{important_1}#타이탄 실드, 타이탄 테이저, 타이탄 도저, 및 캡틴은 기절에 면역입니다.##",
+		["bm_melee_funder_strike_info"] = "#{skill_color}#\"저 캔을 집어라.\"##\n\n접촉만으로 목표물을 기절시키는 즉석으로 만들어진 전기 충격봉입니다.\n\n#{skill_color}#적중 시 감전되어## 대부분의 적을 기절시키며, 특수 및 정예 적을 기절시킬려면 완전 충전으로 적중해야합니다.\n#{important_1}#타이탄 실드, 타이탄 테이저, 타이탄 도저, 및 캡틴은 기절에 면역입니다.##",
+		--PANPAKAPAN!
+		["bm_melee_bonk_info"] = "프라이팬으로 맞아 봤니?",
+		["bm_melee_bonk2_info"] = "#{risk}#이겼닭! 오늘 저녁은 치킨이닭!##\n\n#{skill_color}#10%## 확률로 #{skill_color}#10##배의 피해량과 녹다운을 가합니다.",
 
 		--Kunai
 		["bm_melee_cqc_info"] = "아무리 가장 강한 상대라도 이 독이 묻은 쿠나이 칼에 한 번만 상처를 내면 쓰러질 겁니다.\n\n적을 기절시키고 #{skill_color}#4##초 동안 #{stats_positive}#120##의 독 피해를 가하는 특이한 독이 발라져 있습니다.",
@@ -5923,8 +5926,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 			--[[   FORTRESS SUBTREE   ]]--
 				--Logistician
+				
 				["menu_defense_up_beta_sc"] = "로지스티션",
-				["menu_defense_up_beta_desc_sc"] = "베이식: #{owned}#$basic##\n모든 설치형 장비 배치 및 상호작용 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n모든 설치형 장비 배치 및 상호작용 속도가 추가로 #{skill_color}#$skill_value_p1## 빨라집니다.\n팀원의 모든 설치형 장비 배치 및 상호작용 속도가 #{skill_color}#$skill_value_p2## 빨라집니다.\n\n#{risk}#주의: 여러 팀원이 이 스킬을 가지고 있을 경우, 해당 스킬 효과는 중첩되지 않습니다.##",
+				["menu_defense_up_beta_desc_sc"] = "베이식: #{owned}#$basic##\n모든 설치형 장비 배치 및 상호작용 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n모든 설치형 장비 배치 및 상호작용 속도가 추가로 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n팀원의 모든 설치형 장비 배치 및 상호작용 속도가 #{skill_color}#$skill_value_p2## 빨라집니다.\n\n#{risk}#주의: 여러 팀원이 이 스킬을 가지고 있을 경우, 해당 스킬 효과는 중첩되지 않습니다.##",
 
 				--Nerves of Steel--
 				["menu_fast_fire_beta_sc"] = "강철의 의지",

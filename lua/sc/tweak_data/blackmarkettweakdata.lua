@@ -1861,6 +1861,11 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		"launcher_incendiary_ms3gl",
 		"launcher_electric_ms3gl",
 		"sticky_grenade",
+		"dart_poison",
+		"dart_daze",
+		"dart_revive",
+		"laser_watch",
+		"flun_flare",		
 		--Resmod projectiles
 		"bravo_frag",
 		"cluster_fuck",

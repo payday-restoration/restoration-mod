@@ -143,6 +143,13 @@ function PlayerTased:call_teammate(line, t, no_gesture, skip_alert)
 	end
 end	
 
+function PlayerTased:_start_action_counter_tase(t, prime_target)
+	self._countering_tase = true
+	self._counter_taser_unit = prime_target.unit
+
+	self._ext_camera:play_redirect(self:get_animation("tased_counter"))
+end
+
 function PlayerTased:give_shock_to_taser()
 	if not alive(self._counter_taser_unit) then
 		return

@@ -2506,6 +2506,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "ПРОДАТЬ ОРУЖИЕ ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "КУПИТЬ ОРУЖИЕ ($price)",
+		
+		--Для меню с характеристиками оружий
+		["menu_seconds_suffix_short"] = "с",
+		["menu_milliseconds_suffix_short"] = "мс",
+		["menu_meters_suffix_short"] = "м",		
 
 		--New menu stats--
 		["bm_menu_crit"] = "Шанс крита",
@@ -2520,6 +2525,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_standing_range"] = "Мин. падение",
 		["bm_menu_damage_min"] = "Мин. урон",
 		["bm_menu_moving_range"] = "Макс. падение",
+		
+		--Throwables
+		["bm_menu_damage_blast"] = "Damage (Blast)",
+		["bm_menu_range_blast"] = "Range (Blast)",
+		["bm_menu_time_blast"] = "Duration (Blast)",
+		["bm_menu_damage_impact"] = "Damage (Impact)",
+		["bm_menu_range_impact"] = "Range (Impact)",
+		["bm_menu_damage_pool"] = "Damage (Pool)",
+		["bm_menu_range_pool"] = "Range (Pool)",
+		["bm_menu_time_pool"] = "Duration (Pool)",
+		["bm_menu_damage_dot"] = "Damage (DOT)",
+		["bm_menu_range_dot"] = "Range (DOT)",
+		["bm_menu_time_dot"] = "Duration (DOT)",
+		["bm_menu_cooldown_reduction"] = "Pickup Reduction",		
 
 		["bm_menu_attack_speed"] = "Ск-сть атаки",
 		["bm_menu_impact_delay"] = "Задержка",

@@ -172,7 +172,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"cs",
 					"brick",
 					"ostry",
-					"r700"
+					"r700",
+					"laser_watch"
 				}
 			},
 		l24 = {

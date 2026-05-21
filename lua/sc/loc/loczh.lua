@@ -2505,6 +2505,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- Menu Buttons--
         ["bm_menu_btn_sell"] = "售出武器 ($price)",
         ["bm_menu_btn_buy_selected_weapon"] = "购买武器 ($price)",
+		
+		["menu_persecond_suffix_short"] = "/s",
+		["menu_milliseconds_suffix_short"] = "ms", --milliseconds
+		["menu_meters_suffix_short"] = "m", --meters			
 
         -- New menu stats--
         ["bm_menu_damage_shake"] = "抖动百分比",
@@ -2513,6 +2517,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_menu_swap_speed"] = "切枪时间",
         ["bm_menu_standing_range"] = "衰减始距",
         ["bm_menu_moving_range"] = "衰减末距",
+		
+		--Throwables
+		["bm_menu_damage_blast"] = "Damage (Blast)",
+		["bm_menu_range_blast"] = "Range (Blast)",
+		["bm_menu_time_blast"] = "Duration (Blast)",
+		["bm_menu_damage_impact"] = "Damage (Impact)",
+		["bm_menu_range_impact"] = "Range (Impact)",
+		["bm_menu_damage_pool"] = "Damage (Pool)",
+		["bm_menu_range_pool"] = "Range (Pool)",
+		["bm_menu_time_pool"] = "Duration (Pool)",
+		["bm_menu_damage_dot"] = "Damage (DOT)",
+		["bm_menu_range_dot"] = "Range (DOT)",
+		["bm_menu_time_dot"] = "Duration (DOT)",
+		["bm_menu_cooldown_reduction"] = "Pickup Reduction",		
 
         ["bm_menu_attack_speed"] = "攻击间隔",
         ["bm_menu_impact_delay"] = "攻击前摇",

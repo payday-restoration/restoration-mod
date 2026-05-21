@@ -1992,6 +1992,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "무기 판매 ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "무기 구매 ($price)",
+		
+		["menu_persecond_suffix_short"] = "/s",
+		["menu_milliseconds_suffix_short"] = "ms", --milliseconds
+		["menu_meters_suffix_short"] = "m", --meters			
 
 		--New menu stats--
 		["bm_menu_damage_shake"] = "흔들림",
@@ -2005,7 +2009,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_standing_range"] = "대미지 감소 거리 시작",
 		["bm_menu_damage_min"] = "최소 대미지",
 		["bm_menu_moving_range"] = "대미지 감소 거리 최대",
+		
+		--Throwables
+		["bm_menu_damage_blast"] = "피해량 (폭발)",
+		["bm_menu_range_blast"] = "범위 (폭발)",
+		["bm_menu_time_blast"] = "지속 시간 (폭발)",
+		["bm_menu_damage_impact"] = "피해량 (직격)",
+		["bm_menu_range_impact"] = "범위 (직격)",
+		["bm_menu_damage_pool"] = "피해량 (지대)",
+		["bm_menu_range_pool"] = "범위 (지대)",
+		["bm_menu_time_pool"] = "지속 시간 (지대)",
+		["bm_menu_damage_dot"] = "피해량 (지속 피해)",
+		["bm_menu_range_dot"] = "범위 (지속 피해)",
+		["bm_menu_time_dot"] = "지속 시간 (지속 피해)",
+		["bm_menu_cooldown_reduction"] = "재충전 절감",
 
+		--Melee
 		["bm_menu_attack_speed"] = "반복 지연",
 		["bm_menu_impact_delay"] = "타격 지연",
 		["bm_menu_cleave"] = "클리브",

@@ -1,5 +1,9 @@
 -- AAAAAALL THIS shit, just to change the slot mask and to remove the priority shout stuff.
 -- Man...
+
+local tmp_vec1 = Vector3()
+local tmp_rot1 = Rotation()
+
 function IngameAccessCamera:update(t, dt)
 	if _G.IS_VR then
 		local active_menu = managers.menu:active_menu()

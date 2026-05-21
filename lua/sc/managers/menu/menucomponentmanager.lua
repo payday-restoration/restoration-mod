@@ -81,13 +81,13 @@ function MenuComponentManager:create_melee_status_icon_list(melee_weapon)
 			fire_weapon = fire_weapon or dot_data.variant == "fire"
 			poison_weapon = poison_weapon or dot_data.variant == "poison"
 			bleed_weapon = bleed_weapon or dot_data.variant == "bleed"
-			log(tostring( dot_name ) .. " <name variant> " .. tostring( dot_data.variant ))
+			--log(tostring( dot_name ) .. " <name variant> " .. tostring( dot_data.variant ))
 		end
 	end
 
 	if melee_data.random_special_effects then
 		for _, effect in ipairs(melee_data.random_special_effects) do
-			log(tostring( melee_weapon ))
+			--log(tostring( melee_weapon ))
 			shock_weapon = shock_weapon or effect.tase_data
 
 			check_dot(effect.dot_data_name)

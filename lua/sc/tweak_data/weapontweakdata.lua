@@ -12638,6 +12638,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							self.g3.animations.reload_name_id = "g3_niphen"
 							self.g3.timers.reload_empty = 3.3
 							self.g3.timers.reload_exit_empty = 1.45
+							self.g3.force_idle_after_empty_reload = self.g3.timers.reload_empty + self.g3.timers.reload_exit_empty + 0.45
 							self.g3.timers.reload_not_empty = 2.5
 							self.g3.timers.reload_exit_not_empty = 1.05
 							self.g3.reload_speed_multiplier = self.g3.timers.reload_empty / empty_timer

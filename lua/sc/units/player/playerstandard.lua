@@ -3284,6 +3284,11 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		end
 	end
 
+	if self._queue_idle_interrupt_t and self._queue_idle_interrupt_t <= t then
+		self._queue_idle_interrupt_t = nil
+		self._ext_camera:play_redirect(self:get_animation("idle"))
+	end
+
 	local inventory = alive(self._unit) and self._unit:inventory()
 	if inventory then
 		for slot = 1, 2 do
@@ -4962,6 +4967,10 @@ function PlayerStandard:_start_action_reload(t)
 			Application:trace("PlayerStandard:_start_action_reload( t ): ", reload_ids)
 
 			self._state_data.reload_expire_t = t + (reload_tweak or weapon:reload_expire_t(is_reload_not_empty) or reload_default_expire_t) / speed_multiplier
+
+			if not is_reload_not_empty and weapon_tweak.force_idle_after_empty_reload then
+				self._queue_idle_interrupt_t = t + (weapon_tweak.force_idle_after_empty_reload / speed_multiplier)
+			end
 
 			if not weapon:tweak_data_anim_play(reload_anim, speed_multiplier * anim_multiplier) then
 				weapon:tweak_data_anim_play("reload", speed_multiplier * anim_multiplier)

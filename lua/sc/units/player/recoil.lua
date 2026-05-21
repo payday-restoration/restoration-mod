@@ -623,6 +623,9 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 				speed = speed * weap_base:weapon_tweak_data().anim_speed_multiplier
 			end
 			--]]
+			if current_state and current_state._queue_idle_interrupt_t then
+				current_state._queue_idle_interrupt_t = nil
+			end
 		end
 	end
 	self._anim_empty_state_wanted = false

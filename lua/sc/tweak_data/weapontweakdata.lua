@@ -18026,7 +18026,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mikon.FIRE_MODE = "auto"
 				self.mikon.CLIP_AMMO_MAX = 30
 				self.mikon.AMMO_MAX = 150
-				self.mikon.fire_mode_data.fire_rate = 0.1
+				self.mikon.fire_mode_data.fire_rate = 0.095087
 				self.mikon.kick = self.stat_info.kick_tables.moderate_kick
 				self.mikon.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
@@ -18038,8 +18038,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mikon.supported = true
 				self.mikon.ads_speed = 0.340
 				self.mikon.damage_falloff = {
-					start_dist = 3600,
-					end_dist = 7000,
+					start_dist = 3200,
+					end_dist = 5500,
 					min_mult = 0.5
 				}
 				self.mikon.stats = {
@@ -18058,10 +18058,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mikon.stats_modifiers = nil
 				self.mikon.panic_suppression_chance = 0.05
+				self.mikon.reload_offset = {
+					reload = 0.066,
+					reload_not_empty = 0.033
+				}
 				self.mikon.lock_slide = true
-				self.mikon.reload_speed_multiplier = 1.05
 				self.mikon.sounds.magazine_empty = "wp_rifle_slide_lock"
-				self.mikon.timers = deep_clone(self.new_m4.timers)
+				self.mikon.timers.reload_not_empty = 1.35
+				self.mikon.timers.reload_exit_not_empty = 0.9
+				self.mikon.timers.reload_empty = 2.3
+				self.mikon.timers.reload_exit_empty = 0.7
 			end
 
 		--[[     ZDANN'S MODS     ]]--

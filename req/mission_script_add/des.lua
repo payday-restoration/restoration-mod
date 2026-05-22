@@ -6,8 +6,8 @@ local cloaker = ((difficulty >= 8)  and "units/pd2_dlc_vip/characters/ene_spook_
 local gunners = ((difficulty >= 8)  and "units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" or "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")
 local shields = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city")
 local snipers = ((difficulty >= 8) and "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper" or "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper")
-local diff_scaling = (death_wish_above and 0.15 or 0) 
 local death_wish_above = difficulty >= 7
+local diff_scaling = (death_wish_above and 0.15 or 0) 
 local chance_weapons_vault_door_defense = math.random() < diff_scaling
 
 local optsDefend_SO = {

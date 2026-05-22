@@ -22097,7 +22097,7 @@ end
 			self.parts.wpn_fps_upg_o_ak_scopemount.supported = true
 			self.parts.wpn_fps_upg_o_ak_scopemount.depends_on = nil
 			self.parts.wpn_fps_upg_o_ak_scopemount.adds = {
-				"wpn_fps_gre_arbiter_o_standard"
+				"wpn_fps_gre_arbiter_o_standard_no_forbid"
 			}
 			self.parts.wpn_fps_upg_o_ak_scopemount.stats = { value = 0 }
 			self.parts.wpn_fps_upg_o_ak_scopemount.custom_stats = { big_scope = true }
@@ -22106,7 +22106,7 @@ end
 			self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_smg_akmsu_body_lowerreceiver = { adds = {"wpn_fps_ak_bolt"} }
 			self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_lmg_rpk_body_lowerreceiver = { adds = {"wpn_fps_ak_bolt"} }
 			self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_ass_akm_nomag = { adds = {"wpn_fps_ak_bolt"} }
-			self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_gre_arbiter_o_standard = {
+			self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_gre_arbiter_o_standard_no_forbid = {
 				a_obj = "a_o_sm",
 				stance_mod = {
 					wpn_fps_ass_74 = { translation = Vector3(-0.005, 15.5, -4.6) + Vector3(0, -10, 0.42) },
@@ -22509,12 +22509,12 @@ end
 			self.parts.wpn_fps_upg_o_m14_scopemount.depends_on = nil
 			self.parts.wpn_fps_upg_o_m14_scopemount.supported = true
 			self.parts.wpn_fps_upg_o_m14_scopemount.adds = {
-				"wpn_fps_gre_arbiter_o_standard"
+				"wpn_fps_gre_arbiter_o_standard_no_forbid"
 			}
 			self.parts.wpn_fps_upg_o_m14_scopemount.stats = {
 				value = 0
 			}
-			self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_gre_arbiter_o_standard = {
+			self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_gre_arbiter_o_standard_no_forbid = {
 				a_obj = "a_o_sm",
 				stance_mod = {
 					wpn_fps_ass_m14 = {
@@ -24778,11 +24778,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	for used_part_id, k in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override) do
 		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "sight" and used_part_id ~= "wpn_fps_gre_arbiter_o_standard" then
+			if self.parts[used_part_id].type == "sight" and used_part_id ~= "wpn_fps_gre_arbiter_o_standard_no_forbid" then
 				self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id] = self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id] or {}
 				self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id].forbids = self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id].forbids or {}
-				if not table.contains(self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard") then
-					table.insert(self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard")
+				if not table.contains(self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard_no_forbid") then
+					table.insert(self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard_no_forbid")
 				end
 			end
 		end
@@ -24800,11 +24800,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 	for used_part_id, k in pairs(self.parts.wpn_fps_upg_o_m14_scopemount.override) do
 		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "sight" and used_part_id ~= "wpn_fps_gre_arbiter_o_standard" then
+			if self.parts[used_part_id].type == "sight" and used_part_id ~= "wpn_fps_gre_arbiter_o_standard_no_forbid" then
 				self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id] = self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id] or {}
 				self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id].forbids = self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id].forbids or {}
-				if not table.contains(self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard") then
-					table.insert(self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard")
+				if not table.contains(self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard_no_forbid") then
+					table.insert(self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard_no_forbid")
 				end
 			end
 		end

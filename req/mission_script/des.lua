@@ -64,6 +64,12 @@ return {
 			{ id = 400007, delay = 0 ,},
 		},
 	},
+-- Bio Weapons Vault Units 
+[101450] = {
+	on_executed = {
+		{ id = 400044, delay = 0, },
+	}
+}
 -- Heavy Resistance on Escape 
 	[102082] = {
 		on_executed = {

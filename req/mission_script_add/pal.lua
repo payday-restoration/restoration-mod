@@ -263,6 +263,7 @@ local optsChopperMitchell_fix = {
 	},
 	on_executed = {
 		{ id = 101713, delay = 13 },
+		{ id = 102360, delay = 8 },
 	},
 }
 local optsChopperWilson_fix = {

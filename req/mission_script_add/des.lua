@@ -6,7 +6,9 @@ local cloaker = ((difficulty >= 8)  and "units/pd2_dlc_vip/characters/ene_spook_
 local gunners = ((difficulty >= 8)  and "units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" or "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")
 local shields = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city")
 local snipers = ((difficulty >= 8) and "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper" or "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper")
+local diff_scaling = (death_wish_above and 0.15 or 0) 
 local death_wish_above = difficulty >= 7
+local chance_weapons_vault_door_defense = math.random() < diff_scaling
 
 local optsDefend_SO = {
 	SO_access = {
@@ -174,6 +176,29 @@ local opts_cloakers_and_snipers = {
 
 	},
 }
+local opts_vault_dozer = {
+	enabled = true,
+	enemy = tank_skull,
+	on_executed = { {  id = 400041, delay = 0,   }, },
+}
+local opts_vault_gunner_1 = {
+	enabled = true,
+	enemy = gunners,
+	on_executed = { {  id = 400042, delay = 0,   }, },
+}
+local opts_vault_gunner_2 = {
+	enabled = true,
+	enemy = gunners,
+	on_executed = { {  id = 400043, delay = 0,   }, },
+}
+local opts_weapons_lab_vault_units = {
+	enabled = { death_wish_above and chance_weapons_vault_door_defense },
+	on_executed = {
+		{ id = 400038, delay = 0, },
+		{ id = 400039, delay = 0, },
+		{ id = 400040, delay = 0, },
+	}
+}
 return {
     elements = {
         -- Weapon Labs Defense
@@ -233,9 +258,19 @@ return {
 		restoration:gen_dummy(400033, "sniper_helipad_01", Vector3(-861, 4717, 101.783), Rotation(176, 0, -0),  opts_sniper_helipad_01),
 		restoration:gen_dummy(400034, "sniper_helipad_02", Vector3(-1333, 4935, 101.783), Rotation(176, 0, -0),  opts_sniper_helipad_02),
 
-		restoration:gen_so(400035, "snip_helipad_so_1", Vector3(-861, 4717, 101.783), Rotation(176, 0, -0), optsDefend_SO),
+		restoration:gen_so(400035, "snip_helipad_so_1", Vector3(-1986.05, 5034.67, 2.908), Rotation(176, 0, -0), optsDefend_SO),
 		restoration:gen_so(400036, "snip_helipad_so_2", Vector3(-1333, 4935, 101.783), Rotation(176, 0, -0), optsDefend_SO),
 		-- missionscript for these 
 		restoration:gen_missionscript(400037, "cloakers_and_snipers", opts_cloakers_and_snipers),
+
+		-- weapons room vault door units (chance)
+		restoration:gen_dummy(400038, "weapons_lab_vault_unit_01", Vector3(-4163, -4912, 0), Rotation(20, -0, -0), opts_vault_dozer),
+		restoration:gen_dummy(400039,  "wepaons_lab_vault_01", Vector3(-4067, -4858, 0), Rotation(44, -0, -0), opts_vault_gunner_1),
+		restoration:gen_dummy(400040, "weapons_lav_vault_02", Vector3(-4268, -4956, 0), Rotation(8, -0, -0), opts_vault_gunner_2), 
+
+		restoration:gen_so(400041, "weapons_lab_vault_unit_so_01", Vector3(-4163, -4912, 0), Rotation(20, -0, -0), optsDefend_SO ),
+		restoration:gen_so(400042, "weapons_lab_vault_unit_so_02",  Vector3(-4067, -4858, 0), Rotation(44, -0, -0), optsDefend_SO),
+		restoration:gen_so(400043, "weapons_lav_vault_02", Vector3(-4268, -4956, 0), Rotation(8, -0, -0), optsDefend_SO),
+		restoration:gen_missionscript(400044, "enable_weapons_lab_vault_defense", opts_weapons_lab_vault_units),
     },
 }

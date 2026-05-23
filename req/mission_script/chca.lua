@@ -148,8 +148,8 @@ return {
 				102517,
 				102518,
 				102519
-			}
-		}
+			},
+		},
 		-- Add LoS blockers
 	[143003] = {
 		spawn = los_blockers

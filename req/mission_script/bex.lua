@@ -68,6 +68,12 @@ return {
 			}
 		}
 	},
+	-- Disable broken navlinks
+	[102541] = {
+		on_executed = {
+			{ id = 102544, remove = true }
+		}
+	},
 	-- Reinforce drill parts car on first break
 	[103346] = {
 		reinforce = {

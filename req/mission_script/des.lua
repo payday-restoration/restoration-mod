@@ -68,8 +68,8 @@ return {
 [101450] = {
 	on_executed = {
 		{ id = 400044, delay = 0, },
-	}
-}
+	},
+},
 -- Heavy Resistance on Escape 
 	[102082] = {
 		on_executed = {

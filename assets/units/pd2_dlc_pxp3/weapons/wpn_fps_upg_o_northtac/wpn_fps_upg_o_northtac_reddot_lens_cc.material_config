@@ -1,0 +1,8 @@
+<materials version="3" group="sight_northtac">
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:FPS" decal_material="glass_breakable" version="2" name="mtr_glass">
+        <diffuse_texture file="units/pd2_dlc_mxm/weapons/wpn_fps_upg_o_hamr/deltapoint_orange_df"/>
+        <opacity_texture file="units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_cs/wpn_aimpoint_glass_op"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable type="vector3" name="fresnel_settings" value="0.99 0 1"/>
+    </material>
+</materials>

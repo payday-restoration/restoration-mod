@@ -7,3 +7,4 @@
         <variable type="vector3" name="holo_reticle_scale" value="0.5 1 20"/>
     </material>
 </materials>
+

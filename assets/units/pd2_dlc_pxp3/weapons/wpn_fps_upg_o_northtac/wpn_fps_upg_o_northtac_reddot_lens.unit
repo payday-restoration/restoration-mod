@@ -1,0 +1,6 @@
+<unit type="wpn" slot="1">
+	<object file="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_reddot_lens" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

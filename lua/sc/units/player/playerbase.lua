@@ -70,7 +70,20 @@ end
 
 function PlayerBase:set_detection_multiplier(reason, multiplier)
 	local delay_mul = self._detection_settings.init_delay_mul * 0.64516129032
-	local range_mul = self._detection_settings.init_range_mul * 0.64516129032
+	--local range_mul = self._detection_settings.init_range_mul * 0.64516129032
+	local range_mul = self._detection_settings.init_range_mul
+
+	if Global.game_settings.difficulty == "sm_wish" then
+		range_mul = range_mul * 1.0 --20m
+	elseif Global.game_settings.difficulty == "overkill_290" then
+		range_mul = range_mul * 0.95 --19m
+	elseif Global.game_settings.difficulty == "easy_wish" then
+		range_mul = range_mul * 0.9 --18m
+	elseif Global.game_settings.difficulty == "overkill_145" then
+		range_mul = range_mul * 0.85 --17m
+	else
+		range_mul = range_mul * 0.8 --16m
+	end
 
 	self._detection_settings.delay_mul = delay_mul - (managers.groupai:state():chk_guard_delay_deduction() or 0)
 	self._detection_settings.range_mul = range_mul 

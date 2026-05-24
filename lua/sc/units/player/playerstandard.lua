@@ -5531,7 +5531,8 @@ function PlayerStandard:_check_step(t)
 	end
 
 	self._last_step_pos = self._last_step_pos or Vector3()
-	local step_length = self._state_data.on_ladder and 50 or self._is_wallrunning and 250 or ((not self._is_wallrunning and (self._state_data.ducking or self._state_data.in_steelsight)) and 125) or self._running and 175 or 150
+	local is_running_tired = not self._unit:movement():is_above_stamina_threshold() and self._running
+	local step_length = self._state_data.on_ladder and 50 or self._is_wallrunning and 250 or ((not self._is_wallrunning and (self._state_data.ducking or self._state_data.in_steelsight)) and 125) or is_running_tired and 155 or self._running and 175 or 150
 
 	if mvector3.distance_sq(self._last_step_pos, self._pos) > step_length * step_length then
 		mvector3.set(self._last_step_pos, self._pos)

@@ -802,6 +802,16 @@ tweak_data.projectiles.poison_gas_grenade.poison_gas_duration = 12
 tweak_data.projectiles.poison_gas_grenade.poison_gas_fade_time = 0.1
 tweak_data.projectiles.poison_gas_grenade.poison_gas_tick_time = 0.3
 tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data_name = "proj_gas_grenade_cloud"
+
+tweak_data.hud_icons.poison_gas_grenade = {
+	texture = "guis/dlcs/pxp1/textures/pd2/hud_poison_gas_grenade",
+	texture_rect = {
+		64,
+		0,
+		128,
+		128
+	}
+}
 --[[
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",

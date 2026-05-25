@@ -37684,7 +37684,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if table.contains(weap.categories, "dmr_h") or table.contains(weap.categories, "snp") or table.contains(weap.categories, "mmg") then
-				weap.sounds.fire_single3 = "saiga_npc1a_end"
+				--weap.sounds.fire_single3 = "saiga_npc1a_end"
 			end
 
 			if table.contains(weap.categories, "lmg") or table.contains(weap.categories, "minigun") then

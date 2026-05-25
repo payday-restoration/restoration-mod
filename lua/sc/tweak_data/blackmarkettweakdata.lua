@@ -3986,7 +3986,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_attack_var_dir = {
 				var1 = {"left", 0.2},
 				var2 = {"right", 0.2},
-				var3 = {"right", -0.2},
+				var3 = {"left", -0.2},
 				var4 = {"left", 0.8}
 			}
 			self.melee_weapons[melee_id].expire_t = 1.45

@@ -4930,8 +4930,8 @@ function BlackMarketGui:show_stats()
 				column:set_alpha(stat_changed and 1 or 0.5)
 			end
 
-			local equip_text = equip == 0 and "" or (equip > 0 and "+" or "") .. format_round(equip, stat.round_value)
 			local append = stat.append or ""
+			local equip_text = (equip == 0 and "") or ((equip > 0 and "+" or "") .. format_round(equip, stat.round_value) .. append)
 
 			self._stats_texts[stat.name].base:set_text(equip_text)
 			self._stats_texts[stat.name].base:set_alpha(0.75)

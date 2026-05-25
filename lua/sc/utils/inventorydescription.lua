@@ -143,8 +143,8 @@ function WeaponDescription._get_skill_stats(name, category, slot, base_stats, mo
 				if not weapon_tweak.upgrade_blocks or not weapon_tweak.upgrade_blocks.weapon or not table.contains(weapon_tweak.upgrade_blocks.weapon, "clip_ammo_increase") then
 					skill_stats[stat.name].value = skill_stats[stat.name].value + (managers.player:upgrade_value("weapon", "clip_ammo_increase", 1) - 1) * (weapon_tweak.CLIP_AMMO_MAX + (mods_stats[stat.name].value or 0))
 				end
-			   	
-			   	for _, category in ipairs(weapon_tweak.categories) do
+				
+				for _, category in ipairs(weapon_tweak.categories) do
 					if not weapon_tweak.upgrade_blocks or not weapon_tweak.upgrade_blocks[category] or (weapon_tweak.upgrade_blocks[category] and not table.contains(weapon_tweak.upgrade_blocks[category], "clip_ammo_increase")) then
 						skill_in_effect = skill_in_effect or managers.player:has_category_upgrade(category, "clip_ammo_increase")
 						skill_stats[stat.name].value = skill_stats[stat.name].value + (managers.player:upgrade_value(category, "clip_ammo_increase", 1) - 1) * (weapon_tweak.CLIP_AMMO_MAX + (mods_stats[stat.name].value or 0))
@@ -525,6 +525,14 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 				end
 			end
 		end
+	end
+
+	local extra_stats = {"swap_speed", "fire_rate", "standing_range", "moving_range", "pickup", "ads_speed"}
+	for _, stat_name in ipairs(extra_stats) do
+		local equip_val = mod_stats.equip.name and mods_stats[stat_name] and mods_stats[stat_name].value or 0
+		local chosen_val = mod_stats.chosen.name and mods_stats[stat_name] and mods_stats[stat_name].value or 0
+		mod_stats.equip[stat_name] = equip_val
+		mod_stats.chosen[stat_name] = chosen_val
 	end
 
 	return mod_stats
@@ -1133,25 +1141,40 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	return base_stats, mods_stats, skill_stats
 end
 
---Identical to vanilla function, but including it somehow fixes incorrect reload speeds showing up on the attachment selection screen for weapons with reload_speed_multiplier.
---[[
 function WeaponDescription.get_stats_for_mod(mod_name, weapon_name, category, slot)
 	local equipped_mods = nil
 	local blueprint = managers.blackmarket:get_weapon_blueprint(category, slot)
-
 	if blueprint then
 		equipped_mods = deep_clone(blueprint)
 		local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(weapon_name)
 		local default_blueprint = managers.weapon_factory:get_default_blueprint_by_factory_id(factory_id)
-
 		for _, default_part in ipairs(default_blueprint) do
 			table.delete(equipped_mods, default_part)
 		end
 	end
-
 	local base_stats = WeaponDescription._get_base_stats(weapon_name)
 	local mods_stats = WeaponDescription._get_mods_stats(weapon_name, base_stats, equipped_mods)
+	
+	local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(weapon_name)
+	local weapon = {
+		factory_id = factory_id,
+		blueprint = blueprint
+	}
+	
+	base_stats.swap_speed.value = WeaponDescription._get_base_swap_speed(weapon_name, base_stats)
+	mods_stats.swap_speed.value = WeaponDescription._get_mods_swap_speed(weapon_name, base_stats, mods_stats)
 
+	base_stats.standing_range.value = WeaponDescription._get_base_range(weapon, weapon_name, base_stats, false)
+	mods_stats.standing_range.value = WeaponDescription._get_mods_range(weapon, weapon_name, base_stats, mods_stats, false)
+
+	base_stats.moving_range.value = WeaponDescription._get_base_range(weapon, weapon_name, base_stats, true)
+	mods_stats.moving_range.value = WeaponDescription._get_mods_range(weapon, weapon_name, base_stats, mods_stats, true)
+
+	base_stats.pickup.value = WeaponDescription._get_base_pickup(weapon, weapon_name)
+	mods_stats.pickup.value = WeaponDescription._get_mods_pickup(weapon, weapon_name, base_stats)
+
+	base_stats.ads_speed.value = WeaponDescription._get_base_ads_speed(weapon, weapon_name, base_stats)
+	mods_stats.ads_speed.value = WeaponDescription._get_mods_ads_speed(weapon, weapon_name, base_stats)
+	
 	return WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_stats, mods_stats, equipped_mods)
 end
---]]

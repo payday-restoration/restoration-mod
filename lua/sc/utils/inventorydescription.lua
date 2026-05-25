@@ -531,7 +531,6 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 					--But also mix in bits of the above "damage" stat calcs because of how damage_min needs the OG base damage values
 					--what ass this was to make
 					--like damage falloff, acts fucky for launchers with Hornet rounds
-					--shotguns with slugs also don't output correctly since slug shotgun min damage is *technically* their base min damage so no difference in min damage is found (I will probably fix this later)
 					if part_data.stats and part_data.stats.damage then
 						local part_damage = part_data.stats.damage or 0
 						local tweak_dmg = tweak_stats.damage
@@ -552,12 +551,9 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 						local mod_damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 
 						local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-						local default_ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, default_blueprint) or {}
 
 						if not ignore_rays and rays and rays > 1 then
-							if not (default_ammo_data.rays and default_ammo_data.rays == 1) then
-								base_damage_min_mult = 0.05
-							end
+							base_damage_min_mult = 0.05
 							if not (ammo_data.rays and ammo_data.rays == 1) then
 								mod_damage_min_mult = 0.05
 							end

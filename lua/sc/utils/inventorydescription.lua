@@ -520,7 +520,7 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 						end
 
 						--Start of added calculations
-       					local weapon_tweak = tweak_data.weapon[weapon_name]
+						local weapon_tweak = tweak_data.weapon[weapon_name]
 						local multiplier = managers.blackmarket:damage_multiplier(weapon_name, weapon_tweak.categories, nil, nil, nil, blueprint)
 						--End
 
@@ -532,60 +532,66 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 					--what ass this was to make
 					--like damage falloff, acts fucky for launchers with Hornet rounds
 					--shotguns with slugs also don't output correctly since slug shotgun min damage is *technically* their base min damage so no difference in min damage is found (I will probably fix this later)
-				    if part_data.stats and part_data.stats.damage then
-				        local part_damage = part_data.stats.damage or 0
-				        local tweak_dmg = tweak_stats.damage
-				        local base_damage_index = base_stats.damage.index
-				        local wanted_index = math.clamp(base_damage_index + part_damage, 1, #tweak_dmg)
+					if part_data.stats and part_data.stats.damage then
+						local part_damage = part_data.stats.damage or 0
+						local tweak_dmg = tweak_stats.damage
+						local base_damage_index = base_stats.damage.index
+						local wanted_index = math.clamp(base_damage_index + part_damage, 1, #tweak_dmg)
 
-				        local base_damage_value = base_stats.damage.value
-				        local base_tweak = tweak_dmg[base_damage_index]
-				        local mod_tweak = tweak_dmg[wanted_index]
+						local base_damage_value = base_stats.damage.value
+						local base_tweak = tweak_dmg[base_damage_index]
+						local mod_tweak = tweak_dmg[wanted_index]
 
-				        local mod_damage = (base_tweak ~= 0) and (base_damage_value * (mod_tweak / base_tweak)) or 0
+						local mod_damage = (base_tweak ~= 0) and (base_damage_value * (mod_tweak / base_tweak)) or 0
 
-				        local weapon_tweak = tweak_data.weapon[weapon_name]
-				        local rays = weapon_tweak.rays
-				        local ignore_rays = (weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.ignore_rays) or weapon_tweak.ignore_rays or false
+						local weapon_tweak = tweak_data.weapon[weapon_name]
+						local rays = weapon_tweak.rays
+						local ignore_rays = (weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.ignore_rays) or weapon_tweak.ignore_rays or false
 
-				        local base_damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
-				        local mod_damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
+						local base_damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
+						local mod_damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 
-				        local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-				        if not ignore_rays and rays and rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
-				            base_damage_min_mult = 0.05
-				            mod_damage_min_mult = 0.05
-				        end
+						local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+						local default_ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, default_blueprint) or {}
 
-				        if part_data.custom_stats and part_data.custom_stats.damage_min_mult then
-				            mod_damage_min_mult = mod_damage_min_mult * part_data.custom_stats.damage_min_mult
-				        end
+						if not ignore_rays and rays and rays > 1 then
+							if not (default_ammo_data.rays and default_ammo_data.rays == 1) then
+								base_damage_min_mult = 0.05
+							end
+							if not (ammo_data.rays and ammo_data.rays == 1) then
+								mod_damage_min_mult = 0.05
+							end
+						end
 
-				        local gl_buck = nil
-				        if part_data.custom_stats and part_data.custom_stats.gl_buck then
-				            gl_buck = true
-				        end
+						if part_data.custom_stats and part_data.custom_stats.damage_min_mult then
+							mod_damage_min_mult = mod_damage_min_mult * part_data.custom_stats.damage_min_mult
+						end
 
-				        local mod_damage_min = mod_damage * mod_damage_min_mult
-				        local base_damage_min = base_damage_value * base_damage_min_mult
+						local gl_buck = nil
+						if part_data.custom_stats and part_data.custom_stats.gl_buck then
+							gl_buck = true
+						end
 
-				        if not gl_buck then
-				            for i = 1, #weapon_tweak.categories do
-				                local category = weapon_tweak.categories[i]
-				                if category == "flamethrower" or category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
-				                    mod_damage_min = 0
-				                    base_damage_min = 0
-				                    break
-				                end
-				            end
-				        end
+						local mod_damage_min = mod_damage * mod_damage_min_mult
+						local base_damage_min = base_damage_value * base_damage_min_mult
 
-				        local diff = math.round((mod_damage_min - base_damage_min) * 100) / 100
-       					local weapon_tweak = tweak_data.weapon[weapon_name]
+						if not gl_buck then
+							for i = 1, #weapon_tweak.categories do
+								local category = weapon_tweak.categories[i]
+								if category == "flamethrower" or category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+									mod_damage_min = 0
+									base_damage_min = 0
+									break
+								end
+							end
+						end
+
+						local diff = math.round((mod_damage_min - base_damage_min) * 100) / 100
+						local weapon_tweak = tweak_data.weapon[weapon_name]
 						local multiplier = managers.blackmarket:damage_multiplier(weapon_name, weapon_tweak.categories, nil, nil, nil, blueprint)
 
-				        mod[stat.name] = (diff or 0) * multiplier
-				    end
+						mod[stat.name] = (diff or 0) * multiplier
+					end
 				elseif stat.name == "pickup" then
 					--it works?
 					--might not stack correctly if there are multiple sources from attachments

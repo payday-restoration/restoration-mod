@@ -1747,7 +1747,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 
 		--Psycho Knife
 		--["bm_melee_chef_info"] = "Whether you're an angry heister or a psycho bank robber, this hot-forged, laser sharpened chef knife in fine, stainless molybdenum steel will serve you for years.\n\nBy the way, did you know that the traditional chef's knife was originally intended to slice and disjoint large cuts of flesh?\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
-		["bm_melee_chef_info"] = "이 칼이 슈퍼마켓에서 구매한 고기를 다지는 데 사용되었는지는 잘 모르겠습니다.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.",
+		["bm_melee_chef_info"] = "이 칼이 슈퍼마켓에서 구매한 고기를 다지는 데 사용되었는지는 잘 모르겠습니다.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.##",
 
 		--Trench Knife
 		["bm_melee_fairbair_info"] = "영국 코만도들에게 인기 있는 트렌치 나이프는 베는 데 매우 뛰어납니다. 매우 인기 있는 나이프로, 오늘날에도 사용되고 생산되고 있습니다.",
@@ -1814,7 +1814,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--ALSO ALSO ZAP ZAP MOTHERFUCKER
 		["bm_melee_funder_strike_info"] = "#{skill_color}#\"저 캔을 집어라.\"##\n\n접촉만으로 목표물을 기절시키는 즉석으로 만들어진 전기 충격봉입니다.\n\n#{skill_color}#적중 시 감전되어## 대부분의 적을 기절시키며, 특수 및 정예 적을 기절시킬려면 완전 충전으로 적중해야합니다.\n#{important_1}#타이탄 실드, 타이탄 테이저, 타이탄 도저, 및 캡틴은 기절에 면역입니다.##",
 		--PANPAKAPAN!
-		["bm_melee_bonk_info"] = "프라이팬으로 맞아 봤니?",
+		["bm_melee_bonk_info"] = "조리용은 아닙니다.",
 		["bm_melee_bonk2_info"] = "#{risk}#이겼닭! 오늘 저녁은 치킨이닭!##\n\n#{skill_color}#10%## 확률로 #{skill_color}#10##배의 피해량과 녹다운을 가합니다.",
 
 		--Kunai
@@ -3214,7 +3214,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_awp_cs_dragon"] = "AWP | 용의 전설",
 				["bm_awp_cs"] = "AWP",
 				["bm_wp_upg_bazooka"] = "용의 비전설 전용 세트",
-				["bm_wp_upg_bazooka_desc"] = "위험할수록 큰 보상이 따르는 이 악명 높은 소총은 단방에 적을 제압하는 방식이 특징인 것으로 널리 알려져 있습니다.\n\n#{skill_color}#캡틴과 보스를 제외한 적에게 헤드샷을 가하면 #{skill_color}#50%##의 추가 피해를 가합니다.##\n#{skill_color}#타이탄 방패를 관통할 수 있습니다.##\n\n#{risk}#사격 시 잠시 동안 조준을 할 수 없습니다.##",
+				["bm_wp_upg_bazooka_desc"] = "위험할수록 큰 보상이 따르는 이 악명 높은 소총은 단방에 적을 제압하는 방식이 특징인 것으로 널리 알려져 있습니다.\n\n#{skill_color}#캡틴과 보스를 제외한 적에게 헤드샷을 가하면 50%의 추가 피해를 가합니다.##\n#{skill_color}#타이탄 방패를 관통할 수 있습니다.##\n\n#{risk}#사격 시 잠시 동안 조준을 할 수 없습니다.##",
 				["bm_bazooka_sc_desc"] = "위험할수록 큰 보상이 따르는 이 악명 높은 소총은 단방에 적을 제압하는 방식이 특징인 것으로 널리 알려져 있습니다.\n\n#{skill_color}#다수의 적, 방탄복, 방패, 타이탄 방패, 그리고 얇은 벽을 관통할 수 있습니다.##\n\n#{risk}#사격 시 잠시동안 조준을 할 수 없습니다.##",
 				--WA2000
 				["bm_wa2000_sc_desc"] = "일류 암살자에게 적합한 저격소총인 이 명품 소총은 단 몇 백 정만 제작되었습니다.\n\n#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",
@@ -5200,8 +5200,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["bm_equipment_first_aid_kit_desc"] = "구급 키트를 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 #{skill_color}#150##만큼 체력을 회복할 수 있습니다.\n\n구급 키트는 #{skill_color}#한 번만## 사용할 수 있습니다.\n\n구급 키트는 응급치료를 위한 의약품 및 장비를 모은 조그만한 주머니입니다.",
 		["bm_equipment_first_aid_kit_desc_short"] = "구급 키트를 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 #{skill_color}#150##만큼 체력을 회복할 수 있습니다.\n\n구급 키트는 #{skill_color}#한 번만## 사용할 수 있습니다.",
 		--AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-		["bm_equipment_doctor_bag_desc"] = "의료 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 최대 체력 #{skill_color}#20%##만큼 회복하고 #{skill_color}#3##분 동안 방어력을 #{skill_color}#10##포인트 얻으며, #{skill_color}#10##포인트를 얻으며, #{skill_color}#5##초마다 최대 체력의 #{skill_color}#4%##씩 회복합니다.\n\n의료 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n의료 가방은 의사 또는 기타 의료 전문가가 의료 용품 및 의약품을 쉽게 들고 다니기 위해 사용하는 휴대용 가방입니다.",
-		["bm_equipment_doctor_bag_desc_short"] = "의료 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 최대 체력 #{skill_color}#20%##만큼 회복하고 #{skill_color}#3##분 동안 방어력을 #{skill_color}#10##포인트 얻으며, #{skill_color}#5##초마다 최대 체력의 #{skill_color}#4%##씩 회복합니다.\n\n의료 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.",
+		["bm_equipment_doctor_bag_desc"] = "의료 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 최대 체력 #{skill_color}#20%##만큼 회복하고 #{skill_color}#3##분 동안 방어력을 #{skill_color}#10## 얻으며, #{skill_color}#5##초마다 최대 체력의 #{skill_color}#4%##씩 회복합니다.\n\n의료 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.\n\n의료 가방은 의사 또는 기타 의료 전문가가 의료 용품 및 의약품을 쉽게 들고 다니기 위해 사용하는 휴대용 가방입니다.",
+		["bm_equipment_doctor_bag_desc_short"] = "의료 가방을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 한 번 설치하게 되면 위치를 이동할 수 없지만, 당신과 당신의 팀원들이 #{skill_color}#$BTN_INTERACT## 키를 길게 눌러 최대 체력 #{skill_color}#20%##만큼 회복하고 #{skill_color}#3##분 동안 방어력을 #{skill_color}#10## 얻으며, #{skill_color}#5##초마다 최대 체력의 #{skill_color}#4%##씩 회복합니다.\n\n의료 가방은 #{skill_color}#$deployable_uses##번만 사용할 수 있으며, 가방을 들여다보면 얼마나 남았는지 알 수 있습니다.",
 		--Sentry
 		["bm_equipment_sentry_gun_desc"] = "센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 전체 탄약의 #{skill_color}#$deployable_uses##를 사용합니다.\n\n설치된 센트리 건은 장탄수가 #{skill_color}#150##발이며, 발당 피해량은 #{skill_color}#30##, 분당 발사 속도는 #{skill_color}#320##발입니다.\n\n센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 센트리 건을 회수 할 수 있습니다. 센트리 건을 회수하면 자동으로 수리되고, 센트리 건에 남아있는 탄약은 총 탄약에 회수됩니다.\n\n센트리 건은 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.\n\n센트리 건은 시민들을 위협하여 땅에 눕히게 합니다.\n\n센트리 건은 부착된 센서를 통해 자동으로 목표를 조준하고 사격합니다. 센트리 건은 주로 당신과 당신의 팀원으로부터 주의를 끌어 교란용으로 주로 사용됩니다.",
 		["bm_equipment_sentry_gun_desc_short"] = "센트리 건을 사용하려면, #{skill_color}#$BTN_USE_ITEM## 키를 길게 눌러 설치해야 합니다. 설치한 순간, 전체 탄약의 #{skill_color}#$deployable_uses##를 사용하며, 장탄수는 #{skill_color}#150##발, 발당 피해량은 #{skill_color}#30##, 분당 발사 속도는 #{skill_color}#320##발입니다.\n\n센트리 건 근처에 #{skill_color}#$BTN_INTERACT## 키를 길게 누르면 센트리 건에 남아있는 탄약을 회수하고 수리합니다.\n\n센트리 건은 너무 많은 피해를 입으면 작동을 멈추고, 이 상태에서 상호 작용하면 자동 수리 모드로 전환합니다.",
@@ -5870,7 +5870,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Overkill
 				["menu_overkill_sc"] = "오버킬",
-				["menu_overkill_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총, 화염방사기 또는 OVE9000 전기톱##으로 피해량 감소 거리 이내에서 직접 공격으로 적을 처치하거나 치명적인 헤드샷으로 처치 시, #{skill_color}#$skill_value_b2##초간 최대 피해량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{risk}#주의:## #{important_1}#폭발물이나 지속 피해 효과에는 발동되지 않으며 영향을 주지 않습니다.##\n\n에이스: #{owned}#$pro##\n이제 피해량 증가 효과가 #{skill_color}#모든 무기##에 적용되며, 지속 시간이 #{skill_color}#$skill_value_p1##초로 증가합니다.\n\n#{risk}#주의:## #{important_1}#발사기에는## #{risk}#피해량 보너스가 적용되지 않습니다.##\n\n#{skill_color}#산탄총, 화염방사기, OVE9000 전기톱##의 무기 교체 속도가 #{skill_color}#$skill_value_p2## 빨라집니다.",
+				["menu_overkill_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#산탄총, 화염방사기 또는 OVE9000 전기톱##으로 피해량 감소 거리 이내에서 적을 처치하거나 헤드샷으로 처치 시, #{skill_color}#$skill_value_b2##초간 최대 피해량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{risk}#주의:## #{important_1}#폭발물이나 지속 피해 효과에는 발동되지 않으며 영향을 주지 않습니다.##\n\n에이스: #{owned}#$pro##\n이제 피해량 증가 효과가 #{skill_color}#모든 무기##에 적용되며, 지속 시간이 #{skill_color}#$skill_value_p1##초로 증가합니다.\n\n#{risk}#주의:## #{important_1}#발사기에는## #{risk}#피해량 보너스가 적용되지 않습니다.##\n\n#{skill_color}#산탄총, 화염방사기, OVE9000 전기톱##의 무기 교체 속도가 #{skill_color}#$skill_value_p2## 빨라집니다.",
 
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
@@ -5891,7 +5891,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Bullseye--
 				["menu_prison_wife_beta_sc"] = "불스아이",
-				["menu_prison_wife_beta_desc_sc"] = "베이식: #{owned}#$basic##\n헤드샷 시 방탄력을 #{skill_color}#$skill_value_b1## 회복합니다. 재사용 대기 시간은 #{important_1}#$skill_value_b2##초입니다.\n\n치명적인 헤드샷으로 처치 시 재사용 대기 시간이 #{skill_color}#$skill_value_b3##초 감소합니다.\n\n에이스: #{owned}#$pro##\n헤드샷 시 추가로 #{skill_color}#$skill_value_p1##의 방탄복을 회복합니다.\n\n재사용 대기 시간 감소량이 추가로 #{skill_color}#$skill_value_p2##초 증가합니다. $anarc_disable\n\n",
+				["menu_prison_wife_beta_desc_sc"] = "베이식: #{owned}#$basic##\n헤드샷 시 방탄력을 #{skill_color}#$skill_value_b1## 회복합니다. 재사용 대기 시간은 #{important_1}#$skill_value_b2##초입니다.\n\n헤드샷으로 처치 시 재사용 대기 시간이 #{skill_color}#$skill_value_b3##초 감소합니다.\n\n에이스: #{owned}#$pro##\n헤드샷 시 추가로 #{skill_color}#$skill_value_p1##의 방탄복을 회복합니다.\n\n재사용 대기 시간 감소량이 추가로 #{skill_color}#$skill_value_p2##초 증가합니다. $anarc_disable\n\n",
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "아이언맨",
@@ -5916,7 +5916,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Rip and Tear formally Carbon Blade
 				["menu_carbon_blade_beta_sc"] = "찢고 죽이기",
-				["menu_carbon_blade_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이제 당신의 #{skill_color}#OVE9000 전기톱##으로 실드를 관통할 수 있습니다.\n\n무기가 적의 방탄복을 관통하여 피해의 #{skill_color}#$skill_value_b1##를 가합니다.\n\n이 효과는 무기가 이미 보유한 관통 능력과 합산되어, 최대 #{skill_color}#100%##까지 적용됩니다.\n\n에이스: #{owned}#$pro##\n적을 #{skill_color}#OVE9000 톱, 활, 발사기##로 처치하면 #{skill_color}#$skill_value_p1## 확률로 주변 #{skill_color}#$skill_value_p2##미터 내의 적에게 공포감을 퍼트립니다.\n\n공포감 상태의 적은 짧은 시간 동안 통제 불능의 공포에 빠집니다.\n\n#{skill_color}#모든 무기##의 탄창 용량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{risk}#주의:## #{important_1}#탄약을 재생하는 무기에는## #{risk}#탄창 용량 증가 효과가 적용되지 않습니다.##",
+				["menu_carbon_blade_beta_desc_sc"] = "베이식: #{owned}#$basic##\n이제 #{skill_color}#OVE9000 전기톱##으로 실드를 관통할 수 있습니다.\n\n무기가 적의 방탄복을 관통하여 피해의 #{skill_color}#$skill_value_b1##를 가합니다.\n\n이 효과는 무기가 이미 보유한 관통 능력과 합산되어, 최대 #{skill_color}#100%##까지 적용됩니다.\n\n에이스: #{owned}#$pro##\n적을 #{skill_color}#OVE9000 톱, 활, 발사기##로 처치하면 #{skill_color}#$skill_value_p1## 확률로 주변 #{skill_color}#$skill_value_p2##미터 내의 적에게 공포감을 퍼트립니다.\n\n공포감 상태의 적은 짧은 시간 동안 통제 불능의 공포에 빠집니다.\n\n#{skill_color}#모든 무기##의 탄창 용량이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n#{risk}#주의:## #{important_1}#탄약을 재생하는 무기에는## #{risk}#탄창 용량 증가 효과가 적용되지 않습니다.##",
 
 				--Fully Loaded--
 				["menu_bandoliers_beta_sc"] = "준비만전",
@@ -5965,7 +5965,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Fire Trap--
 				["menu_more_fire_power_sc"] = "화염 함정",
-				["menu_more_fire_power_desc_sc"] = "베이식: #{owned}#$basic##\n트립 마인 #{skill_color}#skill_value_p1##개를 소지 및 설치할 수 있습니다.\n\n당신이 설치한 트립 마인은 폭발 시 #{skill_color}#10##초 동안 폭발한 지점을 중심으로 #{skill_color}#7.5##미터 반경에 화염 지대를 생성합니다.\n\n트립 마인으로 생성된 화염은 자가 피해나 아군에게 피해를 주지 않습니다.\n\n에이스: #{owned}#$pro##\n트립 마인 #{skill_color}#skill_value_p2##개를 소지 및 설치할 수 있습니다.\n\n트립 마인의 피해량이 #{skill_color}#50%## 증가합니다.",
+				["menu_more_fire_power_desc_sc"] = "베이식: #{owned}#$basic##\n트립 마인 #{skill_color}#$skill_value_p1##개를 소지 및 설치할 수 있습니다.\n\n당신이 설치한 트립 마인은 폭발 시 #{skill_color}#10##초 동안 폭발한 지점을 중심으로 #{skill_color}#7.5##미터 반경에 화염 지대를 생성합니다.\n\n트립 마인으로 생성된 화염은 자가 피해나 아군에게 피해를 주지 않습니다.\n\n에이스: #{owned}#$pro##\n트립 마인 #{skill_color}#$skill_value_p2##개를 소지 및 설치할 수 있습니다.\n\n트립 마인의 피해량이 #{skill_color}#50%## 증가합니다.",
 				
 				--Expert Hardware
 				["menu_kick_starter_beta_sc"] = "하드웨어 전문가",
@@ -5990,11 +5990,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Ammo Efficiency--
 				["menu_single_shot_ammo_return_sc"] = "효율적인 탄약 활용",
-				["menu_single_shot_ammo_return_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##으로 #{skill_color}#$skill_value_b2##초 안에 치명적인 헤드샷 #{skill_color}#$skill_value_b1##번 성공하면 무기의 탄약 획득량의 #{skill_color}#$skill_value_b4##를 탄약으로 즉시 회수됩니다.\n\n#{risk}#주의: 탄약 회수는 반올림 되어 항상 최소## #{skill_color}#1발이## #{risk}#제공됩니다.##\n\n에이스: #{owned}#$pro##\n이제 이 효과는 치명적인 헤드샷 #{skill_color}#$skill_value_p1##번 성공 시 발동되며, 가능하다면 탄약이 먼저 탄창으로 바로 회수됩니다.",
+				["menu_single_shot_ammo_return_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##으로 #{skill_color}#$skill_value_b2##초 안에 헤드샷으로 #{skill_color}#$skill_value_b1##명 처치 시 탄약을 무기의 탄약 획득량의 #{skill_color}#$skill_value_b4##만큼을 즉시 회수합니다.\n\n#{risk}#주의: 탄약 회수는 반올림 되어 항상 최소## #{skill_color}#1발이## #{risk}#제공됩니다.##\n\n에이스: #{owned}#$pro##\n이제 이 효과는 헤드샷으로 #{skill_color}#$skill_value_p1##명 처치 시 발동되며, 가능하다면 탄약이 먼저 탄창으로 즉시 회수됩니다.",
 
 				--Aggressive Reload--
 				["menu_engineering_beta_sc"] = "공격적 재장전",
-				["menu_engineering_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##으로 치명적인 헤드샷을 성공하면 #{skill_color}#$skill_value_b2##초간 재장전 속도 및 조준 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n헤드샷이 아닌 처치로도 스킬을 발동할 수 있으며 재장전 속도 보너스가 #{skill_color}#$skill_value_p1## 로 증가합니다.",
+				["menu_engineering_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##으로 적을 헤드샷으로 처치 시 #{skill_color}#$skill_value_b2##초간 재장전 속도 및 조준 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n헤드샷이 아닌 처치로도 스킬을 발동할 수 있으며 재장전 속도 보너스가 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "마인드 블로우",
@@ -6063,7 +6063,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "프로페셔널",
-				["menu_silence_expert_beta_desc_sc"] = "베이식: #{owned}#$basic##\n조준 속도와 달리기 후 사격 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n원거리 무기로 특수 및 정예 적에게 치명적인 헤드샷 성공 시, #{skill_color}#추가 탄약 상자를 떨굽니다.##",
+				["menu_silence_expert_beta_desc_sc"] = "베이식: #{owned}#$basic##\n조준 속도와 달리기 후 사격 속도가 #{skill_color}#$skill_value_b1## 빨라집니다.\n\n에이스: #{owned}#$pro##\n원거리 무기로 특수 및 정예 적을 헤드샷으로 처치 시, #{skill_color}#추가 탄약 상자를 떨굽니다.##",
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "기습 공격",

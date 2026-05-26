@@ -9,6 +9,10 @@ Day = os.date("%d")
 restoration._mod_path = restoration:GetPath()
 function restoration:Init()
 	restoration.log_shit("SC: LOADING: " .. self.ModPath)
+	
+	-- Global to check for to make it easy for other mods to check for the overhaul existing
+	restoration.is_overhaul = true
+	
 	restoration.captain_types = {
 		winter = {
 			spawn_group = "Cap_Winters",

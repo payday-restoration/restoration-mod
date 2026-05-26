@@ -1422,6 +1422,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "Нет модификатора",
 		["bm_wp_upg_bonus_sc_none_desc"] = "ИСПОЛЬЗУЙТЕ, ЧТОБЫ УБРАТЬ БОНУСЫ, ПОЛУЧЕННЫЕ ОТ СКИНОВ.",
+		
+		["bm_welrod_sc_desc"] = "Compact and disguised to look like a bike pump, this covert weapon can silently take out isolated targets. Comes #{skill_color}#integrally suppressed.##",
 
 		--Gecko Pistol
 		["bm_tranq_maxim_sc_desc"] = "Первый в мире пистолет со #{skill_color}#со встроенным глушителем##. Удобность и скрытность хорошо сочетаются с ослабляющими боеприпасами-транквилизаторами.\n\n#{stats_positive}#Транквилизатор - наносит урон через время.##",
@@ -1441,6 +1443,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--PPK (Gruber)
 		["bm_ppk_sc_desc"] = "Компактная альтернатива большим и опасным пушкам. Классическое оружие для классических целей.",
 		["bm_x_ppk_sc_desc"] = "Когда ты уже не Бонд, а Кингсмэн.",
+		--Makarov (Strix)
+		["bm_pmm_sc_desc"] = "This Soviet-era pistol continues to see combat around the world to this day. Its small size makes it easily concealable, but it still packs a punch when things get loud.",
+		["bm_x_pmm_sc_desc"] = "",			
 		--M13
 		["bm_legacy_sc_desc"] = "Модель из Западной Германии, которая не потерпела конкуренции с Бернетти, но может постоять за себя.",
 		["bm_x_legacy_sc_desc"] = "Два пистолета, забытых историей. Напомните об их существовании, залив комнату свинцом.",

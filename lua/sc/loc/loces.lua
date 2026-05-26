@@ -2476,6 +2476,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_raygun_o_waw_desc"] = "Cambia la alineación de la mira de hierro a como era antes de Call of Duty: Black Ops II.",
 
 			--[[ PISTOLS ]]
+				["bm_welrod_sc_desc"] = "Compact and disguised to look like a bike pump, this covert weapon can silently take out isolated targets. Comes #{skill_color}#integrally suppressed.##",
+			
 				--Gecko Pistol
 				["bm_tranq_maxim_sc_desc"] = "La primera pistola semiautomática con #{skill_color}#supresión integrada## del mundo, el buen manejo y la ocultabilidad encajan bien con las debilitantes balas tranquilizantes.\n\n#{stats_positive}#Inflige daño por el tiempo con balas tranquilizantes.##",
 				["bm_tranq_x_maxim_sc_desc"] = "Un par de las primeras pistolas semiautomáticas con #{skill_color}#supresión integrada## del mundo, el buen manejo y la ocultabilidad encajan bien con las debilitantes balas tranquilizantes.\n\n#{stats_positive}#Inflige daño por el tiempo con balas tranquilizantes.##",
@@ -2494,6 +2496,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--PPK (Gruber)
 				["bm_ppk_sc_desc"] = "Una alternativa compacta a armas de fuego más grandes y peligrosas. Un arma clásica con una aplicación clásica.",
 				["bm_x_ppk_sc_desc"] = "Para cuando necesites ser menos 007 y más Kingsman.",
+				--Makarov (Strix)
+				["bm_pmm_sc_desc"] = "This Soviet-era pistol continues to see combat around the world to this day. Its small size makes it easily concealable, but it still packs a punch when things get loud.",
+				["bm_x_pmm_sc_desc"] = "",					
 				--M13
 				["bm_legacy_sc_desc"] = "Diseño de Alemania Occidental que acabó siendo rechazado en favor del Bernetti, pero todavía aguantará en un tiroteo.",
 				["bm_x_legacy_sc_desc"] = "Dos pistolas olvidadas por la historia que dejarán un legado de plomo en la habitación que elijas.",

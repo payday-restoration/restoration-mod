@@ -119,7 +119,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"road",
 					"legacy",
 					"x_legacy",
-					"fmg9"
+					"fmg9",
+					"flun"
 				}
 			},
 		l18 = {
@@ -236,7 +237,12 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"shuno",
 					"holt",
 					"x_holt",
-					"x_korth"
+					"x_korth",
+					"welrod",
+					"pmm",
+					"x_pmm",
+					"speen",
+					"dart"					
 				}
 			},
 		l32 = {

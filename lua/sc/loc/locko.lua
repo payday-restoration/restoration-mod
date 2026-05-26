@@ -1790,6 +1790,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_revenant_heirloom_info"] = "#{important_1}#\"날 가까이서 보면 이미 늦은 거라고, 고깃덩어리.\"##",
 		--best girl
 		["bm_melee_megumins_staff_info"] = "완전히 충전되면 강력한 폭발을 일으킵니다!\n모든 표면이나 존재에게 최대 #{skill_color}#30##미터까지 시전할 수 있지만, #{risk}#공중에는 시전할 수 없습니다.##\n\n#{important_1}#충전 속도는 스킬의 영향을 받지 않습니다.\n충전하면 시야가 왜곡되고, 스태미나가 소모되며, 움직임이 점점 느려지고\n성공적으로 폭발을 시전하면 즉시 쓰러집니다. 쓰러지는 것을 지연시키거나 구해주는 스킬과 특전 덱은 무시됩니다.##",
+		--Makarov (Strix)
+		["bm_pmm_sc_desc"] = "이 소련제 권총은 오늘날까지도 전 세계 전장에서 사용되고 있습니다. 작은 크기 덕분에 숨기기에도 좋지만, 라우드에서도 강력한 화력을 발휘합니다.",
+		["bm_x_pmm_sc_desc"] = "",
 		--fishe
 		["bm_melee_holy_mackerel_info"] = "#{item_stage_2}#레벨 42 생선##\n\n물고기에게 맞으면 아주 창피할 겁니다.",
 
@@ -2473,6 +2476,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_raygun_o_waw_desc"] = "콜 오브 듀티: 블랙 옵스 II 이전과 같은 방식으로 기계식 조준기의 정렬을 변경합니다.",
 
 			--[[ PISTOLS ]]
+				["bm_welrod_sc_desc"] = "바이크 펌프처럼 생긴 이 잠입용 소형 권총은 홀로 있는 목표를 조용히 암살할 수 있습니다. #{skill_color}#일체형 소음기##가 장착되어 있습니다.",
+			
 				--Gecko Pistol
 				["bm_tranq_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 단발 권총으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 사용해 시간이 지남에 따라 피해를 가합니다.##",
 				["bm_tranq_x_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 단발 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 사용해 시간이 지남에 따라 피해를 가합니다.##",

@@ -6,6 +6,12 @@ function IncendiaryBurstGrenade:init(unit)
 	self._detonated = false
 end
 
+function IncendiaryBurstGrenade:_tweak_data_play_sound(...)
+	if self._airdrop_unit then
+		ArrowBase._tweak_data_play_sound(self, ...)
+	end
+end
+
 function IncendiaryBurstGrenade:clbk_impact(tag, unit, body, other_unit, other_body, position, normal, collision_velocity, velocity, other_velocity, new_velocity, direction, damage, ...)
 	self:_detonate(tag, unit, body, other_unit, other_body, position, normal, collision_velocity, velocity, other_velocity, new_velocity, direction, damage, ...)
 end
@@ -42,13 +48,18 @@ function IncendiaryBurstGrenade:_detonate(normal)
 	self:remove_trail_effect()
 	self:_spawn_environment_fire(normal)
 
-	if self._unit:id() ~= -1 then
+	if self._unit:id() ~= -1 and managers.network:session() then
 		managers.network:session():send_to_peers_synched("sync_detonate_molotov_grenade", self._unit, "base", GrenadeBase.EVENT_IDS.detonaten, normal)
 	end
 
 	local destruction_delay = self._dot_data and self._dot_data.dot_length + 1
 
 	self:_handle_hiding_and_destroying(true, destruction_delay)
+	self:_check_stop_flyby_sound()
+
+	if Network:is_server() and self._airdrop_unit then
+		managers.game_play_central:server_spawn_pubg_cargos(self._airdrop_unit, self._unit:position(), (self:thrower_unit() or self._unit):position())
+	end
 end
 
 function IncendiaryBurstGrenade:sync_detonate_molotov_grenade(event_id, normal)
@@ -76,6 +87,7 @@ function IncendiaryBurstGrenade:_detonate_on_client(normal)
 end
 
 function IncendiaryBurstGrenade:_spawn_environment_fire(normal)
+	if self._airdrop_unit then return end
 	local position = self._unit:position()
 	local rotation = self._unit:rotation()
 	local data = tweak_data.env_effect:incendiary_burst_fire()

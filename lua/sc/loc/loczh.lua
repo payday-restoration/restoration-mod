@@ -1595,6 +1595,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- Little Friend--
         -- ["bm_m203_weapon_sc_desc_pc"] = "按下 $BTN_BIPOD 切换到榴弹发射器。",
         -- ["bm_m203_weapon_sc_desc"] = "按住 $BTN_BIPOD 切换到榴弹发射器。",
+		
+		["bm_welrod_sc_desc"] = "Compact and disguised to look like a bike pump, this covert weapon can silently take out isolated targets. Comes #{skill_color}#integrally suppressed.##",
 
         -- Gecko Pistol
         ["bm_tranq_maxim_sc_desc"] = "世界上第一把一体化消音手枪,其易操作性与高隐蔽性正适合打出镇静弹虚弱目标。\n\n这把枪使用#{skill_color}#镇静弹##在短时间内造成#{skill_color}#持续伤害##。",
@@ -1614,6 +1616,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- PPK (Gruber)
         ["bm_ppk_sc_desc"] = "更大，更危险的袖珍武器替代品，经典武器，经典用法。",
         ["bm_x_ppk_sc_desc"] = "如果你想比特工看起来更像个绅士就用它。",
+		--Makarov (Strix)
+		["bm_pmm_sc_desc"] = "This Soviet-era pistol continues to see combat around the world to this day. Its small size makes it easily concealable, but it still packs a punch when things get loud.",
+		["bm_x_pmm_sc_desc"] = "",			
         -- M13
         ["bm_legacy_sc_desc"] = "西德人的设计最终被Bernetti否决，但在一场战斗中，它仍能发挥出自己的力量。",
         ["bm_x_legacy_sc_desc"] = "两支被历史遗忘的手枪，将使你所及之屋留遍子弹。",

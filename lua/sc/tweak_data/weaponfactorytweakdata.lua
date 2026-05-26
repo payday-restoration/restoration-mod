@@ -922,7 +922,29 @@ local muzzle_device = {
 			falloff_start_mult = 1.1,
 			falloff_end_mult = 1.1,
 			ads_speed_mult = 1.05
-		}
+		},
+		
+	-- ++Stab +++Acc/Range -----Con
+		muzz_dual3_c = {
+			value = 7,
+			spread = 3,
+			recoil = 4,
+			concealment = -5,
+			falloff_start_mult = 1.15,
+			falloff_end_mult = 1.15,
+			ads_speed_mult = 1.125
+		},
+		supp_dual3_c = { --Extra Acc/range for Con
+			suppression = 12,
+			alert_size = -1,
+			value = 7,
+			spread = 4,
+			recoil = 4,
+			concealment = -6,
+			falloff_start_mult = 1.2,
+			falloff_end_mult = 1.2,
+			ads_speed_mult = 1.15
+		}		
 }
 
 local grips = {
@@ -1945,6 +1967,124 @@ end
 				end)
 
 		--SECONDARIES
+		
+			--WELROD
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_welrod", "resmod_welrod", function(self)
+					self.parts.wpn_fps_pis_welrod_b_standard.supported = true
+					self.parts.wpn_fps_pis_welrod_b_standard.stats = {
+						value = 0,
+						alert_size = -1,
+						suppression = 12
+					}
+
+					self.parts.wpn_fps_pis_welrod_shitfuck = {
+						type = "shitfuck",
+						name_id = "none",
+						stats = {
+							value = 1
+						},
+						unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_pis_c96/wpn_fps_pis_c96"
+					}
+
+					self.parts.wpn_fps_pis_welrod_b_standard.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { a_obj = "a_fl_2" }
+					self.parts.wpn_fps_pis_welrod_b_standard.override.wpn_fps_upg_vg_ass_smg_stubby = { a_obj = "a_fl_2" }
+					self.parts.wpn_fps_pis_welrod_b_standard.override.wpn_fps_smg_schakal_vg_surefire = { a_obj = "a_fl_2" }
+
+					self.wpn_fps_pis_welrod.override = self.wpn_fps_pis_welrod.override or {}
+					self.wpn_fps_pis_welrod.adds = self.wpn_fps_pis_welrod.adds or {}
+
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_smg_cobray_ns_barrelextension")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_ass_shak12_ns_suppressor")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_ass_shak12_ns_muzzle")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_ns_ass_filter")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+					table.insert(self.wpn_fps_pis_welrod.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+
+					attachment_list = {
+						"wpn_fps_upg_o_specter",
+						"wpn_fps_upg_o_aimpoint",
+						"wpn_fps_upg_o_docter",
+						"wpn_fps_upg_o_eotech",
+						"wpn_fps_upg_o_t1micro",
+						"wpn_fps_upg_o_rx30",
+						"wpn_fps_upg_o_rx01",
+						"wpn_fps_upg_o_reflex",
+						"wpn_fps_upg_o_eotech_xps",
+						"wpn_fps_upg_o_cmore",
+						"wpn_fps_upg_o_aimpoint_2",
+						"wpn_fps_upg_o_acog",
+						"wpn_fps_upg_o_cs",
+						"wpn_fps_upg_o_spot",
+						"wpn_fps_upg_o_bmg",
+						"wpn_fps_upg_o_uh",
+						"wpn_fps_upg_o_fc1",
+						"wpn_fps_upg_o_tf90",
+						"wpn_fps_upg_o_poe",
+						"wpn_fps_upg_o_health",
+						"wpn_fps_upg_o_hamr",
+						"wpn_fps_upg_o_atibal",
+					}
+					for _, add_uses_parts in ipairs(attachment_list) do
+						table.insert(self.wpn_fps_pis_welrod.uses_parts, add_uses_parts)
+						self.wpn_fps_pis_welrod.adds[add_uses_parts] = {"wpn_fps_pis_welrod_shitfuck", "wpn_fps_smg_thompson_o_adapter"}
+						self.wpn_fps_pis_welrod.override[add_uses_parts] = {
+							parent = "shitfuck",
+							a_obj = "a_rds"
+						}
+					end
+
+					self.wpn_fps_pis_welrod.override.wpn_fps_upg_o_hamr_reddot = {
+						parent = "shitfuck",
+						a_obj = "a_rds"
+					}
+					self.wpn_fps_pis_welrod.override.wpn_fps_upg_o_atibal_reddot = {
+						parent = "shitfuck",
+						a_obj = "a_rds"
+					}
+					self.wpn_fps_pis_welrod.override.wpn_fps_smg_thompson_o_adapter = {
+						parent = "shitfuck",
+						a_obj = "a_rds"
+					}
+
+					self.wpn_fps_pis_welrod.override.wpn_fps_smg_cobray_ns_barrelextension = {
+						parent = "lower_receiver",
+						a_obj = "a_ns",
+						forbids = {
+							"wpn_upg_o_marksmansight_front",
+							"wpn_fps_pis_welrod_o_standard_front"
+						}
+					}
+					self.wpn_fps_pis_welrod.override.wpn_fps_ass_shak12_ns_muzzle = {
+						parent = "lower_receiver",
+						a_obj = "a_ns",
+						forbids = {
+							"wpn_upg_o_marksmansight_front",
+							"wpn_fps_pis_welrod_o_standard_front"
+						}
+					}
+					self.wpn_fps_pis_welrod.override.wpn_fps_ass_shak12_ns_suppressor = {
+						parent = "lower_receiver",
+						a_obj = "a_ns",
+						forbids = {
+							"wpn_upg_o_marksmansight_front",
+							"wpn_fps_pis_welrod_o_standard_front"
+						}
+					}
+					self.wpn_fps_pis_welrod.override.wpn_fps_upg_ns_ass_filter = {
+						parent = "lower_receiver",
+						a_obj = "a_ns",
+						forbids = {
+							"wpn_upg_o_marksmansight_front",
+							"wpn_fps_pis_welrod_o_standard_front"
+						}
+					}
+
+
+					self.wpn_fps_pis_welrod_npc.adds = deep_clone(self.wpn_fps_pis_welrod.adds)
+					self.wpn_fps_pis_welrod_npc.override = deep_clone(self.wpn_fps_pis_welrod.override)
+					self.wpn_fps_pis_welrod_npc.uses_parts = deep_clone(self.wpn_fps_pis_welrod.uses_parts)
+				end)		
 
 			--MAXIM 9
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function(self)
@@ -2600,7 +2740,29 @@ end
 					self.wpn_fps_pis_x_stech_npc.override = deep_clone(self.wpn_fps_pis_x_stech.override)	
 					self.wpn_fps_pis_x_stech_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_stech.uses_parts)		
 				end)
+				
+			--MAKAROV
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_pmm", "resmod_pmm", function(self)
+					self.parts.wpn_fps_pis_pmm_g_black.supported = true
+					self.parts.wpn_fps_pis_pmm_g_black.stats = deep_clone(grips.quickdraw_1)
+					self.parts.wpn_fps_pis_pmm_g_black.custom_stats = deep_clone(grips.quickdraw_1)
 
+					self.parts.wpn_fps_pis_pmm_slide_suppressed.supported = true
+					self.parts.wpn_fps_pis_pmm_slide_suppressed.stats = {
+						value = 3,
+						spread = -1,
+						recoil = 2
+					}
+					self.parts.wpn_fps_pis_pmm_slide_suppressed.custom_stats = nil
+
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.supported = true
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.has_description = true
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.desc_id = "bm_wp_upg_suppressor"
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.stats = deep_clone(muzzle_device.supp_dual3_c)
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.custom_stats= deep_clone(muzzle_device.supp_dual3_c)
+					self.parts.wpn_fps_pis_pmm_ns_suppressor.perks = {"silencer"}
+				end)
+				
 			--PPK
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_ppk", "resmod_ppk", function(self)
 					
@@ -3800,6 +3962,44 @@ end
 					
 					self.wpn_fps_pis_hs2000_npc.uses_parts = deep_clone(self.wpn_fps_pis_hs2000.uses_parts)		
 				end)
+				
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_speen", "resmod_speen", function(self)
+
+					--extendo barrel
+					self.parts.wpn_fps_smg_speen_barrel_dmr.supported = true
+					self.parts.wpn_fps_smg_speen_barrel_dmr.stats = deep_clone(barrels.long_b1_stats)
+					self.parts.wpn_fps_smg_speen_barrel_dmr.custom_stats = deep_clone(barrels.long_b1_stats)
+
+					--give me a clip so i can do some damage
+					self.parts.wpn_fps_smg_speen_extra_magazine.supported = true
+					self.parts.wpn_fps_smg_speen_extra_magazine.stats = {
+						value = 2,
+						spread = -2,
+						concealment = -1,
+						reload = 5
+					}
+
+					--extendo clipazine
+					self.parts.wpn_fps_smg_speen_magazine_extended.supported = true
+					self.parts.wpn_fps_smg_speen_magazine_extended.stats = {
+						value = 6,
+						extra_ammo = 16,
+						concealment = -3,
+						reload = -5
+					}
+					self.parts.wpn_fps_smg_speen_magazine_extended.custom_stats = {
+						ads_speed_mult = 1.15
+					}
+
+					self.parts.wpn_fps_smg_speen_sights_rear_no_parent = {
+						a_obj = "a_o_rear",
+						type = "sight_special",
+						name_id = "bm_wp_speen_iron_sights",
+						unit = "units/pd2_dlc_esp/weapons/wpn_fps_smg_speen_pts/optics/wpn_fps_smg_speen_sights_rear_standard",
+						third_unit = "units/pd2_dlc_esp/weapons/wpn_third_smg_speen_pts/optics/wpn_third_smg_speen_sights_rear_standard"
+					}
+
+				end)				
 
 	--[[     HEAVY PISTOLS     ]]
 
@@ -18049,6 +18249,105 @@ end
 					table.insert(self.wpn_fps_rpg7.uses_parts, "wpn_fps_upg_green_grin_legend")
 					self.wpn_fps_rpg7_npc.uses_parts = deep_clone(self.wpn_fps_rpg7.uses_parts)	
 				end)
+				
+			--FLARE GUN
+
+				Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_flun", function(self) --hooked to "create_ammunition" as the ammo overrides for it are done there
+					--[ [
+					self.parts.wpn_fps_upg_a_flun_flare.supported = true
+					self.parts.wpn_fps_upg_a_flun_shell.supported = true
+					self.parts.wpn_fps_upg_a_flun_shell.stats = {
+						value = 9,
+						damage = 150,
+						spread = -35,
+						total_ammo_mod = 118
+					}
+					self.parts.wpn_fps_upg_a_flun_shell.custom_stats = {
+						weapon_unit = "units/pd2_dlc_unk/weapons/wpn_fps_spe_flun/wpn_fps_sho_flun",
+						gl_buck = true,
+						ammo_pickup_max_mul = 1.93,
+						ammo_pickup_max_mul = 1.93,
+						ene_hs_mult_add = -0.35,
+						rays = 8
+					}
+					self.wpn_fps_spe_flun.override = self.wpn_fps_spe_flun.override or {}
+					self.wpn_fps_spe_flun.override.wpn_fps_upg_a_piercing = {
+						parent = "lower_body",
+						a_obj = "a_shell",
+						unit = "units/pd2_dlc_unk/weapons/wpn_fps_spe_flun_pts/ammos/wpn_fps_upg_a_flun_shot",
+						bullet_objects = {
+							amount = 1,
+							prefix = "g_bullet_"
+						},
+						sound_switch = { suppressed = "regular_b" },
+						stats = {
+							value = 9,
+							damage = 60,
+							spread = -30,
+							recoil = -10,
+							total_ammo_mod = -70
+						},
+						custom_stats = {
+							weapon_unit = "units/pd2_dlc_unk/weapons/wpn_fps_spe_flun/wpn_fps_sho_flun",
+							gl_buck = true,
+							ap_desc = "bm_ap_armor_weapon_sc_desc",
+							trail_effect = "_dmc/effects/nato_trail",
+							object_damage_mult_override = 0.375,
+							ammo_pickup_max_mul = 1.5,
+							ammo_pickup_max_mul = 1.5,
+							ene_hs_mult_add = -0.35,
+							hs_mult = 2.5,
+							hs_mult_desc = true,
+							falloff_start_mult = 1,
+							falloff_end_mult = 1.15,
+							damage_min_mult = 4,
+							armor_piercing_add = 1,
+							rays = 12
+						}
+					}
+					self.wpn_fps_spe_flun.override.wpn_fps_upg_a_slug = {
+						parent = "lower_body",
+						a_obj = "a_shell",
+						unit = "units/pd2_dlc_unk/weapons/wpn_fps_spe_flun_pts/ammos/wpn_fps_upg_a_flun_shot",
+						bullet_objects = {
+							amount = 1,
+							prefix = "g_bullet_"
+						},
+						sound_switch = { suppressed = "regular_b" },
+						stats = {
+							value = 10,
+							concealment = -1,
+							total_ammo_mod = -70,
+							damage = 150,
+							recoil = -30,
+							spread = -20,
+							spread_multi = {1, 1},
+							suppression = -1,
+							moving_spread = 0
+						},
+						custom_stats = {
+							weapon_unit = "units/pd2_dlc_unk/weapons/wpn_fps_spe_flun/wpn_fps_sho_flun",
+							muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",
+							gl_buck = true,
+							rays = 1,
+							hip_mult = 2,
+							armor_piercing_add = 1,
+							ene_hs_mult_add = -0.35,
+							ammo_pickup_max_mul = 0.9,
+							ammo_pickup_min_mul = 0.9,
+							can_shoot_through_enemy_unlim = true,
+							can_shoot_through_enemy = true,
+							can_shoot_through_shield = true,
+							can_shoot_through_wall = true,
+							ap_desc = "bm_ap_weapon_sc_desc",
+							falloff_start_mult = 1.1,
+							falloff_end_mult = 1.4,
+							ads_speed_mult = 1.025
+						},
+						desc_id = "bm_wp_upg_a_slug_desc"
+					}
+					--]]
+				end)				
 
 	--[[     BOWS     ]]
 
@@ -18396,6 +18695,55 @@ end
 				end)
 
 		--SECONDARIES
+		
+			--PNUE-DART X-2
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_dart", "resmod_dart", function(self)
+					self.parts.wpn_fps_upg_a_dart_poison.supported = true
+
+					self.parts.wpn_fps_upg_a_dart_daze.supported = true
+					self.parts.wpn_fps_upg_a_dart_daze.keep_damage = true
+					self.parts.wpn_fps_upg_a_dart_daze.stats = {
+						value = 1,
+						damage = -120
+					}
+					self.parts.wpn_fps_upg_a_dart_daze.custom_stats = {
+						launcher_grenade = "dart_daze"
+					}
+
+					self.parts.wpn_fps_upg_a_dart_revive.supported = true
+					self.parts.wpn_fps_upg_a_dart_revive.keep_damage = true
+					self.parts.wpn_fps_upg_a_dart_revive.stats = {
+						value = 1,
+						damage = -120,
+						total_ammo_mod = -266
+					}
+					self.parts.wpn_fps_upg_a_dart_revive.custom_stats = {
+						launcher_grenade = "dart_revive",
+						ammo_pickup_max_mul = 0.2,
+						ammo_pickup_min_mul = 0.1
+					}
+
+					self.parts.wpn_fps_spe_dart_magazine_high_pressure.supported = true
+					self.parts.wpn_fps_spe_dart_magazine_high_pressure.stats = {
+						value = 3,
+						recoil = -4,
+						spread = -5
+					}
+					self.parts.wpn_fps_spe_dart_magazine_high_pressure.custom_stats = {
+						hip_mult = 2,
+						launch_speed_mul = 1.25
+					}
+
+					self.parts.wpn_fps_spe_dart_magazine_high_capacity.supported = true
+					self.parts.wpn_fps_spe_dart_magazine_high_capacity.stats = {
+						value = 3,
+						concealment = -1
+					}
+					self.parts.wpn_fps_spe_dart_magazine_high_capacity.custom_stats = {
+						launch_speed_mul = 0.75,
+						charge_speed_mul = 0.5
+					}
+				end)		
 
 			--CB1-50
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function(self)
@@ -46281,6 +46629,11 @@ exclude = {
 	"wpn_fps_ass_osipr_m_gl_poison",
 	"wpn_fps_upg_a_underbarrel_hornet",
 	"wpn_fps_upg_a_grenade_launcher_hornet",
+	"wpn_fps_upg_a_dart_poison",
+	"wpn_fps_upg_a_dart_daze",
+	"wpn_fps_upg_a_dart_revive",
+	"wpn_fps_upg_a_flun_flare",
+	"wpn_fps_upg_a_flun_shell"	
 }
 
 local no_vfgs = restoration and restoration.Options:GetValue("OTHER/GOTTAGETAGRIP")

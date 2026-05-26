@@ -4,18 +4,21 @@
     <animation_group name="reload">
 		<object name="clip_ejection_reload" enabled="true" />
 		<object name="align_house_reload" enabled="true" />
-		<object name="anim_cocking_lever_non" enabled="true" />
+		<object name="anim_speedloader_reload" enabled="true" />
 		<object name="anim_bullets_reload" enabled="true" />
+		<object name="align_handle_reload" enabled="true" />
     </animation_group>
 	
     <animation_group name="reload_not_empty">
 		<object name="clip_ejection_reload_not_empty" enabled="true" />		
 		<object name="align_house_reload_not_empty" enabled="true" />
 		<object name="anim_bullets_reload_not_empty" enabled="true" />
+		<object name="anim_speedloader_reload_not_empty" enabled="true" />
+		<object name="align_handle_reload_not_empty" enabled="true" />
     </animation_group>
 
     <animation_group name="recoil">
-		<object name="anim_cocking_lever_recoil" enabled="true" />
+		<object name="anim_bolt_recoil" enabled="true" />
 		<object name="align_house_recoil" enabled="true" />
 		<object name="anim_cocking_lever_recoil" enabled="true" />
     </animation_group>
@@ -23,10 +26,12 @@
     <graphics>
         <object enabled="true" name="g_hammer" />
         <object enabled="true" name="g_lock" />
+        <object enabled="true" name="g_handle" />
         <object enabled="true" name="g_bullets" />
         <object enabled="true" name="g_cylinder" />
         <object enabled="true" name="g_cylinder_smooth" />
         <object enabled="true" name="g_body" />
         <object enabled="true" name="g_sight" />
+        <object enabled="true" name="g_speedloader" />
     </graphics>
 </dynamic_object>

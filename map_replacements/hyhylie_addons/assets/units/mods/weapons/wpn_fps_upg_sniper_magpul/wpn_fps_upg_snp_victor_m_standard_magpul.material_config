@@ -1,0 +1,19 @@
+<materials version="3" group="weapon_victor">
+    <material render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_magazine" version="2">
+        <diffuse_texture file="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/victor_magazine_df"/>
+        <material_texture file="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/victor_magazine_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/victor_magazine_nm"/>
+    </material>
+
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DEPTH_SCALING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_bullet" version="2">
+        <diffuse_texture file="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/bullet_308_df"/>
+        <material_texture file="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/bullet_308_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/bullet_308_nm"/>
+        <reflection_texture file="environments/cubemaps/cubemap_gold" type="cubemap"/>
+    </material>
+
+    <material name="mtr_magpul" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/pd2_dlc_tng/weapons/wpn_fps_ass_aug_m_quick/magpul_df"/>
+        <bump_normal_texture file="units/pd2_dlc_tng/weapons/wpn_fps_ass_aug_m_quick/magpul_nm"/>
+    </material>
+</materials>

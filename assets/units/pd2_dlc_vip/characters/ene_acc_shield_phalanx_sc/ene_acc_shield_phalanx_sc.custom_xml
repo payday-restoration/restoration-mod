@@ -168,7 +168,7 @@
 			
 			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
 			
-			<function extension="'damage'" function="'parent_function'" param1="'inventory'" param2="'on_shield_break'" param3="src_unit_unit()"/>
+			<function extension="'damage'" function="'parent_function'" param1="'inventory'" param2="'on_shield_break'" param3="src_unit_unit()" start_time="0.01"/>
 		</sequence>
 		
 		<sequence editable_state="false" name="'verify_start_flash'" triggable="false">

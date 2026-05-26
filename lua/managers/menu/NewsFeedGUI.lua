@@ -6,6 +6,7 @@ function NewsFeedGui:update(t, dt)
 	end
 
 	if self._news and #self._titles > 0 then
+		self._title_panel:child("title"):set_color(self._mouse_over and Color.white or Color( 0.75, 0.75, 0.75 ))
 		if self._title_panel:right() < 0 then
 		-- if self._news.next <= t then
 			-- CHANGE NEWS
@@ -68,10 +69,4 @@ function NewsFeedGui:_create_gui()
 		y = self._panel:h() - 2,
 		blend_mode = "add"
 	})
-end
-
-function NewsFeedGui:mouse_moved(x, y)
-	local inside = self._panel:inside(x, y)
-	self._title_panel:child("title"):set_color(inside and Color.white or Color( 0.75, 0.75, 0.75 ))
-	return inside, inside and "link"
 end

@@ -30,8 +30,13 @@ return {
 			{
 				name = "car",
 				force = 3,
-				position = Vector3(10600, 5500, -2400),
+				position = Vector3(10425, 5460, -2560.49),
 			},
+            {
+                name = "seven_bucks", 
+                force = 3, 
+                position = Vector3(12239, 4607, -2800),
+            },
 		},
 	},
     --Diff scaling SWAT harrasers next to cop cars that replace beat cops on higher diffs

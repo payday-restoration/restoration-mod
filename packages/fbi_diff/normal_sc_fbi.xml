@@ -34,7 +34,7 @@
 	<cooked_physics		path="units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc" />	
 	
 	<!--swat 2-->
-    <unit				path="units/payday2/cwharacters/ene_swat_2_sc/ene_swat_2_sc" load="true"/>
+    <unit				path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc_husk" load="true"/>	
 
 	<!--swat 3-->

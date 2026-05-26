@@ -9,7 +9,7 @@ function PlayerTased:enter(state_data, enter_data)
 	if tweak_data.blackmarket.projectiles[projectile_entry].is_a_grenade then
 		self:_interupt_action_throw_grenade()
 	else
-		self:_interupt_action_throw_projectile()
+		self:_interupt_action_throw_projectile(managers.player:player_timer():time())
 	end
 
 	self:_interupt_action_reload()
@@ -95,6 +95,7 @@ function PlayerTased:_on_tased_event(taser_unit, tased_unit)
 
 			local target_time = managers.player:upgrade_value("player", "escape_taser", 2)
 			managers.player:add_coroutine("escape_tase", PlayerAction.EscapeTase, managers.player, managers.hud, Application:time() + target_time)
+			self._taser_start_t = Application:time() + target_time
 
 			--Instead directly call give_shock_to_taser().
 
@@ -130,8 +131,10 @@ function PlayerTased:call_teammate(line, t, no_gesture, skip_alert)
 			
 			--Play Shockproof Aced Animation
 			if prime_target.unit:base()._tweak_table == "taser" then
-				if not self._tase_ended and managers.player:has_category_upgrade("player", "escape_taser") and prime_target.unit:key() == self._unit:character_damage():tase_data().attacker_unit:key() then
+				local can_counter_tase = self._taser_start_t and self._taser_start_t >= t
+				if can_counter_tase and not self._tase_ended and managers.player:has_category_upgrade("player", "escape_taser") and prime_target.unit:key() == self._unit:character_damage():tase_data().attacker_unit:key() then
 					self:_start_action_counter_tase(t, prime_target)
+					managers.hud:remove_interact()
 				end
 			end
 
@@ -141,7 +144,7 @@ function PlayerTased:call_teammate(line, t, no_gesture, skip_alert)
 	if interact_type then
 		self:_do_action_intimidate(t, not no_gesture and interact_type or nil, queue_name, skip_alert)
 	end
-end	
+end
 
 function PlayerTased:_start_action_counter_tase(t, prime_target)
 	self._countering_tase = true

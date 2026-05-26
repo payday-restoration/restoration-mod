@@ -1,0 +1,6 @@
+<unit type="wpn" slot="1">
+	<object file="units/mods/weapons/wpn_fps_upg_shotgun_pouch/wpn_fps_upg_sho_m1897_s_ammopouch" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

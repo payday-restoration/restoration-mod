@@ -93,11 +93,14 @@ local opts_fbi_ready_team_spawngroup_5 = {
 }
 local opts_cloaker_surprise = {
 	enemy = surprise_cloaker,
-	enabled = false,
+	enabled = true,
 	on_executed = {
 		{id = 400026, delay = 0,},
 	},
 
+}
+local Smoke_bomb = {
+	duration = 8
 }
 local optsCloaker_Hide_SO_1 = {
     SO_access = "1024",
@@ -113,17 +116,13 @@ local optsCloaker_Hide_SO_1 = {
 }
 local opts_surprise_dozer = {
 	enemy = tank_skull,
-	enabled = false,
-	on_executed = {
-		{id =  400028, delay = 0,},
-	},
+	enabled = true,
+	on_executed = { {id =  400028, delay = 0,}, },
 }
 local opts_taser_stairs = {
 	enemy = taser, 
-	enabled = false, 
-	on_executed = {
-		{ id = 400034, delay = 0, }, 
-	},
+	enabled = true, 
+	on_executed = { { id = 400034, delay = 0, }, },
 }
 local optsDefend_SO = {
 	SO_access = tostring(128 + 4096),
@@ -147,29 +146,31 @@ local opts_taser_hide_SO = {
 }
 local opts_surprise_gunners_1 = {
 	enemy = marshal_gunners_garage, 
-	enabled = false, 
-	on_executed = {
-		{ id = 400031, delay = 0, },
-	},
+	enabled = true, 
+	on_executed = { { id = 400031, delay = 0, }, },
 }
 local opts_surprise_gunners_2 = {
 	enemy = marshal_gunners_garage, 
-	enabled = false, 
-	on_executed = {
-		{ id = 400032, delay = 0, },
-	},
+	enabled = true, 
+	on_executed = { { id = 400032, delay = 0, }, },
 }
 local opts_surprise_gunners_3 = {
 	enemy = marshal_gunners_garage, 
-	enabled = false, 
+	enabled = true, 
 	on_executed = {
 		{ id = 400036, delay = 0, },
 	},
 }
 local opts_garage_ambush = {
 	enabled =  death_wish_above,
-	elements = { 400025, 400027, 400029, 400030, 400033, 400035 },
-	toggle = "on",
+	on_executed = { 
+		{id = 400025, delay = 0, },
+		{id = 400027, delay = 0, },
+		{id = 400029, delay = 0, },
+		{id = 400030, delay = 0, },
+		{id = 400033, delay = 0, },
+		{id = 400035, delay = 0, },
+	},
 }
 return {
     elements = {
@@ -203,8 +204,6 @@ return {
 		restoration:gen_missionscript(400021, "fbi_ready_teams_spawngroup_3", opts_fbi_ready_team_spawngroup_3),
 		restoration:gen_missionscript(400022, "fbi_ready_teams_spawngroup_4", opts_fbi_ready_team_spawngroup_4),
 		restoration:gen_missionscript(400023, "fbi_ready_teams_spawngroup_5", opts_fbi_ready_team_spawngroup_5),
-		-- Garage last minute line of defense 
-		restoration:gen_toggleelement(400024, "enable_garage_ambush", opts_garage_ambush),
 		-- cloaker 
 		restoration:gen_dummy(400025, "cloaker_ambush", Vector3(55, 4363, -950), Rotation(16, -0, -0), opts_cloaker_surprise),
 		restoration:gen_so(400026, "surprise_motherfucker", Vector3(-51, 4714, -950), Rotation(10, -0, -0), optsCloaker_Hide_SO_1),
@@ -218,9 +217,15 @@ return {
 		restoration:gen_so(400031, "marshal_defend_1", Vector3(-299, 5296, -950), Rotation(-145 , 0 , 0), optsDefend_SO),
 		restoration:gen_so(400032, "marshal_defend_2", Vector3(-83, 5293, -950), Rotation(-145  , 0 , 0), optsDefend_SO),
 		restoration:gen_so(400036, "marshal_defend_3", Vector3(102, 5276, -950), Rotation(-145  , 0 , 0), optsDefend_SO), 
+
 		-- the one useless taser cause why not 
 		restoration:gen_dummy(400033, "taser_stair", Vector3(-1300, 4700, -900), Rotation(-73, 0, 0), opts_taser_stairs),
 		restoration:gen_so(400034, "taser_sneaky_1", Vector3(-1300, 4700, -900), Rotation(0 , 0 , 0), opts_taser_hide_SO),
+
+		-- Garage last minute line of defense 
+		restoration:gen_missionscript(400024, "garage_ambush", opts_garage_ambush),
+		-- smok 
+		restoration:gen_smokeandnades(400037, "Smoker", Vector3(-774, 5194, -900), Rotation(0, 0, -0), Smoke_bomb)
 
     },
 }

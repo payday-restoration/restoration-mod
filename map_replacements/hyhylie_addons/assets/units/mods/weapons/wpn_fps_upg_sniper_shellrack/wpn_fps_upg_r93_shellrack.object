@@ -1,0 +1,7 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_atw/weapons/wpn_fps_snp_r700_pts/wpn_fps_snp_r700_s_military" orientation_object="rp_wpn_fps_snp_r700_s_military" />
+	<graphics>
+		<object name="g_s" enabled="true"/>
+		<object name="g_rack" enabled="true"/>
+	</graphics>
+</dynamic_object>

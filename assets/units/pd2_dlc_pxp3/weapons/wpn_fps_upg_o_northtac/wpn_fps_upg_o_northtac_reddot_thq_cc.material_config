@@ -1,0 +1,10 @@
+<materials version="3" group="sight_northtac">
+        <material unique="true" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:FPS:HOLO:VIEW_ANGLE_FALLOFF_OP" version="2" name="mtr_glass">
+        <variable type="scalar" name="intensity" value="reddot"/>
+        <diffuse_texture file="units/pd2_dlc1/weapons/wpn_effects_textures/wpn_sight_reticle_1_il"/>
+        <variable type="scalar" name="falloff_exp" value="1000"/>
+        <variable type="vector3" name="holo_target_offset" value="0 10000 0"/>
+        <variable type="vector3" name="holo_reticle_scale" value="0.5 1 20"/>
+    </material>
+</materials>
+

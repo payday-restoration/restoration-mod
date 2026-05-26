@@ -1,0 +1,16 @@
+<dynamic_object>
+	<diesel materials="units/mods/weapons/wpn_fps_upg_sniper_magpul/wpn_fps_upg_snp_victor_m_standard_magpul" orientation_object="rp_wpn_fps_snp_victor_m_1" />
+	<graphics>
+		<object name="g_mag_1" enabled="true" />
+		<object name="g_magpul" enabled="true" />
+		<object name="g_bullet" enabled="true" />
+	</graphics>
+	<animations>
+		<animation_group name="reload">
+			<object name="anim_mag1_reload" enabled="true" />
+		</animation_group>
+		<animation_group name="reload_not_empty">
+			<object name="anim_mag1_reload_not_empty" enabled="true" />
+		</animation_group>
+	</animations>
+</dynamic_object>

@@ -48,6 +48,24 @@
 			<value_node value="3"/>
 			<value_node value="3"/>
 		</experience_mul>
+		<max_mission_xp>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+			<value_node value="6000"/>
+		</min_mission_xp>
 		<payout>
 			<value_node value="9000"/>
 			<value_node value="18000"/>

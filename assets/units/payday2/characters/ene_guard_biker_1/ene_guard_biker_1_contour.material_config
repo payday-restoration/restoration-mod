@@ -21,7 +21,7 @@
     </material>
 
     <material name="mtr_head_lod2" unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-        <bump_normal_texture file="units/pd2_dlc_arena/characters/ene_guard_security_heavy_1/ene_guard_security_heavy_1_body_nm" mip="4"/>
+        <bump_normal_texture file="units/pd2_dlc_arena/characters/ene_guard_security_heavy_1/ene_guard_security_heavy_1_head_nm" mip="4"/>
         <diffuse_texture file="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_head_df" mip="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0"     type="scalar" name="contour_opacity"/>

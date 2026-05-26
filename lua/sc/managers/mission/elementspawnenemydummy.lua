@@ -13,11 +13,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 	america = {
 		-- SWAT
 		overkill = {
-			security_1 = {
-				"units/payday2/characters/ene_security_1/ene_security_1",
-				"units/payday2/characters/ene_security_2/ene_security_2",
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
+			-- security_1 = {
+			--	"units/payday2/characters/ene_security_1/ene_security_1",
+			--	"units/payday2/characters/ene_security_2/ene_security_2",
+			--	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
 			murky_guard = {
 				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
@@ -39,11 +39,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 		},
 		-- Mix of SWAT+FBI
 		overkill_145 = {
-			security_1 = {
-				"units/payday2/characters/ene_security_1/ene_security_1",
-				"units/payday2/characters/ene_security_2/ene_security_2",
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
+			-- security_1 = {
+			-- 	"units/payday2/characters/ene_security_1/ene_security_1",
+			-- 	"units/payday2/characters/ene_security_2/ene_security_2",
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
 			murky_guard = {
 				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
@@ -84,11 +84,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 		},
 		-- Mix of FBI+GenSec
 		easy_wish = {
-			security_1 = {
-				"units/payday2/characters/ene_security_1/ene_security_1",
-				"units/payday2/characters/ene_security_2/ene_security_2",
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
+			-- security_1 = {
+			-- 	"units/payday2/characters/ene_security_1/ene_security_1",
+			-- 	"units/payday2/characters/ene_security_2/ene_security_2",
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
 			murky_guard = {
 				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
@@ -1957,14 +1957,14 @@ ElementSpawnEnemyDummy.faction_mapping = {
 	lapd = {
 		-- LAPD SWAT
 		overkill = {
-			security_1 = {
-				"units/payday2/characters/ene_security_1/ene_security_1",
-				"units/payday2/characters/ene_security_2/ene_security_2",
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
-			security_3 = {
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
+			-- security_1 = {
+			-- 	"units/payday2/characters/ene_security_1/ene_security_1",
+			-- 	"units/payday2/characters/ene_security_2/ene_security_2",
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
+			-- security_3 = {
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
 			murky_guard = {
 				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
@@ -2002,14 +2002,14 @@ ElementSpawnEnemyDummy.faction_mapping = {
 		},
 		-- Mix of LAPD SWAT+FBI
 		overkill_145 = {
-			security_1 = {
-				"units/payday2/characters/ene_security_1/ene_security_1",
-				"units/payday2/characters/ene_security_2/ene_security_2",
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
-			security_3 = {
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
+			-- security_1 = {
+			-- 	"units/payday2/characters/ene_security_1/ene_security_1",
+			-- 	"units/payday2/characters/ene_security_2/ene_security_2",
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
+			-- security_3 = {
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
 			murky_guard = {
 				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
@@ -2069,14 +2069,14 @@ ElementSpawnEnemyDummy.faction_mapping = {
 		},
 		-- Mix of LAPD FBI+Elites
 		easy_wish = {
-			security_1 = {
-				"units/payday2/characters/ene_security_1/ene_security_1",
-				"units/payday2/characters/ene_security_2/ene_security_2",
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
-			security_3 = {
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
+			-- security_1 = {
+			-- 	"units/payday2/characters/ene_security_1/ene_security_1",
+			-- 	"units/payday2/characters/ene_security_2/ene_security_2",
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
+			-- security_3 = {
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
 			murky_guard = {
 				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
@@ -2325,11 +2325,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 	fbi = {
 		-- SWAT
 		overkill = {
-			security_1 = {
-				"units/payday2/characters/ene_security_1/ene_security_1",
-				"units/payday2/characters/ene_security_2/ene_security_2",
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
+			-- security_1 = {
+			-- 	"units/payday2/characters/ene_security_1/ene_security_1",
+			-- 	"units/payday2/characters/ene_security_2/ene_security_2",
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
 			murky_guard = {
 				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
@@ -2356,11 +2356,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 		},
 		-- Mix of SWAT+FBI
 		overkill_145 = {
-			security_1 = {
-				"units/payday2/characters/ene_security_1/ene_security_1",
-				"units/payday2/characters/ene_security_2/ene_security_2",
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
+			-- security_1 = {
+			-- 	"units/payday2/characters/ene_security_1/ene_security_1",
+			-- 	"units/payday2/characters/ene_security_2/ene_security_2",
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
 			murky_guard = {
 				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
@@ -2406,11 +2406,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 		},
 		-- Mix of FBI+Elites
 		easy_wish = {
-			security_1 = {
-				"units/payday2/characters/ene_security_1/ene_security_1",
-				"units/payday2/characters/ene_security_2/ene_security_2",
-				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
+			-- security_1 = {
+			-- 	"units/payday2/characters/ene_security_1/ene_security_1",
+			-- 	"units/payday2/characters/ene_security_2/ene_security_2",
+			-- 	"units/payday2/characters/ene_security_3/ene_security_3"
+			-- },
 			murky_guard = {
 				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
 				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
@@ -2619,6 +2619,9 @@ ElementSpawnEnemyDummy.faction_mapping = {
 }
 
 -- Temp fix for now, Stealing Xmas doesn't have security 2 loaded and I didn't want to load every generic guard (yet)
+-- I should get around to doing exactly what I said should be done
+-- t. SC
+--[[
 if level_id == "moon" then
 	ElementSpawnEnemyDummy.faction_mapping.america.overkill.security_1 = {
 		"units/payday2/characters/ene_security_1/ene_security_1",
@@ -2636,6 +2639,8 @@ if level_id == "moon" then
 		"units/payday2/characters/ene_security_4/ene_security_4"
 	}
 end
+--]]
+
 -- Marshal Sharpshooters/Shields replacing OMNIA Titan Snipers/Shields on Texas heists
 -- Snipers in Lost in Transit are affected by lua edit
 if level_id == "ranc" or level_id == "trai" or level_id == "corp" then

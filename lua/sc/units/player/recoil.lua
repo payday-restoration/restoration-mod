@@ -105,17 +105,23 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 		--]]
 
 		--New viewbob calcs that attempt to scale the viewbob rate with your actual speed
-		local mov_lp_speed = deltaT * 16--5.5
+		local mov_lp_speed = (deltaT * 16) * ((in_walk and 1) or 0.25)
 		mov_pos = mov_pos or Vector3()
 		mov_ang = mov_ang or Rotation()
+
+		local bob_target = in_walk and 1 or 0
+		local bob_speed = in_walk and 5 or 50
+		bob_pow = bob_pow or 0
+		bob_pow = math.lerp(bob_pow, bob_target, math.clamp(deltaT * bob_speed, 0, 1))
 
 		if not in_freefall then
 			local base_speed = tweak_data.player.movement_state.standard.movement.speed.STANDARD_MAX or 300
 			local current_speed = (p_mov._current_state._get_max_walk_speed and p_mov._current_state:_get_max_walk_speed(t)) or base_speed
-			local step_mod = ((in_sight or in_crouch) and 125) or (in_run and 175) or 150
-			local speed_mult = (current_speed / step_mod) * 0.44 --it just works lmao???
+			local is_running_tired = in_run and not p_mov:is_above_stamina_threshold()
+			local step_mod = ((in_sight or in_crouch) and 125) or (is_running_tired and 155) or (in_run and 175) or 150
+			local speed_mult = (current_speed / step_mod) * 0.4417 --it just works lmao???
 			local run_mul = (in_slide and 0 or 1) * speed_mult --in_run and 1.45 or 1 --* ((in_sight and 0.8) or 1)
-			local mov_mul = (enable_bob_ads and in_sight and 0.15) or (enable_bob and not in_sight and 1) or 0
+			local mov_mul = ((enable_bob_ads and in_sight and 0.15) or (enable_bob and not in_sight and 0.7) or 0) * bob_pow
 
 			local rot_mul = mov_mul * 0.5
 			mrotation.slerp(mov_ang, mov_ang, not in_sight and in_walk and Rotation(math.cos(getWaveValue(64 * run_mul, 1.5)) * rot_mul, math.sin(getWaveValue(128 * run_mul, -2.5)) * rot_mul, math.sin(getWaveValue(64 * run_mul, 1)) * rot_mul) or Rotation(), mov_lp_speed)
@@ -181,7 +187,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 
 		--Added a slight downward offset on the viewmodel when moving
 		--Added a speed-up to re-center when in the process of aiming
-		local tilt_lp_speed = (deltaT * 5.5) * ((in_sight and not in_full_sight and 2) or 1)
+		local tilt_lp_speed = (deltaT * 5.5) * ((in_sight and not in_full_sight and 2) or 1) * ((in_sight and 1) or 0.7)
 		local tilt_str = restoration.Options:GetValue("BWAResOpt/BWAResmodTiltStr") or 0.45
 		local in_sight_tilt_str = restoration.Options:GetValue("BWAResOpt/BWAResmodADSTiltStr") or 0.03
 
@@ -618,6 +624,9 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 				speed = speed * weap_base:weapon_tweak_data().anim_speed_multiplier
 			end
 			--]]
+			if current_state and current_state._queue_idle_interrupt_t then
+				current_state._queue_idle_interrupt_t = nil
+			end
 		end
 	end
 	self._anim_empty_state_wanted = false

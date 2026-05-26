@@ -405,7 +405,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	if 0 >= self:get_real_armor() then
 		armor_reduction_multiplier = 1
 	end
-	local health_subtracted = self:_res_calc_armor_damage(attack_data)
+	local health_subtracted = self:_calc_armor_damage(attack_data) --this is intentionally calling the vanilla "_calc_armor_damage" function, you can check the reasoning in "lua/sc/entry.lua"
 
 	--Apply health damage.
 	if ((attack_data.armor_piercing or variant == "explosion" or variant == "fire") and not self._unpierceable) or self_damage then
@@ -417,7 +417,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	else
 		attack_data.damage = attack_data.damage * armor_reduction_multiplier
 	end
-	health_subtracted = health_subtracted + self:_res_calc_health_damage(attack_data)
+	health_subtracted = health_subtracted + self:_calc_health_damage(attack_data) --this is intentionally calling the vanilla "_calc_health_damage" function, you can check the reasoning in "lua/sc/entry.lua"
 
 	if health_subtracted > 0 then
 		self:_send_damage_drama(attack_data, health_subtracted)
@@ -631,6 +631,7 @@ function PlayerDamage:damage_bullet(attack_data)
 						self._unit:movement():current_state()._d_scope_t = d_scope_t
 						managers.hud:activate_effect_screen(d_scope_t, Vector3(0.35, 0.25, 0.1) * effect_alpha, "dt_sgunner")
 						managers.environment_controller:set_concussion_grenade(self._unit:movement():m_head_pos(), true, 0, 0, conc_mul, true, true)
+						self._unit:movement():current_state():_do_aimpunch(attack_dir, flashbang_mul)
 						self:on_concussion(sound_eff_mul, false, sound_tweak)
 					end
 				end
@@ -654,6 +655,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			self._unit:sound():play("Play_star_hit")
 			if attack_data.damage > 0 then
 				local unit_movement = self._unit:movement()
+				--[[
 				local drain_mult = 0
 				if unit_movement then
 					local current_state = unit_movement and unit_movement.current_state and unit_movement:current_state()
@@ -663,6 +665,7 @@ function PlayerDamage:damage_bullet(attack_data)
 					end
 				end
 				self._unit:movement():subtract_stamina(8 * drain_mult)
+				--]]
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
 				self._next_allowed_dmg_t = Application:digest_value(t + math.max(grace_bonus, self._dmg_interval), true)
@@ -917,17 +920,31 @@ function PlayerDamage:damage_melee(attack_data)
 	end
 
 	local force_crouch = attacker_char_tweak and attacker_char_tweak.melee_force_crouch
+	--[[ --doesn't get used, unsure what it might've been for but I'm leaving it in the event it was for something awaiting implementation
 	if alive(attacker_unit) and attacker_unit:base() then
 		is_shield = attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield") and true
 	end
+	--]]
 
-	--Apply slow debuff if melee has one.
-	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table].ewgf and alive(self._unit) and not self._unit:movement():current_state().driving then
-		local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].ewgf
+	--Apply slow debuff/concussion effect if melee has one.
+	local attacker_tweak = alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table]
+	if alive(self._unit) and not self._unit:movement():current_state().driving and attacker_tweak then
+		if attacker_tweak.ewgf then
+			local slow_data = attacker_tweak.ewgf
 
-		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
+			managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
+		end
+		if attacker_tweak.melee_concuss then
+			local concuss_data = attacker_tweak.melee_concuss
+			local concuss_mul = concuss_data and concuss_data.mul or 1
+			local concuss_sound = concuss_data and concuss_data.sound_duration
+			local concuss_sound_mul = concuss_sound and concuss_sound.mul or 1
+
+			managers.environment_controller:set_concussion_grenade(self._unit:movement():m_head_pos(), true, 0, 0, conc_mul, true, true)
+			self:on_concussion(concuss_sound_mul, false, concuss_sound)
+		end
 	end
-	
+
 	--Apply changes to melee push camera effect, cap effects of it so even players with insane armor can tell they were meleed.
 	local vars = {
 		"melee_hit",
@@ -1101,7 +1118,7 @@ function PlayerDamage:damage_killzone(attack_data)
 		self:mutator_update_attack_data(attack_data)
 		self:_check_chico_heal(attack_data)
 
-		local health_subtracted = self:_res_calc_armor_damage(attack_data)
+		local health_subtracted = self:_calc_armor_damage(attack_data)
 		attack_data.damage = attack_data.damage * armor_reduction_multiplier
 
 		--Ignores deflection and Stoic, just like it should for all other forms of DR.
@@ -1508,6 +1525,7 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 end
 
 --Applies deflection and stoic effects.
+--Before you ask "where is this being called????" you can check the reasoning in "lua/sc/entry.lua"
 function PlayerDamage:_res_calc_health_damage(attack_data)
 	local attacker_unit = attack_data and attack_data.attacker_unit
 	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
@@ -1700,12 +1718,18 @@ end
 Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, unit, t, dt)
 	local pm = managers.player
 	self._in_smoke_bomb = 0.0
+	self._selected_smoke_screen = nil
+
 	for _, smoke_screen in ipairs(pm._smoke_screen_effects or {}) do
 		if smoke_screen:is_in_smoke(self._unit) then
 			if smoke_screen:mine() then
 				self._in_smoke_bomb = 2.0
-			else
+				self._selected_smoke_screen = smoke_screen
+			elseif self._in_smoke_bomb < 1.0 then
+				-- To cover the case where there are two Sicarios. Whoever threw their smoke bomb second would
+				-- "overwrite" the other Sicario's full benefit.
 				self._in_smoke_bomb = 1.0
+				self._selected_smoke_screen = smoke_screen
 			end
 		end
 	end
@@ -1738,6 +1762,8 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	--Sicario capstone skill.
 	if self._in_smoke_bomb == 2.0 then
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "sicario_multiplier", 0)
+	elseif self._in_smoke_bomb == 1.0 and self._selected_smoke_screen then
+		passive_dodge = passive_dodge + self._selected_smoke_screen:dodge_bonus()
 	end
 
 	if alive(self._unit) and self._unit.movement and self._unit:movement() then
@@ -2067,8 +2093,8 @@ function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_s
 	end
 end
 
+--Before you ask "where is this being called????" you can check the reasoning in "lua/sc/entry.lua"
 function PlayerDamage:_res_calc_armor_damage(attack_data)
-
 	--OFFYERROCKER'S MERC PERK DECK
 	--[ [
 		if managers.player:get_temporary_property("kmerc_invuln") then

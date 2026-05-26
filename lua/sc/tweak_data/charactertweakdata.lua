@@ -647,7 +647,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.player_health_scaling_mul = 1.25		
 	self.medic_summers.headshot_dmg_mul = 1.5
 	self.medic_summers.damage_resistance = presets.damage_resistance.none
-	self.medic_summers.tags = {"custom", "special"}
+	self.medic_summers.tags = {"custom", "special", "captain"}
 	self.medic_summers.ignore_medic_revive_animation = false
 	self.medic_summers.surrender = nil
 	self.medic_summers.flammable = false
@@ -2690,6 +2690,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.damage.rocket_damage_mul = 1.25
 	self.tank_titan.damage.tase_damage_mul = 5
 	self.tank_titan.melee_push_multiplier = 2 --he punches you harder now
+	self.tank_titan.melee_force_crouch = true
 	self.tank_titan.is_special = true
 	self.tank_titan.no_asu = true
 	self.tank_titan.heal_cooldown = 22.5
@@ -3041,7 +3042,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.HEALTH_INIT = 15
 	self.shield.headshot_dmg_mul = 2.2
 	self.shield.damage_resistance = presets.damage_resistance.none
-	self.shield.damage.explosion_damage_mul = 0.8
+	self.shield.damage.explosion_damage_mul = 0.75
 	self.shield.allowed_stances = {cbt = true}
 	self.shield.allowed_poses = {crouch = true}
 	self.shield.always_face_enemy = true
@@ -3205,8 +3206,8 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
 	self.phalanx_vip.damage.rocket_damage_mul = 0.05
 	self.phalanx_vip.damage.fire_pool_damage_mul = 0.05
-	self.phalanx_vip.damage.bullet_damage_mul = 0.25
-	self.phalanx_vip.damage.fire_damage_mul = 0.25
+	self.phalanx_vip.damage.bullet_damage_mul = 0.1
+	self.phalanx_vip.damage.fire_damage_mul = 0.05
 	self.phalanx_vip.spawn_sound_event = "cpa_a02_01"
 	self.phalanx_vip.priority_shout = "f45"
 	self.phalanx_vip.bot_priority_shout = "f45x_any"
@@ -3280,7 +3281,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip_break.damage.rocket_damage_mul = 0.40
 	self.phalanx_vip_break.damage.fire_pool_damage_mul = 0.20
 	self.phalanx_vip_break.damage.bullet_damage_mul = 0.45
-	self.phalanx_vip_break.damage.fire_damage_mul = 0.30		
+	self.phalanx_vip_break.damage.fire_damage_mul = 0.30
 	self.phalanx_vip_break.modify_health_on_tweak_change = true
 	self.phalanx_vip_break.announce_incomming = nil
 	self.phalanx_vip_break.marshal_logic = true	
@@ -3340,6 +3341,15 @@ function CharacterTweakData:_init_spring(presets)
         power = 4
     }
 	self.spring.melee_push_multiplier = 3
+	self.spring.melee_force_crouch = true
+	self.spring.melee_concuss = {
+		mul = 1.2,
+		sound_duration = {
+			min = 4,
+			mul = 1.2,
+			additional = 4
+		}
+	}
 	self.spring.speech_prefix_p1 = "cpa"
 	self.spring.speech_prefix_p2 = nil
 	self.spring.speech_prefix_count = nil
@@ -3394,7 +3404,7 @@ end
 
 function CharacterTweakData:_init_summers(presets)	
 	self.summers = deep_clone(presets.base)
-	self.summers.tags = {"law", "custom", "special", "summers"}
+	self.summers.tags = {"law", "custom", "special", "summers", "captain"}
 	self.summers.experience = {}
 	self.summers.weapon = deep_clone(presets.weapon.normal)
 	self.summers.melee_weapon_dmg_multiplier = 1
@@ -3462,7 +3472,7 @@ end
 
 function CharacterTweakData:_init_autumn(presets)
 	self.autumn = deep_clone(presets.base)
-	self.autumn.tags = {"law", "custom", "special", "customvo", "autumn"}
+	self.autumn.tags = {"law", "custom", "special", "customvo", "autumn", "captain"}
 	self.autumn.experience = {}
 	self.autumn.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.autumn.weapon = deep_clone(presets.weapon.normal)
@@ -3640,7 +3650,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.player_health_scaling_mul = 1.25	
 	self.taser_summers.headshot_dmg_mul = 1.5
 	self.taser_summers.damage_resistance = presets.damage_resistance.none
-	self.taser_summers.tags = {"female_enemy","taser", "custom", "special"}
+	self.taser_summers.tags = {"female_enemy","taser", "custom", "special", "captain"}
 	self.taser_summers.ignore_medic_revive_animation = false
 	self.taser_summers.flammable = false
 	self.taser_summers.use_animation_on_fire_damage = false
@@ -3819,7 +3829,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.player_health_scaling_mul = 1.25	
 	self.boom_summers.headshot_dmg_mul = 1.5
 	self.boom_summers.damage_resistance = presets.damage_resistance.none
-	self.boom_summers.tags = {"female_enemy", "custom", "special"}
+	self.boom_summers.tags = {"female_enemy", "custom", "special", "captain"}
 	self.boom_summers.ignore_medic_revive_animation = false
 	self.boom_summers.can_deploy_tear_gas = false
 	self.boom_summers.can_throw_molotov = true
@@ -16455,7 +16465,8 @@ function CharacterTweakData:_presets(tweak_data)
 		combat = {},
 		recon = {},
 		guard = {},
-		ntl = {}
+		ntl = {},
+		dazed = {}
 	}
 	presets.detection.normal.idle.dis_max = 10000
 	presets.detection.normal.idle.angle_max = 120
@@ -16475,6 +16486,10 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.detection.normal.ntl.dis_max = 4000
 	presets.detection.normal.ntl.angle_max = 60
 	presets.detection.normal.ntl.delay = {0.2, 2}
+	presets.detection.normal.dazed.dis_max = 2000
+	presets.detection.normal.dazed.angle_max = 60
+	presets.detection.normal.dazed.delay = {1, 6}
+	presets.detection.normal.dazed.use_uncover_range = true
 	presets.detection.normal_undercover = {
 		idle = {},
 		combat = {},
@@ -16523,6 +16538,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.detection.guard.guard.angle_max = 120
 	presets.detection.guard.guard.delay = {0, 0}
 	presets.detection.guard.ntl = presets.detection.normal.ntl
+	presets.detection.guard.dazed = presets.detection.normal.dazed
 	presets.detection.sniper = {
 		idle = {},
 		combat = {},
@@ -19003,18 +19019,6 @@ function CharacterTweakData:_multiply_all_hp(hp_mul, hs_mul)
 			self[enemy_tweak].HEALTH_INIT = self[enemy_tweak].HEALTH_INIT * hp_mul
 			if self[enemy_tweak].headshot_dmg_mul then
 				self[enemy_tweak].headshot_dmg_mul = self[enemy_tweak].headshot_dmg_mul * hs_mul
-			end
-		end
-	end
-end
-
--- Only for Advanced Training mutator
-function CharacterTweakData:_unmultiply_all_hp(hp_mul, hs_mul)
-	for _, enemy_tweak in ipairs(self._enemy_list) do
-		if self[enemy_tweak] then
-			self[enemy_tweak].HEALTH_INIT = self[enemy_tweak].HEALTH_INIT / hp_mul
-			if self[enemy_tweak].headshot_dmg_mul then
-				self[enemy_tweak].headshot_dmg_mul = self[enemy_tweak].headshot_dmg_mul / hs_mul
 			end
 		end
 	end

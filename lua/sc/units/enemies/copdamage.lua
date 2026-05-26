@@ -260,6 +260,12 @@ Hooks:PostHook(CopDamage, "_apply_damage_to_health", "res_apply_damage_to_health
 	end
 end)
 
+function CopDamage:is_head(body)
+	local head = self._head_body_name and body and (body:name() == self._ids_head_body_name or head_hitboxes[body:name():key()])
+
+	return head
+end
+
 function CopDamage:decay_buffs(t)
 	local decay_delay_t = tweak_data.medic.overheal_decay_delay_t or 5
 	
@@ -1005,10 +1011,11 @@ function CopDamage:damage_bullet(attack_data)
 		local pierce_armor = nil
 		
 		--Just as a fallback, ugly as sin but whatever
-		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun and not weap_base.thrower_unit then
-			if attack_data.weapon_unit:base():armor_piercing_chance() and attack_data.weapon_unit:base():armor_piercing_chance() > 0 then
+		if attack_data.attacker_unit:base() and --[[not attack_data.attacker_unit:base().sentry_gun and]] not weap_base.thrower_unit then
+			local weapon_ap = attack_data.weapon_unit:base().armor_piercing_chance and attack_data.weapon_unit:base():armor_piercing_chance()
+			if weapon_ap and weapon_ap > 0 then
 				pierce_armor = true
-				damage = damage * attack_data.weapon_unit:base():armor_piercing_chance() or 1
+				damage = damage * weapon_ap or 1
 			end
 		end		
 
@@ -1131,11 +1138,11 @@ function CopDamage:damage_bullet(attack_data)
 	end
 
 	if not self._damage_reduction_multiplier and head then
-		local weapon_hs_mult = attack_data.weapon_unit:base()._hs_mult or 1
+		local is_captain = (self._unit:base():has_tag("captain") or self._unit:base():has_tag("boss"))
+		local weapon_hs_mult = (is_captain and 1) or attack_data.weapon_unit:base()._hs_mult or 1
 		local weapon_ene_hs_mult = attack_data.weapon_unit:base()._ene_hs_mult or 1
-		local is_captain = weapon_hs_mult > 1 and self._char_tweak.ends_assault_on_death
 		if self._char_tweak.headshot_dmg_mul then
-			damage = math.max( damage, damage * ((((self._char_tweak.headshot_dmg_mul - 1) * weapon_ene_hs_mult) + 1) * headshot_multiplier) * ((not is_captain and weapon_hs_mult) or 1) )
+			damage = math.max( damage, damage * ((((self._char_tweak.headshot_dmg_mul - 1) * weapon_ene_hs_mult) + 1) * headshot_multiplier) * weapon_hs_mult)
 		else
 			damage = self._health * 10
 		end
@@ -1659,10 +1666,9 @@ function CopDamage:damage_melee(attack_data)
 	local is_player = attack_data.attacker_unit == managers.player:player_unit() and true
 	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_MELEE
 	
-	if hit_body and impenetrable_armour[hit_body:name():key()] then -- nothing
-		return
+	if hit_body and impenetrable_armour[hit_body:name():key()] then
+		--return
 	end
-
 
 	if is_player then
 		if self._char_tweak.priority_shout then
@@ -3046,7 +3052,9 @@ function CopDamage:damage_tase(attack_data)
 		self:_apply_damage_to_health(damage)
 	end
 
-	if result.type == "taser_tased" and (attack_data.forced or not self._unit:anim_data() or not self._unit:anim_data().act) then
+	if (result.type == "taser_tased" or result.type == "heavy_hurt") and (attack_data.forced or not self._unit:anim_data() or not self._unit:anim_data().act) then
+		self.is_tased = true
+
 		if self._tase_effect then
 			World:effect_manager():fade_kill(self._tase_effect)
 		end
@@ -4114,7 +4122,9 @@ function CopDamage:do_medic_heal()
 end
 
 function CopDamage:_check_melee_achievements(attack_data)
-	if tweak_data.blackmarket.melee_weapons[attack_data.name_id] then
+	local player_unit = managers.player:player_unit()
+
+	if alive(player_unit) and tweak_data.blackmarket.melee_weapons[attack_data.name_id] then
 		local is_civlian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 		local is_gangster = CopDamage.is_gangster(self._unit:base()._tweak_table)
 		local is_cop = not is_civlian and not is_gangster
@@ -4124,7 +4134,13 @@ function CopDamage:_check_melee_achievements(attack_data)
 		local enemy_movement = self._unit:movement()
 		local enemy_type = enemy_base._tweak_table
 		local unit_weapon = enemy_base._default_weapon_id
-		local health_ratio = managers.player:player_unit():character_damage():health_ratio() * 100
+		local health_ratio = nil
+
+		if alive(player_unit) and player_unit:character_damage() then
+			health_ratio = player_unit:character_damage():health_ratio() * 100
+		else
+			health_ratio = 0
+		end
 		local melee_pass, melee_weapons_pass, type_pass, enemy_pass, enemy_weapon_pass, diff_pass, health_pass, level_pass, job_pass, jobs_pass, enemy_count_pass, tags_all_pass, tags_any_pass, all_pass, cop_pass, gangster_pass, civilian_pass, stealth_pass, on_fire_pass, behind_pass, result_pass, mutators_pass, critical_pass, action_pass, is_dropin_pass, style_pass = nil
 
 		local function count_enemy_type_kills(enemy_type)

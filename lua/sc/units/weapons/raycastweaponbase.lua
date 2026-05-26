@@ -234,15 +234,24 @@ end
 
 local ids_volley = Idstring("volley")
 function RaycastWeaponBase:get_object_damage_mult(is_explosion)
+	local mult = 1
 	if is_explosion then
-		return self._object_damage_mult_exp
-	elseif self._fire_mode and self._fire_mode == ids_volley then
-		return self._object_damage_mult_volley
-	elseif self._rays and self._rays == 1 and self._object_damage_mult_single_ray then
-		return self._object_damage_mult_single_ray
+			return self._object_damage_mult_exp
 	else
-		return self._object_damage_mult
+		if self._fire_mode and self._fire_mode == ids_volley and self._object_damage_mult_volley then
+			mult = self._object_damage_mult_volley
+		elseif self._rays and self._rays == 1 and self._object_damage_mult_single_ray then
+			mult = self._object_damage_mult_single_ray
+		elseif self._object_damage_mult then
+			mult = self._object_damage_mult
+		end
+
+		for _, category in ipairs(self:categories()) do
+			mult = mult * managers.player:upgrade_value(category, "object_damage_bonus", 1)
+		end
 	end
+
+	return mult
 end
 
 function RaycastWeaponBase:is_knock_down()
@@ -1598,7 +1607,7 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 
 	if dot_data.use_weapon_damage_falloff_chance then
 		if weap_base and weap_base.get_damage_falloff then
-			chance = weap_base:get_damage_falloff(chance, col_ray, user_unit)
+			chance = weap_base:get_damage_falloff(chance, col_ray, user_unit, nil, nil, dot_data.falloff_chance_lerp or 1)
 		end
 	end
 
@@ -1664,6 +1673,10 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 
 	if not friendly_fire then 
 		managers.fire:add_doted_enemy(data)
+	end
+
+	if dot_data.no_dot_stun then
+		return
 	end
 
 	if distance and dot_data.dot_stun_max_distance and weap_base and weap_base.near_falloff_distance and distance > weap_base.near_falloff_distance then
@@ -2006,6 +2019,116 @@ function InstantSnowballBase:on_collision(col_ray, weapon_unit, user_unit, damag
 	end
 
 	return nil
+end
+
+function ReviveInstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
+	local hit_unit = col_ray.unit
+	user_unit = alive(user_unit) and user_unit or nil
+
+	weapon_unit = alive(weapon_unit) and weapon_unit or nil
+	local dmg_ext = hit_unit:character_damage()
+
+	if not dmg_ext then
+		local slotmask = managers.slot:get_mask("criminals_no_deployables")
+		local criminals = World:find_units("sphere", col_ray.position, self.GENEROCITY_RADIUS, slotmask)
+
+		for _, criminal_unit in ipairs(criminals) do
+			local needs_revive = false
+
+			if criminal_unit:base() and criminal_unit:base().is_husk_player then
+				needs_revive = criminal_unit:interaction():active() and criminal_unit:movement():need_revive() and criminal_unit:movement():current_state_name() ~= "arrested"
+			elseif criminal_unit:character_damage() and criminal_unit:character_damage().need_revive then
+				needs_revive = criminal_unit:character_damage():need_revive()
+			end
+
+			if needs_revive then
+				mvector3.set(tmp_vec1, criminal_unit:position())
+				mvector3.subtract(tmp_vec1, col_ray.position)
+				mvector3.normalize(tmp_vec1)
+
+				local criminal_fwd = -criminal_unit:rotation():y()
+				local dot = mvector3.dot(criminal_fwd, tmp_vec1)
+
+				if self.GENEROCITY_DOT <= dot then
+					hit_unit = criminal_unit
+					dmg_ext = hit_unit:character_damage()
+					col_ray.position = criminal_unit:position()
+					col_ray.unit = criminal_unit
+					col_ray.body = nil
+
+					break
+				end
+			end
+		end
+	end
+
+	local play_impact_flesh = not dmg_ext or not dmg_ext._no_blood
+
+	if play_impact_flesh then
+		self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+	end
+
+	if not blank and weapon_unit and dmg_ext then
+		ReviveInstantBulletBase:give_revive_damage(hit_unit, user_unit)
+
+		return {
+			variant = "revive",
+			col_ray = col_ray
+		}
+	end
+
+	return nil
+end
+
+function ReviveInstantBulletBase:give_revive_damage(hit_unit, user_unit)
+	if not hit_unit then
+		return
+	end
+
+	local base_ext = hit_unit:base()
+	local dmg_ext = hit_unit:character_damage()
+
+	if not base_ext or not dmg_ext then
+		return
+	end
+
+	if dmg_ext:dead() then
+		return
+	end
+
+	local needs_revive = nil
+
+	if base_ext.is_husk_player then
+		needs_revive = hit_unit:interaction():active() and hit_unit:movement():need_revive() and hit_unit:movement():current_state_name() ~= "arrested"
+	elseif dmg_ext.need_revive then
+		needs_revive = dmg_ext:need_revive()
+	end
+
+	if needs_revive then
+		hit_unit:interaction():interact(user_unit)
+
+		return
+	end
+
+	if not hit_unit:movement().cool or hit_unit:movement():cool() then
+		return
+	end
+
+	local my_team = hit_unit:movement():team()
+
+	if my_team.friends.criminal1 then
+		--return
+	end
+
+	local char_tweak = base_ext and base_ext.char_tweak and base_ext:char_tweak()
+
+	if not char_tweak or char_tweak.can_be_healed == false then
+		return false
+	end
+
+	if dmg_ext and dmg_ext.do_medic_heal_and_action then
+		dmg_ext:do_medic_heal_and_action(true)
+	end
 end
 
 function RaycastWeaponBase:get_hipfire_stance_id()

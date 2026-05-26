@@ -2,21 +2,13 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 
 return {
-    -- Nasty Elevator surprise
-    -- Enable them in loud first 
-    [102551] = {
-        on_executed = {
-        {id = 400005, delay = 0},
-        },
-    },
     -- ACCESS DENIED 
     [103439] = {
         on_executed = {
-            -- smokebomb
-            {id = 400006, delay = 0},
-            -- Fishbowl men (will change if medic dozer gets added in roster)
-            {id = 400001, delay = 0},
-            {id = 400002, delay = 0},
+            -- TAAAAANKKKK(s) (will change if medic dozer gets added in roster)
+            {id = 400005, delay = 0},
+             -- smokebomb
+            {id = 400006, delay = 0.3},
         },
     },
     -- Reinforce

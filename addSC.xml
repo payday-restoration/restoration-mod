@@ -146,7 +146,7 @@
 	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" />
 	<mission			path="levels/instances/unique/chas/chas_security_room/world/world" force="true" />
 	<mission			path="levels/instances/unique/sand/sand_security_room/world/world" force="true" />
-	<mission			path="levels/instances/unique/tag/tag_security/world/world" force="true"/>
+	<!-- <mission			path="levels/instances/unique/tag/tag_security/world/world" force="true"/> -->
 	<mission			path="levels/instances/unique/bex/bex_security_room/world/world" force="true" />
 	<mission			path="levels/instances/unique/bex/bex_security_room2/world/world" force="true" />
 	<continent			path="levels/instances/unique/bex/bex_security_room2/world/world" force="true"/>
@@ -1513,7 +1513,13 @@
 	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_scope_cc" load="false"/>
 	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_scope_cc_thq" load="false"/>
 	<!--for w/e reason the reticle is severely misaligned when using a parallax enabled reticle-->
-	<!--material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_reddot" load="false"/-->
+	<!--procured a "fix" - very jank-->
+	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_reddot" load="false"/>
+	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_reddot_cc" load="false"/>
+	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_reddot_thq" load="false"/>
+	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_reddot_thq_cc" load="false"/>
+	<object				path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_reddot" load="false"/>
+	<unit_mat_cc		path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_reddot_lens" load="false"/>
 
 	<!--Weapon Unit Overrides-->
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>

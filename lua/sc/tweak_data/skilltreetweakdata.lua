@@ -521,13 +521,15 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {2, 1},
 					[1] = {
 						upgrades = {
-							"player_damage_multiplier_outnumbered"
+							"player_damage_multiplier_outnumbered",
+							"shotgun_object_damage_bonus_1"
 						},
 						cost = self.costs.default
 					},
 					[2] = {
 						upgrades = {
-							"player_damage_dampener_outnumbered"
+							"player_damage_dampener_outnumbered",
+							"shotgun_object_damage_bonus_2"
 						},
 						cost = self.costs.pro
 					}
@@ -705,15 +707,29 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {3, 1},
 					[1] = {
 						upgrades = {
-							"body_armor6",
+							"body_armor6", --I hate that ICTV's skill definition is labled a 6
+							"player_level_1_armor_regen_timer_mult_1",
+							"player_level_2_armor_regen_timer_mult_1",
+							"player_level_3_armor_regen_timer_mult_1",
+							"player_level_4_armor_regen_timer_mult_1",
+							"player_level_5_armor_regen_timer_mult_1",
+							"player_level_6_armor_regen_timer_mult_1",
 							"player_shield_knock"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
+							"player_level_1_armor_regen_timer_mult_2",
+							"player_level_2_armor_regen_timer_mult_2",
+							"player_level_3_armor_regen_timer_mult_2",
+							"player_level_4_armor_regen_timer_mult_2",
+							"player_level_5_armor_regen_timer_mult_2",
+							"player_level_6_armor_regen_timer_mult_2",
+							"player_level_7_armor_regen_timer_mult_1",
+							"player_level_7_armor_deflection_addend",
+							"player_level_7_armor_movement_speed_addend",
 							"player_bullet_shield_knock",
-							"player_armor_regen_timer_multiplier"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -937,14 +953,15 @@ function SkillTreeTweakData:init(tweak_data)
 					["icon_xy"] = {9, 5},
 					[1] = {
 						upgrades = {
-							"sentry_gun_ap_bullets"
+							"sentry_gun_ap_bullets",
+							"sentry_gun_cost_reduction_1"
 						},
 						cost = self.costs.hightier
 					},
 					[2] = {
 						upgrades = {
 							"sentry_gun_quantity_1",
-							"sentry_gun_cost_reduction_1"
+							"sentry_gun_shield"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -963,7 +980,6 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
-							"player_armor_regen_timer_multiplier_tier",
 							"player_armor_full_damage_absorb",
 							"player_scaling_armor_break_grace"
 						},
@@ -1427,7 +1443,8 @@ function SkillTreeTweakData:init(tweak_data)
 					[1] = {
 						upgrades = {
 							"player_steelsight_move_speed_multiplier",
-	                   		"player_detection_risk_add_movement_speed_1"
+	                   		"player_detection_risk_add_movement_speed_1",
+							"player_on_zipline_dodge_chance"
 						},
 						cost = self.costs.hightier
 					},
@@ -1435,8 +1452,7 @@ function SkillTreeTweakData:init(tweak_data)
 						upgrades = {
 							"player_run_and_shoot_1",
 	                   		"player_detection_risk_add_movement_speed_2",
-							"player_run_dodge_chance",
-							"player_on_zipline_dodge_chance"
+							"player_run_dodge_chance"
 						},
 						cost = self.costs.hightierpro
 					}
@@ -2063,6 +2079,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"team_passive_stamina_multiplier_1",
+					"team_passive_stamina_multiplier_2",
 					"player_passive_intimidate_range_mul",
 					"player_passive_dodge_chance_1"
 				},
@@ -2671,6 +2688,7 @@ function SkillTreeTweakData:init(tweak_data)
 				"buildup_meter_pacify_2",
 				"buildup_meter_hurt_decay_mod_1",
 				"buildup_meter_hurt_decay_mod_2",
+				"buildup_meter_hurt_decay_mod_3",
 			},
 			texture_bundle_folder = "sc",
 			icon_xy = {0, 3}
@@ -3709,6 +3727,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_sicario_multiplier",
+					"player_smoke_screen_ally_dodge_bonus",
 					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,

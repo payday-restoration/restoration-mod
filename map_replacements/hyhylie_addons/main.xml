@@ -1,0 +1,157 @@
+<mod name="Hylie's Restoration Mod Attachment Pack" author="HyHylie">
+
+	<GlobalValue id="res_hylie_mod" color="Color(0.82, 0.1, 0.26)"/>
+
+	<Localization directory="loc" default="english.txt"/>
+
+	<AddFiles directory="assets" auto_generate="true"/>
+
+ <!-- Shotgun Shell Racks -->
+
+	<WeaponMod id="wpn_fps_upg_sho_ben_shell_rack" based_on="wpn_fps_sho_supernova_shell_rack" a_obj="a_body" unit="units/mods/weapons/wpn_fps_upg_shotgun_shellrack/wpn_fps_upg_sho_ben_shellrack" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_sho_ben"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_sho_boot_shell_rack" based_on="wpn_fps_sho_supernova_shell_rack" a_obj="a_body" unit="units/mods/weapons/wpn_fps_upg_shotgun_shellrack/wpn_fps_upg_sho_boot_shellrack" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_sho_boot"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_sho_ksg_shell_rack" based_on="wpn_fps_sho_supernova_shell_rack" a_obj="a_body" unit="units/mods/weapons/wpn_fps_upg_shotgun_shellrack/wpn_fps_upg_sho_ksg_shellrack" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_sho_ksg"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_sho_m37_shell_rack" based_on="wpn_fps_sho_supernova_shell_rack" a_obj="a_body" unit="units/mods/weapons/wpn_fps_upg_shotgun_shellrack/wpn_fps_upg_sho_m37_shellrack" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_shot_m37"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_sho_m590_shell_rack" based_on="wpn_fps_sho_supernova_shell_rack" a_obj="a_body" unit="units/mods/weapons/wpn_fps_upg_shotgun_shellrack/wpn_fps_upg_sho_m590_shellrack" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_sho_m590"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_sho_spas12_shell_rack" based_on="wpn_fps_sho_supernova_shell_rack" a_obj="a_body" unit="units/mods/weapons/wpn_fps_upg_shotgun_shellrack/wpn_fps_upg_sho_spas12_shellrack" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_sho_spas12"/>
+	   </weapons>
+	</WeaponMod>
+
+ <!-- Shotgun Shell Racks End -->
+
+ <!--                         -->
+
+ <!-- Shotgun Speed-Pulls -->
+
+	<WeaponMod id="wpn_fps_upg_sho_aa12_mag_straight_magpul" based_on="wpn_fps_m4_upg_m_quick" unit="units/mods/weapons/wpn_fps_upg_shotgun_magpul/wpn_fps_upg_sho_aa12_mag_straight_magpul" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_sho_aa12"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_sho_saiga_m_5rnd_magpul" based_on="wpn_fps_m4_upg_m_quick" unit="units/mods/weapons/wpn_fps_upg_shotgun_magpul/wpn_fps_upg_sho_saiga_m_5rnd_magpul" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_shot_saiga"/>
+		  <value_node value="wpn_fps_sho_basset"/>
+		  <value_node value="wpn_fps_sho_x_basset"/>
+	   </weapons>
+	</WeaponMod>
+
+ <!-- Shotgun Speed-Pulls End -->
+
+ <!--                         -->
+
+ <!-- Shotgun Ammo Pouches -->
+
+	<WeaponMod id="wpn_fps_upg_sho_coach_s_ammopouch" based_on="wpn_fps_shot_b682_s_ammopouch" unit="units/mods/weapons/wpn_fps_upg_shotgun_pouch/wpn_fps_upg_sho_coach_s_ammopouch" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_sho_coach"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_sho_huntsman_s_ammopouch" based_on="wpn_fps_shot_b682_s_ammopouch" unit="units/mods/weapons/wpn_fps_upg_shotgun_pouch/wpn_fps_upg_sho_huntsman_s_ammopouch" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_shot_huntsman"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_sho_m1897_s_ammopouch" based_on="wpn_fps_shot_b682_s_ammopouch" unit="units/mods/weapons/wpn_fps_upg_shotgun_pouch/wpn_fps_upg_sho_m1897_s_ammopouch" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_shot_m1897"/>
+	   </weapons>
+	</WeaponMod>
+
+ <!-- Shotgun Ammo Pouches End -->
+
+ <!--                         -->
+
+ <!-- Sniper Rifle Speed-Pulls -->
+
+	<WeaponMod id="wpn_fps_upg_snp_tti_m_magpul" based_on="wpn_fps_m4_upg_m_quick" unit="units/mods/weapons/wpn_fps_upg_sniper_magpul/wpn_fps_upg_snp_tti_m_magpul" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_snp_tti"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_snp_victor_m_1_magpul" based_on="wpn_fps_m4_upg_m_quick" unit="units/mods/weapons/wpn_fps_upg_sniper_magpul/wpn_fps_upg_snp_victor_m_1_magpul" global_value="res_hylie_mod" ver="2">
+	   <animations reload="reload" reload_not_empty="reload_not_empty"/>
+	   <weapons>
+	      <value_node value="wpn_fps_snp_victor"/>
+	   </weapons>
+	   <adds>
+	      <value_node value="wpn_fps_upg_snp_victor_m_2_magpul"/>
+	   </adds>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_snp_victor_m_2_magpul" based_on="wpn_fps_snp_victor_m_2" unit="units/mods/weapons/wpn_fps_upg_sniper_magpul/wpn_fps_upg_snp_victor_m_2_magpul" hidden="true" ver="2">
+	   <animations reload="reload" reload_not_empty="reload_not_empty"/>
+	</WeaponMod>
+
+ <!-- Sniper Rifle Speed-Pulls End -->
+
+ <!--                         -->
+
+ <!-- Sniper Rifle Ammo Pouches -->
+
+	<WeaponMod id="wpn_fps_upg_snp_model70_pouch" type="extra" based_on="wpn_fps_snp_sbl_s_saddle" a_obj="a_s" unit="units/mods/weapons/wpn_fps_upg_sniper_pouch/wpn_fps_upg_snp_model70_pouch" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_snp_model70"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_snp_mosin_pouch" type="extra" based_on="wpn_fps_snp_sbl_s_saddle" a_obj="a_body" unit="units/mods/weapons/wpn_fps_upg_sniper_pouch/wpn_fps_upg_snp_mosin_pouch" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_snp_mosin"/>
+	   </weapons>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_upg_snp_winchester_pouch" type="extra" based_on="wpn_fps_snp_sbl_s_saddle" a_obj="a_s" unit="units/mods/weapons/wpn_fps_upg_sniper_pouch/wpn_fps_upg_snp_winchester_pouch" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_snp_winchester"/>
+	   </weapons>
+	</WeaponMod>
+
+ <!-- Sniper Rifle Ammo Pouches End -->
+
+ <!--                         -->
+
+ <!-- Sniper Rifle Shell Racks -->
+
+	<WeaponMod id="wpn_fps_upg_r93_shellrack" type="extra" based_on="wpn_fps_snp_r700_s_military" a_obj="a_body" unit="units/mods/weapons/wpn_fps_upg_sniper_shellrack/wpn_fps_upg_r93_shellrack" global_value="res_hylie_mod" ver="2">
+	   <weapons>
+	      <value_node value="wpn_fps_snp_r93"/>
+	   </weapons>
+	</WeaponMod>
+
+ <!-- Sniper Rifle Shell Racks End -->
+
+ <!--                         -->
+
+</mod>

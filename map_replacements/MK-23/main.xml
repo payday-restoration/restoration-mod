@@ -5,6 +5,7 @@
 	<WeaponMod id="wpn_fps_pis_socom_frame" based_on="wpn_fps_pis_usp_body_standard" type="lower_reciever" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame" drop="false" is_a_unlockable="false"/>
 
 	<WeaponMod id="wpn_fps_pis_socom_mag" based_on="wpn_fps_pis_usp_m_standard" type="magazine" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_mag" drop="false" is_a_unlockable="false">
+	   <bullet_objects prefix="g_bullet_" amount="3"/>
 	</WeaponMod>
 	
 	<WeaponMod id="wpn_fps_pis_socom_sight" unit="units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy" based_on="wpn_fps_pis_usp_m_standard" type="sight">
@@ -172,7 +173,7 @@
 		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/socom_df_cc"/>
 		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/socom_nm"/>
 		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_df"/>
-		<!-- <texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_df_cc"/> -->
+		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_df_cc"/>
 		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_nm"/>
 
 		<cooked_physics path="units/mods/weapons/wpn_fps_pis_socom/wpn_fps_pis_socom"/>

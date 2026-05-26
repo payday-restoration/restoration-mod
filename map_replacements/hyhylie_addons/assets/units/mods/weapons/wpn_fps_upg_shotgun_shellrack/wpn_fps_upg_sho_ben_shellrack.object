@@ -1,0 +1,13 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_fps_sho_supernova_shell_rack" orientation_object="rp_wpn_fps_sho_supernova_shell_rack" />
+	<graphics>
+		<object name="g_shell_rack" enabled="true" />
+		<object name="g_slug_03" enabled="true" />
+		<object name="g_slug_04" enabled="true" />
+		<object name="g_slug_05" enabled="true" />
+		<object name="g_slug_06" enabled="true" />
+		<object name="g_slug_07" enabled="true" />
+		<object name="g_slug_08" enabled="true" />
+	</graphics>
+	<lights />
+</dynamic_object>

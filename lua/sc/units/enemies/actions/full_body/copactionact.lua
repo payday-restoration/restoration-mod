@@ -22,6 +22,7 @@ CopActionAct._act_redirects.script = {
 	"sabotage_device_mid",
 	"sabotage_device_high",
 	"so_civ_dummy_act_loop",
+	"distraction_dazed",
 	"dizzy",
 	"cmd_get_up",
 	"cmd_stop",

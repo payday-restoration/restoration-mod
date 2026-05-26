@@ -21,6 +21,9 @@
         </animation_group>
     </animations>
     <graphics>
+        <object enabled="true" name="g_bullet_1"/>
+        <object enabled="true" name="g_bullet_2"/>
+        <object enabled="true" name="g_bullet_3"/>
         <object enabled="true" name="g_mag_lod0"/>
     </graphics>
 </dynamic_object>

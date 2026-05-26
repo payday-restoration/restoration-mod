@@ -180,6 +180,24 @@ function NPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 	return result
 end
 
+function NPCRaycastWeaponBase:singleshot(...)
+	local fired = nil
+
+	if self._next_fire_allowed <= Application:time() then
+		fired = self:fire(...)
+	end
+
+	if fired then
+		local weapon_fire_mode = tweak_data.weapon[self._name_id].single or tweak_data.weapon[self._name_id].auto or tweak_data.weapon[self._name_id].fire_rate
+		--log(tostring( self._name_id ))
+		--log(tostring( weapon_fire_mode and weapon_fire_mode.fire_rate ))
+		self._next_fire_allowed = Application:time() + ((weapon_fire_mode and weapon_fire_mode.fire_rate) or 0.01)
+		self:_sound_singleshot()
+	end
+
+	return fired
+end
+
 function NPCRaycastWeaponBase:trigger_held(...)
 	local fired = nil
 
@@ -187,7 +205,8 @@ function NPCRaycastWeaponBase:trigger_held(...)
 		fired = self:fire(...)
 
 		if fired then
-			self._next_fire_allowed = self._next_fire_allowed + ((tweak_data.weapon[self._name_id].auto and tweak_data.weapon[self._name_id].auto.fire_rate) or 1)
+			--self._next_fire_allowed = self._next_fire_allowed + ((tweak_data.weapon[self._name_id].auto and tweak_data.weapon[self._name_id].auto.fire_rate) or 1)
+			self._next_fire_allowed = Application:time() + ((tweak_data.weapon[self._name_id].auto and tweak_data.weapon[self._name_id].auto.fire_rate) or 1)
 		end
 	end
 

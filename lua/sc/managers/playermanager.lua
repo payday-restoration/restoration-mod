@@ -232,7 +232,7 @@ function PlayerManager:body_armor_skill_addend(override_armor)
 	return addend
 end
 
-function PlayerManager:body_armor_regen_multiplier(moving, health_ratio)
+function PlayerManager:body_armor_regen_multiplier(moving, health_ratio, override_armor)
 	local multiplier = 1
 	multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier_tier", 1)
 	multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier", 1)
@@ -240,6 +240,8 @@ function PlayerManager:body_armor_regen_multiplier(moving, health_ratio)
 	multiplier = multiplier * self:team_upgrade_value("armor", "regen_time_multiplier", 1)
 	multiplier = multiplier * self:team_upgrade_value("armor", "passive_regen_time_multiplier", 1)
 	multiplier = multiplier * self:upgrade_value("player", "perk_armor_regen_timer_multiplier", 1)
+
+	multiplier = multiplier * self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_armor_regen_timer_mult", 1)
 
 	if not moving then
 		multiplier = multiplier * managers.player:upgrade_value("player", "armor_regen_timer_stand_still_multiplier", 1)
@@ -273,6 +275,10 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 	local multiplier = 1
 	local armor_penalty = self:mod_movement_penalty(self:body_armor_value("movement", upgrade_level, 1))
 	multiplier = multiplier + armor_penalty - 1
+
+	if upgrade_level == 7 then
+		multiplier = multiplier + self:upgrade_value("player", "level_7_armor_movement_speed_addend", 0)
+	end
 
 	if bonus_multiplier then
 		multiplier = multiplier + bonus_multiplier - 1
@@ -1370,13 +1376,16 @@ end
 
 --Get health damage reduction gained via skills.
 --Crashes mentioning this function mean that there is a syntax error in the file.
-function PlayerManager:get_deflection_from_skills()
+function PlayerManager:get_deflection_from_skills(override_armor)
 	local armor_data = tweak_data.blackmarket.armors[managers.blackmarket:equipped_armor(true, true)]
 	local addend = 0
 
 	local addend = 0
 
 	addend = addend + self:upgrade_value("player", "deflection_addend", 0)
+	
+	addend = addend + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_armor_deflection_addend", 0)
+
 	--Grinder Flak Jacket deflection modifier
 	if armor_data.upgrade_level == 5 then
 		addend = addend + self:upgrade_value("player", "level_5_deflection_addend_grinder", 0)
@@ -1742,7 +1751,7 @@ function PlayerManager:check_selected_equipment_placement_valid(player)
 		return false
 	end
 	
-	if equipment_data.equipment == "trip_mine" or equipment_data.equipment == "ecm_jammer" then
+	if equipment_data.equipment == "trip_mine" or equipment_data.equipment == "ecm_jammer" or equipment_data.equipment == "spy_camera" then
 		return player:equipment():valid_look_at_placement(tweak_data.equipments[equipment_data.equipment]) and true or false
 	else
 		return player:equipment():valid_shape_placement(equipment_data.equipment, tweak_data.equipments[equipment_data.equipment]) and true or false
@@ -1800,7 +1809,11 @@ function PlayerManager:_trigger_expres(equipped_unit, variant, killed_unit)
 	local player_unit = self:player_unit()
 
 	if alive(player_unit) then
-		player_unit:character_damage():add_armor_stored_health(self:upgrade_value("player", "armor_health_store_amount", 0))
+		local armor_data = tweak_data.blackmarket.armors[managers.blackmarket:equipped_armor(true, true)]
+		local upgrade_level = armor_data and armor_data.upgrade_level or 1
+		local amount = self:body_armor_value("skill_health_store_on_kill", upgrade_level, 1)
+		amount = amount + self:upgrade_value("player", "armor_health_store_amount", 0)
+		player_unit:character_damage():add_armor_stored_health(amount)
 	end
 end
 
@@ -2063,7 +2076,133 @@ function PlayerManager:get_value_from_risk_upgrade(risk_upgrade, detection_risk)
     return risk_value
 end
 
---Changed so cable tie max quantity properly scales
+-- Tweaking this to play nice with other changes
+function PlayerManager:crew_ability_upgrade_value_botless(upgrade, default)
+    if self:upgrade_value("team", "crew_active", 0) == 0 then
+        return self:crew_ability_upgrade_value(upgrade, default)
+    end
+
+    local team_upgrade_values = tweak_data.upgrades.values.team
+
+    if not team_upgrade_values or not team_upgrade_values[upgrade] or not managers.criminals then
+        return default or 0
+    end
+
+    local ai_level = managers.network:session() and managers.criminals.MAX_NR_TEAM_AI - table.size(managers.network:session():peers()) or managers.criminals.MAX_NR_TEAM_AI
+    local value = team_upgrade_values[upgrade][1][ai_level]
+
+    return value or default
+end
+
+-- Tweaked Cable Tie bot bonus to function more like the solo boon
+function PlayerManager:add_special(params)
+	local name = params.equipment or params.name
+
+	print("[PlayerManager:add_special] Add " .. tostring(name))
+
+	if not tweak_data.equipments.specials[name] then
+		Application:error("Special equipment " .. name .. " doesn't exist!")
+
+		return
+	end
+
+	local unit = self:player_unit()
+	local equipment = tweak_data.equipments.specials[name]
+	local special_equipment = self._equipment.specials[name]
+	local respawn = params.amount and true or false
+	local amount = params.amount or equipment.quantity
+	local extra = self:_equipped_upgrade_value(equipment) + self:upgrade_value(name, "quantity")
+	local is_cable_tie = name == "cable_tie"
+
+	if is_cable_tie then
+		extra = self:upgrade_value(name, "quantity_1") + self:upgrade_value(name, "quantity_2") + 4
+	end
+
+	if special_equipment then
+		if equipment.max_quantity or equipment.quantity or params.transfer and equipment.transfer_quantity or params.dropped_out then
+			local dedigested_amount = special_equipment.amount and Application:digest_value(special_equipment.amount, false) or 1
+			local max_amount = nil
+
+			if not params.dropped_out then
+				if params.transfer then
+					max_amount = equipment.transfer_quantity or 1
+
+					if equipment.max_quantity or equipment.quantity then
+						max_amount = math.max(max_amount, (equipment.max_quantity or equipment.quantity) + extra)
+					end
+				else
+					max_amount = (equipment.max_quantity or equipment.quantity) + extra
+				end
+			end
+
+			local new_amount = self:has_category_upgrade(name, "quantity_unlimited") and -1 or params.dropped_out and dedigested_amount + amount or math.min(dedigested_amount + amount, max_amount)
+			special_equipment.amount = Application:digest_value(new_amount, true)
+
+			if special_equipment.is_cable_tie then
+				managers.hud:set_cable_ties_amount(HUDManager.PLAYER_PANEL, new_amount)
+				self:update_synced_cable_ties_to_peers(new_amount)
+			else
+				managers.hud:set_special_equipment_amount(name, new_amount)
+				self:update_equipment_possession_to_peers(name, new_amount)
+			end
+		end
+
+		return
+	end
+
+	local icon = equipment.icon
+	local action_message = equipment.action_message
+
+	if not params.silent then
+		local text = managers.localization:text(equipment.text_id)
+		local title = managers.localization:text("present_obtained_mission_equipment_title")
+
+		managers.hud:present_mid_text({
+			time = 4,
+			text = text,
+			title = title,
+			icon = icon
+		})
+
+		if action_message and alive(unit) then
+			managers.network:session():send_to_peers_synched("sync_show_action_message", unit, action_message)
+		end
+	end
+
+	local quantity = nil
+
+	if is_cable_tie or not params.transfer and not params.dropped_out then
+		quantity = self:has_category_upgrade(name, "quantity_unlimited") and -1 or equipment.quantity and (respawn and math.min(params.amount, (equipment.max_quantity or equipment.quantity or 1) + extra) or equipment.quantity and math.min(amount + extra, (equipment.max_quantity or equipment.quantity or 1) + extra))
+	else
+		quantity = params.amount
+	end
+
+	if is_cable_tie then
+		managers.hud:set_cable_tie(HUDManager.PLAYER_PANEL, {
+			icon = icon,
+			amount = quantity or nil
+		})
+		self:update_synced_cable_ties_to_peers(quantity)
+	else
+		managers.hud:add_special_equipment({
+			id = name,
+			icon = icon,
+			amount = quantity or not equipment.avoid_tranfer and 1 or nil
+		})
+		self:update_equipment_possession_to_peers(name, quantity)
+	end
+
+	self._equipment.specials[name] = {
+		amount = quantity and Application:digest_value(quantity, true) or nil,
+		is_cable_tie = is_cable_tie
+	}
+
+	if equipment.player_rule then
+		self:set_player_rule(equipment.player_rule, true)
+	end
+end
+
+-- Changed so cable tie max quantity properly scales
 function PlayerManager:add_cable_ties(amount)
 	local name = "cable_tie"
 	local equipment = tweak_data.equipments.specials[name]
@@ -2071,8 +2210,8 @@ function PlayerManager:add_cable_ties(amount)
 	local new_amount = 0
 	local max_cable_ties = equipment.max_quantity
 	
-	--So this is properly taken into account
-	max_cable_ties = max_cable_ties + self:upgrade_value(name, "quantity_1") + self:upgrade_value(name, "quantity_2")
+	-- So this is properly taken into account
+	max_cable_ties = max_cable_ties + self:upgrade_value(name, "quantity_1") + self:upgrade_value(name, "quantity_2") + managers.player:crew_ability_upgrade_value_botless("crew_ai_cable_ties", 0)
 
 	if special_equipment then
 		local current_amount = Application:digest_value(special_equipment.amount, false)

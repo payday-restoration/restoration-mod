@@ -1,0 +1,29 @@
+{
+
+    "bm_wp_wpn_fps_upg_sho_ben_shell_rack" : "Big Ben Shell Rack",
+    "bm_wp_wpn_fps_upg_sho_boot_shell_rack" : "Boot Kick Shell Rack",
+    "bm_wp_wpn_fps_upg_sho_ksg_shell_rack" : "Caw Caw Shell Rack",
+    "bm_wp_wpn_fps_upg_sho_m37_shell_rack" : "Goated Shell Rack",
+    "bm_wp_wpn_fps_upg_sho_m590_shell_rack" : "Mossy Shell Rack",
+    "bm_wp_wpn_fps_upg_sho_spas12_shell_rack" : "Latina Shell Rack",
+
+    "bm_wp_wpn_fps_upg_sho_saiga_m_5rnd_magpul" : "Speed Pull Magazine",
+    "bm_wp_wpn_fps_upg_sho_aa12_mag_straight_magpul" : "Speed Pull Straight Mag",
+
+    "bm_wp_wpn_fps_upg_sho_coach_s_ammopouch" : "Not-So-Luxurious Ammo Pouch",
+    "bm_wp_wpn_fps_upg_sho_huntsman_s_ammopouch" : "Hunter's Ammo Pouch",
+    "bm_wp_wpn_fps_upg_sho_m1897_s_ammopouch" : "Dean Ammo Pouch",
+
+    "bm_wp_wpn_fps_upg_snp_tti_m_magpul" : "Tacticool Speedy Magazine",
+    "bm_wp_wpn_fps_upg_snp_victor_m_1_magpul" : "Saint Speedersburg Magazine",
+
+    "bm_wp_wpn_fps_upg_snp_model70_pouch" : "Pointed Ammo Pouch",
+    "bm_wp_wpn_fps_upg_snp_mosin_pouch" : "Three-Lined Ammo Pouch",
+    "bm_wp_wpn_fps_upg_snp_winchester_pouch" : "Sam Ammo Pouch",
+
+    "bm_wp_wpn_fps_upg_r93_shellrack" : "Milspec Shell Rack",
+
+    "menu_l_global_value_res_hylie_mod" : "This is a Hylie's Restoration Mod Attachments Pack item!"
+
+}
+

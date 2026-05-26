@@ -27,8 +27,8 @@ local opts_beat_cops_climb_over_2m = clone(opts_beat_cops)
 opts_beat_cops_climb_over_2m.spawn_action = "e_sp_climb_over_2m"
 local opts_spawn_beat_cops = {
 	enabled = true,
-	amount = 4,
-	amount_random = 0,
+	amount = 2,
+	amount_random = 1,
 	on_executed = {
 		{ id = 400004, delay = 0 },
 		{ id = 400005, delay = 0 },

@@ -1,0 +1,14 @@
+<materials version="3" group="weapon_group">
+	<material name="mtr_bag" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+		<diffuse_texture file="units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/bag_df" mip="1" />
+		<bump_normal_texture file="units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/bag_nm" mip="1" />
+	</material>
+	<material name="mtr_s_standard" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+		<diffuse_texture file="units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_s_standard_df" mip="1" />
+		<bump_normal_texture file="units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_s_standard_nm" mip="1" />
+	</material>
+	<material name="slug" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+		<diffuse_texture file="units/payday2/weapons/wpn_fps_shot_r870_pts/slug_df" mip="1" />
+		<bump_normal_texture file="units/payday2/weapons/wpn_fps_shot_r870_pts/slug_nm" mip="1" />
+	</material>
+</materials>

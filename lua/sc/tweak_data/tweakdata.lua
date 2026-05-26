@@ -180,45 +180,45 @@ tweak_data.smg = {
 		swap_bonus = 1 / tweak_data.smg.swap_bonus,
 		ads_move_speed_mult = 0.35 / tweak_data.smg.ads_move_speed_mult,
 		ads_moving_spread_mult = 12,
-		hipfire_spread_mult = 4 / tweak_data.smg.hipfire_spread_mult,
+		hipfire_spread_mult = 4.5 / tweak_data.smg.hipfire_spread_mult,
 		hipfire_moving_spread_mult = 4.5 / tweak_data.smg.hipfire_spread_mult,
 		shake_mul = 1.4
 	}
 		tweak_data.lmg_moving = {
 			ads_moving_recoil = 1 / tweak_data.lmg.ads_moving_recoil,
 			shake_mul = 1 / tweak_data.lmg.shake_mul,
-			hipfire_spread_mult = 2.5 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult)
+			hipfire_spread_mult = 3 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult)
 		}
 		tweak_data.finn_the_lmg = {
 			ads_moving_recoil = 1 / tweak_data.lmg.ads_moving_recoil,
 			ads_moving_spread_mult = 8 / tweak_data.lmg.ads_moving_spread_mult,
-			hipfire_spread_mult = 1.25 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult),
-			hipfire_moving_spread_mult = 1.25 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult),
+			hipfire_spread_mult = 1.75 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult),
+			hipfire_moving_spread_mult = 1.75 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult),
 			shake_mul = 1 / tweak_data.lmg.shake_mul
 		}
 		tweak_data.mmg = {
 			ads_moving_spread_mult = 16 / tweak_data.lmg.ads_moving_spread_mult,
-			hipfire_spread_mult = 4.5 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult),
-			hipfire_moving_spread_mult = 5.5 / (tweak_data.smg.hipfire_moving_spread_mult * tweak_data.lmg.hipfire_moving_spread_mult)
+			hipfire_spread_mult = 5 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult),
+			hipfire_moving_spread_mult = 5 / (tweak_data.smg.hipfire_moving_spread_mult * tweak_data.lmg.hipfire_moving_spread_mult)
 		}
 			tweak_data.mmg_moving = {
 				ads_moving_recoil = 1 / tweak_data.lmg.ads_moving_recoil,
 				shake_mul = 1 / tweak_data.lmg.shake_mul,
-				hipfire_spread_mult = 3 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult * tweak_data.mmg.hipfire_spread_mult)
+				hipfire_spread_mult = 4 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult * tweak_data.mmg.hipfire_spread_mult)
 			}
 			tweak_data.rambo = {
-				hipfire_spread_mult = 2 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult * tweak_data.mmg.hipfire_spread_mult)
+				hipfire_spread_mult = 2.5 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult * tweak_data.mmg.hipfire_spread_mult)
 			}
 			tweak_data.wolf_brigade = {
 				ads_moving_recoil = 1 / tweak_data.lmg.ads_moving_recoil,
-				hipfire_spread_mult = 1.5 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult * tweak_data.mmg.hipfire_spread_mult),
+				hipfire_spread_mult = 2 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult * tweak_data.mmg.hipfire_spread_mult),
 				hipfire_moving_spread_mult = 4 / (tweak_data.smg.hipfire_moving_spread_mult * tweak_data.lmg.hipfire_moving_spread_mult * tweak_data.mmg.hipfire_moving_spread_mult),
 				shake_mul = 1 / tweak_data.lmg.shake_mul,
 			}
 	tweak_data.minigun = {
 		swap_bonus = 0.95 / tweak_data.smg.swap_bonus,
 		ads_move_speed_mult = 0.35 / tweak_data.smg.ads_move_speed_mult,
-		hipfire_spread_mult = 4 / tweak_data.smg.hipfire_spread_mult,
+		hipfire_spread_mult = 4.5 / tweak_data.smg.hipfire_spread_mult,
 	}
 		tweak_data.sasha = {
 			hipfire_spread_mult = 1.5 / (tweak_data.smg.hipfire_spread_mult * tweak_data.minigun.hipfire_spread_mult),
@@ -236,7 +236,7 @@ tweak_data.snp = {
 	hipfire_moving_spread_mult = 1.5,
 	ads_move_speed_mult = 0.4,
 	shake_mul = 1,
-	min_spread_mult = 2.5
+	min_spread_mult = 2
 }
 	tweak_data.snp_hip = {
 		min_spread_mult = 1.5 / tweak_data.snp.min_spread_mult,
@@ -244,7 +244,7 @@ tweak_data.snp = {
 		hipfire_moving_spread_mult = 1.25 / tweak_data.snp.hipfire_moving_spread_mult
 	}
 	tweak_data.semi_snp = {
-		min_spread_mult = 5 / tweak_data.snp.min_spread_mult,
+		min_spread_mult = 3.5 / tweak_data.snp.min_spread_mult,
 		hipfire_spread_mult = 12 / tweak_data.snp.hipfire_spread_mult,
 		hipfire_moving_spread_mult = 5 / tweak_data.snp.hipfire_moving_spread_mult,
 		ads_moving_recoil = 1.5,
@@ -252,18 +252,26 @@ tweak_data.snp = {
 		ads_move_speed_mult = 0.3 / tweak_data.snp.ads_move_speed_mult,
 		shake_mul = 1.1 / tweak_data.snp.shake_mul
 	}
+	tweak_data.piss = {
+		hipfire_spread_mult = 0,
+		hipfire_moving_spread_mult = 0,
+		ads_move_speed_mult = 0.27 / tweak_data.snp.ads_move_speed_mult,
+		shake_mul = 0,
+		min_spread_mult = 0,
+		spread_mult = 0
+	}
 	tweak_data.amr = {
 		ads_move_speed_mult = 0.3 / tweak_data.snp.ads_move_speed_mult,
 		hipfire_spread_mult = 4 / tweak_data.snp.ads_move_speed_mult,
 		shake_mul = 1.1,
-		min_spread_mult = 3.5 / tweak_data.snp.min_spread_mult,
+		min_spread_mult = 3 / tweak_data.snp.min_spread_mult,
 	}
 		tweak_data.gauss = {
 			min_spread_mult = 1.5 / (tweak_data.amr.min_spread_mult * tweak_data.snp.min_spread_mult),
 			hipfire_spread_mult = 0.5 / (tweak_data.amr.hipfire_spread_mult * tweak_data.snp.hipfire_spread_mult)
 		}
 		tweak_data.semi_amr = {
-			min_spread_mult = 5 / (tweak_data.amr.min_spread_mult * tweak_data.snp.min_spread_mult),
+			min_spread_mult = 4.5 / (tweak_data.amr.min_spread_mult * tweak_data.snp.min_spread_mult),
 			hipfire_spread_mult = 14 / (tweak_data.amr.hipfire_spread_mult * tweak_data.snp.hipfire_spread_mult),
 			hipfire_moving_spread_mult = 5 / tweak_data.snp.hipfire_moving_spread_mult,
 			ads_moving_recoil = 2,
@@ -286,12 +294,12 @@ tweak_data.assault_rifle = {
 	hipfire_spread_mult = 4,
 	hipfire_moving_spread_mult = 2.5,
 	shake_mul = 1.1,
-	min_spread_mult = 3
+	min_spread_mult = 2
 }
 	tweak_data.assault_rifle_special = deep_clone(tweak_data.assault_rifle)
 	tweak_data.crb = {
 		swap_bonus = 1.05 / tweak_data.assault_rifle.swap_bonus,
-		min_spread_mult = 2.5 / tweak_data.assault_rifle.min_spread_mult,
+		min_spread_mult = 1.5 / tweak_data.assault_rifle.min_spread_mult,
 		hipfire_spread_mult = 3 / tweak_data.assault_rifle.hipfire_spread_mult,
 		hipfire_moving_spread_mult = 2 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
 		ads_moving_recoil = 1.1 / tweak_data.assault_rifle.ads_moving_recoil,
@@ -300,7 +308,7 @@ tweak_data.assault_rifle = {
 	}
 	tweak_data.dmr_l = {
 		ads_moving_recoil = 1.2 / tweak_data.assault_rifle.ads_moving_recoil,
-		min_spread_mult = 3.5 / tweak_data.assault_rifle.min_spread_mult,
+		min_spread_mult = 2.5 / tweak_data.assault_rifle.min_spread_mult,
 		hipfire_spread_mult = 5 / tweak_data.assault_rifle.hipfire_spread_mult,
 		hipfire_moving_spread_mult = 3 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
 		ads_moving_spread_mult = 10 / tweak_data.assault_rifle.ads_moving_spread_mult,
@@ -308,7 +316,7 @@ tweak_data.assault_rifle = {
 	}
 	tweak_data.dmr_h = {
 		ads_moving_recoil = 1.25 / tweak_data.assault_rifle.ads_moving_recoil,
-		min_spread_mult = 4 / tweak_data.assault_rifle.min_spread_mult,
+		min_spread_mult = 3 / tweak_data.assault_rifle.min_spread_mult,
 		hipfire_spread_mult = 6 / tweak_data.assault_rifle.hipfire_spread_mult,
 		hipfire_moving_spread_mult = 3.5 / tweak_data.assault_rifle.hipfire_moving_spread_mult,
 		ads_moving_spread_mult = 12 / tweak_data.assault_rifle.ads_moving_spread_mult,
@@ -610,6 +618,14 @@ tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_fade_time = 0
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_tick_time = 0.3
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data_name = "proj_launcher_3gl_cloud"
 
+--Incendiary Nades, idea to make em a mollie--
+tweak_data.projectiles.flun_flare.is_explosive = true
+tweak_data.projectiles.flun_flare.range = 500
+tweak_data.projectiles.flun_flare.curve_pow = 0.75
+tweak_data.projectiles.flun_flare.damage = 6.0
+tweak_data.projectiles.flun_flare.player_damage = 3.0
+tweak_data.projectiles.flun_flare.dot_data_name = "proj_flun_flare"
+
 --Plainsrider--
 tweak_data.projectiles.west_arrow.damage = 24
 tweak_data.projectiles.west_arrow_exp.damage = 24
@@ -619,6 +635,11 @@ tweak_data.projectiles.bow_poison_arrow.damage = 18
 tweak_data.projectiles.crossbow_arrow.damage = 24
 tweak_data.projectiles.crossbow_arrow_exp.damage = 24
 tweak_data.projectiles.crossbow_poison_arrow.damage = 18
+
+--Dart Gun
+tweak_data.projectiles.dart_poison.damage = 24
+tweak_data.projectiles.dart_daze.damage = 6.0
+tweak_data.projectiles.dart_revive.damage = 0
 
 --Arblast Heavy Crossbow--
 tweak_data.projectiles.arblast_arrow.damage = 36
@@ -641,36 +662,45 @@ tweak_data.projectiles.ecp_arrow_exp.damage = 18
 tweak_data.projectiles.ecp_arrow_exp.direct_damage_percent = 0
 tweak_data.projectiles.ecp_arrow_poison.damage = 12
 
+--HEAVY LIKE A BRINKS TRUCK
+tweak_data.projectiles.laser_watch.damage = 12
+tweak_data.projectiles.laser_watch.range = 169
+
 --The not longbow--
 tweak_data.projectiles.elastic_arrow.damage = 36
 tweak_data.projectiles.elastic_arrow_exp.damage = 36
 tweak_data.projectiles.elastic_arrow_poison.damage = 24
 
 --GRENADE OUT--
+tweak_data.projectiles.frag.is_explosive = true
 tweak_data.projectiles.frag.damage = 90
 tweak_data.projectiles.frag.player_damage = 45
 tweak_data.projectiles.frag.curve_pow = 0.5
 tweak_data.projectiles.frag.range = 500
 
 --Dynamite--
+tweak_data.projectiles.dynamite.is_explosive = true
 tweak_data.projectiles.dynamite.damage = 90
 tweak_data.projectiles.dynamite.player_damage = 45
 tweak_data.projectiles.dynamite.curve_pow = 0.5
 tweak_data.projectiles.dynamite.range = 400
 
 --Community Frag--
+tweak_data.projectiles.frag_com.is_explosive = true
 tweak_data.projectiles.frag_com.damage = 90
 tweak_data.projectiles.frag_com.player_damage = 45
 tweak_data.projectiles.frag_com.curve_pow = 0.5
 tweak_data.projectiles.frag_com.range = 500
 
 --The other community frag--
+tweak_data.projectiles.dada_com.is_explosive = true
 tweak_data.projectiles.dada_com.damage = 90
 tweak_data.projectiles.dada_com.player_damage = 45
 tweak_data.projectiles.dada_com.curve_pow = 0.5
 tweak_data.projectiles.dada_com.range = 500
 
 --SEEEEEEMTEEEEEEEEEEX
+tweak_data.projectiles.sticky_grenade.is_explosive = true
 tweak_data.projectiles.sticky_grenade.damage = 90
 tweak_data.projectiles.sticky_grenade.player_damage = 45
 tweak_data.projectiles.sticky_grenade.curve_pow = 0.5
@@ -700,18 +730,22 @@ tweak_data.projectiles.sticky_grenade.warning_data = {
 }
 
 --Molliest of tovs--
+tweak_data.projectiles.molotov.is_explosive = true
 tweak_data.projectiles.molotov.range = 300
 tweak_data.projectiles.molotov.damage = 3.0
 tweak_data.projectiles.molotov.player_damage = 1.5
 tweak_data.projectiles.molotov.burn_duration = 10
 tweak_data.projectiles.molotov.dot_data_name = "proj_molotov"
+tweak_data.projectiles.molotov.fire_env_name = "molotov_fire" --Just for grabbing info for the UI; does not set the fire_env that's used (That's handled by the throwable's base)
 
 --Incendiary Nades, idea to make em a mollie--
+tweak_data.projectiles.fir_com.is_explosive = true
 tweak_data.projectiles.fir_com.range = 450
 tweak_data.projectiles.fir_com.damage = 12.0
-tweak_data.projectiles.fir_com.player_damage = 4.5
+tweak_data.projectiles.fir_com.player_damage = 6.0
 tweak_data.projectiles.fir_com.burn_duration = 12
 tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"
+tweak_data.projectiles.fir_com.fire_env_name = "incendiary_burst_fire" --Just for grabbing info for the UI
 
 --Shuriken
 tweak_data.projectiles.wpn_prj_four.damage = 12
@@ -735,6 +769,7 @@ tweak_data.projectiles.wpn_prj_jav.magnetism = 0.15
 
 --Balled Snow--
 if tweak_data.projectiles.xmas_snowball then
+	tweak_data.projectiles.xmas_snowball.is_explosive = true
 	tweak_data.projectiles.xmas_snowball.damage = 18
 	tweak_data.projectiles.xmas_snowball.player_dmg_mul = 0
 	tweak_data.projectiles.xmas_snowball.camera_shake_max_mul = 0
@@ -754,6 +789,8 @@ tweak_data.projectiles.wpn_gre_electric.curve_pow = 0.5
 tweak_data.projectiles.wpn_gre_electric.range = 500
 
 --Viper Gas
+tweak_data.projectiles.poison_gas_grenade.is_smoke = true
+tweak_data.projectiles.poison_gas_grenade.stationary_detonation = true
 tweak_data.projectiles.poison_gas_grenade.damage = 0
 tweak_data.projectiles.poison_gas_grenade.player_damage = 0
 tweak_data.projectiles.poison_gas_grenade.curve_pow = 0
@@ -765,6 +802,16 @@ tweak_data.projectiles.poison_gas_grenade.poison_gas_duration = 12
 tweak_data.projectiles.poison_gas_grenade.poison_gas_fade_time = 0.1
 tweak_data.projectiles.poison_gas_grenade.poison_gas_tick_time = 0.3
 tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data_name = "proj_gas_grenade_cloud"
+
+tweak_data.hud_icons.poison_gas_grenade = {
+	texture = "guis/dlcs/pxp1/textures/pd2/hud_poison_gas_grenade",
+	texture_rect = {
+		64,
+		0,
+		128,
+		128
+	}
+}
 --[[
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",
@@ -799,6 +846,7 @@ tweak_data.fire.effects.money_endless = {
 }
 
 --Stun nades--
+tweak_data.projectiles.concussion.is_explosive = true
 tweak_data.projectiles.concussion.damage = 0
 tweak_data.projectiles.concussion.curve_pow = 0.8
 tweak_data.projectiles.concussion.range = 1000
@@ -832,6 +880,8 @@ tweak_data.narrative.jobs.chill_combat.contract_visuals.preview_image = {
 }	
 
 --Smoke Grenades--
+tweak_data.projectiles.smoke_screen_grenade.is_explosive = true
+tweak_data.projectiles.smoke_screen_grenade.stationary_detonation = true
 tweak_data.projectiles.smoke_screen_grenade.damage = 0
 tweak_data.projectiles.smoke_screen_grenade.curve_pow = 1
 tweak_data.projectiles.smoke_screen_grenade.range = 1500
@@ -949,6 +999,16 @@ for i, proj_id in ipairs(velocity) do
 end
 tweak_data.projectiles.rocket_frag.launch_speed = 30000 * velocity_mult
 
+velocity_mult = 1
+velocity = {
+	'flun_flare',
+}
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 130 * velocity_mult
+	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
+
 velocity_mult = 0.8
 velocity = {
 	'west_arrow',
@@ -1005,6 +1065,24 @@ end
 	}
 	for i, proj_id in ipairs(velocity) do
 		tweak_data.projectiles[proj_id].launch_speed = 5000 * velocity_mult * 0.60
+		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+	end
+
+velocity = {
+	'dart_poison',
+	'dart_daze'
+}
+for i, proj_id in ipairs(velocity) do
+	tweak_data.projectiles[proj_id].launch_speed = 5000 * velocity_mult
+	tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
+	tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
+end
+	velocity = {
+		'dart_revive'
+	}
+	for i, proj_id in ipairs(velocity) do
+		tweak_data.projectiles[proj_id].launch_speed = 5000 * velocity_mult * 0.5
 		tweak_data.projectiles[proj_id].adjust_z = tweak_data.projectiles[proj_id].launch_speed / 100 * velocity_mult
 		tweak_data.projectiles[proj_id].mass_look_up_modifier = 0
 	end

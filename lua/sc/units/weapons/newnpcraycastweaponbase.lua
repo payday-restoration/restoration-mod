@@ -230,6 +230,25 @@ function NewNPCRaycastWeaponBase:_sound_autofire_end()
 	end
 end
 
+function NewNPCRaycastWeaponBase:singleshot(...)
+	local fired = nil
+
+	if self._next_fire_allowed <= Application:time() then
+		fired = self:fire(...)
+	end
+
+	if fired then
+		local weapon_fire_mode = tweak_data.weapon[self._name_id].single or tweak_data.weapon[self._name_id].auto or tweak_data.weapon[self._name_id].fire_rate
+		local weapon_fire_rate = (weapon_fire_mode and weapon_fire_mode.fire_rate) or 0.1
+		--log(tostring( self._name_id ))
+		--log(tostring( weapon_fire_mode and weapon_fire_mode.fire_rate ))
+		self._next_fire_allowed = Application:time() + ((weapon_fire_mode and weapon_fire_mode.fire_rate) or 0.01)
+		self:_sound_singleshot()
+	end
+
+	return fired
+end
+
 function NewNPCRaycastWeaponBase:_sound_singleshot()
 	local tweak_data = tweak_data.weapon[self._name_id or "new_m4"]
 	local tweak_sound = tweak_data and tweak_data.sounds

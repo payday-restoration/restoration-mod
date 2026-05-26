@@ -1971,8 +1971,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.sticky_grenade.base_pickup_chance = {0.0125, 0.025}
 
 	self.projectiles.laser_watch.base_cooldown_no_perk = true
-	self.projectiles.laser_watch.base_cooldown = 45
-	self.projectiles.laser_watch.pickup_cooldown_t = 4.5 --10~ pickups to gain back one immediately
+	self.projectiles.laser_watch.base_cooldown = 35
+	self.projectiles.laser_watch.pickup_cooldown_t = 3.5 --10~ pickups to gain back one immediately
 
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.throw_allowed_expire_t = 0.1

@@ -20,7 +20,7 @@ function PlayerMovement:on_SPOOCed(enemy_unit, flying_strike)
 		return "countered"
 	end
 
-	if self._unit:character_damage()._god_mode or self._unit:character_damage():get_mission_blocker("invulnerable") then
+	if self._unit:character_damage()._god_mode or self._unit:character_damage():get_mission_blocker("invulnerable") --[[or (self._current_state._last_dash_iframes or 0) >= managers.player:player_timer():time()]] then
 		return
 	end
 

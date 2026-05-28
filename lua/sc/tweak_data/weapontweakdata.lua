@@ -31604,6 +31604,50 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.wz96 then -- Wz.96 Beryl
+				self.wz96.nato = true
+				self.wz96.recategorize = { "light_ar" }
+				self.wz96.damage_type = "assault_rifle"
+				self.wz96.tactical_reload = 1
+				self.wz96.CLIP_AMMO_MAX = 30
+				self.wz96.AMMO_MAX = 150
+				self.wz96.fire_mode_data.fire_rate = 0.08571428
+				self.wz96.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.wz96.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{6, self.stat_info.kick_tables.moderate_left_kick},
+					{10, self.stat_info.kick_tables.moderate_kick},
+					{12, self.stat_info.kick_tables.moderate_right_kick},
+					{18, self.stat_info.kick_tables.moderate_kick},
+					{22, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.wz96.supported = true
+				self.wz96.ads_speed = 0.320
+				self.wz96.damage_falloff = {
+					start_dist = 2500,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.wz96.stats = {
+					damage = 24,
+					spread = 82,
+					recoil = 77,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.wz96.stats_modifiers = nil
+				self.wz96.panic_suppression_chance = 0.05
+				self.wz96.timers.reload_exit_empty = 0.8
+				self.wz96.timers.reload_exit_not_empty = 1.4
+			end
+
 			if self.minecraft_bow then
 				-- I am placing blocks and shit cuz I'm in fuckin' MINECRAAAAAAAAAAFT
 				-- OOOOOOOOOOOOOOOHHHHHHHHHHHHHH MYYYYYYYYYYYYYYYYYYYYYYYY GOOOOOOOOOOOOOOOOOOOOOOOOOD

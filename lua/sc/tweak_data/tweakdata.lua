@@ -787,6 +787,7 @@ tweak_data.projectiles.wpn_gre_electric.damage = 40
 tweak_data.projectiles.wpn_gre_electric.player_damage = 20
 tweak_data.projectiles.wpn_gre_electric.curve_pow = 0.5
 tweak_data.projectiles.wpn_gre_electric.range = 500
+tweak_data.projectiles.wpn_gre_electric.is_explosive = true
 
 --Viper Gas
 tweak_data.projectiles.poison_gas_grenade.is_smoke = true

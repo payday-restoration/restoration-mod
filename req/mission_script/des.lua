@@ -74,7 +74,8 @@ return {
 	[102082] = {
 		on_executed = {
 			{ id = 400024, delay = 0 ,},
-			{ id = 400037, delay = 0 ,}, 
+			{ id = 400037, delay = 0 ,},
+			{id =  400049, delay = 0, },
 		},
 	},
 	-- Disable a bunch of cheaty preferreds

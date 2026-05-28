@@ -5,8 +5,8 @@ local titan_dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_as
 local cloaker = ((difficulty >= 8)  and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook")
 local gunners = ((difficulty >= 8)  and "units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" or "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")
 local shields = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city")
-local snipers = ((difficulty >= 8) and "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper" or "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper")
-local grunt_1 =  "units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"
+local snipers = ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky" or "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper")
+local grunt_1 =  ((difficulty >= 8) and "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" or "units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
 local death_wish_above = difficulty >= 7
 local diff_scaling = (death_wish_above and 0.15 or 0)
 local diff_scaling_2 = (death_wish_above and 0.15 or 0) 
@@ -213,10 +213,10 @@ return {
 
 		-- Snipers 
 		restoration:gen_dummy(400025, "weapon_lab_sniper_01", Vector3(-3842.79, -2954.82, 0), Rotation(-105, 0, -0), optsSniper_01),
-		restoration:gen_dummy(400026, "weapon_lab_sniper_02", Vector3(-3647, -3673, 0), Rotation(-65, 0, -0), optsSniper_02),
+		restoration:gen_dummy(400026, "weapon_lab_sniper_02", Vector3(-3452.26, -3570.05, 0), Rotation(-65, 0, -0), optsSniper_02),
 
 		restoration:gen_so(400027, "railgun_defend_03",  Vector3(-3842.79, -2954.82, 0), Rotation(-105, 0, -0), optsDefend_SO), 
-		restoration:gen_so(400028, "railgun_defend_04",  Vector3(-3647, -3673, 0), Rotation(-65, 0, -0), optsDefend_SO),
+		restoration:gen_so(400028, "railgun_defend_04",  Vector3(-3452.26, -3570.05, 0), Rotation(-65, 0, -0), optsDefend_SO),
 
 		-- misison script
 		restoration:gen_missionscript(400007, "spawn_railgun_defenders", opts_spawn__weapon_lab_defenders),

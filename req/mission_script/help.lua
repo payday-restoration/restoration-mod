@@ -11,7 +11,7 @@ return {
 			{
 				name = "entrance", 
 				force = 4, 
-				position = Vector3(-1994, -4730, -38.001),
+				position = Vector3(-1698, -4500, -38.001),
 			},
 			{
 				name = "dirty_laundry",
@@ -21,7 +21,7 @@ return {
 			{
 				name = "laundry_entrance", 
 				force = 2, 
-				position = Vector3(1721, -349, -25),
+				position = Vector3(1750, -3200, 0),
 			},
 			{
 				name = "come_on_and_slam", 
@@ -31,12 +31,12 @@ return {
 			{
 				name = "block_b",
 				force = 3, 
-				position = Vector3(49, -1850, -425),
+				position = Vector3(-1283, -1354, -25),
 			},
 			{
-				name = "first_wheel", 
-				force = 4, 
-				position = Vector3(-4544, -1677, 10.727),
+				name = "police_car", 
+				force = 2, 
+				position = Vector3(-3165, -5967, -38.001),
 			},
 		},
 	},

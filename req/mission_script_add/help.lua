@@ -35,16 +35,6 @@ local optsCloaker_Hide_SO = {
 	interval = 2,
     so_action = "e_so_sneak_wait_crh_var3",
 }
-local optsDozer_zipline_guard_01 = {
-	enemy = tank_skull,
-	on_executed = { { id = 400003, delay = 0 } },
-	enabled = true,
-}
-local optsDozer_zipline_guard_02 = {
-	enemy = tank_skull,
-	on_executed = { { id = 400004, delay = 0 } },
-	enabled = true,
-}
 local optsCloaker_zipline = {
 	spawn_action = "e_sp_uno_jump_in",
 	enemy = cloaker,
@@ -52,7 +42,7 @@ local optsCloaker_zipline = {
 	enabled = true,
 }
 local optsShield_blocker_01 = {
-	enemy = shields,
+	enemy = sans,
 	on_executed = { { id = 400010, delay = 0 } },
 	enabled = true,
 }
@@ -62,15 +52,13 @@ local optsShield_blocker_02 = {
 	enabled = true,
 }
 local optsShield_blocker_03 = {
-	enemy = shields,
+	enemy = sans,
 	on_executed = { { id = 400012, delay = 0 } },
 	enabled = true,
 }
 local spawn_zipline_defenders = {
 	enabled = death_wish_above, 
 	on_executed = {
-		{ id = 400001, delay = 0, },
-		{ id = 400002, delay = 0, },
 		{ id = 400005, delay = 0, },
 		{ id = 400007, delay = 0, },
 		{ id = 400008, delay = 0, },
@@ -103,8 +91,8 @@ local skeleton_defense_escape_defense_5 = {
 	enabled = true,
 	on_executed = { { id = 400024 , delay = 0, } },
 }
-local skully_defense_escape = {
-	enemy = tank_skull,
+local skeleton_defense_escape_6 = {
+	enemy = sans,
 	enabled = true,
 	on_executed = { { id = 400026 , delay = 0, } },
 }
@@ -138,13 +126,7 @@ return {
 	elements = {
 		-- Zombies defendding the zipline area to slow down the heisters 
 		-- SO stuff and dummies 
-		-- Dozers 
-
-		restoration:gen_dummy(400001, "zipline_guard_01", Vector3(-5233.89, -5295.38, 410), Rotation(-169, 0, -0), optsDozer_zipline_guard_01),
-		restoration:gen_dummy(400002, "zipline_guard_02", Vector3(-5080.02, -5280.46, 393), Rotation(172, 0, -0), optsDozer_zipline_guard_02),
-		restoration:gen_so(400003, "zipline_guard_so_01", Vector3(-5037, -5621, 373), Rotation(177, 0, -0), optsDefend_SO),
-		restoration:gen_so(400004, "zipline_guard_so_02", Vector3(-5186, -5625, 373.929), Rotation(-178, 0, -0), optsDefend_SO),
-
+	
 		-- Cloaker
 		restoration:gen_dummy(400005, "zipline_spook", Vector3(-5959, -6526, 458.973), Rotation(-112, 0, -0), optsCloaker_zipline),
 		restoration:gen_so(400006, "spook_hide", Vector3(-5352, -6230, 374.11), Rotation(0, 0, -0), optsCloaker_Hide_SO), 
@@ -164,17 +146,17 @@ return {
 		-- Megalovania starts playing 
 		restoration:gen_dummy(400014, "sans_01", Vector3(-2920, 11205, 1760.23), Rotation(178, 0, -0), skeleton_defense_escape_defense_1),
 		restoration:gen_so(400015, "escape_defend_01", Vector3(-2920, 11205, 1760.23), Rotation(178, 0, -0), optsDefend_SO),
-		restoration:gen_dummy(400016, "sans_02", Vector3(-2767.88, 11205.7, 1760.23), Rotation(178, 0, -0), skeleton_defense_escape_defense_2),
-		restoration:gen_so(400017, "escape_defend_02", Vector3(-2767.88, 11205.7, 1760.23), Rotation(178, 0, -0), optsDefend_SO),
+		restoration:gen_dummy(400016, "sans_02", Vector3(-2817.85, 11207.4, 1760.23), Rotation(178, 0, -0), skeleton_defense_escape_defense_2),
+		restoration:gen_so(400017, "escape_defend_02", Vector3(-2817.85, 11207.4, 1760.23), Rotation(178, 0, -0), optsDefend_SO),
 		restoration:gen_dummy(400018, "sans_03", Vector3(-2586.99, 11199.4, 1775.23), Rotation(178, 0, -0), skeleton_defense_escape_defense_3),
 		restoration:gen_so(400019, "escape_defend_03", Vector3(-2586.99, 11199.4, 1775.23), Rotation(178, 0, -0), optsDefend_SO),
-		restoration:gen_dummy(400021, "sans_04", Vector3(-2430.58, 11323, 1775.23), Rotation(178, 0, -0), skeleton_defense_escape_defense_4),
-		restoration:gen_so(400022, "escape_defend_04", Vector3(-2430.58, 11323, 1775.23), Rotation(178, 0, -0), optsDefend_SO),
+		restoration:gen_dummy(400021, "sans_04", Vector3(-2505, 11209, 1773.8), Rotation(178, 0, -0), skeleton_defense_escape_defense_4),
+		restoration:gen_so(400022, "escape_defend_04", Vector3(-2505, 11209, 1773.8), Rotation(178, 0, -0), optsDefend_SO),
 		restoration:gen_dummy(400023, "sans_05", Vector3(-2197.72, 11314.9, 1775.23), Rotation(178, 0, -0), skeleton_defense_escape_defense_5),
 		restoration:gen_so(400024, "escape_defend_05", Vector3(-2197.72, 11314.9, 1775.23), Rotation(178, 0, -0), optsDefend_SO),
-		-- skully 
-		restoration:gen_dummy(400025, "skully_blocker", Vector3(-2612.91, 11435.9, 1773.91), Rotation(-175, 0, -0), skully_defense_escape),
-		restoration:gen_so(400026, "skully_defend", Vector3(-2612.91, 11435.9, 1773.91), Rotation(-175, 0, -0), optsDefend_SO),
+		 
+		restoration:gen_dummy(400025, "sans_06", Vector3(-2680.18, 11206.8, 1773.91), Rotation(-179, 0, -0), skeleton_defense_escape_6),
+		restoration:gen_so(400026, "escape_defend_06", Vector3(-2680.18, 11206.8, 1773.91), Rotation(-179, 0, -0), optsDefend_SO),
 		-- Cloakers 
 		restoration:gen_dummy(400027, "spook_2", Vector3(-2768, 10070, 1763.21), Rotation(-90, 0, -0), spook_escape_01),
 		restoration:gen_so(400028, "spook_so_2", Vector3(-2678, 10088, 1772.45) , Rotation(-91, 0, -0), optsCloaker_Hide_SO),

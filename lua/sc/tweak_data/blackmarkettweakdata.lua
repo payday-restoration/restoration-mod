@@ -6399,6 +6399,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	self.melee_weapons.halloween_sword.stats.speed_mult = 0.93
 
 	self.melee_weapons.titham.stats.cleave = 2
+	self.melee_weapons.titham.stats.ignore_charge_speed = true
 	self.melee_weapons.titham.stats.raycasts = 15
 	self.melee_weapons.titham.stats.raycasts_charge = 20
 	self.melee_weapons.titham.stats.raycasts_charge_h = 20

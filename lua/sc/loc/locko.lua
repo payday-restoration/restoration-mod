@@ -6315,7 +6315,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck9_corey_desc_sc"] = "#{risk}#과다 복용의 처치 시 회피##를 수정하여 콤보 #{risk}#$perk_value_2##점마다 회피의 #{skill_color}#$perk_value_1##만큼 회피 미터를 채우고, 최대 #{skill_color}#$perk_value_3##까지 채웁니다.\n근접 공격으로 적을 처치하면 추가로 #{skill_color}#$perk_value_5## 채웁니다.\n\n체력 피해를 입으면 콤보를 추가로 #{important_1}#$perk_value_4## 잃습니다.\n#{risk}#결전의 처치 시 공포감이## #{important_1}#근접 공격으로 적을 처치해도 더 이상 증가하지 않습니다.##",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "적에게 피해를 가하면 #{skill_color}#$perk_value_2##초동안 매 초마다 체력이 #{skill_color}#$perk_value_1##씩 회복되며, 최대 #{skill_color}#$perk_value_3##회까지 중첩됩니다.\n#{important_1}#$perk_value_4##초마다 스택을 얻을 수 있으며, #{risk}#방편복##를 입을 때만 적용됩니다.\n방편복의 방탄력이 #{important_1}#$perk_value_5##, 방어력이 #{important_1}#$perk_value_7## 감소하지만 방편복의 기동성이 #{skill_color}#$perk_value_6## 증가합니다.\n\n#{risk}#주의: 센트리 또는 지속 피해 효과로 적에게 피해를 가해도 중첩을 얻을 수 없습니다.##",
+		["menu_deck11_1_desc_sc"] = "적에게 피해를 가하면 #{skill_color}#$perk_value_2##초동안 매 초마다 체력이 #{skill_color}#$perk_value_1##씩 회복되며, 최대 #{skill_color}#$perk_value_3##회까지 중첩됩니다.\n#{important_1}#$perk_value_4##초마다 스택을 얻을 수 있으며, #{risk}#방편복##을 입을 때만 적용됩니다.\n방편복의 방탄력이 #{important_1}#$perk_value_5##, 방어력이 #{important_1}#$perk_value_7## 감소하지만 방편복의 기동성이 #{skill_color}#$perk_value_6## 증가합니다.\n\n#{risk}#주의: 센트리 또는 지속 피해 효과로 적에게 피해를 가해도 중첩을 얻을 수 없습니다.##",
 		["menu_deck11_3_desc_sc"] = "스택은 매 초마다 체력이 추가로 ##$perk_value_1##씩 회복합니다.",
 		["menu_deck11_5_desc_sc"] = "스택의 지속 시간이 추가로 ##$perk_value_1##초 증가합니다.\n\n시체 가방의 소지 수가 ##$perk_value_2##개 증가합니다.",
 		["menu_deck11_7_desc_sc"] = "스택은 매 초마다 체력이 추가로 ##$perk_value_1##씩 회복합니다.",
@@ -6504,7 +6504,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Gambler
 			["menu_deck10_mrwi_desc"] = "탄약을 획득할 때마다 #{skill_color}#$perk_value_1##에서 #{skill_color}#$perk_value_2##의 체력을 회복하는 의약품을 얻을 수 있습니다.\n\n치료의 재사용 대기 시간은 #{important_1}#$perk_value_3##초이지만, 탄약 상자를 획득할 때마다 대기 시간이 #{skill_color}#$perk_value_4##초에서 #{skill_color}#$perk_value_5##초씩 감소합니다.\n\n탄약을 획득할 때마다, 당신의 팀원도 기본 탄약 회수량의 ##$perk_value_6##만큼 탄약을 획득합니다.\n\n페이저를 응답하는 속도가 ##$perk_value_7## 빨라집니다.",
 			--Grinder
-			["menu_deck11_mrwi_desc"] = "적에게 피해를 가하면 #{skill_color}#$perk_value_2##초동안 매 초마다 체력이 #{skill_color}#$perk_value_1##씩 회복되며, 최대 #{skill_color}#$perk_value_3##회까지 중첩됩니다.\n#{important_1}#$perk_value_4##초마다 스택을 얻을 수 있으며, #{risk}#방편복##를 입을 때만 적용됩니다.\n방편복의 방탄력이 #{important_1}#$perk_value_5##, 방어력이 #{important_1}#$perk_value_8## 감소하지만 방편복의 기동성이 #{skill_color}#$perk_value_6## 증가합니다.\n\n#{risk}#주의: 센트리 또는 지속 피해 효과로 적에게 피해를 가해도 중첩을 얻을 수 없습니다.##\n\n시체 가방의 소지 수가 #{skill_color}#$perk_value_7##개 증가합니다.",
+			["menu_deck11_mrwi_desc"] = "적에게 피해를 가하면 #{skill_color}#$perk_value_2##초동안 매 초마다 체력이 #{skill_color}#$perk_value_1##씩 회복되며, 최대 #{skill_color}#$perk_value_3##회까지 중첩됩니다.\n#{important_1}#$perk_value_4##초마다 스택을 얻을 수 있으며, #{risk}#방편복##을 입을 때만 적용됩니다.\n방편복의 방탄력이 #{important_1}#$perk_value_5##, 방어력이 #{important_1}#$perk_value_8## 감소하지만 방편복의 기동성이 #{skill_color}#$perk_value_6## 증가합니다.\n\n#{risk}#주의: 센트리 또는 지속 피해 효과로 적에게 피해를 가해도 중첩을 얻을 수 없습니다.##\n\n시체 가방의 소지 수가 #{skill_color}#$perk_value_7##개 증가합니다.",
 			--Yakuza
 			["menu_deck12_mrwi_desc"] = "체력이 낮을 수록 회피 미터가 더 빠르게 자동으로 채워집니다.\n\n체력이 ##100%## 미만일 경우, 회피 미터가 매초 최대 ##$perk_value_1##만큼 채워집니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 ##$perk_value_2## 빨라집니다.",
 			--Ex-Pres

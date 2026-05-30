@@ -149,7 +149,7 @@ return {
 	[101371] = swat,
 	[101372] = swat,
 	[101373] = swat,
-	- Spawn group intervals
+	-- Spawn group intervals
 	[100231] = timbermill_spawn,
 	[100434] = timbermill_spawn,
 	[100435] = hillside_spawn,

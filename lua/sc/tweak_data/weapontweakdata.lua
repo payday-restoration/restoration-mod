@@ -31604,6 +31604,40 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.rebar then -- Red-Hot Rebar Crossbow
+				self.rebar.categories = {
+					"crossbow"
+				}
+				self.rebar.upgrade_blocks = {
+					weapon = {
+						"clip_ammo_increase"
+					}
+				}
+				self.rebar.recategorize = {"wpn_special"}
+				self.rebar.damage_type = "sniper"
+				self.rebar.AMMO_MAX = 10
+				self.rebar.fire_mode_data.fire_rate = 0.5
+				self.rebar.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.rebar.panic_suppression_chance = 0.05
+				self.rebar.supported = true
+				self.rebar.ads_speed = 0.360
+				self.rebar.stats = {
+					damage = 100,
+					spread = 100,
+					recoil = 95,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 27,
+					suppression = 20,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.rebar.stats_modifiers = {damage =  4}
+			end
+
 			if self.wz96 then -- Wz.96 Beryl
 				self.wz96.nato = true
 				self.wz96.recategorize = { "light_ar" }
@@ -31611,7 +31645,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.wz96.tactical_reload = 1
 				self.wz96.CLIP_AMMO_MAX = 30
 				self.wz96.AMMO_MAX = 150
-				self.wz96.fire_mode_data.fire_rate = 0.08571428
+				self.wz96.fire_mode_data.fire_rate = 0.0857142857142857
 				self.wz96.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.wz96.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
@@ -31644,8 +31678,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.wz96.stats_modifiers = nil
 				self.wz96.panic_suppression_chance = 0.05
-				self.wz96.timers.reload_exit_empty = 0.8
-				self.wz96.timers.reload_exit_not_empty = 1.4
 			end
 
 			if self.minecraft_bow then

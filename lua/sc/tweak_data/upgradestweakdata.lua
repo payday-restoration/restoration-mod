@@ -511,9 +511,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.97,
 		0.91, -- 2 increments
 		0.88,
-		0.76, -- 4 increments
-		0.745, --0.5 increments
-		0.61 -- 4.5 increments
+		0.73, -- 5 increments
+		0.7,
+		0.61 -- 3 increments
 	}
 	self.values.player.body_armor.dodge = { --*increments of 0.1
 		0.15,
@@ -571,14 +571,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.20, -- -1 increment
 		0.10 -- -2 increments
 	}
-	self.values.player.body_armor.regen_delay = { --increments of 0.25
+	self.values.player.body_armor.regen_delay = { --*increments of 0.25
 		3.00,
 		3.25,
 		3.50,
 		3.75,
-		4.25, -- 2 increments
-		4.50,
-		5.00 -- 2 increments
+		4.50, -- 3 increments
+		4.75,
+		5.25 -- 2 increments
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -1889,7 +1889,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace		
 					self.values.player.backstab_dodge = {
 						{
-							0.125, --Dodge on headshot
+							0.20, --Dodge on headshot
 							0.75 --Dodge on kill from behind
 						}
 					}
@@ -2284,6 +2284,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.revive_temp_health = { 12 }
 	self.values.player.temp_health_speed = { 1.2 }
 	self.values.player.temp_health_deflection = { 0.1 }
+	self.values.player.temp_health_dodge_addend = { 0.05 }
 	self.values.player.armor_regen_dodge = { 1 }
 
 	self.values.player.level_2_dodge_addend = {
@@ -2495,7 +2496,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}
 	self.values.player.loose_ammo_give_armor = {0.3} --Changed to % of armor
-	self.values.player.loose_ammo_give_dodge = {1}
+	self.values.player.loose_ammo_give_dodge = {2}
 
 	--Create actual upgrade table for Gambler.
 	self.values.temporary.loose_ammo_restore_health = {}
@@ -2837,6 +2838,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.values.player.chico_injector_speed = {
 		1.2
+	}
+	self.values.player.chico_injector_dodge_addend = {
+		0.05
 	}
 	self.values.player.chico_armor_multiplier = {
 		1.05,
@@ -3359,6 +3363,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[5][5] = {
 		perk_value_1 = "60%", -- Store per kill & max possible stored HP increase
+		perk_value_3 = tostring(self.values.player.temp_health_dodge_addend[1] * 100), -- Temp dodge bonus while temp HP is active
 		perk_value_2 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
 	}
 	self.specialization_descs[5][7] = {
@@ -3819,7 +3824,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[17][5] = {
 		perk_value_1 = tostring(self.values.temporary.chico_injector[3][1] * 100).."%", -- HP regen on damage taken
-		perk_value_2 = tostring(self.values.temporary.chico_injector[3][2]) -- Injector's duration buff
+		perk_value_2 = tostring(self.values.temporary.chico_injector[3][2]), -- Injector's duration buff
+        perk_value_3 = tostring(self.values.player.chico_injector_dodge_addend[1] * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[17][7] = {
 		perk_value_1 = tostring(self.values.player.chico_injector_low_health_multiplier[1][2] * 100).."%", -- HP regen buff on low HP
@@ -5700,6 +5706,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_chico_injector_dodge_addend = {
+		name_id = "menu_player_chico_injector_dodge_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "chico_injector_dodge_addend",
+			category = "player"
+		}
+	}
 	--Stoic
 	self.definitions.player_damage_control_passive_1 = {
 		category = "feature",
@@ -7390,6 +7405,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "temp_health_deflection",
+			category = "player"
+		}
+	}
+	self.definitions.player_temp_health_dodge_addend = {
+		name_id = "menu_player_temp_health_deflection",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "temp_health_dodge_addend",
 			category = "player"
 		}
 	}

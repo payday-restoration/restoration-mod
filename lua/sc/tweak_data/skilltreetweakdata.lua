@@ -2357,6 +2357,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_store_temp_health_2",
+					"player_temp_health_dodge_addend",
 					"player_corpse_dispose_amount_2"
 				},
 				cost = 1000,
@@ -3637,6 +3638,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"temporary_chico_injector_3",
+					"player_chico_injector_dodge_addend",
 					"player_chico_preferred_target"
 				},
 				cost = 1000,

@@ -1972,14 +1972,14 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 
 	self.projectiles.laser_watch.base_cooldown_no_perk = true
 	self.projectiles.laser_watch.base_cooldown = 35
-	self.projectiles.laser_watch.pickup_cooldown_t = 3.5 --10~ pickups to gain back one immediately
+	self.projectiles.laser_watch.pickup_cooldown_t = 3.5 --10~ pickups to gain back a charge immediately
 
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.throw_allowed_expire_t = 0.1
 		self.projectiles.xmas_snowball.max_amount = 3
 		self.projectiles.xmas_snowball.base_cooldown_no_perk = true
 		self.projectiles.xmas_snowball.base_cooldown = 60
-		self.projectiles.xmas_snowball.pickup_cooldown_t = 6 --10~ pickups to gain back one immediately
+		self.projectiles.xmas_snowball.pickup_cooldown_t = 3 --20~ pickups to gain back one immediately
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 

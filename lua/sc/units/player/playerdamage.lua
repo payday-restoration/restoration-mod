@@ -1417,7 +1417,7 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 			local hurt_t_mod = (pm:has_category_upgrade("player", "buildup_meter_quickening") and (math.floor(self:_raw_max_armor()/pm:upgrade_value("player", "buildup_meter_quickening",0).armor_steps) * pm:upgrade_value("player", "buildup_meter_quickening", 0).hurt_t_mod)) or 0
 			local hurt_t = pm:upgrade_value("player", "buildup_meter", 0).hurt_t
 			local groupai = managers.groupai and managers.groupai:state()
-			local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
+			local additional_players = ((groupai and math.min((groupai:num_alive_criminals() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 			local combo_t_mod = (pm:has_category_upgrade("player", "buildup_meter_zack") and pm:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
 			local combo_t = pm:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 			pm._buildup_meter = math.max( 0, managers.player._buildup_meter - hurt_decay )
@@ -1651,12 +1651,20 @@ function PlayerDamage:set_dodge_points()
 		self._dodge_points = tweak_data.projectiles.smoke_screen_grenade.dodge_chance
 	end
 
+	if self._has_chico_dodge then
+		self._dodge_points = self._dodge_points + managers.player:upgrade_value("player", "chico_injector_dodge_addend", 0)
+	end
+
+	if self._temp_health_dodge then
+		self._dodge_points = self._dodge_points + managers.player:upgrade_value("player", "temp_health_dodge_addend", 0)
+	end
+
 	local current_diff = Global.game_settings.difficulty or "easy"
 	local is_pro = Global.game_settings and Global.game_settings.one_down
 	local difficulty_id = math.max(0, (tweak_data:difficulty_to_index(current_diff) or 0) - 2)			
 	local diff_reduction = difficulty_id and ((((difficulty_id == 4 or difficulty_id == 5) and 0.35) or (difficulty_id == 6 and 0.25) or 0.45) - ((is_pro and 0.1) or 0)) or 0.45
 	local grace_cap = (0.45 - (0.45 - diff_reduction))
-	self._dodge_interval = math.clamp(self._dodge_points, 0, grace_cap )
+	self._dodge_interval = math.clamp(self._dodge_points, 0, grace_cap)
 	if self._dodge_points > 0 then
 		managers.hud:unhide_dodge_panel(self._dodge_points)
 	else
@@ -1732,6 +1740,20 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 				self._selected_smoke_screen = smoke_screen
 			end
 		end
+	end
+
+	--Kingpin Injector
+	local has_chico = managers.player:has_activate_temporary_upgrade("temporary", "chico_injector")
+	if has_chico ~= self._has_chico_dodge then
+		self._has_chico_dodge = has_chico
+		self:set_dodge_points()
+	end
+
+	--Hitman Temp HP Dodge
+	local has_temp_hp_dodge = managers.player:has_category_upgrade("player", "temp_health_dodge_addend") and self:has_temp_health()
+	if has_temp_hp_dodge ~= self._temp_health_dodge then
+		self._temp_health_dodge = has_temp_hp_dodge
+		self:set_dodge_points()
 	end
 
 	if self._cached_in_smoke_bomb and self._cached_in_smoke_bomb ~= self._in_smoke_bomb then
@@ -1976,7 +1998,7 @@ function PlayerDamage:_check_bleed_out(can_activate_berserker, ignore_movement_s
 		if managers.player:has_category_upgrade("player", "buildup_meter") and managers.player._buildup_meter then
 			local pm = managers.player
 			local groupai = managers.groupai and managers.groupai:state()
-			local additional_players = ((groupai and math.min((groupai:num_alive_players() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
+			local additional_players = ((groupai and math.min((groupai:num_alive_criminals() or 1) - 1, 3)) or 0) * tweak_data.upgrades.socio_affinity_bonus_steps
 			local combo_t_mod = (pm:has_category_upgrade("player", "buildup_meter_zack") and pm:upgrade_value("player", "buildup_meter_zack", 0).combo_t_mod) or 0
 			local combo_t = pm:upgrade_value("player", "buildup_meter", 0).combo_t + additional_players + combo_t_mod
 			if managers.player:has_category_upgrade("player", "buildup_meter_earl") then

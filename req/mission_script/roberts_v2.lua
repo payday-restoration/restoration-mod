@@ -111,10 +111,15 @@ return {
 		},
 	},
 	-- Replace the turret with a spawngroup
-	[106548] = {
+	[106548] = { -- swat van 1
 		on_executed = {
 			{ id = 106539, remove = true },
 			{ id = 400005, delay = 0, delay_rand = 5 },
+		},
+	},
+	[101075] = { -- swat van 2 
+		on_executed = {
+			{ id = 400024, delay = 0, delay_rand = 5 },
 		},
 	},
 	-- Small beat cop wave 

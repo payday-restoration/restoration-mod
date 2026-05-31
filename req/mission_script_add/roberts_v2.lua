@@ -37,6 +37,24 @@ local opts_swat_group = {
 	spawn_type = "group_guaranteed",
 	amount = 4,
 }
+local optsOpenSwatVanDoors_2 = {
+	enabled = true,
+	trigger_list = {
+		{ id = 1, name = "run_sequence", notify_unit_id = 100149, notify_unit_sequence = "anim_door_right_open", time = 0 },
+		{ id = 2, name = "run_sequence", notify_unit_id = 100149, notify_unit_sequence = "anim_door_left_open", time = 0 },
+	},
+}
+local optsspawnvanSWATs_2 = {
+	on_executed = {
+		{ id = 400026, delay = 0 },
+		{ id = 400025, delay = 0 },
+	},
+	enabled = true,
+}
+local opts_swat_group_2 = {
+	spawn_type = "group_guaranteed",
+	amount = 4,
+}
 local opts_beat_cops = {
 	enabled = true,
 	enemy = cops[1],
@@ -91,7 +109,7 @@ local opts_beat_cops_spawngroup_2 = {
 
 return {
 	elements = {
-		-- swat van
+		-- swat van 1 
 		restoration:gen_dummy(400001, "swat_van_spawn_1", Vector3(1567.972, 871.511, -76.450), Rotation(4, 0, 0), optsBesiegeDummy),
 		restoration:gen_dummy(400002, "swat_van_spawn_2", Vector3(1479.193, 865.163, -76.450), Rotation(4, 0, 0), optsBesiegeDummy),
 		restoration:gen_dummy(400003, "swat_van_spawn_3", Vector3(1472.636, 958.934, -76.450), Rotation(4, 0, 0), optsBesiegeDummy),
@@ -116,6 +134,14 @@ return {
 		restoration:gen_dummy(400017, "cop_4",  Vector3(-615.356, 3216.9, -36.04), Rotation(-85, 0, -0), opts_beat_cops),
 		restoration:gen_dummy(400018, "cop_5",  Vector3(-578.956, 3304.55, -33.01), Rotation(-93, 0, -0), opts_beat_cops),
 		restoration:gen_dummy(400019, "cop_6",  Vector3(-613.822, 3386.76, -31.211), Rotation(-97, 0, -0), opts_beat_cops),
+		-- swat van 2 
+		restoration:gen_dummy(400020, "swat_van_spawn_5", Vector3(-4852, -730, 162.56), Rotation(0, 0, -0), optsBesiegeDummy),
+		restoration:gen_dummy(400021, "swat_van_spawn_6", Vector3(-4945, -724, 162.56), Rotation(0, 0, -0), optsBesiegeDummy),
+		restoration:gen_dummy(400022, "swat_van_spawn_7", Vector3(-4846, -676, 162.56), Rotation(0, 0, -0), optsBesiegeDummy),
+		restoration:gen_dummy(400023, "swat_van_spawn_8", Vector3(-4932, -668, 162.56), Rotation(0, 0, -0), optsBesiegeDummy),
 
+		restoration:gen_missionscript(400024, "spawn_swats_2", optsspawnvanSWATs_2),
+		restoration:objecteditor(400025, "open_swat_doors_2",  Vector3(0, 0, 0), Rotation(0, 0, -0), optsOpenSwatVanDoors_2),
+		restoration:gen_spawngroup(400026, "swat_group_2", { 400020, 400021, 400022, 400023, }, opts_swat_group_2 ),
 	},
 }

@@ -6345,7 +6345,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_anarc_disable"] = "\n\n#{important_1}#참고: 아나키스트는 방어구 회복 속도를 향상시키거나 회복 대기 시간을 감소시키는 스킬을 비활성화합니다.##",
 
 		--Scarface--
-		["menu_deck17_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 #{skill_color}#$perk_value_2##초 동안 피해를 받거나 회피할 시 #{skill_color}#$perk_value_1##만큼 회복하고, 효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n#{risk}#참고: 회피한 피해 당 회복량으로 전환하는 양은 최대 방탄력에 따라 제한됩니다.\n\n주사기는 #{important_1}#$perk_value_3##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_4##초씩 단축됩니다.",
+		["menu_deck17_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 #{skill_color}#$perk_value_2##초 동안 피해를 받거나 회피할 시 #{skill_color}#$perk_value_1##만큼 회복하고, 효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n#{risk}#참고: 회피한 피해 당 회복량으로 전환하는 양은 최대 방탄력에 따라 제한됩니다.##\n\n주사기는 #{important_1}#$perk_value_3##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_4##초씩 단축됩니다.",
 		["menu_deck17_3_desc_sc"] = "주사기 사용 효과가 지속되는 동안 이동 속도가 #{skill_color}#$perk_value_1## 증가합니다.\n\n회피율이 #{skill_color}#$perk_value_2## 증가합니다.",
 		["menu_deck17_5_desc_sc"] = "주사기의 지속 시간이 #{skill_color}#$perk_value_2##초 증가합니다.\n\n주사기의 효과가 지속하는 동안 회피율이 #{skill_color}#$perk_value_3## 증가하고, #{risk}#근처의 적이 당신을 집중 공격합니다.##",
 		["menu_deck17_7_desc_sc"] = "주사기 사용 효과가 지속되는 동안 체력이 #{skill_color}#$perk_value_2## 이하일 때, 주사기의 회복 효과가 #{skill_color}#$perk_value_1## 증가합니다.\n\n회피율이 추가로 ##$perk_value_3## 증가합니다.",

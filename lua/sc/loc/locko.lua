@@ -6225,9 +6225,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 
 		["menu_deck5_1_desc_sc"] = "근접 무기를 제외한 다른 무기로 적을 처치하면 #{skill_color}#$perk_value_1##의 체력이 저장되며, 최대 #{risk}#$perk_value_2##까지 저장할 수 있습니다.\n\n근접 공격으로 적을 처치하면 저장된 체력이 임시 체력으로 바뀌며, 이 체력은 초당 #{important_1}#$perk_value_3##씩 감소합니다.\n\n임시 체력은 최대 체력을 초과할 수 있지만, 한 번에 최대 #{risk}#$perk_value_4##까지만 가질 수 있습니다.",
 		["menu_deck5_3_desc_sc"] = "방탄복이 재생하면 회피 미터가 회피율의 ##$perk_value_1##만큼 채워집니다.\n\n회피율이 추가로 ##$perk_value_2## 증가합니다.",
-		["menu_deck5_5_desc_sc"] = "체력을 ##$perk_value_1## 더 저장합니다.\n\n인벤토리에 시체 가방을 ##$perk_value_2##개 더 소지합니다.",
+		["menu_deck5_5_desc_sc"] = "체력을 ##$perk_value_1## 더 저장합니다.\n\n임시 체력이 저장되어 있으면 회피율이 ##$perk_value_3## 증가합니다.\n\n인벤토리에 시체 가방을 ##$perk_value_2##개 더 소지합니다.",
 		["menu_deck5_7_desc_sc"] = "되살아났을때 ##$perk_value_1##의 임시 체력을 얻습니다.\n\n회피율이 추가로 ##$perk_value_2## 증가합니다.",
-		["menu_deck5_9_desc_sc"] = "일시 체력을 가지고 있는 동안 방어력이 ##$perk_value_1## 증가하고 이동 속도가 추가로 ##$perk_value_2## 빨라집니다.\n\n방어력은 최대 ##$perk_value_3##까지 받는 체력 피해를 감소시키며, 다른 피해 감소 효과가 적용된 후 적용됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck5_9_desc_sc"] = "임시 체력을 가지고 있는 동안 방어력이 ##$perk_value_1## 증가하고 이동 속도가 추가로 ##$perk_value_2## 빨라집니다.\n\n방어력은 최대 ##$perk_value_3##까지 받는 체력 피해를 감소시키며, 다른 피해 감소 효과가 적용된 후 적용됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Muscle
 		["menu_deck2_1_desc_sc"] = "체력이 ##$perk_value_1## 증가합니다.",
@@ -6280,7 +6280,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		--["menu_deck9_7_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters regenerates ##$perk_value_2## armor; melee kills double the amount.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYour dodge is increased by an additional ##$perk_value_3## points.",
 		--["menu_deck9_9_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters has a ##$perk_value_2## chance to spread panic among your enemies in a ##$perk_value_3## meter radius around you; melee kills double the chance.\n\n공포감은 적들이 잠시 동안 엄청난 두려움에 떨게 만듭니다.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다. ",
 
-		["menu_deck9_1_desc_sc"] = "콤보 미터를 얻습니다.\n\n근접 무기로 적을 처치하면 콤보 미터가 기본 값의 #{skill_color}#$perk_value_1##점 채우며, 최대 콤보는 #{skill_color}#$perk_value_2##점입니다. 정예 및 특수 적을 처치하면 콤보 게이지가 몇 배로 채워지며, 불도저와 캡틴을 처치하면 더 많은 콤보를 얻을 수 있습니다.\n\n콤보 미터는 #{risk}#$perk_value_4##초마다 #{important_1}#$perk_value_3##점씩 감소합니다.\n\n구금당하지 않은 플레이어 팀원 한 명당 기본 점수와 콤보 지속 시간이 #{skill_color}#1##초씩 증가하며 최대 #{skill_color}#3##초까지 증가합니다.\n\n체력 피해를 입으면 콤보 미터가 #{important_1}#$perk_value_5##점씩 줄어들고, 이 효과는 #{skill_color}#$perk_value_6##초당 한 번만 발동합니다.\n출혈 상태가 되면 콤보 #{important_1}#$perk_value_7##점을 잃습니다.\n\n콤보 #{risk}#$perk_value_8##점마다 #{skill_color}#$perk_value_9##의 피해 저항이 부여되며, 최대 #{skill_color}#$perk_value_10##까지 증가합니다.",
+		["menu_deck9_1_desc_sc"] = "콤보 미터를 얻습니다.\n\n근접 무기로 적을 처치하면 콤보 미터가 기본 값의 #{skill_color}#$perk_value_1##점 채우며, 최대 콤보는 #{skill_color}#$perk_value_2##점입니다. 정예 및 특수 적을 처치하면 콤보 게이지가 몇 배로 채워지며, 불도저와 캡틴을 처치하면 더 많은 콤보를 얻을 수 있습니다.\n\n콤보 미터는 #{risk}#$perk_value_4##초마다 #{important_1}#$perk_value_3##점씩 감소합니다.\n\n구금당하지 않은 팀원 한 명당 기본 점수와 콤보 지속 시간이 #{skill_color}#1##초씩 증가하며 최대 #{skill_color}#3##초까지 증가합니다.\n\n체력 피해를 입으면 콤보 미터가 #{important_1}#$perk_value_5##점씩 줄어들고, 이 효과는 #{skill_color}#$perk_value_6##초당 한 번만 발동합니다.\n출혈 상태가 되면 콤보 #{important_1}#$perk_value_7##점을 잃습니다.\n\n콤보 #{risk}#$perk_value_8##점마다 #{skill_color}#$perk_value_9##의 피해 저항이 부여되며, 최대 #{skill_color}#$perk_value_10##까지 증가합니다.",
 
 		["menu_deck9_3_desc_sc"] = "치명적이지 않은 근접 공격 혹은 근접 무기를 제외한 다른 무기로 적을 처치하면 콤보 감소 타이머가 초기화됩니다.\n\n콤보 #{risk}#$perk_value_1##점씩 쌓일 때마다 이동 속도가 #{skill_color}#$perk_value_2## 빨라지며, 최대 #{skill_color}#$perk_value_3##까지 증가합니다.\n\n회피율이 #{skill_color}#$perk_value_4## 증가합니다.",
 		["menu_deck9_5_desc_sc"] = "근접 무기로 적을 죽이면 스태미나를 #{skill_color}#$perk_value_1## 회복합니다.\n\n콤보 #{risk}#$perk_value_2##점마다 근접 무기로 적을 처치하면 체력이 #{skill_color}#$perk_value_3##씩 회복되며, 최대 #{skill_color}#$perk_value_4##까지 회복됩니다.\n\n인벤토리에 시체 가방을 #{skill_color}#$perk_value_5##개 더 소지합니다.",
@@ -6345,11 +6345,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_anarc_disable"] = "\n\n#{important_1}#참고: 아나키스트는 방어구 회복 속도를 향상시키거나 회복 대기 시간을 감소시키는 스킬을 비활성화합니다.##",
 
 		--Scarface--
-		["menu_deck17_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 방탄복이 있을때 #{skill_color}#$perk_value_2##초 동안 받거나 회피한 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복하고, 효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n주사기는 #{important_1}#$perk_value_3##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_4##초씩 단축됩니다.",
-		["menu_deck17_3_desc_sc"] = "주사기 사용 효과가 지속되는 동안 이동 속도가 #{skill_color}#$perk_value_1## 증가합니다.\n\n회피율이 ##$perk_value_2## 증가합니다.",
-		["menu_deck17_5_desc_sc"] = "이제 주사기 사용 효과가 지속되는 동안 방탄복이 있을때 #{skill_color}#$perk_value_2##초 동안 받거나 회피한 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복됩니다.\n\n주사기의 효과가 지속하는 동안 #{risk}#근처의 적이 당신을 집중 공격합니다.##",
+		["menu_deck17_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 #{skill_color}#$perk_value_2##초 동안 피해를 받거나 회피할 시 #{skill_color}#$perk_value_1##만큼 회복하고, 효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n#{risk}#참고: 회피한 피해 당 회복량으로 전환하는 양은 최대 방탄력에 따라 제한됩니다.\n\n주사기는 #{important_1}#$perk_value_3##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_4##초씩 단축됩니다.",
+		["menu_deck17_3_desc_sc"] = "주사기 사용 효과가 지속되는 동안 이동 속도가 #{skill_color}#$perk_value_1## 증가합니다.\n\n회피율이 #{skill_color}#$perk_value_2## 증가합니다.",
+		["menu_deck17_5_desc_sc"] = "주사기의 지속 시간이 #{skill_color}#$perk_value_2##초 증가합니다.\n\n주사기의 효과가 지속하는 동안 회피율이 #{skill_color}#$perk_value_3## 증가하고, #{risk}#근처의 적이 당신을 집중 공격합니다.##",
 		["menu_deck17_7_desc_sc"] = "주사기 사용 효과가 지속되는 동안 체력이 #{skill_color}#$perk_value_2## 이하일 때, 주사기의 회복 효과가 #{skill_color}#$perk_value_1## 증가합니다.\n\n회피율이 추가로 ##$perk_value_3## 증가합니다.",
-		["menu_deck17_9_desc_sc"] = "체력이 최대일 때 체력을 #{skill_color}#$perk_value_1##씩 회복 할때마다 주사기 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 줄어듭니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck17_9_desc_sc"] = "주사기 사용 효과가 지속되는 동안 체력을 #{skill_color}#$perk_value_1##씩 회복 할때마다 주사기 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 줄어듭니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--10 feet higher--
 		["menu_deck18_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##이 잠금 해제됩니다.\n\n연막탄을 사용하면, #{skill_color}#$perk_value_1##초간 숨을 수 있는 연막을 형성합니다. 연막 속에 숨어 있으면, 당신과 팀원은 방탄력의 회복 속도가 #{skill_color}#$perk_value_2## 빨라지고, 회피율이 낮으면 #{skill_color}#$perk_value_3##로 설정됩니다. 연막 속으로 들어간 적은 명중률이 #{skill_color}#perk_value_4## 감소합니다.\n\n연막탄은 #{important_1}#$perk_value_5##초의 재사용 대기 시간이 있지만, 적을 처치하면 재사용 대기 시간이 #{skill_color}#$perk_value_6##초씩 감소합니다.\n\n회피율이 #{skill_color}#$perk_value_7## 증가합니다.",

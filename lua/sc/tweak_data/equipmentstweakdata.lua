@@ -61,8 +61,6 @@ function EquipmentsTweakData:init()
 			self.specials.bank_manager_key.quantity = 1
 			self.specials.bank_manager_key.max_quantity=4
 			self.specials.thermite_paste.quantity=1
-			self.specials.cable_tie.quantity = 6
-			self.specials.cable_tie.max_quantity = 6
 			self.specials.gas.max_quantity=4
 			self.specials.gas.quantity=1
 			self.specials.harddrive.max_quantity=4

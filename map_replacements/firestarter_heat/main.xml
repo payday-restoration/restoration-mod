@@ -1,4 +1,4 @@
-<!--table name="firestarter_heat">
+<table name="firestarter_heat">
 	<level ai_group_type="fbi" brief_id="heist_firestarter_1_briefing" briefing_dialog="Play_pln_firestarter_stage1_brief" cube="cube_apply_heist_bank" id="firestarter_1_res" intro_event="Play_pln_firestarter_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" max_bags="70" music="heist" name_id="heist_firestarter_1_hl" player_style="suit_sunny">
 		<add file="levels/firestarter_1_res/add.xml"/>
 		<assets/>
@@ -17,6 +17,13 @@
 			<value_node value="levels/narratives/h_firestarter/stage_1/editor_only/editor_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/env/env"/>
 			<value_node value="levels/instances/unique/mus_helicopter/world_sounds"/>
+			<value_node value="packages/normal_sc_fbi"/>
+			<value_node value="packages/hard_sc_fbi"/>
+			<value_node value="packages/overkill_sc_fbi"/>
+			<value_node value="packages/overkill_145_sc_fbi"/>
+			<value_node value="packages/overkill_290_sc_fbi"/>
+			<value_node value="packages/easy_wish_sc_fbi"/>
+			<value_node value="packages/sm_wish_sc_fbi"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
@@ -36,6 +43,13 @@
 			<value_node value="levels/narratives/h_firestarter/stage_2/background/background"/>
 			<value_node value="levels/narratives/h_firestarter/stage_2/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_2/editor_only/editor_only"/>
+			<value_node value="packages/normal_sc_fbi"/>
+			<value_node value="packages/hard_sc_fbi"/>
+			<value_node value="packages/overkill_sc_fbi"/>
+			<value_node value="packages/overkill_145_sc_fbi"/>
+			<value_node value="packages/overkill_290_sc_fbi"/>
+			<value_node value="packages/easy_wish_sc_fbi"/>
+			<value_node value="packages/sm_wish_sc_fbi"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
@@ -57,6 +71,13 @@
 			<value_node value="levels/narratives/h_firestarter/stage_3/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/world/world"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/editor_only/editor_only"/>
+			<value_node value="packages/normal_sc_fbi"/>
+			<value_node value="packages/hard_sc_fbi"/>
+			<value_node value="packages/overkill_sc_fbi"/>
+			<value_node value="packages/overkill_145_sc_fbi"/>
+			<value_node value="packages/overkill_290_sc_fbi"/>
+			<value_node value="packages/easy_wish_sc_fbi"/>
+			<value_node value="packages/sm_wish_sc_fbi"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
@@ -133,4 +154,4 @@
 			<value_node value="25000"/>
 		</payout>
 	</narrative>
-</table-->
+</table>

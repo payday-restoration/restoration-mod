@@ -2956,6 +2956,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
 
 			--[[ SPECIALS ]]
+				["bm_dart_sc_desc"] = "방심한 목표물에 매우 강력한 다트를 발사할 수 있는 조용하고 활용도가 높은 무기입니다.\n\n강력한 #{stats_positive}#독 다트##가 기본 장착되어 있으며, 상황에 맞춰 #{ghost_color}#안정제 다트## 또는 #{stat_maxed}#소생자극제 다트##로 교체할 수 있습니다.",						
 				--Saw
 				["bm_ap_saw_sc_desc"] = "#{skill_color}#방탄복을 뚫고 썰어버릴 수 있습니다.##",
 				["bm_ap_saw_blade_sc_desc"] = "칼날을 날카롭게 하여 #{skill_color}#방탄복을 관통할 수 있습니다.##",
@@ -4242,6 +4243,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_hunter"] = "Avalanche CB1-50 Pistol Grip Crossbow",
 					["bm_w_elastic"] = "Hoyt Carbon Spyder ZT 30 Bow",
 					["bm_wp_elastic_body_tactic"] = "호이트 이그나이트 라이저",
+					
+					["bm_w_dart"] = "Pneu-Dart X-2",
 
 				--Attachments
 

@@ -3213,7 +3213,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_awp_sc_desc"] = "뛰어난 사정거리와 명중률로 유명한 저격소총. 초기 모델이 창고에서 세 사람에 의해 만들어졌다고 누가 생각이나 했을까요?\n\n#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
 				["bm_awp_cs_dragon"] = "AWP | 용의 전설",
 				["bm_awp_cs"] = "AWP",
-				["bm_wp_upg_bazooka"] = "용의 비전설 전용 세트",
+				["bm_wp_upg_bazooka"] = "용의 비설화 전용 세트",
 				["bm_wp_upg_bazooka_desc"] = "위험할수록 큰 보상이 따르는 이 악명 높은 소총은 단방에 적을 제압하는 방식이 특징인 것으로 널리 알려져 있습니다.\n\n#{skill_color}#캡틴과 보스를 제외한 적에게 헤드샷을 가하면 50%의 추가 피해를 가합니다.##\n#{skill_color}#타이탄 방패를 관통할 수 있습니다.##\n\n#{risk}#사격 시 잠시 동안 조준을 할 수 없습니다.##",
 				["bm_bazooka_sc_desc"] = "위험할수록 큰 보상이 따르는 이 악명 높은 소총은 단방에 적을 제압하는 방식이 특징인 것으로 널리 알려져 있습니다.\n\n#{skill_color}#다수의 적, 방탄복, 방패, 타이탄 방패, 그리고 얇은 벽을 관통할 수 있습니다.##\n\n#{risk}#사격 시 잠시동안 조준을 할 수 없습니다.##",
 				--WA2000
@@ -5998,7 +5998,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "마인드 블로우",
-				["menu_kilmer_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##을 반자동 또는 점사로 설정한 상태로 헤드샷 시, #{skill_color}#$skill_value_b2##미터 반경 내 가장 가까운 적에게 가한 피해의 #{skill_color}#$skill_value_b1##를 가합니다. 효과 대기 시간은 #{important_1}#$skill_value_b5##초입니다.\n\n적으로부터 #{skill_color}#$skill_value_b3##미터 떨어져 있을 때마다 효과가 다른 적에게도 연쇄적으로 연결되며, 최대 #{skill_color}#$skill_value_b4##명까지 연결합니다.\n\n에이스: #{owned}#$pro##\n연쇄 효과의 반경이 #{skill_color}#$skill_value_p1##미터 증가합니다.\n\n#{skill_color}#소총##을 반자동 또는 점사로 설정한 상태로 헤드샷 시, #{skill_color}#피해량 감소가 없어지며## 적으로부터 #{skill_color}#$skill_value_b3##미터 떨어져 있을 때마다 연쇄 효과의 피해량이 추가로 #{skill_color}#$skill_value_p2## 증가하고, 최대치는 #{skill_color}#$skill_value_p3##입니다.\n ",
+				["menu_kilmer_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##으로 적을 헤드샷 할 시, 반경 #{skill_color}#$skill_value_b2##미터 내에 있는 가장 가까운 다른 적에게 가한 피해의 #{skill_color}#$skill_value_b1##를 연쇄적으로 가합니다. 효과 대기 시간은 #{important_1}#$skill_value_b5##초입니다.\n\n#{skill_color}#소총##을 #{risk}#반자동## 또는 #{risk}#점사##로 설정하면 적과의 거리가 #{skill_color}#$skill_value_b3##미터 떨어져 있을 때마다 연쇄 공격이 적에게 추가로 연결되며, 최대 #{skill_color}#$skill_value_b4##명까지 연결합니다.\n\n에이스: #{owned}#$pro##\n연쇄 효과의 반경이 #{skill_color}#$skill_value_p1##미터 증가합니다.\n\n#{risk}#반자동## 또는 #{risk}#점사##로 설정한 #{skill_color}#소총##은 헤드샷 시, #{skill_color}#피해량 감소가 없으며## 적과의 거리가 #{skill_color}#$skill_value_b3##미터 떨어져 있을 때마다 연쇄 효과의 피해량이 추가로 #{skill_color}#$skill_value_p2## 증가하고, 최대 증가량은 #{skill_color}#$skill_value_p3##입니다.\n ",
 
 		--[[   GHOST   ]]--
 

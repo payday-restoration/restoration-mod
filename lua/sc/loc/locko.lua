@@ -6349,7 +6349,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck17_3_desc_sc"] = "주사기 사용 효과가 지속되는 동안 이동 속도가 #{skill_color}#$perk_value_1## 증가합니다.\n\n회피율이 #{skill_color}#$perk_value_2## 증가합니다.",
 		["menu_deck17_5_desc_sc"] = "주사기의 지속 시간이 #{skill_color}#$perk_value_2##초 증가합니다.\n\n주사기의 효과가 지속하는 동안 회피율이 #{skill_color}#$perk_value_3## 증가하고, #{risk}#근처의 적이 당신을 집중 공격합니다.##",
 		["menu_deck17_7_desc_sc"] = "주사기 사용 효과가 지속되는 동안 체력이 #{skill_color}#$perk_value_2## 이하일 때, 주사기의 회복 효과가 #{skill_color}#$perk_value_1## 증가합니다.\n\n회피율이 추가로 ##$perk_value_3## 증가합니다.",
-		["menu_deck17_9_desc_sc"] = "주사기 사용 효과가 지속되는 동안 체력을 #{skill_color}#$perk_value_1##씩 회복 할때마다 주사기 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 줄어듭니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck17_9_desc_sc"] = "주사기 사용 효과가 지속되는 동안 체력을 #{skill_color}#$perk_value_1##씩 회복 할때마다 주사기 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 줄어듭니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다.",
 
 		--10 feet higher--
 		["menu_deck18_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##이 잠금 해제됩니다.\n\n연막탄을 사용하면, #{skill_color}#$perk_value_1##초간 숨을 수 있는 연막을 형성합니다. 연막 속에 숨어 있으면, 당신과 팀원은 방탄력의 회복 속도가 #{skill_color}#$perk_value_2## 빨라지고, 회피율이 낮으면 #{skill_color}#$perk_value_3##로 설정됩니다. 연막 속으로 들어간 적은 명중률이 #{skill_color}#perk_value_4## 감소합니다.\n\n연막탄은 #{important_1}#$perk_value_5##초의 재사용 대기 시간이 있지만, 적을 처치하면 재사용 대기 시간이 #{skill_color}#$perk_value_6##초씩 감소합니다.\n\n회피율이 #{skill_color}#$perk_value_7## 증가합니다.",

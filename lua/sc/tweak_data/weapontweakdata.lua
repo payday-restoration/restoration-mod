@@ -31615,16 +31615,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.rebar.recategorize = {"wpn_special"}
 				self.rebar.damage_type = "sniper"
+				self.rebar.CLIP_AMMO_MAX = 1
 				self.rebar.AMMO_MAX = 10
-				self.rebar.fire_mode_data.fire_rate = 0.5
+				self.rebar.fire_mode_data.fire_rate = 1
 				self.rebar.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.rebar.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{6, self.stat_info.kick_tables.moderate_left_kick},
+					{10, self.stat_info.kick_tables.moderate_kick},
+					{12, self.stat_info.kick_tables.moderate_right_kick},
+					{18, self.stat_info.kick_tables.moderate_kick},
+					{22, self.stat_info.kick_tables.moderate_right_kick}
+				}
 				self.rebar.panic_suppression_chance = 0.05
 				self.rebar.supported = true
 				self.rebar.ads_speed = 0.360
 				self.rebar.stats = {
 					damage = 100,
-					spread = 100,
-					recoil = 95,
+					spread = 95,
+					recoil = 85,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 27,
@@ -31635,7 +31644,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 25
 				}
+                self.rebar.ignore_damage_upgrades = true
+				self.rebar.armor_piercing_chance = 1
 				self.rebar.stats_modifiers = {damage =  4}
+				self.rebar.lock_slide_allow_mag_empty = true
+				self.rebar.timers.reload_empty = 1.5
 			end
 
 			if self.wz96 then -- Wz.96 Beryl

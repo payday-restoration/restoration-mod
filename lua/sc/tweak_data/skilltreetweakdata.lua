@@ -2068,12 +2068,13 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2"
+					"player_passive_health_multiplier_2",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 200,
 				icon_xy = {0, 0},
 				name_id = "menu_deck1_1",
-				desc_id = "menu_deck2_1_desc_sc"
+				desc_id = "menu_deck1_1_desc_sc"
 			},
 			deck2,
 			{
@@ -2081,7 +2082,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"team_passive_stamina_multiplier_1",
 					"team_passive_stamina_multiplier_2",
 					"player_passive_intimidate_range_mul",
-					"player_passive_dodge_chance_1"
+					"player_passive_dodge_chance_2"
 				},
 				cost = 400,
 				icon_xy = {2, 0},
@@ -2104,7 +2105,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_tier_armor_multiplier_1",
-					"player_passive_dodge_chance_2"
+					"player_passive_dodge_chance_3"
 				},
 				cost = 2400,
 				icon_xy = {6, 0},
@@ -2228,9 +2229,10 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_tier_armor_multiplier_5",
 					"bodybags_bag_quantity",
-					"player_level_2_dodge_addend_1",
-					"player_level_3_dodge_addend_1",
-					"player_level_4_dodge_addend_1"
+					--"player_level_2_dodge_addend_1",
+					--"player_level_3_dodge_addend_1",
+					--"player_level_4_dodge_addend_1"
+					"player_passive_dodge_chance_2"
 				},
 				cost = 1000,
 				icon_xy = {0, 2},
@@ -2241,9 +2243,13 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_1",
-					"player_level_2_dodge_addend_2",
-					"player_level_3_dodge_addend_2",
-					"player_level_4_dodge_addend_2"
+					--"player_level_2_dodge_addend_2",
+					--"player_level_3_dodge_addend_2",
+					--"player_level_4_dodge_addend_2"
+					"player_level_2_armor_deflection_addend",
+					"player_level_3_armor_deflection_addend",
+					"player_level_4_armor_deflection_addend",
+					"player_passive_dodge_chance_3"
 				},
 				cost = 2400,
 				icon_xy = {6, 1},
@@ -2415,7 +2421,9 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
+					"player_close_contact_dodge_addend",
 					"player_killshot_regen_armor_bonus",
+					"player_killshot_regen_dodge_bonus",
 					--"player_level_2_dodge_addend_1",
 					--"player_level_3_dodge_addend_1",
 					--"player_level_4_dodge_addend_1"
@@ -2550,7 +2558,8 @@ function SkillTreeTweakData:init(tweak_data)
 			category = "defensive",
 			{
 				upgrades = {
-					"player_damage_dampener_close_contact_1"
+					"player_damage_dampener_close_contact_1",
+					"player_close_contact_dodge_addend",
 				},
 				cost = 200,
 				icon_xy = {3, 4},
@@ -3772,7 +3781,8 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck19_3_desc_sc",
 				name_id = "menu_deck19_3",
 				upgrades = {
-					"player_damage_control_cooldown_drain_1"
+					"player_damage_control_cooldown_drain_1",
+					"player_passive_dodge_chance_1"
 				},
 				icon_xy = {
 					1,

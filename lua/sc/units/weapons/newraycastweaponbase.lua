@@ -253,7 +253,7 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state, is_
 
 	if full_steelsight then
 		if self:weapon_tweak_data().always_hipfire or self.AKIMBO then
-			mul = mul * ((tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1) * ( (multi_ray and 0.33) or (self.AKIMBO and 1) or 1))
+			mul = mul * ((tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1) * ( (multi_ray and 0.133) or 1))
 		end
 
 		if self:second_sight_spread_mult() then
@@ -514,7 +514,8 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	local last_move_t = current_state and current_state._last_move_t or -10
 	local is_moving = self._move_decay and last_move_t and (last_move_t + self._move_decay) > t or false --(current_state._moving or current_state:in_air())
 	local is_bipod = current_state and current_state:_is_using_bipod()
-	
+	local is_ads_hipfire = is_steelsight and (self:weapon_tweak_data().always_hipfire or is_tacstance)
+
 	if not current_state then
 		return 0, 0
 	end
@@ -533,7 +534,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 			moving_spread_mult = moving_spread_mult * ms_mult
 		end
 		moving_spread = moving_spread * moving_spread_mult
-		if is_steelsight and not self:weapon_tweak_data().always_hipfire and not is_tacstance then
+		if is_steelsight and not is_ads_hipfire then
 			local ads_moving_spread_mult = 1
 			if self._ads_moving_mult then
 				ads_moving_spread_mult = ads_moving_spread_mult * self._ads_moving_mult
@@ -563,8 +564,8 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	--Apply skill and stance multipliers to overall spread area.
 	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state, is_moving)
 
-	if not is_steelsight or (is_steelsight and ( self:weapon_tweak_data().always_hipfire or is_tacstance ) ) then
-		local hipfire_spread_mult = 1
+	if is_ads_hipfire or not is_steelsight then
+		local hipfire_spread_mult = (is_ads_hipfire and not is_tacstance and 0.7) or 1
 		for _, category in ipairs(self._tweak_categories) do
 			local hip_mult = tweak_data[category] and tweak_data[category].hipfire_spread_mult or 1
 			hipfire_spread_mult = hipfire_spread_mult * hip_mult
@@ -1203,6 +1204,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._shield_pierce_damage_mult = self:weapon_tweak_data().shield_pierce_damage_mult or 0.5
 	self._ammo_ratio = self:weapon_tweak_data().ammo_ratio or 1
 	self._kick_pattern = self._kick_pattern or self:weapon_tweak_data().kick_pattern
+	self._min_shots_reset = self:weapon_tweak_data().min_shots_reset or 0
 
 	self._warsaw = self:weapon_tweak_data().warsaw
 	self._nato = self:weapon_tweak_data().nato

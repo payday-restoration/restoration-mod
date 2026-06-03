@@ -2895,7 +2895,8 @@ function PlayerStandard:_update_melee_timers(t, input)
 		end
 		if input and input.btn_meleet_state then
 			if melee_weapon.force_play_charge then
-				self:_play_melee_sound(managers.blackmarket:equipped_melee_weapon(), "equip")
+			self._ext_camera:play_redirect(self:get_animation("melee_charge"), nil, 0)
+				--self:_play_melee_sound(managers.blackmarket:equipped_melee_weapon(), "equip")
 			end
 			self._state_data.melee_charge_wanted = not instant and true
 		end
@@ -5270,7 +5271,7 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	end
 
 	--Removed the ADS check so you can swap to the underbarrel while doing that, also for Kick Starter top tier skill
-	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:is_switching_stances() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or can_toggle == nil
+	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:is_switching_stances() or self:_interacting() or self:_in_burst() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or can_toggle == nil
 
 	if not action_forbidden then
 		self:_interupt_action_reload(t)
@@ -5358,6 +5359,11 @@ end
 --Fixes weapons using shotgun-style reloads occasionally only loading one shell in
 Hooks:PostHook(PlayerStandard, "_interupt_action_reload", "ResInterruptReloadFix", function(self, t)
 	self._queue_reload_interupt = nil
+	local weap_base = self._equipped_unit:base()
+	local weapon_tweak = weap_base and weap_base:weapon_tweak_data()
+	if weapon_tweak and weapon_tweak.lock_slide_allow_mag_empty and weap_base:clip_not_empty() then
+		weap_base:tweak_data_anim_play("magazine_empty")
+	end
 end)
 
 --Randomized inspect animations since rnd() doesn't work in anim xml

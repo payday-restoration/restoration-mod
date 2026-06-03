@@ -68,6 +68,13 @@ function AmmoClip:_pickup(unit)
 
 				--Gambler effects. Refactored from vanilla code for simplicity.
 				if not unit:character_damage():is_downed() then
+
+					if player_manager:has_activate_temporary_upgrade("temporary", "loose_ammo_restore_health") then --Cooldown reduction
+						local cooldown_reduction = -math.random(tweak_data.upgrades.loose_ammo_restore_health_values.cdr[1], tweak_data.upgrades.loose_ammo_restore_health_values.cdr[2]) --Gambler gotta gamble.
+						player_manager:extend_temporary_upgrade("temporary", "loose_ammo_restore_health", cooldown_reduction)
+						managers.hud:change_cooldown("gambler", cooldown_reduction)
+					end
+
 					if player_manager:has_inactivate_temporary_upgrade("temporary", "loose_ammo_restore_health") then
 						player_manager:activate_temporary_upgrade("temporary", "loose_ammo_restore_health") --Activate effect cooldown.
 						local values = player_manager:temporary_upgrade_value("temporary", "loose_ammo_restore_health", 0) --Get player healing range for gambler.
@@ -82,7 +89,8 @@ function AmmoClip:_pickup(unit)
 								damage_ext:restore_armor(damage_ext:_raw_max_armor() * player_manager:upgrade_value("player", "loose_ammo_give_armor", 0)) --Armor regen ability
 								damage_ext:fill_dodge_meter(player_manager:upgrade_value("player", "loose_ammo_give_dodge", 0) * damage_ext:get_dodge_points()) --Dodge regen ability
 								unit:sound():play("pickup_ammo_health_boost", nil, true)
-								managers.hud:start_buff("gambler", tweak_data.upgrades.loose_ammo_restore_health_values.cd[1])
+								local cooldown = managers.player:upgrade_value("temporary", "loose_ammo_restore_health", 0)[2] or 1
+								managers.hud:start_buff("gambler", cooldown)
 							end
 
 							--Apply team healing.
@@ -91,10 +99,6 @@ function AmmoClip:_pickup(unit)
 								managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "pickup", sync_value)
 							end
 						end
-					elseif player_manager:has_activate_temporary_upgrade("temporary", "loose_ammo_restore_health") then --Cooldown reduction
-						local cooldown_reduction = -math.random(tweak_data.upgrades.loose_ammo_restore_health_values.cdr[1], tweak_data.upgrades.loose_ammo_restore_health_values.cdr[2]) --Gambler gotta gamble.
-						player_manager:extend_temporary_upgrade("temporary", "loose_ammo_restore_health", cooldown_reduction)
-						managers.hud:change_cooldown("gambler", cooldown_reduction)
 					end
 
 					if player_manager:has_category_upgrade("temporary", "loose_ammo_give_team") then

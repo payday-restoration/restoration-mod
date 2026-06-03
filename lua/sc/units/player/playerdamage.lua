@@ -1642,21 +1642,22 @@ end
 
 --Init function for dodge points to cache the value.
 function PlayerDamage:set_dodge_points()
+	local pm = managers.player
 	self._dodge_points = (tweak_data.player.damage.DODGE_INIT 
-		+managers.player:body_armor_value("dodge")
-		+managers.player:skill_dodge_chance(false, false, false))
+		+ pm:body_armor_value("dodge")
+		+ pm:skill_dodge_chance(false, false, false))
 		or 0.0
 
 	if self._dodge_points < tweak_data.projectiles.smoke_screen_grenade.dodge_chance and self._in_smoke_bomb > 0 then
 		self._dodge_points = tweak_data.projectiles.smoke_screen_grenade.dodge_chance
 	end
 
-	if self._has_chico_dodge then
-		self._dodge_points = self._dodge_points + managers.player:upgrade_value("player", "chico_injector_dodge_addend", 0)
-	end
-
-	if self._temp_health_dodge then
-		self._dodge_points = self._dodge_points + managers.player:upgrade_value("player", "temp_health_dodge_addend", 0)
+	if self._has_perk_underdog then
+		self._dodge_points = self._dodge_points + pm:upgrade_value("player", "close_contact_dodge_addend", 0)
+	elseif self._has_chico_dodge then
+		self._dodge_points = self._dodge_points + pm:upgrade_value("player", "chico_injector_dodge_addend", 0)
+	elseif self._temp_health_dodge then
+		self._dodge_points = self._dodge_points + pm:upgrade_value("player", "temp_health_dodge_addend", 0)
 	end
 
 	local current_diff = Global.game_settings.difficulty or "easy"
@@ -1740,6 +1741,13 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 				self._selected_smoke_screen = smoke_screen
 			end
 		end
+	end
+
+	--Has Infil/Crook Dodge
+	local has_perk_underdog = managers.player:has_category_upgrade("player", "close_contact_dodge_addend") and managers.player:has_activate_temporary_upgrade("temporary", "dmg_dampener_close_contact")
+	if has_perk_underdog ~= self._has_perk_underdog then
+		self._has_perk_underdog = has_perk_underdog
+		self:set_dodge_points()
 	end
 
 	--Kingpin Injector

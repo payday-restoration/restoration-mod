@@ -589,11 +589,13 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 						mod[stat.name] = (diff or 0) * multiplier
 					end
 				elseif stat.name == "pickup" then
-					--it works?
-					--might not stack correctly if there are multiple sources from attachments
-					--but there should only ever be a single attachment in use that modifies this stat so w/e
-					--Might actually apply to the damage calcs above too but again "there should only ever be a single attachment in use that modifies [damage(min)] so w/e"
-					mod[stat.name] = WeaponDescription._get_mods_pickup(weapon, weapon_name, base_stats)
+					if part_data.custom_stats and (part_data.custom_stats.ammo_pickup_min_mul or part_data.custom_stats.ammo_pickup_max_mul) then
+						--it works?
+						--might not stack correctly if there are multiple sources from attachments
+						--but there should only ever be a single attachment in use that modifies this stat so w/e
+						--Might actually apply to the damage calcs above too but again "there should only ever be a single attachment in use that modifies [damage(min)] so w/e"
+						mod[stat.name] = WeaponDescription._get_mods_pickup(weapon, weapon_name, base_stats)
+					end
 				elseif stat.name == "swap_speed" then
 					--POOP FROM A BUTT
 					if part_data.stats and part_data.stats.concealment then

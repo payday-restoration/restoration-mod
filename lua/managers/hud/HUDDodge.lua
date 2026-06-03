@@ -103,8 +103,12 @@ function HUDDodgeMeter:set_dodge_value(value)
 	end
 	self._dodge_panel:child("dodge_bar"):set_bottom(self._dodge_panel:h())
 	if value >= 1.0 - self._dodge_points then
-		self._dodge_panel:animate(callback(self, self, "_animate_high_dodge"))
+		if not self._dodge_is_animating then
+			self._dodge_is_animating = true
+			self._dodge_panel:animate(callback(self, self, "_animate_high_dodge"))
+		end
 	else
+		self._dodge_is_animating = nil
 		self._dodge_panel:stop()
 		self._dodge_panel:child("dodge_bar"):set_color(restoration.Options:GetValue("HUD/Colors/DodgeBar"))
 	end

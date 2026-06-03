@@ -10127,6 +10127,13 @@ end
 					concealment = -1
 				}
 
+				self.parts.wpn_fps_lmg_shuno_s_standard.stance_mod = {
+					wpn_fps_lmg_shuno = {
+						translation = Vector3(5, 0, 2),
+						rotation = Rotation(0, 0, 15),
+					}
+				}
+
 				self.wpn_fps_lmg_shuno.override = {
 					wpn_fps_upg_ammo_half_that = {
 						supported = true,
@@ -13117,10 +13124,10 @@ end
 							rof_mult = 1.10769230,
 							damage_min_mult = 1.04,
 							ads_speed_mult = 0.93333333,
-							alt_ammo_pickup_min_mul = 1.305084,
-							alt_ammo_pickup_max_mul = 1.305084,
-							ammo_pickup_min_mul = 1.305084,
-							ammo_pickup_max_mul = 1.305084,
+							alt_ammo_pickup_min_mul = 1.3010204081,
+							alt_ammo_pickup_max_mul = 1.3068181818,
+							ammo_pickup_min_mul = 1.3010204081,
+							ammo_pickup_max_mul = 1.3068181818,
 						},
 						forbids = {},
 						adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsKrink74") == 2 and { "wpn_fps_ass_rpk74_sound_switch" }) or {},
@@ -13229,10 +13236,10 @@ end
 							falloff_start_mult = 1.1875,
 							damage_min_mult = 1.04,
 							ads_speed_mult = 0.93333333,
-							alt_ammo_pickup_min_mul = 1.298245,
-							alt_ammo_pickup_max_mul = 1.298245,
-							ammo_pickup_min_mul = 1.298245,
-							ammo_pickup_max_mul = 1.298245,
+							alt_ammo_pickup_min_mul = 1.3010204081,
+							alt_ammo_pickup_max_mul = 1.3068181818,
+							ammo_pickup_min_mul = 1.3010204081,
+							ammo_pickup_max_mul = 1.3068181818,
 						},
 						forbids = {},
 						adds = (restoration.Options:GetValue("WEAPONS/WEAPONSOUNDS/ComboSoundsKrink74") == 2 and { "wpn_fps_ass_rpk74_sound_switch" }) or {},
@@ -14073,11 +14080,14 @@ end
 				self.parts.wpn_fps_ass_shak12_body_vks.has_description = true
 				--self.parts.wpn_fps_ass_shak12_body_vks.sound_switch = { suppressed = "regular_b" }
 				self.parts.wpn_fps_ass_shak12_body_vks.desc_id = "bm_wp_shak12_body_vks_ap_desc"
+				self.parts.wpn_fps_ass_shak12_body_vks.keep_damage = true
 				self.parts.wpn_fps_ass_shak12_body_vks.stats = {
 					value = 9,
 					recoil = -14,
 					reload = -2,
-					concealment = -1,
+					total_ammo_mod = -133,
+					damage = 30,
+					concealment = -2
 				}
 				self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = {
 					armor_piercing_override = 1,
@@ -14086,14 +14096,15 @@ end
 					can_shoot_through_wall = true,
 					can_shoot_through_shield = true,
 					ignore_rof_mult_anims = true,
-					rof_mult = 0.66666,
+					rof_mult = 0.58,
 					ads_speed_mult = 1.277777,
 					tweak_categories = {"snp", "semi_snp"},
-					alt_ammo_pickup_min_mul = 0.8722,
-					alt_ammo_pickup_max_mul = 0.8722,
-					ammo_pickup_min_mul = 0.8722,
-					ammo_pickup_max_mul = 0.8722,
-					sms = 0.6,
+					alt_ammo_pickup_min_mul = 0.5410536307,
+					alt_ammo_pickup_max_mul = 0.5525510204,
+					ammo_pickup_min_mul = 0.5410536307,
+					ammo_pickup_max_mul = 0.5525510204,
+					damage_min_mult = 0.6667,
+					sms = 0.5,
 					alt_desc = "bm_shak12_sc_oden_desc",
 					srm = {
 						-0.1,
@@ -14824,6 +14835,88 @@ end
 					self.wpn_fps_snp_winchester_npc.uses_parts = deep_clone(self.wpn_fps_snp_winchester.uses_parts)
 				end)
 
+			--MARLIN SBL
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
+
+					--BIG Barrel
+					self.parts.wpn_fps_snp_sbl_b_long.pcs = {
+						10,
+						20,
+						30,
+						40
+					}
+					self.parts.wpn_fps_snp_sbl_b_long.supported = true
+					self.parts.wpn_fps_snp_sbl_b_long.stats = {
+						value = 5,
+						extra_ammo = -1,
+						spread = 1
+					}
+					self.parts.wpn_fps_snp_sbl_b_long.custom_stats = {
+						is_internal = true,
+						falloff_start_mult = 1.075,
+						falloff_end_mult = 1.075
+					}
+
+					--Sniper Suppressor
+					self.parts.wpn_fps_snp_sbl_b_short.pcs = {
+						10,
+						20,
+						30,
+						40
+					}
+					self.parts.wpn_fps_snp_sbl_b_short.supported = true
+					self.parts.wpn_fps_snp_sbl_b_short.has_description = true
+					self.parts.wpn_fps_snp_sbl_b_short.desc_id = "bm_wp_upg_suppressor"
+					self.parts.wpn_fps_snp_sbl_b_short.stats = {
+						value = 2,
+						extra_ammo = -1,
+						concealment = 1,
+						suppression = 12,
+						alert_size = -1
+					}
+					self.parts.wpn_fps_snp_sbl_b_short.custom_stats = {
+						ads_speed_mult = 0.975,
+						is_internal = true
+					}
+					self.parts.wpn_fps_snp_sbl_b_short.perks = {"silencer"}
+
+					--Club Stock
+					self.parts.wpn_fps_snp_sbl_s_saddle.pcs = {
+						10,
+						20,
+						30,
+						40
+					}
+					self.parts.wpn_fps_snp_sbl_s_saddle.supported = true
+					self.parts.wpn_fps_snp_sbl_s_saddle.stats = {
+						value = 2,
+						spread = -2,
+						concealment = -1,
+						reload = 3
+					}
+
+					--Iron Sights (Still basically the same as ours)
+					self.parts.wpn_fps_snp_sbl_o_standard.supported = true
+					self.parts.wpn_fps_snp_sbl_o_standard.stats = {
+						value = 1
+					}
+
+					self.wpn_fps_snp_sbl.override = self.wpn_fps_snp_sbl.override or {}
+
+					for i, part_id in pairs(self.wpn_fps_snp_sbl.uses_parts) do
+						if self.parts and self.parts[part_id] and self.parts[part_id].a_obj and self.parts[part_id].a_obj == "a_fl" then
+							self.wpn_fps_snp_sbl.override[part_id] = self.wpn_fps_snp_sbl.override[part_id] or {}
+							self.wpn_fps_snp_sbl.override[part_id].a_obj = "a_fl_2"
+						end
+					end
+
+					self.wpn_fps_snp_sbl.override.wpn_fps_addon_ris = self.wpn_fps_snp_sbl.override.wpn_fps_addon_ris or {}
+					self.wpn_fps_snp_sbl.override.wpn_fps_addon_ris.a_obj = "a_fl_2"
+
+					self.wpn_fps_snp_sbl_npc.override = deep_clone(self.wpn_fps_snp_sbl.override)
+					self.wpn_fps_snp_sbl_npc.uses_parts = deep_clone(self.wpn_fps_snp_sbl.uses_parts)
+				end)
+
 			--R700
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(self)
 
@@ -14900,18 +14993,19 @@ end
 						stats = {
 							value = 8,
 							zoom = 30,
-							damage = 30,
+							damage = 60,
 							recoil = -6,
 							concealment = -3,
-							total_ammo_mod = -104,
+							total_ammo_mod = -131,
 							suppression = -1
 						},
 						custom_stats = {
-							rof_mult = 0.75,
-							ammo_pickup_max_mul = 0.6895,
-							ammo_pickup_min_mul = 0.6895,
-							alt_ammo_pickup_max_mul = 0.6895,
-							alt_ammo_pickup_min_mul = 0.6895
+							rof_mult = 0.89230769,
+							damage_min_mult = 1.3334,
+							ammo_pickup_max_mul = 0.59459459,
+							ammo_pickup_min_mul = 0.55555556,
+							alt_ammo_pickup_max_mul = 0.59459459,
+							alt_ammo_pickup_min_mul = 0.55555556
 						}
 					}
 
@@ -15060,8 +15154,8 @@ end
 					self.parts.wpn_fps_snp_awp_conversion_dragonlore.has_description = true
 					self.parts.wpn_fps_snp_awp_conversion_dragonlore.keep_damage = true
 					self.parts.wpn_fps_snp_awp_conversion_dragonlore.stats = {
-						total_ammo_mod = -162,
-						damage = 30,
+						total_ammo_mod = -237,
+						damage = 60,
 						spread = 1,
 						value = 10,
 						recoil = -6,
@@ -15069,23 +15163,23 @@ end
 					}
 					self.parts.wpn_fps_snp_awp_conversion_dragonlore.custom_stats = {
 						alt_desc = "bm_bazooka_sc_desc",
-						hs_mult = 1.5,
+						hs_mult = 2,
 						hs_mult_desc = true,
 						ads_speed_mult = 1.2105263,
 						hip_mult = 10,
 						ads_moving_mult = 50,
-						alt_ammo_pickup_max_mul = 0.3,
-						alt_ammo_pickup_min_mul = 0.3,
-						ammo_pickup_max_mul = 0.3,
-						ammo_pickup_min_mul = 0.3,
-						rof_mult = 0.65079365,
+						alt_ammo_pickup_max_mul = 0.5945945 * 0.6,
+						alt_ammo_pickup_min_mul = 0.5555555 * 0.6,
+						ammo_pickup_max_mul = 0.5945945 * 0.6,
+						ammo_pickup_min_mul = 0.5555555 * 0.6,
+						rof_mult = 0.71929824,
 						can_shoot_through_enemy = true,
 						can_shoot_through_shield = true,
 						can_shoot_through_wall = true,
 						can_shoot_through_titan_shield = true,
 						falloff_start_mult = 0.5,
 						falloff_end_mult = 0.9375,
-						damage_min_mult = 1,
+						damage_min_mult = 1.33334,
 						descope_on_fire_ignore_setting = true,
 						use_vapor_trail = true
 					}
@@ -15638,88 +15732,6 @@ end
 
 					self.wpn_fps_snp_wa2000_npc.override = deep_clone(self.wpn_fps_snp_wa2000.override)
 					self.wpn_fps_snp_wa2000_npc.uses_parts = deep_clone(self.wpn_fps_snp_wa2000.uses_parts)
-				end)
-
-			--MARLIN SBL
-				Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
-
-					--BIG Barrel
-					self.parts.wpn_fps_snp_sbl_b_long.pcs = {
-						10,
-						20,
-						30,
-						40
-					}
-					self.parts.wpn_fps_snp_sbl_b_long.supported = true
-					self.parts.wpn_fps_snp_sbl_b_long.stats = {
-						value = 5,
-						extra_ammo = -1,
-						spread = 1
-					}
-					self.parts.wpn_fps_snp_sbl_b_long.custom_stats = {
-						is_internal = true,
-						falloff_start_mult = 1.075,
-						falloff_end_mult = 1.075
-					}
-
-					--Sniper Suppressor
-					self.parts.wpn_fps_snp_sbl_b_short.pcs = {
-						10,
-						20,
-						30,
-						40
-					}
-					self.parts.wpn_fps_snp_sbl_b_short.supported = true
-					self.parts.wpn_fps_snp_sbl_b_short.has_description = true
-					self.parts.wpn_fps_snp_sbl_b_short.desc_id = "bm_wp_upg_suppressor"
-					self.parts.wpn_fps_snp_sbl_b_short.stats = {
-						value = 2,
-						extra_ammo = -1,
-						concealment = 1,
-						suppression = 12,
-						alert_size = -1
-					}
-					self.parts.wpn_fps_snp_sbl_b_short.custom_stats = {
-						ads_speed_mult = 0.975,
-						is_internal = true
-					}
-					self.parts.wpn_fps_snp_sbl_b_short.perks = {"silencer"}
-
-					--Club Stock
-					self.parts.wpn_fps_snp_sbl_s_saddle.pcs = {
-						10,
-						20,
-						30,
-						40
-					}
-					self.parts.wpn_fps_snp_sbl_s_saddle.supported = true
-					self.parts.wpn_fps_snp_sbl_s_saddle.stats = {
-						value = 2,
-						spread = -2,
-						concealment = -1,
-						reload = 3
-					}
-
-					--Iron Sights (Still basically the same as ours)
-					self.parts.wpn_fps_snp_sbl_o_standard.supported = true
-					self.parts.wpn_fps_snp_sbl_o_standard.stats = {
-						value = 1
-					}
-
-					self.wpn_fps_snp_sbl.override = self.wpn_fps_snp_sbl.override or {}
-
-					for i, part_id in pairs(self.wpn_fps_snp_sbl.uses_parts) do
-						if self.parts and self.parts[part_id] and self.parts[part_id].a_obj and self.parts[part_id].a_obj == "a_fl" then
-							self.wpn_fps_snp_sbl.override[part_id] = self.wpn_fps_snp_sbl.override[part_id] or {}
-							self.wpn_fps_snp_sbl.override[part_id].a_obj = "a_fl_2"
-						end
-					end
-
-					self.wpn_fps_snp_sbl.override.wpn_fps_addon_ris = self.wpn_fps_snp_sbl.override.wpn_fps_addon_ris or {}
-					self.wpn_fps_snp_sbl.override.wpn_fps_addon_ris.a_obj = "a_fl_2"
-
-					self.wpn_fps_snp_sbl_npc.override = deep_clone(self.wpn_fps_snp_sbl.override)
-					self.wpn_fps_snp_sbl_npc.uses_parts = deep_clone(self.wpn_fps_snp_sbl.uses_parts)
 				end)
 
 			--MOSIN
@@ -24582,6 +24594,22 @@ end
 								end
 							end
 
+							if table.contains( tww.categories , "akimbo") then
+								if self[factory_id].uses_parts then
+									for i, part_id in pairs(self[factory_id].uses_parts) do
+										attachment_list = {
+											"wpn_fps_upg_i_burstfire",
+										}
+										for _, remove_id in ipairs(attachment_list) do
+											if part_id == remove_id then
+												self[factory_id].uses_parts[i] = "resmod_dummy"
+												self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+											end
+										end
+									end
+								end
+							end
+
 							if table.contains( tww.categories , "shotgun") then
 								self[ factory_id ].override = self[ factory_id ].override or {}
 								self[ factory_id ].override.wpn_fps_upg_fl_ass_smg_sho_pointshoot = {
@@ -24940,7 +24968,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			sms = 0.5,
 			srm = {
 				-0.04,
-				{1, 2},
+				{1, 1.5},
 				2
 			}
 		},
@@ -25041,10 +25069,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			falloff_start_mult = 1.4285,
 			damage_min_mult = 1.041666667,
 			ads_speed_mult = 0.909091,
-			alt_ammo_pickup_min_mul = 1.294871,
-			alt_ammo_pickup_max_mul = 1.294871,
-			ammo_pickup_min_mul = 1.294871,
-			ammo_pickup_max_mul = 1.294871,
+			alt_ammo_pickup_min_mul = 1.3010204081,
+			alt_ammo_pickup_max_mul = 1.3068181818,
+			ammo_pickup_min_mul = 1.3010204081,
+			ammo_pickup_max_mul = 1.3068181818,
 			movement_speed_add = 0.05,
 			sms = 1.05882,
 			--ene_hs_mult_add = 0.15
@@ -25113,7 +25141,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = {
 			info_lock_semi = true,
 			alt_desc = "bm_g3_sg1_sc_desc",
-			rof_mult = 0.5,
+			rof_mult = 0.35,
 			armor_piercing_override = 1,
 			can_shoot_through_wall = true,
 			can_shoot_through_shield = true,
@@ -25121,17 +25149,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ignore_rof_mult_anims = true,
 			ads_speed_mult = 1.263157,
 			tweak_categories = {"snp", "semi_snp"},
-			damage_min_mult = 1.25,
-			sms = 0.6,
+			damage_min_mult = 0.8334,
+			sms = 0.5,
 			srm = {
 				-0.1,
 				{1, 1.3},
 				2
 			},
-			alt_ammo_pickup_min_mul = 0.8722,
-			alt_ammo_pickup_max_mul = 0.8722,
-			ammo_pickup_min_mul = 0.8722,
-			ammo_pickup_max_mul = 0.8722,
+			alt_ammo_pickup_min_mul = 0.5410536307,
+			alt_ammo_pickup_max_mul = 0.5525510204,
+			ammo_pickup_min_mul = 0.5410536307,
+			ammo_pickup_max_mul = 0.5525510204,
 			falloff_start_mult = 1.30,
 			falloff_end_mult = 1.30
 		},
@@ -25140,10 +25168,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
+		keep_damage = true,
 		stats = {
 			value = 8,
 			spread = 12,
 			recoil = -12,
+			total_ammo_mod = -133,
+			damage = 30,
 			concealment = -4
 		},
 		override = {
@@ -25159,8 +25190,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	for k, used_part_id in ipairs(self.wpn_fps_ass_g3.uses_parts) do
 		if not table.contains(self.wpn_fps_ass_g3.default_blueprint, used_part_id) then
 			if self.parts[used_part_id] and self.parts[used_part_id].type then
-				if self.parts[used_part_id].type == "barrel" or
-				(self.parts[used_part_id].stats and self.parts[used_part_id].stats.damage) then
+				if (self.parts[used_part_id].type == "barrel" or
+				(self.parts[used_part_id].stats and self.parts[used_part_id].stats.damage)) and self.parts[used_part_id].type ~= "custom" then
 					table.insert(self.parts.wpn_fps_upg_i_g3sg1.forbids, used_part_id)
 				end
 			end
@@ -26143,16 +26174,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		keep_damage = true,
 		stats = {
 			value = 10,
-			damage = 15,
-			total_ammo_mod = -102,
+			damage = 45,
+			total_ammo_mod = -201,
 			reload = -1,
 			spread = 2,
-			recoil = -14
+			recoil = -8
 		},
 		custom_stats = {
 			info_lock_semi = true,
 			alt_desc = "bm_asval_spp_sc_desc",
-			rof_mult = 0.611111,
+			rof_mult = 0.4,
 			armor_piercing_override = 1,
 			can_shoot_through_wall = true,
 			can_shoot_through_shield = true,
@@ -26160,12 +26191,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			can_shoot_through_enemy_unlim = true,
 			ignore_rof_mult_anims = true,
 			tweak_categories = {"snp", "semi_snp"},
-			damage_min_mult = 0.75,
-			sms = 0.6,
-			alt_ammo_pickup_min_mul = 0.625,
-			alt_ammo_pickup_max_mul = 0.625,
-			ammo_pickup_min_mul = 0.625,
-			ammo_pickup_max_mul = 0.625
+			damage_min_mult = 0.5,
+			sms = 0.5,
+			alt_ammo_pickup_min_mul = 0.38775510204,
+			alt_ammo_pickup_max_mul = 0.39467930029,
+			ammo_pickup_min_mul = 0.38775510204,
+			ammo_pickup_max_mul = 0.39467930029
 		},
 		perks = { "fire_mode_single" },
 		internal_part = true,
@@ -30130,6 +30161,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					falloff_end_mult = 2.1428571,
 					ads_speed_mult = 1.31578,
 					rof_mult = 0.283286,
+					damage_min_mult = 0.6667,
 					info_lock_semi = true,
 					ignore_rof_mult_anims = true,
 					can_shoot_through_enemy = true,
@@ -30138,7 +30170,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					can_shoot_through_shield = true,
 					armor_piercing_override = 1,
 					tweak_categories = {"snp", "semi_snp"},
-					sms = 0.6,
+					sms = 0.5,
 					alt_ammo_pickup_min_mul = 0.235,
 					alt_ammo_pickup_max_mul = 0.235,
 					ammo_pickup_min_mul = 0.235,
@@ -30181,7 +30213,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_morita_optic_2x.supported = true
 				self.parts.wpn_fps_ass_morita_optic_2x.has_description = true
 				self.parts.wpn_fps_ass_morita_optic_2x.desc_id = "bm_wp_upg_o_2"
-				self.parts.wpn_fps_ass_morita_optic_2x.stats = { value = 0, zoom = 10}
+				self.parts.wpn_fps_ass_morita_optic_2x.stats = { value = 0, zoom = 10 }
+				self.parts.wpn_fps_ass_morita_optic_2x.custom_stats = { big_scope = true }
 				self.parts.wpn_fps_ass_morita_optic_2x.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 				for i, weap in pairs(self.parts.wpn_fps_ass_morita_optic_2x.stance_mod) do
 					if weap and i ~= wep_id and weap.translation then
@@ -30192,7 +30225,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_morita_optic_4x.supported = true
 				self.parts.wpn_fps_ass_morita_optic_4x.has_description = true
 				self.parts.wpn_fps_ass_morita_optic_4x.desc_id = "bm_wp_upg_o_4"
-				self.parts.wpn_fps_ass_morita_optic_4x.stats = { value = 0, zoom = 30}
+				self.parts.wpn_fps_ass_morita_optic_4x.stats = { value = 0, zoom = 30 }
+				self.parts.wpn_fps_ass_morita_optic_4x.custom_stats = { big_scope = true }
 				self.parts.wpn_fps_ass_morita_optic_4x.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 				for i, weap in pairs(self.parts.wpn_fps_ass_morita_optic_4x.stance_mod) do
 					if weap and i ~= wep_id and weap.translation then
@@ -30203,7 +30237,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_morita_optic_hawkeye.supported = true
 				self.parts.wpn_fps_ass_morita_optic_hawkeye.has_description = true
 				self.parts.wpn_fps_ass_morita_optic_hawkeye.desc_id = "bm_wp_upg_o_6"
-				self.parts.wpn_fps_ass_morita_optic_hawkeye.stats = { value = 0, zoom = 50}
+				self.parts.wpn_fps_ass_morita_optic_hawkeye.stats = { value = 0, zoom = 50 }
+				self.parts.wpn_fps_ass_morita_optic_hawkeye.custom_stats = { big_scope = true }
 				self.parts.wpn_fps_ass_morita_optic_hawkeye.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 				for i, weap in pairs(self.parts.wpn_fps_ass_morita_optic_hawkeye.stance_mod) do
 					if weap and i ~= wep_id and weap.translation then
@@ -39400,6 +39435,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						-0.02,
 						{1, 1.1},
 						3
+					},
+					kick_pattern = {
+						{0, tweak_data.weapon.stat_info.kick_tables.vertical_kick},
+						{3, tweak_data.weapon.stat_info.kick_tables.right_kick},
+						{4, tweak_data.weapon.stat_info.kick_tables.moderate_kick},
+						{6, tweak_data.weapon.stat_info.kick_tables.moderate_right_kick},
+						{12, tweak_data.weapon.stat_info.kick_tables.moderate_kick},
+						{17, tweak_data.weapon.stat_info.kick_tables.left_recoil},
+						{22, tweak_data.weapon.stat_info.kick_tables.moderate_left_kick}
 					}
 				}
 				self.parts.wpn_fps_ass_contraband_body_sayhello.stance_mod = {
@@ -40128,6 +40172,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						0.025,
 						{0.7, 1},
 						2
+					},
+					kick_pattern = {
+						{0, tweak_data.weapon.stat_info.kick_tables.even_recoil},
+						{4, tweak_data.weapon.stat_info.kick_tables.moderate_right_kick},
+						{14, tweak_data.weapon.stat_info.kick_tables.moderate_kick},
+						{20, tweak_data.weapon.stat_info.kick_tables.even_recoil}
 					}
 				}
 				self.parts.wpn_fps_ass_contraband_body_mpx.forbids = nil
@@ -41347,21 +41397,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_scar20_ck_light.supported = true
 			self.parts.wpn_fps_snp_scar20_ck_light.keep_damage = true
 			self.parts.wpn_fps_snp_scar20_ck_light.stats = {
-				damage = -30,
+				damage = -60,
 				recoil = 10,
 				concealment = 2,
 				total_ammo_mod = 77
 			}
 			self.parts.wpn_fps_snp_scar20_ck_light.custom_stats = {
 				ads_speed_mult = 0.91304,
-				hs_mult = 2,
+				hs_mult = 3,
 				hs_mult_desc = true,
-				alt_ammo_pickup_min_mul = 1.35,
-				alt_ammo_pickup_max_mul = 1.35,
-				ammo_pickup_min_mul = 1.35,
-				ammo_pickup_max_mul = 1.35,
-				damage_min_mult = 0.8,
-				rof_mult = 1.4,
+				alt_ammo_pickup_min_mul = 1.47,
+				alt_ammo_pickup_max_mul = 1.3894736842,
+				ammo_pickup_min_mul = 1.47,
+				ammo_pickup_max_mul = 1.3894736842,
+				damage_min_mult = 1.2,
+				rof_mult = 1.5,
 				falloff_start_mult = 0.78125,
 				falloff_end_mult = 0.8
 			}
@@ -43877,6 +43927,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	    if self.parts.wpn_fps_bow_rebar_hl2optic then
 			self.parts.wpn_fps_bow_rebar_hl2optic.supported = true
+			self.parts.wpn_fps_bow_rebar_hl2optic.stats = {
+				zoom = 35,
+				base_zoom_off = 1
+			}
 		end
 
 	    if self.parts.wpn_fps_minecraft_bow_ench_power then
@@ -46398,6 +46452,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_ass_mk47_mutant_npc.override = deep_clone(self.wpn_fps_ass_mk47_mutant.override)
 			self.wpn_fps_ass_mk47_mutant_npc.uses_parts = deep_clone(self.wpn_fps_ass_mk47_mutant.uses_parts)
 		end
+
+	--[[ ALCAT'S MODS ]]
+
+	if self.parts.wpn_fps_ass_komodo_o_tele then
+		self.parts.wpn_fps_ass_komodo_o_tele.supported = true
+		self.parts.wpn_fps_ass_komodo_o_tele.desc_id = "bm_wp_upg_o_1_6_tele"
+		self.parts.wpn_fps_ass_komodo_o_tele.stats = {
+			zoom = 6
+		}
+		self.parts.wpn_fps_ass_komodo_o_tele.adds = {}
+	end
 
 	--Akimbo Mosconi 12G
 	if self.wpn_fps_shot_x_huntsman then
@@ -52533,11 +52598,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				ignore_rof_mult_anims = true,
 				tweak_categories = {"snp", "semi_snp"},
 				damage_min_mult = 0.75,
-				sms = 0.6,
-				alt_ammo_pickup_min_mul = 0.625,
-				alt_ammo_pickup_max_mul = 0.625,
-				ammo_pickup_min_mul = 0.625,
-				ammo_pickup_max_mul = 0.625
+				sms = 0.5,
+				alt_ammo_pickup_min_mul = 0.38775510204,
+				alt_ammo_pickup_max_mul = 0.39467930029,
+				ammo_pickup_min_mul = 0.38775510204,
+				ammo_pickup_max_mul = 0.39467930029
 			},
 		}
 	end

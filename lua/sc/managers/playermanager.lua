@@ -570,6 +570,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	local killshot_cooldown_reduction = (variant and variant == "melee" and tweak_data.upgrades.on_killshot_cooldown_reduction_melee) or tweak_data.upgrades.on_killshot_cooldown_reduction or 0
 
 	local regen_armor_bonus = self:upgrade_value("player", "killshot_regen_armor_bonus", 0)
+	local regen_dodge_bonus = self:upgrade_value("player", "killshot_regen_dodge_bonus", 0)
 	local dist_sq = mvector3.distance_sq(player_unit:movement():m_pos(), killed_unit:movement():m_pos())
 	local close_combat_sq = tweak_data.upgrades.close_combat_distance * tweak_data.upgrades.close_combat_distance
 	
@@ -610,6 +611,11 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 
 	if damage_ext and regen_armor_bonus > 0 then
 		damage_ext:restore_armor(regen_armor_bonus)
+	end
+
+	if damage_ext and regen_dodge_bonus > 0 then
+		local dodge_add = (damage_ext:get_dodge_points() or 0) * regen_dodge_bonus
+		damage_ext:fill_dodge_meter(dodge_add)
 	end
 
 	local regen_health_bonus = 0
@@ -1278,12 +1284,6 @@ end
 --The OnHeadShot message must now pass in attack data and unit info to let certains skills work as expected.
 --IE: Ammo Efficiency not proccing off of melee headshots.
 function PlayerManager:on_headshot_dealt(unit, attack_data)
-	local player_unit = self:player_unit()
-
-	if not player_unit then
-		return
-	end
-
 	self._message_system:notify(Message.OnHeadShot, nil, unit, attack_data)
 
 	local t = Application:time()
@@ -1292,6 +1292,14 @@ function PlayerManager:on_headshot_dealt(unit, attack_data)
 		return
 	end
 
+	self:_trigger_on_headshot_skills()
+end
+
+function PlayerManager:_trigger_on_headshot_skills()
+	local player_unit = self:player_unit()
+	if not player_unit then
+		return
+	end
 	local damage_ext = player_unit:character_damage()
 
 	local replenishable_armour = damage_ext:_max_armor() - damage_ext:get_real_armor()
@@ -1299,12 +1307,15 @@ function PlayerManager:on_headshot_dealt(unit, attack_data)
 	local regen_armor_bonus = managers.player:upgrade_value("player", "headshot_regen_armor_bonus", 0)
 	local regen_health_bonus = managers.player:upgrade_value("player", "headshot_regen_health_bonus", 0)
 
-	if (replenishable_armour <= 0 or regen_armor_bonus == 0) and (replenishable_health <= 0 or regen_health_bonus == 0) then
+	--I love floating point errors
+	if (replenishable_armour <= 0.001 or regen_armor_bonus == 0) and (replenishable_health <= 0.001 or regen_health_bonus == 0) then
 		-- Do not "waste" the Bullseye timer if we:
 		-- - Don't have armour to recover with it or don't have Bullseye, and we
 		-- - Don't have health to recover Head Games or we don't have that.
 		return
 	end
+
+	local t = Application:time()
 
 	self._on_headshot_dealt_t = t + (tweak_data.upgrades.on_headshot_dealt_cooldown or 0)
 	managers.hud:start_buff("bullseye", tweak_data.upgrades.on_headshot_dealt_cooldown)
@@ -1322,7 +1333,7 @@ function PlayerManager:on_lethal_headshot_dealt(attacker_unit, attack_data)
 	if not self:player_unit() or attacker_unit ~= self:player_unit() then
 		return
 	end
-
+	
 	self._message_system:notify(Message.OnLethalHeadShot, nil, attack_data)
 
 	local regen_armor_bonus_cd_reduction = managers.player:upgrade_value("player", "headshot_regen_armor_bonus_cd_reduction", 0)
@@ -1330,6 +1341,10 @@ function PlayerManager:on_lethal_headshot_dealt(attacker_unit, attack_data)
 	if self._on_headshot_dealt_t and not anarchist then
 		self._on_headshot_dealt_t = self._on_headshot_dealt_t - regen_armor_bonus_cd_reduction
 		managers.hud:change_cooldown("bullseye", -regen_armor_bonus_cd_reduction)
+		local t = Application:time()
+		if t > self._on_headshot_dealt_t then
+			self:_trigger_on_headshot_skills()
+		end
 	end
 end
 

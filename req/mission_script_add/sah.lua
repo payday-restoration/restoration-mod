@@ -98,6 +98,7 @@ local opts_pro_job_ponr_counter = {
 	counter_target = 2,
 	on_executed = {
 		{ id = 400025, delay = 0, },
+		{id = 400001, delay = murky_response_timer},
 	},
 }
 

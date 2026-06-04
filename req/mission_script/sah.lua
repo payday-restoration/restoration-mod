@@ -1,6 +1,5 @@
 
 local hunt_projob = pro_job
-local murky_response_timer = (mayhem_above and 90) or 120
 local disabled = {
 	values = {
         enabled = false
@@ -28,7 +27,6 @@ return {
 	[103820] = {
 		on_executed = {
 			{id = 400024, delay = 0, },
-			{id = 400001, delay = murky_response_timer},
 		},
 	},
 	-- Turn off Whisper State

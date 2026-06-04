@@ -1,7 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 570) or 540
-local murky_response_timer = (mayhem_above and 90) or 120
+local murky_response_timer = (difficulty >= 6 and 90) or 120
 local murky_responder_1 = "units/payday2/characters/ene_murkywater_1/ene_murkywater_1"
 local murky_responder_2 = "units/payday2/characters/ene_murkywater_2/ene_murkywater_2"
 local murky_table = {murky_responder_1, murky_responder_2}

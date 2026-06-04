@@ -155,7 +155,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data, weapon_unit)
 	local ai_vision_ids = Idstring("ai_vision")
 	local bulletproof_ids = Idstring("bulletproof")
 	local weap_base = weapon_unit and weapon_unit.base and weapon_unit:base()
-	local is_semi_snp = can_shoot_through_shield and weap_base and weap_base.categories and not weap_base:is_category("amr", "big_iron") and weap_base:is_category("semi_snp", "dmr_l", "dmr_h", "shotgun_auto", "shotgun_light", "handcannon", "assault_rifle") 
+	local is_semi_snp = can_shoot_through_shield and weap_base and weap_base.categories and not weap_base:is_category("amr", "big_iron") and (not weap_base:is_category("snp") or (weap_base:is_category("snp") and weap_base:is_category("semi_snp")) )
 
 	--Just set this immediately.
 	local ray_hits = can_shoot_through_wall and World:raycast_wall("ray", from, to, "slot_mask", bullet_slotmask, "ignore_unit", ignore_unit, "thickness", 40, "thickness_mask", wall_mask)

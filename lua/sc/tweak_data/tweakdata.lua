@@ -245,8 +245,8 @@ tweak_data.snp = {
 	}
 	tweak_data.semi_snp = {
 		min_spread_mult = 3.5 / tweak_data.snp.min_spread_mult,
-		hipfire_spread_mult = 4.5 / tweak_data.snp.hipfire_spread_mult,
-		hipfire_moving_spread_mult = 4 / tweak_data.snp.hipfire_moving_spread_mult,
+		hipfire_spread_mult = 8.5 / tweak_data.snp.hipfire_spread_mult,
+		hipfire_moving_spread_mult = 2 / tweak_data.snp.hipfire_moving_spread_mult,
 		ads_moving_recoil = 1.5,
 		ads_moving_spread_mult = 14,
 		ads_move_speed_mult = 0.3 / tweak_data.snp.ads_move_speed_mult,
@@ -272,8 +272,8 @@ tweak_data.snp = {
 		}
 		tweak_data.semi_amr = {
 			min_spread_mult = 4.5 / (tweak_data.amr.min_spread_mult * tweak_data.snp.min_spread_mult),
-			hipfire_spread_mult = 5 / (tweak_data.amr.hipfire_spread_mult * tweak_data.snp.hipfire_spread_mult),
-			hipfire_moving_spread_mult = 4.5 / tweak_data.snp.hipfire_moving_spread_mult,
+			hipfire_spread_mult = 10 / (tweak_data.amr.hipfire_spread_mult * tweak_data.snp.hipfire_spread_mult),
+			hipfire_moving_spread_mult = 2.5 / tweak_data.snp.hipfire_moving_spread_mult,
 			ads_moving_recoil = 2,
 			ads_moving_spread_mult = 14,
 			ads_move_speed_mult = 0.2 / (tweak_data.amr.ads_move_speed_mult * tweak_data.snp.ads_move_speed_mult),

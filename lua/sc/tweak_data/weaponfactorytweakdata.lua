@@ -13302,6 +13302,9 @@ end
 					}
 				}
 
+				self.parts.wpn_fps_ass_asval_scopemount.supported = true
+				self.parts.wpn_fps_ass_asval_scopemount.custom_stats = { big_scope = true }
+
 				--Prototype Barrel
 				--I know this is actually still a suppressed barrel IRL but that's not really interesting -DMC
 				self.parts.wpn_fps_ass_asval_b_proto.pcs = {}
@@ -14090,13 +14093,14 @@ end
 					concealment = -2
 				}
 				self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = {
+					info_lock_semi = true,
 					armor_piercing_override = 1,
 					can_shoot_through_enemy = true,
 					can_shoot_through_enemy_unlim = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_shield = true,
 					ignore_rof_mult_anims = true,
-					rof_mult = 0.58,
+					rof_mult = 0.45333333,
 					ads_speed_mult = 1.277777,
 					tweak_categories = {"snp", "semi_snp"},
 					alt_ammo_pickup_min_mul = 0.5410536307,
@@ -14112,7 +14116,14 @@ end
 						2
 					}
 				}
-				self.parts.wpn_fps_ass_shak12_body_vks.perks = nil
+				self.parts.wpn_fps_ass_shak12_body_vks.perks = { "fire_mode_single" }
+				self.parts.wpn_fps_ass_shak12_body_vks.forbids = {
+					"wpn_fps_addon_ris",
+					"wpn_fps_ass_shak12_dh_standard2",
+					"wpn_fps_upg_i_autofire",
+					"wpn_fps_upg_i_singlefire",
+					"wpn_fps_upg_i_burstfire"
+				}
 
 				--Carry Handle Sight
 				self.parts.wpn_fps_ass_shak12_o_carry_dummy.pcs = {
@@ -26183,13 +26194,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = {
 			info_lock_semi = true,
 			alt_desc = "bm_asval_spp_sc_desc",
-			rof_mult = 0.4,
+			ignore_rof_mult_anims = true,
+			rof_mult = 0.333333,
 			armor_piercing_override = 1,
 			can_shoot_through_wall = true,
 			can_shoot_through_shield = true,
 			can_shoot_through_enemy = true,
 			can_shoot_through_enemy_unlim = true,
-			ignore_rof_mult_anims = true,
 			tweak_categories = {"snp", "semi_snp"},
 			damage_min_mult = 0.5,
 			sms = 0.5,
@@ -42160,10 +42171,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_sierra458_body_ecr.custom_stats = {
 				burst_fire = {
 					count = 3,
-					rof_mult = 1.3,
-					delay = 0.320,
-					recoil_mult = 0.85,
-					last_recoil_mult = 1.05
+					rof_mult = 2.3076923,
+					delay = 0.350,
+					recoil_mult = 0.6,
+					last_recoil_mult = 1.07
 				},
 				info_add_burst = true
 			}
@@ -42310,19 +42321,19 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					falloff_end_mult = 0.862068
 				}
 
+				self.parts.wpn_fps_snp_sierra458_m_beoplus.stats.total_ammo_mod = -98
 				self.parts.wpn_fps_snp_sierra458_m_beoplus.custom_stats = {
 					alt_desc = "bm_w_sierra458_beo_desc",
 					ads_speed_mult = 1.1,
-					rof_mult = 0.6125,
-					hip_mult = 1.666666,
-					damage_min_mult = 1.11111,
+					rof_mult = 0.76923076,
+					damage_min_mult = 1,
 					falloff_start_mult = 0.8,
 					falloff_end_mult = 0.862068,
-					alt_ammo_pickup_min_mul = 0.6,
-					alt_ammo_pickup_max_mul = 0.6,
-					ammo_pickup_min_mul = 0.6,
-					ammo_pickup_max_mul = 0.6,
-					sms = 0.9
+					ammo_pickup_max_mul = 0.69375,
+					ammo_pickup_min_mul = 0.7105263157,
+					alt_ammo_pickup_max_mul = 0.69375,
+					alt_ammo_pickup_min_mul = 0.7105263157,
+					sms = 0.75
 				}
 
 			self.parts.wpn_fps_upg_sierra458_o_backup.supported = true
@@ -46458,6 +46469,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	if self.parts.wpn_fps_ass_komodo_o_tele then
 		self.parts.wpn_fps_ass_komodo_o_tele.supported = true
 		self.parts.wpn_fps_ass_komodo_o_tele.desc_id = "bm_wp_upg_o_1_6_tele"
+		self.parts.wpn_fps_ass_komodo_o_tele.steelsight_visible = nil
 		self.parts.wpn_fps_ass_komodo_o_tele.stats = {
 			zoom = 6
 		}
@@ -52589,7 +52601,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			custom_stats = {
 				info_lock_semi = true,
 				alt_desc = "bm_ap_weapon_semi_sc_desc",
-				rof_mult = 0.64285714,
+				rof_mult = 0.33333,
 				armor_piercing_override = 1,
 				can_shoot_through_wall = true,
 				can_shoot_through_shield = true,

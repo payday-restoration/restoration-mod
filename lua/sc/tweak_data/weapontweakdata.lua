@@ -12795,7 +12795,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.tti.AMMO_MAX = 0
 						self.tti.FIRE_MODE = "single"
 						self.tti.fire_mode_data = {}
-						self.tti.fire_mode_data.fire_rate = 0.266666
+						self.tti.fire_mode_data.fire_rate = 0.27272727
 						self.tti.sms = sms_preset.semi_snp_light
 						self.tti.kick = self.stat_info.kick_tables.even_recoil
 						self.tti.kick_pattern = {
@@ -20601,7 +20601,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.svd.tactical_reload = 1
 				self.svd.CLIP_AMMO_MAX = 10
 				self.svd.AMMO_MAX = 0
-				self.svd.fire_mode_data.fire_rate = 0.4285714
+				self.svd.fire_mode_data.fire_rate = 0.4
 				self.svd.sms = sms_preset.semi_snp_heavy
 				self.svd.kick = self.stat_info.kick_tables.right_kick
 				self.svd.kick_pattern = {
@@ -22438,7 +22438,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fnar.tactical_reload = 1
 				self.fnar.AMMO_MAX = 0
 				self.fnar.FIRE_MODE = "single"
-				self.fnar.fire_mode_data.fire_rate = 0.17142857
+				self.fnar.fire_mode_data.fire_rate = 0.26086956
 				self.fnar.sms = sms_preset.semi_snp_light
 				self.fnar.kick = self.stat_info.kick_tables.vertical_kick
 				self.fnar.kick_pattern = {
@@ -22491,7 +22491,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mk12.AMMO_MAX = 0
 				self.mk12.FIRE_MODE = "single"
 				self.mk12.fire_mode_data = {}
-				self.mk12.fire_mode_data.fire_rate = 0.1764705
+				self.mk12.fire_mode_data.fire_rate = 0.23076923
 				self.mk12.sms = sms_preset.semi_snp_light
 				self.mk12.kick = self.stat_info.kick_tables.vertical_kick
 				self.mk12.kick_pattern = {
@@ -22852,7 +22852,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.svu.tactical_reload = 1
 				self.svu.CLIP_AMMO_MAX = 10
 				self.svu.AMMO_MAX = 0
-				self.svu.fire_mode_data.fire_rate = 0.3157894
+				self.svu.fire_mode_data.fire_rate = 0.4
 				self.svu.sms = sms_preset.semi_snp_heavy
 				self.svu.kick = self.stat_info.kick_tables.right_kick
 				self.svu.kick_pattern = {
@@ -23150,7 +23150,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fd338.desc_id = "bm_ap_weapon_sc_desc"
 				self.fd338.tactical_reload = 1
 				self.fd338.AMMO_MAX = 0
-				self.fd338.fire_mode_data.fire_rate = 0.352941176
+				self.fd338.fire_mode_data.fire_rate = 0.428571428
 				self.fd338.sms = sms_preset.semi_snp_heavy
 				self.fd338.kick = deep_clone(self.stat_info.kick_tables.right_kick)
 				self.fd338.kick_pattern = {
@@ -23409,7 +23409,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.xm21.tactical_reload = 1
 				self.xm21.AMMO_MAX = 0
 				self.xm21.FIRE_MODE = "single"
-				self.xm21.fire_mode_data.fire_rate = 0.17142857
+				self.xm21.fire_mode_data.fire_rate = 0.22222222
 				self.xm21.sms = sms_preset.semi_snp_light
 				self.xm21.kick = self.stat_info.kick_tables.vertical_kick
 				self.xm21.kick_pattern = {
@@ -31207,9 +31207,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.tactical_reload = 1
 				self.sierra458.AMMO_MAX = 0
 				self.sierra458.BURST_FIRE = false
-				self.sierra458.CAN_TOGGLE_FIREMODE = true
+				self.sierra458.CAN_TOGGLE_FIREMODE = false
 				self.sierra458.FIRE_MODE = "single"
-				self.sierra458.fire_mode_data.fire_rate = 0.12
+				self.sierra458.fire_mode_data.fire_rate = 0.23076923
 				self.sierra458.kick = self.stat_info.kick_tables.even_recoil
 				self.sierra458.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_recoil},
@@ -31223,7 +31223,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.supported = true
 				self.sierra458.ads_speed = 0.400
 				self.sierra458.damage_falloff = {
-					start_dist = 2000,
+					start_dist = 1500,
 					end_dist = 5800,
 					min_mult = 0.2
 				}
@@ -35719,7 +35719,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.iuhTTIPlus.AMMO_MAX = 0
 			self.iuhTTIPlus.FIRE_MODE = "single"
 			self.iuhTTIPlus.CAN_TOGGLE_FIREMODE = false
-			self.iuhTTIPlus.fire_mode_data.fire_rate = 0.193548
+			self.iuhTTIPlus.fire_mode_data.fire_rate = 0.333333
 			self.iuhTTIPlus.sms = sms_preset.semi_snp_light
 			self.iuhTTIPlus.kick = self.stat_info.kick_tables.vertical_kick
 			self.iuhTTIPlus.kick_pattern = {
@@ -35773,7 +35773,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rsass.CLIP_AMMO_MAX = 20
 			self.rsass.AMMO_MAX = 0
 			self.rsass.FIRE_MODE = "single"
-			self.rsass.fire_mode_data.fire_rate = 0.142857
+			self.rsass.fire_mode_data.fire_rate = 0.27272727
 			self.rsass.sms = sms_preset.semi_snp_light
 			self.rsass.kick = self.stat_info.kick_tables.vertical_kick
 			self.rsass.kick_pattern = {
@@ -38006,7 +38006,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							final = 1,
 							start = 0,
 							hf = {
-								mod = -0.2,
+								mod = -0.3,
 								init = 1,
 								final = 1.8,
 								start = 1
@@ -38030,7 +38030,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							final = 1,
 							start = 0,
 							hf = {
-								mod = -0.25,
+								mod = -0.4,
 								init = 1,
 								final = 1.8,
 								start = 1
@@ -38132,7 +38132,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							final = 1,
 							start = 0,
 							hf = {
-								mod = -0.34,
+								mod = -0.5,
 								init = 1,
 								final = 2,
 								start = 1

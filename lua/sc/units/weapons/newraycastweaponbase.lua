@@ -1976,7 +1976,9 @@ function NewRaycastWeaponBase:tweak_data_anim_offset(anim, offset, second_gun)
 			if data.animations and data.animations[unit_anim] then
 				local anim_name = data.animations[unit_anim]
 				local ids_anim_name = Idstring(anim_name)
-				data.unit:anim_set_time(ids_anim_name, offset)
+				if data.unit then
+					data.unit:anim_set_time(ids_anim_name, offset)
+				end
 			end
 		end
 	else
@@ -1990,7 +1992,9 @@ function NewRaycastWeaponBase:tweak_data_anim_offset(anim, offset, second_gun)
 			if data.animations and data.animations[unit_anim] then
 				local anim_name = data.animations[unit_anim]
 				local ids_anim_name = Idstring(anim_name)
-				data.unit:anim_set_time(ids_anim_name, offset)
+				if data.unit then
+					data.unit:anim_set_time(ids_anim_name, offset)
+				end
 			end
 		end
 	end
@@ -2104,7 +2108,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 		multiplier = multiplier * self._alt_rof_mult
 	end
 
-	if ((self:can_toggle_firemode() and not has_sharpshooter) or self._rof_mult_semi) and self:fire_mode() == "single" and not self:in_burst_mode() then
+	if not self._locked_fire_mode and ((self:can_toggle_firemode() and not has_sharpshooter) or self._rof_mult_semi) and self:fire_mode() == "single" and not self:in_burst_mode() then
 		multiplier = multiplier * (self._rof_mult_semi or 0.8)
 	end
 	

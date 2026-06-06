@@ -2488,10 +2488,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		--Zapper
 		["bm_grenade_electric_desc"] = "피해량: #{skill_color}#400## \n범위: #{skill_color}#5m## \n지연 시간: #{skill_color}#3초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- 대부분의 적을 #{skill_color}#감전 및 기절시킵니다.##\n- #{important_1}#타이탄 실드, 타이탄 테이저, 타이탄 도저, 및 캡틴은 기절에 면역입니다.## \n\n파편도 좋지만, 어떤 것들은 지져줘야죠. 이 작은 이쁜이는 고전압으로 피해를 가하는 데 꽤나 실용적인 녀석입니다.",
 		--Molotov
-		["bm_grenade_molotov_desc"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n불붙은 천이 있는 인화성 액체가 담긴 부서지는 병입니다. 저렴하고 간단하지만 매우 효과적이죠. 이걸로 전부 태워 버리세요.",
-		["bm_grenade_molotov_desc_short"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n피해량 (폭발): #{heat_warm_color}#30## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10s 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.",
+		["bm_grenade_molotov_desc"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180##  \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10초 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n불붙은 천이 있는 인화성 액체가 담긴 부서지는 병입니다. 저렴하고 간단하지만 매우 효과적이죠. 이걸로 전부 태워 버리세요.",
+		["bm_grenade_molotov_desc_short"] = "피해량 (폭발): #{heat_warm_color}#30## \n피해량 (화염): #{heat_warm_color}#3초 동안 180## \n범위 (폭발): #{skill_color}#3m## \n지연 시간: #{skill_color}#충격 시 폭발## \n피해량 (화염 지대): #{heat_warm_color}#10초 동안 1200## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.",
 		--Incendiary
-		["bm_grenade_fir_com_desc"] = "피해량 (폭발): #{heat_warm_color}#120## \n범위 (폭발): #{skill_color}#4.5m## \n지연 시간: #{skill_color}#2.5s## \n피해량 (화염 지대): #{heat_warm_color}#12s 동안 1400##\n피해량 (화염 지대): #{heat_warm_color}#12초 동안 1400## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n자연적으로 발화되는 인을 담은 수류탄입니다. 벽이나 모퉁이를 이용해 적에게 효과적으로 던질 수 있죠.",
+		["bm_grenade_fir_com_desc"] = "피해량 (폭발): #{heat_warm_color}#120## \n범위 (폭발): #{skill_color}#4.5m## \n지연 시간: #{skill_color}#2.5s## \n피해량 (화염 지대): #{heat_warm_color}#12초 동안 1400## \n범위 (화염 지대): #{skill_color}#3.75m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#50%## 확률로 적을 #{heat_warm_color}#불태워## 대부분의 적을 공포감에 빠트립니다.\n\n자연적으로 발화되는 인을 담은 수류탄입니다. 벽이나 모퉁이를 이용해 적에게 효과적으로 던질 수 있죠.",
 		--Concussion
 		["bm_concussion_desc"] = "범위: #{skill_color}#10m##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- 최대 #{skill_color}#4초## 동안 적을 기절시킵니다.\n- 적의 명중률이 #{skill_color}#7초## 동안 #{skill_color}#50%## 감소합니다. \n- #{important_1}#타이탄 실드, 타이탄 불도저 및 캡틴은 기절 효과에 면역입니다.## \n\n이 조그맣고 짜릿한 녀석은 적들을 깜짝 놀래켜서, 그들을 처리할 기회를 더 줍니다.",
 		--Gas
@@ -5889,7 +5889,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--More Blood to Bleed--
 				["menu_iron_man_beta_sc"] = "아직 흘릴 피가 남아 있어",
-				["menu_iron_man_beta_desc_sc"] = "베이식: #{owned}#$basic##\n추가 체력 #{skill_color}#$skill_value_b1##을 얻습니다.\n\n에이스: #{owned}#$pro##\n추가로 #{skill_color}#$skill_value_p1##의 추가 체력을 얻습니다.",
+				["menu_iron_man_beta_desc_sc"] = "베이식: #{owned}#$basic##\n체력이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n체력이 추가로 #{skill_color}#$skill_value_p1## 증가합니다.",
 
 				--Bullseye--
 				["menu_prison_wife_beta_sc"] = "불스아이",

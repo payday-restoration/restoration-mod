@@ -165,7 +165,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModMeleeChargeBDescID"] = "",				
 				
 			["RestorationModWEAPONINPUTSOptionsButtonTitleID"] = "입력 옵션",
-			["RestorationModWEAPONINPUTSOptionsButtonDescID"] = "무기 입력에 대한 옵션을 엽니다.",				
+			["RestorationModWEAPONINPUTSOptionsButtonDescID"] = "무기 입력에 대한 옵션을 엽니다.",
+				["RestorationModFULLYSEMIAUTOMATICTitleID"] = "반자동 및 점사 무기 자동 발사",
+				["RestorationModFULLYSEMIAUTOMATICDescID"] = "반자동 및 점사 무기를 발사 버튼을 누르고 있을 때 자동으로 발사할지 여부를 활성화 혹은 비활성화합니다. 수동 입력은 여전히 ​​가능하며, 더 빠르게 발사할 수 있습니다.",			
 				["RestorationModQueuedShootingTitleID"] = "버퍼 사격 입력",
 				["RestorationModQueuedShootingDescID"] = "반자동 및 오버샘플링(무기 발사 속도보다 입력을 빠르게 전송)을 지원하는 무기의 사격 입력 버퍼링을 활성화 혹은 비활성화합니다. 이 기능을 활성화하면 Overkill의 사격 입력 버퍼링이 비활성화됩니다.",
 				["RestorationModQueuedShootingWindowTitleID"] = "단발 버퍼 감도",
@@ -186,8 +188,17 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModSeparateBowADSDescID"] = "활로 화살을 당낄 때 강제 조준 기능을 비활성화합니다. 해당 옵션이 활성화된 경우에는 재장전 키를 눌러 당겨진 화살을 내릴 수 있습니다.",
 				["RestorationModSprintCancelTitleID"] = "회피 에이스 효과의 달리기 재장전 취소",
 				["RestorationModSprintCancelDescID"] = "\"회피\" 스킬을 에이스까지 습득했을 때, 달리기를 *시작할 때* 재장전을 취소할지 여부를 설정합니다. 달리기 중 재장전은 영향을 받지 않습니다.",				
-				["RestorationModManualReloadsTitleID"] = AFR and "수동 재장전 (모드 충돌)" or "수동 재장전",
-				["RestorationModManualReloadsDescID"] = AFR and "\"Auto Fire & Reload\" 모드가 설치되어 있어 해당 옵션을 사용할 수 없습니다." or "탄창이 비어 있을 때 자동 재장전을 비활성화합니다. 주의: \"재장전 마라톤\" 뮤테이터가 활성화되어 있으면 해당 설정은 무시됩니다.",
+				["RestorationModManualReloadsTitleID"] = "재장전 방식",
+				["RestorationModManualReloadsDescID"] = "재장전 방식을 변경합니다\n아래 버튼 위에 마우스를 올려놓으면 각 기능에 대한 설명을 볼 수 있습니다.",
+					["reload_type_default"] = "바닐라",
+					["RestorationModManualReloadsDEFAULTTitleID"] = "바닐라",
+					["RestorationModManualReloadsDEFAULTDescID"] = "무기의 탄창이 비면 자동으로 재장전합니다. 자동 재장전 도중 중단되거나 시작되지 않을 경우, 재장전 혹은 발사 입력으로 재장전해야 합니다.",
+					["reload_type_automatic"] = "자동",
+					["RestorationModManualReloadsAUTOMATICTitleID"] = "자동",
+					["RestorationModManualReloadsAUTOMATICDescID"] = "무기의 탄창이 비면 항상 자동으로 재장전합니다.",
+					["reload_type_manual"] = "수동",
+					["RestorationModManualReloadsMANUALTitleID"] = "수동",
+					["RestorationModManualReloadsMANUALDescID"] = "재장전을 할려면 수동으로 \"재장전\" 해야합니다.\n주의: \"재장전 마라톤\" 뮤테이터가 활성화된 경우 해당 설정이 강제 적용됩니다.",
 
 			["RestorationModWEAPONSOUNDSOptionsButtonTitleID"] = "사운드 옵션",
 			["RestorationModWEAPONSOUNDSOptionsButtonDescID"] = "무기 사운드에 대한 옵션을 엽니다.",
@@ -2848,7 +2859,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Spec Ops
 				["bm_mp7_sc_desc"] = "경량 기관단총이며 Project-90 기관단총의 경쟁 총기입니다. 일부 매체에서 그렇게 믿게 할 수도 있겠지만, 총열 하부에 유탄 발사기는 장착되어 있지 않습니다.\n\n#{skill_color}#무기 피해량의 75%가 방탄복을 관통하여 가합니다.##",
 				--T3K Urban
-				["bm_tec9_sc_desc"] = "미국 남동부 전역의 다양한 갱단원과 카르텔이 신뢰성을 입증한, 저렴하면서도 연사력이 뛰어난 고전적인 기관단총입니다.",
+				["bm_tec9_sc_desc"] = "미국 남동부 전역의 다양한 갱단원과 카르텔이 신뢰성을 입증한, 저렴하면서도 높은 연사력을 가진 고전적인 기관단총입니다.",
 
 				--Heather
 				["bm_sr2_sc_desc"] = "특수한 9×21mm 탄을 사용하는 Heather 기관단총은 Project-90과 SpecOps-7 기관단총에 대한 러시아의 대답입니다.\n\n#{skill_color}#무기 피해량의 75%가 방탄복을 관통하여 가합니다.##",
@@ -5573,9 +5584,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_CG22_desc"] = "하이스트에 크리스마스 트리가 스폰되어 선물을 으깨거나 하이루딘에게 줄 수 있습니다.",
 		["mutator_CG22_longdesc"] = "PAYDAY 2 2022년 크리스마스 이벤트:\n\n하이스트에 나타나는 크리스마스 트리는 크리스마스 선물을 떨어뜨립니다. 크리스마스 선물은 하이스트 도중에 분쇄하여 일시적인 버프를 받거나, 하이루딘에게 주어 보너스 경험치, 현금 또는 컨티넨탈 코인를 얻을 수 있습니다. 둘 중 하나를 수행하면 일정 확률로 냉기 방사기를 사용하는 스노우맨 도저가 스폰합니다.",
 
-		["mutator_thecandlesburnoutforyou"] = AFR and "재장전 마라톤 (모드 충돌)" or "재장전 마라톤",
-		["mutator_thecandlesburnoutforyou_desc"] = AFR and "\"Auto Fire & Reload\" 모드가 설치되어 있어 해당 뮤테이터를 사용할 수 없습니다." or "자동 재장전을 비활성화 하며, 탄창이 비었을 때 수동으로 재장전해야 합니다.",
-		["mutator_thecandlesburnoutforyou_longdesc"] = AFR and "\"Auto Fire & Reload\" 모드가 설치되어 있어 해당 뮤테이터를 사용할 수 없습니다." or "자동 재장전을 비활성화 하며, 탄창이 비었을 때 수동으로 재장전해야 합니다.",
+		["mutator_thecandlesburnoutforyou"] = "재장전 마라톤",
+		["mutator_thecandlesburnoutforyou_desc"] = "자동 재장전을 비활성화 하며, 탄창이 비었을 때 수동으로 재장전해야 합니다.",
+		["mutator_thecandlesburnoutforyou_longdesc"] = "자동 재장전을 비활성화 하며, 탄창이 비었을 때 수동으로 재장전해야 합니다.",
 
 		["mutator_letthesleepinggoddie"] = "탄창 희생",
 		["mutator_letthesleepinggoddie_desc"] = "비어 있지 않은 탄창을 재장전할 시 이전 탄창의 탄약이 사라집니다.",
@@ -6332,11 +6343,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck13_9_desc_sc"] = "적을 처치하면 장착한 방탄복에 따라 방탄복 회복 속도가 증가합니다. 중량 방탄복은 경량 방탄복보다 보너스가 적습니다. 이 보너스는 방탄복이 회복될 때마다 초기화됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--THIS IS WAR BABY--
-		["menu_deck14_1_desc_sc"] = "당신이 가한 피해는 히스테리아 스택으로 변환됩니다. 최대 스택은 ##$perk_value_1## 입니다.\n\n히스테리아 스택:\n##$perk_value_3##의 히스테리아 스택당 받는 피해가 ##$perk_value_2## 감소합니다. 히스테리아 스택은 ##8##초마다 ##$perk_value_4##씩 감소합니다.",
-		["menu_deck14_3_desc_sc"] = "당신의 팀원도 히스테리아 스택의 효과를 받습니다.\n\n여러 팀원으로부터 나오는 히스테리아 스택은 중첩되지 않으며, 가장 높은 피해 감소량을 제공하는 스택만 적용됩니다.\n\n회피율이 ##$perk_value_1## 증가합니다.",
+		["menu_deck14_1_desc_sc"] = "당신이 가한 피해가 히스테리아 스택으로 변환됩니다. 최대 스택은 ##$perk_value_1## 입니다.\n\n히스테리아 스택:\n히스테리아 스택이 ##$perk_value_3##개 보유할 때마다 받는 피해가 ##$perk_value_2## 감소하고 회피 미터가 회피율의 ##$perk_value_2%##만큼 채워집니다. 히스테리아 스택은 ##8##초마다 ##$perk_value_4##씩 감소합니다.",
+		["menu_deck14_3_desc_sc"] = "당신의 팀원도 히스테리아 스택의 받는 피해 감소 효과를 받습니다.\n\n여러 팀원으로부터 나오는 히스테리아 스택은 중첩되지 않으며, 가장 높은 피해 감소량을 제공하는 스택만 적용됩니다.\n\n회피율이 ##$perk_value_1## 증가합니다.",
 		["menu_deck14_5_desc_sc"] = "히스테리아 스택의 감소치가 매 ##$perk_value_2##초마다 ##$perk_value_1##씩 감소하는 것으로 바뀝니다.\n\n당신과 당신의 팀원에게 위협을 느낀 시민은 위협을 ##$perk_value_3## 오래 받습니다.",
-		["menu_deck14_7_desc_sc"] = "이제 ##$perk_value_2##의 히스테리아 스택당 받는 피해가 ##$perk_value_1## 더 감소합니다.\n\n회피율이 추가로 ##$perk_value_3## 증가합니다.",
-		["menu_deck14_9_desc_sc"] = "당신에게 적용되는 히스테리아 스택의 피해 감소 효과가 ##$perk_value_1## 더 증가합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck14_7_desc_sc"] = "히스테리아 스택이 ##$perk_value_3##개 보유할 때마다 받는 피해 감소와 채워지는 회피 미터량이 증가합니다.\n\n회피율이 추가로 ##$perk_value_3## 증가합니다.",
+		["menu_deck14_9_desc_sc"] = "당신에게 적용되는 히스테리아 스택의 효과가 ##$perk_value_1## 더 증가합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Anarchist--
 		["menu_st_spec_15"] = "아나키스트", --there's a random space at the end of the original string

@@ -9570,6 +9570,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_mp5.timers.reload_exit_not_empty = 0.95
 						self.new_mp5.timers.reload_empty = 3.5
 						self.new_mp5.timers.reload_exit_empty = 0.7
+						self.new_mp5.fake_semi_anims = true --temp until that weird sound that plays when the semi-auto fire anim is done is removed
 					--Akimbo
 						self.x_mp5.fire_mode_data.fire_rate = 0.075
 						self.x_mp5.BURST_FIRE = false
@@ -10797,8 +10798,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m60.spin_down_t = 0.00000001
 						self.m60.timers.reload_empty = 5.87
 						self.m60.timers.reload_exit_empty = 1.75
-						self.m60.timers.reload_not_empty = 4.7
-						self.m60.timers.reload_exit_not_empty = 2.8
+						self.m60.timers.reload_not_empty = self.m60.timers.reload_empty
+						self.m60.timers.reload_exit_not_empty = self.m60.timers.reload_exit_empty
 
 					--KSP 58
 						self.par.has_description = true
@@ -10854,10 +10855,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.par.spin_up_shoot = true
 						self.par.spin_up_t = 0.1
 						self.par.spin_down_t = 0.00000001
-						self.par.timers.reload_not_empty = 6.3
 						self.par.timers.reload_empty = 6.3
 						self.par.timers.reload_exit_empty = 1.325
-						self.par.timers.reload_exit_not_empty = 1.325
+						self.par.timers.reload_not_empty = self.par.timers.reload_empty
+						self.par.timers.reload_exit_not_empty = self.par.timers.reload_exit_empty
 
 				--EMPLACEMENTS
 
@@ -10934,7 +10935,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.shuno.stats = {
 						damage = 20,
 						spread = 66,
-						recoil = 85,
+						recoil = 81,
 						spread_moving = 5,
 						zoom = 1,
 						concealment = 16,
@@ -10995,7 +10996,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m134.stats = {
 						damage = 30,
 						spread = 59,
-						recoil = 79,
+						recoil = 71,
 						spread_moving = 5,
 						zoom = 1,
 						concealment = 14,
@@ -29189,7 +29190,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pkilo.spin_up_t = 0.05
 				self.pkilo.spin_down_t = 0.00000001
 				self.pkilo.panic_suppression_chance = 0.05
-				self.pkilo.reload_speed_multiplier = 0.95
+				self.pkilo.reload_speed_multiplier = 0.9
 				self.pkilo.timers.reload_not_empty = 7.9
 				self.pkilo.timers.reload_exit_not_empty = 1.2
 				self.pkilo.timers.reload_empty = 7.9
@@ -37784,7 +37785,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.rms = weap.weapon_movement_penalty + ((1 - weap.weapon_movement_penalty) * 0.5)
 					if not table.contains(weap.categories, "lmg_moving") and not table.contains(weap.categories, "mmg_moving") and not table.contains(weap.categories, "finn_the_lmg") and not table.contains(weap.categories, "wolf_brigade") then
 						weap.sms = weap.sms / 1.2
-						weap.rms = weap.weapon_movement_penalty
+						weap.rms = weap.weapon_movement_penalty * ((table.contains(weap.categories, "mmg") and 0.5) or (table.contains(weap.categories, "minigun") and 0.25) or 1)
 						weap.zoom_recoil_reduction = 0.025
 					end
 					if table.contains(weap.categories, "lmg_moving") or table.contains(weap.categories, "mmg_moving") or table.contains(weap.categories, "finn_the_lmg") or table.contains(weap.categories, "flamethrower_lmg") then
@@ -38279,14 +38280,17 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		local hs_mult = weapon.hs_mult or 1
 		local true_shotgun = table.contains(weapon.categories, "shotgun") and not table.contains(weapon.categories, "flamethrower")
 		local has_dot = table.contains(weapon.categories, "flamethrower") or table.contains(weapon.categories, "tranq")
-		local total_dmg_mul = 1 * (((hs_mult > 1) and 1.2) or 1) * 
-			(((weapon.has_underbarrel or has_dot) and 0.8) or 1) * 
-			((table.contains(weapon.categories, "minigun") and 5) or (table.contains(weapon.categories, "mmg") and 4) or (table.contains(weapon.categories, "lmg") and 3) or (true_shotgun and 2) or 1)
+		local total_ammo_mult = (table.contains(weapon.categories, "minigun") and 5) or (table.contains(weapon.categories, "mmg") and 4) or (table.contains(weapon.categories, "lmg") and 3) or (true_shotgun and 2) or 1
+		local total_dmg_mul = 1 * (((hs_mult > 1) and 1.2) or 1) * (((weapon.has_underbarrel or has_dot) and 0.8) or 1) * total_ammo_mult
+		if total_ammo_mult and not true_shotgun then
+			weapon.ammo_ratio = total_ammo_mult
+		end
 		damage_mul = (not exclude_calcs and (damage_mul * 2)) or damage_mul
 		if not table.contains(weapon.categories, "keep_ammo_max") and not table.contains(weapon.categories, "nothing") then
 			weapon.AMMO_MAX = math.ceil((3600 * (((weapon.use_data.selection_index == 2 or weapon.use_data.selection_index == 4) and 2) or 1) * total_dmg_mul)) / ((weapon_damage * damage_mul) * hs_mult)
 		end
 	end
+
 
 	--Determine how much to multiply things by.
 	local pickup_multiplier = weapon.AMMO_MAX
@@ -38300,7 +38304,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 			pdw = 0.675,
 			typh = 0.8,
 			lmg = 0.4,
-				mmg = 0.8,
+				mmg = 0.75,
 			minigun = 0.3,
 		shotgun = 1.275, --Pickup is increased to compensate for the inconsistency of per-pellet damage
 			flamethrower = 0.7 / 1.275, --flamethrowers do not get the pickup bonus as they are not per-pellet based
@@ -38310,8 +38314,8 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 			shotgun_break = 1.08, --Heavy
 			shotgun_super = 1.11,
 		assault_rifle = 1,
-			dmr_l = 0.98,
-			dmr_h = 0.98,
+			--dmr_l = 0.98,
+			--dmr_h = 0.98,
 			snp = 0.9,
 				semi_snp = 0.95,
 				amr = 0.95,

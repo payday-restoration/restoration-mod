@@ -168,6 +168,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 
 			["RestorationModWEAPONINPUTSOptionsButtonTitleID"] = "Input Options",
 			["RestorationModWEAPONINPUTSOptionsButtonDescID"] = "Options for weapon inputs.",
+				["RestorationModFULLYSEMIAUTOMATICTitleID"] = "Auto-fire semi-auto/burst weapons",
+				["RestorationModFULLYSEMIAUTOMATICDescID"] = "Enable/disable the automatic firing of semi-auto/burst weapons while the fire input is held; manual inputs can still be used to yield a faster fire rate.",
 				["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
 				["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire). Enabling this disables Overkill's own fire input buffering.",
 				["RestorationModQueuedShootingWindowTitleID"] = "Single-Fire Buffer Sensitivity",
@@ -188,8 +190,17 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModSeparateBowADSDescID"] = "Disables forced aiming with bows when drawing an arrow. While enabled, your reload key is used to let down your drawn arrow.",
 				["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
 				["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
-				["RestorationModManualReloadsTitleID"] = AFR and "Manual Reloads (MOD CONFLICT)" or "Manual Reloads",
-				["RestorationModManualReloadsDescID"] =  AFR and "\"Auto Fire & Reload\" is installed and renders this option non-functional." or "Disables automatic reloads when you fire the last shot in your magazine. NOTE: Setting is ignored if the \"Reload Marathon\" mutator is active.",
+				["RestorationModManualReloadsTitleID"] = "Reload Behavior",
+				["RestorationModManualReloadsDescID"] =  "Change reload behaviors.\nHover over the buttons below to see a description of each behavior.",
+					["reload_type_default"] = "Vanilla",
+					["RestorationModManualReloadsDEFAULTTitleID"] = "Vanilla - Hover for info",
+					["RestorationModManualReloadsDEFAULTDescID"] = "You will auto-reload when you empty you weapon's magazine; if the auto-reload is interrupted or otherwise cannot start, it must be manually started with a reload/fire input.",
+					["reload_type_automatic"] = "Automatic",
+					["RestorationModManualReloadsAUTOMATICTitleID"] = "Automatic - Hover for info",
+					["RestorationModManualReloadsAUTOMATICDescID"] = "Always attempt an auto-reload when your weapon's mag is empty.",
+					["reload_type_manual"] = "Manual",
+					["RestorationModManualReloadsMANUALTitleID"] = " Manual - Hover for info",
+					["RestorationModManualReloadsMANUALDescID"] = "The reload process requires the manual use of your \"reload\" input in order to be started.\n NOTE: This setting is forced if the \"Reload Marathon\" mutator is active.",
 
 			["RestorationModWEAPONSOUNDSOptionsButtonTitleID"] = "Sound Options",
 			["RestorationModWEAPONSOUNDSOptionsButtonDescID"] = "Options for weapon sounds.",
@@ -2897,7 +2908,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--Spec Ops
 				["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 				--T3K Urban
-				["bm_tec9_sc_desc"] = "A classic, cheap high-firerate SMG thats reliability has been demonstrated by various gangbangers and cartels all across the southeastern United States.",
+				["bm_tec9_sc_desc"] = "A classic, cheap high fire rate SMG thats reliability has been demonstrated by various gangbangers and cartels all across the southeastern United States.",
 
 				--Heather
 				["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the Heather SMG is the Russian answer to the Project-90 and SpecOps-7 SMGs.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
@@ -5620,9 +5631,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 		["mutator_CG22_desc"] = "Some heists will have a christmas tree that spawns presents to shred or give to Hajrudin.",
 		["mutator_CG22_longdesc"] = "PAYDAY 2 2022 Christmas Event:\n\nChristmas Trees that appear on some heists will drop Christmas presents. Christmas Presents can either be shredded for temporary buffs during the heist, or given to Hajrudin for bonus XP, Cash, or Continental Coins. Doing either has a chance to spawn the Freeze-Thrower wielding Snowman Dozer.",
 
-		["mutator_thecandlesburnoutforyou"] =  AFR and "Reload Marathon (MOD CONFLICT)" or "Reload Marathon",
-		["mutator_thecandlesburnoutforyou_desc"] = AFR and "\"Auto Fire & Reload\" is installed and renders this mutator non-functional." or "Disables the auto-reload that occurs when emptying your magazine; Reloads require a manual input",
-		["mutator_thecandlesburnoutforyou_longdesc"] = AFR and "\"Auto Fire & Reload\" is installed and renders this mutator non-functional." or "Disables the auto-reload that occurs when emptying your magazine; Reloads require a manual input",
+		["mutator_thecandlesburnoutforyou"] = "Reload Marathon",
+		["mutator_thecandlesburnoutforyou_desc"] = "Disables the auto-reload that occurs when emptying your magazine; Reloads require you manually press your reload input",
+		["mutator_thecandlesburnoutforyou_longdesc"] = "Disables the auto-reload that occurs when emptying your magazine; Reloads require you manually press your reload input",
 
 		["mutator_letthesleepinggoddie"] = "Magazine Martyr",
 		["mutator_letthesleepinggoddie_desc"] = "Upon a non-empty reload, ammo from the previous magazine is lost.",
@@ -6378,11 +6389,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck13_9_desc_sc"] = "Killing an enemy speeds up your armor recovery speed depending on your equipped armor. Heavier armors gain a smaller bonus than lighter armors. This bonus is reset whenever your armor recovers.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--THIS IS WAR BABY--
-		["menu_deck14_1_desc_sc"] = "Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##$perk_value_1.##\n\nHysteria Stacks:\nIncoming damage is reduced by ##$perk_value_2## point for every ##$perk_value_3## stacks of Hysteria. Hysteria Stacks decay by ##$perk_value_4## every ##8## seconds.",
-		["menu_deck14_3_desc_sc"] = "Members of your crew also gains the effect of your Hysteria Stacks.\n\nHysteria Stacks from multiple crew members do not stack and only the stacks that give the highest damage absorption will have an effect.\n\nYou gain ##$perk_value_1## dodge points.",
+		["menu_deck14_1_desc_sc"] = "Damage you deal is converted into Hysteria Stacks. The max amount of stacks you can have is ##$perk_value_1.##\n\nHysteria Stacks:\nFor every ##$perk_value_3## stacks of Hysteria you have, you gain ##$perk_value_2## point of damage absorption and your dodge meter fills up by ##$perk_value_2%## of your dodge. Hysteria Stacks decay by ##$perk_value_4## every ##8## seconds.",
+		["menu_deck14_3_desc_sc"] = "Members of your crew also gain the damage absorption effects of your Hysteria Stacks.\n\nHysteria Stacks from multiple crew members do not stack and only the stacks that give the highest damage absorption will have an effect.\n\nYou gain ##$perk_value_1## dodge points.",
 		["menu_deck14_5_desc_sc"] = "Changes the decay of your Hysteria Stacks to ##$perk_value_1## every ##$perk_value_2## seconds.\n\nCivilians intimidated by you and your crew remain intimidated ##$perk_value_3## longer.",
-		["menu_deck14_7_desc_sc"] = "Incoming damage is now reduced by ##$perk_value_1## point for every ##$perk_value_2## stacks of Hysteria.\n\nYour dodge is increased by an additional ##$perk_value_3## points.",
-		["menu_deck14_9_desc_sc"] = "Hysteria stacks are ##$perk_value_1## more potent for you.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck14_7_desc_sc"] = "You instead gain damage absorption and dodge regen for every ##$perk_value_2## stacks of Hysteria you have.\n\nYour dodge is increased by an additional ##$perk_value_3## points.",
+		["menu_deck14_9_desc_sc"] = "Your Hysteria stacks are ##$perk_value_1## more potent for you.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Anarchist--
 		["menu_st_spec_15"] = "Anarchist", --there's a random space at the end of the original string

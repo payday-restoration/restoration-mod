@@ -340,6 +340,7 @@ function HuskPlayerMovement:anim_cbk_spawn_melee_item(unit, graphic_object)
 	end
 
 	local align_obj = self._unit:get_object(align_obj_name)
+	if not align_obj then return end
 	local peer_id = managers.network:session():peer_by_unit(self._unit):id()
 	local peer = managers.network:session():peer(peer_id)
 	local melee_entry = peer:melee_id()

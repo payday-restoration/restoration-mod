@@ -842,6 +842,12 @@ restoration.queued_impact_effects_type = {
 	--All weapons have their impact FX all put into a queue for sequential playback at the cost of having impact playback potentially lagging behind if too many get queued too quickly
 }
 
+restoration.reload_type = {
+	"reload_type_default",
+	"reload_type_automatic",
+	"reload_type_manual"
+}
+
 restoration.nvgcolor = {
 	"resmod_nvg_default",
 	"resmod_nvg_blue"

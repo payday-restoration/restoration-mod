@@ -56,6 +56,63 @@ function PlayerStandard:init(unit)
 	end
 end
 
+local _get_input_old = PlayerStandard._get_input
+function PlayerStandard:_get_input(t, ...)
+	local input = _get_input_old(self, t, ...)
+
+	if input then
+		self:_fullysemiautomatic(t, input)
+	end
+
+	return input
+end
+
+--Based off of Hoppip's Auto-Fire & Reload code
+function PlayerStandard:_fullysemiautomatic(t, input)
+	local pressed = self._controller:get_any_input_pressed()
+	local released = self._controller:get_any_input_released()
+	local downed = self._controller:get_any_input()
+	local any_input = pressed or released or downed
+	if input and AFR then --Intercepts AFR inputs to have them go back to using actual player inputs
+		if input.btn_reload_press then
+			input.btn_reload_press = pressed and self._controller:get_input_pressed("reload")
+		end
+		if input.btn_primary_attack_press then
+			if self._single_shot_autofire then
+				input.btn_primary_attack_press = pressed and self._controller:get_input_pressed("primary_attack")
+			else
+				input.btn_primary_attack_press = any_input and self._controller:get_input_pressed("primary_attack")
+			end
+		end
+	end
+	local penis_music = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/FULLYSEMIAUTOMATIC")
+	local martyrdommy = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/ManualReloads") or 1
+	if self._equipped_unit then
+		local weap_base = self._equipped_unit:base()
+		local action_forbidden
+		if weap_base then
+			local can_reload = weap_base.clip_empty and weap_base:clip_empty() and (self.RUN_AND_RELOAD or not self._running) 
+			if martyrdommy == 2 and can_reload then
+				action_forbidden = weap_base:out_of_ammo() --[[and not self:_is_using_bipod()]] or tweak_data.weapon.stat_info.reload_marathon
+				if can_reload and not action_forbidden then
+					input.btn_reload_press = true
+				end
+			elseif penis_music then
+				action_forbidden = self:_is_reloading() or weap_base.charge_multiplier or weap_base:out_of_ammo() or weap_base:clip_empty()
+				if input.btn_primary_attack_state and not action_forbidden then
+					local fire_rate = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier(true)
+					local burst_mult = (weap_base:in_burst_mode() and 4) or 1
+					local delay = 0.25 * burst_mult
+					if t >= weap_base._next_fire_allowed + math.min((fire_rate * delay), 0.1 * burst_mult) then
+						input.btn_primary_attack_press = true
+					end
+				end
+			end
+		end
+	end
+	return input
+end
+
 --Allows night vision to be used with any mask.
 function PlayerStandard:set_night_vision_state(state)
 	local mask_id = managers.blackmarket:equipped_mask().mask_id
@@ -1108,7 +1165,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 				if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 					force_ads_recoil_anims = nil
 				end
-				local manual_reloads = tweak_data.weapon.stat_info.reload_marathon or restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/ManualReloads")
+				local manual_reloads = (tweak_data.weapon.stat_info.reload_marathon and 3) or restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/ManualReloads") or 1
 				local queue_inputs = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/QueuedShooting")
 				local queue_window = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/QueuedShootingWindow") or 0.5
 				local queue_exlude = restoration.Options:GetValue("WEAPONS/WEAPONINPUTS/QueuedShootingExclude") or 0.6
@@ -1134,7 +1191,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					self._queue_burst = nil
 					self._queue_fire = nil
 
-					if params and params.no_reload or self:_is_using_bipod() --[[or is_pro]] or manual_reloads then
+					if params and params.no_reload or self:_is_using_bipod() --[[or is_pro]] or manual_reloads == 3 then
 						if input.btn_primary_attack_press then
 							weap_base:dryfire()
 						end
@@ -1577,7 +1634,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 							DelayedCalls:Add("clip_empty", 0.1, function ()
 								if not alive(self._unit) then return end
-								if not self.tased and not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self:_is_reloading() and weap_base:clip_empty() and not manual_reloads then
+								if not self.tased and not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self:_is_reloading() and weap_base:clip_empty() and manual_reloads ~= 3 then
 									self:_start_action_reload_enter(t + 0.1)
 								end
 							end)

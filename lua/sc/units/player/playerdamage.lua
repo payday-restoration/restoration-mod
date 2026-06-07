@@ -1724,6 +1724,13 @@ function PlayerDamage:cloak_or_shock_incap(damage)
 	self._keep_health_on_revive = true
 end
 
+function PlayerDamage:get_cocaine_stacks()
+	local pm = managers.player
+	local cocaine_dodge_regen = ((pm:get_local_cocaine_damage_absorption_ratio() or 0) / 10) * pm:upgrade_value("player", "cocaine_stack_absorption_multiplier", 1)
+
+	return cocaine_dodge_regen
+end
+
 Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, unit, t, dt)
 	local pm = managers.player
 	self._in_smoke_bomb = 0.0
@@ -1795,6 +1802,14 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	elseif self._in_smoke_bomb == 1.0 and self._selected_smoke_screen then
 		passive_dodge = passive_dodge + self._selected_smoke_screen:dodge_bonus()
 	end
+
+	--Maniac
+	if managers.player:has_category_upgrade("player", "cocaine_stacking") then
+		local cocaine_dodge_regen = self:get_cocaine_stacks()
+
+		passive_dodge = passive_dodge + cocaine_dodge_regen
+	end
+
 
 	if alive(self._unit) and self._unit.movement and self._unit:movement() then
 		local unit_movement = self._unit:movement() 

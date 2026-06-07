@@ -9852,6 +9852,14 @@ end
 						}
 					end
 				end
+
+				self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_hamr_reddot = {
+					parent = "magazine_extra"
+				}
+				self.wpn_fps_lmg_mg42.override.wpn_fps_upg_o_atibal_reddot = {
+					parent = "magazine_extra"
+				}
+
 				self.wpn_fps_lmg_mg42.override.wpn_fps_snp_mosin_rail = { parent = "magazine_extra" }
 				self.wpn_fps_lmg_mg42.override.wpn_fps_upg_ns_ass_filter = {
 					a_obj = "a_ns",
@@ -14103,10 +14111,10 @@ end
 					rof_mult = 0.45333333,
 					ads_speed_mult = 1.277777,
 					tweak_categories = {"snp", "semi_snp"},
-					alt_ammo_pickup_min_mul = 0.5410536307,
-					alt_ammo_pickup_max_mul = 0.5525510204,
-					ammo_pickup_min_mul = 0.5410536307,
-					ammo_pickup_max_mul = 0.5525510204,
+					alt_ammo_pickup_min_mul = 0.5302325581,
+					alt_ammo_pickup_max_mul = 0.5415,
+					ammo_pickup_min_mul = 0.5302325581,
+					ammo_pickup_max_mul = 0.5415,
 					damage_min_mult = 0.6667,
 					sms = 0.5,
 					alt_desc = "bm_shak12_sc_oden_desc",
@@ -25167,10 +25175,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				{1, 1.3},
 				2
 			},
-			alt_ammo_pickup_min_mul = 0.5410536307,
-			alt_ammo_pickup_max_mul = 0.5525510204,
-			ammo_pickup_min_mul = 0.5410536307,
-			ammo_pickup_max_mul = 0.5525510204,
+			alt_ammo_pickup_min_mul = 0.5302325581,
+			alt_ammo_pickup_max_mul = 0.5415,
+			ammo_pickup_min_mul = 0.5302325581,
+			ammo_pickup_max_mul = 0.5415,
 			falloff_start_mult = 1.30,
 			falloff_end_mult = 1.30
 		},
@@ -26204,10 +26212,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			tweak_categories = {"snp", "semi_snp"},
 			damage_min_mult = 0.5,
 			sms = 0.5,
-			alt_ammo_pickup_min_mul = 0.38775510204,
-			alt_ammo_pickup_max_mul = 0.39467930029,
-			ammo_pickup_min_mul = 0.38775510204,
-			ammo_pickup_max_mul = 0.39467930029
+			alt_ammo_pickup_min_mul = 0.38,
+			alt_ammo_pickup_max_mul = 0.38678571428,
+			ammo_pickup_min_mul = 0.38,
+			ammo_pickup_max_mul = 0.38678571428
 		},
 		perks = { "fire_mode_single" },
 		internal_part = true,
@@ -55166,14 +55174,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount = {
 		adds = {
 			"wpn_fps_lmg_rpk_ak_unit",
-			"wpn_fps_gre_arbiter_o_standard"
+			"wpn_fps_gre_arbiter_o_standard_no_forbid"
 		},
 		override = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override)
 	}
 
-
 	for part_id, i in pairs(self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override) do
-		self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override[part_id].parent = "shitass"
+		if self.parts[part_id] and self.parts[part_id].type == "sight" then
+			self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override[part_id].parent = "shitass"
+		end
 	end
 
 	self.wpn_fps_lmg_rpk.override.wpn_fps_lmg_rpk_body_lowerreceiver = {

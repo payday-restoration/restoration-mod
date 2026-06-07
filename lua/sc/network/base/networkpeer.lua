@@ -73,3 +73,21 @@ end)
 -- 		func_name = 'RestorationMod__' .. func_name
 -- 	end
 -- end)
+
+
+function NetworkPeer:destroy()
+	local _ = managers.wait and managers.wait:remove_waiting(self:id())
+
+	print("[NetworkPeer:destroy]", self:id())
+
+	if self._rpc then
+		Network:reset_connection(self._rpc)
+
+		if managers.network.voice_chat.on_member_removed then
+			managers.network.voice_chat:on_member_removed(self)
+		end
+	end
+	
+	self._loading_outfit_assets = nil --add this
+	self:_unload_outfit()
+end

@@ -2745,7 +2745,7 @@ function PlayerInventoryGui:_update_info_deployable(name, slot)
 		if deployable_id == "doctor_bag" then
 			deployable_uses = tweak_data.upgrades.doctor_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "amount_increase") or 0)
 		elseif deployable_id == "ammo_bag" then
-			deployable_uses = tweak_data.upgrades.ammo_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "ammo_increase") or 0)
+			deployable_uses = (tweak_data.upgrades.ammo_bag_base + (managers.player:equiptment_upgrade_value(deployable_id, "ammo_increase") or 0)) * 100 .. "%"
 		elseif deployable_id == "trip_mine" then
 			amount_2 = (equipment_data.quantity[2] or 1) + (managers.player:equiptment_upgrade_value("shape_charge", "quantity") or 0)
 			pickup_low = equipment_data.pickup_low or pickup_low

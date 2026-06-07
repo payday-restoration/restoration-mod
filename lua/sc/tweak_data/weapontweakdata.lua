@@ -10297,10 +10297,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m249.kick = self.stat_info.kick_tables.random_left_recoil
 					self.m249.kick_pattern = {
 						{0, self.stat_info.kick_tables.random_left_recoil},
-						{6, self.stat_info.kick_tables.random_right_recoil},
-						{11, self.stat_info.kick_tables.left_recoil},
-						{18, self.stat_info.kick_tables.horizontal_recoil},
-						{25, self.stat_info.kick_tables.right_recoil},
+						{4, self.stat_info.kick_tables.random_right_recoil},
+						{9, self.stat_info.kick_tables.left_recoil},
+						{15, self.stat_info.kick_tables.horizontal_recoil},
+						{20, self.stat_info.kick_tables.right_recoil},
 						{28, self.stat_info.kick_tables.moderate_right_kick},
 						{29, self.stat_info.kick_tables.even_recoil},
 						{34, self.stat_info.kick_tables.horizontal_right_recoil},

@@ -16681,7 +16681,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.sgs.lock_slide = true
 					self.sgs.sounds.magazine_empty = "wp_rifle_slide_lock"
 					self.sgs.desc_id = "bm_ap_weapon_semi_sc_desc"
-					self.sgs.CLIP_AMMO_MAX = 0
+					self.sgs.CLIP_AMMO_MAX = 20
 					self.sgs.tactical_reload = 1
 					self.sgs.AMMO_MAX = 0
 					self.sgs.FIRE_MODE = "single"

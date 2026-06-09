@@ -2360,9 +2360,9 @@ function NewRaycastWeaponBase:enter_steelsight_speed_multiplier( mult_only )
 	local fatty = managers.player and managers.player._fat_fuck
 	if fatty and not mult_only then
 		local current_ads_time = base_transition_dur / multiplier
-		local penalty_cap = 0.8
+		local penalty_cap = 0.6
 		if current_ads_time < penalty_cap then
-			ads_time = math.min(ads_time + 0.5, penalty_cap)
+			ads_time = math.min(ads_time * 2, penalty_cap)
 		end
 		multiplier = base_transition_dur / ads_time
 	end

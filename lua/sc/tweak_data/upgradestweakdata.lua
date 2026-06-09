@@ -2675,8 +2675,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.buildup_meter_quickening = { --armor to base combo
 		{
 			combo_add_mod = 1, --base combo added per step
-			hurt_t_mod = 0.75, --hurt decay cooldown added per step
-			armor_steps = 10 --armor steps
+			hurt_t_mod = 0.25, --hurt decay cooldown added per step
+			armor_steps = 5 --armor steps
 		}
 	}
 	self.values.player.buildup_meter_terrify = { --panic

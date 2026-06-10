@@ -3689,61 +3689,62 @@ function SkillTreeTweakData:init(tweak_data)
 	local sc_wall = {
 			name_id = "menu_st_spec_18",
 			desc_id = "menu_st_spec_18_desc",
-			force_icon = 1,
-			category = {
-				"supportive",
-				"activated"
-			},
+			dlc = "character_pack_dragan",
+			category = "defensive",
 			{
 				upgrades = {
-					"player_passive_dodge_chance_1",
+					"player_damage_dampener_close_contact_1",
+					"player_close_contact_dodge_addend",
 				},
 				cost = 200,
-				icon_xy = {0, 0},
-				texture_bundle_folder = "max",
+				icon_xy = {3, 4},
 				name_id = "menu_deck18_1",
 				desc_id = "menu_deck18_1_desc_sc"
 			},
 			deck2,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_2"
+					"player_damage_dampener_close_contact_2",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
-				icon_xy = {1, 2},
+				icon_xy = {4, 4},
 				name_id = "menu_deck18_3",
 				desc_id = "menu_deck18_3_desc_sc"
 			},
 			deck4,
 			{
 				upgrades = {
-					"player_bomb_cooldown_reduction",
-					"player_corpse_dispose_amount_2"
+					"player_damage_dampener_close_contact_3",
+					"melee_stacking_hit_expire_t",
+					"melee_stacking_hit_damage_multiplier_1",
+					"player_tape_loop_duration_2"
 				},
 				cost = 1000,
-				texture_bundle_folder = "max",
-				icon_xy = {3, 0},
+				icon_xy = {5, 4},
 				name_id = "menu_deck18_5",
 				desc_id = "menu_deck18_5_desc_sc"
 			},
 			deck6,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_3"
+					"melee_stacking_hit_damage_multiplier_2",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
-				icon_xy = {3, 2},
+				icon_xy = {6, 4},
 				name_id = "menu_deck18_7",
 				desc_id = "menu_deck18_7_desc_sc"
 			},
 			deck8,
 			{
 				upgrades = {
+					"player_heal_over_time",
+					"player_melee_stacking_heal",
 					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
-				icon_xy = {0, 1},
-				texture_bundle_folder = "max",
+				icon_xy = {7, 4},
 				name_id = "menu_deck18_9",
 				desc_id = "menu_deck18_9_desc_sc"
 			}

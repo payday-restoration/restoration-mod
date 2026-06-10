@@ -2556,6 +2556,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_grenade_poison_gas_grenade_desc"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary## \nAmmo Box Return Rate: #{skill_color}#$pickup_1 to $pickup_2##\n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Medics, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once## \n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
 		["bm_grenade_poison_gas_grenade_desc_short"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary##\nAmmo Box Return Rate: #{skill_color}#$pickup_1 to $pickup_2## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Medics, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once##",
 
+		-- Old Sicario smoke grenade
+		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#6m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary##\nAmmo Box Return Rate: #{skill_color}#$pickup_1 to $pickup_2##\n- While standing inside the smoke screen, you and your allies regenerate armor #{skill_color}#100%## faster, and have your dodge points set to #{skill_color}#20## if below that\n- Your dodge meter fills up by #{skill_color}#40%## of your dodge every second while you are inside of your smoke screen\n- Allies' dodge meters fill up by #{skill_color}#20%## of their dodge every second while they are inside of your smoke screen\n- Enemies that stand in the smoke will see their accuracy reduced by #{skill_color}#75%##\n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
+
 		--Throwing Cards
 		["bm_wpn_prj_ace_desc"] = "Damage: #{skill_color}#$damage##\nAmmo Box Return Rate: #{skill_color}#$pickup_1 to $pickup_2## \n- #{skill_color}#Can be retrieved##\n- #{skill_color}#Hits and kills can trigger melee skills in the Brawler sub-tree and melee-focused perks## \n\nThrowing cards with added weight and a razor edge. A real killer hand of cards.",
 		--Throwing Stars/Shuriken
@@ -2571,7 +2574,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "Ampule",
 		["bm_grenade_damage_control"] = "Hip Flask",
-		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#6m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary## \n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
 
 		--WEAPON & ATTACHMENT DESCRIPTIONS
 		--[[ MANUFACTURERS ]]

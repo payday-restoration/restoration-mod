@@ -1184,18 +1184,6 @@ function PlayerManager:check_skills()
 		self:unregister_message(Message.OnPlayerDodge, "dodge_healing_no_armor")
 	end
 
-	if managers.blackmarket:equipped_grenade() == "smoke_screen_grenade" then
-		local function speed_up_on_kill()
-			if #managers.player:smoke_screens() == 0 then
-				managers.player:speed_up_grenade_cooldown(2)
-			end
-		end
-
-		self:register_message(Message.OnEnemyKilled, "speed_up_smoke_grenade", speed_up_on_kill)
-	else
-		self:unregister_message(Message.OnEnemyKilled, "speed_up_smoke_grenade")
-	end
-
 	self:add_coroutine("damage_control", PlayerAction.DamageControl)
 
 	if self:has_category_upgrade("snp", "graze_damage") then

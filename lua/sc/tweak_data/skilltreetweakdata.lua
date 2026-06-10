@@ -96,7 +96,10 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_civ_calming_alerts",
 		"player_detection_risk_stamina_regen",
 		"player_detection_risk_dash_count",
-		"player_armor_pickup_mul"
+		"player_armor_pickup_mul",
+		"smoke_screen_grenade",					-- From old Sicario
+		"player_sicario_multiplier",			-- From old Sicario
+		"player_smoke_screen_ally_dodge_bonus"	-- From old Sicario
 	}
 
 --[[   SKILLTREES   ]]--
@@ -3694,7 +3697,6 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
-					"smoke_screen_grenade"
 				},
 				cost = 200,
 				icon_xy = {0, 0},
@@ -3737,8 +3739,6 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_sicario_multiplier",
-					"player_smoke_screen_ally_dodge_bonus",
 					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,

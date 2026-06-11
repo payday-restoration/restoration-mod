@@ -344,6 +344,7 @@
 		<texture			path="units/pd2_mod_fucking_masks/msk_sweettooth/hair_df"/>
 		<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/sweettooth"/>
 
+		<texture			path="units/pd2_dlc_cage/masks/f1/f1_df" force="true"/>
 		<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/f1"/>
 
 		<!--Mask: Stonecold Wolf-->

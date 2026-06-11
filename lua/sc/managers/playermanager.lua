@@ -773,7 +773,7 @@ end
 function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 	local player_unit = self:player_unit()
 
-	--Stuff to trigger Infiltrator HP regen for throwables that count as melee
+	--Stuff to trigger Sicario HP regen for throwables that count as melee
 	--This stuff is here as "_check_damage_to_hot" is basically an "on damage dealt" check and I don't want to modify a currently vanilla function to have this stuff in it
 	local twb = tweak_data.blackmarket
 	local weapon_id = damage_info and damage_info.weapon_unit and damage_info.weapon_unit.base and damage_info.weapon_unit:base()._tweak_projectile_entry
@@ -812,7 +812,7 @@ function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 		return
 	end
 
-	--Load alternate heal over time tweakdata if player is using Infiltrator or Rogue.
+	--Load alternate heal over time tweakdata if player is using Sicario or Rogue.
 	local data = tweak_data.upgrades.damage_to_hot_data
 	if self:has_category_upgrade("player", "melee_stacking_heal") then
 		data = tweak_data.upgrades.melee_to_hot_data

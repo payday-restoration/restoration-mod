@@ -120,8 +120,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_grinderDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_gamblerTitleID"] = "Medical Supplies (Gambler)",
 				["RestorationModInfo_gamblerDescID"] = "Enables or disables tracking of this specific perk.",
-				["RestorationModInfo_infiltratorTitleID"] = "Life Drain (Infiltrator)",
-				["RestorationModInfo_infiltratorDescID"] = "Enables or disables tracking of this specific perk.",
+				["RestorationModInfo_sicarioTitleID"] = "Life Drain (Sicario)",
+				["RestorationModInfo_sicarioDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_sociopathTitleID"] = "Combo Meter (Sociopath)",
 				["RestorationModInfo_sociopathDescID"] = "Enables or disables tracking of this perk deck.",
 				["RestorationModInfo_survive_one_hitTitleID"] = "Oni Irezumi (Yakuza)",
@@ -6417,7 +6417,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck18_1"] = "Unseen Shadow",
 		["menu_deck18_3"] = "Agility Shield",
 		["menu_deck18_7"] = "Twitch",
-		["menu_deck18_9"] = "Smoker",
 
 		["menu_deck18_1_desc_sc"] = "When you are within #{risk}#$perk_value_1## meters of an enemy targeting you, you receive a #{skill_color}#$perk_value_2## damage reduction and gain #{skill_color}#$perk_value_3## points of dodge, both lasting for #{skill_color}#$perk_value_4## seconds after there are no enemies targeting you within range.",
 		["menu_deck18_3_desc_sc"] = "The damage reduction from being targeted is increased by an additional ##$perk_value_2.##\n\nYou gain ##$perk_value_3## dodge points.",

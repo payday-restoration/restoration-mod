@@ -75,7 +75,7 @@
 	<texture			path="guis/textures/pd2/skilltree/info_revive_damage_reduction" force="false" load="false"/> <!-- Combat Medic -->
 	<texture			path="guis/textures/pd2/skilltree/info_desperado" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_grinder" force="false" load="false"/>
-	<texture			path="guis/textures/pd2/skilltree/info_infiltrator" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_sicario" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_sociopath" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_gambler" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_body_expertise" force="false" load="false"/>
@@ -336,7 +336,7 @@
 	<texture			path="effects/particles/weapons/flashlight/e_gradient_radial2" force="true"/>
 	<texture			path="units/lights/spot_light_projection_textures/spotprojection_11_flashlight_df" force="true"/>
 
-	<!--Reduced Sicario Smoke-->	
+	<!--Reduced Smoke Screen Grenade smoke-->	
 	<effect				path="effects/particles/explosions/smoke_screen" force="true"/>
 	<!--concussion grenade depth scaling vanilla bug-->	
 	<material_config	path="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/wpn_fps_gre_pressure_husk" force="true" />

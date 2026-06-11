@@ -2334,8 +2334,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.level_5_armor_deflection_addend = {0.00}
 	self.values.player.level_6_armor_deflection_addend = {0.00}
 
-	--infiltrator stuff
-	self.infiltrator_dr_range = 1200
+	--Sicario stuff
+	self.sicario_dr_range = 1200
 	self.values.player.melee_stacking_heal = {true}
 	self.values.temporary.melee_life_leech = {
 		{0.08, 08}
@@ -2863,11 +2863,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{0.5, 2}
 	}
 	--Are these the dreamers we were told about?--
-	--sicario
+	--Smoke screen grenade data (from old Sicario)
 	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
 	self.values.player.sicario_multiplier = {0.4} --Multiplier for dodge gained per second while inside grenade.
 	self.values.player.smoke_screen_ally_dodge_bonus = {0.2} --Multiplier for dodge gained per second for allies while inside the Sicario's smoke.
-	self.values.player.bomb_cooldown_reduction = {1} --Cooldown reduction on smoke bomb for dodging.
+	self.values.player.bomb_cooldown_reduction = {1} --Cooldown reduction on smoke bomb for dodging. UNUSED
 	
 	--alcoholism is no joke
 	--stoic
@@ -3391,7 +3391,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Crook
 	self.specialization_descs[6][1] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- DR when enemy is close
 		perk_value_3 = tostring(self.values.player.passive_dodge_chance[1] * 100), -- Passive dodge increase
 		perk_value_4 = tostring(self.values.temporary.dmg_dampener_close_contact[2][2]), -- Duration of DR buff
@@ -3405,7 +3405,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring(self.on_killshot_cooldown_reduction), -- CD reduction on kill
 		perk_value_4 = tostring(self.on_killshot_cooldown_reduction_melee), -- CD reduction on melee kill
 		--perk_value_1 = tostring(self.values.player.level_2_dodge_addend[1] * 100) -- Dodge increase for vests
-		perk_value_5 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_5 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_6 = tostring(self.values.player.close_contact_dodge_addend[1] * 100) -- dodge when enemy is close
 	}
 	self.specialization_descs[6][5] = {
@@ -3449,18 +3449,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Infiltrator
 	self.specialization_descs[8][1] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[1][1]) * 100).."%", -- DR when enemy is close
 		perk_value_3 = tostring(self.values.player.close_contact_dodge_addend[1] * 100), -- dodge when enemy is close
 		perk_value_4 = tostring(self.values.temporary.dmg_dampener_close_contact[1][2]) -- DR duration when conditions are no longer met
 	}
 	self.specialization_descs[8][3] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_2 = tostring((self.values.temporary.dmg_dampener_close_contact[1][1] - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- Additional DR when enemy is close
 		perk_value_3 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[8][5] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_2 = tostring((self.values.temporary.dmg_dampener_close_contact[2][1] - self.values.temporary.dmg_dampener_close_contact[3][1]) * 100).."%", -- Additional DR when enemy is close
 		perk_value_3 = tostring(self.values.melee.stacking_hit_damage_multiplier[1] * 100).."%", -- Damage boost for melee when player hit enemy successfully
 		perk_value_4 = tostring(self.values.melee.stacking_hit_expire_t[1]), -- Time when damage boost when lost
@@ -3858,18 +3858,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Sicario
 	self.specialization_descs[18][1] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[1][1]) * 100).."%", -- DR when enemy is close
 		perk_value_3 = tostring(self.values.player.close_contact_dodge_addend[1] * 100), -- dodge when enemy is close
 		perk_value_4 = tostring(self.values.temporary.dmg_dampener_close_contact[1][2]) -- DR duration when conditions are no longer met
 	}
 	self.specialization_descs[18][3] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_2 = tostring((self.values.temporary.dmg_dampener_close_contact[1][1] - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- Additional DR when enemy is close
 		perk_value_3 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[18][5] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_2 = tostring((self.values.temporary.dmg_dampener_close_contact[2][1] - self.values.temporary.dmg_dampener_close_contact[3][1]) * 100).."%", -- Additional DR when enemy is close
 		perk_value_3 = tostring(self.values.melee.stacking_hit_damage_multiplier[1] * 100).."%", -- Damage boost for melee when player hit enemy successfully
 		perk_value_4 = tostring(self.values.melee.stacking_hit_expire_t[1]), -- Time when damage boost when lost
@@ -4082,7 +4082,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring(self.values.player.crouch_speed_multiplier_burglar[1] % 1 * 100).."%" -- Movement speed bonus when crouching
 	}
 	self.multi_choice_specialization_descs[23][9][8] = { --Infiltrator
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- Additional DR when enemy is close
 		perk_value_3 = tostring(self.values.melee.stacking_hit_damage_multiplier[1] * 100).."%", -- Damage boost for melee when player hit enemy successfully
 		perk_value_4 = tostring(self.values.melee.stacking_hit_expire_t[2]), -- Time when damage boost when lost
@@ -4167,7 +4167,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_5 = "1" -- CD reduction on kill. Not defined here (?)
 	}
 	self.multi_choice_specialization_descs[23][9][18] = { --Sicario
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- Additional DR when enemy is close
 		perk_value_3 = tostring(self.values.melee.stacking_hit_damage_multiplier[1] * 100).."%", -- Damage boost for melee when player hit enemy successfully
 		perk_value_4 = tostring(self.values.melee.stacking_hit_expire_t[2]), -- Time when damage boost when lost
@@ -5814,7 +5814,7 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.melee_stacking_hit_expire_t_2 = { --Copycat Infiltrator
+	self.definitions.melee_stacking_hit_expire_t_2 = { --Copycat Sicario
 		name_id = "menu_melee_stacking_hit_expire_t_2",
 		category = "feature",
 		upgrade = {

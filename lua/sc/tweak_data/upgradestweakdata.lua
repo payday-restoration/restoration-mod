@@ -3530,7 +3530,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[8][5] = {
         perk_value_1 = tostring(self.values.player.infiltrator_re_mark_on_kill[1] / 100), -- Re-marking distance on kill
-        perk_value_2 = tostring((self.values.player.infiltrator_extra_mark_time[2] - self.values.player.infiltrator_extra_mark_time[1]) * 100)..'%' -- Extra marking time
+        perk_value_2 = tostring((self.values.player.infiltrator_extra_mark_time[2] - self.values.player.infiltrator_extra_mark_time[1]) * 100)..'%', -- Extra marking time
+		perk_value_3 = tostring(self.sicario_dr_range / 100), -- Required range to activate the extra dodge from enemy proximity
+		perk_value_4 = tostring(self.values.player.close_contact_dodge_addend[1] * 100) -- Dodge gained from close enemy proximity
 	}
 	self.specialization_descs[8][7] = {
         perk_value_1 = tostring(self.values.player.infiltrator_default_marking_distance[1] / 100), -- Extra melee kill default mark distance

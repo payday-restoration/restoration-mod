@@ -2589,7 +2589,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_infiltrator_re_mark_on_kill",
-					"player_infiltrator_extra_mark_time_2"
+					"player_infiltrator_extra_mark_time_2",
+					"player_close_contact_dodge_addend"
 				},
 				cost = 1000,
 				icon_xy = {5, 4},

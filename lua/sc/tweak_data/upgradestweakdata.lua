@@ -2932,7 +2932,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Are these the dreamers we were told about?--
 	--Smoke screen grenade data (from old Sicario)
 	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
-	self.values.player.sicario_multiplier = {0.4} --Multiplier for dodge gained per second while inside grenade.
+	self.values.player.sicario_multiplier = {0.2} --Multiplier for dodge gained per second while inside grenade.
 	self.values.player.smoke_screen_ally_dodge_bonus = {0.2} --Multiplier for dodge gained per second for allies while inside the Sicario's smoke.
 	self.values.player.bomb_cooldown_reduction = {1} --Cooldown reduction on smoke bomb for dodging. UNUSED
 	

@@ -1172,12 +1172,6 @@ function PlayerManager:check_skills()
 		self:unregister_message(Message.OnPlayerDodge, "dodge_stack_health_regen")
 	end
 
-	if self:has_category_upgrade("player", "bomb_cooldown_reduction") then
-		self:register_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr", callback(self, self, "_dodge_smokebomb_cdr"))
-	else
-		self:unregister_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr")
-	end
-
 	if self:has_category_upgrade("player", "dodge_heal_no_armor") then
 		self:register_message(Message.OnPlayerDodge, "dodge_healing_no_armor", callback(self, self, "_dodge_healing_no_armor"))
 	else
@@ -1723,11 +1717,6 @@ end
 --Adds rogue health regen stack on dodge.
 function PlayerManager:_dodge_stack_health_regen()
 	self:player_unit():character_damage():add_damage_to_hot()
-end
-
---Cuts Sicario smock bomb cooldown on dodge.
-function PlayerManager:_dodge_smokebomb_cdr()
-	self:speed_up_grenade_cooldown(tweak_data.upgrades.values.player.bomb_cooldown_reduction[1])
 end
 
 --Fills dodge meter when headshot and/or backstab kills are done.

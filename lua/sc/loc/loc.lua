@@ -120,6 +120,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_grinderDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_gamblerTitleID"] = "Medical Supplies (Gambler)",
 				["RestorationModInfo_gamblerDescID"] = "Enables or disables tracking of this specific perk.",
+				["RestorationModInfo_intelligenceTitleID"] = "Intelligence (Infiltrator)",
+				["RestorationModInfo_intelligenceDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_sicarioTitleID"] = "Life Drain (Sicario)",
 				["RestorationModInfo_sicarioDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_sociopathTitleID"] = "Combo Meter (Sociopath)",
@@ -6327,11 +6329,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck10_9"] = "Locked-Up Medicine",
 
 		--Infiltrator--
-		["menu_deck8_1_desc_sc"] = "When you are within #{risk}#$perk_value_1## meters of an enemy targeting you, you receive a #{skill_color}#$perk_value_2## damage reduction and gain #{skill_color}#$perk_value_3## points of dodge, both lasting for #{skill_color}#$perk_value_4## seconds after there are no enemies targeting you within range.",
-		["menu_deck8_3_desc_sc"] = "The damage reduction from being targeted is increased by an additional ##$perk_value_2.##\n\nYou gain ##$perk_value_3## dodge points.",
-		["menu_deck8_5_desc_sc"] = "The damage reduction from being targeted is increased by an additional ##$perk_value_2.##\n\nEach successful melee hit grants an additional ##$perk_value_3## melee damage boost for ##$perk_value_4## seconds or until you miss; stacks up to ##$perk_value_5## times.\n\nYour camera loop duration is increased by ##$perk_value_6## seconds.",
-		["menu_deck8_7_desc_sc"] = "Each successful melee hit grants an additional ##$perk_value_1## melee damage boost for ##$perk_value_2## seconds or until you miss; stacks up to ##$perk_value_3## times.\n\nYour dodge is increased by an additional ##$perk_value_4## points.",
-		["menu_deck8_9_desc_sc"] = "Each successful melee hit heals ##$perk_value_1## health every second for ##$perk_value_2## seconds, this effect can stack up to ##$perk_value_3## times.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck8_1"] = "Recon",
+		["menu_deck8_3"] = "Prioritization",
+		["menu_deck8_5"] = "Insight",
+		["menu_deck8_7"] = "Interrogation",
+		["menu_deck8_9"] = "Callouts",
+
+		["menu_deck8_1_desc_sc"] = "Ranged kills give you a stack of intelligence. Max amount of stacks is #{skill_color}#$perk_value_1.## When you get a melee kill, you consume all of your intelligence stacks and mark all enemies around you, every stack consumed increases the mark radius on melee kill by #{skill_color}#$perk_value_2## meter.\n\nWhen you are within #{skill_color}#$perk_value_3## meters of an enemy, you receive #{skill_color}#$perk_value_4## less damage from enemies.",
+		["menu_deck8_3_desc_sc"] = "Killing marked enemies heals you for #{skill_color}#$perk_value_1## HP. Killing marked specials and elites will heal you for #{skill_color}#$perk_value_2## the amount while bulldozers and captains will heal you for #{skill_color}#$perk_value_3## the amount. If you kill an enemy with a melee attack it will heal you for what the unit is worth regardless of if it is marked or not.\n\nIncreases the duration of enemy marking by #{skill_color}#$perk_value_4.##\n\nYou gain #{skill_color}#$perk_value_5## dodge points.",
+		["menu_deck8_5_desc_sc"] = "When you kill a marked enemy, the nearest unmarked enemy within #{skill_color}#$perk_value_1## meters of the target will become marked, if no enemies are nearby that are unmarked, simply refresh the mark duration on the closest marked enemy instead if any.\n\nIncreases the duration of enemy marking by #{skill_color}#$perk_value_2.##",
+		["menu_deck8_7_desc_sc"] = "When you perform a melee kill, the distance you mark enemies around you increases by #{skill_color}#$perk_value_1## meters, and the healing you receive is increased by #{skill_color}#$perk_value_2## for each intelligence stack consumed.\n\nIncreases the duration of enemy marking by #{skill_color}#$perk_value_3.##\n\nYour dodge is increased by an additional #{skill_color}#$perk_value_4## points.",
+		["menu_deck8_9_desc_sc"] = "Enemies you mark by any means deal #{skill_color}#$perk_value_1## less damage to you and crew members.\n\n#{risk}#NOTE: This effect will not stack with multiple Infiltrator users marking the same enemy.##\n\nIncreases the duration of enemy marking by #{skill_color}#$perk_value_2.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
 
 		--Sociopath--
 		["menu_deck9_1_sc"] = "No Talk",
@@ -6417,6 +6425,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck18_1"] = "Unseen Shadow",
 		["menu_deck18_3"] = "Agility Shield",
 		["menu_deck18_7"] = "Twitch",
+		["menu_deck18_9"] = "Life Drain",
 
 		["menu_deck18_1_desc_sc"] = "When you are within #{risk}#$perk_value_1## meters of an enemy targeting you, you receive a #{skill_color}#$perk_value_2## damage reduction and gain #{skill_color}#$perk_value_3## points of dodge, both lasting for #{skill_color}#$perk_value_4## seconds after there are no enemies targeting you within range.",
 		["menu_deck18_3_desc_sc"] = "The damage reduction from being targeted is increased by an additional ##$perk_value_2.##\n\nYou gain ##$perk_value_3## dodge points.",
@@ -6564,7 +6573,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Burglar
 			["menu_deck7_mrwi_desc"] = "Your dodge is increased by an additional ##$perk_value_1## points.\n\nYour dodge meter fills up by ##$perk_value_2## of your dodge every second while crouching.\n\nYou gain a ##$perk_value_3## boost in your movement speed when crouching.",
 			--Infiltrator
-			["menu_deck8_mrwi_desc"] = "When you are within ##$perk_value_1## meters of an enemy, you recieve ##$perk_value_2## less damage from enemies.\n\nEach successful melee hit grants an additional ##$perk_value_3## melee damage boost for ##$perk_value_4## seconds or until you miss; stacks up to ##$perk_value_5## times.\n\nYour camera loop duration is increased by ##$perk_value_6## seconds.",
+			["menu_deck8_mrwi_desc"] = "Ranged kills give you a stack of intelligence. Max amount of stacks is #{skill_color}#$perk_value_1.## When you get a melee kill, you consume all of your intelligence stacks and mark all enemies around you, every stack consumed increases the mark radius on melee kill by #{skill_color}#$perk_value_2## meter.\n\nWhen you are within #{skill_color}#$perk_value_3## meters of an enemy, you receive #{skill_color}#$perk_value_4## less damage from enemies.\n\nIncreases the duration of enemy marking by #{skill_color}#$perk_value_5.##",
 			--Sociopath
 			--["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nKilling an enemy within #{skill_color}#$perk_value_2## meters regenerates an additional #{skill_color}#$perk_value_3## armor; melee kills double the amount.\n\nThis cannot occur more than once every #{important_1}#$perk_value_4## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_5## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_6## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou carry #{skill_color}#$perk_value_7## additional body bag in your inventory.",
 			["menu_deck9_mrwi_desc"] = "You gain a combo meter.\nKilling enemies with melee weapons builds up your combo meter by a base value of #{skill_color}#$perk_value_1## points, to a maximum of #{skill_color}#$perk_value_2## points.\n\nYour combo meter decays at a rate of #{important_1}#$perk_value_3## points every #{risk}#$perk_value_4## seconds.\nYou lose #{important_1}#$perk_value_5## points of combo when taking health damage; this cannot occur more than once every #{skill_color}#$perk_value_6## seconds.\nYou lose #{important_1}#$perk_value_7## points of combo when going into bleedout.\n\nEvery #{risk}#$perk_value_8## points of combo you have grants you #{skill_color}#$perk_value_9## damage resistance, to a maximum of #{skill_color}#$perk_value_10.##\n\nEvery #{risk}#$perk_value_13## points of combo you have grants you #{skill_color}#$perk_value_14## movement speed, to a maximum of #{skill_color}#$perk_value_15.##\nKilling enemies with melee weapons regenerates #{skill_color}#$perk_value_11## of your stamina.\n\nYou carry #{skill_color}#$perk_value_12## additional body bag in your inventory.",

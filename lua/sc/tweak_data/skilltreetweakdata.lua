@@ -2558,11 +2558,15 @@ function SkillTreeTweakData:init(tweak_data)
 			name_id = "menu_st_spec_8",
 			desc_id = "menu_st_spec_8_desc",
 			dlc = "character_pack_dragan",
-			category = "defensive",
+			category = {
+				"supportive",
+				"offensive"
+			},
 			{
 				upgrades = {
-					"player_damage_dampener_close_contact_1",
-					"player_close_contact_dodge_addend",
+					"player_infiltrator_stacks_on_ranged_kills",
+					"player_infiltrator_stack_to_centimetres_1",
+					"player_damage_dampener_close_contact_2"
 				},
 				cost = 200,
 				icon_xy = {3, 4},
@@ -2572,7 +2576,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_damage_dampener_close_contact_2",
+					"player_infiltrator_heal_on_kill",
+					"player_infiltrator_extra_mark_time_1",
 					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
@@ -2583,10 +2588,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_damage_dampener_close_contact_3",
-					"melee_stacking_hit_expire_t",
-					"melee_stacking_hit_damage_multiplier_1",
-					"player_tape_loop_duration_2"
+					"player_infiltrator_re_mark_on_kill",
+					"player_infiltrator_extra_mark_time_2"
 				},
 				cost = 1000,
 				icon_xy = {5, 4},
@@ -2596,7 +2599,9 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"melee_stacking_hit_damage_multiplier_2",
+					"player_infiltrator_default_marking_distance",
+					"player_infiltrator_heal_multiplier_on_melee_kill",
+					"player_infiltrator_extra_mark_time_3",
 					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
@@ -2607,9 +2612,9 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_heal_over_time",
-					"player_melee_stacking_heal",
-					"player_passive_loot_drop_multiplier_1"
+					"player_passive_loot_drop_multiplier_1",
+					"player_infiltrator_damage_penalty_on_marking",
+					"player_infiltrator_extra_mark_time_4"
 				},
 				cost = 4000,
 				icon_xy = {7, 4},

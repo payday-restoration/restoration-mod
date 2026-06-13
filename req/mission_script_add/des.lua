@@ -9,7 +9,7 @@ local snipers = ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_bravo
 local grunt_1 =  ((difficulty >= 8) and "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" or "units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
 local death_wish_above = difficulty >= 7
 local chance_weapons_vault_door_defense = math.random() < 0.15 or 0
-local chance_sneaky_cloaker_escape = math.random() < 0.15 or 0
+local chance_sneaky_cloaker_escape = math.random() < 0.4
 local optsDefend_SO = {
 	SO_access = {
         "tank",

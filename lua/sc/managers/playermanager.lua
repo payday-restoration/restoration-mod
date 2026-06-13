@@ -1419,7 +1419,7 @@ function PlayerManager:_trigger_infiltrator_mark_all_enemies_around()
 		return
 	end
 
-	local enemies = World:find_units_quick("sphere", pos, area, managers.slot:get_mask("trip_mine_targets"))
+	local enemies = World:find_units_quick("sphere", pos, area, managers.slot:get_mask("enemies"))
 	for _, unit in ipairs(enemies) do
 		managers.game_play_central:auto_highlight_enemy(unit, true, "sixth_sense")
 	end

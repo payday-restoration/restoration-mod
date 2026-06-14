@@ -1472,20 +1472,20 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Kilmer
 				--Basic
-					self.values.snp.move_spread_multiplier = {0.2}
 					self.values.assault_rifle.move_spread_multiplier = {0.2}
+					self.values.snp.move_spread_multiplier = self.values.assault_rifle.move_spread_multiplier
 				--Basic/Ace
-					self.values.snp.reload_speed_multiplier = {1.05, 1.15}
 					self.values.assault_rifle.reload_speed_multiplier = {1.05, 1.15}
+					self.values.snp.reload_speed_multiplier = self.values.assault_rifle.reload_speed_multiplier
 				--Ace
 					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.15}
-					self.values.snp.enter_steelsight_speed_multiplier = {1.15}
+					self.values.snp.enter_steelsight_speed_multiplier = self.values.assault_rifle.enter_steelsight_speed_multiplier
 					
 					self.skill_descs.heavy_impact = {
-						skill_value_b1 = tostring((1 - self.values.snp.move_spread_multiplier[1]) * 100).."%",
+						skill_value_b1 = tostring((1 - self.values.assault_rifle.move_spread_multiplier[1]) * 100).."%",
 						skill_value_b2 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed
 						skill_value_p1 = tostring((self.values.assault_rifle.reload_speed_multiplier[2] - self.values.assault_rifle.reload_speed_multiplier[1]) % 1 * 100).."%", -- Reload speed
-						skill_value_p2 = tostring(self.values.snp.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
+						skill_value_p2 = tostring(self.values.assault_rifle.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
 					}
 
 			--Rifleman
@@ -1495,24 +1495,24 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						1.0 --Aced disables the bonus as it is swapped for an accuracy increase that applies regardless of movement state
 					} 
 
-					self.values.snp.stationary_steelsight_accuracy_inc = {0.65, 1}
+					self.values.snp.stationary_steelsight_accuracy_inc = self.values.assault_rifle.stationary_steelsight_accuracy_inc
 					--Sharpshooter has the additional +2 stabilty (a requirement to even climb the sub-tree anyways)
 				--Aced
 					self.values.assault_rifle.steelsight_accuracy_inc = {
 						0.65, 
 						0.65 --unused
 					}
-					self.values.snp.steelsight_accuracy_inc = {0.65, 0.65}
+					self.values.snp.steelsight_accuracy_inc = self.values.assault_rifle.steelsight_accuracy_inc
 					self.values.assault_rifle.steelsight_range_inc = {1.25, 1.25}
-					self.values.snp.steelsight_range_inc = {1.25, 1.25}
+					self.values.snp.steelsight_range_inc = self.values.assault_rifle.steelsight_range_inc
 
-					self.values.snp.ap_bullets_min = {0.25}
 					self.values.assault_rifle.ap_bullets_min = {0.25}
+					self.values.snp.ap_bullets_min = self.values.assault_rifle.ap_bullets_min
 
 					self.skill_descs.fire_control = {
-						skill_value_b1 = tostring((1 - self.values.snp.stationary_steelsight_accuracy_inc[1]) * 100).."%", -- Stationary accuracy buff
-						skill_value_b2 = tostring(self.values.snp.recoil_index_addend[1]), --++Stabilty
-						skill_value_p1 = tostring(self.values.snp.steelsight_range_inc[2]  % 1 * 100) .."%", -- Range buff
+						skill_value_b1 = tostring((1 - self.values.assault_rifle.stationary_steelsight_accuracy_inc[1]) * 100).."%", -- Stationary accuracy buff
+						skill_value_b2 = tostring(self.values.assault_rifle.recoil_index_addend[1]), --++Stabilty
+						skill_value_p1 = tostring(self.values.assault_rifle.steelsight_range_inc[2]  % 1 * 100) .."%", -- Range buff
 						skill_value_p2 = tostring(self.values.assault_rifle.ap_bullets_min[1] % 1 * 100).."%" -- AP
 					}
 
@@ -2347,7 +2347,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		tick_time = 1,
 		total_ticks = 3,
 		max_stacks = 5,
-		stacking_cooldown = 0.1,
+		stacking_cooldown = 0.5,
 		add_stack_sources = {
 			bullet = false,
 			explosion = false,
@@ -2364,7 +2364,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.heal_over_time = {
-		0.1
+		0.08
 	}
 
 	self.values.player.passive_dodge_chance = {
@@ -2671,10 +2671,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			effect_max = 0.3,
 			melee_mult = 1,
 		},
+		{	--Rufus
+			combo_steps = 2,
+			effect = 0.015,
+			effect_max = 0.15,
+			melee_mult = 1.5,
+		},
 	}
 	self.values.player.buildup_meter_quickening = { --armor to base combo
 		{
-			combo_add_mod = 1, --base combo added per step
+			combo_add_mod = 0.5, --base combo added per step
 			hurt_t_mod = 0.25, --hurt decay cooldown added per step
 			armor_steps = 5 --armor steps
 		}
@@ -2734,16 +2740,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 		self.values.player.buildup_meter_rick = {
 			{ combo_add_mod = 2, combo_max_mod = -50, ene_mult_mod = 0.6 },
-			{ combo_add_mod = 0, combo_max_mod = -20, ene_mult_mod = 1.0  }, --Tony
-			{ combo_add_mod = 0, combo_max_mod = -40, ene_mult_mod = 1.0  } --Tony R
+			{ combo_add_mod = 0, combo_max_mod = -20, ene_mult_mod = 1.0 }, --Tony
+			{ combo_add_mod = 0, combo_max_mod = -40, ene_mult_mod = 1.0 } --Tony R
 		}
 		self.values.player.buildup_meter_swan = {{
 			combo_add = 4
 		}}
 		self.values.player.buildup_meter_mark = {{ --armor regen speed
 			combo_steps = 5,
-			effect = 0.04,
-			effect_max = 0.2,
+			effect = 0.05,
+			effect_max = 0.25,
 		}}
 
 
@@ -6254,6 +6260,15 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 5,
+			upgrade = "buildup_meter_elude",
+			category = "player"
+		}
+	}
+	self.definitions.buildup_meter_elude_6 = {
+		name_id = "menu_player_buildup_zenurik",
+		category = "feature",
+		upgrade = {
+			value = 6,
 			upgrade = "buildup_meter_elude",
 			category = "player"
 		}

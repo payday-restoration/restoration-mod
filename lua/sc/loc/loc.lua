@@ -6356,7 +6356,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck9_aubrey"] = "Aubrey",
 		["menu_deck9_aubrey_desc_sc"] = "Non-melee kills using direct damage will build up your combo by a base value of #{skill_color}#$perk_value_1## point.\n\nNon-melee kills using direct damage will only add #{risk}#$perk_value_2## seconds to the decay timer of an active combo.\nKills using #{risk}#explosives or damage-over-time effects## will #{important_1}#no longer refresh your combo decay timer.##",
 		["menu_deck9_rufus"] = "Rufus",
-		["menu_deck9_rufus_desc_sc"] = "Instead gain #{skill_color}#$perk_value_1## damage resistance for every #{risk}#$perk_value_2## points of combo you have, to a maximum of #{skill_color}#$perk_value_3.##\n\nYou lose an additional #{important_1}#$perk_value_4## points of combo when taking health damage.",
+		["menu_deck9_rufus_desc_sc"] = "Instead gain #{skill_color}#$perk_value_1## damage resistance for every #{risk}#$perk_value_2## points of combo you have, to a maximum of #{skill_color}#$perk_value_3.##\n\nYou lose an additional #{important_1}#$perk_value_4## points of combo when taking health damage and #{risk}#Overdose's dodge-on-kill## has its effects reduced by #{important_1}#50%.##",
 		["menu_deck9_zack"] = "Zack",
 		["menu_deck9_zack_desc_sc"] = "Your combo decay timer is extended by #{skill_color}#$perk_value_1## seconds; your combo decay rate is increased by #{important_1}#$perk_value_2## points.",
 		["menu_deck9_rick"] = "Rick",

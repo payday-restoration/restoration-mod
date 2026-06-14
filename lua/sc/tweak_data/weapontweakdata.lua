@@ -1990,7 +1990,7 @@ local crew_wep_preset = {
 		self.hk21_sc_npc.DAMAGE = 3
 		self.hk21_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 		self.hk21_sc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
-	    self.hk21_sc_npc.CLIP_AMMO_MAX = 100
+		self.hk21_sc_npc.CLIP_AMMO_MAX = 100
 		self.hk21_sc_npc.NR_CLIPS_MAX = 5
 		self.hk21_sc_npc.auto.fire_rate = 0.075
 		self.hk21_sc_npc.hold = "rifle"
@@ -5722,6 +5722,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload_not_empty = 2.1,
 			reload_exit_not_empty = 1.1
 		},
+		x_smg = {
+			reload_not_empty = 2.1,
+			reload_exit_not_empty = 1.5,
+			reload_empty = 3,
+			reload_exit_empty = 0.9
+		},
 		--Custom weapons
 		swhiskey = { --MW2022 SW500
 			reload_empty = 2.05,
@@ -5733,8 +5739,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	local function blanket_timer(wep_id, timer_table)
 		for reload_state, time in pairs(timer_table) do
-	       self[wep_id].timers[reload_state] = time
-	    end
+		   self[wep_id].timers[reload_state] = time
+		end
 	end
 
 	--[[     BASE WEAPONS     ]]--
@@ -8937,11 +8943,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							self.x_shepheard.sounds.fire_single = "shepheard_fire_single"
 							self.x_shepheard.sounds.fire_auto = "shepheard_fire"
 							self.x_shepheard.sounds.stop_fire = "shepheard_stop"
-							self.x_shepheard.reload_speed_multiplier = 0.65
-							self.x_shepheard.timers.reload_empty = 2.4
-							self.x_shepheard.timers.reload_exit_empty = 0.95
-							self.x_shepheard.timers.reload_not_empty = 1.4
-							self.x_shepheard.timers.reload_exit_not_empty = 1.3
+							blanket_timer("x_shepheard", shared_timers.x_smg)
 
 					--Tatonka (PP-19 Bizon)
 						--Moved to primary
@@ -9142,11 +9144,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_p90.stats_modifiers = nil
 						self.x_p90.panic_suppression_chance = 0.05
-						self.x_p90.reload_speed_multiplier = 0.6
-						self.x_p90.timers.reload_not_empty = 2.45
-						self.x_p90.timers.reload_exit_not_empty = 1.1
-						self.x_p90.timers.reload_empty = 3
-						self.x_p90.timers.reload_exit_empty = 0.9
+						blanket_timer("x_p90", shared_timers.x_smg)
 
 					--Blaster 9mm (Tec 9)
 						self.tec9.AMMO_MAX = 90
@@ -9275,11 +9273,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_baka.stats_modifiers = nil
 						self.x_baka.panic_suppression_chance = 0.05
-						self.x_baka.reload_speed_multiplier = 0.75
-						self.x_baka.timers.reload_empty = 3
-						self.x_baka.timers.reload_not_empty = 2
-						self.x_baka.timers.reload_exit_empty = 0.95
-						self.x_baka.timers.reload_exit_not_empty = 1.3
+						blanket_timer("x_baka", shared_timers.x_smg)
 
 					--CMP (MP9)
 						self.mp9.desc_id = "bm_menu_sc_mp9_desc"
@@ -9425,11 +9419,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_sr2.can_shoot_through_wall = false
 						self.x_sr2.hs_mult = 1.2
 						self.x_sr2.panic_suppression_chance = 0.05
-						self.x_sr2.reload_speed_multiplier = 0.75
-						self.x_sr2.timers.reload_not_empty = 2.1
-						self.x_sr2.timers.reload_exit_not_empty = 1.5
-						self.x_sr2.timers.reload_empty = 3
-						self.x_sr2.timers.reload_exit_empty = 0.9
+						blanket_timer("x_sr2", shared_timers.x_smg)
 						self.x_sr2.weapon_hold = "x_akmsu"
 						self.x_sr2.animations.reload_name_id = "x_akmsu"
 						self.x_sr2.animations.second_gun_versions = self.x_sr2.animations.second_gun_versions or {}
@@ -9514,11 +9504,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_scorpion.stats_modifiers = nil
 						self.x_scorpion.panic_suppression_chance = 0.05
-						self.x_scorpion.reload_speed_multiplier = 0.75
-						self.x_scorpion.timers.reload_not_empty = 2.1
-						self.x_scorpion.timers.reload_exit_not_empty = 1.5
-						self.x_scorpion.timers.reload_empty = 3
-						self.x_scorpion.timers.reload_exit_empty = 0.9
+						blanket_timer("x_scorpion", shared_timers.x_smg)
 
 					--Compact-5
 						self.new_mp5.fire_mode_data.fire_rate = 0.075
@@ -9565,7 +9551,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.new_mp5.stats_modifiers = nil
 						self.new_mp5.panic_suppression_chance = 0.05
-						self.new_mp5.reload_speed_multiplier = 1.025
+						self.new_mp5.reload_speed_multiplier = 1.08
+						self.new_mp5.reload_not_empty_speed_multiplier = 1.20
 						self.new_mp5.timers.reload_not_empty = 2.3
 						self.new_mp5.timers.reload_exit_not_empty = 0.95
 						self.new_mp5.timers.reload_empty = 3.5
@@ -9610,11 +9597,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_mp5.stats_modifiers = nil
 						self.x_mp5.panic_suppression_chance = 0.05
-						self.x_mp5.reload_speed_multiplier = 0.65
-						self.x_mp5.timers.reload_empty = 2.6
-						self.x_mp5.timers.reload_not_empty = 1.7
-						self.x_mp5.timers.reload_exit_empty = 0.75
-						self.x_mp5.timers.reload_exit_not_empty = 1.1
+						blanket_timer("x_mp5", shared_timers.x_smg)
 
 					--Jacket's Piece (M11/9)
 						self.cobray.CLIP_AMMO_MAX = 32
@@ -9704,11 +9687,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_cobray.spin_up_t = 0.05
 						self.x_cobray.spin_down_t = 0.0000000001
 						self.x_cobray.panic_suppression_chance = 0.05
-						self.x_cobray.reload_speed_multiplier = 0.8
-						self.x_cobray.timers.reload_not_empty = 2.1
-						self.x_cobray.timers.reload_exit_not_empty = 1.5
-						self.x_cobray.timers.reload_empty = 3
-						self.x_cobray.timers.reload_exit_empty = 0.9
+						blanket_timer("x_cobray", shared_timers.x_smg)
 
 			--[[     HEAVY SMGs     ]]
 
@@ -9795,6 +9774,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 25
 						}
 						self.erma.stats_modifiers = nil
+						self.erma.lock_slide_alt = true
 						self.erma.sounds.spin_start = "wp_mac10_lever_pull"
 						self.erma.spin_up_shoot = true
 						self.erma.spin_up_semi = true
@@ -10076,11 +10056,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_mac10.spin_up_shoot = true
 						self.x_mac10.spin_up_t = 0.05
 						self.x_mac10.spin_down_t = 0.0000000001
-						self.x_mac10.reload_speed_multiplier = 0.75
-						self.x_mac10.timers.reload_empty = 3
-						self.x_mac10.timers.reload_not_empty = 2
-						self.x_mac10.timers.reload_exit_empty = 0.95
-						self.x_mac10.timers.reload_exit_not_empty = 1.3
+						blanket_timer("x_mac10", shared_timers.x_smg)
 
 					--Uzi
 						--Let's assume it's in .41AE
@@ -10177,10 +10153,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_uzi.spin_up_t = 0.07
 						self.x_uzi.spin_down_t = 0.0000000001
 						self.x_uzi.reload_speed_multiplier = 0.75
-						self.x_uzi.timers.reload_empty = 3
-						self.x_uzi.timers.reload_not_empty = 2
-						self.x_uzi.timers.reload_exit_empty = 0.95
-						self.x_uzi.timers.reload_exit_not_empty = 1.3
+						blanket_timer("x_uzi", shared_timers.x_smg)
 
 					--chicago typewriter
 						self.m1928.use_data.selection_index = 1
@@ -10712,8 +10685,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hcar.kick = self.stat_info.kick_tables.random_right_recoil
 						self.hcar.kick_pattern = {
 							{0, self.stat_info.kick_tables.random_right_recoil},
-							{10, self.stat_info.kick_tables.pattern_l2},
-							{12, self.stat_info.kick_tables.vertical_kick},
+							{7, self.stat_info.kick_tables.pattern_l2},
+							{10, self.stat_info.kick_tables.vertical_kick},
 							{16, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.hcar.supported = true
@@ -10816,10 +10789,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.par.kick = self.stat_info.kick_tables.random_left_recoil
 						self.par.kick_pattern = {
 							{0, self.stat_info.kick_tables.random_left_recoil},
-							{10, self.stat_info.kick_tables.left_recoil},
-							{20, self.stat_info.kick_tables.even_recoil},
-							{25, self.stat_info.kick_tables.moderate_left_kick},
-							{36, self.stat_info.kick_tables.even_recoil},
+							{7, self.stat_info.kick_tables.left_recoil},
+							{12, self.stat_info.kick_tables.even_recoil},
+							{19, self.stat_info.kick_tables.moderate_left_kick},
+							{32, self.stat_info.kick_tables.even_recoil},
 							{40, self.stat_info.kick_tables.moderate_right_kick},
 						}
 						self.par.always_use_standing = true
@@ -10850,10 +10823,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.par.stats_modifiers = nil
 						self.par.no_bipod_anims = true
-						self.par.reload_speed_multiplier = 0.785
+						self.par.reload_speed_multiplier = 0.8
 						self.par.sounds.spin_start = "wp_m249_lever_release"
 						self.par.spin_up_shoot = true
-						self.par.spin_up_t = 0.1
+						self.par.spin_up_t = 0.05
 						self.par.spin_down_t = 0.00000001
 						self.par.timers.reload_empty = 6.3
 						self.par.timers.reload_exit_empty = 1.325
@@ -11595,14 +11568,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 25
 						}
 						self.x_olympic.stats_modifiers = nil
-						self.x_olympic.timers.reload_exit_empty = 0.8
-						self.x_olympic.timers.reload_exit_not_empty = 0.85
 						self.x_olympic.animations.reload_name_id = "x_polymer"
-						self.x_olympic.reload_speed_multiplier = 0.75
-						self.x_olympic.timers.reload_not_empty = 2.3
-						self.x_olympic.timers.reload_exit_not_empty = 1.3
-						self.x_olympic.timers.reload_empty = 3
-						self.x_olympic.timers.reload_exit_empty = 0.9
+						blanket_timer("x_olympic", shared_timers.x_smg)
 
 					--Clarion (IS THAT A DEAGLE)
 						self.famas.desc_id = "bm_menu_sc_famas_desc"
@@ -12205,11 +12172,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 25
 						}
 						self.x_akmsu.stats_modifiers = nil
-						self.x_akmsu.reload_speed_multiplier = 0.7
-						self.x_akmsu.timers.reload_not_empty = 2.1
-						self.x_akmsu.timers.reload_exit_not_empty = 1.5
-						self.x_akmsu.timers.reload_empty = 3
-						self.x_akmsu.timers.reload_exit_empty = 0.9
+						blanket_timer("x_akmsu", shared_timers.x_smg)
 
 			--[[     DMRs     ]]
 
@@ -12286,7 +12249,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.scar.supported = true
 						self.scar.ads_speed = 0.380
 						self.scar.damage_falloff = {
-							start_dist = 3000,
+							start_dist = 2400,
 							end_dist = 5800,
 							min_mult = 0.53333
 						}
@@ -12336,7 +12299,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.galil.supported = true
 						self.galil.ads_speed = 0.400
 						self.galil.damage_falloff = {
-							start_dist = 2500,
+							start_dist = 1800,
 							end_dist = 5200,
 							min_mult = 0.53333
 						}
@@ -12382,7 +12345,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fal.supported = true
 						self.fal.ads_speed = 0.380
 						self.fal.damage_falloff = {
-							start_dist = 3200,
+							start_dist = 2800,
 							end_dist = 6300,
 							min_mult = 0.53333
 						}
@@ -12428,7 +12391,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.contraband.supported = true
 						self.contraband.ads_speed = 0.400
 						self.contraband.damage_falloff = {
-							start_dist = 2000,
+							start_dist = 1500,
 							end_dist = 5000,
 							min_mult = 0.53333
 						}
@@ -12701,7 +12664,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ching.supported = true
 						self.ching.ads_speed = 0.340
 						self.ching.damage_falloff = {
-							start_dist = 2800,
+							start_dist = 3000,
 							end_dist = 8800,
 							min_mult = 0.3333
 						}
@@ -12711,7 +12674,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 61,
 							spread_moving = 6,
 							zoom = 1,
-							concealment = 26,
+							concealment = 25,
 							suppression = 7,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -14175,10 +14138,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_basset.stats_modifiers = nil
 						self.x_basset.reload_speed_multiplier = 0.7
 						self.x_basset.always_hipfire = true
-						self.x_basset.timers.reload_not_empty = 2.1
-						self.x_basset.timers.reload_exit_not_empty = 1.6
-						self.x_basset.timers.reload_empty = 2.92
-						self.x_basset.timers.reload_exit_empty = 1.18
+						blanket_timer("x_basset", shared_timers.x_smg)
 						self.x_basset.sounds.fire_single = "basset_x_fire_single"
 
 					--Judge
@@ -16812,7 +16772,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.l1a1.has_description =  true
 				self.l1a1.CLIP_AMMO_MAX = 20
 				self.l1a1.AMMO_MAX = 80
-				self.l1a1.fire_mode_data.fire_rate = 0.1
+				self.l1a1.fire_mode_data.fire_rate = 0.10909
 				self.l1a1.tactical_reload = 1
 				self.l1a1.BURST_FIRE = false
 				self.l1a1.CAN_TOGGLE_FIREMODE = false
@@ -16826,7 +16786,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.l1a1.supported = true
 				self.l1a1.ads_speed = 0.400
 				self.l1a1.damage_falloff = {
-					start_dist = 3500,
+					start_dist = 3100,
 					end_dist = 6600,
 					min_mult = 0.5333
 				}
@@ -20031,7 +19991,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sks.supported = true
 				self.sks.ads_speed = 0.340
 				self.sks.damage_falloff = {
-					start_dist = 2000,
+					start_dist = 1400,
 					end_dist = 5200,
 					min_mult = 0.6
 				}
@@ -20097,7 +20057,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.skspug.supported = true
 				self.skspug.ads_speed = 0.320
 				self.skspug.damage_falloff = {
-					start_dist = 1800,
+					start_dist = 1600,
 					end_dist = 5000,
 					min_mult = 0.6
 				}
@@ -20321,7 +20281,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1a1.supported = true
 				self.m1a1.ads_speed = 0.280
 				self.m1a1.damage_falloff = {
-					start_dist = 1800,
+					start_dist = 1400,
 					end_dist = 4900,
 					min_mult = 0.2
 				}
@@ -23323,7 +23283,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.plr16.supported = true
 				self.plr16.ads_speed = 0.320
 				self.plr16.damage_falloff = {
-					start_dist = 1400,
+					start_dist = 1300,
 					end_dist = 4000,
 					min_mult = 0.5
 				}
@@ -25608,7 +25568,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.kuro762.supported = true
 				self.kuro762.ads_speed = 0.360
 				self.kuro762.damage_falloff = {
-					start_dist = 3300,
+					start_dist = 2600,
 					end_dist = 7000,
 					min_mult = 0.53333
 				}
@@ -26264,7 +26224,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{8, self.stat_info.kick_tables.left_recoil},
 					{12, self.stat_info.kick_tables.moderate_kick},
 					{19, self.stat_info.kick_tables.right_recoil}
-                }
+				}
 				self.howa_type89.supported = true
 				self.howa_type89.ads_speed = 0.320
 				self.howa_type89.damage_falloff = {
@@ -26311,7 +26271,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{9, self.stat_info.kick_tables.moderate_kick},
 					{18, self.stat_info.kick_tables.moderate_right_kick},
 					{22, self.stat_info.kick_tables.right_recoil}
-                }
+				}
 				self.howa_type20.supported = true
 				self.howa_type20.ads_speed = 0.300
 				self.howa_type20.damage_falloff = {
@@ -28107,7 +28067,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.t9british.supported = true
 				self.t9british.ads_speed = 0.380
 				self.t9british.damage_falloff = {
-					start_dist = 2500,
+					start_dist = 2100,
 					end_dist = 7000,
 					min_mult = 0.4
 				}
@@ -29110,7 +29070,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.valpha.supported = true
 				self.valpha.ads_speed = 0.340
 				self.valpha.damage_falloff = {
-					start_dist = 1500,
+					start_dist = 1400,
 					end_dist = 3200,
 					min_mult = 0.5333
 				}
@@ -29554,7 +29514,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mcx_spear.supported = true
 				self.mcx_spear.ads_speed = 0.420
 				self.mcx_spear.damage_falloff = {
-					start_dist = 2200,
+					start_dist = 2000,
 					end_dist = 6500,
 					min_mult = 0.53333
 				}
@@ -29673,7 +29633,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ngsierra.supported = true
 				self.ngsierra.ads_speed = 0.400
 				self.ngsierra.damage_falloff = {
-					start_dist = 2000,
+					start_dist = 1800,
 					end_dist = 5800,
 					min_mult = 0.53333
 				}
@@ -30915,6 +30875,20 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				--self.scar16.sounds.fire_single = "aug_fire_single"
 				--self.scar16.sounds.fire_auto = "aug_fire"
 				--self.scar16.sounds.stop_fire = "aug_stop"
+				self.scar16.stats = {
+					damage = 30,
+					spread = 86,
+					recoil = 85,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
 				self.scar16.timers.reload_empty = 3.1
 				self.scar16.timers.reload_exit_empty = 0.8
 				self.scar16.timers.reload_not_empty = 2.23
@@ -31165,7 +31139,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.dd5.supported = true
 				self.dd5.ads_speed = 0.380
 				self.dd5.damage_falloff = {
-					start_dist = 1800,
+					start_dist = 1600,
 					end_dist = 5000,
 					min_mult = 0.53333
 				}
@@ -31646,7 +31620,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 25
 				}
-                self.rebar.ignore_damage_upgrades = true
+				self.rebar.ignore_damage_upgrades = true
 				self.rebar.armor_piercing_chance = 1
 				self.rebar.stats_modifiers = {damage =  4}
 				self.rebar.lock_slide_allow_mag_empty = true
@@ -32061,7 +32035,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vsk_94.ads_speed = 0.360
 				self.vsk_94.armor_piercing_chance = 0.25
 				self.vsk_94.damage_falloff = {
-					start_dist = 1200,
+					start_dist = 1000,
 					end_dist = 3600,
 					min_mult = 0.53333
 				}
@@ -32416,7 +32390,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.soa.supported = true
 				self.soa.ads_speed = 0.380
 				self.soa.damage_falloff = {
-					start_dist = 2400,
+					start_dist = 2000,
 					end_dist = 5800,
 					min_mult = 0.53333
 				}
@@ -33550,7 +33524,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.glar21.supported = true
 				self.glar21.ads_speed = 0.440
 				self.glar21.damage_falloff = {
-					start_dist = 1800,
+					start_dist = 1300,
 					end_dist = 6500,
 					min_mult = 0.50526
 				}
@@ -35134,7 +35108,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.owlfbullpup.supported = true
 				self.owlfbullpup.ads_speed = 0.380
 				self.owlfbullpup.damage_falloff = {
-					start_dist = 2500,
+					start_dist = 2200,
 					end_dist = 6600,
 					min_mult = 0.53333
 				}
@@ -37819,6 +37793,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					end
 				end
 
+				if weap.timers then
+					local single_id = self:get_single_id(id)
+					if single_id and self[single_id] and self[single_id].timers then
+						if weap.timers.reload_empty and self[single_id].timers.reload_empty then
+							local single_reload_t = self[single_id].timers.reload_empty
+							if self[single_id].reload_speed_multiplier then
+								single_reload_t = single_reload_t / self[single_id].reload_speed_multiplier
+							end
+							weap.reload_speed_multiplier = (weap.timers.reload_empty / single_reload_t) / 1.5
+						end
+
+						if weap.timers.reload_not_empty and self[single_id].timers.reload_not_empty then
+							local single_not_empty_t = self[single_id].timers.reload_not_empty / 
+														(self[single_id].reload_speed_multiplier or 1) / 
+														(self[single_id].reload_not_empty_speed_multiplier or 1)
+							weap.reload_not_empty_speed_multiplier = (weap.timers.reload_not_empty / single_not_empty_t) / weap.reload_speed_multiplier / 1.5
+						end
+					end
+				end
 			end
 			--[[
 			if table.contains(weap.recategorize, "heavy_pis") then
@@ -38231,6 +38224,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 end)
 
+local akimbo_id_remap = {
+	{"x_g18c", "glock_18c"},
+	{"jowi", "g26"},
+	{"x_g17", "glock_17"},
+	{"x_1911", "colt_1911"},
+	{"x_2006m", "mateba"},
+	{"x_rage", "new_raging_bull"},
+	{"x_mp5", "new_mp5"},
+}
+function WeaponTweakData:get_single_id(akimbo_id)
+	local single_id = nil
+
+	if akimbo_id:sub(1, 2) == "x_" then
+		if self[akimbo_id:sub(3)] then
+			single_id = akimbo_id:sub(3)
+		end
+	end
+
+	if not single_id then
+		for _, remap in ipairs(akimbo_id_remap) do
+			if remap[1] == akimbo_id then
+				single_id = remap[2]
+				--restoration:log("REMAPPED %s to %s", akimbo_id, single_id)
+				break
+			end
+		end
+	end
+
+	if not single_id then
+		restoration:log("COULD NOT FIND THE SINGLE WIELDED VARIANT FOR %s, DOES IT EXIST?", akimbo_id)
+	end
+
+	return single_id
+end
+
 function WeaponTweakData:get_swap_speed_multiplier(weapon)
 	local swap_speed_mult = 1
 	swap_speed_mult = swap_speed_mult / ( weapon.desired_swap_time / (weapon.timers.unequip + weapon.timers.equip) )
@@ -38280,10 +38308,13 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		local hs_mult = weapon.hs_mult or 1
 		local true_shotgun = table.contains(weapon.categories, "shotgun") and not table.contains(weapon.categories, "flamethrower")
 		local has_dot = table.contains(weapon.categories, "flamethrower") or table.contains(weapon.categories, "tranq")
-		local total_ammo_mult = (table.contains(weapon.categories, "minigun") and 5) or (table.contains(weapon.categories, "mmg") and 4) or (table.contains(weapon.categories, "lmg") and 3) or (true_shotgun and 2) or 1
+		local total_ammo_mult = (table.contains(weapon.categories, "minigun") and 5) or 
+			(table.contains(weapon.categories, "mmg") and 4) or 
+			(table.contains(weapon.categories, "lmg") and 3) or 
+			(true_shotgun and 2) or 1
 		local total_dmg_mul = 1 * (((hs_mult > 1) and 1.2) or 1) * (((weapon.has_underbarrel or has_dot) and 0.8) or 1) * total_ammo_mult
 		if total_ammo_mult and not true_shotgun then
-			weapon.ammo_ratio = total_ammo_mult
+			weapon.ammo_ratio = math.max(total_ammo_mult / 2, 1)
 		end
 		damage_mul = (not exclude_calcs and (damage_mul * 2)) or damage_mul
 		if not table.contains(weapon.categories, "keep_ammo_max") and not table.contains(weapon.categories, "nothing") then
@@ -38295,7 +38326,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 	--Determine how much to multiply things by.
 	local pickup_multiplier = weapon.AMMO_MAX
 	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
-		akimbo = 1.05,
+		akimbo = 1.15,
 		pistol = 1.25, --Compensate for low range.
 			pistol_pdw = 0.675,
 			zippy = 0.15,
@@ -38351,6 +38382,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier
 	weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * pickup_multiplier
 
+	--[[
 	local exclude_ammo = {
 		"m134",
 		"shuno",
@@ -38371,6 +38403,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 			end
 		end
 	end
+	--]]
 end
 
 WeaponTweakData.clone__create_table_structure = WeaponTweakData._create_table_structure

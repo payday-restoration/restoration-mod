@@ -24760,7 +24760,6 @@ end
 				end
 		end
 
-
 --Resmod Custom Content
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self, tweak_data)
 
@@ -26255,7 +26254,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats),
 		dlc = "sc"
 	}
-
 
 	self.parts.avelyn = {
 		pcs = {},
@@ -43944,7 +43942,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
-	    if self.parts.wpn_fps_bow_rebar_hl2optic then
+		if self.parts.wpn_fps_bow_rebar_hl2optic then
 			self.parts.wpn_fps_bow_rebar_hl2optic.supported = true
 			self.parts.wpn_fps_bow_rebar_hl2optic.stats = {
 				zoom = 35,
@@ -43952,9 +43950,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
-	    if self.parts.wpn_fps_minecraft_bow_ench_power then
+		if self.parts.wpn_fps_minecraft_bow_ench_power then
 			self.parts.wpn_fps_minecraft_bow_ench_power.supported = true
-            self.parts.wpn_fps_minecraft_bow_ench_power.stats = {damage = 20}
+			self.parts.wpn_fps_minecraft_bow_ench_power.stats = {damage = 20}
 		end
 
 		if self.parts.wpn_fps_snp_tf2sr_scope then

@@ -1662,6 +1662,78 @@
 	</tweak>
 <!--Peacemaker Alt Inspect End-->
 
+<!--Akimbo Compact-5 Tweaks-->
+
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+            <state name="fps/reload/x_mp5"/>
+			<anim name="x_mp5_reload"/>
+		</search>
+		<target mode="replace">
+			<anim name="x_mp5_reload"/>
+			<keys>
+			<key at="trigger" trigger="wp_foley_generic_lever_release" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_release"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_grab" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_grab"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_throw" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_throw"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_take_new" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_take_new"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_in_connect" callback="play_sound" class_name="base" param1=""/>
+				<key at="trigger" trigger="wp_foley_generic_lever_grab" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_grab"/>
+				<key at="trigger" trigger="wp_foley_generic_lever_pull" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_pull"/>
+				<key at="trigger" trigger="wp_foley_generic_back_in_hand" callback="play_sound" class_name="base" param1="wp_foley_generic_back_in_hand"/>
+				<key at="trigger" trigger="wp_clip_generic_smg_center" callback="play_sound" class_name="base" param1="wp_clip_generic_smg_center"/>
+				<key at="trigger" trigger="bullet_show" callback="anim_clbk_check_bullet_object" class_name="base" />
+				
+				<key at="trigger" trigger="bullet_show" callback="anim_clbk_stop_weapon_magazine_empty" class_name="base" param1="reload"/>	
+					
+				
+				<key at="trigger" trigger="wp_akimbo_pick_up" callback="play_sound" class_name="base" param1="wp_akmsu_x_tilt"/>
+				<key at="trigger" trigger="wp_akimbo_mag_grab" callback="play_sound" class_name="base" param1="wp_mp5_clip_grab"/>
+				<key at="trigger" trigger="wp_akimbo_mag_out" callback="play_sound" class_name="base" param1="wp_mp5_clip_grab_throw"/>
+				<key at="trigger" trigger="wp_akimbo_mag_in" callback="play_sound" class_name="base" param1="wp_mp5_clip_slide_in"/>
+				<key at="trigger" trigger="wp_akimbo_mag_in_connect" callback="play_sound" class_name="base" param1="wp_mp5_clip_in_contact"/>
+				<key at="trigger" trigger="wp_akimbo_bolt_pull" callback="play_sound" class_name="base" param1="wp_mp5_lever_pull"/>
+				<key at="trigger" trigger="wp_akimbo_bolt_release" callback="play_sound" class_name="base" param1="wp_mp5_lever_release"/>
+				<key at="trigger" trigger="wp_akimbo_put_down" callback="play_sound" class_name="base" param1="wp_akmsu_x_tilt_back"/>
+			</keys>
+			<exit name="fps/idle"/>
+		</target>
+	</tweak>
+
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+            <state name="fps/reload_not_empty/x_mp5"/>
+			<anim name="x_mp5_reload_not_empty"/>
+		</search>
+		<target mode="replace">
+			<anim name="x_mp5_reload_not_empty"/>
+			<keys>
+				<key at="trigger" trigger="wp_foley_generic_lever_release" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_release"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_grab" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_grab"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_throw" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_throw"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_take_new" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_take_new"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_in_connect" callback="play_sound" class_name="base" param1=""/>
+				<key at="trigger" trigger="wp_foley_generic_lever_grab" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_grab"/>
+				<key at="trigger" trigger="wp_foley_generic_lever_pull" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_pull"/>
+				<key at="trigger" trigger="wp_foley_generic_back_in_hand" callback="play_sound" class_name="base" param1="wp_foley_generic_back_in_hand"/>
+				<key at="trigger" trigger="wp_clip_generic_smg_center" callback="play_sound" class_name="base" param1="wp_clip_generic_smg_center"/>
+				<key at="trigger" trigger="bullet_show" callback="anim_clbk_check_bullet_object" class_name="base" />
+				
+				<key at="trigger" trigger="wp_akimbo_pick_up" callback="play_sound" class_name="base" param1="wp_akmsu_x_tilt"/>
+				<key at="trigger" trigger="wp_akimbo_mag_grab" callback="play_sound" class_name="base" param1="wp_mp5_clip_grab"/>
+				<key at="trigger" trigger="wp_akimbo_mag_out" callback="play_sound" class_name="base" param1="wp_mp5_clip_grab_throw"/>
+				<key at="trigger" trigger="wp_akimbo_mag_in" callback="play_sound" class_name="base" param1="wp_mp5_clip_slide_in"/>
+				<key at="trigger" trigger="wp_akimbo_mag_in_connect" callback="play_sound" class_name="base" param1="wp_mp5_clip_in_contact"/>
+				<key at="trigger" trigger="wp_akimbo_bolt_pull" callback="play_sound" class_name="base" param1="wp_mp5_lever_pull"/>
+				<key at="trigger" trigger="wp_akimbo_bolt_release" callback="play_sound" class_name="base" param1="wp_mp5_lever_release"/>
+				<key at="trigger" trigger="wp_akimbo_put_down" callback="play_sound" class_name="base" param1="wp_akmsu_x_tilt_back"/>
+			</keys>
+			<exit name="fps/idle"/>
+		</target>
+	</tweak>
+<!--Akimbo Compact-5 Tweaks End-->
+
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
 		<search>
 			<xml/>
@@ -2066,7 +2138,6 @@
 			<anim name="g3_niphen_tased" weight="g3_niphen"/>
 		</target>
 	</tweak>
-	
 
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
 		<search>
@@ -2089,8 +2160,6 @@
 			<anim name="g3_niphen_tased_exit" weight="g3_niphen"/>
 		</target>
 	</tweak>
-	
-	
 
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
 		<search>

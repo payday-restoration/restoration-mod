@@ -1780,8 +1780,11 @@ end
 
 function NewRaycastWeaponBase:fire(...)
 	local ray_res = NewRaycastWeaponBase.super.fire(self, ...)
-
-	if self._fire_mode == ids_burst and self._bullets_fired > 1 and not self:weapon_tweak_data().sounds.fire_single then
+	
+	local is_burst = self._fire_mode == ids_burst
+	local fire_more_than_once = (self._bullets_fired or 0) > 1
+	local is_single = self:weapon_tweak_data().sounds.fire_single
+	if is_burst and fire_more_than_once and not is_single then
 		self:_fire_sound()
 	end
 

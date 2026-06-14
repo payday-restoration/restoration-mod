@@ -5167,12 +5167,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9','china','scout','qbu88','m1897','sko12','victor','hcar','awp','supernova','m590','m45','pm9','baka','type54','m1911','vityaz','groza','contraband','shak12','winchester1874','sbl','arbiter'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9','china','scout','qbu88','m1897','sko12','victor','hcar','awp','supernova','m590','m45','pm9','baka','type54','m1911','vityaz','groza','contraband','shak12','winchester1874','sbl','arbiter','pmm'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
 	end
-	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911' }
+	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911','x_pmm' }
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].BURST_FIRE = {
@@ -5215,7 +5215,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].categories = {"akimbo", "shotgun"}
 	end
 
-	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','x_sparrow','pl14','packrat','x_packrat','lemming','x_breech','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','x_m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi','x_uzi','contender','schakal'}
+	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','x_sparrow','pl14','packrat','x_packrat','lemming','x_breech','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','x_m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi','x_uzi','contender','schakal','pmm','x_pmm'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_pistol_slide_lock"
@@ -5223,6 +5223,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sterling.lock_slide_alt = true
 	self.schakal.lock_slide_alt = true
 	self.m1911.lock_slide_alt = true
+	self.pmm.lock_slide_alt = true
 	self.rpg7.sounds.magazine_empty = nil
 	self.coach.sounds.magazine_empty = nil
 	self.contender.sounds.magazine_empty = nil
@@ -5298,13 +5299,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].nato = true
 	end
 	faction = {
-		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12','groza','coal','stech','x_stech','type54','x_type54','qbu88','tkb'
+		'sr2','x_sr2','akmsu','akm','akm_gold','ak74','rpk','asval','x_akmsu','flint','mosin','siltstone','shak12','rsh12','groza','coal','stech','x_stech','type54','x_type54','qbu88','tkb','pmm','x_pmm'
 	}	
 	for i, wep_id in ipairs(faction) do
 		self[ wep_id ].warsaw = true
 	end
 		
-	local recat = { "g26", "jowi", "holt", "x_holt", "glock_18c", "x_g18c", "czech", "x_czech", "stech", "x_stech", "fmg9", "b92fs", "x_b92fs", "beer", "x_beer", "maxim9", "x_maxim9", "glock_17", "x_g17", "g22c", "x_g22c", "packrat", "x_packrat", "breech", "x_breech", "ppk", "x_ppk", "lemming", "hs2000", "x_hs2000", "p226", "x_p226", "sparrow", "x_sparrow", "legacy", "x_legacy", "pl14", "x_pl14"}	
+	local recat = { "g26", "jowi", "holt", "x_holt", "glock_18c", "x_g18c", "czech", "x_czech", "stech", "x_stech", "fmg9", "b92fs", "x_b92fs", "beer", "x_beer", "maxim9", "x_maxim9", "glock_17", "x_g17", "g22c", "x_g22c", "packrat", "x_packrat", "breech", "x_breech", "ppk", "x_ppk", "lemming", "hs2000", "x_hs2000", "p226", "x_p226", "sparrow", "x_sparrow", "legacy", "x_legacy", "pl14", "x_pl14", "pmm", "x_pmm"}	
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_pis" }
 		self[ wep_id ].damage_type = "pistol"
@@ -5841,6 +5842,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.beer.timers.reload_exit_not_empty = 0.65
 
 				--SECONDARIES
+				
+					--Welrod
+						self.welrod.categories = { "pistol" }
+						self.welrod.recategorize = { "light_pis" }
+						self.welrod.desc_id = "bm_welrod_sc_desc"
+						self.welrod.has_description = true
+						self.welrod.fire_mode_data.fire_rate = 2.233
+						self.welrod.fire_rate_multiplier = 1.45
+						self.welrod.CLIP_AMMO_MAX = 8
+						self.welrod.kick = self.stat_info.kick_tables.right_recoil
+						self.welrod.kick_pattern = {
+							{0, self.stat_info.kick_tables.even_recoil},
+							{3, self.stat_info.kick_tables.moderate_right_kick},
+							{5, self.stat_info.kick_tables.right_recoil}
+						}
+						self.welrod.supported = true
+						self.welrod.ads_speed = 0.100
+						self.welrod.damage_falloff = {
+							start_dist = 1200,
+							end_dist = 3600,
+							min_mult = 0.1667
+						}
+						self.welrod.stats = {
+							damage = 30,
+							spread = 61,
+							recoil = 97,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 32,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.welrod.stats_modifiers = nil
+						self.welrod.panic_suppression_chance = 0.05
+						self.welrod.weapon_movement_penalty = 1.14
+						self.welrod.sounds.magazine_empty = nil
+						self.welrod.hs_mult = 3
+						self.welrod.always_play_anims = true
+						self.welrod.timers.reload_not_empty = 2
+						self.welrod.timers.reload_exit_not_empty = 1.14
+						self.welrod.timers.reload_empty = 2
+						self.welrod.timers.reload_exit_empty = 1.14				
 
 					--Gecko M2 (Maxim 9)
 						self.maxim9.categories = {
@@ -6200,6 +6247,89 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_ppk.reload_speed_multiplier = 1.5
 						self.x_ppk.timers.reload_exit_not_empty = 0.55
 						self.x_ppk.timers.reload_exit_empty = 0.65
+						
+					--Strix (Makarov)
+						self.pmm.has_description = true
+						self.pmm.desc_id = "bm_pmm_sc_desc"
+						self.pmm.AMMO_MAX = 75
+						self.pmm.CLIP_AMMO_MAX = 8
+						self.pmm.fire_mode_data.fire_rate = 0.09677419
+						self.pmm.kick = self.stat_info.kick_tables.left_recoil
+						self.pmm.kick_pattern = {
+							{0, self.stat_info.kick_tables.even_recoil},
+							{3, self.stat_info.kick_tables.left_recoil},
+							{5, self.stat_info.kick_tables.moderate_right_kick}
+						}
+						self.pmm.supported = true
+						self.pmm.ads_speed = 0.100
+						self.pmm.damage_falloff = {
+							start_dist = 1100,
+							end_dist = 2900,
+							min_mult = 0.2083
+						}
+						self.pmm.stats = {
+							damage = 24,
+							spread = 57,
+							recoil = 87,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 32,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.pmm.stats_modifiers = nil
+						self.pmm.panic_suppression_chance = 0.05
+						self.pmm.reload_speed_multiplier = 1.35
+						self.pmm.timers.reload_empty = 2
+						self.pmm.timers.reload_exit_empty = 1
+						self.pmm.timers.reload_not_empty = 1.45
+						self.pmm.timers.reload_exit_not_empty = 0.5
+						self.pmm.weapon_movement_penalty = 1.14
+						self.pmm.weapon_hold = "glock" --temp until the wrists for its anims get fixed
+						self.pmm.animations.reload_name_id = "ppk"
+					--Akimbo
+						self.x_pmm.has_description = true
+						self.x_pmm.desc_id = "bm_x_pmm_sc_desc"
+						self.x_pmm.AMMO_MAX = 150
+						self.x_pmm.CLIP_AMMO_MAX = 16
+						self.x_pmm.fire_mode_data.fire_rate = 0.09677419
+						self.x_pmm.kick = self.stat_info.kick_tables.left_recoil
+						self.x_pmm.kick_pattern = {
+							{0, self.stat_info.kick_tables.even_recoil},
+							{3, self.stat_info.kick_tables.left_recoil},
+							{5, self.stat_info.kick_tables.moderate_right_kick}
+						}
+						self.x_pmm.supported = true
+						self.x_pmm.ads_speed = 0.100
+						self.x_pmm.damage_falloff = {
+							start_dist = 1100,
+							end_dist = 2900,
+							min_mult = 0.2083
+						}
+						self.x_pmm.stats = {
+							damage = 24,
+							spread = 47,
+							recoil = 77,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 32,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.x_pmm.stats_modifiers = nil
+						self.x_pmm.weapon_movement_penalty = 1.14
+						self.x_pmm.panic_suppression_chance = 0.05
+						self.x_pmm.reload_speed_multiplier = 1.35
+						self.x_pmm.timers.reload_exit_not_empty = 0.55
+						self.x_pmm.timers.reload_exit_empty = 0.65						
 
 					--Chimano Compact (Glock 26)
 						self.g26.has_description = true
@@ -6834,6 +6964,58 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_packrat.stats_modifiers = nil
 						self.x_packrat.timers.reload_exit_empty = 0.55
 						self.x_packrat.timers.reload_exit_not_empty = 0.65
+						
+					--Ballerina 9mm
+						self.speen.has_description = true
+						self.speen.desc_id = "bm_speen_sc_desc"
+						self.speen.categories = {"pistol"}
+						self.speen.recategorize = {"light_pis"}
+						self.speen.CLIP_AMMO_MAX = 17
+						self.speen.AMMO_MAX = 60
+						self.speen.sounds.enter_steelsight = "secondary_steel_sight_enter"
+						self.speen.sounds.leave_steelsight = "secondary_steel_sight_exit"
+						self.speen.fire_mode_data.fire_rate = 0.1
+						self.speen.CAN_TOGGLE_FIREMODE = false
+						self.speen.FIRE_MODE = "single"
+						self.speen.kick = {}
+						self.speen.kick = self.stat_info.kick_tables.left_recoil
+						self.speen.kick_pattern = {
+							{0, self.stat_info.kick_tables.left_recoil},
+							{4, self.stat_info.kick_tables.even_recoil},
+							{7, self.stat_info.kick_tables.right_recoil},
+							{10, self.stat_info.kick_tables.moderate_right_kick},
+							{16, self.stat_info.kick_tables.even_recoil},
+						}
+						self.speen.supported = true
+						self.speen.ads_speed = 0.180
+						self.speen.damage_falloff = {
+							start_dist = 2000,
+							end_dist = 4300,
+							min_mult = 0.2
+						}
+						self.speen.stats = {
+							damage = 30,
+							spread = 76,
+							recoil = 93,
+							spread_moving = 5,
+							zoom = 1,
+							concealment = 29,
+							suppression = 9,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.speen.panic_suppression_chance = 0.05
+						self.speen.stats_modifiers = nil
+						self.speen.use_unequip_swap = true
+						self.speen.swap_speed_multiplier = 0.55
+						self.speen.timers.equip = 1.3
+						self.speen.timers.reload_empty = 2.3
+						self.speen.timers.reload_exit_empty = 0.65
+						self.speen.timers.reload_not_empty = 1.3
+						self.speen.timers.reload_exit_not_empty = 0.51						
 
 					--Parabellum (Luger)
 						self.breech.has_description = true
@@ -14713,6 +14895,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.elastic.reload_speed_multiplier = 2.5
 
 				--SECONDARIES
+				
+					--Dart Gun
+						self.dart.categories = {
+							"crossbow",
+							"crossbow_pistol"
+						}
+						self.dart.upgrade_blocks = {
+							weapon = {
+								"clip_ammo_increase"
+							}
+						}
+						self.dart.damage_type = "sniper"
+						self.dart.has_description = true
+						self.dart.desc_id = "bm_dart_sc_desc"
+						self.dart.AMMO_MAX = 15
+						self.dart.panic_suppression_chance = 0.05
+						self.dart.ignore_damage_upgrades = true
+						self.dart.fire_mode_data.fire_rate = 1
+						self.dart.kick = self.stat_info.kick_tables.horizontal_recoil
+						self.dart.supported = true
+						self.dart.ads_speed = 0.160
+						self.dart.stats = {
+							damage = 120,
+							spread = 96,
+							recoil = 95,
+							spread_moving = 8,
+							zoom = 1,
+							concealment = 30,
+							suppression = 20,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.dart.panic_suppression_chance = 0.05
+						self.dart.stats_modifiers = {damage = 2}
+						self.dart.sprintout_anim_offset = 0.015
+						self.dart.timers.reload_not_empty = 2.4
+						self.dart.timers.reload_exit_not_empty = 1.1
+						self.dart.timers.reload_empty = 2.4
+						self.dart.timers.reload_exit_empty = 1.1
+				
 
 					--Pistol Crossbow
 						self.hunter.categories = {
@@ -15121,6 +15346,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rpg7.timers.reload_not_empty = 4.1
 						self.rpg7.timers.reload_exit_empty = 3.1
 						self.rpg7.timers.reload_exit_not_empty = 3.1
+						
+					--Flare Gun
+						self.flun.categories = {
+							"grenade_launcher",
+							"gl_pistol",
+							"keep_ammo_max"
+						}
+						self.flun.upgrade_blocks = {
+							weapon = {
+								"clip_ammo_increase"
+							}
+						}
+						self.flun.has_description = true
+						self.flun.fire_mode_data.fire_rate = 0.3
+						self.flun.AMMO_MAX = 15
+						self.flun.kick = self.stat_info.kick_tables.moderate_kick
+						self.flun.rays = 1
+						self.flun.alt_shotgunraycast = true
+						self.flun.supported = true
+						self.flun.ads_speed = 0.160
+						self.flun.damage_falloff = {
+							start_dist = 300,
+							end_dist = 1800,
+							min_mult = 0.1333
+						}
+						self.flun.stats = {
+							damage = 30,
+							spread = 51,
+							recoil = 51,
+							spread_moving = 5,
+							zoom = 1,
+							concealment = 30,
+							suppression = 8,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.flun.stats_modifiers = { damage = 2 }
+						self.flun.reload_speed_multiplier = 1
+						self.flun.timers.reload_empty = 1.62
+						self.flun.timers.reload_exit_empty = 1
+						self.flun.timers.reload_not_empty = 1.62
+						self.flun.timers.reload_exit_not_empty = 1
+						self.flun.panic_suppression_chance = 0.05
+						
 
 			--OVE9000 SAW
 				self.saw.has_description = true

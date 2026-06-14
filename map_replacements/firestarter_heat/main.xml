@@ -17,6 +17,13 @@
 			<value_node value="levels/narratives/h_firestarter/stage_1/editor_only/editor_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/env/env"/>
 			<value_node value="levels/instances/unique/mus_helicopter/world_sounds"/>
+			<value_node value="packages/normal_sc_fbi"/>
+			<value_node value="packages/hard_sc_fbi"/>
+			<value_node value="packages/overkill_sc_fbi"/>
+			<value_node value="packages/overkill_145_sc_fbi"/>
+			<value_node value="packages/overkill_290_sc_fbi"/>
+			<value_node value="packages/easy_wish_sc_fbi"/>
+			<value_node value="packages/sm_wish_sc_fbi"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
@@ -36,6 +43,13 @@
 			<value_node value="levels/narratives/h_firestarter/stage_2/background/background"/>
 			<value_node value="levels/narratives/h_firestarter/stage_2/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_2/editor_only/editor_only"/>
+			<value_node value="packages/normal_sc_fbi"/>
+			<value_node value="packages/hard_sc_fbi"/>
+			<value_node value="packages/overkill_sc_fbi"/>
+			<value_node value="packages/overkill_145_sc_fbi"/>
+			<value_node value="packages/overkill_290_sc_fbi"/>
+			<value_node value="packages/easy_wish_sc_fbi"/>
+			<value_node value="packages/sm_wish_sc_fbi"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
@@ -57,6 +71,13 @@
 			<value_node value="levels/narratives/h_firestarter/stage_3/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/world/world"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/editor_only/editor_only"/>
+			<value_node value="packages/normal_sc_fbi"/>
+			<value_node value="packages/hard_sc_fbi"/>
+			<value_node value="packages/overkill_sc_fbi"/>
+			<value_node value="packages/overkill_145_sc_fbi"/>
+			<value_node value="packages/overkill_290_sc_fbi"/>
+			<value_node value="packages/easy_wish_sc_fbi"/>
+			<value_node value="packages/sm_wish_sc_fbi"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>

@@ -1861,6 +1861,11 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		"launcher_incendiary_ms3gl",
 		"launcher_electric_ms3gl",
 		"sticky_grenade",
+		"dart_poison",
+		"dart_daze",
+		"dart_revive",
+		"laser_watch",
+		"flun_flare",		
 		--Resmod projectiles
 		"bravo_frag",
 		"cluster_fuck",
@@ -1911,6 +1916,10 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.poison_gas_grenade.max_amount = 3
 
 	self.projectiles.sticky_grenade.throw_shout = nil
+	
+	self.projectiles.laser_watch.base_cooldown_no_perk = true
+	self.projectiles.laser_watch.base_cooldown = 35
+	self.projectiles.laser_watch.pickup_cooldown_t = 3.5 --10~ pickups to gain back one immediately
 
 	if self.projectiles.xmas_snowball then
 		self.projectiles.xmas_snowball.max_amount = 3

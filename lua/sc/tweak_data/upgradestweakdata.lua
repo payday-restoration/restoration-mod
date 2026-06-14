@@ -119,7 +119,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"road",
 					"legacy",
 					"x_legacy",
-					"fmg9"
+					"fmg9",
+					"flun"
 				}
 			},
 		l18 = {
@@ -172,7 +173,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"cs",
 					"brick",
 					"ostry",
-					"r700"
+					"r700",
+					"laser_watch"
 				}
 			},
 		l24 = {
@@ -235,7 +237,12 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"shuno",
 					"holt",
 					"x_holt",
-					"x_korth"
+					"x_korth",
+					"welrod",
+					"pmm",
+					"x_pmm",
+					"speen",
+					"dart"					
 				}
 			},
 		l32 = {
@@ -586,6 +593,42 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.25
 	}
 	
+	-- Extra Cable ties from bots
+	self.values.team.crew_ai_cable_ties = {
+		{
+			2,
+			3,
+			4
+		}
+	}
+	
+	-- Cortex Bomb for Bots 
+	self.values.team.crew_ai_flashbang = {
+		{
+			360,
+			240,
+			120
+		}
+	}
+	
+	-- Counter Strike for Bots
+	self.values.team.crew_ai_counter_strike = {
+		{
+			360,
+			240,
+			120
+		}
+	}
+	
+	-- Shockproof for Bots
+	self.values.team.crew_ai_counter_tase = {
+		{
+			180,
+			120,
+			60
+		}
+	}		
+	
 	--Equipment--
 	--FAKS: Intended to offer on-demand burst healing that can save people from going down.
 	self.values.first_aid_kit.heal_amount = 15 --Heals 150 health on use.
@@ -607,6 +650,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Sentry Guns
 	self.sentry_gun_base_armor = 15
 	self.sentry_gun_base_ammo = 140
+	self.sentry_gun_ammo_cost = {
+		0.4,
+		0.35,
+		0.3
+	}	
 
 	--"Baked In" upgrades
 	self.values.cable_tie.interact_speed_multiplier = {0.25}

@@ -1492,7 +1492,7 @@ function PlayerManager:add_cable_ties(amount)
 	local max_cable_ties = equipment.max_quantity
 	
 	--So this is properly taken into account
-	max_cable_ties = max_cable_ties + self:upgrade_value(name, "quantity_1") + self:upgrade_value(name, "quantity_2")
+	max_cable_ties = max_cable_ties + self:upgrade_value(name, "quantity_1") + self:upgrade_value(name, "quantity_2") + managers.player:crew_ability_upgrade_value("crew_ai_cable_ties", 0)
 
 	if special_equipment then
 		local current_amount = Application:digest_value(special_equipment.amount, false)

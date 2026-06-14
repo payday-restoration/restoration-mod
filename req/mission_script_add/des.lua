@@ -113,7 +113,7 @@ local optsgrunt_05 = {
 	on_executed = { { id =  400017,  delay = 0, }, },
 }
 local opts_spawn_escape_defense = {
-	enabled = death_wish_above,
+	enabled = death_wish_above and death_sentence,
 	on_executed = {
 		{ id = 400008, delay = 0, },
 		{ id = 400009, delay = 0, },

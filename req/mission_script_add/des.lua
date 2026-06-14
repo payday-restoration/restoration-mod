@@ -8,6 +8,7 @@ local shields = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_phalanx
 local snipers = ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky" or "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper")
 local grunt_1 =  ((difficulty >= 8) and "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" or "units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
 local death_wish_above = difficulty == 7
+local death_sentence = difficulty == 8
 local chance_weapons_vault_door_defense = math.random() < 0.15 or 0
 local chance_sneaky_cloaker_escape = math.random() < 0.4
 local optsDefend_SO = {
@@ -47,7 +48,7 @@ local optsSniper_02 = {
 	on_executed = { { id = 400028, delay = 0}, },
 }
 local opts_spawn__weapon_lab_defenders = {
-	enabled = death_wish_above,
+	enabled = death_sentence,
 	on_executed = {
 		{ id = 400001, delay = 0, },
 		{ id = 400002, delay = 0, },

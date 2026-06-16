@@ -263,7 +263,7 @@ function PlayerBipod:_update_check_actions(t, dt)
 			self:_check_stop_shooting()
 		end
 
-		self._shooting = new_action
+		--self._shooting = new_action
 	end
 
 	--[[new_action = new_action or]] self:_check_action_jump(t, input)

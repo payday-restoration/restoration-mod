@@ -151,7 +151,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 		local is_akimbo = wep_base and wep_base.AKIMBO
 		local ignore_transition_styles = wep_base and wep_base:weapon_tweak_data().ign_ts
 
-		if not in_bipod and not is_akimbo and not ignore_transition_styles and res_ads_style ~= 1 then
+		if not is_akimbo and not ignore_transition_styles and res_ads_style ~= 1 then
 			ads_tilt_progress = ads_tilt_progress or 0
 			ads_tilt_target_ang = ads_tilt_target_ang or Rotation()
 			ads_tilt_target_pos = ads_tilt_target_pos or Vector3()
@@ -167,7 +167,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 			if ads_tilt_progress > 0 then
 				tilt_pow = math.clamp(1 - (ads_tilt_progress / (steelsight_t * 0.5)), 0, 1)
 			end
-			if not in_sight or in_full_sight then
+			if in_bipod or not in_sight or in_full_sight then
 				tilt_pow = 0
 			end
 			--tilt_pow = tilt_pow / pitch_mul

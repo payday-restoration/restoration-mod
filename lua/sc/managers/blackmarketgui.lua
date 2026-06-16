@@ -6851,7 +6851,7 @@ function BlackMarketGui:update_info_text()
 			deployable_id = "sentry_gun"
 		elseif deployable_id == "grenade_crate" then
 			deployable_uses = tweak_data.upgrades.ordnance_bag_grenades
-			deployable_secondary_info = tweak_data.upgrades.ordnance_bag_ammo * managers.player:upgrade_value("grenade_crate", "ammo_increase", 1) * 100 .. "%"
+			deployable_secondary_info = tweak_data.upgrades.ordnance_bag_ammo
 		end
 
 		if deployable_id == "sentry_gun" then

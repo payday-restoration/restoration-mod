@@ -687,6 +687,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.2
 	}
 	
+	-- Ordnance bag
+	self.ordnance_bag_ammo = 0.25
+	self.ordnance_bag_grenades = 4
+	
 	self.values.player.corpse_dispose_amount = {2, 3}
 	self.values.bodybags_bag.quantity = {1}
 	

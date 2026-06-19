@@ -2,17 +2,14 @@
 	<unit>
 		<variables>
 			<var_light_1_state value="1"/>
-			<var_debris_l value="0"/>
-			<var_debris_r value="0"/>
-			<var_debris_top value="0"/>
 			<var_light_2_state value="1"/>
 			<var_shield_state value="1"/>
 			<var_charging_1_state value="0"/>
 			<var_charging_2_state value="0"/>
+			<var_debris_l value="0"/>
+			<var_debris_r value="0"/>
+			<var_debris_top value="0"/>
 		</variables>
-		<filter name="'filter_light_1_disabled'">
-			<check value="vars.var_light_1_state == 0"/>
-		</filter>
 		<filter name="'filter_debris_l'">
 			<check value="vars.var_debris_l == 0"/>
 		</filter>
@@ -21,6 +18,9 @@
 		</filter>
 		<filter name="'filter_debris_top'">
 			<check value="vars.var_debris_top == 0"/>
+		</filter>
+		<filter name="'filter_light_1_disabled'">
+			<check value="vars.var_light_1_state == 0"/>
 		</filter>
 		<filter name="'filter_light_1_enabled'">
 			<check value="vars.var_light_1_state == 1"/>
@@ -178,11 +178,11 @@
 		</sequence>
 		<sequence editable_state="false" name="'start_flash_light_1'" triggable="false">
 			<set_variables var_charging_1_state="1"/>
-			<function extension="'base'" function="'clbk_seq_flash_start'" param1="object('e_01')" param2="body('light_01')"/>
+			<function extension="'base'" function="'clbk_seq_flash_start'" param1="object('e_01')" param2="body('light_01')" param3="1"/>
 		</sequence>
 		<sequence editable_state="false" name="'start_flash_light_2'" triggable="false">
 			<set_variables var_charging_2_state="1"/>
-			<function extension="'base'" function="'clbk_seq_flash_start'" param1="object('e_02')" param2="body('light_02')"/>
+			<function extension="'base'" function="'clbk_seq_flash_start'" param1="object('e_02')" param2="body('light_02')" param3="2"/>
 		</sequence>
 		<sequence editable_state="false" name="'verify_flash'" triggable="false">
 			<run_sequence filter="'filter_can_flash_light_1'" name="'flash_light_1'"/>

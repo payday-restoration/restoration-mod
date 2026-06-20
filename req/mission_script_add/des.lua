@@ -7,9 +7,9 @@ local gunners = ((difficulty >= 8)  and "units/pd2_mod_bravo/characters/ene_brav
 local shields = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city")
 local snipers = ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky" or "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper")
 local grunt_1 =  ((difficulty >= 8) and "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" or "units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
-local death_wish_above = difficulty == 7
+local death_wish_above = difficulty >= 7
 local death_sentence = difficulty == 8
-local chance_weapons_vault_door_defense = math.random() < 0.15 or 0
+local chance_weapons_vault_door_defense = math.random() < 0.15 
 local chance_sneaky_cloaker_escape = math.random() < 0.4
 local optsDefend_SO = {
 	SO_access = {
@@ -48,7 +48,7 @@ local optsSniper_02 = {
 	on_executed = { { id = 400028, delay = 0}, },
 }
 local opts_spawn__weapon_lab_defenders = {
-	enabled = death_sentence,
+	enabled = death_wish_above,
 	on_executed = {
 		{ id = 400001, delay = 0, },
 		{ id = 400002, delay = 0, },
@@ -113,7 +113,7 @@ local optsgrunt_05 = {
 	on_executed = { { id =  400017,  delay = 0, }, },
 }
 local opts_spawn_escape_defense = {
-	enabled = death_wish_above and death_sentence,
+	enabled = death_wish_above,
 	on_executed = {
 		{ id = 400008, delay = 0, },
 		{ id = 400009, delay = 0, },
@@ -175,7 +175,7 @@ local opts_vault_gunner_2 = {
 	on_executed = { {  id = 400043, delay = 0, }, },
 }
 local opts_weapons_lab_vault_units = {
-	enabled = { death_wish_above and chance_weapons_vault_door_defense },
+	enabled = ( death_sentence and chance_weapons_vault_door_defense ),
 	on_executed = {
 		{ id = 400038, delay = 0, },
 		{ id = 400039, delay = 0, },
@@ -193,7 +193,7 @@ local opts_cloaker_esc_2 = {
 	on_executed = { { id = 400046, delay = 0, }, },
 }
 local opts_enable_chance_clk_esc = {
-	enabled = { death_wish_above and chance_sneaky_cloaker_escape },
+	enabled = (  death_wish_above and chance_sneaky_cloaker_escape ),
 	on_executed = {
 		{ id = 400047, delay = 0, },
 		{ id = 400048, delay = 0, },

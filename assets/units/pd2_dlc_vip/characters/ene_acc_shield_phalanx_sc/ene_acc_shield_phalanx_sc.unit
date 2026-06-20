@@ -1,4 +1,8 @@
-<unit type="items" slot="8" >
+<unit type="items" slot="8">
+	<!--
+	<network sync="spawn" remote_unit="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc_dummy"/>
+	-->
+	<network sync="spawn"/>
     <object file="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" />
 	
 	<dependencies>
@@ -23,6 +27,14 @@
 				<var value="int_seq_light_1_break"/>
 				<var value="int_seq_light_2_break"/>
 			</var>
+			<var name="_priority_bodies" type="table">
+				<var name="held_body_middle" value="1"/>
+				<var name="light_01" value="2"/>
+				<var name="light_02" value="2"/>
+				<var name="held_body_top" value="3"/>
+				<var name="held_body_left" value="3"/>
+				<var name="held_body_right" value="3"/>
+			</var>
 		</extension>	
 		<extension name="damage" class="UnitDamage">
 			<var name="_collision_event" value="USM_Drop"/>
@@ -30,8 +42,6 @@
 		</extension>
 	</extensions>
 	
-	<network sync="spawn" remote_unit="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc_dummy"/>
-
 	<sounds>
 		<default_soundsource source="rp_ene_acc_shield_phalanx"/>
 	</sounds>	

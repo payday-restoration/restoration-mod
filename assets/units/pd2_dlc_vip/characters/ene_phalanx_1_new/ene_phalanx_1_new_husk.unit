@@ -5,6 +5,8 @@
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" />
+		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc_dummy" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
 
@@ -54,9 +56,9 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-  <network sync="husk" remote_unit=""/>
+	<network sync="husk" remote_unit=""/>
 
-  <sounds>
+	<sounds>
 		<default_soundsource source="Hips"/>
-  </sounds>
+	</sounds>
 </unit>

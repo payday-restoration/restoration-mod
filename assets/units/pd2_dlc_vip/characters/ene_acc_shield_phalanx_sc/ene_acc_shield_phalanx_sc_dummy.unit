@@ -1,12 +1,17 @@
-<unit type="items" slot="8" >
+<unit type="items" slot="8">
+	<!--
 	<network sync="husk" remote_unit=""/>
-    <object file="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" />
-    <extensions>
+	-->
+	<object file="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" />
+
+	<extensions>
 		<extension name="unit_data" class="ScriptUnitData"/>
+		<!--
 		<extension name="damage" class="UnitDamage">
 			<var name="_collision_event" value="USM_Drop"/>
 			<var name="_collision_sfx_quite_time" value="0.1"/>
 		</extension>
+		-->
 	</extensions>
 	
 	<!--

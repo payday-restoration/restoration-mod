@@ -98,7 +98,7 @@ function PlayerInventory:_start_feedback_effect(end_time)
 			return false
 		end
 
-		nr_ticks = math.max(1, math.floor(end_time / interval))
+		nr_ticks = math.max(1, math.ceil(end_time / interval))
 	end
 
 	local t = TimerManager:game():time()

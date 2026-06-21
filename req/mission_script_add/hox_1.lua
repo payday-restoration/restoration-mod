@@ -127,13 +127,13 @@ local clk_garage = {
     enemy = cloaker,
     enabled = true,
     on_executed = {
-        { id = , delay = 0},
+        { id = 400022, delay = 0},
     },
 }
 local spawn_clk_garage = {
     enabled = ( death_wish_above and chance_sneaky_cloaker_escape)
     on_executed = {
-        { id = , delay = 0}, 
+        { id = 400021, delay = 0}, 
     }
 }
 return {

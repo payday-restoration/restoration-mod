@@ -52,22 +52,42 @@ return {
 		},
 	},
 	-- OMNIA is coming for your ass
-	[101687] = {
+	[101700] = {
 		spawn_bravos = pro_job,
 		values = {
-			time = 30,
+			time = 20,
 		},
 	},
--- Bio Weapons Labs Defense 
+-- Bio Weapons Labs Defense
 	[108051] = {
 		on_executed = {
-			{ id = 400007, delay = 0 ,},
+			{ id =  400054, delay = 2, },
+			{ id = 400007, delay = 0,},
 		},
 	},
 -- Bio Weapons Vault Units 
 [101450] = {
 	on_executed = {
 		{ id = 400044, delay = 0, },
+	},
+},
+-- Units on standby when any of objective room doors open 
+-- PC room
+[100729] = {
+	on_executed = {
+		{ id = 400064, delay = 2, },
+	},
+},
+-- Arc room 
+[100370] = {
+	on_executed = {
+		{ id = 400059, delay = 2, },
+	},
+}, 
+-- Lab room 
+[100731] = {
+	on_executed = {
+		{ id = 400069, delay = 2, },
 	},
 },
 -- Heavy Resistance on Escape 

@@ -24,6 +24,23 @@ local swat_harasser = {
 	}
 }
 return {
+-- Repurposed unused lobby units with my own (prison guards lol)
+[100048] = {
+    on_executed = {
+        { id = 400013,  delay = 0, },
+    },
+},
+-- Some garage stuff
+[102095] = {
+    on_executed = {
+        { id = 400023,  delay = 0, },
+    },
+},
+[100809] = {
+    on_executed = {
+        { id =  4000017, delay = 0},
+    },
+},
     -- Add new reinforce
 	[102850] = { -- in garage
 		reinforce = {
@@ -39,7 +56,7 @@ return {
             },
 		},
 	},
-    --Diff scaling SWAT harrasers next to cop cars that replace beat cops on higher diffs
+    -- Diff scaling SWAT harrasers next to cop cars that replace beat cops on higher diffs
     [102029] = swat_harasser,
     [102031] = swat_harasser,
     [102033] = swat_harasser,

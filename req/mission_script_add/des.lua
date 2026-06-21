@@ -7,10 +7,13 @@ local gunners = ((difficulty >= 8)  and "units/pd2_mod_bravo/characters/ene_brav
 local shields = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city")
 local snipers = ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky" or "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper")
 local grunt_1 =  ((difficulty >= 8) and "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" or "units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
+local grunt_2 =  ((difficulty >= 8) and "units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870" or "units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
+local grunt_3 =  ((difficulty >= 8) and "units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" or "units/payday2/characters/ene_swat_1/ene_swat_1")
 local death_wish_above = difficulty >= 7
 local death_sentence = difficulty == 8
 local chance_weapons_vault_door_defense = math.random() < 0.15 
 local chance_sneaky_cloaker_escape = math.random() < 0.4
+
 local optsDefend_SO = {
 	SO_access = {
         "tank",
@@ -199,6 +202,102 @@ local opts_enable_chance_clk_esc = {
 		{ id = 400048, delay = 0, },
 	}
 }
+local opts_weapons_units_01 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_1,
+}
+local opts_weapons_units_02 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_2,
+}
+local opts_weapons_units_03 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_3,
+}
+local opts_enable_grunts_open_weapons_room = {
+	enabled = death_wish_above,
+	on_executed = {
+		{ id = 400050, delay = 0, },
+		{ id = 400051, delay = 0, },
+		{ id = 400052, delay = 0, },
+		{ id = 400053, delay = 0, },
+	}
+}
+local opts_arc_units_01 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_1,
+}
+local opts_arc_units_02 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_2,
+}
+local opts_arc_units_03 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_3,
+}
+local opts_enable_grunts_open_arc_room = {
+	enabled = death_wish_above,
+	on_executed = {
+		{ id = 400055, delay = 0, },
+		{ id = 400056, delay = 0, },
+		{ id = 400057, delay = 0, },
+		{ id = 400058, delay = 0, },
+	}
+}
+local opts_pc_units_01 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_1,
+}
+local opts_pc_units_02 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_2,
+}
+local opts_pc_units_03 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_3,
+}
+local opts_enable_grunts_open_pc_room = {
+	enabled = death_wish_above,
+	on_executed = {
+		{ id = 400060, delay = 0, },
+		{ id = 400061, delay = 0, },
+		{ id = 400062, delay = 0, },
+		{ id = 400063, delay = 0, },
+	}
+}
+local opts_lab_units_01 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_1,
+}
+local opts_lab_units_02 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_2,
+}
+local opts_lab_units_03 = {
+	enabled = true,
+	participate_to_group_ai = true,
+	enemy = grunt_3,
+}
+local opts_enable_grunts_open_lab_room = {
+	enabled = death_wish_above,
+	on_executed = {
+		{ id = 400065, delay = 0, },
+		{ id = 400066, delay = 0, },
+		{ id = 400067, delay = 0, },
+		{ id = 400068, delay = 0, },
+	}
+}
 return {
     elements = {
         -- Weapon Labs Defense
@@ -271,8 +370,33 @@ return {
 
 		restoration:gen_so(400045, "clk_esc_so_1",  Vector3(-1950, 1941, 0), Rotation(-92, 0, -0), optsCloaker_Hide_SO_02),
 		restoration:gen_so(400046, "clk_esc_so_2",  Vector3(-1000, 2176, 0), Rotation(101, -0, -0), optsCloaker_Hide_SO_02),
-		restoration:gen_missionscript(400049, "chance_clk_esc", opts_enable_chance_clk_esc), 
-
+		restoration:gen_missionscript(400049, "chance_clk_esc", opts_enable_chance_clk_esc),
+		
+		-- Units when each objective rooms are open 
+		-- Weapon room
+		restoration:gen_dummy(400050, "grunt_weapon_room_1", Vector3(-2166, -3233, 0), Rotation(0, 0, -0), opts_weapons_units_01),
+		restoration:gen_dummy(400051, "grunt_weapon_room_2", Vector3(-2354, -3243, 0), Rotation(0, 0, -0), opts_weapons_units_02),
+		restoration:gen_dummy(400052, "grunt_weapon_room_3", Vector3(-2167, -3120, 0), Rotation(0, 0, -0), opts_weapons_units_03),
+		restoration:gen_dummy(400053, "grunt_weapon_room_4", Vector3(-2349, -3144, 0), Rotation(0, 0, -0), opts_weapons_units_02),
+		restoration:gen_missionscript(400054, "enable_grunts_weapon_room", opts_enable_grunts_open_weapons_room),
+		-- arc room 
+		restoration:gen_dummy(400055, "grunt_arc_room_1", Vector3(2373.99, -3141, 0), Rotation(0, 0, -0), opts_arc_units_01),
+		restoration:gen_dummy(400056, "grunt_arc_room_2", Vector3(2373.99, -3240, 0), Rotation(0, 0, -0), opts_arc_units_02),
+		restoration:gen_dummy(400057, "grunt_arc_room_3", Vector3(2373.99, -3372, 0), Rotation(0, 0, -0), opts_arc_units_03),
+		restoration:gen_dummy(400058, "grunt_arc_room_4", Vector3(2373.99, -3525, 0), Rotation(0, 0, -0), opts_arc_units_02),
+		restoration:gen_missionscript(400059, "enable_grunts_arc_room", opts_enable_grunts_open_arc_room),
+		-- computer room 
+		restoration:gen_dummy(400060, "grunt_pc_room_1", Vector3(2399.99, -1283, 0), Rotation(0, 0, -0), opts_pc_units_01),
+		restoration:gen_dummy(400061, "grunt_pc_room_2", Vector3(2295.99, -1285, 0), Rotation(0, 0, -0), opts_pc_units_02),
+		restoration:gen_dummy(400062, "grunt_pc_room_3", Vector3(2400.99, -1405, 0), Rotation(0, 0, -0), opts_pc_units_03),
+		restoration:gen_dummy(400063, "grunt_pc_room_4", Vector3(2295.99, -1405, 0), Rotation(0, 0, -0), opts_pc_units_02),
+		restoration:gen_missionscript(400064, "enable_grunts_puter_room", opts_enable_grunts_open_pc_room),
+		-- chem/lab room
+		restoration:gen_dummy(400065, "grunt_lab_room_1", Vector3(-2372, -400, 0), Rotation(177.000, 0, -0), opts_lab_units_01),
+		restoration:gen_dummy(400066, "grunt_lab_room_2", Vector3(-2260, -400, 0), Rotation(177.000, 0, -0), opts_lab_units_02),
+		restoration:gen_dummy(400067, "grunt_lab_room_3", Vector3(-2260, -252, 0), Rotation(177.000, 0, -0), opts_lab_units_03),
+		restoration:gen_dummy(400068, "grunt_lab_room_4", Vector3(-2390, -252, 0), Rotation(177.000, 0, -0), opts_lab_units_02),
+		restoration:gen_missionscript(400069, "enable_grunts_lab_room", opts_enable_grunts_open_lab_room),
 
     },
 }

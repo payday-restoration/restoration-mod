@@ -83,21 +83,21 @@ local escape_garage_esc_unit_1 = {
     enemy = tank_skull,
     enabled = true,
     on_executed = {
-        { id =   , delay = 0}
+        { id = 400018, delay = 0}
     },
 }
 local escape_garage_esc_unit_2 = {
     enemy = gunnner,
     enabled = true,
     on_executed = {
-        { id =   , delay = 0},
+        { id = 400019, delay = 0},
     },
 }
 local escape_garage_esc_unit_3 = {
     enemy = T_Taser,
     enabled = true,
     on_executed = {
-        { id =   , delay = 0},
+        { id =  400020, delay = 0},
     },
 }
 local opts_enable_anti_camping_escape_garage_units = {

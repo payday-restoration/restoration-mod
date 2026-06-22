@@ -131,10 +131,10 @@ local clk_garage = {
     },
 }
 local spawn_clk_garage = {
-    enabled = ( death_wish_above and chance_sneaky_cloaker_escape)
+    enabled = ( death_wish_above and chance_sneaky_cloaker_escape),
     on_executed = {
         { id = 400021, delay = 0}, 
-    }
+    },
 }
 return {
     elements = {
@@ -157,7 +157,7 @@ return {
         restoration:gen_dummy(4000014, "skully", Vector3(13216, 3284.02, -2800), Rotation(91, -0, -0), escape_garage_esc_unit_1),
         restoration:gen_dummy(400015, "shotty_like_a_melody", Vector3(13214.9, 3344.01, -2800), Rotation(91, -0, -0), escape_garage_esc_unit_2),
         restoration:gen_dummy(400016, "slow_down_buddy", Vector3(13217.4, 3203.04, -2800), Rotation(91, -0, -0), escape_garage_esc_unit_3),
-        restoration:gen_missionscript(4000017, "anti_esc_camping_zone" opts_enable_anti_camping=_escape_garage_units),
+        restoration:gen_missionscript(4000017, "anti_esc_camping_zone", opts_enable_anti_camping_escape_garage_units),
         restoration:gen_so(400018, "anti_camp_so_1", Vector3(12638, 3871.28, -2800), Rotation(14, -0, -0), optsDefend_SO),
         restoration:gen_so(400019, "anti_camp_so_2", Vector3(12742.8, 3897.41, -2800), Rotation(14, -0, -0), optsDefend_SO),
         restoration:gen_so(400020, "anti_camp_so_3", Vector3(12539, 3846.61, -2800), Rotation(14, -0, -0), optsDefend_SO),

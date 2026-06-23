@@ -5,7 +5,7 @@ local prison_guard_1 = "units/payday2/characters/ene_prisonguard_male_1/ene_pris
 local prison_guard_2 = "units/payday2/characters/ene_prisonguard_female_1/ene_prisonguard_female_1"
 local tank_skull =  ((difficulty >= 8) and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc" or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")
 local gunner = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
-local T_Taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
+local titan_taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 local cloaker = ((difficulty >= 8)  and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or "units/payday2/characters/ene_spook_1/ene_spook_1")
 local chance_sneaky_cloaker_escape = math.random() < 0.4
 
@@ -57,6 +57,7 @@ local optsDefend_SO = {
         "tank",
         "fbi",
         "cop",
+        "taser",
     },
 	scan = true,
 	forced = true,
@@ -80,25 +81,19 @@ local opts_enable_prison_guard_lobby_units = {
     },
 }
 local escape_garage_esc_unit_1 = {
-    enemy = tank_skull,
     enabled = true,
-    on_executed = {
-        { id = 400018, delay = 0}
-    },
+    enemy = tank_skull,
+    on_executed = { { id = 400018, delay = 0 }, },
 }
 local escape_garage_esc_unit_2 = {
-    enemy = gunnner,
+    enemy = gunner,
     enabled = true,
-    on_executed = {
-        { id = 400019, delay = 0},
-    },
+    on_executed = { { id = 400019, delay = 0}, },
 }
 local escape_garage_esc_unit_3 = {
-    enemy = T_Taser,
+    enemy = titan_taser,
     enabled = true,
-    on_executed = {
-        { id =  400020, delay = 0},
-    },
+    on_executed = { { id =  400020, delay = 0}, },
 }
 local opts_enable_anti_camping_escape_garage_units = {
     enabled = death_wish_above,
@@ -106,7 +101,6 @@ local opts_enable_anti_camping_escape_garage_units = {
         { id = 400014, delay = 0, },
         { id = 400015, delay = 0, },
         { id = 400016, delay = 0, },
-
     },
 }
 local optsCloaker_Hide_SO_01 = {
@@ -126,15 +120,11 @@ local optsCloaker_Hide_SO_01 = {
 local clk_garage = {
     enemy = cloaker,
     enabled = true,
-    on_executed = {
-        { id = 400022, delay = 0},
-    },
+    on_executed = { { id = 400022, delay = 0}, },
 }
 local spawn_clk_garage = {
-    enabled = ( death_wish_above and chance_sneaky_cloaker_escape),
-    on_executed = {
-        { id = 400021, delay = 0}, 
-    },
+    enabled = ( death_wish_above and chance_sneaky_cloaker_escape ),
+    on_executed = { { id = 400021, delay = 0},  },
 }
 return {
     elements = {
@@ -154,8 +144,8 @@ return {
         restoration:gen_missionscript(400013, "rdy_teams_lobby", opts_enable_prison_guard_lobby_units),
         
         -- Garage escape anti camping zone because FUUCCKK YOUUUU
-        restoration:gen_dummy(4000014, "skully", Vector3(13216, 3284.02, -2800), Rotation(91, -0, -0), escape_garage_esc_unit_1),
-        restoration:gen_dummy(400015, "shotty_like_a_melody", Vector3(13214.9, 3344.01, -2800), Rotation(91, -0, -0), escape_garage_esc_unit_2),
+        restoration:gen_dummy(400014, "skully", Vector3(13216, 3284.02, -2800), Rotation(91, -0, -0), escape_garage_esc_unit_1),
+        restoration:gen_dummy(400015, "slow_down_there", Vector3(13214.9, 3344.01, -2800), Rotation(91, -0, -0), escape_garage_esc_unit_2),
         restoration:gen_dummy(400016, "slow_down_buddy", Vector3(13217.4, 3203.04, -2800), Rotation(91, -0, -0), escape_garage_esc_unit_3),
         restoration:gen_missionscript(4000017, "anti_esc_camping_zone", opts_enable_anti_camping_escape_garage_units),
         restoration:gen_so(400018, "anti_camp_so_1", Vector3(12638, 3871.28, -2800), Rotation(14, -0, -0), optsDefend_SO),

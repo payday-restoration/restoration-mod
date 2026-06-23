@@ -103,9 +103,9 @@ local escape_garage_esc_unit_3 = {
 local opts_enable_anti_camping_escape_garage_units = {
     enabled = death_wish_above,
     on_executed = {
-        { id = 400014, delay = 3, },
-        { id = 400015, delay = 2, },
-        { id = 400016, delay = 1, },
+        { id = 400014, delay = 0, },
+        { id = 400015, delay = 0, },
+        { id = 400016, delay = 0, },
 
     },
 }

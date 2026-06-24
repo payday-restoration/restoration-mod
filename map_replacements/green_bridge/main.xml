@@ -7,7 +7,11 @@
 		</packages>
 	</instance>
 	<level ai_group_type="nypd" briefing_dialog="Play_pln_glace_brf" cube="cube_apply_heist_bank" name_id = "heist_glace_hl" brief_id = "heist_glace_briefing" id="bridge" intro_event="Play_pln_glace_intro" music="heist" outro_event="Play_pln_glace_end" player_style="raincoat">
-		<assets/>
+		<assets>
+			<asset name="ammo_bag"/>
+			<asset name="health_bag"/>
+			<asset name="grenade_crate"/>
+		</assets>
 		<environment_effects>
 			<value_node value="rain"/>
 			<value_node value="raindrop_screen"/>

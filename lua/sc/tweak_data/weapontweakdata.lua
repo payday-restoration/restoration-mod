@@ -31584,17 +31584,22 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rs422.categories = {
 					"snp",
 					"amr",
-					"sweet_liberty"
+					"sweet_liberty",
+					"keep_ammo_max"
 				}
 				self.rs422.recategorize = { "antim_snp" }
 				self.rs422.hs_mult = 1.5
 				self.rs422.damage_type = "anti_materiel"
+				self.rs422.charge_data.min_t = 0.45
+				self.rs422.charge_data.max_t = 2.5
 				self.rs422.upgrade_blocks = nil
 				self.rs422.ignore_damage_upgrades = nil
 				self.rs422.has_description = true
+				self.rs422.FIRE_MODE = "single"
+				self.rs422.CAN_TOGGLE_FIREMODE = false
 				self.rs422.CLIP_AMMO_MAX = 1
 				self.rs422.AMMO_MAX = 20
-				self.rs422.fire_mode_data.fire_rate = 3
+				self.rs422.fire_mode_data.fire_rate = 1
 				self.rs422.kick = self.stat_info.kick_tables.even_recoil
 				self.rs422.supported = true
 				self.rs422.ads_speed = 0.700
@@ -31618,6 +31623,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 25
 				}
 				self.rs422.armor_piercing_chance = 1
+				self.rs422.always_play_anims = true
 				--self.rs422.use_vapor_trail = true
 				self.rs422.trail_effect = "effects/particles/weapons/sniper_trail_sc"
 				self.rs422.use_sniper_trail = true

@@ -31580,6 +31580,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.rs422 then -- RS-422 Railgun
+				self.rs422.categories = {
+					"snp",
+					"amr",
+					"sweet_liberty"
+				}
+				self.rs422.recategorize = { "antim_snp" }
+				self.rs422.hs_mult = 1.5
+				self.rs422.damage_type = "anti_materiel"
+				self.rs422.upgrade_blocks = nil
+				self.rs422.ignore_damage_upgrades = nil
+				self.rs422.has_description = true
+				self.rs422.CLIP_AMMO_MAX = 1
+				self.rs422.AMMO_MAX = 20
+				self.rs422.fire_mode_data.fire_rate = 3
+				self.rs422.kick = self.stat_info.kick_tables.even_recoil
+				self.rs422.supported = true
+				self.rs422.ads_speed = 0.700
+				self.rs422.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 10000,
+					min_mult = 0.375
+				}
+				self.rs422.stats = {
+					damage = 225,
+					spread = 100,
+					recoil = 75,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 13,
+					suppression = 4,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.rs422.armor_piercing_chance = 1
+				--self.rs422.use_vapor_trail = true
+				self.rs422.trail_effect = "effects/particles/weapons/sniper_trail_sc"
+				self.rs422.use_sniper_trail = true
+				self.rs422.can_shoot_through_titan_shield = true
+				self.rs422.stats_modifiers = nil
+				self.rs422.panic_suppression_chance = 0.05
+				self.rs422.reload_speed_multiplier = 1
+				self.rs422.timers.reload_empty = 1.6
+				self.rs422.timers.reload_exit_empty = 0
+				self.rs422.timers.reload_not_empty = 1.6
+				self.rs422.timers.reload_exit_not_empty = 0
+			end
+
 			if self.rebar then -- Red-Hot Rebar Crossbow
 				self.rebar.categories = {
 					"crossbow"

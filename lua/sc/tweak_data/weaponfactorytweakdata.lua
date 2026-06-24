@@ -5591,7 +5591,7 @@ end
 					self.wpn_fps_pis_deagle.override = self.wpn_fps_pis_deagle.override or {}
 					self.wpn_fps_pis_deagle.override.wpn_fps_upg_i_autofire = {
 						stats = {
-							spread = -3,
+							spread = -8,
 							recoil = -8
 						},
 						custom_stats = {
@@ -24613,7 +24613,8 @@ end
 								end
 							end
 
-							if table.contains( tww.categories , "akimbo") then
+							if table.contains( tww.categories , "akimbo") or 
+								(table.contains( tww.categories , "pistol") and (tww.CAN_TOGGLE_FIREMODE ~= true or tww.FIRE_MODE ~= "auto")) then
 								if self[factory_id].uses_parts then
 									for i, part_id in pairs(self[factory_id].uses_parts) do
 										attachment_list = {
@@ -39154,11 +39155,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_pis_triggermod_fast.pcs = {}
 					self.parts.wpn_fps_pis_triggermod_fast.stats = {
 						value = 5,
-						spread = -8,
-						recoil = -10
+						spread = -6,
+						recoil = -6
 					}
 					self.parts.wpn_fps_pis_triggermod_fast.custom_stats = {
-						falloff_start_mult = 0.8,
 						rof_mult = 1.1,
 						hip_mult = 2.0
 					}
@@ -39167,13 +39167,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_pis_triggermod_slow.stats = {
 						value = 5,
 						spread = 4,
-						recoil = 2
+						recoil = 2,
 					}
 					self.parts.wpn_fps_pis_triggermod_slow.custom_stats = {
-						falloff_start_mult = 1.05,
-						falloff_end_mult = 1.05,
-						rof_mult = 0.8,
-						hip_mult = 0.7,
+						rof_mult = 0.8
 					}
 
 				--Argos III

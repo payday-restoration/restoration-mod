@@ -81,7 +81,7 @@
 		</sequence>
 		
 		<sequence editable_state="false" name="'bellmead_shield'" triggable="true">
-			<material_config name="'units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2'"/>																	
+			<material_config name="'units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2'"/>
 		</sequence>
 		
 		<sequence editable_state="false" name="'disable_light_1'" triggable="true">

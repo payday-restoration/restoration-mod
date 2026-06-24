@@ -5663,7 +5663,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--memed hard enough into the game--
 		self.melee_weapons.sword.info_id = "bm_melee_sword_info"
 		self.melee_weapons.sword.stats.cleave = 1
-		self.melee_weapons.sword.stats.raycasts = 6
+		self.melee_weapons.sword.stats.raycasts = 8
 		self.melee_weapons.sword.stats.raycasts_charge = 10
 		self.melee_weapons.sword.stats.min_damage = 2
 		self.melee_weapons.sword.stats.max_damage = 6.001
@@ -5676,7 +5676,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--That's a big ass toothbrush--
 			self.melee_weapons.toothbrush.info_id = "bm_melee_toothbrush_info"
 			self.melee_weapons.toothbrush.stats.cleave = 1
-			self.melee_weapons.toothbrush.stats.raycasts = 6
+			self.melee_weapons.toothbrush.stats.raycasts = 8
 			self.melee_weapons.toothbrush.stats.raycasts_charge = 10
 			self.melee_weapons.toothbrush.stats.min_damage = 2
 			self.melee_weapons.toothbrush.stats.max_damage = 6.001
@@ -5689,7 +5689,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--This looks like a boxcutter too, but whatever--
 		self.melee_weapons.gerber.info_id = "bm_melee_gerber_info"
 		self.melee_weapons.gerber.stats.cleave = 1
-		self.melee_weapons.gerber.stats.raycasts = 6
+		self.melee_weapons.gerber.stats.raycasts = 10
 		self.melee_weapons.gerber.stats.raycasts_charge = 10
 		self.melee_weapons.gerber.stats.min_damage = 3
 		self.melee_weapons.gerber.stats.max_damage = 6.001
@@ -5702,7 +5702,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--Scout Knife--
 			self.melee_weapons.scoutknife.info_id = "bm_melee_scoutknife_info"
 			self.melee_weapons.scoutknife.stats.cleave = 1
-			self.melee_weapons.scoutknife.stats.raycasts = 6
+			self.melee_weapons.scoutknife.stats.raycasts = 10
 			self.melee_weapons.scoutknife.stats.raycasts_charge = 10
 			self.melee_weapons.scoutknife.stats.min_damage = 3
 			self.melee_weapons.scoutknife.stats.max_damage = 6.001
@@ -5716,7 +5716,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.fork.info_id = "bm_melee_fork_info"
 		self.melee_weapons.fork.stats.cleave = 1
 		self.melee_weapons.fork.stats.raycasts = 6
-		self.melee_weapons.fork.stats.raycasts_charge = 10
+		self.melee_weapons.fork.stats.raycasts_charge = 12
 		self.melee_weapons.fork.stats.min_damage = 2
 		self.melee_weapons.fork.stats.max_damage = 6.001
 		self.melee_weapons.fork.stats.min_damage_effect = 0.5
@@ -5729,7 +5729,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.bayonet.info_id = "bm_melee_bayonet_info"
 		self.melee_weapons.bayonet.stats.cleave = 1
 		self.melee_weapons.bayonet.stats.raycasts = 6
-		self.melee_weapons.bayonet.stats.raycasts_charge = 10
+		self.melee_weapons.bayonet.stats.raycasts_charge = 12
 		self.melee_weapons.bayonet.stats.min_damage = 4.5
 		self.melee_weapons.bayonet.stats.max_damage = 9.001
 		self.melee_weapons.bayonet.stats.min_damage_effect = 0.6
@@ -5742,7 +5742,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.pugio.info_id = "bm_melee_pugio_info"
 			self.melee_weapons.pugio.stats.cleave = 1
 			self.melee_weapons.pugio.stats.raycasts = 6
-			self.melee_weapons.pugio.stats.raycasts_charge = 10
+			self.melee_weapons.pugio.stats.raycasts_charge = 12
 			self.melee_weapons.pugio.stats.min_damage = 4.5
 			self.melee_weapons.pugio.stats.max_damage = 9.001
 			self.melee_weapons.pugio.stats.min_damage_effect = 0.6
@@ -5755,7 +5755,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.fairbair.info_id = "bm_melee_fairbair_info"
 		self.melee_weapons.fairbair.stats.cleave = 1
 		self.melee_weapons.fairbair.stats.raycasts = 6
-		self.melee_weapons.fairbair.stats.raycasts_charge = 10
+		self.melee_weapons.fairbair.stats.raycasts_charge = 12
 		self.melee_weapons.fairbair.stats.min_damage = 4.5
 		self.melee_weapons.fairbair.stats.max_damage = 9.001
 		self.melee_weapons.fairbair.stats.min_damage_effect = 0.6
@@ -5811,11 +5811,11 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.chef.info_id = "bm_melee_chef_info"
 		self.melee_weapons.chef.stats.cleave = 1
 		self.melee_weapons.chef.stats.raycasts = 8
-		self.melee_weapons.chef.stats.min_damage = 0.65
+		self.melee_weapons.chef.stats.min_damage = 4.501
 		self.melee_weapons.chef.stats.max_damage = 33.3
 		self.melee_weapons.chef.stats.min_damage_effect = 1.0
 		self.melee_weapons.chef.stats.max_damage_effect = 2.0
-		self.melee_weapons.chef.stats.charge_time = 7
+		self.melee_weapons.chef.stats.charge_time = 6.66
 		self.melee_weapons.chef.stats.range = 160
 		self.melee_weapons.chef.stats.concealment = 29
 		self.melee_weapons.chef.stats.speed_mult = 1.1
@@ -6399,7 +6399,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	self.melee_weapons.halloween_sword.stats.speed_mult = 0.93
 
 	self.melee_weapons.titham.stats.cleave = 2
-	self.melee_weapons.titham.stats.ignore_charge_speed = true
+	self.melee_weapons.titham.ignore_charge_speed = true
 	self.melee_weapons.titham.stats.raycasts = 15
 	self.melee_weapons.titham.stats.raycasts_charge = 20
 	self.melee_weapons.titham.stats.raycasts_charge_h = 20

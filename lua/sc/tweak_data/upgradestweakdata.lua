@@ -677,7 +677,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.ecm_jammer_base_range = 2400
 	self.ecm_feedback_min_duration = 10
 	self.ecm_feedback_max_duration = 10
-	self.ecm_feedback_interval = 1.2
+	self.ecm_feedback_interval = 2
 	self.ecm_feedback_retrigger_interval = 240
 
 	--Sentry Guns
@@ -932,7 +932,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.smg.hip_fire_spread_multiplier = {0.8, 0.5}
 				--Ace
-					self.values.smg.reload_speed_multiplier = {1.20}
+					self.values.smg.reload_speed_multiplier = {1.15}
 					
 					self.skill_descs.rifleman = {
 						skill_value_b1 = tostring((1 - self.values.smg.hip_fire_spread_multiplier[1]) % 1 * 100).."%", -- Hipfire +accuracy
@@ -970,8 +970,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						0.2 --Unused
 					}
 				--Ace
-					self.values.player.bipod_damage_reduction = {0.75}
-					self.values.player.crouching_damage_reduction = {0.875}
+					self.values.player.bipod_damage_reduction = {0.8}
+					self.values.player.crouching_damage_reduction = {0.9}
 					self.values.smg.hip_run_and_shoot = {true}
 					
 					self.skill_descs.speedy_reload = {
@@ -3118,8 +3118,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			duration = 10.1,
 			affects_cameras = true,
 			affects_pagers = true,
-			feedback_interval = 1.2,
-			feedback_range = 800
+			feedback_interval = 2,
+			feedback_range = 800,
+			dodge_addend = 0.05
 		}
 	}
 	self.values.player.pocket_ecm_heal_on_kill = {
@@ -3959,7 +3960,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
 	}
 	self.specialization_descs[21][9] = {
-		perk_value_1 = tostring(self.values.team.pocket_ecm_heal_on_kill[1] * 10) -- HP regen on kill for team
+		perk_value_1 = tostring(self.values.team.pocket_ecm_heal_on_kill[1] * 10), -- HP regen on kill for team
+		perk_value_2 = tostring(self.values.player.pocket_ecm_jammer_base[1].dodge_addend * 100) -- base dodge added when active
 	}
 	
 	--Leech (Coprophilia deck xD)

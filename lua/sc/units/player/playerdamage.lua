@@ -1658,6 +1658,8 @@ function PlayerDamage:set_dodge_points()
 		self._dodge_points = self._dodge_points + pm:upgrade_value("player", "chico_injector_dodge_addend", 0)
 	elseif self._temp_health_dodge then
 		self._dodge_points = self._dodge_points + pm:upgrade_value("player", "temp_health_dodge_addend", 0)
+	elseif self._pecm_active then
+		self._dodge_points = self._dodge_points + pm:upgrade_value("player", "pocket_ecm_jammer_base", 0).dodge_addend
 	end
 
 	local current_diff = Global.game_settings.difficulty or "easy"
@@ -1750,6 +1752,14 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		end
 	end
 
+	--Has PECM
+	local has_pecm_heal = managers.player:has_category_upgrade("team", "pocket_ecm_heal_on_kill")
+	local player_inv = has_pecm_heal and self._unit.inventory and self._unit:inventory()
+	local pecm_active = player_inv and player_inv._jammer_data
+	if pecm_active ~= self._pecm_active then
+		self._pecm_active = pecm_active
+		self:set_dodge_points()
+	end
 	--Has Infil/Crook Dodge
 	local has_perk_underdog = managers.player:has_category_upgrade("player", "close_contact_dodge_addend") and managers.player:has_activate_temporary_upgrade("temporary", "dmg_dampener_close_contact")
 	if has_perk_underdog ~= self._has_perk_underdog then

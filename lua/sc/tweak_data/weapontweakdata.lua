@@ -38489,7 +38489,6 @@ function WeaponTweakData:_create_table_structure()
 	}
 	self.hk21_sc_npc = {
 		usage = "is_lmg",
-		anim_usage = "is_rifle",
 		sounds = {},
 		use_data = {},
 		auto = {}
@@ -38501,7 +38500,6 @@ function WeaponTweakData:_create_table_structure()
 	}
 	self.m249_npc = {
 		usage = "is_lmg",
-		anim_usage = "is_rifle",
 		sounds = {},
 		use_data = {},
 		auto = {}

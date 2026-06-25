@@ -38,7 +38,7 @@ return {
 },
 [100809] = {
     on_executed = {
-        { id =  4000017, delay = 0},
+        { id =  400017, delay = 0},
     },
 },
     -- Add new reinforce

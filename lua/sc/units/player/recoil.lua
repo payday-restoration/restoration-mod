@@ -65,6 +65,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 		local in_walk = not in_air and (in_wallrun or in_slide or in_dash or mvector3.length(input_axis) ~= 0)
 		local in_run = in_walk and (in_dash or p_mov:running())
 		local in_bipod = p_state == "bipod"
+		local in_vehicle = p_state == "driving"
 		local in_freefall = p_state == "jerry1" or p_state == "jerry2"
 		
 		local deltaT = math.clamp(dt, .0016, .05) --clamp dt so FPS spikes (or low fps) don't make the viewmodel fly off
@@ -111,7 +112,7 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 
 		local bob_target = in_walk and 1 or 0
 		local bob_speed = in_walk and 2 or 10
-		bob_pow = bob_pow or 0
+		bob_pow = not in_vehicle and bob_pow or 0
 		bob_pow = math.lerp(bob_pow, bob_target, math.clamp(deltaT * bob_speed, 0, 1))
 
 		if not in_freefall then
@@ -121,11 +122,11 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 			local step_mod = ((in_sight or in_crouch) and 125) or (is_running_tired and 155) or (in_run and 175) or 150
 			local speed_mult = (current_speed / step_mod) * 0.4417 --it just works lmao???
 			local run_mul = (in_slide and 0 or 1) * speed_mult --in_run and 1.45 or 1 --* ((in_sight and 0.8) or 1)
-			local mov_mul = ((enable_bob_ads and in_sight and 0.15) or (enable_bob and not in_sight and 0.7) or 0) * bob_pow
+			local mov_mul = ((enable_bob_ads and in_sight and 0.15) or (enable_bob and not in_sight and 0.7) or 0) * bob_pow * ((in_vehicle and 0) or 1)
 
 			local rot_mul = mov_mul * 0.5
 			mrotation.slerp(mov_ang, mov_ang, not in_sight and in_walk and Rotation(math.cos(getWaveValue(64 * run_mul, 1.5)) * rot_mul, math.sin(getWaveValue(128 * run_mul, -2.5)) * rot_mul, math.sin(getWaveValue(64 * run_mul, 1)) * rot_mul) or Rotation(), mov_lp_speed)
-			mov_mul = mov_mul * ((in_sight and 0.5) or -0.5)
+			mov_mul = mov_mul * ((in_sight and 0.5) or -0.5) 
 			mvector3.lerp(mov_pos, mov_pos, in_walk and Vector3(-math.sin(getWaveValue(64 * run_mul, 1.5)) * mov_mul * ((in_run and 2) or 1), 0, -math.sin(getWaveValue(128 * run_mul, -2.5)) * mov_mul) or Vector3(), mov_lp_speed * ((in_sight and not in_walk) and 2 or 1))
 		end
 
@@ -193,8 +194,8 @@ function FPCameraPlayerBase:_update_bwa(unit, t, dt)
 
 		tilt_pos = tilt_pos or Vector3()
 		tilt_ang = tilt_ang or Rotation()
-		mvector3.lerp(tilt_pos, tilt_pos, (not in_air) and Vector3((not in_sight and 16 or 0.5) * input_axis.x / 16, 0, ((not in_sight and 2.25 or 0.5) * input_axis.x / 2) + -math.abs(((in_walk and 1.15 or 0) * (in_run and 1.5 or 1)) * (not in_sight and 2 or 0))) or Vector3(), tilt_lp_speed)
-		mrotation.slerp(tilt_ang, tilt_ang, (not in_air) and Rotation(0, 0, (not in_sight and 2.25 or 0.5) * input_axis.x * 2.625 * (in_run and 2 or 1))  or Rotation(), tilt_lp_speed)
+		mvector3.lerp(tilt_pos, tilt_pos, (not in_air) and Vector3(((not in_sight and 16 or 0.5) * input_axis.x / 16) * ((in_vehicle and 0) or 1), 0, (((not in_sight and 2.25 or 0.5) * input_axis.x / 2) + -math.abs(((in_walk and 1.15 or 0) * (in_run and 1.5 or 1)) * (not in_sight and 2 or 0))) * ((in_vehicle and 0) or 1)) or Vector3(), tilt_lp_speed)
+		mrotation.slerp(tilt_ang, tilt_ang, (not in_air) and Rotation(0, 0, ((not in_sight and 2.25 or 0.5) * input_axis.x * 2.625 * (in_run and 2 or 1)) * ((in_vehicle and 0) or 1) ) or Rotation(), tilt_lp_speed)
 		
 		-----------------------------------------------------------------------------------------------------------------------------
 

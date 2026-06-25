@@ -6438,9 +6438,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		--Hacker--
 		["menu_deck21_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##가 잠금 해제됩니다.\n\n휴대용 ECM 장치의 지속 시간은 #{skill_color}#$perk_value_1##초입니다.\n\n경보가 울리기 전 휴대용 ECM 장치를 작동시키면 통신 장애를 일으켜, 모든 전자 장비와 페이저를 무력화시킵니다.\n\n경보가 울린 후 휴대용 ECM 장치를 작동시키면 #{skill_color}#$perk_value_2##미터 반경을 가진 피드백 효과를 일으킵니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#$perk_value_3## 확률로 대부분의 적을 기절시키며, 그 이후의 루프는 #{skill_color}#$perk_value_4##초마다 #{skill_color}#$perk_value_5## 확률로 기절시킵니다.\n\n휴대용 ECM 장치는 #{important_1}#$perk_value_6##초의 재사용 대기 시간을 가지고 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_7##초씩 감소합니다.",
 		["menu_deck21_3_desc_sc"] = "회피율이 ##$perk_value_1## 증가합니다.",
-		["menu_deck21_5_desc_sc"] = "ECM 피드백의 효과가 작동 중일 때 적을 처치하면 체력을 ##$perk_value_1## 회복합니다.",
+		["menu_deck21_5_desc_sc"] = "ECM 피드백이 작동 중일 때 적을 처치하면 체력을 ##$perk_value_1## 회복합니다.",
 		["menu_deck21_7_desc_sc"] = "방탄량 회복 속도가 ##$perk_value_1## 증가합니다.\n\n회피율이 추가로 ##$perk_value_2## 증가합니다.",
-		["menu_deck21_9_desc_sc"] = "ECM 피드백의 효과가 작동 중일 때 팀원이 적을 처치하면 체력을 ##$perk_value_1## 회복합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck21_9_desc_sc"] = "ECM 피드백이 작동 중일 때 회피율이 ##$perk_value_2## 증가합니다\n\nECM 피드백이 작동 중일 때 팀원이 적을 처치하면 체력을 ##$perk_value_1## 회복합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Leech
 		["menu_deck22_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#약병##의 잠금이 해제됩니다.\n\n약병을 활성화하면 #{important_1}#$perk_value_2##초 동안 최대 체력의 #{skill_color}#$perk_value_1##만큼 회복되고 #{risk}#회피가 불가능해지며 방탄력이 저장됩니다.##\n\n능력이 활성화되어 있는 동안에는 체력이 #{skill_color}#$perk_value_3##로 분할되며 피해를 입을 때마다 한 칸이 제거됩니다. 적을 #{skill_color}#$perk_value_4##명씩 처치하면 분활된 체력을 회복하고 #{skill_color}#$perk_value_5##초간 피해를 받지 않습니다.\n\n효과가 끝나면 저장된 방탄력과 지속 시간동안 얻었던 추가 방탄력(예: 불스아이)이 모두 회복합니다.\n\n약병은 #{important_1}#$perk_value_6##초의 재사용 대기 시간을 가지고 있습니다.\n\n약병이 활성화되지 않은 동안, 본인 또는 팀원이 적을 처치할 때마다 체력을 #{skill_color}#$perk_value_7##만큼 회복합니다. 이 효과는 #{important_1}#$perk_value_8##초당 한 번만 발생합니다.",

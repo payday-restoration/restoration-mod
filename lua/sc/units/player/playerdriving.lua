@@ -60,3 +60,53 @@ function PlayerDriving:_update_hud(t, dt)
 	end
 end
 --]]
+
+function PlayerDriving:_update_check_actions_passenger(t, dt, input)
+	self:_update_check_actions(t, dt)
+	self:_check_action_shooting_stance(t, input)
+	self:_check_action_night_vision(t, input)
+	self:_check_action_weapon_firemode(t, input) --added this to allow for chaning firemode
+end
+
+Hooks:PreHook(PlayerDriving, "update", "ResWeaponUpdate", function(self, t, dt)
+	if alive(self._equipped_unit) then
+		self:_update_burst_fire(t)
+		self:_update_slide_locks()
+		self:_shooting_move_speed_timer(t, dt)
+		self:_last_shot_recoil_t(t, dt)
+	end
+	self:_update_js_t(t, dt)
+	self:_update_d_scope_t(t, dt)
+	self:_update_spread_stun_t(t, dt)
+	self:_update_drain_stamina(t, dt)
+	self:_is_overheating(t, dt)
+
+	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
+	if weapon and weapon:weapon_tweak_data().ads_spool then
+		weapon:update_spin()
+	end
+
+	if self._queue_idle_interrupt_t and self._queue_idle_interrupt_t <= t then
+		self._queue_idle_interrupt_t = nil
+		self._ext_camera:play_redirect(self:get_animation("idle"))
+	end
+	local inventory = alive(self._unit) and self._unit:inventory()
+	if inventory then
+		for slot = 1, 2 do
+			local weapon_slot = inventory:unit_by_selection(slot)
+			if alive(weapon_slot) then
+				local regen_weapon = weapon_slot:base()
+				if regen_weapon and regen_weapon._starwars then
+					self:_regen_ammo(t, dt, slot, regen_weapon)
+				end
+			end
+		end
+	end
+	--Applying (and removing) the conditon for being fully ADS'd
+	if self:full_steelsight() and not self._state_data.in_full_steelsight then
+		self._state_data.in_full_steelsight = true
+	end
+	if self._state_data.in_full_steelsight and not self:in_steelsight() then
+		self._state_data.in_full_steelsight = nil
+	end
+end)

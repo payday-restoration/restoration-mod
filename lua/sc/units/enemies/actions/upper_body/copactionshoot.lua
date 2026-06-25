@@ -1345,11 +1345,6 @@ function CopActionShoot:_chk_start_melee()
 
 	if self._weap_tweak.usage == "mini" then
 		redir_name = "melee_bayonet" --bash with the front of the minigun's barrel like in first person
-	elseif self._tank_animations then
-		if melee_weapon == "fists_dozer" or melee_weapon == "fists" then
-			redir_name = "melee" --use tank_melee unique punching animation as originally intended
-			tank_melee = true
-		end
 	end
 
 	local melee_res = self._ext_movement:play_redirect(redir_name)

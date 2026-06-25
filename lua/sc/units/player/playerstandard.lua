@@ -1666,6 +1666,16 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 		end
 	end
 
+    -- HD2 Railgun band-aid solution
+	    if input.btn_primary_attack_release then
+		    if alive(self._equipped_unit) then 
+			    local wpn_base = self._equipped_unit:base()
+			    if wpn_base.charging and wpn_base:charging() then 
+				    wpn_base._railgun_release_ready = true
+			    end
+		    end
+	    end
+
 	self:_chk_action_stop_shooting(new_action, input, params)
 
 	return new_action

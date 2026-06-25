@@ -182,6 +182,7 @@
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
 	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small"  load="true"/>
 	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" load="true" force="true" />
 	
 	<!--sniper-->
 	<unit				path="units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1"  load="true"/>
@@ -242,6 +243,7 @@
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
 	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true" force="true"/>
 	<!--sexy cap-->
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" />

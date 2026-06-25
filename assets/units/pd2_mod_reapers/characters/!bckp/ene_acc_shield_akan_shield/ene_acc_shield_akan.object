@@ -18,7 +18,7 @@
 			<object name="c_light_01" collision_type="box" />
 		</body>
 
-		<body name="shield_visor" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+		<body name="steklo" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_lights" />
 			<object name="c_box_shield_visor" collision_type="box" padding="-2" />
 		</body>
@@ -37,7 +37,7 @@
 
 	<decal_surfaces default_material="shield" >
 		<decal_mesh name="dm_metal" 	enabled="true" 	material="carpet" />
-		<decal_mesh name="dm_glass" 	enabled="true" 	material="glass_unbreakable" />
+		<decal_mesh name="dm_glass" 	enabled="true" 	material="glass_breakable" />
 	</decal_surfaces>
 
 	<graphics>
@@ -52,8 +52,6 @@
 			<material materials="mtr_light_il_lod_2" />
 		</object>
 		<object name="g_glass" 	enabled="true" >
-		</object>
-		<object name="g_glass_cracked" 	enabled="false" >
 		</object>
 
 	</graphics>

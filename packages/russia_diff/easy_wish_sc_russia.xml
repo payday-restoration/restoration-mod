@@ -207,6 +207,7 @@
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
 	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true" force="true"/>
 	<!--sexy cap-->
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" />

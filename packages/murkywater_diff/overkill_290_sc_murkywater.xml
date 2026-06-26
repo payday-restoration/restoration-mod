@@ -691,4 +691,8 @@
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm"/>
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_helm_df" />
 	<!-- bravoss squad end-->	
+	
+	<!-- Trying to make OMNIA Shield load the cracked visor texture -->
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" load="true" force="true"/>	<!-- Same visor color as the AKAN Shields, so uhhh --> 
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/red_glass_df" load="true" force="true"/>	<!-- Same visor color as the AKAN Shields, so uhhh -->	
 </table>

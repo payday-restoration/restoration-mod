@@ -3,6 +3,8 @@
 	
 	<dependencies>
 		<depends_on effect="effects/particles/dest/security_camera_dest"/>
+		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable"/>
+		<depends_on effect="effects/payday2/particles/impacts/glass_impact_pd2"/>
 	</dependencies>
 	
     <extensions>

@@ -684,6 +684,9 @@
 	<unit_mat_seq		path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia" load="true"/>
 	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
 	<texture			path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/shield_df"/>		
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" load="true" force="true"/>	<!-- Same visor color as the AKAN Shields, so uhhh --> 
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/red_glass_df" load="true" force="true"/>	<!-- Same visor color as the AKAN Shields, so uhhh -->
+	
 	<!-- omniacs end -->	
 	
 	<!-- specials-->	

@@ -180,6 +180,9 @@
 	<model				path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
 	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small"  load="true"/>
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" load="true" force="true" />
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_df"/>	<!-- Shield Visor -->
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_cracked_df"/>	<!-- Shield Visor -->
 	
 	<!--sniper-->	
 	<object				path="units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1" />

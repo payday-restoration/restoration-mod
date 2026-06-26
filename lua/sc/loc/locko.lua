@@ -5999,7 +5999,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Kilmer--
 				["menu_heavy_impact_beta_sc"] = "킬머",
-				["menu_heavy_impact_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##의 재장전 속도가 #{skill_color}#$skill_value_b2## 빨라집니다.\n\n이동 중 명중률 패널티가 #{skill_color}#$skill_value_b1## 감소합니다.\n\n이동 중 명중률 패널티는 안정성에 영향을 받습니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#소총##의 재장전 속도가 추가로 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n#{skill_color}#소총##의 조준 속도 및 달리기 후 사격 속도가 #{skill_color}#$skill_value_p2## 빨라집니다.",
+				["menu_heavy_impact_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#소총##의 재장전 속도가 #{skill_color}#$skill_value_b2## 빨라집니다.\n\n#{skill_color}#소총##의 이동 중 명중률 패널티가 #{skill_color}#$skill_value_b1## 감소합니다.\n\n이동 중 명중률 패널티는 안정성에 영향을 받습니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#소총##의 재장전 속도가 추가로 #{skill_color}#$skill_value_p1## 빨라집니다.\n\n#{skill_color}#소총##의 조준 속도 및 달리기 후 사격 속도가 #{skill_color}#$skill_value_p2## 빨라집니다.",
 
 				--Ammo Efficiency--
 				["menu_single_shot_ammo_return_sc"] = "효율적인 탄약 활용",

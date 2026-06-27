@@ -70,7 +70,8 @@
 	<sequence_manager	path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	
 	<texture			path="units/payday2/characters/ene_acc_shield_city/shield_df" force="false"/>
-	<texture			path="units/payday2/characters/ene_acc_shield_city/shield_nm" force="false"/>			
+	<texture			path="units/payday2/characters/ene_acc_shield_city/shield_nm" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk"/> <!-- GenSec Shield Visor -->		
 	
 	<!--zombie city heavy-->
     <unit				path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36" load="true"/>

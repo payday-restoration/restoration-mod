@@ -102,6 +102,7 @@
 	
 	<texture			path="units/payday2/characters/ene_acc_shield_city/shield_df" force="false"/>
 	<texture			path="units/payday2/characters/ene_acc_shield_city/shield_nm" force="false"/>	
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" force="false"/> <!-- GenSec Shield Visor -->	
 	
 	<!-- shield -->
 	<unit				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" load="true"/>

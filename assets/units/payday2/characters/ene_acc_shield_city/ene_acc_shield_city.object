@@ -8,6 +8,9 @@
 			<object name="c_box_shield_left" 			collision_type="box" padding="-2" />
 			<object name="c_box_shield_front" 			collision_type="box" padding="-2" />
 			<object name="c_box_shield_right_bottom" 	collision_type="box" padding="-2" />
+			<object name="c_front_left" 	collision_type="box" padding="-2" />
+			<object name="c_front_right" 	collision_type="box" padding="-2" />
+			<object name="c_front_up" 	collision_type="box" padding="-2" />
 			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
 		</body>
 		<body name="light_01" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
@@ -19,12 +22,20 @@
 			<object name="rp_ene_acc_shield_lights" />
 			<object name="c_light_02" collision_type="box" />
 		</body>
+		
+		<body name="shield_visor" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_lights" />
+			<object name="c_visor" collision_type="box" />
+		</body>
 
 		<body name="dropped_body" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_lights" />
-			<object name="c_box_shield_left" 			collision_type="box" />
+			<object name="c_box_shield_left" 			collision_type="box"  />
 			<object name="c_box_shield_front" 			collision_type="box" />
 			<object name="c_box_shield_right_bottom" 	collision_type="box" />
+			<object name="c_front_left" 	collision_type="box" />
+			<object name="c_front_right" 	collision_type="box" />
+			<object name="c_front_up" 	collision_type="box"  />
 			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
 		</body>
 	</bodies>
@@ -41,6 +52,9 @@
 			<material materials="mtr_shield_lod_2" />
 		</object>
 		<object name="g_glass" 	enabled="true" />
+		</object>
+		<object name="g_glass_cracked" 	enabled="false" />
+		</object>
 		<object name="g_light_01" 	enabled="true" >
 			<material materials="mtr_light_il" max_distance="1000" />
 			<material materials="mtr_light_il_lod_1" max_distance="1500" />

@@ -86,6 +86,7 @@
 	
 	<texture			path="units/payday2/characters/ene_acc_shield_city/shield_df" force="false"/>
 	<texture			path="units/payday2/characters/ene_acc_shield_city/shield_nm" force="false"/>	
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" force="false"/> <!-- GenSec Shield Visor -->
 	
 	<!-- shield -->
 	<unit				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" load="true"/>
@@ -100,6 +101,8 @@
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" />	 <!--Thanks Wekk-->	
 	<unit_mat_seq		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
+	<texture		    path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/shield_visor_df" /> <!-- ZEAL Shield Visor -->
+	<texture		    path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/shield_visor_cracked_df" /> <!-- ZEAL Shield Visor -->
 		
 	<!--zeal sniper-->
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" load="true"/>

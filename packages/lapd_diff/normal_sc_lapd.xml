@@ -4,7 +4,7 @@
 	<material_config	path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_blue" force="false" />
 
     <!-- Small Shield with no Lights -->
-    <cooked_physics     path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox" />
+    <cooked_physics     path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
 	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
 	<material_config	path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
 	<model				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
@@ -13,7 +13,7 @@
 	
 	
 	<!-- FBI Shield with Lights -->
-    <cooked_physics     path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox" />
+    <cooked_physics     path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
 	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
 	<material_config	path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
 	<model				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />

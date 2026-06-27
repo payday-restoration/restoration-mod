@@ -199,6 +199,7 @@
 	<model				path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights" load="true"/>
 	<material_config	path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>		
+	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights" load="true"/>		
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_acc_shield_lights_df"/>
 	
 	<!--nypd textures-->	

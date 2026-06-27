@@ -66,6 +66,8 @@
 	<texture			path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>		
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" />
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df" />
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_df"/>	<!-- Shield Visor -->
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_cracked_df"/>	<!-- Shield Visor -->
 	
 	<!--Fixed Beat Cops-->
 	<!--Glock-->	

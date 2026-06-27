@@ -149,6 +149,9 @@
 	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" load="true"/>
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/ene_acc_shield_lights_df" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc"/>	
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" load="true" force="true" /> <!-- These guys are loaded on higher diffs, so just in case -->
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_df"/>	<!-- Shield Visor -->
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_cracked_df"/>	<!-- Shield Visor -->
 
 	<!--sniper-->	
 	<object				path="units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1" />

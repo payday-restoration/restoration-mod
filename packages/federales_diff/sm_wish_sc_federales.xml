@@ -198,10 +198,13 @@
 	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal" load="true"/>
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
 	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" load="true" force="true" /> <!-- These guys are loaded on higher diffs, so just in case -->
 	
 	<texture			path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_df"/>
 	<texture			path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_nm"/>
-	<texture			path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_il"/>	
+	<texture			path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_il"/>
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_df"/>	<!-- Shield Visor -->
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_cracked_df"/>	<!-- Shield Visor -->	
 	
 	<!--Shield-->
 	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk" load="true"/>	

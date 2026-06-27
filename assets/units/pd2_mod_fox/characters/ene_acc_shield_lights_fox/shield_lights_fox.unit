@@ -1,5 +1,5 @@
 <unit type="items" slot="8" >
-    <object file="units/payday2/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
+    <object file="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox" />
 	
 	<dependencies>
 		<depends_on effect="effects/particles/dest/security_camera_dest"/>

@@ -3,6 +3,28 @@
 	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_blue" force="false" />
 	<material_config	path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_blue" force="false" />
 	
+    <!-- Small Shield with no Lights -->
+    <cooked_physics     path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox" />
+	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
+	<material_config	path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
+	<model				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
+	<object				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
+	<sequence_manager	path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox" load="true" />
+	
+	
+	<!-- FBI Shield with Lights -->
+    <cooked_physics     path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox" />
+	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
+	<material_config	path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
+	<model				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
+	<object				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
+	<sequence_manager	path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox" load="true" />
+	
+	
+	<texture			path="units/pd2_mod_fox/characters/shared_textures/shield_visor_fox_df" load="true" force="true"/>	<!-- Why the fuck does it not load when I name it "shield_visor_df"??? -->
+	<texture			path="units/pd2_mod_fox/characters/shared_textures/shield_visor_fox_cracked_df" load="true" force="true"/>	
+	<texture			path="units/pd2_mod_fox/characters/shared_textures/shield_visor_cracked_df" load="true" force="true"/>	<!-- It also refuses to load "shield_visor_cracked_fox_df", what's wrong with this game?!. Ugh, whatever works... -->
+	
 	<!--HoxRev Heavy FBI Swats with helmet pop-->
 	<material_config	path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="false" />
 	<material_config	path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_contour" force="false" />

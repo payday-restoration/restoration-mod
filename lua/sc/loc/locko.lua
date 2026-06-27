@@ -6062,7 +6062,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 				["menu_insulation_beta_desc_sc"] = "베이식: #{owned}#$basic##\n#{skill_color}#이제 전기 충격에 당해도 강제로 사격하지 않으며,## 테이저의 전기 충격이 #{skill_color}#$skill_value_b2## 확률로 역효과를 일으켜 테이저를 뒤로 넘어뜨려 행동을 방해합니다.\n\n#{risk}#주의: 전기 충격으로 인한 명중률과 반동 패널티는 여전히 적용됩니다.##\n\n적 총격으로 인한 밀쳐짐이 #{skill_color}#$skill_value_b1## 감소합니다.\n\n에이스: #{owned}#$pro##\n테이저에게 전기 충격에 당한 후 #{skill_color}#$skill_value_p1##초 이내에 상호작용하면 테이저에게 #{skill_color}#역으로 전기 충격을 가하여,## 테이저 최대 체력의 #{skill_color}#$skill_value_p2##에 해당하는 피해를 가합니다.\n\n타이탄 테이저 공격의 감속 효과 및 지속 시간이 #{skill_color}#50%## 감소합니다.",
 
 				--Sneaky Bastard--
-				["menu_jail_diet_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 회피율이 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_p3## 이하에서 #{risk}#$skill_value_p2## 감소할 때마다 회피율이 #{skill_color}#$skill_value_p1## 증가하며, 최대 #{skill_color}#$skill_value_p4##까지 증가합니다.\n\n방탄복이 파괴된 동안, #{skill_color}#회피에 성공하면 회피율만큼 방탄복을 회복시키고## 추가로 최대 체력의 #{skill_color}#$skill_value_p2##를 회복합니다. 재사용 대기 시간은 #{important_1}#$skill_value_p3##초입니다.\n\n방탄복이 파괴된 동안 회피를 성공할 때마다 재사용 대기 시간이 #{skill_color}#$skill_value_p4##초 감소합니다.",
+				["menu_jail_diet_beta_desc_sc"] = "베이식: #{owned}#$basic##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_b2## 감소할 때마다 회피율이 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n에이스: #{owned}#$pro##\n무게 부담이 #{risk}#$skill_value_b3## 이하에서 #{risk}#$skill_value_p1## 감소할 때마다 회피율이 #{skill_color}#$skill_value_b1## 증가하며, 최대 #{skill_color}#$skill_value_b4##까지 증가합니다.\n\n방탄복이 파괴된 동안, #{skill_color}#회피에 성공하면 회피율만큼 방탄복을 회복시키고## 추가로 최대 체력의 #{skill_color}#$skill_value_p2##를 회복합니다. 재사용 대기 시간은 #{important_1}#$skill_value_p3##초입니다.\n\n방탄복이 파괴된 동안 회피를 성공할 때마다 재사용 대기 시간이 #{skill_color}#$skill_value_p4##초 감소합니다.",
 
 			--[[   CONTRACT KILLER SUBTREE   ]]--
 			--FORMERLY "SILENT KILLER"
@@ -6127,7 +6127,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 				["menu_running_from_death_beta_desc_sc"] = "베이식: #{owned}#$basic##\n최후의 저항 체력이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n최후의 저항 체력이 추가로 #{skill_color}#$skill_value_p1## 증가합니다.\n\n최후의 저항 상태에서 주 무기를 사용할 수 있습니다.",
 
 				--What Doesn't Kill You Only Makes You Stronger--
-				["menu_what_doesnt_kill_beta_sc"] = "죽이지 않는 것",
+				["menu_what_doesnt_kill_beta_sc"] = "죽이지 못하는 것",
 				["menu_what_doesnt_kill_beta_desc_sc"] = "베이식: #{owned}#$basic##\n구금에 가까워질수록 받는 피해가 다운당 #{skill_color}#$skill_value_b1##씩 감소합니다.\n\n에이스: #{owned}#$pro##\n항상 받는 피해가 추가로 #{skill_color}#$skill_value_p1## 감소합니다.",
 
 				--Swan Song
@@ -6160,7 +6160,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Frenzy--
 				["menu_wolverine_beta_sc"] = "광분",
-				["menu_wolverine_beta_desc_sc"] = "베이식: #{owned}#$basic##\n체력이 최대치에 가까울수록 회복량이 최대 #{important_1}#$skill_value_b2##까지 감소합니다.\n\n쓰러질 수록 방어력이 최대 #{skill_color}#$skill_value_b1##까지 증가합니다.\n\n방어력은 최대 #{skill_color}#$deflection##까지 받는 체력 피해를 감소시키며, 다른 피해 감소 효과가 적용된 후 적용됩니다.\n\n에이스: #{owned}#$pro##\n회복량이 최대 #{important_1}#$skill_value_p2##까지 감소하지만, 방어력은 최대 #{skill_color}#$skill_value_p1##까지 증가합니다.",
+				["menu_wolverine_beta_desc_sc"] = "베이식: #{owned}#$basic##\n체력이 최대치에 가까울수록 회복량이 최대 #{important_1}#$skill_value_b2##까지 감소합니다.\n\n쓰러질 수록 방어력이 최대 #{skill_color}#$skill_value_b1##까지 증가합니다.\n\n방어력은 최대 #{skill_color}#$deflection##까지 받는 체력 피해를 감소시키며, 다른 피해 감소 효과가 적용된 후 적용됩니다.\n\n에이스: #{owned}#$pro##\n회복량이 최대 #{important_1}#$skill_value_p2##까지 감소하지만, 방어력이 최대 #{skill_color}#$skill_value_p1##까지 증가합니다.",
 
 				--Berserker--
 				["menu_frenzy_sc"] = "버서커",
@@ -6343,10 +6343,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck13_9_desc_sc"] = "적을 처치하면 장착한 방탄복에 따라 방탄복 회복 속도가 증가합니다. 중량 방탄복은 경량 방탄복보다 보너스가 적습니다. 이 보너스는 방탄복이 회복될 때마다 초기화됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--THIS IS WAR BABY--
-		["menu_deck14_1_desc_sc"] = "당신이 가한 피해가 히스테리아 스택으로 변환됩니다. 최대 스택은 #{skill_color}#$perk_value_1## 입니다.\n\n히스테리아 스택:\n히스테리아 스택이 #{risk}#$perk_value_3##개 보유할 때마다 받는 피해가 #{skill_color}#$perk_value_2## 감소하고 회피 미터가 회피율의 #{skill_color}#$perk_value_2%##만큼 채워집니다.\n\n히스테리아 스택은 #{risk}#8##초마다 #{important_1}#$perk_value_4##씩 감소합니다.",
+		["menu_deck14_1_desc_sc"] = "당신이 가한 피해가 히스테리아 스택으로 변환됩니다. 최대 스택은 #{skill_color}#$perk_value_1## 입니다.\n\n히스테리아 스택:\n히스테리아 스택을 #{risk}#$perk_value_3##개 보유할 때마다 받는 피해가 #{skill_color}#$perk_value_2## 감소하고 회피 미터가 회피율의 #{skill_color}#$perk_value_2%##만큼 채워집니다.\n\n히스테리아 스택은 #{risk}#8##초마다 #{important_1}#$perk_value_4##씩 감소합니다.",
 		["menu_deck14_3_desc_sc"] = "당신의 팀원도 히스테리아 스택의 받는 피해 감소 효과를 받습니다.\n\n#{risk}#참고: 여러 팀원의 히스테리아 스택은 중첩되지 않으며, 가장 높은 피해 감소량을 제공하는 스택만 적용됩니다.##\n\n회피율이 #{skill_color}#$perk_value_1## 증가합니다.",
 		["menu_deck14_5_desc_sc"] = "히스테리아 스택의 감소치가 매 #{risk}#$perk_value_2##초마다 #{important_1}#$perk_value_1##씩 감소하는 것으로 바뀝니다.\n\n당신과 당신의 팀원에게 위협을 느낀 시민은 위협을 #{skill_color}#$perk_value_3## 오래 받습니다.",
-		["menu_deck14_7_desc_sc"] = "히스테리아 스택이 ##$perk_value_3##개 보유할 때마다 받는 피해 감소와 채워지는 회피 미터량이 증가합니다.\n\n회피율이 추가로 ##$perk_value_3## 증가합니다.",
+		["menu_deck14_7_desc_sc"] = "히스테리아 스택을 ##$perk_value_2##개 보유할 때마다 받는 피해 감소와 채워지는 회피량이 증가합니다.\n\n회피율이 추가로 ##$perk_value_3## 증가합니다.",
 		["menu_deck14_9_desc_sc"] = "당신에게 적용되는 히스테리아 스택의 효과가 ##$perk_value_1## 더 증가합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Anarchist--

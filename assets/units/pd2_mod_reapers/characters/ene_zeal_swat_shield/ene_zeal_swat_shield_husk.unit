@@ -8,6 +8,7 @@
 		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_drak_sg/ene_acc_drak_sg" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
+		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_dummy" />
 	</dependencies>
 
 	<extensions>

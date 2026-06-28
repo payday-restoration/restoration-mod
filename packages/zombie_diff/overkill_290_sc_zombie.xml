@@ -69,6 +69,7 @@
 	<material_config	path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	<object				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	<unit				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false" load="false"/>
+	<unit				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city_dummy" force="false" load="false"/>
 	<cooked_physics		path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	<sequence_manager	path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	

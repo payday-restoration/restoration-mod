@@ -5,6 +5,7 @@
     <!-- Small Shield with no Lights -->
     <cooked_physics     path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox" />
 	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
+	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox_dummy"  />
 	<material_config	path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
 	<model				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
 	<object				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
@@ -14,6 +15,7 @@
 	<!-- FBI Shield with Lights -->
     <cooked_physics     path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox" />
 	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
+	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox_dummy"  />
 	<material_config	path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
 	<model				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
 	<object				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />

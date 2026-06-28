@@ -1,6 +1,5 @@
-<unit type="items" slot="8" >
-    <network sync="spawn"/>
-    <object file="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" />
+<unit type="chl" slot="8">
+	<object file="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
 	
 	<dependencies>
 		<depends_on effect="effects/particles/dest/security_camera_dest"/>

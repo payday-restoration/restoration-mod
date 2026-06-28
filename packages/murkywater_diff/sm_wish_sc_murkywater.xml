@@ -163,6 +163,7 @@
 	<unit				path="units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk" force="false" load="true"/>
 
 	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky_dummy" load="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
 	<object				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>

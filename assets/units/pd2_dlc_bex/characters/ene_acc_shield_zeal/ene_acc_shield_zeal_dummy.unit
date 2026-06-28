@@ -1,6 +1,5 @@
-<unit type="items" slot="8" >
-    <network sync="spawn"/>
-    <object file="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
+<unit type="chl" slot="8">
+	<object file="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal" />
 	
 	<dependencies>
 		<depends_on effect="effects/particles/dest/security_camera_dest"/>

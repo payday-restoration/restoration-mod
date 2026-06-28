@@ -196,6 +196,7 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
 	<object				path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
 	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal" load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal_dummy" load="true"/>
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
 	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
 	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" load="true" force="true" /> <!-- These guys are loaded on higher diffs, so just in case -->

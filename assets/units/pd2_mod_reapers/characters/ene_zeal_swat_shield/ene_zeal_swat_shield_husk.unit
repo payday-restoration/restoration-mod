@@ -25,8 +25,6 @@
 			<var name="_shield_break_data" type="table">
             <var name="anim_global_switch" value="cop"/> <!-- this thing gives him normal anims -->
 			   <var name="weapon_switch_selection" value="2"/>
-			   <var name="stats_name_switch" value="fbi_heavy_swat"/>
-			   <var name="tweak_table_name_switch" value="fbi_heavy_swat"/>
                <var name="hurt_data" value="table">
                  <var name="hurt_type" value="hurt"/>
                </var>

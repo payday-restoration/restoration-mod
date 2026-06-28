@@ -8,7 +8,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />		
 
-		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan_dummy" />
 		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
@@ -21,7 +21,7 @@
 			<var name="_default_weapon_id" value="sr2_smg" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" >
-			<var name="_shield_unit_name" value="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+			<var name="_shield_unit_name" value="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan_dummy" />
 		</extension>
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />

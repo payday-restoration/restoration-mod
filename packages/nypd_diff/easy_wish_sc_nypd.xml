@@ -6,6 +6,7 @@
     <!-- Small Shield with no Lights -->
     <cooked_physics     path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
 	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
+	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox_dummy"  />
 	<material_config	path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
 	<model				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
 	<object				path="units/pd2_mod_fox/characters/ene_acc_shield_small_fox/shield_small_fox"  />
@@ -15,6 +16,7 @@
 	<!-- FBI Shield with Lights -->
     <cooked_physics     path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
 	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
+	<unit				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox_dummy"  />
 	<material_config	path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
 	<model				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
 	<object				path="units/pd2_mod_fox/characters/ene_acc_shield_lights_fox/shield_lights_fox"  />
@@ -163,6 +165,7 @@
 	<material_config	path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	<object				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	<unit				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false" load="false"/>
+	<unit				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city_dummy" force="false" load="false"/>
 	<cooked_physics		path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	<sequence_manager	path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" force="false"/> <!-- GenSec Shield Visor -->	

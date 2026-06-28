@@ -1,13 +1,19 @@
 <dynamic_object>
 	<diesel orientation_object="rp_ene_acc_shield_lights" materials="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
-	<sequence_manager file="units/payday2/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
+	<sequence_manager file="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 
 	<bodies>
 		<body name="held_body" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_lights" />
-			<object name="c_box_shield_left" 			collision_type="box" padding="-2" />
-			<object name="c_box_shield_front" 			collision_type="box" padding="-2" />
-			<object name="c_box_shield_right_bottom" 	collision_type="box" padding="-2" />
+			<object name="c_left" 			collision_type="box" padding="-2" />
+			<object name="c_left_middle" 			collision_type="box" padding="-2" />
+			<object name="c_left_top" 			collision_type="box" padding="-2" />
+			<object name="c_middle" 			collision_type="box" padding="-2" />
+			<object name="c_middle_middle" 			collision_type="box" padding="-2" />
+			<object name="c_middle_top" 			collision_type="box" padding="-2" />
+			<object name="c_right" 			collision_type="box" padding="-2" />
+			<object name="c_right_middle" 			collision_type="box" padding="-2" />
+			<object name="c_right_top" 			collision_type="box" padding="-2" />
 			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
 		</body>
 		<body name="light_01" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
@@ -19,18 +25,48 @@
 			<object name="rp_ene_acc_shield_lights" />
 			<object name="c_light_02" collision_type="box" />
 		</body>
+		
+		<body name="shield_visor2" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_lights" />
+			<object name="c_visor_leftdown" collision_type="box" />
+		</body>
+		
+		<body name="shield_visor" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_lights" />
+			<object name="c_visor_leftup" collision_type="box" />
+		</body>
+		
+		<body name="shield_visor3" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_lights" />
+			<object name="c_visor_rightdown" collision_type="box" />
+		</body>
+		
+		<body name="shield_visor4" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_lights" />
+			<object name="c_visor_rightup" collision_type="box" />
+		</body>
 
 		<body name="dropped_body" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_lights" />
-			<object name="c_box_shield_left" 			collision_type="box" />
-			<object name="c_box_shield_front" 			collision_type="box" />
-			<object name="c_box_shield_right_bottom" 	collision_type="box" />
+			<object name="c_left" 			collision_type="box" />
+			<object name="c_left_middle" 			collision_type="box" />
+			<object name="c_left_top" 			collision_type="box" />
+			<object name="c_middle" 			collision_type="box" />
+			<object name="c_middle_middle" 			collision_type="box" />
+			<object name="c_middle_top" 			collision_type="box" />
+			<object name="c_right" 			collision_type="box" />
+			<object name="c_right_middle" 			collision_type="box" />
+			<object name="c_right_top" 			collision_type="box" />
 			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
 		</body>
 	</bodies>
 
 	<decal_surfaces default_material="shield" >
 		<decal_mesh name="dm_metal" 	enabled="true" 	material="shield" />
+		<decal_mesh name="dm_leftup" 	enabled="true" 	material="shield" />
+		<decal_mesh name="dm_leftdown" 	enabled="true" 	material="shield" />
+		<decal_mesh name="dm_rightup" 	enabled="true" 	material="shield" />
+		<decal_mesh name="dm_rightdown" 	enabled="true" 	material="shield" />
 	</decal_surfaces>
 
 	<graphics>
@@ -48,6 +84,14 @@
 			<material materials="mtr_light_il" max_distance="1000" />
 			<material materials="mtr_light_il_lod_1" max_distance="1500" />
 			<material materials="mtr_light_il_lod_2" />
+		</object>
+		<object name="g_rib_leftdown" 	enabled="true" >
+		</object>
+		<object name="g_rib_rightdown" 	enabled="true" >
+		</object>
+		<object name="g_rib_leftup" 	enabled="true" >
+		</object>
+		<object name="g_rib_rightup" 	enabled="true" >
 		</object>
 	</graphics>
 

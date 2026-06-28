@@ -1,0 +1,14 @@
+<materials version="3">
+    <material name="mtr_shield_small" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/shield_df" />
+		<bump_normal_texture file="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/shield_nm" mip="1"/>
+    </material>
+    <material name="mtr_shield_small_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/shield_df" mip="1"/>
+		<bump_normal_texture file="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/shield_nm" mip="1"/>
+    </material>
+    <material name="mtr_shield_small_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/shield_df" mip="4"/>
+		<bump_normal_texture file="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/shield_nm" mip="4"/>
+    </material>
+</materials>

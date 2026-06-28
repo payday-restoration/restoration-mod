@@ -173,11 +173,16 @@
 	<!--fbi tier-->
 	<!--Murky Shield Acc Lights-->
 	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky_dummy" load="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
 	<object				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
-	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_df"/>		
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" force="true" load="true"/> <!-- Murkies use the same shield as the AKAN guys, just with a different texture. Work smarter, not harder. (C) Cloaker -->
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" force="true" load="true"/> <!-- Just in case -->
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_df"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_visor_df" />		<!-- Shield Visor Textures -->
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_visor_cracked_df" />		 <!-- Shield Visor Textures -->	
 	
 	<!-- shield -->
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi" force="false" load="true"/>
@@ -726,4 +731,8 @@
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm"/>
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_helm_df" />
 	<!-- bravoss squad end-->	
+	
+	<!-- Trying to make OMNIA Shield load the cracked visor texture -->
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" load="true" force="true"/>	<!-- Same visor color as the AKAN Shields, so uhhh --> 
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/red_glass_df" load="true" force="true"/>	<!-- Same visor color as the AKAN Shields, so uhhh -->	
 </table>

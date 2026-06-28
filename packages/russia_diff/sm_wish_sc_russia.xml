@@ -199,7 +199,7 @@
 	
 	<!--reaper zeal shield-->
 	<unit				path="units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk" load="true"/>	
-	<unit				path="units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" load="true"/>	
+	<unit				path="units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" load="true"/>
 	
 	<!--big shield acc-->
 	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
@@ -207,9 +207,12 @@
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" load="true"/>	
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_dummy" load="true"/>	
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_df" />
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_nm" />
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_op" />
+	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_cracked" load="true"/> <!-- Cracked Shield Visor Texture -->
+	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_cracked_op" load="true"/> <!-- Cracked Shield Visor Texture Opacity Shit. Holy fuck why can't this game just render transparent parts of texture as transparent ones, and solid as solid??? -->
 	<!-- reaper zeal tier end -->
 	
 	<!-- specials-->

@@ -117,8 +117,11 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3_husk" load="true"/>
 	
 	<!--Zeal Riot Shield-->
-	<texture			path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" />	 <!--Thanks Wekk-->	
+	<texture			path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" />	 <!--Thanks Wekk-->
+	<texture		    path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/shield_visor_df" /> <!-- ZEAL Shield Visor -->
+	<texture		    path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/shield_visor_cracked_df" /> <!-- ZEAL Shield Visor -->	
 	<unit_mat_seq		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
+	<unit_mat_seq		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc_dummy" />
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
 		
 	<!--zeal sniper-->

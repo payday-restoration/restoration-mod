@@ -274,14 +274,12 @@
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_nm" />
 	
 	<!--Zeal Riot Shield-->
-	<unit				path="units/pd2_mod_halloween/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" load="true"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat"/>
-	<object				path="units/pd2_mod_halloween/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat"/>
-	<material_config	path="units/pd2_mod_halloween/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat"/>
-	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat"/>		
-	
-	<texture			path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" />	 <!--Thanks Wekk-->		
+	<texture			path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" />	 <!--Thanks Wekk-->	
+	<unit_mat_seq		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
+	<unit_mat_seq		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc_dummy" />
+	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
+	<texture		    path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/shield_visor_df" /> <!-- ZEAL Shield Visor -->
+	<texture		    path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/shield_visor_cracked_df" /> <!-- ZEAL Shield Visor -->
 
 	<!--zcloaker-->
 	<object				path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>

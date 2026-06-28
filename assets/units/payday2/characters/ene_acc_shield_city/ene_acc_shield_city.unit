@@ -1,4 +1,5 @@
 <unit type="items" slot="8" >
+    <network sync="spawn"/>
     <object file="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" />
 	
 	<dependencies>

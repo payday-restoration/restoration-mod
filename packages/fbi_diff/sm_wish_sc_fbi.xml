@@ -58,7 +58,10 @@
 	<!--Zeal Riot Shield-->
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" />	 <!--Thanks Wekk-->	
 	<unit_mat_seq		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
+	<unit_mat_seq		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc_dummy" />
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
+	<texture		    path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/shield_visor_df" /> <!-- ZEAL Shield Visor -->
+	<texture		    path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/shield_visor_cracked_df" /> <!-- ZEAL Shield Visor -->
 		
 	<!--zeal sniper-->
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" load="true"/>

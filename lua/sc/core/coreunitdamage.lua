@@ -11,6 +11,14 @@ Hooks:PostHook(CoreBodyDamage, "init", "sh_init", function (self)
 		end
 	elseif self._body_element._name == "planks_body" then
 		self._body_element._damage_multiplier = 0.4
+	elseif self._body_element._name == "shield_visor" then
+		self._body_element._damage_multiplier = tweak_data.character.tank_glass_damage_mul or self._body_element._damage_multiplier
+	elseif self._body_element._name == "shield_visor2" then -- this is a second breakable parts some shields may have. Right now it's just for the lower half of the Reaper Glass Shield and PDTH Shield's grills.
+		self._body_element._damage_multiplier = tweak_data.character.tank_glass_damage_mul or self._body_element._damage_multiplier
+	elseif self._body_element._name == "shield_visor3" then -- PDTH Shield uses that
+		self._body_element._damage_multiplier = tweak_data.character.tank_glass_damage_mul or self._body_element._damage_multiplier
+	elseif self._body_element._name == "shield_visor4" then -- PDTH Shield uses that
+		self._body_element._damage_multiplier = tweak_data.character.tank_glass_damage_mul or self._body_element._damage_multiplier
 	end
 end)
 

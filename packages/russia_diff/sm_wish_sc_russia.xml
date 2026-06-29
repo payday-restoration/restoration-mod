@@ -213,6 +213,7 @@
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_op" />
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_cracked" load="true"/> <!-- Cracked Shield Visor Texture -->
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_cracked_op" load="true"/> <!-- Cracked Shield Visor Texture Opacity Shit. Holy fuck why can't this game just render transparent parts of texture as transparent ones, and solid as solid??? -->
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" load="true" force="true"/> <!-- Shared Shield Visor Crack Texture is here -->
 	<!-- reaper zeal tier end -->
 	
 	<!-- specials-->

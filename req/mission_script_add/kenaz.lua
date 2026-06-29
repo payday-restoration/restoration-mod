@@ -1,13 +1,17 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local tank_skull =   ((difficulty >= 8) and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc" or "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3")
+local ben_dozer =  "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"
 local surprise_cloaker = ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or "units/payday2/characters/ene_spook_1/ene_spook_1")
 local shields =  ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")
-local sniper =  ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" or "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3")
-local gunner = ((difficulty >=8) and "units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg" or "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+local sniper  =  ((difficulty >= 8) and "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" or "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3")
+local grunt_1 =  ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" or "units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
+local grunt_2 =  ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" or "units/payday2/characters/ene_swat_1/ene_swat_1")
+local grunt_3 =  ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg" or "units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
+local gunner = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
+grunt_table = { grunt_1, grunt_2, grunt_3 }
 local death_wish_above = difficulty >= 7
-
-
+local death_sentence = difficulty == 8
+local dozer_chance = math.random() < 0.5
 local ponr_value_limo = 1500 - (difficulty * 10)
 local ponr_timer_player_mul_limo = {
 	1.2,
@@ -103,10 +107,15 @@ local opts_disable_ponrs = {
 		400003,
 	},
 }
-
 local optsDefend_SO = {
-	SO_access = tostring (2048 + 4096 + 512 + 128),
+	SO_access = {
+        "tank",
+        "shield",
+        "swat",
+		"sniper", 
+    },
 	scan = true,
+	forced = true,
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
@@ -114,124 +123,104 @@ local optsDefend_SO = {
 	interval = 2,
 	so_action = "AI_sniper",
 }
-local opts_dozer = {
-	spawn_action = "e_sp_down_6m",
-	enabled = false,
-	enemy = tank_skull,
-	on_executed = {
-		{id = 400027, delay = 0,},
+local disable_thetank = {
+	enabled = true,
+	toggle = "off",
+	elements = { 
+		400012, 
 	},
 }
-local optsShield_01 = {
-	enabled = false,
-	enemy = shields,
-	on_executed = {
-		{id =  400010,  delay = 0, },
+local enable_thetank = {
+	enabled = ( death_sentence and dozer_chance ) ,
+	elements = { 
+		400012,
 	},
 }
-local optsShield_02 = {
-	enabled = false,
-	enemy = shields,
-	on_executed = {
-		{id =  400011,  delay = 0, },
+local optsBravo_Dozer = {
+	enemy = ben_dozer,
+	enbaled = true,
+	participate_to_group_ai = true,
+	on_executed = { { id = 400011, delay = 0 }, },
+}
+local spawn_brav_doz = {
+	enbaled = true,
+	on_executed = { { id =  400008, delay = 0 }, },
+}
+local disable_vault_stairs_unit = {
+	enabled = true,
+	toggle = "off",
+	elements = { 
+		400023, 
 	},
 }
-local optsShield_03 = {
-	enabled = false,
-	enemy = shields,
-	on_executed = {
-		{id = 400016,  delay = 0, },
-	},
-}
-local optsShield_04 = {
-	enabled = false,
-	enemy = shields,
-	on_executed = {
-		{id =  400017,  delay = 0, },
-	},
-}
-local optsShield_05 = {
-	enabled = false,
-	enemy = shields,
-	on_executed = {
-		{id =  400018,  delay = 0, },
-	},
-}
-local optsShield_06 = {
-	enabled = false,
-	enemy = shields,
-	on_executed = {
-		{id =  400019,  delay = 0, },
-	},
-}
-local opts_sniper = {
-	spawn_action = "e_sp_over_1m_dwn_8m_swing",
-	enabled = false,
-	enemy = sniper,
-	on_executed = {
-		{id = 400021, delay = 0, },
-	},
-}
-local opts_gunner_01 = {
-	spawn_action = "e_sp_over_1m_dwn_8m_swing",
-	enabled = false,
-	enemy = gunner,
-	on_executed = {
-		{id = 400024, delay = 0, },
-	},
-}
-local opts_gunner_02 = {
-	spawn_action = "e_sp_over_1m_dwn_8m_swing",
-	enabled = false,
-	enemy = gunner,
-	on_executed = {
-		{id = 400025, delay = 0, },
-	},
-}
-local opts_cloaker_surprise_01 = {
-	enemy = surprise_cloaker,
-	enabled = false,
-	on_executed = {
-		{id = 400029, delay = 0,},
-	},
-
-}
-local opts_cloaker_surprise_02 = {
-	enemy = surprise_cloaker,
-	enabled = false,
-	on_executed = {
-		{id = 400031, delay = 0,},
-	},
-
-}
-local optsCloaker_Hide_SO_1 = {
-    SO_access = "1024",
-	scan = true,
-	align_position = true,
-	needs_pos_rsrv = true,
-	align_rotation = true,
-	use_instigator = true,
-	interrupt_dis = 5,
-	interrupt_dmg = 0.3,
-	interval = 2,
-    so_action = "e_so_idle_by_container"
-}
-local optsCloaker_Hide_SO_2 = {
-    SO_access = "1024",
-	scan = true,
-	align_position = true,
-	needs_pos_rsrv = true,
-	align_rotation = true,
-	use_instigator = true,
-	interrupt_dis = 4,
-	interrupt_dmg = 0.3,
-	interval = 2,
-    so_action = "e_so_hide_ledge_enter"
-}
-local opts_enable_fwb_inspired_vault_ambush = {
+local enable_vault_stairs_unit = {
 	enabled = death_wish_above,
-	elements = { 400008, 400009, 400012, 400013, 400014, 400015, 400020, 400022, 400023, 400026, 400028,  400030}, 
-	toggle = "on",
+	elements = { 
+		400023,
+	},
+}
+local opts_vault_stairs_unit01 = {
+	enemy_table = grunt_table,
+	enabled = true,
+	on_executed = { { id = 400017, delay = 0, } },
+}
+local opts_vault_stairs_unit02 = {
+	enemy_table = grunt_table,
+	enabled = true,
+	on_executed = { { id =  400018, delay = 0, } },
+}
+local opts_vault_stairs_unit03 = {
+	enemy_table = grunt_table,
+	enabled = true,
+	on_executed = { { id = 400019, delay = 0, } },
+}
+local opts_vault_stairs_unit04 = {
+	enemy_table = grunt_table,
+	enabled = true,
+	on_executed = { { id = 400020, delay = 0, } },
+}
+local spawn_vault_units = {
+	enabled = true,
+	on_executed = { 
+		{ id =  400013, delay = 0},
+		{ id =  400014, delay = 0}, 
+		{ id =  400015, delay = 0}, 
+		{ id =  400016, delay = 0}, 
+},
+}
+local disable_gunners_ds_pro = {
+	enabled = true,
+	toggle = "off",
+	elements = { 
+		400030, 
+	},
+}
+local enable_gunners_ds_pro = {
+	enabled = ( death_sentence and pro_job ),
+	elements = { 
+		400030,
+	},
+}
+local opts_gunner_dspj_01 = {
+	enemy = gunner,
+	spawn_action = "e_sp_clk_3m_dwn_vent",
+	enabled = true,
+	participate_to_group_ai = true,
+	on_executed = {  { id = 400026, delay = 0, }, },
+}
+local opts_gunner_dspj_02 = {
+	enemy = gunner,
+	spawn_action = "e_sp_clk_3m_dwn_vent",
+	enabled = true,
+	participate_to_group_ai = true,
+	on_executed = {  { id = 400027, delay = 0, }, },
+}
+local spawn_dspj_gunners_railing = {
+	enbaled = true,
+	on_executed = {
+		{ id =  400024, delay = 0, },
+		{ id =  400025, delay =  0, },
+	}
 }
 return {
 	elements = {
@@ -246,43 +235,36 @@ return {
 		restoration:gen_counter(400006, "pro_job_ponr_counter", Vector3(0, 0, 0), Rotation(0, 0, 0), opts_pro_job_ponr_counter),
 
 		restoration:gen_toggleelement(400007, "disable_ponrs", opts_disable_ponrs),
-		-- FWB styled vault ambush 
-		-- Shields (down and upstairs)
-		restoration:gen_dummy(400008, "shield_upstairs_01", Vector3(-233, 925, 100), Rotation(180, 0, -0), optsShield_01),
-		restoration:gen_dummy(400009, "shield_upstairs_02",Vector3(-129, 923, 100), Rotation(180, 0, -0), optsShield_02), 
+		-- FWB styled vault ambush
+		-- Dozer (ONLY IN DS, probably has a chance of spawning)
+		restoration:gen_dummy(400008, "outside_vault_dozer", Vector3(24, 418, -893.448), Rotation(-180, 0, -0), optsBravo_Dozer),
+		restoration:gen_toggleelement(400009, "disable_bravo_dozer", disable_thetank),
+		restoration:gen_toggleelement(400010, "enable_bravo_dozer", enable_thetank),
 
-		restoration:gen_so(400010, "upstair_so_defend_01", Vector3(-233, 925, 100), Rotation(180, 0, -0), optsDefend_SO),
-		restoration:gen_so(400011, "upstair_so_defend_02", Vector3(-129, 923, 100), Rotation(-169, 0, -0), optsDefend_SO), 
-		-- Shields again (downstairs near vault)
-		restoration:gen_dummy(400012, "shield_downstairs_03", Vector3(200, -100, -499.5), Rotation(175, 0, -0), optsShield_03),
-		restoration:gen_dummy(400013, "shield_downstairs_04", Vector3(299.985, -98.255, -499.5), Rotation(-176, 0, -0), optsShield_04),
-		restoration:gen_dummy(400014, "shield_downstairs_05", Vector3(400, -100, -499.5), Rotation(179, 0, -0), optsShield_05),
-		restoration:gen_dummy(400015, "shield_downstairs_06", Vector3(476, -92, -499.5), Rotation(179, 0, -0), optsShield_06),
+		restoration:gen_so(400011, "brav_doz_so", Vector3(24, -688, -893.448), Rotation(-180, 0, -0), optsDefend_SO),
+		restoration:gen_missionscript(400012, "spawn_ds_brav_doz", spawn_brav_doz), 
+		
+		-- Regular units by the stairs (replacing the shield wall)
+		restoration:gen_dummy(400013, "stair_unit_01", Vector3(200, -100, -499.5), Rotation(175, 0, -0), opts_vault_stairs_unit01),
+		restoration:gen_dummy(400014, "stair_unit_02", Vector3(299.985, -98.255, -499.5), Rotation(-176, 0, -0), opts_vault_stairs_unit02),
+		restoration:gen_dummy(400015, "stair_unit_03", Vector3(400, -100, -499.5), Rotation(179, 0, -0), opts_vault_stairs_unit03),
+		restoration:gen_dummy(400016, "stair_unit_04", Vector3(476, -92, -499.5), Rotation(179, 0, -0), opts_vault_stairs_unit04),
+		restoration:gen_so(400017, "vault_stair_so_1", Vector3(200, -100, -499.5), Rotation(175, 0, -0), optsDefend_SO),
 
-		restoration:gen_so(400016, "downstairs_so_defend_03", Vector3(200, -100, -499.5), Rotation(175, 0, -0), optsDefend_SO),
-		restoration:gen_so(400017, "downstairs_so_defend_04", Vector3(299.985, -98.255, -499.5), Rotation(-176, 0, -0), optsDefend_SO),
-		restoration:gen_so(400018, "downstairs_so_defend_05", Vector3(400, -100, -499.5), Rotation(179, 0, -0), optsDefend_SO),
-		restoration:gen_so(400019, "downstairs_so_defend_06", Vector3(476, -92, -499.5), Rotation(179, 0, -0), optsDefend_SO),
-		-- Snipers n Gunners 
-		restoration:gen_dummy(400020, "vault_sniper", Vector3(42, 188, -499.5), Rotation(-174, 0, -0), opts_sniper), 
-		restoration:gen_so(400021, "sniper_so", Vector3(-100, -100, -499.5), Rotation(-174, 0, -0), optsDefend_SO),
+		restoration:gen_so(400018, "vault_stair_so_2", Vector3(299.985, -98.255, -499.5), Rotation(-176, 0, -0), optsDefend_SO),
+		restoration:gen_so(400019, "vault_stair_so_3",  Vector3(400, -100, -499.5), Rotation(179, 0, -0), optsDefend_SO),
+		restoration:gen_so(400020, "vault_stair_so_4",  Vector3(476, -92, -499.5), Rotation(179, 0, -0), optsDefend_SO),
+		restoration:gen_toggleelement(400021,"disable_vault_stairs_unit", disable_vault_stairs_unit),
+		restoration:gen_toggleelement(400022,"enable_vault_stairs_unit", enable_vault_stairs_unit),
+		restoration:gen_missionscript(400023, "vault_stairs_units", spawn_vault_units),
 
-		restoration:gen_dummy(400022, "gunner_vault_01", Vector3(-1, 218, -499.5), Rotation(-174, 0, -0), opts_gunner_01), 
-		restoration:gen_dummy(400023, "gunner_vault_02", Vector3(68, 228, -499.5), Rotation(-174, 0, -0), opts_gunner_02),
-
-		restoration:gen_so(400024, "gunner_so_01", Vector3(10, -99, -499.5), Rotation(-174, 0, -0), optsDefend_SO),
-		restoration:gen_so(400025, "gunner_so_02", Vector3(-196, -93, -499.5), Rotation(-174, 0, -0), optsDefend_SO),
-		-- Dozer 
-		restoration:gen_dummy(400026, "dozer_vault", Vector3(24, 418, -893.448), Rotation(-180, 0, -0), opts_dozer), 
-		restoration:gen_so(400027, "dozer_so",  Vector3(-13.777, -610.714, -900), Rotation(-178, 0, -0), optsDefend_SO),
-		-- Clokaer (1)
-		restoration:gen_dummy(400028, "clomker", Vector3(300.137, -994.766, -900), Rotation(87, 0, -0), opts_cloaker_surprise_01),
-		restoration:gen_so(400029, "clomker_s0_01", Vector3(300.137, -994.766, -900), Rotation(87, 0, -0), optsCloaker_Hide_SO_1),
-		-- make sure to watch your baack :)
-		restoration:gen_dummy(400030, "goro_majima", Vector3(26, 744, 100.5), Rotation(177, 0, -0), opts_cloaker_surprise_02),
-		restoration:gen_so(400031, "funk_goes_on_starts_playing", Vector3(38.651, 631.015, 100.5), Rotation(175, 0, -0), optsCloaker_Hide_SO_2),
-		-- turn this thang on 
-		restoration:gen_toggleelement(400032, "enable_fwb_inspired_vault_ambush", opts_enable_fwb_inspired_vault_ambush),
-
+		-- LMG GUnners by railings (DSPJ only, yes this is my first time actually doing something like this shut up)
+		restoration:gen_dummy(400024, "ds_gunner_01", Vector3(324.472, 117.981, -499.5), Rotation(175, 0, -0),  opts_gunner_dspj_01),
+		restoration:gen_dummy(400025, "ds_gunner_02",  Vector3(317.558, 394.636, -499.5), Rotation(175, 0, -0), opts_gunner_dspj_02),
+		restoration:gen_so(400026, "gunner_so_01",  Vector3(9.117, -90.326, -499.5), Rotation(175, 0, -0), optsDefend_SO),
+		restoration:gen_so(400027, "gunner_so_01", Vector3(-180.16, -73.767, -499.5), Rotation(175, 0, -0) , optsDefend_SO),
+		restoration:gen_toggleelement(400028, "disable_dspj_gunners", disable_gunners_ds_pro),
+		restoration:gen_toggleelement(400029, "enable_dspj_gunners",  enable_gunners_ds_pro),
+		restoration:gen_missionscript(400030, "spawn_dspj_exclusive_gunners", spawn_dspj_gunners_railing),
 	},
 }

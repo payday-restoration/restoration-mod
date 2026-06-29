@@ -23,14 +23,16 @@
 			<var name="can_be_marked" value="true" />
 		</extension>
         <extension name="inventory" class="HuskCopInventory" >
-			<var name="_shield_unit_name" value="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_dummy" /> 
+			<var name="_shield_unit_name" value="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_dummy" />
 			<var name="_shield_break_data" type="table">
-            <var name="anim_global_switch" value="cop"/> <!-- this thing gives him normal anims -->
-			   <var name="weapon_switch_selection" value="2"/>
-               <var name="hurt_data" value="table">
-                 <var name="hurt_type" value="hurt"/>
-               </var>
-            </var>
+				<var name="anim_global_switch" value="cop"/>
+				<var name="stats_name_switch" value="shield_break"/>
+				<var name="tweak_table_name_switch" value="shield_break"/>
+				<var name="weapon_switch_selection" value="2"/>
+				<var name="hurt_data" value="table">
+					<var name="hurt_type" value="hurt"/>
+				</var>
+			</var>
         </extension>
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />

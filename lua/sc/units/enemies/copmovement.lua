@@ -66,6 +66,7 @@ action_variants.tank_black.walk = TankCopActionWalk
 action_variants.tank_skull = clone(security_variant)
 action_variants.tank_skull.walk = TankCopActionWalk
 action_variants.biker_guard = security_variant
+action_variants.shield_break = security_variant
 action_variants.phalanx_vip_break = security_variant
 action_variants.phalanx_minion_assault = clone(security_variant)
 action_variants.phalanx_minion_assault.hurt = ShieldActionHurt

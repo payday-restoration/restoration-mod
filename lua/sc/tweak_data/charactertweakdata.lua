@@ -3090,6 +3090,28 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.min_obj_interrupt_dis = 300
 	self.shield.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "shield")
+
+	--shield broken
+	self.shield_break = deep_clone(self.shield)
+	self.shield_break.tags = {"law", "shield", "special", "custom"}
+	self.shield_break.rotation_speed = 3
+	self.shield_break.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+	self.shield_break.dodge = presets.dodge.athletic_overkill
+	self.shield_break.move_speed = presets.move_speed.very_fast
+	self.shield_break.allowed_stances = nil
+	self.shield_break.allowed_poses = nil
+	self.shield_break.no_equip_anim = nil
+	self.shield_break.no_run_start = nil
+	self.shield_break.no_run_stop = nil
+	self.shield_break.always_face_enemy = nil
+	self.shield_break.wall_fwd_offset = nil	
+	self.shield_break.modify_health_on_tweak_change = false
+	self.shield_break.announce_incomming = false
+	self.shield_break.melee_weapon = "knife_1"
+	self.shield_break.melee_weapon_dmg_multiplier = 2.5	
+	self.shield_break.melee_push_multiplier = 1
+	self.shield_break.melee_force_crouch = false	
+	table.insert(self._enemy_list, "shield_break")
 end
 
 function CharacterTweakData:_init_phalanx_minion(presets)	

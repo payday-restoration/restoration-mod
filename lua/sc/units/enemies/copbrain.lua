@@ -240,6 +240,7 @@ logic_variants.tank_black.attack = TankCopLogicAttack
 logic_variants.tank_skull = clone(security_variant)
 logic_variants.tank_skull.attack = TankCopLogicAttack
 logic_variants.biker_guard = security_variant
+logic_variants.shield_break = security_variant
 logic_variants.phalanx_vip_break = security_variant
 logic_variants.phalanx_minion_assault = clone(security_variant)
 logic_variants.phalanx_minion_assault.attack = ShieldLogicAttack

@@ -313,8 +313,7 @@ return {
 		restoration:gen_dummy(400010, "guard_blockade_1", Vector3(1887, 1002, -24.895), Rotation(90, -0, -0), optsSecurity),
 		restoration:gen_dummy(400011, "guard_blockade_2", Vector3(1887, 1493, -24.895), Rotation(90, 0, -0),  optsSecurity),
 		restoration:gen_dummy(400012,"guard_blockade_3",  Vector3(2276, 1493, -24.895), Rotation(90, -0, -0), optsSecurity),
-		restoration:gen_dummy(400013, "guard_blockade_4", Vector3(2276, 998, -24.895),  Rotation(90, -0, -0), optsSecurity
-		),
+		restoration:gen_dummy(400013, "guard_blockade_4", Vector3(2276, 998, -24.895),  Rotation(90, -0, -0), optsSecurity),
 		restoration:gen_dummy(400014, "guard_blockade_5", Vector3(2797, 1243, -24.895), Rotation(90, -0, -0), optsSecurity),
 		restoration:gen_dummy(400015, "guard_blockade_6", Vector3(3447, 1794, -14.895), Rotation(90, -0, -0), optsSecurity),
 		restoration:gen_dummy(400016, "guard_blockade_7", Vector3(3447, 704, -14.895),  Rotation(90, -0, -0), optsSecurity),

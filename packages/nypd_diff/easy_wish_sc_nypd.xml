@@ -27,6 +27,32 @@
 	<texture			path="units/pd2_mod_fox/characters/shared_textures/shield_visor_fox_cracked_df" load="true" force="true"/>	
 	<texture			path="units/pd2_mod_fox/characters/shared_textures/shield_visor_cracked_df" load="true" force="true"/>	<!-- It also refuses to load "shield_visor_cracked_fox_df", what's wrong with this game?!. Ugh, whatever works... -->
 	
+		<!-- These bad boys decided to crash Slaughterhouse if they were not loaded by any prior heist. There's definitely a better place to put these, but I don't know them, sorry. -Miles -->
+	<!--Murky Shield Acc Small -->
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" load="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small_dummy" load="false" />
+	<model				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" force="false" load="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" force="false" load="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" force="false" load="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" force="false" load="false"/>
+    <sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" force="true" load="true"/> <!-- Murkies use the same shield as the AKAN guys, just with a different texture. Work smarter, not harder. (C) Cloaker -->	
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_df"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_visor_df" />		<!-- Shield Visor Textures -->
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_visor_cracked_df" />		 <!-- Shield Visor Textures -->	
+	
+	<!--Murky Shield Acc Lights-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky_dummy" load="false" />
+	<model				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false" load="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false" load="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false" load="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false" load="false"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" force="true" load="true"/> <!-- Murkies use the same shield as the AKAN guys, just with a different texture. Work smarter, not harder. (C) Cloaker -->
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" force="true" load="true"/> <!-- Just in case -->
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_df"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_visor_df" />		<!-- Shield Visor Textures -->
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_visor_cracked_df" />		 <!-- Shield Visor Textures -->	
+	
 	<!--NYPD-->
 	<material_config	path="units/pd2_dlc_spa/vehicles/str_vehicle_car_police_new_york/str_vehicle_car_police_new_york" force="true" />
 	<material_config	path="units/pd2_dlc_spa/vehicles/str_vehicle_car_police_new_york/str_vehicle_car_police_new_york_windows_tinted" force="true" />

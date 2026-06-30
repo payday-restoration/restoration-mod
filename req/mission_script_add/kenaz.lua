@@ -206,14 +206,14 @@ local opts_gunner_dspj_01 = {
 	spawn_action = "e_sp_clk_3m_dwn_vent",
 	enabled = true,
 	participate_to_group_ai = true,
-	on_executed = {  { id = 400026, delay = 0, }, },
+	on_executed = {  { id = 400026, delay = 2.5, }, },
 }
 local opts_gunner_dspj_02 = {
 	enemy = gunner,
 	spawn_action = "e_sp_clk_3m_dwn_vent",
 	enabled = true,
 	participate_to_group_ai = true,
-	on_executed = {  { id = 400027, delay = 0, }, },
+	on_executed = {  { id = 400027, delay = 2.5, }, },
 }
 local spawn_dspj_gunners_railing = {
 	enbaled = true,

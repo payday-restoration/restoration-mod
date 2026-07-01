@@ -49,7 +49,7 @@ return {
 		on_executed = {
 			{ id = 400010, delay = 0, },
 			{ id = 400022, delay = 0, },
-			( id = 400029, delay = 0, ),
+			{ id = 400029, delay = 0, },
 		},
 	},
 	-- Spawn units  when the vault door opens 

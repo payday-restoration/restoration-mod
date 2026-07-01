@@ -40,7 +40,7 @@ return {
 		on_executed = {
 			{ id = 400009, delay = 0, },
 			{ id = 400021, delay = 0, },
-			( id = 400028, delay = 0, ),
+			{ id = 400028, delay = 0, },
 		},
 	},
 	-- FWB  vault styled ambush (you know, when the vault door opens and a swarm of enemies are waiting for you. yeah that one)

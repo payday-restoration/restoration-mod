@@ -8,6 +8,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_acc_bexret/ene_acc_bexret" />
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal_dummy" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
 
@@ -19,7 +20,7 @@
 			<var name="_default_weapon_id" value="mp9" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" >
-			<var name="_shield_unit_name" value="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal" />
+			<var name="_shield_unit_name" value="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal_dummy" />
 		</extension>
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />

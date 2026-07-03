@@ -506,12 +506,14 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.mallcrasher.ghost_bonus = 0.05
 	
 	--///REAPER LEVELS\\\--
-	self.mad.player_style = "winter_suit"
+
 	--We're never actually told where the forest is ;)
 	self.pines.player_style = "loud_suit"
 	self.pines.ai_group_type = russia	
 	self.pines.flashlights_on = true
-	
+	-- Boiling Point
+	self.mad.player_style = "winter_suit"
+	self.mad.package = { "packages/lvl_mad" , "packages/murkywatermisc" }
 	--Bomb: Forest--
 	self.crojob3.ai_group_type = russia			
 	self.crojob3.player_style = "loud_suit"

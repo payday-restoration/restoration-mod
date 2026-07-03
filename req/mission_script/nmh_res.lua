@@ -3,10 +3,10 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 
 return {
     -- Bravos spawn when elevator starts moving to your floor 
-    [103443] = {
+    [100184] = {
         spawn_bravos = pro_job,
 		values = {
-			time = 30,
+			time = 20,
 		},
     },
     -- ACCESS DENIED 

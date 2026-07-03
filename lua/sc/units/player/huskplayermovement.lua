@@ -348,7 +348,7 @@ function HuskPlayerMovement:anim_cbk_spawn_melee_item(unit, graphic_object)
 	local graphic_objects = tweak_data.blackmarket.melee_weapons[melee_entry].graphic_objects or {}
 	local unit_name = tweak_data.blackmarket.melee_weapons[melee_entry].third_unit
 
-	if unit_name then
+	if unit_name and align_obj and align_obj.position then
 		self._melee_item_unit = World:spawn_unit(Idstring(unit_name), align_obj:position(), align_obj:rotation())
 
 		self._unit:link(align_obj:name(), self._melee_item_unit, self._melee_item_unit:orientation_object():name())

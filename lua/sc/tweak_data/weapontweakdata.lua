@@ -31590,12 +31590,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.panty.CLIP_AMMO_MAX = 8
 				self.panty.tactical_reload = 1
 				self.panty.kick = self.stat_info.kick_tables.right_recoil
-				self.panty.kick_pattern = {
-				    {1, self.stat_info.kick_tables.right_kick},
-				    {3, self.stat_info.kick_tables.vertical_kick},
-				    {3, self.stat_info.kick_tables.right_kick},
-				    {7, self.stat_info.kick_tables.vertical_kick}
-			}
+				self.sg45.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{2, self.stat_info.kick_tables.right_kick},
+					{4, self.stat_info.kick_tables.right_recoil}
+				}
 				self.panty.supported = true
 				self.panty.ads_speed = 0.140
 				self.panty.damage_falloff = {

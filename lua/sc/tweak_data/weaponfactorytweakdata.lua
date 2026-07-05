@@ -43939,6 +43939,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
+		if self.parts.wpn_fps_rs422_receiver then
+		    self.parts.wpn_fps_rs422_receiver.supported = true
+		    self.parts.wpn_fps_rs422_receiver.animations = {
+			    fire = "recoil",
+			    fire_steelsight = "recoil",
+			    reload = "reload"
+		    }
+		end
+
 		if self.parts.wpn_fps_bow_rebar_hl2optic then
 			self.parts.wpn_fps_bow_rebar_hl2optic.supported = true
 			self.parts.wpn_fps_bow_rebar_hl2optic.stats = {

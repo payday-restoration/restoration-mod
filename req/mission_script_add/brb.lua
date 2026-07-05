@@ -1,7 +1,10 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local murky_responder_1 = "units/payday2/characters/ene_murkywater_1/ene_murkywater_1"
-local murky_responder_2 = "units/payday2/characters/ene_murkywater_2/ene_murkywater_2"
-local murky_table = {murky_responder_1, murky_responder_2}
+local murky_rifle = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1" or (difficulty == 7 or difficulty == 6) and "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1" or (difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") or "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"
+local murky_shotgun = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2" or (difficulty == 7 or difficulty == 6) and "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2" or (difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2") or "units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2"
+local murky_smg = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3" or (difficulty == 7 or difficulty == 6) and "units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3" or (difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3") or "units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"
+local murky_heavy_rifle = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" or (difficulty == 7 or difficulty == 6 or difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1") or "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
+local murky_heavy_shotgun = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" or (difficulty == 7 or difficulty == 6 or difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870") or "units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
+local murky_table = {murky_rifle, murky_heavy_shotgun, murky_heavy_rifle, murky_smg, murky_shotgun}
 
 local optsMurkywater = {
     enemy_table = murky_table,
@@ -13,13 +16,13 @@ local global_murky_spawn_mission_script = {
 	on_executed = { 
 		{ id = 400003, delay = 0 },
 		{ id = 400002, delay = 0 },
-	}
+	},
 }
 local loop = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400001, delay = 80, delay_rand = 20 },
-	}
+	},
 }
 local choose_murky_spawnpoint = {
 	amount = 2,
@@ -40,7 +43,7 @@ local murky_spawnpoint_1 = {
 		{ id = 400011, delay = 0 },
 		{ id = 400012, delay = 0 },
 		{ id = 400013, delay = 0 },
-	}
+	},
 }
 local murky_spawnpoint_2 = {
 	enabled = true,
@@ -48,14 +51,14 @@ local murky_spawnpoint_2 = {
 		{ id = 400014, delay = 0 },
 		{ id = 400015, delay = 0 },
 		{ id = 400016, delay = 0 },
-	}
+	},
 }
 local murky_spawnpoint_3 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400017, delay = 0 },
 		{ id = 400018, delay = 0 },
-	}
+	},
 }
 local murky_spawnpoint_4 = {
 	enabled = true,
@@ -63,14 +66,14 @@ local murky_spawnpoint_4 = {
 		{ id = 400019, delay = 0 },
 		{ id = 400020, delay = 0 },
 		{ id = 400021, delay = 0 },
-	}
+	},
 }
 local murky_spawnpoint_5 = {
 	enabled = true,
 	on_executed = { 
 		{ id = 400022, delay = 0 },
 		{ id = 400023, delay = 0 },
-	}
+	},
 }
 
 return {

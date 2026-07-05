@@ -200,6 +200,16 @@
 	<unit				path="units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1" load="true"/>	
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1"/>	
 	
+	<!--small shield acc-->
+	<object				path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
+	<model				path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small"  load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small_dummy"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" load="true" force="true" />
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_df"/>	<!-- Shield Visor -->
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_cracked_df"/>	<!-- Shield Visor -->
+	
 	<!--big shield acc-->
 	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />

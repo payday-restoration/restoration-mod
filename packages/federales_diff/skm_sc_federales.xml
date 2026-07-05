@@ -208,7 +208,7 @@
 	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" load="true"/>
 	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc_dummy" load="true"/>
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/ene_acc_shield_lights_df" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc"/>	
+	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc"/>
 
 	<!--sniper-->	
 	<object				path="units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1" />
@@ -305,12 +305,14 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"  />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_contour"  />
 	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"    load="true"/>	
+	
 	<!--ZEAL Heavy Shotgun-->	
 	<object				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
 	<model				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
 	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"  load="true"/>
 	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk"  load="true"/>
+	
 	<!--Zeal-->
 	<model				path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
@@ -319,10 +321,13 @@
 	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal_dummy" load="true"/>
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
 	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" load="true" force="true" /> <!-- These guys are loaded on higher diffs, so just in case -->
 	
 	<texture			path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_df"/>
 	<texture			path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_nm"/>
-	<texture			path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_il"/>	
+	<texture			path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_il"/>
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_df"/>	<!-- Shield Visor -->
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/shield_visor_cracked_df"/>	<!-- Shield Visor -->	
 	
 	<!--Shield-->
 	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk" load="true"/>	

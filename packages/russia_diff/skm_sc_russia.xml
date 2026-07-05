@@ -236,8 +236,9 @@
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
-	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true" force="true"/>	
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true" force="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan_dummy" load="true"/>
 	
 	<!--sexy cap-->
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" />
@@ -296,16 +297,16 @@
 	<model				path="units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield" />
 	
 	<!--big shield acc-->
-	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
-	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" load="true" force="true" />
-	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
-	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" load="true"/>	
-	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_df" />
-	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_nm" />
-	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_op" />
+	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan_dummy" load="true"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true" force="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_cracked" load="true"/> <!-- Cracked Shield Visor Texture -->
-	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_cracked_op" load="true"/> <!-- Cracked Shield Visor Texture Opacity -->
+	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_cracked_op" load="true"/> <!-- Cracked Shield Visor Texture Opacity Shit. Holy fuck why can't this game just render transparent parts of texture as transparent ones, and solid as solid??? -->
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" load="true" force="true"/> <!-- Shared Shield Visor Crack Texture is here -->
 	<!-- reaper city tier end -->
 	
 	<!-- reaper zeal tier-->

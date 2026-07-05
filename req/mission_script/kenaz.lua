@@ -8,9 +8,24 @@ local disable = {
 		enabled = false,
 	},
 }
+local standard_spawn = {
+	values = {
+		interval = 10,
+	},
+}
+local rappel_spawn = {
+	values = {
+		interval = 35,
+	},
+}
 local middle_spawn = {
 	values = {
 		interval = 35,
+	},
+}
+local cloaker_spawn = {
+	values = {
+		interval = 90,
 	},
 }
 return {
@@ -121,6 +136,23 @@ return {
 			},
 		},
 	},
-	-- inrease interval of middle spawn 
+	--  tweaked interval spawn(s) 
 	[103218] = middle_spawn,
+	[100192] = standard_spawn,
+	[100231] = standard_spawn,
+	[100571] = standard_spawn,
+	[102898] = standard_spawn,
+	[102899] = standard_spawn,
+	[102900] = standard_spawn,
+	[103169] = standard_spawn,
+	[103170] = standard_spawn,
+	[103171] = standard_spawn,
+	[103172] = standard_spawn,
+	[103244] = rappel_spawn, -- xtras
+	[103245] = rappel_spawn,
+	[103246] = rappel_spawn,
+	[102035] = cloaker_spawn,
+	[102036] = cloaker_spawn,
+	[102037] = cloaker_spawn,
+	[102038] = cloaker_spawn,
 }

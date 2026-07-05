@@ -31580,6 +31580,50 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.panty then -- Backlace (Panty's Pistol | Panty & Stocking with Garterbelt)
+				self.panty.categories = { "pistol", }
+				self.panty.recategorize = { "heavy_pis" }
+				self.panty.damage_type = "pistol"
+				self.panty.always_play_anims = true
+				self.panty.lock_slide = true
+				self.panty.AMMO_MAX = 60
+				self.panty.CLIP_AMMO_MAX = 8
+				self.panty.tactical_reload = 1
+				self.panty.kick = self.stat_info.kick_tables.right_recoil
+				self.sg45.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{2, self.stat_info.kick_tables.right_kick},
+					{4, self.stat_info.kick_tables.right_recoil}
+				}
+				self.panty.supported = true
+				self.panty.ads_speed = 0.140
+				self.panty.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3100,
+					min_mult = 0.25
+				}
+				self.panty.stats = {
+				    damage = 69,
+				    spread = 46,
+				    recoil = 70,
+				    spread_moving = 6,
+				    zoom = 1,
+				    concealment = 31,
+				    suppression = 20,
+				    alert_size = 2,
+				    extra_ammo = 101,
+				    total_ammo_mod = 400,
+				    value = 1,
+				    reload = 25
+			}
+				self.panty.stats_modifiers = nil
+				self.panty.hs_mult = 1.5
+				self.panty.panic_suppression_chance = 0.05
+				self.panty.armor_piercing_chance = 1
+				self.panty.reload_speed_multiplier = 1.25
+				self.panty.timers = deep_clone(self.deagle.timers)
+			end
+
 			if self.rs422 then -- RS-422 Railgun
 				self.rs422.categories = {
 					"snp",

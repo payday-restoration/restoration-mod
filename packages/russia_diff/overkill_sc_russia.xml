@@ -603,4 +603,25 @@
 	<unit_obj			path="units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo" load="false" force="false"/>
 	<!--bravo end-->
 	
+		<!-- Bomb Forest Murkies -->
+	<!--Murky Shield Acc Small-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" load="false" />
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small_dummy" load="false" />
+	<model				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" load="false" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" load="false" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" load="false" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield_small/ene_acc_shield_murky_shield_small" load="false" force="false"/>
+    <sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" force="true" load="true"/> <!-- Murkies use the same shield as the AKAN guys, just with a different texture. Work smarter, not harder. (C) Cloaker -->	
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_df" load="false"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_visor_df" load="false" />		<!-- Murky Shield Visor Textures -->
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_visor_cracked_df" load="false" />		 <!-- Murky Shield Visor Textures -->	
+	
+	<!--Murky Shield Acc Lights-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky_dummy" load="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false" force="false"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="false" force="true" load="true"/> <!-- Murkies use the same shield as the AKAN guys, just with a different texture. Work smarter, not harder. (C) Cloaker -->
 </table>

@@ -11,6 +11,10 @@ tweak_data.hud.revive_colors_resmod = {
 	restoration.Options:GetValue("HUD/Colors/DownsThreePlus")
 }
 
+-- Additional contour colours for Infiltrator's callouts.
+tweak_data.contour.character.callouts_dangerous_color = Vector3(0.6, 0.2, 0.3)
+tweak_data.contour.character.callouts_more_dangerous_color = Vector3(1, 0.1, 0.15)
+
 tweak_data.ammo = {}
 tweak_data.ammo.ricochet = {}
 tweak_data.ammo.ricochet.max_ricochets = 5

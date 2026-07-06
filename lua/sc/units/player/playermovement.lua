@@ -1,4 +1,4 @@
-local infiltrator_distance = tweak_data.upgrades.infiltrator_dr_range * tweak_data.upgrades.infiltrator_dr_range
+local sicario_distance = tweak_data.upgrades.sicario_dr_range * tweak_data.upgrades.sicario_dr_range
 local init_original = PlayerMovement.init
 function PlayerMovement:init(...)
 	init_original(self, ...)
@@ -79,7 +79,7 @@ function PlayerMovement:_upd_underdog_skill(t)
 
 				break
 			end
-			if dis_sq < infiltrator_distance then
+			if dis_sq < sicario_distance then
 				nr_close_guys = nr_close_guys + 1
 			end
 		end

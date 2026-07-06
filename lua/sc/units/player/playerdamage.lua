@@ -52,9 +52,9 @@ Hooks:OverrideFunction(PlayerDamage, "init", function (self, unit)
 
 	managers.sequence:add_inflict_updator_body("fire", self._unit:key(), self._inflict_damage_body:key(), self._inflict_damage_body:extension().damage)
 
-	--Load alternate heal over time tweakdata if player is using Infiltrator or Rogue.
+	--Load alternate heal over time tweakdata if player is using Sicario or Rogue.
 	if player_manager:has_category_upgrade("player", "melee_stacking_heal") then
-		self._hot_type = "infiltrator"
+		self._hot_type = "sicario"
 		self._doh_data = tweak_data.upgrades.melee_to_hot_data or {}
 		self._hot_amount = managers.player:upgrade_value("player", "heal_over_time", 0)
 	elseif player_manager:has_category_upgrade("player", "dodge_stacking_heal") then
@@ -1806,7 +1806,7 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		passive_dodge = passive_dodge + (1 - self:health_ratio()) * pm:upgrade_value("player", "dodge_regen_damage_health_ratio_multiplier", 0)
 	end
 
-	--Sicario capstone skill.
+	--Dodge meter boosts from being in your / your ally's smoke screen.
 	if self._in_smoke_bomb == 2.0 then
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "sicario_multiplier", 0)
 	elseif self._in_smoke_bomb == 1.0 and self._selected_smoke_screen then

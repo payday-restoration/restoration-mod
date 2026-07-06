@@ -1983,7 +1983,10 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		self.projectiles.xmas_snowball.throw_shout = true --DISABLES the throw callout, totally not confusing at all
 	end
 
-	self.projectiles.smoke_screen_grenade.base_cooldown = 35
+	self.projectiles.smoke_screen_grenade.base_cooldown = nil
+	self.projectiles.smoke_screen_grenade.max_amount = 3
+	self.projectiles.smoke_screen_grenade.base_pickup_chance = {0.0142, 0.025}
+
 	self.projectiles.damage_control.base_cooldown = restoration.damage_control_cd
 	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.pocket_ecm_jammer.max_amount = 1
@@ -2006,6 +2009,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.molotov.no_cheat_count = true
 	self.projectiles.fir_com.no_cheat_count = true
 	self.projectiles.flun_flare.no_cheat_count = true
+	self.projectiles.smoke_screen_grenade.no_cheat_count = true
 
 	--Animation overrides for grenades so they aren't shitty. Like seriously, Javelin throw for grenades..?	
 	--HE

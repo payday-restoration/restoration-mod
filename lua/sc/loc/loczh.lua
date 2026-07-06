@@ -150,8 +150,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModInfo_desperadoDescID"] = "开启或关闭对此技能的追踪",
         ["RestorationModInfo_grinderTitleID"] = "组织胺 (冰球手)",
         ["RestorationModInfo_grinderDescID"] = "开启或关闭对此技能的追踪",
-        ["RestorationModInfo_infiltratorTitleID"] = "生命汲取 (渗透者)",
-        ["RestorationModInfo_infiltratorDescID"] = "开启或关闭对此技能的追踪",
+        ["RestorationModInfo_sicarioTitleID"] = "生命汲取 (渗透者)",
+        ["RestorationModInfo_sicarioDescID"] = "开启或关闭对此技能的追踪",
         ["RestorationModInfo_sociopathTitleID"] = "危急情形 (反社会者)",
         ["RestorationModInfo_sociopathDescID"] = "开启或关闭对此技能的追踪",
         ["RestorationModInfo_body_expertiseTitleID"] = "血花四溅", --人体解析

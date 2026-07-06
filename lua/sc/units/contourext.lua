@@ -41,7 +41,41 @@ ContourExt._types.mark_unit_dangerous_damage_bonus_distance.damage_bonus = nil
 ContourExt._types.mark_enemy_damage_bonus.damage_bonus_distance = 1
 ContourExt._types.mark_enemy_damage_bonus_distance.damage_bonus = nil
 
+-- Infiltrator Callouts variations of common contours.
+-- A "mark enemy through walls" variation isn't needed as we don't add these to the PJ wallhack check already.
+ContourExt._types.mark_unit_callouts = deep_clone(ContourExt._types.mark_unit)
+ContourExt._types.mark_unit_dangerous_callouts = deep_clone(ContourExt._types.mark_unit_dangerous)
+ContourExt._types.mark_unit_dangerous_damage_bonus_callouts = deep_clone(ContourExt._types.mark_unit_dangerous_damage_bonus)
+ContourExt._types.mark_unit_dangerous_damage_bonus_distance_callouts = deep_clone(ContourExt._types.mark_unit_dangerous_damage_bonus_distance)
+ContourExt._types.mark_enemy_callouts = deep_clone(ContourExt._types.mark_enemy)
+ContourExt._types.mark_enemy_damage_bonus_callouts = deep_clone(ContourExt._types.mark_enemy_damage_bonus)
+ContourExt._types.mark_enemy_damage_bonus_distance_callouts = deep_clone(ContourExt._types.mark_enemy_damage_bonus_distance)
+
+ContourExt._types.mark_unit_callouts.enemy_damage_nerf = true
+ContourExt._types.mark_unit_dangerous_callouts.enemy_damage_nerf = true
+ContourExt._types.mark_unit_dangerous_damage_bonus_callouts.enemy_damage_nerf = true
+ContourExt._types.mark_unit_dangerous_damage_bonus_distance_callouts.enemy_damage_nerf = true
+ContourExt._types.mark_enemy_callouts.enemy_damage_nerf = true
+ContourExt._types.mark_enemy_damage_bonus_callouts.enemy_damage_nerf = true
+ContourExt._types.mark_enemy_damage_bonus_distance_callouts.enemy_damage_nerf = true
+
+-- Make 'em a bit bluer, just so they stand out.
+ContourExt._types.mark_unit_callouts.color = tweak_data.contour.character.callouts_dangerous_color
+ContourExt._types.mark_unit_dangerous_callouts.color = tweak_data.contour.character.callouts_dangerous_color
+ContourExt._types.mark_unit_dangerous_damage_bonus_callouts.color = tweak_data.contour.character.callouts_more_dangerous_color
+ContourExt._types.mark_unit_dangerous_damage_bonus_distance_callouts.color = tweak_data.contour.character.callouts_more_dangerous_color
+ContourExt._types.mark_enemy_callouts.color = tweak_data.contour.character.callouts_dangerous_color
+ContourExt._types.mark_enemy_damage_bonus_callouts.color = tweak_data.contour.character.callouts_more_dangerous_color
+ContourExt._types.mark_enemy_damage_bonus_distance_callouts.color = tweak_data.contour.character.callouts_more_dangerous_color
+
 table.insert(ContourExt.indexed_types, "mark_enemy_through_walls")
+table.insert(ContourExt.indexed_types, "mark_unit_callouts")
+table.insert(ContourExt.indexed_types, "mark_unit_dangerous_callouts")
+table.insert(ContourExt.indexed_types, "mark_unit_dangerous_damage_bonus_callouts")
+table.insert(ContourExt.indexed_types, "mark_unit_dangerous_damage_bonus_distance_callouts")
+table.insert(ContourExt.indexed_types, "mark_enemy_callouts")
+table.insert(ContourExt.indexed_types, "mark_enemy_damage_bonus_callouts")
+table.insert(ContourExt.indexed_types, "mark_enemy_damage_bonus_distance_callouts")
 
 if #ContourExt.indexed_types > 128 then
 	Application:error("[ContourExt] max # contour presets exceeded!")
@@ -228,6 +262,10 @@ if do_outline then
 
 	if data.damage_bonus or data.damage_bonus_distance then
 		self:_chk_damage_bonuses()
+	end
+
+	if data.enemy_damage_nerf then
+		self:_chk_enemy_damage_nerfs()
 	end
 
 	if data.trigger_marked_event then
@@ -466,3 +504,24 @@ else -- for Smooth Contours
 	end
 end
 end)
+
+-- Admittedly not the best name, but I wanted to make this clear this damage nerf applies to the guy who has the contour, not the player attacking 'em.
+function ContourExt:_chk_enemy_damage_nerfs()
+	local base = self._unit:base()
+
+	if not base or not base.apply_infiltrator_nerf then
+		-- Unit cannot receive damage nerfs, it's fine.
+		return
+	end
+
+	if self._contour_list then
+		for _, setup in ipairs(self._contour_list) do
+			if setup.data.enemy_damage_nerf then
+				base:apply_infiltrator_nerf(true)
+				return
+			end
+		end
+	end
+
+	base:apply_infiltrator_nerf(false)
+end

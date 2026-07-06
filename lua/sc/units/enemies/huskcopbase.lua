@@ -70,12 +70,16 @@ Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)
 		self._unit:body("rag_RightUpLeg"):set_sphere_radius(10)
 		self._unit:body("rag_RightLeg"):set_sphere_radius(7)
 	end
-		
+
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {
 		"death"
 	}, callback(self, self, "disable_asu_laser"))
-	
+
 	self._unit:character_damage():add_listener("lpf_buff_state" .. tostring(self._unit:key()), {
 		"death"
-	}, callback(self, self, "disable_lpf_buff"))	
+	}, callback(self, self, "disable_lpf_buff"))
+
+	self._unit:character_damage():add_listener("infiltrator_nerf_state" .. tostring(self._unit:key()), {
+		"death"
+	}, function() self:apply_infiltrator_nerf(false) end)
 end)

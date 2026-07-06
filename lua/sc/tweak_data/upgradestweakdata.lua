@@ -2334,8 +2334,75 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.level_5_armor_deflection_addend = {0.00}
 	self.values.player.level_6_armor_deflection_addend = {0.00}
 
-	--infiltrator stuff
-	self.infiltrator_dr_range = 1200
+	-- Infiltrator
+	self.infiltrator_max_stacks = 5 -- Max Intelligence stacks.
+	self.infiltrator_marked_damage_change = -0.1 -- The change to an enemy's damage that was marked by the Infiltrator.
+
+	-- Recon: When ranged killing, how many stacks to grant.
+	self.values.player.infiltrator_stacks_on_ranged_kills = {
+        1
+    }
+
+	-- Recon: When melee killing, how far to mark enemies per stack consumed.
+	self.values.player.infiltrator_stack_to_centimetres = {
+        300
+    }
+
+	-- Prioritization heal on kill when killing marked enemies.
+	self.values.player.infiltrator_heal_on_kill = {
+		{
+			base = 0.2,
+
+			-- Prioritization heal multiplier when killing marked specials and elites.
+			ene_mult = {
+				{captain = 5},
+				{boss = 5},
+				{tank = 5},
+				{spooc_titan = 2},
+				{spooc = 2},
+				{vet = 2},
+				{taser_titan = 2},
+				{taser = 2},
+				{medic = 2},
+				{shield_titan = 2},
+				{shield = 2},
+				{sniper_titan = 2},
+				{sniper = 2},
+				{special = 2},
+			}
+		}
+	}
+
+	-- Insight: distance to mark an enemy within if you kill a marked enemy.
+	self.values.player.infiltrator_re_mark_on_kill = {
+		1500
+	}
+
+	-- Interrogation: Additional distance to marking on melee kills.
+	self.values.player.infiltrator_default_marking_distance = {
+		500
+	}
+
+	-- Interrogation: Multiply healing by this much on melee kills per Intelligence stack (in addition to the healing you'd receive).
+	self.values.player.infiltrator_heal_multiplier_on_melee_kill = {
+		0.2
+	}
+
+	-- Callouts: damage penalty to cops marked by the infiltrator.
+	self.values.player.infiltrator_damage_penalty_on_marking = {
+		true
+	}
+
+	-- Extra marking time on each card.
+	self.values.player.infiltrator_extra_mark_time = {
+		0.25, --Copycat also receives the first step of this.
+		0.5,
+		0.75,
+		1
+	}
+
+	--Sicario stuff
+	self.sicario_dr_range = 1200
 	self.values.player.melee_stacking_heal = {true}
 	self.values.temporary.melee_life_leech = {
 		{0.08, 08}
@@ -2869,11 +2936,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		{0.5, 2}
 	}
 	--Are these the dreamers we were told about?--
-	--sicario
+	--Smoke screen grenade data (from old Sicario)
 	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
-	self.values.player.sicario_multiplier = {0.4} --Multiplier for dodge gained per second while inside grenade.
+	self.values.player.sicario_multiplier = {0.2} --Multiplier for dodge gained per second while inside grenade.
 	self.values.player.smoke_screen_ally_dodge_bonus = {0.2} --Multiplier for dodge gained per second for allies while inside the Sicario's smoke.
-	self.values.player.bomb_cooldown_reduction = {1} --Cooldown reduction on smoke bomb for dodging.
+	self.values.player.bomb_cooldown_reduction = {1} --Cooldown reduction on smoke bomb for dodging. UNUSED
 	
 	--alcoholism is no joke
 	--stoic
@@ -3398,7 +3465,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Crook
 	self.specialization_descs[6][1] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- DR when enemy is close
 		perk_value_3 = tostring(self.values.player.passive_dodge_chance[1] * 100), -- Passive dodge increase
 		perk_value_4 = tostring(self.values.temporary.dmg_dampener_close_contact[2][2]), -- Duration of DR buff
@@ -3412,7 +3479,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring(self.on_killshot_cooldown_reduction), -- CD reduction on kill
 		perk_value_4 = tostring(self.on_killshot_cooldown_reduction_melee), -- CD reduction on melee kill
 		--perk_value_1 = tostring(self.values.player.level_2_dodge_addend[1] * 100) -- Dodge increase for vests
-		perk_value_5 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_5 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
 		perk_value_6 = tostring(self.values.player.close_contact_dodge_addend[1] * 100) -- dodge when enemy is close
 	}
 	self.specialization_descs[6][5] = {
@@ -3456,34 +3523,33 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Infiltrator
 	self.specialization_descs[8][1] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
-		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[1][1]) * 100).."%", -- DR when enemy is close
-		perk_value_3 = tostring(self.values.player.close_contact_dodge_addend[1] * 100), -- dodge when enemy is close
-		perk_value_4 = tostring(self.values.temporary.dmg_dampener_close_contact[1][2]) -- DR duration when conditions are no longer met
+        perk_value_1 = tostring(self.infiltrator_max_stacks), -- Max Intelligence stacks
+        perk_value_2 = tostring(self.values.player.infiltrator_stack_to_centimetres[1] / 100), -- Mark radius increase by metres per stack
+		perk_value_3 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
+		perk_value_4 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%" -- DR when enemy is close
 	}
 	self.specialization_descs[8][3] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
-		perk_value_2 = tostring((self.values.temporary.dmg_dampener_close_contact[1][1] - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- Additional DR when enemy is close
-		perk_value_3 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
+        perk_value_1 = tostring(self.values.player.infiltrator_heal_on_kill[1].base * 10), -- Heal on killing marked enemies
+        perk_value_2 = tostring(self.values.player.infiltrator_heal_on_kill[1].ene_mult[14].special)..'x', -- Special enemy healing multiplier
+        perk_value_3 = tostring(self.values.player.infiltrator_heal_on_kill[1].ene_mult[3].tank)..'x', -- Bulldozer enemy healing multiplier
+        perk_value_4 = tostring(self.values.player.infiltrator_extra_mark_time[1] * 100)..'%', -- Extra marking time
+        perk_value_5 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[8][5] = {
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
-		perk_value_2 = tostring((self.values.temporary.dmg_dampener_close_contact[2][1] - self.values.temporary.dmg_dampener_close_contact[3][1]) * 100).."%", -- Additional DR when enemy is close
-		perk_value_3 = tostring(self.values.melee.stacking_hit_damage_multiplier[1] * 100).."%", -- Damage boost for melee when player hit enemy successfully
-		perk_value_4 = tostring(self.values.melee.stacking_hit_expire_t[1]), -- Time when damage boost when lost
-		perk_value_5 = tostring(self.max_melee_weapon_dmg_mul_stacks), -- Max amount of damage stacks
-		perk_value_6 = tostring(self.values.player.tape_loop_duration[2] - self.values.player.tape_loop_duration[1]) -- Camera loop bonus
+        perk_value_1 = tostring(self.values.player.infiltrator_re_mark_on_kill[1] / 100), -- Re-marking distance on kill
+        perk_value_2 = tostring((self.values.player.infiltrator_extra_mark_time[2] - self.values.player.infiltrator_extra_mark_time[1]) * 100)..'%', -- Extra marking time
+		perk_value_3 = tostring(self.sicario_dr_range / 100), -- Required range to activate the extra dodge from enemy proximity
+		perk_value_4 = tostring(self.values.player.close_contact_dodge_addend[1] * 100) -- Dodge gained from close enemy proximity
 	}
 	self.specialization_descs[8][7] = {
-		perk_value_1 = tostring((self.values.melee.stacking_hit_damage_multiplier[2] - self.values.melee.stacking_hit_damage_multiplier[1]) * 100).."%", -- Additional damage boost for melee when player hit enemy successfully
-		perk_value_2 = tostring(self.values.melee.stacking_hit_expire_t[1]), -- Time when damage boost when lost
-		perk_value_3 = tostring(self.max_melee_weapon_dmg_mul_stacks), -- Max amount of damage stacks
-		perk_value_4 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
+        perk_value_1 = tostring(self.values.player.infiltrator_default_marking_distance[1] / 100), -- Extra melee kill default mark distance
+        perk_value_2 = tostring(self.values.player.infiltrator_heal_multiplier_on_melee_kill[1] * 100)..'%', -- Extra healing on melee kills
+        perk_value_3 = tostring((self.values.player.infiltrator_extra_mark_time[4] - self.values.player.infiltrator_extra_mark_time[3]) * 100)..'%', -- Extra marking time
+        perk_value_4 = tostring((self.values.player.passive_dodge_chance[3] - self.values.player.passive_dodge_chance[2]) * 100) -- Additional dodge
 	}
 	self.specialization_descs[8][9] = {
-		perk_value_1 = tostring(self.values.player.heal_over_time[1] * 10), -- HP regen per tick
-		perk_value_2 = tostring(self.melee_to_hot_data.total_ticks/self.melee_to_hot_data.tick_time), -- Duration of 1 stack
-		perk_value_3 = tostring(self.melee_to_hot_data.max_stacks) -- Max amount of stacks
+		perk_value_1 = tostring(math.abs(self.infiltrator_marked_damage_change) * 100).."%", -- Damage decrease for marked enemies
+        perk_value_2 = tostring((self.values.player.infiltrator_extra_mark_time[4] - self.values.player.infiltrator_extra_mark_time[3]) * 100)..'%' -- Extra marking time
 	}
 	
 	--Sociopath
@@ -3865,27 +3931,34 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Sicario
 	self.specialization_descs[18][1] = {
-		perk_value_1 = "12", -- Duration of smoke. Not defined here (?)
-		perk_value_2 = tostring((self.smoke_screen_armor_regen[1] - 1) * 100).."%", -- Armor regen bonus while you inside the smoke screen
-		perk_value_3 = "20", -- Minimum dodge while inside smoke. Can't reach it from here. :(
-		perk_value_4 = "75%", -- Accuracy debuff for enemies inside the smoke screen. Not defined here (?)
-		perk_value_5 = "35", --CD of smoke bomb. Not defined here
-		perk_value_6 = "2", -- CD reduction on kill
-		perk_value_7 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
+		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[1][1]) * 100).."%", -- DR when enemy is close
+		perk_value_3 = tostring(self.values.player.close_contact_dodge_addend[1] * 100), -- dodge when enemy is close
+		perk_value_4 = tostring(self.values.temporary.dmg_dampener_close_contact[1][2]) -- DR duration when conditions are no longer met
 	}
 	self.specialization_descs[18][3] = {
-		perk_value_1 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
+		perk_value_2 = tostring((self.values.temporary.dmg_dampener_close_contact[1][1] - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- Additional DR when enemy is close
+		perk_value_3 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
 	}
 	self.specialization_descs[18][5] = {
-		perk_value_1 = tostring(self.values.player.bomb_cooldown_reduction[1]), -- CD reduction on dodge
-		perk_value_2 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
+		perk_value_2 = tostring((self.values.temporary.dmg_dampener_close_contact[2][1] - self.values.temporary.dmg_dampener_close_contact[3][1]) * 100).."%", -- Additional DR when enemy is close
+		perk_value_3 = tostring(self.values.melee.stacking_hit_damage_multiplier[1] * 100).."%", -- Damage boost for melee when player hit enemy successfully
+		perk_value_4 = tostring(self.values.melee.stacking_hit_expire_t[1]), -- Time when damage boost when lost
+		perk_value_5 = tostring(self.max_melee_weapon_dmg_mul_stacks), -- Max amount of damage stacks
+		perk_value_6 = tostring(self.values.player.tape_loop_duration[2] - self.values.player.tape_loop_duration[1]) -- Camera loop bonus
 	}
 	self.specialization_descs[18][7] = {
-		perk_value_1 = tostring((self.values.player.passive_dodge_chance[3] - self.values.player.passive_dodge_chance[2]) * 100) -- Another additional dodge
+		perk_value_1 = tostring((self.values.melee.stacking_hit_damage_multiplier[2] - self.values.melee.stacking_hit_damage_multiplier[1]) * 100).."%", -- Additional damage boost for melee when player hit enemy successfully
+		perk_value_2 = tostring(self.values.melee.stacking_hit_expire_t[1]), -- Time when damage boost when lost
+		perk_value_3 = tostring(self.max_melee_weapon_dmg_mul_stacks), -- Max amount of damage stacks
+		perk_value_4 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
 	}
 	self.specialization_descs[18][9] = {
-		perk_value_1 = tostring(self.values.player.sicario_multiplier[1] * 100).."%", -- Dodge regen while you inside the smoke screen
-		perk_value_2 = tostring(self.values.player.smoke_screen_ally_dodge_bonus[1] * 100).."%" -- Dodge regen for allies inside your smoke screen
+		perk_value_1 = tostring(self.values.player.heal_over_time[1] * 10), -- HP regen per tick
+		perk_value_2 = tostring(self.melee_to_hot_data.total_ticks/self.melee_to_hot_data.tick_time), -- Duration of 1 stack
+		perk_value_3 = tostring(self.melee_to_hot_data.max_stacks) -- Max amount of stacks
 	}
 	
 	--Stoic
@@ -4083,12 +4156,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring(self.values.player.crouch_speed_multiplier_burglar[1] % 1 * 100).."%" -- Movement speed bonus when crouching
 	}
 	self.multi_choice_specialization_descs[23][9][8] = { --Infiltrator
-		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
-		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- Additional DR when enemy is close
-		perk_value_3 = tostring(self.values.melee.stacking_hit_damage_multiplier[1] * 100).."%", -- Damage boost for melee when player hit enemy successfully
-		perk_value_4 = tostring(self.values.melee.stacking_hit_expire_t[2]), -- Time when damage boost when lost
-		perk_value_5 = tostring(self.max_melee_weapon_dmg_mul_stacks), -- Max amount of damage stacks
-		perk_value_6 = tostring(self.values.player.tape_loop_duration[2] - self.values.player.tape_loop_duration[1]) -- Camera loop bonus
+        perk_value_1 = tostring(self.infiltrator_max_stacks), -- Max Intelligence stacks
+        perk_value_2 = tostring(self.values.player.infiltrator_stack_to_centimetres[1] / 100), -- Mark radius increase by metres per stack
+		perk_value_3 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
+		perk_value_4 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- DR when enemy is close
+        perk_value_5 = tostring(self.values.player.infiltrator_extra_mark_time[1] * 100)..'%', -- Extra marking time
 	}
 	self.multi_choice_specialization_descs[23][9][9] = {--Sociopath
 		perk_value_1 = tostring(self.values.player.buildup_meter[3].combo_add),
@@ -4168,14 +4240,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_5 = "1" -- CD reduction on kill. Not defined here (?)
 	}
 	self.multi_choice_specialization_descs[23][9][18] = { --Sicario
-		perk_value_1 = "12", -- Duration of smoke. Not defined here (?)
-		perk_value_2 = tostring((self.smoke_screen_armor_regen[1] - 1) * 100).."%", -- Armor regen bonus while you inside the smoke screen
-		perk_value_3 = "20", -- Minimum dodge while inside smoke. Can't reach it from here. :(
-		perk_value_4 = "75%", -- Accuracy debuff for enemies inside the smoke screen. Not defined here (?)
-		perk_value_5 = "35", --CD of smoke bomb. Not defined here
-		perk_value_6 = "2", -- CD reduction on kill
-		perk_value_7 = tostring(self.values.player.passive_dodge_chance[1] * 100), -- Passive dodge increase
-		perk_value_8 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
+		perk_value_1 = tostring(self.sicario_dr_range / 100), -- Required range to activate DR
+		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- Additional DR when enemy is close
+		perk_value_3 = tostring(self.values.melee.stacking_hit_damage_multiplier[1] * 100).."%", -- Damage boost for melee when player hit enemy successfully
+		perk_value_4 = tostring(self.values.melee.stacking_hit_expire_t[2]), -- Time when damage boost when lost
+		perk_value_5 = tostring(self.max_melee_weapon_dmg_mul_stacks), -- Max amount of damage stacks
+		perk_value_6 = tostring(self.values.player.tape_loop_duration[2] - self.values.player.tape_loop_duration[1]) -- Camera loop bonus
 	}
 	self.multi_choice_specialization_descs[23][9][19] = { --Stoic
 		perk_value_1 = tostring(self.values.player.damage_control_passive[2][1]).."%", -- % of damage converted into DoT 
@@ -4354,12 +4424,10 @@ function UpgradesTweakData.mrwi_deck9_options()
 			name_id = "menu_st_spec_8",
 			desc_id = "menu_deck8_mrwi_desc",
 			upgrades = {
-				"player_damage_dampener_close_contact_1",
+				"player_infiltrator_stacks_on_ranged_kills",
+				"player_infiltrator_stack_to_centimetres_1",
 				"player_damage_dampener_close_contact_2",
-				"melee_stacking_hit_damage_multiplier_1",
-				"melee_stacking_hit_expire_t",
-				"melee_stacking_hit_expire_t_2",
-				"player_tape_loop_duration_2",
+				"player_infiltrator_extra_mark_time_1",
 				"player_passive_loot_drop_multiplier_1"
 			}
 		},
@@ -4489,15 +4557,17 @@ function UpgradesTweakData.mrwi_deck9_options()
 			}
 		},
 		{ --Sicario
-			icon_xy = {0, 0},
-			texture_bundle_folder = "max",
+			icon_xy = {7, 4},
 			name_id = "menu_st_spec_18",
 			desc_id = "menu_deck18_mrwi_desc",
 			upgrades = {
-				"player_passive_dodge_chance_1",
-				"smoke_screen_grenade",
-				"player_corpse_dispose_amount_2",
-				"player_passive_loot_drop_multiplier_1"	
+				"player_damage_dampener_close_contact_1",
+				"player_damage_dampener_close_contact_2",
+				"melee_stacking_hit_damage_multiplier_1",
+				"melee_stacking_hit_expire_t",
+				"melee_stacking_hit_expire_t_2",
+				"player_tape_loop_duration_2",
+				"player_passive_loot_drop_multiplier_1"
 			}
 		},
 		{ --Stoic
@@ -5815,7 +5885,7 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.melee_stacking_hit_expire_t_2 = { --Copycat Infiltrator
+	self.definitions.melee_stacking_hit_expire_t_2 = { --Copycat Sicario
 		name_id = "menu_melee_stacking_hit_expire_t_2",
 		category = "feature",
 		upgrade = {
@@ -6752,6 +6822,124 @@ Hooks:PostHook(UpgradesTweakData, "_team_definitions", "res_team_definitions", f
 		upgrade = {
 			value = 1,
 			upgrade = "biker_crew_kill_stack_reward",
+			category = "player"
+		}
+	}
+
+	-- Infiltrator: how many stacks of Intelligence to grant on ranged kills.
+	self.definitions.player_infiltrator_stacks_on_ranged_kills = {
+		name_id = "player_infiltrator_stacks_on_ranged_kills",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "infiltrator_stacks_on_ranged_kills",
+			category = "player"
+		}
+	}
+
+	-- Infiltrator: on melee kills, how far to mark enemies per stack consumed.
+	self.definitions.player_infiltrator_stack_to_centimetres = {
+		name_id = "player_infiltrator_stack_to_centimetres",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "infiltrator_stack_to_centimetres",
+			category = "player"
+		}
+	}
+	
+	-- Infiltrator: heal on killing marked enemies.
+    self.definitions.player_infiltrator_heal_on_kill = {
+		name_id = "player_infiltrator_heal_on_kill",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "infiltrator_heal_on_kill",
+			category = "player"
+		}
+	}
+	
+	-- Infiltrator: marking another enemy when you kill an already marked enemy.
+    self.definitions.player_infiltrator_re_mark_on_kill = {
+		name_id = "player_infiltrator_re_mark_on_kill",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "infiltrator_re_mark_on_kill",
+			category = "player"
+		}
+	}
+	
+	-- Infiltrator: "base" distance beyond the intelligence stacks to marking on melee kills.
+    self.definitions.player_infiltrator_default_marking_distance = {
+		name_id = "player_infiltrator_default_marking_distance",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "infiltrator_default_marking_distance",
+			category = "player"
+		}
+	}
+	
+	-- Infiltrator: multiply healing on melee kills per Intelligence stack.
+    self.definitions.player_infiltrator_heal_multiplier_on_melee_kill = {
+		name_id = "player_infiltrator_heal_multiplier_on_melee_kill",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "infiltrator_heal_multiplier_on_melee_kill",
+			category = "player"
+		}
+	}
+	
+	-- Infiltrator: enemies receive a damage penalty if marked.
+    self.definitions.player_infiltrator_damage_penalty_on_marking = {
+		name_id = "player_infiltrator_damage_penalty_on_marking",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "infiltrator_damage_penalty_on_marking",
+			category = "player"
+		}
+	}
+	
+	-- Infiltrator: increase mark time.
+    self.definitions.player_infiltrator_extra_mark_time_1 = {
+		name_id = "player_infiltrator_extra_mark_time",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "infiltrator_extra_mark_time",
+			category = "player"
+		}
+	}
+	
+    self.definitions.player_infiltrator_extra_mark_time_2 = {
+		name_id = "player_infiltrator_extra_mark_time",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "infiltrator_extra_mark_time",
+			category = "player"
+		}
+	}
+	
+    self.definitions.player_infiltrator_extra_mark_time_3 = {
+		name_id = "player_infiltrator_extra_mark_time",
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "infiltrator_extra_mark_time",
+			category = "player"
+		}
+	}
+	
+    self.definitions.player_infiltrator_extra_mark_time_4 = {
+		name_id = "player_infiltrator_extra_mark_time",
+		category = "feature",
+		upgrade = {
+			value = 4,
+			upgrade = "infiltrator_extra_mark_time",
 			category = "player"
 		}
 	}

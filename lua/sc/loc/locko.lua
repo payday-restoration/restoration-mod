@@ -118,8 +118,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_grinderDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_gamblerTitleID"] = "의약품 (갬블러)",
 				["RestorationModInfo_gamblerDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",				
-				["RestorationModInfo_sicarioTitleID"] = "체력 흡수 (인필트레이터)",
-				["RestorationModInfo_sicarioDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
+				["RestorationModInfo_intelligenceTitleID"] = "첩보 (인필트레이터)",
+				["RestorationModInfo_intelligenceDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
+				["RestorationModInfo_sicarioTitleID"] = "체력 흡수 (시카리오)",
+				["RestorationModInfo_sicarioDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",				
 				["RestorationModInfo_sociopathTitleID"] = "콤보 미터 (소시오패스)",
 				["RestorationModInfo_sociopathDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_survive_one_hitTitleID"] = "도깨비 문신 (야쿠자)",
@@ -2510,6 +2512,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_grenade_poison_gas_grenade_desc"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.## \n\n이 실험용 생물학 무기는 특정 유전자형을 표적으로 삼는 독성 가스 구름을 방출하며, 당신이나 당신의 팀원에게 피해가 가지 않도록 설계되었습니다. 희생자는 격렬한 기침, 메스꺼움, 구토를 경험하며 가장 강한 적을 제외한 모든 적에게 치명적입니다.\n\n그야말로 전범이 쓸법한 무기인거야, 페코.",
 		["bm_grenade_poison_gas_grenade_desc_short"] = "피해량: #{stats_positive}#10초 동안 300## \n범위: #{skill_color}#6m## \n지속 시간 (가스 구름): #{skill_color}#12초## \n지연 시간: #{skill_color}#수류탄이 멈춘 후 1초##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#100%## 확률로 가스 범위 내의 대부분의 적을 기절시킵니다.\n- #{important_1}#실드, 불도저, 그레네이더 및 캡틴은 기절에 면역입니다.##\n- #{important_1}#적은 같은 가스 구름에서 두 번 이상 중독될 수 없습니다.##",
 
+		-- Old Sicario smoke grenade
+		["bm_grenade_smoke_screen_grenade_desc"] = "범위: #{skill_color}#6m## \n지속 시간: #{skill_color}#12초## \n지연 시간: #{skill_color}#연막탄이 멈춘 후 1초## \n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2##\n- 연막 안에 있으면 당신과 동료의 방탄력 회복 속도가 #{skill_color}#100%## 빨라지고 회피율이 20 미만이면 #{skill_color}#20##으로 설정됩니다.\n- 연막 안에 있는 동안 당신과 동료의 회피 게이지가 매 초마다 회피율의 #{skill_color}#20%## 씩 채워집니다.\n- 연막 안에 있는 적은 명중률이 #{skill_color}#75%## 감소합니다.\n\n이것 하나만 던지면, 연기 속으로 사라져서, 적이 당신을 제대로 조준하지 못하게 할 수 있습니다.",
+
 		--Throwing Cards
 		["bm_wpn_prj_ace_desc"] = "피해량: #{skill_color}#$damage##\n탄약 상자 회수율: #{skill_color}#$pickup_1에서 $pickup_2## \n- #{skill_color}#회수가 가능합니다.##\n- #{skill_color}#적을 맞추거나 처치 시 난봉꾼 하위 트리의 근접 스킬과 근접 위주 특성 덱 효과를 발동시킬 수 있습니다.## \n\n무게를 싣고, 모서리를 매우 날카롭게 만들어진 투척용 카드를 던집니다. 그야말로 치명적인 카드죠.",
 		--Throwing Stars/Shuriken
@@ -2525,7 +2530,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "약병",
 		["bm_grenade_damage_control"] = "힙 플라스크",
-		["bm_grenade_smoke_screen_grenade_desc"] = "범위: #{skill_color}#6m## \n지속 시간: #{skill_color}#12초## \n지연 시간: #{skill_color}#연막탄이 멈춘 후 1초## \n\n이것 하나만 던지면, 연기 속으로 사라져서, 적이 당신을 제대로 조준하지 못하게 할 수 있습니다.",
 
 		--WEAPON & ATTACHMENT DESCRIPTIONS
 		--[[ MANUFACTURERS ]]
@@ -6280,11 +6284,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck10_9"] = "방탄 의약품",
 
 		--Infiltrator--
-		["menu_deck8_1_desc_sc"] = "당신을 노리는 적이 #{risk}#$perk_value_1##미터 이내에 있을 때, 받는 피해가 #{skill_color}#$perk_value_2## 감소하고, 회피율을 #{skill_color}#$perk_value_3## 얻습니다. 이 효과들은 범위 내에 당신을 노리는 적이 없을 때까지 #{skill_color}#$perk_value_4##초 동안 지속됩니다.",
-		["menu_deck8_3_desc_sc"] = "노려짐으로 인한 피해 감소량이 추가로 ##$perk_value_2## 증가합니다.\n\n회피율이 ##$perk_value_3## 증가합니다.",
-		["menu_deck8_5_desc_sc"] = "노려짐으로 인한 피해 감소량이 추가로 ##$perk_value_2## 증가합니다.\n\n근접 무기로 적을 적중할 때마다 근접 무기의 피해량이 ##$perk_value_4##초 동안 또는 빗나갈 때까지 ##$perk_value_3## 증가하며, 최대 ##$perk_value_5##번까지 중첩됩니다.\n\n카메라 루프의 지속 시간이 ##$perk_value_6##초 증가합니다.",
-		["menu_deck8_7_desc_sc"] = "근접 무기로 적을 적중할 때마다 근접 무기의 피해량이 ##$perk_value_2##초 동안 또는 빗나갈 때까지 추가로 ##$perk_value_1## 증가하며, 최대 ##$perk_value_3##번까지 중첩됩니다.\n\n회피율이 추가로 ##$perk_value_4## 증가합니다.",
-		["menu_deck8_9_desc_sc"] = "근접 무기로 적을 적중할 때마다 ##$perk_value_2##초 동안 ##$perk_value_1##의 체력을 회복하며, 최대 ##$perk_value_3##번까지 중첩됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck8_1"] = "정찰",
+		["menu_deck8_3"] = "우선목표",
+		["menu_deck8_5"] = "통찰",
+		["menu_deck8_7"] = "심문",
+		["menu_deck8_9"] = "호출",
+		
+		["menu_deck8_1_desc_sc"] = "원거리 공격으로 적을 처치 시 첩보 중첩을 부여합니다. 최대 중첩 수는 #{skill_color}#$perk_value_1##까지 보유할 수 있습니다. 근접 공격으로 척 처치 시 보유한 모든 첩보 중첩을 소모하여 주변의 모든 적에게 표식을 남기며, 소모된 중첩 하나 당 표식 반경이 #{skill_color}#$perk_value_2## 미터씩 증가합니다.\n\n당신을 노리는 적이 #{skill_color}#$perk_value_3##미터 이내에 있을 때, 받는 피해가 #{skill_color}#$perk_value_4## 감소합니다.",
+		["menu_deck8_3_desc_sc"] = "표식이 부여된 적을 처치하면 체력을 #{skill_color}#$perk_value_1## 회복합니다. 표식이 부여된 특수 혹은 정예 적을 처치하면 #{skill_color}#$perk_value_2##만큼, 불도저와 캡틴을 처치 시 #{skill_color}#$perk_value_3##만큼 회복합니다. 근접 공격으로 처치 시 표식 부여와 관계 없이 회복합니다.\n\n적 표식 지속 시간이 #{skill_color}#$perk_value_4## 증가합니다.\n\n회피율이 #{skill_color}#$perk_value_5## 증가합니다.",
+		["menu_deck8_5_desc_sc"] = "표식이 부여된 적을 처치하면 #{skill_color}#$perk_value_1## 미터 이내에 표식이 부여되지 않는 가장 가까운 적에게 표식을 부여하며, 주변에 표식이 부여되지 않은 적이 없으면, 가장 가까운 표식이 부여된 적의 표식 지속 시간을 갱신합니다.\n\n당신을 노리는 적이 #{risk}#$perk_value_3##미터 이내에 있을 때, 회피율을 #{skill_color}#$perk_value_4## 얻습니다.\n\n적 표식 지속 시간이 #{skill_color}#$perk_value_2## 증가합니다.",
+		["menu_deck8_7_desc_sc"] = "근접 공격으로 적을 처치하면 주변 적에게 표식을 부여하는 범위가 #{skill_color}#$perk_value_1## 미터 증가하고, 첩보 중첩을 소모할 때마다 회복하는 양이 #{skill_color}#$perk_value_2## 증가합니다.\n\n적 표식 지속 시간이 #{skill_color}#$perk_value_3## 증가합니다.\n\n회피율이 추가로 #{skill_color}#$perk_value_4## 증가합니다.",
+		["menu_deck8_9_desc_sc"] = "어떤 방법이든 표식이 부여된 적은 당신과 동료에게 피해를 #{skill_color}#$perk_value_1## 적게 가합니다.\n\n#{risk}#참고: 이 효과는 여러 인필트레이터가 같은 적을 표식을 부여하더라도 중첩되지 않습니다.##\n\n적 표식 지속 시간이 #{skill_color}#$perk_value_2## 증가합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다.",
 
 		--Sociopath--
 		["menu_deck9_1_sc"] = "잡담 금지",
@@ -6366,11 +6376,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck17_9_desc_sc"] = "주사기 사용 효과가 지속되는 동안 체력을 #{skill_color}#$perk_value_1##씩 회복 할때마다 주사기 재사용 대기 시간이 #{skill_color}#$perk_value_2##초씩 줄어듭니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다.",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##이 잠금 해제됩니다.\n\n연막탄을 사용하면, #{skill_color}#$perk_value_1##초간 숨을 수 있는 연막을 형성합니다. 연막 속에 숨어 있으면, 당신과 팀원은 방탄력의 회복 속도가 #{skill_color}#$perk_value_2## 빨라지고, 회피율이 낮으면 #{skill_color}#$perk_value_3##로 설정됩니다. 연막 속으로 들어간 적은 명중률이 #{skill_color}#perk_value_4## 감소합니다.\n\n연막탄은 #{important_1}#$perk_value_5##초의 재사용 대기 시간이 있지만, 적을 처치하면 재사용 대기 시간이 #{skill_color}#$perk_value_6##초씩 감소합니다.\n\n회피율이 #{skill_color}#$perk_value_7## 증가합니다.",
-		["menu_deck18_3_desc_sc"] = "회피율이 추가로 ##$perk_value_1## 증가합니다.",
-		["menu_deck18_5_desc_sc"] = "공격을 회피하면 연막탄의 재사용 대기 시간이 ##$perk_value_1##초 감소합니다.\n\n인벤토리에 시체 가방을 ##$perk_value_2##개 더 소지합니다.",
-		["menu_deck18_7_desc_sc"] = "회피율이 추가로 ##$perk_value_1## 증가합니다.",
-		["menu_deck18_9_desc_sc"] = "연막 속에 숨어 있을 동안 회피 미터가 초당 ##$perk_value_1##씩 채워집니다.\n연막 속에 있는 동료는 회피 게이지를 ##$perk_value_2## 채워집니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck18_1"] = "보이지 않는 그림자",
+		["menu_deck18_3"] = "민첩 보호막",
+		["menu_deck18_7"] = "경련",
+		["menu_deck18_9"] = "체력 흡수",		
+		
+		["menu_deck18_1_desc_sc"] = "당신을 노리는 적이 #{risk}#$perk_value_1##미터 이내에 있을 때, 받는 피해가 #{skill_color}#$perk_value_2## 감소하고, 회피율을 #{skill_color}#$perk_value_3## 얻습니다. 이 효과들은 범위 내에 당신을 노리는 적이 없을 때까지 #{skill_color}#$perk_value_4##초 동안 지속됩니다.",
+		["menu_deck18_3_desc_sc"] = "노려짐으로 인한 피해 감소량이 추가로 ##$perk_value_2## 증가합니다.\n\n회피율이 ##$perk_value_3## 증가합니다.",
+		["menu_deck18_5_desc_sc"] = "노려짐으로 인한 피해 감소량이 추가로 ##$perk_value_2## 증가합니다.\n\n근접 무기로 적을 적중할 때마다 근접 무기의 피해량이 ##$perk_value_4##초 동안 또는 빗나갈 때까지 ##$perk_value_3## 증가하며, 최대 ##$perk_value_5##번까지 중첩됩니다.\n\n카메라 루프의 지속 시간이 ##$perk_value_6##초 증가합니다.",
+		["menu_deck18_7_desc_sc"] = "근접 무기로 적을 적중할 때마다 근접 무기의 피해량이 ##$perk_value_2##초 동안 또는 빗나갈 때까지 추가로 ##$perk_value_1## 증가하며, 최대 ##$perk_value_3##번까지 중첩됩니다.\n\n회피율이 추가로 ##$perk_value_4## 증가합니다.",
+		["menu_deck18_9_desc_sc"] = "근접 무기로 적을 적중할 때마다 ##$perk_value_2##초 동안 ##$perk_value_1##의 체력을 회복하며, 최대 ##$perk_value_3##번까지 중첩됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Sweet liquor eases the pain--
 		["menu_deck19_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n방탄복이 파괴되었을때, 피해 유예 시간이 #{important_1}#$perk_value_7## 감소하지만 지속 피해를 무효화할 때 받는 다음 피해는 제외됩니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##",
@@ -6511,7 +6526,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Burglar
 			["menu_deck7_mrwi_desc"] = "회피율이 추가로 ##$perk_value_1## 증가합니다.\n\n앉아있을 때 회피 미터가 초당 추가로 ##$perk_value_2##씩 채워집니다.\n\n앉아있을 때 이동 속도가 ##$perk_value_3## 증가합니다.",
 			--Infiltrator
-			["menu_deck8_mrwi_desc"] = "적이 ##$perk_value_1##미터 이내에 있을 때, 적에게 받는 피해가 ##$perk_value_2## 감소합니다.\n\n근접 무기로 적을 적중할 때마다 근접 무기의 피해량이 ##$perk_value_4##초 동안 또는 빗나갈 때까지 추가로 ##$perk_value_3## 증가하며, 최대 ##$perk_value_5##번까지 중첩됩니다.\n\n카메라 루프의 지속 시간이 ##$perk_value_6##초 증가합니다.",
+			["menu_deck8_mrwi_desc"] = "원거리 공격으로 적을 처치 시 첩보 중첩을 부여합니다. 최대 중첩 수는 #{skill_color}#$perk_value_1##까지 보유할 수 있습니다. 근접 공격으로 척 처치 시 보유한 모든 첩보 중첩을 소모하여 주변의 모든 적에게 표식을 남기며, 소모된 중첩 하나 당 표식 반경이 #{skill_color}#$perk_value_2## 미터씩 증가합니다.\n\n당신을 노리는 적이 #{skill_color}#$perk_value_3##미터 이내에 있을 때, 받는 피해가 #{skill_color}#$perk_value_4## 감소합니다.\n\n적 표식 지속 시간이 #{skill_color}#$perk_value_5## 증가합니다.",
 			--Sociopath
 			--["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nKilling an enemy within #{skill_color}#$perk_value_2## meters regenerates an additional #{skill_color}#$perk_value_3## armor; melee kills double the amount.\n\nThis cannot occur more than once every #{important_1}#$perk_value_4## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_5## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_6## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou carry #{skill_color}#$perk_value_7## additional body bag in your inventory.",
 			["menu_deck9_mrwi_desc"] = "콤보 미터를 얻습니다.\n\n근접 무기로 적을 처치하면 콤보 미터가 기본 값의 #{skill_color}#$perk_value_1##점 채우며, 최대 콤보는 #{skill_color}#$perk_value_2##점입니다. 정예 및 특수 적을 처치하면 콤보 게이지가 몇 배로 채워지며, 불도저와 캡틴을 처치하면 더 많은 콤보를 얻을 수 있습니다.\n\n콤보 미터는 #{risk}#$perk_value_4##초마다 #{important_1}#$perk_value_3##점씩 감소합니다.\n\n체력 피해를 입으면 콤보 미터가 #{important_1}#$perk_value_5##점 줄어들고, 이 효과는 #{skill_color}#$perk_value_6##초당 한 번만 발동합니다.\n출혈 상태가 되면 콤보 #{important_1}#$perk_value_7##점을 잃습니다.\n\n콤보 #{risk}#$perk_value_8##점마다 #{skill_color}#$perk_value_9##의 피해 저항이 부여되며, 최대 #{skill_color}#$perk_value_10##까지 증가합니다.\n\n콤보 #{risk}#$perk_value_13##점씩 쌓일 때마다 이동 속도가 #{skill_color}#$perk_value_14## 빨라지며, 최대 #{skill_color}#$perk_value_15##까지 증가합니다.\n근접 무기로 적을 죽이면 스태미나를 #{skill_color}#$perk_value_11## 회복합니다.\n\n인벤토리에 시체 가방을 #{skill_color}#$perk_value_12##개 더 소지합니다.",
@@ -6532,7 +6547,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Kingpin
 			["menu_deck17_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##가 잠금 해제됩니다.\n\n주사기를 사용하면 방탄복이 있을때 #{skill_color}#$perk_value_2##초 동안 받거나 회피한 모든 피해량의 #{skill_color}#$perk_value_1##만큼 회복합니다.\n\n효과가 지속되는 동안에도 피해를 받을 수 있습니다.\n\n주사기 사용 효과가 지속되는 동안 이동 속도가 #{skill_color}##$perk_value_3## 증가합니다.\n\n주사기는 #{important_1}#$perk_value_4##초마다 한 번만 쓸 수 있지만, 적을 처치할 때마다 재사용 대기 시간이 #{skill_color}#$perk_value_5##초씩 단축됩니다.",
 			--Sicario
-			["menu_deck18_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##이 잠금 해제됩니다.\n\n연막탄을 사용하면, #{skill_color}#$perk_value_1##초간 숨을 수 있는 연막을 형성합니다. 연막 속에 숨어 있으면, 당신과 팀원은 방탄력의 회복 속도가 #{skill_color}#$perk_value_2## 빨라지고, 회피율이 낮으면 #{skill_color}#$perk_value_3##로 설정됩니다. 연막 속으로 들어간 적은 명중률이 #{skill_color}#$perk_value_4## 감소합니다.\n\n연막탄은 #{important_1}#$perk_value_5##초의 재사용 대기 시간이 있지만, 적을 처치하면 재사용 대기 시간이 #{skill_color}#$perk_value_6##초씩 감소합니다.\n\n회피율이 #{skill_color}#$perk_value_7## 증가합니다.\n\n인벤토리에 시체 가방을 #{skill_color}##$perk_value_8##개 더 소지합니다.",
+			["menu_deck18_mrwi_desc"] = "적이 ##$perk_value_1##미터 이내에 있을 때, 적에게 받는 피해가 ##$perk_value_2## 감소합니다.\n\n근접 무기로 적을 적중할 때마다 근접 무기의 피해량이 ##$perk_value_4##초 동안 또는 빗나갈 때까지 추가로 ##$perk_value_3## 증가하며, 최대 ##$perk_value_5##번까지 중첩됩니다.\n\n카메라 루프의 지속 시간이 ##$perk_value_6##초 증가합니다.",
 			--Stoic
 			["menu_deck19_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n방탄복이 파괴되었을때, 피해 유예 시간이 #{important_1}#$perk_value_8## 감소하지만 지속 피해를 무효화할 때 받는 다음 피해는 제외됩니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##\n\n페이저를 응답하는 속도가 #{skill_color}#$perk_value_7## 빨라집니다.",
 			--Tag Team

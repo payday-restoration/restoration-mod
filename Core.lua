@@ -1588,6 +1588,28 @@ function restoration.get_hiding_cloaker_so_opts(so_action, search_position, inte
 		interval = -1,
 	}
 end
+---Generate a prefered remove element
+---@param id number: id of element, start from 400000
+---@param name string: name of element for reference
+---@param opts? table: extra parameters
+function restoration:gen_preferedremove(id, name, opts)
+	opts = opts or {}
+	local preferedremove = {
+		id = id,
+		editor_name = name,
+		class = "ElementEnemyPreferedRemove",
+		values = {
+			execute_on_startup = false,
+			base_delay = opts.base_delay or 0,
+			trigger_times = opts.trigger_times or 0,
+			elements = opts.elements or {},
+			on_executed = opts.on_executed or {},
+			enabled = true,
+			callback = opts.callback or false,
+		},
+	}
+	return preferedremove
+end
 -- Log tiers
 -- "log" is for general logging that is useful for players and developers
 -- "debug" is for general logging that only really developers/tinkerers need

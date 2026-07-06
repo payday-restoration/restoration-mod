@@ -579,7 +579,8 @@
 					<option type="bool" default_value="true" name="Info_crook"/>
 					<option type="bool" default_value="true" name="Info_grinder"/>
 					<option type="bool" default_value="true" name="Info_gambler"/>
-					<option type="bool" default_value="true" name="Info_infiltrator"/>
+					<option type="bool" default_value="true" name="Info_intelligence"/> <!-- Infiltrator's Intelligence stacks -->
+					<option type="bool" default_value="true" name="Info_sicario"/>
 					<option type="bool" default_value="true" name="Info_sociopath"/>
 					<option type="bool" default_value="true" name="Info_survive_one_hit"/> <!-- Yakuza Oni Irezumi -->
 					<option type="bool" default_value="true" name="Info_cohesion"/> <!-- Biker's Cohesion display -->

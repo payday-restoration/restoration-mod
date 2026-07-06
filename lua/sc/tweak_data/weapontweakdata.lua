@@ -31580,6 +31580,146 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     HYLIE'S MODS     ]]--
 
+            if self.vc39 then -- PLAS-39 Accelerator Rifle
+				self.vc39.categories = {
+					"snp",
+					"semi_snp",
+					"keep_ammo_max",
+					"sweet_liberty"
+				}
+				self.vc39.recategorize = { "heavy_snp" }
+				self.vc39.has_description = true
+				self.vc39.CLIP_AMMO_MAX = 9
+				self.vc39.AMMO_MAX = 72
+				self.vc39.keep_ammo = 0
+				self.vc39.sms = sms_preset.semi_snp_heavy
+				self.vc39.kick = self.stat_info.kick_tables.right_kick
+				self.vc39.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{3, self.stat_info.kick_tables.vertical_kick},
+					{4, self.stat_info.kick_tables.right_kick},
+					{7, self.stat_info.kick_tables.left_recoil},
+					{8, self.stat_info.kick_tables.moderate_kick}
+				}
+				self.vc39.supported = true
+				self.vc39.ads_speed = 0.460
+				self.vc39.damage_falloff = {
+					start_dist = 2300,
+					end_dist = 7600,
+					min_mult = 0.375
+				}
+				self.vc39.stats = {
+					damage = 125,
+					spread = 93,
+					recoil = 31,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 20,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 25
+				}
+				self.vc39.can_shoot_through_enemy = true
+				self.vc39.can_shoot_through_shield = true
+				self.vc39.object_damage_mult = 1.6
+				self.vc39.reload_speed_multiplier = 0.80
+				self.vc39.armor_piercing_chance = 1
+				self.vc39.stats_modifiers = nil
+				self.vc39.panic_suppression_chance = 0.05
+				self.vc39.timers.reload_empty = 3
+				self.vc39.timers.reload_not_empty = 3
+			end
+
+			if self.bocchi then -- Bocchi The Glock
+				self.bocchi.categories = {
+					"pistol"
+				}
+				self.bocchi.recategorize = { "light_pis" }
+				self.bocchi.tactical_reload = 1
+				self.bocchi.fire_mode_data.fire_rate = 0.11
+				self.bocchi.CLIP_AMMO_MAX = 19
+				self.bocchi.AMMO_MAX = 95
+				self.bocchi.kick = self.stat_info.kick_tables.moderate_kick
+				self.bocchi.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{5, self.stat_info.kick_tables.moderate_kick},
+					{7, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.bocchi.supported = true
+				self.bocchi.ads_speed = 0.100
+				self.bocchi.damage_falloff = {
+					start_dist = 900,
+					end_dist = 2700,
+					min_mult = 0.3333
+				}
+				self.bocchi.stats = {
+					damage = 20,
+					spread = 58,
+					recoil = 94,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 30,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.bocchi.weapon_movement_penalty = 1.08
+				self.bocchi.stats_modifiers = nil
+				self.bocchi.panic_suppression_chance = 0.05
+				self.bocchi.timers.reload_exit_empty = 0.5
+				self.bocchi.timers.reload_exit_not_empty = 0.65
+			end
+
+			if self.panty then -- Backlace (Panty's Pistol | Panty & Stocking with Garterbelt)
+				self.panty.categories = { "pistol", }
+				self.panty.recategorize = { "heavy_pis" }
+				self.panty.damage_type = "pistol"
+				self.panty.always_play_anims = true
+				self.panty.lock_slide = true
+				self.panty.AMMO_MAX = 60
+				self.panty.CLIP_AMMO_MAX = 8
+				self.panty.tactical_reload = 1
+				self.panty.kick = self.stat_info.kick_tables.right_recoil
+				self.panty.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{2, self.stat_info.kick_tables.right_kick},
+					{4, self.stat_info.kick_tables.right_recoil}
+				}
+				self.panty.supported = true
+				self.panty.ads_speed = 0.140
+				self.panty.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3100,
+					min_mult = 0.25
+				}
+				self.panty.stats = {
+				    damage = 69,
+				    spread = 46,
+				    recoil = 70,
+				    spread_moving = 6,
+				    zoom = 1,
+				    concealment = 31,
+				    suppression = 20,
+				    alert_size = 2,
+				    extra_ammo = 101,
+				    total_ammo_mod = 400,
+				    value = 1,
+				    reload = 25
+			}
+				self.panty.stats_modifiers = nil
+				self.panty.hs_mult = 1.5
+				self.panty.panic_suppression_chance = 0.05
+				self.panty.armor_piercing_chance = 1
+				self.panty.reload_speed_multiplier = 1.25
+				self.panty.timers = deep_clone(self.deagle.timers)
+			end
+
 			if self.rs422 then -- RS-422 Railgun
 				self.rs422.categories = {
 					"snp",

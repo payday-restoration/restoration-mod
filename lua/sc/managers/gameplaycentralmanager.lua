@@ -139,6 +139,9 @@ Hooks:OverrideFunction(GamePlayCentralManager, "auto_highlight_enemy", function(
 		time_multiplier = managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1)
 	end
 
+	-- Infiltrator's extra marking time.
+	time_multiplier = time_multiplier + managers.player:upgrade_value("player", "infiltrator_extra_mark_time", 0)
+
 	-- Trip mines, Sixth Sense Basic, and ADS (if applicable) "upgrade" the default mark_enemy contour to be visible through walls even during a Pro Job.
 	if (context == "trip_mine" or context == "sixth_sense" or context == "steelsight") and contour_type == "mark_enemy" then
 		contour_type = "mark_enemy_through_walls"

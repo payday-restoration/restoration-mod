@@ -122,6 +122,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_intelligenceDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_sicarioTitleID"] = "체력 흡수 (시카리오)",
 				["RestorationModInfo_sicarioDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",				
+				["RestorationModInfo_sicarioTitleID"] = "체력 흡수 (인필트레이터)",
+				["RestorationModInfo_sicarioDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_sociopathTitleID"] = "콤보 미터 (소시오패스)",
 				["RestorationModInfo_sociopathDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_survive_one_hitTitleID"] = "도깨비 문신 (야쿠자)",

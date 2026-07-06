@@ -475,4 +475,26 @@
 	<!-- Trying to make OMNIA Shield load the cracked visor texture -->
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" load="true" force="true"/>	<!-- Same visor color as the AKAN Shields, so uhhh --> 
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/red_glass_df" load="true" force="true"/>	<!-- Same visor color as the AKAN Shields, so uhhh -->	
+	
+	<!-- Bomb Forest Reapers -->
+	
+	<!--small shield acc-->
+	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small"  />
+	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small"  load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small_dummy"  load="true"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" load="true" force="true"/>
+	
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" load="true" force="true"/> <!-- Shared AKAN Shield Visor Crack Texture is here -->
+	
+	<!--big shield acc-->
+	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true" force="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan_dummy" load="true"/>
 </table>

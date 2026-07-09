@@ -20316,6 +20316,29 @@ end
 			self.parts.wpn_fps_upg_i_autofire.forbids = {
 				"wpn_fps_upg_extra_mp_lock"
 			}
+			
+			self.parts.wpn_fps_upg_i_burstfire.has_description = true
+			self.parts.wpn_fps_upg_i_burstfire.supported = true
+			self.parts.wpn_fps_upg_i_burstfire.stats = {
+				value = 5,
+				spread = 3,
+				recoil = -6
+			}
+			self.parts.wpn_fps_upg_i_burstfire.custom_stats = {
+				info_lock_burst = true,
+				burst_fire = {
+					count = 3,
+					delay = 0.25,
+					recoil_mult = 0.5,
+					last_recoil_mult = 1.1,
+					lock = true
+				},
+				rof_mult = 1.25
+			}
+			self.parts.wpn_fps_upg_i_burstfire.perks = nil
+			self.parts.wpn_fps_upg_i_burstfire.forbids = {
+				"wpn_fps_upg_extra_mp_lock"
+			}			
 
 			--Rubber Grip
 			self.parts.wpn_fps_upg_m4_g_hgrip.pcs = {

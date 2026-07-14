@@ -2949,16 +2949,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		50
 	}
 	local damage_control_passive_ticks = { 
-		8, --Max duration of DoT; damage per tick scales with duration and is calculated as "100/Duration"
+		12, --Max duration of DoT; damage per tick scales with duration and is calculated as "100/Duration"
 		5 --Copycat
 	}
 	self.values.player.damage_control_passive = {
 		{
-			40, --% of damage converted into DoT 
+			50, --% of damage converted into DoT 
 			100 / damage_control_passive_ticks[1]
 		},
 		{--Copycat
-			20,
+			34,
 			100 / damage_control_passive_ticks[2]
 		}
 	}
@@ -2966,7 +2966,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		4
 	}
 	self.values.player.damage_control_healing = {
-		150
+		200
 	}
 
 	self.values.player.damage_control_cooldown_drain = {

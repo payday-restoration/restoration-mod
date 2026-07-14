@@ -31,7 +31,7 @@ return {
 	[100206] = {
 		values = {
 			enabled = false,
-		}
+		},
 	},
 	-- Add new reinforce around the house (from Eclipse)
 	[100109] = {

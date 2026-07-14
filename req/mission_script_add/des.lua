@@ -206,16 +206,19 @@ local opts_weapons_units_01 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_1,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_weapons_units_02 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_2,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_weapons_units_03 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_3,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_enable_grunts_open_weapons_room = {
 	enabled = death_wish_above,
@@ -230,16 +233,19 @@ local opts_arc_units_01 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_1,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_arc_units_02 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_2,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_arc_units_03 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_3,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_enable_grunts_open_arc_room = {
 	enabled = death_wish_above,
@@ -254,16 +260,19 @@ local opts_pc_units_01 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_1,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_pc_units_02 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_2,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_pc_units_03 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_3,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_enable_grunts_open_pc_room = {
 	enabled = death_wish_above,
@@ -278,16 +287,19 @@ local opts_lab_units_01 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_1,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_lab_units_02 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_2,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_lab_units_03 = {
 	enabled = true,
 	participate_to_group_ai = true,
 	enemy = grunt_3,
+	on_executed = { { id =  4000070, delay = 0,   }, },
 }
 local opts_enable_grunts_open_lab_room = {
 	enabled = death_wish_above,
@@ -297,6 +309,14 @@ local opts_enable_grunts_open_lab_room = {
 		{ id = 400067, delay = 0, },
 		{ id = 400068, delay = 0, },
 	}
+}
+local opts_hunt_so = {
+	scan = true,
+	SO_access = {
+		"swat",
+	},
+	use_instigator = true,
+	so_action = "AI_hunt",
 }
 return {
     elements = {
@@ -397,6 +417,8 @@ return {
 		restoration:gen_dummy(400067, "grunt_lab_room_3", Vector3(-2260, -252, 0), Rotation(177.000, 0, -0), opts_lab_units_03),
 		restoration:gen_dummy(400068, "grunt_lab_room_4", Vector3(-2390, -252, 0), Rotation(177.000, 0, -0), opts_lab_units_02),
 		restoration:gen_missionscript(400069, "enable_grunts_lab_room", opts_enable_grunts_open_lab_room),
+		-- Hunt_so for these 
+		restoration:gen_so(4000070, "hunt_so", opts_hunt_so),
 
     },
 }

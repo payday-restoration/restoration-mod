@@ -2,12 +2,12 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local bravos_inbound = (pro_job and true) or false
 local rapple_spawn = {
 	values = {
-		interval = 35,
+		interval = 20,
 	},
 }
 local standard_spawn = {
 	values = {
-		interval = 35,
+		interval = 30,
 	},
 }
 local burning_apartment_spawn = {

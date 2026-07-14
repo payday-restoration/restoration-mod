@@ -31777,6 +31777,60 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rs422.timers.reload_exit_not_empty = 0
 			end
 
+			if self.mp5shadow then
+				self.mp5shadow.has_description = true
+				self.mp5shadow.categories = { "smg" }
+				self.mp5shadow.recategorize = {"light_smg"}
+				self.mp5shadow.damage_type = "machine_gun"
+				self.mp5shadow.CLIP_AMMO_MAX = 30
+				self.mp5shadow.tactical_reload = 1
+				self.mp5shadow.sounds.enter_steelsight = "secondary_steel_sight_enter"
+				self.mp5shadow.sounds.leave_steelsight = "secondary_steel_sight_exit"
+				self.mp5shadow.CAN_TOGGLE_FIREMODE = false
+				self.mp5shadow.FIRE_MODE = "single"
+				self.mp5shadow.kick = {}
+				self.mp5shadow.kick = self.stat_info.kick_tables.even_recoil
+				self.mp5shadow.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_right_kick},
+					{5, self.stat_info.kick_tables.horizontal_right_recoil},
+					{8, self.stat_info.kick_tables.right_recoil},
+					{12, self.stat_info.kick_tables.moderate_kick},
+					{16, self.stat_info.kick_tables.left_recoil},
+					{22, self.stat_info.kick_tables.moderate_left_kick},
+					{25, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.mp5shadow.supported = true
+				self.mp5shadow.ads_speed = 0.180
+				self.mp5shadow.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 3600,
+					min_mult = 0.2
+				}
+				self.mp5shadow.stats = {
+					damage = 30,
+					spread = 76,
+					recoil = 93,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 29,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 25
+				}
+				self.mp5shadow.stats_modifiers = nil
+				self.mp5shadow.panic_suppression_chance = 0.05
+				self.mp5shadow.always_play_anims = true
+				self.mp5shadow.reload_speed_multiplier = 1.08
+				self.mp5shadow.reload_not_empty_speed_multiplier = 1.20
+				self.mp5shadow.timers.reload_not_empty = 2.3
+				self.mp5shadow.timers.reload_exit_not_empty = 0.95
+				self.mp5shadow.timers.reload_empty = 3.5
+				self.mp5shadow.timers.reload_exit_empty = 0.7
+			end
+
 			if self.rebar then -- Red-Hot Rebar Crossbow
 				self.rebar.categories = {
 					"crossbow"

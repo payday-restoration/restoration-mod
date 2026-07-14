@@ -2014,13 +2014,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 
 			--Desperado
-				self.values.pistol.steelsight_accuracy_inc = {0.85}
+				self.values.pistol.steelsight_accuracy_inc = {0.65}
 				self.values.pistol.stacked_accuracy_bonus = {
 					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 4}, --Basic
 					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 8} --Ace
 				}
 				--Ace
-				self.values.pistol.steelsight_range_inc = {1.25}
+				self.values.pistol.steelsight_range_inc = {1.35}
 				
 				self.skill_descs.expert_handling = {
 					skill_value_b1 = tostring((1 - self.values.pistol.stacked_accuracy_bonus[1].accuracy_bonus) * 100).."%", -- Accuracy bonus per stack

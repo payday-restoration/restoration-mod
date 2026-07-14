@@ -9,8 +9,24 @@ local fbi_access = {
 			end
 		end
 }	
+local window_spawn = {
+	values = {
+		interval = 30,
+	},
+}
+local boat_spawn = {
+	values = {
+		interval = 30,
+	},
+}
 
 return {
+-- get rid of roof dozers (that are not even on the roof lmao)
+	[100434] = {
+		on_executed = {
+			{ id = 100365, remove = true },
+		},
+	},
 	--Pro Job PONR 
 	[100914] = {
 		ponr = ponr_value
@@ -24,5 +40,9 @@ return {
 	},
 	[101313] = {
 		difficulty = 1
-	}
+	},
+	-- Spawn group intervals
+	[100605] = window_spawn,
+	[100177] = boat_spawn,
+	[100737] = boat_spawn,
 }	

@@ -2963,7 +2963,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 	self.values.player.damage_control_auto_shrug = {
-		4
+		6
 	}
 	self.values.player.damage_control_healing = {
 		175
@@ -4251,7 +4251,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_1 = tostring(self.values.player.damage_control_passive[2][1]).."%", -- % of damage converted into DoT 
 		perk_value_2 = tostring(100 / self.values.player.damage_control_passive[2][2]), -- Standard DoT duration
 		perk_value_3 = tostring(self.values.player.damage_control_healing[1]).."%", -- HP regen defined by remaining DoT damage
-		perk_value_4 = "30", -- CD of alchohol flask. Not defined here
+		perk_value_4 = tostring(restoration.damage_control_cd), -- CD of alchohol flask. Defined in Core.lua (found in root)
 		perk_value_5 = tostring(self.values.player.armor_to_health_conversion[1]).."%", -- Armor convert rate
 		perk_value_6 = tostring(100 - self.values.player.armor_to_health_conversion[1]).."%", -- HP convert rate
 		perk_value_7 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%", -- Faster pager interaction

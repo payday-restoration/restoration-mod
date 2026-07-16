@@ -1192,6 +1192,17 @@ tweak_data.projectiles.hatman_molotov.damage = 6.0
 tweak_data.projectiles.hatman_molotov.player_damage = 6.0
 tweak_data.projectiles.hatman_molotov.env_effect = "hatman_molotov_fire"
 
+tweak_data.weapon_suppression = {}
+-- The "default" damage assumed for suppression building. Weapons doing lower damage than this build suppression slower.
+-- Weapons with higher damage do the opposite.
+tweak_data.weapon_suppression.damage_line = 4.0
+-- The exponent for calculating the suppression of a weapon where applicable. See RaycastWeaponBase:fire for how it's used.
+tweak_data.weapon_suppression.exponent = 0.9
+-- The maximum amount of the suppression multiplier that can be from the weapon's damage.
+-- Assuming the current (at the time of writing) 5% suppression chance per shot on Muscle, this means that a super high damage
+-- weapon can theoretically only reach at most 40% suppresssion chance per shot.
+tweak_data.weapon_suppression.max_suppr_mult = 8
+
 --But why--
 tweak_data.team_ai.stop_action.delay = 0.8
 tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999

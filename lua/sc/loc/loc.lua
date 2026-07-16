@@ -6294,8 +6294,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		--Muscle
 		["menu_deck2_1_desc_sc"] = "You gain ##$perk_value_1## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYour dodge is increased by ##$perk_value_2## points.",
-		["menu_deck2_5_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYou bag corpses and interact with hostages ##$perk_value_2## faster.",
-		["menu_deck2_7_desc_sc"] = "Every shot you fire with your guns has a ##$perk_value_1## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
+		["menu_deck2_5_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYou regenerate ##$perk_value_3## health every ##$perk_value_4## seconds, and an additional ##$perk_value_5## health every ##$perk_value_4## seconds for every ##$perk_value_6## health you currently have (up to ##$perk_value_7## health per ##$perk_value_4## seconds).\n\nYou bag corpses and interact with hostages ##$perk_value_2## faster.",
+		["menu_deck2_7_desc_sc"] = "Every shot you fire with your guns has a ##$perk_value_1## chance to spread panic among your enemies, with higher damage guns spreading panic more easily.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
 		["menu_deck2_9_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYou gain ##$perk_value_2## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Crew Chief

@@ -812,7 +812,10 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 		self:_check_alert(ray_res.rays, from_pos, direction, user_unit)
 	end
 
-	self:_build_suppression(ray_res.enemies_in_cone, suppr_mul)
+	local dmg_adjusted_suppr_mult = (self:_get_current_damage(dmg_mul) / tweak_data.weapon_suppression.damage_line)^(tweak_data.weapon_suppression.exponent) * (suppr_mul or 0)
+	dmg_adjusted_suppr_mult = math.min(dmg_adjusted_suppr_mult, tweak_data.weapon_suppression.max_suppr_mult)
+
+	self:_build_suppression(ray_res.enemies_in_cone, dmg_adjusted_suppr_mult)
 	managers.player:send_message(Message.OnWeaponFired, nil, self._unit, ray_res)
 
 	--Autofire soundfix integration.

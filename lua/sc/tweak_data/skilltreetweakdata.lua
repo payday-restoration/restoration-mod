@@ -2161,6 +2161,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_passive_health_multiplier_5",
 					"player_passive_health_multiplier_6",
+					"player_muscle_regen",
 					"player_corpse_dispose_speed_multiplier",
 					"player_civ_move_multiplier"
 				},

@@ -2253,6 +2253,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.civ_move_multiplier = {
 		0.25
 	}
+	self.values.player.muscle_regen = { -- Muscle's auto-HP regen data.
+		{
+			base = 0.15, -- Default HP regen, no matter what.
+			max = 0.5, -- The maximum amount of possible HP regen in one 'tick'.
+			additional = 0.025, -- Gain this many additional HP regen...
+			per_hp = 3, -- ...For every this many HP you currently have.
+			per_sec = 5  -- How often should the regen be ticked; "per X seconds". As I set this to 5, I also added the whole regen logic to PlayerManager:fixed_health_regen(). What that means is that unless you reorganise the logic (probably by moving it to PlayerDamage:_upd_health_regen() and adding a timer of its own there), changing this variable will not cause any changes to happen.
+		}
+	}
 
 	--Burglar
 	self.values.player.crouch_speed_multiplier_burglar = {
@@ -3379,7 +3388,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[2][5] = {
 		perk_value_1 = tostring((self.values.player.passive_health_multiplier[6] - self.values.player.passive_health_multiplier[4]) * 100).."%", -- More addtional HP
-		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
+		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%", -- Faster interaction with civs + bagging corpses
+		perk_value_3 = tostring(self.values.player.muscle_regen[1].base * 10), -- Base regen
+		perk_value_4 = tostring(self.values.player.muscle_regen[1].per_sec), -- Regen ticking time
+		perk_value_5 = tostring(self.values.player.muscle_regen[1].additional * 10), -- Additional HP regen for having more health
+		perk_value_6 = tostring(self.values.player.muscle_regen[1].per_hp * 10), -- The additional HP regen is increased for every this many HP you have
+		perk_value_7 = tostring(self.values.player.muscle_regen[1].max * 10) -- The maximum amount of possible HP regen
 	}
 	self.specialization_descs[2][7] = {
 		perk_value_1 = tostring(self.values.player.panic_suppression_mult[1] * 100).. "%", -- Panic chance
@@ -6191,6 +6205,16 @@ function UpgradesTweakData:_player_definitions()
 		}
 	}
 
+	-- Muscle: HP regen
+	self.definitions.player_muscle_regen = {
+		category = "feature",
+		name_id = "menu_player_muscle_regen",
+		upgrade = {
+			category = "player",
+			upgrade = "muscle_regen",
+			value = 1
+		}
+	}
 	
 	self.definitions.player_buildup_meter_1 = {
 		name_id = "menu_player_buildup_meter_1",

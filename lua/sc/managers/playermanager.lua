@@ -1818,6 +1818,16 @@ function PlayerManager:fixed_health_regen()
 		managers.hud:set_stacks("hostage_taker", health_regen * 10)
 	end
 
+	-- Muscle: Giant Strength's regen.
+    if self:has_category_upgrade("player", "muscle_regen") then
+		local player_unit = self:player_unit()
+
+		if alive(player_unit) then
+			local regen_data = self:upgrade_value("player", "muscle_regen")
+			health_regen = health_regen + math.min(regen_data.max, regen_data.base + regen_data.additional * math.floor(player_unit:character_damage():get_real_health() / regen_data.per_hp))
+		end
+	end
+
 	-- Biker's healing potency increase.
 	-- Intentionally before the AI crew health bonus.
 	if self:has_team_category_upgrade("player", "biker_crew_heal_potency") then

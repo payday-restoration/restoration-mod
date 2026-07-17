@@ -239,6 +239,7 @@ Hooks:OverrideFunction(PlayerDamage, "init", function (self, unit)
 	}
 
 	self:clear_delayed_damage()
+	self:clear_delayed_healing()
 	
 	self._slowdowns = {}
 	self._can_play_tinnitus = not managers.user:get_setting("accessibility_sounds_tinnitus") or false
@@ -1237,6 +1238,10 @@ function PlayerDamage:damage_fall(data)
 
 	return true
 end
+
+Hooks:PostHook(PlayerDamage, "on_downed", "res_on_downed", function(self)
+	self:clear_delayed_healing()
+end)
 
 Hooks:PostHook(PlayerDamage, "_regenerated" , "ResRegenerated" , function(self, no_messiah)
 	--Apply new method to handle refilling messiah charges.
@@ -2816,6 +2821,18 @@ function PlayerDamage:remaining_delayed_healing()
 	for _, healing_chunk in ipairs(self._delayed_healing.chunks) do
 		remaining_healing = remaining_healing + healing_chunk.remaining
 	end
+
+	return remaining_healing
+end
+
+-- Stoic: ...clears the delayed healing. Should be self-explanatory.
+-- 
+-- Same thoughts as with PlayerDamage:_update_delayed_healing(), see that.
+function PlayerDamage:clear_delayed_healing()
+	local remaining_healing = self:remaining_delayed_healing()
+
+	self._delayed_healing.chunks = {}
+	self._delayed_healing.next_tick = nil
 
 	return remaining_healing
 end

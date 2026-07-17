@@ -575,6 +575,7 @@
 					<divider name="tod_divider" size="7"/>
 					<button name="perk_buffs" disabled="true"/>
 					<option type="bool" default_value="true" name="Info_crew_chief"/>
+					<option type="bool" default_value="true" name="Info_muscle"/> <!-- Muscle's regen -->
 					<option type="bool" default_value="true" name="Info_rogue"/>
 					<option type="bool" default_value="true" name="Info_crook"/>
 					<option type="bool" default_value="true" name="Info_grinder"/>

@@ -2963,20 +2963,23 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.values.player.damage_control_passive = {
 		{
-			50, --% of damage converted into DoT 
-			100 / damage_control_passive_ticks[1]
+			40, --% of damage converted into DoT 
+			100 / damage_control_passive_ticks[1], -- Weirdly-stored duration for DoT
+			12  -- Fuck it, this is MY delayed healing addition, I can choose to store the duration normally.
 		},
 		{--Copycat
-			34,
-			100 / damage_control_passive_ticks[2]
+			20,
+			100 / damage_control_passive_ticks[2],
+			12
 		}
 	}
 	self.values.player.damage_control_auto_shrug = {
 		6
 	}
 	self.values.player.damage_control_healing = {
-		175
+		200
 	}
+	self.damage_control_calm_healing = {400}
 
 	self.values.player.damage_control_cooldown_drain = {
 		{ 0, 5},
@@ -3983,7 +3986,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_4 = tostring(restoration.damage_control_cd), -- CD of alchohol flask. Defined in Core.lua (found in root)
 		perk_value_5 = tostring(self.values.player.armor_to_health_conversion[1]).."%", -- Armor convert rate
 		perk_value_6 = tostring(100 - self.values.player.armor_to_health_conversion[1]).."%", -- HP convert rate
-		perk_value_7 = tostring((1 - self.values.player.damage_grace_mult[1]) * 100).."%" -- grace period multiplier
+		perk_value_7 = tostring((1 - self.values.player.damage_grace_mult[1]) * 100).."%", -- grace period multiplier
+		perk_value_8 = tostring(self.values.player.damage_control_passive[1][3]) -- Duration for the heal-over-time
 	}
 	self.specialization_descs[19][3] = {
 		perk_value_1 = tostring(self.values.player.damage_control_cooldown_drain[1][2]), -- CD reduction on kill
@@ -3991,7 +3995,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[19][5] = {
 		perk_value_1 = tostring(self.values.player.damage_control_auto_shrug[1]), -- DoT damage negated after X seconds
-		perk_value_2 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
+		perk_value_2 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%", -- Faster pager interaction
+		perk_value_3 = tostring(self.damage_control_calm_healing[1]).."%" -- HP regen defined by remaining DoT damage when activated by Calm
 	}
 	self.specialization_descs[19][7] = {
 		perk_value_1 = tostring(self.values.player.damage_control_cooldown_drain[2][1]).."%", -- Additional CD reduction on kill if HP below X %
@@ -4269,7 +4274,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_5 = tostring(self.values.player.armor_to_health_conversion[1]).."%", -- Armor convert rate
 		perk_value_6 = tostring(100 - self.values.player.armor_to_health_conversion[1]).."%", -- HP convert rate
 		perk_value_7 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%", -- Faster pager interaction
-		perk_value_8 = tostring((1 - self.values.player.damage_grace_mult[1]) * 100).."%" -- grace period multiplier
+		perk_value_8 = tostring((1 - self.values.player.damage_grace_mult[1]) * 100).."%", -- grace period multiplier
+		perk_value_9 = tostring(self.values.player.damage_control_passive[2][3]) -- Duration for the heal-over-time
 	}
 	self.multi_choice_specialization_descs[23][9][20] = { --Tag Team
 		perk_value_1 = tostring(self.values.player.tag_team_base[1].distance), -- Distance required to activate vape

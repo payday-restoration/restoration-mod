@@ -232,6 +232,12 @@ Hooks:OverrideFunction(PlayerDamage, "init", function (self, unit)
 		chunks = {}
 	}
 
+	-- For Stoic's healing method.
+	self._delayed_healing = {
+		epsilon = 0.001,
+		chunks = {}
+	}
+
 	self:clear_delayed_damage()
 	
 	self._slowdowns = {}
@@ -1752,6 +1758,9 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		end
 	end
 
+	-- Stoic: delayed healing
+	self:_update_delayed_healing(t, dt)
+
 	--Has PECM
 	local has_pecm_heal = managers.player:has_category_upgrade("team", "pocket_ecm_heal_on_kill")
 	local player_inv = has_pecm_heal and self._unit.inventory and self._unit:inventory()
@@ -2732,4 +2741,81 @@ function PlayerDamage:biker_lose_stacks_on_damage(damage_taken, weight)
 			to_tend = nil
 		}, {}, false)
 	end
+end
+
+-- Stoic: keeps track of and manages Stoic's delayed healing.
+--
+-- Almost literally one-to-one with the delayed damage function, just restores HP instead of doing damage.
+-- I originally put this in the delayed damage chunks, but then decided against it for primarily HUD reasons.
+-- Not only would it confuse the DoT display (if you had equal delayed healing and DoT, your healthbar would show nothing),
+-- it could potentially confuse other HUDs that have specific expectations of the DoT when they receive it (for example, that it is positive).
+-- Also doing negative damage would just be a mess.
+function PlayerDamage:_update_delayed_healing(t, dt)
+	local no_chunks = #self._delayed_healing.chunks == 0
+	local time_for_tick = self._delayed_healing.next_tick and t < self._delayed_healing.next_tick
+
+	if no_chunks or time_for_tick then
+		return
+	end
+
+	self._delayed_healing.next_tick = t + 1
+
+	local total_tick = 0
+	local remaining_chunks = {}
+
+	for _, damage_chunk in ipairs(self._delayed_healing.chunks) do
+		total_tick = total_tick + damage_chunk.tick
+		damage_chunk.remaining = damage_chunk.remaining - damage_chunk.tick
+
+		if damage_chunk.remaining > self._delayed_healing.epsilon then
+			table.insert(remaining_chunks, damage_chunk)
+		end
+	end
+
+	self._delayed_healing.chunks = remaining_chunks
+	local remaining_healing = self:remaining_delayed_healing()
+
+	if #self._delayed_healing.chunks == #remaining_chunks then
+		if managers.hud then
+			managers.hud:start_buff("stoic", 1.0) -- TODO: change to Stoic
+			managers.hud:set_stacks("stoic", math.floor(remaining_healing * 100) / 10) -- TODO: change to Stoic
+		end
+	end
+
+	if total_tick > 0 then
+		self:restore_health(total_tick, true)
+	end
+
+	if remaining_healing == 0 then
+		self._delayed_healing.next_tick = nil
+	end
+end
+
+-- Stoic: the function to use to add delayed healing to a player.
+-- 
+-- Same thoughts as with PlayerDamage:_update_delayed_healing(), see that.
+function PlayerDamage:delay_healing(healing, seconds)
+	local healing_chunk = {
+		tick = healing / seconds,
+		remaining = healing
+	}
+
+	if not self._delayed_healing.next_tick then
+		self._delayed_healing.next_tick = TimerManager:game():time() + 1
+	end
+
+	table.insert(self._delayed_healing.chunks, healing_chunk)
+end
+
+-- Stoic: simply returns the healing that is yet to be given to the player.
+-- 
+-- Same thoughts as with PlayerDamage:_update_delayed_healing(), see that.
+function PlayerDamage:remaining_delayed_healing()
+	local remaining_healing = 0
+
+	for _, healing_chunk in ipairs(self._delayed_healing.chunks) do
+		remaining_healing = remaining_healing + healing_chunk.remaining
+	end
+
+	return remaining_healing
 end

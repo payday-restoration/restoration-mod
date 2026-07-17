@@ -75,6 +75,8 @@
 	<texture			path="guis/textures/pd2/skilltree/info_revive_damage_reduction" force="false" load="false"/> <!-- Combat Medic -->
 	<texture			path="guis/textures/pd2/skilltree/info_desperado" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_grinder" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_muscle" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_stoic" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_intelligence" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_sicario" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_sociopath" force="false" load="false"/>

@@ -14,7 +14,8 @@ PlayerAction.DamageControl = {
 
 		damage_delay_values = {
 			delay_ratio = damage_delay_values[1] * 0.01,
-			tick_ratio = damage_delay_values[2] * 0.01
+			tick_ratio = damage_delay_values[2] * 0.01,
+			delayed_health_duration = damage_delay_values[3]
 		}
 		--Added sanity check for on kill CDR. Otherwise crashes on an incomplete perk deck.
 		if cooldown_drain then
@@ -25,7 +26,7 @@ PlayerAction.DamageControl = {
 			}
 		end
 
-		local function shrug_off_damage()
+		local function shrug_off_damage(activated_by_calm)
 			local player_unit = managers.player:player_unit()
 
 			if player_unit then
@@ -42,7 +43,12 @@ PlayerAction.DamageControl = {
 				player_damage._next_allowed_dmg_t = Application:digest_value(timer:time() + original_dmange_grace, true)
 
 				if shrug_healing then
-					player_damage:restore_health(remaining_damage * shrug_healing, true)
+					local heal_percent = shrug_healing
+					if activated_by_calm then
+						heal_percent = tweak_data.upgrades.damage_control_calm_healing[1] * 0.01
+					end
+
+					player_damage:delay_healing(remaining_damage * heal_percent, damage_delay_values.delayed_health_duration)
 				end
 			end
 
@@ -71,7 +77,7 @@ PlayerAction.DamageControl = {
 
 		local function on_ability_activated(ability_name)
 			if ability_name == "damage_control" then
-				shrug_off_damage()
+				shrug_off_damage(false)
 			end
 		end
 
@@ -112,7 +118,7 @@ PlayerAction.DamageControl = {
 			local now = timer:time()
 
 			if auto_shrug_time and auto_shrug_time <= now then
-				shrug_off_damage()
+				shrug_off_damage(true)
 			end
 		end
 	end

@@ -1824,7 +1824,14 @@ function PlayerManager:fixed_health_regen()
 
 		if alive(player_unit) then
 			local regen_data = self:upgrade_value("player", "muscle_regen")
-			health_regen = health_regen + math.min(regen_data.max, regen_data.base + regen_data.additional * math.floor(player_unit:character_damage():get_real_health() / regen_data.per_hp))
+			local muscle_health_regen = math.min(regen_data.max, regen_data.base + regen_data.additional * math.floor(player_unit:character_damage():get_real_health() / regen_data.per_hp))
+
+			if managers and managers.hud and muscle_health_regen > 0 then
+				managers.hud:start_buff("muscle", regen_data.per_sec)
+				managers.hud:set_stacks("muscle", muscle_health_regen * 10)
+			end
+
+			health_regen = health_regen + muscle_health_regen
 		end
 	end
 

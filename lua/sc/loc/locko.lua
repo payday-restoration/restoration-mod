@@ -6251,8 +6251,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		--Muscle
 		["menu_deck2_1_desc_sc"] = "체력이 ##$perk_value_1## 증가합니다.",
 		["menu_deck2_3_desc_sc"] = "체력이 추가로 ##$perk_value_1## 증가합니다.\n\n회피율이 ##$perk_value_2## 증가합니다.",
-		["menu_deck2_5_desc_sc"] = "체력이 추가로 ##$perk_value_1## 증가합니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 ##$perk_value_2## 빨라집니다.",
-		["menu_deck2_7_desc_sc"] = "무기를 발사할 때마다 ##$perk_value_1##의 확률로 근처의 적에게 공포감을 퍼트립니다.\n\n공포감은 적들이 잠시 동안 엄청난 두려움에 떨게 만듭니다.\n\n회피율이 추가로 ##$perk_value_2## 증가합니다.",
+		["menu_deck2_5_desc_sc"] = "체력이 추가로 ##$perk_value_1## 증가합니다.\n\n매 ##$perk_value_4##초마다 체력을 ##$perk_value_3##씩 회복하고, 현재 체력이 ##$perk_value_6##일때 추가로 ##$perk_value_5##씩 회복합니다(최대 ##$perk_value_7## 회복)\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 ##$perk_value_2## 빨라집니다.",
+		["menu_deck2_7_desc_sc"] = "무기를 발사할 때마다 ##$perk_value_1##의 확률로 근처의 적에게 공포감을 퍼트리고 무기의 피해량이 높을 수록 확률이 증가합니다.\n\n공포감은 적들이 잠시 동안 엄청난 두려움에 떨게 만듭니다.\n\n회피율이 추가로 ##$perk_value_2## 증가합니다.",
 		["menu_deck2_9_desc_sc"] = "체력이 추가로 ##$perk_value_1## 증가합니다.\n\n되살아났을때 최대 체력의 ##$perk_value_2##만큼 회복합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Crew Chief

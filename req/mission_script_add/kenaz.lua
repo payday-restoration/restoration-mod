@@ -138,12 +138,12 @@ local enable_thetank = {
 }
 local optsBravo_Dozer = {
 	enemy = ben_dozer,
-	enbaled = true,
+	enabled = true,
 	participate_to_group_ai = true,
 	on_executed = { { id = 400011, delay = 0 }, },
 }
 local spawn_brav_doz = {
-	enbaled = true,
+	enabled = true,
 	on_executed = { { id =  400008, delay = 0 }, },
 }
 local disable_vault_stairs_unit = {
@@ -216,7 +216,7 @@ local opts_gunner_dspj_02 = {
 	on_executed = {  { id = 400027, delay = 2.5, }, },
 }
 local spawn_dspj_gunners_railing = {
-	enbaled = true,
+	enabled = true,
 	on_executed = {
 		{ id =  400024, delay = 0, },
 		{ id =  400025, delay =  0, },

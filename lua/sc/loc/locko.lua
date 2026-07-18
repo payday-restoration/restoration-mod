@@ -131,7 +131,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_stoicTitleID"] = "지속 치료량 (스토익)",
 				["RestorationModInfo_stoicDescID"] = "해당 특성 덱의 남은 회복량 표시를 활성화하거나 비활성화합니다.",				
 				["RestorationModInfo_cohesionTitleID"] = "단결력 (바이커)",
-				["RestorationModInfo_cohesionDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.\n초로객 숫자는 단결력 스택이 8 스택일때 마다 표시됩니다.",
+				["RestorationModInfo_cohesionDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.\n초록색 숫자는 단결력 스택이 8 스택일때 마다 표시됩니다.",
 				["RestorationModInfo_heisters_in_auraTitleID"] = "근처에 있는 하이스터 표시 (바이커)",
 				["RestorationModInfo_heisters_in_auraDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_dig_in_your_heelsTitleID"] = "너의 가치를 보여라! (바이커)",

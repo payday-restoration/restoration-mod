@@ -15,7 +15,6 @@ local burning_apartment_spawn = {
 		interval = 20,
 	},
 }
-local 
 return {
 	--Highlight all remaining goats when Boris arrives
 	--Call Bravos when on PJs

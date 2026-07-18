@@ -109,7 +109,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModperk_buffsTitleID"] = "===특성===",
 				["RestorationModperk_buffsDescID"] = "특성 덱의 특성 효과에 대한 버프 표시기를 엽니다.",
 				["RestorationModInfo_crew_chiefTitleID"] = "인질극 (크루 치프)",
-				["RestorationModInfo_crew_chiefDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",				
+				["RestorationModInfo_crew_chiefDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
+				["RestorationModInfo_muscleTitleID"] = "거대한 힘 (머슬)",
+				["RestorationModInfo_muscleDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",				
 				["RestorationModInfo_rogueTitleID"] = "킬러 인스팅트 (로그)",
 				["RestorationModInfo_rogueDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_crookTitleID"] = "평정심과 방출 (크룩)",
@@ -126,6 +128,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_sociopathDescID"] = "해당 특성 덱의 표시를 활성화하거나 비활성화합니다.",
 				["RestorationModInfo_survive_one_hitTitleID"] = "도깨비 문신 (야쿠자)",
 				["RestorationModInfo_survive_one_hitDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.",
+				["RestorationModInfo_stoicTitleID"] = "지속 치료량 (스토익)",
+				["RestorationModInfo_stoicDescID"] = "해당 특성 덱의 남은 회복량 표시를 활성화하거나 비활성화합니다.",				
 				["RestorationModInfo_cohesionTitleID"] = "단결력 (바이커)",
 				["RestorationModInfo_cohesionDescID"] = "해당 특성 덱의 활성 상태 표시를 활성화하거나 비활성화합니다.\n초로객 숫자는 단결력 스택이 8 스택일때 마다 표시됩니다.",
 				["RestorationModInfo_heisters_in_auraTitleID"] = "근처에 있는 하이스터 표시 (바이커)",
@@ -6388,9 +6392,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck18_9_desc_sc"] = "근접 무기로 적을 적중할 때마다 ##$perk_value_2##초 동안 ##$perk_value_1##의 체력을 회복하며, 최대 ##$perk_value_3##번까지 중첩됩니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n방탄복이 파괴되었을때, 피해 유예 시간이 #{important_1}#$perk_value_7## 감소하지만 지속 피해를 무효화할 때 받는 다음 피해는 제외됩니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##",
+		["menu_deck19_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, #{skill_color}#$perk_value_8##초간 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼씩 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n방탄복이 파괴되었을때, 피해 유예 시간이 #{important_1}#$perk_value_7## 감소하지만 지속 피해를 무효화할 때 받는 다음 피해는 제외됩니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##",
 		["menu_deck19_3_desc_sc"] = "적을 처치할 때마다 플라스크의 재사용 대기 시간이 ##$perk_value_1##초씩 감소합니다.\n\n회피량이 #{skill_color}#$perk_value_2## 증가합니다.",
-		["menu_deck19_5_desc_sc"] = "##$perk_value_1##초간 피해를 입지 않으면 남아있는 모든 누적 피해가 무효화됩니다.\n\n페이저를 응답하는 속도가 ##$perk_value_2## 빨라집니다.",
+		["menu_deck19_5_desc_sc"] = "##$perk_value_1##초간 피해를 입지 않으면 남아있는 모든 누적 피해가 무효화되며 무효화된 누적 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n페이저를 응답하는 속도가 ##$perk_value_2## 빨라집니다.",
 		["menu_deck19_7_desc_sc"] = "체력이 ##$perk_value_1## 이하일 경우, 적을 처치할 때마다 플라스크의 재사용 대기 시간이 ##$perk_value_2##초씩 감소합니다.",
 		["menu_deck19_9_desc_sc"] = "되살아났을때 최대 체력의 ##$perk_value_1##를 회복합니다.\n\n덱 완료 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
@@ -6549,7 +6553,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Sicario
 			["menu_deck18_mrwi_desc"] = "적이 ##$perk_value_1##미터 이내에 있을 때, 적에게 받는 피해가 ##$perk_value_2## 감소합니다.\n\n근접 무기로 적을 적중할 때마다 근접 무기의 피해량이 ##$perk_value_4##초 동안 또는 빗나갈 때까지 추가로 ##$perk_value_3## 증가하며, 최대 ##$perk_value_5##번까지 중첩됩니다.\n\n카메라 루프의 지속 시간이 ##$perk_value_6##초 증가합니다.",
 			--Stoic
-			["menu_deck19_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n방탄복이 파괴되었을때, 피해 유예 시간이 #{important_1}#$perk_value_8## 감소하지만 지속 피해를 무효화할 때 받는 다음 피해는 제외됩니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##\n\n페이저를 응답하는 속도가 #{skill_color}#$perk_value_7## 빨라집니다.",
+			["menu_deck19_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##가 잠금 해제됩니다.\n\n받은 피해의 #{skill_color}#$perk_value_1##가 #{skill_color}#$perk_value_2##초에 걸쳐 받습니다.\n\n플라스크를 사용하면 누적 피해를 즉시 무효화시킵니다.\n\n누적 피해가 무효화될 때, #{skill_color}#$perk_value_9##초간 남은 지속 피해의 #{skill_color}#$perk_value_3##만큼씩 회복합니다.\n\n플라스크는 #{important_1}#$perk_value_4##초의 재사용 대기 시간이 있습니다.\n\n방탄량이 #{important_1}#$perk_value_5## 감소하고 체력이 #{skill_color}#$perk_value_6## 증가합니다.\n\n방탄복이 파괴되었을때, 피해 유예 시간이 #{important_1}#$perk_value_8## 감소하지만 지속 피해를 무효화할 때 받는 다음 피해는 제외됩니다.\n#{risk}#주의: 회피 유예 시간은 영향을 받지 않습니다.##\n\n페이저를 응답하는 속도가 #{skill_color}#$perk_value_7## 빨라집니다.",
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#기체 디스펜서##가 잠금 해제됩니다.\n\n기체 디스펜서를 사용하려면, #{skill_color}#$perk_value_1##미터 이내에 있는 아군 대상을 바라보고 투척 무기 키를 눌러 대상을 지정할 수 있습니다.\n\n당신이나 지정된 대상이 적을 처치할 때마다 당신의 체력을 #{skill_color}#$perk_value_2##만큼 회복시키고, 태그한 대상의 체력을 #{skill_color}#$perk_value_3##만큼 회복시킵니다.\n\n이 효과는 #{skill_color}#$perk_value_4##초간 지속되고 #{important_1}#$perk_value_5##초의 재사용 대기 시간을 가집니다.\n\n카메라 루프의 지속 시간이 #{skill_color}#$perk_value_6##초 증가합니다.",
 			--Hacker

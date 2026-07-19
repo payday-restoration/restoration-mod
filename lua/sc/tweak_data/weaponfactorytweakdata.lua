@@ -57772,6 +57772,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "cqbSightInit", function(self)
 				self.parts.wpn_fps_ass_ak_fg_waffle.pcs = nil
 		end
 
+		-- I'm really wondering if these are even needed when neither of these globals exist anymore
+		--[[
 		if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 			self.parts.wpn_fps_vg_vmp_stubby.pcs = nil
 			self.parts.wpn_fps_vg_vmp_medium.pcs = nil
@@ -57780,6 +57782,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "cqbSightInit", function(self)
 			self.parts.wpn_fps_vg_vmp_cheems.pcs = nil
 			self.parts.wpn_fps_vg_vmp_vert.pcs = nil
 		end
+		--]]
 
 		if SystemFS:exists("assets/mod_overrides/AMCAR Various Attachment/main.xml") then
 				self.parts.wpn_fps_ass_m4_m_stick_amcar.pcs = nil

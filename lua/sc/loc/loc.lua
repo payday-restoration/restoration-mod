@@ -5839,7 +5839,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   MEDIC SUBTREE   ]]--
 				--Combat Medic
 				["menu_combat_medic_beta_sc"] = "Combat Medic",
-				["menu_combat_medic_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## damage reduction while reviving another crew member and the effect lingers for #{skill_color}#$skill_value_b2## seconds afterwards upon a successful revive.\n\n#{risk}#NOTE: The damage reduction only applies to revives performed via interaction.##\n\nACE: #{owned}#$pro##\nReviving a crew member gives them #{skill_color}#$skill_value_p1## more health.",
+				["menu_combat_medic_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## damage reduction while reviving another crew member and the effect lingers for #{skill_color}#$skill_value_b2## seconds afterwards upon a successful revive.\n\n#{risk}#NOTE: The damage reduction only applies to revives performed via interaction.##\n\nACE: #{owned}#$pro##\nThe damage reduction when reviving another crew member is increased to #{skill_color}#$skill_value_b3##.\n\nReviving a crew member gives them #{skill_color}#$skill_value_p1## more health.",
 
 				--Quick Fix
 				["menu_tea_time_beta_sc"] = "Quick Fix",
@@ -6295,35 +6295,35 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck5_7_desc_sc"] = "You gain ##$perk_value_1## temporary health when you are revived.\n\nYou gain an additional ##$perk_value_2## dodge points.",
 		["menu_deck5_9_desc_sc"] = "While you have temporary health, you gain ##$perk_value_1## deflection and ##$perk_value_2## additional movement speed.\n\nDeflection reduces the amount of health damage you take, to a maximum of ##$perk_value_3##, and is applied after other forms of damage reduction.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
-		--Muscle
+		-- Muscle
 		["menu_deck2_1_desc_sc"] = "You gain ##$perk_value_1## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYour dodge is increased by ##$perk_value_2## points.",
 		["menu_deck2_5_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYou regenerate ##$perk_value_3## health every ##$perk_value_4## seconds, and an additional ##$perk_value_5## health every ##$perk_value_4## seconds for every ##$perk_value_6## health you currently have (up to ##$perk_value_7## health per ##$perk_value_4## seconds).\n\nYou bag corpses and interact with hostages ##$perk_value_2## faster.",
 		["menu_deck2_7_desc_sc"] = "Every shot you fire with your guns has a ##$perk_value_1## chance to spread panic among your enemies, with higher damage guns spreading panic more easily.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
 		["menu_deck2_9_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYou gain ##$perk_value_2## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
-		--Crew Chief
+		-- Crew Chief
 		["menu_deck1_1_desc_sc"] = "You gain #{skill_color}#$perk_value_1## more health.\n\nYour dodge is increased by #{skill_color}#$perk_value_2## points.",
 		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by #{skill_color}#$perk_value_1.##\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nIncreases your shout distance by #{skill_color}#$perk_value_2.##\n\nYour dodge is increased by an additional #{skill_color}#$perk_value_3## points.",
 		["menu_deck1_5_desc_sc"] = "You gain an additional #{skill_color}#$perk_value_1## more health.\n\nYour crew gain #{skill_color}#$perk_value_2## more health.\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nYou answer pagers #{skill_color}#$perk_value_3## faster.",
 		["menu_deck1_7_desc_sc"] = "You gain ##$perk_value_1## more armor.\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
 		["menu_deck1_9_desc_sc"] = "You and your crew gains #{skill_color}#$perk_value_1## max health and #{skill_color}#$perk_value_2## stamina for each hostage up to #{skill_color}#$perk_value_3## times.\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
-		--I only had to put these in to fix Overkill's shitty rebalance attempt--
-		--Armorer--
-		["menu_deck3_1_desc_sc"] = "You gain ##$perk_value_1## more armor.\n\nBallistic vests gain an additional ##$perk_value_2## more armor.",
+
+		-- Armorer
+		["menu_deck3_1_desc_sc"] = "You gain ##$perk_value_1## more armor.\n\nBallistic vests and the Two-Piece Suit gain an additional ##$perk_value_2## more armor.",
 		["menu_deck3_3_desc_sc"] = "You gain an additional ##$perk_value_1## more armor.\n\nYour dodge is increased by ##$perk_value_2## points.",
 		["menu_deck3_5_desc_sc"] = "You gain an additional ##$perk_value_1## more armor.\n\nYour dodge is increased by an additional ##$perk_value_3## points.\n\nYou gain the ability to place ##$perk_value_2## body bag cases.",
-		["menu_deck3_7_desc_sc"] = "Your armor recovery speed is increased by ##$perk_value_1.##\n\nBallistic vests gain ##$perk_value_3## deflection.\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
-		["menu_deck3_9_desc_sc"] = "Your armor recovery speed is increased by an additional ##$perk_value_1.##\n\nBallistic vests gain an additional ##$perk_value_2## more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck3_7_desc_sc"] = "Your armor recovery speed is increased by ##$perk_value_1.##\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
+		["menu_deck3_9_desc_sc"] = "You and your crew's armor recovery speed is increased by ##$perk_value_3##.\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nBallistic vests and the Two-Piece Suit gain an additional ##$perk_value_2## more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
-		--Burglar--
+		-- Burglar
 		["menu_deck7_1_desc_sc"] = "Your dodge is increased by ##$perk_value_1## points.\n\nYour dodge meter fills up by ##$perk_value_2## of your dodge every second while crouching.",
 		["menu_deck7_3_desc_sc"] = "Your dodge is increased by an additional ##$perk_value_1## points.",
 		["menu_deck7_5_desc_sc"] = "Your dodge meter fills up by an additional ##$perk_value_1## of your dodge every second while crouching.\n\nYou gain a ##$perk_value_2## boost in your movement speed when crouching.",
 		["menu_deck7_7_desc_sc"] = "Your dodge is increased by an additional ##$perk_value_1## points.",
 		["menu_deck7_9_desc_sc"] = "Your armor recovery speed is increased by ##$perk_value_1.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
-		--Gambler--
+		-- Gambler
 		["menu_deck10_1_desc_sc"] = "Ammo boxes you pick up also yield medical supplies that heal you for #{skill_color}#$perk_value_1 to $perk_value_2## health.\n\nHealing has an #{important_1}#$perk_value_3## second cooldown but every ammo box you pick up reduces it by #{skill_color}#$perk_value_4 to $perk_value_5## seconds.\n\nIf an ammo box you pick up clears an active cooldown, it will trigger the applicable perks and restart the cooldown.",
 		["menu_deck10_3_desc_sc"] = "When you pick up ammo, you trigger an ammo pickup for ##$perk_value_1## of normal rate to other crew members.\n\nYou gain ##$perk_value_2## dodge points.",
 		["menu_deck10_5_desc_sc"] = "Ammo boxes instead heal you for #{skill_color}#$perk_value_1 to $perk_value_2## health.\n\nWhen you get healed from picking up ammo boxes, your dodge meter is also filled up by ##$perk_value_3## of your dodge.\n\nYou answer pagers ##$perk_value_4## faster.",
@@ -6332,7 +6332,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck10_7"] = "Dodgy Medicine",
 		["menu_deck10_9"] = "Locked-Up Medicine",
 
-		--Infiltrator--
+		-- Infiltrator
 		["menu_deck8_1"] = "Recon",
 		["menu_deck8_3"] = "Prioritization",
 		["menu_deck8_5"] = "Insight",

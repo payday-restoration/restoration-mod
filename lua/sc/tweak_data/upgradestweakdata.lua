@@ -519,7 +519,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.15,
 		0.10, -- half increment
 		0.05, -- half increment
-		-0.05,
+		0.00,
 		-0.15,
 		-0.2, -- half increment
 		-0.3
@@ -564,10 +564,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.max_deflection = 0.60
 	self.values.player.body_armor.deflection = { --*increments of 0.05
 		0.00,
-		0.05,
-		0.10,
+		0.1,
 		0.15,
-		0.25, -- 2 increments
+		0.2,
+		0.25, -- 2 increments | HAHA NOT ANYMORE t. SC
 		0.20, -- -1 increment
 		0.10 -- -2 increments
 	}
@@ -739,18 +739,26 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Medic--
 			--Combat Medic--
 				--Basic
-					self.values.player.revive_damage_reduction = {0.9}
-					self.values.temporary.revive_damage_reduction = {{
+					self.values.player.revive_damage_reduction = {0.9, 0.8}
+					self.values.temporary.revive_damage_reduction = {
+					{
 						0.9,
 						5
-					}}
+					},
+					{
+						0.8,
+						5
+					}			
+				}
 				--Ace
-					self.revive_health_multiplier = {1.3}
+					-- Changing this to a raw HP add versus a multiplier to make it better on DW/DS
+					self.revive_health_multiplier = {3}
 					
 					self.skill_descs.combat_medic = {
 						skill_value_b1 = tostring((1 - self.values.player.revive_damage_reduction[1]) * 100).."%", -- DR
 						skill_value_b2 = tostring(self.values.temporary.revive_damage_reduction[1][2]), -- DR duration in s
-						skill_value_p1 = tostring(self.revive_health_multiplier[1]%1*100).."%" -- Additional HP for a teammate after reviving
+						skill_value_b3 = tostring((1 - self.values.player.revive_damage_reduction[2]) * 100).."%", -- DR
+						skill_value_p1 = tostring(self.revive_health_multiplier[1] * 10) -- Additional HP for a teammate after reviving
 					}
 					
 			
@@ -1366,8 +1374,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						}
 						self.values.player.scaling_armor_break_grace = {
 							{
-								grace_mod = 0.125, --seconds of damage grace for every armor step
-								armor_steps = 5 --1 step for every 50 base armor
+								grace_mod = 0.05, --seconds of damage grace for every armor step
+								armor_steps = 2 --1 step for every 50 base armor
 							}
 						}
 						
@@ -2272,16 +2280,22 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.8
 	}
 
+	-- Armorer Armor Regen Speeds
 	self.values.player.perk_armor_regen_timer_multiplier = {
 		0.9,
-		0.85, --Armorer Exclusive
+		0.85, -- Armorer Exclusive,
 
-		0.95, --Copycat
+		0.95, -- Copycat
 
-		--Unused
+		-- Unused
 		0.9,
 		0.9
 	}
+	
+	-- Armorer Team Armor Regen Bonus
+	self.values.team.armor.passive_regen_time_multiplier = {
+		0.95
+	}	
 
 	--Hitman
 	self.values.player.store_temp_health = { 
@@ -2311,7 +2325,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.15,
 		0.15 --unused
 	}
-
+	
+	self.values.player.level_1_armor_multiplier = {
+		1.10,
+		1.15,
+		1.05
+	}
 	self.values.player.level_2_armor_multiplier = {
 		1.10,
 		1.15,
@@ -3431,6 +3450,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.specialization_descs[3][9] = {
 		perk_value_1 = tostring((self.values.player.perk_armor_regen_timer_multiplier[1] - self.values.player.perk_armor_regen_timer_multiplier[2]) * 100).."%", -- Additional armor regen
 		perk_value_2 = tostring((self.values.player.level_2_armor_multiplier[2] - self.values.player.level_2_armor_multiplier[1]) * 100).."%", -- Additional armor increase for vests
+		perk_value_3 = tostring((1 - self.values.team.armor.passive_regen_time_multiplier[1]) * 100).."%", -- Armor regen buff for player and crew
 	}
 	
 	--Rogue
@@ -4678,6 +4698,26 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
+	
+	-- Aced version
+	self.definitions.player_revive_damage_reduction_2 = {
+		category = "feature",
+		name_id = "menu_player_revive_damage_reduction",
+		upgrade = {
+			category = "player",
+			upgrade = "revive_damage_reduction",
+			value = 2
+		}
+	}	
+	self.definitions.temporary_revive_damage_reduction_2 = {
+		category = "temporary",
+		name_id = "menu_temporary_revive_damage_reduction",
+		upgrade = {
+			category = "temporary",
+			upgrade = "revive_damage_reduction",
+			value = 2
+		}
+	}	
 
 	local id = ""
 	for armor_level = 1, 7 do
@@ -7727,6 +7767,39 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	
+	-- Suit Armor Increase for Armorer
+	self.definitions.player_level_1_armor_multiplier_1 = {
+		category = "feature",
+		incremental = true,
+		name_id = "menu_player_level_1_armor_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "level_1_armor_multiplier",
+			value = 1
+		}
+	}	
+	self.definitions.player_level_1_armor_multiplier_2 = {
+		category = "feature",
+		incremental = true,
+		name_id = "menu_player_level_1_armor_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "level_1_armor_multiplier",
+			value = 2
+		}
+	}		
+	self.definitions.player_level_1_armor_multiplier_3 = {
+		category = "feature",
+		incremental = true,
+		name_id = "menu_player_level_1_armor_multiplier",
+		upgrade = {
+			category = "player",
+			upgrade = "level_1_armor_multiplier",
+			value = 3
+		}
+	}		
+	
 end
 
 Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", function(self)

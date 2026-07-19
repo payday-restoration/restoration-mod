@@ -1324,8 +1324,8 @@ function PlayerDamage:revive(silent)
 	self._downed_start_time = nil
 
 	--Skip this if player was also downed by a cloaker kick/taser shock.
-	if not arrested and not self._keep_health_on_revive then
-		self:set_health(self:_max_health() * (tweak_data.player.damage.REVIVE_HEALTH_STEPS[self._revive_health_i] + managers.player:upgrade_value("player", "extra_revive_health", 0)) * (self._revive_health_multiplier or 1) * managers.player:upgrade_value("player", "revived_health_regain", 1))
+	if not arrested and not self._keep_health_on_revive then	
+		self:set_health(self:_max_health() * (tweak_data.player.damage.REVIVE_HEALTH_STEPS[self._revive_health_i] + (self._revive_health_multiplier or 0) + managers.player:upgrade_value("player", "extra_revive_health", 0)) * managers.player:upgrade_value("player", "revived_health_regain", 1))
 		
 		self:set_armor(self:_max_armor())
 		self._revive_health_i = math.min(#tweak_data.player.damage.REVIVE_HEALTH_STEPS, self._revive_health_i + 1)

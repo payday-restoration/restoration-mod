@@ -122,6 +122,7 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
+							"player_revive_damage_reduction_2",
 							"player_revive_health_boost"
 						},
 						cost = self.costs.pro
@@ -2207,6 +2208,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_tier_armor_multiplier_1",
 					"player_tier_armor_multiplier_2",
+					"player_level_1_armor_multiplier_1",
 					"player_level_2_armor_multiplier_1",
 					"player_level_3_armor_multiplier_1",
 					"player_level_4_armor_multiplier_1"
@@ -2250,9 +2252,9 @@ function SkillTreeTweakData:init(tweak_data)
 					--"player_level_2_dodge_addend_2",
 					--"player_level_3_dodge_addend_2",
 					--"player_level_4_dodge_addend_2"
-					"player_level_2_armor_deflection_addend",
-					"player_level_3_armor_deflection_addend",
-					"player_level_4_armor_deflection_addend",
+					--"player_level_2_armor_deflection_addend",
+					--"player_level_3_armor_deflection_addend",
+					--"player_level_4_armor_deflection_addend",
 					"player_passive_dodge_chance_3"
 				},
 				cost = 2400,
@@ -2265,9 +2267,11 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_2",
 					"player_passive_loot_drop_multiplier_1",
+					"player_level_1_armor_multiplier_2",
 					"player_level_2_armor_multiplier_2",
 					"player_level_3_armor_multiplier_2",
-					"player_level_4_armor_multiplier_2"
+					"player_level_4_armor_multiplier_2",
+					"team_passive_armor_regen_time_multiplier"
 				},
 				cost = 4000,
 				icon_xy = {0, 8},

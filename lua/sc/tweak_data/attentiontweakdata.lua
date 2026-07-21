@@ -24,6 +24,12 @@ Hooks:PostHook(AttentionTweakData, "_init_drill", "resmod_drill", function(self)
 
 end)
 
+Hooks:PostHook(AttentionTweakData, "_init_team_AI", "res__init_team_AI", function(self)
+    self.settings.team_enemy_cbt.weight_mul = 0.75
+	self.settings.minion_team_enemy_cbt = deep_clone(self.settings.team_enemy_cbt)
+	self.settings.minion_team_enemy_cbt.weight_mul = 0.5
+end)
+
 --Allows civilians to trigger hud updates when detecting players with bags.
 Hooks:PostHook(AttentionTweakData, "_init_player", "resmod_civilian", function(self)
 	self.settings.pl_foe_non_combatant_cbt_stand.relation = nil

@@ -224,6 +224,20 @@ function CopBase:lpf_heal_effect(overheal)
 	end
 end
 
+--- Enables or disables the damage nerf on the cop from Infiltrator's Callouts.
+--- @param state boolean whether to enable or disable the damage nerf.
+function CopBase:apply_infiltrator_nerf(state)
+
+	if state then
+		self._callouts_nerf_id = self:add_buff("base_damage", tweak_data.upgrades.infiltrator_marked_damage_change)
+	else
+		if self._callouts_nerf_id then
+			self:remove_buff_by_id("base_damage", self._callouts_nerf_id)
+			self._callouts_nerf_id = nil
+		end
+	end
+end
+
 --- Enables the ASU laser *and* applies the damage boost if it doesn't already exist.
 --- @param boost number Percentage by which to boost damage. Typically 0.1 to 0.2 for a 10%-20% damage boost.
 --- @param t number The time when the buff was applied.
@@ -280,11 +294,15 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {
 		"death"
-	}, callback(self, self, "disable_asu_laser"))	
-	
+	}, callback(self, self, "disable_asu_laser"))
+
 	self._unit:character_damage():add_listener("lpf_buff_state" .. tostring(self._unit:key()), {
 		"death"
-	}, callback(self, self, "disable_lpf_buff"))	
+	}, callback(self, self, "disable_lpf_buff"))
+
+	self._unit:character_damage():add_listener("infiltrator_nerf_state" .. tostring(self._unit:key()), {
+		"death"
+	}, function() self:apply_infiltrator_nerf(false) end)
 
 	-- Yufu Wang Hitbox fix
 	if self._tweak_table == "triad_boss" then
@@ -338,13 +356,16 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	self._asu_buff_id = nil -- If not nil, we know we already have an ASU buff applied to us.
 	self._asu_keep_forever = false -- Some damage boosts should stick around forever.
 
+	self._callouts_nerf_id = nil -- Same logic as ASU buff, except for Infiltrator's Callouts.
+
 	--- I've been running into issues where CopMovement doesn't recognise decay_buffs().
 	--- So one way I thought I could force the issue was by setting a "flag" to signal
 	--- we're ready.
 	self._may_decay_buffs = true
 end)
 
---- Forces the ASU buff to disappear if the unit hasn't been affected by an ASU unit's buff in a bit.
+--- Forces the ASU buff to disappear if the unit hasn't been affected by an ASU unit's buff in a bit,
+--- and naturally decays the Infiltrator Callouts nerf.
 function CopBase:decay_buffs(t)
 	if self._last_asu_buff_t and self._last_asu_buff_t + (tweak_data.asu_buff_decay_delay or 10) < t and not self._asu_keep_forever then
 		self:disable_asu_laser()

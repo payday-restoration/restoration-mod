@@ -773,7 +773,7 @@ end
 function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 	local player_unit = self:player_unit()
 
-	--Stuff to trigger Infiltrator HP regen for throwables that count as melee
+	--Stuff to trigger Sicario HP regen for throwables that count as melee
 	--This stuff is here as "_check_damage_to_hot" is basically an "on damage dealt" check and I don't want to modify a currently vanilla function to have this stuff in it
 	local twb = tweak_data.blackmarket
 	local weapon_id = damage_info and damage_info.weapon_unit and damage_info.weapon_unit.base and damage_info.weapon_unit:base()._tweak_projectile_entry
@@ -812,7 +812,7 @@ function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 		return
 	end
 
-	--Load alternate heal over time tweakdata if player is using Infiltrator or Rogue.
+	--Load alternate heal over time tweakdata if player is using Sicario or Rogue.
 	local data = tweak_data.upgrades.damage_to_hot_data
 	if self:has_category_upgrade("player", "melee_stacking_heal") then
 		data = tweak_data.upgrades.melee_to_hot_data
@@ -1172,28 +1172,10 @@ function PlayerManager:check_skills()
 		self:unregister_message(Message.OnPlayerDodge, "dodge_stack_health_regen")
 	end
 
-	if self:has_category_upgrade("player", "bomb_cooldown_reduction") then
-		self:register_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr", callback(self, self, "_dodge_smokebomb_cdr"))
-	else
-		self:unregister_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr")
-	end
-
 	if self:has_category_upgrade("player", "dodge_heal_no_armor") then
 		self:register_message(Message.OnPlayerDodge, "dodge_healing_no_armor", callback(self, self, "_dodge_healing_no_armor"))
 	else
 		self:unregister_message(Message.OnPlayerDodge, "dodge_healing_no_armor")
-	end
-
-	if managers.blackmarket:equipped_grenade() == "smoke_screen_grenade" then
-		local function speed_up_on_kill()
-			if #managers.player:smoke_screens() == 0 then
-				managers.player:speed_up_grenade_cooldown(2)
-			end
-		end
-
-		self:register_message(Message.OnEnemyKilled, "speed_up_smoke_grenade", speed_up_on_kill)
-	else
-		self:unregister_message(Message.OnEnemyKilled, "speed_up_smoke_grenade")
 	end
 
 	self:add_coroutine("damage_control", PlayerAction.DamageControl)
@@ -1250,6 +1232,13 @@ function PlayerManager:check_skills()
 		self._biker_crew_target_kills = 0
 		self._biker_crew_target_rewards = 0
 		self._message_system:unregister(Message.OnEnemyKilled, "biker_crew_give_nearby_crewmembers_stacks")
+	end
+
+	-- Infiltrator: Intelligence stacks gaining and spending on kills.
+	if self:has_category_upgrade("player", "infiltrator_stacks_on_ranged_kills") then
+		self._message_system:register(Message.OnEnemyKilled, "infiltrator_mark_on_kills", callback(self, self, "_trigger_infiltrator_kills"))
+	else
+		self._message_system:unregister(Message.OnEnemyKilled, "infiltrator_mark_on_kills")
 	end
 
 	--OFFYERROCKER'S MERC PERK DECK
@@ -1387,6 +1376,135 @@ function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
 			self._coroutine_mgr:add_coroutine("ammo_efficiency", PlayerAction.AmmoEfficiency, self, self._ammo_efficiency.headshots, self._ammo_efficiency.ammo, Application:time() + self._ammo_efficiency.time)
 		end
 	end
+end
+
+-- Responsible for triggering basically every other Infiltrator effect.
+function PlayerManager:_trigger_infiltrator_kills(equipped_unit, variant, killed_unit)
+	local player_unit = self:player_unit()
+	local unit_was_civilian = CopDamage.is_civilian(killed_unit:base()._tweak_table)
+
+	-- This is apparently what the Team AI uses. It isn't correct at all, but hey, I love being lazy!
+	local killed_unit_was_marked = killed_unit:contour() and killed_unit:contour()._contour_list
+
+	if alive(player_unit) then
+		-- Heal on kill
+		-- (Comes before the rest so we can use the intelligence stack count)
+		if self:has_category_upgrade("player", "infiltrator_heal_on_kill") and (killed_unit_was_marked or variant == "melee") and not unit_was_civilian then
+			self:_trigger_infiltrator_heal_on_kill(killed_unit)
+		end
+
+		-- Intelligence stack buildup and consumption
+		if variant == "melee" then
+			self:_trigger_infiltrator_mark_all_enemies_around()
+		else
+			self._infiltrator_intelligence_stacks = math.min(self._infiltrator_intelligence_stacks + 1, tweak_data.upgrades.infiltrator_max_stacks)
+			managers.hud:add_skill("intelligence")
+			managers.hud:set_stacks("intelligence", self._infiltrator_intelligence_stacks)
+		end
+
+		-- Mark nearest enemy on kill
+		if self:has_category_upgrade("player", "infiltrator_re_mark_on_kill") and killed_unit_was_marked and not unit_was_civilian then
+			self:_trigger_infiltrator_re_mark_on_kill(killed_unit)
+		end
+	end
+end
+
+-- Marks enemies nearby on melee kills as an Infiltrator.
+-- See PlayerManager:_trigger_infiltrator_kills() for the entry point here.
+function PlayerManager:_trigger_infiltrator_mark_all_enemies_around()
+	local pos = self:player_unit():position()
+	local area = self:upgrade_value("player", "infiltrator_default_marking_distance") + self:upgrade_value("player", "infiltrator_stack_to_centimetres") * self._infiltrator_intelligence_stacks
+
+	if area == 0 then
+		return
+	end
+
+	local enemies = World:find_units_quick("sphere", pos, area, managers.slot:get_mask("enemies"))
+	for _, unit in ipairs(enemies) do
+		managers.game_play_central:auto_highlight_enemy(unit, true, "sixth_sense")
+	end
+
+	self._infiltrator_intelligence_stacks = 0
+	managers.hud:add_skill("intelligence")
+	managers.hud:set_stacks("intelligence", self._infiltrator_intelligence_stacks)
+end
+
+-- Heals when killing marked enemies as Infiltrator.
+-- See PlayerManager:_trigger_infiltrator_kills() for the entry point here.
+function PlayerManager:_trigger_infiltrator_heal_on_kill(killed_unit)
+	local upgrade = self:upgrade_value("player", "infiltrator_heal_on_kill")
+	local damage_ext = self:player_unit():character_damage()
+	local heal = upgrade.base or 0
+	local enemy_mult = nil
+	local intelligence_stack_mult = 1 + self:upgrade_value("player", "infiltrator_heal_multiplier_on_melee_kill") * self._infiltrator_intelligence_stacks
+
+	local check_order = deep_clone(upgrade.ene_mult)
+	for i, priority in pairs(check_order) do
+		for tag, v in pairs(priority) do
+			if killed_unit:base():has_tag(tag) then
+				enemy_mult = upgrade.ene_mult[i][tag]
+				break
+			end
+		end
+		if enemy_mult then
+			heal = heal * enemy_mult
+			break
+		end
+	end
+
+	heal = heal * intelligence_stack_mult
+
+	if heal > 0 then
+		damage_ext:restore_health(heal, true)
+	end
+end
+
+-- Makes the marking "bounce" onto a nearby enemy when a marked enemy is killed by an Infiltrator.
+-- See PlayerManager:_trigger_infiltrator_kills() for the entry point here.
+function PlayerManager:_trigger_infiltrator_re_mark_on_kill(killed_unit)
+	local pos = killed_unit:movement() and killed_unit:movement():m_pos()
+	local area = self:upgrade_value("player", "infiltrator_re_mark_on_kill")
+
+	if not pos then
+		return
+	end
+
+	if area == 0 then
+		return
+	end
+
+	local best_unmarked = nil
+	local best_unmarked_dist = nil
+	local best_marked = nil
+	local best_marked_dist = nil
+
+	local enemies = World:find_units_quick("sphere", pos, area, managers.slot:get_mask("enemies"))
+
+	for _, unit in pairs(enemies) do
+		local contour = unit:contour()
+		local is_marked = contour and contour._contour_list and next(contour._contour_list) ~= nil or false
+		local dist = mvector3.distance_sq(pos, unit:movement():m_pos())
+
+		if not is_marked then
+			if not best_unmarked_dist or dist < best_unmarked_dist then
+				best_unmarked = unit
+				best_unmarked_dist = dist
+			end
+		else
+			if not best_marked_dist or dist < best_marked_dist then
+				best_marked = unit
+				best_marked_dist = dist
+			end
+		end
+	end
+
+	local target_unit = best_unmarked or best_marked
+
+	if not target_unit then
+		return
+	end
+
+	managers.game_play_central:auto_highlight_enemy(target_unit, true, "sixth_sense")
 end
 
 --Get health damage reduction gained via skills.
@@ -1558,6 +1676,12 @@ function PlayerManager:_internal_load()
 
 	self:update_cocaine_hud()
 
+	if self:has_category_upgrade("player", "infiltrator_stacks_on_ranged_kills") then
+		self._infiltrator_intelligence_stacks = 0
+		managers.hud:add_skill("intelligence")
+		managers.hud:set_stacks("intelligence", 0)
+	end
+
 	local equipment = self:selected_equipment()
 
 	if equipment then
@@ -1593,11 +1717,6 @@ end
 --Adds rogue health regen stack on dodge.
 function PlayerManager:_dodge_stack_health_regen()
 	self:player_unit():character_damage():add_damage_to_hot()
-end
-
---Cuts Sicario smock bomb cooldown on dodge.
-function PlayerManager:_dodge_smokebomb_cdr()
-	self:speed_up_grenade_cooldown(tweak_data.upgrades.values.player.bomb_cooldown_reduction[1])
 end
 
 --Fills dodge meter when headshot and/or backstab kills are done.
@@ -1697,6 +1816,23 @@ function PlayerManager:fixed_health_regen()
 	if managers and managers.hud and health_regen then
 		managers.hud:add_skill("hostage_taker")
 		managers.hud:set_stacks("hostage_taker", health_regen * 10)
+	end
+
+	-- Muscle: Giant Strength's regen.
+    if self:has_category_upgrade("player", "muscle_regen") then
+		local player_unit = self:player_unit()
+
+		if alive(player_unit) then
+			local regen_data = self:upgrade_value("player", "muscle_regen")
+			local muscle_health_regen = math.min(regen_data.max, regen_data.base + regen_data.additional * math.floor(player_unit:character_damage():get_real_health() / regen_data.per_hp))
+
+			if managers and managers.hud and muscle_health_regen > 0 then
+				managers.hud:start_buff("muscle", regen_data.per_sec)
+				managers.hud:set_stacks("muscle", muscle_health_regen * 10)
+			end
+
+			health_regen = health_regen + muscle_health_regen
+		end
 	end
 
 	-- Biker's healing potency increase.
@@ -2091,132 +2227,6 @@ function PlayerManager:get_value_from_risk_upgrade(risk_upgrade, detection_risk)
     return risk_value
 end
 
--- Tweaking this to play nice with other changes
-function PlayerManager:crew_ability_upgrade_value_botless(upgrade, default)
-    if self:upgrade_value("team", "crew_active", 0) == 0 then
-        return self:crew_ability_upgrade_value(upgrade, default)
-    end
-
-    local team_upgrade_values = tweak_data.upgrades.values.team
-
-    if not team_upgrade_values or not team_upgrade_values[upgrade] or not managers.criminals then
-        return default or 0
-    end
-
-    local ai_level = managers.network:session() and managers.criminals.MAX_NR_TEAM_AI - table.size(managers.network:session():peers()) or managers.criminals.MAX_NR_TEAM_AI
-    local value = team_upgrade_values[upgrade][1][ai_level]
-
-    return value or default
-end
-
--- Tweaked Cable Tie bot bonus to function more like the solo boon
-function PlayerManager:add_special(params)
-	local name = params.equipment or params.name
-
-	print("[PlayerManager:add_special] Add " .. tostring(name))
-
-	if not tweak_data.equipments.specials[name] then
-		Application:error("Special equipment " .. name .. " doesn't exist!")
-
-		return
-	end
-
-	local unit = self:player_unit()
-	local equipment = tweak_data.equipments.specials[name]
-	local special_equipment = self._equipment.specials[name]
-	local respawn = params.amount and true or false
-	local amount = params.amount or equipment.quantity
-	local extra = self:_equipped_upgrade_value(equipment) + self:upgrade_value(name, "quantity")
-	local is_cable_tie = name == "cable_tie"
-
-	if is_cable_tie then
-		extra = self:upgrade_value(name, "quantity_1") + self:upgrade_value(name, "quantity_2") + 4
-	end
-
-	if special_equipment then
-		if equipment.max_quantity or equipment.quantity or params.transfer and equipment.transfer_quantity or params.dropped_out then
-			local dedigested_amount = special_equipment.amount and Application:digest_value(special_equipment.amount, false) or 1
-			local max_amount = nil
-
-			if not params.dropped_out then
-				if params.transfer then
-					max_amount = equipment.transfer_quantity or 1
-
-					if equipment.max_quantity or equipment.quantity then
-						max_amount = math.max(max_amount, (equipment.max_quantity or equipment.quantity) + extra)
-					end
-				else
-					max_amount = (equipment.max_quantity or equipment.quantity) + extra
-				end
-			end
-
-			local new_amount = self:has_category_upgrade(name, "quantity_unlimited") and -1 or params.dropped_out and dedigested_amount + amount or math.min(dedigested_amount + amount, max_amount)
-			special_equipment.amount = Application:digest_value(new_amount, true)
-
-			if special_equipment.is_cable_tie then
-				managers.hud:set_cable_ties_amount(HUDManager.PLAYER_PANEL, new_amount)
-				self:update_synced_cable_ties_to_peers(new_amount)
-			else
-				managers.hud:set_special_equipment_amount(name, new_amount)
-				self:update_equipment_possession_to_peers(name, new_amount)
-			end
-		end
-
-		return
-	end
-
-	local icon = equipment.icon
-	local action_message = equipment.action_message
-
-	if not params.silent then
-		local text = managers.localization:text(equipment.text_id)
-		local title = managers.localization:text("present_obtained_mission_equipment_title")
-
-		managers.hud:present_mid_text({
-			time = 4,
-			text = text,
-			title = title,
-			icon = icon
-		})
-
-		if action_message and alive(unit) then
-			managers.network:session():send_to_peers_synched("sync_show_action_message", unit, action_message)
-		end
-	end
-
-	local quantity = nil
-
-	if is_cable_tie or not params.transfer and not params.dropped_out then
-		quantity = self:has_category_upgrade(name, "quantity_unlimited") and -1 or equipment.quantity and (respawn and math.min(params.amount, (equipment.max_quantity or equipment.quantity or 1) + extra) or equipment.quantity and math.min(amount + extra, (equipment.max_quantity or equipment.quantity or 1) + extra))
-	else
-		quantity = params.amount
-	end
-
-	if is_cable_tie then
-		managers.hud:set_cable_tie(HUDManager.PLAYER_PANEL, {
-			icon = icon,
-			amount = quantity or nil
-		})
-		self:update_synced_cable_ties_to_peers(quantity)
-	else
-		managers.hud:add_special_equipment({
-			id = name,
-			icon = icon,
-			amount = quantity or not equipment.avoid_tranfer and 1 or nil
-		})
-		self:update_equipment_possession_to_peers(name, quantity)
-	end
-
-	self._equipment.specials[name] = {
-		amount = quantity and Application:digest_value(quantity, true) or nil,
-		is_cable_tie = is_cable_tie
-	}
-
-	if equipment.player_rule then
-		self:set_player_rule(equipment.player_rule, true)
-	end
-end
-
 -- Changed so cable tie max quantity properly scales
 function PlayerManager:add_cable_ties(amount)
 	local name = "cable_tie"
@@ -2226,7 +2236,7 @@ function PlayerManager:add_cable_ties(amount)
 	local max_cable_ties = equipment.max_quantity
 	
 	-- So this is properly taken into account
-	max_cable_ties = max_cable_ties + self:upgrade_value(name, "quantity_1") + self:upgrade_value(name, "quantity_2") + managers.player:crew_ability_upgrade_value_botless("crew_ai_cable_ties", 0)
+	max_cable_ties = max_cable_ties + self:upgrade_value(name, "quantity_1") + self:upgrade_value(name, "quantity_2") + managers.player:crew_ability_upgrade_value("crew_ai_cable_ties", 0)
 
 	if special_equipment then
 		local current_amount = Application:digest_value(special_equipment.amount, false)
@@ -2352,6 +2362,11 @@ function PlayerManager:get_contour_for_marked_enemy(enemy_type)
 		if managers.player:has_category_upgrade("player", "marked_enemy_extra_damage") then
 			contour_type = "mark_enemy_damage_bonus"
 		end
+	end
+
+	-- Infiltrators apply a version of contours that also nerfs the enemy's damage. (If they have the Callouts card.)
+	if self:has_category_upgrade("player", "infiltrator_damage_penalty_on_marking") then
+		contour_type = contour_type.."_callouts"
 	end
 
 	return contour_type

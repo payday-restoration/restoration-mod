@@ -120,11 +120,23 @@ function TeamAILogicAssault.find_enemy_to_mark(attention_objects)
 								mark = true
 							else
 								if attention_info.is_deployable then
-									if not att_contour:has_id("mark_unit_dangerous") and not att_contour:has_id("mark_unit_dangerous_damage_bonus") and not att_contour:has_id("mark_unit_dangerous_damage_bonus_distance") and not att_contour:has_id("mark_enemy_through_walls") then
+									if not att_contour:has_id("mark_unit_dangerous") and 
+									   not att_contour:has_id("mark_unit_dangerous_damage_bonus") and 
+									   not att_contour:has_id("mark_unit_dangerous_damage_bonus_distance") and 
+									   not att_contour:has_id("mark_enemy_through_walls") and 
+									   not att_contour:has_id("mark_unit_dangerous_callouts") and 
+									   not att_contour:has_id("mark_unit_dangerous_damage_bonus_callouts") and 
+									   not att_contour:has_id("mark_unit_dangerous_damage_bonus_distance_callouts") then
 										mark = true
 									end
 								else
-									if not att_contour:has_id("mark_enemy") and not att_contour:has_id("mark_enemy_damage_bonus") and not att_contour:has_id("mark_enemy_damage_bonus_distance") and not att_contour:has_id("mark_enemy_through_walls") then
+									if not att_contour:has_id("mark_enemy") and 
+									   not att_contour:has_id("mark_enemy_damage_bonus") and 
+									   not att_contour:has_id("mark_enemy_damage_bonus_distance") and 
+									   not att_contour:has_id("mark_enemy_through_walls") and
+									   not att_contour:has_id("mark_enemy_callouts") and 
+									   not att_contour:has_id("mark_enemy_damage_bonus_callouts") and 
+									   not att_contour:has_id("mark_enemy_damage_bonus_distance_callouts") then
 										mark = true
 									end
 								end

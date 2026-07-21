@@ -112,6 +112,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModperk_buffsDescID"] = "Buff trackers for perk deck perks.",
 				["RestorationModInfo_crew_chiefTitleID"] = "Hostage Situation (Crew Chief)",
 				["RestorationModInfo_crew_chiefDescID"] = "Enables or disables tracking of this specific perk.",
+				["RestorationModInfo_muscleTitleID"] = "Giant Strength (Muscle)",
+				["RestorationModInfo_muscleDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_rogueTitleID"] = "Killer Instinct (Rogue)",
 				["RestorationModInfo_rogueDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_crookTitleID"] = "Composure and Release (Crook)",
@@ -120,12 +122,16 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 				["RestorationModInfo_grinderDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_gamblerTitleID"] = "Medical Supplies (Gambler)",
 				["RestorationModInfo_gamblerDescID"] = "Enables or disables tracking of this specific perk.",
-				["RestorationModInfo_infiltratorTitleID"] = "Life Drain (Infiltrator)",
-				["RestorationModInfo_infiltratorDescID"] = "Enables or disables tracking of this specific perk.",
+				["RestorationModInfo_intelligenceTitleID"] = "Intelligence (Infiltrator)",
+				["RestorationModInfo_intelligenceDescID"] = "Enables or disables tracking of this specific perk.",
+				["RestorationModInfo_sicarioTitleID"] = "Life Drain (Sicario)",
+				["RestorationModInfo_sicarioDescID"] = "Enables or disables tracking of this specific perk.",
 				["RestorationModInfo_sociopathTitleID"] = "Combo Meter (Sociopath)",
 				["RestorationModInfo_sociopathDescID"] = "Enables or disables tracking of this perk deck.",
 				["RestorationModInfo_survive_one_hitTitleID"] = "Oni Irezumi (Yakuza)",
 				["RestorationModInfo_survive_one_hitDescID"] = "Enables or disables tracking the active state this specific perk.",
+				["RestorationModInfo_stoicTitleID"] = "Heal-over-Time (Stoic)",
+				["RestorationModInfo_stoicDescID"] = "Enables or disables tracking of healing remaining from this perk deck.",
 				["RestorationModInfo_cohesionTitleID"] = "Cohesion (Biker)",
 				["RestorationModInfo_cohesionDescID"] = "Enables or disables tracking the Cohesion stacks from this perk deck.\nGreen number shows every 8 stacks of Cohesion.",
 				["RestorationModInfo_heisters_in_auraTitleID"] = "Heisters in Proximity (Biker)",
@@ -2556,6 +2562,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		["bm_grenade_poison_gas_grenade_desc"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary## \nAmmo Box Return Rate: #{skill_color}#$pickup_1 to $pickup_2##\n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Medics, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once## \n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
 		["bm_grenade_poison_gas_grenade_desc_short"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary##\nAmmo Box Return Rate: #{skill_color}#$pickup_1 to $pickup_2## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Medics, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once##",
 
+		-- Old Sicario smoke grenade
+		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#6m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary##\nAmmo Box Return Rate: #{skill_color}#$pickup_1 to $pickup_2##\n- While standing inside the smoke screen, you and your allies regenerate armor #{skill_color}#100%## faster, and have your dodge points set to #{skill_color}#20## if below that\n- Your and your allies' dodge meters fill up by #{skill_color}#20%## of your dodge every second while you are inside the smoke screen\n- Enemies that stand in the smoke will see their accuracy reduced by #{skill_color}#75%##\n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
+
 		--Throwing Cards
 		["bm_wpn_prj_ace_desc"] = "Damage: #{skill_color}#$damage##\nAmmo Box Return Rate: #{skill_color}#$pickup_1 to $pickup_2## \n- #{skill_color}#Can be retrieved##\n- #{skill_color}#Hits and kills can trigger melee skills in the Brawler sub-tree and melee-focused perks## \n\nThrowing cards with added weight and a razor edge. A real killer hand of cards.",
 		--Throwing Stars/Shuriken
@@ -2571,7 +2580,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "Ampule",
 		["bm_grenade_damage_control"] = "Hip Flask",
-		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#6m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary## \n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
 
 		--WEAPON & ATTACHMENT DESCRIPTIONS
 		--[[ MANUFACTURERS ]]
@@ -5831,7 +5839,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 			--[[   MEDIC SUBTREE   ]]--
 				--Combat Medic
 				["menu_combat_medic_beta_sc"] = "Combat Medic",
-				["menu_combat_medic_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## damage reduction while reviving another crew member and the effect lingers for #{skill_color}#$skill_value_b2## seconds afterwards upon a successful revive.\n\n#{risk}#NOTE: The damage reduction only applies to revives performed via interaction.##\n\nACE: #{owned}#$pro##\nReviving a crew member gives them #{skill_color}#$skill_value_p1## more health.",
+				["menu_combat_medic_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## damage reduction while reviving another crew member and the effect lingers for #{skill_color}#$skill_value_b2## seconds afterwards upon a successful revive.\n\n#{risk}#NOTE: The damage reduction only applies to revives performed via interaction.##\n\nACE: #{owned}#$pro##\nThe damage reduction when reviving another crew member is increased to #{skill_color}#$skill_value_b3##.\n\nReviving a crew member gives them #{skill_color}#$skill_value_p1## more health.",
 
 				--Quick Fix
 				["menu_tea_time_beta_sc"] = "Quick Fix",
@@ -6287,35 +6295,35 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck5_7_desc_sc"] = "You gain ##$perk_value_1## temporary health when you are revived.\n\nYou gain an additional ##$perk_value_2## dodge points.",
 		["menu_deck5_9_desc_sc"] = "While you have temporary health, you gain ##$perk_value_1## deflection and ##$perk_value_2## additional movement speed.\n\nDeflection reduces the amount of health damage you take, to a maximum of ##$perk_value_3##, and is applied after other forms of damage reduction.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
-		--Muscle
+		-- Muscle
 		["menu_deck2_1_desc_sc"] = "You gain ##$perk_value_1## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYour dodge is increased by ##$perk_value_2## points.",
-		["menu_deck2_5_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYou bag corpses and interact with hostages ##$perk_value_2## faster.",
-		["menu_deck2_7_desc_sc"] = "Every shot you fire with your guns has a ##$perk_value_1## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
+		["menu_deck2_5_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYou regenerate ##$perk_value_3## health every ##$perk_value_4## seconds, and an additional ##$perk_value_5## health every ##$perk_value_4## seconds for every ##$perk_value_6## health you currently have (up to ##$perk_value_7## health per ##$perk_value_4## seconds).\n\nYou bag corpses and interact with hostages ##$perk_value_2## faster.",
+		["menu_deck2_7_desc_sc"] = "Every shot you fire with your guns has a ##$perk_value_1## chance to spread panic among your enemies, with higher damage guns spreading panic more easily.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
 		["menu_deck2_9_desc_sc"] = "You gain an additional ##$perk_value_1## more health.\n\nYou gain ##$perk_value_2## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
-		--Crew Chief
+		-- Crew Chief
 		["menu_deck1_1_desc_sc"] = "You gain #{skill_color}#$perk_value_1## more health.\n\nYour dodge is increased by #{skill_color}#$perk_value_2## points.",
 		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by #{skill_color}#$perk_value_1.##\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nIncreases your shout distance by #{skill_color}#$perk_value_2.##\n\nYour dodge is increased by an additional #{skill_color}#$perk_value_3## points.",
 		["menu_deck1_5_desc_sc"] = "You gain an additional #{skill_color}#$perk_value_1## more health.\n\nYour crew gain #{skill_color}#$perk_value_2## more health.\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nYou answer pagers #{skill_color}#$perk_value_3## faster.",
 		["menu_deck1_7_desc_sc"] = "You gain ##$perk_value_1## more armor.\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
 		["menu_deck1_9_desc_sc"] = "You and your crew gains #{skill_color}#$perk_value_1## max health and #{skill_color}#$perk_value_2## stamina for each hostage up to #{skill_color}#$perk_value_3## times.\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
-		--I only had to put these in to fix Overkill's shitty rebalance attempt--
-		--Armorer--
-		["menu_deck3_1_desc_sc"] = "You gain ##$perk_value_1## more armor.\n\nBallistic vests gain an additional ##$perk_value_2## more armor.",
+
+		-- Armorer
+		["menu_deck3_1_desc_sc"] = "You gain ##$perk_value_1## more armor.\n\nBallistic vests and the Two-Piece Suit gain an additional ##$perk_value_2## more armor.",
 		["menu_deck3_3_desc_sc"] = "You gain an additional ##$perk_value_1## more armor.\n\nYour dodge is increased by ##$perk_value_2## points.",
 		["menu_deck3_5_desc_sc"] = "You gain an additional ##$perk_value_1## more armor.\n\nYour dodge is increased by an additional ##$perk_value_3## points.\n\nYou gain the ability to place ##$perk_value_2## body bag cases.",
-		["menu_deck3_7_desc_sc"] = "Your armor recovery speed is increased by ##$perk_value_1.##\n\nBallistic vests gain ##$perk_value_3## deflection.\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
-		["menu_deck3_9_desc_sc"] = "Your armor recovery speed is increased by an additional ##$perk_value_1.##\n\nBallistic vests gain an additional ##$perk_value_2## more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck3_7_desc_sc"] = "Your armor recovery speed is increased by ##$perk_value_1.##\n\nYour dodge is increased by an additional ##$perk_value_2## points.",
+		["menu_deck3_9_desc_sc"] = "You and your crew's armor recovery speed is increased by ##$perk_value_3##.\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nBallistic vests and the Two-Piece Suit gain an additional ##$perk_value_2## more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
-		--Burglar--
+		-- Burglar
 		["menu_deck7_1_desc_sc"] = "Your dodge is increased by ##$perk_value_1## points.\n\nYour dodge meter fills up by ##$perk_value_2## of your dodge every second while crouching.",
 		["menu_deck7_3_desc_sc"] = "Your dodge is increased by an additional ##$perk_value_1## points.",
 		["menu_deck7_5_desc_sc"] = "Your dodge meter fills up by an additional ##$perk_value_1## of your dodge every second while crouching.\n\nYou gain a ##$perk_value_2## boost in your movement speed when crouching.",
 		["menu_deck7_7_desc_sc"] = "Your dodge is increased by an additional ##$perk_value_1## points.",
 		["menu_deck7_9_desc_sc"] = "Your armor recovery speed is increased by ##$perk_value_1.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
-		--Gambler--
+		-- Gambler
 		["menu_deck10_1_desc_sc"] = "Ammo boxes you pick up also yield medical supplies that heal you for #{skill_color}#$perk_value_1 to $perk_value_2## health.\n\nHealing has an #{important_1}#$perk_value_3## second cooldown but every ammo box you pick up reduces it by #{skill_color}#$perk_value_4 to $perk_value_5## seconds.\n\nIf an ammo box you pick up clears an active cooldown, it will trigger the applicable perks and restart the cooldown.",
 		["menu_deck10_3_desc_sc"] = "When you pick up ammo, you trigger an ammo pickup for ##$perk_value_1## of normal rate to other crew members.\n\nYou gain ##$perk_value_2## dodge points.",
 		["menu_deck10_5_desc_sc"] = "Ammo boxes instead heal you for #{skill_color}#$perk_value_1 to $perk_value_2## health.\n\nWhen you get healed from picking up ammo boxes, your dodge meter is also filled up by ##$perk_value_3## of your dodge.\n\nYou answer pagers ##$perk_value_4## faster.",
@@ -6324,12 +6332,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck10_7"] = "Dodgy Medicine",
 		["menu_deck10_9"] = "Locked-Up Medicine",
 
-		--Infiltrator--
-		["menu_deck8_1_desc_sc"] = "When you are within #{risk}#$perk_value_1## meters of an enemy targeting you, you receive a #{skill_color}#$perk_value_2## damage reduction and gain #{skill_color}#$perk_value_3## points of dodge, both lasting for #{skill_color}#$perk_value_4## seconds after there are no enemies targeting you within range.",
-		["menu_deck8_3_desc_sc"] = "The damage reduction from being targeted is increased by an additional ##$perk_value_2.##\n\nYou gain ##$perk_value_3## dodge points.",
-		["menu_deck8_5_desc_sc"] = "The damage reduction from being targeted is increased by an additional ##$perk_value_2.##\n\nEach successful melee hit grants an additional ##$perk_value_3## melee damage boost for ##$perk_value_4## seconds or until you miss; stacks up to ##$perk_value_5## times.\n\nYour camera loop duration is increased by ##$perk_value_6## seconds.",
-		["menu_deck8_7_desc_sc"] = "Each successful melee hit grants an additional ##$perk_value_1## melee damage boost for ##$perk_value_2## seconds or until you miss; stacks up to ##$perk_value_3## times.\n\nYour dodge is increased by an additional ##$perk_value_4## points.",
-		["menu_deck8_9_desc_sc"] = "Each successful melee hit heals ##$perk_value_1## health every second for ##$perk_value_2## seconds, this effect can stack up to ##$perk_value_3## times.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		-- Infiltrator
+		["menu_deck8_1"] = "Recon",
+		["menu_deck8_3"] = "Prioritization",
+		["menu_deck8_5"] = "Insight",
+		["menu_deck8_7"] = "Interrogation",
+		["menu_deck8_9"] = "Callouts",
+
+		["menu_deck8_1_desc_sc"] = "Ranged kills give you a stack of intelligence. Max amount of stacks is #{skill_color}#$perk_value_1.## When you get a melee kill, you consume all of your intelligence stacks and mark all enemies around you, every stack consumed increases the mark radius on melee kill by #{skill_color}#$perk_value_2## meters.\n\nWhen you are within #{skill_color}#$perk_value_3## meters of an enemy targeting you within range, you receive #{skill_color}#$perk_value_4## less damage from enemies.",
+		["menu_deck8_3_desc_sc"] = "Killing marked enemies heals you for #{skill_color}#$perk_value_1## HP. Killing marked specials and elites will heal you for #{skill_color}#$perk_value_2## the amount while bulldozers and captains will heal you for #{skill_color}#$perk_value_3## the amount. If you kill an enemy with a melee attack it will heal you for what the unit is worth regardless of if it is marked or not.\n\nIncreases the duration of enemy marking by #{skill_color}#$perk_value_4.##\n\nYou gain #{skill_color}#$perk_value_5## dodge points.",
+		["menu_deck8_5_desc_sc"] = "When you kill a marked enemy, the nearest unmarked enemy within #{skill_color}#$perk_value_1## meters of the target will become marked, if no enemies are nearby that are unmarked, simply refresh the mark duration on the closest marked enemy instead if any.\n\nWhen you are within #{skill_color}#$perk_value_3## meters of an enemy targeting you within range, you also gain #{skill_color}#$perk_value_4## dodge points.\n\nIncreases the duration of enemy marking by #{skill_color}#$perk_value_2.##",
+		["menu_deck8_7_desc_sc"] = "When you perform a melee kill, the distance you mark enemies around you increases by #{skill_color}#$perk_value_1## meters, and the healing you receive is increased by #{skill_color}#$perk_value_2## for each intelligence stack consumed.\n\nIncreases the duration of enemy marking by #{skill_color}#$perk_value_3.##\n\nYour dodge is increased by an additional #{skill_color}#$perk_value_4## points.",
+		["menu_deck8_9_desc_sc"] = "Enemies you mark by any means deal #{skill_color}#$perk_value_1## less damage to you and crew members.\n\n#{risk}#NOTE: This effect will not stack with multiple Infiltrator users marking the same enemy.##\n\nIncreases the duration of enemy marking by #{skill_color}#$perk_value_2.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
 
 		--Sociopath--
 		["menu_deck9_1_sc"] = "No Talk",
@@ -6412,16 +6426,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_deck17_9_desc_sc"] = "While the Injector is active, its recharge time is reduced by #{skill_color}#$perk_value_2## seconds for every #{skill_color}#$perk_value_1## health gained while at maximum health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "Unlocks the #{skill_color}#Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for #{skill_color}#$perk_value_1## seconds. While standing inside the smoke screen, you and your allies regenerate armor #{skill_color}#$perk_value_2## faster, and have your dodge points set to #{skill_color}#$perk_value_3## if below that. Any enemies that stand in the smoke will see their accuracy reduced by #{skill_color}#$perk_value_4.##\n\nThe Smoke Bomb has a #{important_1}#$perk_value_5## second cooldown; killing enemies will reduce this cooldown by #{skill_color}#$perk_value_6## seconds.\n\nYour dodge is increased by #{skill_color}#$perk_value_7## points.",
-		["menu_deck18_3_desc_sc"] = "Your dodge is increased by an additional ##$perk_value_1## points.",
-		["menu_deck18_5_desc_sc"] = "Dodging an attack reduces the smoke bomb's cooldown by ##$perk_value_1## second.\n\nYou carry ##$perk_value_2## additional body bag in your inventory.",
-		["menu_deck18_7_desc_sc"] = "Your dodge is increased by an additional ##$perk_value_1## points.",
-		["menu_deck18_9_desc_sc"] = "Your dodge meter fills up by ##$perk_value_1## of your dodge every second while you are inside of your smoke screen.\nAllies standing in your smoke screen have their dodge meters filled up by ##$perk_value_2## instead.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck18_1"] = "Unseen Shadow",
+		["menu_deck18_3"] = "Agility Shield",
+		["menu_deck18_7"] = "Twitch",
+		["menu_deck18_9"] = "Life Drain",
+
+		["menu_deck18_1_desc_sc"] = "When you are within #{risk}#$perk_value_1## meters of an enemy targeting you, you receive a #{skill_color}#$perk_value_2## damage reduction and gain #{skill_color}#$perk_value_3## points of dodge, both lasting for #{skill_color}#$perk_value_4## seconds after there are no enemies targeting you within range.",
+		["menu_deck18_3_desc_sc"] = "The damage reduction from being targeted is increased by an additional ##$perk_value_2.##\n\nYou gain ##$perk_value_3## dodge points.",
+		["menu_deck18_5_desc_sc"] = "The damage reduction from being targeted is increased by an additional ##$perk_value_2.##\n\nEach successful melee hit grants an additional ##$perk_value_3## melee damage boost for ##$perk_value_4## seconds or until you miss; stacks up to ##$perk_value_5## times.\n\nYour camera loop duration is increased by ##$perk_value_6## seconds.",
+		["menu_deck18_7_desc_sc"] = "Each successful melee hit grants an additional ##$perk_value_1## melee damage boost for ##$perk_value_2## seconds or until you miss; stacks up to ##$perk_value_3## times.\n\nYour dodge is increased by an additional ##$perk_value_4## points.",
+		["menu_deck18_9_desc_sc"] = "Each successful melee hit heals ##$perk_value_1## health every second for ##$perk_value_2## seconds, this effect can stack up to ##$perk_value_3## times.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Unlocks the #{skill_color}#Hip Flask## for use in place of a throwable.\n\n#{skill_color}#$perk_value_1## of the damage taken to your health is applied over #{skill_color}#$perk_value_2## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for #{skill_color}#$perk_value_3## of the remaining damage-over-time.\n\nThe flask has a #{important_1}#$perk_value_4## second cooldown.\n\nLose #{important_1}#$perk_value_5## of your armor and gain #{skill_color}#$perk_value_6## more health.\n\nWhile your armor is broken, your damage grace period is reduced by #{important_1}#$perk_value_7,## excluding the next hit you take when negating damage-over-time.\n#{risk}#NOTE: Your dodge grace period is unaffected.##",
+		["menu_deck19_1_desc_sc"] = "Unlocks the #{skill_color}#Hip Flask## for use in place of a throwable.\n\n#{skill_color}#$perk_value_1## of the damage taken to your health is applied over #{skill_color}#$perk_value_2## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for #{skill_color}#$perk_value_3## of the remaining damage-over-time, over the course of #{skill_color}#$perk_value_8## seconds.\n\nThe flask has a #{important_1}#$perk_value_4## second cooldown.\n\nLose #{important_1}#$perk_value_5## of your armor and gain #{skill_color}#$perk_value_6## more health.\n\nWhile your armor is broken, your damage grace period is reduced by #{important_1}#$perk_value_7,## excluding the next hit you take when negating damage-over-time.\n#{risk}#NOTE: Your dodge grace period is unaffected.##",
 		["menu_deck19_3_desc_sc"] = "The cooldown of your flask is reduced by ##$perk_value_1## seconds for each enemy you kill.\n\nYour dodge is increased by #{skill_color}#$perk_value_2## points.",
-		["menu_deck19_5_desc_sc"] = "After not taking damage for ##$perk_value_1## seconds any remaining damage-over-time will be negated.\n\nYou answer pagers ##$perk_value_2## faster.",
+		["menu_deck19_5_desc_sc"] = "After not taking damage for ##$perk_value_1## seconds any remaining damage-over-time will be negated. You heal for #{skill_color}#$perk_value_3## of the remaining damage-over-time with damage negated this way.\n\nYou answer pagers ##$perk_value_2## faster.",
 		["menu_deck19_7_desc_sc"] = "When your health is below ##$perk_value_1##, the cooldown of your flask is reduced by ##$perk_value_2## seconds for each enemy you kill.",
 		["menu_deck19_9_desc_sc"] = "You gain ##$perk_value_1## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
@@ -6558,7 +6577,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Burglar
 			["menu_deck7_mrwi_desc"] = "Your dodge is increased by an additional ##$perk_value_1## points.\n\nYour dodge meter fills up by ##$perk_value_2## of your dodge every second while crouching.\n\nYou gain a ##$perk_value_3## boost in your movement speed when crouching.",
 			--Infiltrator
-			["menu_deck8_mrwi_desc"] = "When you are within ##$perk_value_1## meters of an enemy, you recieve ##$perk_value_2## less damage from enemies.\n\nEach successful melee hit grants an additional ##$perk_value_3## melee damage boost for ##$perk_value_4## seconds or until you miss; stacks up to ##$perk_value_5## times.\n\nYour camera loop duration is increased by ##$perk_value_6## seconds.",
+			["menu_deck8_mrwi_desc"] = "Ranged kills give you a stack of intelligence. Max amount of stacks is #{skill_color}#$perk_value_1.## When you get a melee kill, you consume all of your intelligence stacks and mark all enemies around you, every stack consumed increases the mark radius on melee kill by #{skill_color}#$perk_value_2## meter.\n\nWhen you are within #{skill_color}#$perk_value_3## meters of an enemy, you receive #{skill_color}#$perk_value_4## less damage from enemies.\n\nIncreases the duration of enemy marking by #{skill_color}#$perk_value_5.##",
 			--Sociopath
 			--["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nKilling an enemy within #{skill_color}#$perk_value_2## meters regenerates an additional #{skill_color}#$perk_value_3## armor; melee kills double the amount.\n\nThis cannot occur more than once every #{important_1}#$perk_value_4## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_5## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_6## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou carry #{skill_color}#$perk_value_7## additional body bag in your inventory.",
 			["menu_deck9_mrwi_desc"] = "You gain a combo meter.\nKilling enemies with melee weapons builds up your combo meter by a base value of #{skill_color}#$perk_value_1## points, to a maximum of #{skill_color}#$perk_value_2## points.\n\nYour combo meter decays at a rate of #{important_1}#$perk_value_3## points every #{risk}#$perk_value_4## seconds.\nYou lose #{important_1}#$perk_value_5## points of combo when taking health damage; this cannot occur more than once every #{skill_color}#$perk_value_6## seconds.\nYou lose #{important_1}#$perk_value_7## points of combo when going into bleedout.\n\nEvery #{risk}#$perk_value_8## points of combo you have grants you #{skill_color}#$perk_value_9## damage resistance, to a maximum of #{skill_color}#$perk_value_10.##\n\nEvery #{risk}#$perk_value_13## points of combo you have grants you #{skill_color}#$perk_value_14## movement speed, to a maximum of #{skill_color}#$perk_value_15.##\nKilling enemies with melee weapons regenerates #{skill_color}#$perk_value_11## of your stamina.\n\nYou carry #{skill_color}#$perk_value_12## additional body bag in your inventory.",
@@ -6579,9 +6598,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 			--Kingpin
 			["menu_deck17_mrwi_desc"] = "Unlocks the #{skill_color}#Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for #{skill_color}#$perk_value_1## of all damage taken or damage dodged for #{skill_color}#$perk_value_2## seconds.\n\n#{risk}#NOTE: The amount of damage dodged to convert to healing is limited by your maximum armor.##\n\nYou can still take damage during the effect.\n\nYour movement speed is increased by #{skill_color}#$perk_value_3## while the Injector is active.\n\nThe Injector can only be used once every #{important_1}#$perk_value_4## seconds; each kill you perform will shorten the cooldown timer by #{skill_color}#$perk_value_5## seconds.",
 			--Sicario
-			["menu_deck18_mrwi_desc"] = "Unlocks the #{skill_color}#Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for #{skill_color}#$perk_value_1## seconds. While standing inside the smoke screen, you and your allies regenerate armor #{skill_color}#$perk_value_2## faster, and have your dodge points set to #{skill_color}#$perk_value_3## if below that. Any enemies that stand in the smoke will see their accuracy reduced by #{skill_color}#$perk_value_4.##\n\nThe Smoke Bomb has a #{important_1}#$perk_value_5## second cooldown; killing enemies will reduce this cooldown by #{skill_color}#$perk_value_6## seconds.\n\nYour dodge is increased by #{skill_color}#$perk_value_7## points.\n\nYou carry #{skill_color}#$perk_value_8## additional body bag in your inventory.",
+			["menu_deck18_mrwi_desc"] = "When you are within ##$perk_value_1## meters of an enemy, you recieve ##$perk_value_2## less damage from enemies.\n\nEach successful melee hit grants an additional ##$perk_value_3## melee damage boost for ##$perk_value_4## seconds or until you miss; stacks up to ##$perk_value_5## times.\n\nYour camera loop duration is increased by ##$perk_value_6## seconds.",
 			--Stoic
-			["menu_deck19_mrwi_desc"] = "Unlocks the #{skill_color}#Hip Flask## for use in place of a throwable.\n\n#{skill_color}#$perk_value_1## of the damage taken to your health is applied over #{skill_color}#$perk_value_2## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for #{skill_color}#$perk_value_3## of the remaining damage-over-time.\n\nThe flask has a #{important_1}#$perk_value_4## second cooldown.\n\nLose #{important_1}#$perk_value_5## of your armor and gain #{skill_color}#$perk_value_6## more health.\n\nWhile your armor your damage grace period is reduced by #{important_1}#$perk_value_8,## excluding the next hit you take when negating damage-over-time.\n#{risk}#NOTE: Your dodge grace period is unaffected.##\n\nYou answer pagers #{skill_color}#$perk_value_7## faster.",
+			["menu_deck19_mrwi_desc"] = "Unlocks the #{skill_color}#Hip Flask## for use in place of a throwable.\n\n#{skill_color}#$perk_value_1## of the damage taken to your health is applied over #{skill_color}#$perk_value_2## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for #{skill_color}#$perk_value_3## of the remaining damage-over-time, over the course of #{skill_color}#$perk_value_9## seconds.\n\nThe flask has a #{important_1}#$perk_value_4## second cooldown.\n\nLose #{important_1}#$perk_value_5## of your armor and gain #{skill_color}#$perk_value_6## more health.\n\nWhile your armor your damage grace period is reduced by #{important_1}#$perk_value_8,## excluding the next hit you take when negating damage-over-time.\n#{risk}#NOTE: Your dodge grace period is unaffected.##\n\nYou answer pagers #{skill_color}#$perk_value_7## faster.",
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "Unlocks the #{skill_color}#Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within #{skill_color}#$perk_value_1## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for #{skill_color}#$perk_value_2## health and the tagged unit for #{skill_color}#$perk_value_3## health.\n\nThe effect lasts for #{skill_color}#$perk_value_4## seconds and has a cooldown of #{important_1}#$perk_value_5## seconds.\n\nYour camera loop duration is increased by #{skill_color}#$perk_value_6## seconds.",
 			--Hacker

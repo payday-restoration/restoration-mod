@@ -5221,6 +5221,12 @@ end
 						30,
 						40
 					}
+					self.parts.wpn_fps_pis_chinchilla_b_satan.override = {
+						wpn_fps_pis_2006m_fl_adapter = {
+							parent = "barrel",
+							a_obj = "a_fl"
+						}
+					}
 					self.parts.wpn_fps_pis_chinchilla_b_satan.supported = true
 					self.parts.wpn_fps_pis_chinchilla_b_satan.stats = deep_clone(barrels.long_b3_stats)
 					self.parts.wpn_fps_pis_chinchilla_b_satan.custom_stats = deep_clone(barrels.long_b3_stats)
@@ -5246,15 +5252,6 @@ end
 					self.parts.wpn_fps_pis_chinchilla_g_death.supported = true
 					self.parts.wpn_fps_pis_chinchilla_g_death.stats = deep_clone(grips.recoil_1)
 
-					--[[
-					self.parts.wpn_fps_pis_chinchilla_fl_mount = {
-						type = "shitass",
-						name_id = "none",
-						unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_cobray/wpn_fps_smg_x_cobray",
-						stats = {
-							value = 1
-						}
-					}
 					table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_m3x")
 					table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_crimson")
 					table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_x400v")
@@ -5262,11 +5259,32 @@ end
 					table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
 					table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_perst")
 
-					self.wpn_fps_pis_chinchilla.override.wpn_fps_pis_usp_fl_adapter = {
-						parent = "shitass",
-						a_obj = "a_vg"
+					self.wpn_fps_pis_chinchilla.adds = {
+		                wpn_fps_upg_fl_pis_m3x = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_crimson = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_x400v = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_laser = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_tlr1 = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_perst = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                }
 					}
-					--]]
+
+					self.wpn_fps_pis_chinchilla.override = {
+                        wpn_fps_pis_2006m_fl_adapter = {
+						    a_obj = "a_fl"
+						}
+					}
 
 					self.wpn_fps_pis_chinchilla.adds = self.wpn_fps_pis_chinchilla.adds or {}
 					self.wpn_fps_pis_chinchilla.override = self.wpn_fps_pis_chinchilla.override or {}
@@ -5281,12 +5299,32 @@ end
 					table.insert(self.wpn_fps_pis_x_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
 					table.insert(self.wpn_fps_pis_x_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_perst")
 
-					--[[
-					self.wpn_fps_pis_x_chinchilla.override.wpn_fps_pis_usp_fl_adapter = {
-						parent = "shitass",
-						a_obj = "a_vg"
+					self.wpn_fps_pis_x_chinchilla.adds = {
+		                wpn_fps_upg_fl_pis_m3x = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_crimson = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_x400v = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_laser = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_tlr1 = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_perst = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                }
 					}
-					--]]
+
+					self.wpn_fps_pis_x_chinchilla.override = {
+                        wpn_fps_pis_2006m_fl_adapter = {
+						    a_obj = "a_fl"
+						}
+					}
 
 					self.wpn_fps_pis_x_chinchilla.adds = self.wpn_fps_pis_x_chinchilla.adds or {}
 					self.wpn_fps_pis_x_chinchilla.override = self.wpn_fps_pis_x_chinchilla.override or {}
@@ -5363,27 +5401,109 @@ end
 					self.parts.wpn_fps_pis_rage_g_ergo.supported = true
 					self.parts.wpn_fps_pis_rage_g_ergo.stats = deep_clone(grips.recoil_1)
 
-					--[[
-					self.parts.wpn_fps_pis_rage_fl_mount = {
-						type = "shitass",
-						name_id = "bm_wp_judge_b_standard",
-						--unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_cobray/wpn_fps_smg_x_cobray",
-						--unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota/wpn_fps_sho_rota",
-						unit = "units/payday2/weapons/wpn_fps_ass_aug/wpn_fps_ass_aug",
-						stats = {
-							value = 1
-						}
-					}
-
-					--Bronco .44 Part Additions
-					table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 					table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_m3x")
 					table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_crimson")
 					table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_x400v")
 					table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_laser")
 					table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
 					table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_perst")
-					--]]
+
+					self.wpn_fps_pis_rage.adds = {
+		                wpn_fps_upg_fl_pis_m3x = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_crimson = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_x400v = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_laser = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_tlr1 = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_perst = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_perst = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+ 
+		                wpn_fps_upg_o_aimpoint_2 = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+ 		                wpn_fps_upg_o_eotech = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+ 		                wpn_fps_upg_o_t1micro = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+ 		                wpn_fps_upg_o_docter = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+ 		                wpn_fps_upg_o_acog = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+ 		                wpn_fps_upg_o_aimpoint = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+ 		                wpn_fps_upg_o_specter = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_cmore = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_cs = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_eotech_xps = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_reflex = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_rx01 = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_rx30 = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_spot = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_tf90 = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_fc1 = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_uh = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_hamr = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_health = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_bmg = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_atibal = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                },
+  		                wpn_fps_upg_o_poe = {
+			                "wpn_fps_pis_rage_o_adapter"
+		                }
+					}
+
+					self.wpn_fps_pis_rage.override = {
+                        wpn_fps_pis_2006m_fl_adapter = {
+						    a_obj = "a_fl"
+						}
+					}
 
 					self.wpn_fps_pis_rage.override = self.wpn_fps_pis_rage.override or {}
 					self.wpn_fps_pis_rage.override.wpn_fps_pis_usp_fl_adapter = {
@@ -5391,8 +5511,7 @@ end
 						a_obj = "a_vg"
 					}
 					self.wpn_fps_pis_rage.override.wpn_fps_pis_2006m_fl_adapter = {
-						parent = "shitass",
-						a_obj = "a_vg"
+						a_obj = "a_fl"
 					}
 
 					self.wpn_fps_pis_rage_npc.override = deep_clone(self.wpn_fps_pis_rage.override)
@@ -5403,16 +5522,33 @@ end
 				end)
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_x_rage", "resmod_x_rage", function(self)
 
-					self.wpn_fps_pis_x_rage.animations = {
-						reload_left = "reload",
-						fire = "recoil",
-						fire_steelsight = "recoil",
-						reload_not_empty_left = "reload",
-						reload = "reload",
-						reload_not_empty = "reload"
-					}
+					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_m3x")
+					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_crimson")
+					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_x400v")
+					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_laser")
+					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
+					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_perst")
 
-					self.wpn_fps_pis_x_rage.adds = {}
+					self.wpn_fps_pis_x_rage.adds = {
+		                wpn_fps_upg_fl_pis_m3x = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_crimson = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_x400v = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_laser = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_tlr1 = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                },
+		                wpn_fps_upg_fl_pis_perst = {
+			                "wpn_fps_pis_2006m_fl_adapter"
+		                }
+					}
 
 					self.wpn_fps_pis_x_rage.override = {
 						wpn_fps_pis_rage_body_standard = {
@@ -5424,6 +5560,9 @@ end
 								reload = "reload",
 								reload_not_empty = "reload"
 							}
+						},
+                        wpn_fps_pis_2006m_fl_adapter = {
+						    a_obj = "a_fl"
 						},
 						wpn_fps_pis_rage_body_smooth = {
 							animations = {
@@ -5437,22 +5576,14 @@ end
 						}
 					}
 
+					self.wpn_fps_pis_x_rage.override = self.wpn_fps_pis_x_rage.override or {}
 					self.wpn_fps_pis_x_rage.override.wpn_fps_pis_usp_fl_adapter = {
 						parent = "shitass",
 						a_obj = "a_vg"
 					}
 					self.wpn_fps_pis_x_rage.override.wpn_fps_pis_2006m_fl_adapter = {
-						parent = "shitass",
-						a_obj = "a_vg"
+						a_obj = "a_fl"
 					}
-
-					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_m3x")
-					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_crimson")
-					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_x400v")
-					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_laser")
-					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
-					table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_perst")
 
 					self.wpn_fps_pis_x_rage_npc.adds = deep_clone(self.wpn_fps_pis_x_rage.adds)
 					self.wpn_fps_pis_x_rage_npc.override = deep_clone(self.wpn_fps_pis_x_rage.override)
@@ -57641,6 +57772,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "cqbSightInit", function(self)
 				self.parts.wpn_fps_ass_ak_fg_waffle.pcs = nil
 		end
 
+		-- I'm really wondering if these are even needed when neither of these globals exist anymore
+		--[[
 		if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 			self.parts.wpn_fps_vg_vmp_stubby.pcs = nil
 			self.parts.wpn_fps_vg_vmp_medium.pcs = nil
@@ -57649,6 +57782,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "cqbSightInit", function(self)
 			self.parts.wpn_fps_vg_vmp_cheems.pcs = nil
 			self.parts.wpn_fps_vg_vmp_vert.pcs = nil
 		end
+		--]]
 
 		if SystemFS:exists("assets/mod_overrides/AMCAR Various Attachment/main.xml") then
 				self.parts.wpn_fps_ass_m4_m_stick_amcar.pcs = nil

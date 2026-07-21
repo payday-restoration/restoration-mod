@@ -9,6 +9,10 @@ Day = os.date("%d")
 restoration._mod_path = restoration:GetPath()
 function restoration:Init()
 	restoration.log_shit("SC: LOADING: " .. self.ModPath)
+	
+	-- Global to check for to make it easy for other mods to check for the overhaul existing
+	restoration.is_overhaul = true	
+	
 	restoration.captain_types = {
 		winter = {
 			spawn_group = "Cap_Winters",
@@ -463,6 +467,7 @@ function restoration:Init()
 		"arm_cro",  -- Transport: Crossroads
 		"arm_for",  -- Transport: Train
 		"arm_for_restoration",  -- Transport: Train (Res edit)
+		"wetwork_burn", -- Burnout
 	})
 
 	-- When playing Pro Jobs, heists in this table enable Bravos when the specified diff threshold would be exceeded
@@ -610,7 +615,7 @@ function restoration:LoadFonts()
 end
 
 --Incredibly disgusting way to handle this but I can't call blackmarkettweakdata in upgradestweakdata
-restoration.damage_control_cd = 25
+restoration.damage_control_cd = 50
 
 restoration.assault_style = {
 	"beta_assault",

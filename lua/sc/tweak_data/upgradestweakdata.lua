@@ -752,13 +752,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				--Ace
 					-- Changing this to a raw HP add versus a multiplier to make it better on DW/DS
-					self.revive_health_multiplier = {3}
+					self.revive_health_multiplier = {0.3}
 					
 					self.skill_descs.combat_medic = {
 						skill_value_b1 = tostring((1 - self.values.player.revive_damage_reduction[1]) * 100).."%", -- DR
 						skill_value_b2 = tostring(self.values.temporary.revive_damage_reduction[1][2]), -- DR duration in s
 						skill_value_b3 = tostring((1 - self.values.player.revive_damage_reduction[2]) * 100).."%", -- DR
-						skill_value_p1 = tostring(self.revive_health_multiplier[1] * 10) -- Additional HP for a teammate after reviving
+						skill_value_p1 = tostring(self.revive_health_multiplier[1] * 100) -- Additional HP for a teammate after reviving
 					}
 					
 			

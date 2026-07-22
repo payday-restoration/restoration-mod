@@ -429,6 +429,8 @@ function AchievementsTweakData:init(tweak_data)
 		stat = "gage4_10_stats",
 		enemies = {
 			"tank",
+			"tank_black",
+			"tank_skull"
 			"tank_medic",
 			"tank_mini",
 			"tank_titan",

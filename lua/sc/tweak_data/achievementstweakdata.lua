@@ -430,7 +430,7 @@ function AchievementsTweakData:init(tweak_data)
 		enemies = {
 			"tank",
 			"tank_black",
-			"tank_skull"
+			"tank_skull",
 			"tank_medic",
 			"tank_mini",
 			"tank_titan",

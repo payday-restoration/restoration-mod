@@ -334,7 +334,7 @@ function AchievementsTweakData:init(tweak_data)
 		mask = "nixon"
 	}
 	-- Fix for UMP For Me, UMP For You not stacking on ASU 
-	self.enemy_kill_achievements.ump_for_me_ump_for_you = {
+	self.enemy_kill_achievements.pim_3 = {
             stat = "pim_3_stats",
             weapon_type = "smg",
             difficulty = overkill_and_above,

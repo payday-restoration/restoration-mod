@@ -17,7 +17,7 @@ return {
 	[104489] = {
 		spawn_bravos = pro_job,
 		values = {
-			time = 10,
+			time = 20,
 		},
 	},
 	-- FBI Ready Teams

@@ -25,7 +25,7 @@ local dozer_heli = {
 		participate_to_group_ai = false,
 	},
 	on_executed = {
-		{ id = 400002, delay = 0, },
+		{ id = 400001, delay = 0, },
 	},
 }
 local tshield = {
@@ -33,7 +33,7 @@ local tshield = {
 		enemy = titan_shield,
 	},
 }
-local ponr_value = difficulty <= 2 and 180 or difficulty == 3 and 150 or difficulty == 4 and 135 or difficulty == 5 and 120 or (difficulty == 6 or difficulty == 7) and 105 or 90
+local ponr_value = difficulty <= 2 and 280 or difficulty == 3 and 250 or difficulty == 4 and 235 or difficulty == 5 and 220 or (difficulty == 6 or difficulty == 7) and 205 or 90
 local ponr_timer_player_mul = {
 	1,
 	1,
@@ -46,7 +46,7 @@ return {
 	-- Point of no return on hack completion, uncomment to edit
 	-- Normally always enabled, no time balance mul
 	-- Normally 180s on Normal, 150s on Hard, 135s on Very Hard, 120s on Overkill, 105s on Mayhem/Death Wish, 90s on Death Sentence
-	[100015] = {
+	[102015] = {
 		values = {
 			elements = { 102074, },
 			--[[
@@ -60,7 +60,14 @@ return {
 			time_easy_wish = ponr_value,
 			time_overkill_290 = ponr_value,
 			time_sm_wish = ponr_value,
-			]]
+			]] 
+		},
+	},
+	-- Bravos on second hack 
+	[102014] = {
+		spawn_bravos = pro_job,
+		values = {
+			time = 60,
 		},
 	},
 	-- Flashlights, flashlights, flashlights!!!!!!!!!! (enables/disables flashlights when the power is off/on like in PDTH)
@@ -106,14 +113,13 @@ return {
 	-- Loop the choppa
 	[103297] = {
 		on_executed = {
-			{ id = 101608, delay = 240, },
+			{ id = 101608, delay = 340, },
 		},
 	},
 	-- Tweak the delays
 	[103295] = {
 		on_executed = {
 			{ id = 103298, delay = 24, },
-			{ id = 400001, delay = 22, },  -- Incoming dozers warning
 			{ id = 102950, delay = 16, },
 		},
 	},

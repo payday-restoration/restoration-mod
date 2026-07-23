@@ -9,6 +9,6 @@ local optsBulldozer_SO = {
 
 return {
 	elements = {
-		restoration:gen_so(400002, "dozer_hunt_so", Vector3(0, 0, 0), Rotation(0, 0, 0), optsBulldozer_SO),
+		restoration:gen_so(400001, "dozer_hunt_so", Vector3(0, 0, 0), Rotation(0, 0, 0), optsBulldozer_SO),
 	},
 }

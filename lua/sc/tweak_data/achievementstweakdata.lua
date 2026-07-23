@@ -339,7 +339,8 @@ function AchievementsTweakData:init(tweak_data)
             weapon_type = "smg",
             difficulty = overkill_and_above,
             enemy_tags_any = {
-                "hrt_titan"
+                "hrt_titan",
+				"special"
             }
     },
 	self.enemy_kill_achievements.fool_me_once = {

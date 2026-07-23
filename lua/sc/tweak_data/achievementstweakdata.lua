@@ -66,7 +66,6 @@ function AchievementsTweakData:init(tweak_data)
 			}
 		}
 	}
-	
 	-- Fix for Sneaky Beaky Like to be possible
 	self.complete_heist_achievements.grv_4 = {
 		stealth = true,
@@ -240,7 +239,6 @@ function AchievementsTweakData:init(tweak_data)
 			"spooc_gangster",
 			"autumn", --why not?
 			"spooc_titan"
-			
 		}
 	}
 	
@@ -335,7 +333,16 @@ function AchievementsTweakData:init(tweak_data)
 		},
 		mask = "nixon"
 	}
-	
+	-- Fix for UMP For Me, UMP For You not stacking on ASU 
+	self.enemy_kill_achievements.pim_3 = {
+            stat = "pim_3_stats",
+            weapon_type = "smg",
+            difficulty = overkill_and_above,
+            enemy_tags_any = {
+                "hrt_titan",
+				"special"
+            }
+    },
 	self.enemy_kill_achievements.fool_me_once = {
 		weapon = "m45",
 		stat = "armored_9_stat",

@@ -1,4 +1,9 @@
 
+local disabled = {
+	values = {
+		enabled = false,
+	},
+}
 return {
 	-- Pro Job PONR
 	-- Triggers once both A) the flare to call in Bile is placeable, and B) whisper state is off (on alarm)
@@ -16,13 +21,13 @@ return {
 		reinforce = {
 			{
 				name = "reception",
-				force = 3,
-				position = Vector3(-3121, 226, -700.005),
+				force = 4,
+				position = Vector3(-2995, 235, -700.005),
 			},
 			{
 				name = "middle", 
 				force = 2, 
-				position = Vector3(-440, 85, -363.758),
+				position = Vector3(107, 302, -389.245),
 			},
 			{
 				name = "mummy_room", 
@@ -30,10 +35,12 @@ return {
 				position = Vector3(67, 2280, -300),
 			},
 			{
-				name = "artifact_room_01", 
+				name = "artifact_room", 
 				force = 2, 
 				position = Vector3(-31, -1614, -300),
 			},
 		},
 	},
+	-- disable the one useless sniper from the outside 
+	[100368] = disabled,
 }

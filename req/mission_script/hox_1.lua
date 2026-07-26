@@ -23,6 +23,11 @@ local swat_harasser = {
         	enemy = swat
 	}
 }
+local enabled = {
+	values = {
+		enabled = true,
+	},
+}
 return {
 -- Repurposed unused lobby units with my own (prison guards lol)
 [100048] = {
@@ -56,6 +61,37 @@ return {
             },
 		},
 	},
+    -- fix one of SWAT spawngroup spawns having messed up positions
+	[100143] = {
+		values = {
+			position = Vector3(-4210.318, 98.610, -2020),
+			rotation = Rotation(30.276, 0, 0),
+		},
+	},
+	[100141] = {
+		values = {
+			position = Vector3(-4302.193, -1.811, -2020),
+			rotation = Rotation(-26.785, 0, 0),
+		},
+	},
+	[100142] = {
+		values = {
+			position = Vector3(-4280.948, 77.521, -2020),
+			rotation = Rotation(30.276, 0, 0),
+		},
+	},
+	[100139] = {
+		values = {
+			position = Vector3(-4313.807, 119.244, -2020),
+			rotation = Rotation(-20.627, 0, 0),
+		},
+	},
+	[100140] = {
+		values = {
+			position = Vector3(-4305.427, 175.010, -2020),
+			rotation = Rotation(35.230, 0, 0),
+		},
+	},
     -- Diff scaling SWAT harrasers next to cop cars that replace beat cops on higher diffs
     [102029] = swat_harasser,
     [102031] = swat_harasser,
@@ -65,4 +101,9 @@ return {
     [102039] = swat_harasser,
     [102041] = swat_harasser,
     [102043] = swat_harasser,
+    -- Renable some disabled harassers SOs
+	[102001] = enabled,
+	[102004] = enabled,
+	[102005] = enabled,
+	[102008] = enabled,
 }

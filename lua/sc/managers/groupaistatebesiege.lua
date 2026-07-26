@@ -957,10 +957,11 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 
 				self:_set_objective_to_enemy_group(group, grp_objective)
 			end
-		elseif in_place_duration > 15 and not self:_can_group_see_target(group) then
+		elseif not current_objective.assigned_t and in_place_duration > 15 and not self:_can_group_see_target(group) then
 			-- Log and remove groups that get stuck
 			local element_id = group.spawn_group_element and group.spawn_group_element._id or 0
 			local element_name = group.spawn_group_element and group.spawn_group_element._editor_name or ""
+			restoration:warn("Group %s spawned from element %u (%s) is stuck, removing it!", group.id, element_id, element_name)
 
 			for _, u_data in pairs(group.units) do
 				u_data.unit:brain():set_active(false)

@@ -124,6 +124,7 @@ local clk_garage = {
 }
 local spawn_clk_garage = {
     enabled = ( death_wish_above and chance_sneaky_cloaker_escape ),
+    enabled = true,
     on_executed = { { id = 400021, delay = 0},  },
 }
 return {

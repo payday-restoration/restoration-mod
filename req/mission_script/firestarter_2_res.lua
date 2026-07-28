@@ -15,13 +15,39 @@ return {
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},
+	-- FBI Ready Team mini wave 
 	[103285] = {
 		on_executed = {
-			{id = 400018, delay = 15, delay_rand = 10,}
+			{id = 400016, delay = 15, delay_rand = 10,}
+		},
+	},
+	-- Reinfroce cause fuck you 
+	[100973] = {
+		reinforce = {
+			{
+				name = "reception", 
+				force = 3,
+				position = Vector3(-800, 973, 0),
+			},
+			{
+				name = "aquarium",
+				force = 2,
+				position = Vector3(-832, -584, -0),
+			},
+			{
+				name = "desk_1",
+				force = 2,
+				position = Vector3(1276, -443, 0),
+			},
+			{
+				name = "desk_2",
+				force = 2,
+				position = Vector3(1297, -1552, 0),
+			},
 		},
 	},
 	--Force Vet Cop on DS (cause OMNIA ASU in FBI HQ looks odd)
-	[103085] = vet,
-	[103092] = vet,
-	[103097] = vet
+	[103085] = vet_cop,
+	[103092] = vet_cop,
+	[103097] = vet_cop
 }

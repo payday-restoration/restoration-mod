@@ -807,6 +807,56 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	return 
 end
 
+-- Added a logic to allow simple damage to hit HP directly, for Stoic's damage-over-time.
+-- If `attack_data.direct_health_damage` is true, armour is skipped, and the attack damages HP directly.
+function PlayerDamage:damage_simple(attack_data)
+	local damage_info = {
+		result = {
+			type = "hurt",
+			variant = attack_data.variant
+		}
+	}
+
+	if self._god_mode or self._invulnerable or self._mission_damage_blockers.invulnerable then
+		self:_call_listeners(damage_info)
+
+		return
+	elseif self:incapacitated() then
+		return
+	elseif self._unit:movement():current_state().immortal then
+		return
+	end
+
+	self._unit:sound():play("player_hit")
+
+	attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
+
+	if self._bleed_out then
+		self:_bleed_out_damage(attack_data)
+
+		return
+	end
+
+	self:mutator_update_attack_data(attack_data)
+	self:_check_chico_heal(attack_data)
+
+	local armor_reduction_multiplier = 0
+	local health_subtracted = 0
+
+	if self:get_real_armor() <= 0 then
+		armor_reduction_multiplier = 1
+	end
+
+	if not attack_data.direct_health_damage then
+		health_subtracted = self:_calc_armor_damage(attack_data)
+		attack_data.damage = attack_data.damage * armor_reduction_multiplier
+	end
+
+	health_subtracted = health_subtracted + self:_calc_health_damage(attack_data)
+
+	self:_call_listeners(damage_info)
+end
+
 function PlayerDamage:damage_melee(attack_data)
 	-- Imagine trying to punch a guy inside of a moving car...
 	if self._unit:movement():current_state().driving then
@@ -2746,6 +2796,48 @@ function PlayerDamage:biker_lose_stacks_on_damage(damage_taken, weight)
 			to_tend = nil
 		}, {}, false)
 	end
+end
+
+-- The only worthwhile addition is that damage_simple now has direct_health_damage in it.
+function PlayerDamage:_update_delayed_damage(t, dt)
+	local no_chunks = #self._delayed_damage.chunks == 0
+	local time_for_tick = self._delayed_damage.next_tick and t < self._delayed_damage.next_tick
+
+	if no_chunks or time_for_tick then
+		return
+	end
+
+	self._delayed_damage.next_tick = t + 1
+
+	local total_tick = 0
+	local remaining_chunks = {}
+
+	for _, damage_chunk in ipairs(self._delayed_damage.chunks) do
+		total_tick = total_tick + damage_chunk.tick
+		damage_chunk.remaining = damage_chunk.remaining - damage_chunk.tick
+
+		if damage_chunk.remaining > self._delayed_damage.epsilon then
+			table.insert(remaining_chunks, damage_chunk)
+		end
+	end
+
+	self._delayed_damage.chunks = remaining_chunks
+
+	if total_tick > 0 then
+		self:damage_simple({
+			variant = "delayed_tick",
+			damage = total_tick,
+			direct_health_damage = true
+		})
+	end
+
+	local remaining_damage = self:remaining_delayed_damage()
+
+	if remaining_damage == 0 then
+		self._delayed_damage.next_tick = nil
+	end
+
+	managers.hud:set_teammate_delayed_damage(HUDManager.PLAYER_PANEL, remaining_damage)
 end
 
 -- Stoic: keeps track of and manages Stoic's delayed healing.

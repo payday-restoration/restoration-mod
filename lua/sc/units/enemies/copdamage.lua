@@ -77,9 +77,6 @@ local enemies_plink = {
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),                     
 	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
 	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),
-		
-	ids_func("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
-	ids_func("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic_husk"),
 
 	ids_func("units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
 	ids_func("units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk"),   

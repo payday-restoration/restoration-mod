@@ -18258,7 +18258,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.raygun then --Leather Dann, Cpone and VxWolf's CoD:Zombies Raygun
 				self.raygun.categories = {
-					"pistol",
+					"grenade_launcher",
+					"gl_pistol",
 					"raygun"
 				}
 				self.raygun.upgrade_blocks = {
@@ -18339,6 +18340,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					8,
 					1
 				}
+				self.umd_launcher.direct_damage_percent = 1
 				self.umd_launcher.panic_suppression_chance = 0.05
 				self.umd_launcher.timers.reload_exit_not_empty = 0.7
 				self.umd_launcher.timers.reload_exit_empty = 0.7
@@ -38581,7 +38583,6 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		pistol = 1.25, --Compensate for low range.
 			pistol_pdw = 0.675,
 			zippy = 0.15,
-			raygun = 0.8,
 		smg = 1.125,
 			pdw = 0.675,
 			typh = 0.8,

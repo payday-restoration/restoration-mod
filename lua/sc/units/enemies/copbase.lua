@@ -1064,6 +1064,12 @@ local weapons_map = {
 	[Idstring("units/pd2_mod_friday/characters/ene_security_fri_2/ene_security_fri_2"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/pd2_mod_friday/characters/ene_security_fri_3/ene_security_fri_3"):key()] = {"m1911_npc", "mp5"},
 	
+	-- Alaskan Deal 
+	["wwh"] = {
+		[Idstring("units/pd2_dlc_wwh/characters/ene_male_crew_01/ene_male_crew_01"):key()] = {"m1911_npc", "ak47", "r870", "raging_bull"},
+		[Idstring("units/pd2_dlc_wwh/characters/ene_male_crew_02/ene_male_crew_02"):key()] = {"scar_murky", "ump", "m4"},
+		[Idstring("units/pd2_dlc_wwh/characters/ene_female_crew/ene_female_crew"):key()] = {"c45", "mac11", "mossberg", "ak47", "raging_bull"},
+	},
 	-- Vanilla Murkies with variety weapons
 	--[[[Idstring("units/payday2/characters/ene_murkywater_1/ene_murkywater_1"):key()] = {"ump", "r870", "scar_murky"},
 	[Idstring("units/payday2/characters/ene_murkywater_2/ene_murkywater_2"):key()] = {"ump", "r870", "scar_murky"},

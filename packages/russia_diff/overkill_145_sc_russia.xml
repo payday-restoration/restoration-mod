@@ -246,6 +246,9 @@
 	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan_dummy" load="true"/>
 	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true" force="true"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_cracked" load="true"/> <!-- Cracked Shield Visor Texture -->
+	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_cracked_op" load="true"/> <!-- Cracked Shield Visor Texture Opacity -->
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/glass_crk" load="true" force="true"/> <!-- Shared Shield Visor Crack Texture is here -->
 	<!--sexy cap-->
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" />

@@ -39,9 +39,9 @@
 	<model path="units/mods/weapons/wpn_fps_upg_sniper_shellrack/wpn_fps_upg_r93_shellrack"/>
 	<model path="units/mods/weapons/wpn_fps_upg_shotgun_shellrack/wpn_fps_upg_sho_ben_shellrack"/>
 	<model path="units/mods/weapons/wpn_fps_upg_sniper_pouch/wpn_fps_upg_snp_winchester_pouch"/>
-	<model path="units/payday2/weapons/wpn_fps_pis_rage/wpn_fps_pis_rage" load="true" unload="true" force="true"/>
-	<model path="units/pd2_dlc_max/weapons/wpn_fps_pis_chinchilla/wpn_fps_pis_chinchilla" load="true" unload="true" force="true"/>
-	<model path="units/pd2_dlc_max/weapons/wpn_fps_pis_chinchilla_pts/wpn_fps_pis_chinchilla_b_satan" load="true" unload="true" force="true"/>
+	<model path="units/payday2/weapons/wpn_fps_pis_rage/wpn_fps_pis_rage" force="true"/>
+	<model path="units/pd2_dlc_max/weapons/wpn_fps_pis_chinchilla_pts/wpn_fps_pis_chinchilla_b_satan" force="true"/>
+	<model path="units/pd2_dlc_max/weapons/wpn_fps_pis_chinchilla_pts/wpn_fps_pis_chinchilla_b_standard" force="true"/>
 	<model path="units/mods/weapons/wpn_fps_upg_sniper_magpul/wpn_fps_upg_snp_victor_m_1_magpul"/>
 	<model path="units/mods/weapons/wpn_fps_upg_shotgun_shellrack/wpn_fps_upg_sho_m37_shellrack"/>
 	<model path="units/mods/weapons/wpn_fps_upg_shotgun_pouch/wpn_fps_upg_sho_m1897_s_ammopouch"/>
@@ -51,8 +51,7 @@
 	<model path="units/mods/weapons/wpn_fps_upg_sniper_pouch/wpn_fps_upg_snp_mosin_pouch"/>
 	<model path="units/mods/weapons/wpn_fps_upg_shotgun_shellrack/wpn_fps_upg_sho_m590_shellrack"/>
 	<model path="units/mods/weapons/wpn_fps_upg_sniper_pouch/wpn_fps_upg_snp_model70_pouch"/>
-	<model path="units/pd2_dlc_osa/weapons/wpn_fps_pis_x_rage/wpn_fps_pis_x_rage" load="true" unload="true" force="true"/>
-	<model path="units/pd2_dlc_max/weapons/wpn_fps_pis_x_chinchilla/wpn_fps_pis_x_chinchilla" load="true" unload="true" force="true"/>
+	<model path="units/pd2_dlc_osa/weapons/wpn_fps_pis_x_rage/wpn_fps_pis_x_rage" force="true"/>
 	<model path="units/mods/weapons/wpn_fps_upg_shotgun_magpul/wpn_fps_upg_sho_aa12_mag_straight_magpul"/>
 	<model path="units/mods/weapons/wpn_fps_upg_shotgun_pouch/wpn_fps_upg_sho_coach_s_ammopouch"/>
 	<model path="units/mods/weapons/wpn_fps_upg_shotgun_magpul/wpn_fps_upg_sho_saiga_m_5rnd_magpul"/>

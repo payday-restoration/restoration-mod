@@ -5214,6 +5214,38 @@ end
 			--S&W MODEL 29
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_chinchilla", "resmod_chinchilla", function(self)
 
+					--Standard Barrel
+					self.parts.wpn_fps_pis_chinchilla_b_standard.override = {
+						wpn_fps_pis_2006m_fl_adapter = {
+							parent = "barrel",
+							a_obj = "a_fl_adapter"
+						},
+						wpn_fps_upg_fl_pis_m3x = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						},
+ 						wpn_fps_upg_fl_pis_crimson = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						},
+ 						wpn_fps_upg_fl_pis_x400v = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						},
+ 						wpn_fps_upg_fl_pis_laser = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						},
+ 						wpn_fps_upg_fl_pis_tlr1 = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						},
+ 						wpn_fps_upg_fl_pis_perst = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						}
+					}
+
 					--Diablo Barrel
 					self.parts.wpn_fps_pis_chinchilla_b_satan.pcs = {
 						10,
@@ -5224,7 +5256,31 @@ end
 					self.parts.wpn_fps_pis_chinchilla_b_satan.override = {
 						wpn_fps_pis_2006m_fl_adapter = {
 							parent = "barrel",
-							a_obj = "a_fl"
+							a_obj = "a_fl_adapter"
+						},
+						wpn_fps_upg_fl_pis_m3x = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						},
+ 						wpn_fps_upg_fl_pis_crimson = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						},
+ 						wpn_fps_upg_fl_pis_x400v = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						},
+ 						wpn_fps_upg_fl_pis_laser = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						},
+ 						wpn_fps_upg_fl_pis_tlr1 = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
+						},
+ 						wpn_fps_upg_fl_pis_perst = {
+							parent = "barrel",
+							a_obj = "a_fl_gadget"
 						}
 					}
 					self.parts.wpn_fps_pis_chinchilla_b_satan.supported = true
@@ -5280,12 +5336,6 @@ end
 		                }
 					}
 
-					self.wpn_fps_pis_chinchilla.override = {
-                        wpn_fps_pis_2006m_fl_adapter = {
-						    a_obj = "a_fl"
-						}
-					}
-
 					self.wpn_fps_pis_chinchilla.adds = self.wpn_fps_pis_chinchilla.adds or {}
 					self.wpn_fps_pis_chinchilla.override = self.wpn_fps_pis_chinchilla.override or {}
 
@@ -5318,12 +5368,6 @@ end
 		                wpn_fps_upg_fl_pis_perst = {
 			                "wpn_fps_pis_2006m_fl_adapter"
 		                }
-					}
-
-					self.wpn_fps_pis_x_chinchilla.override = {
-                        wpn_fps_pis_2006m_fl_adapter = {
-						    a_obj = "a_fl"
-						}
 					}
 
 					self.wpn_fps_pis_x_chinchilla.adds = self.wpn_fps_pis_x_chinchilla.adds or {}

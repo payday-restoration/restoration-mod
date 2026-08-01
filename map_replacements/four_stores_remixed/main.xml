@@ -1,6 +1,9 @@
 <table min_lib_ver="4.5" name="four_stores_remixed">
 	<level ai_group_type="america" briefing_dialog="Play_pln_fourstores_stage1_brief" name_id="heist_four_stores_hl" brief_id="heist_four_stores_briefing" cube="cube_apply_heist_bank" ghost_bonus="0.05" id="four_stores_remixed" intro_event="Play_pln_fourstores_stage1_intro_a" max_bags="5" music="heist">
-		<assets/>
+		<assets>
+			<asset name="bodybags_bag"/>
+			<asset name="safe_escape"/>
+		</assets>
 		<outro_event>
 			<value_node value="Play_pln_fourstores_stage1_end_a"/>
 			<value_node value="Play_pln_fourstores_stage1_end_b"/>

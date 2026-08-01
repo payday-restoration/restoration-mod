@@ -37,11 +37,17 @@ return {
 		},
 	},
 	--Pro Job PONR
-	-- Butcher Crew backing you up 
+	-- Butcher Crew backing you up
+	-- Endless assault during rope objective
 	[100914] = {
 		ponr = ponr_value,
+	},
+	[100042] = {
+		hunt = true,
+	},
+	[100926] = {
 		on_executed = {
-			{id = 400009, delay = 0},
+			{id = 400006, delay = 0},
 		},
 	},
 	--The love story of 2 beat cops

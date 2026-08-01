@@ -15,6 +15,8 @@ local opts_hunt_so = {
 	SO_access = {
         "gangster",
         "tank",
+        "shield",
+        "swat",
     },
 	use_instigator = true,
 	so_action = "AI_hunt",

@@ -8,7 +8,7 @@ local grunt_1 =  ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_brav
 local grunt_2 =  ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" or "units/payday2/characters/ene_swat_1/ene_swat_1")
 local grunt_3 =  ((difficulty >= 8) and "units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg" or "units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
 local gunner = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
-grunt_table = { grunt_1, grunt_2, grunt_3 }
+ local grunt_table = { grunt_1, grunt_2, grunt_3 }
 local death_wish_above = difficulty >= 7
 local death_sentence = difficulty == 8
 local dozer_chance = math.random() < 0.5

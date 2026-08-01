@@ -342,7 +342,7 @@ function AchievementsTweakData:init(tweak_data)
                 "hrt_titan",
 				"special"
             }
-    },
+    }
 	self.enemy_kill_achievements.fool_me_once = {
 		weapon = "m45",
 		stat = "armored_9_stat",

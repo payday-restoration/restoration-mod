@@ -19,6 +19,15 @@ local boat_spawn = {
 		interval = 30,
 	},
 }
+local sniper_trigger_times = {
+	values = {
+		trigger_times = 0,
+	},
+}
+
+local unused_sniper_trigger_times = deep_clone(sniper_trigger_times)
+unused_sniper_trigger_times.values.enabled = true
+
 
 return {
 -- get rid of roof dozers (that are not even on the roof lmao)
@@ -27,9 +36,13 @@ return {
 			{ id = 100365, remove = true },
 		},
 	},
-	--Pro Job PONR 
+	--Pro Job PONR
+	-- Butcher Crew backing you up 
 	[100914] = {
-		ponr = ponr_value
+		ponr = ponr_value,
+		on_executed = {
+			{id = 400009, delay = 0},
+		},
 	},
 	--The love story of 2 beat cops
 	[101241] = fbi_access,
@@ -45,4 +58,11 @@ return {
 	[100605] = window_spawn,
 	[100177] = boat_spawn,
 	[100737] = boat_spawn,
-}	
+	-- make Snipers respawn and restore unused ones 
+	[100525] = sniper_trigger_times,
+	[100529] = sniper_trigger_times,
+	[100534] = sniper_trigger_times,
+	[100553] = sniper_trigger_times,
+	[100557] = unused_sniper_trigger_times,
+	[100520] = unused_sniper_trigger_times,
+}

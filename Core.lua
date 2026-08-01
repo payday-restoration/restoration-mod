@@ -65,6 +65,7 @@ function restoration:Init()
 		crojob3 = restoration.captain_types.winter, --The Bomb: Forest
 		crojob3_night = restoration.captain_types.winter, --The Bomb: Forest Night
 		rvd2 = restoration.captain_types.winter, --Garnet Group Boutique
+		wwh = restoration.captain_types.winter, -- Alaskan Deal
 		--Custom Heists--
 		four_stores_remixed = restoration.captain_types.winter, --Four Stores (Remixed)
 		office_strike = restoration.captain_types.winter, --office strike
@@ -199,6 +200,7 @@ function restoration:Init()
 		"skm_nightmare_lvl",
 		"crojob3",
 		"crojob3_night",
+		"wwh",
 		--Custom Heists--
 		"constantine_gunrunnerclubhouse_lvl",
 		"constantine_policestation_lvl"

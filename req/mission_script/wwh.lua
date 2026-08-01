@@ -1,5 +1,5 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local ponr_value = (difficulty <= 5 and 1160 or (difficulty == 6 or difficulty == 7) and 1130) or 1100
+local ponr_value = (difficulty <= 5 and 960 or (difficulty == 6 or difficulty == 7) and 930) or 900
 
 local fbi_access = {
 	pre_func = function (self)
@@ -39,6 +39,7 @@ return {
 	--Pro Job PONR
 	-- Butcher Crew backing you up
 	-- Endless assault during rope objective
+	-- a solution to end the assault :)
 	[100914] = {
 		ponr = ponr_value,
 	},
@@ -48,6 +49,11 @@ return {
 	[100926] = {
 		on_executed = {
 			{id = 400006, delay = 0},
+		},
+	},
+	[100692] = {
+		on_executed = {
+			{ id = 400026, delay = 5},
 		},
 	},
 	--The love story of 2 beat cops

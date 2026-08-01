@@ -47,7 +47,7 @@ return {
 		},
 	},
 	--Force Vet Cop on DS (cause OMNIA ASU in FBI HQ looks odd)
-	[103085] = vet_cop,
-	[103092] = vet_cop,
-	[103097] = vet_cop
+	[103085] = vet,
+	[103092] = vet,
+	[103097] = vet
 }

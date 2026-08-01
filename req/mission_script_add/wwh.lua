@@ -94,7 +94,7 @@ local optsOpenSwatVan_Door_Trigger_2 = {
 		{ guis_id = 1, sequence = "done_car_anim", unit_id = 100131 },
 	},
     on_executed = {
-        { id = 400016, delay = 60, delay_rand = 60 },
+        { id = 400016, delay = 80, delay_rand = 80 },
     },
 }
 local optsSkully = {

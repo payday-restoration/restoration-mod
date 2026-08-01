@@ -114,7 +114,7 @@ local optsWinters = {
     enabled = true,
     enemy = winters,
     participate_to_group_ai = true,
-    on_executed = { { id = 400005, delay = 0, }, },
+    on_executed = { { id = 400005, delay = 10, delay_rand = 5, }, },
 }
 local optsWinters_goon_01 = {
     enabled = true,

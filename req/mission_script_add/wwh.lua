@@ -106,7 +106,7 @@ local optsOpenSwatVan_Door_Trigger_2 = {
 local optsSkully = {
     enabled = death_wish_above,
     enemy = tank_skull,
-    spawn_action = "e_sp_clk_over_2_5m",
+    spawn_action = "e_sp_armored_truck_1st",
     participate_to_group_ai = true,
     on_executed = { { id = 400005, delay = 5, }, },
 }
@@ -198,18 +198,18 @@ return  {
 	    restoration:gen_spawngroup(400013, "swat_group_3", {400007,400008 ,400009 , 400010 }, 0, opts_swat_group),
 	    restoration:object_editor_trigger(400014, "swat_van_doors_trigger", optsOpenSwatVanDoors_Trigger_3),
         -- swat van (2 (surprise dozer dw-ds)
-        restoration:gen_dummy(400015, "surprise_dozer", Vector3(3650.97, 3813.47, 967.997), Rotation(-21, 0, -0), optsSkully),
-        restoration:objecteditor(400016, "top_door", Vector3(0, 0, 0), Rotation(0, 0, 0), optsOpenSwatVanDoors_2),
-        restoration:object_editor_trigger(400017, "top_door_trigger", optsOpenSwatVan_Door_Trigger_2),
+        restoration:gen_dummy(400015, "surprise_dozer", Vector3(3178.86, 3720, 967.997), Rotation(80, -0, -0), optsSkully),
+        restoration:objecteditor(400016, "back_door", Vector3(0, 0, 0), Rotation(0, 0, 0), optsOpenSwatVanDoors_2),
+        restoration:object_editor_trigger(400017, "back_door_trigger", optsOpenSwatVan_Door_Trigger_2),
         -- the solution to end the assault 
-        restoration:gen_dummy(400018, "cap_wankers", Vector3(749, 2307, 949.997), Rotation(2, -0, -0), optsWinters),
-        restoration:gen_dummy(400019, "phalanx_01", Vector3(663.049, 2306.21, 949.997), Rotation(2, -0, -0), optsWinters_goon_02),
+        restoration:gen_dummy(400018, "cap_wankers", Vector3(5293, -2056, 1374.61), Rotation(2, -0, -0), optsWinters),
+        restoration:gen_dummy(400019, "phalanx_01", Vector3(5227, -2002, 1374.61), Rotation(2, -0, -0), optsWinters_goon_02),
         restoration:gen_dummy(400020, "phalanx_02", Vector3(584.097, 2303.45, 949.997), Rotation(2, -0, -0), optsWinters_goon_03),
-        restoration:gen_dummy(400021, "phalanx_03", Vector3(495.151, 2300.34, 949.997), Rotation(2, -0, -0), optsWinters_goon_04),
-        restoration:gen_dummy(400022, "tit_snip_01", Vector3(728.529, 2379.54, 949.997), Rotation(2, -0, -0), optsWinters_goon_05),
-        restoration:gen_dummy(400023, "tit_snip_02", Vector3(658.712, 2373.1, 949.997), Rotation(2, -0, -0), optsWinters_goon_06),
+        restoration:gen_dummy(400021, "phalanx_03", Vector3(5163, -2004, 1374.61), Rotation(2, -0, -0), optsWinters_goon_04),
+        restoration:gen_dummy(400022, "tit_snip_01", Vector3(5226, -2069, 1374.61), Rotation(2, -0, -0), optsWinters_goon_05),
+        restoration:gen_dummy(400023, "tit_snip_02", Vector3(5156, -2066, 1374.61), Rotation(2, -0, -0), optsWinters_goon_06),
         restoration:gen_dummy(400024, "grenda_01", Vector3(579.76, 2370.34, 949.997), Rotation(2, -0, -0), optsWinters_goon_07),
-        restoration:gen_dummy(400025, "grenda_01", Vector3(505.805, 2367.76, 949.997), Rotation(2, -0, -0), optsWinters_goon_08),
+        restoration:gen_dummy(400025, "grenda_02", Vector3(5266, -2133, 1374.61), Rotation(2, -0, -0), optsWinters_goon_08),
         -- mission script
         restoration:gen_missionscript(400026, "spawn_winters_n_squad", spawn_Winters_n_squad),
     },

@@ -21,14 +21,19 @@ local boat_spawn = {
 }
 local sniper_trigger_times = {
 	values = {
-		trigger_times = 0,
+		enbaled = false,
 	},
 }
-
-local unused_sniper_trigger_times = deep_clone(sniper_trigger_times)
-unused_sniper_trigger_times.values.enabled = true
-
-
+local enabled = {
+	values = {
+		enabled = true,
+	},
+}
+local disabled = {
+	values = {
+		enabled = false,
+	},
+}
 return {
 -- get rid of roof dozers (that are not even on the roof lmao)
 	[100434] = {
@@ -71,10 +76,8 @@ return {
 	[100177] = boat_spawn,
 	[100737] = boat_spawn,
 	-- make Snipers respawn and restore unused ones 
-	[100525] = sniper_trigger_times,
-	[100529] = sniper_trigger_times,
-	[100534] = sniper_trigger_times,
-	[100553] = sniper_trigger_times,
-	[100557] = unused_sniper_trigger_times,
-	[100520] = unused_sniper_trigger_times,
+-- make Snipers respawn and re-enable unused ones
+	[100520] = enabled,
+	[100545] = enabled,
+	[100557] = enabled,
 }

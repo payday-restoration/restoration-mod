@@ -164,6 +164,36 @@ local optsWinters_goon_08 = {
     participate_to_group_ai = true,
     on_executed = { { id = 400005, delay = 0, }, },
 }
+local optsWinters_goon_09 = {
+    enabled = true,
+    enemy = winter_goon,
+    participate_to_group_ai = true,
+    on_executed = { { id = 400005, delay = 0, }, },
+}
+local optsWinters_goon_10 = {
+    enabled = true,
+    enemy = winter_goon,
+    participate_to_group_ai = true,
+    on_executed = { { id = 400005, delay = 0, }, },
+}
+local optsWinters_goon_11 = {
+    enabled = true,
+    enemy = winter_goon,
+    participate_to_group_ai = true,
+    on_executed = { { id = 400005, delay = 0, }, },
+}
+local optsWinters_goon_12 = {
+    enabled = true,
+    enemy = winter_goon,
+    participate_to_group_ai = true,
+    on_executed = { { id = 400005, delay = 0, }, },
+}
+local optsWinters_goon_14 = {
+    enabled = true,
+    enemy = winter_goon,
+    participate_to_group_ai = true,
+    on_executed = { { id = 400005, delay = 0, }, },
+}
 local spawn_Winters_n_squad = {
     enabled = true,
     on_executed = {
@@ -175,6 +205,11 @@ local spawn_Winters_n_squad = {
         { id = 400023, delay = 0,},
         { id = 400024, delay = 0,},
         { id = 400025, delay = 0,},
+        { id = 400026, delay = 0,},
+        { id = 400027, delay = 0,},
+        { id = 400028, delay = 0,},
+        { id = 400029, delay = 0,},
+        { id = 400030, delay = 0,},
     },
 }
 return  {
@@ -202,15 +237,20 @@ return  {
         restoration:objecteditor(400016, "back_door", Vector3(0, 0, 0), Rotation(0, 0, 0), optsOpenSwatVanDoors_2),
         restoration:object_editor_trigger(400017, "back_door_trigger", optsOpenSwatVan_Door_Trigger_2),
         -- the solution to end the assault 
-        restoration:gen_dummy(400018, "cap_wankers", Vector3(5293, -2056, 1374.61), Rotation(2, -0, -0), optsWinters),
+        restoration:gen_dummy(400018, "cap_wankers", Vector3(5151, -2137, 1374.61), Rotation(2, -0, -0), optsWinters),
         restoration:gen_dummy(400019, "phalanx_01", Vector3(5227, -2002, 1374.61), Rotation(2, -0, -0), optsWinters_goon_02),
-        restoration:gen_dummy(400020, "phalanx_02", Vector3(584.097, 2303.45, 949.997), Rotation(2, -0, -0), optsWinters_goon_03),
+        restoration:gen_dummy(400020, "phalanx_02", Vector3(5292, -2020, 1374.61), Rotation(2, -0, -0), optsWinters_goon_03),
         restoration:gen_dummy(400021, "phalanx_03", Vector3(5163, -2004, 1374.61), Rotation(2, -0, -0), optsWinters_goon_04),
         restoration:gen_dummy(400022, "tit_snip_01", Vector3(5226, -2069, 1374.61), Rotation(2, -0, -0), optsWinters_goon_05),
         restoration:gen_dummy(400023, "tit_snip_02", Vector3(5156, -2066, 1374.61), Rotation(2, -0, -0), optsWinters_goon_06),
-        restoration:gen_dummy(400024, "grenda_01", Vector3(579.76, 2370.34, 949.997), Rotation(2, -0, -0), optsWinters_goon_07),
-        restoration:gen_dummy(400025, "grenda_02", Vector3(5266, -2133, 1374.61), Rotation(2, -0, -0), optsWinters_goon_08),
+        restoration:gen_dummy(400024, "grenda_01", Vector3(5102, -2109, 1374.61), Rotation(2, -0, -0), optsWinters_goon_07),
+        restoration:gen_dummy(400025, "phalanx_04", Vector3(5266, -2133, 1374.61), Rotation(2, -0, -0), optsWinters_goon_08),
+        restoration:gen_dummy(400026, "phalanx_05", Vector3(5289.98, -1962.04, 1374.61), Rotation(2, -0, -0), optsWinters_goon_09),
+        restoration:gen_dummy(400027, "phalanx_06", Vector3(5218.98, -1963.51, 1374.61), Rotation(2, -0, -0), optsWinters_goon_10),
+        restoration:gen_dummy(400028, "phalanx_07", Vector3(5161.02, -1965.54, 1374.61), Rotation(2, -0, -0), optsWinters_goon_12),
+        restoration:gen_dummy(400029, "phalanx_08", Vector3(5291.44, -1917.96, 1374.61), Rotation(2, -0, -0), optsWinters_goon_13),
+        restoration:gen_dummy(400030, "phalanx_09", Vector3(5207.49, -1920.89, 1374.61), Rotation(2, -0, -0), optsWinters_goon_14),
         -- mission script
-        restoration:gen_missionscript(400026, "spawn_winters_n_squad", spawn_Winters_n_squad),
+        restoration:gen_missionscript(400031, "spawn_winters_n_squad", spawn_Winters_n_squad),
     },
 }

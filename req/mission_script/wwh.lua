@@ -21,7 +21,7 @@ local boat_spawn = {
 }
 local disabled = {
 	values = {
-		enbaled = false,
+		enabled = false,
 	},
 }
 local enabled = {

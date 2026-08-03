@@ -19,7 +19,7 @@ local boat_spawn = {
 		interval = 30,
 	},
 }
-local sniper_trigger_times = {
+local disbaled = {
 	values = {
 		enbaled = false,
 	},
@@ -27,11 +27,6 @@ local sniper_trigger_times = {
 local enabled = {
 	values = {
 		enabled = true,
-	},
-}
-local disabled = {
-	values = {
-		enabled = false,
 	},
 }
 return {

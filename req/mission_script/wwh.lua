@@ -19,9 +19,9 @@ local boat_spawn = {
 		interval = 30,
 	},
 }
-local disbaled = {
+local disabled = {
 	values = {
-		enbaled = false,
+		enabled = false,
 	},
 }
 local enabled = {

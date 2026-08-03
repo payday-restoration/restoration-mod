@@ -53,7 +53,7 @@ return {
 	},
 	[100988] = {
 		on_executed = {
-			{ id = 400026, delay = 5},
+			{ id = 400031, delay = 5},
 		},
 	},
 	--The love story of 2 beat cops

@@ -1110,6 +1110,8 @@ local weapons_map = {
 	[Idstring("units/pd2_dlc_spa/characters/npc_spa/npc_spa"):key()] = "beretta92",
 	[Idstring("units/payday2/characters/npc_old_hoxton_prisonsuit_2/npc_old_hoxton_prisonsuit_2"):key()] = "beretta92",
 	[Idstring("units/pd2_dlc_berry/characters/npc_locke/npc_locke"):key()] = "beretta92",
+	-- Zeal Medics now use UMPs cause they need dmg for some reason 
+	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic"):key()] = "ump",
 }
 
 local default_weapon_name_orig = CopBase.default_weapon_name

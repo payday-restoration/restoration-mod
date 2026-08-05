@@ -1110,10 +1110,12 @@ local weapons_map = {
 	[Idstring("units/pd2_dlc_spa/characters/npc_spa/npc_spa"):key()] = "beretta92",
 	[Idstring("units/payday2/characters/npc_old_hoxton_prisonsuit_2/npc_old_hoxton_prisonsuit_2"):key()] = "beretta92",
 	[Idstring("units/pd2_dlc_berry/characters/npc_locke/npc_locke"):key()] = "beretta92",
-	-- Zeal Medics now use UMPs
+	-- DS  Medics now use UMPs 
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic"):key()] = "ump",
 	-- Brabo US Dozer now uses AA12
 	[Idstring("units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"):key()] = "aa12_dozer",
+	-- OMNIA Skully now uses scaled bravo M60 to match his colors
+	[Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"):key()] = "m60_om_dozer",
 }
 
 local default_weapon_name_orig = CopBase.default_weapon_name

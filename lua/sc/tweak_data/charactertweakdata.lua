@@ -18233,6 +18233,10 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	table.insert(self.weap_ids, "m500_dozer")
 	table.insert(self.weap_unit_names, Idstring("units/pd2_dlc_bex/weapons/wpn_npc_m500_dozer/wpn_npc_m500_dozer"))	
 
+	-- OMNIA Dozer M60
+	table.insert(self.weap_ids, "m60_om_dozer") 
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_m60_om_dozer/wpn_npc_m60_om_dozer"))	
+
 	--Meme Akimbo Raging Bulls
 	table.insert(self.weap_ids, "x_raging_bull_meme_npc")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc"))	

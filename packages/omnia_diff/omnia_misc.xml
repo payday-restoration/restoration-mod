@@ -11,7 +11,12 @@
 	<sequence_manager	path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om" force="false"/>
 	<unit				path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om" force="false" load="false"/>
 	<texture			path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om_df" force="false"/>
-	<texture			path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om_nm" force="false"/>	
+	<texture			path="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om_nm" force="false"/>
+
+	<!--OMNIA DOZER M60-->
+	<model				path="units/payday2/weapons/wpn_npc_m60_om_dozer/wpn_npc_m60_om_dozer" force="false"/>
+	<object				path="units/payday2/weapons/wpn_npc_m60_om_dozer/wpn_npc_m60_om_dozer" force="false"/>
+	<unit				path="units/payday2/weapons/wpn_npc_m60_om_dozer/wpn_npc_m60_om_dozer" force="false" load="false"/>
 	
 	<!--OICW-->
 	<object				path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>

@@ -2746,9 +2746,10 @@ function CharacterTweakData:_init_tank(presets)
 	--Benelli (Bravo) Dozer
 	self.tank_mini = deep_clone(self.tank)
 	self.tank_mini.HEALTH_INIT = 625
-	self.tank_mini.headshot_dmg_mul = 15.625
-	self.tank_mini.weapon = deep_clone(presets.weapon.normal)
+	self.tank_mini.headshot_dmg_mul = 9.5
+	self.tank_mini.weapon = deep_clone(presets.weapon.expert)
 	self.tank_mini.can_throw_frag = true
+	self.tank_mini.deathguard = true
 	self.tank_mini.grenade_toss_chance = 0.4
 	self.tank_mini.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self._enemy_list, "tank_mini")	

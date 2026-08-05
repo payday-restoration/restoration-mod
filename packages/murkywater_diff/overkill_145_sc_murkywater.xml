@@ -19,6 +19,11 @@
 	<!--bravo M60-->
 	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo"  load="true"/>
 
+	<!--OMNIA DOZER M60-->
+	<model				path="units/payday2/weapons/wpn_npc_m60_om_dozer/wpn_npc_m60_om_dozer" force="false"/>
+	<object				path="units/payday2/weapons/wpn_npc_m60_om_dozer/wpn_npc_m60_om_dozer" force="false"/>
+	<unit				path="units/payday2/weapons/wpn_npc_m60_om_dozer/wpn_npc_m60_om_dozer" force="false" load="false"/>
+
 	<!-- feds n cops     -->
 	<!--FBI 1-->
 	<object				path="units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1" force="false"/>

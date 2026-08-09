@@ -3,12 +3,12 @@ local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty ==
 
 local wall_spawn = {
 	values = {
-		interval = 35,
+		interval = 45,
 	},
 }
 local roof_spawn = {
 	values = {
-		interval = 30,
+		interval = 20,
 	},
 }
 local sewer_spawn = {

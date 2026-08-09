@@ -53,6 +53,26 @@ local disabled = {
 	},
 }
 
+local elevator_spawn = {
+	values = {
+		interval = 20,
+	},
+}
+local skylight_spawn = {
+	values = {
+		interval = 25,
+	},
+}
+local office_spawn = {
+	values = {
+		interval = 25,
+	},
+}
+local vent_spawn = {
+	values = {
+		interval = 30,
+	},
+}
 return {
 	-- 2 basement dozers on DS (1 on DW below)
 	[100529] = {
@@ -371,4 +391,18 @@ return {
 	[103466] = taser,
 	[103463] = shield,
 	[103465] = swatsg,
+	-- Spawn group intervals
+	[102154] = elevator_spawn,
+	[103109] = elevator_spawn,
+	[103135] = elevator_spawn,
+	[103129] = elevator_spawn,
+	[103121] = elevator_spawn,
+	[105112] = skylight_spawn,
+	[106890] = skylight_spawn,
+	[103953] = office_spawn,
+	[103068] = office_spawn,
+	[103081] = office_spawn,
+	[103011] = office_spawn,
+	[103689] = office_spawn,
+	[105200] = vent_spawn,
 }

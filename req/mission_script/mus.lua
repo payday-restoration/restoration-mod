@@ -4,6 +4,16 @@ local disabled = {
 		enabled = false,
 	},
 }
+local exhibit_rappel_spawn = {
+	values = {
+		interval = 45,
+	},
+}
+local exhibit_slow_rappel_spawn = {
+	values = {
+		interval = 60,
+	},
+}
 return {
 	-- Pro Job PONR
 	-- Triggers once both A) the flare to call in Bile is placeable, and B) whisper state is off (on alarm)
@@ -43,4 +53,11 @@ return {
 	},
 	-- disable the one useless sniper from the outside 
 	[100368] = disabled,
+	-- Spawn group intervals
+	[101946] = exhibit_rappel_spawn,
+	[101959] = exhibit_rappel_spawn,
+	[100019] = exhibit_slow_rappel_spawn,
+	[100809] = exhibit_slow_rappel_spawn,
+	[100810] = exhibit_slow_rappel_spawn,
+	[100021] = exhibit_slow_rappel_spawn,
 }

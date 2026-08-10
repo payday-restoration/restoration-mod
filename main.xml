@@ -463,6 +463,8 @@
 
 		<hook file="sc/managers/customsafehousemanager.lua" source_file="lib/managers/customsafehousemanager"/>
 
+		<hook file="sc/utils/gamemodestandard.lua" source_file="lib/utils/gamemodestandard"/>
+
     </Hooks>
 	<!--///MOD SETTINGS\\\-->
 	<!-- <<Keybind keybind_id="radialmousemenu_keybind" name="menu_utility_radial_menu_name" description="menu_utility_radial_menu_desc" localized="true" script_path="menu/radialmousemenu_keybind.lua"/> -->

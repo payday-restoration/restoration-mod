@@ -110,13 +110,6 @@
 				<file :name="gen_interactable_sec_safe_05x05_titan.unit"/>
 			</group>			
 					-->
-		</group>
-
-		
-		<group hook_id="lib/">
-			<post :hook_id="gamemodes/gamemodestandard"/>
-			</group>	
-	</assets>	
-	
+		</group>	
 	<!-- <:include src="addoutfit.xml"/> -->
 </mod>

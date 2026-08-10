@@ -462,6 +462,9 @@
 		<!--DO NOT MODIFY-->
 
 		<hook file="sc/managers/customsafehousemanager.lua" source_file="lib/managers/customsafehousemanager"/>
+		
+		<!-- New gamestanfard file-->
+		<hook file = "sc/utils/gamemodestandard.lua" source_file ="lib/utils/gamemodestandard"/>
 
     </Hooks>
 	<!--///MOD SETTINGS\\\-->

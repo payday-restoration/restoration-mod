@@ -111,6 +111,11 @@
 			</group>			
 					-->
 		</group>
+
+		
+		<group hook_id="lib/">
+			<post :hook_id="gamemodes/gamemodestandard"/>
+			</group>	
 	</assets>	
 	
 	<!-- <:include src="addoutfit.xml"/> -->

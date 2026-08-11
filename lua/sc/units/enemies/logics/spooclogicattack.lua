@@ -5,28 +5,20 @@ function SpoocLogicAttack._upd_spooc_attack(data, my_data)
 	end
 
 	local focus_enemy = data.attention_obj
-	if not focus_enemy.nav_tracker or not focus_enemy.is_person or not focus_enemy.verified or focus_enemy.reaction < AIAttentionObject.REACT_SHOOT then
+	if not focus_enemy.nav_tracker or not focus_enemy.is_person then
 		return
 	end
 
-	if focus_enemy.criminal_record and (focus_enemy.criminal_record.status or SpoocLogicAttack._is_last_standing_criminal(focus_enemy)) then
-		return
-	end
-
-	if focus_enemy.verified_dis > (my_data.want_to_take_cover and 1500 or 2500) then
-		return
-	end
-
-	if focus_enemy.unit:movement().zipline_unit and focus_enemy.unit:movement():zipline_unit() then
-		return
-	end
-
-	if focus_enemy.unit:movement().is_SPOOC_attack_allowed and not focus_enemy.unit:movement():is_SPOOC_attack_allowed() then
-
-		return
-	end
-	
 	if not focus_enemy.criminal_record or focus_enemy.criminal_record.status and focus_enemy.criminal_record.status ~= "electrified" then
+		return
+	end
+
+	local max_spooc_dis = (data.char_tweak.max_spooc_dis or 2000) * (my_data.want_to_take_cover and 0.5 or 1)
+	if focus_enemy.reaction < AIAttentionObject.REACT_SHOOT or focus_enemy.dis > max_spooc_dis then
+		return
+	end
+
+	if SpoocLogicAttack._is_last_standing_criminal(focus_enemy) or not focus_enemy.unit:movement():is_SPOOC_attack_allowed() or focus_enemy.unit:movement():zipline_unit() then
 		return
 	end
 
@@ -71,9 +63,8 @@ Hooks:PreHook(SpoocLogicAttack, "_chk_request_action_spooc_attack", "sh___chk_re
 	})
 end)
 
-
 -- Update logic every frame
-Hooks:PostHook(SpoocLogicAttack, "enter", "sh_enter", function(data)
+Hooks:PostHook(SpoocLogicAttack, "enter", "sh_enter", function (data)
 	data.brain:set_update_enabled_state(true)
 end)
 
@@ -87,13 +78,7 @@ function SpoocLogicAttack.update(data)
 
 	local focus_enemy = data.attention_obj
 	if my_data.spooc_attack then
-		if
-			my_data.spooc_attack.action:complete()
-			and focus_enemy
-			and focus_enemy.verified
-			and (not focus_enemy.criminal_record or not focus_enemy.criminal_record.status)
-			and focus_enemy.dis < my_data.weapon_range.close
-		then
+		if my_data.spooc_attack.action:complete() and focus_enemy and focus_enemy.verified and (not focus_enemy.criminal_record or not focus_enemy.criminal_record.status) and focus_enemy.dis < my_data.weapon_range.close then
 			SpoocLogicAttack._cancel_spooc_attempt(data, my_data)
 		end
 
@@ -109,7 +94,7 @@ function SpoocLogicAttack.update(data)
 		if not data.unit:anim_data().to_idle and not data.unit:movement():chk_action_forbidden("walk") then
 			data.unit:movement():action_request({
 				body_part = 2,
-				type = "idle",
+				type = "idle"
 			})
 
 			my_data.wants_stop_old_walk_action = nil

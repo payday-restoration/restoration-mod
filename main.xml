@@ -71,6 +71,7 @@
 		<hook file="managers/UserManager.lua" source_file="lib/managers/usermanager"/>
 		<hook file="managers/musicmanager.lua" source_file="lib/managers/musicmanager"/>
 		<hook file="managers/hud/HUDArmorFix.lua" source_file="lib/managers/hud/HUDTeammate"/>
+		<hook file="sc/gamemodes/gamemodestandard.lua" source_file="lib/gamemodes/gamemodestandard"/>
 		<!--///SCRIPTDATA\\\-->
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>
 		<!--///NOTIFICATIONS\\\-->
@@ -462,8 +463,6 @@
 		<!--DO NOT MODIFY-->
 
 		<hook file="sc/managers/customsafehousemanager.lua" source_file="lib/managers/customsafehousemanager"/>
-
-		<hook file="sc/utils/gamemodestandard.lua" source_file="lib/utils/gamemodestandard"/>
 
     </Hooks>
 	<!--///MOD SETTINGS\\\-->

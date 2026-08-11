@@ -18,6 +18,9 @@ function SpoocLogicAttack._upd_spooc_attack(data, my_data)
 		return
 	end
 
+	if SpoocLogicAttack._is_last_standing_criminal(focus_enemy) or not focus_enemy.unit:movement():is_SPOOC_attack_allowed() or focus_enemy.unit:movement():zipline_unit() then
+		return
+	end
 
 	if not my_data.spooc_attack_delay_t then
 		my_data.spooc_attack_delay_t = data.t + math.map_range_clamped(focus_enemy.dis, 0, 500, 1, 0)

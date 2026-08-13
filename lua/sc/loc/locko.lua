@@ -1648,16 +1648,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_wpn_fps_upg_sho_saiga_m_5rnd_magpul"] = "신속 장전 탄창",
 		["bm_wp_wpn_fps_upg_sho_aa12_mag_straight_magpul"] = "신속 장전 직선 탄창",
 
-		["bm_wp_wpn_fps_upg_sho_coach_s_ammopouch"] = "그다지 고급스럽지 않는 탄약 파우치",
+		["bm_wp_wpn_fps_upg_sho_coach_s_ammopouch"] = "그다지 고급스럽지 않은 탄약 파우치",
 		["bm_wp_wpn_fps_upg_sho_huntsman_s_ammopouch"] = "사냥꾼 탄약 파우치",
 		["bm_wp_wpn_fps_upg_sho_m1897_s_ammopouch"] = "딘 탄약 파우치",
 
 		["bm_wp_wpn_fps_upg_snp_tti_m_magpul"] = "텍티쿨 신속 장전 탄창",
 		["bm_wp_wpn_fps_upg_snp_victor_m_1_magpul"] = "세인트 신속 장전 탄창",
 
-		["bm_wp_wpn_fps_upg_snp_model70_pouch"] = "포인트드 탄약 파운치",
-		["bm_wp_wpn_fps_upg_snp_mosin_pouch"] = "쓰리 라인드 탄약 파운치",
-		["bm_wp_wpn_fps_upg_snp_winchester_pouch"] = "샘 탄약 파운치",
+		["bm_wp_wpn_fps_upg_snp_model70_pouch"] = "포인트드 탄약 파우치",
+		["bm_wp_wpn_fps_upg_snp_mosin_pouch"] = "쓰리 라인드 탄약 파우치",
+		["bm_wp_wpn_fps_upg_snp_winchester_pouch"] = "샘 탄약 파우치",
 
 		["bm_wp_wpn_fps_upg_r93_shellrack"] = "밀스팩 쉘 랙",		
 
@@ -2740,7 +2740,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_x_ppk_sc_desc"] = "007보다는 킹스맨처럼 행동하고 싶을 때 적합합니다.",
 				--M13
 				["bm_legacy_sc_desc"] = "Bernetti가 결국 채택되면서 거부된 서독의 디자인이지만, 총격전에서도 여전히 그 자리를 굳건히 지킬 것입니다.",
-				["bm_x_legacy_sc_desc"] = "역사 속에서 잊혀진 두 개의 권총은 당신이 선택한 방에  총알 세례을 남길 것입니다.",
+				["bm_x_legacy_sc_desc"] = "역사 속에서 잊혀진 두 개의 권총은 당신이 원하는 방에 총알 세례를 남길 것입니다.",
 				--Glock 17
 				["bm_g17_sc_desc"] = "반동을 제어하기 쉽고 신뢰성이 높습니다. 강도 경력을 시작하기에 완벽한 권총이죠.",
 				["bm_x_g17_sc_desc"] = "엄청난 양의 화력으로 보잘것없는 9mm 탄을 보완하면서도 반동이 낮은 장점을 활용합니다.\n\n우리가 혹스턴을 탈옥시킬 때 혹스턴이 사용했죠.",
@@ -4273,7 +4273,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_basset_m_extended"] = "10rnd AGP Arms 탄창",
 					["bm_w_saiga"] = "Kalashnikov Concern Saiga-12K",
 					["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK 모듈식 레일 포엔드 시스템",
-					["bm_wp_saiga_m_20발"] = "20발 MD Arms 드럼 탄창",
+					["bm_wp_saiga_m_20rnd"] = "20발 MD Arms 드럼 탄창",
 					["bm_wp_saiga_fg_holy"] = "Fuglystick 레일 시스템",
 					--AA12
 					["bm_w_aa12"] = "MPS Auto Assault-12 CQB",

@@ -1076,7 +1076,7 @@
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
         <search>
             <xml/>
-            <state name="fps/reload/ak47"/>
+            <state name="fps/reload/ak74"/>
         </search>
         <target mode="attributes">
 			<attr name="type" value="mix"/>
@@ -1086,11 +1086,11 @@
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
         <search>
             <xml/>
-            <state name="fps/reload/ak47"/>
-			<anim name="ak47_reload"/>
+            <state name="fps/reload/ak74"/>
+			<anim name="ak74_rifle_reload"/>
         </search>
         <target mode="replace">
-			<anim name="ak47_reload" weight="ak74 * (1 - drum_mag)"/>
+			<anim name="ak74_rifle_reload" weight="ak74 * (1 - drum_mag)"/>
 			<anim name="ak74_reload_drum" weight="ak74 * drum_mag"/>
         </target>
     </tweak>
@@ -1098,7 +1098,7 @@
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
         <search>
             <xml/>
-            <state name="fps/reload/ak47"/>
+            <state name="fps/reload/ak74"/>
             <keys/>
             <key at="trigger" trigger="wp_clip_generic_ass_left"/>
         </search>
@@ -1113,7 +1113,7 @@
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
         <search>
             <xml/>
-            <state name="fps/reload_not_empty/ak47"/>
+            <state name="fps/reload_not_empty/ak74"/>
         </search>
         <target mode="attributes">
 			<attr name="type" value="mix"/>
@@ -1123,11 +1123,11 @@
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
         <search>
             <xml/>
-            <state name="fps/reload_not_empty/ak47"/>
-			<anim name="ak47_reload_not_empty"/>
+            <state name="fps/reload_not_empty/ak74"/>
+			<anim name="ak74_rifle_reload_not_empty"/>
         </search>
         <target mode="replace">
-			<anim name="ak47_reload_not_empty" weight="ak74 * (1 - drum_mag)"/>
+			<anim name="ak74_rifle_reload_not_empty" weight="ak74 * (1 - drum_mag)"/>
 			<anim name="ak74_reload_drum_not_empty" weight="ak74 * drum_mag"/>
         </target>
     </tweak>
@@ -1135,7 +1135,7 @@
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
         <search>
             <xml/>
-            <state name="fps/reload_not_empty/ak47"/>
+            <state name="fps/reload_not_empty/ak74"/>
             <keys/>
             <key at="trigger" trigger="wp_clip_generic_ass_left"/>
         </search>

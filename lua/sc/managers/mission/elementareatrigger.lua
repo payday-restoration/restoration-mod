@@ -42,7 +42,13 @@ local function check_executed_objects(area_trigger, current, recursion_depth)
 	end
 end
 
-Hooks:PostHook(ElementAreaTrigger, "on_set_enabled", "sh_on_set_enabled", check_executed_objects)
+-- on_set_enabled passes its enabled state as the first hook argument.
+-- Do not pass that boolean into check_executed_objects as the recursive "current" element.
+local function on_area_trigger_set_enabled(area_trigger, ...)
+	check_executed_objects(area_trigger)
+end
+
+Hooks:PostHook(ElementAreaTrigger, "on_set_enabled", "sh_on_set_enabled", on_area_trigger_set_enabled)
 
 -- Used to determine if players are in the escape zone if it becomes disabled after executing
 local function set_was_enabled(self)

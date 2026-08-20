@@ -1008,6 +1008,33 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 	end
 end)
 
+-- 64-bit compatibility: nav-segment neighbour entries can be userdata without script_data().
+-- Resolve the door position safely and fall back to the neighbour area's position.
+local function resmod_nav_door_position(door_id, fallback_pos)
+	if type(door_id) == "number" then
+		local room_door = managers.navigation._room_doors[door_id]
+		return room_door and room_door.center or fallback_pos
+	end
+
+	local ok, pos = pcall(function()
+		if not door_id or not door_id.script_data then
+			return nil
+		end
+
+		local script_data = door_id:script_data()
+		local element = script_data and script_data.element
+		if element and element.nav_link_end_pos then
+			return element:nav_link_end_pos()
+		end
+	end)
+
+	if ok and pos then
+		return pos
+	end
+
+	return fallback_pos
+end
+
 -- Helper to check if any group member has visuals on their focus target
 function GroupAIStateBesiege:_can_group_see_target(group, limit_range)
 	local logic_data, focus_enemy
@@ -1040,11 +1067,9 @@ function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, deto
 							if self._current_target_area and self._current_target_area.nav_segs[neighbour_nav_seg_id] then
 								local random_door_id = door_list[math.random(#door_list)]
 
-								if type(random_door_id) == "number" then
-									detonate_pos = managers.navigation._room_doors[random_door_id].center
-								else
-									detonate_pos = random_door_id:script_data().element:nav_link_end_pos()
-								end
+								local neighbour_area = self:get_area_from_nav_seg_id(neighbour_nav_seg_id)
+								local fallback_pos = neighbour_area and neighbour_area.pos or (self._current_target_area and self._current_target_area.pos)
+								detonate_pos = resmod_nav_door_position(random_door_id, fallback_pos)
 
 								break
 							end
@@ -1088,11 +1113,9 @@ function GroupAIStateBesiege:_chk_group_use_flash_grenade(group, task_data, deto
 							if self._current_target_area and self._current_target_area.nav_segs[neighbour_nav_seg_id] then
 								local random_door_id = door_list[math.random(#door_list)]
 
-								if type(random_door_id) == "number" then
-									detonate_pos = managers.navigation._room_doors[random_door_id].center
-								else
-									detonate_pos = random_door_id:script_data().element:nav_link_end_pos()
-								end
+								local neighbour_area = self:get_area_from_nav_seg_id(neighbour_nav_seg_id)
+								local fallback_pos = neighbour_area and neighbour_area.pos or (self._current_target_area and self._current_target_area.pos)
+								detonate_pos = resmod_nav_door_position(random_door_id, fallback_pos)
 
 								break
 							end
@@ -1156,11 +1179,8 @@ function GroupAIStateBesiege:_chk_group_use_grenade(assault_area, group, detonat
 			local area = self:get_area_from_nav_seg_id(neighbour_nav_seg_id)
 			if task_data.target_areas[1].nav_segs[neighbour_nav_seg_id] or next(area.criminal.units) then
 				local random_door_id = door_list[math_random(#door_list)]
-				if type(random_door_id) == "number" then
-					detonate_pos = managers.navigation._room_doors[random_door_id].center
-				else
-					detonate_pos = random_door_id:script_data().element:nav_link_end_pos()
-				end
+				local fallback_pos = area and area.pos or (task_data.target_areas[1] and task_data.target_areas[1].pos) or assault_area.pos
+				detonate_pos = resmod_nav_door_position(random_door_id, fallback_pos)
 				break
 			end
 		end

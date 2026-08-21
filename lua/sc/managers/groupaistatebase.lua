@@ -650,6 +650,13 @@ end
 -- If loud - count all players without a status (tased, downed, etc)
 -- Unless otherwise specified, team AI only count in loud
 function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers, include_team_ai)
+	-- 64-bit compatibility: newer vanilla balancing tables are not necessarily
+	-- expanded to Restoration/Big Lobby's maximum player count. Never index
+	-- beyond the last available array slot; saturate at the table's final value.
+	if type(balance_multipliers) ~= "table" then
+		return balance_multipliers
+	end
+
 	local whisper_mode = self:whisper_mode()
 	if include_team_ai == nil then
 		include_team_ai = not whisper_mode
@@ -664,7 +671,13 @@ function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers, include
 	end
 
 	nr_players = math.clamp(nr_players, 1, 22)
-	-- log("SC: Balance set for player count of = " .. tostring(nr_players))
+
+	local max_balance_index = #balance_multipliers
+	if max_balance_index > 0 then
+		return balance_multipliers[math.min(nr_players, max_balance_index)]
+	end
+
+	-- Preserve old behavior for a non-array table, if one is ever supplied.
 	return balance_multipliers[nr_players]
 end
 

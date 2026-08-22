@@ -254,23 +254,25 @@ function SecurityCamera:set_target_attention(attention)
 	self:stop_current_rotation(not attention)
 
 	if Network:is_server() then
+		local camera_can_sync = alive(self._unit) and self._unit:id() ~= -1
+
 		if attention then
 			if attention.handler then
 				local attention_unit = attention.handler:unit()
-				if attention_unit:id() ~= -1 then
-					managers.network:session():send_to_peers_synched("camera_set_attention", self._unit, attention_unit)
-				else
-					managers.network:session():send_to_peers_synched("camera_set_attention_pos", self._unit, attention.handler:get_detection_m_pos())
+				if camera_can_sync and alive(attention_unit) then
+					if attention_unit:id() ~= -1 then
+						managers.network:session():send_to_peers_synched("camera_set_attention", self._unit, attention_unit)
+					else
+						managers.network:session():send_to_peers_synched("camera_set_attention_pos", self._unit, attention.handler:get_detection_m_pos())
+					end
 				end
 
 				self:_add_attention_destroy_listener(attention)
-			else
+			elseif camera_can_sync and attention.pos then
 				managers.network:session():send_to_peers_synched("camera_set_attention_pos", self._unit, attention.pos)
 			end
-		else
-			if old_attention and self._unit:id() ~= -1 then
-				managers.network:session():send_to_peers_synched("camera_set_attention", self._unit, nil)
-			end
+		elseif old_attention and camera_can_sync then
+			managers.network:session():send_to_peers_synched("camera_set_attention", self._unit, nil)
 		end
 	else
 		if attention and attention.handler then

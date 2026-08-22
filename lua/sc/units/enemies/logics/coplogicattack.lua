@@ -398,7 +398,7 @@ function CopLogicAttack._update_cover(data)
 	local focus_enemy = data.attention_obj
 	local objective = data.objective
 
-	if not focus_enemy or not focus_enemy.nav_tracker or focus_enemy.reaction < AIAttentionObject.REACT_COMBAT or objective and objective.shield_cover_unit then
+	if not focus_enemy or not focus_enemy.nav_tracker or (focus_enemy.unit and not alive(focus_enemy.unit)) or focus_enemy.reaction < AIAttentionObject.REACT_COMBAT or objective and objective.shield_cover_unit then
 		if best_cover and mvector3.distance_sq(best_cover[1][1], data.m_pos) > 100 ^ 2 then
 			CopLogicAttack._set_best_cover(data, my_data, nil)
 		end

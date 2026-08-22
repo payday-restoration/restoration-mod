@@ -1906,6 +1906,9 @@
 	
 	<texture			path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_df"/>
 	<texture			path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_nm"/>
+	
+	<!--Vanilla npc dmr-->
+	<unit				path="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr" force_if_not_loaded="true"/>
 
 	<!--female cop husk fixes-->	
 	<unit				path="units/payday2/characters/ene_fbi_female_1/ene_fbi_female_1_husk" load="true" force="true" />	

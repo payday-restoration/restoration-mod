@@ -27,4 +27,10 @@
 		<self_illumination_texture file="units/payday2/characters/shared_textures/ene_acc_shield_lights_il" mip="4"/>
 		<variable value="sun" type="scalar" name="il_multiplier"/>
 	</material>
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+                <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+                <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
+                <diffuse_texture file="units/payday2/characters/shared_textures/ene_acc_shield_city_df"/>
+                <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+	</material>
 </materials>

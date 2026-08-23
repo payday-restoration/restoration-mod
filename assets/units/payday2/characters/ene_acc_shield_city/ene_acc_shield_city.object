@@ -49,6 +49,9 @@
 			<material materials="mtr_light_il_lod_1" max_distance="1500"/>
 			<material materials="mtr_light_il_lod_2"/>
 		</object>
+		<object name="g_glass" enabled="true">
+			<material materials="mtr_glass" max_distance="1000"/>
+		</object>
 	</graphics>
 
 </dynamic_object>

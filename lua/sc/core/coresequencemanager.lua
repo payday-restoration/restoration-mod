@@ -81,3 +81,175 @@ function CoreSequenceManager.UnitElement:reset_damage(unit)
 end
 
 --log("CoreSequenceManager changes loaded!")
+-- 64-bit Update 247 compatibility:
+-- Some converted/custom character sequence managers (notably dozer damage/armor
+-- sequences) can reference a Wwise sound source/object that does not exist on the
+-- runtime unit. Vanilla WwiseElement has unsafe stop/set_switch paths which call
+-- methods on a nil sound source. Keep valid sound behavior byte-for-byte equivalent;
+-- only skip the invalid sound operation and log enough context to identify the asset.
+local function resmod_sequence_sound_log(self, env, action, source, object, event)
+	local unit = env and env.dest_unit
+	local unit_name = unit and unit.name and tostring(unit:name()) or "[unknown unit]"
+	local tweak_name
+
+	if unit and unit.base and unit:base() then
+		tweak_name = unit:base()._tweak_table
+	end
+
+	log(string.format(
+		"[Restoration][64-bit][SequenceSound] skipped %s: missing sound source | unit=%s | tweak=%s | source=%s | object=%s | event=%s",
+		tostring(action),
+		unit_name,
+		tostring(tweak_name),
+		tostring(source),
+		tostring(object),
+		tostring(event)
+	))
+end
+
+function CoreSequenceManager.WwiseElement:_get_sound_source(env)
+	local unit = env and env.dest_unit
+
+	if not alive(unit) then
+		return nil
+	end
+
+	local source = self:run_parsed_func(env, self._source)
+	local object = self:run_parsed_func(env, self._object)
+	local sound_source
+
+	if source then
+		if source == "" then
+			sound_source = unit:sound_source()
+		else
+			sound_source = unit:sound_source(Idstring(source))
+		end
+
+		if not sound_source then
+			self:print_attribute_error("source", source, nil, true, env, nil)
+		end
+	elseif object then
+		local damage_ext = unit.damage and unit:damage()
+		sound_source = damage_ext and damage_ext:get_sound_source(object)
+
+		if not sound_source then
+			self:print_attribute_error("object", object, nil, true, env, nil)
+		end
+	end
+
+	return sound_source
+end
+
+function CoreSequenceManager.WwiseElement:play(env)
+	local unit = env and env.dest_unit
+
+	if not alive(unit) then
+		return
+	end
+
+	local source = self:run_parsed_func(env, self._source)
+	local object = self:run_parsed_func(env, self._object)
+	local event = self:run_parsed_func(env, self._event)
+	local skip_save = self:run_parsed_func(env, self._skip_save)
+	local switch = self:run_parsed_func(env, self._switch)
+	local sound_source = self:_get_sound_source(env)
+
+	if not event then
+		self:print_attribute_error("event", event, nil, true, env, nil)
+		return
+	end
+
+	if not sound_source then
+		resmod_sequence_sound_log(self, env, "play", source, object, event)
+		return
+	end
+
+	if switch then
+		local switches = string.split(switch, " ")
+		local i = 1
+
+		while i < #switches do
+			local switch_name = switches[i]
+			local value = switches[i + 1]
+			sound_source:set_switch(switch_name, value)
+			i = i + 2
+		end
+	end
+
+	sound_source:post_event(event)
+
+	if self.SAVE_STATE and not skip_save and source then
+		self:set_cat_state(unit, source, {
+			"post_event",
+			event
+		})
+	end
+end
+
+function CoreSequenceManager.WwiseElement:stop(env)
+	local unit = env and env.dest_unit
+
+	if not alive(unit) then
+		return
+	end
+
+	local source = self:run_parsed_func(env, self._source)
+	local object = self:run_parsed_func(env, self._object)
+	local event = self:run_parsed_func(env, self._event)
+
+	if not source then
+		self:print_attribute_error("source", source, nil, true, env, nil)
+	end
+
+	if not event then
+		self:print_attribute_error("event", event, nil, true, env, nil)
+		return
+	end
+
+	local sound_source = unit:sound_source(source and Idstring(source))
+
+	if not sound_source then
+		resmod_sequence_sound_log(self, env, "stop", source, object, event)
+		return
+	end
+
+	sound_source:stop()
+
+	if self.SAVE_STATE then
+		self:set_cat_state(unit, source, {
+			"stop",
+			event
+		})
+	end
+end
+
+function CoreSequenceManager.WwiseElement:set_switch(env)
+	local unit = env and env.dest_unit
+
+	if not alive(unit) then
+		return
+	end
+
+	local source = self:run_parsed_func(env, self._source)
+	local object = self:run_parsed_func(env, self._object)
+	local event = self:run_parsed_func(env, self._event)
+	local switch = self:run_parsed_func(env, self._switch)
+	local sound_source = self:_get_sound_source(env)
+
+	if not sound_source then
+		resmod_sequence_sound_log(self, env, "set_switch", source, object, event)
+		return
+	end
+
+	if switch then
+		local switches = string.split(switch, " ")
+		local i = 1
+
+		while i < #switches do
+			local switch_name = switches[i]
+			local value = switches[i + 1]
+			sound_source:set_switch(switch_name, value)
+			i = i + 2
+		end
+	end
+end

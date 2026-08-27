@@ -1,5 +1,5 @@
 <materials version="3" group="wpn_npc_m4">
-    <material name="mtr_m4" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+    <material name="mtr_mk16" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
         <bump_normal_texture file="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_nm"/>
         <diffuse_texture file="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_df"/>
     </material>

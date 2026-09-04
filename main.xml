@@ -542,7 +542,7 @@
 					<option type="bool" default_value="true" name="Info_revived_damage_reduction"/> <!-- Painkillers -->
 					<option type="bool" default_value="true" name="Info_revive_damage_reduction"/> <!-- Combat Medic -->
 					<option type="bool" default_value="true" name="Info_first_aid_damage_reduction"/> <!-- Quick Fix -->
-					<option type="bool" default_value="true" name="Info_uppers"/>   <!-- Uppers -->					
+					<option type="bool" default_value="true" name="Info_uppers"/>   <!-- Uppers -->
 					<option type="bool" default_value="true" name="Info_long_dis_revive"/> <!-- inspire -->
 					<option type="bool" default_value="true" name="Info_hostage_taker"/> <!-- inspire -->
 					<option type="bool" default_value="true" name="Info_body_expertise"/>
@@ -825,6 +825,7 @@
 	     script_data_type="custom_xml" ones to binary on load; handed over raw as a
 	     SuperBLT DB entry they are an access violation in coreenvironmentfeeder.
 	     Everything else is in superblt/ - see supermod.xml. -->
+	<AddFiles file="addhudmisc.xml"/>
 	<Package id="packages/envcore" file="environments.xml"/>
 	<Package id="packages/secret_stash" file="secret_stash.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/scenvlevels" file="addSC_env_levels.xml" use_clbk="self:LoadSCAssets"/>

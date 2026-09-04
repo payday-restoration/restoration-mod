@@ -19,9 +19,9 @@
 	<!-- Troublesome NPC assets go here! -->
 	<assets base_path="assets/">
 		<!-- decal mesh shit -->
-		<file name="settings/decals.decals" force="true"/>	
-		
-		<!-- character fixes and changes -->		
+		<file name="settings/decals.decals" force="true"/>
+
+		<!-- character fixes and changes -->
 		<group name="units/" dyn_package="false">
 			<!-- yufu wang hitboxes -->
 			<group :name="pd2_dlc_pent/characters/npc_male_yufuwang_armored/">
@@ -99,30 +99,30 @@
 			<group :name="payday2/equipment/gen_interactable_sec_safe_1x1_titan/">
 				<file :name="gen_interactable_sec_safe_1x1_titan.object"/>
 				<file :name="gen_interactable_sec_safe_1x1_titan.unit"/>
-			</group>	
+			</group>
 			<group :name="payday2/equipment/gen_interactable_sec_safe_1x05_titan/">
 				<file :name="gen_interactable_sec_safe_1x05_titan.object"/>
 				<file :name="gen_interactable_sec_safe_1x05_titan.unit"/>
-			</group>	
+			</group>
 			<group :name="payday2/equipment/gen_interactable_sec_safe_2x1_titan/">
 				<file :name="gen_interactable_sec_safe_2x1_titan.object"/>
 				<file :name="gen_interactable_sec_safe_2x1_titan.unit"/>
-			</group>	
+			</group>
 			<group :name="payday2/equipment/gen_interactable_sec_safe_2x05_titan/">
 				<file :name="gen_interactable_sec_safe_2x05_titan.object"/>
 				<file :name="gen_interactable_sec_safe_2x05_titan.unit"/>
-			</group>	
+			</group>
 			<group :name="payday2/equipment/gen_interactable_sec_safe_05x05_titan/">
 				<file :name="gen_interactable_sec_safe_05x05_titan.object"/>
 				<file :name="gen_interactable_sec_safe_05x05_titan.unit"/>
-			</group>			
+			</group>
 					-->
 		</group>
 
-		
-	
-	</assets>	
-	
+
+
+	</assets>
+
 
 	<!-- ///ASSET GROUPS\\\ -->
 	<!-- One file per faction under superblt/factions/, everything always-on under
@@ -142,7 +142,6 @@
 
 	<:include src="superblt/misc/america_misc.xml"/>
 	<:include src="superblt/misc/gensec_misc.xml"/>
-	<:include src="superblt/misc/hudmisc.xml"/>
 	<:include src="superblt/misc/mcshay_misc.xml"/>
 	<:include src="superblt/misc/miscassets.xml"/>
 	<:include src="superblt/misc/miscmutators.xml"/>

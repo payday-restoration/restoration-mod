@@ -253,3 +253,80 @@ function CoreSequenceManager.WwiseElement:set_switch(env)
 		end
 	end
 end
+
+
+-- ---------------------------------------------------------------------------
+-- Client-side guard for the spawn_unit sequence element.
+--
+-- SpawnUnitElement:activate_callback runs this on clients with no check that the
+-- unit is actually loaded:
+--
+--     local network_sync = PackageManager:unit_data(name:id()):network_sync()
+--
+-- unit_data returns nothing for a unit this client never loaded, and calling
+-- :network_sync() on that dereferences null. That is an access violation, not a
+-- Lua error, so nothing up the stack can catch it and the crash log carries no
+-- usable callstack.
+--
+-- Bulldozer armour is the usual way to reach it. One sequence manager is shared
+-- by every Zeal dozer variant, and its spawn_unit targets point at debris living
+-- under several different unit folders (ene_zeal_bulldozer_sc, _2_sc, _3_sc,
+-- pd2_dlc_drm/..., ene_bulldozer_minigun) while each dozer's .unit only declares
+-- depends_on for its own folder. Whether a given plate's debris is resident on a
+-- client therefore depends on what else spawned earlier in the heist - which is
+-- why it looks random and why the host never sees it.
+--
+-- Skipping the spawn costs one cosmetic armour plate on that client. That is
+-- strictly better than dropping them to desktop, and the log names the unit so
+-- the real gap can be closed in superblt_units.lua / superblt/*.xml.
+-- ---------------------------------------------------------------------------
+if CoreSequenceManager.SpawnUnitElement and not CoreSequenceManager.SpawnUnitElement._resmod_client_guard then
+	local SpawnUnitElement = CoreSequenceManager.SpawnUnitElement
+	SpawnUnitElement._resmod_client_guard = true
+
+	local _resmod_orig_activate = SpawnUnitElement.activate_callback
+	local ids_unit = Idstring("unit")
+	local warned = {}
+
+	function SpawnUnitElement:activate_callback(env, ...)
+		if Network:multiplayer() and Network:is_client() then
+			-- Evaluating the name attribute is side effect free; the original does
+			-- the same call a moment later.
+			local ok, name = pcall(self.run_parsed_func, self, env, self._name)
+
+			if ok and type(name) == "string" and name ~= "" then
+				local ok_ids, unit_ids = pcall(Idstring, name)
+
+				if ok_ids then
+					-- Mass units take a different path in the original that never
+					-- touches unit_data, so leave those alone.
+					local mass_ok, can_mass = pcall(function()
+						return MassUnitManager:can_spawn_unit(unit_ids)
+					end)
+
+					if not (mass_ok and can_mass) then
+						-- DB:has means registered; PackageManager:has means resident.
+						-- unit_data needs it resident.
+						local has_ok, is_loaded = pcall(function()
+							return PackageManager:has(ids_unit, unit_ids)
+						end)
+
+						if has_ok and not is_loaded then
+							if not warned[name] then
+								warned[name] = true
+								log("[RestorationMod] spawn_unit SKIPPED on client: '" .. name ..
+									"' is not loaded here - spawning it would crash inside " ..
+									"PackageManager:unit_data. Add it to lua/sc/superblt_units.lua " ..
+									"and make sure it is registered in superblt/*.xml.")
+							end
+
+							return
+						end
+					end
+				end
+			end
+		end
+
+		return _resmod_orig_activate(self, env, ...)
+	end
+end

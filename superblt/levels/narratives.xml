@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+
+	<!-- Heist worlds.
+	     Moved off BeardLib so the engine compiles them at load time.
+
+	     Each file below is XML text, not binary: SuperBLT runs it through
+	     ScriptSerializer and writes the running build's native ScriptData to
+	     <name>.sblt_autoconvert. Nothing ships pre-compiled, so a file authored in the
+	     32-bit layout can no longer reach a 64-bit engine unconverted.
+
+	     Registration only (dyn_package="false"). WorldDefinition pulls continents and
+	     missions through PackageManager:script_data, so the DB entry has to exist
+	     before the level's own package resolves - always-on at mod init, never a
+	     scripted group. -->
+	<group dyn_package="false">
+
+		<group name="levels/narratives/bain/big/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/blaine/deep/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/classics/flat/art_dhruva/">
+			<xml :name="art_dhruva.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/classics/flat/collision/">
+			<xml :name="collision.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/classics/flat/lights/">
+			<xml :name="lights.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/classics/flat/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/classics/man/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/continental/spa/regin_art/">
+			<xml :name="regin_art.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="regin_art.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/continental/spa/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/e_welcome_to_the_jungle/stage_1/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/elephant/born/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/elephant/mad/art2/">
+			<xml :name="art2.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/elephant/mad/collision/">
+			<xml :name="collision.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/elephant/mad/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/h_firestarter/stage_3/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/jiu/chas/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/brb/art/">
+			<xml :name="art.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/brb/christmas_props/">
+			<xml :name="christmas_props.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/brb/props/">
+			<xml :name="props.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/brb/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/des/art/">
+			<xml :name="art.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="art.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/des/props/">
+			<xml :name="props.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="props.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/des/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/sah/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/vit/art/">
+			<xml :name="art.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/vit/backdrop/">
+			<xml :name="backdrop.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/vit/collision/">
+			<xml :name="collision.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/vit/lights/">
+			<xml :name="lights.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/vit/props/">
+			<xml :name="props.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/vit/props1/">
+			<xml :name="props1.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/locke/vit/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/shayu/pent/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/skm/skm_bex/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/vlad/bex/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/vlad/peta/stage1/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/narratives/vlad/pines/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+	</group>
+
+</assets>

@@ -31,6 +31,12 @@ if not RestorationSuperMod then
 	-- dbpath key -> true, for every unit already handed to dyn_resource.
 	RestorationSuperMod.loaded_units = {}
 
+	-- "<extension>|<dbpath>" entries listed here are never handed to dyn_resource.
+	-- Use this to quarantine a unit that crashes the native loader until its
+	-- dependencies are fixed; ReportLastCrash prints the exact key to add.
+	RestorationSuperMod.blocked_units = {
+	}
+
 	-- Group names asked for before managers.dyn_resource existed. The <hooks> block runs
 	-- when lib/setups/gamesetup.lua is *required*, which is long before the managers are
 	-- built, and GameSetup:load_packages runs before init_managers too - so the first ask
@@ -64,6 +70,67 @@ if not RestorationSuperMod then
 	end
 
 	-- The generated { group_name = { {dbpath, extension}, ... } } table.
+	-- ------------------------------------------------------------------
+	-- Crash attribution for the asset loader.
+	--
+	-- dres:load hands the dbpath to PackageManager:load_temp_resource, which
+	-- resolves the unit's whole dependency chain in native code. If one of those
+	-- dependencies cannot be resolved on this install the game dies there with an
+	-- access violation - not a Lua error, so pcall cannot see it, and the C
+	-- callstack is meaningless because the retail binary is stripped (you get
+	-- AK::WriteBytes / sprintf / WSOCK32 noise).
+	--
+	-- So write down what we are about to hand over. If the file is still there on
+	-- the next boot, it names the unit that killed the last one.
+	-- ------------------------------------------------------------------
+	function RestorationSuperMod:_MarkerPath()
+		return self:ModPath() .. "last_asset.txt"
+	end
+
+	function RestorationSuperMod:_MarkLoading(text)
+		local ok, f = pcall(io.open, self:_MarkerPath(), "w")
+		if ok and f then
+			f:write(text)
+			f:close()
+		end
+	end
+
+	function RestorationSuperMod:_ClearMarker()
+		local ok, f = pcall(io.open, self:_MarkerPath(), "w")
+		if ok and f then
+			f:write("")
+			f:close()
+		end
+	end
+
+	-- Call once, early. Logs whatever the previous boot died on.
+	function RestorationSuperMod:ReportLastCrash()
+		local path = self:_MarkerPath()
+		if not io.file_is_readable(path) then
+			return
+		end
+
+		local ok, f = pcall(io.open, path, "r")
+		if not (ok and f) then
+			return
+		end
+
+		local text = f:read("*a")
+		f:close()
+
+		if text and text ~= "" then
+			log("[RestorationMod] ==============================================================")
+			log("[RestorationMod] The previous session died while loading this asset:")
+			log("[RestorationMod]     " .. text)
+			log("[RestorationMod] Its own DB entry was fine - the fault is in one of the files it")
+			log("[RestorationMod] references (.object/.model/.material_config/depends_on). Either")
+			log("[RestorationMod] fix that dependency or add the line above to")
+			log("[RestorationMod] RestorationSuperMod.blocked_units in supermod.lua.")
+			log("[RestorationMod] ==============================================================")
+			self:_ClearMarker()
+		end
+	end
+
 	function RestorationSuperMod:UnitLists()
 		if self._unit_lists == nil then
 			local file = self:ModPath() .. "lua/sc/superblt_units.lua"
@@ -113,11 +180,16 @@ if not RestorationSuperMod then
 				local ext_id = Idstring(extension)
 				local db_id = Idstring(dbpath)
 
-				if DB:has(ext_id, db_id) then
+				if self.blocked_units[key] then
+					skipped = skipped + 1
+					log("[RestorationMod] BLOCKED: " .. dbpath .. "." .. extension ..
+						" is quarantined in RestorationSuperMod.blocked_units")
+				elseif DB:has(ext_id, db_id) then
 					-- Mark it before the call: dyn_resource may run the callback inline,
 					-- and a dbpath must never be handed over twice.
 					self.loaded_units[key] = true
 					loaded = loaded + 1
+					self:_MarkLoading(key .. "   (list '" .. list_name .. "')")
 					dres:load(ext_id, db_id, package, nil)
 				else
 					missing = missing + 1
@@ -127,6 +199,9 @@ if not RestorationSuperMod then
 				end
 			end
 		end
+
+		-- Everything in this list survived, so nothing here killed us.
+		self:_ClearMarker()
 
 		return loaded, skipped, missing
 	end
@@ -186,6 +261,11 @@ end
 function RestorationSuperMod:FlushPending()
 	if not (managers and managers.dyn_resource) then
 		return
+	end
+
+	if not self._reported_last_crash then
+		self._reported_last_crash = true
+		pcall(function() self:ReportLastCrash() end)
 	end
 
 	local loaded, skipped, missing = self:LoadUnitList("_always")

@@ -1,7 +1,34 @@
+-- Idstring:t() gives the original text back when the hashlist knows it.
+local function _resmod_name(v)
+	local ok, s = pcall(function() return v:t() end)
+	return ok and s or tostring(v)
+end
+
 function CopInventory:add_unit_by_name(new_unit_name, equip)
-	managers.dyn_resource:load(Idstring("unit"), new_unit_name, managers.dyn_resource.DYN_RESOURCES_PACKAGE)
+	-- Handing dyn_resource a dbpath the DB does not know faults inside
+	-- load_temp_resource, and World:spawn_unit returns nothing for a unit that
+	-- never loaded - dereferencing that is an access violation, not a Lua error.
+	local ids_unit = Idstring("unit")
+
+	if not PackageManager:has(ids_unit, new_unit_name) then
+		if DB:has(ids_unit, new_unit_name) then
+			managers.dyn_resource:load(ids_unit, new_unit_name, managers.dyn_resource.DYN_RESOURCES_PACKAGE)
+		else
+			log("[RestorationMod] CopInventory: weapon '" .. _resmod_name(new_unit_name) ..
+				"' has no DB entry - skipping it rather than crashing in World:spawn_unit.")
+
+			return
+		end
+	end
 
 	local new_unit = World:spawn_unit(new_unit_name, Vector3(), Rotation())
+
+	if not alive(new_unit) then
+		log("[RestorationMod] CopInventory: World:spawn_unit returned nothing for '" ..
+			_resmod_name(new_unit_name) .. "'")
+
+		return
+	end
 
 	managers.mutators:modify_value("CopInventory:add_unit_by_name", self)
 	self:_chk_spawn_shield(new_unit)

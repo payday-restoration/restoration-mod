@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+
+	<!-- Instance worlds.
+	     Moved off BeardLib so the engine compiles them at load time.
+
+	     Each file below is XML text, not binary: SuperBLT runs it through
+	     ScriptSerializer and writes the running build's native ScriptData to
+	     <name>.sblt_autoconvert. Nothing ships pre-compiled, so a file authored in the
+	     32-bit layout can no longer reach a 64-bit engine unconverted.
+
+	     Registration only (dyn_package="false"). WorldDefinition pulls continents and
+	     missions through PackageManager:script_data, so the DB entry has to exist
+	     before the level's own package resolves - always-on at mod init, never a
+	     scripted group. -->
+	<group dyn_package="false">
+
+		<group name="levels/instances/shared/obj_skm/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/shared/skm_negotiator/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/are_security_room/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/bex/bex_drill/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/bex/bex_security_room/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/bex/bex_security_room2/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/born/born_armory/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/born/born_truck/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/chas/chas_security_room/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/corp/corp_security_room/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/dah/dah_security_room/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/dah/dah_security_room2/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/dah/dah_security_room3/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/dah/dah_security_room4/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/dah/dah_security_room5/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/fex/fex_security_room_left/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/fex/fex_security_room_right/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/hlm_random_left002/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/hlm_random_left003/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/hlm_random_right002/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/hlm_random_right003/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/hlm_vault/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/mex/mex_pump/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/mex/mex_tanker/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/mex/mex_vault/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/mus_security_room/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/pbr/pbr_mountain_surface/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/pbr/pbr_plane_cargo/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/pent/pent_coke/world/">
+			<xml :name="world.continent" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/pent/pent_helicopter_extraction/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/pent/pent_security_room/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/pent/pent_security_room_altdoor/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/red/red_camera_room/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/sah/sah_entrance_detector/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/sand/sand_security_room/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/sub_sewer_grate/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/sub_sewer_sidespawn/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/trai/trai_main_wagon/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+
+		<group name="levels/instances/unique/vit/vit_security_room/world/">
+			<xml :name="world.mission" from_type="generic_xml" to_type="binary"/>
+		</group>
+	</group>
+
+</assets>

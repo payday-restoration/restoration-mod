@@ -169,8 +169,8 @@
 				<param type="unit" />	<!-- observer unit -->
 				<param type="unit" />	<!-- target unit -->
 			</message>
-			<message name="cop_set_attention_pos" delivery="ordered" receiver="unit" check="server_to_client">
-				<param type="unit" />	<!-- cop unit -->
+			<message name="camera_set_attention_pos" delivery="ordered" receiver="unit" check="server_to_client">
+				<param type="unit" />	<!-- camera unit -->
 				<param type="vector3" />	<!-- target pos -->
 			</message>
 		</target>

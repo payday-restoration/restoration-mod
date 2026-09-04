@@ -18,7 +18,7 @@
 
 return {
 	["_always"] = {
-		-- 534 entries
+		-- 608 entries
 		{ "units/payday2/characters/ene_acc_altynvisor/ene_acc_altynvisor", "unit" },
 		{ "units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker", "unit" },
 		{ "units/payday2/characters/ene_acc_bulldozer_back/ene_acc_bulldozer_back", "unit" },
@@ -553,6 +553,93 @@ return {
 		{ "units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk", "unit" },
 		{ "units/weapons/gas_grenade/gas_grenade", "unit" },
 		{ "units/weapons/gas_grenade/gas_grenade_husk", "unit" },
+
+		-- NPC weapon units the mod adds itself. Nothing in the base game loads
+		-- these, and HuskCopInventory spawns them with no preload, so a client
+		-- that never loaded one dies in World:spawn_unit the moment the enemy
+		-- carrying it appears. Bulldozer weapons are the usual casualty.
+		{ "units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_summers_npc", "unit" },
+		{ "units/payday2/weapons/wpn_npc_aa12/wpn_npc_aa12", "unit" },
+		{ "units/payday2/weapons/wpn_npc_aa12_dozer/wpn_npc_aa12_dozer", "unit" },
+		{ "units/payday2/weapons/wpn_npc_benelli_dozer/wpn_npc_benelli_dozer", "unit" },
+		{ "units/payday2/weapons/wpn_npc_degle/wpn_npc_degle", "unit" },
+		{ "units/payday2/weapons/wpn_npc_hk21_dozer/wpn_npc_hk21_dozer", "unit" },
+		{ "units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc", "unit" },
+		{ "units/payday2/weapons/wpn_npc_lmg_m249_dozer/wpn_npc_lmg_m249_dozer", "unit" },
+		{ "units/payday2/weapons/wpn_npc_m32/wpn_npc_m32", "unit" },
+		{ "units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom", "unit" },
+		{ "units/payday2/weapons/wpn_npc_mp5_dozer/wpn_npc_mp5_dozer", "unit" },
+		{ "units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw", "unit" },
+		{ "units/payday2/weapons/wpn_npc_r870_dozer/wpn_npc_r870_dozer", "unit" },
+		{ "units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc", "unit" },
+		{ "units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc", "unit" },
+		{ "units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc", "unit" },
+		{ "units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun", "unit" },
+		{ "units/payday2/weapons/wpn_npc_rpg7/wpn_npc_rpg7", "unit" },
+		{ "units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc", "unit" },
+		{ "units/payday2/weapons/wpn_npc_saiga_dozer/wpn_npc_saiga_dozer", "unit" },
+		{ "units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc", "unit" },
+
+		-- Every NPC weapon, loaded at boot rather than per faction.
+		-- These used to sit in the per-faction lists or in no list at all, so
+		-- whether one was resident depended on which faction you had loaded.
+		-- HuskCopInventory spawns weapons with no preload, so a client that was
+		-- missing one died in World:spawn_unit the moment the enemy appeared.
+		-- 64-bit has the headroom; this trades a little memory for that whole
+		-- class of crash going away.
+		{ "units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar", "unit" },
+		{ "units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45", "unit" },
+		{ "units/payday2/weapons/wpn_npc_m60/wpn_npc_m60", "unit" },
+		{ "units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om", "unit" },
+		{ "units/payday2/weapons/wpn_npc_m60_om_dozer/wpn_npc_m60_om_dozer", "unit" },
+		{ "units/payday2/weapons/wpn_npc_r870/wpn_npc_r870", "unit" },
+		{ "units/payday2/weapons/wpn_npc_s553/wpn_npc_s553", "unit" },
+		{ "units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan", "unit" },
+		{ "units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2/wpn_fps_fla_mk2_summers_npc", "unit" },
+		{ "units/pd2_dlc_bex/weapons/wpn_npc_hajk/wpn_npc_hajk", "unit" },
+		{ "units/pd2_dlc_bex/weapons/wpn_npc_hk33/wpn_npc_hk33", "unit" },
+		{ "units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo", "unit" },
+		{ "units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500", "unit" },
+		{ "units/pd2_dlc_bex/weapons/wpn_npc_m500_dozer/wpn_npc_m500_dozer", "unit" },
+		{ "units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi", "unit" },
+		{ "units/pd2_dlc_pent/weapons/ene_acc_mel_sandsteel/ene_acc_mel_sandsteel", "unit" },
+		{ "units/pd2_dlc_pent/weapons/wpn_pm9_npc/x_pm9_npc", "unit" },
+		{ "units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr", "unit" },
+		{ "units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers", "unit" },
+		{ "units/pd2_dlc_vip/weapons/wpn_npc_hmg_spring/wpn_npc_hmg_spring", "unit" },
+		{ "units/pd2_dlc_vip/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak", "unit" },
+		{ "units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx", "unit" },
+		{ "units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc", "unit" },
+		{ "units/pd2_mod_bravo/weapons/wpn_npc_ak17_bravo/wpn_npc_ak17_bravo", "unit" },
+		{ "units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo", "unit" },
+		{ "units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo", "unit" },
+		{ "units/pd2_mod_bravo/weapons/wpn_npc_lmg_rpk74_bravo/wpn_npc_lmg_rpk74_bravo", "unit" },
+		{ "units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo", "unit" },
+		{ "units/pd2_mod_halloween/weapons/wpn_npc_mg42_hatman/wpn_npc_mg42_hatman", "unit" },
+		{ "units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_ak102/wpn_npc_ak102", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_ak103/wpn_npc_ak103", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_ak12/wpn_npc_ak12", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_ak47_sc/wpn_npc_ak47_sc", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_ak47_taser/wpn_npc_ak47_taser", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_akmsu_dozer/wpn_npc_akmsu_dozer", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_akmsu_tactical/wpn_npc_akmsu_tactical", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_aksu/wpn_npc_aksu", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_basscannon/wpn_npc_basscannon", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_fort_500_dozer/wpn_npc_fort_500_dozer", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_m32_large/wpn_npc_m32_large", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_pl14", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_x_pl14", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_rpk_dozer/wpn_npc_rpk_dozer", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/wpn_npc_sr2_sc", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_svd_noglint_sc/wpn_npc_svd_noglint_sc", "unit" },
+		{ "units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc", "unit" },
 	},
 
 	["america"] = {
@@ -1140,7 +1227,6 @@ return {
 		{ "units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex_husk", "unit" },
 		{ "units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex", "unit" },
 		{ "units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex_husk", "unit" },
-		{ "units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo", "unit" },
 		{ "units/pd2_mod_reapers/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1", "unit" },
 		{ "units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap", "unit" },
 		{ "units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx", "unit" },
@@ -1174,7 +1260,6 @@ return {
 		{ "units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2_husk", "unit" },
 		{ "units/pd2_mod_reapers/characters/ene_vip_2_assault/ene_vip_2_assault", "unit" },
 		{ "units/pd2_mod_reapers/characters/ene_vip_2_assault/ene_vip_2_assault_husk", "unit" },
-		{ "units/pd2_mod_reapers/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan", "unit" },
 	},
 
 	["lapd"] = {
@@ -1470,7 +1555,6 @@ return {
 		{ "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky_husk", "unit" },
 		{ "units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky", "unit" },
 		{ "units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky_husk", "unit" },
-		{ "units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo", "unit" },
 		{ "units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet", "unit" },
 		{ "units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck", "unit" },
 		{ "units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat", "unit" },
@@ -2070,7 +2154,6 @@ return {
 		{ "units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk", "unit" },
 		{ "units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield", "unit" },
 		{ "units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk", "unit" },
-		{ "units/pd2_mod_reapers/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan", "unit" },
 	},
 
 	["zombie"] = {

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+
+	<!-- Environments.
+	     Moved off BeardLib so the engine compiles them at load time.
+
+	     Each file below is XML text, not binary: SuperBLT runs it through
+	     ScriptSerializer and writes the running build's native ScriptData to
+	     <name>.sblt_autoconvert. Nothing ships pre-compiled, so a file authored in the
+	     32-bit layout can no longer reach a 64-bit engine unconverted.
+
+	     Registration only (dyn_package="false"). WorldDefinition pulls continents and
+	     missions through PackageManager:script_data, so the DB entry has to exist
+	     before the level's own package resolves - always-on at mod init, never a
+	     scripted group. -->
+	<group dyn_package="false">
+
+		<group name="environments/pd2_env_mid_day/">
+			<xml :name="pd2_env_mid_day.environment" from_type="custom_xml" to_type="binary"/>
+		</group>
+
+		<group name="environments/pd2_env_night/">
+			<xml :name="pd2_env_night.environment" from_type="custom_xml" to_type="binary"/>
+		</group>
+	</group>
+
+</assets>

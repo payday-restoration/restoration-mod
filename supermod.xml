@@ -140,6 +140,10 @@
 	<:include src="superblt/factions/russia.xml"/>
 	<:include src="superblt/factions/zombie.xml"/>
 
+	<:include src="superblt/levels/environments.xml"/>
+	<:include src="superblt/levels/instances.xml"/>
+	<:include src="superblt/levels/narratives.xml"/>
+
 	<:include src="superblt/misc/america_misc.xml"/>
 	<:include src="superblt/misc/gensec_misc.xml"/>
 	<:include src="superblt/misc/mcshay_misc.xml"/>

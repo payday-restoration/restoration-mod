@@ -1,0 +1,180 @@
+<table directory="assets">
+	<!--///LEVEL, ENVIRONMENT AND LOGO OVERRIDES\\\-->
+	<!-- These stay on BeardLib on purpose. The engine reads .environment through the
+	     environment feeder, which crashes outright (access violation in
+	     coreenvironmentfeeder.apply) when the file is swapped in as a raw SuperBLT DB
+	     entry. Level worlds, missions and continents are handled the same way for
+	     consistency. Everything else from addSC.xml lives in superblt/scassets.xml. -->
+
+	<environment		path="environments/pd2_env_night/pd2_env_night" force="true"/>
+	<environment		path="environments/pd2_env_mid_day/pd2_env_mid_day" force="true"/>
+	<mission			path="levels/instances/unique/hlm_random_left003/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_random_right003/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_random_left002/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_random_right002/world/world" force="true" unload="true"/>
+	<continent			path="levels/instances/unique/hlm_random_left002/world/world" force="true" unload="true"/>
+	<continent			path="levels/instances/unique/hlm_random_right002/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_vault/world/world" force="true" unload="true"/> <!-- https://www.youtube.com/watch?v=SpxvK9rOqvM -->
+	<mission			path="levels/instances/unique/sub_sewer_grate/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/sub_sewer_sidespawn/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/born/born_armory/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/born/born_truck/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/mex/mex_vault/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/mex/mex_pump/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/mex/mex_tanker/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/jiu/chas/world/world" force="true" unload="true"/> <!-- ~~Dragon~~ Dragan Heist -->
+	<continent			path="levels/narratives/vlad/peta/stage1/world/world" force="true" unload="true"/> <!-- Goat Sim D1 -->
+	<continent			path="levels/narratives/locke/sah/world/world" force="true" unload="true"/> <!-- Increase ziplines speed on Shacklethorne Auction -->
+	<mission			path="levels/instances/unique/trai/trai_main_wagon/world/world" force="true" unload="true"/> <!--10% chance of bravo dozer spawning inside the vault on very hard and above (loud only)-->
+	<mission			path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
+	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" />
+	<mission			path="levels/instances/unique/chas/chas_security_room/world/world" force="true" />
+	<mission			path="levels/instances/unique/sand/sand_security_room/world/world" force="true" />
+	<mission			path="levels/instances/unique/bex/bex_security_room/world/world" force="true" />
+	<mission			path="levels/instances/unique/bex/bex_security_room2/world/world" force="true" />
+	<continent			path="levels/instances/unique/bex/bex_security_room2/world/world" force="true"/>
+	<mission			path="levels/instances/unique/mus_security_room/world/world" force="true"/>
+	<mission			path="levels/instances/unique/vit/vit_security_room/world/world" force="true"/>
+	<mission			path="levels/instances/unique/are_security_room/world/world" force="true" />
+	<mission			path="levels/instances/unique/corp/corp_security_room/world/world" force="true"/>
+	<mission			path="levels/instances/unique/dah/dah_security_room/world/world" force="true"/>
+	<mission			path="levels/instances/unique/dah/dah_security_room2/world/world" force="true"/>
+	<mission			path="levels/instances/unique/dah/dah_security_room3/world/world" force="true"/>
+	<mission			path="levels/instances/unique/dah/dah_security_room4/world/world" force="true"/>
+	<mission			path="levels/instances/unique/dah/dah_security_room5/world/world" force="true"/>
+	<mission			path="levels/instances/unique/fex/fex_security_room_left/world/world" force="true"/>
+	<mission			path="levels/instances/unique/fex/fex_security_room_right/world/world" force="true"/>
+	<cover_data			path="levels/narratives/elephant/mad/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/elephant/mad/nav_manager_data" force="true" unload="true"/>
+	<mission			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/elephant/mad/art2/art2" force="true" unload="true"/>
+	<continent			path="levels/narratives/elephant/mad/collision/collision" force="true" unload="true"/>
+	<continent			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->
+	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
+	<continent			path="levels/narratives/locke/des/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/locke/des/art/art" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/des/art/art" force="true" unload="true"/>
+	<mission			path="levels/narratives/locke/des/props/props" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/des/props/props" force="true" unload="true"/>
+	<cover_data			path="levels/narratives/locke/des/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/locke/des/nav_manager_data" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/pbr/pbr_mountain_surface/world/world" force="true" unload="true"/> <!--Replaces most of the scripted spawns to have more variety with Murkies-->
+	<mission			path="levels/instances/unique/sah/sah_entrance_detector/world/world" force="true" unload="true"/> <!--replaced the casino guards with secret service (don't know why they are here in a first place)-->
+	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
+	<continent			path="levels/narratives/e_election_day/stage_2/world/world" force="true" unload="true"/>
+	<world_sounds		path="levels/narratives/mcshay/ranc/world_sounds" force="true" unload="true"/>
+	<mission			path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
+	<mission			path="levels/instances/shared/skm_negotiator/world/world" force="true" unload="true"/> <!-- disables modifier dialogue and re-enables an unused negotiator line for players going in custody.-->
+	<continent			path="levels/narratives/bain/big/world/world" force="true" unload="true"/> <!--you can now drill the small cashbox, money cassettes spawn-->
+	<cover_data			path="levels/narratives/h_firestarter/stage_3/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/h_firestarter/stage_3/nav_manager_data" force="true" unload="true"/>
+	<mission			path="levels/narratives/h_firestarter/stage_3/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/h_firestarter/stage_3/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/brb/art/art" force="true" unload="true"/><!--optimization-->	
+	<continent			path="levels/narratives/locke/brb/world/world" force="true" unload="true"/><!--optimization-->
+	<continent			path="levels/narratives/locke/brb/props/props" force="true" unload="true"/><!--optimization, money cassettes spawn-->
+	<continent			path="levels/narratives/locke/brb/christmas_props/christmas_props" force="true" unload="true"/><!--fuck the xmas assets-->
+	<continent			path="levels/narratives/locke/vit/art/art" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/backdrop/backdrop" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/collision/collision" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/lights/lights" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/props/props" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/props1/props1" force="true" unload="true"/>
+	<continent			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
+	<cover_data			path="levels/narratives/locke/vit/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/locke/vit/nav_manager_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
+	<continent			path="levels/narratives/vlad/bex/world/world" force="true" unload="true"/>  <!--removes tons of objects underneath the map-->
+	<mission			path="levels/instances/unique/bex/bex_drill/world/world" force="true" />
+	<continent			path="levels/instances/unique/bex/bex_drill/world/world" force="true" />
+	<continent			path="levels/narratives/skm/skm_bex/world/world" force="true" unload="true"/> <!--ditto but for Holdout version-->
+	<mission			path="levels/narratives/blaine/deep/world/world" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/blaine/deep/nav_manager_data" force="true" unload="true"/>
+	<continent			path="levels/instances/unique/kenaz/vault/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/skm/skm_cas/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/shayu/pent/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/shayu/pent/world/world" force="true" unload="true"/>
+	<continent			path="levels/instances/unique/pent/pent_coke/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/pent/pent_helicopter_extraction/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/pent/pent_security_room/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/pent/pent_security_room_altdoor/world/world" force="true" unload="true"/>
+	<cover_data			path="levels/narratives/continental/spa/cover_data" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/continental/spa/nav_manager_data" force="true" unload="true"/>
+	<continent			path="levels/narratives/continental/spa/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/continental/spa/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
+	<mission			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/pal/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/classics/man/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/man/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/man/shadow_caster/shadow_caster" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/classics/man/nav_manager_data" force="true" unload="true"/>
+	<cover_data			path="levels/narratives/classics/man/cover_data" force="true" unload="true"/>
+	<world				path="levels/narratives/classics/man/world" force="true"/>
+	<mission			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/classics/flat/nav_manager_data" force="true" unload="true"/>
+	<cover_data			path="levels/narratives/classics/flat/cover_data" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/flat/art_dhruva/art_dhruva" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/flat/lights/lights" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/flat/collision/collision" force="true" unload="true"/>
+
+	<!--///GUI TEXTURES\\\-->
+	<!-- Crimenet icons, the logo set and the info-hud skill icons, verbatim from
+	     addSC.xml. These are menu-time GUI, so they belong with the other BeardLib
+	     registrations rather than in a SuperBLT group. Note game_small_logo is the
+	     LOADING SCREEN logo - LightLoadingScreenGuiScript draws it at boot from a
+	     hardcoded 256x56 rect, before any mod registers anything, so the swap only
+	     shows from the second loading screen onward. -->
+	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/chill_combat"/>
+	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/fwb" force="true"/>
+	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/green_bridge" force="true"/>
+	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/panicroom" force="true"/>
+	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/slaughterhouse" force="true"/>
+	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/counterfeit" force="true"/>
+	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/undercover" force="true"/>
+	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/dah" force="true"/>
+	<texture			path="guis/dlcs/nmh/textures/pd2/crimenet/nmh" force="true"/>
+	<texture			path="guis/textures/game_small_logo" force="true"/>
+	<texture			path="guis/textures/menu_title_screen" force="true"/>
+	<texture			path="units/menu/menu_scene/menu_cylinder_logo" force="true"/>
+	<texture			path="guis/textures/pd2/skilltree/info_ammo_efficiency" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_single_shot_fast_reload" force="false" load="false"/> <!-- Aggressive Reload -->
+	<texture			path="guis/textures/pd2/skilltree/info_bloodthirst_reload_speed" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_bullet_storm" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_revive_damage_reduction" force="false" load="false"/> <!-- Combat Medic -->
+	<texture			path="guis/textures/pd2/skilltree/info_desperado" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_grinder" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_muscle" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_stoic" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_intelligence" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_sicario" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_sociopath" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_gambler" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_body_expertise" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_long_dis_revive" force="false" load="false"/> <!-- inspire -->
+	<texture			path="guis/textures/pd2/skilltree/info_hostage_taker" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_uppers" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_messiah" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_overkill_damage_multiplier" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_revived_damage_reduction" force="false" load="false"/> <!-- Painkillers -->
+	<texture			path="guis/textures/pd2/skilltree/info_first_aid_damage_reduction" force="false" load="false"/> <!-- Quick Fix -->
+	<texture			path="guis/textures/pd2/skilltree/info_bullseye" force="false" load="false"/> 
+	<texture			path="guis/textures/pd2/skilltree/info_rogue" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_crook" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_crew_chief" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_increased_movement_speed" force="false" load="false"/> <!-- Running From Death -->
+	<texture			path="guis/textures/pd2/skilltree/info_headshot_fire_rate_mult" force="false" load="false"/> <!-- Sharpshooter Ace -->
+	<texture			path="guis/textures/pd2/skilltree/info_trigger_happy" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_dmg_multiplier_outnumbered" force="false" load="false"/> <!-- Underdog -->
+	<texture			path="guis/textures/pd2/skilltree/info_unseen_strike" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_doctor_bag_health_regen" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_survive_one_hit" force="false" load="false"/> <!-- Yakuza Oni Irezumi -->
+	<texture			path="guis/textures/pd2/skilltree/info_sneaky_bastard" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_cohesion" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_heisters_in_aura" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/skilltree/info_dig_in_your_heels" force="false" load="false"/>
+
+</table>

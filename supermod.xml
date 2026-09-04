@@ -1,5 +1,12 @@
 <?xml version="1.0"?>
 <mod name="Restoration" global_key="restoration">
+
+	<hooks script_path="supermod.lua">
+		<group hook_id="lib/setups/">
+			<post :hook_id="gamesetup"/>
+			<post :hook_id="menusetup"/>
+		</group>
+	</hooks>
 	<tweak definition="restorationmod_network_tweak.xml"/>
 	<tweak definition="restorationmod_postprocessor_tweak.xml"/>
 	<tweak definition="restorationmod_defaultrendertemplates_tweak.xml"/>
@@ -78,7 +85,7 @@
 			</group>
 			<!-- object stuff -->
 			<group :name="pd2_dlc_pal/props/pal_prop_flames_of_love_boombox/">
-				<file :name="pal_prop_flames_of_love_boombox.sequence_manager"/> <!-- https://www.youtube.com/watch?v=D_e9GT9PqPQ -->
+				<xml :name="pal_prop_flames_of_love_boombox.sequence_manager" from_type="custom_xml" to_type="binary"/> <!-- https://www.youtube.com/watch?v=D_e9GT9PqPQ -->
 			</group>
 			<!-- Improve navigation data -->
 			<group name="levels/narratives/">
@@ -116,5 +123,33 @@
 	
 	</assets>	
 	
-	<!-- <:include src="addoutfit.xml"/> -->
+
+	<!-- ///ASSET GROUPS\\\ -->
+	<!-- One file per faction under superblt/factions/, everything always-on under
+	     superblt/misc/. Every group registers its DB entries at mod init and dyn-loads
+	     nothing; per-faction loading is driven from lua/sc/superblt_units.lua via
+	     RestorationSuperMod:LoadAssetGroup. Environments, level worlds and the logo stay
+	     on BeardLib - see the <Package> lines in main.xml. -->
+
+	<:include src="superblt/factions/america.xml"/>
+	<:include src="superblt/factions/fbi.xml"/>
+	<:include src="superblt/factions/federales.xml"/>
+	<:include src="superblt/factions/lapd.xml"/>
+	<:include src="superblt/factions/murkywater.xml"/>
+	<:include src="superblt/factions/nypd.xml"/>
+	<:include src="superblt/factions/russia.xml"/>
+	<:include src="superblt/factions/zombie.xml"/>
+
+	<:include src="superblt/misc/america_misc.xml"/>
+	<:include src="superblt/misc/gensec_misc.xml"/>
+	<:include src="superblt/misc/hudmisc.xml"/>
+	<:include src="superblt/misc/mcshay_misc.xml"/>
+	<:include src="superblt/misc/miscassets.xml"/>
+	<:include src="superblt/misc/miscmutators.xml"/>
+	<:include src="superblt/misc/murkywater_misc.xml"/>
+	<:include src="superblt/misc/omnia_misc.xml"/>
+	<:include src="superblt/misc/outfits.xml"/>
+	<:include src="superblt/misc/rex_gold.xml"/>
+	<:include src="superblt/misc/scassets.xml"/>
+
 </mod>

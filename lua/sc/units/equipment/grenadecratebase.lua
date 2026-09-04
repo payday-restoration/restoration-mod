@@ -3,7 +3,10 @@ function GrenadeCrateBase:take_grenade(unit)
 		return
 	end
 
-	local can_take_grenade = self:_can_take_grenade() and 1 or 0
+	-- _can_take_grenade(unit) feeds its argument to managers.network:get_peer_by_unit_safe,
+	-- and BaseNetworkSession:peer_by_unit does unit:key() with no nil guard. Dropping the
+	-- argument here is what crashes on any crate that still has grenades in it.
+	local can_take_grenade = self:_can_take_grenade(unit) and 1 or 0
 
 	if can_take_grenade == 1 then
 		unit:sound():play("pickup_ammo")
@@ -62,7 +65,7 @@ end
 function GrenadeCrateDeployableBase:take_grenade(unit)
 	local inventory = unit:inventory()
 
-	local can_take = self:_can_take_grenade() or inventory:need_ammo()
+	local can_take = self:_can_take_grenade(unit) or inventory:need_ammo()
 
 	if self._empty or not can_take or not managers.network:session() then
 		return

@@ -1,0 +1,720 @@
+<?xml version="1.0"?>
+<sequence_manager>
+	<unit>
+		<sequence editable_state="true" name="'appearance_reset'" triggable="true" once="true">
+			<object enabled="false" name="'g_glass'" />
+			<object enabled="false" name="'g_glass_lod1'" />
+			<object enabled="false" name="'g_body_cop_longsleeve'" />
+			<object enabled="false" name="'g_body_cop_longsleeve_lod1'" />
+			<object enabled="false" name="'g_body_cop_pistol'" />
+			<object enabled="false" name="'g_body_cop_pistol_lod1'" />
+			<object enabled="false" name="'g_body_cop_revolver'" />
+			<object enabled="false" name="'g_body_cop_revolver_lod1'" />
+			<object enabled="false" name="'g_body_cop_sg'" />
+			<object enabled="false" name="'g_body_cop_sg_lod1'" />
+			<object enabled="false" name="'g_body_cop_shortsleeve'" />
+			<object enabled="false" name="'g_body_cop_shortsleeve_lod1'" />
+			<object enabled="false" name="'g_body_cop_smg'" />
+			<object enabled="false" name="'g_body_cop_smg_lod1'" />
+			<object enabled="false" name="'g_body_fbi1'" />
+			<object enabled="false" name="'g_body_fbi1_lod1'" />
+			<object enabled="false" name="'g_body_fbi2'" />
+			<object enabled="false" name="'g_body_fbi2_lod1'" />
+			<object enabled="false" name="'g_body_fbi3'" />
+			<object enabled="false" name="'g_body_fbi3_lod1'" />
+			<object enabled="false" name="'g_body_pants_default'" />
+			<object enabled="false" name="'g_body_pants_default_lod1'" />
+			<object enabled="false" name="'g_body_pants_swat'" />
+			<object enabled="false" name="'g_body_pants_swat_lod1'" />
+			<object enabled="false" name="'g_body_patch_municipal'" />
+			<object enabled="false" name="'g_body_patch_municipal_lod1'" />
+			<object enabled="false" name="'g_face_a'" />
+			<object enabled="false" name="'g_face_a_lod1'" />
+			<object enabled="false" name="'g_face_b'" />
+			<object enabled="false" name="'g_face_b_lod1'" />
+			<object enabled="false" name="'g_face_c'" />
+			<object enabled="false" name="'g_face_c_lod1'" />
+			<object enabled="false" name="'g_face_d'" />
+			<object enabled="false" name="'g_face_d_lod1'" />
+			<object enabled="false" name="'g_face_e'" />
+			<object enabled="false" name="'g_face_e_lod1'" />
+			<object enabled="false" name="'g_gloves'" />
+			<object enabled="false" name="'g_gloves_lod1'" />
+			<object enabled="false" name="'g_hat_lod1'" />
+			<object enabled="false" name="'g_hat_lod2'" />
+			<object enabled="false" name="'g_hat_lod3'" />
+			<object enabled="false" name="'g_hat_lod4'" />
+			<object enabled="false" name="'g_hat_lod5'" />
+			<object enabled="false" name="'g_head_balaclava'" />
+			<object enabled="false" name="'g_head_balaclava_b'" />
+			<object enabled="false" name="'g_head_balaclava_b_lod1'" />
+			<object enabled="false" name="'g_head_balaclava_lod1'" />
+			<object enabled="false" name="'g_head_black_a_var1'" />
+			<object enabled="false" name="'g_head_black_a_var1_lod1'" />
+			<object enabled="false" name="'g_head_black_a_var2'" />
+			<object enabled="false" name="'g_head_black_a_var2_lod1'" />
+			<object enabled="false" name="'g_head_black_b_var3'" />
+			<object enabled="false" name="'g_head_black_b_var3_lod1'" />
+			<object enabled="false" name="'g_head_black_b_var4'" />
+			<object enabled="false" name="'g_head_black_b_var4_lod1'" />
+			<object enabled="false" name="'g_head_black_b_var5'" />
+			<object enabled="false" name="'g_head_black_b_var5_lod1'" />
+			<object enabled="false" name="'g_head_black_b_var6'" />
+			<object enabled="false" name="'g_head_black_b_var6_lod1'" />
+			<object enabled="false" name="'g_head_black_b_var7'" />
+			<object enabled="false" name="'g_head_black_b_var7_lod1'" />
+			<object enabled="false" name="'g_head_black_d_var1'" />
+			<object enabled="false" name="'g_head_black_d_var1_lod1'" />
+			<object enabled="false" name="'g_head_black_d_var2'" />
+			<object enabled="false" name="'g_head_black_d_var2_lod1'" />
+			<object enabled="false" name="'g_head_black_d_var3'" />
+			<object enabled="false" name="'g_head_black_d_var3_lod1'" />
+			<object enabled="false" name="'g_head_black_d_var4'" />
+			<object enabled="false" name="'g_head_black_d_var4_lod1'" />
+			<object enabled="false" name="'g_head_black_d_var5'" />
+			<object enabled="false" name="'g_head_black_d_var5_lod1'" />
+			<object enabled="false" name="'g_head_black_d_var6'" />
+			<object enabled="false" name="'g_head_black_d_var6_lod1'" />
+			<object enabled="false" name="'g_head_black_d_var7'" />
+			<object enabled="false" name="'g_head_black_d_var7_lod1'" />
+			<object enabled="false" name="'g_head_black_e_var1'" />
+			<object enabled="false" name="'g_head_black_e_var1_lod1'" />
+			<object enabled="false" name="'g_head_black_e_var2'" />
+			<object enabled="false" name="'g_head_black_e_var2_lod1'" />
+			<object enabled="false" name="'g_head_black_e_var3'" />
+			<object enabled="false" name="'g_head_black_e_var3_lod1'" />
+			<object enabled="false" name="'g_head_black_e_var4'" />
+			<object enabled="false" name="'g_head_black_e_var4_lod1'" />
+			<object enabled="false" name="'g_head_black_e_var5'" />
+			<object enabled="false" name="'g_head_black_e_var5_lod1'" />
+			<object enabled="false" name="'g_head_black_e_var6'" />
+			<object enabled="false" name="'g_head_black_e_var6_lod1'" />
+			<object enabled="false" name="'g_head_black_e_var7'" />
+			<object enabled="false" name="'g_head_black_e_var7_lod1'" />
+			<object enabled="false" name="'g_head_jocke'" />
+			<object enabled="false" name="'g_head_jocke_lod1'" />
+			<object enabled="false" name="'g_head_jonte'" />
+			<object enabled="false" name="'g_head_jonte_lod1'" />
+			<object enabled="false" name="'g_head_white_a_var1'" />
+			<object enabled="false" name="'g_head_white_a_var1_lod1'" />
+			<object enabled="false" name="'g_head_white_c_var1'" />
+			<object enabled="false" name="'g_head_white_c_var1_lod1'" />
+			<object enabled="false" name="'g_head_white_c_var2'" />
+			<object enabled="false" name="'g_head_white_c_var2_lod1'" />
+			<object enabled="false" name="'g_head_white_c_var3'" />
+			<object enabled="false" name="'g_head_white_c_var3_lod1'" />
+			<object enabled="false" name="'g_head_white_c_var4'" />
+			<object enabled="false" name="'g_head_white_c_var4_lod1'" />
+			<object enabled="false" name="'g_head_white_c_var5'" />
+			<object enabled="false" name="'g_head_white_c_var5_lod1'" />
+			<object enabled="false" name="'g_head_white_c_var6'" />
+			<object enabled="false" name="'g_head_white_c_var6_lod1'" />
+			<object enabled="false" name="'g_head_white_c_var7'" />
+			<object enabled="false" name="'g_head_white_c_var7_lod1'" />
+			<object enabled="false" name="'g_head_white_d_var1'" />
+			<object enabled="false" name="'g_head_white_d_var1_lod1'" />
+			<object enabled="false" name="'g_head_white_d_var2'" />
+			<object enabled="false" name="'g_head_white_d_var2_lod1'" />
+			<object enabled="false" name="'g_head_white_d_var3'" />
+			<object enabled="false" name="'g_head_white_d_var3_lod1'" />
+			<object enabled="false" name="'g_head_white_d_var4'" />
+			<object enabled="false" name="'g_head_white_d_var4_lod1'" />
+			<object enabled="false" name="'g_head_white_d_var5'" />
+			<object enabled="false" name="'g_head_white_d_var5_lod1'" />
+			<object enabled="false" name="'g_head_white_d_var6'" />
+			<object enabled="false" name="'g_head_white_d_var6_lod1'" />
+			<object enabled="false" name="'g_head_white_d_var7'" />
+			<object enabled="false" name="'g_head_white_d_var7_lod1'" />
+			<object enabled="false" name="'g_head_white_e_var1'" />
+			<object enabled="false" name="'g_head_white_e_var1_lod1'" />
+			<object enabled="false" name="'g_head_white_e_var2'" />
+			<object enabled="false" name="'g_head_white_e_var2_lod1'" />
+			<object enabled="false" name="'g_head_white_e_var3'" />
+			<object enabled="false" name="'g_head_white_e_var3_lod1'" />
+			<object enabled="false" name="'g_head_white_e_var4'" />
+			<object enabled="false" name="'g_head_white_e_var4_lod1'" />
+			<object enabled="false" name="'g_shades'" />
+			<object enabled="false" name="'g_shades_lod1'" />
+			<object enabled="false" name="'g_watch'" />
+			<object enabled="false" name="'g_watch_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'sleeve_short'" triggable="true" once="true">
+			<object enabled="true" name="'g_body_cop_shortsleeve'" />
+			<object enabled="true" name="'g_body_cop_shortsleeve_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'sleeve_long'" triggable="true" once="true">
+			<object enabled="true" name="'g_body_cop_longsleeve'" />
+			<object enabled="true" name="'g_body_cop_longsleeve_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'pants_default'" triggable="true" once="true">
+			<object enabled="true" name="'g_body_pants_default'" />
+			<object enabled="true" name="'g_body_pants_default_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'pants_swat'" triggable="true" once="true">
+			<object enabled="true" name="'g_body_pants_swat'" />
+			<object enabled="true" name="'g_body_pants_swat_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'patch'" triggable="true" once="true">
+			<object enabled="true" name="'g_body_patch_municipal'" />
+			<object enabled="true" name="'g_body_patch_municipal_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'watch'" triggable="true" once="true">
+			<object enabled="true" name="'g_watch'" />
+			<object enabled="true" name="'g_watch_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'gloves'" triggable="true" once="true">
+			<object enabled="true" name="'g_gloves'" />
+			<object enabled="true" name="'g_gloves_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'shades'" triggable="true" once="true">
+			<object enabled="true" name="'g_shades'" />
+			<object enabled="true" name="'g_shades_lod1'" />
+			<object enabled="true" name="'g_glass'" />
+			<object enabled="true" name="'g_glass_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'acc_nothing'" triggable="true" once="true" />
+		<sequence editable_state="true" name="'fbi_sleeve_random'" triggable="true" once="true">
+			<run_sequence name="'sleeve_'..pick('long','long','short','long')" />
+		</sequence>
+		<sequence editable_state="true" name="'sleeve_random'" triggable="true" once="true">
+			<run_sequence name="'sleeve_'..pick('short','short','short','long')" />
+		</sequence>
+		<sequence editable_state="true" name="'pants_random'" triggable="true" once="true">
+			<run_sequence name="'pants_'..pick('default','swat')" />
+		</sequence>
+		<sequence editable_state="true" name="'accessories_random'" triggable="true" once="true">
+			<run_sequence name="pick('acc_nothing','acc_nothing','watch','gloves')" />
+			<run_sequence name="pick('acc_nothing','acc_nothing','acc_nothing','shades')" />
+		</sequence>
+		<sequence editable_state="true" name="'hat_1'" triggable="true" once="true">
+			<object enabled="true" name="'g_hat_lod1'" />
+			<object enabled="true" name="'g_hat_lod2'" />
+		</sequence>
+		<sequence editable_state="true" name="'hat_2'" triggable="true" once="true">
+			<object enabled="true" name="'g_hat_lod1'" />
+			<object enabled="true" name="'g_hat_lod2'" />
+		</sequence>
+		<sequence editable_state="true" name="'hat_3'" triggable="true" once="true">
+			<object enabled="true" name="'g_hat_lod3'" />
+			<object enabled="true" name="'g_hat_lod4'" />
+		</sequence>
+		<sequence editable_state="true" name="'hat_4'" triggable="true" once="true">
+			<object enabled="true" name="'g_hat_lod3'" />
+			<object enabled="true" name="'g_hat_lod4'" />
+		</sequence>
+		<sequence editable_state="true" name="'hat_5'" triggable="true" once="true">
+			<object enabled="true" name="'g_hat_lod5'" />
+		</sequence>
+		<sequence editable_state="true" name="'hat_police_random'" triggable="true" once="true">
+			<run_sequence name="pick('acc_nothing','hat_1','hat_3','hat_5')" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_a_var1'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_a_var1'" />
+			<object enabled="true" name="'g_head_black_a_var1_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_a_var2'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_a_var2'" />
+			<object enabled="true" name="'g_head_black_a_var2_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_b_var3'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_b_var3'" />
+			<object enabled="true" name="'g_head_black_b_var3_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_b_var4'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_b_var4'" />
+			<object enabled="true" name="'g_head_black_b_var4_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_b_var5'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_b_var5'" />
+			<object enabled="true" name="'g_head_black_b_var5_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_b_var6'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_b_var6'" />
+			<object enabled="true" name="'g_head_black_b_var6_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_b_var7'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_b_var7'" />
+			<object enabled="true" name="'g_head_black_b_var7_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_d_var1'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_d_var1'" />
+			<object enabled="true" name="'g_head_black_d_var1_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_d_var2'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_d_var2'" />
+			<object enabled="true" name="'g_head_black_d_var2_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_d_var3'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_d_var3'" />
+			<object enabled="true" name="'g_head_black_d_var3_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_d_var4'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_d_var4'" />
+			<object enabled="true" name="'g_head_black_d_var4_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_d_var5'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_d_var5'" />
+			<object enabled="true" name="'g_head_black_d_var5_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_d_var6'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_d_var6'" />
+			<object enabled="true" name="'g_head_black_d_var6_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_d_var7'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_d_var7'" />
+			<object enabled="true" name="'g_head_black_d_var7_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_e_var1'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_e_var1'" />
+			<object enabled="true" name="'g_head_black_e_var1_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_e_var2'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_e_var2'" />
+			<object enabled="true" name="'g_head_black_e_var2_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_e_var3'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_e_var3'" />
+			<object enabled="true" name="'g_head_black_e_var3_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_e_var4'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_e_var4'" />
+			<object enabled="true" name="'g_head_black_e_var4_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_e_var5'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_e_var5'" />
+			<object enabled="true" name="'g_head_black_e_var5_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_e_var6'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_e_var6'" />
+			<object enabled="true" name="'g_head_black_e_var6_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_black_e_var7'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_black_e_var7'" />
+			<object enabled="true" name="'g_head_black_e_var7_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_jocke'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_jocke'" />
+			<object enabled="true" name="'g_head_jocke_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_jonte'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_jonte'" />
+			<object enabled="true" name="'g_head_jonte_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_a_var1'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_a_var1'" />
+			<object enabled="true" name="'g_head_white_a_var1_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_c_var1'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_c_var1'" />
+			<object enabled="true" name="'g_head_white_c_var1_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_c_var2'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_c_var2'" />
+			<object enabled="true" name="'g_head_white_c_var2_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_c_var3'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_c_var3'" />
+			<object enabled="true" name="'g_head_white_c_var3_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_c_var4'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_c_var4'" />
+			<object enabled="true" name="'g_head_white_c_var4_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_c_var5'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_c_var5'" />
+			<object enabled="true" name="'g_head_white_c_var5_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_c_var6'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_c_var6'" />
+			<object enabled="true" name="'g_head_white_c_var6_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_c_var7'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_c_var7'" />
+			<object enabled="true" name="'g_head_white_c_var7_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_d_var1'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_d_var1'" />
+			<object enabled="true" name="'g_head_white_d_var1_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_d_var2'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_d_var2'" />
+			<object enabled="true" name="'g_head_white_d_var2_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_d_var3'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_d_var3'" />
+			<object enabled="true" name="'g_head_white_d_var3_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_d_var4'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_d_var4'" />
+			<object enabled="true" name="'g_head_white_d_var4_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_d_var5'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_d_var5'" />
+			<object enabled="true" name="'g_head_white_d_var5_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_d_var6'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_d_var6'" />
+			<object enabled="true" name="'g_head_white_d_var6_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_d_var7'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_d_var7'" />
+			<object enabled="true" name="'g_head_white_d_var7_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_e_var1'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_e_var1'" />
+			<object enabled="true" name="'g_head_white_e_var1_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_e_var2'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_e_var2'" />
+			<object enabled="true" name="'g_head_white_e_var2_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_e_var3'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_e_var3'" />
+			<object enabled="true" name="'g_head_white_e_var3_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_actual_white_e_var4'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_white_e_var4'" />
+			<object enabled="true" name="'g_head_white_e_var4_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_exposed_random'" triggable="true" once="true">
+			<run_sequence name="pick('head_actual_black_a_var1','head_actual_black_a_var2','head_actual_black_b_var3','head_actual_black_b_var4','head_actual_black_b_var5','head_actual_black_b_var6','head_actual_black_b_var7','head_actual_black_d_var1','head_actual_black_d_var2','head_actual_black_d_var3','head_actual_black_d_var4','head_actual_black_d_var5','head_actual_black_d_var6','head_actual_black_d_var7','head_actual_black_e_var1','head_actual_black_e_var2','head_actual_black_e_var3','head_actual_black_e_var4','head_actual_black_e_var5','head_actual_black_e_var6','head_actual_black_e_var7','head_actual_jocke','head_actual_jonte','head_actual_white_a_var1','head_actual_white_c_var1','head_actual_white_c_var2','head_actual_white_c_var3','head_actual_white_c_var4','head_actual_white_c_var5','head_actual_white_c_var6','head_actual_white_c_var7','head_actual_white_d_var1','head_actual_white_d_var2','head_actual_white_d_var3','head_actual_white_d_var4','head_actual_white_d_var5','head_actual_white_d_var6','head_actual_white_d_var7','head_actual_white_e_var1','head_actual_white_e_var2','head_actual_white_e_var3','head_actual_white_e_var4')" />
+		</sequence>
+		<sequence editable_state="true" name="'face_a'" triggable="true" once="true">
+			<object enabled="true" name="'g_face_a'" />
+			<object enabled="true" name="'g_face_a_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'face_b'" triggable="true" once="true">
+			<object enabled="true" name="'g_face_b'" />
+			<object enabled="true" name="'g_face_b_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'face_c'" triggable="true" once="true">
+			<object enabled="true" name="'g_face_c'" />
+			<object enabled="true" name="'g_face_c_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'face_d'" triggable="true" once="true">
+			<object enabled="true" name="'g_face_d'" />
+			<object enabled="true" name="'g_face_d_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'face_e'" triggable="true" once="true">
+			<object enabled="true" name="'g_face_e'" />
+			<object enabled="true" name="'g_face_e_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'face_random'" triggable="true" once="true">
+			<run_sequence name="'face_'..pick('a','b','c','d','e')" />
+		</sequence>
+		<sequence editable_state="true" name="'balaclava_a'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_balaclava'" />
+			<object enabled="true" name="'g_head_balaclava_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'balaclava_b'" triggable="true" once="true">
+			<object enabled="true" name="'g_head_balaclava_b'" />
+			<object enabled="true" name="'g_head_balaclava_b_lod1'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_balaclava_random'" triggable="true" once="true">
+			<run_sequence name="'balaclava_'..pick('a','b')" />
+			<run_sequence name="'face_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'fbi3_head_random'" triggable="true" once="true">
+			<run_sequence name="'head_'..pick('balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','balaclava','exposed')" />
+		</sequence>
+		<sequence editable_state="true" name="'head_balaclava'" triggable="true" once="true">
+			<run_sequence name="'head_balaclava_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'head_exposed'" triggable="true" once="true">
+			<run_sequence name="'head_exposed_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'cop_pistol'" triggable="true" once="true">
+			<run_sequence name="'appearance_reset'" />
+			<object enabled="true" name="'g_body_cop_pistol'" />
+			<object enabled="true" name="'g_body_cop_pistol_lod1'" />
+			<run_sequence name="'pants_default'" />
+			<run_sequence name="'patch'" />
+			<run_sequence name="'head_exposed_random'" />
+			<run_sequence name="'sleeve_random'" />
+			<run_sequence name="'accessories_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'cop_revolver'" triggable="true" once="true">
+			<run_sequence name="'appearance_reset'" />
+			<object enabled="true" name="'g_body_cop_revolver'" />
+			<object enabled="true" name="'g_body_cop_revolver_lod1'" />
+			<run_sequence name="'pants_default'" />
+			<run_sequence name="'patch'" />
+			<run_sequence name="'hat_police_random'" />
+			<run_sequence name="'head_exposed_random'" />
+			<run_sequence name="'sleeve_random'" />
+			<run_sequence name="'accessories_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'cop_smg'" triggable="true" once="true">
+			<run_sequence name="'appearance_reset'" />
+			<object enabled="true" name="'g_body_cop_smg'" />
+			<object enabled="true" name="'g_body_cop_smg_lod1'" />
+			<run_sequence name="'pants_default'" />
+			<run_sequence name="'patch'" />
+			<run_sequence name="'hat_police_random'" />
+			<run_sequence name="'head_exposed_random'" />
+			<run_sequence name="'sleeve_random'" />
+			<run_sequence name="'accessories_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'cop_sg'" triggable="true" once="true">
+			<run_sequence name="'appearance_reset'" />
+			<object enabled="true" name="'g_body_cop_sg'" />
+			<object enabled="true" name="'g_body_cop_sg_lod1'" />
+			<run_sequence name="'pants_default'" />
+			<run_sequence name="'patch'" />
+			<run_sequence name="'hat_police_random'" />
+			<run_sequence name="'head_exposed_random'" />
+			<run_sequence name="'sleeve_random'" />
+			<run_sequence name="'accessories_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'fbi_1'" triggable="true" once="true">
+			<run_sequence name="'appearance_reset'" />
+			<object enabled="true" name="'g_body_fbi1'" />
+			<object enabled="true" name="'g_body_fbi1_lod1'" />
+			<material_config name="'units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1'" />
+			<run_sequence name="'pants_default'" />
+			<object enabled="false" name="'g_body_patch_municipal'" />
+			<object enabled="false" name="'g_body_patch_municipal_lod1'" />
+			<run_sequence name="'hat_5'" />
+			<run_sequence name="'head_exposed_random'" />
+			<run_sequence name="'sleeve_'..pick('long','long','short','long')" />
+			<run_sequence name="'accessories_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'fbi_2'" triggable="true" once="true">
+			<run_sequence name="'appearance_reset'" />
+			<object enabled="true" name="'g_body_fbi2'" />
+			<object enabled="true" name="'g_body_fbi2_lod1'" />
+			<material_config name="'units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1'" />
+			<run_sequence name="'pants_random'" />
+			<object enabled="false" name="'g_body_patch_municipal'" />
+			<object enabled="false" name="'g_body_patch_municipal_lod1'" />
+			<run_sequence name="'head_exposed_random'" />
+			<run_sequence name="'sleeve_'..pick('long','long','short','long')" />
+			<run_sequence name="'accessories_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'office_cop_1'" triggable="true" once="true">
+			<run_sequence name="'appearance_reset'" />
+			<object enabled="true" name="'g_body_fbi2'" />
+			<object enabled="true" name="'g_body_fbi2_lod1'" />
+			<material_config name="'units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1'" />
+			<run_sequence name="'pants_random'" />
+			<run_sequence name="'hat_5'" />
+			<run_sequence name="'head_exposed_random'" />
+			<run_sequence name="'sleeve_'..pick('long','long','short','long')" />
+			<run_sequence name="'accessories_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'office_cop_2'" triggable="true" once="true">
+			<run_sequence name="'appearance_reset'" />
+			<object enabled="true" name="'g_body_fbi1'" />
+			<object enabled="true" name="'g_body_fbi1_lod1'" />
+			<material_config name="'units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1'" />
+			<run_sequence name="'pants_default'" />
+			<run_sequence name="'head_exposed_random'" />
+			<run_sequence name="'sleeve_'..pick('long','long','short','long')" />
+			<run_sequence name="'accessories_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'fbi_3'" triggable="true" once="true">
+			<run_sequence name="'appearance_reset'" />
+			<object enabled="true" name="'g_body_fbi3'" />
+			<object enabled="true" name="'g_body_fbi3_lod1'" />
+			<material_config name="'units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1'" />
+			<run_sequence name="'pants_random'" />
+			<object enabled="false" name="'g_body_patch_municipal'" />
+			<object enabled="false" name="'g_body_patch_municipal_lod1'" />
+			<run_sequence name="'fbi3_head_random'" />
+			<run_sequence name="'accessories_random'" />
+		</sequence>
+		<sequence editable_state="true" name="'disable_hitbox'" triggable="true">
+			<body enabled="false" name="'body'" />
+			<body enabled="false" name="'Head'" />
+			<body enabled="false" name="'rag_LeftLeg'" />
+			<body enabled="false" name="'rag_RightLeg'" />
+			<body enabled="false" name="'rag_RightUpLeg'" />
+			<body enabled="false" name="'rag_LeftUpLeg'" />
+		</sequence>
+		<sequence editable_state="true" name="'leg_arm_hitbox'" triggable="true">
+			<body enabled="true" name="'body'" />
+			<body enabled="true" name="'Head'" />
+			<body enabled="false" motion="'keyframed'" name="'rag_Hips'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_LeftUpLeg'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_RightUpLeg'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_LeftLeg'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_RightLeg'" />
+			<body enabled="false" motion="'keyframed'" name="'rag_Spine'" />
+			<body enabled="false" motion="'keyframed'" name="'rag_Spine1'" />
+			<body enabled="false" motion="'keyframed'" name="'rag_Spine2'" />
+			<body enabled="false" motion="'keyframed'" name="'rag_LeftForeArm'" />
+			<body enabled="false" motion="'keyframed'" name="'rag_RightForeArm'" />
+			<body enabled="false" motion="'keyframed'" name="'rag_LeftArm'" />
+			<body enabled="false" motion="'keyframed'" name="'rag_RightArm'" />
+			<body enabled="false" motion="'keyframed'" name="'rag_Head'" />
+			<constraint enabled="false" name="'LeftUpLeg'" />
+			<constraint enabled="false" name="'RightUpLeg'" />
+			<constraint enabled="false" name="'LeftLeg'" />
+			<constraint enabled="false" name="'RightLeg'" />
+			<constraint enabled="false" name="'Spine'" />
+			<constraint enabled="false" name="'Spine1'" />
+			<constraint enabled="false" name="'Spine2'" />
+			<constraint enabled="false" name="'LeftForeArm'" />
+			<constraint enabled="false" name="'RightForeArm'" />
+			<constraint enabled="false" name="'LeftArm'" />
+			<constraint enabled="false" name="'RightArm'" />
+			<constraint enabled="false" name="'Head'" />
+		</sequence>
+		<sequence editable_state="true" name="'prepare_ragdoll'" triggable="true">
+			<body enabled="false" motion="'dynamic'" name="'rag_Hips'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_LeftUpLeg'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_RightUpLeg'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_LeftLeg'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_RightLeg'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_Spine'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_Spine1'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_Spine2'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_LeftForeArm'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_RightForeArm'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_LeftArm'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_RightArm'" />
+			<body enabled="false" motion="'dynamic'" name="'rag_Head'" />
+		</sequence>
+		<sequence editable_state="true" name="'switch_to_ragdoll'" triggable="true">
+			<body enabled="false" name="'body'" />
+			<body enabled="false" name="'Head'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_Hips'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftLeg'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightLeg'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_Spine'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_Spine1'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_Spine2'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftForeArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightForeArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_Head'" />
+			<constraint enabled="true" name="'LeftUpLeg'" />
+			<constraint enabled="true" name="'RightUpLeg'" />
+			<constraint enabled="true" name="'LeftLeg'" />
+			<constraint enabled="true" name="'RightLeg'" />
+			<constraint enabled="true" name="'Spine'" />
+			<constraint enabled="true" name="'Spine1'" />
+			<constraint enabled="true" name="'Spine2'" />
+			<constraint enabled="true" name="'LeftForeArm'" />
+			<constraint enabled="true" name="'RightForeArm'" />
+			<constraint enabled="true" name="'LeftArm'" />
+			<constraint enabled="true" name="'RightArm'" />
+			<constraint enabled="true" name="'Head'" />
+		</sequence>
+		<sequence editable_state="true" name="'freeze_ragdoll'" triggable="true">
+			<body motion="'fixed'" name="'rag_Hips'" />
+			<body motion="'fixed'" name="'rag_LeftUpLeg'" />
+			<body motion="'fixed'" name="'rag_RightUpLeg'" />
+			<body motion="'fixed'" name="'rag_LeftLeg'" />
+			<body motion="'fixed'" name="'rag_RightLeg'" />
+			<body motion="'fixed'" name="'rag_Spine'" />
+			<body motion="'fixed'" name="'rag_Spine1'" />
+			<body motion="'fixed'" name="'rag_Spine2'" />
+			<body motion="'fixed'" name="'rag_LeftForeArm'" />
+			<body motion="'fixed'" name="'rag_RightForeArm'" />
+			<body motion="'fixed'" name="'rag_LeftArm'" />
+			<body motion="'fixed'" name="'rag_RightArm'" />
+			<body motion="'fixed'" name="'rag_Head'" />
+			<body motion="'fixed'" name="'jig_holster_right'" />
+			<body motion="'fixed'" name="'jig_holster_left'" />
+			<body motion="'fixed'" name="'body_holster_right'" />
+			<body motion="'fixed'" name="'body_holster_left'" />
+			<constraint enabled="false" name="'LeftUpLeg'" />
+			<constraint enabled="false" name="'RightUpLeg'" />
+			<constraint enabled="false" name="'LeftLeg'" />
+			<constraint enabled="false" name="'RightLeg'" />
+			<constraint enabled="false" name="'Spine'" />
+			<constraint enabled="false" name="'Spine1'" />
+			<constraint enabled="false" name="'Spine2'" />
+			<constraint enabled="false" name="'LeftForeArm'" />
+			<constraint enabled="false" name="'RightForeArm'" />
+			<constraint enabled="false" name="'LeftArm'" />
+			<constraint enabled="false" name="'RightArm'" />
+			<constraint enabled="false" name="'Head'" />
+			<constraint enabled="false" name="'h_holster_left'" />
+			<constraint enabled="false" name="'h_holster_right'" />
+		</sequence>
+		<sequence editable_state="false" name="'swich_for_test'" triggable="false">
+			<body enabled="false" name="'body'" />
+			<body enabled="false" name="'Head'" />
+			<body enabled="false" name="'mover_blocker'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_Hips'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_LeftUpLeg'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_RightUpLeg'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_LeftLeg'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_RightLeg'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_Spine'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_Spine1'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_Spine2'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_LeftForeArm'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_RightForeArm'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_LeftArm'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_RightArm'" />
+			<body enabled="true" motion="'keyframed'" name="'rag_Head'" />
+			<constraint enabled="true" name="'LeftUpLeg'" />
+			<constraint enabled="true" name="'RightUpLeg'" />
+			<constraint enabled="true" name="'LeftLeg'" />
+			<constraint enabled="true" name="'RightLeg'" />
+			<constraint enabled="true" name="'Spine'" />
+			<constraint enabled="true" name="'Spine1'" />
+			<constraint enabled="true" name="'Spine2'" />
+			<constraint enabled="true" name="'LeftForeArm'" />
+			<constraint enabled="true" name="'RightForeArm'" />
+			<constraint enabled="true" name="'LeftArm'" />
+			<constraint enabled="true" name="'RightArm'" />
+			<constraint enabled="true" name="'Head'" />
+		</sequence>
+		<sequence editable_state="true" name="'activate_ragdoll_left_arm'" triggable="true">
+			<run_sequence name="'swich_for_test'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftForeArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftArm'" />
+		</sequence>
+		<sequence editable_state="true" name="'activate_ragdoll_right_arm'" triggable="true">
+			<run_sequence name="'swich_for_test'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightForeArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightArm'" />
+		</sequence>
+		<sequence editable_state="true" name="'activate_ragdoll_arms'" triggable="true">
+			<run_sequence name="'swich_for_test'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightForeArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftForeArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftArm'" />
+		</sequence>
+		<sequence editable_state="true" name="'activate_ragdoll_head'" triggable="true">
+			<run_sequence name="'swich_for_test'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_Head'" />
+		</sequence>
+		<sequence editable_state="true" name="'activate_ragdoll_spine'" triggable="true">
+			<run_sequence name="'swich_for_test'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_Head'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightForeArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftForeArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftArm'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_Spine'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_Spine1'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_Spine2'" />
+		</sequence>
+		<sequence editable_state="true" name="'activate_ragdoll_left_leg'" triggable="true">
+			<run_sequence name="'swich_for_test'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftLeg'" />
+		</sequence>
+		<sequence editable_state="true" name="'activate_ragdoll_right_leg'" triggable="true">
+			<run_sequence name="'swich_for_test'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightLeg'" />
+		</sequence>
+		<sequence editable_state="true" name="'activate_ragdoll_legs'" triggable="true">
+			<run_sequence name="'swich_for_test'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_RightLeg'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg'" />
+			<body enabled="true" motion="'dynamic'" name="'rag_LeftLeg'" />
+		</sequence>
+	</unit>
+</sequence_manager>

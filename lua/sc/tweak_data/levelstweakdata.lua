@@ -77,12 +77,12 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.arm_for.ai_group_type = murkywater 
 	self.arm_for.player_style = "sneak_suit"
 	
-	self.mex.package = {"packages/miscassets", "packages/job_mex"}
+	self.mex.package = {"packages/job_mex"}
 	self.mex.ai_group_type = murkywater 
 	self.mex.player_style = "suit_sunny"
 
-	self.welcome_to_the_jungle_1.package = {"packages/narr_jungle1", "packages/miscassets"}
-	self.welcome_to_the_jungle_1_night.package = {"packages/narr_jungle1_night", "packages/miscassets"} 
+	self.welcome_to_the_jungle_1.package = {"packages/narr_jungle1"}
+	self.welcome_to_the_jungle_1_night.package = {"packages/narr_jungle1_night"} 
 	self.welcome_to_the_jungle_2.ai_group_type = murkywater
 	self.welcome_to_the_jungle_2.player_style = "sneak_suit"	
 
@@ -152,7 +152,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.tag.ai_group_type = fbi
 	
-	self.man.package = {"packages/narr_man", "packages/secret_stash"}
+	self.man.package = {"packages/narr_man"}
 	self.man.player_style = "slaughterhouse"
 	self.man.ai_group_type = fbi
 	self.man.teams = {
@@ -228,7 +228,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.fish.player_style = "tux"
 	
 	self.brb.ai_group_type = nypd
-	self.brb.package = {"packages/lvl_brb", "packages/murkywatermisc"}
+	self.brb.package = {"packages/lvl_brb"}
 	self.brb.player_style = "peacoat"
 	
 	self.red2.ai_group_type = nypd
@@ -236,7 +236,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.run.ai_group_type = nypd
 	
 	self.flat.ai_group_type = nypd
-	self.flat.package = {"packages/miscassets", "packages/narr_flat"}
+	self.flat.package = {"packages/narr_flat"}
 	
 	self.glace.ai_group_type = nypd
 	self.glace.flashlights_on = true
@@ -246,7 +246,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dah.flashlights_on = true
 	
 	self.dinner.ai_group_type = nypd
-	self.dinner.package = {"packages/narr_dinner", "packages/murkywatermisc"}
+	self.dinner.package = {"packages/narr_dinner"}
 	self.dinner.player_style = "slaughterhouse"
 	
 	self.nmh.ai_group_type = nypd
@@ -259,11 +259,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pal.ai_group_type = lapd
 	
 	self.friend.ai_group_type = lapd
-	self.friend.package = {"packages/lvl_friend", "packages/miscassets"}
+	self.friend.package = {"packages/lvl_friend"}
 	self.friend.player_style = "suit_sunny"
 	
 	self.kenaz.ai_group_type = lapd
-	self.kenaz.package = {"packages/kenaz", "packages/rex_gold"}	
+	self.kenaz.package = {"packages/kenaz"}	
 	self.kenaz.player_style = "continental"		
 
 	self.rvd1.ai_group_type = lapd
@@ -283,16 +283,16 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.chca.player_style = "continental"
 
 	self.pent.ai_group_type = lapd
-	self.pent.package = {"packages/job_pent", "packages/miscassets", "levels/instances/unique/sah/sah_office/world/world"}
+	self.pent.package = {"packages/job_pent", "levels/instances/unique/sah/sah_office/world/world"}
 	self.pent.player_style = "enforcer"
 	self.pent.max_bags = 17
 	
 	--[[GENSEC STUFF\\-- i don't care i'm disabling these stupid jeffy tier changes
-	self.arm_cro.package = {"packages/narr_arm_cro", "packages/gensecmisc"}
-	self.arm_fac.package = {"packages/narr_arm_fac", "packages/gensecmisc"}
-	self.arm_hcm.package = {"packages/narr_arm_hcm", "packages/gensecmisc"}
-	self.arm_par.package = {"packages/narr_arm_par", "packages/gensecmisc"}
-	self.arm_und.package = {"packages/narr_arm_und", "packages/gensecmisc"}
+	self.arm_cro.package = {"packages/narr_arm_cro"}
+	self.arm_fac.package = {"packages/narr_arm_fac"}
+	self.arm_hcm.package = {"packages/narr_arm_hcm"}
+	self.arm_par.package = {"packages/narr_arm_par"}
+	self.arm_und.package = {"packages/narr_arm_und"}
 	--]]
 	--///NEW OUTFITS\\\--
 	
@@ -306,7 +306,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.arena.player_style = "hiphop"
 
-	self.born.package = {"packages/narr_born_1", "packages/miscassets"}	
+	self.born.package = {"packages/narr_born_1"}	
 	self.born.player_style = "punk"
 	
 	
@@ -346,12 +346,12 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.chew.player_style = "loud_suit"
 	
-	self.pbr2.package = {"packages/narr_jerry2", "packages/murkywatermisc"}
+	self.pbr2.package = {"packages/narr_jerry2"}
 	self.pbr2.player_style = "loud_suit"
 	
 	self.mia_1.player_style = "miami"
-	self.mia_1.package = {"packages/narr_mia_1", "packages/miscassets"}
-	self.mia_2.package = {"packages/narr_mia_2", "packages/miscassets"}		
+	self.mia_1.package = {"packages/narr_mia_1"}
+	self.mia_2.package = {"packages/narr_mia_2"}		
 	self.mia_2.player_style = "miami"
 
 	self.mia_2.teams = {
@@ -417,7 +417,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
 	self.mia2_new.teams = self.mia_2.teams
 
-	self.cane.package = {"packages/cane", "packages/miscassets"}
+	self.cane.package = {"packages/cane"}
 	self.cane.player_style = "winter_suit"
 							
 	self.mus.package = {"packages/narr_mus"}
@@ -513,16 +513,16 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pines.flashlights_on = true
 	-- Boiling Point
 	self.mad.player_style = "winter_suit"
-	self.mad.package = { "packages/lvl_mad" , "packages/murkywatermisc" }
+	self.mad.package = { "packages/lvl_mad"  }
 	--Bomb: Forest--
 	self.crojob3.ai_group_type = russia			
 	self.crojob3.player_style = "loud_suit"
-	self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/murkywatermisc"}
+	self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3"}
 
 	self.crojob3_night.ai_group_type = russia				
 	self.crojob3_night.player_style = "loud_suit"		
 	self.crojob3_night.flashlights_on = true
-	self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/murkywatermisc"}
+	self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night"}
 	
 	--///BAG FIXES\\\--
 	self.pbr2.max_bags = 20
@@ -553,32 +553,32 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.deep.ghost_bonus = 0.20
 	
 	--///SKIRMISH shit\\\--
-	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_lapd"}
+	self.skm_cas.package = {"packages/dlcs/skm/job_skm"}
 	self.skm_cas.ai_group_type = lapd
 	self.skm_cas.player_style = "continental"		
 
-	self.skm_bex.package = {"packages/skm_sc_federales", "packages/dlcs/skm/job_bex_skm"}
+	self.skm_bex.package = {"packages/dlcs/skm/job_bex_skm"}
 
 	self.skm_run.ai_group_type = nypd
-	self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_nypd"}
+	self.skm_run.package = {"packages/dlcs/skm/job_skm"}
 	
 	self.skm_red2.ai_group_type = nypd
-	self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_nypd"}
+	self.skm_red2.package = {"packages/dlcs/skm/job_skm"}
 		
-	self.skm_mus.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	self.skm_mus.package = {"packages/dlcs/skm/job_skm"}
 	self.skm_mus.player_style = "sneak_suit"
 	
-	self.skm_watchdogs_stage2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_murkywater"}
+	self.skm_watchdogs_stage2.package = {"packages/dlcs/skm/job_skm"}
 	self.skm_watchdogs_stage2.player_style = "loud_suit"
 	self.skm_watchdogs_stage2.ai_group_type = murkywater
 	
-	self.skm_mallcrasher.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	self.skm_mallcrasher.package = {"packages/dlcs/skm/job_skm"}
 	self.skm_mallcrasher.player_style = "suit_sunny"
 	
-	self.skm_arena.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	self.skm_arena.package = {"packages/dlcs/skm/job_skm"}
 	self.skm_arena.player_style = "hiphop"
 		
-	self.skm_big2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	self.skm_big2.package = {"packages/dlcs/skm/job_skm"}
 end)
 
 function LevelsTweakData:get_ai_group_type()

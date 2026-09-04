@@ -25,8 +25,8 @@ function MenuSetup:load_packages()
     if not PackageManager:loaded("packages/addhudmisc") then
         PackageManager:load("packages/addhudmisc")
     end
-    if not PackageManager:loaded("packages/scassets") then
-        PackageManager:load("packages/scassets")
+    if not PackageManager:loaded("packages/scenvlevels") then
+        PackageManager:load("packages/scenvlevels")
     end
     if not PackageManager:loaded("packages/outfitassets") then
         PackageManager:load("packages/outfitassets")

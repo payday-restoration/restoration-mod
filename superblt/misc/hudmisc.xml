@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+
+	<!-- ///HUDMISC\\\ -->
+	<!-- Registration only, at mod init: this creates the DB entries that make the mod's
+	     files win over the base game's. It must happen at boot - a scripted group only
+	     registers when it is loaded, which is during GameSetup:load_packages, by which
+	     point the level's own packages have already resolved the base-game files and the
+	     overrides do nothing.
+
+	     Nothing is dyn-loaded from here (dyn_package="false"). Which units get handed to
+	     dyn_resource, and for which faction, is driven from lua/sc/superblt_units.lua,
+	     which loads each dbpath exactly once - handing the same one over twice leaves a
+	     load that never completes and hangs the level on a black screen. -->
+	<group dyn_package="false">
+
+		<group name="core/textures/">
+			<file :name="cg_e3nice.texture"/>
+			<file :name="cg_force.texture"/>
+			<file :name="cg_halloween.texture"/>
+			<file :name="cg_halloween2.texture"/>
+			<file :name="cg_plus.texture"/>
+		</group>
+
+		<group name="guis/">
+			<file :name="mask_off_hud.gui"/>
+		</group>
+
+		<group name="guis/textures/pd2/">
+			<file :name="hud_health_fake.texture"/>
+		</group>
+
+		<group name="guis/textures/pd2/mission_briefing/assets/">
+			<file :name="rush_asset_sentrygun.texture"/>
+			<file :name="wetwork_boat.texture"/>
+			<file :name="wetwork_burn_add_saw.texture"/>
+			<file :name="wetwork_intel.texture"/>
+		</group>
+
+		<group name="guis/textures/restoration/">
+			<file :name="challenge_progress.texture"/>
+			<file :name="credits.texture"/>
+			<file :name="discord.texture"/>
+			<file :name="discord_new.texture"/>
+			<file :name="equipment.texture"/>
+			<file :name="exp_ring.texture"/>
+			<file :name="hud_absorb_health.texture"/>
+			<file :name="hud_absorb_shield.texture"/>
+			<file :name="hud_absorb_stack_bg.texture"/>
+			<file :name="hud_absorb_stack_fg.texture"/>
+			<file :name="hud_alertbox_end.texture"/>
+			<file :name="hud_alertbox_mid.texture"/>
+			<file :name="hud_alertbox_start.texture"/>
+			<file :name="hud_difficultymarkers.texture"/>
+			<file :name="hud_dot.texture"/>
+			<file :name="hud_glow.texture"/>
+			<file :name="hud_health.texture"/>
+			<file :name="hud_icons.texture"/>
+			<file :name="hud_pickups.texture"/>
+			<file :name="hud_progress_active.texture"/>
+			<file :name="hud_progress_bg.texture"/>
+			<file :name="hud_progress_invalid.texture"/>
+			<file :name="hud_radial_rim.texture"/>
+			<file :name="hud_radial_rim_base_fix.texture"/>
+			<file :name="hud_radialbg.texture"/>
+			<file :name="hud_radialbg_base_fix.texture"/>
+			<file :name="hud_rip.texture"/>
+			<file :name="hud_rip_bg.texture"/>
+			<file :name="hud_shield.texture"/>
+			<file :name="hud_stealth_exclam.texture"/>
+			<file :name="hud_stealth_eye.texture"/>
+			<file :name="hud_stealthmeter.texture"/>
+			<file :name="hud_stealthmeter_bg.texture"/>
+			<file :name="hud_stroke.texture"/>
+			<file :name="hud_tabs.texture"/>
+			<file :name="icon_carrybag.texture"/>
+			<file :name="objective.texture"/>
+			<file :name="pd2_waypoints.texture"/>
+			<file :name="risklevel_blackscreen.texture"/>
+			<file :name="stealth_bonus.texture"/>
+			<file :name="throwables.texture"/>
+		</group>
+
+		<group name="guis/textures/restoration/crimenet/">
+			<file :name="crimenet_portrait_gen.texture"/>
+		</group>
+
+		<group name="guis/textures/restoration/mission_briefing/">
+			<file :name="bain.texture"/>
+			<file :name="blaine.texture"/>
+			<file :name="butcher.texture"/>
+			<file :name="calendar_payday.texture"/>
+			<file :name="classic.texture"/>
+			<file :name="dentist.texture"/>
+			<file :name="event.texture"/>
+			<file :name="hector.texture"/>
+			<file :name="hoxton.texture"/>
+			<file :name="jimmy.texture"/>
+			<file :name="jiufeng.texture"/>
+			<file :name="locke.texture"/>
+			<file :name="mcshay.texture"/>
+			<file :name="shatter.texture"/>
+			<file :name="shatter_pattern.texture"/>
+			<file :name="shayu.texture"/>
+			<file :name="the_andre.texture"/>
+			<file :name="the_continental.texture"/>
+			<file :name="unknown.texture"/>
+		</group>
+
+		<group name="movies/">
+			<file :name="cn_veritasgroup1.movie"/>
+			<file :name="contact_shatter1.movie"/>
+			<file :name="level_apartment.movie"/>
+			<file :name="level_bank.movie"/>
+			<file :name="level_bridge.movie"/>
+			<file :name="level_diamond_heist.movie"/>
+			<file :name="level_hospital.movie"/>
+			<file :name="level_secret_stash.movie"/>
+			<file :name="level_slaughter_house.movie"/>
+			<file :name="level_street.movie"/>
+			<file :name="level_suburbia.movie"/>
+		</group>
+
+		<group name="movies/codex/">
+			<file :name="shatter1.movie"/>
+		</group>
+
+	</group>
+
+</assets>

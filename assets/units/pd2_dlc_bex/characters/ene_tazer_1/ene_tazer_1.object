@@ -1,269 +1,341 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='utf-8'?>
 <dynamic_object>
 	<diesel materials="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1" orientation_object="root_point" />
-	<sequence_manager file="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale" />
+	<sequence_manager file="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1" />
 	<animation_def name="anims/units/enemies/cop/cop_def" />
-
-	<effects>
-		<effect_spawner name="fire_torso" enabled="false" object="Spine2" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_l_arm" enabled="false" object="RightForeArm" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_r_arm" enabled="false" object="LeftForeArm" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_l_leg" enabled="false" object="LeftLeg" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_r_leg" enabled="false" object="RightLeg" effect="effects/payday2/particles/explosions/molotov_grenade" />
-	</effects>
-
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
-			<object name="Spine1"/>
-			<object name="c_capsule_body" collision_type="capsule"/>
+			<object name="Spine1" />
+			<object name="c_capsule_body" collision_type="capsule" />
 		</body>
 		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
-			<object name="Head"/>
-			<object name="c_sphere_head" collision_type="sphere"/>
+			<object name="Head" />
+			<object name="c_sphere_head" collision_type="sphere" />
+		</body>
+		<body name="glass_swat" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Head" />
+			<object name="c_glass" collision_type="convex" />
 		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
-			<object name="root_point"/>
-			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
+			<object name="root_point" />
+			<object name="c_capsule_mover_blocker" collision_type="capsule" />
 		</body>
-
-<!-- RAGDOLL -->
+		<body name="jig_holster_right" enabled="true" template="hair" lin_damping="1" ang_damping="10">
+			<object name="pivot_holster_right" />
+			<object name="g_holster_r_lod1" collision_type="box" mass="4" padding="-2" />
+		</body>
+		<body name="body_holster_right" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="a_holster_right" />
+		</body>
+		<body name="jig_holster_left" enabled="true" template="hair" lin_damping="1" ang_damping="10">
+			<object name="pivot_holster_left" />
+			<object name="g_holster_l_lod1" collision_type="box" mass="4" padding="-2" />
+		</body>
+		<body name="body_holster_left" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="a_holster_left" />
+		</body>
 		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
 			<object name="Neck" />
-			<object collision_type="sphere" mass="4" padding="-15" name="c_sphere_head_ragdoll"/>
+			<object collision_type="sphere" mass="4" padding="-15" name="c_sphere_head_ragdoll" />
 		</body>
-
 		<body name="rag_Hips" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="1" collides_with="0" tag="flesh" restitution="0">
 			<object name="Hips" />
 			<object collision_type="capsule" mass="22" padding="-5" name="c_sphere_Hips" />
 		</body>
-
 		<body name="rag_Spine" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0">
 			<object name="Spine" />
 			<object collision_type="capsule" mass="18" padding="-5" name="c_sphere_Spine" />
 		</body>
-
-		 <body name="rag_Spine1" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0" enter_water_script_tag="medium">
+		<body name="rag_Spine1" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0" enter_water_script_tag="medium">
 			<object name="Spine1" />
 			<object collision_type="capsule" mass="18" padding="-5" name="c_sphere_Spine1" />
 		</body>
-
 		<body name="rag_Spine2" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0" enter_water_script_tag="medium">
 			<object name="Spine2" />
 			<object collision_type="capsule" mass="17" padding="-5" name="c_sphere_Spine2" />
 		</body>
-
 		<body name="rag_RightUpLeg" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" collision_group="20" collides_with="30" tag="flesh" restitution="0">
 			<object name="RightUpLeg" />
 			<object collision_type="capsule" mass="22" padding="-5" name="c_capsule_RightUpLeg" />
 		</body>
-
 		<body name="rag_LeftUpLeg" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" collision_group="30" collides_with="20" tag="flesh" restitution="0">
 			<object name="LeftUpLeg" />
 			<object collision_type="capsule" mass="22" padding="-5" name="c_capsule_LeftUpLeg" />
 		</body>
-
 		<body name="rag_RightArm" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" collides_with="1" tag="flesh" restitution="0">
 			<object name="RightArm" />
 			<object collision_type="capsule" mass="4" padding="-5" name="c_capsule_RightArm" />
 		</body>
-
 		<body name="rag_LeftArm" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" collides_with="1" tag="flesh" restitution="0">
 			<object name="LeftArm" />
 			<object collision_type="capsule" mass="4" padding="-5" name="c_capsule_LeftArm" />
 		</body>
-
 		<body name="rag_RightForeArm" enabled="false" template="corpse" friction="0.02" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0" ang_damping="20" collision_group="4" collides_with="8" tag="flesh" restitution="0">
 			<object name="RightForeArm" />
 			<object collision_type="capsule" mass="3" padding="-5" name="c_capsule_RightForeArm" />
 		</body>
-
 		<body name="rag_LeftForeArm" enabled="false" template="corpse" friction="0.02" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0" ang_damping="20" collision_group="6" collides_with="8" tag="flesh" restitution="0">
 			<object name="LeftForeArm" />
 			<object collision_type="capsule" mass="3" padding="-5" name="c_capsule_LeftForeArm" />
 		</body>
-
 		<body name="rag_RightLeg" enabled="false" template="corpse" friction="0.03" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="1" ang_damping="20" collision_group="21" collides_with="31" tag="flesh" restitution="0">
 			<object name="RightLeg" />
 			<object collision_type="capsule" mass="6" padding="-5" name="c_capsule_RightLeg" />
 		</body>
-
 		<body name="rag_LeftLeg" enabled="false" template="corpse" friction="0.03" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="1" ang_damping="20" collision_group="31" collides_with="21" tag="flesh" restitution="0">
 			<object name="LeftLeg" />
 			<object collision_type="capsule" mass="6" padding="-5" name="c_capsule_LeftLeg" />
 		</body>
+		<body name="bag" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Hips" />
+			<object name="c_explosion" collision_type="convex" />
+		</body>
+		<body name="bag_gren" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Hips" />
+			<object name="c_explosion_gren" collision_type="convex" />
+		</body>
+		<body name="glass_gren" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Head" />
+			<object name="c_mask" collision_type="convex" />
+		</body>
 	</bodies>
-
 	<constraints>
 		<constraint type="ragdoll" name="RightArm" enabled="false">
-			<param body_a="rag_Spine2" body_b="rag_RightArm"/>
-			<param pivot="position:RightArm"/>
-			<param twist_axis="yaxis:RightArm" twist_min="-60" twist_max="70" twist_freedom="20"/><!-- X axis -->
-			<param plane_axis="xaxis:RightArm"/><!-- Y axis -->
-			<param cone_y="35" cone_z="40" cone_freedom="10"/>
-			<param damping="1" spring_constant="200" min_restitution="0"/>
+			<param body_a="rag_Spine2" body_b="rag_RightArm" />
+			<param pivot="position:RightArm" />
+			<param twist_axis="yaxis:RightArm" twist_min="-60" twist_max="70" twist_freedom="20" />
+			<param plane_axis="xaxis:RightArm" />
+			<param cone_y="35" cone_z="40" cone_freedom="10" />
+			<param damping="1" spring_constant="200" min_restitution="0" />
 		</constraint>
-
 		<constraint type="limited_hinge" name="RightForeArm" enabled="false">
-			<param body_a="rag_RightArm" body_b="rag_RightForeArm"/>
-			<param pivot="position:RightForeArm"/>
-			<param min_angle="-60" max_angle="60" axis="yaxis:RightForeArm" twist_freedom="5"/> <!-- X axis -->
-			<param plane_axis="xaxis:RightForeArm"/> <!-- Y axis -->
-			<param damping="1" spring_constant="200" min_restitution="0"/>
+			<param body_a="rag_RightArm" body_b="rag_RightForeArm" />
+			<param pivot="position:RightForeArm" />
+			<param min_angle="-60" max_angle="60" axis="yaxis:RightForeArm" twist_freedom="5" />
+			<param plane_axis="xaxis:RightForeArm" />
+			<param damping="1" spring_constant="200" min_restitution="0" />
 		</constraint>
-
 		<constraint type="ragdoll" name="LeftArm" enabled="false">
-			<param body_a="rag_Spine2" body_b="rag_LeftArm"/>
-			<param pivot="position:LeftArm"/>
-			<param twist_axis="yaxis:LeftArm" twist_min="-60" twist_max="70" twist_freedom="20"/>
-			<param plane_axis="xaxis:LeftArm"/>
-			<param cone_y="35" cone_z="40" cone_freedom="10"/>
-			<param damping="1" spring_constant="200" min_restitution="0"/>
+			<param body_a="rag_Spine2" body_b="rag_LeftArm" />
+			<param pivot="position:LeftArm" />
+			<param twist_axis="yaxis:LeftArm" twist_min="-60" twist_max="70" twist_freedom="20" />
+			<param plane_axis="xaxis:LeftArm" />
+			<param cone_y="35" cone_z="40" cone_freedom="10" />
+			<param damping="1" spring_constant="200" min_restitution="0" />
 		</constraint>
-
 		<constraint type="limited_hinge" name="LeftForeArm" enabled="false">
-			<param body_a="rag_LeftArm" body_b="rag_LeftForeArm"/>
-			<param pivot="position:LeftForeArm"/>
-			<param min_angle="-60" max_angle="60" axis="yaxis:LeftForeArm" twist_freedom="5"/> <!-- X axis -->
-			<param plane_axis="xaxis:LeftForeArm"/> <!-- Y axis -->
-			<param damping="1" spring_constant="200" min_restitution="0"/>
+			<param body_a="rag_LeftArm" body_b="rag_LeftForeArm" />
+			<param pivot="position:LeftForeArm" />
+			<param min_angle="-60" max_angle="60" axis="yaxis:LeftForeArm" twist_freedom="5" />
+			<param plane_axis="xaxis:LeftForeArm" />
+			<param damping="1" spring_constant="200" min_restitution="0" />
 		</constraint>
-
 		<constraint type="ragdoll" name="Spine" enabled="false">
-			<param body_a="rag_Hips" body_b="rag_Spine"/>
-			<param pivot="position:Spine"/>
-			<param twist_axis="yaxis:Spine" twist_min="-2" twist_max="5" twist_freedom="5"/> <!-- Y axis -->
-			<param plane_axis="xaxis:Spine"/>
-			<param cone_y="5" cone_z="3" cone_freedom="5"/> <!-- X axis --> <!-- Z axis -->
-			<param damping="1" spring_constant="600" min_restitution="0"/>
+			<param body_a="rag_Hips" body_b="rag_Spine" />
+			<param pivot="position:Spine" />
+			<param twist_axis="yaxis:Spine" twist_min="-2" twist_max="5" twist_freedom="5" />
+			<param plane_axis="xaxis:Spine" />
+			<param cone_y="5" cone_z="3" cone_freedom="5" />
+			<param damping="1" spring_constant="600" min_restitution="0" />
 		</constraint>
-
 		<constraint type="ragdoll" name="Spine1" enabled="false">
-			<param body_b="rag_Spine" body_a="rag_Spine1"/>
-			<param pivot="position:Spine1"/>
-			<param twist_axis="yaxis:Spine1" twist_min="-2" twist_max="5" twist_freedom="5"/> <!-- Y axis -->
-			<param plane_axis="xaxis:Spine1"/>
-			<param cone_y="5" cone_z="5" cone_freedom="5"/> <!-- X axis --> <!-- Z axis -->
-			<param damping="1" spring_constant="600" min_restitution="0"/>
+			<param body_b="rag_Spine" body_a="rag_Spine1" />
+			<param pivot="position:Spine1" />
+			<param twist_axis="yaxis:Spine1" twist_min="-2" twist_max="5" twist_freedom="5" />
+			<param plane_axis="xaxis:Spine1" />
+			<param cone_y="5" cone_z="5" cone_freedom="5" />
+			<param damping="1" spring_constant="600" min_restitution="0" />
 		</constraint>
-
 		<constraint type="ragdoll" name="Spine2" enabled="false">
-			<param body_b="rag_Spine1" body_a="rag_Spine2"/>
-			<param pivot="position:Spine2"/>
-			<param twist_axis="yaxis:Spine2" twist_min="-2" twist_max="5" twist_freedom="5"/> <!-- Y axis -->
-			<param plane_axis="xaxis:Spine2"/>
-			<param cone_y="5" cone_z="5" cone_freedom="5"/> <!-- X axis --> <!-- Z axis = Twist Spine -->
-			<param damping="1" spring_constant="600" min_restitution="0"/>
+			<param body_b="rag_Spine1" body_a="rag_Spine2" />
+			<param pivot="position:Spine2" />
+			<param twist_axis="yaxis:Spine2" twist_min="-2" twist_max="5" twist_freedom="5" />
+			<param plane_axis="xaxis:Spine2" />
+			<param cone_y="5" cone_z="5" cone_freedom="5" />
+			<param damping="1" spring_constant="600" min_restitution="0" />
 		</constraint>
-
 		<constraint type="ragdoll" name="Head" enabled="false">
-			<param body_b="rag_Head" body_a="rag_Spine2"/>
-			<param pivot="position:Neck"/>
-			<param twist_axis="yaxis:Neck" twist_min="-40" twist_max="40" twist_freedom="40"/> <!-- Y axis -->
-			<param plane_axis="xaxis:Neck"/>
-			<param cone_y="25" cone_z="25" cone_freedom="3"/> <!-- X axis --> <!-- Z axis -->
-			<param damping="1" spring_constant="200" min_restitution="0"/>
+			<param body_b="rag_Head" body_a="rag_Spine2" />
+			<param pivot="position:Neck" />
+			<param twist_axis="yaxis:Neck" twist_min="-40" twist_max="40" twist_freedom="40" />
+			<param plane_axis="xaxis:Neck" />
+			<param cone_y="25" cone_z="25" cone_freedom="3" />
+			<param damping="1" spring_constant="200" min_restitution="0" />
 		</constraint>
-
 		<constraint type="ragdoll" name="RightUpLeg" enabled="false">
-			<param body_a="rag_Hips" body_b="rag_RightUpLeg"/>
-			<param pivot="position:RightUpLeg"/>
-			<param twist_axis="yaxis:RightUpLeg" twist_min="-10" twist_max="10" twist_freedom="5"/>
-			<param plane_axis="xaxis:RightUpLeg"/>
-			<param cone_y="15" cone_z="15" cone_freedom="5"/>
-			<param damping="1" spring_constant="350" min_restitution="0"/>
+			<param body_a="rag_Hips" body_b="rag_RightUpLeg" />
+			<param pivot="position:RightUpLeg" />
+			<param twist_axis="yaxis:RightUpLeg" twist_min="-10" twist_max="10" twist_freedom="5" />
+			<param plane_axis="xaxis:RightUpLeg" />
+			<param cone_y="15" cone_z="15" cone_freedom="5" />
+			<param damping="1" spring_constant="350" min_restitution="0" />
 		</constraint>
-
 		<constraint type="ragdoll" name="LeftUpLeg" enabled="false">
-			<param body_a="rag_Hips" body_b="rag_LeftUpLeg"/>
-			<param pivot="position:LeftUpLeg"/>
-			<param twist_axis="yaxis:LeftUpLeg" twist_min="-10" twist_max="10" twist_freedom="5"/>
-			<param plane_axis="xaxis:LeftUpLeg"/>
-			<param cone_y="15" cone_z="15" cone_freedom="5"/>
-			<param damping="1" spring_constant="350" min_restitution="0"/>
+			<param body_a="rag_Hips" body_b="rag_LeftUpLeg" />
+			<param pivot="position:LeftUpLeg" />
+			<param twist_axis="yaxis:LeftUpLeg" twist_min="-10" twist_max="10" twist_freedom="5" />
+			<param plane_axis="xaxis:LeftUpLeg" />
+			<param cone_y="15" cone_z="15" cone_freedom="5" />
+			<param damping="1" spring_constant="350" min_restitution="0" />
 		</constraint>
-
 		<constraint type="limited_hinge" name="RightLeg" enabled="false">
-			<param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
-			<param pivot="position:RightLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
-			<param plane_axis="yaxis:RightLeg"/>
-			<param damping="1" spring_constant="200" min_restitution="0"/>
+			<param body_a="rag_RightUpLeg" body_b="rag_RightLeg" />
+			<param pivot="position:RightLeg" />
+			<param min_angle="-40" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5" />
+			<param plane_axis="yaxis:RightLeg" />
+			<param damping="1" spring_constant="200" min_restitution="0" />
 		</constraint>
-
 		<constraint type="limited_hinge" name="LeftLeg" enabled="false">
-			<param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg"/>
-			<param pivot="position:LeftLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
-			<param plane_axis="yaxis:LeftLeg"/>
-			<param damping="1" spring_constant="200" min_restitution="0"/>
+			<param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg" />
+			<param pivot="position:LeftLeg" />
+			<param min_angle="-40" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5" />
+			<param plane_axis="yaxis:LeftLeg" />
+			<param damping="1" spring_constant="200" min_restitution="0" />
+		</constraint>
+		<constraint type="ragdoll" name="h_holster_left" enabled="true">
+			<param body_a="jig_holster_left" body_b="body_holster_left" />
+			<param pivot="position:pivot_holster_left" />
+			<param twist_axis="zaxis:pivot_holster_left" twist_min="-5" twist_max="5" twist_freedom="3" />
+			<param plane_axis="xaxis:pivot_holster_left" />
+			<param cone_y="1" cone_z="1" cone_freedom="2" />
+			<param damping="1000" spring_constant="1000" min_restitution="0.5" />
+		</constraint>
+		<constraint type="ragdoll" name="h_holster_right" enabled="true">
+			<param body_a="jig_holster_right" body_b="body_holster_right" />
+			<param pivot="position:pivot_holster_right" />
+			<param twist_axis="zaxis:pivot_holster_right" twist_min="-5" twist_max="5" twist_freedom="3" />
+			<param plane_axis="xaxis:pivot_holster_right" />
+			<param cone_y="1" cone_z="1" cone_freedom="2" />
+			<param damping="1000" spring_constant="1000" min_restitution="0.5" />
 		</constraint>
 	</constraints>
-
-	<decal_surfaces default_material="flesh" >
+	<decal_surfaces default_material="flesh">
 		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
+		<decal_mesh name="dm_glass_shield" enabled="false" material="glass_no_decal" />
+		<decal_mesh name="c_glass" enabled="false" material="glass_no_decal" />
+		<decal_mesh name="dm_explosion" enabled="false" material="steel_no_decal" />
+		<decal_mesh name="c_explosion" enabled="false" material="steel_no_decal" />
+		<decal_mesh name="c_explosion_gren" enabled="false" material="steel_no_decal" />
 	</decal_surfaces>
-
 	<graphics>
-		<graphic_group name="character" enabled="true" culling_object="g_body">
-
-            <lod_object name="lod_body">
-                <object name="g_body"       enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_body" max_distance="1000" />
-                    <material materials="mtr_body_lod" max_distance="1500" />
-                    <material materials="mtr_body_lod1" />
-                </object>
-                <object name="g_body_lod1"  enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_body_lod" max_distance="0"/>
-                    <material materials="mtr_body_lod1" />
-                </object>
-            </lod_object>
-
-			<lod_object name="lod_helmet">
-				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_ene_acc_swat_helmet" max_distance="1000" />
-                    <material materials="mtr_ene_acc_swat_helmet_lod" max_distance="1500" />
-                    <material materials="mtr_ene_acc_swat_helmet_lod1" />
-                </object>
-				<object name="g_helmet_lod2" 	enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_ene_acc_swat_helmet_lod" max_distance="0" />
-                    <material materials="mtr_ene_acc_swat_helmet_lod1" />
-                </object>
+		<graphic_group name="character" enabled="true" culling_object="co_box">
+			<lod_object name="lod_special_gren">
+				<object name="g_swat_heavy_gren" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity" />
+				<object name="g_swat_heavy_gren_lod1" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity" />
 			</lod_object>
-			
-			<lod_object name="lod_glass">
-				<object name="g_helmet_lod3" 	enabled="true"  max_distance="2000"  max_draw_lod="0" >
-					<material materials="mtr_glass" max_distance="1500" />
-					<material materials="mtr_glass_lod1" />
+			<lod_object name="lod_special_taser">
+				<object name="g_swat_heavy_Taser" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity" />
+				<object name="g_swat_heavy_Taser_lod1" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity" />
+			</lod_object>
+			<lod_object name="lod_gloves">
+				<object name="g_gloves" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat" max_distance="1000" />
+					<material materials="mtr_swat_lod1" max_distance="1500" />
+					<material materials="mtr_swat_lod2" />
 				</object>
-				<object name="g_helmet_lod4" 	enabled="true" lod="1" >
-					<material materials="mtr_glass" max_distance="0" />
-					<material materials="mtr_glass_lod1" max_distance="3000" />
-					<material materials="mtr_glass_lod2" />
+				<object name="g_gloves_lod1" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat" max_distance="0" />
+					<material materials="mtr_swat_lod2" />
 				</object>
 			</lod_object>
-			
-			<object name="s_body" enabled="true" shadow_caster="true"/>
+			<lod_object name="lod_hood">
+				<object name="g_hood" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_grenadier" max_distance="1000" />
+					<material materials="mtr_grenadier_lod1" max_distance="1500" />
+					<material materials="mtr_grenadier_lod2" />
+				</object>
+				<object name="g_hood_lod1" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_grenadier" max_distance="0" />
+					<material materials="mtr_grenadier_lod2" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_mask_gren">
+				<object name="g_mask_gren" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_gasmask" max_distance="1000" />
+					<material materials="mtr_gasmask_lod1" max_distance="1500" />
+					<material materials="mtr_gasmask_lod2" />
+				</object>
+				<object name="g_mask_gren_lod1" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_gasmask" max_distance="0" />
+					<material materials="mtr_gasmask_lod2" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_explosivebag_gren">
+				<object name="g_explosivebag" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_grenadier" max_distance="1000" />
+					<material materials="mtr_grenadier_lod1" max_distance="1500" />
+					<material materials="mtr_grenadier_lod2" />
+				</object>
+				<object name="g_explosivebag_lod1" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_grenadier" max_distance="0" />
+					<material materials="mtr_grenadier_lod2" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_helmet_tazer">
+				<object name="g_helmet_tazer_lod1" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000" />
+					<material materials="mtr_swat_static_lod1" max_distance="1500" />
+					<material materials="mtr_swat_static_lod2" />
+				</object>
+				<object name="g_helmet_tazer_lod2" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="0" />
+					<material materials="mtr_swat_static_lod2" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_helmet_swat_1112">
+				<object name="g_helmet_swat_lod11" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000" />
+					<material materials="mtr_swat_static_lod1" max_distance="1500" />
+					<material materials="mtr_swat_static_lod2" />
+				</object>
+				<object name="g_helmet_swat_lod12" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="0" />
+					<material materials="mtr_swat_static_lod2" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_holster_l">
+				<object name="g_holster_l" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000" />
+					<material materials="mtr_swat_static_lod1" max_distance="1500" />
+					<material materials="mtr_swat_static_lod2" />
+				</object>
+				<object name="g_holster_l_lod1" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="0" />
+					<material materials="mtr_swat_static_lod2" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_holster_r">
+				<object name="g_holster_r" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000" />
+					<material materials="mtr_swat_static_lod1" max_distance="1500" />
+					<material materials="mtr_swat_static_lod2" />
+				</object>
+				<object name="g_holster_r_lod1" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="0" />
+					<material materials="mtr_swat_static_lod2" />
+				</object>
+			</lod_object>
+			<object name="s_body" enabled="true" shadow_caster="true" />
+			<lod_object name="lod_glass_v3_helmet_swat_910">
+				<object name="g_helmet_swat_lod9" enabled="false" max_distance="1500" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_glass" />
+				</object>
+				<object name="g_helmet_swat_lod10" enabled="false" lod="1" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_glass_lod" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_glass_v3_glass_gasmask">
+				<object name="g_glass_gasmask" enabled="false" max_distance="1500" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_glass" />
+				</object>
+			</lod_object>
+			<lod_object name="lod_explosivebag_taser">
+				<object name="g_explosivebag_taser" enabled="false" max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_taser" max_distance="1000" />
+					<material materials="mtr_swat_taser_lod1" max_distance="1500" />
+					<material materials="mtr_swat_taser_lod2" />
+				</object>
+			</lod_object>
 		</graphic_group>
-
-		<graphic_group name="head" enabled="true" culling_object="g_head">
-            <lod_object name="lod_head">
-                <object name="g_head"       enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_head" max_distance="1000" />
-                    <material materials="mtr_head_lod" max_distance="1500" />
-                    <material materials="mtr_head_lod1" />
-                </object>
-                <object name="g_head_lod1"  enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_head_lod" max_distance="0" />
-                    <material materials="mtr_head_lod1" />
-                </object>
-            </lod_object>
-			<object name="s_head" enabled="true" shadow_caster="true"/>
-		</graphic_group>
-				
-		<object name="g_head_gore1" enabled="false" />
-		<object name="g_headmeat" enabled="false" />
-		<object name="g_head_gore2" enabled="false" />
-		<object name="g_headmeat2" enabled="false" />
 	</graphics>
-
 </dynamic_object>

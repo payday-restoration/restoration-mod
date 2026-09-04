@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1" />
+	<object file="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1" />
 
 	<dependencies>
 		<depends_on effect="effects/payday2/particles/character/taser_thread" />
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" />		
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_head_atlas/ene_head_atlas" />
 	</dependencies>
 
 	<extensions>
@@ -21,6 +22,7 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
+			<var name="_head" value="units/pd2_dlc_bex/characters/ene_head_atlas/ene_head_atlas" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="hardsole" />

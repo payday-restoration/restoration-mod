@@ -1,3 +1,29 @@
+-- managers.dyn_resource does not exist during load_packages - GameSetup:load_packages runs
+-- before init_managers - so RestorationSuperMod parks the faction and this flushes it the
+-- moment the managers are up. SuperBLT's DynamicResourceManagerCreated hook is not enough:
+-- the managers are torn down and rebuilt on every menu->game transition, and that hook does
+-- not fire again for the new set.
+if not GameSetup._resmod_asset_flush_hooked then
+	GameSetup._resmod_asset_flush_hooked = true
+
+	local _resmod_orig_init_managers = GameSetup.init_managers
+
+	function GameSetup:init_managers(...)
+		local result = _resmod_orig_init_managers(self, ...)
+
+		if RestorationSuperMod then
+			local ok, err = pcall(function() RestorationSuperMod:FlushPending() end)
+			if not ok then
+				log("[RestorationMod] ERROR flushing asset loads from init_managers: " .. tostring(err))
+			end
+		else
+			log("[RestorationMod] init_managers: RestorationSuperMod is nil - supermod.lua never ran")
+		end
+
+		return result
+	end
+end
+
 function GameSetup:load_packages()
 	Setup.load_packages(self)
 
@@ -59,6 +85,20 @@ function GameSetup:load_packages()
 		end
     end
 
+	-- Faction assets now come from SuperBLT scripted asset groups (see supermod.xml and
+	-- superblt/<faction>.xml) instead of per-difficulty packages.
+	local function load_faction_assets(faction)
+		if not RestorationSuperMod then
+			log("[RestorationMod] asset group '" .. faction .. "' NOT loaded: RestorationSuperMod is nil - supermod.lua never ran")
+			return
+		end
+
+		local ok, reason = RestorationSuperMod:LoadAssetGroup(faction)
+		if not ok then
+			log("[RestorationMod] asset group '" .. faction .. "' NOT loaded: " .. tostring(reason))
+		end
+	end
+
     local a = tweak_data.levels.ai_groups.america
     local r = tweak_data.levels.ai_groups.russia
     local m = tweak_data.levels.ai_groups.murkywater
@@ -68,56 +108,47 @@ function GameSetup:load_packages()
     local ny = tweak_data.levels.ai_groups.nypd
 	local feds = tweak_data.levels.ai_groups.fbi
     local ai_type = tweak_data.levels:get_ai_group_type()
+	log("[RestorationMod] load_packages: level_id=" .. tostring(Global.level_data and Global.level_data.level_id) ..
+		" ai_type=" .. tostring(ai_type) ..
+		" | known: " .. tostring(a) .. "," .. tostring(r) .. "," .. tostring(m) .. "," .. tostring(z) ..
+		"," .. tostring(f) .. "," .. tostring(la) .. "," .. tostring(ny) .. "," .. tostring(feds))
 
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
     
 	if job_tweak_package_data and job_tweak_package_data.load_all_difficulty_packages and not managers.skirmish:is_skirmish() then
+		log("[RestorationMod] load_packages: job uses load_all_difficulty_packages - faction asset group SKIPPED")
+
 		for i, difficulty in ipairs(tweak_data.difficulties) do
 			local diff_package = "packages/" .. (difficulty or "normal")
 
 			load_difficulty_package(diff_package)
         end
     elseif ai_type == a then
-		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_america" or "normal")
-
-		load_difficulty_package(diff_package)
+		load_faction_assets("america")
 		PackageManager:load("packages/sm_wish")
 	elseif ai_type == z then
-		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_zombie" or "normal")
-
-        load_difficulty_package(diff_package)
+		load_faction_assets("zombie")
 		PackageManager:load("packages/sm_wish")
 	
     elseif ai_type == r then
-		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_russia" or "normal")
-
-        load_difficulty_package(diff_package) 
-
+		load_faction_assets("russia")
     elseif ai_type == m then
-		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_murkywater" or "normal")
-
-        load_difficulty_package(diff_package)
+		load_faction_assets("murkywater")
     elseif ai_type == f then
-		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_federales" or "normal")
-
-        load_difficulty_package(diff_package)
+		load_faction_assets("federales")
     elseif ai_type == la then
-		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_lapd" or "normal")
-
-        load_difficulty_package(diff_package)
+		load_faction_assets("lapd")
 		PackageManager:load("packages/sm_wish")
     elseif ai_type == ny then
-		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_nypd" or "normal")
-
-        load_difficulty_package(diff_package)
+		load_faction_assets("nypd")
 		PackageManager:load("packages/sm_wish")
 	elseif ai_type == feds then
-		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_fbi" or "normal")
-
-        load_difficulty_package(diff_package)
+		load_faction_assets("fbi")
 		PackageManager:load("packages/sm_wish")	
 	else
+		log("[RestorationMod] load_packages: ai_type '" .. tostring(ai_type) .. "' matched NO faction - no asset group loaded")
+
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty or "normal")
 
 		load_difficulty_package(diff_package)

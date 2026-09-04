@@ -1,0 +1,8 @@
+<unit type="awesome" slot="1">
+	<object file="units/pd2_dlc_bex/characters/ene_head_atlas/ene_head_atlas" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />		
+		<extension name="base" class="ContourSwapBase" />
+	</extensions>
+</unit>

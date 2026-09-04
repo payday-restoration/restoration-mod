@@ -269,7 +269,7 @@ function CopBase:disable_asu_laser()
 	end
 end
 
-Hooks:PreHook(CopBase, "post_init", "run_fucking_heads_post_init", function(self)
+Hooks:PostHook(CopBase, "post_init", "run_fucking_heads_post_init", function(self)
 	self:_run_unit_sequences()
 end)
 
@@ -435,6 +435,31 @@ local enemy_variations_clean = {
 	["units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"] = "heavy_swat_sg",
 	["units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"] = "swat_shield",
 	["units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"] = "swat_sniper",
+
+	-- BEX counterparts: same unit names/sequence roles, DLC root only.
+	["units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1"] = "swat_smg",
+	["units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2"] = "swat_sg",
+	["units/pd2_dlc_bex/characters/ene_swat_3/ene_swat_3"] = "swat_ar",
+	["units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "heavy_swat_ar",
+	["units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "heavy_swat_sg",
+	["units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2"] = "swat_shield",
+	["units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1"] = "swat_sniper",
+	-- BEX Federales specials use their fixed special models and the shared SWAT sequence manager.
+	["units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1"] = "swat_taser",
+	["units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1"] = "swat_gren",
+
+	-- BEX Federales legacy cops/FBI. These units share the integrated ene_policia_1 render setup.
+	["units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01"] = "cop_pistol",
+	["units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02"] = "cop_revolver",
+	["units/pd2_dlc_bex/characters/ene_policia_03/ene_policia_03"] = "cop_smg",
+	["units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04"] = "cop_sg",
+	-- Direct/shared-unit fallback for testing the renamed asset itself.
+	["units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1"] = "fbi_1",
+	["units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"] = "fbi_2",
+	["units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"] = "fbi_3",
+	-- PEX office cops reuse the integrated Federales FBI render chassis.
+	["units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01"] = "office_cop_1",
+	["units/pd2_dlc_pex/characters/ene_male_office_cop_02/ene_male_office_cop_02"] = "office_cop_2",
 	
 	["units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc"] = "swat_ar",
 	["units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc"] = "swat_sg",
@@ -629,6 +654,19 @@ local enemy_variations_clean = {
 }
 
 local head_variations_clean = {
+	-- BEX blue SWAT head-atlas routing.
+	["units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1"] = "swat",
+	["units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2"] = "swat",
+	["units/pd2_dlc_bex/characters/ene_swat_3/ene_swat_3"] = "swat_ar",
+	["units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "swat_heavy",
+	["units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "swat_heavy",
+	["units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2"] = "swat_heavy",
+	["units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1"] = "swat_ar",
+	-- Taser: full faces most of the time, otherwise balaclava a/c or a bandana.
+	["units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1"] = "swat_taser_head",
+	-- Grenadier: faces only, nothing covered.
+	["units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1"] = "grenfaceonly",
+
 	-- LAPD
 	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"] = "vetcop",
 	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"] = "vetcop",
@@ -726,6 +764,26 @@ local head_variations_clean = {
 }
 
 
+-- Federales cops/FBI below carry their selected heads inside the body model itself.
+-- Do not spawn the separate cop_head atlas for these units or both systems overlap.
+local integrated_head_units_clean = {
+	["units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01"] = true,
+	["units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02"] = true,
+	["units/pd2_dlc_bex/characters/ene_policia_03/ene_policia_03"] = true,
+	["units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04"] = true,
+	["units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1"] = true,
+	["units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"] = true,
+	["units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"] = true,
+	["units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01"] = true,
+	["units/pd2_dlc_pex/characters/ene_male_office_cop_02/ene_male_office_cop_02"] = true
+}
+
+local integrated_head_units = {}
+for unit_name in pairs(integrated_head_units_clean) do
+	integrated_head_units[Idstring(unit_name):key()] = true
+	integrated_head_units[Idstring(unit_name .. "_husk"):key()] = true
+end
+
 --  do not touch this.
 local enemy_variations = {}
 local head_variations = {}
@@ -766,6 +824,7 @@ function CopBase:_run_unit_sequences()
 	local enemy_sequence_fart = self.enemy_variations_texas_pd[name]
 	local enemy_sequence_shart = self.enemy_variations_sfpd[name]
 	local head_sequence = self.head_variations[name]
+	local uses_integrated_head = integrated_head_units[name] == true
 
 
 	--[[
@@ -791,10 +850,23 @@ function CopBase:_run_unit_sequences()
 			self._unit:damage():run_sequence_simple(enemy_sequence_shart)
 		end	
 	end
+
+	-- The head atlas is a separate linked unit, so it cannot read the body
+	-- sequence variables directly. Read the body objects that the sequence
+	-- actually enabled and pass that state to the head atlas after it spawns.
+	local short_body = false
+	local body_short = self._unit:get_object(Idstring("g_body_short"))
+	local body_b_short = self._unit:get_object(Idstring("g_body_b_short"))
+
+	if body_short and body_short:visibility() then
+		short_body = true
+	elseif body_b_short and body_b_short:visibility() then
+		short_body = true
+	end
 	
 	local spawn_manager_ext = self._unit:spawn_manager()
 	local damage_ext = self._unit:character_damage()
-	local head = damage_ext._head
+	local head = not uses_integrated_head and damage_ext._head or nil
 	
 	-- Run the head sequence to enable the head and arms
 	if spawn_manager_ext then	
@@ -809,9 +881,19 @@ function CopBase:_run_unit_sequences()
 	
 	if alive(self._head_unit) then		
 		self._head_unit:set_enabled(self._unit:enabled())
-		
-		if self._head_unit:damage() and self._head_unit:damage():has_sequence(head_sequence) then
-			self._head_unit:damage():run_sequence_simple(head_sequence)
+
+		local head_damage = self._head_unit:damage()
+		if head_damage then
+			-- Tell the atlas whether this body exposes the arms before selecting
+			-- the actual head. Head sequences can then use check_show_arms.
+			local arms_sequence = short_body and "arms_short_on" or "arms_short_off"
+			if head_damage:has_sequence(arms_sequence) then
+				head_damage:run_sequence_simple(arms_sequence)
+			end
+
+			if head_sequence and head_damage:has_sequence(head_sequence) then
+				head_damage:run_sequence_simple(head_sequence)
+			end
 		end
 	end
 end
@@ -821,6 +903,9 @@ ContourSwapBase._material_translation_map = {}
 
 local paths = table.list_to_set({
   "units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas",
+  "units/pd2_dlc_bex/characters/ene_head_atlas/ene_head_atlas",
+  "units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01",
+  "units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1",
   "units/pd2_mod_lapd/characters/ene_swat_1/badasssf",
   "units/pd2_mod_lapd/characters/ene_swat_1/badasstex",
   "units/payday2/characters/ene_head_atlas/ene_head_atlas"

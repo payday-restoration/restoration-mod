@@ -1,0 +1,628 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+
+	<!-- ///OUTFITS\\\ -->
+	<!-- Registration only, at mod init: this creates the DB entries that make the mod's
+	     files win over the base game's. It must happen at boot - a scripted group only
+	     registers when it is loaded, which is during GameSetup:load_packages, by which
+	     point the level's own packages have already resolved the base-game files and the
+	     overrides do nothing.
+
+	     Nothing is dyn-loaded from here (dyn_package="false"). Which units get handed to
+	     dyn_resource, and for which faction, is driven from lua/sc/superblt_units.lua,
+	     which loads each dbpath exactly once - handing the same one over twice leaves a
+	     load that never completes and hangs the level on a black screen. -->
+	<group dyn_package="false">
+
+		<group name="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/">
+			<file :name="loud_suit_blue.texture"/>
+			<file :name="loud_suit_brown.texture"/>
+			<file :name="loud_suit_default.texture"/>
+			<file :name="loud_suit_gorkaearth.texture"/>
+			<file :name="loud_suit_gorkagreen.texture"/>
+			<file :name="loud_suit_gorkagrey.texture"/>
+			<file :name="loud_suit_gorkapurple.texture"/>
+			<file :name="loud_suit_gorkasea.texture"/>
+			<file :name="loud_suit_green.texture"/>
+			<file :name="loud_suit_purple.texture"/>
+			<file :name="loud_suit_red.texture"/>
+			<file :name="loud_suit_white.texture"/>
+			<file :name="suit_prison_comedy.texture"/>
+			<file :name="suit_prison_default.texture"/>
+			<file :name="suit_prison_janitor.texture"/>
+			<file :name="suit_prison_repairman.texture"/>
+			<file :name="suit_prison_subject.texture"/>
+			<file :name="suit_prison_vaultboy.texture"/>
+			<file :name="suit_sunny_blue.texture"/>
+			<file :name="suit_sunny_default.texture"/>
+			<file :name="suit_sunny_green.texture"/>
+			<file :name="suit_sunny_hawaii_black.texture"/>
+			<file :name="suit_sunny_hawaii_blue.texture"/>
+			<file :name="suit_sunny_hawaii_cyan.texture"/>
+			<file :name="suit_sunny_hawaii_green.texture"/>
+			<file :name="suit_sunny_hawaii_orange.texture"/>
+			<file :name="suit_sunny_hawaii_pink.texture"/>
+			<file :name="suit_sunny_hawaii_red.texture"/>
+			<file :name="suit_sunny_payne.texture"/>
+			<file :name="suit_sunny_pink.texture"/>
+			<file :name="suit_sunny_red.texture"/>
+			<file :name="suit_sunny_security_purple.texture"/>
+			<file :name="suit_sunny_security_red.texture"/>
+			<file :name="suit_sunny_skull.texture"/>
+			<file :name="suit_sunny_soprano_blue.texture"/>
+			<file :name="suit_sunny_soprano_green.texture"/>
+			<file :name="suit_sunny_vice.texture"/>
+			<file :name="suit_sunny_yellow.texture"/>
+		</group>
+
+		<group name="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/shared_textures/">
+			<file :name="trd_acc_jumpsuits_gsma.texture"/>
+			<file :name="trd_acc_jumpsuits_red_df.texture"/>
+		</group>
+
+		<group name="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/">
+			<file :name="trd_acc_fps_jumpsuit_gsma.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/ess_acc_esportgamer/ess_acc_fps_esport/">
+			<file :name="ess_acc_fps_esport_rhynne.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_materials/">
+			<file :name="ess_acc_esport_rhynne.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_textures/">
+			<file :name="ess_acc_esportgamer_body_rhynne_df.texture"/>
+			<file :name="ess_acc_esportgamer_body_rhynne_nm.texture"/>
+			<file :name="ess_acc_esportgamer_fps_rhynne_df.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/">
+			<file :name="player_tactical_outfit_fp_df.texture"/>
+			<file :name="player_tactical_outfit_fp_gsma.texture"/>
+			<file :name="player_tactical_outfit_fp_nm.texture"/>
+			<file :name="res_acc_fps_loud_suit.cooked_physics"/>
+			<file :name="res_acc_fps_loud_suit.material_config"/>
+			<file :name="res_acc_fps_loud_suit.model"/>
+			<file :name="res_acc_fps_loud_suit.object"/>
+			<file :name="res_acc_fps_loud_suit.unit"/>
+			<file :name="res_acc_fps_loud_suit_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_2.cooked_physics"/>
+			<file :name="res_acc_fps_loud_suit_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_female.material_config"/>
+			<file :name="res_acc_fps_loud_suit_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_sydney.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/">
+			<file :name="res_acc_fps_prison_suit.cooked_physics"/>
+			<file :name="res_acc_fps_prison_suit.material_config"/>
+			<file :name="res_acc_fps_prison_suit.model"/>
+			<file :name="res_acc_fps_prison_suit.object"/>
+			<file :name="res_acc_fps_prison_suit.unit"/>
+			<file :name="res_acc_fps_prison_suit_df.texture"/>
+			<file :name="res_acc_fps_prison_suit_gsma.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_loud_suit/">
+			<file :name="player_tactical_outfit_df.texture"/>
+			<file :name="player_tactical_outfit_gsma.texture"/>
+			<file :name="player_tactical_outfit_nm.texture"/>
+			<file :name="res_acc_loud_suit.cooked_physics"/>
+			<file :name="res_acc_loud_suit.material_config"/>
+			<file :name="res_acc_loud_suit.model"/>
+			<file :name="res_acc_loud_suit.object"/>
+			<file :name="res_acc_loud_suit.unit"/>
+			<file :name="res_acc_loud_suit_02.material_config"/>
+			<file :name="res_acc_loud_suit_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_chains.material_config"/>
+			<file :name="res_acc_loud_suit_sangres.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_loud_suit_female/">
+			<file :name="res_acc_loud_suit_female.cooked_physics"/>
+			<file :name="res_acc_loud_suit_female.material_config"/>
+			<file :name="res_acc_loud_suit_female.model"/>
+			<file :name="res_acc_loud_suit_female.object"/>
+			<file :name="res_acc_loud_suit_female.unit"/>
+			<file :name="res_acc_loud_suit_female_contour.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_loud_suit_female_big/">
+			<file :name="res_acc_loud_suit_female_big.cooked_physics"/>
+			<file :name="res_acc_loud_suit_female_big.material_config"/>
+			<file :name="res_acc_loud_suit_female_big.model"/>
+			<file :name="res_acc_loud_suit_female_big.object"/>
+			<file :name="res_acc_loud_suit_female_big.unit"/>
+			<file :name="res_acc_loud_suit_female_big_contour.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_loud_suit_female_thin/">
+			<file :name="res_acc_loud_suit_female_thin.cooked_physics"/>
+			<file :name="res_acc_loud_suit_female_thin.material_config"/>
+			<file :name="res_acc_loud_suit_female_thin.model"/>
+			<file :name="res_acc_loud_suit_female_thin.object"/>
+			<file :name="res_acc_loud_suit_female_thin.unit"/>
+			<file :name="res_acc_loud_suit_female_thin_contour.material_config"/>
+			<file :name="res_acc_loud_suit_female_thin_joy.material_config"/>
+			<file :name="res_acc_loud_suit_female_thin_sydney.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_loud_suit_female_very_thin/">
+			<file :name="res_acc_loud_suit_female_very_thin.cooked_physics"/>
+			<file :name="res_acc_loud_suit_female_very_thin.material_config"/>
+			<file :name="res_acc_loud_suit_female_very_thin.model"/>
+			<file :name="res_acc_loud_suit_female_very_thin.object"/>
+			<file :name="res_acc_loud_suit_female_very_thin.unit"/>
+			<file :name="res_acc_loud_suit_female_very_thin_contour.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_loud_suit_male_big/">
+			<file :name="res_acc_loud_suit_male_big.cooked_physics"/>
+			<file :name="res_acc_loud_suit_male_big.material_config"/>
+			<file :name="res_acc_loud_suit_male_big.model"/>
+			<file :name="res_acc_loud_suit_male_big.object"/>
+			<file :name="res_acc_loud_suit_male_big.unit"/>
+			<file :name="res_acc_loud_suit_male_big_contour.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_prison_suit/">
+			<file :name="res_acc_prison_suit.cooked_physics"/>
+			<file :name="res_acc_prison_suit.material_config"/>
+			<file :name="res_acc_prison_suit.model"/>
+			<file :name="res_acc_prison_suit.object"/>
+			<file :name="res_acc_prison_suit.unit"/>
+			<file :name="res_acc_prison_suit_jacket.material_config"/>
+			<file :name="res_acc_prison_suit_sangres.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_prison_suit_big/">
+			<file :name="res_acc_prison_suit_big.cooked_physics"/>
+			<file :name="res_acc_prison_suit_big.material_config"/>
+			<file :name="res_acc_prison_suit_big.model"/>
+			<file :name="res_acc_prison_suit_big.object"/>
+			<file :name="res_acc_prison_suit_big.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_prison_suit_female/">
+			<file :name="res_acc_prison_suit_female.cooked_physics"/>
+			<file :name="res_acc_prison_suit_female.material_config"/>
+			<file :name="res_acc_prison_suit_female.model"/>
+			<file :name="res_acc_prison_suit_female.object"/>
+			<file :name="res_acc_prison_suit_female.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_prison_suit_female_big/">
+			<file :name="res_acc_prison_suit_female_big.cooked_physics"/>
+			<file :name="res_acc_prison_suit_female_big.material_config"/>
+			<file :name="res_acc_prison_suit_female_big.model"/>
+			<file :name="res_acc_prison_suit_female_big.object"/>
+			<file :name="res_acc_prison_suit_female_big.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_sunny_suit/">
+			<file :name="res_acc_sunny_suit.cooked_physics"/>
+			<file :name="res_acc_sunny_suit.material_config"/>
+			<file :name="res_acc_sunny_suit.model"/>
+			<file :name="res_acc_sunny_suit.object"/>
+			<file :name="res_acc_sunny_suit.unit"/>
+			<file :name="res_acc_sunny_suit_df.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_sunny_suit/bodhi/">
+			<file :name="res_acc_sunny_suit_bodhi.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_sunny_suit/chains/">
+			<file :name="res_acc_sunny_suit_chains.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_sunny_suit/dragon/">
+			<file :name="res_acc_sunny_suit_dragon.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_sunny_suit/sangres/">
+			<file :name="res_acc_sunny_suit_sangres.material_config"/>
+			<file :name="res_acc_sunny_suit_sangres_df.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/">
+			<file :name="res_acc_sunny_suit_big.cooked_physics"/>
+			<file :name="res_acc_sunny_suit_big.model"/>
+			<file :name="res_acc_sunny_suit_big.object"/>
+			<file :name="res_acc_sunny_suit_big.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/">
+			<file :name="res_acc_sunny_suit_female.cooked_physics"/>
+			<file :name="res_acc_sunny_suit_female.material_config"/>
+			<file :name="res_acc_sunny_suit_female.model"/>
+			<file :name="res_acc_sunny_suit_female.object"/>
+			<file :name="res_acc_sunny_suit_female.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/joy/">
+			<file :name="res_acc_sunny_suit_female_joy.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/sydney/">
+			<file :name="res_acc_sunny_suit_female_sydney.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/shared_materials/">
+			<file :name="res_acc_fps_loud_suit_blue.material_config"/>
+			<file :name="res_acc_fps_loud_suit_blue_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_blue_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_blue_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_blue_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_blue_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_blue_sydney.material_config"/>
+			<file :name="res_acc_fps_loud_suit_brown.material_config"/>
+			<file :name="res_acc_fps_loud_suit_brown_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_brown_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_brown_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_brown_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_brown_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_brown_sydney.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkaearth.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkaearth_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkaearth_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkaearth_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkaearth_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkaearth_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkaearth_sydney.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagreen.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagreen_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagreen_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagreen_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagreen_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagreen_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagreen_sydney.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagrey.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagrey_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagrey_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagrey_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagrey_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagrey_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkagrey_sydney.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkapurple.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkapurple_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkapurple_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkapurple_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkapurple_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkapurple_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkapurple_sydney.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkasea.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkasea_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkasea_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkasea_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkasea_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkasea_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_gorkasea_sydney.material_config"/>
+			<file :name="res_acc_fps_loud_suit_green.material_config"/>
+			<file :name="res_acc_fps_loud_suit_green_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_green_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_green_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_green_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_green_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_green_sydney.material_config"/>
+			<file :name="res_acc_fps_loud_suit_purple.material_config"/>
+			<file :name="res_acc_fps_loud_suit_purple_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_purple_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_purple_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_purple_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_purple_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_purple_sydney.material_config"/>
+			<file :name="res_acc_fps_loud_suit_red.material_config"/>
+			<file :name="res_acc_fps_loud_suit_red_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_red_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_red_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_red_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_red_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_red_sydney.material_config"/>
+			<file :name="res_acc_fps_loud_suit_white.material_config"/>
+			<file :name="res_acc_fps_loud_suit_white_02.material_config"/>
+			<file :name="res_acc_fps_loud_suit_white_bodhi.material_config"/>
+			<file :name="res_acc_fps_loud_suit_white_chains.material_config"/>
+			<file :name="res_acc_fps_loud_suit_white_joy.material_config"/>
+			<file :name="res_acc_fps_loud_suit_white_sangres.material_config"/>
+			<file :name="res_acc_fps_loud_suit_white_sydney.material_config"/>
+			<file :name="res_acc_fps_prison_suit_comedy.material_config"/>
+			<file :name="res_acc_fps_prison_suit_janitor.material_config"/>
+			<file :name="res_acc_fps_prison_suit_repairman.material_config"/>
+			<file :name="res_acc_fps_prison_suit_subject.material_config"/>
+			<file :name="res_acc_fps_prison_suit_vaultboy.material_config"/>
+			<file :name="res_acc_loud_suit_blue.material_config"/>
+			<file :name="res_acc_loud_suit_blue_02.material_config"/>
+			<file :name="res_acc_loud_suit_blue_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_blue_chains.material_config"/>
+			<file :name="res_acc_loud_suit_blue_joy.material_config"/>
+			<file :name="res_acc_loud_suit_blue_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_blue_sydney.material_config"/>
+			<file :name="res_acc_loud_suit_brown.material_config"/>
+			<file :name="res_acc_loud_suit_brown_02.material_config"/>
+			<file :name="res_acc_loud_suit_brown_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_brown_chains.material_config"/>
+			<file :name="res_acc_loud_suit_brown_joy.material_config"/>
+			<file :name="res_acc_loud_suit_brown_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_brown_sydney.material_config"/>
+			<file :name="res_acc_loud_suit_gorkaearth.material_config"/>
+			<file :name="res_acc_loud_suit_gorkaearth_02.material_config"/>
+			<file :name="res_acc_loud_suit_gorkaearth_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_gorkaearth_chains.material_config"/>
+			<file :name="res_acc_loud_suit_gorkaearth_joy.material_config"/>
+			<file :name="res_acc_loud_suit_gorkaearth_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_gorkaearth_sydney.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagreen.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagreen_02.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagreen_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagreen_chains.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagreen_joy.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagreen_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagreen_sydney.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagrey.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagrey_02.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagrey_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagrey_chains.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagrey_joy.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagrey_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_gorkagrey_sydney.material_config"/>
+			<file :name="res_acc_loud_suit_gorkapurple.material_config"/>
+			<file :name="res_acc_loud_suit_gorkapurple_02.material_config"/>
+			<file :name="res_acc_loud_suit_gorkapurple_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_gorkapurple_chains.material_config"/>
+			<file :name="res_acc_loud_suit_gorkapurple_joy.material_config"/>
+			<file :name="res_acc_loud_suit_gorkapurple_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_gorkapurple_sydney.material_config"/>
+			<file :name="res_acc_loud_suit_gorkasea.material_config"/>
+			<file :name="res_acc_loud_suit_gorkasea_02.material_config"/>
+			<file :name="res_acc_loud_suit_gorkasea_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_gorkasea_chains.material_config"/>
+			<file :name="res_acc_loud_suit_gorkasea_joy.material_config"/>
+			<file :name="res_acc_loud_suit_gorkasea_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_gorkasea_sydney.material_config"/>
+			<file :name="res_acc_loud_suit_green.material_config"/>
+			<file :name="res_acc_loud_suit_green_02.material_config"/>
+			<file :name="res_acc_loud_suit_green_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_green_chains.material_config"/>
+			<file :name="res_acc_loud_suit_green_joy.material_config"/>
+			<file :name="res_acc_loud_suit_green_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_green_sydney.material_config"/>
+			<file :name="res_acc_loud_suit_purple.material_config"/>
+			<file :name="res_acc_loud_suit_purple_02.material_config"/>
+			<file :name="res_acc_loud_suit_purple_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_purple_chains.material_config"/>
+			<file :name="res_acc_loud_suit_purple_joy.material_config"/>
+			<file :name="res_acc_loud_suit_purple_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_purple_sydney.material_config"/>
+			<file :name="res_acc_loud_suit_red.material_config"/>
+			<file :name="res_acc_loud_suit_red_02.material_config"/>
+			<file :name="res_acc_loud_suit_red_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_red_chains.material_config"/>
+			<file :name="res_acc_loud_suit_red_joy.material_config"/>
+			<file :name="res_acc_loud_suit_red_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_red_sydney.material_config"/>
+			<file :name="res_acc_loud_suit_white.material_config"/>
+			<file :name="res_acc_loud_suit_white_02.material_config"/>
+			<file :name="res_acc_loud_suit_white_bodhi.material_config"/>
+			<file :name="res_acc_loud_suit_white_chains.material_config"/>
+			<file :name="res_acc_loud_suit_white_joy.material_config"/>
+			<file :name="res_acc_loud_suit_white_sangres.material_config"/>
+			<file :name="res_acc_loud_suit_white_sydney.material_config"/>
+			<file :name="res_acc_prison_suit_comedy.material_config"/>
+			<file :name="res_acc_prison_suit_janitor.material_config"/>
+			<file :name="res_acc_prison_suit_repairman.material_config"/>
+			<file :name="res_acc_prison_suit_subject.material_config"/>
+			<file :name="res_acc_prison_suit_vaultboy.material_config"/>
+			<file :name="res_acc_suit_sunny_blue.material_config"/>
+			<file :name="res_acc_suit_sunny_blue_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_blue_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_blue_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_blue_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_blue_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_blue_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_green.material_config"/>
+			<file :name="res_acc_suit_sunny_green_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_green_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_green_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_green_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_green_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_green_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_black.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_black_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_black_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_black_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_black_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_black_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_black_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_blue.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_blue_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_blue_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_blue_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_blue_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_blue_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_blue_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_cyan.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_cyan_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_cyan_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_cyan_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_cyan_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_cyan_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_cyan_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_green.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_green_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_green_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_green_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_green_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_green_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_green_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_orange.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_orange_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_orange_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_orange_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_orange_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_orange_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_orange_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_pink.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_pink_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_pink_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_pink_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_pink_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_pink_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_pink_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_red.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_red_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_red_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_red_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_red_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_red_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_hawaii_red_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_payne.material_config"/>
+			<file :name="res_acc_suit_sunny_payne_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_payne_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_payne_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_payne_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_payne_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_payne_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_pink.material_config"/>
+			<file :name="res_acc_suit_sunny_pink_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_pink_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_pink_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_pink_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_pink_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_pink_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_red.material_config"/>
+			<file :name="res_acc_suit_sunny_red_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_red_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_red_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_red_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_red_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_red_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_security_purple.material_config"/>
+			<file :name="res_acc_suit_sunny_security_purple_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_security_purple_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_security_purple_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_security_purple_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_security_purple_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_security_purple_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_security_red.material_config"/>
+			<file :name="res_acc_suit_sunny_security_red_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_security_red_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_security_red_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_security_red_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_security_red_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_security_red_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_skull.material_config"/>
+			<file :name="res_acc_suit_sunny_skull_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_skull_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_skull_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_skull_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_skull_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_skull_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_blue.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_blue_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_blue_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_blue_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_blue_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_blue_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_blue_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_green.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_green_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_green_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_green_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_green_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_green_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_soprano_green_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_vice.material_config"/>
+			<file :name="res_acc_suit_sunny_vice_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_vice_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_vice_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_vice_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_vice_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_vice_sydney.material_config"/>
+			<file :name="res_acc_suit_sunny_yellow.material_config"/>
+			<file :name="res_acc_suit_sunny_yellow_bodhi.material_config"/>
+			<file :name="res_acc_suit_sunny_yellow_chains.material_config"/>
+			<file :name="res_acc_suit_sunny_yellow_dragon.material_config"/>
+			<file :name="res_acc_suit_sunny_yellow_joy.material_config"/>
+			<file :name="res_acc_suit_sunny_yellow_sangres.material_config"/>
+			<file :name="res_acc_suit_sunny_yellow_sydney.material_config"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/shared_textures/">
+			<file :name="fps_prison_suit_comedy_df.texture"/>
+			<file :name="fps_prison_suit_janitor_df.texture"/>
+			<file :name="fps_prison_suit_repairman_df.texture"/>
+			<file :name="fps_prison_suit_subject_df.texture"/>
+			<file :name="fps_prison_suit_vaultboy_df.texture"/>
+			<file :name="player_tactical_outfit_blue_df.texture"/>
+			<file :name="player_tactical_outfit_brown_df.texture"/>
+			<file :name="player_tactical_outfit_fp_blue_df.texture"/>
+			<file :name="player_tactical_outfit_fp_brown_df.texture"/>
+			<file :name="player_tactical_outfit_fp_gorkaearth_df.texture"/>
+			<file :name="player_tactical_outfit_fp_gorkagreen_df.texture"/>
+			<file :name="player_tactical_outfit_fp_gorkagrey_df.texture"/>
+			<file :name="player_tactical_outfit_fp_gorkapurple_df.texture"/>
+			<file :name="player_tactical_outfit_fp_gorkasea_df.texture"/>
+			<file :name="player_tactical_outfit_fp_green_df.texture"/>
+			<file :name="player_tactical_outfit_fp_purple_df.texture"/>
+			<file :name="player_tactical_outfit_fp_red_df.texture"/>
+			<file :name="player_tactical_outfit_fp_white_df.texture"/>
+			<file :name="player_tactical_outfit_gorkaearth_df.texture"/>
+			<file :name="player_tactical_outfit_gorkagreen_df.texture"/>
+			<file :name="player_tactical_outfit_gorkagrey_df.texture"/>
+			<file :name="player_tactical_outfit_gorkapurple_df.texture"/>
+			<file :name="player_tactical_outfit_gorkasea_df.texture"/>
+			<file :name="player_tactical_outfit_green_df.texture"/>
+			<file :name="player_tactical_outfit_purple_df.texture"/>
+			<file :name="player_tactical_outfit_red_df.texture"/>
+			<file :name="player_tactical_outfit_white_df.texture"/>
+			<file :name="prison_suit_comedy_df.texture"/>
+			<file :name="prison_suit_janitor_df.texture"/>
+			<file :name="prison_suit_repairman_df.texture"/>
+			<file :name="prison_suit_subject_df.texture"/>
+			<file :name="prison_suit_vaultboy_df.texture"/>
+			<file :name="res_acc_suit_sunny_blue_df.texture"/>
+			<file :name="res_acc_suit_sunny_green_df.texture"/>
+			<file :name="res_acc_suit_sunny_hawaii_black_df.texture"/>
+			<file :name="res_acc_suit_sunny_hawaii_blue_df.texture"/>
+			<file :name="res_acc_suit_sunny_hawaii_cyan_df.texture"/>
+			<file :name="res_acc_suit_sunny_hawaii_green_df.texture"/>
+			<file :name="res_acc_suit_sunny_hawaii_orange_df.texture"/>
+			<file :name="res_acc_suit_sunny_hawaii_pink_df.texture"/>
+			<file :name="res_acc_suit_sunny_hawaii_red_df.texture"/>
+			<file :name="res_acc_suit_sunny_payne_df.texture"/>
+			<file :name="res_acc_suit_sunny_pink_df.texture"/>
+			<file :name="res_acc_suit_sunny_red_df.texture"/>
+			<file :name="res_acc_suit_sunny_security_purple_df.texture"/>
+			<file :name="res_acc_suit_sunny_security_red_df.texture"/>
+			<file :name="res_acc_suit_sunny_skull_df.texture"/>
+			<file :name="res_acc_suit_sunny_soprano_blue_df.texture"/>
+			<file :name="res_acc_suit_sunny_soprano_green_df.texture"/>
+			<file :name="res_acc_suit_sunny_vice_df.texture"/>
+			<file :name="res_acc_suit_sunny_yellow_df.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/trd_acc_jumpsuits/shared_textures/">
+			<file :name="trd_acc_jumpsuits_flatgreen_df.texture"/>
+			<file :name="trd_acc_jumpsuits_flecktarn_df.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/">
+			<file :name="trd_acc_fps_jumpsuit_flatgreen.material_config"/>
+			<file :name="trd_acc_fps_jumpsuit_flatgreen_df.texture"/>
+			<file :name="trd_acc_fps_jumpsuit_flecktarn.material_config"/>
+			<file :name="trd_acc_fps_jumpsuit_flecktarn_df.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_average/">
+			<file :name="trd_acc_jumpsuit_male_average_flatgreen.material_config"/>
+			<file :name="trd_acc_jumpsuit_male_average_flecktarn.material_config"/>
+		</group>
+
+	</group>
+
+</assets>

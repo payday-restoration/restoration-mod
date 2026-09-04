@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+
+	<!-- ///REX GOLD\\\ -->
+	<!-- Registration only, at mod init: this creates the DB entries that make the mod's
+	     files win over the base game's. It must happen at boot - a scripted group only
+	     registers when it is loaded, which is during GameSetup:load_packages, by which
+	     point the level's own packages have already resolved the base-game files and the
+	     overrides do nothing.
+
+	     Nothing is dyn-loaded from here (dyn_package="false"). Which units get handed to
+	     dyn_resource, and for which faction, is driven from lua/sc/superblt_units.lua,
+	     which loads each dbpath exactly once - handing the same one over twice leaves a
+	     load that never completes and hangs the level on a black screen. -->
+	<group dyn_package="false">
+
+		<group name="units/pd2_mod_custom/pickups/gold_bars/">
+			<file :name="gen_pku_gold_a.blend"/>
+			<file :name="gen_pku_gold_a.blend1"/>
+			<file :name="gen_pku_gold_a.model"/>
+			<file :name="gen_pku_gold_a.mscript"/>
+			<file :name="gen_pku_gold_a.mtl"/>
+			<file :name="gen_pku_gold_a.obj"/>
+			<file :name="gen_pku_gold_a.object"/>
+			<file :name="gen_pku_gold_a.unit"/>
+			<file :name="gen_pku_gold_b.blend"/>
+			<file :name="gen_pku_gold_b.blend1"/>
+			<file :name="gen_pku_gold_b.model"/>
+			<file :name="gen_pku_gold_b.mscript"/>
+			<file :name="gen_pku_gold_b.mtl"/>
+			<file :name="gen_pku_gold_b.obj"/>
+			<file :name="gen_pku_gold_b.object"/>
+			<file :name="gen_pku_gold_b.unit"/>
+			<file :name="gen_pku_gold_c.blend"/>
+			<file :name="gen_pku_gold_c.model"/>
+			<file :name="gen_pku_gold_c.mscript"/>
+			<file :name="gen_pku_gold_c.mtl"/>
+			<file :name="gen_pku_gold_c.obj"/>
+			<file :name="gen_pku_gold_c.object"/>
+			<file :name="gen_pku_gold_c.unit"/>
+			<file :name="gold_bars.material_config"/>
+			<xml :name="gold_bars.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="gold_bars_contour.material_config"/>
+			<file :name="gold_bars_df.texture"/>
+			<file :name="gold_bars_gsma.texture"/>
+			<file :name="gold_bars_nm.texture"/>
+		</group>
+
+	</group>
+
+</assets>

@@ -9,6 +9,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/characters/ene_acc_tazer_helmet/ene_acc_tazer_helmet" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" />
+		<depends_on unit="units/pd2_dlc_bex/characters/ene_head_atlas/ene_head_atlas" />
 	</dependencies>
 
 	<extensions>
@@ -23,6 +24,7 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
+			<var name="_head" value="units/pd2_dlc_bex/characters/ene_head_atlas/ene_head_atlas" />
 			<var name="_head_gear_object" value="g_helmet_lod" />
 			<var name="_nr_head_gear_objects" value="4" />
 			<var name="_head_gear" value="units/payday2/characters/ene_acc_tazer_helmet/ene_acc_tazer_helmet" />

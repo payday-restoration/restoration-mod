@@ -1,0 +1,1026 @@
+<?xml version="1.0"?>
+<assets base_path="assets/">
+
+	<!-- ///FEDERALES\\\ -->
+	<!-- Registration only, at mod init: this creates the DB entries that make the mod's
+	     files win over the base game's. It must happen at boot - a scripted group only
+	     registers when it is loaded, which is during GameSetup:load_packages, by which
+	     point the level's own packages have already resolved the base-game files and the
+	     overrides do nothing.
+
+	     Nothing is dyn-loaded from here (dyn_package="false"). Which units get handed to
+	     dyn_resource, and for which faction, is driven from lua/sc/superblt_units.lua,
+	     which loads each dbpath exactly once - handing the same one over twice leaves a
+	     load that never completes and hangs the level on a black screen. -->
+	<group dyn_package="false">
+
+
+		<group name="units/payday2/characters/shared_textures/">
+			<file :name="grenadier_atlas_nm.texture"/>
+			<file :name="spook_atlas_df.texture"/>
+			<file :name="spook_atlas_nm.texture"/>
+		</group>
+
+		<group name="units/payday2/weapons/wpn_npc_amcar/">
+			<file :name="wpn_npc_amcar.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_acc_bex_riflar/">
+			<file :name="ene_acc_bex_riflar.cooked_physics"/>
+			<file :name="ene_acc_bex_riflar.model"/>
+			<file :name="ene_acc_bex_riflar.object"/>
+			<file :name="ene_acc_bex_riflar.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/">
+			<file :name="ene_acc_bex_sexyhat.cooked_physics"/>
+			<file :name="ene_acc_bex_sexyhat.material_config"/>
+			<file :name="ene_acc_bex_sexyhat.model"/>
+			<file :name="ene_acc_bex_sexyhat.object"/>
+			<file :name="ene_acc_bex_sexyhat.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_acc_bexret/">
+			<file :name="ene_acc_bexret.cooked_physics"/>
+			<file :name="ene_acc_bexret.model"/>
+			<file :name="ene_acc_bexret.object"/>
+			<file :name="ene_acc_bexret.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/">
+			<file :name="ene_acc_shield_lights_sc.cooked_physics"/>
+			<file :name="ene_acc_shield_lights_sc.material_config"/>
+			<file :name="ene_acc_shield_lights_sc.model"/>
+			<file :name="ene_acc_shield_lights_sc.object"/>
+			<xml :name="ene_acc_shield_lights_sc.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_acc_shield_lights_sc.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_acc_shield_small/">
+			<file :name="shield_small.cooked_physics"/>
+			<file :name="shield_small.material_config"/>
+			<file :name="shield_small.model"/>
+			<file :name="shield_small.object"/>
+			<file :name="shield_small.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/">
+			<file :name="ene_acc_shield_zeal.cooked_physics"/>
+			<file :name="ene_acc_shield_zeal.material_config"/>
+			<file :name="ene_acc_shield_zeal.model"/>
+			<file :name="ene_acc_shield_zeal.object"/>
+			<xml :name="ene_acc_shield_zeal.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_acc_shield_zeal.unit"/>
+			<file :name="shield_df.texture"/>
+			<file :name="shield_il.texture"/>
+			<file :name="shield_nm.texture"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_1/">
+			<file :name="ene_bulldozer_1.cooked_physics"/>
+			<file :name="ene_bulldozer_1.material_config"/>
+			<file :name="ene_bulldozer_1.model"/>
+			<file :name="ene_bulldozer_1.object"/>
+			<xml :name="ene_bulldozer_1.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_bulldozer_1.unit"/>
+			<file :name="ene_bulldozer_1_contour.material_config"/>
+			<file :name="ene_bulldozer_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet/">
+			<file :name="ene_acc_bulldozer_helmet.model"/>
+			<file :name="ene_acc_bulldozer_helmet.object"/>
+			<file :name="ene_acc_bulldozer_helmet.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_leg_l/">
+			<file :name="ene_acc_bulldozer_leg_l.model"/>
+			<file :name="ene_acc_bulldozer_leg_l.object"/>
+			<file :name="ene_acc_bulldozer_leg_l.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_leg_r/">
+			<file :name="ene_acc_bulldozer_leg_r.model"/>
+			<file :name="ene_acc_bulldozer_leg_r.object"/>
+			<file :name="ene_acc_bulldozer_leg_r.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/">
+			<file :name="ene_acc_bulldozer_neck.model"/>
+			<file :name="ene_acc_bulldozer_neck.object"/>
+			<file :name="ene_acc_bulldozer_neck.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_l/">
+			<file :name="ene_acc_bulldozer_shoulderpad_l.model"/>
+			<file :name="ene_acc_bulldozer_shoulderpad_l.object"/>
+			<file :name="ene_acc_bulldozer_shoulderpad_l.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_shoulderpad_r/">
+			<file :name="ene_acc_bulldozer_shoulderpad_r.model"/>
+			<file :name="ene_acc_bulldozer_shoulderpad_r.object"/>
+			<file :name="ene_acc_bulldozer_shoulderpad_r.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/">
+			<file :name="ene_acc_bulldozer_throat.model"/>
+			<file :name="ene_acc_bulldozer_throat.object"/>
+			<file :name="ene_acc_bulldozer_throat.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_1_hard/">
+			<file :name="ene_bulldozer_1_hard.unit"/>
+			<file :name="ene_bulldozer_1_hard_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_2/">
+			<file :name="ene_bulldozer_2.cooked_physics"/>
+			<file :name="ene_bulldozer_2.material_config"/>
+			<file :name="ene_bulldozer_2.model"/>
+			<file :name="ene_bulldozer_2.object"/>
+			<xml :name="ene_bulldozer_2.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_bulldozer_2.unit"/>
+			<file :name="ene_bulldozer_2_contour.material_config"/>
+			<file :name="ene_bulldozer_2_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_helmet/">
+			<file :name="ene_acc_bulldozer_helmet.model"/>
+			<file :name="ene_acc_bulldozer_helmet.object"/>
+			<file :name="ene_acc_bulldozer_helmet.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/">
+			<file :name="ene_acc_bulldozer_neck.model"/>
+			<file :name="ene_acc_bulldozer_neck.object"/>
+			<file :name="ene_acc_bulldozer_neck.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/">
+			<file :name="ene_acc_bulldozer_throat.cooked_physics"/>
+			<file :name="ene_acc_bulldozer_throat.model"/>
+			<file :name="ene_acc_bulldozer_throat.object"/>
+			<file :name="ene_acc_bulldozer_throat.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_3/">
+			<file :name="ene_bulldozer_3.cooked_physics"/>
+			<file :name="ene_bulldozer_3.material_config"/>
+			<file :name="ene_bulldozer_3.model"/>
+			<file :name="ene_bulldozer_3.object"/>
+			<xml :name="ene_bulldozer_3.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_bulldozer_3.unit"/>
+			<file :name="ene_bulldozer_3_contour.material_config"/>
+			<file :name="ene_bulldozer_3_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_helmet/">
+			<file :name="ene_acc_bulldozer_helmet.model"/>
+			<file :name="ene_acc_bulldozer_helmet.object"/>
+			<file :name="ene_acc_bulldozer_helmet.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_helmet_plate/">
+			<file :name="ene_acc_bulldozer_helmet_plate.model"/>
+			<file :name="ene_acc_bulldozer_helmet_plate.object"/>
+			<file :name="ene_acc_bulldozer_helmet_plate.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_neck/">
+			<file :name="ene_acc_bulldozer_neck.cooked_physics"/>
+			<file :name="ene_acc_bulldozer_neck.model"/>
+			<file :name="ene_acc_bulldozer_neck.object"/>
+			<file :name="ene_acc_bulldozer_neck.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_throat/">
+			<file :name="ene_acc_bulldozer_throat.cooked_physics"/>
+			<file :name="ene_acc_bulldozer_throat.model"/>
+			<file :name="ene_acc_bulldozer_throat.object"/>
+			<file :name="ene_acc_bulldozer_throat.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_medic/">
+			<file :name="ene_bulldozer_medic.cooked_physics"/>
+			<file :name="ene_bulldozer_medic.material_config"/>
+			<file :name="ene_bulldozer_medic.model"/>
+			<file :name="ene_bulldozer_medic.object"/>
+			<xml :name="ene_bulldozer_medic.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_bulldozer_medic.unit"/>
+			<file :name="ene_bulldozer_medic_contour.material_config"/>
+			<file :name="ene_bulldozer_medic_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/">
+			<file :name="ene_acc_bulldozer_helmet.model"/>
+			<file :name="ene_acc_bulldozer_helmet.object"/>
+			<file :name="ene_acc_bulldozer_helmet.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/">
+			<file :name="ene_acc_bulldozer_neck.cooked_physics"/>
+			<file :name="ene_acc_bulldozer_neck.model"/>
+			<file :name="ene_acc_bulldozer_neck.object"/>
+			<file :name="ene_acc_bulldozer_neck.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/">
+			<file :name="ene_acc_bulldozer_throat.cooked_physics"/>
+			<file :name="ene_acc_bulldozer_throat.model"/>
+			<file :name="ene_acc_bulldozer_throat.object"/>
+			<file :name="ene_acc_bulldozer_throat.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/">
+			<file :name="ene_bulldozer_minigun.cooked_physics"/>
+			<file :name="ene_bulldozer_minigun.material_config"/>
+			<file :name="ene_bulldozer_minigun.model"/>
+			<file :name="ene_bulldozer_minigun.object"/>
+			<xml :name="ene_bulldozer_minigun.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_bulldozer_minigun.unit"/>
+			<file :name="ene_bulldozer_minigun_contour.material_config"/>
+			<file :name="ene_bulldozer_minigun_husk.unit"/>
+			<file :name="ene_dozer_policia_federale_body_minigun_df.texture"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_back/">
+			<file :name="ene_acc_bulldozer_back.cooked_physics"/>
+			<file :name="ene_acc_bulldozer_back.model"/>
+			<file :name="ene_acc_bulldozer_back.object"/>
+			<file :name="ene_acc_bulldozer_back.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet/">
+			<file :name="ene_acc_bulldozer_helmet.model"/>
+			<file :name="ene_acc_bulldozer_helmet.object"/>
+			<file :name="ene_acc_bulldozer_helmet.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet_plate/">
+			<file :name="ene_acc_bulldozer_helmet_plate.cooked_physics"/>
+			<file :name="ene_acc_bulldozer_helmet_plate.material_config"/>
+			<file :name="ene_acc_bulldozer_helmet_plate.model"/>
+			<file :name="ene_acc_bulldozer_helmet_plate.object"/>
+			<file :name="ene_acc_bulldozer_helmet_plate.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_neck/">
+			<file :name="ene_acc_bulldozer_neck.cooked_physics"/>
+			<file :name="ene_acc_bulldozer_neck.model"/>
+			<file :name="ene_acc_bulldozer_neck.object"/>
+			<file :name="ene_acc_bulldozer_neck.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_throat/">
+			<file :name="ene_acc_bulldozer_throat.cooked_physics"/>
+			<file :name="ene_acc_bulldozer_throat.model"/>
+			<file :name="ene_acc_bulldozer_throat.object"/>
+			<file :name="ene_acc_bulldozer_throat.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_city_heavy_g36/">
+			<file :name="ene_city_heavy_g36.cooked_physics"/>
+			<file :name="ene_city_heavy_g36.material_config"/>
+			<file :name="ene_city_heavy_g36.model"/>
+			<file :name="ene_city_heavy_g36.object"/>
+			<file :name="ene_city_heavy_g36.unit"/>
+			<file :name="ene_city_heavy_g36_contour.material_config"/>
+			<file :name="ene_city_heavy_g36_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_city_heavy_r870/">
+			<file :name="ene_city_heavy_r870.cooked_physics"/>
+			<file :name="ene_city_heavy_r870.material_config"/>
+			<file :name="ene_city_heavy_r870.model"/>
+			<file :name="ene_city_heavy_r870.object"/>
+			<file :name="ene_city_heavy_r870.unit"/>
+			<file :name="ene_city_heavy_r870_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_city_swat_1/">
+			<file :name="ene_city_swat_1.cooked_physics"/>
+			<file :name="ene_city_swat_1.material_config"/>
+			<file :name="ene_city_swat_1.model"/>
+			<file :name="ene_city_swat_1.object"/>
+			<file :name="ene_city_swat_1.unit"/>
+			<file :name="ene_city_swat_1_contour.material_config"/>
+			<file :name="ene_city_swat_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_city_swat_2/">
+			<file :name="ene_city_swat_2.cooked_physics"/>
+			<file :name="ene_city_swat_2.model"/>
+			<file :name="ene_city_swat_2.object"/>
+			<file :name="ene_city_swat_2.unit"/>
+			<file :name="ene_city_swat_2_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_city_swat_3/">
+			<file :name="ene_city_swat_3.cooked_physics"/>
+			<file :name="ene_city_swat_3.model"/>
+			<file :name="ene_city_swat_3.object"/>
+			<file :name="ene_city_swat_3.unit"/>
+			<file :name="ene_city_swat_3_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_fbi_1/">
+			<file :name="ene_fbi_1.material_config"/>
+			<file :name="ene_fbi_1.unit"/>
+			<file :name="ene_fbi_1_contour.material_config"/>
+			<file :name="ene_fbi_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_fbi_2/">
+			<file :name="ene_fbi_2.unit"/>
+			<file :name="ene_fbi_2_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_fbi_3/">
+			<file :name="ene_fbi_3.unit"/>
+			<file :name="ene_fbi_3_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/">
+			<file :name="ene_fbi_heavy_1.cooked_physics"/>
+			<file :name="ene_fbi_heavy_1.material_config"/>
+			<file :name="ene_fbi_heavy_1.model"/>
+			<file :name="ene_fbi_heavy_1.object"/>
+			<file :name="ene_fbi_heavy_1.unit"/>
+			<file :name="ene_fbi_heavy_1_contour.material_config"/>
+			<file :name="ene_fbi_heavy_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/">
+			<file :name="ene_fbi_heavy_r870.cooked_physics"/>
+			<file :name="ene_fbi_heavy_r870.material_config"/>
+			<file :name="ene_fbi_heavy_r870.model"/>
+			<file :name="ene_fbi_heavy_r870.object"/>
+			<file :name="ene_fbi_heavy_r870.unit"/>
+			<file :name="ene_fbi_heavy_r870_contour.material_config"/>
+			<file :name="ene_fbi_heavy_r870_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_fbi_swat_1/">
+			<file :name="ene_fbi_swat_1.cooked_physics"/>
+			<file :name="ene_fbi_swat_1.material_config"/>
+			<file :name="ene_fbi_swat_1.model"/>
+			<file :name="ene_fbi_swat_1.object"/>
+			<file :name="ene_fbi_swat_1.unit"/>
+			<file :name="ene_fbi_swat_1_contour.material_config"/>
+			<file :name="ene_fbi_swat_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_fbi_swat_2/">
+			<file :name="ene_fbi_swat_2.cooked_physics"/>
+			<file :name="ene_fbi_swat_2.material_config"/>
+			<file :name="ene_fbi_swat_2.model"/>
+			<file :name="ene_fbi_swat_2.object"/>
+			<file :name="ene_fbi_swat_2.unit"/>
+			<file :name="ene_fbi_swat_2_contour.material_config"/>
+			<file :name="ene_fbi_swat_2_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_fbi_swat_3/">
+			<file :name="ene_fbi_swat_3.cooked_physics"/>
+			<file :name="ene_fbi_swat_3.material_config"/>
+			<file :name="ene_fbi_swat_3.model"/>
+			<file :name="ene_fbi_swat_3.object"/>
+			<file :name="ene_fbi_swat_3.unit"/>
+			<file :name="ene_fbi_swat_3_contour.material_config"/>
+			<file :name="ene_fbi_swat_3_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_grenadier_1/">
+			<file :name="ene_grenadier_1.unit"/>
+			<file :name="ene_grenadier_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_head_atlas/">
+			<file :name="ene_head_atlas.material_config"/>
+			<file :name="ene_head_atlas.model"/>
+			<file :name="ene_head_atlas.object"/>
+			<xml :name="ene_head_atlas.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_head_atlas.unit"/>
+			<file :name="ene_head_atlas_contour.material_config"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_medic_mp5/">
+			<file :name="ene_medic_mp5.material_config"/>
+			<file :name="ene_medic_mp5.model"/>
+			<file :name="ene_medic_mp5.object"/>
+			<file :name="ene_medic_mp5.unit"/>
+			<file :name="ene_medic_mp5_contour.material_config"/>
+			<file :name="ene_medic_mp5_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_policia_01/">
+			<file :name="ene_policia_01.cooked_physics"/>
+			<file :name="ene_policia_01.material_config"/>
+			<file :name="ene_policia_01.model"/>
+			<file :name="ene_policia_01.object"/>
+			<xml :name="ene_policia_01.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_policia_01.unit"/>
+			<file :name="ene_policia_01_contour.material_config"/>
+			<file :name="ene_policia_01_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_policia_02/">
+			<file :name="ene_policia_02.unit"/>
+			<file :name="ene_policia_02_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_policia_03/">
+			<file :name="ene_policia_03.unit"/>
+			<file :name="ene_policia_03_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_policia_04/">
+			<file :name="ene_policia_04.unit"/>
+			<file :name="ene_policia_04_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_shield_1/">
+			<file :name="ene_shield_1.cooked_physics"/>
+			<file :name="ene_shield_1.material_config"/>
+			<file :name="ene_shield_1.model"/>
+			<file :name="ene_shield_1.object"/>
+			<file :name="ene_shield_1.unit"/>
+			<file :name="ene_shield_1_contour.material_config"/>
+			<file :name="ene_shield_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_shield_2/">
+			<file :name="ene_shield_2.unit"/>
+			<file :name="ene_shield_2_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_shield_gensec/">
+			<file :name="ene_shield_gensec.cooked_physics"/>
+			<file :name="ene_shield_gensec.material_config"/>
+			<file :name="ene_shield_gensec.model"/>
+			<file :name="ene_shield_gensec.object"/>
+			<file :name="ene_shield_gensec.unit"/>
+			<file :name="ene_shield_gensec_contour.material_config"/>
+			<file :name="ene_shield_gensec_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_sniper_1/">
+			<file :name="ene_sniper_1.unit"/>
+			<file :name="ene_sniper_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_spook_1/">
+			<file :name="ene_spook_1.cooked_physics"/>
+			<file :name="ene_spook_1.material_config"/>
+			<file :name="ene_spook_1.model"/>
+			<file :name="ene_spook_1.object"/>
+			<file :name="ene_spook_1.unit"/>
+			<file :name="ene_spook_1_contour.material_config"/>
+			<file :name="ene_spook_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_swat_1/">
+			<file :name="ene_swat_1.cooked_physics"/>
+			<file :name="ene_swat_1.material_config"/>
+			<file :name="ene_swat_1.model"/>
+			<file :name="ene_swat_1.object"/>
+			<xml :name="ene_swat_1.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_swat_1.unit"/>
+			<file :name="ene_swat_1_contour.material_config"/>
+			<file :name="ene_swat_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_swat_2/">
+			<file :name="ene_swat_2.unit"/>
+			<file :name="ene_swat_2_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_swat_3/">
+			<file :name="ene_swat_3.unit"/>
+			<file :name="ene_swat_3_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/">
+			<file :name="ene_swat_cloaker_policia_federale_body_debris.model"/>
+			<file :name="ene_swat_cloaker_policia_federale_body_debris.object"/>
+			<file :name="ene_swat_cloaker_policia_federale_body_debris.unit"/>
+			<file :name="ene_swat_cloaker_policia_federale_head_debris.model"/>
+			<file :name="ene_swat_cloaker_policia_federale_head_debris.object"/>
+			<file :name="ene_swat_cloaker_policia_federale_head_debris.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_swat_heavy_1/">
+			<file :name="ene_swat_heavy_1.unit"/>
+			<file :name="ene_swat_heavy_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_swat_heavy_r870/">
+			<file :name="ene_swat_heavy_r870.unit"/>
+			<file :name="ene_swat_heavy_r870_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/">
+			<file :name="ene_murkywater_medic_head_policia_federale_df.texture"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_swat_policia_federale/">
+			<file :name="ene_swat_policia_federale_body_df.texture"/>
+			<file :name="ene_swat_policia_federale_heads_df.texture"/>
+			<file :name="ene_swat_policia_federale_helmets_df.texture"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_tazer_1/">
+			<file :name="ene_tazer_1.material_config"/>
+			<file :name="ene_tazer_1.model"/>
+			<file :name="ene_tazer_1.object"/>
+			<xml :name="ene_tazer_1.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_tazer_1.unit"/>
+			<file :name="ene_tazer_1_contour.material_config"/>
+			<file :name="ene_tazer_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/">
+			<file :name="ene_veteran_enrique_1.cooked_physics"/>
+			<file :name="ene_veteran_enrique_1.material_config"/>
+			<file :name="ene_veteran_enrique_1.model"/>
+			<file :name="ene_veteran_enrique_1.object"/>
+			<file :name="ene_veteran_enrique_1.unit"/>
+			<file :name="ene_veteran_enrique_1_contour.material_config"/>
+			<file :name="ene_veteran_enrique_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/">
+			<file :name="ene_veteran_enrique_2.cooked_physics"/>
+			<file :name="ene_veteran_enrique_2.material_config"/>
+			<file :name="ene_veteran_enrique_2.model"/>
+			<file :name="ene_veteran_enrique_2.object"/>
+			<file :name="ene_veteran_enrique_2.unit"/>
+			<file :name="ene_veteran_enrique_2_contour.material_config"/>
+			<file :name="ene_veteran_enrique_2_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_zeal_city_1/">
+			<file :name="ene_zeal_city_1.cooked_physics"/>
+			<file :name="ene_zeal_city_1.material_config"/>
+			<file :name="ene_zeal_city_1.model"/>
+			<file :name="ene_zeal_city_1.object"/>
+			<file :name="ene_zeal_city_1.unit"/>
+			<file :name="ene_zeal_city_1_contour.material_config"/>
+			<file :name="ene_zeal_city_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_zeal_city_2/">
+			<file :name="ene_zeal_city_2.cooked_physics"/>
+			<file :name="ene_zeal_city_2.model"/>
+			<file :name="ene_zeal_city_2.object"/>
+			<file :name="ene_zeal_city_2.unit"/>
+			<file :name="ene_zeal_city_2_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_zeal_city_3/">
+			<file :name="ene_zeal_city_3.cooked_physics"/>
+			<file :name="ene_zeal_city_3.model"/>
+			<file :name="ene_zeal_city_3.object"/>
+			<file :name="ene_zeal_city_3.unit"/>
+			<file :name="ene_zeal_city_3_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_zeal_sniper/">
+			<file :name="ene_zeal_sniper.material_config"/>
+			<file :name="ene_zeal_sniper.model"/>
+			<file :name="ene_zeal_sniper.object"/>
+			<file :name="ene_zeal_sniper.unit"/>
+			<file :name="ene_zeal_sniper_contour.material_config"/>
+			<file :name="ene_zeal_sniper_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/">
+			<file :name="ene_zeal_swat_heavy_r870.cooked_physics"/>
+			<file :name="ene_zeal_swat_heavy_r870.model"/>
+			<file :name="ene_zeal_swat_heavy_r870.object"/>
+			<file :name="ene_zeal_swat_heavy_r870.unit"/>
+			<file :name="ene_zeal_swat_heavy_r870_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/">
+			<file :name="ene_zeal_swat_heavy_sc.cooked_physics"/>
+			<file :name="ene_zeal_swat_heavy_sc.material_config"/>
+			<file :name="ene_zeal_swat_heavy_sc.model"/>
+			<file :name="ene_zeal_swat_heavy_sc.object"/>
+			<file :name="ene_zeal_swat_heavy_sc.unit"/>
+			<file :name="ene_zeal_swat_heavy_sc_contour.material_config"/>
+			<file :name="ene_zeal_swat_heavy_sc_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/ene_zeal_swat_shield/">
+			<file :name="ene_zeal_swat_shield.unit"/>
+			<file :name="ene_zeal_swat_shield_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/characters/shared_textures/">
+			<file :name="bulldozer_city_df.texture"/>
+			<file :name="bulldozer_df.texture"/>
+			<file :name="bulldozer_medic_df.texture"/>
+			<file :name="bulldozer_nm.texture"/>
+			<file :name="bulldozer_saiga_df.texture"/>
+			<file :name="ene_acc_shield_lights_df.texture"/>
+			<file :name="ene_city_heavy_df.texture"/>
+			<file :name="ene_omnia_city_df.texture"/>
+			<file :name="fbi_df.texture"/>
+			<file :name="giantatlas_df.texture"/>
+			<file :name="giantatlas_nm.texture"/>
+			<file :name="grenadier_atlas_df.texture"/>
+			<file :name="heads_swat_atlas_df.texture"/>
+			<file :name="heads_swat_atlas_nm.texture"/>
+			<file :name="helmets_city_atlas_df.texture"/>
+			<file :name="helmets_city_atlas_nm.texture"/>
+			<file :name="mask_city_df.texture"/>
+			<file :name="police_df.texture"/>
+			<file :name="police_nm.texture"/>
+			<file :name="spook_heavy_df.texture"/>
+			<file :name="swat_body_df.texture"/>
+			<file :name="swat_body_nm.texture"/>
+			<file :name="swat_city_df.texture"/>
+			<file :name="swat_fbi_body_df.texture"/>
+			<file :name="swat_specials_df.texture"/>
+			<file :name="swat_specials_nm.texture"/>
+			<file :name="tank_glass_df.texture"/>
+			<file :name="tank_glass_op.texture"/>
+			<file :name="vet_blood_df.texture"/>
+			<file :name="vet_df.texture"/>
+			<file :name="zeal_heavy_df.texture"/>
+			<file :name="zeal_helmet_atlas_df.texture"/>
+			<file :name="zeal_helmet_atlas_nm.texture"/>
+			<file :name="zeal_swat_df.texture"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/weapons/wpn_npc_hajk/">
+			<file :name="wpn_npc_hajk.cooked_physics"/>
+			<file :name="wpn_npc_hajk.model"/>
+			<file :name="wpn_npc_hajk.object"/>
+			<file :name="wpn_npc_hajk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/weapons/wpn_npc_hk33/">
+			<file :name="hk33_df.texture"/>
+			<file :name="hk33_nm.texture"/>
+			<file :name="wpn_npc_hk33.cooked_physics"/>
+			<file :name="wpn_npc_hk33.material_config"/>
+			<file :name="wpn_npc_hk33.model"/>
+			<file :name="wpn_npc_hk33.object"/>
+			<file :name="wpn_npc_hk33.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/">
+			<file :name="wpn_npc_hk33_bravo.cooked_physics"/>
+			<file :name="wpn_npc_hk33_bravo.model"/>
+			<file :name="wpn_npc_hk33_bravo.object"/>
+			<file :name="wpn_npc_hk33_bravo.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/weapons/wpn_npc_m500/">
+			<file :name="wpn_npc_m500.cooked_physics"/>
+			<file :name="wpn_npc_m500.model"/>
+			<file :name="wpn_npc_m500.object"/>
+			<file :name="wpn_npc_m500.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/weapons/wpn_npc_m500_dozer/">
+			<file :name="wpn_npc_m500_dozer.cooked_physics"/>
+			<file :name="wpn_npc_m500_dozer.model"/>
+			<file :name="wpn_npc_m500_dozer.object"/>
+			<file :name="wpn_npc_m500_dozer.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_bex/weapons/wpn_npc_uzi/">
+			<file :name="hajk_uzi_atlas_df.texture"/>
+			<file :name="hajk_uzi_atlas_nm.texture"/>
+			<file :name="wpn_npc_uzi.cooked_physics"/>
+			<file :name="wpn_npc_uzi.material_config"/>
+			<file :name="wpn_npc_uzi.model"/>
+			<file :name="wpn_npc_uzi.object"/>
+			<file :name="wpn_npc_uzi.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_pex/characters/ene_acc_office_cap/">
+			<file :name="ene_acc_office_cap.cooked_physics"/>
+			<file :name="ene_acc_office_cap.material_config"/>
+			<file :name="ene_acc_office_cap.model"/>
+			<file :name="ene_acc_office_cap.object"/>
+			<file :name="ene_acc_office_cap.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_pex/characters/ene_male_office_cop_01/">
+			<file :name="ene_male_office_cop_01.unit"/>
+			<file :name="ene_male_office_cop_01_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_dlc_pex/characters/ene_male_office_cop_02/">
+			<file :name="ene_male_office_cop_02.unit"/>
+			<file :name="ene_male_office_cop_02_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/">
+			<file :name="ene_acc_bravo_sickhat.model"/>
+			<file :name="ene_acc_bravo_sickhat.object"/>
+			<file :name="ene_acc_bravo_sickhat.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/">
+			<file :name="ene_bravo_dmr_mex.cooked_physics"/>
+			<file :name="ene_bravo_dmr_mex.material_config"/>
+			<file :name="ene_bravo_dmr_mex.model"/>
+			<file :name="ene_bravo_dmr_mex.object"/>
+			<file :name="ene_bravo_dmr_mex.unit"/>
+			<file :name="ene_bravo_dmr_mex_contour.material_config"/>
+			<file :name="ene_bravo_dmr_mex_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/">
+			<file :name="ene_bravo_lmg_mex.cooked_physics"/>
+			<file :name="ene_bravo_lmg_mex.material_config"/>
+			<file :name="ene_bravo_lmg_mex.model"/>
+			<file :name="ene_bravo_lmg_mex.object"/>
+			<file :name="ene_bravo_lmg_mex.unit"/>
+			<file :name="ene_bravo_lmg_mex_contour.material_config"/>
+			<file :name="ene_bravo_lmg_mex_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_bravo/characters/ene_bravo_rifle/">
+			<file :name="ene_bravo_rifle.material_config"/>
+			<file :name="ene_bravo_rifle.model"/>
+			<file :name="ene_bravo_rifle.object"/>
+			<xml :name="ene_bravo_rifle.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_bravo_rifle.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/">
+			<file :name="ene_bravo_rifle_mex.cooked_physics"/>
+			<file :name="ene_bravo_rifle_mex.material_config"/>
+			<file :name="ene_bravo_rifle_mex.model"/>
+			<file :name="ene_bravo_rifle_mex.object"/>
+			<file :name="ene_bravo_rifle_mex.unit"/>
+			<file :name="ene_bravo_rifle_mex_contour.material_config"/>
+			<file :name="ene_bravo_rifle_mex_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/">
+			<file :name="ene_bravo_shotgun_mex.cooked_physics"/>
+			<file :name="ene_bravo_shotgun_mex.material_config"/>
+			<file :name="ene_bravo_shotgun_mex.model"/>
+			<file :name="ene_bravo_shotgun_mex.object"/>
+			<file :name="ene_bravo_shotgun_mex.unit"/>
+			<file :name="ene_bravo_shotgun_mex_contour.material_config"/>
+			<file :name="ene_bravo_shotgun_mex_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_bravo/characters/shared_textures/">
+			<file :name="bravo_body_df.texture"/>
+			<file :name="bravo_body_nm.texture"/>
+			<file :name="bravo_mex_df.texture"/>
+			<file :name="bravo_mex_elite_df.texture"/>
+			<file :name="heads_atlas_mex_df.texture"/>
+			<file :name="heads_atlas_mex_nm.texture"/>
+			<file :name="helmets_atlas_df.texture"/>
+			<file :name="helmets_atlas_mex_df.texture"/>
+			<file :name="helmets_atlas_mex_nm.texture"/>
+			<file :name="helmets_atlas_nm.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/">
+			<file :name="wpn_npc_hk21_bravo.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_acc_helmet_fbi_titan_1/">
+			<file :name="ene_acc_helmet_fbi_titan_1.cooked_physics"/>
+			<file :name="ene_acc_helmet_fbi_titan_1.material_config"/>
+			<file :name="ene_acc_helmet_fbi_titan_1.model"/>
+			<file :name="ene_acc_helmet_fbi_titan_1.object"/>
+			<file :name="ene_acc_helmet_fbi_titan_1.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/">
+			<file :name="ene_acc_helmet_titsnip_cap.cooked_physics"/>
+			<file :name="ene_acc_helmet_titsnip_cap.material_config"/>
+			<file :name="ene_acc_helmet_titsnip_cap.model"/>
+			<file :name="ene_acc_helmet_titsnip_cap.object"/>
+			<file :name="ene_acc_helmet_titsnip_cap.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/">
+			<file :name="akan_phalanx_df.texture"/>
+			<file :name="akan_phalanx_nm.texture"/>
+			<file :name="ene_acc_shield_akan_phalanx.cooked_physics"/>
+			<file :name="ene_acc_shield_akan_phalanx.material_config"/>
+			<file :name="ene_acc_shield_akan_phalanx.model"/>
+			<file :name="ene_acc_shield_akan_phalanx.object"/>
+			<file :name="ene_acc_shield_akan_phalanx.unit"/>
+			<file :name="ene_acc_shield_akan_phalanx_dummy.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/">
+			<file :name="ene_acc_tswat_k63.cooked_physics"/>
+			<file :name="ene_acc_tswat_k63.material_config"/>
+			<file :name="ene_acc_tswat_k63.model"/>
+			<file :name="ene_acc_tswat_k63.object"/>
+			<xml :name="ene_acc_tswat_k63.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_acc_tswat_k63.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_akan_lpf/">
+			<file :name="ene_akan_lpf.cooked_physics"/>
+			<file :name="ene_akan_lpf.material_config"/>
+			<file :name="ene_akan_lpf.model"/>
+			<file :name="ene_akan_lpf.object"/>
+			<xml :name="ene_akan_lpf.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_akan_lpf.unit"/>
+			<file :name="ene_akan_lpf_contour.material_config"/>
+			<file :name="ene_akan_lpf_husk.unit"/>
+			<file :name="ene_akan_lpf_picklerick.material_config"/>
+			<file :name="lpf_body_df.texture"/>
+			<file :name="maska_df.texture"/>
+			<file :name="maska_il.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_fbi_titan_1/">
+			<file :name="ene_fbi_titan_1.cooked_physics"/>
+			<file :name="ene_fbi_titan_1.material_config"/>
+			<file :name="ene_fbi_titan_1.model"/>
+			<file :name="ene_fbi_titan_1.object"/>
+			<file :name="ene_fbi_titan_1.unit"/>
+			<file :name="ene_fbi_titan_1_contour.material_config"/>
+			<file :name="ene_fbi_titan_1_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_phalanx_1_assault/">
+			<file :name="ene_phalanx_1_assault.unit"/>
+			<file :name="ene_phalanx_1_assault_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_subject_enforcer/">
+			<file :name="coat_op.texture"/>
+			<file :name="ene_subject_enforcer.material_config"/>
+			<file :name="ene_subject_enforcer.model"/>
+			<file :name="ene_subject_enforcer.object"/>
+			<xml :name="ene_subject_enforcer.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_subject_enforcer.unit"/>
+			<file :name="ene_subject_enforcer_contour.material_config"/>
+			<file :name="ene_subject_enforcer_df.texture"/>
+			<file :name="ene_subject_enforcer_husk.unit"/>
+			<file :name="ene_subject_enforcer_nm.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_subject_enforcer/debris/">
+			<file :name="ene_subject_enforcer_arm_debris.model"/>
+			<file :name="ene_subject_enforcer_arm_debris.object"/>
+			<file :name="ene_subject_enforcer_arm_debris.unit"/>
+			<file :name="ene_subject_enforcer_head_debris.model"/>
+			<file :name="ene_subject_enforcer_head_debris.object"/>
+			<xml :name="ene_subject_enforcer_head_debris.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_subject_enforcer_head_debris.unit"/>
+			<file :name="ene_subject_enforcer_helmet_debris.model"/>
+			<file :name="ene_subject_enforcer_helmet_debris.object"/>
+			<file :name="ene_subject_enforcer_helmet_debris.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_titan_rifle/">
+			<file :name="ene_titan_rifle.cooked_physics"/>
+			<file :name="ene_titan_rifle.material_config"/>
+			<file :name="ene_titan_rifle.model"/>
+			<file :name="ene_titan_rifle.object"/>
+			<file :name="ene_titan_rifle.unit"/>
+			<file :name="ene_titan_rifle_contour.material_config"/>
+			<file :name="ene_titan_rifle_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_titan_shotgun/">
+			<file :name="ene_titan_shotgun.cooked_physics"/>
+			<file :name="ene_titan_shotgun.material_config"/>
+			<file :name="ene_titan_shotgun.model"/>
+			<file :name="ene_titan_shotgun.object"/>
+			<file :name="ene_titan_shotgun.unit"/>
+			<file :name="ene_titan_shotgun_contour.material_config"/>
+			<file :name="ene_titan_shotgun_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_titan_sniper/">
+			<file :name="ene_titan_sniper.cooked_physics"/>
+			<file :name="ene_titan_sniper.material_config"/>
+			<file :name="ene_titan_sniper.model"/>
+			<file :name="ene_titan_sniper.object"/>
+			<file :name="ene_titan_sniper.unit"/>
+			<file :name="ene_titan_sniper_contour.material_config"/>
+			<file :name="ene_titan_sniper_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/">
+			<file :name="ene_titan_sniper_scripted.unit"/>
+			<file :name="ene_titan_sniper_scripted_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_titan_taser/">
+			<file :name="ene_titan_taser.cooked_physics"/>
+			<file :name="ene_titan_taser.material_config"/>
+			<file :name="ene_titan_taser.model"/>
+			<file :name="ene_titan_taser.object"/>
+			<file :name="ene_titan_taser.unit"/>
+			<file :name="ene_titan_taser_contour.material_config"/>
+			<file :name="ene_titan_taser_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_vip_2/">
+			<file :name="ene_vip_2.cooked_physics"/>
+			<file :name="ene_vip_2.material_config"/>
+			<file :name="ene_vip_2.model"/>
+			<file :name="ene_vip_2.object"/>
+			<xml :name="ene_vip_2.sequence_manager" from_type="custom_xml" to_type="binary"/>
+			<file :name="ene_vip_2.unit"/>
+			<file :name="ene_vip_2_contour.material_config"/>
+			<file :name="ene_vip_2_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_vip_2/debris/ene_acc_bulldozer_back/">
+			<file :name="ene_acc_bulldozer_back.model"/>
+			<file :name="ene_acc_bulldozer_back.object"/>
+			<file :name="ene_acc_bulldozer_back.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/">
+			<file :name="ene_acc_bulldozer_chest.model"/>
+			<file :name="ene_acc_bulldozer_chest.object"/>
+			<file :name="ene_acc_bulldozer_chest.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/">
+			<file :name="ene_acc_bulldozer_stomache.model"/>
+			<file :name="ene_acc_bulldozer_stomache.object"/>
+			<file :name="ene_acc_bulldozer_stomache.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/ene_vip_2_assault/">
+			<file :name="ene_vip_2_assault.unit"/>
+			<file :name="ene_vip_2_assault_husk.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/characters/shared_textures/">
+			<file :name="act_stalker_freedom_1_head_glass.texture"/>
+			<file :name="ene_phalanx_snp_df.texture"/>
+			<file :name="ene_titan_fbi_df.texture"/>
+			<file :name="ene_titan_rifle_df.texture"/>
+			<file :name="ene_titan_shotgun_df.texture"/>
+			<file :name="ene_titan_taser_df.texture"/>
+			<file :name="heads_atlas_df.texture"/>
+			<file :name="heads_atlas_nm.texture"/>
+			<file :name="heads_dozer_df.texture"/>
+			<file :name="heads_dozer_hurt_df.texture"/>
+			<file :name="heads_dozer_hurt_nm.texture"/>
+			<file :name="heads_dozer_il.texture"/>
+			<file :name="helmets_snp_df.texture"/>
+			<file :name="k63_df.texture"/>
+			<file :name="k63_nm.texture"/>
+			<file :name="k63_tit_df.texture"/>
+			<file :name="spook_heavy_df.texture"/>
+			<file :name="spook_heavy_nm.texture"/>
+			<file :name="vip_2_body_df.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/">
+			<file :name="wpn_npc_asval_sc.material_config"/>
+			<file :name="wpn_npc_asval_sc.model"/>
+			<file :name="wpn_npc_asval_sc.object"/>
+			<file :name="wpn_npc_asval_sc.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/weapons/wpn_npc_basscannon/">
+			<file :name="wpn_npc_basscannon.material_config"/>
+			<file :name="wpn_npc_basscannon.model"/>
+			<file :name="wpn_npc_basscannon.object"/>
+			<file :name="wpn_npc_basscannon.unit"/>
+			<file :name="wpn_npc_basscannon_df.texture"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/weapons/wpn_npc_m32_large/">
+			<file :name="wpn_npc_m32_large.model"/>
+			<file :name="wpn_npc_m32_large.object"/>
+			<file :name="wpn_npc_m32_large.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/weapons/wpn_npc_sr2_sc/">
+			<file :name="wpn_npc_sr2_sc.material_config"/>
+			<file :name="wpn_npc_sr2_sc.model"/>
+			<file :name="wpn_npc_sr2_sc.object"/>
+			<file :name="wpn_npc_sr2_sc.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_reapers/weapons/wpn_npc_sr2_titan/">
+			<file :name="wpn_npc_sr2_titan.unit"/>
+		</group>
+
+		<group name="units/pd2_mod_sharks/characters/shared_textures/">
+			<file :name="spook_heavy_nm.texture"/>
+		</group>
+
+	</group>
+
+</assets>

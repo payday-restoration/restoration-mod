@@ -1,0 +1,31 @@
+<sequence_manager>
+	<unit>
+		<variables>
+			<var_arms value="0"/>
+		</variables>
+
+		<filter name="'check_show_arms'">
+			<check value="vars.var_arms == 1"/>
+		</filter>
+
+		<sequence name="'arms_short_on'" triggable="true">
+			<set_variables var_arms="1"/>
+		</sequence>
+		<sequence name="'arms_short_off'" triggable="true">
+			<set_variables var_arms="0"/>
+			<object enabled="false" name="'g_arms_white_a'"/>
+			<object enabled="false" name="'g_arms_white_a_lod1'"/>
+			<object enabled="false" name="'g_arms_black_a'"/>
+			<object enabled="false" name="'g_arms_black_a_lod1'"/>
+		</sequence>
+
+		<sequence name="'arms_white_a'" triggable="true">
+			<object enabled="true" name="'g_arms_white_a'"/>
+			<object enabled="true" name="'g_arms_white_a_lod1'"/>
+		</sequence>
+		<sequence name="'arms_black_a'" triggable="true">
+			<object enabled="true" name="'g_arms_black_a'"/>
+			<object enabled="true" name="'g_arms_black_a_lod1'"/>
+		</sequence>
+	</unit>
+</sequence_manager>

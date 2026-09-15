@@ -14,62 +14,6 @@
 	     load that never completes and hangs the level on a black screen. -->
 	<group dyn_package="false">
 
-		<group name="_dmc/effects/">
-			<file :name="concussion_trail.effect"/>
-			<file :name="heavy_muzzle.effect"/>
-			<file :name="heavy_muzzle_ring.effect"/>
-			<file :name="heavy_suppressed.effect"/>
-			<file :name="knockback_trail.effect"/>
-			<file :name="large_trail.effect"/>
-			<file :name="nato_trail.effect"/>
-			<file :name="plasma_b_trail.effect"/>
-			<file :name="plasma_b_trail_npc.effect"/>
-			<file :name="shell_556_smol.effect"/>
-			<file :name="shell_lmg_down.effect"/>
-			<file :name="shell_shak_smol.effect"/>
-			<file :name="shell_shak_sniper.effect"/>
-			<file :name="shell_sniper_m95_semi.effect"/>
-			<file :name="sterwers_trail.effect"/>
-			<file :name="sterwers_trail_e.effect"/>
-			<file :name="sterwers_trail_e_npc.effect"/>
-			<file :name="sterwers_trail_m.effect"/>
-			<file :name="sterwers_trail_m_npc.effect"/>
-			<file :name="sterwers_trail_m_small.effect"/>
-			<file :name="sterwers_trail_m_small_npc.effect"/>
-			<file :name="sterwers_trail_npc.effect"/>
-			<file :name="sterwers_trail_r.effect"/>
-			<file :name="sterwers_trail_r_npc.effect"/>
-			<file :name="sterwers_trail_t.effect"/>
-			<file :name="sterwers_trail_t_npc.effect"/>
-			<file :name="warsaw_trail.effect"/>
-		</group>
-
-		<group name="_dmc/effects/parts/">
-			<file :name="concussion_streak.effect"/>
-			<file :name="knockback_streak.effect"/>
-			<file :name="large_streak.effect"/>
-			<file :name="nato_big_light_streak.effect"/>
-			<file :name="nato_light_streak.effect"/>
-			<file :name="nato_streak.effect"/>
-			<file :name="plasma_b_streak.effect"/>
-			<file :name="plasma_b_streak_round.effect"/>
-			<file :name="sw_empire_streak.effect"/>
-			<file :name="sw_empire_streak_round.effect"/>
-			<file :name="sw_mando_streak.effect"/>
-			<file :name="sw_mando_streak_round.effect"/>
-			<file :name="sw_mando_streak_small.effect"/>
-			<file :name="sw_mando_streak_small_round.effect"/>
-			<file :name="sw_republic_streak.effect"/>
-			<file :name="sw_republic_streak_round.effect"/>
-			<file :name="sw_sterwers_streak.effect"/>
-			<file :name="sw_sterwers_streak_round.effect"/>
-			<file :name="sw_techno_streak.effect"/>
-			<file :name="sw_techno_streak_round.effect"/>
-			<file :name="warsaw_big_light_streak.effect"/>
-			<file :name="warsaw_light_streak.effect"/>
-			<file :name="warsaw_streak.effect"/>
-		</group>
-
 		<group name="_dmc/wpn_effects_textures/">
 			<file :name="wpn_sight_reticle_001_blue_il.texture"/>
 			<file :name="wpn_sight_reticle_001_green_il.texture"/>
@@ -113,86 +57,8 @@
 			<file :name="wpn_sight_reticle_010_yellow_il.texture"/>
 		</group>
 
-		<group name="anims/fps/g3_niphen/">
-			<file :name="g3_niphen_com_var1.animation"/>
-			<file :name="g3_niphen_com_var5.animation"/>
-			<file :name="g3_niphen_com_var6.animation"/>
-			<file :name="g3_niphen_com_var7.animation"/>
-			<file :name="g3_niphen_equip.animation"/>
-			<file :name="g3_niphen_get_up.animation"/>
-			<file :name="g3_niphen_gogo.animation"/>
-			<file :name="g3_niphen_idle.animation"/>
-			<file :name="g3_niphen_inspect.animation"/>
-			<file :name="g3_niphen_melee.animation"/>
-			<file :name="g3_niphen_melee_miss.animation"/>
-			<file :name="g3_niphen_recoil.animation"/>
-			<file :name="g3_niphen_recoil_enter.animation"/>
-			<file :name="g3_niphen_recoil_exit.animation"/>
-			<file :name="g3_niphen_recoil_loop.animation"/>
-			<file :name="g3_niphen_recoil_zoom.animation"/>
-			<file :name="g3_niphen_reload.animation"/>
-			<file :name="g3_niphen_reload_not_empty.animation"/>
-			<file :name="g3_niphen_sprint.animation"/>
-			<file :name="g3_niphen_sprint_enter.animation"/>
-			<file :name="g3_niphen_sprint_exit.animation"/>
-			<file :name="g3_niphen_tased.animation"/>
-			<file :name="g3_niphen_tased_boost.animation"/>
-			<file :name="g3_niphen_tased_exit.animation"/>
-			<file :name="g3_niphen_unequip.animation"/>
-			<file :name="g3_niphen_use.animation"/>
-		</group>
-
 		<group name="anims/fps/m590/">
 			<file :name="m590_recoil.animation"/>
-		</group>
-
-		<group name="anims/fps/melee/agave/">
-			<file :name="melee_attack_var1.animation"/>
-			<file :name="melee_attack_var2.animation"/>
-			<file :name="melee_attack_var3.animation"/>
-			<file :name="melee_attack_var4.animation"/>
-		</group>
-
-		<group name="anims/fps/melee/baseballbat/">
-			<file :name="melee_attack_var3.animation"/>
-		</group>
-
-		<group name="anims/fps/melee/beardy/">
-			<file :name="melee_attack_var4.animation"/>
-		</group>
-
-		<group name="anims/fps/melee/catch/">
-			<file :name="catch_attack_var1.animation"/>
-			<file :name="catch_attack_var2.animation"/>
-		</group>
-
-		<group name="anims/fps/melee/fireaxe/">
-			<file :name="melee_fireaxe_attack_var1.animation"/>
-			<file :name="melee_fireaxe_attack_var2.animation"/>
-			<file :name="melee_fireaxe_attack_var3.animation"/>
-			<file :name="melee_fireaxe_attack_var4.animation"/>
-		</group>
-
-		<group name="anims/fps/melee/garber/">
-			<file :name="melee_attack_var1.animation"/>
-			<file :name="melee_attack_var2.animation"/>
-			<file :name="melee_attack_var3.animation"/>
-			<file :name="melee_attack_var4.animation"/>
-			<file :name="melee_charge.animation"/>
-			<file :name="melee_charge_var2.animation"/>
-			<file :name="melee_start.animation"/>
-		</group>
-
-		<group name="anims/fps/melee/happy/">
-			<file :name="melee_attack_var2.animation"/>
-			<file :name="melee_attack_var3.animation"/>
-		</group>
-
-		<group name="anims/fps/melee/machete/">
-			<file :name="melee_attack_var1.animation"/>
-			<file :name="melee_attack_var2.animation"/>
-			<file :name="melee_attack_var3.animation"/>
-			<file :name="melee_attack_var4.animation"/>
 		</group>
 
 		<group name="anims/fps/x_mp5/">
@@ -685,21 +551,9 @@
 			<file :name="topbottomrim.texture"/>
 		</group>
 
-
-
-
-
-
-
 		<group name="patterns/">
 			<file :name="jkl_patt01.texture"/>
 			<file :name="jkl_patt02.texture"/>
-		</group>
-
-		<group name="soundbanks/">
-			<file :name="weapon_c96.bnk"/>
-			<file :name="weapon_mg42.bnk"/>
-			<file :name="weapon_sterling.bnk"/>
 		</group>
 
 		<group name="units/lights/spot_light_projection_textures/">
@@ -1074,27 +928,6 @@
 
 		<group name="units/payday2/weapons/wpn_fps_smg_mp5_pts/">
 			<file :name="wpn_fps_smg_mp5_m_drum_df_cc.texture"/>
-		</group>
-
-		<group name="units/payday2/weapons/wpn_fps_smg_p90_pts/">
-			<file :name="body_tan_df.texture"/>
-			<file :name="wpn_fps_smg_p90_body_tan.cooked_physics"/>
-			<file :name="wpn_fps_smg_p90_body_tan.material_config"/>
-			<file :name="wpn_fps_smg_p90_body_tan.model"/>
-			<file :name="wpn_fps_smg_p90_body_tan.object"/>
-			<file :name="wpn_fps_smg_p90_body_tan.unit"/>
-			<file :name="wpn_fps_smg_p90_body_tan_cc.material_config"/>
-			<file :name="wpn_fps_smg_p90_body_tan_cc_thq.material_config"/>
-			<file :name="wpn_fps_smg_p90_body_tan_thq.material_config"/>
-		</group>
-
-		<group name="units/payday2/weapons/wpn_fps_upg_ak_reusable/">
-			<file :name="wpn_fps_ak_bolt_gold.cooked_physics"/>
-			<file :name="wpn_fps_ak_bolt_gold.material_config"/>
-			<file :name="wpn_fps_ak_bolt_gold.model"/>
-			<file :name="wpn_fps_ak_bolt_gold.object"/>
-			<file :name="wpn_fps_ak_bolt_gold.unit"/>
-			<file :name="wpn_fps_ak_bolt_gold_thq.material_config"/>
 		</group>
 
 		<group name="units/payday2/weapons/wpn_frag_sc_flashbang/">
@@ -1676,41 +1509,6 @@
 			<file :name="wpn_third_ray_fired_rocket.model"/>
 		</group>
 
-		<group name="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/">
-			<file :name="wpn_fps_ass_g3_body_upper.material_config"/>
-			<file :name="wpn_fps_ass_g3_body_upper.model"/>
-			<file :name="wpn_fps_ass_g3_body_upper.object"/>
-			<file :name="wpn_fps_ass_g3_body_upper.unit"/>
-			<file :name="wpn_fps_ass_g3_fg_bipod.material_config"/>
-			<file :name="wpn_fps_ass_g3_fg_bipod.model"/>
-			<file :name="wpn_fps_ass_g3_fg_bipod.object"/>
-			<file :name="wpn_fps_ass_g3_fg_bipod.unit"/>
-			<file :name="wpn_fps_ass_g3_fg_psg.material_config"/>
-			<file :name="wpn_fps_ass_g3_fg_psg.model"/>
-			<file :name="wpn_fps_ass_g3_fg_psg.object"/>
-			<file :name="wpn_fps_ass_g3_fg_psg.unit"/>
-			<file :name="wpn_fps_ass_g3_fg_railed.material_config"/>
-			<file :name="wpn_fps_ass_g3_fg_railed.model"/>
-			<file :name="wpn_fps_ass_g3_fg_railed.object"/>
-			<file :name="wpn_fps_ass_g3_fg_railed.unit"/>
-			<file :name="wpn_fps_ass_g3_fg_retro.material_config"/>
-			<file :name="wpn_fps_ass_g3_fg_retro.model"/>
-			<file :name="wpn_fps_ass_g3_fg_retro.object"/>
-			<file :name="wpn_fps_ass_g3_fg_retro.unit"/>
-			<file :name="wpn_fps_ass_g3_fg_retro_plastic.material_config"/>
-			<file :name="wpn_fps_ass_g3_fg_retro_plastic.model"/>
-			<file :name="wpn_fps_ass_g3_fg_retro_plastic.object"/>
-			<file :name="wpn_fps_ass_g3_fg_retro_plastic.unit"/>
-			<file :name="wpn_fps_ass_g3_m_mag.material_config"/>
-			<file :name="wpn_fps_ass_g3_m_mag.model"/>
-			<file :name="wpn_fps_ass_g3_m_mag.object"/>
-			<file :name="wpn_fps_ass_g3_m_mag.unit"/>
-			<file :name="wpn_fps_ass_g3_m_mag_psg.material_config"/>
-			<file :name="wpn_fps_ass_g3_m_mag_psg.model"/>
-			<file :name="wpn_fps_ass_g3_m_mag_psg.object"/>
-			<file :name="wpn_fps_ass_g3_m_mag_psg.unit"/>
-		</group>
-
 		<group name="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/">
 			<file :name="wpn_fps_lmg_mg42_reciever.model"/>
 			<file :name="wpn_fps_lmg_mg42_reciever_green.cooked_physics"/>
@@ -1734,10 +1532,6 @@
 		<group name="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_rpk/">
 			<file :name="wpn_fps_lmg_rpk.model"/>
 			<file :name="wpn_fps_lmg_rpk.object"/>
-		</group>
-
-		<group name="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_msr_pts/">
-			<file :name="wpn_fps_snp_msr_ns_suppressor.object"/>
 		</group>
 
 		<group name="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/">
@@ -1791,10 +1585,6 @@
 
 		<group name="units/pd2_dlc_jolly/equipment/gen_interactable_saw/">
 			<xml :name="gen_interactable_saw.sequence_manager" from_type="custom_xml" to_type="binary"/>
-		</group>
-
-		<group name="units/pd2_dlc_khp/weapons/wpn_fps_pis_legacy/">
-			<file :name="wpn_fps_pis_legacy.unit"/>
 		</group>
 
 		<group name="units/pd2_dlc_mad/characters/civ_male_scientist_01/">
@@ -1858,14 +1648,6 @@
 			<file :name="nls_prop_giant_cloaker.material_config"/>
 		</group>
 
-		<group name="units/pd2_dlc_osa/weapons/wpn_fps_pis_x_rage/">
-			<file :name="wpn_fps_pis_x_rage.unit"/>
-		</group>
-
-		<group name="units/pd2_dlc_osa/weapons/wpn_fps_sho_x_judge/">
-			<file :name="wpn_fps_pis_x_judge.unit"/>
-		</group>
-
 		<group name="units/pd2_dlc_par/weapons/wpn_fps_lmg_par_pts/">
 			<file :name="wpn_fps_lmg_par_upper_reciever.model"/>
 		</group>
@@ -1883,53 +1665,6 @@
 
 		<group name="units/pd2_dlc_peta/weapons/wpn_fps_mel_scoutknife/">
 			<file :name="wpn_fps_mel_scoutknife.model"/>
-		</group>
-
-		<group name="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/">
-			<file :name="wpn_fps_snp_scout_b_standard.object"/>
-			<file :name="wpn_fps_snp_scout_body_conversion.object"/>
-			<file :name="wpn_fps_snp_scout_body_standard.object"/>
-			<file :name="wpn_fps_snp_scout_s_conversion.object"/>
-			<file :name="wpn_fps_snp_scout_s_standard.object"/>
-		</group>
-
-		<group name="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/">
-			<file :name="wpn_fps_upg_o_northtac_reddot.material_config"/>
-			<file :name="wpn_fps_upg_o_northtac_reddot.object"/>
-			<file :name="wpn_fps_upg_o_northtac_reddot_cc.material_config"/>
-			<file :name="wpn_fps_upg_o_northtac_reddot_lens.cooked_physics"/>
-			<file :name="wpn_fps_upg_o_northtac_reddot_lens.material_config"/>
-			<file :name="wpn_fps_upg_o_northtac_reddot_lens.model"/>
-			<file :name="wpn_fps_upg_o_northtac_reddot_lens.object"/>
-			<file :name="wpn_fps_upg_o_northtac_reddot_lens.unit"/>
-			<file :name="wpn_fps_upg_o_northtac_reddot_thq.material_config"/>
-			<file :name="wpn_fps_upg_o_northtac_reddot_thq_cc.material_config"/>
-			<file :name="wpn_fps_upg_o_northtac_scope_cc.material_config"/>
-			<file :name="wpn_fps_upg_o_northtac_scope_cc_thq.material_config"/>
-		</group>
-
-		<group name="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/">
-			<file :name="wpn_fps_snp_awp_ck_1_b_standard.object"/>
-		</group>
-
-		<group name="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/">
-			<file :name="wpn_fps_snp_awp_ck_2_b_long.object"/>
-		</group>
-
-		<group name="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_pts/">
-			<file :name="wpn_fps_snp_awp_b_long.object"/>
-			<file :name="wpn_fps_snp_awp_b_short.object"/>
-			<file :name="wpn_fps_snp_awp_b_standard.object"/>
-			<file :name="wpn_fps_snp_awp_ns_muzzle.object"/>
-			<file :name="wpn_fps_snp_awp_ns_muzzle_long.object"/>
-			<file :name="wpn_fps_snp_awp_ns_muzzle_short.object"/>
-		</group>
-
-		<group name="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/">
-			<file :name="wpn_fps_snp_victor_s_hera_cc.material_config"/>
-			<file :name="wpn_fps_snp_victor_s_hera_cc_thq.material_config"/>
-			<file :name="wpn_fps_snp_victor_s_mod0_cc.material_config"/>
-			<file :name="wpn_fps_snp_victor_s_mod0_cc_thq.material_config"/>
 		</group>
 
 		<group name="units/pd2_dlc_shoutout_raid/vehicles/fps_vehicle_muscle_1/">
@@ -1966,10 +1701,6 @@
 
 		<group name="units/pd2_dlc_steel/weapons/wpn_fps_mel_great/">
 			<file :name="wpn_fps_mel_great.model"/>
-		</group>
-
-		<group name="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/">
-			<file :name="wpn_fps_pis_rsh12.unit"/>
 		</group>
 
 		<group name="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/">

@@ -827,6 +827,7 @@
 	     SuperBLT DB entry they are an access violation in coreenvironmentfeeder.
 	     Everything else is in superblt/ - see supermod.xml. -->
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
+	<Package id="packages/dmc" file="packages/dmc.xml"/>
 	<Package id="packages/envcore" file="environments.xml"/>
 	<Package id="packages/secret_stash" file="secret_stash.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/scenvlevels" file="addSC_env_levels.xml" use_clbk="self:LoadSCAssets"/>

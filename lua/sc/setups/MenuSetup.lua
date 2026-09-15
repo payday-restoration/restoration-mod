@@ -31,6 +31,9 @@ function MenuSetup:load_packages()
     if not PackageManager:loaded("packages/outfitassets") then
         PackageManager:load("packages/outfitassets")
     end
+    if not PackageManager:loaded("packages/dmc") then
+        PackageManager:load("packages/dmc")
+    end	
 
 	local prefix = "packages/dlcs/"
 	local sufix = "/start_menu"

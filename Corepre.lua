@@ -20,6 +20,9 @@ end
 if not PackageManager:loaded("packages/envcore") then
 	PackageManager:load("packages/envcore")
 end
+if not PackageManager:loaded("packages/dmc") then
+	PackageManager:load("packages/dmc")
+end
 
 -- Needed to prevent a crash when the game language is set to another language
 if not PackageManager:loaded("core/packages/language_schinese") then

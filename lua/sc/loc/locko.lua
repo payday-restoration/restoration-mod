@@ -1863,10 +1863,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 			--Jebus
 			["bm_melee_jebus_info"] = "빛과 #{item_stage_2}#어둠##\n#{item_stage_2}#흑##과 백\n#{stats_positive}#생명##과 #{important_1}#죽음##\n\n바이너리 소드는 타협하지 못합니다. 그 전에 상대방을 #{important_1}#반갈죽##으로 만들기 때문이죠.",
 			--Headless Dozer Sword
-			["bm_melee_headless_sword_info"] = "악몽에서 만들어진 검.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.",
+			["bm_melee_headless_sword_info"] = "악몽에서 만들어진 검.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.##",
 				--Headless Dozer Hammer
 				["bm_melee_titham"] = "머리없는 불도저의 망치",
-				["bm_melee_titan_hammer_info"] = "악몽에서 만들어진 망치.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.",
+				["bm_melee_titan_hammer_info"] = "악몽에서 만들어진 망치.\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.##",
 				--im not gaj
 				["bm_melee_goat_info"] = "\"그것은 검이라 하기엔 너무도 컸다. 엄청나게 크고 두껍고 무거우며, 그리고 조잡했다. 그것은 말 그대로 철퇴였다.\"\n\n완전히 충전된 공격은 주변 #{skill_color}#12##미터 반경 내에 공포감을 퍼뜨립니다.\n\n#{important_1}#충전 속도는 스킬의 효과를 받지 않습니다.",
 			--Wt ring u got bithc?

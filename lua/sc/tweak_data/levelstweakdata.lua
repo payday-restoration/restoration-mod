@@ -286,6 +286,10 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pent.package = {"packages/job_pent", "levels/instances/unique/sah/sah_office/world/world"}
 	self.pent.player_style = "enforcer"
 	self.pent.max_bags = 17
+
+	-- Under the Hammer
+	self.auc.ai_group_type = lapd
+	self.auc.player_style = "tux"
 	
 	--[[GENSEC STUFF\\-- i don't care i'm disabling these stupid jeffy tier changes
 	self.arm_cro.package = {"packages/narr_arm_cro"}

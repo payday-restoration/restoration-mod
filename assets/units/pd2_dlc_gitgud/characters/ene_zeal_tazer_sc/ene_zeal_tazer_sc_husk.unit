@@ -7,6 +7,7 @@
 		<depends_on effect="effects/payday2/particles/character/taser_thread" />
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_tazer_helmet_sc/ene_acc_zeal_tazer_helmet_sc" />
 	</dependencies>
 
 	<extensions>

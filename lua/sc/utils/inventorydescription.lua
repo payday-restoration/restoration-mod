@@ -620,7 +620,7 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 
 						local swap_speed = (tweak_data.weapon[weapon_name].timers.equip + tweak_data.weapon[weapon_name].timers.unequip) / multiplier
 
-						mod[stat.name] = swap_speed - base_stats.swap_speed.value
+						mod[stat.name] = swap_speed - (base_stats.swap_speed.value or 1)
 					end
 				else
 					local chosen_index = part_data.stats[stat.name] or 0

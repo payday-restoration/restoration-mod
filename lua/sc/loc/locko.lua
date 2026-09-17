@@ -1449,6 +1449,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_upg_o_1_1_health"] = "적을 조준할 때 적의 체력을 #{skill_color}#표시하는## 레드 닷 조준기.\n#{risk}#1.1배율.##",
 		["bm_wp_upg_o_1_1_ammo"] = "#{skill_color}#무기의 현재 탄약 수를 표시하는## 레드 닷 조준기.\n#{risk}#1.1배율.##",
 		["bm_wp_upg_o_1_1_generic"] = "#{risk}#1.1배율.##",
+		["bm_wp_upg_o_1_1_nydar"] = "광투사식 조준기.\n#{risk}#1.1배율##",
 		["bm_wp_upg_o_1_2"] = "레드 닷 조준기.\n#{risk}#1.2배율.##",
 		["bm_wp_upg_o_1_5"] = "홀로그램 조준기\n#{risk}#1.5배율.##",
 		["bm_wp_upg_o_1_5_pris"] = "프리즘 조준기.\n#{risk}#1.5배율.##",
@@ -4934,7 +4935,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				["bm_menu_ro_charm"] = "리볼버 오셀롯",
 				["bm_menu_ro_grip"] = "리볼버 오셀롯",
 
-				["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...",
+				["bm_m134_sc_desc"] = "크립틱 메타포...",
 				["bm_wp_upg_suppressor_boss"] = "\"게 싸움이다!!!\"\n\n무기의 소음을 #{skill_color}#조용하게 만들고## #{risk}#적이 당신의 조준을 회피할 가능성을 낮춥니다.##"
 
 			})
@@ -4950,67 +4951,67 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 			--It's an "Upotte!!" reference
 			--SEISHOU ACADEMY
 				--MIDDLE SCHOOLERS
-					["bm_w_m16"] = "Ichiroku",
-					["bm_w_m16a1"] = "Ichiroku",
+					["bm_w_m16"] = "이치로쿠",
+					["bm_w_m16a1"] = "이치로쿠",
 						["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nThe energetic and foul-mouthed figurehead of the school.",
-					["bm_w_m4"] = "Em-Four",
-					["bm_w_m4_mk12"] = "Em-Four",
-					["bm_w_m4_lr300"] = "Em-Four",
+					["bm_w_m4"] = "엠포",
+					["bm_w_m4_mk12"] = "엠포",
+					["bm_w_m4_lr300"] = "엠포",
 						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nVice-president of the middleschool student council.",
-					["bm_w_aug"] = "AUG",
-					["bm_w_aug_a3"] = "AUG",
-					["bm_w_aug_f90"] = "AUG",
+					["bm_w_aug"] = "어그",
+					["bm_w_aug_a3"] = "어그",
+					["bm_w_aug_f90"] = "어그",
 						["bm_aug_sc_desc"] = "#{stats_negative}#\"RUN AWAY! PLEAD FOR YOUR LIFE!\"##\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nPresident of the middleschool student council.",
-					["bm_wp_ak5_fg_fnc"] = "Funco 키트",
+					["bm_wp_ak5_fg_fnc"] = "훈코 키트",
 						["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nGives off a heavy \"main protagonist\" aura.",
-					["bm_w_s552"] = "Shigu",
+					["bm_w_s552"] = "시구",
 						["bm_s552_sc_desc"] = "\"Next shot, I'll take your ear off, bitch.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nAn honor student from a wealthy family who excels in both sports and studies.",
-					["bm_w_l85a2"] = "Eru",
+					["bm_w_l85a2"] = "에루",
 						["bm_l85a2_sc_desc"] = "\"...\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nShy and clumsy, she has an unreliable nature and the habit of breaking a lot.",
-					["bm_w_rk62"] = "Sako",
+					["bm_w_rk62"] = "사코",
 						["bm_rk62_sc_desc"] = "\"#{stat_maxed}#What wonderful squeals!## You sound like you're about to #{stats_negative}#die!##\"\n\nA transfer student attending #{stats_positive}#Seishou Academy.##\nAn elf-eared sadist with a drive to be the \"alpha\" of any school she attends. Desires Funco.",
 
 				--HIGH SCHOOLERS
-					["bm_w_fal"] = "Faru",
-					["bm_w_fal_l1a1"] = "Faru",
-					["bm_w_fal_sa58"] = "Faru",
-					["bm_w_fal_idf"] = "Faru",
+					["bm_w_fal"] = "파루",
+					["bm_w_fal_l1a1"] = "파루",
+					["bm_w_fal_sa58"] = "파루",
+					["bm_w_fal_idf"] = "파루",
 						["bm_fal_sc_desc"] = "\"Your big sis arrived-!\"\n\nFunco's older sister.\nNot to be confused with Funco's other sister, L1A1.",
 						["bm_fal_ap25_sc_desc"] = "\"Your big sis arrived-!\"\n\nFunco's older sister.\nNot to be confused with Funco's other sister, L1A1.",
 					["bm_w_m14"] = "Ichiyon",
 						["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
-					["bm_w_g3"] = "Jiisuri",
-					["bm_w_g3_sg1"] = "Jiisuri",
-					["bm_w_g3_msg"] = "Jiisuri",
-					["bm_w_g3_psg"] = "Jiisuri",
+					["bm_w_g3"] = "지이스리",
+					["bm_w_g3_sg1"] = "지이스리",
+					["bm_w_g3_msg"] = "지이스리",
+					["bm_w_g3_psg"] = "지이스리",
 					["bm_w_g3_hk33"] = "HK33",
 					["bm_w_g3_hk33_fo3"] = "R91",
 						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 						["bm_g3_ap25_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 						["bm_g3_sg1_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
-						["bm_wp_wpn_fps_ass_g3_body_hk33"] = "HK33 \"Chuusuri\" Set",
+						["bm_wp_wpn_fps_ass_g3_body_hk33"] = "HK33 \"츄우스리\" 세트",
 						["bm_wp_wpn_fps_ass_g3_body_hk33_desc"] = "\"Call me that again, I dare you!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nDespite HK33's haugty attitude, she's been lovingly nicknamed \"Chuusuri\" by her peers, much to her chagrin.",
-						["bm_menu_jiisuri_stock"] = "Pantyhose",
+						["bm_menu_jiisuri_stock"] = "팬티스타킹",
 
 				--ELEMENTARY
-					["bm_w_mp5"] = "Empi",
+					["bm_w_mp5"] = "에무피",
 					["bm_w_mp5sd"] = "MP5SD",
 					["bm_w_mp5k"] = "MP5K",
 					["bm_w_mp5k_pdw"] = "MP5K",
 						["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nOne of Jiisuri's many younger siblings and the student council president of the elementary division.",
-					["bm_w_schakal"] = "UMP",
+					["bm_w_schakal"] = "윤피",
 						["bm_schakal_sc_desc"] = "An elementary schooler attending #{stats_positive}#Seishou Academy.##\nCousin to the G3 family; she's currently living together with them as she attends school. She often gets into fights with MP5K.",
-					["bm_w_uzi"] = "Uzi",
+					["bm_w_uzi"] = "우지",
 						["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nThe former self-declared leader of the elementary division, pushed out of the position by Empi when she arrived.",
-					["bm_w_mac10"] = "Ram",
+					["bm_w_mac10"] = "라무",
 						["bm_mac10_sc_desc"] = "\"INGRAM!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nA machinegun with words. Also rather top-heavy.",
 
 				--FACULTY
-					["bm_w_erma"] = "Erma-sensei",
+					["bm_w_erma"] = "엘마 선생",
 						["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at #{stats_positive}#Seishou Academy.##\nThe SMGs love her.",
-					["bm_w_m1928"] = "Thompson-sensei",
+					["bm_w_m1928"] = "톰슨 선생",
 						["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at #{stats_positive}#Seishou Academy.##\nSpeaks with accented Japanese. A former member of the FBI.",
-					["bm_w_ching"] = "Garand",
+					["bm_w_ching"] = "가란드",
 						["bm_galant_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at #{stats_positive}#Seishou Academy.##\nLooks over the middleschoolers.",
 
 			--RED STEEL ACADEMY
@@ -5022,36 +5023,36 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--["bm_w_rpk"] = "RPK",
 						["bm_rpk_sc_desc"] = "\"This is why men are such pigs!\"\n\nA three-stripe student attending #{stats_negative}#Red Steel Academy.##\nA tall, blonde girl with the ears and tail of a Siberian Tiger. Gets sniped frequently.",
 				--TWO STRIPES
-					["bm_w_ak74"] = "Nanayon",
+					["bm_w_ak74"] = "나나욘",
 						["bm_ak74_sc_desc"] = "\"If it's the Major's orders, anything goes-\"\n\nA two-stripe student attending #{stats_negative}#Red Steel Academy.##\nA beautiful girl with not only the ears and tail of a fox but the cunning nature to match.",
-					["bm_w_saiga"] = "Saiga-chan",
+					["bm_w_saiga"] = "사이가쨩",
 						["bm_saiga_sc_desc"] = "\"All of you are like mice in a trap, nya!\"\n\nA two-stripe student attending #{stats_negative}#Red Steel Academy.##\nHaughty, overconfident, and expressive, Saiga is a loud and boisterous auto-shotgun.",
 				--ONE STRIPE
-					["bm_w_coal"] = "Bizon",
+					["bm_w_coal"] = "비존",
 						["bm_coal_sc_desc"] = "\"You can count on me-!\"\n\nA one-stripe student attending #{stats_negative}#Red Steel Academy.##\nReally looks up to her seniors, quite literally, but takes special care when addressing SVD.",
 				--FACULTY
-					["bm_w_mosin"] = "Mosin Nagant",
+					["bm_w_mosin"] = "모신나강",
 						["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nA faculty member of #{stats_negative}#Red Steel Academy.##\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
 
 			--ENOSHIMA
 				--MIDDLE SCHOOLERS
-					["bm_w_spas12"] = "Supasu",
+					["bm_w_spas12"] = "스파스",
 						["bm_spas12_sc_desc"] = "\"Idiot! You're completely exposed!\"\n\nA middleschooler attending a public school in Enoshima.",
-					["bm_w_benelli"] = "Beneri M4",
+					["bm_w_benelli"] = "베네리 M4",
 						["bm_benelli_sc_desc"] = "\"There's a limit to not being able to read the mood!\"\n\nA middleschooler attending a public school in Enoshima.",
 			})
 		end
 		if my_wife then
 			LocalizationManager:add_localized_strings({
-				["bm_w_g3"] = "Jiisuri",
-				["bm_w_g3_sg1"] = "Jiisuri",
-				["bm_w_g3_msg"] = "Jiisuri",
-				["bm_w_g3_psg"] = "Jiisuri",
+				["bm_w_g3"] = "지이스리",
+				["bm_w_g3_sg1"] = "지이스리",
+				["bm_w_g3_msg"] = "지이스리",
+				["bm_w_g3_psg"] = "지이스리",
 				["bm_w_g3_hk33"] = "HK33",
 				["bm_w_g3_hk33_fo3"] = "R91",
 					["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 					["bm_g3_ap25_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
-					["bm_menu_jiisuri_stock"] = "Pantyhose",
+					["bm_menu_jiisuri_stock"] = "팬티스타킹",
 			})
 		end
 

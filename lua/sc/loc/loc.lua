@@ -1510,6 +1510,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_upg_o_1_1_health"] = "Red dot sight that #{skill_color}#displays the health of enemies## while aiming at them.\n#{risk}#1.1x magnification.##",
 		["bm_wp_upg_o_1_1_ammo"] = "Red dot sight that #{skill_color}#displays the weapon's current ammo count##.\n#{risk}#1.1x magnification.##",
 		["bm_wp_upg_o_1_1_generic"] = "#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1_nydar"] = "Light projection sight.\n#{risk}#1.1x magnification.##",
 		["bm_wp_upg_o_1_2"] = "Red dot sight.\n#{risk}#1.2x magnification.##",
 		["bm_wp_upg_o_1_5"] = "Holographic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_pris"] = "Prismatic sight.\n#{risk}#1.5x magnification.##",

@@ -1894,22 +1894,27 @@ function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_o
 	end
 
 	self._active_animation_effects[anim] = {}
+
 	local data = tweak_data.weapon.factory[self._factory_id]
 
 	if data.animations and data.animations[unit_anim] then
-		local anim_name = data.animations[unit_anim]
+		local animation_data = data.animations[unit_anim]
+		local anim_name = type(animation_data) == "table" and animation_data.anim or animation_data
 		local ids_anim_name = Idstring(anim_name)
 		local length = self._unit:anim_length(ids_anim_name)
+
 		speed_multiplier = speed_multiplier or 1
-
 		self._unit:anim_stop(ids_anim_name)
-		self._unit:anim_play_to(ids_anim_name, length, speed_multiplier)
 
-		local offset = self:_get_anim_start_offset(anim_name) or set_offset2
+		local offset = self:_get_anim_start_offset(animation_data) or set_offset2
 
 		if offset then
 			self._unit:anim_set_time(ids_anim_name, offset)
 		end
+
+		length = self:_get_anim_legth_modifier(animation_data, length)
+
+		self._unit:anim_play_to(ids_anim_name, length, speed_multiplier)
 	end
 
 	if data.animation_effects and data.animation_effects[unit_anim] then
@@ -1926,19 +1931,24 @@ function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_o
 
 	for part_id, data in pairs(self._parts) do
 		if data.unit and data.animations and data.animations[unit_anim] then
-			local anim_name = data.animations[unit_anim]
+			local animation_data = data.animations[unit_anim]
+			local anim_name = type(animation_data) == "table" and animation_data.anim or animation_data
 			local ids_anim_name = Idstring(anim_name)
 			local length = data.unit:anim_length(ids_anim_name)
+
 			speed_multiplier = speed_multiplier or 1
 
 			data.unit:anim_stop(ids_anim_name)
-			data.unit:anim_play_to(ids_anim_name, length, speed_multiplier)
 
-			local offset = self:_get_anim_start_offset(anim_name) or set_offset
+			local offset = self:_get_anim_start_offset(animation_data) or set_offset
 
 			if offset then
 				data.unit:anim_set_time(ids_anim_name, offset)
 			end
+
+			length = self:_get_anim_legth_modifier(animation_data, length)
+
+			data.unit:anim_play_to(ids_anim_name, length, speed_multiplier)
 		end
 
 		if data.unit and data.animation_effects and data.animation_effects[unit_anim] then

@@ -14560,6 +14560,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m1897.timers.shotgun_reload_exit_not_empty = 0.9
 						self.m1897.timers.shotgun_reload_exit_empty = 0.9
 
+					--WA2000 of shotguns (how do we get a surplus of these)
+						--self.bleckert.desc_id = nil
+						self.bleckert.has_description = true
+						self.bleckert.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+						self.bleckert.rays = 8
+						self.bleckert.CLIP_AMMO_MAX = 5
+						self.bleckert.kick = self.stat_info.kick_tables.vertical_kick
+						self.bleckert.kick_pattern = {
+							{0, self.stat_info.kick_tables.random_recoil},
+							{3, self.stat_info.kick_tables.right_kick},
+							{4, self.stat_info.kick_tables.vertical_kick}
+						}
+						self.bleckert.fire_mode_data.fire_rate = 0.44
+						self.bleckert.fire_rate_multiplier = 1.1
+						self.bleckert.reload_speed_multiplier = 0.9
+						self.bleckert.AMMO_MAX = 0
+						self.bleckert.supported = true
+						self.bleckert.ads_speed = 0.300
+						self.bleckert.damage_falloff = {
+							start_dist = 500,
+							end_dist = 2100,
+							min_mult = 0.1333
+						}
+						self.bleckert.stats = {
+							damage = 180,
+							spread = 70,
+							recoil = 41,
+							spread_moving = 6,
+							zoom = 1,
+							concealment = 20,
+							suppression = 7,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 25
+						}
+						self.bleckert.stats_modifiers = nil
+						self.bleckert.bleckert_reload_flag = true
+						self.bleckert.panic_suppression_chance = 0.05
+
 				--SECONDARIES
 
 					--Loco 12g

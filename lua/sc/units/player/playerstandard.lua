@@ -4931,7 +4931,7 @@ end
 Hooks:PostHook(PlayerStandard, "_start_action_reload_enter", "ResStopFireAnimReloadFix", function(self, t)
 	local weap_base = self._equipped_unit:base()
 	if weap_base and weap_base:can_reload() then
-		if not weap_base:weapon_tweak_data().no_reload_anims then
+		if not weap_base:weapon_tweak_data().no_reload_anims and not weap_base:weapon_tweak_data().bleckert_reload_flag then
 			weap_base:tweak_data_anim_stop("fire")
 			weap_base:tweak_data_anim_stop("fire_steelsight")
 			local weapon_tweak = weap_base:weapon_tweak_data()

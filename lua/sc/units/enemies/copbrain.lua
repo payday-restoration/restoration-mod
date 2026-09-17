@@ -280,6 +280,7 @@ logic_variants.chavez_boss = logic_variants.triad_boss
 logic_variants.hector_boss = logic_variants.triad_boss
 logic_variants.drug_lord_boss = logic_variants.triad_boss
 logic_variants.biker_boss = logic_variants.triad_boss
+logic_variants.auctioneer_boss = logic_variants.triad_boss
 
 Hooks:PostHook(CopBrain, "init", "res_init", function(self, unit)
 	self._intimidation_t = 0 -- In Stealth, when the cop was intimidated

@@ -390,7 +390,7 @@ function StageEndScreenGui:init(saferect_ws, fullrect_ws, statistics_data)
 	end
 	self._enabled = true
 	if managers.job:stage_success() then
-		self._bain_debrief_t = TimerManager:main():time() + 2.5
+		self._bain_debrief_t = TimerManager:game():time() + 2.5
 	end
 end
 

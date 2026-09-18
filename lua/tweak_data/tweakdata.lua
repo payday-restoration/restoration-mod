@@ -1,7 +1,7 @@
 --if not RestorationTweak then
 restoration.textures = {}
 
-if not CCGCore then
+--[[ if not CCGCore then
 	--E3 PAYDAY+
 	table.insert(tweak_data.color_grading,
 		{
@@ -30,9 +30,9 @@ if not CCGCore then
 			text_id = "menu_color_subzero"
 		}
 	)
-end
+end ]]
 
---OVERKILL had this for RVD1 for some reason, but it's just inverted default grading?
+--[[ --OVERKILL had this for RVD1 for some reason, but it's just inverted default grading?
 table.insert(tweak_data.color_grading,
 	{
 		value = "color_rvd1",
@@ -56,7 +56,7 @@ table.insert(tweak_data.color_grading,
 		value = "color_halloween2",
 		text_id = "menu_color_halloween2"
 	}
-)
+) ]]
 
 if restoration.Options:GetValue("HUD/UI/DifficultyMarkers") then
 tweak_data.hud_icons.risk_swat = {

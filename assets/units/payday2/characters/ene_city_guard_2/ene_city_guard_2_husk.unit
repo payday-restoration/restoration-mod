@@ -6,6 +6,7 @@
 	<dependencies>
 		
 		<depends_on unit="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" />
+		<depends_on unit="units/payday2/characters/ene_acc_evilberet/ene_acc_evilberet" />
 	</dependencies>
 
 	<extensions>

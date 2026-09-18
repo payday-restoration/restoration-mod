@@ -233,18 +233,6 @@
 			<file :name="titan_goggle.effect"/>
 		</group>
 
-		<group name="effects/particles/explosions/">
-			<file :name="cs_grenade_smoke_ds_sc.effect"/>
-			<file :name="cs_grenade_smoke_sc.effect"/>
-			<file :name="smoke_grenade_smoke.effect"/>
-			<file :name="smoke_screen.effect"/>
-		</group>
-
-		<group name="effects/particles/shotgun/">
-			<file :name="muzzleflash.effect"/>
-			<file :name="shotgun_gen.effect"/>
-		</group>
-
 		<group name="effects/particles/weapons/">
 			<file :name="akan_titan_trail_sc.effect"/>
 			<file :name="laser_trail_muzzle.effect"/>

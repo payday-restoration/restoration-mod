@@ -4,6 +4,12 @@
 	<effect				path="effects/particles/explosions/cs_grenade_smoke_sc" force="false"/>
 	<effect				path="effects/particles/explosions/cs_grenade_smoke_ds_sc" force="false"/>
 	
+	<!--Reduced Smoke Screen Grenade smoke-->	
+	<effect				path="effects/particles/explosions/smoke_screen" force="true"/>	
+	
+	<!--PDTH Smokebomb-->
+	<effect				path="effects/particles/explosions/smoke_grenade_smoke" force="true"/>	
+		
 	<!--Sniper Trails-->
 	<effect				path="effects/particles/weapons/sniper_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
@@ -25,6 +31,14 @@
 	
 	<!--Remove tracer sparks from hornet GL ammo-->
 	<effect				path="effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet" load="false"/>
+	
+	<!--reinbeck muzzleflash-->
+	<effect				path="effects/particles/shotgun/muzzleflash" load="false"/>
+	<!--shotgun muzzleflash-->
+	<effect				path="effects/particles/shotgun/shotgun_gen" load="false"/>	
+	
+	<!--Incendiary Grenade-->
+	<effect				path="effects/payday2/particles/explosions/grenade_incendiary_explosion_sc" load="false"/>	
 
 	<!--Bullet casings effects-->
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>

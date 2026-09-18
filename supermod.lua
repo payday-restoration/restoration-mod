@@ -190,7 +190,9 @@ if not RestorationSuperMod then
 					self.loaded_units[key] = true
 					loaded = loaded + 1
 					self:_MarkLoading(key .. "   (list '" .. list_name .. "')")
-					dres:load(ext_id, db_id, package, nil)
+					if dres.load then
+						dres:load(ext_id, db_id, package, nil)
+					end
 				else
 					missing = missing + 1
 					log("[RestorationMod] MISSING ASSET: " .. dbpath .. "." .. extension ..

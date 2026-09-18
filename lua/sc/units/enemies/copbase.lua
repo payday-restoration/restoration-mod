@@ -940,6 +940,12 @@ for path in pairs(paths) do
 	CopBase._material_translation_map[tostring(contour_id:key())] = normal_id
 end
 
+
+--[[
+Can't load SHIT on Beardlib or SuperBLT
+
+Dunno what's worse, this or the DSL (Dick Sucking Lips) crash
+
 local unit_ids = Idstring("unit")
 -- Deleting dozer hats cause it blows people up, pls gib standalone that's always loaded
 function CopBase:_chk_spawn_gear()
@@ -964,6 +970,7 @@ function CopBase:_chk_spawn_gear()
 		end
 	end
 end
+--]]
 
 -- Random Weapons For Enemies
 local weapons_map = {

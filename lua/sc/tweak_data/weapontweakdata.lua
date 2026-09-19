@@ -5339,7 +5339,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type_single_ray = "sniper"
 	end
 
-	recat = { "m1897", "m590", "r870", "ksg", "m37", "serbu", "supernova" }
+	recat = { "m1897", "m590", "r870", "ksg", "m37", "serbu", "supernova", "bleckert" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_shot" }
 		self[ wep_id ].damage_type = "shotgun_heavy"

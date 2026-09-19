@@ -6,6 +6,7 @@
 	<dependencies>
 		
 		<depends_on unit="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" />
+		<depends_on unit="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
 	</dependencies>
 
 	<extensions>

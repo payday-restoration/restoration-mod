@@ -8,6 +8,8 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" />
 		<depends_on unit="units/payday2/characters/ene_acc_evilberet/ene_acc_evilberet" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_degle/wpn_npc_degle" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_g36/wpn_npc_g36" />
 	</dependencies>
 
 	<extensions>

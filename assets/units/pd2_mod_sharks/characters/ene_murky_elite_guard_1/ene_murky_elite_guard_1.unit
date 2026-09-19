@@ -7,6 +7,9 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" />
+		<depends_on unit="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_degle/wpn_npc_degle" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" />
 	</dependencies>
 
 	<extensions>

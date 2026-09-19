@@ -1,13 +1,29 @@
+
+-- Integrated host sequence authority. Uses the existing overhaul hook registration.
+do
+ local authority = rawget(_G, "RestorationSequenceAuthority")
+ if not authority then
+  local root = restoration and restoration._mod_path
+  if not root then
+   local source = debug.getinfo(1, "S").source:gsub("^@", ""):gsub("\\", "/")
+   root = source:match("^(.-)/lua/")
+  end
+  assert(root, "[SequenceAuthority] Cannot resolve overhaul root")
+  -- The game loader need not propagate the Lua chunk return value.
+  dofile(root:gsub("[/\\]+$", "") .. "/lua/sc/core/sequence_authority.lua")
+  authority = rawget(_G, "RestorationSequenceAuthority")
+ end
+ assert(type(authority) == "table" and type(authority.install) == "function",
+  "[SequenceAuthority] sequence_authority.lua did not initialize; verify the complete integrated lua folder is installed")
+ authority:install()
+end -- Restoration authority bootstrap
 --THIS MUST ALWAYS HOOK TO core/lib/managers/coresequencemanager
 --local map = Global.level_data.level_id
 
-local rnd = math.random (3)
-local rnd2 = math.random (2)
-local rnd3 = math.random (4)
-local rnd4 = math.random (5)
+local rnd, rnd2, rnd3, rnd4
 local mod_path = tostring(restoration._mod_path or "mods/restoration-mod-gold")
 
-if restoration.Options:GetValue("OTHER/TimeOfDay") then
+do
 
 	--Time of Day Loader
 
@@ -15,11 +31,19 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 		if not Global.load_level then 
 			return
 		end
+		local authority = rawget(_G, "RestorationSequenceAuthority")
+		local profile = authority:profile()
+		if (not profile or profile.level ~= Global.game_settings.level_id) and not (managers.network and managers.network:session() and Network:is_client()) then
+			profile = authority:make_profile(Global.game_settings.level_id, 0)
+		end
+		assert(profile and profile.level == Global.game_settings.level_id, "[SequenceAuthority] Host environment profile is missing; level environment application stopped")
+		if not profile.enabled then return end
+		rnd, rnd2, rnd3, rnd4 = unpack(profile.rolls)
 		local level_id = Global.game_settings.level_id
 		
 		local level_setting
 		if level_id == "branchbank" then 
-			setting = restoration:get_env_setting("OTHER/Env_Banks")
+			setting = profile.settings["OTHER/Env_Banks"]
 			if setting == 1 then
 				return
 			elseif setting == 2 then	--random setting
@@ -42,7 +66,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 			end
 		elseif level_id == "rvd1" then
-			setting = restoration:get_env_setting("OTHER/Env_RVD1")
+			setting = profile.settings["OTHER/Env_RVD1"]
 			if setting == 1 then
 				return
 			elseif setting == 2 then
@@ -61,7 +85,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/rvd1_alt2.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day1_inside", "environment")
 			end
 		elseif level_id == "rvd2" then 
-			setting = restoration.Options:GetValue("OTHER/Env_RVD2")
+			setting = profile.settings["OTHER/Env_RVD2"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -74,7 +98,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/rvd2_alt.custom_xml", "custom_xml", "units/pd2_dlc_rvd/environments/pd2_env_rvd/pd2_env_rvd_day2_inside", "environment")
 			end
 		elseif level_id == "firestarter_1" then 
-			setting = restoration:get_env_setting("OTHER/Env_FSD1")
+			setting = profile.settings["OTHER/Env_FSD1"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -85,7 +109,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 			end
 		elseif level_id == "pbr2" then 
-			setting = restoration:get_env_setting("OTHER/Env_PBR2") 
+			setting = profile.settings["OTHER/Env_PBR2"] 
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -98,7 +122,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry_interior_01/pd2_env_jry_interior_01", "environment")
 			end
 		elseif level_id == "friend" then 
-			setting = restoration:get_env_setting("OTHER/Env_FRIEND") 
+			setting = profile.settings["OTHER/Env_FRIEND"] 
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -114,7 +138,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 			end
 			
 		elseif level_id == "crojob2" then 
-			setting = restoration:get_env_setting("OTHER/Env_CJ2")
+			setting = profile.settings["OTHER/Env_CJ2"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -131,7 +155,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				--need the inside env here
 			end
 		elseif level_id == "arm_und" then 
-			setting = restoration:get_env_setting("OTHER/Env_UnderPass")
+			setting = profile.settings["OTHER/Env_UnderPass"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -142,7 +166,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/underpass_foggyday.custom_xml", "custom_xml", "environments/pd2_env_foggy_bright/pd2_env_foggy_bright", "environment")
 			end
 		elseif level_id == "mallcrasher" then 
-			setting = restoration:get_env_setting("OTHER/Env_MallCrasher")
+			setting = profile.settings["OTHER/Env_MallCrasher"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -153,7 +177,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/mall_alt.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 			end
 		elseif level_id == "mia_1" then
-			setting = restoration:get_env_setting("OTHER/Env_Mia_1")
+			setting = profile.settings["OTHER/Env_Mia_1"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -168,14 +192,14 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/funny_and_epic_synthwave_very_eighties.custom_xml", "custom_xml", "environments/pd2_hlm1/pd2_hlm1", "environment")
 			end
 		elseif level_id == "firestarter_3" then 
-			setting = restoration:get_env_setting("OTHER/Env_FSD3")
+			setting = profile.settings["OTHER/Env_FSD3"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_trailer_bank.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 			end
 		elseif level_id == "watchdogs_1_night" then 
-			setting = restoration:get_env_setting("OTHER/Env_WDD1N")
+			setting = profile.settings["OTHER/Env_WDD1N"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -183,7 +207,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 			elseif setting == 3 then 
 			end
 		elseif level_id == "watchdogs_1" then 
-			setting = restoration:get_env_setting("OTHER/Env_WDD1D")
+			setting = profile.settings["OTHER/Env_WDD1D"]
 			if setting == 1 then
 				return
 			elseif setting == 2 then
@@ -192,7 +216,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 		elseif level_id == "bronze" then 
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bronze.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 		elseif level_id == "watchdogs_2_day" then 
-			setting = restoration:get_env_setting("OTHER/Env_WDD2D")
+			setting = profile.settings["OTHER/Env_WDD2D"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -203,7 +227,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_wd2_evening/pd2_env_wd2_evening", "environment")
 			end
 		elseif level_id == "alex_3" then 
-			setting = restoration:get_env_setting("OTHER/Env_Alex3")
+			setting = profile.settings["OTHER/Env_Alex3"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -214,7 +238,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/docks.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
 			end
 		elseif level_id == "big" then 
-			setting = restoration:get_env_setting("OTHER/Env_Big")
+			setting = profile.settings["OTHER/Env_Big"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -225,7 +249,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/xbox_bank.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
 			end
 		elseif level_id == "four_stores" then 
-			setting = restoration:get_env_setting("OTHER/Env_FS")
+			setting = profile.settings["OTHER/Env_FS"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -248,7 +272,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bank_green.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 			end
 		elseif level_id == "ukrainian_job" then 
-			setting = restoration:get_env_setting("OTHER/Env_Ukra")
+			setting = profile.settings["OTHER/Env_Ukra"]
 			if setting == 1 then 
 				return
 			elseif setting == 2 then 
@@ -267,7 +291,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 		elseif level_id == "run" then
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/heatstreettweak.custom_xml", "custom_xml", "environments/pd2_run/run_outside", "environment")
 		-- elseif level_id == "kosugi" then 
-			-- setting = restoration:get_env_setting("OTHER/Env_Kosugi")
+			-- setting = profile.settings["OTHER/Env_Kosugi"]
 			-- if setting == 1 then
 			-- 	return
 			-- elseif setting == 2 then	--random setting
@@ -281,7 +305,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 		elseif level_id == "cult_murky" then 
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/cult_stage1.custom_xml", "custom_xml", "core/environments/default", "environment")
 		elseif level_id == "peta" then
-			setting = restoration:get_env_setting("OTHER/Env_Peta")
+			setting = profile.settings["OTHER/Env_Peta"]
 			if setting == 1 then
 				return
 			elseif setting == 2 then

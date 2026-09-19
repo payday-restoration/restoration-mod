@@ -12,6 +12,7 @@
 		<depends_on unit="units/pd2_dlc_pent/pickups/pent_pku_yufuwang_mask/pent_pku_yufuwang_mask"/>
 		<depends_on unit="units/pd2_dlc_bbq/weapons/molotov_cocktail/wpn_molotov_third"/>
 		<depends_on effect="effects/payday2/particles/explosions/molotov_grenade_pent_boss"/>
+		<depends_on unit="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower" />
 	</dependencies>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData"/>

@@ -6,6 +6,7 @@
 	<dependencies>
 		
 		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+		<depends_on unit="units/pd2_mod_reapers/weapons/wpn_npc_fort_500/wpn_npc_fort_500" />
 	</dependencies>
 
 	<extensions>

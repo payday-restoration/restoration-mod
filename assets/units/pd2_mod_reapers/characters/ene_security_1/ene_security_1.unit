@@ -8,6 +8,10 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />		
 
+		<depends_on unit="units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull" />
+		<depends_on unit="units/pd2_mod_reapers/weapons/wpn_npc_ak47_sc/wpn_npc_ak47_sc" />
+		<depends_on unit="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc" />
+		<depends_on unit="units/pd2_mod_reapers/weapons/wpn_npc_pl14/wpn_npc_pl14" />
 	</dependencies>
 
 	<extensions>

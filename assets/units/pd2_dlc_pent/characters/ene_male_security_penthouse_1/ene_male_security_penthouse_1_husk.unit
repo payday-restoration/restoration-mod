@@ -2,6 +2,9 @@
 <unit slot="12" type="being">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine"/>
 	<object file="units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1"/>
+	<dependencies>
+		<depends_on unit="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" />
+	</dependencies>
 	<dependencies/>
 
 	<extensions>

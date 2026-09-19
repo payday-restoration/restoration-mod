@@ -181,16 +181,16 @@
 	<!--sexy ass helmets-->
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_fbi_helmet/ene_acc_fbi_helmet" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_fbi_helmet/ene_acc_fbi_helmet" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_fbi_helmet/ene_acc_fbi_helmet"  load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_fbi_helmet/ene_acc_fbi_helmet" />
 	
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet"  load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" />
 	
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_helmet_k63/ene_acc_helmet_k63"  load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" />
 	<!--Rifle-->
 	<object				path="units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_fbi_swat_1/ene_fbi_swat_1" />
@@ -236,11 +236,11 @@
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan"/>
 	<!--sexy cap-->
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_ump_cap/ene_acc_ump_cap"/>
 	<!--sniper-->
 	<unit				path="units/pd2_mod_reapers/characters/ene_sniper_2/ene_sniper_2"  load="true"/>
 	<unit				path="units/pd2_mod_reapers/characters/ene_sniper_2/ene_sniper_2_husk"  load="true"/>	
@@ -250,7 +250,7 @@
 	<!--sexy ass helmet-->
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_schlemofon/ene_acc_schlemofon" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_schlemofon/ene_acc_schlemofon" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_schlemofon/ene_acc_schlemofon"  load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_schlemofon/ene_acc_schlemofon" />
 	<!--City Rifle-->
 	<object				path="units/pd2_mod_reapers/characters/ene_city_swat_1/ene_city_swat_1" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_city_swat_1/ene_city_swat_1" />
@@ -298,7 +298,7 @@
 	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights" load="true"/>	
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>	
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_df" />
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_nm" />
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_lights/ene_acc_shield_lights_op" />
@@ -308,15 +308,15 @@
 	<!--sexy ass helmets-->
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_drak/ene_acc_drak" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_drak/ene_acc_drak" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_drak/ene_acc_drak"  load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_drak/ene_acc_drak" />
 	
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_drak_sg/ene_acc_drak_sg" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_drak_sg/ene_acc_drak_sg" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_drak_sg/ene_acc_drak_sg"  load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_drak_sg/ene_acc_drak_sg" />
 	
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_drak_heavy/ene_acc_drak_heavy" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_drak_heavy/ene_acc_drak_heavy" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_drak_heavy/ene_acc_drak_heavy"  load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_drak_heavy/ene_acc_drak_heavy" />
 	<!--Zeal Rifle-->
 	<object				path="units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1" />
@@ -397,7 +397,7 @@
 	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1"  load="true"/>	
 	<unit				path="units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1_husk"  load="true"/>	
 	
-	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_helmet_k63/ene_acc_helmet_k63"  load="true"/>
+	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" />
 	
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/bulldozer_df" />	
@@ -504,8 +504,8 @@
 	<texture			path="units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_body_df" force="false" />	
 
 	<!--(thx baddy) russian medic helmet acc-->	
-	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_akan_medic_helmet/ene_acc_akan_medic_helmet" load="true"/>
-	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_akan_medic_helmet_zdann/ene_acc_akan_medic_helmet_zdann" load="true"/>
+	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_akan_medic_helmet/ene_acc_akan_medic_helmet"/>
+	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_akan_medic_helmet_zdann/ene_acc_akan_medic_helmet_zdann"/>
 	
 	<!--Russian Medic zdann-->
 	<unit				path="units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" load="true"/>
@@ -532,7 +532,7 @@
 	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/maska_il" force="false"/>
 	<texture			path="units/pd2_mod_reapers/characters/ene_drak_medic/drak_medic_head_df" force="false"/>
 	
-	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_drak_medic_helmet/ene_acc_drak_medic_helmet" load="true"/>
+	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_drak_medic_helmet/ene_acc_drak_medic_helmet"/>
 	
 	<!--Cloaker-->
 	<object				path="units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1"/>
@@ -546,11 +546,11 @@
 	
 	<!--Debris-->
 	<object				path="units/pd2_mod_reapers/characters/ene_spook_1/debris/ene_spook_head_debris"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_spook_1/debris/ene_spook_head_debris" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_spook_1/debris/ene_spook_head_debris"/>
 	<model				path="units/pd2_mod_reapers/characters/ene_spook_1/debris/ene_spook_head_debris"/>	
 	
 	<object				path="units/pd2_mod_reapers/characters/ene_spook_1/debris/ene_spook_upper_body_debris"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_spook_1/debris/ene_spook_upper_body_debris" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_spook_1/debris/ene_spook_upper_body_debris"/>
 	<model				path="units/pd2_mod_reapers/characters/ene_spook_1/debris/ene_spook_upper_body_debris"/>	
 
 	<!-- specials end -->
@@ -561,7 +561,7 @@
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>
 	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>	
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>
 	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>	
 
 	
@@ -650,8 +650,8 @@
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" load="true"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx_dummy" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx_dummy"/>
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/akan_phalanx_df" force="false"/>	
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/akan_phalanx_nm" force="false"/>
 	
@@ -662,7 +662,7 @@
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
 	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
 	
 	<!--Titan Shotgunner-->
@@ -742,7 +742,7 @@
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false"/>
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false"/>
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false"/>
-	<unit				path="units/pd2_mod_reapers/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false"/>
 	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false"/>	
 	
 	<!--Titan HRT SR2-->	
@@ -750,11 +750,11 @@
 	<!-- titans end -->
 	
 	<!--Generic Bravo Airframe-->	
-	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_air_helmet/ene_acc_bravo_akan_air_helmet" load="true"/>
+	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_air_helmet/ene_acc_bravo_akan_air_helmet"/>
 
 
 	<!--Bravo Rifleman Helmet-->	
-	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_k63/ene_acc_bravo_akan_k63" load="true"/>	
+	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_k63/ene_acc_bravo_akan_k63"/>	
 	
 	<!--bravo dmr-->
 	<object				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru" />
@@ -799,5 +799,147 @@
 	<!--Argos-->
 	<unit_obj			path="units/pd2_mod_bravo/weapons/wpn_npc_argos_bravo/wpn_npc_argos_bravo" load="false" force="false"/>
 	<!--bravo end-->
-	
+
+	<!-- ============================================================
+	     Faction assets migrated back from superblt/factions/russia.xml.
+	     Registration entries; mirrors the dyn-load list
+	     that lua/sc/superblt_units.lua used to drive for this faction.
+	     ============================================================ -->
+
+	<!-- units/payday2/characters/ene_grenadier_1 -->
+	<model             path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" />
+	<object            path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" />
+	<unit              path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" />
+
+	<!-- units/payday2/vehicles/str_vehicle_swat_van -->
+	<material_config   path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_reaper" />
+
+	<!-- units/pd2_dlc_bex/vehicles/bex_air_vehicle_blackhawk_unmarked -->
+	<material_config   path="units/pd2_dlc_bex/vehicles/bex_air_vehicle_blackhawk_unmarked/bex_vehicle_blackhawk" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
+	<material_config   path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
+	<model             path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
+	<object            path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_acc_swat_helmet -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+	<model             path="units/pd2_mod_reapers/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+	<object            path="units/pd2_mod_reapers/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_bulldozer_1_hard -->
+	<unit              path="units/pd2_mod_reapers/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard_husk" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_bulldozer_medic -->
+	<texture           path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/bulldozer_medic_df" />
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic" />
+	<material_config   path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic" />
+	<model             path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic" />
+	<object            path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic" />
+	<sequence_manager  path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic" />
+	<material_config   path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic_contour" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/ene_bulldozer_medic_husk" />
+	<texture           path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/maska_df" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet -->
+	<model             path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />
+	<object            path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet_plate -->
+	<model             path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+	<object            path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<model             path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<object            path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	<model             path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	<object            path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_cop_1 -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_cop_2 -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_cop_3 -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_cop_4 -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_shield_2 -->
+	<unit              path="units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2_husk" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_sniper_1 -->
+	<unit              path="units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1_husk" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_sniper_3 -->
+	<model             path="units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3" />
+	<object            path="units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3_husk" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_swat_1 -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1" />
+	<model             path="units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1" />
+	<object            path="units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_swat_1/ene_swat_1_husk" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_swat_2 -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2" />
+	<model             path="units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2" />
+	<object            path="units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_swat_2/ene_swat_2_husk" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_swat_3 -->
+	<unit              path="units/pd2_mod_reapers/characters/ene_swat_3/ene_swat_3" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_swat_3/ene_swat_3_husk" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_swat_heavy_1 -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1" />
+	<material_config   path="units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1" />
+	<model             path="units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1" />
+	<object            path="units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1" />
+	<material_config   path="units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1_contour" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_swat_heavy_r870 -->
+	<cooked_physics    path="units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" />
+	<model             path="units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" />
+	<object            path="units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk" />
+
+	<!-- units/pd2_mod_reapers/characters/ene_titan_sniper_scripted -->
+	<unit              path="units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted" />
+	<unit              path="units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted_husk" />
+
+	<!-- units/pd2_mod_reapers/weapons/wpn_npc_akmsu_dozer -->
+	<model             path="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_dozer/wpn_npc_akmsu_dozer" />
+	<object            path="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_dozer/wpn_npc_akmsu_dozer" />
+	<unit              path="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_dozer/wpn_npc_akmsu_dozer" />
+
+	<!-- units/pd2_mod_reapers/weapons/wpn_npc_svd_noglint_sc -->
+	<model             path="units/pd2_mod_reapers/weapons/wpn_npc_svd_noglint_sc/wpn_npc_svd_noglint_sc" />
+	<object            path="units/pd2_mod_reapers/weapons/wpn_npc_svd_noglint_sc/wpn_npc_svd_noglint_sc" />
+	<unit              path="units/pd2_mod_reapers/weapons/wpn_npc_svd_noglint_sc/wpn_npc_svd_noglint_sc" />
+
 </table>

@@ -5,6 +5,8 @@
 
 	<dependencies>
 		
+	<depends_on unit="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />
+	<depends_on unit="units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47" />
 	</dependencies>
 
 	<extensions>

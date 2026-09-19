@@ -8,6 +8,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" />
 		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" />		
+		<depends_on unit="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
 	</dependencies>
 
 	<extensions>

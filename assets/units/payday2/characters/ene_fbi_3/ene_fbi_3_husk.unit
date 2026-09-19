@@ -4,6 +4,7 @@
 	<object file="units/payday2/characters/ene_cop_1/ene_cop_1" />
 
 	<dependencies>
+	<depends_on unit="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" />
 	</dependencies>
 
 	<extensions>

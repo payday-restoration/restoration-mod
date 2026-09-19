@@ -9,6 +9,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" />
+		<depends_on unit="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
 	</dependencies>
 
 	<extensions>

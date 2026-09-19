@@ -5,6 +5,7 @@
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox"/>
 		<depends_on unit="units/payday2/characters/ene_acc_cop_hat/ene_acc_cop_hat"/>
+		<depends_on unit="units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull" />
 	</dependencies>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData"/>

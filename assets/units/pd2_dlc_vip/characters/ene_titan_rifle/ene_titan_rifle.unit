@@ -6,6 +6,7 @@
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" />
 	</dependencies>
 
 	<extensions>

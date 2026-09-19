@@ -2,14 +2,6 @@ HuskCopBase._run_unit_sequences = CopBase._run_unit_sequences
 
 --thanks eclipse gem mod by the way and shotout to the epic developer budies who help resmod!
 Hooks:PreHook(HuskCopBase, "post_init", "run_fucking_heads_post_init", function(self)
-	-- DON'T RUN SEQUENCES DURING DROP-IN NETWORKING!
-	if managers.network and managers.network:session() then
-		local session = managers.network:session()
-		if session:local_peer() and session:local_peer():loading() then
-			return  -- Skip during loading
-		end
-	end
-	
 	-- ALSO CHECK IF UNIT IS READY
 	if not alive(self._unit) or not self._unit:base() then
 		return
@@ -83,3 +75,23 @@ Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)
 		"death"
 	}, function() self:apply_infiltrator_nerf(false) end)
 end)
+
+
+-- Integrated host sequence authority. Uses the existing overhaul hook registration.
+do
+ local authority = rawget(_G, "RestorationSequenceAuthority")
+ if not authority then
+  local root = restoration and restoration._mod_path
+  if not root then
+   local source = debug.getinfo(1, "S").source:gsub("^@", ""):gsub("\\", "/")
+   root = source:match("^(.-)/lua/")
+  end
+  assert(root, "[SequenceAuthority] Cannot resolve overhaul root")
+  -- The game loader need not propagate the Lua chunk return value.
+  dofile(root:gsub("[/\\]+$", "") .. "/lua/sc/core/sequence_authority.lua")
+  authority = rawget(_G, "RestorationSequenceAuthority")
+ end
+ assert(type(authority) == "table" and type(authority.install) == "function",
+  "[SequenceAuthority] sequence_authority.lua did not initialize; verify the complete integrated lua folder is installed")
+ authority:install()
+end -- Restoration authority bootstrap

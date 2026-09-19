@@ -6,6 +6,7 @@
 		<depends_on effect="effects/payday2/particles/character/taser_thread" />
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_mod_reapers/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom" />
+		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" />
 	</dependencies>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />

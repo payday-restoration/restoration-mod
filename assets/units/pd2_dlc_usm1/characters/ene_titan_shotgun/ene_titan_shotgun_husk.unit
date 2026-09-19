@@ -5,6 +5,8 @@
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/payday2/characters/ene_head_atlas/ene_head_atlas" />
+		<depends_on unit="units/pd2_dlc_usm2/weapons/wpn_npc_sko12_conc/wpn_npc_sko12_conc" />
 	</dependencies>
 
 	<extensions>

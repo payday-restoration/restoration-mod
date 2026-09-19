@@ -8,6 +8,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/special_medic" />
 		<depends_on unit="units/payday2/characters/ene_acc_medic_helmet/ene_acc_medic_helmet" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" />
 	</dependencies>
 
 	<extensions>

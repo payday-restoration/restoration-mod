@@ -1,30 +1,18 @@
--- managers.dyn_resource does not exist during load_packages - GameSetup:load_packages runs
--- before init_managers - so RestorationSuperMod parks the faction and this flushes it the
--- moment the managers are up. SuperBLT's DynamicResourceManagerCreated hook is not enough:
--- the managers are torn down and rebuilt on every menu->game transition, and that hook does
--- not fire again for the new set.
-if not GameSetup._resmod_asset_flush_hooked then
-	GameSetup._resmod_asset_flush_hooked = true
-
-	local _resmod_orig_init_managers = GameSetup.init_managers
-
-	function GameSetup:init_managers(...)
-		local result = _resmod_orig_init_managers(self, ...)
-
-		if RestorationSuperMod then
-			local ok, err = pcall(function() RestorationSuperMod:FlushPending() end)
-			if not ok then
-				log("[RestorationMod] ERROR flushing asset loads from init_managers: " .. tostring(err))
-			end
-		else
-			log("[RestorationMod] init_managers: RestorationSuperMod is nil - supermod.lua never ran")
-		end
-
-		return result
-	end
+-- Run after the complete setup init, including SuperBLT's constructor hooks.
+if not GameSetup._resmod_asset_loader_v2_hooked then
+    GameSetup._resmod_asset_loader_v2_hooked = true
+    local original = GameSetup.init_managers
+    local function finish(self, ...)
+        if RestorationSuperMod then RestorationSuperMod:OnManagersReady() end
+        return ...
+    end
+    function GameSetup:init_managers(...)
+        return finish(self, original(self, ...))
+    end
 end
 
 function GameSetup:load_packages()
+	if RestorationSuperMod then RestorationSuperMod:BeginSetup() end
 	Setup.load_packages(self)
 
 	if not PackageManager:loaded("packages/game_base_init") then
@@ -382,3 +370,30 @@ function GameSetup:gather_packages_to_unload()
 		self._mutators_packages = {}
 	end
 end
+
+-- Integrated host sequence authority. Uses the existing overhaul hook registration.
+do
+ local authority = rawget(_G, "RestorationSequenceAuthority")
+ if not authority then
+  local root = restoration and restoration._mod_path
+  if not root then
+   local source = debug.getinfo(1, "S").source:gsub("^@", ""):gsub("\\", "/")
+   root = source:match("^(.-)/lua/")
+  end
+  assert(root, "[SequenceAuthority] Cannot resolve overhaul root")
+  -- The game loader need not propagate the Lua chunk return value.
+  dofile(root:gsub("[/\\]+$", "") .. "/lua/sc/core/sequence_authority.lua")
+  authority = rawget(_G, "RestorationSequenceAuthority")
+ end
+ assert(type(authority) == "table" and type(authority.install) == "function",
+  "[SequenceAuthority] sequence_authority.lua did not initialize; verify the complete integrated lua folder is installed")
+ authority:install()
+end -- Restoration authority bootstrap
+
+Hooks:PreHook(GameSetup, "init_game", "RestorationAuthorityWorld", function()
+ RestorationSequenceAuthority:reset_world()
+ RestorationSequenceAuthority:install()
+end)
+Hooks:PostHook(GameSetup, "update", "RestorationAuthorityTick", function()
+ RestorationSequenceAuthority:update()
+end)

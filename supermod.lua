@@ -1,311 +1,240 @@
--- Restoration Mod - SuperBLT entry point.
--- Runs via the <hooks> block in supermod.xml. Captures the mod's asset loader so scripted
--- asset groups (<group target="scripted" load_group="..."/>) can be loaded from game code.
---
--- Loading policy, and why it lives here instead of in the XML:
---
--- SuperBLT's asset loader will dyn-load anything marked dyn_package="true" the moment the
--- group is flushed, in whatever order pairs() happens to walk the table. That is fine for
--- a handful of overrides and wrong for us, for two reasons:
---
---   1. A unit can be handed to dyn_resource before its own .object/.model/.material_config
---      DB entries have been created, because they are all flushed in the same arbitrary
---      order pass.
---   2. A dbpath that is registered in more than one group - and 360 of ours are, because
---      the old BeardLib packages shared enemies between factions - gets handed to
---      dyn_resource once per group. The second load never completes. dyn_resource keeps
---      waiting on it, the level never finishes loading, and the game sits on a black
---      screen until it is killed.
---
--- So every superblt/*.xml now sets dyn_package="false": SuperBLT creates DB entries and
--- nothing else. The list of units that actually need loading lives in
--- lua/sc/superblt_units.lua, and this file loads them itself, after the whole group is
--- registered, at most once per dbpath for the lifetime of the process.
-if not RestorationSuperMod then
-	RestorationSuperMod = {}
+-- Restoration asset loader, revision 2.
+-- Register with SuperBLT first; submit units only after setup has finished
+-- creating managers. A successful submission is not proof that texture
+-- streaming has finished, and a crash marker is not a culprit verdict.
+RestorationSuperMod = RestorationSuperMod or {}
+local R = RestorationSuperMod
+R.mod_instance = R.mod_instance or ModInstance
+R.supermod = R.supermod or (R.mod_instance and R.mod_instance.supermod)
+R.asset_loader = R.asset_loader or (R.supermod and R.supermod:GetAssetLoader())
+R.blocked_units = R.blocked_units or {}
+R.pending_groups = R.pending_groups or {}
+R.loaded_units = R.loaded_units or {}
+-- The game shares this resource table through Global across manager instances.
+-- Track ownership against that table, not just a manager or a process-wide bool.
+R._resource_states = R._resource_states or setmetatable({}, {__mode = "k"})
 
-	RestorationSuperMod.mod_instance = ModInstance
-	RestorationSuperMod.supermod = ModInstance and ModInstance.supermod
-	RestorationSuperMod.asset_loader = RestorationSuperMod.supermod and RestorationSuperMod.supermod:GetAssetLoader()
-
-	-- dbpath key -> true, for every unit already handed to dyn_resource.
-	RestorationSuperMod.loaded_units = {}
-
-	-- "<extension>|<dbpath>" entries listed here are never handed to dyn_resource.
-	-- Use this to quarantine a unit that crashes the native loader until its
-	-- dependencies are fixed; ReportLastCrash prints the exact key to add.
-	RestorationSuperMod.blocked_units = {
-	}
-
-	-- Group names asked for before managers.dyn_resource existed. The <hooks> block runs
-	-- when lib/setups/gamesetup.lua is *required*, which is long before the managers are
-	-- built, and GameSetup:load_packages runs before init_managers too - so the first ask
-	-- for a faction always lands too early. It is parked here and flushed from the
-	-- DynamicResourceManagerCreated hook at the bottom of this file.
-	RestorationSuperMod.pending_groups = {}
-
-	log(string.format("[RestorationMod] SuperBLT init: ModInstance=%s supermod=%s asset_loader=%s",
-		tostring(RestorationSuperMod.mod_instance ~= nil),
-		tostring(RestorationSuperMod.supermod ~= nil),
-		tostring(RestorationSuperMod.asset_loader ~= nil)))
-
-	if RestorationSuperMod.asset_loader then
-		local groups = {}
-		for name, _ in pairs(RestorationSuperMod.asset_loader.script_loadable_packages or {}) do
-			table.insert(groups, name)
-		end
-		log("[RestorationMod] scripted asset groups available: " ..
-			(#groups > 0 and table.concat(groups, ", ") or "(none)"))
-	end
-
-	function RestorationSuperMod:ModPath()
-		local inst = self.mod_instance
-		if inst and inst.GetPath then
-			local ok, path = pcall(function() return inst:GetPath() end)
-			if ok and path then
-				return path
-			end
-		end
-		return "mods/restoration-mod/"
-	end
-
-	-- The generated { group_name = { {dbpath, extension}, ... } } table.
-	-- ------------------------------------------------------------------
-	-- Crash attribution for the asset loader.
-	--
-	-- dres:load hands the dbpath to PackageManager:load_temp_resource, which
-	-- resolves the unit's whole dependency chain in native code. If one of those
-	-- dependencies cannot be resolved on this install the game dies there with an
-	-- access violation - not a Lua error, so pcall cannot see it, and the C
-	-- callstack is meaningless because the retail binary is stripped (you get
-	-- AK::WriteBytes / sprintf / WSOCK32 noise).
-	--
-	-- So write down what we are about to hand over. If the file is still there on
-	-- the next boot, it names the unit that killed the last one.
-	-- ------------------------------------------------------------------
-	function RestorationSuperMod:_MarkerPath()
-		return self:ModPath() .. "last_asset.txt"
-	end
-
-	function RestorationSuperMod:_MarkLoading(text)
-		local ok, f = pcall(io.open, self:_MarkerPath(), "w")
-		if ok and f then
-			f:write(text)
-			f:close()
-		end
-	end
-
-	function RestorationSuperMod:_ClearMarker()
-		local ok, f = pcall(io.open, self:_MarkerPath(), "w")
-		if ok and f then
-			f:write("")
-			f:close()
-		end
-	end
-
-	-- Call once, early. Logs whatever the previous boot died on.
-	function RestorationSuperMod:ReportLastCrash()
-		local path = self:_MarkerPath()
-		if not io.file_is_readable(path) then
-			return
-		end
-
-		local ok, f = pcall(io.open, path, "r")
-		if not (ok and f) then
-			return
-		end
-
-		local text = f:read("*a")
-		f:close()
-
-		if text and text ~= "" then
-			log("[RestorationMod] ==============================================================")
-			log("[RestorationMod] The previous session died while loading this asset:")
-			log("[RestorationMod]     " .. text)
-			log("[RestorationMod] Its own DB entry was fine - the fault is in one of the files it")
-			log("[RestorationMod] references (.object/.model/.material_config/depends_on). Either")
-			log("[RestorationMod] fix that dependency or add the line above to")
-			log("[RestorationMod] RestorationSuperMod.blocked_units in supermod.lua.")
-			log("[RestorationMod] ==============================================================")
-			self:_ClearMarker()
-		end
-	end
-
-	function RestorationSuperMod:UnitLists()
-		if self._unit_lists == nil then
-			local file = self:ModPath() .. "lua/sc/superblt_units.lua"
-			local ok, result
-			if not io.file_is_readable(file) then
-				ok, result = false, "file is not readable"
-			elseif blt and blt.vm and blt.vm.dofile then
-				ok, result = pcall(blt.vm.dofile, file)
-			else
-				ok, result = pcall(dofile, file)
-			end
-			if ok and type(result) == "table" then
-				self._unit_lists = result
-			else
-				self._unit_lists = false
-				log("[RestorationMod] FATAL: could not read '" .. file .. "': " .. tostring(result))
-			end
-		end
-		return self._unit_lists or nil
-	end
-
-	-- Hands every not-yet-loaded unit in one list to dyn_resource. Returns loaded, skipped,
-	-- missing. 'missing' names entries with no DB record at all - those are the ones whose
-	-- files are absent or misnamed, and they are logged individually so they can be found.
-	function RestorationSuperMod:LoadUnitList(list_name)
-		local lists = self:UnitLists()
-		local list = lists and lists[list_name]
-		if not list then
-			return nil, nil, "no unit list named '" .. tostring(list_name) .. "'"
-		end
-
-		local dres = managers and managers.dyn_resource
-		if not dres then
-			return nil, nil, "managers.dyn_resource does not exist yet"
-		end
-
-		local package = dres.DYN_RESOURCES_PACKAGE
-		local loaded, skipped, missing = 0, 0, 0
-
-		for _, entry in ipairs(list) do
-			local dbpath, extension = entry[1], entry[2]
-			local key = extension .. "|" .. dbpath
-
-			if self.loaded_units[key] then
-				skipped = skipped + 1
-			else
-				local ext_id = Idstring(extension)
-				local db_id = Idstring(dbpath)
-
-				if self.blocked_units[key] then
-					skipped = skipped + 1
-					log("[RestorationMod] BLOCKED: " .. dbpath .. "." .. extension ..
-						" is quarantined in RestorationSuperMod.blocked_units")
-				elseif DB:has(ext_id, db_id) then
-					-- Mark it before the call: dyn_resource may run the callback inline,
-					-- and a dbpath must never be handed over twice.
-					self.loaded_units[key] = true
-					loaded = loaded + 1
-					self:_MarkLoading(key .. "   (list '" .. list_name .. "')")
-					if dres.load then
-						dres:load(ext_id, db_id, package, nil)
-					end
-				else
-					missing = missing + 1
-					log("[RestorationMod] MISSING ASSET: " .. dbpath .. "." .. extension ..
-						" is in the '" .. list_name .. "' load list but has no DB entry -" ..
-						" the file is absent from assets/ or is not registered in superblt/*.xml")
-				end
-			end
-		end
-
-		-- Everything in this list survived, so nothing here killed us.
-		self:_ClearMarker()
-
-		return loaded, skipped, missing
-	end
-
-	-- Loads one faction's units. The DB entries themselves are already in place: every
-	-- superblt/*.xml group registers at mod init, which it has to - registering during
-	-- GameSetup:load_packages is too late for the level's own packages to pick up the
-	-- overrides, and the mod's files silently lose to the base game's.
-	--
-	-- Returns true on success; on failure returns false plus a reason naming the stage
-	-- that failed.
-	function RestorationSuperMod:LoadAssetGroup(group_name)
-		if not self.asset_loader then
-			return false, "GetAssetLoader() returned nil - supermod.lua ran but SuperBLT gave no asset loader"
-		end
-
-		local lists = self:UnitLists()
-		if not lists then
-			return false, "lua/sc/superblt_units.lua could not be read (see the FATAL line above)"
-		end
-		if not lists[group_name] then
-			local names = {}
-			for name, _ in pairs(lists) do
-				table.insert(names, name)
-			end
-			table.sort(names)
-			return false, string.format("no unit list named '%s' (lists: %s)",
-				tostring(group_name), #names > 0 and table.concat(names, ", ") or "none")
-		end
-
-		if not (managers and managers.dyn_resource) then
-			self.pending_groups[group_name] = true
-			log("[RestorationMod] faction '" .. group_name ..
-				"' deferred: managers.dyn_resource does not exist yet, will load from" ..
-				" the DynamicResourceManagerCreated hook")
-			return true
-		end
-
-		-- The always-on sets are shared with every faction, so they go in first and claim
-		-- their dbpaths before the faction list runs.
-		self:LoadUnitList("_always")
-
-		local loaded, skipped, missing = self:LoadUnitList(group_name)
-		if not loaded then
-			return false, tostring(missing)
-		end
-
-		log(string.format("[RestorationMod] faction '%s': %d units loaded, %d already loaded, %d missing",
-			group_name, loaded, skipped, missing))
-
-		return true
-	end
+function R:ModPath()
+	return self.mod_instance and self.mod_instance:GetPath() or "mods/restoration-mod/"
 end
 
--- Loads the always-on set plus anything LoadAssetGroup had to park, and is safe to call
--- as often as you like: loaded_units means a dbpath is only ever handed over once.
-function RestorationSuperMod:FlushPending()
-	if not (managers and managers.dyn_resource) then
-		return
-	end
-
-	if not self._reported_last_crash then
-		self._reported_last_crash = true
-		pcall(function() self:ReportLastCrash() end)
-	end
-
-	local loaded, skipped, missing = self:LoadUnitList("_always")
-	if not loaded then
-		log("[RestorationMod] always-on units NOT loaded: " .. tostring(missing))
-	elseif loaded > 0 or missing > 0 then
-		log(string.format("[RestorationMod] always-on units: %d loaded, %d already loaded, %d missing",
-			loaded, skipped, missing))
-	end
-
-	for group_name, _ in pairs(self.pending_groups) do
-		self.pending_groups[group_name] = nil
-		local l, s, m = self:LoadUnitList(group_name)
-		if not l then
-			log("[RestorationMod] faction '" .. group_name .. "' NOT loaded: " .. tostring(m))
-		else
-			log(string.format("[RestorationMod] faction '%s': %d units loaded, %d already loaded, %d missing",
-				group_name, l, s, m))
-		end
-	end
+function R:_MarkerPath()
+	return self:ModPath() .. "last_asset.txt"
 end
 
--- The managers do not exist when this script runs, so the real loading happens here.
--- SuperBLT fires this when managers.dyn_resource is created, which is after
--- GameSetup:load_packages has already picked the faction.
-if not RestorationSuperMod._dyn_hook_added and Hooks then
-	RestorationSuperMod._dyn_hook_added = true
-	Hooks:Add("DynamicResourceManagerCreated", "RestorationMod.SuperBLTAssets", function()
-		local ok, err = pcall(function() RestorationSuperMod:FlushPending() end)
-		if not ok then
-			log("[RestorationMod] ERROR flushing asset loads: " .. tostring(err))
-		end
+function R:_MarkLoading(text)
+	pcall(function()
+		local f = io.open(self:_MarkerPath(), "w")
+		if f then f:write(text); f:close() end
 	end)
 end
 
--- And once more on every gamesetup/menusetup hook, in case the manager already existed.
-RestorationSuperMod:FlushPending()
+function R:_ClearMarker()
+	self:_MarkLoading("")
+end
 
+function R:ReportLastCrash()
+	local f = io.open(self:_MarkerPath(), "r")
+	if not f then return end
+	local text = f:read("*a")
+	f:close()
+	if text and text ~= "" then
+		log("[RestorationMod] Previous unfinished asset submission: " .. text)
+		log("[RestorationMod] This is the last Lua request, not proof of the failing file. Native streaming may concern an earlier request.")
+		self:_ClearMarker()
+	end
+end
+
+function R:UnitLists()
+	if type(self._unit_lists) == "table" then return self._unit_lists end
+	local path = self:ModPath() .. "lua/sc/superblt_units.lua"
+	local read = blt and blt.vm and blt.vm.dofile or dofile
+	local ok, lists = pcall(read, path)
+	if ok and type(lists) == "table" then
+		self._unit_lists = lists
+		return lists
+	end
+	-- Do not cache a transient file/read failure as a permanent empty list.
+	log("[RestorationMod] Could not read unit lists: " .. tostring(lists))
+end
+
+function R:BeginSetup()
+	self._setup_ready_manager = nil
+	self.pending_groups = {}
+end
+
+function R:RegistrationReady()
+	local specs = self.asset_loader and self.asset_loader.asset_specs
+	if type(specs) ~= "table" or not next(specs) then
+		return false, "SuperBLT asset specifications are unavailable"
+	end
+	local remaining, first = 0, nil
+	for _, spec in ipairs(specs) do
+		if not spec._entry_created then
+			remaining = remaining + 1
+			first = first or (tostring(spec.dbpath) .. "." .. tostring(spec.extension))
+		end
+	end
+	if remaining > 0 then
+		return false, tostring(remaining) .. " assets are not registered; first: " .. first .. "; check SuperBLT's preceding asset-loader error"
+	end
+	return true
+end
+
+function R:_CurrentState()
+	local dres = managers and managers.dyn_resource
+	if not dres or self._setup_ready_manager ~= dres then
+		return nil, "setup has not finished creating managers"
+	end
+	if type(dres.load) ~= "function" or type(dres._get_resource_key) ~= "function" or type(dres._dyn_resources) ~= "table" then
+		return nil, "unsupported or incomplete DynamicResourceManager"
+	end
+	local resources = dres._dyn_resources
+	local state = self._resource_states[resources]
+	if not state then
+		state = {owned = {}, failed = {}}
+		self._resource_states[resources] = state
+	end
+	self.loaded_units = state.owned
+	return dres, state
+end
+
+function R:LoadUnitList(list_name)
+	local lists = self:UnitLists()
+	local list = lists and lists[list_name]
+	if not list then return nil, nil, "no unit list named '" .. tostring(list_name) .. "'" end
+	local dres, state = self:_CurrentState()
+	if not dres then return nil, nil, state end
+	local registered, reason = self:RegistrationReady()
+	if not registered then return nil, nil, reason end
+	local package = dres.DYN_RESOURCES_PACKAGE
+	local loaded, skipped, missing = 0, 0, 0
+	for _, entry in ipairs(list) do
+		local dbpath, extension = entry[1], entry[2]
+		local key = extension .. "|" .. dbpath
+		local ext_id, db_id = Idstring(extension), Idstring(dbpath)
+		local resource_key = dres._get_resource_key(ext_id, db_id, package)
+		if state.failed[key] then
+			return nil, nil, "previous load failed for " .. key .. "; restart after fixing: " .. state.failed[key]
+		elseif self.blocked_units[key] then
+			missing = missing + 1
+			log("[RestorationMod] BLOCKED: " .. key)
+		elseif state.owned[key] and state.owned[key] == dres._dyn_resources[resource_key] then
+			skipped = skipped + 1
+		elseif not DB:has(ext_id, db_id) then
+			missing = missing + 1
+			log("[RestorationMod] MISSING ASSET: " .. key .. " (list '" .. list_name .. "')")
+		else
+			self:_MarkLoading(key .. " (list '" .. list_name .. "')")
+			-- Joining another owner's asynchronous load with nil would make
+			-- vanilla mark it ready and submit it to the engine a second time.
+			-- A real completion callback joins that pending request instead.
+			local existing = dres._dyn_resources[resource_key] or
+				(dres._to_unload and dres._to_unload[resource_key])
+			local join_callback
+			if existing and not existing.ready then
+				join_callback = function(status)
+					if status == false then
+						state.failed[key] = "native completion reported failure"
+						state.owned[key] = nil
+						log("[RestorationMod] Asset completion failed: " .. key)
+					end
+				end
+			end
+			-- Fresh requests retain the existing nil-callback loading mode.
+			local ok, err = pcall(dres.load, dres, ext_id, db_id, package, join_callback)
+			if not ok then
+				-- Vanilla can mutate its refcount table before a Lua error escapes.
+				-- Retrying that half-failed entry can silently report success.
+				state.failed[key] = tostring(err)
+				state.owned[key] = nil
+				return nil, nil, key .. ": " .. tostring(err)
+			end
+			local resource = dres._dyn_resources[resource_key]
+			if not resource then
+				state.failed[key] = "load returned without a dynamic resource record"
+				return nil, nil, key .. ": " .. state.failed[key]
+			end
+			if state.failed[key] then return nil, nil, key .. ": " .. state.failed[key] end
+			state.owned[key] = resource
+			loaded = loaded + 1
+			self:_ClearMarker()
+		end
+	end
+	return loaded, skipped, missing
+end
+
+function R:LoadAssetGroup(group_name)
+	local lists = self:UnitLists()
+	if not lists or not lists[group_name] then
+		return false, "no unit list named '" .. tostring(group_name) .. "'"
+	end
+	self.pending_groups[group_name] = true
+	if not (managers and managers.dyn_resource == self._setup_ready_manager and self._setup_ready_manager) then
+		return true, "queued until setup finishes creating managers"
+	end
+	return self:FlushPending()
+end
+
+function R:FlushPending()
+	if self._flushing then return true, "queued during active flush" end
+	local dres, state = self:_CurrentState()
+	if not dres then return false, state end
+	local ready, reason = self:RegistrationReady()
+	if not ready then return false, reason end
+	if not self._reported_last_crash then
+		self._reported_last_crash = true
+		pcall(self.ReportLastCrash, self)
+	end
+	self._flushing = true
+	local ok, success, failure = pcall(function()
+		local function load_group(name)
+			local loaded, skipped, missing = self:LoadUnitList(name)
+			if loaded == nil then return false, tostring(missing) end
+			log(string.format("[RestorationMod] list '%s': %d submitted, %d already held, %d missing/blocked", name, loaded, skipped, missing))
+			return true, nil, missing
+		end
+		local done, why, always_missing = load_group("_always")
+		if not done then return false, why end
+		local incomplete = always_missing > 0 and "_always has missing/blocked assets" or nil
+		local visited = {}
+		-- Iterate again if a callback queues another group while a group loads.
+		while next(self.pending_groups) do
+			local groups = {}
+			for name in pairs(self.pending_groups) do
+				if not visited[name] then groups[#groups + 1] = name end
+			end
+			if #groups == 0 then break end
+			table.sort(groups)
+			for _, name in ipairs(groups) do
+				visited[name] = true
+				local complete, err, missing = load_group(name)
+				if not complete then return false, err end
+				if missing == 0 then
+					self.pending_groups[name] = nil
+				else
+					incomplete = "list '" .. name .. "' has " .. missing .. " missing/blocked assets"
+				end
+			end
+		end
+		if incomplete then return false, incomplete end
+		return true
+	end)
+	self._flushing = nil
+	if not ok then return false, tostring(success) end
+	return success, failure
+end
+
+function R:OnManagersReady()
+	self._setup_ready_manager = managers and managers.dyn_resource
+	local ok, reason = self:FlushPending()
+	if not ok then log("[RestorationMod] Asset loading incomplete: " .. tostring(reason)) end
+	return ok, reason
+end
+
+-- No constructor-event or require-time flush. Those can run before registration
+-- is complete or while the globals still refer to a previous setup's manager.
+log("[RestorationMod] Asset loader revision 2: waiting for setup completion")
 -- Diagnostic: resolve an @ID<hex>@ from a crash back to a unit path, and say whether it
 -- is loaded. Diesel prints the bare hash when it cannot resolve the Idstring, but every
 -- unit in tweak_data.group_ai still holds the original string, so the game can do the

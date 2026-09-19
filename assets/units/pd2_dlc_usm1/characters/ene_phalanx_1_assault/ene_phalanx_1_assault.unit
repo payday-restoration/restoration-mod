@@ -8,6 +8,7 @@
 		<depends_on unit="units/pd2_dlc_usm1/characters/ene_acc_marshal_shield_1/ene_acc_marshal_shield_1"/>
 		<depends_on unit="units/pd2_dlc_usm2/weapons/wpn_npc_deagle/wpn_npc_deagle"/>
 		<depends_on unit="units/pd2_dlc_usm2/weapons/wpn_npc_sko12_conc/wpn_npc_sko12_conc"/>
+		<depends_on unit="units/payday2/characters/ene_head_atlas/ene_head_atlas" />
 	</dependencies>
 
 	<extensions>

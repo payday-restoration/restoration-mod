@@ -6,6 +6,10 @@
 	<dependencies>
 
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_ak47/wpn_npc_ak47" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull" />
 	</dependencies>
 
 	<extensions>

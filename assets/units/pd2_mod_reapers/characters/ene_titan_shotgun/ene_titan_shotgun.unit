@@ -8,6 +8,7 @@
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_saiga_conc/wpn_npc_saiga_conc" />
 	</dependencies>
 
 	<extensions>

@@ -9,6 +9,7 @@
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_benelli_dozer/wpn_npc_benelli_dozer" />
 	</dependencies>
 
 	<extensions>

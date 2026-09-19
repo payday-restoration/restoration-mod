@@ -5,6 +5,7 @@
 
 	<dependencies>
 		
+	<depends_on unit="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower" />
 	</dependencies>
 
 	<extensions>

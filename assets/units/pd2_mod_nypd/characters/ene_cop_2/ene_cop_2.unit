@@ -7,6 +7,8 @@
 		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/characters/ene_acc_cop_hat/ene_acc_cop_hat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull" />
+		<depends_on unit="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas" />
 	</dependencies>
 
 	<extensions>

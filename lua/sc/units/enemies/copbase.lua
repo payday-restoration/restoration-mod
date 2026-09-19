@@ -444,6 +444,14 @@ local enemy_variations_clean = {
 	["units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "heavy_swat_sg",
 	["units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2"] = "swat_shield",
 	["units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1"] = "swat_sniper",
+
+	-- BEX Federales FBI SWAT tier. Shares the ene_fbi_swat_1 chassis (.object/.model/
+	-- .sequence_manager). Direct-selection test: FBI SWAT 1/2/3 share swat_ar.
+	-- Weapon choices remain in the .unit files; the shield keeps its own sequence.
+	["units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "swat_ar",
+	["units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "swat_ar",
+	["units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "swat_ar",
+	["units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1"] = "swat_shield",
 	-- BEX Federales specials use their fixed special models and the shared SWAT sequence manager.
 	["units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1"] = "swat_taser",
 	["units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1"] = "swat_gren",
@@ -667,6 +675,12 @@ local head_variations_clean = {
 	-- Grenadier: faces only, nothing covered.
 	["units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1"] = "grenfaceonly",
 
+	-- BEX FBI SWAT direct-selection test: reuse the atlas swat_ar entry point.
+	["units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "swat_ar",
+	["units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "swat_ar",
+	["units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "swat_ar",
+	["units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1"] = "fbi_shield_head",
+
 	-- LAPD
 	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"] = "vetcop",
 	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"] = "vetcop",
@@ -817,6 +831,15 @@ CopBase.head_variations = deep_clone(head_variations)
 CopBase.enemy_variations_texas_pd = deep_clone(enemy_variations_texas_pd) 
 CopBase.enemy_variations_sfpd = deep_clone(enemy_variations_sfpd) 
 
+-- Short-sleeved body meshes across every chassis the mod ships. Hoisted so the
+-- Idstrings are built once at load instead of on every single enemy spawn.
+local short_body_objects = {
+	Idstring("g_body_short"),
+	Idstring("g_body_b_short"),
+	Idstring("g_body_short_fbi"),
+	Idstring("g_body_b_short_fbi"),
+}
+
 function CopBase:_run_unit_sequences()
 	local name = self._unit:name():key()
 	
@@ -834,19 +857,19 @@ function CopBase:_run_unit_sequences()
 	--]]
 
 	-- Run the enemy sequence to enable pouches and such
-	if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence) then
+	if enemy_sequence and self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence) then
 		self._unit:damage():run_sequence_simple(enemy_sequence)
 	end
 
 
 	if table.contains(restoration.yee_and_I_cannot_stress_this_enough_haw, job) then
-		if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence_fart) then
+		if enemy_sequence_fart and self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence_fart) then
 			self._unit:damage():run_sequence_simple(enemy_sequence_fart)
 		end	
 	end
 	
 	if table.contains(restoration.needle, job) then
-		if self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence_shart) then
+		if enemy_sequence_shart and self._unit:damage() and self._unit:damage():has_sequence(enemy_sequence_shart) then
 			self._unit:damage():run_sequence_simple(enemy_sequence_shart)
 		end	
 	end
@@ -855,13 +878,18 @@ function CopBase:_run_unit_sequences()
 	-- sequence variables directly. Read the body objects that the sequence
 	-- actually enabled and pass that state to the head atlas after it spawns.
 	local short_body = false
-	local body_short = self._unit:get_object(Idstring("g_body_short"))
-	local body_b_short = self._unit:get_object(Idstring("g_body_b_short"))
+	-- Every short-sleeved body on every chassis. The FBI tier names its own
+	-- g_body_short_fbi / g_body_b_short_fbi, so looking only for the unsuffixed
+	-- names left short_body false for it and the atlas never got arms_short_on,
+	-- which is why short-sleeved FBI bodies spawned with no forearms.
+	for _, obj_name in ipairs(short_body_objects) do
+		local obj = self._unit:get_object(obj_name)
 
-	if body_short and body_short:visibility() then
-		short_body = true
-	elseif body_b_short and body_b_short:visibility() then
-		short_body = true
+		if obj and obj:visibility() then
+			short_body = true
+
+			break
+		end
 	end
 	
 	local spawn_manager_ext = self._unit:spawn_manager()
@@ -1275,3 +1303,22 @@ function CopBase:change_char_tweak(new_tweak_name)
 
 	self:_chk_call_tweak_data_changed_listeners(old_tweak_data, new_tweak_data)
 end
+
+-- Integrated host sequence authority. Uses the existing overhaul hook registration.
+do
+ local authority = rawget(_G, "RestorationSequenceAuthority")
+ if not authority then
+  local root = restoration and restoration._mod_path
+  if not root then
+   local source = debug.getinfo(1, "S").source:gsub("^@", ""):gsub("\\", "/")
+   root = source:match("^(.-)/lua/")
+  end
+  assert(root, "[SequenceAuthority] Cannot resolve overhaul root")
+  -- The game loader need not propagate the Lua chunk return value.
+  dofile(root:gsub("[/\\]+$", "") .. "/lua/sc/core/sequence_authority.lua")
+  authority = rawget(_G, "RestorationSequenceAuthority")
+ end
+ assert(type(authority) == "table" and type(authority.install) == "function",
+  "[SequenceAuthority] sequence_authority.lua did not initialize; verify the complete integrated lua folder is installed")
+ authority:install()
+end -- Restoration authority bootstrap

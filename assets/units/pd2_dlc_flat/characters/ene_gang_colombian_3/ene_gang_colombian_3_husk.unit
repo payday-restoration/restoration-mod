@@ -4,6 +4,7 @@
 	<object file="units/pd2_dlc_flat/characters/ene_gang_colombian_3/ene_gang_colombian_3" />
 
 	<dependencies>
+	<depends_on unit="units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull" />
 	</dependencies>
 
 	<extensions>

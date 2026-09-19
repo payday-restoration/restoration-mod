@@ -1,4 +1,5 @@
 function MenuSetup:load_packages()
+	if RestorationSuperMod then RestorationSuperMod:BeginSetup() end
 	Setup.load_packages(self)
 
 	if not PackageManager:loaded("packages/start_menu") then

@@ -7,6 +7,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull" />
 		<depends_on effect="effects/particles/character/skeleton_eye_blue" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_aa12_conc/wpn_npc_aa12_conc" />
 	</dependencies>
 
 	<extensions>

@@ -14,47 +14,6 @@
 	     load that never completes and hangs the level on a black screen. -->
 	<group dyn_package="false">
 
-		<group name="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/">
-			<file :name="loud_suit_blue.texture"/>
-			<file :name="loud_suit_brown.texture"/>
-			<file :name="loud_suit_default.texture"/>
-			<file :name="loud_suit_gorkaearth.texture"/>
-			<file :name="loud_suit_gorkagreen.texture"/>
-			<file :name="loud_suit_gorkagrey.texture"/>
-			<file :name="loud_suit_gorkapurple.texture"/>
-			<file :name="loud_suit_gorkasea.texture"/>
-			<file :name="loud_suit_green.texture"/>
-			<file :name="loud_suit_purple.texture"/>
-			<file :name="loud_suit_red.texture"/>
-			<file :name="loud_suit_white.texture"/>
-			<file :name="suit_prison_comedy.texture"/>
-			<file :name="suit_prison_default.texture"/>
-			<file :name="suit_prison_janitor.texture"/>
-			<file :name="suit_prison_repairman.texture"/>
-			<file :name="suit_prison_subject.texture"/>
-			<file :name="suit_prison_vaultboy.texture"/>
-			<file :name="suit_sunny_blue.texture"/>
-			<file :name="suit_sunny_default.texture"/>
-			<file :name="suit_sunny_green.texture"/>
-			<file :name="suit_sunny_hawaii_black.texture"/>
-			<file :name="suit_sunny_hawaii_blue.texture"/>
-			<file :name="suit_sunny_hawaii_cyan.texture"/>
-			<file :name="suit_sunny_hawaii_green.texture"/>
-			<file :name="suit_sunny_hawaii_orange.texture"/>
-			<file :name="suit_sunny_hawaii_pink.texture"/>
-			<file :name="suit_sunny_hawaii_red.texture"/>
-			<file :name="suit_sunny_payne.texture"/>
-			<file :name="suit_sunny_pink.texture"/>
-			<file :name="suit_sunny_red.texture"/>
-			<file :name="suit_sunny_security_purple.texture"/>
-			<file :name="suit_sunny_security_red.texture"/>
-			<file :name="suit_sunny_skull.texture"/>
-			<file :name="suit_sunny_soprano_blue.texture"/>
-			<file :name="suit_sunny_soprano_green.texture"/>
-			<file :name="suit_sunny_vice.texture"/>
-			<file :name="suit_sunny_yellow.texture"/>
-		</group>
-
 		<group name="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/shared_textures/">
 			<file :name="trd_acc_jumpsuits_gsma.texture"/>
 			<file :name="trd_acc_jumpsuits_red_df.texture"/>

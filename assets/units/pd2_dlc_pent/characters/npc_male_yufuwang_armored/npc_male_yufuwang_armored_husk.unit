@@ -9,6 +9,7 @@
 		<depends_on unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/ene_acc_yufuwang_armor/ene_acc_yufuwang_rt_shldr"/>
 		<depends_on unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/ene_acc_yufuwang_armor/ene_acc_yufuwang_lf_shldr"/>
 		<depends_on unit="units/pd2_dlc_pent/pickups/pent_pku_yufuwang_mask/pent_pku_yufuwang_mask"/>
+		<depends_on unit="units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower" />
 	</dependencies>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData"/>

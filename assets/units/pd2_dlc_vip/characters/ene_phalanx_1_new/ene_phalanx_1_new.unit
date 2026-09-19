@@ -8,6 +8,8 @@
 		<depends_on bnk="soundbanks/sfx_hos" />
 		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_beretta92_titan/wpn_npc_beretta92_titan" />
+		<depends_on unit="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" />
 	</dependencies>
 
 	<extensions>

@@ -365,6 +365,7 @@
 			<file :name="ene_fbi_swat_1.cooked_physics"/>
 			<file :name="ene_fbi_swat_1.material_config"/>
 			<file :name="ene_fbi_swat_1.model"/>
+			<file :name="ene_fbi_swat_1.sequence_manager" />		
 			<file :name="ene_fbi_swat_1.object"/>
 			<file :name="ene_fbi_swat_1.unit"/>
 			<file :name="ene_fbi_swat_1_contour.material_config"/>
@@ -372,22 +373,12 @@
 		</group>
 
 		<group name="units/pd2_dlc_bex/characters/ene_fbi_swat_2/">
-			<file :name="ene_fbi_swat_2.cooked_physics"/>
-			<file :name="ene_fbi_swat_2.material_config"/>
-			<file :name="ene_fbi_swat_2.model"/>
-			<file :name="ene_fbi_swat_2.object"/>
 			<file :name="ene_fbi_swat_2.unit"/>
-			<file :name="ene_fbi_swat_2_contour.material_config"/>
 			<file :name="ene_fbi_swat_2_husk.unit"/>
 		</group>
 
 		<group name="units/pd2_dlc_bex/characters/ene_fbi_swat_3/">
-			<file :name="ene_fbi_swat_3.cooked_physics"/>
-			<file :name="ene_fbi_swat_3.material_config"/>
-			<file :name="ene_fbi_swat_3.model"/>
-			<file :name="ene_fbi_swat_3.object"/>
 			<file :name="ene_fbi_swat_3.unit"/>
-			<file :name="ene_fbi_swat_3_contour.material_config"/>
 			<file :name="ene_fbi_swat_3_husk.unit"/>
 		</group>
 
@@ -441,12 +432,7 @@
 		</group>
 
 		<group name="units/pd2_dlc_bex/characters/ene_shield_1/">
-			<file :name="ene_shield_1.cooked_physics"/>
-			<file :name="ene_shield_1.material_config"/>
-			<file :name="ene_shield_1.model"/>
-			<file :name="ene_shield_1.object"/>
 			<file :name="ene_shield_1.unit"/>
-			<file :name="ene_shield_1_contour.material_config"/>
 			<file :name="ene_shield_1_husk.unit"/>
 		</group>
 

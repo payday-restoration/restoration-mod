@@ -10,6 +10,7 @@
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" />
+		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" />
 	</dependencies>
 
 	<extensions>

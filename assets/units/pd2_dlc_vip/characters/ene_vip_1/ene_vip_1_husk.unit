@@ -8,6 +8,7 @@
 		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip_dummy" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 		<depends_on effect="effects/particles/character/cigarette_smoke_winters" />
+		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" />
 	</dependencies>
 
 	<extensions>

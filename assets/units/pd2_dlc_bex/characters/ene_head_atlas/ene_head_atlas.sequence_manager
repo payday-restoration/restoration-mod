@@ -222,6 +222,13 @@
 			<run_sequence name="'head_reset'" />
 			<run_sequence name="'head_'..pick('balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_b','balaclava_b','balaclava_b','exposed_meanheads')" />
 		</sequence>
+		<!-- Bare-headed FBI (fbi_swat_3). Balaclava-heavy like the other two.
+		     Mutton chops are helmet meshes (lod15/16) on the body chassis, so a
+		     hatless enemy cannot get them regardless of which face is rolled. -->
+		<sequence name="'fbi_swat_smg'" triggable="true" editable_state="true" once="true">
+			<run_sequence name="'head_reset'" />
+			<run_sequence name="'head_'..pick('balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_b','balaclava_b','balaclava_b','exposed_weak','exposed_weak')" />
+		</sequence>
 		<sequence name="'gs_swat'" triggable="true" editable_state="true" once="true">
 			<run_sequence name="'head_reset'" />
 			<run_sequence name="'head_'..pick('balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','balaclava_a','exposed_meanheads','balaclava_b')" />
@@ -250,17 +257,9 @@
 			<run_sequence name="'head_reset'" />
 			<run_sequence name="'head_'..pick('exposed_meanheads')" />
 		</sequence>
-		<sequence name="'swat_taser_head'" triggable="true" editable_state="true" once="true">
+		<sequence name="'fbi_shield_head'" triggable="true" editable_state="true" once="true">
 			<run_sequence name="'head_reset'" />
-			<run_sequence name="'taser_head_'..pick('exposed','exposed','exposed','exposed','exposed','exposed','exposed','cover','cover','cover')" />
-		</sequence>
-		<!-- Full head: the white/black heads plus the bandana variants. NEVER the bare
-		     g_face_* objects - those carry no head and are grenadier-only. -->
-		<sequence name="'taser_head_exposed'" triggable="true" editable_state="true">
-			<run_sequence name="'head_exposed_random'" />
-		</sequence>
-		<sequence name="'taser_head_cover'" triggable="true" editable_state="true">
-			<run_sequence name="'head_'..pick('balaclava_a','balaclava_c')" />
+			<run_sequence name="'head_'..pick('balaclava_a','balaclava_b','balaclava_c','balaclava_d','balaclava_a','balaclava_b','balaclava_c','balaclava_d','white_bandana_a','white_bandana_b','white_bandana_c','white_bandana_d','white_bandana_e','white_bandana_f','black_bandana_a','black_bandana_b','black_bandana_c','black_bandana_d','black_bandana_e')" />
 		</sequence>
 		<sequence name="'grenfaceonly'" triggable="true" editable_state="true" once="true">
 			<run_sequence name="'head_reset'" />
@@ -665,7 +664,7 @@
 		</sequence>
 		<sequence editable_state="true" name="'disable_hitbox'" triggable="true">
 			<body enabled="false" name="'body'" />
-			<body enabled="false" name="'Head'" />
+			<body enabled="false" name="'head'" />
 			<body enabled="false" name="'rag_LeftLeg'" />
 			<body enabled="false" name="'rag_RightLeg'" />
 			<body enabled="false" name="'rag_RightUpLeg'" />
@@ -673,7 +672,7 @@
 		</sequence>
 		<sequence editable_state="true" name="'leg_arm_hitbox'" triggable="true">
 			<body enabled="true" name="'body'" />
-			<body enabled="true" name="'Head'" />
+			<body enabled="true" name="'head'" />
 			<body enabled="false" motion="'keyframed'" name="'rag_Hips'" />
 			<body enabled="true" motion="'keyframed'" name="'rag_LeftUpLeg'" />
 			<body enabled="true" motion="'keyframed'" name="'rag_RightUpLeg'" />
@@ -717,7 +716,7 @@
 		</sequence>
 		<sequence editable_state="true" name="'switch_to_ragdoll'" triggable="true">
 			<body enabled="false" name="'body'" />
-			<body enabled="false" name="'Head'" />
+			<body enabled="false" name="'head'" />
 			<body enabled="true" motion="'dynamic'" name="'rag_Hips'" />
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg'" />
 			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg'" />
@@ -758,10 +757,6 @@
 			<body motion="'fixed'" name="'rag_LeftArm'" />
 			<body motion="'fixed'" name="'rag_RightArm'" />
 			<body motion="'fixed'" name="'rag_Head'" />
-			<body motion="'fixed'" name="'jig_holster_right'" />
-			<body motion="'fixed'" name="'jig_holster_left'" />
-			<body motion="'fixed'" name="'body_holster_right'" />
-			<body motion="'fixed'" name="'body_holster_left'" />
 			<constraint enabled="false" name="'LeftUpLeg'" />
 			<constraint enabled="false" name="'RightUpLeg'" />
 			<constraint enabled="false" name="'LeftLeg'" />
@@ -774,12 +769,10 @@
 			<constraint enabled="false" name="'LeftArm'" />
 			<constraint enabled="false" name="'RightArm'" />
 			<constraint enabled="false" name="'Head'" />
-			<constraint enabled="false" name="'h_holster_left'" />
-			<constraint enabled="false" name="'h_holster_right'" />
 		</sequence>
 		<sequence editable_state="false" name="'swich_for_test'" triggable="false">
 			<body enabled="false" name="'body'" />
-			<body enabled="false" name="'Head'" />
+			<body enabled="false" name="'head'" />
 			<body enabled="false" name="'mover_blocker'" />
 			<body enabled="true" motion="'keyframed'" name="'rag_Hips'" />
 			<body enabled="true" motion="'keyframed'" name="'rag_LeftUpLeg'" />

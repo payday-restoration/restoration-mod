@@ -14,6 +14,7 @@
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_m32/wpn_npc_m32" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_hk21_dozer/wpn_npc_hk21_dozer" />
 	</dependencies>
 
 	<extensions>

@@ -9,6 +9,8 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_m32/wpn_npc_m32" />
+		<depends_on unit="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" />
 	</dependencies>
 
 	<extensions>

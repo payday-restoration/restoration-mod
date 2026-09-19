@@ -6,6 +6,8 @@
 	<dependencies>
 		
 		<depends_on unit="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4" />
+		<depends_on unit="units/payday2/characters/ene_head_atlas/ene_head_atlas" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" />
 	</dependencies>
 
 	<extensions>

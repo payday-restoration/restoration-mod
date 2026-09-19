@@ -110,5 +110,165 @@
 	<texture			path="guis/textures/pd2/skilltree/info_cohesion" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_heisters_in_aura" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_dig_in_your_heels" force="false" load="false"/>
+	<!--///GUI ICONS\\\-->
+	<!-- Every GUI replacement in the mod, in one place. Pulled off SuperBLT and
+	     out of addSC.xml / addoutfit.xml so each icon registers exactly once. -->
+	<texture			path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_3_sc" force="false"/>
+	<texture			path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
+	<texture			path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>
+	<texture			path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc" force="false"/>
+	<texture			path="guis/textures/pd2/mission_briefing/assets/risk_bexico" force="false"/>
+	<texture			path="guis/textures/pd2/mission_briefing/assets/risk_murky" force="false"/>
+	<texture			path="guis/textures/pd2/mission_briefing/assets/risk_zombie" force="false"/>
+	<texture			path="guis/textures/pd2/mission_briefing/assets/alex_1_zipline" force="false"/>
+	<texture			path="guis/dlcs/sc/textures/pd2/crime_spree/modifiers_atlas_sc"/>
+	<texture			path="guis/textures/pd2/mutator_icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc"/>
+	<texture			path="guis/dlcs/sc/textures/pd2/specialization/icons_atlas"/>
+	<texture			path="guis/textures/restoration/crimewar_skull"/>
+	<texture			path="guis/textures/restoration/crimewar_skull_2"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/materials/jkl_matt01"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/materials/jkl_matt02"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<texture			path="guis/textures/pd2/hud_buff_skull" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/hud_buff_fire" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/hud_buff_spooc" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/hud_buff_shield" force="true" load="false"/>
+	<texture			path="guis/textures/pd2/hud_buff_halloween" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/hud_buff_generic" force="false" load="false"/>
+	<texture			path="guis/textures/restoration/bloodyscreen" force="false" load="false"/>
+	<texture			path="guis/textures/restoration/topbottomrim" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/hitconfirm_ineffective" force="false" load="false"/>
+	<texture			path="guis/textures/pd2/hitconfirm_effective" force="false" load="false"/>
+	<texture			path="guis/textures/loading/hints/grenadier_load" force="false"/>
+	<texture			path="guis/textures/loading/hints/vet_cop_loading" force="false"/>
+	<texture			path="guis/textures/loading/hints/generic_tip" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_akantits" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_autumn" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_bex" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_bravos" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_chad" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_doc" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_gear" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_keith" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_lpf" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_murkies" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_spring" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_squad" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_summers" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_tdozer" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_thrt" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_tshield" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_tsniper" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_tspook" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_tswat" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_ttaser" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_winters_sc" force="false"/>
+	<texture			path="guis/textures/loading/hints/enemy_zeal_sc" force="false"/>
+	<texture			path="guis/textures/loading/hints/loading_australia" force="false"/>
+	<texture			path="guis/textures/loading/hints/loading_jackal" force="false"/>
+	<texture			path="guis/textures/loading/hints/loading_omnia" force="false"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2_sc"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3_sc"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1_sc"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1_sc"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p1_sc"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc"/>
+	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_team_exp_money_p3_sc"/>
+	<texture			path="guis/textures/pd2/blackmarket/inv_mod_ammo_electric"/>
+	<texture			path="guis/textures/pd2/blackmarket/inv_mod_ammo_bleed"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_defense"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_parry"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_panic"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_headshot"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_backstab"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_chainsaw"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_charger"/>
+	<texture			path="guis/textures/pd2/blackmarket/melee_jackpot"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_slug_fire"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_lmg_rpk_m_standard"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_drum"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_m4_uupg_fg_rail_m4a1"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_afg"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_stubby"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_verticalgrip"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mp5_m_drum"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_car4_irons_dmc"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_arbiter_irons_dmc"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_dd_irons_dmc"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_ecp_irons_dmc"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_sc_none"/>
+	<texture			path="guis/textures/pd2/skilltree/icons_atlas_sc"/>
+	<texture			path="guis/textures/pd2/skilltree_2/icons_atlas_2" force="true"/>
+	<texture			path="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free" force="true"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mac10_s_no"/>
+	<texture			path="guis/dlcs/gage_pack_assault/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_g3_b_sniper" force="true"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_p90_body_tan"/>
+	<texture			path="guis/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/chico/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/wild/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/max/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/myh/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/ecp/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/mrwi/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/textures/pd2/equipment" force="true"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/deployables/armor_kit" force="true"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/deployables/outline/armor_kit" force="true"/>
+	<texture			path="guis/dlcs/mxm/textures/pd2/ordnance_bag"/>
+	<texture			path="guis/dlcs/mxm/textures/pd2/sticky_grenade"/>
+	<texture			path="guis/dlcs/pxp1/textures/pd2/hud_poison_gas_grenade"/>
+	<texture			path="guis/dlcs/sawp/textures/pd2/equipment_sawp"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit"/>
+	<texture			path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/jumpsuit_flecktarn"/>
+	<texture			path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/jumpsuit_flatgreen"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/two_piece_suit"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/poggers"/>
+	<texture			path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/raincoat"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_default"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_blue"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_brown"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_gorkaearth"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_gorkagreen"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_gorkagrey"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_gorkapurple"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_gorkasea"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_green"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_purple"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_red"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit_white"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_default"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_red"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_skull"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_blue"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_green"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_yellow"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_pink"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_hawaii_black"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_hawaii_blue"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_hawaii_red"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_hawaii_pink"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_hawaii_cyan"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_hawaii_orange"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_hawaii_green"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_payne"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_vice"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_security_red"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_security_purple"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_soprano_green"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny_soprano_blue"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_default"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_repairman"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_comedy"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_janitor"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_vaultboy"/>
+	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_subject"/>
 
 </table>

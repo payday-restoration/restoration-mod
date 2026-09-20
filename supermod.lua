@@ -1,240 +1,283 @@
--- Restoration asset loader, revision 2.
--- Register with SuperBLT first; submit units only after setup has finished
--- creating managers. A successful submission is not proof that texture
--- streaming has finished, and a crash marker is not a culprit verdict.
+-- Restoration loader v3.4: withdraw callback-gated transition preloading.
+-- Install as mods/restoration-mod/supermod.lua and FULLY RESTART PAYDAY 2.
+-- This cannot be hot-loaded over v3.1/v3.2: their native request and wrappers
+-- may still be active. Restarting removes that pending state without altering it.
+-- Setup.exec and Setup.block_exec are left untouched.
+-- Asset registration remains early and deduplicated. Enemy resource loading
+-- runs after GameSetup.init_managers, using the original nil-callback path.
+-- Shared/faction lists and registered client debris resources remain intact.
+-- Missing list entries with no mod declaration are warned and skipped, matching
+-- the original supplied loader. They are NOT marked loaded or aliased to another
+-- unit. Any live sequence reference to an absent unit still needs asset repair.
+-- References acquired here are retained for the process; this patch does not
+-- introduce resource unloading or pretend to fix the original native DiskError.
+-- Native I/O cannot be validated in this environment.
 RestorationSuperMod = RestorationSuperMod or {}
 local R = RestorationSuperMod
 R.mod_instance = R.mod_instance or ModInstance
 R.supermod = R.supermod or (R.mod_instance and R.mod_instance.supermod)
 R.asset_loader = R.asset_loader or (R.supermod and R.supermod:GetAssetLoader())
-R.blocked_units = R.blocked_units or {}
-R.pending_groups = R.pending_groups or {}
 R.loaded_units = R.loaded_units or {}
--- The game shares this resource table through Global across manager instances.
--- Track ownership against that table, not just a manager or a process-wide bool.
-R._resource_states = R._resource_states or setmetatable({}, {__mode = "k"})
+R.pending_groups = R.pending_groups or {}
+R.blocked_units = R.blocked_units or {}
+R.revision = "3.4"
 
 function R:ModPath()
-	return self.mod_instance and self.mod_instance:GetPath() or "mods/restoration-mod/"
-end
-
-function R:_MarkerPath()
-	return self:ModPath() .. "last_asset.txt"
-end
-
-function R:_MarkLoading(text)
-	pcall(function()
-		local f = io.open(self:_MarkerPath(), "w")
-		if f then f:write(text); f:close() end
-	end)
-end
-
-function R:_ClearMarker()
-	self:_MarkLoading("")
-end
-
-function R:ReportLastCrash()
-	local f = io.open(self:_MarkerPath(), "r")
-	if not f then return end
-	local text = f:read("*a")
-	f:close()
-	if text and text ~= "" then
-		log("[RestorationMod] Previous unfinished asset submission: " .. text)
-		log("[RestorationMod] This is the last Lua request, not proof of the failing file. Native streaming may concern an earlier request.")
-		self:_ClearMarker()
-	end
+    return self.mod_instance and self.mod_instance:GetPath() or "mods/restoration-mod/"
 end
 
 function R:UnitLists()
-	if type(self._unit_lists) == "table" then return self._unit_lists end
-	local path = self:ModPath() .. "lua/sc/superblt_units.lua"
-	local read = blt and blt.vm and blt.vm.dofile or dofile
-	local ok, lists = pcall(read, path)
-	if ok and type(lists) == "table" then
-		self._unit_lists = lists
-		return lists
-	end
-	-- Do not cache a transient file/read failure as a permanent empty list.
-	log("[RestorationMod] Could not read unit lists: " .. tostring(lists))
+    if not self._unit_lists then
+        local path = self:ModPath() .. "lua/sc/superblt_units.lua"
+        local reader = blt and blt.vm and blt.vm.dofile or dofile
+        local value = reader(path)
+        assert(type(value) == "table", "[RestorationMod] Invalid unit list: " .. path)
+        self._unit_lists = value
+    end
+    return self._unit_lists
+end
+
+function R:_Ownership()
+    Global.restoration_preload_v3 = Global.restoration_preload_v3 or {}
+    return Global.restoration_preload_v3
+end
+
+function R:_Entry(dres, path, extension)
+    local key = dres._get_resource_key(Idstring(extension), Idstring(path), dres.DYN_RESOURCES_PACKAGE)
+    return dres._dyn_resources[key], key
+end
+
+function R:_Owned(dres, path, extension)
+    local key = extension .. "|" .. path
+    local saved = self:_Ownership()[key]
+    local entry = self:_Entry(dres, path, extension)
+    -- A boolean from an earlier setup is insufficient: verify the actual entry.
+    return saved and saved == entry and entry.ready and entry.ref_c > 0
+end
+
+function R:_Fail(reason)
+    if not self.failure then
+        self.failure = tostring(reason)
+        log("[RestorationMod] Preload stopped: " .. self.failure)
+    end
+    return false, self.failure
+end
+
+-- Use the supplied loader's nil-callback path after the new game managers
+-- exist. A pre-existing pending entry is an error, never resubmitted or forced
+-- ready. Only claim ownership after the native call returns and availability
+-- checks succeed; a Lua ready flag alone is not proof of resource availability.
+function R:LoadUnitList(name)
+    local list = self:UnitLists()[name]
+    if not list then return nil, nil, "Unknown unit list: " .. tostring(name) end
+    local dres = managers and managers.dyn_resource
+    if not dres then return nil, nil, "DynamicResourceManager is unavailable" end
+    local loaded, skipped, missing = 0, 0, 0
+    self.missing_list_warnings = self.missing_list_warnings or {}
+    for _, item in ipairs(list) do
+        local path, extension = item[1], item[2]
+        local key = extension .. "|" .. path
+        if self:_Owned(dres, path, extension) then
+            skipped = skipped + 1
+        else
+            local ext, id = Idstring(extension), Idstring(path)
+            if self.blocked_units[key] then
+                return nil, nil, "Resource explicitly blocked: " .. key
+            elseif not DB:has(ext, id) then
+                if self._declared_asset_keys and self._declared_asset_keys[key] then
+                    return nil, nil, "Declared asset has no DB entry after registration: " .. key
+                end
+                -- The original generated list includes absent base-game/legacy
+                -- paths. List membership alone does not make them available.
+                -- Do not submit an invalid path or invent a replacement unit.
+                missing = missing + 1
+                if not self.missing_list_warnings[key] then
+                    self.missing_list_warnings[key] = true
+                    log("[RestorationMod] Skipping absent, undeclared preload entry: " .. key)
+                end
+            else
+                local entry, resource_key = self:_Entry(dres, path, extension)
+                local unloading = dres._to_unload and dres._to_unload[resource_key]
+                if (entry and not entry.ready) or (unloading and not unloading.ready) then
+                    return nil, nil, "Resource still pending at world creation: " .. key
+                end
+                local ok, reason = pcall(dres.load, dres, ext, id, dres.DYN_RESOURCES_PACKAGE, nil)
+                if not ok then return nil, nil, tostring(reason) end
+                entry = self:_Entry(dres, path, extension)
+                if not entry or not entry.ready or not PackageManager:has(ext, id) then
+                    return nil, nil, "Synchronous load did not make resource available: " .. key
+                end
+                self:_Ownership()[key] = entry
+                self.loaded_units[key] = true
+                loaded = loaded + 1
+            end
+        end
+    end
+    return loaded, skipped, missing
+end
+
+function R:LoadAssetGroup(name)
+    if not self:UnitLists()[name] then return false, "Unknown unit list: " .. tostring(name) end
+    self.pending_groups[name] = true
+    -- Package loading precedes manager creation. Never load through the old manager.
+    if self.game_managers_ready then return self:FlushPending() end
+    return true
 end
 
 function R:BeginSetup()
-	self._setup_ready_manager = nil
-	self.pending_groups = {}
-end
-
-function R:RegistrationReady()
-	local specs = self.asset_loader and self.asset_loader.asset_specs
-	if type(specs) ~= "table" or not next(specs) then
-		return false, "SuperBLT asset specifications are unavailable"
-	end
-	local remaining, first = 0, nil
-	for _, spec in ipairs(specs) do
-		if not spec._entry_created then
-			remaining = remaining + 1
-			first = first or (tostring(spec.dbpath) .. "." .. tostring(spec.extension))
-		end
-	end
-	if remaining > 0 then
-		return false, tostring(remaining) .. " assets are not registered; first: " .. first .. "; check SuperBLT's preceding asset-loader error"
-	end
-	return true
-end
-
-function R:_CurrentState()
-	local dres = managers and managers.dyn_resource
-	if not dres or self._setup_ready_manager ~= dres then
-		return nil, "setup has not finished creating managers"
-	end
-	if type(dres.load) ~= "function" or type(dres._get_resource_key) ~= "function" or type(dres._dyn_resources) ~= "table" then
-		return nil, "unsupported or incomplete DynamicResourceManager"
-	end
-	local resources = dres._dyn_resources
-	local state = self._resource_states[resources]
-	if not state then
-		state = {owned = {}, failed = {}}
-		self._resource_states[resources] = state
-	end
-	self.loaded_units = state.owned
-	return dres, state
-end
-
-function R:LoadUnitList(list_name)
-	local lists = self:UnitLists()
-	local list = lists and lists[list_name]
-	if not list then return nil, nil, "no unit list named '" .. tostring(list_name) .. "'" end
-	local dres, state = self:_CurrentState()
-	if not dres then return nil, nil, state end
-	local registered, reason = self:RegistrationReady()
-	if not registered then return nil, nil, reason end
-	local package = dres.DYN_RESOURCES_PACKAGE
-	local loaded, skipped, missing = 0, 0, 0
-	for _, entry in ipairs(list) do
-		local dbpath, extension = entry[1], entry[2]
-		local key = extension .. "|" .. dbpath
-		local ext_id, db_id = Idstring(extension), Idstring(dbpath)
-		local resource_key = dres._get_resource_key(ext_id, db_id, package)
-		if state.failed[key] then
-			return nil, nil, "previous load failed for " .. key .. "; restart after fixing: " .. state.failed[key]
-		elseif self.blocked_units[key] then
-			missing = missing + 1
-			log("[RestorationMod] BLOCKED: " .. key)
-		elseif state.owned[key] and state.owned[key] == dres._dyn_resources[resource_key] then
-			skipped = skipped + 1
-		elseif not DB:has(ext_id, db_id) then
-			missing = missing + 1
-			log("[RestorationMod] MISSING ASSET: " .. key .. " (list '" .. list_name .. "')")
-		else
-			self:_MarkLoading(key .. " (list '" .. list_name .. "')")
-			-- Joining another owner's asynchronous load with nil would make
-			-- vanilla mark it ready and submit it to the engine a second time.
-			-- A real completion callback joins that pending request instead.
-			local existing = dres._dyn_resources[resource_key] or
-				(dres._to_unload and dres._to_unload[resource_key])
-			local join_callback
-			if existing and not existing.ready then
-				join_callback = function(status)
-					if status == false then
-						state.failed[key] = "native completion reported failure"
-						state.owned[key] = nil
-						log("[RestorationMod] Asset completion failed: " .. key)
-					end
-				end
-			end
-			-- Fresh requests retain the existing nil-callback loading mode.
-			local ok, err = pcall(dres.load, dres, ext_id, db_id, package, join_callback)
-			if not ok then
-				-- Vanilla can mutate its refcount table before a Lua error escapes.
-				-- Retrying that half-failed entry can silently report success.
-				state.failed[key] = tostring(err)
-				state.owned[key] = nil
-				return nil, nil, key .. ": " .. tostring(err)
-			end
-			local resource = dres._dyn_resources[resource_key]
-			if not resource then
-				state.failed[key] = "load returned without a dynamic resource record"
-				return nil, nil, key .. ": " .. state.failed[key]
-			end
-			if state.failed[key] then return nil, nil, key .. ": " .. state.failed[key] end
-			state.owned[key] = resource
-			loaded = loaded + 1
-			self:_ClearMarker()
-		end
-	end
-	return loaded, skipped, missing
-end
-
-function R:LoadAssetGroup(group_name)
-	local lists = self:UnitLists()
-	if not lists or not lists[group_name] then
-		return false, "no unit list named '" .. tostring(group_name) .. "'"
-	end
-	self.pending_groups[group_name] = true
-	if not (managers and managers.dyn_resource == self._setup_ready_manager and self._setup_ready_manager) then
-		return true, "queued until setup finishes creating managers"
-	end
-	return self:FlushPending()
+    self.game_managers_ready = false
+    return self:PrepareAssetEntries()
 end
 
 function R:FlushPending()
-	if self._flushing then return true, "queued during active flush" end
-	local dres, state = self:_CurrentState()
-	if not dres then return false, state end
-	local ready, reason = self:RegistrationReady()
-	if not ready then return false, reason end
-	if not self._reported_last_crash then
-		self._reported_last_crash = true
-		pcall(self.ReportLastCrash, self)
-	end
-	self._flushing = true
-	local ok, success, failure = pcall(function()
-		local function load_group(name)
-			local loaded, skipped, missing = self:LoadUnitList(name)
-			if loaded == nil then return false, tostring(missing) end
-			log(string.format("[RestorationMod] list '%s': %d submitted, %d already held, %d missing/blocked", name, loaded, skipped, missing))
-			return true, nil, missing
-		end
-		local done, why, always_missing = load_group("_always")
-		if not done then return false, why end
-		local incomplete = always_missing > 0 and "_always has missing/blocked assets" or nil
-		local visited = {}
-		-- Iterate again if a callback queues another group while a group loads.
-		while next(self.pending_groups) do
-			local groups = {}
-			for name in pairs(self.pending_groups) do
-				if not visited[name] then groups[#groups + 1] = name end
-			end
-			if #groups == 0 then break end
-			table.sort(groups)
-			for _, name in ipairs(groups) do
-				visited[name] = true
-				local complete, err, missing = load_group(name)
-				if not complete then return false, err end
-				if missing == 0 then
-					self.pending_groups[name] = nil
-				else
-					incomplete = "list '" .. name .. "' has " .. missing .. " missing/blocked assets"
-				end
-			end
-		end
-		if incomplete then return false, incomplete end
-		return true
-	end)
-	self._flushing = nil
-	if not ok then return false, tostring(success) end
-	return success, failure
+    local ready, reason = self:PrepareAssetEntries()
+    if not ready then return false, reason end
+    -- Require-time and menu constructor calls register only; no enemy preloading.
+    if not self.game_managers_ready then return true end
+    if self.failure then return false, self.failure end
+    local names = {"_always"}
+    for name in pairs(self.pending_groups) do names[#names + 1] = name end
+    table.sort(names)
+    for _, name in ipairs(names) do
+        local count, _, why = self:LoadUnitList(name)
+        if not count then return self:_Fail(why) end
+        self.pending_groups[name] = nil
+        if count > 0 or why > 0 then
+            log(string.format("[RestorationMod] Post-manager preload '%s': %d loaded; %d absent undeclared entries skipped", name, count, why))
+        end
+    end
+    return true
 end
 
 function R:OnManagersReady()
-	self._setup_ready_manager = managers and managers.dyn_resource
-	local ok, reason = self:FlushPending()
-	if not ok then log("[RestorationMod] Asset loading incomplete: " .. tostring(reason)) end
-	return ok, reason
+    self.game_managers_ready = true
+    log("[RestorationMod] Loader v3.4: loading required units after game manager initialization")
+    return self:FlushPending()
 end
 
--- No constructor-event or require-time flush. Those can run before registration
--- is complete or while the globals still refer to a previous setup's manager.
-log("[RestorationMod] Asset loader revision 2: waiting for setup completion")
+function RestorationSuperMod:PrepareAssetEntries()
+	local loader = self.asset_loader
+	local specs = loader and loader.asset_specs
+	if type(specs) ~= "table" or not next(specs) then
+		return false, "asset specifications are not available yet"
+	end
+	if self._prepared_asset_specs == specs and self._prepared_asset_count == #specs then
+		return true
+	end
+	if not (DB and Idstring and BLT and BLT.AssetManager and blt) then
+		return false, "asset registration API is not available yet"
+	end
+
+	local groups, ordered = {}, {}
+	-- Validate every source before creating any database entries. A duplicate
+	-- path is allowed only when it describes the very same physical resource.
+	for _, spec in ipairs(specs) do
+		local key = spec.extension .. "|" .. spec.dbpath
+		local group = groups[key]
+		local convert = spec.xml_convert
+		local signature = spec.file
+		if convert then
+			signature = signature .. "|" .. convert.path .. "|" .. convert.from_type .. "|" .. convert.to_type
+		end
+		if group then
+			assert(group.signature == signature, "[RestorationMod] Conflicting asset providers: " .. key)
+		else
+			group = {spec = spec, signature = signature, aliases = {}}
+			groups[key] = group
+			ordered[#ordered + 1] = group
+		end
+		group.aliases[#group.aliases + 1] = spec
+		group.registered = group.registered or spec._entry_created
+		if convert and convert._done then group.converted = true end
+	end
+	for _, group in ipairs(ordered) do
+		local spec = group.spec
+		local convert = spec.xml_convert
+		local source = convert and convert.path or spec.file
+		assert(io.file_is_readable(source), "[RestorationMod] Unreadable asset source: " .. source)
+		if convert and not group.converted then
+			assert(ScriptSerializer and type(ScriptSerializer["from_" .. convert.from_type]) == "function",
+				"[RestorationMod] Missing XML reader: " .. convert.from_type)
+			assert(type(ScriptSerializer["to_" .. convert.to_type]) == "function",
+				"[RestorationMod] Missing XML writer: " .. convert.to_type)
+		end
+	end
+
+	-- Complete conversion before publishing resources. Propagate _done to all
+	-- aliases: otherwise SuperBLT rewrites the same generated file in its flush.
+	for _, group in ipairs(ordered) do
+		local convert = group.spec.xml_convert
+		if convert then
+			if not group.converted then
+				local input = assert(io.open(convert.path, "rb"))
+				local bytes, read_error = input:read("*a")
+				input:close()
+				assert(bytes, read_error)
+				local data = ScriptSerializer["from_" .. convert.from_type](ScriptSerializer, bytes)
+				local binary = assert(ScriptSerializer["to_" .. convert.to_type](ScriptSerializer, data))
+				local output = assert(io.open(convert.built_path, "wb"))
+				local written, write_error = output:write(binary)
+				local closed, close_error = output:close()
+				assert(written, write_error)
+				assert(closed, close_error)
+			end
+			for _, alias in ipairs(group.aliases) do alias.xml_convert._done = true end
+		end
+	end
+
+	local created = 0
+	for _, group in ipairs(ordered) do
+		local spec = group.spec
+		if not group.registered then
+			local name, ext = Idstring(spec.dbpath), Idstring(spec.extension)
+			blt.ignoretweak(name, ext)
+			BLT.AssetManager:CreateEntry(name, ext, spec.file)
+			created = created + 1
+		end
+		for _, alias in ipairs(group.aliases) do alias._entry_created = true end
+	end
+	self._declared_asset_keys = {}
+	for key in pairs(groups) do self._declared_asset_keys[key] = true end
+	self._prepared_asset_specs = specs
+	self._prepared_asset_count = #specs
+	log(string.format("[RestorationMod] Asset registration: %d declarations, %d unique, %d created; repeat registrations suppressed",
+		#specs, #ordered, created))
+	return true
+end
+
+
+function R:InstallSetupHooks()
+    if GameSetup and not GameSetup._restoration_loader_v34_game then
+        GameSetup._restoration_loader_v34_game = true
+        local original_packages = GameSetup.load_packages
+        function GameSetup:load_packages(...)
+            local loader = RestorationSuperMod
+            local ok, reason = loader:BeginSetup()
+            assert(ok, "[RestorationMod] Asset registration failed: " .. tostring(reason))
+            return original_packages(self, ...)
+        end
+        local original_managers = GameSetup.init_managers
+        function GameSetup:init_managers(...)
+            local result = original_managers(self, ...)
+            local ok, reason = RestorationSuperMod:OnManagersReady()
+            assert(ok, "[RestorationMod] Required preload failed: " .. tostring(reason))
+            return result
+        end
+        local original_game = GameSetup.init_game
+        function GameSetup:init_game(...)
+            local loader = RestorationSuperMod
+            assert(loader.game_managers_ready and not loader.failure,
+                "[RestorationMod] Cannot create world before required assets are available: " .. tostring(loader.failure))
+            return original_game(self, ...)
+        end
+    end
+end
+
+R:InstallSetupHooks()
+-- Early DB registration stays enabled, but require-time enemy loading is removed.
+local ready, reason = R:PrepareAssetEntries()
+if not ready then log("[RestorationMod] Asset registration deferred: " .. tostring(reason)) end
+
 -- Diagnostic: resolve an @ID<hex>@ from a crash back to a unit path, and say whether it
 -- is loaded. Diesel prints the bare hash when it cannot resolve the Idstring, but every
 -- unit in tweak_data.group_ai still holds the original string, so the game can do the

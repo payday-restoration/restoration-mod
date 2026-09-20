@@ -1,11 +1,15 @@
--- Restoration integrated sequence authority, protocol 2. LuaJIT / Lua 5.1.
+-- Restoration integrated ENEMY sequence authority, protocol 3. LuaJIT / Lua 5.1.
+-- Scope: CopBase/HuskCopBase enemies and their bound appearance/debris children.
+-- Civilians, team AI, doors and world props use native sequence execution.
+-- Heist environment-profile selection remains host controlled.
+-- Install into lua/sc/core/sequence_authority.lua; all peers must update and restart.
 -- Host records resolved operations. Clients never run an independent random stream.
 local existing = rawget(_G, 'RestorationSequenceAuthority')
 if existing then
  assert(type(existing)=='table' and type(existing.install)=='function', '[SequenceAuthority] Existing authority module is incomplete; restart with the complete integrated build')
  return existing
 end
-local A = {VERSION=2, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
+local A = {VERSION=3, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
 local unpack=unpack
 local function pack(...) return {n=select('#',...),...} end
 local function weak() return setmetatable({},{__mode='k'}) end
@@ -82,7 +86,7 @@ function A:state(u)
   self.serial=self.serial+1
   s={unit=u,rev=0,applied=0,events={},persistent={},generation=tostring(self.serial),next_request=0}
   self.units[u]=s
-  if self.spawning and u~=self.spawning.parent then s.parent,s.slot,s.managed=self.spawning.parent,self.spawning.slot,true end
+  if self.spawning and u~=self.spawning.parent and self:managed(self.spawning.parent) then s.parent,s.slot,s.managed=self.spawning.parent,self.spawning.slot,true end
  end
  return s
 end
@@ -117,9 +121,33 @@ function A:element(u)
  local d=u.damage and u:damage()
  return d and d._unit_element
 end
-function A:managed(u,element)
+-- Class ancestry works for modded enemy subclasses without guessing asset paths.
+local function derives(base, class)
+ if not base or not class then return false end
+ local current=getmetatable(base)
+ for _=1,32 do
+  if current==class then return true end
+  if type(current)~='table' then return false end
+  current=rawget(current,'super')
+ end
+ return false
+end
+function A:is_enemy(u)
+ if not alive_unit(u) then return false end
+ local base=u.base and u:base()
+ if not base then return false end
+ for _,name in ipairs({'CivilianBase','HuskCivilianBase','TeamAIBase','HuskTeamAIBase'})do
+  if derives(base,rawget(_G,name)) then return false end
+ end
+ return derives(base,CopBase) or derives(base,HuskCopBase)
+end
+function A:managed(u,element,depth)
+ if not alive_unit(u) or (depth or 0)>12 then return false end
  local s=self.units[u]
- return (s and s.managed) or (element and element._authority_random)
+ local selected=(s and s.enemy) or self:is_enemy(u)
+ if not selected and s and s.parent then selected=self:managed(s.parent,nil,(depth or 0)+1) end
+ if selected then self:state(u).managed=true end
+ return not not selected
 end
 function A:stop(u,why)
  if alive_unit(u) then
@@ -225,6 +253,7 @@ function A:first(record,name)
  return list and self:decode(list[1])
 end
 function A:commit(u,record)
+ if not self:managed(u) then return end
  local s=self:state(u);s.managed=true
  s.rev=s.rev+1;record.rev=s.rev;s.events[#s.events+1]=record
  if record.kind=='link' then s.persistent['link:'..record.slot]=record
@@ -297,7 +326,7 @@ function A:lift_defaults(source)
  end
  local function add(values,tag,kind)
   if not next(values) then return nil end
-  local name='__rsa2_'..tag..'_'..tostring(source_hash)
+  local name='__rsa3_'..tag..'_'..tostring(source_hash)
   while names["'"..name.."'"] do name=name..'_' end
   values._meta=kind;self.default_nodes[values]=true
   node[#node+1]={_meta='sequence',name="'"..name.."'",once='true',values}
@@ -329,6 +358,38 @@ function A:initialize_defaults(u,ignored,env)
   if source._authority_defaults then source:get_sequence_element(source._authority_defaults):activate(env) end
  end
 end
+function A:native_defaults(root)
+ if root._authority_native_ready then return end
+ root._authority_native_ready=true
+ local C=CoreSequenceManager
+ for _,source in ipairs(root._authority_sources or {})do
+  self:native_defaults(source)
+  for name,value in pairs(source._authority_native_local_values or {})do
+   root._set_variables=root._set_variables or {}
+   if root._set_variables[name]==nil then root._set_variables[name]=value end
+  end
+  for name,value in pairs(source._authority_native_global_values or {})do
+   root._global_vars=root._global_vars or {}
+   root._set_global_vars=root._set_global_vars or {}
+   if root._global_vars[name]==nil then root._global_vars[name]=value end
+   if root._set_global_vars[name]==nil then root._set_global_vars[name]=value end
+  end
+ end
+ for _,item in ipairs(root._authority_native_defaults or {})do
+  local parsed=root:get_static('native_default_'..item.name,item.value)
+  local value=parsed and parsed(C.SequenceEnvironment)
+  if item.global then
+   root._global_vars=root._global_vars or {};root._global_vars[item.name]=value
+   root._set_global_vars=root._set_global_vars or {};root._set_global_vars[item.name]=value
+   root._authority_native_global_values=root._authority_native_global_values or {}
+   root._authority_native_global_values[item.name]=value
+  else
+   root._set_variables=root._set_variables or {};root._set_variables[item.name]=value
+   root._authority_native_local_values=root._authority_native_local_values or {}
+   root._authority_native_local_values[item.name]=value
+  end
+ end
+end
 function A:global_versions(element)
  if element._authority_global_epoch~=self:epoch() then
   element._authority_global_epoch=self:epoch();element._authority_global_versions={}
@@ -343,7 +404,7 @@ function A:install_sequences()
    return function(element,env,name,value)
     local root=A:element(env.dest_unit) or element._unit_element
     local frame=A.replaying or A.capture
-    if not frame then return original(element,env,name,value) end
+    if not frame or not A:managed(env.dest_unit) then return original(element,env,name,value) end
     local versions=frame.record.global_versions or {};frame.record.global_versions=versions
     local revision=versions[name]
     if not A.replaying then A.global_serial=A.global_serial+1;revision=A.global_serial;versions[name]=revision end
@@ -362,6 +423,15 @@ function A:install_sequences()
  end
  self:wrap(C.UnitElement,'init',function(original)
   return function(element,node,...)
+   local native_defaults={}
+   for _,group in ipairs(node or {})do
+    if group._meta=='variables' or group._meta=='global_variables' then
+     for _,var in ipairs(group)do
+      if random_expr(var.value) then native_defaults[#native_defaults+1]={name=var._meta,value=var.value,global=group._meta=='global_variables'} end
+     end
+    end
+   end
+   element._authority_native_defaults=native_defaults
    node,element._authority_defaults,element._authority_global_defaults=A:lift_defaults(node)
    element._authority_random,element._authority_schema=A:index(node,'u')
    element._authority_namespace=tostring(element._authority_schema)
@@ -405,6 +475,11 @@ function A:install_sequences()
    local id=tostring(name)..'#'..index
    return function(env,...)
     local replay=A.replaying
+    if env and env.dest_unit and not A:managed(env.dest_unit) then
+     local result=parsed(env,...)
+     if setter then return setter(element,env,result,...) end
+     return result
+    end
     local result
     if replay and env and env.dest_unit==replay.unit then
      local list=replay.record.values[id]
@@ -412,7 +487,7 @@ function A:install_sequences()
      if replay.element~=element or not list or list[index]==nil then error('unrecorded client expression '..id) end
      result=A:decode(list[index])
     else
-     if is_client() and random_expr(tostring(value)) then
+     if is_client() and env and A:managed(env.dest_unit) and random_expr(tostring(value)) then
       error('[SequenceAuthority] Random expression outside a host replay: '..element._authority_path..'/'..id..'. Move parse-time random defaults into a startup sequence.',0)
      end
      local cache=element._authority_default_cache
@@ -448,7 +523,19 @@ function A:install_sequences()
   self:wrap(C.BaseElement,method,function(original)
    return function(element,env,...)
     local u=env and env.dest_unit
-    if alive_unit(u) and A:managed(u,element._unit_element) then
+    if alive_unit(u) and not A:managed(u,element._unit_element) then
+     local root=A:element(u)
+     if root then
+      A:native_defaults(root)
+      local d=u:damage();d._variables=d._variables or {};env.vars=env.vars or d._variables
+      local state=A:state(u)
+      if not state.native_defaults_done then
+       state.native_defaults_done=true
+       for name,value in pairs(root._set_variables or {})do if env.vars[name]==nil then env.vars[name]=value end end
+      end
+      if env.g_vars==nil then env.g_vars=root._global_vars end
+     end
+    elseif alive_unit(u) and A:managed(u,element._unit_element) then
      local s=A:state(u);s.managed=true
      if is_client() then return end
      if s.blocked then return end
@@ -505,7 +592,7 @@ function A:preflight(u,record,element)
  return true
 end
 function A:bind(parent,slot,child)
- if not alive_unit(child) or child==parent then return end
+ if not alive_unit(child) or child==parent or not self:managed(parent) then return end
  local s=self:state(child);s.parent,s.slot,s.managed=parent,tostring(slot),true
  local key=self:key(child);if key then self.registry[key]=child end
 end
@@ -564,7 +651,7 @@ function A:apply_record(u,record)
 end
 function A:apply_pending(u)
  local s=self:state(u);local batch=s.pending
- if not batch or s.blocked then return end
+ if not self:managed(u) or not batch or s.blocked then return end
  local element=self:element(u)
  if not element or element._authority_schema~=batch.schema then self:stop(u,'host/client sequence definitions differ');return end
  if s.remote_generation and s.remote_generation~=batch.generation then self:stop(u,'unit generation changed before local unit replacement');return end
@@ -652,7 +739,7 @@ function A:send(peer,message)
 end
 function A:request_unit(u)
  local s=self:state(u)
- if s.blocked or s.pending or clock()<s.next_request then return end
+ if not self:managed(u) or s.blocked or s.pending or clock()<s.next_request then return end
  local key=self:key(u);local p=self:profile();local host=sess() and sess():server_peer()
  if not key or not p or not host then
   self:log('waiting:'..tostring(u:key()),'Waiting for host/shared identity for '..tostring(u:name())..'; no fallback roll.')
@@ -682,7 +769,7 @@ function A:dispatch(sender,message)
   end
   if message.epoch~=self:epoch() or message.type~='unit_result' then return end
   local u=self.waiting[message.token];local s=u and self.units[u]
-  if not alive_unit(u) or not s or s.token~=message.token or self:key(u)~=message.key then return end
+  if not alive_unit(u) or not self:managed(u) or not s or s.token~=message.token or self:key(u)~=message.key then return end
   if message.error then self:stop(u,message.error);return end
   if message.base~=s.applied or type(message.ops)~='table' or type(message.to)~='number' then return end
   if s.pending then return end
@@ -718,7 +805,7 @@ function A:dispatch(sender,message)
   if message.type~='unit_request' then return end
   if type(message.key)~='string' or #message.key>512 or type(message.cursor)~='number' then return end
   local u=self:find(message.key)
-  if alive_unit(u) then
+  if alive_unit(u) and self:managed(u) then
    local s=self:state(u)
    s.acks=s.acks or {};s.acks[tonumber(sender)]=message.cursor
    s.subscribers=s.subscribers or {}
@@ -731,7 +818,7 @@ function A:dispatch(sender,message)
  end
 end
 function A:receive(sender,id,payload)
- if id~='RSA2' or type(payload)~='string' or #payload>4096 or not sess() then return end
+ if id~='RSA3' or type(payload)~='string' or #payload>4096 or not sess() then return end
  if is_client() then local host=sess():server_peer();if not host or host:id()~=tonumber(sender) then return end
  elseif not sess():peer(tonumber(sender)) then return end
  local ok,chunk=pcall(json.decode,payload)
@@ -782,8 +869,8 @@ function A:update()
    self.units[u]=nil
   else
    local key=self:key(u);if key then self.registry[key]=u end
-   if is_client() and s.managed then self:apply_pending(u);self:request_unit(u) end
-   if not is_client() and s.subscribers and not s.blocked then
+   if is_client() and self:managed(u) then self:apply_pending(u);self:request_unit(u) end
+   if not is_client() and self:managed(u) and s.subscribers and not s.blocked then
     for peer,sub in pairs(s.subscribers)do
      if not sess() or not sess():peer(peer) then s.subscribers[peer]=nil
      elseif s.rev>sub.cursor and (not sub.awaiting or clock()-sub.sent_at>=2) and clock()>=(sub.next_send or 0) then
@@ -807,7 +894,7 @@ function A:update()
   for _=1,16 do
    local item=self.outgoing[self.out_head];if not item then break end
    self.outgoing[self.out_head]=nil;self.out_head=self.out_head+1
-   LuaNetworking:SendToPeer(item.peer,'RSA2',item.wire)
+   LuaNetworking:SendToPeer(item.peer,'RSA3',item.wire)
    if item.release then self.queued[item.release]=nil end
   end
   if self.out_head>self.out_tail then self.out_head,self.out_tail=1,0 end
@@ -829,15 +916,24 @@ function A:install_units()
  local D=CoreUnitDamage and (CoreUnitDamage.CoreUnitDamage or CoreUnitDamage)
  self:wrap(D,'init',function(original)
   return function(d,u,...)
-   local s=A:state(u);local result=pack(original(d,u,...))
-   if d._unit_element and d._unit_element._authority_random then s.managed=true end
+   -- Bind a child at construction time, before its randomized defaults parse.
+   A:state(u)
+   local managed=A:managed(u)
+   local native_prepared=false
+   if not managed and managers and managers.sequence and managers.sequence.get then
+    local element=managers.sequence:get(u:name(),false,true)
+    if element then A:native_defaults(element);native_prepared=true end
+   end
+   local result=pack(original(d,u,...))
+   if native_prepared then A:state(u).native_defaults_done=true end
+   if A:managed(u) then A:state(u).managed=true end
    return unpack(result,1,result.n)
   end
  end)
  self:wrap(D,'save',function(original)
   return function(d,data,...)
    local result=pack(original(d,data,...));local s=A.units[d._unit]
-   if s and s.managed and not is_client() then
+   if s and A:managed(d._unit) and not is_client() then
     local snap=A:snapshot(d._unit);snap.schema=d._unit_element._authority_schema;snap.version=A.VERSION
     data.RestorationSequenceAuthority=snap
    end
@@ -847,15 +943,27 @@ function A:install_units()
  self:wrap(D,'load',function(original)
   return function(d,data,...)
    local result=pack(original(d,data,...));local snap=data.RestorationSequenceAuthority
-   if is_client() and snap and snap.version==A.VERSION then
+   if is_client() and A:managed(d._unit) and snap and snap.version==A.VERSION then
     local s=A:state(d._unit);s.managed=true;s.pending=snap
    end
    return unpack(result,1,result.n)
   end
  end)
  for _,class in pairs({CopBase,HuskCopBase}) do
+  self:wrap(class,'init',function(original)
+   return function(base,u,...)
+    -- base may not yet be exposed by u:base() while its init is running.
+    local excluded=false
+    for _,name in ipairs({'CivilianBase','HuskCivilianBase','TeamAIBase','HuskTeamAIBase'})do
+     if derives(base,rawget(_G,name)) then excluded=true end
+    end
+    if not excluded then local s=A:state(u);s.enemy=true;s.managed=true end
+    return original(base,u,...)
+   end
+  end)
   self:wrap(class,'_run_unit_sequences',function(original)
    return function(base,...)
+    if not A:managed(base._unit) then return original(base,...) end
     local s=A:state(base._unit);s.managed=true
     if is_client() then return end
     return original(base,...)
@@ -864,7 +972,7 @@ function A:install_units()
  end
  self:wrap(ManageSpawnedUnits,'spawn_unit',function(original)
   return function(sm,slot,align,unit,...)
-   local old=A.spawning;A.spawning={parent=sm._unit,slot=tostring(slot)}
+   local old=A.spawning;A.spawning=A:managed(sm._unit) and {parent=sm._unit,slot=tostring(slot)} or nil
    local ok,result=attempt(original,sm,slot,align,unit,...);A.spawning=old
    if not ok then error(result,0)end
    local child=sm:get_unit(slot)
@@ -876,7 +984,7 @@ function A:install_units()
   return function(sm,joint,slot,unit,...)
    local result=pack(original(sm,joint,slot,unit,...))
    local child=sm:get_unit(slot)
-   if not is_client() and alive_unit(child) and type(unit)=='string' and (sm.local_only or child:id()==-1) then
+   if not is_client() and A:managed(sm._unit) and alive_unit(child) and type(unit)=='string' and (sm.local_only or child:id()==-1) then
     A:bind(sm._unit,slot,child)
     A:commit(sm._unit,{kind='link',joint=joint,slot=tostring(slot),asset=unit})
    end
@@ -911,7 +1019,7 @@ function A:install_network()
     for id in pairs(session:peers())do
      if not A.compatible or A.compatible[id]~=A:epoch() then
       local args=pack(...);A.pending_intro=function()original(session,unpack(args,1,args.n))end
-      A:log('compat:'..id,'Mission entry waits for peer '..id..' to confirm authority protocol 2.');return
+      A:log('compat:'..id,'Mission entry waits for peer '..id..' to confirm authority protocol 3.');return
      end
     end
    end

@@ -1,5 +1,6 @@
--- Restoration integrated ENEMY sequence authority, protocol 3. LuaJIT / Lua 5.1.
--- Scope: CopBase/HuskCopBase enemies and their bound appearance/debris children.
+-- Restoration integrated ENEMY sequence authority, protocol 4. LuaJIT / Lua 5.1.
+-- Scope: enemy appearance selections and bound appearance children.
+-- Physics, effects, gameplay callbacks and their owning sequences execute natively.
 -- Civilians, team AI, doors and world props use native sequence execution.
 -- Heist environment-profile selection remains host controlled.
 -- Install into lua/sc/core/sequence_authority.lua; all peers must update and restart.
@@ -9,7 +10,7 @@ if existing then
  assert(type(existing)=='table' and type(existing.install)=='function', '[SequenceAuthority] Existing authority module is incomplete; restart with the complete integrated build')
  return existing
 end
-local A = {VERSION=3, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
+local A = {VERSION=4, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
 local unpack=unpack
 local function pack(...) return {n=select('#',...),...} end
 local function weak() return setmetatable({},{__mode='k'}) end
@@ -152,7 +153,7 @@ end
 function A:stop(u,why)
  if alive_unit(u) then
   local s=self:state(u);s.blocked=why
-  self:log('blocked:'..tostring(u:key()),'BLOCKED '..tostring(self:key(u) or u:name())..': '..why..'. No client reroll or fallback.')
+  self:log('blocked:'..tostring(u:key()),'BLOCKED '..tostring(self:key(u) or u:name())..': '..why..'. Appearance sync paused; native gameplay continues. No client appearance reroll.')
  end
 end
 function A:index(node,path)
@@ -244,16 +245,141 @@ function A:decode(x,depth)
  end
  error('unknown encoded value')
 end
+-- Only appearance operations belong in the authority stream. In particular,
+-- engine effect parents, physics handles and ragdoll state never enter snapshots.
+local appearance={object=true,decal_mesh=true,graphic_group=true,light=true,
+ material_config=true,material=true,morph_expression=true,morph_expression_movie=true,
+ set_variable=true,set_variables=true,set_global_variable=true,set_global_variables=true}
+local function literal(value)
+ if type(value)~='string' then return end
+ return value:match("^%s*'([^'\\]*)'%s*$") or value:match('^%s*"([^"\\]*)"%s*$')
+end
+-- Enumerate ordinary appearance selectors without executing Lua or consuming RNG.
+-- Uninspectable selectors remain native rather than hiding physics behind a call.
+local function selector_names(value)
+ if type(value)~='string' then return end
+ local pos,depth=1,0
+ local function space()local _,last=value:find('^%s*',pos);pos=(last or pos-1)+1 end
+ local expression
+ local function atom()
+  space();local quote=value:sub(pos,pos)
+  if quote=="'" or quote=='"' then
+   local finish=value:find(quote,pos+1,true)
+   if not finish then return end
+   local text=value:sub(pos+1,finish-1)
+   if text:find('\\',1,true) then return end
+   pos=finish+1;return {text}
+  end
+  local number=value:match('^%-?%d+',pos)
+  if number then pos=pos+#number;return {number} end
+  local call=value:match('^([%a_][%w_%.]*)%s*%(',pos)
+  if call=='rand' or call=='random' or call=='math.random' then
+   local opening=value:find('(',pos,true);local closing=value:find(')',opening+1,true)
+   if not closing then return end
+   local args=value:sub(opening+1,closing-1)
+   local lo,hi=args:match('^%s*(%-?%d+)%s*,%s*(%-?%d+)%s*$')
+   if not lo then hi=args:match('^%s*(%d+)%s*$');lo='1' end
+   lo,hi=tonumber(lo),tonumber(hi)
+   if not lo or not hi or hi<lo or hi-lo>511 then return end
+   local choices={};for n=lo,hi do choices[#choices+1]=tostring(n) end
+   pos=closing+1;return choices
+  end
+  if value:sub(pos,pos+3)=='pick' then
+   pos=pos+4;space();if value:sub(pos,pos)~='(' then return end
+   pos=pos+1;local choices={}
+   while true do
+    local options=expression();if not options then return end
+    for _,name in ipairs(options)do choices[#choices+1]=name;if #choices>512 then return end end
+    space();local next_char=value:sub(pos,pos);pos=pos+1
+    if next_char==')' then return choices end
+    if next_char~=',' then return end
+   end
+  end
+ end
+ expression=function()
+  depth=depth+1;if depth>20 then return end
+  local choices=atom();if not choices then return end
+  while true do
+   space();if value:sub(pos,pos+1)~='..' then break end
+   pos=pos+2;local right=atom();if not right then return end
+   local merged={}
+   for _,left in ipairs(choices)do for _,suffix in ipairs(right)do
+    merged[#merged+1]=left..suffix;if #merged>512 then return end
+   end end
+   choices=merged
+  end
+  depth=depth-1;return choices
+ end
+ local names=expression();space()
+ if pos>#value then return names end
+end
+function A:physics_body(root,name)
+ -- Core hitboxes are changed by Lua as well as sequence files.
+ if name=='body' or name=='head' or name=='mover_blocker' then return true end
+ if name and name:match('^rag_') then return true end
+ if root and root._authority_physics_bodies and root._authority_physics_bodies[name] then return true end
+ for _,source in ipairs(root and root._authority_sources or {})do
+  if source._authority_physics_bodies and source._authority_physics_bodies[name] then return true end
+ end
+ return false
+end
+function A:native_sequence(sequence,seen)
+ if sequence._authority_native~=nil then return sequence._authority_native end
+ seen=seen or {};if seen[sequence] then return true end
+ seen[sequence]=true
+ local native=false
+ for _,child in ipairs(sequence._elements or {})do
+  local kind=child.NAME;local params=child._parameters or {}
+  if kind=='run_sequence' then
+   local names=selector_names(params.name)
+   if not names then native=true;break end
+   for _,name in ipairs(names)do
+    local target=child._unit_element:get_sequence_element(name)
+    if not target or self:native_sequence(target,seen) then native=true;break end
+   end
+   if native then break end
+  elseif kind=='body' then
+   local name=literal(params.name)
+   if not name or self:physics_body(child._unit_element,name) then native=true;break end
+   for key in pairs(params)do
+    if key~='name' and key~='enabled' and not CoreSequenceManager.BaseElement.BASE_ATTRIBUTE_MAP[key] then native=true;break end
+   end
+  elseif kind=='object' and (params.position or params.rotation) then
+   native=true;break
+  elseif not appearance[kind] then native=true;break end
+ end
+ seen[sequence]=nil
+ sequence._authority_native=native
+ return native
+end
+function A:native_element(element)
+ local owner=element and element._authority_owner
+ -- Body damage/endurance/trigger callbacks outside an appearance sequence
+ -- retain their local context and the game's own networking behaviour.
+ return not owner or self:native_sequence(owner)
+end
+function A:appearance_once(u)
+ local result={};local root=self:element(u)
+ for name,value in pairs(u:damage()._runned_sequences or {})do
+  local sequence=root and root:get_sequence_element(name)
+  if sequence and not self:native_sequence(sequence) then result[name]=value end
+ end
+ return result
+end
 local flow={run_sequence=true,remove_start_time=true,trigger=true}
 local server_only={area_damage=true,alert=true,attention=true,enemy_killed=true,set_damage=true,reset_damage=true,set_inflict=true,set_proximity=true,set_water=true}
-local persistent={object=true,body=true,decal_mesh=true,graphic_group=true,light=true,material_config=true,material=true,animation_group=true,animation_redirect=true,morph_expression=true,morph_expression_movie=true,effect_spawner=true,phantom=true,constraint=true,set_variable=true,set_variables=true,set_global_variable=true,set_global_variables=true,set_extension_var=true,slot=true}
-local replayable={object=true,body=true,decal_mesh=true,graphic_group=true,light=true,material_config=true,material=true,animation_group=true,animation_redirect=true,morph_expression=true,morph_expression_movie=true,effect_spawner=true,phantom=true,constraint=true,set_variable=true,set_variables=true,set_global_variable=true,set_global_variables=true,set_extension_var=true,slot=true,effect=true,wwise=true,sound=true,spawn_unit=true,stop_effect=true,physic_effect=true,stop_physic_effect=true,project_decal=true}
+local persistent=clean_copy(appearance);persistent.body=true
+local replayable=clean_copy(persistent)
 function A:first(record,name)
  local list=record.values[name..'#1']
  return list and self:decode(list[1])
 end
 function A:commit(u,record)
  if not self:managed(u) then return end
+ if record.kind~='link' then
+  local element=self:resolve_element(self:element(u),record.path)
+  if not replayable[record.kind] or self:native_element(element) then return end
+ end
  local s=self:state(u);s.managed=true
  s.rev=s.rev+1;record.rev=s.rev;s.events[#s.events+1]=record
  if record.kind=='link' then s.persistent['link:'..record.slot]=record
@@ -267,7 +393,7 @@ end
 function A:record_callback(element,original,env,...)
  local u=env.dest_unit
  local unit_element=element._unit_element
- if not alive_unit(u) or not self:managed(u,unit_element) then return original(element,env,...) end
+ if not alive_unit(u) or not self:managed(u,unit_element) or self:native_element(element) then return original(element,env,...) end
  if is_client() then return end
  local s=self:state(u)
  if s.blocked then return end
@@ -326,7 +452,7 @@ function A:lift_defaults(source)
  end
  local function add(values,tag,kind)
   if not next(values) then return nil end
-  local name='__rsa3_'..tag..'_'..tostring(source_hash)
+  local name='__rsa4_'..tag..'_'..tostring(source_hash)
   while names["'"..name.."'"] do name=name..'_' end
   values._meta=kind;self.default_nodes[values]=true
   node[#node+1]={_meta='sequence',name="'"..name.."'",once='true',values}
@@ -404,7 +530,7 @@ function A:install_sequences()
    return function(element,env,name,value)
     local root=A:element(env.dest_unit) or element._unit_element
     local frame=A.replaying or A.capture
-    if not frame or not A:managed(env.dest_unit) then return original(element,env,name,value) end
+    if not frame or not A:managed(env.dest_unit) or A:native_element(element) then return original(element,env,name,value) end
     local versions=frame.record.global_versions or {};frame.record.global_versions=versions
     local revision=versions[name]
     if not A.replaying then A.global_serial=A.global_serial+1;revision=A.global_serial;versions[name]=revision end
@@ -432,6 +558,15 @@ function A:install_sequences()
     end
    end
    element._authority_native_defaults=native_defaults
+   element._authority_physics_bodies={}
+   local function scan(data)
+    if type(data)~='table' then return end
+    if data._meta=='body' and (data.motion or data.interpolate or data.mover) then
+     local name=literal(data.name);if name then element._authority_physics_bodies[name]=true end
+    end
+    for _,child in ipairs(data)do scan(child) end
+   end
+   scan(node)
    node,element._authority_defaults,element._authority_global_defaults=A:lift_defaults(node)
    element._authority_random,element._authority_schema=A:index(node,'u')
    element._authority_namespace=tostring(element._authority_schema)
@@ -449,6 +584,11 @@ function A:install_sequences()
      end
     end
    end
+   local function own(child,owner)
+    child._authority_owner=owner
+    for _,nested in ipairs(child._elements or {})do own(nested,owner) end
+   end
+   for _,sequence in pairs(element._sequence_elements or {})do own(sequence,sequence) end
    return unpack(result,1,result.n)
   end
  end)
@@ -475,7 +615,7 @@ function A:install_sequences()
    local id=tostring(name)..'#'..index
    return function(env,...)
     local replay=A.replaying
-    if env and env.dest_unit and not A:managed(env.dest_unit) then
+    if env and env.dest_unit and (not A:managed(env.dest_unit) or A:native_element(element)) then
      local result=parsed(env,...)
      if setter then return setter(element,env,result,...) end
      return result
@@ -537,6 +677,11 @@ function A:install_sequences()
      end
     elseif alive_unit(u) and A:managed(u,element._unit_element) then
      local s=A:state(u);s.managed=true
+     if A:native_element(element) then
+      -- Appearance quarantine must never suspend damage, physics or death.
+      if not is_client() and not s.blocked then A:initialize_defaults(u,element._unit_element,env) end
+      return original(element,env,...)
+     end
      if is_client() then return end
      if s.blocked then return end
      A:initialize_defaults(u,element._unit_element,env)
@@ -573,7 +718,7 @@ function A:preflight(u,record,element)
   for _,joint in ipairs(sm[record.joint]) do if not u:get_object(Idstring(joint)) then return false,'missing parent joint '..joint end end
   return self:asset(record.asset)
  end
- if not element or element.NAME~=record.kind or not replayable[record.kind] then return false,'unknown replay operation '..tostring(record.kind) end
+ if not element or self:native_element(element) or element.NAME~=record.kind or not replayable[record.kind] then return false,'unknown replay operation '..tostring(record.kind) end
  if record.context then self:decode(record.context) end
  for _,values in pairs(record.values or {}) do for _,value in ipairs(values) do self:decode(value) end end
  local name=self:first(record,'name')
@@ -683,7 +828,15 @@ function A:apply_pending(u)
   end
  end
  local damage=alive_unit(u) and u:damage()
- if damage then damage._runned_sequences=clean_copy(batch.once) end
+ if damage then
+  -- Never import or erase once flags belonging to local death/effect sequences.
+  damage._runned_sequences=damage._runned_sequences or {}
+  for name in pairs(self:appearance_once(u))do damage._runned_sequences[name]=nil end
+  for name,value in pairs(batch.once or {})do
+   local sequence=element:get_sequence_element(name)
+   if sequence and not self:native_sequence(sequence) then damage._runned_sequences[name]=value end
+  end
+ end
  s.applied,s.remote_generation,s.pending=batch.to,batch.generation,nil
  s.next_request=s.token and (clock()+10) or 0
  local host=sess() and sess():server_peer()
@@ -701,7 +854,10 @@ function A:snapshot(u)
  end
  table.sort(ops,function(a,b)return a.rev<b.rev end)
  local element=self:element(u)
- return {snapshot=true,ops=ops,to=s.rev,generation=s.generation,once=clean_copy(u:damage()._runned_sequences),globals=self:encode(element and element._global_vars),global_versions=element and clean_copy(self:global_versions(element))}
+ local versions=element and clean_copy(self:global_versions(element)) or {}
+ local globals={}
+ for name in pairs(versions)do globals[name]=element._global_vars and element._global_vars[name] end
+ return {snapshot=true,ops=ops,to=s.rev,generation=s.generation,once=self:appearance_once(u),globals=self:encode(globals),global_versions=versions}
 end
 function A:response(u,request)
  local s=self:state(u);local element=self:element(u)
@@ -711,7 +867,7 @@ function A:response(u,request)
  else
   if request.generation~=s.generation then return {error='unit generation mismatch'} end
   if request.cursor<(s.first_revision or 1)-1 then return {error='required event history is unavailable'} end
-  batch={ops={},to=request.cursor,generation=s.generation,once=clean_copy(u:damage()._runned_sequences)}
+  batch={ops={},to=request.cursor,generation=s.generation,once=self:appearance_once(u)}
   for _,record in ipairs(s.events) do
    if record.rev>request.cursor then batch.ops[#batch.ops+1]=record;batch.to=record.rev;if #batch.ops>=64 then break end end
   end
@@ -818,7 +974,7 @@ function A:dispatch(sender,message)
  end
 end
 function A:receive(sender,id,payload)
- if id~='RSA3' or type(payload)~='string' or #payload>4096 or not sess() then return end
+ if id~='RSA4' or type(payload)~='string' or #payload>4096 or not sess() then return end
  if is_client() then local host=sess():server_peer();if not host or host:id()~=tonumber(sender) then return end
  elseif not sess():peer(tonumber(sender)) then return end
  local ok,chunk=pcall(json.decode,payload)
@@ -894,7 +1050,7 @@ function A:update()
   for _=1,16 do
    local item=self.outgoing[self.out_head];if not item then break end
    self.outgoing[self.out_head]=nil;self.out_head=self.out_head+1
-   LuaNetworking:SendToPeer(item.peer,'RSA3',item.wire)
+   LuaNetworking:SendToPeer(item.peer,'RSA4',item.wire)
    if item.release then self.queued[item.release]=nil end
   end
   if self.out_head>self.out_tail then self.out_head,self.out_tail=1,0 end
@@ -1019,7 +1175,7 @@ function A:install_network()
     for id in pairs(session:peers())do
      if not A.compatible or A.compatible[id]~=A:epoch() then
       local args=pack(...);A.pending_intro=function()original(session,unpack(args,1,args.n))end
-      A:log('compat:'..id,'Mission entry waits for peer '..id..' to confirm authority protocol 3.');return
+      A:log('compat:'..id,'Mission entry waits for peer '..id..' to confirm authority protocol 4.');return
      end
     end
    end

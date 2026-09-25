@@ -1741,6 +1741,7 @@ function CharacterTweakData:_init_deep_boss(presets)
 	table.insert(self._enemy_list, "deep_boss")
 end
 function CharacterTweakData:_init_auctioneer_boss(presets)
+	self.auctioneer_boss = deep_clone(presets.base)
 	self.auctioneer_boss.HEALTH_INIT = 400
 	self.auctioneer_boss.player_health_scaling_mul = 1.25
 	self.auctioneer_boss.headshot_dmg_mul = 0.75

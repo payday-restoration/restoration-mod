@@ -74,7 +74,7 @@ return {
 			interruptible = true,
 			interrupt_dmg = 0.1,
 			interrupt_dis = 3
-		}
-	}
+		},
+	},
 }
 

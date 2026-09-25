@@ -15,22 +15,6 @@
 		<filter name="'check_ragdoll_enabled'">
 			<check value="vars.var_ragdoll_enabled == 1" />
 		</filter>
-		<sequence editable_state="true" name="'dismember_body_top'" triggable="true">
-			<set_variables var_body="1" />
-			<effect name="'effects/payday2/particles/impacts/blood/blood_impact_katana'" parent="object( 'spawn_upper' )" position="v()" />
-			<run_sequence name="'toggle_body_parts'" />
-			<run_sequence filter="'check_ragdoll_enabled'" name="'switch_to_ragdoll'" />
-			<run_sequence name="'toggle_hit_box'" />
-			<spawn_unit name="'units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_upper_body_debris'" position="object_pos('spawn_upper')" rotation="object_rot('spawn_upper')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 0, 150 )" />
-		</sequence>
-		<sequence editable_state="true" name="'dismember_head'" triggable="true">
-			<set_variables var_head="1" />
-			<effect name="'effects/payday2/particles/impacts/blood/blood_impact_katana'" parent="object( 'e_blood_head' )" position="v()" />
-			<run_sequence name="'toggle_body_parts'" />
-			<run_sequence filter="'check_ragdoll_enabled'" name="'switch_to_ragdoll'" />
-			<run_sequence name="'toggle_hit_box'" />
-			<spawn_unit name="'units/payday2/characters/ene_spook_cloak_1/debris/ene_spook_head_debris'" position="object_pos('spawn_head')" rotation="object_rot('spawn_head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 0, 350 )" />
-		</sequence>
 		<sequence editable_state="true" name="'toggle_hit_box'" triggable="true">
 			<body enabled="true" name="'head'" />
 			<body enabled="true" name="'body'" />

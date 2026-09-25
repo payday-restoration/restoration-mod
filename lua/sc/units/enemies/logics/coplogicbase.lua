@@ -252,7 +252,7 @@ function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 	attention = attention or data.attention_obj
 	strictness = 1 - (strictness or 0)
 
-	if not objective or objective.is_default or (objective.in_place or not objective.nav_seg) and not objective.action then
+	if not objective or objective.is_default or (objective.in_place or not objective.nav_seg) and not objective.action and not objective.interruptible then
 		return true, false
 	end
 

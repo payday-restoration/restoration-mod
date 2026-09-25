@@ -8,7 +8,19 @@ local idstr_simulator_length = Idstring("simulator_length")
 local idstr_size = Idstring("size")
 
 
-Hooks:PostHook(NPCRaycastWeaponBase, "init", "res_init", function(self)
+local init_original = NPCRaycastWeaponBase.init
+function NPCRaycastWeaponBase:init(...)
+	if self.name_id and self.name_id:match("_crew$") then
+		local new_name_id = self.name_id:gsub("_crew$", "_npc")
+		if tweak_data.weapon[new_name_id] then
+			restoration:log("NPC weapon using crew tweak data '%s', changed to '%s'", self.name_id, new_name_id)
+			self.name_id = new_name_id
+		else
+			restoration:warn("NPC weapon using crew tweak data '%s'", self.name_id)
+		end
+	end
+
+	init_original(self, ...)
 	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(22)
 
 	local weapon_tweak = tweak_data.weapon[self._name_id]
@@ -63,7 +75,7 @@ Hooks:PostHook(NPCRaycastWeaponBase, "init", "res_init", function(self)
 		light:set_rotation(Rotation(light_object:rotation():z(), -light_object:rotation():x(), -light_object:rotation():y()))
 		light:set_enable(false)
 	end
-end)
+end
 
 function NPCRaycastWeaponBase:setup(setup_data, ...)
 	setup_original(self, setup_data, ...)

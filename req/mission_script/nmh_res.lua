@@ -2,6 +2,36 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 
 return {
+    -- Alert all civs on mask up and delay panic button SO
+	[102518] = {
+		on_executed = {
+			{ id = 102540, delay = 10 }
+		},
+		func = function()
+			for _, u_data in pairs(managers.enemy:all_civilians()) do
+				u_data.unit:movement():set_cool(false)
+			end
+		end
+	},
+	-- Delay SWAT response
+	[102675] = {
+		on_executed = {
+			{ id = 103225, delay = 20 }
+		}
+	},
+    -- Disable most reinforce points
+	[103706] = disabled,
+	[103707] = disabled,
+	[103847] = disabled
+	[103847] = disabled,
+	-- Let cloaker interrupt sniper SO
+	[104306] = {
+		values = {
+			interruptible = true,
+			interrupt_dmg = 0.1,
+			interrupt_dis = 3
+		}
+	},
     -- Bravos spawn when elevator starts moving to your floor 
     [100184] = {
         spawn_bravos = pro_job,

@@ -50,4 +50,31 @@ return {
 			},
 		},
 	},
+
+-- Reinforce fountain
+	[103141] = {
+		reinforce = {
+			{
+				name = "fountain",
+				force = 3,
+				position = Vector3(2600, 2850, -80)
+			}
+		},
+	},
+	[103330] = {
+		reinforce = {
+			{
+				name = "fountain"
+			},
+		},
+	},
+-- Disable auctioneer sniper objective on damage
+	[105761] = {
+		values = {
+			interruptible = true,
+			interrupt_dmg = 0.1,
+			interrupt_dis = 3
+		}
+	}
 }
+

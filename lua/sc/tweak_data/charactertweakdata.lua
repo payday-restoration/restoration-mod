@@ -1740,6 +1740,18 @@ function CharacterTweakData:_init_deep_boss(presets)
 
 	table.insert(self._enemy_list, "deep_boss")
 end
+function CharacterTweakData:_init_auctioneer_boss(presets)
+	self.auctioneer_boss.HEALTH_INIT = 400
+	self.auctioneer_boss.player_health_scaling_mul = 1.25
+	self.auctioneer_boss.headshot_dmg_mul = 0.75
+	self.auctioneer_boss.no_headshot_add_mul = true
+	self.auctioneer_boss.damage.explosion_damage_mul = 0.5
+	self.auctioneer_boss.damage.hurt_severity = presets.hurt_severities.only_light_hurt
+	self.auctioneer_boss.use_animation_on_fire_damage = false
+	self.auctioneer_boss.move_speed = presets.move_speed.normal
+	self.auctioneer_boss.no_run_start = true
+	self.auctioneer_boss.no_run_stop = true
+end
 
 function CharacterTweakData:_init_snowman_boss(presets)
 	self.snowman_boss = deep_clone(self.tank)

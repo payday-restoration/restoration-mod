@@ -1307,31 +1307,21 @@ local crew_wep_preset = {
 		self.fort_500_npc = deep_clone(self.r870_npc)
 	end
 		function WeaponTweakData:_init_data_bleckert_npc()
-		self.r870_npc.categories = clone(self.r870.categories)
-		self.r870_npc.sounds.prefix = "remington_npc"
-		self.r870_npc.use_data.selection_index = 2
-		self.r870_npc.DAMAGE = 6
-		self.r870_npc.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-		self.r870_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
-		self.r870_npc.CLIP_AMMO_MAX = 8
-		self.r870_npc.NR_CLIPS_MAX = 4
-		self.r870_npc.hold = "rifle"
-		self.r870_npc.alert_size = 2500
-		self.r870_npc.suppression = 3.2
-		self.r870_npc.is_shotgun = true
-		self.r870_npc.rays = 6
-		self.r870_npc.spread = 3
-		self.r870_npc.FIRE_MODE = "single"
-
-		self.r870_taser_npc = deep_clone(self.r870_npc)
-		self.r870_taser_npc.sounds.prefix = "keltec_npc"
-		self.r870_taser_npc.DAMAGE = 5
-		self.r870_taser_npc.CLIP_AMMO_MAX = 8
-
-		self.m500_npc = deep_clone(self.r870_npc)
-		self.m500_npc.sounds.prefix = "m590_npc"
-
-		self.fort_500_npc = deep_clone(self.r870_npc)
+		self.bleckert_npc.categories = clone(self.r870.categories)
+		self.bleckert_npc.sounds.prefix = "remington_npc"
+		self.bleckert_npc.use_data.selection_index = 2
+		self.bleckert_npc.DAMAGE = 6
+		self.bleckert_npc.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+		self.bleckert_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
+		self.bleckert_npc.CLIP_AMMO_MAX = 8
+		self.bleckert_npc.NR_CLIPS_MAX = 4
+		self.bleckert_npc.hold = "rifle"
+		self.bleckert_npc.alert_size = 2500
+		self.bleckert_npc.suppression = 3.2
+		self.bleckert_npc.is_shotgun = true
+		self.bleckert_npc.rays = 6
+		self.bleckert_npc.spread = 3
+		self.bleckert_npc.FIRE_MODE = "single"
 	end
 	function WeaponTweakData:_init_data_mossberg_npc()
 		self.mossberg_npc.categories = {"shotgun"}

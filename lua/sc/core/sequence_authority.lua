@@ -1,16 +1,22 @@
--- Restoration integrated ENEMY sequence authority, protocol 4. LuaJIT / Lua 5.1.
+-- Restoration integrated ENEMY sequence authority, protocol 4 / join fix 4.1.
 -- Scope: enemy appearance selections and bound appearance children.
 -- Physics, effects, gameplay callbacks and their owning sequences execute natively.
 -- Civilians, team AI, doors and world props use native sequence execution.
 -- Heist environment-profile selection remains host controlled.
 -- Install into lua/sc/core/sequence_authority.lua; all peers must update and restart.
 -- Host records resolved operations. Clients never run an independent random stream.
+-- Join fix: negotiate unknown drop-in counters with the verified host; bind
+-- existing environment choices to the live counter without rerolling. Gate
+-- native ok_to_load_level before it closes the menu, bound waiting to 45s,
+-- and retain confirmed compatibility across native session save/load.
+-- Tested with the supplied native Lua loading methods and mocked transport/UI;
+-- in-game networking and rendering still require host/client validation.
 local existing = rawget(_G, 'RestorationSequenceAuthority')
 if existing then
  assert(type(existing)=='table' and type(existing.install)=='function', '[SequenceAuthority] Existing authority module is incomplete; restart with the complete integrated build')
  return existing
 end
-local A = {VERSION=4, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
+local A = {VERSION=4, REVISION='4.1', CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1, HANDSHAKE_TIMEOUT=45}
 local unpack=unpack
 local function pack(...) return {n=select('#',...),...} end
 local function weak() return setmetatable({},{__mode='k'}) end
@@ -81,6 +87,74 @@ function A:wrap(c,name,factory)
 end
 function A:profile() return Global and Global.restoration_sequence_authority end
 function A:epoch() local p=self:profile();return p and p.epoch end
+-- The native ok_to_load_level closes menus. Negotiate before calling it.
+-- Direct drop-ins have no load counter yet: only the verified host supplies it.
+function A:close_load_dialog()
+ if managers and managers.system_menu then managers.system_menu:close('restoration_authority_join') end
+end
+function A:leave_failed_join(session)
+ if sess()~=session then return end
+ self.waiting_load,self.load_permit=nil,nil
+ self.failed_load_session=session
+ self:close_load_dialog()
+ if MenuCallbackHandler and MenuCallbackHandler._dialog_leave_lobby_yes then
+  MenuCallbackHandler:_dialog_leave_lobby_yes()
+ end
+end
+function A:fail_load(reason)
+ local w=self.waiting_load
+ if not w then return end
+ self.waiting_load,self.load_permit=nil,nil
+ self.failed_load_session=w.session
+ self:close_load_dialog()
+ self:log('load-failed:'..w.token,reason..' No local environment reroll was performed.')
+ if managers and managers.system_menu then
+  managers.system_menu:show({id='restoration_authority_join',title='Unable to synchronize heist',
+   text=reason..'\n\nHost and clients must use the same Restoration authority build. Return to the menu and retry after updating.',
+   button_list={{text='Return to menu',callback_func=function() A:leave_failed_join(w.session) end}}})
+ end
+end
+function A:begin_load(session,level,counter,kind,run)
+ self:check_session()
+ if self.failed_load_session==session then return end
+ local old=self.waiting_load
+ if old and old.session==session and old.level==level and old.requested_counter==counter and old.kind==kind then return end
+ self:close_load_dialog()
+ self.serial=self.serial+1
+ self.waiting_load={session=session,host=session:server_peer(),token=tostring(self.serial),
+  level=level,counter=counter,requested_counter=counter,kind=kind,run=run,started=clock(),retry=0}
+ self:log('load-gate:'..self.serial,'Synchronizing host environment before native loading; level='..tostring(level)..', counter='..tostring(counter))
+ if managers and managers.system_menu then
+  managers.system_menu:show({id='restoration_authority_join',title='Synchronizing heist',
+   text='Waiting for the host\'s environment choices.',
+   button_list={{text='Cancel',callback_func=function() A:leave_failed_join(session) end}}})
+ end
+end
+function A:check_session()
+ local session=sess()
+ if self.transport_session~=session then
+  if self.transport_session then
+   self:close_load_dialog()
+   self.waiting_load,self.load_permit,self.failed_load_session=nil,nil,nil
+   self.pending_intro,self.pending_dropins,self.compatible=nil,nil,nil
+   self.parts,self.outgoing,self.queued={},{},{}
+   self.out_head,self.out_tail=1,0
+  end
+  self.transport_session=session
+  if session and session._restoration_authority_epoch==self:epoch() then
+   self.compatible=session._restoration_authority_compatible
+  end
+ end
+end
+function A:valid_profile(p,level,counter,epoch)
+ if type(p)~='table' or p.level~=level or p.counter~=counter or p.epoch~=epoch or type(epoch)~='string'
+  or type(p.enabled)~='boolean' or type(p.settings)~='table' or type(p.rolls)~='table' then return false end
+ for i,limit in ipairs({3,2,4,5})do
+  local roll=p.rolls[i]
+  if type(roll)~='number' or roll%1~=0 or roll<1 or roll>limit then return false end
+ end
+ return type(counter)=='number' and counter%1==0
+end
 function A:state(u)
  local s=self.units[u]
  if not s then
@@ -907,20 +981,22 @@ function A:request_unit(u)
 end
 function A:dispatch(sender,message)
  if type(message)~='table' or message.version~=self.VERSION then return end
+ self:check_session()
  local session=sess();if not session then return end
  if is_client() then
   local host=session:server_peer();if not host or host:id()~=tonumber(sender) then return end
   if message.type=='environment' then
    local waiting=self.waiting_load
-   if not waiting or message.token~=waiting.token or message.level~=waiting.level or message.counter~=waiting.counter then return end
-   if type(message.profile)~='table' or message.profile.epoch~=message.epoch then return end
+   if not waiting or waiting.session~=session or waiting.host~=host or message.token~=waiting.token or message.level~=waiting.level then return end
+   if waiting.counter~=nil and message.counter~=waiting.counter then return end
+   if not self:valid_profile(message.profile,waiting.level,message.counter,message.epoch) then return end
    Global.restoration_sequence_authority=message.profile
-   waiting.received=true;waiting.epoch=message.epoch
+   waiting.counter=message.counter;waiting.received=true;waiting.epoch=message.epoch
    self:send(host:id(),{type='environment_ack',epoch=message.epoch,token=waiting.token});return
   end
   if message.type=='environment_confirm' then
    local waiting=self.waiting_load
-   if waiting and waiting.received and message.epoch==waiting.epoch and message.token==waiting.token then waiting.ready=true end
+   if waiting and waiting.session==session and waiting.host==host and waiting.received and message.epoch==waiting.epoch and message.token==waiting.token then waiting.ready=true end
    return
   end
   if message.epoch~=self:epoch() or message.type~='unit_result' then return end
@@ -939,13 +1015,21 @@ function A:dispatch(sender,message)
   if not session:peer(tonumber(sender)) then return end
   if message.type=='environment_request' then
    local p=self:profile()
-   if p and p.level==message.level and p.counter==message.counter then
+   local counter=session._load_counter
+   -- A fresh drop-in has no native counter. Existing counters must still match.
+   -- Bind profiles made by CoreScriptData (counter 0) to the active session;
+   -- keep the original epoch, settings and rolls exactly as selected by the host.
+   if p and p.level==message.level and type(counter)=='number'
+    and (message.counter==nil or counter==message.counter) then
+    p.counter=counter
     self:send(tonumber(sender),{type='environment',token=message.token,level=p.level,counter=p.counter,profile=p})
    end
    return
   end
   if message.type=='environment_ack' and message.epoch==self:epoch() then
    self.compatible=self.compatible or {};self.compatible[tonumber(sender)]=message.epoch
+   session._restoration_authority_epoch=message.epoch
+   session._restoration_authority_compatible=self.compatible
    self:send(tonumber(sender),{type='environment_confirm',token=message.token});return
   end
   if message.epoch~=self:epoch() then return end
@@ -996,6 +1080,7 @@ function A:receive(sender,id,payload)
  end
 end
 function A:update()
+ self:check_session()
  if not is_client() and self.pending_intro and sess() then
   local ready=true
   for id in pairs(sess():peers())do if not self.compatible or self.compatible[id]~=self:epoch() then ready=false end end
@@ -1009,7 +1094,18 @@ function A:update()
  end
  if self.waiting_load then
   local w=self.waiting_load
-  if w.ready then self.waiting_load=nil;w.run()
+  local session=sess()
+  if w.session~=session or not session or session._closing or session:server_peer()~=w.host then
+   self:fail_load('The host connection changed during synchronization.')
+  elseif w.ready then
+   self.waiting_load=nil
+   self:close_load_dialog()
+   self.load_permit={session=session,level=w.level,counter=w.counter,epoch=w.epoch}
+   if w.kind=='direct' then session._load_counter=w.counter end
+   w.run()
+   self.load_permit=nil
+  elseif clock()-w.started>=self.HANDSHAKE_TIMEOUT then
+   self:fail_load('The host did not complete environment synchronization within '..self.HANDSHAKE_TIMEOUT..' seconds.')
   elseif clock()>=(w.retry or 0) then
    local host=sess() and sess():server_peer()
    if host then
@@ -1158,6 +1254,33 @@ function A:make_profile(level,counter)
  return profile
 end
 function A:install_network()
+ -- The native loading transition saves/rebuilds the network session. A valid
+ -- handshake must survive that transition, but never a different host epoch.
+ self:wrap(BaseNetworkSession,'save',function(original)
+  return function(session,data,...)
+   local result=pack(original(session,data,...))
+   if not is_client() and sess()==session and A:epoch() then
+    data.restoration_authority={epoch=A:epoch(),compatible=clean_copy(A.compatible)}
+   end
+   return unpack(result,1,result.n)
+  end
+ end)
+ self:wrap(BaseNetworkSession,'load',function(original)
+  return function(session,data,...)
+   local result=pack(original(session,data,...))
+   local saved=data.restoration_authority
+   if type(saved)=='table' and saved.epoch==A:epoch() and type(saved.compatible)=='table' then
+    local peers={}
+    for id,epoch in pairs(saved.compatible)do
+     if epoch==saved.epoch and session:peer(id) then peers[id]=epoch end
+    end
+    session._restoration_authority_epoch=saved.epoch
+    session._restoration_authority_compatible=peers
+    if sess()==session then A.compatible=peers end
+   end
+   return unpack(result,1,result.n)
+  end
+ end)
  self:wrap(BaseNetworkSession,'remove_peer',function(original)
   return function(session,peer,id,...)
    if A.compatible then A.compatible[id]=nil end
@@ -1203,9 +1326,21 @@ function A:install_network()
  end)
  self:wrap(ClientNetworkSession,'load_level',function(original)
   return function(session,...)
-   local args=pack(...);A.serial=A.serial+1
-   A.waiting_load={token=tostring(A.serial),level=args[5] or Global.game_settings.level_id,counter=session._load_counter,run=function()original(session,unpack(args,1,args.n))end}
-   A:log('load-gate','Waiting for host environment choices before loading the level.')
+   local args=pack(...)
+   local level=args[5] or Global.game_settings.level_id
+   local permit=A.load_permit
+   if permit and permit.session==session and permit.level==level and permit.counter==session._load_counter and permit.epoch==A:epoch() then
+    A.load_permit=nil
+    return original(session,unpack(args,1,args.n))
+   end
+   A:begin_load(session,level,session._load_counter,'direct',function()original(session,unpack(args,1,args.n))end)
+  end
+ end)
+ self:wrap(ClientNetworkSession,'ok_to_load_level',function(original)
+  return function(session,counter,...)
+   if session._closing or session._received_ok_to_load_level or session._load_counter==counter then return end
+   local args=pack(...)
+   A:begin_load(session,Global.game_settings.level_id,counter,'native_ok',function()original(session,counter,unpack(args,1,args.n))end)
   end
  end)
  self:wrap(BaseNetworkSession,'update',function(original)

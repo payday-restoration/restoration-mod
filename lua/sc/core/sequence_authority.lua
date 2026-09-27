@@ -1,6 +1,7 @@
--- Restoration ENEMY sequence authority: revision 4.2, wire protocol 4.
+-- Restoration ENEMY sequence authority: revision 4.3, wire protocol 4.
 -- Install on HOST and all clients; restart. Includes 4.1 join lifecycle fixes.
 -- Full hidden-chat messages are capped at 255 bytes, including JSON escaping.
+-- 4.3: body/ragdoll call chains and defaults remain native; late corpse links are skipped.
 -- Scope: enemy appearance selections and bound appearance children.
 -- Physics, effects, gameplay callbacks and their owning sequences execute natively.
 -- Civilians, team AI, doors and world props use native sequence execution.
@@ -12,7 +13,7 @@ if existing then
  assert(type(existing)=='table' and type(existing.install)=='function', '[SequenceAuthority] Existing authority module is incomplete; restart with the complete integrated build')
  return existing
 end
-local A = {VERSION=4, REVISION='4.2', HANDSHAKE_TIMEOUT=45, MAX_PARTS=4096, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
+local A = {VERSION=4, REVISION='4.3', HANDSHAKE_TIMEOUT=45, MAX_PARTS=4096, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
 local unpack=unpack
 local function pack(...) return {n=select('#',...),...} end
 local function weak() return setmetatable({},{__mode='k'}) end
@@ -69,6 +70,7 @@ function A:reset_world()
  self.queued={}
  self.out_head,self.out_tail=1,0
  self.loading_assets={}
+ self.native_scopes=weak()
  self.global_serial=0
  self.capture,self.replaying,self.spawning=nil,nil,nil
  self.serial=(self.serial or 0)+100000
@@ -117,7 +119,7 @@ function A:fail_load(reason)
  self:log('load-failed:'..w.token,reason..' No client reroll.')
  if managers and managers.system_menu then
   managers.system_menu:show({id='restoration_authority_join',title='Unable to synchronize heist',
-   text=reason..'\n\nInstall authority 4.2 on the HOST and every client, then fully restart PAYDAY 2.',
+   text=reason..'\n\nInstall authority 4.3 on the HOST and every client, then fully restart PAYDAY 2.',
    button_list={{text='Return to menu',callback_func=function() A:leave_failed_join(w.session) end}}})
  end
 end
@@ -131,7 +133,7 @@ function A:begin_load(session,level,counter,kind,run)
  self.waiting_load={session=session,host=session:server_peer(),token=tostring(self.serial),
   level=level,counter=counter,requested_counter=counter,kind=kind,run=run,started=clock(),retry=0,
   stage='No reply received from host.'}
- self:log('load-gate:'..self.serial,'Authority 4.2: waiting for host environment; counter='..tostring(counter))
+ self:log('load-gate:'..self.serial,'Authority 4.3: waiting for host environment; counter='..tostring(counter))
  if managers and managers.system_menu then
   managers.system_menu:show({id='restoration_authority_join',title='Synchronizing heist',text='Waiting for host environment choices.',
    button_list={{text='Cancel',callback_func=function() A:leave_failed_join(session) end}}})
@@ -376,17 +378,99 @@ local function selector_names(value)
  local names=expression();space()
  if pos>#value then return names end
 end
-function A:physics_body(root,name)
- -- Core hitboxes are changed by Lua as well as sequence files.
- if name=='body' or name=='head' or name=='mover_blocker' then return true end
- if name and name:match('^rag_') then return true end
- if root and root._authority_physics_bodies and root._authority_physics_bodies[name] then return true end
- for _,source in ipairs(root and root._authority_sources or {})do
-  if source._authority_physics_bodies and source._authority_physics_bodies[name] then return true end
+-- Physical bodies and their sequence call chains belong to the native engine.
+local physics_ops={body=true,constraint=true,physic_effect=true,set_physic_effect=true,
+ stop_physic_effect=true,animation_group=true,animation_redirect=true,phantom=true,
+ disable_unit=true,set_extension_var=true,slot=true}
+local function ragdoll_name(name)
+ name=type(name)=='string' and name:lower() or ''
+ return name:find('ragdoll',1,true)~=nil or name:match('^rag_')~=nil
+end
+function A:physical_sequence(sequence,seen)
+ if not sequence then return false end
+ if sequence._authority_physical~=nil then return sequence._authority_physical end
+ local name=sequence._name or literal((sequence._parameters or {}).name)
+ if ragdoll_name(name) or name=='leg_arm_hitbox' then sequence._authority_physical=true;return true end
+ seen=seen or {};if seen[sequence] then return false end
+ seen[sequence]=true
+ local physical=false
+ for _,child in ipairs(sequence._elements or {})do
+  local params=child._parameters or {}
+  if self:native_variable_write(child) or physics_ops[child.NAME] or child.NAME=='object' and (params.position or params.rotation) then physical=true;break end
+  if child.NAME=='run_sequence' then
+   for _,target in ipairs(selector_names(params.name) or {})do
+    if self:physical_sequence(child._unit_element:get_sequence_element(target),seen) then physical=true;break end
+   end
+   if physical then break end
+  end
+ end
+ seen[sequence]=nil
+ -- Only cache positives: a recursive edge may temporarily conceal a physical leaf.
+ if physical then sequence._authority_physical=true end
+ return physical
+end
+function A:native_context(env,u)
+ if env and env._restoration_native_physics then return true end
+ u=u or env and env.dest_unit
+ for _=1,12 do
+  if not u then break end
+  if self.native_scopes[u] then return true end
+  local s=self.units[u];u=s and s.parent
  end
  return false
 end
+function A:physical_element(element,env)
+ local params=element and element._parameters or {}
+ return self:native_context(env) or element and (self:native_variable_write(element) or physics_ops[element.NAME]
+  or element.NAME=='object' and (params.position or params.rotation)
+  or self:physical_sequence(element._authority_owner))
+end
+function A:run_native(element,original,env,...)
+ local u=env and env.dest_unit
+ local flag=env and env._restoration_native_physics
+ local scope=u and self.native_scopes[u]
+ local capture,replaying,spawning=self.capture,self.replaying,self.spawning
+ if env then env._restoration_native_physics=true end
+ if u then
+  self.native_scopes[u]=true
+  local owner=element and element._authority_owner
+  local name=owner and (owner._name or literal((owner._parameters or {}).name))
+  if name then
+   local state=self:state(u);state.native_sequences=state.native_sequences or {};state.native_sequences[name]=true
+  end
+  if owner and ragdoll_name(owner._name or literal((owner._parameters or {}).name)) then self:state(u).ragdoll_started=true end
+ end
+ self.capture,self.replaying,self.spawning=nil,nil,nil
+ local ok,result=attempt(original,element,env,...)
+ self.capture,self.replaying,self.spawning=capture,replaying,spawning
+ if env then env._restoration_native_physics=flag end
+ if u then self.native_scopes[u]=scope end
+ if not ok then error(result,0) end
+ return unpack(result,1,result.n)
+end
+function A:ragdoll_owned(u)
+ for _=1,12 do
+  if not alive_unit(u) then return false end
+  local s=self.units[u]
+  if s and s.ragdoll_started then return true end
+  local damage=u.character_damage and u:character_damage()
+  if damage and damage.dead and damage:dead() then return true end
+  local anim=u.anim_data and u:anim_data()
+  if anim and anim.ragdoll then return true end
+  u=s and s.parent
+ end
+ return false
+end
+-- A shared helper may also have run as part of native death/body setup.
+-- Later appearance snapshots must not undo that invocation's state.
+function A:native_record(u,element)
+ local owner=element and element._authority_owner
+ local name=owner and (owner._name or literal((owner._parameters or {}).name))
+ local state=self.units[u]
+ return name and state and state.native_sequences and state.native_sequences[name]
+end
 function A:native_sequence(sequence,seen)
+ if self:physical_sequence(sequence) then return true end
  if sequence._authority_native~=nil then return sequence._authority_native end
  seen=seen or {};if seen[sequence] then return true end
  seen[sequence]=true
@@ -401,12 +485,7 @@ function A:native_sequence(sequence,seen)
     if not target or self:native_sequence(target,seen) then native=true;break end
    end
    if native then break end
-  elseif kind=='body' then
-   local name=literal(params.name)
-   if not name or self:physics_body(child._unit_element,name) then native=true;break end
-   for key in pairs(params)do
-    if key~='name' and key~='enabled' and not CoreSequenceManager.BaseElement.BASE_ATTRIBUTE_MAP[key] then native=true;break end
-   end
+  elseif kind=='body' then native=true;break
   elseif kind=='object' and (params.position or params.rotation) then
    native=true;break
   elseif not appearance[kind] then native=true;break end
@@ -422,26 +501,27 @@ function A:native_element(element)
  return not owner or self:native_sequence(owner)
 end
 function A:appearance_once(u)
- local result={};local root=self:element(u)
+ local result={};local root=self:element(u);local native=self:state(u).native_sequences or {}
  for name,value in pairs(u:damage()._runned_sequences or {})do
   local sequence=root and root:get_sequence_element(name)
-  if sequence and not self:native_sequence(sequence) then result[name]=value end
+  if sequence and not native[name] and not self:native_sequence(sequence) then result[name]=value end
  end
  return result
 end
 local flow={run_sequence=true,remove_start_time=true,trigger=true}
 local server_only={area_damage=true,alert=true,attention=true,enemy_killed=true,set_damage=true,reset_damage=true,set_inflict=true,set_proximity=true,set_water=true}
-local persistent=clean_copy(appearance);persistent.body=true
+local persistent=clean_copy(appearance)
 local replayable=clean_copy(persistent)
 function A:first(record,name)
  local list=record.values[name..'#1']
  return list and self:decode(list[1])
 end
 function A:commit(u,record)
- if not self:managed(u) then return end
+ if self:native_context(nil,u) or not self:managed(u) then return end
+ if record.kind=='link' and self:ragdoll_owned(u) then return end
  if record.kind~='link' then
   local element=self:resolve_element(self:element(u),record.path)
-  if not replayable[record.kind] or self:native_element(element) then return end
+  if self:native_record(u,element) or not replayable[record.kind] or self:native_element(element) then return end
  end
  local s=self:state(u);s.managed=true
  s.rev=s.rev+1;record.rev=s.rev;s.events[#s.events+1]=record
@@ -454,6 +534,7 @@ function A:commit(u,record)
  if record.problem then self:stop(u,record.problem) end
 end
 function A:record_callback(element,original,env,...)
+ if self:physical_element(element,env) then return self:run_native(element,original,env,...) end
  local u=env.dest_unit
  local unit_element=element._unit_element
  if not alive_unit(u) or not self:managed(u,unit_element) or self:native_element(element) then return original(element,env,...) end
@@ -479,24 +560,81 @@ function A:record_callback(element,original,env,...)
  local ok,result=attempt(original,element,env,...)
  self.capture=old;self.spawning=old_spawn
  if not ok then error(result,0) end
- if record.kind=='animation_group' then
-  local name=self:first(record,'name')
-  local state=u:damage()._state
-  record.animation=state and state.animation_group and clean_copy(state.animation_group[name])
-  record.animation_name=name
-  record.animation_time=name and u:anim_time(Idstring(name))
- end
- if record.kind=='physic_effect' then
-  local variable=self:first(record,'store_id_var') or 'last_physic_effect_id'
-  s.physics=s.physics or {};s.physics[env.vars[variable]]=s.rev+1
- elseif record.kind=='stop_physic_effect' then
-  local id=self:first(record,'id');record.handle=s.physics and s.physics[id]
-  if not record.handle then record.problem='unmapped host physics handle' end
- end
  self:commit(u,record)
  return unpack(result,1,result.n)
 end
-function A:lift_defaults(source)
+-- Keep random defaults referenced by native body/ragdoll chains in their original
+-- parse-time location. Moving them into host-only appearance startup made clients
+-- read nil (or stale) values during native preparation.
+function A:protected_defaults(source)
+ local protected={vars={},g_vars={}}
+ local sequences={}
+ local root={_sequence_elements=sequences}
+ function root:get_sequence_element(name)
+  local manager=managers and managers.sequence
+  return sequences[name] or manager and manager.get_global_sequence and manager:get_global_sequence(name)
+ end
+ for _,node in ipairs(source or {})do
+  if node._meta=='sequence' then
+   local seq={_name=literal(node.name),_parameters=node,_elements={},_unit_element=root}
+   for _,child in ipairs(node)do seq._elements[#seq._elements+1]={NAME=child._meta,_parameters=child,_unit_element=root} end
+   if seq._name then sequences[seq._name]=seq end
+  end
+ end
+ local visited={}
+ local function visit(seq)
+  if not seq or visited[seq] then return end
+  visited[seq]=true
+  local function refs(params)
+   for _,value in pairs(params or {})do
+    if type(value)=='string' then
+     for group,name in value:gmatch('([%w_]+)%s*%.%s*([%w_]+)')do
+      if protected[group] then protected[group][name]=true end
+     end
+     for group in value:gmatch('([%w_]+)%s*%[')do
+      if protected[group] then protected[group]['*']=true end
+     end
+    end
+   end
+  end
+  refs(seq._parameters)
+  for _,child in ipairs(seq._elements or {})do
+   local p=child._parameters or {};refs(p)
+   local group=(child.NAME=='set_global_variable' or child.NAME=='set_global_variables') and protected.g_vars or protected.vars
+   if child.NAME=='set_variable' or child.NAME=='set_global_variable' then
+    group[literal(p.name) or '*']=true
+   elseif child.NAME=='set_variables' or child.NAME=='set_global_variables' then
+    for name in pairs(p)do
+     if type(name)=='string' and name~='_meta' and not CoreSequenceManager.BaseElement.BASE_ATTRIBUTE_MAP[name] then group[name]=true end
+    end
+   elseif child.NAME=='run_sequence' then
+    local names=selector_names(p.name)
+    if names then for _,name in ipairs(names)do visit(child._unit_element:get_sequence_element(name)) end
+    else protected.vars['*'],protected.g_vars['*']=true,true end
+   end
+  end
+ end
+ for _,seq in pairs(sequences)do if self:physical_sequence(seq) then visit(seq) end end
+ return protected
+end
+function A:native_variable_write(element)
+ local root=element and element._unit_element
+ local protected=root and root._authority_preserved_defaults
+ if not protected then return false end
+ local kind=element.NAME;local p=element._parameters or {}
+ if kind~='set_variable' and kind~='set_variables' and kind~='set_global_variable' and kind~='set_global_variables' then return false end
+ local group=(kind=='set_global_variable' or kind=='set_global_variables') and protected.g_vars or protected.vars
+ if kind=='set_variable' or kind=='set_global_variable' then
+  local name=literal(p.name)
+  return group['*'] or not name or group[name]
+ end
+ for name in pairs(p)do
+  if type(name)=='string' and name~='_meta' and not CoreSequenceManager.BaseElement.BASE_ATTRIBUTE_MAP[name] and (group['*'] or group[name]) then return true end
+ end
+ return false
+end
+
+function A:lift_defaults(source,protected)
  if not source then return source end
  local node=clean_copy(source);local local_values,global_values,names={},{},{}
  local _,source_hash=self:index(source,'u')
@@ -505,7 +643,8 @@ function A:lift_defaults(source)
   if child._meta=='variables' or child._meta=='global_variables' then
    local replacement=clean_copy(child);node[i]=replacement
    for j,var in ipairs(child) do
-    if random_expr(var.value) then
+    local group=protected and protected[child._meta=='global_variables' and 'g_vars' or 'vars'] or {}
+    if random_expr(var.value) and not group['*'] and not group[var._meta] then
      replacement[j]=clean_copy(var);replacement[j].value='nil'
      local values=child._meta=='variables' and local_values or global_values
      values[var._meta]=var.value
@@ -588,12 +727,43 @@ function A:global_versions(element)
 end
 function A:install_sequences()
  local C=CoreSequenceManager;if not C then return end
+ -- The engine retains env for timed callbacks. Copy only the envelope so the
+ -- native flag survives without leaking into another branch using the same env.
+ self:wrap(C.SequenceManager,'_add_start_time_callback',function(original)
+  return function(manager,id,env,...)
+   if A:native_context(env) then
+    env=setmetatable(clean_copy(env),getmetatable(env));env._restoration_native_physics=true
+   end
+   return original(manager,id,env,...)
+  end
+ end)
+ -- Native save loading reconstructs env and drops additional fields.
+ self:wrap(C.SequenceManager,'_safe_load_map_done',function(original)
+  return function(manager,data,...)
+   local native=data.env and data.env._restoration_native_physics
+   local result=pack(original(manager,data,...))
+   if native and data.env then data.env._restoration_native_physics=true end
+   return unpack(result,1,result.n)
+  end
+ end)
+ -- A timed named trigger creates a fresh env in UnitElement:run_sequence.
+ self:wrap(C.SequenceManager,'run_sequence',function(original)
+  return function(manager,name,damage,source,dest,...)
+   local index=manager._current_start_time_callback_index
+   local pending=index and manager._start_time_callback_list and manager._start_time_callback_list[index]
+   if pending and pending.sequence_name==name and pending.env and pending.env.dest_unit==dest and pending.env._restoration_native_physics then
+    local args=pack(...)
+    return A:run_native(nil,function()return original(manager,name,damage,source,dest,unpack(args,1,args.n))end,{dest_unit=dest})
+   end
+   return original(manager,name,damage,source,dest,...)
+  end
+ end)
  for _,class in ipairs({C.SetGlobalVariableElement,C.SetGlobalVariablesElement})do
   self:wrap(class,'set_variable',function(original)
    return function(element,env,name,value)
     local root=A:element(env.dest_unit) or element._unit_element
     local frame=A.replaying or A.capture
-    if not frame or not A:managed(env.dest_unit) or A:native_element(element) then return original(element,env,name,value) end
+    if not frame or A:physical_element(element,env) or not A:managed(env.dest_unit) or A:native_element(element) then return original(element,env,name,value) end
     local versions=frame.record.global_versions or {};frame.record.global_versions=versions
     local revision=versions[name]
     if not A.replaying then A.global_serial=A.global_serial+1;revision=A.global_serial;versions[name]=revision end
@@ -612,25 +782,19 @@ function A:install_sequences()
  end
  self:wrap(C.UnitElement,'init',function(original)
   return function(element,node,...)
+   local protected=A:protected_defaults(node)
+   element._authority_preserved_defaults=protected
    local native_defaults={}
    for _,group in ipairs(node or {})do
     if group._meta=='variables' or group._meta=='global_variables' then
      for _,var in ipairs(group)do
-      if random_expr(var.value) then native_defaults[#native_defaults+1]={name=var._meta,value=var.value,global=group._meta=='global_variables'} end
+      local keep=protected[group._meta=='global_variables' and 'g_vars' or 'vars']
+      if random_expr(var.value) and not keep['*'] and not keep[var._meta] then native_defaults[#native_defaults+1]={name=var._meta,value=var.value,global=group._meta=='global_variables'} end
      end
     end
    end
    element._authority_native_defaults=native_defaults
-   element._authority_physics_bodies={}
-   local function scan(data)
-    if type(data)~='table' then return end
-    if data._meta=='body' and (data.motion or data.interpolate or data.mover) then
-     local name=literal(data.name);if name then element._authority_physics_bodies[name]=true end
-    end
-    for _,child in ipairs(data)do scan(child) end
-   end
-   scan(node)
-   node,element._authority_defaults,element._authority_global_defaults=A:lift_defaults(node)
+   node,element._authority_defaults,element._authority_global_defaults=A:lift_defaults(node,protected)
    element._authority_random,element._authority_schema=A:index(node,'u')
    element._authority_namespace=tostring(element._authority_schema)
    element._authority_elements={}
@@ -678,7 +842,7 @@ function A:install_sequences()
    local id=tostring(name)..'#'..index
    return function(env,...)
     local replay=A.replaying
-    if env and env.dest_unit and (not A:managed(env.dest_unit) or A:native_element(element)) then
+    if A:physical_element(element,env) or env and env.dest_unit and (not A:managed(env.dest_unit) or A:native_element(element)) then
      local result=parsed(env,...)
      if setter then return setter(element,env,result,...) end
      return result
@@ -725,6 +889,7 @@ function A:install_sequences()
  for _,method in ipairs({'activate','start_time_callback'}) do
   self:wrap(C.BaseElement,method,function(original)
    return function(element,env,...)
+    if A:physical_element(element,env) then return A:run_native(element,original,env,...) end
     local u=env and env.dest_unit
     if alive_unit(u) and not A:managed(u,element._unit_element) then
      local root=A:element(u)
@@ -770,11 +935,9 @@ function A:asset(name,resource_type)
  return false,'WAIT asset '..name
 end
 function A:preflight(u,record,element)
+ if self:native_record(u,element) then return true end
+ if record.kind=='link' and self:ragdoll_owned(u) then return true end
  if record.problem then return false,record.problem end
- if record.kind=='animation_group' and record.animation then
-  local allowed={anim_play_loop=true,anim_play_to=true,anim_play=true,anim_stop=true}
-  if not allowed[record.animation[1]] or type(record.animation_name)~='string' then return false,'invalid animation operation' end
- end
  if record.kind=='link' then
   local sm=u.spawn_manager and u:spawn_manager()
   if not sm or not sm[record.joint] then return false,'missing spawn manager/joint table' end
@@ -786,7 +949,6 @@ function A:preflight(u,record,element)
  for _,values in pairs(record.values or {}) do for _,value in ipairs(values) do self:decode(value) end end
  local name=self:first(record,'name')
  if record.kind=='object' and (type(name)~='string' or not u:get_object(Idstring(name))) then return false,'missing object '..tostring(name) end
- if record.kind=='body' and (name==nil or not u:body(name)) then return false,'missing body '..tostring(name) end
  if record.kind=='decal_mesh' and not u:decal_surface() then return false,'missing decal surface' end
  if record.kind=='effect' then
   if type(name)~='string' or not DB:has(Idstring('effect'),Idstring(name)) then return false,'missing effect '..tostring(name) end
@@ -805,18 +967,10 @@ function A:bind(parent,slot,child)
  local key=self:key(child);if key then self.registry[key]=child end
 end
 function A:apply_record(u,record)
- if record.kind=='animation_group' and record.animation then
-  local a=record.animation
-  u[a[1]](u,Idstring(record.animation_name),a[2],a[3],a[4])
-  if record.animation_time then u:anim_set_time(Idstring(record.animation_name),record.animation_time) end
-  return
- end
- if record.kind=='stop_physic_effect' then
-  local handle=self:state(u).physics and self:state(u).physics[record.handle]
-  if handle then World:stop_physic_effect(handle) end
-  return
- end
+ if record.kind~='link' and self:native_record(u,self:resolve_element(self:element(u),record.path)) then return end
+ if record.kind~='link' and (not replayable[record.kind] or self:native_element(self:resolve_element(self:element(u),record.path))) then return end
  if record.kind=='link' then
+  if self:ragdoll_owned(u) then return end -- never attach/reset a skeleton after native death setup
   local sm=u:spawn_manager();local child=sm:get_unit(record.slot)
   if not alive_unit(child) then
    local old=self.spawning;self.spawning={parent=u,slot=record.slot}
@@ -852,10 +1006,7 @@ function A:apply_record(u,record)
  C.SequenceEnvironment.self,C.SequenceEnvironment.element=old_env,old_element
  self.replaying=previous;self.spawning=old_spawn
  if not ok then error(result,0) end
- if record.kind=='physic_effect' then
-  local variable=self:first(record,'store_id_var') or 'last_physic_effect_id'
-  local s=self:state(u);s.physics=s.physics or {};s.physics[record.rev]=env.vars[variable]
- end
+
 end
 function A:apply_pending(u)
  local s=self:state(u);local batch=s.pending
@@ -897,7 +1048,7 @@ function A:apply_pending(u)
   for name in pairs(self:appearance_once(u))do damage._runned_sequences[name]=nil end
   for name,value in pairs(batch.once or {})do
    local sequence=element:get_sequence_element(name)
-   if sequence and not self:native_sequence(sequence) then damage._runned_sequences[name]=value end
+   if sequence and not (s.native_sequences and s.native_sequences[name]) and not self:native_sequence(sequence) then damage._runned_sequences[name]=value end
   end
  end
  s.applied,s.remote_generation,s.pending=batch.to,batch.generation,nil
@@ -910,9 +1061,6 @@ end
 function A:snapshot(u)
  local s=self:state(u);local ops={}
  for _,record in pairs(s.persistent) do
-  if record.kind=='animation_group' and record.animation_name then
-   record=clean_copy(record);record.animation_time=u:anim_time(Idstring(record.animation_name))
-  end
   ops[#ops+1]=record
  end
  table.sort(ops,function(a,b)return a.rev<b.rev end)
@@ -945,7 +1093,7 @@ function A:send(peer,message)
  local queue_key=tostring(peer)..':'..tostring(message.type)..':'..tostring(message.key or message.token or '')
  if self.queued[queue_key] then return true end
  self.serial=self.serial+1
- message.version=self.VERSION;message.epoch=message.epoch or self:epoch()
+ message.revision=self.REVISION;message.version=self.VERSION;message.epoch=message.epoch or self:epoch()
  local wire=json.encode(message)
  if #wire>self.MAX_WIRE then self:log('oversize','Outbound record exceeds protocol size limit');return false end
  local limit=math.min(255,tonumber(LuaNetworking and LuaNetworking._max_message_len) or 255)
@@ -998,6 +1146,13 @@ function A:dispatch(sender,message)
   return
  end
  local session=sess();if not session then return end
+ if message.revision~=self.REVISION then
+  local host=is_client() and session:server_peer()
+  if host and host:id()==tonumber(sender) and self.waiting_load then
+   self:fail_load('Host authority revision does not match this client (4.3).')
+  else self:log('revision:'..tostring(sender),'Peer '..tostring(sender)..' needs authority 4.3; native/appearance ownership must match.') end
+  return
+ end
  if is_client() then
   local host=session:server_peer();if not host or host:id()~=tonumber(sender) then return end
   if message.type=='environment' then
@@ -1175,7 +1330,7 @@ end
 function A:install_units()
  self:wrap(ManageSpawnedUnits,'_link_joints',function(original)
   return function(sm,slot,joints,...)
-   if is_client() and A:managed(sm._unit,A:element(sm._unit)) then
+   if not A:native_context(nil,sm._unit) and not A:ragdoll_owned(sm._unit) and is_client() and A:managed(sm._unit,A:element(sm._unit)) then
     local entry=sm._spawned_units[slot];local child=entry and entry.unit
     if not alive_unit(child) or not sm[joints] then error('missing child/joint table before linking') end
     for i,name in ipairs(sm[joints])do
@@ -1244,6 +1399,7 @@ function A:install_units()
  end
  self:wrap(ManageSpawnedUnits,'spawn_unit',function(original)
   return function(sm,slot,align,unit,...)
+   if A:native_context(nil,sm._unit) or A:ragdoll_owned(sm._unit) then return original(sm,slot,align,unit,...) end
    local old=A.spawning;A.spawning=A:managed(sm._unit) and {parent=sm._unit,slot=tostring(slot)} or nil
    local ok,result=attempt(original,sm,slot,align,unit,...);A.spawning=old
    if not ok then error(result,0)end
@@ -1254,6 +1410,7 @@ function A:install_units()
  end)
  self:wrap(ManageSpawnedUnits,'spawn_and_link_unit',function(original)
   return function(sm,joint,slot,unit,...)
+   if A:native_context(nil,sm._unit) or A:ragdoll_owned(sm._unit) then return original(sm,joint,slot,unit,...) end
    local result=pack(original(sm,joint,slot,unit,...))
    local child=sm:get_unit(slot)
    if not is_client() and A:managed(sm._unit) and alive_unit(child) and type(unit)=='string' and (sm.local_only or child:id()==-1) then

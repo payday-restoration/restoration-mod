@@ -1,12 +1,17 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local disabled = {
+local disable = {
 	values = {
 		enabled = false,
 	},
 }
+
 return {
-    -- Alert all civs on mask up and delay panic button SO
+    -- Bravos spawn when elevator starts moving to your floor 
+    [100184] = {
+        spawn_bravos = pro_job,
+    },
+        -- Alert all civs on mask up and delay panic button SO
 	[102518] = {
 		on_executed = {
 			{ id = 102540, delay = 10 }
@@ -31,13 +36,6 @@ return {
 			interrupt_dis = 3
 		},
 	},
-    -- Bravos spawn when elevator starts moving to your floor 
-    [100184] = {
-        spawn_bravos = pro_job,
-		values = {
-			time = 20,
-		},
-    },
     -- ACCESS DENIED 
     [103439] = {
         on_executed = {
@@ -47,6 +45,11 @@ return {
             {id = 400006, delay = 0.3},
         },
     },
+     -- Disable most reinforce points
+	[103706] = disable,
+	[103707] = disable,
+	[103847] = disable,
+	[103847] = disable,
     -- Reinforce
     [102325] = { -- when the ICU doors open 
 
@@ -68,9 +71,4 @@ return {
             },
         },
     },
-    -- Disable most reinforce points
-	[103706] = disabled,
-	[103707] = disabled,
-	[103847] = disabled
-	[103847] = disabled
 }

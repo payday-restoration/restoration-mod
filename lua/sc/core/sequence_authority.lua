@@ -1,7 +1,8 @@
--- Restoration ENEMY sequence authority: revision 4.3, wire protocol 4.
+-- Restoration ENEMY sequence authority: revision 4.4, wire protocol 4.
 -- Install on HOST and all clients; restart. Includes 4.1 join lifecycle fixes.
 -- Full hidden-chat messages are capped at 255 bytes, including JSON escaping.
--- 4.3: body/ragdoll call chains and defaults remain native; late corpse links are skipped.
+-- 4.4: native defaults/callbacks and menu units are untouched; only managed appearance is replayed.
+-- Body/ragdoll chains remain native; late corpse links are skipped.
 -- Scope: enemy appearance selections and bound appearance children.
 -- Physics, effects, gameplay callbacks and their owning sequences execute natively.
 -- Civilians, team AI, doors and world props use native sequence execution.
@@ -13,7 +14,7 @@ if existing then
  assert(type(existing)=='table' and type(existing.install)=='function', '[SequenceAuthority] Existing authority module is incomplete; restart with the complete integrated build')
  return existing
 end
-local A = {VERSION=4, REVISION='4.3', HANDSHAKE_TIMEOUT=45, MAX_PARTS=4096, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
+local A = {VERSION=4, REVISION='4.4', HANDSHAKE_TIMEOUT=45, MAX_PARTS=4096, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
 local unpack=unpack
 local function pack(...) return {n=select('#',...),...} end
 local function weak() return setmetatable({},{__mode='k'}) end
@@ -65,7 +66,7 @@ function A:log(key,message)
  if log then log('[SequenceAuthority] '..message) end
 end
 function A:reset_world()
- self.units,self.nodes,self.default_nodes,self.warnings=weak(),weak(),weak(),{}
+ self.units,self.nodes,self.warnings=weak(),weak(),{}
  self.registry,self.parts,self.outgoing,self.waiting={},{},{},{}
  self.queued={}
  self.out_head,self.out_tail=1,0
@@ -119,7 +120,7 @@ function A:fail_load(reason)
  self:log('load-failed:'..w.token,reason..' No client reroll.')
  if managers and managers.system_menu then
   managers.system_menu:show({id='restoration_authority_join',title='Unable to synchronize heist',
-   text=reason..'\n\nInstall authority 4.3 on the HOST and every client, then fully restart PAYDAY 2.',
+   text=reason..'\n\nInstall authority 4.4 on the HOST and every client, then fully restart PAYDAY 2.',
    button_list={{text='Return to menu',callback_func=function() A:leave_failed_join(w.session) end}}})
  end
 end
@@ -133,7 +134,7 @@ function A:begin_load(session,level,counter,kind,run)
  self.waiting_load={session=session,host=session:server_peer(),token=tostring(self.serial),
   level=level,counter=counter,requested_counter=counter,kind=kind,run=run,started=clock(),retry=0,
   stage='No reply received from host.'}
- self:log('load-gate:'..self.serial,'Authority 4.3: waiting for host environment; counter='..tostring(counter))
+ self:log('load-gate:'..self.serial,'Authority 4.4: waiting for host environment; counter='..tostring(counter))
  if managers and managers.system_menu then
   managers.system_menu:show({id='restoration_authority_join',title='Synchronizing heist',text='Waiting for host environment choices.',
    button_list={{text='Cancel',callback_func=function() A:leave_failed_join(session) end}}})
@@ -379,7 +380,7 @@ local function selector_names(value)
  if pos>#value then return names end
 end
 -- Physical bodies and their sequence call chains belong to the native engine.
-local physics_ops={body=true,constraint=true,physic_effect=true,set_physic_effect=true,
+local physics_ops={['function']=true,body=true,constraint=true,physic_effect=true,set_physic_effect=true,
  stop_physic_effect=true,animation_group=true,animation_redirect=true,phantom=true,
  disable_unit=true,set_extension_var=true,slot=true}
 local function ragdoll_name(name)
@@ -534,6 +535,7 @@ function A:commit(u,record)
  if record.problem then self:stop(u,record.problem) end
 end
 function A:record_callback(element,original,env,...)
+ if not env or not alive_unit(env.dest_unit) or not self:managed(env.dest_unit,element._unit_element) then return original(element,env,...) end
  if self:physical_element(element,env) then return self:run_native(element,original,env,...) end
  local u=env.dest_unit
  local unit_element=element._unit_element
@@ -563,9 +565,8 @@ function A:record_callback(element,original,env,...)
  self:commit(u,record)
  return unpack(result,1,result.n)
 end
--- Keep random defaults referenced by native body/ragdoll chains in their original
--- parse-time location. Moving them into host-only appearance startup made clients
--- read nil (or stale) values during native preparation.
+-- Identify variables used by native callback/body chains so later appearance
+-- updates cannot overwrite them. Original defaults are parsed unchanged for all units.
 function A:protected_defaults(source)
  local protected={vars={},g_vars={}}
  local sequences={}
@@ -634,88 +635,11 @@ function A:native_variable_write(element)
  return false
 end
 
-function A:lift_defaults(source,protected)
- if not source then return source end
- local node=clean_copy(source);local local_values,global_values,names={},{},{}
- local _,source_hash=self:index(source,'u')
- for i,child in ipairs(source) do
-  if child._meta=='sequence' then names[child.name]=true end
-  if child._meta=='variables' or child._meta=='global_variables' then
-   local replacement=clean_copy(child);node[i]=replacement
-   for j,var in ipairs(child) do
-    local group=protected and protected[child._meta=='global_variables' and 'g_vars' or 'vars'] or {}
-    if random_expr(var.value) and not group['*'] and not group[var._meta] then
-     replacement[j]=clean_copy(var);replacement[j].value='nil'
-     local values=child._meta=='variables' and local_values or global_values
-     values[var._meta]=var.value
-    end
-   end
-  end
- end
- local function add(values,tag,kind)
-  if not next(values) then return nil end
-  local name='__rsa4_'..tag..'_'..tostring(source_hash)
-  while names["'"..name.."'"] do name=name..'_' end
-  values._meta=kind;self.default_nodes[values]=true
-  node[#node+1]={_meta='sequence',name="'"..name.."'",once='true',values}
-  return name
- end
- return node,add(local_values,'defaults','set_variables'),add(global_values,'global_defaults','set_global_variables')
-end
 function A:resolve_element(root,path)
  local element=root and root._authority_elements[path]
  if element then return element end
  for _,source in ipairs(root and root._authority_sources or {}) do
   element=source._authority_elements[path];if element then return element end
- end
-end
-function A:initialize_defaults(u,ignored,env)
- local s=self:state(u);local root=self:element(u)
- if s.defaults_done or not root then return end
- s.defaults_done=true
- local sources={}
- for _,source in ipairs(root._authority_sources or {})do sources[#sources+1]=source end
- sources[#sources+1]=root
- root._authority_global_done=root._authority_global_done or {}
- for _,source in ipairs(sources)do
-  if source._authority_global_defaults and not root._authority_global_done[source] then
-   root._authority_global_done[source]=true
-   root._global_vars=root._global_vars or {};env.g_vars=root._global_vars
-   source:get_sequence_element(source._authority_global_defaults):activate(env)
-  end
-  if source._authority_defaults then source:get_sequence_element(source._authority_defaults):activate(env) end
- end
-end
-function A:native_defaults(root)
- if root._authority_native_ready then return end
- root._authority_native_ready=true
- local C=CoreSequenceManager
- for _,source in ipairs(root._authority_sources or {})do
-  self:native_defaults(source)
-  for name,value in pairs(source._authority_native_local_values or {})do
-   root._set_variables=root._set_variables or {}
-   if root._set_variables[name]==nil then root._set_variables[name]=value end
-  end
-  for name,value in pairs(source._authority_native_global_values or {})do
-   root._global_vars=root._global_vars or {}
-   root._set_global_vars=root._set_global_vars or {}
-   if root._global_vars[name]==nil then root._global_vars[name]=value end
-   if root._set_global_vars[name]==nil then root._set_global_vars[name]=value end
-  end
- end
- for _,item in ipairs(root._authority_native_defaults or {})do
-  local parsed=root:get_static('native_default_'..item.name,item.value)
-  local value=parsed and parsed(C.SequenceEnvironment)
-  if item.global then
-   root._global_vars=root._global_vars or {};root._global_vars[item.name]=value
-   root._set_global_vars=root._set_global_vars or {};root._set_global_vars[item.name]=value
-   root._authority_native_global_values=root._authority_native_global_values or {}
-   root._authority_native_global_values[item.name]=value
-  else
-   root._set_variables=root._set_variables or {};root._set_variables[item.name]=value
-   root._authority_native_local_values=root._authority_native_local_values or {}
-   root._authority_native_local_values[item.name]=value
-  end
  end
 end
 function A:global_versions(element)
@@ -763,7 +687,7 @@ function A:install_sequences()
    return function(element,env,name,value)
     local root=A:element(env.dest_unit) or element._unit_element
     local frame=A.replaying or A.capture
-    if not frame or A:physical_element(element,env) or not A:managed(env.dest_unit) or A:native_element(element) then return original(element,env,name,value) end
+    if not frame or not A:managed(env.dest_unit) or A:physical_element(element,env) or A:native_element(element) then return original(element,env,name,value) end
     local versions=frame.record.global_versions or {};frame.record.global_versions=versions
     local revision=versions[name]
     if not A.replaying then A.global_serial=A.global_serial+1;revision=A.global_serial;versions[name]=revision end
@@ -784,17 +708,6 @@ function A:install_sequences()
   return function(element,node,...)
    local protected=A:protected_defaults(node)
    element._authority_preserved_defaults=protected
-   local native_defaults={}
-   for _,group in ipairs(node or {})do
-    if group._meta=='variables' or group._meta=='global_variables' then
-     for _,var in ipairs(group)do
-      local keep=protected[group._meta=='global_variables' and 'g_vars' or 'vars']
-      if random_expr(var.value) and not keep['*'] and not keep[var._meta] then native_defaults[#native_defaults+1]={name=var._meta,value=var.value,global=group._meta=='global_variables'} end
-     end
-    end
-   end
-   element._authority_native_defaults=native_defaults
-   node,element._authority_defaults,element._authority_global_defaults=A:lift_defaults(node,protected)
    element._authority_random,element._authority_schema=A:index(node,'u')
    element._authority_namespace=tostring(element._authority_schema)
    element._authority_elements={}
@@ -822,7 +735,6 @@ function A:install_sequences()
  self:wrap(C.BaseElement,'init',function(original)
   return function(element,node,unit_element,...)
    element._authority_path=(unit_element and unit_element._authority_namespace or '?')..':'..(A.nodes[node] or 'external')
-   element._authority_is_default=A.default_nodes[node]
    local result=pack(original(element,node,unit_element,...))
    if unit_element and unit_element._authority_elements then unit_element._authority_elements[element._authority_path]=element end
    local callback=element.activate_callback
@@ -842,9 +754,9 @@ function A:install_sequences()
    local id=tostring(name)..'#'..index
    return function(env,...)
     local replay=A.replaying
-    if A:physical_element(element,env) or env and env.dest_unit and (not A:managed(env.dest_unit) or A:native_element(element)) then
+    if not env or not env.dest_unit or not A:managed(env.dest_unit) or A:physical_element(element,env) or A:native_element(element) then
      local result=parsed(env,...)
-     if setter then return setter(element,env,result,...) end
+     if setter then setter(element,env,result,...);return end
      return result
     end
     local result
@@ -855,17 +767,9 @@ function A:install_sequences()
      result=A:decode(list[index])
     else
      if is_client() and env and A:managed(env.dest_unit) and random_expr(tostring(value)) then
-      error('[SequenceAuthority] Random expression outside a host replay: '..element._authority_path..'/'..id..'. Move parse-time random defaults into a startup sequence.',0)
+      error('[SequenceAuthority] Random expression outside a host replay: '..element._authority_path..'/'..id..'. Appearance choices require a host record.',0)
      end
-     local cache=element._authority_default_cache
-     if element._authority_is_default and cache and cache[id] then result=cache[id].value
-     else
-      result=parsed(setmetatable({math=math,random=math.random},{__index=env,__newindex=env}),...)
-      if element._authority_is_default then
-       element._authority_default_cache=element._authority_default_cache or {}
-       element._authority_default_cache[id]={value=result}
-      end
-     end
+     result=parsed(env,...)
      local frame=A.capture
      if frame and frame.element==element and frame.record.kind=='spawn_unit' and name=='name' and type(result)=='string' then
       if PackageManager:has(Idstring('unit'),Idstring(result)) then
@@ -889,31 +793,13 @@ function A:install_sequences()
  for _,method in ipairs({'activate','start_time_callback'}) do
   self:wrap(C.BaseElement,method,function(original)
    return function(element,env,...)
-    if A:physical_element(element,env) then return A:run_native(element,original,env,...) end
     local u=env and env.dest_unit
-    if alive_unit(u) and not A:managed(u,element._unit_element) then
-     local root=A:element(u)
-     if root then
-      A:native_defaults(root)
-      local d=u:damage();d._variables=d._variables or {};env.vars=env.vars or d._variables
-      local state=A:state(u)
-      if not state.native_defaults_done then
-       state.native_defaults_done=true
-       for name,value in pairs(root._set_variables or {})do if env.vars[name]==nil then env.vars[name]=value end end
-      end
-      if env.g_vars==nil then env.g_vars=root._global_vars end
-     end
-    elseif alive_unit(u) and A:managed(u,element._unit_element) then
-     local s=A:state(u);s.managed=true
-     if A:native_element(element) then
-      -- Appearance quarantine must never suspend damage, physics or death.
-      if not is_client() and not s.blocked then A:initialize_defaults(u,element._unit_element,env) end
-      return original(element,env,...)
-     end
-     if is_client() then return end
-     if s.blocked then return end
-     A:initialize_defaults(u,element._unit_element,env)
-    end
+    if not alive_unit(u) or not A:managed(u,element._unit_element) then return original(element,env,...) end
+    if A:physical_element(element,env) then return A:run_native(element,original,env,...) end
+    -- Native gameplay runs regardless of appearance readiness or quarantine.
+    if A:native_element(element) then return original(element,env,...) end
+    local state=A:state(u);state.managed=true
+    if is_client() or state.blocked then return end
     return original(element,env,...)
    end
   end)
@@ -974,8 +860,9 @@ function A:apply_record(u,record)
   local sm=u:spawn_manager();local child=sm:get_unit(record.slot)
   if not alive_unit(child) then
    local old=self.spawning;self.spawning={parent=u,slot=record.slot}
+   local replay=self.replaying;self.replaying={record=record,unit=u,used={}}
    local ok,result=attempt(sm.spawn_and_link_unit,sm,record.joint,record.slot,record.asset)
-   self.spawning=old
+   self.spawning=old;self.replaying=replay
    if not ok then error(result,0) end
    child=sm:get_unit(record.slot)
   end
@@ -1149,8 +1036,8 @@ function A:dispatch(sender,message)
  if message.revision~=self.REVISION then
   local host=is_client() and session:server_peer()
   if host and host:id()==tonumber(sender) and self.waiting_load then
-   self:fail_load('Host authority revision does not match this client (4.3).')
-  else self:log('revision:'..tostring(sender),'Peer '..tostring(sender)..' needs authority 4.3; native/appearance ownership must match.') end
+   self:fail_load('Host authority revision does not match this client (4.4).')
+  else self:log('revision:'..tostring(sender),'Peer '..tostring(sender)..' needs authority 4.4; native/appearance ownership must match.') end
   return
  end
  if is_client() then
@@ -1330,7 +1217,7 @@ end
 function A:install_units()
  self:wrap(ManageSpawnedUnits,'_link_joints',function(original)
   return function(sm,slot,joints,...)
-   if not A:native_context(nil,sm._unit) and not A:ragdoll_owned(sm._unit) and is_client() and A:managed(sm._unit,A:element(sm._unit)) then
+   if A:managed(sm._unit,A:element(sm._unit)) and not A:native_context(nil,sm._unit) and not A:ragdoll_owned(sm._unit) and is_client() then
     local entry=sm._spawned_units[slot];local child=entry and entry.unit
     if not alive_unit(child) or not sm[joints] then error('missing child/joint table before linking') end
     for i,name in ipairs(sm[joints])do
@@ -1345,14 +1232,7 @@ function A:install_units()
   return function(d,u,...)
    -- Bind a child at construction time, before its randomized defaults parse.
    A:state(u)
-   local managed=A:managed(u)
-   local native_prepared=false
-   if not managed and managers and managers.sequence and managers.sequence.get then
-    local element=managers.sequence:get(u:name(),false,true)
-    if element then A:native_defaults(element);native_prepared=true end
-   end
    local result=pack(original(d,u,...))
-   if native_prepared then A:state(u).native_defaults_done=true end
    if A:managed(u) then A:state(u).managed=true end
    return unpack(result,1,result.n)
   end
@@ -1392,14 +1272,15 @@ function A:install_units()
    return function(base,...)
     if not A:managed(base._unit) then return original(base,...) end
     local s=A:state(base._unit);s.managed=true
-    if is_client() then return end
     return original(base,...)
    end
   end)
  end
  self:wrap(ManageSpawnedUnits,'spawn_unit',function(original)
   return function(sm,slot,align,unit,...)
+   if not A:managed(sm._unit) then return original(sm,slot,align,unit,...) end
    if A:native_context(nil,sm._unit) or A:ragdoll_owned(sm._unit) then return original(sm,slot,align,unit,...) end
+   if is_client() and type(unit)=='string' and not A.replaying and not A:native_context(nil,sm._unit) then return end
    local old=A.spawning;A.spawning=A:managed(sm._unit) and {parent=sm._unit,slot=tostring(slot)} or nil
    local ok,result=attempt(original,sm,slot,align,unit,...);A.spawning=old
    if not ok then error(result,0)end
@@ -1410,7 +1291,9 @@ function A:install_units()
  end)
  self:wrap(ManageSpawnedUnits,'spawn_and_link_unit',function(original)
   return function(sm,joint,slot,unit,...)
+   if not A:managed(sm._unit) then return original(sm,joint,slot,unit,...) end
    if A:native_context(nil,sm._unit) or A:ragdoll_owned(sm._unit) then return original(sm,joint,slot,unit,...) end
+   if is_client() and type(unit)=='string' and not A.replaying and not A:native_context(nil,sm._unit) then return end
    local result=pack(original(sm,joint,slot,unit,...))
    local child=sm:get_unit(slot)
    if not is_client() and A:managed(sm._unit) and alive_unit(child) and type(unit)=='string' and (sm.local_only or child:id()==-1) then

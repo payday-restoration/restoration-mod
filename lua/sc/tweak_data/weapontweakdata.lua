@@ -1307,7 +1307,7 @@ local crew_wep_preset = {
 		self.fort_500_npc = deep_clone(self.r870_npc)
 	end
 		function WeaponTweakData:_init_data_bleckert_npc()
-		self.bleckert_npc.categories = clone(self.r870.categories)
+		self.bleckert_npc.categories = clone("shotgun")
 		self.bleckert_npc.sounds.prefix = "remington_npc"
 		self.bleckert_npc.use_data.selection_index = 2
 		self.bleckert_npc.DAMAGE = 6

@@ -17,7 +17,7 @@ return {
 	[102675] = {
 		on_executed = {
 			{ id = 103225, delay = 20 }
-		}
+		},
 	},
     -- Disable most reinforce points
 	[103706] = disabled,
@@ -30,7 +30,7 @@ return {
 			interruptible = true,
 			interrupt_dmg = 0.1,
 			interrupt_dis = 3
-		}
+		},
 	},
     -- Bravos spawn when elevator starts moving to your floor 
     [100184] = {

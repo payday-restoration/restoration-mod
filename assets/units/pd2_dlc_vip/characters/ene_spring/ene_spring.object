@@ -10,7 +10,7 @@
 		</body>
 		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_head" collision_type="sphere" padding="-4.44" />
+			<object name="c_sphere_head" collision_type="sphere" padding="0" />
 		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
@@ -19,7 +19,7 @@
 
 		<body name="body_helmet" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_helmet" collision_type="sphere" padding="-11.1" />
+			<object name="c_sphere_helmet" collision_type="sphere" padding="0" />
 		</body>
 		<body name="body_helmet_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
@@ -62,7 +62,7 @@
 <!-- RAGDOLL -->
 		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
 			<object name="Neck" />
-			<object collision_type="sphere" mass="4" padding="-16.65" name="c_sphere_head_ragdoll"/>
+			<object collision_type="sphere" mass="4" padding="0" name="c_sphere_head_ragdoll"/>
 		</body>
 
 		<body name="rag_Hips" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="1" collides_with="0" tag="flesh" restitution="0">

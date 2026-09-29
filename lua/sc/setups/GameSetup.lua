@@ -69,9 +69,12 @@ function GameSetup:load_packages()
 
 	self._loaded_diff_packages = {}
 
+	-- Keep vanilla support resources alongside custom faction registrations.
+	-- Russia/Murkywater/Federales previously omitted this baseline entirely.
 	local function load_difficulty_package(package_name)
 		if PackageManager:package_exists(package_name) and not PackageManager:loaded(package_name) then
 			table.insert(self._loaded_diff_packages, package_name)
+			log("[RestorationMod] Loading difficulty support package: " .. package_name)
 			PackageManager:load(package_name)
 		end
     end
@@ -127,26 +130,29 @@ function GameSetup:load_packages()
         end
     elseif ai_type == a then
 		load_faction_assets("america")
-		PackageManager:load("packages/sm_wish")
+		load_difficulty_package("packages/sm_wish")
 	elseif ai_type == z then
 		load_faction_assets("zombie")
-		PackageManager:load("packages/sm_wish")
+		load_difficulty_package("packages/sm_wish")
 	
     elseif ai_type == r then
 		load_faction_assets("russia")
+		load_difficulty_package("packages/sm_wish")
     elseif ai_type == m then
 		load_faction_assets("murkywater")
+		load_difficulty_package("packages/sm_wish")
     elseif ai_type == f then
 		load_faction_assets("federales")
+		load_difficulty_package("packages/sm_wish")
     elseif ai_type == la then
 		load_faction_assets("lapd")
-		PackageManager:load("packages/sm_wish")
+		load_difficulty_package("packages/sm_wish")
     elseif ai_type == ny then
 		load_faction_assets("nypd")
-		PackageManager:load("packages/sm_wish")
+		load_difficulty_package("packages/sm_wish")
 	elseif ai_type == feds then
 		load_faction_assets("fbi")
-		PackageManager:load("packages/sm_wish")	
+		load_difficulty_package("packages/sm_wish")	
 	else
         log("[RestorationMod] Unknown faction: preloading declared faction groups")
         for _, name in ipairs({"america","zombie","russia","murkywater","federales","lapd","nypd","fbi"}) do

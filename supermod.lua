@@ -1,4 +1,4 @@
--- Restoration loader v3.8: residency verification and declaration/dependency coverage.
+-- Restoration loader v3.8a: residency verification and declaration/dependency coverage.
 -- Diagnostic build: reports ready-but-nonresident entries; never directly reloads them.
 -- No callback polling gate, fabricated ready state, or altered streaming settings.
 -- Install as mods/restoration-mod/supermod.lua and FULLY RESTART PAYDAY 2.
@@ -22,7 +22,7 @@ R.asset_loader = R.asset_loader or (R.supermod and R.supermod:GetAssetLoader())
 R.loaded_units = R.loaded_units or {}
 R.pending_groups = R.pending_groups or {}
 R.blocked_units = R.blocked_units or {}
-R.revision = "3.8"
+R.revision = "3.8a"
 
 function R:ModPath()
     return self.mod_instance and self.mod_instance:GetPath() or "mods/restoration-mod/"
@@ -118,8 +118,15 @@ function R:LoadUnitList(name)
                 end
                 -- Retain one reference per real manager entry, not per heist.
                 if self:_Ownership()[key] ~= entry or not entry then
+                    -- Request/return markers locate this call without changing engine hooks.
+                    -- RETURN means the Lua call returned, not that renderer streaming is done.
+                    log("[RestorationMod] Native preload REQUEST [" .. name .. "]: " .. key)
                     local ok, reason = pcall(dres.load, dres, ext, id, dres.DYN_RESOURCES_PACKAGE, nil)
-                    if not ok then return nil, nil, tostring(reason) end
+                    if not ok then
+                        log("[RestorationMod] Native preload ERROR [" .. name .. "]: " .. key .. "; " .. tostring(reason))
+                        return nil, nil, tostring(reason)
+                    end
+                    log("[RestorationMod] Native preload RETURN [" .. name .. "]: " .. key)
                 end
                 entry = self:_Entry(dres, path, extension)
                 if not entry or not entry.ready or not PackageManager:has(ext, id) then
@@ -175,9 +182,11 @@ function R:FlushPending()
     for name in pairs(self.active_groups or self.pending_groups) do names[#names + 1] = name end
     table.sort(names)
     for _, name in ipairs(names) do
+        log("[RestorationMod] Preload group BEGIN: " .. name)
         local count, _, why = self:LoadUnitList(name)
         if not count then return self:_Fail(why) end
         self.pending_groups[name] = nil
+        log("[RestorationMod] Preload group END: " .. name .. "; loaded=" .. tostring(count))
         if count > 0 or why > 0 then
             log(string.format("[RestorationMod] Post-manager preload '%s': %d loaded; %d absent undeclared entries skipped", name, count, why))
         end
@@ -188,7 +197,7 @@ end
 function R:OnManagersReady()
     if self.stopping then return true end
     self.game_managers_ready = true
-    log("[RestorationMod] Loader v3.8: native reload workaround DISABLED; normal post-manager preloading retained")
+    log("[RestorationMod] Loader v3.8a: native reload workaround DISABLED; normal post-manager preloading retained")
     return self:FlushPending()
 end
 

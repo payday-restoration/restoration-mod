@@ -271,4 +271,108 @@
 	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_vaultboy"/>
 	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison_subject"/>
 
+	<!-- ============================================================
+	     Environments, continents and missions - moved back off SuperBLT.
+	     SuperBLT converted these at load time from XML text and wrote the
+	     result beside them as .sblt_autoconvert, which does not survive the
+	     64-bit engine. They now ship pre-compiled as native x64 ScriptData
+	     and load through BeardLib like the rest of this package.
+	     ============================================================ -->
+
+	<!-- environments -->
+	<environment       path="environments/pd2_env_mid_day/pd2_env_mid_day" />
+	<environment       path="environments/pd2_env_night/pd2_env_night" />
+
+	<!-- continents -->
+	<continent         path="levels/instances/unique/bex/bex_drill/world/world" />
+	<continent         path="levels/instances/unique/bex/bex_security_room2/world/world" />
+	<continent         path="levels/instances/unique/hlm_random_left002/world/world" />
+	<continent         path="levels/instances/unique/hlm_random_right002/world/world" />
+	<continent         path="levels/instances/unique/pent/pent_coke/world/world" />
+	<continent         path="levels/narratives/bain/big/world/world" />
+	<continent         path="levels/narratives/classics/flat/art_dhruva/art_dhruva" />
+	<continent         path="levels/narratives/classics/flat/collision/collision" />
+	<continent         path="levels/narratives/classics/flat/lights/lights" />
+	<continent         path="levels/narratives/classics/flat/world/world" />
+	<continent         path="levels/narratives/continental/spa/regin_art/regin_art" />
+	<continent         path="levels/narratives/continental/spa/world/world" />
+	<continent         path="levels/narratives/elephant/born/world/world" />
+	<continent         path="levels/narratives/elephant/mad/art2/art2" />
+	<continent         path="levels/narratives/elephant/mad/collision/collision" />
+	<continent         path="levels/narratives/elephant/mad/world/world" />
+	<continent         path="levels/narratives/h_firestarter/stage_3/world/world" />
+	<continent         path="levels/narratives/jiu/chas/world/world" />
+	<continent         path="levels/narratives/locke/brb/art/art" />
+	<continent         path="levels/narratives/locke/brb/christmas_props/christmas_props" />
+	<continent         path="levels/narratives/locke/brb/props/props" />
+	<continent         path="levels/narratives/locke/brb/world/world" />
+	<continent         path="levels/narratives/locke/des/art/art" />
+	<continent         path="levels/narratives/locke/des/props/props" />
+	<continent         path="levels/narratives/locke/des/world/world" />
+	<continent         path="levels/narratives/locke/sah/world/world" />
+	<continent         path="levels/narratives/locke/vit/art/art" />
+	<continent         path="levels/narratives/locke/vit/backdrop/backdrop" />
+	<continent         path="levels/narratives/locke/vit/collision/collision" />
+	<continent         path="levels/narratives/locke/vit/lights/lights" />
+	<continent         path="levels/narratives/locke/vit/props/props" />
+	<continent         path="levels/narratives/locke/vit/props1/props1" />
+	<continent         path="levels/narratives/locke/vit/world/world" />
+	<continent         path="levels/narratives/shayu/pent/world/world" />
+	<continent         path="levels/narratives/skm/skm_bex/world/world" />
+	<continent         path="levels/narratives/vlad/bex/world/world" />
+	<continent         path="levels/narratives/vlad/peta/stage1/world/world" />
+	<continent         path="levels/narratives/vlad/pines/world/world" />
+
+	<!-- missions -->
+	<mission           path="levels/instances/shared/obj_skm/world/world" />
+	<mission           path="levels/instances/shared/skm_negotiator/world/world" />
+	<mission           path="levels/instances/unique/are_security_room/world/world" />
+	<mission           path="levels/instances/unique/bex/bex_drill/world/world" />
+	<mission           path="levels/instances/unique/bex/bex_security_room/world/world" />
+	<mission           path="levels/instances/unique/bex/bex_security_room2/world/world" />
+	<mission           path="levels/instances/unique/born/born_armory/world/world" />
+	<mission           path="levels/instances/unique/born/born_truck/world/world" />
+	<mission           path="levels/instances/unique/chas/chas_security_room/world/world" />
+	<mission           path="levels/instances/unique/corp/corp_security_room/world/world" />
+	<mission           path="levels/instances/unique/dah/dah_security_room/world/world" />
+	<mission           path="levels/instances/unique/dah/dah_security_room2/world/world" />
+	<mission           path="levels/instances/unique/dah/dah_security_room3/world/world" />
+	<mission           path="levels/instances/unique/dah/dah_security_room4/world/world" />
+	<mission           path="levels/instances/unique/dah/dah_security_room5/world/world" />
+	<mission           path="levels/instances/unique/fex/fex_security_room_left/world/world" />
+	<mission           path="levels/instances/unique/fex/fex_security_room_right/world/world" />
+	<mission           path="levels/instances/unique/hlm_random_left002/world/world" />
+	<mission           path="levels/instances/unique/hlm_random_left003/world/world" />
+	<mission           path="levels/instances/unique/hlm_random_right002/world/world" />
+	<mission           path="levels/instances/unique/hlm_random_right003/world/world" />
+	<mission           path="levels/instances/unique/hlm_vault/world/world" />
+	<mission           path="levels/instances/unique/mex/mex_pump/world/world" />
+	<mission           path="levels/instances/unique/mex/mex_tanker/world/world" />
+	<mission           path="levels/instances/unique/mex/mex_vault/world/world" />
+	<mission           path="levels/instances/unique/mus_security_room/world/world" />
+	<mission           path="levels/instances/unique/pbr/pbr_mountain_surface/world/world" />
+	<mission           path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" />
+	<mission           path="levels/instances/unique/pent/pent_helicopter_extraction/world/world" />
+	<mission           path="levels/instances/unique/pent/pent_security_room/world/world" />
+	<mission           path="levels/instances/unique/pent/pent_security_room_altdoor/world/world" />
+	<mission           path="levels/instances/unique/red/red_camera_room/world/world" />
+	<mission           path="levels/instances/unique/sah/sah_entrance_detector/world/world" />
+	<mission           path="levels/instances/unique/sand/sand_security_room/world/world" />
+	<mission           path="levels/instances/unique/sub_sewer_grate/world/world" />
+	<mission           path="levels/instances/unique/sub_sewer_sidespawn/world/world" />
+	<mission           path="levels/instances/unique/trai/trai_main_wagon/world/world" />
+	<mission           path="levels/instances/unique/vit/vit_security_room/world/world" />
+	<mission           path="levels/narratives/blaine/deep/world/world" />
+	<mission           path="levels/narratives/classics/flat/world/world" />
+	<mission           path="levels/narratives/classics/man/world/world" />
+	<mission           path="levels/narratives/continental/spa/regin_art/regin_art" />
+	<mission           path="levels/narratives/continental/spa/world/world" />
+	<mission           path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" />
+	<mission           path="levels/narratives/elephant/mad/world/world" />
+	<mission           path="levels/narratives/h_firestarter/stage_3/world/world" />
+	<mission           path="levels/narratives/locke/des/art/art" />
+	<mission           path="levels/narratives/locke/des/props/props" />
+	<mission           path="levels/narratives/locke/vit/world/world" />
+	<mission           path="levels/narratives/shayu/pent/world/world" />
+
 </table>

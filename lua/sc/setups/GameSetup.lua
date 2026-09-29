@@ -3,7 +3,10 @@ if not GameSetup._resmod_asset_loader_v2_hooked then
     GameSetup._resmod_asset_loader_v2_hooked = true
     local original = GameSetup.init_managers
     local function finish(self, ...)
-        if RestorationSuperMod then RestorationSuperMod:OnManagersReady() end
+        if RestorationSuperMod then
+            local ok, reason = RestorationSuperMod:OnManagersReady()
+            assert(ok, "[RestorationMod] Required preload failed: " .. tostring(reason))
+        end
         return ...
     end
     function GameSetup:init_managers(...)
@@ -105,7 +108,17 @@ function GameSetup:load_packages()
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
     
 	if job_tweak_package_data and job_tweak_package_data.load_all_difficulty_packages and not managers.skirmish:is_skirmish() then
-		log("[RestorationMod] load_packages: job uses load_all_difficulty_packages - faction asset group SKIPPED")
+        -- Vanilla difficulty packages do not contain our registered replacement units.
+        -- Keep the faction preload even on jobs which request every difficulty.
+        local factions = {{a,"america"},{z,"zombie"},{r,"russia"},{m,"murkywater"},
+            {f,"federales"},{la,"lapd"},{ny,"nypd"},{feds,"fbi"}}
+        local found = false
+        for _, pair in ipairs(factions) do
+            if ai_type == pair[1] then load_faction_assets(pair[2]);found = true;break end
+        end
+        if not found then
+            for _, pair in ipairs(factions) do load_faction_assets(pair[2]) end
+        end
 
 		for i, difficulty in ipairs(tweak_data.difficulties) do
 			local diff_package = "packages/" .. (difficulty or "normal")
@@ -135,7 +148,10 @@ function GameSetup:load_packages()
 		load_faction_assets("fbi")
 		PackageManager:load("packages/sm_wish")	
 	else
-		log("[RestorationMod] load_packages: ai_type '" .. tostring(ai_type) .. "' matched NO faction - no asset group loaded")
+        log("[RestorationMod] Unknown faction: preloading declared faction groups")
+        for _, name in ipairs({"america","zombie","russia","murkywater","federales","lapd","nypd","fbi"}) do
+            load_faction_assets(name)
+        end
 
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty or "normal")
 

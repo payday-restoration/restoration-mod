@@ -234,17 +234,6 @@
 		</group>
 
 		<group name="effects/particles/weapons/">
-			<file :name="akan_titan_trail_sc.effect"/>
-			<file :name="laser_trail_muzzle.effect"/>
-			<file :name="laser_trail_vector2.effect"/>
-			<file :name="sniper_trail_sc.effect"/>
-			<file :name="titan_trail_sc.effect"/>
-			<file :name="vapor_trail_1.effect"/>
-			<file :name="vapor_trail_2.effect"/>
-			<file :name="vapor_trail_3.effect"/>
-			<file :name="vapor_trail_4.effect"/>
-			<file :name="vapor_trail_5.effect"/>
-			<file :name="vapor_trail_sc.effect"/>
 		</group>
 
 		<group name="effects/particles/weapons/flashlight/">
@@ -256,7 +245,6 @@
 		</group>
 
 		<group name="effects/payday2/particles/explosions/">
-			<file :name="grenade_incendiary_explosion_sc.effect"/>
 			<file :name="red_mist.effect"/>
 			<file :name="summers_footstep.effect"/>
 			<file :name="wpn_npc_bravo_frag_flash.effect"/>
@@ -306,11 +294,9 @@
 		</group>
 
 		<group name="effects/payday2/particles/weapons/shells/">
-			<file :name="shell_shak.effect"/>
 		</group>
 
 		<group name="effects/payday2/particles/weapons/shotgun/">
-			<file :name="sho_muzzleflash_hornet.effect"/>
 		</group>
 
 		<group name="effects/pd2_mod_omnia/particles/character/overkillpack/">
@@ -325,218 +311,93 @@
 
 		<group name="effects/textures/">
 			<file :name="brain_impacts_df.texture"/>
-			<file :name="e_sniper_trail_1_df.texture"/>
-			<file :name="e_sniper_trail_2_df.texture"/>
-			<file :name="e_sniper_trail_3_df.texture"/>
-			<file :name="e_sniper_trail_4_df.texture"/>
-			<file :name="e_sniper_trail_5_df.texture"/>
-			<file :name="e_sniper_trail_df.texture"/>
 		</group>
 
 		<group name="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/">
-			<file :name="wpn_fps_upg_bonus_concealment_p1_sc.texture"/>
-			<file :name="wpn_fps_upg_bonus_concealment_p2_sc.texture"/>
-			<file :name="wpn_fps_upg_bonus_concealment_p3_sc.texture"/>
-			<file :name="wpn_fps_upg_bonus_damage_p1_sc.texture"/>
-			<file :name="wpn_fps_upg_bonus_damage_p2_sc.texture"/>
-			<file :name="wpn_fps_upg_bonus_recoil_p1_sc.texture"/>
-			<file :name="wpn_fps_upg_bonus_spread_n1_sc.texture"/>
-			<file :name="wpn_fps_upg_bonus_spread_p1_sc.texture"/>
-			<file :name="wpn_fps_upg_bonus_team_exp_money_p3_sc.texture"/>
-			<file :name="wpn_fps_upg_bonus_total_ammo_p1_sc.texture"/>
-			<file :name="wpn_fps_upg_bonus_total_ammo_p3_sc.texture"/>
 		</group>
 
 		<group name="guis/dlcs/chico/textures/pd2/specialization/">
-			<file :name="icons_atlas.texture"/>
 		</group>
 
 		<group name="guis/dlcs/ecp/textures/pd2/specialization/">
-			<file :name="icons_atlas.texture"/>
 		</group>
 
 		<group name="guis/dlcs/gage_pack_assault/textures/pd2/blackmarket/icons/mods/">
-			<file :name="wpn_fps_ass_g3_b_sniper.texture"/>
 		</group>
 
 		<group name="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/">
-			<file :name="wpn_fps_upg_a_custom_free.texture"/>
 		</group>
 
 		<group name="guis/dlcs/max/textures/pd2/specialization/">
-			<file :name="icons_atlas.texture"/>
 		</group>
 
 		<group name="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/">
-			<file :name="wpn_fps_shot_r870_s_muldonunfolded.texture"/>
 		</group>
 
 		<group name="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/">
-			<file :name="loud_suit.texture"/>
-			<file :name="poggers.texture"/>
-			<file :name="suit_prison.texture"/>
-			<file :name="suit_sunny.texture"/>
-			<file :name="two_piece_suit.texture"/>
 		</group>
 
 		<group name="guis/dlcs/mrwi/textures/pd2/specialization/">
-			<file :name="icons_atlas.texture"/>
 		</group>
 
 		<group name="guis/dlcs/mxm/textures/pd2/">
-			<file :name="ordnance_bag.texture"/>
-			<file :name="sticky_grenade.texture"/>
 		</group>
 
 		<group name="guis/dlcs/myh/textures/pd2/specialization/">
-			<file :name="icons_atlas.texture"/>
 		</group>
 
 		<group name="guis/dlcs/pxp1/textures/pd2/">
-			<file :name="hud_poison_gas_grenade.texture"/>
 		</group>
 
 		<group name="guis/dlcs/sawp/textures/pd2/">
-			<file :name="equipment_sawp.texture"/>
 		</group>
 
 		<group name="guis/dlcs/sc/textures/pd2/crime_spree/">
-			<file :name="mission_atlas_sc.texture"/>
-			<file :name="modifiers_atlas_sc.texture"/>
 		</group>
 
 		<group name="guis/dlcs/sc/textures/pd2/specialization/">
-			<file :name="icons_atlas.texture"/>
 		</group>
 
 		<group name="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/">
-			<file :name="jumpsuit_flatgreen.texture"/>
-			<file :name="jumpsuit_flecktarn.texture"/>
-			<file :name="raincoat.texture"/>
 		</group>
 
 		<group name="guis/dlcs/wild/textures/pd2/specialization/">
-			<file :name="icons_atlas.texture"/>
 		</group>
 
 		<group name="guis/textures/loading/hints/">
-			<file :name="enemy_akantits.texture"/>
-			<file :name="enemy_autumn.texture"/>
-			<file :name="enemy_bex.texture"/>
-			<file :name="enemy_bravos.texture"/>
-			<file :name="enemy_chad.texture"/>
-			<file :name="enemy_doc.texture"/>
-			<file :name="enemy_gear.texture"/>
-			<file :name="enemy_keith.texture"/>
-			<file :name="enemy_lpf.texture"/>
-			<file :name="enemy_murkies.texture"/>
-			<file :name="enemy_spring.texture"/>
-			<file :name="enemy_squad.texture"/>
-			<file :name="enemy_summers.texture"/>
-			<file :name="enemy_tdozer.texture"/>
-			<file :name="enemy_thrt.texture"/>
-			<file :name="enemy_tshield.texture"/>
-			<file :name="enemy_tsniper.texture"/>
-			<file :name="enemy_tspook.texture"/>
-			<file :name="enemy_tswat.texture"/>
-			<file :name="enemy_ttaser.texture"/>
-			<file :name="enemy_winters_sc.texture"/>
-			<file :name="enemy_zeal_sc.texture"/>
-			<file :name="generic_tip.texture"/>
-			<file :name="grenadier_load.texture"/>
-			<file :name="loading_australia.texture"/>
-			<file :name="loading_jackal.texture"/>
-			<file :name="loading_omnia.texture"/>
-			<file :name="vet_cop_loading.texture"/>
 		</group>
 
 		<group name="guis/textures/pd2/">
-			<file :name="equipment.texture"/>
-			<file :name="hitconfirm_effective.texture"/>
-			<file :name="hitconfirm_ineffective.texture"/>
-			<file :name="hud_buff_fire.texture"/>
-			<file :name="hud_buff_generic.texture"/>
-			<file :name="hud_buff_halloween.texture"/>
-			<file :name="hud_buff_shield.texture"/>
-			<file :name="hud_buff_skull.texture"/>
-			<file :name="hud_buff_spooc.texture"/>
-			<file :name="mutator_icons_atlas.texture"/>
 		</group>
 
 		<group name="guis/textures/pd2/blackmarket/">
-			<file :name="inv_mod_ammo_bleed.texture"/>
-			<file :name="inv_mod_ammo_electric.texture"/>
-			<file :name="melee_backstab.texture"/>
-			<file :name="melee_chainsaw.texture"/>
-			<file :name="melee_charger.texture"/>
-			<file :name="melee_defense.texture"/>
-			<file :name="melee_headshot.texture"/>
-			<file :name="melee_jackpot.texture"/>
-			<file :name="melee_panic.texture"/>
-			<file :name="melee_parry.texture"/>
 		</group>
 
 		<group name="guis/textures/pd2/blackmarket/icons/deployables/">
-			<file :name="armor_kit.texture"/>
 		</group>
 
 		<group name="guis/textures/pd2/blackmarket/icons/deployables/outline/">
-			<file :name="armor_kit.texture"/>
 		</group>
 
 		<group name="guis/textures/pd2/blackmarket/icons/materials/">
-			<file :name="jkl_matt01.texture"/>
-			<file :name="jkl_matt02.texture"/>
 		</group>
 
 		<group name="guis/textures/pd2/blackmarket/icons/mods/">
-			<file :name="wpn_fps_lmg_rpk_m_standard.texture"/>
-			<file :name="wpn_fps_m4_uupg_fg_rail_m4a1.texture"/>
-			<file :name="wpn_fps_smg_mac10_s_no.texture"/>
-			<file :name="wpn_fps_smg_mp5_m_drum.texture"/>
-			<file :name="wpn_fps_smg_p90_body_tan.texture"/>
-			<file :name="wpn_fps_upg_a_slug_fire.texture"/>
-			<file :name="wpn_fps_upg_bonus_sc_none.texture"/>
-			<file :name="wpn_fps_upg_m4_m_drum.texture"/>
-			<file :name="wpn_fps_upg_o_arbiter_irons_dmc.texture"/>
-			<file :name="wpn_fps_upg_o_car4_irons_dmc.texture"/>
-			<file :name="wpn_fps_upg_o_dd_irons_dmc.texture"/>
-			<file :name="wpn_fps_upg_o_ecp_irons_dmc.texture"/>
-			<file :name="wpn_fps_upg_vg_ass_smg_afg.texture"/>
-			<file :name="wpn_fps_upg_vg_ass_smg_stubby.texture"/>
-			<file :name="wpn_fps_upg_vg_ass_smg_verticalgrip.texture"/>
-			<file :name="wpn_upg_ak_m_drum.texture"/>
-			<file :name="wpn_upg_saiga_m_20rnd.texture"/>
 		</group>
 
 		<group name="guis/textures/pd2/mission_briefing/assets/">
-			<file :name="alex_1_zipline.texture"/>
-			<file :name="assets_risklevel_3_sc.texture"/>
-			<file :name="assets_risklevel_4_sc.texture"/>
-			<file :name="assets_risklevel_5_sc.texture"/>
-			<file :name="assets_risklevel_6_sc.texture"/>
-			<file :name="risk_bexico.texture"/>
-			<file :name="risk_murky.texture"/>
-			<file :name="risk_zombie.texture"/>
 		</group>
 
 		<group name="guis/textures/pd2/skilltree/">
-			<file :name="icons_atlas_sc.texture"/>
 		</group>
 
 		<group name="guis/textures/pd2/skilltree_2/">
-			<file :name="icons_atlas_2.texture"/>
 		</group>
 
 		<group name="guis/textures/pd2/specialization/">
-			<file :name="icons_atlas.texture"/>
 		</group>
 
 		<group name="guis/textures/restoration/">
-			<file :name="bloodyscreen.texture"/>
-			<file :name="crimewar_skull.texture"/>
-			<file :name="crimewar_skull_2.texture"/>
-			<file :name="topbottomrim.texture"/>
 		</group>
 
 		<group name="patterns/">
@@ -549,19 +410,6 @@
 		</group>
 
 		<group name="units/mods/weapons/wpn_fps_shot_r870_pts_mod/">
-			<file :name="wpn_fps_shot_r870_s_muldonunfolded.cooked_physics"/>
-			<file :name="wpn_fps_shot_r870_s_muldonunfolded.material_config"/>
-			<file :name="wpn_fps_shot_r870_s_muldonunfolded.model"/>
-			<file :name="wpn_fps_shot_r870_s_muldonunfolded.object"/>
-			<file :name="wpn_fps_shot_r870_s_muldonunfolded.unit"/>
-			<file :name="wpn_fps_shot_r870_s_muldonunfolded_cc.material_config"/>
-			<file :name="wpn_fps_shot_r870_s_muldonunfolded_cc_thq.material_config"/>
-			<file :name="wpn_fps_shot_r870_s_muldonunfolded_thq.material_config"/>
-			<file :name="wpn_third_shot_r870_s_muldonunfolded.cooked_physics"/>
-			<file :name="wpn_third_shot_r870_s_muldonunfolded.material_config"/>
-			<file :name="wpn_third_shot_r870_s_muldonunfolded.model"/>
-			<file :name="wpn_third_shot_r870_s_muldonunfolded.object"/>
-			<file :name="wpn_third_shot_r870_s_muldonunfolded.unit"/>
 		</group>
 
 		<group name="units/payday2/architecture/air_hangar_segment/">
@@ -575,8 +423,6 @@
 		</group>
 
 		<group name="units/payday2/characters/ene_acc_city_heavy_helmet/">
-			<file :name="ene_acc_city_heavy_helmet.model"/>
-			<file :name="ene_acc_city_heavy_helmet.object"/>
 		</group>
 
 		<group name="units/payday2/characters/ene_acc_mememan_2_helmet_plate/">
@@ -689,8 +535,6 @@
 		</group>
 
 		<group name="units/payday2/characters/ene_fbi_3/">
-			<file :name="ene_fbi_3.unit"/>
-			<file :name="ene_fbi_3_husk.unit"/>
 		</group>
 
 		<group name="units/payday2/characters/ene_fbi_female_1/">
@@ -796,13 +640,6 @@
 		</group>
 
 		<group name="units/payday2/characters/ene_swat_1_sc/">
-			<file :name="ene_swat_1_sc.cooked_physics"/>
-			<file :name="ene_swat_1_sc.material_config"/>
-			<file :name="ene_swat_1_sc.model"/>
-			<file :name="ene_swat_1_sc.object"/>
-			<xml :name="ene_swat_1_sc.sequence_manager" from_type="custom_xml" to_type="binary"/>
-			<file :name="ene_swat_1_sc.unit"/>
-			<file :name="ene_swat_1_sc_contour.material_config"/>
 		</group>
 
 		<group name="units/payday2/characters/ene_veteran_lod_1/">
@@ -835,8 +672,6 @@
 			<file :name="helmet_shotgun_nm.texture"/>
 			<file :name="helmets_atlas_df.texture"/>
 			<file :name="mask_df.texture"/>
-			<file :name="spook_atlas_df.texture"/>
-			<file :name="spook_atlas_nm.texture"/>
 			<file :name="spook_il.texture"/>
 			<file :name="swat_atlas_df.texture"/>
 			<file :name="swat_atlas_nm.texture"/>
@@ -1101,12 +936,6 @@
 		</group>
 
 		<group name="units/payday2/weapons/wpn_npc_oicw/">
-			<file :name="wpn_npc_oicw.cooked_physics"/>
-			<file :name="wpn_npc_oicw.material_config"/>
-			<file :name="wpn_npc_oicw.model"/>
-			<file :name="wpn_npc_oicw.object"/>
-			<xml :name="wpn_npc_oicw.sequence_manager" from_type="custom_xml" to_type="binary"/>
-			<file :name="wpn_npc_oicw.unit"/>
 		</group>
 
 		<group name="units/payday2/weapons/wpn_npc_peacemaker/">
@@ -2055,12 +1884,6 @@
 		</group>
 
 		<group name="units/pd2_mod_halloween/characters/ene_skele_swat/">
-			<file :name="ene_skele_swat.cooked_physics"/>
-			<file :name="ene_skele_swat.material_config"/>
-			<file :name="ene_skele_swat.model"/>
-			<file :name="ene_skele_swat.object"/>
-			<xml :name="ene_skele_swat.sequence_manager" from_type="custom_xml" to_type="binary"/>
-			<file :name="ene_skele_swat.unit"/>
 		</group>
 
 		<group name="units/pd2_mod_halloween/characters/ene_spook_cloak_1/">
@@ -2234,26 +2057,14 @@
 		</group>
 
 		<group name="units/pd2_mod_omnia/characters/ene_omnia_taser/">
-			<file :name="ene_omnia_taser.cooked_physics"/>
-			<file :name="ene_omnia_taser.material_config"/>
-			<file :name="ene_omnia_taser.model"/>
-			<file :name="ene_omnia_taser.object"/>
-			<file :name="ene_omnia_taser.unit"/>
-			<file :name="ene_omnia_taser_contour.material_config"/>
-			<file :name="ene_omnia_taser_husk.unit"/>
 		</group>
 
 		<group name="units/pd2_mod_omnia/characters/shared_textures/">
 			<file :name="bulldozer_omnia_helmet_df.texture"/>
 			<file :name="bulldozer_omnia_helmet_nm.texture"/>
 			<file :name="bulldozer_saiga_df.texture"/>
-			<file :name="eyes_il.texture"/>
-			<file :name="heads_atlas_omnia_df.texture"/>
-			<file :name="heads_atlas_omnia_nm.texture"/>
 			<file :name="helmets_omnia_atlas_df.texture"/>
 			<file :name="helmets_omnia_atlas_nm.texture"/>
-			<file :name="taser_body_df.texture"/>
-			<file :name="taser_body_nm.texture"/>
 		</group>
 
 		<group name="units/pd2_mod_reapers/characters/ene_spook_cloak_1/">
@@ -2315,12 +2126,6 @@
 		</group>
 
 		<group name="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/">
-			<file :name="ene_acc_shield_murky.cooked_physics"/>
-			<file :name="ene_acc_shield_murky.material_config"/>
-			<file :name="ene_acc_shield_murky.model"/>
-			<file :name="ene_acc_shield_murky.object"/>
-			<xml :name="ene_acc_shield_murky.sequence_manager" from_type="custom_xml" to_type="binary"/>
-			<file :name="ene_acc_shield_murky.unit"/>
 		</group>
 
 		<group name="units/pd2_mod_sharks/characters/shared_textures/">

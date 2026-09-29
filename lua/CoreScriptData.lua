@@ -32,11 +32,14 @@ do
 			return
 		end
 		local authority = rawget(_G, "RestorationSequenceAuthority")
-		local profile = authority:profile()
-		if (not profile or profile.level ~= Global.game_settings.level_id) and not (managers.network and managers.network:session() and Network:is_client()) then
+		local profile = authority:environment_profile()
+		if (not profile or profile.level ~= Global.game_settings.level_id) and not (Network and Network:is_client()) then
 			profile = authority:make_profile(Global.game_settings.level_id, 0)
 		end
-		assert(profile and profile.level == Global.game_settings.level_id, "[SequenceAuthority] Host environment profile is missing; level environment application stopped")
+		if not profile or profile.level ~= Global.game_settings.level_id then
+            authority:log("environment-not-ready", "Host environment profile was not available at script load; keeping the existing environment. Joining continues.")
+            return
+        end
 		if not profile.enabled then return end
 		rnd, rnd2, rnd3, rnd4 = unpack(profile.rolls)
 		local level_id = Global.game_settings.level_id

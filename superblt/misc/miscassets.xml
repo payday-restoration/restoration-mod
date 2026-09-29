@@ -186,22 +186,12 @@
 		</group>
 
 		<group name="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_k63/">
-			<file :name="ene_acc_bravo_akan_k63.cooked_physics"/>
-			<file :name="ene_acc_bravo_akan_k63.material_config"/>
-			<file :name="ene_acc_bravo_akan_k63.model"/>
-			<file :name="ene_acc_bravo_akan_k63.object"/>
-			<file :name="ene_acc_bravo_akan_k63.unit"/>
 		</group>
 
 		<group name="units/pd2_mod_bravo/characters/shared_textures/">
-			<file :name="bravo_rifle_helmet_ru_df.texture"/>
 		</group>
 
 		<group name="units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/">
-			<file :name="wpn_npc_rpk_sc.material_config"/>
-			<file :name="wpn_npc_rpk_sc.model"/>
-			<file :name="wpn_npc_rpk_sc.object"/>
-			<file :name="wpn_npc_rpk_sc.unit"/>
 		</group>
 
 	</group>

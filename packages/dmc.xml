@@ -11,26 +11,26 @@
 	<effect				path="effects/particles/explosions/smoke_grenade_smoke" force="true"/>	
 		
 	<!--Sniper Trails-->
-	<effect				path="effects/particles/weapons/sniper_trail_sc" force="false"/>
-	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
-	<effect				path="effects/particles/weapons/akan_titan_trail_sc" force="false"/>
+	<effect				path="effects/particles/weapons/sniper_trail_sc" force="true" load="true"/>
+	<effect				path="effects/particles/weapons/titan_trail_sc" force="true" load="true"/>
+	<effect				path="effects/particles/weapons/akan_titan_trail_sc" force="true" load="true"/>
 	<texture			path="effects/textures/e_sniper_trail_df"/>
 	<texture			path="effects/textures/e_sniper_trail_1_df"/>
 	<texture			path="effects/textures/e_sniper_trail_2_df"/>
 	<texture			path="effects/textures/e_sniper_trail_3_df"/>
 	<texture			path="effects/textures/e_sniper_trail_4_df"/>
 	<texture			path="effects/textures/e_sniper_trail_5_df"/>
-	<effect				path="effects/particles/weapons/vapor_trail_1" force="false"/>
-	<effect				path="effects/particles/weapons/vapor_trail_2" force="false"/>
-	<effect				path="effects/particles/weapons/vapor_trail_3" force="false"/>
-	<effect				path="effects/particles/weapons/vapor_trail_4" force="false"/>
-	<effect				path="effects/particles/weapons/vapor_trail_5" force="false"/>
-	<effect				path="effects/particles/weapons/vapor_trail_sc" force="false"/>
-	<effect				path="effects/particles/weapons/laser_trail_muzzle" force="false"/>
-	<effect				path="effects/particles/weapons/laser_trail_vector2" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_1" force="true" load="true"/>
+	<effect				path="effects/particles/weapons/vapor_trail_2" force="true" load="true"/>
+	<effect				path="effects/particles/weapons/vapor_trail_3" force="true" load="true"/>
+	<effect				path="effects/particles/weapons/vapor_trail_4" force="true" load="true"/>
+	<effect				path="effects/particles/weapons/vapor_trail_5" force="true" load="true"/>
+	<effect				path="effects/particles/weapons/vapor_trail_sc" force="true" load="true"/>
+	<effect				path="effects/particles/weapons/laser_trail_muzzle" force="true" load="true"/>
+	<effect				path="effects/particles/weapons/laser_trail_vector2" force="true" load="true"/>
 	
 	<!--Remove tracer sparks from hornet GL ammo-->
-	<effect				path="effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet" load="false"/>
+	<effect				path="effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet" load="true" force="true"/>
 	
 	<!--reinbeck muzzleflash-->
 	<effect				path="effects/particles/shotgun/muzzleflash" load="false"/>
@@ -38,7 +38,7 @@
 	<effect				path="effects/particles/shotgun/shotgun_gen" load="false"/>	
 	
 	<!--Incendiary Grenade-->
-	<effect				path="effects/payday2/particles/explosions/grenade_incendiary_explosion_sc" load="false"/>	
+	<effect				path="effects/payday2/particles/explosions/grenade_incendiary_explosion_sc" load="true" force="true"/>	
 
 	<!--Bullet casings effects-->
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
@@ -46,7 +46,7 @@
     <effect				path="_dmc/effects/shell_shak_sniper" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/shell_sniper_m95_semi" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/shell_556_smol" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true"/>
+    <effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true" load="true"/>
 	<!--Weapon Mod Trails and Muzzle Effects-->
 	<!--NATO Tracer-->
     <effect				path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
@@ -111,23 +111,21 @@
 	<material_config	path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan_thq"/>
 	<object				path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan"/>
 	<cooked_physics		path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan"/>
-	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_p90_body_tan"/>
 	
 	<!--Muldon Stock Unfolded (thx Jarey_!!!!)-->
 	<cooked_physics		path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
 	<material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
 	<model				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
 	<object				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
-	<unit				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<unit				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded" force="true" load="true"/>
 	<material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_thq"/>
 	<material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_cc"/>
     <material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_cc_thq"/>
-	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_shot_r870_s_muldonunfolded"/>
 	<cooked_physics		path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
 	<model				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
 	<object				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
     <material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
-	<unit				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>	
+	<unit				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded" force="true" load="true"/>	
 
 	<!--Gold AK shit-->
 	<!--KILL ME -DMC-->

@@ -1,12 +1,13 @@
--- Restoration ENEMY sequence authority: revision 4.4, wire protocol 4.
+-- Restoration ENEMY sequence authority: revision 4.5, wire protocol 4.
 -- Install on HOST and all clients; restart. Includes 4.1 join lifecycle fixes.
 -- Full hidden-chat messages are capped at 255 bytes, including JSON escaping.
--- 4.4: native defaults/callbacks and menu units are untouched; only managed appearance is replayed.
+-- 4.5: native defaults/callbacks and menu units are untouched; only managed appearance is replayed.
 -- Body/ragdoll chains remain native; late corpse links are skipped.
 -- Scope: enemy appearance selections and bound appearance children.
 -- Physics, effects, gameplay callbacks and their owning sequences execute natively.
 -- Civilians, team AI, doors and world props use native sequence execution.
--- Heist environment-profile selection remains host controlled.
+-- Environment profiles arrive in the background; joining never waits for authority.
+-- A profile arriving after environment script loading is not applied retroactively.
 -- Install into lua/sc/core/sequence_authority.lua; all peers must update and restart.
 -- Host records resolved operations. Clients never run an independent random stream.
 local existing = rawget(_G, 'RestorationSequenceAuthority')
@@ -14,7 +15,7 @@ if existing then
  assert(type(existing)=='table' and type(existing.install)=='function', '[SequenceAuthority] Existing authority module is incomplete; restart with the complete integrated build')
  return existing
 end
-local A = {VERSION=4, REVISION='4.4', HANDSHAKE_TIMEOUT=45, MAX_PARTS=4096, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
+local A = {VERSION=4, REVISION='4.5', HANDSHAKE_TIMEOUT=45, MAX_PARTS=4096, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
 local unpack=unpack
 local function pack(...) return {n=select('#',...),...} end
 local function weak() return setmetatable({},{__mode='k'}) end
@@ -86,58 +87,45 @@ function A:wrap(c,name,factory)
 end
 function A:profile() return Global and Global.restoration_sequence_authority end
 function A:epoch() local p=self:profile();return p and p.epoch end
--- Native loading closes menus: complete the handshake before that transition.
-function A:close_load_dialog()
- if managers and managers.system_menu then managers.system_menu:close('restoration_authority_join') end
+-- Environment exchange must not own the engine's join/load lifecycle.
+function A:host_identity(session)
+ local host=session and session:server_peer()
+ if not host then return nil end
+ if host.user_id then local ok,id=pcall(host.user_id,host);if ok and id and tostring(id)~='' then return tostring(id) end end
+ if host.ip then local ok,id=pcall(host.ip,host);if ok and id then return tostring(id) end end
+ return nil
+end
+function A:environment_profile()
+ local p=self:profile()
+ if not p or p.level~=Global.game_settings.level_id then return nil end
+ if not (Network and Network:is_client()) then return p end
+ local session=sess()
+ if p._authority_host~=self:host_identity(session) or not p._authority_host then return nil end
+ if session._load_counter~=nil and p.counter~=session._load_counter then return nil end
+ return p
 end
 function A:check_session()
  local session=sess()
  if self.transport_session~=session then
   if self.transport_session then
-   self:close_load_dialog()
-   self.waiting_load,self.load_permit,self.failed_load_session=nil,nil,nil
-   self.pending_intro,self.pending_dropins,self.compatible=nil,nil,nil
+   self.waiting_load=nil
    self.parts,self.outgoing,self.queued={},{},{}
    self.out_head,self.out_tail=1,0
   end
   self.transport_session=session
-  if session and session._restoration_authority_epoch==self:epoch() then self.compatible=session._restoration_authority_compatible end
  end
 end
-function A:leave_failed_join(session)
- if sess()~=session then return end
- self.waiting_load,self.load_permit=nil,nil
- self.failed_load_session=session
- self:close_load_dialog()
- if MenuCallbackHandler and MenuCallbackHandler._dialog_leave_lobby_yes then MenuCallbackHandler:_dialog_leave_lobby_yes() end
-end
-function A:fail_load(reason)
- local w=self.waiting_load
- if not w then return end
- self.waiting_load,self.load_permit=nil,nil
- self.failed_load_session=w.session
- self:close_load_dialog()
- self:log('load-failed:'..w.token,reason..' No client reroll.')
- if managers and managers.system_menu then
-  managers.system_menu:show({id='restoration_authority_join',title='Unable to synchronize heist',
-   text=reason..'\n\nInstall authority 4.4 on the HOST and every client, then fully restart PAYDAY 2.',
-   button_list={{text='Return to menu',callback_func=function() A:leave_failed_join(w.session) end}}})
- end
-end
-function A:begin_load(session,level,counter,kind,run)
+function A:begin_background(session,level,counter)
  self:check_session()
- if self.failed_load_session==session then return end
+ if not session or not session:server_peer() then return end
  local old=self.waiting_load
- if old and old.session==session and old.level==level and old.requested_counter==counter and old.kind==kind then return end
- self:close_load_dialog()
+ if old and old.session==session and old.level==level and old.requested_counter==counter then return end
  self.serial=self.serial+1
  self.waiting_load={session=session,host=session:server_peer(),token=tostring(self.serial),
-  level=level,counter=counter,requested_counter=counter,kind=kind,run=run,started=clock(),retry=0,
-  stage='No reply received from host.'}
- self:log('load-gate:'..self.serial,'Authority 4.4: waiting for host environment; counter='..tostring(counter))
- if managers and managers.system_menu then
-  managers.system_menu:show({id='restoration_authority_join',title='Synchronizing heist',text='Waiting for host environment choices.',
-   button_list={{text='Cancel',callback_func=function() A:leave_failed_join(session) end}}})
+  level=level,counter=counter,requested_counter=counter,started=clock(),retry=0}
+ local p=self:profile()
+ if not p or p.level~=level or (counter~=nil and p.counter~=counter) or p._authority_host~=self:host_identity(session) then
+  Global.restoration_sequence_authority=nil
  end
 end
 function A:valid_profile(p,level,counter,epoch)
@@ -1036,8 +1024,8 @@ function A:dispatch(sender,message)
  if message.revision~=self.REVISION then
   local host=is_client() and session:server_peer()
   if host and host:id()==tonumber(sender) and self.waiting_load then
-   self:fail_load('Host authority revision does not match this client (4.4).')
-  else self:log('revision:'..tostring(sender),'Peer '..tostring(sender)..' needs authority 4.4; native/appearance ownership must match.') end
+   self:log('revision:'..tostring(sender),'Host authority revision differs; joining continues without authority synchronization.')
+  else self:log('revision:'..tostring(sender),'Peer '..tostring(sender)..' needs authority 4.5; native/appearance ownership must match.') end
   return
  end
  if is_client() then
@@ -1047,6 +1035,7 @@ function A:dispatch(sender,message)
    if not waiting or waiting.session~=session or waiting.host~=host or message.token~=waiting.token or message.level~=waiting.level then return end
    if waiting.counter~=nil and message.counter~=waiting.counter then waiting.stage='Host replied with a different heist load counter.';return end
    if not self:valid_profile(message.profile,waiting.level,message.counter,message.epoch) then waiting.stage='Host environment profile was incomplete or invalid.';return end
+   message.profile._authority_host=self:host_identity(session)
    Global.restoration_sequence_authority=message.profile
    waiting.counter=message.counter;waiting.received=true;waiting.epoch=message.epoch;waiting.stage='Environment received; final host confirmation is missing.'
    self:send(host:id(),{type='environment_ack',epoch=message.epoch,token=waiting.token});return
@@ -1140,36 +1129,21 @@ function A:receive(sender,id,payload)
 end
 function A:update()
  self:check_session()
- if not is_client() and self.pending_intro and sess() then
-  local ready=true
-  for id in pairs(sess():peers())do if not self.compatible or self.compatible[id]~=self:epoch() then ready=false end end
-  if ready then local run=self.pending_intro;self.pending_intro=nil;run() end
- end
- if not is_client() and self.pending_dropins then
-  for id,run in pairs(self.pending_dropins)do
-   if not sess() or not sess():peer(id) then self.pending_dropins[id]=nil
-   elseif self.compatible and self.compatible[id]==self:epoch() then self.pending_dropins[id]=nil;run() end
+ if is_client() then
+  local session=sess();local level=Global.game_settings and Global.game_settings.level_id
+  if session and level and not session._closing and (not self.waiting_load or self.waiting_load.level~=level) then
+   self:begin_background(session,level,session._load_counter)
   end
  end
  if self.waiting_load then
-  local w=self.waiting_load
-  local session=sess()
+  local w=self.waiting_load;local session=sess()
   if not session or w.session~=session or session._closing or session:server_peer()~=w.host then
-   self:fail_load('The host connection changed during synchronization.')
-  elseif w.ready then
-   self.waiting_load=nil;self:close_load_dialog()
-   self.load_permit={session=session,level=w.level,counter=w.counter,epoch=w.epoch}
-   if w.kind=='direct' then session._load_counter=w.counter end
-   w.run();self.load_permit=nil
-  elseif clock()-w.started>=self.HANDSHAKE_TIMEOUT then
-   self:fail_load('Synchronization timed out. '..w.stage)
-  elseif clock()>=(w.retry or 0) then
-   local host=sess() and sess():server_peer()
-   if host then
-    if w.received then self:send(host:id(),{type='environment_ack',epoch=w.epoch,token=w.token})
-    else self:send(host:id(),{type='environment_request',token=w.token,level=w.level,counter=w.counter}) end
-   end
-   w.retry=clock()+self.RETRY
+   self.waiting_load=nil
+  elseif not w.ready and clock()>=(w.retry or 0) then
+   if w.received then self:send(w.host:id(),{type='environment_ack',epoch=w.epoch,token=w.token})
+   else self:send(w.host:id(),{type='environment_request',token=w.token,level=w.level,counter=w.counter}) end
+   -- Slow retries after the initial exchange; never stop or restart a native load.
+   w.retry=clock()+(clock()-w.started>self.HANDSHAKE_TIMEOUT and 10 or self.RETRY)
   end
  end
  for u,s in pairs(self.units) do
@@ -1344,30 +1318,6 @@ function A:install_network()
    return original(session,peer,id,...)
   end
  end)
- self:wrap(BaseNetworkSession,'check_start_game_intro',function(original)
-  return function(session,...)
-   if not is_client() and A:profile() then
-    for id in pairs(session:peers())do
-     if not A.compatible or A.compatible[id]~=A:epoch() then
-      local args=pack(...);A.pending_intro=function()original(session,unpack(args,1,args.n))end
-      A:log('compat:'..id,'Mission entry waits for peer '..id..' to confirm authority protocol 4.');return
-     end
-    end
-   end
-   return original(session,...)
-  end
- end)
- self:wrap(HostNetworkSession,'chk_initiate_dropin_pause',function(original)
-  return function(session,peer,...)
-   if A:profile() and (not A.compatible or A.compatible[peer:id()]~=A:epoch()) then
-    A:log('dropin:'..peer:id(),'Drop-in waits for compatible authority handshake from peer '..peer:id())
-    A.pending_dropins=A.pending_dropins or {};local args=pack(...)
-    A.pending_dropins[peer:id()]=function() original(session,peer,unpack(args,1,args.n)) end
-    return
-   end
-   return original(session,peer,...)
-  end
- end)
  self:wrap(HostNetworkSession,'load_level',function(original)
   return function(session,level,mission,world,level_class,level_id,...)
    local counter=(session._load_counter or 0)+1
@@ -1378,18 +1328,17 @@ function A:install_network()
  end)
  self:wrap(ClientNetworkSession,'load_level',function(original)
   return function(session,...)
-   local args=pack(...);local level=args[5] or Global.game_settings.level_id;local permit=A.load_permit
-   if permit and permit.session==session and permit.level==level and permit.counter==session._load_counter and permit.epoch==A:epoch() then
-    A.load_permit=nil;return original(session,unpack(args,1,args.n))
-   end
-   A:begin_load(session,level,session._load_counter,'direct',function()original(session,unpack(args,1,args.n))end)
+   local args=pack(...)
+   A:begin_background(session,args[5] or Global.game_settings.level_id,session._load_counter)
+   return original(session,unpack(args,1,args.n))
   end
  end)
  self:wrap(ClientNetworkSession,'ok_to_load_level',function(original)
   return function(session,counter,...)
-   if session._closing or session._received_ok_to_load_level or session._load_counter==counter then return end
-   local args=pack(...)
-   A:begin_load(session,Global.game_settings.level_id,counter,'native_ok',function()original(session,counter,unpack(args,1,args.n))end)
+   if not session._closing and not session._received_ok_to_load_level and session._load_counter~=counter then
+    A:begin_background(session,Global.game_settings.level_id,counter)
+   end
+   return original(session,counter,...)
   end
  end)
  self:wrap(BaseNetworkSession,'update',function(original)

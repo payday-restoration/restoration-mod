@@ -7,7 +7,6 @@
 	<texture path="guis/textures/restoration/hud_dot"/>
 	<texture path="guis/textures/restoration/hud_rip"/>
 	<texture path="guis/textures/restoration/hud_rip_bg"/>
-	<texture path="guis/textures/restoration/hud_rip_bg"/>
 	<texture path="guis/textures/restoration/hud_absorb_shield"/>
 	<texture path="guis/textures/restoration/hud_absorb_health"/>
 	<texture path="guis/textures/restoration/hud_absorb_stack_fg"/>

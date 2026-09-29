@@ -1,8 +1,10 @@
--- Restoration loader v3.5: dependency discovery and native residency checks.
+-- Restoration loader v3.8: residency verification and declaration/dependency coverage.
+-- Diagnostic build: reports ready-but-nonresident entries; never directly reloads them.
+-- No callback polling gate, fabricated ready state, or altered streaming settings.
 -- Install as mods/restoration-mod/supermod.lua and FULLY RESTART PAYDAY 2.
 -- This cannot be hot-loaded over v3.1/v3.2: their native request and wrappers
 -- may still be active. Restarting removes that pending state without altering it.
--- Setup.exec and Setup.block_exec are left untouched.
+-- Existing teardown hooks are retained; Setup.block_exec remains untouched.
 -- Asset registration remains early and deduplicated. Enemy resource loading
 -- runs after GameSetup.init_managers, using the original nil-callback path.
 -- Shared/faction lists and registered client debris resources remain intact.
@@ -11,8 +13,6 @@
 -- unit. Any live sequence reference to an absent unit still needs asset repair.
 -- References acquired here are retained for the process; this patch does not
 -- introduce resource unloading or pretend to fix the original native DiskError.
--- Dependency plans are cached; literal unit references are preloaded explicitly.
--- Object/model/material/texture edges are checked in DB; the engine loads them.
 -- Native I/O cannot be validated in this environment.
 RestorationSuperMod = RestorationSuperMod or {}
 local R = RestorationSuperMod
@@ -22,7 +22,7 @@ R.asset_loader = R.asset_loader or (R.supermod and R.supermod:GetAssetLoader())
 R.loaded_units = R.loaded_units or {}
 R.pending_groups = R.pending_groups or {}
 R.blocked_units = R.blocked_units or {}
-R.revision = "3.5"
+R.revision = "3.8"
 
 function R:ModPath()
     return self.mod_instance and self.mod_instance:GetPath() or "mods/restoration-mod/"
@@ -71,14 +71,9 @@ end
 -- ready. Only claim ownership after the native call returns and availability
 -- checks succeed; a Lua ready flag alone is not proof of resource availability.
 function R:LoadUnitList(name)
+    if self.stopping then return 0, 0, 0 end
     local list = self:UnitLists()[name]
     if not list then return nil, nil, "Unknown unit list: " .. tostring(name) end
-    if self.dependency_audit then
-        local plan = self.dependency_audit:plan(name, list)
-        local valid, why = self.dependency_audit:validate(plan)
-        if not valid then return nil, nil, why end
-        list = plan.loads
-    end
     local dres = managers and managers.dyn_resource
     if not dres then return nil, nil, "DynamicResourceManager is unavailable" end
     local loaded, skipped, missing = 0, 0, 0
@@ -93,8 +88,8 @@ function R:LoadUnitList(name)
             if self.blocked_units[key] then
                 return nil, nil, "Resource explicitly blocked: " .. key
             elseif not DB:has(ext, id) then
-                if self._declared_asset_keys and self._declared_asset_keys[key] then
-                    return nil, nil, "Declared asset has no DB entry after registration: " .. key
+                if (self._declared_asset_keys and self._declared_asset_keys[key]) or (self._required_units and self._required_units[path]) then
+                    return nil, nil, "Required asset has no DB entry after registration: " .. key
                 end
                 -- The original generated list includes absent base-game/legacy
                 -- paths. List membership alone does not make them available.
@@ -110,34 +105,29 @@ function R:LoadUnitList(name)
                 if (entry and not entry.ready) or (unloading and not unloading.ready) then
                     return nil, nil, "Resource still pending at world creation: " .. key
                 end
-                -- A ready Lua entry can outlive native residency. Rehydrate it
-                -- only at this synchronous setup boundary; preserve all owners.
-                -- Pending requests above are never modified or resubmitted.
-                local tracked = entry or unloading
-                if tracked and tracked.ready and not PackageManager:has(ext, id) then
-                    local ok, why = pcall(function()
-                        PackageManager:package(dres.DYN_RESOURCES_PACKAGE):load_temp_resource(ext, id, nil, true)
-                    end)
-                    if not ok then return nil, nil, tostring(why) end
-                    if not PackageManager:has(ext, id) then
-                        return nil, nil, "Native residency could not be restored: " .. key
-                    end
-                    log("[RestorationMod] Restored stale native residency: " .. key)
+                -- Diagnostic isolation: do not bypass DynamicResourceManager when
+                -- its cached state disagrees with native residency. Calling load()
+                -- again would only increment the ready entry, not repair it.
+                local candidate = entry or unloading
+                if candidate and candidate.ready and not PackageManager:has(ext, id) then
+                    return nil, nil, "RESIDENCY MISMATCH (native reload disabled): " .. key ..
+                        "; entry=" .. (entry and "active" or "queued_for_unload") ..
+                        "; ref_c=" .. tostring(candidate.ref_c) ..
+                        "; owned=" .. tostring(self:_Ownership()[key] == candidate) ..
+                        "; package=" .. tostring(dres.DYN_RESOURCES_PACKAGE)
                 end
-                -- A successful repair of our existing entry retains our ref.
-                if self:_Owned(dres, path, extension) then
-                    skipped = skipped + 1
-                else
+                -- Retain one reference per real manager entry, not per heist.
+                if self:_Ownership()[key] ~= entry or not entry then
                     local ok, reason = pcall(dres.load, dres, ext, id, dres.DYN_RESOURCES_PACKAGE, nil)
                     if not ok then return nil, nil, tostring(reason) end
-                    entry = self:_Entry(dres, path, extension)
-                    if not entry or not entry.ready or not PackageManager:has(ext, id) then
-                        return nil, nil, "Synchronous load did not make resource available: " .. key
+                end
+                entry = self:_Entry(dres, path, extension)
+                if not entry or not entry.ready or not PackageManager:has(ext, id) then
+                    return nil, nil, "Synchronous load did not make resource available: " .. key
                 end
                 self:_Ownership()[key] = entry
                 self.loaded_units[key] = true
                 loaded = loaded + 1
-                end
             end
         end
     end
@@ -145,31 +135,44 @@ function R:LoadUnitList(name)
 end
 
 function R:LoadAssetGroup(name)
+    if self.stopping then return false, "World teardown is in progress" end
     if not self:UnitLists()[name] then return false, "Unknown unit list: " .. tostring(name) end
     self.pending_groups[name] = true
+    self.active_groups = self.active_groups or {}
+    self.active_groups[name] = true
     -- Package loading precedes manager creation. Never load through the old manager.
     if self.game_managers_ready then return self:FlushPending() end
     return true
 end
 
-function R:BeginSetup()
+function R:EndSetup()
+    self.stopping = true
     self.game_managers_ready = false
+    self.pending_groups, self.active_groups = {}, {}
+    local authority = rawget(_G, "RestorationSequenceAuthority")
+    if authority and authority.suspend then authority:suspend(true) end
+    -- Preserve reference ownership for the engine's normal lifecycle; no manual unload.
+end
+
+function R:BeginSetup()
+    self.stopping = false
+    local authority = rawget(_G, "RestorationSequenceAuthority")
+    if authority and authority.resume_world then authority:resume_world() end
+    self.game_managers_ready = false
+    self.failure = nil
     self.active_groups = {}
     return self:PrepareAssetEntries()
 end
 
 function R:FlushPending()
+    if self.stopping then return true end
     local ready, reason = self:PrepareAssetEntries()
     if not ready then return false, reason end
     -- Require-time and menu constructor calls register only; no enemy preloading.
     if not self.game_managers_ready then return true end
     if self.failure then return false, self.failure end
-    local names = {"_always"}
-    self.active_groups = self.active_groups or {}
-    for name in pairs(self.pending_groups) do self.active_groups[name] = true end
-    for name in pairs(self.active_groups) do
-        if name ~= "_always" then names[#names + 1] = name end
-    end
+    local names = {"_discovered_dependencies", "_always"}
+    for name in pairs(self.active_groups or self.pending_groups) do names[#names + 1] = name end
     table.sort(names)
     for _, name in ipairs(names) do
         local count, _, why = self:LoadUnitList(name)
@@ -183,20 +186,80 @@ function R:FlushPending()
 end
 
 function R:OnManagersReady()
+    if self.stopping then return true end
     self.game_managers_ready = true
-    log("[RestorationMod] Loader v3.5: loading required units after game manager initialization")
+    log("[RestorationMod] Loader v3.8: native reload workaround DISABLED; normal post-manager preloading retained")
     return self:FlushPending()
 end
 
+-- Scan once when registrations change. Native unit/object dependencies remain
+-- the engine's responsibility. Also preload literal sequence-spawn unit paths,
+-- because a sequence may call unit_data/spawn long after its parent was loaded.
+function R:BuildDependencyList(ordered)
+    local lists = self:UnitLists()
+    local listed, extra = {}, {}
+    for name, list in pairs(lists) do
+        if name ~= "_discovered_dependencies" then
+            for _, item in ipairs(list) do listed[item[2] .. "|" .. item[1]] = true end
+        end
+    end
+    self._required_units = {}
+    local function add(path, required, dependency)
+        if type(path) ~= "string" or path == "" then return end
+        path = path:gsub("%.unit$", "")
+        if required then self._required_units[path] = true end
+        if dependency or not listed["unit|" .. path] then extra[path] = true end
+    end
+    for _, group in ipairs(ordered) do
+        local spec = group.spec
+        if spec.extension == "unit" then add(spec.dbpath, true) end
+        if spec.extension == "unit" or spec.extension == "sequence_manager" then
+            local source = spec.xml_convert and spec.xml_convert.path or spec.file
+            local file = io.open(source, "rb")
+            local bytes = file and file:read("*a")
+            if file then file:close() end
+            -- Binary resource dependencies are resolved by native package loading.
+            if bytes and not bytes:find("\0", 1, true) then
+                bytes = bytes:gsub("<!%-%-.-%-%->", "")
+                if spec.extension == "unit" then
+                    for tag in bytes:gmatch("<depends_on%s+[^>]*>") do
+                        local path = tag:match('unit%s*=%s*"([^"<>]+)"') or tag:match("unit%s*=%s*'([^'<>]+)'")
+                        if path then add(path, true, true) end
+                    end
+                else
+                    -- Includes quoted names in pick(...) and variable defaults;
+                    -- no sequence expression is evaluated during this scan.
+                    for path in bytes:gmatch("units/[%w_/%-%.]+") do
+                        path = path:gsub("%.unit$", "")
+                        if DB:has(Idstring("unit"), Idstring(path)) then add(path, false, true) end
+                    end
+                end
+            end
+        end
+    end
+    local paths = {};for path in pairs(extra) do paths[#paths + 1] = path end
+    table.sort(paths)
+    local list = {};for _, path in ipairs(paths) do list[#list + 1] = {path, "unit"} end
+    lists._discovered_dependencies = list
+    log("[RestorationMod] Added " .. #list .. " declared/dependency units missing from static preload lists")
+end
+
 function RestorationSuperMod:PrepareAssetEntries()
+    if self.stopping then return false, "World teardown is in progress" end
 	local loader = self.asset_loader
 	local specs = loader and loader.asset_specs
 	if type(specs) ~= "table" or not next(specs) then
 		return false, "asset specifications are not available yet"
 	end
-	if self._prepared_asset_specs == specs and self._prepared_asset_count == #specs then
-		return true
-	end
+    if self._prepared_asset_specs == specs and self._prepared_asset_count == #specs then
+        local registered = true
+        for _, spec in ipairs(specs) do
+            if not spec._entry_created or not DB:has(Idstring(spec.extension), Idstring(spec.dbpath)) then
+                registered = false;break
+            end
+        end
+        if registered then return true end
+    end
 	if not (DB and Idstring and BLT and BLT.AssetManager and blt) then
 		return false, "asset registration API is not available yet"
 	end
@@ -220,7 +283,7 @@ function RestorationSuperMod:PrepareAssetEntries()
 			ordered[#ordered + 1] = group
 		end
 		group.aliases[#group.aliases + 1] = spec
-		group.registered = group.registered or spec._entry_created
+		group.registered = group.registered or (spec._entry_created and DB:has(Idstring(spec.extension), Idstring(spec.dbpath)))
 		if convert and convert._done then group.converted = true end
 	end
 	for _, group in ipairs(ordered) do
@@ -271,9 +334,7 @@ function RestorationSuperMod:PrepareAssetEntries()
 	end
 	self._declared_asset_keys = {}
 	for key in pairs(groups) do self._declared_asset_keys[key] = true end
-    local reader = blt and blt.vm and blt.vm.dofile or dofile
-    local Dependencies = reader(self:ModPath() .. "lua/sc/core/asset_dependencies.lua")
-    self.dependency_audit = Dependencies.new(specs)
+	self:BuildDependencyList(ordered)
 	self._prepared_asset_specs = specs
 	self._prepared_asset_count = #specs
 	log(string.format("[RestorationMod] Asset registration: %d declarations, %d unique, %d created; repeat registrations suppressed",
@@ -283,8 +344,23 @@ end
 
 
 function R:InstallSetupHooks()
-    if GameSetup and not GameSetup._restoration_loader_v35_game then
-        GameSetup._restoration_loader_v35_game = true
+    self._teardown_hooks = self._teardown_hooks or setmetatable({}, {__mode="k"})
+    local function hook(class, name)
+        if not class or type(class[name]) ~= "function" then return end
+        local map = R._teardown_hooks[class] or {}; R._teardown_hooks[class] = map
+        if map[name] == class[name] then return end
+        local original = class[name]
+        local wrapped = function(setup, ...)
+            R:EndSetup()
+            return original(setup, ...)
+        end
+        map[name], class[name] = wrapped, wrapped
+    end
+    -- Hook before mission pre_destroy, manager destruction, or package unload.
+    for _, name in ipairs({"load_start_menu", "exec", "quit", "destroy", "unload_packages"}) do hook(Setup, name) end
+    for _, name in ipairs({"destroy", "gather_packages_to_unload", "unload_packages"}) do hook(GameSetup, name) end
+    if GameSetup and not GameSetup._restoration_loader_v38_game then
+        GameSetup._restoration_loader_v38_game = true
         local original_packages = GameSetup.load_packages
         function GameSetup:load_packages(...)
             local loader = RestorationSuperMod
@@ -302,10 +378,10 @@ function R:InstallSetupHooks()
         local original_game = GameSetup.init_game
         function GameSetup:init_game(...)
             local loader = RestorationSuperMod
+            local ready, reason = loader:FlushPending()
+            assert(ready, "[RestorationMod] Final resource check failed: " .. tostring(reason))
             assert(loader.game_managers_ready and not loader.failure,
                 "[RestorationMod] Cannot create world before required assets are available: " .. tostring(loader.failure))
-            local ok, reason = loader:FlushPending()
-            assert(ok, "[RestorationMod] Dependency verification before world creation failed: " .. tostring(reason))
             return original_game(self, ...)
         end
     end

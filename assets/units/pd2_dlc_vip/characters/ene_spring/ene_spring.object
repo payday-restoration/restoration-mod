@@ -6,11 +6,11 @@
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
-			<object name="c_capsule_body" collision_type="capsule" padding="-5" />
+			<object name="c_capsule_body" collision_type="capsule" padding="-5.55" />
 		</body>
 		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_head" collision_type="sphere" padding="-4" />
+			<object name="c_sphere_head" collision_type="sphere" padding="-4.44" />
 		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
@@ -19,7 +19,7 @@
 
 		<body name="body_helmet" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_helmet" collision_type="sphere" padding="-10" />
+			<object name="c_sphere_helmet" collision_type="sphere" padding="-11.1" />
 		</body>
 		<body name="body_helmet_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
@@ -62,67 +62,67 @@
 <!-- RAGDOLL -->
 		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
 			<object name="Neck" />
-			<object collision_type="sphere" mass="4" padding="-15" name="c_sphere_head_ragdoll"/>
+			<object collision_type="sphere" mass="4" padding="-16.65" name="c_sphere_head_ragdoll"/>
 		</body>
 
 		<body name="rag_Hips" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="1" collides_with="0" tag="flesh" restitution="0">
 			<object name="Hips" />
-			<object collision_type="capsule" mass="22" padding="-5" name="c_sphere_Hips" />
+			<object collision_type="capsule" mass="22" padding="-5.55" name="c_sphere_Hips" />
 		</body>
 
 		<body name="rag_Spine" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0">
 			<object name="Spine" />
-			<object collision_type="capsule" mass="18" padding="-5" name="c_sphere_Spine" />
+			<object collision_type="capsule" mass="18" padding="-5.55" name="c_sphere_Spine" />
 		</body>
 
 		 <body name="rag_Spine1" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0" enter_water_script_tag="medium">
 			<object name="Spine1" />
-			<object collision_type="capsule" mass="18" padding="-5" name="c_sphere_Spine1" />
+			<object collision_type="capsule" mass="18" padding="-5.55" name="c_sphere_Spine1" />
 		</body>
 
 		<body name="rag_Spine2" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0" enter_water_script_tag="medium">
 			<object name="Spine2" />
-			<object collision_type="capsule" mass="17" padding="-5" name="c_sphere_Spine2" />
+			<object collision_type="capsule" mass="17" padding="-5.55" name="c_sphere_Spine2" />
 		</body>
 
 		<body name="rag_RightUpLeg" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" collision_group="20" collides_with="30" tag="flesh" restitution="0">
 			<object name="RightUpLeg" />
-			<object collision_type="capsule" mass="22" padding="-5" name="c_capsule_RightUpLeg" />
+			<object collision_type="capsule" mass="22" padding="-5.55" name="c_capsule_RightUpLeg" />
 		</body>
 
 		<body name="rag_LeftUpLeg" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" collision_group="30" collides_with="20" tag="flesh" restitution="0">
 			<object name="LeftUpLeg" />
-			<object collision_type="capsule" mass="22" padding="-5" name="c_capsule_LeftUpLeg" />
+			<object collision_type="capsule" mass="22" padding="-5.55" name="c_capsule_LeftUpLeg" />
 		</body>
 
 		<body name="rag_RightArm" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" collides_with="1" tag="flesh" restitution="0">
 			<object name="RightArm" />
-			<object collision_type="capsule" mass="4" padding="-5" name="c_capsule_RightArm" />
+			<object collision_type="capsule" mass="4" padding="-5.55" name="c_capsule_RightArm" />
 		</body>
 
 		<body name="rag_LeftArm" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" collides_with="1" tag="flesh" restitution="0">
 			<object name="LeftArm" />
-			<object collision_type="capsule" mass="4" padding="-5" name="c_capsule_LeftArm" />
+			<object collision_type="capsule" mass="4" padding="-5.55" name="c_capsule_LeftArm" />
 		</body>
 
 		<body name="rag_RightForeArm" enabled="false" template="corpse" friction="0.02" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0" ang_damping="20" collision_group="4" collides_with="8" tag="flesh" restitution="0">
 			<object name="RightForeArm" />
-			<object collision_type="capsule" mass="3" padding="-5" name="c_capsule_RightForeArm" />
+			<object collision_type="capsule" mass="3" padding="-5.55" name="c_capsule_RightForeArm" />
 		</body>
 
 		<body name="rag_LeftForeArm" enabled="false" template="corpse" friction="0.02" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0" ang_damping="20" collision_group="6" collides_with="8" tag="flesh" restitution="0">
 			<object name="LeftForeArm" />
-			<object collision_type="capsule" mass="3" padding="-5" name="c_capsule_LeftForeArm" />
+			<object collision_type="capsule" mass="3" padding="-5.55" name="c_capsule_LeftForeArm" />
 		</body>
 
 		<body name="rag_RightLeg" enabled="false" template="corpse" friction="0.03" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="1" ang_damping="20" collision_group="21" collides_with="31" tag="flesh" restitution="0">
 			<object name="RightLeg" />
-			<object collision_type="capsule" mass="6" padding="-5" name="c_capsule_RightLeg" />
+			<object collision_type="capsule" mass="6" padding="-5.55" name="c_capsule_RightLeg" />
 		</body>
 
 		<body name="rag_LeftLeg" enabled="false" template="corpse" friction="0.03" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="1" ang_damping="20" collision_group="31" collides_with="21" tag="flesh" restitution="0">
 			<object name="LeftLeg" />
-			<object collision_type="capsule" mass="6" padding="-5" name="c_capsule_LeftLeg" />
+			<object collision_type="capsule" mass="6" padding="-5.55" name="c_capsule_LeftLeg" />
 		</body>
 	</bodies>
 

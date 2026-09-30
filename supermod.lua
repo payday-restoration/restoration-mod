@@ -178,19 +178,14 @@ function R:FlushPending()
     -- Require-time and menu constructor calls register only; no enemy preloading.
     if not self.game_managers_ready then return true end
     if self.failure then return false, self.failure end
-    local names = {"_discovered_dependencies", "_always"}
-    for name in pairs(self.active_groups or self.pending_groups) do names[#names + 1] = name end
-    table.sort(names)
-    for _, name in ipairs(names) do
-        log("[RestorationMod] Preload group BEGIN: " .. name)
-        local count, _, why = self:LoadUnitList(name)
-        if not count then return self:_Fail(why) end
-        self.pending_groups[name] = nil
-        log("[RestorationMod] Preload group END: " .. name .. "; loaded=" .. tostring(count))
-        if count > 0 or why > 0 then
-            log(string.format("[RestorationMod] Post-manager preload '%s': %d loaded; %d absent undeclared entries skipped", name, count, why))
-        end
-    end
+    -- BeardLib owns the dyn_resource hand-off now: the packages/res_load_* packages
+    -- declared in main.xml carry it, and GameSetup:load_packages picks the faction.
+    -- Nothing is submitted from here any more. BeardLib gates every load on DB:has
+    -- and on dyn_resource:has_resource, so a path with no DB entry is warned about
+    -- and skipped instead of access-violating inside dynamicresourcemanager, and a
+    -- path handed over twice is a no-op instead of a load that never completes.
+    -- LoadUnitList is kept for diagnostics; it is no longer called on the game path.
+    self.pending_groups = {}
     return true
 end
 
@@ -258,7 +253,14 @@ function RestorationSuperMod:PrepareAssetEntries()
 	local loader = self.asset_loader
 	local specs = loader and loader.asset_specs
 	if type(specs) ~= "table" or not next(specs) then
-		return false, "asset specifications are not available yet"
+		-- Nothing left for SuperBLT to register: every asset declaration is a
+		-- BeardLib package now - main.xml plus packages/res/**, loaded from
+		-- Corepre.lua and GameSetup:load_packages. An empty spec list is success,
+		-- not a deferral, and the setup hooks at the bottom of this file assert on
+		-- what this returns.
+		self._declared_asset_keys = {}
+		self._required_units = nil
+		return true
 	end
     if self._prepared_asset_specs == specs and self._prepared_asset_count == #specs then
         local registered = true

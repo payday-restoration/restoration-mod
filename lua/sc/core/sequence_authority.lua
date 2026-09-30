@@ -1,6 +1,7 @@
 -- Restoration ENEMY sequence authority: revision 4.5, wire protocol 4.
 -- Install on HOST and all clients; restart. Includes 4.1 join lifecycle fixes.
 -- Full hidden-chat messages are capped at 255 bytes, including JSON escaping.
+-- perf1: unit/registry housekeeping runs at 10Hz; packet draining stays per-frame.
 -- 4.5: native defaults/callbacks and menu units are untouched; only managed appearance is replayed.
 -- Body/ragdoll chains remain native; late corpse links are skipped.
 -- Scope: enemy appearance selections and bound appearance children.
@@ -15,7 +16,7 @@ if existing then
  assert(type(existing)=='table' and type(existing.install)=='function', '[SequenceAuthority] Existing authority module is incomplete; restart with the complete integrated build')
  return existing
 end
-local A = {VERSION=4, REVISION='4.5', HANDSHAKE_TIMEOUT=45, MAX_PARTS=4096, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
+local A = {VERSION=4, REVISION='4.5-perf1', HANDSHAKE_TIMEOUT=45, MAX_PARTS=4096, CHUNK=600, MAX_WIRE=524288, MAX_HISTORY=8192, RETRY=1}
 local unpack=unpack
 local function pack(...) return {n=select('#',...),...} end
 local function weak() return setmetatable({},{__mode='k'}) end
@@ -72,6 +73,7 @@ function A:reset_world()
  self.queued={}
  self.out_head,self.out_tail=1,0
  self.loading_assets={}
+ self._next_unit_sweep=0
  self.native_scopes=weak()
  self.global_serial=0
  self.capture,self.replaying,self.spawning=nil,nil,nil
@@ -1146,6 +1148,9 @@ function A:update()
    w.retry=clock()+(clock()-w.started>self.HANDSHAKE_TIMEOUT and 10 or self.RETRY)
   end
  end
+ local sweep_time=clock()
+ if sweep_time>=(self._next_unit_sweep or 0) then
+  self._next_unit_sweep=sweep_time+0.1
  for u,s in pairs(self.units) do
   if not alive_unit(u) then
    if s.token then self.waiting[s.token]=nil end
@@ -1173,6 +1178,7 @@ function A:update()
  end
  for key,part in pairs(self.parts) do if clock()-part.time>15 then self.parts[key]=nil end end
  for key,u in pairs(self.registry)do if not alive_unit(u) or self:key(u)~=key then self.registry[key]=nil end end
+ end
  if LuaNetworking then
   for _=1,16 do
    local item=self.outgoing[self.out_head];if not item then break end

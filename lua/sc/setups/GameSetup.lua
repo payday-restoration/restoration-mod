@@ -79,18 +79,45 @@ function GameSetup:load_packages()
 		end
     end
 
-	-- Faction assets now come from SuperBLT scripted asset groups (see supermod.xml and
-	-- superblt/<faction>.xml) instead of per-difficulty packages.
-	local function load_faction_assets(faction)
-		if not RestorationSuperMod then
-			log("[RestorationMod] asset group '" .. faction .. "' NOT loaded: RestorationSuperMod is nil - supermod.lua never ran")
-			return
+	-- Faction assets are BeardLib packages. Registration already happened at boot
+	-- from Corepre.lua; what runs here is the dyn_resource hand-off, split the same
+	-- way lua/sc/superblt_units.lua splits it: one always-on list plus one list per
+	-- faction. A path in the always list is left out of the faction lists, and
+	-- BeardLib skips an asset it already holds, so nothing is handed over twice.
+	local restoration_always_packages = {
+		"packages/res_load_always",
+		"packages/res_pkg_america_misc",
+		"packages/res_pkg_gensec_misc",
+		"packages/res_pkg_mcshay_misc",
+		"packages/res_pkg_murkywater_misc",
+		"packages/res_pkg_omnia_misc",
+	}
+
+	local restoration_always_loaded = false
+
+	local function load_restoration_package(package)
+		if not PackageManager:package_exists(package) then
+			log("[RestorationMod] package does not exist: " .. package .. " - not declared in main.xml?")
+			return false
 		end
 
-		local ok, reason = RestorationSuperMod:LoadAssetGroup(faction)
-		if not ok then
-			log("[RestorationMod] asset group '" .. faction .. "' NOT loaded: " .. tostring(reason))
+		if not PackageManager:loaded(package) then
+			log("[RestorationMod] loading " .. package)
+			PackageManager:load(package)
 		end
+
+		return true
+	end
+
+	local function load_faction_assets(faction)
+		if not restoration_always_loaded then
+			restoration_always_loaded = true
+			for _, package in ipairs(restoration_always_packages) do
+				load_restoration_package(package)
+			end
+		end
+
+		load_restoration_package("packages/res_load_" .. faction)
 	end
 
     local a = tweak_data.levels.ai_groups.america

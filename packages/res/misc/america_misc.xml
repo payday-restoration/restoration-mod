@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- Restoration: BeardLib registration package, generated from
+     superblt/misc/america_misc.xml. Registration only - no load flags here.
+     Corepre.lua loads this so the DB entries exist at boot and the
+     mod files win over the base game. What actually gets handed to
+     dyn_resource lives in packages/res/load/, keyed by faction. -->
+<table directory="assets">
+	<material_config path="units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc_contour"/>
+	<texture         path="units/payday2/characters/shared_textures/ene_city_heavy_df"/>
+	<texture         path="units/payday2/characters/shared_textures/ene_city_heavy_nm"/>
+	<texture         path="units/payday2/characters/shared_textures/fbi_heads_atlas_df"/>
+	<texture         path="units/payday2/characters/shared_textures/helmets_city_df"/>
+	<texture         path="units/payday2/characters/shared_textures/swat_city_df"/>
+	<texture         path="units/payday2/characters/shared_textures/swat_fbi_body_df"/>
+</table>

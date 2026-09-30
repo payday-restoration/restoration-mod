@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Restoration: BeardLib registration package, generated from
+     superblt/levels/environments.xml. Registration only - no load flags here.
+     Corepre.lua loads this so the DB entries exist at boot and the
+     mod files win over the base game. What actually gets handed to
+     dyn_resource lives in packages/res/load/, keyed by faction. -->
+<table directory="assets">
+	<environment path="environments/pd2_env_mid_day/pd2_env_mid_day"/>
+	<environment path="environments/pd2_env_night/pd2_env_night"/>
+</table>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- Restoration: BeardLib registration package, generated from
+     superblt/misc/omnia_misc.xml. Registration only - no load flags here.
+     Corepre.lua loads this so the DB entries exist at boot and the
+     mod files win over the base game. What actually gets handed to
+     dyn_resource lives in packages/res/load/, keyed by faction. -->
+<table directory="assets">
+	<model            path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet"/>
+	<object           path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet"/>
+	<unit             path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet"/>
+	<cooked_physics   path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck"/>
+	<model            path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck"/>
+	<object           path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck"/>
+	<unit             path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck"/>
+	<cooked_physics   path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat"/>
+	<model            path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat"/>
+	<object           path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat"/>
+	<unit             path="units/pd2_mod_omnia/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat"/>
+	<texture          path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/bulldozer_medic_df"/>
+	<cooked_physics   path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/ene_bulldozer_medic"/>
+	<material_config  path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/ene_bulldozer_medic"/>
+	<model            path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/ene_bulldozer_medic"/>
+	<object           path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/ene_bulldozer_medic"/>
+	<sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/ene_bulldozer_medic"/>
+	<unit             path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/ene_bulldozer_medic"/>
+	<material_config  path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/ene_bulldozer_medic_contour"/>
+	<unit             path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/ene_bulldozer_medic_husk"/>
+	<model            path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet"/>
+	<object           path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet"/>
+	<unit             path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet"/>
+	<cooked_physics   path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck"/>
+	<model            path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck"/>
+	<object           path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck"/>
+	<unit             path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck"/>
+	<cooked_physics   path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat"/>
+	<model            path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat"/>
+	<object           path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat"/>
+	<unit             path="units/pd2_mod_omnia/characters/ene_bulldozer_medic/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat"/>
+</table>

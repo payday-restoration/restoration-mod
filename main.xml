@@ -839,6 +839,61 @@
 	<Package id="packages/classicmovies" file="classicmovies.xml" use_clbk="self:LoadClassicMovies"/>
 	<Package id="packages/custom_fonts" file="fonts.xml" use_clbk="self:LoadFonts"/>
 
+	<!--///RESTORATION ASSET PACKAGES\\\-->
+	<!-- Every declaration the mod used to make through SuperBLT is a BeardLib
+	     package now, one per original file. The packages/res/<group>/ files are
+	     registration only and Corepre.lua loads them at boot, which is what the
+	     old dyn_package="false" groups did. The packages/res/load/ files carry
+	     the dyn_resource hand-off and GameSetup:load_packages picks the faction.
+	     -->
+
+	<!-- faction registrations -->
+	<Package id="packages/res_factions_america" file="packages/res/factions/america.xml"/>
+	<Package id="packages/res_factions_fbi" file="packages/res/factions/fbi.xml"/>
+	<Package id="packages/res_factions_federales" file="packages/res/factions/federales.xml"/>
+	<Package id="packages/res_factions_lapd" file="packages/res/factions/lapd.xml"/>
+	<Package id="packages/res_factions_murkywater" file="packages/res/factions/murkywater.xml"/>
+	<Package id="packages/res_factions_nypd" file="packages/res/factions/nypd.xml"/>
+	<Package id="packages/res_factions_russia" file="packages/res/factions/russia.xml"/>
+	<Package id="packages/res_factions_zombie" file="packages/res/factions/zombie.xml"/>
+
+	<!-- level worlds, instances and environments: NOT declared. All 90 of those
+	     paths are already declared in addSC_env_levels.xml (packages/scenvlevels,
+	     loaded from Corepre.lua). Declaring them twice means two db_create_entry
+	     calls for the same key, and neither BeardLib's AddFile nor SuperBLT's
+	     BLTAssetManager:CreateEntry dedupes - the old SuperBLT loader did. The
+	     generated packages/res/levels/*.xml files are kept on disk for reference
+	     only; superblt/levels/*.xml was stale. -->
+
+	<!-- always-on registrations -->
+	<Package id="packages/res_misc_america_misc" file="packages/res/misc/america_misc.xml"/>
+	<Package id="packages/res_misc_miscassets" file="packages/res/misc/miscassets.xml"/>
+	<Package id="packages/res_misc_miscmutators" file="packages/res/misc/miscmutators.xml"/>
+	<Package id="packages/res_misc_omnia_misc" file="packages/res/misc/omnia_misc.xml"/>
+	<Package id="packages/res_misc_outfits" file="packages/res/misc/outfits.xml"/>
+	<Package id="packages/res_misc_rex_gold" file="packages/res/misc/rex_gold.xml"/>
+	<Package id="packages/res_misc_scassets" file="packages/res/misc/scassets.xml"/>
+	<Package id="packages/res_misc_npcfixes" file="packages/res/misc/npcfixes.xml"/>
+
+	<!-- pre-existing BeardLib misc packages: these were on disk but undeclared -->
+	<Package id="packages/res_pkg_america_misc" file="packages/america_diff/america_misc.xml"/>
+	<Package id="packages/res_pkg_gensec_misc" file="packages/america_diff/gensec_misc.xml"/>
+	<Package id="packages/res_pkg_mcshay_misc" file="packages/lapd_diff/mcshay_misc.xml"/>
+	<Package id="packages/res_pkg_murkywater_misc" file="packages/murkywater_diff/murkywater_misc.xml"/>
+	<Package id="packages/res_pkg_omnia_misc" file="packages/omnia_diff/omnia_misc.xml"/>
+
+	<!-- dyn_resource hand-off, keyed by faction; see lua/sc/superblt_units.lua -->
+	<Package id="packages/res_load_always" file="packages/res/load/always.xml"/>
+	<Package id="packages/res_load_america" file="packages/res/load/america.xml"/>
+	<Package id="packages/res_load_fbi" file="packages/res/load/fbi.xml"/>
+	<Package id="packages/res_load_federales" file="packages/res/load/federales.xml"/>
+	<Package id="packages/res_load_lapd" file="packages/res/load/lapd.xml"/>
+	<Package id="packages/res_load_murkywater" file="packages/res/load/murkywater.xml"/>
+	<Package id="packages/res_load_nypd" file="packages/res/load/nypd.xml"/>
+	<Package id="packages/res_load_russia" file="packages/res/load/russia.xml"/>
+	<Package id="packages/res_load_zombie" file="packages/res/load/zombie.xml"/>
+
+
 	<!--///DIFF PACKAGES ZOMBIE\\\-->
 
 	<!--///DIFF PACKAGES REAPERS\\\-->

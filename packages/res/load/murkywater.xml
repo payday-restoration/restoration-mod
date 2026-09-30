@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- Restoration: BeardLib load package for 'murkywater', generated from
+     lua/sc/superblt_units.lua. from_db="true" gates on the DB entry
+     rather than a file under assets/, so vanilla paths load as well;
+     registration itself happens in packages/res/ at boot. Entries
+     already covered by res_load_always are left out of the faction
+     lists so nothing is handed over twice. -->
+<table directory="assets">
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" from_db="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" from_db="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk" from_db="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new" from_db="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new_husk" from_db="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" from_db="true"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_husk" from_db="true"/>
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky" from_db="true"/>
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky_husk" from_db="true"/>
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" from_db="true"/>
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky_husk" from_db="true"/>
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky" from_db="true"/>
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky_husk" from_db="true"/>
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky" from_db="true"/>
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870_hard/ene_murky_fbi_tank_r870_hard" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870_hard/ene_murky_fbi_tank_r870_hard_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_rpg_grunt/ene_rpg_grunt" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_rpg_grunt/ene_rpg_grunt_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper_husk" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted" from_db="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted_husk" from_db="true"/>
+</table>

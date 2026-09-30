@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!-- Restoration: BeardLib registration package, generated from
+     superblt/levels/instances.xml. Registration only - no load flags here.
+     Corepre.lua loads this so the DB entries exist at boot and the
+     mod files win over the base game. What actually gets handed to
+     dyn_resource lives in packages/res/load/, keyed by faction. -->
+<table directory="assets">
+	<mission   path="levels/instances/shared/obj_skm/world/world"/>
+	<mission   path="levels/instances/shared/skm_negotiator/world/world"/>
+	<mission   path="levels/instances/unique/are_security_room/world/world"/>
+	<continent path="levels/instances/unique/bex/bex_drill/world/world"/>
+	<mission   path="levels/instances/unique/bex/bex_drill/world/world"/>
+	<mission   path="levels/instances/unique/bex/bex_security_room/world/world"/>
+	<continent path="levels/instances/unique/bex/bex_security_room2/world/world"/>
+	<mission   path="levels/instances/unique/bex/bex_security_room2/world/world"/>
+	<mission   path="levels/instances/unique/born/born_armory/world/world"/>
+	<mission   path="levels/instances/unique/born/born_truck/world/world"/>
+	<mission   path="levels/instances/unique/chas/chas_security_room/world/world"/>
+	<mission   path="levels/instances/unique/corp/corp_security_room/world/world"/>
+	<mission   path="levels/instances/unique/dah/dah_security_room/world/world"/>
+	<mission   path="levels/instances/unique/dah/dah_security_room2/world/world"/>
+	<mission   path="levels/instances/unique/dah/dah_security_room3/world/world"/>
+	<mission   path="levels/instances/unique/dah/dah_security_room4/world/world"/>
+	<mission   path="levels/instances/unique/dah/dah_security_room5/world/world"/>
+	<mission   path="levels/instances/unique/fex/fex_security_room_left/world/world"/>
+	<mission   path="levels/instances/unique/fex/fex_security_room_right/world/world"/>
+	<continent path="levels/instances/unique/hlm_random_left002/world/world"/>
+	<mission   path="levels/instances/unique/hlm_random_left002/world/world"/>
+	<mission   path="levels/instances/unique/hlm_random_left003/world/world"/>
+	<continent path="levels/instances/unique/hlm_random_right002/world/world"/>
+	<mission   path="levels/instances/unique/hlm_random_right002/world/world"/>
+	<mission   path="levels/instances/unique/hlm_random_right003/world/world"/>
+	<mission   path="levels/instances/unique/hlm_vault/world/world"/>
+	<mission   path="levels/instances/unique/mex/mex_pump/world/world"/>
+	<mission   path="levels/instances/unique/mex/mex_tanker/world/world"/>
+	<mission   path="levels/instances/unique/mex/mex_vault/world/world"/>
+	<mission   path="levels/instances/unique/mus_security_room/world/world"/>
+	<mission   path="levels/instances/unique/pbr/pbr_mountain_surface/world/world"/>
+	<mission   path="levels/instances/unique/pbr/pbr_plane_cargo/world/world"/>
+	<continent path="levels/instances/unique/pent/pent_coke/world/world"/>
+	<mission   path="levels/instances/unique/pent/pent_helicopter_extraction/world/world"/>
+	<mission   path="levels/instances/unique/pent/pent_security_room/world/world"/>
+	<mission   path="levels/instances/unique/pent/pent_security_room_altdoor/world/world"/>
+	<mission   path="levels/instances/unique/red/red_camera_room/world/world"/>
+	<mission   path="levels/instances/unique/sah/sah_entrance_detector/world/world"/>
+	<mission   path="levels/instances/unique/sand/sand_security_room/world/world"/>
+	<mission   path="levels/instances/unique/sub_sewer_grate/world/world"/>
+	<mission   path="levels/instances/unique/sub_sewer_sidespawn/world/world"/>
+	<mission   path="levels/instances/unique/trai/trai_main_wagon/world/world"/>
+	<mission   path="levels/instances/unique/vit/vit_security_room/world/world"/>
+</table>

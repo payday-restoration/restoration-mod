@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!-- Restoration: BeardLib registration package, generated from
+     superblt/levels/narratives.xml. Registration only - no load flags here.
+     Corepre.lua loads this so the DB entries exist at boot and the
+     mod files win over the base game. What actually gets handed to
+     dyn_resource lives in packages/res/load/, keyed by faction. -->
+<table directory="assets">
+	<continent path="levels/narratives/bain/big/world/world"/>
+	<mission   path="levels/narratives/blaine/deep/world/world"/>
+	<continent path="levels/narratives/classics/flat/art_dhruva/art_dhruva"/>
+	<continent path="levels/narratives/classics/flat/collision/collision"/>
+	<continent path="levels/narratives/classics/flat/lights/lights"/>
+	<continent path="levels/narratives/classics/flat/world/world"/>
+	<mission   path="levels/narratives/classics/flat/world/world"/>
+	<mission   path="levels/narratives/classics/man/world/world"/>
+	<continent path="levels/narratives/continental/spa/regin_art/regin_art"/>
+	<mission   path="levels/narratives/continental/spa/regin_art/regin_art"/>
+	<continent path="levels/narratives/continental/spa/world/world"/>
+	<mission   path="levels/narratives/continental/spa/world/world"/>
+	<mission   path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world"/>
+	<continent path="levels/narratives/elephant/born/world/world"/>
+	<continent path="levels/narratives/elephant/mad/art2/art2"/>
+	<continent path="levels/narratives/elephant/mad/collision/collision"/>
+	<continent path="levels/narratives/elephant/mad/world/world"/>
+	<mission   path="levels/narratives/elephant/mad/world/world"/>
+	<continent path="levels/narratives/h_firestarter/stage_3/world/world"/>
+	<mission   path="levels/narratives/h_firestarter/stage_3/world/world"/>
+	<continent path="levels/narratives/jiu/chas/world/world"/>
+	<continent path="levels/narratives/locke/brb/art/art"/>
+	<continent path="levels/narratives/locke/brb/christmas_props/christmas_props"/>
+	<continent path="levels/narratives/locke/brb/props/props"/>
+	<continent path="levels/narratives/locke/brb/world/world"/>
+	<continent path="levels/narratives/locke/des/art/art"/>
+	<mission   path="levels/narratives/locke/des/art/art"/>
+	<continent path="levels/narratives/locke/des/props/props"/>
+	<mission   path="levels/narratives/locke/des/props/props"/>
+	<continent path="levels/narratives/locke/des/world/world"/>
+	<continent path="levels/narratives/locke/sah/world/world"/>
+	<continent path="levels/narratives/locke/vit/art/art"/>
+	<continent path="levels/narratives/locke/vit/backdrop/backdrop"/>
+	<continent path="levels/narratives/locke/vit/collision/collision"/>
+	<continent path="levels/narratives/locke/vit/lights/lights"/>
+	<continent path="levels/narratives/locke/vit/props/props"/>
+	<continent path="levels/narratives/locke/vit/props1/props1"/>
+	<continent path="levels/narratives/locke/vit/world/world"/>
+	<mission   path="levels/narratives/locke/vit/world/world"/>
+	<continent path="levels/narratives/shayu/pent/world/world"/>
+	<mission   path="levels/narratives/shayu/pent/world/world"/>
+	<continent path="levels/narratives/skm/skm_bex/world/world"/>
+	<continent path="levels/narratives/vlad/bex/world/world"/>
+	<continent path="levels/narratives/vlad/peta/stage1/world/world"/>
+	<continent path="levels/narratives/vlad/pines/world/world"/>
+</table>

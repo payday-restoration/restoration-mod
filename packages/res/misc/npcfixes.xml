@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!-- Restoration: BeardLib registration package, generated from
+     supermod.xml's inline <assets> block. Registration only - no load flags here.
+     Corepre.lua loads this so the DB entries exist at boot and the
+     mod files win over the base game. What actually gets handed to
+     dyn_resource lives in packages/res/load/, keyed by faction. -->
+<table directory="assets">
+	<!-- settings/decals is modified only by restorationmod_decals_tweak.xml. -->
+	<object           path="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/npc_male_yufuwang_armored"/>
+	<unit             path="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/npc_male_yufuwang_armored"/>
+	<unit             path="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/npc_male_yufuwang_armored_husk"/>
+	<unit             path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2"/>
+	<unit             path="units/payday2/characters/ene_secret_service_2/ene_secret_service_2_husk"/>
+	<material_config  path="units/pd2_dlc_bph/characters/civ_male_locke_escort/civ_male_locke_escort_contour"/>
+	<unit             path="units/pd2_dlc_spa/characters/ene_sniper_3/ene_sniper_3_husk"/>
+	<unit             path="units/payday2/characters/ene_fbi_3/ene_fbi_3"/>
+	<unit             path="units/payday2/characters/ene_fbi_3/ene_fbi_3_husk"/>
+	<model            path="units/pd2_dlc_hvh/characters/ene_cop_hvh_3/ene_cop_hvh_3"/>
+	<model            path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"/>
+	<unit             path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"/>
+	<unit             path="units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3_husk"/>
+	<unit             path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1"/>
+	<unit             path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk"/>
+	<object           path="units/pd2_dlc_flat/characters/npc_chavez/npc_chavez"/>
+	<object           path="units/pd2_dlc_flat/characters/npc_jamaican/npc_jamaican"/>
+	<unit             path="units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1"/>
+	<unit             path="units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk"/>
+	<unit             path="units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2"/>
+	<unit             path="units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk"/>
+	<material_config  path="units/pd2_dlc_deep/characters/ene_deep_security_1/ene_deep_security_1"/>
+	<material_config  path="units/pd2_dlc_deep/characters/ene_deep_security_1/ene_deep_security_1_contour"/>
+	<unit             path="units/pd2_dlc_deep/characters/ene_deep_security_1/ene_deep_security_1"/>
+	<unit             path="units/pd2_dlc_deep/characters/ene_deep_security_1/ene_deep_security_1_husk"/>
+	<material_config  path="units/pd2_dlc_deep/characters/ene_deep_security_2/ene_deep_security_2"/>
+	<material_config  path="units/pd2_dlc_deep/characters/ene_deep_security_2/ene_deep_security_2_contour"/>
+	<unit             path="units/pd2_dlc_deep/characters/ene_deep_security_2/ene_deep_security_2"/>
+	<unit             path="units/pd2_dlc_deep/characters/ene_deep_security_2/ene_deep_security_2_husk"/>
+	<material_config  path="units/pd2_dlc_deep/characters/ene_deep_security_3/ene_deep_security_3"/>
+	<material_config  path="units/pd2_dlc_deep/characters/ene_deep_security_3/ene_deep_security_3_contour"/>
+	<unit             path="units/pd2_dlc_deep/characters/ene_deep_security_3/ene_deep_security_3"/>
+	<unit             path="units/pd2_dlc_deep/characters/ene_deep_security_3/ene_deep_security_3_husk"/>
+	<object           path="units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"/>
+	<sequence_manager path="units/pd2_dlc_pal/props/pal_prop_flames_of_love_boombox/pal_prop_flames_of_love_boombox"/>
+	<nav_data         path="levels/narratives/dentist/hox/stage_2/nav_manager_data"/>
+	<nav_data         path="levels/narratives/dentist/mia/stage2/nav_manager_data"/>
+	<nav_data         path="levels/narratives/e_framing_frame/stage_1/nav_manager_data"/>
+	<nav_data         path="levels/narratives/e_framing_frame/stage_3/nav_manager_data"/>
+	<nav_data         path="levels/narratives/skm/skm_big2/nav_manager_data"/>
+</table>

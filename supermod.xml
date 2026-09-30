@@ -8,147 +8,17 @@
 		</group>
 	</hooks>
 	<tweak definition="restorationmod_network_tweak.xml"/>
-	<!-- <tweak definition="restorationmod_postprocessor_tweak.xml"/> -->
+	<tweak definition="restorationmod_postprocessor_tweak.xml"/>
 	<tweak definition="fps_animation_state_machine.xml" />
 	<tweak definition="fps_animation_states.xml" />
 	<tweak definition="fps_animation_subset.xml" />
 	<tweak definition="std.animation_states"/>
 	<tweak definition="std.animation_subset"/>
 
-	<!-- Troublesome NPC assets go here! -->
-	<assets base_path="assets/">
-		<!-- decal mesh shit -->
-		<file name="settings/decals.decals" force="true"/>
+	<!-- Modify bundled decals without replacing the full asset. -->
+	<tweak definition="restorationmod_decals_tweak.xml"/>
 
-		<!-- character fixes and changes -->
-		<group name="units/" dyn_package="false">
-			<!-- yufu wang hitboxes -->
-			<group :name="pd2_dlc_pent/characters/npc_male_yufuwang_armored/">
-				<file :name="npc_male_yufuwang_armored.object"/>
-				<file :name="npc_male_yufuwang_armored.unit"/>
-				<file :name="npc_male_yufuwang_armored_husk.unit"/>
-			</group>
-			<group :name="payday2/characters/ene_secret_service_2/">
-				<file :name="ene_secret_service_2.unit"/>
-				<file :name="ene_secret_service_2_husk.unit"/>
-			</group>
-			<group :name="pd2_dlc_bph/characters/civ_male_locke_escort/">
-				<file :name="civ_male_locke_escort_contour.material_config"/>
-			</group>
-			<!-- consistent casino guard's face -->
-			<group :name="pd2_dlc_spa/characters/ene_sniper_3/">
-				<file :name="ene_sniper_3_husk.unit"/>
-			</group>
-			<group :name="payday2/characters/ene_fbi_3/">
-				<file :name="ene_fbi_3.unit"/>
-				<file :name="ene_fbi_3_husk.unit"/>
-			</group>
-			<group :name="pd2_dlc_hvh/characters/ene_cop_hvh_3/">
-				<file :name="ene_cop_hvh_3.model"/>
-			</group>
-			<group :name="pd2_dlc_hvh/characters/ene_fbi_hvh_3/">
-				<file :name="ene_fbi_hvh_3.model"/>
-				<file :name="ene_fbi_hvh_3.unit"/>
-				<file :name="ene_fbi_hvh_3_husk.unit"/>
-			</group>
-			<group :name="payday2/characters/ene_fbi_boss_1/">
-				<file :name="ene_fbi_boss_1.unit"/>
-				<file :name="ene_fbi_boss_1_husk.unit"/>
-			</group>
-			<group :name="pd2_dlc_flat/characters/">
-				<file :name="npc_chavez/npc_chavez.object"/>
-				<file :name="npc_jamaican/npc_jamaican.object"/>
-			</group>
-			<group :name="pd2_dlc_pent/characters/">
-				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1.unit"/>
-				<file :name="ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk.unit"/>
-				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2.unit"/>
-				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk.unit"/>
-			</group>
-			<group :name="pd2_dlc_deep/characters/">
-				<file :name="ene_deep_security_1/ene_deep_security_1.material_config"/>
-				<file :name="ene_deep_security_1/ene_deep_security_1_contour.material_config"/>
-				<file :name="ene_deep_security_1/ene_deep_security_1.unit"/>
-				<file :name="ene_deep_security_1/ene_deep_security_1_husk.unit"/>
-				<file :name="ene_deep_security_2/ene_deep_security_2.material_config"/>
-				<file :name="ene_deep_security_2/ene_deep_security_2_contour.material_config"/>
-				<file :name="ene_deep_security_2/ene_deep_security_2.unit"/>
-				<file :name="ene_deep_security_2/ene_deep_security_2_husk.unit"/>
-				<file :name="ene_deep_security_3/ene_deep_security_3.material_config"/>
-				<file :name="ene_deep_security_3/ene_deep_security_3_contour.material_config"/>
-				<file :name="ene_deep_security_3/ene_deep_security_3.unit"/>
-				<file :name="ene_deep_security_3/ene_deep_security_3_husk.unit"/>
-			</group>
-			<group :name="payday2/weapons/wpn_npc_beretta92/">
-				<file :name="wpn_npc_beretta92.object"/>
-			</group>
-			<!-- object stuff -->
-			<group :name="pd2_dlc_pal/props/pal_prop_flames_of_love_boombox/">
-				<xml :name="pal_prop_flames_of_love_boombox.sequence_manager" from_type="custom_xml" to_type="binary"/> <!-- https://www.youtube.com/watch?v=D_e9GT9PqPQ -->
-			</group>
-			<!-- Improve navigation data -->
-			<group name="levels/narratives/">
-				<file :name="dentist/hox/stage_2/nav_manager_data.nav_data"/>
-				<file :name="dentist/mia/stage2/nav_manager_data.nav_data"/>
-				<file :name="e_framing_frame/stage_1/nav_manager_data.nav_data"/>
-				<file :name="e_framing_frame/stage_3/nav_manager_data.nav_data"/>
-				<file :name="skm/skm_big2/nav_manager_data.nav_data"/>
-			</group>
-		<!--
-			<group :name="payday2/equipment/gen_interactable_sec_safe_1x1_titan/">
-				<file :name="gen_interactable_sec_safe_1x1_titan.object"/>
-				<file :name="gen_interactable_sec_safe_1x1_titan.unit"/>
-			</group>
-			<group :name="payday2/equipment/gen_interactable_sec_safe_1x05_titan/">
-				<file :name="gen_interactable_sec_safe_1x05_titan.object"/>
-				<file :name="gen_interactable_sec_safe_1x05_titan.unit"/>
-			</group>
-			<group :name="payday2/equipment/gen_interactable_sec_safe_2x1_titan/">
-				<file :name="gen_interactable_sec_safe_2x1_titan.object"/>
-				<file :name="gen_interactable_sec_safe_2x1_titan.unit"/>
-			</group>
-			<group :name="payday2/equipment/gen_interactable_sec_safe_2x05_titan/">
-				<file :name="gen_interactable_sec_safe_2x05_titan.object"/>
-				<file :name="gen_interactable_sec_safe_2x05_titan.unit"/>
-			</group>
-			<group :name="payday2/equipment/gen_interactable_sec_safe_05x05_titan/">
-				<file :name="gen_interactable_sec_safe_05x05_titan.object"/>
-				<file :name="gen_interactable_sec_safe_05x05_titan.unit"/>
-			</group>
-					-->
-		</group>
-
-
-
-	</assets>
-
-
-	<!-- ///ASSET GROUPS\\\ -->
-	<!-- One file per faction under superblt/factions/, everything always-on under
-	     superblt/misc/. Every group registers its DB entries at mod init and dyn-loads
-	     nothing; per-faction loading is driven from lua/sc/superblt_units.lua via
-	     RestorationSuperMod:LoadAssetGroup. Environments, level worlds and the logo stay
-	     on BeardLib - see the <Package> lines in main.xml. -->
-
-	<:include src="superblt/factions/america.xml"/>
-	<:include src="superblt/factions/fbi.xml"/>
-	<:include src="superblt/factions/federales.xml"/>
-	<:include src="superblt/factions/lapd.xml"/>
-	<:include src="superblt/factions/murkywater.xml"/>
-	<:include src="superblt/factions/nypd.xml"/>
-	<:include src="superblt/factions/russia.xml"/>
-	<:include src="superblt/factions/zombie.xml"/>
-
-
-	<:include src="superblt/misc/america_misc.xml"/>
-	<:include src="superblt/misc/gensec_misc.xml"/>
-	<:include src="superblt/misc/mcshay_misc.xml"/>
-	<:include src="superblt/misc/miscassets.xml"/>
-	<:include src="superblt/misc/miscmutators.xml"/>
-	<:include src="superblt/misc/murkywater_misc.xml"/>
-	<:include src="superblt/misc/omnia_misc.xml"/>
-	<:include src="superblt/misc/outfits.xml"/>
-	<:include src="superblt/misc/rex_gold.xml"/>
-	<:include src="superblt/misc/scassets.xml"/>
+	<!-- Other asset declarations remain in the BeardLib packages/res/ files.
+	     The setup hooks and animation/network tweak definitions remain above. -->
 
 </mod>

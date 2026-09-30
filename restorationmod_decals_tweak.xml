@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<tweaks>
+	<tweak version="2" name="settings/decals" extension="decals">
+		<search>
+			<decals />
+			<pools />
+			<pool name="small" />
+		</search>
+		<target mode="attributes">
+			<attr name="memory" value="800" />
+		</target>
+	</tweak>
+	<tweak version="2" name="settings/decals" extension="decals">
+		<search>
+			<decals />
+			<pools />
+			<pool name="big" />
+		</search>
+		<target mode="attributes">
+			<attr name="memory" value="800" />
+		</target>
+	</tweak>
+	<tweak version="2" name="settings/decals" extension="decals">
+		<search>
+			<decals />
+			<pools />
+			<pool name="permanent" />
+		</search>
+		<target mode="attributes">
+			<attr name="memory" value="800" />
+		</target>
+	</tweak>
+	<tweak version="2" name="settings/decals" extension="decals">
+		<search>
+			<decals />
+		</search>
+		<target mode="attach">
+			<material name="flesh_decal">
+				<effect name="bullet_hit_flesh" decal_type="bullet_hit_flesh" redirect="effects/payday2/particles/impacts/blood/blood_impact_a" />
+				<effect name="blood_spatter" decal_type="blood_spatter_decal" />
+			</material>
+			<material name="flesh_yellow">
+				<effect name="bullet_hit" decal_type="blank" redirect="effects/payday2/particles/impacts/blood/yellow/blood_impact_a" />
+				<effect name="blood_spatter" decal_type="blood_spatter_decal_yellow" />
+			</material>
+			<material name="helmet">
+				<effect name="bullet_hit" decal_type="bullet_hit_metal_blank" redirect="effects/payday2/particles/impacts/steel_no_decal_impact_pd2" />
+				<effect name="blood_spatter" decal_type="blood_spatter_decal" />
+			</material>
+			<decal_type name="bullet_hit_metal_blank" pool="none" rotate_min="0" rotate_max="360" min_distance="8" projection="linear" size_min="5 1 5" size_max="5 1 5" sustain="20" release="2" material="bullet_decal_parallax">
+				<variation uv_rect="0.0 0.0    0.125 0.125 " />
+				<variation uv_rect="0.125 0.0   0.125 0.125 " />
+				<variation uv_rect="0.0 0.125   0.125 0.125 " />
+				<variation uv_rect="0.125 0.125   0.125 0.125 " />
+			</decal_type>
+			<decal_type name="blood_spatter_decal_yellow" rotate_min="0" rotate_max="360" pool="big" min_distance="50" projection="planar" size_min="120 120 20" size_max="200 200 30" sustain="30" release="2" diffuse_texture="effects/payday2/particles/impacts/blood/yellow/textures/yellow_splatter" bump_normal_texture="effects/decals/blood_splatter/splatter_decal_nm" render_template="bullet_decal">
+				<variation uv_rect="0.0 0.5   0.5 0.5" />
+				<variation uv_rect="0.5 0.5   0.5 0.5" />
+				<variation uv_rect="0.5 1.0   0.5 0.5" />
+				<variation uv_rect="0.5 0.0   0.5 0.5" />
+			</decal_type>
+		</target>
+	</tweak>
+</tweaks>

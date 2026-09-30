@@ -70,32 +70,32 @@
 	<!--fbi swat 2-->
     <unit				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" />	
-	<object				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" />	
-	<cooked_physics		path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" />	
+		
+		
+		
 
 	<!--fbi swat 3-->
     <unit				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
     <unit				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
-	<object				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
-	<cooked_physics		path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
+		
+		
+		
 	
 	<!--fbi heavy 1-->
 	<unit				path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" load="true"/>
 	<unit				path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc_husk" load="true"/>
 	<model				path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" />		
 	<object				path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" />
-	<material_config	path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" />	
-	<material_config	path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc_contour" />		
+		
+			
 	<cooked_physics		path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" />	
 	
 	<!--fbi heavy r870-->
     <unit				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk" load="true"/>
-    <object				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
-	<cooked_physics		path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
-	<model				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>	
+    
+	
+		
 	
 	<!-- shield -->
 	<unit				path="units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc" load="true"/>
@@ -111,39 +111,39 @@
     <unit				path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_husk" load="true"/>	
 	<model				path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
 	<object				path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
-	<material_config	path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
-	<material_config	path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_contour" />	
-	<cooked_physics		path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
+		
+		
+		
 	
 	<!--city swat 2-->
     <unit				path="units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc" />	
-	<object				path="units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc" />	
-	<cooked_physics		path="units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc" />	
+		
+		
+		
 
 	<!--city swat 3-->
     <unit				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" />	
-	<object				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" />	
-	<cooked_physics		path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" />	
+		
+		
+		
 	
 	<!--city heavy g36-->
 	<unit				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" load="true"/>
 	<unit				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk" load="true"/>
 	<model				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />		
 	<object				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />
-	<material_config	path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />	
-	<material_config	path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_contour" />		
-	<cooked_physics		path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />	
+		
+			
+		
 	
 	<!--city heavy r870-->
     <unit				path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk" load="true"/>
-    <object				path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
-	<cooked_physics		path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
-	<model				path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
+    
+	
+	
 		
 	<!--Gensec Shield Acc-->
 	<model				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
@@ -192,19 +192,19 @@
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet" load="true"/>
 	<model				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
 	<object				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
+	
 	
 	<!--zeal city 2-->
-	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"/>
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"/>
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"/>
+	
+	
+	
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2" load="true"/>
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk" load="true"/>	
 		
 	<!--zeal city 3-->
-	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
+	
+	
+	
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3" load="true"/>
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>	
 
@@ -216,17 +216,17 @@
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk" load="true"/>			
     <object				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
 	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"/>
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_contour"/>	
+	
+		
 	
 	<!--zeal heavy r870-->
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" load="true"/>
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk" load="true"/>
-    <object				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"/>
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_contour"/>	
+    
+	
+	
+	
+		
 		
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_nm" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_df" />	
@@ -244,10 +244,10 @@
 	<!--Jarey_ zeals shit below-->
 	<!--GREEN-->
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/bulldozer_2_df" />	
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc"/>
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc"/>	
-	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc"/>	
-	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc"/>	
+	
+		
+		
+		
 	<unit	            path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc" load="true"/>	
 	<unit	            path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc_husk" load="true"/>	
 	
@@ -271,10 +271,10 @@
 
 	<!--BLACK-->
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/bulldozer_3_df" />	
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"/>	
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"/>	
-	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"/>	
-	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"/>		
+		
+		
+		
+			
 	<unit	            path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc" load="true"/>		
 	<unit	            path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc_husk" load="true"/>		
 	
@@ -328,7 +328,7 @@
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>
 		
 	<!--zeal taser-->
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"/>
+	
 	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"/>
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"  load="true"/>
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc_husk"  load="true"/>
@@ -342,11 +342,11 @@
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_tazer_helmet_sc/ene_acc_zeal_tazer_helmet_sc" />	
 
 	<!--shield-->
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>
+	
+	
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"  load="true"/>
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc_husk"  load="true"/>
-	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>	
+		
 
 	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df" />	
@@ -365,31 +365,31 @@
 	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
 	<sequence_manager	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
 	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_contour" />			
-	<cooked_physics		path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
+		
 	
 	<unit_obj				path="units/payday2/characters/ene_bulldozer_1_sc/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
 	
 	<!-- blackdozer -->
     <unit				path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />	
-	<object				path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />
-	<material_config	path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />
-	<sequence_manager	path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />	
-	<material_config	path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc_contour" />			
-	<cooked_physics		path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />
+		
 	
-	<unit_obj				path="units/payday2/characters/ene_bulldozer_2_sc/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>		
+	<material_config	path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />
+		
+	<material_config	path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc_contour" />			
+	
+	
+			
 
 	<!-- skulldozer -->
     <unit				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
-	<object				path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />
+		
+	
 	<material_config	path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc_contour" />	
-	<sequence_manager	path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />
-	<cooked_physics		path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
+	
+		
 
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_city_df" />
 	<unit_obj			path="units/payday2/characters/ene_bulldozer_3_sc/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
@@ -399,8 +399,8 @@
     <unit				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk" load="true"/>	
 	<model				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
 	<object				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />
-	<material_config	path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
-	<material_config	path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_contour" />				
-	<cooked_physics		path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />
+		
+					
+	
 	<!-- specials end -->
 </table>

@@ -48,7 +48,7 @@
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet" load="true"/>
 	<model				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
 	<object				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet"/>
+	
 	
 	<!--zeal city 2-->
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2" load="true"/>
@@ -112,7 +112,7 @@
 	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
 	<sequence_manager	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
 	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_contour" />			
-	<cooked_physics		path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
+		
 	
 	<unit_obj				path="units/payday2/characters/ene_bulldozer_1_sc/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
 	
@@ -241,7 +241,7 @@
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" force="false"/>
 		
 	<!--zeal taser-->
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"/>
+	
 	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"/>
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"  load="true"/>
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc_husk"  load="true"/>
@@ -267,11 +267,11 @@
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_df" />
 	
 	<!--shield-->
-	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>
+	
+	
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"  load="true"/>
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc_husk"  load="true"/>
-	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>	
+		
 
 	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df" />	
@@ -386,7 +386,7 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
 	<object				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	
 	<model				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>		

@@ -8212,6 +8212,8 @@ function ModShop:VerifyItemPurchase( data, weapon_part )
 		return
 	end
 
+	local group_dlc=managers.dlc:restoration_group_item_dlc(data.category,data.name)
+	if group_dlc and not managers.dlc:restoration_group_item_allowed(data.category,data.name) then return false end
 	local global_value = entry.infamous and "infamous" or entry.global_value or entry.dlc or entry.dlcs and entry.dlcs[math.random(#entry.dlcs)] or "normal"
 	local purchase_data = {
 		name = data.name,
@@ -8229,7 +8231,7 @@ function ModShop:VerifyItemPurchase( data, weapon_part )
 		return false
 	end
 
-	if self:IsGlobalValueDLC( purchase_data.global_value ) and not managers.dlc:is_dlc_unlocked( purchase_data.global_value ) then
+	if not group_dlc and self:IsGlobalValueDLC( purchase_data.global_value ) and not managers.dlc:is_dlc_unlocked( purchase_data.global_value ) then
 		return false
 	end
 
@@ -8325,9 +8327,12 @@ end
 
 
 function ModShop:_PurchaseItem( purchase_data )
-
-	if not purchase_data then
-		return
+	if not purchase_data then return end
+	-- Only the mod's group items need the new confirmation-time check.
+	if managers.dlc:restoration_group_item_dlc(purchase_data.category,purchase_data.name) then
+		local verified,current=self:VerifyItemPurchase(purchase_data,purchase_data.is_weapon_part)
+		if not verified or type(current.price)~="number" or current.price>managers.custom_safehouse:coins() then return end
+		purchase_data=current
 	end
 
 	local name = purchase_data.name
@@ -8412,8 +8417,9 @@ Hooks:Add("BlackMarketManagerModifyGetInventoryCategory", "BlackMarketManagerMod
 		local global_value = v.infamous and "infamous" or v.global_value or v.dlc or v.dlcs and v.dlcs[math.random(#v.dlcs)] or "normal"
 		if not already_in_table and not ModShop:IsItemExluded(k) then
 
-			local add_item = true
-			if ModShop:IsGlobalValueDLC( global_value ) and not managers.dlc:is_dlc_unlocked( global_value ) then
+			local group_dlc=managers.dlc:restoration_group_item_dlc(category,k)
+			local add_item = managers.dlc:restoration_group_item_allowed(category,k)
+			if not group_dlc and ModShop:IsGlobalValueDLC( global_value ) and not managers.dlc:is_dlc_unlocked( global_value ) then
 				add_item = false
 			end
 

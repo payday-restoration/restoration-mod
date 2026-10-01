@@ -306,42 +306,23 @@ function DLCTweakData:init(...)
 		}
 	}
 	
-	if SystemInfo:distribution() == Idstring("STEAM") then
-	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
-		self.omnia = {
-			content = {},
-			free = true
+	-- Always register the packages; the manager checks current group membership.
+	self.omnia = {
+		dlc = "restoration_has_omnia_masks",
+		content = {
+			loot_global_value = "rest_omnia",
+			loot_drops = {
+				{type_items = "masks", item_entry = "all_seeing", amount = 1},
+				{type_items = "masks", item_entry = "classic_helmet", amount = 1},
+				{type_items = "player_styles", item_entry = "poggers", amount = 1}
+			}
 		}
-		self.omnia.content.loot_global_value = "rest_omnia"
-		self.omnia.content.loot_drops = {
-			{
-				type_items = "masks",
-				item_entry = "all_seeing",
-				amount = 1
-			},
-			{
-				type_items = "masks",
-				item_entry = "classic_helmet",
-				amount = 1
-			}				
-		}	
-	end
-	end
-	if SystemInfo:distribution() == Idstring("STEAM") then
-	if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
-		self.omnia_2 = {
-			content = {},
-			free = true
+	}
+	self.omnia_2 = {
+		dlc = "restoration_has_developer_masks",
+		content = {
+			loot_global_value = "rest_omnia",
+			loot_drops = {{type_items = "masks", item_entry = "cube", amount = 1}}
 		}
-		self.omnia_2.content.loot_global_value = "rest_omnia"
-		self.omnia_2.content.loot_drops = {
-			{
-				type_items = "masks",
-				item_entry = "cube",
-				amount = 1
-			}			
-		}	
-	end
-    end	
-		
+	}
 end

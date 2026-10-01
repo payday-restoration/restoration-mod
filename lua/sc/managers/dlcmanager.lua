@@ -114,3 +114,27 @@ function GenericDLCManager:give_missing_package()
 		end
 	end
 end
+
+local function restoration_steam_group(group_id)
+ if SystemInfo:distribution() ~= Idstring("STEAM") or not Steam then return false end
+ return not not Steam:is_user_in_source(Steam:userid(), group_id)
+end
+function GenericDLCManager:restoration_has_omnia_masks()
+ return restoration_steam_group("103582791466033055")
+end
+function GenericDLCManager:restoration_has_developer_masks()
+ return restoration_steam_group("103582791465743585")
+end
+
+-- Only Restoration's group items. Ordinary game/DLC ownership is untouched.
+local restoration_group_masks={classic_helmet="omnia",all_seeing="omnia",cube="omnia_2"}
+function GenericDLCManager:restoration_group_item_dlc(category,item)
+ if category=="masks" then return restoration_group_masks[item] end
+ if category=="player_styles" and item=="poggers" then return "omnia" end
+end
+function GenericDLCManager:restoration_group_item_allowed(category,item)
+ local dlc=self:restoration_group_item_dlc(category,item)
+ if dlc=="omnia" then return self:restoration_has_omnia_masks() end
+ if dlc=="omnia_2" then return self:restoration_has_developer_masks() end
+ return true
+end

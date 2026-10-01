@@ -1,6 +1,8 @@
 -- Restoration ENEMY sequence authority: revision 4.5, wire protocol 4.
 -- Install on HOST and all clients; restart. Includes 4.1 join lifecycle fixes.
 -- Full hidden-chat messages are capped at 255 bytes, including JSON escaping.
+-- mask-scope2: masks and crew assets bypass authority parsing as well as execution.
+-- crew-scope1: menu/crew exclusions override cached ownership; native expression semantics preserved.
 -- perf1: unit/registry housekeeping runs at 10Hz; packet draining stays per-frame.
 -- 4.5: native defaults/callbacks and menu units are untouched; only managed appearance is replayed.
 -- Body/ragdoll chains remain native; late corpse links are skipped.
@@ -143,7 +145,7 @@ function A:state(u)
   self.serial=self.serial+1
   s={unit=u,rev=0,applied=0,events={},persistent={},generation=tostring(self.serial),next_request=0}
   self.units[u]=s
-  if self.spawning and u~=self.spawning.parent and self:managed(self.spawning.parent) then s.parent,s.slot,s.managed=self.spawning.parent,self.spawning.slot,true end
+  if not self:native_unit(u) and self.spawning and u~=self.spawning.parent and self:managed(self.spawning.parent) then s.parent,s.slot,s.managed=self.spawning.parent,self.spawning.slot,true end
  end
  return s
 end
@@ -189,17 +191,60 @@ local function derives(base, class)
  end
  return false
 end
+-- This boundary must win over cached enemy flags and inherited child ownership.
+local function excluded_base(base)
+ for _,name in ipairs({'CivilianBase','HuskCivilianBase','TeamAIBase','HuskTeamAIBase','MaskExt','MenuArmourBase','PlayerBase','HuskPlayerBase'})do
+  if derives(base,rawget(_G,name)) then return true end
+ end
+ return false
+end
+-- UnitElement is constructed before a live unit/base exists. Compare Idstring
+-- keys, not :t() alone: release builds may only expose a hashed name.
+function A:native_asset(name)
+ if not name then return false end
+ local bm=tweak_data and tweak_data.blackmarket
+ local masks=bm and bm.masks
+ local characters=bm and bm.characters
+ if not self.native_assets or self.native_masks~=masks or self.native_characters~=characters then
+  local names={}
+  local function add(path)
+   if type(path)=='string' and path~='' then names[Idstring(path):key()]=true end
+  end
+  -- Also cover Joy during early package parsing, before tweak_data exists.
+  add('units/pd2_dlc_joy/masks/msk_joy')
+  add('units/pd2_dlc_joy/masks/msk_joy_begins')
+  for _,entry in pairs(masks or {})do
+   if type(entry)=='table' then add(entry.unit) end
+  end
+  local seen={}
+  local function crew(entries)
+   if type(entries)~='table' or seen[entries] then return end
+   seen[entries]=true
+   add(entries.npc_unit);add(entries.menu_unit);add(entries.fps_unit)
+   for _,entry in pairs(entries)do if type(entry)=='table' then crew(entry) end end
+  end
+  crew(characters)
+  self.native_assets,self.native_masks,self.native_characters=names,masks,characters
+ end
+ local key=type(name)=='string' and Idstring(name):key() or name:key()
+ if self.native_assets[key] then return true end
+ -- Covers late-added custom paths when the engine retains their readable name.
+ local path=type(name)=='string' and name or name:t()
+ return type(path)=='string' and (path:find('/masks/',1,true)~=nil or path:find('/npc_criminal',1,true)~=nil) or false
+end
+function A:native_unit(u)
+ if not Global or not Global.load_level or not alive_unit(u) then return true end
+ return excluded_base(u.base and u:base()) or self:native_asset(u.name and u:name())
+end
 function A:is_enemy(u)
  if not alive_unit(u) then return false end
  local base=u.base and u:base()
  if not base then return false end
- for _,name in ipairs({'CivilianBase','HuskCivilianBase','TeamAIBase','HuskTeamAIBase'})do
-  if derives(base,rawget(_G,name)) then return false end
- end
+ if excluded_base(base) then return false end
  return derives(base,CopBase) or derives(base,HuskCopBase)
 end
 function A:managed(u,element,depth)
- if not alive_unit(u) or (depth or 0)>12 then return false end
+ if self:native_unit(u) or (depth or 0)>12 then return false end
  local s=self.units[u]
  local selected=(s and s.enemy) or self:is_enemy(u)
  if not selected and s and s.parent then selected=self:managed(s.parent,nil,(depth or 0)+1) end
@@ -645,7 +690,7 @@ function A:install_sequences()
  -- native flag survives without leaking into another branch using the same env.
  self:wrap(C.SequenceManager,'_add_start_time_callback',function(original)
   return function(manager,id,env,...)
-   if A:native_context(env) then
+   if env and A:managed(env.dest_unit) and A:native_context(env) then
     env=setmetatable(clean_copy(env),getmetatable(env));env._restoration_native_physics=true
    end
    return original(manager,id,env,...)
@@ -654,7 +699,7 @@ function A:install_sequences()
  -- Native save loading reconstructs env and drops additional fields.
  self:wrap(C.SequenceManager,'_safe_load_map_done',function(original)
   return function(manager,data,...)
-   local native=data.env and data.env._restoration_native_physics
+   local native=data.env and A:managed(data.env.dest_unit) and data.env._restoration_native_physics
    local result=pack(original(manager,data,...))
    if native and data.env then data.env._restoration_native_physics=true end
    return unpack(result,1,result.n)
@@ -663,6 +708,7 @@ function A:install_sequences()
  -- A timed named trigger creates a fresh env in UnitElement:run_sequence.
  self:wrap(C.SequenceManager,'run_sequence',function(original)
   return function(manager,name,damage,source,dest,...)
+   if not A:managed(dest) then return original(manager,name,damage,source,dest,...) end
    local index=manager._current_start_time_callback_index
    local pending=index and manager._start_time_callback_list and manager._start_time_callback_list[index]
    if pending and pending.sequence_name==name and pending.env and pending.env.dest_unit==dest and pending.env._restoration_native_physics then
@@ -675,6 +721,7 @@ function A:install_sequences()
  for _,class in ipairs({C.SetGlobalVariableElement,C.SetGlobalVariablesElement})do
   self:wrap(class,'set_variable',function(original)
    return function(element,env,name,value)
+    if not env or not A:managed(env.dest_unit) then return original(element,env,name,value) end
     local root=A:element(env.dest_unit) or element._unit_element
     local frame=A.replaying or A.capture
     if not frame or not A:managed(env.dest_unit) or A:physical_element(element,env) or A:native_element(element) then return original(element,env,name,value) end
@@ -695,13 +742,17 @@ function A:install_sequences()
   end)
  end
  self:wrap(C.UnitElement,'init',function(original)
-  return function(element,node,...)
+  return function(element,node,name,is_global,...)
+   if not is_global and A:native_asset(name) then
+    element._authority_native_asset=true
+    return original(element,node,name,is_global,...)
+   end
    local protected=A:protected_defaults(node)
    element._authority_preserved_defaults=protected
    element._authority_random,element._authority_schema=A:index(node,'u')
    element._authority_namespace=tostring(element._authority_schema)
    element._authority_elements={}
-   local result=pack(original(element,node,...))
+   local result=pack(original(element,node,name,is_global,...))
    element._authority_sources={}
    local manager=managers and managers.sequence
    if manager then
@@ -724,6 +775,10 @@ function A:install_sequences()
  end)
  self:wrap(C.BaseElement,'init',function(original)
   return function(element,node,unit_element,...)
+   if unit_element and unit_element._authority_native_asset then
+    element._authority_native_asset=true
+    return original(element,node,unit_element,...)
+   end
    element._authority_path=(unit_element and unit_element._authority_namespace or '?')..':'..(A.nodes[node] or 'external')
    local result=pack(original(element,node,unit_element,...))
    if unit_element and unit_element._authority_elements then unit_element._authority_elements[element._authority_path]=element end
@@ -737,18 +792,23 @@ function A:install_sequences()
  end)
  self:wrap(C.BaseElement,'get_static',function(original)
   return function(element,name,value,setter,node)
-   local parsed=original(element,name,value,nil,node)
-   if not parsed then return parsed end
+   if element._authority_native_asset or element._unit_element and element._unit_element._authority_native_asset then
+    return original(element,name,value,setter,node)
+   end
+   local native=original(element,name,value,setter,node)
+   if not native then return native end
+   -- Preserve the engine's setter calling convention and all return values.
+   -- Only compile the capture expression if a managed enemy actually uses it.
+   local parsed=not setter and native or nil
    element._authority_declarations=element._authority_declarations or {}
    local index=(element._authority_declarations[name] or 0)+1;element._authority_declarations[name]=index
    local id=tostring(name)..'#'..index
    return function(env,...)
     local replay=A.replaying
     if not env or not env.dest_unit or not A:managed(env.dest_unit) or A:physical_element(element,env) or A:native_element(element) then
-     local result=parsed(env,...)
-     if setter then setter(element,env,result,...);return end
-     return result
+     return native(env,...)
     end
+    if not parsed then parsed=original(element,name,value,nil,node) end
     local result
     if replay and env and env.dest_unit==replay.unit then
      local list=replay.record.values[id]
@@ -838,11 +898,12 @@ function A:preflight(u,record,element)
  return true
 end
 function A:bind(parent,slot,child)
- if not alive_unit(child) or child==parent or not self:managed(parent) then return end
+ if self:native_unit(child) or child==parent or not self:managed(parent) then return end
  local s=self:state(child);s.parent,s.slot,s.managed=parent,tostring(slot),true
  local key=self:key(child);if key then self.registry[key]=child end
 end
 function A:apply_record(u,record)
+ if not self:managed(u) then return end
  if record.kind~='link' and self:native_record(u,self:resolve_element(self:element(u),record.path)) then return end
  if record.kind~='link' and (not replayable[record.kind] or self:native_element(self:resolve_element(self:element(u),record.path))) then return end
  if record.kind=='link' then
@@ -886,8 +947,9 @@ function A:apply_record(u,record)
 
 end
 function A:apply_pending(u)
+ if not self:managed(u) then return end
  local s=self:state(u);local batch=s.pending
- if not self:managed(u) or not batch or s.blocked then return end
+ if not batch or s.blocked then return end
  local element=self:element(u)
  if not element or element._authority_schema~=batch.schema then self:stop(u,'host/client sequence definitions differ');return end
  if s.remote_generation and s.remote_generation~=batch.generation then self:stop(u,'unit generation changed before local unit replacement');return end
@@ -1210,8 +1272,8 @@ function A:install_units()
  local D=CoreUnitDamage and (CoreUnitDamage.CoreUnitDamage or CoreUnitDamage)
  self:wrap(D,'init',function(original)
   return function(d,u,...)
-   -- Bind a child at construction time, before its randomized defaults parse.
-   A:state(u)
+   -- Only enemy appearance children need construction-time ownership.
+   if not A:native_unit(u) and (A:managed(u) or A.spawning and A:managed(A.spawning.parent)) then A:state(u) end
    local result=pack(original(d,u,...))
    if A:managed(u) then A:state(u).managed=true end
    return unpack(result,1,result.n)
@@ -1240,11 +1302,7 @@ function A:install_units()
   self:wrap(class,'init',function(original)
    return function(base,u,...)
     -- base may not yet be exposed by u:base() while its init is running.
-    local excluded=false
-    for _,name in ipairs({'CivilianBase','HuskCivilianBase','TeamAIBase','HuskTeamAIBase'})do
-     if derives(base,rawget(_G,name)) then excluded=true end
-    end
-    if not excluded then local s=A:state(u);s.enemy=true;s.managed=true end
+    if Global and Global.load_level and not excluded_base(base) then local s=A:state(u);s.enemy=true;s.managed=true end
     return original(base,u,...)
    end
   end)

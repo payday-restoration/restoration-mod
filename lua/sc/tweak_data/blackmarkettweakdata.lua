@@ -120,58 +120,27 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMaskFixes", function(sel
 
 end)
 
---This is a helmet, not a mask--
-Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, tweak_data)	
-	--Classic Helmet
-	self.masks.classic_helmet = {}
-	self.masks.classic_helmet.unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"		
-	if SystemInfo:distribution() == Idstring("STEAM") then
-	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
-		self.masks.classic_helmet = {
-			unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet",
-			name_id = "bm_msk_classic_helmet",
-			desc_id = "bm_msk_classic_helmet_desc",
-			value = 0,
-			type = "helmet",			
-			global_value = "rest_omnia",
-			texture_bundle_folder = "mods"
-		}
-	end
-	end
-
-	--All Seeing Anchor		
-	self.masks.all_seeing = {}
-	self.masks.all_seeing.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"
-	if SystemInfo:distribution() == Idstring("STEAM") then
-	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
-		self.masks.all_seeing = {
-			unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye",
-			name_id = "bm_all_seeing",
-			desc_id = "bm_all_seeing_desc",
-			value = 0,
-			type = "helmet",
-			global_value = "rest_omnia",
-			texture_bundle_folder = "mods"
-		}		
-	end
-	end
-
-	--devmask.model		
-	self.masks.cube = {}
-	self.masks.cube.unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube"
-	if SystemInfo:distribution() == Idstring("STEAM") then
-	if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
-		self.masks.cube = {
-			unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube",
-			name_id = "bm_cube",
-			desc_id = "bm_cube_desc",
-			value = 0,
-			type = "helmet",
-			global_value = "rest_omnia",
-			texture_bundle_folder = "mods"
-		}		
-	end
-	end
+-- Steam-group masks retain valid metadata for remote players and previews.
+-- Local entitlement is enforced by the omnia/omnia_2 DLC predicates.
+Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, tweak_data)
+ self.masks.classic_helmet = {
+  unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet",
+  name_id = "bm_msk_classic_helmet", desc_id = "bm_msk_classic_helmet_desc",
+  value = 0, type = "helmet", global_value = "rest_omnia",
+  texture_bundle_folder = "mods", dlc = "omnia"
+ }
+ self.masks.all_seeing = {
+  unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye",
+  name_id = "bm_all_seeing", desc_id = "bm_all_seeing_desc",
+  value = 0, type = "helmet", global_value = "rest_omnia",
+  texture_bundle_folder = "mods", dlc = "omnia"
+ }
+ self.masks.cube = {
+  unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube",
+  name_id = "bm_cube", desc_id = "bm_cube_desc",
+  value = 0, type = "helmet", global_value = "rest_omnia",
+  texture_bundle_folder = "mods", dlc = "omnia_2"
+ }
 end)
 
 --we all know alligator skin's the best material right--
@@ -260,7 +229,8 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		name_id = "bm_suit_jackal_track",
 		desc_id = "bm_suit_jackal_track_desc",
 		texture_bundle_folder = "mods",	
-		global_value = "rest_omnia_fake",
+		global_value = "rest_omnia",
+		dlc = "omnia",
 		body_replacement = body_replacement_standard,
 		third_body_replacement = body_replacement_standard,
 		unit = self.player_styles.esport.unit,
@@ -295,12 +265,8 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	self.player_styles.poggers.characters.ecp_male = {
 		third_unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_esport_male_fat/ess_acc_esport_male_fat"
 	}
-	if SystemInfo:distribution() == Idstring("STEAM") then
-	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
-		self.player_styles.poggers.global_value = "rest_omnia"
-		self.player_styles.poggers.unlocked = true
-	end
-	end
+	-- The omnia package grants this outfit only to the original Steam group.
+	self.player_styles.poggers.unlocked = nil
 	
 	-- Flecktarn Jumpsuit 
 	self.player_styles.jumpsuit.material_variations.flecktarn = {

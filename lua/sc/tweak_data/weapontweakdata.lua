@@ -2971,6 +2971,30 @@ local crew_wep_preset = {
 			self.r870_crew.rays = 8
 			self.r870_crew.FIRE_MODE = "single"
 		end
+		
+		-- Pretty annoying that it shares tweak_data with the Crew version, but whatever
+		function WeaponTweakData:_init_data_bleckert_crew()
+			self.bleckert_crew.categories = clone(self.bleckert.categories)
+			self.bleckert_crew.sounds.prefix = "bleckert_npc"
+			self.bleckert_crew.use_data.selection_index = 2
+			self.bleckert_crew.DAMAGE = crew_wep_preset.shotgun_pump.damage
+			self.bleckert_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+			self.bleckert_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
+			self.bleckert_crew.CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+			self.bleckert_crew.NR_CLIPS_MAX = 4
+			self.bleckert_crew.hold = {
+				"bullpup",
+				"rifle"
+			}
+			self.bleckert_crew.looped_reload_speed = 0.5
+			self.bleckert_crew.reload = "looped"
+			self.bleckert_crew.auto.fire_rate = 0.4285
+			self.bleckert_crew.alert_size = 2500
+			self.bleckert_crew.suppression = 3.4
+			self.bleckert_crew.FIRE_MODE = "single"
+			self.bleckert_crew.is_shotgun = true
+			self.bleckert_crew.rays = 8
+		end		
 
 		function WeaponTweakData:_init_data_ksg_crew()
 			self.ksg_crew.categories = clone(self.ksg.categories)

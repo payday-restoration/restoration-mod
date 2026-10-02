@@ -1740,19 +1740,6 @@ function CharacterTweakData:_init_deep_boss(presets)
 
 	table.insert(self._enemy_list, "deep_boss")
 end
-function CharacterTweakData:_init_auctioneer_boss(presets)
-	self.auctioneer_boss = deep_clone(presets.base)
-	self.auctioneer_boss.HEALTH_INIT = 400
-	self.auctioneer_boss.player_health_scaling_mul = 1.25
-	self.auctioneer_boss.headshot_dmg_mul = 0.75
-	self.auctioneer_boss.no_headshot_add_mul = true
-	self.auctioneer_boss.damage.explosion_damage_mul = 0.5
-	self.auctioneer_boss.damage.hurt_severity = presets.hurt_severities.only_light_hurt
-	self.auctioneer_boss.use_animation_on_fire_damage = false
-	self.auctioneer_boss.move_speed = presets.move_speed.normal
-	self.auctioneer_boss.no_run_start = true
-	self.auctioneer_boss.no_run_stop = true
-end
 
 function CharacterTweakData:_init_snowman_boss(presets)
 	self.snowman_boss = deep_clone(self.tank)
@@ -2091,6 +2078,47 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.no_omnia_heal = true
 	self.chavez_boss.can_be_healed = false
 	table.insert(self._enemy_list, "chavez_boss")
+end
+
+function CharacterTweakData:_init_auctioneer_boss(presets)
+	self.auctioneer_boss = deep_clone(self.security)
+	self.auctioneer_boss.HEALTH_INIT = 375
+	self.auctioneer_boss.priority_shout = "g29"
+	self.auctioneer_boss.bot_priority_shout = "g29"
+	self.auctioneer_boss.silent_priority_shout = nil
+	self.auctioneer_boss.custom_shout = true
+	self.auctioneer_boss.priority_shout_max_dis = 3000
+	self.auctioneer_boss.damage.hurt_severity = presets.hurt_severities.boss
+	self.auctioneer_boss.HEALTH_INIT = 375	
+	--Gains extra health per player, totaling to 7.5~ at a full party of 4
+	self.auctioneer_boss.player_health_scaling_mul = 1.25	
+	self.auctioneer_boss.headshot_dmg_mul = 5.5	
+	self.auctioneer_boss.weapon = presets.weapon.normal
+	-- Since he uses crew weapons, and *those* scale with difficulty... yeah
+	self.auctioneer_boss.static_weapon_preset = true
+	self.auctioneer_boss.suppression = nil
+	self.auctioneer_boss.surrender = nil
+	self.auctioneer_boss.ecm_vulnerability = 0
+	self.auctioneer_boss.ecm_hurts = {}	
+	self.auctioneer_boss.allowed_poses = {
+		stand = true
+	}
+	self.auctioneer_boss.crouch_move = false
+	self.auctioneer_boss.no_arrest = true
+	self.auctioneer_boss.rescue_hostages = false
+	self.auctioneer_boss.steal_loot = nil
+	self.auctioneer_boss.calls_in = nil
+	self.auctioneer_boss.chatter = presets.enemy_chatter.no_chatter
+	self.auctioneer_boss.use_radio = nil
+	self.auctioneer_boss.has_alarm_pager = false
+	self.auctioneer_boss.is_special = true
+	self.auctioneer_boss.no_asu = true
+	self.auctioneer_boss.always_drop = true
+	self.auctioneer_boss.heal_cooldown = 22.5	
+	self.auctioneer_boss.die_sound_event = "Play_ban_auc_12"
+	self.auctioneer_boss.melee_weapon = "fists"
+
+	table.insert(self._enemy_list, "auctioneer_boss")
 end
 
 function CharacterTweakData:_init_bolivians(presets)
@@ -18047,7 +18075,7 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	self.weap_unit_names[table.index_of(self.weap_ids, "ak47_ass")] = Idstring("units/pd2_mod_reapers/weapons/wpn_npc_ak47_sc/wpn_npc_ak47_sc")
 
 	--Vanilla Zeal Sniper made M14/SCAR-H DMR
-	self.weap_unit_names[table.index_of(self.weap_ids, "heavy_zeal_sniper")] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")	
+	self.weap_unit_names[table.index_of(self.weap_ids, "heavy_zeal_sniper")] = Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater")
 	
 	--Peacemaker
 	table.insert(self.weap_ids, "peacemaker")

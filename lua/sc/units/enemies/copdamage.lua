@@ -224,6 +224,21 @@ CopDamage._priority_bodies_ids = bodies_tmp
 
 local is_pro = Global.game_settings and Global.game_settings.one_down
 
+-- Report each missing reference once per unit; preserve valid helmet operations.
+local function restoration_head_gear_warning(self, kind, name)
+	local key = kind .. ":" .. tostring(name)
+	self._restoration_head_gear_warnings = self._restoration_head_gear_warnings or {}
+
+	if self._restoration_head_gear_warnings[key] then
+		return
+	end
+
+	self._restoration_head_gear_warnings[key] = true
+	log("[RestorationMod][CopDamage] Missing " .. kind .. " '" .. tostring(name)
+		.. "'; unit=" .. tostring(self._unit:name()) .. "; head_gear=" .. tostring(self._head_gear)
+		.. ". Skipping this reference.")
+end
+
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
 	self._last_overheal_t = 0 --- The last time the enemy has been near an LPF.
@@ -238,7 +253,13 @@ Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	if self._head_gear_decal_mesh then
 		local mesh_name_idstr = Idstring(self._head_gear_decal_mesh)
 
-		self._unit:decal_surface(mesh_name_idstr):set_mesh_material(mesh_name_idstr, Idstring("helmet"))
+		local decal_surface = self._unit:decal_surface(mesh_name_idstr)
+
+		if decal_surface then
+			decal_surface:set_mesh_material(mesh_name_idstr, Idstring("helmet"))
+		else
+			restoration_head_gear_warning(self, "helmet decal surface", self._head_gear_decal_mesh)
+		end
 	end	
 end)
 
@@ -317,17 +338,33 @@ function CopDamage:_spawn_head_gadget(params)
 		if self._nr_head_gear_objects then
 			for i = 1, self._nr_head_gear_objects do
 				local head_gear_obj_name = self._head_gear_object .. tostring(i)
+				local head_gear_obj = self._unit:get_object(Idstring(head_gear_obj_name))
 
-				self._unit:get_object(Idstring(head_gear_obj_name)):set_visibility(false)
+				if head_gear_obj then
+					head_gear_obj:set_visibility(false)
+				else
+					restoration_head_gear_warning(self, "helmet object", head_gear_obj_name)
+				end
 			end
 		else
-			self._unit:get_object(Idstring(self._head_gear_object)):set_visibility(false)
+			local head_gear_obj = self._unit:get_object(Idstring(self._head_gear_object))
+
+			if head_gear_obj then
+				head_gear_obj:set_visibility(false)
+			else
+				restoration_head_gear_warning(self, "helmet object", self._head_gear_object)
+			end
 		end
 
 		if self._head_gear_decal_mesh then
 			local mesh_name_idstr = Idstring(self._head_gear_decal_mesh)
+			local decal_surface = self._unit:decal_surface(mesh_name_idstr)
 
-			self._unit:decal_surface(mesh_name_idstr):set_mesh_material(mesh_name_idstr, Idstring("flesh"))
+			if decal_surface then
+				decal_surface:set_mesh_material(mesh_name_idstr, Idstring("flesh"))
+			else
+				restoration_head_gear_warning(self, "helmet decal surface", self._head_gear_decal_mesh)
+			end
 		end
 	end
 

@@ -291,6 +291,32 @@ function CopActionShoot:init(action_desc, common_data)
 	return true
 end
 
+-- Inventory removal can precede the final attention/exit callbacks.
+-- Clear custom focus while the old weapon references are still available.
+function CopActionShoot:_restoration_clear_sniper_focus()
+	if self._use_sniper_focus then
+		self:set_sniper_focus_sound(0)
+	end
+	self._use_sniper_focus = nil
+	self._sniper_focus_start_t = nil
+	self:disable_sniper_laser()
+end
+
+local restoration_inventory_event_original = CopActionShoot.on_inventory_event
+function CopActionShoot:on_inventory_event(event)
+	local weapon_event = event ~= "shield_equip" and event ~= "shield_unequip"
+	if weapon_event and not alive(self._ext_inventory:equipped_unit()) then
+		self:_restoration_clear_sniper_focus()
+	end
+	local result = restoration_inventory_event_original(self, event)
+	if weapon_event and not self._weapon_unit then
+		-- Keep the empty updater as a function. Calling it returns nil and
+		-- exposes the armed class updater again through __index.
+		self.update = self._upd_empty
+	end
+	return result
+end
+
 function CopActionShoot:on_exit()
 	if self._is_server then
 		if not self._exiting_to_reload then
@@ -306,22 +332,17 @@ function CopActionShoot:on_exit()
 		self[self._ik_preset.stop](self)
 	end
 
-	if self._autofiring then
+	if self._autofiring and alive(self._weapon_unit) and self._weapon_base then
 		self._weapon_base:stop_autofire()
 		self._ext_movement:play_redirect("up_idle")
 	end
 
-	if self._shooting_player and alive(self._attention.unit) then
+	if self._shooting_player and self._attention and alive(self._attention.unit) then
 		self._attention.unit:movement():on_targetted_for_attack(false, self._common_data.unit)
 
-		if self._use_sniper_focus then
-			self:set_sniper_focus_sound(0)
-		end
 	end
 
-	if self._w_usage_tweak.use_laser then
-		self:disable_sniper_laser()
-	end
+	self:_restoration_clear_sniper_focus()
 end
 
 function CopActionShoot:on_attention(attention, old_attention)
@@ -342,6 +363,19 @@ function CopActionShoot:on_attention(attention, old_attention)
 	self._throw_molotov = nil
 	self._uncloak = nil
 	self._charge_taser = nil
+
+	-- Native on_inventory_event clears these fields when the weapon goes away.
+	-- Attention still has to be cleared during victory/deletion in that state.
+	if not self._w_usage_tweak or not self._weapon_base or not alive(self._weapon_unit) then
+		self:_restoration_clear_sniper_focus()
+		if self._ik_preset then
+			self[self._ik_preset.stop](self)
+		end
+		self._aim_transition = nil
+		self._get_target_pos = nil
+		self._attention = attention
+		return
+	end
 
 	if attention then
 		local t = TimerManager:game():time()
@@ -547,13 +581,25 @@ end
 function CopActionShoot:disable_sniper_laser()
 	if self._is_server then
 		if self._active_laser then
-			self._weapon_base:set_laser_enabled(false)
-			self._ext_brain._logic_data.internal_data.weapon_laser_on = nil
-			managers.enemy:_create_unit_gfx_lod_data(self._unit)
+			if alive(self._weapon_unit) and self._weapon_base then
+				self._weapon_base:set_laser_enabled(false)
+			end
+			local logic_data = self._ext_brain and self._ext_brain._logic_data
+			if logic_data and logic_data.internal_data then
+				logic_data.internal_data.weapon_laser_on = nil
+			end
+			if alive(self._unit) and not self._ext_movement._pre_destroyed then
+				managers.enemy:_create_unit_gfx_lod_data(self._unit)
+			end
 			self._active_laser = nil
 		end
-	elseif self._ext_brain._weapon_laser_on then
-		self._ext_brain:disable_weapon_laser()
+	elseif self._ext_brain and self._ext_brain._weapon_laser_on then
+		if alive(self._unit) then
+			self._ext_brain:disable_weapon_laser()
+		else
+			self._ext_brain._weapon_laser_on = nil
+			self._ext_brain._add_laser_t = nil
+		end
 	end
 end
 
@@ -625,6 +671,10 @@ function CopActionShoot:throw_grenade(shoot_from_pos, target_vec, target_pos, gr
 end
 
 function CopActionShoot:update(t)
+	-- A removal callback and an already-scheduled update may cross in one frame.
+	if not self._w_usage_tweak or not self._weapon_base or not alive(self._weapon_unit) then
+		return
+	end
 	local vis_state = self._ext_base:lod_stage() or 4
 
 	if not self._autofiring and vis_state ~= 1 then

@@ -874,6 +874,7 @@
 	<Package id="packages/res_misc_rex_gold" file="packages/res/misc/rex_gold.xml"/>
 	<Package id="packages/res_misc_scassets" file="packages/res/misc/scassets.xml"/>
 	<Package id="packages/res_misc_npcfixes" file="packages/res/misc/npcfixes.xml"/>
+	<Package id="packages/dmc" file="packages/res/misc/dmc.xml"/>
 
 	<!-- pre-existing BeardLib misc packages: these were on disk but undeclared -->
 	<Package id="packages/res_pkg_america_misc" file="packages/america_diff/america_misc.xml"/>

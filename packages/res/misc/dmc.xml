@@ -41,65 +41,65 @@
 	<effect				path="effects/payday2/particles/explosions/grenade_incendiary_explosion_sc" load="true" force="true"/>	
 
 	<!--Bullet casings effects-->
-    <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/shell_shak_smol" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/shell_shak_sniper" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/shell_sniper_m95_semi" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/shell_556_smol" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true" load="true"/>
+	<effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/shell_shak_smol" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/shell_shak_sniper" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/shell_sniper_m95_semi" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/shell_556_smol" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true" load="true"/>
 	<!--Weapon Mod Trails and Muzzle Effects-->
 	<!--NATO Tracer-->
-    <effect				path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/nato_light_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/nato_big_light_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/nato_light_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/nato_big_light_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Warsaw Tracer-->
-    <effect				path="_dmc/effects/warsaw_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/warsaw_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/warsaw_light_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/warsaw_big_light_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/warsaw_trail" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/warsaw_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/warsaw_light_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/warsaw_big_light_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--STERWERS Tracer-->
-    <effect				path="_dmc/effects/sterwers_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/sterwers_trail_npc" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_sterwers_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_sterwers_streak_round" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/sterwers_trail_r" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/sterwers_trail_r_npc" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_republic_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_republic_streak_round" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/sterwers_trail_e" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/sterwers_trail_e_npc" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_empire_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_empire_streak_round" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/sterwers_trail_t" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/sterwers_trail_t_npc" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_techno_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_techno_streak_round" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/sterwers_trail_m" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/sterwers_trail_m_npc" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_mando_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_mando_streak_round" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_npc" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_sterwers_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_sterwers_streak_round" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_r" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_r_npc" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_republic_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_republic_streak_round" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_e" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_e_npc" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_empire_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_empire_streak_round" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_t" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_t_npc" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_techno_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_techno_streak_round" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_m" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_m_npc" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_mando_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_mando_streak_round" force="false" load="true" unload="true" reload="true"/>
 
-    <effect				path="_dmc/effects/sterwers_trail_m_small" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/sterwers_trail_m_small_npc" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_mando_streak_small" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/sw_mando_streak_small_round" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_m_small" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/sterwers_trail_m_small_npc" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_mando_streak_small" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/sw_mando_streak_small_round" force="false" load="true" unload="true" reload="true"/>
 	<!--Large Tracer-->
-    <effect				path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Plasma Tracer-->
-    <effect				path="_dmc/effects/plasma_b_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/plasma_b_trail_npc" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/plasma_b_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/plasma_b_streak_round" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/plasma_b_trail" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/plasma_b_trail_npc" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/plasma_b_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/plasma_b_streak_round" force="false" load="true" unload="true" reload="true"/>
 	<!--Other Tracers-->
-    <effect				path="_dmc/effects/knockback_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/knockback_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/concussion_trail" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/parts/concussion_streak" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/heavy_suppressed" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/heavy_muzzle" force="false" load="true" unload="true" reload="true"/>
-    <effect				path="_dmc/effects/heavy_muzzle_ring" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/knockback_trail" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/knockback_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/concussion_trail" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/parts/concussion_streak" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/heavy_suppressed" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/heavy_muzzle" force="false" load="true" unload="true" reload="true"/>
+	<effect				path="_dmc/effects/heavy_muzzle_ring" force="false" load="true" unload="true" reload="true"/>
 
 	<!--P90 Tan Body-->
 	<texture			path="units/payday2/weapons/wpn_fps_smg_p90_pts/body_tan_df"/>
@@ -120,11 +120,11 @@
 	<unit				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded" force="true" load="true"/>
 	<material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_thq"/>
 	<material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_cc"/>
-    <material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_cc_thq"/>
+	<material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_cc_thq"/>
 	<cooked_physics		path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
 	<model				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
 	<object				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
-    <material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
+	<material_config	path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
 	<unit				path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded" force="true" load="true"/>	
 
 	<!--Gold AK shit-->
@@ -179,6 +179,12 @@
 	<bnk				path="soundbanks/weapon_c96" force = "true"/>
 	<bnk				path="soundbanks/weapon_sterling" force = "true"/>
 	<bnk				path="soundbanks/weapon_mg42" force = "true"/>
+
+	<!--Additional MG42 Drums-->
+	<texture			path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green_df"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_green"/>
+	<texture			path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan_df"/>
+	<unit_mat_cc		path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever_tan"/>
 	
 	<!-- Bearable G3 FPS Animations -->
 	<animation			path="anims/fps/g3_niphen/g3_niphen_com_var5"/>
@@ -214,7 +220,7 @@
 	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_fg_retro_plastic" force="true"/>
 	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag" force="true"/>
 	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_m_mag_psg" force="true"/>
-	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_body_upper" force="true"/>	
+	<unit_mat_cc		path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_niphen_pts/wpn_fps_ass_g3_body_upper" force="true"/>
 	
 	<!-- Fixed anim lengths for some melee sets -->
 	<animation			path="anims/fps/melee/agave/melee_attack_var1" force="true"/>

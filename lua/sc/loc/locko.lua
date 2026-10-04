@@ -859,7 +859,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["bm_msk_classic_helmet_desc"] = "전 SWAT 집행자가 준 선물. 은퇴하기 전에 그는 자칼을 찾아왔고... 자칼의 노력을 돕기 위해 그가 접근할 수 있는 장비만 제공했습니다.\n\n그의 호기심 많은 제안은 한 가지 이유는 옴니아가 비밀리에 무엇을 하고 있는지 보았기 때문이였습니다. 하지만 그 자신은 그 비밀을 밝히기를 거부했고, 곧 떠나고 다시는 보이지 않았습니다.\n\n자칼은 이 헬멧을 당신의 기여에 대한 보상으로 보냈습니다.",
 
 		["bm_cube"] = "devmask.model",
-		["bm_cube_desc"] = "Push the placeholder, we'll get around to it.",
+		["bm_cube_desc"] = "이 모델을 임시로 넣어두고 나중에 손보겠습니다.",
 
 		["bm_j4"] = "J-4",
 		["bm_j4_desc"] = "자칼의 마스크. 혹은 아마 재현품.\n\n진짜 마스크는 자칼에게 중요한데, 일부 사람들은 진짜 마스크에는 민감한 데이터가 들어 있다고 말합니다.\n\n그러나 이 재현품의 디스플레이를 운영하는 시스템은 매우 기초적이며, 단지 진짜 마스크를 복제하려는 것일 뿐입니다.\n\n당신의 노고에 대한 선물입니다.",
@@ -1409,7 +1409,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_wp_ns_duck_desc_sc"] = "펠릿이 뭉치지 않고 #{risk}#수평으로 퍼지게 합니다.##",
 		["bm_wp_ns_ultima_desc_sc"] = "펠릿의 종합 확산을 75%만큼 증가시킵니다.",
 		["bm_wp_upg_a_slug_sc"] = "철갑 슬러그탄",
-		["bm_wp_upg_a_slug_spam_desc"] = "#{skill_color}#방탄복을 관통하여 피해의 75% 가하고 다수의 적, 최대 피해량 사거리 내의 방패 및 얇은 벽을 관통하는## 납탄을 발사합니다.",
+		["bm_wp_upg_a_slug_spam_desc"] = "#{skill_color}#방탄복, 다수의 적, 최대 피해량 사거리 내의 방패 및 얇은 벽을 관통하는## 납탄을 발사합니다.",
 		["bm_wp_upg_a_slug_desc"] = "#{skill_color}#방탄복과 다수의 적, 얇은 벽을 관통하는## 납탄을 발사합니다.",
 		["bm_wp_upg_a_slug_titan_desc"] = "#{skill_color}#방탄복과 다수의 적, 방패, 타이탄 방패, 얇은 벽을 관통하는## 납탄을 발사합니다.",
 		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#2##미터인 #{heat_warm_color}#폭발성## 납탄을 발사합니다.\n#{skill_color}#폭발은 모든 거리에서 최대 피해를 가합니다.##\n직격타는 추가로 #{skill_color}#50%## 피해를 가하며, 총알 피해로 간주됩니다.",
@@ -1585,6 +1585,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		["bm_ap_weapon_sc_desc"] = "#{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
 		["bm_ap_clip_sc_desc"] = "이 무기는 한 번에 5발 재장전하며 #{skill_color}#방탄복, 다수의 적, 방패, 그리고 얇은 벽을 관통할 수 있습니다.##",
 		["bm_ap_weapon_semi_sc_desc"] = "#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",
+		["bm_ap_weapon_semi_slug_sc_desc"] = "#{skill_color}#방탄복, 다수의 적, 얇은 벽, 그리고 최대 피해량 사거리 내의 방패를 관통할 수 있습니다.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#방탄복을 관통할 수 있습니다.##",
 		["bm_ap25_armor_weapon_sc_desc"] = "#{skill_color}#무기 피해량의 25%가 방탄복을 관통하여 추가로 들어갑니다.##",
 		["bm_ap_armor_25_weapon_sc_desc"] = "#{skill_color}#무기 피해량의 25%가 방탄복을 관통하여 들어갑니다.##",

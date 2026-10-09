@@ -42,6 +42,7 @@ local sight_1x_offset = {
 		"wpn_fps_upg_o_rx01",
 		"wpn_fps_upg_o_rx30",
 		"wpn_fps_upg_o_health",
+		"wpn_fps_upg_o_dardar",
 	},
 	offset = Vector3(-0.02,-12,0),
 	exclude = {
@@ -9901,7 +9902,7 @@ end
 				self.parts.wpn_fps_lmg_mg42_m_75 = deep_clone(self.parts.wpn_fps_lmg_mg42_reciever)
 				self.parts.wpn_fps_lmg_mg42_m_75.pcs = {}
 				self.parts.wpn_fps_lmg_mg42_m_75.supported = true
-				self.parts.wpn_fps_lmg_mg42_m_75.global_value = "sc"
+				self.parts.wpn_fps_lmg_mg42_m_75.dlc = "sc"
 				self.parts.wpn_fps_lmg_mg42_m_75.alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag"
 				self.parts.wpn_fps_lmg_mg42_m_75.name_id = "bm_wp_mg42_m_75"
 				self.parts.wpn_fps_lmg_mg42_m_75.has_description = true
@@ -9923,7 +9924,7 @@ end
 				self.parts.wpn_fps_lmg_mg42_m_100 = deep_clone(self.parts.wpn_fps_lmg_mg42_reciever)
 				self.parts.wpn_fps_lmg_mg42_m_100.pcs = {}
 				self.parts.wpn_fps_lmg_mg42_m_100.supported = true
-				self.parts.wpn_fps_lmg_mg42_m_100.global_value = "sc"
+				self.parts.wpn_fps_lmg_mg42_m_100.dlc = "sc"
 				self.parts.wpn_fps_lmg_mg42_m_100.alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag"
 				self.parts.wpn_fps_lmg_mg42_m_100.name_id = "bm_wp_mg42_m_100"
 				self.parts.wpn_fps_lmg_mg42_m_100.has_description = true
@@ -13189,6 +13190,7 @@ end
 					self.parts.wpn_fps_smg_akmsu_fg_standard.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_smg_akmsu_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
 					self.parts.wpn_fps_smg_akmsu_fg_standard.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_smg_akmsu_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
 					self.parts.wpn_fps_smg_akmsu_fg_standard.override.wpn_fps_upg_o_health.stance_mod = deep_clone(self.parts.wpn_fps_smg_akmsu_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
+					self.parts.wpn_fps_smg_akmsu_fg_standard.override.wpn_fps_upg_o_dardar.stance_mod = deep_clone(self.parts.wpn_fps_smg_akmsu_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
 					for i, part_id in ipairs(sight_1x_offset.sights) do
 						for i, weap in pairs(self.parts.wpn_fps_smg_akmsu_fg_standard.override[ part_id ].stance_mod) do
 							if weap and weap.translation then
@@ -13957,6 +13959,7 @@ end
 				self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_docter.stance_mod)
 				self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_docter.stance_mod)
 				self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_health.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_docter.stance_mod)
+				self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_dardar.stance_mod = deep_clone(self.parts.wpn_fps_ass_galil_fg_fab.override.wpn_fps_upg_o_docter.stance_mod)
 				for i, part_id in ipairs(sight_1x_offset.sights) do
 					for i, weap in pairs(self.parts.wpn_fps_ass_galil_fg_fab.override[ part_id ].stance_mod) do
 						if weap and weap.translation then
@@ -14369,6 +14372,7 @@ end
 				self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_rx01 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_docter)
 				self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_rx30 = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_docter)
 				self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_health = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_docter)
+				self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_dardar = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_docter)
 				for i, part_id in ipairs(sight_1x_offset.sights) do
 					for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override[ part_id ]) do
 						if weap and weap.translation then
@@ -17626,6 +17630,45 @@ end
 	--[[     LIGHT SHOTGUNS     ]]
 
 		--PRIMARIES
+
+			--BECKER REVOLVING
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_bleckert", "resmod_bleckert", function(self)
+
+					self.parts.wpn_fps_sho_bleckert_lower_body_standard.supported = true
+					self.parts.wpn_fps_sho_bleckert_lower_body_standard.stats = { value = 0 }
+					self.parts.wpn_fps_sho_bleckert_lower_body_standard.custom_stats = { hip_mult = 3 }
+					self.parts.wpn_fps_sho_bleckert_barrel_long.supported = true
+					self.parts.wpn_fps_sho_bleckert_barrel_long.stats = deep_clone(barrels.long_b3_stats)
+					self.parts.wpn_fps_sho_bleckert_barrel_long.custom_stats = deep_clone(barrels.long_b3_stats)
+					self.parts.wpn_fps_sho_bleckert_barrel_short.supported = true
+					self.parts.wpn_fps_sho_bleckert_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+					self.parts.wpn_fps_sho_bleckert_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+
+					self.parts.wpn_fps_sho_bleckert_magazine_horse.supported = true
+					self.parts.wpn_fps_sho_bleckert_magazine_horse.stats = {
+						value = 5,
+						extra_ammo = 2,
+						concealment = -1
+					}
+					self.parts.wpn_fps_sho_bleckert_magazine_horse.custom_stats = {
+						ads_speed_mult = 1.05
+					}
+
+					self.parts.wpn_fps_sho_bleckert_stock_standard_pouch.supported = true
+					self.parts.wpn_fps_sho_bleckert_stock_standard_pouch.stats = {
+						value = 2,
+						spread = -2,
+						concealment = -1,
+						reload = 4
+					}
+					self.parts.wpn_fps_sho_bleckert_stock_sawnoff.supported = true
+					self.parts.wpn_fps_sho_bleckert_stock_sawnoff.stats = deep_clone(stocks.remove_fixed_stats)
+					self.parts.wpn_fps_sho_bleckert_stock_sawnoff.custom_stats = deep_clone(stocks.remove_fixed_stats)
+
+					self.parts.wpn_fps_sho_bleckert_stock_precision.supported = true
+					self.parts.wpn_fps_sho_bleckert_stock_precision.stats = deep_clone(stocks.adj_acc_stats)
+
+				end)
 
 			--SUPERNOVA
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_supernova", "resmod_supernova", function(self)
@@ -20926,6 +20969,24 @@ end
 				end
 			end
 
+			--Nydar
+			self.parts.wpn_fps_upg_o_dardar.has_description = true
+			self.parts.wpn_fps_upg_o_dardar.desc_id = "bm_wp_upg_o_1_1_nydar"
+			self.parts.wpn_fps_upg_o_dardar.supported = true
+			self.parts.wpn_fps_upg_o_dardar.stats = {
+				value = 5,
+				zoom = 1
+			}
+			self.parts.wpn_fps_upg_o_dardar.perks = {"scope"}
+			self.parts.wpn_fps_upg_o_dardar.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_o_dardar.stance_mod) do
+				for k, wep_id in pairs(sight_1x_offset.exclude) do
+					if weap and i ~= wep_id and weap.translation then
+						weap.translation = weap.translation + sight_1x_offset.offset
+					end
+				end
+			end
+
 			--Owl Glass/BelOMO PO4x24P
 			self.parts.wpn_fps_upg_o_poe.pcs = {
 				10,
@@ -21753,6 +21814,7 @@ end
 			self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_health.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
+			self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_dardar.stance_mod = deep_clone(self.parts.wpn_upg_ak_fg_standard.override.wpn_fps_upg_o_docter.stance_mod)
 			for i, part_id in ipairs(sight_1x_offset.sights) do
 				for i, weap in pairs(self.parts.wpn_upg_ak_fg_standard.override[ part_id ].stance_mod) do
 					if weap and weap.translation then
@@ -22000,6 +22062,7 @@ end
 			self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_health.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_docter.stance_mod)
+			self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_dardar.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_krebs.override.wpn_fps_upg_o_docter.stance_mod)
 			for i, part_id in ipairs(sight_1x_offset.sights) do
 				for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_krebs.override[ part_id ].stance_mod) do
 					if weap and weap.translation then
@@ -22116,6 +22179,7 @@ end
 			self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_health.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_docter.stance_mod)
+			self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_dardar.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_trax.override.wpn_fps_upg_o_docter.stance_mod)
 			for i, part_id in ipairs(sight_1x_offset.sights) do
 				for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_trax.override[ part_id ].stance_mod) do
 					if weap and weap.translation then
@@ -22222,6 +22286,7 @@ end
 			self.parts.wpn_fps_upg_ak_fg_zenit.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_zenit.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_fps_upg_ak_fg_zenit.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_zenit.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_fps_upg_ak_fg_zenit.override.wpn_fps_upg_o_health.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_zenit.override.wpn_fps_upg_o_docter.stance_mod)
+			self.parts.wpn_fps_upg_ak_fg_zenit.override.wpn_fps_upg_o_dardar.stance_mod = deep_clone(self.parts.wpn_fps_upg_ak_fg_zenit.override.wpn_fps_upg_o_docter.stance_mod)
 			for i, part_id in ipairs(sight_1x_offset.sights) do
 				for i, weap in pairs(self.parts.wpn_fps_upg_ak_fg_zenit.override[ part_id ].stance_mod) do
 					if weap and weap.translation then
@@ -22393,6 +22458,7 @@ end
 			self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_health.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
+			self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_dardar.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
 			for i, part_id in ipairs(sight_1x_offset.sights) do
 				for i, weap in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override[ part_id ].stance_mod) do
 					if weap and weap.translation then
@@ -22778,6 +22844,7 @@ end
 			self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
 			self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_health.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
+			self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_dardar.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_docter.stance_mod)
 			for i, part_id in ipairs(sight_1x_offset.sights) do
 				for i, weap in pairs(self.parts.wpn_fps_upg_o_m14_scopemount.override[ part_id ].stance_mod) do
 					if weap and weap.translation then
@@ -23707,6 +23774,7 @@ end
 			self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_rx01 = deep_clone(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_docter)
 			self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_rx30 = deep_clone(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_docter)
 			self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_health = deep_clone(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_docter)
+			self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_dardar = deep_clone(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_docter)
 			for i, part_id in ipairs(sight_1x_offset.sights) do
 				for i, weap in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[ part_id ].stance_mod) do
 					if weap and weap.translation then
@@ -43412,6 +43480,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_rx01 = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_docter)
 				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_rx30 = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_docter)
 				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_health = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_docter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_dardar = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_docter)
 				for i, part_id in ipairs(sight_1x_offset.sights) do
 					for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override[ part_id ].stance_mod) do
 						if weap and weap.translation then

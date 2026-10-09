@@ -17899,6 +17899,7 @@ end
 					self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_rx01.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_docter.stance_mod)
 					self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_rx30.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_docter.stance_mod)
 					self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_health.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_docter.stance_mod)
+					self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_dardar.stance_mod = deep_clone(self.parts.wpn_fps_sho_m590_body_rail.override.wpn_fps_upg_o_docter.stance_mod)
 					for i, part_id in ipairs(sight_1x_offset.sights) do
 						for i, weap in pairs(self.parts.wpn_fps_sho_m590_body_rail.override[ part_id ].stance_mod) do
 							if weap and weap.translation then

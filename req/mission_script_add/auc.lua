@@ -1,8 +1,8 @@
 local cops = {
 	"units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
 	"units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
-	"units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_3",
-	"units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_4",
+	"units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
+	"units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 }
 
 local optsBesiegeDummy_1 = {

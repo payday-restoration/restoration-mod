@@ -27,6 +27,12 @@ return {
 			},
 		},
 	},
+	-- beat coppers wave 
+	[107138] = {
+		on_executed = {
+			{ id = 400076, delay = 15, delay_rand = 5},
+		},
+	},
 	[103629] = { -- difficulty_1
 		reinforce = {
 			{

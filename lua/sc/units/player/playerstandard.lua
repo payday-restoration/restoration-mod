@@ -234,7 +234,7 @@ function PlayerStandard:_end_action_ladder(t, input)
 end
 
 --These functions are for Breacher top off skill, allows reloading, shooting, and aiming while still interacting
-function PlayerStandard:_start_action_interact(t, input, timer, interact_object)
+Hooks:OverrideFunction(PlayerStandard, "_start_action_interact", function(self, t, input, timer, interact_object)
 	if not managers.player:has_category_upgrade("player", "no_interrupt_interaction") then
 		self:_interupt_action_reload(t)
 		self:_interupt_action_steelsight(t)
@@ -244,8 +244,11 @@ function PlayerStandard:_start_action_interact(t, input, timer, interact_object)
 
 	local final_timer = timer
 	final_timer = managers.modifiers:modify_value("PlayerStandard:OnStartInteraction", final_timer, interact_object)
+	
 	self._interact_expire_t = final_timer
+	
 	local start_timer = 0
+	
 	self._interact_params = {
 		object = interact_object,
 		timer = final_timer,
@@ -256,12 +259,13 @@ function PlayerStandard:_start_action_interact(t, input, timer, interact_object)
 	if not managers.player:has_category_upgrade("player", "no_interrupt_interaction") then
 		self:_play_unequip_animation()
 	end
+	
 	managers.hud:show_interaction_bar(start_timer, final_timer)
 	managers.network:session():send_to_peers_synched("sync_teammate_progress", 1, true, self._interact_params.tweak_data, final_timer, false)
 	self._unit:network():send("sync_interaction_anim", true, self._interact_params.tweak_data)
-end
+end)
 
-function PlayerStandard:_interupt_action_interact(t, input, complete)
+Hooks:OverrideFunction(PlayerStandard, "_interupt_action_interact", function(self, t, input, complete)
 	if self._interact_expire_t then
 		self:_clear_tap_to_interact()
 
@@ -281,10 +285,11 @@ function PlayerStandard:_interupt_action_interact(t, input, complete)
 		if not managers.player:has_category_upgrade("player", "no_interrupt_interaction") then
 			self:_play_equip_animation()
 		end
+		
 		managers.hud:hide_interaction_bar(complete)
 		self._unit:network():send("sync_interaction_anim", false, "")
 	end
-end
+end)
 
 function PlayerStandard:_start_action_ducking(t, no_slide)
 	--Here!
@@ -1771,7 +1776,7 @@ function PlayerStandard:_check_action_night_vision(t, input)
 	self:set_night_vision_state(not self._state_data.night_vision_active)
 end
 
-function PlayerStandard:_check_action_interact(t, input)
+Hooks:OverrideFunction(PlayerStandard, "_check_action_interact", function(self, t, input)
 	if STI and STI.settings.interaction then
 		local interrupt_key_press = input.btn_interact_press
 			if STI.settings.interact_interrupt_key == 2 then
@@ -1897,7 +1902,7 @@ function PlayerStandard:_check_action_interact(t, input)
 	end
 
 	return new_action
-end
+end)
 
 function PlayerStandard:_start_action_intimidate(t, secondary)
 	if not self._intimidate_t or tweak_data.player.movement_state.interaction_delay < t - self._intimidate_t then
@@ -5551,14 +5556,14 @@ function PlayerStandard:_start_action_equip(redirect, extra_time)
 	self._ext_camera:play_redirect(redirect or self:get_animation("equip"), speed_multiplier)
 end
 
-function PlayerStandard:_play_equip_animation()
+Hooks:OverrideFunction(PlayerStandard, "_play_equip_animation", function(self)
 	local tweak_data = self._equipped_unit:base():weapon_tweak_data()
 	local speed_multiplier = self:_get_swap_speed_multiplier()
 	self._equip_weapon_expire_t = managers.player:player_timer():time() + (tweak_data.timers.equip or 0.7) / speed_multiplier
 	local result = self._ext_camera:play_redirect(self:get_animation("equip"), speed_multiplier)
 	self._equipped_unit:base():tweak_data_anim_stop("unequip")
 	self._equipped_unit:base():tweak_data_anim_play("equip", speed_multiplier)
-end
+end)
 
 function PlayerStandard:_play_unequip_animation()
 	local speed_multiplier = self:_get_swap_speed_multiplier()

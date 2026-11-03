@@ -82,6 +82,7 @@
 
 	<!-- Credits -->
 	<texture path="guis/textures/restoration/credits"/>
+	<texture path="guis/textures/restoration/credits_reno"/>
 
 	<!-- Classic Movies -->
 	<movie path="movies/level_bank" force="true"/>

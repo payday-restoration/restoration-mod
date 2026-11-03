@@ -4,6 +4,15 @@
 	<br/>
 	<image scale="0.6" src="guis/textures/restoration/credits"/>
 	<br/>
+	<br/>
+	<image scale="1" src="guis/textures/restoration/credits_reno"/>
+	<br/>	
+	<text text="In Memory of Reno" type="title"/>
+	<text text="Beloved friend and Restoration Mod developer" type="name"/>
+	<text text="'Nyah hope, nyah future!'" type="name"/>
+	<text text="2000 - 2026" type="title"/>
+	<br/>
+	<br/>
 	<text text="Restoration Mod Team" type="title"/>
 	<br/>
 	<text text="Founders" type="title"/>

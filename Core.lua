@@ -141,7 +141,7 @@ function restoration:Init()
 		jambank = restoration.captain_types.spring, --Botched Bank
 		arena_club30 = restoration.captain_types.spring, -- Arena Orange
 		hidden_vault = restoration.captain_types.spring, -- Hidden Vault
-
+		--[[
 		--Autumn
 		alex_1 = restoration.captain_types.autumn, --Rats Day 1
 		rat = restoration.captain_types.autumn,	--cook off
@@ -174,7 +174,7 @@ function restoration:Init()
 		money_tbh = restoration.captain_types.autumn,--TBA Heist
 		skm_tbh_xmas = restoration.captain_types.autumn,--TBA Holdout
 		money_tbh_xmas = restoration.captain_types.autumn,--TBA Heist
-
+		]]--
 		--I'm not typing out the whole name
 		help = restoration.captain_types.hvh, --Prison Nightmare
 		nail = restoration.captain_types.hvh, --lab rats

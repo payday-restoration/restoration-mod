@@ -5,27 +5,31 @@ function SpoocLogicAttack._upd_spooc_attack(data, my_data)
 	end
 
 	local focus_enemy = data.attention_obj
-	if not focus_enemy.nav_tracker or not focus_enemy.is_person then
+	if not focus_enemy.nav_tracker or not focus_enemy.is_person or not focus_enemy.verified or focus_enemy.reaction < AIAttentionObject.REACT_SHOOT then
 		return
 	end
 
-	if not focus_enemy.criminal_record or focus_enemy.criminal_record.status and focus_enemy.criminal_record.status ~= "electrified" then
+	if focus_enemy.criminal_record and (focus_enemy.criminal_record.status or SpoocLogicAttack._is_last_standing_criminal(focus_enemy)) then
 		return
 	end
 
-	local max_spooc_dis = (data.char_tweak.max_spooc_dis or 2000) * (my_data.want_to_take_cover and 0.5 or 1)
-	if focus_enemy.reaction < AIAttentionObject.REACT_SHOOT or focus_enemy.dis > max_spooc_dis then
+	if focus_enemy.verified_dis > (my_data.want_to_take_cover and 1500 or 2500) then
 		return
 	end
 
-	if SpoocLogicAttack._is_last_standing_criminal(focus_enemy) or not focus_enemy.unit:movement():is_SPOOC_attack_allowed() or focus_enemy.unit:movement():zipline_unit() then
+	if focus_enemy.unit:movement().zipline_unit and focus_enemy.unit:movement():zipline_unit() then
 		return
 	end
 
-	if not my_data.spooc_attack_delay_t then
-		my_data.spooc_attack_delay_t = data.t + math.map_range_clamped(focus_enemy.dis, 0, 500, 1, 0)
+	if focus_enemy.unit:movement().is_SPOOC_attack_allowed and not focus_enemy.unit:movement():is_SPOOC_attack_allowed() then
+
 		return
-	elseif my_data.spooc_attack_delay_t > data.t then
+	end
+
+	if not data.spooc_attack_delay_t then
+		data.spooc_attack_delay_t = focus_enemy.verified_t + 0.8
+		return
+	elseif data.spooc_attack_delay_t > data.t then
 		return
 	end
 
@@ -62,6 +66,7 @@ Hooks:PreHook(SpoocLogicAttack, "_chk_request_action_spooc_attack", "sh___chk_re
 		type = "stand"
 	})
 end)
+
 
 -- Update logic every frame
 Hooks:PostHook(SpoocLogicAttack, "enter", "sh_enter", function (data)

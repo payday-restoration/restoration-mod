@@ -23,16 +23,10 @@ local high_interval = {
 
 return {
 	-- Pro Job PONR
-	-- Murkies spawn after a while
-	[103820] = {
-		on_executed = {
-			{id = 400024, delay = 0, },
-		},
-	},
 	-- Turn off Whisper State
 	[100680] = {
 			on_executed = {
-			{id = 400024, delay = 0, },
+			{id = 400001, delay = 0, },
 		},
 	},
 	-- Trigger Hunt on Pro Jobs (Endless Assault)

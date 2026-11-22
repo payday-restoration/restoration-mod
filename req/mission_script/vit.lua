@@ -32,6 +32,15 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
+		-- Combine some navigation areas
+	[100017] = {
+		ai_area = {
+			{ 44, 84, 85 },
+			{ 103, 104, 105, 106 },
+			{ 97, 99 },
+			{ 52, 86 },
+		},
+	},
 	--Increase Stealth PONR timers
 	[101416] = {
 		values = {

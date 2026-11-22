@@ -51,6 +51,21 @@ return {
 			},
 		},
 	},
+	-- Combine some navigation areas
+	[100017] = {
+		ai_area = {
+			{ 4, 52 },
+			{ 136, 129 },
+			{ 153, 139 },
+			{ 140, 154 }
+		}
+	},
+	-- Delay SWAT response
+	[100116] = {
+		on_executed = {
+			{ id = 100122, delay = 60 }
+		}
+	},
 	-- disable the one useless sniper from the outside 
 	[100368] = disabled,
 	-- Spawn group intervals

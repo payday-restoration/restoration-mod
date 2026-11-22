@@ -160,6 +160,25 @@ function MissionManager.mission_script_patch_funcs.groups(self, element, data)
 	restoration:log("Changed %u preferred group(s) of %s", table.size(data), element:editor_name())
 end
 
+ai_area = function(self, element, data)
+		Hooks:PostHook(element, "on_executed", "res_on_executed_ai_area_" .. element:id(), function()
+			restoration:log("%s executed, creating %d AI area(s)", element:editor_name(), #data)
+			for _, nav_segs in ipairs(data) do
+				local area_pos = Vector3()
+				for _, nav_seg_id in ipairs(nav_segs) do
+					local nav_seg = managers.navigation._nav_segments[nav_seg_id]
+					if not nav_seg then
+						restoration:error("Nav segment %u could not be found", nav_seg_id)
+						return
+					end
+					mvector3.add_scaled(area_pos, nav_seg.pos, 1 / #nav_segs)
+				end
+				self._ai_area_id = (self._ai_area_id or 10000) + 1
+				managers.groupai:state():add_area(self._ai_area_id, nav_segs, area_pos)
+			end
+		end)
+		restoration:log("%s hooked as AI area trigger", element:editor_name())
+
 function MissionManager.mission_script_patch_funcs.ai_area(self, element, data)
 	restoration:warn("AI area patch function is not supported currently, missing GroupAI state handling!")
 	do return end

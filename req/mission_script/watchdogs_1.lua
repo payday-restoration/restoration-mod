@@ -69,6 +69,16 @@ return {
 			TIT_tanks = false
 		}
 	},
+	-- Combine some navigation areas
+	[100125] = {
+		ai_area = {
+			{ 42, 75 },
+			{ 51, 76 },
+			{ 52, 134 },
+			{ 81, 166, 167 },
+			{ 127, 129 },
+		},
+	},
 	--one additional man on DS (from 3 to 4)
 	[102845] = {
 		values = {

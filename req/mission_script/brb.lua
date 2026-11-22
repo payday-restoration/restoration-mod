@@ -15,6 +15,15 @@ return {
 		ponr = ponr_value,
 		hunt = true
 	},
+	-- Combine some navigation areas
+	[100287] = {
+		ai_area = {
+			{ 10, 11, 12, 15 },
+			{ 13, 17, 27 },
+			{ 5, 6, 7, 59, 8, 9, 18 },
+			{ 36, 37 },
+		},
+	},
 	-- Add early reinforce around the bank
 	[100001] = {
 		reinforce = {

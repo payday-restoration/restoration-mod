@@ -107,5 +107,6 @@
 	<MenuMusic id="m5" source="m5.ogg" volume="0.6"/>
 	<MenuMusic id="m6" source="m6.ogg" volume="0.6"/>
 	<MenuMusic id="m7" source="m7.ogg" volume="0.6"/>
+	<MenuMusic id="m8" source="m8.ogg" volume="0.6"/>
 	<MenuMusic id="m_holiday" source="m_holiday.ogg" volume="0.6"/>
 </table>

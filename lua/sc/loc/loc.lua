@@ -1126,6 +1126,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["menu_jukebox_screen_m5"] = "Fortress",
 		["menu_jukebox_screen_m6"] = "Payday Royale Theme",
 		["menu_jukebox_screen_m7"] = "Pre-Planning",
+		["menu_jukebox_screen_m8"] = "Economy",
 		["menu_jukebox_screen_m_holiday"] = "The Headless Bulldozer",
 
 		["menu_color_plus"] = "E3 PAYDAY+",

@@ -12,7 +12,7 @@
 	<continent path="levels/narratives/classics/flat/lights/lights"/>
 	<continent path="levels/narratives/classics/flat/world/world"/>
 	<mission   path="levels/narratives/classics/flat/world/world"/>
-	<mission   path="levels/narratives/classics/man/world/world"/>
+	<!--mission   path="levels/narratives/classics/man/world/world"/-->
 	<continent path="levels/narratives/continental/spa/regin_art/regin_art"/>
 	<mission   path="levels/narratives/continental/spa/regin_art/regin_art"/>
 	<continent path="levels/narratives/continental/spa/world/world"/>

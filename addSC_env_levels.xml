@@ -47,11 +47,11 @@
 	<cover_data			path="levels/narratives/continental/spa/cover_data" force="true" unload="true"/>
 	<nav_data			path="levels/narratives/continental/spa/nav_manager_data" force="true" unload="true"/>
 	<continent			path="levels/narratives/classics/pal/world/world" force="true" unload="true"/>
-	<continent			path="levels/narratives/classics/man/world/world" force="true" unload="true"/>
-	<continent			path="levels/narratives/classics/man/shadow_caster/shadow_caster" force="true" unload="true"/>
-	<nav_data			path="levels/narratives/classics/man/nav_manager_data" force="true" unload="true"/>
-	<cover_data			path="levels/narratives/classics/man/cover_data" force="true" unload="true"/>
-	<world				path="levels/narratives/classics/man/world" force="true"/>
+	<!--continent		path="levels/narratives/classics/man/world/world" force="true" unload="true"-->
+	<!--continent		path="levels/narratives/classics/man/shadow_caster/shadow_caster" force="true" unload="true"-->
+	<!--nav_data			path="levels/narratives/classics/man/nav_manager_data" force="true" unload="true"-->
+	<!--cover_data			path="levels/narratives/classics/man/cover_data" force="true" unload="true"-->
+	<!--world				path="levels/narratives/classics/man/world" force="true"-->
 	<nav_data			path="levels/narratives/classics/flat/nav_manager_data" force="true" unload="true"/>
 	<cover_data			path="levels/narratives/classics/flat/cover_data" force="true" unload="true"/>
 

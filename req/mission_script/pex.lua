@@ -13,11 +13,15 @@ return {
 	[100357] = {
         ponr_end = true
     },
-	-- Enable Bolt Cutter, Flammable Liquid very early.
+	-- Enable Bolt Cutter, Flammable Liquid very early. (quick rant : WHY THE FUCK ARE THEY SEPARATELY LABLED "LARGE" "MEDIUM" AND "SMALL"????)
 	[100017] = {
 		on_executed = {
-			{id = 108325, delay = 0, },
-			{id = 103248, delay = 0, },
+			{id = 100802, delay = 0, }, -- medium bolt cutter 
+			{id = 101459, delay = 0, }, -- small bolt cutter
+			{id = 101457, delay = 0, } -- WHO THE FUCK NEEDS A LARGE ASS BOLT CUTTER????
+			{id = 101923, delay = 0, }, -- large liquid (serioisly, why the FUCK would you separatedly named these? are you mentally challenged?)
+			{id = 101926, delay = 0, }, -- medium liquid
+			{id = 101925, delay = 0, }, -- smol liquid
 		},
 	},
 	-- Beat Cop mini wave (you really kicke the beehive just to breakout a drunk guy)

@@ -16,8 +16,8 @@ return {
 	-- Enable Bolt Cutter, Flammable Liquid very early.
 	[100017] = {
 		on_executed = {
-			{id = 102588, delay = 0, },
-			{id = 102348, delay = 0, },
+			{id = 108325, delay = 0, },
+			{id = 103248, delay = 0, },
 		},
 	},
 	-- Beat Cop mini wave (you really kicke the beehive just to breakout a drunk guy)

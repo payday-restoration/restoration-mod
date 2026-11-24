@@ -19,7 +19,7 @@ return {
 			{id = 100802, delay = 0, }, -- medium bolt cutter 
 			{id = 101459, delay = 0, }, -- small bolt cutter
 			{id = 101457, delay = 0, }, -- WHO THE FUCK NEEDS A LARGE ASS BOLT CUTTER????
-			{id = 101923, delay = 0, }, -- large liquid (serioisly, why the FUCK would you separatedly named these? are you mentally challenged?)
+			{id = 101927, delay = 0, }, -- large liquid (serioisly, why the FUCK would you separatedly named these? are you mentally challenged?)
 			{id = 101926, delay = 0, }, -- medium liquid
 			{id = 101925, delay = 0, }, -- smol liquid
 		},

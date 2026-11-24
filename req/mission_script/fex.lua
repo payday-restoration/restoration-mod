@@ -23,6 +23,17 @@ return {
 			enemy = "units/pd2_dlc_mex/characters/ene_mex_security_guard_3/ene_mex_security_guard_3",
 		},
 	},
+	-- Combine some navigation areas
+	[101230] = {
+		ai_area = {
+			{ 9, 208, 209 },
+			{ 25, 26 },
+			{ 28, 310 },
+			{ 44, 311 },
+			{ 53, 54, 55 },
+			{ 72, 73 },
+		},
+	},
 	-- reeeinforrrcee 
 	[100109] = {
 		reinforce = {

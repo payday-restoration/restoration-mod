@@ -13,6 +13,13 @@ return {
 	[100357] = {
         ponr_end = true
     },
+	-- Enable Bolt Cutter, Flammable Liquid very early.
+	[100017] = {
+		on_executed = {
+			{id = 102040, delay = 0, },
+			{id = 101343, delay = 0, },
+		},
+	},
 	-- Beat Cop mini wave (you really kicke the beehive just to breakout a drunk guy)
 	[101667] = {
 		on_executed = {

@@ -98,3 +98,10 @@ end
 Hooks:PreHook(EnemyManager, "on_enemy_destroyed", "ResOnEnemyDestroyed", function(self, enemy)
 	self:unregister_intimidated_guard(enemy:id())
 end)
+
+-- Gameover now happens after ~30 seconds instead of 10 seconds, allowing the chance to use Messiah or whatever other crazy clutch method is in play
+Hooks:PostHook(EnemyManager, "add_delayed_clbk", "Res_LongerGameoverDelay", function(self, id, clbk, execute_t)
+	if id == "_gameover_clbk" then
+		self:reschedule_delayed_clbk(id, Application:time() + 25)
+	end
+end)

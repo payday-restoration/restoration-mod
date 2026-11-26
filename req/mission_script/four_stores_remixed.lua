@@ -3,6 +3,7 @@ local pro_job_ponr = {
 		{ id = 400002, delay = 0, },
 	},
 }
+return {
 	-- Combine some navigation areas
 	[101230] = {
 		ai_area = {
@@ -33,7 +34,6 @@ local pro_job_ponr = {
 			{ 52, 53 },
 		},
 	},
-return {
 	-- Pro Job PONR
 	-- Triggers once both A) whisper state is off (on alarm), and B) the required $15 000 has been collected
 	[101566] = pro_job_ponr,
